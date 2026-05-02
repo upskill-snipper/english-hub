@@ -98,7 +98,7 @@ function StudyToolsFull(props: StudyToolsProps) {
   const { textName, className = '' } = props
 
   return (
-    <section className={`rounded-2xl border border-ink-200 bg-white overflow-hidden ${className}`}>
+    <section className={`rounded-2xl border border-border bg-card overflow-hidden ${className}`}>
       {/* Header */}
       <div className="border-b border-ink-200 bg-cream-50 px-6 py-5">
         <div className="flex items-center gap-2 mb-1">
@@ -165,7 +165,7 @@ function StudyToolsCompact(props: StudyToolsProps) {
   const { textName, className = '' } = props
 
   return (
-    <div className={`rounded-xl border border-ink-200 bg-white p-4 ${className}`}>
+    <div className={`rounded-xl border border-border bg-card p-4 ${className}`}>
       <div className="flex items-center gap-2 mb-3">
         <Sparkles className="h-3.5 w-3.5 text-clay-500" />
         <span className="font-mono text-[9px] font-medium uppercase tracking-[0.2em] text-clay-600">
@@ -223,7 +223,7 @@ function StudyToolsBanner(props: StudyToolsProps) {
           </Link>
           <Link
             href={`/toolkit/test-builder?${buildQueryString(props, 'test-builder')}`}
-            className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-white px-4 py-2 text-xs font-medium text-ink-700 hover:bg-cream-50 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-ink-700 hover:bg-cream-50 transition-colors"
           >
             <Brain className="h-3.5 w-3.5" />
             Practice Quiz

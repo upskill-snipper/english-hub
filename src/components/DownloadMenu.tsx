@@ -61,7 +61,7 @@ function buttonClass(variant: 'default' | 'outline' | 'ghost', size: 'sm' | 'def
   }
   const variantMap = {
     default: 'bg-teal-800 text-white hover:bg-teal-700',
-    outline: 'border border-ink-200 bg-white text-ink-700 hover:bg-cream-50',
+    outline: 'border border-border bg-card text-foreground hover:bg-muted',
     ghost: 'text-ink-700 hover:bg-cream-100',
   }
   return cn(base, sizeMap[size], variantMap[variant])
@@ -247,7 +247,7 @@ export function DownloadMenu({
           left: menuPos.left,
           minWidth: menuPos.width,
         }}
-        className="z-[1000] overflow-hidden rounded-lg border border-ink-200 bg-white shadow-xl"
+        className="z-[1000] overflow-hidden rounded-lg border border-border bg-card shadow-xl"
       >
         {/* Style picker */}
         <div className="border-b border-ink-100 bg-cream-50 px-3 py-2">
@@ -264,7 +264,7 @@ export function DownloadMenu({
                   'flex-1 rounded-md px-2 py-1 font-mono text-[10px] uppercase tracking-[0.12em] transition-colors',
                   style === s
                     ? 'bg-clay-500 text-white'
-                    : 'bg-white text-ink-500 hover:bg-cream-100',
+                    : 'bg-card text-muted-foreground hover:bg-muted',
                 )}
               >
                 {s}

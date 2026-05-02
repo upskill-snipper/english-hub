@@ -29,7 +29,7 @@ export function InfographicBanner({ src, alt, className }: InfographicBannerProp
       }
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-6 sm:pt-10 pb-4 sm:pb-6">
-        <div className="overflow-hidden rounded-2xl border border-border/60 shadow-sm bg-white">
+        <div className="overflow-hidden rounded-2xl border border-border/60 shadow-sm bg-card">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={src} alt={alt} className="block w-full h-auto" loading="eager" />
         </div>

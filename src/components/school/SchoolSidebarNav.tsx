@@ -200,7 +200,7 @@ export function SchoolSidebarNav({
       {/* ── Mobile hamburger ──────────────────────────────────────────── */}
       <button
         type="button"
-        className="fixed left-4 top-4 z-50 flex h-9 w-9 items-center justify-center rounded-lg bg-gray-900 text-white shadow-md lg:hidden"
+        className="fixed left-4 top-4 z-50 flex h-9 w-9 items-center justify-center rounded-lg bg-sidebar text-sidebar-foreground shadow-md lg:hidden"
         onClick={() => setMobileOpen((prev) => !prev)}
         aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
       >
@@ -223,7 +223,7 @@ export function SchoolSidebarNav({
       {/* ── Mobile drawer ─────────────────────────────────────────────── */}
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-40 w-[240px] bg-gray-900 transition-transform duration-200 ease-in-out lg:hidden",
+          "fixed inset-y-0 left-0 z-40 w-[240px] bg-sidebar transition-transform duration-200 ease-in-out lg:hidden",
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         )}
         aria-label="School admin navigation"
@@ -233,7 +233,7 @@ export function SchoolSidebarNav({
 
       {/* ── Desktop sidebar ───────────────────────────────────────────── */}
       <aside
-        className="hidden w-[240px] shrink-0 bg-gray-900 lg:flex lg:flex-col"
+        className="hidden w-[240px] shrink-0 bg-sidebar lg:flex lg:flex-col"
         aria-label="School admin navigation"
       >
         {renderSidebarContent()}

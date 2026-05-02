@@ -46,7 +46,7 @@ const tiers: Tier[] = [
     ],
     cta: { label: 'Start 7-day trial', href: '/auth/register' },
     featured: false,
-    bg: 'bg-white border border-ink-200',
+    bg: 'bg-card border border-border',
     text: 'text-ink-900',
     sub: 'text-ink-500',
     featureText: 'text-ink-600',

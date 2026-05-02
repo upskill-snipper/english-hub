@@ -168,7 +168,7 @@ function QuickQuiz({ quotes, textName }: { quotes: { quote: string; character: s
 
   if (finished) {
     return (
-      <div className="rounded-xl border border-ink-200 bg-white p-5">
+      <div className="rounded-xl border border-border bg-card p-5">
         <div className="text-center mb-4">
           <p className="font-serif text-4xl font-normal italic text-clay-600">{score}/{questions.length}</p>
           <p className="text-sm text-ink-600 mt-1">
@@ -187,7 +187,7 @@ function QuickQuiz({ quotes, textName }: { quotes: { quote: string; character: s
 
   const q = questions[currentQ]
   return (
-    <div className="rounded-xl border border-ink-200 bg-white p-5">
+    <div className="rounded-xl border border-border bg-card p-5">
       <div className="flex items-center justify-between mb-3">
         <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink-500">
           Question {currentQ + 1} of {questions.length}
@@ -243,7 +243,7 @@ function EssayPrompt({ questions, textName }: { questions: string[]; textName: s
   const question = questions[currentIdx]
 
   return (
-    <div className="rounded-xl border border-ink-200 bg-white p-5">
+    <div className="rounded-xl border border-border bg-card p-5">
       <div className="flex items-center gap-2 mb-3">
         <GraduationCap className="size-4 text-clay-600" />
         <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-clay-600">
@@ -287,7 +287,7 @@ function FlashcardDrill({ cards }: { cards: { front: string; back: string }[] })
   const card = cards[idx]
 
   return (
-    <div className="rounded-xl border border-ink-200 bg-white p-5">
+    <div className="rounded-xl border border-border bg-card p-5">
       <div className="flex items-center justify-between mb-3">
         <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink-500">
           Flashcard {idx + 1} of {cards.length}
@@ -333,7 +333,7 @@ export default function TextStudyHub({
   return (
     <div className={`space-y-6 ${className}`}>
       {/* ── Study This Text: Navigation Grid ────────────────────────────── */}
-      <section className="rounded-2xl border border-ink-200 bg-white overflow-hidden">
+      <section className="rounded-2xl border border-border bg-card overflow-hidden">
         <div className="border-b border-ink-100 bg-cream-50 px-6 py-4">
           <div className="flex items-center gap-2">
             <BookOpen className="size-4 text-teal-700" />
@@ -431,7 +431,7 @@ export default function TextStudyHub({
           <div className="flex items-center gap-2">
             <Link
               href={`/toolkit/test-builder?text=${encodeURIComponent(textName)}&type=${textType}`}
-              className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-white px-4 py-2 text-xs font-medium text-ink-700 hover:bg-cream-50 transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-ink-700 hover:bg-cream-50 transition-colors"
             >
               <ClipboardList className="size-3.5" />
               Build a Test

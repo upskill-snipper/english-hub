@@ -284,7 +284,7 @@ function QuizMode({
           if (answered) {
             if (i === q.correctIndex) cls = 'border-teal-500/50 bg-teal-500/10 text-teal-800'
             else if (i === selected) cls = 'border-clay-500/50 bg-clay-500/10 text-clay-700'
-            else cls = 'border-ink-100 bg-white text-ink-400'
+            else cls = 'border-border bg-card text-muted-foreground'
           }
           return (
             <button
@@ -331,7 +331,7 @@ function RevisionMode({ topics, textName }: { topics: { topic: string; summary: 
   return (
     <div className="space-y-2">
       {topics.map((t, i) => (
-        <div key={i} className="rounded-lg border border-ink-200 bg-white overflow-hidden">
+        <div key={i} className="rounded-lg border border-border bg-card overflow-hidden">
           <button
             onClick={() => setExpandedIdx(expandedIdx === i ? null : i)}
             className="w-full flex items-center justify-between p-3 text-left hover:bg-cream-50 transition-colors"
@@ -411,7 +411,7 @@ function EssayMode({ prompts, textName }: { prompts: string[]; textName: string 
             value={essay}
             onChange={(e) => handleEssayChange(e.target.value)}
             placeholder={`Write your response to this ${textName} question here...\n\nAim for at least 200 words. Embed quotations, analyse language (AO2), and link to context (AO3).`}
-            className="w-full h-48 rounded-lg border border-ink-200 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-400 focus:outline-none focus:border-teal-700 resize-y font-serif leading-relaxed"
+            className="w-full h-48 rounded-lg border border-border bg-card px-4 py-3 text-sm text-ink-900 placeholder:text-ink-400 focus:outline-none focus:border-teal-700 resize-y font-serif leading-relaxed"
           />
           <div className="flex items-center justify-between">
             <span className={`font-mono text-[10px] ${wordCount >= 200 ? 'text-teal-700' : wordCount >= 50 ? 'text-amber-700' : 'text-ink-400'}`}>
@@ -571,7 +571,7 @@ export default function InlineStudyEngine({
   ]
 
   return (
-    <section className={`rounded-2xl border border-ink-200 bg-white overflow-hidden ${className}`}>
+    <section className={`rounded-2xl border border-border bg-card overflow-hidden ${className}`}>
       {/* Header */}
       <div className="border-b border-ink-100 bg-cream-50 px-5 py-3">
         <div className="flex items-center gap-2">

@@ -51,7 +51,7 @@ const STYLES: {
   {
     id: 'whiteboard',
     label: 'Whiteboard',
-    bg: 'bg-white',           // #FFFFFF
+    bg: 'bg-card',            // card surface
     textLine: 'bg-ink-800',   // dark text line
     accentDot: 'bg-clay-400', // terracotta accent
   },
