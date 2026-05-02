@@ -239,12 +239,36 @@ const ALLOWED_ORIGINS = new Set([
 // below the support floor.
 function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   const extraSrc = extraScriptHashes.length ? ' ' + extraScriptHashes.join(' ') : ''
+  // 02 May 2026 — dropped the `'nonce-${nonce}'` source from script-src.
+  //
+  // Modern browsers (Chrome, Firefox, Safari ≥15.4) ignore `'unsafe-inline'`
+  // whenever a `'nonce-...'` source is present on the same directive. That
+  // means every Next.js framework chunk in `/_next/static/chunks/*` and
+  // every inline `self.__next_f.push(...)` RSC-streaming script needs an
+  // explicit `nonce` attribute, OR they get blocked.
+  //
+  // Bundle inspection on the rolled-back broken production deployment
+  // (dpl_3PuGJe6549aZjLN7kwMBwnWvqpSL, commit 09204b8) showed 0 nonce
+  // attributes on the rendered scripts versus 96 on the green
+  // dpl_7hjsyaxXuMHm5E5T592CUe9J5gnA (commit 07e89e3) — same code path,
+  // same middleware, but Next 15.5 + React 19 stopped reading `x-nonce`
+  // off the request headers and stamping it onto the framework scripts.
+  // (Open question: caused by an upstream Next change, the Sentry config
+  // drift warnings logged at build time, or our `instrumentation-client.ts`
+  // racing the page bootstrap. Won't be debugged in this hot-fix.)
+  //
+  // Scripts now run under `'self' 'unsafe-inline' + explicit host
+  // allowlist (Stripe / Rewardful / GTM)` — same security envelope as
+  // before nonce-CSP, with the JSON-LD content-hash channel preserved
+  // for the `/analysis/[slug]` static route via `extraSrc`.
+  //
+  // The unused `nonce` parameter is retained because callers still pass
+  // it — re-introduce it once Next 15+ gives us reliable nonce stamping
+  // on framework chunks.
+  void nonce
   return [
     `default-src 'self'`,
-    // 'unsafe-inline' is a FALLBACK for browsers that don't honour nonces.
-    // Modern browsers ignore 'unsafe-inline' when a 'nonce-' is present on
-    // the same directive.
-    `script-src 'self' 'nonce-${nonce}' 'unsafe-inline'${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com`,
+    `script-src 'self' 'unsafe-inline'${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com`,
     `style-src 'self' 'unsafe-inline'`, // Tailwind JIT inlines styles; acceptable.
     `img-src 'self' data: https:`,
     `font-src 'self' data:`,
