@@ -79,9 +79,21 @@ export default function StudyScreen() {
     setView({ screen: 'flashcards', topic });
   }, []);
 
-  const openWebUrl = useCallback((url: string) => {
-    Linking.openURL(url).catch(() => {});
-  }, []);
+  // "View full guide" is the founder's #1 broken-link complaint. Two issues
+  // were stacked: (1) tapping the button used `Linking.openURL` so the user
+  // bounced out of the app into Safari (jarring + breaks signed-in state),
+  // (2) the URLs in `data/study-topics.ts` weren't always real website
+  // routes, so even Safari hit a 404. Route through the in-app Hub WebView
+  // instead — it shares the WebView's auth cookies, stays inside the app,
+  // and the path-stripping helper in `learn.tsx` rejects malformed URLs.
+  const openWebUrl = useCallback(
+    (url: string) => {
+      // Strip the origin if present and pass only the path to the Hub tab.
+      const path = url.replace(/^https?:\/\/[^/]+/, '') || '/revision';
+      router.push({ pathname: '/learn', params: { path } } as never);
+    },
+    [router],
+  );
 
   // -- Smart Review (SR) state -----------------------------------------------
 
@@ -212,9 +224,7 @@ export default function StudyScreen() {
             {topic.hasQuiz && (
               <TouchableOpacity
                 style={[s.secondaryBtn, { borderColor: theme.primary }]}
-                onPress={() => {
-                  // TODO: implement quiz screen
-                }}
+                onPress={() => router.push('/quiz' as never)}
               >
                 <Ionicons name="help-circle-outline" size={20} color={theme.primary} />
                 <Text style={[s.secondaryBtnText, { color: theme.primary }]}>Take Quiz</Text>

@@ -111,6 +111,19 @@ function AppShell() {
             ),
           }}
         />
+        {/* Hub — exposes the full website inside the native shell so every
+            revision page, set-text guide, anthology, mock paper, and AI-marking
+            surface is one tap away. WebView keeps signed-in cookies and posts
+            auth handoffs back via __ENGLISH_HUB_NATIVE__. */}
+        <Tabs.Screen
+          name="learn"
+          options={{
+            title: 'Hub',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="library-outline" size={size} color={color} />
+            ),
+          }}
+        />
         <Tabs.Screen
           name="saved"
           options={{
@@ -131,7 +144,6 @@ function AppShell() {
         />
 
         {/* ---- Hidden routes (kept so expo-router doesn't error on existing files) ---- */}
-        <Tabs.Screen name="learn" options={{ href: null }} />
         <Tabs.Screen name="games" options={{ href: null }} />
         <Tabs.Screen name="account" options={{ href: null }} />
         <Tabs.Screen name="quiz" options={{ href: null }} />
