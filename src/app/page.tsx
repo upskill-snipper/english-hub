@@ -69,14 +69,17 @@ type Board = {
   discClass: string
 }
 
-// 02 May 2026 — hrefs use the canonical `/revision?setBoard=<id>` mechanism.
-// Middleware reads ?setBoard=, validates against BOARDS, sets the cookie, and
-// redirects to clean /revision. See business-docs/BOARD_NAVIGATION_MODEL.md.
+// 02 May 2026 — hrefs deep-link into each board's primary content surface
+// AND carry the canonical `?setBoard=<id>` query param. Middleware reads
+// setBoard, validates against BOARDS, sets the cookie, and 307-redirects
+// to the same pathname with the param stripped — so the user lands on
+// the page they clicked AND the board cookie is set in one round-trip.
+// See business-docs/BOARD_NAVIGATION_MODEL.md.
 const GCSE_BOARDS: Board[] = [
   {
     name: 'AQA',
     initials: 'AQA',
-    href: '/revision?setBoard=aqa',
+    href: '/revision/poetry/power-and-conflict?setBoard=aqa',
     blurb: 'Power &amp; Conflict, Love &amp; Relationships, Worlds &amp; Lives.',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
@@ -84,7 +87,7 @@ const GCSE_BOARDS: Board[] = [
   {
     name: 'Pearson Edexcel GCSE',
     initials: 'EDX',
-    href: '/revision?setBoard=edexcel',
+    href: '/revision/poetry/edexcel?setBoard=edexcel',
     blurb: 'Time &amp; Place, Conflict, Relationships anthology.',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
@@ -92,7 +95,7 @@ const GCSE_BOARDS: Board[] = [
   {
     name: 'OCR',
     initials: 'OCR',
-    href: '/revision?setBoard=ocr',
+    href: '/revision/poetry/ocr?setBoard=ocr',
     blurb: 'Love, Conflict, Power &amp; Natural World, Youth &amp; Age.',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
@@ -100,7 +103,7 @@ const GCSE_BOARDS: Board[] = [
   {
     name: 'WJEC Eduqas',
     initials: 'WJEC',
-    href: '/revision?setBoard=eduqas',
+    href: '/revision/poetry/eduqas?setBoard=eduqas',
     blurb: 'Eduqas anthology with annotated walkthroughs.',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
@@ -111,7 +114,7 @@ const IGCSE_BOARDS: Board[] = [
   {
     name: 'Cambridge IGCSE (CIE 0500 / 0990)',
     initials: 'CIE',
-    href: '/revision?setBoard=cambridge-0500',
+    href: '/igcse/cambridge?setBoard=cambridge-0500',
     blurb: '0500 and 0990 &mdash; Reading, Composition, model answers.',
     level: 'igcse',
     discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
@@ -119,7 +122,7 @@ const IGCSE_BOARDS: Board[] = [
   {
     name: 'Pearson Edexcel IGCSE Literature (4ET1)',
     initials: 'iEDX-Lit',
-    href: '/revision?setBoard=edexcel-igcse',
+    href: '/igcse/edexcel?setBoard=edexcel-igcse',
     blurb: 'Drama, Prose, Shakespeare, Unseen Poetry.',
     level: 'igcse',
     discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
@@ -127,7 +130,7 @@ const IGCSE_BOARDS: Board[] = [
   {
     name: 'Pearson Edexcel IGCSE Language A (4EA1)',
     initials: 'iEDX-Lang',
-    href: '/revision?setBoard=edexcel-igcse-lang',
+    href: '/igcse/edexcel-lang?setBoard=edexcel-igcse-lang',
     blurb: 'Anthology, non-fiction, transactional writing.',
     level: 'igcse',
     discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
