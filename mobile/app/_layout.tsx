@@ -4,6 +4,19 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useEffect, useState, useCallback } from 'react';
 import * as Haptics from 'expo-haptics';
+import {
+  useFonts as useNewsreader,
+  Newsreader_400Regular,
+  Newsreader_500Medium,
+  Newsreader_600SemiBold,
+  Newsreader_700Bold,
+} from '@expo-google-fonts/newsreader';
+import {
+  Geist_400Regular,
+  Geist_500Medium,
+  Geist_600SemiBold,
+  Geist_700Bold,
+} from '@expo-google-fonts/geist';
 import { ThemeProvider, useTheme } from '../lib/theme';
 import { registerForPushNotificationsAsync } from '../lib/notifications';
 import { getItem, setItem } from '../lib/storage';
@@ -25,6 +38,26 @@ type OnboardingStep = 'loading' | 'welcome' | 'profile' | 'done';
 
 function AppShell() {
   const { theme, isDark } = useTheme();
+
+  // 02 May 2026 — load brand fonts.
+  //   Newsreader (serif) — every heading, the streak count, the paywall
+  //                        title; matches the website's `font-serif` token.
+  //   Geist (sans)        — body copy, buttons, tab labels; matches the
+  //                        website's `font-sans` token.
+  // We load both via @expo-google-fonts so the .ttf files ship inside the
+  // app bundle (no runtime download, no FOUT). useFonts returns
+  // `[loaded, error]` — we block render until loaded so we don't flash
+  // the SF/Roboto fallback on first paint.
+  const [fontsLoaded] = useNewsreader({
+    Newsreader_400Regular,
+    Newsreader_500Medium,
+    Newsreader_600SemiBold,
+    Newsreader_700Bold,
+    Geist_400Regular,
+    Geist_500Medium,
+    Geist_600SemiBold,
+    Geist_700Bold,
+  });
 
   const [step, setStep] = useState<OnboardingStep>('loading');
 
@@ -60,8 +93,10 @@ function AppShell() {
     setStep('done');
   }, []);
 
-  // Show nothing while checking AsyncStorage
-  if (step === 'loading') return null;
+  // Show nothing while checking AsyncStorage or while brand fonts load.
+  // Blocking until fonts are ready avoids the flash-of-fallback-font that
+  // makes the app feel cheap on cold launch.
+  if (step === 'loading' || !fontsLoaded) return null;
 
   // Onboarding: welcome carousel
   if (step === 'welcome') {
