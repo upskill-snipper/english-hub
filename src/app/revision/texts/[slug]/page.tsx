@@ -32,11 +32,7 @@ export function generateStaticParams() {
 
 type Params = { slug: string }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<Params>
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params
   const text = getSetText(slug)
   if (!text) {
@@ -111,6 +107,38 @@ const REVISION_NOTES_SLUG_MAP: Record<string, string> = {
   'the-merchant-of-venice': 'merchant-of-venice',
 }
 
+// Set of resolved revision-notes slugs that actually have a /resources/
+// revision-notes/<slug>/page.tsx file. The "Open revision notes" Card is
+// only rendered when the resolved slug is in this set. Without this gate,
+// texts like To Kill a Mockingbird and Things Fall Apart linked to a 404
+// — surfaced by the iOS WebView during ship-day TestFlight testing.
+const REVISION_NOTES_AVAILABLE: ReadonlySet<string> = new Set([
+  'animal-farm',
+  'blood-brothers',
+  'christmas-carol',
+  'frankenstein',
+  'great-expectations',
+  'inspector-calls',
+  'jane-eyre',
+  'jekyll-and-hyde',
+  'lord-of-the-flies',
+  'macbeth',
+  'merchant-of-venice',
+  'much-ado',
+  'much-ado-about-nothing',
+  'never-let-me-go',
+  'of-mice-and-men',
+  'othello',
+  'pride-and-prejudice',
+  'romeo-and-juliet',
+  'sign-of-four',
+  'silas-marner',
+  'the-crucible',
+  'the-tempest',
+  'view-from-the-bridge',
+  'woman-in-black',
+])
+
 // Texts that have a dedicated long-form analysis section under /analysis/[text]
 const ANALYSIS_SLUG_MAP: Record<string, string> = {
   'jekyll-and-hyde': 'jekyll-hyde',
@@ -128,11 +156,7 @@ const IGCSE_PROSE_SLUG_MAP: Record<string, string> = {
 
 // ─── Page ────────────────────────────────────────────────────────────────────
 
-export default async function TextStudyGuidePage({
-  params,
-}: {
-  params: Promise<Params>
-}) {
+export default async function TextStudyGuidePage({ params }: { params: Promise<Params> }) {
   const { slug } = await params
 
   // ── Board guard (STRICT) ────────────────────────────────────────────
@@ -152,6 +176,7 @@ export default async function TextStudyGuidePage({
   const CategoryIcon = category.icon
 
   const revisionNotesSlug = REVISION_NOTES_SLUG_MAP[text.slug] ?? text.slug
+  const hasRevisionNotes = REVISION_NOTES_AVAILABLE.has(revisionNotesSlug)
   const analysisSlug = ANALYSIS_SLUG_MAP[text.slug]
   const igcseProseSlug = IGCSE_PROSE_SLUG_MAP[text.slug]
 
@@ -190,9 +215,7 @@ export default async function TextStudyGuidePage({
           <p className="mt-2 text-body-lg text-muted-foreground">by {text.author}</p>
 
           {text.description && (
-            <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-              {text.description}
-            </p>
+            <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">{text.description}</p>
           )}
 
           {text.keyThemes && text.keyThemes.length > 0 && (
@@ -215,9 +238,7 @@ export default async function TextStudyGuidePage({
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-blue-700" />
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">
-              Study Resources
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">Study Resources</h2>
             <p className="text-body-sm text-muted-foreground">
               Everything we have on {text.title} in one place.
             </p>
@@ -225,32 +246,32 @@ export default async function TextStudyGuidePage({
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <Card className="group transition-all hover:border-border hover:shadow-card-hover">
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
-                  <FileText className="size-5 text-blue-700" />
+          {hasRevisionNotes && (
+            <Card className="group transition-all hover:border-border hover:shadow-card-hover">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
+                    <FileText className="size-5 text-blue-700" />
+                  </div>
+                  <CardTitle className="text-heading-md font-heading">Revision notes</CardTitle>
                 </div>
-                <CardTitle className="text-heading-md font-heading">
-                  Revision notes
-                </CardTitle>
-              </div>
-              <CardDescription className="mt-2">
-                Concise revision notes covering plot, characters, context and themes.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full"
-                render={<Link href={`/resources/revision-notes/${revisionNotesSlug}`} />}
-              >
-                Open revision notes
-                <ArrowRight className="size-3.5" />
-              </Button>
-            </CardContent>
-          </Card>
+                <CardDescription className="mt-2">
+                  Concise revision notes covering plot, characters, context and themes.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  render={<Link href={`/resources/revision-notes/${revisionNotesSlug}`} />}
+                >
+                  Open revision notes
+                  <ArrowRight className="size-3.5" />
+                </Button>
+              </CardContent>
+            </Card>
+          )}
 
           {analysisSlug && (
             <Card className="group transition-all hover:border-border hover:shadow-card-hover">
@@ -259,9 +280,7 @@ export default async function TextStudyGuidePage({
                   <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
                     <Quote className="size-5 text-violet-700" />
                   </div>
-                  <CardTitle className="text-heading-md font-heading">
-                    In-depth analysis
-                  </CardTitle>
+                  <CardTitle className="text-heading-md font-heading">In-depth analysis</CardTitle>
                 </div>
                 <CardDescription className="mt-2">
                   Long-form essays and quote-by-quote analysis written for top grades.
@@ -316,9 +335,7 @@ export default async function TextStudyGuidePage({
                 <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
                   <Lightbulb className="size-5 text-clay-600" />
                 </div>
-                <CardTitle className="text-heading-md font-heading">
-                  Active recall quiz
-                </CardTitle>
+                <CardTitle className="text-heading-md font-heading">Active recall quiz</CardTitle>
               </div>
               <CardDescription className="mt-2">
                 Test your knowledge with quote-completion and theme-matching questions.
@@ -351,15 +368,12 @@ export default async function TextStudyGuidePage({
         <Card>
           <CardContent className="p-6 sm:p-8">
             <p className="mb-5 max-w-2xl text-body-sm text-muted-foreground">
-              Follow these steps for high-impact revision. The best students do not just re-read
-              the text — they actively engage with quotation, structure and writer&apos;s
-              intentions.
+              Follow these steps for high-impact revision. The best students do not just re-read the
+              text — they actively engage with quotation, structure and writer&apos;s intentions.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">
-                  Memorise short quotations
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">Memorise short quotations</h3>
                 <p className="text-xs text-muted-foreground">
                   Aim for 10–15 short, versatile quotations. Choose ones that link to multiple
                   themes and contain analysable language techniques.
@@ -370,26 +384,22 @@ export default async function TextStudyGuidePage({
                   Track character development
                 </h3>
                 <p className="text-xs text-muted-foreground">
-                  Note how each major character changes from start to finish, and what those
-                  changes reveal about the writer&apos;s message.
+                  Note how each major character changes from start to finish, and what those changes
+                  reveal about the writer&apos;s message.
                 </p>
               </div>
               <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">
-                  Connect themes to context
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">Connect themes to context</h3>
                 <p className="text-xs text-muted-foreground">
                   Always explain why the writer made specific choices. Link themes to the
                   historical, social or biographical context of the text.
                 </p>
               </div>
               <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">
-                  Plan timed essays
-                </h3>
+                <h3 className="text-sm font-semibold text-foreground">Plan timed essays</h3>
                 <p className="text-xs text-muted-foreground">
-                  Practise plans under timed conditions. Aim for three clear paragraphs, each
-                  with a quotation, analysis and contextual link.
+                  Practise plans under timed conditions. Aim for three clear paragraphs, each with a
+                  quotation, analysis and contextual link.
                 </p>
               </div>
             </div>
@@ -399,11 +409,7 @@ export default async function TextStudyGuidePage({
 
       {/* ── Back to Hub ────────────────────────────────────────────── */}
       <div className="flex justify-center">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/revision/texts" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/revision/texts" />}>
           <ArrowLeft className="size-3.5" />
           Back to all set texts
         </Button>
