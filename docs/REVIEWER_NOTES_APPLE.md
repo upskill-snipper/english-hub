@@ -15,7 +15,7 @@ The English Hub requires a sign-in to access most content. Use the
 demo account below to evaluate every paid feature.
 
 ```
-Email:    apple-reviewer@upskillenergy.com
+Email:    reviewer+apple@theenglishhub.app
 Password: [REDACTED — set in App Store Connect form, not this file]
 ```
 

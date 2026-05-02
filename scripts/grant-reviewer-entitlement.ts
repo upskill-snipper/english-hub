@@ -52,7 +52,11 @@ import {
 
 const prisma = new PrismaClient()
 
-const REVIEWER_EMAIL = 'apple-reviewer@upskillenergy.com'
+// Live reviewer auth user (336b7666-...) was created on 2026-04-23 with
+// the email below; the previously-aspirational `apple-reviewer@upskillenergy.com`
+// was never provisioned in Supabase Auth. Aligning the script + ASC demo
+// account fields to the actual auth user.
+const REVIEWER_EMAIL = 'reviewer+apple@theenglishhub.app'
 const REVIEWER_FIRST_NAME = 'Apple'
 const REVIEWER_LAST_NAME = 'Reviewer'
 // Apple's RevenueCat product id for Teacher Annual — matches the catalogue

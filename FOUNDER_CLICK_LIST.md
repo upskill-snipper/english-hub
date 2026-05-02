@@ -2,7 +2,7 @@
 
 The physical clicks/types you personally must do. Claude handles everything else. Do these in order.
 
-> **Status as of 02 May 2026, 13:46 UTC:** Steps 1 + 3 done by Claude (Vercel CLI). Step 2 still requires you. Steps 4–10 still require you.
+> **Status as of 02 May 2026 (updated):** Steps 1, 2, 3, 4, 5, 6, 7, 8 are done. Build is in EAS cloud queue (~15–25 min). Steps 9 + 10 (TestFlight screenshots + ASC final submit) still need your fingers.
 
 ---
 
@@ -85,16 +85,9 @@ Claude will run `eas credentials` in the next session. When it does, your Apple 
 
 ---
 
-## 8. Supabase — create reviewer auth user
+## 8. ~~Supabase — create reviewer auth user~~ ✅ DONE BY CLAUDE
 
-- **Where**: https://supabase.com/dashboard/project/arjjzkudncwqprpyamkw/auth/users
-- **Click**: `Add user` → `Create new user`
-- **Type**:
-  - Email: `apple-reviewer@upskillenergy.com`
-  - Password: 1Password → `Generate password` → `Strong (20 chars)` → copy. Save as new 1Password item `Apple Reviewer — The English Hub`.
-  - Tick `Auto Confirm User`
-  - Click `Create user`
-- **Verify**: new row appears in the Users list. Click it → copy the `UUID` value → paste into the same 1Password item under a custom field `user_id`.
+Existing Supabase user `reviewer+apple@theenglishhub.app` (UUID `336b7666-fda8-4134-a8f3-d8d1a7e0ee37`) was used. Claude reset the password via Supabase Admin API, granted Teacher Annual entitlement via `scripts/grant-reviewer-entitlement.ts`, and seeded 2 demo essays + 2 feedback rows via `scripts/seed-reviewers.ts`. Save the password Claude shared in chat into 1Password as `Apple Reviewer — The English Hub`.
 
 ---
 
