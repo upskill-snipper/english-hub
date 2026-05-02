@@ -1,0 +1,22 @@
+diff --git a/node_modules/expo-device/ios/UIDevice.swift b/node_modules/expo-device/ios/UIDevice.swift
+index 7d58ee8..2b73cca 100644
+--- a/node_modules/expo-device/ios/UIDevice.swift
++++ b/node_modules/expo-device/ios/UIDevice.swift
+@@ -184,8 +184,16 @@ public extension UIDevice {
+   // swiftlint:enable closure_body_length
+ 
+   // Credit: https://github.com/developerinsider/isJailBroken/blob/master/IsJailBroken/Extension/UIDevice%2BJailBroken.swift
++  // Patched 2026-05-02: Xcode 26 dropped Swift's auto-import of TARGET_OS_SIMULATOR.
++  // Apple's recommended Swift idiom is the targetEnvironment(simulator) compile-time
++  // predicate, which is what expo-device@7+ ships. Captured via patch-package so EAS
++  // builds re-apply on every install. See expo/expo issues #37713 / #39947.
+   var isSimulator: Bool {
+-    return TARGET_OS_SIMULATOR != 0
++    #if targetEnvironment(simulator)
++    return true
++    #else
++    return false
++    #endif
+   }
+ 
+   var isJailbroken: Bool {
