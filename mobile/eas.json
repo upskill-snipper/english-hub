@@ -44,6 +44,7 @@
       "channel": "production",
       "autoIncrement": true,
       "ios": {
+        "image": "latest",
         "resourceClass": "m-medium"
       },
       "android": {
@@ -57,7 +58,7 @@
       "ios": {
         "bundleIdentifier": "app.theenglishhub.mobile",
         "ascAppId": "6765644554",
-        "appleId": "cj@upskillenergy.com",
+        "appleId": "calumjohnson@hotmail.com",
         "appleTeamId": "645XBAPVHK",
         "language": "en-GB"
       },

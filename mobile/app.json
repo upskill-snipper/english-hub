@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#1e40af"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "app.theenglishhub.mobile",
@@ -21,7 +23,9 @@
         "NSUserTrackingUsageDescription": "This allows The English Hub to deliver a personalised learning experience.",
         "ITSAppUsesNonExemptEncryption": false
       },
-      "associatedDomains": ["applinks:theenglishhub.app"]
+      "associatedDomains": [
+        "applinks:theenglishhub.app"
+      ]
     },
     "android": {
       "package": "app.theenglishhub.mobile",
@@ -30,7 +34,9 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1e40af"
       },
-      "permissions": ["NOTIFICATIONS"],
+      "permissions": [
+        "NOTIFICATIONS"
+      ],
       "intentFilters": [
         {
           "action": "VIEW",
@@ -41,7 +47,10 @@
               "host": "theenglishhub.app"
             }
           ],
-          "category": ["BROWSABLE", "DEFAULT"]
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
       ]
     },
@@ -63,12 +72,15 @@
       "typedRoutes": true
     },
     "extra": {
-      "eas": {
-        "projectId": "REPLACE_WITH_EAS_PROJECT_ID"
-      },
       "webUrl": "https://theenglishhub.app",
       "revenuecatIosApiKey": "appl_zQIYhRvQeIbiNRmjjpMTUphLgxzMay",
-      "revenuecatAndroidApiKey": ""
+      "revenuecatAndroidApiKey": "",
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "520ebefa-db24-4f26-8bd8-d343e41fa674"
+      }
     },
     "owner": "theenglishhub"
   }
