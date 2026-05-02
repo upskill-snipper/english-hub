@@ -58,29 +58,34 @@ export const useBoardStore = create<State & Actions>()(
       onRehydrateStorage: () => (state) => {
         if (!state) return
 
-        // localStorage → cookie repair (one-way). If the store has a board
-        // but the cookie is missing (e.g. user cleared cookies but kept
-        // localStorage, or the cookie expired), re-write the cookie so
-        // middleware + server components see the same value as the client store.
-        if (state.board && !readBoardCookie()) {
-          writeBoardCookie(state.board)
-        }
-
-        // 02 May 2026 — cookie → store bridge. When middleware writes the
-        // cookie via the ?setBoard=<id> mechanism, the Zustand store stays
-        // empty until the user explicitly calls setBoard(). Without this
-        // bridge, components reading useBoard() would show "no board" while
-        // the server-rendered content shows the new board (the "different
-        // board without my knowledge" symptom). Validate against BOARDS to
-        // defend against stale/invalid cookie values.
-        if (!state.board) {
-          const cookieValue = readBoardCookie()
-          if (cookieValue) {
-            const validIds = BOARDS.map((b) => b.id) as readonly string[]
-            if (validIds.includes(cookieValue)) {
-              state.board = cookieValue as ExamBoard
-            }
+        // 02 May 2026 — COOKIE IS AUTHORITATIVE.
+        //
+        // The cookie is the single source of truth for the user's current
+        // board. Middleware writes it on every `?setBoard=<id>` redirect
+        // (the homepage cards, BoardSwitcher, BoardSelectorSection); the
+        // server reader `getServerBoard()` reads it for SSR. localStorage
+        // is purely a client-side cache for fast first paint and survives
+        // the cookie expiring.
+        //
+        // Rule: if the cookie has a valid board, the store ALWAYS adopts it
+        // (overriding any stale localStorage value). The previous
+        // `if (!state.board)` gate was a real bug — once a user had a board
+        // in localStorage (e.g. from earlier testing), every later cookie
+        // change via setBoard was silently ignored, the header chip stayed
+        // on the old board, and clicking "AQA" still rendered IGCSE
+        // content. Reported in the wild on 2026-05-02 ship day.
+        const validIds = BOARDS.map((b) => b.id) as readonly string[]
+        const cookieValue = readBoardCookie()
+        if (cookieValue && validIds.includes(cookieValue)) {
+          // Cookie wins. Apply if different from cached store value.
+          if (cookieValue !== state.board) {
+            state.board = cookieValue as ExamBoard
           }
+        } else if (state.board && validIds.includes(state.board)) {
+          // No cookie (cleared / expired / private window) but we have a
+          // valid cached board — repair the cookie so middleware + server
+          // components see the same value as the client store.
+          writeBoardCookie(state.board)
         }
 
         state._setHydrated()
