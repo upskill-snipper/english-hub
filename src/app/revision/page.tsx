@@ -59,6 +59,40 @@ interface RevisionSection {
   tag?: string
   /** Boards this section is shown to. Omit to show for all. */
   boards?: ExamBoard[]
+  /**
+   * Which exam paper(s) this section prepares the student for.
+   *   ['lit']        → Literature paper only (Shakespeare, anthology poetry, novels)
+   *   ['lang']       → Language paper only (reading comprehension, creative writing, SPaG)
+   *   ['lit', 'lang']→ Both — cross-paper skill (essay technique, mock papers, study plan)
+   *   undefined      → Generic / not paper-specific (e.g. flashcards, progress)
+   *
+   * Rendered as a badge next to each card so students don't waste time on the
+   * wrong paper. GCSE Lit-only and Lang-only candidates exist; both-papers is the
+   * default but can't be assumed.
+   */
+  papers?: ReadonlyArray<'lit' | 'lang'>
+}
+
+/** Human-readable label for the paper badge. Returns null for generic sections. */
+function paperLabel(papers: RevisionSection['papers']): string | null {
+  if (!papers || papers.length === 0) return null
+  const hasLit = papers.includes('lit')
+  const hasLang = papers.includes('lang')
+  if (hasLit && hasLang) return 'Lit + Lang'
+  if (hasLit) return 'Literature'
+  if (hasLang) return 'Language'
+  return null
+}
+
+/** Tailwind classes for the paper badge — colour-coded so eyes can scan. */
+function paperBadgeClasses(papers: RevisionSection['papers']): string {
+  if (!papers || papers.length === 0) return ''
+  const hasLit = papers.includes('lit')
+  const hasLang = papers.includes('lang')
+  if (hasLit && hasLang) return 'bg-amber-500/10 text-amber-300 ring-amber-500/30'
+  if (hasLit) return 'bg-blue-500/10 text-blue-300 ring-blue-500/30'
+  if (hasLang) return 'bg-violet-500/10 text-violet-300 ring-violet-500/30'
+  return ''
 }
 
 const ALL_SECTIONS: RevisionSection[] = [
@@ -74,6 +108,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     tag: 'Popular',
     // All boards study poetry EXCEPT Cambridge (0500/0990) which are language only
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
+    papers: ['lit'],
   },
   {
     title: 'Set Texts',
@@ -85,6 +120,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     bgColour: 'bg-blue-500/10',
     stats: '20+ texts',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
+    papers: ['lit'],
   },
   {
     title: 'Language Skills',
@@ -95,6 +131,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
     stats: '4 skill areas',
+    papers: ['lang'],
   },
   {
     title: 'Flashcards',
@@ -116,6 +153,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
     stats: '12 guides',
+    papers: ['lit', 'lang'],
   },
   {
     title: 'Grade Targets',
@@ -126,6 +164,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-cyan-400',
     bgColour: 'bg-cyan-500/10',
     stats: 'Grades 1-9',
+    papers: ['lit', 'lang'],
   },
   {
     title: 'Quick Quizzes',
@@ -136,6 +175,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-clay-600',
     bgColour: 'bg-orange-500/10',
     stats: '100+ quizzes',
+    papers: ['lit', 'lang'],
   },
   {
     title: 'Reading Assessment',
@@ -146,6 +186,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
     stats: 'Diagnostic',
+    papers: ['lang'],
   },
   {
     title: 'Mock Exams',
@@ -156,6 +197,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
     stats: 'Full papers',
+    papers: ['lit', 'lang'],
   },
   {
     title: 'Practice',
@@ -166,6 +208,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
     stats: 'Daily drills',
+    papers: ['lit', 'lang'],
   },
   {
     title: 'Games',
@@ -195,6 +238,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
     stats: '20+ texts',
+    papers: ['lit'],
   },
   {
     title: 'Model Answers',
@@ -205,6 +249,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
     stats: 'Grade 7-9',
+    papers: ['lit', 'lang'],
   },
   {
     title: 'Comparison Essay Guide',
@@ -216,6 +261,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     bgColour: 'bg-violet-500/10',
     stats: 'Structure + stems',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
+    papers: ['lit'],
   },
   {
     title: 'Vocabulary',
@@ -226,6 +272,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-rose-400',
     bgColour: 'bg-rose-500/10',
     stats: '1000+ words',
+    papers: ['lang'],
   },
   {
     title: 'Writing Skills',
@@ -236,6 +283,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     colour: 'text-cyan-400',
     bgColour: 'bg-cyan-500/10',
     stats: '4 skill areas',
+    papers: ['lang'],
   },
   {
     title: 'Common Errors',
@@ -247,6 +295,7 @@ const ALL_SECTIONS: RevisionSection[] = [
     bgColour: 'bg-rose-500/10',
     stats: '30 verified flags',
     tag: 'New',
+    papers: ['lit'],
   },
 ]
 
@@ -529,7 +578,17 @@ export default async function RevisionHubPage() {
                   <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
                     {section.title}
                   </h3>
-                  <span className="text-caption text-muted-foreground">{section.stats}</span>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span className="text-caption text-muted-foreground">{section.stats}</span>
+                    {paperLabel(section.papers) && (
+                      <span
+                        className={`inline-flex items-center rounded-full px-2 py-px text-[0.65rem] font-mono uppercase tracking-wider ring-1 ${paperBadgeClasses(section.papers)}`}
+                        aria-label={`Prepares for ${paperLabel(section.papers)}`}
+                      >
+                        {paperLabel(section.papers)}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -623,7 +682,17 @@ export default async function RevisionHubPage() {
                   <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
                     {section.title}
                   </h3>
-                  <span className="text-caption text-muted-foreground">{section.stats}</span>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span className="text-caption text-muted-foreground">{section.stats}</span>
+                    {paperLabel(section.papers) && (
+                      <span
+                        className={`inline-flex items-center rounded-full px-2 py-px text-[0.65rem] font-mono uppercase tracking-wider ring-1 ${paperBadgeClasses(section.papers)}`}
+                        aria-label={`Prepares for ${paperLabel(section.papers)}`}
+                      >
+                        {paperLabel(section.papers)}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
 
