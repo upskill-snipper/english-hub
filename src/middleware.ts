@@ -2,6 +2,7 @@ import { updateSession } from '@/lib/supabase/middleware'
 import { applyAffiliateTracking } from '@/middleware-affiliate'
 import { NextResponse, type NextRequest } from 'next/server'
 import { computeJsonLdHashes, extractAnalysisSlugKey } from '@/lib/seo/json-ld-hashes'
+import { BOARDS } from '@/lib/board/board-config'
 // Note: the previous `import crypto from 'crypto'` worked on Vercel but
 // trips an edge-runtime warning in dev. We use the Web Crypto API
 // (`globalThis.crypto.randomUUID()` / `crypto.subtle.digest`) instead —
@@ -256,25 +257,6 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   ].join('; ')
 }
 
-// Board-specific landing URLs redirect to /revision with the board cookie
-// set, so every student lands on the unified "Your <Board> Hub" layout
-// regardless of which route tree they entered through. The board-specific
-// deep-content pages (e.g. /igcse/edexcel/drama) stay intact — only the
-// LANDING pages redirect.
-const BOARD_LANDING_REDIRECTS: Record<string, string> = {
-  '/a-level/aqa': 'aqa-a-level',
-  '/a-level/edexcel': 'edexcel-a-level',
-  '/a-level/ocr': 'ocr-a-level',
-  '/a-level/eduqas': 'eduqas-a-level',
-  '/igcse/edexcel': 'edexcel-igcse',
-  '/igcse/cambridge/0500': 'cambridge-0500',
-  '/igcse/cambridge/0990': 'cambridge-0990',
-  '/igcse/cambridge/0475': 'cambridge-0475',
-  '/ks3': 'ks3',
-  '/ial': 'ial-edexcel',
-  '/ial/edexcel': 'ial-edexcel',
-}
-
 // `/toolkit` is retired — every toolkit feature is surfaced from the
 // unified Your Hub at `/revision`. Landing on any toolkit URL sends the
 // user to the hub so the nav + analytics render consistently. Deep-link
@@ -290,38 +272,50 @@ export async function middleware(request: NextRequest) {
   // node:crypto / Buffer imports which the edge runtime flags.
   const nonce = btoa(globalThis.crypto.randomUUID())
 
-  // ── Unified hub redirect — board landing → /revision with cookie set.
+  // ── Explicit board choice via `?setBoard=<id>` ─────────────────────
   //
-  // 28 Apr 2026 — narrowed. Previously this fired unconditionally, so a
-  // user with `english-hub-board=aqa` clicking the homepage's IGCSE
-  // Edexcel card was silently switched to `edexcel-igcse` AND bounced
-  // to /revision, rendering whichever hub their previous board mapped
-  // to. That manifested as "Clicking GCSE Pearson takes me to IGCSE Lit"
-  // (the second-order effect once the cookie had been corrupted).
+  // 02 May 2026 — see business-docs/BOARD_NAVIGATION_MODEL.md.
   //
-  // The redirect is now first-visit only: a user with no board cookie
-  // arriving on a landing URL gets the cookie set and is sent to the
-  // unified hub (the original "Your <Board> Hub" UX). A returning user
-  // with any board cookie is allowed to see the page they explicitly
-  // requested. Page-level guards (e.g. requireIgcseBoard) used to bounce
-  // mismatched cookies away from board pages, but those have also been
-  // softened — the homepage now treats every board card as an explicit
-  // user choice that should always render.
-  const boardForLanding = BOARD_LANDING_REDIRECTS[pathname]
-  if (boardForLanding) {
-    const existingCookie = request.cookies.get('english-hub-board')?.value
-    if (!existingCookie) {
-      const redirectUrl = new URL('/revision', request.url)
-      const response = NextResponse.redirect(redirectUrl)
-      response.cookies.set('english-hub-board', boardForLanding, {
+  // The cookie now reflects the user's currently-selected board, and is
+  // ONLY written on explicit board choices (homepage cards, board-select
+  // cards, BoardSwitcher menu, BoardSelectorSection wizard). Every such
+  // surface navigates to a URL carrying `?setBoard=<board-id>`; this
+  // handler validates the id against the canonical BOARDS list, sets
+  // the cookie, then redirects to the same URL with the param stripped.
+  //
+  // The previous `BOARD_LANDING_REDIRECTS` map (which silently set the
+  // cookie + bounced to /revision on first visit to /igcse/edexcel,
+  // /a-level/aqa, etc.) was removed. It produced two bugs:
+  //   1. First-visit deep links got rewritten to /revision, so the user
+  //      saw the unified hub instead of the page they clicked.
+  //   2. Six of the seven homepage cards bypassed the map entirely (they
+  //      pointed at content URLs, not landing URLs), so the cookie never
+  //      got written and the sidebar/footer fell out of sync with the
+  //      rendered page.
+  //
+  // Deep-link visits to /igcse/edexcel, /a-level/aqa, /ks3 etc. now
+  // render their pages directly. Cross-board mismatch (cookie says X,
+  // page renders Y) is handled by `<BoardMismatchBanner>` per page,
+  // not by the middleware.
+  const setBoardParam = request.nextUrl.searchParams.get('setBoard')
+  if (setBoardParam) {
+    const validBoardIds = BOARDS.map((b) => b.id) as readonly string[]
+    const cleanUrl = new URL(request.nextUrl)
+    cleanUrl.searchParams.delete('setBoard')
+    if (validBoardIds.includes(setBoardParam)) {
+      const response = NextResponse.redirect(cleanUrl)
+      response.cookies.set('english-hub-board', setBoardParam, {
         path: '/',
         maxAge: 60 * 60 * 24 * 365, // 1 year
         sameSite: 'lax',
       })
       return response
     }
-    // Returning user — fall through to the normal CSP/nonce pipeline so
-    // the page they clicked actually renders.
+    // Invalid board id — strip the param and continue without setting
+    // the cookie. Avoids leaking a bogus value into the user's storage
+    // while still cleaning the URL so it doesn't sit in their address
+    // bar / share links.
+    return NextResponse.redirect(cleanUrl)
   }
 
   // ── Retired-page redirect (e.g. /toolkit → /revision) ──────────────
@@ -332,8 +326,16 @@ export async function middleware(request: NextRequest) {
 
   // ── CSRF: Origin header validation for API mutations ─────────────
   if (pathname.startsWith('/api/') && request.method !== 'GET' && request.method !== 'HEAD') {
-    // Stripe webhooks come from Stripe servers — skip origin check
-    if (!pathname.startsWith('/api/stripe/webhook') && !pathname.startsWith('/api/cron/')) {
+    // Stripe + RevenueCat webhooks come from third-party servers — skip origin check.
+    // Both webhooks authenticate via their own bearer-token / signature mechanism
+    // (Stripe-Signature header, Authorization: Bearer for RC), so the same-origin
+    // attestation below would (correctly) reject them. Vercel cron jobs are also
+    // exempted because they originate inside Vercel's infrastructure.
+    if (
+      !pathname.startsWith('/api/stripe/webhook') &&
+      !pathname.startsWith('/api/revenuecat/webhook') &&
+      !pathname.startsWith('/api/cron/')
+    ) {
       const origin = request.headers.get('origin')
       const secFetchSite = request.headers.get('sec-fetch-site')
 
