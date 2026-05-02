@@ -1,20 +1,14 @@
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import SectionSkeleton from '@/components/home/SectionSkeleton'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
 
-/* ───────────────────── Below-the-fold sections (client, dynamic) ───────────────────── */
-
-const AnthologyPricing = dynamic(() => import('@/components/home/AnthologyPricing'), {
-  loading: () => <SectionSkeleton />,
-})
-
-const FinalCTA = dynamic(() => import('@/components/home/FinalCTA'), {
-  loading: () => <SectionSkeleton />,
-})
-
 /* ───────────────────── Main Page ───────────────────── */
-
+//
+// 02 May 2026 — homepage is now a single-purpose board picker. Marketing
+// sections (TryAFeature / AnthologyPricing / FinalCTA) were removed at
+// the founder's instruction so the homepage does one job: pick exam
+// board, land in your hub. Pricing + product copy live on dedicated
+// pages and are surfaced inside Your Hub (/revision) instead.
+//
 export default async function Home() {
   return (
     <main className="min-h-screen bg-background">
@@ -42,15 +36,6 @@ export default async function Home() {
         showHelpLink
         showDivider
       />
-
-      {/* 3. Try-a-feature row — three demo cards into the platform's strengths. */}
-      <TryAFeatureSection />
-
-      {/* 4. Pricing — folded in for visitors who scroll past the picker. */}
-      <AnthologyPricing />
-
-      {/* 5. Final CTA */}
-      <FinalCTA />
     </main>
   )
 }
@@ -69,17 +54,17 @@ type Board = {
   discClass: string
 }
 
-// 02 May 2026 — hrefs deep-link into each board's primary content surface
-// AND carry the canonical `?setBoard=<id>` query param. Middleware reads
-// setBoard, validates against BOARDS, sets the cookie, and 307-redirects
-// to the same pathname with the param stripped — so the user lands on
-// the page they clicked AND the board cookie is set in one round-trip.
-// See business-docs/BOARD_NAVIGATION_MODEL.md.
+// 02 May 2026 — every homepage card sends the user into their Your Hub
+// at /revision with the board cookie set. The middleware validates
+// `?setBoard=<id>` against BOARDS, writes the cookie, and 307-redirects
+// to clean /revision — which then renders the personalised hub
+// (Poetry, Set Texts, Mock Papers, Practice, Progress, etc.) keyed off
+// that cookie. See business-docs/BOARD_NAVIGATION_MODEL.md.
 const GCSE_BOARDS: Board[] = [
   {
     name: 'AQA',
     initials: 'AQA',
-    href: '/revision/poetry/power-and-conflict?setBoard=aqa',
+    href: '/revision?setBoard=aqa',
     blurb: 'Power &amp; Conflict, Love &amp; Relationships, Worlds &amp; Lives.',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
@@ -87,7 +72,7 @@ const GCSE_BOARDS: Board[] = [
   {
     name: 'Pearson Edexcel GCSE',
     initials: 'EDX',
-    href: '/revision/poetry/edexcel?setBoard=edexcel',
+    href: '/revision?setBoard=edexcel',
     blurb: 'Time &amp; Place, Conflict, Relationships anthology.',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
@@ -95,7 +80,7 @@ const GCSE_BOARDS: Board[] = [
   {
     name: 'OCR',
     initials: 'OCR',
-    href: '/revision/poetry/ocr?setBoard=ocr',
+    href: '/revision?setBoard=ocr',
     blurb: 'Love, Conflict, Power &amp; Natural World, Youth &amp; Age.',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
@@ -103,7 +88,7 @@ const GCSE_BOARDS: Board[] = [
   {
     name: 'WJEC Eduqas',
     initials: 'WJEC',
-    href: '/revision/poetry/eduqas?setBoard=eduqas',
+    href: '/revision?setBoard=eduqas',
     blurb: 'Eduqas anthology with annotated walkthroughs.',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
@@ -114,7 +99,7 @@ const IGCSE_BOARDS: Board[] = [
   {
     name: 'Cambridge IGCSE (CIE 0500 / 0990)',
     initials: 'CIE',
-    href: '/igcse/cambridge?setBoard=cambridge-0500',
+    href: '/revision?setBoard=cambridge-0500',
     blurb: '0500 and 0990 &mdash; Reading, Composition, model answers.',
     level: 'igcse',
     discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
@@ -122,7 +107,7 @@ const IGCSE_BOARDS: Board[] = [
   {
     name: 'Pearson Edexcel IGCSE Literature (4ET1)',
     initials: 'iEDX-Lit',
-    href: '/igcse/edexcel?setBoard=edexcel-igcse',
+    href: '/revision?setBoard=edexcel-igcse',
     blurb: 'Drama, Prose, Shakespeare, Unseen Poetry.',
     level: 'igcse',
     discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
@@ -130,7 +115,7 @@ const IGCSE_BOARDS: Board[] = [
   {
     name: 'Pearson Edexcel IGCSE Language A (4EA1)',
     initials: 'iEDX-Lang',
-    href: '/igcse/edexcel-lang?setBoard=edexcel-igcse-lang',
+    href: '/revision?setBoard=edexcel-igcse-lang',
     blurb: 'Anthology, non-fiction, transactional writing.',
     level: 'igcse',
     discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
@@ -251,83 +236,16 @@ function BoardPickerSection({
   )
 }
 
-/* ───────────────────── Try a feature (3 demo cards) ───────────────────── */
-
-type Feature = {
-  title: string
-  href: string
-  description: string
-  cta: string
-}
-
-const FEATURES: Feature[] = [
-  {
-    title: 'AI essay feedback',
-    href: '/marking/sample/macbeth',
-    description:
-      'See a real Macbeth response marked against the AQA AO rubric &mdash; AO1 / AO2 / AO5 strengths and weaknesses, in under a minute.',
-    cta: 'Try the sample',
-  },
-  {
-    title: 'Mock exam preview',
-    href: '/mock-exams',
-    description:
-      'Walk through a full mock paper the way pupils sit it &mdash; timed, AO-aligned, with grade 1&ndash;9 prediction at the end.',
-    cta: 'Open the mocks',
-  },
-  {
-    title: 'Build your study plan',
-    href: '/revision/study-plan',
-    description:
-      'Tell us your board and exam date. We&rsquo;ll draft a week-by-week plan against the specification you actually sit.',
-    cta: 'Build my plan',
-  },
-]
-
-function TryAFeatureSection() {
-  return (
-    <section
-      aria-labelledby="try-feature-heading"
-      className="bg-ink-950 pb-14 sm:pb-20 border-t border-cream-200/5"
-    >
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
-        <div className="text-center mb-10 sm:mb-12">
-          <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-clay-300 mb-3">
-            Try a feature
-          </p>
-          <h2
-            id="try-feature-heading"
-            className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
-          >
-            See the platform in action.
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
-            No login. No card. Three free uses of the premium features before the trial even starts.
-          </p>
-        </div>
-
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
-          {FEATURES.map((f) => (
-            <li key={f.title}>
-              <Link
-                href={f.href}
-                className="group flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-6 transition-all hover:border-clay-300/40 hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-clay-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
-              >
-                <h3 className="font-serif text-xl sm:text-2xl font-semibold text-cream-50 leading-tight">
-                  {f.title}
-                </h3>
-                <p
-                  className="text-sm sm:text-base text-cream-100/75 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: f.description }}
-                />
-                <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-clay-300 transition-colors group-hover:text-clay-200">
-                  {f.cta} <span aria-hidden="true">&rarr;</span>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  )
-}
+/*
+ * 02 May 2026 — TryAFeatureSection / FEATURES dataset removed.
+ *
+ * The board picker is the only thing the homepage does now. The 3 demo
+ * cards (AI feedback, mock papers, study plan) live inside Your Hub
+ * (/revision) where they are gated to the user's chosen exam board, so
+ * showing them on the unkeyed homepage was duplication that distracted
+ * from the single decision visitors are here to make: pick your board.
+ *
+ * AnthologyPricing + FinalCTA were similarly removed; pricing surfaces
+ * inside Your Hub on a per-board basis (different tiers per spec) and
+ * is also reachable directly via /pricing for ad-landers.
+ */
