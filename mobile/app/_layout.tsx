@@ -7,6 +7,8 @@ import * as Haptics from 'expo-haptics';
 import { ThemeProvider, useTheme } from '../lib/theme';
 import { registerForPushNotificationsAsync } from '../lib/notifications';
 import { getItem, setItem } from '../lib/storage';
+import { initPurchases, loginToRevenueCat } from '../lib/purchases';
+import { getUserId } from '../lib/auth';
 import ErrorBoundary from '../components/ErrorBoundary';
 import WelcomeScreen from '../components/onboarding/WelcomeScreen';
 import ProfileSetup from '../components/onboarding/ProfileSetup';
@@ -39,6 +41,14 @@ function AppShell() {
     registerForPushNotificationsAsync().catch((err) => {
       console.warn('Push notification registration failed:', err);
     });
+    // Configure RevenueCat once we know we're past onboarding. If a user
+    // is already signed in (returning user), alias the canonical Supabase
+    // id so prior-purchase entitlements resolve immediately.
+    (async () => {
+      await initPurchases();
+      const userId = await getUserId();
+      if (userId) await loginToRevenueCat(userId);
+    })();
   }, [step]);
 
   const handleTabPress = () => {
@@ -129,6 +139,7 @@ function AppShell() {
         <Tabs.Screen name="progress" options={{ href: null }} />
         <Tabs.Screen name="notes" options={{ href: null }} />
         <Tabs.Screen name="achievements" options={{ href: null }} />
+        <Tabs.Screen name="paywall" options={{ href: null }} />
       </Tabs>
     </>
   );

@@ -16,10 +16,17 @@ import {
   getNotificationsEnabled,
   setNotificationsEnabled,
 } from '../lib/notifications';
+import {
+  PREMIUM_ENTITLEMENT_ID,
+  hasPremiumEntitlement,
+  restorePurchases,
+} from '../lib/purchases';
 
 export default function AccountScreen() {
   const [signedIn, setSignedIn] = useState(false);
   const [notificationsOn, setNotificationsOn] = useState(false);
+  const [isPremium, setIsPremium] = useState(false);
+  const [restoring, setRestoring] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -27,8 +34,33 @@ export default function AccountScreen() {
       setSignedIn(!!token);
       const notif = await getNotificationsEnabled();
       setNotificationsOn(notif);
+      setIsPremium(await hasPremiumEntitlement());
     })();
   }, []);
+
+  const handleRestore = async () => {
+    setRestoring(true);
+    try {
+      const info = await restorePurchases();
+      const active =
+        info.entitlements.active[PREMIUM_ENTITLEMENT_ID] !== undefined;
+      setIsPremium(active);
+      Alert.alert(
+        active ? 'Subscription restored' : 'No active subscription',
+        active
+          ? 'Welcome back. Your premium access is active again.'
+          : 'We could not find an active subscription tied to this Apple ID. If you believe this is in error, contact support@theenglishhub.app.',
+      );
+    } catch (err: unknown) {
+      const error = err as { message?: string };
+      Alert.alert(
+        'Restore failed',
+        error?.message ?? 'Something went wrong. Please try again.',
+      );
+    } finally {
+      setRestoring(false);
+    }
+  };
 
   const handleSignOut = async () => {
     Alert.alert('Sign out', 'Are you sure you want to sign out?', [
@@ -64,6 +96,48 @@ export default function AccountScreen() {
             {signedIn ? 'Signed in' : 'Not signed in'}
           </Text>
         </View>
+
+        {/* Subscription block */}
+        {isPremium ? (
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Subscription</Text>
+            <Text style={styles.cardText}>
+              Premium is active. Manage or cancel via your Apple ID
+              subscriptions in iOS Settings.
+            </Text>
+            <TouchableOpacity
+              style={styles.linkRowInline}
+              onPress={() =>
+                openExternal('https://apps.apple.com/account/subscriptions')
+              }
+            >
+              <Text style={styles.linkText}>Manage on App Store</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <TouchableOpacity
+            style={styles.upgradeCard}
+            onPress={() => router.push('/paywall' as never)}
+            accessibilityRole="button"
+            accessibilityLabel="Upgrade to The English Hub Premium"
+          >
+            <Text style={styles.upgradeTitle}>Upgrade to Premium</Text>
+            <Text style={styles.upgradeText}>
+              Unlimited AI marking, every mock paper, every set text.
+              7-day free trial.
+            </Text>
+          </TouchableOpacity>
+        )}
+
+        <TouchableOpacity
+          style={styles.linkRow}
+          onPress={handleRestore}
+          disabled={restoring}
+        >
+          <Text style={styles.linkText}>
+            {restoring ? 'Restoring purchases…' : 'Restore purchases'}
+          </Text>
+        </TouchableOpacity>
 
         <View style={styles.card}>
           <View style={styles.row}>
@@ -138,7 +212,27 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#e5e7eb',
   },
+  linkRowInline: {
+    paddingTop: 12,
+  },
   linkText: { fontSize: 16, color: '#1e40af', fontWeight: '500' },
+  upgradeCard: {
+    backgroundColor: '#1e40af',
+    padding: 18,
+    borderRadius: 12,
+    marginBottom: 12,
+  },
+  upgradeTitle: {
+    color: '#ffffff',
+    fontSize: 18,
+    fontWeight: '700',
+    marginBottom: 4,
+  },
+  upgradeText: {
+    color: '#dbeafe',
+    fontSize: 14,
+    lineHeight: 20,
+  },
   signOut: {
     marginTop: 24,
     padding: 16,

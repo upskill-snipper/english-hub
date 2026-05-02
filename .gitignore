@@ -35,3 +35,10 @@ docs-word/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Apple / Google credentials (NEVER commit)
+secrets/
+*.p8
+*.p12
+*.mobileprovision
+google-play-service-account.json

@@ -1,7 +1,8 @@
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { WebView, WebViewMessageEvent } from 'react-native-webview';
+import { WebView } from 'react-native-webview';
+import { createWebViewMessageHandler } from '../lib/webview-bridge';
 
 const LEARN_URL = 'https://theenglishhub.app/revision';
 
@@ -26,16 +27,9 @@ const BRIDGE_JS = `
 export default function LearnScreen() {
   const webViewRef = useRef<WebView>(null);
 
-  const handleMessage = (event: WebViewMessageEvent) => {
-    // Placeholder native-to-web bridge. Parse and dispatch to handlers as the
-    // web app grows. Intentionally permissive — never trust message contents.
-    try {
-      const msg = JSON.parse(event.nativeEvent.data);
-      if (__DEV__) console.log('[learn] bridge message', msg);
-    } catch {
-      /* ignore malformed payloads */
-    }
-  };
+  // Wire the WebView ↔ native bridge. `auth` and `logout` cascade to
+  // SecureStore + RevenueCat via `lib/auth.ts` and `lib/purchases.ts`.
+  const handleMessage = useMemo(() => createWebViewMessageHandler(), []);
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
