@@ -60,11 +60,16 @@ interface PromoRule {
 
 const HOUSE_PROMO_ALLOWLIST: Readonly<Record<string, PromoRule>> = Object.freeze({
   [PRICING.AFFILIATE_PROMO_CODE]: {
+    // Both Student Annual and Teacher Annual qualify for the same flat
+    // £9.99 discount — STUDENT_ANNUAL_SAVINGS and TEACHER_ANNUAL_SAVINGS
+    // are kept identical in pricing.ts so this single value covers both
+    // cases for display purposes. The actual per-product final price is
+    // resolved by /api/promo/redeem at redemption time.
     discountPennies: Math.round(PRICING.STUDENT_ANNUAL_SAVINGS * 100),
-    // Product ID is resolved via the server-side STRIPE_PRICE_* env var on
-    // the redeem route. Here we expose a stable identifier that the redeem
-    // page can forward unchanged.
-    productIds: ['student_annual'],
+    // Product IDs are stable identifiers the redeem page forwards
+    // unchanged. The server-side /api/promo/redeem maps each to its
+    // own STRIPE_PRICE_* env var.
+    productIds: ['student_annual', 'teacher_annual'],
   },
 })
 

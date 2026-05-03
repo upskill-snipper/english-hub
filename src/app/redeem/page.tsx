@@ -218,14 +218,12 @@ export default function RedeemPage() {
       )}
 
       <Card className="space-y-5 p-6">
-        {/* Annual-only messaging — clarifies which plan the code applies to before the user types. */}
+        {/* Annual-only messaging — clarifies which plans the code applies to before the user types. */}
         <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
-          <p className="font-semibold">
-            Affiliate codes apply to Student Annual subscriptions only.
-          </p>
+          <p className="font-semibold">Affiliate codes apply to annual subscriptions only.</p>
           <p className="mt-1 text-amber-800">
-            Other plans (Student Monthly, Teacher Monthly and Teacher Annual) aren&apos;t discounted
-            with this code.
+            Save £9.99 on either annual plan: Student Annual £20/yr (normally £29.99) or Teacher
+            Annual £58/yr (normally £67.99). Monthly plans aren&apos;t discounted.
           </p>
         </div>
 

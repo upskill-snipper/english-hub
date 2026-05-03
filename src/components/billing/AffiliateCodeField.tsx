@@ -221,8 +221,9 @@ export function PromoCodePrompt({
       </form>
       <p className="mt-2 text-[11px] text-muted-foreground">
         Saves {PRICING.CURRENCY}
-        {PRICING.STUDENT_ANNUAL_SAVINGS} on Student Annual subscriptions only ({PRICING.CURRENCY}
-        {PRICING.STUDENT_ANNUAL_WITH_CODE}/year). No discount on monthly or Teacher plans.
+        {PRICING.STUDENT_ANNUAL_SAVINGS} on annual subscriptions: Student Annual ({PRICING.CURRENCY}
+        {PRICING.STUDENT_ANNUAL_WITH_CODE}/yr) or Teacher Annual ({PRICING.CURRENCY}
+        {PRICING.TEACHER_ANNUAL_WITH_CODE}/yr). No discount on monthly plans.
       </p>
     </div>
   )
@@ -250,7 +251,7 @@ export function AffiliateCodeField({
   subheading,
   className = '',
 }: AffiliateCodeFieldProps) {
-  const defaultSubheading = `Applies to Student Annual subscriptions only — enter a creator's code or our public code ${PRICING.AFFILIATE_PROMO_CODE} to unlock the £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year Student Annual rate (normally £${PRICING.STUDENT_ANNUAL}).`
+  const defaultSubheading = `Applies to annual subscriptions only — enter a creator's code or our public code ${PRICING.AFFILIATE_PROMO_CODE} to save £${PRICING.STUDENT_ANNUAL_SAVINGS} on Student Annual (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/yr instead of £${PRICING.STUDENT_ANNUAL}) or Teacher Annual (£${PRICING.TEACHER_ANNUAL_WITH_CODE}/yr instead of £${PRICING.TEACHER_ANNUAL}).`
 
   return (
     <div
@@ -275,13 +276,17 @@ export function AffiliateCodeField({
                 Code <span className="font-mono">{appliedCode}</span> applied
               </p>
               <p className="text-xs text-muted-foreground">
-                Student Annual now{' '}
+                Saves {PRICING.CURRENCY}
+                {PRICING.STUDENT_ANNUAL_SAVINGS} on annual: Student{' '}
                 <span className="font-semibold text-foreground">
                   {PRICING.CURRENCY}
-                  {PRICING.STUDENT_ANNUAL_WITH_CODE}
+                  {PRICING.STUDENT_ANNUAL_WITH_CODE}/yr
                 </span>{' '}
-                · saves {PRICING.CURRENCY}
-                {PRICING.STUDENT_ANNUAL_SAVINGS}
+                · Teacher{' '}
+                <span className="font-semibold text-foreground">
+                  {PRICING.CURRENCY}
+                  {PRICING.TEACHER_ANNUAL_WITH_CODE}/yr
+                </span>
               </p>
             </div>
           </div>

@@ -236,7 +236,7 @@ function HowItWorksSection() {
       icon: TrendingUp,
       title: 'Earn Commission',
       description:
-        'You earn commission on every Student Annual subscription bought via your code or link. Tracked in real-time on your dashboard.',
+        'You earn commission on every annual subscription (Student or Teacher) bought via your code or link. Tracked in real-time on your dashboard.',
     },
   ]
 
@@ -276,12 +276,12 @@ function HowItWorksSection() {
         {/* Annual-only commission rule — most important fact for new affiliates. */}
         <div className="mt-12 max-w-3xl mx-auto rounded-2xl border border-amber-500/30 bg-amber-500/10 p-6 text-center">
           <p className="text-sm font-semibold text-foreground">
-            You earn commission on Student Annual subscriptions only.
+            You earn commission on annual subscriptions only.
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Your code unlocks the £20/year Student Annual rate (normally £29.99) for your followers.
-            Student Monthly, Teacher Monthly and Teacher Annual plans are not discounted by your
-            code and don&apos;t earn commission.
+            Your code unlocks £9.99 off either annual plan: Student Annual £20/year (normally
+            £29.99) or Teacher Annual £58/year (normally £67.99). Student Monthly and Teacher
+            Monthly plans aren&apos;t discounted by your code and don&apos;t earn commission.
           </p>
         </div>
       </div>
@@ -559,9 +559,9 @@ function ApplicationSection({ isLoggedIn }: { isLoggedIn?: boolean }) {
           </p>
           <p className="mt-3 text-sm text-muted-foreground max-w-xl mx-auto">
             <span className="font-semibold text-foreground">
-              You earn commission on Student Annual subscriptions only.
+              You earn commission on annual subscriptions only.
             </span>{' '}
-            Your code unlocks the £20/year Student Annual rate for your followers.
+            Your code unlocks £9.99 off either annual plan — Student £20/yr or Teacher £58/yr.
           </p>
         </div>
 

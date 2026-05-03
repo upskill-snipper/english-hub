@@ -59,35 +59,59 @@ function resolveStripePriceId(productId: string): string | null {
   switch (productId) {
     case 'student_annual':
       return PRICE_IDS.PRO_ANNUAL
+    case 'teacher_annual':
+      // Teacher Annual price IDs live under STRIPE_PRICE_TEACHER_ANNUAL
+      // (resolved server-side in /api/stripe/checkout). For the redeem
+      // flow we use Stripe's price_data with a custom unit_amount, so
+      // we don't strictly need the price ID here — but we still return
+      // one as a `basePriceId` reference in the line-item metadata for
+      // reporting / audit. The PRO_ANNUAL fallback is fine when a
+      // dedicated TEACHER env var isn't present in this environment.
+      return process.env.STRIPE_PRICE_TEACHER_ANNUAL || PRICE_IDS.PRO_ANNUAL
     default:
       return null
   }
 }
 
 /**
- * MVP allowlist — duplicated from `validate/route.ts` so the two routes can
- * evolve independently. Once a `promo_codes` table exists this moves to a
- * shared helper. ASSUMPTION: table not yet in place.
+ * Per-product pricing for redeemed codes. Sourced from
+ * `src/constants/pricing.ts` so a single change in the constants module
+ * cascades through validate, redeem, and the UI.
  *
- * `finalAmountPennies` is the unit amount to charge AFTER the discount, not
- * the discount itself — Stripe's `price_data` works on the final amount for
- * one-off sessions. For `2026ENGLISH`, the canonical figure is
- * STUDENT_ANNUAL_WITH_CODE (£20 → 2000p), taking the £29.99 base down by the
- * STUDENT_ANNUAL_SAVINGS amount (£9.99). Sourced from
- * `src/constants/pricing.ts` so any future price change cascades here.
+ * `finalAmountPennies` is the unit amount to charge AFTER the discount,
+ * not the discount itself — Stripe's `price_data` works on the final
+ * amount for one-off sessions.
  */
-interface RedemptionRule {
+interface ProductPricing {
   readonly finalAmountPennies: number
-  readonly allowedProductIds: readonly string[]
   /** Shown on the Stripe Checkout line item. */
   readonly description: string
 }
 
+interface RedemptionRule {
+  /** Allowed product IDs for this code. */
+  readonly allowedProductIds: readonly string[]
+  /** Final price + line-item description per product. */
+  readonly productPricing: Readonly<Record<string, ProductPricing>>
+}
+
 const REDEMPTION_RULES: Readonly<Record<string, RedemptionRule>> = Object.freeze({
   [PRICING.AFFILIATE_PROMO_CODE]: {
-    finalAmountPennies: Math.round(PRICING.STUDENT_ANNUAL_WITH_CODE * 100),
-    allowedProductIds: ['student_annual'],
-    description: `The English Hub — Student Annual (promo ${PRICING.AFFILIATE_PROMO_CODE})`,
+    // The same code unlocks the Student Annual £20/yr rate AND the
+    // Teacher Annual £58/yr rate (both are flat £9.99 off the standard
+    // early-access price). Both earn affiliate commission via the
+    // webhook's recordCodeBasedConversion.
+    allowedProductIds: ['student_annual', 'teacher_annual'],
+    productPricing: {
+      student_annual: {
+        finalAmountPennies: Math.round(PRICING.STUDENT_ANNUAL_WITH_CODE * 100),
+        description: `The English Hub — Student Annual (promo ${PRICING.AFFILIATE_PROMO_CODE})`,
+      },
+      teacher_annual: {
+        finalAmountPennies: Math.round(PRICING.TEACHER_ANNUAL_WITH_CODE * 100),
+        description: `The English Hub — Teacher Annual (promo ${PRICING.AFFILIATE_PROMO_CODE})`,
+      },
+    },
   },
 })
 
@@ -157,14 +181,25 @@ export async function POST(request: NextRequest) {
 
         if (affiliate) {
           attributedAffiliateId = affiliate.id
-          // Affiliates redeem the same Student Annual rule as the public
-          // 2026ENGLISH code. Any product gating is identical.
+          // Affiliates redeem the same Student Annual + Teacher Annual
+          // rules as the public 2026ENGLISH code. Product gating and
+          // pricing identical; only the line-item description carries
+          // the affiliate's code (replacing the public-promo wording)
+          // so refunds can trace back to the affiliate cleanly.
           const baseRule = REDEMPTION_RULES[PRICING.AFFILIATE_PROMO_CODE]
           if (baseRule) {
             rule = {
-              finalAmountPennies: baseRule.finalAmountPennies,
               allowedProductIds: baseRule.allowedProductIds,
-              description: `The English Hub — Student Annual (affiliate ${code})`,
+              productPricing: {
+                student_annual: {
+                  finalAmountPennies: baseRule.productPricing.student_annual.finalAmountPennies,
+                  description: `The English Hub — Student Annual (affiliate ${code})`,
+                },
+                teacher_annual: {
+                  finalAmountPennies: baseRule.productPricing.teacher_annual.finalAmountPennies,
+                  description: `The English Hub — Teacher Annual (affiliate ${code})`,
+                },
+              },
             }
           }
         }
@@ -179,6 +214,13 @@ export async function POST(request: NextRequest) {
       return errorResponse('Unknown or expired promo code.', 404)
     }
     if (!rule.allowedProductIds.includes(productId)) {
+      return errorResponse('This promo code does not apply to the selected plan.', 400)
+    }
+    const productPricing = rule.productPricing[productId]
+    if (!productPricing) {
+      // Should be unreachable when allowedProductIds and productPricing
+      // stay in sync, but guard defensively in case of a future config
+      // drift between the two maps.
       return errorResponse('This promo code does not apply to the selected plan.', 400)
     }
 
@@ -284,10 +326,10 @@ export async function POST(request: NextRequest) {
           quantity: 1,
           price_data: {
             currency: 'gbp',
-            unit_amount: rule.finalAmountPennies,
+            unit_amount: productPricing.finalAmountPennies,
             recurring: { interval: 'year' },
             product_data: {
-              name: rule.description,
+              name: productPricing.description,
               metadata: {
                 promoCode: code,
                 productId,

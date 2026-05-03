@@ -44,6 +44,12 @@ export const PRICING = {
   TEACHER_ANNUAL: 67.99,
   TEACHER_MONTHLY_STANDARD: 11.99,
   TEACHER_ANNUAL_STANDARD: 99,
+  /** Discounted Teacher Annual when an affiliate / house code is applied.
+   *  Same flat £9.99 saving as Student Annual so the value proposition is
+   *  consistent across plans. £67.99 - £9.99 = £58.00. */
+  TEACHER_ANNUAL_WITH_CODE: 58,
+  /** Discount amount in £ for Teacher Annual when a code is used. */
+  TEACHER_ANNUAL_SAVINGS: 9.99,
 
   // ── Founding Schools + projected standard ─────────────────────────
   /** New Founding price — first 10 schools only. Anchored vs SCHOOL_STANDARD. */

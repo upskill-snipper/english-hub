@@ -315,7 +315,8 @@ export default function AffiliateResources({
             </div>
 
             <p className="text-xs text-muted-foreground pt-1">
-              Note: the discount applies to the Student Annual subscription only.
+              Note: the discount applies to annual subscriptions only — Student Annual or Teacher
+              Annual.
             </p>
           </div>
         </section>
@@ -326,11 +327,11 @@ export default function AffiliateResources({
             Lean into the annual hook in your captions.
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            You earn commission on Student Annual subscriptions only. Your code unlocks the
-            &pound;20/year Student Annual rate (normally &pound;29.99). Student Monthly and Teacher
-            plans aren&rsquo;t discounted by your code and don&rsquo;t earn commission &mdash; every
-            template below already calls out &ldquo;annual subscription only&rdquo; so the rule is
-            on the page when followers click through.
+            You earn commission on annual subscriptions only. Your code unlocks &pound;9.99 off
+            either annual plan: Student Annual &pound;20/year (normally &pound;29.99) or Teacher
+            Annual &pound;58/year (normally &pound;67.99). Monthly plans aren&rsquo;t discounted and
+            don&rsquo;t earn commission. Every template below calls out &ldquo;annual subscription
+            only&rdquo; so the rule is on the page when followers click through.
           </p>
         </div>
 

@@ -115,14 +115,18 @@ export default function BillingPage() {
     setError(null)
     setNeedsEmailVerification(false)
 
-    // Code-redemption path: only Student Annual qualifies right now.
-    // This page only offers monthly upgrade CTAs, so the user has to head
-    // to /pricing to actually use the code — surface that explicitly so
-    // they don't get stuck staring at two non-eligible buttons.
+    // Code-redemption path: Student Annual AND Teacher Annual both
+    // qualify (3 May 2026 update — same flat £9.99 saving on each).
     if (codeField.appliedCode) {
-      if (plan !== 'student_annual') {
+      const productIdForPlan: 'student_annual' | 'teacher_annual' | null =
+        plan === 'student_annual'
+          ? 'student_annual'
+          : plan === 'teacher_annual'
+            ? 'teacher_annual'
+            : null
+      if (productIdForPlan === null) {
         setError(
-          `Your code “${codeField.appliedCode}” only applies to the Student Annual plan (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year). Head to the pricing page to use it on Student Annual, or remove the code to continue with this plan at the standard price.`,
+          `Your code “${codeField.appliedCode}” only applies to annual plans — Student Annual (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year) or Teacher Annual (£${PRICING.TEACHER_ANNUAL_WITH_CODE}/year). Head to the pricing page to upgrade onto an annual plan, or remove the code to continue with this plan at the standard price.`,
         )
         setCheckoutLoading(null)
         return
@@ -133,7 +137,7 @@ export default function BillingPage() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             code: codeField.appliedCode,
-            productId: 'student_annual',
+            productId: productIdForPlan,
           }),
         })
         // /api/promo/redeem uses successResponse — payload at top level,

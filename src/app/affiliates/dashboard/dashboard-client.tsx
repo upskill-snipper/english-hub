@@ -325,9 +325,9 @@ function EarningsRulesBanner() {
           </p>
           <p className="text-sm text-foreground">
             <span aria-hidden="true">&#x1F4B7; </span>
-            You earn <strong className="font-semibold">£5–£10 commission</strong> per{' '}
-            <strong className="font-semibold">Student Annual</strong> subscription bought via your
-            code or link. Monthly plans and Teacher plans don&apos;t earn commission.
+            You earn <strong className="font-semibold">£5–£10 commission</strong> on every{' '}
+            <strong className="font-semibold">annual subscription</strong> (Student Annual or
+            Teacher Annual) bought via your code or link. Monthly plans don&apos;t earn commission.
           </p>
         </div>
       </div>
@@ -567,14 +567,14 @@ function SharePanel({ code, referralUrl }: { code: string; referralUrl: string }
           <CopyField label="Code" value={code} monospace />
           <CopyField label="Referral URL" value={referralUrl} />
         </div>
-        {/* annual-only messaging — clarifies which plan earns commission */}
+        {/* annual-only messaging — clarifies which plans earn commission */}
         <div className="mt-3 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-xs">
           <p className="font-semibold text-foreground">
-            Commission is on Student Annual subscriptions only.
+            Commission is on annual subscriptions only.
           </p>
           <p className="mt-1 text-muted-foreground">
-            Your code unlocks the £20/year Student Annual rate (normally £29.99). Student Monthly
-            and Teacher plans don&apos;t earn commission.
+            Your code unlocks £9.99 off either annual plan: Student Annual £20/yr (normally £29.99)
+            or Teacher Annual £58/yr (normally £67.99). Monthly plans don&apos;t earn commission.
           </p>
         </div>
         <p className="mt-3 text-xs text-muted-foreground">
@@ -714,12 +714,16 @@ function TrackingExplainer({ code }: { code: string }) {
                   Student Annual subscription (£20/year with your code, normally £29.99)
                 </li>
                 <li>
+                  <span aria-hidden="true">✅</span> <span className="sr-only">Yes:</span>
+                  Teacher Annual subscription (£58/year with your code, normally £67.99)
+                </li>
+                <li>
                   <span aria-hidden="true">❌</span> <span className="sr-only">No:</span>
                   Student Monthly (no commission)
                 </li>
                 <li>
                   <span aria-hidden="true">❌</span> <span className="sr-only">No:</span>
-                  Teacher plans (no commission yet)
+                  Teacher Monthly (no commission)
                 </li>
                 <li>
                   <span aria-hidden="true">❌</span> <span className="sr-only">No:</span>

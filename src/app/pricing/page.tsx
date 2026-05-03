@@ -298,17 +298,21 @@ function PricingContent() {
     setCheckoutError(null)
     setCheckoutErrorPlan(null)
 
-    // Code-redemption path: only Student Annual qualifies right now.
-    // If a code is applied but the user clicks a non-eligible plan,
-    // redirect them gently to the right card with a message — don't
-    // silently strip the code or fail with a backend error.
+    // Code-redemption path: Student Annual AND Teacher Annual both
+    // qualify (3 May 2026 update — same flat £9.99 saving on each).
+    // If a code is applied but the user clicks a Monthly plan, surface
+    // a clear inline error directing them to the eligible cards.
     if (codeField.appliedCode) {
-      const eligibleProductId = 'student_annual'
-      const productIdForPlan: string | null = plan === 'student_annual' ? 'student_annual' : null
+      const productIdForPlan: 'student_annual' | 'teacher_annual' | null =
+        plan === 'student_annual'
+          ? 'student_annual'
+          : plan === 'teacher_annual'
+            ? 'teacher_annual'
+            : null
 
-      if (productIdForPlan !== eligibleProductId) {
+      if (productIdForPlan === null) {
         setCheckoutError(
-          `Your code “${codeField.appliedCode}” only applies to the Student Annual plan (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year). Click “Start 7-day free trial” on the Student card to use it, or remove the code to continue with this plan at the standard price.`,
+          `Your code “${codeField.appliedCode}” only applies to annual plans — Student Annual (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year) or Teacher Annual (£${PRICING.TEACHER_ANNUAL_WITH_CODE}/year). Pick an annual plan to use the discount, or remove the code to continue with this plan at the standard price.`,
         )
         setCheckoutErrorPlan(plan)
         setCheckoutLoading(null)
@@ -321,7 +325,7 @@ function PricingContent() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             code: codeField.appliedCode,
-            productId: eligibleProductId,
+            productId: productIdForPlan,
           }),
         })
 
