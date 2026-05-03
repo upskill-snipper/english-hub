@@ -889,9 +889,25 @@ function PricingContent() {
                 <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-amber-700">
                   ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
                 </p>
-                <p className="text-sm text-emerald-600 font-semibold mb-6">
+                <p className="text-sm text-emerald-600 font-semibold mb-3">
                   {PRICING.TRIAL_TEXT} · card required · cancel before day 7
                 </p>
+
+                {/* Affiliate / promo code callout — mirrors the Student
+                    card's pill so Teacher visitors see the same offer
+                    surface. Both plans honour 2026ENGLISH and any
+                    active affiliate code for a flat £9.99 saving. */}
+                <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-3 py-2 mb-6">
+                  <p className="text-xs font-semibold text-emerald-700">
+                    With any affiliate code or{' '}
+                    <code className="font-mono bg-emerald-500/15 px-1.5 py-0.5 rounded">
+                      {PRICING.AFFILIATE_PROMO_CODE}
+                    </code>
+                    : {PRICING.CURRENCY}
+                    {PRICING.TEACHER_ANNUAL_WITH_CODE}/year — save {PRICING.CURRENCY}
+                    {PRICING.TEACHER_ANNUAL_SAVINGS}.
+                  </p>
+                </div>
 
                 {/* Free features */}
                 <div className="mb-4">
