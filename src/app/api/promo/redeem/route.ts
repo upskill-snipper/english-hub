@@ -42,7 +42,7 @@ import {
 import { PRICING } from '@/constants/pricing'
 import { getClientIp, rateLimit } from '@/lib/rate-limit'
 import { PRICE_IDS, stripe } from '@/lib/stripe'
-import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 
 /** Maximum permitted code length; matches the validate endpoint. */
 const MAX_CODE_LENGTH = 64
@@ -130,11 +130,52 @@ export async function POST(request: NextRequest) {
       return badRequestResponse('Invalid productId.')
     }
 
-    const rule = REDEMPTION_RULES[code]
+    // Two-tier resolution for codes:
+    // 1. Hardcoded allowlist (only `2026ENGLISH` for MVP) — every user can
+    //    use these regardless of attribution.
+    // 2. Active affiliate codes from `affiliate_accounts` (Supabase). When
+    //    a partner self-enrols via /affiliates, they get a code which
+    //    SHOULD redeem the same Student Annual £20/year rate as the
+    //    public code. The original implementation never looked here, so
+    //    every affiliate code returned "Unknown or expired".
+    let rule: RedemptionRule | undefined = REDEMPTION_RULES[code]
+    let attributedAffiliateId: string | null = null
+
     if (!rule) {
-      // ASSUMPTION: In a later iteration this branch will consult Rewardful
-      // for arbitrary affiliate-issued promo codes. For MVP only the
-      // hard-coded allowlist is honoured.
+      // Look up the code in affiliate_accounts. We use the service-role
+      // client because the table is RLS-locked and this endpoint is
+      // authenticated via Supabase user — the user themselves doesn't
+      // own the affiliate row, so the standard client can't read it.
+      try {
+        const adminClient = createServiceRoleClient()
+        const { data: affiliate } = await adminClient
+          .from('affiliate_accounts')
+          .select('id, code, status')
+          .eq('code', code)
+          .eq('status', 'active')
+          .maybeSingle()
+
+        if (affiliate) {
+          attributedAffiliateId = affiliate.id
+          // Affiliates redeem the same Student Annual rule as the public
+          // 2026ENGLISH code. Any product gating is identical.
+          const baseRule = REDEMPTION_RULES[PRICING.AFFILIATE_PROMO_CODE]
+          if (baseRule) {
+            rule = {
+              finalAmountPennies: baseRule.finalAmountPennies,
+              allowedProductIds: baseRule.allowedProductIds,
+              description: `The English Hub — Student Annual (affiliate ${code})`,
+            }
+          }
+        }
+      } catch (lookupErr) {
+        console.error('[api/promo/redeem] affiliate lookup failed:', lookupErr)
+        // Fall through to the "unknown code" path below — never let an
+        // affiliate-table outage block the public 2026ENGLISH redemption.
+      }
+    }
+
+    if (!rule) {
       return errorResponse('Unknown or expired promo code.', 404)
     }
     if (!rule.allowedProductIds.includes(productId)) {
@@ -184,6 +225,29 @@ export async function POST(request: NextRequest) {
     }
 
     let stripeCustomerId: string | null = profile?.stripe_customer_id ?? null
+
+    // Test → Live migration safety net (matches /api/stripe/checkout): a
+    // stripe_customer_id stored while we were running with sk_test_… keys
+    // does NOT exist in the live-mode account. Verify before use and
+    // re-link if stale.
+    if (stripeCustomerId) {
+      try {
+        await stripe.customers.retrieve(stripeCustomerId)
+      } catch (verifyErr) {
+        if (
+          verifyErr instanceof Stripe.errors.StripeError &&
+          verifyErr.code === 'resource_missing'
+        ) {
+          console.warn(
+            `[api/promo/redeem] Stale customer ${stripeCustomerId} for user ${user.id} — likely created in test mode. Re-linking.`,
+          )
+          stripeCustomerId = null
+        } else {
+          throw verifyErr
+        }
+      }
+    }
+
     if (!stripeCustomerId) {
       const customer = await stripe.customers.create({
         email: user.email,
@@ -240,6 +304,11 @@ export async function POST(request: NextRequest) {
         promoCode: code,
         productId,
         flow: 'promo_redeem',
+        // Attribute the redemption to the affiliate who issued the code
+        // when applicable, so the webhook (handleCheckoutCompleted) can
+        // credit commission. Empty string for the public 2026ENGLISH path
+        // since Stripe metadata only accepts strings — null isn't allowed.
+        affiliateId: attributedAffiliateId ?? '',
       },
       subscription_data: {
         metadata: {
@@ -247,6 +316,7 @@ export async function POST(request: NextRequest) {
           promoCode: code,
           productId,
           flow: 'promo_redeem',
+          affiliateId: attributedAffiliateId ?? '',
         },
       },
       // Deliberately NOT setting `allow_promotion_codes: true` here — the
