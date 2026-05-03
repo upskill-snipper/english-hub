@@ -233,8 +233,22 @@ export async function POST(request: NextRequest) {
     console.error('[api/stripe/checkout] Checkout session error:', error)
 
     if (error instanceof Stripe.errors.StripeError) {
+      // Surface the actual Stripe error message to the client. Stripe's
+      // error strings are NOT sensitive — they're things like
+      //   "No such price: 'price_xxx'" (env var mismatch with account)
+      //   "Invalid API Key provided: sk_live_..." (typo in the key)
+      //   "You did not provide an API key" (env var unset / not deployed)
+      // Showing them lets the founder/operator pinpoint the
+      // misconfiguration without having to dig through Vercel function
+      // logs. We also include the Stripe error code where present so
+      // support copy can grep on it.
+      const stripeMessage = error.message || 'Stripe rejected the request'
+      const stripeCode = error.code ? ` (code: ${error.code})` : ''
       return NextResponse.json(
-        { error: 'Payment processing error. Please try again.' },
+        {
+          error: `Payment processing error. Please try again.`,
+          stripeMessage: `${stripeMessage}${stripeCode}`,
+        },
         { status: error.statusCode ?? 500 },
       )
     }

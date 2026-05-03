@@ -289,6 +289,7 @@ export default function PricingPage() {
       const data = (await res.json().catch(() => ({}))) as {
         url?: string
         error?: string
+        stripeMessage?: string
       }
 
       if (!res.ok || !data.url) {
@@ -300,7 +301,8 @@ export default function PricingPage() {
         // human can act on. The raw `data.error` text from the API is
         // engineering-speak ("Missing required fields", "Invalid price ID")
         // — that confused the founder into thinking the button was simply
-        // "doing nothing".
+        // "doing nothing". When the API returns a `stripeMessage`, append
+        // it so the misconfiguration is immediately diagnosable.
         let userMessage: string
         if (data.error === 'Missing required fields: priceId (or plan) and mode') {
           userMessage =
@@ -309,8 +311,9 @@ export default function PricingPage() {
           userMessage =
             "We couldn't start checkout — the configured Stripe price ID isn't valid in this Stripe account. Check the env vars match LIVE-mode price IDs and redeploy."
         } else if (data.error === 'Payment processing error. Please try again.') {
-          userMessage =
-            "Stripe rejected the checkout request. This usually means the live Stripe API keys aren't set in Vercel yet, or the keys are from a different account than the price IDs. See business-docs/STRIPE-GO-LIVE-CHECKLIST.md."
+          userMessage = data.stripeMessage
+            ? `Stripe rejected the request: ${data.stripeMessage}`
+            : "Stripe rejected the checkout request. This usually means the live Stripe API keys aren't set in Vercel yet, or the keys are from a different account than the price IDs. See business-docs/STRIPE-GO-LIVE-CHECKLIST.md."
         } else {
           userMessage = data.error || 'Failed to start checkout. Please try again.'
         }
