@@ -9,6 +9,7 @@ import { PRICING } from '@/constants/pricing'
 import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
+import { AffiliateCodeField, useAffiliateCodeField } from '@/components/billing/AffiliateCodeField'
 import {
   CheckCircle,
   X,
@@ -268,10 +269,81 @@ export default function PricingPage() {
   // under the button the user actually clicked, not under a sibling card.
   const [checkoutErrorPlan, setCheckoutErrorPlan] = useState<CheckoutPlan | null>(null)
 
+  // Affiliate / promo code state — surfaced via the AffiliateCodeField
+  // component above the pricing cards. When `appliedCode` is set, the
+  // pricing button click below routes through /api/promo/redeem (which
+  // bakes the £20/year Student Annual discount into a one-off Stripe
+  // Checkout session) instead of /api/stripe/checkout.
+  const codeField = useAffiliateCodeField()
+
   async function handleCheckout(plan: CheckoutPlan) {
     setCheckoutLoading(plan)
     setCheckoutError(null)
     setCheckoutErrorPlan(null)
+
+    // Code-redemption path: only Student Annual qualifies right now.
+    // If a code is applied but the user clicks a non-eligible plan,
+    // redirect them gently to the right card with a message — don't
+    // silently strip the code or fail with a backend error.
+    if (codeField.appliedCode) {
+      const eligibleProductId = 'student_annual'
+      const productIdForPlan: string | null = plan === 'student_annual' ? 'student_annual' : null
+
+      if (productIdForPlan !== eligibleProductId) {
+        setCheckoutError(
+          `Your code “${codeField.appliedCode}” only applies to the Student Annual plan (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year). Click "Start 7-day free trial" on the Student card to use it, or remove the code to continue with this plan at the standard price.`,
+        )
+        setCheckoutErrorPlan(plan)
+        setCheckoutLoading(null)
+        return
+      }
+
+      try {
+        const res = await fetch('/api/promo/redeem', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            code: codeField.appliedCode,
+            productId: eligibleProductId,
+          }),
+        })
+
+        if (res.status === 401) {
+          window.location.href = `/auth/register?next=${encodeURIComponent(`/pricing?plan=${plan}&code=${codeField.appliedCode}`)}`
+          return
+        }
+
+        const json = (await res.json().catch(() => ({}))) as {
+          data?: { url?: string }
+          error?: string
+        }
+        const url = json.data?.url
+
+        if (!res.ok || !url) {
+          if (res.status === 403 && json.error === 'email_verification_required') {
+            window.location.href = '/auth/resend-verification'
+            return
+          }
+          setCheckoutError(
+            json.error ||
+              "We couldn't apply that code right now. Please try again, or remove the code to continue at the standard price.",
+          )
+          setCheckoutErrorPlan(plan)
+          setCheckoutLoading(null)
+          return
+        }
+
+        window.location.href = url
+        return
+      } catch {
+        setCheckoutError('Something went wrong applying the code. Please try again.')
+        setCheckoutErrorPlan(plan)
+        setCheckoutLoading(null)
+        return
+      }
+    }
+
+    // Standard (no-code) checkout path.
     try {
       const res = await fetch('/api/stripe/checkout', {
         method: 'POST',
@@ -586,6 +658,15 @@ export default function PricingPage() {
       {/* ───────── Student + Teacher Cards ───────── */}
       <section className="relative pb-24 sm:pb-32">
         <div className="max-w-5xl mx-auto px-6">
+          {/* Affiliate / promo code entry — above the pricing cards so
+              users see it before clicking any "Start 7-day free trial"
+              button. Replaces the previous Stripe-side promo field
+              (which exposed `allow_promotion_codes: true` on the
+              Stripe Checkout page itself, but only accepted Stripe
+              Dashboard coupons — confusing users who tried to enter
+              affiliate codes there). */}
+          <AffiliateCodeField {...codeField} />
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* Student Card */}
             <Card className="relative flex flex-col p-0 border-primary/30 overflow-visible">

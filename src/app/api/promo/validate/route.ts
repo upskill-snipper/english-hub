@@ -33,6 +33,7 @@ import { NextRequest } from 'next/server'
 import { errorResponse, rateLimitResponse, successResponse } from '@/lib/api-response'
 import { PRICING } from '@/constants/pricing'
 import { getClientIp, rateLimit } from '@/lib/rate-limit'
+import { createServiceRoleClient } from '@/lib/supabase/server'
 
 /** Max allowed length for a submitted code. Arbitrary but generous. */
 const MAX_CODE_LENGTH = 64
@@ -101,22 +102,47 @@ export async function GET(request: NextRequest) {
   }
 
   const rule = HOUSE_PROMO_ALLOWLIST[code]
-  if (!rule) {
-    // ASSUMPTION: Once affiliate-link tokens (Rewardful) are directly
-    // redeemable for the same discount, this branch should consult Rewardful
-    // via `fetchRewardfulReferral` (see `src/lib/rewardful.ts`). For MVP the
-    // allowlist is authoritative.
+  if (rule) {
     return successResponse<ValidateResponse>({
-      valid: false,
-      discountPennies: 0,
-      productIds: [],
-      reason: 'unknown_code',
+      valid: true,
+      discountPennies: rule.discountPennies,
+      productIds: [...rule.productIds],
     })
   }
 
+  // Affiliate-account fallback. Mirrors /api/promo/redeem (commit 54e646e):
+  // when a code isn't in the hardcoded house allowlist, look it up in
+  // public.affiliate_accounts. If the row exists with status='active',
+  // honour it with the same Student Annual £20/year rule the public
+  // 2026ENGLISH code uses. This is what makes self-issued affiliate
+  // codes "just work" on the pricing page's affiliate-code field.
+  try {
+    const admin = createServiceRoleClient()
+    const { data: affiliate } = await admin
+      .from('affiliate_accounts')
+      .select('id, code, status')
+      .eq('code', code)
+      .eq('status', 'active')
+      .maybeSingle()
+
+    if (affiliate) {
+      const baseRule = HOUSE_PROMO_ALLOWLIST[PRICING.AFFILIATE_PROMO_CODE]
+      return successResponse<ValidateResponse>({
+        valid: true,
+        discountPennies: baseRule?.discountPennies ?? 0,
+        productIds: baseRule ? [...baseRule.productIds] : [],
+      })
+    }
+  } catch (err) {
+    console.error('[api/promo/validate] affiliate lookup failed:', err)
+    // Fall through to the unknown-code response. Never let an
+    // affiliate-table outage block the public 2026ENGLISH path.
+  }
+
   return successResponse<ValidateResponse>({
-    valid: true,
-    discountPennies: rule.discountPennies,
-    productIds: [...rule.productIds],
+    valid: false,
+    discountPennies: 0,
+    productIds: [],
+    reason: 'unknown_code',
   })
 }

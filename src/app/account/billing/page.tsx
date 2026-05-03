@@ -8,6 +8,7 @@ import { useAuthStore } from '@/store/auth-store'
 import { useRewardful } from '@/hooks/useRewardful'
 import { PRICING } from '@/constants/pricing'
 import { VAT_LABEL } from '@/lib/copy/pricing'
+import { AffiliateCodeField, useAffiliateCodeField } from '@/components/billing/AffiliateCodeField'
 import { trackEvent } from '@/lib/gtag'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { getCourseName } from '@/lib/utils'
@@ -104,11 +105,61 @@ export default function BillingPage() {
   // teacher at the student price.
   type CheckoutPlan = 'student_monthly' | 'student_annual' | 'teacher_monthly' | 'teacher_annual'
 
+  // Affiliate / promo code field state — same component shown on /pricing.
+  // When a code is applied and the user clicks an eligible plan, we
+  // route through /api/promo/redeem instead of /api/stripe/checkout.
+  const codeField = useAffiliateCodeField()
+
   async function handleCheckout(plan: CheckoutPlan) {
     setCheckoutLoading(plan)
     setError(null)
     setNeedsEmailVerification(false)
 
+    // Code-redemption path: only Student Annual qualifies right now.
+    if (codeField.appliedCode) {
+      if (plan !== 'student_annual') {
+        setError(
+          `Your code “${codeField.appliedCode}” only applies to Student Annual (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year). Pick the Student Annual plan, or remove the code to upgrade to ${plan} at the standard price.`,
+        )
+        setCheckoutLoading(null)
+        return
+      }
+      try {
+        const res = await fetch('/api/promo/redeem', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            code: codeField.appliedCode,
+            productId: 'student_annual',
+          }),
+        })
+        const json = (await res.json().catch(() => ({}))) as {
+          data?: { url?: string }
+          error?: string
+        }
+        const url = json.data?.url
+        if (!res.ok || !url) {
+          if (res.status === 403 && json.error === 'email_verification_required') {
+            setNeedsEmailVerification(true)
+            setCheckoutLoading(null)
+            return
+          }
+          setError(json.error || "We couldn't apply that code right now. Please try again.")
+          setCheckoutLoading(null)
+          return
+        }
+        trackEvent('begin_checkout', { currency: 'GBP' })
+        phCapture(PH_EVENTS.SUBSCRIPTION_STARTED, { plan, promoCode: codeField.appliedCode })
+        window.location.href = url
+        return
+      } catch {
+        setError('Something went wrong applying the code. Please try again.')
+        setCheckoutLoading(null)
+        return
+      }
+    }
+
+    // Standard (no-code) checkout path.
     try {
       const res = await fetch('/api/stripe/checkout', {
         method: 'POST',
@@ -297,6 +348,13 @@ export default function BillingPage() {
                 Upgrade to Premium for unlimited access to all courses, practice papers, and premium
                 features.
               </p>
+
+              {/* Promo / affiliate code field — same component as /pricing.
+                  Renders above the plan options so users can apply a code
+                  before clicking Upgrade. Only the Student Annual plan
+                  honours codes right now; the field shows a clear error
+                  if the user picks a non-eligible plan with a code on. */}
+              <AffiliateCodeField {...codeField} className="mb-4" />
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {/* Student Monthly */}

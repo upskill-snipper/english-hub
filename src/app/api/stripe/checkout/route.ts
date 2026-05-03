@@ -236,7 +236,16 @@ export async function POST(request: NextRequest) {
     }
 
     if (mode === 'subscription') {
-      sessionParams.allow_promotion_codes = true
+      // `allow_promotion_codes: true` was previously enabled, exposing the
+      // Stripe-hosted promo field at checkout. That confused users who
+      // tried to enter our app-level codes (2026ENGLISH, affiliate
+      // codes) — Stripe doesn't know about those and shows "This code is
+      // invalid", which reads as "the site is broken". App-level codes
+      // are now collected on the pricing page itself and routed through
+      // /api/promo/redeem (which bakes the discount into a separate
+      // checkout session). Stripe-Dashboard coupons can be applied via
+      // the Customer Portal post-purchase if ever needed.
+      sessionParams.allow_promotion_codes = false
       sessionParams.subscription_data = {
         trial_period_days: PRICING.TRIAL_DAYS,
         metadata: {
