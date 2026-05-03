@@ -567,7 +567,7 @@ async function recordCodeBasedConversion({
   // don't retroactively alter past commission.
   const { data: account, error: accountErr } = await supabase
     .from('affiliate_accounts')
-    .select('id, status, confirmed_referral_count')
+    .select('id, status, tier, confirmed_referral_count')
     .eq('id', affiliateId)
     .maybeSingle()
 
@@ -594,8 +594,18 @@ async function recordCodeBasedConversion({
   // attribution, so the two attribution paths produce identical
   // commission shape downstream.
   const referralCount = Number(account.confirmed_referral_count ?? 0)
-  const tierInfo = getCurrentTierInfo(referralCount + 1)
   const commissionPence = calculateCommissionPence(referralCount)
+  // Internal tier-1..tier-5 ladder (display + commission ladder helper)
+  // — kept in scope for log lines so we can correlate the commission
+  // amount with the flat-rate ladder. Never written to the DB; the DB's
+  // tier_at_conversion column is constrained to 'bronze'/'silver'/'gold'.
+  const tierInfo = getCurrentTierInfo(referralCount + 1)
+  // Pull the affiliate's currently-stored tier ('bronze'/'silver'/'gold')
+  // straight from the row. It already passed the schema CHECK on insert,
+  // so it'll pass it again here. Default to 'bronze' if somehow null
+  // (the column is NOT NULL with default 'bronze' so this is belt-and-
+  // braces).
+  const tierAtConversion = (account.tier ?? 'bronze') as 'bronze' | 'silver' | 'gold'
 
   const referredUserId = session.metadata?.userId ?? null
   const isSubscription = session.mode === 'subscription'
@@ -615,7 +625,7 @@ async function recordCodeBasedConversion({
     commission_pence: commissionPence,
     // Flat-rate system has no percentage rate; matches /api/affiliate/track-conversion.
     commission_rate: 0,
-    tier_at_conversion: tierInfo.tier,
+    tier_at_conversion: tierAtConversion,
     currency,
     product_type: isSubscription ? 'subscription' : 'one_time',
     referred_user_id: referredUserId,

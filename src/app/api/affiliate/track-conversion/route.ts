@@ -141,7 +141,7 @@ export async function POST(request: NextRequest) {
     // Resolve affiliate account
     const { data: account, error: accountErr } = await admin
       .from('affiliate_accounts')
-      .select('id, status, confirmed_referral_count')
+      .select('id, status, tier, confirmed_referral_count')
       .eq('code', attribution.ref)
       .maybeSingle()
 
@@ -162,8 +162,15 @@ export async function POST(request: NextRequest) {
     // src/lib/affiliate/tiers.ts). order_value_pence is logged but no
     // longer used in the commission calculation; kept for accounting.
     const referralCount = Number(account.confirmed_referral_count ?? 0)
-    const tierInfo = getCurrentTierInfo(referralCount + 1)
     const commissionPence = calculateCommissionPence(referralCount)
+    // Schema-aligned tier value. The tier_at_conversion column is
+    // constrained to 'bronze'/'silver'/'gold' (per
+    // supabase/migrations/20260420_affiliates_v2.sql). The internal
+    // tier-1..tier-5 ladder is kept in scope for logs but not inserted —
+    // we use the affiliate's stored tier value, which already passed
+    // the CHECK on insert.
+    const tierInfo = getCurrentTierInfo(referralCount + 1)
+    const tierAtConversion = (account.tier ?? 'bronze') as 'bronze' | 'silver' | 'gold'
 
     const { data: inserted, error: insertErr } = await admin
       .from('affiliate_conversions')
@@ -175,7 +182,7 @@ export async function POST(request: NextRequest) {
         commission_pence: commissionPence,
         // Flat-rate system has no percentage rate; store 0 for backwards compat.
         commission_rate: 0,
-        tier_at_conversion: tierInfo.tier,
+        tier_at_conversion: tierAtConversion,
         currency: (body.currency ?? 'gbp').toLowerCase(),
         product_type: body.product_type ?? null,
         referred_user_id: body.referred_user_id ?? null,
