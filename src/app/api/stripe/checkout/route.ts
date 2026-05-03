@@ -172,6 +172,34 @@ export async function POST(request: NextRequest) {
 
     let stripeCustomerId = profile?.stripe_customer_id
 
+    // Test → Live migration safety net: a stripe_customer_id stored while
+    // we were running with sk_test_… keys does NOT exist in the live-mode
+    // account (Stripe keeps customer records partitioned by mode). When
+    // we cut over to sk_live_… keys, every pre-existing profile that has
+    // a customer ID will fail the next checkout with
+    //   "No such customer: 'cus_xxx'" (resource_missing).
+    // We detect the stale ID with a cheap retrieve() call and clear it,
+    // letting the create-customer branch below re-link a fresh live
+    // customer. Costs one Stripe API call per checkout for users who
+    // already have a customer ID — negligible.
+    if (stripeCustomerId) {
+      try {
+        await stripe.customers.retrieve(stripeCustomerId)
+      } catch (verifyErr) {
+        if (
+          verifyErr instanceof Stripe.errors.StripeError &&
+          verifyErr.code === 'resource_missing'
+        ) {
+          console.warn(
+            `[api/stripe/checkout] Stale customer ${stripeCustomerId} for user ${user.id} — likely created in test mode. Re-linking.`,
+          )
+          stripeCustomerId = null
+        } else {
+          throw verifyErr
+        }
+      }
+    }
+
     if (!stripeCustomerId) {
       const customer = await stripe.customers.create({
         email: user.email,
