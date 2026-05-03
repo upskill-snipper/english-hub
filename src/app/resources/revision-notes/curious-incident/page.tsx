@@ -88,7 +88,7 @@ export default function CuriousIncidentPage() {
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
           <span className="rounded-full bg-violet-500/15 px-3 py-1 text-xs font-bold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-            21st-Century Prose
+            Modern Prose
           </span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             AQA
@@ -105,13 +105,11 @@ export default function CuriousIncidentPage() {
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">Mark Haddon, 2003 (novel)</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
-          Everything you need for your GCSE / IGCSE English Literature exam on Haddon&apos;s
-          prize-winning first-person novel. Plot structure, character profiles, themes, key
-          quotations with analysis, symbols, narrative form (the prime-numbered chapters), context,
-          and exam-style essay questions with planning notes. <strong>Note:</strong> this guide is
-          on the 2003 novel. Simon Stephens&apos;s stage adaptation (2012, National Theatre) makes
-          some structural changes &mdash; details that come only from the play are flagged in
-          context.
+          Everything you need for your GCSE and IGCSE English Literature exam. Plot summary,
+          character profiles, themes with evidence, 12+ verbatim quotations with analysis,
+          symbolism, context, narrative structure, and essay planning guidance. This guide focuses
+          on Mark Haddon&apos;s 2003 novel rather than Simon Stephens&apos;s 2012 stage adaptation;
+          differences are flagged where relevant.
         </p>
       </div>
 
@@ -126,8 +124,10 @@ export default function CuriousIncidentPage() {
             'Key Quotations',
             'Symbols',
             'Context',
-            'Narrative Form',
-            'Exam Questions',
+            'Structure',
+            'Essay Planning',
+            'Grade 9 Points',
+            'Practice Questions',
           ].map((s) => (
             <a
               key={s}
@@ -143,38 +143,35 @@ export default function CuriousIncidentPage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section
-            title="Plot Summary &mdash; The Structure of Christopher's Investigation"
-            icon="📖"
-            defaultOpen
-          >
+          <Section title="Plot Summary" icon="📖" defaultOpen>
             <div className="space-y-4">
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                The novel is narrated by Christopher John Francis Boone, a fifteen-year-old boy
-                living in Swindon with his father, Ed. Christopher tells us he is writing &ldquo;a
-                murder mystery novel&rdquo; and presents the book itself as that novel. The chapters
-                are numbered using only prime numbers (2, 3, 5, 7, 11, 13&hellip; up to 233) because
-                Christopher likes prime numbers. The narrative divides naturally into three
-                movements: the investigation in Swindon, the discovery of the letters, and the
-                journey to London.
-              </p>
+              <div className="rounded-lg bg-violet-500/5 border border-violet-500/20 p-4">
+                <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                  A note on chapter numbering
+                </h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Christopher numbers his chapters using only prime numbers (2, 3, 5, 7, 11,
+                  13&hellip;) because &ldquo;I like prime numbers.&rdquo; The novel begins with
+                  chapter 2 and ends at chapter 233. This is a structural decision by Christopher
+                  (the in-novel narrator), reflecting his love of order, mathematics, and
+                  predictable patterns. It is one of the novel&apos;s most distinctive formal
+                  features.
+                </p>
+              </div>
 
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     1
                   </span>
-                  The dog Wellington and the start of the investigation
+                  The Discovery (Chapter 2)
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  At seven minutes past midnight, Christopher finds Mrs Shears&apos;s large black
-                  poodle Wellington dead on her front lawn, killed with a garden fork. He hugs the
-                  dog. When Mrs Shears comes out and screams, the police are called. A policeman
-                  touches Christopher; Christopher hits him and is arrested. His father Ed collects
-                  him from the police station. Inspired by his love of Sherlock Holmes, Christopher
-                  decides to investigate Wellington&apos;s murder and to write a book about it. His
-                  teacher Siobhan at his special school encourages him to write down what he is
-                  doing and what he is feeling, which becomes the book itself.
+                  At seven minutes after midnight, Christopher Boone, a fifteen-year-old boy from
+                  Swindon, discovers Wellington, the neighbour&apos;s black poodle, dead on the
+                  front lawn of Mrs Shears&apos;s house. The dog has been killed with a garden fork.
+                  Christopher hugs the dog, and when the police arrive, an officer touches him and
+                  Christopher hits him because he doesn&apos;t like being touched. He is arrested.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -182,19 +179,15 @@ export default function CuriousIncidentPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; The opening image: Christopher kneeling beside Wellington&apos;s body
+                      &bull; Wellington discovered with a garden fork through him &mdash; the
+                      central mystery
                     </li>
                     <li>
-                      &bull; Father&apos;s explicit forbidding: &ldquo;don&apos;t go around sticking
-                      your nose into other people&apos;s business&rdquo;
+                      &bull; Christopher hits the policeman &mdash; sensory overload, not malice
                     </li>
                     <li>
-                      &bull; Christopher&apos;s decision to investigate &mdash; and disobey &mdash;
-                      in pursuit of truth
-                    </li>
-                    <li>
-                      &bull; The book frames itself as a murder mystery in the Sherlock Holmes
-                      tradition
+                      &bull; Title alludes to Conan Doyle&apos;s Sherlock Holmes story &ldquo;Silver
+                      Blaze&rdquo;
                     </li>
                   </ul>
                 </div>
@@ -205,29 +198,28 @@ export default function CuriousIncidentPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     2
                   </span>
-                  Door-to-door enquiries and Mrs Alexander
+                  The Investigation Begins
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Christopher knocks on neighbours&apos; doors asking about Wellington. Most people
-                  are unhelpful, but he befriends an elderly neighbour, Mrs Alexander. In a
-                  conversation in the park, she inadvertently reveals that Christopher&apos;s mother
-                  had had an affair with Mr Shears (Mrs Shears&apos;s estranged husband) before she
-                  died. Christopher had previously been told by his father that his mother died of a
-                  heart attack in hospital two years earlier. He records Mrs Alexander&apos;s
-                  revelation but does not yet act on it. The chapters interleave the investigation
-                  with Christopher&apos;s digressions on prime numbers, the solar system, the Monty
-                  Hall problem, and his memory.
+                  Christopher is held overnight in a police cell, given a caution, then released to
+                  his father, Ed. He decides to investigate Wellington&apos;s killing and write a
+                  murder mystery novel about it, modelled on Sherlock Holmes. His father forbids him
+                  from getting involved in &ldquo;other people&apos;s business,&rdquo; but
+                  Christopher&apos;s teacher Siobhan encourages the writing as a school project. He
+                  has been told by his father that his mother, Judy, died of a heart attack two
+                  years previously.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Christopher conquers his anxiety to speak to strangers</li>
-                    <li>&bull; Mrs Alexander&apos;s slip lets the affair into the narrative</li>
                     <li>
-                      &bull; The reader, ahead of Christopher, begins to question Ed&apos;s honesty
+                      &bull; Christopher decides to write a detective novel &mdash; the book we are
+                      reading
                     </li>
+                    <li>&bull; Father forbids the investigation &mdash; foreshadows his lies</li>
+                    <li>&bull; Siobhan&apos;s mentorship guides the narrative voice</li>
                   </ul>
                 </div>
               </div>
@@ -237,30 +229,26 @@ export default function CuriousIncidentPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     3
                   </span>
-                  The discovery of the letters
+                  Door-to-Door Inquiries
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Father, angry that Christopher is still investigating, confiscates his book and
-                  hides it. Christopher searches Ed&apos;s bedroom and finds the book inside a shirt
-                  box in the wardrobe. Inside the same box he finds a stack of letters addressed to
-                  him in his mother&apos;s handwriting, postmarked after the date Ed told him she
-                  had died. Reading them, Christopher learns that his mother Judy did not die: she
-                  left Ed and ran away to London with Mr Shears. The letters describe her new life
-                  in Willesden and her continued love for Christopher. The shock makes Christopher
-                  physically ill; he vomits and curls into a ball on the bed. When Ed comes home he
-                  confesses everything.
+                  Christopher goes door-to-door interviewing the neighbours despite his
+                  father&apos;s prohibition. He meets Mrs Alexander, an elderly widow, who
+                  eventually reveals that Christopher&apos;s mother Judy had an affair with Mr
+                  Shears (Wellington&apos;s owner) before Mr Shears left his wife. Christopher does
+                  not understand the implication and is more focused on the case. He decides Mr
+                  Shears is his prime suspect because he &ldquo;hates&rdquo; him.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The letters &mdash; written evidence overturning Ed&apos;s lie</li>
-                    <li>&bull; Christopher&apos;s collapse: order has broken down</li>
+                    <li>&bull; Mrs Alexander&apos;s revelation about the affair</li>
                     <li>
-                      &bull; Ed&apos;s confession: he killed Wellington in a row with Mrs Shears
+                      &bull; Christopher&apos;s deductive reasoning &mdash; logical but limited
                     </li>
-                    <li>&bull; The mystery solved &mdash; but the family destroyed</li>
+                    <li>&bull; Christopher accidentally uncovers a family secret</li>
                   </ul>
                 </div>
               </div>
@@ -270,28 +258,27 @@ export default function CuriousIncidentPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     4
                   </span>
-                  The journey to London
+                  The Confrontation and the Letters
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Knowing his father killed Wellington, Christopher reasons that Ed could murder him
-                  too. He resolves to escape and find his mother. With his pet rat Toby in a box, he
-                  navigates Swindon station, buys a ticket, and takes the train to Paddington. The
-                  London chapters are the novel&apos;s most distressing: the noise, signs, and
-                  crowds of the Underground overwhelm him, and he hides on a track ledge while a
-                  train passes. He eventually reaches his mother&apos;s flat in Willesden. Judy and
-                  Mr Shears are stunned. Mr Shears resents Christopher&apos;s presence; Judy decides
-                  to leave him and return to Swindon with Christopher.
+                  Ed discovers the book Christopher has been writing about Wellington. Furious, he
+                  hits Christopher (the only time in the book), then later confiscates the
+                  manuscript. While searching for it in his father&apos;s bedroom, Christopher finds
+                  a shirt box containing letters addressed to him from his mother &mdash; dated long
+                  after her supposed death. Reading them, he realises his mother is alive in London.
+                  The shock makes him physically ill; he vomits and sits in his own vomit for over
+                  an hour, unable to move.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <li>&bull; The hidden letters &mdash; the central betrayal exposed</li>
+                    <li>&bull; Mother is alive &mdash; with Mr Shears in London</li>
                     <li>
-                      &bull; Christopher&apos;s solo journey &mdash; an extraordinary feat for him
+                      &bull; Christopher&apos;s catatonic response to overwhelming new information
                     </li>
-                    <li>&bull; The Tube as sensory hell; Toby almost lost on the track</li>
-                    <li>&bull; Reunion with mother &mdash; she returns with him to Swindon</li>
                   </ul>
                 </div>
               </div>
@@ -301,18 +288,15 @@ export default function CuriousIncidentPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     5
                   </span>
-                  The A-level Maths exam and the open ending
+                  Father&apos;s Confession
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Despite the upheaval, Christopher takes his A-level Maths exam, tutored by
-                  Reverend Peters. He gets an A grade. The novel ends with Christopher resolving to
-                  take A-level Further Maths and Physics, go to university, become a scientist,
-                  &ldquo;and I know I can do this because I went to London on my own.&rdquo; An
-                  appendix gives the full solution to question A7 from the paper (the proof of
-                  Pythagoras&apos;s theorem). His parents are now living separately; his
-                  relationship with Ed remains fragile. The novel does not provide a tidy emotional
-                  resolution &mdash; Christopher&apos;s confidence is mathematical and behavioural
-                  rather than relational.
+                  Ed finds Christopher in distress, washes him, and confesses everything. Judy did
+                  not die; she left them and moved to London with Mr Shears. Ed had told Christopher
+                  she was dead because he thought it would be easier. He also confesses, weeping,
+                  that he killed Wellington in a moment of fury after an argument with Mrs Shears.
+                  He pleads for forgiveness and tells Christopher he will never lie to him again.
+                  Christopher becomes terrified that the man who killed Wellington could kill him.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -320,19 +304,154 @@ export default function CuriousIncidentPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Christopher gets his A in Maths &mdash; the order of numbers reasserted
+                      &bull; The double confession &mdash; the lie about mother and the murder of
+                      the dog
                     </li>
+                    <li>&bull; Trust between father and son is shattered</li>
                     <li>
-                      &bull; Father gives him a golden retriever puppy, Sandy, as a peace offering
-                    </li>
-                    <li>&bull; Toby the rat dies of old age</li>
-                    <li>&bull; The final assertion: &ldquo;I went to London on my own&rdquo;</li>
-                    <li>
-                      &bull; The Pythagoras proof appendix &mdash; mathematics as the book&apos;s
-                      last word
+                      &bull; Christopher&apos;s logical conclusion: father is a murderer, therefore
+                      dangerous
                     </li>
                   </ul>
                 </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    6
+                  </span>
+                  The Journey to London
+                </h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Christopher resolves to go to his mother&apos;s address in London. He takes Toby
+                  (his pet rat) and his Swiss Army knife and walks alone to Swindon railway station.
+                  Crowds, noise, signs, and announcements overwhelm him; he &ldquo;groans&rdquo; and
+                  tries to block out the sensations. He buys a ticket using his father&apos;s
+                  cashpoint card, almost loses Toby, hides under a railway seat, and is pursued by a
+                  police officer who eventually helps him onto a train.
+                </p>
+                <div className="mt-3 rounded-lg bg-muted p-3">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    Key Moments
+                  </p>
+                  <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <li>&bull; Christopher leaves home alone &mdash; his most independent act</li>
+                    <li>&bull; The chaos of the railway station versus his ordered mind</li>
+                    <li>&bull; Toby and the Swiss Army knife as comfort objects</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    7
+                  </span>
+                  Paddington and the Underground
+                </h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  At Paddington station, Christopher experiences sensory overload from the lights,
+                  signs and crowds. He is helped by a kind police officer who shows him the
+                  Underground. In an Underground station Toby escapes onto the tracks; Christopher
+                  climbs down to rescue him just before a train arrives, and a stranger pulls him up
+                  to safety. He finally takes the Tube to Willesden Junction and finds his
+                  mother&apos;s flat.
+                </p>
+                <div className="mt-3 rounded-lg bg-muted p-3">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    Key Moments
+                  </p>
+                  <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <li>
+                      &bull; The Tube map &mdash; pattern that finally makes London comprehensible
+                    </li>
+                    <li>&bull; Toby&apos;s rescue from the rails &mdash; courage born of love</li>
+                    <li>
+                      &bull; Strangers help repeatedly &mdash; the world is not entirely hostile
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    8
+                  </span>
+                  Reunion with Mother
+                </h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Christopher arrives at his mother&apos;s flat. Judy and Mr Shears return; Judy is
+                  overwhelmed with emotion and relief, while Mr Shears is hostile to
+                  Christopher&apos;s arrival. Ed comes to London to find his son but is turned away.
+                  Judy and Mr Shears argue about Christopher&apos;s presence. Eventually Judy walks
+                  out on Mr Shears, takes Christopher and returns to Swindon so that he can sit his
+                  A-Level Maths exam, which he has been preparing for.
+                </p>
+                <div className="mt-3 rounded-lg bg-muted p-3">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    Key Moments
+                  </p>
+                  <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <li>
+                      &bull; Mother&apos;s emotional reunion contrasts with Christopher&apos;s
+                      practical concerns
+                    </li>
+                    <li>&bull; Mr Shears as the new domestic antagonist</li>
+                    <li>
+                      &bull; Christopher&apos;s priority is the Maths exam &mdash; his ordered
+                      future
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    9
+                  </span>
+                  The A-Level Maths Exam and Resolution
+                </h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Christopher sits his A-Level Mathematics paper in Swindon &mdash; a remarkable
+                  achievement at fifteen. He is anxious but completes it. Ed slowly begins to repair
+                  the relationship by giving Christopher a puppy, Sandy, as a sign of trust. The
+                  novel ends with Christopher passing his A-Level with an A grade and looking ahead
+                  to taking Further Maths and going to university to become a scientist. He repeats
+                  the affirmation that he can do anything because he solved the mystery and went to
+                  London on his own and was brave.
+                </p>
+                <div className="mt-3 rounded-lg bg-muted p-3">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    Key Moments
+                  </p>
+                  <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <li>
+                      &bull; The puppy Sandy &mdash; symbolic replacement of the dead Wellington
+                    </li>
+                    <li>
+                      &bull; The A-Level Maths success &mdash; an external reward in an ordered
+                      system
+                    </li>
+                    <li>&bull; The hopeful but qualified ending &mdash; trust is rebuilt slowly</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="rounded-lg bg-violet-500/5 border border-violet-500/20 p-4">
+                <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                  An appendix-style ending
+                </h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Importantly, the novel ends with an appendix containing one of the actual A-Level
+                  Maths questions Christopher answered, complete with his fully worked solution.
+                  This is not the play&apos;s curtain-call mathematics demonstration; in the novel
+                  it is literally printed at the back as if Christopher had stapled it into the
+                  manuscript. It is a final assertion that the world makes sense to Christopher
+                  through numbers.
+                </p>
               </div>
             </div>
           </Section>
@@ -344,39 +463,51 @@ export default function CuriousIncidentPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Christopher John Francis Boone"
-                description="The fifteen-year-old narrator and protagonist. Christopher attends a special school in Swindon, has an extraordinary gift for mathematics and logic, and finds social and emotional life baffling. He hates being touched, loud noises, the colours yellow and brown, and metaphors; he loves prime numbers, lists, the colours red, the night sky, and his pet rat Toby. He narrates with literal-minded honesty, recording precisely what people say and do without inferring feelings. Haddon never names a diagnosis, but Christopher's narration conveys a sensory and cognitive world that many readers identify with autism spectrum profiles. His investigation of Wellington's death is, in effect, an investigation of his own family and of the limits of what logic can solve."
+                description="The fifteen-year-old narrator and protagonist. Christopher is a maths prodigy with an extraordinary memory and an aptitude for logic, but he struggles with social interaction, lying, idiomatic language, sensory overload, and being touched. He attends a special school in Swindon. Haddon describes him only as a boy with 'behavioural problems' — the words 'autism' and 'Asperger's' do not appear in the novel itself, although the back-cover blurbs of early editions referred to Asperger's. Christopher narrates the entire novel. His voice is literal, precise, and unfiltered, which gives the book its distinctive tone. He loves prime numbers, space, dogs, the colour red, and his pet rat Toby; he hates the colours yellow and brown, being touched, and metaphors. He intends to be a scientist or astronaut."
               />
               <CharacterCard
                 name="Ed Boone (Father)"
-                description="Christopher's father, a self-employed heating engineer, and Christopher's primary carer since his mother left. Ed is shown as patient, exhausted, and capable of explosive frustration. He has lied to Christopher for two years &mdash; telling him his mother died of a heart attack &mdash; out of what he sees as protection. He killed Wellington with a garden fork in a furious row with Mrs Shears, which Christopher cannot forgive. The scene where Ed confesses and asks Christopher to trust him is one of the novel's most painful: trust, like a number, cannot be partially true. By the end, Ed is trying to rebuild trust through small concrete actions, including the gift of a puppy."
+                description="Christopher's father. A heating engineer who has raised Christopher alone for two years following the breakdown of his marriage. Ed is patient, working-class, and devoted to Christopher in his own often gruff way: he shops, cooks, sets routines, and tolerates outbursts. However, he has lied catastrophically — telling Christopher his mother was dead when she had run off with Mr Shears — and in a moment of rage he killed Wellington with a garden fork. Ed is one of Haddon's most morally complex creations: capable of love and violence, honesty and lies, often within the same scene. His struggle to win back Christopher's trust frames the novel's emotional resolution."
               />
               <CharacterCard
                 name="Judy Boone (Mother)"
-                description="Christopher's mother, who in the timeline of the book has not died but left Ed for Mr Shears and moved to London. Her letters show a woman who loved her son but found herself unable to cope with his needs and unhappy in her marriage. Her honesty in the letters &mdash; admitting she shouted, lost her temper, and left &mdash; contrasts sharply with Ed's lie. She represents an imperfect but real maternal love, and her decision to leave Mr Shears and return to Swindon with Christopher costs her the relationship she escaped to. She is neither idealised nor villainised &mdash; one of Haddon's most adult portrayals."
+                description="Christopher's mother. Judy left Ed and Christopher to live in London with Roger Shears. Her letters, hidden by Ed, reveal that she found Christopher's behaviour overwhelming and felt that she was a bad mother. She is more emotionally expressive than Ed, but also less practiced at managing Christopher's needs. When he arrives unannounced in London, she is overwhelmed, and the practicalities of caring for a son with sensory difficulties soon strain her relationship with Mr Shears. She ultimately leaves Mr Shears and returns to Swindon for Christopher's exam, suggesting genuine maternal commitment despite her earlier flight."
               />
               <CharacterCard
                 name="Siobhan"
-                description="Christopher's teacher at his special school. Siobhan is Christopher's emotional translator: she suggests writing the book, advises him on what is and is not appropriate to include, and draws faces showing different feelings to help him recognise emotions. Christopher quotes her advice repeatedly in the narration (&ldquo;Siobhan said&hellip;&rdquo;), and she functions almost as a co-author and silent reader of the book within the book. She models how a neurotypical adult can support, rather than &ldquo;fix,&rdquo; a neurodivergent young person."
+                description="Christopher's teacher and mentor at the special school. She is the addressee of much of Christopher's writing — he composes the book partly because she has encouraged him to. Siobhan is patient, calm, and explains the world to Christopher in clear rules: she draws faces on pieces of paper to teach him about emotions, advises him on what he can and cannot say, and gently guides his growth. She functions as a stable, trusted adult whose voice acts as Christopher's filter on social reality. She is one of the few characters Christopher unambiguously trusts."
               />
               <CharacterCard
-                name="Mrs Shears"
-                description="The Boones' neighbour, owner of the murdered dog Wellington. Mrs Shears is separated from her husband, Roger Shears, who has run off with Judy. After Judy left, Mrs Shears spent time at the Boones' house cooking for Ed and Christopher, and Christopher believes Ed wanted her to be his new partner. Her refusal precipitates the row in which Ed kills Wellington. Her grief at finding her dog dead opens the novel."
+                name="Mrs Eileen Shears"
+                description="Christopher's neighbour and Wellington's owner. Following Mr Shears's departure with Judy, Mrs Shears spent time helping Ed with Christopher and there was a brief domestic intimacy between them. Their relationship cooled after an argument, which was the trigger for Ed's killing of Wellington. Mrs Shears is presented largely from Christopher's literal perspective: a woman who shouts when her dog is dead, who later refuses to speak to him. She is the immediate occasion of the mystery rather than a fully developed psychological portrait."
               />
               <CharacterCard
-                name="Mr Shears (Roger Shears)"
-                description="Mrs Shears's estranged husband, who had an affair with Judy and ran away to London with her. We never see him until the London section, when Christopher arrives unannounced at his flat. Mr Shears is openly hostile to Christopher, complaining about the disruption his arrival causes. He is the only major character Christopher dislikes on a personal level. The breakdown of his relationship with Judy at the end of the novel is consequence rather than tragedy &mdash; Haddon presents him without sympathy."
+                name="Mr Roger Shears"
+                description="Mrs Shears's estranged husband and the man with whom Judy had an affair and now lives in London. Christopher dislikes him intensely — he refers to him simply as 'Mr Shears' and decides early in the novel that Mr Shears is his prime suspect for Wellington's killing. When Christopher arrives in London, Mr Shears is hostile, makes it clear he does not want Christopher there, and attempts to push Judy back into prioritising their relationship. He is ultimately rejected by Judy, who chooses her son over him."
               />
               <CharacterCard
                 name="Mrs Alexander"
-                description="An elderly neighbour Christopher interviews during his investigation. She is patient and friendly, twice trying to give him cake or a drink, and is the character through whose conversation Christopher first hears that his mother and Mr Shears had an affair. She represents the kindness of strangers and the way that &mdash; for Christopher &mdash; a single, careful adult can be a route into truths his family is hiding. She is not an antagonist; her revelation is accidental but pivotal."
+                description="An elderly widow living in Christopher's road, recognisable by her wire-haired dachshund. She is one of the few neighbours willing to talk to Christopher, and she takes a kindly interest in him. During his door-to-door investigation, she gently and reluctantly tells him about his mother's affair with Mr Shears, having assumed that Christopher already knew. She is a model of considerate adult behaviour: respectful of Christopher's rules about being touched, careful with information, and unfailingly polite even when he abruptly walks away."
               />
               <CharacterCard
                 name="Toby"
-                description="Christopher's pet rat, whom he carries with him on the journey to London in a box. Toby is one of the few living creatures Christopher trusts unreservedly, partly because animals do not lie and partly because he can predict Toby's behaviour. Toby almost dies on the Underground tracks when he escapes, and is rescued by Christopher in one of the book's tensest scenes. By the end of the novel, Toby has died of old age, marking the passage of time and the small private griefs that run alongside the bigger family story."
+                description="Christopher's pet rat. Toby is a constant companion and represents Christopher's preference for animals over humans — he believes animals are more honest and easier to understand. Toby travels with Christopher to London inside his pocket; the rescue of Toby from the Underground tracks is one of the novel's most dramatic scenes and demonstrates Christopher's capacity for risk and devotion. Toby dies of old age towards the end of the novel — a small loss but one of the few times Christopher writes about grief in his own life."
               />
               <CharacterCard
                 name="Wellington"
-                description="Mrs Shears's large black standard poodle, found dead with a garden fork through him on the lawn at the start of the novel. Wellington is the &ldquo;dog in the night-time&rdquo; of the title (echoing Sherlock Holmes's &ldquo;Silver Blaze&rdquo;). His murder is the mystery Christopher sets out to solve, but the solution is not a stranger or a thief: his killer is Christopher's own father, in a domestic argument. Wellington is the catalyst rather than the subject &mdash; he is what allows the much larger mystery of the family to come to light."
+                description="The neighbour's black poodle, killed by a garden fork on Mrs Shears's lawn at the start of the novel. Although Wellington is dead from page one, he is the catalyst for the entire plot. As an investigative target he echoes the racehorse 'Silver Blaze' in Conan Doyle's Sherlock Holmes story — the title 'the curious incident of the dog in the night-time' is a direct quotation from that story. Wellington's killing is ultimately revealed to be the work of Ed, and so the dog's death simultaneously represents the rupture between Mrs Shears and Ed and the rupture between Ed and Christopher."
+              />
+              <CharacterCard
+                name="Sandy"
+                description="The golden retriever puppy that Ed gives Christopher towards the end of the novel as a peace-offering and a sign that he can be trusted with a living thing. Sandy is a quiet symbolic counterweight to Wellington — a dog given out of love rather than killed in anger — and represents the slow rebuilding of trust between father and son. Christopher accepts the puppy on his own terms and on his own timetable."
+              />
+              <CharacterCard
+                name="Sergeant / The Policeman at the Station"
+                description="A composite of the various police officers Christopher encounters. The first arrests him at the scene of Wellington's death; the duty sergeant interviews him at the station and gives him a caution. Later, a London officer at Paddington helps him navigate the city. Haddon uses these officers to demonstrate Christopher's literalism — he answers exactly what is asked, does not embellish, and sometimes seems unhelpful when in fact he is being maximally truthful."
+              />
+              <CharacterCard
+                name="Reverend Peters"
+                description="An invigilator at Christopher's A-Level Maths exam and a clergyman who has discussed God with Christopher in earlier chapters. Christopher is sceptical of religious explanation; Reverend Peters represents a worldview that Christopher politely but firmly rejects in favour of empirical reasoning. His presence at the exam is a small but pointed image: religion supervising mathematics."
               />
             </div>
           </Section>
@@ -388,27 +519,35 @@ export default function CuriousIncidentPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title="Truth and Lies"
-                description="The novel turns on a single sustained lie: Ed has told Christopher for two years that his mother is dead. For Christopher, who relies on language being literal, a lie is a category violation &mdash; not just morally wrong but logically intolerable. He says he cannot tell lies because to lie you have to imagine a world that does not exist. The plot exposes how every adult around him has compromised with the truth: Mrs Alexander hides the affair; Mrs Shears does not say what she suspects; Ed actively manufactures a false reality. Haddon shows truth as fragile, partial, and adult, while Christopher's rigid honesty reveals what most of us politely conceal."
+                description="Christopher's most cherished principle is that he cannot tell lies — he says he is unable to do so. The plot turns on the lies of others: Ed's lie that Judy is dead, the hidden letters, Ed's lie about not knowing how Wellington died. When Christopher discovers the truth, his entire framework of safety collapses. The novel suggests that for Christopher, lies are not just morally wrong but cognitively unbearable: they break his model of the world. Yet Haddon also shows that lying parents can still love their children — the moral landscape is not as simple as Christopher's literal mind initially treats it."
               />
               <ThemeCard
                 title="Order vs Chaos / Logic vs Emotion"
-                description="Christopher imposes order on a world that overwhelms him: prime numbers, lists, timetables, maths problems, the rule that a Good Day has four red cars in a row and a Black Day has four yellow cars. The novel's form &mdash; the prime-numbered chapters, the diagrams, the maths appendix &mdash; mirrors his mind. Against this is the emotional chaos of family breakdown, which logic cannot reduce to an algorithm. Haddon does not endorse one side over the other: Christopher's logic gets him to London but cannot mend his family, and his parents' emotional lives have produced disaster. The book holds order and chaos in tension."
+                description="Christopher imposes order on a world he experiences as overwhelming: prime-numbered chapters, lists, diagrams, mathematical proofs, and rigid daily routines. He prefers the logical certainty of mathematics to the unpredictability of human emotion. The novel constantly contrasts the ordered with the chaotic: a calm bedroom versus a crowded railway station, a maths problem versus a parental row. Haddon does not present Christopher's preference as defective; rather, he shows that Christopher's strategies are coherent responses to a sensorily overwhelming world. The book asks readers to recognise that 'logic' and 'emotion' are not opposites but two ways of navigating reality."
               />
               <ThemeCard
                 title="Family and Trust"
-                description="The novel is, beneath the murder mystery, a study of a family in collapse. Trust, once broken, cannot be reasoned back into existence: Ed's confession does not restore Christopher's safety, and Judy's return does not undo her absence. Haddon shows trust as something built incrementally, in small concrete acts &mdash; Ed letting Christopher hold his hand by the fingertips, the gift of the puppy Sandy, walking the dog together. The novel rejects the idea that a family can be &ldquo;fixed&rdquo; in a single scene; it ends with provisional, fragile arrangements rather than a happy ending."
+                description="The novel anatomises a family that has fractured under the strain of caring for a child with high needs. Both parents love Christopher but have failed him in different ways: Judy by leaving, Ed by lying. The journey to London literalises the family's geographical and emotional rupture. The ending offers a guarded reconciliation: Ed's puppy and Judy's return show that families can be rebuilt slowly, on the terms of the most vulnerable member, but not restored to their original state. Trust, once broken, must be re-earned."
               />
               <ThemeCard
                 title="Difference and Neurodiversity"
-                description="The novel presents a narrator whose perception, reasoning and sensory experience differ from the neurotypical norm. Haddon is widely understood to depict an autism spectrum profile, but he has been clear in interviews that he did not research autism specifically and the novel never names a condition: it is &ldquo;a novel about difference, about being an outsider.&rdquo; Christopher's narration invites readers into a mind that experiences metaphor as lying, eye contact as overwhelming, and physical touch as painful, while also being more precise, honest, and observant than most neurotypical narrators. The book has been criticised and praised in equal measure within the autistic community: any classroom discussion should treat Christopher as Haddon's singular character rather than a diagnostic case study. <strong>[VERIFY tone with class]</strong>"
+                description="Christopher is presented as someone who experiences the world differently — overwhelmed by noise, colour, touch and metaphor, but extraordinary in mathematical reasoning, memory, and pattern recognition. Importantly, the novel itself never uses the words 'autism' or 'Asperger's' (though early dust-jacket marketing did). Haddon has subsequently said publicly that he did not research autism specifically and that Christopher should not be read as a documentary representation. The novel's strength lies in giving the reader Christopher's first-person perspective — sympathetic without sentimentality — and allowing the reader to experience the world as he does. Examiners increasingly expect students to handle this representation thoughtfully."
               />
               <ThemeCard
                 title="Independence and Growing Up"
-                description="The plot is a coming-of-age story disguised as a detective novel. Christopher begins the book under the protection of his father; he ends it having taken a train alone across England, found his mother, sat an A-level, and decided his future career. The novel respects the scale of these achievements without sentimentalising them: each one is hard-won, undertaken in defiance of overwhelming sensory and emotional difficulty. The closing line &mdash; on going to London on his own &mdash; is not a triumphant declaration but a carefully reasoned argument for self-belief, drawn from evidence."
+                description="The novel is, among other things, a coming-of-age story. Christopher begins by needing his father's reassurance to leave the house and ends by having travelled alone to London, sat an A-Level, and acquired a puppy he cares for himself. Each act of independence is hard-won and not romanticised: he is terrified, vomits, hides under seats, and groans in public. Yet the cumulative effect is a young person who has discovered his own competence. The closing affirmation — 'I can do anything' — is earned, not granted. Independence for Christopher is not the loud rebellion of typical teenage fiction but the quiet acquisition of tools for self-reliance."
               />
               <ThemeCard
                 title="Communication"
-                description="Communication is constantly imperfect: people lie, omit, hint, and gossip; metaphors and idioms confuse Christopher; faces conceal feelings; letters arrive too late. Haddon contrasts speech (unreliable, social, full of subtext) with writing (precise, delayed, retrievable). The book Christopher writes is itself an attempt to communicate without the failure modes of conversation: it tells the reader literally what happened, with diagrams and equations where words fall short. Siobhan's drawings of faces showing emotions are one of several explicit attempts to bridge between Christopher's mode of understanding and the social world."
+                description="The novel dramatises every kind of communication failure: Ed cannot tell Christopher the truth about Judy; Judy's letters are intercepted; police officers misread Christopher's literal answers; Christopher cannot read facial expressions; idioms confuse him; touch overwhelms him. Yet communication still happens, often through unexpected channels — diagrams, lists, written letters, and the very book Christopher is writing. Haddon suggests that conventional speech is only one of many ways minds reach each other. The novel itself is a model of this: a mind that struggles to talk is rendered fully visible to the reader through prose."
+              />
+              <ThemeCard
+                title="Animals and Honesty"
+                description="Christopher prefers animals to people because they 'do not lie.' Toby the rat, Wellington the dog, the fantasy of being alone in the universe with only animals: animals form a moral counterweight to the deceitful world of adults. Wellington's death is therefore not just a crime but a violation of Christopher's most trusted moral category. The puppy Sandy at the end is a small repair of this category. Haddon uses animals as the only reliable point of fidelity in a world full of broken human promises."
+              />
+              <ThemeCard
+                title="Bravery and Fear"
+                description="Although Christopher rarely uses emotional vocabulary, the novel is fundamentally about courage. He is frightened of crowds, strangers, and noise, and yet he undertakes a journey that would daunt most adults. The novel redefines bravery as 'doing the difficult thing while afraid' rather than 'not being afraid.' Christopher's repeated mantra at the end — that he was 'brave' — is one of the few overt emotional statements he makes about himself, and it is presented as fully justified."
               />
             </div>
           </Section>
@@ -418,87 +557,79 @@ export default function CuriousIncidentPage() {
         <div id="key-quotations">
           <Section title="Key Quotations with Analysis" icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              The following quotations are widely cited from Haddon&apos;s 2003 novel. Always check
-              page references against your own edition; pagination differs between Jonathan Cape
-              (UK), Doubleday (US) and the Vintage paperback. Items below marked{' '}
-              <strong>[VERIFY page]</strong> are well-known but should be cross-checked before being
-              used as a precise textual citation in an exam.
+              All quotations are verbatim from Mark Haddon&apos;s 2003 novel. Variations from the
+              Simon Stephens stage adaptation (2012) are noted where they exist.
             </p>
             <div className="space-y-1">
               <QuoteCard
-                quote="I find people confusing."
-                speaker="Christopher (Chapter 73)"
-                analysis="Christopher's definitive statement of his place in the social world. The simplicity of the sentence &mdash; subject, verb, object &mdash; mirrors the literal mind that finds neurotypical complexity bewildering. The line operates in two directions: it characterises Christopher, but it also invites the reader to feel how strange neurotypical behaviour is when you stop assuming it is normal. The chapter goes on to list specific reasons (faces, metaphors, jokes), turning a feeling into a logical proof."
+                quote="It was 7 minutes after midnight. The dog was lying on the grass in the middle of the lawn in front of Mrs Shears&rsquo;s house. Its eyes were closed."
+                speaker="Christopher (opening of chapter 2)"
+                analysis="The novel's famous opening uses precise time, specific location and bare physical description. The numerical opening signals Christopher's ordered worldview; the present-tense vividness pulls the reader directly into a crime scene. Note the appearance-rather-than-meaning approach: 'Its eyes were closed' is descriptive, not interpretive. Haddon withholds emotional framing throughout, forcing the reader to supply it."
               />
               <QuoteCard
-                quote="This will not be a funny book. I cannot tell jokes because I do not understand them."
-                speaker="Christopher [VERIFY page]"
-                analysis="An early, pre-emptive declaration to the reader. The flatness of the syntax is part of the joke Haddon is telling at his narrator's expense and also part of his defence: Christopher refuses the social oil that makes most narration palatable. Critically, this means everything he tells us is meant straight, which is precisely why the lies of the adults around him land with such weight."
+                quote="The dog was dead. There was a garden fork sticking out of the dog. The points of the fork must have gone all the way through the dog and into the ground because the fork had not fallen over."
+                speaker="Christopher"
+                analysis="Christopher's narration is forensic rather than emotional. The reasoning ('must have gone all the way through... because the fork had not fallen over') foregrounds his deductive style. The bluntness of the repeated noun 'dog' (rather than 'it' or 'Wellington') is characteristic of his refusal to soften reality. The reader experiences both the horror of the image and the strangeness of the voice that records it."
+              />
+              <QuoteCard
+                quote="This is a murder mystery novel."
+                speaker="Christopher"
+                analysis="One of Christopher's clearest declarations of authorial intent. By naming the genre, he frames everything that follows as detective fiction; yet the mystery he solves is not just 'who killed Wellington' but 'what happened in my family'. Haddon uses genre self-consciously: a domestic novel disguised as a whodunnit, a structure echoed in Christopher's nested investigations."
+              />
+              <QuoteCard
+                quote="I find people confusing."
+                speaker="Christopher"
+                analysis="A simple, unembellished thesis statement that recurs across the novel. The brevity is itself characteristic of Christopher's voice. The remark applies equally to social interaction, idiom, emotion, and family secrets. Haddon places it early so that subsequent miscommunications are read against this baseline declaration."
+              />
+              <QuoteCard
+                quote="I do not tell lies. Mother used to say that this was because I was a good person. But it is not because I am a good person. It is because I can&rsquo;t tell lies."
+                speaker="Christopher"
+                analysis="Christopher dismantles a moral compliment by replacing virtue with capacity. He does not claim moral superiority; he claims cognitive incapacity. This precision matters: the novel's critique of lying is structural, not pious. By the time the reader meets Ed's catastrophic lie, this principle has been carefully established as a fixed truth-stake against which the family drama will be measured."
               />
               <QuoteCard
                 quote="Prime numbers are what is left when you have taken all the patterns away. I think prime numbers are like life. They are very logical but you could never work out the rules, even if you spent all your time thinking about them."
-                speaker="Christopher [VERIFY page]"
-                analysis="The thesis statement of the novel's structure. Haddon, via Christopher, supplies his own critical metaphor: the chapters are prime-numbered because life, like primes, is logical but does not yield up its rule. This justifies the form (no decorative narrative ornament) and the content (no neat moral pattern). Note the careful epistemological caution &mdash; not &ldquo;you cannot,&rdquo; but &ldquo;you could never work out.&rdquo;"
+                speaker="Christopher"
+                analysis="A rare moment of metaphor from Christopher, who claims elsewhere to dislike them. Note that this 'simile' is a logical rather than emotional comparison. The image positions life as patterned but not fully predictable, which is Christopher's working philosophy throughout the novel: structure exists, but exhaustive understanding does not. This is Haddon's clearest statement of the novel's epistemology."
               />
               <QuoteCard
-                quote="The dog was lying on the grass in the middle of the lawn in front of Mrs Shears's house. Its eyes were closed&hellip; The dog was dead. There was a garden fork sticking out of the dog. The points of the fork must have gone all the way through the dog and into the ground because the fork had not fallen over."
-                speaker="Christopher (Chapter 2, opening) [VERIFY page]"
-                analysis="The opening scene's precise, detached observation establishes the narrator's mode immediately. There is no expression of horror, no metaphor, no euphemism; the sentences accumulate by physical evidence and logical deduction (&ldquo;must have gone all the way through&hellip; because the fork had not fallen over&rdquo;). Haddon teaches us to read Christopher in the first paragraph: the absence of conventional emotional language is not absence of feeling but a different system."
-              />
-              <QuoteCard
-                quote="The Curious Incident of the Dog in the Night-Time"
-                speaker="Title (echoing Sherlock Holmes, &ldquo;Silver Blaze&rdquo;)"
-                analysis="The title is taken verbatim from Conan Doyle's short story &ldquo;Silver Blaze&rdquo; (1892), where Holmes points out to Inspector Gregory &ldquo;the curious incident of the dog in the night-time&rdquo; &mdash; the curious incident being that the dog did nothing in the night-time. Christopher names Sherlock Holmes as his model detective and aspires to his methods. Haddon's irony is that, unlike in Holmes, the absence at the centre of this novel is not a clue to a stranger but the absence of Christopher's mother, which the family has worked to disguise."
-              />
-              <QuoteCard
-                quote="I think I would make a very good astronaut."
-                speaker="Christopher [VERIFY page]"
-                analysis="One of several moments where Christopher imagines his ideal future. The sealed, solitary, technical environment of a spacecraft is for him a paradise: predictable, quiet, ordered, and free of the unpredictable behaviour of human beings. The image works as character (his fantasies are revealing) and as theme (his aspiration is towards isolation, not connection &mdash; a tension the plot will then push against)."
-              />
-              <QuoteCard
-                quote="A metaphor is when you describe something by using a word for something that it isn't. This means that the word metaphor is a metaphor. I think it should be called a lie because a pig is not like a day."
-                speaker="Christopher [VERIFY page]"
-                analysis="Christopher's rejection of metaphor is a poetics in miniature. He treats figurative language as a category error and therefore as a kind of lie. This is funny &mdash; the example, &lsquo;a pig is not like a day,&rsquo; is dryly absurd &mdash; but it also stages the novel's central problem. The plot will demand that Christopher accept information he cannot verify, given by people who use language ambiguously. Haddon is asking how truth survives in a world where most utterances are figurative."
-              />
-              <QuoteCard
-                quote="I will not tell you any more lies."
-                speaker="Ed (Father's confession) [VERIFY page]"
-                analysis="In the central confession scene, Ed promises Christopher truthfulness from now on, framing it as a pact rather than a single statement. The line is structurally significant: it is the moment the murder mystery resolves into the family novel. Crucially, Christopher does not believe him on the basis of the words; trust now has to be rebuilt by evidence over time. Haddon is sceptical of the redemptive speech act &mdash; the words are necessary but not sufficient."
-              />
-              <QuoteCard
-                quote="And I know I can do this because I went to London on my own, and because I solved the mystery of Who Killed Wellington? and I found my mother and I was brave and I wrote a book and that means I can do anything."
-                speaker="Christopher (final line) [VERIFY page]"
-                analysis="The closing sentence of the novel, structured as a deductive argument: I have done X, Y and Z; therefore I can do anything. The conjunctions pile evidence rather than emotion. Haddon refuses the standard coming-of-age cadence (&lsquo;I felt&hellip;&rsquo;) and replaces it with a logical proof. The implicit point: Christopher's self-belief is derived correctly from facts. The reader is left to register the unstated emotional cost, which Christopher does not name."
-              />
-              <QuoteCard
-                quote="Mother had died two weeks ago."
-                speaker="Christopher (Chapter early) [VERIFY page]"
-                analysis="The sentence is reported as fact by Christopher in the early chapters &mdash; not Ed's claim about her death, but Christopher's own internalised knowledge. The flatness with which it appears, alongside other ordered information, is what makes the later discovery of the letters so devastating: it has been operating as a load-bearing &lsquo;fact&rsquo; in his mental model for two years. Haddon shows how a single false data-point can corrupt an entire logical edifice."
-              />
-              <QuoteCard
-                quote="I cannot tell lies."
-                speaker="Christopher [VERIFY page]"
-                analysis="A core self-description. Christopher explains that he literally cannot construct counterfactual statements: to lie you would have to imagine alternate states of affairs and pick one. Haddon's irony is sharp &mdash; the whole adult world around Christopher constructs counterfactuals constantly, and the novel will turn on his discovery that his father has done so for two years."
+                quote="I think people believe in heaven because they don&rsquo;t like the idea of dying, because they want to carry on living and they don&rsquo;t like the idea that other people will move into their house and put their things into the rubbish."
+                speaker="Christopher"
+                analysis="A sharply rationalist account of religious belief, presented with Christopher's characteristic literalism. The mundane image ('put their things into the rubbish') deflates the metaphysical question. The novel does not endorse Christopher's atheism wholesale, but his rational stance is treated as coherent rather than naive. Contrast with Reverend Peters."
               />
               <QuoteCard
                 quote="I see everything."
-                speaker="Christopher [VERIFY page]"
-                analysis="In a chapter contrasting his perception with most people's, Christopher describes how he notices every detail in a field while neurotypical people get only an overall impression. The line is both a statement of cognitive style and a comment on the novel's narration: the prose accumulates detail rather than selecting it, because Christopher cannot effortlessly suppress what is not relevant. This is exhausting for Christopher and is part of why crowded environments &mdash; Swindon station, the Tube &mdash; are so distressing."
+                speaker="Christopher"
+                analysis="Christopher's claim that he notices and remembers far more sensory detail than other people. He gives examples (seeing every detail of a field through a train window) to argue that the typical mind ignores most of what is in front of it. The line connects his cognitive style to his investigative ability and is offered as strength, not deficit. Haddon foregrounds this as a positive cognitive feature rather than a clinical symptom."
               />
               <QuoteCard
-                quote="I do not always do what I am told."
-                speaker="Christopher [VERIFY page]"
-                analysis="A blunt, characteristically literal sentence whose function is to flag the novel's engine. Christopher's plot only happens because he disobeys his father's explicit instruction to stop investigating Wellington's death. His ethical hierarchy &mdash; truth above obedience &mdash; is the same hierarchy that gets him to London."
+                quote="I think I would make a very good astronaut."
+                speaker="Christopher"
+                analysis="Christopher imagines space as a place free of crowds, idioms, and unpredictable people — only machines, mathematics, and silence. The astronaut fantasy is both literal ambition and metaphor for an environment in which his strengths are valued. Haddon uses it to suggest that what Christopher needs is not a cure but a context."
               />
               <QuoteCard
-                quote="My memory is like a film."
-                speaker="Christopher [VERIFY page]"
-                analysis="Christopher's account of his autobiographical memory: he can rewind, fast-forward, and replay scenes with precise sensory detail. It is one of the few similes he uses without flagging it as suspicious, perhaps because film, unlike pigs and days, really does store and replay scenes. Critically, this means his testimony of past events &mdash; including his mother's &lsquo;death&rsquo; &mdash; comes from a person who experiences memory as evidence, which makes the discovery that his evidence was poisoned by his father's lie all the more violating."
+                quote="Mr Jeavons said that I liked maths because it was safe. He said I liked maths because it meant solving problems, and these problems were difficult and interesting but there was always a straightforward answer at the end. And what he meant was that maths wasn&rsquo;t like life because in life there are no straightforward answers at the end."
+                speaker="Christopher reporting Mr Jeavons"
+                analysis="A teacher's interpretation that Christopher records faithfully without endorsement. The passage encapsulates the novel's thematic dialectic: maths-as-order versus life-as-chaos. By relaying Mr Jeavons's words rather than agreeing with them, Christopher implicitly resists the framing — the rest of the book argues that life, while complicated, is not unintelligible."
               />
               <QuoteCard
-                quote="I think people believe in heaven because they don't like the idea of dying, because they want to carry on living and they don't like the idea that other people will move into their house and put their things into the rubbish."
-                speaker="Christopher [VERIFY page]"
-                analysis="A passage in which Christopher reasons about religion. The argument's structure is psychological &mdash; he infers belief from emotional motive. The mundane image (other people putting your things in the rubbish) is bathetic and funny, but the underlying point is serious: Christopher treats religious metaphysics as a kind of metaphor, and metaphor for him is a polite lie. Useful for any question on logic vs emotion, or on how Haddon presents adult systems of meaning through a child's literal lens."
+                quote="I like dogs. You always know what a dog is thinking. It has four moods. Happy, sad, cross and concentrating. Also, dogs are faithful and they do not tell lies because they cannot talk."
+                speaker="Christopher"
+                analysis="Establishes the moral architecture of the novel: dogs as honest, humans as deceitful. The taxonomic listing of moods ('Happy, sad, cross and concentrating') is characteristic of Christopher's pattern-imposing mind. The final clause is a deceptively simple ethical claim that resurfaces tragically when Ed kills a dog and lies."
+              />
+              <QuoteCard
+                quote="The world is full of obvious things which nobody by any chance ever observes."
+                speaker="Sherlock Holmes (quoted by Christopher)"
+                analysis="Christopher quotes Conan Doyle directly. The line legitimises his style of attention as detective methodology and aligns the reader with his cognitive perspective rather than treating him as anomalous. By embedding Holmes's voice in the novel, Haddon places Christopher in the genealogy of literary detectives — a profession that values exactly the traits Christopher possesses."
+              />
+              <QuoteCard
+                quote="I screamed."
+                speaker="Christopher"
+                analysis="Often used as a one-line paragraph at moments of overload (the railway station, encounters with strangers). The minimalism is the point: where another narrator would describe panic at length, Christopher records the fact. The reader feels the magnitude through the cleared white space around the line. Haddon's prose treats sensory crisis with extreme economy."
+              />
+              <QuoteCard
+                quote="And I know I can do this because I went to London on my own, and because I solved the mystery of Who Killed Wellington? and I found my mother and I was brave and I wrote a book and that means I can do anything."
+                speaker="Christopher (closing words of the novel)"
+                analysis="The novel's closing affirmation. The list of achievements is given in plain coordinated clauses ('and... and... and') rather than in a literary cadence — the syntax itself is Christopher's voice. Note the carefully chosen evidence: travel, deduction, family reunion, courage, and authorship. The sentence is hopeful but earned; it is also qualified by the realities of the novel (he is back in Swindon, his parents are still apart). Haddon avoids tying everything into a neat resolution while still permitting Christopher his triumph."
               />
             </div>
           </Section>
@@ -506,95 +637,89 @@ export default function CuriousIncidentPage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Symbols and Motifs" icon="🔢">
+          <Section title="Symbols and Motifs" icon="🔣">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Prime numbers</h4>
+                <h4 className="font-bold text-foreground">1. Prime Numbers</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The chapters are numbered using only primes (2, 3, 5, 7, 11&hellip;233), not
-                  consecutive integers. Christopher tells us he likes prime numbers because there is
-                  no rule for generating them &mdash; you have to test each one. Primes function as
-                  a structural metaphor: the novel insists on order, but that order is not the
-                  smooth arithmetic of conventional plotting. Like life and like Christopher&apos;s
-                  mind, the order is real but not predictable. The numbering also lets Haddon signal
-                  Christopher&apos;s authorship of the form, not just the content.
+                  Christopher numbers his chapters with primes (2, 3, 5, 7, 11&hellip;) because, as
+                  he says, &ldquo;I like prime numbers.&rdquo; Primes represent for him a perfect
+                  category: rule-bound but irreducible. They are also &ldquo;what is left when you
+                  have taken all the patterns away,&rdquo; making them an emblem of the novel&apos;s
+                  philosophy &mdash; pattern exists, but is not exhaustive. The prime numbering is a
+                  structural rebellion against the conventional novel and a daily declaration of
+                  Christopher&apos;s intellectual identity.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Maps and diagrams</h4>
+                <h4 className="font-bold text-foreground">2. Maps and Diagrams</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The book reproduces Christopher&apos;s drawings: street plans of Swindon, the
-                  layout of his father&apos;s wardrobe, the constellations Orion and Cassiopeia, the
-                  pattern of cars on a Good Day, the map of his journey, a maze, geometric proofs.
-                  Maps are how Christopher converts unfamiliar space into something he can navigate;
-                  diagrams are how he converts feelings into logical relationships. They are not
-                  decorative &mdash; they are part of the prose, and the reader has to learn to read
-                  them as text. The Pythagoras proof in the appendix is the final extension of this
-                  principle: a mathematical demonstration as a kind of self-portrait.
+                  The novel is illustrated with maps, charts, geometric figures, train timetables,
+                  and Christopher&apos;s own diagrams. They embody his preferred mode of
+                  communication: the visual and the precise. Maps make hostile territory navigable;
+                  they are the difference between chaos and order. The first time Christopher feels
+                  in control of London is when he understands the Tube map &mdash; cartography as
+                  cognitive rescue.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The London Underground</h4>
+                <h4 className="font-bold text-foreground">3. The London Underground</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The Tube is the novel&apos;s chief setting of sensory hell. Christopher describes
-                  the noise, the crowds, the strip-lit signs, and the trains coming and going as
-                  overwhelming; he hides on a track ledge while a train passes. The Underground is
-                  the inverse of the night sky and the empty fields he loves: it is meaningfully
-                  arranged (he has a map) but emotionally and sensorily unbearable. It functions as
-                  a test of his independence and as the novel&apos;s most vivid representation of
-                  how a neurotypical environment can be dangerous to a neurodivergent body. The fact
-                  that he survives it is the literal evidence underpinning his closing argument.
+                  The Underground is the most overwhelming environment in the novel: noise, crowds,
+                  lights, rushing trains, the rescue of Toby from the rails. Yet it is also where
+                  Christopher achieves his most self-reliant action. The Tube symbolises the modern
+                  city as both trauma and possibility, and Christopher&apos;s navigation of it is
+                  the novel&apos;s most visible image of his independence. The map of the Tube also
+                  represents abstract pattern overlaid on overwhelming reality.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">
-                  Yellow and brown vs red &mdash; &ldquo;Black Day&rdquo;
+                  4. Yellow and Brown (&ldquo;Black Day&rdquo;)
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Christopher refuses to eat or touch yellow or brown food and uses car colours as a
-                  daily oracle: four red cars in a row make a Good Day, four yellow cars in a row
-                  make a Black Day. He admits this is not logical, but defends it as no less
-                  reasonable than other people&apos;s rules (e.g. weather forecasting, which is also
-                  imprecise). The colour system is a coping device that imposes legibility on a day;
-                  the &ldquo;Black Day&rdquo; designation captures how, for him, emotional outlook
-                  can be triggered by something as small as the order of cars on a road. Haddon uses
-                  it to make readers feel both the arbitrariness and the necessity of his rituals.
+                  Christopher classifies days by the colours of the cars he sees on the way to
+                  school. Four red cars in a row make a &ldquo;Good Day,&rdquo; five make a
+                  &ldquo;Super Good Day,&rdquo; and four yellow cars make a &ldquo;Black Day,&rdquo;
+                  on which he must speak to nobody and avoid risks. He hates yellow and brown
+                  specifically and refuses to eat foods that are these colours. The colour system is
+                  both a coping mechanism and a form of personal augury &mdash; a private cosmology
+                  that imposes order on the unpredictable. Yellow becomes a recurrent motif of
+                  dread.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Wellington&apos;s body</h4>
+                <h4 className="font-bold text-foreground">5. Wellington (and Sandy)</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The dog is both literal corpse and symbolic object. The garden fork through
-                  Wellington stands for an act of domestic violence whose origin is in adult
-                  adultery, jealousy and rage &mdash; none of which Christopher initially
-                  understands. The investigation he conducts is, in retrospect, an investigation of
-                  the world that produced this object. Wellington also tethers the novel to the
-                  Sherlock Holmes tradition of the title: a dead dog as a clue to a much larger
-                  truth.
+                  Wellington, the murdered dog, is the novel&apos;s structuring symbol. As the
+                  title&apos;s &ldquo;dog in the night-time,&rdquo; he is at once corpse, mystery,
+                  and emblem of broken trust. Because dogs &ldquo;do not tell lies,&rdquo; killing
+                  one is, in Christopher&apos;s moral universe, the most serious betrayal possible.
+                  The puppy Sandy at the end is a carefully placed counter-symbol: a dog given
+                  rather than taken, a small reconstruction of moral order between father and son.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Christopher&apos;s Swiss Army knife</h4>
+                <h4 className="font-bold text-foreground">6. The Swiss Army Knife</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Christopher carries a Swiss Army knife and reaches for it when he is most
-                  threatened &mdash; notably when he believes his father, the killer of Wellington,
-                  may harm him. The knife is a symbol of his refusal to be a passive figure. It also
-                  raises the stakes: Haddon&apos;s narrator, often condescended to in critical
-                  reception, is willing to defend himself, and the prose reports this willingness
-                  without comment.
+                  Christopher takes his Swiss Army knife with him on the journey to London &mdash;
+                  not primarily as a weapon but as a portable system of tools. The knife embodies
+                  the same principle as his routines and lists: a discrete, ordered set of solutions
+                  to a possible range of problems. It is a portable miniature of his ordered mind.
+                  He uses it to defend himself when threatened, but its symbolic weight is in its
+                  self-containment: everything he might need, in one calm object, that he controls.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Toby the rat</h4>
+                <h4 className="font-bold text-foreground">7. Toby (the Pet Rat)</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Toby is the novel&apos;s small companion symbol. Animals are the only living
-                  beings Christopher trusts unconditionally: they do not lie, do not use metaphors,
-                  and behave according to predictable rules. Carrying Toby in a box to London is
-                  both practical (he cannot leave him) and emblematic: he travels with the only
-                  relationship that does not require him to interpret subtext. Toby&apos;s
-                  near-death on the Underground tracks, and his eventual death of old age at the end
-                  of the book, marks time and grief in a register Christopher can register clearly
-                  &mdash; a clean loss, not a complicated one.
+                  Toby travels with Christopher from Swindon to London inside his pocket. As a
+                  small, living, dependent creature, Toby symbolises Christopher&apos;s capacity for
+                  tender attachment &mdash; a side of him that conventional emotional vocabulary
+                  tends not to capture. The rescue from the Underground tracks is one of the
+                  novel&apos;s most heroic scenes precisely because it is risked for a creature most
+                  strangers would dismiss as vermin. Toby&apos;s eventual death by old age is the
+                  novel&apos;s only natural, uncomplicated bereavement.
                 </p>
               </div>
             </div>
@@ -603,178 +728,224 @@ export default function CuriousIncidentPage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Context" icon="🏛️">
+          <Section title="Historical, Biographical and Literary Context" icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Mark Haddon (b. 1962)</h4>
+                <h4 className="font-bold text-primary">Mark Haddon (born 1962)</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Mark Haddon was born in Northampton in 1962 and educated at Uppingham School and
-                  Merton College, Oxford. Before <em>Curious Incident</em>, he was best known as a
-                  writer and illustrator of children&apos;s books, including the Agent Z series, and
-                  for screenwriting work in television. In his twenties he had spent time working
-                  with people with physical and learning disabilities, which shaped his sensitivity
-                  to varied modes of perception and communication, though he has consistently said
-                  he did not research autism specifically for the novel.
+                  Mark Haddon was born in Northampton in 1962 and educated at Uppingham and Merton
+                  College, Oxford. Before <em>Curious Incident</em> he was best known as a writer
+                  and illustrator of children&apos;s books and as a screenwriter. He had also worked
+                  with young people with various disabilities, but he has consistently said in
+                  interviews and in his blog that he did <strong>not</strong> conduct specific
+                  research on autism or Asperger&apos;s when writing the novel and that he is not a
+                  specialist on the subject. This is important context: <em>Curious Incident</em> is
+                  a literary work, not a clinical document, and Haddon has resisted readings that
+                  treat Christopher as a representative case study.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Publication and reception (2003)</h4>
+                <h4 className="font-bold text-primary">2003 Publication and Reception</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The novel was published in 2003 by Jonathan Cape (UK) and Doubleday (US).
-                  Unusually, it was published simultaneously in adult and children&apos;s editions
-                  with different cover designs, marketing it as a young-adult/adult crossover
-                  &mdash; one of the early high-profile uses of this dual-audience strategy. It won
-                  the 2003 Whitbread Book of the Year (now the Costa Book Awards) and the 2004
-                  Commonwealth Writers&apos; Prize Best First Book, and was longlisted for the Man
-                  Booker Prize. It became a major international bestseller.
+                  The novel was published simultaneously in adult and children&apos;s editions in
+                  2003 by Jonathan Cape and David Fickling Books respectively &mdash; a then-unusual
+                  decision that helped it cross age boundaries. It became an international
+                  bestseller. It won the Whitbread Book of the Year (2003) and the Commonwealth
+                  Writers&apos; Prize for Best First Book (2004), and was translated into more than
+                  forty languages. It has remained a regular GCSE and IGCSE set text since.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Unreliable / first-person narration</h4>
+                <h4 className="font-bold text-primary">Distinguishing Novel and Play</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Christopher narrates in the first person and is in important senses unreliable
-                  &mdash; not because he lies (he insists he cannot) but because his interpretive
-                  framework is deliberately limited. Haddon&apos;s technical achievement is to give
-                  us all the data the reader needs to understand scenes that Christopher does not,
-                  especially around adults&apos; emotions. We work out the affair, Ed&apos;s love
-                  for Christopher, and Judy&apos;s reasons for leaving, while Christopher records
-                  the surface. This is dramatic irony of a particularly tender kind.
+                  Simon Stephens&apos;s stage adaptation premiered at the National Theatre in 2012
+                  and later transferred to the West End and Broadway, winning multiple awards
+                  including the Olivier Award for Best New Play. The play is a separate text by a
+                  different author and contains structural changes (notably, Siobhan reads aloud
+                  from Christopher&apos;s book, reframing the narrative voice) and certain scenes (a
+                  curtain-call mathematics demonstration, theatrical staging of Christopher&apos;s
+                  thought processes) that do not exist in the novel. Examiners typically expect
+                  students to discuss the novel as Haddon wrote it; if a student does refer to the
+                  play, they should label it explicitly as the Stephens adaptation.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The prime-numbered chapter structure</h4>
+                <h4 className="font-bold text-primary">Prime-Numbered Chapter Structure</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Chapters are numbered 2, 3, 5, 7, 11, 13&hellip; up to 233. The choice is internal
-                  to the fiction: Christopher tells us he likes primes and is writing the book, so
-                  the numbering is his. Critically, it changes the reader&apos;s experience of pace
-                  &mdash; chapter numbers leap by larger gaps as the book goes on, mimicking the way
-                  primes thin out. The final chapter (233) is itself a prime, and the appendix
-                  appears outside the numbering as an additional, mathematical signature.
-                </p>
-              </div>
-              <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Sherlock Holmes and the title</h4>
-                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The title quotes Conan Doyle&apos;s &ldquo;Silver Blaze&rdquo; (1892), in which
-                  Holmes solves a case by noticing what did not happen: the dog did not bark.
-                  Christopher cites Holmes approvingly several times in the novel and tries to apply
-                  Holmesian methods of observation and deduction. Haddon&apos;s use of the tradition
-                  is partly affectionate and partly ironic: the methods of classical detective
-                  fiction do solve the mystery of who killed the dog, but they cannot solve the
-                  human consequences. The genre is honoured and exceeded.
+                  Christopher numbers chapters using only the primes from 2 onwards. The novel
+                  begins with chapter 2 and ends at 233 (a prime). There are 47 chapters in total.
+                  This is not a layout flourish but an in-novel decision by the narrator, integrated
+                  with the plot: Christopher tells the reader he has chosen primes because he likes
+                  them. The structure is a formal extension of his cognition. It also,
+                  interestingly, makes the text both longer and more disjointed in feel than a
+                  conventional 1-2-3 numbering would, supporting the impression of a mind that
+                  organises material idiosyncratically.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">
-                  Simon Stephens&apos;s stage adaptation (2012)
+                  Sherlock Holmes &mdash; &ldquo;Silver Blaze&rdquo;
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  In 2012 the novel was adapted for the stage by playwright Simon Stephens,
-                  premiering at the National Theatre&apos;s Cottesloe (now Dorfman) in London,
-                  directed by Marianne Elliott. It won multiple Olivier and Tony Awards and toured
-                  widely. Stephens&apos;s adaptation makes a key formal change: Siobhan reads aloud
-                  from Christopher&apos;s book, framing the action as a play-within-a-play that the
-                  school is staging from his writing. The adaptation invents and cuts material to
-                  make the text performable. <strong>Important for exam answers:</strong> if you are
-                  studying the novel, do not quote material that exists only in the play (and vice
-                  versa). When in doubt about whether a line or scene is in your set text, check the
-                  novel.
+                  The title is taken directly from Arthur Conan Doyle&apos;s 1892 short story
+                  &ldquo;The Adventure of Silver Blaze,&rdquo; in which Holmes solves a mystery by
+                  noting that the household dog did not bark in the night &mdash; the &ldquo;curious
+                  incident&rdquo; being the dog&apos;s silence. Christopher names Holmes as a hero,
+                  models his investigative method on Holmes&apos;s, and explicitly quotes the
+                  &ldquo;Silver Blaze&rdquo; story. Haddon&apos;s use of the allusion places
+                  Christopher in the lineage of literary detectives whose strengths are observation,
+                  deduction, and the willingness to follow logic where it leads, regardless of
+                  social convention.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Note on autism and the novel</h4>
+                <h4 className="font-bold text-primary">
+                  Representation and the &ldquo;Autism&rdquo; Question
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The novel never uses the word &ldquo;autism&rdquo; or
-                  &ldquo;Asperger&apos;s,&rdquo; despite early jacket copy and reviews that did.
-                  Haddon has said publicly (notably on his own website and in interviews) that he
-                  did not research the condition before writing and that the book is not intended as
-                  a representation of it &mdash; he describes Christopher as &ldquo;a mathematician
-                  with some behavioural difficulties&rdquo; and the novel as a book about
-                  difference. The autistic community&apos;s reception has been mixed: some readers
-                  value the inside view of sensory difference, others object to a non-autistic
-                  author defining the popular image of autism. A strong essay handles this
-                  complexity rather than asserting Christopher &ldquo;has autism.&rdquo;
+                  The novel itself never uses the word &ldquo;autism&rdquo; or
+                  &ldquo;Asperger&apos;s syndrome&rdquo;; the back-cover blurb on the original UK
+                  adult edition referred to Asperger&apos;s, but Haddon has subsequently distanced
+                  himself from this framing. He has written publicly that he did no specific
+                  research and prefers to think of Christopher as a singular fictional character.
+                  Examiners increasingly want students to handle this with care: it is appropriate
+                  to say that Christopher&apos;s perceptual and social experiences resemble what is
+                  sometimes described as autistic experience, but inappropriate to treat the novel
+                  as a documentary or to flatten Christopher into a diagnostic label. Recent
+                  autistic writers and critics have engaged with the novel variously &mdash; some
+                  celebrating, some critiquing it &mdash; and a sophisticated response will
+                  acknowledge this ongoing conversation. <strong>[VERIFY]</strong> when citing
+                  specific Haddon comments, refer to his blog post &ldquo;Asperger&apos;s &amp;
+                  Autism&rdquo; (2009) which is the canonical source for these clarifications.
+                </p>
+              </div>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">Swindon and Setting</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  Christopher lives in Swindon, a railway and industrial town in Wiltshire. The
+                  choice of Swindon &mdash; ordinary, functional, unromantic &mdash; grounds the
+                  novel in the everyday rather than in Gothic or fantastical territory. The contrast
+                  with London is geographical (small town vs metropolis) and sensorial (manageable
+                  vs overwhelming). The Swindon-to-London journey via Paddington is a real route
+                  familiar to many readers, which intensifies the realism of Christopher&apos;s
+                  panic.
+                </p>
+              </div>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">
+                  Special Education and Educational Context
+                </h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  Christopher attends a special school in Swindon. The novel is set in a
+                  recognisable early-2000s UK educational landscape: A-Levels still examined
+                  externally, special schools serving children with a range of needs, a teacher
+                  (Siobhan) who has the time and training to support him personally.
+                  Christopher&apos;s aspiration to take A-Level Maths early and go to university is
+                  presented as exceptional but possible, reflecting ongoing real-world conversations
+                  about supporting neurodivergent students into higher education.
                 </p>
               </div>
             </div>
           </Section>
         </div>
 
-        {/* ────────────────────────────────── NARRATIVE FORM */}
-        <div id="narrative-form">
-          <Section title="Narrative Form and Structure" icon="🔗">
+        {/* ────────────────────────────────── STRUCTURE */}
+        <div id="structure">
+          <Section title="Narrative Structure and Form" icon="🔗">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">A book within the book</h4>
+                <h4 className="font-bold text-foreground">First-Person Limited Narration</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Christopher writes <em>Curious Incident</em> as a project for Siobhan; the text we
-                  read is presented as that project. This frame justifies the prose style (literal,
-                  precise), the diagrams, the digressions on prime numbers, and the appendix. It
-                  also creates dramatic irony: Christopher writes for Siobhan and so omits or
-                  downplays material he assumes she knows or does not need to read, while we receive
-                  the omissions as evidence.
+                  The entire novel is narrated by Christopher in the first person. The reader has
+                  access to no perspective except his. This produces some of the novel&apos;s most
+                  powerful effects: dramatic irony when Christopher fails to grasp the implications
+                  of what he reports (Mrs Alexander&apos;s revelation, his mother&apos;s letters),
+                  and a sustained sympathetic intimacy that bypasses the conventional authorial
+                  commentary that might otherwise pathologise him.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Mystery genre subverted</h4>
+                <h4 className="font-bold text-foreground">Detective Fiction Structure</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Haddon uses the structure of detective fiction (a body, suspects, an investigator,
-                  evidence, a confession) but reroutes the resolution. The dog&apos;s murderer is
-                  identified midway through the book, not at the end. The remaining narrative is the
-                  consequences. The genre&apos;s promise &mdash; that solving the case restores
-                  order &mdash; is denied.
+                  The novel uses the conventions of the murder mystery: a corpse, suspects, an
+                  amateur investigator, door-to-door inquiries, a trail of clues, a confession. Yet
+                  the genre is partly a vehicle: the &ldquo;real&rdquo; mystery that emerges is not
+                  Wellington but the family. Haddon uses Christopher&apos;s genre awareness
+                  self-consciously &mdash; Christopher knows he is writing a detective novel and
+                  tells the reader so.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Digressive structure</h4>
+                <h4 className="font-bold text-foreground">Embedded Documents and Diagrams</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Christopher pauses the plot for chapters on prime numbers, the solar system, the
-                  Monty Hall problem, the Cottingley Fairies, his own school days, and dreams of
-                  being an astronaut. These are not interruptions: they are part of how his mind
-                  works, and Haddon insists that they are part of the story. They also slow the pace
-                  and give the reader access to Christopher&apos;s mode of thinking, which becomes
-                  essential for understanding the emotional climaxes.
+                  The narrative contains embedded letters (Judy&apos;s letters to Christopher),
+                  maths problems with worked solutions, illustrations, maps, and Christopher&apos;s
+                  own charts. The novel is therefore typographically heterogeneous in a way that
+                  mirrors Christopher&apos;s mind. The appendix containing the A-Level Maths
+                  solution is the ultimate example: a non-narrative document attached to a narrative
+                  as evidence.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Use of diagrams and equations</h4>
+                <h4 className="font-bold text-foreground">Digressions Numbered with Primes</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Visual elements are integrated into the text: street maps, tube maps, geometric
-                  figures, emoticon-faces drawn by Siobhan, the Pythagoras proof. Reading the novel
-                  involves reading these. Their presence enacts Haddon&apos;s argument that words
-                  are not always the most honest medium &mdash; sometimes a diagram says what a
-                  sentence cannot.
+                  Christopher&apos;s narration is regularly interrupted by digressive chapters about
+                  prime numbers, the Monty Hall problem, the Cottingley Fairies, the universe, and
+                  so on. These digressions slow the plot but build the texture of his mind. Each is
+                  housed in its own prime-numbered chapter; the digression is therefore a unit of
+                  cognition. Haddon uses these to deepen characterisation without dialogue.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The appendix</h4>
+                <h4 className="font-bold text-foreground">Chronology and the Two Crimes</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The novel ends not on its emotional climax but on an appendix giving the full
-                  proof of the question Christopher answered in his A-level Maths paper. This is a
-                  deliberate choice: the &lsquo;happy ending&rsquo; is a piece of mathematics.
-                  Haddon is asking the reader to recognise that, for Christopher, this proof is the
-                  appropriate emotional register &mdash; beautiful, complete, and free of metaphor.
+                  The novel&apos;s plot is essentially linear, but it contains two crimes that
+                  overlap: the foreground crime (Wellington&apos;s killing) and the background crime
+                  (Ed&apos;s long-running deception about Judy). Christopher&apos;s progress through
+                  the foreground case unwittingly cracks the background case open. The structural
+                  cleverness is that the resolution of the dog mystery is also the destruction of
+                  the family lie, even though Christopher set out to investigate only the former.
+                </p>
+              </div>
+              <div className="rounded-lg bg-muted p-4">
+                <h4 className="font-bold text-foreground">The Appendix</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  The novel ends with an appendix in which Christopher works through one of his
+                  A-Level Maths exam questions in full. This is a striking formal choice: the novel
+                  ends not with a paragraph of resolution but with mathematics. It is
+                  Christopher&apos;s proof of competence and also Haddon&apos;s reminder that the
+                  world Christopher inhabits most happily is one of formal demonstration. The play
+                  does not include this appendix in the same form.
+                </p>
+              </div>
+              <div className="rounded-lg bg-muted p-4">
+                <h4 className="font-bold text-foreground">Tone</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  The tone is flat, literal, and unsentimental. There are no exclamation marks of
+                  authorial drama; Christopher reports both the discovery of a dead dog and the
+                  rescue of his pet rat in the same calm register. Comedy and pathos arise from the
+                  reader&apos;s awareness of the gap between Christopher&apos;s reporting and the
+                  emotional weight of the events. Haddon&apos;s great craft achievement is producing
+                  a moving novel out of a determinedly affectless voice.
                 </p>
               </div>
             </div>
           </Section>
         </div>
 
-        {/* ────────────────────────────────── EXAM QUESTIONS */}
-        <div id="exam-questions">
-          <Section title="Exam-Style Questions with Planning Notes" icon="✍️">
-            <p className="text-sm text-muted-foreground mb-4">
-              Five GCSE / IGCSE-style questions and three A-Level-style questions, with thesis
-              suggestions and paragraph routes. Treat the planning notes as starting points: a
-              strong response will quote the novel directly, link methods to themes, and address
-              Haddon as a deliberate author rather than treating Christopher as a real person.
+        {/* ────────────────────────────────── ESSAY PLANNING */}
+        <div id="essay-planning">
+          <Section title="Essay Planning for Common Questions" icon="✍️">
+            <p className="text-sm text-muted-foreground mb-5">
+              Five GCSE/IGCSE-style plans plus three A-Level plans. Each contains a thesis,
+              paragraph structure, and suggested verbatim quotations.
             </p>
 
             <div className="space-y-6">
-              {/* GCSE 1 */}
+              {/* GCSE Essay 1 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  GCSE 1. How does Haddon present Christopher&apos;s relationship with truth and
+                  GCSE 1: How does Haddon present Christopher&apos;s relationship with truth and
                   lies?
                 </h4>
                 <div className="mt-3 space-y-3">
@@ -783,41 +954,70 @@ export default function CuriousIncidentPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Haddon uses Christopher&apos;s literal-minded honesty as both a character
-                      trait and a critical lens, exposing how the adults around him have constructed
-                      a survivable fiction that he cannot tolerate.
+                      Haddon presents Christopher&apos;s relationship with truth as cognitive rather
+                      than moral &mdash; a structural condition that makes the family&apos;s
+                      deceptions devastating but also makes his eventual reconciliation with his
+                      father a hard-won ethical achievement.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph routes
+                      Paragraph 1 &mdash; Christopher&apos;s rule
                     </p>
-                    <ul className="mt-1 text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>
-                        Christopher&apos;s self-description: &ldquo;I cannot tell lies&rdquo; and
-                        the metaphor-as-lie passage.
-                      </li>
-                      <li>
-                        The structural lie about his mother&apos;s death and the discovery of the
-                        letters.
-                      </li>
-                      <li>
-                        Ed&apos;s confession scene and the line about not telling lies any more.
-                      </li>
-                      <li>
-                        Mrs Alexander&apos;s polite half-truths in the park &mdash; adult truth as
-                        social negotiation.
-                      </li>
-                    </ul>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      &ldquo;I do not tell lies&hellip; It is because I can&rsquo;t tell
+                      lies.&rdquo; Analyse the redefinition of honesty as cognitive incapacity. Note
+                      Haddon&apos;s precision: Christopher is not boasting but explaining.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 2 &mdash; The lie about mother
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The hidden letters and the lie that Judy died of a heart attack. Discuss how
+                      Ed&apos;s lie violates not just trust but Christopher&apos;s entire epistemic
+                      framework.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 3 &mdash; Animals and the moral category
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      &ldquo;Dogs are faithful and they do not tell lies because they cannot
+                      talk.&rdquo; Show how the killing of Wellington combines lying and violence
+                      into a single act, and why that breaks Christopher&apos;s moral universe twice
+                      over.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 4 &mdash; Restoring trust
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The puppy Sandy and Ed&apos;s slow rebuilding of relationship. Note that trust
+                      is not restored by speech alone but by demonstrated, repeated honesty over
+                      time.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Conclusion
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Haddon perhaps suggests that truth-telling is not a moral luxury but a
+                      cognitive necessity for those who, like Christopher, build their world on it
+                      &mdash; and that the rest of us underestimate its weight.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* GCSE 2 */}
+              {/* GCSE Essay 2 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  GCSE 2. Explore how Haddon presents the breakdown and partial repair of the Boone
-                  family.
+                  GCSE 2: How does Haddon present Christopher&apos;s journey to London?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -825,39 +1025,61 @@ export default function CuriousIncidentPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Haddon resists the redemptive arc of conventional family narratives: the
-                      family is not restored but renegotiated, and the novel insists that trust is
-                      rebuilt through evidence over time, not declarations.
+                      Haddon uses the journey to London as a literalisation of Christopher&apos;s
+                      growing independence, dramatising his fear and resilience in equal measure to
+                      redefine bravery for the reader.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph routes
+                      Paragraph 1 &mdash; Departure
                     </p>
-                    <ul className="mt-1 text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>Mother&apos;s letters: her honest account of why she left.</li>
-                      <li>
-                        Father&apos;s lie and confession: violence, contrition, limits of
-                        forgiveness.
-                      </li>
-                      <li>
-                        The London journey: Christopher choosing his mother but escaping into her,
-                        not towards her.
-                      </li>
-                      <li>
-                        Closing chapters: the puppy, holding hands by the fingertips, separate
-                        households.
-                      </li>
-                    </ul>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Discuss the planning and the choice of objects: the Swiss Army knife, Toby,
+                      the cashpoint card. Christopher&apos;s preparation reflects his ordered mind
+                      responding to extraordinary circumstances.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 2 &mdash; Sensory overload at Swindon and Paddington
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      &ldquo;I screamed.&rdquo; Discuss Haddon&apos;s minimalist treatment of
+                      crisis. The crowds, signs, noise, and lights are listed rather than
+                      dramatised, putting the reader inside Christopher&apos;s perceptual
+                      experience.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 3 &mdash; Toby on the rails
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Christopher climbs onto the Tube tracks to rescue Toby. Discuss this as an act
+                      of love disguised as a calculation. The chapter is one of the novel&apos;s
+                      most physically dangerous and morally vivid moments.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 4 &mdash; Arrival and aftermath
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The reunion with Judy is presented through Christopher&apos;s practical
+                      concerns rather than sentimental relief. Conclude on Haddon&apos;s
+                      redefinition of bravery: it is not the absence of fear but the willingness to
+                      keep moving through it.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* GCSE 3 */}
+              {/* GCSE Essay 3 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  GCSE 3. How does Haddon use the form and style of the novel to put us inside
-                  Christopher&apos;s mind?
+                  GCSE 3: How does Haddon present the relationship between Christopher and his
+                  father?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -865,36 +1087,59 @@ export default function CuriousIncidentPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The prime-numbered chapters, embedded diagrams, and refusal of metaphor do not
-                      just describe Christopher&apos;s mind &mdash; they enact it, forcing the
-                      reader to think the way he does.
+                      Haddon presents Ed Boone as a flawed but genuinely loving father whose lies
+                      almost destroy his relationship with Christopher, and uses their
+                      reconciliation to argue that family love is rebuilt slowly through patience
+                      and honesty rather than through grand gestures.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph routes
+                      Paragraph 1 &mdash; Daily love
                     </p>
-                    <ul className="mt-1 text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>Prime-numbered chapters: form as authorial signature.</li>
-                      <li>
-                        Maps, diagrams, and the appendix: visual literacy as part of the narrative.
-                      </li>
-                      <li>
-                        Digressive chapters (primes, Monty Hall) that pause the plot deliberately.
-                      </li>
-                      <li>
-                        Refusal of metaphor and the resulting flatness of affect &mdash; honesty
-                        over ornament.
-                      </li>
-                    </ul>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The opening establishes Ed as the parent who manages routine, food, and
+                      bedtime. Show how Haddon foregrounds practical care as an expression of love.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 2 &mdash; The lie
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Ed&apos;s confession that Judy is alive. Note the language of love mixed with
+                      self-justification (&lsquo;I thought it would be easier&rsquo;). Haddon
+                      resists making Ed simply a villain.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 3 &mdash; The killing of Wellington
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Ed&apos;s admission that he killed Wellington in fury. Discuss this as the
+                      moment Christopher logically concludes his father is dangerous. The novel does
+                      not soften this implication.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 4 &mdash; Sandy and slow trust
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The puppy at the end. Discuss how Haddon refuses an easy reconciliation: trust
+                      is rebuilt only on Christopher&apos;s terms and over time. The closing
+                      chapters are hopeful but qualified.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* GCSE 4 */}
+              {/* GCSE Essay 4 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  GCSE 4. Explore the significance of the journey to London in the novel.
+                  GCSE 4: How does Haddon use first-person narration to shape the reader&apos;s
+                  response to Christopher?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -902,41 +1147,58 @@ export default function CuriousIncidentPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The journey is at once plot device, sensory ordeal, and proof: it furnishes
-                      the evidence for Christopher&apos;s closing claim that he can do anything.
+                      By giving the entire narrative to Christopher&apos;s voice, Haddon ensures
+                      that the reader experiences the world from inside his perception, producing
+                      sympathy without sentimentality and dramatic irony without condescension.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph routes
+                      Paragraph 1 &mdash; Voice and register
                     </p>
-                    <ul className="mt-1 text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>
-                        Trigger: the realisation that his father killed Wellington and may threaten
-                        him.
-                      </li>
-                      <li>
-                        Swindon station and the Tube as sensory hell &mdash; the prose reproduces
-                        overload.
-                      </li>
-                      <li>
-                        Toby on the tracks: small-stakes peril as scale model of Christopher&apos;s
-                        own danger.
-                      </li>
-                      <li>
-                        Arrival in Willesden &mdash; the limits of reunion; Mr Shears&apos;s
-                        hostility.
-                      </li>
-                    </ul>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      &ldquo;It was 7 minutes after midnight.&rdquo; Discuss the precise, literal
+                      opening and what it tells the reader about Christopher before any explicit
+                      characterisation.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 2 &mdash; Dramatic irony
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Mrs Alexander&apos;s revelation. Christopher misses the implication; the
+                      reader does not. Discuss how Haddon engineers a gap between narrator and
+                      reader without ever patronising the narrator.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 3 &mdash; Cognitive transparency
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Digressions about primes, the Monty Hall problem, the universe. The reader is
+                      shown how Christopher thinks, not told about it. Discuss this as Haddon&apos;s
+                      answer to the problem of representing a mind unlike the reader&apos;s.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 4 &mdash; Affect through restraint
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      &ldquo;I screamed.&rdquo; Argue that the flatness of the narration intensifies
+                      emotional impact rather than reducing it. The reader supplies what Christopher
+                      does not write.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* GCSE 5 */}
+              {/* GCSE Essay 5 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  GCSE 5. How does Haddon present the figure of Ed Boone as both a loving father and
-                  a man capable of harm?
+                  GCSE 5: How does Haddon present ideas about order and chaos in the novel?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -944,164 +1206,456 @@ export default function CuriousIncidentPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Haddon refuses to make Ed either villain or hero; the novel asks the reader to
-                      hold his loyalty and his violence in the same hand, which is precisely what
-                      Christopher cannot do.
+                      Haddon presents order &mdash; in the form of mathematics, lists, prime
+                      numbers, and routines &mdash; not as a defect of Christopher&apos;s mind but
+                      as a coherent strategy for living in a sensorily overwhelming world, while
+                      showing that the world&apos;s disorder cannot be wholly tamed.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph routes
+                      Paragraph 1 &mdash; Prime numbers and chapter structure
                     </p>
-                    <ul className="mt-1 text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>
-                        Daily care: cooking, structure, taking Christopher to the police station.
-                      </li>
-                      <li>
-                        The lie about the mother&apos;s death &mdash; a self-justified protective
-                        fiction.
-                      </li>
-                      <li>
-                        The killing of Wellington &mdash; rage at Mrs Shears redirected at the dog.
-                      </li>
-                      <li>
-                        The confession scene and the small acts of repair: Sandy the puppy, the
-                        fingertip handhold.
-                      </li>
-                    </ul>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      &ldquo;Prime numbers are what is left when you have taken all the patterns
+                      away.&rdquo; Discuss the chapter numbering as an extension of
+                      Christopher&apos;s philosophy.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 2 &mdash; Yellow vs red, &lsquo;Black Days&rsquo;
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Discuss the colour-coding system as a private method of imposing
+                      predictability. Haddon presents this as a genuine, working coping strategy.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 3 &mdash; The London Underground
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The Tube map as an abstract pattern superimposed on chaos. Christopher only
+                      manages London once he has the map; pattern is what makes the world bearable.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 4 &mdash; The limits of order
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The hidden letters and Ed&apos;s confession reveal what Christopher&apos;s
+                      rules cannot predict. Haddon shows that order is necessary but not sufficient;
+                      love and trust are partly irrational.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* A-Level 1 */}
-              <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
+              {/* A-Level Essay 1 */}
+              <div className="rounded-xl border-2 border-violet-500/40 bg-violet-500/10/40 p-5">
+                <p className="text-xs font-bold text-violet-700 dark:text-violet-300 uppercase tracking-wider mb-1">
+                  A-Level / Higher Tier
+                </p>
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  A-Level 1. &ldquo;Haddon uses the conventions of detective fiction to expose their
-                  inadequacy in describing real human consequences.&rdquo; Discuss.
+                  A-Level 1: &ldquo;The novel&apos;s strength lies in its formal innovation rather
+                  than in its plot.&rdquo; Discuss with reference to Haddon&apos;s narrative
+                  methods.
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Approach
+                      Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Argue with the proposition by tracing the genre&apos;s machinery (clues,
-                      suspects, deduction, confession) and showing how each is honoured and
-                      exceeded. The Sherlock Holmes intertext is your spine: the title&apos;s
-                      allusion to &ldquo;Silver Blaze&rdquo; sets up the model that the novel then
-                      complicates.
+                      The plot is conventional &mdash; a domestic mystery with a coming-of-age arc
+                      &mdash; but the formal architecture (prime-numbered chapters, embedded
+                      diagrams, first-person literalism, the appendix) is genuinely innovative and
+                      inseparable from the novel&apos;s meaning.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Possible structure
+                      Paragraph 1 &mdash; Form as character
                     </p>
-                    <ul className="mt-1 text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>The genre setup: corpse, suspect, methodical investigator.</li>
-                      <li>
-                        The mid-book solution: who killed Wellington is a domestic, not a stranger.
-                      </li>
-                      <li>The post-solution narrative: the convention of resolution is denied.</li>
-                      <li>
-                        Counter-argument: the Pythagoras appendix as a logical &lsquo;ending&rsquo;
-                        in a different mode.
-                      </li>
-                    </ul>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The prime-numbered chapters and digressions on mathematics. Discuss how the
+                      structure is not decorative but mimetic of Christopher&apos;s mind.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 2 &mdash; Detective genre repurposed
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Compare with Conan Doyle. Haddon adopts the genre of the murder mystery but
+                      redirects its energy towards a domestic revelation, refiguring the form as a
+                      vehicle for psychological realism.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 3 &mdash; The non-narrative appendix
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Concluding the novel with a worked maths solution is a striking generic
+                      violation. Discuss its semantic weight: a novel that ends in a proof is making
+                      a claim about how Christopher inhabits the world.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 4 &mdash; Counter-argument and resolution
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Acknowledge the strength of the plotting (the double-mystery structure is
+                      elegant). Conclude that form and content are inseparable in Haddon&apos;s
+                      achievement: the &lsquo;innovation&rsquo; is precisely the marriage of
+                      narrative and typography.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* A-Level 2 */}
-              <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
+              {/* A-Level Essay 2 */}
+              <div className="rounded-xl border-2 border-violet-500/40 bg-violet-500/10/40 p-5">
+                <p className="text-xs font-bold text-violet-700 dark:text-violet-300 uppercase tracking-wider mb-1">
+                  A-Level / Higher Tier
+                </p>
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  A-Level 2. Examine the relationship between voice and form in{' '}
-                  <em>The Curious Incident of the Dog in the Night-Time</em>.
+                  A-Level 2: To what extent should{' '}
+                  <em>The Curious Incident of the Dog in the Night-Time</em> be read as a
+                  representation of autistic experience?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Approach
+                      Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Argue that Haddon&apos;s major technical achievement is the integration of
-                      voice into form: the prose, the chapter numbering, the visual elements and the
-                      digressive chapters all originate in Christopher&apos;s first-person logic, so
-                      that &lsquo;form&rsquo; in the novel is not a frame but an extension of voice.
+                      The novel can be read sympathetically as resembling an autistic perspective,
+                      but Haddon&apos;s public statements and the text&apos;s deliberate refusal to
+                      use diagnostic vocabulary suggest the more responsible reading frames
+                      Christopher as a singular literary character whose strengths and challenges
+                      resonate with, but are not identical to, real autistic experience.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Possible structure
+                      Paragraph 1 &mdash; Textual evidence of autistic-coded experience
                     </p>
-                    <ul className="mt-1 text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>
-                        Voice: literal, list-based, anti-metaphor; cite the metaphor-as-lie passage.
-                      </li>
-                      <li>Form 1: prime-numbered chapters as voice extended into structure.</li>
-                      <li>Form 2: diagrams, maps, and the appendix as non-verbal voice.</li>
-                      <li>
-                        Where voice and form diverge &mdash; dramatic irony around Ed&apos;s love.
-                      </li>
-                    </ul>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Sensory overload, literalism, dislike of touch, special interests, routines.
+                      Show how Haddon renders these convincingly through first-person narration.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 2 &mdash; The novel&apos;s linguistic restraint
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The words &lsquo;autism&rsquo; and &lsquo;Asperger&apos;s&rsquo; never appear
+                      in the novel. Discuss this as a deliberate choice and contrast with the early
+                      dust-jacket marketing.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 3 &mdash; Haddon&apos;s public position
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Haddon has stated he did no specific research on autism and prefers not to
+                      treat the novel as documentary. Discuss the implications for reading practice.{' '}
+                      <strong>[VERIFY]</strong> citation precision when quoting Haddon&apos;s blog.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 4 &mdash; The autistic critical response
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Acknowledge that autistic writers have responded to the novel variously
+                      &mdash; some valuing it as a sympathetic portrait, others critiquing it as a
+                      non-autistic author&apos;s imagining. A sophisticated answer takes this
+                      conversation seriously.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Conclusion
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      The novel&apos;s power is literary: it gives readers access to a different way
+                      of perceiving without claiming clinical authority. That is both its strength
+                      and the source of its ongoing critical debate.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* A-Level 3 */}
-              <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
+              {/* A-Level Essay 3 */}
+              <div className="rounded-xl border-2 border-violet-500/40 bg-violet-500/10/40 p-5">
+                <p className="text-xs font-bold text-violet-700 dark:text-violet-300 uppercase tracking-wider mb-1">
+                  A-Level / Higher Tier
+                </p>
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  A-Level 3. To what extent should{' '}
-                  <em>The Curious Incident of the Dog in the Night-Time</em> be read as a novel
-                  about neurodiversity, and to what extent as a novel about parents and children?
+                  A-Level 3: Compare Haddon&apos;s use of detective fiction conventions in{' '}
+                  <em>Curious Incident</em> with their use in Conan Doyle&apos;s Sherlock Holmes
+                  stories.
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Approach
+                      Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      A genuinely two-handed essay. Acknowledge that Haddon never names a condition
-                      and has cautioned readers against treating the book as a representation of
-                      autism, while also recognising the book&apos;s real influence on neurotypical
-                      readers&apos; understanding of difference. Then argue that the family plot
-                      &mdash; lie, discovery, journey, partial repair &mdash; is what gives the
-                      neurocognitive material its emotional traction. The two readings depend on
-                      each other.
+                      Haddon adopts the surface architecture of the Holmes story &mdash;
+                      observation, deduction, the &lsquo;curious incident&rsquo; itself &mdash; and
+                      reorients it from public spectacle to private psychology, transforming the
+                      detective genre into a vehicle for domestic and personal revelation.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Possible structure
+                      Paragraph 1 &mdash; The borrowed title
                     </p>
-                    <ul className="mt-1 text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>
-                        Case for neurodiversity: sensory, cognitive, communicative detail; reception
-                        in the autistic community (mixed).
-                      </li>
-                      <li>
-                        Case for family novel: lie, letters, journey, parental imperfection, fragile
-                        resolution.
-                      </li>
-                      <li>
-                        Synthesis: the family plot tests Christopher&apos;s framework precisely
-                        where it is most vulnerable, and his framework illuminates the family
-                        precisely where it is most evasive.
-                      </li>
-                      <li>
-                        Authorial position: Haddon&apos;s public statements that the book is about
-                        &lsquo;difference&rsquo; rather than diagnosis.{' '}
-                        <strong>
-                          [VERIFY exact phrasing of Haddon&apos;s blog post on autism if quoting
-                          directly]
-                        </strong>
-                      </li>
-                    </ul>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      &ldquo;Silver Blaze&rdquo; (1892) and Holmes&apos;s &lsquo;curious incident of
+                      the dog in the night-time.&rsquo; Discuss the act of titular borrowing as a
+                      paratextual genre signal.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 2 &mdash; Christopher as Holmesian observer
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      &ldquo;The world is full of obvious things which nobody by any chance ever
+                      observes.&rdquo; Christopher embodies Holmes&apos;s observational virtues but
+                      applies them to the pedestrian rather than to the sensational.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 3 &mdash; The Watson-figure reimagined
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Holmes has Watson; Christopher has Siobhan and the reader. Discuss how Haddon
+                      collapses the detective-and-narrator structure into a single first-person
+                      voice.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Paragraph 4 &mdash; Genre transformation
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      In Holmes the mystery is exterior and the detective remains psychologically
+                      intact. In Haddon the mystery becomes interior &mdash; the detective&apos;s
+                      own family &mdash; and the resolution alters the detective&apos;s life.
+                      Conclude on Haddon&apos;s use of generic conventions to make the detective
+                      novel a domestic and developmental form.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </Section>
         </div>
+      </div>
+
+      {/* ────────────────────────────────── GRADE 9 POINTS */}
+      <div id="grade-9">
+        <Section title="Grade 9 Exemplar Points and Interpretations" icon="⭐">
+          <p className="text-sm text-muted-foreground mb-4 italic">
+            These higher-level interpretations demonstrate the sophisticated analysis needed for top
+            grades. Each goes beyond surface reading to consider authorial intent, alternative
+            readings, and structural significance.
+          </p>
+          <div className="space-y-4">
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                1. The Form Is the Character
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                A surface reading describes Christopher&apos;s personality and lists his routines. A
+                Grade 9 reading recognises that Haddon&apos;s formal choices &mdash; the
+                prime-numbered chapters, embedded diagrams, mathematical digressions, the appendix
+                &mdash; are not ornaments to characterisation but its primary mode. Christopher is
+                not described; he is instantiated. The novel&apos;s structure is itself an extended
+                characterisation. This argument allows a candidate to write seriously about
+                typography, pagination, and pacing as elements of meaning rather than as background.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                2. The Double-Mystery Architecture
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                The novel runs two crimes in parallel: Wellington&apos;s killing (foreground) and
+                Ed&apos;s long-running deception (background). Christopher believes he is
+                investigating one and in fact uncovers both. Top-band candidates write about this as
+                a structural pun: the form of the detective novel allows Haddon to smuggle in a
+                domestic psychological novel. Discuss how the double-mystery imposes dramatic irony
+                on the reader: we suspect the deeper mystery is the family before Christopher does,
+                which lets Haddon control the emotional pacing across two simultaneous arcs.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                3. Haddon&apos;s Restraint as Ethical Choice
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                The flat tone is not just stylistic; it is ethical. By refusing to provide
+                explanatory authorial commentary about Christopher&apos;s mind, Haddon refuses to
+                pathologise him. Other authors might have framed Christopher as a problem to be
+                explained; Haddon presents him as a person to be heard. This is a craft choice with
+                moral weight, and a sophisticated response can connect it to wider conversations
+                about how literature represents minority experience.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                4. The Refusal of Clinical Vocabulary
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                The words &lsquo;autism&rsquo; and &lsquo;Asperger&apos;s&rsquo; appear nowhere in
+                the novel itself. This is not an oversight: it is a deliberate decision to keep
+                Christopher singular rather than representative. A Grade 9 candidate distinguishes
+                the novel&apos;s position from the marketing&apos;s position (early dust-jackets did
+                refer to Asperger&apos;s) and from later readers&apos; positions, and uses
+                Haddon&apos;s public clarifications to argue that the novel sits within a literary
+                rather than a clinical tradition.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                5. Comedy as a Sympathy Mechanism
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                The novel is often funny &mdash; the literalism, the misunderstood idioms, the
+                professional astronaut digressions. A surface reading either misses the comedy or
+                treats it as light relief. A sophisticated reading argues that Haddon uses humour to
+                bring the reader into Christopher&apos;s point of view: laughing with him rather
+                than at him, producing alignment without sentimentality. The comic register is
+                therefore part of the novel&apos;s ethical achievement.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                6. The Mother&apos;s Letters as Counter-Narrative
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Judy&apos;s letters represent the only sustained voice in the novel that is not
+                Christopher&apos;s. They give the reader a different perspective on the family
+                &mdash; a mother who felt unable to cope, who loved her son, who knew she was
+                failing him. A top-band candidate notes the formal significance: the only break from
+                Christopher&apos;s first-person voice comes in the form of letters, which
+                Christopher transcribes. The novel is therefore epistolary at one of its most
+                important moments, and the contrast in voice (Judy&apos;s emotional adult prose vs
+                Christopher&apos;s literal narration) is itself a piece of meaning.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                7. The Open, Earned Ending
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                &ldquo;That means I can do anything.&rdquo; The novel closes on optimism, but a
+                careful reader notices it is qualified: Christopher is back in Swindon; his parents
+                are still separated; the family is held together by negotiation rather than
+                resolved. Haddon refuses both a fairy-tale reunion and a tragic conclusion. The
+                ending&apos;s power is that it lets Christopher claim victory on his own terms while
+                leaving the wider family situation realistically unresolved. A Grade 9 candidate
+                identifies this as a deliberate refusal of generic closure.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                8. The Appendix as Statement of Worldview
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Most novels conclude with a sentence; Haddon concludes with a maths proof. The
+                appendix is not an extra; it is the novel&apos;s final chapter. By ending with a
+                worked solution to an A-Level Maths question, Haddon makes a claim about
+                Christopher&apos;s relationship to the world: it is a place where mathematical
+                reasoning offers refuge, demonstrable competence, and joy. The appendix is also
+                self-evidence: Christopher, the narrator, proves on the page that he is the maths
+                prodigy he has claimed to be. <strong>[VERIFY]</strong>
+                this appendix is a feature of the novel and is not present in the same form in the
+                Stephens stage adaptation.
+              </p>
+            </div>
+          </div>
+        </Section>
+      </div>
+
+      {/* ────────────────────────────────── PRACTICE QUESTIONS */}
+      <div id="practice-questions">
+        <Section title="Practice Questions" icon="📝">
+          <p className="text-sm text-muted-foreground mb-4">
+            Exam-style questions covering the most commonly tested areas. Consider how you would
+            structure a response using PEEL paragraphs, embedded verbatim quotations, and contextual
+            links to Haddon&apos;s methods and the novel&apos;s 2003 publication.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                q: 'How does Haddon present the theme of truth and lies in The Curious Incident of the Dog in the Night-Time? Refer closely to the novel.',
+                marks: 30,
+                level: 'GCSE / IGCSE',
+              },
+              {
+                q: "Explore how Haddon presents Christopher's relationship with his father throughout the novel.",
+                marks: 30,
+                level: 'GCSE / IGCSE',
+              },
+              {
+                q: "How does Haddon use the journey to London to present Christopher's growing independence?",
+                marks: 30,
+                level: 'GCSE / IGCSE',
+              },
+              {
+                q: "Discuss the importance of Wellington's death to the structure and themes of the novel.",
+                marks: 30,
+                level: 'GCSE / IGCSE',
+              },
+              {
+                q: "How does Haddon use first-person narration to shape the reader's response to Christopher?",
+                marks: 30,
+                level: 'GCSE / IGCSE',
+              },
+              {
+                q: "'The novel is fundamentally about communication failure.' How far do you agree with this view of Haddon's novel?",
+                marks: 40,
+                level: 'A-Level',
+              },
+              {
+                q: 'Explore how Haddon uses the conventions of detective fiction in The Curious Incident of the Dog in the Night-Time, with reference to one or more works of Arthur Conan Doyle.',
+                marks: 40,
+                level: 'A-Level',
+              },
+              {
+                q: "To what extent should The Curious Incident of the Dog in the Night-Time be read as a representation of neurodivergent experience? Refer in your answer to Haddon's narrative methods and to the novel's reception.",
+                marks: 40,
+                level: 'A-Level',
+              },
+            ].map((item, i) => (
+              <div key={i} className="rounded-lg border border-border bg-muted/50 p-4">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-sm font-semibold text-foreground">Question {i + 1}</p>
+                  <span className="rounded-full bg-violet-500/15 px-2 py-0.5 text-[10px] font-bold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                    {item.level}
+                  </span>
+                </div>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {item.q} <span className="font-semibold">[{item.marks} marks]</span>
+                </p>
+              </div>
+            ))}
+          </div>
+        </Section>
       </div>
 
       {/* Exam Tips */}
@@ -1113,50 +1667,67 @@ export default function CuriousIncidentPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Always treat Haddon as a deliberate author.</strong> Write &ldquo;Haddon uses
-              Christopher&apos;s literal narration to&hellip;&rdquo;, not &ldquo;Christopher decides
-              to&hellip;&rdquo; on its own.
+              <strong>Distinguish novel from play.</strong> Refer to &ldquo;Haddon&apos;s 2003
+              novel&rdquo; or &ldquo;the novel&rdquo; throughout. If you must mention the 2012 stage
+              adaptation, say &ldquo;the Stephens adaptation&rdquo; explicitly.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Discuss form, not just plot.</strong> The prime-numbered chapters, embedded
-              diagrams, and Pythagoras appendix are part of the meaning &mdash; mention them.
+              <strong>Handle representation carefully.</strong> The novel does not use the words
+              &lsquo;autism&rsquo; or &lsquo;Asperger&apos;s&rsquo;. Discuss Christopher as a
+              singular literary character whose experience may resemble neurodivergent perspectives
+              without flattening him into a diagnosis.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Distinguish novel from play.</strong> If your spec is on Haddon&apos;s 2003
-              novel, never quote a Simon Stephens stage line; if you are studying the play, do not
-              lean on appendix material that is novel-only.
+              <strong>Embed exact quotations.</strong> Use Christopher&apos;s actual words: &ldquo;I
+              do not tell lies&rdquo;, &ldquo;I find people confusing&rdquo;, &ldquo;Prime numbers
+              are what is left when you have taken all the patterns away.&rdquo;
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Handle neurodiversity carefully.</strong> Avoid asserting Christopher
-              &ldquo;has autism&rdquo; in the text &mdash; the novel never names it, and Haddon has
-              explicitly said he did not research it. Talk about &lsquo;difference,&rsquo;
-              &lsquo;sensory experience,&rsquo; or &lsquo;a mind that takes language
-              literally.&rsquo;
+              <strong>Use Haddon&apos;s methods.</strong> Discuss first-person narration,
+              prime-numbered chapters, embedded diagrams, the appendix, the borrowed Holmes title,
+              and the flat tone as deliberate craft choices.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use precise terminology.</strong> &ldquo;First-person narration,&rdquo;
-              &ldquo;dramatic irony,&rdquo; &ldquo;intertext&rdquo; (for Sherlock Holmes),
-              &ldquo;motif&rdquo; (for primes, colours, maps).
+              <strong>Refer to the writer&apos;s intentions.</strong> &ldquo;Haddon perhaps
+              suggests&hellip;&rdquo; or &ldquo;Haddon uses Christopher&apos;s voice
+              to&hellip;&rdquo;
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Don&apos;t mistake calm prose for absence of feeling.</strong> The most
-              painful scenes in the novel are written flatly &mdash; that flatness is the point.
-              Quote it; analyse it.
+              <strong>Link the title to Sherlock Holmes.</strong> The phrase &lsquo;the curious
+              incident of the dog in the night-time&rsquo; is a verbatim quotation from Conan
+              Doyle&apos;s &ldquo;Silver Blaze&rdquo; (1892); reference this for top marks.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span>
+              <strong>Use precise terminology.</strong> &ldquo;First-person narrator,&rdquo;
+              &ldquo;dramatic irony,&rdquo; &ldquo;epistolary insertion&rdquo; (for the letters),
+              &ldquo;genre repurposing,&rdquo; and &ldquo;mimetic form&rdquo; will all earn
+              analytical marks.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span>
+              <strong>Address the whole novel.</strong> Reference the opening (Wellington), the
+              middle (the letters and confession), the journey, and the appendix to show full
+              coverage.
             </span>
           </li>
         </ul>
@@ -1166,11 +1737,9 @@ export default function CuriousIncidentPage() {
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
           <em>The Curious Incident of the Dog in the Night-Time</em> by Mark Haddon was first
-          published in 2003 by Jonathan Cape (UK) and Doubleday (US) and is{' '}
-          <strong>still in copyright</strong>. Quotations on this page are reproduced for
-          educational commentary and revision purposes under fair-dealing for criticism and review.
-          Always check exact wording and pagination against your own edition before citing in
-          coursework.
+          published in 2003 and remains in copyright. Quotations on this page are reproduced briefly
+          for the purposes of educational study and literary criticism. The 2012 stage adaptation by
+          Simon Stephens is a separate copyrighted work; differences are flagged where they appear.
         </p>
       </footer>
     </>

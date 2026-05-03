@@ -88,7 +88,7 @@ export default function PigeonEnglishPage() {
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
           <span className="rounded-full bg-violet-500/15 px-3 py-1 text-xs font-bold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-            21st-Century Prose
+            Modern Prose
           </span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             AQA
@@ -99,9 +99,10 @@ export default function PigeonEnglishPage() {
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">Stephen Kelman, 2011</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
-          Everything you need for AQA GCSE English Literature Paper 2 (Modern Texts). Plot summary,
-          character profiles, themes with evidence, key quotations, symbolism, context (including
-          the Damilola Taylor case that inspired Kelman), and AO1/AO2/AO3 essay planning.
+          Everything you need for your AQA GCSE English Literature exam on Stephen Kelman&apos;s
+          Booker-shortlisted debut novel. Plot summary, character profiles, themes with evidence,
+          key quotations, contextual links to the Damilola Taylor case, the pigeon&apos;s narrative
+          interventions, Harri&apos;s mixed Pidgin-English voice, and full essay planning guidance.
         </p>
       </div>
 
@@ -113,14 +114,17 @@ export default function PigeonEnglishPage() {
             'Plot Summary',
             'Characters',
             'Themes',
-            'Context',
             'Key Quotations',
             'Symbols',
-            'Exam Questions',
+            'Context',
+            'Structure & Voice',
+            'Essay Planning',
+            'Grade 9 Points',
+            'Practice Questions',
           ].map((s) => (
             <a
               key={s}
-              href={`#${s.toLowerCase().replace(/\s+/g, '-')}`}
+              href={`#${s.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
               className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {s}
@@ -134,85 +138,179 @@ export default function PigeonEnglishPage() {
         <div id="plot-summary">
           <Section title="Plot Summary" icon="📖" defaultOpen>
             <div className="space-y-4">
-              <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Setting and Premise</h4>
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    1
+                  </span>
+                  Opening: A Boy is Murdered
+                </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Pigeon English is narrated by Harrison &ldquo;Harri&rdquo; Opoku, an
-                  eleven-year-old Ghanaian boy who has recently moved to a high-rise estate in south
-                  London with his mother (Mamma) and older sister Lydia. His father (Papa), baby
-                  sister Agnes, and grandmother (Grandma Ama) remain in Ghana, with the family
-                  hoping they can one day join them. The novel opens shortly after the murder of an
-                  unnamed local boy, stabbed outside Chicken Joe&apos;s. Harri did not know the dead
-                  boy well, but the killing fascinates and frightens him.
+                  The novel opens after a boy has been stabbed and bled to death outside Chicken
+                  Joe&apos;s on a London estate. Harrison &ldquo;Harri&rdquo; Opoku, an
+                  eleven-year-old recently arrived from Ghana with his mother (Mamma) and older
+                  sister Lydia, narrates the scene. Harri stares at the dead boy&apos;s blood drying
+                  on the pavement and resolves, with his friend Dean, to investigate the murder
+                  using CSI-style detective methods. Kelman immediately establishes Harri&apos;s
+                  innocent voice clashing with brutal urban violence.
                 </p>
               </div>
 
-              <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Harri&apos;s Investigation</h4>
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    2
+                  </span>
+                  Family Life: Half a Family in London
+                </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Inspired by detective shows like CSI, Harri and his friend Dean decide to
-                  investigate the murder themselves. They hunt for clues, take fingerprints with
-                  Sellotape and chalk dust, follow suspects, and keep a notebook of evidence.
-                  Harri&apos;s perspective is comically innocent &mdash; he treats the investigation
-                  as a game &mdash; but the novel makes clear that the violence around him is real
-                  and adult. He goes to school, runs sprints with the class athlete Poppy Morgan
-                  (his crush), worships Jordan Manny&apos;s trainers, and tries to learn the rules
-                  of London playground life.
+                  Harri lives in a high-rise flat with Mamma (a midwife working long shifts) and
+                  Lydia. Papa and baby Agnes are still in Ghana, waiting to be brought over. Auntie
+                  Sonia visits and burns her fingerprints off with an iron to evade immigration
+                  authorities. The family prays, attends church and tries to maintain Ghanaian
+                  customs. Harri misses Papa and Agnes desperately, writing letters home in his
+                  head.
                 </p>
               </div>
 
-              <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Dell Farm Crew</h4>
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    3
+                  </span>
+                  School and Friendships
+                </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  The estate is dominated by the Dell Farm Crew, an older gang led by X-Fire and
-                  including Killa and Clipz. They intimidate younger children, run minor crime on
-                  the estate, and are widely suspected of being involved in the murder. X-Fire
-                  repeatedly tries to recruit Harri, both because Harri runs fast and because Harri
-                  witnessed something the crew want to know about. Harri&apos;s reluctant
-                  interactions with them &mdash; a mixture of fear, fascination, and bravado &mdash;
-                  structure the central tension of the novel. Lydia, more streetwise than Harri,
-                  becomes entangled with Miquita (X-Fire&apos;s sister) and is increasingly drawn
-                  into the gang&apos;s orbit.
+                  Harri attends a multi-ethnic London school. He is a fast runner and counts his
+                  trainers as precious possessions. He befriends Dean, who provides forensic
+                  theories from CSI. Harri develops an innocent crush on Poppy Morgan, a white
+                  classmate. He also encounters Julius, a violent boy whose cruelty foreshadows the
+                  older gang culture.
                 </p>
               </div>
 
-              <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Family Pressures</h4>
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    4
+                  </span>
+                  The Detective Game Intensifies
+                </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Mamma works long shifts as a midwife at the hospital. Auntie Sonia, her sister,
-                  lives nearby and burns her own fingerprints off to escape immigration trouble.
-                  Sonia&apos;s violent partner Julius extorts money and creates fear in the
-                  household. Papa phones from Ghana asking for money to bring himself and Agnes to
-                  England. The family is stretched thin: financially, emotionally, and across two
-                  continents.
+                  Harri and Dean dust for fingerprints with a make-do kit, set up surveillance, and
+                  shadow possible suspects. They focus on the Dell Farm Crew &mdash; the local gang
+                  led by X-Fire, with Killa and Clipz. Their investigation is comically inept but
+                  genuinely brave; the boys do not yet understand the danger of poking at real
+                  criminals.
                 </p>
               </div>
 
-              <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Pigeon&apos;s Voice</h4>
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    5
+                  </span>
+                  The Pigeon as Watching Voice
+                </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Interspersed throughout the novel are short italicised sections narrated by a
-                  pigeon that watches over Harri. The pigeon&apos;s voice is poetic, mythic, and
-                  knowing &mdash; in stark contrast to Harri&apos;s naive prose. It speaks of divine
-                  purpose, the souls of children, and the patterns of the city from above. The
-                  pigeon is both literal (Harri feeds it bread on the balcony) and symbolic: a
-                  guardian, a witness, a soul, perhaps even a god.
+                  Throughout the novel, italicised passages narrated by a pigeon interrupt
+                  Harri&apos;s account. The pigeon watches Harri from above, commenting on the
+                  estate, the violence, and his vulnerability. These short, poetic interludes give
+                  the novel an omniscient, almost religious second perspective &mdash; the pigeon as
+                  guardian angel, cosmic witness, and symbol of the natural world surviving on the
+                  margins of human cruelty.
                 </p>
               </div>
 
-              <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Climax</h4>
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    6
+                  </span>
+                  Initiation Pressures
+                </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Tensions escalate. Harri identifies Killa as carrying the murder weapon. He faces
-                  increasing pressure from the Dell Farm Crew. After a confrontation where Harri
-                  appears to have escaped real danger, he walks home across an open area near the
-                  estate. In a sudden, almost off-hand passage, Harri is stabbed. The narrative cuts
-                  to the pigeon&apos;s perspective for the closing pages: the pigeon describes
-                  Harri&apos;s death from above, lifting his soul. The reader is left with a shock
-                  that mirrors the reality of estate violence: random, pointless, and devastating.
-                  Kelman refuses to provide neat resolution, just as the real-world cases that
-                  inspired him offered none.
+                  As Harri&apos;s investigation deepens, the Dell Farm Crew take an interest in him.
+                  X-Fire and the older boys try to recruit Harri, offering protection and status in
+                  exchange for loyalty and small criminal acts. Harri is fascinated and frightened
+                  in equal measure. He resists, but the pressure to belong is enormous in his
+                  father&apos;s absence. Lydia is drawn into a parallel orbit through older friends.
                 </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    7
+                  </span>
+                  Auntie Sonia, Julius and Domestic Violence
+                </h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Auntie Sonia is in an abusive relationship with Julius, a brutal man whose
+                  presence terrifies Harri. The novel reveals adult violence as a parallel threat to
+                  the street gangs. Mamma tries to protect Sonia. The episode shows cruelty is not
+                  confined to strangers; it operates inside family as well as outside it.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    8
+                  </span>
+                  Lydia&apos;s Growing Fear
+                </h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Lydia senses that Harri&apos;s investigation has been noticed and warns him off,
+                  but Harri persists. Their sibling relationship oscillates between teasing rivalry
+                  and fierce protection. Mamma works long hospital nights and is largely unaware of
+                  how exposed both her children are.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    9
+                  </span>
+                  The Confrontation
+                </h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Harri&apos;s investigation finally produces a name &mdash; one of the Dell Farm
+                  Crew, identified by a pattern of evidence Harri has gathered. The crew confront
+                  Harri, demanding he stop. Their threats escalate, and Harri realises he is no
+                  longer playing a game. He has crossed a line he did not see, and the consequences
+                  are real.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-foreground flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
+                    10
+                  </span>
+                  The Shocking Ending
+                </h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  In the closing pages, Harri is stabbed in the street, exactly mirroring the fate
+                  of the unnamed boy whose murder he had been investigating. The novel refuses
+                  readerly comfort: no last-minute rescue, no detective triumph. The narration tilts
+                  decisively to the pigeon&apos;s perspective, watching from above as Harri lies
+                  bleeding. The closing passages are poetic, grief-soaked, devastating. The cycle of
+                  violence has claimed another child, and the pigeon &mdash; the only witness who
+                  cannot speak to the police &mdash; bears it away.
+                </p>
+                <div className="mt-3 rounded-lg bg-muted p-3">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    Key Moments
+                  </p>
+                  <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <li>&bull; Harri stabbed &mdash; the investigator becomes the victim</li>
+                    <li>&bull; Narrative shift to the pigeon &mdash; Harri&apos;s voice cut off</li>
+                    <li>&bull; Echo of the opening murder &mdash; circular structure</li>
+                    <li>&bull; No resolution, no justice &mdash; Kelman refuses comfort</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </Section>
@@ -223,48 +321,44 @@ export default function PigeonEnglishPage() {
           <Section title="Character Profiles" icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
-                name="Harrison &ldquo;Harri&rdquo; Opoku"
-                description="The eleven-year-old narrator. A recent Ghanaian immigrant trying to navigate a violent London estate while remaining a child. He is fast (a sprinter), curious, devout, kind to pigeons, infatuated with Poppy Morgan, and obsessed with his Diadora trainers. His voice mixes Ghanaian Pidgin English (asweh, hutious, bo-styles, gowayou) with London playground slang (bare, dope-fine, blates) — a hybrid that captures the in-between space of the migrant child. Harri's defining quality is his innocence: he reports adult violence in a child's register, and the gap between what he sees and what he understands creates the novel's tragic irony. Kelman's choice to kill him at the end is a deliberate refusal of the bildungsroman: Harri never gets to grow up."
+                name="Harrison &lsquo;Harri&rsquo; Opoku"
+                description="The eleven-year-old Ghanaian narrator of the novel. Harri is curious, kind, athletic and imaginative. He is fascinated by everything in his new English world: the trainers, the slang, the girls, the gangs, the pigeons. Kelman makes Harri's voice the engine of the novel — a mix of Pidgin English ('Asweh'), Ghanaian exclamations ('Adjei!'), and absorbed London slang ('hutless', 'bo-styles'). Harri's investigation of the murder is part play, part moral courage — he genuinely believes the world should be fair. His tragic flaw is his innocence: he cannot conceive that real harm could come to him for asking questions. His murder at the end completes a circle of violence and turns the reader into a witness."
               />
               <CharacterCard
                 name="Lydia"
-                description="Harri's older sister, around thirteen or fourteen. More worldly, more knowing, and more frightened than Harri. She tries to protect her brother and, simultaneously, to fit in with Miquita and the older girls connected to the Dell Farm Crew. Lydia experiences the sexualised violence of the estate that Harri largely cannot see — Miquita's grooming, the older boys' pressure. Her arc shows the harder truth Harri is partly insulated from: that being female on the estate carries its own dangers. She is the family member most aware of what is really happening."
+                description="Harri's older teenage sister. Lydia is sharp-tongued, protective, and caught between worlds. She mocks Harri but defends him fiercely when she senses real danger. Lydia is navigating her own pressures — older friends, gendered violence, the temptations of conformity — but she remains the moral compass closest to Harri. She repeatedly tells him to stop investigating; her warnings, ignored, take on tragic weight by the novel's end. Lydia represents the second-generation immigrant child whose protective love stands in for absent adults."
               />
               <CharacterCard
                 name="Mamma"
-                description="Harri and Lydia's mother. A midwife working long, exhausting hospital shifts to support the family and save money to bring Papa and Agnes to England. She is religious, strict, exhausted, and loving. Mamma represents the migrant mother carrying the entire weight of the family's project of belonging in Britain. Her scenes — coming home tired, praying, scolding, telling Harri stories of Ghana — anchor the novel's emotional centre. Her grief at the end is the emotional weight Kelman leaves with the reader."
+                description="Harri and Lydia's mother. She works exhausting shifts as a midwife at a London hospital, sending money home and praying for the family's reunification. Mamma is devoutly Christian, strict, warm, and worn out. Her absence — caused by the work she has to do to keep the family afloat — is one of the structural ironies of the novel: she is sacrificing her presence to provide for her children, and that absence creates the gap into which the gangs step. Her faith is genuine and sustaining; she sees prayer as protection."
               />
               <CharacterCard
-                name="Papa and Agnes"
-                description="Harri's father and baby sister, still in Ghana throughout the novel. Papa phones the family asking for money to bring himself and Agnes over. The reader never meets them in person; they exist only through phone calls and Harri's memories. Their absence shapes the family: Mamma's exhaustion, Lydia's premature responsibility, and Harri's idealisation of Ghana all flow from the family's split across continents. Papa becomes a symbol of what migration costs."
+                name="Papa and Baby Agnes"
+                description="Still in Ghana, waiting to be brought over once the family in London has earned and saved enough. Their absence is the emotional centre of Harri's interior life. He thinks of them constantly, narrating his English adventures as if he is writing letters home. Papa represents masculine authority and warmth Harri does not have access to in London; Agnes is pure tenderness, the baby sister he longs to meet. Their physical absence is an open wound the novel never closes."
               />
               <CharacterCard
                 name="Auntie Sonia"
-                description="Mamma's sister, also in London. She has burned the prints off her fingertips to evade immigration authorities — one of the novel's most haunting images of what migrants endure. Her plot strand is parallel to Harri's: her fingerprintless hands echo the fingerprint dust Harri collects from the estate. Sonia's experience reveals the precarity behind even the family's everyday life."
+                description="Harri's aunt, also living in London. Sonia has burnt off her own fingerprints with an iron to evade immigration authorities — a horrifying detail Harri reports with a child's matter-of-factness. She is in an abusive relationship with Julius. Sonia's plotline shows that immigrant women face violence from both the state (deportation) and partners (Julius). She is also tender with Harri, slipping him sweets and treating him with the indulgence of an aunt. Her ruined fingertips are one of the novel's most disturbing symbols."
               />
               <CharacterCard
                 name="Julius"
-                description="Auntie Sonia's partner. Violent, manipulative, and exploitative; he extorts money from the family and is feared by Sonia. Julius represents adult male violence within the migrant community — a counterpoint to the gang violence outside. He shows that danger to women and children is not confined to the estate's gangs but exists at home too. He is one of the novel's clearest portraits of a bad man."
+                description="Auntie Sonia's violent partner. Julius beats Sonia and frightens Harri with his unpredictable temper. He is a portrait of adult male brutality inside the family unit, paralleling the gang violence outside it. Kelman uses Julius to show that violence is not just a teenage-boy problem on the estate but a structural pattern that crosses generations and settings. Julius is also a counter-image to Harri's absent Papa — a presence in place of an absence, and a malign one at that."
               />
               <CharacterCard
                 name="Dean"
-                description="Harri's school friend and partner-in-detection. Mixed-race, born in London, more confident in British culture than Harri. Dean introduces the CSI-inspired investigation: fingerprints, evidence bags, suspect lists. His role is partly comic — the boys take their investigation extremely seriously despite its absurdity — but also tragic: their childish detective game runs alongside a real murder they cannot understand."
+                description="Harri's English best friend at school. Dean watches CSI and supplies the forensic vocabulary for the boys' detective game (fingerprint dust, evidence bags, surveillance). He is loyal, funny, and equally out of his depth. Dean represents Harri's successful integration into multi-ethnic English schoolboy culture — friendships do exist across race and background, and Dean is proof. But Dean's TV-derived expertise is also the novel's joke and its tragedy: pop-culture detective methods are no defence against real knives."
               />
               <CharacterCard
                 name="Poppy Morgan"
-                description="A girl in Harri's year, the school sprint champion until Harri arrives. Harri is in love with her. Their romance — passing notes, holding hands at the swings, racing each other — provides the novel's lightest, sweetest moments and emphasises that Harri is still a child. Poppy is a symbol of the ordinary childhood Harri ought to be having."
+                description="A white English girl in Harri's class on whom he develops a tender, awkward crush. Poppy is bright, friendly and just out of reach — Harri imagines kissing her, gifting her things, marrying her. She represents adolescent innocence, Harri's hopeful future, and a kind of integration into English life that operates on a register of love rather than violence. Poppy is one of the few unambiguously hopeful presences in Harri's London."
               />
               <CharacterCard
-                name="The Dell Farm Crew (X-Fire, Killa, Clipz)"
-                description="The teenage gang that dominates the estate. X-Fire is the leader: charismatic, threatening, and sharp enough to see Harri as both useful and dangerous. Killa is the most overtly violent and is implicated in carrying the knife. Clipz hovers at the edge. They represent the absorption of working-class British and migrant boys into a violent peer culture — the world Harri is being recruited into. Kelman portrays them not as cartoon villains but as products of the same estate, the same neglect, the same precarity that shapes Harri's family."
+                name="The Dell Farm Crew &mdash; X-Fire, Killa, Clipz"
+                description="The local gang on the estate. X-Fire is the leader — older, charismatic, dangerous. Killa and Clipz are his lieutenants. Their street names announce their persona: cinematic, aggressive, performative. The crew patrols territory, deals, intimidates, and recruits younger boys. Kelman gives them moments of casual menace and moments of swagger; he resists making them simple villains while never glamorising them. They embody the social trap the novel anatomises: young black and mixed-race boys for whom the gang is the only available structure of belonging, status, and protection."
               />
               <CharacterCard
-                name="Miquita"
-                description="X-Fire's sister and the older girl Lydia gravitates toward. Miquita pressures Lydia to grow up faster than she should — into make-up, boys, and gang-affiliated risk. Her relationship with Lydia is the parallel female track to Harri's recruitment by X-Fire."
-              />
-              <CharacterCard
-                name="The Pigeon"
-                description="The novel's second, omniscient narrator. The pigeon's italicised passages frame Harri from above: poetic, mythic, allusive, sometimes almost biblical. The pigeon claims a divine or guardian role; it watches Harri, comments on the city, and ultimately bears witness to his death. The pigeon is symbolically rich — soul, conscience, witness, god, Holy Spirit (a dove), even Harri himself in another register. Its voice is the formal counterpoint to Harri's voice: where Harri is naive and slangy, the pigeon is solemn and lyrical."
+                name="The Pigeon (Omniscient Narrator)"
+                description="The novel's second narrator — a London pigeon whose italicised passages punctuate Harri's narrative. The pigeon watches Harri from balconies, rooftops, the sky. Its voice is poetic, sometimes sorrowful, sometimes wry. It functions as guardian, witness, prophet, and spirit-presence. Critics have read the pigeon variously as an angel, as the voice of nature surviving in the city, as the watching dead. By the novel's close, when Harri can no longer narrate, the pigeon's voice takes over completely — making the bird the novel's most haunting structural choice."
               />
             </div>
           </Section>
@@ -276,28 +370,187 @@ export default function PigeonEnglishPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title="Childhood vs Violence"
-                description="The novel's central tension is the gulf between Harri's childlike consciousness and the adult violence around him. Harri reports a stabbing in the same register he reports school sprints. He treats his murder investigation as a game; the gang's intimidation as something he can outrun. Kelman uses this gap to devastating effect: the reader sees clearly what Harri only half-perceives. The shocking ending — Harri stabbed — is the moment childhood and violence collide. Kelman's argument is that childhood on a violent estate cannot survive intact: sooner or later the world breaks through. The novel is a protest against the social conditions that put children like Harri in mortal danger while still children."
+                description="The central tension of the novel. Harri narrates with a child's freshness — finding joy in a sweet, a race, a girl, a pigeon — while moving through a landscape of stabbings, gangs, and domestic abuse. Kelman writes the collision of these registers without sentimentality. Harri's very innocence is what makes the violence so unbearable, and what makes it possible: he cannot believe people will really hurt him for asking honest questions. The novel argues that childhood and street violence cannot coexist; one will eventually destroy the other, and it is almost always the child who loses."
               />
               <ThemeCard
-                title="Migration and Belonging"
-                description="Harri is in-between: too Ghanaian to be wholly British, too British already to be wholly Ghanaian. His language is the most obvious sign — Pidgin words sit alongside London slang in every paragraph. His family is split across two continents, with Papa and Agnes still in Ghana. Auntie Sonia's burned fingerprints show what undocumented migrants endure simply to remain. Mamma's exhausting work funds an Atlantic-wide family project. Kelman portrays migration not as a single arrival but as a permanent state of negotiation: between languages, between countries, between identities. Belonging, for Harri, is provisional — and ultimately denied to him."
+                title="Migration &amp; Belonging"
+                description="Harri is in the middle of becoming English. He absorbs slang, copies fashion, befriends Dean and crushes on Poppy — but he also says 'Asweh' and 'Adjei', misses Ghana, and remains visibly different. The family is split across continents, with Papa and Agnes still in Accra. Auntie Sonia's burnt fingerprints dramatise the immigration system's cruelty. Kelman shows belonging as a long, difficult, often violent process — and asks what it means that English society's first major gift to Harri is murder."
               />
               <ThemeCard
-                title="Faith and Hope"
-                description="Harri is a believer. He prays, attends church with Mamma, and reads moral meaning into everyday events. His faith is uncomplicated and sincere — he asks God to look after the dead boy, to make Mamma's shifts shorter, to make Poppy like him. The pigeon's voice strengthens this thread: it speaks in religious cadences, hinting at souls, judgement, and divine watching. Hope in the novel is fragile but persistent: hope that the family will reunite, that Harri will grow up, that the estate is not the whole world. The ending tests this hope to breaking point. Kelman does not entirely destroy faith — the pigeon's closing passage offers something like consolation — but the novel insists that hope on an estate like Harri's is precious and easily extinguished."
+                title="Faith &amp; Hope"
+                description="Mamma's Christianity is sincere, daily, and load-bearing. Prayer structures the Opoku household in London. Harri tries to keep faith — speaking to God, hoping for miracles, believing the world is fair. The pigeon, with its aerial, almost angelic perspective, gives the novel a religious texture even where its world is faithless. Kelman is too honest to let faith save anyone, but he refuses to mock it; faith is presented as a real force of survival, even when it cannot prevent tragedy."
               />
               <ThemeCard
                 title="Family"
-                description="Family is the novel's emotional centre. Mamma's exhaustion, Lydia's protective fierceness, Papa's distant phone calls, Agnes's absence, Auntie Sonia's vulnerability — every adult relationship is shaped by the family's split between London and Ghana. Kelman shows that the migrant family is held together by enormous, often invisible, labour: financial, emotional, transatlantic. He also shows its fragility. Julius represents the danger inside; the estate represents the danger outside. The closing pages — Mamma without Harri — leave the family broken in a way that no remittance can repair."
+                description="Family in the novel is plural and stretched: Mamma in London, Papa in Ghana, Lydia bossing and shielding, Auntie Sonia loving and battered, the absent baby Agnes. Kelman shows family as the strongest defence Harri has against the estate's violence — and shows how the demands of immigration tear at that defence. Mamma's working hours, Papa's absence, Sonia's exposure to Julius — each rip in the family fabric corresponds to a danger that creeps closer to Harri. The novel asks whether the immigrant family can ever be reassembled, and whether London allows time."
               />
               <ThemeCard
-                title="Friendship and Group Dynamics"
-                description="The novel explores how children form alliances under pressure. Dean is Harri's chosen friend — a true peer, equal partner in the detective game. The Dell Farm Crew, by contrast, is the opposite: a group that demands loyalty through fear. Harri is constantly being asked which group he belongs to, and the recruitment by X-Fire is one of the novel's chief threats. Kelman shows that group identity on the estate is not optional: refusing the gang has consequences too. Lydia's drift toward Miquita is the female version of the same pressure. Friendship in the novel is a form of resistance to gang dynamics — and that is partly why Harri's friendships are so movingly drawn."
+                title="Friendship &amp; Group Dynamics"
+                description="Friendship has two faces in the novel. With Dean, friendship is play, loyalty, shared imagination — the detective game, the running, the in-jokes. With the Dell Farm Crew, group dynamics turn predatory: belonging means initiation, hierarchy, violence, and silence. Kelman shows the same human need — to be part of something — producing wildly different outcomes depending on what is available. For boys without strong adult presence, the gang's offer of belonging is dangerously seductive."
               />
               <ThemeCard
-                title="Storytelling and Voice"
-                description="Pigeon English is, above all, a novel of voice. Harri's narration mixes Ghanaian Pidgin English (asweh, hutious, dey, bo-styles) with British playground slang (bare, dope-fine, blates) and his own private vocabulary. This hybrid is the novel's central formal achievement. Voice is identity here: Harri is who he is because of how he talks. The pigeon's voice — italicised, poetic, knowing — provides a second register, almost a chorus. The juxtaposition of the two voices is the novel's structure. Kelman is making an argument about whose voices count in British fiction and on the British estate: Harri's voice, often dismissed in real life, is given the dignity of literature."
+                title="Storytelling &amp; Voice"
+                description="Harri's voice is the novel's main achievement and its central theme. He mixes Pidgin English ('Asweh' — meaning 'I swear'), Ghanaian exclamations, BBC English from school, and London street slang into a single, shifting register. Through this voice, Kelman explores how language carries identity, how a child arrives at an idiom for a world that is too big and too violent for him. The pigeon's poetic interludes form a counter-voice — and when Harri's voice ends, the pigeon's is what is left. Storytelling, in the novel, is what makes a child a person; the loss of that voice at the end is the loss of Harri himself."
               />
+            </div>
+          </Section>
+        </div>
+
+        {/* ────────────────────────────────── KEY QUOTATIONS */}
+        <div id="key-quotations">
+          <Section title="Key Quotations with Analysis" icon="📝">
+            <p className="text-sm text-muted-foreground mb-4 italic">
+              Verbatim quotations from <em>Pigeon English</em> (Stephen Kelman, Bloomsbury 2011),
+              grouped by theme and character. Items flagged <strong>[VERIFY]</strong> are
+              paraphrases or commonly-cited lines whose exact wording you should confirm against
+              your edition before using in an exam.
+            </p>
+            <div className="space-y-1">
+              <QuoteCard
+                quote="Asweh"
+                speaker="Harri (used throughout)"
+                analysis="Harri's signature verbal tic, derived from Ghanaian Pidgin English meaning roughly 'I swear (to God)'. He sprinkles it through his narration as emphasis. The word marks his Ghanaian roots and his religious culture surviving inside London speech, and is one of the most distinctive features of Kelman's narrative voice. Every time Harri says 'Asweh' he is, however casually, calling on God to witness — which makes the novel's ending especially unbearable."
+              />
+              <QuoteCard
+                quote="Adjei!"
+                speaker="Harri"
+                analysis="A Ghanaian exclamation of pain, surprise or dismay used by Harri throughout the novel. Like 'Asweh', it is a marker of his Pidgin-English voice. Kelman keeps these phrases untranslated — the reader must absorb them by context, replicating Harri's own immersion in unfamiliar English speech. The bilingual texture insists on Harri's specific cultural identity rather than letting him be generic."
+              />
+              <QuoteCard
+                quote="Hutless!"
+                speaker="Harri"
+                analysis="A piece of London slang meaning 'fearless' or 'reckless' that Harri picks up from older boys and uses with delight. The word demonstrates Harri's hunger to belong: he absorbs the estate's vocabulary even when he doesn't fully grasp its connotations. The very thing that thrills him — being 'hutless' — is what gets boys killed in the world he is investigating. The slang is innocent on his lips but lethal in its proper context."
+              />
+              <QuoteCard
+                quote="Bo-styles"
+                speaker="Harri"
+                analysis="Another item of estate slang meaning roughly 'best style' or 'cool'. Harri uses it to praise trainers, hair, moves. Like 'hutless', it shows Harri performing membership in London street culture. The slang is glamour — the surface he can copy. The deeper structure of the gang world (loyalty, violence, silence) is what he cannot copy and ultimately cannot survive."
+              />
+              <QuoteCard
+                quote="[VERIFY] The dead boy's blood is just sitting there in the street."
+                speaker="Harri (paraphrased opening image)"
+                analysis="Confirm the exact wording in your edition. The novel famously opens on the static image of the murdered boy's blood, which Harri studies with appalled curiosity. The flat, present-tense observation, free of adult euphemism, sets the novel's whole project: a child's eye on adult violence. The blood does not move; the world does not move; the only thing that moves is Harri's quiet decision to investigate. Treat this as paraphrase unless verified."
+              />
+              <QuoteCard
+                quote="[VERIFY] You have to swear, on your life."
+                speaker="Harri / Dean (detective-game oath)"
+                analysis="A line of the kind the boys exchange when sealing their detective pact. Verify the wording in your edition before quoting verbatim. Whatever the exact phrasing, the structural point is: the children swear on their lives in play, and one of them will lose his life in earnest. The childish ritual prefigures the adult violence. Use this as a thematic reference even if you cannot lock the exact words."
+              />
+              <QuoteCard
+                quote="[VERIFY] Auntie Sonia burned her fingerprints off with the iron."
+                speaker="Harri (describing Sonia)"
+                analysis="One of the novel's most-discussed images. Confirm Kelman's exact phrasing. The detail — reported by Harri without judgement — is appalling: a woman burns her own fingertips smooth so that the immigration authorities cannot identify her. It compresses a whole politics of borders, fear, and self-erasure into a single domestic object. Sonia is willing to mutilate her own body to remain in Britain; Britain's reward is that she is then beaten by Julius."
+              />
+              <QuoteCard
+                quote="[VERIFY] Lydia said leave it alone."
+                speaker="Harri (paraphrasing Lydia)"
+                analysis="Lydia repeatedly warns Harri off the investigation. Verify exact wording in your edition. The structural function of her warnings is dramatic irony: the reader (and Lydia) sense the danger Harri does not, and her unheeded protective voice deepens the tragedy of the ending. Quote a verified Lydia warning if you can find one in your text; otherwise paraphrase."
+              />
+              <QuoteCard
+                quote="[VERIFY] Pigeon's eye view: poetic interlude on London"
+                speaker="The pigeon (italicised)"
+                analysis="The pigeon's italicised sections offer a poetic, aerial perspective on the estate, on Harri, on the city. They are short, lyrical, often rhythmic — more prose-poem than prose. Pull a verified passage from your edition for direct quotation. Analytically, the pigeon's voice serves several functions: (i) it gives the reader information Harri cannot access; (ii) it lifts the novel into a register of myth and prayer; (iii) it provides the closing voice of the book when Harri is silenced."
+              />
+              <QuoteCard
+                quote="[VERIFY] Harri describes a Dell Farm Crew member with awe and fear."
+                speaker="Harri"
+                analysis="Find a verified description in your edition. Harri's adjective choices reveal that the gang is glamorised in his eyes — they have power, money, the right trainers, the right walk. Kelman lets this glamour be felt, which is what makes his critique of gang culture far more unsettling than a simple denunciation."
+              />
+              <QuoteCard
+                quote="[VERIFY] Mamma prayed for the family."
+                speaker="Harri (describing Mamma)"
+                analysis="Confirm the exact phrasing in your edition. Prayer functions as both genuine comfort and tragic insufficiency — the novel respects the prayer while showing its failure to prevent the final violence. Kelman avoids easy mockery and easy salvation alike."
+              />
+              <QuoteCard
+                quote="[VERIFY] Harri imagines Poppy Morgan."
+                speaker="Harri"
+                analysis="Harri's crush on Poppy is the novel's most unguarded moment of hope. Verify a passage of his daydreaming about her. The Poppy episodes preserve pure adolescent tenderness inside an otherwise frightening narrative — proof that Harri is still a child capable of pure feeling."
+              />
+              <QuoteCard
+                quote="[VERIFY] Closing pigeon passage as Harri lies bleeding."
+                speaker="The pigeon"
+                analysis="The novel's final passages shift to the pigeon's voice as Harri is dying. Confirm the exact wording in your edition; this is the most quoted passage in critical work on the novel. Analytically: the bird becomes Harri's elegist. Where Harri's voice has anchored the whole book, the pigeon now lifts it skyward. The shift is a formal mourning. Once you have verified the wording, use it as the spine of any answer on Kelman's structural / tonal choices."
+              />
+              <QuoteCard
+                quote="[VERIFY] Harri thinks about Papa and Agnes back in Ghana."
+                speaker="Harri"
+                analysis="Throughout the novel Harri returns to Papa and Agnes in his mind. Verify a specific line in your edition. Analytically these passages keep alive the alternative London where the family is whole. That Harri is killed before the family can be reunited is, structurally, one of the cruellest decisions in the novel."
+              />
+              <QuoteCard
+                quote="[VERIFY] It's only pretend."
+                speaker="Harri / Dean"
+                analysis="The boys repeatedly remind themselves their detective work is a game. Verify the exact phrasing. The reassurance becomes evidence that the game is, in fact, dangerous — a child's protective magic that the novel's ending dismantles."
+              />
+            </div>
+          </Section>
+        </div>
+
+        {/* ────────────────────────────────── SYMBOLS */}
+        <div id="symbols">
+          <Section title="Symbols and Motifs" icon="🪶">
+            <div className="space-y-4">
+              <div className="rounded-lg bg-muted p-4">
+                <h4 className="font-bold text-foreground">1. The Pigeon</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  The novel&apos;s richest symbol and its co-narrator. The pigeon is variously read
+                  as guardian angel, Holy-Spirit figure, soul of the city, the dead boy watching,
+                  and unsentimental nature. Kelman elevates a despised urban scavenger into the
+                  novel&apos;s moral and lyrical conscience. When Harri dies, the pigeon&apos;s
+                  voice carries the novel out of the human world and into something close to prayer.
+                </p>
+              </div>
+              <div className="rounded-lg bg-muted p-4">
+                <h4 className="font-bold text-foreground">2. Trainers as Status</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  Trainers are the novel&apos;s most explicit symbol of consumer pressure on
+                  children. Harri thinks constantly about his trainers and ranks other boys by
+                  theirs. On the estate, brand-new trainers are status, belonging and target. The
+                  trainers compress the whole logic of the gang economy into a single object:
+                  visible wealth, visible vulnerability.
+                </p>
+              </div>
+              <div className="rounded-lg bg-muted p-4">
+                <h4 className="font-bold text-foreground">3. The River</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  London&apos;s river runs alongside the novel&apos;s geography. For Harri, it is a
+                  place of escape and awe &mdash; bigger than the estate, older than the gangs,
+                  indifferent to them. The river symbolises a London beyond immediate violence:
+                  history, scale, the natural world surviving in the city.
+                </p>
+              </div>
+              <div className="rounded-lg bg-muted p-4">
+                <h4 className="font-bold text-foreground">4. Broken Concrete</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  The estate&apos;s broken pavements, cracked walls and graffiti form a motif of
+                  urban decay. Broken concrete is the literal ground of the novel &mdash; the
+                  surface on which the murdered boy&apos;s blood pools, on which Harri runs, on
+                  which children are stabbed. It symbolises social neglect: the estate as a place
+                  society has stopped maintaining, where cracks have been allowed to spread until
+                  violence falls into them.
+                </p>
+              </div>
+              <div className="rounded-lg bg-muted p-4">
+                <h4 className="font-bold text-foreground">
+                  5. &lsquo;Asweh&rsquo; (Language as Identity)
+                </h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  Beyond its literal sense (&lsquo;I swear&rsquo;), &lsquo;Asweh&rsquo; is a symbol
+                  &mdash; the audible trace of Ghana inside London speech, the marker of cultural
+                  identity refusing to be smoothed away. Each appearance is a small act of religious
+                  witness: a child invoking God dozens of times, in a novel about whether anyone is
+                  watching.
+                </p>
+              </div>
+              <div className="rounded-lg bg-muted p-4">
+                <h4 className="font-bold text-foreground">6. Fingerprint Dust</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  Harri and Dean&apos;s improvised detective kit symbolises children playing at
+                  adult authority. The motif rhymes painfully with Auntie Sonia&apos;s burnt-off
+                  fingerprints: in one direction, fingerprints are a child&apos;s game of catching
+                  the bad guy; in the other, fingerprints are what an adult woman destroys to escape
+                  the state. Same image, two ages, two meanings &mdash; typical Kelman compression.
+                </p>
+              </div>
             </div>
           </Section>
         </div>
@@ -307,593 +560,465 @@ export default function PigeonEnglishPage() {
           <Section title="Historical and Social Context" icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">
-                  Damilola Taylor (2000) and Kelman&apos;s Inspiration
-                </h4>
+                <h4 className="font-bold text-primary">The Damilola Taylor Case (2000)</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Stephen Kelman has stated in interviews that the novel was inspired by the 2000
-                  murder of Damilola Taylor, a ten-year-old Nigerian boy who bled to death on a
-                  Peckham stairwell after being stabbed in the leg with a broken bottle on his way
-                  home from the library. The case generated enormous public attention in Britain
-                  about child violence, urban poverty, and the failure of police investigations on
-                  inner-city estates. Kelman has said he wanted to imagine what kind of boy Damilola
-                  was, what his interior life might have been &mdash; not to retell the case, but to
-                  honour the person behind the headline. Harri is a fictional creation but
-                  unmistakably owes his existence to that act of imaginative empathy.
+                  Kelman has stated in interviews that the novel was inspired by the 2000 murder of
+                  Damilola Taylor, a ten-year-old Nigerian boy who bled to death on a stairwell in
+                  Peckham, south London, after being stabbed in the leg with a broken bottle. The
+                  case shocked Britain. Kelman&apos;s Harri is not Damilola, but the moral pressure
+                  of that real-life loss is felt on every page. The novel is a refusal to let a real
+                  child&apos;s death become a statistic.
+                </p>
+              </div>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">Post-2000s UK Knife-Crime Anxiety</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  The 2000s and early 2010s saw sustained public anxiety about teenage knife crime
+                  in British cities, especially London. Headlines, Government initiatives, and
+                  coverage of &lsquo;road&rsquo; / &lsquo;gang&rsquo; cultures formed the backdrop
+                  against which <em>Pigeon English</em> was written. Kelman intervenes by insisting
+                  on the inner life of one specific child rather than letting the category
+                  &lsquo;youth gang&rsquo; absorb him.
+                </p>
+              </div>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">Booker Shortlist 2011</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  <em>Pigeon English</em> was shortlisted for the 2011 Man Booker Prize, the most
+                  prestigious literary award in the UK and Commonwealth. The shortlisting brought
+                  enormous attention to a debut novel and to its bold formal choices &mdash;
+                  particularly the child narrator&apos;s mixed Pidgin-English voice and the pigeon
+                  interludes. The recognition placed Kelman in a tradition of literary fiction using
+                  vernacular voice for serious moral purpose (compare Roddy Doyle&apos;s
+                  <em> Paddy Clarke Ha Ha Ha</em> or Mark Haddon&apos;s <em>Curious Incident</em>).
+                </p>
+              </div>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">Stephen Kelman: Background</h4>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  Stephen Kelman was born in Luton in 1976. He grew up on a council estate in
+                  Bedfordshire and has spoken in interviews about writing the novel partly out of
+                  his memory of estate life and the visibility of street violence. He worked in a
+                  series of non-literary jobs (warehouse, care work, marketing) before the
+                  novel&apos;s success. Kelman is a white English writer narrating from the
+                  perspective of an eleven-year-old Ghanaian boy &mdash; a choice that drew
+                  significant critical discussion. Kelman researched the voice carefully and has
+                  acknowledged the ethical responsibility of the impersonation; examiners expect
+                  awareness of this dimension in higher-grade answers.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">
-                  London Estates and &ldquo;Knife Crime&rdquo;
+                  West African / Ghanaian Diaspora in London
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The novel emerges from the post-2000s media discourse around &ldquo;knife
-                  crime&rdquo; in British cities, particularly London. High-rise estates &mdash;
-                  many built in the 1960s and 70s as social housing &mdash; had become symbols of
-                  urban deprivation, underfunding, and gang activity. The Dell Farm estate is
-                  fictional but composite: based on real London estates Kelman researched.
-                  Harri&apos;s world is shaped by youth services cuts, overcrowded schools, and the
-                  everyday presence of older boys with knives. Kelman&apos;s portrayal humanises
-                  this world without romanticising it, and resists the moral panic framing of the
-                  early-2000s press.
+                  London has a large and long-established Ghanaian community with historic
+                  Commonwealth roots, intensifying from the 1980s onward. Many Ghanaian families
+                  experience the structural pattern Kelman dramatises: members in the UK working to
+                  remit and to bring the rest over. Pentecostal Christianity provides vital social
+                  structure. Mamma&apos;s church-going and Harri&apos;s bilingual voice are all
+                  rooted in this real diaspora experience.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">West African and Ghanaian Diaspora</h4>
+                <h4 className="font-bold text-primary">The London Council Estate</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Britain has a long and growing Ghanaian community, particularly in London. Many
-                  families, like Harri&apos;s, migrate in stages: one parent first, then children,
-                  then the rest. Pidgin English is the everyday language of much of Ghana, and
-                  Harri&apos;s &ldquo;asweh&rdquo; (a marker of emphasis derived from &ldquo;I
-                  swear&rdquo;), &ldquo;hutious&rdquo; (frightened), and &ldquo;dey swell&rdquo;
-                  constructions reflect that real linguistic context. Kelman is a white British
-                  writer, and the choice to narrate from a Ghanaian boy&apos;s perspective drew both
-                  praise and debate &mdash; some critics questioned whether a white author should
-                  inhabit a Black migrant child&apos;s voice. The novel sits inside that ongoing
-                  conversation about authorship, empathy, and representation.
-                </p>
-              </div>
-              <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Booker Prize Shortlist (2011)</h4>
-                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Pigeon English was shortlisted for the Man Booker Prize in 2011, a remarkable
-                  achievement for a debut novel. The shortlisting brought it major attention and
-                  controversy. Some readers and critics found the child&apos;s-voice narration
-                  uncomfortable or sentimental; others praised it as a fresh and honest portrait of
-                  contemporary London childhood. The book&apos;s prominence on the Booker list is
-                  why it is now studied at GCSE.
-                </p>
-              </div>
-              <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Stephen Kelman&apos;s Background</h4>
-                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Stephen Kelman was born in Luton in 1976. Before Pigeon English &mdash; his debut
-                  novel &mdash; he worked in a series of jobs including warehousing and care work,
-                  and did not come from a literary or academic background. He has described writing
-                  the novel partly as an act of empathy following the Damilola Taylor case and
-                  partly drawing on his own childhood on a council estate. His outsider position
-                  vis-&agrave;-vis the literary establishment is part of what made his shortlisting
-                  notable. He has continued to write since, but Pigeon English remains his most
-                  widely read work.
-                </p>
-              </div>
-              <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">
-                  The Bildungsroman Tradition (and Its Refusal)
-                </h4>
-                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  A bildungsroman is a coming-of-age novel: the protagonist begins as a child and,
-                  over the course of the narrative, grows into adulthood through experience. Pigeon
-                  English looks like a bildungsroman &mdash; it has all the conventions: the child
-                  narrator, the new environment, the school world, the first crush, the growing
-                  awareness of adult realities. But Kelman ends it before Harri can grow up. The
-                  novel deliberately refuses the genre&apos;s promise of arrival into adulthood.
-                  This refusal is the novel&apos;s political point: a society that fails to protect
-                  its children writes itself a literature in which children do not get to come of
-                  age.
+                  &lsquo;Dell Farm&rsquo; is invented but recognisable: a high-rise post-war council
+                  estate of the type built in the 1960s and 70s. Kelman writes the estate as it is
+                  &mdash; concrete walkways, broken lifts, balconies &mdash; without exoticising or
+                  demonising it. Examiners reward candidates who place the estate inside a longer
+                  history of British social housing.
                 </p>
               </div>
             </div>
           </Section>
         </div>
 
-        {/* ────────────────────────────────── KEY QUOTATIONS */}
-        <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
-            <p className="text-sm text-muted-foreground mb-4 italic">
-              Quotations selected for AO2 (language and structure) analysis. Pigeon English is in
-              copyright, so this list is conservative: only quotations Kelman&apos;s narrators use
-              repeatedly or that are widely cited in published criticism. Where exact wording should
-              be confirmed against your edition before quoting in an exam, the quotation is flagged
-              with [VERIFY].
-            </p>
-            <div className="space-y-1">
-              <QuoteCard
-                quote="Asweh"
-                speaker="Harri (recurring)"
-                analysis="Harri's signature verbal tic. A contraction of 'I swear', drawn from West African Pidgin English, used by Harri to emphasise a claim or express conviction. It appears throughout the novel — sometimes several times per page — and functions as Harri's linguistic signature. The repetition tells us we are inside Harri's head; it also marks his hybrid identity, sitting alongside London playground slang. AO2: a short, single-word marker of voice; AO3: the lexical residue of West African migration in a London child's speech."
-              />
-              <QuoteCard
-                quote="Hutious"
-                speaker="Harri (recurring)"
-                analysis="Pidgin English for 'frightened' or 'terrified'. Harri uses it to describe people, places, and feelings throughout the novel — from gang members to the dark stairwells of the estate. Like 'asweh', the word is one of the recurring lexical anchors of Harri's voice. It also performs the novel's central irony: a child describing very real terror in a vocabulary that the British reader half-understands. AO2: register; AO3: the linguistic experience of a Ghanaian child in London."
-              />
-              <QuoteCard
-                quote="Bare"
-                speaker="Harri (recurring) [VERIFY usage in your edition]"
-                analysis="London playground slang meaning 'a lot of' or 'very'. Harri picks it up from his peers and uses it constantly ('bare jokes', 'bare cold'). It is the British half of his hybrid voice, sitting alongside his Pidgin words. The mixing of registers within a single sentence is the novel's signature stylistic move. AO2: code-switching; AO3: London adolescent speech of the late-2000s."
-              />
-              <QuoteCard
-                quote="Dope-fine"
-                speaker="Harri (recurring) [VERIFY exact form]"
-                analysis="A compound coinage Harri uses to mean 'excellent', merging American hip-hop ('dope') with a British/Pidgin intensifier ('fine'). The word exemplifies how children invent vocabulary by collaging registers. Harri's voice is not just hybrid — it is creative; he is inventing English as he speaks it. AO2: neologism; AO3: globalised youth culture."
-              />
-              <QuoteCard
-                quote="The pigeon"
-                speaker="(narrator of italicised sections)"
-                analysis="The novel's second narrator, whose voice opens and closes the book and recurs in italicised interludes. The pigeon's register is poetic, allusive, and almost biblical, in deliberate contrast with Harri's slangy prose. The pigeon's role as omniscient witness, guardian, and (at the end) soul-bearer makes its voice the formal counterweight to Harri's. AO2: structure (a second narrator framing the first); AO3: the dove as Holy Spirit, Noah's dove, an old image of soul and survival reworked for a London estate."
-              />
-              <QuoteCard
-                quote="Chicken Joe's"
-                speaker="Harri"
-                analysis="The fictional fast-food shop outside which the dead boy is stabbed. The name is mundane and almost comic — a child's-eye landmark — and that mundanity is the point. Murder happens in the most ordinary place on the estate. AO2: setting as character; AO3: the chicken-shop economy of London estates is real social texture."
-              />
-              <QuoteCard
-                quote="Dell Farm"
-                speaker="Harri"
-                analysis="The estate where Harri lives and the gang takes its name. 'Farm' is incongruous — there is no farm, only concrete — and the dissonance captures the failed pastoral of post-war social housing: estates named for the countryside they replaced. AO3: the irony of estate names ('Farm', 'Garden', 'Park') is a recurring feature of British council architecture."
-              />
-              <QuoteCard
-                quote="The dead boy"
-                speaker="Harri (recurring)"
-                analysis="Harri never uses the dead boy's full name — he refers to him as 'the dead boy' throughout. The phrase becomes a refrain. The flat, repeated formula captures the way the murder hovers over the novel: known and unprocessed. It also echoes how Harri himself will be referred to at the end. AO2: epithet; AO3: the public anonymity of victims in real estate murders."
-              />
-              <QuoteCard
-                quote="Adidas / Diadora trainers"
-                speaker="Harri (recurring)"
-                analysis="Harri's prized possession. Trainers, brand-named, are status objects on the estate — a child's first form of capital. Harri's love for his trainers is innocent (they make him faster) but the wider world weaponises that same status: trainers are stolen, killed for, fought over. The trainer becomes a small symbol of how childhood material delight is shaped by adult economies of violence. AO3: branded sportswear and estate masculinity in the 2000s."
-              />
-              <QuoteCard
-                quote="Poppy Morgan"
-                speaker="Harri"
-                analysis="The name of Harri's school crush is itself a kind of motif: he says it, thinks it, writes it. The romance is a parallel narrative that proves Harri is still a child — passing notes, holding hands, racing each other. The lightness of these scenes makes the violence elsewhere more devastating by contrast. AO2: structural counterweight."
-              />
-              <QuoteCard
-                quote="Auntie Sonia's fingers"
-                speaker="Harri (paraphrased — confirm exact wording in your edition) [VERIFY]"
-                analysis="Auntie Sonia has burned the prints off her fingertips so that immigration cannot identify her. The image is one of the novel's most haunting: the literal erasure of identity to survive in Britain. It also rhymes with the fingerprint dust Harri uses in his detective game — making explicit the gulf between his investigation (a game with chalk) and the real, irreversible kinds of identity-erasure that adult migrants endure. AO3: the lived precarity of undocumented status."
-              />
-              <QuoteCard
-                quote="X-Fire"
-                speaker="Harri"
-                analysis="The Dell Farm Crew leader's chosen street name. Like all gang names in the novel ('Killa', 'Clipz'), it is performative — a brand of fearsomeness adopted in adolescence. Kelman's gang members are not faceless monsters but boys playing at being men, in a world where that performance has lethal stakes. AO3: gang nomenclature in real London estates."
-              />
-              <QuoteCard
-                quote="The pigeon takes Harri's soul / final pigeon passage"
-                speaker="(the pigeon — closing section)"
-                analysis="In the novel's final pages, after Harri is stabbed, the narrative shifts entirely to the pigeon's voice. The pigeon describes Harri's last moments and lifts his soul — the image draws on Christian iconography of the dove and on much older images of soul-birds. The shift in register from Harri's slangy first person to the pigeon's lyrical address is the novel's most devastating structural move: Harri's voice is silenced, and the pigeon takes over the telling. AO2: a structural ending that forces the reader to confront the loss of Harri's voice itself. [VERIFY exact final wording in your edition.]"
-              />
-              <QuoteCard
-                quote="Brother from another"
-                speaker="Harri (school slang) [VERIFY]"
-                analysis="Harri's playground formulation of close friendship — typically used about Dean. Phrases like this carry the global pop culture (American hip-hop) running through London playgrounds in the 2000s. AO3: British adolescent speech as a tributary of global Black cultural production."
-              />
-              <QuoteCard
-                quote="Just gone"
-                speaker="Harri (recurring) [VERIFY exact phrasing]"
-                analysis="A Pidgin-flavoured intensifier Harri uses for emphasis ('it was just gone amazing'). The phrase is part of his hybrid lexicon and one of the recurring formulas that mark his voice. AO2: voice marker."
-              />
-            </div>
-            <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
-              <p className="text-xs font-semibold text-amber-700 dark:text-amber-300 uppercase tracking-wider mb-2">
-                [VERIFY] flags
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Pigeon English (2011) is in copyright and not freely available. Quotations marked
-                [VERIFY] should be checked against your physical edition before being reproduced in
-                a coursework essay or exam-board approved response. The recurring single-word voice
-                markers (asweh, hutious) are well-attested across published criticism and interviews
-                with Kelman; the longer phrases require confirmation. Always cite by page number
-                from your edition where possible.
-              </p>
-            </div>
-          </Section>
-        </div>
-
-        {/* ────────────────────────────────── SYMBOLS */}
-        <div id="symbols">
-          <Section title="Symbolism" icon="🕊️">
+        {/* ────────────────────────────────── STRUCTURE & VOICE */}
+        <div id="structure-and-voice">
+          <Section title="Structure and Voice" icon="🔗">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Pigeon</h4>
+                <h4 className="font-bold text-foreground">First-Person Child Narrator</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The novel&apos;s richest symbol. Literally a pigeon Harri feeds on the balcony
-                  &mdash; symbolically, much more. As an italicised second narrator, the pigeon is
-                  at once: a guardian (it watches Harri); an omniscient witness (it sees the whole
-                  estate from above); a soul (it lifts Harri at the end); a god or angel (its voice
-                  carries religious cadences); the Holy Spirit (a dove); and possibly Harri himself
-                  in another register. The pigeon&apos;s humble urban species &mdash; the most
-                  common, most despised London bird &mdash; mirrors Harri&apos;s position: a child
-                  the city scarcely notices, but who carries weight the city refuses to see. The
-                  title itself fuses pigeon and English: the bird and the language, the migrant
-                  child and the broken English of the estate.
+                  The novel is narrated almost entirely by Harri in the first person, present tense.
+                  The choice has two consequences. First, the reader is locked into Harri&apos;s
+                  vision &mdash; we cannot see what he cannot see, and we share his blind spots
+                  about danger. Second, the present tense gives the novel an immediacy and innocence
+                  that throws every dark event into sharper relief. Harri does not have hindsight;
+                  he is making sense of events as they happen.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Trainers</h4>
+                <h4 className="font-bold text-foreground">
+                  Pidgin English / British Slang Hybrid Voice
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Harri&apos;s prized branded trainers are a symbol of status, identity, and
-                  childhood material desire. To Harri they are simply joyful objects that make him
-                  faster. To the estate&apos;s economy they are currency, status markers, and
-                  potential targets. The trainer captures the novel&apos;s argument that ordinary
-                  childhood pleasures are entangled with adult violences: the same shoe is a
-                  child&apos;s delight and a stolen object on the estate. AO3: branded sportswear
-                  has been central to British estate culture since the 1990s, and Kelman foregrounds
-                  it deliberately.
+                  Harri&apos;s register mixes Ghanaian Pidgin words (&lsquo;Asweh&rsquo;,
+                  &lsquo;Adjei&rsquo;), Christian phrasing, school Standard English, and absorbed
+                  London street slang (&lsquo;hutless&rsquo;, &lsquo;bo-styles&rsquo;). Kelman
+                  rarely glosses words; the reader learns them from context, replicating
+                  Harri&apos;s own immersion. The voice is the novel&apos;s most original technical
+                  achievement and its most powerful political statement.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The River</h4>
+                <h4 className="font-bold text-foreground">
+                  The Pigeon&apos;s Italicised Interludes
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The river running near the estate &mdash; where Harri and Dean go to play and to
-                  stake out suspects &mdash; is one of the novel&apos;s few open, natural spaces. It
-                  carries traditional symbolic weight: flow, transition, time, escape, the boundary
-                  between worlds. For Harri it is freedom; structurally, it is the boundary between
-                  childhood and the adult violence the novel ends with. The river never quite
-                  carries Harri away from the estate; the estate catches up with him on the way
-                  home.
+                  Italicised passages narrated from a pigeon&apos;s perspective punctuate the novel.
+                  These short, lyrical units offer an aerial view, a poetic register, and a second
+                  consciousness watching Harri. They are the only voice besides Harri&apos;s &mdash;
+                  which makes the ending&apos;s shift to pigeon-only narration so devastating.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Broken Concrete</h4>
+                <h4 className="font-bold text-foreground">Circular Structure</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The physical fabric of the estate &mdash; cracked walkways, broken lifts,
-                  graffiti, flickering stairwell lights &mdash; is a constant background presence in
-                  the novel. The disrepair is a symbol of social abandonment: the state has built
-                  and forgotten this place. The detail &ldquo;the lift smells of pee&rdquo; is the
-                  kind of recurring sensory note that captures it. The broken estate is the setting
-                  against which Harri&apos;s liveliness reads as protest.
+                  The novel opens with the murder of an unnamed boy and closes with the murder of
+                  Harri. The structural circle is unmistakable: Harri begins as a witness outside
+                  violence and ends as a victim inside it. The shape of the book makes its argument
+                  &mdash; that on this estate, this is the cycle, and a child who asks the wrong
+                  questions can be moved from one position in the cycle to the other. Kelman refuses
+                  any escape from the structural pattern.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">&ldquo;Asweh&rdquo;</h4>
+                <h4 className="font-bold text-foreground">Episodic Pacing</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  More than a verbal tic, &ldquo;asweh&rdquo; functions as a small symbol of
-                  Harri&apos;s whole identity. It is West African in origin, conviction-bearing in
-                  function, and embedded in a London child&apos;s speech &mdash; the syllable
-                  carries his entire migration in compressed form. Critics have noted it as the
-                  novel&apos;s most concentrated linguistic image of hybridity.
+                  The novel proceeds episodically: school days, detective adventures, family scenes,
+                  gang encounters, pigeon interludes. This mosaic structure mimics how a child
+                  experiences time &mdash; not as plot but as vivid present moments. The reader,
+                  reading backwards after the ending, must do the connecting work.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Fingerprint Dust</h4>
+                <h4 className="font-bold text-foreground">Final Tonal Shift</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Harri and Dean dust for fingerprints with chalk and Sellotape, copying CSI. The
-                  image is comic in itself, but it is built into a brutal symbolic rhyme with Auntie
-                  Sonia&apos;s burned fingertips. Two kinds of fingerprint sit side by side: the
-                  child&apos;s playful detective dust, and the adult migrant&apos;s literal erasure
-                  of her own prints to survive. Kelman uses this rhyme to ironise the gap between
-                  play and reality: Harri thinks he is solving a crime through fingerprints;
-                  meanwhile his own family is unmaking its prints to stay in the country at all.
+                  In the closing pages the narrative tilts decisively into the pigeon&apos;s poetic
+                  register as Harri is killed. The voice that has carried the entire book &mdash;
+                  bright, inquisitive, proud of its slang &mdash; is silenced, and a mournful,
+                  hymn-like voice closes the book. This is one of the most examinable technical
+                  features: it answers questions on structure, voice and Kelman&apos;s purpose at
+                  once.
                 </p>
               </div>
             </div>
           </Section>
         </div>
 
-        {/* ────────────────────────────────── EXAM QUESTIONS */}
-        <div id="exam-questions">
-          <Section title="Exam Questions with Planning Notes" icon="✍️">
+        {/* ────────────────────────────────── ESSAY PLANNING */}
+        <div id="essay-planning">
+          <Section title="Essay Planning for Common Questions" icon="✍️">
             <p className="text-sm text-muted-foreground mb-5">
-              Five AQA-GCSE-style questions on Pigeon English with full planning notes. Each plan
-              flags the AO1 (read, understand and respond to texts), AO2 (analyse the language, form
-              and structure used by a writer), and AO3 (the relationship between texts and their
-              contexts) targets. Use these as model approaches; in the exam, spend 5 minutes
-              planning before writing.
+              AQA-style essay plans for the most likely questions on <em>Pigeon English</em>. Each
+              plan provides a thesis, paragraph structure, and suggested evidence (verify all
+              quotations against your edition before committing them to memory).
             </p>
 
             <div className="space-y-6">
-              {/* Question 1 */}
+              {/* Essay 1 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  1. How does Kelman present Harri&apos;s response to the violence of the estate in
-                  Pigeon English? [30 marks + 4 SPaG]
+                  1. How does Kelman present the relationship between childhood and violence in{' '}
+                  <em>Pigeon English</em>?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Thesis (AO1)
+                      Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Kelman uses Harri&apos;s child-narrator perspective to expose the violence of
-                      the estate without sensationalising it: Harri reports adult brutality in a
-                      register of curiosity and play, and the gap between what he says and what we
-                      understand is the novel&apos;s moral force.
+                      Kelman uses Harri&apos;s innocent voice to dramatise the collision between
+                      childhood and adult street violence, suggesting that on the estate the two
+                      cannot coexist &mdash; and that the cost of that incompatibility is paid
+                      almost entirely by children.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 (AO2 voice)
+                      Paragraph 1 &mdash; The opening image
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Harri&apos;s register: mixing &ldquo;asweh&rdquo;, &ldquo;hutious&rdquo;, and
-                      London slang. Discuss how the recurring vocabulary is calibrated for
-                      childhood; the violence is reported in the same register as PE class.
+                      The novel opens on the dead boy&apos;s blood, narrated in Harri&apos;s flat
+                      present tense. Analyse how the child&apos;s perspective makes the violence
+                      stranger and crueler than an adult narrator could. Use &lsquo;Asweh&rsquo; as
+                      evidence of voice.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 (AO2 structure)
+                      Paragraph 2 &mdash; Play turning into evidence
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The detective game with Dean: chalk, Sellotape, fingerprint dust. Argue that
-                      the structural device of the &ldquo;investigation&rdquo; allows Kelman to
-                      track adult violence through a child&apos;s framework, making the irony do the
-                      work.
+                      Harri and Dean&apos;s detective game, with its CSI fingerprint dust, is
+                      structured as childhood play. As the investigation produces real names, the
+                      play becomes lethal. Discuss how Kelman stages this slippage from game to
+                      danger.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 (AO2 ending)
+                      Paragraph 3 &mdash; Innocence preserved alongside danger
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The shocking final passage: Harri stabbed; the narrative handed to the pigeon.
-                      Argue that the structural choice &mdash; silencing Harri&apos;s voice &mdash;
-                      is the most devastating response Kelman can offer to estate violence.
+                      Harri&apos;s crush on Poppy, his races, his pigeon-feeding all preserve
+                      childhood inside the novel. The continued presence of innocence is what makes
+                      the violence intolerable when it arrives. Kelman refuses to let the estate
+                      cancel out childhood &mdash; until, at the end, it does.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 (AO3 context)
+                      Paragraph 4 &mdash; The closing murder
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Damilola Taylor (2000) and the post-2000s &ldquo;knife crime&rdquo; coverage.
-                      Argue Kelman is not chasing the headline but writing against its dehumanising
-                      frame &mdash; restoring the child to the news story.
+                      Harri&apos;s death mirrors the dead boy of the opening. Discuss the circular
+                      structure: childhood does not survive contact with the gang economy, and
+                      Kelman makes the reader feel that loss as an indictment.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
+                      Conclusion
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Link to the Damilola Taylor case as biographical context. Argue that
+                      Kelman&apos;s purpose is to refuse the abstraction of &lsquo;youth
+                      violence&rsquo; statistics by making one specific child unforgettable.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Question 2 */}
+              {/* Essay 2 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  2. Explore how Kelman presents the experience of migration in Pigeon English. [30
-                  marks + 4 SPaG]
+                  2. How does Kelman present migration and belonging in the novel?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Thesis (AO1)
+                      Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Kelman presents migration not as a single arrival but as a permanent state of
-                      negotiation &mdash; linguistic, familial, legal, and emotional &mdash;
-                      embodied above all in Harri&apos;s hybrid voice and his split family.
+                      Migration in <em>Pigeon English</em> is shown as a long, uneven, often violent
+                      process; the novel anatomises the costs of belonging in a city that does not
+                      yet welcome the family reuniting inside it.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 (AO2 language)
+                      Paragraph 1 &mdash; Family split across continents
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Harri&apos;s code-switching: &ldquo;asweh&rdquo;, &ldquo;hutious&rdquo;
-                      sitting next to British slang within single sentences. Argue that the
-                      novel&apos;s sentences themselves enact migration.
+                      Papa and Agnes still in Ghana; Mamma working long hospital shifts to bring
+                      them over. Migration is structurally unfinished &mdash; the family is
+                      mid-journey for the entire novel.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 (AO2 family)
+                      Paragraph 2 &mdash; Auntie Sonia&apos;s burnt fingerprints
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The split between London (Mamma, Lydia, Harri) and Ghana (Papa, Agnes, Grandma
-                      Ama). Mamma&apos;s exhaustion as the visible cost. Phone calls as thinly
-                      stretched ropes across the Atlantic.
+                      The single most shocking image of immigration politics in the novel. Discuss
+                      how the detail compresses borders, fear and self-erasure into one domestic
+                      object.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 (AO2 image)
+                      Paragraph 3 &mdash; Harri&apos;s hybrid voice
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Auntie Sonia&apos;s burned fingertips: the literal erasure of identity under
-                      immigration pressure. Read alongside Harri&apos;s fingerprint dust for irony.
+                      &lsquo;Asweh&rsquo;, &lsquo;Adjei&rsquo;, &lsquo;hutless&rsquo;,
+                      &lsquo;bo-styles&rsquo; &mdash; Harri&apos;s voice is the linguistic record of
+                      a migration in progress. Belonging happens, partly, through speech.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 (AO3 context)
+                      Paragraph 4 &mdash; The cost of arrival
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      West African / Ghanaian diaspora in London; staged migration; the legal
-                      precarity of undocumented status. Mention the debate about Kelman as a white
-                      author writing a Black migrant child if your teacher wants AO3 on authorial
-                      position.
+                      Harri is murdered before the family can be reunited. London&apos;s welcome is
+                      fatal. Connect to the Damilola Taylor case and the wider history of West
+                      African migration to Britain.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Question 3 */}
+              {/* Essay 3 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  3. How significant is the pigeon as a narrator in Pigeon English? [30 marks + 4
-                  SPaG]
+                  3. How does Kelman use the pigeon&apos;s voice in <em>Pigeon English</em>?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Thesis (AO1)
+                      Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The pigeon is structurally and thematically essential: it provides the formal
-                      counterweight to Harri&apos;s child voice, witnesses what Harri cannot, and
-                      ultimately replaces Harri as narrator at the moment of his death.
+                      The pigeon&apos;s italicised interludes give the novel a second, omniscient
+                      and quasi-religious consciousness whose poetic register both witnesses
+                      Harri&apos;s world and ultimately mourns it.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 (AO2 register)
+                      Paragraph 1 &mdash; Form and italics
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Italicised, lyrical, almost biblical register. Contrast with Harri&apos;s
-                      slangy first-person voice. Argue that the novel&apos;s structure is built from
-                      the alternation of these two voices.
+                      Discuss the formal choice to set the pigeon passages apart in italics. Their
+                      brevity, lyricism and aerial perspective contrast with Harri&apos;s
+                      present-tense first-person narration.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 (AO2 symbolic role)
+                      Paragraph 2 &mdash; Multiple symbolic readings
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The pigeon as guardian, soul, witness; the urban pigeon as a deliberately
-                      humble version of the divine bird. The dove and the Holy Spirit; Noah&apos;s
-                      dove returning; the ancient soul-bird tradition.
+                      The pigeon as guardian angel, as Holy Spirit, as soul of the city, as the dead
+                      boy watching over Harri. Kelman keeps these readings open; argue that the
+                      polyvalence is itself the point.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 (AO2 ending)
+                      Paragraph 3 &mdash; Aerial witness
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The closing pigeon passage as the novel&apos;s emotional climax. The handover
-                      of voice from Harri to pigeon at the moment of his death. The reader is forced
-                      to mourn through a non-human narrator.
+                      The pigeon sees what Harri cannot. Discuss how the bird&apos;s perspective
+                      gives the reader information about danger without breaking Harri&apos;s
+                      innocence.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 (AO3 context)
+                      Paragraph 4 &mdash; The closing pigeon passage
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The dove in Christian iconography; pigeons as the typical &ldquo;dirty&rdquo;
-                      city bird; Kelman&apos;s recovery of the despised urban species as the bearer
-                      of meaning. The title yokes pigeon and English.
+                      The novel ends in pigeon-only narration. Argue that this tonal shift is the
+                      novel&apos;s most devastating formal decision &mdash; a hymn replacing a
+                      child&apos;s voice.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Question 4 */}
+              {/* Essay 4 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  4. How does Kelman use voice and language to create Harri as a character? [30
-                  marks + 4 SPaG]
+                  4. How does Kelman explore family in <em>Pigeon English</em>?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Thesis (AO1)
+                      Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Harri is constructed almost entirely through voice: a hybrid lexicon mixing
-                      Pidgin English and London slang, a child&apos;s syntax, and a rhythm of
-                      repeated formulas. Voice is identity in this novel.
+                      Family is plural, fragmented and load-bearing &mdash; the strongest defence
+                      Harri has against the estate&apos;s violence, and the institution most
+                      strained by immigration.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 (AO2 lexis)
+                      Paragraph 1 &mdash; Mamma as worn-out protector
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Recurring markers: &ldquo;asweh&rdquo;, &ldquo;hutious&rdquo;,
-                      &ldquo;dey&rdquo;. Their West African origin. Argue that these are not
-                      flavouring but the load-bearing structure of the voice.
+                      Mamma&apos;s long hospital shifts and prayer life. The structural irony: she
+                      is sacrificing her presence to provide, and her absence is what the gang
+                      fills.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 (AO2 syntax)
+                      Paragraph 2 &mdash; Lydia as substitute parent
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Short clauses, declarative rhythm, present-tense recounting. The way Harri
-                      lists facts and observations like inventory. Discuss how the syntax keeps us
-                      in a child&apos;s real-time perception.
+                      Lydia&apos;s warnings to Harri, her parallel pressures, her sibling tenderness
+                      beneath the bickering. The protective older sister stands in for the absent
+                      parents.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 (AO2 register-shift)
+                      Paragraph 3 &mdash; Auntie Sonia and Julius
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Code-switching within sentences: Pidgin meeting London estate slang. Argue
-                      that the very sentence is the novel&apos;s political claim about who counts as
-                      a London voice.
+                      The abusive relationship inside the family unit. Julius&apos;s violence
+                      parallels the gang&apos;s, showing danger is structural not local.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 (AO3 context)
+                      Paragraph 4 &mdash; Papa and Agnes as imagined family
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Ghanaian diaspora; the sociolinguistics of the Multicultural London English
-                      (MLE) of the 2000s; the literary tradition of child narrators (Huckleberry
-                      Finn, Frank McCourt, Mark Haddon). Kelman&apos;s outsider position in literary
-                      fiction.
+                      The family Harri carries inside himself across continents. The unreached
+                      reunion is the novel&apos;s emotional centre and its tragic shape.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Question 5 */}
+              {/* Essay 5 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  5. &ldquo;Pigeon English is ultimately a novel about the failure of society to
-                  protect its children.&rdquo; To what extent do you agree? [30 marks + 4 SPaG]
+                  5. How does Kelman use Harri&apos;s narrative voice to shape the reader&apos;s
+                  response?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Thesis (AO1)
+                      Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Largely agree: the structural choice to kill Harri makes the novel a protest
-                      against a society that fails its children &mdash; but Kelman complicates this
-                      with Harri&apos;s vivid agency, the pigeon&apos;s consoling presence, and the
-                      insistence on Harri&apos;s humanity over the fact of his death.
+                      Harri&apos;s mixed Pidgin-English / British-slang voice is the novel&apos;s
+                      engine: it generates sympathy, cultural specificity, and the unbearable
+                      contrast between innocent perspective and brutal events.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 (AO2 ending)
+                      Paragraph 1 &mdash; Pidgin-English markers
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The shocking stabbing of Harri at the end. The bildungsroman cut short. Read
-                      as the novel&apos;s central indictment: a child has not been protected.
+                      &lsquo;Asweh&rsquo;, &lsquo;Adjei&rsquo;. The untranslated Ghanaian terms
+                      refuse to assimilate Harri to a generic English child-narrator.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 (AO2 institutions)
+                      Paragraph 2 &mdash; Absorbed London slang
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The state&apos;s failures across the novel: the police investigation that
-                      cannot solve the dead boy&apos;s murder; the under-resourced school;
-                      Mamma&apos;s impossible workload. Argue the novel indicts not individuals but
-                      a system.
+                      &lsquo;Hutless&rsquo;, &lsquo;bo-styles&rsquo;. Harri&apos;s slang is evidence
+                      of his hunger to belong &mdash; the same hunger that makes the gang&apos;s
+                      offer of belonging so dangerous.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 (AO2 counter)
+                      Paragraph 3 &mdash; First-person present tense
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Counter-argument: the novel is also full of love &mdash; Mamma, Lydia, Dean,
-                      Poppy. Harri is not unprotected by his family, only by the world his family
-                      has been placed in. The pigeon&apos;s closing voice provides something like
-                      consolation. The novel mourns; it does not despair.
+                      The novel never offers retrospective wisdom. The reader experiences events at
+                      Harri&apos;s pace, with his blind spots, generating intense dramatic irony.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 (AO3 context)
+                      Paragraph 4 &mdash; The voice silenced
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Damilola Taylor; the post-2000s estate context; austerity-era cuts to youth
-                      services. Kelman&apos;s explicit framing of the novel as a response to a real
-                      failure of protection. The Booker shortlist as evidence the argument was
-                      heard.
+                      The novel&apos;s ending takes Harri&apos;s voice away. The pigeon&apos;s elegy
+                      replaces it. The loss of voice is itself the novel&apos;s argument.
                     </p>
                   </div>
                 </div>
@@ -901,6 +1026,158 @@ export default function PigeonEnglishPage() {
             </div>
           </Section>
         </div>
+      </div>
+
+      {/* ────────────────────────────────── GRADE 9 POINTS */}
+      <div id="grade-9-points">
+        <Section title="Grade 9 Exemplar Points and Interpretations" icon="⭐">
+          <p className="text-sm text-muted-foreground mb-4 italic">
+            Higher-level interpretations that move beyond surface reading. Use these to demonstrate
+            sophisticated engagement with Kelman&apos;s purpose, form, and ethical stakes.
+          </p>
+          <div className="space-y-4">
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                1. The Pigeon as Theological Witness
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                A Grade 9 reading argues that the pigeon&apos;s aerial, italicised voice gives the
+                novel a quasi-religious frame: a witness above the city, a Holy-Spirit echo in a
+                faith-saturated household, the speaker of the closing elegy. Harri says
+                &lsquo;Asweh&rsquo; (&lsquo;I swear&rsquo;) hundreds of times; the pigeon is the
+                witness those oaths invoke. That the pigeon cannot speak to police is the
+                novel&apos;s bleak theology &mdash; the watcher exists, but cannot intervene.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                2. Trainers and Fingerprints as Mirror Symbols
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                A Grade 9 reading sees the trainers and fingerprint motifs as a pair: both involve
+                marks on the body that indicate identity, status and vulnerability. Harri prizes his
+                trainers; gangs target boys for them. Auntie Sonia destroys her fingerprints to
+                escape the state. Harri and Dean dust for fingerprints as a child&apos;s game. Same
+                body-mark image, two ages, two opposite uses.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                3. The Novel&apos;s Refusal of Detective Catharsis
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <em>Pigeon English</em> sets up the conventions of a child-detective story and
+                refuses every genre payoff. The killer is not caught. The investigator does not
+                triumph. Instead, the investigator is killed. This generic subversion is itself the
+                novel&apos;s argument: case-closed comforts are a luxury this material cannot
+                afford. Kelman makes the reader feel the absence of catharsis as an ethical loss.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                4. Mamma&apos;s Absence as Structural Violence
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Mamma is not a neglectful parent. She works long NHS shifts because the family is
+                paying to bring Papa and Agnes to London. Her absence is the consequence of
+                immigration policy and economic necessity. The gang fills the gap. The violence
+                Harri suffers is therefore, indirectly, a product of borders and wages.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                5. The Ethics of Kelman&apos;s Voice-Choice
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                A Grade 9 answer engages with Kelman&apos;s position as a white English writer
+                ventriloquising an eleven-year-old Ghanaian boy. The strongest answers note that
+                Kelman researched the voice carefully, that the novel is informed by the Damilola
+                Taylor case, and that the choice to inhabit Harri&apos;s perspective is itself an
+                ethical claim &mdash; that the interior life of a Ghanaian child on a London estate
+                matters enough to be imagined.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                6. Hybrid Voice as Anti-Assimilation
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Harri&apos;s voice does not become more English as the novel progresses; it remains
+                stubbornly hybrid, with &lsquo;Asweh&rsquo; intact at the very end. This is a
+                deliberate refusal of the assimilationist narrative arc &mdash; the immigrant child
+                does not shed his Ghanaian markers in exchange for English ones. London does not
+                erase him; it kills him. The novel makes hybridity a fact, not a phase.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                7. Circular Structure and Statistical Numbness
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                The novel begins and ends with the murder of a child. A Grade 9 reading connects
+                this to public-discourse numbness about youth violence &mdash; the way knife murders
+                become additions to a number rather than singular losses. Kelman&apos;s circularity
+                stages that numbness only to explode it: Harri&apos;s death has been earned by the
+                reader through 250 pages of intimate company, so we cannot count him as a statistic.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">
+                8. Faith Without Salvation
+              </h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Mamma&apos;s prayers do not save Harri. Auntie Sonia&apos;s mutilations do not
+                protect her. Harri&apos;s &lsquo;Asweh&rsquo; oaths invoke a witness who watches but
+                cannot intervene. The novel keeps faith present without ever letting it resolve
+                anything. The pigeon &mdash; the closest thing to a watching spirit &mdash; mourns
+                rather than rescues. Faith stripped of consolation, which is in some ways its truest
+                form.
+              </p>
+            </div>
+          </div>
+        </Section>
+      </div>
+
+      {/* ────────────────────────────────── PRACTICE QUESTIONS */}
+      <div id="practice-questions">
+        <Section title="Practice Questions" icon="📝">
+          <p className="text-sm text-muted-foreground mb-4">
+            AQA-style exam questions for <em>Pigeon English</em>. Plan your response using PEEL
+            paragraphs, embedded quotations, and contextual links to the Damilola Taylor case and
+            post-2000s knife-crime anxiety.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                q: 'How does Kelman present the relationship between childhood and violence in Pigeon English? Refer to the whole text in your answer.',
+                marks: 30,
+              },
+              {
+                q: "How does Kelman use the pigeon as a narrator? Explore the effects of the pigeon's italicised passages on the reader.",
+                marks: 30,
+              },
+              {
+                q: 'How does Kelman explore the experience of migration and belonging through Harri and his family?',
+                marks: 30,
+              },
+              {
+                q: "How does Kelman use Harri's narrative voice to shape the reader's response to the events of the novel?",
+                marks: 30,
+              },
+              {
+                q: 'How far does Kelman present family as a source of protection in Pigeon English? Refer to Mamma, Lydia, Auntie Sonia and the absent Papa.',
+                marks: 30,
+              },
+            ].map((item, i) => (
+              <div key={i} className="rounded-lg border border-border bg-muted/50 p-4">
+                <p className="text-sm font-semibold text-foreground">Question {i + 1}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {item.q} <span className="font-semibold">[{item.marks} marks]</span>
+                </p>
+              </div>
+            ))}
+          </div>
+        </Section>
       </div>
 
       {/* Exam Tips */}
@@ -910,64 +1187,62 @@ export default function PigeonEnglishPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Always link to context (AO3).</strong> The Damilola Taylor case (2000), the
-              post-2000s &ldquo;knife crime&rdquo; discourse, and the Ghanaian diaspora in London
-              are the three context anchors examiners reward.
+              <strong>Always link to Damilola Taylor.</strong> Kelman has stated the 2000 Peckham
+              murder of Damilola Taylor inspired the novel. This is the single most examinable
+              contextual fact.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Analyse voice, not just content (AO2).</strong> &ldquo;Asweh&rdquo;,
-              &ldquo;hutious&rdquo;, code-switching between Pidgin English and London slang &mdash;
-              this is the novel&apos;s central method.
+              <strong>Use Kelman&apos;s methods.</strong> Discuss the hybrid voice (Pidgin English,
+              slang, first-person present tense), the pigeon&apos;s italicised interludes, the
+              circular structure, and the closing tonal shift.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Treat the pigeon as a structural device, not a curiosity.</strong> The
-              italicised passages frame the novel; the closing handover from Harri to pigeon is the
-              novel&apos;s climax.
+              <strong>Refer to Kelman&apos;s intentions.</strong> &lsquo;Kelman perhaps
+              suggests...&rsquo; or &lsquo;Kelman uses Harri&apos;s voice to...&rsquo; &mdash; treat
+              the novel as a designed object.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Refer to the writer&apos;s intentions.</strong> &ldquo;Kelman uses
-              Harri&apos;s voice to&hellip;&rdquo;, &ldquo;Kelman refuses the conventional
-              bildungsroman ending in order to&hellip;&rdquo;
+              <strong>Verify quotations.</strong> Always confirm wording against your edition before
+              committing quotes to memory. Where this revision page flags <strong>[VERIFY]</strong>,
+              treat the line as paraphrase until you have checked it.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Verify any longer quotation in your edition.</strong> Pigeon English is in
-              copyright; only quote phrases you can confirm verbatim. Single-word voice markers
-              (&ldquo;asweh&rdquo;, &ldquo;hutious&rdquo;) are widely cited and safe.
+              <strong>Use precise terminology.</strong> &lsquo;Hybrid narrative voice&rsquo;,
+              &lsquo;Pidgin English&rsquo;, &lsquo;first-person present tense&rsquo;,
+              &lsquo;circular structure&rsquo;, &lsquo;dramatic irony&rsquo;.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Reference the whole novel.</strong> Use detail from openings (the dead boy
-              outside Chicken Joe&apos;s), middle (the detective game, Auntie Sonia&apos;s fingers),
-              and ending (the pigeon&apos;s closing passage). This signals AO1 confidence with the
-              whole text.
+              <strong>Address the whole novel.</strong> Reference the opening murder, the middle
+              section (gang pressure, family scenes, the pigeon), and the closing tonal shift.
+              Examiners reward candidates who show command of the entire arc.
             </span>
           </li>
         </ul>
       </div>
 
-      {/* Copyright notice */}
+      {/* Footer */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>Pigeon English</em> by Stephen Kelman was first published in 2011 by Bloomsbury and
-          remains in copyright. The notes on this page are a study summary; quotations are kept
-          deliberately brief and limited to widely cited single-word voice markers and clearly
-          paraphrased descriptions. Students should always cite the page reference from their own
-          edition when quoting in coursework or examinations. Items marked [VERIFY] should be
-          confirmed against the printed text before being reproduced verbatim.
+          <em>Pigeon English</em> by Stephen Kelman was first published by Bloomsbury in 2011 and
+          shortlisted for the Man Booker Prize the same year. The novel is in copyright. Quotations
+          on this page are used for educational analysis under fair-dealing provisions for criticism
+          and review; items flagged
+          <strong> [VERIFY]</strong> should be confirmed against your edition before use in an exam.
         </p>
       </footer>
     </>
