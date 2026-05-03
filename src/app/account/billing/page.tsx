@@ -133,12 +133,13 @@ export default function BillingPage() {
             productId: 'student_annual',
           }),
         })
+        // /api/promo/redeem uses successResponse — payload at top level,
+        // no { data: ... } envelope.
         const json = (await res.json().catch(() => ({}))) as {
-          data?: { url?: string }
+          url?: string
           error?: string
         }
-        const url = json.data?.url
-        if (!res.ok || !url) {
+        if (!res.ok || !json.url) {
           if (res.status === 403 && json.error === 'email_verification_required') {
             setNeedsEmailVerification(true)
             setCheckoutLoading(null)
@@ -150,7 +151,7 @@ export default function BillingPage() {
         }
         trackEvent('begin_checkout', { currency: 'GBP' })
         phCapture(PH_EVENTS.SUBSCRIPTION_STARTED, { plan, promoCode: codeField.appliedCode })
-        window.location.href = url
+        window.location.href = json.url
         return
       } catch {
         setError('Something went wrong applying the code. Please try again.')

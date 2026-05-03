@@ -62,8 +62,11 @@ export function useAffiliateCodeField(): AffiliateCodeFieldState {
     setErrorMessage(null)
     try {
       const res = await fetch(`/api/promo/validate?code=${encodeURIComponent(trimmed)}`)
-      const json = (await res.json().catch(() => ({}))) as { data?: ValidationResult }
-      const result = json.data ?? null
+      // /api/promo/validate uses successResponse(data, status) which puts
+      // the payload at the TOP LEVEL of the response body — there's no
+      // `{ data: ... }` envelope. An earlier draft of this code expected
+      // an envelope and silently treated every valid code as invalid.
+      const result = (await res.json().catch(() => null)) as ValidationResult | null
 
       if (!result || !result.valid) {
         setAppliedCode(null)

@@ -313,13 +313,14 @@ export default function PricingPage() {
           return
         }
 
+        // /api/promo/redeem returns the payload at top level via
+        // successResponse — no { data: ... } envelope.
         const json = (await res.json().catch(() => ({}))) as {
-          data?: { url?: string }
+          url?: string
           error?: string
         }
-        const url = json.data?.url
 
-        if (!res.ok || !url) {
+        if (!res.ok || !json.url) {
           if (res.status === 403 && json.error === 'email_verification_required') {
             window.location.href = '/auth/resend-verification'
             return
@@ -333,7 +334,7 @@ export default function PricingPage() {
           return
         }
 
-        window.location.href = url
+        window.location.href = json.url
         return
       } catch {
         setCheckoutError('Something went wrong applying the code. Please try again.')
