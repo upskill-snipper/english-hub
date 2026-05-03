@@ -264,10 +264,14 @@ export default function PricingPage() {
   //   - Any other error → user-visible toast.
   const [checkoutLoading, setCheckoutLoading] = useState<CheckoutPlan | null>(null)
   const [checkoutError, setCheckoutError] = useState<string | null>(null)
+  // Track which plan-group the error belongs to so the message renders
+  // under the button the user actually clicked, not under a sibling card.
+  const [checkoutErrorPlan, setCheckoutErrorPlan] = useState<CheckoutPlan | null>(null)
 
   async function handleCheckout(plan: CheckoutPlan) {
     setCheckoutLoading(plan)
     setCheckoutError(null)
+    setCheckoutErrorPlan(null)
     try {
       const res = await fetch('/api/stripe/checkout', {
         method: 'POST',
@@ -292,7 +296,26 @@ export default function PricingPage() {
           window.location.href = '/auth/resend-verification'
           return
         }
-        setCheckoutError(data.error || 'Failed to start checkout. Please try again.')
+        // Translate the most common server-side errors into something a
+        // human can act on. The raw `data.error` text from the API is
+        // engineering-speak ("Missing required fields", "Invalid price ID")
+        // — that confused the founder into thinking the button was simply
+        // "doing nothing".
+        let userMessage: string
+        if (data.error === 'Missing required fields: priceId (or plan) and mode') {
+          userMessage =
+            "We couldn't start checkout because the live Stripe price IDs aren't yet wired up in Vercel. The site team needs to add STRIPE_PRICE_STUDENT_MONTHLY / STUDENT_ANNUAL / TEACHER_MONTHLY / TEACHER_ANNUAL to Vercel Production env vars and redeploy."
+        } else if (data.error === 'Invalid price ID') {
+          userMessage =
+            "We couldn't start checkout — the configured Stripe price ID isn't valid in this Stripe account. Check the env vars match LIVE-mode price IDs and redeploy."
+        } else if (data.error === 'Payment processing error. Please try again.') {
+          userMessage =
+            "Stripe rejected the checkout request. This usually means the live Stripe API keys aren't set in Vercel yet, or the keys are from a different account than the price IDs. See business-docs/STRIPE-GO-LIVE-CHECKLIST.md."
+        } else {
+          userMessage = data.error || 'Failed to start checkout. Please try again.'
+        }
+        setCheckoutError(userMessage)
+        setCheckoutErrorPlan(plan)
         setCheckoutLoading(null)
         return
       }
@@ -301,9 +324,23 @@ export default function PricingPage() {
       window.location.href = data.url
     } catch {
       setCheckoutError('Something went wrong. Please try again.')
+      setCheckoutErrorPlan(plan)
       setCheckoutLoading(null)
     }
   }
+
+  // Helpers — figures out whether the error message belongs to a given
+  // plan group (student vs teacher) so each card only shows its own error.
+  const studentError =
+    checkoutError &&
+    (checkoutErrorPlan === 'student_monthly' || checkoutErrorPlan === 'student_annual')
+      ? checkoutError
+      : null
+  const teacherError =
+    checkoutError &&
+    (checkoutErrorPlan === 'teacher_monthly' || checkoutErrorPlan === 'teacher_annual')
+      ? checkoutError
+      : null
 
   return (
     <main className="relative overflow-hidden">
@@ -675,6 +712,9 @@ export default function PricingPage() {
                   Prefer monthly? Start with {PRICING.CURRENCY}
                   {PRICING.STUDENT_MONTHLY}/mo trial instead
                 </button>
+                {studentError && (
+                  <p className="mt-3 text-center text-xs text-red-600">{studentError}</p>
+                )}
               </div>
             </Card>
 
@@ -796,8 +836,8 @@ export default function PricingPage() {
                   Prefer monthly? Start with {PRICING.CURRENCY}
                   {PRICING.TEACHER_MONTHLY}/mo trial instead
                 </button>
-                {checkoutError && (
-                  <p className="mt-3 text-center text-xs text-red-600">{checkoutError}</p>
+                {teacherError && (
+                  <p className="mt-3 text-center text-xs text-red-600">{teacherError}</p>
                 )}
               </div>
             </Card>
