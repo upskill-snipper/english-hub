@@ -40,38 +40,48 @@ import { getSetTextsForBoard } from '@/lib/board/set-texts'
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const WORD_SCRAMBLE_WORDS = [
-  { word: 'METAPHOR', hint: 'A figure of speech comparing two unlike things' },
-  { word: 'SIMILE', hint: 'Comparison using "like" or "as"' },
-  { word: 'ALLITERATION', hint: 'Repetition of initial consonant sounds' },
-  { word: 'ONOMATOPOEIA', hint: 'Words that imitate sounds' },
-  { word: 'PERSONIFICATION', hint: 'Giving human qualities to non-human things' },
-  { word: 'HYPERBOLE', hint: 'Extreme exaggeration for effect' },
-  { word: 'OXYMORON', hint: 'Two contradictory words placed together' },
+  // 4-5 letter starter words
+  { word: 'PLOT', hint: 'The sequence of events in a story' },
+  { word: 'TONE', hint: 'The author’s attitude toward the subject' },
+  { word: 'MOOD', hint: 'The atmosphere or feeling in a text' },
+  { word: 'VERB', hint: 'A doing or action word' },
+  { word: 'NOUN', hint: 'A naming word for a person, place, or thing' },
   { word: 'IRONY', hint: 'When the opposite of what is expected occurs' },
-  { word: 'PATHETIC FALLACY', hint: 'Weather reflecting mood or emotions' },
-  { word: 'FORESHADOWING', hint: 'Hints at what will happen later' },
-  { word: 'JUXTAPOSITION', hint: 'Placing two things side by side for contrast' },
-  { word: 'ENJAMBMENT', hint: 'A sentence running over a line break in poetry' },
-  { word: 'SIBILANCE', hint: 'Repetition of "s" and "sh" sounds' },
-  { word: 'CONSONANCE', hint: 'Repetition of consonant sounds within words' },
-  { word: 'ASSONANCE', hint: 'Repetition of vowel sounds' },
-  { word: 'ANAPHORA', hint: 'Repetition of a word at the start of successive clauses' },
-  { word: 'EUPHEMISM', hint: 'A mild expression substituted for a harsh one' },
-  { word: 'ALLEGORY', hint: 'A story with a hidden moral or political meaning' },
-  { word: 'SOLILOQUY', hint: 'A character speaking their thoughts aloud alone' },
-  { word: 'PROTAGONIST', hint: 'The main character in a story' },
-  { word: 'ANTAGONIST', hint: 'The character who opposes the main character' },
-  { word: 'SYNTAX', hint: 'The arrangement of words in a sentence' },
-  { word: 'RHETORIC', hint: 'The art of persuasive speaking or writing' },
-  { word: 'DIALOGUE', hint: 'Conversation between characters' },
-  { word: 'NARRATIVE', hint: 'A spoken or written account of events' },
-  { word: 'STANZA', hint: 'A group of lines in a poem' },
-  { word: 'CAESURA', hint: 'A pause in the middle of a line of poetry' },
-  { word: 'PLOSIVE', hint: 'A consonant sound made by stopping airflow' },
   { word: 'VOLTA', hint: 'A turn or shift in thought in a sonnet' },
   { word: 'MOTIF', hint: 'A recurring element with symbolic significance' },
+  { word: 'GENRE', hint: 'A category or style of literature' },
+  { word: 'THEME', hint: 'The central idea or message of a text' },
+  { word: 'SIMILE', hint: 'Comparison using "like" or "as"' },
+  { word: 'STANZA', hint: 'A group of lines in a poem' },
+  { word: 'SYNTAX', hint: 'The arrangement of words in a sentence' },
+  // 7-9 letter mid words
+  { word: 'METAPHOR', hint: 'A figure of speech comparing two unlike things' },
+  { word: 'CAESURA', hint: 'A pause in the middle of a line of poetry' },
+  { word: 'PLOSIVE', hint: 'A consonant sound made by stopping airflow' },
+  { word: 'DIALOGUE', hint: 'Conversation between characters' },
   { word: 'EPIGRAPH', hint: 'A quotation at the beginning of a text' },
+  { word: 'OXYMORON', hint: 'Two contradictory words placed together' },
+  { word: 'ALLEGORY', hint: 'A story with a hidden moral or political meaning' },
+  { word: 'ANAPHORA', hint: 'Repetition of a word at the start of successive clauses' },
+  { word: 'RHETORIC', hint: 'The art of persuasive speaking or writing' },
+  { word: 'HYPERBOLE', hint: 'Extreme exaggeration for effect' },
+  { word: 'SOLILOQUY', hint: 'A character speaking their thoughts aloud alone' },
+  { word: 'EUPHEMISM', hint: 'A mild expression substituted for a harsh one' },
+  { word: 'NARRATIVE', hint: 'A spoken or written account of events' },
+  { word: 'SIBILANCE', hint: 'Repetition of "s" and "sh" sounds' },
+  { word: 'ASSONANCE', hint: 'Repetition of vowel sounds' },
+  // 10+ letter advanced words
+  { word: 'CONSONANCE', hint: 'Repetition of consonant sounds within words' },
+  { word: 'ENJAMBMENT', hint: 'A sentence running over a line break in poetry' },
   { word: 'DENOUEMENT', hint: 'The final resolution of a story' },
+  { word: 'PROTAGONIST', hint: 'The main character in a story' },
+  { word: 'ANTAGONIST', hint: 'The character who opposes the main character' },
+  { word: 'ALLITERATION', hint: 'Repetition of initial consonant sounds' },
+  { word: 'ONOMATOPOEIA', hint: 'Words that imitate sounds' },
+  { word: 'JUXTAPOSITION', hint: 'Placing two things side by side for contrast' },
+  { word: 'FORESHADOWING', hint: 'Hints at what will happen later' },
+  { word: 'PERSONIFICATION', hint: 'Giving human qualities to non-human things' },
+  { word: 'PATHETIC FALLACY', hint: 'Weather reflecting mood or emotions' },
 ]
 
 // Curriculum-only quote bank. Every entry is tagged with the GCSE/IGCSE
@@ -91,25 +101,45 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"Is this a dagger which I see before me, the handle toward my hand?"',
     textSlug: 'macbeth',
     answer: 'Macbeth — William Shakespeare',
-    options: ['Macbeth — William Shakespeare', 'Romeo and Juliet — William Shakespeare', 'An Inspector Calls — J.B. Priestley', 'A Christmas Carol — Charles Dickens'],
+    options: [
+      'Macbeth — William Shakespeare',
+      'Romeo and Juliet — William Shakespeare',
+      'An Inspector Calls — J.B. Priestley',
+      'A Christmas Carol — Charles Dickens',
+    ],
   },
   {
     quote: '"Out, out, brief candle! Life\'s but a walking shadow."',
     textSlug: 'macbeth',
     answer: 'Macbeth — William Shakespeare',
-    options: ['Macbeth — William Shakespeare', 'Romeo and Juliet — William Shakespeare', 'The Merchant of Venice — William Shakespeare', 'Much Ado About Nothing — William Shakespeare'],
+    options: [
+      'Macbeth — William Shakespeare',
+      'Romeo and Juliet — William Shakespeare',
+      'The Merchant of Venice — William Shakespeare',
+      'Much Ado About Nothing — William Shakespeare',
+    ],
   },
   {
     quote: '"Fair is foul, and foul is fair."',
     textSlug: 'macbeth',
     answer: 'Macbeth — William Shakespeare',
-    options: ['Macbeth — William Shakespeare', 'An Inspector Calls — J.B. Priestley', 'Romeo and Juliet — William Shakespeare', 'Lord of the Flies — William Golding'],
+    options: [
+      'Macbeth — William Shakespeare',
+      'An Inspector Calls — J.B. Priestley',
+      'Romeo and Juliet — William Shakespeare',
+      'Lord of the Flies — William Golding',
+    ],
   },
   {
     quote: '"Look like the innocent flower, but be the serpent under\'t."',
     textSlug: 'macbeth',
     answer: 'Macbeth — William Shakespeare',
-    options: ['Macbeth — William Shakespeare', 'Jekyll and Hyde — R.L. Stevenson', 'Frankenstein — Mary Shelley', 'Romeo and Juliet — William Shakespeare'],
+    options: [
+      'Macbeth — William Shakespeare',
+      'Jekyll and Hyde — R.L. Stevenson',
+      'Frankenstein — Mary Shelley',
+      'Romeo and Juliet — William Shakespeare',
+    ],
   },
 
   // ── Romeo and Juliet (AQA, Edexcel, OCR, Eduqas, Edexcel IGCSE) ──────────
@@ -117,13 +147,23 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"What light through yonder window breaks?"',
     textSlug: 'romeo-and-juliet',
     answer: 'Romeo and Juliet — William Shakespeare',
-    options: ['Romeo and Juliet — William Shakespeare', 'Macbeth — William Shakespeare', 'The Merchant of Venice — William Shakespeare', 'Much Ado About Nothing — William Shakespeare'],
+    options: [
+      'Romeo and Juliet — William Shakespeare',
+      'Macbeth — William Shakespeare',
+      'The Merchant of Venice — William Shakespeare',
+      'Much Ado About Nothing — William Shakespeare',
+    ],
   },
   {
     quote: '"A plague o\' both your houses."',
     textSlug: 'romeo-and-juliet',
     answer: 'Romeo and Juliet — William Shakespeare',
-    options: ['Romeo and Juliet — William Shakespeare', 'Macbeth — William Shakespeare', 'An Inspector Calls — J.B. Priestley', 'The Merchant of Venice — William Shakespeare'],
+    options: [
+      'Romeo and Juliet — William Shakespeare',
+      'Macbeth — William Shakespeare',
+      'An Inspector Calls — J.B. Priestley',
+      'The Merchant of Venice — William Shakespeare',
+    ],
   },
 
   // ── An Inspector Calls (AQA, Edexcel, OCR, Eduqas, Edexcel IGCSE) ────────
@@ -131,19 +171,34 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"We are members of one body. We are responsible for each other."',
     textSlug: 'an-inspector-calls',
     answer: 'An Inspector Calls — J.B. Priestley',
-    options: ['An Inspector Calls — J.B. Priestley', 'A Christmas Carol — Charles Dickens', 'Blood Brothers — Willy Russell', 'Lord of the Flies — William Golding'],
+    options: [
+      'An Inspector Calls — J.B. Priestley',
+      'A Christmas Carol — Charles Dickens',
+      'Blood Brothers — Willy Russell',
+      'Lord of the Flies — William Golding',
+    ],
   },
   {
     quote: '"Fire and blood and anguish."',
     textSlug: 'an-inspector-calls',
     answer: 'An Inspector Calls — J.B. Priestley',
-    options: ['An Inspector Calls — J.B. Priestley', 'Macbeth — William Shakespeare', 'Jekyll and Hyde — R.L. Stevenson', 'A Christmas Carol — Charles Dickens'],
+    options: [
+      'An Inspector Calls — J.B. Priestley',
+      'Macbeth — William Shakespeare',
+      'Jekyll and Hyde — R.L. Stevenson',
+      'A Christmas Carol — Charles Dickens',
+    ],
   },
   {
     quote: '"A man has to make his own way."',
     textSlug: 'an-inspector-calls',
     answer: 'An Inspector Calls — J.B. Priestley',
-    options: ['An Inspector Calls — J.B. Priestley', 'Animal Farm — George Orwell', 'Lord of the Flies — William Golding', 'Of Mice and Men — John Steinbeck'],
+    options: [
+      'An Inspector Calls — J.B. Priestley',
+      'Animal Farm — George Orwell',
+      'Lord of the Flies — William Golding',
+      'Of Mice and Men — John Steinbeck',
+    ],
   },
 
   // ── A Christmas Carol (AQA, Edexcel, Eduqas) ──────────────────────────────
@@ -151,19 +206,34 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"Are there no prisons? Are there no workhouses?"',
     textSlug: 'a-christmas-carol',
     answer: 'A Christmas Carol — Charles Dickens',
-    options: ['A Christmas Carol — Charles Dickens', 'An Inspector Calls — J.B. Priestley', 'Jekyll and Hyde — R.L. Stevenson', 'Great Expectations — Charles Dickens'],
+    options: [
+      'A Christmas Carol — Charles Dickens',
+      'An Inspector Calls — J.B. Priestley',
+      'Jekyll and Hyde — R.L. Stevenson',
+      'Great Expectations — Charles Dickens',
+    ],
   },
   {
     quote: '"God bless us, every one!"',
     textSlug: 'a-christmas-carol',
     answer: 'A Christmas Carol — Charles Dickens',
-    options: ['A Christmas Carol — Charles Dickens', 'Oliver Twist — Charles Dickens', 'Silas Marner — George Eliot', 'Pride and Prejudice — Jane Austen'],
+    options: [
+      'A Christmas Carol — Charles Dickens',
+      'Oliver Twist — Charles Dickens',
+      'Silas Marner — George Eliot',
+      'Pride and Prejudice — Jane Austen',
+    ],
   },
   {
     quote: '"I wear the chain I forged in life."',
     textSlug: 'a-christmas-carol',
     answer: 'A Christmas Carol — Charles Dickens',
-    options: ['A Christmas Carol — Charles Dickens', 'Jekyll and Hyde — R.L. Stevenson', 'Frankenstein — Mary Shelley', 'Macbeth — William Shakespeare'],
+    options: [
+      'A Christmas Carol — Charles Dickens',
+      'Jekyll and Hyde — R.L. Stevenson',
+      'Frankenstein — Mary Shelley',
+      'Macbeth — William Shakespeare',
+    ],
   },
 
   // ── Jekyll and Hyde (AQA, Edexcel, OCR, Eduqas) ──────────────────────────
@@ -171,21 +241,37 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"Man is not truly one, but truly two."',
     textSlug: 'jekyll-and-hyde',
     answer: 'Jekyll and Hyde — R.L. Stevenson',
-    options: ['Jekyll and Hyde — R.L. Stevenson', 'Frankenstein — Mary Shelley', 'Macbeth — William Shakespeare', 'A Christmas Carol — Charles Dickens'],
+    options: [
+      'Jekyll and Hyde — R.L. Stevenson',
+      'Frankenstein — Mary Shelley',
+      'Macbeth — William Shakespeare',
+      'A Christmas Carol — Charles Dickens',
+    ],
   },
   {
     quote: '"With ape-like fury, he was trampling his victim under foot."',
     textSlug: 'jekyll-and-hyde',
     answer: 'Jekyll and Hyde — R.L. Stevenson',
-    options: ['Jekyll and Hyde — R.L. Stevenson', 'Frankenstein — Mary Shelley', 'Jane Eyre — Charlotte Brontë', 'Great Expectations — Charles Dickens'],
+    options: [
+      'Jekyll and Hyde — R.L. Stevenson',
+      'Frankenstein — Mary Shelley',
+      'Jane Eyre — Charlotte Brontë',
+      'Great Expectations — Charles Dickens',
+    ],
   },
 
   // ── Pride and Prejudice (AQA, Edexcel, OCR, Eduqas) ──────────────────────
   {
-    quote: '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
+    quote:
+      '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
     textSlug: 'pride-and-prejudice',
     answer: 'Pride and Prejudice — Jane Austen',
-    options: ['Pride and Prejudice — Jane Austen', 'Jane Eyre — Charlotte Brontë', 'Silas Marner — George Eliot', 'Frankenstein — Mary Shelley'],
+    options: [
+      'Pride and Prejudice — Jane Austen',
+      'Jane Eyre — Charlotte Brontë',
+      'Silas Marner — George Eliot',
+      'Frankenstein — Mary Shelley',
+    ],
   },
 
   // ── Jane Eyre (AQA, OCR) ──────────────────────────────────────────────────
@@ -193,13 +279,23 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"I am no bird; and no net ensnares me."',
     textSlug: 'jane-eyre',
     answer: 'Jane Eyre — Charlotte Brontë',
-    options: ['Jane Eyre — Charlotte Brontë', 'Pride and Prejudice — Jane Austen', 'Wuthering Heights — Emily Brontë', 'Great Expectations — Charles Dickens'],
+    options: [
+      'Jane Eyre — Charlotte Brontë',
+      'Pride and Prejudice — Jane Austen',
+      'Wuthering Heights — Emily Brontë',
+      'Great Expectations — Charles Dickens',
+    ],
   },
   {
     quote: '"Reader, I married him."',
     textSlug: 'jane-eyre',
     answer: 'Jane Eyre — Charlotte Brontë',
-    options: ['Jane Eyre — Charlotte Brontë', 'Pride and Prejudice — Jane Austen', 'Silas Marner — George Eliot', 'The Sign of Four — Arthur Conan Doyle'],
+    options: [
+      'Jane Eyre — Charlotte Brontë',
+      'Pride and Prejudice — Jane Austen',
+      'Silas Marner — George Eliot',
+      'The Sign of Four — Arthur Conan Doyle',
+    ],
   },
 
   // ── Frankenstein (AQA, Edexcel, OCR) ──────────────────────────────────────
@@ -207,7 +303,12 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"I beheld the wretch — the miserable monster whom I had created."',
     textSlug: 'frankenstein',
     answer: 'Frankenstein — Mary Shelley',
-    options: ['Frankenstein — Mary Shelley', 'Jekyll and Hyde — R.L. Stevenson', 'Jane Eyre — Charlotte Brontë', 'A Christmas Carol — Charles Dickens'],
+    options: [
+      'Frankenstein — Mary Shelley',
+      'Jekyll and Hyde — R.L. Stevenson',
+      'Jane Eyre — Charlotte Brontë',
+      'A Christmas Carol — Charles Dickens',
+    ],
   },
 
   // ── Animal Farm (AQA, Edexcel, OCR) ──────────────────────────────────────
@@ -215,7 +316,12 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"All animals are equal, but some animals are more equal than others."',
     textSlug: 'animal-farm',
     answer: 'Animal Farm — George Orwell',
-    options: ['Animal Farm — George Orwell', 'Lord of the Flies — William Golding', 'Of Mice and Men — John Steinbeck', 'An Inspector Calls — J.B. Priestley'],
+    options: [
+      'Animal Farm — George Orwell',
+      'Lord of the Flies — William Golding',
+      'Of Mice and Men — John Steinbeck',
+      'An Inspector Calls — J.B. Priestley',
+    ],
   },
 
   // ── Lord of the Flies (AQA, OCR, Eduqas) ─────────────────────────────────
@@ -223,7 +329,12 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"The thing is — fear can\'t hurt you any more than a dream."',
     textSlug: 'lord-of-the-flies',
     answer: 'Lord of the Flies — William Golding',
-    options: ['Lord of the Flies — William Golding', 'Animal Farm — George Orwell', 'Of Mice and Men — John Steinbeck', 'An Inspector Calls — J.B. Priestley'],
+    options: [
+      'Lord of the Flies — William Golding',
+      'Animal Farm — George Orwell',
+      'Of Mice and Men — John Steinbeck',
+      'An Inspector Calls — J.B. Priestley',
+    ],
   },
 
   // ── Of Mice and Men (Edexcel IGCSE) ──────────────────────────────────────
@@ -231,23 +342,40 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"A guy needs somebody — to be near him."',
     textSlug: 'of-mice-and-men',
     answer: 'Of Mice and Men — John Steinbeck',
-    options: ['Of Mice and Men — John Steinbeck', 'To Kill a Mockingbird — Harper Lee', 'Animal Farm — George Orwell', 'Things Fall Apart — Chinua Achebe'],
+    options: [
+      'Of Mice and Men — John Steinbeck',
+      'To Kill a Mockingbird — Harper Lee',
+      'Animal Farm — George Orwell',
+      'Things Fall Apart — Chinua Achebe',
+    ],
   },
 
   // ── To Kill a Mockingbird (Edexcel IGCSE) ────────────────────────────────
   {
-    quote: '"You never really understand a person until you consider things from his point of view."',
+    quote:
+      '"You never really understand a person until you consider things from his point of view."',
     textSlug: 'to-kill-a-mockingbird',
     answer: 'To Kill a Mockingbird — Harper Lee',
-    options: ['To Kill a Mockingbird — Harper Lee', 'Of Mice and Men — John Steinbeck', 'Things Fall Apart — Chinua Achebe', 'A View from the Bridge — Arthur Miller'],
+    options: [
+      'To Kill a Mockingbird — Harper Lee',
+      'Of Mice and Men — John Steinbeck',
+      'Things Fall Apart — Chinua Achebe',
+      'A View from the Bridge — Arthur Miller',
+    ],
   },
 
   // ── Things Fall Apart (Edexcel IGCSE) ────────────────────────────────────
   {
-    quote: '"The white man is very clever... He has put a knife on the things that held us together."',
+    quote:
+      '"The white man is very clever... He has put a knife on the things that held us together."',
     textSlug: 'things-fall-apart',
     answer: 'Things Fall Apart — Chinua Achebe',
-    options: ['Things Fall Apart — Chinua Achebe', 'To Kill a Mockingbird — Harper Lee', 'Of Mice and Men — John Steinbeck', 'A View from the Bridge — Arthur Miller'],
+    options: [
+      'Things Fall Apart — Chinua Achebe',
+      'To Kill a Mockingbird — Harper Lee',
+      'Of Mice and Men — John Steinbeck',
+      'A View from the Bridge — Arthur Miller',
+    ],
   },
 
   // ── Ozymandias (AQA Power & Conflict, Eduqas anthology, OCR) ─────────────
@@ -255,7 +383,12 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"Look on my Works, ye Mighty, and despair!"',
     textSlug: 'ozymandias',
     answer: 'Ozymandias — Percy Bysshe Shelley',
-    options: ['Ozymandias — Percy Bysshe Shelley', 'London — William Blake', 'My Last Duchess — Robert Browning', 'The Charge of the Light Brigade — Alfred Tennyson'],
+    options: [
+      'Ozymandias — Percy Bysshe Shelley',
+      'London — William Blake',
+      'My Last Duchess — Robert Browning',
+      'The Charge of the Light Brigade — Alfred Tennyson',
+    ],
   },
 
   // ── Dulce et Decorum Est (Eduqas anthology) ──────────────────────────────
@@ -263,7 +396,12 @@ const QUOTE_MATCH_DATA: QuoteItem[] = [
     quote: '"Bent double, like old beggars under sacks."',
     textSlug: 'dulce-et-decorum-est',
     answer: 'Dulce et Decorum Est — Wilfred Owen',
-    options: ['Dulce et Decorum Est — Wilfred Owen', 'The Charge of the Light Brigade — Alfred Tennyson', 'Bayonet Charge — Ted Hughes', 'Exposure — Wilfred Owen'],
+    options: [
+      'Dulce et Decorum Est — Wilfred Owen',
+      'The Charge of the Light Brigade — Alfred Tennyson',
+      'Bayonet Charge — Ted Hughes',
+      'Exposure — Wilfred Owen',
+    ],
   },
 ]
 
@@ -278,7 +416,12 @@ const GRAMMAR_FIX_DATA = [
   {
     sentence: 'The boy who was running fast, he tripped over.',
     error: 'the comma and "he"',
-    options: ['Remove ", he" and keep the sentence as one clause', 'Add "and" before "he"', 'Replace comma with semicolon', 'No change needed'],
+    options: [
+      'Remove ", he" and keep the sentence as one clause',
+      'Add "and" before "he"',
+      'Replace comma with semicolon',
+      'No change needed',
+    ],
     correct: 'Remove ", he" and keep the sentence as one clause',
     category: 'Sentence Structure',
   },
@@ -339,7 +482,7 @@ const GRAMMAR_FIX_DATA = [
     category: 'Punctuation',
   },
   {
-    sentence: 'The childrens\' toys were scattered everywhere.',
+    sentence: "The childrens' toys were scattered everywhere.",
     error: "childrens'",
     options: ["children's", "childrens'", 'childrens', "childs'"],
     correct: "children's",
@@ -383,7 +526,12 @@ const GRAMMAR_FIX_DATA = [
   {
     sentence: 'Running quickly down the street.',
     error: 'Sentence fragment',
-    options: ['He was running quickly down the street.', 'Running quickly down the street.', 'Quickly running down the street.', 'Run quickly down the street.'],
+    options: [
+      'He was running quickly down the street.',
+      'Running quickly down the street.',
+      'Quickly running down the street.',
+      'Run quickly down the street.',
+    ],
     correct: 'He was running quickly down the street.',
     category: 'Sentence Structure',
   },
@@ -395,7 +543,7 @@ const GRAMMAR_FIX_DATA = [
     category: 'Spelling',
   },
   {
-    sentence: 'Who\'s book is this on the table?',
+    sentence: "Who's book is this on the table?",
     error: "Who's",
     options: ['Whose', "Who's", 'Whos', "Whom's"],
     correct: 'Whose',
@@ -425,7 +573,7 @@ const GRAMMAR_FIX_DATA = [
   {
     sentence: 'Its important to practice everyday.',
     error: 'Its',
-    options: ["It's", 'Its', "Its'", 'It is\'s'],
+    options: ["It's", 'Its', "Its'", "It is's"],
     correct: "It's",
     category: 'Punctuation',
   },
@@ -461,7 +609,10 @@ function shuffleArray<T>(arr: T[]): T[] {
 function scrambleWord(word: string): string {
   // For multi-word terms, scramble each word separately to keep spaces in place
   if (word.includes(' ')) {
-    return word.split(' ').map(w => scrambleWord(w)).join(' ')
+    return word
+      .split(' ')
+      .map((w) => scrambleWord(w))
+      .join(' ')
   }
   const letters = word.split('')
   let scrambled = shuffleArray(letters).join('')
@@ -472,6 +623,41 @@ function scrambleWord(word: string): string {
     attempts++
   }
   return scrambled
+}
+
+// Build a scaffold of pre-revealed letters for longer words.
+// - Words < 7 letters: no scaffold (return null).
+// - 7-9 letters: reveal first letter and every 4th letter after (positions 0, 4, 8...).
+// - 10+ letters: reveal first letter, last letter, and middle letter.
+// Spaces in the answer are always shown as spaces (not as blanks).
+function buildScaffold(word: string): (string | null)[] | null {
+  const len = word.length
+  // Trim by counting only non-space chars to decide difficulty bucket
+  const letterCount = word.replace(/\s/g, '').length
+  if (letterCount < 7) return null
+
+  const slots: (string | null)[] = Array.from(word, (ch) => (ch === ' ' ? ' ' : null))
+  const letterIdx: number[] = []
+  for (let i = 0; i < len; i++) {
+    if (word[i] !== ' ') letterIdx.push(i)
+  }
+
+  if (letterCount >= 10) {
+    // first, middle, last letter positions among non-space letters
+    const first = letterIdx[0]
+    const last = letterIdx[letterIdx.length - 1]
+    const mid = letterIdx[Math.floor(letterIdx.length / 2)]
+    slots[first] = word[first]
+    slots[last] = word[last]
+    slots[mid] = word[mid]
+  } else {
+    // 7-9 letters: first + every 4th letter after
+    for (let n = 0; n < letterIdx.length; n += 4) {
+      const idx = letterIdx[n]
+      slots[idx] = word[idx]
+    }
+  }
+  return slots
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -487,10 +673,26 @@ interface LeaderboardEntry {
 }
 
 const ANONYMOUS_NAMES = [
-  'Clever Fox', 'Swift Eagle', 'Brave Lion', 'Wise Owl', 'Bold Tiger',
-  'Quick Hawk', 'Sharp Wolf', 'Keen Falcon', 'Bright Otter', 'Calm Stag',
-  'Noble Bear', 'Daring Lynx', 'Witty Raven', 'Proud Heron', 'Agile Puma',
-  'Sly Badger', 'Fierce Cobra', 'Gentle Crane', 'Loyal Hound', 'Sleek Panther',
+  'Clever Fox',
+  'Swift Eagle',
+  'Brave Lion',
+  'Wise Owl',
+  'Bold Tiger',
+  'Quick Hawk',
+  'Sharp Wolf',
+  'Keen Falcon',
+  'Bright Otter',
+  'Calm Stag',
+  'Noble Bear',
+  'Daring Lynx',
+  'Witty Raven',
+  'Proud Heron',
+  'Agile Puma',
+  'Sly Badger',
+  'Fierce Cobra',
+  'Gentle Crane',
+  'Loyal Hound',
+  'Sleek Panther',
 ]
 
 const LEADERBOARD_KEY = 'english-hub-leaderboard'
@@ -518,7 +720,15 @@ function getPlayerName(): string {
 function generateSeedEntries(): LeaderboardEntry[] {
   const today = new Date().toISOString()
   const names = shuffleArray(ANONYMOUS_NAMES).slice(0, 8)
-  const games = ['word-scramble', 'quote-match', 'grammar-fix', 'theme-matcher', 'speed-analysis', 'vocabulary-builder', 'spelling-bee']
+  const games = [
+    'word-scramble',
+    'quote-match',
+    'grammar-fix',
+    'theme-matcher',
+    'speed-analysis',
+    'vocabulary-builder',
+    'spelling-bee',
+  ]
   const entries: LeaderboardEntry[] = []
 
   // Spread seed entries across all three games
@@ -570,14 +780,26 @@ function saveToLeaderboard(game: string, score: number, total: number) {
 function getTopScoresForGame(entries: LeaderboardEntry[], gameId: string): LeaderboardEntry[] {
   return entries
     .filter((e) => e.game === gameId)
-    .sort((a, b) => (b.score / b.total) - (a.score / a.total) || b.score - a.score)
+    .sort((a, b) => b.score / b.total - a.score / a.total || b.score - a.score)
     .slice(0, 10)
 }
 
 const GAME_TAB_META: Record<string, { label: string; color: string; activeColor: string }> = {
-  'word-scramble': { label: 'Word Scramble', color: 'text-emerald-400', activeColor: 'data-active:text-emerald-400' },
-  'quote-match': { label: 'Quote Match', color: 'text-violet-400', activeColor: 'data-active:text-violet-400' },
-  'grammar-fix': { label: 'Grammar Fix', color: 'text-clay-600', activeColor: 'data-active:text-clay-600' },
+  'word-scramble': {
+    label: 'Word Scramble',
+    color: 'text-emerald-400',
+    activeColor: 'data-active:text-emerald-400',
+  },
+  'quote-match': {
+    label: 'Quote Match',
+    color: 'text-violet-400',
+    activeColor: 'data-active:text-violet-400',
+  },
+  'grammar-fix': {
+    label: 'Grammar Fix',
+    color: 'text-clay-600',
+    activeColor: 'data-active:text-clay-600',
+  },
 }
 
 // ─── Leaderboard Component ──────────────────────────────────────────────────
@@ -625,7 +847,14 @@ function WeeklyLeaderboard() {
         <Tabs defaultValue="word-scramble">
           <TabsList className="w-full mb-3 bg-transparent gap-1.5 p-0">
             {gameIds.map((id) => (
-              <TabsTrigger key={id} value={id} className={cn('text-xs flex-1 rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40', GAME_TAB_META[id].activeColor)}>
+              <TabsTrigger
+                key={id}
+                value={id}
+                className={cn(
+                  'text-xs flex-1 rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40',
+                  GAME_TAB_META[id].activeColor,
+                )}
+              >
                 {GAME_TAB_META[id].label}
               </TabsTrigger>
             ))}
@@ -635,7 +864,9 @@ function WeeklyLeaderboard() {
             return (
               <TabsContent key={id} value={id}>
                 {top.length === 0 ? (
-                  <p className="text-center text-sm text-muted-foreground py-6">No scores yet this week. Be the first!</p>
+                  <p className="text-center text-sm text-muted-foreground py-6">
+                    No scores yet this week. Be the first!
+                  </p>
                 ) : (
                   <div className="space-y-1">
                     {top.map((entry, idx) => {
@@ -651,24 +882,55 @@ function WeeklyLeaderboard() {
                         >
                           {/* Rank badge */}
                           <div className="w-7 shrink-0 text-center">
-                            {idx === 0 && <Crown className="size-5 text-clay-600 mx-auto" aria-label="1st place" />}
-                            {idx === 1 && <Medal className="size-5 text-zinc-300 mx-auto" aria-label="2nd place" />}
-                            {idx === 2 && <Medal className="size-5 text-amber-600 mx-auto" aria-label="3rd place" />}
-                            {idx > 2 && <span className="text-xs font-bold text-muted-foreground">{idx + 1}</span>}
+                            {idx === 0 && (
+                              <Crown
+                                className="size-5 text-clay-600 mx-auto"
+                                aria-label="1st place"
+                              />
+                            )}
+                            {idx === 1 && (
+                              <Medal
+                                className="size-5 text-zinc-300 mx-auto"
+                                aria-label="2nd place"
+                              />
+                            )}
+                            {idx === 2 && (
+                              <Medal
+                                className="size-5 text-amber-600 mx-auto"
+                                aria-label="3rd place"
+                              />
+                            )}
+                            {idx > 2 && (
+                              <span className="text-xs font-bold text-muted-foreground">
+                                {idx + 1}
+                              </span>
+                            )}
                           </div>
                           {/* Name */}
-                          <span className={cn('flex-1 font-medium truncate', isYou && 'text-primary')}>
+                          <span
+                            className={cn('flex-1 font-medium truncate', isYou && 'text-primary')}
+                          >
                             {entry.name}
                             {isYou && (
-                              <span className="ml-1.5 text-[10px] uppercase tracking-wider font-bold text-primary/70">You</span>
+                              <span className="ml-1.5 text-[10px] uppercase tracking-wider font-bold text-primary/70">
+                                You
+                              </span>
                             )}
                           </span>
                           {/* Score */}
                           <div className="flex items-center gap-2 shrink-0">
-                            <span className={cn(
-                              'font-bold tabular-nums',
-                              idx === 0 ? 'text-clay-600' : idx === 1 ? 'text-zinc-300' : idx === 2 ? 'text-amber-600' : 'text-foreground',
-                            )}>
+                            <span
+                              className={cn(
+                                'font-bold tabular-nums',
+                                idx === 0
+                                  ? 'text-clay-600'
+                                  : idx === 1
+                                    ? 'text-zinc-300'
+                                    : idx === 2
+                                      ? 'text-amber-600'
+                                      : 'text-foreground',
+                              )}
+                            >
                               {entry.score}/{entry.total}
                             </span>
                             <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4">
@@ -787,31 +1049,93 @@ const GAMES: GameDef[] = [
 // WORD SCRAMBLE GAME
 // ═══════════════════════════════════════════════════════════════════════════════
 
+// How many correct answers before scaling up word difficulty
+const DIFFICULTY_STEP = 3
+
 function WordScrambleGame({ onExit }: { onExit: () => void }) {
-  const [words] = useState(() => shuffleArray(WORD_SCRAMBLE_WORDS))
-  const [currentIndex, setCurrentIndex] = useState(0)
+  // Pre-bucket words by length for the difficulty curve
+  const wordPool = useMemo(() => {
+    const easy = WORD_SCRAMBLE_WORDS.filter((w) => w.word.replace(/\s/g, '').length <= 5)
+    const medium = WORD_SCRAMBLE_WORDS.filter((w) => {
+      const n = w.word.replace(/\s/g, '').length
+      return n >= 6 && n <= 9
+    })
+    const hard = WORD_SCRAMBLE_WORDS.filter((w) => w.word.replace(/\s/g, '').length >= 10)
+    return { easy, medium, hard }
+  }, [])
+
+  const [usedWords, setUsedWords] = useState<Set<string>>(new Set())
+  const [currentWord, setCurrentWord] = useState<{ word: string; hint: string } | null>(null)
   const [scrambled, setScrambled] = useState('')
+  const [scaffold, setScaffold] = useState<(string | null)[] | null>(null)
   const [guess, setGuess] = useState('')
   const [score, setScore] = useState(0)
+  const [wordsPlayed, setWordsPlayed] = useState(0)
   const [timeLeft, setTimeLeft] = useState(30)
-  const [gameState, setGameState] = useState<'playing' | 'correct' | 'wrong' | 'timeout' | 'finished'>('playing')
+  const [gameState, setGameState] = useState<
+    'playing' | 'correct' | 'wrong' | 'timeout' | 'finished'
+  >('playing')
   const [totalAnswered, setTotalAnswered] = useState(0)
-  const [showHint, setShowHint] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const currentWord = words[currentIndex]
+  // Round length: keep at 10 words per session for a consistent leaderboard
+  const ROUND_LENGTH = 10
 
-  // scramble on mount / new word
+  // Pick the next word: difficulty escalates with the player's score, and we
+  // never repeat a word within a session (resets if the relevant pool runs out).
+  const pickNextWord = useCallback(
+    (
+      currentScore: number,
+      used: Set<string>,
+    ): { picked: { word: string; hint: string } | null; nextUsed: Set<string> } => {
+      // Determine bucket: 0-2 correct → easy, 3-5 → medium, 6+ → hard
+      const stage = Math.floor(currentScore / DIFFICULTY_STEP)
+      const buckets =
+        stage <= 0
+          ? [wordPool.easy, wordPool.medium, wordPool.hard]
+          : stage === 1
+            ? [wordPool.medium, wordPool.hard, wordPool.easy]
+            : [wordPool.hard, wordPool.medium, wordPool.easy]
+
+      let nextUsed = used
+      for (const bucket of buckets) {
+        const available = bucket.filter((w) => !nextUsed.has(w.word))
+        if (available.length > 0) {
+          const picked = available[Math.floor(Math.random() * available.length)]
+          nextUsed = new Set(nextUsed)
+          nextUsed.add(picked.word)
+          return { picked, nextUsed }
+        }
+      }
+      // Every bucket exhausted — reset history and pick from preferred bucket
+      const resetUsed = new Set<string>()
+      for (const bucket of buckets) {
+        if (bucket.length > 0) {
+          const picked = bucket[Math.floor(Math.random() * bucket.length)]
+          resetUsed.add(picked.word)
+          return { picked, nextUsed: resetUsed }
+        }
+      }
+      return { picked: null, nextUsed: used }
+    },
+    [wordPool],
+  )
+
+  // Initialize first word on mount
   useEffect(() => {
-    if (currentWord) {
-      setScrambled(scrambleWord(currentWord.word))
+    if (currentWord !== null) return
+    const { picked, nextUsed } = pickNextWord(0, new Set())
+    if (picked) {
+      setCurrentWord(picked)
+      setUsedWords(nextUsed)
+      setScrambled(scrambleWord(picked.word))
+      setScaffold(buildScaffold(picked.word))
       setGuess('')
       setTimeLeft(30)
       setGameState('playing')
-      setShowHint(false)
       setTimeout(() => inputRef.current?.focus(), 100)
     }
-  }, [currentIndex, currentWord])
+  }, [currentWord, pickNextWord])
 
   // timer
   useEffect(() => {
@@ -826,7 +1150,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
   }, [timeLeft, gameState])
 
   const handleSubmit = useCallback(() => {
-    if (gameState !== 'playing' || !guess.trim()) return
+    if (gameState !== 'playing' || !guess.trim() || !currentWord) return
     const isCorrect = guess.trim().toUpperCase() === currentWord.word.toUpperCase()
     if (isCorrect) {
       setScore((p) => p + 1)
@@ -838,12 +1162,28 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
   }, [gameState, guess, currentWord])
 
   const nextWord = useCallback(() => {
-    if (currentIndex + 1 >= words.length) {
+    const newPlayed = wordsPlayed + 1
+    if (newPlayed >= ROUND_LENGTH) {
+      setWordsPlayed(newPlayed)
       setGameState('finished')
-    } else {
-      setCurrentIndex((p) => p + 1)
+      return
     }
-  }, [currentIndex, words.length])
+    // Use the in-progress score (the just-scored answer is already in `score`)
+    const { picked, nextUsed } = pickNextWord(score, usedWords)
+    if (!picked) {
+      setGameState('finished')
+      return
+    }
+    setCurrentWord(picked)
+    setUsedWords(nextUsed)
+    setScrambled(scrambleWord(picked.word))
+    setScaffold(buildScaffold(picked.word))
+    setGuess('')
+    setTimeLeft(30)
+    setGameState('playing')
+    setWordsPlayed(newPlayed)
+    setTimeout(() => inputRef.current?.focus(), 100)
+  }, [wordsPlayed, score, usedWords, pickNextWord])
 
   // Allow Enter key to advance after answering
   useEffect(() => {
@@ -875,14 +1215,34 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
         </div>
         <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
         <div className="text-center space-y-1">
-          <p className="text-4xl font-black text-emerald-400">{score}/{totalAnswered}</p>
+          <p className="text-4xl font-black text-emerald-400">
+            {score}/{totalAnswered}
+          </p>
           <p className="text-muted-foreground text-sm">correct answers</p>
         </div>
         <div className="flex gap-3">
           <Button variant="outline" onClick={onExit}>
             <ArrowLeft className="size-4 mr-1" /> Back to Games
           </Button>
-          <Button onClick={() => { hasSavedRef.current = false; setCurrentIndex(0); setScore(0); setTotalAnswered(0); setGameState('playing') }}>
+          <Button
+            onClick={() => {
+              hasSavedRef.current = false
+              setScore(0)
+              setTotalAnswered(0)
+              setWordsPlayed(0)
+              // Trigger picking a fresh first word (reset memoized state)
+              const { picked, nextUsed } = pickNextWord(0, usedWords)
+              if (picked) {
+                setCurrentWord(picked)
+                setUsedWords(nextUsed)
+                setScrambled(scrambleWord(picked.word))
+                setScaffold(buildScaffold(picked.word))
+                setGuess('')
+                setTimeLeft(30)
+                setGameState('playing')
+              }
+            }}
+          >
             <RotateCcw className="size-4 mr-1" /> Play Again
           </Button>
         </div>
@@ -890,7 +1250,18 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
     )
   }
 
-  const timerColor = timeLeft > 15 ? 'text-emerald-400' : timeLeft > 5 ? 'text-clay-600' : 'text-red-400'
+  // Guard against the brief moment before the first word loads
+  if (!currentWord) {
+    return (
+      <div className="flex flex-col items-center gap-4 py-12 text-muted-foreground">
+        <Shuffle className="size-8 animate-pulse" />
+        <span className="text-sm">Loading word…</span>
+      </div>
+    )
+  }
+
+  const timerColor =
+    timeLeft > 15 ? 'text-emerald-400' : timeLeft > 5 ? 'text-clay-600' : 'text-red-400'
   const timerBg = timeLeft > 15 ? 'bg-emerald-400' : timeLeft > 5 ? 'bg-amber-400' : 'bg-red-400'
 
   return (
@@ -904,7 +1275,9 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
         </div>
         <div className="flex items-center gap-2">
           <Timer className={cn('size-4', timerColor)} />
-          <span className={cn('font-mono font-bold text-lg tabular-nums', timerColor)}>{timeLeft}s</span>
+          <span className={cn('font-mono font-bold text-lg tabular-nums', timerColor)}>
+            {timeLeft}s
+          </span>
         </div>
       </div>
 
@@ -918,17 +1291,23 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
 
       {/* Scrambled word */}
       <div className="text-center space-y-3 my-4">
-        <p className="text-xs uppercase tracking-widest text-muted-foreground">Unscramble this word</p>
+        <p className="text-xs uppercase tracking-widest text-muted-foreground">
+          Unscramble this word
+        </p>
         <div className="flex flex-wrap justify-center gap-1.5">
           {scrambled.split('').map((letter, i) => (
             <span
-              key={`${currentIndex}-${i}`}
+              key={`${wordsPlayed}-${i}`}
               className={cn(
                 'inline-flex items-center justify-center size-10 sm:size-12 rounded-lg border-2 font-bold text-lg sm:text-xl',
                 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300',
                 'animate-in fade-in slide-in-from-bottom-2',
               )}
-              style={{ animationDelay: `${i * 40}ms`, animationFillMode: 'both', animationDuration: '300ms' }}
+              style={{
+                animationDelay: `${i * 40}ms`,
+                animationFillMode: 'both',
+                animationDuration: '300ms',
+              }}
             >
               {letter === ' ' ? '\u00A0' : letter}
             </span>
@@ -936,12 +1315,37 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
         </div>
       </div>
 
-      {/* Hint */}
-      {showHint && (
-        <p className="text-sm text-muted-foreground italic text-center max-w-sm bg-muted/50 rounded-lg px-4 py-2">
-          Hint: {currentWord.hint}
-        </p>
+      {/* Scaffold (pre-placed letters for longer words) */}
+      {scaffold && (
+        <div className="text-center space-y-2">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground">
+            Letters in place
+          </p>
+          <div
+            className="flex flex-wrap justify-center gap-1.5"
+            aria-label="Letters already placed for you"
+          >
+            {scaffold.map((letter, i) => (
+              <span
+                key={`scaffold-${i}`}
+                className={cn(
+                  'inline-flex items-center justify-center size-9 sm:size-10 rounded-md border font-bold text-base sm:text-lg',
+                  letter && letter !== ' '
+                    ? 'bg-amber-500/10 border-amber-400/40 text-amber-200'
+                    : 'border-dashed border-border text-muted-foreground/60',
+                )}
+              >
+                {letter === ' ' ? ' ' : (letter ?? '_')}
+              </span>
+            ))}
+          </div>
+        </div>
       )}
+
+      {/* Hint - always visible */}
+      <p className="text-sm text-muted-foreground italic text-center max-w-sm bg-muted/50 rounded-lg px-4 py-2">
+        Means: {currentWord.hint}
+      </p>
 
       {/* Input / Feedback */}
       {gameState === 'playing' ? (
@@ -952,22 +1356,23 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
               type="text"
               value={guess}
               onChange={(e) => setGuess(e.target.value.toUpperCase())}
-              onKeyDown={(e) => { if (e.key === 'Enter') handleSubmit() }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') handleSubmit()
+              }}
               placeholder="Type your answer..."
               aria-label="Your answer for the scrambled word"
               className="flex-1 h-11 rounded-xl border border-border bg-background px-4 text-foreground font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500/60 transition-all"
               autoComplete="off"
               spellCheck={false}
             />
-            <Button onClick={handleSubmit} aria-label="Submit answer" className="bg-emerald-600 hover:bg-emerald-500 text-white">
+            <Button
+              onClick={handleSubmit}
+              aria-label="Submit answer"
+              className="bg-emerald-600 hover:bg-emerald-500 text-white"
+            >
               <ChevronRight className="size-5" aria-hidden="true" />
             </Button>
           </div>
-          {!showHint && (
-            <button onClick={() => setShowHint(true)} className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2">
-              Need a hint?
-            </button>
-          )}
         </div>
       ) : (
         <div className="text-center space-y-3" role="status" aria-live="polite">
@@ -984,7 +1389,8 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
                 <span className="font-bold text-lg">Not quite!</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                The answer was: <span className="text-foreground font-semibold">{currentWord.word}</span>
+                The answer was:{' '}
+                <span className="text-foreground font-semibold">{currentWord.word}</span>
               </p>
             </div>
           )}
@@ -995,19 +1401,21 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
                 <span className="font-bold text-lg">Time&apos;s up!</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                The answer was: <span className="text-foreground font-semibold">{currentWord.word}</span>
+                The answer was:{' '}
+                <span className="text-foreground font-semibold">{currentWord.word}</span>
               </p>
             </div>
           )}
           <Button onClick={nextWord} size="lg" className="mt-2">
-            {currentIndex + 1 >= words.length ? 'See Results' : 'Next Word'} <ChevronRight className="size-4 ml-1" />
+            {wordsPlayed + 1 >= ROUND_LENGTH ? 'See Results' : 'Next Word'}{' '}
+            <ChevronRight className="size-4 ml-1" />
           </Button>
         </div>
       )}
 
       {/* Progress */}
       <p className="text-xs text-muted-foreground">
-        Word {currentIndex + 1} of {words.length}
+        Word {wordsPlayed + 1} of {ROUND_LENGTH}
       </p>
     </div>
   )
@@ -1029,18 +1437,16 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
     // Also allow poem slugs used by the board's anthology (ozymandias, dulce-et-decorum-est, etc.)
     // Those aren't in set-texts but are board-specific — map a short allow-list per board.
     const boardPoemSlugs: Record<string, string[]> = {
-      'aqa': ['ozymandias', 'london', 'my-last-duchess', 'charge-of-the-light-brigade', 'exposure'],
-      'edexcel': ['ozymandias', 'london'],
-      'ocr': ['ozymandias'],
-      'eduqas': ['ozymandias', 'london', 'dulce-et-decorum-est'],
+      aqa: ['ozymandias', 'london', 'my-last-duchess', 'charge-of-the-light-brigade', 'exposure'],
+      edexcel: ['ozymandias', 'london'],
+      ocr: ['ozymandias'],
+      eduqas: ['ozymandias', 'london', 'dulce-et-decorum-est'],
       'edexcel-igcse': [],
       'cambridge-0500': [],
       'cambridge-0990': [],
     }
     const poemSlugs = new Set(boardPoemSlugs[board] ?? [])
-    return QUOTE_MATCH_DATA.filter(
-      (q) => allowedSlugs.has(q.textSlug) || poemSlugs.has(q.textSlug)
-    )
+    return QUOTE_MATCH_DATA.filter((q) => allowedSlugs.has(q.textSlug) || poemSlugs.has(q.textSlug))
   }, [board])
 
   const [questions] = useState(() => shuffleArray(filteredData).slice(0, 10))
@@ -1061,14 +1467,17 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
     }
   }, [currentIndex, currentQuestion])
 
-  const handleAnswer = useCallback((answer: string) => {
-    if (gameState !== 'playing') return
-    setSelectedAnswer(answer)
-    if (currentQuestion && answer === currentQuestion.answer) {
-      setScore((p) => p + 1)
-    }
-    setGameState('answered')
-  }, [gameState, currentQuestion])
+  const handleAnswer = useCallback(
+    (answer: string) => {
+      if (gameState !== 'playing') return
+      setSelectedAnswer(answer)
+      if (currentQuestion && answer === currentQuestion.answer) {
+        setScore((p) => p + 1)
+      }
+      setGameState('answered')
+    },
+    [gameState, currentQuestion],
+  )
 
   const nextQuestion = useCallback(() => {
     if (currentIndex + 1 >= questions.length) {
@@ -1107,10 +1516,13 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
       <div className="flex flex-col items-center gap-4 py-12 text-center">
         <BookOpen className="size-12 text-muted-foreground" />
         <div className="space-y-1">
-          <h3 className="text-xl font-bold text-foreground">No literature set texts for your board</h3>
+          <h3 className="text-xl font-bold text-foreground">
+            No literature set texts for your board
+          </h3>
           <p className="text-sm text-muted-foreground max-w-md">
-            Your exam board focuses on English Language skills rather than prescribed literature texts.
-            Try the other games in the hub — Word Scramble, Grammar Fix, or literary technique drills.
+            Your exam board focuses on English Language skills rather than prescribed literature
+            texts. Try the other games in the hub — Word Scramble, Grammar Fix, or literary
+            technique drills.
           </p>
         </div>
         <Button variant="outline" onClick={onExit}>
@@ -1132,14 +1544,30 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
           <p className="text-4xl font-black text-violet-400">{score}/10</p>
           <p className="text-muted-foreground text-sm">correct matches</p>
         </div>
-        {score >= 8 && <p className="text-emerald-400 font-medium">Outstanding literary knowledge!</p>}
-        {score >= 5 && score < 8 && <p className="text-clay-600 font-medium">Good effort! Keep reading!</p>}
-        {score < 5 && <p className="text-muted-foreground font-medium">Keep practising - you&apos;ll get there!</p>}
+        {score >= 8 && (
+          <p className="text-emerald-400 font-medium">Outstanding literary knowledge!</p>
+        )}
+        {score >= 5 && score < 8 && (
+          <p className="text-clay-600 font-medium">Good effort! Keep reading!</p>
+        )}
+        {score < 5 && (
+          <p className="text-muted-foreground font-medium">
+            Keep practising - you&apos;ll get there!
+          </p>
+        )}
         <div className="flex gap-3">
           <Button variant="outline" onClick={onExit}>
             <ArrowLeft className="size-4 mr-1" /> Back to Games
           </Button>
-          <Button onClick={() => { hasSavedRef.current = false; setCurrentIndex(0); setScore(0); setSelectedAnswer(null); setGameState('playing') }}>
+          <Button
+            onClick={() => {
+              hasSavedRef.current = false
+              setCurrentIndex(0)
+              setScore(0)
+              setSelectedAnswer(null)
+              setGameState('playing')
+            }}
+          >
             <RotateCcw className="size-4 mr-1" /> Play Again
           </Button>
         </div>
@@ -1184,7 +1612,8 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
           let optionStyle = 'border-border/60 hover:border-violet-500/50 hover:bg-violet-500/5'
           if (gameState === 'answered') {
             if (isCorrect) optionStyle = 'border-emerald-500 bg-emerald-500/10 text-emerald-300'
-            else if (isSelected && !isCorrect) optionStyle = 'border-red-500 bg-red-500/10 text-red-300'
+            else if (isSelected && !isCorrect)
+              optionStyle = 'border-red-500 bg-red-500/10 text-red-300'
             else optionStyle = 'border-border/30 opacity-50'
           }
           return (
@@ -1200,8 +1629,12 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
               )}
             >
               <div className="flex items-center gap-3">
-                {gameState === 'answered' && isCorrect && <CheckCircle className="size-4 text-emerald-400 shrink-0" />}
-                {gameState === 'answered' && isSelected && !isCorrect && <XCircle className="size-4 text-red-400 shrink-0" />}
+                {gameState === 'answered' && isCorrect && (
+                  <CheckCircle className="size-4 text-emerald-400 shrink-0" />
+                )}
+                {gameState === 'answered' && isSelected && !isCorrect && (
+                  <XCircle className="size-4 text-red-400 shrink-0" />
+                )}
                 <span>{option}</span>
               </div>
             </button>
@@ -1211,8 +1644,13 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
 
       {/* Next button */}
       {gameState === 'answered' && (
-        <Button onClick={nextQuestion} size="lg" className="mt-2 animate-in fade-in slide-in-from-bottom-2 duration-300">
-          {currentIndex + 1 >= questions.length ? 'See Results' : 'Next Quote'} <ChevronRight className="size-4 ml-1" />
+        <Button
+          onClick={nextQuestion}
+          size="lg"
+          className="mt-2 animate-in fade-in slide-in-from-bottom-2 duration-300"
+        >
+          {currentIndex + 1 >= questions.length ? 'See Results' : 'Next Quote'}{' '}
+          <ChevronRight className="size-4 ml-1" />
         </Button>
       )}
     </div>
@@ -1239,14 +1677,17 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
     }
   }, [currentIndex, currentQuestion])
 
-  const handleAnswer = useCallback((answer: string) => {
-    if (gameState !== 'playing') return
-    setSelectedAnswer(answer)
-    if (answer === currentQuestion.correct) {
-      setScore((p) => p + 1)
-    }
-    setGameState('answered')
-  }, [gameState, currentQuestion])
+  const handleAnswer = useCallback(
+    (answer: string) => {
+      if (gameState !== 'playing') return
+      setSelectedAnswer(answer)
+      if (answer === currentQuestion.correct) {
+        setScore((p) => p + 1)
+      }
+      setGameState('answered')
+    },
+    [gameState, currentQuestion],
+  )
 
   const nextQuestion = useCallback(() => {
     if (currentIndex + 1 >= questions.length) {
@@ -1290,14 +1731,26 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
           <p className="text-4xl font-black text-clay-600">{score}/10</p>
           <p className="text-muted-foreground text-sm">correct fixes</p>
         </div>
-        {score >= 8 && <p className="text-emerald-400 font-medium">Grammar guru status achieved!</p>}
-        {score >= 5 && score < 8 && <p className="text-clay-600 font-medium">Solid grammar skills!</p>}
+        {score >= 8 && (
+          <p className="text-emerald-400 font-medium">Grammar guru status achieved!</p>
+        )}
+        {score >= 5 && score < 8 && (
+          <p className="text-clay-600 font-medium">Solid grammar skills!</p>
+        )}
         {score < 5 && <p className="text-muted-foreground font-medium">Practice makes perfect!</p>}
         <div className="flex gap-3">
           <Button variant="outline" onClick={onExit}>
             <ArrowLeft className="size-4 mr-1" /> Back to Games
           </Button>
-          <Button onClick={() => { hasSavedRef.current = false; setCurrentIndex(0); setScore(0); setSelectedAnswer(null); setGameState('playing') }}>
+          <Button
+            onClick={() => {
+              hasSavedRef.current = false
+              setCurrentIndex(0)
+              setScore(0)
+              setSelectedAnswer(null)
+              setGameState('playing')
+            }}
+          >
             <RotateCcw className="size-4 mr-1" /> Play Again
           </Button>
         </div>
@@ -1327,9 +1780,13 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
 
       {/* Sentence with error */}
       <div className="w-full max-w-lg my-2 space-y-2">
-        <Badge variant="outline" className="text-xs">{currentQuestion.category}</Badge>
+        <Badge variant="outline" className="text-xs">
+          {currentQuestion.category}
+        </Badge>
         <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-5">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Fix this sentence:</p>
+          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+            Fix this sentence:
+          </p>
           <p className="text-lg font-medium text-foreground leading-relaxed">
             &ldquo;{currentQuestion.sentence}&rdquo;
           </p>
@@ -1346,7 +1803,8 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
             let optionStyle = 'border-border/60 hover:border-amber-500/50 hover:bg-amber-500/5'
             if (gameState === 'answered') {
               if (isCorrect) optionStyle = 'border-emerald-500 bg-emerald-500/10 text-emerald-300'
-              else if (isSelected && !isCorrect) optionStyle = 'border-red-500 bg-red-500/10 text-red-300'
+              else if (isSelected && !isCorrect)
+                optionStyle = 'border-red-500 bg-red-500/10 text-red-300'
               else optionStyle = 'border-border/30 opacity-50'
             }
             return (
@@ -1362,8 +1820,12 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
                 )}
               >
                 <div className="flex items-center gap-3">
-                  {gameState === 'answered' && isCorrect && <CheckCircle className="size-4 text-emerald-400 shrink-0" />}
-                  {gameState === 'answered' && isSelected && !isCorrect && <XCircle className="size-4 text-red-400 shrink-0" />}
+                  {gameState === 'answered' && isCorrect && (
+                    <CheckCircle className="size-4 text-emerald-400 shrink-0" />
+                  )}
+                  {gameState === 'answered' && isSelected && !isCorrect && (
+                    <XCircle className="size-4 text-red-400 shrink-0" />
+                  )}
                   <span>{option}</span>
                 </div>
               </button>
@@ -1374,17 +1836,25 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
 
       {/* Feedback & Next button */}
       {gameState === 'answered' && (
-        <div className="w-full max-w-lg space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-300" role="status" aria-live="polite">
+        <div
+          className="w-full max-w-lg space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-300"
+          role="status"
+          aria-live="polite"
+        >
           {selectedAnswer !== currentQuestion.correct && (
             <div className="bg-muted/50 rounded-lg px-4 py-3 text-sm text-muted-foreground">
               <span className="font-medium text-foreground">The error was:</span>{' '}
               {currentQuestion.error}. The correct fix is{' '}
-              <span className="font-semibold text-emerald-400">&ldquo;{currentQuestion.correct}&rdquo;</span>.
+              <span className="font-semibold text-emerald-400">
+                &ldquo;{currentQuestion.correct}&rdquo;
+              </span>
+              .
             </div>
           )}
           <div className="flex justify-center">
             <Button onClick={nextQuestion} size="lg">
-              {currentIndex + 1 >= questions.length ? 'See Results' : 'Next Sentence'} <ChevronRight className="size-4 ml-1" />
+              {currentIndex + 1 >= questions.length ? 'See Results' : 'Next Sentence'}{' '}
+              <ChevronRight className="size-4 ml-1" />
             </Button>
           </div>
         </div>
@@ -1397,23 +1867,40 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
 // GAME CARD
 // ═══════════════════════════════════════════════════════════════════════════════
 
-const GameCard = memo(function GameCard({ game, isActive, onPlay }: { game: GameDef; isActive: boolean; onPlay: () => void }) {
+const GameCard = memo(function GameCard({
+  game,
+  isActive,
+  onPlay,
+}: {
+  game: GameDef
+  isActive: boolean
+  onPlay: () => void
+}) {
   const difficultyColor =
-    game.difficulty === 'Easy' ? 'text-emerald-400' :
-    game.difficulty === 'Medium' ? 'text-clay-600' : 'text-red-400'
+    game.difficulty === 'Easy'
+      ? 'text-emerald-400'
+      : game.difficulty === 'Medium'
+        ? 'text-clay-600'
+        : 'text-red-400'
 
   return (
     <Card
       className={cn(
         'relative overflow-hidden transition-all duration-300 group',
-        !game.locked && 'cursor-pointer hover:shadow-lg hover:shadow-black/20 hover:-translate-y-0.5',
+        !game.locked &&
+          'cursor-pointer hover:shadow-lg hover:shadow-black/20 hover:-translate-y-0.5',
         isActive && 'ring-2 ring-primary shadow-lg',
         game.locked && 'opacity-80',
       )}
       onClick={game.locked || game.href ? undefined : onPlay}
     >
       {/* Gradient accent */}
-      <div className={cn('absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300', game.gradient)} />
+      <div
+        className={cn(
+          'absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300',
+          game.gradient,
+        )}
+      />
 
       {/* Lock overlay */}
       {game.locked && (
@@ -1442,11 +1929,7 @@ const GameCard = memo(function GameCard({ game, isActive, onPlay }: { game: Game
       {!game.locked && (
         <CardContent className="relative z-[1] pt-0">
           {game.href ? (
-            <Button
-              size="sm"
-              className="w-full"
-              render={<Link href={game.href} />}
-            >
+            <Button size="sm" className="w-full" render={<Link href={game.href} />}>
               Play Now
               <Zap className="size-3.5 ml-1" />
             </Button>
@@ -1455,7 +1938,10 @@ const GameCard = memo(function GameCard({ game, isActive, onPlay }: { game: Game
               size="sm"
               variant={isActive ? 'secondary' : 'default'}
               className="w-full"
-              onClick={(e) => { e.stopPropagation(); onPlay() }}
+              onClick={(e) => {
+                e.stopPropagation()
+                onPlay()
+              }}
             >
               {isActive ? 'Playing...' : 'Play Now'}
               {!isActive && <Zap className="size-3.5 ml-1" />}
@@ -1484,10 +1970,14 @@ export default function GamesPage() {
 
   const renderGame = () => {
     switch (activeGame) {
-      case 'word-scramble': return <WordScrambleGame onExit={handleExit} />
-      case 'quote-match': return <QuoteMatchGame onExit={handleExit} />
-      case 'grammar-fix': return <GrammarFixGame onExit={handleExit} />
-      default: return null
+      case 'word-scramble':
+        return <WordScrambleGame onExit={handleExit} />
+      case 'quote-match':
+        return <QuoteMatchGame onExit={handleExit} />
+      case 'grammar-fix':
+        return <GrammarFixGame onExit={handleExit} />
+      default:
+        return null
     }
   }
 
@@ -1510,20 +2000,30 @@ export default function GamesPage() {
         {/* Animated background blobs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-24 -left-24 size-96 rounded-full bg-emerald-500/10 blur-3xl animate-pulse" />
-          <div className="absolute -bottom-24 -right-24 size-96 rounded-full bg-violet-500/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-64 rounded-full bg-amber-500/5 blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+          <div
+            className="absolute -bottom-24 -right-24 size-96 rounded-full bg-violet-500/10 blur-3xl animate-pulse"
+            style={{ animationDelay: '1s' }}
+          />
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-64 rounded-full bg-amber-500/5 blur-3xl animate-pulse"
+            style={{ animationDelay: '2s' }}
+          />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center">
           <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-1.5 mb-6">
             <Gamepad2 className="size-4 text-primary" />
-            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Learn through play</span>
+            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+              Learn through play
+            </span>
           </div>
 
           {boardConfig && (
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 mb-4 ml-2">
               <Sparkles className="size-3.5 text-primary" />
-              <span className="text-xs font-bold text-primary uppercase tracking-wider">For {boardConfig.shortName}</span>
+              <span className="text-xs font-bold text-primary uppercase tracking-wider">
+                For {boardConfig.shortName}
+              </span>
             </div>
           )}
 
@@ -1572,9 +2072,7 @@ export default function GamesPage() {
               <ArrowLeft className="size-4" /> Back to all games
             </button>
             <Card className="overflow-hidden">
-              <CardContent className="p-4 sm:p-6">
-                {renderGame()}
-              </CardContent>
+              <CardContent className="p-4 sm:p-6">{renderGame()}</CardContent>
             </Card>
           </div>
         )}

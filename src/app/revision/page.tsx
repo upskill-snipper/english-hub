@@ -45,6 +45,7 @@ import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { isIgcseBoard } from '@/lib/board/board-filter'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { RecentlyStudied } from './_components/recently-studied'
+import { TrialCountdownBannerServer } from '@/components/billing/TrialCountdownBannerServer'
 
 // ─── Section data ──────────────────────────────────────────────────────────
 
@@ -398,6 +399,9 @@ export default async function RevisionHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      {/* ── Trial countdown banner ─────────────────────────────────── */}
+      <TrialCountdownBannerServer />
+
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
         aria-labelledby="revision-hero-heading"

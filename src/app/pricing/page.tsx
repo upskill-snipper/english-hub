@@ -44,6 +44,8 @@ const STUDENT_FREE_FEATURES = [
 
 const STUDENT_PREMIUM_FEATURES = [
   { feature: 'AI Essay Marking', icon: PenTool },
+  { feature: 'AI Revision Notes', icon: BookOpen },
+  { feature: 'Custom Test Generation', icon: ClipboardList },
   { feature: 'Mock Exams', icon: ClipboardList },
   { feature: 'Feedback Reports', icon: FileText },
   { feature: 'AI Study Recommendations', icon: Brain },
@@ -227,6 +229,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 /*  PAGE                                                               */
 /* ------------------------------------------------------------------ */
 
+type CheckoutPlan = 'student_monthly' | 'student_annual' | 'teacher_monthly' | 'teacher_annual'
+
 export default function PricingPage() {
   // 21 April 2026 pricing pivot: two-tier Early Access / Standard with anchor.
   //   Students: Early Access £3.99/mo · £29.99/yr · £20/yr with affiliate code or 2026ENGLISH
@@ -244,6 +248,62 @@ export default function PricingPage() {
     0,
     Math.round((PRICING.TEACHER_MONTHLY * 12 - PRICING.TEACHER_ANNUAL) * 100) / 100,
   )
+
+  // 03 May 2026 — wire the pricing-card CTAs straight into Stripe Checkout.
+  // Pre-fix every Student/Teacher button rendered as <Link href="/auth/register">,
+  // so clicking "Start free" took every visitor to /dashboard?welcome=true and
+  // never offered a paywall. This is the same flow as /account/billing's
+  // handleCheckout — duplicated inline so /pricing is self-contained.
+  //
+  //   - Authenticated → POST /api/stripe/checkout → Stripe Checkout (with 7-day
+  //     trial; `subscription` mode; rewardful referral when present).
+  //   - Anonymous (401) → bounce to /auth/register?next=/pricing&plan=<plan> so
+  //     the user can register, return, click again. (We can refine this with
+  //     auto-fire after register in a follow-up.)
+  //   - Email-verification gate (403) → bounce to /auth/resend-verification.
+  //   - Any other error → user-visible toast.
+  const [checkoutLoading, setCheckoutLoading] = useState<CheckoutPlan | null>(null)
+  const [checkoutError, setCheckoutError] = useState<string | null>(null)
+
+  async function handleCheckout(plan: CheckoutPlan) {
+    setCheckoutLoading(plan)
+    setCheckoutError(null)
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan, mode: 'subscription' }),
+      })
+
+      // Anonymous user → send them to register with a return URL that brings
+      // them back here so they can complete the purchase.
+      if (res.status === 401) {
+        window.location.href = `/auth/register?next=${encodeURIComponent(`/pricing?plan=${plan}`)}`
+        return
+      }
+
+      const data = (await res.json().catch(() => ({}))) as {
+        url?: string
+        error?: string
+      }
+
+      if (!res.ok || !data.url) {
+        if (res.status === 403 && data.error === 'email_verification_required') {
+          window.location.href = '/auth/resend-verification'
+          return
+        }
+        setCheckoutError(data.error || 'Failed to start checkout. Please try again.')
+        setCheckoutLoading(null)
+        return
+      }
+
+      // Redirect into Stripe-hosted checkout. The 7-day trial begins on landing.
+      window.location.href = data.url
+    } catch {
+      setCheckoutError('Something went wrong. Please try again.')
+      setCheckoutLoading(null)
+    }
+  }
 
   return (
     <main className="relative overflow-hidden">
@@ -599,11 +659,22 @@ export default function PricingPage() {
                   variant="default"
                   className="w-full shadow-lg shadow-primary/20"
                   size="lg"
-                  render={<Link href="/auth/register" />}
+                  onClick={() => handleCheckout('student_annual')}
+                  disabled={checkoutLoading !== null}
                 >
-                  Start free — no card
+                  {checkoutLoading === 'student_annual'
+                    ? 'Starting checkout…'
+                    : 'Start 7-day free trial'}
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
+                <button
+                  onClick={() => handleCheckout('student_monthly')}
+                  disabled={checkoutLoading !== null}
+                  className="mt-2 w-full text-center text-xs text-muted-foreground hover:text-foreground underline-offset-4 hover:underline disabled:opacity-50"
+                >
+                  Prefer monthly? Start with {PRICING.CURRENCY}
+                  {PRICING.STUDENT_MONTHLY}/mo trial instead
+                </button>
               </div>
             </Card>
 
@@ -709,11 +780,25 @@ export default function PricingPage() {
                   variant="default"
                   className="w-full bg-purple-500 hover:bg-purple-500/85 shadow-lg shadow-purple-500/20 text-white"
                   size="lg"
-                  render={<Link href="/auth/register" />}
+                  onClick={() => handleCheckout('teacher_annual')}
+                  disabled={checkoutLoading !== null}
                 >
-                  Start Free
+                  {checkoutLoading === 'teacher_annual'
+                    ? 'Starting checkout…'
+                    : 'Start 7-day free trial'}
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
+                <button
+                  onClick={() => handleCheckout('teacher_monthly')}
+                  disabled={checkoutLoading !== null}
+                  className="mt-2 w-full text-center text-xs text-muted-foreground hover:text-foreground underline-offset-4 hover:underline disabled:opacity-50"
+                >
+                  Prefer monthly? Start with {PRICING.CURRENCY}
+                  {PRICING.TEACHER_MONTHLY}/mo trial instead
+                </button>
+                {checkoutError && (
+                  <p className="mt-3 text-center text-xs text-red-600">{checkoutError}</p>
+                )}
               </div>
             </Card>
           </div>
