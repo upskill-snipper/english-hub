@@ -2,18 +2,23 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
+import type { Session } from '@supabase/supabase-js'
 import { createClient } from '@/lib/supabase/client'
-import { Lock, Loader2, CheckCircle, Eye, EyeOff } from 'lucide-react'
+import { Lock, Loader2, CheckCircle, Eye, EyeOff, AlertTriangle } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 
+const VERIFY_TIMEOUT_MS = 10_000
+
 export default function ResetPasswordPage() {
   const router = useRouter()
-  const [ready, setReady] = useState(false)
+  const searchParams = useSearchParams()
+  const [verifying, setVerifying] = useState(true)
+  const [session, setSession] = useState<Session | null>(null)
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
@@ -24,17 +29,70 @@ export default function ResetPasswordPage() {
 
   useEffect(() => {
     const supabase = createClient()
+    let cancelled = false
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
-      if (event === 'PASSWORD_RECOVERY') {
-        setReady(true)
-      }
+    const timeoutPromise = new Promise<never>((_, reject) => {
+      setTimeout(() => reject(new Error('verify-timeout')), VERIFY_TIMEOUT_MS)
     })
 
-    return () => {
-      subscription.unsubscribe()
+    const verify = async (): Promise<Session | null> => {
+      // 1. PKCE flow: ?code=xxx in the URL.
+      const code = searchParams.get('code')
+      if (code) {
+        const { data, error: exchangeError } = await supabase.auth.exchangeCodeForSession(code)
+        if (exchangeError) throw exchangeError
+        return data.session
+      }
+
+      // 2. Implicit/recovery flow: tokens are placed in the URL hash by Supabase
+      //    and the SDK turns them into a session + emits PASSWORD_RECOVERY.
+      const { data: existing } = await supabase.auth.getSession()
+      if (existing.session) return existing.session
+
+      return await new Promise<Session | null>((resolve, reject) => {
+        const {
+          data: { subscription },
+        } = supabase.auth.onAuthStateChange((event, nextSession) => {
+          if (event === 'PASSWORD_RECOVERY' || (event === 'SIGNED_IN' && nextSession)) {
+            subscription.unsubscribe()
+            resolve(nextSession)
+          }
+          if (event === 'SIGNED_OUT') {
+            subscription.unsubscribe()
+            reject(new Error('signed-out'))
+          }
+        })
+      })
     }
-  }, [])
+
+    const run = async () => {
+      try {
+        const result = (await Promise.race([verify(), timeoutPromise])) as Session | null
+        if (cancelled) return
+        if (!result) {
+          setError('Link expired or invalid. Please request a new reset link.')
+        } else {
+          setSession(result)
+        }
+      } catch (err) {
+        if (cancelled) return
+        const message = err instanceof Error ? err.message : 'unknown'
+        if (message === 'verify-timeout') {
+          setError('Link expired or invalid. Please request a new reset link.')
+        } else {
+          setError('Link expired or invalid. Please request a new reset link.')
+        }
+      } finally {
+        if (!cancelled) setVerifying(false)
+      }
+    }
+
+    run()
+
+    return () => {
+      cancelled = true
+    }
+  }, [searchParams])
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -81,9 +139,7 @@ export default function ResetPasswordPage() {
           <Card className="text-center">
             <CardContent className="pt-8">
               <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h1 className="text-2xl font-bold text-foreground mb-2">
-                Password updated
-              </h1>
+              <h1 className="text-2xl font-bold text-foreground mb-2">Password updated</h1>
               <p className="text-muted-foreground mb-6">
                 Your password has been changed successfully. Redirecting you to login&hellip;
               </p>
@@ -97,7 +153,7 @@ export default function ResetPasswordPage() {
     )
   }
 
-  if (!ready) {
+  if (verifying) {
     return (
       <div className="min-h-screen flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">
@@ -124,15 +180,36 @@ export default function ResetPasswordPage() {
     )
   }
 
+  if (error !== null && session === null) {
+    return (
+      <div className="min-h-screen flex items-center justify-center px-4 py-12">
+        <div className="w-full max-w-md">
+          <Card className="text-center">
+            <CardContent className="pt-8">
+              <AlertTriangle className="w-12 h-12 text-destructive mx-auto mb-4" />
+              <h1 className="text-2xl font-bold text-foreground mb-2">Reset link unavailable</h1>
+              <p className="text-muted-foreground mb-6">{error}</p>
+              <Button render={<Link href="/auth/forgot-password" />}>
+                Request a new reset link
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    )
+  }
+
+  if (session === null) {
+    return null
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">Set new password</CardTitle>
-            <CardDescription>
-              Choose a strong password for your account.
-            </CardDescription>
+            <CardDescription>Choose a strong password for your account.</CardDescription>
           </CardHeader>
 
           <CardContent>
@@ -193,12 +270,7 @@ export default function ResetPasswordPage() {
                 </div>
               </div>
 
-              <Button
-                type="submit"
-                disabled={loading}
-                className="w-full"
-                size="lg"
-              >
+              <Button type="submit" disabled={loading} className="w-full" size="lg">
                 {loading ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin mr-2" />
