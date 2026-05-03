@@ -22,12 +22,28 @@ How to enable "Sign up with Google" for English Hub. ~10 minutes.
 
 ## 3. Flip the env flag in Vercel
 
+**Option A — one-shot via Vercel CLI** (faster if you have the CLI installed):
+
+```powershell
+# If you don't have it: npm i -g vercel; vercel link --project english-hub
+vercel env add NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED production <<< "true"
+vercel env add NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED preview <<< "true"
+vercel env add NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED development <<< "true"
+vercel --prod  # redeploy
+```
+
+**Option B — Dashboard:**
+
 1. Open https://vercel.com -> the English Hub project -> **Settings -> Environment Variables**.
 2. Add a new variable: `NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED` = `true`. Apply to **Production**, **Preview**, and **Development**.
 3. Trigger a redeploy (Deployments tab -> latest -> **Redeploy**) so the new env value ships.
+
+> **Don't flip this flag until steps 1 and 2 are actually done.** If `NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED=true` ships before Supabase has a working Google provider, the "Continue with Google" button comes back but every click reproduces the original `{provider is not enabled}` error.
 
 ## 4. Smoke test
 
 Visit `/auth/login` in production. The "Continue with Google" button should appear, clicking it should redirect to Google's consent screen, and after approval should land you on `/dashboard`.
 
 If you see `provider is not enabled`, step 2 didn't save — re-check the toggle is on.
+
+If the button doesn't appear at all, step 3 didn't ship — confirm `NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED=true` is set on **Production** in Vercel and that the latest deployment was triggered after you saved it.

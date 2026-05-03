@@ -1,6 +1,6 @@
 # Stripe go-live checklist — The English Hub
 
-**Audience** Founder (Calum) · **British English throughout** · **Last updated** 2026-05-02
+**Audience** Founder (Calum) · **British English throughout** · **Last updated** 2026-05-03
 
 > **Why this exists.** A pricing audit on 2026-05-02 found two production-blocking issues:
 >
@@ -10,6 +10,34 @@
 > Both are founder-action items in Stripe Dashboard + Vercel env. This runbook is the minimum sequence to fix them safely.
 
 > **Scope.** This is the LIVE-mode cutover only. For end-to-end signup + payment testing in TEST mode first, follow `SIGNUP-PAYMENT-RUNBOOK.md` §1–§6 before doing this. Don't skip the test pass.
+
+---
+
+## Fast path — one command does Steps 1, 3, and 4
+
+If you'd rather skip the manual Dashboard work, the repo ships a script that creates every missing GBP Price + the webhook endpoint in your LIVE Stripe account and prints the exact `vercel env add` commands at the end. You still have to do Step 2 (replace the keys) yourself because Stripe never re-shows live secret keys via API — you have to copy them out of the Dashboard.
+
+```powershell
+# 1. Get your sk_live_… key:
+#    https://dashboard.stripe.com/apikeys → "Reveal live key" → copy.
+$env:STRIPE_SECRET_KEY = "sk_live_…"
+
+# 2. Dry-run first (read-only — confirms which prices are missing):
+npx tsx scripts/stripe-sync-products.ts --dry-run -v
+
+# 3. Apply (creates all 8 prices: 4 early-access + 4 standard-anchor + the webhook):
+npx tsx scripts/stripe-sync-products.ts --apply --with-webhook
+
+# 4. The script prints `vercel env add` lines. Copy and paste them.
+#    Then add the two key env vars manually:
+vercel env add STRIPE_SECRET_KEY production           # paste sk_live_…
+vercel env add NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY production  # paste pk_live_…
+vercel --prod                                         # redeploy
+```
+
+The script is idempotent — re-running it is safe (it skips prices that already exist, and matches webhooks by URL). It also prints a loud `mode: LIVE` banner at the top and a 5-second window to Ctrl-C if you accidentally pasted a test key.
+
+The manual Dashboard path below is unchanged — use whichever you prefer. Step 2 (key replacement), Step 5 (redeploy), Step 6 (smoke test), and Step 7 (post-cutover verification) are mandatory either way.
 
 ---
 

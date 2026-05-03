@@ -7,10 +7,15 @@
  * exist, which are mismatched, and which are missing.
  *
  * Usage:
- *   npx tsx scripts/stripe-sync-products.ts             # dry-run, no writes
- *   npx tsx scripts/stripe-sync-products.ts --dry-run   # explicit dry-run
- *   npx tsx scripts/stripe-sync-products.ts --apply     # CREATE missing prices
- *   npx tsx scripts/stripe-sync-products.ts -v          # verbose logging
+ *   npx tsx scripts/stripe-sync-products.ts                 # dry-run, no writes
+ *   npx tsx scripts/stripe-sync-products.ts --dry-run       # explicit dry-run
+ *   npx tsx scripts/stripe-sync-products.ts --apply         # CREATE missing prices
+ *   npx tsx scripts/stripe-sync-products.ts --apply --with-webhook
+ *                                                          # also create the
+ *                                                          # /api/stripe/webhook
+ *                                                          # endpoint with the
+ *                                                          # 8 required events
+ *   npx tsx scripts/stripe-sync-products.ts -v              # verbose logging
  *
  * Exit codes:
  *   0 — every expected price matches Stripe (or env-unset only).
@@ -19,16 +24,21 @@
  *
  * Outputs:
  *   - Console table summarising each expected price.
+ *   - Copy-paste `vercel env add` commands for any new STRIPE_PRICE_* IDs.
  *   - business-docs/STRIPE-SYNC-REPORT.md (Markdown report).
  *
  * Safety:
  *   - Defaults to dry-run. Without --apply, the script never POSTs to Stripe;
  *     it only reads. Missing prices are logged with the exact `stripe.prices
  *     .create(...)` arguments that would be sent under --apply.
+ *   - The script LOUDLY announces TEST vs LIVE mode at start so you can't
+ *     accidentally create LIVE products when you meant test, or vice versa.
  *   - If STRIPE_SECRET_KEY is unset, the script explains how to set it and
  *     exits without throwing — safe to run on a fresh checkout.
  *   - Never deletes or archives anything. Stripe price archival is a manual
  *     step in the Dashboard by design.
+ *   - Webhook creation is idempotent: if an endpoint pointing at the same URL
+ *     already exists, we don't create a duplicate.
  */
 
 import Stripe from 'stripe'
@@ -42,6 +52,24 @@ const args = new Set(process.argv.slice(2))
 const APPLY = args.has('--apply')
 const DRY_RUN = !APPLY // default
 const VERBOSE = args.has('--verbose') || args.has('-v')
+const WITH_WEBHOOK = args.has('--with-webhook')
+
+// Webhook URL — defaults to production. Override with WEBHOOK_URL env var if
+// you want to point at a preview deployment for testing.
+const WEBHOOK_URL = process.env.WEBHOOK_URL || 'https://theenglishhub.app/api/stripe/webhook'
+
+// Events the /api/stripe/webhook handler actually subscribes to. Must match
+// the list in business-docs/STRIPE-GO-LIVE-CHECKLIST.md §4.
+const WEBHOOK_EVENTS: Stripe.WebhookEndpointCreateParams.EnabledEvent[] = [
+  'checkout.session.completed',
+  'customer.subscription.created',
+  'customer.subscription.updated',
+  'customer.subscription.deleted',
+  'customer.subscription.trial_will_end',
+  'invoice.paid',
+  'invoice.payment_failed',
+  'charge.refunded',
+]
 
 // ── Expected-price specification ───────────────────────────────────────────
 // Every row here becomes one line in the report and one env-var entry in
@@ -182,13 +210,30 @@ function fmtPence(pence: number | null): string {
 // ── Main ───────────────────────────────────────────────────────────────────
 
 async function main() {
+  const secret = process.env.STRIPE_SECRET_KEY
+
+  // ── Mode banner ─────────────────────────────────────────────────────────
+  // Print TEST vs LIVE loudly at the very top so the founder cannot
+  // accidentally run --apply against the wrong account.
+  const mode: 'OFFLINE' | 'TEST' | 'LIVE' | 'UNKNOWN' = !secret
+    ? 'OFFLINE'
+    : secret.startsWith('sk_live_')
+      ? 'LIVE'
+      : secret.startsWith('sk_test_')
+        ? 'TEST'
+        : 'UNKNOWN'
+
   console.log('━'.repeat(72))
   console.log(
-    `Stripe sync — ${DRY_RUN ? 'DRY RUN (read-only)' : 'APPLY (will create missing prices)'}`,
+    `Stripe sync — mode: ${mode}  ·  ${DRY_RUN ? 'DRY RUN (read-only)' : 'APPLY (will create missing prices)'}`,
   )
+  if (mode === 'LIVE' && APPLY) {
+    console.log('')
+    console.log('  ⚠  LIVE MODE + --apply: this will create real Products and Prices')
+    console.log('     in your production Stripe account. They cannot be deleted, only')
+    console.log('     archived. Press Ctrl-C now if you meant to use sk_test_…')
+  }
   console.log('━'.repeat(72))
-
-  const secret = process.env.STRIPE_SECRET_KEY
 
   // Graceful fallback when no API key is configured locally — common on a
   // fresh founder checkout. The script still produces a useful diff against
@@ -325,9 +370,90 @@ async function main() {
     }
   }
 
+  // ── Webhook endpoint (optional, --with-webhook only) ────────────────────
+  // Idempotent: skips if an endpoint already exists for the same URL.
+  let webhookEndpoint: { id: string; secret: string | null } | null = null
+  if (APPLY && WITH_WEBHOOK && stripeClient) {
+    console.log('')
+    console.log(`--with-webhook specified. Ensuring webhook endpoint at ${WEBHOOK_URL}…`)
+    try {
+      // Check for an existing endpoint pointing at the same URL.
+      const existing: Stripe.WebhookEndpoint[] = []
+      for await (const e of stripeClient.webhookEndpoints.list({ limit: 100 })) {
+        existing.push(e)
+      }
+      const match = existing.find((e) => e.url === WEBHOOK_URL && e.status === 'enabled')
+      if (match) {
+        webhookEndpoint = { id: match.id, secret: null }
+        console.log(`  EXISTS ${match.id}  (signing secret not re-shown by Stripe API)`)
+        console.log("         → If you don't already have STRIPE_WEBHOOK_SECRET set,")
+        console.log('           open https://dashboard.stripe.com/webhooks/' + match.id)
+        console.log('           click "Reveal" next to the signing secret, and copy it.')
+      } else {
+        const created = await stripeClient.webhookEndpoints.create({
+          url: WEBHOOK_URL,
+          enabled_events: WEBHOOK_EVENTS,
+          description: 'English Hub — main webhook',
+          api_version: '2026-02-25.clover',
+        })
+        webhookEndpoint = { id: created.id, secret: created.secret ?? null }
+        console.log(`  CREATED ${created.id}`)
+        if (created.secret) {
+          console.log(`  STRIPE_WEBHOOK_SECRET = ${created.secret}`)
+          console.log('  ↑ Save this immediately — Stripe only shows it once at creation.')
+        }
+      }
+    } catch (err) {
+      console.error('  FAILED webhook creation:', err instanceof Error ? err.message : err)
+    }
+  }
+
   // ── Console table ────────────────────────────────────────────────────────
   console.log('')
   printConsoleTable(results)
+
+  // ── Vercel env-var paste block ──────────────────────────────────────────
+  // After --apply, print the exact `vercel env add` commands the founder can
+  // paste into PowerShell to wire the new prices + (optionally) the webhook
+  // secret into Vercel Production.
+  if (APPLY && stripeClient) {
+    const newlyAssigned = results.filter((r) => r.stripePriceId && r.envValue !== r.stripePriceId)
+    const webhookLine = webhookEndpoint?.secret
+      ? `vercel env add STRIPE_WEBHOOK_SECRET production <<< "${webhookEndpoint.secret}"`
+      : null
+
+    if (newlyAssigned.length > 0 || webhookLine || mode === 'LIVE') {
+      console.log('')
+      console.log('━'.repeat(72))
+      console.log('Next step — paste these into Vercel (Production scope):')
+      console.log('━'.repeat(72))
+      console.log('')
+      console.log('# Option A — Vercel CLI (after `npm i -g vercel && vercel link`):')
+      for (const r of newlyAssigned) {
+        console.log(`vercel env add ${r.envVar} production <<< "${r.stripePriceId}"`)
+      }
+      if (webhookLine) console.log(webhookLine)
+      if (mode === 'LIVE') {
+        console.log('vercel env add STRIPE_SECRET_KEY production           # paste your sk_live_…')
+        console.log(
+          'vercel env add NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY production  # paste pk_live_…',
+        )
+      }
+      console.log('vercel --prod                                          # redeploy')
+      console.log('')
+      console.log('# Option B — Vercel Dashboard:')
+      console.log(
+        '# https://vercel.com/upskill-snippers-projects/english-hub/settings/environment-variables',
+      )
+      for (const r of newlyAssigned) {
+        console.log(`#   ${r.envVar} = ${r.stripePriceId}`)
+      }
+      if (webhookEndpoint?.secret) {
+        console.log(`#   STRIPE_WEBHOOK_SECRET = ${webhookEndpoint.secret}`)
+      }
+      console.log('━'.repeat(72))
+    }
+  }
 
   // ── Markdown report ──────────────────────────────────────────────────────
   const reportPath = resolve(__dirname, '..', 'business-docs', 'STRIPE-SYNC-REPORT.md')

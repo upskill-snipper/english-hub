@@ -596,15 +596,12 @@ export default function PigeonEnglishPage() {
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">Stephen Kelman: Background</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Stephen Kelman was born in Luton in 1976. He grew up on a council estate in
-                  Bedfordshire and has spoken in interviews about writing the novel partly out of
-                  his memory of estate life and the visibility of street violence. He worked in a
-                  series of non-literary jobs (warehouse, care work, marketing) before the
-                  novel&apos;s success. Kelman is a white English writer narrating from the
-                  perspective of an eleven-year-old Ghanaian boy &mdash; a choice that drew
-                  significant critical discussion. Kelman researched the voice carefully and has
-                  acknowledged the ethical responsibility of the impersonation; examiners expect
-                  awareness of this dimension in higher-grade answers.
+                  Stephen Kelman was born in Luton in 1976 and grew up on a council estate in
+                  Bedfordshire. He worked in non-literary jobs before the novel&apos;s success.
+                  Kelman is a white English writer narrating from the perspective of an
+                  eleven-year-old Ghanaian boy &mdash; a choice that drew significant critical
+                  discussion. Examiners expect awareness of this ethical dimension in higher-grade
+                  answers.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
