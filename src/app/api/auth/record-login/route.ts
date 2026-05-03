@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
-import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { rateLimit } from '@/lib/rate-limit'
 import type { NextRequest } from 'next/server'
 
 // POST /api/auth/record-login
@@ -18,7 +18,7 @@ import type { NextRequest } from 'next/server'
 // The caller MUST be authenticated (we read the Supabase session and
 // match by email into Prisma — both identity systems link by email
 // until the larger identity convergence is shipped).
-export async function POST(request: NextRequest) {
+export async function POST(_request: NextRequest) {
   const supabase = createServerSupabaseClient()
   const {
     data: { user },
@@ -53,11 +53,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: true, rows: result.count })
   } catch (err) {
     console.error('[record-login] failed:', err)
-    // Non-fatal — do not block the user's login flow.
+    // Non-fatal — do not block the user's login flow. The client calls
+    // this fire-and-forget after a successful Supabase sign-in (see
+    // `src/app/auth/login/page.tsx`), so a 200 with `{ ok: false }`
+    // keeps the failure observable in server logs without surfacing a
+    // hostile network error to the browser.
     return NextResponse.json({ ok: false }, { status: 200 })
   }
-
-  // IP is read for rate-limit keying telemetry only; not persisted.
-  // (Kept at end of function so lint doesn't complain about unused import.)
-  void getClientIp(request.headers)
 }

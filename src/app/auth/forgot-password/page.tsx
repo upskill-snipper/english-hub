@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
@@ -18,7 +18,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 
-export default function ForgotPasswordPage() {
+function ForgotPasswordForm() {
   const searchParams = useSearchParams()
   // Optional one-shot flash message from /auth/resend-verification when the
   // user submits an email that's already verified. Length-capped to avoid
@@ -177,5 +177,17 @@ export default function ForgotPasswordPage() {
         </Card>
       </div>
     </div>
+  )
+}
+
+export default function ForgotPasswordPage() {
+  // useSearchParams() needs a Suspense boundary in Next 15 — without it
+  // the production build fails with "missing-suspense-with-csr-bailout"
+  // and the page renders blank on the client until hydration. Matches the
+  // pattern used by /auth/login and /auth/register.
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <ForgotPasswordForm />
+    </Suspense>
   )
 }

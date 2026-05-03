@@ -1,6 +1,19 @@
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { createServerClient } from '@supabase/ssr'
 import { cookies, type UnsafeUnwrappedCookies } from 'next/headers'
 
+/**
+ * Server-side Supabase client. Uses the modern `getAll` / `setAll` cookie
+ * API (the deprecated `get` / `set` / `remove` triplet was the source of
+ * intermittent login failures — chunked session cookies were not being
+ * round-tripped reliably between request and response).
+ *
+ * Stays synchronously-invokable so existing call sites remain unchanged.
+ * `cookies()` returns a Promise in Next 15 but exposes the underlying
+ * cookie store synchronously via `UnsafeUnwrappedCookies` until cache
+ * components ship in 16. When that lands, this wrapper must become async
+ * and every caller must `await` it; until then the synchronous form is
+ * the documented migration path (see Next.js error E223).
+ */
 export function createServerSupabaseClient() {
   const cookieStore = cookies() as unknown as UnsafeUnwrappedCookies
 
@@ -9,27 +22,26 @@ export function createServerSupabaseClient() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value
+        getAll() {
+          return cookieStore.getAll()
         },
-        set(name: string, value: string, options: CookieOptions) {
+        setAll(cookiesToSet) {
           try {
-            cookieStore.set({
-              name,
-              value,
-              ...options,
-              secure: process.env.NODE_ENV === 'production',
-              sameSite: options.sameSite ?? 'lax',
-            })
+            for (const { name, value, options } of cookiesToSet) {
+              cookieStore.set(name, value, {
+                ...options,
+                // Force `secure` in production — the founder's HTTPS-only
+                // deploy needs this, and Supabase's defaults omit it.
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: options?.sameSite ?? 'lax',
+              })
+            }
           } catch {
-            // Server Component — ignore
-          }
-        },
-        remove(name: string, options: CookieOptions) {
-          try {
-            cookieStore.set({ name, value: '', ...options })
-          } catch {
-            // Server Component — ignore
+            // Server Components cannot mutate cookies. The middleware
+            // (src/middleware.ts → updateSession) refreshes sessions
+            // before any Server Component renders, so swallowing the
+            // error here is safe and matches the official Supabase
+            // pattern for Next.js App Router.
           }
         },
       },

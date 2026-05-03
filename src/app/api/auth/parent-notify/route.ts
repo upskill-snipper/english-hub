@@ -25,11 +25,14 @@ export async function POST(request: NextRequest) {
   // trigger a parental-consent email. Anonymous callers are rejected to
   // prevent mass email / phishing from our domain.
   const supabase = createServerSupabaseClient()
-  const { data: { user }, error: authError } = await supabase.auth.getUser()
+  const {
+    data: { user },
+    error: authError,
+  } = await supabase.auth.getUser()
   if (authError || !user) {
     return NextResponse.json(
       { error: 'You must be signed in to request a parental consent email.' },
-      { status: 401 }
+      { status: 401 },
     )
   }
 
@@ -41,7 +44,10 @@ export async function POST(request: NextRequest) {
   if (!rl.success) {
     return NextResponse.json(
       { error: 'Too many parental consent emails requested. Please try again later.' },
-      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      {
+        status: 429,
+        headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+      },
     )
   }
 
@@ -54,7 +60,7 @@ export async function POST(request: NextRequest) {
   if (!ipRl.success) {
     return NextResponse.json(
       { error: 'Too many requests from this location. Please try again later.' },
-      { status: 429 }
+      { status: 429 },
     )
   }
 
@@ -71,10 +77,7 @@ export async function POST(request: NextRequest) {
   const studentId = typeof body.studentId === 'string' ? body.studentId.trim() : ''
 
   if (!parentEmail || !studentName) {
-    return NextResponse.json(
-      { error: 'parentEmail and studentName are required' },
-      { status: 400 }
-    )
+    return NextResponse.json({ error: 'parentEmail and studentName are required' }, { status: 400 })
   }
   if (!isValidEmail(parentEmail)) {
     return NextResponse.json({ error: 'Invalid parent email address' }, { status: 400 })
@@ -91,7 +94,7 @@ export async function POST(request: NextRequest) {
   if (studentId && studentId !== user.id) {
     return NextResponse.json(
       { error: 'You can only request parental consent for your own account.' },
-      { status: 403 }
+      { status: 403 },
     )
   }
   const effectiveStudentId = studentId || user.id
@@ -104,10 +107,18 @@ export async function POST(request: NextRequest) {
   }
 
   // ─── 7. Generate and store consent token ────────────────────────────────
+  // Supabase's PostgREST client does NOT throw on database errors — it
+  // returns `{ data, error }` from the awaited builder. Wrapping the call
+  // in try/catch alone lets a real RLS / schema / network failure slip
+  // through silently, leaving the parent with a link whose token has no
+  // matching row in `consent_tokens` (the consent page would 404). We
+  // therefore inspect `error` explicitly and refuse to send the email
+  // when the token wasn't persisted.
   const consentToken = crypto.randomBytes(32).toString('hex')
+  let tokenStored = false
   try {
     const admin = createServiceRoleClient()
-    await admin.from('consent_tokens').upsert({
+    const { error: upsertError } = await admin.from('consent_tokens').upsert({
       token: consentToken,
       student_id: effectiveStudentId,
       parent_email: parentEmail,
@@ -115,9 +126,22 @@ export async function POST(request: NextRequest) {
       expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
       status: 'pending',
     })
+    if (upsertError) {
+      console.error('[parent-notify] consent_tokens upsert returned error:', upsertError)
+    } else {
+      tokenStored = true
+    }
   } catch (err) {
-    console.warn('[parent-notify] Failed to store consent token:', err)
-    // Continue — the email will still be sent, consent can be handled manually
+    console.error('[parent-notify] consent_tokens upsert threw:', err)
+  }
+
+  if (!tokenStored) {
+    // Don't send a link the consent endpoint won't recognise. The student
+    // can retry; the founder/operators can investigate via logs.
+    return NextResponse.json(
+      { error: 'Unable to start the parental consent flow right now. Please try again shortly.' },
+      { status: 503 },
+    )
   }
 
   // ─── 8. Build email (every interpolated value HTML-escaped) ─────────────
@@ -162,7 +186,7 @@ export async function POST(request: NextRequest) {
     if (!res.ok) {
       const errorBody = await res.text()
       console.error(
-        `[parent-notify] Failed to send parental consent email: ${res.status} ${errorBody}`
+        `[parent-notify] Failed to send parental consent email: ${res.status} ${errorBody}`,
       )
       return NextResponse.json({ error: 'Failed to send email' }, { status: 502 })
     }

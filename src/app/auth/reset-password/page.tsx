@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import type { Session } from '@supabase/supabase-js'
@@ -14,7 +14,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 
 const VERIFY_TIMEOUT_MS = 10_000
 
-export default function ResetPasswordPage() {
+function ResetPasswordForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [verifying, setVerifying] = useState(true)
@@ -48,6 +48,19 @@ export default function ResetPasswordPage() {
       //    and the SDK turns them into a session + emits PASSWORD_RECOVERY.
       const { data: existing } = await supabase.auth.getSession()
       if (existing.session) return existing.session
+
+      // 3. Fail fast when there is genuinely nothing to wait for. Without
+      //    this check, a direct visit to /auth/reset-password (no `?code=`,
+      //    no recovery hash, no existing session) hung in the
+      //    onAuthStateChange listener for the full VERIFY_TIMEOUT_MS — the
+      //    PASSWORD_RECOVERY event will never fire because there is no
+      //    recovery token to process. Live E2E saw the spinner sit for ~15
+      //    seconds, which read as "reset password is broken".
+      const hasRecoveryHash =
+        typeof window !== 'undefined' && window.location.hash.includes('type=recovery')
+      if (!hasRecoveryHash) {
+        return null
+      }
 
       return await new Promise<Session | null>((resolve, reject) => {
         const {
@@ -285,5 +298,32 @@ export default function ResetPasswordPage() {
         </Card>
       </div>
     </div>
+  )
+}
+
+export default function ResetPasswordPage() {
+  // useSearchParams() requires a Suspense boundary in Next 15 — without it
+  // the whole route opts out of static rendering and can render blank on
+  // first paint (or fail the production build with the
+  // "missing-suspense-with-csr-bailout" error). Wrapping the form in a
+  // Suspense boundary with a matching loader keeps the verifying-state UX
+  // consistent with the in-form spinner the form itself shows.
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center px-4 py-12">
+          <div className="w-full max-w-md">
+            <Card className="text-center">
+              <CardContent className="pt-8">
+                <Loader2 className="w-10 h-10 animate-spin text-primary mx-auto mb-4" />
+                <p className="text-muted-foreground">Verifying reset link&hellip;</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      }
+    >
+      <ResetPasswordForm />
+    </Suspense>
   )
 }

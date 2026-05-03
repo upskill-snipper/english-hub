@@ -1,6 +1,25 @@
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
+/**
+ * Middleware-side Supabase client. Refreshes the session cookie on every
+ * request and gates access to protected routes.
+ *
+ * The cookie wiring uses the modern `getAll` / `setAll` API. Mirroring the
+ * official Supabase Next.js 15 pattern is critical: when a token refresh
+ * happens, the library calls `setAll` exactly once with every chunk it
+ * needs to write. We must:
+ *   1. Mirror those writes onto `request.cookies` so subsequent reads in
+ *      the same request see the fresh session.
+ *   2. Re-create the response from the mutated request, then mirror the
+ *      writes onto `response.cookies` so the browser receives the
+ *      Set-Cookie headers.
+ *
+ * The previous implementation used the deprecated `get` / `set` / `remove`
+ * triplet, which Supabase explicitly warns against — it does not handle
+ * chunked-cookie edge cases and was the suspected root cause of
+ * intermittent "logged out after sign-in" reports.
+ */
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request: { headers: request.headers } })
 
@@ -9,33 +28,38 @@ export async function updateSession(request: NextRequest) {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        get(name: string) {
-          return request.cookies.get(name)?.value
+        getAll() {
+          return request.cookies.getAll()
         },
-        set(name: string, value: string, options: CookieOptions) {
-          const secureOpts = {
-            ...options,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: options.sameSite ?? ('lax' as const),
+        setAll(cookiesToSet) {
+          // Apply every cookie to the request so the rest of this
+          // request handler sees the refreshed session…
+          for (const { name, value } of cookiesToSet) {
+            request.cookies.set(name, value)
           }
-          request.cookies.set({ name, value, ...secureOpts })
+          // …then rebuild the response so the mutated request headers
+          // propagate, and stamp the cookies on the outgoing response
+          // so the browser gets the Set-Cookie headers.
           response = NextResponse.next({ request: { headers: request.headers } })
-          response.cookies.set({ name, value, ...secureOpts })
-        },
-        remove(name: string, options: CookieOptions) {
-          const secureOpts = {
-            ...options,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: options.sameSite ?? ('lax' as const),
+          for (const { name, value, options } of cookiesToSet) {
+            response.cookies.set({
+              name,
+              value,
+              ...options,
+              secure: process.env.NODE_ENV === 'production',
+              sameSite: options?.sameSite ?? 'lax',
+            })
           }
-          request.cookies.set({ name, value: '', ...secureOpts })
-          response = NextResponse.next({ request: { headers: request.headers } })
-          response.cookies.set({ name, value: '', ...secureOpts })
         },
       },
     },
   )
 
+  // IMPORTANT: keep this `getUser()` call here. The Supabase client uses
+  // lazy session initialisation — the cookies are not actually read or
+  // refreshed until the first auth call. Putting any logic between
+  // `createServerClient` and `getUser()` risks the session being
+  // committed to the response after the response has already been sent.
   const {
     data: { user },
   } = await supabase.auth.getUser()
@@ -63,15 +87,27 @@ export async function updateSession(request: NextRequest) {
     const url = request.nextUrl.clone()
     url.pathname = '/auth/login'
     url.searchParams.set('redirect', request.nextUrl.pathname)
-    return NextResponse.redirect(url)
+    return copyAuthCookies(NextResponse.redirect(url), response)
   }
 
   // Redirect authenticated users away from auth pages
   const authRoutes = ['/auth/login', '/auth/register']
   const isAuthPage = authRoutes.some((route) => request.nextUrl.pathname === route)
   if (isAuthPage && user) {
-    return NextResponse.redirect(new URL('/dashboard', request.url))
+    return copyAuthCookies(NextResponse.redirect(new URL('/dashboard', request.url)), response)
   }
 
   return response
+}
+
+/**
+ * Copy any Supabase auth cookies that were just refreshed onto a fresh
+ * redirect response. Without this, a token refresh that happens during a
+ * middleware redirect is lost, and the next request appears unauthenticated.
+ */
+function copyAuthCookies(target: NextResponse, source: NextResponse): NextResponse {
+  for (const cookie of source.cookies.getAll()) {
+    target.cookies.set(cookie)
+  }
+  return target
 }
