@@ -308,7 +308,7 @@ function PricingContent() {
 
       if (productIdForPlan !== eligibleProductId) {
         setCheckoutError(
-          `Your code “${codeField.appliedCode}” only applies to the Student Annual plan (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year). Click "Start 7-day free trial" on the Student card to use it, or remove the code to continue with this plan at the standard price.`,
+          `Your code “${codeField.appliedCode}” only applies to the Student Annual plan (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year). Click “Start 7-day free trial” on the Student card to use it, or remove the code to continue with this plan at the standard price.`,
         )
         setCheckoutErrorPlan(plan)
         setCheckoutLoading(null)

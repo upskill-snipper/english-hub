@@ -192,6 +192,17 @@ export default function RedeemPage() {
       )}
 
       <Card className="space-y-5 p-6">
+        {/* Annual-only messaging — clarifies which plan the code applies to before the user types. */}
+        <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
+          <p className="font-semibold">
+            Affiliate codes apply to Student Annual subscriptions only.
+          </p>
+          <p className="mt-1 text-amber-800">
+            Other plans (Student Monthly, Teacher Monthly and Teacher Annual) aren&apos;t discounted
+            with this code.
+          </p>
+        </div>
+
         <label className="block space-y-2">
           <span className="text-sm font-medium">Promo code</span>
           <Input

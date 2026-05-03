@@ -15,6 +15,10 @@
       "schedule": "0 3 * * *"
     },
     {
+      "path": "/api/cron/affiliate-confirm-v2",
+      "schedule": "0 2 * * *"
+    },
+    {
       "path": "/api/cron/expire-invites",
       "schedule": "0 2 * * *"
     },

@@ -221,8 +221,8 @@ export function PromoCodePrompt({
       </form>
       <p className="mt-2 text-[11px] text-muted-foreground">
         Saves {PRICING.CURRENCY}
-        {PRICING.STUDENT_ANNUAL_SAVINGS} on Student Annual ({PRICING.CURRENCY}
-        {PRICING.STUDENT_ANNUAL_WITH_CODE}/yr).
+        {PRICING.STUDENT_ANNUAL_SAVINGS} on Student Annual subscriptions only ({PRICING.CURRENCY}
+        {PRICING.STUDENT_ANNUAL_WITH_CODE}/year). No discount on monthly or Teacher plans.
       </p>
     </div>
   )
@@ -250,7 +250,7 @@ export function AffiliateCodeField({
   subheading,
   className = '',
 }: AffiliateCodeFieldProps) {
-  const defaultSubheading = `Enter a creator's code or our public code ${PRICING.AFFILIATE_PROMO_CODE} to unlock the £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year Student Annual rate.`
+  const defaultSubheading = `Applies to Student Annual subscriptions only — enter a creator's code or our public code ${PRICING.AFFILIATE_PROMO_CODE} to unlock the £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year Student Annual rate (normally £${PRICING.STUDENT_ANNUAL}).`
 
   return (
     <div

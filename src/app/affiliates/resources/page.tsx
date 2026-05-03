@@ -1,12 +1,21 @@
-import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import AffiliateResources from '@/components/affiliates/AffiliateResources'
 
 export const metadata = {
   title: 'Affiliate Resources — The English Hub',
   description:
-    'Ready-made content, brand guidelines, and tips for The English Hub affiliates.',
+    'Ready-to-paste promo scripts, captions, and templates for The English Hub affiliates.',
 }
+
+// ─── /affiliates/resources ──────────────────────────────────────────────────
+//
+// Reads from the NEW affiliate_accounts system (migration 20260420_affiliates_v2).
+// The legacy `affiliates` table has been retired from this page; every active
+// affiliate has a row in `affiliate_accounts` with a public `code` used for
+// ?ref=<code> attribution. The 30-day attribution cookie is set by the
+// homepage middleware whenever a visitor lands with ?ref= in the URL.
+// ────────────────────────────────────────────────────────────────────────────
 
 export default async function AffiliateResourcesPage() {
   const supabase = createServerSupabaseClient()
@@ -16,25 +25,33 @@ export default async function AffiliateResourcesPage() {
 
   if (!user) redirect('/auth/login?redirect=/affiliates/resources')
 
-  const { data: affiliate } = await supabase
-    .from('affiliates')
-    .select('id, status, full_name, rewardful_link_token, rewardful_affiliate_id, tier')
-    .eq('user_id', user.id)
-    .single()
+  const admin = createServiceRoleClient()
 
-  if (!affiliate || affiliate.status !== 'active') {
+  const { data: account } = await admin
+    .from('affiliate_accounts')
+    .select('id, code, status, full_name, tier')
+    .eq('user_id', user.id)
+    .maybeSingle()
+
+  // No row at all — punt them to the public enrolment page
+  if (!account) {
+    redirect('/affiliates#apply')
+  }
+
+  // Paused / pending / terminated — back to /affiliates so they see the
+  // appropriate banner. Active + approved affiliates can use the resources.
+  const isUsable = account.status === 'active' || account.status === 'approved'
+  if (!isUsable) {
     redirect('/affiliates')
   }
 
-  const viaToken =
-    affiliate.rewardful_link_token ?? affiliate.rewardful_affiliate_id ?? 'YOUR_CODE'
-  const affiliateUrl = `https://theenglishhub.app?via=${viaToken}`
+  const referralUrl = `https://theenglishhub.app/?ref=${account.code}`
 
   return (
     <AffiliateResources
-      affiliateUrl={affiliateUrl}
-      viaToken={viaToken}
-      affiliateName={affiliate.full_name}
+      referralUrl={referralUrl}
+      affiliateCode={account.code}
+      affiliateName={account.full_name}
     />
   )
 }

@@ -116,10 +116,13 @@ export default function BillingPage() {
     setNeedsEmailVerification(false)
 
     // Code-redemption path: only Student Annual qualifies right now.
+    // This page only offers monthly upgrade CTAs, so the user has to head
+    // to /pricing to actually use the code — surface that explicitly so
+    // they don't get stuck staring at two non-eligible buttons.
     if (codeField.appliedCode) {
       if (plan !== 'student_annual') {
         setError(
-          `Your code “${codeField.appliedCode}” only applies to Student Annual (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year). Pick the Student Annual plan, or remove the code to upgrade to ${plan} at the standard price.`,
+          `Your code “${codeField.appliedCode}” only applies to the Student Annual plan (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year). Head to the pricing page to use it on Student Annual, or remove the code to continue with this plan at the standard price.`,
         )
         setCheckoutLoading(null)
         return

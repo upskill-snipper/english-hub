@@ -2,13 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { stripe, PRICE_IDS, COURSE_PRICE_MAP } from '@/lib/stripe'
 import { PRICING } from '@/constants/pricing'
-import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import {
   assertEmailVerifiedFor,
   PolicyError,
   emailVerificationRequiredResponse,
 } from '@/lib/auth/email-verification-policy'
+import { readAffiliateCookieFromRequest } from '@/lib/affiliate/tracking-cookie'
+import { resolveAttribution, DEFAULT_ATTRIBUTION } from '@/lib/affiliate/attribution-v2'
 
 /**
  * Recognised plan identifiers. The legacy `'monthly' | 'annual'` keys
@@ -219,6 +221,49 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // ── Affiliate cookie attribution ──────────────────────────────────────
+    // BUG-1 fix: customers who clicked an affiliate link
+    // `theenglishhub.app/?ref=CODE` previously had their attribution
+    // dropped here — the `teh_aff` cookie was set by the middleware but
+    // nothing read it at checkout time. The webhook only books a
+    // conversion for sessions carrying `metadata.affiliateId`, which the
+    // standard checkout never set. Result: zero affiliate rows for every
+    // link-click attribution path.
+    //
+    // Fix: read the cookie, run last-touch attribution (30-day window
+    // matches `DEFAULT_ATTRIBUTION`), look up the affiliate by code,
+    // verify the affiliate is `status='active'`, and stamp the resolved
+    // `affiliateId` + `affiliateCode` onto the session metadata. The
+    // existing `recordCodeBasedConversion` webhook handler picks it up
+    // unchanged and books an `affiliate_conversions` row.
+    //
+    // Code-typed redemptions go through /api/promo/redeem, never this
+    // route, so there's no double-attribution risk.
+    let cookieAffiliateId: string | null = null
+    let cookieAffiliateCode: string | null = null
+    if (mode === 'subscription') {
+      try {
+        const cookiePayload = readAffiliateCookieFromRequest(request)
+        const attribution = resolveAttribution(cookiePayload, DEFAULT_ATTRIBUTION)
+        if (attribution.attributed && attribution.ref) {
+          const adminClient = createServiceRoleClient()
+          const { data: affiliate } = await adminClient
+            .from('affiliate_accounts')
+            .select('id, code, status')
+            .eq('code', attribution.ref)
+            .eq('status', 'active')
+            .maybeSingle()
+          if (affiliate) {
+            cookieAffiliateId = affiliate.id
+            cookieAffiliateCode = affiliate.code
+          }
+        }
+      } catch (err) {
+        // Never let an attribution lookup failure break checkout.
+        console.error('[api/stripe/checkout] affiliate cookie attribution failed:', err)
+      }
+    }
+
     // Build checkout session params
     const appUrl = process.env.NEXT_PUBLIC_APP_URL!
 
@@ -232,6 +277,15 @@ export async function POST(request: NextRequest) {
         userId: user.id,
         ...(courseId && { courseId }),
         ...(rewardful_referral && { rewardful_referral }),
+        // Mirrors the metadata shape /api/promo/redeem stamps so the
+        // webhook's recordCodeBasedConversion handler treats both
+        // attribution paths identically. `promoCode` here is the
+        // affiliate's code (used as the redemption identifier in the
+        // conversion's metadata.promoCode field for reporting).
+        ...(cookieAffiliateId && {
+          affiliateId: cookieAffiliateId,
+          promoCode: cookieAffiliateCode!,
+        }),
       },
     }
 

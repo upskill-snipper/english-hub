@@ -235,7 +235,8 @@ function HowItWorksSection() {
     {
       icon: TrendingUp,
       title: 'Earn Commission',
-      description: 'Track your referrals in real-time and earn for every subscription.',
+      description:
+        'You earn commission on every Student Annual subscription bought via your code or link. Tracked in real-time on your dashboard.',
     },
   ]
 
@@ -270,6 +271,18 @@ function HowItWorksSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Annual-only commission rule — most important fact for new affiliates. */}
+        <div className="mt-12 max-w-3xl mx-auto rounded-2xl border border-amber-500/30 bg-amber-500/10 p-6 text-center">
+          <p className="text-sm font-semibold text-foreground">
+            You earn commission on Student Annual subscriptions only.
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Your code unlocks the £20/year Student Annual rate (normally £29.99) for your followers.
+            Student Monthly, Teacher Monthly and Teacher Annual plans are not discounted by your
+            code and don&apos;t earn commission.
+          </p>
         </div>
       </div>
     </section>
@@ -543,6 +556,12 @@ function ApplicationSection({ isLoggedIn }: { isLoggedIn?: boolean }) {
             {isLoggedIn
               ? 'Pick a code (or let us generate one) and start sharing immediately. No review, no wait.'
               : 'Sign in or create an account first — takes 30 seconds.'}
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground max-w-xl mx-auto">
+            <span className="font-semibold text-foreground">
+              You earn commission on Student Annual subscriptions only.
+            </span>{' '}
+            Your code unlocks the £20/year Student Annual rate for your followers.
           </p>
         </div>
 

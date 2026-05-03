@@ -14,8 +14,10 @@ import {
   Copy,
   CheckCircle2,
   ArrowUpRight,
-  Sparkles,
   AlertCircle,
+  Tag,
+  Info,
+  ChevronDown,
 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -178,6 +180,12 @@ export default function AffiliateDashboardClient({
       {/* Stat tiles */}
       <StatGrid stats={stats} />
 
+      {/* Earnings rules — clarifies which plans pay commission. Sits between
+          earnings stats and the share/activity panels so affiliates see the
+          rule once they've absorbed their potential earnings, but BEFORE
+          they're nudged to share. */}
+      <EarningsRulesBanner />
+
       {/* Two-column layout */}
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2 space-y-6">
@@ -188,6 +196,7 @@ export default function AffiliateDashboardClient({
         <div className="space-y-6">
           <TierProgressCard progress={tierProgress} />
           <SharePanel code={account.code} referralUrl={referralUrl} />
+          <TrackingExplainer code={account.code} />
           <PayoutsCard payouts={payouts} />
         </div>
       </div>
@@ -203,6 +212,45 @@ export default function AffiliateDashboardClient({
 
 function WelcomeStrip({ account, referralUrl }: { account: AccountInfo; referralUrl: string }) {
   const tierMeta = TIER_META[account.tier]
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyLink = async () => {
+    const showSuccess = () => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
+
+    // Modern path: Clipboard API (requires secure context)
+    if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(referralUrl)
+        showSuccess()
+        return
+      } catch {
+        /* fall through to selection fallback */
+      }
+    }
+
+    // Fallback: select the text in a hidden textarea (older Safari, iframes)
+    if (typeof document !== 'undefined') {
+      try {
+        const textarea = document.createElement('textarea')
+        textarea.value = referralUrl
+        textarea.setAttribute('readonly', '')
+        textarea.style.position = 'absolute'
+        textarea.style.left = '-9999px'
+        document.body.appendChild(textarea)
+        textarea.select()
+        textarea.setSelectionRange(0, referralUrl.length)
+        document.execCommand('copy')
+        document.body.removeChild(textarea)
+        showSuccess()
+      } catch {
+        /* clipboard truly unavailable — no confirmation shown */
+      }
+    }
+  }
+
   return (
     <div className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/10 via-background to-background p-6 sm:p-8">
       <div className="absolute top-0 right-0 h-60 w-60 -translate-y-12 translate-x-12 rounded-full bg-primary/5 blur-3xl" />
@@ -214,10 +262,7 @@ function WelcomeStrip({ account, referralUrl }: { account: AccountInfo; referral
             </h1>
             <Badge
               variant="secondary"
-              className={cn(
-                'text-xs font-semibold uppercase tracking-wider',
-                tierMeta.iconColour,
-              )}
+              className={cn('text-xs font-semibold uppercase tracking-wider', tierMeta.iconColour)}
             >
               <Trophy className="mr-1 h-3 w-3" />
               {tierMeta.label}
@@ -237,11 +282,53 @@ function WelcomeStrip({ account, referralUrl }: { account: AccountInfo; referral
             <span className="hidden sm:inline">Preview your link</span>
             <span className="sm:hidden">Preview</span>
           </Button>
-          <Button render={<Link href="/affiliates/resources" />}>
-            <Sparkles className="h-4 w-4" />
-            <span className="hidden sm:inline">Get post templates</span>
-            <span className="sm:hidden">Templates</span>
+          <Button onClick={handleCopyLink} aria-live="polite">
+            {copied ? (
+              <>
+                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                <span className="hidden sm:inline">Copied!</span>
+                <span className="sm:hidden">Copied!</span>
+              </>
+            ) : (
+              <>
+                <Copy className="h-4 w-4" />
+                <span className="hidden sm:inline">Copy your referral link</span>
+                <span className="sm:hidden">Copy link</span>
+              </>
+            )}
           </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ─── Earnings rules banner ───────────────────────────────────────────────
+//
+// Single source of truth for the "annual subscriptions only" disclosure on
+// the dashboard. The £5–£10 range tracks the flat-rate ladder in
+// `src/lib/affiliate/tiers.ts` (Tier 1 Starter £5 → Tier 5 Partner £10).
+//
+// Sibling annual-only microcopy lives on the pricing page, the redeem page,
+// and the AffiliateCodeField — keep those in sync if the rule changes.
+
+function EarningsRulesBanner() {
+  return (
+    <div className={cn('rounded-xl border border-amber-500/30 bg-amber-500/5 p-4')}>
+      <div className="flex items-start gap-3">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-600">
+          <Tag className="h-4 w-4" />
+        </div>
+        <div className="space-y-1">
+          <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">
+            Earnings rules
+          </p>
+          <p className="text-sm text-foreground">
+            <span aria-hidden="true">&#x1F4B7; </span>
+            You earn <strong className="font-semibold">£5–£10 commission</strong> per{' '}
+            <strong className="font-semibold">Student Annual</strong> subscription bought via your
+            code or link. Monthly plans and Teacher plans don&apos;t earn commission.
+          </p>
         </div>
       </div>
     </div>
@@ -292,18 +379,16 @@ function StatGrid({ stats }: { stats: Stats }) {
         return (
           <Card key={t.label} className="relative overflow-hidden border-border/40">
             <div
-              className={cn(
-                'absolute inset-0 bg-gradient-to-br',
-                t.accent,
-                'pointer-events-none',
-              )}
+              className={cn('absolute inset-0 bg-gradient-to-br', t.accent, 'pointer-events-none')}
             />
             <CardContent className="relative p-5">
               <div className="flex items-center justify-between">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   {t.label}
                 </p>
-                <div className={cn('flex h-8 w-8 items-center justify-center rounded-lg', t.iconBg)}>
+                <div
+                  className={cn('flex h-8 w-8 items-center justify-center rounded-lg', t.iconBg)}
+                >
                   <Icon className="h-4 w-4" />
                 </div>
               </div>
@@ -438,9 +523,7 @@ function TierProgressCard({ progress }: { progress: TierProgress }) {
                 <span className="text-muted-foreground">
                   {progress.currentCount} of {progress.nextThreshold} referrals
                 </span>
-                <span className="font-semibold text-foreground">
-                  {progress.progressPct}%
-                </span>
+                <span className="font-semibold text-foreground">{progress.progressPct}%</span>
               </div>
               <div className="relative h-2 overflow-hidden rounded-full bg-muted">
                 <div
@@ -484,9 +567,19 @@ function SharePanel({ code, referralUrl }: { code: string; referralUrl: string }
           <CopyField label="Code" value={code} monospace />
           <CopyField label="Referral URL" value={referralUrl} />
         </div>
+        {/* annual-only messaging — clarifies which plan earns commission */}
+        <div className="mt-3 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-xs">
+          <p className="font-semibold text-foreground">
+            Commission is on Student Annual subscriptions only.
+          </p>
+          <p className="mt-1 text-muted-foreground">
+            Your code unlocks the £20/year Student Annual rate (normally £29.99). Student Monthly
+            and Teacher plans don&apos;t earn commission.
+          </p>
+        </div>
         <p className="mt-3 text-xs text-muted-foreground">
-          Remember <strong className="text-foreground">#ad</strong> at the start of every post
-          (ASA + CAP Code).
+          Remember <strong className="text-foreground">#ad</strong> at the start of every post (ASA
+          + CAP Code).
         </p>
       </CardContent>
     </Card>
@@ -536,6 +629,154 @@ function CopyField({
         </button>
       </div>
     </div>
+  )
+}
+
+// ─── Tracking explainer (collapsible) ────────────────────────────────────
+//
+// Affiliate transparency: spells out exactly what counts as a commissionable
+// sale, the payout cadence, and what voids a commission. Sits below the
+// "Share your link" panel so the rules are right next to the link itself.
+//
+// Verified facts (do not fabricate):
+//   - 30-day cookie window: src/lib/affiliate/attribution-v2.ts
+//     (DEFAULT_ATTRIBUTION.windowDays = 30)
+//   - 60-day clearance gate (14-day UK refund window + 46-day clawback
+//     buffer): src/lib/affiliate/tiers.ts (line 19 doc comment)
+//   - £20 minimum payout: src/app/affiliates/payouts/page.tsx
+//     (minimumPayoutGbp={20})
+//   - £20/year Student Annual (normally £29.99): see SharePanel above and
+//     src/components/affiliates/AffiliateResources.tsx
+//   - 7-day free trial: src/constants/pricing.ts (TRIAL_DAYS = 7)
+function TrackingExplainer({ code }: { code: string }) {
+  const [open, setOpen] = useState(false)
+  const trackingUrl = `https://theenglishhub.app/?ref=${code}`
+
+  return (
+    <Card className="overflow-hidden border-amber-500/30 bg-amber-500/5">
+      <CardContent className="p-0">
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-controls="tracking-explainer-body"
+          className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left hover:bg-amber-500/10"
+        >
+          <div className="flex items-center gap-2">
+            <Info className="h-4 w-4 text-amber-600" />
+            <h3 className="text-sm font-semibold text-foreground">How does tracking work?</h3>
+          </div>
+          <ChevronDown
+            className={cn(
+              'h-4 w-4 shrink-0 text-muted-foreground transition-transform',
+              open && 'rotate-180',
+            )}
+          />
+        </button>
+
+        {open && (
+          <div
+            id="tracking-explainer-body"
+            className="space-y-5 border-t border-amber-500/30 px-5 py-4 text-sm text-foreground"
+          >
+            <section>
+              <p className="font-semibold">Two ways your code earns commission:</p>
+              <ol className="mt-2 list-decimal space-y-2 pl-5 text-muted-foreground">
+                <li>
+                  <span className="font-medium text-foreground">Someone clicks your link.</span>{' '}
+                  Your link{' '}
+                  <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground">
+                    {trackingUrl}
+                  </code>{' '}
+                  sets a 30-day attribution cookie. If they sign up and buy a Student Annual
+                  subscription within 30 days, you&apos;re credited automatically — even if they
+                  don&apos;t type the code.
+                </li>
+                <li>
+                  <span className="font-medium text-foreground">
+                    Someone types your code at checkout.
+                  </span>{' '}
+                  Whether they paste it on the pricing page or at{' '}
+                  <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground">
+                    /redeem
+                  </code>
+                  , the code applies the £20/year Student Annual discount AND credits you the
+                  commission.
+                </li>
+              </ol>
+            </section>
+
+            <section>
+              <p className="font-semibold">What earns commission</p>
+              <ul className="mt-2 space-y-1 text-muted-foreground">
+                <li>
+                  <span aria-hidden="true">✅</span> <span className="sr-only">Yes:</span>
+                  Student Annual subscription (£20/year with your code, normally £29.99)
+                </li>
+                <li>
+                  <span aria-hidden="true">❌</span> <span className="sr-only">No:</span>
+                  Student Monthly (no commission)
+                </li>
+                <li>
+                  <span aria-hidden="true">❌</span> <span className="sr-only">No:</span>
+                  Teacher plans (no commission yet)
+                </li>
+                <li>
+                  <span aria-hidden="true">❌</span> <span className="sr-only">No:</span>
+                  Founding Schools (sales-led, separate)
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <p className="font-semibold">When you get paid</p>
+              <ul className="mt-2 space-y-1 text-muted-foreground">
+                <li>
+                  <span className="font-medium text-foreground">Day 0:</span> Customer pays →
+                  conversion appears on this dashboard as &ldquo;Pending&rdquo;.
+                </li>
+                <li>
+                  <span className="font-medium text-foreground">Day 60:</span> Conversion clears the
+                  refund window → moves to &ldquo;Confirmed&rdquo;.
+                </li>
+                <li>
+                  <span className="font-medium text-foreground">Day 60+ next 1st:</span> Confirmed
+                  conversions are batched into a payout if the running total is ≥ £20.
+                </li>
+                <li>
+                  <span className="font-medium text-foreground">Method:</span> BACS or PayPal
+                  (whichever you&apos;ve set in Settings).
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <p className="font-semibold">Things that void a commission</p>
+              <ul className="mt-2 space-y-1 text-muted-foreground">
+                <li>Customer cancels within their 7-day free trial (no payment was taken).</li>
+                <li>
+                  Customer requests a refund within 14 days (UK statutory window) → conversion
+                  flipped to &ldquo;Refunded&rdquo;.
+                </li>
+                <li>
+                  Account terminated for ASA/CAP non-compliance (e.g. posting without #ad
+                  disclosure).
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <p className="font-semibold">Full tracking transparency</p>
+              <p className="mt-2 text-muted-foreground">
+                Every conversion shows up on this dashboard within ~2 minutes of payment. If
+                you&apos;ve shared a link or code with someone who paid and you don&apos;t see it
+                within an hour, ping support and we&apos;ll trace the attribution.
+              </p>
+            </section>
+          </div>
+        )}
+      </CardContent>
+    </Card>
   )
 }
 
@@ -619,7 +860,10 @@ function StatusBadge({ status }: { status: string }) {
       classes: 'bg-rose-500/10 text-rose-700 border-rose-500/30',
     },
   }
-  const m = meta[status] ?? { label: status, classes: 'bg-muted text-muted-foreground border-border' }
+  const m = meta[status] ?? {
+    label: status,
+    classes: 'bg-muted text-muted-foreground border-border',
+  }
   return (
     <span
       className={cn(
@@ -668,10 +912,7 @@ function PayoutsCard({ payouts }: { payouts: Payout[] }) {
             <Trophy className="h-4 w-4 text-primary" />
             <h3 className="text-sm font-semibold text-foreground">Payouts</h3>
           </div>
-          <Link
-            href="/affiliates/payouts"
-            className="text-xs text-primary hover:underline"
-          >
+          <Link href="/affiliates/payouts" className="text-xs text-primary hover:underline">
             View all →
           </Link>
         </div>
@@ -703,8 +944,8 @@ function LinksCard({ links, totalClicks }: { links: AffiliateLink[]; totalClicks
           <div>
             <h2 className="text-lg font-bold text-foreground">Your tracked links</h2>
             <p className="mt-1 text-sm text-muted-foreground">
-              {totalClicks.toLocaleString('en-GB')} clicks across{' '}
-              {links.length || 'your default'} link{links.length === 1 ? '' : 's'}
+              {totalClicks.toLocaleString('en-GB')} clicks across {links.length || 'your default'}{' '}
+              link{links.length === 1 ? '' : 's'}
             </p>
           </div>
           <Button variant="outline" size="sm" render={<Link href="/affiliate/links" />}>
@@ -716,11 +957,10 @@ function LinksCard({ links, totalClicks }: { links: AffiliateLink[]; totalClicks
           <div className="rounded-lg border border-dashed border-border/80 bg-muted/30 p-6 text-center">
             <Eye className="mx-auto mb-2 h-5 w-5 text-muted-foreground" />
             <p className="text-sm text-muted-foreground">
-              Anyone visiting with <code className="mx-1 rounded bg-muted px-1.5 py-0.5 font-mono">
-                ?ref=YOURCODE
-              </code>{' '}
-              is already tracked. Create custom links per campaign to measure which content
-              converts best.
+              Anyone visiting with{' '}
+              <code className="mx-1 rounded bg-muted px-1.5 py-0.5 font-mono">?ref=YOURCODE</code>{' '}
+              is already tracked. Create custom links per campaign to measure which content converts
+              best.
             </p>
           </div>
         ) : (
@@ -737,9 +977,7 @@ function LinksCard({ links, totalClicks }: { links: AffiliateLink[]; totalClicks
               <tbody>
                 {links.map((l) => (
                   <tr key={l.id} className="border-b border-border/50 last:border-0">
-                    <td className="py-3 font-medium text-foreground">
-                      {l.campaign ?? '—'}
-                    </td>
+                    <td className="py-3 font-medium text-foreground">{l.campaign ?? '—'}</td>
                     <td className="py-3 font-mono text-xs text-muted-foreground">
                       {l.target_path}
                     </td>
