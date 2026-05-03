@@ -3,6 +3,7 @@ import Stripe from 'stripe'
 import { stripe } from '@/lib/stripe'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { attributeAffiliateReferral } from '@/lib/affiliate/attribution'
+import { calculateCommissionPence, getCurrentTierInfo } from '@/lib/affiliate/tiers'
 import { prisma } from '@/lib/prisma'
 import { captureGrandfatherFields, type Plan as PricingPlan } from '@/lib/pricing/grandfather'
 
@@ -140,7 +141,8 @@ export async function POST(request: NextRequest) {
         const session = event.data.object as Stripe.Checkout.Session
         await handleCheckoutCompleted(session, supabase)
 
-        // Affiliate attribution — if this checkout came via an affiliate link
+        // ── Affiliate attribution path 1: legacy Rewardful link-clicks ─
+        // Cookie/link-based attribution from the older programme.
         const rewardfulReferralId = session.metadata?.rewardful_referral
         if (rewardfulReferralId) {
           try {
@@ -152,6 +154,37 @@ export async function POST(request: NextRequest) {
           } catch (err) {
             // Log but do not fail the webhook — attribution is non-critical
             console.error('Affiliate attribution error:', err)
+          }
+        }
+
+        // ── Affiliate attribution path 2: code-based redemption (v2) ──
+        // /api/promo/redeem stamps `metadata.affiliateId` (the row ID
+        // from public.affiliate_accounts) and `metadata.promoCode` onto
+        // the checkout session when an affiliate's code was typed at
+        // /redeem. We book a row in `affiliate_conversions` so the
+        // affiliate's dashboard reflects the conversion and the
+        // commission is queued for later payout. Idempotent on
+        // session.id (external_id) — webhook retries are safe.
+        const affiliateId = session.metadata?.affiliateId
+        const promoCode = session.metadata?.promoCode
+        if (affiliateId && promoCode) {
+          try {
+            await recordCodeBasedConversion({
+              session,
+              affiliateId,
+              promoCode,
+              supabase,
+            })
+          } catch (err) {
+            // Non-blocking: a conversion-record failure must NOT cause
+            // the webhook to 500 (Stripe will retry every event for 3
+            // days, and the customer's subscription is already live).
+            // We log loudly so it can be reconciled by a back-fill job.
+            console.error('[stripe/webhook] code-based affiliate conversion record failed:', err, {
+              sessionId: session.id,
+              affiliateId,
+              promoCode,
+            })
           }
         }
         break
@@ -482,6 +515,136 @@ export async function POST(request: NextRequest) {
 // ---------------------------------------------------------------------------
 // Event handlers
 // ---------------------------------------------------------------------------
+
+/**
+ * Code-based affiliate conversion booking.
+ *
+ * Called from the `checkout.session.completed` handler when the session
+ * carries `metadata.affiliateId` + `metadata.promoCode` — i.e. the
+ * customer typed an affiliate's code at /redeem and our /api/promo/redeem
+ * endpoint stamped the affiliate's row ID onto the session.
+ *
+ * Inserts a row into public.affiliate_conversions with the same shape
+ * /api/affiliate/track-conversion uses for cookie-based attribution
+ * (so the affiliate dashboard, payout pipeline and commission ledger
+ * see code-based redemptions identically). Idempotent on
+ * external_id = session.id — Stripe retries every event for 3 days and
+ * we must never double-count.
+ *
+ * Failures are caught by the calling try/catch — this function may
+ * throw freely on schema/RLS/network errors and the webhook will still
+ * return 200 to Stripe so retries don't stack up.
+ */
+async function recordCodeBasedConversion({
+  session,
+  affiliateId,
+  promoCode,
+  supabase,
+}: {
+  session: Stripe.Checkout.Session
+  affiliateId: string
+  promoCode: string
+  supabase: ReturnType<typeof createServiceRoleClient>
+}): Promise<void> {
+  // 1. Idempotency — we must never insert two conversions for the same
+  // session ID, regardless of how many times Stripe retries.
+  const { data: existing } = await supabase
+    .from('affiliate_conversions')
+    .select('id')
+    .eq('external_id', session.id)
+    .maybeSingle()
+
+  if (existing) {
+    console.log(
+      `[stripe/webhook] code-based conversion already recorded for session ${session.id} (id=${existing.id})`,
+    )
+    return
+  }
+
+  // 2. Resolve the affiliate's current confirmed-referral count to
+  // determine which tier they were on at the moment of conversion.
+  // The tier value is locked in at insert time so future tier changes
+  // don't retroactively alter past commission.
+  const { data: account, error: accountErr } = await supabase
+    .from('affiliate_accounts')
+    .select('id, status, confirmed_referral_count')
+    .eq('id', affiliateId)
+    .maybeSingle()
+
+  if (accountErr) {
+    throw new Error(`Failed to resolve affiliate account ${affiliateId}: ${accountErr.message}`)
+  }
+  if (!account) {
+    throw new Error(`No affiliate account row for ${affiliateId} — promoCode ${promoCode}`)
+  }
+  if (account.status !== 'active') {
+    console.warn(
+      `[stripe/webhook] affiliate ${affiliateId} status=${account.status}, recording conversion as voided`,
+    )
+  }
+
+  // 3. Order value — Stripe gives us amount_total in pence, currency
+  // already lower-cased. Use 0 if the session somehow has no total
+  // (subscription with trial: amount_total can be 0 on first invoice).
+  const orderValuePence = Math.max(0, session.amount_total ?? 0)
+  const currency = (session.currency ?? 'gbp').toLowerCase()
+
+  // 4. Commission via the flat-rate tier ladder (lib/affiliate/tiers.ts).
+  // Same calculation /api/affiliate/track-conversion uses for cookie
+  // attribution, so the two attribution paths produce identical
+  // commission shape downstream.
+  const referralCount = Number(account.confirmed_referral_count ?? 0)
+  const tierInfo = getCurrentTierInfo(referralCount + 1)
+  const commissionPence = calculateCommissionPence(referralCount)
+
+  const referredUserId = session.metadata?.userId ?? null
+  const isSubscription = session.mode === 'subscription'
+
+  // 5. Insert. If the affiliate is suspended/terminated we still record
+  // the conversion (so accounting is complete) but mark it voided so
+  // the payout cron doesn't pay out.
+  const status = account.status === 'active' ? 'pending' : 'voided'
+  const voidedReason =
+    account.status === 'active' ? null : `Affiliate ${account.status} at conversion time`
+
+  const { error: insertErr } = await supabase.from('affiliate_conversions').insert({
+    affiliate_id: account.id,
+    link_id: null, // code-based redemption doesn't go through a tracked link
+    external_id: session.id,
+    order_value_pence: orderValuePence,
+    commission_pence: commissionPence,
+    // Flat-rate system has no percentage rate; matches /api/affiliate/track-conversion.
+    commission_rate: 0,
+    tier_at_conversion: tierInfo.tier,
+    currency,
+    product_type: isSubscription ? 'subscription' : 'one_time',
+    referred_user_id: referredUserId,
+    // The schema constraint only allows 'first-touch' / 'last-touch'.
+    // Code-based redemption is conceptually a "touch" at redemption
+    // time, so we record it as 'last-touch' and flag the actual source
+    // ('promo_redeem') in `metadata` for downstream reporting.
+    attribution_model: 'last-touch',
+    touched_at: new Date().toISOString(),
+    status,
+    voided_reason: voidedReason,
+    metadata: {
+      promoCode,
+      sessionMode: session.mode,
+      source: 'promo_redeem',
+      attribution_kind: 'code',
+    },
+  })
+
+  if (insertErr) {
+    throw new Error(
+      `affiliate_conversions insert failed for session ${session.id}: ${insertErr.message} (code: ${insertErr.code ?? 'unknown'})`,
+    )
+  }
+
+  console.log(
+    `[stripe/webhook] recorded code-based conversion: session=${session.id} affiliate=${affiliateId} code=${promoCode} commission=${commissionPence}p tier=${tierInfo.tier}`,
+  )
+}
 
 async function handleCheckoutCompleted(
   session: Stripe.Checkout.Session,
