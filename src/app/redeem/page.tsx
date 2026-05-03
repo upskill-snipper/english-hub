@@ -129,8 +129,34 @@ export default function RedeemPage() {
   }, [code, validateCode])
 
   const onRedeem = useCallback(async (): Promise<void> => {
-    if (!validation?.valid) return
-    const productId = validation.productIds[0] ?? DEFAULT_PRODUCT_ID
+    // If the user typed a code and clicked the button without blurring
+    // first, validation hasn't fired yet and the button was previously
+    // disabled — leaving the user stuck. Validate inline before
+    // proceeding so a single Apply click works regardless of focus.
+    let currentValidation = validation
+    if (!currentValidation && CODE_REGEX.test(code.trim().toUpperCase())) {
+      setIsValidating(true)
+      try {
+        const res = await fetch(
+          `/api/promo/validate?code=${encodeURIComponent(code.trim().toUpperCase())}`,
+        )
+        currentValidation = (await res.json()) as ValidateApiResponse
+        setValidation(currentValidation)
+        if (!currentValidation.valid) {
+          setValidationError(reasonToMessage(currentValidation.reason))
+          return
+        }
+      } catch {
+        setValidationError(
+          'We could not reach the server. Please check your connection and try again.',
+        )
+        return
+      } finally {
+        setIsValidating(false)
+      }
+    }
+    if (!currentValidation?.valid) return
+    const productId = currentValidation.productIds[0] ?? DEFAULT_PRODUCT_ID
     setIsRedeeming(true)
     setRedeemError(null)
     try {
@@ -251,7 +277,19 @@ export default function RedeemPage() {
 
         <Button
           type="button"
-          disabled={!validation?.valid || isValidating || isRedeeming || code.length === 0}
+          disabled={
+            isValidating ||
+            isRedeeming ||
+            code.length === 0 ||
+            // Only block submission when we KNOW the code is invalid.
+            // If validation hasn't run yet (validation === null) but the
+            // format is plausible, keep the button enabled — onRedeem
+            // will validate inline and surface the right error if it
+            // fails. This prevents the "button stuck disabled until I
+            // click somewhere else" UX trap.
+            (validation !== null && !validation.valid) ||
+            !CODE_REGEX.test(code.trim().toUpperCase())
+          }
           onClick={() => {
             void onRedeem()
           }}
