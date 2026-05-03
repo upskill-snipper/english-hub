@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils'
 import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { InfographicBanner } from '@/components/marketing/InfographicBanner'
+import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
 import {
   GraduationCap,
   BookOpen,
@@ -434,6 +435,11 @@ export default function ForTeachersPage() {
                 View Pricing
               </Button>
             </div>
+            {/* Promo code: routes to /pricing?code=X where the full
+                AffiliateCodeField auto-applies. Surfaced here because
+                affiliates may share their code with teachers via
+                Twitter / school newsletters / emails. */}
+            <PromoCodePrompt className="mt-6" />
           </div>
         </div>
       </section>
@@ -1187,8 +1193,8 @@ export default function ForTeachersPage() {
 
               <p className="text-xs text-muted-foreground text-center">
                 By signing up you agree to our Terms of Service and Privacy Policy. Free tier
-                includes 3 uses per tool. Premium: £6.99/month or £67.99/year (Early Access — Standard
-                £11.99/£99 from August 2026). 7-day free trial, card required.
+                includes 3 uses per tool. Premium: £6.99/month or £67.99/year (Early Access —
+                Standard £11.99/£99 from August 2026). 7-day free trial, card required.
               </p>
             </div>
           </Card>

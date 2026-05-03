@@ -38,6 +38,7 @@ import {
   getBenefits,
   isTeacherFeature,
 } from '@/constants/upgrade-copy'
+import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
 
 // ─── UsageCounter ──────────────────────────────────────────────────────
 // Small badge shown on gated feature buttons to indicate remaining uses.
@@ -185,6 +186,7 @@ export function FinalUseWarning({
             Upgrade Now
             <ArrowRight className="size-4" />
           </Button>
+          <PromoCodePrompt compact className="w-full" />
           <DialogClose
             render={
               <button className={buttonVariants({ variant: 'outline' })} onClick={onUseLastFree} />
@@ -246,6 +248,7 @@ export function LockoutCard({ feature, className }: LockoutCardProps) {
           <Crown className="size-4" />
           Start 7-day trial
         </Button>
+        <PromoCodePrompt className="w-full" />
         <p className="text-center text-xs text-muted-foreground">
           Cancel before day 7 and you won&apos;t be charged.
         </p>

@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { PRICING } from '@/constants/pricing'
 import { VAT_LABEL } from '@/lib/copy/pricing'
+import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
 import { Sparkles, CheckCircle, School, GraduationCap, Phone, Award } from 'lucide-react'
 
 const STUDENT_FEATURES = [
@@ -147,6 +148,9 @@ export default function PricingSection() {
             >
               View Pricing
             </Button>
+            {/* Promo code: type code → routes to /pricing?code=X
+                where the full <AffiliateCodeField> auto-applies it. */}
+            <PromoCodePrompt className="mt-4" />
           </Card>
 
           {/* ── Teacher Card ── */}

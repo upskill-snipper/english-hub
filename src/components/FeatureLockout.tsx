@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { type GatedFeature, FEATURE_NAMES, FREE_USES_PER_FEATURE } from '@/lib/feature-gating'
 import { PRICING } from '@/constants/pricing'
+import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
 
 const FEATURE_BENEFITS: Record<GatedFeature, string> = {
   ai_essay_marking:
@@ -75,6 +76,7 @@ export function FeatureLockout({ feature }: FeatureLockoutProps) {
           <Crown className="size-4" />
           Start 7-day trial
         </Button>
+        <PromoCodePrompt className="w-full" />
         <p className="text-xs text-muted-foreground text-center">
           Trial requires a valid card. Cancel before day 7 and you won&apos;t be charged.
         </p>

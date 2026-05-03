@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { PRICING } from '@/constants/pricing'
 import { VAT_LABEL } from '@/lib/copy/pricing'
+import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
 
 type Tier = {
   name: string
@@ -138,6 +139,10 @@ export default function AnthologyPricing() {
             ⚡ {PRICING.PRICE_INCREASE_MESSAGE} — lock in Early Access today
           </p>
         </div>
+
+        {/* Promo code prompt — type a code, click Apply, lands on
+            /pricing?code=X where the full field auto-applies. */}
+        <PromoCodePrompt className="mb-8" />
 
         {/* 3-col pricing cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">

@@ -14,14 +14,24 @@
  * the discount into a separate Stripe Checkout Session before the
  * customer ever sees Stripe).
  *
- * Usage:
- *   const codeField = useAffiliateCodeField()
- *   <AffiliateCodeField {...codeField} />
- *   // pass `codeField.appliedCode` into your handleCheckout to route
- *   // through /api/promo/redeem instead of /api/stripe/checkout when set.
+ * TWO USAGE PATTERNS:
+ *
+ * 1. Full state-managed field (on direct-checkout surfaces like
+ *    /pricing and /account/billing):
+ *      const codeField = useAffiliateCodeField({ initialCode: searchParams.get('code') })
+ *      <AffiliateCodeField {...codeField} />
+ *      // pass `codeField.appliedCode` into handleCheckout to route
+ *      // through /api/promo/redeem when set.
+ *
+ * 2. Compact "redirect to /pricing?code=X" prompt (on link-to-pricing
+ *    surfaces — homepage, for-teachers, modals, lockout cards):
+ *      <PromoCodePrompt />
+ *    User types code → clicks Apply → navigates to
+ *    /pricing?code=<NORMALIZED> where pattern (1) auto-applies it.
  */
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Tag, Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -45,12 +55,21 @@ export interface AffiliateCodeFieldState {
   remove: () => void
 }
 
-export function useAffiliateCodeField(): AffiliateCodeFieldState {
-  const [code, setCode] = useState('')
+export function useAffiliateCodeField(opts?: {
+  /**
+   * Optional initial code to validate on mount. Used by /pricing to
+   * auto-apply a `?code=` URL param so the pattern-2 prompt on
+   * upstream surfaces (homepage, modals) carries the code through.
+   */
+  initialCode?: string | null
+}): AffiliateCodeFieldState {
+  const initial = (opts?.initialCode ?? '').toUpperCase().trim()
+  const [code, setCode] = useState(initial)
   const [appliedCode, setAppliedCode] = useState<string | null>(null)
   const [appliedDiscount, setAppliedDiscount] = useState<ValidationResult | null>(null)
   const [validating, setValidating] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const [bootstrapped, setBootstrapped] = useState(false)
 
   async function apply() {
     const trimmed = code.trim().toUpperCase()
@@ -95,6 +114,16 @@ export function useAffiliateCodeField(): AffiliateCodeFieldState {
     setErrorMessage(null)
   }
 
+  // Auto-apply the initialCode on mount (e.g. /pricing?code=2026ENGLISH).
+  // We run this once via the bootstrapped flag so a re-render with a
+  // different initialCode doesn't keep retriggering.
+  useEffect(() => {
+    if (bootstrapped || !initial) return
+    setBootstrapped(true)
+    void apply()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bootstrapped, initial])
+
   return {
     code,
     setCode,
@@ -105,6 +134,98 @@ export function useAffiliateCodeField(): AffiliateCodeFieldState {
     apply,
     remove,
   }
+}
+
+/**
+ * Compact prompt for surfaces that don't own checkout state — homepage
+ * pricing tiles, modals, in-page lockouts, /for-teachers. The user
+ * types a code → clicks Apply → we navigate to
+ * `/pricing?code=NORMALIZED_CODE` where the full <AffiliateCodeField>
+ * picks the code up via useAffiliateCodeField({ initialCode }) and
+ * auto-applies. This is the simplest way to be "site-wide" without
+ * duplicating checkout state on every page.
+ *
+ * Usage: drop next to any "Upgrade" / "Start trial" button.
+ *   <PromoCodePrompt />
+ *   <Button asChild><Link href="/pricing">Start 7-day free trial</Link></Button>
+ *
+ * `pricingHref` is overridable for surfaces that route to a different
+ * pricing-equivalent page (e.g. /account/billing for signed-in users).
+ */
+export function PromoCodePrompt({
+  pricingHref = '/pricing',
+  compact = false,
+  className = '',
+}: {
+  pricingHref?: string
+  /** When true, renders a single-row layout suitable for modal footers. */
+  compact?: boolean
+  className?: string
+}) {
+  const router = useRouter()
+  const [code, setCode] = useState('')
+  const trimmed = code.trim().toUpperCase()
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!trimmed) return
+    const url = `${pricingHref}?code=${encodeURIComponent(trimmed)}`
+    router.push(url)
+  }
+
+  if (compact) {
+    return (
+      <form
+        onSubmit={submit}
+        className={`flex items-center gap-2 ${className}`}
+        aria-label="Apply affiliate or promo code"
+      >
+        <Input
+          type="text"
+          value={code}
+          onChange={(e) => setCode(e.target.value.toUpperCase())}
+          placeholder="Affiliate or promo code"
+          maxLength={64}
+          autoCapitalize="characters"
+          spellCheck={false}
+          className="h-9 flex-1 font-mono text-sm uppercase tracking-wider"
+        />
+        <Button type="submit" size="sm" variant="outline" disabled={!trimmed}>
+          Apply
+        </Button>
+      </form>
+    )
+  }
+
+  return (
+    <div
+      className={`mx-auto max-w-md rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 ${className}`}
+    >
+      <div className="mb-2 flex items-center gap-2">
+        <Tag className="h-3.5 w-3.5 text-amber-700" />
+        <p className="text-xs font-semibold text-foreground">Have an affiliate or promo code?</p>
+      </div>
+      <form onSubmit={submit} className="flex gap-2">
+        <Input
+          type="text"
+          value={code}
+          onChange={(e) => setCode(e.target.value.toUpperCase())}
+          placeholder={`e.g. ${PRICING.AFFILIATE_PROMO_CODE}`}
+          maxLength={64}
+          autoCapitalize="characters"
+          spellCheck={false}
+          className="h-9 flex-1 font-mono text-sm uppercase tracking-wider"
+        />
+        <Button type="submit" size="sm" disabled={!trimmed} className="whitespace-nowrap">
+          Apply
+        </Button>
+      </form>
+      <p className="mt-2 text-[11px] text-muted-foreground">
+        Saves {PRICING.CURRENCY}
+        {PRICING.STUDENT_ANNUAL_SAVINGS} on Student Annual ({PRICING.CURRENCY}
+        {PRICING.STUDENT_ANNUAL_WITH_CODE}/yr).
+      </p>
+    </div>
+  )
 }
 
 interface AffiliateCodeFieldProps extends AffiliateCodeFieldState {

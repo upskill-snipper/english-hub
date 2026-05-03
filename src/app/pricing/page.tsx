@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -232,7 +233,23 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 type CheckoutPlan = 'student_monthly' | 'student_annual' | 'teacher_monthly' | 'teacher_annual'
 
+// Wrapper page: useSearchParams() requires a Suspense boundary in Next 15.
+// The actual content lives in <PricingContent /> below.
 export default function PricingPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <PricingContent />
+    </Suspense>
+  )
+}
+
+function PricingContent() {
+  // Auto-apply ?code=XXX from the URL — surfaces upstream of /pricing
+  // (homepage tiles, /for-teachers, modals) point users here with the
+  // applied code already attached, so there's zero re-typing.
+  const searchParams = useSearchParams()
+  const initialCode = searchParams.get('code')
+
   // 21 April 2026 pricing pivot: two-tier Early Access / Standard with anchor.
   //   Students: Early Access £3.99/mo · £29.99/yr · £20/yr with affiliate code or 2026ENGLISH
   //             Standard (from Aug 2026) £7.99/mo · £69.99/yr — shown as strikethrough anchor
@@ -274,7 +291,7 @@ export default function PricingPage() {
   // pricing button click below routes through /api/promo/redeem (which
   // bakes the £20/year Student Annual discount into a one-off Stripe
   // Checkout session) instead of /api/stripe/checkout.
-  const codeField = useAffiliateCodeField()
+  const codeField = useAffiliateCodeField({ initialCode })
 
   async function handleCheckout(plan: CheckoutPlan) {
     setCheckoutLoading(plan)
