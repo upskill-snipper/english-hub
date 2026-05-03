@@ -44,23 +44,47 @@ const EMPTY: TrialState = { trialEndsAt: null, isPremium: false }
  *   - the user has no Subscription row
  *   - the trial has already expired
  *   - the Prisma read throws (logged, never re-thrown)
+ *
+ * Identity convergence note (Cycle 7 / Identity PR-3): `supabase.auth.getUser()`
+ * returns a Supabase UUID, but `Subscription.userId` references the Prisma
+ * `User.id` (cuid). We resolve the Prisma user via `supabaseUserId` with an
+ * email fallback for pre-backfill rows — same pattern as `/api/me/entitlements`.
+ * Querying `Subscription` directly with the Supabase UUID would silently miss
+ * every row.
  */
 export async function getTrialState(): Promise<TrialState> {
-  let userId: string | null = null
+  let supabaseUserId: string | null = null
+  let supabaseEmail: string | null = null
 
   try {
     const supabase = createServerSupabaseClient()
     const { data, error } = await supabase.auth.getUser()
     if (error || !data?.user) return EMPTY
-    userId = data.user.id
+    supabaseUserId = data.user.id
+    supabaseEmail = data.user.email ?? null
   } catch (err) {
     console.error('[trial-state] auth lookup failed:', err)
     return EMPTY
   }
 
   try {
+    // Resolve the Prisma user id from the Supabase identity.
+    const prismaUser = await prisma.user.findUnique({
+      where: { supabaseUserId },
+      select: { id: true },
+    })
+    const profile =
+      prismaUser ??
+      (supabaseEmail
+        ? await prisma.user.findUnique({
+            where: { email: supabaseEmail.toLowerCase() },
+            select: { id: true },
+          })
+        : null)
+    if (!profile) return EMPTY
+
     const sub = await prisma.subscription.findUnique({
-      where: { userId },
+      where: { userId: profile.id },
       select: { status: true, currentPeriodEnd: true, cancelledAt: true },
     })
     if (!sub) return EMPTY

@@ -228,8 +228,20 @@ function RegisterForm() {
       })
 
       if (profileError) {
-        console.error('Profile upsert error:', profileError)
-        // Don't block signup for profile error — it can be updated later
+        // Log every field Supabase returns so the error is actually
+        // diagnosable. Previously this rendered as "Profile upsert error:
+        // Object" in DevTools, hiding the message/code/details/hint that
+        // tells you whether it's an RLS denial, a schema mismatch, or a
+        // unique-constraint race with a server-side trigger.
+        console.error('Profile upsert error:', {
+          message: profileError.message,
+          code: profileError.code,
+          details: profileError.details,
+          hint: profileError.hint,
+        })
+        // Non-blocking: the server-side /api/auth/register also writes a
+        // Prisma User row, and the dashboard reads from there as a
+        // fallback. The profile row can be reconciled later.
       }
 
       // Send parental consent email if under-16 student provided a parent email

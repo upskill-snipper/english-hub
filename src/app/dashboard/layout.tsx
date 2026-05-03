@@ -14,6 +14,14 @@
 
 import { TrialCountdownBannerServer } from '@/components/billing/TrialCountdownBannerServer'
 
+// `TrialCountdownBannerServer` reads `cookies()` via the Supabase server
+// client. Marking the whole layout dynamic suppresses the noisy
+// "Dynamic server usage: ... used `cookies`" prerender warnings the build
+// previously emitted on every /dashboard/* route. The protected routes
+// were going to bail out of static prerender anyway (they all gate on a
+// session cookie), so this is purely a build-log cleanup.
+export const dynamic = 'force-dynamic'
+
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
