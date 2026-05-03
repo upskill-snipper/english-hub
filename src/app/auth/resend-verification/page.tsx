@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Mail, Loader2, ArrowLeft, CheckCircle } from 'lucide-react'
 import {
   Card,
@@ -17,6 +18,7 @@ import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 
 export default function ResendVerificationPage() {
+  const router = useRouter()
   const [email, setEmail] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
@@ -34,13 +36,34 @@ export default function ResendVerificationPage() {
     setLoading(true)
 
     try {
-      // The endpoint always returns 200 to prevent account enumeration —
-      // we don't branch on success vs. failure beyond a network failure.
-      await fetch('/api/auth/resend-verification', {
+      // The endpoint always returns 200. The body usually contains a
+      // generic OK message, but if the account is already verified the
+      // body includes `status: 'already_verified'` so we can redirect
+      // the user to the password-reset flow (which is what they actually
+      // need — they don't need a verification link, they need to sign in
+      // or reset their password).
+      const res = await fetch('/api/auth/resend-verification', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       })
+
+      let payload: { ok?: boolean; status?: string } = {}
+      try {
+        payload = await res.json()
+      } catch {
+        // Tolerate unexpected non-JSON bodies — fall through to generic
+        // success state.
+      }
+
+      if (payload.status === 'already_verified') {
+        const flash = encodeURIComponent(
+          'This email is already verified — sign in or reset your password.',
+        )
+        router.push(`/auth/forgot-password?flash=${flash}`)
+        return
+      }
+
       setSuccess(true)
     } catch {
       setError('Network error. Please try again in a moment.')

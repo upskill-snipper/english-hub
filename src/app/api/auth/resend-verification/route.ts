@@ -39,6 +39,23 @@ const GENERIC_OK = {
   message: "If an account exists for that email, we've sent a fresh verification link.",
 }
 
+// Returned only when the caller-supplied email belongs to an account whose
+// email is already confirmed. The `status` field lets the UI redirect the
+// user to the password-reset flow (which is what they actually need).
+//
+// Trade-off: this body distinguishes "verified account exists" from the
+// generic case, which is a partial enumeration leak for already-verified
+// accounts. The HTTP status code stays 200 in every branch to keep the
+// network-level contract uniform (no status-code probing). Product call:
+// founder prefers giving the user clear UI guidance over hiding this
+// signal — the "unverified vs. doesn't exist" distinction (the more
+// sensitive one for spam targeting) remains hidden.
+const ALREADY_VERIFIED_OK = {
+  ok: true,
+  status: 'already_verified' as const,
+  message: 'This email is already verified — sign in or reset your password.',
+}
+
 export async function POST(request: NextRequest) {
   // ─── 1. Per-IP rate limit: 3/hour ─────────────────────────────────────
   // Applied first so an attacker can't bypass it by varying the email.
@@ -77,6 +94,10 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(GENERIC_OK)
   }
 
+  // Site URL — used by both the already-verified email (links to
+  // /auth/forgot-password) and the verification email (callback redirect).
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
+
   // ─── 4. Look up the user via the admin API ───────────────────────────
   // We need to know whether the user (a) exists and (b) is unverified
   // before generating a link. The service-role client is required because
@@ -84,6 +105,7 @@ export async function POST(request: NextRequest) {
   const admin = createServiceRoleClient()
 
   let needsVerification = false
+  let alreadyVerified = false
   try {
     // Supabase JS v2: admin.listUsers supports filtering server-side
     // via `email` in newer versions, but we fall back to scanning the
@@ -96,8 +118,12 @@ export async function POST(request: NextRequest) {
     if (!error && data?.users) {
       const target = data.users.find((u) => u.email?.toLowerCase() === email)
       // `email_confirmed_at` is null until the user clicks the link.
-      if (target && !target.email_confirmed_at) {
-        needsVerification = true
+      if (target) {
+        if (target.email_confirmed_at) {
+          alreadyVerified = true
+        } else {
+          needsVerification = true
+        }
       }
     }
   } catch (err) {
@@ -106,9 +132,43 @@ export async function POST(request: NextRequest) {
     console.error('[resend-verification] listUsers failed:', err)
   }
 
+  // ─── 4a. Already-verified branch ─────────────────────────────────────
+  // Account exists and email is confirmed. The user is on the wrong page
+  // — they don't need a verification link, they need to sign in or reset
+  // their password. Send them a one-time email pointing them at the
+  // password-reset flow, and return a status the UI can act on.
+  if (alreadyVerified) {
+    const resetLink = `${siteUrl}/auth/forgot-password`
+    const safeReset = escapeHtml(resetLink)
+    const html = [
+      `<h2>Your account is already verified — The English Hub</h2>`,
+      `<p>Hi,</p>`,
+      `<p>You asked us to resend a verification link, but your English Hub account is already verified — you don't need a new one.</p>`,
+      `<p>If you can't sign in, reset your password using the link below:</p>`,
+      `<p><a href="${safeReset}" style="display:inline-block;padding:12px 24px;background:#0f172a;color:#fff;text-decoration:none;border-radius:6px;">Reset password</a></p>`,
+      `<p>Or copy and paste this link into your browser:</p>`,
+      `<p style="word-break:break-all;color:#475569;font-size:14px;">${safeReset}</p>`,
+      `<p style="color:#64748b;font-size:14px;">If you didn't request this email, you can safely ignore it.</p>`,
+      `<br />`,
+      `<p>Thanks,<br/>The English Hub Team</p>`,
+    ].join('\n')
+
+    const result = await sendViaResend({
+      to: email,
+      subject: 'Your account is already verified — The English Hub',
+      html,
+      tags: [{ name: 'category', value: 'resend-verification-already-verified' }],
+    })
+    if (!result.sent) {
+      console.warn('[resend-verification] already-verified email not delivered:', result.reason)
+    }
+
+    return NextResponse.json(ALREADY_VERIFIED_OK)
+  }
+
   if (!needsVerification) {
-    // Either the email isn't registered, or the account is already
-    // confirmed. Same response in both cases.
+    // Email isn't registered. Generic response — no email sent, no
+    // existence signal leaked.
     return NextResponse.json(GENERIC_OK)
   }
 
@@ -120,8 +180,6 @@ export async function POST(request: NextRequest) {
   // address (equivalent UX to the signup confirmation link). The user
   // lands on /auth/callback exactly as they would after the original
   // signup email.
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
-
   let actionLink: string | null = null
   try {
     const { data, error } = await admin.auth.admin.generateLink({
