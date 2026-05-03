@@ -132,16 +132,22 @@ function LoginForm() {
           </CardHeader>
 
           <CardContent>
-            <GoogleSignInButton redirectTo={redirectTo} className="w-full mb-4" />
+            {process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' && (
+              <>
+                <GoogleSignInButton redirectTo={redirectTo} className="w-full mb-4" />
 
-            <div className="relative mb-6">
-              <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t border-border" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-card px-2 text-muted-foreground">or sign in with email</span>
-              </div>
-            </div>
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t border-border" />
+                  </div>
+                  <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-card px-2 text-muted-foreground">
+                      or sign in with email
+                    </span>
+                  </div>
+                </div>
+              </>
+            )}
 
             {error && (
               <Alert variant="destructive" className="mb-6">

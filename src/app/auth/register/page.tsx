@@ -415,17 +415,21 @@ function RegisterForm() {
           </div>
 
           <CardContent>
-            <div className="mb-5 space-y-4">
-              <GoogleSignInButton redirectTo="/dashboard" className="w-full" />
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <span className="w-full border-t border-border" />
-                </div>
-                <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-card px-2 text-muted-foreground">or sign up with email</span>
+            {process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' && (
+              <div className="mb-5 space-y-4">
+                <GoogleSignInButton redirectTo="/dashboard" className="w-full" />
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t border-border" />
+                  </div>
+                  <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-card px-2 text-muted-foreground">
+                      or sign up with email
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {error && (
               <Alert variant="destructive" className="mb-6">

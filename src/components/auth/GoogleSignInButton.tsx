@@ -26,6 +26,11 @@ interface GoogleSignInButtonProps {
  * The consuming page is expected to validate `redirectTo` with
  * `validateRedirect` from `@/lib/utils` before passing it in, so this
  * component does not re-validate.
+ *
+ * Gated by the `NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED` env flag — if the
+ * flag is not set to `'true'`, the component renders nothing. Hide
+ * the surrounding "or sign in with email" divider on the consumer
+ * page using the same flag to keep the layout coherent.
  */
 export default function GoogleSignInButton({
   redirectTo,
@@ -35,6 +40,14 @@ export default function GoogleSignInButton({
 }: GoogleSignInButtonProps) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  // Hard guard: if the env flag isn't explicitly 'true', render nothing.
+  // This prevents the raw Supabase 'provider is not enabled' error from
+  // ever reaching the user when Google OAuth hasn't been wired up in
+  // the Supabase project.
+  if (process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED !== 'true') {
+    return null
+  }
 
   async function handleClick() {
     setError(null)
@@ -52,9 +65,16 @@ export default function GoogleSignInButton({
     })
 
     if (oauthError) {
-      setError(
-        'We could not start Google sign-in. Please try again, or sign in with your email and password instead.',
-      )
+      // Map known Supabase errors to friendly copy. The
+      // 'provider is not enabled' case can still happen if the env
+      // flag was flipped on before Google was actually enabled in
+      // the Supabase dashboard — surface a clear message rather
+      // than the raw JSON.
+      const raw = oauthError.message?.toLowerCase() ?? ''
+      const friendly = raw.includes('provider is not enabled')
+        ? 'Google sign-in is not available right now. Please sign in with your email and password instead.'
+        : 'We could not start Google sign-in. Please try again, or sign in with your email and password instead.'
+      setError(friendly)
       setLoading(false)
       return
     }

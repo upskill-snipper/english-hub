@@ -282,15 +282,22 @@ export default function TeacherRegisterPage() {
 
               <CardContent>
                 {/* Google OAuth — Google sign-up users skip the school name
-                    field; we collect that later in /dashboard/teacher/profile. */}
-                <GoogleSignInButton redirectTo="/dashboard/teacher" className="w-full" />
-                <div className="my-6 flex items-center gap-3">
-                  <div className="h-px flex-1 bg-border" />
-                  <span className="text-xs uppercase tracking-wide text-muted-foreground">
-                    or sign up with email
-                  </span>
-                  <div className="h-px flex-1 bg-border" />
-                </div>
+                    field; we collect that later in /dashboard/teacher/profile.
+                    Gated by NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED so we don't
+                    surface the button (or its divider) until Google is
+                    actually enabled in Supabase. */}
+                {process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === 'true' && (
+                  <>
+                    <GoogleSignInButton redirectTo="/dashboard/teacher" className="w-full" />
+                    <div className="my-6 flex items-center gap-3">
+                      <div className="h-px flex-1 bg-border" />
+                      <span className="text-xs uppercase tracking-wide text-muted-foreground">
+                        or sign up with email
+                      </span>
+                      <div className="h-px flex-1 bg-border" />
+                    </div>
+                  </>
+                )}
 
                 {error && (
                   <div className="mb-6 rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive">
