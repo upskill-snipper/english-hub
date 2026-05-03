@@ -77,6 +77,21 @@ const nextConfig = {
         destination: '/igcse/cambridge/0990',
         permanent: true,
       },
+      // Aron Ralston's memoir is widely searched for as "127 Hours"
+      // (the 2010 Danny Boyle film adaptation). Students typing the
+      // film title hit a 404 because the canonical slug uses the book
+      // title. Redirect both the revision-text and revision-notes
+      // paths to the canonical entry.
+      {
+        source: '/revision/texts/127-hours',
+        destination: '/revision/texts/between-a-rock-and-a-hard-place',
+        permanent: true,
+      },
+      {
+        source: '/resources/revision-notes/127-hours',
+        destination: '/resources/revision-notes/between-a-rock-and-a-hard-place',
+        permanent: true,
+      },
     ]
   },
   async headers() {
