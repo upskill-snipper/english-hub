@@ -21,7 +21,16 @@ const SECURITY_HEADERS = [
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
   {
     key: 'Content-Security-Policy',
-    value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.supabase.co https://api.stripe.com https://r.wdfl.co https://*.ingest.sentry.io; frame-src https://js.stripe.com https://hooks.stripe.com; object-src 'none'; base-uri 'self';",
+    value:
+      "default-src 'self'; " +
+      "script-src 'self' 'unsafe-inline' https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com https://*.i.posthog.com; " +
+      "style-src 'self' 'unsafe-inline'; " +
+      "img-src 'self' data: https:; " +
+      "font-src 'self' data:; " +
+      "connect-src 'self' https://*.supabase.co https://api.stripe.com https://r.wdfl.co https://*.ingest.sentry.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.i.posthog.com https://*.posthog.com; " +
+      'frame-src https://js.stripe.com https://hooks.stripe.com; ' +
+      "object-src 'none'; " +
+      "base-uri 'self';",
   },
   { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
 ]
@@ -101,6 +110,29 @@ describe('Security Headers — Content-Security-Policy', () => {
 
   it('connect-src allows Sentry ingest', () => {
     expect(csp['connect-src']).toContain('https://*.ingest.sentry.io')
+  })
+
+  it('connect-src allows GA4 collection endpoints', () => {
+    // GA4 events POST to www.google-analytics.com/g/collect (and
+    // region-prefixed variants). Without these in connect-src the
+    // gtag/js script loads but every event is silently blocked by CSP.
+    expect(csp['connect-src']).toContain('https://*.google-analytics.com')
+    expect(csp['connect-src']).toContain('https://*.analytics.google.com')
+  })
+
+  it('connect-src allows PostHog capture + decide endpoints', () => {
+    // PostHog events POST to *.i.posthog.com (eu.i / us.i). Feature flag
+    // /decide endpoint sits at *.posthog.com. Both must be in connect-src.
+    expect(csp['connect-src']).toContain('https://*.i.posthog.com')
+    expect(csp['connect-src']).toContain('https://*.posthog.com')
+  })
+
+  it('script-src allows PostHog asset CDN', () => {
+    // PostHog SDK fetches its config bundle from *-assets.i.posthog.com,
+    // which loads as a script. Without this in script-src the SDK
+    // initialises but never receives its config (browser blocks the
+    // script load and PostHog stays inert).
+    expect(csp['script-src']).toContain('https://*.i.posthog.com')
   })
 
   it('frame-src restricts to Stripe only', () => {

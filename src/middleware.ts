@@ -268,11 +268,27 @@ function buildCsp(nonce: string, extraScriptHashes: string[] = []): string {
   void nonce
   return [
     `default-src 'self'`,
-    `script-src 'self' 'unsafe-inline'${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com`,
+    // script-src — third-party JS we load:
+    //   googletagmanager.com → GA4 gtag.js bundle
+    //   *.i.posthog.com      → PostHog SDK config + asset CDN
+    //                          (eu-assets.i.posthog.com / us-assets.i.posthog.com)
+    //   js.stripe.com        → Stripe Checkout SDK
+    //   r.wdfl.co            → Rewardful affiliate tracker
+    `script-src 'self' 'unsafe-inline'${extraSrc} https://js.stripe.com https://r.wdfl.co https://www.googletagmanager.com https://*.i.posthog.com`,
     `style-src 'self' 'unsafe-inline'`, // Tailwind JIT inlines styles; acceptable.
     `img-src 'self' data: https:`,
     `font-src 'self' data:`,
-    `connect-src 'self' https://*.supabase.co https://api.stripe.com https://r.wdfl.co https://*.ingest.sentry.io`,
+    // connect-src — third-party endpoints we POST/fetch from at runtime:
+    //   *.supabase.co               → auth + db
+    //   api.stripe.com              → checkout sessions, customer portal
+    //   r.wdfl.co                   → Rewardful conversion attribution
+    //   *.ingest.sentry.io          → error reporting
+    //   *.google-analytics.com      → GA4 event collection (/g/collect)
+    //   *.analytics.google.com      → GA4 alternate collection endpoint
+    //   *.googletagmanager.com      → GA4 server-side container fallback
+    //   *.i.posthog.com             → PostHog capture (eu.i / us.i)
+    //   *.posthog.com               → PostHog feature flags + decide endpoint
+    `connect-src 'self' https://*.supabase.co https://api.stripe.com https://r.wdfl.co https://*.ingest.sentry.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.i.posthog.com https://*.posthog.com`,
     `frame-src https://js.stripe.com https://hooks.stripe.com`,
     `frame-ancestors 'self'`,
     `form-action 'self'`,
