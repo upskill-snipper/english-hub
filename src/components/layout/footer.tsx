@@ -96,7 +96,6 @@ const FOOTER_SECTIONS: FooterSection[] = [
       { href: '/for-parents', label: 'For Parents' },
       { href: '/contact', label: 'Contact' },
       { href: '/press', label: 'Press' },
-      { href: '/brand', label: 'Brand' },
       { href: '/affiliates', label: 'Affiliate Programme' },
     ],
   },
