@@ -1,3 +1,12 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Eduqas GCSE poetry anthology — 12-poem 2025 cluster — The English Hub',
+  description:
+    'WJEC Eduqas 2025 GCSE poetry anthology — all 12 prescribed poems analysed. Themes, voice, comparison pairs and exam-aligned Grade 9 essay plans.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/poetry/eduqas' },
+}
+
 // 28 Apr 2026 — wrong-board cookie redirect intentionally removed.
 // Previously this layout bounced any user whose board cookie wasn't
 // `'eduqas'` to /revision/poetry?wrongBoard=1. That meant a homepage

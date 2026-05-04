@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Animal Farm — Study Guide | The English Hub',
+  title: 'Animal Farm revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Animal Farm by George Orwell: plot, characters, themes, context and key quotations.',
+    "Animal Farm GCSE revision — Orwell's allegorical novella by chapter with characters, themes, context, key quotes and essay plans. AQA, Edexcel and OCR.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/animal-farm',
   },

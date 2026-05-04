@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Pride and Prejudice — Study Guide | The English Hub',
+  title: 'Pride and Prejudice revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Pride and Prejudice by Jane Austen: plot, characters, themes, context and key quotations.',
+    "Pride and Prejudice GCSE revision — Austen's novel of manners by chapter with character analysis. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/pride-and-prejudice',
   },

@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { InfographicBanner } from '@/components/marketing/InfographicBanner'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   BookOpen,
   Target,
@@ -15,9 +16,10 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-  title: 'For Students — The English Hub',
+  title: 'GCSE and IGCSE English revision for students — The English Hub',
   description:
-    'Learn English, build your future. Personalised lessons, AI-marked essays, and real progress tracking for GCSE, IGCSE and A-Level English students.',
+    'Personalised English revision built around your exam board. AI-marked essays, anthology guides, mock papers and grade tracking. Free to start.',
+  alternates: { canonical: 'https://theenglishhub.app/for-students' },
 }
 
 // ─── /for-students ──────────────────────────────────────────────────────────
@@ -49,7 +51,7 @@ const features = [
   {
     icon: Globe2,
     title: 'Real world, real you',
-    desc: 'Build the English confidence you\u2019ll actually use at school, university, work, and everywhere after.',
+    desc: 'Build the English confidence you’ll actually use at school, university, work, and everywhere after.',
   },
 ]
 
@@ -60,13 +62,45 @@ const outcomes = [
   { icon: Sparkles, label: 'Your future. Your choice.' },
 ]
 
+// Student-targeted FAQs. Surfaced both visually at the bottom of the page and
+// as FAQPage JSON-LD for rich-result eligibility (TICKET-4 in seo audit).
+// Brand-voice rules: factual, no marketing flourishes, no exclamation marks,
+// no unverified user counts or testimonials.
+const faqs = [
+  {
+    question: 'What exam boards do you cover?',
+    answer:
+      'We cover AQA, Edexcel, OCR and WJEC Eduqas for GCSE English Language and Literature, plus Cambridge IGCSE and Edexcel IGCSE Literature and Language A.',
+  },
+  {
+    question: 'Is there a free trial?',
+    answer:
+      'Yes. You can start a 7-day free trial with a card on file, and even without a trial you get three free uses of every premium feature.',
+  },
+  {
+    question: 'Do you mark my essays with AI?',
+    answer:
+      'Yes. Submitted essays are marked by AI against the assessment objective rubric of the exam board you have selected.',
+  },
+  {
+    question: 'Can I switch exam boards later?',
+    answer:
+      'Yes. You can switch exam boards at any time from Settings, or directly from the BoardSwitcher in the top navigation.',
+  },
+  {
+    question: 'How much does it cost?',
+    answer: 'Student plans start at £3.49 per month, or £29.99 if you pay annually.',
+  },
+]
+
 export default function ForStudentsPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Infographic banner — one-glance product summary for students */}
+      {/* TODO(designer): regenerate /infographics/for-students.png to remove "Aanya, Student" testimonial */}
       <InfographicBanner
         src="/infographics/for-students.png"
-        alt="Infographic: Learn English, build your future. Shows 78% progress toward goals, skills being built (reading, writing, listening, speaking), all-in-one learning, personalised recommendations, progress tracking, real-world confidence. Student testimonial: 'I'm more confident in English than ever before' \u2014 Aanya, Student."
+        alt="Infographic: GCSE and IGCSE English revision in one place. Shows progress toward goals, skills being built (reading, writing, listening, speaking), all-in-one learning, personalised recommendations, progress tracking, and real-world confidence."
       />
 
       {/* Hero + CTAs */}
@@ -81,11 +115,11 @@ export default function ForStudentsPage() {
             For students
           </Badge>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground">
-            Learn English. Build <span className="text-primary">your future.</span>
+            Your GCSE or IGCSE English revision, <span className="text-primary">in one place</span>
           </h1>
           <p className="mt-5 max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed">
-            All the skills. Real progress. Unlimited possibilities. Built for GCSE, IGCSE and
-            International A-Level English.
+            Personalised revision built around your exam board. AI-marked essays, anthology guides,
+            mock papers and grade tracking.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -171,6 +205,23 @@ export default function ForStudentsPage() {
         </div>
       </section>
 
+      {/* FAQ section — also emits FAQPage JSON-LD below for rich results */}
+      <section className="px-4 sm:px-6 py-16">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center">
+            Frequently asked questions
+          </h2>
+          <dl className="mt-8 space-y-6">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="rounded-xl border border-border/40 p-6">
+                <dt className="font-semibold text-foreground">{faq.question}</dt>
+                <dd className="mt-2 text-sm text-muted-foreground leading-relaxed">{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="px-4 sm:px-6 py-16">
         <div className="mx-auto max-w-3xl text-center">
@@ -201,6 +252,8 @@ export default function ForStudentsPage() {
           </div>
         </div>
       </section>
+
+      <FAQPageJsonLd faqs={faqs} />
     </main>
   )
 }

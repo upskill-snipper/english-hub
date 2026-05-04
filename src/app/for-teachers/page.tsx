@@ -13,6 +13,7 @@ import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { InfographicBanner } from '@/components/marketing/InfographicBanner'
 import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   GraduationCap,
   BookOpen,
@@ -25,7 +26,6 @@ import {
   PenTool,
   ClipboardList,
   Clock,
-  Star,
   AlertTriangle,
   TrendingUp,
   Zap,
@@ -72,8 +72,8 @@ const features = [
   {
     icon: Library,
     color: 'text-amber-600 bg-amber-500/10',
-    title: '300+ Ready Resources',
-    desc: 'A growing library of worksheets, revision materials, model answers, and starter activities -- all ready to print or share digitally.',
+    title: 'Ready Resources Library',
+    desc: 'A growing library of worksheets, revision materials, model answers, and starter activities — all ready to print or share digitally.',
   },
   {
     icon: Award,
@@ -84,35 +84,14 @@ const features = [
 ]
 
 const timeSavers = [
-  'Save 5+ hours per week on lesson planning',
+  'Spend less time on routine planning and marking — the AI shoulders the repetitive work.',
   'Auto-mark homework essays in seconds',
   'Generate worksheets and starter activities instantly',
   'Get at-a-glance class progress without manual tracking',
   'Predict student grades before exam season',
   'Share resources across all your classes in one click',
   'Eliminate paper-based marking admin',
-  'Access 300+ ready-made resources any time',
-]
-
-const testimonials = [
-  {
-    quote:
-      'I used to spend my Sundays planning and marking. Now I use The English Hub and I actually have my weekends back. The AI marking alone saves me three hours a week.',
-    name: 'Sarah M.',
-    role: 'Head of English, secondary school, Manchester',
-  },
-  {
-    quote:
-      'The analytics dashboard has completely changed how I identify students at risk. I catch problems weeks earlier than I used to and the interventions are much more targeted.',
-    name: 'James T.',
-    role: 'English Teacher, grammar school, Birmingham',
-  },
-  {
-    quote:
-      'The lesson builder is brilliant. I can put together a full, AQA-aligned lesson in ten minutes. I have shared it with my whole department and they love it too.',
-    name: 'Priya K.',
-    role: 'Second in English, academy, London',
-  },
+  'Access the ready-made resource library any time',
 ]
 
 const faqs = [
@@ -122,7 +101,7 @@ const faqs = [
   },
   {
     q: 'What features are included?',
-    a: 'Every feature is available on the free tier with 3 uses per tool -- AI Lesson Plans, AI Marking, Worksheet Builder, Student Progress Analytics, and more. The Premium plan removes all limits and gives you full access to 300+ ready resources, predicted grades, and complete exam board coverage. There are no add-on charges.',
+    a: 'Every feature is available on the free tier with 3 uses per tool -- AI Lesson Plans, AI Marking, Worksheet Builder, Student Progress Analytics, and more. The Premium plan removes all limits and gives you full access to the ready resources library, predicted grades, and complete exam board coverage. There are no add-on charges.',
   },
   {
     q: 'Which exam boards do you cover?',
@@ -215,7 +194,7 @@ export default function ForTeachersPage() {
       ================================================================ */}
       <InfographicBanner
         src="/infographics/for-teachers.png"
-        alt="Infographic: powerful AI tools and insights for English teachers — save time, teach with precision, personalise learning, track progress, plan with confidence. Shows class overview, focus areas (vocabulary, structuring writing, reading inference, spelling), AI Lesson Builder, 4.5 hours saved per week, and student reports."
+        alt="Infographic: powerful AI tools and insights for English teachers — save time, teach with precision, personalise learning, track progress, plan with confidence. Shows class overview, focus areas (vocabulary, structuring writing, reading inference, spelling), AI Lesson Builder, faster lesson planning, and student reports."
       />
 
       {/* ================================================================
@@ -234,12 +213,14 @@ export default function ForTeachersPage() {
             For English Teachers
           </Badge>
 
-          <h1 className="text-foreground">The English Hub for Teachers</h1>
+          <h1 className="text-foreground">
+            English department tools for AQA, Edexcel, OCR and WJEC teachers
+          </h1>
 
           <p className="mt-7 text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Premium academic infrastructure, not a cheap app. Save 5+ hours per week with AI-powered
-            lesson building, instant essay marking, and real-time progress analytics -- built
-            specifically for English teachers.
+            Premium academic infrastructure, not a cheap app. AI-powered lesson building, instant
+            essay marking, and real-time progress analytics -- built specifically for English
+            teachers.
           </p>
 
           <div className="mt-8 max-w-2xl mx-auto">
@@ -290,8 +271,8 @@ export default function ForTeachersPage() {
               {
                 icon: Clock,
                 color: 'text-primary bg-primary/10',
-                value: '5hrs+',
-                label: 'Saved Per Week',
+                value: 'Faster',
+                label: 'Lesson Planning',
               },
               {
                 icon: PenTool,
@@ -302,8 +283,8 @@ export default function ForTeachersPage() {
               {
                 icon: BookOpen,
                 color: 'text-purple-600 bg-purple-500/10',
-                value: '300+',
-                label: 'Ready Resources',
+                value: 'Growing',
+                label: 'Resource Library',
               },
               {
                 icon: Award,
@@ -314,8 +295,8 @@ export default function ForTeachersPage() {
               {
                 icon: Users,
                 color: 'text-blue-600 bg-blue-500/10',
-                value: '500+',
-                label: 'Teachers (Apr 2026)',
+                value: 'New',
+                label: 'Founding Teachers',
               },
             ].map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-8 sm:gap-14">
@@ -533,8 +514,7 @@ export default function ForTeachersPage() {
           <div className="text-center mb-16">
             <h2 className="text-foreground">Everything You Need to Teach Smarter</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              Premium tools built specifically for English teachers. Save 5+ hours per week -- less
-              admin, more impact.
+              Premium tools built specifically for English teachers — less admin, more impact.
             </p>
           </div>
 
@@ -831,35 +811,26 @@ export default function ForTeachersPage() {
       <Separator className="opacity-40" />
 
       {/* ================================================================
-          TESTIMONIALS
+          FOUNDING TEACHERS — EMPTY STATE
       ================================================================ */}
       <section className="py-24 sm:py-32 bg-card/20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-foreground">What Teachers Are Saying</h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              Joining over 500 English teachers who have already made the switch.
-            </p>
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-foreground">Be a Founding Teacher</h2>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <Card key={t.name} className="p-6 border-border/40 bg-card/60 flex flex-col">
-                <div className="flex gap-0.5 mb-5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-600" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
-                  "{t.quote}"
-                </p>
-                <div>
-                  <p className="font-semibold text-foreground text-sm">{t.name}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">{t.role}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
+          <Card className="p-6 bg-muted/30 border-dashed">
+            <p className="text-muted-foreground text-center">
+              Founding teachers' first responses coming soon. Want to be one of them?{' '}
+              <Link
+                href="/auth/teacher-register"
+                className="font-medium text-primary underline underline-offset-2"
+              >
+                Start your free teacher account
+              </Link>
+              .
+            </p>
+          </Card>
         </div>
       </section>
 
@@ -931,7 +902,7 @@ export default function ForTeachersPage() {
                 render={<Link href="/auth/teacher-register" />}
               >
                 <Eye className="w-4 h-4 mr-2" />
-                See All 300+ Lessons
+                See All Lessons
               </Button>
             </div>
           </Card>
@@ -1037,7 +1008,7 @@ export default function ForTeachersPage() {
                   'Unlimited Worksheet Builder',
                   'Student Progress Analytics',
                   'Homework & Assignment Manager',
-                  '300+ ready resources',
+                  'Full ready resources library',
                   'Predicted grades & interventions',
                   'All boards -- content tailored to yours',
                   'Cancel any time',
@@ -1220,6 +1191,8 @@ export default function ForTeachersPage() {
               <FAQItem key={faq.q} q={faq.q} a={faq.a} />
             ))}
           </div>
+
+          <FAQPageJsonLd faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))} />
         </div>
       </section>
 
@@ -1236,14 +1209,14 @@ export default function ForTeachersPage() {
               className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold gap-1.5 px-3 py-1 hover:bg-primary/[0.1] transition-colors"
             >
               <Users className="w-3.5 h-3.5" />
-              Over 500 teachers — as of April 2026
+              Founding teachers welcome
             </Badge>
           </Link>
 
           <h2 className="text-foreground mb-6">Ready to Reclaim Your Evenings?</h2>
           <p className="text-muted-foreground text-xl max-w-xl mx-auto mb-10 leading-relaxed">
-            Join over 500 English teachers saving 5+ hours every week with The English Hub. Try
-            every feature free -- upgrade when you are ready.
+            Join the founding teachers using The English Hub to spend less time on routine planning
+            and marking. Try every feature free -- upgrade when you are ready.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

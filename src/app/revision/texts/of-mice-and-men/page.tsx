@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Of Mice and Men — Study Guide | The English Hub',
+  title: 'Of Mice and Men revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Of Mice and Men by John Steinbeck: plot summary, characters, themes, historical context and key quotations for Edexcel IGCSE.',
+    "Of Mice and Men IGCSE revision — Steinbeck's novella with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/of-mice-and-men',
   },

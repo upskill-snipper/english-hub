@@ -11,6 +11,7 @@ import { TrustBox } from '@/components/trustpilot/TrustBox'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
 import { AffiliateCodeField, useAffiliateCodeField } from '@/components/billing/AffiliateCodeField'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   CheckCircle,
   X,
@@ -443,6 +444,10 @@ function PricingContent() {
     <main className="relative overflow-hidden">
       {/* Funnel: pricing_viewed (consent-gated in src/lib/posthog.ts) */}
       <TrackEvent event="pricing_viewed" />
+      {/* FAQPage structured data — emitted as <script type="application/ld+json">.
+          Client component, so no nonce is passed (nonce prop is optional;
+          middleware handles per-request CSP nonces on the response). */}
+      <FAQPageJsonLd faqs={FAQ_ITEMS.map((i) => ({ question: i.q, answer: i.a }))} />
       {/* Background gradient effects */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-3xl" />

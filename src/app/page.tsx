@@ -20,10 +20,11 @@ export default async function Home() {
         level="gcse"
         boards={GCSE_BOARDS}
         sectionId="gcse-boards"
-        kicker="Start here — pick your exam board"
-        heading="GCSE boards"
+        kicker="Pick your exam board to start"
+        heading="GCSE and IGCSE English revision, AI marked against the AO mark scheme."
         subheading="Year 10–11, ages 14–16. Tap your board and you’ll land on the exact specification you sit."
         showHelpLink={false}
+        headingLevel="h1"
       />
 
       {/* 2. IGCSE board picker — international split with a thin divider on top. */}
@@ -131,6 +132,7 @@ type BoardPickerSectionProps = {
   kicker?: string
   showHelpLink?: boolean
   showDivider?: boolean
+  headingLevel?: 'h1' | 'h2'
 }
 
 function BoardPickerSection({
@@ -142,9 +144,11 @@ function BoardPickerSection({
   kicker,
   showHelpLink = false,
   showDivider = false,
+  headingLevel = 'h2',
 }: BoardPickerSectionProps) {
   const headingId = `${sectionId}-heading`
   const isGcse = level === 'gcse'
+  const HeadingTag = headingLevel
 
   return (
     <section
@@ -162,12 +166,12 @@ function BoardPickerSection({
               {kicker}
             </p>
           ) : null}
-          <h2
+          <HeadingTag
             id={headingId}
             className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
           >
             {heading}
-          </h2>
+          </HeadingTag>
           <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
             {subheading}
           </p>

@@ -7,9 +7,9 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
-  title: 'Pigeon English — Study Guide | The English Hub',
+  title: 'Pigeon English revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Pigeon English by Stephen Kelman: plot, characters, themes, context and key quotations for AQA GCSE.',
+    "Pigeon English GCSE revision — Stephen Kelman's 2011 novel with plot, characters, themes, context and key quotes. Aligned to the AQA GCSE Literature spec.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/pigeon-english',
   },

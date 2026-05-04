@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'The Tempest — Study Guide | The English Hub',
+  title: 'The Tempest revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for The Tempest by William Shakespeare: plot, characters, themes, context and key quotations.',
+    "The Tempest GCSE revision — Shakespeare's late romance with plot, characters, themes, context and key quotes. Aligned to AQA and OCR English Literature.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/the-tempest',
   },
@@ -141,7 +141,8 @@ const data: TextGuideData = {
         'Caliban turns the gift of European education violently against the giver. Shakespeare captures in two lines the paradox of colonial pedagogy: the subject acquires the master\u2019s tongue and finds that the only use he can make of it is rage at his own oppression. Post-colonial writers from Aim\u00E9 C\u00E9saire to Ng\u0169g\u0129 wa Thiong\u2019o have treated this couplet as a founding statement of the problem of writing back against power in a language that is not one\u2019s own.',
     },
     {
-      quote: '"Full fathom five thy father lies; / Of his bones are coral made; / Those are pearls that were his eyes."',
+      quote:
+        '"Full fathom five thy father lies; / Of his bones are coral made; / Those are pearls that were his eyes."',
       who: 'Ariel (song) \u2014 Act 1, Scene 2',
       analysis:
         'Ariel\u2019s song lures Ferdinand towards Miranda\u2019s cell while falsely telling him that his father has drowned. The rich \u201Csea-change\u201D imagery \u2014 bones turned to coral, eyes into pearls \u2014 introduces the play\u2019s defining motif of transformation: drowning becomes decoration, loss becomes beauty, grief is reshaped into art. The song is also the audience\u2019s first sign that music on this island is a moral and magical instrument for reordering feeling, not simply atmospheric ornament.',
@@ -165,7 +166,8 @@ const data: TextGuideData = {
         'Antonio tempts Sebastian to murder his sleeping brother Alonso, casually reproducing on the island the crime he committed against Prospero twelve years earlier in Milan. The phrase \u201Cstrong imagination\u201D makes naked ambition sound almost visionary, dressing up political crime as a kind of destiny. Shakespeare\u2019s deliberate repetition of the original usurpation signals how easily history will repeat itself without intervention, and quietly sets up the moral test of whether Prospero can break the cycle through forgiveness.',
     },
     {
-      quote: '"Be not afeard; the isle is full of noises, / Sounds and sweet airs, that give delight and hurt not."',
+      quote:
+        '"Be not afeard; the isle is full of noises, / Sounds and sweet airs, that give delight and hurt not."',
       who: 'Caliban \u2014 Act 3, Scene 2',
       analysis:
         'Caliban calms the drunken Stephano and Trinculo with an unexpected description of the island\u2019s music. The lyricism of the speech \u2014 its gentle \u201Csweet airs,\u201D its sleeping \u201Criches ready to drop\u201D \u2014 complicates Prospero\u2019s claim that Caliban is irredeemably savage. The figure most abused by the play\u2019s hierarchy turns out to have the deepest imaginative response to the place itself, and Shakespeare invites audiences to hear in his voice the sound of the island itself.',
@@ -177,13 +179,15 @@ const data: TextGuideData = {
         'Ariel materialises as a terrifying harpy at the vanishing banquet and names Alonso, Antonio and Sebastian as the \u201Cthree men of sin\u201D who drove Prospero into exile. The staged supernatural judgement begins Alonso\u2019s repentance and shows Prospero using theatre as a moral instrument, not simply a punitive one: the spectacle is designed not to kill but to make the guilty confront what they have done. It also demonstrates Shakespeare\u2019s confidence in the new scenic machinery of the Blackfriars stage.',
     },
     {
-      quote: '"Our revels now are ended. These our actors, / As I foretold you, were all spirits and / Are melted into air, into thin air."',
+      quote:
+        '"Our revels now are ended. These our actors, / As I foretold you, were all spirits and / Are melted into air, into thin air."',
       who: 'Prospero \u2014 Act 4, Scene 1',
       analysis:
         'Prospero breaks off the masque suddenly, remembering Caliban\u2019s plot, and uses theatrical vocabulary \u2014 \u201Crevels,\u201D \u201Cactors,\u201D \u201Cmelted into air\u201D \u2014 to describe the dissolution of all apparently solid things. The speech brings the play\u2019s magic and Shakespeare\u2019s own craft into the same extended metaphor, so that the boundary between the stage spectacle, the island setting and ordinary life becomes suddenly porous. It is the clearest moment in which the play reflects on its own illusionism.',
     },
     {
-      quote: '"We are such stuff / As dreams are made on, and our little life / Is rounded with a sleep."',
+      quote:
+        '"We are such stuff / As dreams are made on, and our little life / Is rounded with a sleep."',
       who: 'Prospero \u2014 Act 4, Scene 1',
       analysis:
         'One of the most famous meditations on mortality in English, extending the \u201Crevels\u201D image of the previous lines to human life itself. The play\u2019s romance optimism is quietly qualified here: even the restoration of Milan and the marriage of Ferdinand and Miranda take place inside a dream bordered by sleep and death. Shakespeare gives Prospero a vocabulary of breathtaking tenderness for the very impermanence his magic appears to deny, deepening the play beyond its comic surface.',
@@ -195,7 +199,8 @@ const data: TextGuideData = {
         'Prospero asserts in his most extreme language that Caliban is incurably evil by nature, a claim the play both voices and tests. The rhyming \u201Cnature / nurture\u201D coinage is the clearest statement of one of the play\u2019s central questions and has entered the wider English tradition. Crucially, Shakespeare does not endorse the judgement: the audience is invited to weigh it against Caliban\u2019s lyrical \u201Cnoises\u201D speech and his final promise to \u201Cseek for grace,\u201D so the line reveals as much about Prospero\u2019s rage as about Caliban.',
     },
     {
-      quote: '"Though with their high wrongs I am struck to th\' quick, / Yet with my nobler reason \u2019gainst my fury / Do I take part: the rarer action is / In virtue than in vengeance."',
+      quote:
+        '"Though with their high wrongs I am struck to th\' quick, / Yet with my nobler reason \u2019gainst my fury / Do I take part: the rarer action is / In virtue than in vengeance."',
       who: 'Prospero \u2014 Act 5, Scene 1',
       analysis:
         'The moral pivot of the play. Prompted by Ariel\u2019s pity (\u201Cmine would, sir, were I human\u201D), Prospero deliberately chooses mercy over revenge and formulates the ethical principle \u2014 that forgiveness is a rarer and greater act than punishment \u2014 that governs Shakespeare\u2019s late romances as a group. Note the verb \u201Ctake part\u201D: Prospero presents reason as joining a faction against fury rather than simply overruling it, so the choice feels like a hard-won political decision rather than a spontaneous feeling.',
@@ -207,13 +212,15 @@ const data: TextGuideData = {
         'Prospero\u2019s grand invocation of the spirits he has commanded, adapted closely from Ovid\u2019s Medea as translated by Arthur Golding, introduces his abjuration of magic. Shakespeare pointedly lets the sorcerer catalogue his powers one last time \u2014 raising the dead, bedimming the sun, rifting the oak \u2014 before he formally lays them down, so that the renunciation carries real weight rather than feeling like the giving up of something trivial. The classical allusion also tells audiences to measure his magic on an epic scale.',
     },
     {
-      quote: '"This rough magic / I here abjure... / I\'ll break my staff, / Bury it certain fathoms in the earth, / And deeper than did ever plummet sound / I\'ll drown my book."',
+      quote:
+        '"This rough magic / I here abjure... / I\'ll break my staff, / Bury it certain fathoms in the earth, / And deeper than did ever plummet sound / I\'ll drown my book."',
       who: 'Prospero \u2014 Act 5, Scene 1',
       analysis:
         'Prospero renounces his art in precise physical terms: staff broken, book drowned \u201Cdeeper than did ever plummet sound.\u201D The specificity is important, because it ties the play\u2019s magic back to the material book and theatrical props on which it depends. The drowned book has long been read, perhaps over-read, as Shakespeare\u2019s own farewell to the stage, though modern scholarship notes he continued to collaborate afterwards. Either way the action gives his renunciation unusual dramatic weight.',
     },
     {
-      quote: '"O, wonder! / How many goodly creatures are there here! / How beauteous mankind is! O brave new world, / That has such people in\'t!"',
+      quote:
+        '"O, wonder! / How many goodly creatures are there here! / How beauteous mankind is! O brave new world, / That has such people in\'t!"',
       who: 'Miranda \u2014 Act 5, Scene 1',
       analysis:
         'Miranda greets the shipwrecked nobles with unguarded delight, seeing for the first time in her life people who are neither her father nor Caliban. Prospero\u2019s dry reply \u2014 \u201C\u2019Tis new to thee\u201D \u2014 lets the audience hear the irony: the \u201Cgoodly creatures\u201D before her include the usurpers Antonio and Sebastian. The line gave Aldous Huxley the title Brave New World in 1932 and has since become shorthand for innocent optimism that is about to meet the real world.',
@@ -240,43 +247,365 @@ const data: TextGuideData = {
 }
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'tt-1', question: 'Who raises the storm at the start of the play?', type: 'multiple-choice', options: ['Ariel, on Prospero\'s orders', 'Caliban', 'Sycorax', 'The gods'], correctIndex: 0, explanation: 'Prospero commands the storm through his art; Ariel carries it out. No one on board actually dies — the tempest is an illusion designed to bring Prospero\'s enemies within his reach.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'tt-2', question: 'Who was Duke of Milan before the play begins?', type: 'multiple-choice', options: ['Antonio', 'Alonso', 'Prospero', 'Gonzalo'], correctIndex: 2, explanation: 'Prospero was Duke of Milan until his brother Antonio, backed by Alonso of Naples, usurped him twelve years earlier and set him adrift with Miranda.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'tt-3', question: 'Who is Caliban\'s mother?', type: 'multiple-choice', options: ['Miranda', 'Sycorax', 'Juno', 'Ceres'], correctIndex: 1, explanation: 'Sycorax, a witch from Algiers, inhabited the island before Prospero arrived. She imprisoned Ariel in a pine tree and died before the play begins, leaving Caliban as her only surviving child.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'tt-4', question: 'What does Prospero promise Ariel?', type: 'multiple-choice', options: ['Gold', 'Marriage to Miranda', 'Freedom', 'A ship'], correctIndex: 2, explanation: 'Ariel was freed from Sycorax\'s pine tree by Prospero and serves him in return for an eventual release. The play ends with Prospero honouring that promise: "to the elements / Be free."', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'tt-5', question: 'Who falls in love with Miranda?', type: 'multiple-choice', options: ['Caliban', 'Stephano', 'Ferdinand', 'Trinculo'], correctIndex: 2, explanation: 'Ferdinand, Prince of Naples, is led by Ariel\'s music to Prospero\'s cell. He and Miranda fall in love at first sight, and their betrothal will unite Milan and Naples.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'tt-6', question: 'What task does Prospero set Ferdinand to prove his love?', type: 'multiple-choice', options: ['Kill Caliban', 'Carry logs', 'Recite poetry', 'Win a sword fight'], correctIndex: 1, explanation: 'Prospero pretends to distrust Ferdinand and orders him to carry heavy logs. Ferdinand endures the drudgery gladly for Miranda\'s sake, proving his devotion.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'tt-7', question: 'Who tries to persuade Sebastian to murder Alonso?', type: 'multiple-choice', options: ['Gonzalo', 'Antonio', 'Prospero', 'Stephano'], correctIndex: 1, explanation: 'Antonio, who once usurped Prospero, tempts Sebastian to kill his sleeping brother Alonso and seize the crown of Naples. Ariel intervenes before they strike.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'tt-8', question: 'Why does Prospero forgive his enemies in Act 5?', type: 'multiple-choice', options: ['They beg him directly', 'Miranda asks him to', 'Ariel\'s pity shames him into choosing virtue over vengeance', 'He forgets his anger'], correctIndex: 2, explanation: 'When Ariel says his own heart would soften "were I human," Prospero decides that "the rarer action is / In virtue than in vengeance." Forgiveness becomes the climax of the play.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'tt-9', question: 'What does "We are such stuff / As dreams are made on" mean in context?', type: 'multiple-choice', options: ['Life is a literal dream', 'Human life, like the masque that has just ended, is brief and insubstantial', 'The actors are tired', 'Prospero is drunk'], correctIndex: 1, explanation: 'Prospero dismisses the masque and extends the image to human life itself: everything solid melts into nothing. The metatheatrical metaphor links the play\'s magic to the transience of existence.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'tt-10', question: 'What does Caliban mean by "You taught me language, and my profit on\'t / Is, I know how to curse"?', type: 'multiple-choice', options: ['He regrets learning to read', 'European education has given him only the tools to express anger at his enslavement', 'He is a bad student', 'He prefers his own language'], correctIndex: 1, explanation: 'Caliban turns the coloniser\'s gift against him. Since the twentieth century this line has been central to post-colonial readings: the subject acquires the master\'s tongue and uses it to resist.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'tt-11', question: 'Whose death does Ferdinand wrongly believe he is mourning?', type: 'multiple-choice', options: ['His mother\'s', 'His father Alonso\'s', 'Miranda\'s', 'Gonzalo\'s'], correctIndex: 1, explanation: 'Ariel\'s song "Full fathom five thy father lies" convinces Ferdinand that Alonso has drowned. The reunion of father and son in Act 5 is one of the great romance recognitions of the play.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'tt-12', question: 'Which pamphlets about a 1609 shipwreck are thought to have influenced the play?', type: 'multiple-choice', options: ['Accounts of the Armada', 'The Bermuda pamphlets about the Sea Venture', 'Marco Polo\'s travels', 'Raleigh\'s Guiana'], correctIndex: 1, explanation: 'The Sea Venture was wrecked on Bermuda in 1609; survivors\' accounts by William Strachey and Sylvester Jourdain reached London in 1610. Shakespeare borrowed details such as the "still-vex\'d Bermoothes" and St Elmo\'s fire.', topic: 'Context', difficulty: 'higher' },
-  { id: 'tt-13', question: 'Which speech of Gonzalo\'s borrows from Montaigne\'s essay "Of Cannibals"?', type: 'multiple-choice', options: ['His lament for Alonso', 'His "commonwealth" speech imagining an ideal society', 'His warning to Prospero', 'His final blessing'], correctIndex: 1, explanation: 'Gonzalo\'s utopian vision of a society without labour, trade or hierarchy closely echoes Florio\'s 1603 translation of Montaigne. Shakespeare places it against Antonio\'s murder plot to highlight two visions of human nature.', topic: 'Context', difficulty: 'higher' },
-  { id: 'tt-14', question: 'How does Miranda\'s "O brave new world" speech often function in performance?', type: 'multiple-choice', options: ['As a triumphant closing line', 'As an ironic moment — she is greeting men including Antonio and Sebastian, the play\'s villains', 'As a prophecy of the future', 'As a rebuke to Prospero'], correctIndex: 1, explanation: 'Miranda is sheltered from the political crimes of Milan and Naples and sees only "goodly creatures." Prospero\'s reply "\'Tis new to thee" lets the audience feel the gap between her innocence and what the audience knows.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'tt-15', question: 'What action does Prospero promise to take at the end of Act 5?', type: 'multiple-choice', options: ['Sail home as a tyrant', 'Break his staff and drown his book, giving up magic', 'Stay on the island forever', 'Kill Antonio'], correctIndex: 1, explanation: 'Prospero vows to "break my staff" and "drown my book" after abjuring his "rough magic." The physical renunciation has long been read, perhaps over-read, as Shakespeare\'s own farewell to the stage.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'tt-16', question: 'What is unusual about Antonio\'s response to Prospero\'s forgiveness?', type: 'multiple-choice', options: ['He weeps with gratitude', 'He says almost nothing in reply', 'He refuses the pardon', 'He attacks Prospero'], correctIndex: 1, explanation: 'The play gives Antonio no words of apology or acceptance. Modern productions often exploit this textual silence to question whether reconciliation is really complete, making Antonio the uneasy counterweight to the romance ending.', topic: 'Characters', difficulty: 'grade-9' },
-  { id: 'tt-17', question: 'Why is The Tempest described as a "romance" rather than a tragedy or comedy?', type: 'multiple-choice', options: ['Because it is about love', 'Because, like Shakespeare\'s other late plays, it moves through loss and near-tragedy to forgiveness, reunion and restoration', 'Because it is set in Italy', 'Because Prospero is a magician'], correctIndex: 1, explanation: 'Grouped with Pericles, Cymbeline and The Winter\'s Tale, the romances share patterns of lost children restored, generational healing and near-miraculous resolution. The form allows Shakespeare to stage forgiveness as a public, political act.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'tt-18', question: 'What function does the Epilogue serve?', type: 'multiple-choice', options: ['It sets up a sequel', 'Prospero asks the audience\'s applause to release him, extending the play\'s theme of pardon to the theatrical contract itself', 'It explains the plot', 'It names the actors'], correctIndex: 1, explanation: 'Prospero\'s final couplet — "As you from crimes would pardon\'d be, / Let your indulgence set me free" — makes the audience participants in the play\'s economy of forgiveness, a strikingly metatheatrical close.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'tt-19', question: 'How has Caliban been reread since Aime Cesaire\'s 1969 Une Tempete?', type: 'multiple-choice', options: ['As a purely comic character', 'As a figure for the colonised subject whose land has been taken and whose language has been imposed', 'As a spirit', 'As Prospero\'s son'], correctIndex: 1, explanation: 'Cesaire\'s rewriting placed Caliban at the centre as a Black colonised subject, and since then post-colonial critics have treated him as a focal point for thinking about slavery, race and occupation, rather than as the "savage" Prospero claims.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'tt-20', question: 'Who conspires with Stephano and Trinculo against Prospero?', type: 'multiple-choice', options: ['Ariel', 'Caliban', 'Sebastian', 'Antonio'], correctIndex: 1, explanation: 'Caliban, intoxicated by Stephano\'s wine, takes him for a god and promises to help kill Prospero and hand over Miranda. The comic subplot deliberately mirrors Antonio and Sebastian\'s plot against Alonso.', topic: 'Plot', difficulty: 'foundation' },
+  {
+    id: 'tt-1',
+    question: 'Who raises the storm at the start of the play?',
+    type: 'multiple-choice',
+    options: ["Ariel, on Prospero's orders", 'Caliban', 'Sycorax', 'The gods'],
+    correctIndex: 0,
+    explanation:
+      "Prospero commands the storm through his art; Ariel carries it out. No one on board actually dies — the tempest is an illusion designed to bring Prospero's enemies within his reach.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tt-2',
+    question: 'Who was Duke of Milan before the play begins?',
+    type: 'multiple-choice',
+    options: ['Antonio', 'Alonso', 'Prospero', 'Gonzalo'],
+    correctIndex: 2,
+    explanation:
+      'Prospero was Duke of Milan until his brother Antonio, backed by Alonso of Naples, usurped him twelve years earlier and set him adrift with Miranda.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tt-3',
+    question: "Who is Caliban's mother?",
+    type: 'multiple-choice',
+    options: ['Miranda', 'Sycorax', 'Juno', 'Ceres'],
+    correctIndex: 1,
+    explanation:
+      'Sycorax, a witch from Algiers, inhabited the island before Prospero arrived. She imprisoned Ariel in a pine tree and died before the play begins, leaving Caliban as her only surviving child.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tt-4',
+    question: 'What does Prospero promise Ariel?',
+    type: 'multiple-choice',
+    options: ['Gold', 'Marriage to Miranda', 'Freedom', 'A ship'],
+    correctIndex: 2,
+    explanation:
+      'Ariel was freed from Sycorax\'s pine tree by Prospero and serves him in return for an eventual release. The play ends with Prospero honouring that promise: "to the elements / Be free."',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tt-5',
+    question: 'Who falls in love with Miranda?',
+    type: 'multiple-choice',
+    options: ['Caliban', 'Stephano', 'Ferdinand', 'Trinculo'],
+    correctIndex: 2,
+    explanation:
+      "Ferdinand, Prince of Naples, is led by Ariel's music to Prospero's cell. He and Miranda fall in love at first sight, and their betrothal will unite Milan and Naples.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tt-6',
+    question: 'What task does Prospero set Ferdinand to prove his love?',
+    type: 'multiple-choice',
+    options: ['Kill Caliban', 'Carry logs', 'Recite poetry', 'Win a sword fight'],
+    correctIndex: 1,
+    explanation:
+      "Prospero pretends to distrust Ferdinand and orders him to carry heavy logs. Ferdinand endures the drudgery gladly for Miranda's sake, proving his devotion.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tt-7',
+    question: 'Who tries to persuade Sebastian to murder Alonso?',
+    type: 'multiple-choice',
+    options: ['Gonzalo', 'Antonio', 'Prospero', 'Stephano'],
+    correctIndex: 1,
+    explanation:
+      'Antonio, who once usurped Prospero, tempts Sebastian to kill his sleeping brother Alonso and seize the crown of Naples. Ariel intervenes before they strike.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'tt-8',
+    question: 'Why does Prospero forgive his enemies in Act 5?',
+    type: 'multiple-choice',
+    options: [
+      'They beg him directly',
+      'Miranda asks him to',
+      "Ariel's pity shames him into choosing virtue over vengeance",
+      'He forgets his anger',
+    ],
+    correctIndex: 2,
+    explanation:
+      'When Ariel says his own heart would soften "were I human," Prospero decides that "the rarer action is / In virtue than in vengeance." Forgiveness becomes the climax of the play.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'tt-9',
+    question: 'What does "We are such stuff / As dreams are made on" mean in context?',
+    type: 'multiple-choice',
+    options: [
+      'Life is a literal dream',
+      'Human life, like the masque that has just ended, is brief and insubstantial',
+      'The actors are tired',
+      'Prospero is drunk',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Prospero dismisses the masque and extends the image to human life itself: everything solid melts into nothing. The metatheatrical metaphor links the play's magic to the transience of existence.",
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'tt-10',
+    question:
+      'What does Caliban mean by "You taught me language, and my profit on\'t / Is, I know how to curse"?',
+    type: 'multiple-choice',
+    options: [
+      'He regrets learning to read',
+      'European education has given him only the tools to express anger at his enslavement',
+      'He is a bad student',
+      'He prefers his own language',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Caliban turns the coloniser's gift against him. Since the twentieth century this line has been central to post-colonial readings: the subject acquires the master's tongue and uses it to resist.",
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'tt-11',
+    question: 'Whose death does Ferdinand wrongly believe he is mourning?',
+    type: 'multiple-choice',
+    options: ["His mother's", "His father Alonso's", "Miranda's", "Gonzalo's"],
+    correctIndex: 1,
+    explanation:
+      'Ariel\'s song "Full fathom five thy father lies" convinces Ferdinand that Alonso has drowned. The reunion of father and son in Act 5 is one of the great romance recognitions of the play.',
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'tt-12',
+    question: 'Which pamphlets about a 1609 shipwreck are thought to have influenced the play?',
+    type: 'multiple-choice',
+    options: [
+      'Accounts of the Armada',
+      'The Bermuda pamphlets about the Sea Venture',
+      "Marco Polo's travels",
+      "Raleigh's Guiana",
+    ],
+    correctIndex: 1,
+    explanation:
+      "The Sea Venture was wrecked on Bermuda in 1609; survivors' accounts by William Strachey and Sylvester Jourdain reached London in 1610. Shakespeare borrowed details such as the \"still-vex'd Bermoothes\" and St Elmo's fire.",
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'tt-13',
+    question: 'Which speech of Gonzalo\'s borrows from Montaigne\'s essay "Of Cannibals"?',
+    type: 'multiple-choice',
+    options: [
+      'His lament for Alonso',
+      'His "commonwealth" speech imagining an ideal society',
+      'His warning to Prospero',
+      'His final blessing',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Gonzalo's utopian vision of a society without labour, trade or hierarchy closely echoes Florio's 1603 translation of Montaigne. Shakespeare places it against Antonio's murder plot to highlight two visions of human nature.",
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'tt-14',
+    question: 'How does Miranda\'s "O brave new world" speech often function in performance?',
+    type: 'multiple-choice',
+    options: [
+      'As a triumphant closing line',
+      "As an ironic moment — she is greeting men including Antonio and Sebastian, the play's villains",
+      'As a prophecy of the future',
+      'As a rebuke to Prospero',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Miranda is sheltered from the political crimes of Milan and Naples and sees only "goodly creatures." Prospero\'s reply "\'Tis new to thee" lets the audience feel the gap between her innocence and what the audience knows.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'tt-15',
+    question: 'What action does Prospero promise to take at the end of Act 5?',
+    type: 'multiple-choice',
+    options: [
+      'Sail home as a tyrant',
+      'Break his staff and drown his book, giving up magic',
+      'Stay on the island forever',
+      'Kill Antonio',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Prospero vows to "break my staff" and "drown my book" after abjuring his "rough magic." The physical renunciation has long been read, perhaps over-read, as Shakespeare\'s own farewell to the stage.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'tt-16',
+    question: "What is unusual about Antonio's response to Prospero's forgiveness?",
+    type: 'multiple-choice',
+    options: [
+      'He weeps with gratitude',
+      'He says almost nothing in reply',
+      'He refuses the pardon',
+      'He attacks Prospero',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The play gives Antonio no words of apology or acceptance. Modern productions often exploit this textual silence to question whether reconciliation is really complete, making Antonio the uneasy counterweight to the romance ending.',
+    topic: 'Characters',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'tt-17',
+    question: 'Why is The Tempest described as a "romance" rather than a tragedy or comedy?',
+    type: 'multiple-choice',
+    options: [
+      'Because it is about love',
+      "Because, like Shakespeare's other late plays, it moves through loss and near-tragedy to forgiveness, reunion and restoration",
+      'Because it is set in Italy',
+      'Because Prospero is a magician',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Grouped with Pericles, Cymbeline and The Winter's Tale, the romances share patterns of lost children restored, generational healing and near-miraculous resolution. The form allows Shakespeare to stage forgiveness as a public, political act.",
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'tt-18',
+    question: 'What function does the Epilogue serve?',
+    type: 'multiple-choice',
+    options: [
+      'It sets up a sequel',
+      "Prospero asks the audience's applause to release him, extending the play's theme of pardon to the theatrical contract itself",
+      'It explains the plot',
+      'It names the actors',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Prospero's final couplet — \"As you from crimes would pardon'd be, / Let your indulgence set me free\" — makes the audience participants in the play's economy of forgiveness, a strikingly metatheatrical close.",
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'tt-19',
+    question: "How has Caliban been reread since Aime Cesaire's 1969 Une Tempete?",
+    type: 'multiple-choice',
+    options: [
+      'As a purely comic character',
+      'As a figure for the colonised subject whose land has been taken and whose language has been imposed',
+      'As a spirit',
+      "As Prospero's son",
+    ],
+    correctIndex: 1,
+    explanation:
+      'Cesaire\'s rewriting placed Caliban at the centre as a Black colonised subject, and since then post-colonial critics have treated him as a focal point for thinking about slavery, race and occupation, rather than as the "savage" Prospero claims.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'tt-20',
+    question: 'Who conspires with Stephano and Trinculo against Prospero?',
+    type: 'multiple-choice',
+    options: ['Ariel', 'Caliban', 'Sebastian', 'Antonio'],
+    correctIndex: 1,
+    explanation:
+      "Caliban, intoxicated by Stephano's wine, takes him for a god and promises to help kill Prospero and hand over Miranda. The comic subplot deliberately mirrors Antonio and Sebastian's plot against Alonso.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Power and Authority', summary: 'Every relationship in the play is shaped by the question of who rules whom, from Prospero\'s magic to Stephano\'s drunken kingship.', keyPoints: ['Prospero controls the island, Ariel, Caliban and the castaways through his art', 'Antonio\'s usurpation of Milan is the original crime that drives the plot', 'Antonio tempts Sebastian to repeat the same crime on the island', 'The comic subplot parodies political ambition through Stephano\'s "kingship"', 'Prospero measures true authority by his willingness to give it up in Act 5'] },
-  { topic: 'Forgiveness and Reconciliation', summary: 'The play moves through loss and suffering towards the choice of mercy over revenge, the moral climax of Shakespeare\'s late romances.', keyPoints: ['"The rarer action is / In virtue than in vengeance" — Act 5 pivot', 'Ariel\'s pity shames Prospero into forgiveness', 'Ferdinand and Miranda\'s marriage heals the rift between Milan and Naples', 'Alonso repents; Caliban promises to "seek for grace"', 'Antonio\'s silence leaves the reconciliation deliberately incomplete'] },
-  { topic: 'Colonialism and Otherness', summary: 'The play stages the encounter between a European ruler and the island\'s only inhabitant, and has become a central text for post-colonial thought.', keyPoints: ['Caliban\'s "This island\'s mine by Sycorax my mother" is the core colonial claim', 'Prospero teaches then enslaves Caliban after the attempt on Miranda', 'Gonzalo\'s commonwealth echoes Montaigne\'s "Of Cannibals"', 'Bermuda pamphlets (1609 Sea Venture) feed the island setting', 'Cesaire\'s Une Tempete (1969) reframes the play around race and empire'] },
-  { topic: 'Illusion and Reality', summary: 'Most of the action takes place inside Prospero\'s illusions, and Shakespeare constantly links the magic to his own theatrical art.', keyPoints: ['The storm drowns no one — it is a moral instrument, not a disaster', 'The vanishing banquet, the masque and the spirit-hounds all stage judgement', '"Our revels now are ended" equates masque, life and play', '"We are such stuff / As dreams are made on" meditates on mortality', 'The Epilogue hands magical power over to the audience\'s applause'] },
-  { topic: 'Nature vs Nurture', summary: 'The play tests Prospero\'s claim that Caliban is irredeemably savage by nature against Caliban\'s own lyrical voice and final repentance.', keyPoints: ['"A devil, a born devil, on whose nature / Nurture can never stick" (Prospero)', '"You taught me language..." — education turned against its giver', 'Caliban\'s "isle is full of noises" speech complicates the "savage" label', 'Miranda\'s isolated but compassionate upbringing is a counter-case', 'Caliban\'s closing promise to "seek for grace" leaves the question open'] },
-  { topic: 'Freedom and Servitude', summary: 'The island is full of servants, slaves and would-be masters, and the play\'s repeated movement is from constraint to release.', keyPoints: ['Ariel serves under contract and dreams of elemental freedom', 'Caliban is enslaved; he seeks a new master in Stephano', 'Ferdinand chooses loving servitude (log-carrying for Miranda)', 'The nobles are held in a "charmed" bondage by Prospero\'s art', 'Prospero frees Ariel and is himself freed by the audience\'s applause'] },
+  {
+    topic: 'Power and Authority',
+    summary:
+      "Every relationship in the play is shaped by the question of who rules whom, from Prospero's magic to Stephano's drunken kingship.",
+    keyPoints: [
+      'Prospero controls the island, Ariel, Caliban and the castaways through his art',
+      "Antonio's usurpation of Milan is the original crime that drives the plot",
+      'Antonio tempts Sebastian to repeat the same crime on the island',
+      'The comic subplot parodies political ambition through Stephano\'s "kingship"',
+      'Prospero measures true authority by his willingness to give it up in Act 5',
+    ],
+  },
+  {
+    topic: 'Forgiveness and Reconciliation',
+    summary:
+      "The play moves through loss and suffering towards the choice of mercy over revenge, the moral climax of Shakespeare's late romances.",
+    keyPoints: [
+      '"The rarer action is / In virtue than in vengeance" — Act 5 pivot',
+      "Ariel's pity shames Prospero into forgiveness",
+      "Ferdinand and Miranda's marriage heals the rift between Milan and Naples",
+      'Alonso repents; Caliban promises to "seek for grace"',
+      "Antonio's silence leaves the reconciliation deliberately incomplete",
+    ],
+  },
+  {
+    topic: 'Colonialism and Otherness',
+    summary:
+      "The play stages the encounter between a European ruler and the island's only inhabitant, and has become a central text for post-colonial thought.",
+    keyPoints: [
+      'Caliban\'s "This island\'s mine by Sycorax my mother" is the core colonial claim',
+      'Prospero teaches then enslaves Caliban after the attempt on Miranda',
+      'Gonzalo\'s commonwealth echoes Montaigne\'s "Of Cannibals"',
+      'Bermuda pamphlets (1609 Sea Venture) feed the island setting',
+      "Cesaire's Une Tempete (1969) reframes the play around race and empire",
+    ],
+  },
+  {
+    topic: 'Illusion and Reality',
+    summary:
+      "Most of the action takes place inside Prospero's illusions, and Shakespeare constantly links the magic to his own theatrical art.",
+    keyPoints: [
+      'The storm drowns no one — it is a moral instrument, not a disaster',
+      'The vanishing banquet, the masque and the spirit-hounds all stage judgement',
+      '"Our revels now are ended" equates masque, life and play',
+      '"We are such stuff / As dreams are made on" meditates on mortality',
+      "The Epilogue hands magical power over to the audience's applause",
+    ],
+  },
+  {
+    topic: 'Nature vs Nurture',
+    summary:
+      "The play tests Prospero's claim that Caliban is irredeemably savage by nature against Caliban's own lyrical voice and final repentance.",
+    keyPoints: [
+      '"A devil, a born devil, on whose nature / Nurture can never stick" (Prospero)',
+      '"You taught me language..." — education turned against its giver',
+      'Caliban\'s "isle is full of noises" speech complicates the "savage" label',
+      "Miranda's isolated but compassionate upbringing is a counter-case",
+      'Caliban\'s closing promise to "seek for grace" leaves the question open',
+    ],
+  },
+  {
+    topic: 'Freedom and Servitude',
+    summary:
+      "The island is full of servants, slaves and would-be masters, and the play's repeated movement is from constraint to release.",
+    keyPoints: [
+      'Ariel serves under contract and dreams of elemental freedom',
+      'Caliban is enslaved; he seeks a new master in Stephano',
+      'Ferdinand chooses loving servitude (log-carrying for Miranda)',
+      'The nobles are held in a "charmed" bondage by Prospero\'s art',
+      "Prospero frees Ariel and is himself freed by the audience's applause",
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
   'How does Shakespeare present power and authority in The Tempest?',
   'How does Shakespeare use the character of Caliban to explore ideas of nature, nurture and colonialism?',
   'How does Shakespeare present forgiveness and reconciliation in The Tempest?',
-  'How does Shakespeare use magic and illusion to shape the audience\'s experience of the play?',
-  'How does Shakespeare explore freedom and servitude across the play\'s characters?',
+  "How does Shakespeare use magic and illusion to shape the audience's experience of the play?",
+  "How does Shakespeare explore freedom and servitude across the play's characters?",
 ]
 
 export default async function TheTempestPage() {
@@ -294,10 +623,10 @@ export default async function TheTempestPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "The Tempest", url: "https://theenglishhub.app/revision/texts/the-tempest" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'The Tempest', url: 'https://theenglishhub.app/revision/texts/the-tempest' },
         ]}
       />
       <TextStudyHub
@@ -306,15 +635,57 @@ export default async function TheTempestPage() {
         examBoard="AQA"
         basePath="/revision/texts/the-tempest"
         subPages={[
-          { id: 'read', href: '/revision/texts/the-tempest/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
-          { id: 'acts', href: '/revision/texts/the-tempest/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
-          { id: 'characters', href: '/revision/texts/the-tempest/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/the-tempest/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/the-tempest/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'context', href: '/revision/texts/the-tempest/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
-          { id: 'essays', href: '/revision/texts/the-tempest/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE/A-Level essay plans' },
+          {
+            id: 'read',
+            href: '/revision/texts/the-tempest/read',
+            icon: 'read' as const,
+            title: 'Read Full Text',
+            description: 'With annotations',
+          },
+          {
+            id: 'acts',
+            href: '/revision/texts/the-tempest/acts',
+            icon: 'acts' as const,
+            title: 'Act-by-Act Analysis',
+            description: 'Key moments & quotes',
+          },
+          {
+            id: 'characters',
+            href: '/revision/texts/the-tempest/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/the-tempest/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/the-tempest/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'context',
+            href: '/revision/texts/the-tempest/context',
+            icon: 'context' as const,
+            title: 'Context',
+            description: 'Historical context',
+          },
+          {
+            id: 'essays',
+            href: '/revision/texts/the-tempest/essay-plans',
+            icon: 'essays' as const,
+            title: 'Essay Plans',
+            description: 'GCSE/A-Level essay plans',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -323,10 +694,10 @@ export default async function TheTempestPage() {
           'How does Shakespeare present power and authority in The Tempest?',
           'How does Shakespeare use the character of Caliban to explore ideas of nature, nurture and colonialism?',
           'How does Shakespeare present forgiveness and reconciliation in The Tempest?',
-          'How does Shakespeare use magic and illusion to shape the audience\'s experience of the play?',
-          'How does Shakespeare explore freedom and servitude across the play\'s characters?',
+          "How does Shakespeare use magic and illusion to shape the audience's experience of the play?",
+          "How does Shakespeare explore freedom and servitude across the play's characters?",
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}
@@ -340,8 +711,10 @@ export default async function TheTempestPage() {
       />
 
       <div className="mx-auto my-4 max-w-5xl rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-700 dark:text-amber-200">
-        <strong className="font-semibold">Draft — awaiting English-teacher review.</strong>{' '}
-        This study guide for The Tempest has been auto-drafted and has not yet been checked by a subject specialist. Plot details, character descriptions and quotations should be verified against a trusted edition before exam use.
+        <strong className="font-semibold">Draft — awaiting English-teacher review.</strong> This
+        study guide for The Tempest has been auto-drafted and has not yet been checked by a subject
+        specialist. Plot details, character descriptions and quotations should be verified against a
+        trusted edition before exam use.
       </div>
 
       <TextGuide data={data} />

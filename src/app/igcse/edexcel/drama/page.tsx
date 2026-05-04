@@ -1,28 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Sparkles,
-  Drama,
-  Info,
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { ArrowLeft, ArrowRight, BookOpen, Sparkles, Drama, Info } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE IGCSE Literature Modern Drama — The English Hub',
+  title:
+    'IGCSE Edexcel drama — An Inspector Calls, View from the Bridge, Curious Incident — The English Hub',
   description:
-    'Study guides for Edexcel IGCSE IGCSE Literature modern drama set texts: An Inspector Calls, A View from the Bridge, The Curious Incident of the Dog in the Night-Time, Death of a Salesman.',
+    'Pearson Edexcel IGCSE Literature 4ET1 modern drama. Three plays: An Inspector Calls, A View from the Bridge, The Curious Incident. Full study guides.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/drama' },
 }
 
@@ -75,11 +63,7 @@ export default async function DramaHubPage() {
   return (
     <div className="space-y-10 pb-16">
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/edexcel" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel" />}>
           <ArrowLeft className="size-3.5" />
           Back to Edexcel IGCSE Literature
         </Button>
@@ -99,9 +83,9 @@ export default async function DramaHubPage() {
             Modern Drama
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Pick your set modern drama text for full study notes covering plot,
-            characters, themes, context and a bank of short key quotations
-            built around Understanding the text, Analysing language and structure, and Comparing texts.
+            Pick your set modern drama text for full study notes covering plot, characters, themes,
+            context and a bank of short key quotations built around Understanding the text,
+            Analysing language and structure, and Comparing texts.
           </p>
         </div>
       </section>
@@ -114,9 +98,8 @@ export default async function DramaHubPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              These plays are all in copyright. Our guides include short
-              extracts for fair-dealing study only. Students should always read or
-              watch the full play alongside these notes.
+              These plays are all in copyright. Our guides include short extracts for fair-dealing
+              study only. Students should always read or watch the full play alongside these notes.
             </p>
           </div>
         </div>
@@ -125,9 +108,7 @@ export default async function DramaHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Choose your set text
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Choose your set text</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {dramaTexts.map((t) => (
@@ -156,9 +137,7 @@ export default async function DramaHubPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col gap-4">
-                <p className="text-body-sm leading-relaxed text-muted-foreground">
-                  {t.blurb}
-                </p>
+                <p className="text-body-sm leading-relaxed text-muted-foreground">{t.blurb}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {t.themes.map((theme) => (
                     <span
@@ -175,20 +154,13 @@ export default async function DramaHubPage() {
                       variant="default"
                       size="sm"
                       className="w-full"
-                      render={
-                        <Link href={`/igcse/edexcel/drama/${t.slug}`} />
-                      }
+                      render={<Link href={`/igcse/edexcel/drama/${t.slug}`} />}
                     >
                       Open study guide
                       <ArrowRight className="size-3.5" />
                     </Button>
                   ) : (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                      disabled
-                    >
+                    <Button variant="outline" size="sm" className="w-full" disabled>
                       Coming soon
                     </Button>
                   )}

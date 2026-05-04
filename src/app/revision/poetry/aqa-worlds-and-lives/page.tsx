@@ -7,9 +7,10 @@ import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'AQA Worlds and Lives Poetry Anthology | The English Hub',
+  title: 'Worlds and Lives poetry — AQA GCSE revision — The English Hub',
   description:
-    'The AQA Worlds and Lives poetry cluster (15 poems) covers identity, place, belonging and memory. Revision pages with annotations, themes and comparison practice — coming soon.',
+    'AQA GCSE Worlds and Lives — the new 15-poem anthology cluster. Poem-by-poem breakdowns, themes, voices and comparison practice for Paper 2 Section B.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/poetry/aqa-worlds-and-lives' },
 }
 
 interface AnthologyPoem {

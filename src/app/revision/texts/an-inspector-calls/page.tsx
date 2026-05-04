@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'An Inspector Calls — Study Guide | The English Hub',
+  title: 'An Inspector Calls revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for An Inspector Calls by J.B. Priestley: plot, characters, themes, context and key quotations.',
+    "An Inspector Calls GCSE revision — Priestley's play act-by-act with characters, themes, context, key quotes and essays. AQA, Edexcel, OCR, Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
   },

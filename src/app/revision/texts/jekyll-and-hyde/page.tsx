@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Strange Case of Dr Jekyll and Mr Hyde — Study Guide | The English Hub',
+  title: 'Jekyll and Hyde revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'Comprehensive GCSE study guide for Strange Case of Dr Jekyll and Mr Hyde by Robert Louis Stevenson: plot summary, characters, themes, context and 20+ key quotations with analysis.',
+    "Jekyll and Hyde GCSE revision — Stevenson's Gothic novella with chapter analysis, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/jekyll-and-hyde',
   },

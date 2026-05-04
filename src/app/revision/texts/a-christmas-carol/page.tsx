@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'A Christmas Carol — Study Guide | The English Hub',
+  title: 'A Christmas Carol revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for A Christmas Carol by Charles Dickens: plot, characters, themes, context and key quotations.',
+    "A Christmas Carol GCSE revision — Dickens's novella by stave with characters, themes, context, key quotes and essays. Aligned to AQA, Edexcel and Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/a-christmas-carol',
   },

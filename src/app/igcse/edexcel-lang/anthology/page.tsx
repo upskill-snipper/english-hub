@@ -22,9 +22,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'IGCSE English Language A — Non-Fiction Anthology (4EA1) — The English Hub',
+  title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology — The English Hub',
   description:
-    'Study all 10 prescribed non-fiction texts for Edexcel IGCSE English Language A Paper 1 Section A. Language analysis, structural analysis, key vocabulary and exam practice for every text.',
+    'Pearson Edexcel IGCSE Language A 4EA1 — the 10 prescribed non-fiction texts in the anthology. Full study guides and exam practice for Paper 1 Section A.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology',
   },

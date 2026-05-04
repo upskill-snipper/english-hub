@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
@@ -6,10 +7,11 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
-export const metadata = {
-  title: 'Macbeth Study Guide | The English Hub',
+export const metadata: Metadata = {
+  title: 'Macbeth revision guide — themes, characters, key quotes — The English Hub',
   description:
-    "Comprehensive GCSE Macbeth revision guide covering plot summary, characters, themes, context, and key quotations from Shakespeare's tragedy.",
+    'Macbeth GCSE revision — act-by-act analysis, characters, themes, key quotes, context and essay plans. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth' },
 }
 
 const data: TextGuideData = {

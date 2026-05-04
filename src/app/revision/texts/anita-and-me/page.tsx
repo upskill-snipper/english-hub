@@ -7,9 +7,9 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
-  title: 'Anita and Me — Study Guide | The English Hub',
+  title: 'Anita and Me revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Anita and Me by Meera Syal: plot, characters, themes, context and key quotations.',
+    "Anita and Me GCSE revision — Meera Syal's 1996 bildungsroman with plot, characters, themes, context and key quotes. AQA, Edexcel, OCR and Eduqas-aligned.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/anita-and-me',
   },

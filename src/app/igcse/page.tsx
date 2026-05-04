@@ -3,29 +3,16 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getIgcseHubUrl } from '@/app/igcse/_lib/guard'
-import {
-  ArrowRight,
-  BookOpen,
-  Sparkles,
-  Feather,
-  Globe,
-  GraduationCap,
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { ArrowRight, BookOpen, Sparkles, Feather, Globe, GraduationCap } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'IGCSE English Literature — The English Hub',
+  title: 'IGCSE English revision — Pearson Edexcel and Cambridge specs covered',
   description:
-    'IGCSE English Literature and Language revision hubs. Full study guides, exam technique and assessment breakdowns for Pearson Edexcel and Cambridge syllabuses.',
+    'IGCSE English revision for Pearson Edexcel (4ET1 Literature, 4EA1 Language A) and Cambridge International (0500, 0990). Set-text guides, AI essay marking, mock papers and study tools.',
   alternates: { canonical: 'https://theenglishhub.app/igcse' },
 }
 
@@ -71,7 +58,11 @@ export default async function IgcseHubPage() {
     }
 
     // GCSE boards: IGCSE content is not part of their specification.
-    if ((['aqa', 'edexcel', 'ocr', 'eduqas'] as const).includes(board as 'aqa' | 'edexcel' | 'ocr' | 'eduqas')) {
+    if (
+      (['aqa', 'edexcel', 'ocr', 'eduqas'] as const).includes(
+        board as 'aqa' | 'edexcel' | 'ocr' | 'eduqas',
+      )
+    ) {
       redirect('/revision?notice=igcse-not-in-spec')
     }
   }
@@ -80,8 +71,8 @@ export default async function IgcseHubPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
         ]}
       />
       {/* ── Hero ────────────────────────────────────────────────────── */}
@@ -100,11 +91,11 @@ export default async function IgcseHubPage() {
             </Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            IGCSE English Hub
+            IGCSE English revision — Pearson Edexcel and Cambridge specs covered
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Choose your course to access full study guides, text analysis, exam
-            technique and past paper resources.
+            Choose your course to access full study guides, text analysis, exam technique and past
+            paper resources.
           </p>
         </div>
       </section>
@@ -113,9 +104,7 @@ export default async function IgcseHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Choose your course
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Choose your course</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -137,9 +126,7 @@ export default async function IgcseHubPage() {
                   <CardTitle className="text-heading-md font-heading leading-tight">
                     {course.name}
                   </CardTitle>
-                  <CardDescription className="text-body-sm">
-                    {course.description}
-                  </CardDescription>
+                  <CardDescription className="text-body-sm">{course.description}</CardDescription>
                 </CardHeader>
 
                 <CardContent className="flex flex-1 flex-col">

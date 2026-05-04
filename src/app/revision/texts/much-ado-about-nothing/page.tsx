@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Much Ado About Nothing — Study Guide | The English Hub',
+  title: 'Much Ado About Nothing revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Much Ado About Nothing by William Shakespeare: plot, characters, themes, context and key quotations.',
+    "Much Ado About Nothing GCSE revision — Shakespeare's comedy with plot, characters, themes, context and key quotes. AQA, Edexcel, OCR, Eduqas, IGCSE.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/much-ado-about-nothing',
   },
@@ -113,19 +113,22 @@ const data: TextGuideData = {
         'Beatrice\u2019s comic hyperbole establishes her scepticism about love and her refusal to accept conventional courtship rhetoric. The self-consciously absurd comparison \u2014 pitting a man\u2019s vows of devotion against the ugly noise of a dog barking \u2014 is characteristic of her wit and signals from the outset that any love story involving her will have to take an unusual shape. Shakespeare uses the line to align the audience with her intelligence before the tricks of Act 2 begin to complicate her position, and to remind us that her later love will have to be earned.',
     },
     {
-      quote: '"He that hath a beard is more than a youth, and he that hath no beard is less than a man."',
+      quote:
+        '"He that hath a beard is more than a youth, and he that hath no beard is less than a man."',
       who: 'Beatrice \u2014 Act 2, Scene 1',
       analysis:
         'Beatrice\u2019s witty dismissal of potential husbands shows her using language to defend her independence in a society where women are expected to accept any suitor. The paradoxical structure traps every candidate in an impossible binary and mocks the Elizabethan ideal of a \u201csuitable\u201d match, as if no man on earth could meet her exacting standards. Shakespeare uses the antithesis to highlight how verbal play functions for her both as entertainment and as armour against the social expectation that she must marry someone simply because a match has been arranged.',
     },
     {
-      quote: '"I do much wonder that one man, seeing how much another man is a fool when he dedicates his behaviours to love, will, after he hath laughed at such shallow follies in others, become the argument of his own scorn by falling in love."',
+      quote:
+        '"I do much wonder that one man, seeing how much another man is a fool when he dedicates his behaviours to love, will, after he hath laughed at such shallow follies in others, become the argument of his own scorn by falling in love."',
       who: 'Benedick \u2014 Act 2, Scene 3',
       analysis:
         'Benedick\u2019s orchard soliloquy, delivered just before he is tricked by his friends, is richly ironic: he carefully catalogues the folly of lovers moments before becoming exactly the \u201cargument of his own scorn\u201d he warns against. Shakespeare uses the long, self-important sentence structure \u2014 piling subordinate clauses on top of each other \u2014 to set up the comic fall, showing how self-knowledge in this play is always a step behind events. The speech also prepares the audience to enjoy the overhearing trick that follows, because we already expect him to be wrong about himself.',
     },
     {
-      quote: '"When I said I would die a bachelor, I did not think I should live till I were married."',
+      quote:
+        '"When I said I would die a bachelor, I did not think I should live till I were married."',
       who: 'Benedick \u2014 Act 2, Scene 3',
       analysis:
         'Benedick\u2019s joke about his own change of heart, delivered just after he has been tricked into thinking Beatrice loves him, captures the comic humility of his journey from sworn bachelor to would-be husband. By laughing at his former certainty rather than clinging to it, he earns the audience\u2019s sympathy and shows a flexibility of mind that Claudio conspicuously lacks. Shakespeare uses the witty reversal to dramatise how the play rewards characters who are willing to revise their beliefs in the face of new feeling, while quietly preparing us for an equivalent turn in Beatrice.',
@@ -179,7 +182,8 @@ const data: TextGuideData = {
         'Hero\u2019s line as she and Ursula prepare to trick Beatrice in the garden neatly sums up the play\u2019s methods. Love here is never simply a natural feeling but a scheme, and Hero \u2014 who is usually portrayed as passive \u2014 enjoys a rare moment of directorial agency as she plans her own overhearing scene. Shakespeare blurs the distinction between kind and cruel traps by letting the same metaphor cover benign matchmaking and, by implication, the malicious window plot that will soon be laid for Claudio, warning us that the same engine can drive both happiness and disaster.',
     },
     {
-      quote: '"Friendship is constant in all other things / Save in the office and affairs of love."',
+      quote:
+        '"Friendship is constant in all other things / Save in the office and affairs of love."',
       who: 'Claudio \u2014 Act 2, Scene 1',
       analysis:
         'Claudio\u2019s neat couplet, spoken when he briefly believes Don Pedro has wooed Hero for himself, foreshadows the bigger crisis to come and introduces his habit of speaking in sententious, generalising rhyme whenever he is unsure. Shakespeare plants the idea that even close male bonds wobble under the faintest breath of romantic suspicion, preparing the audience for the much more damaging misjudgement at the wedding, where a different false picture will lead him to turn on both Hero and, implicitly, on the Prince who has stood beside him. The couplet form gives his anxiety a false sense of authority.',
@@ -218,34 +222,369 @@ const data: TextGuideData = {
 }
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'ma-1', question: 'In which Italian city is Much Ado About Nothing set?', type: 'multiple-choice', options: ['Verona', 'Venice', 'Messina', 'Padua'], correctIndex: 2, explanation: 'The play is set in Messina, Sicily, where Leonato is governor and hosts Don Pedro and his soldiers after a military campaign.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'ma-2', question: 'Who are the two witty protagonists who spar with each other throughout the play?', type: 'multiple-choice', options: ['Claudio and Hero', 'Don Pedro and Don John', 'Beatrice and Benedick', 'Leonato and Dogberry'], correctIndex: 2, explanation: 'Beatrice and Benedick conduct a "merry war" of witty insults, both swearing they will never marry, before being tricked into admitting their love for each other.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'ma-3', question: 'Who is the villain who plots against Claudio and Hero?', type: 'multiple-choice', options: ['Don Pedro', 'Don John', 'Borachio', 'Conrade'], correctIndex: 1, explanation: 'Don John, Don Pedro\u2019s illegitimate brother, plots to ruin Claudio\u2019s marriage out of spite and resentment at his own subordinate position.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'ma-4', question: 'What does Claudio do to Hero at the wedding?', type: 'multiple-choice', options: ['He secretly marries her anyway', 'He publicly rejects and shames her, accusing her of being unchaste', 'He forgives her on the spot', 'He flees the church'], correctIndex: 1, explanation: 'Having been tricked by Don John into believing Hero is unfaithful, Claudio publicly denounces her at the altar, calling her a "rotten orange". Hero faints and is believed dead.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'ma-5', question: 'What two-word command does Beatrice give Benedick after the wedding?', type: 'multiple-choice', options: ['"Forgive Claudio."', '"Kill Claudio."', '"Save Hero."', '"Leave Messina."'], correctIndex: 1, explanation: 'Beatrice commands "Kill Claudio", testing Benedick\u2019s love by asking him to choose between loyalty to his friend and defence of her slandered cousin.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'ma-6', question: 'Who is the bumbling constable who accidentally uncovers Don John\u2019s plot?', type: 'multiple-choice', options: ['Borachio', 'Verges', 'Dogberry', 'Friar Francis'], correctIndex: 2, explanation: 'Dogberry, the malapropism-prone constable, and his incompetent watchmen overhear Borachio boasting about the deception and arrest him, ultimately rescuing the play from tragedy.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'ma-7', question: 'What is the Elizabethan pun in the title "Much Ado About Nothing"?', type: 'multiple-choice', options: ['Nothing sounded like "knotting"', 'Nothing sounded like "noting", meaning observing or overhearing', 'Nothing sounded like "nought"', 'There is no pun'], correctIndex: 1, explanation: 'In Elizabethan English "nothing" sounded like "noting" \u2014 meaning observing, overhearing or taking note. Nearly every plot turn depends on characters overhearing or misreading something.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'ma-8', question: 'How does Friar Francis suggest Hero\u2019s family should respond to her shaming?', type: 'multiple-choice', options: ['Send her to a convent immediately', 'Pretend she has died until the truth emerges', 'Force Claudio to marry her anyway', 'Exile her from Messina'], correctIndex: 1, explanation: 'Friar Francis, convinced of Hero\u2019s innocence, proposes that the family pretend she has died, hoping that Claudio\u2019s grief will rekindle his love and that the truth will eventually come out.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'ma-9', question: 'What method is used to trick Beatrice and Benedick into admitting their feelings?', type: 'multiple-choice', options: ['Forged letters', 'Staged conversations that they overhear', 'Love potions', 'Direct confrontation'], correctIndex: 1, explanation: 'Don Pedro, Claudio and Leonato stage a conversation for Benedick to overhear; Hero and Ursula do the same for Beatrice. Both are convinced the other loves them and soften their own positions.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'ma-10', question: 'How does Borachio make Claudio believe Hero is unfaithful?', type: 'multiple-choice', options: ['He forges a letter', 'He arranges for Claudio and Don Pedro to watch him woo a woman at Hero\u2019s window, who is actually Margaret', 'He pays Hero\u2019s servants to lie', 'He claims to have slept with Hero himself'], correctIndex: 1, explanation: 'Borachio arranges for Claudio and Don Pedro to watch at night as he appears to woo "Hero" at her chamber window \u2014 in fact it is Margaret, Hero\u2019s waiting-gentlewoman, unaware of the plot.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'ma-11', question: 'What does Beatrice mean when she cries "O, that I were a man!" after the wedding?', type: 'multiple-choice', options: ['She literally wants to change gender', 'She is frustrated that social rules prevent her, as a woman, from challenging Claudio in a duel to defend Hero\u2019s honour', 'She is joking as usual', 'She is angry at Benedick'], correctIndex: 1, explanation: 'Beatrice rages that as a woman she is locked out of the male honour code through which slander is answered. Her speech critiques a society that leaves women unable to defend their own reputations.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'ma-12', question: 'How is Hero finally reunited with Claudio?', type: 'multiple-choice', options: ['Claudio discovers her in hiding', 'Leonato makes Claudio agree to marry a veiled "niece", who is then revealed to be Hero restored', 'She writes him a letter explaining the truth', 'The Prince commands them to marry'], correctIndex: 1, explanation: 'As penance, Claudio agrees to marry a mysterious "niece" of Leonato\u2019s. At the ceremony the veiled bride is revealed to be Hero herself, restored to life and honour.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'ma-13', question: 'Why is Don John a particularly effective villain for an Elizabethan audience?', type: 'multiple-choice', options: ['He is a foreign invader', 'As an illegitimate brother, he embodies social disorder and resentment in a hierarchical society', 'He is a professional soldier', 'He is in love with Hero'], correctIndex: 1, explanation: 'Don John\u2019s illegitimacy would have marked him, in Elizabethan eyes, as a figure of social disorder, and his open resentment of his brother\u2019s favour makes the harm he causes feel almost structural rather than personal.', topic: 'Context', difficulty: 'higher' },
-  { id: 'ma-14', question: 'What does Dogberry\u2019s language reveal about the play\u2019s comic world?', type: 'multiple-choice', options: ['Everyone is intellectual', 'The play takes low-status characters entirely seriously', 'Malapropisms and muddled authority are a comic form of "noting" gone wrong, and yet they produce the truth', 'He speaks standard English'], correctIndex: 2, explanation: 'Dogberry\u2019s malapropisms ("Comparisons are odorous") parody official language. His bungling policing is itself a form of flawed "noting", yet paradoxically it is his watch that uncovers the truth.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'ma-15', question: 'How does Shakespeare contrast Beatrice and Hero?', type: 'multiple-choice', options: ['They are identical', 'Beatrice is witty, vocal and independent; Hero is quiet, modest and obedient, and each position proves precarious in its own way', 'Beatrice is cruel and Hero is wise', 'They never meet'], correctIndex: 1, explanation: 'Shakespeare sets two models of Elizabethan femininity side by side. Hero\u2019s silent obedience leaves her defenceless against slander; Beatrice\u2019s eloquence cannot cross into male-coded action like duelling.', topic: 'Characters', difficulty: 'grade-9' },
-  { id: 'ma-16', question: 'What is the dramatic significance of "Kill Claudio"?', type: 'multiple-choice', options: ['It is a throwaway joke', 'It is the pivot between comedy and potential tragedy, binding Benedick\u2019s love for Beatrice to a violent test of loyalty', 'It marks the happy ending', 'It is spoken by Don John'], correctIndex: 1, explanation: 'In two words, Shakespeare shifts the register of the play from romantic comedy towards tragedy. It fuses love, honour and violence, forcing Benedick to choose between friend and beloved.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'ma-17', question: 'How does Shakespeare use the motif of overhearing to structure the play?', type: 'multiple-choice', options: ['Overhearing is rare in the play', 'Benign deceptions (Beatrice and Benedick) and malicious deceptions (Hero) use exactly the same technique of overheard speech, forcing the audience to weigh the ethics of "noting"', 'Only villains overhear', 'Overhearing is always comic'], correctIndex: 1, explanation: 'Shakespeare deliberately mirrors the orchard scenes and the window scene: the same mechanism that produces joy produces catastrophe, making the audience question how securely truth can ever be known through observation.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'ma-18', question: 'Why is the play\u2019s ending sometimes described as uneasy despite being comic?', type: 'multiple-choice', options: ['There is no marriage', 'Don John escapes', 'Claudio\u2019s public shaming of Hero and her silent forgiveness leave the honour code that caused the crisis largely unreformed', 'Beatrice and Benedick do not marry'], correctIndex: 2, explanation: 'The happy ending depends on Hero forgiving a man who was willing to destroy her on flimsy evidence, and on a substitution trick that restores order without challenging the gendered honour system. Many modern productions highlight this unease.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'ma-19', question: 'How does the Italian setting function for Shakespeare\u2019s audience?', type: 'multiple-choice', options: ['It has no significance', 'Italy was associated with sophistication, passion and honour codes, allowing the play to stage a crisis of female reputation at a slight remove from English life', 'It was chosen because Shakespeare had travelled there', 'It was a legal requirement'], correctIndex: 1, explanation: 'Italy\u2019s associations with intrigue and honour gave Shakespeare a charged setting for exploring slander and reputation while maintaining enough distance for English audiences to recognise their own society\u2019s concerns.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'ma-20', question: 'What is the thematic function of the double plot (Beatrice/Benedick and Claudio/Hero)?', type: 'multiple-choice', options: ['The plots are unrelated', 'Shakespeare uses the contrast to test different models of love: one built on wit, friction and equality, the other on idealisation and rumour', 'Both plots are identical', 'Only one plot matters'], correctIndex: 1, explanation: 'The two love stories work in counterpoint. Beatrice and Benedick\u2019s relationship, founded on verbal sparring and gradual honesty, offers a more durable model than Claudio and Hero\u2019s idealised romance, which collapses the moment it is tested.', topic: 'Themes', difficulty: 'higher' },
+  {
+    id: 'ma-1',
+    question: 'In which Italian city is Much Ado About Nothing set?',
+    type: 'multiple-choice',
+    options: ['Verona', 'Venice', 'Messina', 'Padua'],
+    correctIndex: 2,
+    explanation:
+      'The play is set in Messina, Sicily, where Leonato is governor and hosts Don Pedro and his soldiers after a military campaign.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ma-2',
+    question: 'Who are the two witty protagonists who spar with each other throughout the play?',
+    type: 'multiple-choice',
+    options: [
+      'Claudio and Hero',
+      'Don Pedro and Don John',
+      'Beatrice and Benedick',
+      'Leonato and Dogberry',
+    ],
+    correctIndex: 2,
+    explanation:
+      'Beatrice and Benedick conduct a "merry war" of witty insults, both swearing they will never marry, before being tricked into admitting their love for each other.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ma-3',
+    question: 'Who is the villain who plots against Claudio and Hero?',
+    type: 'multiple-choice',
+    options: ['Don Pedro', 'Don John', 'Borachio', 'Conrade'],
+    correctIndex: 1,
+    explanation:
+      'Don John, Don Pedro\u2019s illegitimate brother, plots to ruin Claudio\u2019s marriage out of spite and resentment at his own subordinate position.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ma-4',
+    question: 'What does Claudio do to Hero at the wedding?',
+    type: 'multiple-choice',
+    options: [
+      'He secretly marries her anyway',
+      'He publicly rejects and shames her, accusing her of being unchaste',
+      'He forgives her on the spot',
+      'He flees the church',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Having been tricked by Don John into believing Hero is unfaithful, Claudio publicly denounces her at the altar, calling her a "rotten orange". Hero faints and is believed dead.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ma-5',
+    question: 'What two-word command does Beatrice give Benedick after the wedding?',
+    type: 'multiple-choice',
+    options: ['"Forgive Claudio."', '"Kill Claudio."', '"Save Hero."', '"Leave Messina."'],
+    correctIndex: 1,
+    explanation:
+      'Beatrice commands "Kill Claudio", testing Benedick\u2019s love by asking him to choose between loyalty to his friend and defence of her slandered cousin.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ma-6',
+    question: 'Who is the bumbling constable who accidentally uncovers Don John\u2019s plot?',
+    type: 'multiple-choice',
+    options: ['Borachio', 'Verges', 'Dogberry', 'Friar Francis'],
+    correctIndex: 2,
+    explanation:
+      'Dogberry, the malapropism-prone constable, and his incompetent watchmen overhear Borachio boasting about the deception and arrest him, ultimately rescuing the play from tragedy.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ma-7',
+    question: 'What is the Elizabethan pun in the title "Much Ado About Nothing"?',
+    type: 'multiple-choice',
+    options: [
+      'Nothing sounded like "knotting"',
+      'Nothing sounded like "noting", meaning observing or overhearing',
+      'Nothing sounded like "nought"',
+      'There is no pun',
+    ],
+    correctIndex: 1,
+    explanation:
+      'In Elizabethan English "nothing" sounded like "noting" \u2014 meaning observing, overhearing or taking note. Nearly every plot turn depends on characters overhearing or misreading something.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'ma-8',
+    question: 'How does Friar Francis suggest Hero\u2019s family should respond to her shaming?',
+    type: 'multiple-choice',
+    options: [
+      'Send her to a convent immediately',
+      'Pretend she has died until the truth emerges',
+      'Force Claudio to marry her anyway',
+      'Exile her from Messina',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Friar Francis, convinced of Hero\u2019s innocence, proposes that the family pretend she has died, hoping that Claudio\u2019s grief will rekindle his love and that the truth will eventually come out.',
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ma-9',
+    question: 'What method is used to trick Beatrice and Benedick into admitting their feelings?',
+    type: 'multiple-choice',
+    options: [
+      'Forged letters',
+      'Staged conversations that they overhear',
+      'Love potions',
+      'Direct confrontation',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Don Pedro, Claudio and Leonato stage a conversation for Benedick to overhear; Hero and Ursula do the same for Beatrice. Both are convinced the other loves them and soften their own positions.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'ma-10',
+    question: 'How does Borachio make Claudio believe Hero is unfaithful?',
+    type: 'multiple-choice',
+    options: [
+      'He forges a letter',
+      'He arranges for Claudio and Don Pedro to watch him woo a woman at Hero\u2019s window, who is actually Margaret',
+      'He pays Hero\u2019s servants to lie',
+      'He claims to have slept with Hero himself',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Borachio arranges for Claudio and Don Pedro to watch at night as he appears to woo "Hero" at her chamber window \u2014 in fact it is Margaret, Hero\u2019s waiting-gentlewoman, unaware of the plot.',
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ma-11',
+    question: 'What does Beatrice mean when she cries "O, that I were a man!" after the wedding?',
+    type: 'multiple-choice',
+    options: [
+      'She literally wants to change gender',
+      'She is frustrated that social rules prevent her, as a woman, from challenging Claudio in a duel to defend Hero\u2019s honour',
+      'She is joking as usual',
+      'She is angry at Benedick',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Beatrice rages that as a woman she is locked out of the male honour code through which slander is answered. Her speech critiques a society that leaves women unable to defend their own reputations.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ma-12',
+    question: 'How is Hero finally reunited with Claudio?',
+    type: 'multiple-choice',
+    options: [
+      'Claudio discovers her in hiding',
+      'Leonato makes Claudio agree to marry a veiled "niece", who is then revealed to be Hero restored',
+      'She writes him a letter explaining the truth',
+      'The Prince commands them to marry',
+    ],
+    correctIndex: 1,
+    explanation:
+      'As penance, Claudio agrees to marry a mysterious "niece" of Leonato\u2019s. At the ceremony the veiled bride is revealed to be Hero herself, restored to life and honour.',
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ma-13',
+    question: 'Why is Don John a particularly effective villain for an Elizabethan audience?',
+    type: 'multiple-choice',
+    options: [
+      'He is a foreign invader',
+      'As an illegitimate brother, he embodies social disorder and resentment in a hierarchical society',
+      'He is a professional soldier',
+      'He is in love with Hero',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Don John\u2019s illegitimacy would have marked him, in Elizabethan eyes, as a figure of social disorder, and his open resentment of his brother\u2019s favour makes the harm he causes feel almost structural rather than personal.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ma-14',
+    question: 'What does Dogberry\u2019s language reveal about the play\u2019s comic world?',
+    type: 'multiple-choice',
+    options: [
+      'Everyone is intellectual',
+      'The play takes low-status characters entirely seriously',
+      'Malapropisms and muddled authority are a comic form of "noting" gone wrong, and yet they produce the truth',
+      'He speaks standard English',
+    ],
+    correctIndex: 2,
+    explanation:
+      'Dogberry\u2019s malapropisms ("Comparisons are odorous") parody official language. His bungling policing is itself a form of flawed "noting", yet paradoxically it is his watch that uncovers the truth.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'ma-15',
+    question: 'How does Shakespeare contrast Beatrice and Hero?',
+    type: 'multiple-choice',
+    options: [
+      'They are identical',
+      'Beatrice is witty, vocal and independent; Hero is quiet, modest and obedient, and each position proves precarious in its own way',
+      'Beatrice is cruel and Hero is wise',
+      'They never meet',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Shakespeare sets two models of Elizabethan femininity side by side. Hero\u2019s silent obedience leaves her defenceless against slander; Beatrice\u2019s eloquence cannot cross into male-coded action like duelling.',
+    topic: 'Characters',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ma-16',
+    question: 'What is the dramatic significance of "Kill Claudio"?',
+    type: 'multiple-choice',
+    options: [
+      'It is a throwaway joke',
+      'It is the pivot between comedy and potential tragedy, binding Benedick\u2019s love for Beatrice to a violent test of loyalty',
+      'It marks the happy ending',
+      'It is spoken by Don John',
+    ],
+    correctIndex: 1,
+    explanation:
+      'In two words, Shakespeare shifts the register of the play from romantic comedy towards tragedy. It fuses love, honour and violence, forcing Benedick to choose between friend and beloved.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ma-17',
+    question: 'How does Shakespeare use the motif of overhearing to structure the play?',
+    type: 'multiple-choice',
+    options: [
+      'Overhearing is rare in the play',
+      'Benign deceptions (Beatrice and Benedick) and malicious deceptions (Hero) use exactly the same technique of overheard speech, forcing the audience to weigh the ethics of "noting"',
+      'Only villains overhear',
+      'Overhearing is always comic',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Shakespeare deliberately mirrors the orchard scenes and the window scene: the same mechanism that produces joy produces catastrophe, making the audience question how securely truth can ever be known through observation.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ma-18',
+    question: 'Why is the play\u2019s ending sometimes described as uneasy despite being comic?',
+    type: 'multiple-choice',
+    options: [
+      'There is no marriage',
+      'Don John escapes',
+      'Claudio\u2019s public shaming of Hero and her silent forgiveness leave the honour code that caused the crisis largely unreformed',
+      'Beatrice and Benedick do not marry',
+    ],
+    correctIndex: 2,
+    explanation:
+      'The happy ending depends on Hero forgiving a man who was willing to destroy her on flimsy evidence, and on a substitution trick that restores order without challenging the gendered honour system. Many modern productions highlight this unease.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ma-19',
+    question: 'How does the Italian setting function for Shakespeare\u2019s audience?',
+    type: 'multiple-choice',
+    options: [
+      'It has no significance',
+      'Italy was associated with sophistication, passion and honour codes, allowing the play to stage a crisis of female reputation at a slight remove from English life',
+      'It was chosen because Shakespeare had travelled there',
+      'It was a legal requirement',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Italy\u2019s associations with intrigue and honour gave Shakespeare a charged setting for exploring slander and reputation while maintaining enough distance for English audiences to recognise their own society\u2019s concerns.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ma-20',
+    question:
+      'What is the thematic function of the double plot (Beatrice/Benedick and Claudio/Hero)?',
+    type: 'multiple-choice',
+    options: [
+      'The plots are unrelated',
+      'Shakespeare uses the contrast to test different models of love: one built on wit, friction and equality, the other on idealisation and rumour',
+      'Both plots are identical',
+      'Only one plot matters',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The two love stories work in counterpoint. Beatrice and Benedick\u2019s relationship, founded on verbal sparring and gradual honesty, offers a more durable model than Claudio and Hero\u2019s idealised romance, which collapses the moment it is tested.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Noting and Misinterpretation', summary: 'The Elizabethan pun in the title ("nothing"/"noting") is realised through a plot driven by overhearing, observing and misreading.', keyPoints: ['"Nothing" sounded like "noting" in Elizabethan English', 'Benign trick: Beatrice and Benedick overhear staged conversations', 'Malicious trick: Claudio and Don Pedro "see" Hero at the window', 'Dogberry\u2019s bungling watch is also a kind of "noting" gone wrong', 'Shakespeare forces the audience to weigh the ethics of observation'] },
-  { topic: 'Love and Deception', summary: 'Almost every love relationship in the play is shaped by performance, trickery or indirect communication.', keyPoints: ['Claudio lets Don Pedro woo Hero for him at the masked ball', 'Beatrice and Benedick are tricked into admitting their feelings', 'Don John tricks Claudio into believing Hero is unfaithful', 'The "merry war" becomes a more honest form of love', 'Idealised love (Claudio/Hero) collapses under a single lie'] },
-  { topic: 'Honour and Reputation', summary: 'Honour is gendered, public and fragile; female honour depends on chastity, male honour on reputation and military standing.', keyPoints: ['Claudio shames Hero publicly to defend his own honour', 'Leonato wishes Hero dead rather than dishonoured', 'Beatrice cannot answer slander with her own sword', 'Friar Francis\u2019 plan hinges on restoring Hero\u2019s honour', 'The happy ending does not fully reform the honour code'] },
-  { topic: 'Gender and Power', summary: 'Hero\u2019s silence and Beatrice\u2019s eloquence show two contrasting versions of Elizabethan femininity, both of which prove precarious.', keyPoints: ['Hero is talked about, tricked and "killed off" by others', 'Beatrice refuses marriage and mocks male courtship', '"O, that I were a man!" exposes her exclusion from male justice', 'Beatrice must rely on Benedick to act for her', 'Reformed Beatrice/Benedick partnership models more equal love'] },
-  { topic: 'Appearance vs Reality', summary: 'Masks, disguises and staged scenes show how easily appearance overrides truth.', keyPoints: ['Masked ball conceals identities and intentions', 'The window scene makes Margaret appear to be Hero', 'Hero\u2019s feigned death is a planned illusion', 'The veiled "niece" of the final wedding reveals and resolves', 'Don John\u2019s public mask hides his private resentment'] },
+  {
+    topic: 'Noting and Misinterpretation',
+    summary:
+      'The Elizabethan pun in the title ("nothing"/"noting") is realised through a plot driven by overhearing, observing and misreading.',
+    keyPoints: [
+      '"Nothing" sounded like "noting" in Elizabethan English',
+      'Benign trick: Beatrice and Benedick overhear staged conversations',
+      'Malicious trick: Claudio and Don Pedro "see" Hero at the window',
+      'Dogberry\u2019s bungling watch is also a kind of "noting" gone wrong',
+      'Shakespeare forces the audience to weigh the ethics of observation',
+    ],
+  },
+  {
+    topic: 'Love and Deception',
+    summary:
+      'Almost every love relationship in the play is shaped by performance, trickery or indirect communication.',
+    keyPoints: [
+      'Claudio lets Don Pedro woo Hero for him at the masked ball',
+      'Beatrice and Benedick are tricked into admitting their feelings',
+      'Don John tricks Claudio into believing Hero is unfaithful',
+      'The "merry war" becomes a more honest form of love',
+      'Idealised love (Claudio/Hero) collapses under a single lie',
+    ],
+  },
+  {
+    topic: 'Honour and Reputation',
+    summary:
+      'Honour is gendered, public and fragile; female honour depends on chastity, male honour on reputation and military standing.',
+    keyPoints: [
+      'Claudio shames Hero publicly to defend his own honour',
+      'Leonato wishes Hero dead rather than dishonoured',
+      'Beatrice cannot answer slander with her own sword',
+      'Friar Francis\u2019 plan hinges on restoring Hero\u2019s honour',
+      'The happy ending does not fully reform the honour code',
+    ],
+  },
+  {
+    topic: 'Gender and Power',
+    summary:
+      'Hero\u2019s silence and Beatrice\u2019s eloquence show two contrasting versions of Elizabethan femininity, both of which prove precarious.',
+    keyPoints: [
+      'Hero is talked about, tricked and "killed off" by others',
+      'Beatrice refuses marriage and mocks male courtship',
+      '"O, that I were a man!" exposes her exclusion from male justice',
+      'Beatrice must rely on Benedick to act for her',
+      'Reformed Beatrice/Benedick partnership models more equal love',
+    ],
+  },
+  {
+    topic: 'Appearance vs Reality',
+    summary: 'Masks, disguises and staged scenes show how easily appearance overrides truth.',
+    keyPoints: [
+      'Masked ball conceals identities and intentions',
+      'The window scene makes Margaret appear to be Hero',
+      'Hero\u2019s feigned death is a planned illusion',
+      'The veiled "niece" of the final wedding reveals and resolves',
+      'Don John\u2019s public mask hides his private resentment',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -271,10 +610,13 @@ export default async function MuchAdoAboutNothingPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Much Ado About Nothing", url: "https://theenglishhub.app/revision/texts/much-ado-about-nothing" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Much Ado About Nothing',
+            url: 'https://theenglishhub.app/revision/texts/much-ado-about-nothing',
+          },
         ]}
       />
       <TextStudyHub
@@ -283,15 +625,57 @@ export default async function MuchAdoAboutNothingPage() {
         examBoard="AQA"
         basePath="/revision/texts/much-ado-about-nothing"
         subPages={[
-          { id: 'read', href: '/revision/texts/much-ado-about-nothing/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
-          { id: 'acts', href: '/revision/texts/much-ado-about-nothing/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
-          { id: 'characters', href: '/revision/texts/much-ado-about-nothing/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/much-ado-about-nothing/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/much-ado-about-nothing/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'context', href: '/revision/texts/much-ado-about-nothing/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
-          { id: 'essays', href: '/revision/texts/much-ado-about-nothing/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+          {
+            id: 'read',
+            href: '/revision/texts/much-ado-about-nothing/read',
+            icon: 'read' as const,
+            title: 'Read Full Text',
+            description: 'With annotations',
+          },
+          {
+            id: 'acts',
+            href: '/revision/texts/much-ado-about-nothing/acts',
+            icon: 'acts' as const,
+            title: 'Act-by-Act Analysis',
+            description: 'Key moments & quotes',
+          },
+          {
+            id: 'characters',
+            href: '/revision/texts/much-ado-about-nothing/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/much-ado-about-nothing/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/much-ado-about-nothing/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'context',
+            href: '/revision/texts/much-ado-about-nothing/context',
+            icon: 'context' as const,
+            title: 'Context',
+            description: 'Historical context',
+          },
+          {
+            id: 'essays',
+            href: '/revision/texts/much-ado-about-nothing/essay-plans',
+            icon: 'essays' as const,
+            title: 'Essay Plans',
+            description: 'GCSE essay plans',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -303,7 +687,7 @@ export default async function MuchAdoAboutNothingPage() {
           'How does Shakespeare use deception and "noting" to structure the play?',
           'To what extent is Don John responsible for the near-tragedy in Much Ado About Nothing?',
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}
@@ -317,7 +701,10 @@ export default async function MuchAdoAboutNothingPage() {
       />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">Draft study guide</strong>
-        <span>This AI-assisted guide is under expert review. Cross-check with your teacher&rsquo;s notes before relying on it for exam preparation.</span>
+        <span>
+          This AI-assisted guide is under expert review. Cross-check with your teacher&rsquo;s notes
+          before relying on it for exam preparation.
+        </span>
       </div>
       <TextGuide data={data} />
     </>

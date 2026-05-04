@@ -2,20 +2,20 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'For Teachers | AI Lesson Planning & Analytics',
+  title: 'English teacher tools and AI marking — The English Hub',
   description:
-    'Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Early Access from £6.99/month (Standard £11.99 from August 2026). 7-day free trial. Founding Schools £4,000/year — first 10 only.',
+    'AI lesson plans, AI essay marking, classroom analytics and a growing library of resources — built around your exam board specification.',
   alternates: { canonical: 'https://theenglishhub.app/for-teachers' },
   openGraph: {
-    title: 'For Teachers | AI Lesson Planning & Analytics — The English Hub',
+    title: 'English teacher tools and AI marking — The English Hub',
     description:
-      'Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Early Access from £6.99/month (Standard £11.99 from August 2026). 7-day free trial. Founding Schools £4,000/year — first 10 only.',
+      'AI lesson plans, AI essay marking, classroom analytics and a growing library of resources — built around your exam board specification.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'For Teachers | AI Lesson Planning & Analytics — The English Hub',
+    title: 'English teacher tools and AI marking — The English Hub',
     description:
-      'Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Early Access from £6.99/month (Standard £11.99 from August 2026). 7-day free trial. Founding Schools £4,000/year — first 10 only.',
+      'AI lesson plans, AI essay marking, classroom analytics and a growing library of resources — built around your exam board specification.',
   },
 }
 

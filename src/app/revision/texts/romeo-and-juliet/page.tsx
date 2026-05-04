@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Romeo and Juliet — Study Guide | The English Hub',
+  title: 'Romeo and Juliet revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Romeo and Juliet by William Shakespeare: plot, characters, themes, context and key quotations.',
+    "Romeo and Juliet GCSE revision — Shakespeare's tragedy with acts, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR and Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/romeo-and-juliet',
   },

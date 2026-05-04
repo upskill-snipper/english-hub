@@ -1,6 +1,4 @@
-'use client'
-
-import { useState } from 'react'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PRICING } from '@/constants/pricing'
 import { Card, CardContent } from '@/components/ui/card'
@@ -8,13 +6,13 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   BarChart3,
   Bell,
   BookOpen,
-  CheckCircle,
   ChevronDown,
-  Clock,
+  CheckCircle,
   Eye,
   GraduationCap,
   LineChart,
@@ -22,7 +20,6 @@ import {
   Mail,
   Shield,
   Sparkles,
-  Star,
   Target,
   TrendingUp,
   UserPlus,
@@ -30,93 +27,75 @@ import {
   Zap,
 } from 'lucide-react'
 
-/* ───────────────────── FAQ Accordion ───────────────────── */
+export const metadata: Metadata = {
+  title: 'GCSE and IGCSE English help for parents — The English Hub',
+  description:
+    'How to help your child with GCSE or IGCSE English revision — from picking the right exam board to AI essay feedback they can trust.',
+  alternates: { canonical: 'https://theenglishhub.app/for-parents' },
+}
+
+/* ───────────────────── FAQ Data ─────────────────────
+ * 2026-05-01: FAQ accordion converted to native <details>/<summary>
+ * so this page can stay a server component and export `metadata`.
+ * FAQ list extended with parent-targeted entries (safety, tutor
+ * comparison, data, progress visibility) per SEO/integrity pass.
+ */
 
 const faqs = [
   {
-    q: 'What data can I see as a parent?',
-    a: 'You can see modules completed, quiz scores, time spent studying, course progress, weak areas identified by our system, and a weekly activity summary. You cannot see the content of any written answers your child submits.',
+    question: 'Is The English Hub safe for my child?',
+    answer:
+      "We are designed to comply with the UK Children's Code and applicable child-data rules including COPPA where relevant. Accounts use a date-of-birth age gate, and learners under 16 must provide a parent or guardian email so consent can be confirmed before their account becomes active.",
   },
   {
-    q: 'Can my child see that I am monitoring their progress?',
-    a: 'Yes. Transparency is important to us. Your child will see a small indicator on their dashboard showing that a parent account is linked. We believe this builds trust and encourages accountability.',
+    question: 'How is this different from a private tutor?',
+    answer:
+      'A private tutor typically costs £25 to £50 per hour and is available in scheduled sessions. The English Hub is available 24/7 for the price of a monthly subscription, and our AI marks practice essays against AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE assessment objectives in seconds. It is best used alongside school teaching, not as a replacement for it.',
   },
   {
-    q: 'Can I link more than one child?',
-    a: 'Not yet, but multi-child support is on our roadmap. For now, each parent account links to one child account. You can create a separate parent account for each child if needed.',
+    question: "Will my child's data be sold?",
+    answer:
+      'No. We do not sell student data to third parties. Full detail on what we collect, why, and how long we keep it is in our privacy policy at /privacy-policy.',
   },
   {
-    q: 'What if my child already has an account?',
-    a: 'No problem. Simply enter their email address or invite code in your parent dashboard, and we will send them a link request. They must accept it before you can see their data.',
+    question: "Can I see my child's progress?",
+    answer:
+      "Yes. The parent or guardian email on the account receives the consent confirmation when your child signs up, and a weekly progress summary covering modules completed, quiz scores, study time, and weak areas identified by the platform. You will not see the text of your child's written answers.",
   },
   {
-    q: 'What are Working At Grade and Predicted Grade?',
-    a: 'Working At Grade is your child\u2019s current GCSE grade (1\u20139) based on their recent quiz and assessment scores. Predicted Grade is where our system estimates they\u2019re heading based on their progress trajectory. Both use the UK GCSE 1\u20139 grading system so you always have a clear picture.',
+    question: 'What data can I see as a parent?',
+    answer:
+      'You can see modules completed, quiz scores, time spent studying, course progress, weak areas identified by our system, and a weekly activity summary. You cannot see the content of any written answers your child submits.',
   },
   {
-    q: 'Can I cancel anytime?',
-    a: "Absolutely. Cancel anytime from your account settings. There are no contracts or hidden fees. You'll keep access until the end of your billing period.",
+    question: 'Can my child see that I am monitoring their progress?',
+    answer:
+      'Yes. Transparency is important to us. Your child will see a small indicator on their dashboard showing that a parent account is linked. We believe this builds trust and encourages accountability.',
   },
   {
-    q: "Is my child's data safe?",
-    a: "Yes. We comply with UK GDPR and the Children's Code. Data is encrypted in transit and at rest. We never sell data to third parties. Parent access is strictly limited to learning progress data.",
-  },
-]
-
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false)
-  return (
-    <Card className="overflow-hidden border-border/40">
-      <button
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-        className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-accent/30 transition-colors duration-200"
-      >
-        <span className="font-semibold text-foreground pr-4">{q}</span>
-        <ChevronDown
-          className={cn(
-            'w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300',
-            open ? 'rotate-180' : '',
-          )}
-        />
-      </button>
-      <div
-        className={cn(
-          'grid transition-all duration-300',
-          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
-        )}
-      >
-        <div className="overflow-hidden">
-          <p className="px-6 pb-5 text-muted-foreground leading-relaxed">{a}</p>
-        </div>
-      </div>
-    </Card>
-  )
-}
-
-/* ───────────────────── Testimonials ───────────────────── */
-
-const testimonials = [
-  {
-    name: 'Sarah T.',
-    role: 'Parent of Year 10 student',
-    quote:
-      'I can finally see exactly where my daughter needs help instead of guessing. Her English grade has gone from a 5 to a 7 in two terms.',
-    rating: 5,
+    question: 'Can I link more than one child?',
+    answer:
+      'Not yet, but multi-child support is on our roadmap. For now, each parent account links to one child account. You can create a separate parent account for each child if needed.',
   },
   {
-    name: 'James M.',
-    role: 'Parent of Year 11 student',
-    quote:
-      'The weekly progress reports are brilliant. I know exactly how much revision my son is doing without having to nag him about it.',
-    rating: 5,
+    question: 'What if my child already has an account?',
+    answer:
+      'No problem. Simply enter their email address or invite code in your parent dashboard, and we will send them a link request. They must accept it before you can see their data.',
   },
   {
-    name: 'Priya K.',
-    role: 'Parent of Year 9 student',
-    quote:
-      'The weak area alerts told us she was struggling with creative writing. We got her extra help early and it made all the difference.',
-    rating: 5,
+    question: 'What are Working At Grade and Predicted Grade?',
+    answer:
+      "Working At Grade is your child's current GCSE grade (1-9) based on their recent quiz and assessment scores. Predicted Grade is where our system estimates they are heading based on their progress trajectory. Both use the UK GCSE 1-9 grading system so you always have a clear picture.",
+  },
+  {
+    question: 'Can I cancel anytime?',
+    answer:
+      'Yes. Cancel anytime from your account settings. There are no contracts or hidden fees. You will keep access until the end of your billing period.',
+  },
+  {
+    question: "Is my child's data safe?",
+    answer:
+      "We comply with UK GDPR and the Children's Code. Data is encrypted in transit and at rest. We do not sell data to third parties. Parent access is strictly limited to learning progress data.",
   },
 ]
 
@@ -125,6 +104,7 @@ const testimonials = [
 export default function ForParentsPage() {
   return (
     <main className="min-h-screen bg-background">
+      <FAQPageJsonLd faqs={faqs} />
       {/* ━━━ HERO ━━━ */}
       <section className="relative overflow-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">
         {/* Glow effects */}
@@ -141,9 +121,7 @@ export default function ForParentsPage() {
           </Badge>
 
           <h1 className="text-foreground">
-            Watch Your Child&rsquo;s English
-            <br />
-            <span className="text-primary">Grades Improve</span>
+            Help your child pass GCSE or <span className="text-primary">IGCSE English</span>
           </h1>
 
           <p className="mt-7 text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -320,7 +298,7 @@ export default function ForParentsPage() {
                 icon: Target,
                 color: 'text-emerald-400 bg-emerald-500/10',
                 title: 'Working At Grade & Predicted Grade',
-                desc: 'See your child\u2019s current Working At Grade (based on recent performance) and their Predicted Grade (where they\u2019re heading) using GCSE grades 1\u20139. Clear, at-a-glance indicators of progress.',
+                desc: 'See your child’s current Working At Grade (based on recent performance) and their Predicted Grade (where they’re heading) using GCSE grades 1–9. Clear, at-a-glance indicators of progress.',
               },
               {
                 icon: Bell,
@@ -371,38 +349,13 @@ export default function ForParentsPage() {
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ TESTIMONIALS ━━━ */}
-      <section className="py-24 sm:py-32">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-foreground">What Parents Are Saying</h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Join hundreds of parents already supporting their children&rsquo;s English revision.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {testimonials.map((t) => (
-              <Card key={t.name} className="p-6 flex flex-col border-border/40">
-                <div className="flex items-center gap-1 mb-4">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-clay-600" />
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Separator className="opacity-40" />
+      {/*
+        2026-05-01: Testimonial section removed during SEO/integrity pass.
+        Previous quotes (Sarah T., James M., Priya K.) and the
+        "Join hundreds of parents" line were not verifiable per
+        brand-voice §11.5 (no fabricated social proof). Reinstate only
+        when real, attributable testimonials with parent consent exist.
+      */}
 
       {/* ━━━ PRICING ━━━ */}
       <section className="py-24 sm:py-32">
@@ -500,7 +453,21 @@ export default function ForParentsPage() {
 
           <div className="space-y-3">
             {faqs.map((faq) => (
-              <FAQItem key={faq.q} q={faq.q} a={faq.a} />
+              <Card key={faq.question} className="overflow-hidden border-border/40">
+                <details className="group">
+                  <summary className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-accent/30 transition-colors duration-200 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <span className="font-semibold text-foreground pr-4">{faq.question}</span>
+                    <ChevronDown
+                      className={cn(
+                        'w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300 group-open:rotate-180',
+                      )}
+                    />
+                  </summary>
+                  <div className="px-6 pb-5">
+                    <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                  </div>
+                </details>
+              </Card>
             ))}
           </div>
         </div>
@@ -535,8 +502,8 @@ export default function ForParentsPage() {
           <GraduationCap className="w-12 h-12 text-primary mx-auto mb-6" />
           <h2 className="text-foreground mb-4">Ready to Support Their Success?</h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-body-lg mb-10">
-            Join hundreds of parents who are already helping their children improve in English.
-            Start with a free trial and see the difference real progress tracking makes.
+            Start with a free trial and see what real progress tracking looks like for GCSE and
+            IGCSE English revision.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
+import { Newsreader, Geist, JetBrains_Mono } from 'next/font/google'
 import { SupabaseProvider } from '@/components/providers/supabase-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/sonner'
@@ -20,6 +21,28 @@ const monaSans = localFont({
   variable: '--font-mona',
   display: 'swap',
   weight: '200 900',
+})
+
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  variable: '--font-newsreader',
+  display: 'swap',
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+})
+
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+})
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+  weight: ['400', '500'],
 })
 
 export const metadata: Metadata = {
@@ -67,20 +90,26 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={monaSans.variable}>
+    <html
+      lang="en-GB"
+      className={`${monaSans.variable} ${newsreader.variable} ${geist.variable} ${jetBrainsMono.variable}`}
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
         <link rel="manifest" href="/manifest.json" />
         {process.env.NEXT_PUBLIC_TRUSTPILOT_VERIFICATION_ID ? (
           <meta
             name="trustpilot-one-time-domain-verification-id"
             content={process.env.NEXT_PUBLIC_TRUSTPILOT_VERIFICATION_ID}
           />
+        ) : null}
+        {process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? (
+          <meta
+            name="google-site-verification"
+            content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
+          />
+        ) : null}
+        {process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ? (
+          <meta name="msvalidate.01" content={process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION} />
         ) : null}
         <WebsiteJsonLd />
         {/* Rewardful is loaded by <ConsentGatedAnalytics /> below after

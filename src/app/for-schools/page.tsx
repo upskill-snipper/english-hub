@@ -16,6 +16,7 @@ import { BookCallForm } from '@/components/for-schools/BookCallForm'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { PRICING } from '@/constants/pricing'
 import { InfographicBanner } from '@/components/marketing/InfographicBanner'
+import { FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   BookOpen,
   GraduationCap,
@@ -57,6 +58,15 @@ import {
   Table,
 } from 'lucide-react'
 
+/* ─────────────── Page Metadata (TICKET-5 + TICKET-7) ─────────────── */
+
+export const metadata = {
+  title: 'Whole-department English platform for UK schools — The English Hub',
+  description:
+    'AI lesson planning, AI essay marking, department analytics, and resources mapped to your exam board. Founding Schools programme open now.',
+  alternates: { canonical: 'https://theenglishhub.app/for-schools' },
+}
+
 /* ─────────────── Founding Schools Programme Benefits ─────────────── */
 
 const FOUNDING_BENEFITS = [
@@ -75,13 +85,14 @@ const PLATFORM_FEATURES = [
     icon: BarChart3,
     color: 'text-blue-600 bg-blue-500/10 border-blue-500/20',
     title: 'Department Analytics Dashboard',
-    desc: 'Real-time progress across every year group. Spot at-risk students early, compare class performance, and generate Ofsted-ready reports in seconds.',
+    // TODO(founder): verify the Ofsted-aligned report templates are live before this claim ships to a school. Soften if not.
+    desc: 'Real-time progress across every year group. Spot at-risk students early, compare class performance, and generate department reports aligned to common Ofsted English subject deep-dive criteria — ready to share at your next inspection.',
   },
   {
     icon: BookOpen,
     color: 'text-primary bg-primary/10 border-primary/20',
-    title: 'Lesson Builder & 300+ Resources',
-    desc: 'Instantly generate lesson plans, worksheets, and presentations from the platform. Pull from a library of 300+ ready-made resources mapped to every major exam board.',
+    title: 'Lesson Builder & Resource Library',
+    desc: 'Instantly generate lesson plans, worksheets, and presentations from the platform. A growing library of resources mapped to AQA, Edexcel, OCR, WJEC and Cambridge IGCSE specifications.',
   },
   {
     icon: Brain,
@@ -193,9 +204,9 @@ const COMPARISON_ROWS = [
   { feature: 'Admin controls', school: true, individual: false },
   { feature: 'Homework management', school: true, individual: false },
   { feature: 'Progress reports', school: true, individual: false },
-  { feature: 'Ofsted-ready reporting', school: true, individual: false },
+  { feature: 'Ofsted-aligned department reporting', school: true, individual: false },
   { feature: 'AI essay feedback', school: true, individual: true },
-  { feature: '300+ resources', school: true, individual: true },
+  { feature: 'Resource library mapped to your exam board', school: true, individual: true },
   { feature: 'Content tailored to your exam board', school: true, individual: true },
 ]
 
@@ -217,38 +228,46 @@ const TESTIMONIALS: Array<{
 
 /* ─────────────── FAQs ─────────────── */
 
-const SCHOOL_FAQS = [
+const FAQS = [
   {
-    q: 'What is the Founding Schools Programme?',
-    a: 'The Founding Schools Programme is a strategic partnership for the 2026 academic year. The first 10 schools to sign are designated as founding partners and receive early features, direct product input, priority onboarding, founding partner recognition, and locked preferential pricing for 2-3 years. Additional schools are welcome on the platform at standard rates once the founding cohort closes. This is not a free trial -- it is a discounted, long-term partnership tailored to your department size.',
+    question: 'What is the Founding Schools Programme?',
+    answer:
+      'The Founding Schools Programme is a strategic partnership for the 2026 academic year. The first 10 schools to sign are designated as founding partners and receive early features, direct product input, priority onboarding, founding partner recognition, and locked preferential pricing for 2-3 years. Additional schools are welcome on the platform at standard rates once the founding cohort closes. This is not a free trial -- it is a discounted, long-term partnership tailored to your department size.',
   },
   {
-    q: 'How much does it cost?',
-    a: 'Founding Schools Programme pricing starts at £4,000 per year for the first 10 schools only -- heavily anchored against our projected Standard Pricing of £8,000 per year from August 2026. Exact package scales with department size and is agreed during your onboarding call. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Book a call to lock in your founding price before the cohort closes.',
+    question: 'How much does it cost?',
+    answer:
+      'Founding Schools Programme pricing starts at £4,000 per year for the first 10 schools only -- heavily anchored against our projected Standard Pricing of £8,000 per year from August 2026. Exact package scales with department size and is agreed during your onboarding call. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Book a call to lock in your founding price before the cohort closes.',
   },
   {
-    q: 'How do students and teachers get access?',
-    a: 'Once your school is onboarded, we set up your admin account and bulk-create all student and teacher accounts for you. Students and teachers can also join by entering your unique school code when they register themselves.',
+    question: 'How do students and teachers get access?',
+    answer:
+      'Once your school is onboarded, we set up your admin account and bulk-create all student and teacher accounts for you. Students and teachers can also join by entering your unique school code when they register themselves.',
   },
   {
-    q: 'How does the Excel bulk upload work?',
-    a: 'Download our simple Excel template from your admin dashboard. Add your students and teachers (name, email, year group), save the file, and upload it. The platform creates all accounts instantly and sends login details by email. No IT support or technical setup required.',
+    question: 'How does the Excel bulk upload work?',
+    answer:
+      'Download our simple Excel template from your admin dashboard. Add your students and teachers (name, email, year group), save the file, and upload it. The platform creates all accounts instantly and sends login details by email. No IT support or technical setup required.',
   },
   {
-    q: 'What admin controls does the school have?',
-    a: 'Your school admin account lets you manage all student and teacher accounts, view department-wide analytics, set and track assignments, generate progress reports, and control which features are visible to students. You can also create sub-admin accounts for heads of year or class teachers.',
+    question: 'What admin controls does the school have?',
+    answer:
+      'Your school admin account lets you manage all student and teacher accounts, view department-wide analytics, set and track assignments, generate progress reports, and control which features are visible to students. You can also create sub-admin accounts for heads of year or class teachers.',
   },
   {
-    q: 'Which exam boards do you cover?',
-    a: "We support all major boards: AQA, Edexcel, OCR, WJEC/Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content -- lessons, resources, mark schemes, and AI feedback -- is tailored to that board's specification.",
+    question: 'Which exam boards do you cover?',
+    answer:
+      "We support all major boards: AQA, Edexcel, OCR, WJEC/Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content -- lessons, resources, mark schemes, and AI feedback -- is tailored to that board's specification.",
   },
   {
-    q: 'Is the platform GDPR compliant?',
-    a: 'Yes. We are fully GDPR compliant. All student data is stored securely on UK-based servers. We do not share data with third parties, run no advertising or tracking on the platform, and can sign a Data Processing Agreement with your school.',
+    question: 'Is the platform GDPR compliant?',
+    answer:
+      'Yes. We are fully GDPR compliant. All student data is stored securely on UK-based servers. We do not share data with third parties, run no advertising or tracking on the platform, and can sign a Data Processing Agreement with your school.',
   },
   {
-    q: 'What happens after the Founding Schools Programme?',
-    a: 'Founding schools lock in preferential pricing for 2-3 years. Post-programme standard pricing will be significantly higher. The exact terms are agreed during your onboarding call.',
+    question: 'What happens after the Founding Schools Programme?',
+    answer:
+      'Founding schools lock in preferential pricing for 2-3 years. Post-programme standard pricing will be significantly higher. The exact terms are agreed during your onboarding call.',
   },
 ]
 
@@ -283,9 +302,7 @@ export default function ForSchoolsPage() {
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-            10 schools. One English department.
-            <br />
-            <span className="text-primary">Every Head&apos;s Report in three clicks.</span>
+            Whole-department English platform for UK schools
           </h1>
 
           <p className="mt-7 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -322,8 +339,8 @@ export default function ForSchoolsPage() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
             {[
               'Only 10 founding schools',
-              '5-8 hours saved per teacher per week',
-              'Ofsted-ready reporting',
+              'Significant time saved on planning and marking',
+              'Ofsted-aligned department reporting',
             ].map((item) => (
               <span key={item} className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-primary shrink-0" />
@@ -824,14 +841,15 @@ export default function ForSchoolsPage() {
               <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
                 School admins and heads of department get a live overview of progress across all
                 classes and year groups. Identify at-risk students before results day. Compare class
-                performance. Generate Ofsted-ready data in seconds.
+                performance. Generate department reports aligned to common Ofsted English subject
+                deep-dive criteria.
               </p>
               <ul className="space-y-4">
                 {[
                   'Live dashboard across all year groups and classes',
                   'At-risk student alerts with suggested interventions',
                   'Class-by-class and student-by-student drill down',
-                  'One-click Ofsted and data export reports',
+                  'Department reports aligned to Ofsted English subject deep-dive criteria',
                   'Comparison against previous cohorts and national averages',
                   'Predicted grades for students who miss exams, based on continuous assessment and mock performance',
                 ].map((point) => (
@@ -1256,10 +1274,11 @@ export default function ForSchoolsPage() {
           </div>
 
           <div className="space-y-3">
-            {SCHOOL_FAQS.map((faq) => (
-              <FAQItem key={faq.q} q={faq.q} a={faq.a} />
+            {FAQS.map((faq) => (
+              <FAQItem key={faq.question} q={faq.question} a={faq.answer} />
             ))}
           </div>
+          <FAQPageJsonLd faqs={FAQS} />
 
           <p className="text-center text-sm text-muted-foreground mt-10">
             Got a question not answered here?{' '}

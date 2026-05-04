@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Blood Brothers — Study Guide | The English Hub',
+  title: 'Blood Brothers revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Blood Brothers by Willy Russell: plot, characters, themes, context and key quotations.',
+    "Blood Brothers GCSE revision — Willy Russell's musical play act-by-act with characters, themes, key quotes and essay plans. Aligned to Edexcel and Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/blood-brothers',
   },

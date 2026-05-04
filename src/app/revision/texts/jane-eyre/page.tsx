@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Jane Eyre — Study Guide | The English Hub',
+  title: 'Jane Eyre revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Jane Eyre by Charlotte Bronte: plot, characters, themes, context and key quotations.',
+    "Jane Eyre GCSE revision — Charlotte Brontë's Gothic bildungsroman by chapter with key quotes. Aligned to AQA, OCR and Edexcel International A Level.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/jane-eyre',
   },

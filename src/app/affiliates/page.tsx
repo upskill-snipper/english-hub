@@ -2,10 +2,19 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 import { redirect } from 'next/navigation'
 import AffiliatePublicPage from '@/components/affiliates/AffiliatePublicPage'
 
+// 2026-05-01: SEO/integrity pass — title rewritten to query-aligned form,
+// description shortened to 120-155 char band, canonical URL added.
+// Description stays generic ("recurring commission") rather than claiming
+// a specific percentage: the live affiliate component shows mixed values
+// (£5-£20 fixed amounts in the commission table, plus a "20%" stat tile
+// and a "30% / 15% of first-year" dt block) so no single percentage is
+// safe to repeat in metadata until the affiliate terms are reconciled.
+// H1 + FAQ for this route live in <AffiliatePublicPage>, not this file.
 export const metadata = {
-  title: 'Partner With Us — The English Hub',
+  title: 'Affiliate programme — The English Hub',
   description:
-    'Partner with The English Hub and help students achieve their potential. Earn competitive commission while making a real difference in education.',
+    'Earn recurring commission promoting GCSE and IGCSE English revision with The English Hub. Pick a code, share your link, get paid monthly.',
+  alternates: { canonical: 'https://theenglishhub.app/affiliates' },
 }
 
 // ─── /affiliates ────────────────────────────────────────────────────────────

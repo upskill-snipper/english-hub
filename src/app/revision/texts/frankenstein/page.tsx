@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Frankenstein — Study Guide | The English Hub',
+  title: 'Frankenstein revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Frankenstein by Mary Shelley: plot, characters, themes, context and key quotations.',
+    "Frankenstein GCSE revision — Shelley's Gothic novel by chapter with characters, themes, key quotes and essay plans. Aligned to AQA, Edexcel, OCR.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/frankenstein',
   },

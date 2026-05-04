@@ -1,14 +1,22 @@
 import type { Metadata } from 'next'
 
+// 2026-05-01: SEO/integrity pass — title and description rewritten to
+// query-aligned form with explicit canonical URL.
+// Founder-claim copy ("built by an English teacher and an AI engineer")
+// has not been signed off by the founder this session, so per the
+// brand-voice rule we use the safer "Built around how examiners actually
+// mark." soft form. Reinstate the named-roles line once the founder's
+// qualification + years-active summary (see TODO(founder) markers in
+// the page body) is finalised.
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'About The English Hub',
   description:
-    'Learn about The English Hub, our mission to close the attainment gap, and how we help students master GCSE and IGCSE English with expert resources.',
+    'GCSE and IGCSE English revision built around how examiners actually mark. Read what we do, why we built it, and how we calibrate against AO mark schemes.',
   alternates: { canonical: 'https://theenglishhub.app/about' },
   openGraph: {
     title: 'About — The English Hub',
     description:
-      'Learn about The English Hub, our mission to close the attainment gap, and how we help students master GCSE and IGCSE English with expert resources.',
+      'GCSE and IGCSE English revision built around how examiners actually mark. Read what we do, why we built it, and how we calibrate against AO mark schemes.',
   },
 }
 

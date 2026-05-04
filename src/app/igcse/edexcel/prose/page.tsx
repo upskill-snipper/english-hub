@@ -7,9 +7,10 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE Literature Modern Prose — The English Hub',
+  title:
+    'IGCSE Edexcel prose — Of Mice and Men, To Kill a Mockingbird, Things Fall Apart — The English Hub',
   description:
-    'Study guides for all Edexcel IGCSE Literature modern prose set texts: To Kill a Mockingbird, Of Mice and Men, The Whale Rider, The Joy Luck Club, Things Fall Apart, The Woman in Black, The Color Purple.',
+    'Pearson Edexcel IGCSE Literature 4ET1 modern prose. Three texts: Of Mice and Men, To Kill a Mockingbird, Things Fall Apart. Full study guides.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/prose' },
 }
 

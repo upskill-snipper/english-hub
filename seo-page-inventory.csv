@@ -1,0 +1,139 @@
+URL,Purpose,Audience,SEO_Score,Conversion_Score,Priority,Main_Issue,Recommended_Action
+/,Board picker homepage,All,7,7,High,H1 not query-aligned; missing Service schema,"Rewrite H1 to ""GCSE and IGCSE English revision, AI marked against the AO mark scheme""; add Service schema"
+/board-select,Secondary board picker,All,7,7,Medium,Mirror of homepage,Already updated 02 May. None major.
+/pricing,Pricing,All,7,8,High,Missing FAQPageJsonLd despite inline FAQ_ITEMS,Wire FAQPageJsonLd. Add Service schema with priceRange.
+/for-students,Student marketing,Students,5,6,High,"H1 generic; one possibly-fabricated testimonial in alt-text (Aanya, Student)","Rewrite H1 to ""Your GCSE or IGCSE English revision, in one place""; verify or strip Aanya"
+/for-teachers,Teacher marketing,Teachers,5,5,P0 CRITICAL,3 fabricated testimonials + 300+ resources + 5+ hours saved,STRIP IMMEDIATELY. Replace with empty-state. Rewrite H1 for query intent.
+/for-schools,School marketing,School heads,5,6,High,"""Lesson Builder & 300+ Resources"" claim unverified",Strip 300+ claim. Confirm Ofsted-ready claim is supportable.
+/for-parents,Parent marketing,Parents,5,5,Medium,Likely thin; H1 needs intent alignment,Rewrite H1 to "Help your child pass GCSE or IGCSE English"; add FAQ + schema.
+/affiliates,Affiliate landing,Creators,5,6,Medium,Could be sharper; missing FAQ schema,"Add specific earnings table; add FAQ + schema; rewrite H1 to ""Earn 20% recurring commission promoting GCSE English revision"""
+/about,Trust signal,All,4,5,Medium,Likely thin,Add Founder section; add Organization schema with logo + sameAs social links.
+/contact,Contact form,All,5,5,Low,Missing ContactPoint schema,Add ContactPoint schema. Add response-time SLA.
+/press,Press kit,Press,4,3,Low,Likely sparse,Audit. Add downloadable assets (logo pack PDF).
+/faqs,Site FAQs,All,6,5,Medium,Audit FAQPageJsonLd presence,Verify FAQPageJsonLd live.
+/help,Help hub,All,5,4,Low,Likely thin,Audit. Confirm sub-pages /help/contact /help/faq /help/report are indexable.
+/safeguarding,Safeguarding policy,Parents/schools,6,5,Medium,Important trust page,Add Organization schema; ensure ICO Children's Code summary visible.
+/privacy-policy,Privacy,All,7,3,Low,Standard,None.
+/terms,Terms,All,7,3,Low,Standard,None.
+/cookie-policy,Cookies,All,7,3,Low,Standard,None.
+/refund-policy,Refunds,All,7,3,Low,Standard,None.
+/accessibility,A11y statement,All,7,3,Low,Standard,None.
+/data-processing,DPA,Schools,7,4,Low,B2B trust,Make discoverable from /for-schools.
+/legal/ai-transparency,AI transparency,All,6,3,Low,Important for trust,Link from /marking and /toolkit pages.
+/legal/safeguarding,Safeguarding,Parents/schools,6,4,Medium,Important,Link from /for-parents and /for-schools.
+/legal/privacy-qatar,Qatar privacy,Qatar users,5,3,Low,Niche,Linked when /for-schools/qatar built.
+/revision,Unified board hub,Logged-in students,7,7,High,H1 dynamic (good); add per-board Course schema,Add Course JSON-LD per cookie-board.
+/revision/poetry,Poetry sub-hub,Students,7,6,High,Cookie-dispatched; KS3/A-Level/IAL fallbacks now exist,Continue. Add Article schema for branches.
+/revision/poetry/power-and-conflict,AQA P&C cluster,Students,8,6,Medium,Strong content,Add Article + LearningResource schema.
+/revision/poetry/love-and-relationships,AQA L&R cluster,Students,8,6,Medium,Strong content,Same.
+/revision/poetry/aqa-worlds-and-lives,AQA W&L cluster,Students,4,4,Low,Coming-soon — all stubs,Build out content or remove from picker.
+/revision/poetry/edexcel,Pearson Edexcel poetry,Students,7,6,High,Cluster picker only,Add Edexcel-specific FAQs and schema.
+/revision/poetry/edexcel/conflict,Edexcel Conflict cluster,Students,6,5,Medium,Thin content,Audit; add poem-cards + schema.
+/revision/poetry/edexcel/time-and-place,Edexcel T&P cluster,Students,6,5,Medium,Thin content,Same.
+/revision/poetry/eduqas,Eduqas anthology,Students,7,6,Medium,12-poem 2025 cluster,Add comparison-pair examples.
+/revision/poetry/ocr,OCR Towards a World Unknown,Students,7,6,Medium,4-cluster picker,Add cluster-specific FAQs.
+/revision/poetry/unseen-poetry,Unseen poetry guide,Students,6,5,Medium,Likely thin,Build to a real revision guide; add HowTo schema.
+/revision/texts,Set texts hub,Students,6,5,High,Static SEO list for boardless visitors,Convert to LearningResource cards.
+/revision/texts/macbeth,Macbeth study guide,Students,7,6,High,Sub-pages exist (acts/themes/etc),Add LearningResource schema. Pilot for set-text enrichment.
+/revision/texts/an-inspector-calls,AIC study guide,Students,7,6,High,6 sub-pages,Same.
+/revision/texts/a-christmas-carol,ACC study guide,Students,7,6,High,Strong,Same.
+/revision/texts/jekyll-and-hyde,J&H study guide,Students,7,6,High,Strong,Same.
+/revision/texts/romeo-and-juliet,R&J study guide,Students,7,6,High,6 sub-pages,Same.
+/revision/texts/animal-farm,Animal Farm study guide,Students,7,6,High,6 sub-pages,Same.
+/revision/texts/lord-of-the-flies,LotF study guide,Students,7,6,High,6 sub-pages,Same.
+/revision/texts/great-expectations,Great Expectations,Students,7,6,Medium,Strong,Same.
+/revision/texts/frankenstein,Frankenstein,Students,7,6,Medium,Has /read sub-page,Same.
+/revision/texts/jane-eyre,Jane Eyre,Students,6,5,Medium,Thin (only chapters + key-quotes),Add themes/characters/context sub-pages.
+/revision/texts/much-ado-about-nothing,Much Ado,Students,6,5,Medium,Audit depth,Add sub-pages if missing.
+/revision/texts/the-tempest,The Tempest,Students,6,5,Medium,Audit depth,Same.
+/revision/texts/of-mice-and-men,Of Mice and Men,Students,7,6,Medium,Strong,Add LearningResource schema.
+/revision/texts/a-view-from-the-bridge,View from the Bridge,Students,7,6,Medium,Strong,Same.
+/revision/texts/blood-brothers,Blood Brothers,Students,7,6,Medium,Strong,Same.
+/revision/texts/things-fall-apart,Things Fall Apart,Students,7,6,Medium,Strong,Same.
+/revision/texts/to-kill-a-mockingbird,TKAM,Students,7,6,Medium,Strong,Same.
+/revision/texts/pride-and-prejudice,P&P,Students,6,5,Medium,Thin,Add sub-pages.
+/revision/texts/anita-and-me,Anita and Me,Students,5,5,Low,Likely thin,Audit.
+/revision/texts/curious-incident,Curious Incident,Students,6,5,Low,Audit,Same.
+/revision/texts/never-let-me-go,Never Let Me Go,Students,5,5,Low,Audit,Same.
+/revision/texts/pigeon-english,Pigeon English,Students,5,5,Low,Audit,Same.
+/igcse,IGCSE landing,Students/parents,7,7,High,Cookie-driven redirect for IGCSE-cookied users,None major. Strong.
+/igcse/edexcel,Pearson Edexcel IGCSE Lit,Students,7,7,High,Strong content; banner integrated 02 May,Add Course schema for 4ET1.
+/igcse/edexcel/syllabus,4ET1 syllabus,Students,7,5,Medium,Useful for SEO,Strong.
+/igcse/edexcel/past-papers,Past papers,Students,7,5,Medium,Useful,Strong.
+/igcse/edexcel/exam-technique,Exam technique,Students,7,5,Medium,Strong,Add HowTo schema.
+/igcse/edexcel/essay-technique,Essay technique,Students,7,5,Medium,Strong,Add HowTo schema.
+/igcse/edexcel/drama,IGCSE Drama,Students,7,6,High,3 plays,Add LearningResource per play.
+/igcse/edexcel/prose,IGCSE Prose,Students,7,6,High,3 prose texts,Same.
+/igcse/edexcel/shakespeare,IGCSE Shakespeare,Students,7,6,High,3 plays,Same.
+/igcse/edexcel/poetry,IGCSE 4ET1 anthology,Students,7,6,High,13 prescribed poems,Add LearningResource per poem.
+/igcse/edexcel/unseen-poetry,IGCSE Unseen poetry,Students,7,5,Medium,5 sub-pages,Add HowTo schema.
+/igcse/edexcel-lang,IGCSE Edexcel Lang A,Students,7,6,High,4EA1 anthology + 35 texts claimed,"Audit text count vs sitemap (10 listed). Add Course schema."
+/igcse/edexcel-lang/anthology,4EA1 anthology hub,Students,6,5,Medium,10 texts pages,Build remaining 25 if claim is "35 anthology texts" or amend.
+/igcse/cambridge,Cambridge IGCSE,Students,7,7,High,Two-syllabus picker,Add Course schema for both 0500 and 0990.
+/igcse/cambridge/0500,Cambridge 0500,Students,7,6,High,Strong content,Add Course schema.
+/igcse/cambridge/0990,Cambridge 0990,Students,7,6,High,Strong content,Same.
+/igcse/cambridge/composition,Composition skills,Students,6,5,Medium,Sub-pages exist,Strong; add HowTo schema.
+/igcse/cambridge/reading,Reading skills,Students,6,5,Medium,Sub-pages exist,Same.
+/resources,Resource hub,All,5,4,High,Index page may be sparse,Audit. Reorganize to make discovery easier.
+/resources/english-language,English Language hub,Students,6,5,High,Strong scaffold,Add Article schema.
+/resources/english-language/aqa,AQA Lang,Students,6,5,High,5 sub-pages,Add LearningResource schema.
+/resources/english-language/edexcel,Edexcel Lang,Students,6,5,High,5 sub-pages,Same.
+/resources/english-language/ocr,OCR Lang,Students,6,5,High,5 sub-pages,Same.
+/resources/english-language/wjec,WJEC Lang,Students,5,4,Medium,Less depth,Build out.
+/resources/english-language/caie,CAIE Lang,Students,5,4,Medium,Audit depth,Same.
+/resources/english-literature,English Literature hub,Students,6,5,High,Strong scaffold,Add Article schema.
+/resources/english-literature/aqa,AQA Lit,Students,6,5,High,5 set texts,Add LearningResource schema.
+/resources/english-literature/edexcel,Edexcel Lit,Students,6,5,High,7 set texts,Same.
+/resources/english-literature/ocr,OCR Lit,Students,6,5,High,5 set texts,Same.
+/resources/english-literature/wjec,WJEC Lit,Students,5,4,Medium,Less depth,Build out.
+/resources/english-literature/caie,CAIE Lit,Students,6,5,High,12 set texts + 8 SoO poems,Strong but audit depth.
+/resources/revision-notes,Revision notes hub,Students,6,5,High,22 set texts,Add LearningResource per text.
+/resources/poetry,Poetry resources,Students,6,5,Medium,5 sub-categories,Add Article schema.
+/resources/writing-skills,Writing skills,Students,6,5,Medium,4 sub-categories,Add HowTo schema.
+/resources/exam-technique,Exam technique,Students,6,5,Medium,4 sub-categories,Add HowTo schema.
+/resources/themes,Themes,Students,5,4,Low,5 sub-categories,Audit depth.
+/resources/context,Context,Students,5,4,Low,4 sub-categories,Audit.
+/resources/grade-targets,Grade targets,Students,6,5,High,3 grade-target pages,Add LearningResource. Strong intent — "grade 9 english essay".
+/resources/model-answers,Model answers,Students,6,5,High,4 sub-categories,Strong; add LearningResource.
+/resources/techniques,Techniques,Students,5,4,Low,2 sub-categories,Audit.
+/resources/vocabulary,Vocabulary,Students,5,4,Medium,3 sub-categories,Audit; add LearningResource.
+/resources/study-tools,Study tools,Students,6,5,Medium,4 sub-tools,Strong scaffold.
+/resources/glossary,Glossary,Students,5,4,Low,Reference,Audit.
+/resources/spoken-language,Spoken language,Students,5,4,Low,Niche,Audit.
+/resources/teaching,Teaching resources,Teachers,5,4,High,3 sub-categories,Audit. THIS is where 300+ resources should live; build out!
+/resources/teaching/lesson-plans,Lesson plans,Teachers,5,4,High,Likely sparse,Build first 10 lesson plans by exam season.
+/resources/teaching/printables,Printables,Teachers,4,3,High,LIKELY EMPTY,Build first 30 PDFs (S2 in roadmap).
+/resources/teaching/assessment,Teacher assessment,Teachers,4,3,Medium,Audit,Build out.
+/analysis/macbeth,Macbeth analysis,Students,6,5,Medium,Niche,Add LearningResource.
+/analysis/jekyll-hyde,J&H analysis,Students,6,5,Medium,Same,Same.
+/analysis/inspector-calls,AIC analysis,Students,6,5,Medium,Same,Same.
+/analysis/christmas-carol,ACC analysis,Students,6,5,Medium,Same,Same.
+/analysis/aqa-love-relationships,AQA L&R analysis,Students,6,5,Medium,Same,Same.
+/analysis/aqa-power-conflict,AQA P&C analysis,Students,6,5,Medium,Same,Same.
+/analysis/language-paper,Lang paper analysis,Students,6,5,Medium,Same,Same.
+/analysis/revision,Revision technique,Students,6,5,Medium,Same,Add HowTo schema.
+/assessment/reading,Reading assessment,Students,6,5,Medium,Tool page,Strong if functional.
+/mock-exams,Mock exams hub,Students,6,6,High,AQA-only currently,Plan for Edexcel/OCR/Eduqas mocks.
+/marking,AI marking hub,Students/teachers,7,8,High,Conversion-driver,Strong; add to homepage features row.
+/marking/sample/macbeth,AI marking demo (Macbeth),Visitors,7,8,High,Strong demo,Promote heavily.
+/practice,Practice hub,Students,6,5,High,Board-aware,Add Quiz schema where applicable.
+/games,Study games,Students,5,4,Medium,Likely sparse,Audit. 7 games claim?
+/courses,Course catalogue,Students,6,5,Medium,Dynamic from allCourses,Audit content depth per course.
+/toolkit,AI toolkit,Students/teachers,7,7,High,Strong feature,Strong.
+/toolkit/test-builder,Test builder,Students,7,7,High,Strong,Strong.
+/toolkit/revision-builder,Revision builder,Students,7,7,High,Strong,Strong.
+/toolkit/personalised-revision,Personalised revision,Students,6,6,Medium,Audit,Strong.
+/affiliates/apply,Affiliate sign-up,Creators,6,7,Medium,Disallowed in robots (intentional),N/A.
+/dashboard,User dashboard,Logged-in,N/A,N/A,N/A,Disallowed in robots,N/A.
+/blog,MISSING — content marketing hub,All,0,0,P0 GAP,Does not exist,Build per TICKET-11.
+/compare,MISSING — comparison hub,All,0,0,P0 GAP,Does not exist,Build per TICKET-12.
+/free-resources,MISSING — lead-magnet hub,Students/teachers,0,0,P0 GAP,Does not exist,Build per TICKET-14.
+/exam-board-finder,MISSING — TOFU quiz,Students,0,0,P1 GAP,Does not exist,Build mid-2026.
+/predict-your-grade,MISSING — TOFU quiz,Students,0,0,P1 GAP,Does not exist,Build pre-Q1 2027 PR campaign.
+/for-schools/qatar,MISSING — Qatar landing,School heads,0,0,P2 GAP,Does not exist,Build M3.
+/for-schools/gcc,MISSING — GCC landing,School heads,0,0,P2 GAP,Does not exist,Build M3.
+/igcse/international-schools,MISSING — Intl landing,School heads,0,0,P2 GAP,Does not exist,Build M3.
+/blog/grade-9-essay-guide,MISSING — authority post,Students,0,0,P0 GAP,Does not exist,Highest-priority blog post; ship in launch batch.
+/blog/aqa-power-and-conflict-revision-guide,MISSING — authority post,Students,0,0,P1 GAP,Does not exist,Launch batch.
+/blog/macbeth-themes-explained,MISSING — long-tail,Students,0,0,P1 GAP,Does not exist,Launch batch.
+/blog/how-ai-marking-actually-works,MISSING — thought leadership,All,0,0,P1 GAP,Does not exist,Launch batch.

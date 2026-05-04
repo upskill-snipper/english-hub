@@ -1,0 +1,89 @@
+Cluster,Audience,Intent,Funnel_Stage,Demand_Band_Estimate,Difficulty_Estimate,Commercial_Value,Suggested_Page,Current_Page_Match,Content_Type,Priority,Recommended_Action
+gcse english revision,Students+Parents,Informational,Awareness-Consideration,High,High,High,/,/ exists,Hub page,P0,Rewrite homepage H1 to include "GCSE English revision" verbatim
+igcse english revision,Students+Parents,Informational,Awareness-Consideration,Medium-High,Medium,High,/igcse,/igcse exists,Hub page,P0,Rewrite H1 to "IGCSE English revision — Pearson Edexcel and Cambridge specs covered"
+gcse english language revision,Students,Informational,Consideration,High,High,High,/resources/english-language,/resources/english-language exists,Hub page,P1,Add 1500-word intro + Article schema
+gcse english literature revision,Students,Informational,Consideration,High,High,High,/resources/english-literature,/resources/english-literature exists,Hub page,P1,Same
+aqa english revision,Students,Informational,Consideration,High,Medium,High,/revision (with aqa cookie) or new /aqa-english-revision,/revision dispatches by cookie,Hub page,P1,Consider a public /aqa-english-revision landing page that doesn't require a cookie
+aqa power and conflict revision,Students,Informational,Consideration,Medium,Medium,High,/revision/poetry/power-and-conflict,exists,Cluster page,P1,Already strong; add Article + LearningResource schema
+aqa love and relationships revision,Students,Informational,Consideration,Medium,Medium,High,/revision/poetry/love-and-relationships,exists,Cluster page,P1,Same
+edexcel english revision,Students,Informational,Consideration,Medium,Medium,High,/revision (edexcel cookie) or new /edexcel-english-revision,partial,Hub page,P1,Add public landing page
+ocr english revision,Students,Informational,Consideration,Medium,Medium,Medium,/revision (ocr cookie),partial,Hub page,P2,Same
+eduqas english revision,Students,Informational,Consideration,Low-Medium,Medium,Medium,/revision (eduqas cookie),partial,Hub page,P2,Same
+wjec english revision,Students,Informational,Consideration,Low-Medium,Medium,Medium,/revision (eduqas) or new /wjec-english-revision,partial,Hub page,P2,Address WJEC-vs-Eduqas naming confusion in copy
+cambridge igcse english revision,Students,Informational,Consideration,Medium,Medium,High,/igcse/cambridge,exists,Hub page,P1,Add Course schema for both 0500 and 0990
+edexcel igcse literature revision,Students,Informational,Consideration,Medium,Medium,High,/igcse/edexcel,exists,Hub page,P1,Add Course schema
+edexcel igcse language revision,Students,Informational,Consideration,Low-Medium,Low,Medium,/igcse/edexcel-lang,exists,Hub page,P1,Same
+4ET1 anthology poetry,Students,Informational,Consideration,Low,Low,High,/igcse/edexcel/poetry,exists,Hub page,P1,Strong; add LearningResource per poem
+4EA1 anthology,Students,Informational,Consideration,Low,Low,Medium,/igcse/edexcel-lang/anthology,exists,Hub page,P1,Audit content depth (10 of 35 texts live)
+macbeth gcse revision,Students,Informational,Consideration,High,Medium,High,/revision/texts/macbeth,exists,Set-text guide,P1,Pilot for set-text enrichment + EmailCaptureCard + LearningResource schema
+macbeth themes,Students,Informational,Consideration,High,Medium,High,/revision/texts/macbeth/themes,exists,Set-text sub-page,P1,Add Article + LearningResource schema
+macbeth quotes,Students,Informational,Consideration,High,Medium,High,/revision/texts/macbeth/key-quotes,exists,Set-text sub-page,P1,Highest-traffic sub-page candidate; lead-magnet potential
+macbeth characters,Students,Informational,Consideration,High,Medium,Medium,/revision/texts/macbeth/characters,exists,Set-text sub-page,P1,Same
+macbeth context,Students,Informational,Consideration,Medium,Medium,Medium,/revision/texts/macbeth/context,exists,Set-text sub-page,P2,Same
+macbeth essay plans,Students,Informational,Consideration,Medium,Medium,High,/revision/texts/macbeth/essay-plans,exists,Set-text sub-page,P1,Strong intent — convert to lead-magnet
+romeo and juliet gcse revision,Students,Informational,Consideration,High,Medium,High,/revision/texts/romeo-and-juliet,exists,Set-text guide,P1,Apply set-text enrichment template
+romeo and juliet themes,Students,Informational,Consideration,High,Medium,High,/revision/texts/romeo-and-juliet/themes,exists,Set-text sub-page,P1,Same
+an inspector calls themes,Students,Informational,Consideration,High,Medium,High,/revision/texts/an-inspector-calls/themes,exists,Set-text sub-page,P1,Same
+an inspector calls characters,Students,Informational,Consideration,High,Medium,High,/revision/texts/an-inspector-calls/characters,exists,Set-text sub-page,P1,Same
+a christmas carol themes,Students,Informational,Consideration,High,Medium,High,/revision/texts/a-christmas-carol/themes,exists,Set-text sub-page,P1,Same
+a christmas carol staves,Students,Informational,Consideration,High,Medium,Medium,/revision/texts/a-christmas-carol/staves,exists,Set-text sub-page,P1,Same
+jekyll and hyde themes,Students,Informational,Consideration,High,Medium,High,/revision/texts/jekyll-and-hyde/themes,exists,Set-text sub-page,P1,Same
+animal farm themes,Students,Informational,Consideration,Medium-High,Medium,Medium,/revision/texts/animal-farm/themes,exists,Set-text sub-page,P2,Same
+lord of the flies themes,Students,Informational,Consideration,Medium-High,Medium,Medium,/revision/texts/lord-of-the-flies/themes,exists,Set-text sub-page,P2,Same
+of mice and men themes,Students,Informational,Consideration,High,Medium,High,/revision/texts/of-mice-and-men/themes,exists,Set-text sub-page,P1,Same
+how to write a grade 9 english essay,Students,Informational,Awareness,Medium-High,Medium-High,High,NEW /blog/how-to-write-a-grade-9-gcse-english-essay,not built,Blog post,P0,Top-of-funnel; high authority value
+how to revise english gcse,Students,Informational,Awareness,Medium-High,Medium,Medium,NEW /blog/how-to-revise-english-gcse,not built,Blog post,P1,Awareness; lead-magnet pairing
+how to analyse a poem,Students,Informational,Awareness,Medium,Low-Medium,Medium,NEW /blog/how-to-analyse-a-poem,not built,Blog post,P2,Top-of-funnel
+ao1 ao2 ao5 explained,Students,Informational,Consideration,Medium,Low,High,NEW /blog/ao1-ao2-ao5-explained,not built,Blog post,P1,High intent (essay writing); pairs with lead-magnet
+peel paragraph structure,Students,Informational,Awareness,Medium,Low,Medium,NEW /blog/peel-paragraph-structure-english,not built,Blog post,P2,Beginner intent
+unseen poetry analysis,Students,Informational,Consideration,Medium,Medium,Medium,/revision/poetry/unseen-poetry,exists (thin),HowTo guide,P1,Build out into a real HowTo guide with schema
+unseen prose technique,Students,Informational,Consideration,Low-Medium,Low-Medium,Medium,NEW /blog/unseen-prose-technique-igcse,not built,Blog post,P2,IGCSE-specific
+how to analyse macbeth,Students,Informational,Consideration,High,Medium,High,NEW /blog/how-to-analyse-macbeth,not built,Blog post,P0,Highest-intent blog post; ship in launch batch
+power and conflict comparisons,Students,Informational,Consideration,Medium-High,Low-Medium,High,NEW /blog/power-and-conflict-comparison-pairings,not built,Blog post,P1,Niche but high intent
+love and relationships comparisons,Students,Informational,Consideration,Medium,Low-Medium,High,NEW /blog/love-and-relationships-comparison-pairings,not built,Blog post,P1,Same
+30 day gcse english revision plan,Students,Informational,Consideration,Medium,Low,High,NEW /free-resources/30-day-gcse-english-revision-plan,not built,Lead-magnet + blog,P0,Pillar lead-magnet asset
+14 day mock revision plan,Students,Informational,Consideration,Medium,Low,Medium,NEW /free-resources/14-day-pre-mock-revision-plan,not built,Lead-magnet + blog,P1,Same
+gcse english past papers,Students,Informational,Consideration,High,High,Medium,/igcse/edexcel/past-papers + new /past-papers,partial,Hub,P1,Past papers are external (exam boards own them); link out + add board-specific guides
+aqa vs edexcel english,Students+Parents,Comparison,Consideration,Low-Medium,Low,High,NEW /compare/aqa-vs-edexcel-gcse-english-literature,not built,Comparison page,P1,High conversion
+aqa vs ocr english,Students+Parents,Comparison,Consideration,Low,Low,Medium,NEW /compare/aqa-vs-ocr-gcse-english-literature,not built,Comparison page,P2,Same
+aqa vs eduqas english,Students+Parents,Comparison,Consideration,Low,Low,Medium,NEW /compare/aqa-vs-eduqas-gcse-english-literature,not built,Comparison page,P2,Same
+gcse vs igcse english,Students+Parents,Comparison,Awareness,Medium,Low,High,NEW /compare/gcse-english-vs-igcse-english,not built,Comparison page,P1,High intent for international parents
+cambridge 0500 vs 0990,Students+Parents,Comparison,Consideration,Low,Low,High,NEW /compare/cambridge-igcse-0500-vs-0990,not built,Comparison page,P1,Niche but high intent
+edexcel igcse vs cambridge igcse,Students+Parents,Comparison,Consideration,Low,Low,High,NEW /compare/edexcel-igcse-vs-cambridge-igcse-english,not built,Comparison page,P1,Same
+ai essay marking,Students+Teachers,Informational,Consideration,Medium,Medium,High,/marking,exists (sample),Tool page,P1,Add SoftwareApplication or Service schema
+gcse english tutor app,Students+Parents,Commercial,Consideration,Medium,Medium,High,/for-students,exists,Audience page,P1,Rewrite for query intent
+english department platform,School heads,Commercial,Consideration,Low,Low,High,/for-schools,exists,Audience page,P1,B2B niche; high commercial value
+english edtech for schools,School heads,Commercial,Consideration,Low,Low,High,/for-schools,exists,Audience page,P2,Same
+english teacher tools,Teachers,Commercial,Consideration,Medium,Medium,High,/for-teachers,exists,Audience page,P1,Strip false claims first
+english worksheet template,Teachers,Informational,Consideration,Medium,Medium,Medium,NEW /resources/teaching/printables (build out),exists (likely thin),Resource library,P1,Build 30 PDFs
+gcse english lesson plan,Teachers,Informational,Consideration,Medium,Medium,Medium,NEW /resources/teaching/lesson-plans,exists (likely thin),Resource library,P1,Same
+how to help my child with gcse english,Parents,Informational,Awareness,Medium-High,Low-Medium,High,NEW /for-parents/study-guide,not built,Audience guide,P1,Parent-specific landing
+gcse english tutor,Parents,Commercial,Consideration,High,High,Very high,/for-parents,exists (thin),Audience page,P1,Rewrite for query intent
+is gcse english hard,Parents,Informational,Awareness,Medium,Low,Medium,NEW /blog/is-gcse-english-hard,not built,Blog post,P2,Mumsnet-shareable
+gcse english grade 9 tips,Students,Informational,Consideration,Medium-High,Medium,High,/resources/grade-targets/grade-9,exists (audit),Sub-page,P1,Strong intent
+ofsted english department evidence,School heads,Informational,Consideration,Low,Low,High,NEW /for-schools/ofsted-prep,not built,B2B landing,P2,Niche but high LTV
+qatar british curriculum english,School heads,Commercial,Consideration,Low,Low,High,NEW /for-schools/qatar,not built,Local landing,P2,Niche; high willingness-to-pay
+gcc british curriculum english,School heads,Commercial,Consideration,Low,Low,Medium,NEW /for-schools/gcc,not built,Local landing,P2,Same
+international school english,School heads,Commercial,Consideration,Low-Medium,Medium,High,NEW /igcse/international-schools,not built,Local landing,P2,Same
+educational affiliate programme,Creators,Commercial,Conversion,Low,Low,Medium,/affiliates,exists,Audience page,P1,Rewrite for intent + earnings table
+gcse english revision app,Students+Parents,Commercial,Consideration,Medium,Medium,High,/ + /for-students,exists,Hub + audience,P1,Cross-link homepage to /for-students
+free gcse english revision,Students+Parents,Informational,Awareness,High,High,Medium,NEW /free-resources,not built,Lead-magnet hub,P0,Build out
+free igcse english resources,Students+Parents,Informational,Awareness,Medium,Medium,Medium,NEW /free-resources?audience=igcse,not built,Filtered hub,P1,Same
+predict your gcse english grade,Students,Tool,Awareness,Low-Medium,Low,High,NEW /predict-your-grade,not built,Tool quiz,P1,Pre-Q1 PR campaign
+which exam board am i on,Students+Parents,Informational,Awareness,Low,Low,Medium,NEW /exam-board-finder,not built,Tool quiz,P2,Top-of-funnel
+english hub login,Branded,Navigational,Conversion,Low,N/A,N/A,/auth/login,exists,Auth page,N/A,Already in robots allow-list
+english hub pricing,Branded,Commercial,Conversion,Low,N/A,N/A,/pricing,exists,Pricing page,N/A,Strong
+english hub for teachers,Branded,Commercial,Conversion,Low,N/A,N/A,/for-teachers,exists,Audience page,N/A,Will rank for branded variants
+english hub trustpilot,Branded,Trust,Trust,Low,N/A,N/A,/pricing or new /reviews,exists (TrustBox),Trust page,N/A,Surface once 10+ verified reviews
+the english hub vs save my exams,Branded+Comparison,Commercial,Consideration,Low,Low,High,NEW /compare/the-english-hub-vs-save-my-exams,not built,Comparison page,P3,Defensive/conversion
+the english hub vs seneca,Branded+Comparison,Commercial,Consideration,Low,Low,High,NEW /compare/the-english-hub-vs-seneca,not built,Comparison page,P3,Same
+the english hub vs pmt,Branded+Comparison,Commercial,Consideration,Low,Low,High,NEW /compare/the-english-hub-vs-physics-and-maths-tutor,not built,Comparison page,P3,Same
+how does ai marking work,All,Informational,Awareness,Low-Medium,Low,Medium,NEW /blog/how-ai-essay-marking-works,not built,Thought-leadership post,P1,Builds trust
+is ai marking accurate,Students+Teachers,Informational,Consideration,Low-Medium,Low,High,NEW /blog/is-ai-essay-marking-accurate,not built,Thought-leadership post,P1,Conversion-adjacent
+gcse english revision schedule,Students,Informational,Consideration,Medium,Low,Medium,NEW /blog/gcse-english-revision-schedule (paired with 30-day plan PDF),not built,Blog + lead-magnet,P1,Pairs with PDF
+how to memorise quotes for gcse english,Students,Informational,Consideration,Medium,Low,Medium,NEW /blog/how-to-memorise-quotes-gcse-english,not built,Blog post,P1,Niche; pairs with quote-bank PDFs
+gcse english mock exam tips,Students,Informational,Consideration,Medium,Low,High,NEW /blog/gcse-english-mock-exam-tips,not built,Blog post,P1,Mock-season timing
+parents guide to gcse english,Parents,Informational,Awareness,Medium,Low,High,NEW /free-resources/parents-guide-to-gcse-english,not built,Lead-magnet,P1,Mumsnet-shareable
+free macbeth quote bank,Students,Informational,Consideration,Medium,Low,High,NEW /free-resources/macbeth-quote-bank,not built,Lead-magnet,P0,Highest-intent lead-magnet
+free aqa power and conflict pack,Students,Informational,Consideration,Low-Medium,Low,High,NEW /free-resources/aqa-power-and-conflict-revision-pack,not built,Lead-magnet,P0,Same
+gcse english revision pdf,Students,Informational,Consideration,Medium-High,Low,High,/free-resources index,not built,Lead-magnet hub,P0,Same

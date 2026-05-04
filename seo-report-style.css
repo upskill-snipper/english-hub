@@ -1,0 +1,298 @@
+/* ============================================================
+   The English Hub — SEO Audit Report stylesheet
+   Designed for both screen reading and print/PDF output.
+   ============================================================ */
+
+@page {
+  size: A4;
+  margin: 22mm 18mm 22mm 18mm;
+  @top-left { content: "The English Hub — SEO Audit"; font-size: 9pt; color: #6b7280; }
+  @top-right { content: "04 May 2026"; font-size: 9pt; color: #6b7280; }
+  @bottom-right { content: counter(page) " of " counter(pages); font-size: 9pt; color: #6b7280; }
+}
+
+@page :first {
+  @top-left { content: ""; }
+  @top-right { content: ""; }
+  @bottom-right { content: ""; }
+}
+
+:root {
+  --fg: #0f172a;
+  --fg-muted: #475569;
+  --fg-light: #94a3b8;
+  --bg: #ffffff;
+  --bg-soft: #f8fafc;
+  --bg-code: #f1f5f9;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --accent: #047857;
+  --accent-soft: #d1fae5;
+  --warn: #b45309;
+  --warn-soft: #fef3c7;
+  --crit: #b91c1c;
+  --crit-soft: #fee2e2;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-size: 10.5pt;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.55;
+  margin: 0;
+  padding: 0;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 28px 48px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
+  color: var(--fg);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 1.6em 0 0.55em;
+  page-break-after: avoid;
+}
+
+h1 {
+  font-size: 24pt;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 14px;
+  margin-top: 0;
+  page-break-before: always;
+}
+
+h1:first-of-type { page-break-before: avoid; }
+
+h2 {
+  font-size: 17pt;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-top: 1.8em;
+}
+
+h3 {
+  font-size: 13.5pt;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+h4 {
+  font-size: 11.5pt;
+  font-weight: 700;
+  color: var(--fg-muted);
+  text-transform: none;
+}
+
+h5, h6 {
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--fg-muted);
+}
+
+/* Paragraphs */
+p {
+  margin: 0.6em 0 0.85em;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+p strong, li strong {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(4,120,87,0.25);
+  transition: color 120ms, border-color 120ms;
+}
+a:hover {
+  color: #065f46;
+  border-bottom-color: #065f46;
+}
+
+/* Lists */
+ul, ol {
+  margin: 0.4em 0 1em;
+  padding-left: 1.4em;
+}
+li {
+  margin: 0.25em 0;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin: 0.25em 0;
+}
+
+/* Code */
+code {
+  font-family: 'JetBrains Mono', 'SF Mono', 'Consolas', 'Courier New', monospace;
+  background: var(--bg-code);
+  border-radius: 4px;
+  padding: 0.12em 0.4em;
+  font-size: 0.88em;
+  color: #0f172a;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 6px;
+  padding: 14px 18px;
+  overflow-x: auto;
+  margin: 1em 0;
+  font-size: 9pt;
+  line-height: 1.5;
+  page-break-inside: avoid;
+}
+pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0 1.4em;
+  font-size: 9.5pt;
+  page-break-inside: auto;
+}
+table th, table td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+table th {
+  background: var(--bg-soft);
+  font-weight: 700;
+  color: var(--fg);
+}
+table tbody tr:nth-child(even) {
+  background: #fafbfc;
+}
+table tr {
+  page-break-inside: avoid;
+}
+
+/* Blockquote */
+blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid var(--accent);
+  background: var(--bg-soft);
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}
+
+/* Strong inline emphasis classes via emoji prefixes */
+p strong:first-child, li strong:first-child {
+  color: var(--fg);
+}
+
+/* TOC */
+nav#TOC {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 26px;
+  margin: 1.5em 0 2em;
+  page-break-inside: avoid;
+}
+nav#TOC > ul { padding-left: 1.2em; margin: 0.5em 0; }
+nav#TOC ul ul { padding-left: 1.2em; }
+nav#TOC li {
+  margin: 0.25em 0;
+  font-size: 10pt;
+}
+nav#TOC a {
+  border-bottom: none;
+  color: var(--fg-muted);
+}
+nav#TOC a:hover {
+  color: var(--accent);
+}
+nav#TOC::before {
+  content: "Contents";
+  display: block;
+  font-size: 12pt;
+  font-weight: 700;
+  margin-bottom: 0.8em;
+  color: var(--fg);
+}
+
+/* Metadata block at top */
+.report-meta {
+  font-size: 9.5pt;
+  color: var(--fg-muted);
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Cover page (first H1 + meta) */
+.title-block-header {
+  text-align: left;
+  padding: 0 0 1em;
+}
+
+/* Print-specific */
+@media print {
+  body {
+    max-width: 100%;
+    padding: 0;
+    font-size: 10pt;
+  }
+  h1 { page-break-before: always; }
+  h1:first-of-type { page-break-before: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  table, pre, blockquote, nav#TOC { page-break-inside: avoid; }
+  a { color: var(--fg); border-bottom: 1px dotted var(--fg-light); }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: var(--fg-light);
+    word-break: break-all;
+  }
+  /* Suppress the (URL) annotation for in-document anchors */
+  a[href^="#"]::after {
+    content: "";
+  }
+}
+
+/* Screen-only refinements */
+@media screen {
+  body {
+    background: #fafbfc;
+  }
+  body > * {
+    background: var(--bg);
+  }
+}

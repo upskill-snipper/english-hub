@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Lord of the Flies — Study Guide | The English Hub',
+  title: 'Lord of the Flies revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Lord of the Flies by William Golding: plot, characters, themes, context and key quotations.',
+    "Lord of the Flies GCSE revision — Golding's novel by chapter with characters, themes, context, key quotes and essay plans. Aligned to AQA, OCR and Eduqas.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
   },

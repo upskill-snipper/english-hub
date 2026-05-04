@@ -5,10 +5,10 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie' },
-  title: 'Cambridge IGCSE English Literature (0475/0992)',
+  title: 'Cambridge IGCSE English Literature resources — The English Hub',
   description:
-    'Comprehensive study resources for Cambridge IGCSE English Literature. Poetry analysis, drama guides, Macbeth study notes, unseen techniques, and exam preparation for Papers 1 and 2.',
+    'Cambridge IGCSE English Literature 0475 set-text guides, Songs of Ourselves anthology, unseen poetry and exam technique walkthroughs for Paper 1 and 2.',
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie' },
 }
 
 /* ─── Resource cards data ────────────────────────────────────── */

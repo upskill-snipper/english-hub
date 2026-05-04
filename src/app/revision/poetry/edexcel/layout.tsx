@@ -1,3 +1,12 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Edexcel GCSE poetry anthology — Time and Place + Conflict — The English Hub',
+  description:
+    'Pearson Edexcel GCSE 1ET0 poetry anthology. Both clusters covered: Time and Place, Conflict. Themes, language, and comparison practice for Paper 2.',
+  alternates: { canonical: 'https://theenglishhub.app/revision/poetry/edexcel' },
+}
+
 export default async function EdexcelPoetryLayout({ children }: { children: React.ReactNode }) {
   // Intentionally no board guard. Users may click into this page from the
   // homepage board grid even when their saved cookie is for a different

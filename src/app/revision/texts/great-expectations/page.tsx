@@ -9,9 +9,9 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'Great Expectations — Study Guide | The English Hub',
+  title: 'Great Expectations revision guide — themes, characters, key quotes — The English Hub',
   description:
-    'In-depth study guide for Great Expectations by Charles Dickens: plot, characters, themes, context and key quotations.',
+    "Great Expectations GCSE revision — Dickens's bildungsroman by chapter with characters, themes, key quotes and essay plans. Aligned to the AQA spec.",
   alternates: {
     canonical: 'https://theenglishhub.app/revision/texts/great-expectations',
   },
@@ -113,7 +113,8 @@ const data: TextGuideData = {
   ],
   quotations: [
     {
-      quote: '"My father\'s family name being Pirrip, and my christian name Philip, my infant tongue could make of both names nothing longer or more explicit than Pip. So, I called myself Pip, and came to be called Pip."',
+      quote:
+        '"My father\'s family name being Pirrip, and my christian name Philip, my infant tongue could make of both names nothing longer or more explicit than Pip. So, I called myself Pip, and came to be called Pip."',
       who: 'Pip \u2014 Chapter 1',
       analysis:
         'The opening sentence establishes the first-person retrospective voice and dramatises self-making at the level of the name itself: Pip has, in a small way, already invented himself.',
@@ -131,7 +132,8 @@ const data: TextGuideData = {
         'The triple imperative exposes Miss Havisham\u2019s use of Estella as an instrument of revenge, and the word "pride" admits that she is investing her own wounded self in her adopted daughter.',
     },
     {
-      quote: '"I loved her against reason, against promise, against peace, against hope, against happiness, against all discouragement that could be."',
+      quote:
+        '"I loved her against reason, against promise, against peace, against hope, against happiness, against all discouragement that could be."',
       who: 'Pip on Estella',
       analysis:
         'The insistent anaphora of "against" makes clear that Pip\u2019s love is self-destructive and chosen in defiance of his own judgement \u2014 a portrait of romantic obsession as a form of willed suffering.',
@@ -167,13 +169,15 @@ const data: TextGuideData = {
         'The famous ambiguous ending refuses a clean romantic resolution. The absence of a "shadow" is a negative image rather than a promise, leaving the future open between hope and doubt.',
     },
     {
-      quote: '"I think it was the first time I had ever seen her with a look such as she gave me; the look of one who is recalling something she has been accustomed to despise."',
+      quote:
+        '"I think it was the first time I had ever seen her with a look such as she gave me; the look of one who is recalling something she has been accustomed to despise."',
       who: 'Pip on Estella',
       analysis:
         'The layered perception \u2014 Pip observing Estella remembering \u2014 captures the retrospective narrator\u2019s technique and foreshadows Estella\u2019s eventual change.',
     },
     {
-      quote: '"Pause you who read this, and think for a moment of the long chain of iron or gold, of thorns or flowers, that would never have bound you, but for the formation of the first link on one memorable day."',
+      quote:
+        '"Pause you who read this, and think for a moment of the long chain of iron or gold, of thorns or flowers, that would never have bound you, but for the formation of the first link on one memorable day."',
       who: 'Pip \u2014 Chapter 9',
       analysis:
         'The older narrator addresses the reader directly. The four-part "chain" image (iron/gold, thorns/flowers) captures how a single meeting at Satis House determines the whole shape of Pip\u2019s life.',
@@ -185,19 +189,22 @@ const data: TextGuideData = {
         'The embarrassed euphemism "a very particular reason" is Pip confessing, without quite saying so, that his social ambition is driven by love of Estella \u2014 a confession Biddy immediately understands.',
     },
     {
-      quote: '"Heaven knows we need never be ashamed of our tears, for they are rain upon the blinding dust of earth, overlying our hard hearts."',
+      quote:
+        '"Heaven knows we need never be ashamed of our tears, for they are rain upon the blinding dust of earth, overlying our hard hearts."',
       who: 'Pip \u2014 Chapter 19',
       analysis:
         'The older narrator\u2019s aphoristic reflection on leaving home for London blends natural imagery with moral insight and signals the mature perspective that judges the younger Pip\u2019s shame.',
     },
     {
-      quote: '"So throughout life, our worst weaknesses and meannesses are usually committed for the sake of the people whom we most despise."',
+      quote:
+        '"So throughout life, our worst weaknesses and meannesses are usually committed for the sake of the people whom we most despise."',
       who: 'Pip',
       analysis:
         'A generalising maxim from the older narrator. Pip has learned that the meanness he showed Joe was driven by Estella\u2019s scorn \u2014 by caring for the judgement of people he should not have valued.',
     },
     {
-      quote: '"He was a Tartar, and he had a court-yard in him, and a flag-staff, and his name was Drummle."',
+      quote:
+        '"He was a Tartar, and he had a court-yard in him, and a flag-staff, and his name was Drummle."',
       who: 'Herbert Pocket on Bentley Drummle',
       analysis:
         'Herbert\u2019s comic architectural metaphor makes Drummle a pompous fortress of a man. The joke conceals a real warning, since Drummle will later marry and brutalise Estella.',
@@ -209,13 +216,15 @@ const data: TextGuideData = {
         'A declaration of love as literary haunting: Estella has become part of how Pip reads the world. The quotation captures the novel\u2019s linking of love, reading and self-knowledge.',
     },
     {
-      quote: '"Take another glass of wine, and excuse my mentioning that society as a body does not expect one to be so strictly conscientious in emptying one\'s glass, as to turn it bottom upwards with the rim on one\'s nose."',
+      quote:
+        '"Take another glass of wine, and excuse my mentioning that society as a body does not expect one to be so strictly conscientious in emptying one\'s glass, as to turn it bottom upwards with the rim on one\'s nose."',
       who: 'Herbert Pocket',
       analysis:
         'Herbert\u2019s gentle correction of Pip\u2019s table manners shows class being taught as etiquette, and shows friendship at its best: a correction offered with such tact it barely registers as one.',
     },
     {
-      quote: '"O dear good Joe, whom I was so ready to leave and so unthankful to, I see you again, with your muscular blacksmith\'s arm before your eyes, and your broad chest heaving, and your voice dying away."',
+      quote:
+        '"O dear good Joe, whom I was so ready to leave and so unthankful to, I see you again, with your muscular blacksmith\'s arm before your eyes, and your broad chest heaving, and your voice dying away."',
       who: 'Pip \u2014 later reflection',
       analysis:
         'The older narrator\u2019s apostrophe to Joe \u2014 "O dear good Joe" \u2014 performs the very gratitude the younger Pip withheld, turning the prose itself into an act of late restitution.',
@@ -224,34 +233,340 @@ const data: TextGuideData = {
 }
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'ge-1', question: 'What is the narrator\'s full name?', type: 'multiple-choice', options: ['Pip Gargery', 'Philip Pirrip', 'Philip Havisham', 'Philip Magwitch'], correctIndex: 1, explanation: 'The novel opens by telling us his family name is Pirrip and his Christian name Philip; his infant tongue could make only "Pip" of both.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'ge-2', question: 'Where does Pip first meet Magwitch?', type: 'multiple-choice', options: ['In London', 'On the Kent marshes', 'At Satis House', 'In Australia'], correctIndex: 1, explanation: 'Pip meets the escaped convict on the marshes near the churchyard on Christmas Eve, in the opening chapter.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'ge-3', question: 'Who raises Pip after his parents\' deaths?', type: 'multiple-choice', options: ['Miss Havisham', 'Joe and Mrs Joe Gargery', 'Mr Jaggers', 'Herbert Pocket'], correctIndex: 1, explanation: 'Pip is raised "by hand" by his sister Mrs Joe and her husband Joe Gargery, the village blacksmith.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'ge-4', question: 'What is the name of Miss Havisham\'s decaying house?', type: 'multiple-choice', options: ['Gad\'s Hill', 'Satis House', 'Chesney Wold', 'Bleak House'], correctIndex: 1, explanation: 'Miss Havisham lives at Satis House, where every clock is stopped at twenty to nine and her wedding breakfast is left rotting on the table.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'ge-5', question: 'Who is revealed to be Pip\'s real benefactor?', type: 'multiple-choice', options: ['Miss Havisham', 'Mr Jaggers', 'Abel Magwitch', 'Joe Gargery'], correctIndex: 2, explanation: 'The convict Magwitch, who made a fortune as a sheep-farmer in Australia, has secretly funded Pip\'s education as a gentleman in gratitude for the food Pip brought him on the marshes.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'ge-6', question: 'What is Joe Gargery\'s trade?', type: 'multiple-choice', options: ['Lawyer', 'Blacksmith', 'Clerk', 'Sailor'], correctIndex: 1, explanation: 'Joe is the village blacksmith, and Pip is apprenticed to him before leaving for London.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'ge-7', question: 'Who is Pip\'s closest friend in London?', type: 'multiple-choice', options: ['Bentley Drummle', 'Herbert Pocket', 'Mr Jaggers', 'Wemmick'], correctIndex: 1, explanation: 'Herbert Pocket, Miss Havisham\'s distant relative, lodges with Pip in London and nicknames him Handel.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'ge-8', question: 'What is the relationship between Estella and Magwitch?', type: 'multiple-choice', options: ['No relation', 'She is his daughter', 'She is his sister', 'She is his lawyer'], correctIndex: 1, explanation: 'The novel gradually reveals that Estella is the daughter of Magwitch and Molly, Jaggers\'s housekeeper. Estella herself is not told.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'ge-9', question: 'What genre does Great Expectations belong to?', type: 'multiple-choice', options: ['Epistolary novel', 'Bildungsroman', 'Detective novel', 'Gothic romance'], correctIndex: 1, explanation: 'It is a bildungsroman \u2014 a novel tracing a young protagonist\'s moral and social education from childhood to adulthood.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'ge-10', question: 'What happens to Miss Havisham near the end of the novel?', type: 'multiple-choice', options: ['She marries Pip', 'Her wedding dress catches fire and she later dies from her injuries', 'She moves to London', 'She leaves her fortune to Drummle'], correctIndex: 1, explanation: 'During Pip\'s confrontation with her, Miss Havisham\'s rotting wedding dress catches fire at the hearth. She is badly burned and dies soon after, having begged Pip\'s forgiveness.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'ge-11', question: 'How does Magwitch die?', type: 'multiple-choice', options: ['He is hanged', 'He escapes to America', 'He is fatally injured in the struggle with Compeyson and dies awaiting trial', 'He is poisoned by Jaggers'], correctIndex: 2, explanation: 'During the attempt to smuggle Magwitch out of England, he struggles with his old enemy Compeyson, who drowns. Magwitch is mortally injured, condemned to death, and dies in prison with Pip at his side.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'ge-12', question: 'What does Joe repeatedly call Pip throughout the novel?', type: 'multiple-choice', options: ['"Young master"', '"Old chap"', '"My boy"', '"Sir"'], correctIndex: 1, explanation: 'Joe\'s refrain is "Ever the best of friends, Pip, old chap," a phrase that marks the unchanging loyalty Pip strays from and returns to.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'ge-13', question: 'What does Miss Havisham mean by "Break their hearts, my pride and hope"?', type: 'multiple-choice', options: ['She is encouraging Estella to be kind', 'She is training Estella as an instrument of revenge against men', 'She is joking', 'She is quoting a poem'], correctIndex: 1, explanation: 'Miss Havisham has raised Estella explicitly to wound the hearts of men, in revenge for her own abandonment at the altar. The imperative is openly vengeful.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'ge-14', question: 'What is the significance of the marshes in the opening chapter?', type: 'multiple-choice', options: ['They are a pleasant holiday setting', 'They establish a bleak, liminal landscape where Pip\'s life is disrupted by a criminal encounter that will shape everything that follows', 'They are where Pip lives', 'They are entirely decorative'], correctIndex: 1, explanation: 'The marshes are Dickens\'s Gothic threshold: a bleak, open landscape between land and sea where law breaks down, convicts escape, and the encounter with Magwitch begins Pip\'s moral story.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'ge-15', question: 'How does Dickens use the retrospective first-person narration?', type: 'multiple-choice', options: ['It is purely for variety', 'The older Pip narrates with a judgemental self-awareness the younger Pip lacked, creating a double perspective that is one of the novel\'s central techniques', 'It is inconsistent and accidental', 'It is told by an anonymous narrator'], correctIndex: 1, explanation: 'Dickens splits the voice between older narrator and younger self, so that every episode carries both the experience and the mature judgement of it. This is how the novel achieves its characteristic moral depth.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'ge-16', question: 'What is the significance of Pip\'s London debts and membership of the Finches of the Grove?', type: 'multiple-choice', options: ['They are unimportant', 'They show the emptiness of Pip\'s gentlemanly life and the way social aspiration consumes money and friendship without producing any real work or purpose', 'They show his generosity', 'They are purely comic'], correctIndex: 1, explanation: 'Dickens uses the club and the debts to show that Pip\'s "expectations" deliver a hollow life of performance and consumption. He produces nothing, owes everyone, and only when he is ruined can he begin to work.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'ge-17', question: 'Why does Dickens make Magwitch the true benefactor rather than Miss Havisham?', type: 'multiple-choice', options: ['For shock value only', 'To expose the Victorian class system: the hunted criminal is a more loving parent than the respectable gentry, and Pip\'s gentlemanly status has been funded by colonial labour forced on a convict', 'Because he hated Miss Havisham', 'Because readers demanded it'], correctIndex: 1, explanation: 'The revelation inverts Victorian class assumptions. The respectable world Pip has learned to value turns out to have no claim on him, and the generosity that has paid for his gentility has come from a man the same world has cast out.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'ge-18', question: 'What are the two endings of Great Expectations?', type: 'multiple-choice', options: ['There is only one ending', 'An original bleaker ending in which Pip and Estella part for good, and a revised published ending in which Pip sees "no shadow of another parting" as he leaves Satis House with Estella', 'Two identical endings', 'A happy ending and a tragic ending with Pip\'s death'], correctIndex: 1, explanation: 'Dickens originally wrote a bleaker ending in which Pip meets Estella briefly in London and they part. On the advice of Bulwer-Lytton he revised it into the more ambiguous published ending at Satis House, which leaves a cautious, qualified hope.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'ge-19', question: 'Why is the novel called "Great Expectations"?', type: 'multiple-choice', options: ['It is purely decorative', 'The title names both the legal term for inherited prospects and the broader Victorian idea of ambition. The novel treats "expectations" with deep irony, tracing how they corrupt Pip\'s relationships and finally collapse', 'It refers to Christmas', 'It is the name of a London school'], correctIndex: 1, explanation: '"Expectations" is Jaggers\'s legal term for Pip\'s anticipated inheritance, but Dickens enlarges it into a moral critique: the novel is about what hopes of status and money do to the people who hold them.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'ge-20', question: 'What is transportation and why is it central to the plot?', type: 'multiple-choice', options: ['It is a London transport system', 'It is the Victorian practice of shipping convicts to Australian penal colonies for long sentences; Magwitch has been transported for life, and returning to England is itself a capital offence, which is why his presence in London puts him in mortal danger', 'It is unimportant background', 'It is a legal system Dickens invented'], correctIndex: 1, explanation: 'Magwitch has been transported to Australia for life and has returned to see "his gentleman." Because unlicensed return from transportation was punishable by death, every day he spends in Pip\'s rooms risks the gallows. This historical fact drives the novel\'s final act.', topic: 'Context', difficulty: 'grade-9' },
+  {
+    id: 'ge-1',
+    question: "What is the narrator's full name?",
+    type: 'multiple-choice',
+    options: ['Pip Gargery', 'Philip Pirrip', 'Philip Havisham', 'Philip Magwitch'],
+    correctIndex: 1,
+    explanation:
+      'The novel opens by telling us his family name is Pirrip and his Christian name Philip; his infant tongue could make only "Pip" of both.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ge-2',
+    question: 'Where does Pip first meet Magwitch?',
+    type: 'multiple-choice',
+    options: ['In London', 'On the Kent marshes', 'At Satis House', 'In Australia'],
+    correctIndex: 1,
+    explanation:
+      'Pip meets the escaped convict on the marshes near the churchyard on Christmas Eve, in the opening chapter.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ge-3',
+    question: "Who raises Pip after his parents' deaths?",
+    type: 'multiple-choice',
+    options: ['Miss Havisham', 'Joe and Mrs Joe Gargery', 'Mr Jaggers', 'Herbert Pocket'],
+    correctIndex: 1,
+    explanation:
+      'Pip is raised "by hand" by his sister Mrs Joe and her husband Joe Gargery, the village blacksmith.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ge-4',
+    question: "What is the name of Miss Havisham's decaying house?",
+    type: 'multiple-choice',
+    options: ["Gad's Hill", 'Satis House', 'Chesney Wold', 'Bleak House'],
+    correctIndex: 1,
+    explanation:
+      'Miss Havisham lives at Satis House, where every clock is stopped at twenty to nine and her wedding breakfast is left rotting on the table.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ge-5',
+    question: "Who is revealed to be Pip's real benefactor?",
+    type: 'multiple-choice',
+    options: ['Miss Havisham', 'Mr Jaggers', 'Abel Magwitch', 'Joe Gargery'],
+    correctIndex: 2,
+    explanation:
+      "The convict Magwitch, who made a fortune as a sheep-farmer in Australia, has secretly funded Pip's education as a gentleman in gratitude for the food Pip brought him on the marshes.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ge-6',
+    question: "What is Joe Gargery's trade?",
+    type: 'multiple-choice',
+    options: ['Lawyer', 'Blacksmith', 'Clerk', 'Sailor'],
+    correctIndex: 1,
+    explanation:
+      'Joe is the village blacksmith, and Pip is apprenticed to him before leaving for London.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ge-7',
+    question: "Who is Pip's closest friend in London?",
+    type: 'multiple-choice',
+    options: ['Bentley Drummle', 'Herbert Pocket', 'Mr Jaggers', 'Wemmick'],
+    correctIndex: 1,
+    explanation:
+      "Herbert Pocket, Miss Havisham's distant relative, lodges with Pip in London and nicknames him Handel.",
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ge-8',
+    question: 'What is the relationship between Estella and Magwitch?',
+    type: 'multiple-choice',
+    options: ['No relation', 'She is his daughter', 'She is his sister', 'She is his lawyer'],
+    correctIndex: 1,
+    explanation:
+      "The novel gradually reveals that Estella is the daughter of Magwitch and Molly, Jaggers's housekeeper. Estella herself is not told.",
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ge-9',
+    question: 'What genre does Great Expectations belong to?',
+    type: 'multiple-choice',
+    options: ['Epistolary novel', 'Bildungsroman', 'Detective novel', 'Gothic romance'],
+    correctIndex: 1,
+    explanation:
+      "It is a bildungsroman \u2014 a novel tracing a young protagonist's moral and social education from childhood to adulthood.",
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'ge-10',
+    question: 'What happens to Miss Havisham near the end of the novel?',
+    type: 'multiple-choice',
+    options: [
+      'She marries Pip',
+      'Her wedding dress catches fire and she later dies from her injuries',
+      'She moves to London',
+      'She leaves her fortune to Drummle',
+    ],
+    correctIndex: 1,
+    explanation:
+      "During Pip's confrontation with her, Miss Havisham's rotting wedding dress catches fire at the hearth. She is badly burned and dies soon after, having begged Pip's forgiveness.",
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ge-11',
+    question: 'How does Magwitch die?',
+    type: 'multiple-choice',
+    options: [
+      'He is hanged',
+      'He escapes to America',
+      'He is fatally injured in the struggle with Compeyson and dies awaiting trial',
+      'He is poisoned by Jaggers',
+    ],
+    correctIndex: 2,
+    explanation:
+      'During the attempt to smuggle Magwitch out of England, he struggles with his old enemy Compeyson, who drowns. Magwitch is mortally injured, condemned to death, and dies in prison with Pip at his side.',
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ge-12',
+    question: 'What does Joe repeatedly call Pip throughout the novel?',
+    type: 'multiple-choice',
+    options: ['"Young master"', '"Old chap"', '"My boy"', '"Sir"'],
+    correctIndex: 1,
+    explanation:
+      'Joe\'s refrain is "Ever the best of friends, Pip, old chap," a phrase that marks the unchanging loyalty Pip strays from and returns to.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ge-13',
+    question: 'What does Miss Havisham mean by "Break their hearts, my pride and hope"?',
+    type: 'multiple-choice',
+    options: [
+      'She is encouraging Estella to be kind',
+      'She is training Estella as an instrument of revenge against men',
+      'She is joking',
+      'She is quoting a poem',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Miss Havisham has raised Estella explicitly to wound the hearts of men, in revenge for her own abandonment at the altar. The imperative is openly vengeful.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ge-14',
+    question: 'What is the significance of the marshes in the opening chapter?',
+    type: 'multiple-choice',
+    options: [
+      'They are a pleasant holiday setting',
+      "They establish a bleak, liminal landscape where Pip's life is disrupted by a criminal encounter that will shape everything that follows",
+      'They are where Pip lives',
+      'They are entirely decorative',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The marshes are Dickens's Gothic threshold: a bleak, open landscape between land and sea where law breaks down, convicts escape, and the encounter with Magwitch begins Pip's moral story.",
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'ge-15',
+    question: 'How does Dickens use the retrospective first-person narration?',
+    type: 'multiple-choice',
+    options: [
+      'It is purely for variety',
+      "The older Pip narrates with a judgemental self-awareness the younger Pip lacked, creating a double perspective that is one of the novel's central techniques",
+      'It is inconsistent and accidental',
+      'It is told by an anonymous narrator',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Dickens splits the voice between older narrator and younger self, so that every episode carries both the experience and the mature judgement of it. This is how the novel achieves its characteristic moral depth.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ge-16',
+    question:
+      "What is the significance of Pip's London debts and membership of the Finches of the Grove?",
+    type: 'multiple-choice',
+    options: [
+      'They are unimportant',
+      "They show the emptiness of Pip's gentlemanly life and the way social aspiration consumes money and friendship without producing any real work or purpose",
+      'They show his generosity',
+      'They are purely comic',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Dickens uses the club and the debts to show that Pip\'s "expectations" deliver a hollow life of performance and consumption. He produces nothing, owes everyone, and only when he is ruined can he begin to work.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ge-17',
+    question: 'Why does Dickens make Magwitch the true benefactor rather than Miss Havisham?',
+    type: 'multiple-choice',
+    options: [
+      'For shock value only',
+      "To expose the Victorian class system: the hunted criminal is a more loving parent than the respectable gentry, and Pip's gentlemanly status has been funded by colonial labour forced on a convict",
+      'Because he hated Miss Havisham',
+      'Because readers demanded it',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The revelation inverts Victorian class assumptions. The respectable world Pip has learned to value turns out to have no claim on him, and the generosity that has paid for his gentility has come from a man the same world has cast out.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ge-18',
+    question: 'What are the two endings of Great Expectations?',
+    type: 'multiple-choice',
+    options: [
+      'There is only one ending',
+      'An original bleaker ending in which Pip and Estella part for good, and a revised published ending in which Pip sees "no shadow of another parting" as he leaves Satis House with Estella',
+      'Two identical endings',
+      "A happy ending and a tragic ending with Pip's death",
+    ],
+    correctIndex: 1,
+    explanation:
+      'Dickens originally wrote a bleaker ending in which Pip meets Estella briefly in London and they part. On the advice of Bulwer-Lytton he revised it into the more ambiguous published ending at Satis House, which leaves a cautious, qualified hope.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ge-19',
+    question: 'Why is the novel called "Great Expectations"?',
+    type: 'multiple-choice',
+    options: [
+      'It is purely decorative',
+      'The title names both the legal term for inherited prospects and the broader Victorian idea of ambition. The novel treats "expectations" with deep irony, tracing how they corrupt Pip\'s relationships and finally collapse',
+      'It refers to Christmas',
+      'It is the name of a London school',
+    ],
+    correctIndex: 1,
+    explanation:
+      '"Expectations" is Jaggers\'s legal term for Pip\'s anticipated inheritance, but Dickens enlarges it into a moral critique: the novel is about what hopes of status and money do to the people who hold them.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ge-20',
+    question: 'What is transportation and why is it central to the plot?',
+    type: 'multiple-choice',
+    options: [
+      'It is a London transport system',
+      'It is the Victorian practice of shipping convicts to Australian penal colonies for long sentences; Magwitch has been transported for life, and returning to England is itself a capital offence, which is why his presence in London puts him in mortal danger',
+      'It is unimportant background',
+      'It is a legal system Dickens invented',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Magwitch has been transported to Australia for life and has returned to see "his gentleman." Because unlicensed return from transportation was punishable by death, every day he spends in Pip\'s rooms risks the gallows. This historical fact drives the novel\'s final act.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Social Class and Mobility', summary: 'The novel interrogates the Victorian dream of rising above one\'s birth and asks what is destroyed on the way up.', keyPoints: ['Pip\'s journey from forge to London gentleman', 'Class signalled by accent, hands, boots, manners', 'Joe\'s dignity vs Drummle\'s brutality exposes respectability as performance', 'Magwitch\'s convict-made wealth funds Pip\'s gentility', 'Pip\'s shame of Joe is the novel\'s moral wound'] },
-  { topic: 'Identity and Self-Knowledge', summary: 'The retrospective first-person narration dramatises how a self is made out of shame, longing and half-told stories.', keyPoints: ['Double perspective of older narrator and younger self', 'Pip misreads benefactor, Estella, Joe and himself', 'Name "Pip" as early self-invention', 'The bildungsroman tradition revised in a darker key', 'Real education = learning who he truly is beneath his expectations'] },
-  { topic: 'Guilt and Atonement', summary: 'Guilt saturates the novel from the stolen pie onwards, and its redemptive movement is essentially an extended act of atonement.', keyPoints: ['Childhood theft of food and file from Mrs Joe', 'Pip\'s London gentility funded by a hunted criminal', 'Nursing Magwitch in prison', 'Secretly funding Herbert\'s career', 'Returning to Joe and Biddy at the forge'] },
-  { topic: 'Appearance vs True Worth', summary: 'Dickens sets up deliberate inversions: the brute gentleman, the polite criminal, the poisonous lady, the uneducated moral hero.', keyPoints: ['Drummle (gentleman, brute)', 'Magwitch (convict, loving father-figure)', 'Miss Havisham (respectable, destructive)', 'Joe (illiterate, truly gentlemanly)', 'Pip is trained to misread, and must learn to look again'] },
-  { topic: 'Parenthood and Family', summary: 'Biological parenthood is almost always damaging; the relationships that save people are chosen ones, with Joe as the moral centre.', keyPoints: ['Mrs Joe\'s violent mothering of Pip', 'Miss Havisham\'s deliberate cruelty to Estella', 'Magwitch\'s hidden parental love for Pip', 'Joe as true father-figure', 'Jaggers\'s cold guardianship of Molly'] },
+  {
+    topic: 'Social Class and Mobility',
+    summary:
+      "The novel interrogates the Victorian dream of rising above one's birth and asks what is destroyed on the way up.",
+    keyPoints: [
+      "Pip's journey from forge to London gentleman",
+      'Class signalled by accent, hands, boots, manners',
+      "Joe's dignity vs Drummle's brutality exposes respectability as performance",
+      "Magwitch's convict-made wealth funds Pip's gentility",
+      "Pip's shame of Joe is the novel's moral wound",
+    ],
+  },
+  {
+    topic: 'Identity and Self-Knowledge',
+    summary:
+      'The retrospective first-person narration dramatises how a self is made out of shame, longing and half-told stories.',
+    keyPoints: [
+      'Double perspective of older narrator and younger self',
+      'Pip misreads benefactor, Estella, Joe and himself',
+      'Name "Pip" as early self-invention',
+      'The bildungsroman tradition revised in a darker key',
+      'Real education = learning who he truly is beneath his expectations',
+    ],
+  },
+  {
+    topic: 'Guilt and Atonement',
+    summary:
+      'Guilt saturates the novel from the stolen pie onwards, and its redemptive movement is essentially an extended act of atonement.',
+    keyPoints: [
+      'Childhood theft of food and file from Mrs Joe',
+      "Pip's London gentility funded by a hunted criminal",
+      'Nursing Magwitch in prison',
+      "Secretly funding Herbert's career",
+      'Returning to Joe and Biddy at the forge',
+    ],
+  },
+  {
+    topic: 'Appearance vs True Worth',
+    summary:
+      'Dickens sets up deliberate inversions: the brute gentleman, the polite criminal, the poisonous lady, the uneducated moral hero.',
+    keyPoints: [
+      'Drummle (gentleman, brute)',
+      'Magwitch (convict, loving father-figure)',
+      'Miss Havisham (respectable, destructive)',
+      'Joe (illiterate, truly gentlemanly)',
+      'Pip is trained to misread, and must learn to look again',
+    ],
+  },
+  {
+    topic: 'Parenthood and Family',
+    summary:
+      'Biological parenthood is almost always damaging; the relationships that save people are chosen ones, with Joe as the moral centre.',
+    keyPoints: [
+      "Mrs Joe's violent mothering of Pip",
+      "Miss Havisham's deliberate cruelty to Estella",
+      "Magwitch's hidden parental love for Pip",
+      'Joe as true father-figure',
+      "Jaggers's cold guardianship of Molly",
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -277,10 +592,13 @@ export default async function GreatExpectationsPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Great Expectations", url: "https://theenglishhub.app/revision/texts/great-expectations" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Great Expectations',
+            url: 'https://theenglishhub.app/revision/texts/great-expectations',
+          },
         ]}
       />
       <TextStudyHub
@@ -289,13 +607,43 @@ export default async function GreatExpectationsPage() {
         examBoard="AQA"
         basePath="/revision/texts/great-expectations"
         subPages={[
-          { id: 'chapters', href: '/revision/texts/great-expectations/chapters', icon: 'acts' as const, title: 'Chapter-by-Chapter', description: 'Key moments & quotes' },
-          { id: 'characters', href: '/revision/texts/great-expectations/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/great-expectations/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/great-expectations/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'essays', href: '/revision/texts/great-expectations/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+          {
+            id: 'chapters',
+            href: '/revision/texts/great-expectations/chapters',
+            icon: 'acts' as const,
+            title: 'Chapter-by-Chapter',
+            description: 'Key moments & quotes',
+          },
+          {
+            id: 'characters',
+            href: '/revision/texts/great-expectations/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/great-expectations/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/great-expectations/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'essays',
+            href: '/revision/texts/great-expectations/essay-plans',
+            icon: 'essays' as const,
+            title: 'Essay Plans',
+            description: 'GCSE essay plans',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -307,7 +655,7 @@ export default async function GreatExpectationsPage() {
           'How does Dickens explore the relationship between Pip and Joe?',
           'How does Dickens use the character of Miss Havisham to explore the theme of the past?',
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}
@@ -321,7 +669,9 @@ export default async function GreatExpectationsPage() {
       />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">Draft study guide</strong>
-        <span>AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.</span>
+        <span>
+          AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.
+        </span>
       </div>
       <TextGuide data={data} />
     </>
