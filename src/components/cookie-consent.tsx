@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { initGA4 } from '@/lib/gtag'
 
 type ConsentValue = 'all' | 'essential' | null
 
@@ -33,8 +34,7 @@ export function CookieConsent() {
       setVisible(true)
     }
     window.addEventListener('open-cookie-consent', handleOpenConsent)
-    return () =>
-      window.removeEventListener('open-cookie-consent', handleOpenConsent)
+    return () => window.removeEventListener('open-cookie-consent', handleOpenConsent)
   }, [])
 
   function saveConsent(value: ConsentValue) {
@@ -43,7 +43,13 @@ export function CookieConsent() {
     setVisible(false)
 
     if (value === 'all') {
-      enableGA4()
+      // Use the canonical initGA4() from src/lib/gtag.ts so we get the
+      // privacy-respecting config (anonymize_ip + SameSite=None;Secure
+      // cookie flags). The earlier local enableGA4() helper is a duplicate
+      // that competed with this and produced inconsistent state on
+      // first-consent flows. Removed in favour of the single source of
+      // truth.
+      initGA4()
     }
 
     // Notify any consent-gated components in the tree (e.g. analytics scripts)
@@ -57,12 +63,7 @@ export function CookieConsent() {
 
   function logConsentToServer(value: ConsentValue) {
     if (!value) return
-    const choice =
-      value === 'all'
-        ? 'accept_all'
-        : value === 'essential'
-          ? 'reject_all'
-          : 'custom'
+    const choice = value === 'all' ? 'accept_all' : value === 'essential' ? 'reject_all' : 'custom'
 
     // Reuse or create a stable visitor ID for anonymous users
     let visitorId = localStorage.getItem('cookie-visitor-id')
@@ -85,27 +86,11 @@ export function CookieConsent() {
     })
   }
 
-  function enableGA4() {
-    const gaId = process.env.NEXT_PUBLIC_GA4_ID
-    if (!gaId) return
-
-    // Load gtag.js dynamically
-    const script = document.createElement('script')
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`
-    script.async = true
-    document.head.appendChild(script)
-
-    // Initialize gtag
-    window.gtag =
-      window.gtag ||
-      function (...args: unknown[]) {
-        ;(window as unknown as { dataLayer: unknown[] }).dataLayer =
-          (window as unknown as { dataLayer: unknown[] }).dataLayer || []
-        ;(window as unknown as { dataLayer: unknown[] }).dataLayer.push(args)
-      }
-    window.gtag('js', new Date())
-    window.gtag('config', gaId)
-  }
+  // Note: the previous local `enableGA4()` helper was removed in favour
+  // of the canonical `initGA4()` from src/lib/gtag.ts (imported at the
+  // top of this file). Single init path = no race conditions, no
+  // double-config, and the privacy-respecting flags (anonymize_ip,
+  // SameSite=None;Secure) consistently apply on first consent.
 
   function handleSavePreferences() {
     if (analyticsEnabled) {
@@ -147,9 +132,7 @@ export function CookieConsent() {
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key !== 'Tab') return
-      const focusables = Array.from(
-        dialog.querySelectorAll<HTMLElement>(focusableSelector),
-      )
+      const focusables = Array.from(dialog.querySelectorAll<HTMLElement>(focusableSelector))
       if (focusables.length === 0) return
       const first = focusables[0]
       const last = focusables[focusables.length - 1]
@@ -192,8 +175,8 @@ export function CookieConsent() {
                   We use cookies to improve your experience
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  We use essential cookies to make the site work, and analytics
-                  cookies to help us understand how you use it.{' '}
+                  We use essential cookies to make the site work, and analytics cookies to help us
+                  understand how you use it.{' '}
                   <Link
                     href="/cookie-policy"
                     className="underline underline-offset-2 hover:text-foreground transition-colors"
@@ -228,9 +211,7 @@ export function CookieConsent() {
             /* ── Preferences panel ─────────────────────── */
             <div className="space-y-4">
               <div className="space-y-1">
-                <p className="text-sm font-medium text-foreground">
-                  Cookie Preferences
-                </p>
+                <p className="text-sm font-medium text-foreground">Cookie Preferences</p>
                 <p className="text-xs text-muted-foreground">
                   Choose which cookies you allow.{' '}
                   <Link
@@ -245,24 +226,18 @@ export function CookieConsent() {
               {/* Essential */}
               <div className="flex items-center justify-between rounded-lg border border-border p-3">
                 <div>
-                  <p className="text-sm font-medium text-foreground">
-                    Essential Cookies
-                  </p>
+                  <p className="text-sm font-medium text-foreground">Essential Cookies</p>
                   <p className="text-xs text-muted-foreground">
                     Required for the site to function. Cannot be disabled.
                   </p>
                 </div>
-                <span className="text-xs text-muted-foreground italic">
-                  Always on
-                </span>
+                <span className="text-xs text-muted-foreground italic">Always on</span>
               </div>
 
               {/* Analytics */}
               <div className="flex items-center justify-between rounded-lg border border-border p-3">
                 <div>
-                  <p className="text-sm font-medium text-foreground">
-                    Analytics Cookies
-                  </p>
+                  <p className="text-sm font-medium text-foreground">Analytics Cookies</p>
                   <p className="text-xs text-muted-foreground">
                     Help us understand how visitors interact with the site.
                   </p>

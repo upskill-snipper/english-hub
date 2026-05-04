@@ -23,16 +23,29 @@ export function GoogleAnalytics() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
-  // On first mount: load GA4 if user has previously consented
+  // On first mount AND on every cookie-consent change: load GA4 if the
+  // user has consent='all'. The cookie-consent component fires a
+  // `cookie-consent-changed` CustomEvent whenever consent flips, so we
+  // can pick up "Accept all" clicks after the initial mount without
+  // a page reload. initGA4() is idempotent — safe to call repeatedly.
   useEffect(() => {
     if (!isGAEnabled()) return
-    try {
-      const consent = localStorage.getItem('cookie-consent')
-      if (consent === 'all') {
-        initGA4()
+
+    function tryInit() {
+      try {
+        const consent = localStorage.getItem('cookie-consent')
+        if (consent === 'all') {
+          initGA4()
+        }
+      } catch {
+        // localStorage unavailable (private browsing, etc.) — skip silently
       }
-    } catch {
-      // localStorage unavailable (private browsing, etc.) — skip silently
+    }
+
+    tryInit()
+    window.addEventListener('cookie-consent-changed', tryInit)
+    return () => {
+      window.removeEventListener('cookie-consent-changed', tryInit)
     }
   }, [])
 
