@@ -41,13 +41,29 @@ export function trackEvent(
   ;(window as any).gtag('event', action, params || {})
 }
 
-/** Track a page view (called automatically on route change) */
+/**
+ * Track a page view (called automatically on every Next.js route change).
+ *
+ * IMPORTANT: previously called `gtag('config', GA_ID, { page_path })`,
+ * which produced a duplicate `config` entry in dataLayer alongside the
+ * one initGA4() already wrote at boot. Two `config` calls without
+ * `send_page_view: false` puts gtag.js into a broken state where the
+ * library accepts commands but never POSTs to /g/collect — and the
+ * `_ga` cookie never gets set. This was the actual reason GA4 stayed
+ * silent even after the env-var, CSP, and init-consolidation fixes.
+ *
+ * Per Google's SPA docs (https://developers.google.com/analytics/devguides/collection/ga4/single-page-applications):
+ * for client-side route changes, send a manual `page_view` event.
+ * Configuration should only happen once at boot.
+ */
 export function trackPageView(url: string, title?: string): void {
   if (!isGtagLoaded()) return
   if (!GA_MEASUREMENT_ID) return
-  ;(window as any).gtag('config', GA_MEASUREMENT_ID, {
+  ;(window as any).gtag('event', 'page_view', {
     page_path: url,
-    page_title: title || document.title,
+    page_location: typeof window !== 'undefined' ? `${window.location.origin}${url}` : url,
+    page_title: title || (typeof document !== 'undefined' ? document.title : undefined),
+    send_to: GA_MEASUREMENT_ID,
   })
 }
 
@@ -91,8 +107,6 @@ export const events = {
     trackEvent('quiz_completed', { text_name: textName, score, total }),
   documentDownloaded: (type: string, format: string) =>
     trackEvent('document_downloaded', { document_type: type, format }),
-  essaySubmitted: (textName: string) =>
-    trackEvent('essay_submitted', { text_name: textName }),
-  subscriptionStarted: (plan: string) =>
-    trackEvent('subscription_started', { plan }),
+  essaySubmitted: (textName: string) => trackEvent('essay_submitted', { text_name: textName }),
+  subscriptionStarted: (plan: string) => trackEvent('subscription_started', { plan }),
 }

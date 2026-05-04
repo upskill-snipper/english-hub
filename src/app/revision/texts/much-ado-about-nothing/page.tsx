@@ -8,7 +8,6 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Much Ado About Nothing revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -716,12 +715,6 @@ export default async function MuchAdoAboutNothingPage() {
         </span>
       </div>
       <TextGuide data={data} />
-      <EmailCaptureCard
-        magnetTitle="Free Much Ado About Nothing revision pack"
-        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
-        magnetSlug="much-ado-about-nothing-revision-pack"
-        className="mt-12"
-      />
     </>
   )
 }

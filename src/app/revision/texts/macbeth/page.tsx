@@ -7,8 +7,6 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
-
 type TopQuote = {
   quote: string
   character: string
@@ -932,13 +930,6 @@ export default async function MacbethPage() {
           ))}
         </div>
       </section>
-
-      <EmailCaptureCard
-        magnetTitle="Free Macbeth revision pack"
-        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
-        magnetSlug="macbeth-revision-pack"
-        className="mt-12"
-      />
     </>
   )
 }

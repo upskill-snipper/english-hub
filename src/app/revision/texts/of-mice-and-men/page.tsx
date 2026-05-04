@@ -8,7 +8,6 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Of Mice and Men revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -633,12 +632,6 @@ export default async function OfMiceAndMenPage() {
         Patents Act 1988 for criticism and review. Full text available from your school or local
         library.
       </p>
-      <EmailCaptureCard
-        magnetTitle="Free Of Mice and Men revision pack"
-        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
-        magnetSlug="of-mice-and-men-revision-pack"
-        className="mt-12"
-      />
     </>
   )
 }

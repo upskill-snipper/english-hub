@@ -5,7 +5,6 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Clock, GraduationCap } from 'lucide-react'
 
 import { Card, CardContent } from '@/components/ui/card'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { getAllLessonPlans, getLessonPlan, type LessonPlan } from '@/lib/lesson-plans/list'
 
@@ -171,13 +170,7 @@ export default async function LessonPlanPage({ params }: PageProps) {
             </Card>
           )}
 
-          <div className="mt-12 flex justify-center">
-            <EmailCaptureCard
-              magnetTitle="Get free lesson plans by email"
-              magnetDescription="One short email when we publish a new GCSE or IGCSE English lesson plan. Unsubscribe any time."
-              magnetSlug={`lesson-plan-${plan.slug}`}
-            />
-          </div>
+          <div className="mt-12 flex justify-center"></div>
         </div>
       </article>
     </main>

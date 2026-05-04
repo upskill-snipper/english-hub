@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 
 /* ───────────────────── Metadata ───────────────────── */
@@ -481,11 +480,6 @@ export default async function GccIgcseEnglishPage() {
                 board hubs. Drop your email and we&rsquo;ll send one note when each lands.
               </p>
             </div>
-            <EmailCaptureCard
-              magnetSlug="gcc-igcse-launch-list"
-              magnetTitle="GCC IGCSE English revision pack — get the launch list"
-              magnetDescription="One email when new Gulf-region resources land."
-            />
           </div>
         </div>
       </section>

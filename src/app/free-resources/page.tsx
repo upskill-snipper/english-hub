@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import LevelChip, { type Level } from '@/components/home/LevelChip'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ───────────────────── Metadata ───────────────────── */
@@ -42,11 +41,13 @@ export const metadata: Metadata = {
 
 /* ───────────────────── Resource data ─────────────────────
  *
- * Six representative cards stand in for the full 30-PDF lead-magnet library.
+ * Six representative cards stand in for the planned lead-magnet library.
  * Each card is a "coming soon" stub: factual title, level chip, exam-board
- * scope, and a short factual description of the planned content. No per-card
- * email form yet — the page-level <EmailCaptureCard /> at the bottom captures
- * the general "notify me when packs land" intent.
+ * scope, and a short factual description of the planned content. The
+ * email-capture surface was removed on 4 May 2026 — the founder doesn't
+ * want to be manually emailing PDFs to every sign-up. When the automated
+ * delivery system is built, the cards can be re-enabled with a download
+ * link instead of a "notify me" form.
  */
 
 type ResourceLevel = Extract<Level, 'gcse' | 'igcse'>
@@ -228,11 +229,6 @@ export default async function FreeResourcesPage() {
                 send one note when each new pack is ready to download — nothing else.
               </p>
             </div>
-            <EmailCaptureCard
-              magnetSlug="free-resources-newsletter"
-              magnetTitle="Free GCSE & IGCSE English resources — get the launch list"
-              magnetDescription="One email when each new pack lands. No spam. Unsubscribe anytime."
-            />
           </div>
         </div>
       </section>

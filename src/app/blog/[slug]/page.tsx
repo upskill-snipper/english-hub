@@ -21,7 +21,6 @@ import { notFound } from 'next/navigation'
 import { compileMDX } from 'next-mdx-remote/rsc'
 
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 import { getBlogPost, getBlogSlugs, type BlogPost } from '@/lib/blog/posts'
 
 const SITE_URL = 'https://theenglishhub.app'
@@ -188,13 +187,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
         ) : null}
       </article>
 
-      <aside className="mt-12 flex justify-center">
-        <EmailCaptureCard
-          magnetTitle="Free GCSE & IGCSE revision pack"
-          magnetDescription="Mark-scheme-aligned notes, model answers and exam technique. Sent straight to your inbox."
-          magnetSlug="blog-newsletter"
-        />
-      </aside>
+      <aside className="mt-12 flex justify-center"></aside>
     </main>
   )
 }

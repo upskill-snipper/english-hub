@@ -8,7 +8,6 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Animal Farm revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -622,12 +621,6 @@ export default async function AnimalFarmPage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
-      <EmailCaptureCard
-        magnetTitle="Free Animal Farm revision pack"
-        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
-        magnetSlug="animal-farm-revision-pack"
-        className="mt-12"
-      />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in 2021,
         the Orwell estate (AM Heath) actively manages educational use. Quotations on this page are

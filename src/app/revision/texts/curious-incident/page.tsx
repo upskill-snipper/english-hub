@@ -6,8 +6,6 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import StudyTools from '@/components/study/StudyTools'
 import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
-
 export const metadata: Metadata = {
   title: 'The Curious Incident revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -276,12 +274,6 @@ export default async function CuriousIncidentPage() {
         Patents Act 1988 for criticism and review. Full text available from your school or local
         library.
       </p>
-      <EmailCaptureCard
-        magnetTitle="Free The Curious Incident of the Dog in the Night-Time revision pack"
-        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
-        magnetSlug="curious-incident-revision-pack"
-        className="mt-12"
-      />
     </>
   )
 }

@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { Badge } from '@/components/ui/badge'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 import { getPrintable, getPrintableSlugs, type Printable } from '@/lib/printables/list'
 
 const SITE_URL = 'https://theenglishhub.app'
@@ -161,13 +160,7 @@ export default async function PrintablePage({ params }: { params: Promise<Params
 
         <article className="prose prose-neutral dark:prose-invert max-w-none">{content}</article>
 
-        <div className="mt-12 border-t border-border/60 pt-10 flex justify-center">
-          <EmailCaptureCard
-            magnetTitle={printable.title}
-            magnetDescription={captureDescription}
-            magnetSlug={printable.slug}
-          />
-        </div>
+        <div className="mt-12 border-t border-border/60 pt-10 flex justify-center"></div>
       </main>
     </>
   )

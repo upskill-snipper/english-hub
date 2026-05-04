@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
-
 /* ───────────────────── Metadata ───────────────────── */
 
 const SITE_URL = 'https://theenglishhub.app'
@@ -447,13 +445,7 @@ export default async function InternationalSchoolIgcsePage() {
               </p>
             </Prose>
           </div>
-          <div className="flex justify-center lg:justify-end">
-            <EmailCaptureCard
-              magnetSlug="intl-school-launch-list"
-              magnetTitle="International school IGCSE English — get the launch list"
-              magnetDescription="One email when new international-school resources land."
-            />
-          </div>
+          <div className="flex justify-center lg:justify-end"></div>
         </div>
       </Section>
     </main>

@@ -5,8 +5,6 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
-
 /* ─────────────── Page Metadata ─────────────── */
 
 const PAGE_URL = 'https://theenglishhub.app/qatar-igcse-english'
@@ -467,13 +465,7 @@ export default async function QatarIgcseEnglishPage() {
 
       {/* ════════════════ EMAIL CAPTURE ════════════════ */}
       <section className="py-16 sm:py-20 border-t border-border/40 bg-card/20">
-        <div className="max-w-md mx-auto px-6">
-          <EmailCaptureCard
-            magnetSlug="qatar-igcse-launch-list"
-            magnetTitle="Qatar IGCSE English revision pack — get the launch list"
-            magnetDescription="One email when new Doha-friendly resources land."
-          />
-        </div>
+        <div className="max-w-md mx-auto px-6"></div>
       </section>
     </main>
   )

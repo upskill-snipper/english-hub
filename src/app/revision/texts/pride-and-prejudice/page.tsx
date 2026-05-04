@@ -8,7 +8,6 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Pride and Prejudice revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -563,12 +562,6 @@ export default async function PrideAndPrejudicePage() {
         <em>Pride and Prejudice</em> (1813) by Jane Austen is in the public domain. Quotations are
         reproduced freely.
       </p>
-      <EmailCaptureCard
-        magnetTitle="Free Pride and Prejudice revision pack"
-        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
-        magnetSlug="pride-and-prejudice-revision-pack"
-        className="mt-12"
-      />
     </>
   )
 }

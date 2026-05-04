@@ -8,7 +8,6 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Blood Brothers revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -622,12 +621,6 @@ export default async function BloodBrothersPage() {
         (b. 1947). Quotations are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
         review, quotation). For full text, students should consult the licensed school edition.
       </p>
-      <EmailCaptureCard
-        magnetTitle="Free Blood Brothers revision pack"
-        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
-        magnetSlug="blood-brothers-revision-pack"
-        className="mt-12"
-      />
     </>
   )
 }

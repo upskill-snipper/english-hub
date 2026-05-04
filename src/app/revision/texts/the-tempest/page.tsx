@@ -8,7 +8,6 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'The Tempest revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -727,12 +726,6 @@ export default async function TheTempestPage() {
       </div>
 
       <TextGuide data={data} />
-      <EmailCaptureCard
-        magnetTitle="Free The Tempest revision pack"
-        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
-        magnetSlug="the-tempest-revision-pack"
-        className="mt-12"
-      />
     </>
   )
 }

@@ -8,7 +8,6 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
-import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Jekyll and Hyde revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -754,12 +753,6 @@ export default async function JekyllAndHydePage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
-      <EmailCaptureCard
-        magnetTitle="Free Dr Jekyll and Mr Hyde revision pack"
-        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
-        magnetSlug="jekyll-and-hyde-revision-pack"
-        className="mt-12"
-      />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis Stevenson is in the
         public domain. Quotations are reproduced freely.
