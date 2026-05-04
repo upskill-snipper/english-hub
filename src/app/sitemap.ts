@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { allCourses } from '@/data/courses'
+import { getBlogSlugs } from '@/lib/blog/posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://theenglishhub.app'
@@ -413,12 +414,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-    ...['lesson-plans', 'assessment', 'printables'].map((sub) => ({
+    // /resources/teaching/printables and /resources/teaching/lesson-plans
+    // are top-level resource hubs (sibling agents own them) so they get a
+    // slightly higher priority than the rest of the teaching surfaces.
+    ...['lesson-plans', 'printables'].map((sub) => ({
       url: `${base}/resources/teaching/${sub}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
-      priority: 0.6,
+      priority: 0.7,
     })),
+    {
+      url: `${base}/resources/teaching/assessment`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
 
     // Analysis pages
     ...[
@@ -1240,6 +1250,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // warnings in Google Search Console.
 
     // ============================================================
+    // Blog (index)
+    // Article URLs are appended dynamically below from getBlogSlugs().
+    // ============================================================
+    { url: `${base}/blog`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+
+    // ============================================================
+    // Free resources & local-SEO landing pages
+    // Top-level URLs maintained by sibling agents — listed here so they
+    // appear in the sitemap alongside the rest of the site.
+    // ============================================================
+    {
+      url: `${base}/free-resources`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${base}/qatar-igcse-english`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${base}/gcc-igcse-english`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${base}/international-school-igcse-english`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+
+    // ============================================================
     // Other
     // ============================================================
     { url: `${base}/board-select`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
@@ -1351,5 +1397,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticRoutes, ...courseRoutes]
+  // Blog post URLs — discovered at build time by listing every `.mdx`
+  // file under `content/blog/`. Returns an empty array before the first
+  // post lands, which keeps the sitemap valid.
+  const blogPostRoutes: MetadataRoute.Sitemap = getBlogSlugs().map((slug) => ({
+    url: `${base}/blog/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [...staticRoutes, ...courseRoutes, ...blogPostRoutes]
 }

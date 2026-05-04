@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
@@ -7,6 +8,68 @@ import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
+
+type TopQuote = {
+  quote: string
+  character: string
+  ao2: string
+}
+
+const TOP_FIVE_QUOTES: TopQuote[] = [
+  {
+    quote: '"Vaulting ambition, which o\'erleaps itself / And falls on the other."',
+    character: 'Macbeth — Act 1, Scene 7',
+    ao2: 'The equestrian metaphor of "vaulting" suggests ambition is a horse Macbeth tries to mount; it leaps too far and throws him. Shakespeare names the play\'s tragic engine in Macbeth\'s own voice, making him conscious of the flaw that will destroy him. The enjambment between "itself" and "And falls" enacts the fall.',
+  },
+  {
+    quote: '"Look like th\' innocent flower, / But be the serpent under\'t."',
+    character: 'Lady Macbeth — Act 1, Scene 5',
+    ao2: 'The biblical allusion to the Genesis serpent aligns the Macbeths\' regicide with original sin and casts Duncan as an Eden-like innocent. The antithesis of "flower" and "serpent" crystallises the appearance-vs-reality theme into a single image, and the imperative verbs frame Lady Macbeth as the play\'s strategist of deception.',
+  },
+  {
+    quote: '"Will all great Neptune\'s ocean wash this blood / Clean from my hand?"',
+    character: 'Macbeth — Act 2, Scene 2',
+    ao2: 'The classical allusion to Neptune and the hyperbole of "all great Neptune\'s ocean" convey the cosmic enormity of regicide; not even a god of the sea can cleanse him. The rhetorical question signals psychological collapse moments after the murder, and the blood image becomes a leitmotif that returns in Lady Macbeth\'s sleepwalking scene.',
+  },
+  {
+    quote: '"Out, damned spot! out, I say!"',
+    character: 'Lady Macbeth — Act 5, Scene 1',
+    ao2: 'The fragmented exclamatives and shift from blank verse to broken prose dramatise Lady Macbeth\'s mental disintegration. "Damned" carries religious weight, suggesting she recognises her soul as condemned. The compulsive imperative inverts her earlier confidence that "a little water clears us of this deed," proving guilt cannot be washed away.',
+  },
+  {
+    quote:
+      '"Life\'s but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more."',
+    character: 'Macbeth — Act 5, Scene 5',
+    ao2: 'The theatrical metaphor reduces existence to a brief, futile performance and is meta-theatrically self-aware: Macbeth is himself a player on Shakespeare\'s stage. The verbs "struts" and "frets" diminish human action to vanity and anxiety. The soliloquy marks the nihilistic endpoint of ambition, where Macbeth has murdered his way to a throne that signifies nothing.',
+  },
+]
+
+type ComparisonCard = {
+  href: string
+  title: string
+  reason: string
+}
+
+const COMPARISON_CARDS: ComparisonCard[] = [
+  {
+    href: '/revision/texts/romeo-and-juliet',
+    title: 'Romeo and Juliet',
+    reason:
+      'Compare on: Shakespearean tragedy structure, fate vs free will, and the role of supernatural or prophetic forces in driving young protagonists to ruin.',
+  },
+  {
+    href: '/revision/texts/jekyll-and-hyde',
+    title: 'Jekyll and Hyde',
+    reason:
+      "Compare on: duality and the divided self — Macbeth's public honour vs private murderousness mirrors Jekyll's respectable doctor vs unleashed Hyde, and both texts treat ambition as self-destructive.",
+  },
+  {
+    href: '/revision/texts/an-inspector-calls',
+    title: 'An Inspector Calls',
+    reason:
+      "Compare on: power, guilt and collective responsibility — the Macbeths' private guilt mirrors the Birlings' communal denial, and both works dramatise how those who wield power refuse to face its consequences.",
+  },
+]
 
 export const metadata: Metadata = {
   title: 'Macbeth revision guide — themes, characters, key quotes — The English Hub',
@@ -748,7 +811,128 @@ export default async function MacbethPage() {
         essayPrompts={ESSAY_PROMPTS}
         revisionTopics={REVISION_TOPICS}
       />
+
+      <section aria-labelledby="macbeth-introduction" className="mx-auto my-12 max-w-3xl px-4">
+        <h2
+          id="macbeth-introduction"
+          className="mb-4 font-serif text-3xl font-semibold text-ink-950"
+        >
+          Macbeth at a glance
+        </h2>
+        <div className="space-y-4 text-base leading-relaxed text-ink-950/85">
+          <p>
+            Macbeth is Shakespeare&rsquo;s shortest tragedy and one of the most frequently examined
+            texts at GCSE in England and Wales. Written around 1606, the play follows a Scottish
+            general who, spurred on by three witches&rsquo; prophecy and the relentless persuasion
+            of his wife, murders King Duncan to seize the throne. What begins as a single act of
+            regicide becomes a spiralling tyranny: each killing requires another, and
+            Macbeth&rsquo;s reign collapses under paranoia, hallucination and the rebellion of his
+            own nobles. By the final act both Macbeth and Lady Macbeth are destroyed by the very
+            ambition that promised them everything.
+          </p>
+          <p>
+            The play&rsquo;s central themes are tightly interwoven. Ambition is the engine, but it
+            cannot operate alone: it requires the supernatural prompting of the witches, the goading
+            of Lady Macbeth, and Macbeth&rsquo;s own willingness to act. Guilt then haunts both
+            protagonists in markedly different ways &mdash; Macbeth externalises it as floating
+            daggers and the ghost of Banquo; Lady Macbeth suppresses it until it erupts in her
+            sleepwalking scene. Power and kingship are tested through the contrast of Duncan&rsquo;s
+            divinely sanctioned rule, Macbeth&rsquo;s tyranny, and Malcolm&rsquo;s restoration.
+            Running underneath all of this is a sustained interrogation of fate versus free will:
+            the witches prophesy what Macbeth might become, but Banquo hears the same words and
+            refuses to act on them.
+          </p>
+          <p>
+            Macbeth is examined heavily because it sits on the Shakespeare paper of every major
+            English Literature specification. AQA, Edexcel, OCR and Eduqas all list it as a set
+            option for GCSE Literature, and it remains the single most-taught Shakespeare text in UK
+            schools. Examiners reward responses that move beyond plot summary to engage with
+            Shakespeare&rsquo;s methods (AO2): the trochaic tetrameter of the witches, the chiastic
+            phrasing of &ldquo;fair is foul, and foul is fair&rdquo;, the blood and sleep motifs,
+            and the recurring images of light and darkness. Strong essays also locate the play in
+            its Jacobean context (AO3) &mdash; the Gunpowder Plot of 1605, James I&rsquo;s personal
+            interest in witchcraft and his descent from Banquo, and the doctrine of the Divine Right
+            of Kings.
+          </p>
+          <p>
+            For revision, prioritise three things: memorise a small bank of quotations exactly,
+            track each theme across the whole play, and practise pivoting from method to meaning to
+            context within a single paragraph. That integrated movement is what distinguishes Grade
+            7+ responses from competent retellings. The guide below covers plot, characters, themes,
+            key quotations, context and essay plans &mdash; start with the Top 5 quotes widget, then
+            move into the act-by-act analysis.
+          </p>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="macbeth-top-quotes"
+        className="mx-auto my-8 max-w-3xl rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+      >
+        <h2 id="macbeth-top-quotes" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          Top 5 quotes you must know for AO2
+        </h2>
+        <p className="mb-6 text-sm text-ink-950/75">
+          Five exam-essential quotations with focused AO2 readings. Memorise the wording exactly
+          &mdash; precise quotation is the foundation of Grade 7+ analysis.
+        </p>
+        <ol className="space-y-6">
+          {TOP_FIVE_QUOTES.map((q, i) => (
+            <li key={q.character} className="border-l-4 border-emerald-400 pl-4">
+              <div className="mb-2 flex items-baseline gap-3">
+                <span
+                  aria-hidden="true"
+                  className="font-mono text-xs font-semibold text-emerald-700"
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <p className="font-serif text-lg italic leading-snug text-ink-950">{q.quote}</p>
+              </div>
+              <p className="mb-2 text-sm font-medium text-ink-950/80">{q.character}</p>
+              <p className="text-sm leading-relaxed text-ink-950/85">
+                <span className="font-semibold text-ink-950">AO2 reading: </span>
+                {q.ao2}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
       <TextGuide data={data} />
+
+      <section aria-labelledby="macbeth-compare-with" className="mx-auto my-12 max-w-3xl px-4">
+        <h2
+          id="macbeth-compare-with"
+          className="mb-2 font-serif text-2xl font-semibold text-ink-950"
+        >
+          Compare with
+        </h2>
+        <p className="mb-6 text-sm text-ink-950/75">
+          Comparative thinking is rewarded by examiners across boards. Cross-reference Macbeth with
+          these set texts to strengthen your thematic essays.
+        </p>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {COMPARISON_CARDS.map((card) => (
+            <Link
+              key={card.href}
+              href={card.href}
+              className="group block rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10 transition hover:ring-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            >
+              <h3 className="mb-2 font-serif text-lg font-semibold text-ink-950 group-hover:text-emerald-700">
+                {card.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-ink-950/80">{card.reason}</p>
+              <span
+                aria-hidden="true"
+                className="mt-3 inline-block text-xs font-semibold text-emerald-700"
+              >
+                Open guide &rarr;
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <EmailCaptureCard
         magnetTitle="Free Macbeth revision pack"
         magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."

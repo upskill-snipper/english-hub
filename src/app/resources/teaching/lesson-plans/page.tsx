@@ -1,377 +1,182 @@
-"use client";
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Clock, GraduationCap } from 'lucide-react'
 
-import { useState, useMemo } from "react";
-import Link from "next/link";
+import { Card, CardContent } from '@/components/ui/card'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { getAllLessonPlans, type LessonPlan } from '@/lib/lesson-plans/list'
 
-/* ─── Role guard ──────────────────────────────────────────────── */
-const MOCK_USER_ROLE: "student" | "teacher" | "parent" = "teacher";
+const PAGE_URL = 'https://theenglishhub.app/resources/teaching/lesson-plans'
+const PAGE_TITLE = 'Free GCSE & IGCSE English lesson plans — The English Hub'
+const PAGE_DESCRIPTION =
+  'Free, classroom-ready lesson plans for GCSE and IGCSE English. Learning objectives, activities, and timings teachers can pick up and teach.'
 
-/* ─── Types ───────────────────────────────────────────────────── */
-
-interface LessonPlan {
-  id: string;
-  title: string;
-  text: string;
-  topic: string;
-  yearGroup: string;
-  duration: string;
-  examBoard: string;
-  subject: "English Literature" | "English Language";
-  overview: string;
+export const metadata: Metadata = {
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    type: 'website',
+    url: PAGE_URL,
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    siteName: 'The English Hub',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+  },
 }
 
-/* ─── Lesson plan data (10 plans) ─────────────────────────────── */
-
-const LESSON_PLANS: LessonPlan[] = [
-  {
-    id: "introduction-to-macbeth",
-    title: "Introduction to Macbeth",
-    text: "Macbeth",
-    topic: "Shakespeare",
-    yearGroup: "Year 10",
-    duration: "60 mins",
-    examBoard: "AQA",
-    subject: "English Literature",
-    overview:
-      "Introduce students to Macbeth through Act 1 Scene 1 and the witches. Explore the context of Jacobean England, the Great Chain of Being, and how Shakespeare uses the supernatural to unsettle his audience from the very first line.",
-  },
-  {
-    id: "language-paper1-q5-creative-writing",
-    title: "Language Paper 1 Q5: Creative Writing",
-    text: "Language Paper 1",
-    topic: "Creative Writing",
-    yearGroup: "Year 11",
-    duration: "60 mins",
-    examBoard: "AQA",
-    subject: "English Language",
-    overview:
-      "Master the 40-mark creative writing question. Focus on narrative structure, descriptive techniques, and crafting an engaging opening using sensory detail and varied sentence forms.",
-  },
-  {
-    id: "comparing-power-conflict-poems",
-    title: "Comparing Power and Conflict Poems",
-    text: "AQA Poetry Anthology",
-    topic: "Poetry",
-    yearGroup: "Year 11",
-    duration: "60 mins",
-    examBoard: "AQA",
-    subject: "English Literature",
-    overview:
-      "Develop the skill of comparing two Power and Conflict poems thematically and structurally. Students practise integrated comparison using connectives and learn to structure a high-level comparative essay response.",
-  },
-  {
-    id: "christmas-carol-scrooges-transformation",
-    title: "A Christmas Carol: Scrooge's Transformation",
-    text: "A Christmas Carol",
-    topic: "19th Century Novel",
-    yearGroup: "Year 10",
-    duration: "60 mins",
-    examBoard: "AQA",
-    subject: "English Literature",
-    overview:
-      "Track Scrooge's character arc from miser to philanthropist. Analyse how Dickens uses the novella to critique Victorian attitudes to poverty and social responsibility.",
-  },
-  {
-    id: "inspector-calls-social-responsibility",
-    title: "An Inspector Calls: Social Responsibility",
-    text: "An Inspector Calls",
-    topic: "Modern Drama",
-    yearGroup: "Year 11",
-    duration: "60 mins",
-    examBoard: "AQA",
-    subject: "English Literature",
-    overview:
-      "Explore how Priestley presents the theme of social responsibility through the Birling family. Analyse the Inspector as a mouthpiece for Priestley's socialist message and consider how the play challenges capitalist attitudes.",
-  },
-  {
-    id: "persuasive-writing-techniques",
-    title: "Persuasive Writing Techniques",
-    text: "Language Paper 2",
-    topic: "Non-Fiction Writing",
-    yearGroup: "Year 10",
-    duration: "60 mins",
-    examBoard: "AQA",
-    subject: "English Language",
-    overview:
-      "Build a toolkit of persuasive devices: rhetorical questions, tricolon, emotive language, anecdotes, statistics, and direct address. Apply them in a structured speech or article.",
-  },
-  {
-    id: "unseen-poetry-approach",
-    title: "Unseen Poetry Approach",
-    text: "Unseen Poetry",
-    topic: "Poetry",
-    yearGroup: "Year 11",
-    duration: "60 mins",
-    examBoard: "AQA",
-    subject: "English Literature",
-    overview:
-      "Equip students with a systematic approach to tackling unseen poetry. Use the SMILE framework (Structure, Meaning, Imagery, Language, Effect) to analyse unfamiliar poems confidently.",
-  },
-  {
-    id: "language-analysis-skills",
-    title: "Language Analysis Skills",
-    text: "Language Paper 1",
-    topic: "Reading Skills",
-    yearGroup: "Year 10",
-    duration: "60 mins",
-    examBoard: "AQA",
-    subject: "English Language",
-    overview:
-      "Develop close reading and language analysis skills. Students learn to identify and analyse the effect of word choices, figurative language, and sentence structures using the What-How-Why framework.",
-  },
-  {
-    id: "jekyll-hyde-victorian-context",
-    title: "Jekyll and Hyde: Victorian Context",
-    text: "Jekyll and Hyde",
-    topic: "19th Century Novel",
-    yearGroup: "Year 10",
-    duration: "60 mins",
-    examBoard: "AQA",
-    subject: "English Literature",
-    overview:
-      "Link Stevenson's novella to its Victorian context: repression, duality, Darwinian theory, and the fear of degeneration. Analyse how Stevenson uses setting and symbolism to reflect anxieties of the era.",
-  },
-  {
-    id: "romeo-juliet-balcony-scene",
-    title: "Romeo and Juliet: The Balcony Scene",
-    text: "Romeo and Juliet",
-    topic: "Shakespeare",
-    yearGroup: "Year 10",
-    duration: "60 mins",
-    examBoard: "AQA",
-    subject: "English Literature",
-    overview:
-      "Close analysis of Act 2 Scene 2, the iconic balcony scene. Explore Shakespeare's use of light and dark imagery, extended metaphor, and the tension between private love and public conflict.",
-  },
-];
-
-/* ─── Filter options ──────────────────────────────────────────── */
-
-const ALL_TOPICS = [...new Set(LESSON_PLANS.map((lp) => lp.topic))];
-const ALL_YEAR_GROUPS = [...new Set(LESSON_PLANS.map((lp) => lp.yearGroup))];
-const ALL_TEXTS = [...new Set(LESSON_PLANS.map((lp) => lp.text))];
-
-/* ─── Icons ───────────────────────────────────────────────────── */
-
-function SearchIcon() {
-  return (
-    <svg className="h-5 w-5 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-    </svg>
-  );
-}
-
-function ArrowRight() {
-  return (
-    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-    </svg>
-  );
-}
-
-function ClockIcon() {
-  return (
-    <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-    </svg>
-  );
-}
-
-/* ─── Page ───────────────────────────────────────────────────── */
-
-export default function LessonPlansPage() {
-  const [search, setSearch] = useState("");
-  const [topicFilter, setTopicFilter] = useState("");
-  const [yearGroupFilter, setYearGroupFilter] = useState("");
-  const [textFilter, setTextFilter] = useState("");
-
-  const filtered = useMemo(() => {
-    return LESSON_PLANS.filter((lp) => {
-      const matchesSearch =
-        search === "" ||
-        lp.title.toLowerCase().includes(search.toLowerCase()) ||
-        lp.overview.toLowerCase().includes(search.toLowerCase()) ||
-        lp.text.toLowerCase().includes(search.toLowerCase());
-      const matchesTopic = topicFilter === "" || lp.topic === topicFilter;
-      const matchesYear = yearGroupFilter === "" || lp.yearGroup === yearGroupFilter;
-      const matchesText = textFilter === "" || lp.text === textFilter;
-      return matchesSearch && matchesTopic && matchesYear && matchesText;
-    });
-  }, [search, topicFilter, yearGroupFilter, textFilter]);
-
-  /* ── Access guard ──────────────────────────────────────────── */
-  if (MOCK_USER_ROLE !== "teacher") {
-    return (
-      <>
-        <div className="flex min-h-[60vh] items-center justify-center px-4">
-          <div className="max-w-md rounded-xl border border-border bg-card p-8 text-center">
-            <h2 className="text-lg font-bold text-foreground">Teacher Access Only</h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Lesson plans are only available to verified teacher accounts.
-            </p>
-            <Link
-              href="/resources"
-              className="mt-6 inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
-            >
-              Back to Resources
-            </Link>
-          </div>
-        </div>
-      </>
-    );
-  }
+export default function LessonPlansIndexPage() {
+  const lessonPlans = getAllLessonPlans()
 
   return (
-    <>
+    <main className="min-h-screen">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
+          { name: 'Teaching', url: 'https://theenglishhub.app/resources/teaching' },
+          { name: 'Lesson plans', url: PAGE_URL },
+        ]}
+      />
 
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-12 sm:py-16">
-        <div className="mx-auto max-w-4xl text-center">
-          <nav className="mb-4 text-sm text-muted-foreground">
-            <Link href="/resources/teaching" className="hover:text-foreground transition-colors">
-              Teaching Resources
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">Lesson Plans</span>
+        <div className="mx-auto max-w-4xl">
+          <nav aria-label="Breadcrumb" className="mb-4 text-sm text-muted-foreground">
+            <ol className="flex flex-wrap items-center gap-1">
+              <li>
+                <Link href="/resources" className="hover:text-foreground transition-colors">
+                  Resources
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link
+                  href="/resources/teaching"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Teaching
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li className="text-foreground" aria-current="page">
+                Lesson plans
+              </li>
+            </ol>
           </nav>
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Lesson Plan Library
+          <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            Free lesson plans for GCSE & IGCSE English
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            {LESSON_PLANS.length} ready-to-teach lesson plans covering GCSE English Language and Literature.
+          <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg leading-relaxed">
+            Classroom-ready plans with learning objectives, activities, and timings. Pick a plan,
+            tweak it for your class, teach it tomorrow.
           </p>
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="border-b border-border bg-card px-4 py-6 shadow-md">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Search */}
-            <div className="relative">
-              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <SearchIcon />
-              </div>
-              <input
-                type="search"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search lesson plans..."
-                className="w-full rounded-lg border border-border bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-              />
-            </div>
-
-            {/* Topic filter */}
-            <select
-              value={topicFilter}
-              onChange={(e) => setTopicFilter(e.target.value)}
-              className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-            >
-              <option value="">All Topics</option>
-              {ALL_TOPICS.map((t) => (
-                <option key={t} value={t}>{t}</option>
-              ))}
-            </select>
-
-            {/* Year group filter */}
-            <select
-              value={yearGroupFilter}
-              onChange={(e) => setYearGroupFilter(e.target.value)}
-              className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-            >
-              <option value="">All Year Groups</option>
-              {ALL_YEAR_GROUPS.map((y) => (
-                <option key={y} value={y}>{y}</option>
-              ))}
-            </select>
-
-            {/* Text filter */}
-            <select
-              value={textFilter}
-              onChange={(e) => setTextFilter(e.target.value)}
-              className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-            >
-              <option value="">All Texts</option>
-              {ALL_TEXTS.map((t) => (
-                <option key={t} value={t}>{t}</option>
-              ))}
-            </select>
-          </div>
-
-          {/* Active filter count */}
-          {(search || topicFilter || yearGroupFilter || textFilter) && (
-            <div className="mt-3 flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">
-                {filtered.length} result{filtered.length !== 1 ? "s" : ""}
-              </span>
-              <button
-                onClick={() => {
-                  setSearch("");
-                  setTopicFilter("");
-                  setYearGroupFilter("");
-                  setTextFilter("");
-                }}
-                className="text-sm font-medium text-primary hover:text-foreground transition-colors"
-              >
-                Clear all filters
-              </button>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Cards */}
+      {/* List */}
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-        {filtered.length === 0 ? (
-          <div className="rounded-xl border border-border bg-card p-12 text-center">
-            <p className="text-lg font-medium text-muted-foreground">No lesson plans match your filters.</p>
-            <p className="mt-2 text-sm text-muted-foreground">Try adjusting your search or filter criteria.</p>
-          </div>
+        {lessonPlans.length === 0 ? (
+          <EmptyState />
         ) : (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((lp) => (
-              <Link
-                key={lp.id}
-                href={`/resources/teaching/lesson-plans/${lp.id}`}
-                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md hover:border-primary/40"
-              >
-                {/* Tags row */}
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
-                    {lp.subject}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="mt-3 text-base font-bold text-foreground group-hover:text-foreground transition-colors">
-                  {lp.title}
-                </h3>
-
-                {/* Meta */}
-                <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-                  <span className="inline-flex items-center gap-1">
-                    <ClockIcon />
-                    {lp.duration}
-                  </span>
-                  <span>{lp.yearGroup}</span>
-                  <span className="font-medium text-muted-foreground">{lp.text}</span>
-                </div>
-
-                {/* Overview */}
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
-                  {lp.overview}
-                </p>
-
-                {/* CTA */}
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:text-foreground transition-colors">
-                  View lesson plan <ArrowRight />
-                </span>
-              </Link>
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {lessonPlans.map((plan) => (
+              <li key={plan.slug}>
+                <LessonPlanCard plan={plan} />
+              </li>
             ))}
-          </div>
+          </ul>
         )}
       </section>
+    </main>
+  )
+}
 
-    </>
-  );
+function LessonPlanCard({ plan }: { plan: LessonPlan }) {
+  const isComingSoon = plan.status === 'coming-soon'
+  const href = `/resources/teaching/lesson-plans/${plan.slug}`
+
+  const inner = (
+    <Card className="h-full transition-all group-hover:border-primary/40 group-hover:shadow-md">
+      <CardContent className="flex h-full flex-col gap-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
+            {plan.educationalLevel}
+          </span>
+          {plan.examBoard ? (
+            <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+              {plan.examBoard}
+            </span>
+          ) : null}
+          {isComingSoon ? (
+            <span className="inline-flex items-center rounded-full border border-border bg-background px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+              Coming soon
+            </span>
+          ) : null}
+        </div>
+
+        <h2 className="font-heading text-lg font-semibold leading-tight tracking-tight">
+          {plan.title}
+        </h2>
+
+        <p className="text-sm leading-relaxed text-muted-foreground line-clamp-3">{plan.excerpt}</p>
+
+        <dl className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+          <div className="inline-flex items-center gap-1">
+            <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+            <dt className="sr-only">Duration</dt>
+            <dd>{plan.duration}</dd>
+          </div>
+          {plan.yearGroup ? (
+            <div className="inline-flex items-center gap-1">
+              <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" />
+              <dt className="sr-only">Year group</dt>
+              <dd>{plan.yearGroup}</dd>
+            </div>
+          ) : null}
+          {plan.text ? (
+            <div className="inline-flex items-center">
+              <dt className="sr-only">Text</dt>
+              <dd className="font-medium">{plan.text}</dd>
+            </div>
+          ) : null}
+        </dl>
+      </CardContent>
+    </Card>
+  )
+
+  if (isComingSoon) {
+    return (
+      <div className="group block h-full opacity-70" aria-disabled="true">
+        {inner}
+      </div>
+    )
+  }
+
+  return (
+    <Link
+      href={href}
+      className="group block h-full rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+    >
+      {inner}
+    </Link>
+  )
+}
+
+function EmptyState() {
+  return (
+    <Card>
+      <CardContent className="py-10 text-center">
+        <h2 className="font-heading text-lg font-semibold">Lesson plans are on the way</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          We&apos;re publishing free, classroom-ready plans for GCSE and IGCSE English. Check back
+          soon.
+        </p>
+      </CardContent>
+    </Card>
+  )
 }

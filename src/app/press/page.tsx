@@ -261,11 +261,7 @@ export default function PressPage() {
             Upskill Energy Limited
           </div>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-            For brand, logo, and colour guidance, see our{' '}
-            <Link href="/brand" className="text-primary underline underline-offset-4">
-              brand guidelines
-            </Link>
-            .
+            For brand, logo, or colour guidance, please contact us directly.
           </p>
         </div>
       </section>

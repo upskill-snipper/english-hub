@@ -1,0 +1,106 @@
+---
+title: 'How AI marking actually works (and what it can''t yet do)'
+description: 'A founder''s honest look at how AI essay marking works for GCSE English: the AO mapping, the strengths, the genuine limits, and how to get the most useful feedback.'
+slug: 'how-ai-marking-actually-works'
+date: '2026-05-04'
+author: 'The English Hub'
+cover: '/api/og?title=How+AI+marking+actually+works&subtitle=Strengths%2C+limits%2C+and+how+to+use+it&level=gcse'
+tags: ['ai marking', 'feedback', 'how it works', 'transparency']
+excerpt: 'An honest look at how AI essay marking works for GCSE English: the AO mapping, the strengths, the limits, and how to get the most useful feedback.'
+category: 'AI marking & feedback'
+educationalLevel: 'GCSE'
+---
+
+The English Hub uses AI to mark essays against the AO mark scheme. That sentence is short, and it deserves a much longer one to sit underneath it, because "AI marking" is one of those phrases that has been stretched into meaning almost anything. Some platforms use the term to describe a spell-checker with a results page. Others use it to describe a system that is genuinely modelling the structure of an exam response and giving feedback against published assessment objectives. Those two things are not the same product.
+
+This post is the honest version. It is the version a founder writes when the marketing team is not in the room. It explains what our AI marker actually does, what it does well, what it gets wrong, and what we are still building. If you are a student deciding whether to trust the band it gives you, or a teacher deciding whether to let it loose on a class set, you should know how the engine works before you decide how much weight to put on the output.
+
+## What AI marking IS
+
+At its core, our AI marker is a language model that has been instructed and calibrated to identify alignment with the GCSE Assessment Objectives — AO1 through AO5 — in a student essay. It is not a generic chatbot being asked "what mark is this?". It works against a structured prompt that encodes the criteria the major exam boards publish: AQA, Edexcel, OCR and Eduqas. The mark schemes from those boards are public documents, and the AI's behaviour is shaped by those documents the way a trainee marker's behaviour is shaped by them.
+
+The output is consistent across every essay you submit. You receive:
+
+- A **band** — for example, "Level 5: Clear, sustained understanding" — mapped to the descriptor language the relevant board uses for that paper.
+- An **AO-by-AO breakdown**, so you can see whether your essay was strong on AO2 (analysis of language and form) but thin on AO1 (knowledge and understanding) or AO3 (context).
+- **Three to five specific suggestions**, anchored to actual sentences or paragraphs in your essay rather than generic advice.
+
+Turnaround is fast. A 600-word response typically gets a full marked report back in around ten to thirty seconds. That speed is the entire reason this kind of feedback is worth having between drafts: you can rewrite while the essay is still alive in your head, instead of waiting a week to find out you should have done something differently.
+
+## What AI marking is GOOD at
+
+There are specific weaknesses in student writing that an AI marker is genuinely well-suited to catch, because they are pattern-based, and patterns are what models are good at.
+
+**Spotting feature-spotting.** This is the classic GCSE failure mode: a student names a technique ("Shakespeare uses sibilance"), and then moves on. The AI is reliable at noticing when a technique has been identified but its effect has not been explored. It will flag the sentence and say, in effect, *you have named the device but not unpacked what it does to the reader*. That feedback used to take an English teacher fifteen seconds per paragraph to write out by hand. The AI gives it for free, on every paragraph.
+
+**Catching missed AO5 coverage.** In Language papers, AO5 (the writer's craft — sentence variety, structural choices, deliberate effects in your own writing) is often the AO that costs students marks without them realising. The AI is good at scanning a creative response and flagging long sequences of declarative sentences, missing structural shifts, or paragraphs that read as undifferentiated prose.
+
+**Highlighting summary-versus-analysis.** A paragraph that retells what happens is structurally different from a paragraph that argues something about what happens. The AI can usually tell the difference and will mark a summary paragraph with a suggestion to convert it into analysis.
+
+**Suggesting alternative quote choices.** Given a thesis, the model can often suggest a quote from the same text that would support the argument better than the one a student has chosen. This is a coaching-style intervention that is genuinely useful at draft stage.
+
+**Consistency.** The same essay submitted twice will receive the same band. There is no examiner fatigue, no "I marked thirty of these on a Sunday night and got harsher around essay twenty-two". That consistency is one of the underrated benefits of automated marking.
+
+## What AI marking is HONEST about NOT being good at yet
+
+This is the part most platforms skip. We will not.
+
+**It can over-credit fluency.** A well-written, confident, grammatically clean essay can score higher than its argument deserves. The AI is sensitive to surface signals — sentence variety, vocabulary range, clear structure — and a student who writes elegantly about a shallow point can sometimes pull a higher band than a student who writes scrappily about a genuinely sharp idea. Human examiners are more likely to see through fluency. The AI is improving here, but it is a real limitation today.
+
+**It does not "feel" rhythm.** A tonally awkward sentence — one that is grammatically fine but lands wrong — will sometimes pass the AI without comment. A human reader trained on a lot of student writing has an internal sense of when prose is alive and when it is just present. The model approximates this, but it does not replicate it.
+
+**It cannot judge handwriting, presentation, or the conditions of the exam hall.** It sees what you type. If your real-exam handwriting collapses under pressure, the AI cannot warn you about that. If you tend to run out of time and write your conclusion in five hurried lines, the AI cannot replicate that pressure when you submit a typed version.
+
+**It is calibrated to public mark schemes, not house styles.** Coursework with idiosyncratic departmental expectations — the kind your specific teacher has been running for years — is not something the AI has been trained to mirror. If your school marks creative writing with a particular emphasis on narrative voice that goes beyond AO5, the AI will not know that. It is calibrated to the published criteria, which is a feature, but it is also a limit.
+
+## How the AO mapping works
+
+To make the marking transparent, here is what each AO is being checked for under the hood.
+
+- **AO1 (knowledge and understanding):** the AI checks for coverage of plot, character and theme, and looks at the quality of evidence selection — whether the quotes chosen are the ones that actually do the work, or just the ones that came to mind.
+- **AO2 (language, form and structure):** the AI checks for the three-layer pattern that examiners reward: identify a technique, explain its effect on the reader, and connect that effect to the writer's larger purpose. Paragraphs that stop at "identify" or "identify and effect" are flagged.
+- **AO3 (context):** the AI looks for context that is woven through the analysis rather than "stickered on" in a final sentence. A paragraph that ends with "this reflects Jacobean attitudes to kingship" without that context shaping the analysis is flagged.
+- **AO4 (technical accuracy / SPaG):** treated differently for Literature and Language. Literature does not have an AO4 in the same way Language does, and the AI handles them as separate mark schemes rather than collapsing them.
+- **AO5 (writing — Language only):** the AI checks for varied sentence forms, deliberate structural choices, and tonal control in your own writing.
+
+## Best practice: how to use AI marking productively
+
+Speed is the temptation, and speed is also the trap. If you write ten essays in a day and mark all ten with the AI, you will get ten bands and learn very little. Volume is not learning. Rewriting is.
+
+The pattern that actually works:
+
+- Write three essays. Mark each one. Read the feedback carefully.
+- **Rewrite each essay** based on the feedback. Mark the rewrite. Compare bands.
+- Before you accept a piece of feedback, write your own counter-argument to it. The AI is sometimes wrong. If you cannot defend your original choice, the feedback is probably right. If you can defend it, you have just done the kind of thinking Grade 9 students do.
+- When your teacher returns marked work, **compare the AI's feedback to your teacher's feedback** on the same piece. Note where they agree and where they disagree. The disagreements are where the most interesting learning sits.
+- Use the AI for **breadth** — try five different texts in a fortnight to see where you are weakest. And use it for **depth** — rewrite the same essay three times, watching the band climb.
+
+That last loop, by the way, is the closest thing we have seen to a reliable accelerant on essay grades.
+
+## What we're working on
+
+We are not going to give you dates we cannot keep, but here is the direction of travel.
+
+We are improving calibration against the current AQA and Edexcel cycles, because mark schemes get re-emphasised year on year and we want the AI to track those re-emphases rather than lag them. We are working on per-school customisation for departments that have a clear house style and want the AI to reflect it alongside the national criteria. And we are exploring a voice mode where you can read your essay aloud and get spoken feedback — which we think will be especially useful for students who process writing better by ear than by eye.
+
+We will write about each of these properly when they ship, not before.
+
+## A worked example
+
+Here is the kind of paragraph the AI sees every day:
+
+> Shakespeare uses the metaphor "is this a dagger which I see before me" to show Macbeth's guilt. The dagger represents what he is about to do. This is a metaphor, and metaphors make the writing more interesting. It also shows that Macbeth is going mad because he is seeing things that are not there. This links to the theme of guilt in the play.
+
+And here is the shape of the feedback the AI returns:
+
+1. *AO2 — feature-spotting flagged.* You have identified the metaphor and named the technique, but the explanation of effect is generic ("makes the writing more interesting"). Replace this with a specific reading: what does the dagger's *visibility* — its having a hilt Macbeth can almost grasp — tell us about how close he already is to acting? The conjured object is not a sign of distant temptation but of imminent commitment.
+2. *AO1 — evidence selection.* "Is this a dagger which I see before me" is a strong choice for the moment, but you have not used the second half of the soliloquy. Pulling the contrast with "thou marshall'st me the way that I was going" would let you argue that the dagger is not summoning Macbeth — it is leading a man already moving.
+3. *AO3 — context "stickered on".* Your final sentence ("This links to the theme of guilt in the play") names a theme but does not develop one. Cut it. Replace it with a sentence that places the hallucination in the Jacobean understanding of conscience as a faculty that physically manifests when violated.
+
+That is what useful AI feedback looks like. It tells you what is missing, why it is missing, and gives you the next move.
+
+## Where to go next
+
+If you want to try the marker on your own work, [/pricing](/pricing) covers what is included at each tier — AI marking sits inside every plan. If you are a teacher thinking about how to integrate AI marking into a department's workflow without it becoming a shortcut students abuse, [/for-teachers](/for-teachers) walks through the patterns that work in real classrooms.
+
+A last word, and this is the most important thing in the post. AI marking is a tool, not a teacher. It is a fast feedback partner that lets you draft, rewrite, and learn from the gap between the two — at a tempo that no human marker can sustain. It is not a replacement for the English teacher who knows your writing across a year and can tell you the one thing you keep doing that nobody else does. Use it for the speed. Keep the teacher for the wisdom. The students who climb fastest are the ones who use both.
