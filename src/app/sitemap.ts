@@ -1243,10 +1243,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Other
     // ============================================================
     { url: `${base}/board-select`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/exam-boards`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
 
     // Info & legal pages
     { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/sitemap-html`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${base}/faqs`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${base}/help`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${base}/help/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },

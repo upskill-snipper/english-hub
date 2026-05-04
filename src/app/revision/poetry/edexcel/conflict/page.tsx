@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Sparkles, Swords, BookOpen, Lightbulb, Lock } fr
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 interface Poem {
   title: string
@@ -153,6 +154,21 @@ export default function EdexcelConflictPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Edexcel poetry',
+            url: 'https://theenglishhub.app/revision/poetry/edexcel',
+          },
+          {
+            name: 'Conflict',
+            url: 'https://theenglishhub.app/revision/poetry/edexcel/conflict',
+          },
+        ]}
+      />
       {/* ── Back link ───────────────────────────────────────────────── */}
       <div>
         <Button

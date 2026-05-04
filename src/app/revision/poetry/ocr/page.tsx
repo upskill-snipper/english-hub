@@ -17,6 +17,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 interface Cluster {
   slug: string
@@ -74,6 +75,17 @@ const CLUSTERS: Cluster[] = [
 export default function OCRPoetryHubPage() {
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'OCR Towards a World Unknown',
+            url: 'https://theenglishhub.app/revision/poetry/ocr',
+          },
+        ]}
+      />
       {/* ── Back nav ────────────────────────────────────────────────── */}
       <div>
         <Button
@@ -98,23 +110,27 @@ export default function OCRPoetryHubPage() {
               <Sparkles className="mr-1 size-3" />
               OCR GCSE English Literature J352
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              OCR
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Towards a World Unknown
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            The OCR poetry anthology contains 60 poems split across 4 themed clusters of 15 poems each.
-            For your exam, you only need to study <strong className="text-foreground">one cluster</strong> --
-            the one chosen by your school or teacher.
+            The OCR poetry anthology contains 60 poems split across 4 themed clusters of 15 poems
+            each. For your exam, you only need to study{' '}
+            <strong className="text-foreground">one cluster</strong> -- the one chosen by your
+            school or teacher.
           </p>
         </div>
       </section>
 
-      <StudyTools textName="OCR Poetry Anthology" textType="anthology" examBoard="OCR" variant="banner" />
+      <StudyTools
+        textName="OCR Poetry Anthology"
+        textType="anthology"
+        examBoard="OCR"
+        variant="banner"
+      />
 
       {/* ── Info banner ─────────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
@@ -126,8 +142,8 @@ export default function OCRPoetryHubPage() {
             </h2>
             <p className="mt-1 text-body-sm text-muted-foreground">
               Check with your teacher to find out which of the 4 clusters your class is studying.
-              Most schools choose one cluster at the start of Year 10 and stick with it through to the exam.
-              You will be assessed on poems from that cluster only.
+              Most schools choose one cluster at the start of Year 10 and stick with it through to
+              the exam. You will be assessed on poems from that cluster only.
             </p>
           </div>
         </div>
@@ -137,9 +153,7 @@ export default function OCRPoetryHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            The Four Clusters
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">The Four Clusters</h2>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
@@ -156,9 +170,7 @@ export default function OCRPoetryHubPage() {
                     <cluster.icon className={`size-5 ${cluster.iconColor}`} />
                   </div>
                   <div>
-                    <CardTitle className="text-heading-md font-heading">
-                      {cluster.title}
-                    </CardTitle>
+                    <CardTitle className="text-heading-md font-heading">{cluster.title}</CardTitle>
                     <CardDescription>{cluster.count} poems</CardDescription>
                   </div>
                 </div>
@@ -186,14 +198,12 @@ export default function OCRPoetryHubPage() {
 
       {/* ── Copyright note ──────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">
-          About these study pages
-        </h2>
+        <h2 className="text-heading-sm font-heading text-foreground">About these study pages</h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
           For older, public-domain poems we provide full interactive study pages with annotations,
           context, and quotation analysis. For poems still in copyright, we provide context, themes,
-          and key quotation analysis only -- you will need a copy of the OCR anthology
-          (<em>Towards a World Unknown</em>, ISBN 9781398384408) to read the full text.
+          and key quotation analysis only -- you will need a copy of the OCR anthology (
+          <em>Towards a World Unknown</em>, ISBN 9781398384408) to read the full text.
         </p>
       </section>
 

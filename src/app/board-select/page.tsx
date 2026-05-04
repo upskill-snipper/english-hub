@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Choose your exam board — The English Hub',
@@ -86,6 +87,12 @@ const IGCSE_BOARDS: readonly Board[] = [
 export default function BoardSelectPage() {
   return (
     <main className="min-h-screen bg-ink-950">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Choose your exam board', url: 'https://theenglishhub.app/board-select' },
+        ]}
+      />
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 pb-14 sm:pt-16 sm:pb-20">
         {/* Headline */}
         <header className="text-center mb-12 sm:mb-16">

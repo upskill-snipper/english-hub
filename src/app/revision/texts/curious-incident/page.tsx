@@ -5,6 +5,8 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import StudyTools from '@/components/study/StudyTools'
+import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 
 export const metadata: Metadata = {
   title: 'The Curious Incident revision guide — themes, characters, key quotes — The English Hub',
@@ -235,6 +237,28 @@ export default async function CuriousIncidentPage() {
 
   return (
     <>
+      <LearningResourceJsonLd
+        name="The Curious Incident of the Dog in the Night-Time revision guide"
+        description="IGCSE-aligned study guide for The Curious Incident of the Dog in the Night-Time covering plot, characters, themes, key quotations, historical context and exam essay plans."
+        educationalLevel="IGCSE"
+        learningResourceType="Study guide"
+        inLanguage="en-GB"
+        url="https://theenglishhub.app/revision/texts/curious-incident"
+        about="The Curious Incident of the Dog in the Night-Time"
+        audienceRole="student"
+        isAccessibleForFree={true}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'The Curious Incident of the Dog in the Night-Time',
+            url: 'https://theenglishhub.app/revision/texts/curious-incident',
+          },
+        ]}
+      />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">Draft study guide</strong>
         <span>
@@ -252,6 +276,12 @@ export default async function CuriousIncidentPage() {
         Patents Act 1988 for criticism and review. Full text available from your school or local
         library.
       </p>
+      <EmailCaptureCard
+        magnetTitle="Free The Curious Incident of the Dog in the Night-Time revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="curious-incident-revision-pack"
+        className="mt-12"
+      />
     </>
   )
 }

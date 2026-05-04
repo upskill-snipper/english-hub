@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
+import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'AQA English Language Paper 1 & Paper 2 Technique Guides | The English Hub',
@@ -135,6 +136,26 @@ export default async function LanguagePaperAnalysisHub() {
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <LearningResourceJsonLd
+        name="AQA English Language Paper 1 & Paper 2 Technique Guides"
+        description="Question-by-question AQA English Language Paper 1 and Paper 2 technique guides for GCSE. Grade 9 model answers, marking guides explained, timing and marker tips. Written by GCSE markers."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        about="AQA English Language Paper 1 and Paper 2"
+        url="https://theenglishhub.app/analysis/language-paper"
+        nonce={nonce}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
+          {
+            name: 'AQA English Language Paper 1 & Paper 2 Technique Guides',
+            url: 'https://theenglishhub.app/analysis/language-paper',
+          },
+        ]}
+        nonce={nonce}
       />
       <nav className="mb-4 text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">

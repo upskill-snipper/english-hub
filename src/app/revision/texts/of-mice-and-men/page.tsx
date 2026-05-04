@@ -7,7 +7,8 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Of Mice and Men revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -544,6 +545,14 @@ export default async function OfMiceAndMenPage() {
 
   return (
     <>
+      <LearningResourceJsonLd
+        name="Of Mice and Men — Complete GCSE Study Guide"
+        description="In-depth study guide for Of Mice and Men covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
+        educationalLevel="IGCSE"
+        learningResourceType="Study guide"
+        about="Of Mice and Men"
+        url="https://theenglishhub.app/revision/texts/of-mice-and-men"
+      />
       <CourseJsonLd
         name="Of Mice and Men — Complete GCSE Study Guide"
         description="In-depth study guide for Of Mice and Men covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
@@ -624,6 +633,12 @@ export default async function OfMiceAndMenPage() {
         Patents Act 1988 for criticism and review. Full text available from your school or local
         library.
       </p>
+      <EmailCaptureCard
+        magnetTitle="Free Of Mice and Men revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="of-mice-and-men-revision-pack"
+        className="mt-12"
+      />
     </>
   )
 }

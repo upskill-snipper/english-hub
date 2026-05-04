@@ -7,7 +7,8 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Pride and Prejudice revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -469,6 +470,17 @@ export default async function PrideAndPrejudicePage() {
         name="Pride and Prejudice — Complete GCSE Study Guide"
         description="In-depth study guide for Pride and Prejudice covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
+      <LearningResourceJsonLd
+        name="Pride and Prejudice revision guide"
+        description="GCSE-aligned study guide for Pride and Prejudice covering plot, characters, themes, key quotations, historical context and exam essay plans."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        inLanguage="en-GB"
+        url="https://theenglishhub.app/revision/texts/pride-and-prejudice"
+        about="Pride and Prejudice"
+        audienceRole="student"
+        isAccessibleForFree={true}
+      />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -551,6 +563,12 @@ export default async function PrideAndPrejudicePage() {
         <em>Pride and Prejudice</em> (1813) by Jane Austen is in the public domain. Quotations are
         reproduced freely.
       </p>
+      <EmailCaptureCard
+        magnetTitle="Free Pride and Prejudice revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="pride-and-prejudice-revision-pack"
+        className="mt-12"
+      />
     </>
   )
 }

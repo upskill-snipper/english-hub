@@ -7,11 +7,17 @@ import type { PoemData } from '@/components/study'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
-export const metadata = {
-  title: 'Checking Out Me History -- John Agard -- The English Hub',
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Checking Out Me History — AQA Power and Conflict | The English Hub',
   description:
-    'Interactive study guide for "Checking Out Me History" by John Agard. GCSE English Literature Power and Conflict anthology poem with annotations, key quotes, language analysis and comparison poems.',
+    'Analysis of Checking Out Me History for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.',
+  alternates: {
+    canonical:
+      'https://theenglishhub.app/revision/poetry/power-and-conflict/checking-out-me-history',
+  },
 }
 
 /* ── Poem data ────────────────────────────────────────────────────── */
@@ -855,7 +861,6 @@ export default function CheckingOutMeHistoryPage() {
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
           {
             name: 'Power and Conflict',
             url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
@@ -865,6 +870,14 @@ export default function CheckingOutMeHistoryPage() {
             url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/checking-out-me-history',
           },
         ]}
+      />
+      <LearningResourceJsonLd
+        name="Checking Out Me History (AQA Power and Conflict)"
+        description="Analysis of Checking Out Me History for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons."
+        educationalLevel="GCSE"
+        learningResourceType="Lesson"
+        about="AQA Power and Conflict anthology cluster"
+        url="https://theenglishhub.app/revision/poetry/power-and-conflict/checking-out-me-history"
       />
       {/* ── Breadcrumb / back ─────────────────────────────────────── */}
       <div>

@@ -30,6 +30,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { QuizJsonLd } from '@/components/seo/json-ld'
 import { cn } from '@/lib/utils'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
@@ -1992,6 +1993,14 @@ export default function GamesPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <QuizJsonLd
+        name="GCSE English study games"
+        description="Quote-matching, word-building, and revision games to reinforce GCSE and IGCSE English."
+        about="GCSE English"
+        educationalLevel="GCSE"
+        url="https://theenglishhub.app/games"
+        audienceRole="student"
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-6">
         <Breadcrumb items={[{ label: 'Games' }]} />
       </div>

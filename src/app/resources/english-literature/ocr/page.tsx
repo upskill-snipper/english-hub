@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -204,6 +205,17 @@ const textGuides = [
 export default function OCREnglishLiteraturePage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
+          {
+            name: 'English Literature',
+            url: 'https://theenglishhub.app/resources/english-literature',
+          },
+          { name: 'OCR', url: 'https://theenglishhub.app/resources/english-literature/ocr' },
+        ]}
+      />
       {/* ── Hero banner ─────────────────────────────────────────── */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">

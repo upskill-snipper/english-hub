@@ -28,6 +28,7 @@ import { getGuideByBoard } from '@/data/exam-guides'
 import Link from 'next/link'
 
 import EssayFeedbackInline from '@/components/EssayFeedbackInline'
+import { QuizJsonLd } from '@/components/seo/json-ld'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -232,6 +233,14 @@ export default function PracticePage() {
 
   return (
     <main className="min-h-screen pb-20">
+      <QuizJsonLd
+        name="GCSE and IGCSE English practice questions"
+        description="Practice questions across GCSE and IGCSE English Language and Literature, calibrated to AO mark schemes."
+        about="GCSE English"
+        educationalLevel="GCSE"
+        url="https://theenglishhub.app/practice"
+        audienceRole="student"
+      />
       {/* Header */}
       <div className="border-b border-border bg-card/50">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">

@@ -12,6 +12,7 @@
  * a teacher in trial should see the same countdown.
  */
 
+import type { Metadata } from 'next'
 import { TrialCountdownBannerServer } from '@/components/billing/TrialCountdownBannerServer'
 
 // `TrialCountdownBannerServer` reads `cookies()` via the Supabase server
@@ -21,6 +22,14 @@ import { TrialCountdownBannerServer } from '@/components/billing/TrialCountdownB
 // were going to bail out of static prerender anyway (they all gate on a
 // session cookie), so this is purely a build-log cleanup.
 export const dynamic = 'force-dynamic'
+
+// Belt-and-braces noindex for the entire /dashboard/* tree. The primary
+// defense is the Disallow rule in robots.txt; this metadata is a
+// defense-in-depth backup so any crawler that ignores robots.txt still
+// sees a clear noindex directive.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+}
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (

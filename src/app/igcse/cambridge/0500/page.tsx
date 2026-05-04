@@ -19,18 +19,12 @@ import {
   Wrench,
   BarChart3,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'IGCSE Language A — The English Hub',
   description:
@@ -176,11 +170,19 @@ export default async function Cambridge0500HubPage() {
 
   return (
     <div className="space-y-12 pb-16">
+      <CourseJsonLd
+        name="Cambridge IGCSE First Language English (0500)"
+        description="Complete revision hub for Cambridge International IGCSE First Language English 0500 — Reading, Composition, exam technique. Graded A*–G."
+        educationalLevel="IGCSE"
+        provider="The English Hub"
+        url="https://theenglishhub.app/igcse/cambridge/0500"
+      />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Cambridge IGCSE 0500", url: "https://theenglishhub.app/igcse/cambridge/0500" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Cambridge IGCSE', url: 'https://theenglishhub.app/igcse/cambridge' },
+          { name: 'IGCSE 0500', url: 'https://theenglishhub.app/igcse/cambridge/0500' },
         ]}
       />
       {/* ── Back link ─────────────────────────────────────────────── */}
@@ -203,9 +205,7 @@ export default async function Cambridge0500HubPage() {
 
         <div className="relative">
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              Cambridge IGCSE
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">Cambridge IGCSE</Badge>
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
               First Language English
@@ -215,20 +215,17 @@ export default async function Cambridge0500HubPage() {
             IGCSE Language A
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            The world&apos;s most widely taken international English
-            qualification. Two 2-hour papers, 160 marks in total, equally
-            weighted between reading and writing. Designed for students whose
-            first language is English.
+            The world&apos;s most widely taken international English qualification. Two 2-hour
+            papers, 160 marks in total, equally weighted between reading and writing. Designed for
+            students whose first language is English.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3 text-body-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <Scroll className="size-3.5" />
-              2 papers
+              <Scroll className="size-3.5" />2 papers
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <Clock className="size-3.5" />
-              4 hours total
+              <Clock className="size-3.5" />4 hours total
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
               <Target className="size-3.5" />
@@ -248,9 +245,7 @@ export default async function Cambridge0500HubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <FileText className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            The two papers
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">The two papers</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -341,9 +336,7 @@ export default async function Cambridge0500HubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <Target className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Skills &amp; Practice
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Skills &amp; Practice</h2>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2">
@@ -359,12 +352,8 @@ export default async function Cambridge0500HubPage() {
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-body text-foreground">
-                    {link.label}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {link.description}
-                  </p>
+                  <h3 className="font-heading text-body text-foreground">{link.label}</h3>
+                  <p className="text-body-xs text-muted-foreground">{link.description}</p>
                 </div>
                 <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>
@@ -377,15 +366,12 @@ export default async function Cambridge0500HubPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Assessment objectives
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Assessment objectives</h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          IGCSE Language A is assessed against two equally weighted objectives.
-          Each paper draws on both in different proportions, so strong
-          candidates must be able to read closely and write accurately across
-          multiple forms.
+          IGCSE Language A is assessed against two equally weighted objectives. Each paper draws on
+          both in different proportions, so strong candidates must be able to read closely and write
+          accurately across multiple forms.
         </p>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
@@ -425,9 +411,7 @@ export default async function Cambridge0500HubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <GraduationCap className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Study Tools
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Study Tools</h2>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -443,12 +427,8 @@ export default async function Cambridge0500HubPage() {
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-body text-foreground">
-                    {tool.title}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {tool.description}
-                  </p>
+                  <h3 className="font-heading text-body text-foreground">{tool.title}</h3>
+                  <p className="text-body-xs text-muted-foreground">{tool.description}</p>
                 </div>
                 <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>
@@ -463,9 +443,7 @@ export default async function Cambridge0500HubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <ListChecks className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Reference Pages
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Reference Pages</h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {quickLinks.map((link) => {
@@ -480,12 +458,8 @@ export default async function Cambridge0500HubPage() {
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-body-md font-semibold text-foreground">
-                    {link.title}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {link.description}
-                  </p>
+                  <h3 className="text-body-md font-semibold text-foreground">{link.title}</h3>
+                  <p className="text-body-xs text-muted-foreground">{link.description}</p>
                 </div>
                 <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>

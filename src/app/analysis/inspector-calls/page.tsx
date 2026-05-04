@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, BookOpen, Quote, Users } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import {
   MarkerByline,
   PageContainer,
@@ -186,6 +187,26 @@ export default async function InspectorCallsHubPage() {
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <LearningResourceJsonLd
+        name="An Inspector Calls Analysis"
+        description="In-depth An Inspector Calls analysis for GCSE English Literature. Quote breakdowns, character studies, themes, and Priestley context written by markers."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        about="An Inspector Calls"
+        url="https://theenglishhub.app/analysis/inspector-calls"
+        nonce={nonce}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
+          {
+            name: 'An Inspector Calls Analysis',
+            url: 'https://theenglishhub.app/analysis/inspector-calls',
+          },
+        ]}
+        nonce={nonce}
       />
 
       <div className="space-y-3">

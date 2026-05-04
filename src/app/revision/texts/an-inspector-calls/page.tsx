@@ -7,7 +7,8 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'An Inspector Calls revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -621,11 +622,22 @@ export default async function AnInspectorCallsPage() {
         name="An Inspector Calls — Complete GCSE Study Guide"
         description="In-depth study guide for An Inspector Calls covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
+      <LearningResourceJsonLd
+        name="An Inspector Calls revision guide"
+        description="GCSE-aligned study guide for Priestley's An Inspector Calls, covering plot, characters, themes, key quotations, historical context and exam essay plans."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        inLanguage="en-GB"
+        url="https://theenglishhub.app/revision/texts/an-inspector-calls"
+        about="An Inspector Calls"
+        audienceRole="student"
+        isAccessibleForFree={true}
+      />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Set texts', url: 'https://theenglishhub.app/revision/texts' },
           {
             name: 'An Inspector Calls',
             url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
@@ -706,6 +718,12 @@ export default async function AnInspectorCallsPage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
+      <EmailCaptureCard
+        magnetTitle="Free An Inspector Calls revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="an-inspector-calls-revision-pack"
+        className="mt-12"
+      />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
         Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
   Brain,
@@ -16,6 +17,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { Badge } from '@/components/ui/badge'
 import { ToolkitProgressPreview } from '@/components/toolkit/toolkit-progress-preview'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 // ─── Toolkit Hub (Server Component) ───────────────────────────────────────
 // The student's personal learning command centre. Renders four sections:
@@ -36,7 +38,7 @@ const AI_TOOLS: ToolkitSection[] = [
   {
     title: 'AI Test Builder',
     description:
-      'Generate custom tests from your board\'s texts and topics. Multiple-choice and short-answer questions, scored with GCSE grade equivalents.',
+      "Generate custom tests from your board's texts and topics. Multiple-choice and short-answer questions, scored with GCSE grade equivalents.",
     href: '/toolkit/test-builder',
     icon: PenTool,
     colour: 'text-violet-500',
@@ -86,10 +88,12 @@ const DASHBOARD_SECTIONS: ToolkitSection[] = [
   },
 ]
 
-export const metadata = {
-  title: 'Student Toolkit',
+export const metadata: Metadata = {
+  title: 'Revision toolkit — The English Hub',
   description:
-    'Your personal learning command centre. Build custom tests, generate revision notes, track your progress, and predict your GCSE grade.',
+    'Free tools for GCSE & IGCSE English: quote builders, essay frames, mark-scheme checklists.',
+  alternates: { canonical: 'https://theenglishhub.app/toolkit' },
+  openGraph: { url: 'https://theenglishhub.app/toolkit' },
 }
 
 export default async function ToolkitPage() {
@@ -98,6 +102,12 @@ export default async function ToolkitPage() {
 
   return (
     <main id="main-content" className="min-h-screen bg-background">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Toolkit', url: 'https://theenglishhub.app/toolkit' },
+        ]}
+      />
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
@@ -133,9 +143,7 @@ export default async function ToolkitPage() {
         <section>
           <div className="flex items-center gap-2 mb-6">
             <Sparkles className="h-5 w-5 text-primary" />
-            <h2 className="font-serif text-2xl font-medium tracking-tight">
-              AI Study Tools
-            </h2>
+            <h2 className="font-serif text-2xl font-medium tracking-tight">AI Study Tools</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {AI_TOOLS.map((tool) => (
@@ -145,7 +153,9 @@ export default async function ToolkitPage() {
                 className="group relative flex flex-col gap-4 rounded-xl border border-border bg-card p-6 shadow-soft transition-all duration-200 hover:shadow-medium hover:border-primary/25"
               >
                 <div className="flex items-start justify-between">
-                  <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${tool.bgColour}`}>
+                  <div
+                    className={`flex h-11 w-11 items-center justify-center rounded-xl ${tool.bgColour}`}
+                  >
                     <tool.icon className={`h-5 w-5 ${tool.colour}`} />
                   </div>
                   {tool.tag && (
@@ -186,7 +196,9 @@ export default async function ToolkitPage() {
                 href={section.href}
                 className="group flex flex-col gap-4 rounded-xl border border-border bg-card p-6 shadow-soft transition-all duration-200 hover:shadow-medium hover:border-primary/25"
               >
-                <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${section.bgColour}`}>
+                <div
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${section.bgColour}`}
+                >
                   <section.icon className={`h-5 w-5 ${section.colour}`} />
                 </div>
                 <div>

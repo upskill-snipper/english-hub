@@ -8,13 +8,16 @@ import type { Metadata } from 'next'
 import StudyTools from '@/components/study/StudyTools'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 /* ── SEO ─────────────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'Bayonet Charge -- Ted Hughes -- The English Hub',
+  title: 'Bayonet Charge — AQA Power and Conflict | The English Hub',
   description:
-    'Interactive study guide for Bayonet Charge by Ted Hughes. Annotations, key quotes, language analysis, form & structure, and poem comparisons for GCSE English Literature.',
+    'Analysis of Bayonet Charge for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.',
+  alternates: {
+    canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/bayonet-charge',
+  },
 }
 
 /* ── Poem data ───────────────────────────────────────────────────── */
@@ -647,7 +650,6 @@ export default function BayonetChargePage() {
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
           {
             name: 'Power and Conflict',
             url: 'https://theenglishhub.app/revision/poetry/power-and-conflict',
@@ -657,6 +659,14 @@ export default function BayonetChargePage() {
             url: 'https://theenglishhub.app/revision/poetry/power-and-conflict/bayonet-charge',
           },
         ]}
+      />
+      <LearningResourceJsonLd
+        name="Bayonet Charge (AQA Power and Conflict)"
+        description="Analysis of Bayonet Charge for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons."
+        educationalLevel="GCSE"
+        learningResourceType="Lesson"
+        about="AQA Power and Conflict anthology cluster"
+        url="https://theenglishhub.app/revision/poetry/power-and-conflict/bayonet-charge"
       />
       {/* ── Back nav ──────────────────────────────────────────────── */}
       <div>

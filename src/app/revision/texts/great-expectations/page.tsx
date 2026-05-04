@@ -7,7 +7,8 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Great Expectations revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -590,11 +591,22 @@ export default async function GreatExpectationsPage() {
         name="Great Expectations \u2014 Complete GCSE Study Guide"
         description="In-depth study guide for Great Expectations covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
+      <LearningResourceJsonLd
+        name="Great Expectations revision guide"
+        description="GCSE-aligned study guide for Dickens's Great Expectations, covering plot, characters, themes, key quotations and exam essay plans."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        inLanguage="en-GB"
+        url="https://theenglishhub.app/revision/texts/great-expectations"
+        about="Great Expectations"
+        audienceRole="student"
+        isAccessibleForFree={true}
+      />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Set texts', url: 'https://theenglishhub.app/revision/texts' },
           {
             name: 'Great Expectations',
             url: 'https://theenglishhub.app/revision/texts/great-expectations',
@@ -674,6 +686,12 @@ export default async function GreatExpectationsPage() {
         </span>
       </div>
       <TextGuide data={data} />
+      <EmailCaptureCard
+        magnetTitle="Free Great Expectations revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="great-expectations-revision-pack"
+        className="mt-12"
+      />
     </>
   )
 }

@@ -5,6 +5,8 @@ import { redirect } from 'next/navigation'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import StudyTools from '@/components/study/StudyTools'
+import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 
 export const metadata: Metadata = {
   title: 'Pigeon English revision guide — themes, characters, key quotes — The English Hub',
@@ -164,6 +166,28 @@ export default async function PigeonEnglishPage() {
 
   return (
     <>
+      <LearningResourceJsonLd
+        name="Pigeon English revision guide"
+        description="GCSE-aligned study guide for Pigeon English covering plot, characters, themes, key quotations, historical context and exam essay plans."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        inLanguage="en-GB"
+        url="https://theenglishhub.app/revision/texts/pigeon-english"
+        about="Pigeon English"
+        audienceRole="student"
+        isAccessibleForFree={true}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Pigeon English',
+            url: 'https://theenglishhub.app/revision/texts/pigeon-english',
+          },
+        ]}
+      />
       <StudyTools textName="Pigeon English" textType="novel" examBoard="AQA" />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">Draft study guide</strong>
@@ -177,6 +201,12 @@ export default async function PigeonEnglishPage() {
         Patents Act 1988 for criticism and review. Full text available from your school or local
         library.
       </p>
+      <EmailCaptureCard
+        magnetTitle="Free Pigeon English revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="pigeon-english-revision-pack"
+        className="mt-12"
+      />
     </>
   )
 }

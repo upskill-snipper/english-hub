@@ -442,6 +442,24 @@ export async function middleware(request: NextRequest) {
   response.headers.set('Content-Security-Policy', buildCsp(nonce, scriptHashes))
   response.headers.set('x-nonce', nonce)
 
+  // Standard security headers (complement the CSP above). These target
+  // securityheaders.com grade A and harden against MIME sniffing,
+  // referrer leakage, and unwanted device-API access.
+  //
+  // X-Frame-Options is intentionally omitted — the CSP above already sets
+  // `frame-ancestors 'self'`, which supersedes XFO in modern browsers.
+  // Adding XFO would be redundant (and can cause edge-case conflicts).
+  //
+  // Permissions-Policy disables camera/microphone/geolocation outright,
+  // and restricts Payment Request API to same-origin so Stripe's
+  // Apple Pay / Google Pay flows continue to work from our own origin.
+  response.headers.set('X-Content-Type-Options', 'nosniff')
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
+  response.headers.set(
+    'Permissions-Policy',
+    'camera=(), microphone=(), geolocation=(), payment=(self)',
+  )
+
   // Annotate the response with affiliate tracking cookie if ?ref=… is present.
   // No-op when no ref param or when the response is a redirect we want to pass through.
   return applyAffiliateTracking(request, response)

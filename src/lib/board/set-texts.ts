@@ -237,7 +237,7 @@ export const SET_TEXTS: SetText[] = [
   {
     slug: 'curious-incident',
     title: 'The Curious Incident of the Dog in the Night-Time',
-    author: 'Simon Stephens',
+    author: 'Mark Haddon',
     category: 'modern',
     boards: ['edexcel-igcse'],
     copyrightStatus: 'copyright',

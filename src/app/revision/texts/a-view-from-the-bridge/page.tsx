@@ -6,7 +6,8 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'A View from the Bridge revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -525,6 +526,14 @@ export default async function AViewFromTheBridgePage() {
 
   return (
     <>
+      <LearningResourceJsonLd
+        name="A View from the Bridge — Complete GCSE Study Guide"
+        description="In-depth study guide for A View from the Bridge covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
+        educationalLevel="IGCSE"
+        learningResourceType="Study guide"
+        about="A View from the Bridge"
+        url="https://theenglishhub.app/revision/texts/a-view-from-the-bridge"
+      />
       <CourseJsonLd
         name="A View from the Bridge — Complete GCSE Study Guide"
         description="In-depth study guide for A View from the Bridge covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
@@ -605,6 +614,12 @@ export default async function AViewFromTheBridgePage() {
         Patents Act 1988 for criticism and review. Full text available from your school or local
         library.
       </p>
+      <EmailCaptureCard
+        magnetTitle="Free A View from the Bridge revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="a-view-from-the-bridge-revision-pack"
+        className="mt-12"
+      />
     </>
   )
 }

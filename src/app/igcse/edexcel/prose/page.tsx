@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
+import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title:
@@ -92,6 +93,24 @@ export default async function ProseHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+        ]}
+      />
+      <LearningResourceJsonLd
+        name="Edexcel IGCSE Literature prose section"
+        description="Three modern prose texts — Of Mice and Men, To Kill a Mockingbird, Things Fall Apart — for Pearson Edexcel IGCSE Literature 4ET1."
+        educationalLevel="IGCSE"
+        learningResourceType="Study guide"
+        inLanguage="en-GB"
+        url="https://theenglishhub.app/igcse/edexcel/prose"
+        audienceRole="student"
+        isAccessibleForFree={true}
+      />
       {/* Breadcrumb */}
       <div>
         <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel" />}>

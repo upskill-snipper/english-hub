@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
+import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 
 export const metadata: Metadata = {
@@ -132,6 +133,26 @@ export default async function AqaLoveRelationshipsHub() {
           type="application/ld+json"
           nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <LearningResourceJsonLd
+          name="AQA Love and Relationships Analysis: Comparisons, Themes & Quotes"
+          description="In-depth AQA Love and Relationships poetry analysis for GCSE. Compare poems side-by-side, explore every theme and master the unseen comparison question. Written by GCSE markers."
+          educationalLevel="GCSE"
+          learningResourceType="Study guide"
+          about="AQA Love and Relationships poetry"
+          url="https://theenglishhub.app/analysis/aqa-love-relationships"
+          nonce={nonce}
+        />
+        <BreadcrumbJsonLd
+          items={[
+            { name: 'Home', url: 'https://theenglishhub.app' },
+            { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
+            {
+              name: 'AQA Love and Relationships Analysis: Comparisons, Themes & Quotes',
+              url: 'https://theenglishhub.app/analysis/aqa-love-relationships',
+            },
+          ]}
+          nonce={nonce}
         />
         <nav className="mb-4 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">

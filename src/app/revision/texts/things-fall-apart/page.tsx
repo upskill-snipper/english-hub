@@ -6,7 +6,8 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Things Fall Apart revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -529,6 +530,17 @@ export default async function ThingsFallApartPage() {
         name="Things Fall Apart — Complete GCSE Study Guide"
         description="In-depth study guide for Things Fall Apart covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
+      <LearningResourceJsonLd
+        name="Things Fall Apart revision guide"
+        description="IGCSE-aligned study guide for Things Fall Apart covering plot, characters, themes, key quotations, historical context and exam essay plans."
+        educationalLevel="IGCSE"
+        learningResourceType="Study guide"
+        inLanguage="en-GB"
+        url="https://theenglishhub.app/revision/texts/things-fall-apart"
+        about="Things Fall Apart"
+        audienceRole="student"
+        isAccessibleForFree={true}
+      />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -605,6 +617,12 @@ export default async function ThingsFallApartPage() {
         Patents Act 1988 for criticism and review. Full text available from your school or local
         library.
       </p>
+      <EmailCaptureCard
+        magnetTitle="Free Things Fall Apart revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="things-fall-apart-revision-pack"
+        className="mt-12"
+      />
     </>
   )
 }

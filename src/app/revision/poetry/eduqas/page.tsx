@@ -23,6 +23,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import StudyTools from '@/components/study/StudyTools'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ── Poem data (Eduqas GCSE 2025 anthology — 12 poems) ────────────── */
 
@@ -216,6 +217,17 @@ const totalPoems =
 export default function EduqasPoetryPage() {
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'WJEC Eduqas',
+            url: 'https://theenglishhub.app/revision/poetry/eduqas',
+          },
+        ]}
+      />
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
         <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />

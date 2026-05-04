@@ -5,7 +5,8 @@ import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 
 export const metadata: Metadata = {
   title: 'Macbeth revision guide — themes, characters, key quotes — The English Hub',
@@ -648,11 +649,22 @@ export default async function MacbethPage() {
         name="Macbeth — Complete GCSE Study Guide"
         description="In-depth study guide for Macbeth covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
+      <LearningResourceJsonLd
+        name="Macbeth revision guide"
+        description="GCSE-aligned study guide for Macbeth covering plot, characters, themes, key quotations, historical context and exam essay plans."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        inLanguage="en-GB"
+        url="https://theenglishhub.app/revision/texts/macbeth"
+        about="Macbeth"
+        audienceRole="student"
+        isAccessibleForFree={true}
+      />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Set texts', url: 'https://theenglishhub.app/revision/texts' },
           { name: 'Macbeth', url: 'https://theenglishhub.app/revision/texts/macbeth' },
         ]}
       />
@@ -737,6 +749,12 @@ export default async function MacbethPage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
+      <EmailCaptureCard
+        magnetTitle="Free Macbeth revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="macbeth-revision-pack"
+        className="mt-12"
+      />
     </>
   )
 }

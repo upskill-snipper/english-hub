@@ -1,17 +1,29 @@
 import type { Metadata } from 'next'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
-  title: 'Games — The English Hub',
+  title: 'Revision games — The English Hub',
   description:
-    'Learn English through fun, interactive games. Vocabulary challenges, grammar quizzes and word puzzles designed to boost your KS3 and GCSE skills.',
+    'Quick recall games for GCSE & IGCSE English: quote drills, technique spotting, character matching.',
   alternates: { canonical: 'https://theenglishhub.app/games' },
   openGraph: {
-    title: 'Games — The English Hub',
+    title: 'Revision games — The English Hub',
     description:
-      'Learn English through fun, interactive games. Vocabulary challenges, grammar quizzes and word puzzles designed to boost your KS3 and GCSE skills.',
+      'Quick recall games for GCSE & IGCSE English: quote drills, technique spotting, character matching.',
+    url: 'https://theenglishhub.app/games',
   },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision games', url: 'https://theenglishhub.app/games' },
+        ]}
+      />
+      {children}
+    </>
+  )
 }

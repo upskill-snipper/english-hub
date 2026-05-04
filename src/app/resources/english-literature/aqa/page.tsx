@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'AQA GCSE English Literature resources — The English Hub',
@@ -147,6 +148,17 @@ const assessmentObjectives = [
 export default function AqaEnglishLiteraturePage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
+          {
+            name: 'English Literature',
+            url: 'https://theenglishhub.app/resources/english-literature',
+          },
+          { name: 'AQA', url: 'https://theenglishhub.app/resources/english-literature/aqa' },
+        ]}
+      />
       {/* ── Hero ── */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">

@@ -36,7 +36,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Which exam boards are supported?',
         answer:
-          'AQA, Edexcel (GCSE + International), OCR, WJEC / Eduqas, Cambridge IGCSE (0500 + 0475), and Pearson Edexcel International. Built by examiners active across all of these, so every course, mock exam, practice question, and revision note is tailored to your specific board and specification.',
+          'AQA, Edexcel (GCSE + International), OCR, WJEC / Eduqas, Cambridge IGCSE (0500 + 0475), and Pearson Edexcel International. Built around how examiners actually mark, so every course, mock exam, practice question, and revision note is tailored to your specific board and specification.',
       },
       {
         question: 'Is The English Hub suitable for IGCSE Cambridge 0500 and 0475?',

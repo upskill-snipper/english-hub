@@ -601,7 +601,7 @@ function PricingContent() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    Built by examiners
+                    Calibrated to exam-board mark schemes
                   </td>
                   <td className="px-4 py-3 align-middle">
                     <div className="flex justify-center items-center gap-1.5">

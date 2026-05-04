@@ -28,7 +28,7 @@ import { getBoardMismatchState } from '@/app/igcse/_lib/guard'
 import BoardMismatchBanner from '@/components/board/BoardMismatchBanner'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'Edexcel IGCSE Literature — The English Hub',
   description:
@@ -246,13 +246,6 @@ const examResources = [
 function TextCard({ text }: { text: TextEntry }) {
   return (
     <div className="group/text rounded-xl border border-border/60 bg-card transition-all duration-200 hover:border-primary/30 hover:shadow-card-hover">
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
-          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
-        ]}
-      />
       <Link href={text.href} className="flex items-center justify-between gap-3 p-4">
         <div className="min-w-0">
           <h4 className="font-heading text-body text-foreground truncate">{text.name}</h4>
@@ -358,6 +351,20 @@ export default async function EdexcelIgcseHubPage() {
 
   return (
     <>
+      <CourseJsonLd
+        name="Pearson Edexcel IGCSE English Literature (4ET1)"
+        description="Complete revision hub for Pearson Edexcel International GCSE English Literature 4ET1 — drama, prose, Shakespeare, anthology poetry, unseen poetry, and exam technique."
+        educationalLevel="IGCSE"
+        provider="The English Hub"
+        url="https://theenglishhub.app/igcse/edexcel"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+        ]}
+      />
       {!mismatch.matched && <BoardMismatchBanner pageBoard="edexcel-igcse" />}
       <div className="space-y-12 pb-16">
         {/* ── Back link ───────────────────────────────────────────────── */}

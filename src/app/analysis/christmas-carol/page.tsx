@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
+import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'A Christmas Carol Analysis — Quotes, Characters & Themes',
@@ -176,6 +177,26 @@ export default async function ChristmasCarolAnalysisHub() {
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <LearningResourceJsonLd
+        name="A Christmas Carol Analysis — Quotes, Characters & Themes"
+        description="In-depth GCSE analysis of A Christmas Carol by Charles Dickens. Key quotations, character studies, themes and Grade 9 essay guidance written by GCSE markers."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        about="A Christmas Carol"
+        url="https://theenglishhub.app/analysis/christmas-carol"
+        nonce={nonce}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
+          {
+            name: 'A Christmas Carol Analysis — Quotes, Characters & Themes',
+            url: 'https://theenglishhub.app/analysis/christmas-carol',
+          },
+        ]}
+        nonce={nonce}
       />
 
       <header className="space-y-4">

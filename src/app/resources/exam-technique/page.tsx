@@ -1,26 +1,27 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique' },
-  title: "Exam Technique",
+  title: 'Exam Technique',
   description:
-    "Master the exam techniques that turn knowledge into top grades. Time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English.",
-};
+    'Master the exam techniques that turn knowledge into top grades. Time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English.',
+}
 
 /* ─── Section data ───────────────────────────────────────────── */
 
 const SECTIONS = [
   {
-    title: "Time Management",
-    href: "/resources/exam-technique/time-management",
+    title: 'Time Management',
+    href: '/resources/exam-technique/time-management',
     description:
-      "Paper-by-paper timing breakdowns for every exam board. Learn exactly how long to spend on each question, how to plan your time, and what to do if you run out.",
-    colour: "border-accent",
-    badge: "Essential",
+      'Paper-by-paper timing breakdowns for every exam board. Learn exactly how long to spend on each question, how to plan your time, and what to do if you run out.',
+    colour: 'border-accent',
+    badge: 'Essential',
     icon: (
       <svg
         className="h-10 w-10 text-accent"
@@ -37,21 +38,21 @@ const SECTIONS = [
       </svg>
     ),
     topics: [
-      "Paper-by-paper timings",
-      "Marks per minute",
-      "Reading time",
-      "Running out of time",
-      "Planning allocation",
-      "Writing target times",
+      'Paper-by-paper timings',
+      'Marks per minute',
+      'Reading time',
+      'Running out of time',
+      'Planning allocation',
+      'Writing target times',
     ],
   },
   {
-    title: "Question Types",
-    href: "/resources/exam-technique/question-types",
+    title: 'Question Types',
+    href: '/resources/exam-technique/question-types',
     description:
-      "Decode every question type you will face. From \"How does the writer...\" to comparison questions and creative writing tasks -- learn what each is really asking and how to structure your response.",
-    colour: "border-primary",
-    badge: "6 types",
+      'Decode every question type you will face. From "How does the writer..." to comparison questions and creative writing tasks -- learn what each is really asking and how to structure your response.',
+    colour: 'border-primary',
+    badge: '6 types',
     icon: (
       <svg
         className="h-10 w-10 text-primary"
@@ -68,21 +69,21 @@ const SECTIONS = [
       </svg>
     ),
     topics: [
-      "\"How does the writer...\"",
-      "\"To what extent...\"",
-      "Comparison questions",
-      "Extract-based questions",
-      "Essay questions",
-      "Creative writing tasks",
+      '"How does the writer..."',
+      '"To what extent..."',
+      'Comparison questions',
+      'Extract-based questions',
+      'Essay questions',
+      'Creative writing tasks',
     ],
   },
   {
-    title: "Essay Structure",
-    href: "/resources/exam-technique/essay-structure",
+    title: 'Essay Structure',
+    href: '/resources/exam-technique/essay-structure',
     description:
-      "Proven templates and frameworks for structuring exam essays. Introduction techniques, PEEL paragraphs, topic sentences, linking, and how many paragraphs you need for different mark allocations.",
-    colour: "border-accent",
-    badge: "Templates",
+      'Proven templates and frameworks for structuring exam essays. Introduction techniques, PEEL paragraphs, topic sentences, linking, and how many paragraphs you need for different mark allocations.',
+    colour: 'border-accent',
+    badge: 'Templates',
     icon: (
       <svg
         className="h-10 w-10 text-accent"
@@ -99,21 +100,21 @@ const SECTIONS = [
       </svg>
     ),
     topics: [
-      "Introduction techniques",
-      "PEEL paragraphs",
-      "Topic sentences",
-      "Linking paragraphs",
-      "Conclusion techniques",
-      "Paragraph count by marks",
+      'Introduction techniques',
+      'PEEL paragraphs',
+      'Topic sentences',
+      'Linking paragraphs',
+      'Conclusion techniques',
+      'Paragraph count by marks',
     ],
   },
   {
-    title: "Exam Day Advice",
-    href: "/resources/exam-technique/exam-day",
+    title: 'Exam Day Advice',
+    href: '/resources/exam-technique/exam-day',
     description:
-      "Practical, no-nonsense advice for the day itself. What to bring, how to read the paper, how to plan your answers, how to stay calm, and what to do in the last five minutes.",
-    colour: "border-primary",
-    badge: "Practical",
+      'Practical, no-nonsense advice for the day itself. What to bring, how to read the paper, how to plan your answers, how to stay calm, and what to do in the last five minutes.',
+    colour: 'border-primary',
+    badge: 'Practical',
     icon: (
       <svg
         className="h-10 w-10 text-primary"
@@ -130,15 +131,15 @@ const SECTIONS = [
       </svg>
     ),
     topics: [
-      "What to bring",
-      "Reading the paper",
-      "Planning answers",
-      "Staying calm",
-      "Last 5 minutes",
-      "Common mistakes",
+      'What to bring',
+      'Reading the paper',
+      'Planning answers',
+      'Staying calm',
+      'Last 5 minutes',
+      'Common mistakes',
     ],
   },
-] as const;
+] as const
 
 /* ─── Icons ──────────────────────────────────────────────────── */
 
@@ -151,13 +152,9 @@ function ArrowRight() {
       strokeWidth={2}
       stroke="currentColor"
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-      />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
     </svg>
-  );
+  )
 }
 
 /* ─── Page ───────────────────────────────────────────────────── */
@@ -165,6 +162,19 @@ function ArrowRight() {
 export default function ExamTechniquePage() {
   return (
     <>
+      <ArticleJsonLd
+        headline="Exam Technique Guide"
+        description="Master the exam techniques that turn knowledge into top grades — time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English."
+        datePublished="2026-04-01"
+        url="https://theenglishhub.app/resources/exam-technique"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
+          { name: 'Exam technique', url: 'https://theenglishhub.app/resources/exam-technique' },
+        ]}
+      />
 
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
@@ -176,9 +186,8 @@ export default function ExamTechniquePage() {
             Exam Technique Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Knowing the content is only half the battle. The other half is
-            knowing how to use it under timed conditions. Master the techniques
-            that turn knowledge into top grades.
+            Knowing the content is only half the battle. The other half is knowing how to use it
+            under timed conditions. Master the techniques that turn knowledge into top grades.
           </p>
         </div>
       </section>
@@ -193,10 +202,7 @@ export default function ExamTechniquePage() {
           </li>
           <li>/</li>
           <li>
-            <Link
-              href="/resources"
-              className="hover:text-primary transition-colors"
-            >
+            <Link href="/resources" className="hover:text-primary transition-colors">
               Resources
             </Link>
           </li>
@@ -208,21 +214,17 @@ export default function ExamTechniquePage() {
       {/* Why exam technique matters */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-primary/20 bg-primary/10 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-foreground">
-            Why exam technique matters
-          </h2>
+          <h2 className="text-xl font-bold text-foreground">Why exam technique matters</h2>
           <div className="mt-4 space-y-3 text-muted-foreground leading-relaxed">
             <p>
-              Every year, thousands of students who know the content well still
-              underperform because of poor exam technique. They run out of time,
-              misread question demands, write unfocused essays, or panic on the
-              day. These are all fixable problems.
+              Every year, thousands of students who know the content well still underperform because
+              of poor exam technique. They run out of time, misread question demands, write
+              unfocused essays, or panic on the day. These are all fixable problems.
             </p>
             <p>
-              This guide covers the four pillars of exam technique: managing
-              your time, understanding question types, structuring your essays,
-              and performing on exam day. Each section is packed with actionable
-              strategies you can start using immediately.
+              This guide covers the four pillars of exam technique: managing your time,
+              understanding question types, structuring your essays, and performing on exam day.
+              Each section is packed with actionable strategies you can start using immediately.
             </p>
           </div>
         </div>
@@ -233,15 +235,11 @@ export default function ExamTechniquePage() {
         className="mx-auto max-w-6xl px-4 pb-14 sm:px-6 lg:px-8"
         aria-labelledby="sections-heading"
       >
-        <h2
-          id="sections-heading"
-          className="text-2xl font-bold text-foreground sm:text-3xl"
-        >
+        <h2 id="sections-heading" className="text-2xl font-bold text-foreground sm:text-3xl">
           Explore by topic
         </h2>
         <p className="mt-2 text-muted-foreground">
-          Each guide is designed to be practical, specific, and immediately
-          useful in your revision.
+          Each guide is designed to be practical, specific, and immediately useful in your revision.
         </p>
 
         <div className="mt-8 grid gap-8 md:grid-cols-2">
@@ -288,31 +286,31 @@ export default function ExamTechniquePage() {
             Five quick wins for any English exam
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
-            No matter your board or paper, these five habits will instantly
-            improve your exam performance.
+            No matter your board or paper, these five habits will instantly improve your exam
+            performance.
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {[
               {
-                heading: "Read the question twice",
-                body: "Underline the key command words and any specific focus before you start writing.",
+                heading: 'Read the question twice',
+                body: 'Underline the key command words and any specific focus before you start writing.',
               },
               {
-                heading: "Plan before you write",
-                body: "Spend 3-5 minutes planning. A planned answer is always better than an unplanned one.",
+                heading: 'Plan before you write',
+                body: 'Spend 3-5 minutes planning. A planned answer is always better than an unplanned one.',
               },
               {
-                heading: "Watch the clock",
-                body: "Write your target end-time for each question on the paper. Stick to it.",
+                heading: 'Watch the clock',
+                body: 'Write your target end-time for each question on the paper. Stick to it.',
               },
               {
-                heading: "Use short quotations",
-                body: "Embed 2-5 word quotes into your sentences. Never copy out whole paragraphs.",
+                heading: 'Use short quotations',
+                body: 'Embed 2-5 word quotes into your sentences. Never copy out whole paragraphs.',
               },
               {
-                heading: "Leave time to check",
-                body: "Reserve the last 5 minutes for proofreading. Fix SPaG errors and add missing analysis.",
+                heading: 'Leave time to check',
+                body: 'Reserve the last 5 minutes for proofreading. Fix SPaG errors and add missing analysis.',
               },
             ].map((tip, i) => (
               <div
@@ -322,12 +320,8 @@ export default function ExamTechniquePage() {
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                   {i + 1}
                 </span>
-                <h3 className="mt-4 text-base font-bold text-foreground">
-                  {tip.heading}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {tip.body}
-                </p>
+                <h3 className="mt-4 text-base font-bold text-foreground">{tip.heading}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{tip.body}</p>
               </div>
             ))}
           </div>
@@ -337,12 +331,10 @@ export default function ExamTechniquePage() {
       {/* Revision CTA */}
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8 text-center">
-          <h2 className="text-xl font-bold text-foreground">
-            Ready to revise?
-          </h2>
+          <h2 className="text-xl font-bold text-foreground">Ready to revise?</h2>
           <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
-            Put these exam techniques into practice with our interactive revision section --
-            timed exercises, worked examples, and self-assessment quizzes.
+            Put these exam techniques into practice with our interactive revision section -- timed
+            exercises, worked examples, and self-assessment quizzes.
           </p>
           <Link
             href="/revision/exam-technique"
@@ -355,25 +347,23 @@ export default function ExamTechniquePage() {
 
       {/* Continue exploring */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">
-          Continue exploring
-        </h2>
+        <h2 className="text-2xl font-bold text-foreground">Continue exploring</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
             {
-              label: "Model Answers",
-              href: "/resources/model-answers",
-              desc: "Grade 5, 7, and 9 sample answers with marker commentary.",
+              label: 'Model Answers',
+              href: '/resources/model-answers',
+              desc: 'Grade 5, 7, and 9 sample answers with marker commentary.',
             },
             {
-              label: "Techniques Reference",
-              href: "/resources/techniques",
-              desc: "Language and structural devices with examples and effects.",
+              label: 'Techniques Reference',
+              href: '/resources/techniques',
+              desc: 'Language and structural devices with examples and effects.',
             },
             {
-              label: "All Resources",
-              href: "/resources",
-              desc: "Browse everything by exam board and subject.",
+              label: 'All Resources',
+              href: '/resources',
+              desc: 'Browse everything by exam board and subject.',
             },
           ].map((link) => (
             <Link
@@ -392,5 +382,5 @@ export default function ExamTechniquePage() {
 
       <ExamBoardDisclaimer />
     </>
-  );
+  )
 }

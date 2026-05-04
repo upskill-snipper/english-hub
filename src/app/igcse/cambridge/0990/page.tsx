@@ -18,17 +18,12 @@ import {
   BarChart3,
   ChevronLeft,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
-import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   title: 'IGCSE Language B — The English Hub',
   description:
@@ -47,9 +42,7 @@ const papers = [
       'Three linked questions on two unseen non-fiction texts. Tests comprehension, language analysis and summary skills.',
     href: '/igcse/cambridge/0990/paper-1',
     icon: BookOpen,
-    subLinks: [
-      { label: 'Question types', href: '/igcse/cambridge/0990/paper-1/question-types' },
-    ],
+    subLinks: [{ label: 'Question types', href: '/igcse/cambridge/0990/paper-1/question-types' }],
   },
   {
     code: 'Writing Paper',
@@ -82,8 +75,7 @@ const navCards = [
   },
   {
     title: 'Full syllabus',
-    description:
-      'Complete 0990 specification breakdown and assessment objectives.',
+    description: 'Complete 0990 specification breakdown and assessment objectives.',
     href: '/igcse/cambridge/0990/syllabus',
     icon: FileText,
   },
@@ -195,11 +187,19 @@ export default async function Cambridge0990HubPage() {
 
   return (
     <div className="space-y-12 pb-16">
+      <CourseJsonLd
+        name="Cambridge IGCSE First Language English (0990)"
+        description="Complete revision hub for Cambridge International IGCSE First Language English 0990 — Reading, Composition, exam technique. Graded 9–1."
+        educationalLevel="IGCSE"
+        provider="The English Hub"
+        url="https://theenglishhub.app/igcse/cambridge/0990"
+      />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Cambridge IGCSE 0990", url: "https://theenglishhub.app/igcse/cambridge/0990" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Cambridge IGCSE', url: 'https://theenglishhub.app/igcse/cambridge' },
+          { name: 'IGCSE 0990', url: 'https://theenglishhub.app/igcse/cambridge/0990' },
         ]}
       />
       {/* ── Back link ─────────────────────────────────────────────── */}
@@ -233,18 +233,16 @@ export default async function Cambridge0990HubPage() {
             IGCSE Language B
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            The <strong className="text-foreground">9-1 graded version</strong>{' '}
-            of Cambridge First Language English. Identical content, papers and
-            assessment objectives to{' '}
+            The <strong className="text-foreground">9-1 graded version</strong> of Cambridge First
+            Language English. Identical content, papers and assessment objectives to{' '}
             <Link
               href="/igcse/cambridge/0500"
               className="text-primary underline-offset-2 hover:underline"
             >
               Language A
             </Link>
-            , with results reported on the numerical scale from 9 (highest) to
-            1 (lowest). Popular in UK international schools and IB feeder
-            schools.
+            , with results reported on the numerical scale from 9 (highest) to 1 (lowest). Popular
+            in UK international schools and IB feeder schools.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
@@ -272,9 +270,7 @@ export default async function Cambridge0990HubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <FileText className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            The two papers
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">The two papers</h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -351,9 +347,7 @@ export default async function Cambridge0990HubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <Target className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Skills &amp; Practice
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Skills &amp; Practice</h2>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2">
@@ -369,12 +363,8 @@ export default async function Cambridge0990HubPage() {
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-body text-foreground">
-                    {link.label}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {link.description}
-                  </p>
+                  <h3 className="font-heading text-body text-foreground">{link.label}</h3>
+                  <p className="text-body-xs text-muted-foreground">{link.description}</p>
                 </div>
                 <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>
@@ -392,37 +382,27 @@ export default async function Cambridge0990HubPage() {
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          IGCSE Language B reports results on the same numerical 9-1
-          scale used by reformed UK GCSEs, where Grade 9 is the highest and
-          Grade 1 is the lowest pass. The content, papers and assessment
-          objectives are identical to Language A — only the reporting
-          scale changes. Schools choose Language B when they want students&apos;
-          results to align directly with UK GCSE grades for sixth form or
-          university applications.
+          IGCSE Language B reports results on the same numerical 9-1 scale used by reformed UK
+          GCSEs, where Grade 9 is the highest and Grade 1 is the lowest pass. The content, papers
+          and assessment objectives are identical to Language A — only the reporting scale changes.
+          Schools choose Language B when they want students&apos; results to align directly with UK
+          GCSE grades for sixth form or university applications.
         </p>
         <div className="mt-5 grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <h3 className="text-body-sm font-semibold text-foreground">
-              Grade 9
-            </h3>
+            <h3 className="text-body-sm font-semibold text-foreground">Grade 9</h3>
             <p className="mt-1 text-body-xs text-muted-foreground">
-              Above old A*. Awarded to the top performers — roughly the top 4%
-              of entries.
+              Above old A*. Awarded to the top performers — roughly the top 4% of entries.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <h3 className="text-body-sm font-semibold text-foreground">
-              Grade 4
-            </h3>
+            <h3 className="text-body-sm font-semibold text-foreground">Grade 4</h3>
             <p className="mt-1 text-body-xs text-muted-foreground">
-              Standard pass — equivalent to the old C grade. Required by many
-              sixth forms.
+              Standard pass — equivalent to the old C grade. Required by many sixth forms.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <h3 className="text-body-sm font-semibold text-foreground">
-              Grade 1
-            </h3>
+            <h3 className="text-body-sm font-semibold text-foreground">Grade 1</h3>
             <p className="mt-1 text-body-xs text-muted-foreground">
               Lowest pass — equivalent to the old G grade on the legacy scale.
             </p>
@@ -461,14 +441,14 @@ export default async function Cambridge0990HubPage() {
                       {b.grade === 9
                         ? 'Above A*'
                         : b.grade === 8
-                        ? 'A*/A'
-                        : b.grade === 7
-                        ? 'A'
-                        : b.grade === 6
-                        ? 'B'
-                        : b.grade === 5
-                        ? 'B/C'
-                        : 'C'}
+                          ? 'A*/A'
+                          : b.grade === 7
+                            ? 'A'
+                            : b.grade === 6
+                              ? 'B'
+                              : b.grade === 5
+                                ? 'B/C'
+                                : 'C'}
                     </td>
                   </tr>
                 ))}
@@ -477,8 +457,8 @@ export default async function Cambridge0990HubPage() {
           </div>
         </div>
         <p className="mt-3 text-body-xs text-muted-foreground">
-          Boundaries vary slightly by session. Figures shown are indicative
-          from recent Cambridge series.
+          Boundaries vary slightly by session. Figures shown are indicative from recent Cambridge
+          series.
         </p>
       </section>
 
@@ -488,9 +468,7 @@ export default async function Cambridge0990HubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <Layers className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Explore Language B
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Explore Language B</h2>
         </div>
         <div className="grid gap-3 md:grid-cols-3">
           {navCards.map((c) => {
@@ -504,9 +482,7 @@ export default async function Cambridge0990HubPage() {
                 <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-primary/10">
                   <Icon className="size-5 text-primary" />
                 </div>
-                <h3 className="text-body font-semibold text-foreground">
-                  {c.title}
-                </h3>
+                <h3 className="text-body font-semibold text-foreground">{c.title}</h3>
                 <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
                   {c.description}
                 </p>
@@ -526,9 +502,7 @@ export default async function Cambridge0990HubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <Award className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Grade-by-grade guides
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Grade-by-grade guides</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {gradeGuides.map((g) => (
@@ -559,9 +533,7 @@ export default async function Cambridge0990HubPage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
             <GraduationCap className="size-5 text-primary" />
           </div>
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Study Tools
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Study Tools</h2>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -577,12 +549,8 @@ export default async function Cambridge0990HubPage() {
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-body text-foreground">
-                    {tool.title}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {tool.description}
-                  </p>
+                  <h3 className="font-heading text-body text-foreground">{tool.title}</h3>
+                  <p className="text-body-xs text-muted-foreground">{tool.description}</p>
                 </div>
                 <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>
@@ -595,14 +563,12 @@ export default async function Cambridge0990HubPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Practice papers
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Practice papers</h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Full-length practice papers built around public-domain extracts,
-          mirroring the Language B format and question style. Work under exam
-          conditions and compare your answers with our worked model responses.
+          Full-length practice papers built around public-domain extracts, mirroring the Language B
+          format and question style. Work under exam conditions and compare your answers with our
+          worked model responses.
         </p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
           {practicePapers.map((pp) => (

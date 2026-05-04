@@ -14,6 +14,28 @@ export const metadata: Metadata = {
   description:
     'IGCSE English revision for Pearson Edexcel (4ET1 Literature, 4EA1 Language A) and Cambridge International (0500, 0990). Set-text guides, AI essay marking, mock papers and study tools.',
   alternates: { canonical: 'https://theenglishhub.app/igcse' },
+  openGraph: {
+    title: 'IGCSE English revision — Pearson Edexcel and Cambridge specs covered',
+    description:
+      'IGCSE English revision for Pearson Edexcel (4ET1 Literature, 4EA1 Language A) and Cambridge International (0500, 0990). Set-text guides, AI essay marking, mock papers and study tools.',
+    images: [
+      {
+        url: '/api/og?title=IGCSE+English+revision&subtitle=Pearson+Edexcel+and+Cambridge+specs+covered&level=igcse',
+        width: 1200,
+        height: 630,
+        alt: 'IGCSE English revision — Pearson Edexcel and Cambridge specs covered',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IGCSE English revision — Pearson Edexcel and Cambridge specs covered',
+    description:
+      'IGCSE English revision for Pearson Edexcel (4ET1 Literature, 4EA1 Language A) and Cambridge International (0500, 0990). Set-text guides, AI essay marking, mock papers and study tools.',
+    images: [
+      '/api/og?title=IGCSE+English+revision&subtitle=Pearson+Edexcel+and+Cambridge+specs+covered&level=igcse',
+    ],
+  },
 }
 
 const courses = [

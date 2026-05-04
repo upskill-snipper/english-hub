@@ -1,5 +1,25 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
+
+export const metadata: Metadata = {
+  openGraph: {
+    images: [
+      {
+        url: '/api/og?title=GCSE+and+IGCSE+English+revision,+AI+marked&subtitle=Pick+your+exam+board+to+start.',
+        width: 1200,
+        height: 630,
+        alt: 'The English Hub — GCSE and IGCSE English revision, AI marked',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [
+      '/api/og?title=GCSE+and+IGCSE+English+revision,+AI+marked&subtitle=Pick+your+exam+board+to+start.',
+    ],
+  },
+}
 
 /* ───────────────────── Main Page ───────────────────── */
 //

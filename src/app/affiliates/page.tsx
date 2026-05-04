@@ -1,6 +1,7 @@
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import AffiliatePublicPage from '@/components/affiliates/AffiliatePublicPage'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 // 2026-05-01: SEO/integrity pass — title rewritten to query-aligned form,
 // description shortened to 120-155 char band, canonical URL added.
@@ -15,6 +16,28 @@ export const metadata = {
   description:
     'Earn recurring commission promoting GCSE and IGCSE English revision with The English Hub. Pick a code, share your link, get paid monthly.',
   alternates: { canonical: 'https://theenglishhub.app/affiliates' },
+  openGraph: {
+    title: 'Affiliate programme — The English Hub',
+    description:
+      'Earn recurring commission promoting GCSE and IGCSE English revision with The English Hub. Pick a code, share your link, get paid monthly.',
+    images: [
+      {
+        url: '/api/og?title=The+English+Hub+affiliate+programme&subtitle=Earn+promoting+GCSE+English+revision',
+        width: 1200,
+        height: 630,
+        alt: 'The English Hub affiliate programme — earn promoting GCSE English revision',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Affiliate programme — The English Hub',
+    description:
+      'Earn recurring commission promoting GCSE and IGCSE English revision with The English Hub. Pick a code, share your link, get paid monthly.',
+    images: [
+      '/api/og?title=The+English+Hub+affiliate+programme&subtitle=Earn+promoting+GCSE+English+revision',
+    ],
+  },
 }
 
 // ─── /affiliates ────────────────────────────────────────────────────────────
@@ -35,8 +58,22 @@ export default async function AffiliatesPage() {
     data: { user },
   } = await supabase.auth.getUser()
 
+  const breadcrumbs = (
+    <BreadcrumbJsonLd
+      items={[
+        { name: 'Home', url: 'https://theenglishhub.app' },
+        { name: 'Affiliates', url: 'https://theenglishhub.app/affiliates' },
+      ]}
+    />
+  )
+
   if (!user) {
-    return <AffiliatePublicPage />
+    return (
+      <>
+        {breadcrumbs}
+        <AffiliatePublicPage />
+      </>
+    )
   }
 
   // New-system check — if they have an active affiliate_accounts row, go to dashboard.
@@ -69,5 +106,10 @@ export default async function AffiliatesPage() {
       ? legacy.status
       : undefined
 
-  return <AffiliatePublicPage applicationStatus={applicationStatus} isLoggedIn />
+  return (
+    <>
+      {breadcrumbs}
+      <AffiliatePublicPage applicationStatus={applicationStatus} isLoggedIn />
+    </>
+  )
 }

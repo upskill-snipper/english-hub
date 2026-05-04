@@ -16,7 +16,7 @@ import { BookCallForm } from '@/components/for-schools/BookCallForm'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { PRICING } from '@/constants/pricing'
 import { InfographicBanner } from '@/components/marketing/InfographicBanner'
-import { FAQPageJsonLd } from '@/components/seo/json-ld'
+import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   BookOpen,
   GraduationCap,
@@ -65,6 +65,26 @@ export const metadata = {
   description:
     'AI lesson planning, AI essay marking, department analytics, and resources mapped to your exam board. Founding Schools programme open now.',
   alternates: { canonical: 'https://theenglishhub.app/for-schools' },
+  openGraph: {
+    title: 'Whole-department English platform for UK schools — The English Hub',
+    description:
+      'AI lesson planning, AI essay marking, department analytics, and resources mapped to your exam board. Founding Schools programme open now.',
+    images: [
+      {
+        url: '/api/og?title=English+platform+for+UK+schools&subtitle=Whole+department,+one+place',
+        width: 1200,
+        height: 630,
+        alt: 'English platform for UK schools — whole department, one place',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Whole-department English platform for UK schools — The English Hub',
+    description:
+      'AI lesson planning, AI essay marking, department analytics, and resources mapped to your exam board. Founding Schools programme open now.',
+    images: ['/api/og?title=English+platform+for+UK+schools&subtitle=Whole+department,+one+place'],
+  },
 }
 
 /* ─────────────── Founding Schools Programme Benefits ─────────────── */
@@ -279,6 +299,12 @@ const FAQS = [
 export default function ForSchoolsPage() {
   return (
     <main className="min-h-screen bg-background">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'For Schools', url: 'https://theenglishhub.app/for-schools' },
+        ]}
+      />
       {/* ════════════════ INFOGRAPHIC BANNER ════════════════
           Whole-school overview: students-on-track, YoY uplift,
           AI-identified focus areas, time saved, on-demand reports */}

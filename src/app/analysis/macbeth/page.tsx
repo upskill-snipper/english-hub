@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
+import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 
 export const metadata: Metadata = {
@@ -74,6 +75,26 @@ export default async function MacbethAnalysisHub() {
           type="application/ld+json"
           nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <LearningResourceJsonLd
+          name="Macbeth Analysis: Quotes, Themes & Characters"
+          description="In-depth Macbeth analysis for GCSE. Explore 15 famous quotes line-by-line, key themes like ambition and guilt, and character studies of Macbeth, Lady Macbeth and Banquo. Written by GCSE markers."
+          educationalLevel="GCSE"
+          learningResourceType="Study guide"
+          about="Macbeth"
+          url="https://theenglishhub.app/analysis/macbeth"
+          nonce={nonce}
+        />
+        <BreadcrumbJsonLd
+          items={[
+            { name: 'Home', url: 'https://theenglishhub.app' },
+            { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
+            {
+              name: 'Macbeth Analysis: Quotes, Themes & Characters',
+              url: 'https://theenglishhub.app/analysis/macbeth',
+            },
+          ]}
+          nonce={nonce}
         />
         <nav className="mb-4 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">

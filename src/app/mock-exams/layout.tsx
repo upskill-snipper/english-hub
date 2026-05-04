@@ -1,17 +1,29 @@
 import type { Metadata } from 'next'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
-  title: 'Mock Exams — The English Hub',
+  title: 'Mock exams — The English Hub',
   description:
-    'Take full-length GCSE and IGCSE English mock exams under timed conditions. Realistic papers with marking guidance for every major exam board.',
+    'Practice papers for GCSE & IGCSE English Language and Literature, with mark-scheme breakdowns.',
   alternates: { canonical: 'https://theenglishhub.app/mock-exams' },
   openGraph: {
-    title: 'Mock Exams — The English Hub',
+    title: 'Mock exams — The English Hub',
     description:
-      'Take full-length GCSE and IGCSE English mock exams under timed conditions. Realistic papers with marking guidance for every major exam board.',
+      'Practice papers for GCSE & IGCSE English Language and Literature, with mark-scheme breakdowns.',
+    url: 'https://theenglishhub.app/mock-exams',
   },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Mock exams', url: 'https://theenglishhub.app/mock-exams' },
+        ]}
+      />
+      {children}
+    </>
+  )
 }

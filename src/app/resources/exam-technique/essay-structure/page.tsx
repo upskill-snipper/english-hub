@@ -1,21 +1,65 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
+import { HowToJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/essay-structure' },
-  title: "Essay Structure Templates",
+  title: 'Essay Structure Templates',
   description:
-    "Proven essay structure templates for GCSE and IGCSE English exams. Introduction techniques, PEEL paragraphs, conclusion strategies, topic sentences, and paragraph count guidance for different mark allocations.",
-};
+    'Proven essay structure templates for GCSE and IGCSE English exams. Introduction techniques, PEEL paragraphs, conclusion strategies, topic sentences, and paragraph count guidance for different mark allocations.',
+}
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function EssayStructurePage() {
   return (
     <>
+      <HowToJsonLd
+        name="Essay Structure Templates"
+        description="Proven templates and frameworks for structuring exam essays — introductions, PEEL paragraphs, topic sentences, linking, conclusions, and paragraph counts by mark allocation."
+        totalTime="PT20M"
+        url="https://theenglishhub.app/resources/exam-technique/essay-structure"
+        steps={[
+          {
+            name: 'Open with a strong introduction',
+            text: 'Use a direct address, contextual opener, conceptual statement, or provocative claim to set out your argument in 3-5 sentences. Address the question directly and signal your line of argument.',
+          },
+          {
+            name: 'Build paragraphs using PEEL',
+            text: 'Every analytical paragraph should follow Point, Evidence, Explain, Link. Make a clear point, support it with a short embedded quotation, analyse the language and effects, then connect back to the question or wider text.',
+          },
+          {
+            name: 'Lead each paragraph with a strong topic sentence',
+            text: "The first sentence of each paragraph must be specific, analytical, and directly address the question. Avoid signposting phrases like 'In this paragraph I will' — the topic sentence is your argument, not an announcement.",
+          },
+          {
+            name: 'Link paragraphs to build an argument',
+            text: 'Use building, contrasting, or shifting connectives so each paragraph develops, complicates, or progresses the previous one. Your essay should read as a developing argument, not a list of unrelated points.',
+          },
+          {
+            name: 'Match paragraph count to the mark allocation',
+            text: 'Aim for 2-3 paragraphs on 8-12 mark questions, 3-4 on 15-20 marks, 4-5 on 25-30 marks, and 5-6 on 30-40 mark essays. Use a brief intro and conclusion proportional to the question size.',
+          },
+          {
+            name: 'Close with a strong conclusion',
+            text: 'End with a definitive answer, wider significance, shift in perspective, or a cyclical link back to your introduction. Never introduce new evidence — your conclusion should leave the marker with a final insight.',
+          },
+        ]}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
+          { name: 'Exam technique', url: 'https://theenglishhub.app/resources/exam-technique' },
+          {
+            name: 'Essay structure',
+            url: 'https://theenglishhub.app/resources/exam-technique/essay-structure',
+          },
+        ]}
+      />
 
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
@@ -27,9 +71,8 @@ export default function EssayStructurePage() {
             Essay Structure Templates
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            A well-structured essay is easier to write, easier to read, and
-            easier to mark. Use these proven templates to build clear, focused,
-            high-scoring responses every time.
+            A well-structured essay is easier to write, easier to read, and easier to mark. Use
+            these proven templates to build clear, focused, high-scoring responses every time.
           </p>
         </div>
       </section>
@@ -38,15 +81,21 @@ export default function EssayStructurePage() {
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
         <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <Link href="/" className="hover:text-primary transition-colors">
+              Home
+            </Link>
           </li>
           <li>/</li>
           <li>
-            <Link href="/resources" className="hover:text-primary transition-colors">Resources</Link>
+            <Link href="/resources" className="hover:text-primary transition-colors">
+              Resources
+            </Link>
           </li>
           <li>/</li>
           <li>
-            <Link href="/resources/exam-technique" className="hover:text-primary transition-colors">Exam Technique</Link>
+            <Link href="/resources/exam-technique" className="hover:text-primary transition-colors">
+              Exam Technique
+            </Link>
           </li>
           <li>/</li>
           <li className="font-medium text-primary">Essay Structure</li>
@@ -55,60 +104,51 @@ export default function EssayStructurePage() {
 
       {/* Introduction techniques */}
       <section className="mx-auto max-w-5xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-          Introduction techniques
-        </h2>
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Introduction techniques</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
-          Your introduction sets the tone and direction for your entire essay. It
-          should be concise (3-5 sentences), address the question directly, and
-          signal the line of argument you will take.
+          Your introduction sets the tone and direction for your entire essay. It should be concise
+          (3-5 sentences), address the question directly, and signal the line of argument you will
+          take.
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {[
             {
-              title: "The direct address",
-              desc: "Start by rephrasing the question as a statement and immediately presenting your argument.",
+              title: 'The direct address',
+              desc: 'Start by rephrasing the question as a statement and immediately presenting your argument.',
               example:
                 "Throughout 'Macbeth', Shakespeare presents ambition as an inherently destructive force. From the moment Macbeth encounters the witches, his unchecked ambition corrupts his morality, his relationships, and ultimately his grip on reality.",
-              best: "Literature essays, evaluative questions",
+              best: 'Literature essays, evaluative questions',
             },
             {
-              title: "The contextual opener",
-              desc: "Begin with a brief piece of relevant context that frames your argument.",
+              title: 'The contextual opener',
+              desc: 'Begin with a brief piece of relevant context that frames your argument.',
               example:
                 "Writing in 1912, at a time of deep social inequality, Priestley uses 'An Inspector Calls' to challenge the moral complacency of the upper classes. The Birling family's refusal to accept responsibility reflects the attitudes Priestley sought to dismantle.",
-              best: "Literature essays where context is assessed",
+              best: 'Literature essays where context is assessed',
             },
             {
-              title: "The conceptual statement",
-              desc: "Open with a broader thematic observation before narrowing to the specific text.",
+              title: 'The conceptual statement',
+              desc: 'Open with a broader thematic observation before narrowing to the specific text.',
               example:
                 "Power is rarely given freely -- it is seized, inherited, or fought for. In 'Animal Farm', Orwell explores how the pursuit of power inevitably corrupts those who attain it, transforming the pigs from liberators into tyrants.",
-              best: "Thematic essay questions",
+              best: 'Thematic essay questions',
             },
             {
-              title: "The provocative claim",
-              desc: "Start with a bold interpretive statement that immediately engages the reader.",
+              title: 'The provocative claim',
+              desc: 'Start with a bold interpretive statement that immediately engages the reader.',
               example:
                 "The true horror of 'A Christmas Carol' is not Scrooge's miserliness but Victorian society's willingness to tolerate it. Dickens crafts Scrooge not as an anomaly but as a product of a system that valued profit over people.",
-              best: "Evaluative and argumentative questions",
+              best: 'Evaluative and argumentative questions',
             },
           ].map((tech) => (
-            <div
-              key={tech.title}
-              className="rounded-xl border border-border bg-card p-6 shadow-md"
-            >
+            <div key={tech.title} className="rounded-xl border border-border bg-card p-6 shadow-md">
               <h3 className="font-bold text-foreground">{tech.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                {tech.desc}
-              </p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{tech.desc}</p>
               <blockquote className="mt-4 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                 {tech.example}
               </blockquote>
-              <p className="mt-3 text-xs font-semibold text-primary">
-                Best for: {tech.best}
-              </p>
+              <p className="mt-3 text-xs font-semibold text-primary">Best for: {tech.best}</p>
             </div>
           ))}
         </div>
@@ -121,42 +161,42 @@ export default function EssayStructurePage() {
             The PEEL paragraph template
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            PEEL is the most reliable paragraph structure for English essays. Every
-            analytical paragraph should follow this pattern. It keeps your writing
-            focused, evidence-based, and analytical.
+            PEEL is the most reliable paragraph structure for English essays. Every analytical
+            paragraph should follow this pattern. It keeps your writing focused, evidence-based, and
+            analytical.
           </p>
 
           <div className="mt-8 space-y-4">
             {[
               {
-                letter: "P",
-                label: "Point",
-                colour: "bg-primary",
-                desc: "Make a clear, specific point that directly answers the question. This is your topic sentence.",
+                letter: 'P',
+                label: 'Point',
+                colour: 'bg-primary',
+                desc: 'Make a clear, specific point that directly answers the question. This is your topic sentence.',
                 example:
                   "Shakespeare presents Lady Macbeth as the driving force behind Duncan's murder.",
               },
               {
-                letter: "E",
-                label: "Evidence",
-                colour: "bg-primary",
-                desc: "Support your point with a short, embedded quotation from the text. Choose precise, analysable words.",
+                letter: 'E',
+                label: 'Evidence',
+                colour: 'bg-primary',
+                desc: 'Support your point with a short, embedded quotation from the text. Choose precise, analysable words.',
                 example:
-                  "She commands Macbeth to \"look like th' innocent flower, but be the serpent under't\", revealing her capacity for deception.",
+                  'She commands Macbeth to "look like th\' innocent flower, but be the serpent under\'t", revealing her capacity for deception.',
               },
               {
-                letter: "E",
-                label: "Explain",
-                colour: "bg-primary",
-                desc: "Analyse the evidence. Explore what specific words suggest, the effects of techniques, and how meaning is created.",
+                letter: 'E',
+                label: 'Explain',
+                colour: 'bg-primary',
+                desc: 'Analyse the evidence. Explore what specific words suggest, the effects of techniques, and how meaning is created.',
                 example:
-                  "The juxtaposition of \"innocent flower\" and \"serpent\" creates a stark contrast between appearance and reality. The biblical connotations of the serpent associate Lady Macbeth with temptation and original sin, positioning her as the catalyst for Macbeth's moral downfall.",
+                  'The juxtaposition of "innocent flower" and "serpent" creates a stark contrast between appearance and reality. The biblical connotations of the serpent associate Lady Macbeth with temptation and original sin, positioning her as the catalyst for Macbeth\'s moral downfall.',
               },
               {
-                letter: "L",
-                label: "Link",
-                colour: "bg-primary",
-                desc: "Connect your analysis back to the question and/or to the wider text, themes, or context.",
+                letter: 'L',
+                label: 'Link',
+                colour: 'bg-primary',
+                desc: 'Connect your analysis back to the question and/or to the wider text, themes, or context.',
                 example:
                   "This reflects the play's broader exploration of duplicity and moral corruption, themes that Shakespeare's Jacobean audience -- living under the shadow of the Gunpowder Plot -- would have found deeply resonant.",
               },
@@ -172,9 +212,7 @@ export default function EssayStructurePage() {
                 </span>
                 <div className="min-w-0">
                   <h3 className="font-bold text-foreground">{step.label}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                    {step.desc}
-                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                   <blockquote className="mt-3 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                     {step.example}
                   </blockquote>
@@ -187,38 +225,35 @@ export default function EssayStructurePage() {
 
       {/* Topic sentences */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-          Topic sentences
-        </h2>
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Topic sentences</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
-          A topic sentence is the first sentence of each paragraph. It tells the
-          marker exactly what the paragraph will be about and how it connects to
-          the question. Strong topic sentences make your essay easy to follow and
-          demonstrate a clear line of argument.
+          A topic sentence is the first sentence of each paragraph. It tells the marker exactly what
+          the paragraph will be about and how it connects to the question. Strong topic sentences
+          make your essay easy to follow and demonstrate a clear line of argument.
         </p>
 
         <div className="mt-8 rounded-xl border border-border bg-card shadow-md overflow-hidden">
           <div className="divide-y divide-border">
             {[
               {
-                bad: "Macbeth is a play about ambition.",
+                bad: 'Macbeth is a play about ambition.',
                 good: "Shakespeare initially presents Macbeth's ambition as a noble quality, seen in his battlefield courage.",
                 why: "The good version is specific, analytical, and directly addresses the writer's craft.",
               },
               {
-                bad: "The writer uses lots of techniques.",
-                good: "The writer creates a sense of unease through the recurring motif of darkness throughout the extract.",
-                why: "The good version names a specific technique and its effect, giving the paragraph clear focus.",
+                bad: 'The writer uses lots of techniques.',
+                good: 'The writer creates a sense of unease through the recurring motif of darkness throughout the extract.',
+                why: 'The good version names a specific technique and its effect, giving the paragraph clear focus.',
               },
               {
-                bad: "In this paragraph I will talk about the character of the Inspector.",
+                bad: 'In this paragraph I will talk about the character of the Inspector.',
                 good: "Priestley uses the Inspector as a mouthpiece for socialist values, challenging the Birlings' capitalist worldview.",
-                why: "Never announce what you are going to do -- just do it. The good version is an argument, not a signpost.",
+                why: 'Never announce what you are going to do -- just do it. The good version is an argument, not a signpost.',
               },
               {
-                bad: "Another technique the writer uses is simile.",
-                good: "The writer heightens the reader's sympathy through the simile \"like a bird with a broken wing\", which emphasises the character's vulnerability.",
-                why: "The good version integrates the technique, the quotation, and the effect into a single purposeful sentence.",
+                bad: 'Another technique the writer uses is simile.',
+                good: 'The writer heightens the reader\'s sympathy through the simile "like a bird with a broken wing", which emphasises the character\'s vulnerability.',
+                why: 'The good version integrates the technique, the quotation, and the effect into a single purposeful sentence.',
               },
             ].map((row, i) => (
               <div key={i} className="p-6 space-y-3">
@@ -248,52 +283,45 @@ export default function EssayStructurePage() {
       {/* Linking paragraphs */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            Linking paragraphs
-          </h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Linking paragraphs</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            Your essay should flow logically from one paragraph to the next. Each
-            paragraph should build on, contrast with, or develop the idea from the
-            previous one. Here are the main linking strategies:
+            Your essay should flow logically from one paragraph to the next. Each paragraph should
+            build on, contrast with, or develop the idea from the previous one. Here are the main
+            linking strategies:
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {[
               {
-                type: "Building",
+                type: 'Building',
                 connectives: [
-                  "Furthermore",
-                  "Moreover",
-                  "This is further demonstrated",
-                  "Building on this idea",
+                  'Furthermore',
+                  'Moreover',
+                  'This is further demonstrated',
+                  'Building on this idea',
                 ],
-                use: "When your next point develops or deepens the same idea.",
+                use: 'When your next point develops or deepens the same idea.',
                 example:
                   "Furthermore, Shakespeare reinforces Macbeth's deteriorating mental state through his inability to sleep...",
               },
               {
-                type: "Contrasting",
-                connectives: [
-                  "However",
-                  "In contrast",
-                  "Conversely",
-                  "On the other hand",
-                ],
-                use: "When your next point offers a different perspective or complication.",
+                type: 'Contrasting',
+                connectives: ['However', 'In contrast', 'Conversely', 'On the other hand'],
+                use: 'When your next point offers a different perspective or complication.',
                 example:
                   "However, an alternative reading suggests that Lady Macbeth's apparent strength masks a deep fragility...",
               },
               {
-                type: "Shifting",
+                type: 'Shifting',
                 connectives: [
-                  "Later in the text",
-                  "As the narrative progresses",
-                  "By the end of the play",
-                  "Significantly",
+                  'Later in the text',
+                  'As the narrative progresses',
+                  'By the end of the play',
+                  'Significantly',
                 ],
-                use: "When you are tracking a change or development across the text.",
+                use: 'When you are tracking a change or development across the text.',
                 example:
-                  "As the play progresses, this initial ambition curdles into paranoia, suggesting that power without moral foundation is inherently unstable...",
+                  'As the play progresses, this initial ambition curdles into paranoia, suggesting that power without moral foundation is inherently unstable...',
               },
             ].map((link) => (
               <div
@@ -327,9 +355,8 @@ export default function EssayStructurePage() {
           How many paragraphs for different mark allocations
         </h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
-          The number of paragraphs you write should be proportional to the marks
-          available. Here is a practical guide -- these are not rigid rules, but
-          reliable targets.
+          The number of paragraphs you write should be proportional to the marks available. Here is
+          a practical guide -- these are not rigid rules, but reliable targets.
         </p>
 
         <div className="mt-8 overflow-hidden rounded-xl border border-border bg-card shadow-md">
@@ -347,37 +374,34 @@ export default function EssayStructurePage() {
               <tbody className="divide-y divide-border">
                 {[
                   {
-                    marks: "8-12 marks",
-                    paras: "2-3 paragraphs",
-                    structure: "Brief intro line + 2-3 PEEL paragraphs (no separate conclusion needed)",
-                    examples: "Short language analysis questions",
+                    marks: '8-12 marks',
+                    paras: '2-3 paragraphs',
+                    structure:
+                      'Brief intro line + 2-3 PEEL paragraphs (no separate conclusion needed)',
+                    examples: 'Short language analysis questions',
                   },
                   {
-                    marks: "15-20 marks",
-                    paras: "3-4 paragraphs",
-                    structure: "Short intro + 3 PEEL paragraphs + brief conclusion",
-                    examples: "Evaluative questions, comparison tasks, summary writing",
+                    marks: '15-20 marks',
+                    paras: '3-4 paragraphs',
+                    structure: 'Short intro + 3 PEEL paragraphs + brief conclusion',
+                    examples: 'Evaluative questions, comparison tasks, summary writing',
                   },
                   {
-                    marks: "25-30 marks",
-                    paras: "4-5 paragraphs",
-                    structure: "Introduction + 3-4 PEEL paragraphs + conclusion",
-                    examples: "Literature extract + essay questions",
+                    marks: '25-30 marks',
+                    paras: '4-5 paragraphs',
+                    structure: 'Introduction + 3-4 PEEL paragraphs + conclusion',
+                    examples: 'Literature extract + essay questions',
                   },
                   {
-                    marks: "30-40 marks",
-                    paras: "5-6 paragraphs",
-                    structure: "Strong introduction + 4-5 PEEL paragraphs + developed conclusion",
-                    examples: "Major Literature essays (inc. SPaG marks)",
+                    marks: '30-40 marks',
+                    paras: '5-6 paragraphs',
+                    structure: 'Strong introduction + 4-5 PEEL paragraphs + developed conclusion',
+                    examples: 'Major Literature essays (inc. SPaG marks)',
                   },
                 ].map((row) => (
                   <tr key={row.marks} className="hover:bg-muted/50">
-                    <td className="px-6 py-4 font-bold text-foreground">
-                      {row.marks}
-                    </td>
-                    <td className="px-6 py-4 font-semibold text-foreground">
-                      {row.paras}
-                    </td>
+                    <td className="px-6 py-4 font-bold text-foreground">{row.marks}</td>
+                    <td className="px-6 py-4 font-semibold text-foreground">{row.paras}</td>
                     <td className="px-6 py-4 text-muted-foreground">{row.structure}</td>
                     <td className="px-6 py-4 text-muted-foreground">{row.examples}</td>
                   </tr>
@@ -390,28 +414,28 @@ export default function EssayStructurePage() {
           <div className="sm:hidden divide-y divide-border">
             {[
               {
-                marks: "8-12 marks",
-                paras: "2-3 paragraphs",
-                structure: "Brief intro line + 2-3 PEEL paragraphs (no separate conclusion needed)",
-                examples: "Short language analysis questions",
+                marks: '8-12 marks',
+                paras: '2-3 paragraphs',
+                structure: 'Brief intro line + 2-3 PEEL paragraphs (no separate conclusion needed)',
+                examples: 'Short language analysis questions',
               },
               {
-                marks: "15-20 marks",
-                paras: "3-4 paragraphs",
-                structure: "Short intro + 3 PEEL paragraphs + brief conclusion",
-                examples: "Evaluative questions, comparison tasks, summary writing",
+                marks: '15-20 marks',
+                paras: '3-4 paragraphs',
+                structure: 'Short intro + 3 PEEL paragraphs + brief conclusion',
+                examples: 'Evaluative questions, comparison tasks, summary writing',
               },
               {
-                marks: "25-30 marks",
-                paras: "4-5 paragraphs",
-                structure: "Introduction + 3-4 PEEL paragraphs + conclusion",
-                examples: "Literature extract + essay questions",
+                marks: '25-30 marks',
+                paras: '4-5 paragraphs',
+                structure: 'Introduction + 3-4 PEEL paragraphs + conclusion',
+                examples: 'Literature extract + essay questions',
               },
               {
-                marks: "30-40 marks",
-                paras: "5-6 paragraphs",
-                structure: "Strong introduction + 4-5 PEEL paragraphs + developed conclusion",
-                examples: "Major Literature essays (inc. SPaG marks)",
+                marks: '30-40 marks',
+                paras: '5-6 paragraphs',
+                structure: 'Strong introduction + 4-5 PEEL paragraphs + developed conclusion',
+                examples: 'Major Literature essays (inc. SPaG marks)',
               },
             ].map((row) => (
               <div key={row.marks} className="p-4 space-y-2">
@@ -432,41 +456,38 @@ export default function EssayStructurePage() {
       {/* Conclusion techniques */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            Conclusion techniques
-          </h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Conclusion techniques</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            A strong conclusion does three things: it answers the question
-            decisively, it pulls together the threads of your argument, and it
-            leaves the marker with a final insight. It should never introduce new
-            evidence or quotations.
+            A strong conclusion does three things: it answers the question decisively, it pulls
+            together the threads of your argument, and it leaves the marker with a final insight. It
+            should never introduce new evidence or quotations.
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               {
-                title: "The definitive answer",
-                desc: "Restate your argument with clarity and conviction. Leave no ambiguity about where you stand.",
+                title: 'The definitive answer',
+                desc: 'Restate your argument with clarity and conviction. Leave no ambiguity about where you stand.',
                 example:
-                  "Ultimately, Shakespeare presents Macbeth not as a villain but as a tragic figure -- a man whose fatal flaw of ambition destroys everything he once valued.",
+                  'Ultimately, Shakespeare presents Macbeth not as a villain but as a tragic figure -- a man whose fatal flaw of ambition destroys everything he once valued.',
               },
               {
-                title: "The wider significance",
+                title: 'The wider significance',
                 desc: "Connect your argument to a broader theme, context, or the writer's overall purpose.",
                 example:
                   "Through the Inspector's final speech, Priestley makes clear that social responsibility is not optional -- it is the foundation upon which a just society depends. His message remains as urgent today as it was in 1945.",
               },
               {
-                title: "The shift in perspective",
-                desc: "Offer a final reinterpretation or complication that shows sophisticated thinking.",
+                title: 'The shift in perspective',
+                desc: 'Offer a final reinterpretation or complication that shows sophisticated thinking.',
                 example:
                   "While Scrooge's transformation appears to offer a hopeful resolution, Dickens perhaps implies something more troubling: that compassion in this society requires supernatural intervention, because the system itself offers no incentive for change.",
               },
               {
-                title: "The cyclical link",
-                desc: "Echo the language or idea from your introduction to create a satisfying sense of completion.",
+                title: 'The cyclical link',
+                desc: 'Echo the language or idea from your introduction to create a satisfying sense of completion.',
                 example:
-                  "The \"prison of silence\" that opens the extract ultimately proves inescapable. Despite the character's attempts to break free, the writer's return to the same image in the final line suggests that some confinements are not physical but psychological -- and all the more powerful for it.",
+                  'The "prison of silence" that opens the extract ultimately proves inescapable. Despite the character\'s attempts to break free, the writer\'s return to the same image in the final line suggests that some confinements are not physical but psychological -- and all the more powerful for it.',
               },
             ].map((tech) => (
               <div
@@ -474,9 +495,7 @@ export default function EssayStructurePage() {
                 className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
                 <h3 className="font-bold text-foreground">{tech.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  {tech.desc}
-                </p>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{tech.desc}</p>
                 <blockquote className="mt-4 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                   {tech.example}
                 </blockquote>
@@ -489,11 +508,10 @@ export default function EssayStructurePage() {
       {/* Revision link */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
-          <h2 className="text-lg font-bold text-foreground">
-            Practise your essay structure
-          </h2>
+          <h2 className="text-lg font-bold text-foreground">Practise your essay structure</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Use these templates with real exam questions and get instant feedback on your paragraph structure.
+            Use these templates with real exam questions and get instant feedback on your paragraph
+            structure.
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-3">
             <Link
@@ -514,5 +532,5 @@ export default function EssayStructurePage() {
 
       <ExamBoardDisclaimer variant="content" className="mx-auto max-w-5xl px-4 mt-10 mb-6" />
     </>
-  );
+  )
 }

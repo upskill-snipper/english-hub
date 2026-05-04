@@ -7,7 +7,8 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Animal Farm revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -528,11 +529,22 @@ export default async function AnimalFarmPage() {
         name="Animal Farm — Complete GCSE Study Guide"
         description="In-depth study guide for Animal Farm covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
       />
+      <LearningResourceJsonLd
+        name="Animal Farm revision guide"
+        description="GCSE-aligned study guide for Orwell's Animal Farm, covering plot, characters, themes, key quotations, historical context and exam essay plans."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        inLanguage="en-GB"
+        url="https://theenglishhub.app/revision/texts/animal-farm"
+        about="Animal Farm"
+        audienceRole="student"
+        isAccessibleForFree={true}
+      />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
           { name: 'Revision', url: 'https://theenglishhub.app/revision' },
-          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Set texts', url: 'https://theenglishhub.app/revision/texts' },
           { name: 'Animal Farm', url: 'https://theenglishhub.app/revision/texts/animal-farm' },
         ]}
       />
@@ -610,6 +622,12 @@ export default async function AnimalFarmPage() {
         revisionTopics={REVISION_TOPICS}
       />
       <TextGuide data={data} />
+      <EmailCaptureCard
+        magnetTitle="Free Animal Farm revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="animal-farm-revision-pack"
+        className="mt-12"
+      />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in 2021,
         the Orwell estate (AM Heath) actively manages educational use. Quotations on this page are

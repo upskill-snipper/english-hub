@@ -7,7 +7,8 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'Jane Eyre revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -453,6 +454,14 @@ export default async function JaneEyrePage() {
 
   return (
     <>
+      <LearningResourceJsonLd
+        name="Jane Eyre — Complete GCSE Study Guide"
+        description="In-depth study guide for Jane Eyre covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        about="Jane Eyre"
+        url="https://theenglishhub.app/revision/texts/jane-eyre"
+      />
       <CourseJsonLd
         name="Jane Eyre — Complete GCSE Study Guide"
         description="In-depth study guide for Jane Eyre covering plot, characters, themes, key quotations, historical context and exam essay plans for GCSE English Literature."
@@ -536,6 +545,12 @@ export default async function JaneEyrePage() {
         <em>Jane Eyre</em> (1847) by Charlotte Bront&euml; is in the public domain. Quotations are
         reproduced freely.
       </p>
+      <EmailCaptureCard
+        magnetTitle="Free Jane Eyre revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="jane-eyre-revision-pack"
+        className="mt-12"
+      />
     </>
   )
 }

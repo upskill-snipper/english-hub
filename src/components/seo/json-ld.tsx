@@ -29,7 +29,7 @@ export function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
         price: '3.49',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
-        priceValidUntil: '2027-01-01',
+        priceValidUntil: '2028-01-01',
       },
       {
         '@type': 'Offer',
@@ -37,7 +37,7 @@ export function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
         price: '29.99',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
-        priceValidUntil: '2027-01-01',
+        priceValidUntil: '2028-01-01',
       },
       {
         '@type': 'Offer',
@@ -45,7 +45,7 @@ export function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
         price: '7.99',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
-        priceValidUntil: '2027-01-01',
+        priceValidUntil: '2028-01-01',
       },
       {
         '@type': 'Offer',
@@ -53,7 +53,7 @@ export function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
         price: '67.99',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
-        priceValidUntil: '2027-01-01',
+        priceValidUntil: '2028-01-01',
       },
     ],
   }
@@ -433,6 +433,72 @@ export function LearningResourceJsonLd({
   if (educationalLevel) jsonLd.educationalLevel = educationalLevel
   if (learningResourceType) jsonLd.learningResourceType = learningResourceType
   if (about) jsonLd.about = { '@type': 'Thing', name: about }
+  if (url) jsonLd.url = url
+
+  return (
+    <script
+      type="application/ld+json"
+      nonce={nonce}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
+/**
+ * Quiz schema for practice question banks, study games, and topic-tagged
+ * revision quizzes. Use one per page, on the parent surface that lists or
+ * orchestrates the quiz — not on individual question screens.
+ *
+ * @example
+ * <QuizJsonLd
+ *   name="GCSE and IGCSE English practice questions"
+ *   description="Exam-style practice with model answers and AO mark schemes."
+ *   educationalLevel="GCSE"
+ *   about="GCSE English"
+ *   url="https://theenglishhub.app/practice"
+ * />
+ */
+export function QuizJsonLd({
+  name,
+  description,
+  about,
+  educationalLevel,
+  url,
+  totalQuestions,
+  inLanguage,
+  audienceRole,
+  nonce,
+}: {
+  name: string
+  description: string
+  /** What the quiz is about (e.g. "GCSE English", "Macbeth"). */
+  about?: string
+  /** e.g. "GCSE", "IGCSE", "A-Level", "KS3" */
+  educationalLevel?: string
+  /** Canonical URL of the quiz page. */
+  url?: string
+  /** Total number of questions in the quiz/bank. */
+  totalQuestions?: number
+  /** Defaults to "en-GB" if undefined. */
+  inLanguage?: string
+  /** Defaults to "student" if undefined. Other values: "teacher", "parent". */
+  audienceRole?: 'student' | 'teacher' | 'parent'
+  nonce?: string
+}) {
+  const jsonLd: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Quiz',
+    name,
+    description,
+    inLanguage: inLanguage ?? 'en-GB',
+    audience: {
+      '@type': 'EducationalAudience',
+      educationalRole: audienceRole ?? 'student',
+    },
+  }
+  if (about) jsonLd.about = { '@type': 'Thing', name: about }
+  if (educationalLevel) jsonLd.educationalLevel = educationalLevel
+  if (typeof totalQuestions === 'number') jsonLd.totalQuestions = totalQuestions
   if (url) jsonLd.url = url
 
   return (

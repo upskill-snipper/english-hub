@@ -22,6 +22,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Unseen poetry — GCSE English Literature revision — The English Hub',
@@ -528,6 +529,17 @@ const COMMON_MISTAKES = [
 export default function UnseenPoetryGuidePage() {
   return (
     <div className="space-y-12 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Unseen poetry',
+            url: 'https://theenglishhub.app/revision/poetry/unseen-poetry',
+          },
+        ]}
+      />
       {/* ── Back link ───────────────────────────────────────────────── */}
       <div>
         <Button

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 // 2026-05-01: SEO/integrity pass — title and description rewritten to
 // query-aligned form with explicit canonical URL.
@@ -9,20 +10,44 @@ import type { Metadata } from 'next'
 // qualification + years-active summary (see TODO(founder) markers in
 // the page body) is finalised.
 export const metadata: Metadata = {
-  title: 'About The English Hub',
+  title: 'About — The English Hub',
   description:
-    'GCSE and IGCSE English revision built around how examiners actually mark. Read what we do, why we built it, and how we calibrate against AO mark schemes.',
+    'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
   alternates: { canonical: 'https://theenglishhub.app/about' },
   openGraph: {
     title: 'About — The English Hub',
     description:
-      'GCSE and IGCSE English revision built around how examiners actually mark. Read what we do, why we built it, and how we calibrate against AO mark schemes.',
+      'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
+    url: 'https://theenglishhub.app/about',
+    images: [
+      {
+        url: '/api/og?title=About+The+English+Hub&subtitle=Built+around+how+examiners+actually+mark',
+        width: 1200,
+        height: 630,
+        alt: 'About The English Hub — built around how examiners actually mark',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About — The English Hub',
+    description:
+      'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
+    images: [
+      '/api/og?title=About+The+English+Hub&subtitle=Built+around+how+examiners+actually+mark',
+    ],
   },
 }
 
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'About', url: 'https://theenglishhub.app/about' },
+        ]}
+      />
       <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         About The English Hub
       </h1>

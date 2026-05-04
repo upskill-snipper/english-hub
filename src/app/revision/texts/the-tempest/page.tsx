@@ -7,7 +7,8 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
-import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import EmailCaptureCard from '@/components/marketing/EmailCaptureCard'
 export const metadata: Metadata = {
   title: 'The Tempest revision guide — themes, characters, key quotes — The English Hub',
   description:
@@ -617,6 +618,14 @@ export default async function TheTempestPage() {
 
   return (
     <>
+      <LearningResourceJsonLd
+        name="The Tempest — Study Guide"
+        description="In-depth study guide for The Tempest by William Shakespeare covering plot, characters, themes, key quotations and historical context for GCSE and A-Level English Literature."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        about="The Tempest"
+        url="https://theenglishhub.app/revision/texts/the-tempest"
+      />
       <CourseJsonLd
         name="The Tempest — Study Guide"
         description="In-depth study guide for The Tempest by William Shakespeare covering plot, characters, themes, key quotations and historical context for GCSE and A-Level English Literature."
@@ -718,6 +727,12 @@ export default async function TheTempestPage() {
       </div>
 
       <TextGuide data={data} />
+      <EmailCaptureCard
+        magnetTitle="Free The Tempest revision pack"
+        magnetDescription="A focused PDF with key quotes, themes, and essay-plan templates. Coming soon — get notified when it lands."
+        magnetSlug="the-tempest-revision-pack"
+        className="mt-12"
+      />
     </>
   )
 }

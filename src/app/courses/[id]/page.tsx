@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { allCourses } from '@/data/courses'
-import { CourseJsonLd } from '@/components/seo/json-ld'
+import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import CourseDetailPage from './client-page'
 
 /**
@@ -63,14 +63,28 @@ export default async function Page(props: Props) {
   const course = allCourses.find((c) => c.id === params.id)
   if (!course) notFound()
 
+  const courseUrl = `https://theenglishhub.app/courses/${params.id}`
+  const courseDescription =
+    course.description?.trim() ||
+    course.subtitle?.trim() ||
+    `${course.title} — a ${course.tier ?? 'GCSE'} course on The English Hub.`
+
   return (
     <>
       <CourseJsonLd
         name={course.title}
-        description={course.subtitle || course.description.slice(0, 160)}
-        educationalLevel={course.tier}
+        description={courseDescription}
+        educationalLevel={course.tier ?? course.level ?? 'GCSE'}
         timeRequired={courseDurationToIso8601(course.duration)}
-        url={`https://theenglishhub.app/courses/${params.id}`}
+        provider="The English Hub"
+        url={courseUrl}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Courses', url: 'https://theenglishhub.app/courses' },
+          { name: course.title, url: courseUrl },
+        ]}
       />
       <CourseDetailPage course={course} />
     </>

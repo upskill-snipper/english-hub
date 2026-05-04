@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
-import { FAQPageJsonLd } from '@/components/seo/json-ld'
+import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
 import {
   BarChart3,
   Bell,
@@ -32,6 +32,28 @@ export const metadata: Metadata = {
   description:
     'How to help your child with GCSE or IGCSE English revision — from picking the right exam board to AI essay feedback they can trust.',
   alternates: { canonical: 'https://theenglishhub.app/for-parents' },
+  openGraph: {
+    title: 'GCSE and IGCSE English help for parents — The English Hub',
+    description:
+      'How to help your child with GCSE or IGCSE English revision — from picking the right exam board to AI essay feedback they can trust.',
+    images: [
+      {
+        url: '/api/og?title=Help+your+child+pass+GCSE+English&subtitle=Without+being+an+English+teacher',
+        width: 1200,
+        height: 630,
+        alt: 'Help your child pass GCSE English — without being an English teacher',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GCSE and IGCSE English help for parents — The English Hub',
+    description:
+      'How to help your child with GCSE or IGCSE English revision — from picking the right exam board to AI essay feedback they can trust.',
+    images: [
+      '/api/og?title=Help+your+child+pass+GCSE+English&subtitle=Without+being+an+English+teacher',
+    ],
+  },
 }
 
 /* ───────────────────── FAQ Data ─────────────────────
@@ -104,6 +126,12 @@ const faqs = [
 export default function ForParentsPage() {
   return (
     <main className="min-h-screen bg-background">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'For Parents', url: 'https://theenglishhub.app/for-parents' },
+        ]}
+      />
       <FAQPageJsonLd faqs={faqs} />
       {/* ━━━ HERO ━━━ */}
       <section className="relative overflow-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">

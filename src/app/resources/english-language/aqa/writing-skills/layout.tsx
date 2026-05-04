@@ -1,17 +1,42 @@
 import type { Metadata } from 'next'
+import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
-  title: 'AQA English Language Writing Skills',
+  title: 'AQA GCSE English Language writing skills — The English Hub',
   description:
-    'Master writing skills for AQA GCSE English Language. Creative writing, writing for real purposes, and persuasive techniques with marker insights.',
-  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/aqa/writing-skills' },
+    'Writing skills for AQA GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
+  alternates: {
+    canonical: 'https://theenglishhub.app/resources/english-language/aqa/writing-skills',
+  },
   openGraph: {
-    title: 'AQA English Language Writing Skills — The English Hub',
+    title: 'AQA GCSE English Language writing skills — The English Hub',
     description:
-      'Master writing skills for AQA GCSE English Language. Creative writing, writing for real purposes, and persuasive techniques with marker insights.',
+      'Writing skills for AQA GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
   },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'English Language', url: 'https://theenglishhub.app/resources/english-language' },
+          { name: 'AQA', url: 'https://theenglishhub.app/resources/english-language/aqa' },
+          {
+            name: 'Writing skills',
+            url: 'https://theenglishhub.app/resources/english-language/aqa/writing-skills',
+          },
+        ]}
+      />
+      <LearningResourceJsonLd
+        name="AQA GCSE English Language writing skills"
+        description="Writing skills for AQA GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models."
+        educationalLevel="GCSE"
+        learningResourceType="Lesson"
+        url="https://theenglishhub.app/resources/english-language/aqa/writing-skills"
+      />
+      {children}
+    </>
+  )
 }

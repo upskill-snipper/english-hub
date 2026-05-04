@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import { ArrowRight, BookOpen, Quote, Sparkles, Users, Library, GraduationCap } from 'lucide-react'
+import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Jekyll and Hyde Analysis — Quotes, Characters & Themes',
@@ -164,6 +165,26 @@ export default async function JekyllHydeHubPage() {
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(hubJsonLd) }}
+      />
+      <LearningResourceJsonLd
+        name="Jekyll and Hyde Analysis — Quotes, Characters & Themes"
+        description="In-depth Jekyll and Hyde analysis for GCSE English Literature. Quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide — written by GCSE markers."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        about="Strange Case of Dr Jekyll and Mr Hyde"
+        url="https://theenglishhub.app/analysis/jekyll-hyde"
+        nonce={nonce}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
+          {
+            name: 'Jekyll and Hyde Analysis — Quotes, Characters & Themes',
+            url: 'https://theenglishhub.app/analysis/jekyll-hyde',
+          },
+        ]}
+        nonce={nonce}
       />
 
       {/* Hero */}

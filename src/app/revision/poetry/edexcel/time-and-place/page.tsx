@@ -1,18 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Sparkles,
-  MapPin,
-  BookOpen,
-  Lightbulb,
-  Lock,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, Sparkles, MapPin, BookOpen, Lightbulb, Lock } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
+import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 interface Poem {
   title: string
@@ -161,6 +154,21 @@ export default function EdexcelTimeAndPlacePage() {
 
   return (
     <div className="space-y-10 pb-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          {
+            name: 'Edexcel poetry',
+            url: 'https://theenglishhub.app/revision/poetry/edexcel',
+          },
+          {
+            name: 'Time and Place',
+            url: 'https://theenglishhub.app/revision/poetry/edexcel/time-and-place',
+          },
+        ]}
+      />
       {/* ── Back link ───────────────────────────────────────────────── */}
       <div>
         <Button
@@ -184,9 +192,7 @@ export default function EdexcelTimeAndPlacePage() {
               <Sparkles className="mr-1 size-3" />
               Pearson Edexcel GCSE English Literature
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              Edexcel
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">Edexcel</Badge>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex size-12 items-center justify-center rounded-2xl bg-emerald-500/10">
@@ -197,23 +203,25 @@ export default function EdexcelTimeAndPlacePage() {
             </h1>
           </div>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            All 15 poems in the Edexcel Time and Place anthology. From Romantic
-            celebrations of nature to modern poems about migration, identity
-            and belonging, the cluster explores how places shape us and how
-            time changes the way we see them.
+            All 15 poems in the Edexcel Time and Place anthology. From Romantic celebrations of
+            nature to modern poems about migration, identity and belonging, the cluster explores how
+            places shape us and how time changes the way we see them.
           </p>
         </div>
       </section>
 
-      <StudyTools textName="Edexcel Time and Place Anthology" textType="anthology" examBoard="Edexcel" variant="banner" />
+      <StudyTools
+        textName="Edexcel Time and Place Anthology"
+        textType="anthology"
+        examBoard="Edexcel"
+        variant="banner"
+      />
 
       {/* ── Available poems ────────────────────────────────────────── */}
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Study pages
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Study pages</h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -260,9 +268,8 @@ export default function EdexcelTimeAndPlacePage() {
           </h2>
         </div>
         <p className="mb-5 text-body-sm text-muted-foreground max-w-2xl">
-          Full study pages for these poems are in development. Many are still
-          in copyright, so we will provide key quotations, analysis and
-          comparison notes rather than the full text.
+          Full study pages for these poems are in development. Many are still in copyright, so we
+          will provide key quotations, analysis and comparison notes rather than the full text.
         </p>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -273,9 +280,7 @@ export default function EdexcelTimeAndPlacePage() {
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0">
-                  <h3 className="truncate text-sm font-semibold text-foreground">
-                    {poem.title}
-                  </h3>
+                  <h3 className="truncate text-sm font-semibold text-foreground">{poem.title}</h3>
                   <p className="truncate text-xs text-muted-foreground">{poem.poet}</p>
                 </div>
                 {poem.copyrighted && (
@@ -296,15 +301,13 @@ export default function EdexcelTimeAndPlacePage() {
           <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
             <Lightbulb className="size-5 text-clay-600" />
           </div>
-          <h2 className="text-heading-md font-heading text-foreground">
-            Comparison tip
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Comparison tip</h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Time and Place rewards strong contrasts of attitude. Pair a
-          celebratory poem like <em>Composed Upon Westminster Bridge</em> with
-          a darker urban view in <em>London</em> &mdash; they describe the same
-          city only a few years apart, with utterly different feelings.
+          Time and Place rewards strong contrasts of attitude. Pair a celebratory poem like{' '}
+          <em>Composed Upon Westminster Bridge</em> with a darker urban view in <em>London</em>{' '}
+          &mdash; they describe the same city only a few years apart, with utterly different
+          feelings.
         </p>
       </section>
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
+import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'GCSE English Revision & Grade Guides | The English Hub',
@@ -94,6 +95,26 @@ export default async function RevisionHub() {
         type="application/ld+json"
         nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <LearningResourceJsonLd
+        name="GCSE English Revision & Grade Guides"
+        description="Complete GCSE English revision hub: grade 9 guides, timetables, grade boundaries, exam-day tips and parent help. 25 guides written by GCSE markers."
+        educationalLevel="GCSE"
+        learningResourceType="Study guide"
+        about="GCSE English revision"
+        url="https://theenglishhub.app/analysis/revision"
+        nonce={nonce}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Analysis', url: 'https://theenglishhub.app/analysis' },
+          {
+            name: 'GCSE English Revision & Grade Guides',
+            url: 'https://theenglishhub.app/analysis/revision',
+          },
+        ]}
+        nonce={nonce}
       />
       <nav className="mb-4 text-sm text-muted-foreground">
         <Link href="/analysis" className="hover:text-foreground">

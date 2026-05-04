@@ -1,21 +1,58 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
+import { HowToJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/exam-day' },
-  title: "Exam Day Advice",
+  title: 'Exam Day Advice',
   description:
-    "Practical exam day advice for GCSE and IGCSE English. What to bring, how to read the paper, how to plan answers, how to stay calm under pressure, and what to do in the last 5 minutes.",
-};
+    'Practical exam day advice for GCSE and IGCSE English. What to bring, how to read the paper, how to plan answers, how to stay calm under pressure, and what to do in the last 5 minutes.',
+}
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function ExamDayPage() {
   return (
     <>
+      <HowToJsonLd
+        name="Exam Day Advice"
+        description="Practical, step-by-step advice for the day of a GCSE or IGCSE English exam — what to bring, how to read the paper, how to plan your answers, how to stay calm, and what to do in the last 5 minutes."
+        totalTime="PT15M"
+        url="https://theenglishhub.app/resources/exam-technique/exam-day"
+        steps={[
+          {
+            name: 'Pack everything the night before',
+            text: 'Pack your essentials: at least two black pens, a clear pencil case, candidate and centre numbers, a non-smart watch, a clear water bottle, and any required ID. Add useful extras like a pencil, eraser, highlighters, and tissues.',
+          },
+          {
+            name: 'Read the paper before writing',
+            text: 'Spend the first 10-15 minutes reading. Skim the questions first, then read the source texts carefully and annotate as you go. Re-read each question before answering and underline the command words.',
+          },
+          {
+            name: 'Plan every extended answer',
+            text: 'Spend 3-5 minutes planning. For analytical essays, write a one-sentence thesis, list 3-4 key points, jot quotations, note key techniques, and sketch a conclusion. For creative writing, plan setting, opening image, key moments, techniques, and ending.',
+          },
+          {
+            name: 'Manage your nerves during the exam',
+            text: 'If you feel overwhelmed, put your pen down and take three slow breaths. Focus only on the question in front of you. If you get stuck, move on and come back. Do not watch other students — their speed is irrelevant.',
+          },
+          {
+            name: 'Use the last 5 minutes wisely',
+            text: 'Check every question has been attempted, proofread for spelling and punctuation, add any missing analysis using asterisks, strengthen weak conclusions with a brief summary sentence, and rewrite any illegible words clearly.',
+          },
+        ]}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Resources', url: 'https://theenglishhub.app/resources' },
+          { name: 'Exam technique', url: 'https://theenglishhub.app/resources/exam-technique' },
+          { name: 'Exam day', url: 'https://theenglishhub.app/resources/exam-technique/exam-day' },
+        ]}
+      />
 
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
@@ -27,9 +64,8 @@ export default function ExamDayPage() {
             Exam Day Advice
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Practical, no-nonsense advice for the day itself. You have done the
-            revision -- now make sure nothing else gets in the way of your best
-            performance.
+            Practical, no-nonsense advice for the day itself. You have done the revision -- now make
+            sure nothing else gets in the way of your best performance.
           </p>
         </div>
       </section>
@@ -38,15 +74,21 @@ export default function ExamDayPage() {
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
         <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <Link href="/" className="hover:text-primary transition-colors">
+              Home
+            </Link>
           </li>
           <li>/</li>
           <li>
-            <Link href="/resources" className="hover:text-primary transition-colors">Resources</Link>
+            <Link href="/resources" className="hover:text-primary transition-colors">
+              Resources
+            </Link>
           </li>
           <li>/</li>
           <li>
-            <Link href="/resources/exam-technique" className="hover:text-primary transition-colors">Exam Technique</Link>
+            <Link href="/resources/exam-technique" className="hover:text-primary transition-colors">
+              Exam Technique
+            </Link>
           </li>
           <li>/</li>
           <li className="font-medium text-primary">Exam Day</li>
@@ -55,9 +97,7 @@ export default function ExamDayPage() {
 
       {/* What to bring */}
       <section className="mx-auto max-w-5xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-          What to bring
-        </h2>
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">What to bring</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           Pack everything the night before. Do not leave this to the morning.
         </p>
@@ -67,12 +107,12 @@ export default function ExamDayPage() {
             <h3 className="font-bold text-green-700 dark:text-green-300">Essentials</h3>
             <ul className="mt-4 space-y-3">
               {[
-                "Black pens (at least 2 -- one will run out at the worst moment)",
-                "A clear pencil case or clear plastic bag",
-                "Your candidate number and centre number (check with your school)",
-                "A watch (non-smart) to track time independently",
-                "Water bottle (clear, with the label removed)",
-                "Any required ID or exam card",
+                'Black pens (at least 2 -- one will run out at the worst moment)',
+                'A clear pencil case or clear plastic bag',
+                'Your candidate number and centre number (check with your school)',
+                'A watch (non-smart) to track time independently',
+                'Water bottle (clear, with the label removed)',
+                'Any required ID or exam card',
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-muted-foreground">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-500/15 text-xs text-green-600">
@@ -88,12 +128,12 @@ export default function ExamDayPage() {
             <h3 className="font-bold text-primary">Useful extras</h3>
             <ul className="mt-4 space-y-3">
               {[
-                "Pencil and eraser (for annotations and planning)",
-                "Highlighters (check your school allows them)",
-                "A small ruler (useful for underlining in source texts)",
-                "Spare pens in case a friend forgets theirs",
-                "A light snack for between papers (nothing noisy or messy)",
-                "Tissues (just in case)",
+                'Pencil and eraser (for annotations and planning)',
+                'Highlighters (check your school allows them)',
+                'A small ruler (useful for underlining in source texts)',
+                'Spare pens in case a friend forgets theirs',
+                'A light snack for between papers (nothing noisy or messy)',
+                'Tissues (just in case)',
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-muted-foreground">
                   <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -108,46 +148,43 @@ export default function ExamDayPage() {
       {/* How to read the paper */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            How to read the paper
-          </h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">How to read the paper</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            The first 10-15 minutes of your exam should be spent reading, not
-            writing. This is an investment that pays off in every answer you
-            write.
+            The first 10-15 minutes of your exam should be spent reading, not writing. This is an
+            investment that pays off in every answer you write.
           </p>
 
           <div className="mt-8 space-y-4">
             {[
               {
-                step: "1",
-                title: "Read the questions first",
+                step: '1',
+                title: 'Read the questions first',
                 detail:
-                  "Before reading the source texts, skim through the questions. This tells your brain what to look for when you read the texts. You will naturally start spotting relevant material.",
+                  'Before reading the source texts, skim through the questions. This tells your brain what to look for when you read the texts. You will naturally start spotting relevant material.',
               },
               {
-                step: "2",
-                title: "Read the source texts carefully",
+                step: '2',
+                title: 'Read the source texts carefully',
                 detail:
-                  "Read each text from start to finish. Do not just skim. Many marks are lost because students misunderstand the text. Pay attention to tone, shifts in mood, and the overall arc of the piece.",
+                  'Read each text from start to finish. Do not just skim. Many marks are lost because students misunderstand the text. Pay attention to tone, shifts in mood, and the overall arc of the piece.',
               },
               {
-                step: "3",
-                title: "Annotate as you read",
+                step: '3',
+                title: 'Annotate as you read',
                 detail:
-                  "Underline interesting language choices. Circle structural features. Write brief notes in the margins: \"metaphor -- creates tension\", \"shift in tone here\", \"contrast with opening\". These annotations become your evidence bank.",
+                  'Underline interesting language choices. Circle structural features. Write brief notes in the margins: "metaphor -- creates tension", "shift in tone here", "contrast with opening". These annotations become your evidence bank.',
               },
               {
-                step: "4",
-                title: "Re-read the question you are about to answer",
+                step: '4',
+                title: 'Re-read the question you are about to answer',
                 detail:
-                  "Before writing each answer, re-read the question. Underline the key command words (analyse, compare, evaluate, describe). Identify the specific focus (language, structure, a particular theme). This prevents you from drifting off-topic.",
+                  'Before writing each answer, re-read the question. Underline the key command words (analyse, compare, evaluate, describe). Identify the specific focus (language, structure, a particular theme). This prevents you from drifting off-topic.',
               },
               {
-                step: "5",
-                title: "Check the marks",
+                step: '5',
+                title: 'Check the marks',
                 detail:
-                  "The mark allocation tells you how much to write. An 8-mark question needs far less than a 30-mark question. Adjust your depth and length accordingly.",
+                  'The mark allocation tells you how much to write. An 8-mark question needs far less than a 30-mark question. Adjust your depth and length accordingly.',
               },
             ].map((item) => (
               <div
@@ -171,20 +208,15 @@ export default function ExamDayPage() {
 
       {/* How to plan answers */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-          How to plan answers
-        </h2>
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">How to plan answers</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
-          A planned answer is always better than an unplanned one. Planning takes
-          3-5 minutes but saves you from waffle, repetition, and running out of
-          ideas mid-paragraph.
+          A planned answer is always better than an unplanned one. Planning takes 3-5 minutes but
+          saves you from waffle, repetition, and running out of ideas mid-paragraph.
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           <div className="rounded-xl border-2 border-primary bg-card p-6 shadow-md">
-            <h3 className="font-bold text-foreground">
-              For analytical/essay questions
-            </h3>
+            <h3 className="font-bold text-foreground">For analytical/essay questions</h3>
             <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-3">
                 <span className="font-bold text-primary">1.</span>
@@ -210,9 +242,7 @@ export default function ExamDayPage() {
           </div>
 
           <div className="rounded-xl border-2 border-accent bg-card p-6 shadow-md">
-            <h3 className="font-bold text-foreground">
-              For creative writing tasks
-            </h3>
+            <h3 className="font-bold text-foreground">For creative writing tasks</h3>
             <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-3">
                 <span className="font-bold text-accent">1.</span>
@@ -224,11 +254,16 @@ export default function ExamDayPage() {
               </li>
               <li className="flex gap-3">
                 <span className="font-bold text-accent">3.</span>
-                <span>Sketch 3-4 &ldquo;moments&rdquo; or &ldquo;scenes&rdquo; -- keep the plot simple.</span>
+                <span>
+                  Sketch 3-4 &ldquo;moments&rdquo; or &ldquo;scenes&rdquo; -- keep the plot simple.
+                </span>
               </li>
               <li className="flex gap-3">
                 <span className="font-bold text-accent">4.</span>
-                <span>Plan 2-3 specific language techniques you want to use (a metaphor, a simile, sensory detail).</span>
+                <span>
+                  Plan 2-3 specific language techniques you want to use (a metaphor, a simile,
+                  sensory detail).
+                </span>
               </li>
               <li className="flex gap-3">
                 <span className="font-bold text-accent">5.</span>
@@ -240,10 +275,9 @@ export default function ExamDayPage() {
 
         <div className="mt-8 rounded-xl border border-primary/20 bg-primary/10 p-6">
           <p className="text-sm text-muted-foreground leading-relaxed">
-            <strong>Pro tip:</strong> Cross out your plan with a single line
-            when you are done. The marker will not mark it, but if you run out
-            of time, they can see what you intended to write -- and it shows
-            deliberate planning.
+            <strong>Pro tip:</strong> Cross out your plan with a single line when you are done. The
+            marker will not mark it, but if you run out of time, they can see what you intended to
+            write -- and it shows deliberate planning.
           </p>
         </div>
       </section>
@@ -251,45 +285,42 @@ export default function ExamDayPage() {
       {/* How to stay calm */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            How to stay calm
-          </h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">How to stay calm</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            Exam anxiety is completely normal. The students who perform best are
-            not the ones who feel no nerves -- they are the ones who manage their
-            nerves effectively.
+            Exam anxiety is completely normal. The students who perform best are not the ones who
+            feel no nerves -- they are the ones who manage their nerves effectively.
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Before the exam",
+                title: 'Before the exam',
                 tips: [
                   "Get a full night's sleep -- cramming until 2am does more harm than good.",
-                  "Eat a proper breakfast. Your brain needs fuel.",
+                  'Eat a proper breakfast. Your brain needs fuel.',
                   "Arrive early but do not stand around listening to other people's panic.",
-                  "Avoid last-minute revision in the corridor -- it creates anxiety, not confidence.",
-                  "Listen to music or do breathing exercises if that helps you focus.",
+                  'Avoid last-minute revision in the corridor -- it creates anxiety, not confidence.',
+                  'Listen to music or do breathing exercises if that helps you focus.',
                 ],
               },
               {
-                title: "During the exam",
+                title: 'During the exam',
                 tips: [
-                  "If you feel overwhelmed, put your pen down and take three slow, deep breaths.",
-                  "Focus only on the question in front of you, not the whole paper.",
-                  "If you get stuck on a question, move on and come back to it later.",
-                  "Do not watch other students. Their speed is irrelevant to your performance.",
-                  "Remind yourself: you have prepared for this. Trust your preparation.",
+                  'If you feel overwhelmed, put your pen down and take three slow, deep breaths.',
+                  'Focus only on the question in front of you, not the whole paper.',
+                  'If you get stuck on a question, move on and come back to it later.',
+                  'Do not watch other students. Their speed is irrelevant to your performance.',
+                  'Remind yourself: you have prepared for this. Trust your preparation.',
                 ],
               },
               {
-                title: "If you go blank",
+                title: 'If you go blank',
                 tips: [
-                  "Re-read the question and the source text slowly. Familiarity will return.",
-                  "Start writing anything -- even a rough point. Writing unlocks thinking.",
-                  "Look at your annotations. They were written by a calm version of you.",
-                  "Use the PEEL structure as scaffolding. Point first, then find evidence.",
-                  "Remember: you do not need a perfect answer. You need a good-enough answer.",
+                  'Re-read the question and the source text slowly. Familiarity will return.',
+                  'Start writing anything -- even a rough point. Writing unlocks thinking.',
+                  'Look at your annotations. They were written by a calm version of you.',
+                  'Use the PEEL structure as scaffolding. Point first, then find evidence.',
+                  'Remember: you do not need a perfect answer. You need a good-enough answer.',
                 ],
               },
             ].map((section) => (
@@ -300,10 +331,7 @@ export default function ExamDayPage() {
                 <h3 className="font-bold text-foreground">{section.title}</h3>
                 <ul className="mt-4 space-y-3">
                   {section.tips.map((tip) => (
-                    <li
-                      key={tip}
-                      className="flex gap-3 text-sm text-muted-foreground"
-                    >
+                    <li key={tip} className="flex gap-3 text-sm text-muted-foreground">
                       <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                       <span className="leading-relaxed">{tip}</span>
                     </li>
@@ -321,41 +349,41 @@ export default function ExamDayPage() {
           What to do in the last 5 minutes
         </h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
-          The last five minutes of an exam are some of the most valuable. Use them
-          wisely and you can pick up several extra marks.
+          The last five minutes of an exam are some of the most valuable. Use them wisely and you
+          can pick up several extra marks.
         </p>
 
         <div className="mt-8 space-y-4">
           {[
             {
-              title: "Check for unanswered questions",
+              title: 'Check for unanswered questions',
               detail:
-                "Quickly flip through the paper. Make sure every question has been attempted. A blank answer is a guaranteed zero -- even bullet points are better than nothing.",
+                'Quickly flip through the paper. Make sure every question has been attempted. A blank answer is a guaranteed zero -- even bullet points are better than nothing.',
             },
             {
-              title: "Proofread for SPaG errors",
+              title: 'Proofread for SPaG errors',
               detail:
-                "Read through your writing and correct any spelling, punctuation, and grammar mistakes. SPaG can be worth up to 16 marks on some papers. A missing full stop or a misspelled word is an easy mark thrown away.",
+                'Read through your writing and correct any spelling, punctuation, and grammar mistakes. SPaG can be worth up to 16 marks on some papers. A missing full stop or a misspelled word is an easy mark thrown away.',
             },
             {
-              title: "Add missing analysis",
+              title: 'Add missing analysis',
               detail:
-                "If you spot a quotation you used but did not fully analyse, add a sentence of analysis in the margin or at the end. Use an asterisk (*) and write \"see additional point\" next to the relevant paragraph.",
+                'If you spot a quotation you used but did not fully analyse, add a sentence of analysis in the margin or at the end. Use an asterisk (*) and write "see additional point" next to the relevant paragraph.',
             },
             {
-              title: "Strengthen weak conclusions",
+              title: 'Strengthen weak conclusions',
               detail:
-                "If any of your essays trail off without a proper conclusion, add a brief concluding sentence. Even two sentences that summarise your argument are better than an essay that just stops.",
+                'If any of your essays trail off without a proper conclusion, add a brief concluding sentence. Even two sentences that summarise your argument are better than an essay that just stops.',
             },
             {
-              title: "Check you have answered the right questions",
+              title: 'Check you have answered the right questions',
               detail:
-                "This sounds obvious, but every year students answer the wrong question. Double-check that you have answered the correct option, especially on Literature papers where you choose a text.",
+                'This sounds obvious, but every year students answer the wrong question. Double-check that you have answered the correct option, especially on Literature papers where you choose a text.',
             },
             {
-              title: "Tidy up your handwriting",
+              title: 'Tidy up your handwriting',
               detail:
-                "If any words are illegible, rewrite them clearly above. Markers cannot award marks for words they cannot read.",
+                'If any words are illegible, rewrite them clearly above. Markers cannot award marks for words they cannot read.',
             },
           ].map((item, i) => (
             <div
@@ -367,9 +395,7 @@ export default function ExamDayPage() {
               </span>
               <div>
                 <h3 className="font-bold text-foreground">{item.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  {item.detail}
-                </p>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
               </div>
             </div>
           ))}
@@ -379,14 +405,11 @@ export default function ExamDayPage() {
       {/* Final message */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl font-bold text-foreground">
-            You have got this
-          </h2>
+          <h2 className="text-2xl font-bold text-foreground">You have got this</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground leading-relaxed">
-            The fact that you are reading this page means you care about doing
-            well -- and that already puts you ahead. Trust your preparation,
-            follow these strategies, and give every question your best effort.
-            That is all anyone can ask.
+            The fact that you are reading this page means you care about doing well -- and that
+            already puts you ahead. Trust your preparation, follow these strategies, and give every
+            question your best effort. That is all anyone can ask.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
@@ -408,9 +431,7 @@ export default function ExamDayPage() {
       {/* Revision link */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
-          <h2 className="text-lg font-bold text-foreground">
-            Final revision before exam day
-          </h2>
+          <h2 className="text-lg font-bold text-foreground">Final revision before exam day</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Run through our interactive exam technique revision to make sure you are fully prepared.
           </p>
@@ -425,5 +446,5 @@ export default function ExamDayPage() {
 
       <ExamBoardDisclaimer variant="content" className="mx-auto max-w-5xl px-4 mt-10 mb-6" />
     </>
-  );
+  )
 }
