@@ -1,14 +1,10 @@
 import type { Metadata } from 'next'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
-// 2026-05-01: SEO/integrity pass — title and description rewritten to
-// query-aligned form with explicit canonical URL.
-// Founder-claim copy ("built by an English teacher and an AI engineer")
-// has not been signed off by the founder this session, so per the
-// brand-voice rule we use the safer "Built around how examiners actually
-// mark." soft form. Reinstate the named-roles line once the founder's
-// qualification + years-active summary (see TODO(founder) markers in
-// the page body) is finalised.
+// 2026-05-04: Founder-section removed at the founder's request — the
+// site does not currently make any examiner / qualification claims,
+// and the founder's name is not surfaced. The page is purely
+// informational about the product itself.
 export const metadata: Metadata = {
   title: 'About — The English Hub',
   description:
@@ -63,41 +59,6 @@ export default function AboutPage() {
             best possible grade. Our platform is built to close the attainment gap and give every
             student the tools they need to succeed.
           </p>
-        </section>
-
-        {/* Written by examiners — Founder */}
-        <section id="founder">
-          <h2 className="text-xl font-semibold text-foreground">Written by examiners</h2>
-          <div className="mt-4 grid md:grid-cols-[auto_1fr] gap-8">
-            <img
-              src="/founder/calum-johnson.jpg"
-              alt="Calum Johnson"
-              width={200}
-              height={200}
-              className="rounded-full"
-            />
-            <div>
-              <h3 className="text-lg font-semibold text-foreground">Calum Johnson — Founder</h3>
-              <p className="text-sm text-slate-500">
-                Examiner: AQA · Pearson · Cambridge · OCR · WJEC
-              </p>
-              <p className="text-sm text-slate-500">
-                English Language + English Literature · GCSE + IGCSE + A-Level
-              </p>
-              {/* TODO(founder): replace with real qualification + years-active summary */}
-              <p className="mt-3 text-muted-foreground leading-relaxed">
-                {/* TODO(founder): replace placeholder — why The English Hub exists (~3 sentences, focus on gap between examiner insight and published markschemes) */}
-                Placeholder paragraph 1 — why The English Hub exists. Keep this ~3 sentences; focus
-                on the gap between examiner insight and what students see in published markschemes.
-              </p>
-              <p className="mt-3 text-muted-foreground leading-relaxed">
-                {/* TODO(founder): replace placeholder — career marking totals (essays, boards, subjects) and how it informs AI feedback */}
-                Placeholder paragraph 2 — what the founder has marked across their career (total
-                essays, boards, subjects), and how that experience informs the AI feedback the
-                platform delivers.
-              </p>
-            </div>
-          </div>
         </section>
 
         {/* What We Offer */}

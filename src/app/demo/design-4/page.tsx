@@ -17,21 +17,29 @@ export default function EditorialDashboard() {
   ]
 
   const currentStudy = [
-    { label: 'Now reading', title: 'An Inspector Calls', detail: 'Act 3 \u2014 The Inspector\u2019s final speech' },
-    { label: 'Up next', title: 'Power and Conflict Poetry', detail: 'Ozymandias vs. My Last Duchess comparison' },
-    { label: 'This week', title: 'Language Paper 2', detail: 'Section B \u2014 Writing to argue and persuade' },
+    {
+      label: 'Now reading',
+      title: 'An Inspector Calls',
+      detail: 'Act 3 \u2014 The Inspector\u2019s final speech',
+    },
+    {
+      label: 'Up next',
+      title: 'Power and Conflict Poetry',
+      detail: 'Ozymandias vs. My Last Duchess comparison',
+    },
+    {
+      label: 'This week',
+      title: 'Language Paper 2',
+      detail: 'Section B \u2014 Writing to argue and persuade',
+    },
   ]
 
   return (
     <div className="min-h-screen bg-cream-100 text-ink-900 selection:bg-amber-500/20">
       {/* Top bar — barely there */}
       <nav className="max-w-4xl mx-auto px-6 pt-10 pb-6 flex items-center justify-between">
-        <span className="text-xs uppercase tracking-[0.3em] text-ink-500">
-          English Hub
-        </span>
-        <span className="text-xs uppercase tracking-[0.3em] text-ink-500">
-          GCSE English
-        </span>
+        <span className="text-xs uppercase tracking-[0.3em] text-ink-500">English Hub</span>
+        <span className="text-xs uppercase tracking-[0.3em] text-ink-500">GCSE English</span>
       </nav>
 
       <main className="max-w-4xl mx-auto px-6">
@@ -40,11 +48,11 @@ export default function EditorialDashboard() {
           <h1 className="font-serif italic text-[6rem] leading-[0.95] tracking-tight text-ink-900">
             {greeting},
             <br />
-            Calum
+            Alex
           </h1>
           <p className="mt-8 text-lg font-light text-ink-600 max-w-md leading-relaxed">
-            Saturday, 21 March 2026. Your exams are in{' '}
-            <span className="text-ink-900">67 days</span>. Here is where you stand.
+            Saturday, 21 March 2026. Your exams are in <span className="text-ink-900">67 days</span>
+            . Here is where you stand.
           </p>
         </section>
 
@@ -69,9 +77,7 @@ export default function EditorialDashboard() {
               <p className="text-[7rem] font-extralight leading-none tabular-nums text-ink-900">
                 12
               </p>
-              <p className="mt-4 text-xs uppercase tracking-[0.3em] text-ink-500">
-                Day streak
-              </p>
+              <p className="mt-4 text-xs uppercase tracking-[0.3em] text-ink-500">Day streak</p>
             </div>
           </div>
 
@@ -79,31 +85,23 @@ export default function EditorialDashboard() {
           <div className="grid grid-cols-4 gap-8 mt-16 pt-8 border-t border-ink-200">
             <div>
               <p className="text-4xl font-extralight tabular-nums">94</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">
-                Vocab terms
-              </p>
+              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">Vocab terms</p>
             </div>
             <div>
               <p className="text-4xl font-extralight tabular-nums">
                 6<span className="text-ink-500">/8</span>
               </p>
-              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">
-                Texts studied
-              </p>
+              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">Texts studied</p>
             </div>
             <div>
               <p className="text-4xl font-extralight tabular-nums">23</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">
-                Essays written
-              </p>
+              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">Essays written</p>
             </div>
             <div>
               <p className="text-4xl font-extralight tabular-nums">
                 B<span className="text-ink-500">+</span>
               </p>
-              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">
-                Avg. grade
-              </p>
+              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">Avg. grade</p>
             </div>
           </div>
         </section>
@@ -115,9 +113,8 @@ export default function EditorialDashboard() {
         <section className="py-16">
           <blockquote className="border-l-2 border-ink-200 pl-8 max-w-2xl">
             <p className="font-serif italic text-3xl leading-snug text-ink-600">
-              The difference between the almost right word and the right word is the
-              difference between the lightning bug and the{' '}
-              <span className="text-[#f59e0b]">lightning</span>.
+              The difference between the almost right word and the right word is the difference
+              between the lightning bug and the <span className="text-[#f59e0b]">lightning</span>.
             </p>
             <footer className="mt-6 text-xs uppercase tracking-[0.3em] text-ink-500">
               Mark Twain
@@ -137,15 +134,11 @@ export default function EditorialDashboard() {
           <div className="space-y-10">
             {currentStudy.map((item, i) => (
               <div key={i} className="group">
-                <p className="text-xs uppercase tracking-[0.3em] text-ink-500 mb-2">
-                  {item.label}
-                </p>
+                <p className="text-xs uppercase tracking-[0.3em] text-ink-500 mb-2">{item.label}</p>
                 <p className="font-serif italic text-4xl text-ink-900 leading-tight">
                   {item.title}
                 </p>
-                <p className="mt-2 text-base font-light text-ink-600">
-                  {item.detail}
-                </p>
+                <p className="mt-2 text-base font-light text-ink-600">{item.detail}</p>
               </div>
             ))}
           </div>
@@ -156,9 +149,7 @@ export default function EditorialDashboard() {
 
         {/* Recent activity — newspaper column */}
         <section className="py-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-ink-500 mb-12">
-            Recent activity
-          </h2>
+          <h2 className="text-xs uppercase tracking-[0.3em] text-ink-500 mb-12">Recent activity</h2>
 
           <div className="space-y-6">
             {recentActivity.map((item, i) => (
@@ -166,9 +157,7 @@ export default function EditorialDashboard() {
                 <span className="text-xs uppercase tracking-[0.2em] text-ink-500 w-24 shrink-0 text-right tabular-nums">
                   {item.time}
                 </span>
-                <span className="text-base font-light text-ink-600 leading-snug">
-                  {item.text}
-                </span>
+                <span className="text-base font-light text-ink-600 leading-snug">{item.text}</span>
               </div>
             ))}
           </div>
@@ -180,9 +169,9 @@ export default function EditorialDashboard() {
         {/* Atmospheric / barely visible section */}
         <section className="py-16">
           <p className="text-ink-600 text-sm font-light leading-relaxed max-w-lg">
-            You have been studying for 47 days continuously. In that time you have
-            written over 18,000 words across essays, annotations, and practice papers.
-            The quiet accumulation of effort is its own reward.
+            You have been studying for 47 days continuously. In that time you have written over
+            18,000 words across essays, annotations, and practice papers. The quiet accumulation of
+            effort is its own reward.
           </p>
         </section>
 
@@ -199,13 +188,7 @@ export default function EditorialDashboard() {
             {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, i) => (
               <div key={i} className="text-center">
                 <p className="text-xs text-ink-500 mb-3">{day}</p>
-                <div
-                  className={`h-1 rounded-full ${
-                    i < 6
-                      ? 'bg-ink-200'
-                      : 'bg-cream-100'
-                  }`}
-                />
+                <div className={`h-1 rounded-full ${i < 6 ? 'bg-ink-200' : 'bg-cream-100'}`} />
                 <p className="mt-3 text-xs tabular-nums text-ink-500">
                   {i < 6 ? `${[45, 30, 60, 25, 50, 40][i]}m` : '\u2014'}
                 </p>
@@ -215,9 +198,7 @@ export default function EditorialDashboard() {
 
           <div className="mt-8 flex items-baseline gap-3">
             <p className="text-5xl font-extralight tabular-nums">4.2</p>
-            <p className="text-xs uppercase tracking-[0.3em] text-ink-500">
-              Hours this week
-            </p>
+            <p className="text-xs uppercase tracking-[0.3em] text-ink-500">Hours this week</p>
           </div>
         </section>
 
@@ -229,9 +210,7 @@ export default function EditorialDashboard() {
           <span className="text-xs uppercase tracking-[0.3em] text-ink-500">
             English Hub &middot; Editorial
           </span>
-          <span className="text-xs text-ink-600">
-            Vol. I, No. 47
-          </span>
+          <span className="text-xs text-ink-600">Vol. I, No. 47</span>
         </footer>
       </main>
     </div>

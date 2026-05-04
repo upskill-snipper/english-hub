@@ -5,7 +5,9 @@ import { PressHero, PressSection, StatPlaceholder } from '@/components/press/Pre
 import { Mail, Download, ExternalLink, Building2, FileText } from 'lucide-react'
 
 // NOTE: British English throughout. No fabricated stats, press quotes, or awards.
-//       Founder bio is marked DRAFT — the founder to review before we publicise.
+//       2026-05-04: Founder references removed — the platform is presented
+//       as a product, not a personal brand. Press enquiries route to the
+//       press@ inbox, not a named founder.
 
 export default function PressPage() {
   return (
@@ -13,7 +15,7 @@ export default function PressPage() {
       <PressHero
         eyebrow="Press & media"
         title="Press & media — The English Hub"
-        lede="Everything a journalist, reviewer, or partner needs to write about The English Hub: a plain-English product summary, verifiable company facts, assets, and a direct line to the founder."
+        lede="Everything a journalist, reviewer, or partner needs to write about The English Hub: a plain-English product summary, verifiable company facts, assets, and a direct line to the press desk."
       />
 
       {/* 60-second overview */}
@@ -164,9 +166,9 @@ export default function PressPage() {
         </div>
       </PressSection>
 
-      {/* Founder bio — removed pending founder-approved copy.
-          Press contacts can request an interview or a short bio via the
-          press desk above. */}
+      {/* Founder bio intentionally not surfaced — the platform is
+          presented as a product, not a personal brand. Press enquiries
+          route to press@theenglishhub.app via the press desk above. */}
 
       {/* Press kit */}
       <PressSection eyebrow="Press kit" title="Download the media kit">
