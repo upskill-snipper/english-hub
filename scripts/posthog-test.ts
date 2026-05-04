@@ -49,8 +49,51 @@ async function main() {
     process.exit(2)
   }
 
+  // Detect non-ASCII contamination. PostHog rejects keys with any character
+  // outside printable ASCII (codes 33-126) with `API key is not valid:
+  // not_ascii`. The most common culprits are trailing CR/LF, non-breaking
+  // spaces (U+00A0), smart quotes, and zero-width chars from copy/paste.
+  // We surface the exact byte positions so the founder knows what to fix.
+  const offenders: Array<{ index: number; codePoint: number; char: string }> = []
+  for (let i = 0; i < KEY.length; i++) {
+    const code = KEY.charCodeAt(i)
+    if (code < 33 || code > 126) {
+      offenders.push({
+        index: i,
+        codePoint: code,
+        char:
+          code === 10
+            ? '\\n (newline)'
+            : code === 13
+              ? '\\r (carriage return)'
+              : code === 32
+                ? '(space)'
+                : code === 160
+                  ? '(non-breaking space)'
+                  : code === 8203
+                    ? '(zero-width space)'
+                    : `U+${code.toString(16).padStart(4, '0')}`,
+      })
+    }
+  }
+
   console.log(`API host: ${HOST}`)
   console.log(`Project key: ${KEY.slice(0, 12)}…${KEY.slice(-4)} (length ${KEY.length})`)
+  if (offenders.length > 0) {
+    console.error('')
+    console.error('⚠ KEY CONTAINS NON-ASCII CHARACTERS — PostHog will reject this.')
+    console.error('  Found:')
+    for (const o of offenders) {
+      console.error(`    position ${o.index}: ${o.char} (U+${o.codePoint.toString(16)})`)
+    }
+    console.error('')
+    console.error('  This usually happens when copy/paste picks up trailing newlines,')
+    console.error('  non-breaking spaces, or smart quotes. Fix: re-type the key by hand')
+    console.error('  in Notepad first, then paste into PowerShell.')
+    console.error('')
+    console.error('  Continuing anyway so you see the API response confirm this…')
+    console.error('')
+  }
   console.log('')
 
   // PostHog's capture endpoint accepts batches AND single events. Single is
