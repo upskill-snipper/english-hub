@@ -96,7 +96,7 @@ function yearGroupColour(yg: string): string {
   if (lower.includes('12')) return 'bg-teal-500/10 text-teal-400 border-teal-500/20'
   if (lower.includes('13')) return 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20'
   if (lower.includes('gcse')) return 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20'
-  return 'bg-gray-500/10 text-gray-400 border-gray-500/20'
+  return 'bg-ink-500/10 text-ink-400 border-ink-500/20'
 }
 
 function sourceColour(source: string): string {
@@ -420,7 +420,7 @@ export default function PresentationLibraryPage() {
                                 {entry.examBoard !== 'All' && (
                                   <Badge
                                     variant="outline"
-                                    className="bg-gray-500/10 text-gray-400 border-gray-500/20"
+                                    className="bg-ink-500/10 text-ink-400 border-ink-500/20"
                                   >
                                     {entry.examBoard}
                                   </Badge>

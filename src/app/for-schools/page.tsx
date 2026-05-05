@@ -1233,7 +1233,7 @@ export default function ForSchoolsPage() {
       <section className="py-20 sm:py-24">
         <div className="max-w-3xl mx-auto px-6">
           {/* Compliance documents will be published here once finalised. Currently available on request. */}
-          <div className="border rounded-xl p-6 bg-white">
+          <div className="border border-border rounded-xl p-6 bg-card">
             <h3 className="text-xl font-bold text-foreground mb-2">
               Compliance pack — available on request
             </h3>
