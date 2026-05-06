@@ -135,14 +135,16 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     }
   }
 
-  // Fire-and-forget POST to GA4. We don't await Google's response
-  // beyond initiating it — the visitor's request shouldn't be held up
-  // by Google's edge latency.
+  // POST to GA4 /g/collect.
+  //
+  // We `await` this rather than fire-and-forget. In Vercel's Edge
+  // runtime, detached promises can be killed when the response
+  // returns, so a non-awaited fetch may never actually reach Google.
+  // Latency cost is ~100-200ms (Google's edge is fast); analytics
+  // calls aren't on a critical user path so the trade-off is right.
   const userAgent = req.headers.get('user-agent') || 'Mozilla/5.0 (compatible; eh-ga4-relay/1.0)'
 
-  // Use waitUntil-style detached fetch — edge runtime keeps the
-  // promise alive after the response is sent.
-  const collectPromise = fetch(url.toString(), {
+  await fetch(url.toString(), {
     method: 'POST',
     headers: {
       'User-Agent': userAgent,
@@ -150,12 +152,11 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       'Content-Length': '0',
     },
     cache: 'no-store',
+    // 5-second cap so a slow Google never times out the visitor's request
+    signal: AbortSignal.timeout(5000),
   }).catch(() => {
     // Swallow — analytics failures must not surface to the user
   })
-
-  // Best-effort: don't block the client response on Google's reply
-  void collectPromise
 
   // Build response, set cid cookie if new
   const response = new NextResponse(null, { status: 204 })
