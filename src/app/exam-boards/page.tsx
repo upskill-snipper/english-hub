@@ -190,39 +190,6 @@ export default async function ExamBoardsPage() {
         showDivider
       />
 
-      {/* ── Compare boards CTA strip ────────────────────────────────── */}
-      <section
-        aria-labelledby="compare-boards-heading"
-        className="border-t border-cream-200/10 bg-cream-50/[0.02]"
-      >
-        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 py-12 sm:py-16">
-          <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <div className="max-w-2xl">
-              <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-clay-300">
-                Side-by-side
-              </p>
-              <h2
-                id="compare-boards-heading"
-                className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50 leading-tight"
-              >
-                Comparing two boards?
-              </h2>
-              <p className="mt-3 text-sm sm:text-base text-cream-100/75 leading-relaxed">
-                Some students sit one board at GCSE and consider another at IGCSE. Our comparison
-                pages put the assessment objectives, set-text lists, and paper structures alongside
-                each other so you can see what actually changes.
-              </p>
-            </div>
-            <Link
-              href="/compare/aqa-vs-edexcel-gcse-english-literature"
-              className="inline-flex items-center gap-2 rounded-2xl border border-clay-300/40 bg-clay-300/[0.06] px-5 py-3 text-sm font-medium text-clay-200 transition-colors hover:bg-clay-300/[0.10] hover:text-clay-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-clay-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
-            >
-              Compare AQA vs Edexcel <span aria-hidden="true">&rarr;</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* ── Helper copy ─────────────────────────────────────────────── */}
       <section aria-labelledby="why-boards-differ-heading" className="border-t border-cream-200/10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 sm:py-16">
