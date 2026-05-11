@@ -39,8 +39,8 @@ const poem: PoemData = {
       text: 'Half a league, half a league,',
       annotations: [
         {
-          type: 'Dactylic opening',
-          note: 'The opening line falls in dactyls (DUM-da-da, "Half a league"), but the body of the poem settles into anapaestic dimeter (da-da-DUM da-da-DUM). The galloping rhythm imitates horses charging forward.',
+          type: 'Dactylic metre',
+          note: 'The poem is predominantly written in dactylic dimeter (DUM-da-da DUM-da-da, "Half a league, half a league"). The galloping rhythm imitates horses charging forward.',
           color: '#a855f7',
         },
         {
@@ -305,7 +305,7 @@ STANZA 5: The survivors retreat through the same deadly corridor of cannon fire.
 STANZA 6: Tennyson shifts from narrative to direct address. He commands the reader to "Honour the charge they made" and remember the "Noble six hundred." The poem ends as a public memorial and a call to never forget their sacrifice.`,
 
   /* ── Form & Structure ────────────────────────────────────────── */
-  formAndStructure: `METRE: The poem is predominantly written in anapaestic dimeter (two unstressed syllables followed by a stressed: da-da-DUM da-da-DUM), with the recurring refrain "Rode the six hundred" falling in dactyls (DUM-da-da). This galloping metre mimics the sound of horses\u2019 hooves, pulling the reader forward at the pace of the charge itself. The lines are largely end-stopped, reinforcing the drumbeat regularity.
+  formAndStructure: `METRE: The poem is predominantly written in dactylic dimeter (a stressed syllable followed by two unstressed: DUM-da-da DUM-da-da), as in "Half a league, half a league" and the refrain "Rode the six hundred" (DUM-da-da DUM-da). This galloping metre mimics the sound of horses\u2019 hooves, pulling the reader forward at the pace of the charge itself. The lines are largely end-stopped, reinforcing the drumbeat regularity.
 
 STANZA LENGTH: The six stanzas vary in length (8, 9, 9, 12, 11, 6 lines), reflecting the arc of the charge. The longest stanza (4) is the climax of battle; the shortest (6) is the memorial conclusion, mirroring how fewer soldiers remain.
 
@@ -324,7 +324,7 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
     {
       quote: 'Half a league, half a league, / Half a league onward',
       analysis:
-        'The opening falls in dactyls (DUM-da-da), but the body of the poem settles into anapaestic dimeter — together they create the galloping rhythm that propels the reader forward. "League" is an archaic unit of distance, lending the poem a timeless, epic quality. The triple repetition suggests the charge is unstoppable and inevitable.',
+        'The opening falls in dactylic dimeter (DUM-da-da DUM-da-da) — the predominant metre of the poem, creating the galloping rhythm that propels the reader forward. "League" is an archaic unit of distance, lending the poem a timeless, epic quality. The triple repetition suggests the charge is unstoppable and inevitable.',
       themes: ['Power of war', 'Duty'],
     },
     {
@@ -512,13 +512,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Iambic pentameter — creating a formal tone',
-      'Predominantly anapaestic dimeter with a dactylic refrain — imitating the galloping rhythm of horses',
+      'Predominantly dactylic dimeter — imitating the galloping rhythm of horses',
       'Trochaic metre — creating a marching rhythm',
       'Free verse — creating an irregular, chaotic effect',
     ],
     correctIndex: 1,
     explanation:
-      'The body of the poem is largely anapaestic dimeter (da-da-DUM da-da-DUM), while the refrain "Rode the six hundred" falls in dactyls (DUM-da-da). Together they imitate the galloping of cavalry horses, creating relentless forward momentum that mirrors the unstoppable charge.',
+      'The poem is predominantly dactylic dimeter (DUM-da-da DUM-da-da), as in "Half a league, half a league" and the refrain "Rode the six hundred" (DUM-da-da DUM-da). The galloping metre imitates the sound of cavalry horses, creating relentless forward momentum that mirrors the unstoppable charge.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -631,9 +631,9 @@ const REVISION_TOPICS = [
   {
     topic: 'Structure & Form',
     summary:
-      'Six stanzas of varying length, predominantly in anapaestic dimeter with a dactylic refrain. Largely end-stopped lines create a galloping, drumbeat rhythm that drives the poem forward like the charge itself.',
+      'Six stanzas of varying length, predominantly in dactylic dimeter. Largely end-stopped lines create a galloping, drumbeat rhythm that drives the poem forward like the charge itself.',
     keyPoints: [
-      'Anapaestic dimeter (mostly), with the refrain "Rode the six hundred" falling in dactyls — together they imitate galloping horses',
+      'Dactylic dimeter (DUM-da-da DUM-da-da) — imitates galloping horses',
       'End-stopped lines reinforce the drumbeat regularity of the charge',
       'Refrain "Rode the six hundred" — changes to "Not the six hundred" to mark losses',
       'Six stanzas mirror the charge: advance (1-3), brief success (4), retreat (5), memorial (6)',

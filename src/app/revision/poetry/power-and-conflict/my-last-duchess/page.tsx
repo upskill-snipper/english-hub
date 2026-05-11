@@ -391,7 +391,7 @@ const poemData: PoemData = {
   ],
   context: `<p><strong>Robert Browning</strong> published <em>My Last Duchess</em> in 1842 as part of his collection <em>Dramatic Lyrics</em>. The poem is a <strong>dramatic monologue</strong> — a form Browning perfected — in which a single speaker inadvertently reveals their true character to the reader.</p>
 
-<p>The speaker is based on <strong>Alfonso II, Duke of Ferrara</strong> (1533–1598), a real Italian Renaissance nobleman. His first wife, <strong>Lucrezia de' Medici</strong>, died in suspicious circumstances aged just 17, after only three years of marriage. Alfonso then negotiated to marry the daughter of the Count of Tyrol.</p>
+<p>The speaker is based on <strong>Alfonso II, Duke of Ferrara</strong> (1533–1598), a real Italian Renaissance nobleman. His first wife, <strong>Lucrezia de' Medici</strong>, died in suspicious circumstances aged just 17, after only three years of marriage. Alfonso then negotiated to marry Barbara of Austria, niece of Ferdinand II, Count of Tyrol.</p>
 
 <p><strong>Historical context:</strong> Renaissance Italian courts were centres of art patronage but also ruthless political power. Marriages among the aristocracy were transactional alliances — women were exchanged as property between powerful families. The poem explores how <strong>patriarchal power</strong> operated in this world: the Duke treats his wife as an extension of his status and property.</p>
 

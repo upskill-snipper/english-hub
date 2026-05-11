@@ -882,7 +882,7 @@ export default function ExposurePage() {
             recurring refrain "But nothing happens."
           </li>
           <li>
-            <strong>Rhyme:</strong> AABBC pararhyme scheme -- consonants match but vowels shift,
+            <strong>Rhyme:</strong> ABBAC pararhyme scheme -- consonants match but vowels shift,
             producing deliberate dissonance.
           </li>
           <li>
