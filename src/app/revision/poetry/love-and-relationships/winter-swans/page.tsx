@@ -278,16 +278,22 @@ const winterSwansPoem: PoemData = {
       themes: ['Nature', 'Conflict', 'Healing'],
     },
     {
-      quote: 'the waterlogged earth / gulping for breath',
+      quote: 'the waterlogged earth / gulping for breath at our feet',
       analysis:
         "The earth is personified as drowning, gasping for air. This mirrors the couple's own suffocation within their conflict \u2014 they too need space to breathe.",
       themes: ['Nature', 'Conflict', 'Struggle'],
     },
     {
-      quote: 'wood water water ripped wood',
+      quote: 'silent and apart',
       analysis:
-        'The chiasmus creates a sense of disorder and turbulence. "Ripped" is violent and destructive. The natural elements are in conflict, just like the couple.',
-      themes: ['Conflict', 'Nature', 'Disruption'],
+        'Three words that capture the emotional state of the couple at the start of the poem. They walk together physically but are alienated \u2014 no words pass between them and no contact bridges them.',
+      themes: ['Conflict', 'Distance', 'Silence'],
+    },
+    {
+      quote: 'with a show of tipping in unison',
+      analysis:
+        'The swans dip beneath the water "in unison" \u2014 perfectly synchronised. The word "unison" pointedly contrasts with the couple\u2019s "silent and apart"; nature shows them what partnership looks like.',
+      themes: ['Nature', 'Unity', 'Reconciliation'],
     },
     {
       quote: 'icebergs of white feather',
@@ -296,28 +302,22 @@ const winterSwansPoem: PoemData = {
       themes: ['Nature', 'Hidden Depths', 'Love'],
     },
     {
-      quote: 'settled and folded and stilled',
+      quote: '\u2018They mate for life\u2019 you said as they left',
       analysis:
-        'A tricolon of gentle, peaceful verbs. Each word suggests a different aspect of calm: settling (coming to rest), folding (closing, protecting), stilling (becoming motionless). The swans model the peace the couple seek.',
-      themes: ['Peace', 'Nature', 'Reconciliation'],
+        "The only spoken line in the poem belongs to the partner, not the speaker. The observation about swans is unmistakably also a statement about the couple \u2014 a quiet, indirect plea or affirmation. The speaker doesn\u2019t reply, but the line works as the poem's emotional volta.",
+      themes: ['Love', 'Fidelity', 'Reconciliation'],
     },
     {
-      quote: 'I took your hand',
+      quote: 'our hands, that had, somehow, / swum the distance between us',
       analysis:
-        'The simplest and most powerful line in the poem. After stanzas of distance, one partner reaches out. The gesture is small but transformative \u2014 physical touch bridges the emotional gap.',
+        '"Swum" picks up the lake and the swans, casting the hands as creatures that have crossed the emotional water on their own. "Somehow" preserves the mystery \u2014 reconciliation feels almost involuntary, instinctive, beneath conscious decision.',
       themes: ['Love', 'Reconciliation', 'Connection'],
     },
     {
-      quote: 'our fingers folding together like the swans\u2019 wings',
+      quote: 'folded, one over the other, / like a pair of wings settling after flight',
       analysis:
-        'A beautiful simile comparing human hands to swan wings. "Folding together" suggests two becoming one. The couple mirror the swans, becoming a pair that belongs together.',
-      themes: ['Love', 'Unity', 'Nature'],
-    },
-    {
-      quote: 'settling after flight',
-      analysis:
-        '"Flight" works literally (the swans landing) and metaphorically (the couple\'s argument/turmoil). "Settling" means both physically landing and emotionally calming down. The relationship is at peace.',
-      themes: ['Reconciliation', 'Peace', 'Nature'],
+        'The closing simile fuses the couple with the swans. "Folded" echoes wings folding against the body; "settling after flight" works literally (a bird landing) and metaphorically (turmoil ending). The relationship is at peace.',
+      themes: ['Love', 'Unity', 'Nature', 'Peace'],
     },
   ],
 
@@ -337,46 +337,46 @@ const winterSwansPoem: PoemData = {
       lineRef: 4,
     },
     {
-      device: 'Chiasmus',
-      example: 'wood water water ripped wood',
+      device: 'Direct speech',
+      example: '\u2018They mate for life\u2019 you said as they left',
       effect:
-        'The mirrored structure (ABBA) creates a sense of inversion and disorder. The natural elements are tangled and disrupted, reflecting the emotional turbulence of the relationship.',
-      lineRef: 6,
+        'The single spoken line is loaded with implication. Spoken about the swans, it is unmistakably also about the couple \u2014 a quiet plea or affirmation. The speaker\u2019s silence in reply is meaningful: reconciliation will happen without more words.',
+      lineRef: 13,
     },
     {
       device: 'Simile',
-      example: 'our fingers folding together like the swans\u2019 wings',
+      example: 'like a pair of wings settling after flight',
       effect:
         "The couple's reconciliation is directly compared to the swans' behaviour. By mirroring the natural world, the couple's reunion feels organic, instinctive, and inevitable.",
       lineRef: 19,
     },
     {
       device: 'Symbolism',
-      example: 'the swans that came and went and came again',
+      example: 'tipping in unison',
       effect:
-        'Swans mate for life, making them a traditional symbol of fidelity and enduring love. Their presence between the couple acts as a reminder that lasting bonds can survive difficulty.',
-      lineRef: 9,
+        'Swans mate for life and move in unison, making them a traditional symbol of fidelity. The synchronised "tipping" silently models for the couple what partnership looks like.',
+      lineRef: 7,
     },
     {
       device: 'Metaphor',
       example: 'icebergs of white feather',
       effect:
         "Comparing swans to icebergs suggests that what is visible is only a small part of the whole. Like the relationship, the swans' serene surface conceals effort and depth beneath.",
-      lineRef: 12,
+      lineRef: 11,
     },
     {
       device: 'Structural shift',
-      example: 'Final couplet after five tercets',
+      example: 'Final couplet after six tercets',
       effect:
-        "The poem's tercets (groups of three) are unbalanced \u2014 like the fractured couple. The final couplet (two lines paired together) enacts reunification through form. Structure mirrors meaning.",
+        'Tercets contain an unpartnered third element \u2014 quietly suggesting imbalance. The final couplet pairs two lines together, structurally enacting the couple\u2019s reunion. Form mirrors meaning.',
       lineRef: 19,
     },
     {
-      device: 'Repetition',
-      example: 'Wood water. Wood water. Wood water.',
+      device: 'Verb echo',
+      example: 'folded (hands) / settling after flight (wings)',
       effect:
-        'The threefold repetition creates a meditative, calming rhythm \u2014 like lapping waves. What was violent ("ripped") earlier becomes soothing, marking the emotional transformation.',
-      lineRef: 13,
+        'Words used earlier of the swans return for the human hands, fusing couple and birds in the closing couplet. The reconciliation is presented as continuous with nature, not separate from it.',
+      lineRef: 18,
     },
   ],
 }
@@ -439,13 +439,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'The couple separates',
-      'Their hands "swum the distance between us" and settle together — reconciliation',
+      'Their hands have "swum the distance between us" and folded together "like a pair of wings settling after flight" — reconciliation',
       'They argue again',
       'They watch more birds',
     ],
     correctIndex: 1,
     explanation:
-      "The couple's hands find each other and \"fold, one over the other, like swans' wings folding\". The reconciliation mirrors the swans' behaviour — nature has shown them the way back to each other.",
+      "The speaker notices their hands have 'swum the distance between us' and folded 'one over the other, like a pair of wings settling after flight'. The reconciliation mirrors the swans' behaviour — nature has shown them the way back to each other.",
     topic: 'Meaning',
     difficulty: 'foundation',
   },
@@ -456,12 +456,12 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: [
       'A sonnet',
       'Six tercets followed by a final couplet — the shift from three lines to two mirrors two people coming together',
-      'Free verse',
+      'Free verse with no stanza divisions',
       'Quatrains',
     ],
     correctIndex: 1,
     explanation:
-      'Six tercets (three-line stanzas) followed by a final couplet (two lines). The shift from three to two lines enacts the couple coming together — two people, two lines, one unit.',
+      'Six tercets (three-line stanzas) followed by a final couplet (two lines) — 20 lines in total. The shift from three to two lines enacts the couple coming together: a tercet always contains an unpartnered third element, while a couplet pairs two as one unit.',
     topic: 'Structure',
     difficulty: 'higher',
   },
@@ -553,10 +553,10 @@ const REVISION_TOPICS = [
     summary:
       'Winter Swans explores reconciliation, the healing power of nature, lifelong commitment, and the connection between landscape and emotion.',
     keyPoints: [
-      'Reconciliation — the couple moves from distance to togetherness',
-      'Nature as teacher — the swans model lifelong partnership',
+      'Reconciliation — the couple moves from "silent and apart" to hands folded together',
+      'Nature as teacher — the swans model lifelong partnership through "tipping in unison"',
       "Pathetic fallacy — landscape mirrors the relationship's state",
-      'Silent communication — the couple reconnects without words',
+      'Silent communication — reconnection happens without the speaker speaking',
     ],
   },
   {
@@ -565,20 +565,20 @@ const REVISION_TOPICS = [
       'Sheers uses water imagery, swan symbolism, pathetic fallacy, and tactile detail to chart the journey from conflict to reconciliation.',
     keyPoints: [
       'Swans as symbol — "they mate for life" mirrors the relationship',
-      'Water imagery — rain/mud (conflict) vs lake (calm, resolution)',
+      'Water imagery — rain/waterlogged earth (conflict) vs stilling lake (calm)',
       '"Waterlogged earth gulping for breath" — pathetic fallacy for the relationship',
-      '"Folding" hands like swans\' wings — reconciliation through natural imagery',
+      '"Folded, one over the other, like a pair of wings" — reconciliation through natural imagery',
     ],
   },
   {
     topic: 'Structure & Form',
     summary:
-      'Six tercets followed by a closing couplet — the structural shift from three to two lines enacts two people coming together.',
+      'Six tercets followed by a closing couplet (20 lines) — the structural shift from three-line to two-line stanzas enacts two people coming together.',
     keyPoints: [
-      'Tercets to couplet — form mirrors content (separation to union)',
-      'Volta at "they mate for life" — the turning point',
+      'Tercets to couplet — form mirrors content (imbalance to pairing)',
+      'Volta at "‘They mate for life’ you said" — the emotional pivot',
       'Enjambment — connection flowing across stanza breaks',
-      'Present tense — the reconciliation is happening now',
+      'Past tense narration — the reconciliation is recalled with the calm of hindsight',
     ],
   },
 ]
@@ -683,6 +683,22 @@ export default function WinterSwansPage() {
         essayPrompts={ESSAY_PROMPTS}
         revisionTopics={REVISION_TOPICS}
       />
+
+      {/* Fair-dealing extract notice — Winter Swans is in copyright (Seren Books).
+          Only verified short extracts are quoted; one mid-poem line is summarised in brackets. */}
+      <aside
+        role="note"
+        aria-label="Copyright and fair-dealing notice"
+        className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-[12px] leading-relaxed text-amber-900 dark:text-amber-200"
+      >
+        <p>
+          <strong>Note on the poem text below:</strong> The poem body is reproduced under
+          fair-dealing extracts only. Students should refer to Sheers&rsquo; <em>Skirrid Hill</em>{' '}
+          (Seren, 2005) for the complete authoritative text. Bracketed prose paraphrases passages
+          omitted for copyright; quoted material is restricted to short extracts used for analytical
+          purposes under CDPA 1988 s.30.
+        </p>
+      </aside>
 
       <InteractivePoemViewer poem={winterSwansPoem} />
 

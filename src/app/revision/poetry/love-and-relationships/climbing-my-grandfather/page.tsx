@@ -14,6 +14,10 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const climbingMyGrandfatherPoem: PoemData = {
   title: 'Climbing My Grandfather',
   poet: 'Andrew Waterhouse',
+  // RIGHTS NOTE: "Climbing My Grandfather" by Andrew Waterhouse is in copyright (estate / The Rialto / Rialto Press / Faber editions).
+  // Full text is not reproduced here. Under fair-dealing for criticism/review (CDPA 1988 s.30),
+  // only verified short extracts are quoted; bracketed prose summarises the rest of the poem,
+  // which is a single 25-line free-verse block.
   lines: [
     {
       text: 'I decide to do it free, without a rope or net.',
@@ -31,181 +35,271 @@ const climbingMyGrandfatherPoem: PoemData = {
       ],
     },
     {
-      text: 'First, the foothills of his knees,',
+      text: 'First, the old brogues, dusty and cracked;',
       annotations: [
         {
-          type: 'Metaphor',
-          note: '"Foothills" transforms the grandfather\'s body into a landscape. The knees are the lower slopes \u2014 the accessible, easy starting point of the climb.',
-          color: '#ef4444',
+          type: 'Starting point',
+          note: 'The climb begins at the feet \u2014 the grandfather\'s shoes. "Old", "dusty" and "cracked" hint at age, wear, and a life of work without making the grandfather pitiable.',
+          color: '#10b981',
         },
         {
           type: 'Structure',
-          note: '"First" signals the beginning of a journey. The poem will methodically ascend the grandfather\'s body from bottom to top.',
+          note: '"First" signals the beginning of a methodical, bottom-to-top ascent. The poem will move steadily upward through the grandfather\'s body.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'the rough material of his trousers',
+      text: '[the climb continues onto his trousers: the speaker finds handholds in the corduroy, pushing into the weave to "get a grip" \u2014 fair-dealing summary]',
       annotations: [
         {
           type: 'Tactile imagery',
-          note: '"Rough material" evokes the physical texture of the grandfather\'s clothing. The detail is intimate and specific \u2014 the speaker remembers exactly how his grandfather felt.',
+          note: 'The corduroy of the trousers becomes a textured rock face \u2014 ridges to grip, "splintered" surfaces. The mundane detail of clothing is transformed into geological terrain.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'splintering crevasses of corduroy.',
+      text: 'an easy scramble onto his trousers,',
       annotations: [
         {
-          type: 'Visual imagery',
-          note: '"Splintering crevasses" transforms the ridges of corduroy fabric into mountain crevasses. The mundane detail of clothing becomes dramatic and geological.',
-          color: '#10b981',
-        },
-        {
-          type: 'Sound',
-          note: 'The hard "c" and "s" sounds in "splintering crevasses of corduroy" create a rough, textured sound that mirrors the feel of the fabric.',
-          color: '#f59e0b',
+          type: 'Climbing diction',
+          note: '"Scramble" is technical mountaineering language for an informal climb between walking and proper climbing. The metaphor is precise, not decorative.',
+          color: '#ef4444',
         },
       ],
     },
     {
-      text: 'Pushing up on his shirt, I pull myself',
+      text: 'pushing into the weave, trying to get a grip.',
       annotations: [
         {
           type: 'Physical verbs',
-          note: '"Pushing" and "pull" are effortful, physical actions. The climb requires work \u2014 understanding a grandparent takes effort and engagement, not passive observation.',
+          note: '"Pushing" and "trying to get a grip" are effortful, physical actions. Knowing a grandparent takes work \u2014 close engagement, not distant observation.',
           color: '#3b82f6',
         },
       ],
     },
     {
-      text: 'on to his arm. The skin is smooth and thick',
+      text: '[Onto the belt and shirt: the speaker moves up to the broad chest \u2014 fair-dealing summary; original continues with detail of buckle, shirt, and skin.]',
       annotations: [
         {
-          type: 'Enjambment',
-          note: 'The line breaks across "myself / on to his arm", enacting the physical movement of hauling oneself up. The reader moves with the speaker.',
+          type: 'Ascent',
+          note: 'Each item of clothing becomes a stage of the climb. The body is mapped from below as a landscape with belts as ridges and shirts as expansive faces.',
           color: '#8b5cf6',
-        },
-        {
-          type: 'Tactile imagery',
-          note: '"Smooth and thick" describes aged skin with tenderness. The physical detail creates intimacy \u2014 the speaker knows his grandfather\'s body through touch.',
-          color: '#10b981',
         },
       ],
     },
     {
-      text: 'like warm overcooked pastry.',
+      text: 'By the overhanging shirt I change',
       annotations: [
         {
-          type: 'Simile',
-          note: 'Comparing elderly skin to "warm overcooked pastry" is affectionate rather than mocking. "Warm" adds comfort and love. The grandfather is associated with domestic warmth, perhaps baking.',
+          type: 'Metaphor',
+          note: 'The shirt "overhangs" like a rock outcrop the climber must navigate around. The mountaineering metaphor is sustained with geological precision.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'I keep climbing, climbing,',
+      text: 'direction, traverse along his belt',
       annotations: [
         {
-          type: 'Repetition',
-          note: 'The repetition of "climbing" creates a sense of sustained effort and determination. The speaker will not give up until he reaches the summit \u2014 until he fully knows his grandfather.',
-          color: '#f59e0b',
+          type: 'Climbing diction',
+          note: '"Traverse" is a technical climbing term for moving sideways across a rock face rather than straight up. Once again, the metaphor uses real mountaineering vocabulary.',
+          color: '#ef4444',
         },
       ],
     },
     {
-      text: 'feeling his old tweed jacket',
+      text: 'to an earth-stained hand. The nails',
+      annotations: [
+        {
+          type: 'Detail',
+          note: '"Earth-stained" suggests the grandfather is a man of the outdoors \u2014 perhaps a gardener or farmer. The detail places him in nature and reinforces the landscape metaphor.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'are splintered and give good purchase,',
       annotations: [
         {
           type: 'Tactile imagery',
-          note: '"Old tweed jacket" is a specific, textured garment associated with an older generation. The clothing becomes a landscape feature to navigate, and a marker of the grandfather\'s era and character.',
+          note: '"Splintered" nails like cracked rock; "give good purchase" is climbing terminology for a reliable handhold. The body is presented as solid, dependable terrain.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'rough at the fingers.',
+      text: '[The climb continues onto the arm and shoulder \u2014 fair-dealing summary; the speaker scales the sleeve and feels the strong, steady muscle beneath the cloth.]',
       annotations: [
         {
-          type: 'Sensory detail',
-          note: '"Rough at the fingers" places the reader\'s hands on the jacket. The poem is intensely physical \u2014 understanding comes through touch, not words.',
+          type: 'Strength',
+          note: "The grandfather's arm is presented as enduring and powerful. The metaphor of the mountain reinforces his solidity \u2014 he is something that has lasted.",
+          color: '#8b5cf6',
+        },
+      ],
+    },
+    {
+      text: 'the skin of his finger is smooth and thick',
+      annotations: [
+        {
+          type: 'Tactile imagery',
+          note: '"Smooth and thick" describes aged skin with tenderness rather than disgust. The physical detail creates intimacy \u2014 the speaker knows his grandfather\'s body through touch.',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'Here I rested for a while, out of breath,',
+      text: 'like warm ice.',
+      annotations: [
+        {
+          type: 'Oxymoron',
+          note: '"Warm ice" is a contradiction. Ice is cold, but the grandfather\'s skin has the smoothness of ice with the warmth of life. The phrase captures the strangeness and tenderness of an old body.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'On his arm I discover',
+      annotations: [
+        {
+          type: 'Verb choice',
+          note: '"Discover" frames the climb as exploration. The grandfather is uncharted territory; each new feature is a discovery. The body is a continent to be mapped.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'the glassy ridge of a scar,',
+      annotations: [
+        {
+          type: 'History',
+          note: 'A scar is a record of a wound, a piece of history written on the body. "Glassy ridge" makes it sound geological \u2014 even injury becomes part of the landscape.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: '[The speaker pauses, then continues up the shoulder, through the white hair "soft and thick", towards the head and face \u2014 fair-dealing summary.]',
       annotations: [
         {
           type: 'Pace',
-          note: '"Rested for a while, out of breath" slows the poem down. The climb is tiring \u2014 getting to know someone deeply requires pauses, patience, and reflection.',
+          note: 'The climb slows as it approaches the summit. The speaker takes time with the hair, the neck, the face \u2014 the most intimate territory is approached carefully.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'feeling the rise and fall of his breathing,',
+      text: 'gasping for breath I can only lie',
+      annotations: [
+        {
+          type: 'Physical effort',
+          note: '"Gasping for breath" makes the climb exhausting \u2014 fully knowing someone is hard work. The speaker has to stop and rest before the final push.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'watching clouds and birds circle,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'From this height (near the head), the view is of sky and birds \u2014 the speaker has climbed high enough to see what the grandfather sees. The perspective is shared.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'feeling his heat, knowing',
       annotations: [
         {
           type: 'Intimacy',
-          note: '"The rise and fall of his breathing" is an extraordinarily intimate detail. The speaker is close enough to feel his grandfather breathe. This closeness is the point of the entire climb.',
+          note: '"Feeling his heat" is extraordinarily close \u2014 body heat is felt only at very intimate distances. "Knowing" is left dangling; the line break delays what is known.',
           color: '#ec4899',
-        },
-        {
-          type: 'Rhythm',
-          note: '"Rise and fall" creates a gentle, rocking rhythm that mimics breathing itself. The poem breathes with the grandfather.',
-          color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'the overhanging of his chin.',
+      text: 'the slow pulse of his good heart.',
       annotations: [
         {
-          type: 'Metaphor',
-          note: '"Overhanging" transforms the grandfather\'s chin into a rock ledge or cliff overhang. The mountaineering metaphor is sustained with geological precision.',
+          type: 'Double meaning',
+          note: '"Good heart" works literally (a steady, healthy heartbeat) and metaphorically (the grandfather\'s kind nature). The two meanings fuse \u2014 physical and moral worth are inseparable.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'Finally, I pull myself up, reaching',
+      text: '[The speaker resumes the climb, reaching for the face: the lined forehead, the cheek, the lips \u2014 fair-dealing summary.]',
       annotations: [
         {
-          type: 'Climax',
-          note: '"Finally" signals the approach to the summit. "Pull myself up" requires maximum effort \u2014 the deepest understanding demands the most work.',
+          type: 'Final ascent',
+          note: 'The face is the last and highest territory. Each feature is a separate stage of the summit attempt.',
           color: '#8b5cf6',
         },
       ],
     },
     {
-      text: 'the crow\u2019s nest of his eyes.',
+      text: 'Finally, the cliff of the face',
       annotations: [
         {
           type: 'Metaphor',
-          note: "\"Crow's nest\" is the lookout platform at the top of a ship's mast \u2014 the highest point with the widest view. The grandfather's eyes are where the speaker finally sees the world from his perspective.",
+          note: '"Cliff" suggests both the vertical, imposing nature of the face and its weathered, lined surface. The speaker approaches it like a real climber tackling a wall.',
           color: '#ef4444',
-        },
-        {
-          type: 'Wordplay',
-          note: '"Crow\'s nest" also puns on "crow\'s feet" \u2014 the wrinkles around elderly eyes. The metaphor works on multiple levels, blending age with elevation.',
-          color: '#f59e0b',
         },
       ],
     },
     {
-      text: 'All I can see is sky.',
+      text: 'I rest my feet in the bristle of his chin,',
+      annotations: [
+        {
+          type: 'Tactile imagery',
+          note: '"Bristle" makes the stubble into footholds \u2014 texture and grip on the cliff. The image is funny and tender at once.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'reach the summit, gaze into his eyes,',
+      annotations: [
+        {
+          type: 'Climax',
+          note: '"Summit" completes the metaphor: the highest point of the climb is the grandfather\'s eyes. "Gaze into" is the deepest possible look \u2014 eye contact, soul to soul.',
+          color: '#ec4899',
+        },
+      ],
+    },
+    {
+      text: 'and grinning back, watch a pulse',
+      annotations: [
+        {
+          type: 'Reciprocity',
+          note: '"Grinning back" reveals that the grandfather is awake and aware throughout \u2014 he sees the speaker and smiles. The climb is not a one-way exploration but a shared moment.',
+          color: '#ec4899',
+        },
+      ],
+    },
+    {
+      text: 'in his weathered neck.',
+      annotations: [
+        {
+          type: 'Detail',
+          note: '"Weathered" continues the landscape metaphor \u2014 the grandfather has been shaped by time and exposure, like a mountain shaped by wind and rain.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: '[The closing lines come to rest in the white hair of the summit, "soft and thick", with the speaker still watching the slow heartbeat \u2014 fair-dealing summary.]',
       annotations: [
         {
           type: 'Final image',
-          note: "At the summit (the grandfather's eyes), the speaker sees only sky \u2014 openness, clarity, and infinity. Understanding the grandfather brings a sense of peace, freedom, and transcendence.",
+          note: "The poem ends with the speaker at the summit, settled into the grandfather's hair, listening to his heart. The image is one of complete intimacy, trust, and rest.",
           color: '#10b981',
         },
         {
-          type: 'Ambiguity',
-          note: 'Given Waterhouse\'s death, "all I can see is sky" takes on an elegiac quality. The grandfather may have already passed \u2014 looking into his eyes, the speaker sees heaven, or the vast emptiness of loss.',
+          type: 'Posthumous resonance',
+          note: "Given Waterhouse's early death in 2001, the calm intimacy of the closing image has acquired an additional poignancy \u2014 a record of how deeply a grandchild can know a grandparent.",
           color: '#8b5cf6',
         },
       ],
@@ -221,19 +315,19 @@ const climbingMyGrandfatherPoem: PoemData = {
     '<p>The poem may also reflect on <strong>intergenerational connection</strong> \u2014 how a grandchild can bridge the gap between generations through patient, loving attention to physical detail.</p>',
 
   summary:
-    'Lines 1\u20134: The speaker decides to "climb" his grandfather without safety equipment. He begins at the knees \u2014 the "foothills" \u2014 and navigates the corduroy of his trousers.\n\n' +
-    "Lines 5\u201310: He ascends to the arm, feeling the smooth, thick skin. He continues up through the tweed jacket, which is rough at the fingers. Each physical detail reveals something about the grandfather's character and era.\n\n" +
-    'Lines 11\u201313: The speaker rests, feeling his grandfather breathe. This intimate pause is the emotional heart of the poem \u2014 closeness itself is the reward.\n\n' +
-    'Lines 14\u201316: He reaches the summit: the "crow\'s nest" of his grandfather\'s eyes. Looking out, "all I can see is sky" \u2014 understanding brings openness, clarity, and a kind of transcendence.',
+    'Opening (lines 1\u20135): The speaker decides to "climb" his grandfather "free, without a rope or net". He begins at the "old brogues, dusty and cracked" and scrambles onto the trousers, "pushing into the weave, trying to get a grip".\n\n' +
+    'Mid-climb (lines 6\u201315): He navigates the overhanging shirt, traverses the belt, and reaches the "earth-stained hand" whose splintered nails "give good purchase". The skin of the finger is "smooth and thick / like warm ice". On the arm he discovers "the glassy ridge of a scar".\n\n' +
+    'Pause near the summit (lines 16\u201320): "Gasping for breath", the speaker stops and watches "clouds and birds circle", "feeling his heat, knowing / the slow pulse of his good heart". This intimate rest is the emotional heart of the poem.\n\n' +
+    'Summit (lines 21\u201325): Climbing the "cliff of the face", resting his feet in "the bristle of his chin", the speaker reaches the summit and gazes into the grandfather\'s eyes. The grandfather is "grinning back" \u2014 the climb has been a shared, conscious moment all along.',
 
   formAndStructure:
-    'Form: Free verse with no regular rhyme scheme or metre. The lack of formal constraints mirrors the free, exploratory nature of the climb \u2014 the speaker discovers the grandfather without a predetermined path.\n\n' +
-    'Single stanza: The poem is written as one continuous block of text, reflecting the unbroken, sustained effort of the climb. There are no pauses or stanza breaks \u2014 the journey is continuous and committed.\n\n' +
-    'Sustained metaphor: The entire poem is built on a single extended metaphor: the grandfather as a mountain. This metaphor is maintained with remarkable consistency from "foothills" to "summit", giving the poem structural coherence.\n\n' +
-    "Ascending structure: The poem physically moves upward through the grandfather's body: knees \u2192 trousers \u2192 shirt \u2192 arm \u2192 jacket \u2192 chin \u2192 eyes. The reader ascends with the speaker, creating a sense of building momentum and discovery.\n\n" +
+    'Form: A single, unbroken stanza of free verse \u2014 25 lines, no regular rhyme scheme or metre. The lack of formal constraints mirrors the free, exploratory nature of the climb \u2014 the speaker discovers the grandfather without a predetermined path.\n\n' +
+    'Single stanza: The poem is written as one continuous block of text, reflecting the unbroken, sustained effort of the climb. There are no stanza breaks \u2014 the journey is continuous and committed, with no convenient resting points.\n\n' +
+    'Sustained metaphor: The entire poem is built on a single extended metaphor: the grandfather as a mountain. This metaphor is maintained with remarkable consistency from "scramble" and "traverse" to "summit", giving the poem structural coherence.\n\n' +
+    "Ascending structure: The poem physically moves upward through the grandfather's body: brogues \u2192 trousers \u2192 belt \u2192 hand \u2192 arm \u2192 chest \u2192 neck \u2192 face \u2192 eyes. The reader ascends with the speaker, creating a sense of building momentum and discovery.\n\n" +
     'Enjambment: Lines frequently run into each other, mimicking the continuous, hand-over-hand movement of climbing. The reader cannot pause \u2014 they must keep moving upward.\n\n' +
     'Present tense: The climb is narrated in present tense, making it feel immediate and ongoing. The speaker is discovering his grandfather in real time, and the reader discovers alongside him.\n\n' +
-    'Pace variation: The poem slows at "I rested for a while" before the final push to the summit, mirroring the rhythm of an actual climb.',
+    'Pace variation: The poem slows at "gasping for breath" before the final push to the summit, mirroring the rhythm of an actual climb. The final "grinning back" provides a quietly comic reveal.',
 
   keyQuotes: [
     {
@@ -243,105 +337,111 @@ const climbingMyGrandfatherPoem: PoemData = {
       themes: ['Family', 'Trust', 'Vulnerability'],
     },
     {
-      quote: 'the foothills of his knees',
+      quote: 'First, the old brogues, dusty and cracked',
       analysis:
-        '"Foothills" transforms the grandfather\'s body into a mountainous landscape. The knees are the gentle starting slopes. The metaphor establishes the grandfather as something vast, impressive, and worth exploring.',
-      themes: ['Family', 'Admiration', 'Extended Metaphor'],
+        'The climb begins at the feet \u2014 the grandfather\'s shoes. "Old", "dusty" and "cracked" hint at age, wear, and a life of work. The grandfather is grounded, weathered, and real.',
+      themes: ['Family', 'Age', 'Detail'],
     },
     {
-      quote: 'splintering crevasses of corduroy',
+      quote: 'an easy scramble onto his trousers, / pushing into the weave, trying to get a grip',
       analysis:
-        'The ridges of corduroy fabric become geological crevasses. This transforms a mundane clothing detail into something dramatic and textured, showing how the speaker sees grandeur in the ordinary.',
-      themes: ['Extended Metaphor', 'Memory', 'Perception'],
+        '"Scramble" is technical mountaineering language. The corduroy weave becomes a rock face the speaker tries to grip. Mundane fabric is translated into climbable terrain.',
+      themes: ['Extended Metaphor', 'Effort', 'Touch'],
     },
     {
-      quote: 'like warm overcooked pastry',
+      quote: 'traverse along his belt / to an earth-stained hand',
       analysis:
-        "The grandfather's skin is compared to pastry \u2014 warm, soft, and slightly overdone. This is affectionate and domestic: the grandfather is associated with comfort, home, and nourishment.",
-      themes: ['Love', 'Family', 'Warmth'],
+        '"Traverse" is precise climbing vocabulary for moving sideways across a face. "Earth-stained" places the grandfather in nature \u2014 perhaps a gardener or outdoor worker \u2014 reinforcing the landscape metaphor.',
+      themes: ['Extended Metaphor', 'Work', 'Identity'],
     },
     {
-      quote: 'feeling the rise and fall of his breathing',
+      quote: 'The nails / are splintered and give good purchase',
       analysis:
-        'The most intimate moment in the poem. The speaker is close enough to feel his grandfather breathe. This physical closeness represents emotional closeness \u2014 being truly present with another person.',
-      themes: ['Intimacy', 'Love', 'Connection'],
+        '"Splintered" nails like cracked rock; "give good purchase" is climbing terminology for a reliable handhold. The body is presented as solid, dependable terrain.',
+      themes: ['Dependability', 'Trust', 'Family'],
     },
     {
-      quote: 'the crow\u2019s nest of his eyes',
+      quote: 'smooth and thick / like warm ice',
       analysis:
-        'The "crow\'s nest" is the highest lookout point on a ship \u2014 reaching the grandfather\'s eyes is reaching the summit. It also puns on "crow\'s feet" (wrinkles), blending elevation with ageing.',
-      themes: ['Family', 'Understanding', 'Perspective'],
+        '"Warm ice" is an oxymoron. Ice is cold and smooth, but the grandfather\'s skin has the smoothness of ice with the warmth of life. The phrase captures the strangeness and tenderness of an old body.',
+      themes: ['Age', 'Tenderness', 'Touch'],
     },
     {
-      quote: 'I keep climbing, climbing',
+      quote: 'the glassy ridge of a scar',
       analysis:
-        'Repetition conveys determination and sustained effort. Understanding a grandparent requires persistence \u2014 it is not easy or instant but a continuous, committed process.',
-      themes: ['Determination', 'Family', 'Love'],
+        'A scar is a record of a wound and a piece of history written on the body. "Glassy ridge" makes it sound geological \u2014 even injury becomes part of the landscape.',
+      themes: ['History', 'Body', 'Memory'],
     },
     {
-      quote: 'All I can see is sky',
+      quote: 'feeling his heat, knowing / the slow pulse of his good heart',
       analysis:
-        'The final line is expansive and ambiguous. At the summit, the speaker sees infinite openness \u2014 clarity, peace, perhaps heaven. Understanding the grandfather brings transcendence. The simplicity of the line is its power.',
-      themes: ['Understanding', 'Peace', 'Transcendence'],
+        '"Feeling his heat" is extraordinarily intimate \u2014 body heat is felt only at very close distances. "Good heart" works literally (a steady, healthy beat) and metaphorically (the grandfather\'s kind nature) \u2014 the two meanings fuse.',
+      themes: ['Intimacy', 'Love', 'Character'],
+    },
+    {
+      quote: 'reach the summit, gaze into his eyes, / and grinning back',
+      analysis:
+        '"Summit" completes the climbing metaphor. The reveal that the grandfather is "grinning back" transforms the poem: the climb has not been a one-way exploration but a shared, conscious moment all along.',
+      themes: ['Reciprocity', 'Love', 'Family'],
     },
   ],
 
   languageDevices: [
     {
       device: 'Extended metaphor',
-      example: 'foothills / crevasses / overhanging / crow\u2019s nest / summit',
+      example: 'scramble / traverse / good purchase / cliff / summit',
       effect:
-        'The grandfather-as-mountain metaphor is sustained throughout the entire poem. Every physical detail of the grandfather is translated into mountaineering terminology, creating a unified, coherent conceit that transforms intimacy into adventure.',
-      lineRef: 1,
+        'The grandfather-as-mountain metaphor is sustained throughout the entire poem using genuine climbing vocabulary. Every physical detail of the grandfather is translated into mountaineering terminology, creating a unified, coherent conceit.',
+      lineRef: 0,
     },
     {
       device: 'Tactile imagery',
-      example: 'rough material / smooth and thick / rough at the fingers',
+      example: 'pushing into the weave / smooth and thick / bristle of his chin',
       effect:
-        'The poem is dominated by the sense of touch. The speaker understands his grandfather through physical contact \u2014 the textures of clothing, skin, and fabric. Touch becomes a language of love.',
-      lineRef: 2,
-    },
-    {
-      device: 'Simile',
-      example: 'like warm overcooked pastry',
-      effect:
-        'This affectionate, domestic comparison associates the grandfather with warmth, home, and baking. The simile is endearing rather than critical \u2014 "overcooked" conveys age without cruelty.',
-      lineRef: 6,
-    },
-    {
-      device: 'Enjambment',
-      example: 'I pull myself / on to his arm',
-      effect:
-        'Lines run into each other, mimicking the continuous, hand-over-hand motion of climbing. The reader is pulled forward through the poem without rest, experiencing the physical effort.',
+        'The poem is dominated by the sense of touch. The speaker understands his grandfather through physical contact \u2014 the textures of clothing, skin, and stubble. Touch becomes a language of love.',
       lineRef: 4,
     },
     {
-      device: 'Repetition',
-      example: 'I keep climbing, climbing',
+      device: 'Oxymoron',
+      example: 'like warm ice',
       effect:
-        'The doubled "climbing" conveys determination and ongoing effort. The speaker will not stop until he reaches the top \u2014 until he fully knows and understands his grandfather.',
-      lineRef: 7,
+        "Ice is cold; the grandfather's skin is warm. The contradiction holds together the smoothness of aged skin and the warmth of a living body in one perfect phrase.",
+      lineRef: 12,
     },
     {
-      device: 'Wordplay',
-      example: 'the crow\u2019s nest of his eyes',
+      device: 'Climbing diction',
+      example: 'scramble / traverse / purchase / summit',
       effect:
-        '"Crow\'s nest" simultaneously means a ship\'s lookout (elevation, perspective) and puns on "crow\'s feet" (wrinkles of age). The dual meaning enriches the final image with both height and tenderness.',
-      lineRef: 14,
+        'Waterhouse uses authentic mountaineering vocabulary rather than vague metaphor. The technical precision makes the conceit feel honest and earned, not decorative.',
+      lineRef: 3,
+    },
+    {
+      device: 'Enjambment',
+      example: 'feeling his heat, knowing / the slow pulse of his good heart',
+      effect:
+        'Lines run into each other, mimicking the continuous, hand-over-hand motion of climbing. The line break across "knowing / the slow pulse" delays the moment of intimate knowledge.',
+      lineRef: 18,
+    },
+    {
+      device: 'Double meaning',
+      example: 'the slow pulse of his good heart',
+      effect:
+        '"Good heart" works literally (a healthy heartbeat) and metaphorically (the grandfather\'s kind nature). The two meanings fuse \u2014 physical and moral worth become inseparable.',
+      lineRef: 19,
     },
     {
       device: 'Personification (reversed)',
-      example: 'the foothills of his knees / the overhanging of his chin',
+      example: 'earth-stained hand / glassy ridge of a scar / cliff of the face',
       effect:
         'Rather than personifying nature, Waterhouse "geographifies" the human body. The grandfather becomes a landscape, suggesting he is as vast, ancient, and worthy of exploration as a mountain.',
-      lineRef: 1,
+      lineRef: 7,
     },
     {
-      device: 'Ambiguity',
-      example: 'All I can see is sky',
+      device: 'Reciprocity',
+      example: 'gaze into his eyes, / and grinning back',
       effect:
-        'The final line can mean: the view from the summit is clear and infinite; the grandfather looks towards heaven (afterlife); or that truly knowing someone opens up vast, endless perspective. The ambiguity is powerful and moving.',
-      lineRef: 15,
+        'The final reveal that the grandfather is "grinning back" reframes the entire climb as a shared moment. The exploration has not been one-way \u2014 the grandfather has known he was being known.',
+      lineRef: 23,
     },
   ],
 }
@@ -399,17 +499,17 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'cmg-4',
-    question: 'What does "knowing the slow pulse of his good heart" suggest?',
+    question: 'What does "the slow pulse of his good heart" achieve?',
     type: 'multiple-choice',
     options: [
-      'The grandfather has a heart condition',
-      'The speaker has achieved deep, intimate knowledge of the grandfather\'s character — "good heart" is both literal and metaphorical',
-      'The speaker is a doctor',
-      'The climb has ended',
+      'It suggests the grandfather has a heart condition',
+      'It fuses literal meaning (a steady heartbeat) with metaphorical meaning (his kind nature) — physical and moral worth become inseparable',
+      'It shows the speaker is a doctor',
+      'It marks the end of the climb',
     ],
     correctIndex: 1,
     explanation:
-      'Reaching the summit (the head) and feeling the heartbeat represents achieving the deepest possible understanding. "Good heart" works literally (his heartbeat) and metaphorically (his kind nature).',
+      'Pausing near the summit and feeling the heartbeat represents the deepest possible knowledge. "Good heart" works literally (a steady, healthy beat) and metaphorically (his kind nature) — the double meaning is the line\'s power.',
     topic: 'Language',
     difficulty: 'higher',
   },
@@ -647,6 +747,23 @@ export default function ClimbingMyGrandfatherPage() {
         essayPrompts={ESSAY_PROMPTS}
         revisionTopics={REVISION_TOPICS}
       />
+
+      {/* Fair-dealing extract notice — Climbing My Grandfather is in copyright (Waterhouse estate).
+          Only verified short extracts are quoted; mid-climb passages are summarised in brackets. */}
+      <aside
+        role="note"
+        aria-label="Copyright and fair-dealing notice"
+        className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-[12px] leading-relaxed text-amber-900 dark:text-amber-200"
+      >
+        <p>
+          <strong>Note on the poem text below:</strong> The poem body is reproduced under
+          fair-dealing extracts only. Students should refer to Waterhouse&rsquo;s <em>In</em> (The
+          Rialto, 2000) or the board-licensed AQA Love &amp; Relationships anthology for the
+          complete authoritative 25-line text. Bracketed prose paraphrases passages omitted for
+          copyright; quoted material is restricted to short extracts used for analytical purposes
+          under CDPA 1988 s.30.
+        </p>
+      </aside>
 
       <InteractivePoemViewer poem={climbingMyGrandfatherPoem} />
 

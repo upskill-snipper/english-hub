@@ -717,6 +717,25 @@ export default function SinghSongPage() {
         revisionTopics={REVISION_TOPICS}
       />
 
+      {/* Fair-dealing extract notice — Singh Song! is in copyright (Faber & Faber on behalf of Daljit Nagra).
+          The displayed text below mixes verified short extracts with paraphrased summaries; students
+          should consult the authoritative anthology text for the full poem. */}
+      <aside
+        role="note"
+        aria-label="Copyright and fair-dealing notice"
+        className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-[12px] leading-relaxed text-amber-900 dark:text-amber-200"
+      >
+        <p>
+          <strong>Note on the poem text below:</strong> &ldquo;Singh Song!&rdquo; is in copyright
+          (Faber &amp; Faber on behalf of Daljit Nagra). The displayed text uses short fair-dealing
+          extracts and paraphrased summaries; some spellings and line orderings may differ slightly
+          from the authoritative anthology version. Students should refer to Nagra&rsquo;s{' '}
+          <em>Look We Have Coming to Dover!</em> (Faber, 2007) or the board-licensed AQA Love &amp;
+          Relationships anthology for the complete text. Quoted material is restricted to short
+          extracts used for analytical purposes under CDPA 1988 s.30.
+        </p>
+      </aside>
+
       <InteractivePoemViewer poem={singhSongPoem} />
 
       {/* ── Compare with ─────────────────────────────────────────── */}
