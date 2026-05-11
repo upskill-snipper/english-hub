@@ -38,7 +38,7 @@ const THEMES: ThemeData[] = [
       'Russell uses parallel structure throughout: the same birthday, the same mother, even the same blood-brother oath, yet radically different lives. The Johnstones are rehoused in a council estate while the Lyons move to the suburbs. Mickey works in a factory; Edward goes to university. The gap widens with every scene until it becomes lethal.',
     keyQuotes: [
       {
-        text: '"How come you didn\'t grow up like me?"',
+        text: '"Well, how come you got everything... an\' I got nothin\'?"',
         speaker: 'Mickey',
         analysis:
           'Mickey names the class gulf in plain speech. Russell gives the political thesis to the character who has suffered most from it.',
@@ -75,7 +75,7 @@ const THEMES: ThemeData[] = [
           'The boys choose kinship before they know they share it. Russell uses the ritual to underline that connection is natural; separation is imposed.',
       },
       {
-        text: '"If you\'d been born here, what would you have been?"',
+        text: '"If you\'d been born here, you would have been just like him."',
         speaker: 'Linda',
         analysis:
           'Linda voices the nature-versus-nurture question directly. Russell gives this insight to a teenager to show that the truth is obvious to everyone except those in power.',
@@ -94,7 +94,7 @@ const THEMES: ThemeData[] = [
       'Mrs Lyons invents the twins superstition to control Mrs Johnstone, but it becomes a self-fulfilling prophecy not because of magic but because of the class structures that make the separation permanent. The Narrator\'s repeated refrain — "the devil\'s got your number" — sounds supernatural but functions as a metaphor for systemic injustice. In the final line, the Narrator asks the audience directly whether they blame superstition or something else.',
     keyQuotes: [
       {
-        text: '"They say that if twins are separated they\'ll die."',
+        text: '"You do know what they say about twins, secretly parted, don\'t you?"',
         speaker: 'Mrs Lyons',
         analysis:
           'An invented curse that becomes true — not through magic but through the class system Mrs Lyons exploits. Russell collapses the boundary between superstition and social power.',
@@ -131,7 +131,7 @@ const THEMES: ThemeData[] = [
           "The title ritual enacts the play's argument: connection is instinctive, separation is artificial. Russell layers dramatic irony by making the boys literal twins.",
       },
       {
-        text: '"I\'ll get you a job."',
+        text: '"I thought we always stuck together."',
         speaker: 'Edward',
         analysis:
           'Generosity becomes patronage when class is unequal. Russell shows that even genuine friendship is deformed by structural inequality.',

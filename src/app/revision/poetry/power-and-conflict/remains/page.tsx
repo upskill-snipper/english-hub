@@ -54,43 +54,22 @@ const REMAINS: PoemData = {
     },
     { text: '' },
 
+    // VERIFY: previous lines 'Another one dies in the doorway / of some bank, his arms outstretched inside.' do NOT appear in Armitage's Remains and have been removed as fabrication. The actual stanza 2 continues directly from 'probably armed, possibly not' into 'Well myself and somebody else and somebody else / are all of the same mind, / so all three of us open fire.'
+
     // Stanza 2
-    { text: 'Another one dies in the doorway' },
     {
-      text: 'of some bank, his arms outstretched inside.',
-      annotations: [
-        {
-          type: 'Imagery',
-          note: '"arms outstretched" evokes a crucifixion pose, hinting at innocence and sacrifice. The mundane "some bank" contrasts with the gravity of death.',
-          color: '#a78bfa',
-        },
-      ],
-    },
-    { text: '' },
-
-    // Stanza 3
-    { text: 'I swear' },
-    { text: '' },
-
-    // Stanza 4
-    {
-      text: 'And all three of us open fire.',
+      text: 'Well myself and somebody else and somebody else',
       annotations: [
         {
           type: 'Shared responsibility',
-          note: '"all three of us" distributes the blame. The speaker tries to share the guilt across the group rather than shoulder it alone.',
+          note: '"somebody else and somebody else" distributes the blame through deliberately vague repetition. The speaker tries to share the guilt across the group rather than shoulder it alone.',
           color: '#60a5fa',
         },
       ],
     },
-    { text: 'Three of a kind all letting fly, and I swear' },
-    { text: '' },
-
-    // Stanza 5
-    { text: 'I see broad daylight on the other side.' },
-    { text: 'So we all chip in' },
+    { text: 'are all of the same mind,' },
     {
-      text: 'and all three of us are all of the same mind,',
+      text: 'so all three of us open fire.',
       annotations: [
         {
           type: 'Repetition',
@@ -99,6 +78,34 @@ const REMAINS: PoemData = {
         },
       ],
     },
+    { text: 'Three of a kind all letting fly, and I swear' },
+    {
+      text: 'I see every round as it rips through his life --',
+      annotations: [
+        {
+          type: 'Graphic imagery',
+          note: '"rips through his life" makes the bullets feel like they tear not just flesh but the entirety of the man\'s existence. The dash creates a sudden pause before the visual detail that follows.',
+          color: '#f87171',
+        },
+      ],
+    },
+    { text: 'I see broad daylight on the other side.' },
+    { text: '' },
+
+    // Stanza 3
+    { text: "So we've hit this looter a dozen times" },
+    {
+      text: "and he's there on the ground, sort of inside out,",
+      annotations: [
+        {
+          type: 'Visceral imagery',
+          note: '"sort of inside out" is colloquial and understated, yet describes a horrifying physical reality — the soldier\'s casual phrasing reveals desensitisation.',
+          color: '#f87171',
+        },
+      ],
+    },
+    { text: 'pain itself, the image of agony.' },
+    { text: 'One of my mates goes by' },
     {
       text: 'and tosses his guts back into his body.',
       annotations: [
@@ -109,10 +116,10 @@ const REMAINS: PoemData = {
         },
       ],
     },
-    { text: 'Then he is carted off in the back of a lorry.' },
+    { text: 'Then he’s carted off in the back of a lorry.' },
     { text: '' },
 
-    // Stanza 6
+    // Stanza 4
     {
       text: 'End of story, except not really.',
       annotations: [
@@ -137,7 +144,7 @@ const REMAINS: PoemData = {
     { text: 'Then I’m home on leave. But I blink' },
     { text: '' },
 
-    // Stanza 7
+    // Stanza 5
     {
       text: "drink and the drugs won't flush him out --",
       annotations: [
@@ -180,7 +187,7 @@ const REMAINS: PoemData = {
     },
     { text: '' },
 
-    // Stanza 8 (isolated couplet)
+    // Stanza 6 (isolated couplet)
     {
       text: 'land of dust and sand.',
       annotations: [

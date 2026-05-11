@@ -1,14 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  BookOpen,
-  Calendar,
-  Clock,
-  Lightbulb,
-  Sparkles,
-} from 'lucide-react'
+import { ArrowLeft, BookOpen, Calendar, Clock, Lightbulb, Sparkles } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
 
@@ -122,17 +115,61 @@ type TimelineEvent = {
 }
 
 const TIMELINE: TimelineEvent[] = [
-  { year: '1858', event: 'R.M. Ballantyne publishes The Coral Island', relevance: 'The Victorian adventure novel Golding directly challenges' },
-  { year: '1911', event: 'William Golding born in Cornwall', relevance: 'Raised in a middle-class family; father was a schoolteacher' },
-  { year: '1939\u201345', event: 'World War Two', relevance: 'Golding serves in Royal Navy; witnesses human capacity for evil' },
-  { year: '1944', event: 'D-Day \u2014 Golding commands a landing craft', relevance: 'Direct combat experience shapes his view of human nature' },
-  { year: '1945', event: 'Atomic bombs dropped on Hiroshima and Nagasaki', relevance: 'Inaugurates the nuclear age; provides the novel\u2019s wartime setting' },
-  { year: '1945', event: 'Holocaust revealed to the wider public', relevance: 'Proves that "civilised" nations can commit industrial-scale evil' },
-  { year: '1947', event: 'Cold War begins', relevance: 'The geopolitical conflict that frames the novel\u2019s evacuation scenario' },
-  { year: '1954', event: 'Lord of the Flies published by Faber and Faber', relevance: 'Initially slow sales; rejected by 21 publishers before acceptance' },
-  { year: '1963', event: 'Peter Brook\u2019s film adaptation released', relevance: 'Brings the novel to a wider audience; acclaimed for its realism' },
-  { year: '1983', event: 'Golding awarded the Nobel Prize in Literature', relevance: 'International recognition of his contribution to literature' },
-  { year: '1993', event: 'Golding dies, aged 81', relevance: 'Lord of the Flies remains his most studied and debated work' },
+  {
+    year: '1858',
+    event: 'R.M. Ballantyne publishes The Coral Island',
+    relevance: 'The Victorian adventure novel Golding directly challenges',
+  },
+  {
+    year: '1911',
+    event: 'William Golding born in Cornwall',
+    relevance: 'Raised in a middle-class family; father was a schoolteacher',
+  },
+  {
+    year: '1939\u201345',
+    event: 'World War Two',
+    relevance: 'Golding serves in Royal Navy; witnesses human capacity for evil',
+  },
+  {
+    year: '1944',
+    event: 'D-Day \u2014 Golding commands a landing craft',
+    relevance: 'Direct combat experience shapes his view of human nature',
+  },
+  {
+    year: '1945',
+    event: 'Atomic bombs dropped on Hiroshima and Nagasaki',
+    relevance: 'Inaugurates the nuclear age; provides the novel\u2019s wartime setting',
+  },
+  {
+    year: '1945',
+    event: 'Holocaust revealed to the wider public',
+    relevance: 'Proves that "civilised" nations can commit industrial-scale evil',
+  },
+  {
+    year: '1947',
+    event: 'Cold War begins',
+    relevance: 'The geopolitical conflict that frames the novel\u2019s evacuation scenario',
+  },
+  {
+    year: '1954',
+    event: 'Lord of the Flies published by Faber and Faber',
+    relevance: 'Initially slow sales; rejected by 21 publishers before acceptance',
+  },
+  {
+    year: '1963',
+    event: 'Peter Brook\u2019s film adaptation released',
+    relevance: 'Brings the novel to a wider audience; acclaimed for its realism',
+  },
+  {
+    year: '1983',
+    event: 'Golding awarded the Nobel Prize in Literature',
+    relevance: 'International recognition of his contribution to literature',
+  },
+  {
+    year: '1993',
+    event: 'Golding dies, aged 81',
+    relevance: 'Lord of the Flies remains his most studied and debated work',
+  },
 ]
 
 /* ────────────────────────────────────────────────────────────────────── */
@@ -144,11 +181,17 @@ export default function LOTFContextPage() {
     <div className="min-h-screen bg-cream-50 font-serif">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Lord of the Flies", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies" },
-          { name: "Context", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies/context" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Lord of the Flies',
+            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
+          },
+          {
+            name: 'Context',
+            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies/context',
+          },
         ]}
       />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
@@ -157,13 +200,13 @@ export default function LOTFContextPage() {
 
         {/* Hero */}
         <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-clay-200/[0.06] p-6 sm:p-8 lg:p-10">
-          <a
+          <Link
             href="/revision/texts/lord-of-the-flies"
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
           >
             <ArrowLeft className="size-3.5" />
             Back to Lord of the Flies
-          </a>
+          </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-clay-300/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
@@ -179,13 +222,11 @@ export default function LOTFContextPage() {
           <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
             Lord of the Flies &mdash; Context
           </h1>
-          <p className="mt-2 text-lg text-ink-500">
-            by William Golding &mdash; 1954
-          </p>
+          <p className="mt-2 text-lg text-ink-500">by William Golding &mdash; 1954</p>
           <p className="mt-4 max-w-2xl text-ink-500">
-            Historical and social context for GCSE literature. Covers post-WWII
-            Britain, Golding&rsquo;s war experience, the atomic age, The Coral
-            Island, original sin, the Cold War and the Nobel Prize.
+            Historical and social context for GCSE literature. Covers post-WWII Britain,
+            Golding&rsquo;s war experience, the atomic age, The Coral Island, original sin, the Cold
+            War and the Nobel Prize.
           </p>
         </section>
 
@@ -196,12 +237,11 @@ export default function LOTFContextPage() {
             <div className="text-sm text-ink-600">
               <p className="mb-1 font-bold text-ink-800">AO3 &mdash; What examiners want</p>
               <p>
-                AO3 rewards you for showing how <strong>context shapes
-                meaning</strong>. Do not simply list facts about WWII &mdash;
-                explain how Golding&rsquo;s war experience and the atomic age
-                shape his view of human nature and the novel&rsquo;s argument.
-                The best answers show <em>why</em> Golding chose to challenge
-                Victorian optimism about childhood innocence.
+                AO3 rewards you for showing how <strong>context shapes meaning</strong>. Do not
+                simply list facts about WWII &mdash; explain how Golding&rsquo;s war experience and
+                the atomic age shape his view of human nature and the novel&rsquo;s argument. The
+                best answers show <em>why</em> Golding chose to challenge Victorian optimism about
+                childhood innocence.
               </p>
             </div>
           </div>
@@ -211,9 +251,7 @@ export default function LOTFContextPage() {
         <section className="mt-10">
           <div className="flex items-center gap-2 mb-4">
             <Clock className="size-5 text-teal-600" />
-            <h2 className="font-serif text-2xl font-bold text-ink-900">
-              Key Timeline
-            </h2>
+            <h2 className="font-serif text-2xl font-bold text-ink-900">Key Timeline</h2>
           </div>
           <div className="relative ml-4 border-l-2 border-teal-400/20 pl-6 space-y-4">
             {TIMELINE.map((item, i) => (
@@ -238,9 +276,7 @@ export default function LOTFContextPage() {
               <div className="flex size-10 items-center justify-center rounded-xl bg-clay-300/10">
                 <BookOpen className="size-5 text-clay-600" />
               </div>
-              <h2 className="font-serif text-2xl font-bold text-ink-900">
-                {section.title}
-              </h2>
+              <h2 className="font-serif text-2xl font-bold text-ink-900">{section.title}</h2>
             </div>
 
             {/* Body paragraphs */}
@@ -257,9 +293,7 @@ export default function LOTFContextPage() {
               <p className="text-xs font-bold uppercase tracking-wider text-teal-700 mb-1">
                 Key Point
               </p>
-              <p className="text-sm leading-relaxed text-ink-700 font-medium">
-                {section.keyPoint}
-              </p>
+              <p className="text-sm leading-relaxed text-ink-700 font-medium">{section.keyPoint}</p>
             </div>
 
             {/* Exam link */}
@@ -270,56 +304,49 @@ export default function LOTFContextPage() {
                   <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
                     Using This in Your Essay
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">
-                    {section.examLink}
-                  </p>
+                  <p className="text-sm leading-relaxed text-ink-600">{section.examLink}</p>
                 </div>
               </div>
             </div>
 
             {/* Divider */}
-            {idx < CONTEXT_SECTIONS.length - 1 && (
-              <div className="mt-10 border-t border-ink-100" />
-            )}
+            {idx < CONTEXT_SECTIONS.length - 1 && <div className="mt-10 border-t border-ink-100" />}
           </section>
         ))}
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">
-            Continue studying
-          </h3>
+          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
           <p className="mt-1 text-sm text-ink-500">
             Explore characters, themes, key quotes and essay plans for Lord of the Flies.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <a
+            <Link
               href="/revision/texts/lord-of-the-flies/characters"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
               Characters
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/lord-of-the-flies/themes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Themes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/lord-of-the-flies/key-quotes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Key Quotes
-            </a>
+            </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
-          Short quotations (&le;15 words each) reproduced under the fair dealing
-          provision of the Copyright, Designs and Patents Act 1988 for the purpose
-          of criticism, review and educational study.{' '}
-          <em>Lord of the Flies</em> by William Golding is published by Faber and
+          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
+          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
+          educational study. <em>Lord of the Flies</em> by William Golding is published by Faber and
           Faber. Full text available from your school or local library.
         </p>
       </div>

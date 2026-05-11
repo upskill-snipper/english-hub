@@ -43,10 +43,11 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         speaker: 'Jekyll',
         chapter: 'Chapter 10',
         analysis:
-          '"Primitive" locates duality before civilisation -- it cannot be educated or moralised away. "Thorough" means complete: every aspect of human nature is divided. Stevenson anticipates Freud\'s later model of the unconscious mind.',
+          '"Primitive" locates duality before civilisation -- it cannot be educated or moralised away. "Thorough" means complete: every aspect of human nature is divided. A Freudian critical lens can be applied retrospectively, though Freud\'s model of the unconscious came decades after Stevenson.',
       },
       {
-        quote: 'I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse.',
+        quote:
+          'I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse.',
         speaker: 'Jekyll',
         chapter: 'Chapter 10',
         analysis:
@@ -73,28 +74,32 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     colour: 'bg-blue-400',
     quotes: [
       {
-        quote: 'I concealed my pleasures; and... I stood already committed to a profound duplicity of life.',
+        quote:
+          'I concealed my pleasures; and... I stood already committed to a profound duplicity of life.',
         speaker: 'Jekyll',
         chapter: 'Chapter 10',
         analysis:
           'Concealment, not pleasure, is Jekyll\'s defining behaviour. "Profound duplicity" indicts the social system that taught him to hide. Stevenson shows that Victorian respectability manufactures hypocrisy as a matter of course.',
       },
       {
-        quote: 'Many a man would have even blazoned such irregularities as I was guilty of; but from the high views that I had set before me, I regarded and hid them with an almost morbid sense of shame.',
+        quote:
+          'Many a man would have even blazoned such irregularities as I was guilty of; but from the high views that I had set before me, I regarded and hid them with an almost morbid sense of shame.',
         speaker: 'Jekyll',
         chapter: 'Chapter 10',
         analysis:
           'Jekyll\'s "irregularities" are never specified. "Morbid sense of shame" connects shame to sickness. The irony is that his "high views" -- his moral ambitions -- produce the very duplicity they claim to combat.',
       },
       {
-        quote: 'No sir, I make it a rule of mine: the more it looks like Queer Street, the less I ask.',
+        quote:
+          'No sir, I make it a rule of mine: the more it looks like Queer Street, the less I ask.',
         speaker: 'Enfield',
         chapter: 'Chapter 1',
         analysis:
           'Enfield\'s "rule" of deliberate ignorance embodies the Victorian code of silence. "Queer Street" (trouble) is precisely where questions are most needed. Stevenson shows how gentlemanly discretion enables evil to operate unchallenged.',
       },
       {
-        quote: 'Mr Utterson the lawyer was a man of a rugged countenance, that was never lighted by a smile... lean, long, dusty, dreary.',
+        quote:
+          'Mr Utterson the lawyer was a man of a rugged countenance, that was never lighted by a smile... lean, long, dusty, dreary.',
         speaker: 'Narrator',
         chapter: 'Chapter 1',
         analysis:
@@ -114,21 +119,24 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'Jekyll acknowledges hesitation but proceeds anyway. "Theory" versus "practice" marks the boundary between thinking about evil and enacting it. His hesitation makes his decision more culpable, not less: he knew the risk.',
       },
       {
-        quote: 'The temptation of a discovery so singular and profound at last overcame the suggestions of alarm.',
+        quote:
+          'The temptation of a discovery so singular and profound at last overcame the suggestions of alarm.',
         speaker: 'Jekyll',
         chapter: 'Chapter 10',
         analysis:
           '"Temptation" and "suggestions of alarm" frame the scientific decision in moral terms. Jekyll is a secular Eve, unable to resist forbidden knowledge. Stevenson presents unrestrained curiosity as a form of sin.',
       },
       {
-        quote: 'O God! I screamed, and O God! again and again; for there before my eyes... there stood Henry Jekyll!',
+        quote:
+          'O God! I screamed, and O God! again and again; for there before my eyes... there stood Henry Jekyll!',
         speaker: 'Lanyon',
         chapter: 'Chapter 9',
         analysis:
           'Lanyon\'s horror at witnessing the transformation represents conventional science confronting the unimaginable. The repetition of "O God!" conveys spiritual as well as intellectual shock. The experience kills Lanyon: some knowledge is literally fatal.',
       },
       {
-        quote: 'This was the shocking thing; that the slime of the pit seemed to utter cries and voices; that the amorphous dust gesticulated and sinned.',
+        quote:
+          'This was the shocking thing; that the slime of the pit seemed to utter cries and voices; that the amorphous dust gesticulated and sinned.',
         speaker: 'Jekyll',
         chapter: 'Chapter 10',
         analysis:
@@ -141,14 +149,16 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     colour: 'bg-rose-400',
     quotes: [
       {
-        quote: 'I felt younger, lighter, happier in body; within I was conscious of a heady recklessness.',
+        quote:
+          'I felt younger, lighter, happier in body; within I was conscious of a heady recklessness.',
         speaker: 'Jekyll as Hyde',
         chapter: 'Chapter 10',
         analysis:
           'The first transformation feels good. Evil is experienced as liberation -- younger, lighter, freer. "Heady recklessness" suggests intoxication. Stevenson makes evil seductive to explain why it is so hard to resist.',
       },
       {
-        quote: 'The pleasures which I made haste to seek in my disguise were, as I have said, undignified; I would scarce use a harder term.',
+        quote:
+          'The pleasures which I made haste to seek in my disguise were, as I have said, undignified; I would scarce use a harder term.',
         speaker: 'Jekyll',
         chapter: 'Chapter 10',
         analysis:
@@ -159,21 +169,22 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         speaker: 'Jekyll',
         chapter: 'Chapter 10',
         analysis:
-          'Jekyll positions himself as both perpetrator and victim. The balanced clause structure equates sin and suffering, which evades moral responsibility. Stevenson invites the reader to question whether Jekyll\'s pain excuses his crimes.',
+          "Jekyll positions himself as both perpetrator and victim. The balanced clause structure equates sin and suffering, which evades moral responsibility. Stevenson invites the reader to question whether Jekyll's pain excuses his crimes.",
       },
       {
-        quote: 'There was something wrong with his appearance; something displeasing, something downright detestable.',
+        quote:
+          'There was something wrong with his appearance; something displeasing, something downright detestable.',
         speaker: 'Enfield',
         chapter: 'Chapter 1',
         analysis:
-          'The triple escalation creates mounting unease without naming the source. Stevenson makes evil unnameable -- felt instinctively, beyond rational description. This technique is central to the novella\'s Gothic horror.',
+          "The triple escalation creates mounting unease without naming the source. Stevenson makes evil unnameable -- felt instinctively, beyond rational description. This technique is central to the novella's Gothic horror.",
       },
       {
-        quote: 'Satan\'s signature upon a face.',
+        quote: "Satan's signature upon a face.",
         speaker: 'Utterson',
         chapter: 'Chapter 2',
         analysis:
-          'Hyde\'s face is read as a diabolical text. The metaphor connects evil to the visible body, reflecting the Victorian pseudo-science of physiognomy. Stevenson both uses and critiques this: Hyde does look evil, but his evil is deeper than appearance.',
+          "Hyde's face is read as a diabolical text. The metaphor connects evil to the visible body, reflecting the Victorian pseudo-science of physiognomy. Stevenson both uses and critiques this: Hyde does look evil, but his evil is deeper than appearance.",
       },
     ],
   },
@@ -189,7 +200,8 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'The pun frames the narrative as a game of concealment. "Hyde/Seek" encapsulates the novella\'s structure: truth is hidden, and the reader must seek it. The children\'s game reference trivialises a deadly serious investigation.',
       },
       {
-        quote: 'The door, which was equipped with neither bell nor knocker, was blistered and distained.',
+        quote:
+          'The door, which was equipped with neither bell nor knocker, was blistered and distained.',
         speaker: 'Narrator',
         chapter: 'Chapter 1',
         analysis:
@@ -203,7 +215,8 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'The "bargain" formalises silence as a social contract between gentlemen. "Never" is absolute. Stevenson shows that Victorian discretion is not courtesy but active conspiracy to ignore disturbing truths.',
       },
       {
-        quote: 'I have had a shock and I shall never recover... I sometimes think if we knew all, we should be more glad to get away.',
+        quote:
+          'I have had a shock and I shall never recover... I sometimes think if we knew all, we should be more glad to get away.',
         speaker: 'Lanyon',
         chapter: 'Chapter 6',
         analysis:
@@ -216,7 +229,8 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     colour: 'bg-red-400',
     quotes: [
       {
-        quote: 'With ape-like fury, he was trampling his victim underfoot and hailing down a storm of blows.',
+        quote:
+          'With ape-like fury, he was trampling his victim underfoot and hailing down a storm of blows.',
         speaker: 'Narrator',
         chapter: 'Chapter 4',
         analysis:
@@ -247,11 +261,17 @@ export default function JekyllAndHydeKeyQuotesPage() {
     <div className="min-h-screen bg-cream-50">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Dr Jekyll and Mr Hyde", url: "https://theenglishhub.app/revision/texts/jekyll-and-hyde" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/jekyll-and-hyde/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Dr Jekyll and Mr Hyde',
+            url: 'https://theenglishhub.app/revision/texts/jekyll-and-hyde',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/revision/texts/jekyll-and-hyde/key-quotes',
+          },
         ]}
       />
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
@@ -289,8 +309,8 @@ export default function JekyllAndHydeKeyQuotesPage() {
               Strange Case of Dr Jekyll and Mr Hyde by Robert Louis Stevenson
             </p>
             <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-              Every quotation you need for the exam, organised by theme with detailed
-              analysis. All from the public-domain text.
+              Every quotation you need for the exam, organised by theme with detailed analysis. All
+              from the public-domain text.
             </p>
           </div>
         </section>
@@ -319,15 +339,10 @@ export default function JekyllAndHydeKeyQuotesPage() {
         {/* Quotes by theme */}
         <div className="mt-10 space-y-10">
           {QUOTES_BY_THEME.map((section) => (
-            <section
-              key={section.theme}
-              id={section.theme.toLowerCase().replace(/\s+/g, '-')}
-            >
+            <section key={section.theme} id={section.theme.toLowerCase().replace(/\s+/g, '-')}>
               <div className="mb-5 flex items-center gap-3">
                 <span className={`block size-3 rounded-full ${section.colour}`} />
-                <h2 className="text-heading-lg font-heading text-foreground">
-                  {section.theme}
-                </h2>
+                <h2 className="text-heading-lg font-heading text-foreground">{section.theme}</h2>
                 <Badge variant="outline" className="text-muted-foreground">
                   {section.quotes.length} quotes
                 </Badge>
@@ -358,8 +373,8 @@ export default function JekyllAndHydeKeyQuotesPage() {
 
         {/* Footer */}
         <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-          <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis Stevenson
-          is in the public domain. All quotations are reproduced freely.
+          <em>Strange Case of Dr Jekyll and Mr Hyde</em> (1886) by Robert Louis Stevenson is in the
+          public domain. All quotations are reproduced freely.
         </p>
       </div>
     </div>

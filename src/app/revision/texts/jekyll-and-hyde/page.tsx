@@ -24,7 +24,7 @@ const data: TextGuideData = {
   category: 'Novella',
   badge: 'AQA / Edexcel / OCR / Eduqas',
   intro:
-    "Robert Louis Stevenson's Gothic novella explores the duality of human nature through the respectable Dr Henry Jekyll and his violent alter ego Mr Edward Hyde. Written in just three days during a fever dream, the story unfolds as a mystery narrated largely through the perspective of the lawyer Gabriel Utterson, who gradually uncovers the terrifying truth behind Jekyll's relationship with the sinister Hyde.",
+    "Robert Louis Stevenson's Gothic novella explores the duality of human nature through the respectable Dr Henry Jekyll and his violent alter ego Mr Edward Hyde. Famously inspired by a vivid dream and drafted at remarkable speed (Stevenson reportedly burned his first version and rewrote it within weeks), the story unfolds as a mystery focalised through the lawyer Gabriel John Utterson, who gradually uncovers the terrifying truth behind Jekyll's relationship with the sinister Hyde.",
   quickInfo: {
     genre: 'Gothic novella / horror',
     setting: 'London, late Victorian era',
@@ -102,7 +102,7 @@ const data: TextGuideData = {
 
     'The Victorian era was shaped by rapid scientific progress and the profound cultural shock of Charles Darwin\'s theory of evolution by natural selection, published in On the Origin of Species in 1859. Darwin\'s work suggested that humans were not divinely created but had evolved from animals, a notion that terrified many Victorians. Hyde\'s frequent association with animalistic imagery \u2014 he is described as "ape-like," moving with "extraordinary quickness," and snarling like a creature \u2014 reflects fears that the beast within could resurface at any time. Stevenson taps into the anxiety that civilisation is only a thin veneer over humanity\'s primitive nature.',
 
-    "The novella also engages with contemporary debates about the nature of the mind. Sigmund Freud's theories of the id, ego, and superego would not be published until later, but Stevenson anticipates them remarkably. Jekyll's experiment can be read as an attempt to liberate the id (instinctual desire) from the superego (social conscience). The idea that the human psyche contains warring elements was gaining traction in the 1880s, and Stevenson's novella gave it its most memorable literary form.",
+    "The novella also engages with contemporary debates about the nature of the mind. Sigmund Freud's theories of the id, ego, and superego were not formulated until decades later, but a Freudian critical lens is often applied retrospectively to the text: Jekyll's experiment can be read as an attempt to liberate instinctual desire from social conscience. The idea that the human psyche contains warring elements was gaining traction in the 1880s through earlier thinkers, and Stevenson's novella gave that idea one of its most memorable literary expressions.",
 
     "As a work of Gothic fiction, the novella draws on a tradition stretching back to Horace Walpole, Mary Shelley, and Edgar Allan Poe. It uses classic Gothic conventions \u2014 transformation, doubling, darkness, fog, locked rooms, and the grotesque \u2014 but relocates them from remote castles to the heart of respectable London. This urban Gothic setting makes the horror more unsettling because it is closer to the reader's own world. The fog-choked streets, the sinister back door, and the potion that alters the body all contribute to a sense that horror is not exotic or distant but domestic and inescapable.",
   ],
@@ -502,17 +502,17 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'jh-17',
-    question: "How does Stevenson anticipate Freud's theories of the unconscious mind?",
+    question: 'How can a Freudian critical lens be applied to Jekyll and Hyde?',
     type: 'multiple-choice',
     options: [
-      "He read Freud's work",
-      "Jekyll's experiment can be read as separating the id (instinct) from the superego (conscience), decades before Freud published",
-      'He does not',
+      "Stevenson had read Freud's work",
+      "Jekyll's experiment can be read retrospectively as separating the id (instinct) from the superego (conscience), though Freud's theories came decades later",
+      'It cannot be applied',
       'The connection is coincidental',
     ],
     correctIndex: 1,
     explanation:
-      "Though Freud's theories came later, Stevenson anticipates the concept of the id (Hyde's instinctual desire) separated from the superego (Jekyll's social conscience). The idea that the psyche contains warring elements was gaining traction in the 1880s, and Stevenson gave it its most memorable literary form.",
+      "Freud's theories were formulated long after Stevenson wrote (Interpretation of Dreams in 1900; the id/ego/superego model in the 1920s), so the novella does not consciously 'anticipate' him. However, a Freudian lens can be applied retrospectively: Hyde maps onto the id (instinctual desire) and Jekyll's public persona onto the superego (social conscience). Examiners reward this as a critical reading, not as authorial intention.",
     topic: 'Context',
     difficulty: 'grade-9',
   },

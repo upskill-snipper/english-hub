@@ -20,16 +20,17 @@ export const metadata: Metadata = {
 const data: TextGuideData = {
   title: 'An Inspector Calls',
   author: 'J.B. Priestley',
-  year: '1945',
+  year: 'Written 1944–45; first performed Moscow 1945; London premiere 1 Oct 1946',
   category: 'Play',
   badge: 'AQA / Edexcel / OCR / Eduqas / Edexcel IGCSE',
   intro:
-    'J.B. Priestley wrote An Inspector Calls in 1945 but deliberately set it in 1912 — before two world wars, the sinking of the Titanic and the creation of the welfare state. The play uses a mysterious police inspector to expose how every member of the wealthy Birling family has contributed to the death of a young working-class woman. It is at once a detective thriller, a morality play and a socialist argument for collective responsibility.',
+    'J.B. Priestley wrote An Inspector Calls in 1944–1945 but deliberately set it in spring 1912 — before the sinking of the Titanic (April 1912), the First World War, and the creation of the welfare state. The play uses a mysterious police inspector to expose how every member of the wealthy Birling family has contributed to the death of a young working-class woman. It is at once a detective thriller, a morality play and a socialist argument for collective responsibility.',
   quickInfo: {
     genre: 'Well-made play / Morality play',
-    setting: 'The Birlings\u2019 dining room, Brumley, 1912',
-    length: 'Three-act play (single evening)',
-    published: '1945 (premiered in Moscow)',
+    setting:
+      'The Birlings\u2019 dining room, Brumley (fictional North Midlands industrial town), spring 1912',
+    length: 'Three-act play (continuous action, single evening)',
+    published: 'Premiered Moscow & Leningrad 1945; London premiere 1 October 1946, New Theatre',
   },
   plotSummary: [
     'The play opens on the Birling family celebrating the engagement of Sheila Birling to Gerald Croft, the son of a rival industrialist. Arthur Birling delivers a confident after-dinner speech praising capitalism and dismissing the idea that people should look after one another. He predicts the Titanic is unsinkable and that war is impossible. The doorbell rings, and Inspector Goole arrives to investigate the death of a young woman named Eva Smith, who has killed herself by swallowing disinfectant.',
@@ -200,10 +201,10 @@ const data: TextGuideData = {
     },
     {
       quote:
-        '"One Eva Smith has gone \u2014 but there are millions of Eva Smiths and John Smiths still left with us."',
+        '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
       who: 'Inspector Goole — Act 3',
       analysis:
-        'The Inspector universalises Eva\u2019s suffering, turning a single case into a political argument about systemic injustice.',
+        'The Inspector universalises Eva\u2019s suffering, turning a single case into a political argument about systemic injustice. The tripled "millions" insists on scale: this is not exceptional suffering but structural.',
     },
     {
       quote: '"You began to learn something. And now you\u2019ve stopped."',

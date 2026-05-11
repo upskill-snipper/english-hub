@@ -1,14 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  BookOpen,
-  Lightbulb,
-  Quote,
-  Sparkles,
-  Filter,
-} from 'lucide-react'
+import { ArrowLeft, BookOpen, Lightbulb, Quote, Sparkles, Filter } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
 
@@ -41,7 +34,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The Titanic sank in April 1912, killing over 1,500 people. Birling\u2019s prediction is wrong within weeks of the play\u2019s setting, making his judgment unreliable from the opening scene.',
     themes: ['Capitalism vs Socialism', 'Social Responsibility'],
-    examTip: 'Use this as your opening quote when writing about dramatic irony or Birling\u2019s characterisation. It immediately establishes that Priestley wants the audience to distrust Birling.',
+    examTip:
+      'Use this as your opening quote when writing about dramatic irony or Birling\u2019s characterisation. It immediately establishes that Priestley wants the audience to distrust Birling.',
   },
   {
     id: 2,
@@ -54,11 +48,13 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Birling articulates the laissez-faire individualism of Edwardian capitalism. Priestley, writing in 1945, presents this philosophy as the cause of two world wars and mass unemployment.',
     themes: ['Capitalism vs Socialism', 'Social Responsibility'],
-    examTip: 'Pair this directly with the Inspector\u2019s "We are members of one body" to show how Priestley structures the play as a debate between two opposing philosophies.',
+    examTip:
+      'Pair this directly with the Inspector\u2019s "We are members of one body" to show how Priestley structures the play as a debate between two opposing philosophies.',
   },
   {
     id: 3,
-    quote: '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
+    quote:
+      '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
     speaker: 'Arthur Birling',
     act: 'Act 1',
     context: 'Birling dismisses socialist thinkers before the Inspector arrives.',
@@ -67,7 +63,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Priestley himself was one of the "cranks" Birling ridicules. His Postscripts broadcasts during WWII argued for collective responsibility and reached millions of listeners.',
     themes: ['Capitalism vs Socialism'],
-    examTip: 'This quote works well in essays about Priestley\u2019s methods. The audience recognises that "everybody has to look after everybody else" is exactly the Inspector\u2019s message.',
+    examTip:
+      'This quote works well in essays about Priestley\u2019s methods. The audience recognises that "everybody has to look after everybody else" is exactly the Inspector\u2019s message.',
   },
   {
     id: 4,
@@ -80,20 +77,23 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Workers in Edwardian factories had minimal rights. The welfare state built after 1945 aimed to ensure that working people were treated as citizens with rights, not as disposable economic units.',
     themes: ['Class & Inequality', 'Social Responsibility', 'Gender'],
-    examTip: 'This is one of the strongest AO2 quotes in the play. Analyse the contrast between "cheap labour" and "people" to show how Priestley uses language to dramatise moral awakening.',
+    examTip:
+      'This is one of the strongest AO2 quotes in the play. Analyse the contrast between "cheap labour" and "people" to show how Priestley uses language to dramatise moral awakening.',
   },
   {
     id: 5,
     quote: '"I\u2019ll never, never do it again to anybody."',
     speaker: 'Sheila Birling',
     act: 'Act 1',
-    context: 'Sheila accepts full responsibility after learning she had Eva dismissed from Milwards.',
+    context:
+      'Sheila accepts full responsibility after learning she had Eva dismissed from Milwards.',
     ao2Analysis:
       'The repetition of "never" conveys the depth of Sheila\u2019s remorse. The promise is immediate, unconditional, and forward-looking. Priestley models the moral response he wants from his audience.',
     ao3Context:
       'Priestley\u2019s 1945 audience had just lived through a world war. He is asking them, like Sheila, to commit to never allowing the conditions that caused such suffering to return.',
     themes: ['Guilt & Morality', 'Age & Generational Change'],
-    examTip: 'Use this as evidence that Sheila is the first character to change. Contrast her immediate acceptance with her parents\u2019 refusal to learn.',
+    examTip:
+      'Use this as evidence that Sheila is the first character to change. Contrast her immediate acceptance with her parents\u2019 refusal to learn.',
   },
   {
     id: 6,
@@ -106,7 +106,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The Edwardian upper-middle class enjoyed privileges \u2014 wealth, political influence, social status \u2014 without proportional accountability. The post-war welfare state aimed to attach responsibility to power.',
     themes: ['Power & Abuse of Power', 'Social Responsibility'],
-    examTip: 'This quote immediately establishes the Inspector\u2019s moral authority. Use it to show how Priestley inverts the class hierarchy through the Inspector\u2019s language.',
+    examTip:
+      'This quote immediately establishes the Inspector\u2019s moral authority. Use it to show how Priestley inverts the class hierarchy through the Inspector\u2019s language.',
   },
   {
     id: 7,
@@ -119,7 +120,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Workers in 1912 had no legal protection against unfair dismissal. Trade unions were growing but strikes were risky. Eva\u2019s sacking for speaking up reflects the power imbalance of Edwardian labour relations.',
     themes: ['Power & Abuse of Power', 'Class & Inequality'],
-    examTip: 'Analyse the word "go" \u2014 it reduces dismissal to a casual verb, sanitising the destruction of Eva\u2019s livelihood. This is strong AO2 on how language disguises exploitation.',
+    examTip:
+      'Analyse the word "go" \u2014 it reduces dismissal to a casual verb, sanitising the destruction of Eva\u2019s livelihood. This is strong AO2 on how language disguises exploitation.',
   },
   /* ── Act 2 ──────────────────────────────────────────────────────────── */
   {
@@ -133,7 +135,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Women in 1912 had very few economic options. A working-class woman who lost her income was often forced into dependence on men. Gerald\u2019s "rescue" of Daisy replicated the patriarchal power structure it appeared to challenge.',
     themes: ['Gender', 'Class & Inequality', 'Power & Abuse of Power'],
-    examTip: 'Use this to argue that Gerald\u2019s relationship with Daisy was inherently exploitative, regardless of his intentions. The power imbalance made genuine equality impossible.',
+    examTip:
+      'Use this to argue that Gerald\u2019s relationship with Daisy was inherently exploitative, regardless of his intentions. The power imbalance made genuine equality impossible.',
   },
   {
     id: 9,
@@ -146,7 +149,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The "kept woman" was a recognised feature of Edwardian upper-class life. Men of Gerald\u2019s class routinely maintained mistresses while their social equals looked the other way.',
     themes: ['Gender', 'Class & Inequality'],
-    examTip: 'Analyse "intensely grateful" as the key phrase. Gratitude implies dependence, and dependence implies power. Gerald\u2019s description reveals more about him than about Daisy.',
+    examTip:
+      'Analyse "intensely grateful" as the key phrase. Gratitude implies dependence, and dependence implies power. Gerald\u2019s description reveals more about him than about Daisy.',
   },
   {
     id: 10,
@@ -159,7 +163,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Charitable organisations in Edwardian England were often run by upper-class women and could be instruments of class control rather than genuine aid. Sybil\u2019s committee reflects this dynamic.',
     themes: ['Class & Inequality', 'Guilt & Morality', 'Power & Abuse of Power'],
-    examTip: 'This is the shortest and most powerful quote for Sybil. Use it to argue that Priestley presents her class prejudice as so deeply embedded that she genuinely cannot see it as wrong.',
+    examTip:
+      'This is the shortest and most powerful quote for Sybil. Use it to argue that Priestley presents her class prejudice as so deeply embedded that she genuinely cannot see it as wrong.',
   },
   {
     id: 11,
@@ -172,7 +177,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Class in Edwardian England was not just economic but linguistic. The way people spoke about the working class \u2014 "that class," "these people" \u2014 reinforced their exclusion from full humanity.',
     themes: ['Class & Inequality'],
-    examTip: 'The interruption is the key feature to analyse. Discuss what Sybil might have said and why Priestley chose not to let her finish. The unsaid is as important as the said.',
+    examTip:
+      'The interruption is the key feature to analyse. Discuss what Sybil might have said and why Priestley chose not to let her finish. The unsaid is as important as the said.',
   },
   {
     id: 12,
@@ -185,7 +191,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The Edwardian moral code punished unmarried mothers but rarely the men involved. Sybil\u2019s demand for severity reflects this double standard, which Priestley exposes as hypocritical.',
     themes: ['Guilt & Morality', 'Gender', 'Class & Inequality'],
-    examTip: 'This is a perfect example of dramatic irony. Explain how the audience and Sheila can see the trap closing while Sybil walks into it with absolute confidence.',
+    examTip:
+      'This is a perfect example of dramatic irony. Explain how the audience and Sheila can see the trap closing while Sybil walks into it with absolute confidence.',
   },
   {
     id: 13,
@@ -198,11 +205,13 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The Edwardian class system allowed the wealthy to deflect blame downward. Sybil\u2019s instinct to blame the father reflects a system where responsibility always flowed away from those with power.',
     themes: ['Guilt & Morality', 'Power & Abuse of Power'],
-    examTip: 'Analyse the word "entirely" and its ironic effect. Sybil intends to condemn a stranger but ends up condemning her own son.',
+    examTip:
+      'Analyse the word "entirely" and its ironic effect. Sybil intends to condemn a stranger but ends up condemning her own son.',
   },
   {
     id: 14,
-    quote: '"She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position."',
+    quote:
+      '"She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position."',
     speaker: 'Sybil Birling',
     act: 'Act 2',
     context: 'Sybil explains why she rejected Eva\u2019s appeal at the charity committee.',
@@ -211,7 +220,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The belief that the working class lacked refined feelings was a cornerstone of Victorian and Edwardian class ideology. Priestley shows this assumption to be both cruel and self-serving.',
     themes: ['Class & Inequality', 'Gender'],
-    examTip: 'This is an excellent quote for discussing how class prejudice operates through assumptions about moral capacity. Sybil does not just deny Eva help \u2014 she denies her full humanity.',
+    examTip:
+      'This is an excellent quote for discussing how class prejudice operates through assumptions about moral capacity. Sybil does not just deny Eva help \u2014 she denies her full humanity.',
   },
   {
     id: 15,
@@ -224,7 +234,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Women in 1912 had limited economic independence and were often valued primarily for their appearance and compliance. Gerald\u2019s description reflects the gendered power dynamics of the period.',
     themes: ['Gender', 'Power & Abuse of Power'],
-    examTip: 'Note what Gerald does not describe: Eva\u2019s intelligence, her courage in leading a strike, or her moral integrity. His description reveals his values, not hers.',
+    examTip:
+      'Note what Gerald does not describe: Eva\u2019s intelligence, her courage in leading a strike, or her moral integrity. His description reveals his values, not hers.',
   },
   /* ── Act 3 ──────────────────────────────────────────────────────────── */
   {
@@ -238,7 +249,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The 1945 welfare state was built on the principle that society is collectively responsible for its members. The Inspector\u2019s speech directly endorses this political moment.',
     themes: ['Social Responsibility', 'Capitalism vs Socialism'],
-    examTip: 'This is the most important quote in the play. Always include it in essays about social responsibility. Analyse the biblical register, the tense, and the pronoun "we."',
+    examTip:
+      'This is the most important quote in the play. Always include it in essays about social responsibility. Analyse the biblical register, the tense, and the pronoun "we."',
   },
   {
     id: 17,
@@ -251,20 +263,23 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The audience knows this prophecy was fulfilled by WWI (1914\u201318) and WWII (1939\u201345). Priestley gives the Inspector the authority of historical knowledge that the 1912 characters lack.',
     themes: ['Social Responsibility', 'Capitalism vs Socialism'],
-    examTip: 'Link this directly to the 1912 setting and the 1945 audience. The audience has lived through the "fire and blood and anguish" the Inspector predicts, making his warning both retrospective and urgent.',
+    examTip:
+      'Link this directly to the 1912 setting and the 1945 audience. The audience has lived through the "fire and blood and anguish" the Inspector predicts, making his warning both retrospective and urgent.',
   },
   {
     id: 18,
-    quote: '"One Eva Smith has gone \u2014 but there are millions and millions of Eva Smiths and John Smiths still left with us."',
+    quote:
+      '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
     speaker: 'Inspector Goole',
     act: 'Act 3',
     context: 'The Inspector universalises Eva\u2019s suffering in his final speech.',
     ao2Analysis:
-      'The shift from singular "One Eva Smith" to "millions and millions" turns a personal tragedy into a systemic argument. The addition of "John Smiths" makes the point gender-inclusive. "Still left with us" insists the problem is present, not past.',
+      'The shift from singular "One Eva Smith" to the tripled "millions and millions and millions" turns a personal tragedy into a systemic argument; the rhythmic repetition forces the audience to feel the scale. The addition of "John Smiths" makes the point gender-inclusive. "Still left with us" insists the problem is present, not past.',
     ao3Context:
       'Priestley\u2019s 1945 audience knew that millions had suffered from poverty, unemployment, and war. The Inspector\u2019s speech argues that Eva\u2019s story is not exceptional but representative of systemic failure.',
     themes: ['Social Responsibility', 'Class & Inequality'],
-    examTip: 'Use this to argue that Eva is an everywoman figure. Her individual suffering represents a collective injustice that demands collective action.',
+    examTip:
+      'Use this to argue that Eva is an everywoman figure. Her individual suffering represents a collective injustice that demands collective action.',
   },
   {
     id: 19,
@@ -277,7 +292,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The post-war consensus in Britain was built on the rejection of individualism. The NHS, national insurance, and council housing all expressed the principle that "we don\u2019t live alone."',
     themes: ['Social Responsibility', 'Capitalism vs Socialism'],
-    examTip: 'Pair this with Birling\u2019s "a man has to look after himself and his own" to show the play\u2019s dialectical structure: thesis (Birling) \u2014 antithesis (Inspector).',
+    examTip:
+      'Pair this with Birling\u2019s "a man has to look after himself and his own" to show the play\u2019s dialectical structure: thesis (Birling) \u2014 antithesis (Inspector).',
   },
   {
     id: 20,
@@ -290,7 +306,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The Edwardian father was expected to be an authority figure, not an emotional support. Priestley shows how this model of masculinity fails the younger generation and contributes to family dysfunction.',
     themes: ['Age & Generational Change', 'Power & Abuse of Power'],
-    examTip: 'Use this to show that the Birling family\u2019s problems existed before the Inspector arrived. The investigation does not create dysfunction \u2014 it exposes dysfunction that was always there.',
+    examTip:
+      'Use this to show that the Birling family\u2019s problems existed before the Inspector arrived. The investigation does not create dysfunction \u2014 it exposes dysfunction that was always there.',
   },
   {
     id: 21,
@@ -303,7 +320,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Priestley addresses the audience through Sheila: the lesson of the play matters regardless of its fictional status. Art can deliver moral truth even when the "inspector" is not real.',
     themes: ['Guilt & Morality', 'Social Responsibility'],
-    examTip: 'This quote works in almost any essay on the play. It articulates Priestley\u2019s core argument: moral responsibility exists independently of legal or factual verification.',
+    examTip:
+      'This quote works in almost any essay on the play. It articulates Priestley\u2019s core argument: moral responsibility exists independently of legal or factual verification.',
   },
   {
     id: 22,
@@ -316,7 +334,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Priestley feared that the post-war moment of reform might be temporary. Sheila\u2019s accusation reflects his anxiety that society would "stop" learning and return to pre-war inequality.',
     themes: ['Age & Generational Change', 'Guilt & Morality'],
-    examTip: 'This is the key quote for generational conflict. Use it to argue that the older generation\u2019s refusal to learn is a deliberate moral choice, not mere stubbornness.',
+    examTip:
+      'This is the key quote for generational conflict. Use it to argue that the older generation\u2019s refusal to learn is a deliberate moral choice, not mere stubbornness.',
   },
   {
     id: 23,
@@ -329,11 +348,13 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The 1945 Labour landslide was driven largely by young voters and returning servicemen who rejected the old order. Birling\u2019s dismissal of the young mirrors the establishment\u2019s surprise at the election result.',
     themes: ['Age & Generational Change'],
-    examTip: 'This quote is designed to backfire. Birling intends it as an insult, but the audience recognises that the younger generation genuinely does understand something the older generation refuses to accept.',
+    examTip:
+      'This quote is designed to backfire. Birling intends it as an insult, but the audience recognises that the younger generation genuinely does understand something the older generation refuses to accept.',
   },
   {
     id: 24,
-    quote: '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
+    quote:
+      '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
     speaker: 'Arthur Birling',
     act: 'Act 3',
     context: 'Birling tries to dismiss the Inspector\u2019s message after his departure.',
@@ -342,7 +363,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The welfare state required exactly the collective responsibility Birling calls "awkward." Priestley\u2019s audience would recognise the NHS and social insurance as the practical answer to Birling\u2019s objection.',
     themes: ['Social Responsibility', 'Capitalism vs Socialism'],
-    examTip: 'Analyse the word "awkward" closely. It is a massive understatement that reveals moral emptiness. Birling cannot engage with ethics, only with inconvenience.',
+    examTip:
+      'Analyse the word "awkward" closely. It is a massive understatement that reveals moral emptiness. Birling cannot engage with ethics, only with inconvenience.',
   },
   {
     id: 25,
@@ -355,11 +377,13 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Male violence against working-class women was rarely prosecuted in 1912. Eric\u2019s class and gender gave him impunity. Priestley exposes this systemic failure by making the audience confront the reality behind the euphemism.',
     themes: ['Gender', 'Power & Abuse of Power'],
-    examTip: 'This quote is essential for essays on gender or power. Analyse the euphemism: what Eric calls "turning nasty" is sexual assault. Priestley uses Eric\u2019s language to show how violence is normalised.',
+    examTip:
+      'This quote is essential for essays on gender or power. Analyse the euphemism: what Eric calls "turning nasty" is sexual assault. Priestley uses Eric\u2019s language to show how violence is normalised.',
   },
   {
     id: 26,
-    quote: '"she didn\u2019t want me to marry her \u2026 she treated me \u2014 as if I were a kid."',
+    quote:
+      '"she didn\u2019t want me to marry her \u2026 she treated me \u2014 as if I were a kid."',
     speaker: 'Eric Birling',
     act: 'Act 3',
     context: 'Eric reveals that Eva refused his offer of marriage and saw his immaturity.',
@@ -368,20 +392,23 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'In 1912, marriage to the father would have been the "expected" solution for a pregnant unmarried woman. Eva\u2019s refusal shows a modern independence that challenges Edwardian conventions.',
     themes: ['Gender', 'Age & Generational Change'],
-    examTip: 'Use this to argue that Eva has more moral insight than any of the Birlings. She sees Eric clearly while his own family cannot.',
+    examTip:
+      'Use this to argue that Eva has more moral insight than any of the Birlings. She sees Eric clearly while his own family cannot.',
   },
   {
     id: 27,
     quote: '"I don\u2019t see much nonsense about it when a girl goes and kills herself."',
     speaker: 'Eric Birling',
     act: 'Act 3',
-    context: 'Eric challenges his father\u2019s attempt to dismiss the Inspector\u2019s visit as nonsense.',
+    context:
+      'Eric challenges his father\u2019s attempt to dismiss the Inspector\u2019s visit as nonsense.',
     ao2Analysis:
       'The blunt reference to suicide forces the family to confront the human cost. "Goes and kills herself" is deliberately stark, cutting through Birling\u2019s euphemisms. Eric\u2019s plain language serves as moral clarity against his father\u2019s evasion.',
     ao3Context:
       'Suicide carried severe social stigma in the early twentieth century and was illegal until 1961. Eric\u2019s willingness to name it directly is itself an act of moral courage within the Birling household.',
     themes: ['Guilt & Morality', 'Age & Generational Change'],
-    examTip: 'Contrast Eric\u2019s direct language here with Birling\u2019s euphemistic dismissals. The difference in register mirrors the difference in moral engagement.',
+    examTip:
+      'Contrast Eric\u2019s direct language here with Birling\u2019s euphemistic dismissals. The difference in register mirrors the difference in moral engagement.',
   },
   {
     id: 28,
@@ -394,7 +421,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'Priestley believed that theatre could change people\u2019s moral perceptions. Sheila\u2019s description of the Inspector\u2019s impact mirrors what Priestley hoped the play itself would do to its audience.',
     themes: ['Guilt & Morality', 'Age & Generational Change'],
-    examTip: 'This is excellent for discussing Priestley\u2019s dramatic methods. Sheila describes the Inspector\u2019s effect in terms that mirror the audience\u2019s own experience of watching the play.',
+    examTip:
+      'This is excellent for discussing Priestley\u2019s dramatic methods. Sheila describes the Inspector\u2019s effect in terms that mirror the audience\u2019s own experience of watching the play.',
   },
   {
     id: 29,
@@ -407,7 +435,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The engagement ring represents the Birling-Croft business alliance as much as a personal relationship. Gerald\u2019s desire to restore it reflects the capitalist class\u2019s instinct to protect its interests after a crisis.',
     themes: ['Age & Generational Change', 'Capitalism vs Socialism'],
-    examTip: 'Use the ring as a symbol. In Act 1 it represents the merger of two capitalist families; in Act 3 Sheila\u2019s refusal to take it back represents her rejection of those values.',
+    examTip:
+      'Use the ring as a symbol. In Act 1 it represents the merger of two capitalist families; in Act 3 Sheila\u2019s refusal to take it back represents her rejection of those values.',
   },
   {
     id: 30,
@@ -420,7 +449,8 @@ const QUOTES: QuoteEntry[] = [
     ao3Context:
       'The debate between economic "freedom" (free markets, minimal regulation) and social freedom (workers\u2019 rights, welfare) was central to British politics in both 1912 and 1945. Priestley firmly sides with social freedom.',
     themes: ['Capitalism vs Socialism', 'Power & Abuse of Power'],
-    examTip: 'Analyse the irony of "free country." Freedom for Birling means freedom to exploit. For Eva, it means freedom to starve. This contrast is a powerful way to discuss Priestley\u2019s critique of capitalism.',
+    examTip:
+      'Analyse the irony of "free country." Freedom for Birling means freedom to exploit. For Eva, it means freedom to starve. This contrast is a powerful way to discuss Priestley\u2019s critique of capitalism.',
   },
 ]
 
@@ -456,11 +486,17 @@ export default function KeyQuotesPage() {
     <div className="min-h-screen bg-cream-50 font-serif">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "An Inspector Calls", url: "https://theenglishhub.app/revision/texts/an-inspector-calls" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/an-inspector-calls/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'An Inspector Calls',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls/key-quotes',
+          },
         ]}
       />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
@@ -469,13 +505,13 @@ export default function KeyQuotesPage() {
 
         {/* Hero */}
         <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-teal-300/[0.06] p-6 sm:p-8 lg:p-10">
-          <a
+          <Link
             href="/revision/texts/an-inspector-calls"
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
           >
             <ArrowLeft className="size-3.5" />
             Back to An Inspector Calls
-          </a>
+          </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
@@ -491,13 +527,10 @@ export default function KeyQuotesPage() {
           <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
             An Inspector Calls &mdash; Key Quotes
           </h1>
-          <p className="mt-2 text-lg text-ink-500">
-            by J.B. Priestley &mdash; 1945
-          </p>
+          <p className="mt-2 text-lg text-ink-500">by J.B. Priestley &mdash; 1945</p>
           <p className="mt-4 max-w-2xl text-ink-500">
-            30 essential quotations with full AO2 language analysis, AO3 context
-            links, and exam technique tips. Filter by act or theme to find the
-            quotes you need.
+            30 essential quotations with full AO2 language analysis, AO3 context links, and exam
+            technique tips. Filter by act or theme to find the quotes you need.
           </p>
         </section>
 
@@ -509,10 +542,9 @@ export default function KeyQuotesPage() {
               <p className="mb-1 font-bold text-ink-800">Exam technique</p>
               <p>
                 You do not need to memorise every quote. Choose{' '}
-                <strong>3&ndash;4 versatile quotes per character</strong> that you
-                can use across multiple themes and question types. For each, learn
-                the quote, the speaker, the act, and one strong AO2 analytical
-                point.
+                <strong>3&ndash;4 versatile quotes per character</strong> that you can use across
+                multiple themes and question types. For each, learn the quote, the speaker, the act,
+                and one strong AO2 analytical point.
               </p>
             </div>
           </div>
@@ -528,7 +560,10 @@ export default function KeyQuotesPage() {
           </div>
           <div className="flex flex-wrap gap-2">
             <button
-              onClick={() => { setFilterAct(null); setFilterTheme(null) }}
+              onClick={() => {
+                setFilterAct(null)
+                setFilterTheme(null)
+              }}
               className={`rounded-lg px-3 py-1.5 text-xs font-medium transition ${
                 !filterAct && !filterTheme
                   ? 'bg-teal-600 text-white'
@@ -540,7 +575,10 @@ export default function KeyQuotesPage() {
             {ACTS.map((act) => (
               <button
                 key={act}
-                onClick={() => { setFilterAct(filterAct === act ? null : act); setFilterTheme(null) }}
+                onClick={() => {
+                  setFilterAct(filterAct === act ? null : act)
+                  setFilterTheme(null)
+                }}
                 className={`rounded-lg px-3 py-1.5 text-xs font-medium transition ${
                   filterAct === act
                     ? 'bg-teal-600 text-white'
@@ -555,7 +593,10 @@ export default function KeyQuotesPage() {
             {THEME_LIST.map((theme) => (
               <button
                 key={theme}
-                onClick={() => { setFilterTheme(filterTheme === theme ? null : theme); setFilterAct(null) }}
+                onClick={() => {
+                  setFilterTheme(filterTheme === theme ? null : theme)
+                  setFilterAct(null)
+                }}
                 className={`rounded-lg px-3 py-1.5 text-xs font-medium transition ${
                   filterTheme === theme
                     ? 'bg-clay-500 text-white'
@@ -576,9 +617,7 @@ export default function KeyQuotesPage() {
               className="rounded-xl border border-teal-400/15 bg-cream-100/50 p-5"
             >
               {/* Quote */}
-              <p className="text-lg font-medium italic text-ink-800">
-                {q.quote}
-              </p>
+              <p className="text-lg font-medium italic text-ink-800">{q.quote}</p>
               <div className="mt-2 flex flex-wrap items-center gap-2">
                 <span className="text-xs font-semibold uppercase tracking-wider text-teal-700">
                   {q.speaker}
@@ -591,12 +630,8 @@ export default function KeyQuotesPage() {
 
               {/* Context */}
               <div className="mt-3">
-                <p className="text-xs font-bold uppercase tracking-wider text-ink-400">
-                  Context
-                </p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-600">
-                  {q.context}
-                </p>
+                <p className="text-xs font-bold uppercase tracking-wider text-ink-400">Context</p>
+                <p className="mt-1 text-sm leading-relaxed text-ink-600">{q.context}</p>
               </div>
 
               {/* AO2 */}
@@ -604,9 +639,7 @@ export default function KeyQuotesPage() {
                 <p className="text-xs font-bold uppercase tracking-wider text-teal-600">
                   AO2 &mdash; Language Analysis
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-600">
-                  {q.ao2Analysis}
-                </p>
+                <p className="mt-1 text-sm leading-relaxed text-ink-600">{q.ao2Analysis}</p>
               </div>
 
               {/* AO3 */}
@@ -614,9 +647,7 @@ export default function KeyQuotesPage() {
                 <p className="text-xs font-bold uppercase tracking-wider text-clay-500">
                   AO3 &mdash; Context Link
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-600">
-                  {q.ao3Context}
-                </p>
+                <p className="mt-1 text-sm leading-relaxed text-ink-600">{q.ao3Context}</p>
               </div>
 
               {/* Themes */}
@@ -655,40 +686,37 @@ export default function KeyQuotesPage() {
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">
-            Continue studying
-          </h3>
+          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
           <p className="mt-1 text-sm text-ink-500">
             Explore characters, themes, and context for An Inspector Calls.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <a
+            <Link
               href="/revision/texts/an-inspector-calls/characters"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
               Characters
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/an-inspector-calls/themes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Themes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/an-inspector-calls/context"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Context
-            </a>
+            </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
-          Short quotations (&le;15 words each) reproduced under the fair dealing
-          provision of the Copyright, Designs and Patents Act 1988 for the purpose
-          of criticism, review and educational study.{' '}
-          <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
+          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
+          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
+          educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
           available from your school or local library.
         </p>
       </div>

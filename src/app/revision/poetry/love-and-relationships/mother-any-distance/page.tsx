@@ -155,7 +155,32 @@ const motherAnyDistancePoem: PoemData = {
       ],
     },
     {
-      text: 'I reach towards a hatch that opens on an endless sky',
+      text: 'Two floors below your fingertips still pinch',
+      annotations: [
+        {
+          type: 'Precision',
+          note: 'The "two floors below" emphasises the growing physical distance \u2014 the mother is far below, anchoring the tape. "Pinch" suggests careful holding and reluctance: she is unwilling to let the tape slip out of her grip.',
+          color: '#ec4899',
+        },
+      ],
+    },
+    {
+      text: 'the last one-hundredth of an inch... I reach',
+      annotations: [
+        {
+          type: 'Reluctance to release',
+          note: 'The precise measurement "one-hundredth of an inch" shows how little connection remains \u2014 yet the mother still holds on. The image captures the painful, tender reluctance of letting go.',
+          color: '#ef4444',
+        },
+        {
+          type: 'Ellipsis',
+          note: 'The three dots create a pause, a held breath, before the speaker stretches further. The ellipsis embodies the suspended moment between holding on and letting go.',
+          color: '#8b5cf6',
+        },
+      ],
+    },
+    {
+      text: 'towards a hatch that opens on an endless sky',
       annotations: [
         {
           type: 'Imagery',
@@ -199,8 +224,8 @@ const motherAnyDistancePoem: PoemData = {
     'Stanza 3 (lines 9\u201312): The speaker reaches the top of the house and looks out through a hatch at "an endless sky". The poem ends with the unresolved phrase "to fall or fly" \u2014 independence could bring triumph or disaster, and the speaker stands on the threshold between the two.',
 
   formAndStructure:
-    'Form: A loose sonnet \u2014 the poem has approximately 14 lines, echoing the traditional love sonnet form. However, its irregular line lengths and lack of a strict rhyme scheme reflect the messy, imperfect reality of this parent-child relationship.\n\n' +
-    'Stanza structure: Three stanzas of unequal length (4, 4, 4 lines with the final line separated). The stanzas shrink slightly, mirroring the tapering of the measuring tape and the gradual separation.\n\n' +
+    'Form: A loose, extended sonnet \u2014 the poem has 15 lines (one more than the traditional 14-line sonnet), echoing the love-sonnet tradition while exceeding it. Its irregular line lengths and lack of a strict rhyme scheme reflect the messy, imperfect reality of this parent-child relationship.\n\n' +
+    'Stanza structure: Three stanzas of unequal length (roughly 4, 8 and 3 lines), with the final line "to fall or fly" set apart for emphasis. The asymmetry mirrors the way the measuring tape stretches and the gradual separation it enacts.\n\n' +
     'Enjambment: Used extensively throughout, especially "then leaving / up the stairs" and "recording / length". Lines run into each other just as the tape runs through the house, creating a sense of continuous movement away from the mother.\n\n' +
     'Caesura: "Anchor. Kite." uses dramatic full stops mid-line to create two punchy, contrasting images that encapsulate the poem\'s central tension.\n\n' +
     'Rhyme: Occasional half-rhymes ("doors/floors", "sky/fly") create a sense of almost-connection, reflecting the bond that is stretching but not yet broken.\n\n' +

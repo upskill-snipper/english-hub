@@ -56,9 +56,9 @@ const CONTEXT_SECTIONS: ContextSection[] = [
   {
     title: 'Priestley\u2019s Socialism and the Beveridge Report',
     body: [
-      'J.B. Priestley (1894\u20131984) was a committed democratic socialist throughout his adult life. His political views were shaped by three formative experiences: fighting in the trenches of WWI, witnessing the mass unemployment and poverty of the 1930s during his English Journey (1934), and broadcasting his Postscripts on BBC radio during WWII.',
-      'The Postscripts, broadcast on Sunday evenings after the news from June to October 1940, reached an estimated 16 million listeners — a third of the adult population. Priestley argued that Britain was fighting not just against Nazism but for a fairer society at home. He called for the end of the class system, the creation of a welfare state, and the rejection of the selfish individualism that had produced the Depression. The broadcasts were so popular, and so politically effective, that they were eventually taken off the air under pressure from the Conservative Party.',
-      'The Beveridge Report (1942) proposed a comprehensive welfare state to fight the "five giants" of Want, Disease, Ignorance, Squalor, and Idleness. Published during the war, it became a bestseller and generated enormous public enthusiasm for post-war reform. Priestley was a vocal supporter. An Inspector Calls, written in 1945, is the dramatic expression of the same argument: that British society must take collective responsibility for its members.',
+      'J.B. Priestley (1894\u20131984) was a committed democratic socialist throughout his adult life. His political views were shaped by three formative experiences: fighting in the trenches of WWI as an infantryman in the Duke of Wellington\u2019s Regiment (he was wounded by a trench mortar in 1916 and later gassed), witnessing the mass unemployment and poverty of the 1930s during his English Journey (1934), and broadcasting his Postscripts on BBC radio during WWII. In 1942 he co-founded the Common Wealth Party with Sir Richard Acland, a small left-wing party that argued for common ownership and a more ethical politics.',
+      'The Postscripts, broadcast on BBC radio on Sunday evenings after the nine o’clock news from June to October 1940, reached an estimated 16 million listeners — roughly a third of the adult population. Priestley argued that Britain was fighting not just against Nazism but for a fairer society at home. He called for an end to the class system, the creation of a welfare state, and the rejection of the selfish individualism that had produced the Depression. The first series was dropped in October 1940 after complaints from inside government; a brief second run in 1941 was also cut short.',
+      'The Beveridge Report (Social Insurance and Allied Services), authored by Sir William Beveridge and published in November 1942, proposed a comprehensive welfare state to fight the "five giants" of Want, Disease, Ignorance, Squalor, and Idleness. It sold over 600,000 copies and generated enormous public enthusiasm for post-war reform. Priestley was a vocal supporter. An Inspector Calls, written in the winter of 1944–1945, is the dramatic expression of the same argument: that British society must take collective responsibility for its members.',
     ],
     keyPoint:
       'Priestley did not write An Inspector Calls as a neutral exploration of ideas. He wrote it as an argument for socialism, the welfare state, and the political programme of the 1945 Labour government. The Inspector is Priestley\u2019s mouthpiece.',
@@ -108,13 +108,38 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     body: [
       'The general election of July 1945 produced one of the most dramatic results in British political history. Despite Winston Churchill\u2019s enormous popularity as a war leader, the Labour Party under Clement Attlee won a landslide victory with 393 seats to the Conservatives\u2019 164. The swing was driven by a widespread desire for social change: voters did not want to return to the poverty, unemployment, and inequality of the pre-war years.',
       'Priestley\u2019s influence on this political moment should not be underestimated. His Postscripts broadcasts had reached millions and articulated the case for a post-war welfare state in accessible, emotional terms. He argued that the collective sacrifice of the war years had earned the British people the right to a fairer society. His plays, including An Inspector Calls, translated these political arguments into dramatic form.',
-      'The play was written in the final weeks of the war and first performed in Moscow in 1945 (London productions followed in 1946). Priestley\u2019s timing was deliberate: the play is a contribution to the political argument that was being settled at the ballot box. The Inspector\u2019s final speech is not a general moral plea but a specific political endorsement of the Labour programme.',
+      'The play was written in the winter of 1944\u20131945 and, because no London theatre was available, was first performed in the Soviet Union in 1945 \u2014 in simultaneous productions at the Kamerny Theatre in Moscow (directed by Aleksandr Tairov) and the Leningrad Theatre Comedy. The London premiere followed at the New Theatre (now the No\u00ebl Coward Theatre) on 1 October 1946, directed by Basil Dean. Priestley\u2019s timing was deliberate: the play is a contribution to the political argument that was being settled at the ballot box. The Inspector\u2019s final speech is not a general moral plea but a specific political endorsement of the Labour programme.',
       'Understanding this context transforms the play from a detective story into a political intervention. Every dramatic choice Priestley makes — the 1912 setting, the dramatic irony, the generational split, the cyclical ending — serves his argument that Britain must embrace collective responsibility or face the consequences.',
     ],
     keyPoint:
       'An Inspector Calls is not politically neutral. It was written to support the Labour government\u2019s programme of welfare reform and to warn against a return to Edwardian-era individualism.',
     examLink:
       'The 1945 election result is the single most important piece of context for understanding Priestley\u2019s purpose. Mention it in your conclusion to show that the play was designed to shape political attitudes, not just tell a story.',
+  },
+  {
+    title: 'Priestley and Time: J.W. Dunne\u2019s Influence',
+    body: [
+      'Priestley was deeply interested in theories of time, particularly those of the philosopher J.W. Dunne, whose books An Experiment with Time (1927) and The Serial Universe (1934) argued that past, present and future coexist and can be glimpsed in dreams. Dunne\u2019s ideas shaped Priestley\u2019s "Time Plays" of the 1930s and 1940s \u2014 Dangerous Corner (1932), Time and the Conways (1937), I Have Been Here Before (1937), and An Inspector Calls itself.',
+      'The cyclical ending of An Inspector Calls \u2014 the family is about to be questioned again about a real suicide just after they have congratulated themselves on escaping \u2014 has been read in Dunnean terms: the Inspector has glimpsed the future, and the Birlings are being given a second chance to learn before that future arrives. Read this way, the Inspector becomes a figure of moral time-travel rather than (or as well as) a supernatural spirit or police officer.',
+      'Some critics also link the Inspector to the medieval morality-play tradition, in which an allegorical figure (Death, Conscience, or God) arrives to test the soul. Priestley adapts this older form into a modern, political theatre that asks the audience to confront its own moral position before history forces it to.',
+    ],
+    keyPoint:
+      'The Inspector\u2019s identity is deliberately unresolvable. He works simultaneously as a police inspector, a Dunne-style time visitor with foreknowledge of the war, a morality-play conscience figure, and Priestley\u2019s socialist mouthpiece. Different readings reinforce, rather than compete with, his function.',
+    examLink:
+      'A brief mention of Dunne\u2019s time theory, or of the morality-play tradition, can lift a top-grade answer. Use it to argue that Priestley deliberately makes the Inspector ambiguous so that the audience cannot dismiss the message by discrediting the messenger.',
+  },
+  {
+    title: 'Critical Perspectives: Marxist, Feminist, Morality-Play',
+    body: [
+      'Marxist readings treat the Inspector as Priestley\u2019s mouthpiece, the Birlings as representatives of the bourgeoisie, and Eva as the exploited proletariat. On this reading the play stages a class trial: capitalism (Birling) is the accused, the Inspector is prosecutor, and the audience is jury. The cyclical ending suggests that capitalism cannot be reformed from within \u2014 Arthur and Sybil will not change, so change must come from below or from the next generation.',
+      'Feminist readings emphasise how Eva is silenced and objectified. She has no voice on stage; her body is named, described and exploited by every man she meets; even Sybil, a woman, polices the patriarchal moral code against her. Sheila\u2019s arc \u2014 returning the engagement ring, refusing male authority \u2014 has been read as a movement toward female autonomy, though some feminist critics note that Priestley still routes the political argument through male voices (Birling and the Inspector).',
+      'Morality-play readings see the Inspector as a modern Everyman figure \u2014 Conscience, Death, or even a Christ-figure arriving to judge sinners. The biblical register ("one body" echoes 1 Corinthians 12) supports this reading, as does the Inspector\u2019s name pun on "ghoul" and the play\u2019s allegorical clarity (each Birling embodies a different deadly sin against the poor: greed, vanity, lust, snobbery, violence).',
+      'Priestley also borrowed from the European avant-garde: the Italian playwright Luigi Pirandello\u2019s Six Characters in Search of an Author (1921) anticipates the way Priestley blurs the line between dramatic illusion and uncomfortable reality, especially in the play\u2019s self-aware ending.',
+    ],
+    keyPoint:
+      'The play sustains multiple critical readings because Priestley designed it to work on several levels at once: as detective thriller, political tract, morality play and metaphysical puzzle. Strong essays signal awareness of this layering rather than reducing it to a single message.',
+    examLink:
+      'You do not need to name a critical school by label, but referencing competing readings (the Inspector as policeman vs. ghost vs. conscience) demonstrates the kind of conceptualised response examiners reward at the top bands.',
   },
 ]
 
@@ -129,21 +154,88 @@ type TimelineEvent = {
 }
 
 const TIMELINE: TimelineEvent[] = [
-  { year: '1903', event: 'WSPU founded by Emmeline Pankhurst', relevance: 'Women\u2019s suffrage movement intensifying as Eva lives' },
-  { year: '1912', event: 'The play is set', relevance: 'Edwardian confidence, rigid class system, no welfare state' },
-  { year: 'Apr 1912', event: 'RMS Titanic sinks', relevance: 'Birling\u2019s "unsinkable" prediction proven catastrophically wrong' },
-  { year: '1914\u201318', event: 'World War One', relevance: 'Birling\u2019s "no chance of war" prediction destroyed; 17 million dead' },
-  { year: '1918', event: 'Representation of the People Act', relevance: 'Some women gain the vote; beginning of democratic expansion' },
-  { year: '1926', event: 'General Strike', relevance: 'Workers challenge the capitalist system Birling defends' },
+  {
+    year: '1903',
+    event: 'WSPU founded by Emmeline Pankhurst',
+    relevance: 'Women\u2019s suffrage movement intensifying as Eva lives',
+  },
+  {
+    year: '1912',
+    event: 'The play is set',
+    relevance: 'Edwardian confidence, rigid class system, no welfare state',
+  },
+  {
+    year: 'Apr 1912',
+    event: 'RMS Titanic sinks',
+    relevance: 'Birling\u2019s "unsinkable" prediction proven catastrophically wrong',
+  },
+  {
+    year: '1914\u201318',
+    event: 'World War One',
+    relevance: 'Birling\u2019s "no chance of war" prediction destroyed; 17 million dead',
+  },
+  {
+    year: '1918',
+    event: 'Representation of the People Act',
+    relevance: 'Some women gain the vote; beginning of democratic expansion',
+  },
+  {
+    year: '1926',
+    event: 'General Strike',
+    relevance: 'Workers challenge the capitalist system Birling defends',
+  },
   { year: '1928', event: 'Equal Franchise Act', relevance: 'All women over 21 gain the vote' },
-  { year: '1930s', event: 'Great Depression', relevance: 'Mass unemployment proves Birling\u2019s capitalism has failed' },
-  { year: '1934', event: 'Priestley\u2019s English Journey', relevance: 'Documents poverty and inequality; shapes Priestley\u2019s socialism' },
-  { year: '1939\u201345', event: 'World War Two', relevance: 'Collective sacrifice strengthens the case for the welfare state' },
-  { year: '1940', event: 'Priestley\u2019s Postscripts broadcasts', relevance: '16 million listeners hear the case for post-war reform' },
-  { year: '1942', event: 'Beveridge Report published', relevance: 'Blueprint for the welfare state; addresses "five giants"' },
-  { year: '1945', event: 'Play written; Labour wins landslide', relevance: 'The political moment the play was designed to support' },
-  { year: '1946', event: 'London premiere of An Inspector Calls', relevance: 'The welfare state is being built as the audience watches' },
-  { year: '1948', event: 'NHS founded', relevance: 'The ultimate expression of "we are members of one body"' },
+  {
+    year: '1930s',
+    event: 'Great Depression',
+    relevance: 'Mass unemployment proves Birling\u2019s capitalism has failed',
+  },
+  {
+    year: '1934',
+    event: 'Priestley\u2019s English Journey',
+    relevance: 'Documents poverty and inequality; shapes Priestley\u2019s socialism',
+  },
+  {
+    year: '1939\u201345',
+    event: 'World War Two',
+    relevance: 'Collective sacrifice strengthens the case for the welfare state',
+  },
+  {
+    year: '1940',
+    event: 'Priestley\u2019s Postscripts broadcasts',
+    relevance: '16 million listeners hear the case for post-war reform',
+  },
+  {
+    year: '1942',
+    event: 'Priestley co-founds the Common Wealth Party with Sir Richard Acland',
+    relevance: 'Priestley moves from radio commentator to active socialist politics',
+  },
+  {
+    year: 'Nov 1942',
+    event: 'Beveridge Report published',
+    relevance:
+      'Blueprint for the welfare state; addresses the "five giants"; sells 600,000+ copies',
+  },
+  {
+    year: '1944–45',
+    event: 'An Inspector Calls written',
+    relevance: 'Composed in the closing months of WWII as Britain debates post-war reform',
+  },
+  {
+    year: '1945',
+    event: 'Soviet premieres (Moscow & Leningrad); Labour wins landslide July',
+    relevance: 'Play first staged at the Kamerny Theatre, Moscow; Attlee defeats Churchill',
+  },
+  {
+    year: '1 Oct 1946',
+    event: 'London premiere at the New Theatre',
+    relevance: 'The welfare state is being built as the audience watches; directed by Basil Dean',
+  },
+  {
+    year: '1948',
+    event: 'NHS founded',
+    relevance: 'The ultimate expression of "we are members of one body"',
+  },
 ]
 
 /* ────────────────────────────────────────────────────────────────────── */
@@ -155,11 +247,17 @@ export default function ContextPage() {
     <div className="min-h-screen bg-cream-50 font-serif">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "An Inspector Calls", url: "https://theenglishhub.app/revision/texts/an-inspector-calls" },
-          { name: "Context", url: "https://theenglishhub.app/revision/texts/an-inspector-calls/context" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'An Inspector Calls',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
+          },
+          {
+            name: 'Context',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls/context',
+          },
         ]}
       />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
@@ -168,13 +266,13 @@ export default function ContextPage() {
 
         {/* Hero */}
         <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-clay-200/[0.06] p-6 sm:p-8 lg:p-10">
-          <a
+          <Link
             href="/revision/texts/an-inspector-calls"
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
           >
             <ArrowLeft className="size-3.5" />
             Back to An Inspector Calls
-          </a>
+          </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-clay-300/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
@@ -190,14 +288,11 @@ export default function ContextPage() {
           <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
             An Inspector Calls &mdash; Context
           </h1>
-          <p className="mt-2 text-lg text-ink-500">
-            by J.B. Priestley &mdash; 1945
-          </p>
+          <p className="mt-2 text-lg text-ink-500">by J.B. Priestley &mdash; 1945</p>
           <p className="mt-4 max-w-2xl text-ink-500">
-            Historical and social context for GCSE literature. Covers the 1912
-            setting, 1945 writing date, Priestley&rsquo;s socialism, the welfare
-            state, the class system, women&rsquo;s rights, and the Labour
-            landslide.
+            Historical and social context for GCSE literature. Covers the 1912 setting, 1945 writing
+            date, Priestley&rsquo;s socialism, the welfare state, the class system, women&rsquo;s
+            rights, and the Labour landslide.
           </p>
         </section>
 
@@ -208,12 +303,11 @@ export default function ContextPage() {
             <div className="text-sm text-ink-600">
               <p className="mb-1 font-bold text-ink-800">AO3 — What examiners want</p>
               <p>
-                AO3 rewards you for showing how <strong>context shapes
-                meaning</strong>. Do not simply list historical facts — explain
-                how the 1912 setting and 1945 writing date affect the
-                audience&rsquo;s response to the play. The best AO3 answers
-                explain <em>why</em> Priestley made specific choices, not just{' '}
-                <em>when</em> things happened.
+                AO3 rewards you for showing how <strong>context shapes meaning</strong>. Do not
+                simply list historical facts — explain how the 1912 setting and 1945 writing date
+                affect the audience&rsquo;s response to the play. The best AO3 answers explain{' '}
+                <em>why</em> Priestley made specific choices, not just <em>when</em> things
+                happened.
               </p>
             </div>
           </div>
@@ -223,9 +317,7 @@ export default function ContextPage() {
         <section className="mt-10">
           <div className="flex items-center gap-2 mb-4">
             <Clock className="size-5 text-teal-600" />
-            <h2 className="font-serif text-2xl font-bold text-ink-900">
-              Key Timeline
-            </h2>
+            <h2 className="font-serif text-2xl font-bold text-ink-900">Key Timeline</h2>
           </div>
           <div className="relative ml-4 border-l-2 border-teal-400/20 pl-6 space-y-4">
             {TIMELINE.map((item, i) => (
@@ -250,9 +342,7 @@ export default function ContextPage() {
               <div className="flex size-10 items-center justify-center rounded-xl bg-clay-300/10">
                 <BookOpen className="size-5 text-clay-600" />
               </div>
-              <h2 className="font-serif text-2xl font-bold text-ink-900">
-                {section.title}
-              </h2>
+              <h2 className="font-serif text-2xl font-bold text-ink-900">{section.title}</h2>
             </div>
 
             {/* Body paragraphs */}
@@ -269,9 +359,7 @@ export default function ContextPage() {
               <p className="text-xs font-bold uppercase tracking-wider text-teal-700 mb-1">
                 Key Point
               </p>
-              <p className="text-sm leading-relaxed text-ink-700 font-medium">
-                {section.keyPoint}
-              </p>
+              <p className="text-sm leading-relaxed text-ink-700 font-medium">{section.keyPoint}</p>
             </div>
 
             {/* Exam link */}
@@ -282,17 +370,13 @@ export default function ContextPage() {
                   <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
                     Using This in Your Essay
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">
-                    {section.examLink}
-                  </p>
+                  <p className="text-sm leading-relaxed text-ink-600">{section.examLink}</p>
                 </div>
               </div>
             </div>
 
             {/* Divider */}
-            {idx < CONTEXT_SECTIONS.length - 1 && (
-              <div className="mt-10 border-t border-ink-100" />
-            )}
+            {idx < CONTEXT_SECTIONS.length - 1 && <div className="mt-10 border-t border-ink-100" />}
           </section>
         ))}
 
@@ -319,33 +403,55 @@ export default function ContextPage() {
               <tbody className="divide-y divide-ink-100/60">
                 <tr className="bg-cream-50">
                   <td className="px-4 py-3 font-medium text-ink-700">Voting rights</td>
-                  <td className="px-4 py-3 text-ink-600">No women could vote; limited male suffrage</td>
+                  <td className="px-4 py-3 text-ink-600">
+                    No women could vote; limited male suffrage
+                  </td>
                   <td className="px-4 py-3 text-ink-600">Universal adult suffrage since 1928</td>
                 </tr>
                 <tr className="bg-cream-100/40">
                   <td className="px-4 py-3 font-medium text-ink-700">Welfare</td>
-                  <td className="px-4 py-3 text-ink-600">No welfare state; charity-based poor relief</td>
-                  <td className="px-4 py-3 text-ink-600">NHS, national insurance, council housing being built</td>
+                  <td className="px-4 py-3 text-ink-600">
+                    No welfare state; charity-based poor relief
+                  </td>
+                  <td className="px-4 py-3 text-ink-600">
+                    NHS, national insurance, council housing being built
+                  </td>
                 </tr>
                 <tr className="bg-cream-50">
                   <td className="px-4 py-3 font-medium text-ink-700">Class system</td>
-                  <td className="px-4 py-3 text-ink-600">Rigid hierarchy; workers had minimal rights</td>
-                  <td className="px-4 py-3 text-ink-600">Labour government; class barriers being challenged</td>
+                  <td className="px-4 py-3 text-ink-600">
+                    Rigid hierarchy; workers had minimal rights
+                  </td>
+                  <td className="px-4 py-3 text-ink-600">
+                    Labour government; class barriers being challenged
+                  </td>
                 </tr>
                 <tr className="bg-cream-100/40">
                   <td className="px-4 py-3 font-medium text-ink-700">Economy</td>
-                  <td className="px-4 py-3 text-ink-600">Laissez-faire capitalism; no minimum wage</td>
-                  <td className="px-4 py-3 text-ink-600">Nationalised industries; regulated economy</td>
+                  <td className="px-4 py-3 text-ink-600">
+                    Laissez-faire capitalism; no minimum wage
+                  </td>
+                  <td className="px-4 py-3 text-ink-600">
+                    Nationalised industries; regulated economy
+                  </td>
                 </tr>
                 <tr className="bg-cream-50">
                   <td className="px-4 py-3 font-medium text-ink-700">Women</td>
-                  <td className="px-4 py-3 text-ink-600">Suffragettes campaigning; limited employment</td>
-                  <td className="px-4 py-3 text-ink-600">Women had proved capability in wartime roles</td>
+                  <td className="px-4 py-3 text-ink-600">
+                    Suffragettes campaigning; limited employment
+                  </td>
+                  <td className="px-4 py-3 text-ink-600">
+                    Women had proved capability in wartime roles
+                  </td>
                 </tr>
                 <tr className="bg-cream-100/40">
                   <td className="px-4 py-3 font-medium text-ink-700">Birling\u2019s world</td>
-                  <td className="px-4 py-3 text-ink-600">Confident, stable, and about to be destroyed</td>
-                  <td className="px-4 py-3 text-ink-600">Already destroyed; audience sees the ruins</td>
+                  <td className="px-4 py-3 text-ink-600">
+                    Confident, stable, and about to be destroyed
+                  </td>
+                  <td className="px-4 py-3 text-ink-600">
+                    Already destroyed; audience sees the ruins
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -354,40 +460,37 @@ export default function ContextPage() {
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">
-            Continue studying
-          </h3>
+          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
           <p className="mt-1 text-sm text-ink-500">
             Explore characters, themes, and key quotes for An Inspector Calls.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <a
+            <Link
               href="/revision/texts/an-inspector-calls/characters"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
               Characters
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/an-inspector-calls/themes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Themes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/an-inspector-calls/key-quotes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Key Quotes
-            </a>
+            </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
-          Short quotations (&le;15 words each) reproduced under the fair dealing
-          provision of the Copyright, Designs and Patents Act 1988 for the purpose
-          of criticism, review and educational study.{' '}
-          <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
+          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
+          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
+          educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
           available from your school or local library.
         </p>
       </div>

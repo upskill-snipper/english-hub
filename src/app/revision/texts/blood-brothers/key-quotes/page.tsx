@@ -59,7 +59,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 4,
-    text: '"They say that if twins are separated they\'ll die."',
+    text: '"You do know what they say about twins, secretly parted, don\'t you?"',
     speaker: 'Mrs Lyons',
     context: 'Act 1 — inventing the superstition',
     analysis:
@@ -95,7 +95,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 8,
-    text: '"You can\'t play with him."',
+    text: '"You see why I don\'t want you mixing with boys like that!"',
     speaker: 'Mrs Lyons',
     context: 'Act 1 — forbidding friendship',
     analysis:
@@ -104,7 +104,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 9,
-    text: '"Already mine, already mine."',
+    text: '"Only mine until the time comes round to pay the bill."',
     speaker: 'Mrs Johnstone',
     context: 'Act 1 — trying to reclaim her child',
     analysis:
@@ -113,16 +113,16 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 10,
-    text: '"Take a letter, Miss Jones."',
+    text: '"I thought we always stuck together."',
     speaker: 'Edward',
-    context: 'Act 1 — childhood game',
+    context: 'Act 2 — confrontation with Mickey',
     analysis:
-      'Edward mimics a boss even in play. Russell shows how class roles are rehearsed in childhood, normalising inequality before it is questioned. The game foreshadows the adult power imbalance between the twins.',
+      'Edward appeals to their childhood blood-brother bond. Russell exposes how class has already broken what Edward still believes is shared: their friendship cannot bridge the gulf between Mickey’s unemployment and Edward’s privilege.',
     themes: ['Class', 'Nature vs nurture'],
   },
   {
     id: 11,
-    text: '"If you\'d been born here, what would you have been?"',
+    text: '"If you\'d been born here, you would have been just like him."',
     speaker: 'Linda',
     context: 'Act 2 — adolescence',
     analysis:
@@ -131,29 +131,29 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 12,
-    text: '"I\'m not an adolescent, I\'m nearly eighteen."',
+    text: '"I suppose you still are a kid, aren\'t y\'?"',
     speaker: 'Mickey',
     context: 'Act 2 — transition to adulthood',
     analysis:
-      'Mickey resists being patronised, but Russell shows how quickly adult reality crushes working-class youth. The line marks the boundary between childhood protection and adult vulnerability.',
+      'Mickey dismisses Edward as a kid who has been spared adult reality. Russell shows how unemployment and poverty have already aged Mickey past Edward, even though they are the same age. The line marks the boundary between childhood protection and adult vulnerability.',
     themes: ['Class', 'Violence'],
   },
   {
     id: 13,
-    text: '"Bright girl. An\' beautiful."',
+    text: '"I wanna kiss y\'."',
     speaker: 'Mickey',
-    context: 'Act 2 — on Linda',
+    context: 'Act 2 — Mickey to Linda, after prison',
     analysis:
-      'A moment of tenderness that makes the coming violence unbearable. Russell shows love persisting inside structures designed to crush it, intensifying the tragedy of what poverty destroys.',
+      "A fragmented moment of tenderness from a Mickey numbed by antidepressants. Russell shows love persisting inside structures designed to crush it, while making the cost of poverty and prison painfully visible in Mickey's broken speech.",
     themes: ['Friendship', 'Class'],
   },
   {
     id: 14,
-    text: '"I\'ll get you a job."',
+    text: '"If I was him, that\'s what I\'d do."',
     speaker: 'Edward',
-    context: 'Act 2 — offering help',
+    context: 'Act 2 — song about Mickey',
     analysis:
-      "Edward's generosity becomes patronage because the class imbalance makes equality impossible. What Edward sees as friendship, Mickey experiences as charity. Russell makes the power gap structurally inevitable.",
+      'Edward fantasises about being Mickey, oblivious to the brutality of working-class life. Russell shows how privilege misreads poverty as freedom, sharpening the dramatic irony of two identical lives lived in different worlds.',
     themes: ['Friendship', 'Class'],
   },
   {
@@ -176,11 +176,11 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 17,
-    text: '"How come you didn\'t grow up like me?"',
+    text: '"Well, how come you got everything... an\' I got nothin\'?"',
     speaker: 'Mickey',
     context: 'Act 2 — final scene',
     analysis:
-      "Mickey's cry of class rage. The play's thesis in eight words. Russell gives the political argument to the character who has suffered most, making it viscerally personal and impossible to dismiss as abstract theory.",
+      "Mickey's cry of class rage. The play's thesis distilled into ordinary speech. Russell gives the political argument to the character who has suffered most, making it viscerally personal and impossible to dismiss as abstract theory.",
     themes: ['Class', 'Nature vs nurture'],
   },
   {
@@ -203,11 +203,11 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 20,
-    text: '"Sammy, don\'t... leave him alone."',
-    speaker: 'Mickey',
-    context: 'Act 1 — childhood',
+    text: '"I\'ll get y\' after."',
+    speaker: 'Sammy',
+    context: 'Act 1 — childhood threats',
     analysis:
-      "Even as children, violence simmers in the Johnstone world. Russell uses Sammy's aggression to show that deprivation normalises conflict. Mickey's plea foreshadows his later inability to control the violence around him.",
+      "Casual childhood threats from Sammy that foreshadow adult violence. Russell uses Sammy's aggression to show that deprivation normalises conflict and that the criminal trajectory Mickey is later dragged into begins in childhood.",
     themes: ['Violence', 'Class'],
   },
 ]

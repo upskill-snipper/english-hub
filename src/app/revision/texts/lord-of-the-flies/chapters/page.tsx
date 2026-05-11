@@ -49,14 +49,14 @@ const chapters: ChapterData[] = [
     ],
     characterDevelopment: [
       'Ralph emerges as a natural, charismatic leader who values fairness and cooperation.',
-      "Piggy is immediately marginalised despite his intelligence; the boys mock his body and asthma.",
+      'Piggy is immediately marginalised despite his intelligence; the boys mock his body and asthma.',
       "Jack's choir marches in military formation, foreshadowing his authoritarian tendencies.",
     ],
     keyQuote: {
-      text: '"We\'ve got to have rules and obey them. After all, we\'re not savages."',
-      speaker: 'Jack -- Chapter 1',
+      text: '"Him with the shell. Ralph! Ralph!"',
+      speaker: 'The boys -- Chapter 1',
       analysis:
-        "Deeply ironic: Jack insists on civilised order here but will become the novel's chief agent of savagery.",
+        'The boys identify Ralph by the conch. From the first chapter, the shell confers authority -- it is the visible badge of leadership before any vote is taken.',
     },
   },
   {
@@ -65,24 +65,24 @@ const chapters: ChapterData[] = [
     keyEvents: [
       'Ralph insists on building a signal fire on the mountain to attract passing ships.',
       "A 'littlun' with a mulberry birthmark reports seeing a 'snake-thing' or beast in the jungle.",
-      'The boys use Piggy\'s glasses to light the fire, which burns out of control and consumes part of the forest.',
+      "The boys use Piggy's glasses to light the fire, which burns out of control and consumes part of the forest.",
       'The boy with the birthmark disappears and is never seen again.',
     ],
     symbolism: [
-      'The signal fire symbolises hope of rescue and the boys\' connection to civilisation.',
+      "The signal fire symbolises hope of rescue and the boys' connection to civilisation.",
       "Piggy's glasses represent intellect and scientific knowledge; seizing them foreshadows later theft.",
       "The uncontrolled fire is the first sign that the boys' good intentions can turn destructive.",
     ],
     characterDevelopment: [
-      "Ralph shows leadership but also naivety -- he underestimates the difficulty of maintaining order.",
+      'Ralph shows leadership but also naivety -- he underestimates the difficulty of maintaining order.',
       "Piggy is ignored when he tries to take a register, highlighting society's contempt for reason.",
       'Jack begins to assert himself, dismissing the beast fears as childish.',
     ],
     keyQuote: {
-      text: '"His specs -- use them as burning glasses!"',
+      text: '"We\'ve got to have rules and obey them. After all, we\'re not savages."',
       speaker: 'Jack -- Chapter 2',
       analysis:
-        "Jack seizes Piggy's property without consent, reducing intellect to a tool for the group's immediate desire.",
+        "Deeply ironic: Jack insists on civilised order at the second assembly, yet he will become the novel's chief agent of savagery. Golding plants the irony early.",
     },
   },
   {
@@ -91,7 +91,7 @@ const chapters: ChapterData[] = [
     keyEvents: [
       'Ralph and Simon struggle to build shelters while most boys play or swim.',
       'Jack becomes obsessed with hunting, painting his face and tracking pigs through the jungle.',
-      "Ralph and Jack argue about priorities: rescue versus meat.",
+      'Ralph and Jack argue about priorities: rescue versus meat.',
       'Simon slips away to a hidden clearing in the jungle, his private sanctuary.',
     ],
     symbolism: [
@@ -100,9 +100,9 @@ const chapters: ChapterData[] = [
       "Jack's face-paint is a mask that liberates him from civilised shame and self-consciousness.",
     ],
     characterDevelopment: [
-      "Ralph grows frustrated as the gap between plans and action widens.",
+      'Ralph grows frustrated as the gap between plans and action widens.',
       "Jack's transformation accelerates; he moves on all fours, 'dog-like,' becoming more animal than boy.",
-      "Simon is established as a solitary, almost mystical figure who helps the littluns reach fruit.",
+      'Simon is established as a solitary, almost mystical figure who helps the littluns reach fruit.',
     ],
     keyQuote: {
       text: '"He tried to convey the compulsion to track down and kill."',
@@ -128,11 +128,11 @@ const chapters: ChapterData[] = [
     characterDevelopment: [
       "Roger's sadism is introduced but still checked by memory of adult authority.",
       "Jack's first kill thrills him; he begins the ritual chant 'Kill the pig. Cut her throat. Spill her blood.'",
-      "Ralph is devastated by the missed rescue; the gap between him and Jack becomes irreparable.",
+      'Ralph is devastated by the missed rescue; the gap between him and Jack becomes irreparable.',
     ],
     keyQuote: {
       text: '"Kill the pig. Cut her throat. Spill her blood."',
-      speaker: 'Hunters\' chant -- Chapter 4',
+      speaker: "Hunters' chant -- Chapter 4",
       analysis:
         "The rhythmic, monosyllabic chant reduces killing to ritual. It will later mutate to accompany Simon's murder.",
     },
@@ -141,10 +141,10 @@ const chapters: ChapterData[] = [
     number: 5,
     title: 'Beast from Water',
     keyEvents: [
-      "Ralph calls an assembly to re-establish order, insisting on the fire, shelters and sanitation.",
+      'Ralph calls an assembly to re-establish order, insisting on the fire, shelters and sanitation.',
       "The littluns' fear of the beast dominates the meeting and cannot be reasoned away.",
       "Simon tries to explain that the beast is internal -- 'maybe it's only us' -- but is shouted down.",
-      "Jack defies the conch and leads boys away, breaking the meeting. Order collapses.",
+      'Jack defies the conch and leads boys away, breaking the meeting. Order collapses.',
     ],
     symbolism: [
       "The beast 'from water' represents the unknown terrors lurking in the boys' subconscious.",
@@ -152,9 +152,9 @@ const chapters: ChapterData[] = [
       "The conch's authority weakens for the first time as Jack ignores its rules.",
     ],
     characterDevelopment: [
-      "Ralph begins to doubt his own ability to lead and wishes for adult guidance.",
+      'Ralph begins to doubt his own ability to lead and wishes for adult guidance.',
       "Simon's insight that the beast is within humanity marks him as the novel's moral visionary.",
-      "Jack exploits fear to undermine Ralph, sensing that terror is more powerful than reason.",
+      'Jack exploits fear to undermine Ralph, sensing that terror is more powerful than reason.',
     ],
     keyQuote: {
       text: '"Maybe there is a beast... maybe it\'s only us."',
@@ -168,9 +168,9 @@ const chapters: ChapterData[] = [
     title: 'Beast from Air',
     keyEvents: [
       'A dead parachutist lands on the mountain during the night, his body moving in the wind.',
-      "Sam and Eric, on fire duty, see the figure and flee in terror, reporting a beast.",
-      "The boys mount an expedition to search the island; Jack finds Castle Rock and imagines a fort.",
-      "Ralph insists they must return to check the mountain and the signal fire.",
+      'Sam and Eric, on fire duty, see the figure and flee in terror, reporting a beast.',
+      'The boys mount an expedition to search the island; Jack finds Castle Rock and imagines a fort.',
+      'Ralph insists they must return to check the mountain and the signal fire.',
     ],
     symbolism: [
       'The dead parachutist is a literal sign from the adult world -- a world also at war and fallen.',
@@ -178,55 +178,54 @@ const chapters: ChapterData[] = [
       "The boys' projection of evil onto an external beast prevents them from confronting their own darkness.",
     ],
     characterDevelopment: [
-      "Ralph clings to the signal fire as his purpose, showing his commitment to rescue and civilisation.",
+      'Ralph clings to the signal fire as his purpose, showing his commitment to rescue and civilisation.',
       "Jack is more interested in Castle Rock's military potential than in being rescued.",
-      "Sam and Eric, normally reliable, distort what they see through fear, showing how terror corrupts perception.",
+      'Sam and Eric, normally reliable, distort what they see through fear, showing how terror corrupts perception.',
     ],
     keyQuote: {
       text: '"However Simon thought of the beast, there rose before his inward sight the picture of a human."',
       speaker: 'Narrator -- Chapter 6',
-      analysis:
-        'Golding confirms Simon\'s insight: the true beast wears a human face.',
+      analysis: "Golding confirms Simon's insight: the true beast wears a human face.",
     },
   },
   {
     number: 7,
     title: 'Shadows and Tall Trees',
     keyEvents: [
-      "On the march to the mountain, the boys hunt a boar; Ralph wounds it and is thrilled by the violence.",
-      "The boys play-act the hunt with Robert as the pig, and the game turns dangerously rough.",
+      'On the march to the mountain, the boys hunt a boar; Ralph wounds it and is thrilled by the violence.',
+      'The boys play-act the hunt with Robert as the pig, and the game turns dangerously rough.',
       "Ralph, Jack and Roger climb the mountain at dusk and see the dead parachutist's silhouette.",
-      "All three flee in terror, convinced the beast is real.",
+      'All three flee in terror, convinced the beast is real.',
     ],
     symbolism: [
       "Ralph's excitement at wounding the boar reveals that savagery is latent in everyone, not just Jack.",
-      "The mock hunt blurs the line between play and violence, showing how quickly boys become hunters.",
-      "Darkness and shadows distort reality, reinforcing the theme that fear creates the monsters it imagines.",
+      'The mock hunt blurs the line between play and violence, showing how quickly boys become hunters.',
+      'Darkness and shadows distort reality, reinforcing the theme that fear creates the monsters it imagines.',
     ],
     characterDevelopment: [
       "Ralph's fleeting bloodlust is a pivotal moment: even the democratic leader is susceptible to violence.",
       "Roger's eagerness during the mock hunt hints at the deeper cruelty he will later unleash.",
-      "Jack uses the supposed beast sighting to further his authority.",
+      'Jack uses the supposed beast sighting to further his authority.',
     ],
     keyQuote: {
       text: '"Ralph too was fighting to get near, to get a handful of that brown, vulnerable flesh."',
       speaker: 'Narrator -- Chapter 7',
       analysis:
-        "Golding implicates even Ralph in the violence, proving no one is immune to the savage instinct.",
+        'Golding implicates even Ralph in the violence, proving no one is immune to the savage instinct.',
     },
   },
   {
     number: 8,
     title: 'Gift for the Darkness',
     keyEvents: [
-      "Jack calls an assembly and tries to have Ralph deposed; when the vote fails, he leaves to form his own tribe.",
+      'Jack calls an assembly and tries to have Ralph deposed; when the vote fails, he leaves to form his own tribe.',
       "Jack's hunters kill a sow and mount her head on a stake as a 'gift for the beast.'",
       "Simon encounters the Lord of the Flies -- the pig's head -- which 'speaks' to him in a hallucination.",
       "The pig's head tells Simon the beast is part of the boys and cannot be escaped.",
     ],
     symbolism: [
-      "The Lord of the Flies (Beelzebub) is the physical manifestation of innate human evil.",
-      "The sow is killed in graphically sexualised violence, linking savagery with destruction of innocence.",
+      'The Lord of the Flies (Beelzebub) is the physical manifestation of innate human evil.',
+      'The sow is killed in graphically sexualised violence, linking savagery with destruction of innocence.',
       "The 'gift for the darkness' is a pagan offering, marking the boys' descent into primitive ritual.",
     ],
     characterDevelopment: [
@@ -248,17 +247,17 @@ const chapters: ChapterData[] = [
       "Simon discovers the dead parachutist on the mountain and realises the 'beast' is a dead man.",
       "Jack's tribe holds a feast with stolen meat; even Ralph and Piggy attend, drawn by hunger.",
       'A storm breaks as the boys perform their ritual dance, chanting "Kill the beast!"',
-      "Simon stumbles out of the jungle to tell the truth; the boys mistake him for the beast and beat him to death.",
+      'Simon stumbles out of the jungle to tell the truth; the boys mistake him for the beast and beat him to death.',
     ],
     symbolism: [
       "Simon's murder is staged as a sacrificial killing, echoing Christ's crucifixion -- the truth-bringer destroyed by the mob.",
-      "The storm reflects the violence and chaos, pathetic fallacy at its most intense.",
+      'The storm reflects the violence and chaos, pathetic fallacy at its most intense.',
       "The tide carries Simon's body out to sea in a passage of extraordinary beauty, granting him a kind of apotheosis.",
     ],
     characterDevelopment: [
       "Simon's death removes the only character who understood the island's moral reality.",
-      "Ralph and Piggy participate in the circle dance, proving that complicity in violence extends to all.",
-      "Jack has become a full tyrant, presiding over ritual and feast like a tribal chief.",
+      'Ralph and Piggy participate in the circle dance, proving that complicity in violence extends to all.',
+      'Jack has become a full tyrant, presiding over ritual and feast like a tribal chief.',
     ],
     keyQuote: {
       text: '"The beast struggled forward, broke the ring, fell over the steep edge of the rock."',
@@ -272,19 +271,19 @@ const chapters: ChapterData[] = [
     title: 'The Shell and the Glasses',
     keyEvents: [
       "Ralph, Piggy, Sam and Eric are the only boys left on the beach; Ralph openly calls Simon's death murder.",
-      "Piggy insists it was an accident and tries to rationalise their guilt.",
+      'Piggy insists it was an accident and tries to rationalise their guilt.',
       "Jack's tribe raids Ralph's camp in the night and steals Piggy's glasses to control fire-making.",
       "Without the glasses, Ralph's group loses the power to signal for rescue.",
     ],
     symbolism: [
-      "The theft of the glasses transfers the power of intellect and technology to the savages.",
-      "The conch still exists but its authority is now meaningless without anyone to respect it.",
+      'The theft of the glasses transfers the power of intellect and technology to the savages.',
+      'The conch still exists but its authority is now meaningless without anyone to respect it.',
       "Fire shifts from symbol of rescue to tool of Jack's power.",
     ],
     characterDevelopment: [
-      "Ralph is honest about what they did to Simon, showing moral awareness even through his guilt.",
+      'Ralph is honest about what they did to Simon, showing moral awareness even through his guilt.',
       "Piggy's denial and rationalisation expose the limits of pure reason when confronting moral horror.",
-      "Jack consolidates absolute power by controlling the only source of fire.",
+      'Jack consolidates absolute power by controlling the only source of fire.',
     ],
     keyQuote: {
       text: '"That was Simon... That was murder."',
@@ -298,25 +297,25 @@ const chapters: ChapterData[] = [
     title: 'Castle Rock',
     keyEvents: [
       "Ralph's group goes to Castle Rock to demand Piggy's glasses back and appeal to Jack's sense of justice.",
-      "Piggy holds the conch and delivers a final speech asking the boys to choose between rules and savagery.",
-      "Roger levers a boulder from above that kills Piggy and shatters the conch.",
-      "Jack hurls his spear at Ralph, who barely escapes. Sam and Eric are captured and tortured into joining Jack.",
+      'Piggy holds the conch and delivers a final speech asking the boys to choose between rules and savagery.',
+      'Roger levers a boulder from above that kills Piggy and shatters the conch.',
+      'Jack hurls his spear at Ralph, who barely escapes. Sam and Eric are captured and tortured into joining Jack.',
     ],
     symbolism: [
       "The conch shattering into 'a thousand white fragments' is the death of democracy and ordered society.",
       "Piggy's death -- falling forty feet onto the rocks -- is the destruction of intellect and reason.",
-      "Castle Rock is a fortress of totalitarian power, replacing the democratic assembly platform.",
+      'Castle Rock is a fortress of totalitarian power, replacing the democratic assembly platform.',
     ],
     characterDevelopment: [
-      "Piggy dies still believing in the power of rational argument, making his death both noble and futile.",
-      "Roger has become a sadist freed from all civilised restraint; he kills deliberately and without remorse.",
-      "Ralph is now entirely alone, hunted by the tribe that once elected him leader.",
+      'Piggy dies still believing in the power of rational argument, making his death both noble and futile.',
+      'Roger has become a sadist freed from all civilised restraint; he kills deliberately and without remorse.',
+      'Ralph is now entirely alone, hunted by the tribe that once elected him leader.',
     ],
     keyQuote: {
       text: '"The conch exploded into a thousand white fragments."',
       speaker: 'Narrator -- Chapter 11',
       analysis:
-        "Democracy is destroyed in a single, violent image. The shattering is absolute and irreversible.",
+        'Democracy is destroyed in a single, violent image. The shattering is absolute and irreversible.',
     },
   },
   {
@@ -325,11 +324,11 @@ const chapters: ChapterData[] = [
     keyEvents: [
       "Ralph hides in the jungle, hunted by Jack's tribe who have sharpened a stick at both ends for his head.",
       "Sam and Eric, under torture, reveal Ralph's hiding place.",
-      "Jack sets the island on fire to smoke Ralph out, destroying the fruit trees and shelter.",
-      "Ralph collapses on the beach before a naval officer who has seen the smoke from a passing warship.",
+      'Jack sets the island on fire to smoke Ralph out, destroying the fruit trees and shelter.',
+      'Ralph collapses on the beach before a naval officer who has seen the smoke from a passing warship.',
     ],
     symbolism: [
-      "The fire that was meant for rescue now hunts Ralph -- salvation and destruction fused in one image.",
+      'The fire that was meant for rescue now hunts Ralph -- salvation and destruction fused in one image.',
       "The stick sharpened at both ends recalls the Lord of the Flies stake: Ralph's head would become another offering.",
       "The naval officer's crisp uniform is ironic -- he represents the adult 'civilisation' that is itself at war.",
     ],
@@ -358,11 +357,17 @@ export default async function LotFChaptersPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Lord of the Flies", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies" },
-          { name: "Chapter-by-Chapter Analysis", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies/chapters" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Lord of the Flies',
+            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
+          },
+          {
+            name: 'Chapter-by-Chapter Analysis',
+            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies/chapters',
+          },
         ]}
       />
       <Breadcrumb
@@ -406,8 +411,8 @@ export default async function LotFChaptersPage() {
             by William Golding -- published 1954
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Detailed analysis of all twelve chapters, covering key events, symbolism,
-            character development and a key quotation for each.
+            Detailed analysis of all twelve chapters, covering key events, symbolism, character
+            development and a key quotation for each.
           </p>
         </div>
       </section>
@@ -505,8 +510,8 @@ export default async function LotFChaptersPage() {
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations from <em>Lord of the Flies</em> by William Golding (1954) are reproduced
         under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the
-        purpose of criticism, review and educational study. Full text available from your school
-        or local library.
+        purpose of criticism, review and educational study. Full text available from your school or
+        local library.
       </p>
     </div>
   )

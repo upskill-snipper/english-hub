@@ -37,8 +37,8 @@ const sections: ContextSection[] = [
     iconColour: 'text-clay-500',
     content: [
       'The Igbo people of southeastern Nigeria lived in decentralised communities governed by councils of elders, titled men and the authority of oracles and ancestral spirits. Unlike many West African societies, the Igbo did not have kings or centralised monarchies. Power was earned through personal achievement -- wealth, agricultural success and the taking of titles -- creating a meritocratic system that Achebe presents in careful detail throughout Part One of the novel.',
-      'Social life revolved around agriculture, especially yam cultivation. Yams were more than food: they were a measure of a man\'s worth, his ability to feed his family and his standing in the clan. The New Yam Festival celebrated the harvest and reinforced community bonds. Achebe uses Okonkwo\'s enormous yam barns as a marker of his status and his obsessive need to prove himself.',
-      'Igbo religion was polytheistic, centred on Chukwu (the supreme god), personal chi (a person\'s spirit or destiny), local deities and ancestral spirits. The egwugwu -- masked figures representing the ancestors -- dispensed justice and settled disputes. Priestesses like Chielo served oracles and wielded significant spiritual authority, showing that women held real power in certain domains despite the patriarchal structure.',
+      "Social life revolved around agriculture, especially yam cultivation. Yams were more than food: they were a measure of a man's worth, his ability to feed his family and his standing in the clan. The New Yam Festival celebrated the harvest and reinforced community bonds. Achebe uses Okonkwo's enormous yam barns as a marker of his status and his obsessive need to prove himself.",
+      "Igbo religion was polytheistic, centred on Chukwu (the supreme god), personal chi (a person's spirit or destiny), local deities and ancestral spirits. The egwugwu -- masked figures representing the ancestors -- dispensed justice and settled disputes. Priestesses like Chielo served oracles and wielded significant spiritual authority, showing that women held real power in certain domains despite the patriarchal structure.",
       'The culture also contained practices that created internal tensions: twins were abandoned in the Evil Forest, certain families were designated osu (outcasts), and the Oracle could demand human sacrifice. Achebe does not hide these elements. He presents them as part of a complete, imperfect human society -- which is precisely his argument against European accounts that depicted Africa as either savage or blank.',
     ],
     keyFacts: [
@@ -48,9 +48,9 @@ const sections: ContextSection[] = [
       'The osu caste system, twin abandonment and Oracle-demanded killings were genuine social tensions that Christianity later exploited.',
     ],
     textLinks: [
-      'Okonkwo\'s three wives, his yam barns and his titles all demonstrate the Igbo social system in action. His rise from poverty proves the system is meritocratic.',
-      'The egwugwu court in Chapter 10 shows a functioning indigenous justice system that the District Commissioner\'s court will later replace.',
-      'Chielo\'s night journey with Ezinma (Chapters 9-11) demonstrates women\'s spiritual power within a patriarchal structure.',
+      "Okonkwo's three wives, his yam barns and his titles all demonstrate the Igbo social system in action. His rise from poverty proves the system is meritocratic.",
+      "The egwugwu court in Chapter 10 shows a functioning indigenous justice system that the District Commissioner's court will later replace.",
+      "Chielo's night journey with Ezinma (Chapters 9-11) demonstrates women's spiritual power within a patriarchal structure.",
     ],
   },
   {
@@ -68,23 +68,23 @@ const sections: ContextSection[] = [
       'Britain established the Niger Coast Protectorate in 1891 and the Protectorate of Southern Nigeria in 1900.',
       '"Indirect rule" co-opted local leaders or created artificial ones (warrant chiefs) to serve British interests.',
       'Mission schools were conversion tools: education was conditional on church attendance.',
-      'The Aba Women\'s Riots of 1929 demonstrated organised Igbo resistance to colonial taxation and warrant chiefs.',
+      "The Aba Women's Riots of 1929 demonstrated organised Igbo resistance to colonial taxation and warrant chiefs.",
     ],
     textLinks: [
       'The novel is set at the moment of initial colonial contact (late 1890s). Part 2 shows the arrival of missionaries; Part 3 shows the consolidation of administrative and judicial power.',
       'The destruction of Abame (Chapter 15) foreshadows the military violence that underlies the colonial project.',
-      'The District Commissioner\'s court, the kotma (court messengers), and the prison in Part 3 all reflect the institutions of indirect rule.',
+      "The District Commissioner's court, the kotma (court messengers), and the prison in Part 3 all reflect the institutions of indirect rule.",
     ],
   },
   {
-    title: 'Achebe\'s Biography & Purpose',
+    title: "Achebe's Biography & Purpose",
     icon: Pen,
     iconColour: 'text-ochre-500',
     content: [
-      'Chinua Achebe (1930-2013) was born Albert Chinualumogu Achebe in Ogidi, southeastern Nigeria. He grew up at the crossroads of Igbo and colonial culture: his father was a catechist for the Church Missionary Society, but his extended family maintained traditional Igbo practices. This dual inheritance gave Achebe an insider\'s understanding of both the colonised and the missionary worldview.',
+      "Chinua Achebe (1930-2013) was born Albert Chinualumogu Achebe in Ogidi, southeastern Nigeria. He grew up at the crossroads of Igbo and colonial culture: his father was a catechist for the Church Missionary Society, but his extended family maintained traditional Igbo practices. This dual inheritance gave Achebe an insider's understanding of both the colonised and the missionary worldview.",
       'Achebe studied English Literature at the University of Ibadan, where he encountered the European literary tradition\'s representation of Africa. He was particularly struck by Joseph Conrad\'s Heart of Darkness (1899), which he later condemned in his famous 1977 essay "An Image of Africa" as a novel that reduces Africa to "the other world, the antithesis of Europe and therefore of civilisation." Conrad\'s Africa has no history, no culture and no autonomous human life.',
       'Things Fall Apart (1958) is Achebe\'s most powerful answer to this tradition. By creating a fully realised African society -- with law, art, philosophy, humour, debate and moral complexity -- he demonstrates that the "darkness" Conrad described was not in Africa but in the European imagination. The novel insists that African stories belong to African storytellers.',
-      'Achebe chose to write in English deliberately. He wanted to reach the global audience that had consumed Conrad\'s version of Africa and replace it with a version written from the inside. His English is inflected with Igbo rhythms, proverbs and speech patterns, creating a literary language that is both accessible to Western readers and rooted in Igbo culture.',
+      "Achebe chose to write in English deliberately. He wanted to reach the global audience that had consumed Conrad's version of Africa and replace it with a version written from the inside. His English is inflected with Igbo rhythms, proverbs and speech patterns, creating a literary language that is both accessible to Western readers and rooted in Igbo culture.",
     ],
     keyFacts: [
       'Born 1930 in Ogidi, southeastern Nigeria. Died 2013.',
@@ -95,9 +95,9 @@ const sections: ContextSection[] = [
       'Declined the Nigerian national honour of Commander of the Federal Republic twice, citing governance failures.',
     ],
     textLinks: [
-      'The detailed portrayal of Igbo culture in Part 1 is Achebe\'s direct response to European novels that depicted Africa as a blank, savage backdrop.',
-      'The District Commissioner\'s book title at the novel\'s end is a meta-textual statement: Things Fall Apart IS the book the Commissioner could never write.',
-      'Achebe\'s English prose style -- saturated with Igbo proverbs and rhythms -- is itself an act of cultural reclamation.',
+      "The detailed portrayal of Igbo culture in Part 1 is Achebe's direct response to European novels that depicted Africa as a blank, savage backdrop.",
+      "The District Commissioner's book title at the novel's end is a meta-textual statement: Things Fall Apart IS the book the Commissioner could never write.",
+      "Achebe's English prose style -- saturated with Igbo proverbs and rhythms -- is itself an act of cultural reclamation.",
     ],
   },
   {
@@ -106,19 +106,19 @@ const sections: ContextSection[] = [
     iconColour: 'text-sage-500',
     content: [
       'The title Things Fall Apart is taken from W.B. Yeats\'s 1919 poem "The Second Coming": "Things fall apart; the centre cannot hold; / Mere anarchy is loosed upon the world." Yeats wrote the poem in the aftermath of World War One and the Irish War of Independence, reflecting on the collapse of European civilisation and the approach of a terrifying new age.',
-      'Achebe\'s use of a European poem as his title is strategic. By placing an Igbo tragedy within the frame of European apocalyptic literature, he claims equal standing for his subject matter. If Yeats can mourn the disintegration of European order, Achebe can mourn the disintegration of Igbo order -- and the cause of the latter is the former.',
+      "Achebe's use of a European poem as his title is strategic. By placing an Igbo tragedy within the frame of European apocalyptic literature, he claims equal standing for his subject matter. If Yeats can mourn the disintegration of European order, Achebe can mourn the disintegration of Igbo order -- and the cause of the latter is the former.",
       'The Yeats allusion also carries ironic weight. Yeats\'s poem imagines a "rough beast" slouching toward Bethlehem -- an image of encroaching barbarism. Achebe reverses the direction: the barbarism in his novel comes not from Africa but from Europe. The "rough beast" is colonialism itself, arriving under the banner of Christianity and civilisation.',
     ],
     keyFacts: [
       'W.B. Yeats published "The Second Coming" in 1919, reflecting on post-WWI collapse and the Irish War of Independence.',
       'The full Yeats line: "Things fall apart; the centre cannot hold; / Mere anarchy is loosed upon the world."',
-      'Achebe\'s use of a European poem to frame an African novel is a deliberate act of literary integration -- inserting his work into the canon it critiques.',
+      "Achebe's use of a European poem to frame an African novel is a deliberate act of literary integration -- inserting his work into the canon it critiques.",
       'The "rough beast" in Yeats becomes colonialism in Achebe -- a reversal of the expected direction of barbarism.',
     ],
     textLinks: [
       'The title prepares the reader for inevitable collapse. The question is not whether things will fall apart but how and why.',
-      'Okonkwo\'s line "He has put a knife on the things that held us together and we have fallen apart" (Chapter 20) directly echoes the title and Yeats.',
-      'The poem\'s cyclical view of history aligns with the Igbo concept of chi: forces larger than individuals shape the course of events.',
+      'Obierika\'s line "He has put a knife on the things that held us together and we have fallen apart" (Chapter 20) directly echoes the title and Yeats.',
+      "The poem's cyclical view of history aligns with the Igbo concept of chi: forces larger than individuals shape the course of events.",
     ],
   },
   {
@@ -126,9 +126,9 @@ const sections: ContextSection[] = [
     icon: Users,
     iconColour: 'text-teal-600',
     content: [
-      'Things Fall Apart, published in 1958, is widely regarded as the founding text of modern African literature in English. It has been translated into over 50 languages and has sold more than 20 million copies worldwide, making it the most widely read African novel in history. It opened the door for a generation of African writers -- Ngugi wa Thiong\'o, Wole Soyinka, Buchi Emecheta, Chimamanda Ngozi Adichie -- who write about African experience from African perspectives.',
+      "Things Fall Apart, published in 1958, is widely regarded as the founding text of modern African literature in English. It has been translated into over 50 languages and has sold more than 20 million copies worldwide, making it the most widely read African novel in history. It opened the door for a generation of African writers -- Ngugi wa Thiong'o, Wole Soyinka, Buchi Emecheta, Chimamanda Ngozi Adichie -- who write about African experience from African perspectives.",
       'Postcolonial literature refers broadly to writing produced by or about peoples who were subject to colonial rule. It interrogates the cultural, psychological and political legacies of colonialism, including the ways in which colonial languages, education systems and narratives continue to shape post-independence societies. Things Fall Apart is a founding text of this tradition.',
-      'The novel\'s final paragraph -- where the District Commissioner reduces Okonkwo\'s life to a footnote in his planned book -- is both a dramatisation of colonial narrative violence and a declaration of independence from it. The reader has spent the entire novel inside Okonkwo\'s world; the Commissioner\'s paragraph is exposed as a grotesque compression of a life the reader knows to be rich and complex.',
+      "The novel's final paragraph -- where the District Commissioner reduces Okonkwo's life to a footnote in his planned book -- is both a dramatisation of colonial narrative violence and a declaration of independence from it. The reader has spent the entire novel inside Okonkwo's world; the Commissioner's paragraph is exposed as a grotesque compression of a life the reader knows to be rich and complex.",
       'Achebe went on to write four more novels, including No Longer at Ease (1960) and Arrow of God (1964). He taught at universities in Nigeria and the United States and was awarded numerous literary honours. His legacy is the proof that colonised peoples have the authority and the obligation to narrate their own histories.',
     ],
     keyFacts: [
@@ -139,8 +139,8 @@ const sections: ContextSection[] = [
       'Achebe published four more novels and taught at universities in Nigeria and the US until his death in 2013.',
     ],
     textLinks: [
-      'The novel\'s global reach proves Achebe\'s point: African stories are not parochial but universal. The themes of cultural collision, masculinity and the abuse of power resonate across cultures.',
-      'The Commissioner\'s book title at the end is Achebe\'s meta-commentary on the tradition he is writing against: colonial texts that reduce complex cultures to anecdotes.',
+      "The novel's global reach proves Achebe's point: African stories are not parochial but universal. The themes of cultural collision, masculinity and the abuse of power resonate across cultures.",
+      "The Commissioner's book title at the end is Achebe's meta-commentary on the tradition he is writing against: colonial texts that reduce complex cultures to anecdotes.",
       'The novel\'s position as a "founding text" gives it extra weight in exam contexts: examiners expect candidates to understand its significance within literary history.',
     ],
   },
@@ -149,20 +149,20 @@ const sections: ContextSection[] = [
     icon: BookOpen,
     iconColour: 'text-ochre-400',
     content: [
-      'One of the most debated aspects of Achebe\'s work is his decision to write in English rather than Igbo. The Nigerian writer Ngugi wa Thiong\'o argued that African writers should write in African languages to decolonise the mind. Achebe disagreed: he believed English could be reshaped to carry African experience, and that writing in English was the most effective way to challenge the European narratives that had been written in English.',
-      'Achebe\'s English in Things Fall Apart is distinctive. He weaves Igbo proverbs, idioms and speech rhythms into his prose, creating a hybrid literary language. Proverbs are described as "the palm-oil with which words are eaten" -- central to Igbo rhetoric and to the novel\'s style. The result is an English that sounds different from metropolitan English, asserting the presence of Igbo culture within the coloniser\'s language.',
+      "One of the most debated aspects of Achebe's work is his decision to write in English rather than Igbo. The Nigerian writer Ngugi wa Thiong'o argued that African writers should write in African languages to decolonise the mind. Achebe disagreed: he believed English could be reshaped to carry African experience, and that writing in English was the most effective way to challenge the European narratives that had been written in English.",
+      "Achebe's English in Things Fall Apart is distinctive. He weaves Igbo proverbs, idioms and speech rhythms into his prose, creating a hybrid literary language. Proverbs are described as \"the palm-oil with which words are eaten\" -- central to Igbo rhetoric and to the novel's style. The result is an English that sounds different from metropolitan English, asserting the presence of Igbo culture within the coloniser's language.",
       'This linguistic strategy is itself a form of resistance. By bending English to accommodate Igbo thought-patterns, Achebe refuses to accept the language on colonial terms. He takes possession of it, just as the novel takes possession of the narrative about Africa. As Achebe wrote: "The price a world language must be prepared to pay is submission to many different kinds of use."',
     ],
     keyFacts: [
       'Achebe chose English deliberately to reach the global audience that had consumed European representations of Africa.',
-      'Ngugi wa Thiong\'o argued for writing in African languages; the Achebe-Ngugi debate remains central to postcolonial literary criticism.',
-      'Achebe\'s prose style infuses English with Igbo proverbs, speech patterns and cultural idioms.',
-      'The Commissioner\'s book title -- flat, bureaucratic, reductive -- contrasts sharply with the proverbial richness of the novel\'s Igbo-inflected English.',
+      "Ngugi wa Thiong'o argued for writing in African languages; the Achebe-Ngugi debate remains central to postcolonial literary criticism.",
+      "Achebe's prose style infuses English with Igbo proverbs, speech patterns and cultural idioms.",
+      "The Commissioner's book title -- flat, bureaucratic, reductive -- contrasts sharply with the proverbial richness of the novel's Igbo-inflected English.",
     ],
     textLinks: [
       'The "palm-oil" metaphor (Chapter 1) is both a description of Igbo culture and a demonstration of Achebe\'s linguistic technique.',
       'Igbo proverbs like "When the moon is shining the cripple becomes hungry for a walk" embed the reader in an Igbo way of thinking.',
-      'The Commissioner\'s reductive book title at the end represents exactly the kind of colonial English that Achebe\'s own prose works to subvert.',
+      "The Commissioner's reductive book title at the end represents exactly the kind of colonial English that Achebe's own prose works to subvert.",
     ],
   },
 ]
@@ -174,11 +174,17 @@ export default function ContextPage() {
     <div className="space-y-10 bg-cream-50 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Things Fall Apart", url: "https://theenglishhub.app/revision/texts/things-fall-apart" },
-          { name: "Context", url: "https://theenglishhub.app/revision/texts/things-fall-apart/context" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Things Fall Apart',
+            url: 'https://theenglishhub.app/revision/texts/things-fall-apart',
+          },
+          {
+            name: 'Context',
+            url: 'https://theenglishhub.app/revision/texts/things-fall-apart/context',
+          },
         ]}
       />
       {/* Study Tools */}
@@ -217,10 +223,9 @@ export default function ContextPage() {
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            The essential background for the exam: pre-colonial Igbo society,
-            British colonialism in Nigeria, Achebe&apos;s response to Conrad,
-            the Yeats title, postcolonial literature and the politics of
-            language.
+            The essential background for the exam: pre-colonial Igbo society, British colonialism in
+            Nigeria, Achebe&apos;s response to Conrad, the Yeats title, postcolonial literature and
+            the politics of language.
           </p>
         </div>
       </section>
@@ -229,9 +234,7 @@ export default function ContextPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 font-serif text-heading-md text-foreground">
-              Jump to a Section
-            </h2>
+            <h2 className="mb-4 font-serif text-heading-md text-foreground">Jump to a Section</h2>
             <div className="grid gap-2 sm:grid-cols-2">
               {sections.map((s) => {
                 const Icon = s.icon
@@ -269,9 +272,7 @@ export default function ContextPage() {
               <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-clay-400/10">
                 <Icon className={`size-5 ${section.iconColour}`} />
               </div>
-              <h2 className="font-serif text-heading-lg text-foreground">
-                {section.title}
-              </h2>
+              <h2 className="font-serif text-heading-lg text-foreground">{section.title}</h2>
             </div>
 
             {/* Content paragraphs */}
@@ -341,46 +342,42 @@ export default function ContextPage() {
         <Card>
           <CardContent className="space-y-4 p-5 sm:p-6 text-body-sm text-muted-foreground">
             <p>
-              Context is essential in every Literature exam, but it must be
-              embedded in your argument -- not bolted on as a separate paragraph.
-              Here are the key principles:
+              Context is essential in every Literature exam, but it must be embedded in your
+              argument -- not bolted on as a separate paragraph. Here are the key principles:
             </p>
             <ul className="list-disc space-y-3 pl-4">
               <li>
-                <strong className="text-foreground">Integrate, don&apos;t isolate.</strong>{' '}
-                Weave context into your analysis rather than writing a standalone
-                &ldquo;context paragraph.&rdquo; For example: &ldquo;Okonkwo&apos;s
-                participation in Ikemefuna&apos;s killing reflects the absolute
-                authority of the Oracle in pre-colonial Igbo society, where
-                religious law and secular law were inseparable.&rdquo;
+                <strong className="text-foreground">Integrate, don&apos;t isolate.</strong> Weave
+                context into your analysis rather than writing a standalone &ldquo;context
+                paragraph.&rdquo; For example: &ldquo;Okonkwo&apos;s participation in
+                Ikemefuna&apos;s killing reflects the absolute authority of the Oracle in
+                pre-colonial Igbo society, where religious law and secular law were
+                inseparable.&rdquo;
               </li>
               <li>
-                <strong className="text-foreground">Focus on Achebe&apos;s purpose.</strong>{' '}
-                Always ask: WHY did Achebe include this? What was he trying to
-                make his readers think, feel, or do? Context explains purpose --
-                Achebe wrote to counter Conrad and to reclaim African narrative.
+                <strong className="text-foreground">Focus on Achebe&apos;s purpose.</strong> Always
+                ask: WHY did Achebe include this? What was he trying to make his readers think,
+                feel, or do? Context explains purpose -- Achebe wrote to counter Conrad and to
+                reclaim African narrative.
               </li>
               <li>
-                <strong className="text-foreground">Use specific details.</strong>{' '}
-                &ldquo;Africa was colonised&rdquo; is vague. &ldquo;The Berlin
-                Conference of 1884-85 divided Africa among European powers
-                without any African participation&rdquo; is specific and
+                <strong className="text-foreground">Use specific details.</strong> &ldquo;Africa was
+                colonised&rdquo; is vague. &ldquo;The Berlin Conference of 1884-85 divided Africa
+                among European powers without any African participation&rdquo; is specific and
                 demonstrates genuine understanding.
               </li>
               <li>
-                <strong className="text-foreground">Link context to technique.</strong>{' '}
-                The strongest answers connect what Achebe is saying (context) to
-                HOW he says it (technique). For example: &ldquo;Achebe saturates
-                Part One with Igbo proverbs to demonstrate the culture&apos;s
-                intellectual sophistication before showing its destruction --
-                the reader must feel what is being lost.&rdquo;
+                <strong className="text-foreground">Link context to technique.</strong> The
+                strongest answers connect what Achebe is saying (context) to HOW he says it
+                (technique). For example: &ldquo;Achebe saturates Part One with Igbo proverbs to
+                demonstrate the culture&apos;s intellectual sophistication before showing its
+                destruction -- the reader must feel what is being lost.&rdquo;
               </li>
               <li>
                 <strong className="text-foreground">Remember the publication context.</strong>{' '}
-                Achebe wrote Things Fall Apart in 1958, two years before Nigerian
-                independence. His audience includes both African readers reclaiming
-                their history and European readers who had consumed Conrad&apos;s
-                version of Africa.
+                Achebe wrote Things Fall Apart in 1958, two years before Nigerian independence. His
+                audience includes both African readers reclaiming their history and European readers
+                who had consumed Conrad&apos;s version of Africa.
               </li>
             </ul>
           </CardContent>
@@ -389,9 +386,9 @@ export default function ContextPage() {
 
       {/* Fair dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for criticism and review. Full
-        text available from your school or local library.
+        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
+        Patents Act 1988 for criticism and review. Full text available from your school or local
+        library.
       </p>
     </div>
   )

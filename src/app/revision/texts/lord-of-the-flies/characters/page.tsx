@@ -45,10 +45,19 @@ const characters: CharacterData[] = [
       'His final weeping "for the end of innocence, the darkness of man\'s heart" is the novel\'s moral conclusion.',
     ],
     keyQuotes: [
-      { text: '"We\'ve got to have rules and obey them."', context: 'Ch. 1 -- establishing democratic order' },
-      { text: '"The fire is the most important thing."', context: 'Ch. 2 -- prioritising rescue over hunting' },
-      { text: '"That was Simon... That was murder."', context: 'Ch. 10 -- refusing to deny the truth' },
-      { text: '"Ralph wept for the end of innocence."', context: 'Ch. 12 -- final moral reckoning' },
+      {
+        text: '"The fire is the most important thing on the island."',
+        context: 'Ch. 2 -- prioritising rescue over hunting',
+      },
+      { text: '"I\'m chief. I was chosen."', context: 'Ch. 5 -- defending his democratic mandate' },
+      {
+        text: '"That was Simon... That was murder."',
+        context: 'Ch. 10 -- refusing to deny the truth',
+      },
+      {
+        text: '"Ralph wept for the end of innocence."',
+        context: 'Ch. 12 -- final moral reckoning',
+      },
     ],
     examTip:
       'Ralph is most useful for questions on civilisation vs savagery, leadership and loss of innocence. Emphasise that Golding makes him flawed -- his moment of bloodlust in Chapter 7 proves no one is exempt from the "darkness of man\'s heart."',
@@ -63,39 +72,57 @@ const characters: CharacterData[] = [
       'In Chapter 1 he insists on rules and cannot kill the piglet, showing civilisation still restrains him.',
       'Becomes obsessed with hunting; in Chapter 4 he paints his face and the mask "liberates him from shame and self-consciousness."',
       'Lets the signal fire go out while a ship passes, prioritising the hunt over rescue.',
-      'In Chapter 8 he splits from Ralph\'s group and forms his own tribe based on meat, ritual and obedience.',
-      'Presides over Simon\'s murder during the feast in Chapter 9 and Piggy\'s death in Chapter 11.',
+      "In Chapter 8 he splits from Ralph's group and forms his own tribe based on meat, ritual and obedience.",
+      "Presides over Simon's murder during the feast in Chapter 9 and Piggy's death in Chapter 11.",
       'By Chapter 12 he has set the entire island ablaze to hunt Ralph, destroying everything to maintain power.',
     ],
     keyQuotes: [
-      { text: '"We\'re not savages. We\'re English."', context: 'Ch. 2 -- ironic confidence in civilisation' },
-      { text: '"Bollocks to the rules! We\'re strong."', context: 'Ch. 5 -- rejecting democratic order' },
-      { text: '"Kill the pig. Cut her throat."', context: 'Ch. 4 -- ritual chant marking descent' },
-      { text: '"Sharpen a stick at both ends."', context: 'Ch. 12 -- planning to mount Ralph\'s head' },
+      {
+        text: '"We\'ve got to have rules and obey them. After all, we\'re not savages."',
+        context: 'Ch. 2 -- ironic confidence in civilisation',
+      },
+      {
+        text: '"Bollocks to the rules! We\'re strong -- we hunt!"',
+        context: 'Ch. 5 -- rejecting democratic order',
+      },
+      {
+        text: '"Kill the pig. Cut her throat. Spill her blood."',
+        context: 'Ch. 4 -- ritual chant marking descent',
+      },
+      {
+        text: '"Sharpen a stick at both ends."',
+        context: "Ch. 12 -- planning to mount Ralph's head",
+      },
     ],
     examTip:
       'Jack is essential for essays on power, fear and the fragility of civilisation. Note the irony of his opening insistence on rules. His painted face is a key symbol: when Jack hides behind the mask, the "taboo of the old life" falls away.',
   },
   {
     name: 'Piggy',
-    role: 'Rational outsider, Ralph\'s adviser',
+    role: "Rational outsider, Ralph's adviser",
     allegoricalRole: 'Intellect, science and rational thought',
     overview:
       'Piggy is the most intelligent boy on the island but is consistently marginalised because of his body, his asthma and his working-class accent. His glasses -- the only tool for making fire -- symbolise the power of scientific knowledge. Golding uses Piggy to show how societies dismiss reason when it comes from the "wrong" person, and how intellect alone cannot resist brute force.',
     development: [
       'From the start he is mocked -- "Sucks to your ass-mar!" -- despite being the one who recognises the conch\'s potential.',
-      'Acts as Ralph\'s adviser, urging practical solutions: a register, shelters, sanitation rules.',
-      'After Simon\'s death in Chapter 9, Piggy rationalises the murder as an accident, exposing the limits of logic when confronting moral horror.',
+      "Acts as Ralph's adviser, urging practical solutions: a register, shelters, sanitation rules.",
+      "After Simon's death in Chapter 9, Piggy rationalises the murder as an accident, exposing the limits of logic when confronting moral horror.",
       'After Jack steals his glasses in Chapter 10, Piggy is nearly blind -- intellect without power is helpless.',
-      'He dies in Chapter 11 still clutching the conch, still believing reason should prevail, killed by Roger\'s boulder.',
+      "He dies in Chapter 11 still clutching the conch, still believing reason should prevail, killed by Roger's boulder.",
     ],
     keyQuotes: [
-      { text: '"Sucks to your ass-mar!"', context: 'Ch. 1 -- the boys\' immediate cruelty' },
-      { text: '"Which is better -- law and rescue, or hunting and breaking things up?"', context: 'Ch. 11 -- final appeal to reason' },
-      { text: '"I got the conch! I got a right to speak!"', context: 'Ch. 2 -- insisting on democratic process' },
+      { text: '"Sucks to your ass-mar!"', context: "Ch. 1 -- the boys' immediate cruelty" },
+      {
+        text: '"Which is better -- law and rescue, or hunting and breaking things up?"',
+        context: 'Ch. 11 -- final appeal to reason',
+      },
+      {
+        text: '"I got the conch! I got a right to speak!"',
+        context: 'Ch. 2 -- insisting on democratic process',
+      },
     ],
     examTip:
-      'Piggy is vital for questions on civilisation, social class and the role of intellect. His death alongside the conch\'s destruction is the single most symbolic moment in the novel -- democracy and reason destroyed together.',
+      "Piggy is vital for questions on civilisation, social class and the role of intellect. His death alongside the conch's destruction is the single most symbolic moment in the novel -- democracy and reason destroyed together.",
   },
   {
     name: 'Simon',
@@ -111,49 +138,70 @@ const characters: CharacterData[] = [
       'He is beaten to death during the ritual dance, his body washed out to sea in a passage of luminous, almost sacred imagery.',
     ],
     keyQuotes: [
-      { text: '"Maybe there is a beast... maybe it\'s only us."', context: 'Ch. 5 -- the novel\'s thesis' },
-      { text: '"Fancy thinking the Beast was something you could hunt and kill!"', context: 'Ch. 8 -- the Lord of the Flies speaks' },
-      { text: '"What else is there to do?"', context: 'Ch. 8 -- the inevitability of confronting truth' },
+      {
+        text: '"Maybe there is a beast... maybe it\'s only us."',
+        context: "Ch. 5 -- the novel's thesis",
+      },
+      {
+        text: '"Fancy thinking the Beast was something you could hunt and kill!"',
+        context: 'Ch. 8 -- the Lord of the Flies speaks',
+      },
+      {
+        text: '"What else is there to do?"',
+        context: 'Ch. 8 -- the inevitability of confronting truth',
+      },
     ],
     examTip:
-      'Simon is the key character for essays on the beast, innate evil, and religious allegory. His death is structurally parallel to a crucifixion: a figure who brings truth is destroyed by a fearful crowd. Contrast his moral insight with Piggy\'s rationalism.',
+      "Simon is the key character for essays on the beast, innate evil, and religious allegory. His death is structurally parallel to a crucifixion: a figure who brings truth is destroyed by a fearful crowd. Contrast his moral insight with Piggy's rationalism.",
   },
   {
     name: 'Roger',
-    role: 'Jack\'s lieutenant, sadist',
-    allegoricalRole: 'Unchecked cruelty, the id unleashed without civilisation\'s restraint',
+    role: "Jack's lieutenant, sadist",
+    allegoricalRole: "Unchecked cruelty, the id unleashed without civilisation's restraint",
     overview:
       'Roger begins as a quiet, furtive boy and ends as a torturer and murderer. Golding uses him to chart the removal of civilised restraint in precise stages. In Chapter 4, Roger throws stones at a littlun but "the taboo of the old life" makes him aim to miss. By Chapter 11, no taboo remains and he levers a boulder that kills Piggy without hesitation.',
     development: [
       'In Chapter 4, his stone-throwing at Henry establishes the "invisible yet strong" arm of civilised conditioning.',
-      'He joins Jack\'s tribe early and embraces the painted mask and hunting rituals.',
-      'Takes an active role in Simon\'s murder during the frenzied dance in Chapter 9.',
+      "He joins Jack's tribe early and embraces the painted mask and hunting rituals.",
+      "Takes an active role in Simon's murder during the frenzied dance in Chapter 9.",
       'In Chapter 11 he deliberately kills Piggy by rolling a boulder from Castle Rock -- Golding writes that the lever moves "with a sense of delirious abandonment."',
       'By Chapter 12 he has become Jack\'s torturer, wielding "a nameless authority" over the tribe.',
     ],
     keyQuotes: [
-      { text: '"Roger gathered a handful of stones and began to throw them."', context: 'Ch. 4 -- the taboo still holds' },
-      { text: '"Roger, with a sense of delirious abandonment, leaned his weight on the lever."', context: 'Ch. 11 -- the taboo broken' },
+      {
+        text: '"Roger gathered a handful of stones and began to throw them."',
+        context: 'Ch. 4 -- the taboo still holds',
+      },
+      {
+        text: '"Roger, with a sense of delirious abandonment, leaned his weight on the lever."',
+        context: 'Ch. 11 -- the taboo broken',
+      },
     ],
     examTip:
-      'Roger is crucial for essays on civilisation vs savagery and innate evil. His progression from missing on purpose to killing without remorse is one of Golding\'s most precise demonstrations of the thesis. Pair the Chapter 4 stone-throwing with the Chapter 11 boulder for maximum analytical contrast.',
+      "Roger is crucial for essays on civilisation vs savagery and innate evil. His progression from missing on purpose to killing without remorse is one of Golding's most precise demonstrations of the thesis. Pair the Chapter 4 stone-throwing with the Chapter 11 boulder for maximum analytical contrast.",
   },
   {
     name: 'Sam and Eric (Samneric)',
     role: 'Inseparable twins',
     allegoricalRole: 'The ordinary individual, conformity and peer pressure',
     overview:
-      'Treated by Golding almost as a single character, Sam and Eric represent the decent, ordinary person who wants to do right but ultimately submits to the stronger force. Their journey from loyal supporters of Ralph to reluctant members of Jack\'s tribe illustrates how totalitarian regimes absorb the majority through fear rather than conviction.',
+      "Treated by Golding almost as a single character, Sam and Eric represent the decent, ordinary person who wants to do right but ultimately submits to the stronger force. Their journey from loyal supporters of Ralph to reluctant members of Jack's tribe illustrates how totalitarian regimes absorb the majority through fear rather than conviction.",
     development: [
-      'They are among Ralph\'s most reliable allies, maintaining the signal fire and attending assemblies.',
+      "They are among Ralph's most reliable allies, maintaining the signal fire and attending assemblies.",
       'In Chapter 6, their terrified report of the "beast" (the dead parachutist) accelerates the island\'s descent into fear.',
-      'They participate in Simon\'s murder alongside everyone else in Chapter 9.',
-      'In Chapter 11, they are captured at Castle Rock and forced under torture to join Jack\'s tribe.',
-      'In Chapter 12 they reveal Ralph\'s hiding place under duress, betraying him despite their sympathy.',
+      "They participate in Simon's murder alongside everyone else in Chapter 9.",
+      "In Chapter 11, they are captured at Castle Rock and forced under torture to join Jack's tribe.",
+      "In Chapter 12 they reveal Ralph's hiding place under duress, betraying him despite their sympathy.",
     ],
     keyQuotes: [
-      { text: '"They were savages it was true; but they were Samneric."', context: 'Ch. 12 -- identity consumed by the tribe' },
-      { text: '"You got to go because it\'s not safe."', context: 'Ch. 12 -- warning Ralph even after joining Jack' },
+      {
+        text: '"They were savages it was true; but they were Samneric."',
+        context: 'Ch. 12 -- identity consumed by the tribe',
+      },
+      {
+        text: '"You got to go because it\'s not safe."',
+        context: 'Ch. 12 -- warning Ralph even after joining Jack',
+      },
     ],
     examTip:
       'Sam and Eric are useful for essays on fear, conformity and the mechanics of totalitarianism. They show that most people do not actively choose evil but are coerced into compliance -- making them more relatable and arguably more disturbing than Jack or Roger.',
@@ -171,11 +219,17 @@ export default async function LotFCharactersPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Lord of the Flies", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies" },
-          { name: "Characters", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies/characters" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Lord of the Flies',
+            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
+          },
+          {
+            name: 'Characters',
+            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies/characters',
+          },
         ]}
       />
       <Breadcrumb
@@ -332,8 +386,8 @@ export default async function LotFCharactersPage() {
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         Short quotations from <em>Lord of the Flies</em> by William Golding (1954) are reproduced
         under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the
-        purpose of criticism, review and educational study. Full text available from your school
-        or local library.
+        purpose of criticism, review and educational study. Full text available from your school or
+        local library.
       </p>
     </div>
   )

@@ -141,7 +141,7 @@ const data: TextGuideData = {
     },
     {
       quote: '"I would always rather be happy than dignified."',
-      who: 'Jane — Chapter 21',
+      who: 'Jane — Chapter 24',
       analysis:
         "A quieter declaration of Jane's values. She prizes genuine feeling over social propriety.",
     },

@@ -62,7 +62,8 @@ const THEMES: ThemeStudy[] = [
           'Birling\u2019s capitalist philosophy, which the entire play exists to refute. "His own" limits moral obligation to family and class, excluding the working class entirely. Dramatic irony ensures the audience rejects this before the Inspector arrives.',
       },
       {
-        quote: '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
+        quote:
+          '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
         speaker: 'Arthur Birling',
         act: 'Act 3',
         analysis:
@@ -120,7 +121,8 @@ const THEMES: ThemeStudy[] = [
           'Sheila rejects her father\u2019s dehumanising language and insists on Eva\u2019s humanity. The opposition between "cheap labour" and "people" captures Priestley\u2019s argument that the class system turns human beings into economic units.',
       },
       {
-        quote: '"She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position."',
+        quote:
+          '"She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position."',
         speaker: 'Sybil Birling',
         act: 'Act 2',
         analysis:
@@ -274,8 +276,7 @@ const THEMES: ThemeStudy[] = [
   },
   {
     title: 'Power and Abuse of Power',
-    overview:
-      'Each character exercises a different form of power over Eva, and each abuses it.',
+    overview: 'Each character exercises a different form of power over Eva, and each abuses it.',
     detailed:
       'Power in the play operates through wealth, gender, age, social position, and institutional authority. Birling has the power to fire workers and uses it to crush dissent. Sheila has the power of a valued customer and uses it vindictively. Gerald has the power of wealth and class to make Daisy dependent on him. Eric uses physical and sexual power to assault Eva. Sybil has institutional power as chair of the charity and uses it to deny help to a desperate woman. The Inspector temporarily inverts these hierarchies, subjecting the powerful to a moral scrutiny they have never before faced. Priestley\u2019s argument is that power without responsibility is the root of social injustice, and that those who hold power must be held accountable for how they use it.',
     keyQuotes: [
@@ -396,7 +397,8 @@ const THEMES: ThemeStudy[] = [
       'An Inspector Calls is explicitly a political play. Birling\u2019s opening speeches articulate the capitalist worldview: self-reliance, profit, competition, and the rejection of collective responsibility. The Inspector\u2019s closing speech articulates the socialist alternative: community, shared responsibility, and the recognition that "we are members of one body." Priestley structures the entire play as an argument between these two positions, and there is no doubt which side wins. Birling\u2019s predictions are wrong, his values produce suffering, and his philosophy is discredited by dramatic irony. The Inspector\u2019s message is vindicated by the two world wars the audience has lived through and by the 1945 Labour landslide that reflected the public\u2019s desire for a more equal society. Priestley\u2019s play is not a neutral exploration of both sides \u2014 it is an argument for socialism, delivered through the most powerful dramatic means available.',
     keyQuotes: [
       {
-        quote: '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
+        quote:
+          '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
         speaker: 'Arthur Birling',
         act: 'Act 1',
         analysis:
@@ -417,7 +419,8 @@ const THEMES: ThemeStudy[] = [
           'The capitalist creed in its purest form. Priestley presents it at the start of the play so that every subsequent revelation demonstrates its human cost. By Act 3, this philosophy has been proven responsible for Eva\u2019s death.',
       },
       {
-        quote: '"One Eva Smith has gone \u2014 but there are millions and millions of Eva Smiths and John Smiths still left with us."',
+        quote:
+          '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
         speaker: 'Inspector Goole',
         act: 'Act 3',
         analysis:
@@ -457,11 +460,17 @@ export default function ThemesPage() {
     <div className="min-h-screen bg-cream-50 font-serif">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "An Inspector Calls", url: "https://theenglishhub.app/revision/texts/an-inspector-calls" },
-          { name: "Themes", url: "https://theenglishhub.app/revision/texts/an-inspector-calls/themes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'An Inspector Calls',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
+          },
+          {
+            name: 'Themes',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls/themes',
+          },
         ]}
       />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
@@ -470,13 +479,13 @@ export default function ThemesPage() {
 
         {/* Hero */}
         <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-teal-300/[0.06] p-6 sm:p-8 lg:p-10">
-          <a
+          <Link
             href="/revision/texts/an-inspector-calls"
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
           >
             <ArrowLeft className="size-3.5" />
             Back to An Inspector Calls
-          </a>
+          </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
@@ -492,13 +501,10 @@ export default function ThemesPage() {
           <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
             An Inspector Calls &mdash; Themes
           </h1>
-          <p className="mt-2 text-lg text-ink-500">
-            by J.B. Priestley &mdash; 1945
-          </p>
+          <p className="mt-2 text-lg text-ink-500">by J.B. Priestley &mdash; 1945</p>
           <p className="mt-4 max-w-2xl text-ink-500">
-            Seven major themes analysed in depth with key quotes, act-by-act
-            evidence, AO3 context links, and essay planning tips for GCSE
-            literature.
+            Seven major themes analysed in depth with key quotes, act-by-act evidence, AO3 context
+            links, and essay planning tips for GCSE literature.
           </p>
         </section>
 
@@ -509,11 +515,11 @@ export default function ThemesPage() {
             <div className="text-sm text-ink-600">
               <p className="mb-1 font-bold text-ink-800">Exam technique</p>
               <p>
-                Theme questions require you to track how an idea develops across
-                the <strong>whole play</strong> (AO1), analyse Priestley&rsquo;s
-                use of <strong>language and structure</strong> (AO2), and link to{' '}
-                <strong>historical context</strong> (AO3). Use the act-by-act
-                evidence sections below to build a progressive argument.
+                Theme questions require you to track how an idea develops across the{' '}
+                <strong>whole play</strong> (AO1), analyse Priestley&rsquo;s use of{' '}
+                <strong>language and structure</strong> (AO2), and link to{' '}
+                <strong>historical context</strong> (AO3). Use the act-by-act evidence sections
+                below to build a progressive argument.
               </p>
             </div>
           </div>
@@ -527,9 +533,7 @@ export default function ThemesPage() {
               <div className="flex size-10 items-center justify-center rounded-xl bg-teal-400/8">
                 <BookOpen className="size-5 text-teal-700" />
               </div>
-              <h2 className="font-serif text-2xl font-bold text-ink-900">
-                {theme.title}
-              </h2>
+              <h2 className="font-serif text-2xl font-bold text-ink-900">{theme.title}</h2>
             </div>
             <p className="ml-13 text-sm italic text-ink-500">{theme.overview}</p>
 
@@ -538,28 +542,19 @@ export default function ThemesPage() {
               <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-ink-400">
                 Detailed Analysis
               </h3>
-              <p className="text-sm leading-relaxed text-ink-600">
-                {theme.detailed}
-              </p>
+              <p className="text-sm leading-relaxed text-ink-600">{theme.detailed}</p>
             </div>
 
             {/* Key quotes */}
             <div className="mt-6">
               <div className="mb-3 flex items-center gap-2">
                 <Quote className="size-4 text-teal-700" />
-                <h3 className="font-serif text-lg font-bold text-ink-800">
-                  Key Quotes
-                </h3>
+                <h3 className="font-serif text-lg font-bold text-ink-800">Key Quotes</h3>
               </div>
               <div className="space-y-3">
                 {theme.keyQuotes.map((q, qi) => (
-                  <div
-                    key={qi}
-                    className="rounded-xl border border-teal-400/20 bg-teal-500/5 p-4"
-                  >
-                    <p className="text-base font-medium italic text-ink-800">
-                      {q.quote}
-                    </p>
+                  <div key={qi} className="rounded-xl border border-teal-400/20 bg-teal-500/5 p-4">
+                    <p className="text-base font-medium italic text-ink-800">{q.quote}</p>
                     <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
                       {q.speaker} &mdash; {q.act}
                     </p>
@@ -579,16 +574,11 @@ export default function ThemesPage() {
               </h3>
               <div className="grid gap-3 sm:grid-cols-3">
                 {theme.evidenceByAct.map((ev, ei) => (
-                  <div
-                    key={ei}
-                    className="rounded-xl border border-ink-100 bg-cream-50 p-4"
-                  >
+                  <div key={ei} className="rounded-xl border border-ink-100 bg-cream-50 p-4">
                     <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-600">
                       {ev.act}
                     </p>
-                    <p className="text-sm leading-relaxed text-ink-600">
-                      {ev.evidence}
-                    </p>
+                    <p className="text-sm leading-relaxed text-ink-600">{ev.evidence}</p>
                   </div>
                 ))}
               </div>
@@ -599,9 +589,7 @@ export default function ThemesPage() {
               <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
                 AO3 Context Link
               </p>
-              <p className="text-sm leading-relaxed text-ink-600">
-                {theme.contextLink}
-              </p>
+              <p className="text-sm leading-relaxed text-ink-600">{theme.contextLink}</p>
             </div>
 
             {/* Essay tip */}
@@ -612,56 +600,49 @@ export default function ThemesPage() {
                   <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-700">
                     Essay Planning Tip
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">
-                    {theme.essayTip}
-                  </p>
+                  <p className="text-sm leading-relaxed text-ink-600">{theme.essayTip}</p>
                 </div>
               </div>
             </div>
 
             {/* Divider */}
-            {idx < THEMES.length - 1 && (
-              <div className="mt-10 border-t border-ink-100" />
-            )}
+            {idx < THEMES.length - 1 && <div className="mt-10 border-t border-ink-100" />}
           </section>
         ))}
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">
-            Continue studying
-          </h3>
+          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
           <p className="mt-1 text-sm text-ink-500">
             Explore characters, key quotes, and context for An Inspector Calls.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <a
+            <Link
               href="/revision/texts/an-inspector-calls/characters"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
               Characters
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/an-inspector-calls/key-quotes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Key Quotes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/an-inspector-calls/context"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Context
-            </a>
+            </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
-          Short quotations (&le;15 words each) reproduced under the fair dealing
-          provision of the Copyright, Designs and Patents Act 1988 for the purpose
-          of criticism, review and educational study.{' '}
-          <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
+          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
+          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
+          educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
           available from your school or local library.
         </p>
       </div>

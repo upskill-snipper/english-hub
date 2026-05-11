@@ -68,7 +68,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         pointHeading: 'The fatal realisation',
         topic: "Russell delays the class argument's emotional climax to the final scene.",
-        quote: '"How come you didn\'t grow up like me?"',
+        quote: '"Well, how come you got everything... an\' I got nothin\'?"',
         quoteContext: 'Mickey — Act 2',
         analysis:
           "Mickey articulates the play's thesis in plain speech. The question is not about envy but about systemic injustice: Russell gives the political argument to the character who has suffered most, making it impossible to dismiss as abstract theory.",
@@ -141,10 +141,10 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         pointHeading: 'Adolescent divergence',
         topic: 'As teenagers, the boys begin to occupy different social worlds despite their bond.',
-        quote: '"Take a letter, Miss Jones."',
-        quoteContext: 'Edward — childhood game',
+        quote: '"I thought we always stuck together."',
+        quoteContext: 'Edward — Act 2 confrontation',
         analysis:
-          'Even in play, Edward rehearses a managerial role. Russell shows that class identity is performed and practised from childhood, making it feel natural by the time it becomes economic reality. The game foreshadows the adult power imbalance.',
+          'Edward’s plea appeals to their blood-brother bond, but Russell exposes how class has already broken it. By adulthood, Edward’s sentimental faith in friendship cannot reach Mickey’s lived reality of unemployment and prison.',
         contextLink:
           'Link to the different educational pathways: Edward attends private school and university; Mickey leaves school for factory work. The education system entrenches the class divide.',
       },
@@ -172,7 +172,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         pointHeading: 'Mrs Johnstone: love constrained by poverty',
         topic:
           "Russell presents Mrs Johnstone's decision to give up her child as an act forced by economic desperation, not moral failure.",
-        quote: '"Already mine, already mine."',
+        quote: '"Only mine until the time comes round to pay the bill."',
         quoteContext: 'Mrs Johnstone — Act 1',
         analysis:
           "Mrs Johnstone's anguish when she tries to reclaim the child shows that maternal love is powerless against class privilege. Russell uses her songs to give a working-class mother a voice that the social structures around her deny.",
@@ -182,7 +182,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         pointHeading: 'Mrs Lyons: love deformed by privilege',
         topic: 'Russell shows that wealth provides Mrs Lyons with power but not peace.',
-        quote: '"They say that if twins are separated they\'ll die."',
+        quote: '"You do know what they say about twins, secretly parted, don\'t you?"',
         quoteContext: 'Mrs Lyons — Act 1',
         analysis:
           "Mrs Lyons invents the superstition to control Mrs Johnstone, but Russell shows her becoming its prisoner. Her paranoia is a form of guilt that wealth cannot resolve — a mirror to Mrs Johnstone's grief.",

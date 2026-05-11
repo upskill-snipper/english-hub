@@ -135,7 +135,7 @@ const walkingAwayPoem: PoemData = {
     },
   ],
   context:
-    "<p><strong>C. Day-Lewis</strong> (1904\u20131972) was UK <strong>Poet Laureate from 1968 until his death in 1972</strong>. The poem was published in 1956 in <em>The Gate and Other Poems</em> and is dedicated to his eldest son <strong>Sean Day-Lewis</strong> (the journalist), who at age 18 had just started boarding school. (Note: this is <em>not</em> Daniel Day-Lewis the actor \u2014 Daniel was the poet's youngest son and was not yet born when the poem was written in 1956.)</p><p>Written eighteen years after the event, the poem explores the universal experience of a <strong>parent letting go</strong> of a child. The specific memory \u2014 a football match \u2014 becomes a metaphor for every moment a child steps further into independence.</p><p>The poem grapples with the <strong>paradox of parental love</strong>: that truly loving someone means allowing them to leave. This connects to broader themes of <strong>growing up</strong>, <strong>identity formation</strong>, and the <strong>pain of separation</strong> that is inherent in all loving relationships.</p><p>Day-Lewis wrote the poem in mature middle age, giving it the quality of <strong>mature reflection</strong> rather than immediate emotion. The distance of time allows him to articulate what he could not express in the moment.</p>",
+    '<p><strong>C. Day-Lewis</strong> (1904\u20131972) was UK <strong>Poet Laureate from 1968 until his death in 1972</strong>. The poem was published in 1962 in <em>The Gate and Other Poems</em> and is dedicated to his eldest son <strong>Sean Day-Lewis</strong> (the journalist). The poem looks back \u2014 "eighteen years ago, almost to the day" \u2014 to a memory of watching young Sean walk away from his father at the start of a school football match.</p><p>(Note: this is <em>not</em> Daniel Day-Lewis the actor \u2014 Daniel was the poet\'s youngest son, born in 1957.)</p><p>Written eighteen years after the event, the poem explores the universal experience of a <strong>parent letting go</strong> of a child. The specific memory \u2014 a football match \u2014 becomes a metaphor for every moment a child steps further into independence.</p><p>The poem grapples with the <strong>paradox of parental love</strong>: that truly loving someone means allowing them to leave. This connects to broader themes of <strong>growing up</strong>, <strong>identity formation</strong>, and the <strong>pain of separation</strong> that is inherent in all loving relationships.</p><p>Day-Lewis wrote the poem in mature middle age, giving it the quality of <strong>mature reflection</strong> rather than immediate emotion. The distance of time allows him to articulate what he could not express in the moment.</p>',
   summary:
     "The speaker recalls watching his young son walk away to play his first football match eighteen years ago. He remembers the physical wrench of separation as the child moved into the world independently for the first time. Using metaphors of satellites and fledgling birds, he captures the child's vulnerability and his own helplessness. In the final stanza, the father reflects that although he has experienced worse partings since, this one still haunts him because it represents the fundamental truth that love requires letting go.",
   formAndStructure:
@@ -322,7 +322,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "C. Day-Lewis (1904-1972) was UK Poet Laureate from 1968 until his death. The poem (published 1956 in The Gate and Other Poems) is dedicated to his eldest son Sean Day-Lewis (the journalist), who at age 18 had just started boarding school. (Daniel Day-Lewis the actor was the poet's youngest son, not yet born when the poem was written.)",
+      "C. Day-Lewis (1904-1972) was UK Poet Laureate from 1968 until his death. The poem (published 1962 in The Gate and Other Poems) is dedicated to his eldest son Sean Day-Lewis (the journalist) and looks back eighteen years to a memory of young Sean walking away to a school football game. (Daniel Day-Lewis the actor was the poet's youngest son, born in 1957.)",
     topic: 'Context',
     difficulty: 'foundation',
   },
@@ -517,7 +517,7 @@ export default function WalkingAwayPage() {
           <Badge variant="secondary">AQA</Badge>
         </div>
         <p className="text-body-sm text-muted-foreground">
-          C. Day-Lewis &middot; <em>The Gate and Other Poems</em> (1956)
+          C. Day-Lewis &middot; <em>The Gate and Other Poems</em> (1962)
         </p>
       </div>
 

@@ -60,7 +60,7 @@ const themes: ThemeData[] = [
       {
         part: 'Part 1 (Chapters 1-13)',
         evidence:
-          'Igbo culture is shown in full complexity: the Week of Peace, the egwugwu courts, the Oracle, the New Yam Festival. But cracks are visible. Obierika questions the exile law and the abandonment of twins. The killing of Ikemefuna reveals a tradition that can demand cruelty. Change is possible from within, but the culture\'s rigidity (embodied in Okonkwo) resists it.',
+          "Igbo culture is shown in full complexity: the Week of Peace, the egwugwu courts, the Oracle, the New Yam Festival. But cracks are visible. Obierika questions the exile law and the abandonment of twins. The killing of Ikemefuna reveals a tradition that can demand cruelty. Change is possible from within, but the culture's rigidity (embodied in Okonkwo) resists it.",
       },
       {
         part: 'Part 2 (Chapters 14-19)',
@@ -70,13 +70,13 @@ const themes: ThemeData[] = [
       {
         part: 'Part 3 (Chapters 20-25)',
         evidence:
-          'Okonkwo returns to find Umuofia transformed. The church, the court, and the trading post have replaced clan governance. The elders are arrested and humiliated. Okonkwo\'s violent response fails because the clan is no longer united. Tradition has lost not because it was weak but because it was divided.',
+          "Okonkwo returns to find Umuofia transformed. The church, the court, and the trading post have replaced clan governance. The elders are arrested and humiliated. Okonkwo's violent response fails because the clan is no longer united. Tradition has lost not because it was weak but because it was divided.",
       },
     ],
     keyQuotes: [
       {
         text: '"He has put a knife on the things that held us together and we have fallen apart."',
-        speaker: 'Okonkwo',
+        speaker: 'Obierika',
         part: 'Part 3, Chapter 20',
       },
       {
@@ -101,9 +101,9 @@ const themes: ThemeData[] = [
       'The Igbo clan system was democratic and decentralised: decisions were made by councils of elders, not by kings. Colonialism replaced this with authoritarian structures.',
     ],
     essayTips: [
-      'The strongest essays discuss both internal and external challenges to tradition. Achebe does not present Igbo culture as perfect -- Obierika\'s questions prove it was already evolving.',
-      'Discuss the novel\'s structure: Part 1 establishes what will be lost; Parts 2-3 show it being lost. This structural movement IS the theme.',
-      'Avoid the trap of presenting the Igbo as helpless victims. Achebe shows the culture\'s strengths precisely to make its destruction feel like a genuine loss, not an inevitable progress.',
+      "The strongest essays discuss both internal and external challenges to tradition. Achebe does not present Igbo culture as perfect -- Obierika's questions prove it was already evolving.",
+      "Discuss the novel's structure: Part 1 establishes what will be lost; Parts 2-3 show it being lost. This structural movement IS the theme.",
+      "Avoid the trap of presenting the Igbo as helpless victims. Achebe shows the culture's strengths precisely to make its destruction feel like a genuine loss, not an inevitable progress.",
       'Compare the slow internal change represented by Obierika with the violent external change imposed by the District Commissioner. Which does Achebe value?',
     ],
   },
@@ -112,14 +112,14 @@ const themes: ThemeData[] = [
     icon: Shield,
     iconColour: 'text-ochre-500',
     definition:
-      'Okonkwo\'s equation of manhood with violence and emotional suppression -- a personal flaw that Achebe shows has cultural roots and cultural consequences.',
+      "Okonkwo's equation of manhood with violence and emotional suppression -- a personal flaw that Achebe shows has cultural roots and cultural consequences.",
     overview:
-      'Okonkwo\'s terror of being like his father Unoka drives every major decision he makes. He beats his wives, kills Ikemefuna, and disowns Nwoye because he is afraid of being thought weak. Achebe is careful to show that this is not merely a personality trait but a product of a culture that prizes masculine achievement above all else. However, he also shows that the culture is more nuanced than Okonkwo realises: Obierika refuses to participate in Ikemefuna\'s killing without losing status. The title system rewards achievement, but it does not require cruelty. Okonkwo\'s tragedy is that he takes the culture\'s values to a destructive extreme that the culture itself does not demand.',
+      "Okonkwo's terror of being like his father Unoka drives every major decision he makes. He beats his wives, kills Ikemefuna, and disowns Nwoye because he is afraid of being thought weak. Achebe is careful to show that this is not merely a personality trait but a product of a culture that prizes masculine achievement above all else. However, he also shows that the culture is more nuanced than Okonkwo realises: Obierika refuses to participate in Ikemefuna's killing without losing status. The title system rewards achievement, but it does not require cruelty. Okonkwo's tragedy is that he takes the culture's values to a destructive extreme that the culture itself does not demand.",
     partEvidence: [
       {
         part: 'Part 1 (Chapters 1-13)',
         evidence:
-          'Okonkwo is introduced through his opposition to Unoka. He beats Ojiugo during the Week of Peace. He kills Ikemefuna despite Obierika\'s warning, afraid of appearing weak. He suppresses all emotion except anger. Nwoye\'s gentleness fills him with contempt and fear.',
+          "Okonkwo is introduced through his opposition to Unoka. He beats Ojiugo during the Week of Peace. He kills Ikemefuna despite Obierika's warning, afraid of appearing weak. He suppresses all emotion except anger. Nwoye's gentleness fills him with contempt and fear.",
       },
       {
         part: 'Part 2 (Chapters 14-19)',
@@ -129,7 +129,7 @@ const themes: ThemeData[] = [
       {
         part: 'Part 3 (Chapters 20-25)',
         evidence:
-          'Okonkwo\'s response to colonialism is violence -- the only tool his masculinity allows. He kills the court messenger and is confused when the clan does not follow. His suicide is the final contradiction: an act of submission by a man who lived to dominate.',
+          "Okonkwo's response to colonialism is violence -- the only tool his masculinity allows. He kills the court messenger and is confused when the clan does not follow. His suicide is the final contradiction: an act of submission by a man who lived to dominate.",
       },
     ],
     keyQuotes: [
@@ -150,7 +150,7 @@ const themes: ThemeData[] = [
       },
       {
         text: '"Living fire begets cold, impotent ash."',
-        speaker: 'Narrator on Okonkwo\'s view of Nwoye',
+        speaker: "Narrator on Okonkwo's view of Nwoye",
         part: 'Part 2, Chapter 17',
       },
     ],
@@ -173,7 +173,7 @@ const themes: ThemeData[] = [
     definition:
       'The systematic dismantling of Igbo society through religion, law, commerce, and narrative control.',
     overview:
-      'Achebe devotes the first two-thirds of the novel to building a vivid, functioning Igbo world so that the reader feels its destruction as a genuine loss. Colonialism in Things Fall Apart operates in stages: first the missionaries (Mr Brown), then the zealots (Reverend Smith), then the administrators (the District Commissioner). Each stage depends on the one before it. The church creates converts who become disconnected from the clan; the court creates a legal system that overrides clan justice; the trading post creates economic dependence. Achebe\'s masterful final paragraph -- the District Commissioner reducing Okonkwo\'s life to "a reasonable paragraph" -- shows that colonialism\'s deepest violence is narrative: the power to tell someone else\'s story on your own terms.',
+      "Achebe devotes the first two-thirds of the novel to building a vivid, functioning Igbo world so that the reader feels its destruction as a genuine loss. Colonialism in Things Fall Apart operates in stages: first the missionaries (Mr Brown), then the zealots (Reverend Smith), then the administrators (the District Commissioner). Each stage depends on the one before it. The church creates converts who become disconnected from the clan; the court creates a legal system that overrides clan justice; the trading post creates economic dependence. Achebe's masterful final paragraph -- the District Commissioner reducing Okonkwo's life to \"a reasonable paragraph\" -- shows that colonialism's deepest violence is narrative: the power to tell someone else's story on your own terms.",
     partEvidence: [
       {
         part: 'Part 1 (Chapters 1-13)',
@@ -194,12 +194,12 @@ const themes: ThemeData[] = [
     keyQuotes: [
       {
         text: '"The Pacification of the Primitive Tribes of the Lower Niger."',
-        speaker: 'District Commissioner\'s book title',
+        speaker: "District Commissioner's book title",
         part: 'Part 3, Chapter 25',
       },
       {
         text: '"He has put a knife on the things that held us together and we have fallen apart."',
-        speaker: 'Okonkwo',
+        speaker: 'Obierika',
         part: 'Part 3, Chapter 20',
       },
       {
@@ -209,15 +209,15 @@ const themes: ThemeData[] = [
       },
     ],
     contextLinks: [
-      'Achebe wrote Things Fall Apart as a direct response to European novels -- particularly Joseph Conrad\'s Heart of Darkness (1899) -- that depicted Africa as a blank, savage backdrop for European stories.',
+      "Achebe wrote Things Fall Apart as a direct response to European novels -- particularly Joseph Conrad's Heart of Darkness (1899) -- that depicted Africa as a blank, savage backdrop for European stories.",
       'British colonial policy in Nigeria used "indirect rule," co-opting local leaders and customs when convenient and overriding them when not. The District Commissioner\'s court in the novel reflects this system.',
       'Achebe\'s title comes from W.B. Yeats\'s poem "The Second Coming" (1919): "Things fall apart; the centre cannot hold." By using a European poem to frame an African tragedy, Achebe inserts his story into the canon it critiques.',
     ],
     essayTips: [
-      'The novel\'s structure is its argument: Part 1 builds the world; Parts 2-3 destroy it. Discuss this structural movement as Achebe\'s technique.',
-      'The District Commissioner\'s book title is the novel\'s sharpest weapon. It shows that colonialism\'s ultimate violence is narrative: deciding whose story matters and how it is told.',
+      "The novel's structure is its argument: Part 1 builds the world; Parts 2-3 destroy it. Discuss this structural movement as Achebe's technique.",
+      "The District Commissioner's book title is the novel's sharpest weapon. It shows that colonialism's ultimate violence is narrative: deciding whose story matters and how it is told.",
       'Discuss how colonialism exploits internal divisions. It does not conquer a united people; it divides them first through religion and then governs the fragments.',
-      'Always link back to Achebe\'s purpose: he wrote Things Fall Apart to reclaim African narrative from European control.',
+      "Always link back to Achebe's purpose: he wrote Things Fall Apart to reclaim African narrative from European control.",
     ],
   },
   {
@@ -232,7 +232,7 @@ const themes: ThemeData[] = [
       {
         part: 'Part 1 (Chapters 1-13)',
         evidence:
-          'Igbo religion is shown in full operation: the Oracle of the Hills and Caves, the egwugwu who dispense justice, the Week of Peace, the New Yam Festival, the concept of chi. Religion is not separate from governance -- it IS governance. The killing of Ikemefuna shows that the Oracle\'s authority is absolute, even when individuals question it.',
+          "Igbo religion is shown in full operation: the Oracle of the Hills and Caves, the egwugwu who dispense justice, the Week of Peace, the New Yam Festival, the concept of chi. Religion is not separate from governance -- it IS governance. The killing of Ikemefuna shows that the Oracle's authority is absolute, even when individuals question it.",
       },
       {
         part: 'Part 2 (Chapters 14-19)',
@@ -264,13 +264,13 @@ const themes: ThemeData[] = [
     ],
     contextLinks: [
       'Igbo traditional religion is polytheistic, with a supreme god (Chukwu), earth goddess (Ani), and numerous lesser spirits. Achebe simplifies this for the novel but maintains its essential complexity.',
-      'Christian missions in Nigeria operated schools and hospitals as conversion tools. Education was conditional on church attendance. Mr Brown\'s school reflects this strategy.',
-      'The osu (outcast) caste system was a genuine source of injustice within Igbo society. Achebe acknowledges this: Christianity\'s appeal to the osu is legitimate, even if its larger project is destructive.',
+      "Christian missions in Nigeria operated schools and hospitals as conversion tools. Education was conditional on church attendance. Mr Brown's school reflects this strategy.",
+      "The osu (outcast) caste system was a genuine source of injustice within Igbo society. Achebe acknowledges this: Christianity's appeal to the osu is legitimate, even if its larger project is destructive.",
     ],
     essayTips: [
       'The Akunna-Brown debate in Chapter 21 is crucial. Achebe shows the two theologies as equally sophisticated -- a point that undermines the colonial claim of bringing "civilisation" to the "primitive."',
       'Discuss why the church in the Evil Forest is a pivotal moment: its survival challenges the cosmological foundations of Igbo belief.',
-      'Link Nwoye\'s conversion to religion\'s emotional function. Christianity offers him comfort that his father\'s world cannot provide. This is personal, not theological.',
+      "Link Nwoye's conversion to religion's emotional function. Christianity offers him comfort that his father's world cannot provide. This is personal, not theological.",
       'Always connect religion to power. The District Commissioner backs the church with force; religion and colonialism are inseparable in the novel.',
     ],
   },
@@ -323,7 +323,7 @@ const themes: ThemeData[] = [
     ],
     essayTips: [
       'The proverb "When a man says yes his chi says yes also" is contradicted by much of what happens to Okonkwo. Discuss whether Achebe presents chi as real or as a cultural explanation for events beyond human control.',
-      'Compare Okonkwo\'s relationship with his chi to the concept of the tragic hero whose fate is sealed by a fatal flaw. Achebe draws on both Igbo and Western traditions.',
+      "Compare Okonkwo's relationship with his chi to the concept of the tragic hero whose fate is sealed by a fatal flaw. Achebe draws on both Igbo and Western traditions.",
       'Link chi to colonialism: is colonialism itself an expression of a collective fate, or could it have been resisted? Achebe leaves this question open.',
     ],
   },
@@ -349,7 +349,7 @@ const themes: ThemeData[] = [
       {
         part: 'Part 3 (Chapters 20-25)',
         evidence:
-          'The court messengers and interpreters introduce a new, colonial language. The kotma (court messenger) mediates between cultures but serves the coloniser. The Commissioner\'s book title replaces the rich, proverbial language of the Igbo with the flat, bureaucratic language of empire.',
+          "The court messengers and interpreters introduce a new, colonial language. The kotma (court messenger) mediates between cultures but serves the coloniser. The Commissioner's book title replaces the rich, proverbial language of the Igbo with the flat, bureaucratic language of empire.",
       },
     ],
     keyQuotes: [
@@ -365,19 +365,19 @@ const themes: ThemeData[] = [
       },
       {
         text: '"The Pacification of the Primitive Tribes of the Lower Niger."',
-        speaker: 'District Commissioner\'s book title',
+        speaker: "District Commissioner's book title",
         part: 'Part 3, Chapter 25',
       },
     ],
     contextLinks: [
       'Achebe chose to write in English deliberately, arguing that an African writer could "subvert" the colonial language by bending it to express African realities. This sparked a debate with Ngugi wa Thiong\'o, who argued that African writers should write in African languages.',
       'Igbo oral tradition is one of the richest in West Africa. Proverbs, folktales, and songs encode law, history, and philosophy. Achebe preserves this tradition within the English text.',
-      'The Commissioner\'s reductive language at the novel\'s end mirrors real colonial texts. The title closely resembles actual British colonial publications of the period.',
+      "The Commissioner's reductive language at the novel's end mirrors real colonial texts. The title closely resembles actual British colonial publications of the period.",
     ],
     essayTips: [
       'The "palm-oil" metaphor is one of the most quotable lines in the novel. Use it to argue that Achebe presents Igbo culture as intellectually sophisticated from the very first page.',
-      'Discuss the irony of Achebe writing in English: he uses the coloniser\'s language to tell the story the coloniser could never tell. The novel is itself an act of linguistic reclamation.',
-      'Compare the richness of Igbo proverbial language with the flat bureaucratic language of the Commissioner\'s book title. This contrast is Achebe\'s sharpest commentary on colonial narrative.',
+      "Discuss the irony of Achebe writing in English: he uses the coloniser's language to tell the story the coloniser could never tell. The novel is itself an act of linguistic reclamation.",
+      "Compare the richness of Igbo proverbial language with the flat bureaucratic language of the Commissioner's book title. This contrast is Achebe's sharpest commentary on colonial narrative.",
       'Link language to power: whoever controls the narrative controls history. Things Fall Apart exists to wrest narrative control back from the coloniser.',
     ],
   },
@@ -388,12 +388,12 @@ const themes: ThemeData[] = [
     definition:
       'The contrast between the democratic, tradition-based justice of the clan and the authoritarian, alien justice imposed by colonial law.',
     overview:
-      'Igbo justice in the novel operates through community consensus, the egwugwu court, and the authority of elders and the Oracle. It is not perfect -- the killing of Ikemefuna, the exile of Okonkwo for an accidental killing, the abandonment of twins -- but it is organic, understood, and participatory. Colonial justice, by contrast, is imposed from outside by men who do not understand local customs, enforced through violence and imprisonment. The District Commissioner\'s court uses interpreters and clerks as intermediaries, creating new hierarchies of power. Achebe does not idealise clan justice but insists that it is a functioning system replaced by something worse: a system that serves the coloniser\'s interests while claiming to serve universal law.',
+      "Igbo justice in the novel operates through community consensus, the egwugwu court, and the authority of elders and the Oracle. It is not perfect -- the killing of Ikemefuna, the exile of Okonkwo for an accidental killing, the abandonment of twins -- but it is organic, understood, and participatory. Colonial justice, by contrast, is imposed from outside by men who do not understand local customs, enforced through violence and imprisonment. The District Commissioner's court uses interpreters and clerks as intermediaries, creating new hierarchies of power. Achebe does not idealise clan justice but insists that it is a functioning system replaced by something worse: a system that serves the coloniser's interests while claiming to serve universal law.",
     partEvidence: [
       {
         part: 'Part 1 (Chapters 1-13)',
         evidence:
-          'The egwugwu court settles the dispute between Uzowulu and his wife\'s family. The process is public, participatory, and draws on tradition. Okonkwo\'s beating of Ojiugo during the Week of Peace is punished swiftly. The exile for accidental killing is severe but follows established law.',
+          "The egwugwu court settles the dispute between Uzowulu and his wife's family. The process is public, participatory, and draws on tradition. Okonkwo's beating of Ojiugo during the Week of Peace is punished swiftly. The exile for accidental killing is severe but follows established law.",
       },
       {
         part: 'Part 2 (Chapters 14-19)',
@@ -403,7 +403,7 @@ const themes: ThemeData[] = [
       {
         part: 'Part 3 (Chapters 20-25)',
         evidence:
-          'The Commissioner\'s court has replaced the egwugwu. The kotma use their positions for corruption and abuse. The elders are arrested, shaved, and beaten. Colonial justice is shown to be neither just nor legal by any standard the Igbo would recognise.',
+          "The Commissioner's court has replaced the egwugwu. The kotma use their positions for corruption and abuse. The elders are arrested, shaved, and beaten. Colonial justice is shown to be neither just nor legal by any standard the Igbo would recognise.",
       },
     ],
     keyQuotes: [
@@ -419,7 +419,7 @@ const themes: ThemeData[] = [
       },
       {
         text: '"He has put a knife on the things that held us together and we have fallen apart."',
-        speaker: 'Okonkwo',
+        speaker: 'Obierika',
         part: 'Part 3, Chapter 20',
       },
     ],
@@ -429,7 +429,7 @@ const themes: ThemeData[] = [
       'The novel was written in the context of Nigerian independence (1960). Achebe was arguing that Nigerians had governed themselves effectively before colonialism and could do so again.',
     ],
     essayTips: [
-      'Compare the egwugwu court (Chapter 10) with the Commissioner\'s court (Chapter 23). The first is public, participatory, and rooted in shared understanding; the second is imposed, authoritarian, and ignorant of local customs.',
+      "Compare the egwugwu court (Chapter 10) with the Commissioner's court (Chapter 23). The first is public, participatory, and rooted in shared understanding; the second is imposed, authoritarian, and ignorant of local customs.",
       'Discuss the role of the kotma as intermediaries who serve colonial power while exploiting their own people. Achebe shows that colonialism creates new hierarchies even as it claims to bring equality.',
       'Link justice to narrative: the Commissioner\'s power to judge is also the power to narrate. His book title is the ultimate judicial sentence -- it defines the Igbo as "primitive" and their pacification as progress.',
       'Address the imperfections of clan justice honestly. Achebe does not hide them (twins, the osu, Ikemefuna). The strongest essays acknowledge these while arguing that an imperfect system rooted in understanding is preferable to an alien system rooted in force.',
@@ -444,11 +444,17 @@ export default function ThemesPage() {
     <div className="space-y-10 bg-cream-50 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Things Fall Apart", url: "https://theenglishhub.app/revision/texts/things-fall-apart" },
-          { name: "Themes", url: "https://theenglishhub.app/revision/texts/things-fall-apart/themes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Things Fall Apart',
+            url: 'https://theenglishhub.app/revision/texts/things-fall-apart',
+          },
+          {
+            name: 'Themes',
+            url: 'https://theenglishhub.app/revision/texts/things-fall-apart/themes',
+          },
         ]}
       />
       {/* Study Tools */}
@@ -487,9 +493,8 @@ export default function ThemesPage() {
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Seven major themes explored in depth: definition, evidence from each
-            part of the novel, key quotations, links to historical context, and
-            essay planning tips for exam success.
+            Seven major themes explored in depth: definition, evidence from each part of the novel,
+            key quotations, links to historical context, and essay planning tips for exam success.
           </p>
         </div>
       </section>
@@ -498,9 +503,7 @@ export default function ThemesPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 font-serif text-heading-md text-foreground">
-              Jump to a Theme
-            </h2>
+            <h2 className="mb-4 font-serif text-heading-md text-foreground">Jump to a Theme</h2>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {themes.map((th) => {
                 const Icon = th.icon
@@ -539,12 +542,8 @@ export default function ThemesPage() {
                 <Icon className={`size-5 ${theme.iconColour}`} />
               </div>
               <div>
-                <h2 className="font-serif text-heading-lg text-foreground">
-                  {theme.title}
-                </h2>
-                <p className="text-body-sm italic text-clay-600">
-                  {theme.definition}
-                </p>
+                <h2 className="font-serif text-heading-lg text-foreground">{theme.title}</h2>
+                <p className="text-body-sm italic text-clay-600">{theme.definition}</p>
               </div>
             </div>
 
@@ -572,9 +571,7 @@ export default function ThemesPage() {
               <CardContent className="space-y-4 text-body-sm text-muted-foreground">
                 {theme.partEvidence.map((pe) => (
                   <div key={pe.part}>
-                    <h4 className="mb-1 text-sm font-semibold text-foreground">
-                      {pe.part}
-                    </h4>
+                    <h4 className="mb-1 text-sm font-semibold text-foreground">{pe.part}</h4>
                     <p>{pe.evidence}</p>
                   </div>
                 ))}
@@ -585,19 +582,12 @@ export default function ThemesPage() {
             <div>
               <div className="mb-4 flex items-center gap-2">
                 <Quote className="size-4 text-clay-500" />
-                <h3 className="font-serif text-heading-md text-foreground">
-                  Key Quotations
-                </h3>
+                <h3 className="font-serif text-heading-md text-foreground">Key Quotations</h3>
               </div>
               <div className="grid gap-3">
                 {theme.keyQuotes.map((q, i) => (
-                  <div
-                    key={i}
-                    className="rounded-lg border-l-4 border-l-clay-500 bg-cream-100 p-4"
-                  >
-                    <p className="font-serif font-medium italic text-foreground">
-                      {q.text}
-                    </p>
+                  <div key={i} className="rounded-lg border-l-4 border-l-clay-500 bg-cream-100 p-4">
+                    <p className="font-serif font-medium italic text-foreground">{q.text}</p>
                     <p className="mt-1 text-xs font-mono text-clay-600">
                       {q.speaker} -- {q.part}
                     </p>
@@ -643,9 +633,9 @@ export default function ThemesPage() {
 
       {/* Fair dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for criticism and review. Full
-        text available from your school or local library.
+        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
+        Patents Act 1988 for criticism and review. Full text available from your school or local
+        library.
       </p>
     </div>
   )

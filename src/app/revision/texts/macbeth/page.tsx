@@ -115,7 +115,7 @@ const data: TextGuideData = {
     {
       name: 'Banquo',
       role: "Macbeth's fellow general and friend; father of Fleance",
-      body: "Banquo serves as a moral foil to Macbeth. He hears the same prophecy but responds with caution rather than ambition, warning that \"the instruments of darkness tell us truths, / Win us with honest trifles, to betray's / In deepest consequence.\" Where Macbeth acts on the witches' words, Banquo resists temptation, despite being promised that his descendants will be kings. After Duncan's murder, Banquo suspects Macbeth: \"Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for't.\" His murder shows how far Macbeth has fallen, and his ghost's appearance at the banquet serves as a physical manifestation of Macbeth's guilt. Historically, Banquo was included as a virtuous ancestor of James I, who traced his lineage to Banquo's son Fleance.",
+      body: "Banquo serves as a moral foil to Macbeth. He hears the same prophecy but responds with caution rather than ambition, warning that \"the instruments of darkness tell us truths, / Win us with honest trifles, to betray's / In deepest consequence.\" Where Macbeth acts on the witches' words, Banquo resists temptation, despite being promised that his descendants will be kings. After Duncan's murder, Banquo suspects Macbeth: \"Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for't.\" His murder shows how far Macbeth has fallen, and his ghost's appearance at the banquet serves as a physical manifestation of Macbeth's guilt. Shakespeare presents him as a virtuous ancestor of James I, whose Stuart line claimed descent from Banquo through his son Fleance — a genealogy popularised by Hector Boece in the sixteenth century that modern historians treat as legendary rather than verifiable.",
     },
     {
       name: 'King Duncan',
@@ -167,7 +167,7 @@ const data: TextGuideData = {
   ],
 
   historicalContext: [
-    'Macbeth was written around 1606, shortly after James VI of Scotland became James I of England in 1603, uniting the two crowns. Shakespeare crafted the play as a deliberate compliment to his new patron. James traced his ancestry to the historical Banquo, which explains why Shakespeare transformed Banquo from a co-conspirator in the source material (Holinshed\'s Chronicles) into a noble, innocent victim. The "show of eight kings" that the witches conjure for Macbeth in Act 4 depicts the Stuart line descending from Banquo, with the last king holding a mirror that would have symbolically reflected James himself in the audience.',
+    'Macbeth was written around 1606, shortly after James VI of Scotland became James I of England in 1603, uniting the two crowns. Shakespeare crafted the play as a deliberate compliment to his new patron. The Stuarts claimed descent from Banquo through his son Fleance — a lineage popularised by Hector Boece\'s sixteenth-century Scottish history and absorbed into Holinshed\'s Chronicles, though most modern historians treat Banquo himself as a literary invention rather than a verifiable ancestor. Believing this lineage, Shakespeare transformed Banquo from a co-conspirator in Holinshed into a noble, innocent victim. The "show of eight kings" that the witches conjure for Macbeth in Act 4 depicts the Stuart line descending from Banquo, with the last king holding a mirror that would have symbolically reflected James himself in the audience.',
 
     'The play was written in the immediate aftermath of the Gunpowder Plot of November 1605, when Catholic conspirators attempted to blow up Parliament and assassinate James I. The themes of treason, regicide, equivocation, and the violation of the sacred bond between subject and sovereign would have carried intense topical resonance. The Porter\'s reference to "an equivocator, that could swear in both the scales against either scale" directly alludes to the trial of the Jesuit Henry Garnet, who defended the doctrine of equivocation during his prosecution for involvement in the plot. The play\'s unambiguous condemnation of regicide served both as political commentary and as reassurance to a king who had narrowly escaped assassination.',
 
@@ -559,7 +559,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "In Holinshed's Chronicles (Shakespeare's source), Banquo helped Macbeth murder Duncan. Shakespeare made Banquo noble and innocent because James I traced his royal lineage through Banquo's son Fleance. Making Banquo a co-conspirator would have insulted the king.",
+      "In Holinshed's Chronicles (Shakespeare's source), Banquo helped Macbeth murder Duncan. Shakespeare made Banquo noble and innocent because James I and his court traced the Stuart royal lineage through Banquo's son Fleance (a claim popularised by Hector Boece and now regarded as legendary). Making Banquo a co-conspirator would have insulted the king.",
     topic: 'Context',
     difficulty: 'grade-9',
   },

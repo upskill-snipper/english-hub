@@ -1,13 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  BookOpen,
-  Quote,
-  Lightbulb,
-  Sparkles,
-} from 'lucide-react'
+import { ArrowLeft, BookOpen, Quote, Lightbulb, Sparkles } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -29,12 +23,13 @@ type KeyQuote = {
 const quotes: KeyQuote[] = [
   {
     id: 1,
-    quote: '"Among the Igbo the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten."',
+    quote:
+      '"Among the Igbo the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten."',
     speaker: 'Narrator',
     part: 'Part 1, Chapter 1',
     context: 'The opening pages, establishing Igbo culture before any colonial contact.',
     analysis:
-      'Achebe\'s most quoted line establishes the sophistication of Igbo culture from the first page. The metaphor elevates speech to the status of a shared meal -- language is nourishment, and proverbs are its richest ingredient. The sentence is itself an example of the technique it describes: an elegant, proverbial statement about the value of proverbs.',
+      "Achebe's most quoted line establishes the sophistication of Igbo culture from the first page. The metaphor elevates speech to the status of a shared meal -- language is nourishment, and proverbs are its richest ingredient. The sentence is itself an example of the technique it describes: an elegant, proverbial statement about the value of proverbs.",
     themes: ['Language & Communication', 'Tradition vs Change'],
   },
   {
@@ -44,7 +39,7 @@ const quotes: KeyQuote[] = [
     part: 'Part 1, Chapter 1',
     context: 'Describing the moonlit nights when the village gathers for storytelling.',
     analysis:
-      'One of many Igbo proverbs Achebe embeds to demonstrate the culture\'s rhetorical richness. The proverb celebrates beauty\'s power to inspire even the most constrained. Achebe uses it to immerse the reader in an Igbo way of thinking -- poetic, metaphorical, rooted in observation of the natural world.',
+      "One of many Igbo proverbs Achebe embeds to demonstrate the culture's rhetorical richness. The proverb celebrates beauty's power to inspire even the most constrained. Achebe uses it to immerse the reader in an Igbo way of thinking -- poetic, metaphorical, rooted in observation of the natural world.",
     themes: ['Language & Communication', 'Tradition vs Change'],
   },
   {
@@ -52,9 +47,9 @@ const quotes: KeyQuote[] = [
     quote: '"Okonkwo was clearly cut out for great things."',
     speaker: 'Narrator',
     part: 'Part 1, Chapter 1',
-    context: 'Early description of Okonkwo\'s rise from poverty to prominence.',
+    context: "Early description of Okonkwo's rise from poverty to prominence.",
     analysis:
-      'The early promise that the novel systematically dismantles. Achebe sets up a trajectory of greatness only to show it collapse under the weight of Okonkwo\'s own rigidity and the colonial invasion. The reader invests in his success, making his destruction more painful.',
+      "The early promise that the novel systematically dismantles. Achebe sets up a trajectory of greatness only to show it collapse under the weight of Okonkwo's own rigidity and the colonial invasion. The reader invests in his success, making his destruction more painful.",
     themes: ['Fate & Chi', 'Masculinity & Fear'],
   },
   {
@@ -62,9 +57,9 @@ const quotes: KeyQuote[] = [
     quote: '"He was afraid of being thought weak."',
     speaker: 'Narrator',
     part: 'Part 1, Chapter 2',
-    context: 'The narrator identifies the psychological engine of Okonkwo\'s character.',
+    context: "The narrator identifies the psychological engine of Okonkwo's character.",
     analysis:
-      'The novel\'s key character insight, stated with devastating simplicity. Achebe identifies fear -- not strength -- as the driving force behind Okonkwo\'s aggression. Every subsequent act of violence, from the beating of his wives to the killing of Ikemefuna, can be traced back to this single sentence.',
+      "The novel's key character insight, stated with devastating simplicity. Achebe identifies fear -- not strength -- as the driving force behind Okonkwo's aggression. Every subsequent act of violence, from the beating of his wives to the killing of Ikemefuna, can be traced back to this single sentence.",
     themes: ['Masculinity & Fear'],
   },
   {
@@ -72,7 +67,7 @@ const quotes: KeyQuote[] = [
     quote: '"His whole life was dominated by fear, the fear of failure and of weakness."',
     speaker: 'Narrator',
     part: 'Part 1, Chapter 2',
-    context: 'Expanding on Okonkwo\'s psychological portrait.',
+    context: "Expanding on Okonkwo's psychological portrait.",
     analysis:
       'Achebe makes the diagnosis explicit. The repetition of "fear" hammers the point: Okonkwo\'s ambition is avoidance, not aspiration. He runs from his father\'s image rather than toward his own identity. His strength is reactive, not generative.',
     themes: ['Masculinity & Fear', 'Fate & Chi'],
@@ -84,7 +79,7 @@ const quotes: KeyQuote[] = [
     part: 'Part 1, Chapter 4',
     context: 'The proverb establishing the relationship between human will and fate.',
     analysis:
-      'The Igbo proverb suggests that willpower and destiny are aligned -- effort determines outcome. Achebe establishes this as Okonkwo\'s worldview, then spends the rest of the novel testing it to destruction. The proverb is both a statement of philosophy and a trap.',
+      "The Igbo proverb suggests that willpower and destiny are aligned -- effort determines outcome. Achebe establishes this as Okonkwo's worldview, then spends the rest of the novel testing it to destruction. The proverb is both a statement of philosophy and a trap.",
     themes: ['Fate & Chi'],
   },
   {
@@ -92,7 +87,7 @@ const quotes: KeyQuote[] = [
     quote: '"He could hardly imagine that Okonkwo was not his real father."',
     speaker: 'Narrator on Ikemefuna',
     part: 'Part 1, Chapter 4',
-    context: 'Describing how fully Ikemefuna has been absorbed into Okonkwo\'s family.',
+    context: "Describing how fully Ikemefuna has been absorbed into Okonkwo's family.",
     analysis:
       'Achebe establishes the depth of the father-son bond to make its destruction devastating. The adoption is genuine on both sides. When Okonkwo kills Ikemefuna, the reader understands it as an act of self-mutilation -- he destroys what he loves most to avoid appearing weak.',
     themes: ['Masculinity & Fear', 'Tradition vs Change'],
@@ -102,7 +97,7 @@ const quotes: KeyQuote[] = [
     quote: '"My father, they have killed me!"',
     speaker: 'Ikemefuna',
     part: 'Part 1, Chapter 7',
-    context: 'Ikemefuna\'s last words as he is struck down in the forest.',
+    context: "Ikemefuna's last words as he is struck down in the forest.",
     analysis:
       'The novel\'s most devastating line. Five words concentrate trust, betrayal, love, and horror. Ikemefuna calls Okonkwo "father" at the moment of death -- the child trusts the man who kills him. Achebe\'s restraint makes the horror more effective: no elaboration is needed.',
     themes: ['Masculinity & Fear', 'Tradition vs Change', 'Justice & Power'],
@@ -112,7 +107,7 @@ const quotes: KeyQuote[] = [
     quote: '"When did you become a shivering old woman?"',
     speaker: 'Okonkwo to himself',
     part: 'Part 1, Chapter 7',
-    context: 'Okonkwo\'s internal monologue after Ikemefuna\'s death, as grief threatens to surface.',
+    context: "Okonkwo's internal monologue after Ikemefuna's death, as grief threatens to surface.",
     analysis:
       'Okonkwo genders his grief as feminine weakness. Achebe shows how toxic masculinity transforms legitimate emotion into shame. The self-addressed question reveals an internal dialogue Okonkwo can never win: his humanity is always at war with his idea of manhood.',
     themes: ['Masculinity & Fear'],
@@ -122,19 +117,20 @@ const quotes: KeyQuote[] = [
     quote: '"She should have been a boy."',
     speaker: 'Okonkwo on Ezinma',
     part: 'Part 1, Chapter 8',
-    context: 'Okonkwo reflects on his favourite daughter\'s boldness and intelligence.',
+    context: "Okonkwo reflects on his favourite daughter's boldness and intelligence.",
     analysis:
-      'Okonkwo\'s highest compliment reveals his deepest limitation. He can only value Ezinma by imagining her as male. Achebe exposes the logical dead-end of a worldview that devalues femininity: Okonkwo loves what Ezinma is but cannot say so within his own framework.',
+      "Okonkwo's highest compliment reveals his deepest limitation. He can only value Ezinma by imagining her as male. Achebe exposes the logical dead-end of a worldview that devalues femininity: Okonkwo loves what Ezinma is but cannot say so within his own framework.",
     themes: ['Masculinity & Fear'],
   },
   {
     id: 11,
-    quote: '"If the Oracle said that my son should be killed, I would neither dispute it nor be the one to do it."',
+    quote:
+      '"If the Oracle said that my son should be killed, I would neither dispute it nor be the one to do it."',
     speaker: 'Obierika',
     part: 'Part 1, Chapter 8',
-    context: 'Obierika discussing Ikemefuna\'s death with Okonkwo.',
+    context: "Obierika discussing Ikemefuna's death with Okonkwo.",
     analysis:
-      'Obierika finds a moral middle ground that Okonkwo cannot imagine. He respects tradition without abandoning his conscience. Achebe\'s subtle argument: Igbo culture has space for ethical nuance, but Okonkwo is too rigid to occupy it.',
+      "Obierika finds a moral middle ground that Okonkwo cannot imagine. He respects tradition without abandoning his conscience. Achebe's subtle argument: Igbo culture has space for ethical nuance, but Okonkwo is too rigid to occupy it.",
     themes: ['Tradition vs Change', 'Justice & Power'],
   },
   {
@@ -142,14 +138,15 @@ const quotes: KeyQuote[] = [
     quote: '"The clan was like a lizard; if it lost its tail it soon grew another."',
     speaker: 'Narrator',
     part: 'Part 1, Chapter 13',
-    context: 'Describing the clan\'s resilience after setbacks.',
+    context: "Describing the clan's resilience after setbacks.",
     analysis:
       'Achebe uses an Igbo metaphor to describe cultural adaptability. The proverb suggests the clan can absorb loss and regenerate. But the colonial intrusion will prove to be an amputation the lizard cannot survive -- a loss too deep for regrowth.',
     themes: ['Tradition vs Change', 'Fate & Chi'],
   },
   {
     id: 13,
-    quote: '"The world has no end, and what is good among one people is an abomination with others."',
+    quote:
+      '"The world has no end, and what is good among one people is an abomination with others."',
     speaker: 'Uchendu',
     part: 'Part 2, Chapter 15',
     context: 'Uchendu counsels Okonkwo during his exile in Mbanta.',
@@ -162,7 +159,7 @@ const quotes: KeyQuote[] = [
     quote: '"He felt a relief within as the hymn poured into his parched soul."',
     speaker: 'Narrator on Nwoye',
     part: 'Part 2, Chapter 16',
-    context: 'Nwoye\'s first encounter with the Christian missionaries and their music.',
+    context: "Nwoye's first encounter with the Christian missionaries and their music.",
     analysis:
       'Nwoye\'s conversion is sensory and emotional, not intellectual. "Parched" implies long deprivation -- his father\'s rigidity has left him spiritually starving. Achebe shows that Christianity succeeds by offering emotional sustenance to those Igbo culture has wounded.',
     themes: ['Religion', 'Tradition vs Change'],
@@ -170,9 +167,9 @@ const quotes: KeyQuote[] = [
   {
     id: 15,
     quote: '"Living fire begets cold, impotent ash."',
-    speaker: 'Narrator on Okonkwo\'s view of Nwoye',
+    speaker: "Narrator on Okonkwo's view of Nwoye",
     part: 'Part 2, Chapter 17',
-    context: 'Okonkwo\'s bitter assessment of his son after Nwoye\'s conversion.',
+    context: "Okonkwo's bitter assessment of his son after Nwoye's conversion.",
     analysis:
       'Okonkwo sees his son as proof of hereditary failure. The irony is that Okonkwo\'s own "fire" -- his violence and contempt -- is what created the "ash." Achebe shows how fear of producing weakness produces the very alienation feared. The metaphor is self-fulfilling prophecy.',
     themes: ['Masculinity & Fear', 'Religion'],
@@ -180,21 +177,23 @@ const quotes: KeyQuote[] = [
   {
     id: 16,
     quote: '"He has put a knife on the things that held us together and we have fallen apart."',
-    speaker: 'Okonkwo',
+    speaker: 'Obierika',
     part: 'Part 3, Chapter 20',
-    context: 'Okonkwo reflects on the impact of colonialism after returning from exile.',
+    context:
+      'Obierika reflects to Okonkwo on the impact of colonialism after his return from exile.',
     analysis:
-      'Okonkwo echoes the novel\'s title. The "knife" metaphor suggests deliberate cutting -- colonialism is not an accident but an act of violence. Achebe gives Okonkwo the correct diagnosis but shows that his only response is more violence, which is precisely what the colonisers want.',
+      'Obierika directly echoes the novel\'s title. The "knife" metaphor suggests deliberate cutting -- colonialism is not an accident but an act of violence. Achebe gives the diagnosis to his most reflective character; the tragedy is that Okonkwo, who hears it, can only answer with more violence -- precisely what the colonisers want.',
     themes: ['Colonialism & Cultural Destruction', 'Tradition vs Change'],
   },
   {
     id: 17,
-    quote: '"The white man is very clever... Now he has won our brothers, and our clan can no longer act like one."',
+    quote:
+      '"The white man is very clever... Now he has won our brothers, and our clan can no longer act like one."',
     speaker: 'Obierika',
     part: 'Part 3, Chapter 20',
     context: 'Obierika analyses the colonial strategy with Okonkwo.',
     analysis:
-      'The most precise diagnosis of the divide-and-rule strategy in the novel. Achebe uses Obierika\'s intelligence to show that the Igbo understood what was happening but lacked the collective will to resist once the community was already fragmented.',
+      "The most precise diagnosis of the divide-and-rule strategy in the novel. Achebe uses Obierika's intelligence to show that the Igbo understood what was happening but lacked the collective will to resist once the community was already fragmented.",
     themes: ['Colonialism & Cultural Destruction'],
   },
   {
@@ -212,7 +211,7 @@ const quotes: KeyQuote[] = [
     quote: '"He saw things as black and white. And black was evil."',
     speaker: 'Narrator on Reverend Smith',
     part: 'Part 3, Chapter 22',
-    context: 'Describing the fundamentalism of Mr Brown\'s successor.',
+    context: "Describing the fundamentalism of Mr Brown's successor.",
     analysis:
       'Achebe uses the colour metaphor to expose the racism embedded in missionary theology. "Black" operates on both literal and figurative levels -- Smith cannot see Igbo culture as anything other than darkness to be dispelled. The sentence structure is deliberately simple, mirroring Smith\'s simplistic worldview.',
     themes: ['Colonialism & Cultural Destruction', 'Religion'],
@@ -222,27 +221,28 @@ const quotes: KeyQuote[] = [
     quote: '"That man was one of the greatest men in Umuofia. You drove him to kill himself."',
     speaker: 'Obierika to the District Commissioner',
     part: 'Part 3, Chapter 25',
-    context: 'Obierika\'s accusation after Okonkwo\'s body is discovered.',
+    context: "Obierika's accusation after Okonkwo's body is discovered.",
     analysis:
-      'Obierika delivers the novel\'s moral verdict. He reclaims Okonkwo\'s death from the colonial record and places blame where it belongs. The accusation is direct, simple, and unanswerable. Achebe uses Obierika to insist that Okonkwo\'s life matters on its own terms.',
+      "Obierika delivers the novel's moral verdict. He reclaims Okonkwo's death from the colonial record and places blame where it belongs. The accusation is direct, simple, and unanswerable. Achebe uses Obierika to insist that Okonkwo's life matters on its own terms.",
     themes: ['Colonialism & Cultural Destruction', 'Masculinity & Fear'],
   },
   {
     id: 21,
-    quote: '"One could almost write a whole chapter on him. Perhaps not a whole chapter but a reasonable paragraph."',
+    quote:
+      '"One could almost write a whole chapter on him. Perhaps not a whole chapter but a reasonable paragraph."',
     speaker: 'District Commissioner',
     part: 'Part 3, Chapter 25',
-    context: 'The Commissioner considers how much space Okonkwo\'s story deserves in his book.',
+    context: "The Commissioner considers how much space Okonkwo's story deserves in his book.",
     analysis:
-      'The Commissioner reduces a human tragedy to a matter of editorial length. Achebe uses this casual calculation to show that colonialism\'s deepest violence is narrative: the power to decide whose story matters and how much space it deserves.',
+      "The Commissioner reduces a human tragedy to a matter of editorial length. Achebe uses this casual calculation to show that colonialism's deepest violence is narrative: the power to decide whose story matters and how much space it deserves.",
     themes: ['Colonialism & Cultural Destruction', 'Language & Communication'],
   },
   {
     id: 22,
     quote: '"The Pacification of the Primitive Tribes of the Lower Niger."',
-    speaker: 'District Commissioner\'s book title',
+    speaker: "District Commissioner's book title",
     part: 'Part 3, Chapter 25',
-    context: 'The novel\'s final line -- the title of the Commissioner\'s planned book.',
+    context: "The novel's final line -- the title of the Commissioner's planned book.",
     analysis:
       'Every word is loaded: "Pacification" disguises violence as peace; "Primitive" denies the culture\'s complexity; "Tribes" reduces a civilisation to an ethnographic category; "Lower Niger" erases specificity. Achebe\'s entire novel exists as a refutation of this title.',
     themes: ['Colonialism & Cultural Destruction', 'Language & Communication', 'Justice & Power'],
@@ -268,11 +268,17 @@ export default function KeyQuotesPage() {
     <div className="space-y-10 bg-cream-50 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Things Fall Apart", url: "https://theenglishhub.app/revision/texts/things-fall-apart" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/things-fall-apart/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Things Fall Apart',
+            url: 'https://theenglishhub.app/revision/texts/things-fall-apart',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/revision/texts/things-fall-apart/key-quotes',
+          },
         ]}
       />
       {/* Study Tools */}
@@ -311,9 +317,8 @@ export default function KeyQuotesPage() {
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Twenty-two essential quotations organised by theme. Each quote
-            includes speaker, part reference, context, detailed analysis, and
-            thematic links for exam revision.
+            Twenty-two essential quotations organised by theme. Each quote includes speaker, part
+            reference, context, detailed analysis, and thematic links for exam revision.
           </p>
         </div>
       </section>
@@ -322,9 +327,7 @@ export default function KeyQuotesPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 font-serif text-heading-md text-foreground">
-              Jump to a Theme
-            </h2>
+            <h2 className="mb-4 font-serif text-heading-md text-foreground">Jump to a Theme</h2>
             <div className="flex flex-wrap gap-2">
               {themeGroups
                 .filter((t) => quotes.some((q) => q.themes[0] === t))
@@ -360,9 +363,7 @@ export default function KeyQuotesPage() {
               <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-clay-400/10 text-lg font-bold text-clay-600">
                 {themeQuotes.length}
               </div>
-              <h2 className="font-serif text-heading-lg text-foreground">
-                {theme}
-              </h2>
+              <h2 className="font-serif text-heading-lg text-foreground">{theme}</h2>
             </div>
 
             <div className="grid gap-4">
@@ -384,9 +385,7 @@ export default function KeyQuotesPage() {
                       <h4 className="mb-1 text-xs font-mono font-medium uppercase tracking-wider text-muted-foreground">
                         Context
                       </h4>
-                      <p className="text-body-sm text-muted-foreground">
-                        {q.context}
-                      </p>
+                      <p className="text-body-sm text-muted-foreground">{q.context}</p>
                     </div>
 
                     {/* Analysis */}
@@ -394,9 +393,7 @@ export default function KeyQuotesPage() {
                       <h4 className="mb-1 text-xs font-mono font-medium uppercase tracking-wider text-muted-foreground">
                         Language Analysis
                       </h4>
-                      <p className="text-body-sm text-muted-foreground">
-                        {q.analysis}
-                      </p>
+                      <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
                     </div>
 
                     {/* Themes */}
@@ -425,9 +422,9 @@ export default function KeyQuotesPage() {
 
       {/* Fair dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for criticism and review. Full
-        text available from your school or local library.
+        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
+        Patents Act 1988 for criticism and review. Full text available from your school or local
+        library.
       </p>
     </div>
   )

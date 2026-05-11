@@ -1,13 +1,7 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Quote,
-  Sparkles,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, Quote, Sparkles } from 'lucide-react'
 
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -20,8 +14,7 @@ export const metadata: Metadata = {
   description:
     'Twenty-five essential quotations from To Kill a Mockingbird by Harper Lee with speaker, context and detailed analysis.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/revision/texts/to-kill-a-mockingbird/key-quotes',
+    canonical: 'https://theenglishhub.app/revision/texts/to-kill-a-mockingbird/key-quotes',
   },
 }
 
@@ -43,16 +36,16 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Atticus',
     context: 'Chapter 3 — to Scout',
     analysis:
-      'The novel\'s moral thesis. Lee makes empathy the foundation of justice, courage and all other virtues. Scout must learn this lesson across the entire book, and her success is measured by whether she can apply it.',
+      "The novel's moral thesis. Lee makes empathy the foundation of justice, courage and all other virtues. Scout must learn this lesson across the entire book, and her success is measured by whether she can apply it.",
     themes: ['Empathy', 'Moral education'],
   },
   {
     id: 2,
     text: '"It\'s a sin to kill a mockingbird."',
     speaker: 'Miss Maudie',
-    context: 'Chapter 10 — explaining Atticus\'s rule',
+    context: "Chapter 10 — explaining Atticus's rule",
     analysis:
-      'The central symbol defined. Lee argues that innocence — in birds, in Tom Robinson, in Boo Radley — must be protected because it does nothing but good. Destroying it is the novel\'s supreme moral crime.',
+      "The central symbol defined. Lee argues that innocence — in birds, in Tom Robinson, in Boo Radley — must be protected because it does nothing but good. Destroying it is the novel's supreme moral crime.",
     themes: ['Innocence', 'Racial injustice'],
   },
   {
@@ -76,10 +69,10 @@ const KEY_QUOTES: KeyQuote[] = [
   {
     id: 5,
     text: '"People generally see what they look for, and hear what they listen for."',
-    speaker: 'Judge Taylor',
+    speaker: 'Atticus',
     context: 'Chapter 17 — during the trial',
     analysis:
-      'The judge names the mechanism of prejudice: confirmation bias. Lee explains why evidence alone cannot overcome racism — people see what they have been taught to see.',
+      'Atticus names the mechanism of prejudice: confirmation bias. Lee explains why evidence alone cannot overcome racism — people see what they have been taught to see.',
     themes: ['Racial injustice', 'Class'],
   },
   {
@@ -88,7 +81,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Scout',
     context: 'Chapter 31 — on Boo Radley',
     analysis:
-      'Scout\'s final assessment of Boo recovers innocence through empathy. Lee closes the novel with a child\'s simplicity that carries the weight of everything she has learned.',
+      "Scout's final assessment of Boo recovers innocence through empathy. Lee closes the novel with a child's simplicity that carries the weight of everything she has learned.",
     themes: ['Empathy', 'Innocence'],
   },
   {
@@ -106,7 +99,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Tom Robinson',
     context: 'Chapter 19 — during cross-examination',
     analysis:
-      'Tom\'s compassion for Mayella scandalises the courtroom. Lee shows that a Black man expressing pity for a white woman violates the racial hierarchy more than any alleged crime.',
+      "Tom's compassion for Mayella scandalises the courtroom. Lee shows that a Black man expressing pity for a white woman violates the racial hierarchy more than any alleged crime.",
     themes: ['Racial injustice', 'Empathy'],
   },
   {
@@ -115,7 +108,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Atticus',
     context: 'Chapter 11 — on Mrs Dubose',
     analysis:
-      'Lee\'s explicit definition of courage. By placing it in the context of Mrs Dubose\'s addiction, she separates moral courage from physical bravery and prepares the reader for the trial.',
+      "Lee's explicit definition of courage. By placing it in the context of Mrs Dubose's addiction, she separates moral courage from physical bravery and prepares the reader for the trial.",
     themes: ['Courage'],
   },
   {
@@ -124,7 +117,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Atticus',
     context: 'Chapter 31 — responding to Scout calling Boo "nice"',
     analysis:
-      'The novel\'s closing moral statement. Lee ends with qualified optimism: most people are good, but seeing their goodness requires the empathetic effort Atticus has taught.',
+      "The novel's closing moral statement. Lee ends with qualified optimism: most people are good, but seeing their goodness requires the empathetic effort Atticus has taught.",
     themes: ['Empathy', 'Moral education'],
   },
   {
@@ -133,7 +126,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Scout',
     context: 'Chapter 23 — to Jem',
     analysis:
-      'Scout rejects Maycomb\'s class and racial categories. Lee gives the moral insight to a child because the adults of the town have been taught not to see the obvious truth.',
+      "Scout rejects Maycomb's class and racial categories. Lee gives the moral insight to a child because the adults of the town have been taught not to see the obvious truth.",
     themes: ['Class', 'Racial injustice'],
   },
   {
@@ -142,7 +135,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Atticus',
     context: 'Chapter 20 — closing argument',
     analysis:
-      'Atticus invokes the principle the trial will immediately betray. Lee uses the gap between American ideals and American practice as the novel\'s deepest irony.',
+      "Atticus invokes the principle the trial will immediately betray. Lee uses the gap between American ideals and American practice as the novel's deepest irony.",
     themes: ['Racial injustice', 'Courage'],
   },
   {
@@ -151,7 +144,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Jem',
     context: 'Chapter 22 — after the verdict',
     analysis:
-      'Jem\'s faith in his community collapses. Lee captures the precise moment when childhood trust in adult goodness is destroyed by a single act of collective injustice.',
+      "Jem's faith in his community collapses. Lee captures the precise moment when childhood trust in adult goodness is destroyed by a single act of collective injustice.",
     themes: ['Innocence', 'Racial injustice'],
   },
   {
@@ -169,7 +162,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Scout',
     context: 'Chapter 15 — confronting the lynch mob',
     analysis:
-      'Scout disperses a mob by addressing one man as an individual, not part of a crowd. Lee shows that a child\'s naive empathy can succeed where adult argument fails.',
+      "Scout disperses a mob by addressing one man as an individual, not part of a crowd. Lee shows that a child's naive empathy can succeed where adult argument fails.",
     themes: ['Courage', 'Empathy'],
   },
   {
@@ -178,7 +171,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Mr Gilmer',
     context: 'Chapter 19 — cross-examining Tom',
     analysis:
-      'The prosecutor\'s outrage reveals that Tom\'s real offence is disrupting the racial hierarchy. Lee makes the courtroom\'s double standard explicit through repetition.',
+      "The prosecutor's outrage reveals that Tom's real offence is disrupting the racial hierarchy. Lee makes the courtroom's double standard explicit through repetition.",
     themes: ['Racial injustice'],
   },
   {
@@ -203,16 +196,16 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 19,
     text: '"People in their right minds never take pride in their talents."',
     speaker: 'Miss Maudie',
-    context: 'Chapter 10 — on Atticus\'s marksmanship',
+    context: "Chapter 10 — on Atticus's marksmanship",
     analysis:
-      'Lee uses Atticus\'s hidden skill with a gun to distinguish genuine strength from showmanship. True courage is quiet, not performative.',
+      "Lee uses Atticus's hidden skill with a gun to distinguish genuine strength from showmanship. True courage is quiet, not performative.",
     themes: ['Courage', 'Moral education'],
   },
   {
     id: 20,
     text: '"There\'s four kinds of folks in the world."',
     speaker: 'Jem',
-    context: 'Chapter 23 — explaining Maycomb\'s hierarchy',
+    context: "Chapter 23 — explaining Maycomb's hierarchy",
     analysis:
       'Jem tries to map the class system and cannot make it logical. Lee uses his failure to show that social categories are irrational constructions, not natural facts.',
     themes: ['Class'],
@@ -223,7 +216,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Bob Ewell',
     context: 'Chapter 17 — testimony',
     analysis:
-      'Lee uses Ewell\'s language to make racism physically repulsive to the reader. The crude vocabulary exposes what polite Southern manners conceal.',
+      "Lee uses Ewell's language to make racism physically repulsive to the reader. The crude vocabulary exposes what polite Southern manners conceal.",
     themes: ['Racial injustice', 'Class'],
   },
   {
@@ -232,14 +225,14 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Atticus',
     context: 'Chapter 10',
     analysis:
-      'The full statement of the novel\'s central metaphor. Lee distinguishes between those who cause harm (bluejays) and those who are harmless (mockingbirds), making protection of innocence a moral imperative.',
+      "The full statement of the novel's central metaphor. Lee distinguishes between those who cause harm (bluejays) and those who are harmless (mockingbirds), making protection of innocence a moral imperative.",
     themes: ['Innocence', 'Moral education'],
   },
   {
     id: 23,
     text: '"It was just him I couldn\'t stand."',
     speaker: 'Dill',
-    context: 'Chapter 19 — on Mr Gilmer\'s cross-examination',
+    context: "Chapter 19 — on Mr Gilmer's cross-examination",
     analysis:
       'Dill responds instinctively to cruelty. Lee gives a child the emotional response that adult Maycomb has trained itself to suppress, making him a moral barometer.',
     themes: ['Empathy', 'Innocence'],
@@ -248,18 +241,18 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 24,
     text: '"Atticus was right. One time he said you never really know a man until you stand in his shoes."',
     speaker: 'Scout',
-    context: 'Chapter 31 — on Boo\'s porch',
+    context: "Chapter 31 — on Boo's porch",
     analysis:
-      'Scout applies the lesson. Lee closes the novel\'s moral arc: theory becomes practice, and the student finally understands what the teacher meant.',
+      "Scout applies the lesson. Lee closes the novel's moral arc: theory becomes practice, and the student finally understands what the teacher meant.",
     themes: ['Empathy', 'Moral education'],
   },
   {
     id: 25,
     text: '"With him, life was routine; without him, life was unbearable."',
     speaker: 'Scout (narrating)',
-    context: 'Chapter 12 — on Atticus\'s absence',
+    context: "Chapter 12 — on Atticus's absence",
     analysis:
-      'Scout describes Atticus\'s stabilising presence. Lee shows that moral guidance is not dramatic but steady — a daily presence that children depend on without realising it.',
+      "Scout describes Atticus's stabilising presence. Lee shows that moral guidance is not dramatic but steady — a daily presence that children depend on without realising it.",
     themes: ['Moral education'],
   },
 ]
@@ -277,11 +270,17 @@ export default async function ToKillAMockingbirdKeyQuotesPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "To Kill a Mockingbird", url: "https://theenglishhub.app/revision/texts/to-kill-a-mockingbird" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/to-kill-a-mockingbird/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'To Kill a Mockingbird',
+            url: 'https://theenglishhub.app/revision/texts/to-kill-a-mockingbird',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/revision/texts/to-kill-a-mockingbird/key-quotes',
+          },
         ]}
       />
       {/* Hero */}
@@ -335,13 +334,22 @@ export default async function ToKillAMockingbirdKeyQuotesPage() {
               <CardContent className="space-y-3 p-5">
                 <div className="flex items-start justify-between gap-4">
                   <p className="text-body-md font-medium italic text-foreground">{q.text}</p>
-                  <span className="shrink-0 flex size-7 items-center justify-center rounded-full bg-muted text-xs font-semibold text-muted-foreground">{q.id}</span>
+                  <span className="shrink-0 flex size-7 items-center justify-center rounded-full bg-muted text-xs font-semibold text-muted-foreground">
+                    {q.id}
+                  </span>
                 </div>
-                <p className="text-caption uppercase tracking-wide text-primary">{q.speaker} — {q.context}</p>
+                <p className="text-caption uppercase tracking-wide text-primary">
+                  {q.speaker} — {q.context}
+                </p>
                 <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
                 <div className="flex flex-wrap gap-1.5 pt-1">
                   {q.themes.map((theme) => (
-                    <span key={theme} className="rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground">{theme}</span>
+                    <span
+                      key={theme}
+                      className="rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground"
+                    >
+                      {theme}
+                    </span>
                   ))}
                 </div>
               </CardContent>
@@ -352,21 +360,33 @@ export default async function ToKillAMockingbirdKeyQuotesPage() {
 
       {/* Navigation */}
       <section className="flex flex-wrap gap-3">
-        <Button variant="outline" size="sm" render={<Link href="/revision/texts/to-kill-a-mockingbird/characters" />}>
+        <Button
+          variant="outline"
+          size="sm"
+          render={<Link href="/revision/texts/to-kill-a-mockingbird/characters" />}
+        >
           Characters <ArrowRight className="size-3.5" />
         </Button>
-        <Button variant="outline" size="sm" render={<Link href="/revision/texts/to-kill-a-mockingbird/themes" />}>
+        <Button
+          variant="outline"
+          size="sm"
+          render={<Link href="/revision/texts/to-kill-a-mockingbird/themes" />}
+        >
           Themes <ArrowRight className="size-3.5" />
         </Button>
-        <Button variant="outline" size="sm" render={<Link href="/revision/texts/to-kill-a-mockingbird/context" />}>
+        <Button
+          variant="outline"
+          size="sm"
+          render={<Link href="/revision/texts/to-kill-a-mockingbird/context" />}
+        >
           Context <ArrowRight className="size-3.5" />
         </Button>
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright,
-        Designs and Patents Act 1988 for criticism and review. Full text available from
-        your school or local library.
+        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
+        Patents Act 1988 for criticism and review. Full text available from your school or local
+        library.
       </p>
     </div>
   )

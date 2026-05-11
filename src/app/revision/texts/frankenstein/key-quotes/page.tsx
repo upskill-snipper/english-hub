@@ -63,8 +63,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'The Creature uses Paradise Lost to position Victor as a negligent God. "For no misdeed" is the crucial phrase: unlike Milton\'s Satan, the Creature did not rebel. His exile is unearned, making Victor\'s failure of responsibility absolute.',
       },
       {
-        quote:
-          'You are my creator, but I am your master; -- obey!',
+        quote: 'You are my creator, but I am your master; -- obey!',
         speaker: 'The Creature',
         chapter: 'Chapter 20',
         analysis:
@@ -101,8 +100,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'The Creature uses Enlightenment philosophical language. "Children of a forced solitude" personifies vices as products of environment. "Necessarily" insists on a deterministic link between social conditions and moral outcomes, echoing Rousseau.',
       },
       {
-        quote:
-          'If I have no ties and no affections, hatred and vice must be my portion.',
+        quote: 'If I have no ties and no affections, hatred and vice must be my portion.',
         speaker: 'The Creature',
         chapter: 'Chapter 17',
         analysis:
@@ -128,7 +126,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         speaker: 'Walton',
         chapter: 'Letter II',
         analysis:
-          'Walton\'s loneliness foreshadows both Victor\'s and the Creature\'s isolation. "Eyes that would reply to mine" expresses the need for emotional reciprocity -- the fundamental human requirement that the Creature is permanently denied.',
+          "Walton's loneliness foreshadows both Victor's and the Creature's isolation. \"Eyes that would reply to mine\" expresses the need for emotional reciprocity -- the fundamental human requirement that the Creature is permanently denied.",
       },
       {
         quote:
@@ -218,9 +216,9 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         quote:
           'I, the miserable and the abandoned, am an abortion, to be spurned at, and kicked, and trampled on.',
         speaker: 'The Creature',
-        chapter: 'Chapter 20',
+        chapter: 'Walton in Continuation',
         analysis:
-          'The word "abortion" -- something that should never have existed -- is the Creature\'s most extreme expression of internalised self-hatred. He has absorbed society\'s judgement so completely that he denies his own right to exist.',
+          "The word \"abortion\" -- something that should never have existed -- is the Creature's most extreme expression of internalised self-hatred, delivered to Walton over Victor's corpse in the novel's closing scene. He has absorbed society's judgement so completely that he denies his own right to exist.",
       },
       {
         quote:
@@ -231,12 +229,11 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'The Creature blames Victor not for giving him life but for making him ugly. "Formed" implies deliberate design. The unanswerable question holds Victor responsible for the very appearance that causes universal rejection.',
       },
       {
-        quote:
-          'I had cast off all feeling, subdued all anguish, to riot in the excess of my despair.',
+        quote: 'I was hurried away by fury; revenge alone endowed me with strength and composure.',
         speaker: 'Victor',
         chapter: 'Chapter 24',
         analysis:
-          'Victor describes himself in language indistinguishable from the Creature\'s. The verb "riot" suggests uncontrolled behaviour. By the novel\'s end, the distinction between man and monster has completely collapsed.',
+          'Victor describes himself in language indistinguishable from the Creature\'s. "Hurried away by fury" suggests uncontrolled, possessed behaviour. By the novel\'s end, the distinction between man and monster has completely collapsed.',
       },
       {
         quote:
@@ -255,12 +252,11 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'Victor projects his worst fears onto the unfinished female creature. "For its own sake" attributes motiveless malice to a being that does not yet exist. His reasoning reveals an inability to see his creations as anything other than monsters.',
       },
       {
-        quote:
-          'I shall be with you on your wedding-night.',
+        quote: 'I shall be with you on your wedding-night.',
         speaker: 'The Creature',
         chapter: 'Chapter 20',
         analysis:
-          'The Creature\'s most famous threat is a masterpiece of ambiguity. Victor assumes it targets him; it means Elizabeth. The misunderstanding dramatises Victor\'s fatal self-absorption.',
+          "The Creature's most famous threat is a masterpiece of ambiguity. Victor assumes it targets him; it means Elizabeth. The misunderstanding dramatises Victor's fatal self-absorption.",
       },
     ],
   },
@@ -279,11 +275,14 @@ export default async function FrankensteinKeyQuotesPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Frankenstein", url: "https://theenglishhub.app/revision/texts/frankenstein" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/frankenstein/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Frankenstein', url: 'https://theenglishhub.app/revision/texts/frankenstein' },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/revision/texts/frankenstein/key-quotes',
+          },
         ]}
       />
       {/* Hero */}
@@ -314,12 +313,10 @@ export default async function FrankensteinKeyQuotesPage() {
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             25 Key Quotes by Theme
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">
-            Frankenstein by Mary Shelley
-          </p>
+          <p className="mt-2 text-body-lg text-muted-foreground">Frankenstein by Mary Shelley</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Every quotation you need for the exam, organised by theme with detailed
-            analysis. All from the public-domain 1818 text.
+            Every quotation you need for the exam, organised by theme with detailed analysis. All
+            from the public-domain 1818 text.
           </p>
         </div>
       </section>
@@ -347,15 +344,10 @@ export default async function FrankensteinKeyQuotesPage() {
 
       {/* Quotes by theme */}
       {QUOTES_BY_THEME.map((section) => (
-        <section
-          key={section.theme}
-          id={section.theme.toLowerCase().replace(/\s+/g, '-')}
-        >
+        <section key={section.theme} id={section.theme.toLowerCase().replace(/\s+/g, '-')}>
           <div className="mb-5 flex items-center gap-3">
             <span className={`block size-3 rounded-full ${section.colour}`} />
-            <h2 className="text-heading-lg font-heading text-foreground">
-              {section.theme}
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">{section.theme}</h2>
             <Badge variant="outline" className="text-muted-foreground">
               {section.quotes.length} quotes
             </Badge>
@@ -369,9 +361,7 @@ export default async function FrankensteinKeyQuotesPage() {
                     &ldquo;{q.quote}&rdquo;
                   </p>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <p className="text-caption uppercase tracking-wide text-primary">
-                      {q.speaker}
-                    </p>
+                    <p className="text-caption uppercase tracking-wide text-primary">{q.speaker}</p>
                     <span className="text-border">|</span>
                     <p className="text-caption text-muted-foreground">{q.chapter}</p>
                   </div>
@@ -385,9 +375,8 @@ export default async function FrankensteinKeyQuotesPage() {
 
       {/* Footer */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is in the
-        public domain. All quotations are from the original 1818 text and are reproduced
-        freely.
+        <em>Frankenstein; or, The Modern Prometheus</em> (1818) by Mary Shelley is in the public
+        domain. All quotations are from the original 1818 text and are reproduced freely.
       </p>
     </div>
   )

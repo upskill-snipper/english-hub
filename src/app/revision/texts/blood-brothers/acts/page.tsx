@@ -73,7 +73,7 @@ const ACT_1: SceneBlock[] = [
           "The title ritual. Russell makes the boys' chosen bond mirror the biological bond they do not know about, layering irony.",
       },
       {
-        text: '"You can\'t play with him."',
+        text: '"You see why I don\'t want you mixing with boys like that!"',
         speaker: 'Mrs Lyons',
         analysis:
           'Mrs Lyons begins policing the class boundary. Her fear is not of Mickey personally but of what his existence reveals.',
@@ -88,7 +88,7 @@ const ACT_1: SceneBlock[] = [
       'Mrs Lyons fabricates a superstition — that separated twins will die if they learn the truth — to control Mrs Johnstone. As the friendship grows, the Lyons family relocates to the countryside. Russell shows how wealth provides the power to simply move away from problems that the Johnstones cannot escape.',
     quotes: [
       {
-        text: '"They say that if twins are separated they\'ll die."',
+        text: '"You do know what they say about twins, secretly parted, don\'t you?"',
         speaker: 'Mrs Lyons',
         analysis:
           'Mrs Lyons invents the curse, but Russell turns it into a self-fulfilling prophecy driven by class forces, not magic.',
@@ -112,16 +112,16 @@ const ACT_2: SceneBlock[] = [
       'The teenagers reunite after the Johnstones are rehoused near the Lyons. Mickey, Edward and Linda form a triangle. Russell uses song montages to compress time and show how the same experiences — school, first love, growing up — produce different outcomes depending on class.',
     quotes: [
       {
-        text: '"If you\'d been born here, what would you have been?"',
+        text: '"If you\'d been born here, you would have been just like him."',
         speaker: 'Linda',
         analysis:
           "Linda voices the play's central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge.",
       },
       {
-        text: '"Take a letter, Miss Jones."',
-        speaker: 'Edward (playing)',
+        text: '"I thought we always stuck together."',
+        speaker: 'Edward',
         analysis:
-          'Edward mimics a boss in a childhood game. Russell shows how class roles are rehearsed even in play, naturalising inequality.',
+          'Edward’s plea invokes the childhood blood-brother bond. Russell exposes how class has already corroded it: Edward’s sentimentality cannot reach Mickey’s lived reality of unemployment.',
       },
     ],
     examFocus:
@@ -133,10 +133,10 @@ const ACT_2: SceneBlock[] = [
       "Mickey leaves school for a factory job, then loses it in the recession. Edward goes to university. When Sammy involves Mickey in a robbery, Mickey is imprisoned. Released depressed and dependent on medication, he is unable to reconnect with Linda or himself. Russell makes the economic context explicit: this is Thatcher's Liverpool.",
     quotes: [
       {
-        text: '"I\'m not an adolescent, I\'m nearly eighteen."',
+        text: '"I suppose you still are a kid, aren\'t y\'?"',
         speaker: 'Mickey',
         analysis:
-          'Mickey resists being patronised, but Russell shows how quickly adult reality crushes working-class youth. The line marks the end of childhood protection.',
+          'Mickey calls Edward a kid because Edward has been spared adult reality. Russell shows how unemployment and poverty have aged Mickey past his twin, even though they are the same age. The line marks the end of childhood equality.',
       },
       {
         text: '"There\'s a man gone mad in the town tonight."',
@@ -160,7 +160,7 @@ const ACT_2: SceneBlock[] = [
       "Mickey, armed and desperate, confronts Edward at the town hall. Mrs Johnstone arrives and tells both sons they are twins. The revelation destroys Mickey: everything could have been different. He accidentally fires the gun, killing Edward; the police shoot Mickey. The Narrator's prophecy is fulfilled, but Russell makes clear that the real killer is a society that assigns life chances at birth.",
     quotes: [
       {
-        text: '"How come you didn\'t grow up like me?"',
+        text: '"Well, how come you got everything... an\' I got nothin\'?"',
         speaker: 'Mickey',
         analysis:
           "Mickey's final cry of class rage. Russell gives him the play's thesis in ordinary speech, making the political argument viscerally human.",

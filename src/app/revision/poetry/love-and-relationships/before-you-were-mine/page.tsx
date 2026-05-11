@@ -261,9 +261,9 @@ const beforeYouWereMinePOem: PoemData = {
 
   summary:
     "Stanza 1 (lines 1\u20135): The speaker imagines her mother ten years before she was born, laughing with friends on a street corner. Her dress blows like Marilyn Monroe's \u2014 she is young, glamorous, and free.\n\n" +
-    'Stanza 2 (lines 7\u201311): The mother dances in ballrooms with "fizzy, movie tomorrows" ahead of her. The speaker acknowledges she is "the spark that changed your life" \u2014 she is aware that her birth ended her mother\'s carefree youth.\n\n' +
-    "Stanza 3 (lines 13\u201316): The speaker expresses desire to occupy her mother's past \u2014 to walk those same streets, to claim that confidence. The possessive language intensifies.\n\n" +
-    'Stanza 4 (lines 18\u201322): The poem shifts to childhood memories: the mother\'s dress, teaching the speaker to dance. The final line \u2014 "Your ghost. The one who changed your life" \u2014 frames the speaker as haunting her mother\'s former self.',
+    'Stanza 2 (lines 6\u201310): The mother dances in ballrooms with "fizzy, movie tomorrows" ahead of her. The speaker acknowledges she is "the spark that changed your life" \u2014 she is aware that her birth ended her mother\'s carefree youth.\n\n' +
+    "Stanza 3 (lines 11\u201315): The speaker expresses desire to occupy her mother's past \u2014 to walk those same streets, to claim that confidence. The possessive language intensifies.\n\n" +
+    'Stanza 4 (lines 16\u201320): The poem shifts to childhood memories: the mother\'s dress, teaching the speaker to dance. The final line \u2014 "Your ghost. The one who changed your life" \u2014 frames the speaker as haunting her mother\'s former self.',
 
   formAndStructure:
     'Form: Four quintains (five-line stanzas), giving the poem a regular, balanced structure that contrasts with the messy emotional content of nostalgia and possession.\n\n' +
@@ -458,13 +458,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'A sonnet',
-      "Five quatrains — each representing a decade of the mother's life",
-      'Free verse with no structure',
+      'Four quintains (four five-line stanzas) — 20 lines in total, written in free verse',
+      'Free verse with no stanza divisions',
       'Blank verse',
     ],
     correctIndex: 1,
     explanation:
-      'Five four-line stanzas, each roughly covering a different period. The regular structure creates a sense of progression through time.',
+      'Four five-line stanzas (quintains) = 20 lines. The regular five-line stanzas create a measured, balanced structure that contrasts with the messy emotional content of nostalgia and possession.',
     topic: 'Structure',
     difficulty: 'foundation',
   },
@@ -576,9 +576,9 @@ const REVISION_TOPICS = [
   {
     topic: 'Structure & Form',
     summary:
-      'Five quatrains moving through time, with tense shifts that collapse past and present into a vivid, immediate experience.',
+      'Four quintains (five-line stanzas) — 20 lines total — with tense shifts that collapse past and present into a vivid, immediate experience.',
     keyPoints: [
-      'Five stanzas — progression through decades',
+      'Four five-line stanzas (quintains) — 20 lines total',
       'Tense shifts — past becomes present, making memories vivid',
       'Direct address ("you") — intimate, personal tone',
       'No regular rhyme — conversational, natural voice',

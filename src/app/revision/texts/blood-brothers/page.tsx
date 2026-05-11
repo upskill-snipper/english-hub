@@ -115,9 +115,10 @@ const data: TextGuideData = {
       analysis: 'The Narrator\u2019s warnings drive the rising sense of doom.',
     },
     {
-      quote: '"How come you didn\'t grow up like me?"',
+      quote: '"I could have been...I could have been him!"',
       who: 'Mickey — final scene',
-      analysis: 'Mickey\u2019s cry of class-rage. The play\u2019s thesis in ordinary speech.',
+      analysis:
+        'Mickey\u2019s cry of class-rage at the climax, spoken just before the accidental shooting. The play\u2019s thesis in ordinary speech.',
     },
     {
       quote: '"I wish I was our Sammy."',
@@ -132,9 +133,10 @@ const data: TextGuideData = {
         'The play\u2019s superstitious language, which Russell repurposes to critique a fatalistic society.',
     },
     {
-      quote: '"Bright girl. An\' beautiful."',
-      who: 'Mickey on Linda — Act 2',
-      analysis: 'The glimpses of love and tenderness that make the final violence unbearable.',
+      quote: '"I wanna kiss y\'."',
+      who: 'Mickey to Linda — Act 2',
+      analysis:
+        'A fragmented moment of tenderness from a Mickey numbed by antidepressants, making the final violence all the more unbearable.',
     },
   ],
 }
@@ -244,7 +246,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 'bb-8',
-    question: 'What does Mickey mean when he cries "How come you didn\'t grow up like me?"',
+    question: 'What is Mickey expressing when he says "I could have been him" at the climax?',
     type: 'multiple-choice',
     options: [
       'He is comparing their heights',
@@ -254,7 +256,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Mickey's cry is the play's thesis in ordinary speech. He is expressing the anguish of discovering that an identical twin was given wealth, education, and opportunity simply because of which mother raised him. It is pure class-rage.",
+      "Mickey's anguished line 'I could have been...I could have been him!' distils the play's thesis at the climax. He is expressing the unbearable realisation that an identical twin was given wealth, education, and opportunity simply because of which mother raised him. It is pure class-rage.",
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -456,7 +458,7 @@ const REVISION_TOPICS = [
       'The twin conceit creates a controlled experiment about class',
       'Mickey: factory, unemployment, prison, depression',
       'Edward: private school, university, councillor',
-      '"How come you didn\'t grow up like me?" — the play\'s thesis',
+      '"I could have been...I could have been him!" — the play\'s thesis at the climax',
       'Russell names Thatcher and makes the economic collapse explicit',
     ],
   },

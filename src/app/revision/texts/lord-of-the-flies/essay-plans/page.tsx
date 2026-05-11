@@ -1,13 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  BookOpen,
-  FileText,
-  Lightbulb,
-  Sparkles,
-} from 'lucide-react'
+import { ArrowLeft, BookOpen, FileText, Lightbulb, Sparkles } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
 
@@ -35,8 +29,7 @@ type EssayPlan = {
 const ESSAY_PLANS: EssayPlan[] = [
   {
     number: 1,
-    question:
-      'How does Golding present Simon as a Christ-like figure in Lord of the Flies?',
+    question: 'How does Golding present Simon as a Christ-like figure in Lord of the Flies?',
     thesisStatement:
       'Golding presents Simon as a prophetic, sacrificial figure whose murder by the other boys re-enacts humanity\u2019s oldest crime: the destruction of innocence and truth by ignorance and fear.',
     introduction:
@@ -44,19 +37,22 @@ const ESSAY_PLANS: EssayPlan[] = [
     paragraphs: [
       {
         point: 'Simon\u2019s solitary retreat and spiritual perception',
-        evidence: 'Simon retreats to his hidden clearing in the forest \u2014 a "place where flowers grew on bushes" \u2014 to be alone and think.',
+        evidence:
+          'Simon retreats to his hidden clearing in the forest \u2014 a "place where flowers grew on bushes" \u2014 to be alone and think.',
         analysis:
           'The clearing functions as Gethsemane: a place of spiritual preparation before confrontation with evil. Simon\u2019s sensitivity to the natural world and his instinctive withdrawal from the group\u2019s violence mark him as fundamentally different from the other boys. Golding presents him not as weak but as perceptive \u2014 the only character capable of seeing beyond appearances.',
       },
       {
         point: 'The confrontation with the Lord of the Flies',
-        evidence: '"Fancy thinking the Beast was something you could hunt and kill!" \u2014 the pig\u2019s head speaks to Simon.',
+        evidence:
+          '"Fancy thinking the Beast was something you could hunt and kill!" \u2014 the pig\u2019s head speaks to Simon.',
         analysis:
           'This hallucinatory encounter is Simon\u2019s temptation in the wilderness. The Lord of the Flies tells Simon the truth he has already intuited: the beast is not external but internal. The scene parallels Christ\u2019s confrontation with Satan. Simon faints but is not defeated \u2014 he climbs the mountain to discover the truth about the dead parachutist and bring it back to the others.',
       },
       {
         point: 'Simon\u2019s murder as a sacrificial killing',
-        evidence: '"The water rose farther and dressed Simon\u2019s coarse hair with brightness" \u2014 the sea carries his body away.',
+        evidence:
+          '"The water rose farther and dressed Simon\u2019s coarse hair with brightness" \u2014 the sea carries his body away.',
         analysis:
           'Simon\u2019s death is described in luminous, almost liturgical language. The phosphorescent sea creatures that surround his body create a halo effect. Golding transforms a brutal murder into a scene of transfiguration. The contrast between the beauty of the description and the savagery of the killing is the novel\u2019s most powerful moment. Simon dies bringing truth to people who do not want to hear it \u2014 the essence of the Christ parallel.',
       },
@@ -77,19 +73,22 @@ const ESSAY_PLANS: EssayPlan[] = [
     paragraphs: [
       {
         point: 'Ralph\u2019s democratic leadership and its limitations',
-        evidence: '"The world, that understandable and lawful world, was slipping away." \u2014 Ralph senses the loss of order.',
+        evidence:
+          '"The world, that understandable and lawful world, was slipping away." \u2014 Ralph senses the loss of order.',
         analysis:
           'Ralph\u2019s leadership depends on the conch, the fire and the shelters \u2014 all structures that require collective agreement and sustained effort. Golding shows that democratic leadership is inherently demanding: it asks people to sacrifice immediate pleasure for long-term benefit (rescue). Ralph\u2019s growing despair reveals the fragility of democracy \u2014 it works only as long as people choose to participate.',
       },
       {
         point: 'Jack\u2019s authoritarian appeal: fear, ritual and immediate reward',
-        evidence: '"Kill the pig. Cut her throat. Spill her blood." \u2014 Jack\u2019s tribal chant unites the hunters.',
+        evidence:
+          '"Kill the pig. Cut her throat. Spill her blood." \u2014 Jack\u2019s tribal chant unites the hunters.',
         analysis:
           'Jack offers what Ralph cannot: excitement, identity and belonging. The face paint, the chant and the hunt create a powerful group psychology that satisfies emotional needs democracy ignores. Golding argues that authoritarianism is not just imposed from above \u2014 it is demanded from below. The boys choose Jack because his leadership speaks to their instincts.',
       },
       {
         point: 'The destruction of democracy: Piggy\u2019s death and the conch\u2019s shattering',
-        evidence: '"The conch exploded into a thousand white fragments and ceased to exist." \u2014 democracy dies with Piggy.',
+        evidence:
+          '"The conch exploded into a thousand white fragments and ceased to exist." \u2014 democracy dies with Piggy.',
         analysis:
           'Golding makes the death of democracy physical and absolute. The conch does not fade; it explodes. Piggy does not drift away; he is murdered. The violence of the destruction argues that authoritarianism does not merely outcompete democracy \u2014 it destroys it. The simultaneous loss of the conch and Piggy shows that reason and democratic process are inseparable.',
       },
@@ -101,8 +100,7 @@ const ESSAY_PLANS: EssayPlan[] = [
   },
   {
     number: 3,
-    question:
-      'How does Golding use the beast to explore ideas about fear and human nature?',
+    question: 'How does Golding use the beast to explore ideas about fear and human nature?',
     thesisStatement:
       'Golding uses the beast as a symbol that evolves from external fear to internal truth, arguing that the real source of evil is not outside humanity but within it.',
     introduction:
@@ -110,19 +108,22 @@ const ESSAY_PLANS: EssayPlan[] = [
     paragraphs: [
       {
         point: 'The beast as external fear: the littluns\u2019 nightmares',
-        evidence: '"He says the beastie came in the dark." \u2014 A littlun reports seeing a snake-like creature.',
+        evidence:
+          '"He says the beastie came in the dark." \u2014 A littlun reports seeing a snake-like creature.',
         analysis:
           'The earliest manifestation of the beast is formless and nocturnal \u2014 the shapeless fears of small children. Golding uses the littluns to show how fear begins: as something vague, irrational and easily dismissed. The older boys\u2019 failure to address these fears constructively allows them to grow. The beast is born from inattention.',
       },
       {
         point: 'The dead parachutist: the beast as projection',
-        evidence: 'Sam and Eric discover the dead parachutist on the mountain and flee in terror, reporting "the beast."',
+        evidence:
+          'Sam and Eric discover the dead parachutist on the mountain and flee in terror, reporting "the beast."',
         analysis:
           'The dead parachutist is a real object misidentified as the beast. Golding uses this to show how fear distorts perception: the boys project their terror onto something that is actually a casualty of the adult war above. The parachutist is also Golding\u2019s most pointed irony \u2014 the "beast from air" is a dead human, proving that the real threat comes from humanity, not from nature.',
       },
       {
         point: 'The Lord of the Flies: the beast as inner darkness',
-        evidence: '"I\u2019m part of you. Close, close, close!" \u2014 The pig\u2019s head speaks to Simon.',
+        evidence:
+          '"I\u2019m part of you. Close, close, close!" \u2014 The pig\u2019s head speaks to Simon.',
         analysis:
           'The Lord of the Flies is Golding\u2019s definitive statement on human nature. The beast is not a creature to be hunted but a condition to be acknowledged. "Part of you" eliminates the possibility of external blame. Simon understands this, but the others murder him rather than accept the truth. Golding argues that humanity would rather kill its prophets than confront its own darkness.',
       },
@@ -143,19 +144,22 @@ const ESSAY_PLANS: EssayPlan[] = [
     paragraphs: [
       {
         point: 'The initial attempt to recreate civilisation: the conch, the fire, the shelters',
-        evidence: '"We\u2019ve got to have rules and obey them. After all, we\u2019re not savages." \u2014 Jack, ironically, in Chapter 2.',
+        evidence:
+          '"We\u2019ve got to have rules and obey them. After all, we\u2019re not savages." \u2014 Jack, ironically, in Chapter 2.',
         analysis:
           'The dramatic irony of Jack\u2019s statement is devastating: he will become the novel\u2019s primary savage. Golding shows that the boys\u2019 initial attempts at civilisation are imitative \u2014 they reproduce the forms (assemblies, rules, elected leaders) without understanding the substance. The conch gives the holder the right to speak, but it cannot compel others to listen. Civilisation requires not just rules but the willingness to follow them.',
       },
       {
         point: 'The gradual erosion of civilised behaviour',
-        evidence: '"Roger gathered a handful of stones and began to throw them at Henry, throwing to miss." \u2014 Chapter 4.',
+        evidence:
+          '"Roger gathered a handful of stones and began to throw them at Henry, throwing to miss." \u2014 Chapter 4.',
         analysis:
           'Roger\u2019s stone-throwing is Golding\u2019s most precise image of civilisation\u2019s fragility. Roger wants to hurt Henry but is restrained by "the taboo of the old life." This taboo is not innate \u2014 it is a memory of adult authority that weakens over time. By Chapter 11, Roger drops the boulder on Piggy without hesitation. Golding charts the distance between throwing to miss and killing to show that civilisation is a habit, not an instinct.',
       },
       {
         point: 'The triumph of savagery: the hunt for Ralph',
-        evidence: '"They looked at each other, baffled, in love and hate." \u2014 Ralph and Jack during the final hunt.',
+        evidence:
+          '"They looked at each other, baffled, in love and hate." \u2014 Ralph and Jack during the final hunt.',
         analysis:
           'By the final chapter, the entire island has been set on fire and every boy except Ralph has joined Jack\u2019s tribe. Civilisation has not merely weakened \u2014 it has been actively destroyed. The fire, originally a signal for rescue (civilisation), has become a weapon of destruction (savagery). Golding\u2019s structural reversal of the fire\u2019s purpose encapsulates his argument in a single symbol.',
       },
@@ -167,8 +171,7 @@ const ESSAY_PLANS: EssayPlan[] = [
   },
   {
     number: 5,
-    question:
-      'How does Golding use Piggy\u2019s glasses as a symbol in Lord of the Flies?',
+    question: 'How does Golding use Piggy\u2019s glasses as a symbol in Lord of the Flies?',
     thesisStatement:
       'Golding uses Piggy\u2019s glasses as a symbol of reason, science and civilisation whose progressive damage and theft charts the decline of rational thought and democratic order on the island.',
     introduction:
@@ -176,7 +179,8 @@ const ESSAY_PLANS: EssayPlan[] = [
     paragraphs: [
       {
         point: 'The glasses as the source of fire: technology and civilisation',
-        evidence: '"His specs \u2014 use them as burning glasses!" \u2014 the boys discover that Piggy\u2019s lenses can start fire.',
+        evidence:
+          '"His specs \u2014 use them as burning glasses!" \u2014 the boys discover that Piggy\u2019s lenses can start fire.',
         analysis:
           'Fire is the fundamental technology of civilisation: it provides warmth, cooked food and, crucially, a signal for rescue. The glasses are the only means of creating fire on the island, which makes them the most valuable object in the novel. Golding connects intellectual capacity (Piggy\u2019s sight) to technological power (fire) to argue that civilisation depends on reason.',
       },
@@ -188,7 +192,8 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
       {
         point: 'The theft of the glasses: the seizure of power',
-        evidence: 'Jack\u2019s tribe raids Ralph\u2019s camp at night to steal Piggy\u2019s glasses in Chapter 10.',
+        evidence:
+          'Jack\u2019s tribe raids Ralph\u2019s camp at night to steal Piggy\u2019s glasses in Chapter 10.',
         analysis:
           'The theft is not about sight but about power. Jack does not want Piggy to see; he wants to control fire. The glasses pass from the rational (Piggy) to the authoritarian (Jack), symbolising the transfer of technological power from democratic to tyrannical hands. Golding shows that knowledge and technology are not inherently civilising \u2014 they serve whoever controls them.',
       },
@@ -209,13 +214,15 @@ const ESSAY_PLANS: EssayPlan[] = [
     paragraphs: [
       {
         point: 'The naval officer as false rescuer',
-        evidence: '"A naval officer stood on the sand, looking down at Ralph in wary ceremonial surprise."',
+        evidence:
+          '"A naval officer stood on the sand, looking down at Ralph in wary ceremonial surprise."',
         analysis:
           '"Ceremonial" reveals the officer as a representative of the same civilised order the boys have destroyed. But he is part of a warship \u2014 an instrument of war. Golding\u2019s irony is precise: the "rescuer" is engaged in the same violence, only with better technology. The officer represents not the triumph of civilisation but its hypocrisy.',
       },
       {
         point: 'The Coral Island reference and the failure of Victorian optimism',
-        evidence: '"I should have thought that a pack of British boys would have been able to put up a better show than that."',
+        evidence:
+          '"I should have thought that a pack of British boys would have been able to put up a better show than that."',
         analysis:
           'The officer\u2019s expectation that British boys should behave better is a direct quotation of Victorian colonial confidence \u2014 the same confidence Ballantyne\u2019s Coral Island embodies. Golding has spent twelve chapters demolishing this assumption. The officer\u2019s inability to finish his sentence shows that reality has outstripped his framework. He does not understand what has happened because his worldview cannot accommodate it.',
       },
@@ -242,11 +249,17 @@ export default function LOTFEssayPlansPage() {
     <div className="min-h-screen bg-cream-50 font-serif">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Lord of the Flies", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies" },
-          { name: "Essay Plans", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies/essay-plans" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Lord of the Flies',
+            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
+          },
+          {
+            name: 'Essay Plans',
+            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies/essay-plans',
+          },
         ]}
       />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
@@ -255,13 +268,13 @@ export default function LOTFEssayPlansPage() {
 
         {/* Hero */}
         <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-clay-200/[0.06] p-6 sm:p-8 lg:p-10">
-          <a
+          <Link
             href="/revision/texts/lord-of-the-flies"
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
           >
             <ArrowLeft className="size-3.5" />
             Back to Lord of the Flies
-          </a>
+          </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-clay-300/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
@@ -277,14 +290,11 @@ export default function LOTFEssayPlansPage() {
           <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
             Lord of the Flies &mdash; Essay Plans
           </h1>
-          <p className="mt-2 text-lg text-ink-500">
-            by William Golding &mdash; 1954
-          </p>
+          <p className="mt-2 text-lg text-ink-500">by William Golding &mdash; 1954</p>
           <p className="mt-4 max-w-2xl text-ink-500">
-            Six structured essay plans covering the most common GCSE exam
-            questions on Lord of the Flies. Each plan includes a thesis
-            statement, paragraph-level guidance with evidence and analysis, a
-            conclusion and an exam tip.
+            Six structured essay plans covering the most common GCSE exam questions on Lord of the
+            Flies. Each plan includes a thesis statement, paragraph-level guidance with evidence and
+            analysis, a conclusion and an exam tip.
           </p>
         </section>
 
@@ -295,11 +305,10 @@ export default function LOTFEssayPlansPage() {
             <div className="text-sm text-ink-600">
               <p className="mb-1 font-bold text-ink-800">How to use these essay plans</p>
               <p>
-                Each plan provides a structure you can adapt to your own argument.
-                Do not memorise them word-for-word &mdash; examiners reward
-                original thinking. Use the thesis statements as models for
-                constructing your own, and practise writing individual paragraphs
-                using the Point&ndash;Evidence&ndash;Analysis structure provided.
+                Each plan provides a structure you can adapt to your own argument. Do not memorise
+                them word-for-word &mdash; examiners reward original thinking. Use the thesis
+                statements as models for constructing your own, and practise writing individual
+                paragraphs using the Point&ndash;Evidence&ndash;Analysis structure provided.
               </p>
             </div>
           </div>
@@ -313,9 +322,7 @@ export default function LOTFEssayPlansPage() {
               <div className="flex size-10 items-center justify-center rounded-xl bg-clay-300/10">
                 <FileText className="size-5 text-clay-600" />
               </div>
-              <h2 className="font-serif text-2xl font-bold text-ink-900">
-                Essay {plan.number}
-              </h2>
+              <h2 className="font-serif text-2xl font-bold text-ink-900">Essay {plan.number}</h2>
             </div>
 
             {/* Question */}
@@ -343,14 +350,15 @@ export default function LOTFEssayPlansPage() {
               <p className="text-xs font-bold uppercase tracking-wider text-ink-500 mb-1">
                 Introduction
               </p>
-              <p className="text-sm leading-relaxed text-ink-600">
-                {plan.introduction}
-              </p>
+              <p className="text-sm leading-relaxed text-ink-600">{plan.introduction}</p>
             </div>
 
             {/* Body paragraphs */}
             {plan.paragraphs.map((para, i) => (
-              <div key={i} className="rounded-xl border border-teal-400/15 bg-cream-100/60 p-5 mb-4">
+              <div
+                key={i}
+                className="rounded-xl border border-teal-400/15 bg-cream-100/60 p-5 mb-4"
+              >
                 <p className="text-xs font-bold uppercase tracking-wider text-teal-700 mb-2">
                   Paragraph {i + 1} &mdash; {para.point}
                 </p>
@@ -359,18 +367,14 @@ export default function LOTFEssayPlansPage() {
                   <p className="text-xs font-bold uppercase tracking-wider text-clay-600 mb-1">
                     Evidence
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-700 italic">
-                    {para.evidence}
-                  </p>
+                  <p className="text-sm leading-relaxed text-ink-700 italic">{para.evidence}</p>
                 </div>
 
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-ink-500 mb-1">
                     Analysis
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">
-                    {para.analysis}
-                  </p>
+                  <p className="text-sm leading-relaxed text-ink-600">{para.analysis}</p>
                 </div>
               </div>
             ))}
@@ -380,9 +384,7 @@ export default function LOTFEssayPlansPage() {
               <p className="text-xs font-bold uppercase tracking-wider text-ink-500 mb-1">
                 Conclusion
               </p>
-              <p className="text-sm leading-relaxed text-ink-600">
-                {plan.conclusion}
-              </p>
+              <p className="text-sm leading-relaxed text-ink-600">{plan.conclusion}</p>
             </div>
 
             {/* Exam tip */}
@@ -393,56 +395,49 @@ export default function LOTFEssayPlansPage() {
                   <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
                     Exam Tip
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">
-                    {plan.examTip}
-                  </p>
+                  <p className="text-sm leading-relaxed text-ink-600">{plan.examTip}</p>
                 </div>
               </div>
             </div>
 
             {/* Divider */}
-            {plan.number < ESSAY_PLANS.length && (
-              <div className="mt-10 border-t border-ink-100" />
-            )}
+            {plan.number < ESSAY_PLANS.length && <div className="mt-10 border-t border-ink-100" />}
           </section>
         ))}
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">
-            Continue studying
-          </h3>
+          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
           <p className="mt-1 text-sm text-ink-500">
             Explore characters, themes, context and key quotes for Lord of the Flies.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <a
+            <Link
               href="/revision/texts/lord-of-the-flies/characters"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
               Characters
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/lord-of-the-flies/themes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Themes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/lord-of-the-flies/key-quotes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Key Quotes
-            </a>
+            </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
-          Short quotations (&le;15 words each) reproduced under the fair dealing
-          provision of the Copyright, Designs and Patents Act 1988 for the purpose
-          of criticism, review and educational study.{' '}
-          <em>Lord of the Flies</em> by William Golding is published by Faber and
+          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
+          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
+          educational study. <em>Lord of the Flies</em> by William Golding is published by Faber and
           Faber. Full text available from your school or local library.
         </p>
       </div>

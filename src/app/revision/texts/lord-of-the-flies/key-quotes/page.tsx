@@ -1,13 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  BookOpen,
-  Lightbulb,
-  Quote,
-  Sparkles,
-} from 'lucide-react'
+import { ArrowLeft, BookOpen, Lightbulb, Quote, Sparkles } from 'lucide-react'
 
 import StudyTools from '@/components/study/StudyTools'
 
@@ -32,7 +26,8 @@ const QUOTES: QuoteEntry[] = [
     quote: 'The thing is \u2014 fear can\u2019t hurt you any more than a dream.',
     speaker: 'Jack',
     chapter: 'Chapter 5 \u2014 Beast from Water',
-    context: 'During the assembly where the boys debate whether the beast exists, Jack dismisses the littluns\u2019 fears.',
+    context:
+      'During the assembly where the boys debate whether the beast exists, Jack dismisses the littluns\u2019 fears.',
     analysis:
       'Jack\u2019s dismissal is ironic: he will later exploit the very fear he mocks, using the beast to consolidate power. The simile "any more than a dream" is undermined by the novel\u2019s events, where fear proves far more destructive than any physical threat. Golding shows that fear is not irrational \u2014 it is the catalyst for the boys\u2019 descent into savagery.',
     themes: ['Fear & the Beast', 'Power & Leadership'],
@@ -42,17 +37,20 @@ const QUOTES: QuoteEntry[] = [
     quote: 'Kill the pig. Cut her throat. Spill her blood.',
     speaker: 'Jack and the hunters (chant)',
     chapter: 'Chapter 4 \u2014 Painted Faces and Long Hair',
-    context: 'The hunters return from their first successful kill, chanting and re-enacting the hunt.',
+    context:
+      'The hunters return from their first successful kill, chanting and re-enacting the hunt.',
     analysis:
       'The imperative verbs create a ritualistic rhythm that strips killing of moral weight. The short, brutal sentences mirror the violence they describe. The chant will evolve and intensify throughout the novel, eventually replacing "pig" with human targets. Golding uses the chant\u2019s repetition to show how violence becomes normalised through ritual.',
     themes: ['Civilisation vs Savagery', 'Violence & Ritual', 'Loss of Innocence'],
   },
   {
     id: 3,
-    quote: 'Ralph wept for the end of innocence, the darkness of man\u2019s heart, and the fall through the air of the true, wise friend called Piggy.',
+    quote:
+      'Ralph wept for the end of innocence, the darkness of man\u2019s heart, and the fall through the air of the true, wise friend called Piggy.',
     speaker: 'Narrator',
     chapter: 'Chapter 12 \u2014 Cry of the Hunters',
-    context: 'The final paragraph of the novel. Ralph weeps as the naval officer arrives and the reality of what has happened overwhelms him.',
+    context:
+      'The final paragraph of the novel. Ralph weeps as the naval officer arrives and the reality of what has happened overwhelms him.',
     analysis:
       'This is the novel\u2019s emotional and thematic climax. The tricolon moves from the abstract ("end of innocence") through the universal ("darkness of man\u2019s heart") to the painfully specific ("the true, wise friend called Piggy"). "Darkness of man\u2019s heart" encapsulates Golding\u2019s thesis: the beast is not external but internal. Ralph\u2019s tears represent the reader\u2019s own reckoning with the novel\u2019s argument.',
     themes: ['Loss of Innocence', 'Fear & the Beast', 'Civilisation vs Savagery'],
@@ -62,19 +60,21 @@ const QUOTES: QuoteEntry[] = [
     quote: 'Maybe there is a beast\u2026 maybe it\u2019s only us.',
     speaker: 'Simon',
     chapter: 'Chapter 5 \u2014 Beast from Water',
-    context: 'Simon tentatively proposes that the beast is not an external creature but something within the boys themselves.',
+    context:
+      'Simon tentatively proposes that the beast is not an external creature but something within the boys themselves.',
     analysis:
       'This is the novel\u2019s central insight, spoken by its most perceptive character. The ellipsis captures Simon\u2019s hesitation \u2014 the truth is too disturbing to state confidently. "Only us" is devastating in its simplicity: the beast requires no supernatural explanation. The other boys\u2019 hostile response to this suggestion shows that they are not ready to confront their own capacity for evil.',
     themes: ['Fear & the Beast', 'Human Nature', 'Loss of Innocence'],
   },
   {
     id: 5,
-    quote: 'We did everything adults would do. What went wrong?',
-    speaker: 'Ralph',
-    chapter: 'Chapter 11 \u2014 Castle Rock',
-    context: 'Ralph reflects on the failure of their society after Piggy\u2019s death and the theft of the glasses.',
+    quote:
+      'Grownups know things. They ain\u2019t afraid of the dark. They\u2019d meet and have tea and discuss. Then things \u2019ud be all right.',
+    speaker: 'Piggy',
+    chapter: 'Chapter 5 \u2014 Beast from Water',
+    context: 'Piggy laments the absence of adults during the chaotic assembly about the beast.',
     analysis:
-      'The question is naively rhetorical \u2014 Ralph assumes that imitating adult systems should guarantee civilised outcomes. Golding\u2019s irony is sharp: the novel exists to prove that adult civilisation is itself a fragile veneer over the same savagery. The naval officer\u2019s warship in the final chapter confirms this: the adults are fighting their own war.',
+      'Piggy\u2019s faith in adult civilisation is poignantly naive. The polite, almost domestic image of grown-ups meeting "and have tea and discuss" is undermined by the novel\u2019s framing device: the adult world above the island is itself at war. Golding\u2019s irony is sharp \u2014 the very adults Piggy idealises have already failed in exactly the way the boys are about to.',
     themes: ['Civilisation vs Savagery', 'Loss of Innocence', 'Human Nature'],
   },
   {
@@ -99,17 +99,20 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 8,
-    quote: 'I\u2019m part of you. Close, close, close! I\u2019m the reason why it\u2019s no go. Why things are what they are.',
+    quote:
+      'I\u2019m part of you. Close, close, close! I\u2019m the reason why it\u2019s no go. Why things are what they are.',
     speaker: 'The Lord of the Flies',
     chapter: 'Chapter 8 \u2014 Gift for the Darkness',
-    context: 'The pig\u2019s head continues its address to Simon, claiming to be inseparable from humanity.',
+    context:
+      'The pig\u2019s head continues its address to Simon, claiming to be inseparable from humanity.',
     analysis:
       'The repetition of "close" creates claustrophobic intensity. "Part of you" eliminates any distance between the beast and the self. "Why things are what they are" dismisses the possibility of reform or progress \u2014 evil is not a problem to be solved but a condition to be acknowledged. Golding\u2019s pessimism is total.',
     themes: ['Fear & the Beast', 'Human Nature', 'Loss of Innocence'],
   },
   {
     id: 9,
-    quote: 'The mask was a thing on its own, behind which Jack hid, liberated from shame and self-consciousness.',
+    quote:
+      'The mask was a thing on its own, behind which Jack hid, liberated from shame and self-consciousness.',
     speaker: 'Narrator',
     chapter: 'Chapter 4 \u2014 Painted Faces and Long Hair',
     context: 'Jack paints his face with clay and charcoal before the first hunt.',
@@ -119,7 +122,8 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 10,
-    quote: 'Which is better \u2014 to be a pack of painted savages like you are, or to be sensible like Ralph is?',
+    quote:
+      'Which is better \u2014 to be a pack of painted savages like you are, or to be sensible like Ralph is?',
     speaker: 'Piggy',
     chapter: 'Chapter 11 \u2014 Castle Rock',
     context: 'Piggy\u2019s final speech before he is killed, pleading for reason and order.',
@@ -129,7 +133,8 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 11,
-    quote: 'He found himself understanding the wearisomeness of this life, where every path was an improvisation and a considerable part of one\u2019s waking life was spent watching one\u2019s feet.',
+    quote:
+      'He found himself understanding the wearisomeness of this life, where every path was an improvisation and a considerable part of one\u2019s waking life was spent watching one\u2019s feet.',
     speaker: 'Narrator (about Ralph)',
     chapter: 'Chapter 7 \u2014 Shadows and Tall Trees',
     context: 'Ralph becomes aware of how far they have fallen from civilised standards.',
@@ -142,14 +147,16 @@ const QUOTES: QuoteEntry[] = [
     quote: 'Roger gathered a handful of stones and began to throw them at Henry, throwing to miss.',
     speaker: 'Narrator',
     chapter: 'Chapter 4 \u2014 Painted Faces and Long Hair',
-    context: 'Roger throws stones near but not at a littlun, restrained by the memory of adult authority.',
+    context:
+      'Roger throws stones near but not at a littlun, restrained by the memory of adult authority.',
     analysis:
       'The phrase "throwing to miss" reveals the fragility of civilisation. Roger wants to hurt Henry but is held back by the "taboo of the old life." This civilised restraint will erode completely by Chapter 11, when Roger drops the boulder that kills Piggy. Golding maps Roger\u2019s progression from throwing to miss to killing without hesitation.',
     themes: ['Civilisation vs Savagery', 'Human Nature', 'Loss of Innocence'],
   },
   {
     id: 13,
-    quote: 'His mind was crowded with memories; memories of the knowledge that had come to them when they closed in on the struggling pig, knowledge that they had outwitted a living thing, imposed their will upon it, taken away its life like a long satisfying drink.',
+    quote:
+      'His mind was crowded with memories; memories of the knowledge that had come to them when they closed in on the struggling pig, knowledge that they had outwitted a living thing, imposed their will upon it, taken away its life like a long satisfying drink.',
     speaker: 'Narrator (about Jack)',
     chapter: 'Chapter 4 \u2014 Painted Faces and Long Hair',
     context: 'Jack\u2019s internal experience after his first successful kill.',
@@ -199,7 +206,8 @@ const QUOTES: QuoteEntry[] = [
   },
   {
     id: 18,
-    quote: 'The rock struck Piggy a glancing blow from chin to knee; the conch exploded \u2026 Piggy fell forty feet and landed on his back across the square red rock in the sea.',
+    quote:
+      'The rock struck Piggy a glancing blow from chin to knee; the conch exploded \u2026 Piggy fell forty feet and landed on his back across the square red rock in the sea.',
     speaker: 'Narrator',
     chapter: 'Chapter 11 \u2014 Castle Rock',
     context: 'Roger levers the boulder from the cliff, killing Piggy.',
@@ -238,11 +246,17 @@ export default function LOTFKeyQuotesPage() {
     <div className="min-h-screen bg-cream-50 font-serif">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Lord of the Flies", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/lord-of-the-flies/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Lord of the Flies',
+            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/revision/texts/lord-of-the-flies/key-quotes',
+          },
         ]}
       />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
@@ -251,13 +265,13 @@ export default function LOTFKeyQuotesPage() {
 
         {/* Hero */}
         <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-clay-200/[0.06] p-6 sm:p-8 lg:p-10">
-          <a
+          <Link
             href="/revision/texts/lord-of-the-flies"
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
           >
             <ArrowLeft className="size-3.5" />
             Back to Lord of the Flies
-          </a>
+          </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-clay-300/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
@@ -273,12 +287,10 @@ export default function LOTFKeyQuotesPage() {
           <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
             Lord of the Flies &mdash; Key Quotes
           </h1>
-          <p className="mt-2 text-lg text-ink-500">
-            by William Golding &mdash; 1954
-          </p>
+          <p className="mt-2 text-lg text-ink-500">by William Golding &mdash; 1954</p>
           <p className="mt-4 max-w-2xl text-ink-500">
-            Twenty essential quotations with speaker, chapter reference, detailed
-            analysis and thematic links for GCSE English Literature.
+            Twenty essential quotations with speaker, chapter reference, detailed analysis and
+            thematic links for GCSE English Literature.
           </p>
         </section>
 
@@ -289,11 +301,10 @@ export default function LOTFKeyQuotesPage() {
             <div className="text-sm text-ink-600">
               <p className="mb-1 font-bold text-ink-800">How to use these quotes</p>
               <p>
-                Aim for 10&ndash;12 quotes you can analyse confidently. Choose
-                quotes that cover multiple themes so each one earns maximum
-                marks. For each quote, practise identifying the technique
-                (imagery, symbolism, irony), explaining its effect, and linking
-                it to Golding&rsquo;s views on human nature.
+                Aim for 10&ndash;12 quotes you can analyse confidently. Choose quotes that cover
+                multiple themes so each one earns maximum marks. For each quote, practise
+                identifying the technique (imagery, symbolism, irony), explaining its effect, and
+                linking it to Golding&rsquo;s views on human nature.
               </p>
             </div>
           </div>
@@ -302,10 +313,7 @@ export default function LOTFKeyQuotesPage() {
         {/* Quote cards */}
         <section className="mt-10 space-y-6">
           {QUOTES.map((q) => (
-            <div
-              key={q.id}
-              className="rounded-xl border border-teal-400/15 bg-cream-100/60 p-5"
-            >
+            <div key={q.id} className="rounded-xl border border-teal-400/15 bg-cream-100/60 p-5">
               {/* Quote text */}
               <div className="flex items-start gap-3 mb-3">
                 <Quote className="mt-1 size-5 shrink-0 text-clay-400" />
@@ -332,9 +340,7 @@ export default function LOTFKeyQuotesPage() {
                 <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-700">
                   Analysis
                 </p>
-                <p className="text-sm leading-relaxed text-ink-600">
-                  {q.analysis}
-                </p>
+                <p className="text-sm leading-relaxed text-ink-600">{q.analysis}</p>
               </div>
 
               {/* Themes */}
@@ -354,40 +360,37 @@ export default function LOTFKeyQuotesPage() {
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">
-            Continue studying
-          </h3>
+          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
           <p className="mt-1 text-sm text-ink-500">
             Explore characters, themes, context and essay plans for Lord of the Flies.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <a
+            <Link
               href="/revision/texts/lord-of-the-flies/characters"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
               Characters
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/lord-of-the-flies/themes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Themes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/lord-of-the-flies/context"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Context
-            </a>
+            </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
-          Short quotations (&le;15 words each) reproduced under the fair dealing
-          provision of the Copyright, Designs and Patents Act 1988 for the purpose
-          of criticism, review and educational study.{' '}
-          <em>Lord of the Flies</em> by William Golding is published by Faber and
+          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
+          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
+          educational study. <em>Lord of the Flies</em> by William Golding is published by Faber and
           Faber. Full text available from your school or local library.
         </p>
       </div>

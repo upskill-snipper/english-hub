@@ -69,10 +69,11 @@ const CHARACTERS: CharacterStudy[] = [
           'The Inspector directly challenges the capitalist assumption that wealth entitles its holders to immunity from scrutiny. The balanced phrasing frames social duty as non-negotiable, immediately inverting the power dynamic between the Inspector and Birling.',
       },
       {
-        quote: '"One Eva Smith has gone \u2014 but there are millions and millions of Eva Smiths and John Smiths still left with us."',
+        quote:
+          '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
         act: 'Act 3',
         analysis:
-          'The Inspector universalises Eva\u2019s suffering, turning a single case into a political argument about systemic injustice. The addition of "John Smiths" makes the argument gender-inclusive, while "still left with us" insists that the problem is present, not past.',
+          'The Inspector universalises Eva\u2019s suffering, turning a single case into a political argument about systemic injustice. The tripled "millions" insists on scale; the addition of "John Smiths" makes the argument gender-inclusive; "still left with us" insists that the problem is present, not past.',
       },
       {
         quote: '"We don\u2019t live alone. We are members of one body."',
@@ -110,13 +111,15 @@ const CHARACTERS: CharacterStudy[] = [
           'Birling articulates the capitalist individualism that Priestley wrote the play to dismantle. "His own" draws a boundary around family and class, leaving people like Eva outside the circle of moral obligation. It is the direct opposite of the Inspector\u2019s final speech.',
       },
       {
-        quote: '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
+        quote:
+          '"If we were all responsible for everything that happened to everybody \u2026 it would be very awkward."',
         act: 'Act 3',
         analysis:
           'Birling reduces a moral question to a practical inconvenience. The word "awkward" reveals the hollowness of his position \u2014 he cannot engage with the ethics of responsibility, only with its personal cost. Priestley uses understatement to expose moral emptiness.',
       },
       {
-        quote: '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
+        quote:
+          '"The way some of these cranks talk and write now, you\u2019d think everybody has to look after everybody else."',
         act: 'Act 1',
         analysis:
           'Birling dismisses socialists as "cranks" before the Inspector arrives, setting up the dramatic reversal that follows. The word "cranks" reveals his contempt for collective responsibility, making the Inspector\u2019s arrival an immediate challenge to his worldview.',
@@ -245,7 +248,8 @@ const CHARACTERS: CharacterStudy[] = [
           'Eric\u2019s euphemism for his assault on Eva. "That state" avoids naming his drunkenness directly, while "turns nasty" sanitises violence. Priestley forces the audience to read through Eric\u2019s evasive language to understand the full horror of what he did.',
       },
       {
-        quote: '"she didn\u2019t want me to marry her \u2026 she treated me \u2014 as if I were a kid."',
+        quote:
+          '"she didn\u2019t want me to marry her \u2026 she treated me \u2014 as if I were a kid."',
         act: 'Act 3',
         analysis:
           'Eric reveals that Eva had more emotional maturity than he did. The phrase "as if I were a kid" shows his immaturity and his dependence. Priestley gives Eva, even in her absence, more moral stature than the privileged young man who wronged her.',
@@ -315,10 +319,11 @@ const CHARACTERS: CharacterStudy[] = [
     arc: 'Eva\u2019s story is told in reverse through the confessions of others. Each revelation adds a new layer of exploitation. She moves from independent worker (sacked by Birling) to shop assistant (dismissed by Sheila) to kept woman (abandoned by Gerald) to assault victim (Eric) to charity applicant (rejected by Sybil) to suicide. The downward trajectory is relentless, and Priestley ensures that every step was caused by a Birling or a Croft.',
     keyQuotes: [
       {
-        quote: '"One Eva Smith has gone \u2014 but there are millions and millions of Eva Smiths and John Smiths still left with us."',
+        quote:
+          '"One Eva Smith has gone \u2014 but there are millions and millions and millions of Eva Smiths and John Smiths still left with us."',
         act: 'Act 3 (Inspector)',
         analysis:
-          'The Inspector universalises Eva\u2019s suffering. She is not a unique case but a representative of systemic injustice. "Millions and millions" turns a personal tragedy into a political argument about the scale of class exploitation.',
+          'The Inspector universalises Eva\u2019s suffering. She is not a unique case but a representative of systemic injustice. The tripled "millions" turns a personal tragedy into a political argument about the scale of class exploitation.',
       },
       {
         quote: '"she\u2019d had a lot to say \u2014 far too much \u2014 so she had to go."',
@@ -327,14 +332,15 @@ const CHARACTERS: CharacterStudy[] = [
           'Birling\u2019s description of Eva\u2019s dismissal reveals that her "crime" was speaking up. "Far too much" measures speech by class entitlement: a working-class woman who demands fair wages is automatically saying too much. Priestley shows how power silences dissent.',
       },
       {
-        quote: '"She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position."',
+        quote:
+          '"She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position."',
         act: 'Act 2 (Sybil)',
         analysis:
           'Sybil denies Eva the capacity for moral feeling based solely on her class. "In her position" reveals that Sybil\u2019s moral framework reserves virtues like scruple and feeling for the upper classes. Priestley exposes this as the ugliest form of class prejudice.',
       },
       {
         quote: '"She was very pretty \u2014 soft brown hair and big dark eyes."',
-        act: 'Act 1 (Gerald)',
+        act: 'Act 2 (Gerald)',
         analysis:
           'Gerald describes Eva\u2019s appearance in objectifying detail. The focus on physical attractiveness reduces Eva to her looks, foreshadowing the way every male character in the play treats her as an object to be used rather than a person to be respected.',
       },
@@ -358,11 +364,17 @@ export default function CharactersPage() {
     <div className="min-h-screen bg-cream-50 font-serif">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "An Inspector Calls", url: "https://theenglishhub.app/revision/texts/an-inspector-calls" },
-          { name: "Characters", url: "https://theenglishhub.app/revision/texts/an-inspector-calls/characters" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'An Inspector Calls',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
+          },
+          {
+            name: 'Characters',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls/characters',
+          },
         ]}
       />
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
@@ -371,13 +383,13 @@ export default function CharactersPage() {
 
         {/* Hero */}
         <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-teal-300/[0.06] p-6 sm:p-8 lg:p-10">
-          <a
+          <Link
             href="/revision/texts/an-inspector-calls"
             className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
           >
             <ArrowLeft className="size-3.5" />
             Back to An Inspector Calls
-          </a>
+          </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
@@ -393,13 +405,11 @@ export default function CharactersPage() {
           <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
             An Inspector Calls &mdash; Characters
           </h1>
-          <p className="mt-2 text-lg text-ink-500">
-            by J.B. Priestley &mdash; 1945
-          </p>
+          <p className="mt-2 text-lg text-ink-500">by J.B. Priestley &mdash; 1945</p>
           <p className="mt-4 max-w-2xl text-ink-500">
-            Complete character analysis for all seven key characters. Each section
-            includes a detailed overview, character arc, key quotes with AO2
-            analysis, theme links, and exam technique advice.
+            Complete character analysis for all seven key characters. Each section includes a
+            detailed overview, character arc, key quotes with AO2 analysis, theme links, and exam
+            technique advice.
           </p>
         </section>
 
@@ -410,11 +420,10 @@ export default function CharactersPage() {
             <div className="text-sm text-ink-600">
               <p className="mb-1 font-bold text-ink-800">Exam technique</p>
               <p>
-                In GCSE literature, character questions always require you to
-                discuss Priestley&rsquo;s <strong>intentions</strong> (AO1/AO3)
-                and analyse <strong>language and structure</strong> (AO2). For
-                every character point, ask: <em>what is Priestley trying to show
-                the audience through this character?</em>
+                In GCSE literature, character questions always require you to discuss
+                Priestley&rsquo;s <strong>intentions</strong> (AO1/AO3) and analyse{' '}
+                <strong>language and structure</strong> (AO2). For every character point, ask:{' '}
+                <em>what is Priestley trying to show the audience through this character?</em>
               </p>
             </div>
           </div>
@@ -435,9 +444,7 @@ export default function CharactersPage() {
                   <Users className={`size-5 ${accentText}`} />
                 </div>
                 <div>
-                  <h2 className="font-serif text-2xl font-bold text-ink-900">
-                    {char.name}
-                  </h2>
+                  <h2 className="font-serif text-2xl font-bold text-ink-900">{char.name}</h2>
                   <p className="text-sm italic text-ink-400">{char.role}</p>
                 </div>
               </div>
@@ -447,9 +454,7 @@ export default function CharactersPage() {
                 <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-ink-400">
                   Overview
                 </h3>
-                <p className="text-sm leading-relaxed text-ink-600">
-                  {char.overview}
-                </p>
+                <p className="text-sm leading-relaxed text-ink-600">{char.overview}</p>
               </div>
 
               {/* Character arc */}
@@ -457,29 +462,22 @@ export default function CharactersPage() {
                 <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-ink-400">
                   Character Arc
                 </h3>
-                <p className="text-sm leading-relaxed text-ink-600">
-                  {char.arc}
-                </p>
+                <p className="text-sm leading-relaxed text-ink-600">{char.arc}</p>
               </div>
 
               {/* Key quotes */}
               <div className="mt-6">
                 <div className="mb-3 flex items-center gap-2">
                   <Quote className={`size-4 ${accentText}`} />
-                  <h3 className="font-serif text-lg font-bold text-ink-800">
-                    Key Quotes
-                  </h3>
+                  <h3 className="font-serif text-lg font-bold text-ink-800">Key Quotes</h3>
                 </div>
                 <div className="space-y-3">
                   {char.keyQuotes.map((q, qi) => (
-                    <div
-                      key={qi}
-                      className={`rounded-xl border ${accentBorder} ${quoteBg} p-4`}
-                    >
-                      <p className="text-base font-medium italic text-ink-800">
-                        {q.quote}
-                      </p>
-                      <p className={`mt-1 text-xs font-semibold uppercase tracking-wider ${accentText}`}>
+                    <div key={qi} className={`rounded-xl border ${accentBorder} ${quoteBg} p-4`}>
+                      <p className="text-base font-medium italic text-ink-800">{q.quote}</p>
+                      <p
+                        className={`mt-1 text-xs font-semibold uppercase tracking-wider ${accentText}`}
+                      >
                         {q.act}
                       </p>
                       <p className="mt-2 text-sm leading-relaxed text-ink-600">
@@ -499,7 +497,9 @@ export default function CharactersPage() {
                 <ul className="space-y-1">
                   {char.themeLinks.map((link, li) => (
                     <li key={li} className="flex items-start gap-2 text-sm text-ink-600">
-                      <span className={`mt-1.5 size-1.5 shrink-0 rounded-full ${char.colour === 'teal' ? 'bg-teal-500' : 'bg-clay-500'}`} />
+                      <span
+                        className={`mt-1.5 size-1.5 shrink-0 rounded-full ${char.colour === 'teal' ? 'bg-teal-500' : 'bg-clay-500'}`}
+                      />
                       {link}
                     </li>
                   ))}
@@ -514,57 +514,50 @@ export default function CharactersPage() {
                     <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
                       Exam Tip
                     </p>
-                    <p className="text-sm leading-relaxed text-ink-600">
-                      {char.examTip}
-                    </p>
+                    <p className="text-sm leading-relaxed text-ink-600">{char.examTip}</p>
                   </div>
                 </div>
               </div>
 
               {/* Divider */}
-              {idx < CHARACTERS.length - 1 && (
-                <div className="mt-10 border-t border-ink-100" />
-              )}
+              {idx < CHARACTERS.length - 1 && <div className="mt-10 border-t border-ink-100" />}
             </section>
           )
         })}
 
         {/* Navigation */}
         <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">
-            Continue studying
-          </h3>
+          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
           <p className="mt-1 text-sm text-ink-500">
             Explore themes, key quotes, and context for An Inspector Calls.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <a
+            <Link
               href="/revision/texts/an-inspector-calls/themes"
               className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
             >
               Themes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/an-inspector-calls/key-quotes"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Key Quotes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/revision/texts/an-inspector-calls/context"
               className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
             >
               Context
-            </a>
+            </Link>
           </div>
         </section>
 
         {/* Fair-dealing notice */}
         <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
-          Short quotations (&le;15 words each) reproduced under the fair dealing
-          provision of the Copyright, Designs and Patents Act 1988 for the purpose
-          of criticism, review and educational study.{' '}
-          <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
+          Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
+          Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
+          educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
           available from your school or local library.
         </p>
       </div>

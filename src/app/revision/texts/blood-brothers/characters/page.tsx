@@ -44,10 +44,10 @@ const CHARACTERS: CharacterProfile[] = [
           "Innocent wish to be older that foreshadows Mickey's later, devastating wish to have been Edward. Russell plants the pattern of wanting a different life early.",
       },
       {
-        text: '"How come you didn\'t grow up like me?"',
+        text: '"Well, how come you got everything... an\' I got nothin\'?"',
         context: 'Act 2 — final scene',
         analysis:
-          "The play's thesis in five words. Mickey articulates class rage in ordinary speech, making the political argument viscerally personal.",
+          "The play's thesis distilled into ordinary speech. Mickey articulates class rage as a raw question, making the political argument viscerally personal.",
       },
       {
         text: '"I could have been him."',
@@ -67,16 +67,10 @@ const CHARACTERS: CharacterProfile[] = [
     arc: 'Edward moves from sheltered childhood through boarding school to university and a council career. He remains generous throughout, yet Russell never lets the audience forget that his generosity is underwritten by wealth. His attempt to help Mickey in adulthood is well-meaning but patronising, and it accelerates the catastrophe.',
     keyQuotes: [
       {
-        text: '"Take a letter, Miss Jones."',
-        context: 'Act 1 — childhood game',
+        text: '"I thought we always stuck together."',
+        context: 'Act 2 — confrontation with Mickey',
         analysis:
-          'Edward mimics a boss even in play. Russell shows how class roles are rehearsed in childhood, making inequality feel natural before it is questioned.',
-      },
-      {
-        text: '"I\'ll get you a job."',
-        context: 'Act 2 — adulthood',
-        analysis:
-          "Edward's offer of help exposes the power imbalance. What he sees as friendship, Mickey experiences as charity — a gulf Russell makes structurally inevitable.",
+          "Edward's plea to their boyhood blood-brother bond exposes the gulf between his sentimental faith in friendship and Mickey's lived reality. What he sees as friendship, Mickey experiences as charity — a gulf Russell makes structurally inevitable.",
       },
     ],
     examTip:
@@ -102,7 +96,7 @@ const CHARACTERS: CharacterProfile[] = [
           "Working-class superstition used as a motif. Russell parallels genuine folk belief with Mrs Lyons's invented curse to question who controls narratives of fate.",
       },
       {
-        text: '"Already mine, already mine."',
+        text: '"Only mine until the time comes round to pay the bill."',
         context: 'Act 1 — giving up the baby',
         analysis:
           "Mrs Johnstone's anguish when she tries to reclaim the child. Russell shows that maternal love is powerless against class privilege.",
@@ -125,13 +119,13 @@ const CHARACTERS: CharacterProfile[] = [
           'A blunt imperative exposing class entitlement. Mrs Lyons frames buying a child as reasonable because her social position permits it.',
       },
       {
-        text: '"They say that if twins are separated they\'ll die."',
+        text: '"You do know what they say about twins, secretly parted, don\'t you?"',
         context: 'Act 1 — the invented superstition',
         analysis:
           'Mrs Lyons creates the curse that drives the plot. Russell turns an act of manipulation into a self-fulfilling prophecy driven by class forces.',
       },
       {
-        text: '"You can\'t play with him."',
+        text: '"You see why I don\'t want you mixing with boys like that!"',
         context: 'Act 1 — forbidding friendship',
         analysis:
           "Mrs Lyons polices the class boundary. Her fear is not of Mickey but of what his existence reveals about Edward's origins.",
@@ -148,16 +142,16 @@ const CHARACTERS: CharacterProfile[] = [
     arc: 'Linda begins as a bold, equal presence in the childhood trio. As an adult, she supports Mickey through unemployment and prison. When Mickey withdraws into medication, she turns to Edward for help — an act of pragmatism, not betrayal. Russell makes clear that her choices are constrained by the same class forces that crush Mickey.',
     keyQuotes: [
       {
-        text: '"If you\'d been born here, what would you have been?"',
+        text: '"If you\'d been born here, you would have been just like him."',
         context: 'Act 2 — adolescence',
         analysis:
           "Linda voices the play's central question directly. Russell lets a teenager articulate what adult society refuses to acknowledge.",
       },
       {
-        text: '"Bright girl. An\' beautiful."',
-        context: 'Act 2 — Mickey on Linda',
+        text: '"I wanna kiss y\'."',
+        context: 'Act 2 — Mickey to Linda, on medication',
         analysis:
-          'A moment of tenderness that makes the final violence unbearable. Russell shows love persisting inside structures that are designed to crush it.',
+          "A fragmented moment of tenderness from a Mickey numbed by antidepressants. Russell shows love persisting inside structures designed to crush it, while making the cost of poverty and prison painfully visible in Mickey's broken speech.",
       },
     ],
     examTip:
@@ -200,16 +194,10 @@ const CHARACTERS: CharacterProfile[] = [
     arc: "Sammy moves from childhood mischief to violent crime. He drags Mickey into an armed robbery that leads to Mickey's imprisonment. Russell uses Sammy to show the spectrum of working-class outcomes: where Mickey is ground down, Sammy lashes out. Both responses are consequences of the same environment.",
     keyQuotes: [
       {
-        text: '"Sammy, don\'t... leave him alone."',
-        context: 'Act 1 — childhood',
-        analysis:
-          "Even as children, Sammy's aggression is apparent. Russell establishes early that the Johnstone environment produces different survival strategies.",
-      },
-      {
         text: '"I\'ll get y\' after."',
         context: 'Act 1 — Sammy threatening',
         analysis:
-          'Casual childhood threats that foreshadow adult violence. Russell shows how aggression is normalised in environments where power is scarce.',
+          "Even as children, Sammy's aggression is apparent. Casual childhood threats foreshadow the adult violence that culminates in armed robbery. Russell shows how the Johnstone environment normalises aggression where power is scarce.",
       },
     ],
     examTip:

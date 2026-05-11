@@ -93,11 +93,7 @@ const TISSUE: PoemData = {
         },
       ],
     },
-    { text: 'the marriage lines,' },
-    // VERIFY: previously corrupted line 'the, , the perforations' — actual Dharker text: 'the prayers, the rules, / the proof, the perforations'. Conservatively restored to widely-attested phrasing; cross-check against Dharker's Leaving Fingerprints (Bloodaxe, 2009).
-    { text: 'the prayers, the rules,' },
-    { text: 'the proof, the perforations,' },
-    { text: 'that might fly off any day.' },
+    // VERIFY: lines following 'who was born to whom,' previously read 'the marriage lines, / the prayers, the rules, / the proof, the perforations, / that might fly off any day.' — phrasing 'the prayers, the rules, the proof, the perforations' is NOT in any verified Dharker primary source and appears to be a fabrication. Conservatively removed pending verification against Dharker's The terrorist at my table (Bloodaxe, 2006) / AQA anthology. Do not restore without cross-check against primary source.
     { text: '' },
     // Stanza 4
     { text: 'Paper smoothed and stroked and torn' },
