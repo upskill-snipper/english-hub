@@ -146,10 +146,10 @@ export default function ExamTechniqueHubView({
           Technique can be the difference between Grade 5 and Grade 9
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          You can know every quote and every context point, but without strong exam technique
-          your knowledge stays in your head instead of on the page. These guides are tailored
-          specifically to the {shortName} specification — paper structures, question types
-          and what each grade looks like — so every tip maps to the marks you can actually earn.
+          You can know every quote and every context point, but without strong exam technique your
+          knowledge stays in your head instead of on the page. These guides are tailored
+          specifically to the {shortName} specification — paper structures, question types and what
+          each grade looks like — so every tip maps to the marks you can actually earn.
         </p>
       </section>
 
@@ -211,17 +211,12 @@ export default function ExamTechniqueHubView({
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {QUICK_TIPS.map((tip) => (
-            <div
-              key={tip.title}
-              className="rounded-2xl border border-border/60 bg-card p-5"
-            >
+            <div key={tip.title} className="rounded-2xl border border-border/60 bg-card p-5">
               <div className="mb-2 flex items-center gap-2">
                 <tip.icon className="size-4 text-emerald-400" />
                 <h3 className="text-sm font-semibold text-foreground">{tip.title}</h3>
               </div>
-              <p className="text-body-sm text-muted-foreground leading-relaxed">
-                {tip.body}
-              </p>
+              <p className="text-body-sm text-muted-foreground leading-relaxed">{tip.body}</p>
             </div>
           ))}
         </div>
@@ -236,25 +231,67 @@ export default function ExamTechniqueHubView({
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          Every mark in GCSE English is tied to what markers look for. Understanding these
-          is the first step to targeted exam technique.
+          Every mark in GCSE English is tied to what markers look for. AOs differ between Literature
+          and Language papers — Literature uses AO1-AO4, while Language uses AO1-AO4 (reading) and
+          AO5-AO6 (writing). Note that AO4 means different things in each.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            { ao: 'AO1', label: 'Response & quotation', detail: 'Read, understand, and respond using textual references (including quotations) to support your interpretation.' },
-            { ao: 'AO2', label: 'Language & structure', detail: 'Analyse how writers use language, form, and structure to create meanings and effects. Use relevant subject terminology.' },
-            { ao: 'AO3', label: 'Context', detail: 'Show understanding of the relationships between texts and the contexts in which they were written.' },
-            { ao: 'AO4', label: 'Evaluation', detail: 'Evaluate texts critically, supporting this with appropriate textual references.' },
-            { ao: 'AO5', label: 'Writing: content & organisation', detail: 'Communicate clearly, effectively, and imaginatively, selecting and adapting tone, style, and register.' },
-            { ao: 'AO6', label: 'Writing: technical accuracy', detail: 'Use a range of vocabulary and sentence structures for clarity, purpose, and effect with accurate spelling and punctuation.' },
+            {
+              ao: 'AO1',
+              label: 'Response & quotation',
+              detail:
+                'Lit & Lang: read, understand, and respond using textual references (including quotations) to support your interpretation.',
+            },
+            {
+              ao: 'AO2',
+              label: 'Language & structure',
+              detail:
+                'Lit & Lang: analyse how writers use language, form, and structure to create meanings and effects. Use relevant subject terminology.',
+            },
+            {
+              ao: 'AO3',
+              label: 'Context (Lit) / Synthesis (Lang)',
+              detail:
+                "Lit: show understanding of texts and the contexts they were written in. Lang: compare writers' ideas and perspectives across two or more texts.",
+            },
+            {
+              ao: 'AO4 (Lit)',
+              label: 'Technical accuracy',
+              detail:
+                'Literature only: use a range of vocabulary and sentence structures for clarity, purpose and effect with accurate spelling and punctuation. Worth ~5% of Lit marks and assessed on specific essays only (e.g. AQA Shakespeare + modern text).',
+            },
+            {
+              ao: 'AO4 (Lang)',
+              label: 'Evaluation',
+              detail:
+                'Language reading only: evaluate texts critically, supporting this with appropriate textual references.',
+            },
+            {
+              ao: 'AO5',
+              label: 'Writing: content & organisation',
+              detail:
+                'Language writing only: communicate clearly, effectively, and imaginatively, selecting and adapting tone, style, and register. Usually 24 of the 40 writing marks.',
+            },
+            {
+              ao: 'AO6',
+              label: 'Writing: technical accuracy',
+              detail:
+                'Language writing only: use a range of vocabulary and sentence structures for clarity, purpose, and effect with accurate spelling and punctuation. Usually 16 of the 40 writing marks.',
+            },
           ].map((item) => (
-            <div key={item.ao} className="flex gap-3 rounded-xl border border-border/40 bg-background/50 p-4">
+            <div
+              key={item.ao}
+              className="flex gap-3 rounded-xl border border-border/40 bg-background/50 p-4"
+            >
               <Badge variant="secondary" className="h-fit shrink-0 font-mono text-xs">
                 {item.ao}
               </Badge>
               <div>
                 <p className="text-sm font-semibold text-foreground">{item.label}</p>
-                <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">{item.detail}</p>
+                <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">
+                  {item.detail}
+                </p>
               </div>
             </div>
           ))}
@@ -268,8 +305,8 @@ export default function ExamTechniqueHubView({
           Start with {shortName} essay structure
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Learning how to structure a paragraph properly is the single fastest way to improve
-          your grade. Start with PEEL and work through our {shortName}-specific model answers.
+          Learning how to structure a paragraph properly is the single fastest way to improve your
+          grade. Start with PEEL and work through our {shortName}-specific model answers.
         </p>
         <Button
           variant="default"
