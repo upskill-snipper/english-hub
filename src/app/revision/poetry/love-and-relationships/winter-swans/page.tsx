@@ -14,8 +14,11 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 const winterSwansPoem: PoemData = {
   title: 'Winter Swans',
   poet: 'Owen Sheers',
+  // RIGHTS NOTE: "Winter Swans" by Owen Sheers is in copyright (Seren Books, 2005).
+  // Full text is not reproduced here. Under fair-dealing for criticism/review (CDPA 1988 s.30),
+  // only verified short extracts are quoted; bracketed prose summarises the rest of each tercet.
   lines: [
-    // Stanza 1
+    // Stanza 1 (tercet 1)
     {
       text: 'The clouds had given their all \u2014',
       annotations: [
@@ -48,7 +51,7 @@ const winterSwansPoem: PoemData = {
     },
     // Stanza break
     { text: '' },
-    // Stanza 2
+    // Stanza 2 (tercet 2)
     {
       text: 'the waterlogged earth',
       annotations: [
@@ -70,58 +73,63 @@ const winterSwansPoem: PoemData = {
       ],
     },
     {
-      text: 'as wood water water ripped wood.',
+      text: 'as we skirted the lake, silent and apart,',
       annotations: [
         {
-          type: 'Chiasmus',
-          note: '"Wood water water wood" mirrors itself \u2014 a reversed pattern that enacts the disruption and confusion. The natural order is churned up, just like the relationship.',
+          type: 'Distance',
+          note: '"Silent and apart" pins down the emotional gulf between the couple \u2014 they walk together but without words and without contact. "Skirted" suggests avoidance: they edge around both the lake and their conflict.',
           color: '#f59e0b',
-        },
-        {
-          type: 'Sound',
-          note: 'The alliterative "w" sounds create a wet, wading quality. The reader can almost hear the waterlogged landscape.',
-          color: '#3b82f6',
         },
       ],
     },
     // Stanza break
     { text: '' },
-    // Stanza 3
+    // Stanza 3 (tercet 3)
     {
-      text: 'We skirted the lake, breathless and changed',
+      text: 'until the swans came and stopped us',
       annotations: [
         {
-          type: 'Ambiguity',
-          note: '"Skirted" means walked around the edge, but also suggests avoidance \u2014 the couple are circling their problems rather than confronting them. "Changed" hints at transformation.',
-          color: '#f59e0b',
+          type: 'Turning point',
+          note: '"Stopped us" makes the swans into agents of change \u2014 they physically arrest the couple\'s silent walking. The arrival of nature interrupts the relationship\'s drift.',
+          color: '#ec4899',
         },
       ],
     },
     {
-      text: 'by the swans that came and went and came again.',
+      text: 'with a show of tipping in unison.',
       annotations: [
         {
-          type: 'Natural imagery',
-          note: 'The swans arrive as a healing presence. Their movement \u2014 coming, going, returning \u2014 mirrors the ebb and flow of the relationship. They model fidelity and resilience.',
+          type: 'Symbolism',
+          note: '"Tipping in unison" is the swans\' synchronised dipping underwater \u2014 a model of partnership and harmony. "Unison" pointedly contrasts with the couple\'s "silent and apart".',
           color: '#10b981',
         },
       ],
     },
     {
-      text: 'They were somehow between us, out of earshot,',
+      text: '[Tercet continues: "As if rolling weights down their bodies to their heads" \u2014 the swans\u2019 movement is given a graceful, weighted physicality.]',
       annotations: [
         {
-          type: 'Symbolism',
-          note: 'The swans position themselves "between" the couple, becoming mediators. "Out of earshot" suggests the swans communicate wordlessly, modelling a connection beyond language.',
-          color: '#ef4444',
+          type: 'Simile',
+          note: 'The swans\u2019 dipping is described as if they were rolling weights through their bodies \u2014 turning ordinary animal behaviour into a kind of slow, considered ritual the couple are forced to watch.',
+          color: '#8b5cf6',
         },
       ],
     },
     // Stanza break
     { text: '' },
-    // Stanza 4
+    // Stanza 4 (tercet 4)
     {
-      text: 'icebergs of white feather, wood water.',
+      text: 'they halved themselves in the dark water,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Halved themselves" is striking: each swan becomes two halves, head submerged, body above. The split image quietly mirrors the divided couple watching them.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'icebergs of white feather, paused before returning again',
       annotations: [
         {
           type: 'Metaphor',
@@ -131,82 +139,110 @@ const winterSwansPoem: PoemData = {
       ],
     },
     {
-      text: 'Wood water. Wood water. Wood water.',
+      text: 'like boats righting in rough weather.',
       annotations: [
         {
-          type: 'Repetition',
-          note: 'The phrase "wood water" is repeated three times, creating a meditative, calming rhythm. The churning chaos of earlier has settled into a gentle, lapping pattern \u2014 the relationship is steadying.',
-          color: '#f59e0b',
-        },
-      ],
-    },
-    {
-      text: 'A flush of white. A stroke of white.',
-      annotations: [
-        {
-          type: 'Visual imagery',
-          note: '"Flush" and "stroke" are painterly terms, as though the swans are being painted onto the landscape. They are beautiful, luminous interruptions in the grey winter scene.',
+          type: 'Simile',
+          note: 'The swans returning upright are compared to boats steadying themselves after rough weather \u2014 picking up the storm imagery from the opening. After turbulence, things right themselves; the implication for the relationship is clear.',
           color: '#10b981',
         },
       ],
     },
     // Stanza break
     { text: '' },
-    // Stanza 5
+    // Stanza 5 (tercet 5)
     {
-      text: 'They were settled and folded and stilled',
+      text: '\u2018They mate for life\u2019 you said as they left,',
       annotations: [
         {
-          type: 'Tricolon',
-          note: 'Three gentle verbs create a sense of peace and resolution. The swans have stopped moving \u2014 they are calm, paired, and at rest. This models what the couple might achieve.',
-          color: '#f59e0b',
-        },
-      ],
-    },
-    {
-      text: 'as wood pools wood. Wood pools wood.',
-      annotations: [
-        {
-          type: 'Natural imagery',
-          note: '"Pools" replaces the violent "ripped" from earlier. Water and wood now coexist peacefully, reflecting the couple\'s reconciliation.',
-          color: '#10b981',
-        },
-      ],
-    },
-    {
-      text: 'I took your hand,',
-      annotations: [
-        {
-          type: 'Turning point',
-          note: 'The first physical contact in the poem. After the emotional distance, one partner reaches out. This is the volta \u2014 the moment of reconciliation.',
+          type: 'Direct speech',
+          note: 'The first and only spoken line in the poem belongs to the partner, not the speaker. "They mate for life" is the poem\'s emotional pivot \u2014 a statement about swans that is unmistakably also about the couple.',
           color: '#ec4899',
         },
       ],
     },
-    // Stanza break
-    { text: '' },
-    // Stanza 6 (the final couplet)
     {
-      text: 'our fingers folding together like the swans\u2019 wings',
+      text: 'porcelain over the stilling water. I didn\u2019t reply',
       annotations: [
         {
-          type: 'Simile',
-          note: 'The couple\'s hands are compared to the swans\' folded wings \u2014 a beautiful image of two becoming one. The word "folding" echoes the swans being "folded" earlier, unifying couple and nature.',
+          type: 'Imagery',
+          note: '"Porcelain" makes the swans seem fragile, decorative, valuable. "Stilling water" continues the calming arc \u2014 from churned waterlogged earth to a surface that is settling.',
+          color: '#10b981',
+        },
+        {
+          type: 'Silence',
+          note: '"I didn\u2019t reply" is loaded. The speaker can\u2019t yet speak \u2014 perhaps too moved, perhaps still hurt \u2014 but he doesn\u2019t need to. Reconciliation will happen wordlessly.',
+          color: '#8b5cf6',
+        },
+      ],
+    },
+    {
+      text: 'but as we moved on through the afternoon light,',
+      annotations: [
+        {
+          type: 'Movement',
+          note: 'The couple resume walking, but now together rather than "apart". "Afternoon light" introduces brightness and warmth where earlier there was waterlogged dimness.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    // Stanza break
+    { text: '' },
+    // Stanza 6 (tercet 6)
+    {
+      text: 'slow-stepping in the lake\u2019s shingle and sand,',
+      annotations: [
+        {
+          type: 'Pace',
+          note: '"Slow-stepping" enacts a quiet, careful pace. The texture of shingle and sand underfoot is tactile and grounding \u2014 the couple are coming back to their bodies and to each other.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'I noticed our hands, that had, somehow,',
+      annotations: [
+        {
+          type: 'Understatement',
+          note: '"I noticed" is wonderfully understated \u2014 the hands have moved towards each other without conscious decision. "Somehow" preserves the mystery; reconciliation feels almost involuntary, instinctive.',
+          color: '#ec4899',
+        },
+      ],
+    },
+    {
+      text: 'swum the distance between us',
+      annotations: [
+        {
+          type: 'Metaphor',
+          note: '"Swum" is the perfect verb: it picks up the swans and the lake, and casts the hands as creatures that have crossed the emotional water by themselves. The body knows before the mind admits.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    // Stanza break
+    { text: '' },
+    // Final couplet
+    {
+      text: 'and folded, one over the other,',
+      annotations: [
+        {
+          type: 'Verb echo',
+          note: '"Folded" deliberately echoes the swans \u2014 the way wings fold against the body when at rest. Human hands and swan wings are aligned through the same word.',
           color: '#ef4444',
         },
       ],
     },
     {
-      text: 'settling after flight.',
+      text: 'like a pair of wings settling after flight.',
       annotations: [
         {
-          type: 'Metaphor',
-          note: '"Settling after flight" compares the relationship to a bird landing. The turmoil ("flight") is over and the couple have come to rest together. Peace has been restored.',
+          type: 'Simile',
+          note: 'The closing simile collapses the couple into the swans. "Settling after flight" works literally (a bird landing) and metaphorically: the turmoil of the argument is over, and the relationship comes to rest.',
           color: '#ef4444',
         },
         {
           type: 'Structure',
-          note: 'The final two lines form a couplet \u2014 the only paired lines in a poem of tercets. The form itself enacts reunification: two lines together, mirroring two people reunited.',
+          note: 'The final two lines form a couplet \u2014 the only paired stanza in a poem of tercets. The form itself enacts reunification: two lines together, mirroring two people reunited.',
           color: '#8b5cf6',
         },
       ],
@@ -221,17 +257,18 @@ const winterSwansPoem: PoemData = {
     '<p>The poem suggests that <strong>love can be repaired through shared experience and the natural world</strong>. The couple do not speak \u2014 reconciliation happens through physical proximity, observation, and the simple act of holding hands.</p>',
 
   summary:
-    'Stanzas 1\u20132 (lines 1\u20137): After two days of rain, a couple walk through a waterlogged landscape. The environment is churned up and chaotic \u2014 "wood water water ripped wood" \u2014 reflecting the disruption in their relationship.\n\n' +
-    'Stanzas 3\u20134 (lines 9\u201315): They reach a lake where swans appear. The swans are serene and beautiful \u2014 "icebergs of white feather". The repeated phrase "wood water" shifts from violent to calm, marking the emotional turning point.\n\n' +
-    'Stanzas 5\u20136 (lines 17\u201321): The swans settle and fold their wings, modelling peace. One partner takes the other\'s hand, and the poem ends with a couplet comparing their fingers to swans\' wings "settling after flight". The relationship is repaired.',
+    'Stanzas 1\u20132 (tercets, lines 1\u20136): After two days of rain, a couple walk through a waterlogged landscape, "silent and apart". The saturated earth mirrors the emotional heaviness in their relationship.\n\n' +
+    'Stanzas 3\u20134 (tercets, lines 7\u201312): The swans arrive and stop the couple with their synchronised "tipping in unison". The swans "halve themselves" beneath the water, "icebergs of white feather", and return upright "like boats righting in rough weather".\n\n' +
+    'Stanza 5 (tercet, lines 13\u201315): The partner says "\u2018They mate for life\u2019" as the swans leave; the speaker doesn\u2019t reply, but the couple move on through the "afternoon light" \u2014 distance silently closing.\n\n' +
+    'Stanzas 6\u20137 (tercet + final couplet, lines 16\u201320): Walking slowly along the shingle, the speaker "notices" their hands have "swum the distance between us" and folded together "like a pair of wings settling after flight". The relationship is repaired wordlessly.',
 
   formAndStructure:
-    "Form: Six stanzas, five of which are tercets (three-line stanzas) and one final couplet (two lines). The shift from tercets to a couplet is structurally significant \u2014 the odd, unbalanced tercets represent the fractured relationship, while the final couplet brings two lines together, mirroring the couple's reunion.\n\n" +
-    "Enjambment: Used extensively throughout. Lines flow into each other across stanza breaks, reflecting the continuous walk and the gradual, fluid process of reconciliation. The couple's healing is not abrupt but flowing.\n\n" +
-    "Pathetic fallacy: The poem's structure follows the weather: storm \u2192 clearing \u2192 calm. This arc mirrors the couple's emotional journey from conflict through tension to reconciliation.\n\n" +
-    'Volta: "I took your hand" (line 19) is the turning point. After stanzas of distance and observation, physical contact marks the moment of reconnection.\n\n' +
-    'Natural imagery: The swans function as a structural centre. They arrive in the middle of the poem and drive the emotional transformation. Nature acts as healer and mediator.\n\n' +
-    'Repetition and rhythm: "Wood water" shifts from the violent "wood water water ripped wood" to the calm "wood pools wood", enacting the transition from chaos to peace through the same words used differently.',
+    "Form: Seven stanzas \u2014 six tercets (three-line stanzas) followed by a final couplet (two lines), 20 lines in total. The shift from tercets to a couplet is structurally significant: the odd-numbered tercets (a group of three contains an unpartnered element) hint at imbalance, while the final couplet brings two lines together, mirroring the couple's reunion.\n\n" +
+    "Enjambment: Used extensively throughout. Lines and clauses flow across stanza breaks, reflecting the continuous walk and the gradual, fluid process of reconciliation. The couple's healing is not abrupt but flowing.\n\n" +
+    "Pathetic fallacy: The poem's structure follows the weather: storm \u2192 clearing \u2192 afternoon light. This arc mirrors the couple's emotional journey from conflict through tension to reconciliation.\n\n" +
+    'Volta: "\u2018They mate for life\u2019 you said" in stanza 5 is the emotional pivot. The partner\'s words about the swans are unmistakably also about the couple, and from that point the poem moves towards reconnection.\n\n' +
+    'Natural imagery: The swans function as a structural and thematic centre. They arrive in the middle of the poem and drive the emotional transformation. Nature acts as healer and mediator.\n\n' +
+    'Direct speech and silence: The only spoken line belongs to the partner ("\u2018They mate for life\u2019"); the speaker "didn\'t reply". Reconciliation happens not through more words but through the hands that, "somehow", have "swum the distance between us".',
 
   keyQuotes: [
     {
