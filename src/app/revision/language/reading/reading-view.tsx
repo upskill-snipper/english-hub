@@ -33,12 +33,16 @@ const READING_PAPERS: Partial<Record<ExamBoard, ReadingPaperInfo>> = {
   aqa: {
     paperLabel: 'AQA Paper 1 & Paper 2 Reading',
     description:
-      'Paper 1 Section A is a single unseen fiction extract (40 marks, four questions). Paper 2 Section A is two linked non-fiction texts (40 marks, four questions including comparison).',
+      'Paper 1 Section A is a single unseen literary fiction extract (40 marks, four questions, 1h 45m paper). Paper 2 Section A is two linked non-fiction texts -- one 19th century and one 20th/21st century -- (40 marks, four questions including comparison, 1h 45m paper).',
     questionTypes: [
-      'Q1 (Paper 1): List four things -- explicit retrieval',
-      'Q2: How does the writer use language... -- short analysis',
-      'Q3: How has the writer structured the text -- structural analysis',
-      'Q4: Evaluation (Paper 1) / Comparison (Paper 2)',
+      'Paper 1 Q1 (4 marks): List four things from the source',
+      'Paper 1 Q2 (8 marks): How does the writer use language...',
+      'Paper 1 Q3 (8 marks): How has the writer structured the text...',
+      'Paper 1 Q4 (20 marks): Evaluation of a critical statement',
+      'Paper 2 Q1 (4 marks): Identify true statements about Source A',
+      'Paper 2 Q2 (8 marks): Summary of differences between the texts',
+      'Paper 2 Q3 (12 marks): Language analysis of one text',
+      "Paper 2 Q4 (16 marks): Compare writers' attitudes/perspectives",
     ],
   },
   edexcel: {
@@ -47,9 +51,9 @@ const READING_PAPERS: Partial<Record<ExamBoard, ReadingPaperInfo>> = {
       'Paper 1 (Fiction and Imaginative Writing) reads one 20th/21st century fiction extract. Paper 2 (Non-fiction and Transactional Writing) compares 19th and 20th/21st century non-fiction.',
     questionTypes: [
       'Short retrieval questions on explicit meaning',
-      'Language analysis of writer\'s word choice and techniques',
-      'Analysis of writer\'s use of language and structure',
-      'Comparison of writers\' ideas and perspectives (Paper 2)',
+      "Language analysis of writer's word choice and techniques",
+      "Analysis of writer's use of language and structure",
+      "Comparison of writers' ideas and perspectives (Paper 2)",
     ],
   },
   ocr: {
@@ -59,7 +63,7 @@ const READING_PAPERS: Partial<Record<ExamBoard, ReadingPaperInfo>> = {
     questionTypes: [
       'Information retrieval questions',
       'Language and structural analysis',
-      'Comparison of writers\' viewpoints and methods',
+      "Comparison of writers' viewpoints and methods",
       'Evaluative response to a critical statement',
     ],
   },
@@ -102,9 +106,7 @@ function Section({
         <div className={`flex size-8 items-center justify-center rounded-lg bg-blue-500/10`}>
           <Icon className={`size-4 ${colour}`} />
         </div>
-        <h2 className="flex-1 text-heading-md font-heading text-foreground">
-          {title}
-        </h2>
+        <h2 className="flex-1 text-heading-md font-heading text-foreground">{title}</h2>
         {open ? (
           <ChevronUp className="size-4 text-muted-foreground" />
         ) : (
@@ -122,9 +124,7 @@ function TipBox({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-start gap-2.5 rounded-xl border border-primary/20 bg-primary/[0.04] p-3.5">
       <Lightbulb className="mt-0.5 size-4 shrink-0 text-primary" />
-      <div className="text-body-sm text-muted-foreground leading-relaxed">
-        {children}
-      </div>
+      <div className="text-body-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
   )
 }
@@ -188,9 +188,7 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-heading-lg font-heading text-foreground">
-                Reading Skills
-              </h1>
+              <h1 className="text-heading-lg font-heading text-foreground">Reading Skills</h1>
               {boardId && (
                 <Badge variant="secondary" className="text-xs">
                   For {boardName} Language Paper 1
@@ -198,7 +196,8 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               )}
             </div>
             <p className="text-body-sm text-muted-foreground">
-              Extract analysis, inference, language methods, and comparison techniques{headingSuffix}
+              Extract analysis, inference, language methods, and comparison techniques
+              {headingSuffix}
             </p>
           </div>
         </div>
@@ -213,9 +212,9 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               Your board uses a different paper structure
             </p>
             <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
-              The reading techniques below (What-How-Why, inference, comparison) are
-              universal and will sharpen your analysis regardless of board. However,
-              the specific question structure for{' '}
+              The reading techniques below (What-How-Why, inference, comparison) are universal and
+              will sharpen your analysis regardless of board. However, the specific question
+              structure for{' '}
               {boardId === 'cambridge-0500' || boardId === 'cambridge-0990'
                 ? 'Cambridge IGCSE Paper 1 Reading'
                 : 'Edexcel IGCSE 4EA1'}{' '}
@@ -225,8 +224,8 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
                   boardId === 'cambridge-0500'
                     ? '/igcse/cambridge/0500'
                     : boardId === 'cambridge-0990'
-                    ? '/igcse/cambridge/0990'
-                    : '/igcse/edexcel'
+                      ? '/igcse/cambridge/0990'
+                      : '/igcse/edexcel'
                 }
                 className="text-primary underline hover:no-underline"
               >
@@ -243,23 +242,16 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
         <div className="rounded-2xl border border-border/60 bg-card p-5">
           <div className="flex items-center gap-2 mb-2">
             <Target className="size-4 text-primary" />
-            <h2 className="text-sm font-semibold text-foreground">
-              {paper.paperLabel}
-            </h2>
+            <h2 className="text-sm font-semibold text-foreground">{paper.paperLabel}</h2>
           </div>
-          <p className="text-body-sm text-muted-foreground leading-relaxed">
-            {paper.description}
-          </p>
+          <p className="text-body-sm text-muted-foreground leading-relaxed">{paper.description}</p>
           <div className="mt-3">
             <p className="text-xs font-semibold text-foreground mb-1.5">
               Question types you will face:
             </p>
             <ul className="space-y-1">
               {paper.questionTypes.map((q, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-2 text-xs text-muted-foreground"
-                >
+                <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
                   <span className="mt-0.5 text-primary">--</span>
                   {q}
                 </li>
@@ -270,7 +262,12 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       )}
 
       {/* ── 1. Approaching Reading Questions ──────────────────────── */}
-      <Section title="Approaching Reading Questions" icon={Search} colour="text-blue-400" defaultOpen>
+      <Section
+        title="Approaching Reading Questions"
+        icon={Search}
+        colour="text-blue-400"
+        defaultOpen
+      >
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             Every reading question on the GCSE English Language paper asks you to engage with an
@@ -312,9 +309,9 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
           </div>
 
           <TipBox>
-            <strong>Timing tip:</strong> Spend roughly 15% of the time for each question on
-            reading and planning. For a 12-mark question with 15 minutes, that is about 2
-            minutes reading and 13 minutes writing.
+            <strong>Timing tip:</strong> Spend roughly 15% of the time for each question on reading
+            and planning. For a 12-mark question with 15 minutes, that is about 2 minutes reading
+            and 13 minutes writing.
           </TipBox>
 
           <div className="space-y-3">
@@ -322,8 +319,8 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
             <ul className="space-y-1.5 text-body-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
-                Keep quotes short: 2-5 words is ideal. Embed them inside your sentences rather
-                than copying whole lines.
+                Keep quotes short: 2-5 words is ideal. Embed them inside your sentences rather than
+                copying whole lines.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
@@ -344,16 +341,14 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       <Section title="Inference and Deduction" icon={Eye} colour="text-violet-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Inference means reading between the lines -- working out what the writer implies
-            but does not state directly. Deduction means using evidence in the text to draw
-            logical conclusions. Both are essential for every language analysis question
-            across all exam boards.
+            Inference means reading between the lines -- working out what the writer implies but
+            does not state directly. Deduction means using evidence in the text to draw logical
+            conclusions. Both are essential for every language analysis question across all exam
+            boards.
           </p>
 
           <div className="rounded-xl border border-border/60 p-4 space-y-2">
-            <h3 className="text-sm font-semibold text-foreground">
-              Inference vs. Surface Reading
-            </h3>
+            <h3 className="text-sm font-semibold text-foreground">Inference vs. Surface Reading</h3>
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="rounded-lg bg-destructive/5 p-3">
                 <span className="text-xs font-semibold text-destructive">Surface (weak)</span>
@@ -364,9 +359,9 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               <div className="rounded-lg bg-emerald-500/5 p-3">
                 <span className="text-xs font-semibold text-emerald-500">Inference (strong)</span>
                 <p className="mt-1 text-body-sm text-muted-foreground">
-                  &ldquo;The verb &lsquo;trudged&rsquo; suggests the character is weighed
-                  down, perhaps physically exhausted or emotionally burdened, conveying a
-                  sense of reluctance.&rdquo;
+                  &ldquo;The verb &lsquo;trudged&rsquo; suggests the character is weighed down,
+                  perhaps physically exhausted or emotionally burdened, conveying a sense of
+                  reluctance.&rdquo;
                 </p>
               </div>
             </div>
@@ -377,18 +372,18 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
             <ol className="space-y-2 text-body-sm text-muted-foreground pl-1">
               <li className="flex items-start gap-2">
                 <span className="font-bold text-foreground">1.</span>
-                Identify the connotations of specific word choices. Ask: what
-                associations does this word carry beyond its dictionary meaning?
+                Identify the connotations of specific word choices. Ask: what associations does this
+                word carry beyond its dictionary meaning?
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-foreground">2.</span>
-                Consider what the writer does NOT say. Silences and omissions can be
-                just as revealing as what is on the page.
+                Consider what the writer does NOT say. Silences and omissions can be just as
+                revealing as what is on the page.
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-foreground">3.</span>
-                Look at how characters behave rather than what they say. Actions,
-                gestures, and body language often contradict dialogue.
+                Look at how characters behave rather than what they say. Actions, gestures, and body
+                language often contradict dialogue.
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-foreground">4.</span>
@@ -400,9 +395,9 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
           </div>
 
           <TipBox>
-            <strong>Marker insight:</strong> The difference between Grade 5 and Grade 7 on
-            inference questions is often depth, not quantity. Three well-developed inferences
-            score higher than six shallow ones.
+            <strong>Marker insight:</strong> The difference between Grade 5 and Grade 7 on inference
+            questions is often depth, not quantity. Three well-developed inferences score higher
+            than six shallow ones.
           </TipBox>
         </div>
       </Section>
@@ -411,9 +406,9 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       <Section title="Language Analysis: What-How-Why" icon={Layers} colour="text-emerald-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            The What-How-Why framework is the single most useful structure for analysing
-            language in any reading question. It ensures your paragraphs have a clear point,
-            evidence, and analysis every time.
+            The What-How-Why framework is the single most useful structure for analysing language in
+            any reading question. It ensures your paragraphs have a clear point, evidence, and
+            analysis every time.
           </p>
 
           <div className="grid gap-3 sm:grid-cols-3">
@@ -421,26 +416,28 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               {
                 label: 'WHAT',
                 colour: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-                description: 'What does the writer do or what is the effect? State your point clearly.',
+                description:
+                  'What does the writer do or what is the effect? State your point clearly.',
                 example: 'The writer creates a sense of tension in this paragraph.',
               },
               {
                 label: 'HOW',
                 colour: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-                description: 'How do they achieve it? Identify the technique and embed a short quote.',
+                description:
+                  'How do they achieve it? Identify the technique and embed a short quote.',
                 example: 'Through the metaphor "the silence pressed like a fist," Blake...',
               },
               {
                 label: 'WHY',
                 colour: 'bg-violet-500/10 text-violet-400 border-violet-500/20',
-                description: 'Why does this matter? Analyse the effect on the reader or the deeper meaning.',
-                example: 'This forces the reader to feel the oppressive weight of the atmosphere, mirroring the character\'s claustrophobia.',
+                description:
+                  'Why does this matter? Analyse the effect on the reader or the deeper meaning.',
+                example:
+                  "This forces the reader to feel the oppressive weight of the atmosphere, mirroring the character's claustrophobia.",
               },
             ].map((item) => (
               <div key={item.label} className={`rounded-xl border p-4 ${item.colour}`}>
-                <span className="text-xs font-bold uppercase tracking-wider">
-                  {item.label}
-                </span>
+                <span className="text-xs font-bold uppercase tracking-wider">{item.label}</span>
                 <p className="mt-2 text-body-sm text-muted-foreground">{item.description}</p>
                 <p className="mt-2 text-xs italic text-muted-foreground/80">
                   e.g. &ldquo;{item.example}&rdquo;
@@ -466,21 +463,21 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
-                <strong>Link to the whole text.</strong> How does this moment connect to the
-                broader themes, the writer&apos;s purpose, or the context of the piece?
+                <strong>Link to the whole text.</strong> How does this moment connect to the broader
+                themes, the writer&apos;s purpose, or the context of the piece?
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
-                <strong>Comment on reader positioning.</strong> How does the writer make the
-                reader feel? Sympathy? Discomfort? Curiosity?
+                <strong>Comment on reader positioning.</strong> How does the writer make the reader
+                feel? Sympathy? Discomfort? Curiosity?
               </li>
             </ul>
           </div>
 
           <TipBox>
-            <strong>Remember:</strong> Naming a technique (e.g. &ldquo;this is a
-            simile&rdquo;) earns almost no marks on its own. The marks come from explaining
-            why the writer chose that technique and what effect it creates.
+            <strong>Remember:</strong> Naming a technique (e.g. &ldquo;this is a simile&rdquo;)
+            earns almost no marks on its own. The marks come from explaining why the writer chose
+            that technique and what effect it creates.
           </TipBox>
         </div>
       </Section>
@@ -490,24 +487,62 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
             &ldquo;Writer&apos;s methods&rdquo; is the umbrella term markers use for every
-            deliberate choice a writer makes. This goes far beyond literary devices -- it
-            includes structure, form, tone, and even what the writer chooses to leave out.
+            deliberate choice a writer makes. This goes far beyond literary devices -- it includes
+            structure, form, tone, and even what the writer chooses to leave out.
           </p>
 
           <div className="space-y-3">
             <h3 className="text-sm font-semibold text-foreground">Key Methods to Know</h3>
             <div className="grid gap-2 sm:grid-cols-2">
               {[
-                { method: 'Imagery', effect: 'Creates vivid mental pictures; appeals to the senses to make abstract ideas concrete.' },
-                { method: 'Metaphor / Simile', effect: 'Draws comparisons to deepen understanding; can reveal hidden similarities between unlike things.' },
-                { method: 'Personification', effect: 'Gives human qualities to non-human things, making them relatable or threatening.' },
-                { method: 'Pathetic fallacy', effect: 'Uses weather or setting to mirror emotions; externalises internal feelings.' },
-                { method: 'Short sentences', effect: 'Create pace, tension, or emphasis. Often used for dramatic impact.' },
-                { method: 'List of three', effect: 'Builds a sense of accumulation or overwhelm; creates rhythmic emphasis.' },
-                { method: 'Repetition', effect: 'Reinforces a key idea; can create a hypnotic, relentless, or obsessive quality.' },
-                { method: 'Juxtaposition', effect: 'Places contrasting ideas together to highlight differences or create irony.' },
-                { method: 'Direct address', effect: 'Breaks the fourth wall; creates intimacy or confrontation with the reader.' },
-                { method: 'Tone shifts', effect: 'A change in tone signals a turning point, revelation, or shift in the writer\'s attitude.' },
+                {
+                  method: 'Imagery',
+                  effect:
+                    'Creates vivid mental pictures; appeals to the senses to make abstract ideas concrete.',
+                },
+                {
+                  method: 'Metaphor / Simile',
+                  effect:
+                    'Draws comparisons to deepen understanding; can reveal hidden similarities between unlike things.',
+                },
+                {
+                  method: 'Personification',
+                  effect:
+                    'Gives human qualities to non-human things, making them relatable or threatening.',
+                },
+                {
+                  method: 'Pathetic fallacy',
+                  effect:
+                    'Uses weather or setting to mirror emotions; externalises internal feelings.',
+                },
+                {
+                  method: 'Short sentences',
+                  effect: 'Create pace, tension, or emphasis. Often used for dramatic impact.',
+                },
+                {
+                  method: 'List of three',
+                  effect: 'Builds a sense of accumulation or overwhelm; creates rhythmic emphasis.',
+                },
+                {
+                  method: 'Repetition',
+                  effect:
+                    'Reinforces a key idea; can create a hypnotic, relentless, or obsessive quality.',
+                },
+                {
+                  method: 'Juxtaposition',
+                  effect:
+                    'Places contrasting ideas together to highlight differences or create irony.',
+                },
+                {
+                  method: 'Direct address',
+                  effect:
+                    'Breaks the fourth wall; creates intimacy or confrontation with the reader.',
+                },
+                {
+                  method: 'Tone shifts',
+                  effect:
+                    "A change in tone signals a turning point, revelation, or shift in the writer's attitude.",
+                },
               ].map((item) => (
                 <div key={item.method} className="rounded-lg border border-border/40 p-3">
                   <span className="text-xs font-semibold text-foreground">{item.method}</span>
@@ -524,20 +559,18 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
             <ul className="space-y-1.5 text-body-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
-                <strong>Opening / closing focus:</strong> What does the writer choose to begin
-                and end with? This framing reveals priorities.
+                <strong>Opening / closing focus:</strong> What does the writer choose to begin and
+                end with? This framing reveals priorities.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
-                <strong>Shifts in focus:</strong> Does the writer move from wide angle to
-                close-up, or from external to internal? These zooms guide the reader&apos;s
-                attention.
+                <strong>Shifts in focus:</strong> Does the writer move from wide angle to close-up,
+                or from external to internal? These zooms guide the reader&apos;s attention.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
-                <strong>Paragraph length:</strong> A single-sentence paragraph creates a
-                moment of stark emphasis. Long paragraphs can create immersion or
-                claustrophobia.
+                <strong>Paragraph length:</strong> A single-sentence paragraph creates a moment of
+                stark emphasis. Long paragraphs can create immersion or claustrophobia.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
@@ -553,9 +586,9 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       <Section title="Comparison Techniques" icon={BarChart3} colour="text-cyan-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Most boards require you to compare two writers at some point in the reading
-            section. For {boardName}, this typically carries the highest mark weighting
-            in the reading paper, so a strong comparison technique is essential.
+            Most boards require you to compare two writers at some point in the reading section. For{' '}
+            {boardName}, this typically carries the highest mark weighting in the reading paper, so
+            a strong comparison technique is essential.
           </p>
 
           <div className="space-y-3">
@@ -563,8 +596,8 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               The Integrated Comparison Method
             </h3>
             <p className="text-body-sm text-muted-foreground">
-              Rather than writing about Source A and then Source B separately (which limits you
-              to Grade 5), weave both sources together in every paragraph:
+              Rather than writing about Source A and then Source B separately (which limits you to
+              Grade 5), weave both sources together in every paragraph:
             </p>
             <ol className="space-y-2 text-body-sm text-muted-foreground pl-1">
               <li className="flex items-start gap-2">
@@ -578,14 +611,13 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-foreground">3.</span>
-                Use a comparison connective to pivot: &ldquo;Similarly...&rdquo;,
-                &ldquo;In contrast...&rdquo;, &ldquo;However...&rdquo;, &ldquo;While Source
-                A..., Source B...&rdquo;.
+                Use a comparison connective to pivot: &ldquo;Similarly...&rdquo;, &ldquo;In
+                contrast...&rdquo;, &ldquo;However...&rdquo;, &ldquo;While Source A..., Source
+                B...&rdquo;.
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-foreground">4.</span>
-                Analyse Source B with the same depth. Explain how the effect differs or
-                aligns.
+                Analyse Source B with the same depth. Explain how the effect differs or aligns.
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-foreground">5.</span>
@@ -598,8 +630,15 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
             <h3 className="text-sm font-semibold text-foreground">Useful Comparison Connectives</h3>
             <div className="flex flex-wrap gap-2">
               {[
-                'Similarly', 'Likewise', 'In contrast', 'However', 'Conversely',
-                'On the other hand', 'While...', 'Whereas', 'Both writers...',
+                'Similarly',
+                'Likewise',
+                'In contrast',
+                'However',
+                'Conversely',
+                'On the other hand',
+                'While...',
+                'Whereas',
+                'Both writers...',
                 'Unlike Source A...',
               ].map((word) => (
                 <Badge key={word} variant="secondary" className="text-xs">
@@ -610,30 +649,35 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
           </div>
 
           <TipBox>
-            <strong>Common mistake:</strong> Writing a full page about Source A and then a
-            full page about Source B. This is called &ldquo;block comparison&rdquo; and it
-            severely limits your marks because you are not comparing -- you are summarising
-            separately.
+            <strong>Common mistake:</strong> Writing a full page about Source A and then a full page
+            about Source B. This is called &ldquo;block comparison&rdquo; and it severely limits
+            your marks because you are not comparing -- you are summarising separately.
           </TipBox>
         </div>
       </Section>
 
       {/* ── 6. Practice Extract with Guided Questions ─────────────── */}
-      <Section title="Practice Extract with Guided Questions" icon={BookOpen} colour="text-clay-600">
+      <Section
+        title="Practice Extract with Guided Questions"
+        icon={BookOpen}
+        colour="text-clay-600"
+      >
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Use this short extract to practise your reading skills. Try answering each
-            question before revealing the guidance.
+            Use this short extract to practise your reading skills. Try answering each question
+            before revealing the guidance.
           </p>
 
           <div className="rounded-xl border border-border/60 bg-background/50 p-4">
-            <Badge variant="outline" className="mb-3">Practice Extract</Badge>
+            <Badge variant="outline" className="mb-3">
+              Practice Extract
+            </Badge>
             <p className="text-body-sm text-foreground leading-relaxed italic">
-              The fog crept through the alleyways like a living thing, swallowing the gaslight
-              in thick, grey mouthfuls. Somewhere ahead, footsteps echoed -- sharp, deliberate,
-              growing closer. Martha pressed herself against the damp brickwork and held her
-              breath. The city, which had roared with life only hours before, was silent now.
-              Dead silent. Even the Thames seemed to have stopped breathing.
+              The fog crept through the alleyways like a living thing, swallowing the gaslight in
+              thick, grey mouthfuls. Somewhere ahead, footsteps echoed -- sharp, deliberate, growing
+              closer. Martha pressed herself against the damp brickwork and held her breath. The
+              city, which had roared with life only hours before, was silent now. Dead silent. Even
+              the Thames seemed to have stopped breathing.
             </p>
           </div>
 
@@ -656,13 +700,16 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
       </Section>
 
       {/* ── 7. Grade Comparison: 5 vs 7 vs 9 ─────────────────────── */}
-      <Section title="Grade 5 vs Grade 7 vs Grade 9 Responses" icon={BarChart3} colour="text-primary">
+      <Section
+        title="Grade 5 vs Grade 7 vs Grade 9 Responses"
+        icon={BarChart3}
+        colour="text-primary"
+      >
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Understanding what separates each grade boundary helps you target your revision.
-            Below are example paragraphs responding to the question: &ldquo;How does the
-            writer use language to create a sense of danger?&rdquo; using the practice
-            extract above.
+            Understanding what separates each grade boundary helps you target your revision. Below
+            are example paragraphs responding to the question: &ldquo;How does the writer use
+            language to create a sense of danger?&rdquo; using the practice extract above.
           </p>
 
           <Tabs defaultValue="grade5">
@@ -682,9 +729,9 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               <div className="mt-3 rounded-lg bg-amber-500/5 p-3">
                 <span className="text-xs font-semibold text-amber-500">What this does well</span>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  Identifies a technique, uses a quotation, and attempts to explain the
-                  effect. However, analysis stays at the surface level and the exploration of
-                  individual word choices is limited.
+                  Identifies a technique, uses a quotation, and attempts to explain the effect.
+                  However, analysis stays at the surface level and the exploration of individual
+                  word choices is limited.
                 </p>
               </div>
             </TabsContent>
@@ -700,8 +747,8 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
                 <span className="text-xs font-semibold text-emerald-500">What this adds</span>
                 <p className="mt-1 text-xs text-muted-foreground">
                   Explores connotations of individual words, connects language to the reader&apos;s
-                  experience, and considers the wider significance (light = safety). Analysis
-                  is sustained and developed rather than just identified.
+                  experience, and considers the wider significance (light = safety). Analysis is
+                  sustained and developed rather than just identified.
                 </p>
               </div>
             </TabsContent>
@@ -714,13 +761,15 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
                 text="The writer constructs the fog as an almost sentient antagonist: the simile 'like a living thing' initially suggests organic unpredictability, but the verbs 'crept' and 'swallowing' elevate this beyond simple personification into something more predatory and deliberate. The fog does not merely obscure -- it consumes, specifically targeting the 'gaslight,' which symbolically represents civilisation, order, and human control over the darkness. By stripping away this light, the writer systematically dismantles the reader's sense of safety, mirroring Martha's own loss of agency. The fragment 'Dead silent' functions as a pivot in the extract: the stark, two-word sentence arrests the rhythm established by the longer preceding clauses, forcing the reader to experience the same sudden stillness that Martha feels -- and the word 'dead' resonates ominously, carrying the weight of potential mortality."
               />
               <div className="mt-3 rounded-lg bg-primary/5 p-3">
-                <span className="text-xs font-semibold text-primary">What makes this exceptional</span>
+                <span className="text-xs font-semibold text-primary">
+                  What makes this exceptional
+                </span>
                 <p className="mt-1 text-xs text-muted-foreground">
                   Conceptualises language choices within a broader argument (fog as antagonist,
-                  light as civilisation). Explores multiple layers of meaning within single
-                  words. Comments on structural effects (sentence length, rhythm). Considers
-                  how form and content work together to position the reader. Offers original
-                  interpretation rather than formulaic responses.
+                  light as civilisation). Explores multiple layers of meaning within single words.
+                  Comments on structural effects (sentence length, rhythm). Considers how form and
+                  content work together to position the reader. Offers original interpretation
+                  rather than formulaic responses.
                 </p>
               </div>
             </TabsContent>
@@ -746,8 +795,12 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               <Target className="size-4 text-emerald-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Essay Structure Guide</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Turn close reading into top-band paragraphs.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Essay Structure Guide
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Turn close reading into top-band paragraphs.
+              </p>
             </div>
           </Link>
           <Link
@@ -758,8 +811,12 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               <Target className="size-4 text-emerald-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Question Types Decoded</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Match reading techniques to each question.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Question Types Decoded
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Match reading techniques to each question.
+              </p>
             </div>
           </Link>
           <Link
@@ -770,8 +827,12 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               <BarChart3 className="size-4 text-cyan-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Aiming for Grade 7</p>
-              <p className="text-xs text-muted-foreground mt-0.5">See how perceptive reading is rewarded.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Aiming for Grade 7
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                See how perceptive reading is rewarded.
+              </p>
             </div>
           </Link>
           <Link
@@ -782,8 +843,12 @@ export default function ReadingView({ boardId, boardName }: ReadingViewProps) {
               <Search className="size-4 text-clay-600" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Test Yourself</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Quick quizzes on language techniques.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Test Yourself
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Quick quizzes on language techniques.
+              </p>
             </div>
           </Link>
         </div>

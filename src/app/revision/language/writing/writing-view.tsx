@@ -42,16 +42,16 @@ interface WritingPaperInfo {
 const WRITING_PAPERS: Partial<Record<ExamBoard, WritingPaperInfo>> = {
   aqa: {
     creative: {
-      paperLabel: 'AQA Paper 1 Section B: Creative Writing',
+      paperLabel: 'AQA Paper 1 Section B: Creative (Narrative or Descriptive) Writing',
       wordCount: 'Approximately 450-600 words',
-      marks: '40 marks (24 content + 16 technical accuracy)',
-      timing: 'Around 45 minutes (including planning)',
+      marks: '40 marks (24 for content/organisation -- AO5; 16 for technical accuracy -- AO6)',
+      timing: 'Around 45 minutes (including planning) of the 1h 45m paper',
     },
     transactional: {
-      paperLabel: "AQA Paper 2 Section B: Writers' Viewpoints",
+      paperLabel: 'AQA Paper 2 Section B: Transactional/Persuasive Writing',
       wordCount: 'Approximately 450-600 words',
-      marks: '40 marks (24 content + 16 technical accuracy)',
-      timing: 'Around 45 minutes (including planning)',
+      marks: '40 marks (24 for content/organisation -- AO5; 16 for technical accuracy -- AO6)',
+      timing: 'Around 45 minutes (including planning) of the 1h 45m paper',
     },
   },
   edexcel: {
@@ -124,9 +124,7 @@ function Section({
         <div className="flex size-8 items-center justify-center rounded-lg bg-emerald-500/10">
           <Icon className={`size-4 ${colour}`} />
         </div>
-        <h2 className="flex-1 text-heading-md font-heading text-foreground">
-          {title}
-        </h2>
+        <h2 className="flex-1 text-heading-md font-heading text-foreground">{title}</h2>
         {open ? (
           <ChevronUp className="size-4 text-muted-foreground" />
         ) : (
@@ -142,9 +140,7 @@ function TipBox({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-start gap-2.5 rounded-xl border border-primary/20 bg-primary/[0.04] p-3.5">
       <Lightbulb className="mt-0.5 size-4 shrink-0 text-primary" />
-      <div className="text-body-sm text-muted-foreground leading-relaxed">
-        {children}
-      </div>
+      <div className="text-body-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
   )
 }
@@ -159,9 +155,7 @@ interface WritingViewProps {
 export default function WritingView({ boardId, boardName }: WritingViewProps) {
   const papers = boardId && WRITING_PAPERS[boardId]
   const showIgcseBanner = isIgcseBoard(boardId)
-  const heading = boardId
-    ? `${boardName} Language Paper 2 Writing`
-    : 'Writing Skills'
+  const heading = boardId ? `${boardName} Language Writing Skills` : 'Writing Skills'
   const subheading = boardId
     ? `Creative and transactional writing craft for ${boardName}`
     : 'Creative writing, transactional writing, planning, and language craft'
@@ -185,18 +179,14 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-heading-lg font-heading text-foreground">
-                {heading}
-              </h1>
+              <h1 className="text-heading-lg font-heading text-foreground">{heading}</h1>
               {boardId && !showIgcseBanner && (
                 <Badge variant="secondary" className="text-xs">
                   {boardName}
                 </Badge>
               )}
             </div>
-            <p className="text-body-sm text-muted-foreground">
-              {subheading}
-            </p>
+            <p className="text-body-sm text-muted-foreground">{subheading}</p>
           </div>
         </div>
       </div>
@@ -210,16 +200,15 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               Your board uses a different paper structure
             </p>
             <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
-              The creative, transactional, and planning techniques below apply to
-              every writing task, but word counts, timing, and task formats differ
-              for IGCSE. See{' '}
+              The creative, transactional, and planning techniques below apply to every writing
+              task, but word counts, timing, and task formats differ for IGCSE. See{' '}
               <Link
                 href={
                   boardId === 'cambridge-0500'
                     ? '/igcse/cambridge/0500'
                     : boardId === 'cambridge-0990'
-                    ? '/igcse/cambridge/0990'
-                    : '/igcse/edexcel'
+                      ? '/igcse/cambridge/0990'
+                      : '/igcse/edexcel'
                 }
                 className="text-primary underline hover:no-underline"
               >
@@ -237,45 +226,57 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
           <div className="rounded-2xl border border-border/60 bg-card p-4">
             <div className="flex items-center gap-2 mb-2">
               <Palette className="size-4 text-emerald-400" />
-              <h2 className="text-sm font-semibold text-foreground">
-                Creative Writing
-              </h2>
+              <h2 className="text-sm font-semibold text-foreground">Creative Writing</h2>
             </div>
-            <p className="text-xs font-medium text-foreground mb-2">
-              {papers.creative.paperLabel}
-            </p>
+            <p className="text-xs font-medium text-foreground mb-2">{papers.creative.paperLabel}</p>
             <ul className="space-y-1 text-xs text-muted-foreground">
-              <li><strong className="text-foreground">Length:</strong> {papers.creative.wordCount}</li>
-              <li><strong className="text-foreground">Marks:</strong> {papers.creative.marks}</li>
-              <li><strong className="text-foreground">Timing:</strong> {papers.creative.timing}</li>
+              <li>
+                <strong className="text-foreground">Length:</strong> {papers.creative.wordCount}
+              </li>
+              <li>
+                <strong className="text-foreground">Marks:</strong> {papers.creative.marks}
+              </li>
+              <li>
+                <strong className="text-foreground">Timing:</strong> {papers.creative.timing}
+              </li>
             </ul>
           </div>
           <div className="rounded-2xl border border-border/60 bg-card p-4">
             <div className="flex items-center gap-2 mb-2">
               <FileText className="size-4 text-blue-400" />
-              <h2 className="text-sm font-semibold text-foreground">
-                Transactional Writing
-              </h2>
+              <h2 className="text-sm font-semibold text-foreground">Transactional Writing</h2>
             </div>
             <p className="text-xs font-medium text-foreground mb-2">
               {papers.transactional.paperLabel}
             </p>
             <ul className="space-y-1 text-xs text-muted-foreground">
-              <li><strong className="text-foreground">Length:</strong> {papers.transactional.wordCount}</li>
-              <li><strong className="text-foreground">Marks:</strong> {papers.transactional.marks}</li>
-              <li><strong className="text-foreground">Timing:</strong> {papers.transactional.timing}</li>
+              <li>
+                <strong className="text-foreground">Length:</strong>{' '}
+                {papers.transactional.wordCount}
+              </li>
+              <li>
+                <strong className="text-foreground">Marks:</strong> {papers.transactional.marks}
+              </li>
+              <li>
+                <strong className="text-foreground">Timing:</strong> {papers.transactional.timing}
+              </li>
             </ul>
           </div>
         </div>
       )}
 
       {/* ── 1. Creative Writing Techniques ────────────────────────── */}
-      <Section title="Creative Writing Techniques" icon={Palette} colour="text-emerald-400" defaultOpen>
+      <Section
+        title="Creative Writing Techniques"
+        icon={Palette}
+        colour="text-emerald-400"
+        defaultOpen
+      >
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Your creative writing task asks you to produce either narrative (telling a
-            story) or descriptive (painting a scene) prose. The best responses treat
-            this as a craft, not a rushed afterthought.
+            Your creative writing task asks you to produce either narrative (telling a story) or
+            descriptive (painting a scene) prose. The best responses treat this as a craft, not a
+            rushed afterthought.
           </p>
 
           <Tabs defaultValue="narrative">
@@ -285,9 +286,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
             </TabsList>
 
             <TabsContent value="narrative" className="mt-4 space-y-4">
-              <h3 className="text-sm font-semibold text-foreground">
-                Building a Strong Narrative
-              </h3>
+              <h3 className="text-sm font-semibold text-foreground">Building a Strong Narrative</h3>
               <div className="space-y-3">
                 {[
                   {
@@ -321,12 +320,8 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
                       {i + 1}
                     </span>
                     <div>
-                      <span className="text-sm font-medium text-foreground">
-                        {item.heading}
-                      </span>
-                      <p className="mt-0.5 text-body-sm text-muted-foreground">
-                        {item.detail}
-                      </p>
+                      <span className="text-sm font-medium text-foreground">{item.heading}</span>
+                      <p className="mt-0.5 text-body-sm text-muted-foreground">{item.detail}</p>
                     </div>
                   </div>
                 ))}
@@ -347,7 +342,7 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
                   {
                     heading: 'Use the zoom technique',
                     detail:
-                      'Start with a wide establishing shot of the whole scene, then zoom in to a mid-range detail, then to an extreme close-up on a single, specific object. This mimics how a camera works in film and guides the reader\'s attention naturally.',
+                      "Start with a wide establishing shot of the whole scene, then zoom in to a mid-range detail, then to an extreme close-up on a single, specific object. This mimics how a camera works in film and guides the reader's attention naturally.",
                   },
                   {
                     heading: 'Choose precise vocabulary',
@@ -370,12 +365,8 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
                       {i + 1}
                     </span>
                     <div>
-                      <span className="text-sm font-medium text-foreground">
-                        {item.heading}
-                      </span>
-                      <p className="mt-0.5 text-body-sm text-muted-foreground">
-                        {item.detail}
-                      </p>
+                      <span className="text-sm font-medium text-foreground">{item.heading}</span>
+                      <p className="mt-0.5 text-body-sm text-muted-foreground">{item.detail}</p>
                     </div>
                   </div>
                 ))}
@@ -384,10 +375,10 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
           </Tabs>
 
           <TipBox>
-            <strong>The &ldquo;one page, one scene&rdquo; rule:</strong> If your creative
-            writing piece covers more than one scene or setting, you are probably trying to
-            do too much. The highest-scoring responses are almost always tightly focused on a
-            single moment explored in rich detail.
+            <strong>The &ldquo;one page, one scene&rdquo; rule:</strong> If your creative writing
+            piece covers more than one scene or setting, you are probably trying to do too much. The
+            highest-scoring responses are almost always tightly focused on a single moment explored
+            in rich detail.
           </TipBox>
         </div>
       </Section>
@@ -396,10 +387,9 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       <Section title="Transactional Writing" icon={FileText} colour="text-blue-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Your transactional writing task asks you to write for a specific audience
-            and purpose. You may be asked to write an article, a letter, a speech, or
-            a leaflet. The format matters -- but the quality of your argument and
-            language matters more.
+            Your transactional writing task asks you to write for a specific audience and purpose.
+            You may be asked to write an article, a letter, a speech, or a leaflet. The format
+            matters -- but the quality of your argument and language matters more.
           </p>
 
           <Tabs defaultValue="article">
@@ -413,17 +403,34 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               <h3 className="text-sm font-semibold text-foreground">Article Format</h3>
               <div className="rounded-xl border border-border/60 p-4 space-y-2">
                 <div className="text-xs text-muted-foreground space-y-1">
-                  <p><strong className="text-foreground">Headline:</strong> A punchy, attention-grabbing title. Consider alliteration, a pun, or a provocative question.</p>
-                  <p><strong className="text-foreground">Strapline (optional):</strong> A one-line subtitle that expands on the headline.</p>
-                  <p><strong className="text-foreground">Opening paragraph:</strong> Hook the reader immediately with a bold statement, a shocking statistic, a question, or an anecdote.</p>
-                  <p><strong className="text-foreground">Body paragraphs:</strong> Each paragraph should make one clear point, supported by evidence or examples. Use subheadings if appropriate.</p>
-                  <p><strong className="text-foreground">Closing paragraph:</strong> End with a call to action, a thought-provoking question, or a return to your opening image.</p>
+                  <p>
+                    <strong className="text-foreground">Headline:</strong> A punchy,
+                    attention-grabbing title. Consider alliteration, a pun, or a provocative
+                    question.
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Strapline (optional):</strong> A one-line
+                    subtitle that expands on the headline.
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Opening paragraph:</strong> Hook the reader
+                    immediately with a bold statement, a shocking statistic, a question, or an
+                    anecdote.
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Body paragraphs:</strong> Each paragraph
+                    should make one clear point, supported by evidence or examples. Use subheadings
+                    if appropriate.
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Closing paragraph:</strong> End with a call
+                    to action, a thought-provoking question, or a return to your opening image.
+                  </p>
                 </div>
               </div>
               <TipBox>
-                Articles should feel opinionated and engaging. Write as though your reader
-                might stop reading at any moment -- every paragraph needs to earn their
-                attention.
+                Articles should feel opinionated and engaging. Write as though your reader might
+                stop reading at any moment -- every paragraph needs to earn their attention.
               </TipBox>
             </TabsContent>
 
@@ -431,11 +438,29 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               <h3 className="text-sm font-semibold text-foreground">Letter Format</h3>
               <div className="rounded-xl border border-border/60 p-4 space-y-2">
                 <div className="text-xs text-muted-foreground space-y-1">
-                  <p><strong className="text-foreground">Address and date:</strong> Your address top-right, date below, recipient&apos;s address left (formal only). Keep this brief in an exam -- one line is enough.</p>
-                  <p><strong className="text-foreground">Salutation:</strong> &ldquo;Dear Sir/Madam&rdquo; (formal) or &ldquo;Dear Mr/Mrs [Name]&rdquo; (semi-formal). Never &ldquo;Hey&rdquo; or &ldquo;Hi&rdquo; unless writing to a friend.</p>
-                  <p><strong className="text-foreground">Opening:</strong> State your purpose clearly in the first sentence: &ldquo;I am writing to express my concern about...&rdquo;</p>
-                  <p><strong className="text-foreground">Body:</strong> One point per paragraph. Use formal connectives: Furthermore, Additionally, Moreover, Nevertheless.</p>
-                  <p><strong className="text-foreground">Sign-off:</strong> &ldquo;Yours faithfully&rdquo; (if you used Sir/Madam) or &ldquo;Yours sincerely&rdquo; (if you used their name). This matters -- markers notice.</p>
+                  <p>
+                    <strong className="text-foreground">Address and date:</strong> Your address
+                    top-right, date below, recipient&apos;s address left (formal only). Keep this
+                    brief in an exam -- one line is enough.
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Salutation:</strong> &ldquo;Dear
+                    Sir/Madam&rdquo; (formal) or &ldquo;Dear Mr/Mrs [Name]&rdquo; (semi-formal).
+                    Never &ldquo;Hey&rdquo; or &ldquo;Hi&rdquo; unless writing to a friend.
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Opening:</strong> State your purpose clearly
+                    in the first sentence: &ldquo;I am writing to express my concern about...&rdquo;
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Body:</strong> One point per paragraph. Use
+                    formal connectives: Furthermore, Additionally, Moreover, Nevertheless.
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Sign-off:</strong> &ldquo;Yours
+                    faithfully&rdquo; (if you used Sir/Madam) or &ldquo;Yours sincerely&rdquo; (if
+                    you used their name). This matters -- markers notice.
+                  </p>
                 </div>
               </div>
             </TabsContent>
@@ -444,16 +469,32 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               <h3 className="text-sm font-semibold text-foreground">Speech Format</h3>
               <div className="rounded-xl border border-border/60 p-4 space-y-2">
                 <div className="text-xs text-muted-foreground space-y-1">
-                  <p><strong className="text-foreground">Address the audience:</strong> Open with a direct address: &ldquo;Ladies and gentlemen...&rdquo;, &ldquo;Fellow students...&rdquo;, or &ldquo;Members of the council...&rdquo;</p>
-                  <p><strong className="text-foreground">Rhetorical devices:</strong> Speeches thrive on rhetoric. Use tricolon (lists of three), rhetorical questions, anaphora (repeating a phrase at the start of consecutive sentences), and direct address (&ldquo;you&rdquo;).</p>
-                  <p><strong className="text-foreground">Vary your tone:</strong> A good speech moves between passion, humour, gravity, and urgency. Do not write in a single monotone register.</p>
-                  <p><strong className="text-foreground">Call to action:</strong> End by telling the audience exactly what you want them to do, think, or feel. The final sentence should be memorable.</p>
+                  <p>
+                    <strong className="text-foreground">Address the audience:</strong> Open with a
+                    direct address: &ldquo;Ladies and gentlemen...&rdquo;, &ldquo;Fellow
+                    students...&rdquo;, or &ldquo;Members of the council...&rdquo;
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Rhetorical devices:</strong> Speeches thrive
+                    on rhetoric. Use tricolon (lists of three), rhetorical questions, anaphora
+                    (repeating a phrase at the start of consecutive sentences), and direct address
+                    (&ldquo;you&rdquo;).
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Vary your tone:</strong> A good speech moves
+                    between passion, humour, gravity, and urgency. Do not write in a single monotone
+                    register.
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Call to action:</strong> End by telling the
+                    audience exactly what you want them to do, think, or feel. The final sentence
+                    should be memorable.
+                  </p>
                 </div>
               </div>
               <TipBox>
-                Read your speech aloud in your head as you write. If a sentence sounds
-                awkward when spoken, rewrite it. Speeches are meant to be heard, not read
-                silently.
+                Read your speech aloud in your head as you write. If a sentence sounds awkward when
+                spoken, rewrite it. Speeches are meant to be heard, not read silently.
               </TipBox>
             </TabsContent>
           </Tabs>
@@ -464,12 +505,30 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
             </h3>
             <div className="grid gap-2 sm:grid-cols-2">
               {[
-                { name: 'Rhetorical questions', desc: 'Engage the reader by making them think: "How can we call ourselves civilised when...?"' },
-                { name: 'Statistics and facts', desc: 'Ground your argument in evidence, even if you invent plausible-sounding figures in an exam.' },
-                { name: 'Emotive language', desc: 'Choose words that trigger feelings: "devastating," "heartbreaking," "scandalous."' },
-                { name: 'Anecdote', desc: 'A brief personal story makes your argument relatable: "Last Tuesday, my younger sister came home from school in tears..."' },
-                { name: 'Counter-argument', desc: 'Acknowledge the opposing view then demolish it: "Some may argue... however, this ignores the fact that..."' },
-                { name: 'Direct address', desc: 'Use "you" and "we" to create a sense of shared responsibility and connection.' },
+                {
+                  name: 'Rhetorical questions',
+                  desc: 'Engage the reader by making them think: "How can we call ourselves civilised when...?"',
+                },
+                {
+                  name: 'Statistics and facts',
+                  desc: 'Ground your argument in evidence, even if you invent plausible-sounding figures in an exam.',
+                },
+                {
+                  name: 'Emotive language',
+                  desc: 'Choose words that trigger feelings: "devastating," "heartbreaking," "scandalous."',
+                },
+                {
+                  name: 'Anecdote',
+                  desc: 'A brief personal story makes your argument relatable: "Last Tuesday, my younger sister came home from school in tears..."',
+                },
+                {
+                  name: 'Counter-argument',
+                  desc: 'Acknowledge the opposing view then demolish it: "Some may argue... however, this ignores the fact that..."',
+                },
+                {
+                  name: 'Direct address',
+                  desc: 'Use "you" and "we" to create a sense of shared responsibility and connection.',
+                },
               ].map((item) => (
                 <div key={item.name} className="rounded-lg border border-border/40 p-3">
                   <span className="text-xs font-semibold text-foreground">{item.name}</span>
@@ -527,14 +586,14 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
                   best: 'Best for narrative writing',
                 },
               ].map((plan) => (
-                <div
-                  key={plan.name}
-                  className={`rounded-xl border p-4 ${plan.colour}`}
-                >
+                <div key={plan.name} className={`rounded-xl border p-4 ${plan.colour}`}>
                   <span className="text-xs font-bold text-foreground">{plan.name}</span>
                   <ul className="mt-2 space-y-1">
                     {plan.steps.map((step, i) => (
-                      <li key={i} className="flex items-start gap-1.5 text-xs text-muted-foreground">
+                      <li
+                        key={i}
+                        className="flex items-start gap-1.5 text-xs text-muted-foreground"
+                      >
                         <span className="mt-0.5 text-primary">{i + 1}.</span>
                         {step}
                       </li>
@@ -547,9 +606,9 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
           </div>
 
           <TipBox>
-            <strong>Do not skip planning.</strong> Markers can tell when a student did not
-            plan because the writing meanders, repeats itself, or loses focus halfway
-            through. A visible plan on your paper is never penalised.
+            <strong>Do not skip planning.</strong> Markers can tell when a student did not plan
+            because the writing meanders, repeats itself, or loses focus halfway through. A visible
+            plan on your paper is never penalised.
           </TipBox>
         </div>
       </Section>
@@ -558,8 +617,8 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       <Section title="Vocabulary Enhancement" icon={BookOpen} colour="text-rose-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            You do not need rare or obscure words to score highly. What matters is choosing
-            the right word for the right moment and showing you understand its effect.
+            You do not need rare or obscure words to score highly. What matters is choosing the
+            right word for the right moment and showing you understand its effect.
           </p>
 
           <div className="space-y-3">
@@ -568,19 +627,41 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/40 bg-muted/30">
-                    <th className="px-4 py-2 text-left text-xs font-semibold text-foreground">Basic</th>
-                    <th className="px-4 py-2 text-left text-xs font-semibold text-foreground">Upgraded</th>
-                    <th className="px-4 py-2 text-left text-xs font-semibold text-foreground hidden sm:table-cell">Why it works</th>
+                    <th className="px-4 py-2 text-left text-xs font-semibold text-foreground">
+                      Basic
+                    </th>
+                    <th className="px-4 py-2 text-left text-xs font-semibold text-foreground">
+                      Upgraded
+                    </th>
+                    <th className="px-4 py-2 text-left text-xs font-semibold text-foreground hidden sm:table-cell">
+                      Why it works
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="text-xs text-muted-foreground">
                   {[
-                    ['walked', 'trudged / strode / ambled', 'Conveys mood and pace through the verb itself'],
-                    ['said', 'murmured / snapped / insisted', 'Reveals character and emotion without adverbs'],
+                    [
+                      'walked',
+                      'trudged / strode / ambled',
+                      'Conveys mood and pace through the verb itself',
+                    ],
+                    [
+                      'said',
+                      'murmured / snapped / insisted',
+                      'Reveals character and emotion without adverbs',
+                    ],
                     ['big', 'vast / imposing / sprawling', 'Creates a specific visual impression'],
                     ['nice', 'serene / charming / idyllic', 'Precision replaces vagueness'],
-                    ['scary', 'menacing / unsettling / chilling', 'Adds specific emotional register'],
-                    ['looked at', 'scrutinised / gazed upon / glanced', 'Implies intention and duration'],
+                    [
+                      'scary',
+                      'menacing / unsettling / chilling',
+                      'Adds specific emotional register',
+                    ],
+                    [
+                      'looked at',
+                      'scrutinised / gazed upon / glanced',
+                      'Implies intention and duration',
+                    ],
                   ].map(([basic, upgraded, why], i) => (
                     <tr key={i} className="border-b border-border/20 last:border-0">
                       <td className="px-4 py-2 line-through text-muted-foreground/60">{basic}</td>
@@ -594,10 +675,9 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
           </div>
 
           <TipBox>
-            <strong>Warning:</strong> Do not overdo it. Writing that is stuffed with
-            elaborate vocabulary sounds unnatural and can actually lose marks for
-            &ldquo;over-writing.&rdquo; Use upgraded vocabulary at key moments -- your
-            opening, your climax, and your ending.
+            <strong>Warning:</strong> Do not overdo it. Writing that is stuffed with elaborate
+            vocabulary sounds unnatural and can actually lose marks for &ldquo;over-writing.&rdquo;
+            Use upgraded vocabulary at key moments -- your opening, your climax, and your ending.
           </TipBox>
         </div>
       </Section>
@@ -606,9 +686,9 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       <Section title="Sentence Variety" icon={Type} colour="text-cyan-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Varying your sentence structures is one of the simplest ways to improve your
-            writing. Markers specifically look for this -- it is mentioned in the marking
-            guide for every grade boundary.
+            Varying your sentence structures is one of the simplest ways to improve your writing.
+            Markers specifically look for this -- it is mentioned in the marking guide for every
+            grade boundary.
           </p>
 
           <div className="space-y-3">
@@ -618,32 +698,40 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
                 {
                   type: 'Simple sentence',
                   example: 'The door slammed shut.',
-                  effect: 'Creates impact, emphasis, or finality. Best used sparingly for dramatic moments.',
+                  effect:
+                    'Creates impact, emphasis, or finality. Best used sparingly for dramatic moments.',
                 },
                 {
                   type: 'Compound sentence',
-                  example: 'The rain hammered against the window, and the candle flickered in the draught.',
+                  example:
+                    'The rain hammered against the window, and the candle flickered in the draught.',
                   effect: 'Links two related ideas. Creates a steady, flowing rhythm.',
                 },
                 {
                   type: 'Complex sentence',
-                  example: 'Although the sun still burned overhead, the air carried a bitter chill that crept beneath his collar.',
-                  effect: 'Shows sophistication by subordinating one idea to another. Ideal for building atmosphere.',
+                  example:
+                    'Although the sun still burned overhead, the air carried a bitter chill that crept beneath his collar.',
+                  effect:
+                    'Shows sophistication by subordinating one idea to another. Ideal for building atmosphere.',
                 },
                 {
                   type: 'Minor sentence (fragment)',
                   example: 'Silence. Nothing but silence.',
-                  effect: 'Breaks normal grammar rules for deliberate impact. Use for tension, shock, or emphasis.',
+                  effect:
+                    'Breaks normal grammar rules for deliberate impact. Use for tension, shock, or emphasis.',
                 },
                 {
                   type: 'The list sentence',
-                  example: 'She saw the cracked walls, the peeling paint, the forgotten photographs, the dust that covered everything like a second skin.',
-                  effect: 'Builds accumulation and overwhelm. The final item often delivers the emotional punch.',
+                  example:
+                    'She saw the cracked walls, the peeling paint, the forgotten photographs, the dust that covered everything like a second skin.',
+                  effect:
+                    'Builds accumulation and overwhelm. The final item often delivers the emotional punch.',
                 },
                 {
                   type: 'Inverted/fronted sentence',
                   example: 'Beneath the floorboards, something stirred.',
-                  effect: 'Delays the subject to create suspense. The reader waits to discover what the sentence is really about.',
+                  effect:
+                    'Delays the subject to create suspense. The reader waits to discover what the sentence is really about.',
                 },
               ].map((item) => (
                 <div key={item.type} className="rounded-lg border border-border/40 p-3">
@@ -658,10 +746,10 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
           </div>
 
           <TipBox>
-            <strong>The rhythm rule:</strong> Read your writing aloud (or in your head). If
-            every sentence sounds the same length and structure, vary them. Alternate long
-            and short. Follow a flowing complex sentence with a blunt simple one. The
-            contrast is what creates impact.
+            <strong>The rhythm rule:</strong> Read your writing aloud (or in your head). If every
+            sentence sounds the same length and structure, vary them. Alternate long and short.
+            Follow a flowing complex sentence with a blunt simple one. The contrast is what creates
+            impact.
           </TipBox>
         </div>
       </Section>
@@ -670,9 +758,9 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
       <Section title="Paragraphing and Cohesion" icon={AlignLeft} colour="text-clay-600">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Paragraphing is not just about making your work look neat -- it is a structural
-            tool that controls pace, emphasis, and meaning. Well-paragraphed writing reads
-            like it has been thought through.
+            Paragraphing is not just about making your work look neat -- it is a structural tool
+            that controls pace, emphasis, and meaning. Well-paragraphed writing reads like it has
+            been thought through.
           </p>
 
           <div className="space-y-3">
@@ -682,14 +770,32 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
             </p>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { letter: 'Ti', word: 'Time', example: '"Later that evening...", "Three years had passed..."' },
-                { letter: 'P', word: 'Place', example: '"Beyond the treeline...", "Back in the kitchen..."' },
-                { letter: 'To', word: 'Topic', example: 'Each new argument or point in transactional writing' },
-                { letter: 'P', word: 'Person', example: 'When a new character speaks or is introduced' },
+                {
+                  letter: 'Ti',
+                  word: 'Time',
+                  example: '"Later that evening...", "Three years had passed..."',
+                },
+                {
+                  letter: 'P',
+                  word: 'Place',
+                  example: '"Beyond the treeline...", "Back in the kitchen..."',
+                },
+                {
+                  letter: 'To',
+                  word: 'Topic',
+                  example: 'Each new argument or point in transactional writing',
+                },
+                {
+                  letter: 'P',
+                  word: 'Person',
+                  example: 'When a new character speaks or is introduced',
+                },
               ].map((item) => (
                 <div key={item.word} className="rounded-lg border border-border/40 p-3">
                   <div className="flex items-center gap-2 mb-1">
-                    <Badge variant="secondary" className="text-xs">{item.letter}</Badge>
+                    <Badge variant="secondary" className="text-xs">
+                      {item.letter}
+                    </Badge>
                     <span className="text-xs font-semibold text-foreground">{item.word}</span>
                   </div>
                   <p className="text-xs text-muted-foreground">{item.example}</p>
@@ -703,21 +809,20 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               Cohesive Devices (Linking Your Ideas)
             </h3>
             <p className="text-body-sm text-muted-foreground">
-              Cohesion means your writing flows logically from one idea to the next. Use
-              these techniques to link paragraphs smoothly:
+              Cohesion means your writing flows logically from one idea to the next. Use these
+              techniques to link paragraphs smoothly:
             </p>
             <ul className="space-y-1.5 text-body-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
-                <strong>Discourse markers:</strong> However, Furthermore, Consequently,
-                Meanwhile, In addition, Despite this. Use these to signal the relationship
-                between ideas.
+                <strong>Discourse markers:</strong> However, Furthermore, Consequently, Meanwhile,
+                In addition, Despite this. Use these to signal the relationship between ideas.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
-                <strong>Pronoun referencing:</strong> Use &ldquo;this&rdquo;,
-                &ldquo;these&rdquo;, &ldquo;such&rdquo; to refer back to the previous
-                paragraph&apos;s idea without repeating it.
+                <strong>Pronoun referencing:</strong> Use &ldquo;this&rdquo;, &ldquo;these&rdquo;,
+                &ldquo;such&rdquo; to refer back to the previous paragraph&apos;s idea without
+                repeating it.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
@@ -726,43 +831,38 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
-                <strong>Semantic fields:</strong> Maintain a consistent thread of related
-                vocabulary (e.g. light/dark, war/peace) across paragraphs to unify your
-                writing thematically.
+                <strong>Semantic fields:</strong> Maintain a consistent thread of related vocabulary
+                (e.g. light/dark, war/peace) across paragraphs to unify your writing thematically.
               </li>
             </ul>
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-sm font-semibold text-foreground">
-              The One-Sentence Paragraph
-            </h3>
+            <h3 className="text-sm font-semibold text-foreground">The One-Sentence Paragraph</h3>
             <p className="text-body-sm text-muted-foreground">
               Occasionally, use a single-sentence paragraph for dramatic emphasis. This works
-              because it breaks the expected pattern and forces the reader to pause. Use it
-              at a turning point, a revelation, or a moment of shock.
+              because it breaks the expected pattern and forces the reader to pause. Use it at a
+              turning point, a revelation, or a moment of shock.
             </p>
             <div className="rounded-xl border border-border/60 bg-background/50 p-4">
               <p className="text-body-sm text-foreground leading-relaxed italic">
-                ...the house had been empty for as long as anyone could remember. The
-                windows were dark. The garden was overgrown. Nobody had set foot inside
-                for twenty years.
+                ...the house had been empty for as long as anyone could remember. The windows were
+                dark. The garden was overgrown. Nobody had set foot inside for twenty years.
               </p>
               <p className="text-body-sm text-foreground leading-relaxed italic mt-3 font-medium">
                 Until now.
               </p>
               <p className="text-body-sm text-foreground leading-relaxed italic mt-3">
-                The front door stood ajar, and from somewhere deep inside, a light
-                flickered...
+                The front door stood ajar, and from somewhere deep inside, a light flickered...
               </p>
             </div>
           </div>
 
           <TipBox>
-            <strong>Final check:</strong> Before you finish, scan your writing for any
-            paragraph longer than half a page. If you find one, it almost certainly needs
-            splitting. Similarly, if all your paragraphs are the same length, vary them --
-            variety in paragraph length controls pace just like sentence variety.
+            <strong>Final check:</strong> Before you finish, scan your writing for any paragraph
+            longer than half a page. If you find one, it almost certainly needs splitting.
+            Similarly, if all your paragraphs are the same length, vary them -- variety in paragraph
+            length controls pace just like sentence variety.
           </TipBox>
         </div>
       </Section>
@@ -785,8 +885,12 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               <FileText className="size-4 text-emerald-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Essay Structure</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Plan and structure your written response.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Essay Structure
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Plan and structure your written response.
+              </p>
             </div>
           </Link>
           <Link
@@ -797,8 +901,12 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               <Type className="size-4 text-violet-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">SPaG Mastery</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Polish accuracy for top writing marks.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                SPaG Mastery
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Polish accuracy for top writing marks.
+              </p>
             </div>
           </Link>
           <Link
@@ -809,8 +917,12 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               <PenTool className="size-4 text-cyan-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 9 Writing Standards</p>
-              <p className="text-xs text-muted-foreground mt-0.5">See what crafted writing looks like at the top.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Grade 9 Writing Standards
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                See what crafted writing looks like at the top.
+              </p>
             </div>
           </Link>
           <Link
@@ -821,8 +933,12 @@ export default function WritingView({ boardId, boardName }: WritingViewProps) {
               <AlignLeft className="size-4 text-emerald-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Time Management</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Hit the planning, drafting, and checking stages.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Time Management
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Hit the planning, drafting, and checking stages.
+              </p>
             </div>
           </Link>
         </div>

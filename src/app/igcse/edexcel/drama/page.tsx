@@ -94,7 +94,7 @@ export default async function DramaHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE IGCSE Literature
+              Edexcel IGCSE Literature
             </Badge>
             <Badge variant="secondary">Paper 2 · Section A</Badge>
           </div>

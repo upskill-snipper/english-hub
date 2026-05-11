@@ -1,23 +1,22 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { GraduationCap } from "lucide-react";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { GraduationCap } from 'lucide-react'
+import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   alternates: {
-    canonical:
-      "https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado/themes",
+    canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado/themes',
   },
-  title: "Much Ado About Nothing Themes — Edexcel IGCSE IGCSE Literature",
+  title: 'Much Ado About Nothing Themes — Edexcel IGCSE Literature',
   description:
-    "Detailed themes guide for Much Ado About Nothing for Edexcel IGCSE IGCSE Literature: love, deception, honour, marriage and gender, with quotes and analysis.",
-};
+    'Detailed themes guide for Much Ado About Nothing for Edexcel IGCSE Literature: love, deception, honour, marriage and gender, with quotes and analysis.',
+}
 
 const THEMES = [
   {
-    theme: "Love",
+    theme: 'Love',
     summary:
       "The play sets two contrasting couples side by side. Claudio and Hero fall in love almost without speaking \u2014 Claudio asks another man to woo her on his behalf. Beatrice and Benedick, by contrast, have been sparring with each other for years, and come together only when they are both tricked into admitting it. Shakespeare seems to argue that the love that can take the weight of the play's events is the one built on words, wit and equal footing.",
     how_it_develops:
@@ -30,7 +29,7 @@ const THEMES = [
     ],
   },
   {
-    theme: "Deception",
+    theme: 'Deception',
     summary:
       "Every major turn of the plot depends on somebody being tricked. Don Pedro woos Hero in disguise on Claudio's behalf. Don John twice tricks Claudio about Hero. Beatrice and Benedick are both tricked by their friends into falling in love. The Friar stages Hero's fake death. Shakespeare divides deception into three kinds: <strong>loving</strong> (the friends' matchmaking), <strong>protective</strong> (the Friar's plan), and <strong>malicious</strong> (Don John's plot) \u2014 and asks whether we can tell them apart from the inside.",
     how_it_develops:
@@ -43,7 +42,7 @@ const THEMES = [
     ],
   },
   {
-    theme: "Honour",
+    theme: 'Honour',
     summary:
       "In Messina, male honour depends entirely on the sexual reputation of the women attached to them. One rumour about Hero is enough to make Claudio, Don Pedro and even Leonato turn on her instantly. Leonato's reaction \u2014 'Death is the fairest cover for her shame' \u2014 is catastrophic, because it shows a father preferring his daughter's death to the survival of gossip. Shakespeare exposes that system as both lethal and fragile, because the men who rely on it can be fooled by any plausible lie.",
     how_it_develops:
@@ -56,7 +55,7 @@ const THEMES = [
     ],
   },
   {
-    theme: "Marriage",
+    theme: 'Marriage',
     summary:
       "Marriage in Much Ado is simultaneously a romance, a contract and, for Beatrice, a cage. Beatrice jokes early on that she will 'sit in a corner and cry heigh-ho for a husband' rather than be pushed into a bad match. Claudio's match with Hero is almost entirely transactional \u2014 he is as interested in her inheritance as in her. The play ends with two weddings, but Shakespeare is careful to keep the earlier scepticism audible underneath the celebration.",
     how_it_develops:
@@ -69,7 +68,7 @@ const THEMES = [
     ],
   },
   {
-    theme: "Gender",
+    theme: 'Gender',
     summary:
       "Much Ado is unusually direct about how little real power women have in its world. Hero barely speaks in the first three acts. When she is slandered, she has no legal or social recourse \u2014 only the Friar's pretence that she has died. Beatrice rages in Act 4 that if she were a man she would 'eat Claudio's heart in the market-place'. Because she cannot act herself, she asks Benedick to do it for her. Shakespeare frames the play's comedy very carefully around this fact.",
     how_it_develops:
@@ -81,7 +80,7 @@ const THEMES = [
       '"I am gone, though I am here; there is no love in you" (4.1)',
     ],
   },
-];
+]
 
 export default async function MuchAdoThemesPage() {
   await requireIgcseBoard(['edexcel-igcse'])
@@ -90,12 +89,18 @@ export default async function MuchAdoThemesPage() {
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Shakespeare", url: "https://theenglishhub.app/igcse/edexcel/shakespeare" },
-          { name: "Much Ado About Nothing", url: "https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado" },
-          { name: "Themes", url: "https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado/themes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Shakespeare', url: 'https://theenglishhub.app/igcse/edexcel/shakespeare' },
+          {
+            name: 'Much Ado About Nothing',
+            url: 'https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado',
+          },
+          {
+            name: 'Themes',
+            url: 'https://theenglishhub.app/igcse/edexcel/shakespeare/much-ado/themes',
+          },
         ]}
       />
       {/* ── Hero ─────────────────────────────────────────────── */}
@@ -109,14 +114,13 @@ export default async function MuchAdoThemesPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE IGCSE Literature
+            Edexcel IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Much Ado About Nothing &mdash; Themes
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Love, deception, honour, marriage and gender &mdash; tracked
-            across the whole play.
+            Love, deception, honour, marriage and gender &mdash; tracked across the whole play.
           </p>
         </div>
       </section>
@@ -128,7 +132,7 @@ export default async function MuchAdoThemesPage() {
             {THEMES.map((t) => (
               <li key={t.theme}>
                 <a
-                  href={`#${t.theme.toLowerCase().replace(/[^a-z]/g, "-")}`}
+                  href={`#${t.theme.toLowerCase().replace(/[^a-z]/g, '-')}`}
                   className="text-primary hover:underline"
                 >
                   {t.theme}
@@ -142,12 +146,10 @@ export default async function MuchAdoThemesPage() {
           {THEMES.map((t) => (
             <article
               key={t.theme}
-              id={t.theme.toLowerCase().replace(/[^a-z]/g, "-")}
+              id={t.theme.toLowerCase().replace(/[^a-z]/g, '-')}
               className="scroll-mt-20 rounded-2xl border-l-4 border-primary bg-muted p-6 sm:p-8"
             >
-              <h2 className="text-2xl font-bold text-foreground">
-                {t.theme}
-              </h2>
+              <h2 className="text-2xl font-bold text-foreground">{t.theme}</h2>
               <p
                 className="mt-3 text-sm text-muted-foreground leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: t.summary }}
@@ -166,10 +168,7 @@ export default async function MuchAdoThemesPage() {
                 </h3>
                 <ul className="mt-2 space-y-1.5">
                   {t.quotes.map((q) => (
-                    <li
-                      key={q}
-                      className="text-sm italic text-muted-foreground"
-                    >
+                    <li key={q} className="text-sm italic text-muted-foreground">
                       {q}
                     </li>
                   ))}
@@ -180,14 +179,12 @@ export default async function MuchAdoThemesPage() {
         </section>
       </div>
 
-      <ExamBoardDisclaimer
-        variant="content"
-        className="mx-auto max-w-5xl px-4 py-8"
-      />
+      <ExamBoardDisclaimer variant="content" className="mx-auto max-w-5xl px-4 py-8" />
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4 mx-auto max-w-5xl px-4 pb-8">
-        Much Ado About Nothing by William Shakespeare is in the public domain. Quotations are reproduced freely.
+        Much Ado About Nothing by William Shakespeare is in the public domain. Quotations are
+        reproduced freely.
       </p>
     </main>
-  );
+  )
 }

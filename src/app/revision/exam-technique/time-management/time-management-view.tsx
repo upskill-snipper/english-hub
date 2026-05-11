@@ -58,7 +58,9 @@ function Section({
           <ChevronDown className="size-5 text-muted-foreground shrink-0" />
         )}
       </button>
-      {open && <div className="border-t border-border/40 p-5 sm:p-6 pt-5 space-y-5">{children}</div>}
+      {open && (
+        <div className="border-t border-border/40 p-5 sm:p-6 pt-5 space-y-5">{children}</div>
+      )}
     </div>
   )
 }
@@ -169,11 +171,10 @@ export default function TimeManagementView({
           1 mark = approximately 1 minute
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          This is the simplest and most effective way to allocate your time. A 4-mark
-          question deserves roughly 4 minutes. A 30-mark essay deserves roughly 30 minutes
-          of writing time plus 5 minutes of planning. Spending 20 minutes on an 8-mark
-          question steals time from higher-value questions and can cost you an entire grade
-          boundary.
+          This is the simplest and most effective way to allocate your time. A 4-mark question
+          deserves roughly 4 minutes. A 30-mark essay deserves roughly 30 minutes of writing time
+          plus 5 minutes of planning. Spending 20 minutes on an 8-mark question steals time from
+          higher-value questions and can cost you an entire grade boundary.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           <Badge variant="secondary" className="text-xs">
@@ -198,12 +199,7 @@ export default function TimeManagementView({
 
       {/* ── Paper breakdowns ──────────────────────────────────── */}
       {papers.map((paper, idx) => (
-        <Section
-          key={paper.title}
-          title={paper.title}
-          badge={paper.badge}
-          defaultOpen={idx === 0}
-        >
+        <Section key={paper.title} title={paper.title} badge={paper.badge} defaultOpen={idx === 0}>
           <p className="text-body-sm text-muted-foreground leading-relaxed">{paper.description}</p>
 
           <div className="space-y-3">
@@ -220,8 +216,8 @@ export default function TimeManagementView({
       {/* ── Marks to time ─────────────────────────────────────── */}
       <Section title="How to Allocate Marks to Time">
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Use this reference table to convert any question&apos;s mark value into a
-          time allocation on {shortName} papers.
+          Use this reference table to convert any question&apos;s mark value into a time allocation
+          on {shortName} papers.
         </p>
 
         <div className="overflow-x-auto rounded-xl border border-border/40">
@@ -239,15 +235,42 @@ export default function TimeManagementView({
                 { marks: '4', write: '4 mins', plan: '--', what: '4 short points or sentences' },
                 { marks: '8', write: '8 mins', plan: '1 min', what: '2-3 developed paragraphs' },
                 { marks: '12', write: '10 mins', plan: '2 mins', what: '3 PEEL paragraphs' },
-                { marks: '16', write: '14 mins', plan: '2 mins', what: '3-4 comparative paragraphs' },
-                { marks: '20', write: '17 mins', plan: '3 mins', what: 'Intro + 3 paragraphs + conclusion' },
-                { marks: '30', write: '25 mins', plan: '5 mins', what: 'Full essay: intro + 3 body + conclusion' },
-                { marks: '34+4', write: '30 mins', plan: '5 mins', what: 'Full essay with SPaG focus. 5 mins proofread.' },
-                { marks: '40', write: '35 mins', plan: '5 mins', what: 'Extended writing piece. 5 mins proofread.' },
+                {
+                  marks: '16',
+                  write: '14 mins',
+                  plan: '2 mins',
+                  what: '3-4 comparative paragraphs',
+                },
+                {
+                  marks: '20',
+                  write: '17 mins',
+                  plan: '3 mins',
+                  what: 'Intro + 3 paragraphs + conclusion',
+                },
+                {
+                  marks: '30',
+                  write: '25 mins',
+                  plan: '5 mins',
+                  what: 'Full essay: intro + 3 body + conclusion',
+                },
+                {
+                  marks: '30+4',
+                  write: '30 mins',
+                  plan: '5 mins',
+                  what: 'Full Lit essay (30 content + 4 SPaG = 34 total). 5 mins proofread.',
+                },
+                {
+                  marks: '40',
+                  write: '35 mins',
+                  plan: '5 mins',
+                  what: 'Extended writing piece. 5 mins proofread.',
+                },
               ].map((row) => (
                 <tr key={row.marks} className="border-b border-border/20 last:border-0">
                   <td className="px-4 py-2.5">
-                    <Badge variant="secondary" className="font-mono text-xs">{row.marks}</Badge>
+                    <Badge variant="secondary" className="font-mono text-xs">
+                      {row.marks}
+                    </Badge>
                   </td>
                   <td className="px-4 py-2.5 font-medium text-foreground">{row.write}</td>
                   <td className="px-4 py-2.5">{row.plan}</td>
@@ -259,17 +282,16 @@ export default function TimeManagementView({
         </div>
 
         <Warning>
-          These times include reading the question but not reading the source text.
-          Always account for reading time separately -- usually 10-15 minutes at the
-          start of each paper.
+          These times include reading the question but not reading the source text. Always account
+          for reading time separately -- usually 10-15 minutes at the start of each paper.
         </Warning>
       </Section>
 
       {/* ── When to move on ───────────────────────────────────── */}
       <Section title="When to Move On">
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          One of the hardest exam skills is knowing when to stop writing on one question
-          and start the next. Here are the rules.
+          One of the hardest exam skills is knowing when to stop writing on one question and start
+          the next. Here are the rules.
         </p>
 
         <div className="space-y-3">
@@ -281,25 +303,33 @@ export default function TimeManagementView({
             },
             {
               rule: 'A partial answer to every question beats a perfect answer to half',
-              detail: 'Markers can only give marks for what you write. An unfinished paper guarantees lost marks. A complete paper with some shorter answers still gives you a chance at every mark.',
+              detail:
+                'Markers can only give marks for what you write. An unfinished paper guarantees lost marks. A complete paper with some shorter answers still gives you a chance at every mark.',
               icon: Target,
             },
             {
               rule: 'If you are stuck, write your point in one sentence and move on',
-              detail: 'You can always come back if there is time at the end. One clear sentence with a quotation can still earn you 3-4 marks on a high-mark question.',
+              detail:
+                'You can always come back if there is time at the end. One clear sentence with a quotation can still earn you 3-4 marks on a high-mark question.',
               icon: PenLine,
             },
             {
               rule: 'Never spend extra time on a question just because you know it well',
-              detail: 'Diminishing returns kick in quickly. Your fifth paragraph on a 20-mark question earns far less than your first paragraph on the next question.',
+              detail:
+                'Diminishing returns kick in quickly. Your fifth paragraph on a 20-mark question earns far less than your first paragraph on the next question.',
               icon: AlertTriangle,
             },
           ].map((item) => (
-            <div key={item.rule} className="flex gap-4 rounded-xl border border-border/40 bg-background/50 p-4">
+            <div
+              key={item.rule}
+              className="flex gap-4 rounded-xl border border-border/40 bg-background/50 p-4"
+            >
               <item.icon className="mt-0.5 size-5 shrink-0 text-clay-600" />
               <div>
                 <p className="text-sm font-semibold text-foreground">{item.rule}</p>
-                <p className="mt-0.5 text-body-sm text-muted-foreground leading-relaxed">{item.detail}</p>
+                <p className="mt-0.5 text-body-sm text-muted-foreground leading-relaxed">
+                  {item.detail}
+                </p>
               </div>
             </div>
           ))}
@@ -309,8 +339,8 @@ export default function TimeManagementView({
       {/* ── Quick planning techniques ─────────────────────────── */}
       <Section title="Quick Planning Techniques">
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Students who plan write better essays in less time. Here are three planning
-          methods that take under 5 minutes and work across every {shortName} paper.
+          Students who plan write better essays in less time. Here are three planning methods that
+          take under 5 minutes and work across every {shortName} paper.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-3">
@@ -323,8 +353,8 @@ export default function TimeManagementView({
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               Write your thesis at the top. Below it, list 3 bullet points -- one per paragraph.
-              Next to each, write the quotation you will use. This is the fastest method and
-              works for any essay.
+              Next to each, write the quotation you will use. This is the fastest method and works
+              for any essay.
             </p>
             <div className="rounded-lg border border-border/30 bg-card p-3 space-y-1 font-mono text-xs text-muted-foreground">
               <p className="font-semibold text-foreground">Thesis: Ambition destroys Macbeth</p>
@@ -342,13 +372,13 @@ export default function TimeManagementView({
               <p className="text-sm font-semibold text-foreground">Spider diagram</p>
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              Write the question focus in the centre. Draw 3-4 branches for your main
-              arguments. Off each branch, note a quotation and technique. Good for visual
-              thinkers who need to see connections.
+              Write the question focus in the centre. Draw 3-4 branches for your main arguments. Off
+              each branch, note a quotation and technique. Good for visual thinkers who need to see
+              connections.
             </p>
             <p className="text-xs text-muted-foreground italic">
-              Best for: Literature essays where you need to explore multiple angles of
-              a theme or character.
+              Best for: Literature essays where you need to explore multiple angles of a theme or
+              character.
             </p>
           </div>
 
@@ -360,21 +390,21 @@ export default function TimeManagementView({
               <p className="text-sm font-semibold text-foreground">Timeline plan</p>
             </div>
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              Draw a line across the page. Plot key moments from the text in chronological
-              order with short quotations. Circle the ones most relevant to the question.
-              This helps you track how a theme or character develops.
+              Draw a line across the page. Plot key moments from the text in chronological order
+              with short quotations. Circle the ones most relevant to the question. This helps you
+              track how a theme or character develops.
             </p>
             <p className="text-xs text-muted-foreground italic">
-              Best for: &ldquo;How does [character/theme] change?&rdquo; questions and
-              19th-century novel essays.
+              Best for: &ldquo;How does [character/theme] change?&rdquo; questions and 19th-century
+              novel essays.
             </p>
           </div>
         </div>
 
         <Tip>
-          Markers do not mark your plan, but they can see it. A visible plan signals
-          to the marker that your response is structured and deliberate, even if
-          you run out of time before finishing.
+          Markers do not mark your plan, but they can see it. A visible plan signals to the marker
+          that your response is structured and deliberate, even if you run out of time before
+          finishing.
         </Tip>
       </Section>
 
@@ -396,8 +426,12 @@ export default function TimeManagementView({
               <Target className="size-4 text-cyan-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 7 Standards</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Pace your essays for top-band marks.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Grade 7 Standards
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Pace your essays for top-band marks.
+              </p>
             </div>
           </Link>
           <Link
@@ -408,8 +442,12 @@ export default function TimeManagementView({
               <Target className="size-4 text-cyan-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 9 Standards</p>
-              <p className="text-xs text-muted-foreground mt-0.5">How top students use every minute.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Grade 9 Standards
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                How top students use every minute.
+              </p>
             </div>
           </Link>
           <Link
@@ -420,8 +458,12 @@ export default function TimeManagementView({
               <PenLine className="size-4 text-violet-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Writing Tasks</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Plan, draft and check within the time limit.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Writing Tasks
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Plan, draft and check within the time limit.
+              </p>
             </div>
           </Link>
           <Link
@@ -432,8 +474,12 @@ export default function TimeManagementView({
               <BookOpen className="size-4 text-blue-400" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Reading Comprehension</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Speed up your text scanning skills.</p>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Reading Comprehension
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Speed up your text scanning skills.
+              </p>
             </div>
           </Link>
         </div>

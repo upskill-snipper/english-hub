@@ -11,13 +11,7 @@ import {
   Quote,
   Drama,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
@@ -25,12 +19,11 @@ import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
-  title: 'An Inspector Calls — Edexcel IGCSE IGCSE Literature Study Guide',
+  title: 'An Inspector Calls — Edexcel IGCSE Literature Study Guide',
   description:
-    'J. B. Priestley\u2019s An Inspector Calls for Edexcel IGCSE IGCSE Literature: plot summary, characters, themes, post-war context and key quotations.',
+    'J. B. Priestley\u2019s An Inspector Calls for Edexcel IGCSE Literature: plot summary, characters, themes, post-war context and key quotations.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls',
   },
 }
 
@@ -79,15 +72,13 @@ const subPages = [
   {
     href: '/igcse/edexcel/drama/an-inspector-calls/characters',
     title: 'Characters',
-    description:
-      'The Birlings, Gerald Croft, Eva Smith/Daisy Renton and Inspector Goole.',
+    description: 'The Birlings, Gerald Croft, Eva Smith/Daisy Renton and Inspector Goole.',
     icon: Users,
   },
   {
     href: '/igcse/edexcel/drama/an-inspector-calls/themes',
     title: 'Themes',
-    description:
-      'Social responsibility, class, gender, age vs youth and morality.',
+    description: 'Social responsibility, class, gender, age vs youth and morality.',
     icon: Sparkles,
   },
   {
@@ -203,19 +194,18 @@ export default async function InspectorCallsHubPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Drama", url: "https://theenglishhub.app/igcse/edexcel/drama" },
-          { name: "An Inspector Calls", url: "https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Drama', url: 'https://theenglishhub.app/igcse/edexcel/drama' },
+          {
+            name: 'An Inspector Calls',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls',
+          },
         ]}
       />
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/edexcel/drama" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel/drama" />}>
           <ArrowLeft className="size-3.5" />
           Back to Edexcel drama
         </Button>
@@ -226,7 +216,7 @@ export default async function InspectorCallsHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="border-primary/20 bg-primary/10 text-primary">
               <Sparkles className="mr-1 size-3" />
-              Edexcel IGCSE IGCSE Literature
+              Edexcel IGCSE Literature
             </Badge>
             <Badge variant="secondary">Modern drama</Badge>
           </div>
@@ -237,9 +227,9 @@ export default async function InspectorCallsHubPage() {
             J. B. Priestley · 1945 (set 1912)
           </p>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            A three-act morality play in which the mysterious Inspector Goole
-            interrupts the Birlings’ smug dinner party to ask who is
-            responsible for the suicide of a young woman called Eva Smith.
+            A three-act morality play in which the mysterious Inspector Goole interrupts the
+            Birlings’ smug dinner party to ask who is responsible for the suicide of a young woman
+            called Eva Smith.
           </p>
         </div>
       </section>
@@ -254,9 +244,8 @@ export default async function InspectorCallsHubPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              An Inspector Calls is in copyright. This guide includes short
-              extracts under fair dealing. Read or watch the full play alongside
-              these notes.
+              An Inspector Calls is in copyright. This guide includes short extracts under fair
+              dealing. Read or watch the full play alongside these notes.
             </p>
           </div>
         </div>
@@ -265,22 +254,16 @@ export default async function InspectorCallsHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Plot overview
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Plot overview</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {plotBeats.map((beat) => (
             <Card key={beat.part}>
               <CardHeader className="pb-2">
-                <CardTitle className="text-heading-sm font-heading">
-                  {beat.part}
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">{beat.part}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm leading-relaxed text-muted-foreground">
-                  {beat.summary}
-                </p>
+                <p className="text-body-sm leading-relaxed text-muted-foreground">{beat.summary}</p>
               </CardContent>
             </Card>
           ))}
@@ -290,19 +273,12 @@ export default async function InspectorCallsHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Sparkles className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Core themes
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Core themes</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {themes.map((theme) => (
-            <div
-              key={theme.title}
-              className="rounded-xl border border-border/60 bg-card p-5"
-            >
-              <h3 className="text-body-md font-semibold text-foreground">
-                {theme.title}
-              </h3>
+            <div key={theme.title} className="rounded-xl border border-border/60 bg-card p-5">
+              <h3 className="text-body-md font-semibold text-foreground">{theme.title}</h3>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {theme.blurb}
               </p>
@@ -314,9 +290,7 @@ export default async function InspectorCallsHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Drama className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Deep dives
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Deep dives</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {subPages.map((p) => {
@@ -333,9 +307,7 @@ export default async function InspectorCallsHubPage() {
                   <CardTitle className="text-heading-md font-heading leading-tight">
                     {p.title}
                   </CardTitle>
-                  <CardDescription className="text-body-sm">
-                    {p.description}
-                  </CardDescription>
+                  <CardDescription className="text-body-sm">{p.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="mt-auto">
                   <Button
@@ -357,22 +329,15 @@ export default async function InspectorCallsHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Key quotations
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Key quotations</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {keyQuotations.map((q, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-border/60 bg-card p-5"
-            >
+            <div key={i} className="rounded-xl border border-border/60 bg-card p-5">
               <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                 “{q.quote}”
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">
-                — {q.speaker}
-              </p>
+              <p className="mt-2 text-body-xs font-medium text-primary">— {q.speaker}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}
               </p>
@@ -382,11 +347,9 @@ export default async function InspectorCallsHubPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
-      </p>
-
-      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under
+        the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of
+        criticism and review. Full text available from your school or local library.
       </p>
     </div>
   )

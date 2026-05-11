@@ -46,9 +46,7 @@ function Section({
         <div className="flex size-8 items-center justify-center rounded-lg bg-amber-500/10">
           <Icon className={`size-4 ${colour}`} />
         </div>
-        <h2 className="flex-1 text-heading-md font-heading text-foreground">
-          {title}
-        </h2>
+        <h2 className="flex-1 text-heading-md font-heading text-foreground">{title}</h2>
         {open ? (
           <ChevronUp className="size-4 text-muted-foreground" />
         ) : (
@@ -64,9 +62,7 @@ function TipBox({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-start gap-2.5 rounded-xl border border-primary/20 bg-primary/[0.04] p-3.5">
       <Lightbulb className="mt-0.5 size-4 shrink-0 text-primary" />
-      <div className="text-body-sm text-muted-foreground leading-relaxed">
-        {children}
-      </div>
+      <div className="text-body-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
   )
 }
@@ -105,10 +101,12 @@ interface SpagViewProps {
 }
 
 const BOARD_SPAG_MARK_NOTES: Partial<Record<ExamBoard, string>> = {
-  aqa: 'On AQA, 16 out of 40 marks on each writing question are awarded for technical accuracy (AO6) -- that is 40% of the writing mark.',
-  edexcel: 'On Edexcel, technical accuracy is assessed explicitly under AO6 for every writing task and contributes a significant portion of the writing mark.',
-  ocr: 'On OCR, technical accuracy carries 16 out of 40 marks on each writing question -- the same 40% weighting as the other major boards.',
-  eduqas: 'On Eduqas, 16 of the 40 marks on Component 1 Section B and a matching weighting across Component 2 Section B tasks are for technical accuracy.',
+  aqa: 'On AQA, 16 out of the 40 marks on the writing section of each paper are awarded for technical accuracy (AO6) -- that is 40% of the writing mark on both Paper 1 and Paper 2.',
+  edexcel:
+    'On Edexcel, technical accuracy is assessed explicitly under AO6 for every writing task and contributes a significant portion of the writing mark.',
+  ocr: 'On OCR, technical accuracy carries 16 out of 40 marks on the writing section of each paper -- the same 40% weighting as the other major boards.',
+  eduqas:
+    'On Eduqas, 16 of the 40 marks on Component 1 Section B and a matching weighting across Component 2 Section B tasks are for technical accuracy.',
 }
 
 export default function SpagView({ boardId, boardName }: SpagViewProps) {
@@ -162,15 +160,15 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
               SPaG is universal -- every board rewards it
             </p>
             <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
-              Spelling, punctuation, and grammar rules are identical across GCSE
-              and IGCSE. The specific marking guide weighting differs -- see{' '}
+              Spelling, punctuation, and grammar rules are identical across GCSE and IGCSE. The
+              specific marking guide weighting differs -- see{' '}
               <Link
                 href={
                   boardId === 'cambridge-0500'
                     ? '/igcse/cambridge/0500'
                     : boardId === 'cambridge-0990'
-                    ? '/igcse/cambridge/0990'
-                    : '/igcse/edexcel'
+                      ? '/igcse/cambridge/0990'
+                      : '/igcse/edexcel'
                 }
                 className="text-primary underline hover:no-underline"
               >
@@ -186,17 +184,21 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       <div className="rounded-xl border border-amber-500/20 bg-amber-500/[0.04] p-4 flex items-start gap-3">
         <AlertTriangle className="mt-0.5 size-4 shrink-0 text-clay-600" />
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          {markNote} Getting these basics right is one of the fastest ways to
-          boost your grade.
+          {markNote} Getting these basics right is one of the fastest ways to boost your grade.
         </p>
       </div>
 
       {/* ── 1. Spelling Rules and Common Errors ──────────────────── */}
-      <Section title="Spelling Rules and Common Errors" icon={SpellCheck} colour="text-clay-600" defaultOpen>
+      <Section
+        title="Spelling Rules and Common Errors"
+        icon={SpellCheck}
+        colour="text-clay-600"
+        defaultOpen
+      >
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Markers do not expect perfect spelling, but persistent errors in common words
-            will pull your marks down. Focus on mastering these high-frequency mistakes.
+            Markers do not expect perfect spelling, but persistent errors in common words will pull
+            your marks down. Focus on mastering these high-frequency mistakes.
           </p>
 
           <div className="space-y-3">
@@ -209,14 +211,38 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
                 { wrong: 'seperate', right: 'separate', rule: 'There is "a rat" in separate' },
                 { wrong: 'occured', right: 'occurred', rule: 'Double "c" and double "r"' },
                 { wrong: 'recieve', right: 'receive', rule: '"i" before "e" except after "c"' },
-                { wrong: 'wierd', right: 'weird', rule: 'Exception to the i/e rule -- just memorise it' },
-                { wrong: 'truely', right: 'truly', rule: 'Drop the "e" when adding "-ly" to "true"' },
+                {
+                  wrong: 'wierd',
+                  right: 'weird',
+                  rule: 'Exception to the i/e rule -- just memorise it',
+                },
+                {
+                  wrong: 'truely',
+                  right: 'truly',
+                  rule: 'Drop the "e" when adding "-ly" to "true"',
+                },
                 { wrong: 'arguement', right: 'argument', rule: 'Drop the "e" when adding "-ment"' },
-                { wrong: 'goverment', right: 'government', rule: 'There is an "n" in "govern" + "ment"' },
-                { wrong: 'enviroment', right: 'environment', rule: '"environ" + "ment" -- do not drop the "n"' },
+                {
+                  wrong: 'goverment',
+                  right: 'government',
+                  rule: 'There is an "n" in "govern" + "ment"',
+                },
+                {
+                  wrong: 'enviroment',
+                  right: 'environment',
+                  rule: '"environ" + "ment" -- do not drop the "n"',
+                },
                 { wrong: 'dissapoint', right: 'disappoint', rule: 'One "s", two "p"s' },
-                { wrong: 'neccessary', right: 'necessary', rule: 'One "c", two "s"s: "one collar, two socks"' },
-                { wrong: 'concious', right: 'conscious', rule: '"sci" in the middle, like "science"' },
+                {
+                  wrong: 'neccessary',
+                  right: 'necessary',
+                  rule: 'One "c", two "s"s: "one collar, two socks"',
+                },
+                {
+                  wrong: 'concious',
+                  right: 'conscious',
+                  rule: '"sci" in the middle, like "science"',
+                },
               ].map((item) => (
                 <div key={item.wrong} className="rounded-lg border border-border/40 p-3">
                   <div className="flex items-center gap-2 mb-1">
@@ -241,20 +267,20 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
                 <strong>Doubling consonants:</strong> When adding a suffix to a short vowel +
-                consonant word, double the final consonant: run &rarr; running, stop &rarr;
-                stopped, begin &rarr; beginning.
+                consonant word, double the final consonant: run &rarr; running, stop &rarr; stopped,
+                begin &rarr; beginning.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
-                <strong>Drop the silent e:</strong> When adding a suffix beginning with a
-                vowel: hope &rarr; hoping, make &rarr; making, write &rarr; writing. Keep the
+                <strong>Drop the silent e:</strong> When adding a suffix beginning with a vowel:
+                hope &rarr; hoping, make &rarr; making, write &rarr; writing. Keep the
                 &ldquo;e&rdquo; before consonant suffixes: hope &rarr; hopeful.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-primary">--</span>
                 <strong>Change y to i:</strong> When the letter before &ldquo;y&rdquo; is a
-                consonant: happy &rarr; happiness, beauty &rarr; beautiful. Do not change
-                when the letter before &ldquo;y&rdquo; is a vowel: play &rarr; played.
+                consonant: happy &rarr; happiness, beauty &rarr; beautiful. Do not change when the
+                letter before &ldquo;y&rdquo; is a vowel: play &rarr; played.
               </li>
             </ul>
           </div>
@@ -288,9 +314,9 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           </div>
 
           <TipBox>
-            <strong>Exam strategy:</strong> If you are unsure how to spell a word, use a
-            synonym you can spell instead. Markers reward ambition but persistent basic
-            errors cost marks. Play to your strengths.
+            <strong>Exam strategy:</strong> If you are unsure how to spell a word, use a synonym you
+            can spell instead. Markers reward ambition but persistent basic errors cost marks. Play
+            to your strengths.
           </TipBox>
         </div>
       </Section>
@@ -299,9 +325,9 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       <Section title="Punctuation Guide" icon={Type} colour="text-blue-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Accurate punctuation is not just about avoiding errors -- it is a tool for
-            controlling meaning, pace, and clarity. Using a range of punctuation marks
-            (beyond full stops and commas) is explicitly rewarded in the marking guide.
+            Accurate punctuation is not just about avoiding errors -- it is a tool for controlling
+            meaning, pace, and clarity. Using a range of punctuation marks (beyond full stops and
+            commas) is explicitly rewarded in the marking guide.
           </p>
 
           <Tabs defaultValue="commas">
@@ -316,25 +342,40 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
             <TabsContent value="commas" className="mt-4 space-y-3">
               <h3 className="text-sm font-semibold text-foreground">Commas</h3>
               <p className="text-body-sm text-muted-foreground">
-                The comma is the most misused punctuation mark. Its core purpose is to
-                separate ideas within a sentence for clarity.
+                The comma is the most misused punctuation mark. Its core purpose is to separate
+                ideas within a sentence for clarity.
               </p>
               <div className="space-y-2">
                 <div className="rounded-lg border border-border/40 p-3">
-                  <span className="text-xs font-semibold text-foreground">After a fronted adverbial</span>
-                  <p className="mt-1 text-xs text-muted-foreground italic">&ldquo;Reluctantly, she opened the door.&rdquo;</p>
+                  <span className="text-xs font-semibold text-foreground">
+                    After a fronted adverbial
+                  </span>
+                  <p className="mt-1 text-xs text-muted-foreground italic">
+                    &ldquo;Reluctantly, she opened the door.&rdquo;
+                  </p>
                 </div>
                 <div className="rounded-lg border border-border/40 p-3">
                   <span className="text-xs font-semibold text-foreground">In a list</span>
-                  <p className="mt-1 text-xs text-muted-foreground italic">&ldquo;She packed a torch, a map, a compass and a water bottle.&rdquo;</p>
+                  <p className="mt-1 text-xs text-muted-foreground italic">
+                    &ldquo;She packed a torch, a map, a compass and a water bottle.&rdquo;
+                  </p>
                 </div>
                 <div className="rounded-lg border border-border/40 p-3">
-                  <span className="text-xs font-semibold text-foreground">To separate a subordinate clause</span>
-                  <p className="mt-1 text-xs text-muted-foreground italic">&ldquo;Although the sun was shining, the wind cut through her coat.&rdquo;</p>
+                  <span className="text-xs font-semibold text-foreground">
+                    To separate a subordinate clause
+                  </span>
+                  <p className="mt-1 text-xs text-muted-foreground italic">
+                    &ldquo;Although the sun was shining, the wind cut through her coat.&rdquo;
+                  </p>
                 </div>
                 <div className="rounded-lg border border-border/40 p-3">
-                  <span className="text-xs font-semibold text-foreground">For parenthetical information</span>
-                  <p className="mt-1 text-xs text-muted-foreground italic">&ldquo;The building, which had stood for two centuries, finally collapsed.&rdquo;</p>
+                  <span className="text-xs font-semibold text-foreground">
+                    For parenthetical information
+                  </span>
+                  <p className="mt-1 text-xs text-muted-foreground italic">
+                    &ldquo;The building, which had stood for two centuries, finally
+                    collapsed.&rdquo;
+                  </p>
                 </div>
               </div>
               <CorrectIncorrect
@@ -347,14 +388,14 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
             <TabsContent value="semicolons" className="mt-4 space-y-3">
               <h3 className="text-sm font-semibold text-foreground">Semicolons</h3>
               <p className="text-body-sm text-muted-foreground">
-                A semicolon joins two complete sentences that are closely related in meaning.
-                Both halves must be able to stand alone as full sentences.
+                A semicolon joins two complete sentences that are closely related in meaning. Both
+                halves must be able to stand alone as full sentences.
               </p>
               <div className="rounded-lg border border-border/40 p-3">
                 <span className="text-xs font-semibold text-foreground">The test</span>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  Replace the semicolon with a full stop. If both parts still make sense as
-                  separate sentences, the semicolon is correct.
+                  Replace the semicolon with a full stop. If both parts still make sense as separate
+                  sentences, the semicolon is correct.
                 </p>
               </div>
               <CorrectIncorrect
@@ -363,31 +404,37 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
                 explanation="'and dark' is not a complete sentence. Both sides of a semicolon must be independent clauses."
               />
               <TipBox>
-                Using even one semicolon correctly in your writing signals to the marker
-                that you have control over complex punctuation. It is one of the easiest
-                marks to pick up.
+                Using even one semicolon correctly in your writing signals to the marker that you
+                have control over complex punctuation. It is one of the easiest marks to pick up.
               </TipBox>
             </TabsContent>
 
             <TabsContent value="colons" className="mt-4 space-y-3">
               <h3 className="text-sm font-semibold text-foreground">Colons</h3>
               <p className="text-body-sm text-muted-foreground">
-                A colon introduces something -- a list, an explanation, or an elaboration.
-                Think of it as saying &ldquo;here is what I mean&rdquo; or &ldquo;for
-                example.&rdquo;
+                A colon introduces something -- a list, an explanation, or an elaboration. Think of
+                it as saying &ldquo;here is what I mean&rdquo; or &ldquo;for example.&rdquo;
               </p>
               <div className="space-y-2">
                 <div className="rounded-lg border border-border/40 p-3">
                   <span className="text-xs font-semibold text-foreground">To introduce a list</span>
-                  <p className="mt-1 text-xs text-muted-foreground italic">&ldquo;She needed three things: courage, patience, and luck.&rdquo;</p>
+                  <p className="mt-1 text-xs text-muted-foreground italic">
+                    &ldquo;She needed three things: courage, patience, and luck.&rdquo;
+                  </p>
                 </div>
                 <div className="rounded-lg border border-border/40 p-3">
-                  <span className="text-xs font-semibold text-foreground">To explain or elaborate</span>
-                  <p className="mt-1 text-xs text-muted-foreground italic">&ldquo;He knew the truth: she was never coming back.&rdquo;</p>
+                  <span className="text-xs font-semibold text-foreground">
+                    To explain or elaborate
+                  </span>
+                  <p className="mt-1 text-xs text-muted-foreground italic">
+                    &ldquo;He knew the truth: she was never coming back.&rdquo;
+                  </p>
                 </div>
                 <div className="rounded-lg border border-border/40 p-3">
                   <span className="text-xs font-semibold text-foreground">For dramatic effect</span>
-                  <p className="mt-1 text-xs text-muted-foreground italic">&ldquo;There was only one option: run.&rdquo;</p>
+                  <p className="mt-1 text-xs text-muted-foreground italic">
+                    &ldquo;There was only one option: run.&rdquo;
+                  </p>
                 </div>
               </div>
               <CorrectIncorrect
@@ -400,48 +447,65 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
             <TabsContent value="dashes" className="mt-4 space-y-3">
               <h3 className="text-sm font-semibold text-foreground">Dashes</h3>
               <p className="text-body-sm text-muted-foreground">
-                Dashes (em dashes) are versatile -- they can replace commas, colons, or
-                parentheses. They create a slightly more dramatic, informal, or emphatic
-                pause.
+                Dashes (em dashes) are versatile -- they can replace commas, colons, or parentheses.
+                They create a slightly more dramatic, informal, or emphatic pause.
               </p>
               <div className="space-y-2">
                 <div className="rounded-lg border border-border/40 p-3">
-                  <span className="text-xs font-semibold text-foreground">For an interruption or afterthought</span>
-                  <p className="mt-1 text-xs text-muted-foreground italic">&ldquo;The house -- if you could call it that -- leaned at an impossible angle.&rdquo;</p>
+                  <span className="text-xs font-semibold text-foreground">
+                    For an interruption or afterthought
+                  </span>
+                  <p className="mt-1 text-xs text-muted-foreground italic">
+                    &ldquo;The house -- if you could call it that -- leaned at an impossible
+                    angle.&rdquo;
+                  </p>
                 </div>
                 <div className="rounded-lg border border-border/40 p-3">
-                  <span className="text-xs font-semibold text-foreground">For dramatic revelation</span>
-                  <p className="mt-1 text-xs text-muted-foreground italic">&ldquo;She turned the corner and saw it -- the ocean.&rdquo;</p>
+                  <span className="text-xs font-semibold text-foreground">
+                    For dramatic revelation
+                  </span>
+                  <p className="mt-1 text-xs text-muted-foreground italic">
+                    &ldquo;She turned the corner and saw it -- the ocean.&rdquo;
+                  </p>
                 </div>
                 <div className="rounded-lg border border-border/40 p-3">
                   <span className="text-xs font-semibold text-foreground">To add information</span>
-                  <p className="mt-1 text-xs text-muted-foreground italic">&ldquo;The journey -- which had taken three days by horse -- now took two hours.&rdquo;</p>
+                  <p className="mt-1 text-xs text-muted-foreground italic">
+                    &ldquo;The journey -- which had taken three days by horse -- now took two
+                    hours.&rdquo;
+                  </p>
                 </div>
               </div>
               <TipBox>
-                Dashes are great for creative writing because they feel natural and
-                spontaneous. In transactional writing, use them more sparingly -- colons and
-                semicolons feel more formal.
+                Dashes are great for creative writing because they feel natural and spontaneous. In
+                transactional writing, use them more sparingly -- colons and semicolons feel more
+                formal.
               </TipBox>
             </TabsContent>
 
             <TabsContent value="apostrophes" className="mt-4 space-y-3">
               <h3 className="text-sm font-semibold text-foreground">Apostrophes</h3>
               <p className="text-body-sm text-muted-foreground">
-                Apostrophes have exactly two uses. Confusing them (or using them for plurals)
-                is one of the most penalised errors in GCSE English.
+                Apostrophes have exactly two uses. Confusing them (or using them for plurals) is one
+                of the most penalised errors in GCSE English.
               </p>
               <div className="space-y-2">
                 <div className="rounded-lg border border-border/40 p-3">
-                  <span className="text-xs font-semibold text-foreground">1. Contraction (missing letters)</span>
+                  <span className="text-xs font-semibold text-foreground">
+                    1. Contraction (missing letters)
+                  </span>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    do not &rarr; don&apos;t, they are &rarr; they&apos;re, it is &rarr; it&apos;s, could have &rarr; could&apos;ve
+                    do not &rarr; don&apos;t, they are &rarr; they&apos;re, it is &rarr; it&apos;s,
+                    could have &rarr; could&apos;ve
                   </p>
                 </div>
                 <div className="rounded-lg border border-border/40 p-3">
-                  <span className="text-xs font-semibold text-foreground">2. Possession (belonging to)</span>
+                  <span className="text-xs font-semibold text-foreground">
+                    2. Possession (belonging to)
+                  </span>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    Singular: the girl&apos;s book (one girl). Plural: the girls&apos; books (multiple girls). Irregular plural: the children&apos;s toys.
+                    Singular: the girl&apos;s book (one girl). Plural: the girls&apos; books
+                    (multiple girls). Irregular plural: the children&apos;s toys.
                   </p>
                 </div>
               </div>
@@ -464,16 +528,16 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       <Section title="Grammar Essentials" icon={BookOpen} colour="text-emerald-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Grammar errors undermine even the most creative or insightful writing. The
-            marking guide rewards &ldquo;controlled&rdquo; writing -- which means your grammar
-            should be deliberate, not accidental.
+            Grammar errors undermine even the most creative or insightful writing. The marking guide
+            rewards &ldquo;controlled&rdquo; writing -- which means your grammar should be
+            deliberate, not accidental.
           </p>
 
           <div className="space-y-3">
             <h3 className="text-sm font-semibold text-foreground">Tense Consistency</h3>
             <p className="text-body-sm text-muted-foreground">
-              Choose a tense and stick with it. Shifting between past and present tense
-              randomly is one of the most common errors in creative writing.
+              Choose a tense and stick with it. Shifting between past and present tense randomly is
+              one of the most common errors in creative writing.
             </p>
             <CorrectIncorrect
               incorrect="She walked through the door and sees the broken window."
@@ -481,12 +545,14 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
               explanation="The sentence starts in past tense ('walked') but switches to present ('sees'). Stay in one tense unless you are deliberately shifting for effect."
             />
             <div className="rounded-lg border border-border/40 p-3">
-              <span className="text-xs font-semibold text-foreground">When tense shifts ARE acceptable</span>
+              <span className="text-xs font-semibold text-foreground">
+                When tense shifts ARE acceptable
+              </span>
               <p className="mt-1 text-xs text-muted-foreground">
-                Flashbacks (past within a present-tense narrative), dialogue (characters can
-                speak in any tense), and reflective commentary (a narrator looking back) are
-                all legitimate reasons to change tense -- but these should be signalled
-                clearly with a new paragraph or temporal marker.
+                Flashbacks (past within a present-tense narrative), dialogue (characters can speak
+                in any tense), and reflective commentary (a narrator looking back) are all
+                legitimate reasons to change tense -- but these should be signalled clearly with a
+                new paragraph or temporal marker.
               </p>
             </div>
           </div>
@@ -512,8 +578,8 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           <div className="space-y-3">
             <h3 className="text-sm font-semibold text-foreground">Sentence Types</h3>
             <p className="text-body-sm text-muted-foreground">
-              Understanding sentence types helps you write with variety and control. Every
-              sentence you write should be one of these:
+              Understanding sentence types helps you write with variety and control. Every sentence
+              you write should be one of these:
             </p>
             <div className="grid gap-2 sm:grid-cols-2">
               {[
@@ -535,7 +601,8 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
                 {
                   type: 'Compound-Complex',
                   def: 'Two independent clauses + at least one dependent clause.',
-                  example: 'Although the rain had stopped, the streets were flooded, and the traffic had ground to a halt.',
+                  example:
+                    'Although the rain had stopped, the streets were flooded, and the traffic had ground to a halt.',
                 },
               ].map((item) => (
                 <div key={item.type} className="rounded-lg border border-border/40 p-3">
@@ -550,10 +617,9 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           </div>
 
           <TipBox>
-            <strong>Marking guide secret:</strong> The jump from Grade 4 to Grade 5 is
-            largely about technical accuracy. If you can eliminate tense errors,
-            subject-verb disagreements, and comma splices from your writing, you will see
-            an immediate grade boost.
+            <strong>Marking guide secret:</strong> The jump from Grade 4 to Grade 5 is largely about
+            technical accuracy. If you can eliminate tense errors, subject-verb disagreements, and
+            comma splices from your writing, you will see an immediate grade boost.
           </TipBox>
         </div>
       </Section>
@@ -562,8 +628,8 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
       <Section title="Common Mistakes to Avoid" icon={AlertTriangle} colour="text-rose-400">
         <div className="space-y-4">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            These are the errors that markers see thousands of times every year. Avoiding
-            them puts you ahead of the majority of students.
+            These are the errors that markers see thousands of times every year. Avoiding them puts
+            you ahead of the majority of students.
           </p>
 
           <div className="space-y-3">
@@ -571,35 +637,44 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
               {
                 mistake: 'Comma splices',
                 wrong: 'The door opened, she walked inside.',
-                right: 'The door opened. She walked inside. / The door opened; she walked inside. / The door opened, and she walked inside.',
+                right:
+                  'The door opened. She walked inside. / The door opened; she walked inside. / The door opened, and she walked inside.',
                 explanation:
                   'A comma splice is when you join two full sentences with just a comma. Fix it with a full stop, semicolon, or a conjunction.',
               },
               {
                 mistake: 'Run-on sentences',
-                wrong: 'She ran down the street and turned the corner and saw the building and it was enormous and she could not believe it.',
-                right: 'She ran down the street and turned the corner. The building loomed ahead, enormous and unbelievable.',
+                wrong:
+                  'She ran down the street and turned the corner and saw the building and it was enormous and she could not believe it.',
+                right:
+                  'She ran down the street and turned the corner. The building loomed ahead, enormous and unbelievable.',
                 explanation:
                   'Stringing clauses together with "and" creates breathless, uncontrolled writing. Break long sentences into shorter ones for clarity and impact.',
               },
               {
                 mistake: 'Mixing up similar words',
-                wrong: 'The affect of the weather effected everyone. / I was very conscience of the problem.',
-                right: 'The effect of the weather affected everyone. / I was very conscious of the problem.',
+                wrong:
+                  'The affect of the weather effected everyone. / I was very conscience of the problem.',
+                right:
+                  'The effect of the weather affected everyone. / I was very conscious of the problem.',
                 explanation:
                   'Effect is usually a noun ("the effect"), affect is usually a verb ("it affected me"). Conscious means aware; conscience is your sense of right and wrong.',
               },
               {
                 mistake: 'Starting every sentence with "I" or "The"',
-                wrong: 'I walked to the door. I opened it slowly. I peered inside. The room was dark.',
-                right: 'Slowly, I approached the door. My fingers trembled on the handle. Beyond it, darkness waited.',
+                wrong:
+                  'I walked to the door. I opened it slowly. I peered inside. The room was dark.',
+                right:
+                  'Slowly, I approached the door. My fingers trembled on the handle. Beyond it, darkness waited.',
                 explanation:
                   'Repetitive sentence openings create monotonous writing. Start with adverbs, prepositional phrases, or subordinate clauses for variety.',
               },
               {
                 mistake: 'Using slang or text-speak',
-                wrong: 'The character is like really sad and stuff. Its kinda obvious the writer wants us to feel bad.',
-                right: 'The writer conveys a profound sense of sorrow. It is evident that the reader is positioned to feel sympathy.',
+                wrong:
+                  'The character is like really sad and stuff. Its kinda obvious the writer wants us to feel bad.',
+                right:
+                  'The writer conveys a profound sense of sorrow. It is evident that the reader is positioned to feel sympathy.',
                 explanation:
                   'Formal and semi-formal registers are expected in GCSE English. Avoid "like," "kinda," "stuff," "basically," and "literally" (unless analysing informal text).',
               },
@@ -626,10 +701,10 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           </div>
 
           <TipBox>
-            <strong>Proofreading strategy:</strong> In your exam, leave 3-5 minutes at the
-            end of each writing question to read through your work. Read it backwards,
-            sentence by sentence -- this forces you to see each sentence in isolation and
-            spot errors your brain would otherwise auto-correct when reading forwards.
+            <strong>Proofreading strategy:</strong> In your exam, leave 3-5 minutes at the end of
+            each writing question to read through your work. Read it backwards, sentence by sentence
+            -- this forces you to see each sentence in isolation and spot errors your brain would
+            otherwise auto-correct when reading forwards.
           </TipBox>
         </div>
       </Section>
@@ -641,9 +716,9 @@ export default function SpagView({ boardId, boardName }: SpagViewProps) {
           Accuracy Is a Habit, Not a Last-Minute Fix
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          The best way to improve your SPaG is to practise it in every piece of writing you
-          do -- homework, notes, and timed essays. If you only think about accuracy in the
-          exam, it will feel unnatural. Make it second nature now.
+          The best way to improve your SPaG is to practise it in every piece of writing you do --
+          homework, notes, and timed essays. If you only think about accuracy in the exam, it will
+          feel unnatural. Make it second nature now.
         </p>
         <Button
           variant="default"

@@ -1,23 +1,22 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { GraduationCap } from "lucide-react";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { GraduationCap } from 'lucide-react'
+import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
   alternates: {
-    canonical:
-      "https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/themes",
+    canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/themes',
   },
-  title: "Macbeth Themes — Edexcel IGCSE IGCSE Literature",
+  title: 'Macbeth Themes — Edexcel IGCSE Literature',
   description:
-    "The seven major themes of Macbeth for Edexcel IGCSE IGCSE Literature: ambition, guilt, the supernatural, kingship, appearance vs reality, gender, and fate vs free will.",
-};
+    'The seven major themes of Macbeth for Edexcel IGCSE Literature: ambition, guilt, the supernatural, kingship, appearance vs reality, gender, and fate vs free will.',
+}
 
 const THEMES = [
   {
-    theme: "Ambition",
+    theme: 'Ambition',
     summary:
       "The engine of the tragedy. Macbeth's 'vaulting ambition' is named in his own 1.7 soliloquy as the only reason to kill Duncan — there is no grievance, no injustice, just appetite. Shakespeare tracks ambition across both Macbeths: in him it curdles into paranoid tyranny, in her into self-destruction.",
     how_it_develops:
@@ -29,7 +28,7 @@ const THEMES = [
     ],
   },
   {
-    theme: "Guilt and conscience",
+    theme: 'Guilt and conscience',
     summary:
       "Both Macbeths suffer overwhelming guilt, but they experience it in opposite rhythms. Macbeth is haunted immediately (the dagger, Banquo's ghost) and then dulled by repetition. Lady Macbeth suppresses guilt at first ('a little water clears us of this deed') but it returns catastrophically in sleepwalking. Shakespeare's argument is clear: you cannot out-think conscience.",
     how_it_develops:
@@ -41,7 +40,7 @@ const THEMES = [
     ],
   },
   {
-    theme: "The supernatural",
+    theme: 'The supernatural',
     summary:
       "The witches, the floating dagger, Banquo's ghost, the apparitions, the storms and unnatural omens — the supernatural frames the whole play. For a Jacobean audience steeped in James I's Daemonologie, these were not theatrical flourishes but genuine evils. Shakespeare exploits this to ask whether Macbeth is pushed by external forces or pulled by his own desires.",
     how_it_develops:
@@ -53,7 +52,7 @@ const THEMES = [
     ],
   },
   {
-    theme: "Kingship and tyranny",
+    theme: 'Kingship and tyranny',
     summary:
       "Shakespeare stages a cascading contrast between Duncan (pious, trusting, generous), the off-stage English Edward the Confessor (a 'holy' healer king), and Macbeth (a paranoid butcher). The play argues that legitimate kingship brings fertility and order, while usurpation brings barrenness and chaos. This was pointed commentary for James I, who believed in the Divine Right of Kings.",
     how_it_develops:
@@ -65,7 +64,7 @@ const THEMES = [
     ],
   },
   {
-    theme: "Appearance vs reality",
+    theme: 'Appearance vs reality',
     summary:
       "The witches' opening paradox — 'Fair is foul, and foul is fair' — sets the pattern. Lady Macbeth tells her husband to 'look like the innocent flower, but be the serpent under't'. The witches' later prophecies are literally true but functionally deceptive (equivocation). The play's world is one where surfaces cannot be trusted.",
     how_it_develops:
@@ -77,7 +76,7 @@ const THEMES = [
     ],
   },
   {
-    theme: "Masculinity and gender",
+    theme: 'Masculinity and gender',
     summary:
       "Lady Macbeth first shames her husband into murder by questioning his manhood — 'When you durst do it, then you were a man'. Macbeth absorbs this and begins to equate masculinity with violence. Macduff offers a counter-model in 4.3, insisting he must 'feel it as a man' when grieving his family. Lady Macbeth's earlier rejection of femininity ('unsex me here') is answered by her breakdown.",
     how_it_develops:
@@ -89,7 +88,7 @@ const THEMES = [
     ],
   },
   {
-    theme: "Fate vs free will",
+    theme: 'Fate vs free will',
     summary:
       "The witches' prophecies set the tragedy in motion — but Banquo hears the same words and resists. Macbeth's soliloquies repeatedly show him <em>choosing</em> to act: 'I am settled, and bend up each corporal agent to this terrible feat'. Shakespeare leaves the question genuinely open, but the weight of the soliloquies suggests free will, not fate, bears the moral load.",
     how_it_develops:
@@ -100,7 +99,7 @@ const THEMES = [
       '"And be these juggling fiends no more believ\'d" (5.8)',
     ],
   },
-];
+]
 
 export default async function MacbethThemesPage() {
   await requireIgcseBoard(['edexcel-igcse'])
@@ -109,12 +108,15 @@ export default async function MacbethThemesPage() {
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Shakespeare", url: "https://theenglishhub.app/igcse/edexcel/shakespeare" },
-          { name: "Macbeth", url: "https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth" },
-          { name: "Themes", url: "https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/themes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Shakespeare', url: 'https://theenglishhub.app/igcse/edexcel/shakespeare' },
+          { name: 'Macbeth', url: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth' },
+          {
+            name: 'Themes',
+            url: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/themes',
+          },
         ]}
       />
       {/* ── Hero ─────────────────────────────────────────────── */}
@@ -128,14 +130,14 @@ export default async function MacbethThemesPage() {
           </Link>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
             <GraduationCap className="h-4 w-4" />
-            Edexcel IGCSE IGCSE Literature
+            Edexcel IGCSE Literature
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Macbeth &mdash; Themes
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            The seven big ideas examiners ask about &mdash; and how to track
-            each one across the whole play.
+            The seven big ideas examiners ask about &mdash; and how to track each one across the
+            whole play.
           </p>
         </div>
       </section>
@@ -147,7 +149,7 @@ export default async function MacbethThemesPage() {
             {THEMES.map((t) => (
               <li key={t.theme}>
                 <a
-                  href={`#${t.theme.toLowerCase().replace(/[^a-z]/g, "-")}`}
+                  href={`#${t.theme.toLowerCase().replace(/[^a-z]/g, '-')}`}
                   className="text-primary hover:underline"
                 >
                   {t.theme}
@@ -161,15 +163,11 @@ export default async function MacbethThemesPage() {
           {THEMES.map((t) => (
             <article
               key={t.theme}
-              id={t.theme.toLowerCase().replace(/[^a-z]/g, "-")}
+              id={t.theme.toLowerCase().replace(/[^a-z]/g, '-')}
               className="scroll-mt-20 rounded-2xl border-l-4 border-primary bg-muted p-6 sm:p-8"
             >
-              <h2 className="text-2xl font-bold text-foreground">
-                {t.theme}
-              </h2>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                {t.summary}
-              </p>
+              <h2 className="text-2xl font-bold text-foreground">{t.theme}</h2>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{t.summary}</p>
               <div className="mt-5 rounded-lg border border-border bg-card p-4">
                 <h3 className="text-xs font-semibold uppercase tracking-wide text-primary">
                   How it develops
@@ -184,10 +182,7 @@ export default async function MacbethThemesPage() {
                 </h3>
                 <ul className="mt-2 space-y-1.5">
                   {t.quotes.map((q) => (
-                    <li
-                      key={q}
-                      className="text-sm italic text-muted-foreground"
-                    >
+                    <li key={q} className="text-sm italic text-muted-foreground">
                       {q}
                     </li>
                   ))}
@@ -198,14 +193,11 @@ export default async function MacbethThemesPage() {
         </section>
       </div>
 
-      <ExamBoardDisclaimer
-        variant="content"
-        className="mx-auto max-w-5xl px-4 py-8"
-      />
+      <ExamBoardDisclaimer variant="content" className="mx-auto max-w-5xl px-4 py-8" />
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4 mx-auto max-w-5xl px-4 pb-8">
         Macbeth by William Shakespeare is in the public domain. Quotations are reproduced freely.
       </p>
     </main>
-  );
+  )
 }
