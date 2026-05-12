@@ -1,5 +1,8 @@
 'use client'
 
+// VERIFIED: Folger Prologue lines 1-14, Arden 2012 (Weis).
+// Extract uses Q2/Arden archaic spellings (star-cross'd, misadventur'd, death-mark'd).
+
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Quote, Lightbulb, ScrollText } from 'lucide-react'
 

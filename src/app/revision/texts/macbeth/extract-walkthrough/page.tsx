@@ -27,6 +27,8 @@ type ExtractLine = {
   text: string
 }
 
+// VERIFIED: Folger Shakespeare Library digital text — https://www.folger.edu/explore/shakespeares-works/macbeth/read/1/7/
+// Cross-checked against Project Gutenberg #1129 First Folio transcription.
 const EXTRACT_LINES: ExtractLine[] = [
   { n: 1, text: "If it were done when 'tis done, then 'twere well" },
   { n: 2, text: 'It were done quickly. If th’ assassination' },
@@ -71,7 +73,8 @@ const SEGMENTS: Segment[] = [
     range: 'Lines 1–7',
     lines: [1, 2, 3, 4, 5, 6, 7],
     notice:
-      'Macbeth opens with a tangle of monosyllabic conditionals — "If it were done when ’tis done." The repetition of "done" four times in two lines, the hesitant "if", and the choked-off rhythm reveal a mind trying to outrun itself. The image of "this bank and shoal of time" makes mortal life a precarious sandbar between two oceans of eternity.',
+      // VERIFIED: https://www.folger.edu/explore/shakespeares-works/macbeth/read/1/7/ — three "done"s in lines 1–2, fourth idea picked up in "we’d jump the life to come"
+      'Macbeth opens with a tangle of monosyllabic conditionals — "If it were done when ’tis done." The repetition of "done" three times in two lines, the hesitant "if", and the choked-off rhythm reveal a mind trying to outrun itself. The image of "this bank and shoal of time" makes mortal life a precarious sandbar between two oceans of eternity.',
     say: 'Shakespeare uses anaphoric repetition and stacked conditional clauses to dramatise Macbeth’s avoidance: he cannot bring himself to name the murder, so he hides it inside the abstract verb "done". The metaphor of life as a "bank and shoal" dwarfs the political prize ("the be-all and the end-all") against the immensity of the afterlife, a classical and Christian image of judgement looming on either side.',
     zoomOut:
       'This is the first sustained soliloquy in which Macbeth interrogates the regicide intellectually rather than emotionally. It marks a hinge in the ambition arc: the witches gave him the prophecy, Lady Macbeth gave him the dagger, but here he gives himself the rationale — and finds it cannot hold. The stalled syntax foreshadows the broken sleep ("Macbeth does murder sleep") that will pursue him from Act 2 onwards.',
@@ -193,7 +196,7 @@ export default function MacbethExtractWalkthroughPage() {
             <p className="text-muted-foreground leading-relaxed">
               Lady Macbeth has already received his letter (1.5), invoked the spirits to
               &ldquo;unsex&rdquo; her, and resolved that Duncan must die that very night. Macbeth
-              has been crowned Thane of Cawdor, has heard the witches’ prophecy that he &ldquo;shalt
+              has been named Thane of Cawdor, has heard the witches’ prophecy that he &ldquo;shalt
               be king hereafter,&rdquo; and has aside-confessed his &ldquo;black and deep
               desires&rdquo; (1.4).
             </p>
@@ -316,7 +319,7 @@ export default function MacbethExtractWalkthroughPage() {
               <p>
                 Shakespeare uses Macbeth’s &ldquo;If it were done&rdquo; soliloquy to expose
                 ambition as a force its possessor recognises and yet cannot resist. The opening
-                fourfold repetition of &ldquo;done&rdquo; is a verbal flinch: Macbeth refuses to
+                threefold repetition of &ldquo;done&rdquo; is a verbal flinch: Macbeth refuses to
                 name the murder, hiding it inside an abstract verb, which dramatises ambition’s
                 first effect — the corruption of language itself. The speech then constructs a
                 meticulous moral argument against the deed. Through the legal lexis of

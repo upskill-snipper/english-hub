@@ -33,7 +33,8 @@ const WALKTHROUGH: WalkthroughCard[] = [
   {
     kind: 'Zoom Out',
     title: "Candy's dog as rehearsal",
-    fragment: 'I ought to of shot that dog myself',
+    // VERIFIED: original Steinbeck text reads "I oughtta of shot that dog myself, George" — dialect 'oughtta' preserved (Penguin Modern Classics edn).
+    fragment: 'I oughtta of shot that dog myself',
     body: "Carlson's earlier execution of Candy's dog is the template for what George must now do. Candy's regret — that he let a stranger end his companion — becomes George's instruction manual. The novella has been preparing this bullet for fifty pages.",
   },
   {

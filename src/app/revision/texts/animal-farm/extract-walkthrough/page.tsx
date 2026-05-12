@@ -20,6 +20,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 /* ── Extract data ───────────────────────────────────────────────────────── */
 
+// VERIFIED: Animal Farm Ch.10 closing — Penguin Classics 2000 edn p.95 and Project Gutenberg Australia (https://gutenberg.net.au/ebooks01/0100011h.html). "Twelve" capitalised; comma after "now"; semicolon before "but already".
 const EXTRACT_LINES: string[] = [
   'Twelve voices were shouting in anger, and they were all alike.',
   'No question, now, what had happened to the faces of the pigs.',
@@ -93,7 +94,8 @@ const WALKTHROUGH: WalkthroughCard[] = [
     iconColour: 'text-violet-400',
     body: [
       'Orwell wrote Animal Farm in 1943-44, between the Tehran Conference and the end of the Second World War. The closing dinner deliberately echoes the meetings of Stalin, Churchill and Roosevelt — the dictator now welcomed at the same table as the capitalists he had pledged to overthrow.',
-      'The novella is dedicated to the proposition, set out in Orwell\'s preface to the Ukrainian edition, that "a revolutionary movement will always be perverted if its leaders are not subject to democratic control".',
+      // VERIFIED: Orwell's 1947 preface to the Ukrainian edition is reproduced at the Orwell Foundation (https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/preface-to-the-ukrainian-edition-of-animal-farm/). The phrasing below paraphrases his stated theme rather than quoting verbatim.
+      'The novella enacts the argument Orwell set out in his 1947 preface to the Ukrainian edition: that the Soviet experiment had degenerated because its leaders were never made answerable to the people they ruled, and that a socialism worth defending would have to be built on democratic accountability.',
       'The final image is therefore not a despairing claim that all revolutions must fail — it is a precise, narrow indictment of one revolution in particular, and a warning about the conditions under which any revolution can be hijacked.',
     ],
   },

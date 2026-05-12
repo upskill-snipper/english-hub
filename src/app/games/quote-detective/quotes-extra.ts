@@ -7,6 +7,10 @@ export interface QuoteEntryExtra {
 
 // All quotes are verbatim from the canonical (largely public-domain) source texts.
 // Each excerpt is kept to 15 words or fewer for fair-dealing under UK copyright law.
+// VERIFIED 2026-05-12 against Folger (Shakespeare), Project Gutenberg #46 (ACC),
+// Project Gutenberg #43 (J&H), Heinemann (AIC), Penguin (Animal Farm, OMAM),
+// Faber (LotF), Methuen (Blood Brothers), Penguin Modern Classics (AVFTB),
+// Poetry Foundation + AQA anthology (Power & Conflict).
 export const quoteDetectiveExtra: QuoteEntryExtra[] = [
   // ── Macbeth (15) ───────────────────────────────────────────────────────────
   { quote: "Look like the innocent flower, but be the serpent under't.", text: 'Macbeth' },

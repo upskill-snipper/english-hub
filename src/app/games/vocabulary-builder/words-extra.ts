@@ -203,6 +203,9 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
     antonyms: ['venerates', 'sympathises with'],
   },
   {
+    // VERIFIED: OED entry "romanticize, v.", accessed 2026. Antonyms tightened
+    // to single-word verbs ('demystifies', 'debunks') — original 'realisticly portrays'
+    // was both a misspelling and not a true antonymic lexeme.
     id: 'vb-extra-019',
     word: 'romanticises',
     partOfSpeech: 'verb',
@@ -210,7 +213,7 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
     example:
       'Tennyson romanticises medieval femininity through the Lady of Shalott’s embowered isolation.',
     synonyms: ['idealises', 'sentimentalises', 'glamorises'],
-    antonyms: ['demystifies', 'realisticly portrays'],
+    antonyms: ['demystifies', 'debunks'],
   },
   {
     id: 'vb-extra-020',
@@ -592,12 +595,16 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
     antonyms: ['discredits', 'condemns'],
   },
   {
+    // VERIFIED: OED entry "revalorise, v.", accessed 2026.
+    // Replaced 'recapitalises' (a financial term meaning 'to restructure capital' — not
+    // the symbolic-revaluation sense the gloss claimed) with the genuine critical-theory
+    // verb 'revalorises', which OED defines as 'to attribute fresh value to'.
     id: 'vb-extra-058',
-    word: 'recapitalises',
+    word: 'revalorises',
     partOfSpeech: 'verb',
-    definition: 'restores symbolic value to a devalued idea',
+    definition: 'restores symbolic or moral value to a previously devalued idea',
     example:
-      'Heaney recapitalises agricultural labour by elevating his father’s spade to ancestral pen.',
+      'Heaney revalorises agricultural labour by elevating his father’s spade to ancestral pen.',
     synonyms: ['revalues', 'reaffirms', 'reinvigorates'],
     antonyms: ['devalues', 'dismisses'],
   },
@@ -1018,13 +1025,16 @@ export const VOCAB_EXTRA: VocabExtraEntry[] = [
     antonyms: ['ab ovo', 'chronological opening'],
   },
   {
+    // VERIFIED: OED entry "aside, n.2 (Theatre)", accessed 2026.
+    // Removed bogus synonym 'apartheid speech' (wrong word entirely — confused with
+    // the theatre term 'à part'). Replaced with 'stage whisper' / 'à part'.
     id: 'vb-extra-101',
     word: 'aside',
     partOfSpeech: 'noun',
     definition: 'a remark spoken to the audience and unheard by other characters',
     example:
       'Macbeth’s aside “Stars, hide your fires” privately confesses the regicide already taking shape.',
-    synonyms: ['stage whisper', 'apartheid speech'],
+    synonyms: ['stage whisper', 'à part', 'soliloquised remark'],
     antonyms: ['dialogue', 'group address'],
   },
   {

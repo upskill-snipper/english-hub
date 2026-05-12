@@ -1236,7 +1236,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-086',
     topic: 'exam-technique',
     question:
-      'Cambridge IGCSE English (0500/0990) Paper 1 Question 1(d) is the EXTENDED RESPONSE TO READING. Marks are split into…',
+      'Cambridge IGCSE English (0500/0990) Paper 1 Question 2 is the EXTENDED RESPONSE TO READING (based on Text C). Marks are split into…',
     options: [
       'Reading (R) marks for understanding/development AND Writing (W) marks for accuracy/structure',
       'Only writing marks',
@@ -1244,15 +1244,16 @@ export const languageExtraQuestions: QuizQuestion[] = [
       'Only reading marks',
     ],
     correctIndex: 0,
+    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 (Reading) — Q2 extended response = 30 marks (15 R + 15 W); accessed 2026
     explanation:
-      'Q1(d) directed writing is double-marked: 15 Reading marks (AO1/AO2) and 25 Writing marks for the response form (Cambridge equivalent of AO5/AO6).',
+      'Paper 1 Question 2 (extended response to reading, based on Text C) is worth 30 marks: 15 Reading marks and 15 Writing marks. Directed writing (40 marks: 15 R + 25 W) is on Paper 2 Section A, not Paper 1.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
     id: 'language-extra-087',
     topic: 'exam-technique',
     question:
-      'In Cambridge 0500/0990 Q1(d) directed writing, candidates must choose an appropriate FORM — typically…',
+      'In Cambridge 0500/0990 Paper 2 Section A directed writing (Question 1), candidates must use an appropriate FORM — typically…',
     options: [
       'Letter, speech or report/article (specified by the task)',
       'Always a sonnet',
@@ -1260,15 +1261,16 @@ export const languageExtraQuestions: QuizQuestion[] = [
       'A bibliography',
     ],
     correctIndex: 0,
+    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 2 Section A directed writing = 40 marks (15 R + 25 W); accessed 2026
     explanation:
-      'The Q1(d) task names the form (letter/speech/report/article). Use its conventions consistently for top Writing marks.',
+      'Paper 2 Section A (Question 1) directed writing names the form (letter/speech/article). It is worth 40 marks: 15 Reading and 25 Writing. Use the named form’s conventions consistently.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
     id: 'language-extra-088',
     topic: 'exam-technique',
     question:
-      'Cambridge 0500/0990 Paper 2 Question 1 is an analysis of language used by writers to achieve effects. Which of these is BEST?',
+      'Cambridge 0500/0990 Paper 1 Question 1(e) (analysis of language used by writers to achieve effects) — which approach is BEST?',
     options: [
       'Quote shorter phrases or single words and analyse connotations and effect',
       'Quote whole paragraphs without analysis',
@@ -1276,15 +1278,16 @@ export const languageExtraQuestions: QuizQuestion[] = [
       'Only list techniques without quotations',
     ],
     correctIndex: 0,
+    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(e) language analysis on Text A; accessed 2026
     explanation:
-      'Paper 2 Q1 rewards close, focused analysis of writers’ language choices — short embedded quotations and effects.',
+      'Paper 1 Q1(e) rewards close, focused analysis of writers’ language choices — short embedded quotations and explored effects. (Paper 2 Q1 is directed writing, not language analysis.)',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
     id: 'language-extra-089',
     topic: 'exam-technique',
     question:
-      'Cambridge 0500/0990 Paper 2 Question 2 is the SUMMARY question. Which is most important?',
+      'Cambridge 0500/0990 Paper 1 Question 1(f) is the SUMMARY question. Which is most important?',
     options: [
       'Use your own words and concise prose, focusing only on points relevant to the bullet(s)',
       'Quote the source word-for-word',
@@ -1292,15 +1295,16 @@ export const languageExtraQuestions: QuizQuestion[] = [
       'Use bullet points throughout',
     ],
     correctIndex: 0,
+    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(f) summary = 15 marks (10 R + 5 W); accessed 2026
     explanation:
-      'Paper 2 Q2 demands concise own-words summary of relevant points — direct copying loses Reading and Writing marks.',
+      'Paper 1 Q1(f) summary (15 marks: 10 Reading + 5 Writing) demands concise own-words summary of relevant points — direct copying loses Reading and Writing marks. (Paper 2 Q2 is composition.)',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
     id: 'language-extra-090',
     topic: 'exam-technique',
     question:
-      'Cambridge 0500/0990 Paper 1 Question 1(c) (analysis of writers’ effects) usually targets…',
+      'Cambridge 0500/0990 Paper 1 Question 1(e) (analysis of writers’ effects) usually targets…',
     options: [
       'Two short sub-paragraphs from the source, analysed for choices and effects',
       'The whole source in equal detail',
@@ -1308,8 +1312,9 @@ export const languageExtraQuestions: QuizQuestion[] = [
       'Only the final line',
     ],
     correctIndex: 0,
+    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(e) language analysis names two short paragraphs from Text A; accessed 2026
     explanation:
-      'Q1(c) names two short sections; analyse word/phrase choice and effect within them — concentrated AO2-style analysis.',
+      'Q1(e) names two short paragraphs from Text A; analyse word/phrase choice and effect within them — concentrated language analysis.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1390,16 +1395,17 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-096',
     topic: 'exam-technique',
     question:
-      'In the Cambridge Paper 2 summary, what proportion of marks is for Reading vs. Writing?',
+      'In the Cambridge Paper 1 Q1(f) summary, what proportion of marks is for Reading vs. Writing?',
     options: [
-      'Roughly 10 Reading + 5 Writing (Reading-dominant, but writing style still assessed)',
+      '10 Reading + 5 Writing (Reading-dominant, but writing style still assessed)',
       'Only Writing marks',
       'Only Reading marks',
       'Equal split with no Writing marks',
     ],
     correctIndex: 0,
+    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(f) summary = 15 marks (10 R + 5 W); accessed 2026
     explanation:
-      'The Cambridge summary question is Reading-dominant but Writing marks reward concise, well-organised own-words prose.',
+      'The Paper 1 Q1(f) summary is 15 marks: 10 Reading + 5 Writing — Reading-dominant, but Writing marks reward concise, well-organised own-words prose.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {

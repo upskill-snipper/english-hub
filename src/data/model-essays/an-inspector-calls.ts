@@ -38,14 +38,16 @@ export const anInspectorCallsEssays: ModelEssay[] = [
           "Opens with stage directions and a precise lexical analysis of 'rather' to argue Sheila's capitalism is fragile — sets up her arc as a structural device.",
       },
       {
+        // VERIFIED: Heinemann 1992 edn., Act 1 — Sheila's confession scene. Her actual remorse lines ("I know I'm to blame — and I'm desperately sorry"; "I felt rotten about it at the time"). Earlier paraphrases of "wrong thing" / "mean" could not be verified verbatim and have been replaced.
         paragraph:
-          "Sheila's confession about Milwards becomes the moment Priestley first uses her to dramatise socialist guilt. She admits she had Eva sacked because she 'caught sight of this girl smiling', and her recognition that this was 'the wrong thing' marks her departure from her father's ideology. Crucially, Priestley has her name jealousy and class power as the cause, not misfortune; she accepts that her tantrum was 'mean' and the abuse of authority a genuine cruelty. The audience watches a young capitalist actively diagnose her own oppression of a worker, which is precisely the kind of self-examination Priestley wanted his post-war audience to undertake about their treatment of the working class.",
+          "Sheila's confession about Milwards becomes the moment Priestley first uses her to dramatise socialist guilt. She admits she had Eva sacked because she 'caught sight of this girl smiling' at her in the dress, and her acknowledgement that 'I know I'm to blame — and I'm desperately sorry' marks her open departure from her father's ideology. Crucially, Priestley has her name jealousy and class power as the cause, not misfortune; she accepts that she 'felt rotten about it at the time' and that the abuse of authority was a genuine cruelty. The audience watches a young capitalist actively diagnose her own oppression of a worker, which is precisely the kind of self-examination Priestley wanted his post-war audience to undertake about their treatment of the working class.",
         annotation:
           "Tracks Sheila's first moral acceptance using verbatim short quotation; links personal guilt to socialist self-examination of class power.",
       },
       {
+        // VERIFIED: Heinemann 1992 edn., Act 1 — Sheila challenges her father (NOT her mother in Act 2) immediately after Birling's "we were paying the usual rates".
         paragraph:
-          "Her transformation is reinforced by the vocabulary Priestley gives her in Act Two, where she begins to police her family's capitalist evasions. When her mother tries to dismiss the workers as faceless, Sheila interrupts with the corrective declaration that 'these girls aren't cheap labour — they're people'. The dash here, in performance, forces an audible pause that compels the audience to register the rehumanisation of the working class. The grammatical move from the commodified noun phrase 'cheap labour' to the simple noun 'people' enacts the play's central socialist claim: workers are not units of production. Sheila has become the play's moral grammarian, correcting the language of capitalism itself.",
+          "Her transformation is reinforced by the vocabulary Priestley gives her in Act One, where she begins to police her family's capitalist evasions. When her father tries to dismiss the workers as faceless cheap labour, Sheila interrupts with the corrective declaration that 'these girls aren't cheap labour — they're people'. The dash here, in performance, forces an audible pause that compels the audience to register the rehumanisation of the working class. The grammatical move from the commodified noun phrase 'cheap labour' to the simple noun 'people' enacts the play's central socialist claim: workers are not units of production. Sheila has become the play's moral grammarian, correcting the language of capitalism itself.",
         annotation:
           "Detailed quotation analysis: examines punctuation, syntactic shift, and metalinguistic effect — 'moral grammarian' is a strong conceptualised label.",
       },
@@ -109,10 +111,11 @@ export const anInspectorCallsEssays: ModelEssay[] = [
           "Phonological analysis (plosives) plus contrast of registers; 'linguistic anaesthetic of capitalism' is a strong conceptualised image.",
       },
       {
+        // VERIFIED: Heinemann 1992 edn. — name "Goole" Act 1; "It's my duty to ask questions" recurs across acts. The previously cited line "as if I'd actually been there" could not be verified against the Heinemann or Penguin texts and has been removed.
         paragraph:
-          "Priestley signals the Inspector's status as more than mortal through the play's controlled use of supernatural suggestion. The name 'Goole' is a homophone of 'ghoul', priming the audience to read him as spectral. He claims he sees the chain of events 'as if I'd actually been there', a phrasing whose conditional grammar subtly admits omniscience while preserving theatrical realism. Priestley denies the audience the comfort of categorising him: he is neither plainly police nor plainly supernatural, but a liminal presence that makes the play's morality feel both human and inescapable. This generic instability is precisely what gives him his dramatic force.",
+          "Priestley signals the Inspector's status as more than mortal through the play's controlled use of supernatural suggestion. The name 'Goole' is a homophone of 'ghoul', priming the audience to read him as spectral. He insists 'It's my duty to ask questions', a flat assertion of authority whose calm refusal to negotiate hints at a jurisdiction larger than the Brumley constabulary. Priestley denies the audience the comfort of categorising him: he is neither plainly police nor plainly supernatural, but a liminal presence that makes the play's morality feel both human and inescapable. This generic instability is precisely what gives him his dramatic force.",
         annotation:
-          'Handles the supernatural reading with care: notes the homophone, the conditional grammar, and the strategic generic ambiguity.',
+          "Handles the supernatural reading with care: notes the homophone, the deflective register of 'duty', and the strategic generic ambiguity.",
       },
       {
         paragraph:

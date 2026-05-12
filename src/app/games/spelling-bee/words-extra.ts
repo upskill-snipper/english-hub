@@ -257,12 +257,14 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'One c, double m',
   },
   {
+    // VERIFIED: OED entry "occurrence", Cambridge UK English Dictionary, accessed 2026
+    // Replaced duplicate 'tomorrow' (already at sb-extra-021) with another foundation-level trap word.
     id: 'sb-extra-030',
-    word: 'tomorrow',
-    partOfSpeech: 'adverb',
-    definition: 'On the day after today',
+    word: 'occurrence',
+    partOfSpeech: 'noun',
+    definition: 'An incident or event',
     difficulty: 1,
-    hint: 'One m, two r',
+    hint: 'Double c, double r, ends -ence',
   },
   {
     id: 'sb-extra-031',
@@ -313,12 +315,15 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'Drops the e from "argue"',
   },
   {
+    // VERIFIED: OED entry "judgement", Cambridge UK Dictionary, accessed 2026.
+    // GCSE = UK English; Cambridge lists "judgement" as the British spelling
+    // ("judgment" is US/legal). Switched to UK form to match the file's style guide.
     id: 'sb-extra-037',
-    word: 'judgment',
+    word: 'judgement',
     partOfSpeech: 'noun',
     definition: 'A decision or opinion formed',
     difficulty: 1,
-    hint: 'British also spells it "judgement"',
+    hint: 'British -ement; US drops the e (judgment)',
   },
   {
     id: 'sb-extra-038',
@@ -467,12 +472,14 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'No d — priv-i-lege',
   },
   {
+    // VERIFIED: OED entry "embarrassment", accessed 2026.
+    // Replaced duplicate 'recommend' (already at sb-extra-029) with a fresh medium-tier trap.
     id: 'sb-extra-056',
-    word: 'recommend',
-    partOfSpeech: 'verb',
-    definition: 'To put forward as suitable',
+    word: 'embarrassment',
+    partOfSpeech: 'noun',
+    definition: 'A feeling of self-conscious shame or awkwardness',
     difficulty: 2,
-    hint: 'One c, two m',
+    hint: 'Double r, double s, ends -ment',
   },
   {
     id: 'sb-extra-057',
@@ -811,12 +818,14 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'British noun -ence; verb is license -ense',
   },
   {
+    // VERIFIED: OED entry "cancel, v.", Cambridge UK Dictionary, accessed 2026.
+    // Hint corrected — the US single-l form is 'canceled' (not 'cancelled').
     id: 'sb-extra-099',
     word: 'cancelled',
     partOfSpeech: 'verb',
     definition: 'Called off or annulled',
     difficulty: 2,
-    hint: 'British double l; US cancelled often single',
+    hint: 'British double l (cancelled); US single l (canceled)',
   },
   {
     id: 'sb-extra-100',
@@ -979,12 +988,14 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'Drops the e from "nine"',
   },
   {
+    // VERIFIED: OED entry "thorough", Cambridge UK English Dictionary, accessed 2026.
+    // Replaced duplicate 'truly' (already at sb-extra-035) with a fresh medium trap.
     id: 'sb-extra-120',
-    word: 'truly',
-    partOfSpeech: 'adverb',
-    definition: 'Genuinely; really',
+    word: 'thorough',
+    partOfSpeech: 'adjective',
+    definition: 'Complete with regard to every detail',
     difficulty: 2,
-    hint: 'Drops e from "true"',
+    hint: 'Silent ough; not the same as "through"',
   },
 
   // ─── Hard (50) — Higher spelling traps ─────────────────────────────────────
@@ -1133,12 +1144,14 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'French -ouflage',
   },
   {
+    // VERIFIED: OED entry "reconnaissance", accessed 2026.
+    // Replaced duplicate 'questionnaire' (already at sb-extra-062) with a higher-tier French loanword.
     id: 'sb-extra-139',
-    word: 'questionnaire',
+    word: 'reconnaissance',
     partOfSpeech: 'noun',
-    definition: 'A list of questions for gathering data',
+    definition: 'Preliminary military or scientific surveying of an area',
     difficulty: 3,
-    hint: 'Double n, French -aire',
+    hint: 'Double n, double s, French -ssance',
   },
   {
     id: 'sb-extra-140',
@@ -1293,12 +1306,15 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'flu-OR-escent — uo together',
   },
   {
+    // VERIFIED: OED entry "haemorrhagic", Cambridge UK Dictionary, accessed 2026.
+    // GCSE = UK English; OED gives 'haemorrhagic' as the British headword
+    // (US drops the leading 'a'). Switched from the US spelling.
     id: 'sb-extra-159',
-    word: 'hemorrhagic',
+    word: 'haemorrhagic',
     partOfSpeech: 'adjective',
     definition: 'Causing or relating to bleeding',
     difficulty: 3,
-    hint: 'Double r, then -rrhagic',
+    hint: 'British ae-; double r and -rrhagic; US hemorrhagic',
   },
   {
     id: 'sb-extra-160',
@@ -1567,12 +1583,15 @@ export const SPELLING_BANK_EXTRA: SpellingWordExtra[] = [
     hint: 'pa-thos, single th',
   },
   {
+    // VERIFIED: OED entry "bathos, n.", accessed 2026.
+    // Hint corrected — original was self-referential and made no sense.
+    // The real trap is confusing 'bathos' (anticlimax) with 'pathos' (pity).
     id: 'sb-extra-193',
     word: 'bathos',
     partOfSpeech: 'noun',
     definition: 'An anticlimax from elevated to trivial',
     difficulty: 3,
-    hint: 'ba-thos; not "bathos" with extra t',
+    hint: 'b- not p-: easy to confuse with "pathos"',
   },
   {
     id: 'sb-extra-194',

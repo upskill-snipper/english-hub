@@ -237,12 +237,14 @@ export const EXTRA_PASSAGE_BANK: ExtraPassage[] = [
         marks: 4,
         prompt: 'List FOUR things you learn about the market square from the passage.',
         options: [
-          'It is dusk; there is a chestnut seller; a brass band is tuning; cobbles are wet and shining',
+          'It is dusk; there is a chestnut seller; a brass band is tuning; the cobbles are dark and shining',
           'It is mid-morning; there is no music; the square is deserted; the stalls are empty',
           'It is summer; there is an outdoor swimming pool; the square is full of tourists; ice cream is sold',
           'It is dawn; the shops are still shut; there is heavy traffic; a market is being set up',
         ],
         correctIndex: 0,
+        // VERIFIED: each fact directly retrievable from the passage's prose
+        // ('half past four... blue', the chestnut brazier, the tuning band, 'cobbles were dark and shining').
         explanation:
           "AO1 List 4: time of day ('half past four... blue'), the chestnut brazier, the tuning band and the dark, shining cobbles are all explicitly stated.",
       },

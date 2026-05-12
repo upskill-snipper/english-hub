@@ -56,7 +56,7 @@ const jekyllAndHydeEssays: ModelEssay[] = [
     paragraphs: [
       {
         heading: "Jekyll's confession reframes duality as the universal condition",
-        body: 'Stevenson reserves the explicit theory of the divided self until the final chapter, so that when Jekyll writes that "man is not truly one, but truly two", the line lands as both diagnosis and verdict. The cautious adverb "truly", repeated, refuses readers the comfort that this is metaphor; Jekyll is making an ontological claim. He goes further, recalling "two natures that contended in the field of my consciousness", a martial metaphor that turns the mind into contested territory rather than a unified seat of will. Crucially, Jekyll generalises outward: he says he was no worse than other men, only braver in admitting the fracture. Duality, then, is not Jekyll\'s pathology but his honesty.',
+        body: 'Stevenson reserves the explicit theory of the divided self until the final chapter, so that when Jekyll writes that "man is not truly one, but truly two", the line lands as both diagnosis and verdict. The cautious adverb "truly", repeated, refuses readers the comfort that this is metaphor; Jekyll is making an ontological claim. He goes further, recalling "two natures that contended in the field of my consciousness", a martial metaphor that turns the mind into contested territory rather than a unified seat of will. Crucially, Jekyll generalises outward: he says he was no worse than other men, only braver in admitting the fracture. Duality, then, is not Jekyll\'s pathology but his honesty.', // VERIFIED: Gutenberg #43, Ch.10
         annotation: {
           AO1: 'Sets up the argumentative spine: duality is universal, not exceptional, with a confession-chapter quotation as anchor.',
           AO2: "Reads the adverb 'truly' and the martial metaphor 'contended in the field' as ontological rather than figurative claims.",
@@ -65,7 +65,7 @@ const jekyllAndHydeEssays: ModelEssay[] = [
       },
       {
         heading: 'The transformation scene literalises a psychological split',
-        body: 'What Jekyll articulates in retrospect, the narrative has already shown in body. The metamorphosis is staged as a physical re-balancing of the self: when Jekyll drinks the draught he feels "younger, lighter, happier in body", a tricolon of comparatives that mimics the upward rush of release as the moral censor dissolves. Hyde is therefore not an invader from outside Jekyll but a portion of Jekyll allowed, for the first time, to walk unsupervised. The horror of the scene lies in its pleasure: Stevenson refuses the easy moral that vice is painful. Instead the reader watches respectability being shed as if it were an over-tight coat, which is precisely why the duality cannot be undone.',
+        body: 'What Jekyll articulates in retrospect, the narrative has already shown in body. The metamorphosis is staged as a physical re-balancing of the self: when Jekyll drinks the draught he feels "younger, lighter, happier in body", a tricolon of comparatives that mimics the upward rush of release as the moral censor dissolves. Hyde is therefore not an invader from outside Jekyll but a portion of Jekyll allowed, for the first time, to walk unsupervised. The horror of the scene lies in its pleasure: Stevenson refuses the easy moral that vice is painful. Instead the reader watches respectability being shed as if it were an over-tight coat, which is precisely why the duality cannot be undone.', // VERIFIED: Gutenberg #43, Ch.10
         annotation: {
           AO1: 'Advances the argument from theory to embodiment, showing the novella enacts duality structurally, not only thematically.',
           AO2: "Tricolon analysis ('younger, lighter, happier') and the metaphor of an 'over-tight coat' read pleasure as the destabilising element.",
@@ -116,16 +116,16 @@ const jekyllAndHydeEssays: ModelEssay[] = [
     paragraphs: [
       {
         heading: 'Hyde is introduced through unmotivated appetite',
-        body: 'We meet Hyde not through dialogue but through an act of pure, unprovoked aggression: he tramples "the trampled body of a child" without breaking stride. The participial phrasing strips the violence of intention and presents it as physics, as if Hyde\'s body simply discharges what the social body has stored up. Enfield\'s struggle to describe him — "there is something wrong with his appearance, something displeasing" — registers a face that the polite vocabulary cannot hold. This is the id arriving in a society without the words for it; Hyde is legible as a wrongness before he is legible as a person.',
+        body: 'We meet Hyde not through dialogue but through an act of pure, unprovoked aggression: he "trampled calmly over the child\'s body and left her screaming on the ground". The dissonance between violent verb and serene adverb strips the violence of moral interrupt and presents it as physics, as if Hyde\'s body simply discharges what the social body has stored up. Enfield\'s struggle to describe him — "something wrong with his appearance; something displeasing, something down-right detestable" — registers a face that the polite vocabulary cannot hold. This is the id arriving in a society without the words for it; Hyde is legible as a wrongness before he is legible as a person.', // VERIFIED: Gutenberg #43, Ch.1
         annotation: {
           AO1: "Opens with the argument that Hyde personifies discharged appetite, supported by the trampling and Enfield's failure of vocabulary.",
-          AO2: "Reads the participial phrase as removing intention, and the lexical poverty of Enfield's description as proof of social repression.",
+          AO2: "Reads the verb/adverb dissonance ('trampled calmly') as removing moral interrupt, and the lexical poverty of Enfield's description as proof of social repression.",
           AO3: 'Connects to Victorian taboos around naming desire and aggression in polite middle-class discourse.',
         },
       },
       {
         heading: "Hyde's body bears the marks of what has been suppressed",
-        body: 'Where Jekyll is tall and handsome, Hyde is small, stooped and apelike. Stevenson repeatedly returns to atavistic vocabulary: there is "something troglodytic" about him, and his violence is performed with an "ape-like fury". This is not idle grotesquerie. Lombroso\'s criminal anthropology, widely circulated in the 1870s and 1880s, argued that the habitual criminal was an evolutionary throwback whose body bore the stigmata of his regression. Stevenson appropriates this pseudoscience, but turns it inwards: the throwback is not the underclass criminal of Lombroso\'s photographs, it is the doctor in his own laboratory. Repression in the gentleman, Stevenson implies, does not refine him. It manufactures a smaller, older self underneath.',
+        body: 'Where Jekyll is tall and handsome, Hyde is small, stooped and apelike. Stevenson repeatedly returns to atavistic vocabulary: there is "something troglodytic" about him, and his violence is performed with an "ape-like fury". This is not idle grotesquerie. Lombroso\'s criminal anthropology, widely circulated in the 1870s and 1880s, argued that the habitual criminal was an evolutionary throwback whose body bore the stigmata of his regression. Stevenson appropriates this pseudoscience, but turns it inwards: the throwback is not the underclass criminal of Lombroso\'s photographs, it is the doctor in his own laboratory. Repression in the gentleman, Stevenson implies, does not refine him. It manufactures a smaller, older self underneath.', // VERIFIED: Gutenberg #43, "troglodytic" Ch.2; "ape-like fury" Ch.4
         annotation: {
           AO1: "Argues that Hyde's physiology is the visible bill for psychological repression.",
           AO2: "Pairs the adjectives 'troglodytic' and 'ape-like' as a sustained atavistic register.",
@@ -134,7 +134,7 @@ const jekyllAndHydeEssays: ModelEssay[] = [
       },
       {
         heading: "The Carew murder dramatises repression's failure",
-        body: 'The killing of Sir Danvers Carew is the moment the repressed becomes ungovernable. The maid describes Hyde breaking out in "ape-like fury", clubbing an MP — an emblem of the social order itself — to death in the moonlight. The choice of victim matters: an old, white-haired, courteous gentleman is the embodiment of the very respectability Hyde was created to escape. Stevenson choreographs the scene as inversion: the lower self openly attacks the upper self in a public street, watched by a witness whose romantic fancies are immediately shattered. The scene exposes the cost of the Victorian arrangement; the energies that polite life cannot accommodate eventually walk out of the house and kill its representatives.',
+        body: 'The killing of Sir Danvers Carew is the moment the repressed becomes ungovernable. The maid describes Hyde breaking out in "ape-like fury", clubbing an MP — an emblem of the social order itself — to death in the moonlight. The choice of victim matters: an old, white-haired, courteous gentleman is the embodiment of the very respectability Hyde was created to escape. Stevenson choreographs the scene as inversion: the lower self openly attacks the upper self in a public street, watched by a witness whose romantic fancies are immediately shattered. The scene exposes the cost of the Victorian arrangement; the energies that polite life cannot accommodate eventually walk out of the house and kill its representatives.', // VERIFIED: Gutenberg #43, Ch.4
         annotation: {
           AO1: 'Develops the argument that repressed energy returns as public violence aimed at the symbols of respectability.',
           AO2: "Reads the moonlit setting and the maid's romantic perspective as an ironic frame around the killing.",
@@ -143,7 +143,7 @@ const jekyllAndHydeEssays: ModelEssay[] = [
       },
       {
         heading: 'Hyde grows because Jekyll continues to feed him',
-        body: 'By the final chapter, Hyde has begun to appear without the draught, an inversion of the original arrangement. Jekyll writes that the "powers of Hyde seemed to have grown with the sickliness of Jekyll", a chiasmus that exposes the zero-sum logic of repression: the more strenuously the upper self denies, the larger the lower self becomes. The novella\'s terror is not that the experiment failed but that it succeeded in reverse. Stevenson\'s lesson, delivered without sermon, is that repression is itself a kind of cultivation; what one will not own, one feeds.',
+        body: 'By the final chapter, Hyde has begun to appear without the draught, an inversion of the original arrangement. Jekyll writes that the "powers of Hyde seemed to have grown with the sickliness of Jekyll", a chiasmus that exposes the zero-sum logic of repression: the more strenuously the upper self denies, the larger the lower self becomes. The novella\'s terror is not that the experiment failed but that it succeeded in reverse. Stevenson\'s lesson, delivered without sermon, is that repression is itself a kind of cultivation; what one will not own, one feeds.', // VERIFIED: Gutenberg #43, Ch.10
         annotation: {
           AO1: 'Closes the argument by showing the mechanism — repression strengthens what it denies.',
           AO2: "Identifies the chiasmic structure of Jekyll's late sentence and reads it as an emblem of the zero-sum relationship.",
@@ -176,7 +176,7 @@ const jekyllAndHydeEssays: ModelEssay[] = [
     paragraphs: [
       {
         heading: 'The fog functions as a moral as well as a meteorological phenomenon',
-        body: 'Stevenson\'s London is repeatedly drowned in a "chocolate-coloured pall" of fog that turns daylight into "a haggard shaft" and reduces the city to a "district of some city in a nightmare". The fog is an instrument of moral occlusion: it allows actions that could not survive sunlight, and it visualises a culture that prefers not to see itself clearly. The colours Stevenson chooses are domestic — chocolate, brown, dirty orange — so that the gothic atmosphere is generated from the materials of bourgeois life rather than imported from elsewhere. The familiar becomes uncanny; the city\'s own breath turns into its disguise.',
+        body: 'Stevenson\'s London is repeatedly drowned in a "chocolate-coloured pall" of fog that turns daylight into "a haggard shaft" and reduces the city to a "district of some city in a nightmare". The fog is an instrument of moral occlusion: it allows actions that could not survive sunlight, and it visualises a culture that prefers not to see itself clearly. The colours Stevenson chooses are domestic — chocolate, brown, dirty orange — so that the gothic atmosphere is generated from the materials of bourgeois life rather than imported from elsewhere. The familiar becomes uncanny; the city\'s own breath turns into its disguise.', // VERIFIED: Gutenberg #43, Ch.4 (Carew Murder Case)
         annotation: {
           AO1: 'Argues that fog is a moral medium, not just weather.',
           AO2: "Reads colour vocabulary ('chocolate', 'haggard') as deliberately domestic, generating uncanniness from familiar materials.",
@@ -185,7 +185,7 @@ const jekyllAndHydeEssays: ModelEssay[] = [
       },
       {
         heading: 'Doorways stage the threshold between selves',
-        body: 'The novella opens not with a person but with a door. Enfield\'s account of "the door" through which Hyde disappears after trampling the child is a small masterpiece of gothic threshold-writing. The door is described as "blistered and distained", embedded in an otherwise respectable street like a bruise on clean skin. It is this door, of course, that turns out to belong to the back of Jekyll\'s house. Stevenson is making the topographical point that the respectable and the depraved share a building; the entrance you use determines which self you are. Throughout the novella, doors are sites of suspended moral identity — Poole hammers at one, Utterson lurks outside another — because they mark the moment at which the unitary self is exposed as a choice of entrances.',
+        body: 'The novella opens not with a person but with a door. Enfield\'s account of "the door" through which Hyde disappears after trampling the child is a small masterpiece of gothic threshold-writing. The door is described as "blistered and distained", embedded in an otherwise respectable street like a bruise on clean skin. It is this door, of course, that turns out to belong to the back of Jekyll\'s house. Stevenson is making the topographical point that the respectable and the depraved share a building; the entrance you use determines which self you are. Throughout the novella, doors are sites of suspended moral identity — Poole hammers at one, Utterson lurks outside another — because they mark the moment at which the unitary self is exposed as a choice of entrances.', // VERIFIED: Gutenberg #43, Ch.1
         annotation: {
           AO1: 'Develops the argument by reading doorways as gothic thresholds with psychological meaning.',
           AO2: "Close reads 'blistered and distained' as bodily injury, and reads architectural geography as moral geography.",
@@ -194,7 +194,7 @@ const jekyllAndHydeEssays: ModelEssay[] = [
       },
       {
         heading: 'The divided street mirrors the divided self',
-        body: 'The by-street Enfield describes early in the novella has shopfronts that gleam "like rows of smiling saleswomen", whereas the Hyde door interrupts the row with a "sinister block of building". This juxtaposition is not incidental. Stevenson constructs streetscapes in which the moral and the immoral are immediate neighbours, separated by no more than a coat of paint. The technique creates a specifically urban gothic: in older gothic fiction the danger lies in travelling away from civilisation; here the danger is woven into civilisation\'s own frontage. Geography in the novella always rhymes with character — the divided street is the externalisation of the divided man.',
+        body: 'The by-street Enfield describes early in the novella has shopfronts that gleam "like rows of smiling saleswomen", whereas the Hyde door interrupts the row with a "sinister block of building". This juxtaposition is not incidental. Stevenson constructs streetscapes in which the moral and the immoral are immediate neighbours, separated by no more than a coat of paint. The technique creates a specifically urban gothic: in older gothic fiction the danger lies in travelling away from civilisation; here the danger is woven into civilisation\'s own frontage. Geography in the novella always rhymes with character — the divided street is the externalisation of the divided man.', // VERIFIED: Gutenberg #43, Ch.1
         annotation: {
           AO1: 'Argues that streetscape design mirrors psychological structure.',
           AO2: "Reads the simile of 'smiling saleswomen' against 'sinister block' as deliberate juxtaposition.",
@@ -236,10 +236,10 @@ const jekyllAndHydeEssays: ModelEssay[] = [
     paragraphs: [
       {
         heading: "Utterson is the novella's chief custodian of reputation",
-        body: 'Stevenson opens the novella through the eyes of a man whose professional life is the management of other men\'s secrets. Utterson is described as a lawyer who, faced with private vice, becomes "the last reputable acquaintance and the last good influence" in the lives of "down-going men". The phrasing is revealing: he stays close to the disreputable not to reform them but to preserve his own usefulness as a confidant. When he suspects Jekyll of being blackmailed, his first concern is not Jekyll\'s wellbeing but the preservation of "the honour of an old friend". Utterson is therefore not a neutral observer but a participant in the system the novella critiques; the narrative voice itself has skin in the reputation game.',
+        body: 'Stevenson opens the novella through the eyes of a man whose professional life is the management of other men\'s secrets. Utterson is described as a lawyer who, faced with private vice, becomes "the last reputable acquaintance and the last good influence in the lives of downgoing men". The phrasing is revealing: he stays close to the disreputable not to reform them but to preserve his own usefulness as a confidant. When the trustee is later tempted to pry into the sealed packet, the narrative tells us that "professional honour and faith to his dead friend were stringent obligations", and so the document sleeps in his safe. Utterson is therefore not a neutral observer but a participant in the system the novella critiques; the narrative voice itself has skin in the reputation game.', // VERIFIED: Gutenberg #43, Ch.1 ("downgoing"/one word) and Ch.6 ("professional honour and faith to his dead friend")
         annotation: {
           AO1: "Argues that the novella's narrative perspective is itself implicated in the reputation system.",
-          AO2: "Reads 'last reputable acquaintance' and 'honour of an old friend' as evidence of priorities ordered around reputation, not virtue.",
+          AO2: "Reads 'last reputable acquaintance' and 'professional honour and faith to his dead friend' as evidence of priorities ordered around reputation, not virtue.",
           AO3: "Connects to the Victorian professional class's role as keepers of confidential trouble — lawyers, doctors, clergy.",
         },
       },
@@ -248,7 +248,7 @@ const jekyllAndHydeEssays: ModelEssay[] = [
         body: "Jekyll's experiment is not invented; it is forced. He confesses that he could not bear the mismatch between his public seriousness and his private \"impatient gaiety\", and so devised a chemistry that would let him enjoy the latter without endangering the former. The mechanism of the draught is therefore an answer to a social problem, not a scientific one. Stevenson's critique is precise: it is not Jekyll's appetites that are monstrous, it is the social code that makes those appetites unspeakable for a man of his standing. Hyde exists because respectability has criminalised honesty; the fable's horror is generated less by the chemistry than by the etiquette.",
         annotation: {
           AO1: 'Develops the argument that reputation, not desire, is the originating cause of the catastrophe.',
-          AO2: "Pairs 'impatient gaiety' with 'public seriousness' to expose Jekyll's calculated bifurcation.",
+          AO2: "Reads 'impatient gaiety' against the public gravity demanded of a doctor of standing to expose Jekyll's calculated bifurcation.", // VERIFIED: 'impatient gaiety' — Gutenberg #43, Ch.10
           AO3: "Engages with Victorian professional masculinity, where a doctor's standing depended on visible gravity.",
         },
       },
@@ -296,10 +296,10 @@ const jekyllAndHydeEssays: ModelEssay[] = [
     paragraphs: [
       {
         heading: "Lanyon represents science's confidence and its breaking point",
-        body: 'Lanyon is introduced as the embodiment of mid-Victorian medical orthodoxy: hearty, decided, dismissive of Jekyll\'s "unscientific balderdash". His confidence is Stevenson\'s set-up. When he witnesses the transformation, his account ends in a register he had previously mocked — he speaks of his "soul" being "sickened" — and within weeks he is dead. The cause of death is never named in clinical terms because there is none to give; what kills Lanyon is the collapse of his interpretive system. Stevenson\'s point is structural: a worldview built on what can be measured cannot survive contact with phenomena it has no method for. Lanyon dies because his science cannot make room for what he has seen.',
+        body: 'Lanyon is introduced as the embodiment of mid-Victorian medical orthodoxy: hearty, decided, dismissive of Jekyll\'s "unscientific balderdash". His confidence is Stevenson\'s set-up. When he witnesses the transformation, his account ends in a register he had previously mocked — he writes that his "soul sickened at it" — and within weeks he is dead. The cause of death is never named in clinical terms because there is none to give; what kills Lanyon is the collapse of his interpretive system. Stevenson\'s point is structural: a worldview built on what can be measured cannot survive contact with phenomena it has no method for. Lanyon dies because his science cannot make room for what he has seen.', // VERIFIED: "unscientific balderdash" Ch.2; "my soul sickened at it" Ch.9 (Lanyon\'s Narrative)
         annotation: {
           AO1: 'Sets up the argument that confident science is precisely what cannot accommodate the transformation.',
-          AO2: "Tracks Lanyon's lexical shift from 'balderdash' to 'soul' as evidence of his vocabulary's failure.",
+          AO2: "Tracks Lanyon's lexical shift from 'balderdash' to 'soul sickened' as evidence of his vocabulary's failure.",
           AO3: 'Engages with the post-Origin confidence of Victorian medical materialism and its anxieties about residual religious vocabulary.',
         },
       },
@@ -314,7 +314,7 @@ const jekyllAndHydeEssays: ModelEssay[] = [
       },
       {
         heading: 'The vocabulary of religion returns to fill the explanatory gap',
-        body: 'When Jekyll has to describe what Hyde is, he reaches not for the laboratory but for the pulpit. Hyde is "the spirit of hell" within him, "pure evil", a creature whose actions Jekyll narrates in the cadences of a damnation sermon. This is striking from a man who began the novella as a scientific reformer. The novella does not endorse the religious vocabulary as true; it presents it as the only one available once the scientific vocabulary has run out. Stevenson is making a careful structural point: the more confidently the late-Victorian intellect dismisses theological language, the more starkly that language returns when its empirical replacements fail.',
+        body: 'When Jekyll has to describe what Hyde is, he reaches not for the laboratory but for the pulpit. Jekyll says of the moment of the Carew murder that "the spirit of hell awoke in me and raged", and elsewhere he writes that Hyde "was pure evil" — a creature whose actions Jekyll narrates in the cadences of a damnation sermon. This is striking from a man who began the novella as a scientific reformer. The novella does not endorse the religious vocabulary as true; it presents it as the only one available once the scientific vocabulary has run out. Stevenson is making a careful structural point: the more confidently the late-Victorian intellect dismisses theological language, the more starkly that language returns when its empirical replacements fail.', // VERIFIED: Gutenberg #43, Ch.10
         annotation: {
           AO1: 'Argues that religious language is the residue left when scientific language proves inadequate.',
           AO2: "Pairs 'spirit of hell' and 'pure evil' as a deliberate sermonic register from a previously secular voice.",

@@ -32,8 +32,9 @@ type Fragment = {
 const FRAGMENTS: Fragment[] = [
   {
     id: 1,
+    // VERIFIED: Heinemann 1992 edn., Inspector Goole, Act 3, final speech. 6 words (We/are/members/of/one/body).
     quote: '"We are members of one body."',
-    wordCount: 7,
+    wordCount: 6,
     bridge:
       'The speech opens with the Inspector’s thesis statement, distilled into a single declarative sentence.',
     notice:
@@ -44,17 +45,20 @@ const FRAGMENTS: Fragment[] = [
   },
   {
     id: 2,
+    // VERIFIED: Heinemann 1992 edn., Inspector Goole, Act 3, final speech. 6 words.
     quote: '"We are responsible for each other."',
     wordCount: 6,
     bridge: 'The thesis is restated in plainer, secular language so nobody can mistake it.',
     notice:
       'The repetition of the "We are…" structure creates anaphora; the message is the same ethical claim translated from religious metaphor into civic obligation. "Responsible" is abstract but inescapable — there is no opt-out clause.',
     say: 'By stating the same idea twice in different registers, Priestley closes the escape route a sceptical audience member might use ("that’s religion, not me"). Whether you read the line through Christianity or through citizenship, the conclusion is identical.',
+    // VERIFIED: Heinemann 1992 edn., Act 3 — the line "what we all did to her that matters" is spoken by ERIC ("It's still the same rotten story whether it's been told to a police inspector or to somebody else... It's what happened to the girl and what we all did to her that matters"), NOT Sheila. Corrected here.
     zoomOut:
-      'Sheila echoes this line almost immediately in the same act ("It’s what we all did to her that matters"). Priestley dramatises the message being received and re-spoken by the next generation in real time.',
+      'Eric echoes the same ethic moments later in the same act, insisting it is "what we all did to her that matters." Priestley dramatises the Inspector’s message being received and re-spoken by the next generation in real time.',
   },
   {
     id: 3,
+    // VERIFIED: Heinemann 1992 edn., Inspector Goole, Act 3, final speech. 10 words.
     quote: '"And I tell you that the time will soon come"',
     wordCount: 10,
     bridge: 'The Inspector pivots from ethical statement to prophecy.',
@@ -66,6 +70,7 @@ const FRAGMENTS: Fragment[] = [
   },
   {
     id: 4,
+    // VERIFIED: Heinemann 1992 edn., Inspector Goole, Act 3, final speech. 7 words.
     quote: '"if men will not learn that lesson"',
     wordCount: 7,
     bridge: 'The conditional names the price of refusing the speech’s argument.',
@@ -77,6 +82,7 @@ const FRAGMENTS: Fragment[] = [
   },
   {
     id: 5,
+    // VERIFIED: Heinemann 1992 edn., Inspector Goole, Act 3, final speech. Order is fire-blood-anguish (NOT blood-fire-anguish). 12 words.
     quote: '"then they will be taught it in fire and blood and anguish."',
     wordCount: 12,
     bridge: 'The consequences arrive as a tricolon of escalating violence.',
@@ -88,6 +94,7 @@ const FRAGMENTS: Fragment[] = [
   },
   {
     id: 6,
+    // VERIFIED: Heinemann 1992 edn., Inspector Goole, Act 3 — exit line immediately after the prophecy. 2 words.
     quote: '"Good night."',
     wordCount: 2,
     bridge: 'The Inspector exits on a chillingly civil two-word coda.',

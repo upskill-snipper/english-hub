@@ -162,7 +162,7 @@ model User {
   school            String?
   role              Role          @default(STUDENT)
   selectedExamBoard ExamBoard?
-  isMinor           Boolean       @default(false)
+  isMinor           Boolean       @default(false) @map("is_minor")
   country           String
   accountStatus     AccountStatus @default(ACTIVE)
   parentId          String?
@@ -184,25 +184,26 @@ model User {
   pushTokens        Json          @default("[]") @map("push_tokens")
   lastMobileVersion String?       @map("last_mobile_version")
 
-  parent                 User?                @relation("ParentChild", fields: [parentId], references: [id])
-  children               User[]               @relation("ParentChild")
+  parent                 User?                   @relation("ParentChild", fields: [parentId], references: [id])
+  children               User[]                  @relation("ParentChild")
   consents               Consent[]
   essays                 Essay[]
   humanReviewRequests    HumanReviewRequest[]
   subscription           Subscription?
   dataAccessRequests     DataAccessRequest[]
-  safeguardingReports    SafeguardingReport[] @relation("Reporter")
-  assignedReports        SafeguardingReport[] @relation("Assignee")
+  safeguardingReports    SafeguardingReport[]    @relation("Reporter")
+  assignedReports        SafeguardingReport[]    @relation("Assignee")
   auditLogs              AuditLog[]
   privacySettings        PrivacySettings?
-  reviewedRequests       HumanReviewRequest[] @relation("Reviewer")
+  reviewedRequests       HumanReviewRequest[]    @relation("Reviewer")
   suggestions            Suggestion[]
-  weeklyReportsAsParent  WeeklyReport[]       @relation("ParentReports")
-  weeklyReportsAsStudent WeeklyReport[]       @relation("StudentReports")
-  parentInvitesSent      ParentInvite[]       @relation("StudentInvites")
-  parentInvitesUsed      ParentInvite[]       @relation("ParentInviteUsed")
+  weeklyReportsAsParent  WeeklyReport[]          @relation("ParentReports")
+  weeklyReportsAsStudent WeeklyReport[]          @relation("StudentReports")
+  parentInvitesSent      ParentInvite[]          @relation("StudentInvites")
+  parentInvitesUsed      ParentInvite[]          @relation("ParentInviteUsed")
   mobileDevices          MobileDevice[]
   offlineEssayQueueItems OfflineEssayQueueItem[]
+  markingSubmissions     MarkingSubmission[]     @relation("MarkingSubmissionStudent")
 
   @@index([email])
   @@index([role])
@@ -235,10 +236,10 @@ model CookieConsent {
   id          String   @id @default(cuid())
   visitorId   String
   userId      String?
-  choice      String   // "accept_all" | "reject_all" | "custom"
+  choice      String // "accept_all" | "reject_all" | "custom"
   analytics   Boolean  @default(false)
   marketing   Boolean  @default(false)
-  ipHash      String   // SHA-256 hash of client IP — never store raw IP
+  ipHash      String // SHA-256 hash of client IP — never store raw IP
   userAgent   String?
   consentedAt DateTime @default(now())
   version     String
@@ -319,42 +320,42 @@ model HumanReviewRequest {
 }
 
 model Subscription {
-  id                   String               @id @default(cuid())
-  userId               String               @unique
+  id                      String               @id @default(cuid())
+  userId                  String               @unique
   // Stripe identity columns — NULL on mobile (RevenueCat-reconciled) rows.
   // Made optional in 20260420_02_stripe_columns_nullable.sql so the mobile
   // reconciler no longer needs to synthesise `rc_*` sentinel strings.
-  stripeCustomerId     String?
-  stripeSubscriptionId String?              @unique
-  plan                 SubscriptionPlan
-  status               SubscriptionStatus   @default(TRIALING)
-  currentPeriodStart   DateTime
-  currentPeriodEnd     DateTime
-  cancelledAt          DateTime?
+  stripeCustomerId        String?
+  stripeSubscriptionId    String?              @unique
+  plan                    SubscriptionPlan
+  status                  SubscriptionStatus   @default(TRIALING)
+  currentPeriodStart      DateTime
+  currentPeriodEnd        DateTime
+  cancelledAt             DateTime?
   // Set by the RevenueCat REFUND / CHARGEBACK reconciler. Distinct from
   // cancelledAt (user auto-renew off) so refund-driven revocation is queryable.
-  refundedAt           DateTime?            @map("refunded_at")
-  coolingOffWaived     Boolean              @default(false)
-  coolingOffWaivedAt   DateTime?
-  paymentCount         Int                  @default(0)
-  isTeacherPlan        Boolean              @default(false)
-  maxStudents          Int?
-  teacherPriceId       String?
+  refundedAt              DateTime?            @map("refunded_at")
+  coolingOffWaived        Boolean              @default(false)
+  coolingOffWaivedAt      DateTime?
+  paymentCount            Int                  @default(0)
+  isTeacherPlan           Boolean              @default(false)
+  maxStudents             Int?
+  teacherPriceId          String?
   // RevenueCat reconciliation fields (Wave 4). Populated by the mobile
   // webhook handler when a Subscription row represents an iOS/Android
   // IAP rather than a Stripe subscription. Nullable on web-originated rows.
-  revenuecatAppUserId  String?              @map("revenuecat_app_user_id")
-  revenuecatProductId  String?              @map("revenuecat_product_id")
-  platform             SubscriptionPlatform @default(WEB)
-  originalPurchaseDate DateTime?            @map("original_purchase_date")
+  revenuecatAppUserId     String?              @map("revenuecat_app_user_id")
+  revenuecatProductId     String?              @map("revenuecat_product_id")
+  platform                SubscriptionPlatform @default(WEB)
+  originalPurchaseDate    DateTime?            @map("original_purchase_date")
   // Grandfathering columns (R-031, 2026-04-21). Captured at signup, preserved
   // across renewals so Early Access subscribers keep their locked price even
   // after the Aug 2026 Standard rollover. See
   // `src/lib/pricing/grandfather.ts` for capture logic and
   // `supabase/migrations/20260421_01_subscription_grandfather_price.sql`.
-  grandfatheredPriceMinor Int?     @map("grandfathered_price_minor")
-  grandfatheredCurrency   String?  @map("grandfathered_currency") @db.Char(3)
-  pricingTier             String?  @map("pricing_tier")
+  grandfatheredPriceMinor Int?                 @map("grandfathered_price_minor")
+  grandfatheredCurrency   String?              @map("grandfathered_currency") @db.Char(3)
+  pricingTier             String?              @map("pricing_tier")
 
   user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
   renewalReminders RenewalReminder[]
@@ -474,16 +475,16 @@ model Suggestion {
 }
 
 model ParentInvite {
-  id              String    @id @default(cuid())
-  code            String    @unique
-  studentId       String
-  expiresAt       DateTime
-  usedAt          DateTime?
-  usedByParentId  String?
-  createdAt       DateTime  @default(now())
+  id             String    @id @default(cuid())
+  code           String    @unique
+  studentId      String
+  expiresAt      DateTime
+  usedAt         DateTime?
+  usedByParentId String?
+  createdAt      DateTime  @default(now())
 
-  student  User  @relation("StudentInvites", fields: [studentId], references: [id], onDelete: Cascade)
-  usedBy   User? @relation("ParentInviteUsed", fields: [usedByParentId], references: [id], onDelete: SetNull)
+  student User  @relation("StudentInvites", fields: [studentId], references: [id], onDelete: Cascade)
+  usedBy  User? @relation("ParentInviteUsed", fields: [usedByParentId], references: [id], onDelete: SetNull)
 
   @@index([code])
   @@index([studentId])
@@ -522,7 +523,7 @@ model Assignment {
   description String?          @db.Text
   type        AssignmentType
   status      AssignmentStatus @default(ACTIVE)
-  courseId     String?
+  courseId    String?
   moduleIds   String[]
   dueDate     DateTime?
   createdAt   DateTime         @default(now())
@@ -668,23 +669,69 @@ model OfflineEssayQueueItem {
 // Not user-scoped data; retention follows the school-admin audit policy and is
 // purged when a school licence ends.
 model BulkUploadJob {
-  id              String    @id @default(cuid())
-  adminUserId     String    @map("admin_user_id")
-  schoolId        String    @map("school_id")
-  fileName        String    @map("file_name")
-  idempotencyKey  String    @unique @map("idempotency_key")
-  rowCount        Int       @default(0) @map("row_count")
-  successCount    Int       @default(0) @map("success_count")
-  errorCount      Int       @default(0) @map("error_count")
-  createdCount    Int       @default(0) @map("created_count")
-  updatedCount    Int       @default(0) @map("updated_count")
-  skippedCount    Int       @default(0) @map("skipped_count")
-  errorsJson      Json?     @map("errors_json")
-  status          String    @default("pending")
-  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
-  completedAt     DateTime? @map("completed_at") @db.Timestamptz(6)
+  id             String    @id @default(cuid())
+  adminUserId    String    @map("admin_user_id")
+  schoolId       String    @map("school_id")
+  fileName       String    @map("file_name")
+  idempotencyKey String    @unique @map("idempotency_key")
+  rowCount       Int       @default(0) @map("row_count")
+  successCount   Int       @default(0) @map("success_count")
+  errorCount     Int       @default(0) @map("error_count")
+  createdCount   Int       @default(0) @map("created_count")
+  updatedCount   Int       @default(0) @map("updated_count")
+  skippedCount   Int       @default(0) @map("skipped_count")
+  errorsJson     Json?     @map("errors_json")
+  status         String    @default("pending")
+  createdAt      DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  completedAt    DateTime? @map("completed_at") @db.Timestamptz(6)
 
   @@index([adminUserId])
   @@index([schoolId, createdAt(sort: Desc)])
   @@map("BulkUploadJob")
+}
+
+// ──────────────────────────────────────────────
+// School Marking Submissions (Wave 5)
+// ──────────────────────────────────────────────
+//
+// One row per student essay submitted into the school marking pipeline.
+// Written by `/api/school/marking` and updated by `/api/school/marking/override`.
+// Reads happen exclusively through the Supabase client (the route never
+// uses the Prisma client for this table) because authorisation is enforced
+// via RLS keyed on auth.uid() and school_members; the Prisma model exists
+// so the schema ships the column shape and a Prisma migration can be
+// applied alongside the Supabase mirror.
+//
+// Notes on relations:
+//   • `studentId` is a Supabase auth.users UUID. It maps to the Prisma
+//     User row via the unique `supabaseUserId` column (see User above).
+//   • `schoolId` / `classId` / `teacherReviewedById` reference Supabase-only
+//     tables (`schools`, `classes`, `school_members`) which are not modelled
+//     in Prisma. The FK constraints exist in the SQL migration but cannot
+//     be expressed in Prisma here.
+model MarkingSubmission {
+  id                  String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  schoolId            String    @map("school_id") @db.Uuid
+  studentId           String    @map("student_id") @db.Uuid
+  classId             String?   @map("class_id") @db.Uuid
+  examBoard           String    @map("exam_board")
+  essayTitle          String?   @map("essay_title")
+  essayText           String    @map("essay_text") @db.Text
+  aiGrade             String?   @map("ai_grade")
+  aiConfidence        Float?    @map("ai_confidence")
+  aiFeedback          String?   @map("ai_feedback") @db.Text
+  aiBandMarks         Json      @default("[]") @map("ai_band_marks")
+  status              String    @default("pending")
+  submittedAt         DateTime  @default(now()) @map("submitted_at") @db.Timestamptz(6)
+  teacherGrade        String?   @map("teacher_grade")
+  teacherComment      String?   @map("teacher_comment") @db.Text
+  teacherReviewedById String?   @map("teacher_reviewed_by") @db.Uuid
+  teacherReviewedAt   DateTime? @map("teacher_reviewed_at") @db.Timestamptz(6)
+
+  student User? @relation("MarkingSubmissionStudent", fields: [studentId], references: [supabaseUserId], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([schoolId, submittedAt(sort: Desc)])
+  @@index([studentId])
+  @@index([classId])
+  @@map("marking_submissions")
 }

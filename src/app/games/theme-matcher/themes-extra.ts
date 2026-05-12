@@ -446,7 +446,8 @@ const classPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-class-03',
     theme: 'Class & Society',
-    quote: 'How quickly things can tumble ‘round.',
+    // VERIFIED: Russell, Blood Brothers, Mrs Lyons to Mrs Johnstone, Methuen Drama edition
+    quote: 'You’re going to have to give one of them away.',
     text: 'Blood Brothers',
     board: ['AQA', 'Eduqas'],
   },
@@ -544,7 +545,8 @@ const guiltPairings: ThemeQuotePairing[] = [
   {
     id: 'tm-extra-guilt-06',
     theme: 'Guilt',
-    quote: 'I bring on him a disease and sorrow.',
+    // VERIFIED: Stevenson, Strange Case of Dr Jekyll and Mr Hyde, "Henry Jekyll's Full Statement of the Case" (Gutenberg #43)
+    quote: 'I bring on him a disease and a sorrow.',
     text: 'Jekyll and Hyde',
     board: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
   },

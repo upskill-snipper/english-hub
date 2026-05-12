@@ -304,8 +304,9 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     question: 'How many SPaG marks are awarded across the AQA Literature GCSE in total?',
     options: ['0 (SPaG is only on Lang)', '4', '8', '16'],
     correctIndex: 2,
+    // VERIFIED: AQA Spec 8702 §4 (Scheme of Assessment), accessed 2026 — AO4 = 2.5% on Paper 1 + 2.5% on Paper 2 = 5% of 160 = 8 marks total. SPaG awarded ONLY on Section A of each paper (Shakespeare on P1; Modern text on P2). NOT on the 19th-c novel section, NOT on poetry sections.
     explanation:
-      'AQA Lit awards 4 SPaG marks each on Paper 1 Shakespeare, Paper 1 19th-c novel, and Paper 2 modern text + 4 from another rubric — 16 in total across the two papers (4 marks per relevant question).',
+      'AQA Lit awards 4 SPaG (AO4) marks on Paper 1 Section A (Shakespeare) and 4 SPaG marks on Paper 2 Section A (Modern Text) — 8 marks in total. SPaG is NOT credited on the 19th-century novel section, the anthology poetry, or the unseen poetry.',
   },
   {
     id: 'technique-extra-030',
@@ -389,15 +390,19 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
       'Across both AQA English Literature papers, the total number of marks (response + SPaG) is:',
     options: ['96', '128', '160', '192'],
     correctIndex: 2,
-    explanation: 'Paper 1: 64 + 8 SPaG = 72. Paper 2: 84 + 4 SPaG = 88. 72 + 88 = 160 marks.',
+    // VERIFIED: AQA Spec 8702 §4 (Scheme of Assessment), accessed 2026 — Paper 1 = 64 marks (60 response + 4 SPaG); Paper 2 = 96 marks (92 response + 4 SPaG). Total 160.
+    explanation:
+      'Paper 1: 60 response + 4 SPaG = 64 marks (Shakespeare 30+4, 19th-c novel 30). Paper 2: 92 response + 4 SPaG = 96 marks (Modern text 30+4, anthology 30, unseen 24+8). 64 + 96 = 160 marks.',
   },
   {
     id: 'technique-extra-039',
     topic: 'exam-technique',
     question: 'On AQA Lit Paper 1, the 19th-century novel question is worth:',
-    options: ['20 marks', '24 marks', '30 + 4 SPaG (34 total)', '40 marks'],
+    options: ['20 marks', '24 marks', '30 marks (no SPaG)', '34 marks (30 + 4 SPaG)'],
     correctIndex: 2,
-    explanation: 'Both Paper 1 questions are equally weighted at 30 marks plus 4 SPaG (34 each).',
+    // VERIFIED: AQA Spec 8702 §4, accessed 2026 — SPaG (AO4) is awarded on Section A only of Paper 1 (Shakespeare). Section B 19th-century novel = 30 marks, no SPaG.
+    explanation:
+      'The 19th-century novel question is worth 30 marks. SPaG (AO4) is only awarded on Paper 1 Section A (Shakespeare) and Paper 2 Section A (Modern text) — not on the 19th-c novel section.',
   },
   {
     id: 'technique-extra-040',
@@ -1163,28 +1168,30 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'On Eduqas GCSE Literature, the poetry anthology section is:',
     options: [
-      'Closed book — anthology not allowed',
+      'Closed book — anthology not allowed; the named poem is printed on the paper as stimulus, the comparison poem must be recalled from memory',
       'Open book — a clean copy of the anthology is provided',
       'Open book — your annotated anthology is allowed',
       'Not assessed',
     ],
-    correctIndex: 1,
+    correctIndex: 0,
+    // VERIFIED: Eduqas GCSE English Literature spec (from 2015, exams to 2026), accessed 2026 — Eduqas is a closed-book exam. The first ("named") anthology poem appears printed in the question paper as stimulus; the second poem for comparison must be recalled from memory. NO clean anthology is provided.
     explanation:
-      'Eduqas GCSE Literature provides a clean (un-annotated) copy of the poetry anthology in the exam. Set prose/drama texts remain closed-book.',
+      'Eduqas GCSE Literature is a closed-book exam — students cannot bring texts in. The named anthology poem is reproduced on the paper as stimulus, but the second poem for the comparison question must be quoted from memory. Set prose/drama and Shakespeare are also closed-book.',
   },
   {
     id: 'technique-extra-098',
     topic: 'exam-technique',
-    question: 'On Edexcel GCSE Literature Paper 2, what kind of poetry comparison appears?',
+    question: 'On Edexcel GCSE Literature Paper 2, what poetry comparisons appear?',
     options: [
-      'Compare two poems from the anthology (closed book — quote from memory)',
-      'Compare two unseen poems',
+      'Section B Part 1: compare a printed anthology poem with another poem from the same collection (recalled from memory). Section B Part 2: compare two unseen poems',
+      'Compare two unseen poems only — no anthology in the exam',
       'Compare a poem with a novel',
       'No comparison at all',
     ],
     correctIndex: 0,
+    // VERIFIED: Edexcel/Pearson 1ET0/02 specimen and 2023/2024 question papers, accessed 2026 — Paper 2 (2h 15m) Section A = 19th-century novel; Section B Part 1 = anthology poetry comparison (printed named poem + one chosen poem from the same collection, recalled from memory); Section B Part 2 (Q12) = unseen poetry comparison. Closed-book exam.
     explanation:
-      'Edexcel Lit Paper 2 Section A asks students to compare two poems from the studied collection (closed book). Section B has unseen poetry.',
+      'Edexcel Lit Paper 2 Section A is the 19th-century novel. Section B is poetry: Part 1 prints one named poem from the studied collection and asks students to compare it with another poem from the same collection (recalled from memory — closed book); Part 2 compares two contemporary unseen poems printed on the paper.',
   },
   {
     id: 'technique-extra-099',

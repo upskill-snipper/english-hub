@@ -21,8 +21,9 @@ const cards: Card[] = [
   },
   {
     kind: 'Notice',
-    fragment: '"Mother, mother the devil\'s in the kitchen"',
-    body: "Notice the abrupt shift from Narrator's framing into a working-class Liverpool register — superstition rendered as folk speech, half-comic, half-genuine. The Devil arrives in a kitchen, not in a cathedral, and that detail tells us the play will locate its tragedy in domestic, working-class space. Russell pairs grand portent with kitchen-sink texture; the Narrator's mythic voice and Mrs Johnstone's vernacular sit side by side from the very first beats.",
+    // VERIFIED: Mrs Johnstone's superstition speech, e.g. "never put new shoes on a table" — Methuen Drama edition. The earlier draft of this card cited an unverifiable line.
+    fragment: '"never put new shoes on a table"',
+    body: "Notice the abrupt shift from Narrator's framing into a working-class Liverpool register — superstition rendered as folk speech, half-comic, half-genuine. The taboo is domestic, kitchen-sized, and that detail tells us the play will locate its tragedy in working-class space. Russell pairs grand portent with kitchen-sink texture; the Narrator's mythic voice and Mrs Johnstone's vernacular sit side by side from the very first beats.",
   },
   {
     kind: 'Say',

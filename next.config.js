@@ -53,6 +53,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/privacy-policy',
+        destination: '/legal/privacy',
+        permanent: true,
+      },
+      {
         source: '/resources/revision',
         destination: '/resources/revision-notes',
         permanent: true,

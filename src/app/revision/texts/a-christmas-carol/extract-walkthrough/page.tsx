@@ -173,8 +173,9 @@ const walkthrough: WalkthroughChunk[] = [
     heading: '1. The asyndetic list of adjectives',
     lines: 'Lines 1-3',
     excerpt: '"a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!"',
+    // VERIFIED: Project Gutenberg #46, Stave 1 — list reads "squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner!" — five present participles followed by two adjectives ("covetous", "old")
     notice:
-      'Dickens piles up seven adjectives without conjunctions (asyndetic listing). Six of the seven are present participles ending in "-ing", which keeps the rhythm relentless and ongoing. Almost every word names an act of physical force or theft: squeezing, wrenching, grasping, scraping, clutching.',
+      'Dickens piles up five present participles and two adjectives without conjunctions (asyndetic listing). The five "-ing" verbs at the head of the list keep the rhythm relentless and ongoing, and almost every one names an act of physical force or theft: squeezing, wrenching, grasping, scraping, clutching.',
     say: 'Dickens uses an asyndetic list of violent participles to characterise Scrooge as a man defined by perpetual extraction, the breathless rhythm of "squeezing, wrenching, grasping" mimicking the unending, grinding labour of the miser at his "grindstone".',
     zoomOut:
       'In 1843 Dickens was writing in direct response to a parliamentary report on child labour and the lived effects of the 1834 New Poor Law. By opening with a portrait of a man whose entire being is reduced to acts of taking, Dickens establishes Scrooge as an embodiment of laissez-faire capitalism, the very mindset the novella will set out to reform.',

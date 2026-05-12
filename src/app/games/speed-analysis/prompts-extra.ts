@@ -552,11 +552,13 @@ export const speedAnalysisPromptsExtra: SpeedAnalysisPromptExtra[] = [
     time: 100,
   },
   {
+    // VERIFIED: Gutenberg #43, Ch. 2 "Search for Mr Hyde" — Utterson's direct speech to himself, not free indirect.
     id: 'sa-extra-jh-02',
     quote: 'Something troglodytic.',
     text: 'Jekyll and Hyde',
-    character: 'Mr Utterson (free indirect)',
-    context: 'Chapter 2 — describing his impression of Hyde.',
+    character: 'Mr Utterson',
+    context:
+      'Chapter 2 ("Search for Mr Hyde") — Utterson speaks aloud trying to name his disgust at Hyde.',
     expectedFeatures: [
       'classical/anthropological diction "troglodytic"',
       'vague pronoun "something"',
@@ -620,11 +622,12 @@ export const speedAnalysisPromptsExtra: SpeedAnalysisPromptExtra[] = [
     time: 100,
   },
   {
+    // VERIFIED: Gutenberg #43, Ch. 2 "Search for Mr Hyde" — spoken after Utterson meets Hyde, just before "Something troglodytic".
     id: 'sa-extra-jh-06',
     quote: 'There must be something else.',
     text: 'Jekyll and Hyde',
     character: 'Mr Utterson',
-    context: "Chapter 2 — puzzling over Jekyll's strange will.",
+    context: 'Chapter 2 — after meeting Hyde, struggling to name his disgust.',
     expectedFeatures: [
       'modal "must" — epistemic certainty',
       'indefinite pronoun "something"',
@@ -743,20 +746,21 @@ export const speedAnalysisPromptsExtra: SpeedAnalysisPromptExtra[] = [
 
   // ── AQA Power & Conflict / Love & Relationships (8) ────────────────────────
   {
+    // VERIFIED: Project Gutenberg #4798 + poets.org — "works" is lowercase in 1818 Examiner / 1819 Rosalind & Helen text.
     id: 'sa-extra-pc-ozy-01',
-    quote: 'Look on my Works, ye Mighty, and despair!',
+    quote: 'Look on my works, ye Mighty, and despair!',
     text: 'Ozymandias — Shelley',
     character: 'Speaker quoting Ozymandias',
     context: "Power & Conflict — inscription on the ruined statue's pedestal.",
     expectedFeatures: [
       'imperative "Look"',
       'archaic vocative "ye Mighty"',
-      'capitalisation of "Works" — hubris',
+      'capitalised "Mighty" elevating fellow rulers',
       'dramatic irony — nothing remains',
     ],
-    expectedMethods: ['imperative', 'archaic vocative', 'capitalisation'],
+    expectedMethods: ['imperative', 'archaic vocative', 'dramatic irony'],
     modelAnswer:
-      'Ozymandias\'s imperative commands awe, but Shelley engineers savage dramatic irony: the surrounding desert is empty. The archaic vocative "ye Mighty" addresses fellow rulers, exposing tyranny as a closed elite club. Capitalising "Works" parodies Romantic monumental ambition while echoing biblical phrasing — Shelley\'s 1818 republicanism turning sacred register against monarchy. The very inscription that should glorify the king now mocks him, an embodied argument that political power decays while the poet\'s words endure. For post-Napoleonic readers, the warning aimed squarely at autocrats.',
+      'Ozymandias\'s imperative commands awe, but Shelley engineers savage dramatic irony: the surrounding desert is empty. The archaic vocative "ye Mighty" addresses fellow rulers, exposing tyranny as a closed elite club, the capitalisation of "Mighty" elevating them as a self-anointed caste. Shelley\'s 1818 republicanism turns the inscription against itself — words intended to glorify the king now mock him, an embodied argument that political power decays while the poet\'s words endure. For post-Napoleonic readers, the warning aimed squarely at autocrats.',
     time: 100,
   },
   {

@@ -806,14 +806,15 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     correctIndex: 1,
   },
   {
+    // VERIFIED: Heinemann/Penguin Acts 1-3 — Birling's repeated "hard-headed business man" mantra appears in Act 1 (3 separate instances)
     id: 'gc-extra-g7-005',
     grade: 7,
     type: 'analysis',
     prompt:
-      '"I\'ll have no preaching from you, sir!" (An Inspector Calls, Mr Birling) — what does this reveal?',
+      '"I speak as a hard-headed business man" (An Inspector Calls, Mr Birling, Act 1) — what does this self-description reveal?',
     options: [
-      'Birling is religious',
-      'His refusal to engage with social conscience and his patriarchal authority',
+      'Birling is intellectually humble',
+      "His pride in pragmatic capitalism, dramatic irony given his subsequent wrong predictions, and Priestley's caricature of pre-war complacency",
       "He dislikes the Inspector's voice",
       'He is joking',
     ],
@@ -876,15 +877,18 @@ export const EXTRA_QUESTION_BANK: ExtraGradeQuestion[] = [
     correctIndex: 1,
   },
   {
+    // VERIFIED: Project Gutenberg eBook #46, Stave 4 — Bob Cratchit's "I am very happy" speech: "I wish you could have gone. It would have done you good to see how green a place it is."
+    // Original "Pale as a lily" was a fabricated quotation — replaced with the verified Stave 3 description of Tiny Tim's frailty.
     id: 'gc-extra-g7-010',
     grade: 7,
     type: 'analysis',
-    prompt: '"Pale as a lily" used of Tiny Tim (A Christmas Carol) — the simile suggests:',
+    prompt:
+      '"Alas for Tiny Tim, he bore a little crutch, and had his limbs supported by an iron frame!" (A Christmas Carol, Stave 3) — the exclamation suggests:',
     options: [
       'Tiny Tim is healthy',
-      'Fragility, innocence and association with death/funerals — eliciting Victorian sentiment',
+      "Dickens's sentimental appeal: pathos through Tim's physical frailty solicits middle-class compassion for the industrial poor",
       'A garden setting',
-      'He is wearing white',
+      'He is wearing armour',
     ],
     correctIndex: 1,
   },

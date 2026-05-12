@@ -891,7 +891,8 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 2,
     explanation:
-      'Gillian Clarke\'s "Catrin" centres on the bond between mother and daughter, both at birth and during a teenage standoff "rosy in the heat", where the "tight red rope of love" still ties them. Form uses irregular line lengths to dramatise tension (AO2).',
+      // VERIFIED: gillianclarke.co.uk — "rosy in the heat" is not in the poem; the actual phrase is "rosy, / Defiant glare". The "tight / Red rope of love" is from stanza one.
+      'Gillian Clarke\'s "Catrin" centres on the bond between mother and daughter, both at birth and during a teenage standoff (her "rosy, / Defiant glare"), where the "tight / Red rope of love" still ties them. Form uses irregular line lengths to dramatise tension (AO2).',
     boards: ['edexcel'],
   },
   {
@@ -963,7 +964,8 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Question marks, full stops, exclamation marks become flying nails and shrapnel. Carson literalises punctuation as violence: "It was raining exclamation marks, / Nuts, bolts, nails, car keys". The form falters into broken lines, mirroring the speaker\'s panicked stutter (AO2/AO3).',
+      // VERIFIED: WFU Press / LitCharts — "car-keys" is hyphenated in Carson's text.
+      'Question marks, full stops, exclamation marks become flying nails and shrapnel. Carson literalises punctuation as violence: "It was raining exclamation marks, / Nuts, bolts, nails, car-keys". The form falters into broken lines, mirroring the speaker\'s panicked stutter (AO2/AO3).',
     boards: ['edexcel'],
   },
   {
@@ -1078,7 +1080,8 @@ export const poetryExtraQuestions: QuizQuestion[] = [
   {
     id: 'poetry-extra-072',
     topic: 'poetry',
-    question: 'Owen Sheers\'s "Hawk Roosting" by Ted Hughes (Eduqas anthology) is voiced by whom?',
+    // VERIFIED: Poetry Foundation/LitCharts — "Hawk Roosting" is by Ted Hughes alone (no Sheers attribution).
+    question: 'Ted Hughes\'s "Hawk Roosting" (Eduqas anthology) is voiced by whom?',
     options: [
       'A naturalist observer',
       'The hawk itself, declaring its own dominance',
