@@ -17,6 +17,7 @@ const legalPages = [
   { href: '/legal/complaints', label: 'Complaints Procedure' },
   { href: '/data-processing', label: 'Data Processing' },
   { href: '/legal/privacy-qatar', label: 'Qatar Privacy Notice' },
+  { href: '/legal/privacy-qatar-supplement', label: 'Qatar Privacy Supplement' },
   { href: '/legal/disclaimer', label: 'Full Disclaimer' },
   { href: '/legal/rights', label: 'Rights & Permissions' },
 ]

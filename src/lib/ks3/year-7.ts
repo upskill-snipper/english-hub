@@ -11,7 +11,19 @@
  * over the next iterations.
  */
 
-import type { Year } from './types'
+import type { Year, Lesson, LessonFocus } from './types'
+
+// Compact lesson builder — Y7 T1 was authored before this helper landed
+// and uses the full {focus, skillCodes, whatStudentsDo, task, successCriteria}
+// form directly. T2 and T3 use this helper for readability.
+type Quick = { focus: LessonFocus; skills: string[]; do: string; task: string; success: string }
+const lesson = (q: Quick): Lesson => ({
+  focus: q.focus,
+  skillCodes: q.skills,
+  whatStudentsDo: { en: q.do },
+  task: { en: q.task },
+  successCriteria: { en: q.success },
+})
 
 const Y7_T1: Year['terms'][number] = {
   number: 1,

@@ -24,6 +24,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { compileMDX } from 'next-mdx-remote/rsc'
 
+import { AIContentLabel } from '@/components/ai/ai-content-label'
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { getBlogPost, getBlogSlugs, type BlogPost } from '@/lib/blog/posts'
 
@@ -185,6 +186,11 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
             <span>{post.readingTime} min read</span>
             <span aria-hidden="true">·</span>
             <span>{post.educationalLevel}</span>
+            <span aria-hidden="true">·</span>
+            {/* PDPPL Remediation 6 — AI involvement disclosure at the
+                point of consumption. Blog posts in this site are drafted
+                by the agent pipeline and human-reviewed before publish. */}
+            <AIContentLabel variant="inline" />
           </div>
         </header>
 
