@@ -142,7 +142,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
   })
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-16 lg:max-w-3xl lg:px-8">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: SITE_URL },
@@ -188,7 +188,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
           </div>
         </header>
 
-        <div className="prose prose-neutral max-w-none dark:prose-invert">{content}</div>
+        <div className="prose prose-eh prose-lg max-w-none dark:prose-invert">{content}</div>
 
         {post.tags.length > 0 ? (
           <div className="mt-10 flex flex-wrap gap-2 border-t border-border/60 pt-6">

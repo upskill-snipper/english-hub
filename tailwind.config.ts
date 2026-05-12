@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 import tailwindAnimate from 'tailwindcss-animate'
+import tailwindTypography from '@tailwindcss/typography'
 
 const config: Config = {
   content: [
@@ -12,7 +13,7 @@ const config: Config = {
       colors: {
         /* ── Anthology colour scales ───────────────────────────────── */
         cream: {
-          50:  '#FBF7F0',
+          50: '#FBF7F0',
           100: '#F5EFE4',
           200: '#ECE2CF',
           300: '#DECEB0',
@@ -167,9 +168,18 @@ const config: Config = {
       fontSize: {
         /* Mona Sans display sizes — tight tracking, heavy weight */
         display: ['3.5rem', { lineHeight: '1.08', fontWeight: '800', letterSpacing: '-0.03em' }],
-        'display-sm': ['2.5rem', { lineHeight: '1.1', fontWeight: '800', letterSpacing: '-0.025em' }],
-        'heading-lg': ['1.875rem', { lineHeight: '1.15', fontWeight: '700', letterSpacing: '-0.02em' }],
-        'heading-md': ['1.25rem', { lineHeight: '1.25', fontWeight: '600', letterSpacing: '-0.015em' }],
+        'display-sm': [
+          '2.5rem',
+          { lineHeight: '1.1', fontWeight: '800', letterSpacing: '-0.025em' },
+        ],
+        'heading-lg': [
+          '1.875rem',
+          { lineHeight: '1.15', fontWeight: '700', letterSpacing: '-0.02em' },
+        ],
+        'heading-md': [
+          '1.25rem',
+          { lineHeight: '1.25', fontWeight: '600', letterSpacing: '-0.015em' },
+        ],
         'body-lg': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }],
         'body-sm': ['0.875rem', { lineHeight: '1.6', fontWeight: '400' }],
         caption: ['0.75rem', { lineHeight: '1.5', fontWeight: '500' }],
@@ -223,8 +233,132 @@ const config: Config = {
           '80%': { transform: 'translateX(4px)' },
         },
       },
+      // ── Long-form article typography (blog, revision notes) ─────────
+      //
+      // The default `prose` size leans tight for marketing surfaces.
+      // We use blog posts as a top-of-funnel SEO play, so reading
+      // comfort matters: bigger type, generous paragraph rhythm, and
+      // section-heading breathing room you'd find in a magazine layout.
+      // The `prose-eh` variant (className="prose prose-eh max-w-none")
+      // is what the blog template + revision-notes template should use.
+      typography: ({ theme }: { theme: (key: string) => string }) => ({
+        eh: {
+          css: {
+            // Body text — 18px base on mobile, 19px desktop.
+            fontSize: '1.0625rem', // 17px
+            lineHeight: '1.75',
+            color: theme('colors.foreground'),
+            // Generous paragraph spacing. The defaults (0.75em→0.75em
+            // top/bottom) collapse so paragraphs sit too close; bump
+            // both sides for a calmer read.
+            p: {
+              marginTop: '1.4em',
+              marginBottom: '1.4em',
+              lineHeight: '1.75',
+            },
+            // H1 is rendered above the prose container, so we don't
+            // style it here. Headings inside the body are H2 / H3 / H4.
+            h2: {
+              marginTop: '2.5em',
+              marginBottom: '0.9em',
+              fontSize: '1.65em',
+              fontWeight: '700',
+              lineHeight: '1.3',
+              letterSpacing: '-0.01em',
+              // Subtle separator above each section.
+              borderTopWidth: '1px',
+              borderTopColor: 'hsl(var(--border) / 0.6)',
+              paddingTop: '1.5em',
+            },
+            'h2:first-child': {
+              borderTopWidth: '0',
+              paddingTop: '0',
+              marginTop: '0',
+            },
+            h3: {
+              marginTop: '2em',
+              marginBottom: '0.6em',
+              fontSize: '1.25em',
+              fontWeight: '600',
+              lineHeight: '1.4',
+            },
+            h4: {
+              marginTop: '1.75em',
+              marginBottom: '0.5em',
+              fontSize: '1.075em',
+              fontWeight: '600',
+            },
+            // Lists — clear bullets, comfortable item spacing.
+            ul: { marginTop: '1.25em', marginBottom: '1.25em', paddingLeft: '1.5em' },
+            ol: { marginTop: '1.25em', marginBottom: '1.25em', paddingLeft: '1.5em' },
+            li: { marginTop: '0.5em', marginBottom: '0.5em' },
+            'ul > li::marker': { color: 'hsl(var(--muted-foreground))' },
+            'ol > li::marker': { color: 'hsl(var(--muted-foreground))' },
+            // Strong + em — slight weight bump on bold, italic stays italic.
+            strong: { color: theme('colors.foreground'), fontWeight: '600' },
+            em: { color: 'inherit' },
+            // Inline code + code blocks.
+            code: {
+              backgroundColor: 'hsl(var(--muted))',
+              padding: '0.15em 0.4em',
+              borderRadius: '0.25rem',
+              fontSize: '0.9em',
+              fontWeight: '500',
+            },
+            'code::before': { content: '""' },
+            'code::after': { content: '""' },
+            pre: {
+              backgroundColor: 'hsl(var(--muted))',
+              color: theme('colors.foreground'),
+              padding: '1em 1.25em',
+              borderRadius: '0.5rem',
+              marginTop: '1.5em',
+              marginBottom: '1.5em',
+            },
+            'pre code': { backgroundColor: 'transparent', padding: '0' },
+            // Blockquotes — left bar, sans italic (italic is too noisy at length).
+            blockquote: {
+              fontStyle: 'normal',
+              fontWeight: '400',
+              borderLeftWidth: '3px',
+              borderLeftColor: 'hsl(var(--primary) / 0.5)',
+              paddingLeft: '1.25em',
+              marginTop: '1.5em',
+              marginBottom: '1.5em',
+              color: 'hsl(var(--muted-foreground))',
+            },
+            'blockquote p:first-of-type::before': { content: '""' },
+            'blockquote p:last-of-type::after': { content: '""' },
+            // Horizontal rules — used as section dividers in blog MDX.
+            hr: {
+              marginTop: '3em',
+              marginBottom: '3em',
+              borderTopWidth: '1px',
+              borderColor: 'hsl(var(--border) / 0.7)',
+            },
+            // Links — underlined with the brand teal.
+            a: {
+              color: 'hsl(var(--primary))',
+              textDecoration: 'underline',
+              textUnderlineOffset: '2px',
+              fontWeight: '500',
+            },
+            'a:hover': { textDecoration: 'underline', textDecorationThickness: '2px' },
+            // Images — round the corners, subtle shadow.
+            img: {
+              borderRadius: '0.5rem',
+              marginTop: '2em',
+              marginBottom: '2em',
+            },
+            // Tables — comfortable padding.
+            table: { marginTop: '2em', marginBottom: '2em', fontSize: '0.95em' },
+            'thead th': { fontWeight: '600', paddingBottom: '0.6em' },
+            'tbody td': { paddingTop: '0.6em', paddingBottom: '0.6em' },
+          },
+        },
+      }),
     },
   },
-  plugins: [tailwindAnimate],
+  plugins: [tailwindAnimate, tailwindTypography],
 }
 export default config
