@@ -28,6 +28,14 @@ const BLOG_URL = `${SITE_URL}/blog`
 
 type Params = { slug: string }
 
+/**
+ * Static slugs only. Without this, unknown slugs at runtime render
+ * `not-found.tsx` with HTTP 200, which lets Google index empty "Article
+ * not found" pages and wastes crawl budget. Setting `dynamicParams = false`
+ * makes Next.js return a hard 404 for any slug not in generateStaticParams.
+ */
+export const dynamicParams = false
+
 export function generateStaticParams(): Params[] {
   return getBlogSlugs().map((slug) => ({ slug }))
 }
