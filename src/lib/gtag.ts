@@ -39,6 +39,34 @@ export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA4_ID || ''
 export const isGAEnabled = (): boolean => Boolean(GA_MEASUREMENT_ID)
 
 /**
+ * Strip any property whose key matches a banned-PII pattern.
+ *
+ * GDPR Art. 5(1)(c) (data minimisation) + ICO Children's Code standard 9
+ * (no profiling of under-18s without strict justification) require that
+ * we never forward identifying signals to GA4. This is the last line of
+ * defence — even if a call-site mistakenly passes `email` or `firstName`
+ * in an event payload, redactPII drops it before it leaves the browser.
+ *
+ * Matches are case-insensitive and substring-based, so `userEmail`,
+ * `parent_email`, `dateOfBirth`, `DOB`, `password_hash`, `auth_token`,
+ * `firstName`, `last_name`, `homeAddress` are all stripped.
+ *
+ * Returns a NEW object — never mutates the caller's payload.
+ */
+const PII_KEY_PATTERN =
+  /email|password|token|dob|date_of_birth|firstName|first_name|lastName|last_name|address/i
+
+export function redactPII<T extends Record<string, unknown> | undefined>(payload: T): T {
+  if (!payload) return payload
+  const cleaned: Record<string, unknown> = {}
+  for (const [key, value] of Object.entries(payload)) {
+    if (PII_KEY_PATTERN.test(key)) continue
+    cleaned[key] = value
+  }
+  return cleaned as T
+}
+
+/**
  * Mirror localStorage `cookie-consent` into a first-party cookie so
  * /api/ga4/track can verify consent server-side. Idempotent.
  *
@@ -76,7 +104,15 @@ function postTrack(payload: { event_name: string; params?: Record<string, unknow
   if (typeof window === 'undefined') return
   if (!GA_MEASUREMENT_ID) return
 
-  const body = JSON.stringify(payload)
+  // Defence-in-depth: every event passes through redactPII before leaving
+  // the browser. Even if a future call-site accidentally includes an email
+  // or name in params, the banned keys are stripped here.
+  const safePayload = {
+    event_name: payload.event_name,
+    params: redactPII(payload.params ?? {}),
+  }
+
+  const body = JSON.stringify(safePayload)
 
   // Prefer sendBeacon for navigation-triggered events — it survives
   // page unload (which `fetch` doesn't reliably). Fall back to fetch

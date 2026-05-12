@@ -27,8 +27,16 @@
       "schedule": "30 3 * * *"
     },
     {
+      "path": "/api/cron/dormancy-purge",
+      "schedule": "0 4 * * 0"
+    },
+    {
       "path": "/api/cron/data-retention",
       "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/cron/weekly-student-reports",
+      "schedule": "0 17 * * 0"
     },
     {
       "path": "/api/cron/weekly-reports",

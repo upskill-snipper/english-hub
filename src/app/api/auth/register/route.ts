@@ -98,11 +98,13 @@ const registerBodySchema = z.object({
 // bcrypt hash format (no `$2a$`/`$2b$` prefix).
 const SUPABASE_MANAGED_SENTINEL = 'SUPABASE_MANAGED'
 
-// Minor threshold — ICO Children's Code defines a child as under 18, but
-// this project uses under-16 as the "isMinor" flag per the existing
-// client-side logic in `src/app/auth/register/page.tsx` (line 194) and
-// the child-privacy defaults in `src/lib/privacy/child-defaults.ts`.
-const MINOR_AGE_THRESHOLD = 16
+// Minor threshold — ICO Children's Code defines a child as under 18.
+// Anyone aged 13–17 is tagged `isMinor: true` so downstream features
+// (analytics, marketing, recommender, parental-consent UX) can apply
+// child-safe defaults. Note: the high-privacy defaults in
+// `src/lib/privacy/child-defaults.ts` are scoped to under-16; the
+// `isMinor` flag is the broader 13–17 marker.
+const MINOR_AGE_THRESHOLD = 18
 const MIN_AGE = 13
 
 // ─── Age helper ────────────────────────────────────────────────────────────
@@ -193,8 +195,14 @@ export async function POST(request: NextRequest) {
 
     const age = calculateAgeFromDate(dob)
     if (age < MIN_AGE) {
+      // ICO Children's Code: under-13s cannot self-sign-up. The client
+      // form blocks submit, but we re-enforce server-side because the
+      // browser is untrusted.
       return NextResponse.json(
-        { error: 'You must be at least 13 years old to register.' },
+        {
+          error:
+            "You're not yet old enough to create your own account. Ask a parent or carer to set up a parent-linked account from /parent.",
+        },
         { status: 403 },
       )
     }
@@ -229,6 +237,9 @@ export async function POST(request: NextRequest) {
           dateOfBirth: dob,
           country: data.country,
           role,
+          // isMinor flags users aged 13–17 (per Children's Code). Required
+          // for downstream gating; if the Prisma `isMinor` column is
+          // missing, run a migration to add `Boolean @default(false)`.
           isMinor,
         },
         select: {
@@ -238,6 +249,17 @@ export async function POST(request: NextRequest) {
           isMinor: true,
         },
       })
+
+      // TODO (cross-file, out of this agent's write scope): once the new
+      // user row exists, invoke `applyChildDefaults(created.id)` from
+      // `src/lib/privacy/child-defaults.ts` to materialise high-privacy
+      // settings for child accounts (under-16). The helper does not yet
+      // exist in that module — only `getChildDefaults()` /
+      // `getChildProfileDefaults()` are exported. A follow-up PR should
+      // add `applyChildDefaults(userId: string): Promise<void>` that
+      // upserts the defaults into the relevant settings tables, then
+      // call it here gated on `isMinor && age < 16`.
+      // if (isMinor && age < 16) await applyChildDefaults(created.id)
 
       return NextResponse.json(created, { status: 201 })
     } catch (dbError) {

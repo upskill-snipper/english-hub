@@ -104,6 +104,17 @@ export function CookieConsent() {
     }
   }
 
+  function handleDismiss() {
+    // ePrivacy: user must be able to close the banner without consenting.
+    // Treat dismissal as refusal of all non-essential cookies (no consent
+    // recorded as "all"); we persist 'essential' so the banner does not
+    // re-appear on every page-load and we log the choice for audit trail.
+    localStorage.setItem('cookie-consent', 'essential')
+    setVisible(false)
+    window.dispatchEvent(new CustomEvent('cookie-consent-changed'))
+    logConsentToServer('essential')
+  }
+
   function logConsentToServerCustom(analytics: boolean) {
     let visitorId = localStorage.getItem('cookie-visitor-id')
     if (!visitorId) {
@@ -166,23 +177,47 @@ export function CookieConsent() {
       aria-label="Cookie consent"
     >
       <div className="mx-auto max-w-4xl p-4">
-        <div className="rounded-xl border border-border bg-background/95 backdrop-blur-md shadow-2xl p-6">
+        <div className="relative rounded-xl border border-border bg-background/95 backdrop-blur-md shadow-2xl p-6">
+          {/* Dismiss (close) — ePrivacy: user must be able to close without consenting */}
+          <button
+            type="button"
+            onClick={handleDismiss}
+            aria-label="Close cookie banner without accepting non-essential cookies"
+            className="absolute right-3 top-3 rounded-md p-1 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
           {!showPreferences ? (
             /* ── Main banner ────────────────────────────── */
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex-1 space-y-1">
-                <p className="text-sm font-medium text-foreground">
-                  We use cookies to improve your experience
-                </p>
+              <div className="flex-1 space-y-1 pr-6">
+                <p className="text-sm font-medium text-foreground">Cookie settings</p>
                 <p className="text-xs text-muted-foreground">
-                  We use essential cookies to make the site work, and analytics cookies to help us
-                  understand how you use it.{' '}
+                  We use essential cookies to make the site work. With your consent we also use
+                  analytics cookies to understand how the site is used. You can accept, reject, or
+                  manage your preferences. Read our{' '}
                   <Link
                     href="/cookie-policy"
                     className="underline underline-offset-2 hover:text-foreground transition-colors"
                   >
                     Cookie Policy
                   </Link>
+                  .
                 </p>
               </div>
 
@@ -210,10 +245,10 @@ export function CookieConsent() {
           ) : (
             /* ── Preferences panel ─────────────────────── */
             <div className="space-y-4">
-              <div className="space-y-1">
+              <div className="space-y-1 pr-6">
                 <p className="text-sm font-medium text-foreground">Cookie Preferences</p>
                 <p className="text-xs text-muted-foreground">
-                  Choose which cookies you allow.{' '}
+                  Choose which cookies you allow. All non-essential cookies are off by default.{' '}
                   <Link
                     href="/cookie-policy"
                     className="underline underline-offset-2 hover:text-foreground transition-colors"
@@ -260,12 +295,24 @@ export function CookieConsent() {
                 </button>
               </div>
 
-              <div className="flex items-center justify-end gap-2 pt-1">
+              <div className="flex flex-wrap items-center justify-end gap-2 pt-1">
                 <button
                   onClick={() => setShowPreferences(false)}
-                  className="rounded-lg border border-border px-4 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                  className="rounded-lg border border-border px-4 py-2 text-xs font-medium text-foreground hover:bg-muted/50 transition-colors"
                 >
                   Back
+                </button>
+                <button
+                  onClick={() => saveConsent('essential')}
+                  className="rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  Reject All
+                </button>
+                <button
+                  onClick={() => saveConsent('all')}
+                  className="rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  Accept All
                 </button>
                 <button
                   onClick={handleSavePreferences}

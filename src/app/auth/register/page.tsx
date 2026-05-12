@@ -105,7 +105,10 @@ function RegisterForm() {
     if (accountType === 'student') {
       if (!dobDay || !dobMonth || !dobYear) errors.dob = 'Date of birth is required.'
       if (isUnder13) {
-        errors.dob = 'You must be at least 13 years old to create an account.'
+        // ICO Children's Code: under-13s cannot self-sign-up. They must be
+        // routed to the parent-linked flow at /parent.
+        errors.dob =
+          "You're not yet old enough to create your own account. Ask a parent or carer to set up a parent-linked account from /parent."
       }
       if (isUnder16 && !parentGuardianEmail) {
         errors.parentGuardianEmail = 'Parent/Guardian email is required for users under 16.'

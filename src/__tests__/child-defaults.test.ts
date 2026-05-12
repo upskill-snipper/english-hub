@@ -7,7 +7,7 @@ import {
   type ChildPrivacySettings,
 } from '@/lib/privacy/child-defaults'
 
-describe('Child Privacy Defaults (ICO Children\'s Code - Standard 3)', () => {
+describe("Child Privacy Defaults (ICO Children's Code - Standard 3)", () => {
   // ── CHILD_DEFAULT_SETTINGS constant ────────────────────────────────────
 
   it('disables personalised recommendations by default', () => {
@@ -34,9 +34,9 @@ describe('Child Privacy Defaults (ICO Children\'s Code - Standard 3)', () => {
     expect(CHILD_DEFAULT_SETTINGS.socialShareNudge).toBe(false)
   })
 
-  it('has exactly 6 settings keys', () => {
+  it('has exactly 8 settings keys', () => {
     const keys = Object.keys(CHILD_DEFAULT_SETTINGS)
-    expect(keys).toHaveLength(6)
+    expect(keys).toHaveLength(8)
     expect(keys).toEqual(
       expect.arrayContaining([
         'personalisedRecommendations',
@@ -45,7 +45,9 @@ describe('Child Privacy Defaults (ICO Children\'s Code - Standard 3)', () => {
         'analyticsOptIn',
         'marketingOptIn',
         'socialShareNudge',
-      ])
+        'publicLeaderboards',
+        'geolocation',
+      ]),
     )
   })
 

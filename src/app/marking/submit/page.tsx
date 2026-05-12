@@ -1,182 +1,238 @@
-"use client";
+'use client'
 
-import { useMemo, useState, useCallback, useEffect } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { isAiOptedOut } from "@/lib/ai-preferences";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { useMemo, useState, useCallback, useEffect } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { isAiOptedOut } from '@/lib/ai-preferences'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { MARK_SCHEMES, type MarkScheme } from '@/lib/marking/mark-schemes'
 
-/* ─── Constants ────────────────────────────────────────────── */
+/* ─── Board catalogue ──────────────────────────────────────── */
 
-const BOARDS = [
-  { value: "AQA", label: "AQA" },
-  { value: "Edexcel", label: "Edexcel" },
-  { value: "OCR", label: "OCR" },
-  { value: "Eduqas", label: "Eduqas" },
-] as const;
+/**
+ * The full set of exam boards the submit page can surface, in display order.
+ * Each entry carries the display label plus the canonical board names used in
+ * mark-scheme files (e.g. "Eduqas" maps to "WJEC Eduqas" in the registry).
+ *
+ * Boards without any registered mark scheme are rendered as disabled options
+ * with a "Coming soon" tooltip — so when a scheme lands in
+ * `src/lib/marking/mark-schemes/index.ts` they automatically become
+ * selectable here without any change to this file.
+ */
+const BOARD_CATALOGUE: ReadonlyArray<{
+  /** Form value used in local state. */
+  value: string
+  /** Label shown to the user. */
+  label: string
+  /** Board names (case-insensitive) accepted from `MarkScheme.board`. */
+  match: ReadonlyArray<string>
+}> = [
+  { value: 'AQA', label: 'AQA', match: ['aqa'] },
+  { value: 'Edexcel', label: 'Edexcel', match: ['edexcel', 'pearson edexcel'] },
+  { value: 'OCR', label: 'OCR', match: ['ocr'] },
+  { value: 'Eduqas', label: 'Eduqas (WJEC)', match: ['eduqas', 'wjec eduqas', 'wjec'] },
+  {
+    value: 'Cambridge-0500',
+    label: 'Cambridge IGCSE 0500 (First Language English)',
+    match: ['cambridge 0500', 'cambridge igcse 0500', 'caie 0500', '0500'],
+  },
+  {
+    value: 'Cambridge-0990',
+    label: 'Cambridge IGCSE 0990 (English Language 9-1)',
+    match: ['cambridge 0990', 'cambridge igcse 0990', 'caie 0990', '0990'],
+  },
+]
 
-const PAPERS = [
-  { value: "lit-p1", label: "English Literature — Paper 1" },
-  { value: "lit-p2", label: "English Literature — Paper 2" },
-  { value: "lang-p1", label: "English Language — Paper 1" },
-  { value: "lang-p2", label: "English Language — Paper 2" },
-] as const;
+/* ─── Registry derivation ──────────────────────────────────── */
 
-const QUESTIONS_BY_PAPER: Record<string, { value: string; label: string }[]> = {
-  "lit-p1": [
-    {
-      value: "macbeth",
-      label: "Macbeth — How does Shakespeare present ambition?",
-    },
-    {
-      value: "romeo-juliet",
-      label: "Romeo and Juliet — How is conflict presented?",
-    },
-    {
-      value: "jekyll",
-      label: "Jekyll and Hyde — How is duality presented?",
-    },
-  ],
-  "lit-p2": [
-    {
-      value: "inspector",
-      label: "An Inspector Calls — How is responsibility presented?",
-    },
-    {
-      value: "dna",
-      label: "DNA — How is power presented?",
-    },
-    {
-      value: "power",
-      label: "Unseen poetry — Comparison question",
-    },
-  ],
-  "lang-p1": [
-    { value: "q2", label: "Q2 — Language analysis" },
-    { value: "q3", label: "Q3 — Structural analysis" },
-    { value: "q4", label: "Q4 — Evaluation" },
-    { value: "q5", label: "Q5 — Creative writing" },
-  ],
-  "lang-p2": [
-    { value: "q2", label: "Q2 — Summary / comparison" },
-    { value: "q3", label: "Q3 — Language analysis" },
-    { value: "q4", label: "Q4 — Comparing viewpoints" },
-    { value: "q5", label: "Q5 — Transactional writing" },
-  ],
-};
+interface BoardOption {
+  value: string
+  label: string
+  schemes: MarkScheme[]
+  available: boolean
+}
+
+interface PaperOption {
+  /** Stable form value: the mark scheme id (e.g. "aqa-lit-paper1"). */
+  value: string
+  label: string
+  scheme: MarkScheme
+}
+
+interface QuestionOption {
+  /** Form value: the question id from the scheme (e.g. "Section A", "Q2"). */
+  value: string
+  label: string
+}
+
+/**
+ * Group every registered mark scheme into its catalogue board entry, returning
+ * the board options the picker should render.
+ */
+function buildBoardOptions(): BoardOption[] {
+  const allSchemes = Object.values(MARK_SCHEMES)
+  return BOARD_CATALOGUE.map((entry) => {
+    const matchSet = new Set(entry.match.map((m) => m.toLowerCase()))
+    const schemes = allSchemes.filter((scheme) => {
+      const normalised = scheme.board.trim().toLowerCase()
+      if (matchSet.has(normalised)) return true
+      // Loose fallback: any match token contained in the scheme board string
+      // (e.g. "cambridge igcse 0500 first language" includes "0500").
+      return entry.match.some((token) => normalised.includes(token.toLowerCase()))
+    })
+    return {
+      value: entry.value,
+      label: entry.label,
+      schemes,
+      available: schemes.length > 0,
+    }
+  })
+}
+
+/**
+ * Build the paper dropdown options for a chosen board, sorted by subject then
+ * paper name so Literature comes before Language consistently.
+ */
+function buildPaperOptions(board: BoardOption | undefined): PaperOption[] {
+  if (!board) return []
+  return [...board.schemes]
+    .sort((a, b) => {
+      if (a.subject !== b.subject) return a.subject.localeCompare(b.subject)
+      return a.paper.localeCompare(b.paper, undefined, { numeric: true })
+    })
+    .map((scheme) => ({
+      value: scheme.id,
+      label: `${scheme.subject} — ${scheme.paper}${scheme.title ? `: ${scheme.title}` : ''}`,
+      scheme,
+    }))
+}
+
+/**
+ * Question dropdown options come straight from the chosen mark scheme so the
+ * `questionId` we POST always matches a real `QuestionScheme.id` the API can
+ * resolve.
+ */
+function buildQuestionOptions(scheme: MarkScheme | undefined): QuestionOption[] {
+  if (!scheme) return []
+  return scheme.questions.map((q) => ({
+    value: q.id,
+    label: `${q.id} — ${q.questionType}`,
+  }))
+}
 
 /* ─── Helpers ──────────────────────────────────────────────── */
 
 function countWords(text: string): number {
-  const trimmed = text.trim();
-  if (trimmed.length === 0) return 0;
-  return trimmed.split(/\s+/).length;
-}
-
-/**
- * Map the submit-form board + paper values to the mark-scheme id
- * expected by the API (e.g. "AQA" + "lit-p1" -> "aqa-lit-paper1").
- */
-function resolveMarkSchemeId(board: string, paper: string): string {
-  const b = board.toLowerCase();
-  const subjectMap: Record<string, string> = {
-    "lit-p1": "lit-paper1",
-    "lit-p2": "lit-paper2",
-    "lang-p1": "lang-paper1",
-    "lang-p2": "lang-paper2",
-  };
-  return `${b}-${subjectMap[paper] ?? paper}`;
+  const trimmed = text.trim()
+  if (trimmed.length === 0) return 0
+  return trimmed.split(/\s+/).length
 }
 
 /**
  * Return a user-friendly error message based on an API response status.
  */
 function friendlyError(status: number, body: string): string {
-  if (status === 401) return "You need to sign in before submitting an essay for marking.";
-  if (status === 403) return body || "You don't have access to AI marking. Please upgrade to Premium.";
-  if (status === 429) return "You've reached the daily marking limit. Please try again tomorrow.";
-  if (status === 400) return body || "There was a problem with your submission. Please check your essay and try again.";
-  if (status === 503) return body || "The AI marking service is temporarily unavailable. Please try again in a few minutes.";
-  if (status >= 500) return "Something went wrong on our end. Please try again later.";
-  return body || "An unexpected error occurred. Please try again.";
+  if (status === 401) return 'You need to sign in before submitting an essay for marking.'
+  if (status === 403)
+    return body || "You don't have access to AI marking. Please upgrade to Premium."
+  if (status === 429) return "You've reached the daily marking limit. Please try again tomorrow."
+  if (status === 400)
+    return (
+      body || 'There was a problem with your submission. Please check your essay and try again.'
+    )
+  if (status === 503)
+    return (
+      body ||
+      'The AI marking service is temporarily unavailable. Please try again in a few minutes.'
+    )
+  if (status >= 500) return 'Something went wrong on our end. Please try again later.'
+  return body || 'An unexpected error occurred. Please try again.'
 }
 
 /* ─── Page ─────────────────────────────────────────────────── */
 
 export default function SubmitEssayPage() {
-  const router = useRouter();
-  const [aiOptedOut, setAiOptedOutState] = useState(false);
+  const router = useRouter()
+  const [aiOptedOut, setAiOptedOutState] = useState(false)
 
   useEffect(() => {
-    setAiOptedOutState(isAiOptedOut());
-  }, []);
+    setAiOptedOutState(isAiOptedOut())
+  }, [])
 
-  const [board, setBoard] = useState<string>("");
-  const [paper, setPaper] = useState<string>("");
-  const [question, setQuestion] = useState<string>("");
-  const [title, setTitle] = useState<string>("");
-  const [essay, setEssay] = useState<string>("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [board, setBoard] = useState<string>('')
+  const [paper, setPaper] = useState<string>('')
+  const [question, setQuestion] = useState<string>('')
+  const [title, setTitle] = useState<string>('')
+  const [essay, setEssay] = useState<string>('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const wordCount = countWords(essay);
+  // Derive every option from the live registry so newly added schemes
+  // (e.g. Cambridge 0500/0990) appear without code changes here.
+  const boardOptions = useMemo(buildBoardOptions, [])
+  const selectedBoard = useMemo(
+    () => boardOptions.find((b) => b.value === board),
+    [boardOptions, board],
+  )
+  const paperOptions = useMemo(() => buildPaperOptions(selectedBoard), [selectedBoard])
+  const selectedPaper = useMemo(
+    () => paperOptions.find((p) => p.value === paper),
+    [paperOptions, paper],
+  )
   const questionOptions = useMemo(
-    () => (paper ? QUESTIONS_BY_PAPER[paper] ?? [] : []),
-    [paper]
-  );
+    () => buildQuestionOptions(selectedPaper?.scheme),
+    [selectedPaper],
+  )
+
+  const wordCount = countWords(essay)
   const canSubmit =
-    board && paper && question && essay.trim().length > 0 && wordCount >= 50;
+    Boolean(selectedBoard?.available) &&
+    Boolean(selectedPaper) &&
+    question !== '' &&
+    essay.trim().length > 0 &&
+    wordCount >= 50
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
-      e.preventDefault();
-      if (!canSubmit || isSubmitting) return;
-      setIsSubmitting(true);
-      setError(null);
+      e.preventDefault()
+      if (!canSubmit || isSubmitting || !selectedBoard || !selectedPaper) return
+      setIsSubmitting(true)
+      setError(null)
 
-      const id = `mk_${Date.now().toString(36)}`;
-      const boardLabel =
-        BOARDS.find((b) => b.value === board)?.label ?? board;
-      const paperLabel =
-        PAPERS.find((p) => p.value === paper)?.label ?? paper;
-      const questionLabel =
-        questionOptions.find((q) => q.value === question)?.label ?? question;
-      const markSchemeId = resolveMarkSchemeId(board, paper);
+      const id = `mk_${Date.now().toString(36)}`
+      const boardLabel = selectedBoard.label
+      const paperLabel = selectedPaper.label
+      const questionLabel = questionOptions.find((q) => q.value === question)?.label ?? question
+      const markSchemeId = selectedPaper.scheme.id
 
       try {
-        const res = await fetch("/api/mark", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+        const res = await fetch('/api/mark', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             markSchemeId,
             questionId: question,
             questionText: questionLabel,
             essay,
           }),
-        });
+        })
 
         if (!res.ok) {
-          let message = "";
+          let message = ''
           try {
-            const errBody = await res.json();
-            message = errBody?.error ?? errBody?.message ?? "";
+            const errBody = await res.json()
+            message = errBody?.error ?? errBody?.message ?? ''
           } catch {
             /* non-JSON body */
           }
-          setError(friendlyError(res.status, message));
-          setIsSubmitting(false);
-          return;
+          setError(friendlyError(res.status, message))
+          setIsSubmitting(false)
+          return
         }
 
-        const data = await res.json();
-        const result = data.result;
+        const data = await res.json()
+        const result = data.result
 
         // Map API MarkingResult into the localStorage entry shape
         const entry = {
@@ -193,12 +249,18 @@ export default function SubmitEssayPage() {
           gradeBand: result.gradeBand,
           totalMarks: result.totalMarks,
           maxMarks: result.maxMarks,
-          confidence: Math.round(
-            (result.totalMarks / result.maxMarks) * 100
-          ),
+          confidence: Math.round((result.totalMarks / result.maxMarks) * 100),
           // AO breakdown — map to the shape the results page expects
           aos: (result.aoScores ?? []).map(
-            (ao: { id: string; label: string; marks: number; maxMarks: number; band?: string; justification?: string; evidence?: string[] }) => ({
+            (ao: {
+              id: string
+              label: string
+              marks: number
+              maxMarks: number
+              band?: string
+              justification?: string
+              evidence?: string[]
+            }) => ({
               code: ao.id,
               label: ao.label,
               score: ao.marks,
@@ -206,7 +268,7 @@ export default function SubmitEssayPage() {
               band: ao.band,
               justification: ao.justification,
               evidence: ao.evidence,
-            })
+            }),
           ),
           // Feedback from the AI
           strengths: result.strengths,
@@ -216,31 +278,37 @@ export default function SubmitEssayPage() {
           markSchemeId: result.markSchemeId,
           remaining: data.remaining,
           submittedAt: new Date().toISOString(),
-        };
+        }
 
         try {
-          const raw = localStorage.getItem("english-hub-marking-history");
-          const prev = raw ? JSON.parse(raw) : [];
-          const next = [entry, ...prev];
-          localStorage.setItem(
-            "english-hub-marking-history",
-            JSON.stringify(next)
-          );
+          const raw = localStorage.getItem('english-hub-marking-history')
+          const prev = raw ? JSON.parse(raw) : []
+          const next = [entry, ...prev]
+          localStorage.setItem('english-hub-marking-history', JSON.stringify(next))
         } catch {
           /* ignore localStorage errors */
         }
 
-        router.push(`/marking/results/${id}`);
+        router.push(`/marking/results/${id}`)
       } catch (err) {
-        console.error("[marking/submit] fetch error", err);
-        setError(
-          "Could not reach the marking server. Please check your connection and try again."
-        );
-        setIsSubmitting(false);
+        console.error('[marking/submit] fetch error', err)
+        setError('Could not reach the marking server. Please check your connection and try again.')
+        setIsSubmitting(false)
       }
     },
-    [board, paper, question, questionOptions, title, essay, wordCount, canSubmit, isSubmitting, router]
-  );
+    [
+      selectedBoard,
+      selectedPaper,
+      question,
+      questionOptions,
+      title,
+      essay,
+      wordCount,
+      canSubmit,
+      isSubmitting,
+      router,
+    ],
+  )
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
@@ -261,8 +329,8 @@ export default function SubmitEssayPage() {
         Submit an essay for marking
       </h1>
       <p className="mt-1 text-sm text-muted-foreground">
-        Paste your essay below. We&apos;ll return a predicted grade, AO
-        breakdown and marker-style feedback.{" "}
+        Paste your essay below. We&apos;ll return a predicted grade, AO breakdown and marker-style
+        feedback.{' '}
         <Link
           href="/marking/ai-explainer"
           className="text-primary underline-offset-2 hover:underline"
@@ -274,22 +342,20 @@ export default function SubmitEssayPage() {
       {/* AI opt-out notice (Children's Code — GAP-12B) */}
       {aiOptedOut && (
         <div className="mt-8 rounded-lg border border-border bg-muted/50 px-6 py-8 text-center">
-          <h2 className="text-lg font-semibold text-foreground">
-            AI marking is turned off
-          </h2>
+          <h2 className="text-lg font-semibold text-foreground">AI marking is turned off</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-            A parent or guardian has turned off AI features for this account.
-            You can still use all other parts of The English Hub.
+            A parent or guardian has turned off AI features for this account. You can still use all
+            other parts of The English Hub.
           </p>
           <p className="mt-4 text-sm text-muted-foreground">
-            To turn AI marking back on, visit{" "}
+            To turn AI marking back on, visit{' '}
             <Link
               href="/parent/settings"
               className="text-primary underline-offset-2 hover:underline"
             >
               Parent Settings
-            </Link>{" "}
-            or read{" "}
+            </Link>{' '}
+            or read{' '}
             <Link
               href="/marking/ai-explainer"
               className="text-primary underline-offset-2 hover:underline"
@@ -302,193 +368,184 @@ export default function SubmitEssayPage() {
       )}
 
       {!aiOptedOut && (
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle>Essay details</CardTitle>
-          <CardDescription>
-            Pick your exam board, paper and question so we can apply the right
-            marking guide.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* ── Board / Paper ───────────────────────────── */}
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="space-y-1.5">
-                <label
-                  htmlFor="board"
-                  className="text-sm font-medium text-foreground"
-                >
-                  Exam board
-                </label>
-                <select
-                  id="board"
-                  value={board}
-                  onChange={(e) => setBoard(e.target.value)}
-                  required
-                  className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
-                >
-                  <option value="" disabled>
-                    Select board
-                  </option>
-                  {BOARDS.map((b) => (
-                    <option key={b.value} value={b.value}>
-                      {b.label}
+        <Card className="mt-8">
+          <CardHeader>
+            <CardTitle>Essay details</CardTitle>
+            <CardDescription>
+              Pick your exam board, paper and question so we can apply the right marking guide.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* ── Board / Paper ───────────────────────────── */}
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-1.5">
+                  <label htmlFor="board" className="text-sm font-medium text-foreground">
+                    Exam board
+                  </label>
+                  <select
+                    id="board"
+                    value={board}
+                    onChange={(e) => {
+                      setBoard(e.target.value)
+                      setPaper('')
+                      setQuestion('')
+                    }}
+                    required
+                    className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                  >
+                    <option value="" disabled>
+                      Select board
                     </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="space-y-1.5">
-                <label
-                  htmlFor="paper"
-                  className="text-sm font-medium text-foreground"
-                >
-                  Paper
-                </label>
-                <select
-                  id="paper"
-                  value={paper}
-                  onChange={(e) => {
-                    setPaper(e.target.value);
-                    setQuestion("");
-                  }}
-                  required
-                  className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
-                >
-                  <option value="" disabled>
-                    Select paper
-                  </option>
-                  {PAPERS.map((p) => (
-                    <option key={p.value} value={p.value}>
-                      {p.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* ── Question ───────────────────────────────── */}
-            <div className="space-y-1.5">
-              <label
-                htmlFor="question"
-                className="text-sm font-medium text-foreground"
-              >
-                Question
-              </label>
-              <select
-                id="question"
-                value={question}
-                onChange={(e) => setQuestion(e.target.value)}
-                required
-                disabled={!paper}
-                className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 disabled:opacity-50"
-              >
-                <option value="" disabled>
-                  {paper ? "Select question" : "Choose a paper first"}
-                </option>
-                {questionOptions.map((q) => (
-                  <option key={q.value} value={q.value}>
-                    {q.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* ── Title ──────────────────────────────────── */}
-            <div className="space-y-1.5">
-              <label
-                htmlFor="title"
-                className="text-sm font-medium text-foreground"
-              >
-                Title{" "}
-                <span className="text-xs font-normal text-muted-foreground">
-                  (optional)
-                </span>
-              </label>
-              <input
-                id="title"
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="e.g. Macbeth — ambition essay, draft 2"
-                className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
-              />
-            </div>
-
-            {/* ── Essay body ─────────────────────────────── */}
-            <div className="space-y-1.5">
-              <label
-                htmlFor="essay"
-                className="text-sm font-medium text-foreground"
-              >
-                Your essay
-              </label>
-              <textarea
-                id="essay"
-                value={essay}
-                onChange={(e) => setEssay(e.target.value)}
-                placeholder="Paste or type your full essay here..."
-                required
-                rows={14}
-                className="w-full resize-y rounded-lg border border-border bg-input px-3 py-2.5 text-sm leading-relaxed text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
-              />
-              <div className="flex items-center justify-between text-xs text-muted-foreground">
-                <span>
-                  {wordCount} {wordCount === 1 ? "word" : "words"}
-                  {wordCount > 0 && wordCount < 50 && (
-                    <span className="ml-1 text-destructive">
-                      (minimum 50 words)
-                    </span>
+                    {boardOptions.map((b) => (
+                      <option
+                        key={b.value}
+                        value={b.value}
+                        disabled={!b.available}
+                        title={
+                          b.available ? undefined : 'Coming soon — mark scheme not yet available'
+                        }
+                        className={b.available ? undefined : 'text-muted-foreground'}
+                      >
+                        {b.available ? b.label : `${b.label} — Coming soon`}
+                      </option>
+                    ))}
+                  </select>
+                  {selectedBoard && !selectedBoard.available && (
+                    <p className="text-xs text-muted-foreground">
+                      Mark schemes for {selectedBoard.label} are coming soon. Please pick another
+                      board for now.
+                    </p>
                   )}
-                </span>
-                <span>No upper limit</span>
-              </div>
-            </div>
+                </div>
 
-            {/* ── Error banner ───────────────────────────── */}
-            {error && (
-              <div
-                role="alert"
-                className="rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive"
-              >
-                {error}
+                <div className="space-y-1.5">
+                  <label htmlFor="paper" className="text-sm font-medium text-foreground">
+                    Paper
+                  </label>
+                  <select
+                    id="paper"
+                    value={paper}
+                    onChange={(e) => {
+                      setPaper(e.target.value)
+                      setQuestion('')
+                    }}
+                    required
+                    disabled={!selectedBoard?.available}
+                    className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 disabled:opacity-50"
+                  >
+                    <option value="" disabled>
+                      {selectedBoard?.available ? 'Select paper' : 'Choose a board first'}
+                    </option>
+                    {paperOptions.map((p) => (
+                      <option key={p.value} value={p.value}>
+                        {p.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
-            )}
 
-            {/* ── Submit ─────────────────────────────────── */}
-            <div className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:justify-end">
-              <Button
-                variant="outline"
-                type="button"
-                render={<Link href="/marking" />}
-              >
-                Cancel
-              </Button>
-              <Button
-                type="submit"
-                size="lg"
-                disabled={!canSubmit || isSubmitting}
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center gap-2">
-                    <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                    Marking your essay…
+              {/* ── Question ───────────────────────────────── */}
+              <div className="space-y-1.5">
+                <label htmlFor="question" className="text-sm font-medium text-foreground">
+                  Question
+                </label>
+                <select
+                  id="question"
+                  value={question}
+                  onChange={(e) => setQuestion(e.target.value)}
+                  required
+                  disabled={!selectedPaper}
+                  className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 disabled:opacity-50"
+                >
+                  <option value="" disabled>
+                    {selectedPaper ? 'Select question' : 'Choose a paper first'}
+                  </option>
+                  {questionOptions.map((q) => (
+                    <option key={q.value} value={q.value}>
+                      {q.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* ── Title ──────────────────────────────────── */}
+              <div className="space-y-1.5">
+                <label htmlFor="title" className="text-sm font-medium text-foreground">
+                  Title{' '}
+                  <span className="text-xs font-normal text-muted-foreground">(optional)</span>
+                </label>
+                <input
+                  id="title"
+                  type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="e.g. Macbeth — ambition essay, draft 2"
+                  className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                />
+              </div>
+
+              {/* ── Essay body ─────────────────────────────── */}
+              <div className="space-y-1.5">
+                <label htmlFor="essay" className="text-sm font-medium text-foreground">
+                  Your essay
+                </label>
+                <textarea
+                  id="essay"
+                  value={essay}
+                  onChange={(e) => setEssay(e.target.value)}
+                  placeholder="Paste or type your full essay here..."
+                  required
+                  rows={14}
+                  className="w-full resize-y rounded-lg border border-border bg-input px-3 py-2.5 text-sm leading-relaxed text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                />
+                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span>
+                    {wordCount} {wordCount === 1 ? 'word' : 'words'}
+                    {wordCount > 0 && wordCount < 50 && (
+                      <span className="ml-1 text-destructive">(minimum 50 words)</span>
+                    )}
                   </span>
-                ) : (
-                  "Submit for marking"
-                )}
-              </Button>
-            </div>
-            {isSubmitting && (
-              <p className="text-center text-xs text-muted-foreground">
-                AI marking usually takes 5–15 seconds. Please don&apos;t close this page.
-              </p>
-            )}
-          </form>
-        </CardContent>
-      </Card>
+                  <span>No upper limit</span>
+                </div>
+              </div>
+
+              {/* ── Error banner ───────────────────────────── */}
+              {error && (
+                <div
+                  role="alert"
+                  className="rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive"
+                >
+                  {error}
+                </div>
+              )}
+
+              {/* ── Submit ─────────────────────────────────── */}
+              <div className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:justify-end">
+                <Button variant="outline" type="button" render={<Link href="/marking" />}>
+                  Cancel
+                </Button>
+                <Button type="submit" size="lg" disabled={!canSubmit || isSubmitting}>
+                  {isSubmitting ? (
+                    <span className="flex items-center gap-2">
+                      <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                      Marking your essay…
+                    </span>
+                  ) : (
+                    'Submit for marking'
+                  )}
+                </Button>
+              </div>
+              {isSubmitting && (
+                <p className="text-center text-xs text-muted-foreground">
+                  AI marking usually takes 5–15 seconds. Please don&apos;t close this page.
+                </p>
+              )}
+            </form>
+          </CardContent>
+        </Card>
       )}
     </div>
-  );
+  )
 }

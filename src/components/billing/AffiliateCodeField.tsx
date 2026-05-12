@@ -147,7 +147,7 @@ export function useAffiliateCodeField(opts?: {
  *
  * Usage: drop next to any "Upgrade" / "Start trial" button.
  *   <PromoCodePrompt />
- *   <Button asChild><Link href="/pricing">Start 7-day free trial</Link></Button>
+ *   <Button render={<Link href="/pricing" />}>Start 7-day free trial</Button>
  *
  * `pricingHref` is overridable for surfaces that route to a different
  * pricing-equivalent page (e.g. /account/billing for signed-in users).
