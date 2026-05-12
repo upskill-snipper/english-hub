@@ -59,6 +59,7 @@ function getNavForBoardType(
   // No board selected — marketing visitor nav
   return [
     { href: '/board-select', label: 'For Students' },
+    { href: '/ks3', label: 'KS3' },
     { href: '/for-parents', label: 'For Parents' },
     { href: '/for-teachers', label: 'For Teachers' },
     { href: '/for-schools', label: 'For Schools' },

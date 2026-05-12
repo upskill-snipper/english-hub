@@ -82,6 +82,12 @@ const BOARD_ALLOWLIST_EXACT = new Set<string>([
   '/learn',
   '/marking',
   '/toolkit',
+  // KS3 root — the full KS3 English curriculum (Y7/Y8/Y9 tree).
+  // The trailing-slash prefix is already in BOARD_ALLOWLIST_PREFIX
+  // below; we add the exact `/ks3` here so the landing page doesn't
+  // hit the BoardGate without a cookie. KS3 sits BEFORE students
+  // pick a GCSE/IGCSE board, so it must be guest-accessible.
+  '/ks3',
 
   // Technical
   '/favicon.ico',
