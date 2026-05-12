@@ -22,29 +22,15 @@
 
 import Link from 'next/link'
 import { headers } from 'next/headers'
+import { lookup, type Locale } from '@/lib/i18n/dictionary'
 
 type Variant = 'inline' | 'panel' | 'footer'
 
-const COPY = {
-  en: {
-    short: 'Made with AI · Reviewed by humans',
-    long: 'This page was drafted with the help of AI and reviewed by The English Hub editorial team. See our',
-    linkLabel: 'AI Governance & Ethics',
-    panelTitle: 'About this AI-assisted content',
-    panelBody:
-      'The English Hub uses AI to draft and update study materials. A human editor reviews every published piece against our curriculum and brand-voice rules before it ships. You can read the full disclosure, model provenance, and your rights on our AI Governance & Ethics page.',
-  },
-  ar: {
-    short: 'صُنع بالذكاء الاصطناعي · راجعه البشر',
-    long: 'تمّت صياغة هذه الصفحة بمساعدة الذكاء الاصطناعي وراجعها فريق التحرير. اطّلع على',
-    linkLabel: 'حوكمة الذكاء الاصطناعي وأخلاقياته',
-    panelTitle: 'حول هذا المحتوى المُعَدّ بمساعدة الذكاء الاصطناعي',
-    panelBody:
-      'يستخدم The English Hub الذكاء الاصطناعي في صياغة المواد الدراسية وتحديثها. يُراجع محرّر بشري كل قطعة منشورة بناءً على قواعد المنهج وصوت العلامة قبل النشر. يمكنك قراءة الإفصاح الكامل ومصدر النموذج وحقوقك على صفحة حوكمة الذكاء الاصطناعي.',
-  },
-} as const
-
-type Lang = keyof typeof COPY
+// Strings live in the master dictionary now so they translate alongside
+// the rest of the site (and the Khaleeji editor pass applies to the
+// long body too). Keys: ai_label.short / ai_label.link /
+// ai_label.panel_title / ai_label.panel_body.
+type Lang = Locale
 
 async function resolveLang(override?: Lang): Promise<Lang> {
   if (override) return override
@@ -53,8 +39,6 @@ async function resolveLang(override?: Lang): Promise<Lang> {
     const v = h.get('x-lang')
     return v === 'ar' ? 'ar' : 'en'
   } catch {
-    // headers() throws when called outside a request scope (e.g. in
-    // build-time generateMetadata on fully-static pages). Default to en.
     return 'en'
   }
 }
@@ -69,7 +53,10 @@ export async function AIContentLabel({
   className?: string
 }) {
   const l = await resolveLang(lang)
-  const c = COPY[l]
+  const short = lookup('ai_label.short', l)
+  const linkLabel = lookup('ai_label.link', l)
+  const panelTitle = lookup('ai_label.panel_title', l)
+  const panelBody = lookup('ai_label.panel_body', l)
 
   if (variant === 'inline') {
     return (
@@ -78,10 +65,10 @@ export async function AIContentLabel({
           'inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-muted/40 px-2.5 py-0.5 text-[10px] font-medium tracking-wide text-muted-foreground ' +
           (className ?? '')
         }
-        title={c.panelBody}
+        title={panelBody}
       >
         <span aria-hidden>✨</span>
-        <span>{c.short}</span>
+        <span>{short}</span>
       </span>
     )
   }
@@ -89,12 +76,12 @@ export async function AIContentLabel({
   if (variant === 'footer') {
     return (
       <p className={'text-[11px] tracking-wide text-muted-foreground/80 ' + (className ?? '')}>
-        {c.short} ·{' '}
+        {short} ·{' '}
         <Link
           href="/legal/ai-governance"
           className="underline underline-offset-2 hover:text-foreground"
         >
-          {c.linkLabel}
+          {linkLabel}
         </Link>
       </p>
     )
@@ -104,22 +91,22 @@ export async function AIContentLabel({
   return (
     <aside
       role="note"
-      aria-label={c.panelTitle}
+      aria-label={panelTitle}
       className={
         'not-prose rounded-xl border border-primary/30 bg-primary/[0.04] p-4 my-6 text-sm ' +
         (className ?? '')
       }
     >
       <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-2">
-        {c.panelTitle}
+        {panelTitle}
       </p>
       <p className="text-muted-foreground leading-relaxed">
-        {c.panelBody}{' '}
+        {panelBody}{' '}
         <Link
           href="/legal/ai-governance"
           className="text-primary underline underline-offset-2 hover:no-underline"
         >
-          {c.linkLabel}
+          {linkLabel}
         </Link>
       </p>
     </aside>

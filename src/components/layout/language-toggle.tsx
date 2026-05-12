@@ -31,16 +31,20 @@
 import { useCallback, useEffect, useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 const COOKIE = 'eh-lang'
 const ONE_YEAR = 60 * 60 * 24 * 365
 
 type Mode = 'en' | 'bi' | 'ar'
 
-const MODES: { value: Mode; label: string; tooltip: string }[] = [
-  { value: 'en', label: 'EN', tooltip: 'English mode — content in English' },
-  { value: 'bi', label: 'EN + AR', tooltip: 'Bilingual mode — English + Arabic together' },
-  { value: 'ar', label: 'AR', tooltip: 'Arabic mode — content in Arabic (Gulf MSA)' },
+// Labels are intentionally compact and locale-aware. The actual tooltip
+// strings live in the master dictionary so they translate alongside the
+// rest of the site.
+const MODE_DEFS: { value: Mode; label: string; tooltipKey: string }[] = [
+  { value: 'en', label: 'EN', tooltipKey: 'lang.en.tooltip' },
+  { value: 'bi', label: 'EN + AR', tooltipKey: 'lang.bi.tooltip' },
+  { value: 'ar', label: 'AR', tooltipKey: 'lang.ar.tooltip' },
 ]
 
 function readCookie(): Mode {
@@ -58,6 +62,7 @@ export function LanguageToggle({ className }: { className?: string }) {
   const [mode, setMode] = useState<Mode>('en')
   const [, startTransition] = useTransition()
   const router = useRouter()
+  const t = useT()
 
   useEffect(() => {
     setMode(readCookie())
@@ -71,6 +76,10 @@ export function LanguageToggle({ className }: { className?: string }) {
       // Set-Cookie, but the cookie reaches the origin on the next nav).
       document.cookie = `${COOKIE}=${next}; path=/; max-age=${ONE_YEAR}; samesite=lax`
       setMode(next)
+      // Notify other client components in the same tab to re-render
+      // with the new locale. The custom event is the signal `useT()`
+      // listens for via window.addEventListener('eh-lang-change').
+      window.dispatchEvent(new CustomEvent('eh-lang-change', { detail: next }))
       // Refresh the current route so the server re-renders with the new
       // x-lang header. router.refresh() in App Router refetches the RSC
       // payload without a full page reload.
@@ -84,13 +93,13 @@ export function LanguageToggle({ className }: { className?: string }) {
   return (
     <div
       role="group"
-      aria-label="Language mode"
+      aria-label={t('lang.switch')}
       className={cn(
         'inline-flex items-center gap-0.5 rounded-full border border-border/60 bg-background/80 p-0.5 text-xs font-medium shadow-sm backdrop-blur',
         className,
       )}
     >
-      {MODES.map((m) => {
+      {MODE_DEFS.map((m) => {
         const active = m.value === mode
         return (
           <button
@@ -98,7 +107,7 @@ export function LanguageToggle({ className }: { className?: string }) {
             type="button"
             onClick={() => setLang(m.value)}
             aria-pressed={active}
-            title={m.tooltip}
+            title={t(m.tooltipKey)}
             className={cn(
               'rounded-full px-2.5 py-1 transition-colors',
               active

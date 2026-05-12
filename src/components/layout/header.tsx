@@ -33,37 +33,35 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { getBoardType } from '@/lib/board/board-filter'
 import type { ExamBoard } from '@/lib/board/board-store'
 import { LanguageToggle } from '@/components/layout/language-toggle'
+import { useT } from '@/lib/i18n/use-t'
 
 type NavLink = {
   href: string
-  label: string
+  /** Dictionary key — resolved by useT() at render time. */
+  labelKey: string
 }
 
 function getNavForBoardType(
   type: 'ks3' | 'gcse' | 'igcse' | 'ial' | 'a-level' | null,
   board: ExamBoard | null,
 ): NavLink[] {
-  // Board is set — streamlined top nav. "My Papers" and "Games" live in
-  // the Your Hub sidebar (see RevisionShell NAV_ITEMS) so they're reachable
-  // from everywhere inside the hub without crowding the site-wide header.
   if (type) {
     void board
     return [
-      { href: '/revision', label: 'Your Hub' },
-      { href: '/for-teachers', label: 'For Teachers' },
-      { href: '/for-schools', label: 'For Schools' },
-      { href: '/pricing', label: 'Pricing' },
+      { href: '/revision', labelKey: 'header.nav.your_hub' },
+      { href: '/for-teachers', labelKey: 'header.nav.teachers' },
+      { href: '/for-schools', labelKey: 'header.nav.schools' },
+      { href: '/pricing', labelKey: 'header.nav.pricing' },
     ]
   }
 
-  // No board selected — marketing visitor nav
   return [
-    { href: '/board-select', label: 'For Students' },
-    { href: '/ks3', label: 'KS3' },
-    { href: '/for-parents', label: 'For Parents' },
-    { href: '/for-teachers', label: 'For Teachers' },
-    { href: '/for-schools', label: 'For Schools' },
-    { href: '/pricing', label: 'Pricing' },
+    { href: '/board-select', labelKey: 'header.nav.students' },
+    { href: '/ks3', labelKey: 'header.nav.ks3' },
+    { href: '/for-parents', labelKey: 'header.nav.parents' },
+    { href: '/for-teachers', labelKey: 'header.nav.teachers' },
+    { href: '/for-schools', labelKey: 'header.nav.schools' },
+    { href: '/pricing', labelKey: 'header.nav.pricing' },
   ]
 }
 
@@ -74,6 +72,7 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isSchoolMember, setIsSchoolMember] = useState(false)
   const { board, isHydrated: isBoardHydrated } = useBoard()
+  const t = useT()
 
   const isPremium = profile?.subscription_status === 'pro'
 
@@ -166,7 +165,7 @@ export function Header() {
                   isActive ? 'text-[#FBF7F0] bg-white/10' : 'text-[#B5B8B3] hover:text-[#FBF7F0]',
                 )}
               >
-                {link.label}
+                {t(link.labelKey)}
               </Link>
             )
           })}
@@ -242,28 +241,28 @@ export function Header() {
                 href="/demo/school"
                 className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
               >
-                <Sparkles className="mr-1 h-3.5 w-3.5" />
-                Try Demo
+                <Sparkles className="me-1 h-3.5 w-3.5" />
+                {t('header.nav.try_demo')}
               </Link>
               <Link
                 href="/affiliates"
                 className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
               >
-                <Handshake className="mr-1 h-3.5 w-3.5" />
-                Affiliates
+                <Handshake className="me-1 h-3.5 w-3.5" />
+                {t('header.nav.affiliates')}
               </Link>
               <Link
                 href="/auth/login"
                 className="rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
               >
-                Log in
+                {t('header.cta.login')}
               </Link>
               <Link
                 href="/auth/register"
                 className="rounded-full px-5 py-2 text-sm font-medium text-[#0F1411] transition-colors duration-200 hover:brightness-110"
                 style={{ background: '#E8A382' }}
               >
-                Start free &rarr;
+                {t('header.cta.start_free')} &rarr;
               </Link>
               <LanguageToggle className="ml-1 border-white/15 bg-white/5 text-[#B5B8B3]" />
             </>
@@ -359,7 +358,7 @@ export function Header() {
                         : 'text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5',
                     )}
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                   </Link>
                 )
               })}
