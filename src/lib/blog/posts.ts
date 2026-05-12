@@ -111,8 +111,28 @@ export function getAllBlogPosts(): BlogPost[] {
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
 }
 
-/** Returns one blog post by slug, or `null` if it doesn't exist. */
-export function getBlogPost(slug: string): BlogPost | null {
+/**
+ * Returns one blog post by slug, or `null` if it doesn't exist.
+ *
+ * When `locale === 'ar'` and a sibling `<slug>.ar.mdx` file exists,
+ * we serve the Arabic variant — its frontmatter overrides title and
+ * description, and its body is rendered instead of the English one.
+ * If no AR sibling exists, we fall back gracefully to the English
+ * post so the URL still resolves (better UX than a 404 mid-rollout
+ * while translations are still landing one-by-one).
+ */
+export function getBlogPost(slug: string, locale: 'en' | 'ar' = 'en'): BlogPost | null {
+  if (locale === 'ar') {
+    const arFile = readMdxFile<BlogPostFrontmatter>(BLOG_DIR, `${slug}.ar`)
+    if (arFile) {
+      // We use the AR slug variant for the file lookup, but the post's
+      // canonical slug stays the English one so internal links / sitemap
+      // entries continue to work.
+      return toBlogPost(slug, arFile.data, arFile.content)
+    }
+    // Fall through to English — graceful degradation while the AR
+    // translation pipeline backfills the corpus.
+  }
   const file = readMdxFile<BlogPostFrontmatter>(BLOG_DIR, slug)
   if (!file) return null
   return toBlogPost(file.slug, file.data, file.content)

@@ -80,6 +80,15 @@ export const metadata: Metadata = {
     'Pick your exam board and revise GCSE or IGCSE English with AI marking against the AO rubric. Six boards covered.',
   alternates: {
     canonical: 'https://theenglishhub.app',
+    // hreflang alternates — canonical English at root, Arabic mirror at
+    // /ar/. Sub-route pages set per-page alternates via generateMetadata
+    // where they exist. Google uses these to serve the right locale to
+    // each user without splitting ranking signal between the two URLs.
+    languages: {
+      'en-GB': 'https://theenglishhub.app',
+      ar: 'https://theenglishhub.app/ar',
+      'x-default': 'https://theenglishhub.app',
+    },
   },
   openGraph: {
     title: 'The English Hub — GCSE & IGCSE English revision, AI marked',

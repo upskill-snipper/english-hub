@@ -453,10 +453,36 @@ export async function middleware(request: NextRequest) {
   request.headers.set('x-nonce', nonce)
 
   // Propagate language mode so the root layout can set <html lang dir="...">
-  // on first paint (no flicker). Defaults to 'en' when the cookie is
-  // missing or invalid — most visitors land cold and want English.
-  const rawLang = request.cookies.get(LANG_COOKIE)?.value
-  const lang = rawLang && LANG_VALUES.has(rawLang) ? rawLang : 'en'
+  // on first paint (no flicker).
+  //
+  // Resolution order:
+  //   1. URL prefix `/ar/...` — explicit Arabic locale (indexable by Google).
+  //   2. `eh-lang` cookie — user's persisted toggle choice (en | bi | ar).
+  //   3. Default 'en' — cold visitors land in English.
+  //
+  // The URL prefix takes precedence over the cookie because a `/ar/...`
+  // URL is the canonical, shareable Arabic surface. The middleware also
+  // rewrites `/ar/foo` to `/foo` internally so we don't have to
+  // duplicate every route — the page renders the same component, just
+  // with `x-lang=ar` stamped on the request headers so localised copy
+  // renders in Arabic and `<html dir="rtl">` is applied.
+  let lang: string
+  if (pathname.startsWith('/ar/') || pathname === '/ar') {
+    lang = 'ar'
+    const rewriteUrl = request.nextUrl.clone()
+    rewriteUrl.pathname = pathname === '/ar' ? '/' : pathname.slice(3) // strip leading '/ar'
+    // Rewrite preserves the URL the browser sees while serving the
+    // underlying page from the language-neutral route. Stamp x-lang
+    // BEFORE the rewrite so server components see the right locale.
+    request.headers.set('x-lang', 'ar')
+    request.headers.set('x-lang-source', 'url')
+    const res = NextResponse.rewrite(rewriteUrl, { request: { headers: request.headers } })
+    res.headers.set('Content-Language', 'ar')
+    return res
+  } else {
+    const rawLang = request.cookies.get(LANG_COOKIE)?.value
+    lang = rawLang && LANG_VALUES.has(rawLang) ? rawLang : 'en'
+  }
   request.headers.set('x-lang', lang)
 
   // Preserve existing behaviour: supabase auth session refresh + affiliate tracking

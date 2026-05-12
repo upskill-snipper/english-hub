@@ -20,6 +20,7 @@
  */
 
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { compileMDX } from 'next-mdx-remote/rsc'
@@ -118,7 +119,13 @@ function formatDisplayDate(iso: string): string {
 
 export default async function BlogArticlePage({ params }: { params: Promise<Params> }) {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  // Read the locale stamped by middleware (x-lang). When the visitor
+  // hits `/ar/blog/...`, middleware rewrites internally to `/blog/...`
+  // and stamps x-lang=ar; getBlogPost then serves the AR variant if
+  // a sibling `<slug>.ar.mdx` exists, falling back to EN otherwise.
+  const lang = (await headers()).get('x-lang')
+  const locale: 'en' | 'ar' = lang === 'ar' ? 'ar' : 'en'
+  const post = getBlogPost(slug, locale)
   if (!post) notFound()
 
   // NOTE: We deliberately do NOT call `headers()` here. Reading per-request
