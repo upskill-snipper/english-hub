@@ -10,6 +10,21 @@ import { BOARDS } from '@/lib/board/board-config'
 
 const BOARD_COOKIE = 'english-hub-board'
 
+// ── Language mode cookie (en | bi | ar) ──────────────────────────────
+//
+// Three-mode toggle surfaced in the site header:
+//   en  → English only (default; SEO-indexable content)
+//   bi  → Bilingual (English + Arabic stacked per section)
+//   ar  → Arabic only (RTL layout, MSA + Khaleeji)
+//
+// Cookie-based for the first iteration so the toggle is user-controlled
+// and persists across visits. SEO caveat is documented in the governance
+// page: Googlebot crawls cookieless, so a cookie-only AR mode is not
+// indexed for Arabic queries. Follow-up will mirror Arabic content under
+// `/ar/...` paths with hreflang alternates for actual Arabic indexing.
+const LANG_COOKIE = 'eh-lang'
+const LANG_VALUES = new Set(['en', 'bi', 'ar'])
+
 // Paths that are allowed through without a board cookie.
 // Use exact matches and prefix matches (prefixes end with "/").
 //
@@ -430,6 +445,13 @@ export async function middleware(request: NextRequest) {
   // so the nonce is visible to server components without reconstructing
   // the NextRequest (which doesn't have a safe clone constructor).
   request.headers.set('x-nonce', nonce)
+
+  // Propagate language mode so the root layout can set <html lang dir="...">
+  // on first paint (no flicker). Defaults to 'en' when the cookie is
+  // missing or invalid — most visitors land cold and want English.
+  const rawLang = request.cookies.get(LANG_COOKIE)?.value
+  const lang = rawLang && LANG_VALUES.has(rawLang) ? rawLang : 'en'
+  request.headers.set('x-lang', lang)
 
   // Preserve existing behaviour: supabase auth session refresh + affiliate tracking
   const response = await updateSession(request)

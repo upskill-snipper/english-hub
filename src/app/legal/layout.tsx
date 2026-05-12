@@ -11,6 +11,7 @@ const legalPages = [
   { href: '/legal/cancellation', label: 'Cancellation Policy' },
   { href: '/legal/acceptable-use', label: 'Acceptable Use Policy' },
   { href: '/legal/ai-transparency', label: 'AI Transparency' },
+  { href: '/legal/ai-governance', label: 'AI Governance & Ethics' },
   { href: '/legal/safeguarding', label: 'Safeguarding Policy' },
   { href: '/accessibility', label: 'Accessibility Statement' },
   { href: '/legal/complaints', label: 'Complaints Procedure' },

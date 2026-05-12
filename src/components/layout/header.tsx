@@ -32,6 +32,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { getBoardType } from '@/lib/board/board-filter'
 import type { ExamBoard } from '@/lib/board/board-store'
+import { LanguageToggle } from '@/components/layout/language-toggle'
 
 type NavLink = {
   href: string
@@ -263,6 +264,7 @@ export function Header() {
               >
                 Start free &rarr;
               </Link>
+              <LanguageToggle className="ml-1 border-white/15 bg-white/5 text-[#B5B8B3]" />
             </>
           )}
         </div>

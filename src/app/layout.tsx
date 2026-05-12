@@ -1,6 +1,13 @@
 import type { Metadata, Viewport } from 'next'
+import { headers } from 'next/headers'
 import localFont from 'next/font/local'
-import { Newsreader, Geist, JetBrains_Mono } from 'next/font/google'
+import {
+  Newsreader,
+  Geist,
+  JetBrains_Mono,
+  Noto_Naskh_Arabic,
+  IBM_Plex_Sans_Arabic,
+} from 'next/font/google'
 import { SupabaseProvider } from '@/components/providers/supabase-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/sonner'
@@ -43,6 +50,24 @@ const jetBrainsMono = JetBrains_Mono({
   variable: '--font-mono',
   display: 'swap',
   weight: ['400', '500'],
+})
+
+// Arabic typography pairs. Both ship via next/font with `subsets:
+// ['arabic']` so browsers pick them automatically for Arabic codepoints
+// via the unicode-range fallback chain. No JS branching needed — the
+// English fonts continue to render Latin text even when the layout is
+// in dir="rtl" mode.
+const notoNaskhArabic = Noto_Naskh_Arabic({
+  subsets: ['arabic'],
+  variable: '--font-arabic-serif',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+})
+const plexSansArabic = IBM_Plex_Sans_Arabic({
+  subsets: ['arabic'],
+  variable: '--font-arabic-sans',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
 })
 
 export const metadata: Metadata = {
@@ -89,10 +114,23 @@ export const viewport: Viewport = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // Read the language mode the middleware stamped onto the request.
+  // Three valid values: 'en' (default), 'bi' (bilingual), 'ar' (Arabic).
+  // The middleware already validates the cookie, so this is a safe read.
+  const lang = (await headers()).get('x-lang') ?? 'en'
+  const dir = lang === 'ar' ? 'rtl' : 'ltr'
+  // `lang` attribute uses the BCP-47 tag the SR / browser actually cares
+  // about. We don't have an explicit Gulf locale tag, so 'ar' (modern
+  // standard) is the right umbrella value for screen readers and search
+  // engines until we ship a per-route `/ar/...` URL strategy.
+  const htmlLang = lang === 'ar' ? 'ar' : 'en-GB'
+
   return (
     <html
-      lang="en-GB"
-      className={`${monaSans.variable} ${newsreader.variable} ${geist.variable} ${jetBrainsMono.variable}`}
+      lang={htmlLang}
+      dir={dir}
+      data-lang={lang}
+      className={`${monaSans.variable} ${newsreader.variable} ${geist.variable} ${jetBrainsMono.variable} ${notoNaskhArabic.variable} ${plexSansArabic.variable}`}
     >
       <head>
         <link rel="manifest" href="/manifest.json" />
