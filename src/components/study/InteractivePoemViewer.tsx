@@ -3,6 +3,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react'
 import DOMPurify from 'dompurify'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Types ──────────────────────────────────────────────────────── */
 
@@ -45,12 +46,48 @@ export interface PoemData {
 
 type AnalysisTab = 'context' | 'summary' | 'form' | 'quotes' | 'language'
 
-const TABS: { key: AnalysisTab; label: string; color: string; bgActive: string; bgHighlight: string }[] = [
-  { key: 'context',  label: 'Context',          color: 'text-blue-700',   bgActive: 'bg-blue-500/20 border-blue-500/50 text-blue-700',   bgHighlight: 'bg-blue-500/15' },
-  { key: 'summary',  label: 'Summary',          color: 'text-foreground', bgActive: 'bg-muted border-border text-foreground',            bgHighlight: '' },
-  { key: 'form',     label: 'Form & Structure', color: 'text-purple-700', bgActive: 'bg-purple-500/20 border-purple-500/50 text-purple-700', bgHighlight: 'bg-purple-500/15' },
-  { key: 'quotes',   label: 'Key Quotes',       color: 'text-amber-700',  bgActive: 'bg-amber-500/20 border-amber-500/50 text-amber-700',   bgHighlight: 'bg-amber-500/15' },
-  { key: 'language', label: 'Language Analysis', color: 'text-emerald-700', bgActive: 'bg-emerald-500/20 border-emerald-500/50 text-emerald-700', bgHighlight: 'bg-emerald-500/15' },
+const TABS: {
+  key: AnalysisTab
+  labelKey: string
+  color: string
+  bgActive: string
+  bgHighlight: string
+}[] = [
+  {
+    key: 'context',
+    labelKey: 'poem_viewer.tab_context',
+    color: 'text-blue-700',
+    bgActive: 'bg-blue-500/20 border-blue-500/50 text-blue-700',
+    bgHighlight: 'bg-blue-500/15',
+  },
+  {
+    key: 'summary',
+    labelKey: 'poem_viewer.tab_summary',
+    color: 'text-foreground',
+    bgActive: 'bg-muted border-border text-foreground',
+    bgHighlight: '',
+  },
+  {
+    key: 'form',
+    labelKey: 'poem_viewer.tab_form',
+    color: 'text-purple-700',
+    bgActive: 'bg-purple-500/20 border-purple-500/50 text-purple-700',
+    bgHighlight: 'bg-purple-500/15',
+  },
+  {
+    key: 'quotes',
+    labelKey: 'poem_viewer.tab_quotes',
+    color: 'text-amber-700',
+    bgActive: 'bg-amber-500/20 border-amber-500/50 text-amber-700',
+    bgHighlight: 'bg-amber-500/15',
+  },
+  {
+    key: 'language',
+    labelKey: 'poem_viewer.tab_language',
+    color: 'text-emerald-700',
+    bgActive: 'bg-emerald-500/20 border-emerald-500/50 text-emerald-700',
+    bgHighlight: 'bg-emerald-500/15',
+  },
 ]
 
 /* ── Line popover ───────────────────────────────────────────────── */
@@ -64,6 +101,7 @@ function LinePopover({
   onClose: () => void
   anchorRef: HTMLElement | null
 }) {
+  const t = useT()
   const popoverRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -97,12 +135,12 @@ function LinePopover({
     >
       <div className="flex items-center justify-between mb-2">
         <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-          Annotations
+          {t('poem_viewer.annotations')}
         </span>
         <button
           onClick={onClose}
           className="text-muted-foreground hover:text-foreground transition-colors text-sm leading-none px-1"
-          aria-label="Close annotations"
+          aria-label={t('poem_viewer.close_annotations')}
         >
           &times;
         </button>
@@ -113,9 +151,7 @@ function LinePopover({
             <span
               className="inline-block rounded px-1.5 py-0.5 text-xs font-medium mr-2"
               style={{
-                backgroundColor: a.color
-                  ? `${a.color}22`
-                  : 'hsl(var(--muted))',
+                backgroundColor: a.color ? `${a.color}22` : 'hsl(var(--muted))',
                 color: a.color || 'hsl(var(--muted-foreground))',
               }}
             >
@@ -142,17 +178,13 @@ function ContextPanel({ html }: { html: string }) {
 
 function SummaryPanel({ text }: { text: string }) {
   return (
-    <div className="text-sm leading-relaxed text-card-foreground whitespace-pre-wrap">
-      {text}
-    </div>
+    <div className="text-sm leading-relaxed text-card-foreground whitespace-pre-wrap">{text}</div>
   )
 }
 
 function FormPanel({ text }: { text: string }) {
   return (
-    <div className="text-sm leading-relaxed text-card-foreground whitespace-pre-wrap">
-      {text}
-    </div>
+    <div className="text-sm leading-relaxed text-card-foreground whitespace-pre-wrap">{text}</div>
   )
 }
 
@@ -190,9 +222,7 @@ function LanguagePanel({ devices }: { devices: LanguageDevice[] }) {
             <span className="text-sm font-medium text-emerald-700">{d.device}</span>
             <span className="text-xs text-muted-foreground">Line {d.lineRef + 1}</span>
           </div>
-          <p className="text-sm text-card-foreground italic mb-1">
-            &ldquo;{d.example}&rdquo;
-          </p>
+          <p className="text-sm text-card-foreground italic mb-1">&ldquo;{d.example}&rdquo;</p>
           <p className="text-sm text-muted-foreground">{d.effect}</p>
         </div>
       ))}
@@ -203,6 +233,7 @@ function LanguagePanel({ devices }: { devices: LanguageDevice[] }) {
 /* ── Main component ─────────────────────────────────────────────── */
 
 export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
+  const t = useT()
   const [activeTabs, setActiveTabs] = useState<Set<AnalysisTab>>(new Set())
   const [popoverLine, setPopoverLine] = useState<number | null>(null)
   const lineRefs = useRef<Map<number, HTMLElement>>(new Map())
@@ -230,9 +261,10 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
       const classes: string[] = []
 
       if (activeTabs.has('quotes')) {
-        const isQuoteLine = poem.keyQuotes.some((q) =>
-          poem.lines[lineIndex]?.text.includes(q.quote) ||
-          q.quote.includes(poem.lines[lineIndex]?.text?.trim())
+        const isQuoteLine = poem.keyQuotes.some(
+          (q) =>
+            poem.lines[lineIndex]?.text.includes(q.quote) ||
+            q.quote.includes(poem.lines[lineIndex]?.text?.trim()),
         )
         if (isQuoteLine) classes.push('bg-amber-500/15')
       }
@@ -276,7 +308,9 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
       {/* Header */}
       <div className="border-b border-border px-4 py-4 sm:px-6">
         <h2 className="text-heading-md text-foreground">{poem.title}</h2>
-        <p className="text-sm text-muted-foreground mt-0.5">by {poem.poet}</p>
+        <p className="text-sm text-muted-foreground mt-0.5">
+          {t('poem_viewer.by')} {poem.poet}
+        </p>
       </div>
 
       {/* Toggle bar */}
@@ -295,7 +329,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                   : 'border-transparent text-muted-foreground hover:text-foreground hover:bg-muted/50',
               )}
             >
-              {tab.label}
+              {t(tab.labelKey)}
             </button>
           )
         })}
@@ -325,7 +359,11 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                     onClick={() => handleLineClick(idx, line.annotations)}
                     role={hasAnnotations ? 'button' : undefined}
                     tabIndex={hasAnnotations ? 0 : undefined}
-                    aria-label={hasAnnotations ? `Line ${idx + 1}: show ${line.annotations!.length} annotation${line.annotations!.length > 1 ? 's' : ''}` : undefined}
+                    aria-label={
+                      hasAnnotations
+                        ? `${t('poem_viewer.line')} ${idx + 1}: ${t('poem_viewer.show')} ${line.annotations!.length} ${line.annotations!.length > 1 ? t('poem_viewer.annotation_plural') : t('poem_viewer.annotation_singular')}`
+                        : undefined
+                    }
                     aria-expanded={hasAnnotations ? popoverLine === idx : undefined}
                     onKeyDown={(e) => {
                       if (hasAnnotations && (e.key === 'Enter' || e.key === ' ')) {
@@ -359,7 +397,10 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                     {/* Annotation indicator */}
                     {hasAnnotations && (
                       <span className="ml-auto shrink-0 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-                        {line.annotations!.length} note{line.annotations!.length > 1 ? 's' : ''}
+                        {line.annotations!.length}{' '}
+                        {line.annotations!.length > 1
+                          ? t('poem_viewer.note_plural')
+                          : t('poem_viewer.note_singular')}
                       </span>
                     )}
                   </div>
@@ -384,7 +425,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
             {/* Panel tab switcher (when multiple active) */}
             {activeTabs.size > 1 && (
               <div className="flex border-b border-border px-3 pt-2 gap-1 overflow-x-auto">
-                {TABS.filter((t) => activeTabs.has(t.key)).map((tab) => (
+                {TABS.filter((tab) => activeTabs.has(tab.key)).map((tab) => (
                   <button
                     key={tab.key}
                     onClick={() => {
@@ -394,7 +435,9 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                         const next = new Set<AnalysisTab>()
                         // Put the clicked tab first
                         next.add(tab.key)
-                        prev.forEach((t) => { if (t !== tab.key) next.add(t) })
+                        prev.forEach((tk) => {
+                          if (tk !== tab.key) next.add(tk)
+                        })
                         return next
                       })
                     }}
@@ -405,7 +448,7 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
                         : 'text-muted-foreground border-transparent hover:text-foreground',
                     )}
                   >
-                    {tab.label}
+                    {t(tab.labelKey)}
                   </button>
                 ))}
               </div>
@@ -413,8 +456,16 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
 
             {/* Panel title */}
             <div className="px-4 pt-4 pb-2 sm:px-5">
-              <h3 className={cn('text-sm font-semibold', TABS.find((t) => t.key === activePanelTab)?.color)}>
-                {TABS.find((t) => t.key === activePanelTab)?.label}
+              <h3
+                className={cn(
+                  'text-sm font-semibold',
+                  TABS.find((tab) => tab.key === activePanelTab)?.color,
+                )}
+              >
+                {(() => {
+                  const labelKey = TABS.find((tab) => tab.key === activePanelTab)?.labelKey
+                  return labelKey ? t(labelKey) : null
+                })()}
               </h3>
             </div>
 

@@ -3,6 +3,7 @@
 import { Bell } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 interface NotificationBellProps {
   unreadCount: number
@@ -10,18 +11,15 @@ interface NotificationBellProps {
   className?: string
 }
 
-export function NotificationBell({
-  unreadCount,
-  onClick,
-  className,
-}: NotificationBellProps) {
+export function NotificationBell({ unreadCount, onClick, className }: NotificationBellProps) {
+  const t = useT()
   return (
     <Button
       variant="ghost"
       size="icon"
       className={cn('relative h-9 w-9', className)}
       onClick={onClick}
-      aria-label={`Notifications${unreadCount > 0 ? ` (${unreadCount} unread)` : ''}`}
+      aria-label={`${t('school.notif.bell')}${unreadCount > 0 ? ` (${unreadCount} ${t('school.notif.unread_short')})` : ''}`}
     >
       <Bell className="h-4.5 w-4.5 text-muted-foreground" />
       {unreadCount > 0 && (

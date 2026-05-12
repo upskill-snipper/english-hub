@@ -17,7 +17,17 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { FileText, Brain, PenLine, Quote, Users, BookOpen, Sparkles, ChevronRight } from 'lucide-react'
+import {
+  FileText,
+  Brain,
+  PenLine,
+  Quote,
+  Users,
+  BookOpen,
+  Sparkles,
+  ChevronRight,
+} from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 
 export type TextType = 'play' | 'novel' | 'poem' | 'novella' | 'anthology' | 'language'
 
@@ -41,8 +51,8 @@ interface StudyToolsProps {
 const TOOLS = [
   {
     id: 'revision-notes',
-    label: 'AI Revision Notes',
-    description: 'Generate personalised revision notes tailored to your grade and weak areas',
+    labelKey: 'study_tools.revision_notes_label',
+    descriptionKey: 'study_tools.revision_notes_desc',
     icon: FileText,
     color: 'text-clay-600',
     bg: 'bg-clay-500/5',
@@ -51,8 +61,8 @@ const TOOLS = [
   },
   {
     id: 'test-builder',
-    label: 'Practice Quiz',
-    description: 'Build a timed quiz on this text with instant marking and feedback',
+    labelKey: 'study_tools.practice_quiz_label',
+    descriptionKey: 'study_tools.practice_quiz_desc',
     icon: Brain,
     color: 'text-teal-700',
     bg: 'bg-teal-800/5',
@@ -61,8 +71,8 @@ const TOOLS = [
   },
   {
     id: 'essay-plan',
-    label: 'Essay Planner',
-    description: 'Get a structured essay plan with thesis, paragraphs, and embedded quotes',
+    labelKey: 'study_tools.essay_planner_label',
+    descriptionKey: 'study_tools.essay_planner_desc',
     icon: PenLine,
     color: 'text-teal-700',
     bg: 'bg-teal-800/5',
@@ -71,8 +81,8 @@ const TOOLS = [
   },
   {
     id: 'key-quotes',
-    label: 'Quote Bank',
-    description: 'Curated key quotes with analysis, context, and exam technique tips',
+    labelKey: 'study_tools.quote_bank_label',
+    descriptionKey: 'study_tools.quote_bank_desc',
     icon: Quote,
     color: 'text-clay-600',
     bg: 'bg-clay-500/5',
@@ -96,6 +106,7 @@ function buildQueryString(props: StudyToolsProps, toolId: string): string {
 
 function StudyToolsFull(props: StudyToolsProps) {
   const { textName, className = '' } = props
+  const t = useT()
 
   return (
     <section className={`rounded-2xl border border-border bg-card overflow-hidden ${className}`}>
@@ -104,15 +115,14 @@ function StudyToolsFull(props: StudyToolsProps) {
         <div className="flex items-center gap-2 mb-1">
           <Sparkles className="h-4 w-4 text-clay-500" />
           <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-clay-600">
-            AI Study Tools
+            {t('study_tools.eyebrow')}
           </span>
         </div>
         <h3 className="font-serif text-xl font-normal text-ink-900 tracking-tight">
-          Study <em className="italic text-clay-600">{textName}</em> with AI
+          {t('study_tools.heading_prefix')} <em className="italic text-clay-600">{textName}</em>{' '}
+          {t('study_tools.heading_suffix')}
         </h3>
-        <p className="text-sm text-ink-500 mt-1">
-          Generate personalised revision materials, quizzes, and essay plans for this text.
-        </p>
+        <p className="text-sm text-ink-500 mt-1">{t('study_tools.subheading')}</p>
       </div>
 
       {/* Tools grid */}
@@ -131,10 +141,10 @@ function StudyToolsFull(props: StudyToolsProps) {
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-ink-900 group-hover:text-teal-800 transition-colors">
-                  {tool.label}
+                  {t(tool.labelKey)}
                 </p>
                 <p className="text-xs text-ink-500 mt-0.5 leading-relaxed">
-                  {tool.description}
+                  {t(tool.descriptionKey)}
                 </p>
               </div>
               <ChevronRight className="h-4 w-4 text-ink-300 mt-1 shrink-0 group-hover:text-teal-700 transition-colors" />
@@ -145,14 +155,12 @@ function StudyToolsFull(props: StudyToolsProps) {
 
       {/* Footer CTA */}
       <div className="border-t border-ink-100 bg-cream-50/50 px-6 py-3 flex items-center justify-between">
-        <p className="text-xs text-ink-400">
-          All outputs use The English Hub Anthology template
-        </p>
+        <p className="text-xs text-ink-400">{t('study_tools.template_note')}</p>
         <Link
           href={`/toolkit?text=${encodeURIComponent(textName)}`}
           className="text-xs font-medium text-teal-700 hover:text-teal-800 transition-colors"
         >
-          All tools &rarr;
+          {t('study_tools.all_tools')} &rarr;
         </Link>
       </div>
     </section>
@@ -163,13 +171,14 @@ function StudyToolsFull(props: StudyToolsProps) {
 
 function StudyToolsCompact(props: StudyToolsProps) {
   const { textName, className = '' } = props
+  const t = useT()
 
   return (
     <div className={`rounded-xl border border-border bg-card p-4 ${className}`}>
       <div className="flex items-center gap-2 mb-3">
         <Sparkles className="h-3.5 w-3.5 text-clay-500" />
         <span className="font-mono text-[9px] font-medium uppercase tracking-[0.2em] text-clay-600">
-          AI Study Tools · {textName}
+          {t('study_tools.eyebrow')} · {textName}
         </span>
       </div>
       <div className="flex flex-wrap gap-2">
@@ -183,7 +192,7 @@ function StudyToolsCompact(props: StudyToolsProps) {
               className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-cream-50 px-3 py-1.5 text-xs text-ink-700 font-medium hover:bg-cream-100 hover:border-ink-300 transition-colors"
             >
               <Icon className={`h-3 w-3 ${tool.color}`} />
-              {tool.label}
+              {t(tool.labelKey)}
             </Link>
           )
         })}
@@ -196,6 +205,7 @@ function StudyToolsCompact(props: StudyToolsProps) {
 
 function StudyToolsBanner(props: StudyToolsProps) {
   const { textName, className = '' } = props
+  const t = useT()
 
   return (
     <div className={`rounded-xl border border-teal-800/15 bg-teal-800/5 px-5 py-4 ${className}`}>
@@ -206,11 +216,11 @@ function StudyToolsBanner(props: StudyToolsProps) {
           </div>
           <div>
             <p className="text-sm font-medium text-ink-900">
-              Revise <em className="font-serif italic text-clay-600">{textName}</em> with AI
+              {t('study_tools.banner_prefix')}{' '}
+              <em className="font-serif italic text-clay-600">{textName}</em>{' '}
+              {t('study_tools.banner_suffix')}
             </p>
-            <p className="text-xs text-ink-500 mt-0.5">
-              Revision notes, quizzes, essay plans &mdash; personalised to your grade
-            </p>
+            <p className="text-xs text-ink-500 mt-0.5">{t('study_tools.banner_blurb')}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -219,14 +229,14 @@ function StudyToolsBanner(props: StudyToolsProps) {
             className="inline-flex items-center gap-1.5 rounded-full bg-teal-800 px-4 py-2 text-xs font-medium text-cream-50 hover:bg-teal-700 transition-colors"
           >
             <FileText className="h-3.5 w-3.5" />
-            Generate Notes
+            {t('study_tools.generate_notes')}
           </Link>
           <Link
             href={`/toolkit/test-builder?${buildQueryString(props, 'test-builder')}`}
             className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-ink-700 hover:bg-cream-50 transition-colors"
           >
             <Brain className="h-3.5 w-3.5" />
-            Practice Quiz
+            {t('study_tools.practice_quiz_label')}
           </Link>
         </div>
       </div>

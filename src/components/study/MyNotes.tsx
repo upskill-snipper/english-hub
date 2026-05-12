@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef, useCallback } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -37,7 +38,9 @@ function formatTimestamp(ts: number): string {
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
-export function MyNotes({ slug, title = 'My Notes' }: MyNotesProps) {
+export function MyNotes({ slug, title }: MyNotesProps) {
+  const t = useT()
+  const resolvedTitle = title ?? t('notes.title')
   const [notes, setNotes] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const [lastSaved, setLastSaved] = useState<number | null>(null)
@@ -76,7 +79,7 @@ export function MyNotes({ slug, title = 'My Notes' }: MyNotesProps) {
         // localStorage full or unavailable
       }
     },
-    [slug]
+    [slug],
   )
 
   // Debounced auto-save after 2 seconds of inactivity
@@ -178,10 +181,10 @@ export function MyNotes({ slug, title = 'My Notes' }: MyNotesProps) {
               strokeLinejoin="round"
             />
           </svg>
-          {title}
+          {resolvedTitle}
           {count > 0 && (
             <span className="text-xs text-muted-foreground font-normal">
-              ({count} {count === 1 ? 'word' : 'words'})
+              ({count} {count === 1 ? t('notes.word_singular') : t('notes.word_plural')})
             </span>
           )}
         </span>
@@ -194,7 +197,7 @@ export function MyNotes({ slug, title = 'My Notes' }: MyNotesProps) {
             value={notes}
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder="Type your notes here..."
+            placeholder={t('notes.placeholder')}
             rows={6}
             className="w-full resize-y rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-border"
           />
@@ -202,9 +205,13 @@ export function MyNotes({ slug, title = 'My Notes' }: MyNotesProps) {
           {/* Footer bar */}
           <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
             <div className="flex items-center gap-3">
-              <span>{count} {count === 1 ? 'word' : 'words'}</span>
+              <span>
+                {count} {count === 1 ? t('notes.word_singular') : t('notes.word_plural')}
+              </span>
               {lastSaved && (
-                <span>Saved {formatTimestamp(lastSaved)}</span>
+                <span>
+                  {t('notes.saved_at')} {formatTimestamp(lastSaved)}
+                </span>
               )}
             </div>
 
@@ -216,7 +223,7 @@ export function MyNotes({ slug, title = 'My Notes' }: MyNotesProps) {
                 disabled={!notes.trim()}
                 className="rounded px-2 py-1 text-xs border border-border text-foreground hover:bg-card/80 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               >
-                {copied ? 'Copied!' : 'Copy to clipboard'}
+                {copied ? t('notes.copied') : t('notes.copy_to_clipboard')}
               </button>
 
               {/* Clear button */}
@@ -226,7 +233,7 @@ export function MyNotes({ slug, title = 'My Notes' }: MyNotesProps) {
                 disabled={!notes.trim() && !confirmClear}
                 className="rounded px-2 py-1 text-xs border border-border text-foreground hover:bg-card/80 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               >
-                {confirmClear ? 'Confirm clear?' : 'Clear notes'}
+                {confirmClear ? t('notes.confirm_clear') : t('notes.clear')}
               </button>
             </div>
           </div>

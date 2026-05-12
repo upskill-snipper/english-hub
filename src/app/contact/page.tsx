@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from 'react'
 import { toast } from 'sonner'
 import { Mail, Clock, MessageCircleQuestion, Send } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 
 const SUBJECTS = [
   'General Enquiry',
@@ -12,6 +13,15 @@ const SUBJECTS = [
   'Partnership',
   'Feedback',
 ] as const
+
+const SUBJECT_KEYS: Record<(typeof SUBJECTS)[number], string> = {
+  'General Enquiry': 'contact.subject.general',
+  'Technical Support': 'contact.subject.tech',
+  Billing: 'contact.subject.billing',
+  'School/Institutional': 'contact.subject.school',
+  Partnership: 'contact.subject.partnership',
+  Feedback: 'contact.subject.feedback',
+}
 
 type Subject = (typeof SUBJECTS)[number]
 
@@ -23,6 +33,7 @@ interface FormData {
 }
 
 export default function ContactPage() {
+  const t = useT()
   const [form, setForm] = useState<FormData>({
     name: '',
     email: '',
@@ -41,7 +52,7 @@ export default function ContactPage() {
     if (submitting) return
 
     if (!form.name.trim() || !form.email.trim() || !form.subject || !form.message.trim()) {
-      toast.error('Please fill in all fields.')
+      toast.error(t('contact.toast.fill_fields'))
       return
     }
 
@@ -62,14 +73,14 @@ export default function ContactPage() {
       const data = await res.json()
 
       if (!res.ok) {
-        toast.error(data.error ?? 'Something went wrong. Please try again.')
+        toast.error(data.error ?? t('contact.toast.error_generic'))
         return
       }
 
       setSubmitted(true)
-      toast.success('Message sent! We\'ll get back to you within 2 business days.')
+      toast.success(t('contact.toast.sent'))
     } catch {
-      toast.error('Network error. Please check your connection and try again.')
+      toast.error(t('contact.toast.network'))
     } finally {
       setSubmitting(false)
     }
@@ -80,18 +91,16 @@ export default function ContactPage() {
       {/* ── Header ─────────────────────────────────────────── */}
       <div className="mb-10 text-center">
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Contact Us
+          {t('contact.title')}
         </h1>
-        <p className="mt-3 text-muted-foreground">
-          Have a question, suggestion, or need help? We&apos;d love to hear from you.
-        </p>
+        <p className="mt-3 text-muted-foreground">{t('contact.lead')}</p>
       </div>
 
       {/* ── Info cards ─────────────────────────────────────── */}
       <div className="mb-10 grid gap-4 sm:grid-cols-3">
         <div className="rounded-lg border border-border bg-card p-5 text-center">
           <Mail className="mx-auto mb-2 h-5 w-5 text-primary" />
-          <p className="text-sm font-medium text-foreground">Email Us</p>
+          <p className="text-sm font-medium text-foreground">{t('contact.email_us')}</p>
           <a
             href="mailto:info@Upskillenergy.com"
             className="mt-1 block text-sm text-primary hover:underline"
@@ -102,16 +111,14 @@ export default function ContactPage() {
 
         <div className="rounded-lg border border-border bg-card p-5 text-center">
           <Clock className="mx-auto mb-2 h-5 w-5 text-primary" />
-          <p className="text-sm font-medium text-foreground">Response Time</p>
-          <p className="mt-1 text-sm text-muted-foreground">Within 2 business days</p>
+          <p className="text-sm font-medium text-foreground">{t('contact.response_time')}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{t('contact.response_time_value')}</p>
         </div>
 
         <div className="rounded-lg border border-border bg-card p-5 text-center">
           <MessageCircleQuestion className="mx-auto mb-2 h-5 w-5 text-primary" />
-          <p className="text-sm font-medium text-foreground">Quick Answers</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Check our help resources or email us directly
-          </p>
+          <p className="text-sm font-medium text-foreground">{t('contact.quick_answers')}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{t('contact.quick_answers_value')}</p>
         </div>
       </div>
 
@@ -121,10 +128,8 @@ export default function ContactPage() {
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
             <Send className="h-6 w-6 text-primary" />
           </div>
-          <h2 className="text-xl font-semibold text-foreground">Message Sent</h2>
-          <p className="mt-2 text-muted-foreground">
-            Thank you for reaching out. We&apos;ll respond within 2 business days.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{t('contact.sent_title')}</h2>
+          <p className="mt-2 text-muted-foreground">{t('contact.sent_body')}</p>
         </div>
       ) : (
         <form
@@ -134,14 +139,14 @@ export default function ContactPage() {
           {/* Name */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
-              Name
+              {t('contact.field.name')}
             </label>
             <input
               id="name"
               type="text"
               required
               maxLength={100}
-              placeholder="Your name"
+              placeholder={t('contact.placeholder.name')}
               value={form.name}
               onChange={(e) => update('name', e.target.value)}
               className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -151,7 +156,7 @@ export default function ContactPage() {
           {/* Email */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
-              Email
+              {t('contact.field.email')}
             </label>
             <input
               id="email"
@@ -168,7 +173,7 @@ export default function ContactPage() {
           {/* Subject */}
           <div>
             <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-1.5">
-              Subject
+              {t('contact.field.subject')}
             </label>
             <select
               id="subject"
@@ -178,11 +183,11 @@ export default function ContactPage() {
               className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <option value="" disabled>
-                Select a subject
+                {t('contact.subject.placeholder')}
               </option>
               {SUBJECTS.map((s) => (
                 <option key={s} value={s}>
-                  {s}
+                  {t(SUBJECT_KEYS[s])}
                 </option>
               ))}
             </select>
@@ -191,14 +196,14 @@ export default function ContactPage() {
           {/* Message */}
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
-              Message
+              {t('contact.field.message')}
             </label>
             <textarea
               id="message"
               required
               rows={5}
               maxLength={2000}
-              placeholder="How can we help?"
+              placeholder={t('contact.placeholder.message')}
               value={form.message}
               onChange={(e) => update('message', e.target.value)}
               className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background resize-y"
@@ -212,7 +217,7 @@ export default function ContactPage() {
               disabled={submitting}
               className="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-50"
             >
-              {submitting ? 'Sending...' : 'Send Message'}
+              {submitting ? t('contact.sending') : t('contact.send_message')}
             </button>
           </div>
         </form>

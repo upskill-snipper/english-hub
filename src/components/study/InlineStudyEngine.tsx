@@ -30,6 +30,7 @@ import {
   AlertCircle,
 } from 'lucide-react'
 import { events } from '@/lib/gtag'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -77,7 +78,14 @@ function loadProgress(textName: string): StudyProgress {
     const raw = localStorage.getItem(getStorageKey(textName))
     if (raw) return JSON.parse(raw)
   } catch {}
-  return { quizAttempts: 0, bestScore: 0, totalCorrect: 0, totalAnswered: 0, topicScores: {}, lastAttempt: '' }
+  return {
+    quizAttempts: 0,
+    bestScore: 0,
+    totalCorrect: 0,
+    totalAnswered: 0,
+    topicScores: {},
+    lastAttempt: '',
+  }
 }
 
 function saveProgress(textName: string, progress: StudyProgress) {
@@ -95,8 +103,13 @@ function QuizMode({
 }: {
   questions: QuizQuestion[]
   textName: string
-  onComplete: (results: { correct: number; total: number; topicResults: Record<string, { correct: number; total: number }> }) => void
+  onComplete: (results: {
+    correct: number
+    total: number
+    topicResults: Record<string, { correct: number; total: number }>
+  }) => void
 }) {
+  const t = useT()
   const [difficulty, setDifficulty] = useState<'all' | 'foundation' | 'higher' | 'grade-9'>('all')
   const [questionCount, setQuestionCount] = useState(10)
   const [started, setStarted] = useState(false)
@@ -106,15 +119,17 @@ function QuizMode({
   const [answered, setAnswered] = useState(false)
   const [score, setScore] = useState(0)
   const [finished, setFinished] = useState(false)
-  const [topicResults, setTopicResults] = useState<Record<string, { correct: number; total: number }>>({})
+  const [topicResults, setTopicResults] = useState<
+    Record<string, { correct: number; total: number }>
+  >({})
 
   const filteredQuestions = useMemo(() => {
     let qs = [...questions]
     if (difficulty !== 'all') qs = qs.filter((q) => q.difficulty === difficulty)
     // Shuffle
     for (let i = qs.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [qs[i], qs[j]] = [qs[j], qs[i]]
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[qs[i], qs[j]] = [qs[j], qs[i]]
     }
     return qs.slice(0, Math.min(questionCount, qs.length))
   }, [questions, difficulty, questionCount])
@@ -128,7 +143,11 @@ function QuizMode({
     setFinished(false)
     setTopicResults({})
     setStarted(true)
-    try { events.quizStarted(textName) } catch { /* never break */ }
+    try {
+      events.quizStarted(textName)
+    } catch {
+      /* never break */
+    }
   }
 
   const handleSelect = (idx: number) => {
@@ -155,8 +174,16 @@ function QuizMode({
   const handleNext = () => {
     if (currentIdx >= quizQuestions.length - 1) {
       setFinished(true)
-      onComplete({ correct: score + (selected === quizQuestions[currentIdx]?.correctIndex ? 0 : 0), total: quizQuestions.length, topicResults })
-      try { events.quizCompleted(textName, score, quizQuestions.length) } catch { /* never break */ }
+      onComplete({
+        correct: score + (selected === quizQuestions[currentIdx]?.correctIndex ? 0 : 0),
+        total: quizQuestions.length,
+        topicResults,
+      })
+      try {
+        events.quizCompleted(textName, score, quizQuestions.length)
+      } catch {
+        /* never break */
+      }
     } else {
       setCurrentIdx((i) => i + 1)
       setSelected(null)
@@ -171,44 +198,44 @@ function QuizMode({
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label className="block font-mono text-[9px] uppercase tracking-[0.2em] text-ink-500 mb-1.5">
-              Difficulty
+              {t('quiz.difficulty')}
             </label>
             <select
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value as typeof difficulty)}
               className="w-full rounded-lg border border-ink-200 bg-cream-50 px-3 py-2 text-sm text-ink-900 focus:outline-none focus:border-teal-700"
             >
-              <option value="all">All levels</option>
-              <option value="foundation">Foundation (Grade 1-5)</option>
-              <option value="higher">Higher (Grade 5-7)</option>
-              <option value="grade-9">Grade 9 stretch</option>
+              <option value="all">{t('quiz.all_levels')}</option>
+              <option value="foundation">{t('quiz.foundation')}</option>
+              <option value="higher">{t('quiz.higher')}</option>
+              <option value="grade-9">{t('quiz.grade_9')}</option>
             </select>
           </div>
           <div>
             <label className="block font-mono text-[9px] uppercase tracking-[0.2em] text-ink-500 mb-1.5">
-              Questions
+              {t('quiz.questions')}
             </label>
             <select
               value={questionCount}
               onChange={(e) => setQuestionCount(Number(e.target.value))}
               className="w-full rounded-lg border border-ink-200 bg-cream-50 px-3 py-2 text-sm text-ink-900 focus:outline-none focus:border-teal-700"
             >
-              <option value={5}>5 questions (quick)</option>
-              <option value={10}>10 questions</option>
-              <option value={15}>15 questions</option>
-              <option value={20}>20 questions (full test)</option>
+              <option value={5}>{t('quiz.questions_5')}</option>
+              <option value={10}>{t('quiz.questions_10')}</option>
+              <option value={15}>{t('quiz.questions_15')}</option>
+              <option value={20}>{t('quiz.questions_20')}</option>
             </select>
           </div>
         </div>
         <p className="text-xs text-ink-500">
-          {filteredQuestions.length} questions available at this level
+          {filteredQuestions.length} {t('quiz.available_at_level')}
         </p>
         <button
           onClick={startQuiz}
           disabled={filteredQuestions.length === 0}
           className="w-full rounded-xl bg-teal-800 py-3 text-sm font-medium text-cream-50 hover:bg-teal-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Start Quiz
+          {t('quiz.start')}
         </button>
       </div>
     )
@@ -217,20 +244,49 @@ function QuizMode({
   // Results screen
   if (finished) {
     const pct = Math.round((score / quizQuestions.length) * 100)
-    const grade = pct >= 90 ? '9' : pct >= 80 ? '8' : pct >= 70 ? '7' : pct >= 60 ? '6' : pct >= 50 ? '5' : pct >= 40 ? '4' : pct >= 30 ? '3' : '2'
+    const grade =
+      pct >= 90
+        ? '9'
+        : pct >= 80
+          ? '8'
+          : pct >= 70
+            ? '7'
+            : pct >= 60
+              ? '6'
+              : pct >= 50
+                ? '5'
+                : pct >= 40
+                  ? '4'
+                  : pct >= 30
+                    ? '3'
+                    : '2'
     return (
       <div className="space-y-4">
         <div className="text-center py-4">
-          <p className="font-serif text-5xl font-normal italic text-clay-600">{score}/{quizQuestions.length}</p>
-          <p className="text-sm text-ink-600 mt-1">{pct}% &middot; Working at Grade {grade}</p>
-          {pct >= 70 && <p className="text-xs text-teal-700 mt-1 font-medium">Excellent understanding!</p>}
-          {pct >= 40 && pct < 70 && <p className="text-xs text-amber-700 mt-1 font-medium">Good progress — review the topics below</p>}
-          {pct < 40 && <p className="text-xs text-clay-600 mt-1 font-medium">More revision needed — try the revision notes tab</p>}
+          <p className="font-serif text-5xl font-normal italic text-clay-600">
+            {score}/{quizQuestions.length}
+          </p>
+          <p className="text-sm text-ink-600 mt-1">
+            {pct}% &middot; {t('quiz.working_at_grade')} {grade}
+          </p>
+          {pct >= 70 && (
+            <p className="text-xs text-teal-700 mt-1 font-medium">
+              {t('quiz.excellent_understanding')}
+            </p>
+          )}
+          {pct >= 40 && pct < 70 && (
+            <p className="text-xs text-amber-700 mt-1 font-medium">{t('quiz.good_progress')}</p>
+          )}
+          {pct < 40 && (
+            <p className="text-xs text-clay-600 mt-1 font-medium">{t('quiz.more_revision')}</p>
+          )}
         </div>
 
         {/* Topic breakdown */}
         <div className="space-y-2">
-          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink-500">Topic Breakdown</p>
+          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink-500">
+            {t('quiz.topic_breakdown')}
+          </p>
           {Object.entries(topicResults).map(([topic, result]) => {
             const topicPct = Math.round((result.correct / result.total) * 100)
             return (
@@ -242,17 +298,22 @@ function QuizMode({
                     style={{ width: `${topicPct}%` }}
                   />
                 </div>
-                <span className="text-xs font-mono text-ink-500 w-12 text-right">{result.correct}/{result.total}</span>
+                <span className="text-xs font-mono text-ink-500 w-12 text-right">
+                  {result.correct}/{result.total}
+                </span>
               </div>
             )
           })}
         </div>
 
         <button
-          onClick={() => { setStarted(false); setFinished(false) }}
+          onClick={() => {
+            setStarted(false)
+            setFinished(false)
+          }}
           className="w-full flex items-center justify-center gap-2 rounded-lg border border-ink-200 bg-cream-50 py-2.5 text-xs font-medium text-ink-700 hover:bg-cream-100 transition-colors"
         >
-          <RotateCcw className="size-3" /> Take another quiz
+          <RotateCcw className="size-3" /> {t('quiz.take_another')}
         </button>
       </div>
     )
@@ -273,7 +334,10 @@ function QuizMode({
 
       {/* Progress bar */}
       <div className="w-full h-1 bg-ink-100 rounded-full overflow-hidden">
-        <div className="h-full bg-teal-600 rounded-full transition-all duration-300" style={{ width: `${((currentIdx + 1) / quizQuestions.length) * 100}%` }} />
+        <div
+          className="h-full bg-teal-600 rounded-full transition-all duration-300"
+          style={{ width: `${((currentIdx + 1) / quizQuestions.length) * 100}%` }}
+        />
       </div>
 
       <p className="text-sm font-medium text-ink-900 leading-relaxed">{q.question}</p>
@@ -293,10 +357,16 @@ function QuizMode({
               disabled={answered}
               className={`w-full flex items-center gap-2.5 rounded-lg border px-3 py-2.5 text-xs text-left transition-all ${cls}`}
             >
-              <span className="shrink-0 font-mono text-[10px] text-ink-400 w-4">{String.fromCharCode(65 + i)}.</span>
+              <span className="shrink-0 font-mono text-[10px] text-ink-400 w-4">
+                {String.fromCharCode(65 + i)}.
+              </span>
               {opt}
-              {answered && i === q.correctIndex && <Check className="size-3.5 text-teal-700 ml-auto shrink-0" />}
-              {answered && i === selected && i !== q.correctIndex && <X className="size-3.5 text-clay-600 ml-auto shrink-0" />}
+              {answered && i === q.correctIndex && (
+                <Check className="size-3.5 text-teal-700 ml-auto shrink-0" />
+              )}
+              {answered && i === selected && i !== q.correctIndex && (
+                <X className="size-3.5 text-clay-600 ml-auto shrink-0" />
+              )}
             </button>
           )
         })}
@@ -305,7 +375,7 @@ function QuizMode({
       {answered && (
         <div className="rounded-lg bg-cream-50 border border-ink-100 p-3">
           <p className="text-xs text-ink-600 leading-relaxed">
-            <span className="font-medium text-ink-800">Explanation: </span>
+            <span className="font-medium text-ink-800">{t('quiz.explanation')}: </span>
             {q.explanation}
           </p>
         </div>
@@ -316,7 +386,8 @@ function QuizMode({
           onClick={handleNext}
           className="w-full rounded-lg bg-teal-800 py-2.5 text-xs font-medium text-cream-50 hover:bg-teal-700 transition-colors"
         >
-          {currentIdx >= quizQuestions.length - 1 ? 'See Results' : 'Next Question'} <ChevronRight className="inline size-3 ml-1" />
+          {currentIdx >= quizQuestions.length - 1 ? t('quiz.see_results') : t('quiz.next_question')}{' '}
+          <ChevronRight className="inline size-3 ml-1" />
         </button>
       )}
     </div>
@@ -325,7 +396,13 @@ function QuizMode({
 
 // ─── Revision Notes Tab ────────────────────────────────────────────────────
 
-function RevisionMode({ topics, textName }: { topics: { topic: string; summary: string; keyPoints: string[] }[]; textName: string }) {
+function RevisionMode({
+  topics,
+  textName,
+}: {
+  topics: { topic: string; summary: string; keyPoints: string[] }[]
+  textName: string
+}) {
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null)
 
   return (
@@ -337,7 +414,9 @@ function RevisionMode({ topics, textName }: { topics: { topic: string; summary: 
             className="w-full flex items-center justify-between p-3 text-left hover:bg-cream-50 transition-colors"
           >
             <span className="text-sm font-medium text-ink-900">{t.topic}</span>
-            <ChevronRight className={`size-4 text-ink-400 transition-transform ${expandedIdx === i ? 'rotate-90' : ''}`} />
+            <ChevronRight
+              className={`size-4 text-ink-400 transition-transform ${expandedIdx === i ? 'rotate-90' : ''}`}
+            />
           </button>
           {expandedIdx === i && (
             <div className="px-3 pb-3 border-t border-ink-100">
@@ -361,6 +440,7 @@ function RevisionMode({ topics, textName }: { topics: { topic: string; summary: 
 // ─── Essay Practice Tab ────────────────────────────────────────────────────
 
 function EssayMode({ prompts, textName }: { prompts: string[]; textName: string }) {
+  const t = useT()
   const [currentPrompt, setCurrentPrompt] = useState(0)
   const [essay, setEssay] = useState('')
   const [wordCount, setWordCount] = useState(0)
@@ -381,9 +461,9 @@ function EssayMode({ prompts, textName }: { prompts: string[]; textName: string 
     const grade = wordCount > 200 ? '6-7' : wordCount > 100 ? '4-5' : '3-4'
     setFeedback(
       `Working at Grade ${grade}. Your response shows ${wordCount > 200 ? 'good' : 'developing'} understanding of ${textName}. ` +
-      `${wordCount > 150 ? 'You embed quotations effectively.' : 'Try to embed more direct quotations to support your points.'} ` +
-      `${wordCount > 200 ? 'Your analysis of language is becoming sophisticated.' : 'Focus on analysing specific words and their effects (AO2).'} ` +
-      `To improve: integrate historical context (AO3) more naturally into your argument rather than bolting it on.`
+        `${wordCount > 150 ? 'You embed quotations effectively.' : 'Try to embed more direct quotations to support your points.'} ` +
+        `${wordCount > 200 ? 'Your analysis of language is becoming sophisticated.' : 'Focus on analysing specific words and their effects (AO2).'} ` +
+        `To improve: integrate historical context (AO3) more naturally into your argument rather than bolting it on.`,
     )
     setSubmitted(true)
     setLoading(false)
@@ -392,17 +472,24 @@ function EssayMode({ prompts, textName }: { prompts: string[]; textName: string 
   return (
     <div className="space-y-3">
       <div className="rounded-lg bg-cream-50 border border-ink-100 p-4">
-        <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-clay-600 mb-2">Exam Question</p>
+        <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-clay-600 mb-2">
+          {t('essay.exam_question')}
+        </p>
         <p className="text-sm font-serif italic text-ink-800 leading-relaxed">
           &ldquo;{prompts[currentPrompt]}&rdquo;
         </p>
       </div>
 
       <button
-        onClick={() => { setCurrentPrompt((i) => (i + 1) % prompts.length); setEssay(''); setSubmitted(false); setFeedback(null) }}
+        onClick={() => {
+          setCurrentPrompt((i) => (i + 1) % prompts.length)
+          setEssay('')
+          setSubmitted(false)
+          setFeedback(null)
+        }}
         className="text-xs text-teal-700 font-medium hover:text-teal-800"
       >
-        Get a different question &rarr;
+        {t('essay.get_different_question')} &rarr;
       </button>
 
       {!submitted ? (
@@ -410,33 +497,41 @@ function EssayMode({ prompts, textName }: { prompts: string[]; textName: string 
           <textarea
             value={essay}
             onChange={(e) => handleEssayChange(e.target.value)}
-            placeholder={`Write your response to this ${textName} question here...\n\nAim for at least 200 words. Embed quotations, analyse language (AO2), and link to context (AO3).`}
+            placeholder={t('essay.placeholder')}
             className="w-full h-48 rounded-lg border border-border bg-card px-4 py-3 text-sm text-ink-900 placeholder:text-ink-400 focus:outline-none focus:border-teal-700 resize-y font-serif leading-relaxed"
           />
           <div className="flex items-center justify-between">
-            <span className={`font-mono text-[10px] ${wordCount >= 200 ? 'text-teal-700' : wordCount >= 50 ? 'text-amber-700' : 'text-ink-400'}`}>
-              {wordCount} words {wordCount < 50 && '(min 50 to submit)'}
+            <span
+              className={`font-mono text-[10px] ${wordCount >= 200 ? 'text-teal-700' : wordCount >= 50 ? 'text-amber-700' : 'text-ink-400'}`}
+            >
+              {wordCount} {t('essay.words')} {wordCount < 50 && t('essay.min_50_hint')}
             </span>
             <button
               onClick={handleSubmit}
               disabled={wordCount < 50 || loading}
               className="rounded-lg bg-clay-500 px-4 py-2 text-xs font-medium text-cream-50 hover:bg-clay-400 transition-colors disabled:opacity-50"
             >
-              {loading ? 'Marking...' : 'Get Feedback'}
+              {loading ? t('essay.marking') : t('essay.get_feedback')}
             </button>
           </div>
         </>
       ) : (
         <div className="space-y-3">
           <div className="rounded-lg border border-teal-800/20 bg-teal-800/5 p-4">
-            <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-teal-700 mb-2">AI Feedback</p>
+            <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-teal-700 mb-2">
+              {t('essay.ai_feedback')}
+            </p>
             <p className="text-xs text-ink-700 leading-relaxed">{feedback}</p>
           </div>
           <button
-            onClick={() => { setEssay(''); setSubmitted(false); setFeedback(null) }}
+            onClick={() => {
+              setEssay('')
+              setSubmitted(false)
+              setFeedback(null)
+            }}
             className="w-full flex items-center justify-center gap-2 rounded-lg border border-ink-200 bg-cream-50 py-2 text-xs font-medium text-ink-700 hover:bg-cream-100"
           >
-            <RotateCcw className="size-3" /> Try again
+            <RotateCcw className="size-3" /> {t('essay.try_again')}
           </button>
         </div>
       )}
@@ -447,16 +542,18 @@ function EssayMode({ prompts, textName }: { prompts: string[]; textName: string 
 // ─── Progress Tab ──────────────────────────────────────────────────────────
 
 function ProgressMode({ textName, progress }: { textName: string; progress: StudyProgress }) {
-  const overallPct = progress.totalAnswered > 0
-    ? Math.round((progress.totalCorrect / progress.totalAnswered) * 100)
-    : 0
+  const t = useT()
+  const overallPct =
+    progress.totalAnswered > 0
+      ? Math.round((progress.totalCorrect / progress.totalAnswered) * 100)
+      : 0
 
   if (progress.quizAttempts === 0) {
     return (
       <div className="text-center py-6">
         <Target className="size-8 text-ink-300 mx-auto mb-2" />
-        <p className="text-sm text-ink-600">No quiz attempts yet</p>
-        <p className="text-xs text-ink-400 mt-1">Take a quiz to start tracking your understanding</p>
+        <p className="text-sm text-ink-600">{t('study_progress.no_attempts')}</p>
+        <p className="text-xs text-ink-400 mt-1">{t('study_progress.take_quiz_hint')}</p>
       </div>
     )
   }
@@ -466,24 +563,32 @@ function ProgressMode({ textName, progress }: { textName: string; progress: Stud
       <div className="grid grid-cols-3 gap-3">
         <div className="rounded-lg bg-cream-50 border border-ink-100 p-3 text-center">
           <p className="font-serif text-2xl italic text-clay-600">{progress.quizAttempts}</p>
-          <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-ink-500 mt-1">Quizzes taken</p>
+          <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-ink-500 mt-1">
+            {t('study_progress.quizzes_taken')}
+          </p>
         </div>
         <div className="rounded-lg bg-cream-50 border border-ink-100 p-3 text-center">
           <p className="font-serif text-2xl italic text-clay-600">{overallPct}%</p>
-          <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-ink-500 mt-1">Overall score</p>
+          <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-ink-500 mt-1">
+            {t('study_progress.overall_score')}
+          </p>
         </div>
         <div className="rounded-lg bg-cream-50 border border-ink-100 p-3 text-center">
           <p className="font-serif text-2xl italic text-clay-600">{progress.bestScore}%</p>
-          <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-ink-500 mt-1">Best score</p>
+          <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-ink-500 mt-1">
+            {t('study_progress.best_score')}
+          </p>
         </div>
       </div>
 
       {Object.keys(progress.topicScores).length > 0 && (
         <div>
-          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink-500 mb-2">Topic Mastery</p>
+          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink-500 mb-2">
+            {t('study_progress.topic_mastery')}
+          </p>
           <div className="space-y-2">
             {Object.entries(progress.topicScores)
-              .sort(([, a], [, b]) => (a.correct / a.total) - (b.correct / b.total))
+              .sort(([, a], [, b]) => a.correct / a.total - b.correct / b.total)
               .map(([topic, result]) => {
                 const pct = Math.round((result.correct / result.total) * 100)
                 return (
@@ -510,13 +615,13 @@ function ProgressMode({ textName, progress }: { textName: string; progress: Stud
           <div className="flex items-start gap-2">
             <AlertCircle className="size-3.5 text-clay-600 mt-0.5 shrink-0" />
             <div>
-              <p className="text-xs font-medium text-clay-700">Focus areas</p>
+              <p className="text-xs font-medium text-clay-700">{t('study_progress.focus_areas')}</p>
               <p className="text-xs text-ink-600 mt-0.5">
                 {Object.entries(progress.topicScores)
-                  .filter(([, r]) => (r.correct / r.total) < 0.5)
-                  .map(([t]) => t)
+                  .filter(([, r]) => r.correct / r.total < 0.5)
+                  .map(([topic]) => topic)
                   .slice(0, 3)
-                  .join(', ') || 'Keep practising all topics'}
+                  .join(', ') || t('study_progress.keep_practising')}
               </p>
             </div>
           </div>
@@ -535,39 +640,75 @@ export default function InlineStudyEngine({
   revisionTopics = [],
   className = '',
 }: InlineStudyEngineProps) {
+  const t = useT()
   const [activeTab, setActiveTab] = useState<Tab>('quiz')
   const [progress, setProgress] = useState<StudyProgress>(() => loadProgress(textName))
 
   // Save progress after quiz completion
-  const handleQuizComplete = useCallback((results: { correct: number; total: number; topicResults: Record<string, { correct: number; total: number }> }) => {
-    const pct = Math.round((results.correct / results.total) * 100)
-    setProgress((prev) => {
-      const updated: StudyProgress = {
-        quizAttempts: prev.quizAttempts + 1,
-        bestScore: Math.max(prev.bestScore, pct),
-        totalCorrect: prev.totalCorrect + results.correct,
-        totalAnswered: prev.totalAnswered + results.total,
-        topicScores: { ...prev.topicScores },
-        lastAttempt: new Date().toISOString(),
-      }
-      // Merge topic scores
-      Object.entries(results.topicResults).forEach(([topic, result]) => {
-        const existing = updated.topicScores[topic] || { correct: 0, total: 0 }
-        updated.topicScores[topic] = {
-          correct: existing.correct + result.correct,
-          total: existing.total + result.total,
+  const handleQuizComplete = useCallback(
+    (results: {
+      correct: number
+      total: number
+      topicResults: Record<string, { correct: number; total: number }>
+    }) => {
+      const pct = Math.round((results.correct / results.total) * 100)
+      setProgress((prev) => {
+        const updated: StudyProgress = {
+          quizAttempts: prev.quizAttempts + 1,
+          bestScore: Math.max(prev.bestScore, pct),
+          totalCorrect: prev.totalCorrect + results.correct,
+          totalAnswered: prev.totalAnswered + results.total,
+          topicScores: { ...prev.topicScores },
+          lastAttempt: new Date().toISOString(),
         }
+        // Merge topic scores
+        Object.entries(results.topicResults).forEach(([topic, result]) => {
+          const existing = updated.topicScores[topic] || { correct: 0, total: 0 }
+          updated.topicScores[topic] = {
+            correct: existing.correct + result.correct,
+            total: existing.total + result.total,
+          }
+        })
+        saveProgress(textName, updated)
+        return updated
       })
-      saveProgress(textName, updated)
-      return updated
-    })
-  }, [textName])
+    },
+    [textName],
+  )
 
   const tabs = [
-    { id: 'quiz' as const, label: 'Quiz', icon: Brain, count: questions.length },
-    ...(revisionTopics.length > 0 ? [{ id: 'revision' as const, label: 'Revise', icon: BookOpen, count: revisionTopics.length }] : []),
-    ...(essayPrompts.length > 0 ? [{ id: 'essay' as const, label: 'Essay', icon: PenLine, count: essayPrompts.length }] : []),
-    { id: 'progress' as const, label: 'Progress', icon: TrendingUp, count: progress.quizAttempts },
+    {
+      id: 'quiz' as const,
+      label: t('study_engine.tab_quiz'),
+      icon: Brain,
+      count: questions.length,
+    },
+    ...(revisionTopics.length > 0
+      ? [
+          {
+            id: 'revision' as const,
+            label: t('study_engine.tab_revise'),
+            icon: BookOpen,
+            count: revisionTopics.length,
+          },
+        ]
+      : []),
+    ...(essayPrompts.length > 0
+      ? [
+          {
+            id: 'essay' as const,
+            label: t('study_engine.tab_essay'),
+            icon: PenLine,
+            count: essayPrompts.length,
+          },
+        ]
+      : []),
+    {
+      id: 'progress' as const,
+      label: t('study_engine.tab_progress'),
+      icon: TrendingUp,
+      count: progress.quizAttempts,
+    },
   ]
 
   return (
@@ -577,7 +718,7 @@ export default function InlineStudyEngine({
         <div className="flex items-center gap-2">
           <Sparkles className="size-4 text-clay-500" />
           <h3 className="font-serif text-base font-normal text-ink-900">
-            Self-Study: <em className="italic text-clay-600">{textName}</em>
+            {t('study_engine.heading')}: <em className="italic text-clay-600">{textName}</em>
           </h3>
         </div>
       </div>
@@ -600,7 +741,9 @@ export default function InlineStudyEngine({
               <Icon className="size-3.5" />
               {tab.label}
               {tab.count > 0 && (
-                <span className={`font-mono text-[9px] ${isActive ? 'text-clay-500' : 'text-ink-400'}`}>
+                <span
+                  className={`font-mono text-[9px] ${isActive ? 'text-clay-500' : 'text-ink-400'}`}
+                >
                   {tab.count}
                 </span>
               )}
@@ -620,9 +763,7 @@ export default function InlineStudyEngine({
         {activeTab === 'essay' && essayPrompts.length > 0 && (
           <EssayMode prompts={essayPrompts} textName={textName} />
         )}
-        {activeTab === 'progress' && (
-          <ProgressMode textName={textName} progress={progress} />
-        )}
+        {activeTab === 'progress' && <ProgressMode textName={textName} progress={progress} />}
       </div>
     </section>
   )

@@ -18,12 +18,14 @@ import { useAuthStore } from '@/store/auth-store'
 import type { CourseData } from '@/data/courses'
 import { LearningTip } from '@/components/ui/learning-tip'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 interface CourseDetailPageProps {
   course: CourseData
 }
 
 export default function CourseDetailPage({ course }: CourseDetailPageProps) {
+  const t = useT()
   const { user, profile } = useAuthStore()
 
   const [isEnrolled, setIsEnrolled] = useState(false)
@@ -62,7 +64,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
   const hasAccess = isEnrolled || isPro
   const firstModule = course.moduleList[0]
   const firstModuleHref = firstModule ? `/learn/${course.id}/${firstModule.id}` : `/courses`
-  const ctaLabel = hasAccess ? 'Start Learning' : 'Try Free Preview'
+  const ctaLabel = hasAccess ? t('course.start_learning') : t('course.try_free_preview')
   const ctaHref = firstModuleHref
 
   const totalQuizzes = useMemo(
@@ -89,7 +91,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
             className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
-            All courses
+            {t('course.all_courses')}
           </Link>
 
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
@@ -128,12 +130,12 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <BookOpen className="h-4 w-4 text-primary" />
-                  {course.moduleList.length} modules
+                  {course.moduleList.length} {t('course.modules')}
                 </span>
                 {totalQuizzes > 0 && (
                   <span className="inline-flex items-center gap-1.5">
                     <PenTool className="h-4 w-4 text-primary" />
-                    {totalQuizzes} quizzes
+                    {totalQuizzes} {t('course.quizzes')}
                   </span>
                 )}
                 <span className="inline-flex items-center gap-1.5">
@@ -151,7 +153,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                     render={<Link href={ctaHref} />}
                   >
                     <Play className="h-4 w-4" />
-                    Try Free Preview — No Sign-Up Needed
+                    {t('course.try_free_preview_no_signup')}
                   </Button>
                 </div>
               )}
@@ -169,14 +171,16 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
           <div className="flex-1">
             {/* Description */}
             <div className="card p-6 sm:p-8">
-              <h2 className="mb-4 text-xl font-bold text-foreground">About This Course</h2>
+              <h2 className="mb-4 text-xl font-bold text-foreground">{t('course.about_course')}</h2>
               <p className="leading-relaxed text-muted-foreground">{course.description}</p>
             </div>
 
             {/* Module list */}
             <div className="card mt-6 p-6 sm:p-8">
               <div className="mb-6 flex items-center gap-2">
-                <h2 className="text-xl font-bold text-foreground">What You&apos;ll Learn</h2>
+                <h2 className="text-xl font-bold text-foreground">
+                  {t('course.what_youll_learn')}
+                </h2>
                 <LearningTip categories={['course', 'study']} side="right" />
               </div>
 
@@ -212,7 +216,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                           </span>
                           {isFreePreview && (
                             <span className="shrink-0 rounded-md bg-emerald-500/15 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-emerald-500 ring-1 ring-emerald-500/20">
-                              Free Preview
+                              {t('course.free_preview')}
                             </span>
                           )}
                         </div>
@@ -220,7 +224,10 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                           <span>{mod.duration}</span>
                           {mod.quiz?.length > 0 && (
                             <span>
-                              {mod.quiz.length} {mod.quiz.length === 1 ? 'quiz' : 'quizzes'}
+                              {mod.quiz.length}{' '}
+                              {mod.quiz.length === 1
+                                ? t('course.quiz_singular')
+                                : t('course.quizzes')}
                             </span>
                           )}
                         </div>
@@ -278,11 +285,17 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
         <div className="mx-auto flex max-w-lg items-center justify-between gap-4">
           <div>
             {hasAccess ? (
-              <span className="text-sm font-medium text-foreground">Ready to learn</span>
+              <span className="text-sm font-medium text-foreground">
+                {t('course.ready_to_learn')}
+              </span>
             ) : (
               <>
-                <span className="text-sm font-medium text-foreground">Try it free</span>
-                <span className="ml-1.5 text-xs text-muted-foreground">No sign-up needed</span>
+                <span className="text-sm font-medium text-foreground">
+                  {t('course.try_it_free')}
+                </span>
+                <span className="ml-1.5 text-xs text-muted-foreground">
+                  {t('course.no_signup_needed')}
+                </span>
               </>
             )}
           </div>
@@ -333,6 +346,7 @@ const SubscriptionCard = memo(function SubscriptionCard({
   level,
   billingHref,
 }: SubscriptionCardProps) {
+  const t = useT()
   return (
     <div className="card w-full overflow-hidden lg:w-80">
       <div className="p-6">
@@ -367,16 +381,17 @@ const SubscriptionCard = memo(function SubscriptionCard({
             )}
 
             <div className="mt-4 rounded-lg border border-border/60 bg-background/50 p-3 text-center">
-              <p className="text-xs text-muted-foreground">Want full access to all courses?</p>
+              <p className="text-xs text-muted-foreground">{t('course.want_full_access')}</p>
               <Link
                 href={billingHref ?? '/account/billing'}
                 className="mt-1 inline-block text-sm font-semibold text-primary hover:underline"
               >
-                Start 7-day free trial
+                {t('course.start_7day_trial')}
               </Link>
               <p className="mt-0.5 text-[10px] text-muted-foreground">
                 {PRICING.CURRENCY}
-                {PRICING.STUDENT_MONTHLY}/mo after trial · Card required
+                {PRICING.STUDENT_MONTHLY}
+                {t('course.per_month_after_trial')}
               </p>
             </div>
           </>
@@ -385,28 +400,28 @@ const SubscriptionCard = memo(function SubscriptionCard({
 
       <div className="border-t border-border px-6 py-4">
         <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          This course includes
+          {t('course.includes_heading')}
         </h4>
         <ul className="space-y-2.5 text-sm text-muted-foreground">
           <li className="flex items-center gap-2.5">
             <CheckCircle className="h-4 w-4 text-primary" />
-            {moduleCount} structured modules
+            {moduleCount} {t('course.structured_modules')}
           </li>
           <li className="flex items-center gap-2.5">
             <CheckCircle className="h-4 w-4 text-primary" />
-            {duration} of content
+            {duration} {t('course.of_content')}
           </li>
           <li className="flex items-center gap-2.5">
             <CheckCircle className="h-4 w-4 text-primary" />
-            {level} level
+            {level} {t('course.level_word')}
           </li>
           <li className="flex items-center gap-2.5">
             <CheckCircle className="h-4 w-4 text-primary" />
-            Quizzes & practice questions
+            {t('course.quizzes_practice')}
           </li>
           <li className="flex items-center gap-2.5">
             <CheckCircle className="h-4 w-4 text-primary" />
-            Certificate on completion
+            {t('course.cert_on_complete')}
           </li>
         </ul>
       </div>

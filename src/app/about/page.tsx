@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 // 2026-05-04: Founder-section removed at the founder's request — the
 // site does not currently make any examiner / qualification claims,
@@ -35,122 +36,187 @@ export const metadata: Metadata = {
   },
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const [
+    h1,
+    missionH2,
+    missionBody,
+    offerH2,
+    offerBody,
+    approachH2,
+    approachIntro,
+    approachExamBoardName,
+    approachExamBoardDesc,
+    approachAiName,
+    approachAiDesc,
+    approachMockName,
+    approachMockDesc,
+    approachGamesName,
+    approachGamesDesc,
+    whoH2,
+    whoBody,
+    valuesH2,
+    valueQualityName,
+    valueQualityDesc,
+    valueAccessName,
+    valueAccessDesc,
+    valueEvidenceName,
+    valueEvidenceDesc,
+    valueAlignName,
+    valueAlignDesc,
+    glanceH2,
+    statCoursesLabel,
+    statBoardsLabel,
+    statAiLabel,
+    statMockLabel,
+    statAiValue,
+    statMockValue,
+    entityH2,
+    entityTradingLine,
+    entityCompanyLine,
+    entityIcoLine,
+    entityOfficeLine,
+    complianceH2,
+    compDpia,
+    compSafeguard,
+    compVpat,
+    compAccess,
+    compCyber,
+    compDpa,
+    comingSoon,
+    dpaAvailable,
+    breadcrumbHome,
+    breadcrumbAbout,
+  ] = await tMany([
+    'about.title',
+    'about.mission.h2',
+    'about.mission.body',
+    'about.offer.h2',
+    'about.offer.body',
+    'about.approach.h2',
+    'about.approach.intro',
+    'about.approach.exam_board.name',
+    'about.approach.exam_board.desc',
+    'about.approach.ai.name',
+    'about.approach.ai.desc',
+    'about.approach.mock.name',
+    'about.approach.mock.desc',
+    'about.approach.games.name',
+    'about.approach.games.desc',
+    'about.who.h2',
+    'about.who.body',
+    'about.values.h2',
+    'about.values.quality.name',
+    'about.values.quality.desc',
+    'about.values.access.name',
+    'about.values.access.desc',
+    'about.values.evidence.name',
+    'about.values.evidence.desc',
+    'about.values.align.name',
+    'about.values.align.desc',
+    'about.glance.h2',
+    'about.glance.courses_label',
+    'about.glance.boards_label',
+    'about.glance.ai_label',
+    'about.glance.mock_label',
+    'about.glance.ai_value',
+    'about.glance.mock_value',
+    'about.entity.h2',
+    'about.entity.trading',
+    'about.entity.company_no',
+    'about.entity.ico',
+    'about.entity.office',
+    'about.compliance.h2',
+    'about.compliance.dpia',
+    'about.compliance.safeguard',
+    'about.compliance.vpat',
+    'about.compliance.access_statement',
+    'about.compliance.cyber',
+    'about.compliance.dpa',
+    'about.compliance.coming_soon',
+    'about.compliance.dpa_available',
+    'nav.home',
+    'footer.link.about',
+  ])
+
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'About', url: 'https://theenglishhub.app/about' },
+          { name: breadcrumbHome, url: 'https://theenglishhub.app' },
+          { name: breadcrumbAbout, url: 'https://theenglishhub.app/about' },
         ]}
       />
-      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        About The English Hub
-      </h1>
+      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{h1}</h1>
 
       <div className="mt-8 space-y-8">
         {/* Mission */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">Our Mission</h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            The English Hub exists to make high-quality GCSE English education accessible to every
-            student. We believe that no learner should be held back by a lack of resources, and that
-            every student deserves structured, exam-focused content that helps them achieve their
-            best possible grade. Our platform is built to close the attainment gap and give every
-            student the tools they need to succeed.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{missionH2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{missionBody}</p>
         </section>
 
         {/* What We Offer */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">What We Offer</h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            We provide 15+ structured courses covering KS3, GCSE, and IGCSE English Language and
-            Literature. Our content is tailored to five major exam boards — AQA, Edexcel, OCR, WJEC
-            Eduqas, and Cambridge IGCSE — so students always study material aligned to the exam
-            board they are sitting. Each course is broken down into clear, manageable topics with
-            lessons, practice activities, and revision resources designed to build confidence from
-            the first lesson through to exam day.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{offerH2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{offerBody}</p>
         </section>
 
         {/* Our Approach */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">Our Approach</h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            Every piece of content on The English Hub is built around four principles: exam board
-            specificity, intelligent feedback, active learning, and comprehensive revision.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{approachH2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{approachIntro}</p>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
             <li>
-              <strong className="text-foreground">Exam board-specific content</strong> — lessons,
-              mark schemes, and model answers mapped directly to AQA, Edexcel, OCR, WJEC Eduqas, and
-              Cambridge IGCSE exam boards.
+              <strong className="text-foreground">{approachExamBoardName}</strong> —{' '}
+              {approachExamBoardDesc}
             </li>
             <li>
-              <strong className="text-foreground">AI-powered essay feedback</strong> — submit
-              practice essays and receive detailed, criteria-referenced feedback in seconds, helping
-              students understand how to improve before their real exam.
+              <strong className="text-foreground">{approachAiName}</strong> — {approachAiDesc}
             </li>
             <li>
-              <strong className="text-foreground">Mock exam practice</strong> — timed, exam-style
-              questions that mirror the format, wording, and mark allocation students will encounter
-              on the day.
+              <strong className="text-foreground">{approachMockName}</strong> — {approachMockDesc}
             </li>
             <li>
-              <strong className="text-foreground">Interactive games and revision tools</strong> —
-              quizzes, key-term matching, and retrieval practice activities that make revision
-              engaging and effective.
+              <strong className="text-foreground">{approachGamesName}</strong> — {approachGamesDesc}
             </li>
           </ul>
         </section>
 
         {/* Who It's For */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">Who It&#39;s For</h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            The English Hub is designed for students aged 14 to 16 preparing for their English
-            exams, but it supports the wider community around them too. Teachers use the platform to
-            set homework, track progress, and supplement classroom teaching. Schools integrate our
-            courses into their intervention and revision programmes. Parents gain visibility into
-            what their child is studying and how they are progressing, giving them the confidence to
-            support learning at home.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{whoH2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{whoBody}</p>
         </section>
 
         {/* Our Values */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">Our Values</h2>
+          <h2 className="text-xl font-semibold text-foreground">{valuesH2}</h2>
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
             <li>
-              <strong className="text-foreground">Quality content</strong> — every lesson is written
-              and reviewed by experienced English educators to ensure accuracy and clarity.
+              <strong className="text-foreground">{valueQualityName}</strong> — {valueQualityDesc}
             </li>
             <li>
-              <strong className="text-foreground">Accessibility</strong> — we are committed to
-              making our platform usable and affordable for all students, regardless of background.
+              <strong className="text-foreground">{valueAccessName}</strong> — {valueAccessDesc}
             </li>
             <li>
-              <strong className="text-foreground">Evidence-based learning</strong> — our tools are
-              grounded in proven pedagogical strategies including retrieval practice, smart review,
-              and formative feedback.
+              <strong className="text-foreground">{valueEvidenceName}</strong> — {valueEvidenceDesc}
             </li>
             <li>
-              <strong className="text-foreground">Exam board alignment</strong> — students can trust
-              that what they study on The English Hub maps directly to the exam they will sit.
+              <strong className="text-foreground">{valueAlignName}</strong> — {valueAlignDesc}
             </li>
           </ul>
         </section>
 
         {/* At a Glance */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">At a Glance</h2>
+          <h2 className="text-xl font-semibold text-foreground">{glanceH2}</h2>
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {[
-              { stat: '15+', label: 'Structured courses from KS3 to IGCSE' },
-              { stat: '5', label: 'Exam boards supported' },
-              { stat: 'AI-Powered', label: 'Essay feedback in seconds' },
-              { stat: 'Exam-Style', label: 'Mock questions and timed practice' },
+              { stat: '15+', label: statCoursesLabel },
+              { stat: '5', label: statBoardsLabel },
+              { stat: statAiValue, label: statAiLabel },
+              { stat: statMockValue, label: statMockLabel },
             ].map(({ stat, label }) => (
               <div key={label} className="rounded-lg border border-border bg-card p-4 text-center">
                 <p className="text-2xl font-bold text-foreground">{stat}</p>
@@ -162,53 +228,53 @@ export default function AboutPage() {
 
         {/* Entity details — reconciled against Companies House 2026-04-24 */}
         <section id="entity">
-          <h2 className="text-xl font-semibold text-foreground">Entity Details</h2>
+          <h2 className="text-xl font-semibold text-foreground">{entityH2}</h2>
           <ul className="mt-4 space-y-1 text-muted-foreground leading-relaxed">
-            <li>Upskill Energy Limited, trading as The English Hub</li>
-            <li>Company No. 16511479 (England &amp; Wales)</li>
-            <li>ICO Registration: ZC016690</li>
-            <li>Registered office: available via Companies House (company no. 16511479)</li>
+            <li>{entityTradingLine}</li>
+            <li>{entityCompanyLine}</li>
+            <li>{entityIcoLine}</li>
+            <li>{entityOfficeLine}</li>
           </ul>
         </section>
 
         {/* Compliance */}
         <section id="compliance">
-          <h2 className="text-xl font-semibold text-foreground">Compliance</h2>
+          <h2 className="text-xl font-semibold text-foreground">{complianceH2}</h2>
           {/* Compliance documents will be published here once finalised. See business-docs/. */}
           <ul className="mt-4 list-disc space-y-2 pl-6 text-muted-foreground leading-relaxed">
             <li>
-              Data Protection Impact Assessment (PDF){' '}
+              {compDpia}{' '}
               <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                — coming soon
+                — {comingSoon}
               </span>
             </li>
             <li>
-              Safeguarding Policy (PDF){' '}
+              {compSafeguard}{' '}
               <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                — coming soon
+                — {comingSoon}
               </span>
             </li>
             <li>
-              VPAT — Voluntary Product Accessibility Template (PDF){' '}
+              {compVpat}{' '}
               <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                — coming soon
+                — {comingSoon}
               </span>
             </li>
             <li>
               <a className="underline hover:text-foreground" href="/accessibility">
-                Accessibility Statement (WCAG 2.1 AA target)
+                {compAccess}
               </a>
             </li>
             <li>
-              Cyber Essentials certificate (filing Q3 2026){' '}
+              {compCyber}{' '}
               <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                — coming soon
+                — {comingSoon}
               </span>
             </li>
             <li>
-              Data Processing Agreement template (Word){' '}
+              {compDpa}{' '}
               <span className="text-xs uppercase tracking-wide text-muted-foreground/70">
-                — available on request (legal@theenglishhub.app)
+                — {dpaAvailable}
               </span>
             </li>
           </ul>

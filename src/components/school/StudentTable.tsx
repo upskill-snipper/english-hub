@@ -1,17 +1,12 @@
 'use client'
 
 import { useState, useMemo, useCallback } from 'react'
-import {
-  ArrowUp,
-  ArrowDown,
-  Minus,
-  ArrowUpDown,
-  Search,
-} from 'lucide-react'
+import { ArrowUp, ArrowDown, Minus, ArrowUpDown, Search } from 'lucide-react'
 import { cn, formatDuration } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
 import type { StudentAnalytics } from '@/lib/types'
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Column configuration ──────────────────────────────────────────────────── */
 
@@ -33,14 +28,25 @@ export interface ColumnConfig {
   visible?: boolean
 }
 
-const DEFAULT_COLUMNS: ColumnConfig[] = [
-  { key: 'student_name', label: 'Name', align: 'left' },
-  { key: 'avg_quiz_score', label: 'Avg Score', align: 'center' },
-  { key: 'completion_rate', label: 'Completion', align: 'center' },
-  { key: 'total_time_spent_seconds', label: 'Time Spent', align: 'center' },
-  { key: 'last_active_at', label: 'Last Active', align: 'center' },
-  { key: 'trajectory', label: 'Trajectory', align: 'center' },
-  { key: 'predicted_grade', label: 'Grade', align: 'center' },
+// Default columns built from translation keys at render time so AR/EN
+// pick up the right column header text. Callers that pass `columns`
+// explicitly still get their custom labels.
+const DEFAULT_COLUMN_KEYS: Array<{
+  key: SortKey
+  labelKey: string
+  align?: 'left' | 'center' | 'right'
+}> = [
+  { key: 'student_name', labelKey: 'school.student_table.col.name', align: 'left' },
+  { key: 'avg_quiz_score', labelKey: 'school.student_table.col.avg_score', align: 'center' },
+  { key: 'completion_rate', labelKey: 'school.student_table.col.completion', align: 'center' },
+  {
+    key: 'total_time_spent_seconds',
+    labelKey: 'school.student_table.col.time_spent',
+    align: 'center',
+  },
+  { key: 'last_active_at', labelKey: 'school.student_table.col.last_active', align: 'center' },
+  { key: 'trajectory', labelKey: 'school.student_table.col.trajectory', align: 'center' },
+  { key: 'predicted_grade', labelKey: 'school.student_table.col.grade', align: 'center' },
 ]
 
 /* ── Props ─────────────────────────────────────────────────────────────────── */
@@ -80,25 +86,25 @@ function trajectoryIcon(trajectory: string) {
   }
 }
 
-function trajectoryLabel(trajectory: string): string {
+function trajectoryLabel(trajectory: string, t: (k: string) => string): string {
   switch (trajectory) {
     case 'improving':
-      return 'Improving'
+      return t('school.student_table.trajectory.improving')
     case 'declining':
-      return 'Declining'
+      return t('school.student_table.trajectory.declining')
     default:
-      return 'Stable'
+      return t('school.student_table.trajectory.stable')
   }
 }
 
-function formatRelativeDate(iso: string | null): string {
-  if (!iso) return 'Never'
+function formatRelativeDate(iso: string | null, t: (k: string) => string): string {
+  if (!iso) return t('school.student_table.relative.never')
   const date = new Date(iso)
   const now = new Date()
   const diffMs = now.getTime() - date.getTime()
   const diffDays = Math.floor(diffMs / 86_400_000)
-  if (diffDays < 1) return 'Today'
-  if (diffDays === 1) return 'Yesterday'
+  if (diffDays < 1) return t('school.student_table.relative.today')
+  if (diffDays === 1) return t('school.student_table.relative.yesterday')
   if (diffDays < 7) return `${diffDays}d ago`
   if (diffDays < 30) return `${Math.floor(diffDays / 7)}w ago`
   return `${Math.floor(diffDays / 30)}mo ago`
@@ -109,19 +115,32 @@ function formatRelativeDate(iso: string | null): string {
 export function StudentTable({
   students,
   onRowClick,
-  columns = DEFAULT_COLUMNS,
+  columns,
   className,
   showSearch = true,
   compact = false,
   emptyMessage,
 }: StudentTableProps) {
+  const t = useT()
   const [search, setSearch] = useState('')
   const [sortKey, setSortKey] = useState<SortKey>('avg_quiz_score')
   const [sortDir, setSortDir] = useState<SortDir>('desc')
 
+  const defaultColumns = useMemo<ColumnConfig[]>(
+    () =>
+      DEFAULT_COLUMN_KEYS.map((c) => ({
+        key: c.key,
+        label: t(c.labelKey),
+        align: c.align,
+      })),
+    [t],
+  )
+
+  const resolvedColumns = columns ?? defaultColumns
+
   const visibleColumns = useMemo(
-    () => columns.filter((c) => c.visible !== false),
-    [columns],
+    () => resolvedColumns.filter((c) => c.visible !== false),
+    [resolvedColumns],
   )
 
   const handleSort = useCallback(
@@ -143,8 +162,7 @@ export function StudentTable({
     if (term) {
       result = result.filter(
         (s) =>
-          s.student_name.toLowerCase().includes(term) ||
-          s.student_id.toLowerCase().includes(term),
+          s.student_name.toLowerCase().includes(term) || s.student_id.toLowerCase().includes(term),
       )
     }
 
@@ -208,9 +226,7 @@ export function StudentTable({
               <p className="font-medium text-foreground truncate max-w-[200px]">
                 {student.student_name}
               </p>
-              <p className="text-xs text-muted-foreground">
-                {student.year_group ?? ''}
-              </p>
+              <p className="text-xs text-muted-foreground">{student.year_group ?? ''}</p>
             </div>
           </td>
         )
@@ -220,10 +236,7 @@ export function StudentTable({
           <td key={key} className={cn(cellPad, 'text-center')}>
             <div className="flex flex-col items-center gap-1">
               <span
-                className={cn(
-                  'font-semibold tabular-nums',
-                  scoreColor(student.avg_quiz_score),
-                )}
+                className={cn('font-semibold tabular-nums', scoreColor(student.avg_quiz_score))}
               >
                 {percentageToGCSEGradeLabel(Math.round(student.avg_quiz_score))}
               </span>
@@ -259,24 +272,15 @@ export function StudentTable({
 
       case 'total_time_spent_seconds':
         return (
-          <td
-            key={key}
-            className={cn(
-              cellPad,
-              'text-center tabular-nums text-muted-foreground',
-            )}
-          >
+          <td key={key} className={cn(cellPad, 'text-center tabular-nums text-muted-foreground')}>
             {formatDuration(student.total_time_spent_seconds)}
           </td>
         )
 
       case 'last_active_at':
         return (
-          <td
-            key={key}
-            className={cn(cellPad, 'text-center text-muted-foreground')}
-          >
-            {formatRelativeDate(student.last_active_at)}
+          <td key={key} className={cn(cellPad, 'text-center text-muted-foreground')}>
+            {formatRelativeDate(student.last_active_at, t)}
           </td>
         )
 
@@ -293,7 +297,7 @@ export function StudentTable({
                   student.trajectory === 'stable' && 'text-muted-foreground',
                 )}
               >
-                {trajectoryLabel(student.trajectory)}
+                {trajectoryLabel(student.trajectory, t)}
               </span>
             </div>
           </td>
@@ -330,7 +334,7 @@ export function StudentTable({
         <div className="relative mb-4">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search students..."
+            placeholder={t('school.student_table.search_placeholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-9"
@@ -353,9 +357,16 @@ export function StudentTable({
                   )}
                   role="columnheader"
                   tabIndex={0}
-                  aria-sort={sortKey === col.key ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  aria-sort={
+                    sortKey === col.key ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'
+                  }
                   onClick={() => handleSort(col.key)}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSort(col.key) } }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      handleSort(col.key)
+                    }
+                  }}
                 >
                   <span className="inline-flex items-center gap-1">
                     {col.label}
@@ -382,8 +393,8 @@ export function StudentTable({
                 >
                   {emptyMessage ??
                     (search
-                      ? 'No students match your search.'
-                      : 'No students found.')}
+                      ? t('school.student_table.empty_search')
+                      : t('school.student_table.empty'))}
                 </td>
               </tr>
             ) : (
@@ -397,7 +408,16 @@ export function StudentTable({
                   role={onRowClick ? 'link' : undefined}
                   tabIndex={onRowClick ? 0 : undefined}
                   onClick={() => onRowClick?.(student.student_id)}
-                  onKeyDown={onRowClick ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onRowClick(student.student_id) } } : undefined}
+                  onKeyDown={
+                    onRowClick
+                      ? (e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault()
+                            onRowClick(student.student_id)
+                          }
+                        }
+                      : undefined
+                  }
                 >
                   {visibleColumns.map((col) => renderCell(student, col.key))}
                 </tr>
@@ -409,8 +429,11 @@ export function StudentTable({
 
       {filtered.length > 0 && (
         <p className="mt-2 text-xs text-muted-foreground">
-          Showing {filtered.length} of {students.length} student
-          {students.length !== 1 ? 's' : ''}
+          {t('school.student_table.showing_prefix')} {filtered.length}{' '}
+          {t('school.student_table.showing_of')} {students.length}{' '}
+          {students.length === 1
+            ? t('school.student_table.student_singular')
+            : t('school.student_table.student_plural')}
         </p>
       )}
     </div>

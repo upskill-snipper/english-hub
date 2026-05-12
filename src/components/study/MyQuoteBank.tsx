@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -56,7 +57,9 @@ function persistQuotes(slug: string, quotes: SavedQuote[]) {
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
-export function MyQuoteBank({ slug, title = 'My Quote Bank' }: MyQuoteBankProps) {
+export function MyQuoteBank({ slug, title }: MyQuoteBankProps) {
+  const t = useT()
+  const resolvedTitle = title ?? t('quotebank.title')
   const [quotes, setQuotes] = useState<SavedQuote[]>([])
   const [isOpen, setIsOpen] = useState(false)
   const [quoteText, setQuoteText] = useState('')
@@ -121,13 +124,13 @@ export function MyQuoteBank({ slug, title = 'My Quote Bank' }: MyQuoteBankProps)
     const lines = quotes.map((q, i) => {
       let entry = `${i + 1}. "${q.text}"`
       if (q.annotation) {
-        entry += `\n   Note: ${q.annotation}`
+        entry += `\n   ${t('quotebank.export_note_label')}: ${q.annotation}`
       }
-      entry += `\n   Saved: ${formatDate(q.savedAt)}`
+      entry += `\n   ${t('quotebank.export_saved_label')}: ${formatDate(q.savedAt)}`
       return entry
     })
 
-    const formatted = `Saved Quotes\n${'='.repeat(40)}\n\n${lines.join('\n\n')}`
+    const formatted = `${t('quotebank.export_heading')}\n${'='.repeat(40)}\n\n${lines.join('\n\n')}`
 
     try {
       await navigator.clipboard.writeText(formatted)
@@ -164,10 +167,11 @@ export function MyQuoteBank({ slug, title = 'My Quote Bank' }: MyQuoteBankProps)
               strokeLinejoin="round"
             />
           </svg>
-          {title}
+          {resolvedTitle}
           {quotes.length > 0 && (
             <span className="text-xs text-muted-foreground font-normal">
-              ({quotes.length} {quotes.length === 1 ? 'quote' : 'quotes'})
+              ({quotes.length}{' '}
+              {quotes.length === 1 ? t('quotebank.quote_singular') : t('quotebank.quote_plural')})
             </span>
           )}
         </span>
@@ -183,14 +187,14 @@ export function MyQuoteBank({ slug, title = 'My Quote Bank' }: MyQuoteBankProps)
               onClick={() => setShowForm(true)}
               className="rounded px-3 py-1.5 text-sm border border-border text-foreground hover:bg-card/80 transition-colors"
             >
-              + Save a quote
+              + {t('quotebank.save_a_quote')}
             </button>
           ) : (
             <div className="space-y-2 rounded-md border border-border p-3">
               <textarea
                 value={quoteText}
                 onChange={(e) => setQuoteText(e.target.value)}
-                placeholder="Enter the quote..."
+                placeholder={t('quotebank.quote_placeholder')}
                 rows={2}
                 className="w-full resize-y rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-border"
               />
@@ -198,7 +202,7 @@ export function MyQuoteBank({ slug, title = 'My Quote Bank' }: MyQuoteBankProps)
                 type="text"
                 value={annotation}
                 onChange={(e) => setAnnotation(e.target.value)}
-                placeholder="Your annotation (optional)"
+                placeholder={t('quotebank.annotation_placeholder')}
                 className="w-full rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-border"
               />
               <div className="flex gap-2">
@@ -208,7 +212,7 @@ export function MyQuoteBank({ slug, title = 'My Quote Bank' }: MyQuoteBankProps)
                   disabled={!quoteText.trim()}
                   className="rounded px-3 py-1.5 text-sm border border-border text-foreground hover:bg-card/80 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                 >
-                  Save quote
+                  {t('quotebank.save_quote')}
                 </button>
                 <button
                   type="button"
@@ -219,7 +223,7 @@ export function MyQuoteBank({ slug, title = 'My Quote Bank' }: MyQuoteBankProps)
                   }}
                   className="rounded px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Cancel
+                  {t('action.cancel')}
                 </button>
               </div>
             </div>
@@ -229,28 +233,17 @@ export function MyQuoteBank({ slug, title = 'My Quote Bank' }: MyQuoteBankProps)
           {quotes.length > 0 && (
             <ul className="space-y-2">
               {quotes.map((q) => (
-                <li
-                  key={q.id}
-                  className="rounded-md border border-border p-3 space-y-1"
-                >
-                  <p className="text-sm text-foreground italic">
-                    &ldquo;{q.text}&rdquo;
-                  </p>
-                  {q.annotation && (
-                    <p className="text-xs text-muted-foreground">
-                      {q.annotation}
-                    </p>
-                  )}
+                <li key={q.id} className="rounded-md border border-border p-3 space-y-1">
+                  <p className="text-sm text-foreground italic">&ldquo;{q.text}&rdquo;</p>
+                  {q.annotation && <p className="text-xs text-muted-foreground">{q.annotation}</p>}
                   <div className="flex items-center justify-between pt-1">
-                    <span className="text-xs text-muted-foreground">
-                      {formatDate(q.savedAt)}
-                    </span>
+                    <span className="text-xs text-muted-foreground">{formatDate(q.savedAt)}</span>
                     <button
                       type="button"
                       onClick={() => handleDelete(q.id)}
                       className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      {deleteConfirm === q.id ? 'Confirm delete?' : 'Delete'}
+                      {deleteConfirm === q.id ? t('quotebank.confirm_delete') : t('action.delete')}
                     </button>
                   </div>
                 </li>
@@ -259,9 +252,7 @@ export function MyQuoteBank({ slug, title = 'My Quote Bank' }: MyQuoteBankProps)
           )}
 
           {quotes.length === 0 && (
-            <p className="text-sm text-muted-foreground">
-              No quotes saved yet. Use the button above to save quotes from this text.
-            </p>
+            <p className="text-sm text-muted-foreground">{t('quotebank.empty_state')}</p>
           )}
 
           {/* Export button */}
@@ -272,7 +263,7 @@ export function MyQuoteBank({ slug, title = 'My Quote Bank' }: MyQuoteBankProps)
                 onClick={handleExport}
                 className="rounded px-2 py-1 text-xs border border-border text-foreground hover:bg-card/80 transition-colors"
               >
-                {copied ? 'Copied!' : 'Export all quotes'}
+                {copied ? t('notes.copied') : t('quotebank.export_all')}
               </button>
             </div>
           )}

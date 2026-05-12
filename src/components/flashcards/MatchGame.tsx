@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn, shuffleArray } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 import type { FlashcardDeck, FlashCard } from '@/data/flashcard-data'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
@@ -64,6 +65,7 @@ const PAIRS_PER_ROUND = 6
 // ─── Component ──────────────────────────────────────────────────────────────
 
 export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
+  const t = useT()
   const [pairs, setPairs] = useState<MatchPair[]>([])
   const [fronts, setFronts] = useState<MatchItem[]>([])
   const [backs, setBacks] = useState<MatchItem[]>([])
@@ -81,50 +83,56 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
   const [roundIndex, setRoundIndex] = useState(0)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  const totalRounds = useMemo(() => Math.ceil(deck.cards.length / PAIRS_PER_ROUND), [deck.cards.length])
+  const totalRounds = useMemo(
+    () => Math.ceil(deck.cards.length / PAIRS_PER_ROUND),
+    [deck.cards.length],
+  )
 
   // ── Initialize round ────────────────────────────────────────────────────
 
-  const startRound = useCallback((roundIdx: number) => {
-    const start = roundIdx * PAIRS_PER_ROUND
-    const end = Math.min(start + PAIRS_PER_ROUND, deck.cards.length)
-    const roundCards = deck.cards.slice(start, end)
+  const startRound = useCallback(
+    (roundIdx: number) => {
+      const start = roundIdx * PAIRS_PER_ROUND
+      const end = Math.min(start + PAIRS_PER_ROUND, deck.cards.length)
+      const roundCards = deck.cards.slice(start, end)
 
-    const roundPairs: MatchPair[] = roundCards.map((c) => ({
-      id: c.id,
-      front: c.front,
-      // Truncate long backs for matching display
-      back: c.back.length > 80 ? c.back.slice(0, 80) + '...' : c.back,
-    }))
-
-    const shuffledFronts: MatchItem[] = shuffleArray(
-      roundPairs.map((p) => ({
-        id: `front-${p.id}`,
-        text: p.front,
-        side: 'front' as const,
-        pairId: p.id,
-        status: 'idle' as MatchStatus,
+      const roundPairs: MatchPair[] = roundCards.map((c) => ({
+        id: c.id,
+        front: c.front,
+        // Truncate long backs for matching display
+        back: c.back.length > 80 ? c.back.slice(0, 80) + '...' : c.back,
       }))
-    )
 
-    const shuffledBacks: MatchItem[] = shuffleArray(
-      roundPairs.map((p) => ({
-        id: `back-${p.id}`,
-        text: p.back,
-        side: 'back' as const,
-        pairId: p.id,
-        status: 'idle' as MatchStatus,
-      }))
-    )
+      const shuffledFronts: MatchItem[] = shuffleArray(
+        roundPairs.map((p) => ({
+          id: `front-${p.id}`,
+          text: p.front,
+          side: 'front' as const,
+          pairId: p.id,
+          status: 'idle' as MatchStatus,
+        })),
+      )
 
-    setPairs(roundPairs)
-    setFronts(shuffledFronts)
-    setBacks(shuffledBacks)
-    setSelectedFront(null)
-    setSelectedBack(null)
-    setMatchedIds(new Set())
-    setWrongPair(null)
-  }, [deck.cards])
+      const shuffledBacks: MatchItem[] = shuffleArray(
+        roundPairs.map((p) => ({
+          id: `back-${p.id}`,
+          text: p.back,
+          side: 'back' as const,
+          pairId: p.id,
+          status: 'idle' as MatchStatus,
+        })),
+      )
+
+      setPairs(roundPairs)
+      setFronts(shuffledFronts)
+      setBacks(shuffledBacks)
+      setSelectedFront(null)
+      setSelectedBack(null)
+      setMatchedIds(new Set())
+      setWrongPair(null)
+    },
+    [deck.cards],
+  )
 
   // ── Start game ──────────────────────────────────────────────────────────
 
@@ -184,61 +192,76 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
 
   // ── Handle selection ────────────────────────────────────────────────────
 
-  const handleFrontClick = useCallback((item: MatchItem) => {
-    if (matchedIds.has(item.pairId) || wrongPair) return
-    setSelectedFront(item.pairId)
+  const handleFrontClick = useCallback(
+    (item: MatchItem) => {
+      if (matchedIds.has(item.pairId) || wrongPair) return
+      setSelectedFront(item.pairId)
 
-    // If a back is already selected, check match
-    if (selectedBack) {
-      if (item.pairId === selectedBack) {
-        // Correct match
-        setMatchedIds((prev) => { const next = new Set(Array.from(prev)); next.add(item.pairId); return next })
-        setScore((s) => s + 1)
-        setSelectedFront(null)
-        setSelectedBack(null)
-      } else {
-        // Wrong match
-        setWrongPair({ front: item.pairId, back: selectedBack })
-        setMistakes((m) => m + 1)
-        setTimeout(() => {
-          setWrongPair(null)
+      // If a back is already selected, check match
+      if (selectedBack) {
+        if (item.pairId === selectedBack) {
+          // Correct match
+          setMatchedIds((prev) => {
+            const next = new Set(Array.from(prev))
+            next.add(item.pairId)
+            return next
+          })
+          setScore((s) => s + 1)
           setSelectedFront(null)
           setSelectedBack(null)
-        }, 600)
+        } else {
+          // Wrong match
+          setWrongPair({ front: item.pairId, back: selectedBack })
+          setMistakes((m) => m + 1)
+          setTimeout(() => {
+            setWrongPair(null)
+            setSelectedFront(null)
+            setSelectedBack(null)
+          }, 600)
+        }
       }
-    }
-  }, [matchedIds, selectedBack, wrongPair])
+    },
+    [matchedIds, selectedBack, wrongPair],
+  )
 
-  const handleBackClick = useCallback((item: MatchItem) => {
-    if (matchedIds.has(item.pairId) || wrongPair) return
-    setSelectedBack(item.pairId)
+  const handleBackClick = useCallback(
+    (item: MatchItem) => {
+      if (matchedIds.has(item.pairId) || wrongPair) return
+      setSelectedBack(item.pairId)
 
-    // If a front is already selected, check match
-    if (selectedFront) {
-      if (item.pairId === selectedFront) {
-        // Correct match
-        setMatchedIds((prev) => { const next = new Set(Array.from(prev)); next.add(item.pairId); return next })
-        setScore((s) => s + 1)
-        setSelectedFront(null)
-        setSelectedBack(null)
-      } else {
-        // Wrong match
-        setWrongPair({ front: selectedFront, back: item.pairId })
-        setMistakes((m) => m + 1)
-        setTimeout(() => {
-          setWrongPair(null)
+      // If a front is already selected, check match
+      if (selectedFront) {
+        if (item.pairId === selectedFront) {
+          // Correct match
+          setMatchedIds((prev) => {
+            const next = new Set(Array.from(prev))
+            next.add(item.pairId)
+            return next
+          })
+          setScore((s) => s + 1)
           setSelectedFront(null)
           setSelectedBack(null)
-        }, 600)
+        } else {
+          // Wrong match
+          setWrongPair({ front: selectedFront, back: item.pairId })
+          setMistakes((m) => m + 1)
+          setTimeout(() => {
+            setWrongPair(null)
+            setSelectedFront(null)
+            setSelectedBack(null)
+          }, 600)
+        }
       }
-    }
-  }, [matchedIds, selectedFront, wrongPair])
+    },
+    [matchedIds, selectedFront, wrongPair],
+  )
 
   // ── Helpers ─────────────────────────────────────────────────────────────
 
   function getItemStatus(item: MatchItem, selectedId: string | null): string {
     if (matchedIds.has(item.pairId)) return 'matched'
-    if (wrongPair && (wrongPair.front === item.pairId || wrongPair.back === item.pairId)) return 'wrong'
+    if (wrongPair && (wrongPair.front === item.pairId || wrongPair.back === item.pairId))
+      return 'wrong'
     if (selectedId === item.pairId) return 'selected'
     return 'idle'
   }
@@ -258,41 +281,41 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
       <Card className="mx-auto max-w-lg">
         <CardContent className="p-8 text-center">
           <Trophy className="mx-auto mb-4 h-12 w-12 text-amber-500" />
-          <h2 className="text-2xl font-bold text-foreground">Match Complete!</h2>
+          <h2 className="text-2xl font-bold text-foreground">{t('match.complete_title')}</h2>
           <p className="mt-2 text-muted-foreground">{deck.title}</p>
 
           <div className="mt-6 grid grid-cols-3 gap-4">
             <div className="rounded-lg bg-primary/10 p-4">
               <p className="text-2xl font-bold text-primary">{formatTime(elapsedMs)}</p>
-              <p className="mt-1 text-xs text-muted-foreground">Time</p>
+              <p className="mt-1 text-xs text-muted-foreground">{t('match.time')}</p>
             </div>
             <div className="rounded-lg bg-primary/10 p-4">
               <p className="text-2xl font-bold text-primary">{score}</p>
-              <p className="mt-1 text-xs text-muted-foreground">Matches</p>
+              <p className="mt-1 text-xs text-muted-foreground">{t('match.matches')}</p>
             </div>
             <div className="rounded-lg bg-amber-500/10 p-4">
               <p className="text-2xl font-bold text-amber-500">{mistakes}</p>
-              <p className="mt-1 text-xs text-muted-foreground">Mistakes</p>
+              <p className="mt-1 text-xs text-muted-foreground">{t('match.mistakes')}</p>
             </div>
           </div>
 
           {isNewBest && (
             <div className="mt-4 flex items-center justify-center gap-2 text-primary">
               <Zap className="h-5 w-5" />
-              <span className="font-bold">New best time!</span>
+              <span className="font-bold">{t('match.new_best')}</span>
             </div>
           )}
 
           {bestTime !== null && !isNewBest && (
             <p className="mt-4 text-sm text-muted-foreground">
-              Best time: {formatTime(bestTime)}
+              {t('match.best_time')}: {formatTime(bestTime)}
             </p>
           )}
 
           <div className="mt-8">
             <Button onClick={startGame}>
               <RotateCcw className="h-4 w-4" />
-              Play Again
+              {t('match.play_again')}
             </Button>
           </div>
         </CardContent>
@@ -312,24 +335,24 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
             <span className="font-mono tabular-nums">{formatTime(elapsedMs)}</span>
           </div>
           <Badge className="bg-primary/15 text-primary">
-            {score} / {deck.cards.length} matched
+            {score} / {deck.cards.length} {t('match.matched_label')}
           </Badge>
           {mistakes > 0 && (
             <Badge className="bg-amber-500/15 text-amber-600">
-              {mistakes} mistake{mistakes !== 1 ? 's' : ''}
+              {mistakes} {mistakes === 1 ? t('match.mistake_singular') : t('match.mistake_plural')}
             </Badge>
           )}
         </div>
         {totalRounds > 1 && (
           <span className="text-sm text-muted-foreground">
-            Round {roundIndex + 1} of {totalRounds}
+            {t('match.round_label')} {roundIndex + 1} {t('match.of')} {totalRounds}
           </span>
         )}
       </div>
 
       {bestTime !== null && (
         <p className="text-xs text-muted-foreground">
-          Best time: {formatTime(bestTime)}
+          {t('match.best_time')}: {formatTime(bestTime)}
         </p>
       )}
 
@@ -337,7 +360,9 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {/* Fronts column */}
         <div className="space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Terms</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            {t('match.terms')}
+          </p>
           {fronts.map((item) => {
             const status = getItemStatus(item, selectedFront)
             return (
@@ -347,10 +372,13 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
                 disabled={status === 'matched'}
                 className={cn(
                   'w-full rounded-lg border p-3 text-left text-sm font-medium transition-all duration-200',
-                  status === 'idle' && 'border-border bg-card hover:border-primary/50 hover:bg-primary/5 cursor-pointer',
+                  status === 'idle' &&
+                    'border-border bg-card hover:border-primary/50 hover:bg-primary/5 cursor-pointer',
                   status === 'selected' && 'border-primary bg-primary/10 ring-2 ring-primary/30',
-                  status === 'matched' && 'border-primary/30 bg-primary/10 text-primary opacity-50 cursor-default',
-                  status === 'wrong' && 'border-destructive bg-destructive/10 text-destructive animate-shake',
+                  status === 'matched' &&
+                    'border-primary/30 bg-primary/10 text-primary opacity-50 cursor-default',
+                  status === 'wrong' &&
+                    'border-destructive bg-destructive/10 text-destructive animate-shake',
                 )}
               >
                 {item.text}
@@ -361,7 +389,9 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
 
         {/* Backs column */}
         <div className="space-y-3">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Definitions</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            {t('match.definitions')}
+          </p>
           {backs.map((item) => {
             const status = getItemStatus(item, selectedBack)
             return (
@@ -371,10 +401,13 @@ export default function MatchGame({ deck }: { deck: FlashcardDeck }) {
                 disabled={status === 'matched'}
                 className={cn(
                   'w-full rounded-lg border p-3 text-left text-sm transition-all duration-200',
-                  status === 'idle' && 'border-border bg-card hover:border-primary/50 hover:bg-primary/5 cursor-pointer',
+                  status === 'idle' &&
+                    'border-border bg-card hover:border-primary/50 hover:bg-primary/5 cursor-pointer',
                   status === 'selected' && 'border-primary bg-primary/10 ring-2 ring-primary/30',
-                  status === 'matched' && 'border-primary/30 bg-primary/10 text-primary opacity-50 cursor-default',
-                  status === 'wrong' && 'border-destructive bg-destructive/10 text-destructive animate-shake',
+                  status === 'matched' &&
+                    'border-primary/30 bg-primary/10 text-primary opacity-50 cursor-default',
+                  status === 'wrong' &&
+                    'border-destructive bg-destructive/10 text-destructive animate-shake',
                 )}
               >
                 <span className="line-clamp-3">{item.text}</span>

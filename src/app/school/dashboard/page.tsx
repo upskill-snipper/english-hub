@@ -23,6 +23,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
+import { useT } from '@/lib/i18n/use-t'
 // Grade utilities - used when student assessment data is available
 // import {
 //   percentageToGCSEGrade,
@@ -77,6 +78,7 @@ interface SetupStep {
 // ── Component ────────────────────────────────────────────────────────────────
 
 export default function SchoolDashboardPage() {
+  const t = useT()
   const { user } = useAuthStore()
   const [school, setSchool] = useState<SchoolData | null>(null)
   const [stats, setStats] = useState<DashboardStats>({
@@ -168,12 +170,12 @@ export default function SchoolDashboardPage() {
 
       // Build setup checklist
       setSetupSteps([
-        { label: 'Create school account', done: true },
-        { label: 'Import teachers', done: totalTeachers > 0 },
-        { label: 'Import students', done: totalStudents > 0 },
-        { label: 'Create classes', done: activeClasses > 0 },
+        { label: t('school.dash.setup.create_school'), done: true },
+        { label: t('school.dash.setup.import_teachers'), done: totalTeachers > 0 },
+        { label: t('school.dash.setup.import_students'), done: totalStudents > 0 },
+        { label: t('school.dash.setup.create_classes'), done: activeClasses > 0 },
         {
-          label: 'Assign students to classes',
+          label: t('school.dash.setup.assign_students'),
           done: activeClasses > 0 && totalStudents > 0,
         },
       ])
@@ -220,7 +222,7 @@ export default function SchoolDashboardPage() {
         <div>
           <div className="flex items-center gap-3">
             <LayoutDashboard className="h-7 w-7 text-primary" />
-            <h1 className="text-2xl font-bold text-foreground">School Dashboard</h1>
+            <h1 className="text-2xl font-bold text-foreground">{t('school.dash.title')}</h1>
           </div>
           {school && (
             <p className="mt-1 flex items-center gap-2 text-muted-foreground">
@@ -232,10 +234,10 @@ export default function SchoolDashboardPage() {
         <div className="flex gap-2">
           <Button variant="outline" size="sm" render={<Link href="/school/analytics" />}>
             <BarChart3 className="mr-1.5 h-3.5 w-3.5" />
-            Analytics
+            {t('school.sidebar.analytics')}
           </Button>
           <Button variant="outline" size="sm" render={<Link href="/school/guide" />}>
-            Setup Guide
+            {t('school.sidebar.setup_guide')}
           </Button>
         </div>
       </div>
@@ -247,10 +249,10 @@ export default function SchoolDashboardPage() {
             <span className="mt-0.5 text-lg">&#9733;</span>
             <div>
               <p className="font-semibold text-clay-600">
-                Your Founding Schools access is active until {FOUNDER_ACCESS_UNTIL}.
+                {t('school.dash.founder.active_until_prefix')} {FOUNDER_ACCESS_UNTIL}.
               </p>
               <p className="mt-0.5 text-sm text-clay-600/80">
-                Your preferential rate is locked. Contact us to discuss renewal.
+                {t('school.dash.founder.rate_locked')}
               </p>
             </div>
           </div>
@@ -262,7 +264,7 @@ export default function SchoolDashboardPage() {
         <div className="mb-6 flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Filter className="h-4 w-4" />
-            <span className="font-medium">Filter:</span>
+            <span className="font-medium">{t('school.dash.filter_label')}</span>
           </div>
           <select
             value={selectedYear}
@@ -272,7 +274,7 @@ export default function SchoolDashboardPage() {
             }}
             className="rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
           >
-            <option value="all">All Year Groups</option>
+            <option value="all">{t('school.dash.filter.all_year_groups')}</option>
             {yearGroups.map((yg) => (
               <option key={yg} value={yg}>
                 {yg}
@@ -284,7 +286,7 @@ export default function SchoolDashboardPage() {
             onChange={(e) => setSelectedClass(e.target.value)}
             className="rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
           >
-            <option value="all">All Classes</option>
+            <option value="all">{t('school.dash.filter.all_classes')}</option>
             {availableClasses.map((c) => (
               <option key={c.id} value={c.name}>
                 {c.name}
@@ -299,7 +301,7 @@ export default function SchoolDashboardPage() {
               }}
               className="text-xs text-primary hover:underline"
             >
-              Clear filters
+              {t('school.dash.filter.clear')}
             </button>
           )}
         </div>
@@ -312,12 +314,14 @@ export default function SchoolDashboardPage() {
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-blue-400/80">
-                Total Students
+                {t('school.dash.stat.total_students')}
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
                 {loading ? <span className="text-muted-foreground">--</span> : stats.totalStudents}
               </p>
-              <p className="mt-1 text-xs text-muted-foreground">Enrolled students</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {t('school.dash.stat.enrolled_students')}
+              </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/15">
               <Users className="h-5 w-5 text-blue-400" />
@@ -330,14 +334,14 @@ export default function SchoolDashboardPage() {
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-emerald-400/80">
-                Active Classes
+                {t('school.dash.stat.active_classes')}
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
                 {loading ? <span className="text-muted-foreground">--</span> : stats.activeClasses}
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
                 <Link href="/school/classes" className="text-primary hover:underline">
-                  Manage classes
+                  {t('school.dash.stat.manage_classes')}
                 </Link>
               </p>
             </div>
@@ -352,12 +356,14 @@ export default function SchoolDashboardPage() {
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-violet-400/80">
-                Teachers
+                {t('school.dash.stat.teachers')}
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
                 {loading ? <span className="text-muted-foreground">--</span> : stats.totalTeachers}
               </p>
-              <p className="mt-1 text-xs text-muted-foreground">Active staff members</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {t('school.dash.stat.active_staff')}
+              </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/15">
               <GraduationCap className="h-5 w-5 text-violet-400" />
@@ -370,7 +376,7 @@ export default function SchoolDashboardPage() {
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-clay-600/80">
-                Assignments
+                {t('school.dash.stat.assignments')}
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
                 {loading ? (
@@ -379,7 +385,9 @@ export default function SchoolDashboardPage() {
                   stats.assignmentsThisWeek
                 )}
               </p>
-              <p className="mt-1 text-xs text-muted-foreground">Set this week</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {t('school.dash.stat.set_this_week')}
+              </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/15">
               <BarChart3 className="h-5 w-5 text-clay-600" />
@@ -398,42 +406,48 @@ export default function SchoolDashboardPage() {
                 <div className="flex items-center justify-between">
                   <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
                     <Users className="h-4 w-4 text-blue-400" />
-                    Student Overview
+                    {t('school.dash.overview.title')}
                   </CardTitle>
                   <Link href="/school/analytics" className="text-xs text-primary hover:underline">
-                    Full analytics
+                    {t('school.dash.overview.full_analytics')}
                   </Link>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="mb-4 text-sm text-muted-foreground">
-                  Student grade data (Working At Grade, Predicted Grade, Target Grade) is populated
-                  as students complete assessments on the platform. The more assessments completed,
-                  the richer the data becomes.
+                  {t('school.dash.overview.body')}
                 </p>
                 <div className="grid gap-3 sm:grid-cols-3">
                   <div className="rounded-lg border border-border bg-background/50 p-4 text-center">
-                    <p className="text-xs text-muted-foreground">Working At Grade</p>
+                    <p className="text-xs text-muted-foreground">
+                      {t('school.dash.grade.working_at')}
+                    </p>
                     <p className="mt-1 text-2xl font-bold text-foreground">--</p>
-                    <p className="mt-0.5 text-[11px] text-muted-foreground">Avg across students</p>
+                    <p className="mt-0.5 text-[11px] text-muted-foreground">
+                      {t('school.dash.grade.avg_across')}
+                    </p>
                   </div>
                   <div className="rounded-lg border border-border bg-background/50 p-4 text-center">
-                    <p className="text-xs text-muted-foreground">Predicted Grade</p>
+                    <p className="text-xs text-muted-foreground">
+                      {t('school.dash.grade.predicted')}
+                    </p>
                     <p className="mt-1 text-2xl font-bold text-foreground">--</p>
-                    <p className="mt-0.5 text-[11px] text-muted-foreground">Based on trajectory</p>
+                    <p className="mt-0.5 text-[11px] text-muted-foreground">
+                      {t('school.dash.grade.based_on_trajectory')}
+                    </p>
                   </div>
                   <div className="rounded-lg border border-border bg-background/50 p-4 text-center">
-                    <p className="text-xs text-muted-foreground">On Track</p>
+                    <p className="text-xs text-muted-foreground">
+                      {t('school.dash.grade.on_track')}
+                    </p>
                     <p className="mt-1 text-2xl font-bold text-foreground">--%</p>
-                    <p className="mt-0.5 text-[11px] text-muted-foreground">Meeting target grade</p>
+                    <p className="mt-0.5 text-[11px] text-muted-foreground">
+                      {t('school.dash.grade.meeting_target')}
+                    </p>
                   </div>
                 </div>
                 <div className="mt-4 rounded-lg border border-blue-500/20 bg-blue-500/5 p-3">
-                  <p className="text-xs text-blue-300">
-                    Grade distribution, on-track/off-track analysis, and at-risk student
-                    identification will appear here as assessment data is collected. Assign mock
-                    exams, quizzes, and essays to start building student profiles.
-                  </p>
+                  <p className="text-xs text-blue-300">{t('school.dash.overview.hint')}</p>
                 </div>
               </CardContent>
             </Card>
@@ -443,7 +457,7 @@ export default function SchoolDashboardPage() {
           <Card className="border-border bg-card/60">
             <CardHeader>
               <CardTitle className="text-base font-semibold text-foreground">
-                Quick Actions
+                {t('school.dash.quick_actions.title')}
               </CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 sm:grid-cols-2">
@@ -454,8 +468,10 @@ export default function SchoolDashboardPage() {
               >
                 <Upload className="h-4 w-4 shrink-0 text-primary" />
                 <div className="text-left">
-                  <p className="text-sm font-medium">Import Students / Teachers</p>
-                  <p className="text-xs text-muted-foreground">Upload CSV to bulk-add users</p>
+                  <p className="text-sm font-medium">{t('school.dash.quick_actions.import')}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {t('school.dash.quick_actions.import_sub')}
+                  </p>
                 </div>
               </Button>
 
@@ -466,8 +482,12 @@ export default function SchoolDashboardPage() {
               >
                 <BookOpen className="h-4 w-4 shrink-0 text-primary" />
                 <div className="text-left">
-                  <p className="text-sm font-medium">Manage Classes</p>
-                  <p className="text-xs text-muted-foreground">Create and organise classes</p>
+                  <p className="text-sm font-medium">
+                    {t('school.dash.quick_actions.manage_classes')}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {t('school.dash.quick_actions.manage_classes_sub')}
+                  </p>
                 </div>
               </Button>
 
@@ -478,8 +498,12 @@ export default function SchoolDashboardPage() {
               >
                 <BarChart3 className="h-4 w-4 shrink-0 text-primary" />
                 <div className="text-left">
-                  <p className="text-sm font-medium">View Analytics</p>
-                  <p className="text-xs text-muted-foreground">Track progress and performance</p>
+                  <p className="text-sm font-medium">
+                    {t('school.dash.quick_actions.view_analytics')}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {t('school.dash.quick_actions.view_analytics_sub')}
+                  </p>
                 </div>
               </Button>
 
@@ -490,8 +514,12 @@ export default function SchoolDashboardPage() {
               >
                 <Download className="h-4 w-4 shrink-0 text-primary" />
                 <div className="text-left">
-                  <p className="text-sm font-medium">Download Login Details</p>
-                  <p className="text-xs text-muted-foreground">Export credentials for students</p>
+                  <p className="text-sm font-medium">
+                    {t('school.dash.quick_actions.download_logins')}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {t('school.dash.quick_actions.download_logins_sub')}
+                  </p>
                 </div>
               </Button>
             </CardContent>
@@ -503,10 +531,10 @@ export default function SchoolDashboardPage() {
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
                   <AlertTriangle className="h-4 w-4 text-clay-600" />
-                  Questions students struggle with most
+                  {t('school.dash.hardest.title')}
                 </CardTitle>
                 <Link href="/school/analytics" className="text-xs text-primary hover:underline">
-                  View all
+                  {t('school.dash.hardest.view_all')}
                 </Link>
               </div>
             </CardHeader>
@@ -518,32 +546,31 @@ export default function SchoolDashboardPage() {
                 follow-up. For now this surfaces useful signal while data grows.
               */}
               {loading ? (
-                <p className="text-sm text-muted-foreground">Loading question data...</p>
+                <p className="text-sm text-muted-foreground">{t('school.dash.hardest.loading')}</p>
               ) : hardestQuestions.length === 0 ? (
                 <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-border bg-background/40 py-8 text-center">
                   <AlertTriangle className="mb-3 h-8 w-8 text-muted-foreground/40" />
-                  <p className="text-sm text-muted-foreground">
-                    No quiz data yet — your students&apos; responses will appear here as they
-                    practise.
-                  </p>
+                  <p className="text-sm text-muted-foreground">{t('school.dash.hardest.empty')}</p>
                 </div>
               ) : (
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border/60">
-                        <th className="pb-2 text-left font-medium text-muted-foreground">Topic</th>
-                        <th className="pb-2 text-right font-medium text-muted-foreground">
-                          Correct
+                        <th className="pb-2 text-left font-medium text-muted-foreground">
+                          {t('school.dash.hardest.col.topic')}
                         </th>
                         <th className="pb-2 text-right font-medium text-muted-foreground">
-                          Attempts
+                          {t('school.dash.hardest.col.correct')}
                         </th>
                         <th className="pb-2 text-right font-medium text-muted-foreground">
-                          Avg time
+                          {t('school.dash.hardest.col.attempts')}
+                        </th>
+                        <th className="pb-2 text-right font-medium text-muted-foreground">
+                          {t('school.dash.hardest.col.avg_time')}
                         </th>
                         <th className="pb-2 pl-3 text-left font-medium text-muted-foreground">
-                          Difficulty
+                          {t('school.dash.hardest.col.difficulty')}
                         </th>
                       </tr>
                     </thead>
@@ -599,18 +626,16 @@ export default function SchoolDashboardPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
                   <BookOpenCheck className="h-4 w-4 text-cyan-400" />
-                  Reading Age Data
+                  {t('school.dash.reading_age.title')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="mb-3 text-sm text-muted-foreground">
-                  Reading age data is populated from the Reading Comprehension Assessment. Assign
-                  the assessment to your classes to generate reading age, decoding age, and fluency
-                  age data for each student.
+                  {t('school.dash.reading_age.body')}
                 </p>
                 <Button variant="outline" size="sm" render={<Link href="/assessment/reading" />}>
                   <BookOpenCheck className="mr-1.5 h-3.5 w-3.5" />
-                  View Reading Assessment
+                  {t('school.dash.reading_age.cta')}
                 </Button>
               </CardContent>
             </Card>
@@ -621,15 +646,13 @@ export default function SchoolDashboardPage() {
             <Card className="border-border bg-card/60">
               <CardHeader>
                 <CardTitle className="text-base font-semibold text-foreground">
-                  Recent Activity
+                  {t('school.dash.activity.title')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col items-center justify-center py-8 text-center">
                   <Clock className="mb-3 h-8 w-8 text-muted-foreground/40" />
-                  <p className="text-sm text-muted-foreground">
-                    Activity will appear here as teachers and students use the platform.
-                  </p>
+                  <p className="text-sm text-muted-foreground">{t('school.dash.activity.empty')}</p>
                 </div>
               </CardContent>
             </Card>
@@ -643,10 +666,10 @@ export default function SchoolDashboardPage() {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-base font-semibold text-foreground">
-                    Setup Progress
+                    {t('school.dash.setup.progress_title')}
                   </CardTitle>
                   <Badge variant="secondary" className="text-xs">
-                    Getting started
+                    {t('school.dash.setup.getting_started')}
                   </Badge>
                 </div>
               </CardHeader>
@@ -674,7 +697,7 @@ export default function SchoolDashboardPage() {
                   ))}
                 </ol>
                 <Button className="mt-6 w-full" size="sm" render={<Link href="/school/guide" />}>
-                  View Setup Guide
+                  {t('school.dash.setup.view_guide')}
                 </Button>
               </CardContent>
             </Card>
@@ -684,14 +707,14 @@ export default function SchoolDashboardPage() {
             <Card className="border-border bg-card/60">
               <CardHeader>
                 <CardTitle className="text-base font-semibold text-foreground">
-                  Setup Complete
+                  {t('school.dash.setup.complete_title')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col items-center py-4 text-center">
                   <CheckCircle className="mb-3 h-10 w-10 text-green-500" />
                   <p className="text-sm text-muted-foreground">
-                    Your school is set up and ready to go.
+                    {t('school.dash.setup.complete_body')}
                   </p>
                   <Button
                     variant="outline"
@@ -699,7 +722,7 @@ export default function SchoolDashboardPage() {
                     className="mt-4"
                     render={<Link href="/school/guide" />}
                   >
-                    Setup Guide
+                    {t('school.sidebar.setup_guide')}
                   </Button>
                 </div>
               </CardContent>
@@ -711,34 +734,41 @@ export default function SchoolDashboardPage() {
             <Card className="border-border bg-card/60">
               <CardHeader className="pb-3">
                 <CardTitle className="text-base font-semibold text-foreground">
-                  Grade Tracking
+                  {t('school.dash.grade_tracking.title')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                    <p className="text-xs font-medium text-foreground">Working At Grade</p>
+                    <p className="text-xs font-medium text-foreground">
+                      {t('school.dash.grade.working_at')}
+                    </p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      Based on the average of recent assessment scores.
+                      {t('school.dash.grade_tracking.working_at_desc')}
                     </p>
                   </div>
                   <div className="rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                    <p className="text-xs font-medium text-foreground">Predicted Grade</p>
+                    <p className="text-xs font-medium text-foreground">
+                      {t('school.dash.grade.predicted')}
+                    </p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      Projected grade based on the student's trajectory.
+                      {t('school.dash.grade_tracking.predicted_desc')}
                     </p>
                   </div>
                   <div className="rounded-lg border border-border bg-background/50 px-3 py-2.5">
-                    <p className="text-xs font-medium text-foreground">Target Grade</p>
+                    <p className="text-xs font-medium text-foreground">
+                      {t('school.dash.grade.target')}
+                    </p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      Aspirational grade set 1-2 grades above working at grade.
+                      {t('school.dash.grade_tracking.target_desc')}
                     </p>
                   </div>
                   <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-3 py-2.5">
-                    <p className="text-xs font-medium text-emerald-400">On Track</p>
+                    <p className="text-xs font-medium text-emerald-400">
+                      {t('school.dash.grade.on_track')}
+                    </p>
                     <p className="mt-0.5 text-[11px] text-muted-foreground">
-                      A student is "on track" when their predicted grade meets or exceeds their
-                      target grade.
+                      {t('school.dash.grade_tracking.on_track_desc')}
                     </p>
                   </div>
                 </div>
@@ -750,21 +780,18 @@ export default function SchoolDashboardPage() {
           <Card className="border-border bg-card/60">
             <CardHeader className="pb-3">
               <CardTitle className="text-base font-semibold text-foreground">
-                See it in action
+                {t('school.dash.demo.title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-3 text-xs text-muted-foreground">
-                View the interactive demo dashboard with sample student data to see grade
-                distributions, on-track analysis, and student intervention lists.
-              </p>
+              <p className="mb-3 text-xs text-muted-foreground">{t('school.dash.demo.body')}</p>
               <Button
                 variant="outline"
                 size="sm"
                 className="w-full"
                 render={<Link href="/demo/school" />}
               >
-                View Demo Dashboard
+                {t('school.dash.demo.cta')}
                 <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
               </Button>
             </CardContent>

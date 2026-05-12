@@ -20,11 +20,7 @@ import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import {
   type TeacherNotification,
   type NotificationType,
@@ -32,6 +28,7 @@ import {
   markNotificationRead,
   markAllNotificationsRead,
 } from '@/lib/teacher-notifications'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Icon resolver ────────────────────────────────────────────────────────────
 
@@ -111,18 +108,13 @@ function NotificationItem({
     <div
       className={cn(
         'flex gap-3 rounded-lg px-3 py-2.5 transition-colors cursor-pointer',
-        notification.read
-          ? 'opacity-60 hover:bg-accent/50'
-          : 'bg-accent/30 hover:bg-accent/50'
+        notification.read ? 'opacity-60 hover:bg-accent/50' : 'bg-accent/30 hover:bg-accent/50',
       )}
       onClick={handleClick}
     >
       {/* Icon */}
       <div
-        className={cn(
-          'flex h-8 w-8 shrink-0 items-center justify-center rounded-full',
-          config.bg
-        )}
+        className={cn('flex h-8 w-8 shrink-0 items-center justify-center rounded-full', config.bg)}
       >
         <Icon className={cn('h-4 w-4', config.color)} />
       </div>
@@ -135,9 +127,7 @@ function NotificationItem({
             <p
               className={cn(
                 'text-sm leading-snug',
-                notification.read
-                  ? 'text-muted-foreground'
-                  : 'font-medium text-foreground'
+                notification.read ? 'text-muted-foreground' : 'font-medium text-foreground',
               )}
             >
               {notification.title}
@@ -151,10 +141,7 @@ function NotificationItem({
           {notification.message}
         </p>
         {notification.className && (
-          <Badge
-            variant="secondary"
-            className="mt-1 h-4.5 text-[10px] px-1.5"
-          >
+          <Badge variant="secondary" className="mt-1 h-4.5 text-[10px] px-1.5">
             {notification.className}
           </Badge>
         )}
@@ -186,26 +173,22 @@ export function NotificationPanel({
   onNotificationsChange,
   maxItems = 20,
 }: NotificationPanelProps) {
+  const t = useT()
   const [open, setOpen] = useState(false)
 
-  const unreadCount = useMemo(
-    () => notifications.filter((n) => !n.read).length,
-    [notifications]
-  )
+  const unreadCount = useMemo(() => notifications.filter((n) => !n.read).length, [notifications])
 
   const displayNotifications = useMemo(
     () => notifications.slice(0, maxItems),
-    [notifications, maxItems]
+    [notifications, maxItems],
   )
 
   const handleRead = useCallback(
     (id: string) => {
       markNotificationRead(id)
-      onNotificationsChange(
-        notifications.map((n) => (n.id === id ? { ...n, read: true } : n))
-      )
+      onNotificationsChange(notifications.map((n) => (n.id === id ? { ...n, read: true } : n)))
     },
-    [notifications, onNotificationsChange]
+    [notifications, onNotificationsChange],
   )
 
   const handleMarkAllRead = useCallback(() => {
@@ -224,17 +207,11 @@ export function NotificationPanel({
           </span>
         )}
       </PopoverTrigger>
-      <PopoverContent
-        align="end"
-        sideOffset={8}
-        className="w-96 p-0"
-      >
+      <PopoverContent align="end" sideOffset={8} className="w-96 p-0">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-border px-4 py-3">
           <div className="flex items-center gap-2">
-            <h3 className="text-sm font-semibold text-foreground">
-              Notifications
-            </h3>
+            <h3 className="text-sm font-semibold text-foreground">{t('school.notif.title')}</h3>
             {unreadCount > 0 && (
               <Badge variant="default" className="h-5 text-[10px] px-1.5">
                 {unreadCount}
@@ -249,7 +226,7 @@ export function NotificationPanel({
               onClick={handleMarkAllRead}
             >
               <CheckCheck className="mr-1 h-3.5 w-3.5" />
-              Mark all read
+              {t('school.notif.mark_all_read')}
             </Button>
           )}
         </div>
@@ -259,7 +236,7 @@ export function NotificationPanel({
           <div className="p-1.5 space-y-0.5">
             {displayNotifications.length === 0 ? (
               <div className="flex items-center justify-center py-8 text-sm text-muted-foreground">
-                No notifications yet.
+                {t('school.notif.empty')}
               </div>
             ) : (
               displayNotifications.map((notification) => (
@@ -281,7 +258,7 @@ export function NotificationPanel({
               onClick={() => setOpen(false)}
               className="flex items-center justify-center rounded-md py-1.5 text-xs font-medium text-primary hover:bg-accent transition-colors"
             >
-              View all notifications
+              {t('school.notif.view_all')}
             </Link>
           </div>
         )}

@@ -1,0 +1,39 @@
+feat(i18n): WAVE G - 35 more surfaces wired + QA fixes (Khaleeji + legal MSA)
+
+Round 3 of the i18n campaign. Two parallel streams in one wave:
+
+Wave 3a (round-trip QA, 4 agents reviewed full dictionary):
+- Applied ~20 QA fixes. Highlights:
+  - header.nav.your_hub: brand-name Hub kept Latin in AR.
+  - board.choose/change: switched noun for consistency with home.cta.
+  - ks3.key_stage_3: corrected UK ed-context terminology.
+  - ai_label.panel_body: literal calque replaced with idiomatic phrase.
+  - legal.no_sell_data, legal.no_train_kids: Khaleeji to formal MSA for
+    regulator-quotable disclosures.
+  - footer.link.faqs + pricing.faq.title: shortened to standard MSA.
+  - form.try_different_search: fixed "word" vs "search" meaning drift.
+  - dash.day_streak: singular to plural.
+  - audience.parents.*: gendered word replaced with neutral.
+  - marking.band_excellent: dropped redundant intensifier.
+
+Wave 3b (4 wiring agents):
+- Mock exams: /mock-exams index + [id] full timed-exam flow.
+- Courses: /courses + [id] detail + catalogue-client.
+- School admin: sidebar nav, notifications, stats, student table,
+  access banner (5 variants), founder banner, teacher ResourceCard,
+  /school/dashboard cards.
+- Flashcards + study: modes, match game, test mode, notes, quote bank,
+  reading-progress tracker, StudyTools, TextStudyHub, poem/text
+  viewers, InlineStudyEngine.
+- Demo + error + 404 + about + contact + accessibility chrome.
+
+Dictionary: ~1,100 to ~1,650 entries (+550 keys, all Khaleeji-AR).
+
+Known deferrals: AI-generated feedback body (model output), cookie-policy
+long-form legal body, demo sub-page fixtures, grade-recommendations.ts
+content constants. ~10 minor stylistic QA suggestions documented for
+future passes.
+
+TS clean. No regressions.
+
+Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>

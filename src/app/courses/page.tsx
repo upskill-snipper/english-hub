@@ -14,6 +14,7 @@ import Link from 'next/link'
 import { loadAllCourses } from '@/data/course-loader'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { selfCanonical } from '@/lib/seo/canonical'
+import { t } from '@/lib/i18n/t'
 import CourseCatalogueClient from './catalogue-client'
 
 export const metadata: Metadata = {
@@ -46,9 +47,15 @@ export default async function CoursesPage() {
   // as static HTML without waiting for the client island to hydrate.
   const topSix = courses.slice(0, 6)
 
+  const coursesLabel = await t('course.breadcrumb')
+  const seoH1 = await t('course.seo_h1')
+  const seoDesc = await t('course.seo_description')
+  const seoCategories = await t('course.seo_categories_heading')
+  const seoFeatured = await t('course.seo_featured_heading')
+
   return (
     <>
-      <Breadcrumbs items={[{ label: 'Courses', href: '/courses' }]} />
+      <Breadcrumbs items={[{ label: coursesLabel, href: '/courses' }]} />
 
       {/* SEO-only: rendered on the server so Googlebot sees real content on
           first byte. Hidden from sighted users because the client island
@@ -56,18 +63,15 @@ export default async function CoursesPage() {
           after hydration. `aria-hidden` + `sr-only` keeps it accessible to
           crawlers while avoiding duplicate content for assistive tech. */}
       <div className="sr-only" aria-hidden="true" data-seo-skeleton>
-        <h1>English Courses — KS3, GCSE, IGCSE</h1>
-        <p>
-          Structured English courses across Language, Literature, Poetry, Drama and Exam Skills
-          for every major UK exam board.
-        </p>
-        <h2>Categories</h2>
+        <h1>{seoH1}</h1>
+        <p>{seoDesc}</p>
+        <h2>{seoCategories}</h2>
         <ul>
           {SEO_CATEGORIES.map((c) => (
             <li key={c.id}>{c.label}</li>
           ))}
         </ul>
-        <h2>Featured courses</h2>
+        <h2>{seoFeatured}</h2>
         <ul>
           {topSix.map((c) => (
             <li key={c.id}>

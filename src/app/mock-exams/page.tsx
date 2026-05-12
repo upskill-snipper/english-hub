@@ -32,6 +32,7 @@ import {
   type MockExamPaper,
 } from '@/data/mock-exams'
 import { useBoard, getBoardConfig, type ExamBoard } from '@/hooks/useBoard'
+import { useT } from '@/lib/i18n/use-t'
 
 import {
   Card,
@@ -364,7 +365,12 @@ const EXAM_CARDS: ExamCardData[] = [
     difficulty: 'Higher',
     paperId: 'ial-wet01-full',
     questions: [
-      { number: 1, label: 'Unseen poem + anthology comparison (AO1/2/4)', marks: 30, type: 'Comparison' },
+      {
+        number: 1,
+        label: 'Unseen poem + anthology comparison (AO1/2/4)',
+        marks: 30,
+        type: 'Comparison',
+      },
       { number: 2, label: 'Drama essay (AO1/2/3)', marks: 30, type: 'Extended Response' },
     ],
     gradeBoundaries: IAL_LIT_BOUNDARIES_60,
@@ -383,7 +389,12 @@ const EXAM_CARDS: ExamCardData[] = [
     difficulty: 'Higher',
     paperId: 'ial-wet02-full',
     questions: [
-      { number: 1, label: 'Comparative prose essay — pre-1900 + post-1900 (AO1/2/3/4)', marks: 40, type: 'Comparative Analysis' },
+      {
+        number: 1,
+        label: 'Comparative prose essay — pre-1900 + post-1900 (AO1/2/3/4)',
+        marks: 40,
+        type: 'Comparative Analysis',
+      },
     ],
     gradeBoundaries: IAL_LIT_BOUNDARIES_40,
     pastGrade: null,
@@ -401,8 +412,18 @@ const EXAM_CARDS: ExamCardData[] = [
     difficulty: 'Higher',
     paperId: 'ial-wet03-full',
     questions: [
-      { number: 1, label: 'Unseen pre-1900 poem + anthology comparison (AO1/2/3/4)', marks: 30, type: 'Comparison' },
-      { number: 2, label: 'Prose essay with AO5 critical perspective', marks: 30, type: 'Extended Response' },
+      {
+        number: 1,
+        label: 'Unseen pre-1900 poem + anthology comparison (AO1/2/3/4)',
+        marks: 30,
+        type: 'Comparison',
+      },
+      {
+        number: 2,
+        label: 'Prose essay with AO5 critical perspective',
+        marks: 30,
+        type: 'Extended Response',
+      },
     ],
     gradeBoundaries: IAL_LIT_BOUNDARIES_60,
     pastGrade: null,
@@ -420,8 +441,18 @@ const EXAM_CARDS: ExamCardData[] = [
     difficulty: 'Higher',
     paperId: 'ial-wet04-full',
     questions: [
-      { number: 1, label: 'Shakespeare essay with AO5 (AO1/2/3/5)', marks: 30, type: 'Extended Response' },
-      { number: 2, label: 'Pre-1900 drama essay with AO5 (AO1/2/3/5)', marks: 30, type: 'Extended Response' },
+      {
+        number: 1,
+        label: 'Shakespeare essay with AO5 (AO1/2/3/5)',
+        marks: 30,
+        type: 'Extended Response',
+      },
+      {
+        number: 2,
+        label: 'Pre-1900 drama essay with AO5 (AO1/2/3/5)',
+        marks: 30,
+        type: 'Extended Response',
+      },
     ],
     gradeBoundaries: IAL_LIT_BOUNDARIES_60,
     pastGrade: null,
@@ -491,6 +522,7 @@ function GradeBoundariesTable({
 // ─── Question List Component ─────────────────────────────────────────────────
 
 function QuestionBreakdown({ questions }: { questions: QuestionSummary[] }) {
+  const t = useT()
   return (
     <div className="space-y-2">
       {questions.map((q) => (
@@ -500,7 +532,7 @@ function QuestionBreakdown({ questions }: { questions: QuestionSummary[] }) {
           </span>
           <span className="text-foreground/80 flex-1 min-w-0">{q.label}</span>
           <Badge variant="outline" className="text-xs shrink-0">
-            {q.marks} marks
+            {q.marks} {q.marks === 1 ? t('marking.mark_singular') : t('marking.mark_plural')}
           </Badge>
         </div>
       ))}
@@ -511,11 +543,12 @@ function QuestionBreakdown({ questions }: { questions: QuestionSummary[] }) {
 // ─── Past Performance Component ──────────────────────────────────────────────
 
 function PastPerformance({ grade }: { grade: number | null | undefined }) {
+  const t = useT()
   if (grade == null) {
     return (
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
         <BarChart3 className="h-4 w-4" />
-        <span>No attempts yet</span>
+        <span>{t('mock.no_attempts')}</span>
       </div>
     )
   }
@@ -524,7 +557,7 @@ function PastPerformance({ grade }: { grade: number | null | undefined }) {
     <div className="flex items-center gap-3">
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
         <TrendingUp className="h-4 w-4" />
-        <span>Best grade:</span>
+        <span>{t('mock.best_grade')}</span>
       </div>
       <div
         className={cn(
@@ -542,6 +575,7 @@ function PastPerformance({ grade }: { grade: number | null | undefined }) {
 // ─── Exam Paper Card ─────────────────────────────────────────────────────────
 
 function ExamPaperCard({ exam }: { exam: ExamCardData }) {
+  const t = useT()
   const [showDetails, setShowDetails] = useState(false)
   const config = BOARD_CONFIG[exam.examBoard] ?? DEFAULT_BOARD_CONFIG
   const isLanguage = exam.paperType === 'language'
@@ -575,19 +609,19 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
                     : 'border-pink-600/30 text-pink-700',
                 )}
               >
-                {isLanguage ? 'Language' : 'Literature'}
+                {isLanguage ? t('mock.language') : t('mock.literature')}
               </Badge>
             </div>
             <CardTitle className="text-lg">{exam.paperName}</CardTitle>
             <CardDescription className="mt-1">
-              Explorations in{' '}
+              {t('mock.explorations_in')}{' '}
               {isLanguage
                 ? exam.paperNumber === 1
-                  ? 'Creative Reading and Writing'
-                  : "Writers' Viewpoints and Perspectives"
+                  ? t('mock.theme_creative_reading')
+                  : t('mock.theme_writers_views')
                 : exam.paperNumber === 1
-                  ? 'Shakespeare and the 19th-Century Novel'
-                  : 'Modern Texts and Poetry'}
+                  ? t('mock.theme_shakespeare_19c')
+                  : t('mock.theme_modern_poetry')}
             </CardDescription>
           </div>
         </div>
@@ -599,30 +633,30 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
           <div className="flex items-center gap-2 rounded-lg bg-muted/50 px-3 py-2.5">
             <Timer className="h-4 w-4 text-muted-foreground shrink-0" />
             <div>
-              <p className="text-xs text-muted-foreground">Time</p>
+              <p className="text-xs text-muted-foreground">{t('mock.time')}</p>
               <p className="text-sm font-semibold text-foreground">{exam.timeAllowed}</p>
             </div>
           </div>
           <div className="flex items-center gap-2 rounded-lg bg-muted/50 px-3 py-2.5">
             <Award className="h-4 w-4 text-muted-foreground shrink-0" />
             <div>
-              <p className="text-xs text-muted-foreground">Marks</p>
+              <p className="text-xs text-muted-foreground">{t('mock.marks')}</p>
               <p className="text-sm font-semibold text-foreground">{exam.totalMarks}</p>
             </div>
           </div>
           <div className="flex items-center gap-2 rounded-lg bg-muted/50 px-3 py-2.5">
             <Hash className="h-4 w-4 text-muted-foreground shrink-0" />
             <div>
-              <p className="text-xs text-muted-foreground">Questions</p>
+              <p className="text-xs text-muted-foreground">{t('mock.questions')}</p>
               <p className="text-sm font-semibold text-foreground">{exam.questionCount}</p>
             </div>
           </div>
           <div className="flex items-center gap-2 rounded-lg bg-muted/50 px-3 py-2.5">
             <Layers className="h-4 w-4 text-muted-foreground shrink-0" />
             <div>
-              <p className="text-xs text-muted-foreground">Sections</p>
+              <p className="text-xs text-muted-foreground">{t('mock.sections')}</p>
               <p className="text-sm font-semibold text-foreground">
-                {isLanguage ? '2 (Reading + Writing)' : exam.questionCount}
+                {isLanguage ? t('mock.sections_reading_writing') : exam.questionCount}
               </p>
             </div>
           </div>
@@ -639,7 +673,7 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
           className="flex items-center gap-1.5 text-sm text-primary hover:text-primary/80 mt-4 transition-colors"
         >
           {showDetails ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-          {showDetails ? 'Hide details' : 'View question breakdown & grade boundaries'}
+          {showDetails ? t('mock.hide_details') : t('mock.view_details')}
         </button>
 
         {showDetails && (
@@ -648,7 +682,7 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
             <div>
               <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
                 <FileText className="h-4 w-4 text-primary" />
-                Question Breakdown
+                {t('mock.question_breakdown')}
               </h4>
               <QuestionBreakdown questions={exam.questions} />
             </div>
@@ -659,7 +693,7 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
             <div>
               <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
                 <BarChart3 className="h-4 w-4 text-primary" />
-                Grade Boundaries ({exam.examBoard})
+                {t('mock.grade_boundaries')} ({exam.examBoard})
               </h4>
               <GradeBoundariesTable
                 boundaries={exam.gradeBoundaries}
@@ -667,7 +701,8 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
               />
               <p className="text-xs text-muted-foreground mt-2 flex items-center gap-1">
                 <Info className="h-3 w-3" />
-                Based on recent {exam.examBoard} grade boundaries. Boundaries vary each year.
+                {t('mock.boundaries_note_prefix')} {exam.examBoard}{' '}
+                {t('mock.boundaries_note_suffix')}
               </p>
             </div>
           </div>
@@ -676,12 +711,13 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
 
       <CardFooter className="flex items-center justify-between gap-3 flex-wrap">
         <p className="text-xs text-muted-foreground">
-          {exam.examBoard} GCSE English {exam.paperType === 'language' ? 'Language' : 'Literature'}{' '}
-          &middot; Paper {exam.paperNumber}
+          {exam.examBoard} {t('mock.gcse_english')}{' '}
+          {exam.paperType === 'language' ? t('mock.language') : t('mock.literature')} &middot;{' '}
+          {t('mock.paper')} {exam.paperNumber}
         </p>
         <Button size="default" render={<Link href={`/mock-exams/${exam.paperId}`} />}>
           <Play className="h-4 w-4 mr-1.5" />
-          Start Exam
+          {t('mock.start_exam')}
         </Button>
       </CardFooter>
     </Card>
@@ -691,42 +727,37 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
 // ─── How Mock Exams Help Section ─────────────────────────────────────────────
 
 function HowMockExamsWork() {
+  const t = useT()
   const steps = [
     {
       icon: Target,
-      title: 'Simulate real exam conditions',
-      description:
-        'Each mock mirrors the exact format, timing, and mark allocation of the real GCSE exam. You will face the same question types and time pressure.',
+      title: t('mock.step_simulate_title'),
+      description: t('mock.step_simulate_desc'),
     },
     {
       icon: Clock,
-      title: 'Build time management skills',
-      description:
-        'Learn to allocate your time effectively across sections. Language Paper 1 gives you 1 hour 45 minutes for 5 questions -- knowing when to move on is crucial.',
+      title: t('mock.step_time_title'),
+      description: t('mock.step_time_desc'),
     },
     {
       icon: BarChart3,
-      title: 'Track your progress in grades 1--9',
-      description:
-        'After each attempt, see your estimated GCSE grade based on real exam board grade boundaries. Watch your grade improve with each attempt.',
+      title: t('mock.step_track_title'),
+      description: t('mock.step_track_desc'),
     },
     {
       icon: BookOpen,
-      title: 'Learn from model answers',
-      description:
-        'Every question includes model answers at Grade 4-5, Grade 6-7, and Grade 8-9 so you can see exactly what markers are looking for at each level.',
+      title: t('mock.step_model_title'),
+      description: t('mock.step_model_desc'),
     },
     {
       icon: CheckCircle2,
-      title: 'Identify your weak areas',
-      description:
-        'Detailed mark breakdowns show whether you need to improve your reading analysis, creative writing, or essay technique.',
+      title: t('mock.step_weak_title'),
+      description: t('mock.step_weak_desc'),
     },
     {
       icon: Sparkles,
-      title: 'Get AI-powered feedback',
-      description:
-        'Submit your written responses for instant AI feedback that grades your work and provides specific, actionable improvements.',
+      title: t('mock.step_ai_title'),
+      description: t('mock.step_ai_desc'),
     },
   ]
 
@@ -739,16 +770,12 @@ function HowMockExamsWork() {
             className="mb-4 border-primary/20 bg-primary/[0.06] text-primary text-sm gap-2 px-3 py-1"
           >
             <HelpCircle className="w-3.5 h-3.5" />
-            How It Works
+            {t('mock.how_it_works')}
           </Badge>
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
-            How Mock Exams Help You Succeed
+            {t('mock.how_mocks_help')}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Practising under real exam conditions is the single most effective way to improve your
-            GCSE English grade. Our mocks replicate the exact format used by AQA, Edexcel, OCR, and
-            WJEC.
-          </p>
+          <p className="text-muted-foreground max-w-2xl mx-auto">{t('mock.how_mocks_help_desc')}</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -793,6 +820,7 @@ const BOARD_ID_TO_LEGACY: Record<ExamBoard, string[]> = {
 }
 
 export default function MockExamsPage() {
+  const t = useT()
   const allBoards = useMemo(() => getAvailableBoards(), [])
   const { board: userBoard, isHydrated: isBoardHydrated } = useBoard()
   const searchParams = useSearchParams()
@@ -861,36 +889,38 @@ export default function MockExamsPage() {
             className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-6 gap-2 px-4 py-1.5"
           >
             <GraduationCap className="w-4 h-4" />{' '}
-            {boardConfig ? `${boardConfig.name} Mock Exams` : 'GCSE Mock Exams'}
+            {boardConfig
+              ? `${boardConfig.name} ${t('mock.mock_exams')}`
+              : t('mock.gcse_mock_exams')}
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-5 tracking-tight">
-            172 full mock papers across 6 boards.
+            {t('mock.hero_headline')}
           </h1>
 
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-            AI-marked in 60 seconds. Authentic exam format. Board-aligned markschemes.
+            {t('mock.hero_subhead')}
           </p>
 
           {/* Quick stats */}
           <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
-              <FileText className="h-4 w-4 text-primary" /> 4 exam papers
+              <FileText className="h-4 w-4 text-primary" /> {t('mock.stat_papers')}
             </span>
             <span className="flex items-center gap-1.5">
-              <Clock className="h-4 w-4 text-primary" /> Timed conditions
+              <Clock className="h-4 w-4 text-primary" /> {t('mock.stat_timed')}
             </span>
             <span className="flex items-center gap-1.5">
-              <BarChart3 className="h-4 w-4 text-primary" /> Grades 1-9
+              <BarChart3 className="h-4 w-4 text-primary" /> {t('mock.stat_grades')}
             </span>
             <span className="flex items-center gap-1.5">
-              <Sparkles className="h-4 w-4 text-primary" /> AI feedback
+              <Sparkles className="h-4 w-4 text-primary" /> {t('mock.stat_ai_feedback')}
             </span>
           </div>
 
           <div className="flex gap-3 justify-center flex-wrap">
             <Button size="lg" className="shadow-lg shadow-primary/20" render={<a href="#exams" />}>
-              View Exam Papers <ArrowRight className="ml-2 h-4 w-4" />
+              {t('mock.view_papers')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             {/* Sample-paper PDF coming soon — see public/sample-papers/ */}
             <Button
@@ -898,12 +928,12 @@ export default function MockExamsPage() {
               size="lg"
               disabled
               aria-disabled="true"
-              title="Sample paper coming soon"
+              title={t('mock.sample_coming_soon')}
             >
-              Sample paper — coming soon
+              {t('mock.sample_coming_soon')}
             </Button>
             <Button variant="secondary" size="lg" render={<a href="#how-it-works" />}>
-              How It Works
+              {t('mock.how_it_works')}
             </Button>
           </div>
         </div>
@@ -913,20 +943,20 @@ export default function MockExamsPage() {
       <section id="exams" className="max-w-6xl mx-auto px-4 py-12 sm:py-16">
         <div className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
-            {boardConfig ? `${boardConfig.name} Exam Papers` : 'Exam Papers'}
+            {boardConfig ? `${boardConfig.name} ${t('mock.exam_papers')}` : t('mock.exam_papers')}
           </h2>
           <p className="text-muted-foreground max-w-2xl">
-            Choose a paper to start. Each mock follows the exact {boardConfig?.name ?? 'GCSE'}{' '}
-            specification with realistic questions, proper timing, and accurate grade boundaries.
+            {t('mock.choose_paper_prefix')} {boardConfig?.name ?? 'GCSE'}{' '}
+            {t('mock.choose_paper_suffix')}
           </p>
         </div>
 
         {/* Filter tabs */}
         <Tabs defaultValue="all" className="mb-8" onValueChange={setActiveTab}>
           <TabsList variant="line">
-            <TabsTrigger value="all">All Papers</TabsTrigger>
-            <TabsTrigger value="language">Language</TabsTrigger>
-            <TabsTrigger value="literature">Literature</TabsTrigger>
+            <TabsTrigger value="all">{t('mock.tab_all')}</TabsTrigger>
+            <TabsTrigger value="language">{t('mock.language')}</TabsTrigger>
+            <TabsTrigger value="literature">{t('mock.literature')}</TabsTrigger>
           </TabsList>
         </Tabs>
 
@@ -935,19 +965,19 @@ export default function MockExamsPage() {
           <div className="rounded-2xl border border-border/40 bg-card/30 p-10 text-center">
             <GraduationCap className="h-12 w-12 mx-auto mb-4 text-primary/80" />
             <h3 className="text-xl font-bold text-foreground mb-2">
-              {boardConfig?.name ?? 'Your board'} mock exams — coming soon
+              {boardConfig?.name ?? t('mock.your_board')} {t('mock.coming_soon_title')}
             </h3>
             <p className="text-muted-foreground max-w-xl mx-auto mb-5">
-              We&apos;re building a full set of timed mock papers for{' '}
-              {boardConfig?.fullName ?? 'your selected board'}. In the meantime, you can still use
-              our flashcards, model answers, and revision notes.
+              {t('mock.coming_soon_prefix')}{' '}
+              {boardConfig?.fullName ?? t('mock.your_selected_board')}.{' '}
+              {t('mock.coming_soon_suffix')}
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <Button variant="secondary" render={<Link href="/revision" />}>
-                Go to Revision Hub
+                {t('mock.go_to_revision')}
               </Button>
               <Button variant="outline" render={<Link href="/board-select" />}>
-                Change exam board
+                {t('board.change_exam_board')}
               </Button>
             </div>
           </div>
@@ -963,11 +993,11 @@ export default function MockExamsPage() {
         {totalPapers > 4 && (
           <div className="mt-10 rounded-xl border border-border/40 bg-muted/30 p-6 text-center">
             <p className="text-sm text-muted-foreground mb-3">
-              We also have {totalPapers - 4}+ additional mock papers across {allBoards.length} exam
-              boards including Edexcel, OCR, WJEC, and CAIE.
+              {t('mock.more_papers_prefix')} {totalPapers - 4}+ {t('mock.more_papers_middle')}{' '}
+              {allBoards.length} {t('mock.more_papers_suffix')}
             </p>
             <Button variant="secondary" render={<Link href="/auth/register" />}>
-              Sign Up for Full Access <ArrowRight className="ml-2 h-4 w-4" />
+              {t('mock.signup_full_access')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         )}
@@ -978,12 +1008,10 @@ export default function MockExamsPage() {
         <div className="max-w-6xl mx-auto px-4 py-12 sm:py-16">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
-              Understanding GCSE Grades 1-9
+              {t('mock.understanding_grades')}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              GCSE English is graded on a 1-9 scale, where 9 is the highest grade. A grade 4 is a
-              standard pass and a grade 5 is a strong pass. Here is how the grades map to the old
-              letter system.
+              {t('mock.understanding_grades_desc')}
             </p>
           </div>
 
@@ -1008,10 +1036,10 @@ export default function MockExamsPage() {
             </div>
             <div className="flex justify-between mt-3 text-xs text-muted-foreground px-2">
               <span className="flex items-center gap-1">
-                <CheckCircle2 className="h-3 w-3 text-amber-600" /> Grade 4 = Standard pass
+                <CheckCircle2 className="h-3 w-3 text-amber-600" /> {t('mock.standard_pass')}
               </span>
               <span className="flex items-center gap-1">
-                <CheckCircle2 className="h-3 w-3 text-teal-800" /> Grade 5 = Strong pass
+                <CheckCircle2 className="h-3 w-3 text-teal-800" /> {t('mock.strong_pass')}
               </span>
             </div>
           </div>
@@ -1030,28 +1058,21 @@ export default function MockExamsPage() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-primary/[0.06] rounded-full blur-[100px] pointer-events-none" />
             <div className="relative">
               <GraduationCap className="h-12 w-12 mx-auto mb-4 text-primary" />
-              <h2 className="text-3xl font-bold text-foreground mb-3">
-                Ready to Ace Your GCSE English?
-              </h2>
-              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                Join thousands of students preparing for their GCSEs. Get access to all mock papers,
-                AI essay feedback, model answers, and detailed grade tracking.
-              </p>
+              <h2 className="text-3xl font-bold text-foreground mb-3">{t('mock.cta_headline')}</h2>
+              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">{t('mock.cta_body')}</p>
               <div className="flex gap-3 justify-center">
                 <Button
                   size="lg"
                   className="shadow-lg shadow-primary/20"
                   render={<Link href="/auth/register" />}
                 >
-                  Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
+                  {t('mock.start_trial')} <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button variant="secondary" size="lg" render={<Link href="/auth/login" />}>
-                  Sign In
+                  {t('mock.sign_in')}
                 </Button>
               </div>
-              <p className="mt-6 text-sm text-muted-foreground">
-                7-day free trial (card required) &middot; Cancel before day 7 &middot; No lock-in
-              </p>
+              <p className="mt-6 text-sm text-muted-foreground">{t('mock.trial_terms')}</p>
             </div>
           </div>
         </div>

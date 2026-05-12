@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { cn, shuffleArray } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 import type { FlashcardDeck, FlashCard } from '@/data/flashcard-data'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
@@ -29,9 +30,7 @@ function generateQuestions(deck: FlashcardDeck): Question[] {
   const shuffledCards = shuffleArray(deck.cards)
   return shuffledCards.map((card) => {
     // Get 3 random wrong answers from the same deck
-    const otherBacks = deck.cards
-      .filter((c) => c.id !== card.id)
-      .map((c) => c.back)
+    const otherBacks = deck.cards.filter((c) => c.id !== card.id).map((c) => c.back)
     const wrongAnswers = shuffleArray(otherBacks).slice(0, 3)
 
     // If deck has fewer than 4 cards, pad with what we have
@@ -60,6 +59,7 @@ function truncateOption(text: string, maxLen = 120): string {
 // ─── Component ──────────────────────────────────────────────────────────────
 
 export default function TestMode({ deck }: { deck: FlashcardDeck }) {
+  const t = useT()
   const [questions, setQuestions] = useState<Question[]>(() => generateQuestions(deck))
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
@@ -73,17 +73,20 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
 
   // ── Answer a question ───────────────────────────────────────────────────
 
-  const handleOptionClick = useCallback((optionIndex: number) => {
-    if (hasAnswered) return
-    setSelectedOption(optionIndex)
-    setHasAnswered(true)
+  const handleOptionClick = useCallback(
+    (optionIndex: number) => {
+      if (hasAnswered) return
+      setSelectedOption(optionIndex)
+      setHasAnswered(true)
 
-    const isCorrect = optionIndex === currentQuestion.correctIndex
-    setAnswers((prev) => [
-      ...prev,
-      { question: currentQuestion, chosenIndex: optionIndex, isCorrect },
-    ])
-  }, [hasAnswered, currentQuestion])
+      const isCorrect = optionIndex === currentQuestion.correctIndex
+      setAnswers((prev) => [
+        ...prev,
+        { question: currentQuestion, chosenIndex: optionIndex, isCorrect },
+      ])
+    },
+    [hasAnswered, currentQuestion],
+  )
 
   // ── Next question ─────────────────────────────────────────────────────
 
@@ -113,10 +116,7 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
   // ── Stats ─────────────────────────────────────────────────────────────
 
   const correctCount = answers.filter((a) => a.isCorrect).length
-  const mistakes = useMemo(
-    () => answers.filter((a) => !a.isCorrect),
-    [answers]
-  )
+  const mistakes = useMemo(() => answers.filter((a) => !a.isCorrect), [answers])
 
   // ── Review mistakes view ──────────────────────────────────────────────
 
@@ -126,18 +126,22 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <Button variant="ghost" size="sm" onClick={() => setShowingReview(false)}>
-            Back to results
+            {t('test.back_to_results')}
           </Button>
           <span className="text-sm text-muted-foreground">
-            Mistake {reviewIndex + 1} of {mistakes.length}
+            {t('test.mistake_label')} {reviewIndex + 1} {t('test.of')} {mistakes.length}
           </span>
         </div>
 
         <Card className="mx-auto max-w-2xl">
           <CardContent className="p-6 space-y-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Question</p>
-              <h3 className="mt-1 text-xl font-bold text-foreground">{mistake.question.card.front}</h3>
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                {t('test.question_label')}
+              </p>
+              <h3 className="mt-1 text-xl font-bold text-foreground">
+                {mistake.question.card.front}
+              </h3>
             </div>
 
             <div className="space-y-2">
@@ -150,7 +154,9 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
                     className={cn(
                       'rounded-lg border p-3 text-sm',
                       isCorrect && 'border-primary bg-primary/10 text-primary',
-                      isChosen && !isCorrect && 'border-destructive bg-destructive/10 text-destructive line-through',
+                      isChosen &&
+                        !isCorrect &&
+                        'border-destructive bg-destructive/10 text-destructive line-through',
                       !isCorrect && !isChosen && 'border-border text-muted-foreground opacity-50',
                     )}
                   >
@@ -173,7 +179,7 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
             onClick={() => setReviewIndex((i) => Math.max(0, i - 1))}
             disabled={reviewIndex === 0}
           >
-            Previous
+            {t('test.previous')}
           </Button>
           <Button
             variant="ghost"
@@ -181,7 +187,7 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
             onClick={() => setReviewIndex((i) => Math.min(mistakes.length - 1, i + 1))}
             disabled={reviewIndex >= mistakes.length - 1}
           >
-            Next
+            {t('test.next')}
           </Button>
         </div>
       </div>
@@ -196,17 +202,17 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
       <Card className="mx-auto max-w-lg">
         <CardContent className="p-8 text-center">
           <Trophy className="mx-auto mb-4 h-12 w-12 text-amber-500" />
-          <h2 className="text-2xl font-bold text-foreground">Test Complete!</h2>
+          <h2 className="text-2xl font-bold text-foreground">{t('test.complete_title')}</h2>
           <p className="mt-2 text-muted-foreground">{deck.title}</p>
 
           <div className="mt-6 grid grid-cols-2 gap-4">
             <div className="rounded-lg bg-primary/10 p-4">
               <p className="text-2xl font-bold text-primary">{correctCount}</p>
-              <p className="mt-1 text-xs text-muted-foreground">Correct</p>
+              <p className="mt-1 text-xs text-muted-foreground">{t('test.correct')}</p>
             </div>
             <div className="rounded-lg bg-amber-500/10 p-4">
               <p className="text-2xl font-bold text-amber-500">{mistakes.length}</p>
-              <p className="mt-1 text-xs text-muted-foreground">Incorrect</p>
+              <p className="mt-1 text-xs text-muted-foreground">{t('test.incorrect')}</p>
             </div>
           </div>
 
@@ -218,7 +224,9 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
                 style={{ width: `${percentage}%` }}
               />
             </div>
-            <p className="mt-2 text-sm text-muted-foreground">{percentage}% correct</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              {percentage}% {t('test.percent_correct')}
+            </p>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -231,12 +239,12 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
                 }}
               >
                 <Eye className="h-4 w-4" />
-                Review Mistakes
+                {t('test.review_mistakes')}
               </Button>
             )}
             <Button onClick={restart}>
               <RotateCcw className="h-4 w-4" />
-              Retake Test
+              {t('test.retake')}
             </Button>
           </div>
         </CardContent>
@@ -251,8 +259,12 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
       {/* Progress */}
       <div>
         <div className="mb-2 flex items-center justify-between text-sm text-muted-foreground">
-          <span>Question {currentIndex + 1} of {questions.length}</span>
-          <span>{correctCount} correct so far</span>
+          <span>
+            {t('test.question_label')} {currentIndex + 1} {t('test.of')} {questions.length}
+          </span>
+          <span>
+            {correctCount} {t('test.correct_so_far')}
+          </span>
         </div>
         <Progress value={((currentIndex + 1) / questions.length) * 100} />
       </div>
@@ -261,7 +273,7 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
       <Card className="mx-auto max-w-2xl">
         <CardContent className="p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-2">
-            What is...
+            {t('test.what_is')}
           </p>
           <h3 className="text-2xl font-bold text-foreground">{currentQuestion.card.front}</h3>
         </CardContent>
@@ -282,7 +294,8 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
               className={cn(
                 'w-full rounded-lg border p-4 text-left text-sm transition-all duration-200',
                 // Default state
-                !hasAnswered && 'border-border bg-card hover:border-primary/50 hover:bg-primary/5 cursor-pointer',
+                !hasAnswered &&
+                  'border-border bg-card hover:border-primary/50 hover:bg-primary/5 cursor-pointer',
                 // After answering
                 hasAnswered && isCorrect && 'border-primary bg-primary/10',
                 hasAnswered && isSelected && !isCorrect && 'border-destructive bg-destructive/10',
@@ -295,8 +308,14 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
                     'flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-xs font-bold transition-colors',
                     !hasAnswered && 'border-border text-muted-foreground',
                     hasAnswered && isCorrect && 'border-primary bg-primary text-primary-foreground',
-                    hasAnswered && isSelected && !isCorrect && 'border-destructive bg-destructive text-destructive-foreground',
-                    hasAnswered && !isCorrect && !isSelected && 'border-border text-muted-foreground opacity-50',
+                    hasAnswered &&
+                      isSelected &&
+                      !isCorrect &&
+                      'border-destructive bg-destructive text-destructive-foreground',
+                    hasAnswered &&
+                      !isCorrect &&
+                      !isSelected &&
+                      'border-border text-muted-foreground opacity-50',
                   )}
                 >
                   {hasAnswered && isCorrect ? (
@@ -320,11 +339,11 @@ export default function TestMode({ deck }: { deck: FlashcardDeck }) {
           <Button onClick={handleNext} size="lg">
             {currentIndex < questions.length - 1 ? (
               <>
-                Next Question
+                {t('test.next_question')}
                 <ChevronRight className="h-4 w-4" />
               </>
             ) : (
-              'View Results'
+              t('test.view_results')
             )}
           </Button>
         </div>

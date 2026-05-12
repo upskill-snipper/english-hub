@@ -35,6 +35,7 @@ import {
 } from '@/components/ui/select'
 import { cn } from '@/lib/utils'
 import { LearningTip } from '@/components/ui/learning-tip'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ================================================================
    Constants
@@ -168,8 +169,45 @@ export default function CourseCatalogueClient({
 }: {
   initialCourses?: CourseData[]
 } = {}) {
+  const t = useT()
   const { user } = useAuthStore()
   const { board: userBoard, isHydrated: boardHydrated } = useBoard()
+
+  const categoryLabel = useCallback(
+    (id: CategoryId): string => {
+      switch (id) {
+        case 'all':
+          return t('course.cat_all')
+        case 'language':
+          return t('course.cat_language')
+        case 'literature':
+          return t('course.cat_literature')
+        case 'poetry':
+          return t('course.cat_poetry')
+        case 'drama':
+          return t('course.cat_drama')
+        case 'exam-skills':
+          return t('course.cat_exam_skills')
+      }
+    },
+    [t],
+  )
+
+  const sortLabel = useCallback(
+    (value: SortKey): string => {
+      switch (value) {
+        case 'recommended':
+          return t('course.sort_recommended')
+        case 'az':
+          return t('course.sort_az')
+        case 'za':
+          return t('course.sort_za')
+        case 'modules':
+          return t('course.sort_modules')
+      }
+    },
+    [t],
+  )
 
   // Seeded from the server render so the first paint shows real content
   // (SEO item #23 — no more "Loading..." flash for crawlers or humans).
@@ -322,14 +360,14 @@ export default function CourseCatalogueClient({
         <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="transition-colors hover:text-foreground">
-              Home
+              {t('nav.home')}
             </Link>
           </li>
           <li aria-hidden="true">
             <ChevronRight className="h-3.5 w-3.5" />
           </li>
           {activeCategory === 'all' ? (
-            <li className="font-medium text-foreground">Courses</li>
+            <li className="font-medium text-foreground">{t('course.breadcrumb')}</li>
           ) : (
             <>
               <li>
@@ -337,15 +375,13 @@ export default function CourseCatalogueClient({
                   onClick={() => setActiveCategory('all')}
                   className="transition-colors hover:text-foreground"
                 >
-                  Courses
+                  {t('course.breadcrumb')}
                 </button>
               </li>
               <li aria-hidden="true">
                 <ChevronRight className="h-3.5 w-3.5" />
               </li>
-              <li className="font-medium text-foreground">
-                {CATEGORIES.find((c) => c.id === activeCategory)?.label}
-              </li>
+              <li className="font-medium text-foreground">{categoryLabel(activeCategory)}</li>
             </>
           )}
         </ol>
@@ -355,12 +391,11 @@ export default function CourseCatalogueClient({
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
-            <h1 className="text-foreground">Course Catalogue</h1>
+            <h1 className="text-foreground">{t('course.catalogue_title')}</h1>
             <LearningTip categories={['course', 'study']} side="right" size="md" />
           </div>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Structured courses designed to take you from fundamentals to exam confidence. Pick your
-            level, choose a course, and start learning today.
+            {t('course.catalogue_subtitle')}
           </p>
         </div>
       </section>
@@ -373,11 +408,12 @@ export default function CourseCatalogueClient({
               <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
-                    Subscribe to unlock all courses
+                    {t('course.subscribe_unlock')}
                   </p>
                   <p className="mt-1 text-muted-foreground">
-                    <span className="font-bold text-primary">{PRICING.TRIAL_TEXT}!</span> Then just{' '}
-                    {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
+                    <span className="font-bold text-primary">{PRICING.TRIAL_TEXT}!</span>{' '}
+                    {t('course.then_just')} {PRICING_DISPLAY.monthly}{' '}
+                    {t('course.rolling_monthly_cancel')}
                   </p>
                 </div>
                 <Button
@@ -386,7 +422,7 @@ export default function CourseCatalogueClient({
                   className="shadow-lg shadow-primary/20"
                   render={<Link href="/auth/register" />}
                 >
-                  Start Free Trial
+                  {t('marking.start_free_trial')}
                 </Button>
               </div>
             </CardContent>
@@ -410,7 +446,7 @@ export default function CourseCatalogueClient({
                   : 'text-muted-foreground hover:bg-background hover:text-foreground hover:shadow-sm',
               )}
             >
-              {cat.label}
+              {categoryLabel(cat.id)}
               <span
                 className={cn(
                   'ml-0.5 rounded-full px-1.5 py-0.5 text-[10px] font-bold tabular-nums leading-none',
@@ -431,7 +467,7 @@ export default function CourseCatalogueClient({
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search courses..."
+              placeholder={t('course.search_placeholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.currentTarget.value)}
               className="pl-9"
@@ -448,12 +484,12 @@ export default function CourseCatalogueClient({
           <Select value={sortKey} onValueChange={(v) => setSortKey(v as SortKey)}>
             <SelectTrigger className="w-[150px]">
               <ArrowUpDown className="h-3.5 w-3.5 text-muted-foreground" />
-              <SelectValue placeholder="Sort by" />
+              <SelectValue placeholder={t('course.sort_by')} />
             </SelectTrigger>
             <SelectContent>
               {SORT_OPTIONS.map((opt) => (
                 <SelectItem key={opt.value} value={opt.value}>
-                  {opt.label}
+                  {sortLabel(opt.value)}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -482,10 +518,11 @@ export default function CourseCatalogueClient({
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-muted">
               <GraduationCap className="h-6 w-6 text-muted-foreground" />
             </div>
-            <h3 className="mt-4 text-base font-semibold text-foreground">No courses found</h3>
+            <h3 className="mt-4 text-base font-semibold text-foreground">
+              {t('course.none_found')}
+            </h3>
             <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              There are no courses matching your current filters. Try adjusting your search or
-              filters.
+              {t('course.none_found_hint')}
             </p>
             <button
               onClick={() => {
@@ -496,7 +533,7 @@ export default function CourseCatalogueClient({
               }}
               className="mt-6 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
             >
-              Clear All Filters
+              {t('course.clear_filters')}
             </button>
           </div>
         ) : (
@@ -510,10 +547,10 @@ export default function CourseCatalogueClient({
                   </div>
                   <div>
                     <h2 className="text-lg font-bold tracking-tight text-foreground">
-                      Recommended for You
+                      {t('course.recommended_title')}
                     </h2>
                     <p className="text-xs text-muted-foreground">
-                      Based on your level and preferences
+                      {t('course.recommended_subtitle')}
                     </p>
                   </div>
                   <LearningTip categories={['course', 'motivation']} />
@@ -530,6 +567,7 @@ export default function CourseCatalogueClient({
             {activeCategory !== 'all' ? (
               <CategorySection
                 category={CATEGORIES.find((c) => c.id === activeCategory)!}
+                categoryLabel={categoryLabel(activeCategory)}
                 courses={filtered}
                 expanded={expandedCategories.has(activeCategory)}
                 onToggle={() => toggleExpanded(activeCategory)}
@@ -543,6 +581,7 @@ export default function CourseCatalogueClient({
                   <CategorySection
                     key={cat.id}
                     category={cat}
+                    categoryLabel={categoryLabel(cat.id)}
                     courses={catCourses}
                     expanded={expandedCategories.has(cat.id)}
                     onToggle={() => toggleExpanded(cat.id)}
@@ -558,39 +597,36 @@ export default function CourseCatalogueClient({
       <section className="border-t border-border/40">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
-            <h2 className="text-foreground">Supplement Your Learning</h2>
+            <h2 className="text-foreground">{t('course.supplement_title')}</h2>
             <LearningTip categories={['resource', 'study']} size="md" />
           </div>
-          <p className="mt-3 max-w-2xl text-muted-foreground">
-            Explore these complementary resources to deepen your understanding and boost your exam
-            preparation.
-          </p>
+          <p className="mt-3 max-w-2xl text-muted-foreground">{t('course.supplement_desc')}</p>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 href: '/resources/revision-notes',
                 icon: BookOpen,
-                title: 'Text Study Guides',
-                description: 'Detailed revision notes for every set text',
+                title: t('course.res_study_guides_title'),
+                description: t('course.res_study_guides_desc'),
               },
               {
                 href: '/resources/writing-skills',
                 icon: PenTool,
-                title: 'Writing Masterclass',
-                description: 'Creative, persuasive, and analytical writing guides',
+                title: t('course.res_writing_title'),
+                description: t('course.res_writing_desc'),
               },
               {
                 href: '/resources/poetry',
                 icon: Feather,
-                title: 'Poetry Hub',
-                description: 'Anthology analysis and poetry techniques',
+                title: t('course.res_poetry_title'),
+                description: t('course.res_poetry_desc'),
               },
               {
                 href: '/resources/english-literature',
                 icon: GraduationCap,
-                title: 'Literature Guides',
-                description: 'Board-specific literature exam preparation',
+                title: t('course.res_literature_title'),
+                description: t('course.res_literature_desc'),
               },
             ].map((item) => (
               <Link
@@ -618,13 +654,22 @@ export default function CourseCatalogueClient({
 
 interface CategorySectionProps {
   category: (typeof CATEGORIES)[number]
+  categoryLabel: string
   courses: CourseData[]
   expanded: boolean
   onToggle: () => void
   showAll?: boolean
 }
 
-function CategorySection({ category, courses, expanded, onToggle, showAll }: CategorySectionProps) {
+function CategorySection({
+  category: _category,
+  categoryLabel,
+  courses,
+  expanded,
+  onToggle,
+  showAll,
+}: CategorySectionProps) {
+  const t = useT()
   const limit = showAll || expanded ? courses.length : COURSES_PER_PAGE
   const visible = courses.slice(0, limit)
   const hasMore = courses.length > COURSES_PER_PAGE
@@ -632,9 +677,10 @@ function CategorySection({ category, courses, expanded, onToggle, showAll }: Cat
   return (
     <div className="mb-10">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-lg font-bold tracking-tight text-foreground">{category.label}</h2>
+        <h2 className="text-lg font-bold tracking-tight text-foreground">{categoryLabel}</h2>
         <span className="text-sm text-muted-foreground tabular-nums">
-          {courses.length} {courses.length === 1 ? 'course' : 'courses'}
+          {courses.length}{' '}
+          {courses.length === 1 ? t('course.course_singular') : t('course.course_plural')}
         </span>
       </div>
 
@@ -650,7 +696,9 @@ function CategorySection({ category, courses, expanded, onToggle, showAll }: Cat
             onClick={onToggle}
             className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground hover:border-primary/40 hover:text-primary transition-all duration-200 hover:shadow-sm"
           >
-            {expanded ? 'Show Less' : `View All ${courses.length} Courses`}
+            {expanded
+              ? t('course.show_less')
+              : `${t('course.view_all_prefix')} ${courses.length} ${t('course.course_plural')}`}
             <ChevronRight
               className={cn(
                 'h-4 w-4 transition-transform duration-200',
@@ -673,8 +721,19 @@ interface CourseCardProps {
 }
 
 const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
+  const t = useT()
   const totalLessons = course.moduleList.reduce((sum, mod) => sum + (mod.quiz?.length ?? 0), 0)
-  const categoryLabel = deriveCategory(course)
+  const categoryId = deriveCategory(course)
+  const categoryLabel =
+    categoryId === 'language'
+      ? t('course.cat_language')
+      : categoryId === 'literature'
+        ? t('course.cat_literature')
+        : categoryId === 'poetry'
+          ? t('course.cat_poetry')
+          : categoryId === 'drama'
+            ? t('course.cat_drama')
+            : t('course.cat_exam_skills')
 
   return (
     <div className="group relative">
@@ -708,7 +767,7 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
                 variant="outline"
                 className="rounded-full border-border/60 text-[10px] text-muted-foreground capitalize"
               >
-                {categoryLabel === 'exam-skills' ? 'Exam Skills' : categoryLabel}
+                {categoryLabel}
               </Badge>
             </div>
 
@@ -724,7 +783,7 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
             <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1">
                 <BookOpen className="h-3 w-3 shrink-0" />
-                {course.moduleList.length} modules
+                {course.moduleList.length} {t('course.modules')}
               </span>
               <span className="inline-flex items-center gap-1">
                 <Clock className="h-3 w-3 shrink-0" />
@@ -733,7 +792,7 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
               {totalLessons > 0 && (
                 <span className="inline-flex items-center gap-1">
                   <PenTool className="h-3 w-3 shrink-0" />
-                  {totalLessons} quizzes
+                  {totalLessons} {t('course.quizzes')}
                 </span>
               )}
               <span className="inline-flex items-center gap-1">
@@ -747,7 +806,7 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
             <div className="flex w-full items-center justify-between">
               <span className="inline-flex items-center gap-1.5 rounded-md bg-emerald-500/10 px-2 py-1 text-xs font-semibold text-emerald-500 ring-1 ring-emerald-500/20">
                 <Play className="h-3 w-3" />
-                Free Preview
+                {t('course.free_preview')}
               </span>
               <Button
                 variant="ghost"
@@ -755,7 +814,7 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
                 className="bg-primary/10 text-primary text-xs font-semibold group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-200"
                 tabIndex={-1}
               >
-                Start
+                {t('course.start')}
               </Button>
             </div>
           </CardFooter>

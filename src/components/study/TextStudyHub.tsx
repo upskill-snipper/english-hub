@@ -36,6 +36,7 @@ import {
   Layers,
   ArrowRight,
 } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -94,7 +95,14 @@ const colorMap = {
 
 // ─── Quick Quiz Component ──────────────────────────────────────────────────
 
-function QuickQuiz({ quotes, textName }: { quotes: { quote: string; character: string; context: string }[]; textName: string }) {
+function QuickQuiz({
+  quotes,
+  textName,
+}: {
+  quotes: { quote: string; character: string; context: string }[]
+  textName: string
+}) {
+  const t = useT()
   const [started, setStarted] = useState(false)
   const [currentQ, setCurrentQ] = useState(0)
   const [score, setScore] = useState(0)
@@ -116,7 +124,7 @@ function QuickQuiz({ quotes, textName }: { quotes: { quote: string; character: s
     const correctIndex = options.indexOf(correctAnswer)
 
     return {
-      question: `Who says: "${q.quote.length > 80 ? q.quote.slice(0, 80) + '...' : q.quote}"?`,
+      question: `${t('text_hub.who_says')}: "${q.quote.length > 80 ? q.quote.slice(0, 80) + '...' : q.quote}"?`,
       options,
       correct: correctIndex,
       explanation: q.context,
@@ -159,8 +167,8 @@ function QuickQuiz({ quotes, textName }: { quotes: { quote: string; character: s
           <Play className="size-4 text-teal-700 ml-0.5" />
         </div>
         <div>
-          <p className="text-sm font-medium text-ink-900">Quick Quote Quiz</p>
-          <p className="text-xs text-ink-500">5 questions &middot; Who said it? &middot; 2 minutes</p>
+          <p className="text-sm font-medium text-ink-900">{t('text_hub.quick_quote_quiz')}</p>
+          <p className="text-xs text-ink-500">{t('text_hub.quiz_meta')}</p>
         </div>
       </button>
     )
@@ -170,16 +178,22 @@ function QuickQuiz({ quotes, textName }: { quotes: { quote: string; character: s
     return (
       <div className="rounded-xl border border-border bg-card p-5">
         <div className="text-center mb-4">
-          <p className="font-serif text-4xl font-normal italic text-clay-600">{score}/{questions.length}</p>
+          <p className="font-serif text-4xl font-normal italic text-clay-600">
+            {score}/{questions.length}
+          </p>
           <p className="text-sm text-ink-600 mt-1">
-            {score === questions.length ? 'Perfect!' : score >= 3 ? 'Good work!' : 'Keep practising!'}
+            {score === questions.length
+              ? t('text_hub.perfect')
+              : score >= 3
+                ? t('text_hub.good_work')
+                : t('text_hub.keep_practising')}
           </p>
         </div>
         <button
           onClick={handleReset}
           className="w-full flex items-center justify-center gap-2 rounded-lg border border-ink-200 bg-cream-50 py-2 text-xs font-medium text-ink-700 hover:bg-cream-100 transition-colors"
         >
-          <RotateCcw className="size-3" /> Try again
+          <RotateCcw className="size-3" /> {t('text_hub.try_again')}
         </button>
       </div>
     )
@@ -190,10 +204,10 @@ function QuickQuiz({ quotes, textName }: { quotes: { quote: string; character: s
     <div className="rounded-xl border border-border bg-card p-5">
       <div className="flex items-center justify-between mb-3">
         <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink-500">
-          Question {currentQ + 1} of {questions.length}
+          {t('text_hub.question_label')} {currentQ + 1} {t('text_hub.of')} {questions.length}
         </span>
         <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-clay-600">
-          Score: {score}
+          {t('text_hub.score')}: {score}
         </span>
       </div>
       <p className="text-sm font-medium text-ink-900 mb-3">{q.question}</p>
@@ -213,7 +227,9 @@ function QuickQuiz({ quotes, textName }: { quotes: { quote: string; character: s
               className={`w-full flex items-center gap-2 rounded-lg border px-3 py-2 text-xs text-left transition-colors ${cls}`}
             >
               {answered && i === q.correct && <Check className="size-3 text-teal-700 shrink-0" />}
-              {answered && i === selectedAnswer && i !== q.correct && <X className="size-3 text-clay-600 shrink-0" />}
+              {answered && i === selectedAnswer && i !== q.correct && (
+                <X className="size-3 text-clay-600 shrink-0" />
+              )}
               {opt}
             </button>
           )
@@ -226,7 +242,9 @@ function QuickQuiz({ quotes, textName }: { quotes: { quote: string; character: s
             onClick={handleNext}
             className="mt-3 w-full rounded-lg bg-teal-800 py-2 text-xs font-medium text-cream-50 hover:bg-teal-700 transition-colors"
           >
-            {currentQ >= questions.length - 1 ? 'See Results' : 'Next Question'}
+            {currentQ >= questions.length - 1
+              ? t('text_hub.see_results')
+              : t('text_hub.next_question')}
           </button>
         </>
       )}
@@ -237,6 +255,7 @@ function QuickQuiz({ quotes, textName }: { quotes: { quote: string; character: s
 // ─── Essay Prompt Generator ────────────────────────────────────────────────
 
 function EssayPrompt({ questions, textName }: { questions: string[]; textName: string }) {
+  const t = useT()
   const [currentIdx, setCurrentIdx] = useState(0)
   const [revealed, setRevealed] = useState(false)
 
@@ -247,7 +266,7 @@ function EssayPrompt({ questions, textName }: { questions: string[]; textName: s
       <div className="flex items-center gap-2 mb-3">
         <GraduationCap className="size-4 text-clay-600" />
         <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-clay-600">
-          Essay Practice
+          {t('text_hub.essay_practice')}
         </span>
       </div>
 
@@ -265,13 +284,13 @@ function EssayPrompt({ questions, textName }: { questions: string[]; textName: s
           }}
           className="flex-1 rounded-lg border border-ink-200 bg-cream-50 py-2 text-xs font-medium text-ink-700 hover:bg-cream-100 transition-colors"
         >
-          New question
+          {t('text_hub.new_question')}
         </button>
         <Link
           href={`/marking/sample/${textName.toLowerCase().replace(/\s+/g, '-')}?q=${encodeURIComponent(question)}`}
           className="flex-1 rounded-lg bg-clay-500 py-2 text-xs font-medium text-cream-50 hover:bg-clay-400 transition-colors text-center"
         >
-          Write &amp; mark essay
+          {t('text_hub.write_and_mark')}
         </Link>
       </div>
     </div>
@@ -281,6 +300,7 @@ function EssayPrompt({ questions, textName }: { questions: string[]; textName: s
 // ─── Flashcard Drill ───────────────────────────────────────────────────────
 
 function FlashcardDrill({ cards }: { cards: { front: string; back: string }[] }) {
+  const t = useT()
   const [idx, setIdx] = useState(0)
   const [flipped, setFlipped] = useState(false)
 
@@ -290,13 +310,16 @@ function FlashcardDrill({ cards }: { cards: { front: string; back: string }[] })
     <div className="rounded-xl border border-border bg-card p-5">
       <div className="flex items-center justify-between mb-3">
         <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink-500">
-          Flashcard {idx + 1} of {cards.length}
+          {t('text_hub.flashcard_label')} {idx + 1} {t('text_hub.of')} {cards.length}
         </span>
         <button
-          onClick={() => { setIdx((i) => (i + 1) % cards.length); setFlipped(false) }}
+          onClick={() => {
+            setIdx((i) => (i + 1) % cards.length)
+            setFlipped(false)
+          }}
           className="text-xs text-teal-700 font-medium hover:text-teal-800"
         >
-          Next &rarr;
+          {t('text_hub.next')} &rarr;
         </button>
       </div>
 
@@ -311,7 +334,7 @@ function FlashcardDrill({ cards }: { cards: { front: string; back: string }[] })
         )}
       </button>
       <p className="text-[10px] text-ink-400 text-center mt-2">
-        {flipped ? 'Click to see quote' : 'Click to reveal analysis'}
+        {flipped ? t('text_hub.click_see_quote') : t('text_hub.click_reveal_analysis')}
       </p>
     </div>
   )
@@ -330,6 +353,7 @@ export default function TextStudyHub({
   flashcards,
   className = '',
 }: TextStudyHubProps) {
+  const t = useT()
   return (
     <div className={`space-y-6 ${className}`}>
       {/* ── Study This Text: Navigation Grid ────────────────────────────── */}
@@ -338,12 +362,11 @@ export default function TextStudyHub({
           <div className="flex items-center gap-2">
             <BookOpen className="size-4 text-teal-700" />
             <h2 className="font-serif text-lg font-normal text-ink-900 tracking-tight">
-              Study <em className="italic text-clay-600">{textName}</em>
+              {t('text_hub.study_heading_prefix')}{' '}
+              <em className="italic text-clay-600">{textName}</em>
             </h2>
           </div>
-          <p className="text-xs text-ink-500 mt-1">
-            Everything you need in one place &mdash; read, revise, practise, and test yourself.
-          </p>
+          <p className="text-xs text-ink-500 mt-1">{t('text_hub.study_subheading')}</p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-0 divide-x divide-y divide-ink-100">
@@ -381,10 +404,10 @@ export default function TextStudyHub({
             </div>
             <div>
               <p className="text-xs font-medium text-ink-900 group-hover:text-clay-600 transition-colors">
-                AI Revision Notes
+                {t('study_tools.revision_notes_label')}
               </p>
               <p className="text-[10px] text-ink-400 mt-0.5 leading-tight hidden sm:block">
-                Generate personalised notes
+                {t('text_hub.generate_personalised_notes')}
               </p>
             </div>
           </Link>
@@ -397,7 +420,7 @@ export default function TextStudyHub({
           <div className="flex items-center gap-2 mb-3">
             <Zap className="size-4 text-clay-600" />
             <h3 className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-clay-600">
-              Practice now
+              {t('dash.practice_now')}
             </h3>
           </div>
 
@@ -410,9 +433,7 @@ export default function TextStudyHub({
               <EssayPrompt questions={essayQuestions} textName={textName} />
             )}
 
-            {flashcards && flashcards.length > 0 && (
-              <FlashcardDrill cards={flashcards} />
-            )}
+            {flashcards && flashcards.length > 0 && <FlashcardDrill cards={flashcards} />}
           </div>
         </section>
       )}
@@ -421,12 +442,8 @@ export default function TextStudyHub({
       <section className="rounded-xl border border-teal-800/15 bg-teal-800/5 p-5">
         <div className="flex items-center justify-between flex-wrap gap-3">
           <div>
-            <p className="text-sm font-medium text-ink-900">
-              Ready for exam practice?
-            </p>
-            <p className="text-xs text-ink-500 mt-0.5">
-              Write a timed essay and get instant AI feedback with AO breakdown
-            </p>
+            <p className="text-sm font-medium text-ink-900">{t('text_hub.ready_for_exam')}</p>
+            <p className="text-xs text-ink-500 mt-0.5">{t('text_hub.exam_blurb')}</p>
           </div>
           <div className="flex items-center gap-2">
             <Link
@@ -434,14 +451,14 @@ export default function TextStudyHub({
               className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-ink-700 hover:bg-cream-50 transition-colors"
             >
               <ClipboardList className="size-3.5" />
-              Build a Test
+              {t('text_hub.build_test')}
             </Link>
             <Link
               href={`/marking/sample/${textName.toLowerCase().replace(/\s+/g, '-')}`}
               className="inline-flex items-center gap-1.5 rounded-full bg-teal-800 px-4 py-2 text-xs font-medium text-cream-50 hover:bg-teal-700 transition-colors"
             >
               <PenLine className="size-3.5" />
-              Write &amp; Mark Essay
+              {t('text_hub.write_mark_essay')}
             </Link>
           </div>
         </div>

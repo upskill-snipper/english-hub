@@ -27,8 +27,16 @@ import {
   PenLine,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+} from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
@@ -144,13 +152,14 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'List four things',
         marks: 4,
         type: 'Retrieval',
-        prompt: 'Read again the first part of the source, from lines 1 to 5.\n\nList four things about the setting from this part of the source.',
+        prompt:
+          'Read again the first part of the source, from lines 1 to 5.\n\nList four things about the setting from this part of the source.',
         sourceText: `The morning light crept through the narrow gap in the curtains, casting a thin golden line across the dusty floorboards. The room was small and cluttered, filled with towers of old newspapers and cardboard boxes that hadn't been opened in years. A cracked mirror hung at an angle on the far wall, reflecting the sagging ceiling with its web of fine cracks. The air was thick with the smell of damp wool and stale tea. In the corner, a radiator ticked and groaned as it struggled to life, offering little warmth against the February chill that had settled into every surface.`,
         markScheme: [
           'The morning light was golden / came through the curtains',
           'The room was small and cluttered',
           'There were towers of old newspapers and cardboard boxes',
-          'The boxes hadn\'t been opened in years',
+          "The boxes hadn't been opened in years",
           'A cracked mirror hung on the wall',
           'The ceiling was sagging with cracks',
           'The air smelled of damp wool and stale tea',
@@ -163,7 +172,8 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Language analysis',
         marks: 8,
         type: 'Language Analysis',
-        prompt: 'Look in detail at the source from lines 1 to 5.\n\nHow does the writer use language to describe the setting?\n\nYou could include the writer\'s choice of:\n- words and phrases\n- language features and techniques\n- sentence forms.',
+        prompt:
+          "Look in detail at the source from lines 1 to 5.\n\nHow does the writer use language to describe the setting?\n\nYou could include the writer's choice of:\n- words and phrases\n- language features and techniques\n- sentence forms.",
         sourceText: `The morning light crept through the narrow gap in the curtains, casting a thin golden line across the dusty floorboards. The room was small and cluttered, filled with towers of old newspapers and cardboard boxes that hadn't been opened in years. A cracked mirror hung at an angle on the far wall, reflecting the sagging ceiling with its web of fine cracks. The air was thick with the smell of damp wool and stale tea. In the corner, a radiator ticked and groaned as it struggled to life, offering little warmth against the February chill that had settled into every surface.`,
         markScheme: [
           'Level 4 (7-8 marks): Detailed, perceptive analysis of language with sophisticated use of subject terminology',
@@ -171,14 +181,16 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
           'Level 2 (3-4 marks): Some understanding of language with some terminology',
           'Level 1 (1-2 marks): Simple awareness of language',
         ],
-        modelAnswer: 'The writer uses personification when describing the light as it "crept" through the curtains, suggesting something secretive or hesitant, as though the morning itself is reluctant to enter this neglected space. The metaphor of "towers" of newspapers creates an image of instability and accumulation, implying the occupant has been overwhelmed by the passage of time. The verb "groaned" applied to the radiator gives it a sense of exhaustion, mirroring the decay of the room itself.',
+        modelAnswer:
+          'The writer uses personification when describing the light as it "crept" through the curtains, suggesting something secretive or hesitant, as though the morning itself is reluctant to enter this neglected space. The metaphor of "towers" of newspapers creates an image of instability and accumulation, implying the occupant has been overwhelmed by the passage of time. The verb "groaned" applied to the radiator gives it a sense of exhaustion, mirroring the decay of the room itself.',
       },
       {
         number: 3,
         label: 'Structure analysis',
         marks: 8,
         type: 'Structure',
-        prompt: 'You now need to think about the whole of the source.\n\nThis text is from the opening of a short story.\n\nHow has the writer structured the text to interest you as a reader?\n\nYou could write about:\n- what the writer focuses your attention on at the beginning\n- how and why the writer changes this focus as the source develops\n- any other structural features that interest you.',
+        prompt:
+          'You now need to think about the whole of the source.\n\nThis text is from the opening of a short story.\n\nHow has the writer structured the text to interest you as a reader?\n\nYou could write about:\n- what the writer focuses your attention on at the beginning\n- how and why the writer changes this focus as the source develops\n- any other structural features that interest you.',
         markScheme: [
           'Level 4 (7-8 marks): Detailed, perceptive analysis of structural features with sophisticated use of terminology',
           'Level 3 (5-6 marks): Clear understanding of structural features with appropriate examples',
@@ -191,9 +203,10 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Evaluation',
         marks: 20,
         type: 'Evaluation',
-        prompt: 'Focus this part of your answer on the second half of the source.\n\nA student, having read this section of the text, said: "The writer makes the reader feel sympathy for the character. It is as though they have been forgotten by the world."\n\nTo what extent do you agree?\n\nIn your response, you could:\n- write about your own impressions of the character\n- evaluate how the writer has created these impressions\n- support your opinions with references to the text.',
+        prompt:
+          'Focus this part of your answer on the second half of the source.\n\nA student, having read this section of the text, said: "The writer makes the reader feel sympathy for the character. It is as though they have been forgotten by the world."\n\nTo what extent do you agree?\n\nIn your response, you could:\n- write about your own impressions of the character\n- evaluate how the writer has created these impressions\n- support your opinions with references to the text.',
         markScheme: [
-          'Level 4 (16-20 marks): Convincing, critical evaluation with textual detail. Perceptive understanding of writer\'s methods.',
+          "Level 4 (16-20 marks): Convincing, critical evaluation with textual detail. Perceptive understanding of writer's methods.",
           'Level 3 (11-15 marks): Clear, relevant evaluation with appropriate textual references.',
           'Level 2 (6-10 marks): Some evaluative comment with some textual reference.',
           'Level 1 (1-5 marks): Simple, limited comment on the text.',
@@ -204,7 +217,8 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Creative writing',
         marks: 40,
         type: 'Creative Writing',
-        prompt: 'You are going to enter a creative writing competition.\n\nYour entry will be judged by a panel of people.\n\nWrite a description suggested by this picture: [A photograph of an abandoned building overgrown with plants]\n\nOR\n\nWrite the opening part of a story about a place that has been forgotten.\n\n(24 marks for content and organisation, 16 marks for technical accuracy)',
+        prompt:
+          'You are going to enter a creative writing competition.\n\nYour entry will be judged by a panel of people.\n\nWrite a description suggested by this picture: [A photograph of an abandoned building overgrown with plants]\n\nOR\n\nWrite the opening part of a story about a place that has been forgotten.\n\n(24 marks for content and organisation, 16 marks for technical accuracy)',
         markScheme: [
           'Content and Organisation (24 marks):',
           'Level 4 (19-24): Compelling, convincing communication. Extensive, ambitious vocabulary. Sustained crafting of linguistic devices.',
@@ -240,7 +254,8 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'True or false',
         marks: 4,
         type: 'Retrieval',
-        prompt: 'Read again Source A from lines 1 to 8.\n\nChoose four statements below which are TRUE.\n\nShade the circles in the boxes of the ones that you think are true.',
+        prompt:
+          'Read again Source A from lines 1 to 8.\n\nChoose four statements below which are TRUE.\n\nShade the circles in the boxes of the ones that you think are true.',
         isMultipleChoice: true,
         options: [
           'The writer visited the school on a Monday morning.',
@@ -266,7 +281,8 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Summary',
         marks: 8,
         type: 'Summary',
-        prompt: 'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the differences between the two schools described.',
+        prompt:
+          'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the differences between the two schools described.',
         sourceText: `Source A describes a small rural village school. Source B (below) describes a modern city academy.\n\nSource B: From a 2022 report on urban education.\n\nThe academy was a glass-and-steel structure that dominated the end of the high street, its entrance framed by digital screens displaying the school motto and latest Ofsted rating. Over twelve hundred students passed through its automatic doors each morning, scanned in by electronic registers. Each child wore an immaculate blazer in the school's signature navy and gold. Classrooms were equipped with interactive whiteboards, individual laptops, and climate control. The corridors hummed with efficiency. Department heads managed teams of specialists; the maths department alone had eleven teachers. There was a sense of relentless forward motion, of targets and data driving every decision.`,
         markScheme: [
           'Level 4 (7-8 marks): Perceptive synthesis and interpretation of both sources. Clear inferences from both texts.',
@@ -280,7 +296,8 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Language analysis',
         marks: 12,
         type: 'Language Analysis',
-        prompt: 'You now need to refer only to Source B.\n\nHow does the writer use language to convey their impression of the modern school?\n\nYou could include the writer\'s choice of:\n- words and phrases\n- language features and techniques\n- sentence forms.',
+        prompt:
+          "You now need to refer only to Source B.\n\nHow does the writer use language to convey their impression of the modern school?\n\nYou could include the writer's choice of:\n- words and phrases\n- language features and techniques\n- sentence forms.",
         markScheme: [
           'Level 4 (10-12 marks): Detailed, perceptive analysis with sophisticated use of terminology.',
           'Level 3 (7-9 marks): Clear, relevant explanation of language effects.',
@@ -293,9 +310,10 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Comparison of viewpoints',
         marks: 16,
         type: 'Comparison',
-        prompt: 'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their different attitudes to the schools they describe.\n\nIn your answer, you could:\n- compare their different attitudes\n- compare the methods they use to convey their attitudes\n- support your ideas with references to both texts.',
+        prompt:
+          'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their different attitudes to the schools they describe.\n\nIn your answer, you could:\n- compare their different attitudes\n- compare the methods they use to convey their attitudes\n- support your ideas with references to both texts.',
         markScheme: [
-          'Level 4 (13-16 marks): Perceptive understanding of both writers\' methods with detailed comparison.',
+          "Level 4 (13-16 marks): Perceptive understanding of both writers' methods with detailed comparison.",
           'Level 3 (9-12 marks): Clear comparison with relevant references.',
           'Level 2 (5-8 marks): Some comparison of ideas/methods.',
           'Level 1 (1-4 marks): Simple identification of attitudes.',
@@ -306,7 +324,8 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Transactional writing',
         marks: 40,
         type: 'Transactional Writing',
-        prompt: '"Technology in schools does more harm than good. Students would learn better with books, pens, and face-to-face teaching."\n\nWrite an article for a broadsheet newspaper in which you argue for or against this statement.\n\n(24 marks for content and organisation, 16 marks for technical accuracy)',
+        prompt:
+          '"Technology in schools does more harm than good. Students would learn better with books, pens, and face-to-face teaching."\n\nWrite an article for a broadsheet newspaper in which you argue for or against this statement.\n\n(24 marks for content and organisation, 16 marks for technical accuracy)',
         markScheme: [
           'Content and Organisation (24 marks):',
           'Level 4 (19-24): Compelling, convincing argument. Sophisticated use of structural and organisational devices.',
@@ -340,16 +359,17 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Shakespeare: Macbeth',
         marks: 34,
         type: 'Extract + Essay',
-        prompt: 'Read the following extract from Act 1 Scene 7 of Macbeth and then answer the question that follows.\n\nIn this extract, Macbeth is debating whether to murder King Duncan.\n\n---\n\nMACBETH:\nIf it were done when \'tis done, then \'twere well\nIt were done quickly. If th\' assassination\nCould trammel up the consequence, and catch\nWith his surcease success; that but this blow\nMight be the be-all and the end-all here,\nBut here, upon this bank and shoal of time,\nWe\'d jump the life to come.\n\n---\n\nStarting with this extract, how does Shakespeare present Macbeth\'s inner conflict?\n\nWrite about:\n- how Shakespeare presents Macbeth\'s conflict in this extract\n- how Shakespeare presents Macbeth\'s conflict in the play as a whole.\n\n[30 marks + 4 marks for AO4 (spelling, punctuation, grammar)]',
+        prompt:
+          "Read the following extract from Act 1 Scene 7 of Macbeth and then answer the question that follows.\n\nIn this extract, Macbeth is debating whether to murder King Duncan.\n\n---\n\nMACBETH:\nIf it were done when 'tis done, then 'twere well\nIt were done quickly. If th' assassination\nCould trammel up the consequence, and catch\nWith his surcease success; that but this blow\nMight be the be-all and the end-all here,\nBut here, upon this bank and shoal of time,\nWe'd jump the life to come.\n\n---\n\nStarting with this extract, how does Shakespeare present Macbeth's inner conflict?\n\nWrite about:\n- how Shakespeare presents Macbeth's conflict in this extract\n- how Shakespeare presents Macbeth's conflict in the play as a whole.\n\n[30 marks + 4 marks for AO4 (spelling, punctuation, grammar)]",
         markScheme: [
           'AO1: Read, understand and respond to texts. Maintain a critical style and develop an informed personal response. Use textual references to support and illustrate interpretations.',
           'AO2: Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.',
           'AO3: Show understanding of the relationships between texts and the contexts in which they were written.',
           'AO4: Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
           '',
-          'Level 6 (26-30): Critical, exploratory, conceptualised response. Judicious use of precise references. Analysis of writer\'s methods with subject terminology used judiciously.',
-          'Level 5 (21-25): Thoughtful, developed response. Apt references integrated into interpretations. Examination of writer\'s methods with subject terminology used effectively.',
-          'Level 4 (16-20): Clear, sustained response. Effective use of references. Clear understanding of writer\'s methods with appropriate subject terminology.',
+          "Level 6 (26-30): Critical, exploratory, conceptualised response. Judicious use of precise references. Analysis of writer's methods with subject terminology used judiciously.",
+          "Level 5 (21-25): Thoughtful, developed response. Apt references integrated into interpretations. Examination of writer's methods with subject terminology used effectively.",
+          "Level 4 (16-20): Clear, sustained response. Effective use of references. Clear understanding of writer's methods with appropriate subject terminology.",
         ],
       },
       {
@@ -357,7 +377,8 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: '19th-century novel: A Christmas Carol',
         marks: 30,
         type: 'Extract + Essay',
-        prompt: 'Read the following extract from A Christmas Carol by Charles Dickens and then answer the question that follows.\n\nIn this extract, Scrooge is being visited by the Ghost of Christmas Present.\n\n---\n\n"Spirit," said Scrooge, with an interest he had never felt before, "tell me if Tiny Tim will live."\n\n"I see a vacant seat," replied the Ghost, "in the poor chimney-corner, and a crutch without an owner, carefully preserved. If these shadows remain unaltered by the Future, the child will die."\n\n"No, no," said Scrooge. "Oh, no, kind Spirit! say he will be spared."\n\n---\n\nStarting with this extract, how does Dickens present the character of Scrooge as someone who is changing?\n\nWrite about:\n- how Dickens presents Scrooge in this extract\n- how Dickens presents Scrooge\'s transformation in the novel as a whole.\n\n[30 marks]',
+        prompt:
+          'Read the following extract from A Christmas Carol by Charles Dickens and then answer the question that follows.\n\nIn this extract, Scrooge is being visited by the Ghost of Christmas Present.\n\n---\n\n"Spirit," said Scrooge, with an interest he had never felt before, "tell me if Tiny Tim will live."\n\n"I see a vacant seat," replied the Ghost, "in the poor chimney-corner, and a crutch without an owner, carefully preserved. If these shadows remain unaltered by the Future, the child will die."\n\n"No, no," said Scrooge. "Oh, no, kind Spirit! say he will be spared."\n\n---\n\nStarting with this extract, how does Dickens present the character of Scrooge as someone who is changing?\n\nWrite about:\n- how Dickens presents Scrooge in this extract\n- how Dickens presents Scrooge\'s transformation in the novel as a whole.\n\n[30 marks]',
         markScheme: [
           'AO1: Read, understand and respond to texts with personal response and textual references.',
           'AO2: Analyse language, form and structure with relevant terminology.',
@@ -387,9 +408,10 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Modern text: An Inspector Calls',
         marks: 34,
         type: 'Essay',
-        prompt: 'How does Priestley use the character of Mr Birling to explore ideas about social responsibility?\n\nWrite about:\n- how Priestley presents Mr Birling\n- how Priestley uses Mr Birling to explore ideas about social responsibility.\n\n[30 marks + 4 marks for AO4 (spelling, punctuation, grammar)]',
+        prompt:
+          'How does Priestley use the character of Mr Birling to explore ideas about social responsibility?\n\nWrite about:\n- how Priestley presents Mr Birling\n- how Priestley uses Mr Birling to explore ideas about social responsibility.\n\n[30 marks + 4 marks for AO4 (spelling, punctuation, grammar)]',
         markScheme: [
-          'Level 6 (26-30): Critical, exploratory, conceptualised response with judicious references. Analysis of writer\'s methods with terminology used judiciously.',
+          "Level 6 (26-30): Critical, exploratory, conceptualised response with judicious references. Analysis of writer's methods with terminology used judiciously.",
           'Level 5 (21-25): Thoughtful, developed response with apt references.',
           'Level 4 (16-20): Clear, sustained response with effective use of references.',
         ],
@@ -399,7 +421,8 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Poetry anthology comparison',
         marks: 30,
         type: 'Comparison',
-        prompt: 'Compare how poets present ideas about power and conflict in "Ozymandias" by Percy Bysshe Shelley and one other poem from the anthology.\n\n[30 marks]',
+        prompt:
+          'Compare how poets present ideas about power and conflict in "Ozymandias" by Percy Bysshe Shelley and one other poem from the anthology.\n\n[30 marks]',
         markScheme: [
           'Level 6 (26-30): Critical, exploratory comparison. Judicious references. Analysis of methods with terminology used judiciously.',
           'Level 5 (21-25): Thoughtful, developed comparison with apt references.',
@@ -411,7 +434,8 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         label: 'Unseen poetry',
         marks: 32,
         type: 'Analysis + Comparison',
-        prompt: 'Part A (24 marks):\n\nRead the poem below. In "Storm on the Island" by Seamus Heaney, the speaker describes the experience of a violent storm.\n\nHow does the poet present the power of nature in this poem?\n\n---\n\nPart B (8 marks):\n\nNow read "Wind" by Ted Hughes.\n\nIn both poems, the poets describe the power of nature. What are the similarities and differences between the ways the poets present the power of nature in these two poems?',
+        prompt:
+          'Part A (24 marks):\n\nRead the poem below. In "Storm on the Island" by Seamus Heaney, the speaker describes the experience of a violent storm.\n\nHow does the poet present the power of nature in this poem?\n\n---\n\nPart B (8 marks):\n\nNow read "Wind" by Ted Hughes.\n\nIn both poems, the poets describe the power of nature. What are the similarities and differences between the ways the poets present the power of nature in these two poems?',
         markScheme: [
           'Part A (24 marks):',
           'Level 4 (19-24): Exploratory response with precise references. Detailed analysis of methods.',
@@ -455,10 +479,10 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 30,
         type: 'Comparative Analysis',
         prompt:
-          'Compare the ways the poets present loss and longing in the unseen poem and in a named poem from your studied anthology. Focus on the writers\' uses of language, form and structure, and make sustained connections between the two poems. Write a fluent, argued response — not two separate readings.',
+          "Compare the ways the poets present loss and longing in the unseen poem and in a named poem from your studied anthology. Focus on the writers' uses of language, form and structure, and make sustained connections between the two poems. Write a fluent, argued response — not two separate readings.",
         markScheme: [
           'AO1 (8): informed personal response + accurate terminology.',
-          'AO2 (10): analysis of writers\' methods — form, structure, imagery, voice — with precise textual detail.',
+          "AO2 (10): analysis of writers' methods — form, structure, imagery, voice — with precise textual detail.",
           'AO4 (12): sustained comparison. Connections AND differences. Top-band answers identify points of tension, not just surface similarities.',
         ],
       },
@@ -502,7 +526,7 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 40,
         type: 'Comparative Analysis',
         prompt:
-          'Compare how the authors explore the theme of identity in your two studied prose texts. You must pair a pre-1900 and a post-1900 text, and show how each writer\'s methods shape the reader\'s response.',
+          "Compare how the authors explore the theme of identity in your two studied prose texts. You must pair a pre-1900 and a post-1900 text, and show how each writer's methods shape the reader's response.",
         markScheme: [
           'AO1 (10): coherent argument with a clear line of comparison; accurate terminology.',
           'AO2 (10): analysis of prose methods — narrative voice, structure, pacing, imagery — across both texts.',
@@ -538,7 +562,7 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 30,
         type: 'Comparative Analysis',
         prompt:
-          'Compare how the poets present the natural world in the unseen pre-1900 poem and in a named poem from the pre-1900 anthology. Consider the writers\' uses of form, imagery and voice, and the historical contexts.',
+          "Compare how the poets present the natural world in the unseen pre-1900 poem and in a named poem from the pre-1900 anthology. Consider the writers' uses of form, imagery and voice, and the historical contexts.",
         markScheme: [
           'AO1 (6): sustained personal response, accurate literary vocabulary.',
           'AO2 (8): close reading of form + method + voice. Pre-1900 conventions named.',
@@ -602,7 +626,7 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 30,
         type: 'Extended Response',
         prompt:
-          'Discuss how your studied pre-1900 drama text represents power and transgression. You must refer to the play\'s theatrical methods, its historical context, and at least one critical perspective on the play.',
+          "Discuss how your studied pre-1900 drama text represents power and transgression. You must refer to the play's theatrical methods, its historical context, and at least one critical perspective on the play.",
         markScheme: [
           'AO1 (5): coherent argument, controlled prose.',
           'AO2 (8): drama-specific method analysis — structure, asides, stagecraft, character contrast.',
@@ -686,35 +710,25 @@ function getGradeBg(grade: number) {
   return 'bg-red-50 border-red-200'
 }
 
-function getGradeLabel(grade: number) {
-  if (grade >= 7) return 'Excellent'
-  if (grade >= 5) return 'Good pass'
-  if (grade >= 4) return 'Standard pass'
-  if (grade >= 1) return 'Below pass'
-  return 'Ungraded'
+function getGradeLabelKey(grade: number): string {
+  if (grade >= 7) return 'mock.grade_label_excellent'
+  if (grade >= 5) return 'mock.grade_label_good_pass'
+  if (grade >= 4) return 'mock.grade_label_standard_pass'
+  if (grade >= 1) return 'mock.grade_label_below_pass'
+  return 'mock.grade_label_ungraded'
 }
 
 // ─── Intro Phase ────────────────────────────────────────────────────────────
 
-function ExamIntro({
-  paper,
-  onStart,
-}: {
-  paper: ExamPaperData
-  onStart: () => void
-}) {
+function ExamIntro({ paper, onStart }: { paper: ExamPaperData; onStart: () => void }) {
+  const t = useT()
   const isLanguage = paper.paperType === 'language'
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-12 sm:py-16">
-      <Button
-        variant="ghost"
-        size="sm"
-        className="mb-6"
-        render={<Link href="/mock-exams" />}
-      >
+      <Button variant="ghost" size="sm" className="mb-6" render={<Link href="/mock-exams" />}>
         <ArrowLeft className="h-4 w-4 mr-1.5" />
-        Back to Mock Exams
+        {t('mock.back_to_mocks')}
       </Button>
 
       <Card className="overflow-hidden">
@@ -723,7 +737,7 @@ function ExamIntro({
             'h-2',
             isLanguage
               ? 'bg-gradient-to-r from-blue-500 to-cyan-500'
-              : 'bg-gradient-to-r from-teal-800 to-clay-500'
+              : 'bg-gradient-to-r from-teal-800 to-clay-500',
           )}
         />
 
@@ -738,22 +752,20 @@ function ExamIntro({
                 'text-xs',
                 isLanguage
                   ? 'border-cyan-600/30 text-cyan-700'
-                  : 'border-pink-600/30 text-pink-700'
+                  : 'border-pink-600/30 text-pink-700',
               )}
             >
-              {isLanguage ? 'Language' : 'Literature'}
+              {isLanguage ? t('mock.language') : t('mock.literature')}
             </Badge>
             <Badge variant="outline" className="text-xs">
-              Paper {paper.paperNumber}
+              {t('mock.paper')} {paper.paperNumber}
             </Badge>
           </div>
 
-          <CardTitle className="text-2xl sm:text-3xl">
-            {paper.paperName}
-          </CardTitle>
+          <CardTitle className="text-2xl sm:text-3xl">{paper.paperName}</CardTitle>
           <CardDescription className="text-base mt-2">
-            {paper.examBoard} GCSE English{' '}
-            {isLanguage ? 'Language' : 'Literature'} - Paper{' '}
+            {paper.examBoard} {t('mock.gcse_english')}{' '}
+            {isLanguage ? t('mock.language') : t('mock.literature')} - {t('mock.paper')}{' '}
             {paper.paperNumber}
           </CardDescription>
         </CardHeader>
@@ -764,31 +776,29 @@ function ExamIntro({
             <div className="flex items-center gap-2 rounded-lg bg-muted/50 px-3 py-3">
               <Timer className="h-4 w-4 text-muted-foreground shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">Duration</p>
+                <p className="text-xs text-muted-foreground">{t('mock.duration')}</p>
                 <p className="text-sm font-semibold">{paper.timeAllowed}</p>
               </div>
             </div>
             <div className="flex items-center gap-2 rounded-lg bg-muted/50 px-3 py-3">
               <Award className="h-4 w-4 text-muted-foreground shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">Total Marks</p>
+                <p className="text-xs text-muted-foreground">{t('mock.total_marks')}</p>
                 <p className="text-sm font-semibold">{paper.totalMarks}</p>
               </div>
             </div>
             <div className="flex items-center gap-2 rounded-lg bg-muted/50 px-3 py-3">
               <Hash className="h-4 w-4 text-muted-foreground shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">Questions</p>
-                <p className="text-sm font-semibold">
-                  {paper.questions.length}
-                </p>
+                <p className="text-xs text-muted-foreground">{t('mock.questions')}</p>
+                <p className="text-sm font-semibold">{paper.questions.length}</p>
               </div>
             </div>
             <div className="flex items-center gap-2 rounded-lg bg-muted/50 px-3 py-3">
               <GraduationCap className="h-4 w-4 text-muted-foreground shrink-0" />
               <div>
-                <p className="text-xs text-muted-foreground">Grade</p>
-                <p className="text-sm font-semibold">1-9 scale</p>
+                <p className="text-xs text-muted-foreground">{t('mock.grade')}</p>
+                <p className="text-sm font-semibold">{t('mock.grade_scale_1_9')}</p>
               </div>
             </div>
           </div>
@@ -799,22 +809,18 @@ function ExamIntro({
           <div>
             <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
               <FileText className="h-4 w-4 text-primary" />
-              Question Overview
+              {t('mock.question_overview')}
             </h3>
             <div className="space-y-2">
               {paper.questions.map((q) => (
-                <div
-                  key={q.number}
-                  className="flex items-center gap-3 text-sm"
-                >
+                <div key={q.number} className="flex items-center gap-3 text-sm">
                   <span className="flex items-center justify-center h-6 w-6 rounded-md bg-primary/10 text-primary text-xs font-bold shrink-0">
                     {q.number}
                   </span>
-                  <span className="text-foreground/80 flex-1 min-w-0">
-                    {q.label}
-                  </span>
+                  <span className="text-foreground/80 flex-1 min-w-0">{q.label}</span>
                   <Badge variant="outline" className="text-xs shrink-0">
-                    {q.marks} marks
+                    {q.marks}{' '}
+                    {q.marks === 1 ? t('marking.mark_singular') : t('marking.mark_plural')}
                   </Badge>
                 </div>
               ))}
@@ -827,26 +833,14 @@ function ExamIntro({
           <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
             <h3 className="font-semibold text-amber-700 mb-2 flex items-center gap-2">
               <AlertCircle className="h-4 w-4" />
-              Exam Conditions
+              {t('mock.exam_conditions')}
             </h3>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
-              <li>
-                - The timer will start as soon as you click &quot;Start
-                Exam&quot;
-              </li>
-              <li>
-                - You can navigate between questions at any time
-              </li>
-              <li>
-                - Your answers are saved automatically as you type
-              </li>
-              <li>
-                - You can pause the timer if needed (not allowed in real exams)
-              </li>
-              <li>
-                - Click &quot;Submit Exam&quot; when finished to see your
-                estimated grade
-              </li>
+              <li>- {t('mock.cond_timer_start')}</li>
+              <li>- {t('mock.cond_nav_questions')}</li>
+              <li>- {t('mock.cond_autosave')}</li>
+              <li>- {t('mock.cond_pause')}</li>
+              <li>- {t('mock.cond_submit_finish')}</li>
             </ul>
           </div>
         </CardContent>
@@ -854,11 +848,11 @@ function ExamIntro({
         <CardFooter className="flex justify-between items-center flex-wrap gap-3">
           <Button variant="secondary" render={<Link href="/mock-exams" />}>
             <ArrowLeft className="h-4 w-4 mr-1.5" />
-            Back
+            {t('action.back')}
           </Button>
           <Button size="lg" className="shadow-lg shadow-primary/20" onClick={onStart}>
             <Play className="h-4 w-4 mr-1.5" />
-            Start Exam
+            {t('mock.start_exam')}
           </Button>
         </CardFooter>
       </Card>
@@ -885,6 +879,7 @@ function QuestionView({
   questionIndex: number
   totalQuestions: number
 }) {
+  const t = useT()
   return (
     <div className="space-y-6">
       {/* Question header */}
@@ -892,17 +887,18 @@ function QuestionView({
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-2 flex-wrap">
             <Badge className="bg-primary/15 text-primary border-primary/30 text-xs">
-              Question {question.number}
+              {t('mock.question')} {question.number}
             </Badge>
             <Badge variant="outline" className="text-xs">
               {question.type}
             </Badge>
             <Badge variant="outline" className="text-xs">
-              {question.marks} marks
+              {question.marks}{' '}
+              {question.marks === 1 ? t('marking.mark_singular') : t('marking.mark_plural')}
             </Badge>
           </div>
           <p className="text-sm text-muted-foreground">
-            Question {questionIndex + 1} of {totalQuestions}
+            {t('mock.question')} {questionIndex + 1} {t('mock.of')} {totalQuestions}
           </p>
         </div>
       </div>
@@ -913,9 +909,7 @@ function QuestionView({
           <CardContent className="pt-4">
             <div className="flex items-center gap-2 mb-3">
               <BookOpen className="h-4 w-4 text-primary" />
-              <h4 className="text-sm font-semibold text-foreground">
-                Source Text
-              </h4>
+              <h4 className="text-sm font-semibold text-foreground">{t('marking.source_text')}</h4>
             </div>
             <div className="text-sm text-foreground/80 leading-relaxed whitespace-pre-wrap font-serif">
               {question.sourceText}
@@ -931,9 +925,7 @@ function QuestionView({
             {question.number}
           </div>
           <div className="flex-1">
-            <p className="text-foreground leading-relaxed whitespace-pre-wrap">
-              {question.prompt}
-            </p>
+            <p className="text-foreground leading-relaxed whitespace-pre-wrap">{question.prompt}</p>
           </div>
         </div>
       </div>
@@ -943,7 +935,7 @@ function QuestionView({
         <div className="space-y-2">
           <h4 className="text-sm font-semibold text-foreground flex items-center gap-2">
             <Target className="h-4 w-4 text-primary" />
-            Select four statements (click to select/deselect)
+            {t('mock.select_four_statements')}
           </h4>
           <div className="space-y-2">
             {question.options.map((option, i) => {
@@ -961,7 +953,7 @@ function QuestionView({
                       ? 'border-primary bg-primary/10 text-foreground'
                       : isDisabled
                         ? 'border-border/20 bg-muted/20 text-muted-foreground/50 cursor-not-allowed'
-                        : 'border-border/40 bg-card hover:border-border text-foreground/80 cursor-pointer'
+                        : 'border-border/40 bg-card hover:border-border text-foreground/80 cursor-pointer',
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -970,12 +962,10 @@ function QuestionView({
                         'h-5 w-5 rounded border-2 flex items-center justify-center shrink-0',
                         isSelected
                           ? 'border-primary bg-primary text-primary-foreground'
-                          : 'border-muted-foreground/30'
+                          : 'border-muted-foreground/30',
                       )}
                     >
-                      {isSelected && (
-                        <CheckCircle2 className="h-3 w-3" />
-                      )}
+                      {isSelected && <CheckCircle2 className="h-3 w-3" />}
                     </div>
                     <span>
                       {String.fromCharCode(65 + i)}. {option}
@@ -986,7 +976,7 @@ function QuestionView({
             })}
           </div>
           <p className="text-xs text-muted-foreground mt-2">
-            {selectedOptions.length}/4 selected
+            {selectedOptions.length}/4 {t('mock.selected')}
           </p>
         </div>
       ) : (
@@ -994,30 +984,28 @@ function QuestionView({
           <div className="flex items-center justify-between">
             <h4 className="text-sm font-semibold text-foreground flex items-center gap-2">
               <PenLine className="h-4 w-4 text-primary" />
-              Your Answer
+              {t('marking.your_answer')}
             </h4>
             <span className="text-xs text-muted-foreground">
-              {answer.split(/\s+/).filter(Boolean).length} words
+              {answer.split(/\s+/).filter(Boolean).length} {t('marking.words_plural')}
             </span>
           </div>
           <Textarea
             value={answer}
             onChange={(e) => onAnswerChange(e.target.value)}
             placeholder={
-              question.marks <= 8
-                ? 'Write your answer here...'
-                : 'Write your extended response here. Plan your answer carefully and aim to use the full time available...'
+              question.marks <= 8 ? t('marking.placeholder') : t('marking.essay_placeholder')
             }
             className={cn(
               'min-h-[200px] leading-relaxed resize-y',
               question.marks >= 20 && 'min-h-[350px]',
-              question.marks >= 30 && 'min-h-[450px]'
+              question.marks >= 30 && 'min-h-[450px]',
             )}
           />
           {question.marks >= 20 && (
             <p className="text-xs text-muted-foreground">
-              This is an extended writing question worth {question.marks}{' '}
-              marks. Aim for a detailed, well-structured response.
+              {t('mock.extended_writing_prefix')} {question.marks}{' '}
+              {t('mock.extended_writing_suffix')}
             </p>
           )}
         </div>
@@ -1037,13 +1025,10 @@ function ExamView({
   onSubmit: (answers: string[], mcSelections: Record<number, number[]>) => void
   onQuit: () => void
 }) {
+  const t = useT()
   const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [answers, setAnswers] = useState<string[]>(
-    () => paper.questions.map(() => '')
-  )
-  const [mcSelections, setMcSelections] = useState<Record<number, number[]>>(
-    () => ({})
-  )
+  const [answers, setAnswers] = useState<string[]>(() => paper.questions.map(() => ''))
+  const [mcSelections, setMcSelections] = useState<Record<number, number[]>>(() => ({}))
   const [isPaused, setIsPaused] = useState(false)
   const [showConfirmSubmit, setShowConfirmSubmit] = useState(false)
 
@@ -1058,7 +1043,7 @@ function ExamView({
         return next
       })
     },
-    [currentQuestion]
+    [currentQuestion],
   )
 
   const handleOptionToggle = useCallback(
@@ -1075,7 +1060,7 @@ function ExamView({
         return { ...prev, [currentQuestion]: [...current, optionIndex] }
       })
     },
-    [currentQuestion]
+    [currentQuestion],
   )
 
   const answeredCount = useMemo(() => {
@@ -1119,44 +1104,30 @@ function ExamView({
                 'flex items-center gap-2 px-3 py-1.5 rounded-lg border font-mono text-sm font-bold',
                 timer.isLow
                   ? 'border-red-500/30 bg-red-500/10 text-red-400 animate-pulse'
-                  : 'border-border bg-muted/50 text-foreground'
+                  : 'border-border bg-muted/50 text-foreground',
               )}
             >
               <Clock className="h-4 w-4" />
               {timer.formatted}
             </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsPaused(!isPaused)}
-            >
-              {isPaused ? (
-                <Play className="h-4 w-4" />
-              ) : (
-                <Pause className="h-4 w-4" />
-              )}
+            <Button variant="ghost" size="sm" onClick={() => setIsPaused(!isPaused)}>
+              {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
             </Button>
           </div>
 
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" onClick={onQuit}>
-              Quit
+              {t('mock.quit')}
             </Button>
-            <Button
-              size="sm"
-              onClick={() => setShowConfirmSubmit(true)}
-            >
+            <Button size="sm" onClick={() => setShowConfirmSubmit(true)}>
               <Send className="h-4 w-4 mr-1.5" />
-              Submit
+              {t('action.submit')}
             </Button>
           </div>
         </div>
 
         {/* Progress bar */}
-        <Progress
-          value={timer.progress}
-          className="h-1 rounded-none"
-        />
+        <Progress value={timer.progress} className="h-1 rounded-none" />
       </div>
 
       {/* Paused overlay */}
@@ -1165,16 +1136,11 @@ function ExamView({
           <Card className="max-w-sm w-full mx-4">
             <CardContent className="pt-6 text-center">
               <Pause className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <h2 className="text-xl font-bold text-foreground mb-2">
-                Exam Paused
-              </h2>
-              <p className="text-sm text-muted-foreground mb-6">
-                The timer has been paused. Note: pausing is not allowed in
-                real exam conditions.
-              </p>
+              <h2 className="text-xl font-bold text-foreground mb-2">{t('mock.exam_paused')}</h2>
+              <p className="text-sm text-muted-foreground mb-6">{t('mock.paused_body')}</p>
               <Button onClick={() => setIsPaused(false)}>
                 <Play className="h-4 w-4 mr-1.5" />
-                Resume Exam
+                {t('mock.resume_exam')}
               </Button>
             </CardContent>
           </Card>
@@ -1189,28 +1155,25 @@ function ExamView({
               <div className="text-center mb-6">
                 <Send className="h-10 w-10 text-primary mx-auto mb-3" />
                 <h2 className="text-xl font-bold text-foreground mb-2">
-                  Submit Exam?
+                  {t('mock.submit_exam_q')}
                 </h2>
                 <p className="text-sm text-muted-foreground">
-                  You have answered {answeredCount} of{' '}
-                  {paper.questions.length} questions. Time remaining:{' '}
+                  {t('mock.you_answered_prefix')} {answeredCount} {t('mock.of')}{' '}
+                  {paper.questions.length} {t('mock.questions_lc')}. {t('mock.time_remaining')}:{' '}
                   {timer.formatted}.
                 </p>
                 {answeredCount < paper.questions.length && (
                   <p className="text-sm text-amber-600 mt-2 flex items-center justify-center gap-1">
                     <AlertCircle className="h-4 w-4" />
-                    You have unanswered questions.
+                    {t('mock.unanswered_warning')}
                   </p>
                 )}
               </div>
               <div className="flex gap-3 justify-center">
-                <Button
-                  variant="secondary"
-                  onClick={() => setShowConfirmSubmit(false)}
-                >
-                  Continue Writing
+                <Button variant="secondary" onClick={() => setShowConfirmSubmit(false)}>
+                  {t('mock.continue_writing')}
                 </Button>
-                <Button onClick={handleSubmit}>Submit Exam</Button>
+                <Button onClick={handleSubmit}>{t('mock.submit_exam')}</Button>
               </div>
             </CardContent>
           </Card>
@@ -1237,7 +1200,7 @@ function ExamView({
                     ? 'bg-primary text-primary-foreground border-primary'
                     : hasAnswer
                       ? 'bg-teal-50 text-teal-800 border-teal-200'
-                      : 'bg-muted/50 text-muted-foreground border-border/40 hover:border-border'
+                      : 'bg-muted/50 text-muted-foreground border-border/40 hover:border-border',
                 )}
               >
                 {q.number}
@@ -1262,33 +1225,29 @@ function ExamView({
           <Button
             variant="secondary"
             disabled={currentQuestion === 0}
-            onClick={() =>
-              setCurrentQuestion((prev) => Math.max(0, prev - 1))
-            }
+            onClick={() => setCurrentQuestion((prev) => Math.max(0, prev - 1))}
           >
             <ChevronLeft className="h-4 w-4 mr-1" />
-            Previous
+            {t('mock.previous')}
           </Button>
 
           <span className="text-sm text-muted-foreground">
-            {answeredCount}/{paper.questions.length} answered
+            {answeredCount}/{paper.questions.length} {t('mock.answered')}
           </span>
 
           {currentQuestion < paper.questions.length - 1 ? (
             <Button
               onClick={() =>
-                setCurrentQuestion((prev) =>
-                  Math.min(paper.questions.length - 1, prev + 1)
-                )
+                setCurrentQuestion((prev) => Math.min(paper.questions.length - 1, prev + 1))
               }
             >
-              Next
+              {t('action.next')}
               <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
           ) : (
             <Button onClick={() => setShowConfirmSubmit(true)}>
               <Send className="h-4 w-4 mr-1.5" />
-              Submit Exam
+              {t('mock.submit_exam')}
             </Button>
           )}
         </div>
@@ -1310,6 +1269,7 @@ function ResultsView({
   mcSelections: Record<number, number[]>
   onRetry: () => void
 }) {
+  const t = useT()
   // Calculate a rough estimated score based on answer length and MC correctness
   const estimatedScore = useMemo(() => {
     let score = 0
@@ -1354,28 +1314,37 @@ function ResultsView({
             'h-2',
             isLanguage
               ? 'bg-gradient-to-r from-blue-500 to-cyan-500'
-              : 'bg-gradient-to-r from-teal-800 to-clay-500'
+              : 'bg-gradient-to-r from-teal-800 to-clay-500',
           )}
         />
 
         <CardContent className="pt-8 pb-8">
           {/* Hero result */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center h-24 w-24 rounded-2xl border-2 mb-4"
+            <div
+              className="inline-flex items-center justify-center h-24 w-24 rounded-2xl border-2 mb-4"
               style={{
-                borderColor: grade >= 7 ? 'rgb(52,211,153)' : grade >= 5 ? 'rgb(251,191,36)' : 'rgb(248,113,113)',
-                background: grade >= 7 ? 'rgba(16,185,129,0.1)' : grade >= 5 ? 'rgba(245,158,11,0.1)' : 'rgba(239,68,68,0.1)',
+                borderColor:
+                  grade >= 7
+                    ? 'rgb(52,211,153)'
+                    : grade >= 5
+                      ? 'rgb(251,191,36)'
+                      : 'rgb(248,113,113)',
+                background:
+                  grade >= 7
+                    ? 'rgba(16,185,129,0.1)'
+                    : grade >= 5
+                      ? 'rgba(245,158,11,0.1)'
+                      : 'rgba(239,68,68,0.1)',
               }}
             >
-              <span className={cn('text-5xl font-bold', getGradeColor(grade))}>
-                {grade}
-              </span>
+              <span className={cn('text-5xl font-bold', getGradeColor(grade))}>{grade}</span>
             </div>
             <h2 className="text-2xl font-bold text-foreground mb-1">
-              {getGradeLabel(grade)}
+              {t(getGradeLabelKey(grade))}
             </h2>
             <p className="text-muted-foreground">
-              Estimated GCSE Grade for {paper.paperName}
+              {t('mock.estimated_grade_for')} {paper.paperName}
             </p>
           </div>
 
@@ -1384,28 +1353,20 @@ function ResultsView({
           {/* Stats grid */}
           <div className="grid grid-cols-3 gap-4 mb-8">
             <div className="text-center p-4 rounded-xl bg-muted/30 border border-border/40">
-              <p className="text-2xl font-bold text-foreground">
-                {estimatedScore}
-              </p>
+              <p className="text-2xl font-bold text-foreground">{estimatedScore}</p>
               <p className="text-xs text-muted-foreground mt-1">
-                of {paper.totalMarks} marks
+                {t('mock.of')} {paper.totalMarks} {t('marking.mark_plural')}
               </p>
             </div>
             <div className="text-center p-4 rounded-xl bg-muted/30 border border-border/40">
-              <p className="text-2xl font-bold text-foreground">
-                {percentage}%
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Percentage
-              </p>
+              <p className="text-2xl font-bold text-foreground">{percentage}%</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('mock.percentage')}</p>
             </div>
             <div className="text-center p-4 rounded-xl bg-muted/30 border border-border/40">
               <p className={cn('text-2xl font-bold', getGradeColor(grade))}>
-                Grade {grade}
+                {t('mock.grade')} {grade}
               </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                GCSE Grade
-              </p>
+              <p className="text-xs text-muted-foreground mt-1">{t('mock.gcse_grade')}</p>
             </div>
           </div>
 
@@ -1413,7 +1374,7 @@ function ResultsView({
           <div className="mb-8">
             <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
               <BarChart3 className="h-4 w-4 text-primary" />
-              Grade Boundaries
+              {t('mock.grade_boundaries')}
             </h3>
             <div className="grid grid-cols-9 gap-1">
               {paper.gradeBoundaries.map(({ grade: g, minMarks }) => (
@@ -1421,21 +1382,15 @@ function ResultsView({
                   key={g}
                   className={cn(
                     'rounded-lg p-2 text-center border transition-all',
-                    g === grade
-                      ? 'ring-2 ring-primary ring-offset-1 ring-offset-background'
-                      : '',
+                    g === grade ? 'ring-2 ring-primary ring-offset-1 ring-offset-background' : '',
                     g >= 7
                       ? 'bg-teal-50 border-teal-200'
                       : g >= 5
                         ? 'bg-amber-50 border-amber-200'
-                        : 'bg-muted border-border'
+                        : 'bg-muted border-border',
                   )}
                 >
-                  <div
-                    className={cn('text-sm font-bold', getGradeColor(g))}
-                  >
-                    {g}
-                  </div>
+                  <div className={cn('text-sm font-bold', getGradeColor(g))}>{g}</div>
                   <div className="text-[10px] text-muted-foreground mt-0.5">
                     {minMarks}/{paper.totalMarks}
                   </div>
@@ -1448,13 +1403,11 @@ function ResultsView({
           <div className="mb-8">
             <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
               <FileText className="h-4 w-4 text-primary" />
-              Your Responses
+              {t('mock.your_responses')}
             </h3>
             <div className="space-y-3">
               {paper.questions.map((q, i) => {
-                const wordCount = answers[i]
-                  .split(/\s+/)
-                  .filter(Boolean).length
+                const wordCount = answers[i].split(/\s+/).filter(Boolean).length
                 const hasAnswer = q.isMultipleChoice
                   ? (mcSelections[i]?.length ?? 0) > 0
                   : wordCount > 0
@@ -1467,9 +1420,7 @@ function ResultsView({
                     <div
                       className={cn(
                         'h-6 w-6 rounded-md flex items-center justify-center shrink-0',
-                        hasAnswer
-                          ? 'bg-teal-50 text-teal-800'
-                          : 'bg-red-50 text-red-600'
+                        hasAnswer ? 'bg-teal-50 text-teal-800' : 'bg-red-50 text-red-600',
                       )}
                     >
                       {hasAnswer ? (
@@ -1484,14 +1435,15 @@ function ResultsView({
                       </p>
                       <p className="text-xs text-muted-foreground">
                         {q.isMultipleChoice
-                          ? `${mcSelections[i]?.length ?? 0} options selected`
+                          ? `${mcSelections[i]?.length ?? 0} ${t('mock.options_selected')}`
                           : hasAnswer
-                            ? `${wordCount} words written`
-                            : 'No response'}
+                            ? `${wordCount} ${t('mock.words_written')}`
+                            : t('mock.no_response')}
                       </p>
                     </div>
                     <Badge variant="outline" className="text-xs shrink-0">
-                      {q.marks} marks
+                      {q.marks}{' '}
+                      {q.marks === 1 ? t('marking.mark_singular') : t('marking.mark_plural')}
                     </Badge>
                   </div>
                 )
@@ -1503,14 +1455,10 @@ function ResultsView({
           <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 mb-8">
             <h3 className="font-semibold text-primary mb-2 flex items-center gap-2">
               <Sparkles className="h-4 w-4" />
-              About This Estimate
+              {t('mock.about_estimate')}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              This grade is an estimate based on response length and
-              completion. For accurate grading of your written responses,
-              AI-powered essay feedback will provide detailed marks against
-              the marking guide with specific comments on how to improve. This
-              feature is coming soon.
+              {t('mock.about_estimate_body')}
             </p>
           </div>
 
@@ -1518,7 +1466,7 @@ function ResultsView({
           <div className="mb-8">
             <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
               <Eye className="h-4 w-4 text-primary" />
-              Marking Guide
+              {t('mock.marking_guide')}
             </h3>
             <div className="space-y-4">
               {paper.questions.map((q) => (
@@ -1531,7 +1479,8 @@ function ResultsView({
                       {q.number}
                     </span>
                     <span className="text-sm font-medium text-foreground flex-1">
-                      Q{q.number}: {q.label} ({q.marks} marks)
+                      Q{q.number}: {q.label} ({q.marks}{' '}
+                      {q.marks === 1 ? t('marking.mark_singular') : t('marking.mark_plural')})
                     </span>
                     <ChevronRight className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-90" />
                   </summary>
@@ -1543,20 +1492,17 @@ function ResultsView({
                           item === '' ? (
                             <div key={idx} className="h-2" />
                           ) : (
-                            <p
-                              key={idx}
-                              className="text-sm text-muted-foreground"
-                            >
+                            <p key={idx} className="text-sm text-muted-foreground">
                               {item}
                             </p>
-                          )
+                          ),
                         )}
                       </div>
                     )}
                     {q.modelAnswer && (
                       <div className="mt-3 p-3 rounded-lg bg-teal-50/50 border border-teal-200">
                         <p className="text-xs font-semibold text-teal-800 mb-1">
-                          Example response (Grade 7+):
+                          {t('mock.example_response_grade7')}
                         </p>
                         <p className="text-sm text-foreground/80 leading-relaxed">
                           {q.modelAnswer}
@@ -1573,11 +1519,11 @@ function ResultsView({
           <div className="flex gap-3 justify-center flex-wrap">
             <Button variant="secondary" render={<Link href="/mock-exams" />}>
               <ArrowLeft className="h-4 w-4 mr-1.5" />
-              All Exams
+              {t('mock.all_exams')}
             </Button>
             <Button onClick={onRetry}>
               <RotateCcw className="h-4 w-4 mr-1.5" />
-              Retry This Paper
+              {t('mock.retry_paper')}
             </Button>
           </div>
         </CardContent>
@@ -1589,21 +1535,17 @@ function ResultsView({
 // ─── 404 / Not Found ────────────────────────────────────────────────────────
 
 function PaperNotFound() {
+  const t = useT()
   return (
     <div className="max-w-xl mx-auto px-4 py-20 text-center">
       <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-red-500/10 border border-red-500/20 mb-6">
         <AlertCircle className="h-8 w-8 text-red-400" />
       </div>
-      <h1 className="text-2xl font-bold text-foreground mb-3">
-        Exam Paper Not Found
-      </h1>
-      <p className="text-muted-foreground mb-8">
-        The exam paper you are looking for does not exist or is not yet
-        available. Please check the URL or browse available papers.
-      </p>
+      <h1 className="text-2xl font-bold text-foreground mb-3">{t('mock.paper_not_found')}</h1>
+      <p className="text-muted-foreground mb-8">{t('mock.paper_not_found_body')}</p>
       <Button render={<Link href="/mock-exams" />}>
         <ArrowLeft className="h-4 w-4 mr-1.5" />
-        View Available Papers
+        {t('mock.view_available_papers')}
       </Button>
     </div>
   )
@@ -1611,19 +1553,13 @@ function PaperNotFound() {
 
 // ─── Main Page Component ────────────────────────────────────────────────────
 
-export default function ExamPage({
-  params,
-}: {
-  params: Promise<{ id: string }>
-}) {
+export default function ExamPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params)
   const paper = EXAM_PAPERS[id]
 
   const [phase, setPhase] = useState<ExamPhase>('intro')
   const [submittedAnswers, setSubmittedAnswers] = useState<string[]>([])
-  const [submittedMcSelections, setSubmittedMcSelections] = useState<
-    Record<number, number[]>
-  >({})
+  const [submittedMcSelections, setSubmittedMcSelections] = useState<Record<number, number[]>>({})
 
   if (!paper) {
     return <PaperNotFound />
@@ -1633,10 +1569,7 @@ export default function ExamPage({
     setPhase('exam')
   }
 
-  const handleSubmit = (
-    answers: string[],
-    mcSelections: Record<number, number[]>
-  ) => {
+  const handleSubmit = (answers: string[], mcSelections: Record<number, number[]>) => {
     setSubmittedAnswers(answers)
     setSubmittedMcSelections(mcSelections)
     setPhase('results')
@@ -1659,13 +1592,7 @@ export default function ExamPage({
     case 'intro':
       return <ExamIntro paper={paper} onStart={handleStart} />
     case 'exam':
-      return (
-        <ExamView
-          paper={paper}
-          onSubmit={handleSubmit}
-          onQuit={handleQuit}
-        />
-      )
+      return <ExamView paper={paper} onSubmit={handleSubmit} onQuit={handleQuit} />
     case 'results':
       return (
         <ResultsView

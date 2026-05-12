@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import DOMPurify from 'dompurify'
 import { ReadingProgressTracker } from './ReadingProgressTracker'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -53,43 +54,58 @@ interface InteractiveTextViewerProps {
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
-const OVERLAY_CONFIG: Record<OverlayType, { label: string; color: string; bg: string; border: string }> = {
+const OVERLAY_CONFIG: Record<
+  OverlayType,
+  { labelKey: string; color: string; bg: string; border: string }
+> = {
   context: {
-    label: 'Context',
+    labelKey: 'text_viewer.overlay_context',
     color: 'text-blue-700',
     bg: 'bg-blue-500/20',
     border: 'border-blue-500/40',
   },
   quote: {
-    label: 'Key Quotes',
+    labelKey: 'text_viewer.overlay_quotes',
     color: 'text-amber-700',
     bg: 'bg-amber-500/20',
     border: 'border-amber-500/40',
   },
   language: {
-    label: 'Language',
+    labelKey: 'text_viewer.overlay_language',
     color: 'text-purple-700',
     bg: 'bg-purple-500/20',
     border: 'border-purple-500/40',
   },
   theme: {
-    label: 'Themes',
+    labelKey: 'text_viewer.overlay_themes',
     color: 'text-emerald-700',
     bg: 'bg-emerald-500/20',
     border: 'border-emerald-500/40',
   },
   character: {
-    label: 'Characters',
+    labelKey: 'text_viewer.overlay_characters',
     color: 'text-rose-700',
     bg: 'bg-rose-500/20',
     border: 'border-rose-500/40',
   },
 }
 
-const READING_MODES: { key: ReadingMode; label: string; description: string }[] = [
-  { key: 'close', label: 'Close Reading', description: 'All annotations visible' },
-  { key: 'speed', label: 'Speed Reading', description: 'Clean text only' },
-  { key: 'analytical', label: 'Analytical', description: 'Themes + quotes' },
+const READING_MODES: { key: ReadingMode; labelKey: string; descriptionKey: string }[] = [
+  {
+    key: 'close',
+    labelKey: 'text_viewer.mode_close',
+    descriptionKey: 'text_viewer.mode_close_desc',
+  },
+  {
+    key: 'speed',
+    labelKey: 'text_viewer.mode_speed',
+    descriptionKey: 'text_viewer.mode_speed_desc',
+  },
+  {
+    key: 'analytical',
+    labelKey: 'text_viewer.mode_analytical',
+    descriptionKey: 'text_viewer.mode_analytical_desc',
+  },
 ]
 
 /** Average reading speed for GCSE students (words per minute) */
@@ -121,7 +137,10 @@ function saveToStorage(key: string, value: unknown): void {
 }
 
 function countWords(html: string): number {
-  const text = html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
+  const text = html
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
   return text ? text.split(' ').length : 0
 }
 
@@ -133,7 +152,14 @@ function escapeRegExp(str: string): string {
 
 function ChevronDownIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      aria-hidden="true"
+    >
       <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
     </svg>
   )
@@ -141,31 +167,71 @@ function ChevronDownIcon({ className = 'h-4 w-4' }: { className?: string }) {
 
 function CheckCircleIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+      />
     </svg>
   )
 }
 
 function BookOpenIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+      />
     </svg>
   )
 }
 
 function ListIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+      />
     </svg>
   )
 }
 
 function XMarkIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      aria-hidden="true"
+    >
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
     </svg>
   )
@@ -173,8 +239,19 @@ function XMarkIcon({ className = 'h-4 w-4' }: { className?: string }) {
 
 function EyeIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+      />
       <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
     </svg>
   )
@@ -189,8 +266,10 @@ function AnnotationTooltip({
   annotation: Annotation
   children: React.ReactNode
 }) {
+  const t = useT()
   const [show, setShow] = useState(false)
   const cfg = OVERLAY_CONFIG[annotation.type]
+  const label = t(cfg.labelKey)
 
   return (
     <span
@@ -201,22 +280,20 @@ function AnnotationTooltip({
       onBlur={() => setShow(false)}
       tabIndex={0}
       role="button"
-      aria-label={`${cfg.label} note: ${annotation.note}`}
+      aria-label={`${label} ${t('text_viewer.note_label')}: ${annotation.note}`}
     >
-      <span className={`rounded-sm px-0.5 ${cfg.bg} border-b-2 ${cfg.border}`}>
-        {children}
-      </span>
+      <span className={`rounded-sm px-0.5 ${cfg.bg} border-b-2 ${cfg.border}`}>{children}</span>
       {show && (
         <span
           className="absolute bottom-full left-1/2 z-50 mb-2 w-64 -translate-x-1/2 rounded-lg border border-border bg-card p-3 shadow-elevated animate-fade-in"
           role="tooltip"
         >
-          <span className={`mb-1 block text-xs font-semibold uppercase tracking-wider ${cfg.color}`}>
-            {cfg.label}
+          <span
+            className={`mb-1 block text-xs font-semibold uppercase tracking-wider ${cfg.color}`}
+          >
+            {label}
           </span>
-          <span className="block text-sm leading-relaxed text-foreground">
-            {annotation.note}
-          </span>
+          <span className="block text-sm leading-relaxed text-foreground">{annotation.note}</span>
           {/* Arrow */}
           <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-border" />
         </span>
@@ -241,7 +318,12 @@ function AnnotatedContent({
     const active = annotations.filter((a) => activeOverlays.has(a.type))
 
     if (active.length === 0) {
-      return <div className="prose-reader" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }} />
+      return (
+        <div
+          className="prose-reader"
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
+        />
+      )
     }
 
     // Parse the HTML to plain text for matching, then rebuild with annotations
@@ -283,16 +365,14 @@ function AnnotatedContent({
 
       // Text before this annotation
       if (cursor < start) {
-        segments.push(
-          <span key={`t-${i}`}>{stripped.slice(cursor, start)}</span>
-        )
+        segments.push(<span key={`t-${i}`}>{stripped.slice(cursor, start)}</span>)
       }
 
       // The annotated text
       segments.push(
         <AnnotationTooltip key={`a-${i}`} annotation={annotation}>
           {stripped.slice(start, end)}
-        </AnnotationTooltip>
+        </AnnotationTooltip>,
       )
 
       cursor = end
@@ -322,13 +402,14 @@ function SectionSidebar({
   completedSections: Set<string>
   onSelect: (id: string) => void
 }) {
+  const t = useT()
   return (
     <nav
       className="hidden lg:flex flex-col gap-0.5 overflow-y-auto border-r border-border bg-card p-3"
-      aria-label="Section navigation"
+      aria-label={t('text_viewer.section_nav_label')}
     >
       <h2 className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        Contents
+        {t('text_viewer.contents')}
       </h2>
       {sections.map((section) => {
         const isActive = section.id === activeSectionId
@@ -377,6 +458,7 @@ function SectionDropdown({
   completedSections: Set<string>
   onSelect: (id: string) => void
 }) {
+  const t = useT()
   const [open, setOpen] = useState(false)
   const active = sections.find((s) => s.id === activeSectionId)
 
@@ -388,7 +470,7 @@ function SectionDropdown({
       >
         <span className="flex items-center gap-2 truncate">
           <ListIcon />
-          {active?.title ?? 'Select section'}
+          {active?.title ?? t('text_viewer.select_section')}
         </span>
         <ChevronDownIcon className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
@@ -433,33 +515,34 @@ function OverlayToggles({
   activeOverlays: Set<OverlayType>
   onToggle: (type: OverlayType) => void
 }) {
+  const t = useT()
   return (
     <div className="flex flex-wrap gap-1.5">
-      {(Object.entries(OVERLAY_CONFIG) as [OverlayType, typeof OVERLAY_CONFIG[OverlayType]][]).map(
-        ([type, cfg]) => {
-          const isActive = activeOverlays.has(type)
-          return (
-            <button
-              key={type}
-              onClick={() => onToggle(type)}
-              className={[
-                'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all',
-                isActive
-                  ? `${cfg.bg} ${cfg.color} ring-1 ring-inset ${cfg.border}`
-                  : 'bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80',
-              ].join(' ')}
-              aria-pressed={isActive}
-            >
-              <span
-                className={`h-2 w-2 rounded-full ${
-                  isActive ? cfg.bg.replace('/20', '') : 'bg-muted-foreground/40'
-                }`}
-              />
-              {cfg.label}
-            </button>
-          )
-        }
-      )}
+      {(
+        Object.entries(OVERLAY_CONFIG) as [OverlayType, (typeof OVERLAY_CONFIG)[OverlayType]][]
+      ).map(([type, cfg]) => {
+        const isActive = activeOverlays.has(type)
+        return (
+          <button
+            key={type}
+            onClick={() => onToggle(type)}
+            className={[
+              'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all',
+              isActive
+                ? `${cfg.bg} ${cfg.color} ring-1 ring-inset ${cfg.border}`
+                : 'bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80',
+            ].join(' ')}
+            aria-pressed={isActive}
+          >
+            <span
+              className={`h-2 w-2 rounded-full ${
+                isActive ? cfg.bg.replace('/20', '') : 'bg-muted-foreground/40'
+              }`}
+            />
+            {t(cfg.labelKey)}
+          </button>
+        )
+      })}
     </div>
   )
 }
@@ -473,13 +556,14 @@ function ReadingModeSelector({
   mode: ReadingMode
   onChange: (mode: ReadingMode) => void
 }) {
+  const t = useT()
   return (
     <div className="flex rounded-lg border border-border bg-card p-0.5">
       {READING_MODES.map((m) => (
         <button
           key={m.key}
           onClick={() => onChange(m.key)}
-          title={m.description}
+          title={t(m.descriptionKey)}
           className={[
             'rounded-md px-3 py-1.5 text-xs font-medium transition-all',
             mode === m.key
@@ -487,7 +571,7 @@ function ReadingModeSelector({
               : 'text-muted-foreground hover:text-foreground',
           ].join(' ')}
         >
-          {m.label}
+          {t(m.labelKey)}
         </button>
       ))}
     </div>
@@ -505,7 +589,15 @@ function InfoPanel({
   show: 'characters' | 'themes' | 'context' | null
   onClose: () => void
 }) {
+  const t = useT()
   if (!show) return null
+
+  const panelTitle =
+    show === 'characters'
+      ? t('text_viewer.panel_characters')
+      : show === 'themes'
+        ? t('text_viewer.panel_themes')
+        : t('text_viewer.panel_context')
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-end">
@@ -513,17 +605,17 @@ function InfoPanel({
       <button
         className="absolute inset-0 bg-black/50"
         onClick={onClose}
-        aria-label="Close panel"
+        aria-label={t('text_viewer.close_panel')}
       />
 
       {/* Panel */}
       <div className="relative z-10 h-full w-full max-w-md overflow-y-auto border-l border-border bg-card p-6 shadow-elevated animate-slide-in-right">
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-lg font-bold text-foreground capitalize">{show}</h2>
+          <h2 className="text-lg font-bold text-foreground">{panelTitle}</h2>
           <button
             onClick={onClose}
             className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-            aria-label="Close"
+            aria-label={t('marking.close')}
           >
             <XMarkIcon className="h-5 w-5" />
           </button>
@@ -539,7 +631,9 @@ function InfoPanel({
                 </p>
                 {char.keyQuotes.length > 0 && (
                   <div className="mt-3 flex flex-col gap-1.5">
-                    <span className="text-xs font-semibold text-amber-700">Key Quotes</span>
+                    <span className="text-xs font-semibold text-amber-700">
+                      {t('text_viewer.key_quotes_label')}
+                    </span>
                     {char.keyQuotes.map((q, i) => (
                       <blockquote
                         key={i}
@@ -565,7 +659,9 @@ function InfoPanel({
                 </p>
                 {theme.evidence.length > 0 && (
                   <div className="mt-3 flex flex-col gap-1.5">
-                    <span className="text-xs font-semibold text-muted-foreground">Evidence</span>
+                    <span className="text-xs font-semibold text-muted-foreground">
+                      {t('text_viewer.evidence_label')}
+                    </span>
                     {theme.evidence.map((e, i) => (
                       <p key={i} className="text-xs text-muted-foreground">
                         &bull; {e}
@@ -592,24 +688,21 @@ function InfoPanel({
 
 // ─── Main component ──────────────────────────────────────────────────────────
 
-function InteractiveTextViewer({
-  data,
-  storageKey,
-  className = '',
-}: InteractiveTextViewerProps) {
+function InteractiveTextViewer({ data, storageKey, className = '' }: InteractiveTextViewerProps) {
+  const t = useT()
   // ── Persisted state ──────────────────────────────────────────────────────
   const [completedSections, setCompletedSections] = useState<Set<string>>(
-    () => new Set(loadFromStorage<string[]>(getStorageKey(storageKey, 'completed'), []))
+    () => new Set(loadFromStorage<string[]>(getStorageKey(storageKey, 'completed'), [])),
   )
 
-  const [activeSectionId, setActiveSectionId] = useState<string>(
-    () => loadFromStorage<string>(getStorageKey(storageKey, 'active'), data.sections[0]?.id ?? '')
+  const [activeSectionId, setActiveSectionId] = useState<string>(() =>
+    loadFromStorage<string>(getStorageKey(storageKey, 'active'), data.sections[0]?.id ?? ''),
   )
 
   // ── UI state ─────────────────────────────────────────────────────────────
   const [readingMode, setReadingMode] = useState<ReadingMode>('close')
   const [activeOverlays, setActiveOverlays] = useState<Set<OverlayType>>(
-    new Set<OverlayType>(['context', 'quote', 'language', 'theme', 'character'])
+    new Set<OverlayType>(['context', 'quote', 'language', 'theme', 'character']),
   )
   const [infoPanel, setInfoPanel] = useState<'characters' | 'themes' | 'context' | null>(null)
 
@@ -634,12 +727,12 @@ function InteractiveTextViewer({
   // ── Word counts and timing ───────────────────────────────────────────────
   const sectionWordCounts = useMemo(
     () => data.sections.map((s) => ({ id: s.id, words: countWords(s.content) })),
-    [data.sections]
+    [data.sections],
   )
 
   const totalWords = useMemo(
     () => sectionWordCounts.reduce((sum, s) => sum + s.words, 0),
-    [sectionWordCounts]
+    [sectionWordCounts],
   )
 
   const wordsRead = useMemo(
@@ -647,7 +740,7 @@ function InteractiveTextViewer({
       sectionWordCounts
         .filter((s) => completedSections.has(s.id))
         .reduce((sum, s) => sum + s.words, 0),
-    [sectionWordCounts, completedSections]
+    [sectionWordCounts, completedSections],
   )
 
   const percentage = totalWords > 0 ? (wordsRead / totalWords) * 100 : 0
@@ -693,16 +786,13 @@ function InteractiveTextViewer({
   }, [])
 
   // ── Section navigation ───────────────────────────────────────────────────
-  const navigateToSection = useCallback(
-    (sectionId: string) => {
-      setActiveSectionId(sectionId)
-      const el = sectionRefs.current.get(sectionId)
-      if (el && contentRef.current) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    },
-    []
-  )
+  const navigateToSection = useCallback((sectionId: string) => {
+    setActiveSectionId(sectionId)
+    const el = sectionRefs.current.get(sectionId)
+    if (el && contentRef.current) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [])
 
   // ── Overlay toggle ───────────────────────────────────────────────────────
   const toggleOverlay = useCallback((type: OverlayType) => {
@@ -742,13 +832,11 @@ function InteractiveTextViewer({
           <div className="flex items-center gap-3">
             <BookOpenIcon className="h-5 w-5 text-brand-accent flex-shrink-0" />
             <div>
-              <h1 className="text-base font-bold text-foreground sm:text-lg">
-                {data.title}
-              </h1>
+              <h1 className="text-base font-bold text-foreground sm:text-lg">{data.title}</h1>
               <p className="text-xs text-muted-foreground">
-                {data.author} &middot;{' '}
-                <span className="capitalize">{data.type}</span> &middot;{' '}
-                {data.sections.length} {data.type === 'play' ? 'scenes' : 'chapters'}
+                {data.author} &middot; <span>{t(`text_viewer.type_${data.type}`)}</span> &middot;{' '}
+                {data.sections.length}{' '}
+                {data.type === 'play' ? t('text_viewer.scenes') : t('text_viewer.chapters')}
               </p>
             </div>
           </div>
@@ -759,19 +847,19 @@ function InteractiveTextViewer({
               onClick={() => setInfoPanel('characters')}
               className="rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-rose-500/40 transition-colors"
             >
-              Characters
+              {t('text_viewer.panel_characters')}
             </button>
             <button
               onClick={() => setInfoPanel('themes')}
               className="rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
             >
-              Themes
+              {t('text_viewer.panel_themes')}
             </button>
             <button
               onClick={() => setInfoPanel('context')}
               className="rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-blue-500/40 transition-colors"
             >
-              Context
+              {t('text_viewer.panel_context')}
             </button>
           </div>
         </div>
@@ -841,9 +929,7 @@ function InteractiveTextViewer({
             >
               {/* Section header */}
               <div className="mb-6 flex items-center gap-3">
-                <h2 className="text-heading-md text-foreground">
-                  {section.title}
-                </h2>
+                <h2 className="text-heading-md text-foreground">{section.title}</h2>
                 {completedSections.has(section.id) && (
                   <CheckCircleIcon className="h-5 w-5 text-brand-accent flex-shrink-0" />
                 )}
@@ -851,8 +937,8 @@ function InteractiveTextViewer({
 
               {/* Section word count */}
               <p className="mb-4 text-xs text-muted-foreground">
-                {countWords(section.content).toLocaleString()} words &middot;{' '}
-                ~{Math.ceil(countWords(section.content) / READING_WPM)} min read
+                {countWords(section.content).toLocaleString()} {t('text_viewer.words')} &middot; ~
+                {Math.ceil(countWords(section.content) / READING_WPM)} {t('text_viewer.min_read')}
               </p>
 
               {/* Content */}
@@ -873,10 +959,11 @@ function InteractiveTextViewer({
           <div className="flex flex-col items-center gap-4 py-8 text-center">
             <CheckCircleIcon className="h-8 w-8 text-brand-accent" />
             <p className="text-sm font-semibold text-foreground">
-              End of {data.type === 'play' ? 'play' : 'text'}
+              {data.type === 'play' ? t('text_viewer.end_of_play') : t('text_viewer.end_of_text')}
             </p>
             <p className="text-xs text-muted-foreground">
-              {completedSections.size} of {data.sections.length} sections completed
+              {completedSections.size} {t('text_viewer.of')} {data.sections.length}{' '}
+              {t('text_viewer.sections_completed')}
             </p>
           </div>
         </div>
