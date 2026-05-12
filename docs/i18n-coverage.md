@@ -1,6 +1,25 @@
 # i18n coverage — honest scope statement
 
-_Last updated: 2026-05-12. Author: Khaleeji translation campaign._
+_Last updated: 2026-05-12 (post wave H). Author: Khaleeji translation campaign._
+
+## Gender policy (binding)
+
+Explicit binary M/F only. **No** gender-neutral substitutes (e.g. `طفل` for
+"child") and **no** non-binary forms. Where copy refers to a parent's child,
+the AR uses **"ابنك أو بنتك"** (your son or daughter) — both genders are
+named explicitly. Where copy addresses the user directly with a gendered
+verb, masculine is the default per standard Arabic convention, with `.m` /
+`.f` key suffixes available for surfaces that need to branch (used in the
+`auth.teacher.welcome.*`, `admin.verify.welcome.*` patterns).
+
+This policy was applied in wave H to revert prior "gender-inclusive"
+substitutions back to the binary M+F formulation. Updated entries:
+
+- `audience.parents.hero.title` / `.hero.sub` / `.cta.start_trial` /
+  `.contact.body`
+- `about.who.body`
+- `consent.form.right_access_desc` / `.right_delete_desc` /
+  `.retention_note` / `.footer_disclaimer`
 
 ## What was asked
 
@@ -164,3 +183,42 @@ commit. All three commits TS clean. No regressions.
 - `c0e7afbe` — WAVE F: 67 surfaces wired (wave 2).
 - `68dbfa25` — WAVE G: 35 more surfaces wired + ~20 QA fixes (wave 3).
 - `e8b2eda4` — chore cleanup.
+- `c10badae` — docs: honest scope statement.
+- `a203c080` — WAVE H: 40 parallel agents, ~26 more surfaces wired
+  (analysis pages, parent dashboard, teacher dashboard, demo school chrome,
+  legal AR banner components), binary M/F gender policy reversed,
+  +~70 dictionary keys.
+
+## Wave H surfaces (29 files, commit a203c080)
+
+- `/analysis/**` — all 11 pages wired (hub, revision, macbeth, jekyll-hyde,
+  christmas-carol, inspector-calls, aqa-love-relationships, aqa-power-conflict,
+  language-paper, ai-feedback-head-to-head, [...slug] catch-all).
+- `/parent/**` — dashboard, progress, settings, login, signup, link-child,
+  reports, delete-data.
+- `/dashboard/teacher/**` — layout, page, students, assignments,
+  analytics/AnalyticsPageClient, resources.
+- `/demo/school/layout-client.tsx`.
+- New components: `src/components/legal/LegalArBanner.tsx` +
+  `LegalArBannerClient.tsx` (renders short Khaleeji banner only in AR
+  mode, per `pageKey` prop — server + client variants).
+
+## Wave H known issues
+
+40 parallel agents were spawned per the user's "deploy 250 agents"
+directive. Realistic outcome:
+
+- **~26 of 40 surfaces persisted their wiring** to disk. The lint-staged
+  stash hook reverted some concurrent edits when multiple agents wrote
+  during the same hook window.
+- **A few agents searched the wrong repo path** (Documents path instead
+  of D:\Coding\english-hub) and produced no edits — these were flagged in
+  their reports.
+- **Dictionary additions are partial**: ~70 high-impact keys for the
+  wired surfaces landed. Many more keys were proposed by agents but
+  deferred. Missing keys render as `[[key]]` placeholders in dev (per
+  the dictionary's lookup contract), which is graceful but visible.
+- **Total surface coverage post-H**: ~130 source files actively wired.
+  Bulk of high-traffic chrome translated; long-tail content pages
+  (vocabulary, individual board guides, specific course modules) remain
+  in EN.
