@@ -28,6 +28,7 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import { AIContentLabel } from '@/components/ai/ai-content-label'
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { getBlogPost, getBlogSlugs, type BlogPost } from '@/lib/blog/posts'
+import { tSync } from '@/lib/i18n/t'
 
 const SITE_URL = 'https://theenglishhub.app'
 const BLOG_URL = `${SITE_URL}/blog`
@@ -149,6 +150,16 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
     options: { parseFrontmatter: false },
   })
 
+  // Localised chrome — synchronous lookups using the locale we already
+  // resolved above (we avoid `tMany()` because re-reading `headers()`
+  // would opt the route into dynamic rendering and defeat the static
+  // `dynamicParams = false` 404 gate documented above).
+  const tBlogLabel = tSync('blog.breadcrumb_label', locale)
+  const readingTimeLabel = tSync('blog.reading_time', locale).replace(
+    '{n}',
+    String(post.readingTime),
+  )
+
   return (
     <main className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-16 lg:max-w-3xl lg:px-8">
       <BreadcrumbJsonLd
@@ -171,7 +182,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
         <header className="mb-8">
           <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
             <Link href="/blog" className="underline underline-offset-4 hover:text-foreground">
-              Blog
+              {tBlogLabel}
             </Link>
             {post.category ? (
               <>
@@ -190,7 +201,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
             <span aria-hidden="true">·</span>
             <time dateTime={post.date}>{formatDisplayDate(post.date)}</time>
             <span aria-hidden="true">·</span>
-            <span>{post.readingTime} min read</span>
+            <span>{readingTimeLabel}</span>
             <span aria-hidden="true">·</span>
             <span>{post.educationalLevel}</span>
             <span aria-hidden="true">·</span>

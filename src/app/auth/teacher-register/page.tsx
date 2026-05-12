@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import { useT } from '@/lib/i18n/use-t'
 import {
   User,
   Mail,
@@ -36,17 +37,18 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import GoogleSignInButton from '@/components/auth/GoogleSignInButton'
 
-const BENEFITS = [
-  { icon: BookOpen, text: '300+ ready-made lesson plans' },
-  { icon: CheckSquare, text: 'AI essay marking and feedback' },
-  { icon: BarChart2, text: 'Real-time student analytics' },
-  { icon: ClipboardList, text: 'Homework management' },
-  { icon: FileText, text: 'Mock exam papers for all boards' },
-  { icon: Star, text: '3 free uses of every AI tool' },
+const BENEFIT_KEYS = [
+  { icon: BookOpen, key: 'auth.teacher.benefit.lesson_plans' as const },
+  { icon: CheckSquare, key: 'auth.teacher.benefit.ai_marking' as const },
+  { icon: BarChart2, key: 'auth.teacher.benefit.analytics' as const },
+  { icon: ClipboardList, key: 'auth.teacher.benefit.homework' as const },
+  { icon: FileText, key: 'auth.teacher.benefit.mock_papers' as const },
+  { icon: Star, key: 'auth.teacher.benefit.free_ai_uses' as const },
 ]
 
 export default function TeacherRegisterPage() {
   const router = useRouter()
+  const t = useT()
 
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -94,25 +96,24 @@ export default function TeacherRegisterPage() {
 
     const errors: Record<string, string> = {}
 
-    if (!firstName.trim()) errors.firstName = 'First name is required.'
-    if (!lastName.trim()) errors.lastName = 'Last name is required.'
-    if (!email.trim()) errors.email = 'Email address is required.'
-    if (!password) errors.password = 'Password is required.'
-    else if (password.length < 8) errors.password = 'Password must be at least 8 characters.'
-    if (!confirmPassword) errors.confirmPassword = 'Please confirm your password.'
-    else if (password !== confirmPassword) errors.confirmPassword = 'Passwords do not match.'
-    if (!dobDay || !dobMonth || !dobYear) errors.dob = 'Date of birth is required.'
+    if (!firstName.trim()) errors.firstName = t('form.first_name_required')
+    if (!lastName.trim()) errors.lastName = t('form.last_name_required')
+    if (!email.trim()) errors.email = t('form.email_required')
+    if (!password) errors.password = t('form.password_required')
+    else if (password.length < 8) errors.password = t('form.password_min_8')
+    if (!confirmPassword) errors.confirmPassword = t('form.confirm_password_required')
+    else if (password !== confirmPassword) errors.confirmPassword = t('form.password_mismatch')
+    if (!dobDay || !dobMonth || !dobYear) errors.dob = t('form.dob_required')
     else if (isUnder18) {
-      errors.dob =
-        'Teacher accounts are for adults (18+). If you are a student, please use the student sign-up.'
+      errors.dob = t('auth.teacher.adults_only')
     }
-    if (!isTeacher) errors.isTeacher = 'Please confirm you are a teacher.'
-    if (!agreeTerms) errors.agreeTerms = 'You must accept the Terms of Service.'
-    if (!agreePrivacy) errors.agreePrivacy = 'You must accept the Privacy Policy.'
+    if (!isTeacher) errors.isTeacher = t('auth.teacher.confirm_teacher_required')
+    if (!agreeTerms) errors.agreeTerms = t('form.accept_terms_required')
+    if (!agreePrivacy) errors.agreePrivacy = t('form.accept_privacy_required')
 
     if (Object.keys(errors).length > 0) {
       setFieldErrors(errors)
-      setError('Please fix the errors below.')
+      setError(t('form.fix_errors_below'))
       return
     }
 
@@ -183,7 +184,7 @@ export default function TeacherRegisterPage() {
 
       setSuccess(true)
     } catch {
-      setError('Something went wrong. Please try again.')
+      setError(t('action.error_generic'))
     } finally {
       setLoading(false)
     }
@@ -197,36 +198,36 @@ export default function TeacherRegisterPage() {
             <CardContent className="pt-10 pb-8">
               <CheckCircle className="w-14 h-14 text-primary mx-auto mb-4" />
               <h1 className="text-2xl font-bold text-foreground mb-3">
-                Welcome to The English Hub
+                {t('auth.teacher.welcome_title')}
               </h1>
               <p className="text-muted-foreground mb-4">
-                We&rsquo;ve sent a quick verification link to{' '}
-                <span className="text-foreground font-medium">{email}</span> so we can keep your
-                account safe &mdash; but you can keep exploring while you wait.
+                {t('auth.teacher.welcome_prefix')}{' '}
+                <span className="text-foreground font-medium">{email}</span>{' '}
+                {t('auth.teacher.welcome_suffix')}
               </p>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6 text-left">
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">Demo access ready.</span> You have 3
-                  free uses of every premium feature — AI marking, lesson plans, and more. When
-                  you&rsquo;re ready, start a 7-day free trial from &pound;7.99/month (card
-                  required, cancel before day 7).
+                  <span className="font-medium text-foreground">
+                    {t('auth.teacher.demo_ready_lead')}
+                  </span>{' '}
+                  {t('auth.teacher.demo_ready_body')}
                 </p>
               </div>
               <div className="flex flex-col gap-2 mb-4">
                 <Button render={<Link href="/demo/teacher" />} className="w-full" size="lg">
-                  Open the teacher dashboard preview
+                  {t('auth.teacher.open_preview')}
                 </Button>
                 <Button variant="outline" render={<Link href="/" />} className="w-full" size="lg">
-                  Back to home
+                  {t('auth.back_to_home')}
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground">
-                Didn&rsquo;t get the email?{' '}
+                {t('form.didnt_get_email')}{' '}
                 <Link
                   href="/auth/resend-verification"
                   className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
                 >
-                  Resend verification email
+                  {t('auth.resend_verification_email')}
                 </Link>
                 .
               </p>
@@ -248,27 +249,20 @@ export default function TeacherRegisterPage() {
           render={<Link href="/" />}
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to home
+          {t('auth.back_to_home')}
         </Button>
 
         {/* Header */}
         <div className="text-center mb-10">
           <Badge variant="secondary" className="mb-4">
-            Teachers
+            {t('auth.teacher.badge')}
           </Badge>
-          <h1 className="text-3xl font-bold text-foreground mb-3">
-            Start your free teacher account
-          </h1>
+          <h1 className="text-3xl font-bold text-foreground mb-3">{t('auth.teacher.title')}</h1>
           <p className="text-muted-foreground max-w-xl mx-auto text-base">
-            Save 5+ hours per week with AI lesson planning and marking. 3 free uses of every AI
-            tool. Upgrade for unlimited.
+            {t('auth.teacher.subtitle')}
           </p>
-          <p className="text-sm text-primary font-medium mt-2">
-            From &pound;7.99/month &mdash; 7-day free trial, card required, cancel before day 7
-          </p>
-          <p className="text-sm text-muted-foreground mt-2">
-            Sign-up takes under a minute. No card required.
-          </p>
+          <p className="text-sm text-primary font-medium mt-2">{t('auth.teacher.pricing_line')}</p>
+          <p className="text-sm text-muted-foreground mt-2">{t('auth.teacher.signup_takes')}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -276,8 +270,8 @@ export default function TeacherRegisterPage() {
           <div className="lg:col-span-3">
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Your details</CardTitle>
-                <CardDescription>All fields marked * are required.</CardDescription>
+                <CardTitle className="text-xl">{t('auth.teacher.your_details')}</CardTitle>
+                <CardDescription>{t('auth.teacher.required_note')}</CardDescription>
               </CardHeader>
 
               <CardContent>
@@ -292,7 +286,7 @@ export default function TeacherRegisterPage() {
                     <div className="my-6 flex items-center gap-3">
                       <div className="h-px flex-1 bg-border" />
                       <span className="text-xs uppercase tracking-wide text-muted-foreground">
-                        or sign up with email
+                        {t('auth.or_sign_up_with_email')}
                       </span>
                       <div className="h-px flex-1 bg-border" />
                     </div>
@@ -310,7 +304,7 @@ export default function TeacherRegisterPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <Label htmlFor="firstName">
-                        First name <span className="text-destructive">*</span>
+                        {t('form.first_name')} <span className="text-destructive">*</span>
                       </Label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
@@ -319,7 +313,7 @@ export default function TeacherRegisterPage() {
                           type="text"
                           value={firstName}
                           onChange={(e) => setFirstName(e.target.value)}
-                          placeholder="Jane"
+                          placeholder={t('form.first_name_placeholder')}
                           className="pl-10"
                           autoComplete="given-name"
                           aria-invalid={!!fieldErrors.firstName}
@@ -332,7 +326,7 @@ export default function TeacherRegisterPage() {
 
                     <div className="space-y-1.5">
                       <Label htmlFor="lastName">
-                        Last name <span className="text-destructive">*</span>
+                        {t('form.last_name')} <span className="text-destructive">*</span>
                       </Label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
@@ -341,7 +335,7 @@ export default function TeacherRegisterPage() {
                           type="text"
                           value={lastName}
                           onChange={(e) => setLastName(e.target.value)}
-                          placeholder="Smith"
+                          placeholder={t('form.last_name_placeholder')}
                           className="pl-10"
                           autoComplete="family-name"
                           aria-invalid={!!fieldErrors.lastName}
@@ -356,7 +350,7 @@ export default function TeacherRegisterPage() {
                   {/* Email */}
                   <div className="space-y-1.5">
                     <Label htmlFor="email">
-                      Email address <span className="text-destructive">*</span>
+                      {t('form.email')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
@@ -365,7 +359,7 @@ export default function TeacherRegisterPage() {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="jane.smith@school.ac.uk"
+                        placeholder={t('form.teacher_email_placeholder')}
                         className="pl-10"
                         autoComplete="email"
                         aria-invalid={!!fieldErrors.email}
@@ -379,8 +373,10 @@ export default function TeacherRegisterPage() {
                   {/* School name */}
                   <div className="space-y-1.5">
                     <Label htmlFor="schoolName">
-                      School name{' '}
-                      <span className="text-muted-foreground font-normal">(optional)</span>
+                      {t('form.school_name')}{' '}
+                      <span className="text-muted-foreground font-normal">
+                        {t('form.optional')}
+                      </span>
                     </Label>
                     <div className="relative">
                       <School className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
@@ -389,18 +385,18 @@ export default function TeacherRegisterPage() {
                         type="text"
                         value={schoolName}
                         onChange={(e) => setSchoolName(e.target.value)}
-                        placeholder="e.g. Oakwood Academy"
+                        placeholder={t('form.school_placeholder')}
                         className="pl-10"
                         autoComplete="organization"
                       />
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      For school-wide access, ask your school admin or{' '}
+                      {t('auth.teacher.school_wide_before')}{' '}
                       <Link
                         href="/for-schools/register"
                         className="underline underline-offset-2 hover:text-foreground transition-colors"
                       >
-                        register your school at /for-schools/register
+                        {t('auth.teacher.register_school_link')}
                       </Link>
                       .
                     </p>
@@ -412,8 +408,10 @@ export default function TeacherRegisterPage() {
                       as "not specified"). */}
                   <div className="space-y-1.5">
                     <Label htmlFor="selectedExamBoard">
-                      Exam board you primarily teach{' '}
-                      <span className="text-muted-foreground font-normal">(optional)</span>
+                      {t('auth.teacher.primary_board')}{' '}
+                      <span className="text-muted-foreground font-normal">
+                        {t('form.optional')}
+                      </span>
                     </Label>
                     <div className="relative">
                       <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
@@ -423,7 +421,7 @@ export default function TeacherRegisterPage() {
                         onChange={(e) => setSelectedExamBoard(e.target.value)}
                         className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-10 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
                       >
-                        <option value="">Select exam board</option>
+                        <option value="">{t('form.select_exam_board')}</option>
                         <option value="AQA">AQA</option>
                         <option value="EDEXCEL">Pearson Edexcel</option>
                         <option value="OCR">OCR</option>
@@ -438,7 +436,7 @@ export default function TeacherRegisterPage() {
                   {/* Password */}
                   <div className="space-y-1.5">
                     <Label htmlFor="password">
-                      Password <span className="text-destructive">*</span>
+                      {t('form.password')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
                       <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
@@ -447,7 +445,7 @@ export default function TeacherRegisterPage() {
                         type={showPassword ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="At least 8 characters"
+                        placeholder={t('form.at_least_8_chars')}
                         className="pl-10 pr-10"
                         autoComplete="new-password"
                         aria-invalid={!!fieldErrors.password}
@@ -456,7 +454,9 @@ export default function TeacherRegisterPage() {
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
                         className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
-                        aria-label={showPassword ? 'Hide password' : 'Show password'}
+                        aria-label={
+                          showPassword ? t('form.hide_password') : t('form.show_password')
+                        }
                       >
                         {showPassword ? (
                           <EyeOff className="w-4 h-4" />
@@ -473,7 +473,7 @@ export default function TeacherRegisterPage() {
                   {/* Confirm password */}
                   <div className="space-y-1.5">
                     <Label htmlFor="confirmPassword">
-                      Confirm password <span className="text-destructive">*</span>
+                      {t('form.confirm_password')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
                       <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
@@ -482,7 +482,7 @@ export default function TeacherRegisterPage() {
                         type={showConfirm ? 'text' : 'password'}
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        placeholder="Repeat your password"
+                        placeholder={t('form.repeat_password')}
                         className="pl-10 pr-10"
                         autoComplete="new-password"
                         aria-invalid={!!fieldErrors.confirmPassword}
@@ -491,7 +491,7 @@ export default function TeacherRegisterPage() {
                         type="button"
                         onClick={() => setShowConfirm(!showConfirm)}
                         className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
-                        aria-label={showConfirm ? 'Hide password' : 'Show password'}
+                        aria-label={showConfirm ? t('form.hide_password') : t('form.show_password')}
                       >
                         {showConfirm ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                       </button>
@@ -507,7 +507,7 @@ export default function TeacherRegisterPage() {
                     aria-describedby={fieldErrors.dob ? 'dob-error' : undefined}
                   >
                     <legend className="text-sm font-medium leading-none">
-                      Date of birth <span className="text-destructive">*</span>
+                      {t('form.dob')} <span className="text-destructive">*</span>
                     </legend>
                     <div className="relative">
                       <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
@@ -517,10 +517,10 @@ export default function TeacherRegisterPage() {
                           value={dobDay}
                           onChange={(e) => setDobDay(e.target.value)}
                           className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
-                          aria-label="Day"
+                          aria-label={t('form.day')}
                           aria-invalid={!!fieldErrors.dob}
                         >
-                          <option value="">Day</option>
+                          <option value="">{t('form.day')}</option>
                           {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
                             <option key={d} value={String(d)}>
                               {d}
@@ -532,26 +532,28 @@ export default function TeacherRegisterPage() {
                           value={dobMonth}
                           onChange={(e) => setDobMonth(e.target.value)}
                           className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
-                          aria-label="Month"
+                          aria-label={t('form.month')}
                           aria-invalid={!!fieldErrors.dob}
                         >
-                          <option value="">Month</option>
-                          {[
-                            'January',
-                            'February',
-                            'March',
-                            'April',
-                            'May',
-                            'June',
-                            'July',
-                            'August',
-                            'September',
-                            'October',
-                            'November',
-                            'December',
-                          ].map((m, i) => (
+                          <option value="">{t('form.month')}</option>
+                          {(
+                            [
+                              ['form.month.january', 'January'],
+                              ['form.month.february', 'February'],
+                              ['form.month.march', 'March'],
+                              ['form.month.april', 'April'],
+                              ['form.month.may', 'May'],
+                              ['form.month.june', 'June'],
+                              ['form.month.july', 'July'],
+                              ['form.month.august', 'August'],
+                              ['form.month.september', 'September'],
+                              ['form.month.october', 'October'],
+                              ['form.month.november', 'November'],
+                              ['form.month.december', 'December'],
+                            ] as const
+                          ).map(([key, fallback], i) => (
                             <option key={i + 1} value={String(i + 1)}>
-                              {m}
+                              {t(key) === `[[${key}]]` ? fallback : t(key)}
                             </option>
                           ))}
                         </select>
@@ -560,10 +562,10 @@ export default function TeacherRegisterPage() {
                           value={dobYear}
                           onChange={(e) => setDobYear(e.target.value)}
                           className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
-                          aria-label="Year"
+                          aria-label={t('form.year')}
                           aria-invalid={!!fieldErrors.dob}
                         >
-                          <option value="">Year</option>
+                          <option value="">{t('form.year')}</option>
                           {Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i).map(
                             (y) => (
                               <option key={y} value={String(y)}>
@@ -592,7 +594,7 @@ export default function TeacherRegisterPage() {
                         aria-invalid={!!fieldErrors.isTeacher}
                       />
                       <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                        I am a teacher (not a student)
+                        {t('auth.teacher.i_am_teacher')}
                       </span>
                     </label>
                     {fieldErrors.isTeacher && (
@@ -611,12 +613,12 @@ export default function TeacherRegisterPage() {
                         aria-invalid={!!fieldErrors.agreeTerms}
                       />
                       <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                        I agree to the{' '}
+                        {t('form.agree_to_the')}{' '}
                         <Link
                           href="/terms"
                           className="underline underline-offset-2 hover:text-foreground transition-colors"
                         >
-                          Terms of Service
+                          {t('legal.terms_of_service')}
                         </Link>
                       </span>
                     </label>
@@ -636,12 +638,12 @@ export default function TeacherRegisterPage() {
                         aria-invalid={!!fieldErrors.agreePrivacy}
                       />
                       <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                        I have read and accept the{' '}
+                        {t('form.read_and_accept_the')}{' '}
                         <Link
                           href="/privacy-policy"
                           className="underline underline-offset-2 hover:text-foreground transition-colors"
                         >
-                          Privacy Policy
+                          {t('legal.privacy_policy')}
                         </Link>
                       </span>
                     </label>
@@ -654,10 +656,10 @@ export default function TeacherRegisterPage() {
                     {loading ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                        Creating account...
+                        {t('auth.register.creating')}
                       </>
                     ) : (
-                      'Create free teacher account'
+                      t('auth.register.create_teacher_account')
                     )}
                   </Button>
                 </form>
@@ -666,26 +668,26 @@ export default function TeacherRegisterPage() {
               <CardFooter className="flex-col gap-4 pt-0">
                 {/* School CTA */}
                 <p className="text-xs text-muted-foreground text-center border-t border-border pt-4 w-full">
-                  Is your school interested? Ask your Head of Department to{' '}
+                  {t('auth.teacher.school_interested_before')}{' '}
                   <Link
                     href="/for-schools"
                     className="underline underline-offset-2 hover:text-foreground transition-colors"
                   >
-                    learn about the Founding Schools Programme
+                    {t('auth.teacher.founding_schools_link')}
                   </Link>{' '}
-                  for full department access.
+                  {t('auth.teacher.school_interested_after')}
                 </p>
 
                 {/* Login link */}
                 <p className="text-sm text-muted-foreground text-center">
-                  Already have an account?{' '}
+                  {t('auth.register.already_have_account')}{' '}
                   <Button
                     variant="link"
                     size="sm"
                     className="h-auto p-0 font-medium"
                     render={<Link href="/auth/login" />}
                   >
-                    Log in
+                    {t('header.cta.login')}
                   </Button>
                 </p>
               </CardFooter>
@@ -698,17 +700,19 @@ export default function TeacherRegisterPage() {
               <Card className="border-primary/20 bg-primary/5">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base text-primary">
-                    What&apos;s included free
+                    {t('auth.register.whats_included')}
                   </CardTitle>
-                  <p className="text-xs text-muted-foreground">No credit card required</p>
+                  <p className="text-xs text-muted-foreground">
+                    {t('auth.teacher.no_card_required')}
+                  </p>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  {BENEFITS.map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-3">
+                  {BENEFIT_KEYS.map(({ icon: Icon, key }) => (
+                    <div key={key} className="flex items-center gap-3">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10">
                         <Icon className="w-4 h-4 text-primary" />
                       </div>
-                      <span className="text-sm text-foreground">{text}</span>
+                      <span className="text-sm text-foreground">{t(key)}</span>
                     </div>
                   ))}
                 </CardContent>
@@ -718,14 +722,14 @@ export default function TeacherRegisterPage() {
                 <CardContent className="pt-5 pb-4">
                   <p className="text-sm text-muted-foreground text-center">
                     <span className="block text-foreground font-semibold mb-1">
-                      Need school-wide access?
+                      {t('auth.teacher.need_school_wide')}
                     </span>
-                    Register your school for a single subscription that covers all staff.{' '}
+                    {t('auth.teacher.school_wide_body')}{' '}
                     <Link
                       href="/for-schools/register"
                       className="underline underline-offset-2 hover:text-foreground transition-colors"
                     >
-                      Learn more
+                      {t('auth.teacher.learn_more')}
                     </Link>
                   </p>
                 </CardContent>

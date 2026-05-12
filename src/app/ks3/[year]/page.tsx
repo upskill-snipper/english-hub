@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { KS3, getYear, STRAND_LABEL, RUBRIC_LEVEL_LABEL } from '@/lib/ks3/curriculum'
 import type { YearNumber } from '@/lib/ks3/curriculum'
+import { t } from '@/lib/i18n/t'
 
 type Params = { year: string }
 
@@ -43,20 +44,62 @@ export default async function YearPage({ params }: { params: Promise<Params> }) 
   const y = getYear(KS3, n)
   if (!y) notFound()
 
+  const tr = await Promise.all([
+    t('ks3.key_stage_3'), // 0
+    t(`ks3.year_${n}`), // 1  — Year N label
+    t(`ks3.year_${n}_name`), // 2  — Year N name (Foundations/...)
+    t('ks3.yearly_expectations'), // 3
+    t('ks3.year.expected_intro'), // 4
+    t('ks3.strand.reading'), // 5
+    t('ks3.strand.writing'), // 6
+    t('ks3.strand.language'), // 7
+    t('ks3.strand.speaking'), // 8
+    t('ks3.year.three_terms'), // 9
+    t('ks3.term_1'), // 10
+    t('ks3.term_2'), // 11
+    t('ks3.term_3'), // 12
+    t('ks3.year.view_term'), // 13
+    t('ks3.year.marking_rubric'), // 14
+    t('ks3.year.rubric_intro'), // 15
+    t('ks3.year.strand_col'), // 16
+    t('ks3.rubric.below'), // 17
+    t('ks3.rubric.working'), // 18
+    t('ks3.rubric.expected'), // 19
+    t('ks3.rubric.depth'), // 20
+    t('ks3.year.changes_heading'), // 21
+  ])
+  const strandTr: Record<string, string> = {
+    reading: tr[5],
+    writing: tr[6],
+    language: tr[7],
+    speaking: tr[8],
+  }
+  const termLabelTr: Record<number, string> = { 1: tr[10], 2: tr[11], 3: tr[12] }
+  const levelTr: Record<string, string> = {
+    below: tr[17],
+    working: tr[18],
+    expected: tr[19],
+    depth: tr[20],
+  }
+
   return (
     <>
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {tr[0]}
         </Link>
         <span> · </span>
-        <span>Year {n}</span>
+        <span>{tr[1]}</span>
       </p>
-      <h1>{y.name.en}</h1>
+      <h1>
+        {tr[1]} — {tr[2]}
+      </h1>
       <p className="lead">{y.overview.en}</p>
 
-      <h2>Yearly expectations</h2>
-      <p>Students working at the expected standard by the end of Year {n} can:</p>
+      <h2>{tr[3]}</h2>
+      <p>
+        {tr[4]} {tr[1]}:
+      </p>
 
       {(['reading', 'writing', 'language', 'speaking'] as const).map((strand) => (
         <section
@@ -64,7 +107,7 @@ export default async function YearPage({ params }: { params: Promise<Params> }) 
           className="not-prose my-8 rounded-xl border border-border/60 bg-card p-5"
         >
           <h3 className="text-base font-semibold tracking-tight text-foreground mb-3">
-            {STRAND_LABEL[strand].en}
+            {strandTr[strand] ?? STRAND_LABEL[strand].en}
           </h3>
           <ul className="space-y-2 text-sm text-muted-foreground">
             {y.yearlyExpectations[strand].map((exp, i) => (
@@ -79,38 +122,37 @@ export default async function YearPage({ params }: { params: Promise<Params> }) 
         </section>
       ))}
 
-      <h2>Three terms</h2>
+      <h2>{tr[9]}</h2>
       <div className="not-prose grid gap-4 sm:grid-cols-3 my-6">
-        {y.terms.map((t) => (
+        {y.terms.map((term) => (
           <Link
-            key={t.number}
-            href={`/ks3/year-${n}/term-${t.number}`}
+            key={term.number}
+            href={`/ks3/year-${n}/term-${term.number}`}
             className="group rounded-2xl border border-border/60 bg-card p-5 transition-colors hover:border-primary/40 hover:bg-primary/[0.03]"
           >
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
-              {t.label.en}
+              {termLabelTr[term.number] ?? term.label.en}
             </p>
-            <p className="mt-3 text-sm text-muted-foreground line-clamp-4">{t.overview.en}</p>
+            <p className="mt-3 text-sm text-muted-foreground line-clamp-4">{term.overview.en}</p>
             <p className="mt-4 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-              View Term {t.number} →
+              {tr[13]} {termLabelTr[term.number] ?? term.label.en} →
             </p>
           </Link>
         ))}
       </div>
 
-      <h2>Marking rubric — Year {n}</h2>
-      <p>
-        Four strands × four levels. Each cell is the descriptor a marker reads when awarding the
-        level, with the skill codes it draws on.
-      </p>
+      <h2>
+        {tr[14]} — {tr[1]}
+      </h2>
+      <p>{tr[15]}</p>
       <div className="not-prose overflow-x-auto my-6">
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="border-b border-border">
-              <th className="text-start py-2 pe-3 font-semibold">Strand</th>
+              <th className="text-start py-2 pe-3 font-semibold">{tr[16]}</th>
               {(['below', 'working', 'expected', 'depth'] as const).map((l) => (
                 <th key={l} className="text-start py-2 pe-3 font-semibold">
-                  {RUBRIC_LEVEL_LABEL[l].en}
+                  {levelTr[l] ?? RUBRIC_LEVEL_LABEL[l].en}
                 </th>
               ))}
             </tr>
@@ -118,7 +160,9 @@ export default async function YearPage({ params }: { params: Promise<Params> }) 
           <tbody className="[&_td]:align-top [&_td]:py-3 [&_td]:pe-3">
             {(['reading', 'writing', 'language', 'speaking'] as const).map((strand) => (
               <tr key={strand} className="border-b border-border/40">
-                <td className="font-medium text-foreground">{STRAND_LABEL[strand].en}</td>
+                <td className="font-medium text-foreground">
+                  {strandTr[strand] ?? STRAND_LABEL[strand].en}
+                </td>
                 {(['below', 'working', 'expected', 'depth'] as const).map((level) => {
                   const cell = y.rubric.find((r) => r.strand === strand && r.level === level)
                   return (
@@ -133,7 +177,7 @@ export default async function YearPage({ params }: { params: Promise<Params> }) 
         </table>
       </div>
 
-      <h2>What changes by the end of the year</h2>
+      <h2>{tr[21]}</h2>
       <p className="text-base font-medium text-foreground bg-primary/[0.04] border-s-2 border-primary/40 ps-4 py-3 italic">
         {y.terms[0].bigSkillJump.en}
       </p>

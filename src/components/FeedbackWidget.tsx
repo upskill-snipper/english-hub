@@ -1,150 +1,141 @@
-"use client";
+'use client'
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
-type FeedbackTab = "suggestion" | "issue";
+type FeedbackTab = 'suggestion' | 'issue'
 
 interface SuggestionData {
-  subject: string;
-  message: string;
-  category: string;
-  email: string;
+  subject: string
+  message: string
+  category: string
+  email: string
 }
 
 interface IssueData {
-  issueType: string;
-  description: string;
-  severity: string;
-  email: string;
-  screenshot: File | null;
+  issueType: string
+  description: string
+  severity: string
+  email: string
+  screenshot: File | null
 }
 
-const SUGGESTION_CATEGORIES = [
-  "Feature Request",
-  "Content Improvement",
-  "UI/UX",
-  "Other",
-];
+const SUGGESTION_CATEGORIES = ['Feature Request', 'Content Improvement', 'UI/UX', 'Other']
 
-const ISSUE_TYPES = [
-  "Bug",
-  "Broken Link",
-  "Error",
-  "Incorrect Content",
-  "Other",
-];
+const ISSUE_TYPES = ['Bug', 'Broken Link', 'Error', 'Incorrect Content', 'Other']
 
-const SEVERITY_LEVELS = ["Minor", "Major", "Critical"];
+const SEVERITY_LEVELS = ['Minor', 'Major', 'Critical']
 
 /* ─── FeedbackWidget ─────────────────────────────────────────── */
 
 export function FeedbackWidget() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<FeedbackTab>("suggestion");
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const t = useT()
+  const [isOpen, setIsOpen] = useState(false)
+  const [activeTab, setActiveTab] = useState<FeedbackTab>('suggestion')
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
 
   // Suggestion form state
   const [suggestion, setSuggestion] = useState<SuggestionData>({
-    subject: "",
-    message: "",
+    subject: '',
+    message: '',
     category: SUGGESTION_CATEGORIES[0],
-    email: "",
-  });
+    email: '',
+  })
 
   // Issue form state
   const [issue, setIssue] = useState<IssueData>({
     issueType: ISSUE_TYPES[0],
-    description: "",
+    description: '',
     severity: SEVERITY_LEVELS[0],
-    email: "",
+    email: '',
     screenshot: null,
-  });
+  })
 
-  const panelRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   /* ── Reset form ──────────────────────────────────────────── */
 
   const resetForms = useCallback(() => {
     setSuggestion({
-      subject: "",
-      message: "",
+      subject: '',
+      message: '',
       category: SUGGESTION_CATEGORIES[0],
-      email: "",
-    });
+      email: '',
+    })
     setIssue({
       issueType: ISSUE_TYPES[0],
-      description: "",
+      description: '',
       severity: SEVERITY_LEVELS[0],
-      email: "",
+      email: '',
       screenshot: null,
-    });
-    if (fileInputRef.current) fileInputRef.current.value = "";
-  }, []);
+    })
+    if (fileInputRef.current) fileInputRef.current.value = ''
+  }, [])
 
   /* ── Close handler ───────────────────────────────────────── */
 
   const close = useCallback(() => {
-    setIsOpen(false);
-    setSubmitted(false);
-    triggerRef.current?.focus();
-  }, []);
+    setIsOpen(false)
+    setSubmitted(false)
+    triggerRef.current?.focus()
+  }, [])
 
   /* ── Focus trap + Escape ─────────────────────────────────── */
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) return
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        close();
-        return;
+      if (e.key === 'Escape') {
+        close()
+        return
       }
 
-      if (e.key !== "Tab") return;
-      const panel = panelRef.current;
-      if (!panel) return;
+      if (e.key !== 'Tab') return
+      const panel = panelRef.current
+      if (!panel) return
 
       const focusable = panel.querySelectorAll<HTMLElement>(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      if (focusable.length === 0) return;
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      )
+      if (focusable.length === 0) return
 
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
 
       if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
+        e.preventDefault()
+        last.focus()
       } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
+        e.preventDefault()
+        first.focus()
       }
-    };
+    }
 
-    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown)
     // Focus the first focusable element inside the panel
     const timer = setTimeout(() => {
       const first = panelRef.current?.querySelector<HTMLElement>(
-        'button, [tabindex]:not([tabindex="-1"])'
-      );
-      first?.focus();
-    }, 0);
+        'button, [tabindex]:not([tabindex="-1"])',
+      )
+      first?.focus()
+    }, 0)
 
     return () => {
-      clearTimeout(timer);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOpen, close]);
+      clearTimeout(timer)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isOpen, close])
 
   /* ── Click outside to close ──────────────────────────────── */
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) return
 
     const handleClick = (e: MouseEvent) => {
       if (
@@ -153,24 +144,24 @@ export function FeedbackWidget() {
         triggerRef.current &&
         !triggerRef.current.contains(e.target as Node)
       ) {
-        close();
+        close()
       }
-    };
+    }
 
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, [isOpen, close]);
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [isOpen, close])
 
   /* ── Submit ──────────────────────────────────────────────── */
 
   const handleSubmit = async () => {
-    setSubmitting(true);
+    setSubmitting(true)
 
-    const pageUrl = window.location.href;
+    const pageUrl = window.location.href
     const payload =
-      activeTab === "suggestion"
+      activeTab === 'suggestion'
         ? {
-            type: "suggestion" as const,
+            type: 'suggestion' as const,
             subject: suggestion.subject,
             message: suggestion.message,
             category: suggestion.category,
@@ -178,43 +169,42 @@ export function FeedbackWidget() {
             pageUrl,
           }
         : {
-            type: "issue" as const,
+            type: 'issue' as const,
             issueType: issue.issueType,
             description: issue.description,
             severity: issue.severity,
             email: issue.email || undefined,
             pageUrl,
-          };
+          }
 
     try {
-      const res = await fetch("/api/feedback", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-      });
+      })
 
       if (res.ok) {
-        setSubmitted(true);
-        resetForms();
+        setSubmitted(true)
+        resetForms()
       }
     } catch {
       // Silently fail — could add error toast here
     } finally {
-      setSubmitting(false);
+      setSubmitting(false)
     }
-  };
+  }
 
-  const canSubmitSuggestion =
-    suggestion.subject.trim() !== "" && suggestion.message.trim() !== "";
-  const canSubmitIssue = issue.description.trim() !== "";
+  const canSubmitSuggestion = suggestion.subject.trim() !== '' && suggestion.message.trim() !== ''
+  const canSubmitIssue = issue.description.trim() !== ''
 
   /* ── Shared form styles ──────────────────────────────────── */
 
-  const labelClass = "block text-sm font-medium text-foreground mb-1";
+  const labelClass = 'block text-sm font-medium text-foreground mb-1'
   const inputClass =
-    "w-full rounded-lg border border-border px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary";
+    'w-full rounded-lg border border-border px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary'
   const selectClass =
-    "w-full rounded-lg border border-border px-3 py-2 text-sm text-foreground bg-card focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary";
+    'w-full rounded-lg border border-border px-3 py-2 text-sm text-foreground bg-card focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary'
 
   return (
     <>
@@ -222,10 +212,10 @@ export function FeedbackWidget() {
       <button
         ref={triggerRef}
         onClick={() => {
-          setIsOpen((prev) => !prev);
-          if (submitted) setSubmitted(false);
+          setIsOpen((prev) => !prev)
+          if (submitted) setSubmitted(false)
         }}
-        aria-label={isOpen ? "Close feedback form" : "Send feedback or report an issue"}
+        aria-label={isOpen ? t('marking.feedback_close_aria') : t('marking.feedback_open_aria')}
         aria-expanded={isOpen}
         aria-haspopup="dialog"
         className="fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:scale-110"
@@ -241,11 +231,7 @@ export function FeedbackWidget() {
             strokeWidth={2}
             aria-hidden="true"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
           /* Lightbulb / speech bubble hybrid icon */
@@ -273,7 +259,7 @@ export function FeedbackWidget() {
           ref={panelRef}
           role="dialog"
           aria-modal="true"
-          aria-label="Feedback form"
+          aria-label={t('marking.feedback_form_aria')}
           className="fixed bottom-20 right-4 z-40 w-[calc(100vw-2rem)] max-w-md rounded-xl bg-card shadow-2xl border border-border overflow-hidden sm:w-96"
         >
           {/* ── Success state ──────────────────────────────── */}
@@ -289,26 +275,22 @@ export function FeedbackWidget() {
                   strokeWidth={2}
                   aria-hidden="true"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-foreground">
-                  Thank you for your feedback!
+                  {t('marking.feedback_thanks_title')}
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  We appreciate you taking the time to help us improve.
+                  {t('marking.feedback_thanks_body')}
                 </p>
               </div>
               <button
                 onClick={close}
                 className="mt-2 rounded-lg bg-primary px-5 py-2 text-sm font-medium text-white hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
-                Close
+                {t('marking.close')}
               </button>
             </div>
           ) : (
@@ -316,11 +298,11 @@ export function FeedbackWidget() {
               {/* ── Header ─────────────────────────────────── */}
               <div className="flex items-center justify-between border-b border-border bg-background px-4 py-3">
                 <h2 className="text-sm font-semibold text-foreground">
-                  Share Your Feedback
+                  {t('marking.share_your_feedback')}
                 </h2>
                 <button
                   onClick={close}
-                  aria-label="Close feedback form"
+                  aria-label={t('marking.feedback_close_aria')}
                   className="rounded-lg p-1 text-muted-foreground hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 >
                   <svg
@@ -332,48 +314,48 @@ export function FeedbackWidget() {
                     strokeWidth={2}
                     aria-hidden="true"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
 
               {/* ── Tab toggle ─────────────────────────────── */}
-              <div className="flex border-b border-border" role="tablist" aria-label="Feedback type">
+              <div
+                className="flex border-b border-border"
+                role="tablist"
+                aria-label={t('marking.feedback_type_aria')}
+              >
                 <button
                   role="tab"
-                  aria-selected={activeTab === "suggestion"}
+                  aria-selected={activeTab === 'suggestion'}
                   aria-controls="panel-suggestion"
                   id="tab-suggestion"
-                  onClick={() => setActiveTab("suggestion")}
+                  onClick={() => setActiveTab('suggestion')}
                   className={`flex-1 py-2.5 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ${
-                    activeTab === "suggestion"
-                      ? "text-accent"
-                      : "text-muted-foreground hover:text-foreground"
+                    activeTab === 'suggestion'
+                      ? 'text-accent'
+                      : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
-                  Suggestion
-                  {activeTab === "suggestion" && (
+                  {t('marking.tab_suggestion')}
+                  {activeTab === 'suggestion' && (
                     <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent" />
                   )}
                 </button>
                 <button
                   role="tab"
-                  aria-selected={activeTab === "issue"}
+                  aria-selected={activeTab === 'issue'}
                   aria-controls="panel-issue"
                   id="tab-issue"
-                  onClick={() => setActiveTab("issue")}
+                  onClick={() => setActiveTab('issue')}
                   className={`flex-1 py-2.5 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ${
-                    activeTab === "issue"
-                      ? "text-accent"
-                      : "text-muted-foreground hover:text-foreground"
+                    activeTab === 'issue'
+                      ? 'text-accent'
+                      : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
-                  Report Issue
-                  {activeTab === "issue" && (
+                  {t('marking.tab_report_issue')}
+                  {activeTab === 'issue' && (
                     <span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent" />
                   )}
                 </button>
@@ -382,7 +364,7 @@ export function FeedbackWidget() {
               {/* ── Form body ──────────────────────────────── */}
               <div className="max-h-[60vh] overflow-y-auto p-4">
                 {/* ── Suggestion tab ───────────────────────── */}
-                {activeTab === "suggestion" && (
+                {activeTab === 'suggestion' && (
                   <div
                     id="panel-suggestion"
                     role="tabpanel"
@@ -391,48 +373,42 @@ export function FeedbackWidget() {
                   >
                     <div>
                       <label htmlFor="fb-subject" className={labelClass}>
-                        Subject <span className="text-warn">*</span>
+                        {t('marking.feedback_subject')} <span className="text-warn">*</span>
                       </label>
                       <input
                         id="fb-subject"
                         type="text"
                         maxLength={120}
-                        placeholder="Brief title for your suggestion"
+                        placeholder={t('marking.feedback_subject_placeholder')}
                         value={suggestion.subject}
-                        onChange={(e) =>
-                          setSuggestion((s) => ({ ...s, subject: e.target.value }))
-                        }
+                        onChange={(e) => setSuggestion((s) => ({ ...s, subject: e.target.value }))}
                         className={inputClass}
                       />
                     </div>
 
                     <div>
                       <label htmlFor="fb-message" className={labelClass}>
-                        Message <span className="text-warn">*</span>
+                        {t('marking.feedback_message')} <span className="text-warn">*</span>
                       </label>
                       <textarea
                         id="fb-message"
                         rows={4}
                         maxLength={2000}
-                        placeholder="Describe your suggestion in detail..."
+                        placeholder={t('marking.feedback_message_placeholder')}
                         value={suggestion.message}
-                        onChange={(e) =>
-                          setSuggestion((s) => ({ ...s, message: e.target.value }))
-                        }
-                        className={inputClass + " resize-none"}
+                        onChange={(e) => setSuggestion((s) => ({ ...s, message: e.target.value }))}
+                        className={inputClass + ' resize-none'}
                       />
                     </div>
 
                     <div>
                       <label htmlFor="fb-category" className={labelClass}>
-                        Category
+                        {t('marking.feedback_category')}
                       </label>
                       <select
                         id="fb-category"
                         value={suggestion.category}
-                        onChange={(e) =>
-                          setSuggestion((s) => ({ ...s, category: e.target.value }))
-                        }
+                        onChange={(e) => setSuggestion((s) => ({ ...s, category: e.target.value }))}
                         className={selectClass}
                       >
                         {SUGGESTION_CATEGORIES.map((c) => (
@@ -445,17 +421,17 @@ export function FeedbackWidget() {
 
                     <div>
                       <label htmlFor="fb-email-suggestion" className={labelClass}>
-                        Email{" "}
-                        <span className="text-muted-foreground font-normal">(optional)</span>
+                        {t('marking.feedback_email')}{' '}
+                        <span className="text-muted-foreground font-normal">
+                          {t('marking.optional_label')}
+                        </span>
                       </label>
                       <input
                         id="fb-email-suggestion"
                         type="email"
                         placeholder="your@email.com"
                         value={suggestion.email}
-                        onChange={(e) =>
-                          setSuggestion((s) => ({ ...s, email: e.target.value }))
-                        }
+                        onChange={(e) => setSuggestion((s) => ({ ...s, email: e.target.value }))}
                         className={inputClass}
                       />
                     </div>
@@ -465,13 +441,13 @@ export function FeedbackWidget() {
                       disabled={!canSubmitSuggestion || submitting}
                       className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
                     >
-                      {submitting ? "Submitting..." : "Submit Suggestion"}
+                      {submitting ? t('marking.submitting') : t('marking.submit_suggestion')}
                     </button>
                   </div>
                 )}
 
                 {/* ── Report Issue tab ─────────────────────── */}
-                {activeTab === "issue" && (
+                {activeTab === 'issue' && (
                   <div
                     id="panel-issue"
                     role="tabpanel"
@@ -480,14 +456,12 @@ export function FeedbackWidget() {
                   >
                     <div>
                       <label htmlFor="fb-issue-type" className={labelClass}>
-                        Issue Type
+                        {t('marking.issue_type')}
                       </label>
                       <select
                         id="fb-issue-type"
                         value={issue.issueType}
-                        onChange={(e) =>
-                          setIssue((s) => ({ ...s, issueType: e.target.value }))
-                        }
+                        onChange={(e) => setIssue((s) => ({ ...s, issueType: e.target.value }))}
                         className={selectClass}
                       >
                         {ISSUE_TYPES.map((t) => (
@@ -500,31 +474,27 @@ export function FeedbackWidget() {
 
                     <div>
                       <label htmlFor="fb-description" className={labelClass}>
-                        Description <span className="text-warn">*</span>
+                        {t('marking.feedback_description')} <span className="text-warn">*</span>
                       </label>
                       <textarea
                         id="fb-description"
                         rows={4}
                         maxLength={2000}
-                        placeholder="Describe the issue you encountered..."
+                        placeholder={t('marking.issue_description_placeholder')}
                         value={issue.description}
-                        onChange={(e) =>
-                          setIssue((s) => ({ ...s, description: e.target.value }))
-                        }
-                        className={inputClass + " resize-none"}
+                        onChange={(e) => setIssue((s) => ({ ...s, description: e.target.value }))}
+                        className={inputClass + ' resize-none'}
                       />
                     </div>
 
                     <div>
                       <label htmlFor="fb-severity" className={labelClass}>
-                        Severity
+                        {t('marking.feedback_severity')}
                       </label>
                       <select
                         id="fb-severity"
                         value={issue.severity}
-                        onChange={(e) =>
-                          setIssue((s) => ({ ...s, severity: e.target.value }))
-                        }
+                        onChange={(e) => setIssue((s) => ({ ...s, severity: e.target.value }))}
                         className={selectClass}
                       >
                         {SEVERITY_LEVELS.map((s) => (
@@ -537,8 +507,10 @@ export function FeedbackWidget() {
 
                     <div>
                       <label htmlFor="fb-screenshot" className={labelClass}>
-                        Screenshot{" "}
-                        <span className="text-muted-foreground font-normal">(optional)</span>
+                        {t('marking.feedback_screenshot')}{' '}
+                        <span className="text-muted-foreground font-normal">
+                          {t('marking.optional_label')}
+                        </span>
                       </label>
                       <input
                         id="fb-screenshot"
@@ -557,23 +529,23 @@ export function FeedbackWidget() {
 
                     <div>
                       <label htmlFor="fb-email-issue" className={labelClass}>
-                        Email{" "}
-                        <span className="text-muted-foreground font-normal">(optional)</span>
+                        {t('marking.feedback_email')}{' '}
+                        <span className="text-muted-foreground font-normal">
+                          {t('marking.optional_label')}
+                        </span>
                       </label>
                       <input
                         id="fb-email-issue"
                         type="email"
                         placeholder="your@email.com"
                         value={issue.email}
-                        onChange={(e) =>
-                          setIssue((s) => ({ ...s, email: e.target.value }))
-                        }
+                        onChange={(e) => setIssue((s) => ({ ...s, email: e.target.value }))}
                         className={inputClass}
                       />
                     </div>
 
                     <div className="rounded-lg bg-background px-3 py-2 text-xs text-muted-foreground">
-                      Current page URL will be included automatically.
+                      {t('marking.page_url_auto')}
                     </div>
 
                     <button
@@ -581,7 +553,7 @@ export function FeedbackWidget() {
                       disabled={!canSubmitIssue || submitting}
                       className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
                     >
-                      {submitting ? "Submitting..." : "Report Issue"}
+                      {submitting ? t('marking.submitting') : t('marking.report_issue')}
                     </button>
                   </div>
                 )}
@@ -591,5 +563,5 @@ export function FeedbackWidget() {
         </div>
       )}
     </>
-  );
+  )
 }

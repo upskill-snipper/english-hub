@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { Separator } from '@/components/ui/separator'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { useT } from '@/lib/i18n/use-t'
 
 // Supabase: replace mock props with real child record from database
 export interface ChildProgressCardProps {
@@ -39,6 +40,7 @@ export function ChildProgressCard({
   modulesCompleted = 0,
   recentScoreAverage = null,
 }: ChildProgressCardProps) {
+  const t = useT()
   const initials = getInitials(name) || 'EH'
   const clampedProgress = Math.max(0, Math.min(100, Math.round(overallProgress)))
 
@@ -68,11 +70,9 @@ export function ChildProgressCard({
               {workingAtGrade != null && (
                 <div className="text-center">
                   <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Now
+                    {t('grade.now')}
                   </p>
-                  <p className="text-2xl font-extrabold text-foreground">
-                    {workingAtGrade}
-                  </p>
+                  <p className="text-2xl font-extrabold text-foreground">{workingAtGrade}</p>
                 </div>
               )}
               {predictedGrade != null && (
@@ -80,11 +80,9 @@ export function ChildProgressCard({
                   <Separator orientation="vertical" className="h-10" />
                   <div className="text-center">
                     <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                      Predicted
+                      {t('grade.predicted')}
                     </p>
-                    <p className="text-2xl font-extrabold text-primary">
-                      {predictedGrade}
-                    </p>
+                    <p className="text-2xl font-extrabold text-primary">{predictedGrade}</p>
                   </div>
                 </>
               )}
@@ -93,11 +91,9 @@ export function ChildProgressCard({
                   <Separator orientation="vertical" className="h-10" />
                   <div className="text-center">
                     <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                      Target
+                      {t('grade.target')}
                     </p>
-                    <p className="text-2xl font-extrabold text-muted-foreground">
-                      {targetGrade}
-                    </p>
+                    <p className="text-2xl font-extrabold text-muted-foreground">{targetGrade}</p>
                   </div>
                 </>
               )}
@@ -109,7 +105,7 @@ export function ChildProgressCard({
         <div className="mt-6">
           <div className="mb-2 flex items-center justify-between">
             <span className="text-sm font-medium text-foreground">
-              Overall revision progress
+              {t('parent.overall_progress')}
             </span>
             <span className="text-sm font-bold text-foreground">{clampedProgress}%</span>
           </div>
@@ -121,14 +117,14 @@ export function ChildProgressCard({
           <div className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2">
             <BookOpen className="h-4 w-4 shrink-0 text-primary" />
             <div className="min-w-0">
-              <p className="truncate text-xs text-muted-foreground">Modules</p>
+              <p className="truncate text-xs text-muted-foreground">{t('parent.modules')}</p>
               <p className="text-sm font-bold text-foreground">{modulesCompleted}</p>
             </div>
           </div>
           <div className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2">
             <Trophy className="h-4 w-4 shrink-0 text-primary" />
             <div className="min-w-0">
-              <p className="truncate text-xs text-muted-foreground">Avg score</p>
+              <p className="truncate text-xs text-muted-foreground">{t('parent.avg_score')}</p>
               <p className="text-sm font-bold text-foreground">
                 {recentScoreAverage != null ? `${recentScoreAverage}%` : '—'}
               </p>
@@ -137,9 +133,11 @@ export function ChildProgressCard({
           <div className="flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2">
             <TrendingUp className="h-4 w-4 shrink-0 text-primary" />
             <div className="min-w-0">
-              <p className="truncate text-xs text-muted-foreground">Trend</p>
+              <p className="truncate text-xs text-muted-foreground">{t('parent.trend')}</p>
               <p className="text-sm font-bold text-foreground">
-                {recentScoreAverage != null && recentScoreAverage >= 60 ? 'Up' : 'Steady'}
+                {recentScoreAverage != null && recentScoreAverage >= 60
+                  ? t('parent.trend.up')
+                  : t('parent.trend.steady')}
               </p>
             </div>
           </div>
@@ -149,9 +147,11 @@ export function ChildProgressCard({
           <div className="mt-5 flex items-start gap-2 rounded-lg border border-border bg-primary/10 p-3 text-sm text-primary">
             <Target className="mt-0.5 h-4 w-4 shrink-0" />
             <span>
-              {name.split(' ')[0]} is {targetGrade - predictedGrade} grade
-              {targetGrade - predictedGrade === 1 ? '' : 's'} below target — see the Progress page for
-              suggested focus areas.
+              {name.split(' ')[0]} {t('parent.below_target_lead')} {targetGrade - predictedGrade}{' '}
+              {targetGrade - predictedGrade === 1
+                ? t('parent.grade_singular')
+                : t('parent.grade_plural')}{' '}
+              {t('parent.below_target_tail')}
             </span>
           </div>
         )}

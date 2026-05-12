@@ -56,28 +56,31 @@ import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
-function formatRelativeDate(iso: string) {
+type Translator = (key: string) => string
+
+function formatRelativeDate(iso: string, t: Translator) {
   const date = new Date(iso)
   const now = new Date()
   const diffMs = now.getTime() - date.getTime()
   const diffMins = Math.floor(diffMs / 60_000)
-  if (diffMins < 1) return 'Just now'
-  if (diffMins < 60) return `${diffMins}m ago`
+  if (diffMins < 1) return t('dash.time.just_now')
+  if (diffMins < 60) return `${diffMins}${t('dash.time.m_ago')}`
   const diffHours = Math.floor(diffMins / 60)
-  if (diffHours < 24) return `${diffHours}h ago`
+  if (diffHours < 24) return `${diffHours}${t('dash.time.h_ago')}`
   const diffDays = Math.floor(diffHours / 24)
-  if (diffDays < 7) return `${diffDays}d ago`
+  if (diffDays < 7) return `${diffDays}${t('dash.time.d_ago')}`
   return formatDate(iso)
 }
 
-function getGreeting() {
+function getGreetingKey() {
   const hour = new Date().getHours()
-  if (hour < 12) return 'Good morning'
-  if (hour < 17) return 'Good afternoon'
-  return 'Good evening'
+  if (hour < 12) return 'dash.greeting.morning'
+  if (hour < 17) return 'dash.greeting.afternoon'
+  return 'dash.greeting.evening'
 }
 
 // courseMap is now built dynamically inside the component — see useMemo below
@@ -136,6 +139,7 @@ function ActivitySkeleton() {
 // ── Main Component ─────────────────────────────────────────────────────────
 
 export default function DashboardPage() {
+  const t = useT()
   const { user, profile, isLoading } = useAuthStore()
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -227,7 +231,7 @@ export default function DashboardPage() {
         }
       } catch (err) {
         console.error('Failed to fetch dashboard data:', err)
-        setError('Something went wrong loading your dashboard. Please try again.')
+        setError(t('dash.error_loading'))
       } finally {
         setLoading(false)
       }
@@ -282,8 +286,8 @@ export default function DashboardPage() {
     >
   }, [enrolments, moduleProgress])
 
-  const firstName = profile?.full_name?.split(' ')[0] ?? 'Student'
-  const greeting = getGreeting()
+  const firstName = profile?.full_name?.split(' ')[0] ?? t('dash.student')
+  const greeting = t(getGreetingKey())
 
   const activeCourses = enrolledCourses.filter((ec) => ec.progress < 100)
   const completedCourses = enrolledCourses.filter((ec) => ec.progress >= 100)
@@ -292,56 +296,56 @@ export default function DashboardPage() {
 
   const quickActions = [
     {
-      label: 'Your Hub',
+      label: t('header.nav.your_hub'),
       href: '/revision',
       icon: Layers,
       color: 'text-primary',
       bg: 'bg-primary/10',
     },
     {
-      label: 'Browse Courses',
+      label: t('dash.qa.browse_courses'),
       href: '/courses',
       icon: BookOpen,
       color: 'text-primary',
       bg: 'bg-primary/10',
     },
     {
-      label: 'Practice Questions',
+      label: t('dash.qa.practice_questions'),
       href: '/practice',
       icon: FileText,
       color: 'text-blue-600',
       bg: 'bg-blue-500/10',
     },
     {
-      label: 'Essay Feedback',
+      label: t('dash.qa.essay_feedback'),
       href: '/dashboard/essay-feedback',
       icon: Sparkles,
       color: 'text-amber-600',
       bg: 'bg-amber-500/10',
     },
     {
-      label: 'Mock Exams',
+      label: t('dash.qa.mock_exams'),
       href: '/dashboard/mock-exam',
       icon: Timer,
       color: 'text-red-600',
       bg: 'bg-red-500/10',
     },
     {
-      label: 'Grade Dashboard',
+      label: t('dash.qa.grade_dashboard'),
       href: '/dashboard/grades',
       icon: TrendingUp,
       color: 'text-green-600',
       bg: 'bg-green-500/10',
     },
     {
-      label: 'Reading Assessment',
+      label: t('dash.qa.reading_assessment'),
       href: '/assessment/reading',
       icon: BookOpen,
       color: 'text-teal-700',
       bg: 'bg-emerald-500/10',
     },
     {
-      label: 'Analytics',
+      label: t('dash.qa.analytics'),
       href: '/dashboard/analytics',
       icon: BarChart3,
       color: 'text-cyan-600',
@@ -350,7 +354,7 @@ export default function DashboardPage() {
     ...(schoolInfo
       ? [
           {
-            label: 'School Dashboard',
+            label: t('dash.qa.school_dashboard'),
             href: '/school',
             icon: School,
             color: 'text-indigo-600',
@@ -359,7 +363,7 @@ export default function DashboardPage() {
         ]
       : [
           {
-            label: 'Join School',
+            label: t('dash.qa.join_school'),
             href: '/join-school',
             icon: UserPlus,
             color: 'text-indigo-600',
@@ -430,16 +434,14 @@ export default function DashboardPage() {
           {showWelcome && (
             <Alert className="mb-6 border-primary/30 bg-primary/5">
               <Gift className="h-4 w-4 text-primary" />
-              <AlertTitle className="text-foreground">Welcome to English Hub!</AlertTitle>
+              <AlertTitle className="text-foreground">{t('dash.welcome.title')}</AlertTitle>
               <AlertDescription className="text-muted-foreground">
-                You have 3 free uses of every premium feature. Try AI marking, lesson plans, and
-                more. When you&apos;re ready, start a 7-day free trial — card required, cancel
-                before day 7.
+                {t('dash.welcome.body')}
               </AlertDescription>
               <button
                 onClick={() => setShowWelcome(false)}
                 className="absolute right-3 top-3 text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Dismiss welcome banner"
+                aria-label={t('dash.welcome.dismiss')}
               >
                 <X className="h-4 w-4" />
               </button>
@@ -452,14 +454,12 @@ export default function DashboardPage() {
               <div className="flex items-center gap-3">
                 <School className="h-5 w-5 text-primary" />
                 <div>
-                  <p className="font-medium text-foreground">Teacher Account</p>
-                  <p className="text-sm text-muted-foreground">
-                    Access your teaching tools, student analytics, and lesson resources.
-                  </p>
+                  <p className="font-medium text-foreground">{t('dash.teacher.account')}</p>
+                  <p className="text-sm text-muted-foreground">{t('dash.teacher.blurb')}</p>
                 </div>
               </div>
               <Button size="sm" render={<Link href="/dashboard/teacher" />}>
-                Open Teacher Hub
+                {t('dash.teacher.open_hub')}
               </Button>
             </div>
           )}
@@ -468,7 +468,7 @@ export default function DashboardPage() {
           {error && (
             <Alert variant="destructive" className="mb-6">
               <AlertCircle className="h-4 w-4" />
-              <AlertTitle>Error</AlertTitle>
+              <AlertTitle>{t('dash.error_title')}</AlertTitle>
               <AlertDescription className="flex items-center justify-between">
                 <span>{error}</span>
                 <Button
@@ -481,7 +481,7 @@ export default function DashboardPage() {
                     window.location.reload()
                   }}
                 >
-                  Retry
+                  {t('dash.retry')}
                 </Button>
               </AlertDescription>
             </Alert>
@@ -497,21 +497,19 @@ export default function DashboardPage() {
             </div>
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
-                <h2 className="font-semibold text-foreground">Your Hub</h2>
+                <h2 className="font-semibold text-foreground">{t('header.nav.your_hub')}</h2>
                 <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                  Revision · Toolkit · Analytics
+                  {t('dash.your_hub.badge')}
                 </Badge>
               </div>
-              <p className="mt-0.5 text-sm text-muted-foreground">
-                Your unified home for revision, study tools, progress tracking, and exam technique.
-              </p>
+              <p className="mt-0.5 text-sm text-muted-foreground">{t('dash.your_hub.blurb')}</p>
             </div>
             <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
           </Link>
 
           {/* ── Stats Row ──────────────────────────────────────────────── */}
           <div className="mb-2 flex items-center gap-1.5">
-            <h2 className="text-sm font-medium text-muted-foreground">Your Stats</h2>
+            <h2 className="text-sm font-medium text-muted-foreground">{t('dash.your_stats')}</h2>
             <LearningTip categories={['progress', 'motivation']} side="right" />
           </div>
           <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
@@ -528,28 +526,28 @@ export default function DashboardPage() {
                   icon={<BookOpen className="h-5 w-5" />}
                   iconBg="bg-primary/10"
                   iconColor="text-primary"
-                  label="Enrolled"
+                  label={t('dash.stat.enrolled')}
                   value={enrolments.length}
-                  sub={enrolments.length === 1 ? 'course' : 'courses'}
-                  tooltip="Total number of courses you have enrolled in"
+                  sub={enrolments.length === 1 ? t('dash.stat.course') : t('dash.stat.courses')}
+                  tooltip={t('dash.stat.enrolled_tooltip')}
                 />
                 <StatCard
                   icon={<CheckCircle className="h-5 w-5" />}
                   iconBg="bg-blue-500/10"
                   iconColor="text-blue-600"
-                  label="Completed"
+                  label={t('dash.stat.completed')}
                   value={completedModulesCount}
-                  sub={completedModulesCount === 1 ? 'module' : 'modules'}
-                  tooltip="Total modules you have completed across all courses"
+                  sub={completedModulesCount === 1 ? t('dash.stat.module') : t('dash.stat.modules')}
+                  tooltip={t('dash.stat.completed_tooltip')}
                 />
                 <StatCard
                   icon={<Trophy className="h-5 w-5" />}
                   iconBg="bg-yellow-500/10"
                   iconColor="text-yellow-600"
-                  label="Certificates"
+                  label={t('dash.stat.certificates')}
                   value={certificates.length}
-                  sub={certificates.length === 1 ? 'earned' : 'earned'}
-                  tooltip="Certificates earned by passing final assessments"
+                  sub={t('dash.stat.earned')}
+                  tooltip={t('dash.stat.certs_tooltip')}
                 />
                 <StatCard
                   icon={
@@ -565,10 +563,10 @@ export default function DashboardPage() {
                       ? 'text-yellow-600'
                       : 'text-muted-foreground'
                   }
-                  label="Plan"
+                  label={t('dash.stat.plan')}
                   value={<SubscriptionBadge status={profile?.subscription_status ?? 'free'} />}
-                  sub="current plan"
-                  tooltip="Your current subscription plan"
+                  sub={t('dash.stat.current_plan')}
+                  tooltip={t('dash.stat.plan_tooltip')}
                 />
               </>
             )}
@@ -604,7 +602,7 @@ export default function DashboardPage() {
                     value="continue"
                     className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
                   >
-                    Continue Learning
+                    {t('dash.continue_learning')}
                     {activeCourses.length > 0 && (
                       <Badge variant="secondary" className="ml-1.5">
                         {activeCourses.length}
@@ -615,7 +613,7 @@ export default function DashboardPage() {
                     value="completed"
                     className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
                   >
-                    Completed
+                    {t('dash.completed')}
                     {completedCourses.length > 0 && (
                       <Badge variant="secondary" className="ml-1.5">
                         {completedCourses.length}
@@ -625,7 +623,7 @@ export default function DashboardPage() {
                 </TabsList>
                 {enrolledCourses.length > 0 && (
                   <Button variant="link" size="sm" render={<Link href="/courses" />}>
-                    View all <ArrowRight className="h-3.5 w-3.5" />
+                    {t('action.view_all')} <ArrowRight className="h-3.5 w-3.5" />
                   </Button>
                 )}
               </div>
@@ -640,15 +638,15 @@ export default function DashboardPage() {
                 ) : activeCourses.length === 0 ? (
                   <EmptyState
                     icon={<BookOpen className="h-10 w-10 text-muted-foreground" />}
-                    title="No courses in progress"
-                    description="Browse our catalogue to get started."
-                    actionLabel="Browse Courses"
+                    title={t('dash.empty.no_progress_title')}
+                    description={t('dash.empty.no_progress_desc')}
+                    actionLabel={t('dash.qa.browse_courses')}
                     actionHref="/courses"
                   />
                 ) : (
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {activeCourses.map((ec) => (
-                      <CourseCard key={ec.id} ec={ec} />
+                      <CourseCard key={ec.id} ec={ec} t={t} />
                     ))}
                   </div>
                 )}
@@ -663,15 +661,15 @@ export default function DashboardPage() {
                 ) : completedCourses.length === 0 ? (
                   <EmptyState
                     icon={<Trophy className="h-10 w-10 text-muted-foreground" />}
-                    title="No completed courses yet"
-                    description="Keep learning to complete your first course."
-                    actionLabel="Browse Courses"
+                    title={t('dash.empty.no_completed_title')}
+                    description={t('dash.empty.no_completed_desc')}
+                    actionLabel={t('dash.qa.browse_courses')}
                     actionHref="/courses"
                   />
                 ) : (
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {completedCourses.map((ec) => (
-                      <CourseCard key={ec.id} ec={ec} />
+                      <CourseCard key={ec.id} ec={ec} t={t} />
                     ))}
                   </div>
                 )}
@@ -687,10 +685,10 @@ export default function DashboardPage() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-1.5">
-                  <CardTitle>Recent Activity</CardTitle>
+                  <CardTitle>{t('dash.recent_activity')}</CardTitle>
                   <LearningTip categories={['study', 'motivation']} side="right" />
                 </div>
-                <CardDescription>Your latest completed modules</CardDescription>
+                <CardDescription>{t('dash.recent_activity_desc')}</CardDescription>
               </CardHeader>
               <CardContent>
                 {loading ? (
@@ -702,9 +700,7 @@ export default function DashboardPage() {
                 ) : recentActivity.length === 0 ? (
                   <div className="py-8 text-center text-muted-foreground">
                     <Clock className="mx-auto mb-2 h-8 w-8 opacity-50" />
-                    <p className="text-sm">
-                      No activity yet. Start a course to track your progress.
-                    </p>
+                    <p className="text-sm">{t('dash.no_activity')}</p>
                   </div>
                 ) : (
                   <ScrollArea className="max-h-80">
@@ -720,13 +716,13 @@ export default function DashboardPage() {
                               </div>
                               <div className="min-w-0 flex-1">
                                 <p className="truncate text-sm font-medium text-foreground">
-                                  {mod?.title ?? 'Unknown module'}
+                                  {mod?.title ?? t('dash.unknown_module')}
                                 </p>
                                 <p className="truncate text-xs text-muted-foreground">
-                                  {course?.title ?? 'Unknown course'}
+                                  {course?.title ?? t('dash.unknown_course')}
                                   {activity.completed_at && (
                                     <span className="ml-1.5 opacity-70">
-                                      · {formatRelativeDate(activity.completed_at)}
+                                      · {formatRelativeDate(activity.completed_at, t)}
                                     </span>
                                   )}
                                 </p>
@@ -752,14 +748,14 @@ export default function DashboardPage() {
               <CardHeader>
                 <div className="flex items-center gap-1.5">
                   <CardTitle>
-                    {certificates.length > 0 ? 'Your Certificates' : 'Achievements'}
+                    {certificates.length > 0 ? t('dash.your_certificates') : t('dash.achievements')}
                   </CardTitle>
                   <LearningTip categories={['grade', 'motivation']} side="right" />
                 </div>
                 <CardDescription>
                   {certificates.length > 0
-                    ? `${certificates.length} certificate${certificates.length !== 1 ? 's' : ''} earned`
-                    : 'Complete courses to earn certificates'}
+                    ? `${certificates.length} ${certificates.length === 1 ? t('dash.cert_singular') : t('dash.cert_plural')} ${t('dash.stat.earned')}`
+                    : t('dash.complete_to_earn')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -778,7 +774,7 @@ export default function DashboardPage() {
                 ) : certificates.length === 0 ? (
                   <div className="py-8 text-center text-muted-foreground">
                     <Award className="mx-auto mb-2 h-8 w-8 opacity-50" />
-                    <p className="text-sm">Complete a course to earn your first certificate.</p>
+                    <p className="text-sm">{t('dash.complete_first_cert')}</p>
                   </div>
                 ) : (
                   <ScrollArea className="max-h-80">
@@ -793,7 +789,7 @@ export default function DashboardPage() {
                               </div>
                               <div className="min-w-0 flex-1">
                                 <h2 className="truncate text-sm font-semibold text-foreground">
-                                  {course?.title ?? 'Unknown course'}
+                                  {course?.title ?? t('dash.unknown_course')}
                                 </h2>
                                 <div className="mt-1 flex flex-wrap items-center gap-2">
                                   <GradeBadge grade={cert.grade} />
@@ -810,7 +806,7 @@ export default function DashboardPage() {
                                   className="mt-1 h-auto p-0"
                                   render={<Link href={cert.verification_url} />}
                                 >
-                                  View Certificate <ArrowRight className="h-3 w-3" />
+                                  {t('dash.view_certificate')} <ArrowRight className="h-3 w-3" />
                                 </Button>
                               </div>
                             </div>
@@ -875,6 +871,7 @@ function StatCard({
 }
 
 function SubscriptionBadge({ status }: { status: string }) {
+  const t = useT()
   const variantMap: Record<string, 'default' | 'secondary' | 'destructive' | 'outline'> = {
     free: 'secondary',
     pro: 'default',
@@ -885,14 +882,14 @@ function SubscriptionBadge({ status }: { status: string }) {
     paused: 'secondary',
   }
 
-  const labels: Record<string, string> = {
-    free: 'Free',
-    pro: 'Premium',
-    cancelled: 'Cancelled',
-    past_due: 'Past Due',
-    unpaid: 'Unpaid',
-    incomplete: 'Incomplete',
-    paused: 'Paused',
+  const labelKeys: Record<string, string> = {
+    free: 'sub.free',
+    pro: 'sub.premium',
+    cancelled: 'sub.cancelled',
+    past_due: 'sub.past_due',
+    unpaid: 'sub.unpaid',
+    incomplete: 'sub.incomplete',
+    paused: 'sub.paused',
   }
 
   return (
@@ -901,7 +898,7 @@ function SubscriptionBadge({ status }: { status: string }) {
       className={cn(status === 'pro' && 'bg-yellow-500/10 text-yellow-600 border-yellow-500/30')}
     >
       {status === 'pro' && <Crown className="mr-1 h-3.5 w-3.5" />}
-      {labels[status] ?? 'Free'}
+      {t(labelKeys[status] ?? 'sub.free')}
     </Badge>
   )
 }
@@ -932,6 +929,7 @@ function GradeBadge({ grade }: { grade: string }) {
 
 function CourseCard({
   ec,
+  t,
 }: {
   ec: {
     id: string
@@ -942,6 +940,7 @@ function CourseCard({
     progress: number
     nextModule: CourseData['moduleList'][number] | undefined
   }
+  t: Translator
 }) {
   return (
     <Card className="animate-fade-in">
@@ -957,7 +956,7 @@ function CourseCard({
         </div>
         <CardTitle>{ec.course.title}</CardTitle>
         <CardDescription>
-          {ec.completedModules} of {ec.totalModules} modules
+          {ec.completedModules} {t('dash.out_of')} {ec.totalModules} {t('dash.stat.modules')}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -968,12 +967,12 @@ function CourseCard({
         {ec.nextModule ? (
           <Button size="sm" render={<Link href={`/learn/${ec.course_id}/${ec.nextModule.id}`} />}>
             <Play className="h-3.5 w-3.5" />
-            Continue
+            {t('action.continue')}
           </Button>
         ) : (
           <Badge variant="secondary">
             <CheckCircle className="h-3.5 w-3.5 mr-1" />
-            Completed
+            {t('dash.completed')}
           </Badge>
         )}
       </CardFooter>

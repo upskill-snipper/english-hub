@@ -19,6 +19,7 @@ import {
 import { events } from '@/lib/gtag'
 import { useBoard, type ExamBoard } from '@/lib/board/board-store'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ────────────────────────────────────────────────────────────────────────────
  * Props
@@ -288,19 +289,18 @@ function LevelStep({
   loadingKs3: boolean
   compact?: boolean
 }) {
+  const t = useT()
   return (
     <div className="flex flex-col gap-10">
       <header className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary backdrop-blur-md">
           <Sparkles className="size-3.5" aria-hidden="true" />
-          Welcome to The English Hub
+          {t('board.welcome')}
         </span>
         <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-          What level are you studying?
+          {t('board.level.title')}
         </h1>
-        <p className="text-base text-muted-foreground sm:text-lg">
-          Tell us your level and we&apos;ll tailor every page to your exact course.
-        </p>
+        <p className="text-base text-muted-foreground sm:text-lg">{t('board.level.subtitle')}</p>
       </header>
 
       <div
@@ -311,8 +311,8 @@ function LevelStep({
       >
         <LevelCard
           label="KS3"
-          subLabel="Years 7-9"
-          description="Building your English foundations"
+          subLabel={t('board.level.ks3.years')}
+          description={t('board.level.ks3.desc')}
           icon={Shapes}
           gradient="from-emerald-500/20 via-green-500/10 to-lime-500/20"
           iconGradient="from-emerald-500 to-green-600"
@@ -322,8 +322,8 @@ function LevelStep({
         />
         <LevelCard
           label="GCSE"
-          subLabel="Years 10-11, UK"
-          description="UK GCSE English 9-1"
+          subLabel={t('board.level.gcse.years')}
+          description={t('board.level.gcse.desc')}
           icon={GraduationCap}
           gradient="from-teal-500/20 via-cyan-500/10 to-teal-500/20"
           iconGradient="from-teal-500 to-cyan-600"
@@ -332,8 +332,8 @@ function LevelStep({
         />
         <LevelCard
           label="IGCSE"
-          subLabel="International"
-          description="Studying outside the UK"
+          subLabel={t('board.level.igcse.years')}
+          description={t('board.level.igcse.desc')}
           icon={Globe2}
           gradient="from-indigo-500/20 via-violet-500/10 to-fuchsia-500/20"
           iconGradient="from-indigo-500 to-violet-500"
@@ -342,8 +342,8 @@ function LevelStep({
         />
         <LevelCard
           label="A-Level"
-          subLabel="Years 12-13, UK"
-          description="UK A-Level English Literature & Language"
+          subLabel={t('board.level.a_level.years')}
+          description={t('board.level.a_level.desc')}
           icon={GraduationCap}
           gradient="from-purple-500/20 via-fuchsia-500/10 to-pink-500/20"
           iconGradient="from-purple-500 to-fuchsia-600"
@@ -352,8 +352,8 @@ function LevelStep({
         />
         <LevelCard
           label="IAL"
-          subLabel="International"
-          description="International Advanced Level"
+          subLabel={t('board.level.ial.years')}
+          description={t('board.level.ial.desc')}
           icon={Award}
           gradient="from-amber-500/20 via-orange-500/10 to-yellow-500/20"
           iconGradient="from-amber-500 to-orange-600"
@@ -363,7 +363,7 @@ function LevelStep({
       </div>
 
       <p className="mx-auto max-w-xl text-center text-xs text-muted-foreground">
-        You can change this later from the board badge in the header or your settings page.
+        {t('board.level.footer_hint')}
       </p>
     </div>
   )
@@ -461,7 +461,8 @@ function LevelCard({
 type AwardingBodyOption = {
   id: AwardingBody
   label: string
-  subtitle: string
+  /** Dictionary key for the body subtitle (resolved at render). */
+  subtitleKey: string
   icon: React.ComponentType<{ className?: string }>
   gradient: string
   ring: string
@@ -474,7 +475,7 @@ const GCSE_BODIES: AwardingBodyOption[] = [
   {
     id: 'aqa',
     label: 'AQA',
-    subtitle: 'Power & Conflict, Love & Relationships, AIC, Macbeth',
+    subtitleKey: 'board.body_subtitle.aqa_gcse',
     icon: BookOpen,
     gradient: 'from-rose-500/10 via-rose-500/5 to-transparent',
     ring: 'hover:ring-rose-400/40',
@@ -485,7 +486,7 @@ const GCSE_BODIES: AwardingBodyOption[] = [
   {
     id: 'edexcel',
     label: 'Pearson Edexcel',
-    subtitle: 'Time & Place, Conflict anthology, AIC, Macbeth',
+    subtitleKey: 'board.body_subtitle.edexcel_gcse',
     icon: GraduationCap,
     gradient: 'from-blue-500/10 via-blue-500/5 to-transparent',
     ring: 'hover:ring-blue-400/40',
@@ -496,7 +497,7 @@ const GCSE_BODIES: AwardingBodyOption[] = [
   {
     id: 'ocr',
     label: 'OCR',
-    subtitle: 'Towards a World Unknown, Shakespeare & set texts',
+    subtitleKey: 'board.body_subtitle.ocr_gcse',
     icon: Sparkles,
     gradient: 'from-amber-500/10 via-amber-500/5 to-transparent',
     ring: 'hover:ring-amber-400/40',
@@ -507,7 +508,7 @@ const GCSE_BODIES: AwardingBodyOption[] = [
   {
     id: 'eduqas',
     label: 'WJEC Eduqas',
-    subtitle: 'Single anthology, unseen poetry, Component 1 & 2',
+    subtitleKey: 'board.body_subtitle.eduqas_gcse',
     icon: BookOpen,
     gradient: 'from-teal-500/10 via-teal-500/5 to-transparent',
     ring: 'hover:ring-teal-400/40',
@@ -521,7 +522,7 @@ const IGCSE_BODIES: AwardingBodyOption[] = [
   {
     id: 'pearson-igcse',
     label: 'Pearson Edexcel',
-    subtitle: 'IGCSE Literature & Language papers',
+    subtitleKey: 'board.body_subtitle.edexcel_igcse',
     icon: GraduationCap,
     gradient: 'from-indigo-500/10 via-indigo-500/5 to-transparent',
     ring: 'hover:ring-indigo-400/40',
@@ -532,7 +533,7 @@ const IGCSE_BODIES: AwardingBodyOption[] = [
   {
     id: 'cambridge',
     label: 'Cambridge',
-    subtitle: 'First Language English & Literature in English',
+    subtitleKey: 'board.body_subtitle.cambridge_igcse',
     icon: Globe2,
     gradient: 'from-violet-500/10 via-violet-500/5 to-transparent',
     ring: 'hover:ring-violet-400/40',
@@ -546,7 +547,7 @@ const IAL_BODIES: AwardingBodyOption[] = [
   {
     id: 'pearson-ial',
     label: 'Pearson Edexcel',
-    subtitle: 'International A-Level English',
+    subtitleKey: 'board.body_subtitle.edexcel_ial',
     icon: Award,
     gradient: 'from-amber-500/10 via-amber-500/5 to-transparent',
     ring: 'hover:ring-amber-400/40',
@@ -560,7 +561,7 @@ const A_LEVEL_BODIES: AwardingBodyOption[] = [
   {
     id: 'aqa-a-level',
     label: 'AQA',
-    subtitle: 'A-Level English Literature (7712) & Language (7702)',
+    subtitleKey: 'board.body_subtitle.aqa_a_level',
     icon: BookOpen,
     gradient: 'from-rose-500/10 via-rose-500/5 to-transparent',
     ring: 'hover:ring-rose-400/40',
@@ -571,7 +572,7 @@ const A_LEVEL_BODIES: AwardingBodyOption[] = [
   {
     id: 'edexcel-a-level',
     label: 'Pearson Edexcel',
-    subtitle: 'A-Level English Literature (9ET0) & Language (9EN0)',
+    subtitleKey: 'board.body_subtitle.edexcel_a_level',
     icon: GraduationCap,
     gradient: 'from-blue-500/10 via-blue-500/5 to-transparent',
     ring: 'hover:ring-blue-400/40',
@@ -582,7 +583,7 @@ const A_LEVEL_BODIES: AwardingBodyOption[] = [
   {
     id: 'ocr-a-level',
     label: 'OCR',
-    subtitle: 'A-Level English Literature (H472) & Language (H470)',
+    subtitleKey: 'board.body_subtitle.ocr_a_level',
     icon: Sparkles,
     gradient: 'from-amber-500/10 via-amber-500/5 to-transparent',
     ring: 'hover:ring-amber-400/40',
@@ -593,7 +594,7 @@ const A_LEVEL_BODIES: AwardingBodyOption[] = [
   {
     id: 'eduqas-a-level',
     label: 'WJEC Eduqas',
-    subtitle: 'A-Level English Literature & Language',
+    subtitleKey: 'board.body_subtitle.eduqas_a_level',
     icon: BookOpen,
     gradient: 'from-teal-500/10 via-teal-500/5 to-transparent',
     ring: 'hover:ring-teal-400/40',
@@ -620,6 +621,7 @@ function AwardingBodyStep({
   onBack: () => void
   onPick: (body: AwardingBody) => void
 }) {
+  const t = useT()
   const bodies =
     level === 'gcse'
       ? GCSE_BODIES
@@ -631,21 +633,21 @@ function AwardingBodyStep({
 
   const heading =
     level === 'gcse'
-      ? 'Which UK GCSE board?'
+      ? t('board.body.heading.gcse')
       : level === 'igcse'
-        ? 'Which awarding body?'
+        ? t('board.body.heading.igcse')
         : level === 'a-level'
-          ? 'Which UK A-Level board?'
-          : 'Which awarding body?'
+          ? t('board.body.heading.a_level')
+          : t('board.body.heading.ial')
 
   const subheading =
     level === 'gcse'
-      ? 'Pick your board \u2014 we\u0027ll show you only the poems, set texts, and papers you actually study.'
+      ? t('board.body.subheading.gcse')
       : level === 'igcse'
-        ? 'Choose your awarding body below \u2014 each one has different set texts and assessment.'
+        ? t('board.body.subheading.igcse')
         : level === 'a-level'
-          ? 'Pick your UK A-Level board \u2014 full A-Level content is on our roadmap; in the meantime we\u0027ll unlock the cross-board revision tools.'
-          : 'Select your awarding body to get started.'
+          ? t('board.body.subheading.a_level')
+          : t('board.body.subheading.ial')
 
   const levelLabel = level === 'ial' ? 'IAL' : level === 'a-level' ? 'A-Level' : level.toUpperCase()
 
@@ -672,13 +674,15 @@ function AwardingBodyStep({
             className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-card/60 px-3 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur-md transition-colors hover:text-foreground hover:border-border"
           >
             <ArrowLeft className="size-3.5" aria-hidden="true" />
-            Back
+            {t('action.back')}
           </button>
           <Breadcrumb parts={[levelLabel]} />
         </div>
         <div className="flex flex-col gap-3 text-center sm:text-left">
           <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary backdrop-blur-md sm:mx-0">
-            Step {currentStep} of {totalSteps}
+            {t('board.step_of')
+              .replace('{current}', String(currentStep))
+              .replace('{total}', String(totalSteps))}
           </span>
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {heading}
@@ -696,7 +700,7 @@ function AwardingBodyStep({
           bodies.length === 1 && 'sm:grid-cols-1 max-w-md mx-auto w-full',
         )}
         role="radiogroup"
-        aria-label={`Choose your ${levelLabel} awarding body`}
+        aria-label={`${t('board.choose')} ${levelLabel}`}
       >
         {bodies.map((body) => {
           const resolvedBoard = bodyToBoard[body.id]
@@ -707,7 +711,7 @@ function AwardingBodyStep({
             <OptionCard
               key={body.id}
               label={body.label}
-              subtitle={body.subtitle}
+              subtitle={t(body.subtitleKey)}
               icon={body.icon}
               gradient={body.gradient}
               ring={body.ring}
@@ -726,8 +730,7 @@ function AwardingBodyStep({
       </div>
 
       <p className="mx-auto max-w-xl text-center text-xs text-muted-foreground">
-        Not sure which board you study? Check your exam timetable, ask your teacher, or pick the
-        closest match — you can change it later from your settings.
+        {t('board.body.not_sure_hint')}
       </p>
     </div>
   )
@@ -739,8 +742,9 @@ function AwardingBodyStep({
 
 type PaperOption = {
   board: ExamBoard
-  label: string
-  subtitle: string
+  /** Dictionary key for the paper label (e.g. "Literature" / "Language A"). */
+  labelKey: string
+  subtitleKey: string
   examCode: string
   icon: React.ComponentType<{ className?: string }>
   gradient: string
@@ -753,8 +757,8 @@ type PaperOption = {
 const EDEXCEL_IGCSE_PAPERS: PaperOption[] = [
   {
     board: 'edexcel-igcse',
-    label: 'Literature',
-    subtitle: 'Poetry, prose, drama & Shakespeare',
+    labelKey: 'board.paper.literature',
+    subtitleKey: 'board.paper_subtitle.edexcel_igcse_lit',
     examCode: '4ET1',
     icon: BookOpen,
     gradient: 'from-indigo-500/10 via-indigo-500/5 to-transparent',
@@ -765,8 +769,8 @@ const EDEXCEL_IGCSE_PAPERS: PaperOption[] = [
   },
   {
     board: 'edexcel-igcse-lang',
-    label: 'Language',
-    subtitle: 'Reading comprehension & transactional writing',
+    labelKey: 'board.paper.language',
+    subtitleKey: 'board.paper_subtitle.edexcel_igcse_lang',
     examCode: '4EA1',
     icon: GraduationCap,
     gradient: 'from-sky-500/10 via-sky-500/5 to-transparent',
@@ -780,8 +784,8 @@ const EDEXCEL_IGCSE_PAPERS: PaperOption[] = [
 const CAMBRIDGE_IGCSE_PAPERS: PaperOption[] = [
   {
     board: 'cambridge-0500',
-    label: 'Language A',
-    subtitle: 'First Language English — A*-G grading',
+    labelKey: 'board.paper.language_a',
+    subtitleKey: 'board.paper_subtitle.cambridge_0500',
     examCode: '0500',
     icon: Globe2,
     gradient: 'from-violet-500/10 via-violet-500/5 to-transparent',
@@ -792,8 +796,8 @@ const CAMBRIDGE_IGCSE_PAPERS: PaperOption[] = [
   },
   {
     board: 'cambridge-0990',
-    label: 'Language B',
-    subtitle: 'First Language English — 9-1 grading',
+    labelKey: 'board.paper.language_b',
+    subtitleKey: 'board.paper_subtitle.cambridge_0990',
     examCode: '0990',
     icon: Globe2,
     gradient: 'from-fuchsia-500/10 via-fuchsia-500/5 to-transparent',
@@ -804,8 +808,8 @@ const CAMBRIDGE_IGCSE_PAPERS: PaperOption[] = [
   },
   {
     board: 'cambridge-0475',
-    label: 'Literature',
-    subtitle: 'Literature in English — prose, poetry & drama',
+    labelKey: 'board.paper.literature',
+    subtitleKey: 'board.paper_subtitle.cambridge_0475',
     examCode: '0475',
     icon: BookOpen,
     gradient: 'from-purple-500/10 via-purple-500/5 to-transparent',
@@ -833,6 +837,7 @@ function PaperStep({
   onBack: () => void
   onSelect: (board: ExamBoard) => void
 }) {
+  const t = useT()
   const papers = awardingBody === 'pearson-igcse' ? EDEXCEL_IGCSE_PAPERS : CAMBRIDGE_IGCSE_PAPERS
   const bodyLabel = awardingBody === 'pearson-igcse' ? 'Pearson Edexcel' : 'Cambridge'
 
@@ -846,20 +851,19 @@ function PaperStep({
             className="inline-flex items-center gap-1.5 rounded-full border border-border/60 bg-card/60 px-3 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur-md transition-colors hover:text-foreground hover:border-border"
           >
             <ArrowLeft className="size-3.5" aria-hidden="true" />
-            Back
+            {t('action.back')}
           </button>
           <Breadcrumb parts={breadcrumbParts} />
         </div>
         <div className="flex flex-col gap-3 text-center sm:text-left">
           <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary backdrop-blur-md sm:mx-0">
-            Step 3 of 3
+            {t('board.step_of').replace('{current}', '3').replace('{total}', '3')}
           </span>
           <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Which {bodyLabel} paper?
+            {t('board.paper.heading_before')} {bodyLabel} {t('board.paper.heading_after')}
           </h1>
           <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
-            Each specification covers different skills and texts. Pick the one that matches your
-            timetable.
+            {t('board.paper.subheading')}
           </p>
         </div>
       </header>
@@ -871,7 +875,7 @@ function PaperStep({
           papers.length === 2 && 'sm:grid-cols-2',
         )}
         role="radiogroup"
-        aria-label={`Choose your ${bodyLabel} IGCSE paper`}
+        aria-label={`${t('board.choose')} ${bodyLabel} IGCSE`}
       >
         {papers.map((paper) => {
           const isSelected = currentBoard === paper.board
@@ -881,8 +885,8 @@ function PaperStep({
           return (
             <OptionCard
               key={paper.board}
-              label={paper.label}
-              subtitle={paper.subtitle}
+              label={t(paper.labelKey)}
+              subtitle={t(paper.subtitleKey)}
               examCode={paper.examCode}
               icon={paper.icon}
               gradient={paper.gradient}
@@ -901,8 +905,7 @@ function PaperStep({
       </div>
 
       <p className="mx-auto max-w-xl text-center text-xs text-muted-foreground">
-        Not sure which paper? Check your exam timetable or ask your teacher — you can always change
-        it later.
+        {t('board.paper.not_sure_hint')}
       </p>
     </div>
   )
@@ -945,6 +948,7 @@ function OptionCard({
   showNextArrow?: boolean
   onClick: () => void
 }) {
+  const t = useT()
   return (
     <button
       type="button"
@@ -1002,7 +1006,7 @@ function OptionCard({
                 'inline-flex size-7 items-center justify-center rounded-full text-white shadow',
                 accent,
               )}
-              aria-label="Currently selected"
+              aria-label={t('board.currently_selected')}
             >
               <Check className="size-4" aria-hidden="true" />
             </span>
@@ -1035,12 +1039,12 @@ function OptionCard({
         <div className="mt-auto flex items-center gap-1.5 pt-2 text-xs font-medium text-foreground">
           <span className="transition-transform duration-300 group-hover:translate-x-0.5">
             {isSelected
-              ? 'Your current board'
+              ? t('board.option.your_current')
               : isLoading
-                ? 'Loading...'
+                ? t('action.loading')
                 : showNextArrow
-                  ? 'Choose papers'
-                  : 'Choose this board'}
+                  ? t('board.option.choose_papers')
+                  : t('board.option.choose_this')}
           </span>
           {!isLoading && (
             <ArrowRight
@@ -1059,11 +1063,12 @@ function OptionCard({
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 function Breadcrumb({ parts }: { parts: string[] }) {
+  const t = useT()
   if (parts.length === 0) return null
 
   return (
     <nav
-      aria-label="Selection progress"
+      aria-label={t('board.selection_progress')}
       className="flex items-center gap-1 text-xs text-muted-foreground"
     >
       {parts.map((part, i) => (

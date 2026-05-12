@@ -17,6 +17,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 type Variant = 'inline' | 'menu-item' | 'card'
 
@@ -36,12 +37,10 @@ type ChangeBoardButtonProps = {
  *   menu-item   — full-width row designed for dropdowns / menus.
  *   card        — large card-style block for settings pages.
  */
-export function ChangeBoardButton({
-  variant = 'inline',
-  className,
-}: ChangeBoardButtonProps) {
+export function ChangeBoardButton({ variant = 'inline', className }: ChangeBoardButtonProps) {
   const { board, isHydrated } = useBoard()
   const config = getBoardConfig(board)
+  const t = useT()
 
   // Avoid hydration mismatch — wait for the persisted store to hydrate
   // before rendering board-dependent labels.
@@ -61,7 +60,7 @@ export function ChangeBoardButton({
         >
           <span className="inline-flex items-center gap-2">
             <BookOpen className="size-4" />
-            Choose your exam board
+            {t('board.choose')}
           </span>
           <ChevronRight className="size-4" />
         </Button>
@@ -77,7 +76,7 @@ export function ChangeBoardButton({
         >
           <span className="inline-flex items-center gap-2">
             <BookOpen className="size-4" />
-            Choose exam board
+            {t('board.choose_short')}
           </span>
           <ChevronRight className="size-4" />
         </Button>
@@ -92,33 +91,37 @@ export function ChangeBoardButton({
         render={<Link href="/board-select" />}
       >
         <BookOpen className="size-3.5" />
-        Select board
+        {t('board.select_cta')}
       </Button>
     )
   }
 
   return (
     <Dialog>
-      <DialogTrigger render={renderTrigger({ variant, className, name: config.shortName })} />
+      <DialogTrigger
+        render={renderTrigger({
+          variant,
+          className,
+          name: config.shortName,
+          changeLabel: t('board.change_verb'),
+          studyingLabel: t('board.studying'),
+        })}
+      />
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <AlertTriangle className="size-4 text-primary" aria-hidden="true" />
-            Change your exam board?
+            {t('board.change_dialog.title')}
           </DialogTitle>
           <DialogDescription>
-            You're currently studying{' '}
-            <span className="font-medium text-foreground">{config.fullName}</span>.
-            Changing your board will filter all of your content to the new
-            board, but your progress will be preserved.
+            {t('board.change_dialog.body_before')}{' '}
+            <span className="font-medium text-foreground">{config.fullName}</span>.{' '}
+            {t('board.change_dialog.body_after')}
           </DialogDescription>
         </DialogHeader>
         <DialogFooter showCloseButton>
-          <Button
-            variant="default"
-            render={<Link href="/board-select?change=1" />}
-          >
-            Continue
+          <Button variant="default" render={<Link href="/board-select?change=1" />}>
+            {t('action.continue')}
           </Button>
         </DialogFooter>
       </DialogContent>
@@ -132,10 +135,14 @@ function renderTrigger({
   variant,
   className,
   name,
+  changeLabel,
+  studyingLabel,
 }: {
   variant: Variant
   className?: string
   name: string
+  changeLabel: string
+  studyingLabel: string
 }) {
   if (variant === 'card') {
     return (
@@ -143,7 +150,7 @@ function renderTrigger({
         type="button"
         className={cn(
           'group flex w-full items-center justify-between gap-3 rounded-xl border border-border bg-card p-4 text-left transition-colors hover:border-primary/40 hover:bg-accent focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30',
-          className
+          className,
         )}
       >
         <span className="flex items-center gap-3">
@@ -151,12 +158,12 @@ function renderTrigger({
             <BookOpen className="size-5" aria-hidden="true" />
           </span>
           <span className="flex flex-col">
-            <span className="text-sm text-muted-foreground">Studying</span>
+            <span className="text-sm text-muted-foreground">{studyingLabel}</span>
             <span className="text-base font-semibold text-foreground">{name}</span>
           </span>
         </span>
         <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-          Change
+          {changeLabel}
           <ChevronRight className="size-4" />
         </span>
       </button>
@@ -169,14 +176,14 @@ function renderTrigger({
         type="button"
         className={cn(
           'flex w-full items-center justify-between gap-2 rounded-md px-2 py-1.5 text-sm text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30',
-          className
+          className,
         )}
       >
         <span className="inline-flex items-center gap-2">
           <BookOpen className="size-4 text-muted-foreground" aria-hidden="true" />
           <span className="truncate">{name}</span>
         </span>
-        <span className="text-xs text-muted-foreground">Change</span>
+        <span className="text-xs text-muted-foreground">{changeLabel}</span>
       </button>
     )
   }
@@ -187,12 +194,12 @@ function renderTrigger({
       type="button"
       className={cn(
         'inline-flex items-center gap-1.5 rounded-md border border-border bg-transparent px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30',
-        className
+        className,
       )}
     >
       <BookOpen className="size-3.5 text-muted-foreground" aria-hidden="true" />
       <span className="truncate">{name}</span>
-      <span className="text-muted-foreground">Change</span>
+      <span className="text-muted-foreground">{changeLabel}</span>
       <ChevronRight className="size-3" />
     </button>
   )

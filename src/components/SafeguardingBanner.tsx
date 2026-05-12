@@ -1,10 +1,23 @@
-import Link from "next/link";
+import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 
 /**
  * A small, persistent safeguarding banner shown across the site.
  * Provides a visible link to the safeguarding report form and Childline.
+ *
+ * Body copy and CTAs are translated via the master dictionary so the
+ * AR ("safeguard.*") variants are surfaced when the visitor is on the
+ * Arabic locale. Keep "Childline" + the 0800 1111 number in Latin —
+ * it's a UK regulator-recognised brand and the digits must remain
+ * dial-able exactly as written.
  */
-export function SafeguardingBanner() {
+export async function SafeguardingBanner() {
+  const [worried, helpPrefix, reportCta] = await Promise.all([
+    t('safeguard.worried_prompt'),
+    t('safeguard.childline_prefix'),
+    t('safeguard.report_concern_cta'),
+  ])
+
   return (
     <div className="w-full border-t border-primary/10 bg-primary/5">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-2.5 sm:flex-row sm:gap-4">
@@ -24,10 +37,10 @@ export function SafeguardingBanner() {
             />
           </svg>
           <span>
-            <strong className="font-medium">Need help or worried about something?</strong>
+            <strong className="font-medium">{worried}</strong>
             <span className="hidden sm:inline">
-              {" "}
-              &mdash; Childline:{" "}
+              {' '}
+              &mdash; {helpPrefix}{' '}
               <a
                 href="tel:08001111"
                 className="font-semibold text-primary hover:text-primary/80 underline"
@@ -43,13 +56,13 @@ export function SafeguardingBanner() {
             href="tel:08001111"
             className="text-xs font-semibold text-primary hover:text-primary/80 underline sm:hidden"
           >
-            Childline: 0800 1111
+            {helpPrefix} 0800 1111
           </a>
           <Link
             href="/legal/safeguarding"
             className="inline-flex items-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           >
-            Report a concern
+            {reportCta}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-3 w-3"
@@ -67,5 +80,5 @@ export function SafeguardingBanner() {
         </div>
       </div>
     </div>
-  );
+  )
 }

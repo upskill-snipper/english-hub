@@ -4,40 +4,17 @@ import { useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { ChevronDown } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 
-const faqs = [
-  {
-    q: 'Is there a free trial? Do I need a card?',
-    a: 'Two things. Every paid plan starts with a 7-day free trial — that requires full sign-up with a valid card. Cancel before day 7 from your account settings and you won\u2019t be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) so you can demo the product before putting a card down.',
-  },
-  {
-    q: 'What exam boards do you cover?',
-    a: 'We cover AQA GCSE, Edexcel GCSE, Edexcel International GCSE (IGCSE), OCR, and WJEC/Eduqas. Each course is mapped to exactly what your exam board requires so you only study what you need. We also cover KS3 for Years 7-9.',
-  },
-  {
-    q: 'How does the AI essay feedback work?',
-    a: 'Submit any essay and receive instant, detailed feedback scored against real GCSE mark schemes. You get an estimated grade band, assessment objective scores, specific strengths with direct quotes, and actionable suggestions to improve — like having a tutor available 24/7.',
-  },
-  {
-    q: 'How is this different from YouTube?',
-    a: 'YouTube offers scattered videos with no structure, no feedback, and no progress tracking. The English Hub provides sequenced lessons written by experienced English teachers, exam-style practice with model answers, AI feedback, GCSE 1-9 grade tracking, and certificates.',
-  },
-  {
-    q: 'Can I cancel my subscription?',
-    a: "Yes — cancel anytime from your account settings. There are no contracts or hidden fees. You'll keep access until the end of your billing period.",
-  },
-  {
-    q: 'Is there a version for teachers and schools?',
-    a: 'Yes! Teachers get an AI lesson builder, student analytics dashboards, AI essay marking, and class management tools. Schools get a whole-school licence with department analytics, bulk user management, and dedicated support. We also have a Founding Schools Programme with preferential pricing for early adopters.',
-  },
-  {
-    q: 'Can I access on my phone?',
-    a: 'Absolutely. The English Hub is fully responsive and works perfectly on smartphones, tablets, and desktops. Study wherever suits you best.',
-  },
-  {
-    q: 'What grades does this cover?',
-    a: 'All content uses the GCSE 1–9 grading system. Every student gets a Working At Grade, Predicted Grade, and Target Grade so you always know where you stand and what to work on next. For KS3 students, we adapt the tracking to match your year group.',
-  },
+const faqKeys: Array<{ qKey: string; aKey: string }> = [
+  { qKey: 'home.faq_full.q_trial', aKey: 'home.faq_full.a_trial' },
+  { qKey: 'home.faq_full.q_boards', aKey: 'home.faq_full.a_boards' },
+  { qKey: 'home.faq_full.q_ai_feedback', aKey: 'home.faq_full.a_ai_feedback' },
+  { qKey: 'home.faq_full.q_youtube', aKey: 'home.faq_full.a_youtube' },
+  { qKey: 'home.faq_full.q_cancel', aKey: 'home.faq_full.a_cancel' },
+  { qKey: 'home.faq_full.q_teachers', aKey: 'home.faq_full.a_teachers' },
+  { qKey: 'home.faq_full.q_phone', aKey: 'home.faq_full.a_phone' },
+  { qKey: 'home.faq_full.q_grades', aKey: 'home.faq_full.a_grades' },
 ]
 
 function FAQItem({ q, a }: { q: string; a: string }) {
@@ -83,16 +60,17 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function FAQSection() {
+  const t = useT()
   return (
     <section className="py-24 sm:py-32 bg-card/20">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-foreground">Frequently Asked Questions</h2>
+          <h2 className="text-foreground">{t('home.faq.title')}</h2>
         </div>
 
         <div className="space-y-3">
-          {faqs.map((faq) => (
-            <FAQItem key={faq.q} q={faq.q} a={faq.a} />
+          {faqKeys.map((faq) => (
+            <FAQItem key={faq.qKey} q={t(faq.qKey)} a={t(faq.aKey)} />
           ))}
         </div>
       </div>

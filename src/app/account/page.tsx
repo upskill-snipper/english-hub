@@ -9,6 +9,7 @@ import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { ChangeBoardButton } from '@/components/board/ChangeBoardButton'
+import { useT } from '@/lib/i18n/use-t'
 import {
   User,
   Save,
@@ -25,6 +26,7 @@ import {
 } from 'lucide-react'
 
 export default function AccountPage() {
+  const t = useT()
   const router = useRouter()
   const { user, profile, setProfile } = useAuthStore()
   const supabase = createClient()
@@ -91,7 +93,7 @@ export default function AccountPage() {
       setProfileMessage({ type: 'error', text: error.message })
     } else {
       setProfile(data)
-      setProfileMessage({ type: 'success', text: 'Profile updated successfully.' })
+      setProfileMessage({ type: 'success', text: t('account.profile_saved') })
     }
 
     setProfileLoading(false)
@@ -104,7 +106,7 @@ export default function AccountPage() {
     if (newPassword.length < 8) {
       setPasswordMessage({
         type: 'error',
-        text: 'New password must be at least 8 characters.',
+        text: t('account.pw_min_length'),
       })
       return
     }
@@ -112,7 +114,7 @@ export default function AccountPage() {
     if (newPassword !== confirmPassword) {
       setPasswordMessage({
         type: 'error',
-        text: 'New passwords do not match.',
+        text: t('account.pw_no_match'),
       })
       return
     }
@@ -125,7 +127,7 @@ export default function AccountPage() {
       password: currentPassword,
     })
     if (signInError) {
-      setPasswordMessage({ type: 'error', text: 'Current password is incorrect.' })
+      setPasswordMessage({ type: 'error', text: t('account.pw_current_wrong') })
       setPasswordLoading(false)
       return
     }
@@ -137,7 +139,7 @@ export default function AccountPage() {
     if (error) {
       setPasswordMessage({ type: 'error', text: error.message })
     } else {
-      setPasswordMessage({ type: 'success', text: 'Password updated successfully.' })
+      setPasswordMessage({ type: 'success', text: t('account.pw_saved') })
       setCurrentPassword('')
       setNewPassword('')
       setConfirmPassword('')
@@ -148,7 +150,7 @@ export default function AccountPage() {
 
   async function handleDeleteAccount() {
     if (deleteConfirm !== 'DELETE') {
-      setDeleteError('Please type DELETE to confirm.')
+      setDeleteError(t('account.type_delete_to_confirm'))
       return
     }
 
@@ -160,9 +162,7 @@ export default function AccountPage() {
       const data = await res.json()
 
       if (!res.ok) {
-        setDeleteError(
-          data.error || 'Failed to delete account. Please contact support.'
-        )
+        setDeleteError(data.error || t('account.delete_failed'))
         setDeleteLoading(false)
         return
       }
@@ -171,7 +171,7 @@ export default function AccountPage() {
       useAuthStore.getState().clear()
       router.push('/')
     } catch {
-      setDeleteError('Something went wrong. Please try again or contact support.')
+      setDeleteError(t('account.delete_error'))
       setDeleteLoading(false)
     }
   }
@@ -192,12 +192,10 @@ export default function AccountPage() {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to dashboard
+          {t('account.back_to_dashboard')}
         </Link>
 
-        <h1 className="text-3xl font-bold text-foreground mb-8">
-          Account Settings
-        </h1>
+        <h1 className="text-3xl font-bold text-foreground mb-8">{t('account.title')}</h1>
 
         {/* Exam Board Section */}
         <section
@@ -206,11 +204,8 @@ export default function AccountPage() {
         >
           <div className="flex items-center gap-3 mb-4">
             <BookOpen className="w-5 h-5 text-primary" />
-            <h2
-              id="account-board-heading"
-              className="text-xl font-semibold text-foreground"
-            >
-              Studying {boardConfig ? boardConfig.shortName : '—'}
+            <h2 id="account-board-heading" className="text-xl font-semibold text-foreground">
+              {t('account.studying')} {boardConfig ? boardConfig.shortName : '—'}
             </h2>
           </div>
 
@@ -218,16 +213,12 @@ export default function AccountPage() {
             <div className="h-16 animate-pulse rounded-lg bg-muted/40" />
           ) : boardConfig ? (
             <>
-              <p className="text-sm text-muted-foreground mb-4">
-                {boardConfig.fullName}
-              </p>
+              <p className="text-sm text-muted-foreground mb-4">{boardConfig.fullName}</p>
               <ChangeBoardButton variant="card" />
             </>
           ) : (
             <>
-              <p className="text-sm text-muted-foreground mb-4">
-                You haven't picked an exam board yet.
-              </p>
+              <p className="text-sm text-muted-foreground mb-4">{t('account.no_board')}</p>
               <ChangeBoardButton variant="card" />
             </>
           )}
@@ -237,7 +228,7 @@ export default function AccountPage() {
         <section className="bg-card border border-border rounded-xl p-6 mb-6">
           <div className="flex items-center gap-3 mb-6">
             <User className="w-5 h-5 text-primary" />
-            <h2 className="text-xl font-semibold text-foreground">Profile</h2>
+            <h2 className="text-xl font-semibold text-foreground">{t('account.profile')}</h2>
           </div>
 
           {profileMessage && (
@@ -262,7 +253,7 @@ export default function AccountPage() {
           <form onSubmit={handleProfileSave} className="space-y-4">
             <div>
               <label htmlFor="email" className="label">
-                Email
+                {t('form.email')}
               </label>
               <input
                 id="email"
@@ -271,28 +262,26 @@ export default function AccountPage() {
                 disabled
                 className="input-field opacity-60 cursor-not-allowed"
               />
-              <p className="text-xs text-muted-foreground mt-1">
-                Email cannot be changed.
-              </p>
+              <p className="text-xs text-muted-foreground mt-1">{t('account.email_locked')}</p>
             </div>
 
             <div>
               <label htmlFor="fullName" className="label">
-                Full Name
+                {t('form.full_name')}
               </label>
               <input
                 id="fullName"
                 type="text"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                placeholder="Your full name"
+                placeholder={t('account.fullname_placeholder')}
                 className="input-field"
               />
             </div>
 
             <div>
               <label htmlFor="yearGroup" className="label">
-                Year Group
+                {t('account.year_group')}
               </label>
               <div className="relative">
                 <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
@@ -302,7 +291,7 @@ export default function AccountPage() {
                   onChange={(e) => setYearGroup(e.target.value)}
                   className="input-field pl-11 appearance-none"
                 >
-                  <option value="">Select year group</option>
+                  <option value="">{t('account.select_year_group')}</option>
                   {YEAR_GROUPS.map((yg) => (
                     <option key={yg} value={yg}>
                       {yg}
@@ -314,7 +303,7 @@ export default function AccountPage() {
 
             <div>
               <label htmlFor="examBoard" className="label">
-                Exam Board
+                {t('account.exam_board')}
               </label>
               <div className="relative">
                 <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
@@ -324,7 +313,7 @@ export default function AccountPage() {
                   onChange={(e) => setExamBoard(e.target.value)}
                   className="input-field pl-11 appearance-none"
                 >
-                  <option value="">Select exam board</option>
+                  <option value="">{t('account.select_exam_board')}</option>
                   {EXAM_BOARDS.map((eb) => (
                     <option key={eb} value={eb}>
                       {eb}
@@ -334,20 +323,16 @@ export default function AccountPage() {
               </div>
             </div>
 
-            <button
-              type="submit"
-              disabled={profileLoading}
-              className="btn-primary"
-            >
+            <button type="submit" disabled={profileLoading} className="btn-primary">
               {profileLoading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                  Saving...
+                  {t('account.saving')}
                 </>
               ) : (
                 <>
                   <Save className="w-4 h-4 mr-2" />
-                  Save Changes
+                  {t('form.save_changes')}
                 </>
               )}
             </button>
@@ -363,11 +348,9 @@ export default function AccountPage() {
             <CreditCard className="w-5 h-5 text-primary" />
             <div>
               <h2 className="text-lg font-semibold text-foreground">
-                Billing &amp; Subscription
+                {t('account.billing_subscription')}
               </h2>
-              <p className="text-sm text-muted-foreground">
-                Manage your plan, view purchases, and update payment details
-              </p>
+              <p className="text-sm text-muted-foreground">{t('account.billing_blurb')}</p>
             </div>
           </div>
           <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
@@ -378,7 +361,7 @@ export default function AccountPage() {
           <div className="flex items-center gap-3 mb-6">
             <Lock className="w-5 h-5 text-primary" />
             <h2 className="text-xl font-semibold text-foreground">
-              Change Password
+              {t('account.change_password')}
             </h2>
           </div>
 
@@ -404,7 +387,7 @@ export default function AccountPage() {
           <form onSubmit={handlePasswordChange} className="space-y-4">
             <div>
               <label htmlFor="currentPassword" className="label">
-                Current Password
+                {t('account.current_password')}
               </label>
               <input
                 id="currentPassword"
@@ -412,7 +395,7 @@ export default function AccountPage() {
                 value={currentPassword}
                 onChange={(e) => setCurrentPassword(e.target.value)}
                 className="input-field"
-                placeholder="Enter current password"
+                placeholder={t('account.current_password_placeholder')}
                 required
                 autoComplete="current-password"
               />
@@ -420,14 +403,14 @@ export default function AccountPage() {
 
             <div>
               <label htmlFor="newPassword" className="label">
-                New Password
+                {t('form.new_password')}
               </label>
               <input
                 id="newPassword"
                 type="password"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                placeholder="Minimum 8 characters"
+                placeholder={t('account.min_8_chars')}
                 className="input-field"
                 required
                 minLength={8}
@@ -437,14 +420,14 @@ export default function AccountPage() {
 
             <div>
               <label htmlFor="confirmPassword" className="label">
-                Confirm New Password
+                {t('account.confirm_new_password')}
               </label>
               <input
                 id="confirmPassword"
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="Repeat new password"
+                placeholder={t('account.repeat_new_password')}
                 className="input-field"
                 required
                 minLength={8}
@@ -452,18 +435,14 @@ export default function AccountPage() {
               />
             </div>
 
-            <button
-              type="submit"
-              disabled={passwordLoading}
-              className="btn-primary"
-            >
+            <button type="submit" disabled={passwordLoading} className="btn-primary">
               {passwordLoading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                  Updating...
+                  {t('account.updating')}
                 </>
               ) : (
-                'Update Password'
+                t('account.update_password')
               )}
             </button>
           </form>
@@ -473,13 +452,10 @@ export default function AccountPage() {
         <section className="bg-card border border-red-500/30 rounded-xl p-6">
           <div className="flex items-center gap-3 mb-4">
             <Trash2 className="w-5 h-5 text-red-600" />
-            <h2 className="text-xl font-semibold text-red-600">Danger Zone</h2>
+            <h2 className="text-xl font-semibold text-red-600">{t('account.danger_zone')}</h2>
           </div>
 
-          <p className="text-muted-foreground text-sm mb-4">
-            Permanently delete your account and all associated data. This action
-            cannot be undone.
-          </p>
+          <p className="text-muted-foreground text-sm mb-4">{t('account.delete_blurb')}</p>
 
           {deleteError && (
             <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-4 text-red-600 text-sm">
@@ -490,7 +466,9 @@ export default function AccountPage() {
           <div className="space-y-3">
             <div>
               <label htmlFor="deleteConfirm" className="label">
-                Type <span className="font-mono font-bold text-red-600">DELETE</span> to confirm
+                {t('account.type_delete_prefix')}{' '}
+                <span className="font-mono font-bold text-red-600">DELETE</span>{' '}
+                {t('account.type_delete_suffix')}
               </label>
               <input
                 id="deleteConfirm"
@@ -510,12 +488,12 @@ export default function AccountPage() {
               {deleteLoading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  Deleting...
+                  {t('account.deleting')}
                 </>
               ) : (
                 <>
                   <Trash2 className="w-4 h-4" />
-                  Delete My Account
+                  {t('account.delete_account')}
                 </>
               )}
             </button>

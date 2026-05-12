@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useT } from '@/lib/i18n/use-t'
 import { Mail, Loader2, ArrowLeft, CheckCircle } from 'lucide-react'
 import {
   Card,
@@ -19,6 +20,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 
 export default function ResendVerificationPage() {
   const router = useRouter()
+  const t = useT()
   const [email, setEmail] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
@@ -29,7 +31,7 @@ export default function ResendVerificationPage() {
     setError(null)
 
     if (!email) {
-      setError('Please enter your email address.')
+      setError(t('form.email_required'))
       return
     }
 
@@ -57,16 +59,14 @@ export default function ResendVerificationPage() {
       }
 
       if (payload.status === 'already_verified') {
-        const flash = encodeURIComponent(
-          'This email is already verified — sign in or reset your password.',
-        )
+        const flash = encodeURIComponent(t('auth.resend.already_verified'))
         router.push(`/auth/forgot-password?flash=${flash}`)
         return
       }
 
       setSuccess(true)
     } catch {
-      setError('Network error. Please try again in a moment.')
+      setError(t('form.network_error'))
     } finally {
       setLoading(false)
     }
@@ -79,22 +79,22 @@ export default function ResendVerificationPage() {
           <Card className="text-center">
             <CardContent className="pt-8">
               <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" aria-hidden="true" />
-              <h1 className="text-2xl font-bold text-foreground mb-2">Sent</h1>
-              <p className="text-muted-foreground mb-6">
-                Check your inbox — including spam — for an email from The English Hub.
-              </p>
+              <h1 className="text-2xl font-bold text-foreground mb-2">
+                {t('auth.resend.sent_title')}
+              </h1>
+              <p className="text-muted-foreground mb-6">{t('auth.resend.sent_body')}</p>
               <Button render={<Link href="/auth/login" />} className="w-full" size="lg">
-                Back to sign in
+                {t('auth.back_to_sign_in')}
               </Button>
               <p className="text-xs text-muted-foreground mt-6">
-                Still no email? Contact{' '}
+                {t('auth.resend.still_no_email')}{' '}
                 <a
                   href="mailto:founder@theenglishhub.app"
                   className="underline underline-offset-2 hover:text-foreground transition-colors"
                 >
                   founder@theenglishhub.app
                 </a>{' '}
-                — we&apos;ll confirm you manually.
+                {t('auth.resend.manual_confirm')}
               </p>
             </CardContent>
           </Card>
@@ -113,15 +113,13 @@ export default function ResendVerificationPage() {
           render={<Link href="/auth/login" />}
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to sign in
+          {t('auth.back_to_sign_in')}
         </Button>
 
         <Card>
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Resend your verification email</CardTitle>
-            <CardDescription>
-              Pop your email in below. We&apos;ll send a fresh link to your inbox — check spam too.
-            </CardDescription>
+            <CardTitle className="text-2xl">{t('auth.resend.title')}</CardTitle>
+            <CardDescription>{t('auth.resend.subtitle')}</CardDescription>
           </CardHeader>
 
           <CardContent>
@@ -133,7 +131,7 @@ export default function ResendVerificationPage() {
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-1.5">
-                <Label htmlFor="email">Email address</Label>
+                <Label htmlFor="email">{t('form.email')}</Label>
                 <div className="relative">
                   <Mail
                     className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70"
@@ -144,7 +142,7 @@ export default function ResendVerificationPage() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@example.com"
+                    placeholder={t('form.email_placeholder')}
                     className="pl-11"
                     required
                     autoComplete="email"
@@ -157,17 +155,17 @@ export default function ResendVerificationPage() {
                 {loading ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin mr-2" aria-hidden="true" />
-                    Sending fresh link...
+                    {t('auth.resend.sending')}
                   </>
                 ) : (
-                  'Send me a fresh link'
+                  t('auth.resend.cta')
                 )}
               </Button>
             </form>
 
             <div className="mt-6 rounded-md border border-primary/20 bg-primary/5 px-4 py-4">
               <h2 className="text-sm font-medium text-foreground mb-3">
-                Tried twice and still no email?
+                {t('auth.resend.troubleshoot_title')}
               </h2>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li>
@@ -175,29 +173,29 @@ export default function ResendVerificationPage() {
                     href="/auth/login"
                     className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
                   >
-                    Sign in with Google instead
+                    {t('auth.resend.use_google')}
                   </Link>{' '}
-                  — Google verifies your email for us, so you don&apos;t need our link.
+                  {t('auth.resend.use_google_help')}
                 </li>
                 <li>
-                  Already verified your link in another tab?{' '}
+                  {t('auth.resend.verified_other_tab')}{' '}
                   <Link
                     href="/auth/login"
                     className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
                   >
-                    Just sign in
+                    {t('auth.resend.just_sign_in')}
                   </Link>
                   .
                 </li>
                 <li>
-                  Contact us at{' '}
+                  {t('auth.resend.contact_before')}{' '}
                   <a
                     href="mailto:founder@theenglishhub.app"
                     className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
                   >
                     founder@theenglishhub.app
                   </a>{' '}
-                  — we&apos;ll confirm your email manually within a few hours.
+                  {t('auth.resend.contact_after')}
                 </li>
               </ul>
             </div>
@@ -205,14 +203,14 @@ export default function ResendVerificationPage() {
 
           <CardFooter className="flex-col gap-3">
             <p className="text-muted-foreground text-sm">
-              Already verified?{' '}
+              {t('auth.resend.already_verified_q')}{' '}
               <Button
                 variant="link"
                 size="sm"
                 className="h-auto p-0 font-medium"
                 render={<Link href="/auth/login" />}
               >
-                Sign in
+                {t('auth.sign_in')}
               </Button>
             </p>
           </CardFooter>

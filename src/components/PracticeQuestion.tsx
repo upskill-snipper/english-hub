@@ -1,83 +1,84 @@
-'use client';
+'use client'
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { AITextArea } from './AITextArea';
+import React, { useState, useEffect, useCallback, useRef } from 'react'
+import { AITextArea } from './AITextArea'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
 interface PracticeQuestionProps {
   /** The question prompt text */
-  question: string;
+  question: string
   /** Number of marks allocated */
-  marks?: number;
+  marks?: number
   /** Exam board (e.g. AQA, Edexcel) */
-  examBoard?: string;
+  examBoard?: string
   /** Subject context */
-  subject?: string;
+  subject?: string
   /** Topic for AI feedback context */
-  topic?: string;
+  topic?: string
   /** Minimum word count for the answer */
-  minWords?: number;
+  minWords?: number
   /** Maximum word count for the answer */
-  maxWords?: number;
+  maxWords?: number
   /** Model answer text (revealed after submission) */
-  modelAnswer?: string;
+  modelAnswer?: string
   /** Whether to show a timer */
-  timed?: boolean;
+  timed?: boolean
   /** Time limit in minutes (default 15) */
-  timeLimitMinutes?: number;
+  timeLimitMinutes?: number
   /** Callback when answer is submitted */
-  onSubmit?: (answer: string) => void;
+  onSubmit?: (answer: string) => void
   /** Additional CSS classes */
-  className?: string;
+  className?: string
 }
 
 // ─── Timer Hook ─────────────────────────────────────────────────────────
 
 function useTimer(enabled: boolean, limitMinutes: number) {
-  const [secondsElapsed, setSecondsElapsed] = useState(0);
-  const [running, setRunning] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [secondsElapsed, setSecondsElapsed] = useState(0)
+  const [running, setRunning] = useState(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  const totalSeconds = limitMinutes * 60;
-  const remaining = Math.max(0, totalSeconds - secondsElapsed);
-  const isExpired = remaining <= 0;
-  const progress = totalSeconds > 0 ? secondsElapsed / totalSeconds : 0;
+  const totalSeconds = limitMinutes * 60
+  const remaining = Math.max(0, totalSeconds - secondsElapsed)
+  const isExpired = remaining <= 0
+  const progress = totalSeconds > 0 ? secondsElapsed / totalSeconds : 0
 
   const start = useCallback(() => {
-    if (!enabled) return;
-    setRunning(true);
-  }, [enabled]);
+    if (!enabled) return
+    setRunning(true)
+  }, [enabled])
 
   const stop = useCallback(() => {
-    setRunning(false);
-  }, []);
+    setRunning(false)
+  }, [])
 
   const reset = useCallback(() => {
-    setSecondsElapsed(0);
-    setRunning(false);
-  }, []);
+    setSecondsElapsed(0)
+    setRunning(false)
+  }, [])
 
   useEffect(() => {
     if (running && enabled) {
       intervalRef.current = setInterval(() => {
-        setSecondsElapsed((prev) => prev + 1);
-      }, 1000);
+        setSecondsElapsed((prev) => prev + 1)
+      }, 1000)
     }
 
     return () => {
       if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
+        clearInterval(intervalRef.current)
+        intervalRef.current = null
       }
-    };
-  }, [running, enabled]);
+    }
+  }, [running, enabled])
 
   const formatTime = (secs: number) => {
-    const m = Math.floor(secs / 60);
-    const s = secs % 60;
-    return `${m}:${s.toString().padStart(2, '0')}`;
-  };
+    const m = Math.floor(secs / 60)
+    const s = secs % 60
+    return `${m}:${s.toString().padStart(2, '0')}`
+  }
 
   return {
     secondsElapsed,
@@ -90,7 +91,7 @@ function useTimer(enabled: boolean, limitMinutes: number) {
     reset,
     formattedElapsed: formatTime(secondsElapsed),
     formattedRemaining: formatTime(remaining),
-  };
+  }
 }
 
 // ─── Main Component ─────────────────────────────────────────────────────
@@ -109,35 +110,36 @@ function PracticeQuestion({
   onSubmit,
   className = '',
 }: PracticeQuestionProps) {
-  const [submitted, setSubmitted] = useState(false);
-  const [showModelAnswer, setShowModelAnswer] = useState(false);
-  const [answer, setAnswer] = useState('');
-  const [started, setStarted] = useState(!timed);
+  const t = useT()
+  const [submitted, setSubmitted] = useState(false)
+  const [showModelAnswer, setShowModelAnswer] = useState(false)
+  const [answer, setAnswer] = useState('')
+  const [started, setStarted] = useState(!timed)
 
-  const timer = useTimer(timed, timeLimitMinutes);
+  const timer = useTimer(timed, timeLimitMinutes)
 
   // Auto-stop timer on submit
   useEffect(() => {
     if (submitted && timer.running) {
-      timer.stop();
+      timer.stop()
     }
-  }, [submitted, timer]);
+  }, [submitted, timer])
 
   // Handle starting timed practice
   const handleStart = useCallback(() => {
-    setStarted(true);
-    timer.start();
-  }, [timer]);
+    setStarted(true)
+    timer.start()
+  }, [timer])
 
   // Handle answer submission
   const handleSubmit = useCallback(
     (text: string) => {
-      setSubmitted(true);
-      setAnswer(text);
-      onSubmit?.(text);
+      setSubmitted(true)
+      setAnswer(text)
+      onSubmit?.(text)
     },
-    [onSubmit]
-  );
+    [onSubmit],
+  )
 
   // Timer colour: green -> amber -> red
   const timerColor =
@@ -145,12 +147,10 @@ function PracticeQuestion({
       ? 'text-success-600'
       : timer.progress < 0.8
         ? 'text-amber-600'
-        : 'text-warn-600';
+        : 'text-warn-600'
 
   return (
-    <div
-      className={`rounded-2xl border border-border bg-card shadow-sm ${className}`}
-    >
+    <div className={`rounded-2xl border border-border bg-card shadow-sm ${className}`}>
       {/* ── Header ─────────────────────────────────────────────────── */}
       <div className="border-b border-border px-5 py-4 sm:px-6">
         <div className="flex flex-wrap items-start justify-between gap-3">
@@ -171,7 +171,7 @@ function PracticeQuestion({
             {/* Mark allocation */}
             {marks !== undefined && (
               <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
-                {marks} {marks === 1 ? 'mark' : 'marks'}
+                {marks} {marks === 1 ? t('marking.mark_singular') : t('marking.mark_plural')}
               </span>
             )}
           </div>
@@ -194,7 +194,7 @@ function PracticeQuestion({
                 />
               </svg>
               <span className={`text-sm font-medium tabular-nums ${timerColor}`}>
-                {timer.formattedRemaining} remaining
+                {timer.formattedRemaining} {t('marking.remaining')}
               </span>
             </div>
 
@@ -224,12 +224,7 @@ function PracticeQuestion({
         {timed && !started && (
           <div className="flex flex-col items-center py-8 text-center">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <svg
-                className="h-8 w-8"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
+              <svg className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path
                   fillRule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z"
@@ -238,25 +233,20 @@ function PracticeQuestion({
               </svg>
             </div>
             <h4 className="mt-4 text-lg font-semibold text-foreground">
-              Timed Practice
+              {t('marking.timed_practice')}
             </h4>
             <p className="mt-1 text-sm text-muted-foreground">
-              You will have {timeLimitMinutes} minutes to complete your answer.
+              {t('marking.timed_intro_prefix')} {timeLimitMinutes} {t('marking.timed_intro_suffix')}
             </p>
             <button
               type="button"
               onClick={handleStart}
               className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary/90"
             >
-              <svg
-                className="h-4 w-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
+              <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
               </svg>
-              Start Timer
+              {t('marking.start_timer')}
             </button>
           </div>
         )}
@@ -264,7 +254,7 @@ function PracticeQuestion({
         {/* Answer area */}
         {started && (
           <AITextArea
-            placeholder="Write your answer here..."
+            placeholder={t('marking.placeholder')}
             examBoard={examBoard}
             subject={subject}
             topic={topic ?? question}
@@ -279,11 +269,8 @@ function PracticeQuestion({
         {/* Time expired notice */}
         {timer.isExpired && !submitted && started && (
           <div className="mt-4 rounded-lg border border-warn-200 bg-warn-50 px-4 py-3 text-sm text-warn-600">
-            <p className="font-medium">Time is up!</p>
-            <p className="mt-0.5 text-warn-600">
-              You can still submit your answer or get AI feedback on what you
-              have written.
-            </p>
+            <p className="font-medium">{t('marking.time_up')}</p>
+            <p className="mt-0.5 text-warn-600">{t('marking.time_up_hint')}</p>
           </div>
         )}
 
@@ -297,12 +284,7 @@ function PracticeQuestion({
               aria-expanded={showModelAnswer}
             >
               <span className="flex items-center gap-2">
-                <svg
-                  className="h-4 w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
+                <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
                   <path
                     fillRule="evenodd"
@@ -310,7 +292,7 @@ function PracticeQuestion({
                     clipRule="evenodd"
                   />
                 </svg>
-                View Model Answer
+                {t('marking.view_model_answer')}
               </span>
               <svg
                 className={`h-4 w-4 transform transition-transform ${showModelAnswer ? 'rotate-180' : ''}`}
@@ -329,7 +311,7 @@ function PracticeQuestion({
             {showModelAnswer && (
               <div className="mt-3 rounded-lg border border-primary/20 bg-primary/5 p-4">
                 <p className="mb-2 text-xs font-medium uppercase tracking-wide text-primary">
-                  Model Answer
+                  {t('marking.model_answer_singular')}
                 </p>
                 <div className="whitespace-pre-wrap text-sm leading-relaxed text-foreground">
                   {modelAnswer}
@@ -340,7 +322,7 @@ function PracticeQuestion({
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export { PracticeQuestion, type PracticeQuestionProps };
+export { PracticeQuestion, type PracticeQuestionProps }

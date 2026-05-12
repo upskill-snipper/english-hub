@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 import {
   BarChart3,
   Bell,
@@ -123,7 +124,44 @@ const faqs = [
 
 /* ───────────────────── Main Page ───────────────────── */
 
-export default function ForParentsPage() {
+export default async function ForParentsPage() {
+  const [
+    heroBadge,
+    heroTitle,
+    heroTitleEmphasis,
+    heroSub,
+    ctaStartTrial,
+    ctaReadingCheck,
+    ctaSeeHow,
+    pricingTitle,
+    pricingSub,
+    pricingPlanName,
+    pricingPlanDesc,
+    pricingPopular,
+    finalCtaTitle,
+    finalCtaSub,
+    finalCtaDashboard,
+    contactTitle,
+    contactBody,
+  ] = await tMany([
+    'audience.parents.hero.badge',
+    'audience.parents.hero.title',
+    'audience.parents.hero.title_emphasis',
+    'audience.parents.hero.sub',
+    'audience.parents.cta.start_trial',
+    'audience.parents.cta.reading_check',
+    'audience.parents.cta.see_how',
+    'audience.parents.pricing.title',
+    'audience.parents.pricing.sub',
+    'audience.parents.pricing.plan_name',
+    'audience.parents.pricing.plan_desc',
+    'pricing.badge.popular',
+    'audience.parents.final.title',
+    'audience.parents.final.sub',
+    'audience.parents.final.dashboard',
+    'audience.parents.contact.title',
+    'audience.parents.contact.body',
+  ])
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -145,17 +183,15 @@ export default function ForParentsPage() {
             className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-10 gap-2 px-4 py-1.5"
           >
             <Users className="w-4 h-4" />
-            For Parents &amp; Guardians
+            {heroBadge}
           </Badge>
 
           <h1 className="text-foreground">
-            Help your child pass GCSE or <span className="text-primary">IGCSE English</span>
+            {heroTitle} <span className="text-primary">{heroTitleEmphasis}</span>
           </h1>
 
           <p className="mt-7 text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Get real-time insights into your child&rsquo;s revision progress, exam readiness, and
-            areas for improvement. No more guessing &mdash; see exactly what they&rsquo;re learning
-            and where they need help.
+            {heroSub}
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -165,7 +201,7 @@ export default function ForParentsPage() {
               className="text-base px-8 h-12 shadow-lg shadow-primary/20"
               render={<Link href="/auth/register?role=parent" />}
             >
-              Start Your Child&rsquo;s Free Trial
+              {ctaStartTrial}
             </Button>
             <Button
               variant="outline"
@@ -173,7 +209,7 @@ export default function ForParentsPage() {
               className="text-base px-8 h-12"
               render={<Link href="/assessment/reading" />}
             >
-              Run a 20-minute reading-age check (free, no card)
+              {ctaReadingCheck}
             </Button>
             <Button
               variant="secondary"
@@ -181,7 +217,7 @@ export default function ForParentsPage() {
               className="text-base px-8 h-12"
               render={<Link href="#how-it-works" />}
             >
-              See How It Works
+              {ctaSeeHow}
             </Button>
           </div>
 
@@ -389,24 +425,20 @@ export default function ForParentsPage() {
       <section className="py-24 sm:py-32">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-10">
-            <h2 className="text-foreground">Simple, Transparent Pricing</h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Same price as an individual plan. Parent pays, child learns.
-            </p>
+            <h2 className="text-foreground">{pricingTitle}</h2>
+            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">{pricingSub}</p>
           </div>
 
           <Card className="max-w-md mx-auto border-primary/30 bg-card/50 overflow-hidden">
             <div className="bg-primary/[0.04] px-6 py-4 border-b border-border/40">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-bold text-foreground">Family Plan</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Full access for your child + parent dashboard
-                  </p>
+                  <h3 className="text-lg font-bold text-foreground">{pricingPlanName}</h3>
+                  <p className="text-sm text-muted-foreground">{pricingPlanDesc}</p>
                 </div>
                 <Badge variant="outline" className="border-primary/30 text-primary">
                   <Sparkles className="w-3.5 h-3.5 mr-1" />
-                  Popular
+                  {pricingPopular}
                 </Badge>
               </div>
             </div>
@@ -452,7 +484,7 @@ export default function ForParentsPage() {
                 className="w-full text-base shadow-lg shadow-primary/20"
                 render={<Link href="/auth/register?role=parent" />}
               >
-                Start Your Child&rsquo;s Free Trial
+                {ctaStartTrial}
               </Button>
               <p className="text-center text-xs text-muted-foreground mt-3">
                 Card required for 7-day trial &middot; 3 free demo uses without a card
@@ -507,11 +539,8 @@ export default function ForParentsPage() {
       <section className="py-16 sm:py-20">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <Mail className="w-10 h-10 text-primary mx-auto mb-4" />
-          <h2 className="text-foreground mb-3">Have a Question?</h2>
-          <p className="text-muted-foreground text-body-lg mb-6">
-            We&rsquo;re here to help. If you have any questions about how the platform works,
-            pricing, or your child&rsquo;s progress, please get in touch.
-          </p>
+          <h2 className="text-foreground mb-3">{contactTitle}</h2>
+          <p className="text-muted-foreground text-body-lg mb-6">{contactBody}</p>
           <a
             href="mailto:info@Upskillenergy.com"
             className="text-primary font-semibold hover:underline text-lg"
@@ -528,11 +557,8 @@ export default function ForParentsPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[140px] pointer-events-none" />
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <GraduationCap className="w-12 h-12 text-primary mx-auto mb-6" />
-          <h2 className="text-foreground mb-4">Ready to Support Their Success?</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-body-lg mb-10">
-            Start with a free trial and see what real progress tracking looks like for GCSE and
-            IGCSE English revision.
-          </p>
+          <h2 className="text-foreground mb-4">{finalCtaTitle}</h2>
+          <p className="text-muted-foreground max-w-xl mx-auto text-body-lg mb-10">{finalCtaSub}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               variant="default"
@@ -540,7 +566,7 @@ export default function ForParentsPage() {
               className="text-base px-8 h-12 shadow-lg shadow-primary/20"
               render={<Link href="/auth/register?role=parent" />}
             >
-              Start Your Child&rsquo;s Free Trial
+              {ctaStartTrial}
             </Button>
             <Button
               variant="secondary"
@@ -548,7 +574,7 @@ export default function ForParentsPage() {
               className="text-base px-8 h-12"
               render={<Link href="/dashboard/parent" />}
             >
-              Go to Parent Dashboard
+              {finalCtaDashboard}
             </Button>
           </div>
         </div>

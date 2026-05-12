@@ -5,6 +5,7 @@ import { BookOpen, GraduationCap, Globe2, Sparkles, Award, Loader2, Check } from
 
 import { BOARDS, type ExamBoard, type BoardConfig } from '@/lib/board/board-store'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 type BoardSelectorCardsProps = {
   onSelect: (board: ExamBoard) => void | Promise<void>
@@ -35,40 +36,100 @@ const BOARD_ICON: Record<ExamBoard, React.ComponentType<{ className?: string }>>
   'eduqas-a-level': Award,
 }
 
-const BOARD_TAGLINE: Record<ExamBoard, string> = {
-  ks3: 'Years 7-9 foundation English skills',
-  aqa: 'Power & Conflict, AIC, and Macbeth',
-  edexcel: 'Time & Place, AIC, and Macbeth',
-  ocr: 'Conflict cluster and Romeo & Juliet',
-  eduqas: 'Single anthology and unseen poetry',
-  'edexcel-igcse': 'Poetry, prose, drama & Shakespeare',
-  'edexcel-igcse-lang': 'Reading comprehension & transactional writing',
-  'cambridge-0500': 'First Language English (A*-G)',
-  'cambridge-0990': 'First Language English (9-1)',
-  'cambridge-0475': 'Literature in English — prose, poetry & drama',
-  'ial-edexcel': 'International A-Level English',
-  'aqa-a-level': 'A-Level English Literature (7712) & Language (7702)',
-  'edexcel-a-level': 'A-Level English Literature (9ET0) & Language (9EN0)',
-  'ocr-a-level': 'A-Level English Literature (H472) & Language (H470)',
-  'eduqas-a-level': 'A-Level English Literature & Language',
+const BOARD_TAGLINE_KEY: Record<ExamBoard, string> = {
+  ks3: 'board.tagline.ks3',
+  aqa: 'board.tagline.aqa',
+  edexcel: 'board.tagline.edexcel',
+  ocr: 'board.tagline.ocr',
+  eduqas: 'board.tagline.eduqas',
+  'edexcel-igcse': 'board.tagline.edexcel_igcse',
+  'edexcel-igcse-lang': 'board.tagline.edexcel_igcse_lang',
+  'cambridge-0500': 'board.tagline.cambridge_0500',
+  'cambridge-0990': 'board.tagline.cambridge_0990',
+  'cambridge-0475': 'board.tagline.cambridge_0475',
+  'ial-edexcel': 'board.tagline.ial_edexcel',
+  'aqa-a-level': 'board.tagline.aqa_a_level',
+  'edexcel-a-level': 'board.tagline.edexcel_a_level',
+  'ocr-a-level': 'board.tagline.ocr_a_level',
+  'eduqas-a-level': 'board.tagline.eduqas_a_level',
 }
 
-const BOARD_BENEFITS: Record<ExamBoard, string[]> = {
-  ks3: ['Reading comprehension', 'Creative writing', 'Grammar & vocabulary'],
-  aqa: ['Poetry anthology', 'Set text guides', 'Past paper walkthroughs'],
-  edexcel: ['Anthology analysis', 'Set text guides', 'Exam-style tasks'],
-  ocr: ['Conflict poetry', 'Shakespeare support', 'Past paper practice'],
-  eduqas: ['Anthology mastery', 'Unseen poetry drills', 'Component 1 & 2 prep'],
-  'edexcel-igcse': ['Anthology coverage', 'Shakespeare essays', 'Unseen prose & poetry'],
-  'edexcel-igcse-lang': ['Reading passages', 'Transactional writing', 'Summary skills'],
-  'cambridge-0500': ['Reading passages', 'Directed writing', 'Composition practice'],
-  'cambridge-0990': ['Reading passages', 'Directed writing', 'Composition practice'],
-  'cambridge-0475': ['Poetry analysis', 'Prose & drama texts', 'Unseen criticism'],
-  'ial-edexcel': ['Advanced essay writing', 'Critical analysis', 'Comparative study'],
-  'aqa-a-level': ['Coming soon', 'Cross-board revision tools', 'Text library'],
-  'edexcel-a-level': ['Coming soon', 'Cross-board revision tools', 'Text library'],
-  'ocr-a-level': ['Coming soon', 'Cross-board revision tools', 'Text library'],
-  'eduqas-a-level': ['Coming soon', 'Cross-board revision tools', 'Text library'],
+const BOARD_BENEFITS_KEYS: Record<ExamBoard, [string, string, string]> = {
+  ks3: [
+    'board.benefit.reading_comp',
+    'board.benefit.creative_writing',
+    'board.benefit.grammar_vocab',
+  ],
+  aqa: [
+    'board.benefit.poetry_anthology',
+    'board.benefit.set_text_guides',
+    'board.benefit.past_paper_walkthroughs',
+  ],
+  edexcel: [
+    'board.benefit.anthology_analysis',
+    'board.benefit.set_text_guides',
+    'board.benefit.exam_style_tasks',
+  ],
+  ocr: [
+    'board.benefit.conflict_poetry',
+    'board.benefit.shakespeare_support',
+    'board.benefit.past_paper_practice',
+  ],
+  eduqas: [
+    'board.benefit.anthology_mastery',
+    'board.benefit.unseen_poetry_drills',
+    'board.benefit.component_1_2_prep',
+  ],
+  'edexcel-igcse': [
+    'board.benefit.anthology_coverage',
+    'board.benefit.shakespeare_essays',
+    'board.benefit.unseen_prose_poetry',
+  ],
+  'edexcel-igcse-lang': [
+    'board.benefit.reading_passages',
+    'board.benefit.transactional_writing',
+    'board.benefit.summary_skills',
+  ],
+  'cambridge-0500': [
+    'board.benefit.reading_passages',
+    'board.benefit.directed_writing',
+    'board.benefit.composition_practice',
+  ],
+  'cambridge-0990': [
+    'board.benefit.reading_passages',
+    'board.benefit.directed_writing',
+    'board.benefit.composition_practice',
+  ],
+  'cambridge-0475': [
+    'board.benefit.poetry_analysis',
+    'board.benefit.prose_drama_texts',
+    'board.benefit.unseen_criticism',
+  ],
+  'ial-edexcel': [
+    'board.benefit.advanced_essay',
+    'board.benefit.critical_analysis',
+    'board.benefit.comparative_study',
+  ],
+  'aqa-a-level': [
+    'board.benefit.coming_soon',
+    'board.benefit.cross_board_tools',
+    'board.benefit.text_library',
+  ],
+  'edexcel-a-level': [
+    'board.benefit.coming_soon',
+    'board.benefit.cross_board_tools',
+    'board.benefit.text_library',
+  ],
+  'ocr-a-level': [
+    'board.benefit.coming_soon',
+    'board.benefit.cross_board_tools',
+    'board.benefit.text_library',
+  ],
+  'eduqas-a-level': [
+    'board.benefit.coming_soon',
+    'board.benefit.cross_board_tools',
+    'board.benefit.text_library',
+  ],
 }
 
 function BoardCard({
@@ -87,6 +148,9 @@ function BoardCard({
   onClick: () => void
 }) {
   const Icon = BOARD_ICON[board.id]
+  const t = useT()
+  const tagline = t(BOARD_TAGLINE_KEY[board.id])
+  const benefits = BOARD_BENEFITS_KEYS[board.id].map((k) => t(k))
   return (
     <button
       type="button"
@@ -125,7 +189,7 @@ function BoardCard({
         {isSelected && !isLoading && (
           <span
             className="inline-flex size-6 items-center justify-center rounded-full bg-primary text-primary-foreground"
-            aria-label="Currently selected"
+            aria-label={t('board.currently_selected')}
           >
             <Check className="size-3.5" aria-hidden="true" />
           </span>
@@ -146,18 +210,16 @@ function BoardCard({
         </p>
       </div>
 
-      <p className={cn('text-muted-foreground', compact ? 'text-xs' : 'text-sm')}>
-        {BOARD_TAGLINE[board.id]}
-      </p>
+      <p className={cn('text-muted-foreground', compact ? 'text-xs' : 'text-sm')}>{tagline}</p>
 
       {!compact && (
         <ul
           className="mt-auto flex flex-wrap gap-1.5 pt-1"
-          aria-label={`What you get for ${board.name}`}
+          aria-label={`${t('board.what_you_get')} ${board.name}`}
         >
-          {BOARD_BENEFITS[board.id].map((benefit) => (
+          {benefits.map((benefit, i) => (
             <li
-              key={benefit}
+              key={i}
               className="inline-flex items-center gap-1 rounded-full border border-border/60 bg-muted/40 px-2 py-0.5 text-[0.6875rem] font-medium text-muted-foreground"
             >
               {benefit}
@@ -177,6 +239,7 @@ export function BoardSelectorCards({
   compact,
 }: BoardSelectorCardsProps) {
   const [loadingBoard, setLoadingBoard] = React.useState<ExamBoard | null>(null)
+  const t = useT()
 
   const visibleBoards = React.useMemo(
     () => (filterType ? BOARDS.filter((b) => b.type === filterType) : BOARDS),
@@ -207,7 +270,7 @@ export function BoardSelectorCards({
         className,
       )}
       role="radiogroup"
-      aria-label="Choose your exam board"
+      aria-label={t('board.choose')}
     >
       {visibleBoards.map((board) => (
         <BoardCard

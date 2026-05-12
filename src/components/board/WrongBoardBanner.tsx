@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, Lock, RefreshCw } from 'lucide-react'
 import { useBoard, getBoardConfig } from '@/lib/board/board-store'
 import type { ExamBoard } from '@/lib/board/board-store'
+import { useT } from '@/lib/i18n/use-t'
 
 type Props = {
   contentBoards: ExamBoard[]
@@ -25,24 +26,21 @@ type Props = {
  * component is rendered above them. We use position: fixed + z-50 so the
  * blocker covers the whole viewport for mismatched users.
  */
-export function WrongBoardBanner({
-  contentBoards,
-  contentName,
-  redirectTo = '/revision',
-}: Props) {
+export function WrongBoardBanner({ contentBoards, contentName, redirectTo = '/revision' }: Props) {
   const { board, isHydrated } = useBoard()
+  const t = useT()
 
   if (!isHydrated) return null
   if (!board) return null
   if (contentBoards.includes(board)) return null
 
-  const userBoardName = getBoardConfig(board)?.name ?? 'your board'
+  const userBoardName = getBoardConfig(board)?.name ?? t('board.wrong.your_board_fallback')
 
   return (
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Wrong exam board"
+      aria-label={t('board.wrong.aria_label')}
       className="fixed inset-0 z-[60] flex items-center justify-center overflow-y-auto bg-background/95 p-4 backdrop-blur-md"
     >
       <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-border/60 bg-card/90 p-8 shadow-2xl backdrop-blur-xl backdrop-saturate-150">
@@ -58,12 +56,14 @@ export function WrongBoardBanner({
 
           <div className="flex flex-col gap-2">
             <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground">
-              Not part of your course
+              {t('board.wrong.title')}
             </h2>
             <p className="text-sm text-muted-foreground">
-              This page covers <strong className="text-foreground">{contentName}</strong>, which is
-              not studied on <strong className="text-foreground">{userBoardName}</strong>.
-              You&apos;re only shown content that matches your exam board.
+              {t('board.wrong.body_before')}{' '}
+              <strong className="text-foreground">{contentName}</strong>
+              {t('board.wrong.body_middle')}{' '}
+              <strong className="text-foreground">{userBoardName}</strong>
+              {t('board.wrong.body_after')}
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export function WrongBoardBanner({
               href={redirectTo}
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow transition-colors hover:bg-primary/90"
             >
-              Back to your {userBoardName} content
+              {t('board.wrong.back_to')} {userBoardName} {t('board.wrong.back_content')}
               <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
             <Link
@@ -80,7 +80,7 @@ export function WrongBoardBanner({
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border/60 bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
             >
               <RefreshCw className="size-4" aria-hidden="true" />
-              Change exam board
+              {t('board.change_exam_board')}
             </Link>
           </div>
         </div>

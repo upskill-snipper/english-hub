@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useBoard, getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
 import { Button } from '@/components/ui/button'
 import { X } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 
 interface BoardMismatchBannerProps {
   /** The board this page is showing content for. */
@@ -18,6 +19,7 @@ export default function BoardMismatchBanner({
 }: BoardMismatchBannerProps) {
   const { board: cookieBoard, isHydrated, setBoard } = useBoard()
   const [dismissed, setDismissed] = useState(false)
+  const t = useT()
 
   // Don't render until hydrated (avoids SSR / client mismatch)
   if (!isHydrated) return null
@@ -31,6 +33,14 @@ export default function BoardMismatchBanner({
   const cookieBoardLabel = getBoardConfig(cookieBoard)?.shortName ?? cookieBoard
   const pageLabel = pageBoardLabel ?? getBoardConfig(pageBoard)?.shortName ?? pageBoard
 
+  // Compose two-piece sentence so the board names stay Latin and translatable
+  // copy wraps them. We render `<before> {pageLabel} <middle> {cookieLabel} <after>`.
+  const before = t('board.mismatch.body_before')
+  const middle = t('board.mismatch.body_middle')
+  const after = t('board.mismatch.body_after')
+  const switchPrefix = t('board.mismatch.switch_to')
+  const stayPrefix = t('board.mismatch.stay_on')
+
   return (
     <div
       role="status"
@@ -39,7 +49,8 @@ export default function BoardMismatchBanner({
       <div className="flex items-start gap-3">
         <div className="flex-1">
           <p className="text-sm text-foreground font-medium">
-            You&apos;re viewing {pageLabel} content. Your saved board is {cookieBoardLabel}.
+            {before} {pageLabel} {middle} {cookieBoardLabel}
+            {after}
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
             <Button
@@ -51,16 +62,16 @@ export default function BoardMismatchBanner({
                 if (typeof window !== 'undefined') window.location.reload()
               }}
             >
-              Switch to {pageLabel}
+              {switchPrefix} {pageLabel}
             </Button>
             <Button size="sm" variant="outline" onClick={() => setDismissed(true)}>
-              Stay on {cookieBoardLabel}
+              {stayPrefix} {cookieBoardLabel}
             </Button>
           </div>
         </div>
         <button
           type="button"
-          aria-label="Dismiss"
+          aria-label={t('action.cancel')}
           onClick={() => setDismissed(true)}
           className="text-muted-foreground hover:text-foreground"
         >

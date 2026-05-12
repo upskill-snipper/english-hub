@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { KS3, getYear, getTerm } from '@/lib/ks3/curriculum'
 import type { YearNumber } from '@/lib/ks3/curriculum'
+import { t } from '@/lib/i18n/t'
 
 type Params = { year: string; term: string }
 
@@ -41,64 +42,75 @@ export default async function TermPage({ params }: { params: Promise<Params> }) 
   if (!parsed) notFound()
   const { year: yearNum, term: termNum } = parsed
   const y = getYear(KS3, yearNum)
-  const t = getTerm(KS3, yearNum, termNum)
-  if (!y || !t) notFound()
+  const term = getTerm(KS3, yearNum, termNum)
+  if (!y || !term) notFound()
+
+  const tr = await Promise.all([
+    t('ks3.key_stage_3'), // 0
+    t(`ks3.year_${yearNum}`), // 1
+    t(`ks3.year_${yearNum}_name`), // 2
+    t(`ks3.term_${termNum}`), // 3
+    t('ks3.set_text'), // 4
+    t('ks3.big_skill_jump'), // 5
+    t('ks3.term.vocab_themes_heading'), // 6
+    t('ks3.assessment'), // 7
+    t('ks3.term.in_production'), // 8
+    t('ks3.term.week_label'), // 9
+  ])
+  const isAr = tr[0] !== 'Key Stage 3'
 
   return (
     <>
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {tr[0]}
         </Link>
         <span> · </span>
         <Link href={`/ks3/year-${yearNum}`} className="hover:text-foreground">
-          {y.name.en}
+          {isAr ? `${tr[1]} — ${tr[2]}` : y.name.en}
         </Link>
         <span> · </span>
-        <span>{t.label.en}</span>
+        <span>{tr[3]}</span>
       </p>
-      <h1>{t.label.en}</h1>
-      <p className="lead">{t.overview.en}</p>
+      <h1>{tr[3]}</h1>
+      <p className="lead">{term.overview.en}</p>
 
       <div className="not-prose grid gap-4 sm:grid-cols-2 my-6">
         <div className="rounded-xl border border-border/60 bg-card p-5">
           <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-            Set text
+            {tr[4]}
           </p>
-          <p className="text-base font-medium text-foreground">{t.setText.en}</p>
+          <p className="text-base font-medium text-foreground">{term.setText.en}</p>
         </div>
         <div className="rounded-xl border border-border/60 bg-card p-5">
           <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-            Big skill jump
+            {tr[5]}
           </p>
-          <p className="text-sm text-muted-foreground">{t.bigSkillJump.en}</p>
+          <p className="text-sm text-muted-foreground">{term.bigSkillJump.en}</p>
         </div>
       </div>
 
-      <h2>Vocabulary themes</h2>
+      <h2>{tr[6]}</h2>
       <ul>
-        {t.vocabularyThemes.map((v, i) => (
+        {term.vocabularyThemes.map((v, i) => (
           <li key={i}>{v.en}</li>
         ))}
       </ul>
 
-      {t.halfTerms.map((h) => (
+      {term.halfTerms.map((h) => (
         <section key={h.id} className="my-8">
           <h2>{h.label.en}</h2>
           {h.assessment ? (
             <div className="not-prose rounded-xl border border-primary/30 bg-primary/[0.04] p-4 mb-6 text-sm">
               <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-1">
-                End-of-half-term assessment
+                {tr[7]}
               </p>
               <p className="text-muted-foreground">{h.assessment.en}</p>
             </div>
           ) : null}
 
           {h.weeks.length === 0 ? (
-            <p className="text-sm text-muted-foreground italic">
-              Weekly lesson plans for this half-term are in production — the KS3 lesson-planner
-              agent is drafting them now. Yearly expectations and rubrics still apply.
-            </p>
+            <p className="text-sm text-muted-foreground italic">{tr[8]}</p>
           ) : (
             <div className="not-prose grid gap-3 sm:grid-cols-2 lg:grid-cols-3 my-4">
               {h.weeks.map((w) => (
@@ -108,7 +120,7 @@ export default async function TermPage({ params }: { params: Promise<Params> }) 
                   className="group rounded-xl border border-border/60 bg-card p-4 transition-colors hover:border-primary/40 hover:bg-primary/[0.03]"
                 >
                   <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
-                    Week {w.number}
+                    {tr[9]} {w.number}
                   </p>
                   {w.pages ? <p className="mt-1 text-xs text-muted-foreground">{w.pages}</p> : null}
                   {w.contextNote ? (

@@ -19,6 +19,8 @@ import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { getAllBlogPosts, type BlogPost } from '@/lib/blog/posts'
+import { tMany, tSync } from '@/lib/i18n/t'
+import type { Locale } from '@/lib/i18n/dictionary'
 
 const SITE_URL = 'https://theenglishhub.app'
 const PAGE_URL = `${SITE_URL}/blog`
@@ -72,8 +74,21 @@ function formatDisplayDate(iso: string): string {
 }
 
 export default async function BlogIndexPage() {
-  const nonce = (await headers()).get('x-nonce') ?? undefined
+  const h = await headers()
+  const nonce = h.get('x-nonce') ?? undefined
+  const locale: Locale = h.get('x-lang') === 'ar' ? 'ar' : 'en'
   const posts = getAllBlogPosts()
+
+  const [tEyebrow, tHeading, tLead, tEmptyTitle, tEmptyLead, tBrowseResources, tInMeantime] =
+    await tMany([
+      'blog.index.eyebrow',
+      'blog.index.heading',
+      'blog.index.lead',
+      'blog.empty.title',
+      'blog.empty.body_lead',
+      'blog.empty.browse_resources',
+      'blog.empty.in_meantime',
+    ])
 
   // CollectionPage / Blog schema for the index itself. Each post is
   // surfaced as a `BlogPosting` so search engines can pick up the list
@@ -116,21 +131,26 @@ export default async function BlogIndexPage() {
 
       <header className="mb-10">
         <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-          The English Hub Blog
+          {tEyebrow}
         </p>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Revision guides and exam technique
+          {tHeading}
         </h1>
-        <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">{PAGE_DESCRIPTION}</p>
+        <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">{tLead}</p>
       </header>
 
       {posts.length === 0 ? (
-        <EmptyState />
+        <EmptyState
+          title={tEmptyTitle}
+          bodyLead={tEmptyLead}
+          browseLabel={tBrowseResources}
+          inMeantime={tInMeantime}
+        />
       ) : (
         <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <li key={post.slug}>
-              <PostCard post={post} />
+              <PostCard post={post} locale={locale} />
             </li>
           ))}
         </ul>
@@ -139,22 +159,38 @@ export default async function BlogIndexPage() {
   )
 }
 
-function EmptyState() {
+function EmptyState({
+  title,
+  bodyLead,
+  browseLabel,
+  inMeantime,
+}: {
+  title: string
+  bodyLead: string
+  browseLabel: string
+  inMeantime: string
+}) {
   return (
     <div className="rounded-2xl border border-border/60 bg-muted/20 p-8 text-center">
-      <h2 className="text-lg font-semibold text-foreground">Posts coming soon</h2>
+      <h2 className="text-lg font-semibold text-foreground">{title}</h2>
       <p className="mt-2 text-sm text-muted-foreground">
-        New articles land here as soon as they&apos;re ready.{' '}
+        {bodyLead}{' '}
         <Link href="/resources" className="underline underline-offset-4 hover:text-foreground">
-          Browse the resources library
+          {browseLabel}
         </Link>{' '}
-        in the meantime.
+        {inMeantime}
       </p>
     </div>
   )
 }
 
-function PostCard({ post }: { post: BlogPost }) {
+function PostCard({ post, locale }: { post: BlogPost; locale: Locale }) {
+  // `blog.reading_time` contains an `{n}` placeholder so AR/EN can position
+  // the number naturally (e.g. "5 min read" vs "٥ دقائق قراءة").
+  const readingTimeLabel = tSync('blog.reading_time', locale).replace(
+    '{n}',
+    String(post.readingTime),
+  )
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -176,7 +212,7 @@ function PostCard({ post }: { post: BlogPost }) {
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <span>{formatDisplayDate(post.date)}</span>
             <span aria-hidden="true">·</span>
-            <span>{post.readingTime} min read</span>
+            <span>{readingTimeLabel}</span>
             <span aria-hidden="true">·</span>
             <span>{post.educationalLevel}</span>
           </div>

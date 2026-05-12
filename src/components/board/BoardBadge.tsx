@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { BookOpen, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 type BoardBadgeProps = {
   showChangeButton?: boolean
@@ -26,6 +27,7 @@ export function BoardBadge({
   variant = 'secondary',
 }: BoardBadgeProps) {
   const { board, isHydrated } = useBoard()
+  const t = useT()
 
   // Avoid hydration mismatch: render nothing until the persisted store has hydrated.
   if (!isHydrated) {
@@ -43,18 +45,14 @@ export function BoardBadge({
         render={<Link href="/board-select" />}
       >
         <BookOpen className="h-3.5 w-3.5" />
-        Select board
+        {t('board.select_cta')}
       </Button>
     )
   }
 
   return (
     <div className={cn('inline-flex items-center gap-1.5', className)}>
-      <Badge
-        variant={variant}
-        className="gap-1"
-        title={config.fullName}
-      >
+      <Badge variant={variant} className="gap-1" title={config.fullName}>
         <BookOpen className="h-3 w-3" aria-hidden="true" />
         {config.shortName}
       </Badge>
@@ -63,9 +61,9 @@ export function BoardBadge({
           variant="ghost"
           size="sm"
           className="h-7 px-2 text-xs text-muted-foreground hover:text-foreground"
-          render={<Link href="/board-select?change=1" aria-label="Change exam board" />}
+          render={<Link href="/board-select?change=1" aria-label={t('board.change_aria')} />}
         >
-          Change
+          {t('board.change')}
           <ChevronRight className="ml-0.5 h-3 w-3" />
         </Button>
       )}

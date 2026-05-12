@@ -15,6 +15,7 @@ import {
   ChevronDown,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -111,6 +112,7 @@ export default function EssayFeedbackInline({
   autoSubmit = false,
   className,
 }: EssayFeedbackInlineProps) {
+  const t = useT()
   const [open, setOpen] = useState(false)
   const [essay, setEssay] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -130,7 +132,7 @@ export default function EssayFeedbackInline({
 
   async function handleSubmit() {
     if (!board || !paper || !questionType || !questionText.trim() || wordCount < 100) {
-      setError('Your answer must be at least 100 words to get AI feedback.')
+      setError(t('marking.min_words_error'))
       return
     }
 
@@ -154,7 +156,7 @@ export default function EssayFeedbackInline({
       const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error || 'Something went wrong. Please try again.')
+        setError(data.error || t('action.error_generic'))
         return
       }
 
@@ -163,7 +165,7 @@ export default function EssayFeedbackInline({
         setRemaining(data.remaining)
       }
     } catch {
-      setError('Network error. Please check your connection and try again.')
+      setError(t('marking.network_error'))
     } finally {
       setSubmitting(false)
     }
@@ -201,10 +203,14 @@ export default function EssayFeedbackInline({
         <CardHeader className="border-b">
           <CardTitle className="flex items-center gap-2 text-sm">
             <PenLine className="h-4 w-4 text-primary" />
-            AI Feedback
+            {t('marking.ai_feedback_title')}
             {remaining !== null && (
               <span className="ml-1 text-xs font-normal text-muted-foreground">
-                ({remaining} review{remaining !== 1 ? 's' : ''} remaining today)
+                ({remaining}{' '}
+                {remaining !== 1
+                  ? t('marking.reviews_remaining_plural')
+                  : t('marking.reviews_remaining_singular')}
+                )
               </span>
             )}
           </CardTitle>
@@ -214,8 +220,12 @@ export default function EssayFeedbackInline({
             <div className="flex items-center gap-3 py-6">
               <Loader2 className="h-5 w-5 animate-spin text-primary" />
               <div>
-                <p className="text-sm font-medium text-foreground">Analysing your answer...</p>
-                <p className="text-xs text-muted-foreground">This usually takes a few seconds.</p>
+                <p className="text-sm font-medium text-foreground">
+                  {t('marking.marking_in_progress')}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {t('marking.marking_takes_seconds')}
+                </p>
               </div>
             </div>
           )}
@@ -228,7 +238,7 @@ export default function EssayFeedbackInline({
               </div>
               <Button size="sm" variant="secondary" onClick={handleRetry} disabled={submitting}>
                 <RefreshCw className="h-3.5 w-3.5" />
-                Retry
+                {t('marking.retry')}
               </Button>
             </div>
           )}
@@ -245,7 +255,8 @@ export default function EssayFeedbackInline({
 
           {!submitting && !error && !feedback && wordCount < 100 && (
             <p className="py-4 text-sm text-muted-foreground">
-              Your answer needs at least 100 words for AI feedback ({wordCount} word{wordCount !== 1 ? 's' : ''} written).
+              {t('marking.min_words_hint')} ({wordCount}{' '}
+              {wordCount !== 1 ? t('marking.words_plural') : t('marking.words_singular')})
             </p>
           )}
         </CardContent>
@@ -260,9 +271,7 @@ export default function EssayFeedbackInline({
         className={cn(
           'flex w-full items-center justify-between rounded-lg border px-4 py-3 text-left transition-colors',
           'hover:bg-accent/50',
-          open
-            ? 'border-primary/30 bg-primary/5'
-            : 'border-border/50 bg-card'
+          open ? 'border-primary/30 bg-primary/5' : 'border-border/50 bg-card',
         )}
       >
         <div className="flex items-center gap-2.5">
@@ -270,10 +279,16 @@ export default function EssayFeedbackInline({
             <PenLine className="h-3.5 w-3.5 text-primary" />
           </div>
           <div>
-            <span className="text-sm font-semibold text-foreground">AI Essay Feedback</span>
+            <span className="text-sm font-semibold text-foreground">
+              {t('marking.essay_feedback_title')}
+            </span>
             {remaining !== null && (
               <span className="ml-2 text-xs text-muted-foreground">
-                ({remaining} review{remaining !== 1 ? 's' : ''} remaining today)
+                ({remaining}{' '}
+                {remaining !== 1
+                  ? t('marking.reviews_remaining_plural')
+                  : t('marking.reviews_remaining_singular')}
+                )
               </span>
             )}
           </div>
@@ -281,7 +296,7 @@ export default function EssayFeedbackInline({
         <ChevronDown
           className={cn(
             'h-4 w-4 text-muted-foreground transition-transform duration-200',
-            open && 'rotate-180'
+            open && 'rotate-180',
           )}
         />
       </CollapsibleTrigger>
@@ -304,19 +319,22 @@ export default function EssayFeedbackInline({
               {!existingAnswer && (
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-foreground">Your Answer</span>
+                    <span className="text-sm font-medium text-foreground">
+                      {t('marking.your_answer')}
+                    </span>
                     <span
                       className={cn(
                         'text-xs tabular-nums',
-                        wordCount < 100 ? 'text-destructive' : 'text-muted-foreground'
+                        wordCount < 100 ? 'text-destructive' : 'text-muted-foreground',
                       )}
                     >
-                      {wordCount} word{wordCount !== 1 ? 's' : ''}
-                      {wordCount < 100 && ' (min 100)'}
+                      {wordCount}{' '}
+                      {wordCount !== 1 ? t('marking.words_plural') : t('marking.words_singular')}
+                      {wordCount < 100 && ` (${t('marking.min_100')})`}
                     </span>
                   </div>
                   <Textarea
-                    placeholder="Paste or type your essay here..."
+                    placeholder={t('marking.essay_placeholder')}
                     value={essay}
                     onChange={(e) => setEssay(e.target.value)}
                     rows={8}
@@ -329,10 +347,13 @@ export default function EssayFeedbackInline({
               {existingAnswer && (
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">
-                    Your answer above will be analysed ({wordCount} word{wordCount !== 1 ? 's' : ''})
+                    {t('marking.will_be_analysed')} ({wordCount}{' '}
+                    {wordCount !== 1 ? t('marking.words_plural') : t('marking.words_singular')})
                   </span>
                   {wordCount < 100 && (
-                    <span className="text-xs text-destructive">Min 100 words required</span>
+                    <span className="text-xs text-destructive">
+                      {t('marking.min_100_required')}
+                    </span>
                   )}
                 </div>
               )}
@@ -347,23 +368,17 @@ export default function EssayFeedbackInline({
 
               {/* Submit */}
               <div className="flex items-center justify-between gap-3">
-                <p className="text-xs text-muted-foreground">
-                  AI-generated feedback — use as a guide alongside your teacher&apos;s assessment.
-                </p>
-                <Button
-                  size="sm"
-                  disabled={!canSubmit}
-                  onClick={handleSubmit}
-                >
+                <p className="text-xs text-muted-foreground">{t('marking.ai_guide_disclaimer')}</p>
+                <Button size="sm" disabled={!canSubmit} onClick={handleSubmit}>
                   {submitting ? (
                     <>
                       <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                      Analysing...
+                      {t('marking.analysing')}
                     </>
                   ) : (
                     <>
                       <Send className="h-3.5 w-3.5" />
-                      Get AI Feedback
+                      {t('marking.get_ai_feedback')}
                     </>
                   )}
                 </Button>
@@ -391,16 +406,15 @@ function InlineFeedbackResults({
   questionType: string
   onReset: () => void
 }) {
+  const t = useT()
   const gradeStyle = getGradeBandStyle(feedback.gradeBand)
 
   return (
     <div className="space-y-4 animate-fade-in">
       {/* Disclaimer */}
       <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-700">
-        <p className="font-medium text-sm">AI-Generated Estimate</p>
-        <p className="mt-0.5 text-muted-foreground">
-          Not an official grade — use alongside your teacher&apos;s guidance.
-        </p>
+        <p className="font-medium text-sm">{t('marking.ai_generated_estimate')}</p>
+        <p className="mt-0.5 text-muted-foreground">{t('marking.not_official_grade')}</p>
       </div>
 
       {/* Grade Band */}
@@ -409,7 +423,7 @@ function InlineFeedbackResults({
           className={cn(
             'flex h-12 w-12 items-center justify-center rounded-xl ring-4',
             gradeStyle.bg,
-            gradeStyle.ring
+            gradeStyle.ring,
           )}
         >
           <Award className={cn('h-6 w-6', gradeStyle.text)} />
@@ -436,7 +450,7 @@ function InlineFeedbackResults({
       <div className="space-y-2">
         <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
           <BarChart3 className="h-3.5 w-3.5 text-primary" />
-          Marking Guide Breakdown
+          {t('marking.ao_breakdown_title')}
         </div>
         <div className="space-y-2.5">
           {feedback.aoScores.map((ao) => {
@@ -451,7 +465,10 @@ function InlineFeedbackResults({
                 </div>
                 <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
                   <div
-                    className={cn('h-full rounded-full transition-all duration-500', getScoreBarColor(ao.score, ao.maxScore))}
+                    className={cn(
+                      'h-full rounded-full transition-all duration-500',
+                      getScoreBarColor(ao.score, ao.maxScore),
+                    )}
                     style={{ width: `${Math.min(pct, 100)}%` }}
                   />
                 </div>
@@ -468,7 +485,7 @@ function InlineFeedbackResults({
         <div className="space-y-2">
           <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
             <CheckCircle className="h-3.5 w-3.5 text-green-400" />
-            Strengths
+            {t('marking.strengths')}
           </div>
           <ul className="space-y-2">
             {feedback.strengths.map((s, i) => (
@@ -486,7 +503,7 @@ function InlineFeedbackResults({
         <div className="space-y-2">
           <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
             <Sparkles className="h-3.5 w-3.5 text-blue-400" />
-            Improvements
+            {t('marking.improvements')}
           </div>
           <ul className="space-y-2">
             {feedback.improvements.map((imp, i) => (
@@ -505,27 +522,25 @@ function InlineFeedbackResults({
       <div className="space-y-2">
         <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground">
           <MessageSquareText className="h-3.5 w-3.5 text-primary" />
-          Detailed Feedback
+          {t('marking.detailed_feedback')}
         </div>
         <div className="rounded-lg bg-muted/30 p-3">
-          {feedback.annotatedFeedback.split('\n').map((paragraph, i) => (
+          {feedback.annotatedFeedback.split('\n').map((paragraph, i) =>
             paragraph.trim() ? (
               <p key={i} className="mb-2 text-xs leading-relaxed text-muted-foreground last:mb-0">
                 {paragraph}
               </p>
-            ) : null
-          ))}
+            ) : null,
+          )}
         </div>
       </div>
 
       {/* Actions */}
       <div className="flex items-center justify-between pt-1">
-        <p className="text-xs text-muted-foreground">
-          AI feedback is approximate and should not replace teacher assessment.
-        </p>
+        <p className="text-xs text-muted-foreground">{t('marking.ai_approximate_disclaimer')}</p>
         <Button size="sm" variant="secondary" onClick={onReset}>
           <RefreshCw className="h-3.5 w-3.5" />
-          Try Again
+          {t('marking.try_again')}
         </Button>
       </div>
     </div>

@@ -1,20 +1,21 @@
-"use client";
+'use client'
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 export interface TrendPoint {
   /** ISO date */
-  date: string;
+  date: string
   /** GCSE grade 1-9 */
-  grade: number;
+  grade: number
   /** Optional short label e.g. "Macbeth Q" */
-  label?: string;
+  label?: string
 }
 
 export interface ImprovementTrendProps {
-  points: TrendPoint[];
-  className?: string;
+  points: TrendPoint[]
+  className?: string
 }
 
 /**
@@ -22,72 +23,63 @@ export interface ImprovementTrendProps {
  * Pure theme tokens — uses currentColor with text-primary, etc.
  */
 export function ImprovementTrend({ points, className }: ImprovementTrendProps) {
+  const t = useT()
   if (points.length === 0) {
     return (
       <Card className={className}>
         <CardHeader>
-          <CardTitle>Improvement Trend</CardTitle>
+          <CardTitle>{t('marking.improvement_trend')}</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-muted-foreground">
-            Submit a few essays to start seeing your trend.
-          </p>
+          <p className="text-sm text-muted-foreground">{t('marking.trend_empty_state')}</p>
         </CardContent>
       </Card>
-    );
+    )
   }
 
-  const width = 600;
-  const height = 220;
-  const padX = 36;
-  const padY = 24;
-  const minGrade = 1;
-  const maxGrade = 9;
+  const width = 600
+  const height = 220
+  const padX = 36
+  const padY = 24
+  const minGrade = 1
+  const maxGrade = 9
 
-  const stepX =
-    points.length > 1 ? (width - padX * 2) / (points.length - 1) : 0;
+  const stepX = points.length > 1 ? (width - padX * 2) / (points.length - 1) : 0
 
   const toXY = (p: TrendPoint, i: number) => {
-    const x = padX + i * stepX;
-    const y =
-      height -
-      padY -
-      ((p.grade - minGrade) / (maxGrade - minGrade)) * (height - padY * 2);
-    return { x, y };
-  };
+    const x = padX + i * stepX
+    const y = height - padY - ((p.grade - minGrade) / (maxGrade - minGrade)) * (height - padY * 2)
+    return { x, y }
+  }
 
-  const coords = points.map(toXY);
-  const path = coords
-    .map((c, i) => (i === 0 ? `M ${c.x} ${c.y}` : `L ${c.x} ${c.y}`))
-    .join(" ");
+  const coords = points.map(toXY)
+  const path = coords.map((c, i) => (i === 0 ? `M ${c.x} ${c.y}` : `L ${c.x} ${c.y}`)).join(' ')
 
   const areaPath =
-    path +
-    ` L ${coords[coords.length - 1].x} ${height - padY} L ${coords[0].x} ${
-      height - padY
-    } Z`;
+    path + ` L ${coords[coords.length - 1].x} ${height - padY} L ${coords[0].x} ${height - padY} Z`
 
-  const firstGrade = points[0].grade;
-  const lastGrade = points[points.length - 1].grade;
-  const delta = lastGrade - firstGrade;
+  const firstGrade = points[0].grade
+  const lastGrade = points[points.length - 1].grade
+  const delta = lastGrade - firstGrade
 
   return (
     <Card className={cn(className)}>
       <CardHeader>
-        <CardTitle>Improvement Trend</CardTitle>
+        <CardTitle>{t('marking.improvement_trend')}</CardTitle>
         <p className="text-xs text-muted-foreground">
-          {points.length} essay{points.length === 1 ? "" : "s"} marked
+          {points.length}{' '}
+          {points.length === 1
+            ? t('marking.essay_singular_marked')
+            : t('marking.essay_plural_marked')}
           {delta !== 0 && (
             <>
-              {" · "}
+              {' · '}
               <span
-                className={cn(
-                  "font-semibold",
-                  delta > 0 ? "text-primary" : "text-destructive"
-                )}
+                className={cn('font-semibold', delta > 0 ? 'text-primary' : 'text-destructive')}
               >
-                {delta > 0 ? "+" : ""}
-                {delta} grade{Math.abs(delta) === 1 ? "" : "s"}
+                {delta > 0 ? '+' : ''}
+                {delta}{' '}
+                {Math.abs(delta) === 1 ? t('marking.grade_singular') : t('marking.grade_plural')}
               </span>
             </>
           )}
@@ -99,15 +91,12 @@ export function ImprovementTrend({ points, className }: ImprovementTrendProps) {
             viewBox={`0 0 ${width} ${height}`}
             className="h-56 w-full min-w-[360px] text-primary"
             role="img"
-            aria-label="Line chart of grades over time"
+            aria-label={t('marking.trend_chart_aria')}
           >
             {/* ── Grid lines ─────────────────────────────────── */}
             {[1, 3, 5, 7, 9].map((g) => {
               const y =
-                height -
-                padY -
-                ((g - minGrade) / (maxGrade - minGrade)) *
-                  (height - padY * 2);
+                height - padY - ((g - minGrade) / (maxGrade - minGrade)) * (height - padY * 2)
               return (
                 <g key={g}>
                   <line
@@ -128,7 +117,7 @@ export function ImprovementTrend({ points, className }: ImprovementTrendProps) {
                     {g}
                   </text>
                 </g>
-              );
+              )
             })}
 
             {/* ── Area fill ──────────────────────────────────── */}
@@ -169,12 +158,12 @@ export function ImprovementTrend({ points, className }: ImprovementTrendProps) {
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }
 
 function formatDate(iso: string): string {
-  const d = new Date(iso);
-  return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  const d = new Date(iso)
+  return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
 }
 
-export default ImprovementTrend;
+export default ImprovementTrend

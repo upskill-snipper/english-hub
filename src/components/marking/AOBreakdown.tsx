@@ -1,22 +1,23 @@
-"use client";
+'use client'
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 export interface AOScore {
   /** e.g. "AO1" */
-  code: string;
+  code: string
   /** Short description of the assessment objective */
-  label: string;
+  label: string
   /** Marks awarded */
-  score: number;
+  score: number
   /** Maximum marks available */
-  max: number;
+  max: number
 }
 
 export interface AOBreakdownProps {
-  scores: AOScore[];
-  className?: string;
+  scores: AOScore[]
+  className?: string
 }
 
 /**
@@ -24,24 +25,21 @@ export interface AOBreakdownProps {
  * Renders a labelled bar for each AO using theme tokens only.
  */
 export function AOBreakdown({ scores, className }: AOBreakdownProps) {
+  const t = useT()
   return (
     <Card className={cn(className)}>
       <CardHeader>
-        <CardTitle>What markers look for</CardTitle>
+        <CardTitle>{t('marking.what_markers_look_for')}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         {scores.map((ao) => {
-          const pct = Math.round((ao.score / ao.max) * 100);
+          const pct = Math.round((ao.score / ao.max) * 100)
           return (
             <div key={ao.code} className="space-y-1.5">
               <div className="flex items-baseline justify-between gap-2">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-heading text-sm font-bold text-foreground">
-                    {ao.code}
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    {ao.label}
-                  </span>
+                  <span className="font-heading text-sm font-bold text-foreground">{ao.code}</span>
+                  <span className="text-xs text-muted-foreground">{ao.label}</span>
                 </div>
                 <span className="font-mono text-sm font-semibold tabular-nums text-foreground">
                   {ao.score}
@@ -62,22 +60,22 @@ export function AOBreakdown({ scores, className }: AOBreakdownProps) {
                 />
               </div>
               <p className="text-xs text-muted-foreground">
-                {pct}% — {bandLabel(pct)}
+                {pct}% — {bandLabel(pct, t)}
               </p>
             </div>
-          );
+          )
         })}
       </CardContent>
     </Card>
-  );
+  )
 }
 
-function bandLabel(pct: number): string {
-  if (pct >= 85) return "Excellent — original and convincing";
-  if (pct >= 70) return "Strong — detailed and well-developed";
-  if (pct >= 55) return "Good — clear and on-topic";
-  if (pct >= 40) return "Getting there — some good ideas";
-  return "Early stages — keep building";
+function bandLabel(pct: number, t: (key: string) => string): string {
+  if (pct >= 85) return t('marking.band_excellent')
+  if (pct >= 70) return t('marking.band_strong')
+  if (pct >= 55) return t('marking.band_good')
+  if (pct >= 40) return t('marking.band_getting_there')
+  return t('marking.band_early')
 }
 
-export default AOBreakdown;
+export default AOBreakdown

@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { BoardSelectorSection } from '@/components/board/BoardSelectorSection'
 import { useBoard } from '@/lib/board/board-store'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 /**
  * Paths where the board gate is *not* enforced. Visitors may browse these
@@ -142,6 +143,7 @@ export function BoardGate({ children }: BoardGateProps) {
   const pathname = usePathname()
   const { board, isHydrated } = useBoard()
   const onAllowlist = isAllowlisted(pathname)
+  const t = useT()
 
   // Pre-hydration fallback: read the cookie directly so we don't flash the
   // gate on returning visitors before zustand finishes rehydrating.
@@ -210,20 +212,19 @@ export function BoardGate({ children }: BoardGateProps) {
           >
             <div className="flex flex-col gap-2 text-center">
               <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-primary/10 px-3 py-1 text-[0.6875rem] font-semibold uppercase tracking-wide text-primary">
-                One quick question
+                {t('board.gate.eyebrow')}
               </span>
               <h2
                 id="board-gate-title"
                 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
               >
-                Which exam board do you study?
+                {t('board.gate.title')}
               </h2>
               <p
                 id="board-gate-description"
                 className="mx-auto max-w-xl text-sm text-muted-foreground sm:text-base"
               >
-                Pick your board so we can show you the right set texts, poems, and past papers. You
-                can change it any time from settings.
+                {t('board.gate.body')}
               </p>
             </div>
 

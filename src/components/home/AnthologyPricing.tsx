@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { PRICING } from '@/constants/pricing'
 import { VAT_LABEL } from '@/lib/copy/pricing'
 import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
+import { useT } from '@/lib/i18n/use-t'
 
 type Tier = {
   name: string
@@ -24,119 +25,123 @@ type Tier = {
   btnClass: string
 }
 
-const tiers: Tier[] = [
-  {
-    name: 'Student',
-    price: `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}`,
-    period: '/month',
-    anchorPrice: `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY_STANDARD}`,
-    anchorPeriod: '/month',
-    annual: `or ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year · ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with code ${PRICING.AFFILIATE_PROMO_CODE}`,
-    description: 'Full access for students. Monthly or annual — cancel any time.',
-    badge: 'Early Access',
-    features: [
-      'All 470+ structured lessons',
-      'All 130+ mock exams',
-      'AI essay feedback (10/day)',
-      '30+ poem deep-dives with annotations',
-      '7 GCSE revision games',
-      '500+ quiz questions',
-      'Grade 1–9 tracking & prediction',
-      'All exam boards included',
-      `${PRICING.TRIAL_TEXT} · card required · cancel before day 7`,
-    ],
-    cta: { label: 'Start 7-day trial', href: '/auth/register' },
-    featured: false,
-    bg: 'bg-card border border-border',
-    text: 'text-ink-900',
-    sub: 'text-ink-500',
-    featureText: 'text-ink-600',
-    btnClass: 'bg-teal-800 text-cream-50 hover:bg-teal-900 shadow-md',
-  },
-  {
-    name: 'Teacher',
-    price: `${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}`,
-    period: '/month',
-    anchorPrice: `${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY_STANDARD}`,
-    anchorPeriod: '/month',
-    annual: `or ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year (save 42%)`,
-    description: 'Everything in Student plus teacher tools.',
-    badge: 'Early Access',
-    features: [
-      'Everything in Student',
-      'AI lesson plan generator',
-      'PowerPoint builder (Anthology-styled)',
-      'Assignment tracker & marking',
-      'AI essay marking with AO breakdown',
-      'Class progress analytics',
-      '40+ downloadable lesson plans',
-      'Homework generator',
-      'Teacher resource library',
-    ],
-    cta: { label: 'Start 7-day trial', href: '/auth/register' },
-    featured: true,
-    bg: 'bg-teal-800',
-    text: 'text-cream-50',
-    sub: 'text-teal-300',
-    featureText: 'text-cream-200',
-    btnClass: 'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg shadow-clay-500/25',
-  },
-  {
-    name: 'Founding School',
-    price: `${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MIN / 1000).toFixed(0)}k`,
-    period: '/year',
-    anchorPrice: `${PRICING.CURRENCY}${(PRICING.SCHOOL_STANDARD / 1000).toFixed(0)}k`,
-    anchorPeriod: '/year',
-    annual: `Only ${PRICING.FOUNDER_SCHOOL_LIMIT} founding places — locked-in rate`,
-    description: 'Whole-school licence at the founding rate — first 10 schools only.',
-    badge: 'Founding · 10 only',
-    features: [
-      'Everything in Teacher',
-      'Unlimited students & teachers',
-      'Whole-department analytics dashboard',
-      'Student-level progress tracking',
-      'Bulk student upload (CSV)',
-      'Safeguarding & GDPR compliant',
-      'Dedicated onboarding support',
-      'Feature requests prioritised',
-      'Price locked at founding rate forever',
-      `Only ${PRICING.FOUNDER_SCHOOL_LIMIT} founding places available`,
-    ],
-    cta: { label: 'Book a founding call', href: '/for-schools' },
-    featured: false,
-    bg: 'bg-ink-950',
-    text: 'text-cream-50',
-    sub: 'text-ink-400',
-    featureText: 'text-ink-300',
-    btnClass: 'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg',
-  },
-]
-
 export default function AnthologyPricing() {
+  const t = useT()
+
+  const tiers: Tier[] = [
+    {
+      name: 'Student',
+      price: `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY}`,
+      period: '/month',
+      anchorPrice: `${PRICING.CURRENCY}${PRICING.STUDENT_MONTHLY_STANDARD}`,
+      anchorPeriod: '/month',
+      annual: `${t('pricing.anth.student.annual_prefix')} ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL}/year · ${PRICING.CURRENCY}${PRICING.STUDENT_ANNUAL_WITH_CODE}/year ${t('pricing.anth.with_code')} ${PRICING.AFFILIATE_PROMO_CODE}`,
+      description: t('pricing.anth.student.desc'),
+      badge: t('pricing.badge.early_access'),
+      features: [
+        t('pricing.anth.student.feat.lessons'),
+        t('pricing.anth.student.feat.mocks'),
+        t('pricing.anth.student.feat.ai_feedback'),
+        t('pricing.anth.student.feat.poems'),
+        t('pricing.anth.student.feat.games'),
+        t('pricing.anth.student.feat.quizzes'),
+        t('pricing.anth.student.feat.grade_track'),
+        t('pricing.anth.student.feat.all_boards'),
+        `${PRICING.TRIAL_TEXT} · ${t('pricing.card_cancel')}`,
+      ],
+      cta: { label: t('pricing.cta.start_trial_7day'), href: '/auth/register' },
+      featured: false,
+      bg: 'bg-card border border-border',
+      text: 'text-ink-900',
+      sub: 'text-ink-500',
+      featureText: 'text-ink-600',
+      btnClass: 'bg-teal-800 text-cream-50 hover:bg-teal-900 shadow-md',
+    },
+    {
+      name: 'Teacher',
+      price: `${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY}`,
+      period: '/month',
+      anchorPrice: `${PRICING.CURRENCY}${PRICING.TEACHER_MONTHLY_STANDARD}`,
+      anchorPeriod: '/month',
+      annual: `${t('pricing.anth.teacher.annual_prefix')} ${PRICING.CURRENCY}${PRICING.TEACHER_ANNUAL}/year (${t('pricing.anth.save42')})`,
+      description: t('pricing.anth.teacher.desc'),
+      badge: t('pricing.badge.early_access'),
+      features: [
+        t('pricing.anth.teacher.feat.everything_student'),
+        t('pricing.anth.teacher.feat.lesson_plan_ai'),
+        t('pricing.anth.teacher.feat.ppt'),
+        t('pricing.anth.teacher.feat.assignment_tracker'),
+        t('pricing.anth.teacher.feat.ai_essay_ao'),
+        t('pricing.anth.teacher.feat.class_analytics'),
+        t('pricing.anth.teacher.feat.downloadable_plans'),
+        t('pricing.anth.teacher.feat.homework_gen'),
+        t('pricing.anth.teacher.feat.resource_library'),
+      ],
+      cta: { label: t('pricing.cta.start_trial_7day'), href: '/auth/register' },
+      featured: true,
+      bg: 'bg-teal-800',
+      text: 'text-cream-50',
+      sub: 'text-teal-300',
+      featureText: 'text-cream-200',
+      btnClass: 'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg shadow-clay-500/25',
+    },
+    {
+      name: 'Founding School',
+      price: `${PRICING.CURRENCY}${(PRICING.FOUNDER_SCHOOL_MIN / 1000).toFixed(0)}k`,
+      period: '/year',
+      anchorPrice: `${PRICING.CURRENCY}${(PRICING.SCHOOL_STANDARD / 1000).toFixed(0)}k`,
+      anchorPeriod: '/year',
+      annual: `${t('pricing.anth.founding.only_prefix')} ${PRICING.FOUNDER_SCHOOL_LIMIT} ${t('pricing.anth.founding.places_locked')}`,
+      description: t('pricing.anth.founding.desc'),
+      badge: t('pricing.badge.founding_10_only'),
+      features: [
+        t('pricing.anth.founding.feat.everything_teacher'),
+        t('pricing.anth.founding.feat.unlimited'),
+        t('pricing.anth.founding.feat.dept_analytics'),
+        t('pricing.anth.founding.feat.student_tracking'),
+        t('pricing.anth.founding.feat.bulk_csv'),
+        t('pricing.anth.founding.feat.safeguarding'),
+        t('pricing.anth.founding.feat.onboarding'),
+        t('pricing.anth.founding.feat.feature_priority'),
+        t('pricing.anth.founding.feat.price_locked'),
+        `${t('pricing.anth.founding.feat.only_prefix')} ${PRICING.FOUNDER_SCHOOL_LIMIT} ${t('pricing.anth.founding.feat.places_avail')}`,
+      ],
+      cta: { label: t('pricing.cta.book_founding_call'), href: '/for-schools' },
+      featured: false,
+      bg: 'bg-ink-950',
+      text: 'text-cream-50',
+      sub: 'text-ink-400',
+      featureText: 'text-ink-300',
+      btnClass: 'bg-clay-500 text-cream-50 hover:bg-clay-400 shadow-lg',
+    },
+  ]
+
   return (
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Section head */}
         <div className="mb-12 text-center">
           <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-clay-500 mb-4">
-            Pricing
+            {t('pricing.section_eyebrow')}
           </p>
           <h2
             className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-ink-900"
             style={{ letterSpacing: '-0.035em' }}
           >
-            Simple, <em className="italic text-teal-800">honest</em> pricing.
+            {t('pricing.anth.headline_prefix')}{' '}
+            <em className="italic text-teal-800">{t('pricing.anth.headline_emphasis')}</em>{' '}
+            {t('pricing.anth.headline_suffix')}.
           </h2>
           <p className="mt-4 text-ink-600 text-lg max-w-xl mx-auto font-serif">
-            7-day free trial on every plan — card required, cancel before day 7. Students save £
-            {PRICING.STUDENT_ANNUAL_SAVINGS} on annual with any affiliate code or{' '}
+            {t('pricing.anth.trial_blurb_prefix')} £{PRICING.STUDENT_ANNUAL_SAVINGS}{' '}
+            {t('pricing.anth.trial_blurb_suffix')}{' '}
             <code className="font-mono text-teal-800 bg-teal-50 px-1.5 py-0.5 rounded">
               {PRICING.AFFILIATE_PROMO_CODE}
             </code>
             .
           </p>
           <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-[11px] font-mono font-medium uppercase tracking-[0.14em] text-amber-700">
-            ⚡ {PRICING.PRICE_INCREASE_MESSAGE} — lock in Early Access today
+            ⚡ {PRICING.PRICE_INCREASE_MESSAGE} — {t('pricing.anth.lock_in_early')}
           </p>
         </div>
 
@@ -162,7 +167,7 @@ export default function AnthologyPricing() {
                 )}
                 {tier.featured && (
                   <span className="font-mono text-[10px] font-medium uppercase tracking-[0.14em] bg-clay-500 text-cream-50 px-3 py-1 rounded-full">
-                    Most popular
+                    {t('pricing.badge.most_popular')}
                   </span>
                 )}
               </div>
@@ -184,12 +189,12 @@ export default function AnthologyPricing() {
               {/* Standard-price anchor (strikethrough) */}
               {tier.anchorPrice && (
                 <p className={`text-xs ${tier.sub} mb-1 font-mono`}>
-                  Standard{' '}
+                  {t('pricing.anth.standard_prefix')}{' '}
                   <span className="line-through decoration-2 decoration-clay-500/70">
                     {tier.anchorPrice}
                     {tier.anchorPeriod}
                   </span>{' '}
-                  from {PRICING.PRICE_INCREASE_DATE}
+                  {t('pricing.anth.from_date_prefix')} {PRICING.PRICE_INCREASE_DATE}
                 </p>
               )}
 

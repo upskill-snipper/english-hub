@@ -19,6 +19,7 @@ import {
   getRemainingUses,
   FREE_USES_PER_FEATURE,
 } from '@/lib/feature-gating'
+import { useT } from '@/lib/i18n/use-t'
 
 interface UpgradeModalProps {
   feature: GatedFeature
@@ -36,8 +37,10 @@ export function UpgradeModal({
   variant,
   onContinueFree,
 }: UpgradeModalProps) {
+  const t = useT()
   const featureName = FEATURE_NAMES[feature]
   const remaining = getRemainingUses(feature)
+  const used = FREE_USES_PER_FEATURE - remaining
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -52,26 +55,25 @@ export function UpgradeModal({
           </div>
           <DialogTitle className="text-center">
             {variant === 'warning'
-              ? `This is your last free use of ${featureName}`
-              : `You're enjoying ${featureName}!`}
+              ? `${t('upgrade.title.last_free')} ${featureName}`
+              : `${t('upgrade.title.enjoying')} ${featureName}!`}
           </DialogTitle>
           <DialogDescription className="text-center">
             {variant === 'warning' ? (
               <>
-                You have{' '}
+                {t('upgrade.you_have')}{' '}
                 <span className="font-semibold text-foreground">
-                  {remaining} of {FREE_USES_PER_FEATURE}
+                  {remaining} {t('dash.out_of')} {FREE_USES_PER_FEATURE}
                 </span>{' '}
-                free uses remaining. After this, you&apos;ll need a Premium subscription to continue
-                using {featureName}.
+                {t('upgrade.free_uses_left')} {featureName}.
               </>
             ) : (
               <>
-                You&apos;ve used {featureName}{' '}
+                {t('upgrade.youve_used')} {featureName}{' '}
                 <span className="font-semibold text-foreground">
-                  {FREE_USES_PER_FEATURE - remaining} times
+                  {used} {used === 1 ? t('upgrade.time') : t('upgrade.times')}
                 </span>
-                . Upgrade to Premium for unlimited access to all features.
+                . {t('upgrade.upgrade_for_unlimited')}
               </>
             )}
           </DialogDescription>
@@ -80,29 +82,29 @@ export function UpgradeModal({
         <div className="rounded-lg border border-border/60 bg-muted/30 p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-semibold">Premium Plan</p>
-              <p className="text-xs text-muted-foreground">Unlimited access to all features</p>
+              <p className="text-sm font-semibold">{t('upgrade.premium_plan')}</p>
+              <p className="text-xs text-muted-foreground">{t('upgrade.unlimited_access')}</p>
             </div>
             <Badge variant="default" className="bg-emerald-600 hover:bg-emerald-600">
-              7-day free trial
+              {t('upgrade.seven_day_trial')}
             </Badge>
           </div>
           <ul className="mt-3 space-y-1.5 text-xs text-muted-foreground">
             <li className="flex items-center gap-1.5">
               <span className="text-emerald-600">&#10003;</span>
-              Unlimited AI marking and feedback
+              {t('upgrade.benefit.ai_marking')}
             </li>
             <li className="flex items-center gap-1.5">
               <span className="text-emerald-600">&#10003;</span>
-              Full mock exams and analytics
+              {t('upgrade.benefit.mock_exams')}
             </li>
             <li className="flex items-center gap-1.5">
               <span className="text-emerald-600">&#10003;</span>
-              Export to PowerPoint and Word
+              {t('upgrade.benefit.export')}
             </li>
             <li className="flex items-center gap-1.5">
               <span className="text-emerald-600">&#10003;</span>
-              Priority support
+              {t('upgrade.benefit.priority_support')}
             </li>
           </ul>
         </div>
@@ -110,7 +112,7 @@ export function UpgradeModal({
         <DialogFooter className="sm:flex-col sm:gap-2">
           <Button render={<Link href="/pricing" />} className="w-full">
             <Crown className="size-4" />
-            Upgrade Now
+            {t('upgrade.upgrade_now')}
           </Button>
           {variant === 'warning' ? (
             <DialogClose
@@ -121,11 +123,11 @@ export function UpgradeModal({
                 />
               }
             >
-              Use my last free try
+              {t('upgrade.use_last_free_try')}
             </DialogClose>
           ) : (
             <DialogClose render={<button className={buttonVariants({ variant: 'ghost' })} />}>
-              Continue Free
+              {t('upgrade.continue_free')}
             </DialogClose>
           )}
         </DialogFooter>

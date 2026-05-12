@@ -29,6 +29,7 @@ import Link from 'next/link'
 
 import EssayFeedbackInline from '@/components/EssayFeedbackInline'
 import { QuizJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -91,6 +92,7 @@ function getContextualExaminerTip(
 // ─── Component ──────────────────────────────────────────────────────────────
 
 export default function PracticePage() {
+  const t = useT()
   // Filters
   const { board: selectedBoard } = useBoard()
   const [questionType, setQuestionType] = useState<string>('All')
@@ -217,7 +219,7 @@ export default function PracticePage() {
       if (error) throw error
       setSaved(true)
     } catch {
-      setSaveError('Failed to save your session. Please try again.')
+      setSaveError(t('marking.save_session_failed'))
     } finally {
       setSaving(false)
     }
@@ -245,12 +247,12 @@ export default function PracticePage() {
       <div className="border-b border-border bg-card/50">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
           <div className="flex items-center gap-2">
-            <h1 className="text-3xl font-bold text-foreground sm:text-4xl">Practice Mode</h1>
+            <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
+              {t('marking.practice_mode')}
+            </h1>
             <LearningTip categories={['practice', 'exam']} side="right" size="md" />
           </div>
-          <p className="mt-2 text-muted-foreground">
-            Sharpen your skills with exam-style questions and model answers.
-          </p>
+          <p className="mt-2 text-muted-foreground">{t('marking.practice_mode_subtitle')}</p>
         </div>
       </div>
 
@@ -262,12 +264,12 @@ export default function PracticePage() {
               <CardContent className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-lg font-bold text-foreground sm:text-xl">
-                    Unlock 40+ exam-style practice questions with detailed model answers and
-                    examiner tips
+                    {t('marking.unlock_cta_heading')}
                   </p>
                   <p className="mt-1 text-muted-foreground">
-                    <span className="font-semibold text-primary">{PRICING.TRIAL_TEXT}!</span> Then{' '}
-                    {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
+                    <span className="font-semibold text-primary">{PRICING.TRIAL_TEXT}!</span>{' '}
+                    {t('marking.then_label')} {PRICING_DISPLAY.monthly}{' '}
+                    {t('marking.rolling_monthly')} {t('home.cancel_anytime')}.
                   </p>
                 </div>
                 <Button
@@ -275,7 +277,7 @@ export default function PracticePage() {
                   size="lg"
                   className="shrink-0 px-6 py-3"
                 >
-                  Start Free Trial
+                  {t('marking.start_free_trial')}
                 </Button>
               </CardContent>
             </Card>
@@ -289,18 +291,18 @@ export default function PracticePage() {
           <CardContent>
             <div className="mb-3 flex items-center gap-2 text-sm font-medium text-muted-foreground">
               <Filter className="h-4 w-4" />
-              Filters
+              {t('marking.filters')}
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="question-type-filter">Question Type</Label>
+              <Label htmlFor="question-type-filter">{t('marking.question_type')}</Label>
               <Select value={questionType} onValueChange={(v) => v && setQuestionType(v)}>
                 <SelectTrigger id="question-type-filter" className="w-full sm:max-w-xs">
-                  <SelectValue placeholder="Select type" />
+                  <SelectValue placeholder={t('marking.select_type')} />
                 </SelectTrigger>
                 <SelectContent>
-                  {questionTypes.map((t) => (
-                    <SelectItem key={t} value={t}>
-                      {t}
+                  {questionTypes.map((qt) => (
+                    <SelectItem key={qt} value={qt}>
+                      {qt}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -309,7 +311,10 @@ export default function PracticePage() {
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <span className="text-sm text-muted-foreground">
-                  {filtered.length} question{filtered.length !== 1 ? 's' : ''} available
+                  {filtered.length}{' '}
+                  {filtered.length !== 1
+                    ? t('marking.questions_available_plural')
+                    : t('marking.questions_available_singular')}
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -321,12 +326,12 @@ export default function PracticePage() {
                   className={cn(timedMode && 'text-primary')}
                 >
                   {timedMode ? <Clock className="h-4 w-4" /> : <ClockFading className="h-4 w-4" />}
-                  {timedMode ? 'Timed' : 'Untimed'}
+                  {timedMode ? t('marking.timed') : t('marking.untimed')}
                 </Button>
                 {/* New random question */}
                 <Button variant="ghost" size="sm" onClick={handleNext}>
                   <Shuffle className="h-4 w-4" />
-                  Random Question
+                  {t('marking.random_question')}
                 </Button>
               </div>
             </div>
@@ -356,7 +361,9 @@ export default function PracticePage() {
                 {getBoardConfig(selectedBoard)?.shortName ?? currentQuestion.board}
               </Badge>
               {currentQuestion.paper != null && (
-                <Badge variant="secondary">Paper {currentQuestion.paper}</Badge>
+                <Badge variant="secondary">
+                  {t('marking.paper')} {currentQuestion.paper}
+                </Badge>
               )}
               <Badge className="bg-amber-500/15 text-amber-600 dark:text-clay-600">
                 {(currentQuestion.questionType || currentQuestion.type || 'General')
@@ -372,7 +379,7 @@ export default function PracticePage() {
                 <CardHeader className="border-b">
                   <CardTitle className="flex items-center gap-2">
                     <BookOpen className="h-4 w-4 text-primary" />
-                    Source Text
+                    {t('marking.source_text')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -406,7 +413,7 @@ export default function PracticePage() {
               <div className="flex items-start gap-3 rounded-lg border border-primary/25 bg-primary/5 px-4 py-3">
                 <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <div className="text-sm">
-                  <span className="font-semibold text-primary">Examiner Tip</span>
+                  <span className="font-semibold text-primary">{t('marking.examiner_tip')}</span>
                   <span className="mx-1.5 text-border">·</span>
                   <span className="text-xs text-muted-foreground">{contextualTip.label}</span>
                   <p className="mt-1 leading-relaxed text-muted-foreground">{contextualTip.tip}</p>
@@ -416,12 +423,12 @@ export default function PracticePage() {
 
             {/* Answer textarea */}
             <div className="space-y-1.5">
-              <Label htmlFor="answer-textarea">Your Answer</Label>
+              <Label htmlFor="answer-textarea">{t('marking.your_answer')}</Label>
               <Textarea
                 id="answer-textarea"
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
-                placeholder="Write your answer here..."
+                placeholder={t('marking.placeholder')}
                 rows={10}
                 disabled={submitted}
                 className="resize-y text-base leading-relaxed"
@@ -436,12 +443,10 @@ export default function PracticePage() {
                         : 'text-destructive',
                     )}
                   >
-                    {answer.split(/\s+/).filter(Boolean).length} / 100 words
+                    {answer.split(/\s+/).filter(Boolean).length} / 100 {t('marking.words_plural')}
                   </p>
                   {answer.split(/\s+/).filter(Boolean).length < 100 && (
-                    <p className="text-sm text-muted-foreground">
-                      Write at least 100 words to submit your response
-                    </p>
+                    <p className="text-sm text-muted-foreground">{t('marking.min_words_hint')}</p>
                   )}
                 </div>
               )}
@@ -455,7 +460,7 @@ export default function PracticePage() {
                 disabled={answer.split(/\s+/).filter(Boolean).length < 100}
               >
                 <Send className="h-4 w-4" />
-                Submit Answer
+                {t('marking.submit_essay')}
               </Button>
             )}
 
@@ -482,7 +487,7 @@ export default function PracticePage() {
                     <CardHeader className="border-b pb-0">
                       <CardTitle className="mb-2 flex items-center gap-2 text-sm">
                         <Eye className="h-4 w-4 text-primary" />
-                        Model Answers
+                        {t('marking.model_answers')}
                         <LearningTip categories={['grade', 'exam']} side="right" />
                       </CardTitle>
                       <TabsList className="w-full">
@@ -497,8 +502,7 @@ export default function PracticePage() {
                       <TabsContent key={tab} value={tab}>
                         <CardContent>
                           <div className="whitespace-pre-line text-[0.95rem] leading-relaxed text-muted-foreground">
-                            {currentQuestion.modelAnswers?.[tab] ||
-                              'No model answer available for this grade.'}
+                            {currentQuestion.modelAnswers?.[tab] || t('marking.no_model_answer')}
                           </div>
                         </CardContent>
                       </TabsContent>
@@ -515,7 +519,7 @@ export default function PracticePage() {
                       <CardContent>
                         <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
                           <CheckCircle2 className="h-4 w-4 text-primary" />
-                          Mark Scheme Points
+                          {t('marking.mark_scheme_points')}
                         </div>
                         <ul className="space-y-2">
                           {(Array.isArray(currentQuestion.markScheme)
@@ -545,7 +549,7 @@ export default function PracticePage() {
                     <CardContent>
                       <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
                         <Lightbulb className="h-4 w-4 text-amber-500" />
-                        Examiner Tips
+                        {t('marking.examiner_tips')}
                       </div>
                       <ul className="space-y-2">
                         {currentQuestion.examinerTips.map((tip, i) => (
@@ -566,7 +570,7 @@ export default function PracticePage() {
                 <Card>
                   <CardContent>
                     <p className="mb-3 text-sm font-semibold text-foreground">
-                      How did you do? Rate yourself:
+                      {t('marking.rate_yourself_prompt')}
                     </p>
                     <div className="flex items-center gap-1">
                       {[1, 2, 3, 4, 5].map((s) => (
@@ -606,14 +610,18 @@ export default function PracticePage() {
                       ) : (
                         <Save className="h-4 w-4" />
                       )}
-                      {saved ? 'Saved' : saving ? 'Saving...' : 'Save Session'}
+                      {saved
+                        ? t('marking.saved')
+                        : saving
+                          ? t('marking.saving')
+                          : t('marking.save_session')}
                     </Button>
                   )}
                   <Button
                     className="bg-primary text-primary-foreground hover:bg-primary/90"
                     onClick={handleNext}
                   >
-                    Try Another Question
+                    {t('marking.try_another_question')}
                     <ChevronRight className="h-4 w-4" />
                   </Button>
                 </div>
@@ -629,10 +637,10 @@ export default function PracticePage() {
           /* No questions match */
           <Card className="flex flex-col items-center justify-center p-12 text-center">
             <BookOpen className="mb-4 h-12 w-12 text-border" />
-            <h2 className="text-lg font-semibold text-foreground">No questions found</h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Try adjusting your filters to see available questions.
-            </p>
+            <h2 className="text-lg font-semibold text-foreground">
+              {t('marking.no_questions_found')}
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">{t('marking.no_questions_hint')}</p>
             <Button
               variant="default"
               className="mt-6"
@@ -640,7 +648,7 @@ export default function PracticePage() {
                 setQuestionType('All')
               }}
             >
-              Reset Filters
+              {t('marking.reset_filters')}
             </Button>
           </Card>
         )}

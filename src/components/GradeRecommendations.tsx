@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   ArrowRight,
@@ -10,13 +10,14 @@ import {
   PenTool,
   Target,
   Zap,
-} from "lucide-react"
+} from 'lucide-react'
 import {
   getNextGradeRecommendations,
   type GradeTransition,
   type SkillRecommendation,
-} from "@/lib/grade-recommendations"
-import { gcseGradeColor } from "@/lib/grades"
+} from '@/lib/grade-recommendations'
+import { gcseGradeColor } from '@/lib/grades'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -45,29 +46,59 @@ const RESOURCE_ICONS: Record<string, typeof BookOpen> = {
 function skillProgressPercent(skill: SkillRecommendation): number {
   // Approximate progress based on the level descriptors
   const levels = [
-    "limited", "very limited", "simple", "basic", "rarely",
-    "some", "attempts", "identifies", "retrieves",
-    "explains", "comments", "uses", "accurate", "mentions",
-    "analyses", "embedded", "well-chosen", "consistent", "varied", "deliberate",
-    "integrates", "explores", "controls", "coherent", "wide range", "fluent",
-    "sustained", "thoughtful", "confident", "evolving", "engaging",
-    "evaluates", "precise", "nuanced", "distinctive", "original", "authoritative",
-    "perceptive", "conceptualised", "sophisticated", "effortless", "commanding",
+    'limited',
+    'very limited',
+    'simple',
+    'basic',
+    'rarely',
+    'some',
+    'attempts',
+    'identifies',
+    'retrieves',
+    'explains',
+    'comments',
+    'uses',
+    'accurate',
+    'mentions',
+    'analyses',
+    'embedded',
+    'well-chosen',
+    'consistent',
+    'varied',
+    'deliberate',
+    'integrates',
+    'explores',
+    'controls',
+    'coherent',
+    'wide range',
+    'fluent',
+    'sustained',
+    'thoughtful',
+    'confident',
+    'evolving',
+    'engaging',
+    'evaluates',
+    'precise',
+    'nuanced',
+    'distinctive',
+    'original',
+    'authoritative',
+    'perceptive',
+    'conceptualised',
+    'sophisticated',
+    'effortless',
+    'commanding',
   ]
-  const currentIdx = levels.findIndex((l) =>
-    skill.currentLevel.toLowerCase().includes(l),
-  )
-  const targetIdx = levels.findIndex((l) =>
-    skill.targetLevel.toLowerCase().includes(l),
-  )
+  const currentIdx = levels.findIndex((l) => skill.currentLevel.toLowerCase().includes(l))
+  const targetIdx = levels.findIndex((l) => skill.targetLevel.toLowerCase().includes(l))
   if (currentIdx < 0 || targetIdx < 0 || targetIdx <= currentIdx) return 50
   return Math.round((currentIdx / targetIdx) * 100)
 }
 
 function progressBarColor(pct: number): string {
-  if (pct >= 70) return "bg-emerald-500"
-  if (pct >= 45) return "bg-amber-500"
-  return "bg-red-500"
+  if (pct >= 70) return 'bg-emerald-500'
+  if (pct >= 45) return 'bg-amber-500'
+  return 'bg-red-500'
 }
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -80,6 +111,7 @@ export default function GradeRecommendations({
   showProgress = true,
   compact = false,
 }: GradeRecommendationsProps) {
+  const t = useT()
   const rec = getNextGradeRecommendations(currentGrade, weakAreas)
 
   if (!rec) {
@@ -87,10 +119,7 @@ export default function GradeRecommendations({
       <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5">
         <div className="flex items-center gap-3">
           <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-          <p className="text-sm text-emerald-700 font-medium">
-            Working at Grade 9 -- the highest level. Focus on maintaining
-            excellence and supporting others.
-          </p>
+          <p className="text-sm text-emerald-700 font-medium">{t('grade.at_top')}</p>
         </div>
       </div>
     )
@@ -99,14 +128,14 @@ export default function GradeRecommendations({
   const visibleSkills = rec.skills.slice(0, maxActions)
 
   return (
-    <div className={compact ? "space-y-4" : "space-y-6"}>
+    <div className={compact ? 'space-y-4' : 'space-y-6'}>
       {/* Header: Grade Transition Arrow */}
       <div className="flex items-center gap-3">
         <GradeChip grade={rec.from} />
         <ArrowRight className="h-4 w-4 text-muted-foreground shrink-0" />
         <GradeChip grade={rec.to} highlight />
         <span className="ml-2 text-xs text-muted-foreground uppercase tracking-wider font-medium">
-          Next Grade Target
+          {t('grade.next_target')}
         </span>
       </div>
 
@@ -122,7 +151,7 @@ export default function GradeRecommendations({
       {!compact && (
         <div>
           <h4 className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-3">
-            Key Focus Areas
+            {t('grade.key_focus_areas')}
           </h4>
           <ul className="space-y-2">
             {rec.keyFocus.map((focus, i) => (
@@ -138,7 +167,7 @@ export default function GradeRecommendations({
       {/* Action Items by Skill */}
       <div>
         <h4 className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-3">
-          {weakAreas.length > 0 ? "Priority Actions (by weak areas)" : "Action Items"}
+          {weakAreas.length > 0 ? t('grade.priority_actions') : t('grade.action_items')}
         </h4>
         <div className="space-y-3">
           {visibleSkills.map((skill, i) => (
@@ -162,9 +191,9 @@ export default function GradeRecommendations({
       {showResources && rec.suggestedResources.length > 0 && (
         <div>
           <h4 className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-3">
-            Suggested Resources
+            {t('grade.suggested_resources')}
           </h4>
-          <div className={compact ? "space-y-2" : "grid grid-cols-1 sm:grid-cols-2 gap-2"}>
+          <div className={compact ? 'space-y-2' : 'grid grid-cols-1 sm:grid-cols-2 gap-2'}>
             {rec.suggestedResources.map((res, i) => {
               const Icon = RESOURCE_ICONS[res.type] || BookOpen
               return (
@@ -189,20 +218,14 @@ export default function GradeRecommendations({
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
-function GradeChip({
-  grade,
-  highlight = false,
-}: {
-  grade: number
-  highlight?: boolean
-}) {
+function GradeChip({ grade, highlight = false }: { grade: number; highlight?: boolean }) {
   const colorClass = gcseGradeColor(grade)
   return (
     <span
       className={`inline-flex items-center justify-center h-9 w-9 rounded-lg text-sm font-bold ${
         highlight
-          ? "bg-gradient-to-br from-teal-500/20 to-teal-600/20 border border-teal-500/30 text-teal-700"
-          : "bg-ink-200/30 border border-border " + colorClass
+          ? 'bg-gradient-to-br from-teal-500/20 to-teal-600/20 border border-teal-500/30 text-teal-700'
+          : 'bg-ink-200/30 border border-border ' + colorClass
       }`}
     >
       {grade}
@@ -223,14 +246,13 @@ function SkillActionCard({
   compact: boolean
   isWeakArea: boolean
 }) {
+  const t = useT()
   const progress = skillProgressPercent(skill)
 
   return (
     <div
       className={`rounded-lg border p-3.5 transition-colors ${
-        isWeakArea
-          ? "border-amber-500/20 bg-amber-500/[0.04]"
-          : "border-border bg-cream-100"
+        isWeakArea ? 'border-amber-500/20 bg-amber-500/[0.04]' : 'border-border bg-cream-100'
       }`}
     >
       <div className="flex items-start gap-3">
@@ -242,7 +264,7 @@ function SkillActionCard({
             <span className="text-sm font-medium text-foreground">{skill.label}</span>
             {isWeakArea && (
               <span className="text-[10px] uppercase tracking-wider font-semibold text-clay-600 bg-amber-500/10 px-1.5 py-0.5 rounded">
-                Focus
+                {t('grade.focus')}
               </span>
             )}
           </div>

@@ -1,60 +1,64 @@
 'use client'
 
 import Link from 'next/link'
-
-const roles = [
-  {
-    badge: 'Student',
-    heading: 'Ace every paper.',
-    features: [
-      '470+ structured lessons mapped to your board',
-      'AI essay feedback with grade + targets',
-      '130+ mock exams with real boundaries',
-      '7 revision games to learn through play',
-      'Grade ladder tracking from 1 to 9',
-      '2,000+ flashcards & terminology drills',
-    ],
-    cta: { label: 'Start free', href: '/auth/register' },
-    badgeColor: 'bg-teal-700 text-cream-50',
-  },
-  {
-    badge: 'Teacher',
-    heading: 'Plan less. Teach more.',
-    features: [
-      'AI lesson builder — board-aligned in seconds',
-      'Student analytics dashboard',
-      '300+ ready-to-use resources & worksheets',
-      'Set & track assignments per class',
-      'Export reports for parents\u2019 evenings',
-      'Priority support from a real human',
-    ],
-    cta: { label: 'Teacher plans', href: '/for-teachers' },
-    badgeColor: 'bg-clay-500 text-cream-50',
-  },
-  {
-    badge: 'School',
-    heading: 'Whole-department access.',
-    features: [
-      'Unlimited students & teachers',
-      'Department analytics & progress reports',
-      'Bulk onboarding via CSV or SSO',
-      'Teacher admin portal',
-      'CPD resources included',
-      'Founding programme — locked rates for 2-3 yrs',
-    ],
-    cta: { label: 'Book a call', href: '/for-schools' },
-    badgeColor: 'bg-ochre-500 text-ink-900',
-  },
-]
+import { useT } from '@/lib/i18n/use-t'
 
 export default function RolesSection() {
+  const t = useT()
+
+  const roles = [
+    {
+      badge: t('audience.role.student'),
+      heading: t('audience.student.headline'),
+      features: [
+        t('audience.student.feat.lessons'),
+        t('audience.student.feat.ai_feedback'),
+        t('audience.student.feat.mocks'),
+        t('audience.student.feat.games'),
+        t('audience.student.feat.grade_ladder'),
+        t('audience.student.feat.flashcards'),
+      ],
+      cta: { label: t('audience.cta.start_free'), href: '/auth/register' },
+      badgeColor: 'bg-teal-700 text-cream-50',
+    },
+    {
+      badge: t('audience.role.teacher'),
+      heading: t('audience.teacher.headline'),
+      features: [
+        t('audience.teacher.feat.lesson_builder'),
+        t('audience.teacher.feat.analytics'),
+        t('audience.teacher.feat.resources'),
+        t('audience.teacher.feat.assignments'),
+        t('audience.teacher.feat.reports'),
+        t('audience.teacher.feat.priority_support'),
+      ],
+      cta: { label: t('audience.cta.teacher_plans'), href: '/for-teachers' },
+      badgeColor: 'bg-clay-500 text-cream-50',
+    },
+    {
+      badge: t('audience.role.school'),
+      heading: t('audience.school.headline'),
+      features: [
+        t('audience.school.feat.unlimited'),
+        t('audience.school.feat.dept_analytics'),
+        t('audience.school.feat.bulk_onboard'),
+        t('audience.school.feat.admin_portal'),
+        t('audience.school.feat.cpd'),
+        t('audience.school.feat.founding_locked'),
+      ],
+      cta: { label: t('audience.cta.book_call'), href: '/for-schools' },
+      badgeColor: 'bg-ochre-500 text-ink-900',
+    },
+  ]
+
   return (
     <section className="py-20 sm:py-28 bg-ink-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Heading */}
         <div className="mb-12 text-center">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-cream-50">
-            Built for three <em className="italic text-clay-300">audiences</em>.
+            {t('audience.built_for_three.prefix')}{' '}
+            <em className="italic text-clay-300">{t('audience.built_for_three.emphasis')}</em>.
           </h2>
         </div>
 
@@ -66,7 +70,9 @@ export default function RolesSection() {
               className="group rounded-2xl border-2 border-dashed border-cream-200/15 p-7 sm:p-8 transition-all duration-300 hover:border-solid hover:border-clay-400/60 flex flex-col"
             >
               {/* Badge */}
-              <span className={`inline-block self-start rounded-full px-3.5 py-1 text-xs font-bold tracking-wide uppercase mb-5 ${role.badgeColor}`}>
+              <span
+                className={`inline-block self-start rounded-full px-3.5 py-1 text-xs font-bold tracking-wide uppercase mb-5 ${role.badgeColor}`}
+              >
                 {role.badge}
               </span>
 

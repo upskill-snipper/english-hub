@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { initGA4 } from '@/lib/gtag'
+import { useT } from '@/lib/i18n/use-t'
 
 type ConsentValue = 'all' | 'essential' | null
 
@@ -15,6 +16,7 @@ export function CookieConsent() {
   const [visible, setVisible] = useState(false)
   const [showPreferences, setShowPreferences] = useState(false)
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false)
+  const t = useT()
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent')
@@ -174,7 +176,7 @@ export function CookieConsent() {
       className="fixed bottom-0 inset-x-0 z-[100] animate-slide-up"
       role="dialog"
       aria-modal="true"
-      aria-label="Cookie consent"
+      aria-label={t('consent.cookies.dialog_label')}
     >
       <div className="mx-auto max-w-4xl p-4">
         <div className="relative rounded-xl border border-border bg-background/95 backdrop-blur-md shadow-2xl p-6">
@@ -182,7 +184,7 @@ export function CookieConsent() {
           <button
             type="button"
             onClick={handleDismiss}
-            aria-label="Close cookie banner without accepting non-essential cookies"
+            aria-label={t('consent.cookies.close_label')}
             className="absolute right-3 top-3 rounded-md p-1 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <svg
@@ -206,16 +208,16 @@ export function CookieConsent() {
             /* ── Main banner ────────────────────────────── */
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex-1 space-y-1 pr-6">
-                <p className="text-sm font-medium text-foreground">Cookie settings</p>
+                <p className="text-sm font-medium text-foreground">
+                  {t('consent.cookies.banner_title')}
+                </p>
                 <p className="text-xs text-muted-foreground">
-                  We use essential cookies to make the site work. With your consent we also use
-                  analytics cookies to understand how the site is used. You can accept, reject, or
-                  manage your preferences. Read our{' '}
+                  {t('consent.cookies.banner_body')}{' '}
                   <Link
                     href="/cookie-policy"
                     className="underline underline-offset-2 hover:text-foreground transition-colors"
                   >
-                    Cookie Policy
+                    {t('legal.cookie_policy')}
                   </Link>
                   .
                 </p>
@@ -226,19 +228,19 @@ export function CookieConsent() {
                   onClick={() => setShowPreferences(true)}
                   className="rounded-lg border border-border px-4 py-2 text-xs font-medium text-foreground hover:bg-muted/50 transition-colors"
                 >
-                  Manage Preferences
+                  {t('consent.cookies.manage_preferences')}
                 </button>
                 <button
                   onClick={() => saveConsent('essential')}
                   className="rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
                 >
-                  Reject All
+                  {t('consent.cookies.reject_all')}
                 </button>
                 <button
                   onClick={() => saveConsent('all')}
                   className="rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
                 >
-                  Accept All
+                  {t('consent.cookies.accept_all')}
                 </button>
               </div>
             </div>
@@ -246,14 +248,16 @@ export function CookieConsent() {
             /* ── Preferences panel ─────────────────────── */
             <div className="space-y-4">
               <div className="space-y-1 pr-6">
-                <p className="text-sm font-medium text-foreground">Cookie Preferences</p>
+                <p className="text-sm font-medium text-foreground">
+                  {t('consent.cookies.prefs_title')}
+                </p>
                 <p className="text-xs text-muted-foreground">
-                  Choose which cookies you allow. All non-essential cookies are off by default.{' '}
+                  {t('consent.cookies.prefs_body')}{' '}
                   <Link
                     href="/cookie-policy"
                     className="underline underline-offset-2 hover:text-foreground transition-colors"
                   >
-                    Cookie Policy
+                    {t('legal.cookie_policy')}
                   </Link>
                 </p>
               </div>
@@ -261,27 +265,33 @@ export function CookieConsent() {
               {/* Essential */}
               <div className="flex items-center justify-between rounded-lg border border-border p-3">
                 <div>
-                  <p className="text-sm font-medium text-foreground">Essential Cookies</p>
+                  <p className="text-sm font-medium text-foreground">
+                    {t('consent.cookies.essential_title')}
+                  </p>
                   <p className="text-xs text-muted-foreground">
-                    Required for the site to function. Cannot be disabled.
+                    {t('consent.cookies.essential_body')}
                   </p>
                 </div>
-                <span className="text-xs text-muted-foreground italic">Always on</span>
+                <span className="text-xs text-muted-foreground italic">
+                  {t('consent.cookies.always_on')}
+                </span>
               </div>
 
               {/* Analytics */}
               <div className="flex items-center justify-between rounded-lg border border-border p-3">
                 <div>
-                  <p className="text-sm font-medium text-foreground">Analytics Cookies</p>
+                  <p className="text-sm font-medium text-foreground">
+                    {t('consent.cookies.analytics_title')}
+                  </p>
                   <p className="text-xs text-muted-foreground">
-                    Help us understand how visitors interact with the site.
+                    {t('consent.cookies.analytics_body')}
                   </p>
                 </div>
                 <button
                   type="button"
                   role="switch"
                   aria-checked={analyticsEnabled}
-                  aria-label="Toggle analytics cookies"
+                  aria-label={t('consent.cookies.analytics_toggle_label')}
                   onClick={() => setAnalyticsEnabled(!analyticsEnabled)}
                   className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                     analyticsEnabled ? 'bg-primary' : 'bg-muted'
@@ -300,25 +310,25 @@ export function CookieConsent() {
                   onClick={() => setShowPreferences(false)}
                   className="rounded-lg border border-border px-4 py-2 text-xs font-medium text-foreground hover:bg-muted/50 transition-colors"
                 >
-                  Back
+                  {t('action.back')}
                 </button>
                 <button
                   onClick={() => saveConsent('essential')}
                   className="rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
                 >
-                  Reject All
+                  {t('consent.cookies.reject_all')}
                 </button>
                 <button
                   onClick={() => saveConsent('all')}
                   className="rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
                 >
-                  Accept All
+                  {t('consent.cookies.accept_all')}
                 </button>
                 <button
                   onClick={handleSavePreferences}
                   className="rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
                 >
-                  Save Preferences
+                  {t('consent.cookies.save_preferences')}
                 </button>
               </div>
             </div>

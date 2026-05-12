@@ -39,6 +39,7 @@ import {
   isTeacherFeature,
 } from '@/constants/upgrade-copy'
 import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── UsageCounter ──────────────────────────────────────────────────────
 // Small badge shown on gated feature buttons to indicate remaining uses.
@@ -50,6 +51,7 @@ interface UsageCounterProps {
 }
 
 export function UsageCounter({ feature, className }: UsageCounterProps) {
+  const t = useT()
   const [remaining, setRemaining] = useState<number | null>(null)
 
   useEffect(() => {
@@ -69,7 +71,7 @@ export function UsageCounter({ feature, className }: UsageCounterProps) {
     <span
       className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[0.6875rem] font-medium ${colorClasses} ${className ?? ''}`}
     >
-      {remaining} of {FREE_USES_PER_FEATURE} free remaining
+      {remaining} {t('dash.out_of')} {FREE_USES_PER_FEATURE} {t('upgrade.free_remaining')}
     </span>
   )
 }
@@ -85,6 +87,7 @@ interface SoftNudgeProps {
 }
 
 export function SoftNudge({ feature, isTeacher, onDismiss, className }: SoftNudgeProps) {
+  const t = useT()
   const [dismissed, setDismissed] = useState(false)
   const featureName = FEATURE_NAMES[feature]
   const usageCount = getFeatureUsage(feature)
@@ -107,7 +110,7 @@ export function SoftNudge({ feature, isTeacher, onDismiss, className }: SoftNudg
       <button
         onClick={handleDismiss}
         className="absolute top-2.5 right-2.5 rounded-md p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-        aria-label="Dismiss"
+        aria-label={t('upgrade.dismiss')}
       >
         <X className="size-3.5" />
       </button>
@@ -120,7 +123,7 @@ export function SoftNudge({ feature, isTeacher, onDismiss, className }: SoftNudg
           <p className="text-sm leading-relaxed text-foreground">{message}</p>
           <Button render={<Link href="/pricing" />} size="sm" className="gap-1.5">
             <Crown className="size-3.5" />
-            Upgrade Now
+            {t('upgrade.upgrade_now')}
             <ArrowRight className="size-3.5" />
           </Button>
         </div>
@@ -147,6 +150,7 @@ export function FinalUseWarning({
   onOpenChange,
   onUseLastFree,
 }: FinalUseWarningProps) {
+  const t = useT()
   const featureName = FEATURE_NAMES[feature]
   const benefits = getBenefits(isTeacher)
   const pricingLine = getFullPricingLine(feature)
@@ -159,16 +163,17 @@ export function FinalUseWarning({
             <Crown className="size-6 text-red-600 dark:text-red-400" />
           </div>
           <DialogTitle className="text-center">
-            This is your last free {featureName.toLowerCase()}
+            {t('upgrade.title.last_free')} {featureName.toLowerCase()}
           </DialogTitle>
           <DialogDescription className="text-center">
-            After this, {featureName.toLowerCase()} will be locked until you upgrade to Premium.
+            {t('upgrade.after_locked_prefix')} {featureName.toLowerCase()}{' '}
+            {t('upgrade.after_locked_suffix')}
           </DialogDescription>
         </DialogHeader>
 
         {/* Benefits summary */}
         <div className="rounded-lg border border-border/60 bg-muted/30 p-4">
-          <p className="mb-2.5 text-sm font-semibold">Premium includes:</p>
+          <p className="mb-2.5 text-sm font-semibold">{t('upgrade.premium_includes')}</p>
           <ul className="space-y-1.5 text-xs text-muted-foreground">
             {benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-1.5">
@@ -183,7 +188,7 @@ export function FinalUseWarning({
         <DialogFooter className="sm:flex-col sm:gap-2">
           <Button render={<Link href="/pricing" />} className="w-full">
             <Crown className="size-4" />
-            Upgrade Now
+            {t('upgrade.upgrade_now')}
             <ArrowRight className="size-4" />
           </Button>
           <PromoCodePrompt compact className="w-full" />
@@ -192,7 +197,7 @@ export function FinalUseWarning({
               <button className={buttonVariants({ variant: 'outline' })} onClick={onUseLastFree} />
             }
           >
-            Use Last Free {featureName}
+            {t('upgrade.use_last_free')} {featureName}
           </DialogClose>
         </DialogFooter>
       </DialogContent>
@@ -209,6 +214,7 @@ interface LockoutCardProps {
 }
 
 export function LockoutCard({ feature, className }: LockoutCardProps) {
+  const t = useT()
   const featureName = FEATURE_NAMES[feature]
   const benefitCopy = FEATURE_LOCKOUT_COPY[feature]
   const priceString = getPriceString(feature)
@@ -221,9 +227,11 @@ export function LockoutCard({ feature, className }: LockoutCardProps) {
         <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30">
           <Lock className="size-7 text-amber-600" />
         </div>
-        <CardTitle className="text-lg">{featureName} is now locked</CardTitle>
+        <CardTitle className="text-lg">
+          {featureName} {t('upgrade.now_locked')}
+        </CardTitle>
         <CardDescription>
-          You&apos;ve used all {FREE_USES_PER_FEATURE} of your free submissions.
+          {t('upgrade.used_all_lead')} {FREE_USES_PER_FEATURE} {t('upgrade.used_all_tail')}
         </CardDescription>
       </CardHeader>
 
@@ -235,10 +243,10 @@ export function LockoutCard({ feature, className }: LockoutCardProps) {
         <div className="mt-4 flex items-center justify-between rounded-lg border border-border/60 bg-muted/30 p-4">
           <div>
             <p className="text-sm font-semibold">{priceString}</p>
-            <p className="text-xs text-muted-foreground">7-day free trial · card required</p>
+            <p className="text-xs text-muted-foreground">{t('upgrade.trial_card_required')}</p>
           </div>
           <Badge variant="default" className="bg-emerald-600 hover:bg-emerald-600">
-            Cancel anytime
+            {t('home.cancel_anytime')}
           </Badge>
         </div>
       </CardContent>
@@ -246,11 +254,11 @@ export function LockoutCard({ feature, className }: LockoutCardProps) {
       <CardFooter className="flex-col gap-2">
         <Button render={<Link href="/pricing" />} size="lg" className="w-full">
           <Crown className="size-4" />
-          Start 7-day trial
+          {t('upgrade.start_trial')}
         </Button>
         <PromoCodePrompt className="w-full" />
         <p className="text-center text-xs text-muted-foreground">
-          Cancel before day 7 and you won&apos;t be charged.
+          {t('upgrade.cancel_before_day7')}
         </p>
       </CardFooter>
     </Card>
@@ -269,6 +277,7 @@ interface DashboardUpgradeBannerProps {
 }
 
 export function DashboardUpgradeBanner({ isTeacher, className }: DashboardUpgradeBannerProps) {
+  const t = useT()
   const [dismissed, setDismissed] = useState(true) // default hidden until mounted
 
   useEffect(() => {
@@ -292,7 +301,7 @@ export function DashboardUpgradeBanner({ isTeacher, className }: DashboardUpgrad
       <button
         onClick={handleDismiss}
         className="absolute top-2 right-2 rounded-md p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-        aria-label="Dismiss banner"
+        aria-label={t('upgrade.dismiss_banner')}
       >
         <X className="size-3.5" />
       </button>
@@ -304,7 +313,7 @@ export function DashboardUpgradeBanner({ isTeacher, className }: DashboardUpgrad
         <div className="space-y-2">
           <p className="text-sm leading-relaxed text-muted-foreground">{copy}</p>
           <Button render={<Link href="/pricing" />} variant="outline" size="sm" className="gap-1.5">
-            Learn more
+            {t('upgrade.learn_more')}
             <ArrowRight className="size-3.5" />
           </Button>
         </div>

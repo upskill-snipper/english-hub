@@ -1,41 +1,89 @@
 import Link from 'next/link'
 import { KS3 } from '@/lib/ks3/curriculum'
+import { t } from '@/lib/i18n/t'
 
-export default function KS3LandingPage() {
+export default async function KS3LandingPage() {
+  const tr = await Promise.all([
+    t('ks3.landing.eyebrow'), // 0
+    t('ks3.landing.title'), // 1
+    t('ks3.landing.lead'), // 2
+    t('ks3.landing.arc_heading'), // 3
+    t('ks3.landing.reading_progression_intro'), // 4
+    t('ks3.landing.year_7_arc'), // 5
+    t('ks3.landing.year_8_arc'), // 6
+    t('ks3.landing.year_9_arc'), // 7
+    t('ks3.landing.writing_progression'), // 8
+    t('ks3.landing.three_years_heading'), // 9
+    t('ks3.landing.view_year'), // 10  (label, e.g. "View Year")
+    t('ks3.landing.weekly_framework_heading'), // 11
+    t('ks3.landing.weekly_framework_intro'), // 12
+    t('ks3.landing.lesson1_label'), // 13
+    t('ks3.landing.lesson1_desc'), // 14
+    t('ks3.landing.lesson2_label'), // 15
+    t('ks3.landing.lesson2_desc'), // 16
+    t('ks3.landing.lesson3_label'), // 17
+    t('ks3.landing.lesson3_desc'), // 18
+    t('ks3.landing.lesson4_label'), // 19
+    t('ks3.landing.lesson4_desc'), // 20
+    t('ks3.landing.lesson5_label'), // 21
+    t('ks3.landing.lesson5_desc'), // 22
+    t('ks3.landing.non_negotiables_heading'), // 23
+    t('ks3.landing.non_negotiables_intro'), // 24
+    t('ks3.landing.non_negotiables_1'), // 25
+    t('ks3.landing.non_negotiables_2'), // 26
+    t('ks3.landing.non_negotiables_3'), // 27
+    t('ks3.landing.non_negotiables_4'), // 28
+    t('ks3.landing.non_negotiables_5'), // 29
+    t('ks3.landing.non_negotiables_6'), // 30
+    t('ks3.landing.how_to_use_heading'), // 31
+    t('ks3.landing.how_to_use_yearly'), // 32
+    t('ks3.landing.how_to_use_termly'), // 33
+    t('ks3.landing.how_to_use_weekly'), // 34
+    t('ks3.landing.how_to_use_rubrics'), // 35
+    t('ks3.landing.how_to_use_skills'), // 36
+    t('ks3.landing.how_to_use_end_of_ks3'), // 37
+    t('ks3.landing.bilingual_heading'), // 38
+    t('ks3.landing.bilingual_body'), // 39
+    t('ks3.landing.hooked_heading'), // 40
+    t('ks3.landing.hooked_ai_marking'), // 41
+    t('ks3.landing.hooked_reading'), // 42
+    t('ks3.landing.hooked_vocab'), // 43
+    t('ks3.landing.hooked_mocks'), // 44
+    t('ks3.year_7_name'), // 45
+    t('ks3.year_8_name'), // 46
+    t('ks3.year_9_name'), // 47
+    t('ks3.year_7'), // 48
+    t('ks3.year_8'), // 49
+    t('ks3.year_9'), // 50
+  ])
+
+  const yearNameTr: Record<number, string> = { 7: tr[45], 8: tr[46], 9: tr[47] }
+  const yearLabelTr: Record<number, string> = { 7: tr[48], 8: tr[49], 9: tr[50] }
+
   return (
     <>
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
-        Key Stage 3 · Years 7, 8 &amp; 9
+        {tr[0]}
       </p>
-      <h1>The full KS3 English curriculum</h1>
-      <p className="lead">
-        Years 7, 8 and 9 of secondary English mapped end-to-end. Yearly expectations, termly plans,
-        weekly lesson frameworks, marking rubrics, skill progression and the British National
-        Curriculum end-of-KS3 standard — all wired to The English Hub&rsquo;s reading diagnostics,
-        AI marking, and bilingual (English / Arabic) content layer.
-      </p>
+      <h1>{tr[1]}</h1>
+      <p className="lead">{tr[2]}</p>
 
-      <h2>The KS3 arc — Foundations → Development → Mastery</h2>
-      <p>Reading progression at a glance:</p>
+      <h2>{tr[3]}</h2>
+      <p>{tr[4]}</p>
       <ul>
         <li>
-          <strong>Year 7</strong> — &ldquo;This shows…&rdquo; (identify + simple inference).
+          <strong>{yearLabelTr[7]}</strong> — {tr[5]}
         </li>
         <li>
-          <strong>Year 8</strong> — &ldquo;This suggests… because…&rdquo; (explain + multiple
-          inferences + comparison).
+          <strong>{yearLabelTr[8]}</strong> — {tr[6]}
         </li>
         <li>
-          <strong>Year 9</strong> — &ldquo;This suggests… which reflects…&rdquo; (analyse methods
-          across texts, conceptual interpretations, evaluation).
+          <strong>{yearLabelTr[9]}</strong> — {tr[7]}
         </li>
       </ul>
-      <p>
-        Writing progression: Y7 control + basic structure → Y8 deliberate choices + clearer
-        development → Y9 craft + conceptual depth.
-      </p>
+      <p>{tr[8]}</p>
 
-      <h2>The three years</h2>
+      <h2>{tr[9]}</h2>
       <div className="not-prose grid gap-4 sm:grid-cols-3 my-6">
         {KS3.years.map((y) => (
           <Link
@@ -44,120 +92,81 @@ export default function KS3LandingPage() {
             className="group rounded-2xl border border-border/60 bg-card p-5 transition-colors hover:border-primary/40 hover:bg-primary/[0.03]"
           >
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
-              Year {y.number}
+              {yearLabelTr[y.number]}
             </p>
             <h3 className="mt-1 text-lg font-semibold tracking-tight text-foreground">
-              {y.name.en.replace(`Year ${y.number} — `, '')}
+              {yearNameTr[y.number] ?? y.name.en.replace(`Year ${y.number} — `, '')}
             </h3>
             <p className="mt-3 text-sm text-muted-foreground line-clamp-3">{y.overview.en}</p>
             <p className="mt-4 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-              View Year {y.number} →
+              {tr[10]} {y.number} →
             </p>
           </Link>
         ))}
       </div>
 
-      <h2>Weekly framework — the same 5 lessons every week</h2>
-      <p>
-        Every week in KS3 follows the same shape so students build reflexes, not anxiety. Teachers
-        adapt the text, the focus and the scaffolding; the framework holds steady.
-      </p>
+      <h2>{tr[11]}</h2>
+      <p>{tr[12]}</p>
       <ol>
         <li>
-          <strong>Explicit Reading.</strong> Teacher reads aloud, models pronunciation, assesses
-          reading ability, teaches an analysis skill (R-focus).
+          <strong>{tr[13]}</strong> {tr[14]}
         </li>
         <li>
-          <strong>Reading and Discussion.</strong> Deepen understanding via sentence stems and
-          structured talk (R + SL).
+          <strong>{tr[15]}</strong> {tr[16]}
         </li>
         <li>
-          <strong>Explicit Writing.</strong> Live-model a paragraph with explicit SPAG attention
-          (W-focus).
+          <strong>{tr[17]}</strong> {tr[18]}
         </li>
         <li>
-          <strong>Application.</strong> Guided practice — reading → writing transfer with a heavy
-          scaffold.
+          <strong>{tr[19]}</strong> {tr[20]}
         </li>
         <li>
-          <strong>Independent Outcome.</strong> Independent assessable piece — written under the
-          scaffolds removed.
+          <strong>{tr[21]}</strong> {tr[22]}
         </li>
       </ol>
 
-      <h2>Non-negotiables across KS3</h2>
-      <p>Every lesson in this curriculum:</p>
+      <h2>{tr[23]}</h2>
+      <p>{tr[24]}</p>
       <ul>
-        <li>
-          follows a clear learning cycle (input → modelling → guided practice → independence);
-        </li>
-        <li>includes explicit modelling before independent work;</li>
-        <li>ensures reading or stimulus material informs writing outcomes;</li>
-        <li>builds in structured talk opportunities to develop ideas;</li>
-        <li>teaches vocabulary explicitly and in context (key vocabulary lists every week);</li>
-        <li>provides regular opportunities for independent reading.</li>
+        <li>{tr[25]}</li>
+        <li>{tr[26]}</li>
+        <li>{tr[27]}</li>
+        <li>{tr[28]}</li>
+        <li>{tr[29]}</li>
+        <li>{tr[30]}</li>
       </ul>
 
-      <h2>How to use this site</h2>
+      <h2>{tr[31]}</h2>
       <ul>
         <li>
-          <strong>Yearly expectations</strong> live on the year page (e.g.{' '}
-          <Link href="/ks3/year-7">/ks3/year-7</Link>) — the &ldquo;students can&rdquo; statements
-          per strand.
+          {tr[32]} <Link href="/ks3/year-7">/ks3/year-7</Link>
         </li>
         <li>
-          <strong>Termly plans</strong> live on the term page (e.g.{' '}
-          <Link href="/ks3/year-7/term-1">/ks3/year-7/term-1</Link>) — overview, set text,
-          vocabulary themes, big skill jump.
+          {tr[33]} <Link href="/ks3/year-7/term-1">/ks3/year-7/term-1</Link>
         </li>
         <li>
-          <strong>Weekly lesson plans</strong> live on the week page (e.g.{' '}
-          <Link href="/ks3/year-7/term-1/week-2">/ks3/year-7/term-1/week-2</Link>) — the full
-          5-lesson breakdown with skill codes, tasks, success criteria.
+          {tr[34]} <Link href="/ks3/year-7/term-1/week-2">/ks3/year-7/term-1/week-2</Link>
         </li>
         <li>
-          <strong>Marking rubrics</strong> at <Link href="/ks3/rubrics">/ks3/rubrics</Link> — 3
-          years × 4 strands × 4 levels.
+          {tr[35]} <Link href="/ks3/rubrics">/ks3/rubrics</Link>
         </li>
         <li>
-          <strong>Skill codes</strong> at <Link href="/ks3/skills">/ks3/skills</Link> — every code
-          Y7→Y8→Y9 in one place.
+          {tr[36]} <Link href="/ks3/skills">/ks3/skills</Link>
         </li>
         <li>
-          <strong>End of KS3 standard</strong> at{' '}
-          <Link href="/ks3/end-of-ks3">/ks3/end-of-ks3</Link> — what the British National Curriculum
-          expects.
+          {tr[37]} <Link href="/ks3/end-of-ks3">/ks3/end-of-ks3</Link>
         </li>
       </ul>
 
-      <h2>Bilingual — English / Arabic</h2>
-      <p>
-        Every page here can render in three modes via the language toggle in the site header:
-        English only, English + Arabic stacked, or Arabic only. Curriculum copy is translated to
-        Modern Standard Arabic (MSA) — the formal register that reads correctly to parents and
-        students across the Gulf and Levant. Translation coverage is being progressively filled by
-        the round-trip QA pipeline; English-only sections fall back gracefully where Arabic
-        isn&rsquo;t yet ready.
-      </p>
+      <h2>{tr[38]}</h2>
+      <p>{tr[39]}</p>
 
-      <h2>Hooked into the rest of the site</h2>
+      <h2>{tr[40]}</h2>
       <ul>
-        <li>
-          <strong>AI marking</strong> — the Independent Outcome lesson on every week page links to
-          the existing essay-feedback system. A student writes their independent paragraph, submits,
-          and gets AO-aligned AI feedback within minutes.
-        </li>
-        <li>
-          <strong>Reading-for-pleasure</strong> picks for each term link to the wider site library.
-        </li>
-        <li>
-          <strong>Vocabulary drills</strong> integrate with the existing flashcards engine — every
-          week&rsquo;s key vocabulary is loadable as a deck.
-        </li>
-        <li>
-          <strong>Mock exams</strong> — KS3 mock-exam content (already on the site) is referenced
-          from Year 9 Term 3 as the bridge to GCSE.
-        </li>
+        <li>{tr[41]}</li>
+        <li>{tr[42]}</li>
+        <li>{tr[43]}</li>
+        <li>{tr[44]}</li>
       </ul>
     </>
   )

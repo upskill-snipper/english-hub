@@ -5,37 +5,30 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import {
-  BookOpen,
-  Sparkles,
-  FileText,
-  Layers,
-  Lightbulb,
-  CheckCircle,
-  Target,
-} from 'lucide-react'
+import { BookOpen, Sparkles, FileText, Layers, Lightbulb, CheckCircle, Target } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─────────── Quick Tips Banner ─────────── */
 
-const examTips = [
-  'Always plan before you write — even 3 minutes of planning can boost your grade by a full band.',
-  'Top marks reward precise vocabulary — swap "good" for "compelling", "bad" for "detrimental".',
-  'Re-read the question after every paragraph to make sure you\u2019re still answering it.',
-  'Embed context naturally — don\u2019t bolt it on as a separate paragraph. Weave it into your analysis.',
-  'Use short, punchy quotes and analyse individual word choices for top marks in any exam board.',
-  'For creative writing, a cyclical structure (ending where you began) impresses markers.',
+const tipKeys = [
+  'home.tip.plan',
+  'home.tip.vocab',
+  'home.tip.reread',
+  'home.tip.context',
+  'home.tip.quotes',
+  'home.tip.cyclical',
 ]
 
 function QuickTipsBanner() {
+  const t = useT()
   const [tipIndex, setTipIndex] = useState(0)
-  const tips = examTips
 
   useEffect(() => {
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     if (motionQuery.matches) return
 
     const interval = setInterval(() => {
-      setTipIndex((prev) => (prev + 1) % tips.length)
+      setTipIndex((prev) => (prev + 1) % tipKeys.length)
     }, 8000)
 
     const handleChange = (e: MediaQueryListEvent) => {
@@ -47,7 +40,7 @@ function QuickTipsBanner() {
       clearInterval(interval)
       motionQuery.removeEventListener('change', handleChange)
     }
-  }, [tips.length])
+  }, [])
 
   return (
     <section className="py-5">
@@ -55,8 +48,8 @@ function QuickTipsBanner() {
         <div className="flex items-center gap-3 px-5 py-4 rounded-2xl border border-primary/20 bg-primary/[0.04]">
           <Lightbulb className="w-5 h-5 text-primary shrink-0" />
           <p className="text-sm text-muted-foreground leading-relaxed transition-opacity duration-500">
-            <span className="font-semibold text-primary">Top Tip:</span>{' '}
-            {tips[tipIndex]}
+            <span className="font-semibold text-primary">{t('home.tip.label')}</span>{' '}
+            {t(tipKeys[tipIndex])}
           </p>
         </div>
       </div>
@@ -67,6 +60,45 @@ function QuickTipsBanner() {
 /* ─────────── Marketing hero + social proof ─────────── */
 
 export default function MarketingHero() {
+  const t = useT()
+  const stats: Array<{ icon: typeof BookOpen; color: string; value: string; labelKey: string }> = [
+    {
+      icon: BookOpen,
+      color: 'text-primary bg-primary/10',
+      value: '470+',
+      labelKey: 'home.stat.lessons',
+    },
+    {
+      icon: FileText,
+      color: 'text-clay-600 bg-orange-500/10',
+      value: '130+',
+      labelKey: 'home.stat.mocks',
+    },
+    {
+      icon: Lightbulb,
+      color: 'text-rose-400 bg-rose-500/10',
+      value: '30',
+      labelKey: 'home.stat.poems',
+    },
+    {
+      icon: Sparkles,
+      color: 'text-cyan-400 bg-cyan-500/10',
+      value: '7',
+      labelKey: 'home.stat.games',
+    },
+    {
+      icon: Layers,
+      color: 'text-purple-400 bg-purple-500/10',
+      value: '2,000+',
+      labelKey: 'home.stat.flashcards',
+    },
+    {
+      icon: Target,
+      color: 'text-emerald-400 bg-emerald-500/10',
+      value: '1–9',
+      labelKey: 'home.stat.grading',
+    },
+  ]
   return (
     <>
       {/* ━━━ HERO (static — critical for LCP) ━━━ */}
@@ -80,30 +112,29 @@ export default function MarketingHero() {
             className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-10 gap-2 px-4 py-1.5"
           >
             <Sparkles className="w-4 h-4" />
-            First Month Free — No Card Required
+            {t('home.hero.badge')}
           </Badge>
 
           <h1 className="text-foreground">
-            Master English.
+            {t('home.hero.title_line1')}
             <br />
-            <span className="text-primary">Ace Your Exams.</span>
+            <span className="text-primary">{t('home.hero.title_line2')}</span>
           </h1>
 
           <p className="mt-7 text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            The all-in-one GCSE English platform. Structured courses, AI essay feedback, mock exams, and revision tools
-            — all mapped to your exam board. AQA, Edexcel, OCR, WJEC, IGCSE &amp; KS3.
+            {t('home.hero.subtitle')}
           </p>
 
           {/* Trust indicators */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-emerald-400" /> Written by expert teachers
+              <CheckCircle className="w-4 h-4 text-emerald-400" /> {t('home.hero.trust.teachers')}
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-emerald-400" /> GCSE 1–9 grading
+              <CheckCircle className="w-4 h-4 text-emerald-400" /> {t('home.hero.trust.grading')}
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="w-4 h-4 text-emerald-400" /> Cancel anytime
+              <CheckCircle className="w-4 h-4 text-emerald-400" /> {t('home.cancel_anytime')}
             </span>
           </div>
 
@@ -114,14 +145,24 @@ export default function MarketingHero() {
               className="text-base px-8 h-12 shadow-lg shadow-primary/20"
               render={<Link href="/auth/register" />}
             >
-              Start Free — No Card Needed
+              {t('home.hero.cta_start_free')}
             </Button>
-            <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/courses" />}>
-              Browse Courses
+            <Button
+              variant="secondary"
+              size="lg"
+              className="text-base px-8 h-12"
+              render={<Link href="/courses" />}
+            >
+              {t('home.hero.cta_browse')}
             </Button>
-            <Button variant="outline" size="lg" className="text-base px-8 h-12 gap-2" render={<Link href="/demo/school" />}>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-base px-8 h-12 gap-2"
+              render={<Link href="/demo/school" />}
+            >
               <Sparkles className="w-4 h-4" />
-              Try Interactive Demo
+              {t('home.hero.cta_demo')}
             </Button>
           </div>
         </div>
@@ -131,24 +172,22 @@ export default function MarketingHero() {
       <section className="border-y border-border/40 bg-card/30">
         <div className="max-w-5xl mx-auto px-6 py-10">
           <p className="text-center text-muted-foreground text-sm font-medium mb-7">
-            Trusted by students, teachers, and schools across the UK
+            {t('home.social_proof.heading')}
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8">
-            {[
-              { icon: BookOpen, color: 'text-primary bg-primary/10', value: '470+', label: 'Structured Lessons' },
-              { icon: FileText, color: 'text-clay-600 bg-orange-500/10', value: '130+', label: 'Mock Papers' },
-              { icon: Lightbulb, color: 'text-rose-400 bg-rose-500/10', value: '30', label: 'Poem Studies' },
-              { icon: Sparkles, color: 'text-cyan-400 bg-cyan-500/10', value: '7', label: 'GCSE-Grade Games' },
-              { icon: Layers, color: 'text-purple-400 bg-purple-500/10', value: '2,000+', label: 'Flashcards' },
-              { icon: Target, color: 'text-emerald-400 bg-emerald-500/10', value: '1–9', label: 'Grade Tracking' },
-            ].map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3">
-                <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center shrink-0', stat.color)}>
+            {stats.map((stat) => (
+              <div key={stat.labelKey} className="flex items-center gap-3">
+                <div
+                  className={cn(
+                    'w-10 h-10 rounded-xl flex items-center justify-center shrink-0',
+                    stat.color,
+                  )}
+                >
                   <stat.icon className="w-5 h-5" />
                 </div>
                 <div>
                   <p className="text-xl font-bold tracking-tight text-foreground">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground">{stat.label}</p>
+                  <p className="text-xs text-muted-foreground">{t(stat.labelKey)}</p>
                 </div>
               </div>
             ))}

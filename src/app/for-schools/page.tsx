@@ -17,6 +17,7 @@ import { VAT_LABEL } from '@/lib/copy/pricing'
 import { PRICING } from '@/constants/pricing'
 import { InfographicBanner } from '@/components/marketing/InfographicBanner'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 import {
   BookOpen,
   GraduationCap,
@@ -296,7 +297,50 @@ const FAQS = [
 
 /* ─────────────── Main Page ─────────────── */
 
-export default function ForSchoolsPage() {
+export default async function ForSchoolsPage() {
+  const [
+    heroBadge,
+    heroTitle,
+    heroSub,
+    ctaBookCall,
+    ctaSeePricing,
+    bannerBadge,
+    bannerTitle,
+    bannerDesc,
+    bannerWhatReceive,
+    finalCtaBadge,
+    finalCtaTitle,
+    finalCtaTitleEmphasis,
+    finalCtaDesc,
+    finalCtaNoObligation,
+    finalCtaEmailDirect,
+    sectionFeaturesTitle,
+    sectionFeaturesSub,
+    sectionDemoTitle,
+    sectionDemoSub,
+    ctaViewDemo,
+  ] = await tMany([
+    'audience.schools.hero.badge',
+    'audience.schools.hero.title',
+    'audience.schools.hero.sub',
+    'pricing.cta.book_20min_call',
+    'audience.schools.cta.see_pricing',
+    'audience.schools.banner.badge',
+    'pricing.founding_schools_2026',
+    'audience.schools.banner.desc',
+    'audience.schools.what_receive',
+    'audience.schools.final.badge',
+    'audience.schools.final.title',
+    'audience.schools.final.title_emphasis',
+    'audience.schools.final.desc',
+    'audience.schools.final.no_obligation',
+    'audience.schools.final.email_direct',
+    'audience.schools.features.title',
+    'audience.schools.features.sub',
+    'audience.schools.demo.title',
+    'audience.schools.demo.sub',
+    'pricing.cta.view_demo',
+  ])
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -324,16 +368,15 @@ export default function ForSchoolsPage() {
             className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-10 gap-2 px-4 py-1.5"
           >
             <School className="w-4 h-4" />
-            For Schools &amp; Multi-Academy Trusts
+            {heroBadge}
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-            Whole-department English platform for UK schools
+            {heroTitle}
           </h1>
 
           <p className="mt-7 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Bulk onboarding, teacher dashboards, AI essay marking, and Head&apos;s Reports &mdash;
-            see what every department gets when they join.
+            {heroSub}
           </p>
 
           {/* Loom dashboard walk-through deferred until the recording is produced.
@@ -350,7 +393,7 @@ export default function ForSchoolsPage() {
               render={<Link href="/contact" />}
             >
               <Phone className="w-4 h-4" />
-              Book a 20-min call
+              {ctaBookCall}
             </Button>
             <Button
               variant="outline"
@@ -358,7 +401,7 @@ export default function ForSchoolsPage() {
               className="text-base px-8 h-13 border-primary/40 text-primary hover:bg-primary/10 gap-2 font-semibold"
               render={<Link href="/for-schools#pricing" />}
             >
-              See pricing
+              {ctaSeePricing}
             </Button>
           </div>
 
@@ -387,26 +430,20 @@ export default function ForSchoolsPage() {
                   <Award className="w-5 h-5 text-primary" />
                 </div>
                 <Badge className="bg-primary/15 text-primary border-primary/30 font-bold text-sm px-3 py-1">
-                  FIRST 10 SCHOOLS &mdash; FOUNDING PARTNER PRICING
+                  {bannerBadge}
                 </Badge>
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mb-3">
-                Founding Schools Programme &mdash; 2026
+                {bannerTitle}
               </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-xl">
-                We are partnering with the first 10 schools to sign as founding partners to shape
-                the future of English teaching. This is not a free trial &mdash; it is a strategic
-                partnership. Founding schools receive heavily discounted pricing, early features,
-                direct product input, and locked preferential rates for 2-3 years. Schools joining
-                after the founding cohort are welcome at our standard rates.
-              </p>
+              <p className="text-muted-foreground leading-relaxed max-w-xl">{bannerDesc}</p>
             </div>
 
             <div className="w-full lg:w-auto lg:min-w-[320px]">
               <div className="rounded-2xl border border-primary/25 bg-primary/[0.04] p-6">
                 <p className="text-sm font-semibold text-primary mb-4 uppercase tracking-wide">
-                  What founding schools receive
+                  {bannerWhatReceive}
                 </p>
                 <ul className="space-y-3">
                   {FOUNDING_BENEFITS.map((benefit) => (
@@ -421,7 +458,7 @@ export default function ForSchoolsPage() {
                   render={<Link href="/contact" />}
                 >
                   <Phone className="w-4 h-4" />
-                  Book a 20-Minute Call
+                  {ctaBookCall}
                 </Button>
               </div>
             </div>
@@ -667,10 +704,10 @@ export default function ForSchoolsPage() {
               variant="outline"
               className="border-border/50 text-muted-foreground mb-5 text-xs font-semibold uppercase tracking-wide"
             >
-              Platform Features
+              {sectionFeaturesTitle}
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              Everything Your Department Needs
+              {sectionFeaturesSub}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
               Built to raise attainment, reduce workload, and give leadership full visibility across
@@ -1359,16 +1396,13 @@ export default function ForSchoolsPage() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <Badge className="bg-primary/15 text-primary border-primary/30 font-bold text-sm px-4 py-1.5 mb-8 gap-2">
             <Award className="w-4 h-4" />
-            ONLY 10 FOUNDING SCHOOLS
+            {finalCtaBadge}
           </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-5">
-            Join the Founding Schools Programme{' '}
-            <span className="text-primary">Before It Closes</span>
+            {finalCtaTitle} <span className="text-primary">{finalCtaTitleEmphasis}</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto mb-10">
-            First 10 schools get founding-partner pricing, locked for 2-3 years. Early features.
-            Direct product input. Additional schools welcome at standard rates after the cohort
-            closes.
+            {finalCtaDesc}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
@@ -1377,7 +1411,7 @@ export default function ForSchoolsPage() {
               render={<Link href="/contact" />}
             >
               <Phone className="w-5 h-5" />
-              Book a 20-Minute Call
+              {ctaBookCall}
             </Button>
             <Button
               variant="outline"
@@ -1386,15 +1420,12 @@ export default function ForSchoolsPage() {
               render={<Link href="/demo" />}
             >
               <Eye className="w-4 h-4" />
-              View the Demo
+              {ctaViewDemo}
             </Button>
           </div>
-          <p className="text-xs text-muted-foreground/60 mt-6">
-            No obligation. No hard sell. Just a conversation about whether the programme is right
-            for your school.
-          </p>
+          <p className="text-xs text-muted-foreground/60 mt-6">{finalCtaNoObligation}</p>
           <p className="text-xs text-muted-foreground/60 mt-2">
-            Or email us directly at{' '}
+            {finalCtaEmailDirect}{' '}
             <a href="mailto:info@Upskillenergy.com" className="text-primary hover:underline">
               info@Upskillenergy.com
             </a>

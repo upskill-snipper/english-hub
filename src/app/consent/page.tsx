@@ -3,10 +3,18 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { ShieldCheck, CheckCircle, XCircle, Loader2, AlertTriangle, BookOpen } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardFooter,
+} from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Separator } from '@/components/ui/separator'
+import { useT } from '@/lib/i18n/use-t'
 
 interface ConsentDetails {
   student_name: string
@@ -18,6 +26,7 @@ interface ConsentDetails {
 export default function ConsentPage() {
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
+  const t = useT()
 
   const [details, setDetails] = useState<ConsentDetails | null>(null)
   const [loading, setLoading] = useState(true)
@@ -27,7 +36,7 @@ export default function ConsentPage() {
 
   useEffect(() => {
     if (!token) {
-      setError('No consent token provided. Please use the link from the email you received.')
+      setError(t('consent.form.no_token'))
       setLoading(false)
       return
     }
@@ -38,20 +47,20 @@ export default function ConsentPage() {
         const res = await fetch(`/api/school/consent/details?token=${encodeURIComponent(token!)}`)
         if (!res.ok) {
           const data = await res.json()
-          setError(data.error ?? 'This consent link is invalid or has expired.')
+          setError(data.error ?? t('consent.form.invalid_or_expired'))
           return
         }
         const data = await res.json()
         setDetails(data)
       } catch {
-        setError('Failed to load consent details. Please try again later.')
+        setError(t('consent.form.load_failed'))
       } finally {
         setLoading(false)
       }
     }
 
     fetchDetails()
-  }, [token])
+  }, [token, t])
 
   async function handleAction(action: 'approve' | 'deny') {
     if (!token) return
@@ -68,13 +77,13 @@ export default function ConsentPage() {
       const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error ?? 'Failed to process your response.')
+        setError(data.error ?? t('consent.form.process_failed'))
         return
       }
 
       setResult({ status: data.status, message: data.message })
     } catch {
-      setError('Something went wrong. Please try again.')
+      setError(t('action.error_generic'))
     } finally {
       setSubmitting(false)
     }
@@ -93,11 +102,11 @@ export default function ConsentPage() {
                 <XCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
               )}
               <h1 className="text-2xl font-bold text-foreground mb-2">
-                {result.status === 'approved' ? 'Consent Granted' : 'Consent Denied'}
+                {result.status === 'approved'
+                  ? t('consent.form.result_granted')
+                  : t('consent.form.result_denied')}
               </h1>
-              <p className="text-muted-foreground max-w-md mx-auto">
-                {result.message}
-              </p>
+              <p className="text-muted-foreground max-w-md mx-auto">{result.message}</p>
             </CardContent>
           </Card>
         </div>
@@ -111,7 +120,7 @@ export default function ConsentPage() {
       <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-background">
         <div className="flex flex-col items-center gap-3">
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
-          <p className="text-sm text-muted-foreground">Loading consent details...</p>
+          <p className="text-sm text-muted-foreground">{t('consent.form.loading')}</p>
         </div>
       </div>
     )
@@ -126,7 +135,7 @@ export default function ConsentPage() {
             <CardContent className="pt-8 pb-8">
               <AlertTriangle className="w-12 h-12 text-amber-500 mx-auto mb-4" />
               <h1 className="text-xl font-bold text-foreground mb-2">
-                Unable to Load Consent Form
+                {t('consent.form.unable_to_load')}
               </h1>
               <p className="text-muted-foreground">{error}</p>
             </CardContent>
@@ -148,9 +157,9 @@ export default function ConsentPage() {
                 <ShieldCheck className="h-8 w-8 text-primary" />
               </div>
             </div>
-            <CardTitle className="text-2xl">Parental Consent Form</CardTitle>
+            <CardTitle className="text-2xl">{t('consent.form.page_title')}</CardTitle>
             <CardDescription>
-              The English Hub &mdash; Educational Data Processing Consent
+              {t('brand.name')} &mdash; {t('consent.form.subtitle')}
             </CardDescription>
           </CardHeader>
 
@@ -164,11 +173,11 @@ export default function ConsentPage() {
             {/* Student & School Info */}
             <div className="rounded-lg border border-border p-4 space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Student</span>
+                <span className="text-muted-foreground">{t('consent.form.student_label')}</span>
                 <span className="font-medium text-foreground">{details.student_name}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">School</span>
+                <span className="text-muted-foreground">{t('consent.form.school_label')}</span>
                 <span className="font-medium text-foreground">{details.school_name}</span>
               </div>
             </div>
@@ -179,43 +188,63 @@ export default function ConsentPage() {
             <div className="space-y-3">
               <h3 className="text-sm font-semibold text-foreground flex items-center gap-2">
                 <BookOpen className="h-4 w-4 text-primary" />
-                What data is collected
+                {t('consent.form.what_collected_title')}
               </h3>
               <ul className="text-sm text-muted-foreground space-y-1.5 pl-6 list-disc">
-                <li>Full name and email address (for account identification)</li>
-                <li>Year group and exam board (to personalise learning content)</li>
-                <li>Quiz scores, progress, and completion data (to track learning outcomes)</li>
-                <li>Activity timestamps (to monitor engagement)</li>
+                <li>{t('consent.form.collected_item_identity')}</li>
+                <li>{t('consent.form.collected_item_academic')}</li>
+                <li>{t('consent.form.collected_item_progress')}</li>
+                <li>{t('consent.form.collected_item_activity')}</li>
               </ul>
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-sm font-semibold text-foreground">How the data is used</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {t('consent.form.how_used_title')}
+              </h3>
               <ul className="text-sm text-muted-foreground space-y-1.5 pl-6 list-disc">
-                <li>To provide personalised English language learning</li>
-                <li>To allow teachers and school administrators to monitor student progress</li>
-                <li>To generate anonymised class-level analytics and insights</li>
-                <li>Data is never sold to third parties or used for advertising</li>
+                <li>{t('consent.form.use_item_personalise')}</li>
+                <li>{t('consent.form.use_item_teacher_monitor')}</li>
+                <li>{t('consent.form.use_item_anon_analytics')}</li>
+                <li>{t('legal.no_sell_data')}</li>
               </ul>
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-sm font-semibold text-foreground">Your rights under UK GDPR</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {t('consent.form.rights_title')}
+              </h3>
               <ul className="text-sm text-muted-foreground space-y-1.5 pl-6 list-disc">
-                <li><strong>Right to access</strong> &mdash; request a copy of your child&apos;s data at any time</li>
-                <li><strong>Right to rectification</strong> &mdash; correct any inaccurate data</li>
-                <li><strong>Right to erasure</strong> &mdash; request deletion of your child&apos;s data</li>
-                <li><strong>Right to withdraw consent</strong> &mdash; you can withdraw consent at any time by contacting the school or emailing us</li>
-                <li><strong>Right to data portability</strong> &mdash; receive data in a machine-readable format</li>
-                <li><strong>Right to complain</strong> &mdash; you may complain to the Information Commissioner&apos;s Office (ICO) if you believe your rights have been breached</li>
+                <li>
+                  <strong>{t('legal.right_access')}</strong> &mdash;{' '}
+                  {t('consent.form.right_access_desc')}
+                </li>
+                <li>
+                  <strong>{t('legal.right_correct')}</strong> &mdash;{' '}
+                  {t('consent.form.right_correct_desc')}
+                </li>
+                <li>
+                  <strong>{t('legal.right_delete')}</strong> &mdash;{' '}
+                  {t('consent.form.right_delete_desc')}
+                </li>
+                <li>
+                  <strong>{t('legal.right_withdraw')}</strong> &mdash;{' '}
+                  {t('consent.form.right_withdraw_desc')}
+                </li>
+                <li>
+                  <strong>{t('consent.form.right_portability')}</strong> &mdash;{' '}
+                  {t('consent.form.right_portability_desc')}
+                </li>
+                <li>
+                  <strong>{t('legal.right_complain')}</strong> &mdash;{' '}
+                  {t('consent.form.right_complain_desc')}
+                </li>
               </ul>
             </div>
 
             <div className="rounded-lg border border-border bg-muted/30 p-4">
               <p className="text-sm text-muted-foreground">
-                Data is stored securely and retained only while your child is enrolled at the school.
-                Upon leaving, all personal data will be deleted within 30 days unless otherwise required
-                by law. For questions, contact your school administrator or email{' '}
+                {t('consent.form.retention_note')}{' '}
                 <span className="text-foreground font-medium">info@Upskillenergy.com</span>.
               </p>
             </div>
@@ -234,7 +263,7 @@ export default function ConsentPage() {
                 ) : (
                   <CheckCircle className="h-4 w-4 mr-2" />
                 )}
-                I Consent
+                {t('consent.form.consent_cta')}
               </Button>
               <Button
                 variant="outline"
@@ -248,12 +277,11 @@ export default function ConsentPage() {
                 ) : (
                   <XCircle className="h-4 w-4 mr-2" />
                 )}
-                I Do Not Consent
+                {t('consent.form.deny_cta')}
               </Button>
             </div>
             <p className="text-xs text-muted-foreground text-center">
-              By clicking &ldquo;I Consent&rdquo;, you agree to the processing of your child&apos;s data
-              as described above for educational purposes at their school.
+              {t('consent.form.footer_disclaimer')}
             </p>
           </CardFooter>
         </Card>

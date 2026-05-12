@@ -1,27 +1,28 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { useState } from 'react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
-export type AnnotationKind = "strength" | "improve" | "technique";
+export type AnnotationKind = 'strength' | 'improve' | 'technique'
 
 export interface Annotation {
-  id: string;
+  id: string
   /** Index into the paragraph array that this annotation belongs to */
-  paragraphIndex: number;
+  paragraphIndex: number
   /** Substring of the paragraph to highlight — must appear verbatim */
-  quote: string;
+  quote: string
   /** Kind of comment — drives colour token */
-  kind: AnnotationKind;
+  kind: AnnotationKind
   /** Marker-style comment */
-  comment: string;
+  comment: string
 }
 
 export interface AnnotatedEssayProps {
-  paragraphs: string[];
-  annotations: Annotation[];
-  className?: string;
+  paragraphs: string[]
+  annotations: Annotation[]
+  className?: string
 }
 
 /**
@@ -29,65 +30,52 @@ export interface AnnotatedEssayProps {
  * Clicking a highlight pops a side comment; hovering shows the preview.
  * Uses only theme tokens (primary, destructive, chart-3) for highlight colour.
  */
-export function AnnotatedEssay({
-  paragraphs,
-  annotations,
-  className,
-}: AnnotatedEssayProps) {
-  const [activeId, setActiveId] = useState<string | null>(null);
+export function AnnotatedEssay({ paragraphs, annotations, className }: AnnotatedEssayProps) {
+  const t = useT()
+  const [activeId, setActiveId] = useState<string | null>(null)
 
   return (
     <Card className={cn(className)}>
       <CardHeader>
-        <CardTitle>Your Marked Essay</CardTitle>
-        <p className="text-xs text-muted-foreground">
-          Click a highlight to read the feedback.
-        </p>
+        <CardTitle>{t('marking.marked_essay_title')}</CardTitle>
+        <p className="text-xs text-muted-foreground">{t('marking.click_highlight_hint')}</p>
       </CardHeader>
       <CardContent className="grid gap-6 lg:grid-cols-[1fr_280px]">
         {/* ── Essay body ─────────────────────────────────────────── */}
         <article className="space-y-4 text-[0.9375rem] leading-relaxed text-foreground">
           {paragraphs.map((para, i) => {
-            const paraAnns = annotations.filter((a) => a.paragraphIndex === i);
-            return (
-              <p key={i}>
-                {renderParagraph(para, paraAnns, activeId, setActiveId)}
-              </p>
-            );
+            const paraAnns = annotations.filter((a) => a.paragraphIndex === i)
+            return <p key={i}>{renderParagraph(para, paraAnns, activeId, setActiveId)}</p>
           })}
         </article>
 
         {/* ── Comment rail ──────────────────────────────────────── */}
         <aside className="space-y-3 lg:border-l lg:border-border lg:pl-4">
           <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-            Marker Comments
+            {t('marking.marker_comments')}
           </p>
           <ul className="space-y-2">
             {annotations.map((a) => (
               <li key={a.id}>
                 <button
                   type="button"
-                  onClick={() =>
-                    setActiveId((cur) => (cur === a.id ? null : a.id))
-                  }
+                  onClick={() => setActiveId((cur) => (cur === a.id ? null : a.id))}
                   className={cn(
-                    "w-full rounded-lg border border-border/60 bg-muted/40 p-3 text-left transition-colors hover:border-primary/40 hover:bg-muted",
-                    activeId === a.id && "border-primary/60 bg-primary/10"
+                    'w-full rounded-lg border border-border/60 bg-muted/40 p-3 text-left transition-colors hover:border-primary/40 hover:bg-muted',
+                    activeId === a.id && 'border-primary/60 bg-primary/10',
                   )}
                 >
                   <div className="mb-1 flex items-center gap-2">
                     <span
                       className={cn(
-                        "inline-flex h-5 items-center rounded-full px-2 text-[0.625rem] font-bold uppercase tracking-wider",
-                        kindBadgeClass(a.kind)
+                        'inline-flex h-5 items-center rounded-full px-2 text-[0.625rem] font-bold uppercase tracking-wider',
+                        kindBadgeClass(a.kind),
                       )}
                     >
-                      {kindLabel(a.kind)}
+                      {kindLabel(a.kind, t)}
                     </span>
                   </div>
-                  <p className="text-xs leading-relaxed text-foreground">
-                    {a.comment}
-                  </p>
+                  <p className="text-xs leading-relaxed text-foreground">{a.comment}</p>
                 </button>
               </li>
             ))}
@@ -95,7 +83,7 @@ export function AnnotatedEssay({
         </aside>
       </CardContent>
     </Card>
-  );
+  )
 }
 
 /** Render a paragraph, wrapping each annotation's quote in a highlight span. */
@@ -103,76 +91,76 @@ function renderParagraph(
   text: string,
   anns: Annotation[],
   activeId: string | null,
-  setActiveId: (id: string | null) => void
+  setActiveId: (id: string | null) => void,
 ) {
-  if (anns.length === 0) return text;
+  if (anns.length === 0) return text
 
   // Find all match ranges
-  type Range = { start: number; end: number; ann: Annotation };
-  const ranges: Range[] = [];
+  type Range = { start: number; end: number; ann: Annotation }
+  const ranges: Range[] = []
   for (const ann of anns) {
-    const idx = text.indexOf(ann.quote);
+    const idx = text.indexOf(ann.quote)
     if (idx >= 0) {
-      ranges.push({ start: idx, end: idx + ann.quote.length, ann });
+      ranges.push({ start: idx, end: idx + ann.quote.length, ann })
     }
   }
-  ranges.sort((a, b) => a.start - b.start);
+  ranges.sort((a, b) => a.start - b.start)
 
-  const parts: React.ReactNode[] = [];
-  let cursor = 0;
+  const parts: React.ReactNode[] = []
+  let cursor = 0
   ranges.forEach((r, i) => {
-    if (r.start > cursor) parts.push(text.slice(cursor, r.start));
-    const isActive = activeId === r.ann.id;
+    if (r.start > cursor) parts.push(text.slice(cursor, r.start))
+    const isActive = activeId === r.ann.id
     parts.push(
       <mark
         key={`${r.ann.id}-${i}`}
         className={cn(
-          "cursor-pointer rounded px-0.5 py-px transition-colors",
+          'cursor-pointer rounded px-0.5 py-px transition-colors',
           kindHighlightClass(r.ann.kind),
-          isActive && "ring-2 ring-primary/60"
+          isActive && 'ring-2 ring-primary/60',
         )}
         onClick={() => setActiveId(isActive ? null : r.ann.id)}
       >
         {text.slice(r.start, r.end)}
-      </mark>
-    );
-    cursor = r.end;
-  });
-  if (cursor < text.length) parts.push(text.slice(cursor));
-  return parts;
+      </mark>,
+    )
+    cursor = r.end
+  })
+  if (cursor < text.length) parts.push(text.slice(cursor))
+  return parts
 }
 
 function kindHighlightClass(kind: AnnotationKind): string {
   switch (kind) {
-    case "strength":
-      return "bg-primary/20 text-foreground hover:bg-primary/30";
-    case "improve":
-      return "bg-destructive/15 text-foreground hover:bg-destructive/25";
-    case "technique":
-      return "bg-accent text-foreground hover:bg-accent/70";
+    case 'strength':
+      return 'bg-primary/20 text-foreground hover:bg-primary/30'
+    case 'improve':
+      return 'bg-destructive/15 text-foreground hover:bg-destructive/25'
+    case 'technique':
+      return 'bg-accent text-foreground hover:bg-accent/70'
   }
 }
 
 function kindBadgeClass(kind: AnnotationKind): string {
   switch (kind) {
-    case "strength":
-      return "bg-primary/15 text-primary";
-    case "improve":
-      return "bg-destructive/15 text-destructive";
-    case "technique":
-      return "bg-accent text-foreground";
+    case 'strength':
+      return 'bg-primary/15 text-primary'
+    case 'improve':
+      return 'bg-destructive/15 text-destructive'
+    case 'technique':
+      return 'bg-accent text-foreground'
   }
 }
 
-function kindLabel(kind: AnnotationKind): string {
+function kindLabel(kind: AnnotationKind, t: (key: string) => string): string {
   switch (kind) {
-    case "strength":
-      return "Strength";
-    case "improve":
-      return "Improve";
-    case "technique":
-      return "Technique";
+    case 'strength':
+      return t('marking.kind_strength')
+    case 'improve':
+      return t('marking.kind_improve')
+    case 'technique':
+      return t('marking.kind_technique')
   }
 }
 
-export default AnnotatedEssay;
+export default AnnotatedEssay

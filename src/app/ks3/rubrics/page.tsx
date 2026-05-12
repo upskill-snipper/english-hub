@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { KS3, STRAND_LABEL, RUBRIC_LEVEL_LABEL } from '@/lib/ks3/curriculum'
 import type { Strand, RubricLevel } from '@/lib/ks3/curriculum'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'KS3 marking rubrics',
@@ -13,34 +14,64 @@ export const metadata: Metadata = {
 const STRANDS: Strand[] = ['reading', 'writing', 'language', 'speaking']
 const LEVELS: RubricLevel[] = ['below', 'working', 'expected', 'depth']
 
-export default function RubricsPage() {
+export default async function RubricsPage() {
+  const tr = await Promise.all([
+    t('ks3.key_stage_3'), // 0
+    t('ks3.marking_rubrics'), // 1
+    t('ks3.rubrics.lead'), // 2
+    t('ks3.rubrics.www_ebi'), // 3
+    t('ks3.strand.reading'), // 4
+    t('ks3.strand.writing'), // 5
+    t('ks3.strand.language'), // 6
+    t('ks3.strand.speaking'), // 7
+    t('ks3.rubric.below'), // 8
+    t('ks3.rubric.working'), // 9
+    t('ks3.rubric.expected'), // 10
+    t('ks3.rubric.depth'), // 11
+    t('ks3.year_7'), // 12
+    t('ks3.year_8'), // 13
+    t('ks3.year_9'), // 14
+    t('ks3.year_7_name'), // 15
+    t('ks3.year_8_name'), // 16
+    t('ks3.year_9_name'), // 17
+  ])
+  const strandTr: Record<string, string> = {
+    reading: tr[4],
+    writing: tr[5],
+    language: tr[6],
+    speaking: tr[7],
+  }
+  const levelTr: Record<string, string> = {
+    below: tr[8],
+    working: tr[9],
+    expected: tr[10],
+    depth: tr[11],
+  }
+  const yearLabelTr: Record<number, string> = { 7: tr[12], 8: tr[13], 9: tr[14] }
+  const yearNameTr: Record<number, string> = { 7: tr[15], 8: tr[16], 9: tr[17] }
+
   return (
     <>
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {tr[0]}
         </Link>
         <span> · </span>
-        <span>Marking rubrics</span>
+        <span>{tr[1]}</span>
       </p>
-      <h1>Marking rubrics</h1>
-      <p className="lead">
-        Three years × four strands × four levels. Each cell is the descriptor a marker reads when
-        awarding the level. Skill-code chips link back to the master skills list.
-      </p>
-      <p>
-        As per school policy students should receive <strong>What Went Well (WWW)</strong> and{' '}
-        <strong>Even Better If (EBI)</strong> feedback every 8 lessons — in English that means once
-        every two weeks. Feedback is constructive and based on outcomes recently covered in class.
-      </p>
+      <h1>{tr[1]}</h1>
+      <p className="lead">{tr[2]}</p>
+      <p>{tr[3]}</p>
 
       {KS3.years.map((y) => (
         <section key={y.number} className="my-10">
-          <h2>{y.name.en}</h2>
+          <h2>
+            {yearLabelTr[y.number]} — {yearNameTr[y.number]}
+          </h2>
           {STRANDS.map((strand) => (
             <div key={strand} className="not-prose my-6">
               <h3 className="text-base font-semibold tracking-tight text-foreground mb-2">
-                {STRAND_LABEL[strand].en}
+                {strandTr[strand] ?? STRAND_LABEL[strand].en}
               </h3>
               <div className="overflow-x-auto rounded-xl border border-border/60">
                 <table className="w-full text-sm">
@@ -51,7 +82,7 @@ export default function RubricsPage() {
                           key={l}
                           className="text-start p-3 font-semibold text-foreground border-b border-border/60"
                         >
-                          {RUBRIC_LEVEL_LABEL[l].en}
+                          {levelTr[l] ?? RUBRIC_LEVEL_LABEL[l].en}
                         </th>
                       ))}
                     </tr>

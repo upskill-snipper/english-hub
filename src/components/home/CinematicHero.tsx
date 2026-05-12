@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─────────────────────────────────────────────────────────────
    Structured testimonial (item #04 — named attribution)
@@ -72,9 +73,9 @@ interface Phase {
 
 interface Chapter {
   numeral: string
-  label: string
-  audience: string
-  subtitle: string
+  labelKey: string
+  audienceKey: string
+  subtitleKey: string
   duration: number // ms for the entire chapter
   phases: Phase[]
 }
@@ -82,9 +83,9 @@ interface Chapter {
 const CHAPTERS: Chapter[] = [
   {
     numeral: 'I',
-    label: 'Schools',
-    audience: 'For Schools',
-    subtitle: 'Whole-school licence',
+    labelKey: 'home.cin.schools.label',
+    audienceKey: 'header.nav.schools',
+    subtitleKey: 'home.cin.schools.subtitle',
     duration: 34000,
     phases: [
       { id: 'trends', label: 'Trends' },
@@ -96,9 +97,9 @@ const CHAPTERS: Chapter[] = [
   },
   {
     numeral: 'II',
-    label: 'Teachers',
-    audience: 'For Teachers',
-    subtitle: 'AI marker \u00B7 300 resources',
+    labelKey: 'home.cin.teachers.label',
+    audienceKey: 'header.nav.teachers',
+    subtitleKey: 'home.cin.teachers.subtitle',
     duration: 20000,
     phases: [
       { id: 'lessons', label: 'Lesson builder' },
@@ -109,9 +110,9 @@ const CHAPTERS: Chapter[] = [
   },
   {
     numeral: 'III',
-    label: 'Students',
-    audience: 'For Students',
-    subtitle: '470 lessons \u00B7 130 mocks',
+    labelKey: 'home.cin.students.label',
+    audienceKey: 'header.nav.students',
+    subtitleKey: 'home.cin.students.subtitle',
     duration: 40000,
     phases: [
       { id: 'courses', label: 'Courses' },
@@ -124,9 +125,9 @@ const CHAPTERS: Chapter[] = [
   },
   {
     numeral: 'IV',
-    label: 'Parents',
-    audience: 'For Parents',
-    subtitle: 'Progress \u00B7 plain English',
+    labelKey: 'home.cin.parents.label',
+    audienceKey: 'header.nav.parents',
+    subtitleKey: 'home.cin.parents.subtitle',
     duration: 20000,
     phases: [
       { id: 'dashboard', label: 'Progress dashboard' },
@@ -141,6 +142,7 @@ const CHAPTERS: Chapter[] = [
    ───────────────────────────────────────────────────────────── */
 
 export default function CinematicHero() {
+  const t = useT()
   const [chapterIdx, setChapterIdx] = useState(0)
   const [phaseIdx, setPhaseIdx] = useState(0)
   const [progress, setProgress] = useState(0)
@@ -223,13 +225,13 @@ export default function CinematicHero() {
     <section className="cinematic-hero-wrap">
       {/* Meta bar */}
       <div className="hero-meta">
-        <span>The English Hub</span>
+        <span>{t('brand.name')}</span>
         <span className="chapter-tag">
-          <em>{chapter.audience}</em>
+          <em>{t(chapter.audienceKey)}</em>
         </span>
         <span className="live-indicator">
           <span className="blink-dot" />
-          Auto-advance &middot; hover to pause
+          {t('home.cin.auto_advance')}
         </span>
       </div>
 
@@ -277,11 +279,11 @@ export default function CinematicHero() {
                 : ({ '--p': '0%' } as React.CSSProperties)
             }
           >
-            <span className="n">{ch.audience}</span>
+            <span className="n">{t(ch.audienceKey)}</span>
             <span className="t">
-              For <em>{ch.label}</em>
+              {t('home.cin.tab.for')} <em>{t(ch.labelKey)}</em>
             </span>
-            <span className="s">{ch.subtitle}</span>
+            <span className="s">{t(ch.subtitleKey)}</span>
           </button>
         ))}
       </div>
@@ -294,15 +296,14 @@ export default function CinematicHero() {
    ═══════════════════════════════════════════════════════════════ */
 
 function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number }) {
+  const t = useT()
   return (
     <div className={`scene scene-schools ${active ? 'active' : ''}`}>
       <div className="scene-header">
         <span className="scene-tag">
-          <span className="dot" /> For Schools
+          <span className="dot" /> {t('header.nav.schools')}
         </span>
-        <span className="scene-kicker">
-          One licence &middot; every student &middot; every teacher
-        </span>
+        <span className="scene-kicker">{t('home.cin.schools.kicker')}</span>
       </div>
       {/* numeral removed */}
 
@@ -319,20 +320,14 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
 
       <div className="scene-content" style={{ gridTemplateColumns: '0.75fr 1.25fr' }}>
         <div className="scene-text">
-          <h2 className="scene-title">
-            From trends, to cohort, <em>to the one student</em>.
-          </h2>
-          <p className="scene-desc">
-            Department analytics that drill from year-level trends to a flagged student in four
-            clicks &mdash; with every essay, mock and AO score attached, plus the intervention that
-            closed the gap.
-          </p>
+          <h2 className="scene-title">{t('home.cin.schools.title')}</h2>
+          <p className="scene-desc">{t('home.cin.schools.desc')}</p>
           <div className="scene-actions">
             <a href="/for-schools" className="scene-cta">
-              Book a call &rarr;
+              {t('home.cin.schools.cta_call')} &rarr;
             </a>
             <a href="/demo/school" className="scene-btn-ghost">
-              See the demo
+              {t('home.cin.schools.cta_demo')}
             </a>
           </div>
         </div>
@@ -739,33 +734,27 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
    ═══════════════════════════════════════════════════════════════ */
 
 function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number }) {
+  const t = useT()
   return (
     <div className={`scene scene-teachers ${active ? 'active' : ''}`}>
       <div className="scene-header">
         <span className="scene-tag">
-          <span className="dot" /> For Teachers
+          <span className="dot" /> {t('header.nav.teachers')}
         </span>
-        <span className="scene-kicker">
-          Plan &middot; teach &middot; mark &mdash; in one hour, not ten
-        </span>
+        <span className="scene-kicker">{t('home.cin.teachers.kicker')}</span>
       </div>
       {/* numeral removed */}
 
       <div className="scene-content">
         <div className="scene-text">
-          <h2 className="scene-title">
-            An <em>AI marker</em> that reads like you do.
-          </h2>
-          <p className="scene-desc">
-            Generate differentiated lesson plans in seconds. Mark a whole class in minutes, with
-            paragraph-by-paragraph feedback aligned to your exam board.
-          </p>
+          <h2 className="scene-title">{t('home.cin.teachers.title')}</h2>
+          <p className="scene-desc">{t('home.cin.teachers.desc')}</p>
           <div className="scene-actions">
             <a href="/for-teachers/free-resources" className="scene-cta">
-              Try the teacher demo &rarr;
+              {t('home.cin.teachers.cta_demo')} &rarr;
             </a>
             <a href="/pricing" className="scene-btn-ghost">
-              Plans &amp; pricing
+              {t('home.cin.teachers.cta_pricing')}
             </a>
           </div>
         </div>
@@ -877,15 +866,14 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
    ═══════════════════════════════════════════════════════════════ */
 
 function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number }) {
+  const t = useT()
   return (
     <div className={`scene scene-students ${active ? 'active' : ''}`}>
       <div className="scene-header">
         <span className="scene-tag">
-          <span className="dot" /> For Students
+          <span className="dot" /> {t('header.nav.students')}
         </span>
-        <span className="scene-kicker">
-          Learn &middot; practise &middot; get feedback &middot; improve
-        </span>
+        <span className="scene-kicker">{t('home.cin.students.kicker')}</span>
       </div>
       {/* numeral removed */}
 
@@ -907,20 +895,14 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
 
       <div className="scene-content" style={{ gridTemplateColumns: '0.75fr 1.25fr' }}>
         <div className="scene-text">
-          <h2 className="scene-title">
-            Everything you need to <em>land the grade you want</em>.
-          </h2>
-          <p className="scene-desc">
-            Structured courses you can actually follow. AI feedback that reads like a
-            teacher&apos;s. Flashcards, mocks and grade-predicting games &mdash; all mapped to your
-            exam board.
-          </p>
+          <h2 className="scene-title">{t('home.cin.students.title')}</h2>
+          <p className="scene-desc">{t('home.cin.students.desc')}</p>
           <div className="scene-actions">
             <a href="/board-select" className="scene-cta">
-              Start free &mdash; no card &rarr;
+              {t('home.cin.students.cta_start')} &rarr;
             </a>
             <a href="/board-select" className="scene-btn-ghost">
-              Browse courses
+              {t('home.cin.students.cta_browse')}
             </a>
           </div>
         </div>
@@ -1389,31 +1371,27 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
    ═══════════════════════════════════════════════════════════════ */
 
 function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number }) {
+  const t = useT()
   return (
     <div className={`scene scene-parents ${active ? 'active' : ''}`}>
       <div className="scene-header">
         <span className="scene-tag">
-          <span className="dot" /> For Parents
+          <span className="dot" /> {t('header.nav.parents')}
         </span>
-        <span className="scene-kicker">See the progress &middot; without the pressure</span>
+        <span className="scene-kicker">{t('home.cin.parents.kicker')}</span>
       </div>
       {/* numeral removed */}
 
       <div className="scene-content">
         <div className="scene-text">
-          <h2 className="scene-title">
-            Their <em>confidence</em>, on a dashboard you can read.
-          </h2>
-          <p className="scene-desc">
-            Weekly progress summaries. Streaks, focus areas and predicted grades in plain English.
-            7-day free trial on any paid plan &mdash; card required, cancel before day 7.
-          </p>
+          <h2 className="scene-title">{t('home.cin.parents.title')}</h2>
+          <p className="scene-desc">{t('home.cin.parents.desc')}</p>
           <div className="scene-actions">
             <a href="/board-select" className="scene-cta">
-              Start 7-day trial &rarr;
+              {t('home.cin.parents.cta_trial')} &rarr;
             </a>
             <a href="/for-parents" className="scene-btn-ghost">
-              Read the parent guide
+              {t('home.cin.parents.cta_guide')}
             </a>
           </div>
         </div>

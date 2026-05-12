@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Badge } from '@/components/ui/badge'
+import { useT } from '@/lib/i18n/use-t'
 
 interface ConsentRecord {
   id: string
@@ -30,6 +31,7 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
   const [showForm, setShowForm] = useState(false)
   const [message, setMessage] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const t = useT()
 
   const fetchConsentStatus = useCallback(async () => {
     try {
@@ -55,7 +57,7 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
     setMessage(null)
 
     if (!parentEmail.trim()) {
-      setError('Please enter your parent/guardian\'s email address.')
+      setError(t('consent.guardian.email_required'))
       return
     }
 
@@ -71,7 +73,7 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
       const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error ?? 'Failed to send consent request.')
+        setError(data.error ?? t('consent.guardian.send_failed'))
         return
       }
 
@@ -81,7 +83,7 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
       // Re-fetch to update status
       fetchConsentStatus()
     } catch {
-      setError('Something went wrong. Please try again.')
+      setError(t('action.error_generic'))
     } finally {
       setSending(false)
     }
@@ -104,57 +106,48 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
       >
         <ShieldCheck className="h-5 w-5 text-clay-600" />
         <AlertTitle className="text-foreground font-semibold">
-          Parental Consent Required
+          {t('consent.guardian.required_title')}
         </AlertTitle>
         <AlertDescription className="mt-2 space-y-3">
           {schoolConsent?.status === 'pending' ? (
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">
-                A consent request has been sent to{' '}
-                <span className="font-medium text-foreground">{schoolConsent.parent_email}</span>.
-                Please ask your parent/guardian to check their email and complete the consent form.
+                {t('consent.guardian.pending_sent_prefix')}{' '}
+                <span className="font-medium text-foreground">{schoolConsent.parent_email}</span>
+                {t('consent.guardian.pending_sent_suffix')}
               </p>
               <div className="flex items-center gap-2">
-                <Badge variant="outline" className="border-amber-500/30 bg-amber-500/10 text-clay-600 text-xs">
-                  <Loader2 className="h-3 w-3 animate-spin mr-1" />
-                  Awaiting parent response
-                </Badge>
-                <Button
+                <Badge
                   variant="outline"
-                  size="sm"
-                  onClick={() => setShowForm(true)}
+                  className="border-amber-500/30 bg-amber-500/10 text-clay-600 text-xs"
                 >
-                  Resend / Change email
+                  <Loader2 className="h-3 w-3 animate-spin mr-1" />
+                  {t('consent.guardian.awaiting_response')}
+                </Badge>
+                <Button variant="outline" size="sm" onClick={() => setShowForm(true)}>
+                  {t('consent.guardian.resend_or_change')}
                 </Button>
               </div>
             </div>
           ) : schoolConsent?.status === 'denied' ? (
             <div className="space-y-2">
-              <p className="text-sm text-muted-foreground">
-                Your parent/guardian has denied consent. Some school features may be restricted.
-                If this was a mistake, you can send a new consent request.
-              </p>
+              <p className="text-sm text-muted-foreground">{t('consent.guardian.denied_body')}</p>
               <div className="flex items-center gap-2">
-                <Badge variant="outline" className="border-red-500/30 bg-red-500/10 text-red-400 text-xs">
-                  <XCircle className="h-3 w-3 mr-1" />
-                  Consent denied
-                </Badge>
-                <Button
+                <Badge
                   variant="outline"
-                  size="sm"
-                  onClick={() => setShowForm(true)}
+                  className="border-red-500/30 bg-red-500/10 text-red-400 text-xs"
                 >
-                  Send new request
+                  <XCircle className="h-3 w-3 mr-1" />
+                  {t('consent.guardian.denied_badge')}
+                </Badge>
+                <Button variant="outline" size="sm" onClick={() => setShowForm(true)}>
+                  {t('consent.guardian.send_new')}
                 </Button>
               </div>
             </div>
           ) : (
             <div className="space-y-2">
-              <p className="text-sm text-muted-foreground">
-                Your school requires parental consent for students under 16 to use The English Hub.
-                Please ask your parent or guardian to complete the consent form. This is required
-                under UK GDPR data protection regulations.
-              </p>
+              <p className="text-sm text-muted-foreground">{t('consent.guardian.intro_body')}</p>
               <Button
                 variant="default"
                 size="sm"
@@ -162,17 +155,20 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
                 onClick={() => setShowForm(true)}
               >
                 <Mail className="h-4 w-4" />
-                Send consent request to parent
+                {t('consent.guardian.send_request')}
               </Button>
             </div>
           )}
 
           {/* Consent form */}
           {showForm && (
-            <form onSubmit={handleSendConsent} className="mt-3 flex flex-col gap-3 rounded-lg border border-border p-4 bg-background">
+            <form
+              onSubmit={handleSendConsent}
+              className="mt-3 flex flex-col gap-3 rounded-lg border border-border p-4 bg-background"
+            >
               <div className="space-y-1.5">
                 <Label htmlFor="parentEmail" className="text-sm font-medium">
-                  Parent/Guardian email address
+                  {t('form.guardian_email')}
                 </Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/70" />
@@ -187,9 +183,7 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
                     autoComplete="off"
                   />
                 </div>
-                <p className="text-xs text-muted-foreground">
-                  Your parent/guardian will receive an email with a link to review and approve the consent form.
-                </p>
+                <p className="text-xs text-muted-foreground">{t('consent.guardian.form_hint')}</p>
               </div>
 
               {error && (
@@ -211,10 +205,10 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
                   {sending ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin mr-1" />
-                      Sending...
+                      {t('consent.guardian.sending')}
                     </>
                   ) : (
-                    'Send consent request'
+                    t('consent.guardian.send_request_short')
                   )}
                 </Button>
                 <Button
@@ -227,7 +221,7 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
                     setMessage(null)
                   }}
                 >
-                  Cancel
+                  {t('action.cancel')}
                 </Button>
               </div>
             </form>

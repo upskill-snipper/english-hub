@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Share2, Link2, Check, MessageCircle } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 
 interface SocialShareProps {
   /** The URL to share. Defaults to current page URL. */
@@ -34,7 +35,7 @@ function buildShareUrl(
   baseUrl: string,
   utmSource: string,
   utmMedium: string,
-  utmCampaign?: string
+  utmCampaign?: string,
 ): string {
   const url = new URL(baseUrl)
   url.searchParams.set('utm_source', utmSource)
@@ -57,6 +58,7 @@ export function SocialShare({
   isChildAccount = false,
 }: SocialShareProps) {
   const [copied, setCopied] = useState(false)
+  const t = useT()
 
   // Children's Code: suppress social-share nudge for child accounts (under 16).
   // Social sharing encourages children to disclose personal data and activity,
@@ -110,14 +112,14 @@ export function SocialShare({
         <button
           onClick={handleCopyLink}
           className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium text-brand-muted hover:text-brand-text hover:bg-brand-card transition-colors"
-          title="Copy link"
+          title={t('blog.copy_link')}
         >
           {copied ? (
             <Check className="w-3.5 h-3.5 text-green-400" />
           ) : (
             <Link2 className="w-3.5 h-3.5" />
           )}
-          {copied ? 'Copied!' : 'Share'}
+          {copied ? t('blog.copied') : t('blog.share')}
         </button>
       </div>
     )
@@ -127,7 +129,7 @@ export function SocialShare({
     <div className={`flex flex-wrap items-center gap-2 ${className}`}>
       <span className="text-xs text-brand-muted font-medium flex items-center gap-1.5">
         <Share2 className="w-3.5 h-3.5" />
-        Share:
+        {t('blog.share_label')}
       </span>
 
       {/* Twitter / X */}
@@ -136,10 +138,10 @@ export function SocialShare({
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-card hover:bg-brand-card/80 text-brand-muted hover:text-brand-text border border-brand-border transition-colors"
-        title="Share on Twitter / X"
+        title={t('blog.share_on_x')}
       >
         <XIcon className="w-3.5 h-3.5" />
-        Twitter
+        {t('blog.share_twitter')}
       </a>
 
       {/* WhatsApp */}
@@ -148,37 +150,37 @@ export function SocialShare({
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-card hover:bg-brand-card/80 text-brand-muted hover:text-brand-text border border-brand-border transition-colors"
-        title="Share on WhatsApp"
+        title={t('blog.share_on_whatsapp')}
       >
         <MessageCircle className="w-3.5 h-3.5" />
-        WhatsApp
+        {t('blog.share_whatsapp')}
       </a>
 
       {/* TikTok (copy link) */}
       <button
         onClick={handleTikTokShare}
         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-card hover:bg-brand-card/80 text-brand-muted hover:text-brand-text border border-brand-border transition-colors"
-        title="Copy link for TikTok"
+        title={t('blog.share_tiktok_copy')}
       >
         <TikTokIcon className="w-3.5 h-3.5" />
-        TikTok
+        {t('blog.share_tiktok')}
       </button>
 
       {/* Copy Link */}
       <button
         onClick={handleCopyLink}
         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-card hover:bg-brand-card/80 text-brand-muted hover:text-brand-text border border-brand-border transition-colors"
-        title="Copy link"
+        title={t('blog.copy_link')}
       >
         {copied ? (
           <>
             <Check className="w-3.5 h-3.5 text-green-400" />
-            Copied!
+            {t('blog.copied')}
           </>
         ) : (
           <>
             <Link2 className="w-3.5 h-3.5" />
-            Copy Link
+            {t('blog.copy_link_button')}
           </>
         )}
       </button>

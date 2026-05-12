@@ -21,6 +21,7 @@ import { PostHogProvider } from '@/components/PostHogProvider'
 import { TrustpilotInviteScript } from '@/components/trustpilot/TrustpilotInviteScript'
 import { Suspense } from 'react'
 import { BoardGate } from '@/components/board/BoardGate'
+import { t } from '@/lib/i18n/t'
 import './globals.css'
 
 const monaSans = localFont({
@@ -133,6 +134,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // standard) is the right umbrella value for screen readers and search
   // engines until we ship a per-route `/ar/...` URL strategy.
   const htmlLang = lang === 'ar' ? 'ar' : 'en-GB'
+  const skipToContent = await t('a11y.skip_short')
 
   return (
     <html
@@ -168,7 +170,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
         >
-          Skip to content
+          {skipToContent}
         </a>
         <SupabaseProvider>
           <TooltipProvider>

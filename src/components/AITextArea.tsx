@@ -1,90 +1,88 @@
-'use client';
+'use client'
 
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
 interface AIFeedbackResult {
-  feedback: string;
-  disclaimer: string;
-  contentWarnings: string[];
-  flagged: boolean;
-  escalationRequired: boolean;
-  humanReviewUrl: string | null;
-  warnings: { category: string; message: string }[];
+  feedback: string
+  disclaimer: string
+  contentWarnings: string[]
+  flagged: boolean
+  escalationRequired: boolean
+  humanReviewUrl: string | null
+  warnings: { category: string; message: string }[]
 }
 
 interface ParsedFeedback {
-  score: number | null;
-  strengths: string[];
-  improvements: string[];
-  detailed: string;
+  score: number | null
+  strengths: string[]
+  improvements: string[]
+  detailed: string
 }
 
 interface AITextAreaProps {
   /** Placeholder text for the textarea */
-  placeholder?: string;
+  placeholder?: string
   /** Label shown above the textarea */
-  label?: string;
+  label?: string
   /** Exam board to tailor feedback (overrides context) */
-  examBoard?: string;
+  examBoard?: string
   /** Subject area */
-  subject?: string;
+  subject?: string
   /** Topic or question context for the AI */
-  topic?: string;
+  topic?: string
   /** Minimum word count before AI feedback is available */
-  minWords?: number;
+  minWords?: number
   /** Maximum word count (soft limit shown in counter) */
-  maxWords?: number;
+  maxWords?: number
   /** Callback when user submits their answer */
-  onSubmit?: (text: string) => void;
+  onSubmit?: (text: string) => void
   /** Callback when feedback is received */
-  onFeedback?: (feedback: AIFeedbackResult) => void;
+  onFeedback?: (feedback: AIFeedbackResult) => void
   /** Additional CSS classes */
-  className?: string;
+  className?: string
   /** Initial value */
-  value?: string;
+  value?: string
   /** Controlled onChange */
-  onChange?: (value: string) => void;
+  onChange?: (value: string) => void
   /** Whether to show the textarea as disabled */
-  disabled?: boolean;
+  disabled?: boolean
   /** Number of visible rows */
-  rows?: number;
+  rows?: number
 }
 
 // ─── Helpers ────────────────────────────────────────────────────────────
 
 function countWords(text: string): number {
-  return text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+  return text.trim() === '' ? 0 : text.trim().split(/\s+/).length
 }
 
-function parseFeedback(raw: string): ParsedFeedback {
-  const lines = raw.split('\n').filter((l) => l.trim());
+function parseFeedback(
+  raw: string,
+  fallbacks?: { strength?: string; improvement?: string },
+): ParsedFeedback {
+  const lines = raw.split('\n').filter((l) => l.trim())
 
-  let score: number | null = null;
-  const strengths: string[] = [];
-  const improvements: string[] = [];
+  let score: number | null = null
+  const strengths: string[] = []
+  const improvements: string[] = []
 
   // Attempt to find a score (e.g. "Score: 7/10" or "Band 4")
-  const scoreMatch = raw.match(
-    /(?:score|band|mark)[:\s]*(\d+)\s*(?:\/\s*\d+)?/i
-  );
+  const scoreMatch = raw.match(/(?:score|band|mark)[:\s]*(\d+)\s*(?:\/\s*\d+)?/i)
   if (scoreMatch) {
-    score = parseInt(scoreMatch[1], 10);
+    score = parseInt(scoreMatch[1], 10)
   }
 
-  let currentSection: 'none' | 'strengths' | 'improvements' = 'none';
+  let currentSection: 'none' | 'strengths' | 'improvements' = 'none'
 
   for (const line of lines) {
-    const lower = line.toLowerCase();
+    const lower = line.toLowerCase()
 
-    if (
-      lower.includes('strength') ||
-      lower.includes('well done') ||
-      lower.includes('positive')
-    ) {
-      currentSection = 'strengths';
-      continue;
+    if (lower.includes('strength') || lower.includes('well done') || lower.includes('positive')) {
+      currentSection = 'strengths'
+      continue
     }
     if (
       lower.includes('improv') ||
@@ -92,54 +90,54 @@ function parseFeedback(raw: string): ParsedFeedback {
       lower.includes('consider') ||
       lower.includes('target')
     ) {
-      currentSection = 'improvements';
-      continue;
+      currentSection = 'improvements'
+      continue
     }
 
-    const bulletMatch = line.match(/^[\s]*[-*\u2022]\s*(.+)/);
+    const bulletMatch = line.match(/^[\s]*[-*\u2022]\s*(.+)/)
     if (bulletMatch) {
-      const text = bulletMatch[1].trim();
+      const text = bulletMatch[1].trim()
       if (currentSection === 'strengths' && strengths.length < 3) {
-        strengths.push(text);
+        strengths.push(text)
       } else if (currentSection === 'improvements' && improvements.length < 3) {
-        improvements.push(text);
+        improvements.push(text)
       }
     }
   }
 
   if (strengths.length === 0) {
-    strengths.push('Your response addresses the question prompt');
+    strengths.push(fallbacks?.strength ?? 'Your response addresses the question prompt')
   }
   if (improvements.length === 0) {
     improvements.push(
-      'Review the detailed feedback below for specific suggestions'
-    );
+      fallbacks?.improvement ?? 'Review the detailed feedback below for specific suggestions',
+    )
   }
 
-  return { score, strengths, improvements, detailed: raw };
+  return { score, strengths, improvements, detailed: raw }
 }
 
 // ─── Optional ExamBoard context hook ────────────────────────────────────
 
 function useOptionalExamBoard(): {
-  selectedBoard: string | null;
-  subject: string;
+  selectedBoard: string | null
+  subject: string
 } {
-  const [board, setBoard] = useState<string | null>(null);
-  const [subject, setSubject] = useState<string>('LANGUAGE');
+  const [board, setBoard] = useState<string | null>(null)
+  const [subject, setSubject] = useState<string>('LANGUAGE')
 
   useEffect(() => {
     try {
-      const storedBoard = localStorage.getItem('teh_selected_exam_board');
-      const storedSubject = localStorage.getItem('teh_selected_subject');
-      if (storedBoard) setBoard(storedBoard);
-      if (storedSubject) setSubject(storedSubject);
+      const storedBoard = localStorage.getItem('teh_selected_exam_board')
+      const storedSubject = localStorage.getItem('teh_selected_subject')
+      if (storedBoard) setBoard(storedBoard)
+      if (storedSubject) setSubject(storedSubject)
     } catch {
       // localStorage unavailable
     }
-  }, []);
+  }, [])
 
-  return { selectedBoard: board, subject };
+  return { selectedBoard: board, subject }
 }
 
 // ─── Skeleton Loader ────────────────────────────────────────────────────
@@ -162,20 +160,20 @@ function FeedbackSkeleton() {
         <div className="h-3 w-4/6 rounded bg-muted" />
       </div>
     </div>
-  );
+  )
 }
 
 // ─── Score Badge ────────────────────────────────────────────────────────
 
 function ScoreBadge({ score }: { score: number | null }) {
-  if (score === null) return null;
+  if (score === null) return null
 
   const color =
     score >= 7
       ? 'bg-success-50 text-success-600 border-success-300'
       : score >= 4
         ? 'bg-primary/10 text-primary border-primary/20'
-        : 'bg-warn-50 text-warn-600 border-warn-200';
+        : 'bg-warn-50 text-warn-600 border-warn-200'
 
   return (
     <div
@@ -184,13 +182,13 @@ function ScoreBadge({ score }: { score: number | null }) {
     >
       {score}
     </div>
-  );
+  )
 }
 
 // ─── Main Component ─────────────────────────────────────────────────────
 
 function AITextArea({
-  placeholder = 'Write your answer here...',
+  placeholder,
   label,
   examBoard: examBoardProp,
   subject: subjectProp,
@@ -205,68 +203,69 @@ function AITextArea({
   disabled = false,
   rows = 8,
 }: AITextAreaProps) {
+  const t = useT()
+  const resolvedPlaceholder = placeholder ?? t('marking.placeholder')
   // ── State ──────────────────────────────────────────────────────────
-  const [internalValue, setInternalValue] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [feedback, setFeedback] = useState<ParsedFeedback | null>(null);
-  const [rawFeedback, setRawFeedback] = useState<AIFeedbackResult | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [showDetailed, setShowDetailed] = useState(false);
-  const [feedbackVisible, setFeedbackVisible] = useState(false);
+  const [internalValue, setInternalValue] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [feedback, setFeedback] = useState<ParsedFeedback | null>(null)
+  const [rawFeedback, setRawFeedback] = useState<AIFeedbackResult | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const [showDetailed, setShowDetailed] = useState(false)
+  const [feedbackVisible, setFeedbackVisible] = useState(false)
 
-  const feedbackRef = useRef<HTMLDivElement>(null);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const feedbackRef = useRef<HTMLDivElement>(null)
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
 
-  const text = controlledValue ?? internalValue;
-  const setText = controlledOnChange ?? setInternalValue;
-  const wordCount = countWords(text);
-  const canGetFeedback = wordCount >= minWords && !loading;
-  const isOverLimit = maxWords ? wordCount > maxWords : false;
+  const text = controlledValue ?? internalValue
+  const setText = controlledOnChange ?? setInternalValue
+  const wordCount = countWords(text)
+  const canGetFeedback = wordCount >= minWords && !loading
+  const isOverLimit = maxWords ? wordCount > maxWords : false
 
   // ── Exam board from context or props ───────────────────────────────
-  const { selectedBoard: contextBoard, subject: contextSubject } =
-    useOptionalExamBoard();
-  const examBoard = examBoardProp ?? contextBoard ?? 'AQA';
-  const subject = subjectProp ?? contextSubject ?? 'LANGUAGE';
+  const { selectedBoard: contextBoard, subject: contextSubject } = useOptionalExamBoard()
+  const examBoard = examBoardProp ?? contextBoard ?? 'AQA'
+  const subject = subjectProp ?? contextSubject ?? 'LANGUAGE'
 
   // Keep subject in scope (used in exam board badge text)
-  void subject;
+  void subject
 
   // ── Slide-in animation ─────────────────────────────────────────────
   useEffect(() => {
     if (feedback) {
-      const timer = setTimeout(() => setFeedbackVisible(true), 50);
-      return () => clearTimeout(timer);
+      const timer = setTimeout(() => setFeedbackVisible(true), 50)
+      return () => clearTimeout(timer)
     }
-    setFeedbackVisible(false);
-  }, [feedback]);
+    setFeedbackVisible(false)
+  }, [feedback])
 
   // ── Auto-resize textarea ───────────────────────────────────────────
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      setText(e.target.value);
+      setText(e.target.value)
 
       // Auto-resize
       if (textareaRef.current) {
-        textareaRef.current.style.height = 'auto';
-        const lineHeight = 24;
-        const minHeight = rows * lineHeight;
-        const maxHeight = 20 * lineHeight;
-        const scrollHeight = textareaRef.current.scrollHeight;
-        textareaRef.current.style.height = `${Math.min(Math.max(scrollHeight, minHeight), maxHeight)}px`;
+        textareaRef.current.style.height = 'auto'
+        const lineHeight = 24
+        const minHeight = rows * lineHeight
+        const maxHeight = 20 * lineHeight
+        const scrollHeight = textareaRef.current.scrollHeight
+        textareaRef.current.style.height = `${Math.min(Math.max(scrollHeight, minHeight), maxHeight)}px`
       }
     },
-    [setText, rows]
-  );
+    [setText, rows],
+  )
 
   // ── Fetch feedback ─────────────────────────────────────────────────
   const handleGetFeedback = useCallback(async () => {
-    if (!canGetFeedback) return;
+    if (!canGetFeedback) return
 
-    setLoading(true);
-    setError(null);
-    setFeedback(null);
-    setRawFeedback(null);
+    setLoading(true)
+    setError(null)
+    setFeedback(null)
+    setRawFeedback(null)
 
     try {
       const res = await fetch('/api/essay/feedback', {
@@ -278,53 +277,46 @@ function AITextArea({
           topic,
           userCountry: 'UK',
         }),
-      });
+      })
 
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(
-          (data as { error?: string }).error ?? `Request failed (${res.status})`
-        );
+        const data = await res.json().catch(() => ({}))
+        throw new Error((data as { error?: string }).error ?? `Request failed (${res.status})`)
       }
 
-      const data: AIFeedbackResult = await res.json();
-      const parsed = parseFeedback(data.feedback);
+      const data: AIFeedbackResult = await res.json()
+      const parsed = parseFeedback(data.feedback, {
+        strength: t('marking.fallback_strength'),
+        improvement: t('marking.fallback_improvement'),
+      })
 
-      setRawFeedback(data);
-      setFeedback(parsed);
-      onFeedback?.(data);
+      setRawFeedback(data)
+      setFeedback(parsed)
+      onFeedback?.(data)
     } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : 'Failed to get feedback. Please try again.'
-      );
+      setError(err instanceof Error ? err.message : t('marking.feedback_failed'))
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  }, [canGetFeedback, text, examBoard, topic, onFeedback]);
+  }, [canGetFeedback, text, examBoard, topic, onFeedback, t])
 
   // ── Submit handler ─────────────────────────────────────────────────
   const handleSubmit = useCallback(() => {
-    onSubmit?.(text);
-  }, [onSubmit, text]);
+    onSubmit?.(text)
+  }, [onSubmit, text])
 
   // ── Word count styling ─────────────────────────────────────────────
   const wordCountColor = isOverLimit
     ? 'text-warn-500'
     : wordCount >= minWords
       ? 'text-success-600'
-      : 'text-muted-foreground';
+      : 'text-muted-foreground'
 
   // ── Render ─────────────────────────────────────────────────────────
   return (
     <div className={`w-full ${className}`}>
       {/* Label */}
-      {label && (
-        <label className="mb-1.5 block text-sm font-medium text-foreground">
-          {label}
-        </label>
-      )}
+      {label && <label className="mb-1.5 block text-sm font-medium text-foreground">{label}</label>}
 
       {/* Textarea wrapper */}
       <div className="relative rounded-xl border-2 border-border bg-card transition-colors focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/10">
@@ -332,7 +324,7 @@ function AITextArea({
           ref={textareaRef}
           value={text}
           onChange={handleChange}
-          placeholder={placeholder}
+          placeholder={resolvedPlaceholder}
           disabled={disabled || loading}
           rows={rows}
           className={[
@@ -344,7 +336,7 @@ function AITextArea({
           ]
             .filter(Boolean)
             .join(' ')}
-          aria-label={label ?? placeholder}
+          aria-label={label ?? resolvedPlaceholder}
         />
 
         {/* Bottom bar inside textarea */}
@@ -353,23 +345,25 @@ function AITextArea({
           <div className="flex items-center gap-3">
             <span className={`text-xs font-medium tabular-nums ${wordCountColor}`}>
               {wordCount}
-              {maxWords ? ` / ${maxWords}` : ''} words
+              {maxWords ? ` / ${maxWords}` : ''} {t('marking.words_plural')}
               {wordCount < minWords && (
-                <span className="ml-1 text-muted-foreground">(min {minWords})</span>
+                <span className="ml-1 text-muted-foreground">
+                  ({t('marking.min_label')} {minWords})
+                </span>
               )}
             </span>
             {text.length > 0 && (
               <button
                 type="button"
                 onClick={() => {
-                  setText('');
-                  setFeedback(null);
-                  setRawFeedback(null);
-                  setError(null);
+                  setText('')
+                  setFeedback(null)
+                  setRawFeedback(null)
+                  setError(null)
                 }}
                 className="text-xs text-muted-foreground transition-colors hover:text-foreground"
               >
-                Clear
+                {t('marking.clear')}
               </button>
             )}
           </div>
@@ -392,7 +386,7 @@ function AITextArea({
                   d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"
                 />
               </svg>
-              AI-powered feedback built in
+              {t('marking.ai_powered_badge')}
             </span>
 
             {/* Get AI Feedback button */}
@@ -407,7 +401,7 @@ function AITextArea({
                   ? 'bg-primary text-white shadow-sm hover:bg-primary/90 active:bg-primary/80'
                   : 'cursor-not-allowed bg-muted text-muted-foreground',
               ].join(' ')}
-              aria-label="Get AI feedback on your answer"
+              aria-label={t('marking.get_ai_feedback_aria')}
             >
               {loading ? (
                 <>
@@ -431,7 +425,7 @@ function AITextArea({
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                     />
                   </svg>
-                  Analysing...
+                  {t('marking.analysing')}
                 </>
               ) : (
                 <>
@@ -449,7 +443,7 @@ function AITextArea({
                       d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"
                     />
                   </svg>
-                  Get AI Feedback
+                  {t('marking.get_ai_feedback')}
                 </>
               )}
             </button>
@@ -468,7 +462,7 @@ function AITextArea({
                     : 'cursor-not-allowed bg-muted text-muted-foreground',
                 ].join(' ')}
               >
-                Submit Answer
+                {t('marking.submit_essay')}
               </button>
             )}
           </div>
@@ -481,7 +475,7 @@ function AITextArea({
           className="mt-3 rounded-lg border border-warn-200 bg-warn-50 px-4 py-3 text-sm text-warn-700"
           role="alert"
         >
-          <p className="font-medium">Could not get feedback</p>
+          <p className="font-medium">{t('marking.could_not_get_feedback')}</p>
           <p className="mt-0.5 text-warn-600">{error}</p>
         </div>
       )}
@@ -500,12 +494,10 @@ function AITextArea({
           className={[
             'mt-3 overflow-hidden rounded-xl border border-primary/20 bg-gradient-to-b from-primary/5 to-card shadow-sm',
             'transform transition-all duration-300 ease-out',
-            feedbackVisible
-              ? 'translate-y-0 opacity-100'
-              : 'translate-y-2 opacity-0',
+            feedbackVisible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0',
           ].join(' ')}
           role="region"
-          aria-label="AI Feedback"
+          aria-label={t('marking.ai_feedback_title')}
         >
           <div className="p-4 sm:p-5">
             {/* Header with score badge */}
@@ -513,10 +505,10 @@ function AITextArea({
               <ScoreBadge score={feedback.score} />
               <div>
                 <h4 className="text-sm font-semibold text-primary">
-                  AI Feedback
+                  {t('marking.ai_feedback_title')}
                 </h4>
                 <p className="text-xs text-muted-foreground">
-                  Based on {examBoard} marking criteria
+                  {t('marking.based_on_board_marking')} {examBoard}
                 </p>
               </div>
             </div>
@@ -536,14 +528,11 @@ function AITextArea({
                     clipRule="evenodd"
                   />
                 </svg>
-                Key Strengths
+                {t('marking.key_strengths')}
               </h5>
               <ul className="mt-2 space-y-1.5">
                 {feedback.strengths.map((s, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-2 text-sm text-foreground"
-                  >
+                  <li key={i} className="flex items-start gap-2 text-sm text-foreground">
                     <span className="mt-1.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-success" />
                     {s}
                   </li>
@@ -566,14 +555,11 @@ function AITextArea({
                     clipRule="evenodd"
                   />
                 </svg>
-                Areas to Improve
+                {t('marking.areas_to_improve')}
               </h5>
               <ul className="mt-2 space-y-1.5">
                 {feedback.improvements.map((imp, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-2 text-sm text-foreground"
-                  >
+                  <li key={i} className="flex items-start gap-2 text-sm text-foreground">
                     <span className="mt-1.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                     {imp}
                   </li>
@@ -589,7 +575,7 @@ function AITextArea({
                 className="flex w-full items-center justify-between text-xs font-medium text-primary transition-colors hover:text-primary/80"
                 aria-expanded={showDetailed}
               >
-                <span>See detailed feedback</span>
+                <span>{t('marking.see_detailed_feedback')}</span>
                 <svg
                   className={`h-4 w-4 transform transition-transform ${showDetailed ? 'rotate-180' : ''}`}
                   viewBox="0 0 20 20"
@@ -612,27 +598,24 @@ function AITextArea({
             </div>
 
             {/* Content warnings */}
-            {rawFeedback?.contentWarnings &&
-              rawFeedback.contentWarnings.length > 0 && (
-                <div className="mt-3 rounded-lg border border-warn-200 bg-warn-50 px-3 py-2 text-xs text-warn-700">
-                  {rawFeedback.contentWarnings.map((w, i) => (
-                    <p key={i}>{w}</p>
-                  ))}
-                </div>
-              )}
+            {rawFeedback?.contentWarnings && rawFeedback.contentWarnings.length > 0 && (
+              <div className="mt-3 rounded-lg border border-warn-200 bg-warn-50 px-3 py-2 text-xs text-warn-700">
+                {rawFeedback.contentWarnings.map((w, i) => (
+                  <p key={i}>{w}</p>
+                ))}
+              </div>
+            )}
 
             {/* Disclaimer */}
             <p className="mt-3 text-[10px] leading-snug text-muted-foreground">
-              AI feedback is for practice only. It does not replace teacher
-              assessment or official marking. Always check with your teacher for
-              exam preparation guidance.
+              {t('marking.long_disclaimer')}
               {rawFeedback?.disclaimer && ` ${rawFeedback.disclaimer}`}
             </p>
           </div>
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export { AITextArea, type AITextAreaProps, type AIFeedbackResult };
+export { AITextArea, type AITextAreaProps, type AIFeedbackResult }

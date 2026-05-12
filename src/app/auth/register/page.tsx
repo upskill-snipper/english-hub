@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { useBoard } from '@/hooks/useBoard'
+import { useT } from '@/lib/i18n/use-t'
 import {
   Mail,
   Lock,
@@ -45,6 +46,7 @@ import GoogleSignInButton from '@/components/auth/GoogleSignInButton'
 function RegisterForm() {
   const searchParams = useSearchParams()
   const { board: selectedBoard } = useBoard()
+  const t = useT()
   const [accountType, setAccountType] = useState<'student' | 'teacher'>(
     searchParams.get('type') === 'teacher' ? 'teacher' : 'student',
   )
@@ -95,29 +97,28 @@ function RegisterForm() {
 
     const errors: Record<string, string> = {}
 
-    if (!fullName) errors.fullName = 'Full name is required.'
-    if (!email) errors.email = 'Email address is required.'
-    if (!password) errors.password = 'Password is required.'
-    else if (password.length < 8) errors.password = 'Password must be at least 8 characters.'
-    if (!confirmPassword) errors.confirmPassword = 'Please confirm your password.'
-    else if (password !== confirmPassword) errors.confirmPassword = 'Passwords do not match.'
+    if (!fullName) errors.fullName = t('form.full_name_required')
+    if (!email) errors.email = t('form.email_required')
+    if (!password) errors.password = t('form.password_required')
+    else if (password.length < 8) errors.password = t('form.password_min_8')
+    if (!confirmPassword) errors.confirmPassword = t('form.confirm_password_required')
+    else if (password !== confirmPassword) errors.confirmPassword = t('form.password_mismatch')
 
     if (accountType === 'student') {
-      if (!dobDay || !dobMonth || !dobYear) errors.dob = 'Date of birth is required.'
+      if (!dobDay || !dobMonth || !dobYear) errors.dob = t('form.dob_required')
       if (isUnder13) {
         // ICO Children's Code: under-13s cannot self-sign-up. They must be
         // routed to the parent-linked flow at /parent.
-        errors.dob =
-          "You're not yet old enough to create your own account. Ask a parent or carer to set up a parent-linked account from /parent."
+        errors.dob = t('form.under_13_blocked')
       }
       if (isUnder16 && !parentGuardianEmail) {
-        errors.parentGuardianEmail = 'Parent/Guardian email is required for users under 16.'
+        errors.parentGuardianEmail = t('form.guardian_email_required')
       }
     }
 
     if (Object.keys(errors).length > 0) {
       setFieldErrors(errors)
-      setError('Please fix the errors below.')
+      setError(t('form.fix_errors_below'))
       return
     }
 
@@ -143,12 +144,12 @@ function RegisterForm() {
 
         if (!ageRes.ok) {
           const ageData = await ageRes.json()
-          setError(ageData.error || 'Age validation failed.')
+          setError(ageData.error || t('form.age_validation_failed'))
           setLoading(false)
           return
         }
       } catch {
-        setError('Unable to verify age. Please try again.')
+        setError(t('form.age_verify_error'))
         setLoading(false)
         return
       }
@@ -185,11 +186,7 @@ function RegisterForm() {
       // user's expected next action is the same in every case (check the
       // inbox for a verification email; Supabase sends one automatically
       // on duplicate signup to the existing account).
-      setError(
-        'If this email address is valid and not already registered, we have ' +
-          'sent a verification link to it. Please check your inbox ' +
-          '(including spam) and follow the link to activate your account.',
-      )
+      setError(t('auth.register.neutral_signup_response'))
       setLoading(false)
       return
     }
@@ -314,41 +311,41 @@ function RegisterForm() {
           <Card className="text-center">
             <CardContent className="pt-8">
               <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h1 className="text-2xl font-bold text-foreground mb-2">Check your email</h1>
+              <h1 className="text-2xl font-bold text-foreground mb-2">{t('form.check_inbox')}</h1>
               <p className="text-muted-foreground mb-4">
-                Welcome to The English Hub. We&apos;ve sent a quick verification link to{' '}
-                <span className="text-foreground font-medium">{email}</span> so we can keep your
-                account safe — but you can keep exploring while you wait. The link will let you log
-                back in next time.
+                {t('auth.register.welcome_prefix')}{' '}
+                <span className="text-foreground font-medium">{email}</span>{' '}
+                {t('auth.register.welcome_suffix')}
               </p>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6">
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">Your free trial is ready.</span> You
-                  have 3 free uses of every premium feature — AI marking, lesson plans, and more.
+                  <span className="font-medium text-foreground">
+                    {t('auth.register.trial_ready_lead')}
+                  </span>{' '}
+                  {t('auth.register.trial_ready_body')}
                 </p>
               </div>
               {accountType === 'teacher' && (
                 <p className="text-sm text-muted-foreground mb-4">
-                  Once verified, you&apos;ll have access to the Teacher Dashboard with lesson
-                  planning, student analytics, and assessment tools.
+                  {t('auth.register.teacher_after_verify')}
                 </p>
               )}
               <p className="text-sm text-muted-foreground mb-4">
-                Didn&apos;t get it?{' '}
+                {t('form.didnt_get_email')}{' '}
                 <Link
                   href="/auth/resend-verification"
                   className="font-medium text-foreground underline underline-offset-2 hover:no-underline"
                 >
-                  Resend verification email
+                  {t('auth.resend_verification_email')}
                 </Link>
                 .
               </p>
               <div className="flex flex-col gap-2">
                 <Button className="w-full" render={<Link href="/revision" />}>
-                  Start exploring
+                  {t('auth.register.start_exploring')}
                 </Button>
                 <Button variant="outline" className="w-full" render={<Link href="/" />}>
-                  Back to home
+                  {t('auth.back_to_home')}
                 </Button>
               </div>
             </CardContent>
@@ -368,14 +365,16 @@ function RegisterForm() {
           render={<Link href="/" />}
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to home
+          {t('auth.back_to_home')}
         </Button>
 
         {/* Teacher banner */}
         <div className="mb-4 flex items-center justify-between gap-3 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3">
           <p className="text-sm text-muted-foreground">
-            <span className="font-medium text-foreground">Are you a teacher?</span> Get lesson
-            plans, AI marking, and analytics built for educators.
+            <span className="font-medium text-foreground">
+              {t('auth.register.teacher_banner_q')}
+            </span>{' '}
+            {t('auth.register.teacher_banner_body')}
           </p>
           <Button
             variant="outline"
@@ -383,25 +382,25 @@ function RegisterForm() {
             className="shrink-0 border-primary/40 text-primary hover:bg-primary/10"
             render={<Link href="/auth/teacher-register" />}
           >
-            Teacher sign-up
+            {t('auth.register.teacher_signup_cta')}
           </Button>
         </div>
 
         <p className="mb-4 text-center text-xs text-muted-foreground">
-          Sign-up takes 30 seconds. No card required.
+          {t('auth.register.signup_takes_30s')}
         </p>
 
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">
               {accountType === 'teacher'
-                ? 'Start your free teacher account'
-                : 'Create your free account'}
+                ? t('auth.register.teacher_title')
+                : t('auth.register.student_title')}
             </CardTitle>
             <CardDescription>
               {accountType === 'teacher'
-                ? 'Save 5+ hours per week with AI lesson planning and marking.'
-                : 'No credit card required. Try every premium feature 3 times, free.'}
+                ? t('auth.register.teacher_subtitle')
+                : t('auth.register.student_subtitle')}
             </CardDescription>
           </CardHeader>
 
@@ -410,20 +409,20 @@ function RegisterForm() {
             <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 space-y-2.5">
               <p className="text-sm font-medium text-foreground flex items-center gap-2">
                 <Gift className="h-4 w-4 text-primary" />
-                What&apos;s included free
+                {t('auth.register.whats_included')}
               </p>
               <div className="grid grid-cols-1 gap-1.5 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2">
                   <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
-                  Courses, revision notes, flashcards (unlimited)
+                  {t('auth.register.included_courses')}
                 </span>
                 <span className="flex items-center gap-2">
-                  <Sparkles className="h-3.5 w-3.5 text-primary shrink-0" />3 free uses of every AI
-                  tool (marking, lesson plans, and more)
+                  <Sparkles className="h-3.5 w-3.5 text-primary shrink-0" />
+                  {t('auth.register.included_ai')}
                 </span>
                 <span className="flex items-center gap-2">
                   <Zap className="h-3.5 w-3.5 text-primary shrink-0" />
-                  Upgrade when you&apos;re ready — 7-day free trial (card required)
+                  {t('auth.register.included_upgrade')}
                 </span>
               </div>
             </div>
@@ -439,7 +438,7 @@ function RegisterForm() {
                   </div>
                   <div className="relative flex justify-center text-xs uppercase">
                     <span className="bg-card px-2 text-muted-foreground">
-                      or sign up with email
+                      {t('auth.or_sign_up_with_email')}
                     </span>
                   </div>
                 </div>
@@ -455,7 +454,7 @@ function RegisterForm() {
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Account type toggle */}
               <div className="space-y-1.5">
-                <Label>I am a</Label>
+                <Label>{t('auth.register.i_am_a')}</Label>
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     type="button"
@@ -467,7 +466,7 @@ function RegisterForm() {
                     }`}
                   >
                     <GraduationCap className="w-5 h-5" />
-                    Student
+                    {t('auth.register.student')}
                   </button>
                   <button
                     type="button"
@@ -479,14 +478,14 @@ function RegisterForm() {
                     }`}
                   >
                     <School className="w-5 h-5" />
-                    Teacher
+                    {t('auth.register.teacher')}
                   </button>
                 </div>
               </div>
 
               <div className="space-y-1.5">
                 <Label htmlFor="fullName">
-                  Full name <span className="text-destructive">*</span>
+                  {t('form.full_name')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
@@ -495,7 +494,7 @@ function RegisterForm() {
                     type="text"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Your full name"
+                    placeholder={t('form.your_full_name')}
                     className="pl-11"
                     required
                     autoComplete="name"
@@ -516,7 +515,7 @@ function RegisterForm() {
                   aria-describedby={fieldErrors.dob ? 'dob-error' : undefined}
                 >
                   <legend className="text-sm font-medium leading-none">
-                    Date of Birth <span className="text-destructive">*</span>
+                    {t('form.dob')} <span className="text-destructive">*</span>
                   </legend>
                   <div className="relative">
                     <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
@@ -527,10 +526,10 @@ function RegisterForm() {
                         onChange={(e) => setDobDay(e.target.value)}
                         className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
                         required
-                        aria-label="Day"
+                        aria-label={t('form.day')}
                         aria-invalid={!!fieldErrors.dob}
                       >
-                        <option value="">Day</option>
+                        <option value="">{t('form.day')}</option>
                         {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
                           <option key={d} value={String(d)}>
                             {d}
@@ -543,26 +542,28 @@ function RegisterForm() {
                         onChange={(e) => setDobMonth(e.target.value)}
                         className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
                         required
-                        aria-label="Month"
+                        aria-label={t('form.month')}
                         aria-invalid={!!fieldErrors.dob}
                       >
-                        <option value="">Month</option>
-                        {[
-                          'January',
-                          'February',
-                          'March',
-                          'April',
-                          'May',
-                          'June',
-                          'July',
-                          'August',
-                          'September',
-                          'October',
-                          'November',
-                          'December',
-                        ].map((m, i) => (
+                        <option value="">{t('form.month')}</option>
+                        {(
+                          [
+                            ['form.month.january', 'January'],
+                            ['form.month.february', 'February'],
+                            ['form.month.march', 'March'],
+                            ['form.month.april', 'April'],
+                            ['form.month.may', 'May'],
+                            ['form.month.june', 'June'],
+                            ['form.month.july', 'July'],
+                            ['form.month.august', 'August'],
+                            ['form.month.september', 'September'],
+                            ['form.month.october', 'October'],
+                            ['form.month.november', 'November'],
+                            ['form.month.december', 'December'],
+                          ] as const
+                        ).map(([key, fallback], i) => (
                           <option key={i + 1} value={String(i + 1)}>
-                            {m}
+                            {t(key) === `[[${key}]]` ? fallback : t(key)}
                           </option>
                         ))}
                       </select>
@@ -572,10 +573,10 @@ function RegisterForm() {
                         onChange={(e) => setDobYear(e.target.value)}
                         className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
                         required
-                        aria-label="Year"
+                        aria-label={t('form.year')}
                         aria-invalid={!!fieldErrors.dob}
                       >
-                        <option value="">Year</option>
+                        <option value="">{t('form.year')}</option>
                         {Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i).map(
                           (y) => (
                             <option key={y} value={String(y)}>
@@ -596,7 +597,7 @@ function RegisterForm() {
 
               {accountType === 'teacher' && (
                 <div className="space-y-1.5">
-                  <Label htmlFor="schoolName">School name</Label>
+                  <Label htmlFor="schoolName">{t('form.school_name')}</Label>
                   <div className="relative">
                     <School className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                     <Input
@@ -604,7 +605,7 @@ function RegisterForm() {
                       type="text"
                       value={schoolName}
                       onChange={(e) => setSchoolName(e.target.value)}
-                      placeholder="e.g. Oakwood Academy"
+                      placeholder={t('form.school_placeholder')}
                       className="pl-11"
                       autoComplete="organization"
                     />
@@ -614,7 +615,7 @@ function RegisterForm() {
 
               <div className="space-y-1.5">
                 <Label htmlFor="email">
-                  Email address <span className="text-destructive">*</span>
+                  {t('form.email')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
@@ -623,7 +624,7 @@ function RegisterForm() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@example.com"
+                    placeholder={t('form.email_placeholder')}
                     className="pl-11"
                     required
                     autoComplete="email"
@@ -640,7 +641,7 @@ function RegisterForm() {
 
               <div className="space-y-1.5">
                 <Label htmlFor="password">
-                  Password <span className="text-destructive">*</span>
+                  {t('form.password')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
@@ -649,7 +650,7 @@ function RegisterForm() {
                     type={showPassword ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="At least 8 characters"
+                    placeholder={t('form.at_least_8_chars')}
                     className="pl-11 pr-11"
                     required
                     minLength={8}
@@ -661,7 +662,7 @@ function RegisterForm() {
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
-                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    aria-label={showPassword ? t('form.hide_password') : t('form.show_password')}
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
@@ -675,7 +676,7 @@ function RegisterForm() {
 
               <div className="space-y-1.5">
                 <Label htmlFor="confirmPassword">
-                  Confirm password <span className="text-destructive">*</span>
+                  {t('form.confirm_password')} <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
@@ -684,7 +685,7 @@ function RegisterForm() {
                     type={showConfirm ? 'text' : 'password'}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    placeholder="Repeat your password"
+                    placeholder={t('form.repeat_password')}
                     className="pl-11 pr-11"
                     required
                     minLength={8}
@@ -698,7 +699,7 @@ function RegisterForm() {
                     type="button"
                     onClick={() => setShowConfirm(!showConfirm)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
-                    aria-label={showConfirm ? 'Hide password' : 'Show password'}
+                    aria-label={showConfirm ? t('form.hide_password') : t('form.show_password')}
                   >
                     {showConfirm ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
@@ -713,7 +714,7 @@ function RegisterForm() {
               {accountType === 'student' && isUnder16 && (
                 <div className="space-y-1.5">
                   <Label htmlFor="parentGuardianEmail">
-                    Parent/Guardian email <span className="text-destructive">*</span>
+                    {t('form.guardian_email')} <span className="text-destructive">*</span>
                   </Label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
@@ -722,7 +723,7 @@ function RegisterForm() {
                       type="email"
                       value={parentGuardianEmail}
                       onChange={(e) => setParentGuardianEmail(e.target.value)}
-                      placeholder="parent@example.com"
+                      placeholder={t('form.guardian_email_placeholder')}
                       className="pl-11"
                       required
                       autoComplete="email"
@@ -738,15 +739,14 @@ function RegisterForm() {
                     </p>
                   )}
                   <p className="text-sm text-muted-foreground">
-                    As you are under 16, a parent or guardian must provide consent. We will email
-                    them a consent form.
+                    {t('form.under_16_guardian_consent_help')}
                   </p>
                 </div>
               )}
 
               {accountType === 'student' && (
                 <div className="space-y-1.5">
-                  <Label htmlFor="yearGroup">Year group</Label>
+                  <Label htmlFor="yearGroup">{t('form.year_group')}</Label>
                   <div className="relative">
                     <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                     <select
@@ -755,7 +755,7 @@ function RegisterForm() {
                       onChange={(e) => setYearGroup(e.target.value)}
                       className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-11 text-base shadow-xs transition-[color,box-shadow] outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
                     >
-                      <option value="">Select year group</option>
+                      <option value="">{t('form.select_year_group')}</option>
                       {YEAR_GROUPS.map((yg) => (
                         <option key={yg} value={yg}>
                           {yg}
@@ -767,7 +767,7 @@ function RegisterForm() {
               )}
 
               <div className="space-y-1.5">
-                <Label htmlFor="examBoard">Exam board</Label>
+                <Label htmlFor="examBoard">{t('form.exam_board')}</Label>
                 <div className="relative">
                   <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <select
@@ -776,7 +776,7 @@ function RegisterForm() {
                     onChange={(e) => setExamBoard(e.target.value)}
                     className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-11 text-base shadow-xs transition-[color,box-shadow] outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
                   >
-                    <option value="">Select exam board</option>
+                    <option value="">{t('form.select_exam_board')}</option>
                     {EXAM_BOARDS.map((board) => (
                       <option key={board} value={board}>
                         {board}
@@ -787,19 +787,19 @@ function RegisterForm() {
               </div>
 
               <p className="text-xs text-muted-foreground">
-                By creating an account, you agree to our{' '}
+                {t('auth.register.terms_agreement_before')}{' '}
                 <Link
                   href="/terms"
                   className="underline underline-offset-2 hover:text-foreground transition-colors"
                 >
-                  Terms of Service
+                  {t('legal.terms_of_service')}
                 </Link>{' '}
-                and{' '}
+                {t('auth.register.terms_and')}{' '}
                 <Link
                   href="/privacy-policy"
                   className="underline underline-offset-2 hover:text-foreground transition-colors"
                 >
-                  Privacy Policy
+                  {t('legal.privacy_policy')}
                 </Link>
                 .
               </p>
@@ -813,12 +813,12 @@ function RegisterForm() {
                 {loading ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin mr-2" />
-                    Creating account...
+                    {t('auth.register.creating')}
                   </>
                 ) : accountType === 'teacher' ? (
-                  'Create free teacher account'
+                  t('auth.register.create_teacher_account')
                 ) : (
-                  'Create free account'
+                  t('auth.register.create_free_account')
                 )}
               </Button>
             </form>
@@ -826,14 +826,14 @@ function RegisterForm() {
 
           <CardFooter className="justify-center">
             <p className="text-muted-foreground text-sm">
-              Already have an account?{' '}
+              {t('auth.register.already_have_account')}{' '}
               <Button
                 variant="link"
                 size="sm"
                 className="h-auto p-0 font-medium"
                 render={<Link href="/auth/login" />}
               >
-                Sign in
+                {t('auth.sign_in')}
               </Button>
             </p>
           </CardFooter>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { KS3, STRAND_LABEL } from '@/lib/ks3/curriculum'
 import type { Strand, YearNumber } from '@/lib/ks3/curriculum'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'KS3 skill codes',
@@ -13,31 +14,48 @@ export const metadata: Metadata = {
 const STRANDS: Strand[] = ['reading', 'writing', 'language', 'speaking']
 const YEARS: YearNumber[] = [7, 8, 9]
 
-export default function SkillsPage() {
+export default async function SkillsPage() {
+  const tr = await Promise.all([
+    t('ks3.key_stage_3'), // 0
+    t('ks3.skill_codes'), // 1
+    t('ks3.skills.heading'), // 2
+    t('ks3.skills.lead'), // 3
+    t('ks3.strand.reading'), // 4
+    t('ks3.strand.writing'), // 5
+    t('ks3.strand.language'), // 6
+    t('ks3.strand.speaking'), // 7
+    t('ks3.year_7'), // 8
+    t('ks3.year_8'), // 9
+    t('ks3.year_9'), // 10
+  ])
+  const strandTr: Record<string, string> = {
+    reading: tr[4],
+    writing: tr[5],
+    language: tr[6],
+    speaking: tr[7],
+  }
+  const yearLabelTr: Record<number, string> = { 7: tr[8], 8: tr[9], 9: tr[10] }
+
   return (
     <>
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {tr[0]}
         </Link>
         <span> · </span>
-        <span>Skill codes</span>
+        <span>{tr[1]}</span>
       </p>
-      <h1>KS3 skill codes — progression Y7 → Y8 → Y9</h1>
-      <p className="lead">
-        Every weekly lesson plan, every rubric cell, every AI marking comment maps to one of these
-        codes. Reading the progression column reveals how a skill grows from foundation to mastery
-        across the three years.
-      </p>
+      <h1>{tr[2]}</h1>
+      <p className="lead">{tr[3]}</p>
 
       {STRANDS.map((strand) => (
         <section key={strand} className="my-10">
-          <h2>{STRAND_LABEL[strand].en}</h2>
+          <h2>{strandTr[strand] ?? STRAND_LABEL[strand].en}</h2>
           <div className="not-prose grid gap-3 sm:grid-cols-3">
             {YEARS.map((year) => (
               <div key={year} className="rounded-xl border border-border/60 bg-card p-4">
                 <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-                  Year {year}
+                  {yearLabelTr[year]}
                 </p>
                 <ul className="space-y-2 text-sm">
                   {KS3.skillCodes

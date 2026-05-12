@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 // Supabase: derive session & signed-in state from auth
 export interface ParentSidebarProps {
@@ -25,15 +26,16 @@ export interface ParentSidebarProps {
 }
 
 const NAV_ITEMS = [
-  { label: 'Dashboard', href: '/parent/dashboard', icon: LayoutDashboard },
-  { label: 'Progress', href: '/parent/progress', icon: TrendingUp },
-  { label: 'Reports', href: '/parent/reports', icon: FileText },
-  { label: 'Settings', href: '/parent/settings', icon: Settings },
-  { label: 'Delete Data', href: '/parent/delete-data', icon: Trash2 },
+  { labelKey: 'parent.nav.dashboard', href: '/parent/dashboard', icon: LayoutDashboard },
+  { labelKey: 'parent.nav.progress', href: '/parent/progress', icon: TrendingUp },
+  { labelKey: 'parent.nav.reports', href: '/parent/reports', icon: FileText },
+  { labelKey: 'parent.nav.settings', href: '/parent/settings', icon: Settings },
+  { labelKey: 'parent.nav.delete_data', href: '/parent/delete-data', icon: Trash2 },
 ]
 
 export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
   const pathname = usePathname()
+  const t = useT()
   const [mobileOpen, setMobileOpen] = useState(false)
 
   function isActive(href: string) {
@@ -59,20 +61,16 @@ export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
             <GraduationCap className="h-5 w-5 text-primary" />
           </div>
           <div className="min-w-0">
-            <p className="truncate text-sm font-bold text-foreground">
-              Parent Portal
-            </p>
+            <p className="truncate text-sm font-bold text-foreground">{t('parent.portal')}</p>
             <p className="truncate text-xs text-muted-foreground">
-              {parentName ?? 'The English Hub'}
+              {parentName ?? t('brand.name')}
             </p>
           </div>
         </div>
         {childName && (
           <div className="mt-3 rounded-lg border border-border bg-background px-3 py-2">
-            <p className="text-xs text-muted-foreground">Viewing progress for</p>
-            <p className="truncate text-sm font-semibold text-foreground">
-              {childName}
-            </p>
+            <p className="text-xs text-muted-foreground">{t('parent.viewing_for')}</p>
+            <p className="truncate text-sm font-semibold text-foreground">{childName}</p>
           </div>
         )}
       </div>
@@ -91,11 +89,11 @@ export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
                 'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                 active
                   ? 'bg-primary/10 text-primary'
-                  : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+                  : 'text-muted-foreground hover:bg-accent hover:text-foreground',
               )}
             >
               <Icon className="h-4 w-4 shrink-0" />
-              {item.label}
+              {t(item.labelKey)}
             </Link>
           )
         })}
@@ -108,7 +106,7 @@ export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
           className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4 shrink-0" />
-          Back to home
+          {t('parent.back_home')}
         </Link>
         <button
           type="button"
@@ -116,7 +114,7 @@ export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
           className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
         >
           <LogOut className="h-4 w-4 shrink-0" />
-          Sign out
+          {t('form.sign_out')}
         </button>
       </div>
     </div>
@@ -126,9 +124,7 @@ export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
     <>
       {/* Desktop sidebar */}
       <aside className="hidden w-64 shrink-0 border-r border-border bg-card lg:block">
-        <div className="sticky top-0 h-screen overflow-y-auto">
-          {sidebarContent}
-        </div>
+        <div className="sticky top-0 h-screen overflow-y-auto">{sidebarContent}</div>
       </aside>
 
       {/* Mobile header */}
@@ -138,13 +134,13 @@ export function ParentSidebar({ parentName, childName }: ParentSidebarProps) {
           size="icon"
           onClick={() => setMobileOpen(!mobileOpen)}
           className="mr-3"
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-label={mobileOpen ? t('nav.close') : t('nav.open')}
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
         <div className="flex items-center gap-2">
           <GraduationCap className="h-5 w-5 text-primary" />
-          <span className="text-sm font-bold text-foreground">Parent Portal</span>
+          <span className="text-sm font-bold text-foreground">{t('parent.portal')}</span>
         </div>
       </div>
 

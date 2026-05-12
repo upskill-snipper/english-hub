@@ -14,6 +14,7 @@ import { VAT_LABEL } from '@/lib/copy/pricing'
 import { InfographicBanner } from '@/components/marketing/InfographicBanner'
 import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
 import { FAQPageJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 import {
   GraduationCap,
   BookOpen,
@@ -187,6 +188,7 @@ function ProgressBar({ label, value, color }: { label: string; value: number; co
 /* ------------------------------------------------------------------ */
 
 export default function ForTeachersPage() {
+  const t = useT()
   return (
     <main className="min-h-screen bg-background">
       {/* ================================================================
@@ -210,17 +212,13 @@ export default function ForTeachersPage() {
             className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-10 gap-2 px-4 py-1.5"
           >
             <GraduationCap className="w-4 h-4" />
-            For English Teachers
+            {t('audience.teachers.hero.badge')}
           </Badge>
 
-          <h1 className="text-foreground">
-            English department tools for AQA, Edexcel, OCR and WJEC teachers
-          </h1>
+          <h1 className="text-foreground">{t('audience.teachers.hero.title')}</h1>
 
           <p className="mt-7 text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Premium academic infrastructure, not a cheap app. AI-powered lesson building, instant
-            essay marking, and real-time progress analytics -- built specifically for English
-            teachers.
+            {t('audience.teachers.hero.sub')}
           </p>
 
           <div className="mt-8 max-w-2xl mx-auto">
@@ -234,7 +232,7 @@ export default function ForTeachersPage() {
               className="text-base px-8 h-12 shadow-lg shadow-primary/20"
               render={<Link href="/auth/teacher-register" />}
             >
-              Start Free
+              {t('audience.teachers.cta.start_free')}
             </Button>
             <Button
               variant="secondary"
@@ -242,7 +240,7 @@ export default function ForTeachersPage() {
               className="text-base px-8 h-12"
               render={<Link href="/pricing" />}
             >
-              View Pricing
+              {t('pricing.cta.view_pricing')}
             </Button>
             <Button
               variant="outline"
@@ -251,12 +249,12 @@ export default function ForTeachersPage() {
               render={<Link href="/demo/teacher" />}
             >
               <Play className="w-4 h-4 mr-2" />
-              Try the Demo
+              {t('audience.teachers.cta.try_demo')}
             </Button>
           </div>
 
           <p className="mt-5 text-sm text-muted-foreground">
-            Every feature available to try -- 3 free uses per tool. No credit card required.
+            {t('audience.teachers.hero.demo_note')}
           </p>
         </div>
       </section>

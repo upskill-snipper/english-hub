@@ -1,21 +1,23 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react'
+import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 interface HumanReviewButtonProps {
-  essayId?: string;
+  essayId?: string
 }
 
 export function HumanReviewButton({ essayId }: HumanReviewButtonProps) {
-  const [dismissed, setDismissed] = useState(false);
+  const t = useT()
+  const [dismissed, setDismissed] = useState(false)
 
-  if (dismissed) return null;
+  if (dismissed) return null
 
   return (
     <div
       role="complementary"
-      aria-label="Request human review"
+      aria-label={t('marking.human_review_aria')}
       className="mt-6 rounded-xl border border-accent/30 bg-accent/5 p-5"
     >
       <div className="flex items-start gap-4">
@@ -39,36 +41,30 @@ export function HumanReviewButton({ essayId }: HumanReviewButtonProps) {
         </div>
 
         <div className="flex-1">
-          <p className="text-sm font-medium text-foreground">
-            Not sure about the AI feedback? You can ask a real person to review
-            it.
-          </p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            This is your right under UK data protection law — it&apos;s not a
-            complaint, and there&apos;s no wrong reason to ask.
-          </p>
+          <p className="text-sm font-medium text-foreground">{t('marking.human_review_prompt')}</p>
+          <p className="mt-1 text-xs text-muted-foreground">{t('marking.human_review_privacy')}</p>
 
           <div className="mt-3 flex flex-wrap items-center gap-3">
             <Link
               href={
                 essayId
                   ? `/dashboard/review/request?essayId=${essayId}`
-                  : "/dashboard/review/request"
+                  : '/dashboard/review/request'
               }
               className="btn-accent text-xs px-4 py-2"
             >
-              Request Human Review
+              {t('marking.request_human_review')}
             </Link>
             <button
               type="button"
               onClick={() => setDismissed(true)}
               className="text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
-              Dismiss
+              {t('marking.dismiss')}
             </button>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

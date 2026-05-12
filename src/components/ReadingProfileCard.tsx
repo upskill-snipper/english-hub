@@ -1,9 +1,10 @@
-"use client"
+'use client'
 
-import Link from "next/link"
-import { BookOpen, Clock } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import Link from 'next/link'
+import { BookOpen, Clock } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -33,41 +34,41 @@ function monthsToDisplay(months: number): string {
 }
 
 function getChronologicalMonths(yearGroup: string): number {
-  const ygNum = parseInt(yearGroup.replace(/\D/g, ""), 10) || 7
+  const ygNum = parseInt(yearGroup.replace(/\D/g, ''), 10) || 7
   return (ygNum + 5) * 12
 }
 
-type AgeStatus = "above" | "at" | "below"
+type AgeStatus = 'above' | 'at' | 'below'
 
 function getAgeStatus(ageMonths: number, chronoMonths: number): AgeStatus {
   const diff = ageMonths - chronoMonths
-  if (diff >= 6) return "above"
-  if (diff <= -6) return "below"
-  return "at"
+  if (diff >= 6) return 'above'
+  if (diff <= -6) return 'below'
+  return 'at'
 }
 
 function statusColor(status: AgeStatus): string {
-  if (status === "above") return "text-emerald-400"
-  if (status === "below") return "text-red-400"
-  return "text-clay-600"
+  if (status === 'above') return 'text-emerald-400'
+  if (status === 'below') return 'text-red-400'
+  return 'text-clay-600'
 }
 
 function statusBgColor(status: AgeStatus): string {
-  if (status === "above") return "bg-emerald-500/10 border-emerald-500/20"
-  if (status === "below") return "bg-red-500/10 border-red-500/20"
-  return "bg-amber-500/10 border-amber-500/20"
+  if (status === 'above') return 'bg-emerald-500/10 border-emerald-500/20'
+  if (status === 'below') return 'bg-red-500/10 border-red-500/20'
+  return 'bg-amber-500/10 border-amber-500/20'
 }
 
-function statusLabel(status: AgeStatus): string {
-  if (status === "above") return "Above expected"
-  if (status === "below") return "Below expected"
-  return "At expected"
+function statusLabelKey(status: AgeStatus): string {
+  if (status === 'above') return 'reading.above_expected'
+  if (status === 'below') return 'reading.below_expected'
+  return 'reading.at_expected'
 }
 
-function formatAssessmentDate(dateStr: string | null): string {
-  if (!dateStr) return "Not assessed"
+function formatAssessmentDate(dateStr: string | null): string | null {
+  if (!dateStr) return null
   const d = new Date(dateStr)
-  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 }
 
 // ─── Component ──────────────────────────────────────────────────────────────
@@ -81,6 +82,7 @@ export default function ReadingProfileCard({
   showReassessLink = true,
   compact = false,
 }: ReadingProfileCardProps) {
+  const t = useT()
   const chronoMonths = getChronologicalMonths(yearGroup)
 
   if (readingAge == null && decodingAge == null && fluencyAge == null) {
@@ -89,11 +91,11 @@ export default function ReadingProfileCard({
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-foreground">
             <BookOpen className="w-5 h-5 text-cyan-400" />
-            Reading Profile
+            {t('reading.profile_title')}
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-muted-foreground">No reading assessment data available.</p>
+          <p className="text-sm text-muted-foreground">{t('reading.no_data')}</p>
           {showReassessLink && (
             <Button
               variant="outline"
@@ -101,7 +103,7 @@ export default function ReadingProfileCard({
               className="mt-3 border-border text-muted-foreground hover:bg-muted"
               render={<Link href="/assessment/reading" />}
             >
-              Take Assessment
+              {t('reading.take_assessment')}
             </Button>
           )}
         </CardContent>
@@ -109,36 +111,40 @@ export default function ReadingProfileCard({
     )
   }
 
-  const ages: { label: string; value: number | null }[] = [
-    { label: "Reading Age", value: readingAge },
-    { label: "Decoding Age", value: decodingAge },
-    { label: "Fluency Age", value: fluencyAge },
+  const ages: { labelKey: string; value: number | null }[] = [
+    { labelKey: 'reading.reading_age', value: readingAge },
+    { labelKey: 'reading.decoding_age', value: decodingAge },
+    { labelKey: 'reading.fluency_age', value: fluencyAge },
   ]
+
+  const assessedLabel = formatAssessmentDate(assessmentDate) ?? t('reading.not_assessed')
 
   return (
     <Card className="bg-card border-border">
-      <CardHeader className={compact ? "pb-2" : undefined}>
+      <CardHeader className={compact ? 'pb-2' : undefined}>
         <CardTitle className="flex items-center gap-2 text-foreground">
           <BookOpen className="w-5 h-5 text-cyan-400" />
-          Reading Profile
+          {t('reading.profile_title')}
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className={`grid ${compact ? "grid-cols-3 gap-2" : "grid-cols-3 gap-3"}`}>
-          {ages.map(({ label, value }) => {
+        <div className={`grid ${compact ? 'grid-cols-3 gap-2' : 'grid-cols-3 gap-3'}`}>
+          {ages.map(({ labelKey, value }) => {
             if (value == null) return null
             const status = getAgeStatus(value, chronoMonths)
             return (
               <div
-                key={label}
+                key={labelKey}
                 className={`rounded-lg border p-3 text-center ${statusBgColor(status)}`}
               >
-                <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">{label}</p>
+                <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
+                  {t(labelKey)}
+                </p>
                 <p className={`text-xl font-bold ${statusColor(status)}`}>
                   {monthsToDisplay(value)}
                 </p>
                 <p className={`text-[10px] mt-1 ${statusColor(status)}`}>
-                  {statusLabel(status)}
+                  {t(statusLabelKey(status))}
                 </p>
               </div>
             )
@@ -147,14 +153,16 @@ export default function ReadingProfileCard({
 
         {/* Chronological age comparison */}
         <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
-          <span>Chronological age: {monthsToDisplay(chronoMonths)}</span>
+          <span>
+            {t('reading.chronological_age')}: {monthsToDisplay(chronoMonths)}
+          </span>
         </div>
 
         {/* Assessment date & reassess link */}
         <div className="mt-3 flex items-center justify-between">
           <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <Clock className="w-3.5 h-3.5" />
-            Last assessed: {formatAssessmentDate(assessmentDate)}
+            {t('reading.last_assessed')}: {assessedLabel}
           </span>
           {showReassessLink && (
             <Button
@@ -163,7 +171,7 @@ export default function ReadingProfileCard({
               className="h-7 text-xs border-border text-muted-foreground hover:bg-muted"
               render={<Link href="/assessment/reading" />}
             >
-              Reassess
+              {t('reading.reassess')}
             </Button>
           )}
         </div>
@@ -184,9 +192,5 @@ export function ReadingAgeInline({
   if (readingAge == null) return <span className="text-muted-foreground">--</span>
   const chronoMonths = getChronologicalMonths(yearGroup)
   const status = getAgeStatus(readingAge, chronoMonths)
-  return (
-    <span className={`font-medium ${statusColor(status)}`}>
-      {monthsToDisplay(readingAge)}
-    </span>
-  )
+  return <span className={`font-medium ${statusColor(status)}`}>{monthsToDisplay(readingAge)}</span>
 }

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ChevronRight, Home } from 'lucide-react'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { SITE_ORIGIN } from '@/lib/seo/canonical'
+import { tMany } from '@/lib/i18n/t'
 
 export type BreadcrumbEntry = { label: string; href: string }
 
@@ -20,7 +21,7 @@ export type BreadcrumbEntry = { label: string; href: string }
  *     { label: 'GCSE English Language', href: '/courses/gcse-lang' },
  *   ]} />
  */
-export function Breadcrumbs({
+export async function Breadcrumbs({
   items,
   nonce,
   className,
@@ -29,7 +30,8 @@ export function Breadcrumbs({
   nonce?: string
   className?: string
 }) {
-  const fullTrail: BreadcrumbEntry[] = [{ label: 'Home', href: '/' }, ...items]
+  const [breadcrumbLabel, homeLabel] = await tMany(['a11y.breadcrumb', 'nav.home'])
+  const fullTrail: BreadcrumbEntry[] = [{ label: homeLabel, href: '/' }, ...items]
   const ldItems = fullTrail.map((i) => ({
     name: i.label,
     url: i.href.startsWith('http') ? i.href : `${SITE_ORIGIN}${i.href}`,
@@ -39,7 +41,7 @@ export function Breadcrumbs({
     <>
       <BreadcrumbJsonLd items={ldItems} nonce={nonce} />
       <nav
-        aria-label="Breadcrumb"
+        aria-label={breadcrumbLabel}
         className={
           className ??
           'mx-auto max-w-7xl px-4 pt-4 sm:px-6 lg:px-8 flex items-center gap-1.5 text-xs text-muted-foreground'
@@ -47,7 +49,11 @@ export function Breadcrumbs({
       >
         <ol className="flex items-center gap-1.5">
           <li>
-            <Link href="/" className="hover:text-foreground inline-flex items-center" aria-label="Home">
+            <Link
+              href="/"
+              className="hover:text-foreground inline-flex items-center"
+              aria-label={homeLabel}
+            >
               <Home className="h-3.5 w-3.5" />
             </Link>
           </li>

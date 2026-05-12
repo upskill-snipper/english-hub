@@ -12,6 +12,7 @@ import { VAT_LABEL } from '@/lib/copy/pricing'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
 import { AffiliateCodeField, useAffiliateCodeField } from '@/components/billing/AffiliateCodeField'
 import { FAQPageJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 import {
   CheckCircle,
   X,
@@ -245,6 +246,7 @@ export default function PricingPage() {
 }
 
 function PricingContent() {
+  const t = useT()
   // Auto-apply ?code=XXX from the URL — surfaces upstream of /pricing
   // (homepage tiles, /for-teachers, modals) point users here with the
   // applied code already attached, so there's zero re-typing.
@@ -459,10 +461,10 @@ function PricingContent() {
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeading
             as="h1"
-            badge="Pricing"
+            badge={t('pricing.hero.badge')}
             badgeIcon={Sparkles}
-            title="The AI English platform trusted by schools, teachers, and students."
-            subtitle="Exam-board aligned revision, AI marking, lesson planning, and analytics — built for results."
+            title={t('pricing.hero.title')}
+            subtitle={t('pricing.hero.subtitle')}
           />
           <div className="mt-6 flex justify-center">
             <TrustBox variant="micro-star" />
@@ -475,10 +477,10 @@ function PricingContent() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-              Compare to competitors
+              {t('pricing.compare.title')}
             </h2>
             <p className="mt-2 text-muted-foreground text-sm sm:text-base">
-              See how The English Hub stacks up against Seneca, GCSEPod, and Tassomai.
+              {t('pricing.compare.subtitle')}
             </p>
           </div>
 
@@ -658,16 +660,15 @@ function PricingContent() {
             <div className="flex items-center justify-center gap-2 mb-3">
               <Gift className="w-5 h-5 text-emerald-600" />
               <span className="font-bold text-emerald-600 text-sm uppercase tracking-wider">
-                Start free
+                {t('pricing.start_free_eyebrow')}
               </span>
             </div>
             <p className="text-foreground font-semibold text-lg sm:text-xl mb-2">
-              Try before you subscribe. No card needed to demo.
+              {t('pricing.try_before_subscribe')}
             </p>
             <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto mb-6">
-              Every registered account gets {PRICING.FREE_USES_PER_FEATURE} free uses of most
-              premium features before the paywall. A card is only required when you start the{' '}
-              {PRICING.TRIAL_TEXT}.
+              {t('pricing.free_uses_blurb_prefix')} {PRICING.FREE_USES_PER_FEATURE}{' '}
+              {t('pricing.free_uses_blurb_suffix')} {PRICING.TRIAL_TEXT}.
             </p>
             <Button
               variant="default"
@@ -675,7 +676,7 @@ function PricingContent() {
               className="text-base px-10 h-12 shadow-lg shadow-primary/20"
               render={<Link href="/auth/register" />}
             >
-              Create Free Account
+              {t('pricing.cta.create_free_account')}
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
           </div>
@@ -702,15 +703,15 @@ function PricingContent() {
 
               <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 shadow-lg shadow-primary/25 whitespace-nowrap">
                 <GraduationCap className="w-3.5 h-3.5 mr-1" />
-                Student Plan
+                {t('pricing.plan.student')}
               </Badge>
 
               <div className="p-8 pb-0">
                 <h3 className="text-lg font-bold tracking-tight text-foreground mt-2">
-                  For Students
+                  {t('pricing.for_students')}
                 </h3>
                 <p className="text-sm text-muted-foreground mt-1 mb-3">
-                  Everything you need to ace your exams.
+                  {t('pricing.student.tagline_exams')}
                 </p>
 
                 {/* Early-access label above the price */}
@@ -836,15 +837,15 @@ function PricingContent() {
 
               <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-bold px-4 py-1 shadow-lg shadow-purple-500/25 whitespace-nowrap">
                 <BookOpen className="w-3.5 h-3.5 mr-1" />
-                Teacher Plan
+                {t('pricing.plan.teacher')}
               </Badge>
 
               <div className="p-8 pb-0">
                 <h3 className="text-lg font-bold tracking-tight text-foreground mt-2">
-                  For Teachers
+                  {t('pricing.for_teachers')}
                 </h3>
                 <p className="text-sm text-muted-foreground mt-1 mb-3">
-                  AI-powered tools to save hours every week.
+                  {t('pricing.teacher.tagline_hours')}
                 </p>
 
                 {/* Early-access label above the price */}
@@ -985,14 +986,13 @@ function PricingContent() {
               className="bg-amber-500/10 border-amber-500/25 text-amber-600 text-sm font-bold mb-6 gap-2 px-4 py-1.5"
             >
               <School className="w-4 h-4" />
-              Limited to 10 Schools
+              {t('pricing.limited_10_schools')}
             </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground max-w-3xl mx-auto leading-tight">
-              Founding Schools Programme — 2026
+              {t('pricing.founding_schools_2026')}
             </h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-              This is not a free trial. It is a strategic partnership with a limited number of
-              schools who will shape the future of the platform.
+              {t('pricing.founding_strategic_partnership')}
             </p>
           </div>
 
@@ -1090,7 +1090,7 @@ function PricingContent() {
                   className="bg-amber-500 hover:bg-amber-500/85 text-white shadow-lg shadow-amber-500/20 text-base px-10 h-12"
                   render={<Link href="/contact" />}
                 >
-                  Book a 20-Minute Call
+                  {t('pricing.cta.book_20min_call')}
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
               </div>
@@ -1112,8 +1112,8 @@ function PricingContent() {
       <section className="relative py-24 sm:py-32 border-t border-border/40">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeading
-            title="How free access works"
-            subtitle="Get started in three simple steps. No commitment, no card."
+            title={t('pricing.how_free_works.title')}
+            subtitle={t('pricing.how_free_works.subtitle')}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1186,7 +1186,7 @@ function PricingContent() {
       {/* ───────── FAQ ───────── */}
       <section className="relative py-24 sm:py-32 border-t border-border/40">
         <div className="max-w-3xl mx-auto px-6">
-          <SectionHeading title="Frequently asked questions" />
+          <SectionHeading title={t('pricing.faq.title')} />
 
           <div className="rounded-2xl border border-border/60 bg-card px-6 sm:px-8">
             {FAQ_ITEMS.map((item) => (
