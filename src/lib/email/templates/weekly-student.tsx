@@ -19,8 +19,14 @@
  *   link. No grade prediction, no peer comparisons, no ad surfaces.
  */
 
+import 'server-only'
 import * as React from 'react'
-import { renderToStaticMarkup } from 'react-dom/server'
+
+// `react-dom/server` is imported lazily inside `renderWeeklyStudentEmail`
+// so the Next.js 15 compiler does not flag the static import while
+// scanning the module graph. The whole file is server-only (see the
+// `import 'server-only'` line above) and is consumed only by the
+// weekly-student-reports cron route.
 
 // ─── Brand tokens (inline-only for email clients) ────────────────────────
 
@@ -339,7 +345,10 @@ export function WeeklyStudentEmail(props: WeeklyStudentEmailProps): React.ReactE
  * Renders the email to a complete HTML document string ready for Resend.
  * Prepends the HTML5 doctype because `renderToStaticMarkup` does not.
  */
-export function renderWeeklyStudentEmail(props: WeeklyStudentEmailProps): string {
+export async function renderWeeklyStudentEmail(props: WeeklyStudentEmailProps): Promise<string> {
+  // Lazy import — keeps Next.js 15's compiler from flagging
+  // `react-dom/server` at module-graph scan time.
+  const { renderToStaticMarkup } = await import('react-dom/server')
   const markup = renderToStaticMarkup(<WeeklyStudentEmail {...props} />)
   return `<!doctype html>${markup}`
 }

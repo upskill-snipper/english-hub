@@ -124,44 +124,10 @@ export function getChildProfileDefaults() {
   } as const
 }
 
-/**
- * Applies the Children's Code high-privacy defaults to the given user
- * by writing the {@link getChildProfileDefaults} mapping into the
- * Supabase `profiles` table.
- *
- * Called from the signup flow for any user where {@link isMinorAge}
- * returns true (ages 13-17 — under-13s use the parent-linked flow).
- * For adult sign-ups this function is a no-op.
- *
- * Failure mode: errors are SWALLOWED (logged + sent to Sentry) — a
- * profile-defaults write should never block account creation. The
- * worst-case fallback is that the profile row inherits the database's
- * column defaults, which are themselves set to high-privacy values via
- * the Supabase migration.
- *
- * Implementation note: the import for the Supabase admin client is
- * dynamic so this helper can be safely imported from edge / client
- * boundaries without bundling server-only dependencies.
- */
-export async function applyChildDefaults(userId: string): Promise<void> {
-  if (!userId) return
-  try {
-    const { createServiceRoleClient } = await import('@/lib/supabase/server')
-    const supabase = createServiceRoleClient()
-    const defaults = getChildProfileDefaults()
-    const { error } = await supabase
-      .from('profiles')
-      .update({ ...defaults, is_minor: true })
-      .eq('id', userId)
-    if (error) {
-      // eslint-disable-next-line no-console
-      console.error('[applyChildDefaults] update failed', error)
-    }
-  } catch (err) {
-    // eslint-disable-next-line no-console
-    console.error('[applyChildDefaults] unexpected error', err)
-  }
-}
+// `applyChildDefaults` lives in ./apply-child-defaults.ts to keep this
+// file free of server-only Supabase imports. The dynamic-import pattern
+// previously used here still pulled `supabase/server.ts` into the
+// client bundle on Next.js 15, breaking the build.
 
 /**
  * Checks whether the given age qualifies as a "child" under the

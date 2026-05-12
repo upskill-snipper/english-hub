@@ -59,7 +59,38 @@ async function loadEssaysFor(key: TextKey): Promise<ModelEssay[]> {
       mod?.[`${camelKey(key)}ModelEssays`],
     ]
     const arr = candidates.find((c) => Array.isArray(c))
-    return Array.isArray(arr) ? (arr as ModelEssay[]) : []
+    if (!Array.isArray(arr)) return []
+    // Some sibling data files use `id`/`grade`/`topic` instead of
+    // `slug`/`targetGrade`/`title`. Normalise so the page contract is
+    // satisfied; drop any entry that still lacks a usable slug after the
+    // fallback (otherwise generateStaticParams crashes the production build).
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (
+      (arr as any[])
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .map((e: any) => {
+          const slug = typeof e?.slug === 'string' && e.slug.length > 0 ? e.slug : e?.id
+          const targetGrade = e?.targetGrade ?? e?.grade
+          const title = e?.title ?? e?.topic
+          const paragraphs = Array.isArray(e?.paragraphs)
+            ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              e.paragraphs.map((p: any) => ({
+                content: p?.content ?? p?.paragraph ?? '',
+                annotation: flattenAnnotation(p?.annotation),
+              }))
+            : []
+          return {
+            slug,
+            title,
+            text: e?.text,
+            paragraphs,
+            targetGrade,
+            wordCount: e?.wordCount,
+            keyTechniques: Array.isArray(e?.keyTechniques) ? e.keyTechniques : [],
+          } as ModelEssay
+        })
+        .filter((e) => typeof e.slug === 'string' && e.slug.length > 0)
+    )
   } catch {
     return []
   }
@@ -67,6 +98,26 @@ async function loadEssaysFor(key: TextKey): Promise<ModelEssay[]> {
 
 function camelKey(key: TextKey): string {
   return key.replace(/-([a-z])/g, (_, c: string) => c.toUpperCase())
+}
+
+/**
+ * Sibling data files use one of two annotation shapes:
+ *   • a plain string (macbeth.ts), OR
+ *   • an object with AO1 / AO2 / AO3 keys (jekyll-and-hyde.ts).
+ * Flatten the object form into a single readable string so we can render
+ * the annotation column without runtime React errors.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function flattenAnnotation(a: any): string {
+  if (typeof a === 'string') return a
+  if (a && typeof a === 'object') {
+    const parts: string[] = []
+    if (typeof a.AO1 === 'string') parts.push(`AO1 — ${a.AO1}`)
+    if (typeof a.AO2 === 'string') parts.push(`AO2 — ${a.AO2}`)
+    if (typeof a.AO3 === 'string') parts.push(`AO3 — ${a.AO3}`)
+    if (parts.length > 0) return parts.join('\n\n')
+  }
+  return ''
 }
 
 function isTextKey(s: string): s is TextKey {

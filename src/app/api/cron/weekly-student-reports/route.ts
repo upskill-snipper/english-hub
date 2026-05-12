@@ -208,7 +208,7 @@ export async function POST(request: NextRequest): Promise<Response> {
         const dashboardUrl = `${SITE_URL}/dashboard`
         const unsubscribeUrl = `${SITE_URL}/dashboard/settings`
 
-        const html = renderWeeklyStudentEmail({
+        const html = await renderWeeklyStudentEmail({
           firstName: student.firstName,
           streakDays,
           topQuizzes,
