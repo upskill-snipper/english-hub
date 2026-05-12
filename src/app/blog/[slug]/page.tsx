@@ -11,11 +11,15 @@
  *   1. BreadcrumbList — Home → Blog → {Title}
  *   2. Article — headline, description, dates, author, publisher
  *
- * Both JSON-LD scripts carry the per-request CSP nonce.
+ * The route is kept fully statically rendered (no `headers()`, no `cookies()`)
+ * so that `dynamicParams = false` actually short-circuits unknown slugs to
+ * a real 404 at the framework level. Calling `headers()` from this page
+ * silently opts the entire route into dynamic rendering, which makes the
+ * dynamicParams gate a no-op and the framework stamps 200 on the
+ * not-found render instead.
  */
 
 import type { Metadata } from 'next'
-import { headers } from 'next/headers'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { compileMDX } from 'next-mdx-remote/rsc'
@@ -116,7 +120,14 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
   const post = getBlogPost(slug)
   if (!post) notFound()
 
-  const nonce = (await headers()).get('x-nonce') ?? undefined
+  // NOTE: We deliberately do NOT call `headers()` here. Reading per-request
+  // headers opts the route into fully-dynamic rendering, which neutralises
+  // `dynamicParams = false` (unknown slugs would still get rendered and the
+  // framework would stamp a 200 on the not-found page instead of a real
+  // 404). The CSP no longer carries a `'nonce-…'` source (see middleware
+  // notes from 02 May 2026), so passing the nonce to JSON-LD scripts is
+  // ceremonial — dropping it lets this whole route stay statically
+  // pre-rendered and forces the framework to hard-404 unknown slugs.
   const url = `${BLOG_URL}/${post.slug}`
   const ogImage = buildOgImage(post)
 
@@ -138,7 +149,6 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
           { name: 'Blog', url: BLOG_URL },
           { name: post.title, url },
         ]}
-        nonce={nonce}
       />
       <ArticleJsonLd
         headline={post.title}
@@ -147,7 +157,6 @@ export default async function BlogArticlePage({ params }: { params: Promise<Para
         datePublished={post.date}
         authorName={post.author}
         url={url}
-        nonce={nonce}
       />
 
       <article>
