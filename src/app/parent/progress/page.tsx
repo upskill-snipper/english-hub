@@ -1,24 +1,16 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import {
-  BookOpen,
-  Gamepad2,
-  GraduationCap,
-  Sparkles,
-  TrendingUp,
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { BookOpen, Gamepad2, GraduationCap, Sparkles, TrendingUp } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import { Separator } from '@/components/ui/separator'
-import { WeeklyActivityChart, type WeeklyActivityPoint } from '@/components/parent/WeeklyActivityChart'
+import {
+  WeeklyActivityChart,
+  type WeeklyActivityPoint,
+} from '@/components/parent/WeeklyActivityChart'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── LocalStorage keys ─────────────────────────────────────────────────────────
 const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
@@ -87,11 +79,12 @@ interface ProgressState {
   childName: string
 }
 
-function buildProgressState(): ProgressState {
+function buildProgressState(fallbackChildName: string): ProgressState {
   const poems = safeParse<string[]>(localStorage.getItem(STUDIED_POEMS_KEY)) ?? []
   const quizzes = safeParse<QuizResultLike[]>(localStorage.getItem(QUIZ_HISTORY_KEY)) ?? []
   const games = safeParse<GameScoreLike[]>(localStorage.getItem(GAME_SCORES_KEY)) ?? []
-  const revision = safeParse<RevisionProgressLike>(localStorage.getItem(REVISION_PROGRESS_KEY)) ?? {}
+  const revision =
+    safeParse<RevisionProgressLike>(localStorage.getItem(REVISION_PROGRESS_KEY)) ?? {}
   const account = safeParse<ParentAccountLike>(localStorage.getItem(PARENT_ACCOUNT_KEY)) ?? {}
 
   const scores = quizzes.map((q) => q.percentage ?? 0).filter((n) => n > 0)
@@ -131,18 +124,20 @@ function buildProgressState(): ProgressState {
     averageScore,
     highestScore,
     weekly,
-    childName: account.childName ?? 'Your child',
+    childName: account.childName ?? fallbackChildName,
   }
 }
 
 export default function ParentProgressPage() {
+  const t = useT()
   const [mounted, setMounted] = useState(false)
   const [state, setState] = useState<ProgressState | null>(null)
+  const yourChildLabel = t('parent.your_child_capitalized')
 
   useEffect(() => {
     setMounted(true)
-    setState(buildProgressState())
-  }, [])
+    setState(buildProgressState(yourChildLabel))
+  }, [yourChildLabel])
 
   const readingAge = useMemo(() => {
     if (!state) return 0
@@ -157,15 +152,17 @@ export default function ParentProgressPage() {
       <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
-            Detailed Progress
+            {t('parent.detailed_progress_title')}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
             {mounted && state
-              ? `A complete breakdown of ${state.childName.split(' ')[0]}'s learning.`
-              : 'Loading progress...'}
+              ? `${t('parent.detailed_progress_subtitle_prefix')} ${state.childName.split(' ')[0]} ${t('parent.detailed_progress_subtitle_suffix')}`
+              : t('parent.loading_progress')}
           </p>
         </div>
-        <Badge variant="secondary" className="w-fit">Read-only view</Badge>
+        <Badge variant="secondary" className="w-fit">
+          {t('parent.read_only_view')}
+        </Badge>
       </div>
 
       {/* Headline stats */}
@@ -174,48 +171,50 @@ export default function ParentProgressPage() {
           <CardContent className="p-4">
             <div className="flex items-center gap-2 text-muted-foreground">
               <BookOpen className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Poems</span>
+              <span className="text-xs font-medium uppercase tracking-wider">
+                {t('parent.poems_label')}
+              </span>
             </div>
-            <p className="mt-2 text-2xl font-bold text-foreground">
-              {state?.poems.length ?? 0}
-            </p>
-            <p className="text-xs text-muted-foreground">studied</p>
+            <p className="mt-2 text-2xl font-bold text-foreground">{state?.poems.length ?? 0}</p>
+            <p className="text-xs text-muted-foreground">{t('parent.studied_count_suffix')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Gamepad2 className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Games</span>
+              <span className="text-xs font-medium uppercase tracking-wider">
+                {t('parent.games_label')}
+              </span>
             </div>
-            <p className="mt-2 text-2xl font-bold text-foreground">
-              {state?.games.length ?? 0}
-            </p>
-            <p className="text-xs text-muted-foreground">played</p>
+            <p className="mt-2 text-2xl font-bold text-foreground">{state?.games.length ?? 0}</p>
+            <p className="text-xs text-muted-foreground">{t('parent.played_count_suffix')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Sparkles className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Quizzes</span>
+              <span className="text-xs font-medium uppercase tracking-wider">
+                {t('parent.quizzes_label')}
+              </span>
             </div>
-            <p className="mt-2 text-2xl font-bold text-foreground">
-              {state?.quizzes.length ?? 0}
-            </p>
-            <p className="text-xs text-muted-foreground">completed</p>
+            <p className="mt-2 text-2xl font-bold text-foreground">{state?.quizzes.length ?? 0}</p>
+            <p className="text-xs text-muted-foreground">{t('parent.completed_count_suffix')}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
             <div className="flex items-center gap-2 text-muted-foreground">
               <GraduationCap className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Reading age</span>
+              <span className="text-xs font-medium uppercase tracking-wider">
+                {t('parent.reading_age')}
+              </span>
             </div>
             <p className="mt-2 text-2xl font-bold text-foreground">
               {state ? `${readingAge}` : '—'}
             </p>
-            <p className="text-xs text-muted-foreground">years (est.)</p>
+            <p className="text-xs text-muted-foreground">{t('parent.years_estimated')}</p>
           </CardContent>
         </Card>
       </div>
@@ -223,8 +222,8 @@ export default function ParentProgressPage() {
       {/* Week-by-week chart */}
       <WeeklyActivityChart
         data={state?.weekly ?? []}
-        title="Week-by-week activity"
-        description="Learning time over the last 8 weeks"
+        title={t('parent.week_by_week_activity')}
+        description={t('parent.learning_time_8_weeks')}
       />
 
       {/* Quiz scores list */}
@@ -232,9 +231,9 @@ export default function ParentProgressPage() {
         <CardHeader className="pb-3">
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle className="text-base">Recent quiz scores</CardTitle>
+              <CardTitle className="text-base">{t('parent.recent_quiz_scores')}</CardTitle>
               <CardDescription>
-                Average {state?.averageScore ?? 0}% · Highest {state?.highestScore ?? 0}%
+                {`${t('parent.average_label')} ${state?.averageScore ?? 0}% · ${t('parent.highest_label')} ${state?.highestScore ?? 0}%`}
               </CardDescription>
             </div>
             <TrendingUp className="h-4 w-4 text-primary" />
@@ -243,7 +242,7 @@ export default function ParentProgressPage() {
         <CardContent>
           {recentQuizzes.length === 0 ? (
             <p className="rounded-lg border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
-              {mounted ? 'No quizzes completed yet.' : 'Loading...'}
+              {mounted ? t('parent.no_quizzes_yet') : t('parent.loading_short')}
             </p>
           ) : (
             <ul className="space-y-3">
@@ -257,19 +256,17 @@ export default function ParentProgressPage() {
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <p className="truncate text-sm font-medium text-foreground">
-                          {quiz.mode ?? 'Quiz'}
+                          {quiz.mode ?? t('parent.quiz_default')}
                         </p>
                         <p className="text-xs text-muted-foreground">
                           {formatDate(quiz.date)}
-                          {quiz.grade ? ` · Grade ${quiz.grade}` : ''}
+                          {quiz.grade ? ` · ${quiz.grade}` : ''}
                           {quiz.score != null && quiz.total != null
                             ? ` · ${quiz.score}/${quiz.total}`
                             : ''}
                         </p>
                       </div>
-                      <span className="shrink-0 text-sm font-bold text-foreground">
-                        {pct}%
-                      </span>
+                      <span className="shrink-0 text-sm font-bold text-foreground">{pct}%</span>
                     </div>
                     <Progress value={pct} className="h-1.5" />
                   </li>
@@ -283,10 +280,8 @@ export default function ParentProgressPage() {
       {/* Poems studied */}
       <Card>
         <CardHeader className="pb-3">
-          <CardTitle className="text-base">Poems studied</CardTitle>
-          <CardDescription>
-            Poems your child has opened in the revision area
-          </CardDescription>
+          <CardTitle className="text-base">{t('parent.poems_studied_title')}</CardTitle>
+          <CardDescription>{t('parent.poems_studied_desc')}</CardDescription>
         </CardHeader>
         <CardContent>
           {state && state.poems.length > 0 ? (
@@ -305,7 +300,7 @@ export default function ParentProgressPage() {
             </div>
           ) : (
             <p className="rounded-lg border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
-              {mounted ? 'No poems studied yet.' : 'Loading...'}
+              {mounted ? t('parent.no_poems_yet') : t('parent.loading_short')}
             </p>
           )}
         </CardContent>
@@ -314,8 +309,8 @@ export default function ParentProgressPage() {
       {/* Games played */}
       <Card>
         <CardHeader className="pb-3">
-          <CardTitle className="text-base">Games played</CardTitle>
-          <CardDescription>Recent results from learning games</CardDescription>
+          <CardTitle className="text-base">{t('parent.games_played_title')}</CardTitle>
+          <CardDescription>{t('parent.games_played_desc')}</CardDescription>
         </CardHeader>
         <CardContent>
           {state && state.games.length > 0 ? (
@@ -331,11 +326,9 @@ export default function ParentProgressPage() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-foreground">
-                        {game.game ?? 'Learning game'}
+                        {game.game ?? t('parent.learning_game_default')}
                       </p>
-                      <p className="text-xs text-muted-foreground">
-                        {formatDate(game.date)}
-                      </p>
+                      <p className="text-xs text-muted-foreground">{formatDate(game.date)}</p>
                     </div>
                   </div>
                   <span className="text-sm font-bold text-foreground">
@@ -346,7 +339,7 @@ export default function ParentProgressPage() {
             </ul>
           ) : (
             <p className="rounded-lg border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
-              {mounted ? 'No games played yet.' : 'Loading...'}
+              {mounted ? t('parent.no_games_yet') : t('parent.loading_short')}
             </p>
           )}
         </CardContent>
@@ -355,22 +348,19 @@ export default function ParentProgressPage() {
       {/* Overall revision progress */}
       <Card>
         <CardHeader className="pb-3">
-          <CardTitle className="text-base">Overall revision progress</CardTitle>
-          <CardDescription>Sections visited across the revision hub</CardDescription>
+          <CardTitle className="text-base">{t('parent.overall_progress')}</CardTitle>
+          <CardDescription>{t('parent.sections_visited_desc')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">Hub coverage</span>
+            <span className="text-sm text-muted-foreground">{t('parent.hub_coverage')}</span>
             <span className="text-sm font-bold text-foreground">
               {state?.revisionPercent ?? 0}%
             </span>
           </div>
           <Progress value={state?.revisionPercent ?? 0} className="h-2" />
           <Separator />
-          <p className="text-xs text-muted-foreground">
-            Tracks which revision sections (Poetry, Set Texts, Language, Flashcards,
-            Exam Technique) have been opened at least once.
-          </p>
+          <p className="text-xs text-muted-foreground">{t('parent.hub_coverage_explainer')}</p>
         </CardContent>
       </Card>
     </div>

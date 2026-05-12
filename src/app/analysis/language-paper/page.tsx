@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'AQA English Language Paper 1 & Paper 2 Technique Guides | The English Hub',
@@ -120,6 +121,29 @@ const generalTechnique = [
 
 export default async function LanguagePaperAnalysisHub() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
+  const tBreadHome = await t('analysis.breadcrumb.home')
+  const tBreadAnalysis = await t('analysis.breadcrumb.analysis')
+  const tBreadLang = await t('analysis.lang.breadcrumb_current')
+  const tH1 = await t('analysis.lang.h1')
+  const tByline = await t('analysis.byline.markers')
+  const tIntro = await t('analysis.lang.intro')
+  const tHowH2 = await t('analysis.how_to_use.h2')
+  const tHowBody = await t('analysis.lang.how.body')
+  const tHowCta = await t('analysis.lang.how.cta')
+  const tP1QH2 = await t('analysis.lang.p1q.h2')
+  const tP1QBody = await t('analysis.lang.p1q.body')
+  const tP1TH2 = await t('analysis.lang.p1t.h2')
+  const tP1TBody = await t('analysis.lang.p1t.body')
+  const tP2QH2 = await t('analysis.lang.p2q.h2')
+  const tP2QBody = await t('analysis.lang.p2q.body')
+  const tP2TH2 = await t('analysis.lang.p2t.h2')
+  const tP2TBody = await t('analysis.lang.p2t.body')
+  const tGenH2 = await t('analysis.lang.gen.h2')
+  const tGenBody = await t('analysis.lang.gen.body')
+  const tFootH2 = await t('analysis.lang.foot.h2')
+  const tFootBody = await t('analysis.lang.foot.body')
+  const tFootCta = await t('analysis.lang.foot.cta')
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -159,52 +183,35 @@ export default async function LanguagePaperAnalysisHub() {
       />
       <nav className="mb-4 text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
-          Home
+          {tBreadHome}
         </Link>
         <span className="mx-2">/</span>
-        <span>Analysis</span>
+        <span>{tBreadAnalysis}</span>
         <span className="mx-2">/</span>
-        <span className="text-foreground">Language Paper</span>
+        <span className="text-foreground">{tBreadLang}</span>
       </nav>
 
-      <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-        AQA English Language Paper 1 &amp; Paper 2 Technique Guides
-      </h1>
-      <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
+      <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">{tH1}</h1>
+      <p className="mt-3 text-sm text-muted-foreground">{tByline}</p>
 
-      <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-        Twenty-five focused guides covering every question on AQA English Language Paper 1 and Paper
-        2, plus the writing tasks and general technique pages that most students need the night
-        before the exam. Every page is written by experienced GCSE markers and targets the exact
-        phrases students type into search engines: how to answer Paper 1 Question 2, how to
-        structure the Paper 2 comparison, and how to hit Grade 9 on the 40-mark writing tasks.
-      </p>
+      <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{tIntro}</p>
 
       <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-sm">
-        <h2 className="text-xl font-semibold text-foreground">How to use this hub</h2>
-        <p className="mt-2 text-muted-foreground leading-relaxed">
-          Start with the question you are weakest on and read the guide all the way through. Each
-          page includes the marking guide in plain English, a worked model answer, a timing plan,
-          and common mistakes to avoid. Once you have covered every question, move to the general
-          technique pages to sharpen your vocabulary and method. Every page links back to our full
-          language revision notes so you can zoom out when you need wider context.
-        </p>
+        <h2 className="text-xl font-semibold text-foreground">{tHowH2}</h2>
+        <p className="mt-2 text-muted-foreground leading-relaxed">{tHowBody}</p>
         <div className="mt-4">
           <Link
             href="/revision/language"
             className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
           >
-            Open the full Language revision hub
+            {tHowCta}
           </Link>
         </div>
       </div>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-bold text-foreground">Paper 1 questions (5)</h2>
-        <p className="mt-2 text-muted-foreground">
-          One guide per question on Paper 1 (Explorations in Creative Reading and Writing). Marking
-          guide, model answer and timing for each.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground">{tP1QH2}</h2>
+        <p className="mt-2 text-muted-foreground">{tP1QBody}</p>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {paper1Questions.map((p) => (
             <li key={p.slug}>
@@ -220,11 +227,8 @@ export default async function LanguagePaperAnalysisHub() {
       </section>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-bold text-foreground">Paper 1 technique (5)</h2>
-        <p className="mt-2 text-muted-foreground">
-          Walkthroughs of Paper 1 skills: descriptive and narrative writing, timing, language
-          techniques and structural features.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground">{tP1TH2}</h2>
+        <p className="mt-2 text-muted-foreground">{tP1TBody}</p>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {paper1Technique.map((p) => (
             <li key={p.slug}>
@@ -240,11 +244,8 @@ export default async function LanguagePaperAnalysisHub() {
       </section>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-bold text-foreground">Paper 2 questions (5)</h2>
-        <p className="mt-2 text-muted-foreground">
-          One guide per question on Paper 2 (Writers&apos; Viewpoints and Perspectives). True/false,
-          summary, language, comparison, and the 40-mark transactional task.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground">{tP2QH2}</h2>
+        <p className="mt-2 text-muted-foreground">{tP2QBody}</p>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {paper2Questions.map((p) => (
             <li key={p.slug}>
@@ -260,11 +261,8 @@ export default async function LanguagePaperAnalysisHub() {
       </section>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-bold text-foreground">Paper 2 technique (5)</h2>
-        <p className="mt-2 text-muted-foreground">
-          Walkthroughs of every non-fiction form you might be asked to write, plus the summary and
-          comparison method in detail.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground">{tP2TH2}</h2>
+        <p className="mt-2 text-muted-foreground">{tP2TBody}</p>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {paper2Technique.map((p) => (
             <li key={p.slug}>
@@ -280,11 +278,8 @@ export default async function LanguagePaperAnalysisHub() {
       </section>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-bold text-foreground">General technique (5)</h2>
-        <p className="mt-2 text-muted-foreground">
-          Cross-paper guides: the techniques, persuasive devices and vocabulary every GCSE English
-          Language student should recognise.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground">{tGenH2}</h2>
+        <p className="mt-2 text-muted-foreground">{tGenBody}</p>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {generalTechnique.map((p) => (
             <li key={p.slug}>
@@ -300,18 +295,14 @@ export default async function LanguagePaperAnalysisHub() {
       </section>
 
       <section className="mt-12 rounded-xl border border-border bg-muted/40 p-6">
-        <h2 className="text-xl font-semibold text-foreground">Ready to revise the whole paper?</h2>
-        <p className="mt-2 text-muted-foreground leading-relaxed">
-          These technique pages sit alongside our full Language revision notes, which cover reading,
-          writing and SPAG in detail. If you are preparing for the real exam, use those as your
-          spine and come back here for surgical practice on the questions you find hardest.
-        </p>
+        <h2 className="text-xl font-semibold text-foreground">{tFootH2}</h2>
+        <p className="mt-2 text-muted-foreground leading-relaxed">{tFootBody}</p>
         <div className="mt-4">
           <Link
             href="/revision/language"
             className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-[0.9375rem] font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
           >
-            Go to full Language revision notes
+            {tFootCta}
           </Link>
         </div>
       </section>

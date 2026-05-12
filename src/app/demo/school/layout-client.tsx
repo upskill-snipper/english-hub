@@ -25,23 +25,25 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ToastProvider } from '@/components/ui/Toast'
 import DemoBanner from '@/components/demo/DemoBanner'
-
-const NAV_ITEMS = [
-  { label: 'Dashboard', href: '/demo/school', icon: LayoutDashboard },
-  { label: 'Students', href: '/demo/school/students', icon: Users },
-  { label: 'Teachers', href: '/demo/school/teachers', icon: GraduationCap },
-  { label: 'Classes', href: '/demo/school/classes', icon: BookOpen },
-  { label: 'Analytics', href: '/demo/school/analytics', icon: BarChart3 },
-  { label: 'Reports', href: '/demo/school/reports', icon: FileText },
-  { label: 'Progress', href: '/demo/school/progress', icon: TrendingUp },
-  { label: 'Users', href: '/demo/school/users', icon: UserCog },
-  { label: 'Import', href: '/demo/school/import', icon: Upload },
-  { label: 'Settings', href: '/demo/school/settings', icon: Settings },
-]
+import { useT } from '@/lib/i18n/use-t'
 
 export default function DemoSchoolLayoutClient({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const t = useT()
+
+  const NAV_ITEMS = [
+    { label: t('school.sidebar.dashboard'), href: '/demo/school', icon: LayoutDashboard },
+    { label: t('demo_school.nav.students'), href: '/demo/school/students', icon: Users },
+    { label: t('demo_school.nav.teachers'), href: '/demo/school/teachers', icon: GraduationCap },
+    { label: t('school.sidebar.classes'), href: '/demo/school/classes', icon: BookOpen },
+    { label: t('school.sidebar.analytics'), href: '/demo/school/analytics', icon: BarChart3 },
+    { label: t('school.sidebar.reports'), href: '/demo/school/reports', icon: FileText },
+    { label: t('demo_school.nav.progress'), href: '/demo/school/progress', icon: TrendingUp },
+    { label: t('school.sidebar.users'), href: '/demo/school/users', icon: UserCog },
+    { label: t('demo_school.nav.import'), href: '/demo/school/import', icon: Upload },
+    { label: t('school.sidebar.settings'), href: '/demo/school/settings', icon: Settings },
+  ]
 
   function isActive(href: string) {
     if (href === '/demo/school') return pathname === '/demo/school'
@@ -50,17 +52,15 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
 
   const sidebarContent = (
     <div className="flex h-full flex-col">
-      {/* Demo mode badge */}
       <div className="px-5 pt-5 pb-3">
         <div className="flex items-center justify-center gap-2 rounded-lg bg-amber-500/15 border border-amber-500/25 px-3 py-2">
           <Sparkles className="h-3.5 w-3.5 text-clay-600" />
           <span className="text-xs font-bold uppercase tracking-wider text-clay-600">
-            Demo Mode
+            {t('demo_school.chrome.demo_mode')}
           </span>
         </div>
       </div>
 
-      {/* School header */}
       <div className="border-b border-border px-5 pb-5">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
@@ -68,20 +68,23 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
           </div>
           <div className="min-w-0">
             <div className="flex items-center gap-2">
-              <p className="truncate text-sm font-bold text-foreground">Riverside Academy</p>
+              <p className="truncate text-sm font-bold text-foreground">
+                {t('demo_school.chrome.school_name')}
+              </p>
               <Badge
                 variant="secondary"
                 className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider"
               >
-                Demo
+                {t('demo_school.chrome.demo_short')}
               </Badge>
             </div>
-            <p className="text-xs text-muted-foreground">School Portal &middot; AQA</p>
+            <p className="text-xs text-muted-foreground">
+              {t('demo_school.chrome.school_portal')} &middot; AQA
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Navigation */}
       <nav className="flex-1 space-y-1 px-3 py-4">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon
@@ -105,18 +108,17 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
         })}
       </nav>
 
-      {/* Bottom actions */}
       <div className="border-t border-border px-3 py-4 space-y-3">
         <Button render={<Link href="/for-schools/register" />} className="w-full font-semibold">
           <Sparkles className="h-4 w-4 mr-1.5" />
-          Register Your School
+          {t('demo_school.chrome.register_school')}
         </Button>
         <Link
           href="/demo"
           className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Demos
+          {t('demo_school.chrome.back_to_demos')}
         </Link>
       </div>
     </div>
@@ -128,15 +130,13 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
         href="/contact"
         className="fixed top-20 right-4 z-40 rounded-full bg-emerald-600 text-white px-4 py-2 shadow-lg hover:bg-emerald-700 text-sm"
       >
-        Contact us about the demo
+        {t('demo_school.chrome.contact_about_demo')}
       </Link>
       <div className="flex min-h-screen bg-background">
-        {/* Desktop sidebar */}
         <aside className="hidden w-60 shrink-0 border-r border-border bg-card lg:block">
           <div className="sticky top-0 h-screen overflow-y-auto">{sidebarContent}</div>
         </aside>
 
-        {/* Mobile header */}
         <div className="fixed inset-x-0 top-0 z-40 flex h-14 items-center border-b border-border bg-card px-4 lg:hidden">
           <Button
             variant="ghost"
@@ -148,17 +148,16 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
           </Button>
           <div className="flex items-center gap-2">
             <School className="h-5 w-5 text-primary" />
-            <span className="text-sm font-bold">Riverside Academy</span>
+            <span className="text-sm font-bold">{t('demo_school.chrome.school_name')}</span>
             <Badge
               variant="secondary"
               className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider"
             >
-              Demo
+              {t('demo_school.chrome.demo_short')}
             </Badge>
           </div>
         </div>
 
-        {/* Mobile sidebar overlay */}
         {mobileOpen && (
           <>
             <div
@@ -171,9 +170,6 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
           </>
         )}
 
-        {/* Main content — id matches the skip-to-content link in the
-            root layout. Cycle 2 a11y P1: without this id the skip link
-            fell through to the top of the page on /demo/school/*. */}
         <main id="main-content" className="flex-1 min-w-0 overflow-x-hidden pt-14 lg:pt-0">
           <DemoBanner />
           <div className="px-4 py-6 sm:px-6 lg:px-8 lg:py-8 max-w-full">{children}</div>

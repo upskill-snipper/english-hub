@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'A Christmas Carol Analysis — Quotes, Characters & Themes',
@@ -171,6 +172,16 @@ const jsonLd = {
 
 export default async function ChristmasCarolAnalysisHub() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
+  const tEyebrow = await t('analysis.eyebrow.lit')
+  const tH1Short = await t('analysis.text.h1_short')
+  const tCarolIntro = await t('analysis.carol.intro')
+  const tByline2026 = await t('analysis.byline.markers_updated')
+  const tCarolQuoteH2 = await t('analysis.carol.quotes.h2')
+  const tCarolCharH2 = await t('analysis.carol.char.h2')
+  const tCarolFootH2 = await t('analysis.carol.foot.h2')
+  const tCarolFootBody = await t('analysis.carol.foot.body')
+  const tOpenRevHub = await t('analysis.cta.open_revision_hub')
+
   return (
     <div className="mx-auto max-w-5xl space-y-12 px-4 py-10 sm:px-6 lg:px-8">
       <script
@@ -200,27 +211,16 @@ export default async function ChristmasCarolAnalysisHub() {
       />
 
       <header className="space-y-4">
-        <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-          GCSE English Literature
-        </p>
+        <p className="text-sm font-semibold uppercase tracking-wide text-primary">{tEyebrow}</p>
         <h1 className="text-4xl font-heading font-bold text-foreground sm:text-5xl">
-          A Christmas Carol Analysis
+          A Christmas Carol {tH1Short}
         </h1>
-        <p className="max-w-3xl text-lg text-muted-foreground">
-          In-depth GCSE analysis of Charles Dickens&apos;s novella A Christmas Carol, published by
-          Chapman &amp; Hall on 19 December 1843. Browse full quotation analyses, character studies,
-          theme guides and marker essay advice, all written by experienced GCSE English Literature
-          markers.
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Written by GCSE markers · Updated for 2026 specifications
-        </p>
+        <p className="max-w-3xl text-lg text-muted-foreground">{tCarolIntro}</p>
+        <p className="text-sm text-muted-foreground">{tByline2026}</p>
       </header>
 
       <section>
-        <h2 className="mb-6 text-2xl font-heading font-bold text-foreground">
-          Key quotation analyses
-        </h2>
+        <h2 className="mb-6 text-2xl font-heading font-bold text-foreground">{tCarolQuoteH2}</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {quoteAnalyses.map((q) => (
             <Link
@@ -238,9 +238,7 @@ export default async function ChristmasCarolAnalysisHub() {
       </section>
 
       <section>
-        <h2 className="mb-6 text-2xl font-heading font-bold text-foreground">
-          Characters, themes & essay guidance
-        </h2>
+        <h2 className="mb-6 text-2xl font-heading font-bold text-foreground">{tCarolCharH2}</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {characterThemePages.map((p) => (
             <Link
@@ -258,18 +256,13 @@ export default async function ChristmasCarolAnalysisHub() {
       </section>
 
       <section className="rounded-2xl border border-border bg-card p-8 text-center">
-        <h2 className="text-2xl font-heading font-bold text-foreground">
-          Ready to revise the full novella?
-        </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-          Pair these analyses with The English Hub&apos;s full A Christmas Carol study guide,
-          character tracker, quiz bank and AI-marked practice essays.
-        </p>
+        <h2 className="text-2xl font-heading font-bold text-foreground">{tCarolFootH2}</h2>
+        <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">{tCarolFootBody}</p>
         <Link
           href="/revision/texts"
           className="mt-6 inline-flex items-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
         >
-          Open the Revision Hub
+          {tOpenRevHub}
         </Link>
       </section>
     </div>

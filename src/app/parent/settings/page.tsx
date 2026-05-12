@@ -14,13 +14,7 @@ import {
   Shield,
   User,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -28,6 +22,7 @@ import { Separator } from '@/components/ui/separator'
 import { Badge } from '@/components/ui/badge'
 import { Switch } from '@/components/ui/switch'
 import { isAiOptedOut, setAiOptedOut } from '@/lib/ai-preferences'
+import { useT } from '@/lib/i18n/use-t'
 
 const PARENT_ACCOUNT_KEY = 'english-hub-parent-account'
 
@@ -54,6 +49,7 @@ function safeParse<T>(raw: string | null): T | null {
 }
 
 export default function ParentSettingsPage() {
+  const t = useT()
   const [mounted, setMounted] = useState(false)
   const [account, setAccount] = useState<ParentAccount | null>(null)
 
@@ -113,15 +109,15 @@ export default function ParentSettingsPage() {
     setPasswordMessage(null)
 
     if (!currentPassword) {
-      setPasswordError('Enter your current password.')
+      setPasswordError(t('parent.password_current_required'))
       return
     }
     if (newPassword.length < 8) {
-      setPasswordError('New password must be at least 8 characters.')
+      setPasswordError(t('parent.password_min_length'))
       return
     }
     if (newPassword !== confirmPassword) {
-      setPasswordError('New passwords do not match.')
+      setPasswordError(t('parent.password_mismatch'))
       return
     }
 
@@ -129,12 +125,12 @@ export default function ParentSettingsPage() {
     try {
       // [P2:auth] Supabase — replace with supabase.auth.updateUser({ password })
       await new Promise((resolve) => setTimeout(resolve, 400))
-      setPasswordMessage('Password updated.')
+      setPasswordMessage(t('parent.password_updated'))
       setCurrentPassword('')
       setNewPassword('')
       setConfirmPassword('')
     } catch {
-      setPasswordError('Could not update password.')
+      setPasswordError(t('parent.password_update_failed'))
     } finally {
       setPasswordLoading(false)
     }
@@ -144,10 +140,10 @@ export default function ParentSettingsPage() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-foreground sm:text-3xl">Settings</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Manage your account, notifications and billing.
-        </p>
+        <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
+          {t('parent.nav.settings')}
+        </h1>
+        <p className="mt-1 text-sm text-muted-foreground">{t('parent.settings_subtitle')}</p>
       </div>
 
       {/* Account info */}
@@ -155,30 +151,28 @@ export default function ParentSettingsPage() {
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2">
             <User className="h-4 w-4 text-primary" />
-            <CardTitle className="text-base">Account</CardTitle>
+            <CardTitle className="text-base">{t('parent.account')}</CardTitle>
           </div>
-          <CardDescription>
-            Your profile details on The English Hub parent portal.
-          </CardDescription>
+          <CardDescription>{t('parent.account_desc')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
-              <Label htmlFor="name">Full name</Label>
+              <Label htmlFor="name">{t('parent.full_name')}</Label>
               <Input
                 id="name"
                 type="text"
-                value={mounted ? account?.name ?? '' : ''}
+                value={mounted ? (account?.name ?? '') : ''}
                 readOnly
                 placeholder="—"
               />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('parent.email')}</Label>
               <Input
                 id="email"
                 type="email"
-                value={mounted ? account?.email ?? '' : ''}
+                value={mounted ? (account?.email ?? '') : ''}
                 readOnly
                 placeholder="—"
               />
@@ -186,21 +180,21 @@ export default function ParentSettingsPage() {
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
-              <Label htmlFor="child">Linked child</Label>
+              <Label htmlFor="child">{t('parent.linked_child')}</Label>
               <Input
                 id="child"
                 type="text"
-                value={mounted ? account?.childName ?? '' : ''}
+                value={mounted ? (account?.childName ?? '') : ''}
                 readOnly
                 placeholder="—"
               />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="linkCode">Link code</Label>
+              <Label htmlFor="linkCode">{t('parent.link_code')}</Label>
               <Input
                 id="linkCode"
                 type="text"
-                value={mounted ? account?.linkCode ?? '' : ''}
+                value={mounted ? (account?.linkCode ?? '') : ''}
                 readOnly
                 placeholder="—"
                 className="uppercase tracking-wider"
@@ -208,7 +202,7 @@ export default function ParentSettingsPage() {
             </div>
           </div>
           <p className="text-xs text-muted-foreground">
-            To update your name or email, contact support at{' '}
+            {t('parent.contact_support_prefix')}{' '}
             <a
               href="mailto:support@theenglishhub.app"
               className="text-primary underline-offset-2 hover:underline"
@@ -225,39 +219,37 @@ export default function ParentSettingsPage() {
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2">
             <Bell className="h-4 w-4 text-primary" />
-            <CardTitle className="text-base">Notifications</CardTitle>
+            <CardTitle className="text-base">{t('parent.notifications_title')}</CardTitle>
           </div>
-          <CardDescription>
-            Choose which emails you&apos;d like to receive.
-          </CardDescription>
+          <CardDescription>{t('parent.notifications_desc')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-0">
           {[
             {
               key: 'weekly',
-              label: 'Weekly progress report',
-              description: 'Sent every Sunday evening with a full summary.',
+              label: t('parent.notif_weekly_label'),
+              description: t('parent.notif_weekly_desc'),
               value: weeklyReport,
               setter: setWeeklyReport,
             },
             {
               key: 'grade',
-              label: 'Grade milestone alerts',
-              description: 'Notify me when my child achieves a new grade level.',
+              label: t('parent.notif_grade_label'),
+              description: t('parent.notif_grade_desc'),
               value: gradeAlerts,
               setter: setGradeAlerts,
             },
             {
               key: 'inactivity',
-              label: 'Inactivity reminders',
-              description: 'Let me know if no learning has happened for 5+ days.',
+              label: t('parent.notif_inactivity_label'),
+              description: t('parent.notif_inactivity_desc'),
               value: inactivityAlerts,
               setter: setInactivityAlerts,
             },
             {
               key: 'updates',
-              label: 'Product updates',
-              description: 'Occasional emails about new features and resources.',
+              label: t('parent.notif_updates_label'),
+              description: t('parent.notif_updates_desc'),
               value: productUpdates,
               setter: setProductUpdates,
             },
@@ -283,15 +275,15 @@ export default function ParentSettingsPage() {
               {savedRecently ? (
                 <span className="inline-flex items-center gap-1 text-primary">
                   <CheckCircle2 className="h-3.5 w-3.5" />
-                  Saved.
+                  {t('parent.saved_dot')}
                 </span>
               ) : (
-                'Changes are saved locally for now.'
+                t('parent.changes_saved_locally')
               )}
             </p>
             <Button size="sm" onClick={saveNotifications}>
               <Mail className="h-4 w-4" />
-              Save preferences
+              {t('parent.save_preferences')}
             </Button>
           </div>
         </CardContent>
@@ -302,25 +294,15 @@ export default function ParentSettingsPage() {
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2">
             <Bot className="h-4 w-4 text-primary" />
-            <CardTitle className="text-base">AI Features</CardTitle>
+            <CardTitle className="text-base">{t('parent.ai_features_title')}</CardTitle>
           </div>
-          <CardDescription>
-            Control whether AI-powered features (like essay marking) are enabled
-            for your child&apos;s account.
-          </CardDescription>
+          <CardDescription>{t('parent.ai_features_desc')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <label className="flex cursor-pointer items-start justify-between gap-4">
             <div className="min-w-0">
-              <p className="text-sm font-medium text-foreground">
-                Enable AI essay marking
-              </p>
-              <p className="text-xs text-muted-foreground">
-                When turned on, your child can submit essays and receive
-                AI-generated feedback and predicted grades. When turned off,
-                the AI marking feature will be hidden and no data will be sent
-                to the AI provider.
-              </p>
+              <p className="text-sm font-medium text-foreground">{t('parent.ai_toggle_label')}</p>
+              <p className="text-xs text-muted-foreground">{t('parent.ai_toggle_desc')}</p>
             </div>
             <Switch
               checked={aiEnabled}
@@ -338,21 +320,19 @@ export default function ParentSettingsPage() {
           </label>
           <div className="rounded-lg border border-border bg-muted/50 p-4 text-xs text-muted-foreground space-y-2">
             <p>
-              <strong className="text-foreground">What does the AI see?</strong>{' '}
-              Only the essay text and the question chosen. No names, emails, or
-              other personal information is sent.
+              <strong className="text-foreground">{t('parent.ai_q_what_sees')}</strong>{' '}
+              {t('parent.ai_a_what_sees')}
             </p>
             <p>
-              <strong className="text-foreground">Who provides the AI?</strong>{' '}
-              We use Claude by Anthropic. Your child&apos;s essays are not used
-              to train AI models.
+              <strong className="text-foreground">{t('parent.ai_q_provider')}</strong>{' '}
+              {t('parent.ai_a_provider')}
             </p>
             <p>
               <Link
                 href="/marking/ai-explainer"
                 className="text-primary underline-offset-2 hover:underline"
               >
-                Read the full AI marking explainer &rarr;
+                {t('parent.ai_explainer_link')} &rarr;
               </Link>
             </p>
           </div>
@@ -364,11 +344,9 @@ export default function ParentSettingsPage() {
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2">
             <Lock className="h-4 w-4 text-primary" />
-            <CardTitle className="text-base">Change password</CardTitle>
+            <CardTitle className="text-base">{t('parent.change_password')}</CardTitle>
           </div>
-          <CardDescription>
-            Use at least 8 characters. You&apos;ll stay signed in after changing.
-          </CardDescription>
+          <CardDescription>{t('parent.password_hint')}</CardDescription>
         </CardHeader>
         <CardContent>
           {passwordError && (
@@ -383,7 +361,7 @@ export default function ParentSettingsPage() {
           )}
           <form onSubmit={handlePasswordChange} className="space-y-4" noValidate>
             <div className="space-y-1.5">
-              <Label htmlFor="currentPassword">Current password</Label>
+              <Label htmlFor="currentPassword">{t('parent.current_password')}</Label>
               <Input
                 id="currentPassword"
                 type="password"
@@ -394,7 +372,7 @@ export default function ParentSettingsPage() {
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <Label htmlFor="newPassword">New password</Label>
+                <Label htmlFor="newPassword">{t('parent.new_password')}</Label>
                 <Input
                   id="newPassword"
                   type="password"
@@ -404,7 +382,7 @@ export default function ParentSettingsPage() {
                 />
               </div>
               <div className="space-y-1.5">
-                <Label htmlFor="confirmPassword">Confirm new password</Label>
+                <Label htmlFor="confirmPassword">{t('parent.confirm_new_password')}</Label>
                 <Input
                   id="confirmPassword"
                   type="password"
@@ -419,10 +397,10 @@ export default function ParentSettingsPage() {
                 {passwordLoading ? (
                   <>
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Updating...
+                    {t('parent.updating')}
                   </>
                 ) : (
-                  'Update password'
+                  t('parent.update_password')
                 )}
               </Button>
             </div>
@@ -435,11 +413,9 @@ export default function ParentSettingsPage() {
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2">
             <CreditCard className="h-4 w-4 text-primary" />
-            <CardTitle className="text-base">Billing</CardTitle>
+            <CardTitle className="text-base">{t('parent.billing_title')}</CardTitle>
           </div>
-          <CardDescription>
-            Manage your subscription and payment details.
-          </CardDescription>
+          <CardDescription>{t('parent.billing_desc')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="rounded-lg border border-border bg-background p-4">
@@ -447,30 +423,23 @@ export default function ParentSettingsPage() {
               <div>
                 <div className="flex items-center gap-2">
                   <p className="text-sm font-semibold text-foreground">
-                    Parent Add-on
+                    {t('parent.parent_addon')}
                   </p>
-                  <Badge variant="secondary" className="text-xs">Active</Badge>
+                  <Badge variant="secondary" className="text-xs">
+                    {t('parent.badge_active')}
+                  </Badge>
                 </div>
-                <p className="text-xs text-muted-foreground">
-                  Added to your child&apos;s subscription &middot; Next renewal 1 May 2026
-                </p>
+                <p className="text-xs text-muted-foreground">{t('parent.addon_renewal')}</p>
               </div>
-              <Button
-                variant="outline"
-                size="sm"
-                render={<Link href="/pricing" />}
-              >
-                Manage billing
+              <Button variant="outline" size="sm" render={<Link href="/pricing" />}>
+                {t('parent.manage_billing')}
                 <ExternalLink className="h-4 w-4" />
               </Button>
             </div>
           </div>
           <div className="flex items-start gap-2 rounded-lg border border-border bg-primary/10 p-3 text-sm text-primary">
             <Shield className="mt-0.5 h-4 w-4 shrink-0" />
-            <p>
-              Billing is managed through the main student account. View invoices and
-              update your payment method from the pricing page.
-            </p>
+            <p>{t('parent.billing_note')}</p>
           </div>
         </CardContent>
       </Card>

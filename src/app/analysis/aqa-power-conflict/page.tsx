@@ -3,6 +3,7 @@ import { headers } from 'next/headers'
 import Link from 'next/link'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'AQA Power and Conflict Poetry Analysis: Comparisons, Themes & Quotes | The English Hub',
@@ -88,6 +89,24 @@ const techniquePages = [
 
 export default async function AQAPowerConflictHub() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
+  const tBreadHome = await t('analysis.breadcrumb.home')
+  const tBreadAnalysis = await t('analysis.breadcrumb.analysis')
+  const tH1Suffix = await t('analysis.power.h1_suffix')
+  const tByline = await t('analysis.byline.markers')
+  const tIntro = await t('analysis.power.intro')
+  const tHowH2 = await t('analysis.how_to_use.h2')
+  const tHowBody = await t('analysis.power.how.body')
+  const tHowCta = await t('analysis.power.how.cta')
+  const tCompH2 = await t('analysis.power.compare.h2')
+  const tCompBody = await t('analysis.power.compare.body')
+  const tThemeH2 = await t('analysis.power.themes.h2')
+  const tThemeBody = await t('analysis.power.themes.body')
+  const tTechH2 = await t('analysis.power.technique.h2')
+  const tTechBody = await t('analysis.power.technique.body')
+  const tFootH2 = await t('analysis.power.foot.h2')
+  const tFootBody = await t('analysis.power.foot.body')
+  const tFootCta = await t('analysis.power.foot.cta')
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -128,54 +147,37 @@ export default async function AQAPowerConflictHub() {
         />
         <nav className="mb-4 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
-            Home
+            {tBreadHome}
           </Link>
           <span className="mx-2">/</span>
-          <span>Analysis</span>
+          <span>{tBreadAnalysis}</span>
           <span className="mx-2">/</span>
           <span className="text-foreground">AQA Power and Conflict</span>
         </nav>
 
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-          AQA Power and Conflict Poetry Analysis
+          AQA Power and Conflict {tH1Suffix}
         </h1>
-        <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
+        <p className="mt-3 text-sm text-muted-foreground">{tByline}</p>
 
-        <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-          Welcome to The English Hub&apos;s AQA Power and Conflict analysis hub. Every page below is
-          written by experienced GCSE English Literature markers and targets the specific questions
-          students ask the night before a mock. Whether you need a head-to-head comparison of two
-          poems, a theme essay that runs across the whole anthology, or a walkthrough of how to plan
-          a Grade 9 essay, you will find the exact analysis, context and critical vocabulary you can
-          lift straight into your own writing.
-        </p>
+        <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{tIntro}</p>
 
         <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-sm">
-          <h2 className="text-xl font-semibold text-foreground">How to use this hub</h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            Start with a comparison page for the pairing you are most nervous about, then move to
-            the theme essay that links them. Finish with a technique page so you know exactly how to
-            convert what you have just learned into marks in the exam. Every page links back here,
-            and every page links onward to the main Power and Conflict revision notes so you can
-            zoom out into full poem-by-poem study when you need it.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{tHowH2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{tHowBody}</p>
           <div className="mt-4">
             <Link
               href="/revision/poetry/power-and-conflict"
               className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
             >
-              Open the main Power and Conflict revision notes
+              {tHowCta}
             </Link>
           </div>
         </div>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-foreground">Poem comparisons (10)</h2>
-          <p className="mt-2 text-muted-foreground">
-            Head-to-head comparisons of the most exam-likely Power and Conflict pairings. Each page
-            gives you three points of comparison, three points of contrast, and a ready-made thesis
-            sentence you can adapt in the exam.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{tCompH2}</h2>
+          <p className="mt-2 text-muted-foreground">{tCompBody}</p>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {comparisonPages.map((p) => (
               <li key={p.slug}>
@@ -191,11 +193,8 @@ export default async function AQAPowerConflictHub() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-foreground">Theme essays (8)</h2>
-          <p className="mt-2 text-muted-foreground">
-            Eight cross-anthology theme essays tracing how Power and Conflict poets treat nature,
-            human power, conflict, memory, identity, loss, suffering and the corruption of power.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{tThemeH2}</h2>
+          <p className="mt-2 text-muted-foreground">{tThemeBody}</p>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {themePages.map((p) => (
               <li key={p.slug}>
@@ -211,12 +210,8 @@ export default async function AQAPowerConflictHub() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-foreground">Technique and exam (7)</h2>
-          <p className="mt-2 text-muted-foreground">
-            Everything you need to convert knowledge into marks: how the comparison question works,
-            the best poems to memorise, the most quotable lines, form and structure, easy pairings,
-            context and a Grade 9 essay walkthrough.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{tTechH2}</h2>
+          <p className="mt-2 text-muted-foreground">{tTechBody}</p>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {techniquePages.map((p) => (
               <li key={p.slug}>
@@ -232,21 +227,14 @@ export default async function AQAPowerConflictHub() {
         </section>
 
         <section className="mt-12 rounded-xl border border-border bg-muted/40 p-6">
-          <h2 className="text-xl font-semibold text-foreground">
-            Ready to revise the whole anthology?
-          </h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            These analysis pages are designed to sit alongside our full Power and Conflict revision
-            notes, which cover every one of the 15 poems in order with line-by-line annotation,
-            context and essay plans. If you are preparing for a closed-book exam, start there and
-            use the analysis pages to sharpen the comparisons and themes you plan to write about.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{tFootH2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{tFootBody}</p>
           <div className="mt-4">
             <Link
               href="/revision/poetry/power-and-conflict"
               className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-[0.9375rem] font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
             >
-              Go to full Power and Conflict revision notes
+              {tFootCta}
             </Link>
           </div>
         </section>

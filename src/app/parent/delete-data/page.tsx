@@ -10,18 +10,13 @@ import {
   ShieldAlert,
   Trash2,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── LocalStorage keys (pre-auth placeholder) ─────────────────────────────
 const PARENT_ACCOUNT_KEY = 'english-hub-parent-account'
@@ -42,53 +37,51 @@ function safeParse<T>(raw: string | null): T | null {
   }
 }
 
-// ── Data categories shown to parent before deletion ────────────────────────
-const DATA_CATEGORIES = {
-  deleted: [
-    {
-      label: 'Essays and written work',
-      description: 'All essays, practice answers, and drafts submitted by your child.',
-    },
-    {
-      label: 'Progress and scores',
-      description: 'Quiz scores, game scores, revision progress, and learning history.',
-    },
-    {
-      label: 'AI feedback',
-      description: 'All AI-generated marking feedback linked to essays.',
-    },
-    {
-      label: 'Account profile',
-      description: 'Name, email address, date of birth, and school information.',
-    },
-    {
-      label: 'Privacy settings and consent records',
-      description: 'Notification preferences and consent history.',
-    },
-  ],
-  retained: [
-    {
-      label: 'Safeguarding records',
-      description:
-        'Any safeguarding reports are retained until your child turns 25 or for 7 years, whichever is longer. This is a legal requirement.',
-    },
-    {
-      label: 'Payment records',
-      description:
-        'Billing and invoice records are retained for 7 years as required by HMRC.',
-    },
-    {
-      label: 'Anonymised audit logs',
-      description:
-        'Compliance audit entries are retained with personal data removed. These cannot be linked back to your child.',
-    },
-  ],
-}
-
 type DeletionState = 'idle' | 'confirming' | 'submitting' | 'success' | 'error'
 
 export default function ParentDeleteDataPage() {
+  const t = useT()
   const [mounted, setMounted] = useState(false)
+
+  const DATA_CATEGORIES = {
+    deleted: [
+      {
+        label: t('parent.del_essays_label'),
+        description: t('parent.del_essays_desc'),
+      },
+      {
+        label: t('parent.del_progress_label'),
+        description: t('parent.del_progress_desc'),
+      },
+      {
+        label: t('parent.del_ai_feedback_label'),
+        description: t('parent.del_ai_feedback_desc'),
+      },
+      {
+        label: t('parent.del_account_label'),
+        description: t('parent.del_account_desc'),
+      },
+      {
+        label: t('parent.del_privacy_label'),
+        description: t('parent.del_privacy_desc'),
+      },
+    ],
+    retained: [
+      {
+        label: t('parent.ret_safeguarding_label'),
+        description: t('parent.ret_safeguarding_desc'),
+      },
+      {
+        label: t('parent.ret_payment_label'),
+        description: t('parent.ret_payment_desc'),
+      },
+      {
+        label: t('parent.ret_audit_label'),
+        description: t('parent.ret_audit_desc'),
+      },
+    ],
+  }
+
   const [account, setAccount] = useState<ParentAccount | null>(null)
   const [deletionState, setDeletionState] = useState<DeletionState>('idle')
   const [confirmText, setConfirmText] = useState('')
@@ -101,7 +94,7 @@ export default function ParentDeleteDataPage() {
     setAccount(safeParse<ParentAccount>(localStorage.getItem(PARENT_ACCOUNT_KEY)))
   }, [])
 
-  const childName = account?.childName ?? 'your child'
+  const childName = account?.childName ?? t('parent.your_child')
   const confirmPhrase = 'DELETE'
 
   async function handleRequestDeletion() {
@@ -122,14 +115,14 @@ export default function ParentDeleteDataPage() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
-        throw new Error(data.error || 'Failed to submit deletion request.')
+        throw new Error(data.error || t('parent.deletion_submit_failed'))
       }
 
       const data = await res.json()
       setGracePeriodEnd(data.gracePeriodEndsAt ?? '')
       setDeletionState('success')
     } catch (err) {
-      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong.')
+      setErrorMessage(err instanceof Error ? err.message : t('parent.something_went_wrong'))
       setDeletionState('error')
     }
   }
@@ -148,51 +141,49 @@ export default function ParentDeleteDataPage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
-            Delete Data
+            {t('parent.delete_data_title')}
           </h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Children&apos;s Code Standard 11 &mdash; Parental Controls
-          </p>
+          <p className="mt-1 text-sm text-muted-foreground">{t('parent.delete_data_subtitle')}</p>
         </div>
 
         <Card className="border-emerald-500/30 bg-emerald-500/5">
           <CardContent className="flex flex-col items-center gap-4 p-8 text-center">
             <CheckCircle2 className="h-12 w-12 text-emerald-500" />
-            <h2 className="text-xl font-bold text-foreground">
-              Deletion request submitted
-            </h2>
+            <h2 className="text-xl font-bold text-foreground">{t('parent.deletion_submitted')}</h2>
             <p className="max-w-md text-sm text-muted-foreground">
-              We have received your request to delete {childName}&apos;s account data.
-              A confirmation email has been sent to{' '}
-              <strong>{account?.email ?? 'your email address'}</strong>.
+              {`${t('parent.deletion_received_prefix')} ${childName} ${t('parent.deletion_received_suffix')} `}
+              <strong>{account?.email ?? t('parent.your_email_default')}</strong>.
             </p>
 
             <div className="mt-2 rounded-lg border border-border bg-background px-4 py-3">
               <div className="flex items-center gap-2 text-sm">
                 <Clock className="h-4 w-4 text-amber-500" />
                 <span className="font-medium text-foreground">
-                  30-day grace period
+                  {t('parent.grace_period_30day')}
                 </span>
               </div>
               <p className="mt-1 text-xs text-muted-foreground">
-                The deletion will be carried out after a 30-day cooling-off period.
+                {t('parent.grace_period_explanation')}
                 {gracePeriodEnd && (
                   <>
                     {' '}
-                    Data will be permanently deleted on or after{' '}
-                    <strong>{new Date(gracePeriodEnd).toLocaleDateString('en-GB', {
-                      weekday: 'long',
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}</strong>.
+                    {t('parent.permanently_deleted_after')}{' '}
+                    <strong>
+                      {new Date(gracePeriodEnd).toLocaleDateString('en-GB', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
+                    </strong>
+                    .
                   </>
-                )}
-                {' '}You can cancel this request by contacting{' '}
+                )}{' '}
+                {t('parent.cancel_via_dpo_prefix')}{' '}
                 <a href="mailto:dpo@theenglishhub.app" className="text-primary underline">
                   dpo@theenglishhub.app
                 </a>{' '}
-                before the grace period ends.
+                {t('parent.cancel_via_dpo_suffix')}
               </p>
             </div>
           </CardContent>
@@ -207,11 +198,10 @@ export default function ParentDeleteDataPage() {
       {/* Page header */}
       <div>
         <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
-          Delete Data
+          {t('parent.delete_data_title')}
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Request deletion of {childName}&apos;s account data. This action follows
-          a 30-day grace period before data is permanently removed.
+          {`${t('parent.delete_request_prefix')} ${childName} ${t('parent.delete_request_suffix')}`}
         </p>
       </div>
 
@@ -220,11 +210,9 @@ export default function ParentDeleteDataPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-base">
             <Trash2 className="h-4 w-4 text-destructive" />
-            Data that will be deleted
+            {t('parent.data_to_be_deleted')}
           </CardTitle>
-          <CardDescription>
-            The following data will be permanently removed after the 30-day grace period.
-          </CardDescription>
+          <CardDescription>{t('parent.data_to_be_deleted_desc')}</CardDescription>
         </CardHeader>
         <CardContent>
           <ul className="space-y-3">
@@ -248,11 +236,9 @@ export default function ParentDeleteDataPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-base">
             <ShieldAlert className="h-4 w-4 text-amber-500" />
-            Data retained for legal reasons
+            {t('parent.data_retained_legal')}
           </CardTitle>
-          <CardDescription>
-            Some records must be kept to comply with UK law, even after account deletion.
-          </CardDescription>
+          <CardDescription>{t('parent.data_retained_legal_desc')}</CardDescription>
         </CardHeader>
         <CardContent>
           <ul className="space-y-3">
@@ -279,20 +265,16 @@ export default function ParentDeleteDataPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-base text-destructive">
               <AlertTriangle className="h-4 w-4" />
-              Request data deletion
+              {t('parent.request_data_deletion')}
             </CardTitle>
             <CardDescription>
-              This will schedule {childName}&apos;s data for permanent deletion.
-              You have 30 days to cancel the request.
+              {`${t('parent.schedule_deletion_prefix')} ${childName} ${t('parent.schedule_deletion_suffix')}`}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button
-              variant="destructive"
-              onClick={() => setDeletionState('confirming')}
-            >
+            <Button variant="destructive" onClick={() => setDeletionState('confirming')}>
               <Trash2 className="h-4 w-4" />
-              I want to delete {childName}&apos;s data
+              {`${t('parent.want_to_delete_prefix')} ${childName} ${t('parent.want_to_delete_suffix')}`}
             </Button>
           </CardContent>
         </Card>
@@ -303,11 +285,11 @@ export default function ParentDeleteDataPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-base text-destructive">
               <AlertTriangle className="h-4 w-4" />
-              Confirm deletion request
+              {t('parent.confirm_deletion_request')}
             </CardTitle>
             <CardDescription>
-              This action cannot be undone after the 30-day grace period.
-              Type <strong>{confirmPhrase}</strong> below to confirm.
+              {t('parent.cannot_be_undone')} {t('parent.type_to_confirm_prefix')}{' '}
+              <strong>{confirmPhrase}</strong> {t('parent.type_to_confirm_suffix')}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -315,22 +297,26 @@ export default function ParentDeleteDataPage() {
               <ul className="space-y-1.5 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <Clock className="h-3.5 w-3.5 text-amber-500" />
-                  30-day grace period before permanent deletion
+                  {t('parent.bullet_grace_period')}
                 </li>
                 <li className="flex items-center gap-2">
                   <FileText className="h-3.5 w-3.5 text-destructive" />
-                  Essays, progress, AI feedback, and profile data will be deleted
+                  {t('parent.bullet_what_deleted')}
                 </li>
                 <li className="flex items-center gap-2">
                   <ShieldAlert className="h-3.5 w-3.5 text-amber-500" />
-                  Safeguarding and payment records will be retained per UK law
+                  {t('parent.bullet_what_retained')}
                 </li>
               </ul>
             </div>
 
             <div>
               <Label htmlFor="confirm-delete" className="text-sm font-medium">
-                Type <Badge variant="outline" className="mx-1 font-mono">{confirmPhrase}</Badge> to confirm
+                {t('parent.type_label_prefix')}{' '}
+                <Badge variant="outline" className="mx-1 font-mono">
+                  {confirmPhrase}
+                </Badge>{' '}
+                {t('parent.type_label_suffix')}
               </Label>
               <Input
                 id="confirm-delete"
@@ -349,7 +335,7 @@ export default function ParentDeleteDataPage() {
                 onClick={handleRequestDeletion}
               >
                 <Trash2 className="h-4 w-4" />
-                Confirm deletion request
+                {t('parent.confirm_deletion_btn')}
               </Button>
               <Button
                 variant="outline"
@@ -358,7 +344,7 @@ export default function ParentDeleteDataPage() {
                   setConfirmText('')
                 }}
               >
-                Cancel
+                {t('parent.cancel')}
               </Button>
             </div>
           </CardContent>
@@ -369,9 +355,7 @@ export default function ParentDeleteDataPage() {
         <Card className="border-border">
           <CardContent className="flex items-center justify-center gap-3 p-8">
             <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
-            <p className="text-sm text-muted-foreground">
-              Submitting deletion request...
-            </p>
+            <p className="text-sm text-muted-foreground">{t('parent.submitting_deletion')}</p>
           </CardContent>
         </Card>
       )}
@@ -383,18 +367,16 @@ export default function ParentDeleteDataPage() {
               <AlertTriangle className="mt-0.5 h-5 w-5 text-destructive" />
               <div>
                 <p className="text-sm font-medium text-destructive">
-                  Deletion request failed
+                  {t('parent.deletion_request_failed')}
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {errorMessage}
-                </p>
+                <p className="mt-1 text-xs text-muted-foreground">{errorMessage}</p>
                 <Button
                   variant="outline"
                   size="sm"
                   className="mt-3"
                   onClick={() => setDeletionState('confirming')}
                 >
-                  Try again
+                  {t('parent.try_again')}
                 </Button>
               </div>
             </div>
@@ -404,13 +386,11 @@ export default function ParentDeleteDataPage() {
 
       {/* Legal footnote */}
       <p className="text-xs text-muted-foreground">
-        This data deletion facility is provided under the ICO Children&apos;s Code
-        (Age Appropriate Design Code), Standard 11 &mdash; Parental Controls, and
-        in accordance with UK GDPR Article 17 (Right to Erasure). If you have
-        questions about this process, contact our Data Protection Officer at{' '}
+        {t('parent.legal_footnote_prefix')}{' '}
         <a href="mailto:dpo@theenglishhub.app" className="text-primary underline">
           dpo@theenglishhub.app
-        </a>.
+        </a>
+        .
       </p>
     </div>
   )

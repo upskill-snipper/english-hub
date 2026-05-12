@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'GCSE English Revision & Grade Guides | The English Hub',
@@ -79,6 +80,24 @@ const parentPages = [
 
 export default async function RevisionHub() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
+  const tBreadcrumbAnalysis = await t('analysis.breadcrumb.analysis')
+  const tBreadcrumbRevision = await t('analysis.revision.breadcrumb_current')
+  const tH1 = await t('analysis.revision.h1')
+  const tByline = await t('analysis.byline.markers')
+  const tIntro = await t('analysis.revision.intro')
+  const tSectionGrade = await t('analysis.revision.section.grade')
+  const tSectionGradeBody = await t('analysis.revision.section.grade_body')
+  const tSectionPlanning = await t('analysis.revision.section.planning')
+  const tSectionPlanningBody = await t('analysis.revision.section.planning_body')
+  const tSectionExam = await t('analysis.revision.section.exam')
+  const tSectionExamBody = await t('analysis.revision.section.exam_body')
+  const tSectionParents = await t('analysis.revision.section.parents')
+  const tSectionParentsBody = await t('analysis.revision.section.parents_body')
+  const tFooterH2 = await t('analysis.revision.footer.h2')
+  const tFooterBody = await t('analysis.revision.footer.body')
+  const tFooterCtaPrimary = await t('analysis.revision.footer.cta_primary')
+  const tFooterCtaSecondary = await t('analysis.revision.footer.cta_secondary')
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -118,30 +137,21 @@ export default async function RevisionHub() {
       />
       <nav className="mb-4 text-sm text-muted-foreground">
         <Link href="/analysis" className="hover:text-foreground">
-          Analysis
+          {tBreadcrumbAnalysis}
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-foreground">Revision &amp; Grade Guides</span>
+        <span className="text-foreground">{tBreadcrumbRevision}</span>
       </nav>
 
       <header>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          GCSE English Revision &amp; Grade Guides
-        </h1>
-        <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
-        <p className="mt-4 max-w-3xl text-base text-muted-foreground leading-relaxed">
-          A complete set of free, marker-written guides to help you hit the grade you want in GCSE
-          English Language and Literature. Use the sections below to plan revision, understand grade
-          boundaries, prep for the exam day and &mdash; if you&rsquo;re a parent &mdash; support a
-          student at home.
-        </p>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{tH1}</h1>
+        <p className="mt-3 text-sm text-muted-foreground">{tByline}</p>
+        <p className="mt-4 max-w-3xl text-base text-muted-foreground leading-relaxed">{tIntro}</p>
       </header>
 
       <section className="mt-10">
-        <h2 className="text-xl font-semibold text-foreground">Grade targeting</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          What it takes to reach a specific grade, boundaries and pass rates.
-        </p>
+        <h2 className="text-xl font-semibold text-foreground">{tSectionGrade}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{tSectionGradeBody}</p>
         <ul className="mt-4 grid gap-3 sm:grid-cols-2">
           {gradePages.map((p) => (
             <li
@@ -160,10 +170,8 @@ export default async function RevisionHub() {
       </section>
 
       <section className="mt-10">
-        <h2 className="text-xl font-semibold text-foreground">Revision planning</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Timetables, techniques and memory strategies that actually work for English.
-        </p>
+        <h2 className="text-xl font-semibold text-foreground">{tSectionPlanning}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{tSectionPlanningBody}</p>
         <ul className="mt-4 grid gap-3 sm:grid-cols-2">
           {revisionPages.map((p) => (
             <li
@@ -182,10 +190,8 @@ export default async function RevisionHub() {
       </section>
 
       <section className="mt-10">
-        <h2 className="text-xl font-semibold text-foreground">Exam day &amp; mindset</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          How to stay calm, prepared and focused in the final 24 hours.
-        </p>
+        <h2 className="text-xl font-semibold text-foreground">{tSectionExam}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{tSectionExamBody}</p>
         <ul className="mt-4 grid gap-3 sm:grid-cols-2">
           {examDayPages.map((p) => (
             <li
@@ -204,10 +210,8 @@ export default async function RevisionHub() {
       </section>
 
       <section className="mt-10">
-        <h2 className="text-xl font-semibold text-foreground">For parents &amp; general info</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Clear explanations of how GCSE English works and how to support a student at home.
-        </p>
+        <h2 className="text-xl font-semibold text-foreground">{tSectionParents}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{tSectionParentsBody}</p>
         <ul className="mt-4 grid gap-3 sm:grid-cols-2">
           {parentPages.map((p) => (
             <li
@@ -226,25 +230,20 @@ export default async function RevisionHub() {
       </section>
 
       <section className="mt-12 rounded-xl border border-border bg-card p-6 shadow-sm">
-        <h2 className="text-lg font-semibold text-foreground">
-          Start revising with The English Hub
-        </h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Want marker-graded practice, quote flashcards and personalised study plans? Create a free
-          account and pick up where these guides leave off.
-        </p>
+        <h2 className="text-lg font-semibold text-foreground">{tFooterH2}</h2>
+        <p className="mt-2 text-sm text-muted-foreground">{tFooterBody}</p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href="/auth/register"
             className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
           >
-            Create a free account
+            {tFooterCtaPrimary}
           </Link>
           <Link
             href="/revision"
             className="inline-flex h-9 items-center justify-center rounded-lg border border-border bg-background px-4 text-sm font-semibold text-foreground shadow-sm transition-colors hover:bg-muted"
           >
-            Browse revision tools
+            {tFooterCtaSecondary}
           </Link>
         </div>
       </section>

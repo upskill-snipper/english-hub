@@ -4,12 +4,11 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { useAuthProfile, useAuthLoading } from '@/store/auth-store'
-
-// ─── Navigation items ───────────────────────────────────────────────────
+import { useT } from '@/lib/i18n/use-t'
 
 const navItems = [
   {
-    label: 'Dashboard',
+    labelKey: 'teacher.nav.dashboard',
     href: '/dashboard/teacher',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -23,7 +22,7 @@ const navItems = [
     ),
   },
   {
-    label: 'Students',
+    labelKey: 'teacher.nav.students',
     href: '/dashboard/teacher/students',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,7 +36,7 @@ const navItems = [
     ),
   },
   {
-    label: 'Assignments',
+    labelKey: 'teacher.nav.assignments',
     href: '/dashboard/teacher/assignments',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,7 +50,7 @@ const navItems = [
     ),
   },
   {
-    label: 'Analytics',
+    labelKey: 'teacher.nav.analytics',
     href: '/dashboard/teacher/analytics',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,7 +64,7 @@ const navItems = [
     ),
   },
   {
-    label: 'Resources',
+    labelKey: 'teacher.nav.resources',
     href: '/dashboard/teacher/resources',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,21 +79,17 @@ const navItems = [
   },
 ]
 
-// ─── Teacher Layout ─────────────────────────────────────────────────────
-
 export default function TeacherLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const router = useRouter()
   const profile = useAuthProfile()
   const isLoading = useAuthLoading()
   const [sidebarOpen, setSidebarOpen] = useState(false)
-
+  const t = useT()
   const isTeacher = profile?.role === 'teacher' || profile?.role === 'admin'
 
   useEffect(() => {
-    if (!isLoading && profile && !isTeacher) {
-      router.push('/dashboard')
-    }
+    if (!isLoading && profile && !isTeacher) router.push('/dashboard')
   }, [isLoading, profile, isTeacher, router])
 
   if (isLoading) {
@@ -102,7 +97,7 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
           <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-muted-foreground text-sm">Loading teacher dashboard...</p>
+          <p className="text-muted-foreground text-sm">{t('teacher.layout.loading')}</p>
         </div>
       </div>
     )
@@ -112,25 +107,25 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-foreground mb-2">Access Denied</h1>
-          <p className="text-muted-foreground mb-4">
-            You need a teacher account to view this page.
-          </p>
+          <h1 className="text-2xl font-bold text-foreground mb-2">
+            {t('teacher.layout.access_denied')}
+          </h1>
+          <p className="text-muted-foreground mb-4">{t('teacher.layout.access_denied_body')}</p>
           <p className="text-sm text-muted-foreground mb-4">
-            If you are a teacher, please register with a teacher account.
+            {t('teacher.layout.access_denied_note')}
           </p>
           <div className="flex gap-3 justify-center">
             <Link
               href="/dashboard"
               className="inline-block text-primary hover:underline font-medium"
             >
-              Go to student dashboard
+              {t('teacher.layout.go_student_dash')}
             </Link>
             <Link
               href="/auth/register"
               className="inline-block text-primary hover:underline font-medium"
             >
-              Register as teacher
+              {t('teacher.layout.register_teacher')}
             </Link>
           </div>
         </div>
@@ -140,28 +135,23 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
 
   return (
     <div className="min-h-screen bg-background flex">
-      {/* Mobile sidebar backdrop */}
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
-
-      {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-primary text-white transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:z-auto ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-primary text-white transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:z-auto ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex items-center justify-between h-16 px-6 border-b border-white/10">
           <Link href="/dashboard/teacher" className="font-bold text-lg">
-            Teacher Hub
+            {t('teacher.layout.brand')}
           </Link>
           <button
             className="lg:hidden text-white/80 hover:text-white"
             onClick={() => setSidebarOpen(false)}
-            aria-label="Close sidebar"
+            aria-label={t('teacher.layout.close_sidebar')}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -173,7 +163,6 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
             </svg>
           </button>
         </div>
-
         <nav className="mt-6 px-3 space-y-1">
           {navItems.map((item) => {
             const isActive =
@@ -184,19 +173,14 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'bg-card/15 text-white'
-                    : 'text-white/70 hover:bg-card/10 hover:text-white'
-                }`}
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${isActive ? 'bg-card/15 text-white' : 'text-white/70 hover:bg-card/10 hover:text-white'}`}
               >
                 {item.icon}
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             )
           })}
         </nav>
-
         <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10">
           <Link
             href="/dashboard"
@@ -210,19 +194,16 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
                 d="M10 19l-7-7m0 0l7-7m-7 7h18"
               />
             </svg>
-            Back to student view
+            {t('teacher.layout.back_student_view')}
           </Link>
         </div>
       </aside>
-
-      {/* Main content */}
       <div className="flex-1 flex flex-col min-w-0">
-        {/* Top bar */}
         <header className="h-16 bg-card border-b border-border flex items-center px-4 lg:px-8">
           <button
             className="lg:hidden text-muted-foreground hover:text-foreground mr-4"
             onClick={() => setSidebarOpen(true)}
-            aria-label="Open sidebar"
+            aria-label={t('teacher.layout.open_sidebar')}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -233,18 +214,10 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
               />
             </svg>
           </button>
-          {/* Demoted from h1 to p — each page renders its own canonical h1.
-              Double-h1 was flagged by the Cycle 2 a11y agent. */}
           <p className="text-lg font-semibold text-foreground">
-            The English Hub — Teacher Dashboard
+            {t('teacher.layout.topbar_title')}
           </p>
         </header>
-
-        {/* Preview banner — hoisted from /dashboard/teacher root so it
-            shows on every teacher sub-route (students, assignments,
-            analytics, resources). Cycle 2 a11y audit P1: sub-routes
-            render mock data with no banner, so paying teachers could
-            interpret the mock students / submissions as real. */}
         <div
           role="status"
           className="mx-4 lg:mx-8 mt-4 flex items-start gap-3 rounded-xl border border-amber-500/40 bg-amber-500/10 px-5 py-4"
@@ -264,23 +237,19 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
             />
           </svg>
           <div className="text-sm text-foreground">
-            <p className="font-semibold">Preview — teacher dashboard is still in development</p>
+            <p className="font-semibold">{t('teacher.layout.preview_title')}</p>
             <p className="mt-1 text-muted-foreground">
-              The numbers, students, and submissions shown across these teacher pages are
-              illustrative only. Live class stats, real student submissions, and progress tracking
-              are coming soon. If you were expecting live data, please contact us at{' '}
+              {t('teacher.layout.preview_body_before')}{' '}
               <a
                 href="mailto:info@upskillenergy.com"
                 className="underline underline-offset-2 font-medium text-foreground hover:text-primary"
               >
                 info@upskillenergy.com
               </a>
-              .
+              {t('teacher.layout.preview_body_after')}
             </p>
           </div>
         </div>
-
-        {/* Page content */}
         <main className="flex-1 p-4 lg:p-8 overflow-auto">{children}</main>
       </div>
     </div>

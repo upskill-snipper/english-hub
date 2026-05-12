@@ -28,17 +28,19 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { useT } from '@/lib/i18n/use-t'
 
 const PARENT_ACCOUNT_KEY = 'english-hub-parent-account'
 
-const BENEFITS = [
-  { icon: BarChart3, text: "Weekly progress reports from your child's learning" },
-  { icon: FileText, text: 'Detailed breakdown of grades, modules and time spent' },
-  { icon: ShieldCheck, text: 'Read-only access — safe and private' },
-]
-
 export default function ParentSignupPage() {
+  const t = useT()
   const router = useRouter()
+
+  const BENEFITS = [
+    { icon: BarChart3, text: t('parent.benefit_weekly_reports') },
+    { icon: FileText, text: t('parent.benefit_detailed_breakdown') },
+    { icon: ShieldCheck, text: t('parent.benefit_read_only') },
+  ]
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -56,15 +58,15 @@ export default function ParentSignupPage() {
     setFieldErrors({})
 
     const errors: Record<string, string> = {}
-    if (!name.trim()) errors.name = 'Your full name is required.'
-    if (!email.trim()) errors.email = 'Email address is required.'
-    if (!password) errors.password = 'Password is required.'
-    else if (password.length < 8) errors.password = 'Password must be at least 8 characters.'
-    if (!linkCode.trim()) errors.linkCode = "Enter the link code from your child's account."
+    if (!name.trim()) errors.name = t('parent.full_name_required')
+    if (!email.trim()) errors.email = t('parent.email_required')
+    if (!password) errors.password = t('parent.password_required')
+    else if (password.length < 8) errors.password = t('parent.password_min_length')
+    if (!linkCode.trim()) errors.linkCode = t('parent.link_code_required')
 
     if (Object.keys(errors).length > 0) {
       setFieldErrors(errors)
-      setError('Please fix the errors below.')
+      setError(t('parent.fix_errors_below'))
       return
     }
 
@@ -86,7 +88,7 @@ export default function ParentSignupPage() {
 
       router.push('/parent/dashboard')
     } catch {
-      setError('Something went wrong. Please try again.')
+      setError(t('parent.something_went_wrong'))
       setLoading(false)
     }
   }
@@ -101,17 +103,16 @@ export default function ParentSignupPage() {
           render={<Link href="/" />}
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to home
+          {t('parent.back_home')}
         </Button>
 
         <div className="mb-10 text-center">
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
             <GraduationCap className="h-6 w-6 text-primary" />
           </div>
-          <h1 className="text-3xl font-bold text-foreground">Create your parent account</h1>
+          <h1 className="text-3xl font-bold text-foreground">{t('parent.create_account_title')}</h1>
           <p className="mx-auto mt-3 max-w-xl text-base text-muted-foreground">
-            Keep track of your child&apos;s progress on The English Hub. Parent accounts are read-only
-            and link to an existing student account using a unique link code.
+            {t('parent.create_account_subtitle')}
           </p>
         </div>
 
@@ -120,10 +121,8 @@ export default function ParentSignupPage() {
           <div className="lg:col-span-3">
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Your details</CardTitle>
-                <CardDescription>
-                  Your child can find their link code in their account settings.
-                </CardDescription>
+                <CardTitle className="text-xl">{t('parent.your_details')}</CardTitle>
+                <CardDescription>{t('parent.find_link_code_hint')}</CardDescription>
               </CardHeader>
 
               <CardContent>
@@ -136,7 +135,7 @@ export default function ParentSignupPage() {
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <div className="space-y-1.5">
                     <Label htmlFor="name">
-                      Full name <span className="text-destructive">*</span>
+                      {t('parent.full_name')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
                       <User className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -158,7 +157,7 @@ export default function ParentSignupPage() {
 
                   <div className="space-y-1.5">
                     <Label htmlFor="email">
-                      Email address <span className="text-destructive">*</span>
+                      {t('parent.email_address')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
                       <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -180,7 +179,7 @@ export default function ParentSignupPage() {
 
                   <div className="space-y-1.5">
                     <Label htmlFor="password">
-                      Password <span className="text-destructive">*</span>
+                      {t('parent.password_label')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
                       <Lock className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -189,7 +188,7 @@ export default function ParentSignupPage() {
                         type={showPassword ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="At least 8 characters"
+                        placeholder={t('parent.password_placeholder')}
                         className="pl-10 pr-10"
                         autoComplete="new-password"
                         aria-invalid={!!fieldErrors.password}
@@ -198,9 +197,15 @@ export default function ParentSignupPage() {
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
                         className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-foreground"
-                        aria-label={showPassword ? 'Hide password' : 'Show password'}
+                        aria-label={
+                          showPassword ? t('parent.hide_password') : t('parent.show_password')
+                        }
                       >
-                        {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                        {showPassword ? (
+                          <EyeOff className="h-4 w-4" />
+                        ) : (
+                          <Eye className="h-4 w-4" />
+                        )}
                       </button>
                     </div>
                     {fieldErrors.password && (
@@ -210,7 +215,7 @@ export default function ParentSignupPage() {
 
                   <div className="space-y-1.5">
                     <Label htmlFor="linkCode">
-                      Child link code <span className="text-destructive">*</span>
+                      {t('parent.child_link_code')} <span className="text-destructive">*</span>
                     </Label>
                     <div className="relative">
                       <KeyRound className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -228,19 +233,17 @@ export default function ParentSignupPage() {
                     {fieldErrors.linkCode && (
                       <p className="text-xs text-destructive">{fieldErrors.linkCode}</p>
                     )}
-                    <p className="text-xs text-muted-foreground">
-                      Ask your child to open Settings &rarr; Parent access in their account.
-                    </p>
+                    <p className="text-xs text-muted-foreground">{t('parent.link_code_help')}</p>
                   </div>
 
                   <Button type="submit" disabled={loading} className="w-full" size="lg">
                     {loading ? (
                       <>
                         <Loader2 className="h-4 w-4 animate-spin" />
-                        Creating account...
+                        {t('parent.creating_account')}
                       </>
                     ) : (
-                      'Create parent account'
+                      t('parent.create_parent_account')
                     )}
                   </Button>
                 </form>
@@ -248,14 +251,14 @@ export default function ParentSignupPage() {
 
               <CardFooter className="flex-col gap-2 pt-0">
                 <p className="text-center text-sm text-muted-foreground">
-                  Already have an account?{' '}
+                  {t('parent.already_have_account')}{' '}
                   <Button
                     variant="link"
                     size="sm"
                     className="h-auto p-0 font-medium"
                     render={<Link href="/parent/login" />}
                   >
-                    Log in
+                    {t('parent.log_in')}
                   </Button>
                 </p>
               </CardFooter>
@@ -267,10 +270,8 @@ export default function ParentSignupPage() {
             <div className="sticky top-8 space-y-4">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-base">What you get</CardTitle>
-                  <CardDescription>
-                    Included with your child&apos;s premium subscription
-                  </CardDescription>
+                  <CardTitle className="text-base">{t('parent.what_you_get')}</CardTitle>
+                  <CardDescription>{t('parent.included_with_premium')}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {BENEFITS.map((benefit) => {
@@ -288,8 +289,7 @@ export default function ParentSignupPage() {
               </Card>
 
               <div className="rounded-lg border border-border bg-card p-4 text-sm text-muted-foreground">
-                Parent accounts are strictly read-only &mdash; you can view progress but cannot change
-                your child&apos;s work, profile or settings.
+                {t('parent.read_only_note')}
               </div>
             </div>
           </div>

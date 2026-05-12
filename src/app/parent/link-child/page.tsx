@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { LINK_CODE_LENGTH } from '@/lib/parent/link-codes'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── /parent/link-child ─────────────────────────────────────────────────────
 //
@@ -18,9 +19,10 @@ import { LINK_CODE_LENGTH } from '@/lib/parent/link-codes'
 type LinkStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function LinkChildPage() {
+  const t = useT()
   const router = useRouter()
   const [digits, setDigits] = useState<string[]>(() =>
-    Array.from({ length: LINK_CODE_LENGTH }, () => '')
+    Array.from({ length: LINK_CODE_LENGTH }, () => ''),
   )
   const [status, setStatus] = useState<LinkStatus>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
@@ -37,7 +39,10 @@ export default function LinkChildPage() {
   // ── Input handlers ──────────────────────────────────────────────────────
   const handleDigitChange = (index: number, raw: string) => {
     // Only accept a single uppercase alphanumeric char
-    const char = raw.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(-1)
+    const char = raw
+      .toUpperCase()
+      .replace(/[^A-Z0-9]/g, '')
+      .slice(-1)
     setDigits((prev) => {
       const next = [...prev]
       next[index] = char
@@ -48,10 +53,7 @@ export default function LinkChildPage() {
     }
   }
 
-  const handleKeyDown = (
-    index: number,
-    e: React.KeyboardEvent<HTMLInputElement>
-  ) => {
+  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Backspace' && !digits[index] && index > 0) {
       inputsRef.current[index - 1]?.focus()
     } else if (e.key === 'ArrowLeft' && index > 0) {
@@ -94,9 +96,7 @@ export default function LinkChildPage() {
 
       if (!res.ok) {
         setStatus('error')
-        setErrorMessage(
-          data?.error ?? 'Could not link account. Please try again.'
-        )
+        setErrorMessage(data?.error ?? t('parent.link_could_not'))
         return
       }
 
@@ -110,7 +110,7 @@ export default function LinkChildPage() {
     } catch (err) {
       console.error('[link-child] submit error:', err)
       setStatus('error')
-      setErrorMessage('Network error. Please check your connection and try again.')
+      setErrorMessage(t('parent.network_error'))
     }
   }
 
@@ -130,7 +130,7 @@ export default function LinkChildPage() {
           className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to dashboard
+          {t('parent.back_to_dashboard')}
         </Link>
       </div>
 
@@ -139,11 +139,8 @@ export default function LinkChildPage() {
           <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
             <Link2 className="h-6 w-6" />
           </div>
-          <CardTitle className="text-2xl">Link your child</CardTitle>
-          <CardDescription>
-            Ask your child to open their student dashboard and generate a 6-character
-            link code. Enter it below to connect their account to yours.
-          </CardDescription>
+          <CardTitle className="text-2xl">{t('parent.link_your_child')}</CardTitle>
+          <CardDescription>{t('parent.link_your_child_desc')}</CardDescription>
         </CardHeader>
 
         <CardContent>
@@ -153,12 +150,10 @@ export default function LinkChildPage() {
               <div>
                 <p className="text-lg font-semibold text-foreground">
                   {linkedChildName
-                    ? `Linked to ${linkedChildName}`
-                    : 'Account linked'}
+                    ? `${t('parent.linked_to_prefix')} ${linkedChildName}`
+                    : t('parent.account_linked')}
                 </p>
-                <p className="text-sm text-muted-foreground">
-                  Redirecting you to the dashboard...
-                </p>
+                <p className="text-sm text-muted-foreground">{t('parent.redirecting_dashboard')}</p>
               </div>
             </div>
           ) : (
@@ -177,13 +172,13 @@ export default function LinkChildPage() {
                     inputMode="text"
                     autoComplete="one-time-code"
                     maxLength={1}
-                    aria-label={`Link code character ${index + 1}`}
+                    aria-label={`${t('parent.link_code_char_aria')} ${index + 1}`}
                     disabled={status === 'submitting'}
                     className={cn(
                       'h-14 w-11 rounded-lg border-2 bg-background text-center font-mono text-2xl font-bold uppercase transition-colors sm:h-16 sm:w-14 sm:text-3xl',
                       'border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30',
                       status === 'error' &&
-                        'border-destructive focus:border-destructive focus:ring-destructive/30'
+                        'border-destructive focus:border-destructive focus:ring-destructive/30',
                     )}
                   />
                 ))}
@@ -208,21 +203,21 @@ export default function LinkChildPage() {
                   {status === 'submitting' ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Linking...
+                      {t('parent.linking')}
                     </>
                   ) : (
-                    'Link account'
+                    t('parent.link_account')
                   )}
                 </Button>
                 {status === 'error' && (
                   <Button type="button" variant="outline" onClick={reset}>
-                    Clear code
+                    {t('parent.clear_code')}
                   </Button>
                 )}
               </div>
 
               <p className="text-center text-xs text-muted-foreground">
-                Codes are valid for 15 minutes and can only be used once.
+                {t('parent.code_validity_note')}
               </p>
             </form>
           )}
@@ -230,16 +225,11 @@ export default function LinkChildPage() {
       </Card>
 
       <div className="mt-6 rounded-lg border border-border bg-muted/30 p-4 text-sm text-muted-foreground">
-        <p className="mb-2 font-semibold text-foreground">
-          Where does my child get their code?
-        </p>
+        <p className="mb-2 font-semibold text-foreground">{t('parent.where_get_code_q')}</p>
         <ol className="ml-5 list-decimal space-y-1">
-          <li>Ask your child to sign in to their student dashboard.</li>
-          <li>
-            They open <span className="font-medium">Settings → Parent access</span>{' '}
-            and tap <span className="font-medium">Generate link code</span>.
-          </li>
-          <li>They read you the 6-character code (it expires in 15 minutes).</li>
+          <li>{t('parent.where_get_code_step1')}</li>
+          <li>{t('parent.where_get_code_step2')}</li>
+          <li>{t('parent.where_get_code_step3')}</li>
         </ol>
       </div>
     </div>

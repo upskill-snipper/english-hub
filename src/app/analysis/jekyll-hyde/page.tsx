@@ -3,6 +3,7 @@ import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import { ArrowRight, BookOpen, Quote, Sparkles, Users, Library, GraduationCap } from 'lucide-react'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'Jekyll and Hyde Analysis — Quotes, Characters & Themes',
@@ -144,6 +145,23 @@ const characterTheme = [
 
 export default async function JekyllHydeHubPage() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
+  const tEyebrow = await t('analysis.eyebrow.lit')
+  const tH1Short = await t('analysis.text.h1_short')
+  const tIntro = await t('analysis.jekyll.intro')
+  const tCtaFullRev = await t('analysis.jekyll.cta.full_revision')
+  const tCtaNotes = await t('analysis.jekyll.cta.notes')
+  const tBylinePrefix = await t('analysis.byline.written_by')
+  const tBylineMarkers = await t('analysis.byline.markers_short')
+  const tBylineAt = await t('analysis.byline.at_brand')
+  const tQuoteH2 = await t('analysis.jekyll.quote.h2')
+  const tQuoteSub = await t('analysis.jekyll.quote.sub')
+  const tCharH2 = await t('analysis.jekyll.char.h2')
+  const tCharSub = await t('analysis.jekyll.char.sub')
+  const tReadAnalysis = await t('analysis.read_analysis')
+  const tFootH2 = await t('analysis.jekyll.foot.h2')
+  const tFootBody = await t('analysis.jekyll.foot.body')
+  const tFootCta = await t('analysis.jekyll.foot.cta')
+
   const hubJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -187,30 +205,24 @@ export default async function JekyllHydeHubPage() {
         nonce={nonce}
       />
 
-      {/* Hero */}
       <section className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-card via-card to-violet-500/5 p-6 sm:p-10">
         <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-violet-500/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-blue-500/10 blur-3xl" />
-
         <div className="relative">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-violet-500/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-violet-700 dark:text-violet-300">
             <Sparkles className="size-3" />
-            GCSE English Literature
+            {tEyebrow}
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Jekyll and Hyde Analysis
+            Jekyll and Hyde {tH1Short}
           </h1>
-          <p className="mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            Line-by-line quote analysis, character studies, theme essays and Victorian context for
-            Robert Louis Stevenson&rsquo;s 1886 Gothic novella. Every page is written by GCSE
-            markers and mapped to AQA, Edexcel and OCR marking guides.
-          </p>
+          <p className="mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg">{tIntro}</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/revision/texts/jekyll-and-hyde"
               className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
             >
-              Full revision guide
+              {tCtaFullRev}
               <ArrowRight className="size-3.5" />
             </Link>
             <Link
@@ -218,31 +230,27 @@ export default async function JekyllHydeHubPage() {
               className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
             >
               <BookOpen className="size-3.5" />
-              Revision notes
+              {tCtaNotes}
             </Link>
           </div>
-
           <p className="mt-6 flex items-center gap-2 text-xs text-muted-foreground">
             <GraduationCap className="size-4 text-primary" aria-hidden="true" />
-            Written by <strong className="text-foreground">GCSE markers</strong> at The English Hub
+            {tBylinePrefix} <strong className="text-foreground">{tBylineMarkers}</strong>{' '}
+            {tBylineAt}
           </p>
         </div>
       </section>
 
-      {/* Quote analyses */}
       <section className="mt-12">
         <div className="mb-5 flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
             <Quote className="size-5 text-violet-400" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-foreground">Quote &amp; symbol analyses</h2>
-            <p className="text-sm text-muted-foreground">
-              Close-reading pages on the most examinable quotations in the novella.
-            </p>
+            <h2 className="text-2xl font-bold text-foreground">{tQuoteH2}</h2>
+            <p className="text-sm text-muted-foreground">{tQuoteSub}</p>
           </div>
         </div>
-
         <ul className="grid gap-3 sm:grid-cols-2">
           {quoteAnalyses.map((q) => (
             <li key={q.slug}>
@@ -257,7 +265,7 @@ export default async function JekyllHydeHubPage() {
                   <p className="mt-1 text-xs text-muted-foreground">{q.blurb}</p>
                 </div>
                 <span className="flex items-center gap-1 text-[11px] font-semibold text-violet-500">
-                  Read analysis <ArrowRight className="size-3" />
+                  {tReadAnalysis} <ArrowRight className="size-3" />
                 </span>
               </Link>
             </li>
@@ -265,22 +273,16 @@ export default async function JekyllHydeHubPage() {
         </ul>
       </section>
 
-      {/* Character, theme, context, essay */}
       <section className="mt-12">
         <div className="mb-5 flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
             <Users className="size-5 text-blue-400" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-foreground">
-              Characters, themes, context &amp; essay guide
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              10 long-read pages covering every character, theme and context point on the spec.
-            </p>
+            <h2 className="text-2xl font-bold text-foreground">{tCharH2}</h2>
+            <p className="text-sm text-muted-foreground">{tCharSub}</p>
           </div>
         </div>
-
         <ul className="grid gap-3 sm:grid-cols-2">
           {characterTheme.map((item) => (
             <li key={item.slug}>
@@ -298,7 +300,7 @@ export default async function JekyllHydeHubPage() {
                   <p className="mt-1 text-xs text-muted-foreground">{item.blurb}</p>
                 </div>
                 <span className="flex items-center gap-1 text-[11px] font-semibold text-blue-500">
-                  Read analysis <ArrowRight className="size-3" />
+                  {tReadAnalysis} <ArrowRight className="size-3" />
                 </span>
               </Link>
             </li>
@@ -306,24 +308,17 @@ export default async function JekyllHydeHubPage() {
         </ul>
       </section>
 
-      {/* Secondary CTA */}
       <section className="mt-12 rounded-2xl border border-border bg-card p-6 sm:p-8">
         <div className="flex items-start gap-3">
           <Library className="mt-1 size-5 shrink-0 text-primary" />
           <div>
-            <h2 className="text-xl font-bold text-foreground">
-              Studying Jekyll and Hyde for GCSE?
-            </h2>
-            <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-              The English Hub&rsquo;s full revision hub includes chapter summaries, 25+ annotated
-              quotations, theme trackers, model essays at Grade 5, 7 and 9, and AI essay feedback
-              trained on the AQA, Edexcel and OCR marking guides.
-            </p>
+            <h2 className="text-xl font-bold text-foreground">{tFootH2}</h2>
+            <p className="mt-1 max-w-2xl text-sm text-muted-foreground">{tFootBody}</p>
             <Link
               href="/revision/texts/jekyll-and-hyde"
               className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
             >
-              Open the revision hub
+              {tFootCta}
               <ArrowRight className="size-3.5" />
             </Link>
           </div>

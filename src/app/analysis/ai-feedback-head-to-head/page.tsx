@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
+import { t } from '@/lib/i18n/t'
 
 // Static page — renders the same HTML on every request.
 // Served via Next.js default static caching.
@@ -70,6 +71,20 @@ const breadcrumbJsonLd = {
 
 export default async function AIFeedbackHeadToHeadPage() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
+  // Chrome only: hero eyebrow, breadcrumb, hero CTAs, footer CTA section,
+  // methodology heading. Essay body + AO mark-scheme analysis stay in
+  // English — that's literary/exam-board content, not chrome.
+  const tBreadAnalysis = await t('analysis.breadcrumb.analysis')
+  const tBreadCurrent = await t('analysis.ai_feedback.breadcrumb_current')
+  const tEyebrow = await t('analysis.ai_feedback.eyebrow')
+  const tCtaUpload = await t('analysis.ai_feedback.cta.upload')
+  const tCtaPricing = await t('analysis.ai_feedback.cta.pricing')
+  const tFootH2 = await t('analysis.ai_feedback.foot.h2')
+  const tFootBody = await t('analysis.ai_feedback.foot.body')
+  const tCtaMarking = await t('analysis.ai_feedback.cta.get_feedback')
+  const tCtaMacbethRev = await t('analysis.ai_feedback.cta.macbeth_revision')
+  const tMethodology = await t('analysis.ai_feedback.methodology')
+
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <script
@@ -83,20 +98,16 @@ export default async function AIFeedbackHeadToHeadPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      {/* Breadcrumb */}
       <nav className="mb-4 text-sm text-muted-foreground" aria-label="Breadcrumb">
         <Link href="/analysis" className="hover:text-foreground">
-          Analysis
+          {tBreadAnalysis}
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-foreground">AI Feedback: Head to Head</span>
+        <span className="text-foreground">{tBreadCurrent}</span>
       </nav>
 
-      {/* Hero */}
       <header className="mb-12">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-primary">
-          Proof · Board-Specific AI Marking
-        </p>
+        <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-primary">{tEyebrow}</p>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl leading-tight">
           AI Essay Feedback: AQA vs Edexcel vs OCR on the same Macbeth essay
         </h1>
@@ -112,18 +123,17 @@ export default async function AIFeedbackHeadToHeadPage() {
             href="/marking"
             className="inline-block rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           >
-            Upload your essay → get your own board-specific feedback
+            {tCtaUpload}
           </Link>
           <Link
             href="/pricing"
             className="inline-block rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted"
           >
-            See pricing
+            {tCtaPricing}
           </Link>
         </div>
       </header>
 
-      {/* The student essay */}
       <section className="mb-12">
         <h2 className="text-2xl font-semibold text-foreground mb-4">
           The student essay (identical across all three marks)
@@ -180,7 +190,6 @@ export default async function AIFeedbackHeadToHeadPage() {
         </blockquote>
       </section>
 
-      {/* MARK 1 — AQA */}
       <section className="mb-12">
         <div className="rounded-lg border border-border p-6 sm:p-8 bg-muted/20">
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.15em] text-primary">
@@ -276,7 +285,6 @@ export default async function AIFeedbackHeadToHeadPage() {
         </div>
       </section>
 
-      {/* MARK 2 — Edexcel */}
       <section className="mb-12">
         <div className="rounded-lg border border-border p-6 sm:p-8 bg-muted/20">
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.15em] text-primary">
@@ -360,7 +368,6 @@ export default async function AIFeedbackHeadToHeadPage() {
         </div>
       </section>
 
-      {/* MARK 3 — OCR */}
       <section className="mb-12">
         <div className="rounded-lg border border-border p-6 sm:p-8 bg-muted/20">
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.15em] text-primary">
@@ -444,7 +451,6 @@ export default async function AIFeedbackHeadToHeadPage() {
         </div>
       </section>
 
-      {/* Three-way summary */}
       <section className="mb-12">
         <h2 className="text-2xl font-semibold text-foreground mb-4">
           What the three marks show (the commercial point)
@@ -502,42 +508,34 @@ export default async function AIFeedbackHeadToHeadPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="rounded-lg border border-border bg-muted/30 p-6 sm:p-8 text-center">
-        <h2 className="text-2xl font-semibold text-foreground">
-          Want this feedback on your own essay?
-        </h2>
-        <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-          Upload your Macbeth essay (or any GCSE English Literature / Language response) and our AI
-          marker applies your exam board&rsquo;s specific AO weighting, returning feedback written
-          in the lexis of that board&rsquo;s mark scheme.
-        </p>
+        <h2 className="text-2xl font-semibold text-foreground">{tFootH2}</h2>
+        <p className="mt-3 text-muted-foreground max-w-xl mx-auto">{tFootBody}</p>
         <div className="mt-6 flex flex-wrap gap-3 justify-center">
           <Link
             href="/marking"
             className="inline-block rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           >
-            Get AI feedback on your essay
+            {tCtaMarking}
           </Link>
           <Link
             href="/pricing"
             className="inline-block rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted"
           >
-            See pricing
+            {tCtaPricing}
           </Link>
           <Link
             href="/revision/texts/macbeth"
             className="inline-block rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted"
           >
-            Macbeth revision guide
+            {tCtaMacbethRev}
           </Link>
         </div>
       </section>
 
-      {/* Methodology */}
       <section className="mt-16 border-t border-border pt-8">
         <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-          Methodology
+          {tMethodology}
         </h3>
         <p className="text-xs text-muted-foreground leading-relaxed">
           Mark-scheme lexis paraphrased from published AQA (8702), Edexcel (1ET0), and OCR (J352)

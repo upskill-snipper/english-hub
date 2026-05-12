@@ -11,6 +11,7 @@ import {
   RevisionCta,
   SectionHeading,
 } from './_components/analysis-page'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'An Inspector Calls Analysis | The English Hub',
@@ -167,6 +168,16 @@ const CHARACTER_THEME_PAGES: Entry[] = [
 
 export default async function InspectorCallsHubPage() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
+  const tEyebrow = await t('analysis.eyebrow.lit')
+  const tInspectorH1 = await t('analysis.inspector.h1')
+  const tInspectorIntro = await t('analysis.inspector.intro')
+  const tQuoteH2 = await t('analysis.inspector.quote.h2')
+  const tCharH2 = await t('analysis.inspector.char.h2')
+  const tHowH2 = await t('analysis.how_to_use.h2')
+  const tHowBody = await t('analysis.inspector.how.body')
+  const tHowCta = await t('analysis.inspector.how.cta')
+  const tRights = await t('analysis.inspector.rights_notice')
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -211,24 +222,19 @@ export default async function InspectorCallsHubPage() {
 
       <div className="space-y-3">
         <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-          GCSE English Literature
+          {tEyebrow}
         </Badge>
         <h1 className="text-heading-lg font-heading text-foreground">
-          An Inspector Calls — analysis hub
+          An Inspector Calls {tInspectorH1}
         </h1>
-        <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Twenty-five focused analysis pages on J. B. Priestley&apos;s An Inspector Calls, covering
-          the play&apos;s most-searched quotes, every major character, and the big AQA, Edexcel and
-          Eduqas themes. Each page is written by GCSE markers with short fair-use extracts, context,
-          and exam-ready analysis.
-        </p>
+        <p className="text-body-sm text-muted-foreground leading-relaxed">{tInspectorIntro}</p>
         <MarkerByline />
       </div>
 
       <section className="space-y-4">
         <div className="flex items-center gap-2">
           <Quote className="size-4 text-primary" />
-          <SectionHeading>Quote analyses</SectionHeading>
+          <SectionHeading>{tQuoteH2}</SectionHeading>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {QUOTE_PAGES.map((item) => (
@@ -249,7 +255,7 @@ export default async function InspectorCallsHubPage() {
       <section className="space-y-4">
         <div className="flex items-center gap-2">
           <Users className="size-4 text-primary" />
-          <SectionHeading>Characters, themes and context</SectionHeading>
+          <SectionHeading>{tCharH2}</SectionHeading>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {CHARACTER_THEME_PAGES.map((item) => (
@@ -273,29 +279,21 @@ export default async function InspectorCallsHubPage() {
         <div className="flex items-center gap-2">
           <BookOpen className="size-4 text-muted-foreground" />
           <span className="text-[0.7rem] font-semibold uppercase tracking-wider text-muted-foreground">
-            How to use this hub
+            {tHowH2}
           </span>
         </div>
-        <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Start with the quote analysis closest to your essay question, then cross-reference the
-          relevant character or theme page. Every page ends with a Grade 9 writing tip and links
-          onwards to three related analyses, so you can build a full revision sweep in under an
-          hour.
-        </p>
+        <p className="text-body-sm text-muted-foreground leading-relaxed">{tHowBody}</p>
         <Button
           variant="outline"
           size="sm"
           render={<Link href="/revision/grade-targets/grade-9" />}
         >
-          Grade 9 revision targets
+          {tHowCta}
           <ArrowRight className="size-3.5" />
         </Button>
       </section>
 
-      <p className="text-[0.7rem] leading-relaxed text-muted-foreground/80">
-        © Samuel French / Concord Theatricals on behalf of the Priestley estate. Quotations are
-        short fair-dealing extracts.
-      </p>
+      <p className="text-[0.7rem] leading-relaxed text-muted-foreground/80">{tRights}</p>
     </PageContainer>
   )
 }

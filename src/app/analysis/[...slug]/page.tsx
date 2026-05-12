@@ -4,25 +4,15 @@ import Link from 'next/link'
 import { ANALYSIS_PAGE_MAP, ANALYSIS_PAGES, type AnalysisPageEntry } from '@/data/analysis'
 import { getCategoryContext } from '@/data/analysis/category-context'
 import { buildAnalysisJsonLdPayloads } from '@/lib/seo/json-ld-hashes'
+import { t } from '@/lib/i18n/t'
 
 // ---------------------------------------------------------------------------
 // ISR: pages are generated on first request and cached for 24 hours.
-// Avoids the Vercel build OOM that 210 statically-generated pages caused.
-//
-// We intentionally do NOT export generateStaticParams here. In Next.js 14,
-// combining `generateStaticParams() { return [] }` with dynamic ISR causes
-// a runtime "Page changed from static to dynamic" 500 on first render. By
-// omitting it entirely, Next.js treats this as a dynamic route with ISR,
-// which is what we want: generated on-demand, cached 24 h, no build-time
-// pre-render of the 201 slugs.
 // ---------------------------------------------------------------------------
 export const revalidate = 86400
 export const dynamic = 'force-static'
 export const dynamicParams = true
 
-// ---------------------------------------------------------------------------
-// Metadata
-// ---------------------------------------------------------------------------
 interface Props {
   params: Promise<{ slug: string[] }>
 }
@@ -57,9 +47,6 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   }
 }
 
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
 const CATEGORY_LABELS: Record<string, string> = {
   macbeth: 'Macbeth',
   'inspector-calls': 'An Inspector Calls',
@@ -88,9 +75,6 @@ function capitalise(str: string): string {
     .join(' ')
 }
 
-// ---------------------------------------------------------------------------
-// Page
-// ---------------------------------------------------------------------------
 export default async function AnalysisPage(props: Props) {
   const params = await props.params
   const key = params.slug.join('/')
@@ -108,14 +92,31 @@ export default async function AnalysisPage(props: Props) {
   const pageSlug = entry.slug[1]
   const pageTopic = capitalise(pageSlug)
 
-  // ---- Structured data ---------------------------------------------------
-  // Constructed via the shared builder so the CSP hash helper in
-  // src/lib/seo/json-ld-hashes.ts hashes the exact same bytes that render
-  // here. Any divergence would break the `'sha256-...'` CSP match for
-  // modern browsers that ignore `'unsafe-inline'` under `'strict-dynamic'`.
   const { articleJsonLd, breadcrumbJsonLd, faqJsonLd } = buildAnalysisJsonLdPayloads(entry, ctx)
 
-  // ---- Render ------------------------------------------------------------
+  // Chrome translation. Body content (entry.description, ctx.about,
+  // ctx.keyQuotes, ctx.faqs, examTips) stays in source language —
+  // literary/exam-board content per task scope.
+  const tBreadAnalysis = await t('analysis.breadcrumb.analysis')
+  const tByline = await t('analysis.slug.byline_prefix')
+  const tCoversAll = await t('analysis.slug.covers_all_boards')
+  const tWhatNeed = await t('analysis.slug.what_you_need')
+  const tAbout = await t('analysis.slug.about')
+  const tAssessed = await t('analysis.slug.how_assessed')
+  const tMarks = await t('analysis.slug.marks_label')
+  const tRecommended = await t('analysis.slug.recommended_label')
+  const tKeyQuotes = await t('analysis.slug.key_quotes_h2')
+  const tExamTipsFor = await t('analysis.slug.exam_tips_for')
+  const tGrade9H2 = await t('analysis.slug.grade9_h2')
+  const tApplyingTo = await t('analysis.slug.applying_to')
+  const tApplyingBody = await t('analysis.slug.applying_body')
+  const tCtaBlock = await t('analysis.slug.cta_block_prompt')
+  const tGetFeedback = await t('analysis.slug.cta_get_feedback')
+  const tSeePricing = await t('analysis.slug.cta_see_pricing')
+  const tFaqs = await t('analysis.slug.faqs_h2')
+  const tRelated = await t('analysis.slug.related_prefix')
+  const tBackToAll = await t('analysis.slug.back_to_all')
+
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <script
@@ -133,10 +134,9 @@ export default async function AnalysisPage(props: Props) {
         />
       )}
 
-      {/* Breadcrumb */}
       <nav className="mb-4 text-sm text-muted-foreground" aria-label="Breadcrumb">
         <Link href="/analysis" className="hover:text-foreground">
-          Analysis
+          {tBreadAnalysis}
         </Link>
         <span className="mx-2">/</span>
         <Link href={`/analysis/${category}`} className="hover:text-foreground">
@@ -146,32 +146,30 @@ export default async function AnalysisPage(props: Props) {
         <span className="text-foreground">{pageTitle}</span>
       </nav>
 
-      {/* Title */}
       <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{pageTitle}</h1>
       <p className="mt-3 text-sm text-muted-foreground">
-        Written by GCSE markers &middot; Covers {ctx?.boards?.join(', ') ?? 'all UK exam boards'}
+        {tByline} &middot; {ctx?.boards?.join(', ') ?? tCoversAll}
       </p>
 
       <article className="mt-10 space-y-10 text-muted-foreground leading-relaxed">
-        {/* Intro — uses the entry description as the opening paragraph */}
         <section>
           <p className="text-lg text-foreground">{entry.description}</p>
         </section>
 
-        {/* Quick orientation */}
         {ctx && (
           <section className="rounded-lg border border-border bg-muted/30 p-6">
             <h2 className="text-xl font-semibold text-foreground">
-              What you need to know about {ctx.label}
+              {tWhatNeed} {ctx.label}
             </h2>
             <p className="mt-3">{ctx.overview}</p>
           </section>
         )}
 
-        {/* About the text / anthology */}
         {ctx?.about?.length && (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">About {ctx.label}</h2>
+            <h2 className="text-xl font-semibold text-foreground">
+              {tAbout} {ctx.label}
+            </h2>
             <div className="mt-4 space-y-4">
               {ctx.about.map((para, i) => (
                 <p key={i}>{para}</p>
@@ -180,10 +178,9 @@ export default async function AnalysisPage(props: Props) {
           </section>
         )}
 
-        {/* Assessment context */}
         {ctx?.assessmentContext?.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">How this is assessed</h2>
+            <h2 className="text-xl font-semibold text-foreground">{tAssessed}</h2>
             <div className="mt-4 space-y-6">
               {ctx.assessmentContext.map((ac, i) => (
                 <div key={i} className="rounded-lg border border-border p-5">
@@ -192,8 +189,10 @@ export default async function AnalysisPage(props: Props) {
                     {ac.paper} &middot; {ac.section}
                   </p>
                   <p className="mt-1 text-sm">
-                    <strong className="text-foreground">{ac.marks} marks</strong> &middot;{' '}
-                    {ac.timeGuide} recommended
+                    <strong className="text-foreground">
+                      {ac.marks} {tMarks}
+                    </strong>{' '}
+                    &middot; {ac.timeGuide} {tRecommended}
                   </p>
                   <ul className="mt-3 space-y-1 text-sm">
                     {ac.aoWeighting.map((ao, j) => (
@@ -209,10 +208,9 @@ export default async function AnalysisPage(props: Props) {
           </section>
         ) : null}
 
-        {/* Key quotes */}
         {ctx?.keyQuotes?.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">Key quotes and analysis</h2>
+            <h2 className="text-xl font-semibold text-foreground">{tKeyQuotes}</h2>
             <div className="mt-4 space-y-5">
               {ctx.keyQuotes.map((q, i) => (
                 <blockquote key={i} className="border-l-2 border-primary/50 pl-4">
@@ -225,10 +223,11 @@ export default async function AnalysisPage(props: Props) {
           </section>
         ) : null}
 
-        {/* Exam tips */}
         {ctx?.examTips?.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">Exam tips for {ctx.label}</h2>
+            <h2 className="text-xl font-semibold text-foreground">
+              {tExamTipsFor} {ctx.label}
+            </h2>
             <ol className="mt-4 list-decimal space-y-2 pl-6">
               {ctx.examTips.map((tip, i) => (
                 <li key={i}>{tip}</li>
@@ -237,10 +236,9 @@ export default async function AnalysisPage(props: Props) {
           </section>
         ) : null}
 
-        {/* Grade 9 indicators */}
         {ctx?.grade9Indicators?.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">What makes a Grade 9 answer</h2>
+            <h2 className="text-xl font-semibold text-foreground">{tGrade9H2}</h2>
             <ul className="mt-4 list-disc space-y-2 pl-6">
               {ctx.grade9Indicators.map((g, i) => (
                 <li key={i}>{g}</li>
@@ -249,43 +247,35 @@ export default async function AnalysisPage(props: Props) {
           </section>
         ) : null}
 
-        {/* Topic-specific section — generated from slug */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">Applying this to {pageTopic}</h2>
+          <h2 className="text-xl font-semibold text-foreground">
+            {tApplyingTo} {pageTopic}
+          </h2>
           <p className="mt-4">
-            {entry.description} Use the context, quotes, and exam tips above to structure your
-            answer on {pageTopic.toLowerCase()}. A Grade 9 response will connect at least two of the
-            points above, name the writer&rsquo;s methods explicitly, and return to the
-            question&rsquo;s wording in the final paragraph.
+            {entry.description} {tApplyingBody}
           </p>
           <p className="mt-4">
-            <strong className="text-foreground">
-              Want the board-specific marking for this topic?
-            </strong>{' '}
-            Write your own practice paragraph and upload it to our AI marker — it applies your exam
-            board&rsquo;s specific AO weighting and returns feedback in the lexis of that
-            board&rsquo;s mark scheme.
+            <strong className="text-foreground">{tCtaBlock}</strong>
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/marking"
               className="inline-block rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
-              Get AI feedback on your essay
+              {tGetFeedback}
             </Link>
             <Link
               href="/pricing"
               className="inline-block rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-muted"
             >
-              See pricing
+              {tSeePricing}
             </Link>
           </div>
         </section>
 
-        {/* FAQs */}
         {ctx?.faqs?.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-foreground">Frequently asked questions</h2>
+            <h2 className="text-xl font-semibold text-foreground">{tFaqs}</h2>
             <div className="mt-4 space-y-4">
               {ctx.faqs.map((f, i) => (
                 <div key={i}>
@@ -297,11 +287,10 @@ export default async function AnalysisPage(props: Props) {
           </section>
         ) : null}
 
-        {/* Related pages */}
         {related.length > 0 && (
           <section>
             <h2 className="text-xl font-semibold text-foreground">
-              Related {categoryLabel} analysis
+              {tRelated} {categoryLabel}
             </h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {related.map((r) => (
@@ -319,10 +308,9 @@ export default async function AnalysisPage(props: Props) {
           </section>
         )}
 
-        {/* Hub link */}
         <section className="border-t border-border pt-8">
           <Link href={`/analysis/${category}`} className="text-sm underline hover:no-underline">
-            &larr; Back to all {categoryLabel} analysis
+            &larr; {tBackToAll} {categoryLabel}
           </Link>
         </section>
       </article>

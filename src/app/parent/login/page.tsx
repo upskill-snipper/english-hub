@@ -3,15 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import {
-  Mail,
-  Lock,
-  Loader2,
-  Eye,
-  EyeOff,
-  ArrowLeft,
-  GraduationCap,
-} from 'lucide-react'
+import { Mail, Lock, Loader2, Eye, EyeOff, ArrowLeft, GraduationCap } from 'lucide-react'
 import {
   Card,
   CardContent,
@@ -23,10 +15,12 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { useT } from '@/lib/i18n/use-t'
 
 const PARENT_ACCOUNT_KEY = 'english-hub-parent-account'
 
 export default function ParentLoginPage() {
+  const t = useT()
   const router = useRouter()
 
   const [email, setEmail] = useState('')
@@ -43,8 +37,8 @@ export default function ParentLoginPage() {
     setFieldErrors({})
 
     const errors: Record<string, string> = {}
-    if (!email.trim()) errors.email = 'Email address is required.'
-    if (!password) errors.password = 'Password is required.'
+    if (!email.trim()) errors.email = t('parent.email_required')
+    if (!password) errors.password = t('parent.password_required')
 
     if (Object.keys(errors).length > 0) {
       setFieldErrors(errors)
@@ -71,7 +65,7 @@ export default function ParentLoginPage() {
 
       router.push('/parent/dashboard')
     } catch {
-      setError('Invalid email or password. Please try again.')
+      setError(t('parent.invalid_credentials'))
       setLoading(false)
     }
   }
@@ -86,25 +80,23 @@ export default function ParentLoginPage() {
           render={<Link href="/" />}
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to home
+          {t('parent.back_home')}
         </Button>
 
         <div className="mb-8 text-center">
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
             <GraduationCap className="h-6 w-6 text-primary" />
           </div>
-          <h1 className="text-3xl font-bold text-foreground">Parent login</h1>
+          <h1 className="text-3xl font-bold text-foreground">{t('parent.parent_login_title')}</h1>
           <p className="mt-2 text-base text-muted-foreground">
-            Sign in to view your child&apos;s progress.
+            {t('parent.parent_login_subtitle')}
           </p>
         </div>
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-xl">Welcome back</CardTitle>
-            <CardDescription>
-              Use the email address you signed up with.
-            </CardDescription>
+            <CardTitle className="text-xl">{t('parent.welcome_back')}</CardTitle>
+            <CardDescription>{t('parent.use_signup_email')}</CardDescription>
           </CardHeader>
 
           <CardContent>
@@ -116,7 +108,7 @@ export default function ParentLoginPage() {
 
             <form onSubmit={handleSubmit} className="space-y-5" noValidate>
               <div className="space-y-1.5">
-                <Label htmlFor="email">Email address</Label>
+                <Label htmlFor="email">{t('parent.email_address')}</Label>
                 <div className="relative">
                   <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                   <Input
@@ -137,12 +129,12 @@ export default function ParentLoginPage() {
 
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">{t('parent.password_label')}</Label>
                   <Link
                     href="/parent/login"
                     className="text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
                   >
-                    Forgot password?
+                    {t('parent.forgot_password')}
                   </Link>
                 </div>
                 <div className="relative">
@@ -152,7 +144,7 @@ export default function ParentLoginPage() {
                     type={showPassword ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Your password"
+                    placeholder={t('parent.your_password_placeholder')}
                     className="pl-10 pr-10"
                     autoComplete="current-password"
                     aria-invalid={!!fieldErrors.password}
@@ -161,7 +153,9 @@ export default function ParentLoginPage() {
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-foreground"
-                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    aria-label={
+                      showPassword ? t('parent.hide_password') : t('parent.show_password')
+                    }
                   >
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
@@ -175,10 +169,10 @@ export default function ParentLoginPage() {
                 {loading ? (
                   <>
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Signing in...
+                    {t('parent.signing_in')}
                   </>
                 ) : (
-                  'Sign in'
+                  t('parent.sign_in')
                 )}
               </Button>
             </form>
@@ -186,14 +180,14 @@ export default function ParentLoginPage() {
 
           <CardFooter className="pt-0">
             <p className="w-full text-center text-sm text-muted-foreground">
-              Don&apos;t have a parent account yet?{' '}
+              {t('parent.no_account_prompt')}{' '}
               <Button
                 variant="link"
                 size="sm"
                 className="h-auto p-0 font-medium"
                 render={<Link href="/parent/signup" />}
               >
-                Sign up
+                {t('parent.sign_up')}
               </Button>
             </p>
           </CardFooter>

@@ -3,6 +3,7 @@ import { headers } from 'next/headers'
 import Link from 'next/link'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'AQA Love and Relationships Analysis: Comparisons, Themes & Quotes | The English Hub',
@@ -19,12 +20,12 @@ export const metadata: Metadata = {
 const comparisonPages = [
   {
     slug: 'sonnet-29-vs-loves-philosophy',
-    title: 'Sonnet 29 vs Love\u2019s Philosophy',
+    title: 'Sonnet 29 vs Love’s Philosophy',
     sub: 'Romantic longing',
   },
   {
     slug: 'porphyrias-lover-vs-my-last-duchess',
-    title: 'Porphyria\u2019s Lover vs My Last Duchess',
+    title: 'Porphyria’s Lover vs My Last Duchess',
     sub: 'Possessive love',
   },
   {
@@ -35,7 +36,7 @@ const comparisonPages = [
   {
     slug: 'mother-any-distance-vs-follower',
     title: 'Mother, Any Distance vs Follower',
-    sub: 'Parent\u2013child love',
+    sub: 'Parent–child love',
   },
   {
     slug: 'walking-away-vs-before-you-were-mine',
@@ -64,7 +65,7 @@ const comparisonPages = [
   },
   {
     slug: 'sonnet-29-vs-porphyrias-lover',
-    title: 'Sonnet 29 vs Porphyria\u2019s Lover',
+    title: 'Sonnet 29 vs Porphyria’s Lover',
     sub: 'Obsessive love',
   },
 ]
@@ -116,6 +117,24 @@ const techniquePages = [
 
 export default async function AqaLoveRelationshipsHub() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
+  const tBreadHome = await t('analysis.breadcrumb.home')
+  const tBreadAnalysis = await t('analysis.breadcrumb.analysis')
+  const tH1Suffix = await t('analysis.text.h1_short')
+  const tByline = await t('analysis.byline.markers')
+  const tIntro = await t('analysis.love.intro')
+  const tHowH2 = await t('analysis.how_to_use.h2')
+  const tHowBody = await t('analysis.love.how.body')
+  const tHowCta = await t('analysis.love.how.cta')
+  const tCompH2 = await t('analysis.love.compare.h2')
+  const tCompBody = await t('analysis.love.compare.body')
+  const tThemeH2 = await t('analysis.love.themes.h2')
+  const tThemeBody = await t('analysis.love.themes.body')
+  const tTechH2 = await t('analysis.love.technique.h2')
+  const tTechBody = await t('analysis.love.technique.body')
+  const tFootH2 = await t('analysis.love.foot.h2')
+  const tFootBody = await t('analysis.love.foot.body')
+  const tFootCta = await t('analysis.love.foot.cta')
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
@@ -156,53 +175,37 @@ export default async function AqaLoveRelationshipsHub() {
         />
         <nav className="mb-4 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
-            Home
+            {tBreadHome}
           </Link>
           <span className="mx-2">/</span>
-          <span>Analysis</span>
+          <span>{tBreadAnalysis}</span>
           <span className="mx-2">/</span>
           <span className="text-foreground">AQA Love and Relationships</span>
         </nav>
 
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-          AQA Love and Relationships Analysis
+          AQA Love and Relationships {tH1Suffix}
         </h1>
-        <p className="mt-3 text-sm text-muted-foreground">Written by GCSE markers</p>
+        <p className="mt-3 text-sm text-muted-foreground">{tByline}</p>
 
-        <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-          Welcome to The English Hub&apos;s AQA Love and Relationships analysis hub. The AQA
-          anthology question asks you to compare how two poets present a given idea, and the marker
-          is looking for a confident, conceptualised argument that moves beyond feature spotting.
-          Every page below is written by experienced GCSE English Literature markers and targets the
-          exact question students type into search engines the night before a mock: how two specific
-          poems compare, how a theme is presented across the cluster, or how to structure a Grade 9
-          comparison paragraph.
-        </p>
+        <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{tIntro}</p>
 
         <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-sm">
-          <h2 className="text-xl font-semibold text-foreground">How to use this hub</h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            Start with the pair of poems you already know best, then move to the theme page that
-            connects them. Read the exam technique pages last so you can rehearse the sentence
-            starters and comparison connectives on content you already understand. Every page links
-            back here and on to the main Love and Relationships revision notes.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{tHowH2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{tHowBody}</p>
           <div className="mt-4">
             <Link
               href="/revision/poetry/love-and-relationships"
               className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
             >
-              Open the Love and Relationships revision notes
+              {tHowCta}
             </Link>
           </div>
         </div>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-foreground">Poem comparisons (10)</h2>
-          <p className="mt-2 text-muted-foreground">
-            Side-by-side readings of the ten most-searched comparison pairings. Each page gives you
-            a thesis, three comparison paragraphs and a model conclusion.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{tCompH2}</h2>
+          <p className="mt-2 text-muted-foreground">{tCompBody}</p>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {comparisonPages.map((q) => (
               <li key={q.slug}>
@@ -219,19 +222,16 @@ export default async function AqaLoveRelationshipsHub() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-foreground">Themes across the anthology (8)</h2>
-          <p className="mt-2 text-muted-foreground">
-            Thematic sweeps of the whole cluster. Use these when you want to know which poems to
-            pair for a given exam prompt.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{tThemeH2}</h2>
+          <p className="mt-2 text-muted-foreground">{tThemeBody}</p>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {themePages.map((t) => (
-              <li key={t.slug}>
+            {themePages.map((theme) => (
+              <li key={theme.slug}>
                 <Link
-                  href={`/analysis/aqa-love-relationships/${t.slug}`}
+                  href={`/analysis/aqa-love-relationships/${theme.slug}`}
                   className="block rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground shadow-sm transition-colors hover:border-primary/40 hover:bg-accent"
                 >
-                  {t.title}
+                  {theme.title}
                 </Link>
               </li>
             ))}
@@ -239,21 +239,16 @@ export default async function AqaLoveRelationshipsHub() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold text-foreground">
-            Exam technique and essay writing (7)
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            Step-by-step guides to the comparison question, including which poems to memorise, how
-            to plan, and how to push a good answer into Grade 9 territory.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{tTechH2}</h2>
+          <p className="mt-2 text-muted-foreground">{tTechBody}</p>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {techniquePages.map((t) => (
-              <li key={t.slug}>
+            {techniquePages.map((tech) => (
+              <li key={tech.slug}>
                 <Link
-                  href={`/analysis/aqa-love-relationships/${t.slug}`}
+                  href={`/analysis/aqa-love-relationships/${tech.slug}`}
                   className="block rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground shadow-sm transition-colors hover:border-primary/40 hover:bg-accent"
                 >
-                  {t.title}
+                  {tech.title}
                 </Link>
               </li>
             ))}
@@ -261,21 +256,14 @@ export default async function AqaLoveRelationshipsHub() {
         </section>
 
         <section className="mt-12 rounded-xl border border-border bg-muted/40 p-6">
-          <h2 className="text-xl font-semibold text-foreground">
-            Ready to revise the whole anthology?
-          </h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            These analysis pages are designed to sit alongside our full Love and Relationships
-            revision notes, which cover every poem in order with annotated text, context and
-            suggested comparisons. If you are preparing for a closed-book exam, start there and use
-            the analysis pages to sharpen the quotations and comparisons you plan to use.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{tFootH2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{tFootBody}</p>
           <div className="mt-4">
             <Link
               href="/revision/poetry/love-and-relationships"
               className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-5 text-[0.9375rem] font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
             >
-              Go to full Love and Relationships revision notes
+              {tFootCta}
             </Link>
           </div>
         </section>
