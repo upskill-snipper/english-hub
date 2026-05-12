@@ -164,13 +164,30 @@ export default async function WeekPage({ params }: { params: Promise<Params> }) 
               <p className="text-sm text-muted-foreground mb-3">
                 Students can submit their independent paragraph to the AI feedback engine for
                 AO-aligned commentary. Their teacher sees the same feedback alongside their own
-                marking.
+                marking. The task is auto-loaded into the practice surface — students just write and
+                submit.
               </p>
+              {/* Deep-integration: pre-load the task as the prompt + the
+                  set text + the year-band as context so the AI marker
+                  scores against the right rubric. Query params are
+                  consumed by the practice page's existing state. */}
               <Link
-                href="/practice"
+                href={{
+                  pathname: '/practice',
+                  query: {
+                    ks3: '1',
+                    year: String(yearNum),
+                    term: String(termNum),
+                    week: String(weekNum),
+                    focus: lesson.focus,
+                    task: lesson.task.en,
+                    successCriteria: lesson.successCriteria.en,
+                    skillCodes: lesson.skillCodes.join(','),
+                  },
+                }}
                 className="inline-flex items-center text-sm font-medium text-primary hover:underline"
               >
-                Open the marking practice surface →
+                Open the marking surface with this task pre-loaded →
               </Link>
             </div>
           ) : null}
