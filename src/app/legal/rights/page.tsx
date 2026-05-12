@@ -344,8 +344,7 @@ export default function RightsAndPermissionsPage() {
           <li>
             {/* TODO: add /legal/copyright when the dedicated copyright notice page is created */}
             <span className="text-muted-foreground">
-              Copyright Notice â€” coming soon. (TODO: link to <code>/legal/copyright</code> when the
-              page is created.)
+              Copyright Notice ÔÇö coming soon.
             </span>
           </li>
         </ul>

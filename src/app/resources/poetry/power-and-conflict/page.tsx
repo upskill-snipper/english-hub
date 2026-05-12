@@ -460,7 +460,7 @@ export default function PowerAndConflictPage() {
               placeholder="Search poems by title, poet, or theme..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-lg border border-border py-2.5 pl-10 pr-4 text-sm text-foreground placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
+              className="w-full rounded-lg border border-border bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
             />
             {searchQuery && (
               <button
