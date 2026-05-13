@@ -12,8 +12,9 @@
  * `eh-lang` cookie says.
  *
  * Schema alignment notes:
- *   - `Locale = 'en' | 'bi' | 'ar'` matches the middleware cookie
- *     (`eh-lang`) and the LanguageToggle component shipped earlier.
+ *   - `Locale = 'en' | 'ar'` matches the middleware cookie (`eh-lang`)
+ *     and the LanguageToggle component. Bilingual mode ('bi') was
+ *     removed in May 2026 — see use-locale.ts.
  *   - Strand keys match the existing rubric headings: `reading`,
  *     `writing`, `language` (= "Language, grammar and control"),
  *     `speaking`.
@@ -24,8 +25,8 @@
 
 // ─── i18n primitives ──────────────────────────────────────────────────
 
-/** Supported locales. `bi` is rendered as EN+AR stacked; AR draws from `.ar`. */
-export type Locale = 'en' | 'bi' | 'ar'
+/** Supported locales. AR draws from `.ar`, falling back to `.en` when absent. */
+export type Locale = 'en' | 'ar'
 
 /**
  * Every user-facing string in the curriculum has an English form and
@@ -41,8 +42,8 @@ export type LocalizedString = {
 
 /**
  * Resolve a LocalizedString to a plain string given the active locale.
- * In bilingual mode the page renders both — call this twice (once with
- * 'en', once with 'ar').
+ * Falls back to `.en` whenever `.ar` is missing — keeps the page from
+ * rendering blank strings while the translation pipeline catches up.
  */
 export function loc(s: LocalizedString | undefined, locale: Locale = 'en'): string {
   if (!s) return ''

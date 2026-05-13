@@ -18,12 +18,10 @@
  *       return <button>{t('action.continue')}</button>
  *     }
  *
- * Bilingual mode: when `lang === 'bi'`, this hook still returns the
- * English string by default — bilingual rendering is the page's
- * responsibility (render both AR and EN, side-by-side, by calling
- * the lookup twice with each locale). Most surfaces don't need
- * bilingual rendering today and the AR variant alone is enough
- * for the AR-toggle workflow.
+ * Legacy bilingual mode ('bi') was removed in May 2026 — the stacked
+ * EN+AR layout didn't render reliably on dense pages. Old cookies
+ * with `eh-lang=bi` are coerced to 'en' here and by the middleware
+ * so sessions upgrade transparently.
  */
 
 import { useCallback, useEffect, useState } from 'react'
@@ -31,11 +29,9 @@ import { lookup, type Locale } from './dictionary'
 
 function readLocale(): Locale {
   if (typeof document === 'undefined') return 'en'
+  // Match legacy 'bi' too so we can coerce it to 'en'.
   const match = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar)\b/)
   const v = match?.[1]
-  // 'bi' falls back to 'en' in client-side single-string lookups;
-  // pages that want stacked bilingual rendering call `lookup()`
-  // directly with each locale.
   return v === 'ar' ? 'ar' : 'en'
 }
 

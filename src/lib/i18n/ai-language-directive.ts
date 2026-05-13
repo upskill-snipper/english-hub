@@ -8,9 +8,12 @@
 //   2. `eh-lang` cookie (fallback if header was lost en route)
 //   3. Default 'en'
 //
-// Only `ar` triggers augmentation. `bi` (bilingual mode) and `en` pass through
-// unchanged — bilingual presentation is handled in the UI chrome, not in the
-// model output.
+// Only `ar` triggers augmentation; `en` passes through unchanged.
+//
+// Bilingual mode ('bi') was removed in May 2026 — the stacked layout
+// didn't work for AI feedback content (model would emit one language
+// or the other anyway). Legacy 'bi' cookie/header values are coerced
+// to 'en' so old sessions degrade gracefully.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { NextRequest } from 'next/server'
@@ -18,15 +21,13 @@ import type { NextRequest } from 'next/server'
 const LANG_COOKIE = 'eh-lang'
 
 /** Read the user's language preference from a NextRequest. */
-export function resolveLocaleFromRequest(request: NextRequest): 'en' | 'bi' | 'ar' {
+export function resolveLocaleFromRequest(request: NextRequest): 'en' | 'ar' {
   const headerLang = request.headers.get('x-lang')
-  if (headerLang === 'ar' || headerLang === 'bi' || headerLang === 'en') {
-    return headerLang
-  }
+  if (headerLang === 'ar') return 'ar'
+  if (headerLang === 'en' || headerLang === 'bi') return 'en'
   const cookieLang = request.cookies.get(LANG_COOKIE)?.value
-  if (cookieLang === 'ar' || cookieLang === 'bi' || cookieLang === 'en') {
-    return cookieLang
-  }
+  if (cookieLang === 'ar') return 'ar'
+  // Legacy 'bi' folds to 'en'; anything unrecognised also falls through.
   return 'en'
 }
 

@@ -10,12 +10,16 @@ import { BOARDS } from '@/lib/board/board-config'
 
 const BOARD_COOKIE = 'english-hub-board'
 
-// ── Language mode cookie (en | bi | ar) ──────────────────────────────
+// ── Language mode cookie (en | ar) ──────────────────────────────────
 //
-// Three-mode toggle surfaced in the site header:
+// Two-mode toggle surfaced in the site header:
 //   en  → English only (default; SEO-indexable content)
-//   bi  → Bilingual (English + Arabic stacked per section)
-//   ar  → Arabic only (RTL layout, MSA + Khaleeji)
+//   ar  → Arabic only (RTL layout, Khaleeji)
+//
+// Bilingual mode ('bi') was removed in May 2026 — the stacked EN+AR
+// layout didn't render reliably on dense pages and Arabic-speaking users
+// asked for a simpler toggle. Legacy `bi` cookie values are coerced to
+// 'en' so old sessions upgrade cleanly on next request.
 //
 // Cookie-based for the first iteration so the toggle is user-controlled
 // and persists across visits. SEO caveat is documented in the governance
@@ -23,7 +27,7 @@ const BOARD_COOKIE = 'english-hub-board'
 // indexed for Arabic queries. Follow-up will mirror Arabic content under
 // `/ar/...` paths with hreflang alternates for actual Arabic indexing.
 const LANG_COOKIE = 'eh-lang'
-const LANG_VALUES = new Set(['en', 'bi', 'ar'])
+const LANG_VALUES = new Set(['en', 'ar'])
 
 // Paths that are allowed through without a board cookie.
 // Use exact matches and prefix matches (prefixes end with "/").
@@ -481,6 +485,9 @@ export async function middleware(request: NextRequest) {
     return res
   } else {
     const rawLang = request.cookies.get(LANG_COOKIE)?.value
+    // Coerce legacy 'bi' (bilingual, removed May 2026) to 'en' so old
+    // sessions upgrade transparently. LANG_VALUES only contains 'en'|'ar'
+    // now, so any unknown value also falls through to 'en'.
     lang = rawLang && LANG_VALUES.has(rawLang) ? rawLang : 'en'
   }
   request.headers.set('x-lang', lang)

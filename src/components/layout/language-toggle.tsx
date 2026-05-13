@@ -1,31 +1,21 @@
 'use client'
 
 /**
- * LanguageToggle — three-mode language switcher for the site header.
+ * LanguageToggle — two-mode language switcher.
  *
  *   en  → English mode  (default; content rendered in English only)
- *   bi  → Bilingual     (each section shows EN above AR)
- *   ar  → Arabic mode   (AR content only, RTL layout, MSA + Khaleeji)
+ *   ar  → Arabic mode   (AR content only, RTL layout, Khaleeji)
+ *
+ * Bilingual mode was removed (May 2026) — the stacked EN+AR layout
+ * didn't render reliably on dense pages and the user community asked
+ * for a simpler toggle. Legacy `eh-lang=bi` cookie values are coerced
+ * to `'en'` by readCookie() and by the middleware so old sessions
+ * upgrade cleanly.
  *
  * Persistence is via the `eh-lang` cookie which the middleware reads
  * on every request and stamps onto an `x-lang` request header. The
  * root layout reads that header and sets `<html lang dir="...">`
  * before first paint, so there's no flash of wrong-direction content.
- *
- * On change we write the cookie client-side AND do a `router.refresh()`
- * so the server-rendered shell + RSC payload come back in the new mode.
- * A full reload would also work but feels worse — refresh() keeps the
- * scroll position and any client state we care about.
- *
- * Tooltip strings are intentionally English in all three modes. The
- * toggle is a navigational aid; the user might be in AR mode and want
- * to switch back to EN, and they need to recognise the option. The
- * active mode is announced via `aria-pressed` for screen readers.
- *
- * Note: cookie-only Arabic mode is NOT crawled as Arabic content by
- * Google. The follow-up plan (documented in /governance) is to mirror
- * Arabic content under `/ar/...` paths with hreflang alternates. Until
- * then, this toggle is purely for logged-in / returning users.
  */
 
 import { useCallback, useEffect, useState, useTransition } from 'react'
@@ -36,21 +26,20 @@ import { useT } from '@/lib/i18n/use-t'
 const COOKIE = 'eh-lang'
 const ONE_YEAR = 60 * 60 * 24 * 365
 
-type Mode = 'en' | 'bi' | 'ar'
+type Mode = 'en' | 'ar'
 
-// Labels are intentionally compact and locale-aware. The actual tooltip
-// strings live in the master dictionary so they translate alongside the
-// rest of the site.
 const MODE_DEFS: { value: Mode; label: string; tooltipKey: string }[] = [
   { value: 'en', label: 'EN', tooltipKey: 'lang.en.tooltip' },
-  { value: 'bi', label: 'EN + AR', tooltipKey: 'lang.bi.tooltip' },
-  { value: 'ar', label: 'AR', tooltipKey: 'lang.ar.tooltip' },
+  { value: 'ar', label: 'العربية', tooltipKey: 'lang.ar.tooltip' },
 ]
 
 function readCookie(): Mode {
   if (typeof document === 'undefined') return 'en'
+  // Accept legacy `bi` values and coerce to `en` so old sessions upgrade cleanly.
   const match = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar)\b/)
-  return (match?.[1] as Mode) ?? 'en'
+  const raw = match?.[1]
+  if (raw === 'ar') return 'ar'
+  return 'en'
 }
 
 export function LanguageToggle({ className }: { className?: string }) {

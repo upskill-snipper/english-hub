@@ -57,13 +57,27 @@ export default async function Home() {
         showHelpLink
         showDivider
       />
+
+      {/* 3. KS3 foundation — same card shape as exam boards so younger students
+          (Years 7–9) get a first-class entry alongside the GCSE/IGCSE specs.
+          Single tile rather than a multi-board grid because KS3 has no
+          awarding-body branching — there's one shared national curriculum. */}
+      <BoardPickerSection
+        level="ks3"
+        boards={KS3_BOARDS}
+        sectionId="ks3-boards"
+        heading="KS3 foundation (Years 7–9)"
+        subheading="Building blocks before GCSE — reading, writing, grammar and the curriculum your school teaches before exam years. Same hub, gated to KS3 content."
+        showHelpLink={false}
+        showDivider
+      />
     </main>
   )
 }
 
 /* ───────────────────── Board picker (the main event) ───────────────────── */
 
-type BoardLevel = 'gcse' | 'igcse'
+type BoardLevel = 'gcse' | 'igcse' | 'ks3'
 
 type Board = {
   name: string
@@ -113,6 +127,21 @@ const GCSE_BOARDS: Board[] = [
     blurb: 'Eduqas anthology with annotated walkthroughs.',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+  },
+]
+
+// KS3 has no awarding-body fork — one curriculum spanning Years 7–9. We
+// still ship it through the same `setBoard=ks3` middleware pathway so the
+// cookie is written authoritatively and the user lands on /revision
+// with KS3 content unlocked.
+const KS3_BOARDS: Board[] = [
+  {
+    name: 'KS3 English (Years 7–9)',
+    initials: 'KS3',
+    href: '/revision?setBoard=ks3',
+    blurb: 'Reading, writing, grammar &amp; the year-by-year curriculum before GCSE.',
+    level: 'ks3',
+    discClass: 'bg-violet-400/15 text-violet-300 ring-violet-400/30',
   },
 ]
 
@@ -168,7 +197,13 @@ function BoardPickerSection({
 }: BoardPickerSectionProps) {
   const headingId = `${sectionId}-heading`
   const isGcse = level === 'gcse'
+  const isKs3 = level === 'ks3'
   const HeadingTag = headingLevel
+  // Per-level palette. KS3 picks violet to keep visual separation from
+  // GCSE (emerald) and IGCSE (clay). The kicker line uses the same tint
+  // so all three sections feel like siblings.
+  const kickerClass = isGcse ? 'text-emerald-300' : isKs3 ? 'text-violet-300' : 'text-clay-300'
+  const helpLinkClass = isKs3 ? 'hover:text-violet-300' : 'hover:text-clay-300'
 
   return (
     <section
@@ -178,11 +213,7 @@ function BoardPickerSection({
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
         <div className="text-center mb-10 sm:mb-12">
           {kicker ? (
-            <p
-              className={`font-mono text-[11px] tracking-[0.14em] uppercase mb-3 ${
-                isGcse ? 'text-emerald-300' : 'text-clay-300'
-              }`}
-            >
+            <p className={`font-mono text-[11px] tracking-[0.14em] uppercase mb-3 ${kickerClass}`}>
               {kicker}
             </p>
           ) : null}
@@ -205,7 +236,9 @@ function BoardPickerSection({
                 className={`group relative flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-5 sm:p-6 transition-all hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 ${
                   b.level === 'gcse'
                     ? 'hover:border-emerald-400/40 focus-visible:ring-emerald-400'
-                    : 'hover:border-clay-300/40 focus-visible:ring-clay-300'
+                    : b.level === 'ks3'
+                      ? 'hover:border-violet-400/40 focus-visible:ring-violet-400'
+                      : 'hover:border-clay-300/40 focus-visible:ring-clay-300'
                 }`}
               >
                 <span
@@ -213,10 +246,12 @@ function BoardPickerSection({
                   className={`absolute right-4 top-4 inline-flex items-center rounded-full border px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase ${
                     b.level === 'gcse'
                       ? 'border-emerald-300/40 text-emerald-300'
-                      : 'border-clay-300/40 text-clay-300'
+                      : b.level === 'ks3'
+                        ? 'border-violet-300/40 text-violet-300'
+                        : 'border-clay-300/40 text-clay-300'
                   }`}
                 >
-                  {b.level === 'gcse' ? 'GCSE' : 'IGCSE'}
+                  {b.level === 'gcse' ? 'GCSE' : b.level === 'ks3' ? 'KS3' : 'IGCSE'}
                 </span>
                 <div className="flex items-center gap-4 pr-16">
                   <span
@@ -237,10 +272,13 @@ function BoardPickerSection({
                   className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
                     b.level === 'gcse'
                       ? 'text-emerald-300 group-hover:text-emerald-200'
-                      : 'text-clay-300 group-hover:text-clay-200'
+                      : b.level === 'ks3'
+                        ? 'text-violet-300 group-hover:text-violet-200'
+                        : 'text-clay-300 group-hover:text-clay-200'
                   }`}
                 >
-                  Open board <span aria-hidden="true">&rarr;</span>
+                  {b.level === 'ks3' ? 'Open KS3' : 'Open board'}{' '}
+                  <span aria-hidden="true">&rarr;</span>
                 </span>
               </Link>
             </li>
@@ -250,7 +288,7 @@ function BoardPickerSection({
         {showHelpLink ? (
           <p className="mt-8 text-center text-xs text-cream-200/55">
             Not sure which spec your school sits?{' '}
-            <Link href="/board-select" className="underline underline-offset-4 hover:text-clay-300">
+            <Link href="/board-select" className={`underline underline-offset-4 ${helpLinkClass}`}>
               Choose by level instead.
             </Link>
           </p>

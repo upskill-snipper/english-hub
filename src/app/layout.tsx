@@ -125,8 +125,9 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   // Read the language mode the middleware stamped onto the request.
-  // Three valid values: 'en' (default), 'bi' (bilingual), 'ar' (Arabic).
-  // The middleware already validates the cookie, so this is a safe read.
+  // Two valid values: 'en' (default) and 'ar' (Arabic, RTL).
+  // Bilingual mode was removed in May 2026; the middleware coerces
+  // legacy `eh-lang=bi` cookies to 'en' before this code runs.
   const lang = (await headers()).get('x-lang') ?? 'en'
   const dir = lang === 'ar' ? 'rtl' : 'ltr'
   // `lang` attribute uses the BCP-47 tag the SR / browser actually cares

@@ -89,7 +89,7 @@ function ExerciseBlock({
     ? never
     : NonNullable<ReturnType<typeof findEALTopic>>['exercises'][number]
   index: number
-  locale: 'en' | 'bi' | 'ar'
+  locale: 'en' | 'ar'
 }) {
   const [selected, setSelected] = useState<number | null>(null)
   const t = (s: { en: string; ar?: string }) => loc(s, locale)
