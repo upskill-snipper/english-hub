@@ -1,6 +1,8 @@
+import type { Metadata } from 'next'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import AffiliateDashboardClient from './dashboard-client'
+import { t } from '@/lib/i18n/t'
 
 // ─── /affiliates/dashboard ──────────────────────────────────────────────────
 //
@@ -13,10 +15,13 @@ import AffiliateDashboardClient from './dashboard-client'
 // Fixes the redirect-loop flash: the previous implementation redirected to
 // /affiliates/apply when no legacy row existed, which bounced via
 // /affiliates/page.tsx back to /affiliates/dashboard → infinite loop.
+//
+// 2026-05-13: metadata wired to i18n — the document title comes from the
+// `affiliates.dashboard.meta.title` key so the AR locale serves Khaleeji copy.
 // ────────────────────────────────────────────────────────────────────────────
 
-export const metadata = {
-  title: 'Affiliate Dashboard — The English Hub',
+export async function generateMetadata(): Promise<Metadata> {
+  return { title: await t('affiliates.dashboard.meta.title') }
 }
 
 export default async function AffiliateDashboardPage() {
@@ -72,7 +77,9 @@ export default async function AffiliateDashboardPage() {
       .limit(20),
     admin
       .from('affiliate_payout_batches')
-      .select('id, period_start, period_end, amount_pence, conversion_count, status, paid_at, created_at')
+      .select(
+        'id, period_start, period_end, amount_pence, conversion_count, status, paid_at, created_at',
+      )
       .eq('affiliate_id', account.id)
       .order('period_start', { ascending: false })
       .limit(12),
@@ -102,9 +109,7 @@ export default async function AffiliateDashboardPage() {
   const thisMonthEarningsPence = conversions
     .filter(
       (c) =>
-        c.status !== 'voided' &&
-        c.status !== 'refunded' &&
-        new Date(c.created_at) >= thisMonth,
+        c.status !== 'voided' && c.status !== 'refunded' && new Date(c.created_at) >= thisMonth,
     )
     .reduce((sum, c) => sum + c.commission_pence, 0)
 
@@ -128,12 +133,7 @@ export default async function AffiliateDashboardPage() {
     const dayEarningsPence = conversions
       .filter((c) => {
         const t = new Date(c.created_at).getTime()
-        return (
-          t >= dayStart &&
-          t < dayEnd &&
-          c.status !== 'voided' &&
-          c.status !== 'refunded'
-        )
+        return t >= dayStart && t < dayEnd && c.status !== 'voided' && c.status !== 'refunded'
       })
       .reduce((sum, c) => sum + c.commission_pence, 0)
     return {

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import type { ExamBoard } from '@/lib/board/board-config'
+import { t } from '@/lib/i18n/t'
 import { PoetryHubAQAClient } from './PoetryHubAQAClient'
 
 type SearchParams = { wrongBoard?: string }
@@ -15,7 +16,10 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
   const board = await getServerBoard()
   const wrongBoard = searchParams?.wrongBoard === '1'
 
-  const breadcrumbItems = [{ label: 'Revision', href: '/revision' }, { label: 'Poetry' }]
+  const breadcrumbItems = [
+    { label: await t('poetry.breadcrumb_revision'), href: '/revision' },
+    { label: await t('poetry.breadcrumb_poetry') },
+  ]
 
   // ── No board chosen yet ──────────────────────────────────────────────
   if (!board) {
@@ -23,8 +27,8 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
       <>
         <Breadcrumb items={breadcrumbItems} />
         <BoardlessPoetryShell
-          title="Choose your exam board"
-          description="Each exam board uses a different poetry anthology. Pick yours so we can show you only the poems you actually need to learn."
+          title={await t('poetry.boardless.title')}
+          description={await t('poetry.boardless.description')}
         />
       </>
     )
@@ -48,26 +52,26 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <Breadcrumb items={breadcrumbItems} />
         <PoetryShell
           boardLabel="Pearson Edexcel"
-          title="Edexcel Poetry Anthology"
-          description="The Pearson Edexcel anthology is split into themed clusters. You'll study one cluster: Conflict or Time and Place."
+          title={await t('poetry.edexcel.title')}
+          description={await t('poetry.edexcel.description')}
           wrongBoard={wrongBoard}
           board={board}
         >
           <ClusterCard
             href="/revision/poetry/edexcel/conflict"
-            title="Conflict"
+            title={await t('poetry.edexcel.cluster_conflict.title')}
             subtitle="15 poems"
-            description="War, struggle, internal turmoil and the cost of conflict."
+            description={await t('poetry.edexcel.cluster_conflict.desc')}
           />
           <ClusterCard
             href="/revision/poetry/edexcel/time-and-place"
-            title="Time and Place"
+            title={await t('poetry.edexcel.cluster_time_place.title')}
             subtitle="15 poems"
-            description="Memory, landscape, identity and a sense of belonging."
+            description={await t('poetry.edexcel.cluster_time_place.desc')}
           />
           <div className="sm:col-span-2">
             <Button variant="outline" size="sm" render={<Link href="/revision/poetry/edexcel" />}>
-              View full Edexcel anthology hub
+              {await t('poetry.edexcel.view_full')}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>
@@ -83,38 +87,38 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <Breadcrumb items={breadcrumbItems} />
         <PoetryShell
           boardLabel="OCR"
-          title="Towards a World Unknown"
-          description="The OCR anthology has 4 thematic clusters of 15 poems each. You'll study one cluster prescribed by your teacher."
+          title={await t('poetry.ocr.title')}
+          description={await t('poetry.ocr.description')}
           wrongBoard={wrongBoard}
           board={board}
         >
           <ClusterCard
             href="/revision/poetry/ocr/love-and-relationships"
-            title="Love and Relationships"
+            title={await t('poetry.ocr.cluster_lar.title')}
             subtitle="15 poems"
-            description="Romantic, familial and complicated forms of love across centuries."
+            description={await t('poetry.ocr.cluster_lar.desc')}
           />
           <ClusterCard
             href="/revision/poetry/ocr/conflict"
-            title="Conflict"
+            title={await t('poetry.ocr.cluster_conflict.title')}
             subtitle="15 poems"
-            description="Personal, political and global conflict in poetry."
+            description={await t('poetry.ocr.cluster_conflict.desc')}
           />
           <ClusterCard
             href="/revision/poetry/ocr/youth-and-age"
-            title="Youth and Age"
+            title={await t('poetry.ocr.cluster_youth_age.title')}
             subtitle="15 poems"
-            description="Time, growing up, mortality and looking back."
+            description={await t('poetry.ocr.cluster_youth_age.desc')}
           />
           <ClusterCard
             href="/revision/poetry/ocr/power-and-natural-world"
-            title="Power and the Natural World"
+            title={await t('poetry.ocr.cluster_power_nature.title')}
             subtitle="15 poems"
-            description="Nature's force, human power and our relationship with the environment."
+            description={await t('poetry.ocr.cluster_power_nature.desc')}
           />
           <div className="sm:col-span-2">
             <Button variant="outline" size="sm" render={<Link href="/revision/poetry/ocr" />}>
-              View full OCR anthology hub
+              {await t('poetry.ocr.view_full')}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>
@@ -130,14 +134,14 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <Breadcrumb items={breadcrumbItems} />
         <PoetryShell
           boardLabel="WJEC Eduqas"
-          title="Eduqas Poetry Anthology"
-          description="The Eduqas 2025 anthology has 12 poems that all students study. You'll be asked to compare two of them in the exam — strong pairings are essential. Six of the twelve remain in copyright; quotations are short fair-dealing extracts."
+          title={await t('poetry.eduqas.title')}
+          description={await t('poetry.eduqas.description')}
           wrongBoard={wrongBoard}
           board={board}
         >
           <div className="sm:col-span-2">
             <Button variant="default" size="sm" render={<Link href="/revision/poetry/eduqas" />}>
-              View Eduqas anthology
+              {await t('poetry.eduqas.view')}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>
@@ -153,14 +157,14 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <Breadcrumb items={breadcrumbItems} />
         <PoetryShell
           boardLabel="Edexcel IGCSE"
-          title="Edexcel IGCSE Poetry Anthology"
-          description="Pearson Edexcel IGCSE prescribes its own poetry anthology. Head to the IGCSE area for the poems you need."
+          title={await t('poetry.edexcel_igcse.title')}
+          description={await t('poetry.edexcel_igcse.description')}
           wrongBoard={wrongBoard}
           board={board}
         >
           <div className="sm:col-span-2">
             <Button variant="default" size="sm" render={<Link href="/igcse/edexcel/poetry" />}>
-              View Edexcel IGCSE poetry
+              {await t('poetry.edexcel_igcse.view')}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>
@@ -179,14 +183,14 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <Breadcrumb items={breadcrumbItems} />
         <PoetryShell
           boardLabel={board === 'cambridge-0500' ? 'Cambridge IGCSE' : 'Cambridge IGCSE (9-1)'}
-          title="No poetry anthology for your board"
-          description="Cambridge IGCSE First Language English doesn't include a poetry anthology. Focus on Paper 1 reading skills instead — that's where your time pays off."
+          title={await t('poetry.cambridge.title')}
+          description={await t('poetry.cambridge.description')}
           wrongBoard={wrongBoard}
           board={board}
         >
           <div className="sm:col-span-2">
             <Button variant="default" size="sm" render={<Link href={paperHref} />}>
-              Go to Paper 1 reading
+              {await t('poetry.cambridge.paper1_cta')}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>
@@ -202,14 +206,14 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <Breadcrumb items={breadcrumbItems} />
         <PoetryShell
           boardLabel="Cambridge IGCSE Literature in English (0475)"
-          title="Cambridge IGCSE Literature in English"
-          description="The Cambridge Literature spec uses the Songs of Ourselves anthology. Detailed guides for each prescribed poem are on the Cambridge Lit hub."
+          title={await t('poetry.cambridge_lit.title')}
+          description={await t('poetry.cambridge_lit.description')}
           wrongBoard={wrongBoard}
           board={board}
         >
           <div className="sm:col-span-2">
             <Button variant="default" size="sm" render={<Link href="/igcse/cambridge" />}>
-              Open Cambridge Literature hub
+              {await t('poetry.cambridge_lit.cta')}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>
@@ -225,8 +229,8 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <Breadcrumb items={breadcrumbItems} />
         <PoetryShell
           boardLabel="Pearson Edexcel IGCSE Language A (4EA1)"
-          title="Edexcel IGCSE Language A doesn't have a poetry anthology"
-          description="The Language A spec (4EA1) focuses on non-fiction, transactional writing, and unseen prose — not a poetry anthology. Head to the Anthology section under Paper 1 for your prescribed texts."
+          title={await t('poetry.edexcel_lang.title')}
+          description={await t('poetry.edexcel_lang.description')}
           wrongBoard={wrongBoard}
           board={board}
         >
@@ -236,7 +240,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
               size="sm"
               render={<Link href="/igcse/edexcel-lang/anthology" />}
             >
-              Go to Language A anthology
+              {await t('poetry.edexcel_lang.cta')}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>
@@ -257,14 +261,14 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <Breadcrumb items={breadcrumbItems} />
         <PoetryShell
           boardLabel="A-Level English Literature"
-          title="A-Level poetry isn't an anthology cluster"
-          description="At A-Level, poetry is studied as part of a wider literature paper, not as a separate cluster. Use the unified hub to access your A-Level-specific resources."
+          title={await t('poetry.a_level.title')}
+          description={await t('poetry.a_level.description')}
           wrongBoard={wrongBoard}
           board={board}
         >
           <div className="sm:col-span-2">
             <Button variant="default" size="sm" render={<Link href="/revision" />}>
-              Open your A-Level hub
+              {await t('poetry.a_level.cta')}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>
@@ -280,14 +284,14 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <Breadcrumb items={breadcrumbItems} />
         <PoetryShell
           boardLabel="Edexcel IAL English Literature"
-          title="Edexcel IAL English Literature"
-          description="The IAL Literature paper draws on Edexcel's anthology. Open your IAL hub for spec-specific resources."
+          title={await t('poetry.ial.title')}
+          description={await t('poetry.ial.description')}
           wrongBoard={wrongBoard}
           board={board}
         >
           <div className="sm:col-span-2">
             <Button variant="default" size="sm" render={<Link href="/revision/ial" />}>
-              Open IAL hub
+              {await t('poetry.ial.cta')}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>
@@ -303,14 +307,14 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
         <Breadcrumb items={breadcrumbItems} />
         <PoetryShell
           boardLabel="KS3 English"
-          title="KS3 poetry is themed, not anthology-based"
-          description="KS3 lessons cover a rotating set of poems by theme rather than a fixed anthology. Use the unified KS3 hub for your year-group resources."
+          title={await t('poetry.ks3.title')}
+          description={await t('poetry.ks3.description')}
           wrongBoard={wrongBoard}
           board={board}
         >
           <div className="sm:col-span-2">
             <Button variant="default" size="sm" render={<Link href="/revision" />}>
-              Open KS3 hub
+              {await t('poetry.ks3.cta')}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>
@@ -326,8 +330,8 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
     <>
       <Breadcrumb items={breadcrumbItems} />
       <BoardlessPoetryShell
-        title="Choose your exam board"
-        description="Pick a board to see your poetry anthology."
+        title={await t('poetry.boardless.fallback_title')}
+        description={await t('poetry.boardless.fallback_description')}
       />
     </>
   )
@@ -335,7 +339,7 @@ export default async function PoetryRevisionPage(props: { searchParams?: Promise
 
 // ─── Shared shell components (server) ───────────────────────────────────────
 
-function PoetryShell({
+async function PoetryShell({
   boardLabel,
   title,
   description,
@@ -364,19 +368,19 @@ function PoetryShell({
             render={<Link href="/revision" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Revision Hub
+            {await t('poetry.back_to_revision')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              {boardLabel} Poetry
+              {boardLabel} {await t('poetry.badge_poetry_suffix')}
             </Badge>
             <Link
               href="/board-select"
               className="text-caption text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
             >
-              Change board
+              {await t('poetry.change_board')}
             </Link>
           </div>
 
@@ -387,7 +391,7 @@ function PoetryShell({
             <div className="mt-6 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 p-3">
               <Info className="mt-0.5 size-4 shrink-0 text-clay-600" />
               <p className="text-caption text-muted-foreground">
-                That page belongs to a different exam board. Here&apos;s your anthology instead.
+                {await t('poetry.wrong_board_banner')}
               </p>
             </div>
           )}
@@ -405,7 +409,13 @@ function PoetryShell({
   )
 }
 
-function BoardlessPoetryShell({ title, description }: { title: string; description: string }) {
+async function BoardlessPoetryShell({
+  title,
+  description,
+}: {
+  title: string
+  description: string
+}) {
   return (
     <div className="space-y-10 pb-16">
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-rose-500/[0.04] p-6 sm:p-8 lg:p-10">
@@ -417,12 +427,12 @@ function BoardlessPoetryShell({ title, description }: { title: string; descripti
             render={<Link href="/revision" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Revision Hub
+            {await t('poetry.back_to_revision')}
           </Button>
 
           <Badge variant="secondary" className="mb-4">
             <Sparkles className="mr-1 size-3" />
-            Poetry Revision
+            {await t('poetry.badge_poetry_revision')}
           </Badge>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">{title}</h1>
@@ -434,7 +444,7 @@ function BoardlessPoetryShell({ title, description }: { title: string; descripti
             className="mt-6"
             render={<Link href="/board-select" />}
           >
-            Choose your exam board
+            {await t('poetry.choose_your_board_cta')}
             <ArrowRight className="size-4" />
           </Button>
         </div>
@@ -613,7 +623,7 @@ const ANTHOLOGY_LINKS: AnthologyLink[] = [
   },
 ]
 
-function AnthologyLinks({ board }: { board: ExamBoard | null }) {
+async function AnthologyLinks({ board }: { board: ExamBoard | null }) {
   // Filter to the user's board when known. If we don't know the board, OR
   // we know the board but nothing matches it (e.g. Cambridge language-only),
   // we fall back to showing every anthology so the page still has discovery
@@ -624,9 +634,9 @@ function AnthologyLinks({ board }: { board: ExamBoard | null }) {
   const links = isFallback ? ANTHOLOGY_LINKS : filtered
   const heading = isFallback
     ? board
-      ? 'Other anthologies on the platform'
-      : 'Anthology-specific revision'
-    : 'Your anthology'
+      ? await t('poetry.anthology_links.heading_other')
+      : await t('poetry.anthology_links.heading_generic')
+    : await t('poetry.anthology_links.heading_your')
 
   return (
     <section aria-labelledby="anthology-links-heading" className="space-y-4">
@@ -635,8 +645,7 @@ function AnthologyLinks({ board }: { board: ExamBoard | null }) {
       </h2>
       {isFallback && board && (
         <p className="text-body-sm text-muted-foreground">
-          Your selected board does not have a dedicated anthology in this section. Other boards are
-          listed below for reference — each is labelled with the board it belongs to.
+          {await t('poetry.anthology_links.fallback_note')}
         </p>
       )}
       <div className="grid gap-4 sm:grid-cols-2">
@@ -698,14 +707,12 @@ function ClusterCard({
   )
 }
 
-function WrongBoardBanner() {
+async function WrongBoardBanner() {
   return (
     <div className="mb-4 rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4">
       <div className="flex items-start gap-2">
         <Info className="mt-0.5 size-4 shrink-0 text-clay-600" />
-        <p className="text-caption text-muted-foreground">
-          That page belongs to a different exam board. Here&apos;s your anthology instead.
-        </p>
+        <p className="text-caption text-muted-foreground">{await t('poetry.wrong_board_banner')}</p>
       </div>
     </div>
   )

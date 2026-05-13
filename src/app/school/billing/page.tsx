@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 import {
   CreditCard,
   Calendar,
@@ -12,10 +12,11 @@ import {
   Building2,
   GraduationCap,
   Sparkles,
-} from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+} from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -24,11 +25,11 @@ import { Button } from "@/components/ui/button"
 interface SchoolAccessData {
   schoolId: string
   schoolName: string
-  accessType: "founder" | "paid" | "trial" | "expired"
+  accessType: 'founder' | 'paid' | 'trial' | 'expired'
   accessUntil: string | null
   isActive: boolean
   daysRemaining: number | null
-  userRole: "admin" | "head_of_department" | "teacher" | "student"
+  userRole: 'admin' | 'head_of_department' | 'teacher' | 'student'
   renewalPrice?: number
   renewalCurrency?: string
 }
@@ -42,8 +43,8 @@ interface UsageStats {
 // Constants
 // ---------------------------------------------------------------------------
 
-const BILLING_EMAIL = "info@Upskillenergy.com"
-const FOUNDER_EXPIRY = new Date("2026-08-31T23:59:59Z")
+const BILLING_EMAIL = 'info@Upskillenergy.com'
+const FOUNDER_EXPIRY = new Date('2026-08-31T23:59:59Z')
 const RENEWAL_WARNING_DAYS = 60
 const FOUNDING_SCHOOLS_TOTAL = 10
 
@@ -58,46 +59,37 @@ interface PricingTier {
 
 const PRICING_TIERS: PricingTier[] = [
   {
-    id: "ks3",
-    name: "KS3 Only",
-    yearGroups: "Years 7\u20139",
+    id: 'ks3',
+    name: 'KS3 Only',
+    yearGroups: 'Years 7\u20139',
     pricePerPupil: 12,
     founderPricePerPupil: 6,
-    description: "Key Stage 3 English resources for Years 7\u20139",
+    description: 'Key Stage 3 English resources for Years 7\u20139',
   },
   {
-    id: "ks4",
-    name: "KS4 Only",
-    yearGroups: "Years 10\u201311",
+    id: 'ks4',
+    name: 'KS4 Only',
+    yearGroups: 'Years 10\u201311',
     pricePerPupil: 15,
     founderPricePerPupil: 7.5,
-    description: "GCSE English resources for Years 10\u201311",
+    description: 'GCSE English resources for Years 10\u201311',
   },
   {
-    id: "ks3-ks4",
-    name: "KS3 + KS4",
-    yearGroups: "Years 7\u201311",
+    id: 'ks3-ks4',
+    name: 'KS3 + KS4',
+    yearGroups: 'Years 7\u201311',
     pricePerPupil: 22,
     founderPricePerPupil: 11,
-    description: "Complete KS3 and GCSE English coverage",
+    description: 'Complete KS3 and GCSE English coverage',
   },
   {
-    id: "whole-secondary",
-    name: "Whole Secondary",
-    yearGroups: "Years 7\u201313",
+    id: 'whole-secondary',
+    name: 'Whole Secondary',
+    yearGroups: 'Years 7\u201313',
     pricePerPupil: 26,
     founderPricePerPupil: 13,
-    description: "Full secondary including KS5 / Sixth Form",
+    description: 'Full secondary including KS5 / Sixth Form',
   },
-]
-
-const LICENSE_FEATURES = [
-  "Per-pupil pricing \u2014 pay only for students enrolled",
-  "All teachers included at no extra cost",
-  "Full resource library access",
-  "Admin portal & dashboard",
-  "Analytics & progress tracking",
-  "Priority support",
 ]
 
 // ---------------------------------------------------------------------------
@@ -110,10 +102,10 @@ function calcDaysRemaining(): number {
 }
 
 function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
+  return new Date(iso).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
   })
 }
 
@@ -143,6 +135,7 @@ function FounderPlanCard({
   access: SchoolAccessData
   daysRemaining: number
 }) {
+  const t = useT()
   const showRenewalWarning = daysRemaining <= RENEWAL_WARNING_DAYS
 
   return (
@@ -151,10 +144,10 @@ function FounderPlanCard({
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-center gap-3">
             <CreditCard className="h-5 w-5 text-clay-600" />
-            <CardTitle className="text-foreground">Current Plan</CardTitle>
+            <CardTitle className="text-foreground">{t('school.billing.current_plan')}</CardTitle>
           </div>
           <Badge className="shrink-0 border border-amber-500/40 bg-amber-500/15 text-clay-600 text-xs font-semibold">
-            FOUNDER
+            {t('school.billing.founder_badge')}
           </Badge>
         </div>
       </CardHeader>
@@ -162,11 +155,11 @@ function FounderPlanCard({
         {/* Plan heading + active badge */}
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-2xl font-bold tracking-tight text-foreground">
-            FOUNDER Access
+            {t('school.billing.founder_access_heading')}
           </h2>
           <Badge className="w-fit border border-emerald-500/30 bg-emerald-500/15 text-emerald-400 text-xs">
             <CheckCircle className="mr-1 h-3 w-3" />
-            Active
+            {t('school.billing.active')}
           </Badge>
         </div>
 
@@ -174,18 +167,22 @@ function FounderPlanCard({
         <div className="rounded-lg border border-border bg-muted/30 px-4 py-3 space-y-2">
           <div className="flex items-center gap-2 text-sm text-foreground">
             <Calendar className="h-4 w-4 text-muted-foreground" />
-            <span className="font-medium">Free access until 31 August 2026</span>
+            <span className="font-medium">{t('school.billing.free_until')}</span>
           </div>
           <p className="text-sm text-muted-foreground pl-6">
-            After expiry: per-pupil pricing from{" "}
-            <span className="text-foreground font-medium">&pound;6/pupil/year</span>{" "}
-            (Founding Schools) or{" "}
-            <span className="text-foreground font-medium">&pound;12/pupil/year</span>{" "}
-            (standard)
+            {t('school.billing.after_expiry_pre')}{' '}
+            <span className="text-foreground font-medium">&pound;6/pupil/year</span>{' '}
+            {t('school.billing.after_expiry_founder_suffix')}{' '}
+            <span className="text-foreground font-medium">&pound;12/pupil/year</span>{' '}
+            {t('school.billing.after_expiry_standard_suffix')}
           </p>
           <div className="pl-6 pt-1">
             <span className="inline-block rounded-md bg-muted/60 px-3 py-1 text-sm font-semibold text-foreground tabular-nums">
-              {daysRemaining} {daysRemaining === 1 ? "day" : "days"} remaining
+              {daysRemaining}{' '}
+              {daysRemaining === 1
+                ? t('school.billing.day_singular')
+                : t('school.billing.day_plural')}{' '}
+              {t('school.billing.remaining')}
             </span>
           </div>
         </div>
@@ -195,9 +192,11 @@ function FounderPlanCard({
           <div className="rounded-lg border border-amber-500/40 bg-amber-500/10 px-4 py-3 flex items-start gap-3">
             <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
             <p className="text-sm text-amber-700">
-              Your FOUNDER access expires in{" "}
-              <span className="font-semibold">{daysRemaining} days</span>. Renew now to maintain
-              uninterrupted access for all students and teachers.
+              {t('school.billing.warning_pre')}{' '}
+              <span className="font-semibold">
+                {daysRemaining} {t('school.billing.day_plural')}
+              </span>
+              . {t('school.billing.warning_post')}
             </p>
           </div>
         )}
@@ -209,16 +208,20 @@ function FounderPlanCard({
             className="border-amber-500/40 text-clay-600 hover:bg-amber-500/10 hover:text-amber-700"
             render={<a href={buildRenewalMailto(access.schoolName)} />}
           >
-              <Mail className="mr-2 h-4 w-4" />
-              Contact Us to Renew
+            <Mail className="mr-2 h-4 w-4" />
+            {t('school.billing.contact_renew')}
           </Button>
           <Button
             variant="ghost"
             size="sm"
             className="text-muted-foreground hover:text-foreground"
-            render={<a href={`mailto:${BILLING_EMAIL}?subject=Early%20Renewal%20-%20${encodeURIComponent(access.schoolName)}`} />}
+            render={
+              <a
+                href={`mailto:${BILLING_EMAIL}?subject=Early%20Renewal%20-%20${encodeURIComponent(access.schoolName)}`}
+              />
+            }
           >
-              Renew Early
+            {t('school.billing.renew_early')}
           </Button>
         </div>
       </CardContent>
@@ -227,6 +230,7 @@ function FounderPlanCard({
 }
 
 function PaidPlanCard({ access }: { access: SchoolAccessData }) {
+  const t = useT()
   const [showCancelConfirm, setShowCancelConfirm] = useState(false)
 
   return (
@@ -234,21 +238,21 @@ function PaidPlanCard({ access }: { access: SchoolAccessData }) {
       <CardHeader className="pb-3">
         <div className="flex items-center gap-3">
           <CreditCard className="h-5 w-5 text-muted-foreground" />
-          <CardTitle className="text-foreground">Current Plan</CardTitle>
+          <CardTitle className="text-foreground">{t('school.billing.current_plan')}</CardTitle>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-2xl font-bold tracking-tight text-foreground">
-            School Subscription
+            {t('school.billing.subscription_heading')}
           </h2>
           <div className="flex items-center gap-2">
             <Badge className="w-fit border border-emerald-500/30 bg-emerald-500/15 text-emerald-400 text-xs">
               <CheckCircle className="mr-1 h-3 w-3" />
-              Active
+              {t('school.billing.active')}
             </Badge>
             <span className="text-sm text-muted-foreground font-medium">
-              Per-pupil pricing
+              {t('school.billing.per_pupil_pricing')}
             </span>
           </div>
         </div>
@@ -257,12 +261,12 @@ function PaidPlanCard({ access }: { access: SchoolAccessData }) {
           <div className="rounded-lg border border-border bg-muted/30 px-4 py-3 space-y-1">
             <div className="flex items-center gap-2 text-sm">
               <Calendar className="h-4 w-4 text-muted-foreground" />
-              <span className="text-muted-foreground">Renews:</span>
+              <span className="text-muted-foreground">{t('school.billing.renews_label')}</span>
               <span className="font-medium text-foreground">{formatDate(access.accessUntil)}</span>
             </div>
             {access.daysRemaining !== null && (
               <p className="pl-6 text-xs text-muted-foreground">
-                {access.daysRemaining} days until renewal
+                {access.daysRemaining} {t('school.billing.days_until_renewal')}
               </p>
             )}
           </div>
@@ -275,33 +279,30 @@ function PaidPlanCard({ access }: { access: SchoolAccessData }) {
             className="text-muted-foreground hover:text-destructive"
             onClick={() => setShowCancelConfirm(true)}
           >
-            Cancel Subscription
+            {t('school.billing.cancel_subscription')}
           </Button>
         ) : (
           <div className="rounded-lg border border-destructive/40 bg-destructive/5 px-4 py-3 space-y-3">
             <p className="text-sm font-medium text-destructive">
-              Are you sure you want to cancel?
+              {t('school.billing.cancel_sure')}
             </p>
-            <p className="text-xs text-muted-foreground">
-              Your access will continue until the end of the billing period. Contact us to process
-              the cancellation.
-            </p>
+            <p className="text-xs text-muted-foreground">{t('school.billing.cancel_note')}</p>
             <div className="flex gap-2">
               <Button
                 size="sm"
                 variant="outline"
                 className="border-destructive/40 text-destructive hover:bg-destructive/10"
-                render={<a href={`mailto:${BILLING_EMAIL}?subject=Cancel%20Subscription%20-%20${encodeURIComponent(access.schoolName)}`} />}
+                render={
+                  <a
+                    href={`mailto:${BILLING_EMAIL}?subject=Cancel%20Subscription%20-%20${encodeURIComponent(access.schoolName)}`}
+                  />
+                }
               >
-                  <Mail className="mr-1.5 h-3.5 w-3.5" />
-                  Email to Cancel
+                <Mail className="mr-1.5 h-3.5 w-3.5" />
+                {t('school.billing.email_cancel')}
               </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setShowCancelConfirm(false)}
-              >
-                Keep Subscription
+              <Button variant="ghost" size="sm" onClick={() => setShowCancelConfirm(false)}>
+                {t('school.billing.keep_subscription')}
               </Button>
             </div>
           </div>
@@ -339,16 +340,23 @@ function PricingTierRow({ tier, isFounder }: { tier: PricingTier; isFounder: boo
 }
 
 function PricingCard({ isFounder }: { isFounder: boolean }) {
+  const t = useT()
+  const featureKeys = [
+    'school.billing.feat.per_pupil',
+    'school.billing.feat.all_teachers',
+    'school.billing.feat.full_library',
+    'school.billing.feat.admin_portal',
+    'school.billing.feat.analytics',
+    'school.billing.feat.priority_support',
+  ]
   return (
     <Card className="border-border bg-card/60">
       <CardHeader className="pb-3">
         <div className="flex items-center gap-3">
           <GraduationCap className="h-5 w-5 text-muted-foreground" />
           <div>
-            <CardTitle className="text-foreground">Per-Pupil Pricing</CardTitle>
-            <CardDescription className="mt-0.5">
-              Flexible pricing based on your key stages and pupil numbers.
-            </CardDescription>
+            <CardTitle className="text-foreground">{t('school.billing.pricing_title')}</CardTitle>
+            <CardDescription className="mt-0.5">{t('school.billing.pricing_desc')}</CardDescription>
           </div>
         </div>
       </CardHeader>
@@ -358,12 +366,13 @@ function PricingCard({ isFounder }: { isFounder: boolean }) {
           <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
           <div className="space-y-1">
             <p className="text-sm font-semibold text-amber-700">
-              Founding Schools &mdash; 50% off Year 1
+              {t('school.billing.founding_50_title')}
             </p>
             <p className="text-xs text-muted-foreground">
-              The first {FOUNDING_SCHOOLS_TOTAL} schools to subscribe receive 50% off their first
-              year. Founding School pricing is shown{" "}
-              {isFounder ? "as your current rate below." : "alongside standard rates below."}
+              {t('school.billing.founding_50_pre')} {FOUNDING_SCHOOLS_TOTAL}{' '}
+              {isFounder
+                ? t('school.billing.founding_50_post_isfounder')
+                : t('school.billing.founding_50_post_standard')}
             </p>
           </div>
         </div>
@@ -378,34 +387,47 @@ function PricingCard({ isFounder }: { isFounder: boolean }) {
         {/* Example calculation */}
         <div className="rounded-lg border border-border bg-muted/30 px-4 py-3 space-y-1">
           <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-            Example
+            {t('school.billing.example_label')}
           </p>
           <p className="text-sm text-foreground">
-            A school with <span className="font-semibold">800 KS3+KS4 pupils</span> would pay{" "}
-            <span className="font-semibold">&pound;17,600/year</span> (standard) or{" "}
-            <span className="font-semibold text-clay-600">&pound;8,800/year</span> as a Founding
-            School.
+            {t('school.billing.example_pre')}{' '}
+            <span className="font-semibold">{t('school.billing.example_pupils')}</span>{' '}
+            {t('school.billing.example_would_pay')}{' '}
+            <span className="font-semibold">&pound;17,600{t('school.billing.example_year')}</span>{' '}
+            {t('school.billing.example_standard_or')}{' '}
+            <span className="font-semibold text-clay-600">
+              &pound;8,800{t('school.billing.example_year')}
+            </span>{' '}
+            {t('school.billing.example_founding_suffix')}
           </p>
         </div>
 
         {/* Features */}
         <ul className="space-y-2">
-          {LICENSE_FEATURES.map((feature) => (
-            <li key={feature} className="flex items-center gap-2.5 text-sm text-foreground">
+          {featureKeys.map((key) => (
+            <li key={key} className="flex items-center gap-2.5 text-sm text-foreground">
               <CheckCircle className="h-4 w-4 shrink-0 text-emerald-500" />
-              {feature}
+              {t(key)}
             </li>
           ))}
         </ul>
 
         {/* CTA */}
         <div className="flex flex-col gap-2 pt-1 sm:flex-row">
-          <Button className="bg-primary hover:bg-primary/90" render={<a href={`mailto:${BILLING_EMAIL}?subject=Subscription%20Enquiry`} />}>
-              <Mail className="mr-2 h-4 w-4" />
-              Get a Quote
+          <Button
+            className="bg-primary hover:bg-primary/90"
+            render={<a href={`mailto:${BILLING_EMAIL}?subject=Subscription%20Enquiry`} />}
+          >
+            <Mail className="mr-2 h-4 w-4" />
+            {t('school.billing.get_quote')}
           </Button>
-          <Button variant="outline" size="sm" className="text-muted-foreground" render={<a href={`mailto:${BILLING_EMAIL}?subject=Pricing%20Question`} />}>
-              Ask a Question
+          <Button
+            variant="outline"
+            size="sm"
+            className="text-muted-foreground"
+            render={<a href={`mailto:${BILLING_EMAIL}?subject=Pricing%20Question`} />}
+          >
+            {t('school.billing.ask_question')}
           </Button>
         </div>
       </CardContent>
@@ -414,24 +436,25 @@ function PricingCard({ isFounder }: { isFounder: boolean }) {
 }
 
 function UsageStatsCard({ stats, loading }: { stats: UsageStats; loading: boolean }) {
+  const t = useT()
   const rows = [
     {
       icon: Users,
-      label: "Students enrolled",
-      value: loading ? "--" : String(stats.totalStudents),
-      limit: "Billed per pupil",
+      label: t('school.billing.usage.students_enrolled'),
+      value: loading ? t('school.billing.usage.dash') : String(stats.totalStudents),
+      limit: t('school.billing.usage.billed_per_pupil'),
     },
     {
       icon: Users,
-      label: "Teachers",
-      value: loading ? "--" : String(stats.totalTeachers),
-      limit: "Included at no extra cost",
+      label: t('school.billing.usage.teachers'),
+      value: loading ? t('school.billing.usage.dash') : String(stats.totalTeachers),
+      limit: t('school.billing.usage.teachers_included'),
     },
     {
       icon: TrendingUp,
-      label: "Resources",
-      value: "Full access",
-      limit: "All resources included",
+      label: t('school.billing.usage.resources'),
+      value: t('school.billing.usage.resources_full'),
+      limit: t('school.billing.usage.all_included'),
     },
   ]
 
@@ -440,7 +463,7 @@ function UsageStatsCard({ stats, loading }: { stats: UsageStats; loading: boolea
       <CardHeader className="pb-3">
         <div className="flex items-center gap-3">
           <TrendingUp className="h-5 w-5 text-muted-foreground" />
-          <CardTitle className="text-foreground">Usage</CardTitle>
+          <CardTitle className="text-foreground">{t('school.billing.usage_title')}</CardTitle>
         </div>
       </CardHeader>
       <CardContent>
@@ -453,7 +476,9 @@ function UsageStatsCard({ stats, loading }: { stats: UsageStats; loading: boolea
               </div>
               <div className="text-right">
                 <span className="text-sm font-semibold text-foreground tabular-nums">{value}</span>
-                <span className="mx-1 text-xs text-muted-foreground">of</span>
+                <span className="mx-1 text-xs text-muted-foreground">
+                  {t('school.billing.usage.of')}
+                </span>
                 <span className="text-sm text-muted-foreground">{limit}</span>
               </div>
             </li>
@@ -465,12 +490,13 @@ function UsageStatsCard({ stats, loading }: { stats: UsageStats; loading: boolea
 }
 
 function InvoiceHistoryCard({ isFounder }: { isFounder: boolean }) {
+  const t = useT()
   return (
     <Card className="border-border bg-card/60">
       <CardHeader className="pb-3">
         <div className="flex items-center gap-3">
           <CreditCard className="h-5 w-5 text-muted-foreground" />
-          <CardTitle className="text-foreground">Invoice & Payment History</CardTitle>
+          <CardTitle className="text-foreground">{t('school.billing.invoice_title')}</CardTitle>
         </div>
       </CardHeader>
       <CardContent>
@@ -478,11 +504,11 @@ function InvoiceHistoryCard({ isFounder }: { isFounder: boolean }) {
           <CreditCard className="mb-3 h-8 w-8 text-muted-foreground/30" />
           <p className="text-sm text-muted-foreground">
             {isFounder
-              ? "No invoices yet. You are on a free FOUNDER plan."
-              : "No payment history available."}
+              ? t('school.billing.invoice_empty_founder')
+              : t('school.billing.invoice_empty_standard')}
           </p>
           <p className="mt-1 text-xs text-muted-foreground">
-            Invoices will appear here once a paid subscription is active.
+            {t('school.billing.invoice_appear_when')}
           </p>
         </div>
       </CardContent>
@@ -505,17 +531,19 @@ function RenewalCtaCard({
         <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-clay-600" />
         <div className="flex-1 space-y-3">
           <p className="text-sm font-semibold text-amber-700">
-            Your FOUNDER access expires in{" "}
-            <span className="font-bold">{daysRemaining} {daysRemaining === 1 ? "day" : "days"}</span>.
-            Renew now to maintain uninterrupted access for all students and teachers.
+            Your FOUNDER access expires in{' '}
+            <span className="font-bold">
+              {daysRemaining} {daysRemaining === 1 ? 'day' : 'days'}
+            </span>
+            . Renew now to maintain uninterrupted access for all students and teachers.
           </p>
           <Button
             className="bg-amber-500 text-amber-950 hover:bg-amber-400 font-semibold"
             size="sm"
             render={<a href={buildRenewalMailto(schoolName)} />}
           >
-              <Mail className="mr-2 h-4 w-4" />
-              Contact Us to Renew
+            <Mail className="mr-2 h-4 w-4" />
+            Contact Us to Renew
           </Button>
         </div>
       </div>
@@ -529,7 +557,7 @@ function BillingContactCard() {
       <CardContent className="flex items-center gap-3 py-4">
         <Mail className="h-4 w-4 shrink-0 text-muted-foreground" />
         <p className="text-sm text-muted-foreground">
-          For billing questions:{" "}
+          For billing questions:{' '}
           <a
             href={`mailto:${BILLING_EMAIL}`}
             className="font-medium text-primary underline-offset-4 hover:underline"
@@ -557,16 +585,16 @@ export default function SchoolBillingPage() {
   useEffect(() => {
     async function fetchAccess() {
       try {
-        const res = await fetch("/api/school/access")
+        const res = await fetch('/api/school/access')
         if (!res.ok) {
           const json = await res.json().catch(() => ({}))
-          setError((json as { error?: string }).error ?? "Failed to load billing information.")
+          setError((json as { error?: string }).error ?? 'Failed to load billing information.')
           return
         }
         const data: SchoolAccessData = await res.json()
         setAccess(data)
       } catch {
-        setError("Failed to load billing information. Please refresh the page.")
+        setError('Failed to load billing information. Please refresh the page.')
       } finally {
         setLoading(false)
       }
@@ -579,7 +607,7 @@ export default function SchoolBillingPage() {
   useEffect(() => {
     async function fetchStats() {
       try {
-        const res = await fetch("/api/school/overview")
+        const res = await fetch('/api/school/overview')
         if (!res.ok) return
         const json = await res.json()
         setStats({
@@ -596,8 +624,8 @@ export default function SchoolBillingPage() {
     fetchStats()
   }, [])
 
-  const isFounder = access?.accessType === "founder"
-  const isPaid = access?.accessType === "paid"
+  const isFounder = access?.accessType === 'founder'
+  const isPaid = access?.accessType === 'paid'
   const daysRemaining = isFounder ? calcDaysRemaining() : (access?.daysRemaining ?? 0)
 
   return (
@@ -640,9 +668,7 @@ export default function SchoolBillingPage() {
           )}
 
           {/* Current plan card */}
-          {isFounder && (
-            <FounderPlanCard access={access} daysRemaining={daysRemaining} />
-          )}
+          {isFounder && <FounderPlanCard access={access} daysRemaining={daysRemaining} />}
           {isPaid && <PaidPlanCard access={access} />}
 
           {/* Per-pupil pricing */}

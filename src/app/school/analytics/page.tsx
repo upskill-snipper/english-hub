@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import Link from "next/link"
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import {
   BarChart3,
   TrendingUp,
@@ -16,17 +16,18 @@ import {
   Clock,
   ChevronRight,
   LineChart,
-} from "lucide-react"
-import { useAuthStore } from "@/store/auth-store"
-import { percentageToGCSEGrade, gcseGradeColor } from "@/lib/grades"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Skeleton } from "@/components/ui/skeleton"
+} from 'lucide-react'
+import { useAuthStore } from '@/store/auth-store'
+import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
-type DateRange = "week" | "month" | "term" | "year"
+type DateRange = 'week' | 'month' | 'term' | 'year'
 
 interface TopStats {
   activeStudents: number
@@ -92,73 +93,155 @@ const MOCK_DATA: AnalyticsData = {
     atRiskCount: 24,
   },
   yearGroups: [
-    { year: "Year 7",  students: 58,  avgProgress: 74, assignmentsCompleted: 312, atRiskCount: 3 },
-    { year: "Year 8",  students: 61,  avgProgress: 71, assignmentsCompleted: 298, atRiskCount: 4 },
-    { year: "Year 9",  students: 55,  avgProgress: 66, assignmentsCompleted: 271, atRiskCount: 5 },
-    { year: "Year 10", students: 63,  avgProgress: 63, assignmentsCompleted: 344, atRiskCount: 6 },
-    { year: "Year 11", students: 59,  avgProgress: 58, assignmentsCompleted: 391, atRiskCount: 7 },
-    { year: "Year 12", students: 38,  avgProgress: 72, assignmentsCompleted: 176, atRiskCount: 2 },
-    { year: "Year 13", students: 34,  avgProgress: 69, assignmentsCompleted: 155, atRiskCount: 2 },
+    { year: 'Year 7', students: 58, avgProgress: 74, assignmentsCompleted: 312, atRiskCount: 3 },
+    { year: 'Year 8', students: 61, avgProgress: 71, assignmentsCompleted: 298, atRiskCount: 4 },
+    { year: 'Year 9', students: 55, avgProgress: 66, assignmentsCompleted: 271, atRiskCount: 5 },
+    { year: 'Year 10', students: 63, avgProgress: 63, assignmentsCompleted: 344, atRiskCount: 6 },
+    { year: 'Year 11', students: 59, avgProgress: 58, assignmentsCompleted: 391, atRiskCount: 7 },
+    { year: 'Year 12', students: 38, avgProgress: 72, assignmentsCompleted: 176, atRiskCount: 2 },
+    { year: 'Year 13', students: 34, avgProgress: 69, assignmentsCompleted: 155, atRiskCount: 2 },
   ],
   atRiskStudents: [
-    { id: "1", name: "Jamie Thompson",   year: "Year 11", lastActive: "21 Mar 2026", issue: "Not logged in for 14 days",         teacherEmail: "m.chen@school.ac.uk" },
-    { id: "2", name: "Priya Sharma",     year: "Year 10", lastActive: "25 Mar 2026", issue: "Average score below 40% (32%)",     teacherEmail: "s.walsh@school.ac.uk" },
-    { id: "3", name: "Daniel Okafor",    year: "Year 9",  lastActive: "28 Mar 2026", issue: "Assignment completion below 50% (38%)", teacherEmail: "r.patel@school.ac.uk" },
-    { id: "4", name: "Chloe Whitfield",  year: "Year 11", lastActive: "20 Mar 2026", issue: "Not logged in for 15 days",         teacherEmail: "m.chen@school.ac.uk" },
-    { id: "5", name: "Marcus Reid",      year: "Year 8",  lastActive: "29 Mar 2026", issue: "Average score below 40% (37%)",     teacherEmail: "j.baker@school.ac.uk" },
-    { id: "6", name: "Amara Diallo",     year: "Year 10", lastActive: "15 Mar 2026", issue: "Not logged in for 20 days",         teacherEmail: "s.walsh@school.ac.uk" },
-    { id: "7", name: "Tyler Brennan",    year: "Year 12", lastActive: "27 Mar 2026", issue: "Assignment completion below 50% (41%)", teacherEmail: "l.grove@school.ac.uk" },
+    {
+      id: '1',
+      name: 'Jamie Thompson',
+      year: 'Year 11',
+      lastActive: '21 Mar 2026',
+      issue: 'Not logged in for 14 days',
+      teacherEmail: 'm.chen@school.ac.uk',
+    },
+    {
+      id: '2',
+      name: 'Priya Sharma',
+      year: 'Year 10',
+      lastActive: '25 Mar 2026',
+      issue: 'Average score below 40% (32%)',
+      teacherEmail: 's.walsh@school.ac.uk',
+    },
+    {
+      id: '3',
+      name: 'Daniel Okafor',
+      year: 'Year 9',
+      lastActive: '28 Mar 2026',
+      issue: 'Assignment completion below 50% (38%)',
+      teacherEmail: 'r.patel@school.ac.uk',
+    },
+    {
+      id: '4',
+      name: 'Chloe Whitfield',
+      year: 'Year 11',
+      lastActive: '20 Mar 2026',
+      issue: 'Not logged in for 15 days',
+      teacherEmail: 'm.chen@school.ac.uk',
+    },
+    {
+      id: '5',
+      name: 'Marcus Reid',
+      year: 'Year 8',
+      lastActive: '29 Mar 2026',
+      issue: 'Average score below 40% (37%)',
+      teacherEmail: 'j.baker@school.ac.uk',
+    },
+    {
+      id: '6',
+      name: 'Amara Diallo',
+      year: 'Year 10',
+      lastActive: '15 Mar 2026',
+      issue: 'Not logged in for 20 days',
+      teacherEmail: 's.walsh@school.ac.uk',
+    },
+    {
+      id: '7',
+      name: 'Tyler Brennan',
+      year: 'Year 12',
+      lastActive: '27 Mar 2026',
+      issue: 'Assignment completion below 50% (41%)',
+      teacherEmail: 'l.grove@school.ac.uk',
+    },
   ],
   topClasses: [
-    { rank: 1, className: "11A English Literature", teacher: "Ms M. Chen",    avgScore: 84, studentCount: 28 },
-    { rank: 2, className: "12B English Language",   teacher: "Mr L. Grove",   avgScore: 81, studentCount: 19 },
-    { rank: 3, className: "9C English",             teacher: "Ms R. Patel",   avgScore: 79, studentCount: 27 },
-    { rank: 4, className: "7A English",             teacher: "Mr T. Harris",  avgScore: 77, studentCount: 29 },
-    { rank: 5, className: "10D English Literature", teacher: "Ms S. Walsh",   avgScore: 74, studentCount: 32 },
+    {
+      rank: 1,
+      className: '11A English Literature',
+      teacher: 'Ms M. Chen',
+      avgScore: 84,
+      studentCount: 28,
+    },
+    {
+      rank: 2,
+      className: '12B English Language',
+      teacher: 'Mr L. Grove',
+      avgScore: 81,
+      studentCount: 19,
+    },
+    { rank: 3, className: '9C English', teacher: 'Ms R. Patel', avgScore: 79, studentCount: 27 },
+    { rank: 4, className: '7A English', teacher: 'Mr T. Harris', avgScore: 77, studentCount: 29 },
+    {
+      rank: 5,
+      className: '10D English Literature',
+      teacher: 'Ms S. Walsh',
+      avgScore: 74,
+      studentCount: 32,
+    },
   ],
   topLessons: [
-    { title: "AQA Paper 1 Reading Strategies",       count: 892 },
-    { title: "Analysing Language and Structure",     count: 741 },
-    { title: "Writing Persuasive Non-Fiction",       count: 688 },
-    { title: "Power and Conflict Poetry Overview",   count: 634 },
-    { title: "Macbeth: Key Themes and Quotes",       count: 519 },
+    { title: 'AQA Paper 1 Reading Strategies', count: 892 },
+    { title: 'Analysing Language and Structure', count: 741 },
+    { title: 'Writing Persuasive Non-Fiction', count: 688 },
+    { title: 'Power and Conflict Poetry Overview', count: 634 },
+    { title: 'Macbeth: Key Themes and Quotes', count: 519 },
   ],
   topMocks: [
-    { title: "GCSE English Language Paper 1 (AQA)",   count: 456 },
-    { title: "GCSE English Literature Paper 2 (AQA)",  count: 398 },
-    { title: "A-Level Language Analysis Mock",         count: 214 },
-    { title: "GCSE English Language Paper 2 (AQA)",   count: 311 },
-    { title: "A-Level Literature Unseen Poetry Mock",  count: 178 },
+    { title: 'GCSE English Language Paper 1 (AQA)', count: 456 },
+    { title: 'GCSE English Literature Paper 2 (AQA)', count: 398 },
+    { title: 'A-Level Language Analysis Mock', count: 214 },
+    { title: 'GCSE English Language Paper 2 (AQA)', count: 311 },
+    { title: 'A-Level Literature Unseen Poetry Mock', count: 178 },
   ],
   classAssignments: [
-    { className: "11A English Literature", teacher: "Ms M. Chen",   completionRate: 93, overdueCount: 2  },
-    { className: "10D English Literature", teacher: "Ms S. Walsh",  completionRate: 81, overdueCount: 6  },
-    { className: "9C English",             teacher: "Ms R. Patel",  completionRate: 78, overdueCount: 8  },
-    { className: "12B English Language",   teacher: "Mr L. Grove",  completionRate: 76, overdueCount: 4  },
-    { className: "8B English",             teacher: "Mr J. Baker",  completionRate: 64, overdueCount: 11 },
-    { className: "7A English",             teacher: "Mr T. Harris", completionRate: 59, overdueCount: 14 },
+    {
+      className: '11A English Literature',
+      teacher: 'Ms M. Chen',
+      completionRate: 93,
+      overdueCount: 2,
+    },
+    {
+      className: '10D English Literature',
+      teacher: 'Ms S. Walsh',
+      completionRate: 81,
+      overdueCount: 6,
+    },
+    { className: '9C English', teacher: 'Ms R. Patel', completionRate: 78, overdueCount: 8 },
+    {
+      className: '12B English Language',
+      teacher: 'Mr L. Grove',
+      completionRate: 76,
+      overdueCount: 4,
+    },
+    { className: '8B English', teacher: 'Mr J. Baker', completionRate: 64, overdueCount: 11 },
+    { className: '7A English', teacher: 'Mr T. Harris', completionRate: 59, overdueCount: 14 },
   ],
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function progressColor(pct: number): string {
-  if (pct >= 70) return "bg-green-500"
-  if (pct >= 50) return "bg-amber-500"
-  if (pct >= 35) return "bg-orange-500"
-  return "bg-red-500"
+  if (pct >= 70) return 'bg-green-500'
+  if (pct >= 50) return 'bg-amber-500'
+  if (pct >= 35) return 'bg-orange-500'
+  return 'bg-red-500'
 }
 
 function completionColor(pct: number): string {
-  if (pct >= 80) return "bg-green-500"
-  if (pct >= 60) return "bg-amber-500"
-  return "bg-red-500"
+  if (pct >= 80) return 'bg-green-500'
+  if (pct >= 60) return 'bg-amber-500'
+  return 'bg-red-500'
 }
 
 function scoreColor(score: number): string {
-  if (score >= 75) return "text-green-400"
-  if (score >= 60) return "text-clay-600"
-  return "text-red-400"
+  if (score >= 75) return 'text-green-400'
+  if (score >= 60) return 'text-clay-600'
+  return 'text-red-400'
 }
 
 // ── Skeleton Components ──────────────────────────────────────────────────────
@@ -206,7 +289,9 @@ function StatCard({
   return (
     <Card>
       <CardContent className="p-5 flex items-start gap-4">
-        <div className={`flex h-10 w-10 items-center justify-center rounded-lg shrink-0 ${iconClass ?? "bg-primary/10"}`}>
+        <div
+          className={`flex h-10 w-10 items-center justify-center rounded-lg shrink-0 ${iconClass ?? 'bg-primary/10'}`}
+        >
           <Icon className="h-5 w-5" />
         </div>
         <div className="min-w-0">
@@ -234,17 +319,29 @@ function InlineProgressBar({ pct, colorClass }: { pct: number; colorClass: strin
 }
 
 const DATE_RANGE_LABELS: Record<DateRange, string> = {
-  week: "This Week",
-  month: "This Month",
-  term: "This Term",
-  year: "This Year",
+  week: 'This Week',
+  month: 'This Month',
+  term: 'This Term',
+  year: 'This Year',
+}
+
+function useDateRangeLabels(): Record<DateRange, string> {
+  const t = useT()
+  return {
+    week: t('school.analytics.range.week'),
+    month: t('school.analytics.range.month'),
+    term: t('school.analytics.range.term'),
+    year: t('school.analytics.range.year'),
+  }
 }
 
 // ── Main Page ────────────────────────────────────────────────────────────────
 
 export default function SchoolAnalyticsPage() {
+  const t = useT()
+  const dateRangeLabels = useDateRangeLabels()
   const profile = useAuthStore((s) => s.profile)
-  const [dateRange, setDateRange] = useState<DateRange>("week")
+  const [dateRange, setDateRange] = useState<DateRange>('week')
   const [data, setData] = useState<AnalyticsData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -256,7 +353,7 @@ export default function SchoolAnalyticsPage() {
 
     async function fetchData() {
       try {
-        const schoolId = (profile as { school_id?: string } | null)?.school_id ?? "demo"
+        const schoolId = (profile as { school_id?: string } | null)?.school_id ?? 'demo'
         const res = await fetch(
           `/api/school/analytics?schoolId=${encodeURIComponent(schoolId)}&range=${dateRange}`,
         )
@@ -274,15 +371,17 @@ export default function SchoolAnalyticsPage() {
     }
 
     fetchData()
-    return () => { cancelled = true }
+    return () => {
+      cancelled = true
+    }
   }, [dateRange, profile])
 
   function handleExcelExport() {
-    alert("Exporting full report as Excel...")
+    alert('Exporting full report as Excel...')
   }
 
   function handlePdfExport() {
-    alert("Exporting report as PDF...")
+    alert('Exporting report as PDF...')
   }
 
   function handleEmailTeacher(teacherEmail: string, studentName: string) {
@@ -296,7 +395,6 @@ export default function SchoolAnalyticsPage() {
   return (
     <div className="text-foreground">
       <div className="space-y-8">
-
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
@@ -304,18 +402,21 @@ export default function SchoolAnalyticsPage() {
               <BarChart3 className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight">School Analytics</h1>
-              <p className="text-sm text-muted-foreground">
-                Performance overview across all year groups and classes
-              </p>
+              <h1 className="text-2xl font-bold tracking-tight">{t('school.analytics.title')}</h1>
+              <p className="text-sm text-muted-foreground">{t('school.analytics.subtitle')}</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
             {/* Internal metrics link (NRR for investors) */}
-            <Button render={<Link href="/school/analytics/nrr" />} variant="outline" size="sm" className="gap-1.5">
-                <LineChart className="h-4 w-4 text-emerald-400" />
-                Revenue (NRR)
+            <Button
+              render={<Link href="/school/analytics/nrr" />}
+              variant="outline"
+              size="sm"
+              className="gap-1.5"
+            >
+              <LineChart className="h-4 w-4 text-emerald-400" />
+              {t('school.analytics.revenue_nrr')}
             </Button>
 
             {/* Date range selector */}
@@ -328,11 +429,11 @@ export default function SchoolAnalyticsPage() {
                     onClick={() => setDateRange(range)}
                     className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-200 ${
                       dateRange === range
-                        ? "bg-background text-foreground shadow-sm"
-                        : "text-muted-foreground hover:text-foreground"
+                        ? 'bg-background text-foreground shadow-sm'
+                        : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
-                    {DATE_RANGE_LABELS[range]}
+                    {dateRangeLabels[range]}
                   </button>
                 ))}
               </div>
@@ -353,30 +454,30 @@ export default function SchoolAnalyticsPage() {
             <>
               <StatCard
                 icon={Users}
-                label="Active Students This Week"
+                label={t('school.analytics.stat.active_students')}
                 value={data.topStats.activeStudents.toLocaleString()}
-                sub="Logged in at least once"
+                sub={t('school.analytics.stat.active_students_sub')}
                 iconClass="bg-blue-500/10 text-blue-400"
               />
               <StatCard
                 icon={CheckCircle}
-                label="Assignments Submitted"
+                label={t('school.analytics.stat.assignments_submitted')}
                 value={data.topStats.assignmentsSubmitted.toLocaleString()}
-                sub={`During ${DATE_RANGE_LABELS[dateRange].toLowerCase()}`}
+                sub={`${t('school.analytics.stat.during_prefix')} ${dateRangeLabels[dateRange].toLowerCase()}`}
                 iconClass="bg-green-500/10 text-green-400"
               />
               <StatCard
                 icon={TrendingUp}
-                label="Avg Working At Grade"
-                value={`Grade ${percentageToGCSEGrade(data.topStats.averageScore)}`}
-                sub={`Based on ${data.topStats.averageScore}% avg score`}
+                label={t('school.analytics.stat.avg_working_grade')}
+                value={`${t('school.analytics.grade_prefix')} ${percentageToGCSEGrade(data.topStats.averageScore)}`}
+                sub={`${t('school.analytics.based_on_prefix')} ${data.topStats.averageScore}${t('school.analytics.avg_score_suffix')}`}
                 iconClass="bg-purple-500/10 text-purple-400"
               />
               <StatCard
                 icon={AlertTriangle}
-                label="At-Risk Students"
+                label={t('school.analytics.stat.at_risk_students')}
                 value={data.topStats.atRiskCount}
-                sub="Require immediate attention"
+                sub={t('school.analytics.stat.at_risk_sub')}
                 iconClass="bg-red-500/10 text-red-400"
               />
             </>
@@ -388,11 +489,9 @@ export default function SchoolAnalyticsPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <BarChart3 className="h-4 w-4 text-primary" />
-              Year Group Performance
+              {t('school.analytics.year_group.title')}
             </CardTitle>
-            <CardDescription>
-              Progress and completion rates across all year groups
-            </CardDescription>
+            <CardDescription>{t('school.analytics.year_group.subtitle')}</CardDescription>
           </CardHeader>
           <CardContent>
             {loading ? (
@@ -402,27 +501,54 @@ export default function SchoolAnalyticsPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border/60">
-                      <th className="pb-3 text-left font-medium text-muted-foreground">Year Group</th>
-                      <th className="pb-3 text-right font-medium text-muted-foreground">Students</th>
-                      <th className="pb-3 text-center font-medium text-muted-foreground">Avg Working At</th>
-                      <th className="pb-3 pl-6 text-left font-medium text-muted-foreground min-w-[180px]">Avg Progress</th>
-                      <th className="pb-3 text-right font-medium text-muted-foreground">Assignments</th>
-                      <th className="pb-3 text-right font-medium text-muted-foreground">At-Risk</th>
+                      <th className="pb-3 text-left font-medium text-muted-foreground">
+                        {t('school.analytics.col.year_group')}
+                      </th>
+                      <th className="pb-3 text-right font-medium text-muted-foreground">
+                        {t('school.analytics.col.students')}
+                      </th>
+                      <th className="pb-3 text-center font-medium text-muted-foreground">
+                        {t('school.analytics.col.avg_working_at')}
+                      </th>
+                      <th className="pb-3 pl-6 text-left font-medium text-muted-foreground min-w-[180px]">
+                        {t('school.analytics.col.avg_progress')}
+                      </th>
+                      <th className="pb-3 text-right font-medium text-muted-foreground">
+                        {t('school.analytics.col.assignments')}
+                      </th>
+                      <th className="pb-3 text-right font-medium text-muted-foreground">
+                        {t('school.analytics.col.at_risk')}
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border/40">
                     {data.yearGroups.map((row) => (
-                      <tr key={row.year} className="group hover:bg-muted/30 transition-colors cursor-pointer" onClick={() => window.location.href = `/school/classes?year=${encodeURIComponent(row.year)}`}>
+                      <tr
+                        key={row.year}
+                        className="group hover:bg-muted/30 transition-colors cursor-pointer"
+                        onClick={() =>
+                          (window.location.href = `/school/classes?year=${encodeURIComponent(row.year)}`)
+                        }
+                      >
                         <td className="py-3 font-medium">
                           <span className="flex items-center gap-1.5 group-hover:text-primary transition-colors">
                             {row.year}
                             <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                           </span>
                         </td>
-                        <td className="py-3 text-right tabular-nums text-muted-foreground">{row.students}</td>
-                        <td className={`py-3 text-center font-bold ${gcseGradeColor(percentageToGCSEGrade(row.avgProgress))}`}>Grade {percentageToGCSEGrade(row.avgProgress)}</td>
+                        <td className="py-3 text-right tabular-nums text-muted-foreground">
+                          {row.students}
+                        </td>
+                        <td
+                          className={`py-3 text-center font-bold ${gcseGradeColor(percentageToGCSEGrade(row.avgProgress))}`}
+                        >
+                          Grade {percentageToGCSEGrade(row.avgProgress)}
+                        </td>
                         <td className="py-3 pl-6">
-                          <InlineProgressBar pct={row.avgProgress} colorClass={progressColor(row.avgProgress)} />
+                          <InlineProgressBar
+                            pct={row.avgProgress}
+                            colorClass={progressColor(row.avgProgress)}
+                          />
                         </td>
                         <td className="py-3 text-right tabular-nums text-muted-foreground">
                           {row.assignmentsCompleted.toLocaleString()}
@@ -448,11 +574,9 @@ export default function SchoolAnalyticsPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <AlertTriangle className="h-4 w-4 text-red-400" />
-              At-Risk Students
+              {t('school.analytics.at_risk.title')}
             </CardTitle>
-            <CardDescription>
-              Students who have not logged in for 7+ days, scored below 40%, or completed fewer than 50% of assignments
-            </CardDescription>
+            <CardDescription>{t('school.analytics.at_risk.subtitle')}</CardDescription>
           </CardHeader>
           <CardContent>
             {loading ? (
@@ -462,17 +586,34 @@ export default function SchoolAnalyticsPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border/60">
-                      <th className="pb-3 text-left font-medium text-muted-foreground">Name</th>
-                      <th className="pb-3 text-left font-medium text-muted-foreground">Year</th>
-                      <th className="pb-3 text-left font-medium text-muted-foreground">Last Active</th>
-                      <th className="pb-3 text-left font-medium text-muted-foreground">Issue</th>
-                      <th className="pb-3 text-right font-medium text-muted-foreground">Action</th>
+                      <th className="pb-3 text-left font-medium text-muted-foreground">
+                        {t('school.analytics.col.name')}
+                      </th>
+                      <th className="pb-3 text-left font-medium text-muted-foreground">
+                        {t('school.analytics.col.year')}
+                      </th>
+                      <th className="pb-3 text-left font-medium text-muted-foreground">
+                        {t('school.analytics.col.last_active')}
+                      </th>
+                      <th className="pb-3 text-left font-medium text-muted-foreground">
+                        {t('school.analytics.col.issue')}
+                      </th>
+                      <th className="pb-3 text-right font-medium text-muted-foreground">
+                        {t('school.analytics.col.action')}
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border/40">
                     {data.atRiskStudents.map((student) => (
                       <tr key={student.id} className="hover:bg-muted/30 transition-colors">
-                        <td className="py-3 font-medium"><Link href={`/school/students/${student.id}`} className="hover:text-primary hover:underline transition-colors">{student.name}</Link></td>
+                        <td className="py-3 font-medium">
+                          <Link
+                            href={`/school/students/${student.id}`}
+                            className="hover:text-primary hover:underline transition-colors"
+                          >
+                            {student.name}
+                          </Link>
+                        </td>
                         <td className="py-3 text-muted-foreground">{student.year}</td>
                         <td className="py-3 text-muted-foreground flex items-center gap-1.5">
                           <Clock className="h-3 w-3 shrink-0" />
@@ -492,7 +633,7 @@ export default function SchoolAnalyticsPage() {
                             onClick={() => handleEmailTeacher(student.teacherEmail, student.name)}
                           >
                             <Mail className="h-3 w-3" />
-                            Email Teacher
+                            {t('school.analytics.email_teacher')}
                           </Button>
                         </td>
                       </tr>
@@ -502,7 +643,7 @@ export default function SchoolAnalyticsPage() {
               </div>
             ) : (
               <p className="text-sm text-muted-foreground py-4 text-center">
-                No at-risk students identified for this period.
+                {t('school.analytics.at_risk.none')}
               </p>
             )}
           </CardContent>
@@ -510,15 +651,14 @@ export default function SchoolAnalyticsPage() {
 
         {/* ── Two-column row: Top Classes + Resource Usage ─────────────────── */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-
           {/* Top Performing Classes */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TrendingUp className="h-4 w-4 text-green-400" />
-                Top Performing Classes
+                {t('school.analytics.top_classes.title')}
               </CardTitle>
-              <CardDescription>Ranked by average student score</CardDescription>
+              <CardDescription>{t('school.analytics.top_classes.subtitle')}</CardDescription>
             </CardHeader>
             <CardContent>
               {loading ? (
@@ -533,21 +673,26 @@ export default function SchoolAnalyticsPage() {
                       <span
                         className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold shrink-0 ${
                           cls.rank === 1
-                            ? "bg-yellow-500/20 text-clay-600"
+                            ? 'bg-yellow-500/20 text-clay-600'
                             : cls.rank === 2
-                            ? "bg-slate-400/20 text-slate-300"
-                            : cls.rank === 3
-                            ? "bg-orange-700/20 text-orange-500"
-                            : "bg-muted text-muted-foreground"
+                              ? 'bg-slate-400/20 text-slate-300'
+                              : cls.rank === 3
+                                ? 'bg-orange-700/20 text-orange-500'
+                                : 'bg-muted text-muted-foreground'
                         }`}
                       >
                         {cls.rank}
                       </span>
                       <div className="flex-1 min-w-0">
                         <p className="font-medium truncate">{cls.className}</p>
-                        <p className="text-xs text-muted-foreground">{cls.teacher} &bull; {cls.studentCount} students</p>
+                        <p className="text-xs text-muted-foreground">
+                          {cls.teacher} &bull; {cls.studentCount}{' '}
+                          {t('school.analytics.students_suffix')}
+                        </p>
                       </div>
-                      <span className={`text-lg font-bold tabular-nums ${scoreColor(cls.avgScore)}`}>
+                      <span
+                        className={`text-lg font-bold tabular-nums ${scoreColor(cls.avgScore)}`}
+                      >
                         {cls.avgScore}%
                       </span>
                     </div>
@@ -562,9 +707,9 @@ export default function SchoolAnalyticsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpen className="h-4 w-4 text-blue-400" />
-                Resource Usage
+                {t('school.analytics.resource_usage.title')}
               </CardTitle>
-              <CardDescription>Most accessed lessons and mock exams</CardDescription>
+              <CardDescription>{t('school.analytics.resource_usage.subtitle')}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               {loading ? (
@@ -573,7 +718,7 @@ export default function SchoolAnalyticsPage() {
                 <>
                   <div>
                     <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Top 5 Lessons
+                      {t('school.analytics.top_lessons')}
                     </p>
                     <div className="space-y-2.5">
                       {data.topLessons.map((item, i) => {
@@ -583,7 +728,9 @@ export default function SchoolAnalyticsPage() {
                           <div key={i} className="space-y-1">
                             <div className="flex items-center justify-between gap-2 text-xs">
                               <span className="truncate text-muted-foreground">{item.title}</span>
-                              <span className="tabular-nums shrink-0 font-medium">{item.count.toLocaleString()}</span>
+                              <span className="tabular-nums shrink-0 font-medium">
+                                {item.count.toLocaleString()}
+                              </span>
                             </div>
                             <div className="h-1.5 rounded-full bg-muted overflow-hidden">
                               <div
@@ -598,7 +745,7 @@ export default function SchoolAnalyticsPage() {
                   </div>
                   <div>
                     <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Top 5 Mock Exams
+                      {t('school.analytics.top_mocks')}
                     </p>
                     <div className="space-y-2.5">
                       {data.topMocks.map((item, i) => {
@@ -608,7 +755,9 @@ export default function SchoolAnalyticsPage() {
                           <div key={i} className="space-y-1">
                             <div className="flex items-center justify-between gap-2 text-xs">
                               <span className="truncate text-muted-foreground">{item.title}</span>
-                              <span className="tabular-nums shrink-0 font-medium">{item.count.toLocaleString()}</span>
+                              <span className="tabular-nums shrink-0 font-medium">
+                                {item.count.toLocaleString()}
+                              </span>
                             </div>
                             <div className="h-1.5 rounded-full bg-muted overflow-hidden">
                               <div
@@ -632,9 +781,9 @@ export default function SchoolAnalyticsPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <FileText className="h-4 w-4 text-clay-600" />
-              Assignment Overview
+              {t('school.analytics.assignment_overview.title')}
             </CardTitle>
-            <CardDescription>Completion rates and overdue counts by class</CardDescription>
+            <CardDescription>{t('school.analytics.assignment_overview.subtitle')}</CardDescription>
           </CardHeader>
           <CardContent>
             {loading ? (
@@ -644,10 +793,18 @@ export default function SchoolAnalyticsPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border/60">
-                      <th className="pb-3 text-left font-medium text-muted-foreground">Class</th>
-                      <th className="pb-3 text-left font-medium text-muted-foreground">Teacher</th>
-                      <th className="pb-3 pl-6 text-left font-medium text-muted-foreground min-w-[200px]">Completion Rate</th>
-                      <th className="pb-3 text-right font-medium text-muted-foreground">Overdue</th>
+                      <th className="pb-3 text-left font-medium text-muted-foreground">
+                        {t('school.analytics.col.class')}
+                      </th>
+                      <th className="pb-3 text-left font-medium text-muted-foreground">
+                        {t('school.analytics.col.teacher')}
+                      </th>
+                      <th className="pb-3 pl-6 text-left font-medium text-muted-foreground min-w-[200px]">
+                        {t('school.analytics.col.completion_rate')}
+                      </th>
+                      <th className="pb-3 text-right font-medium text-muted-foreground">
+                        {t('school.analytics.col.overdue')}
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border/40">
@@ -663,9 +820,11 @@ export default function SchoolAnalyticsPage() {
                         </td>
                         <td className="py-3 text-right">
                           {cls.overdueCount > 0 ? (
-                            <Badge variant="destructive">{cls.overdueCount} overdue</Badge>
+                            <Badge variant="destructive">
+                              {cls.overdueCount} {t('school.analytics.overdue_suffix')}
+                            </Badge>
                           ) : (
-                            <Badge variant="secondary">None</Badge>
+                            <Badge variant="secondary">{t('school.analytics.none')}</Badge>
                           )}
                         </td>
                       </tr>
@@ -686,18 +845,13 @@ export default function SchoolAnalyticsPage() {
             disabled={loading}
           >
             <Download className="h-4 w-4" />
-            Export Full Report (Excel)
+            {t('school.analytics.export_excel')}
           </Button>
-          <Button
-            className="gap-2"
-            onClick={handlePdfExport}
-            disabled={loading}
-          >
+          <Button className="gap-2" onClick={handlePdfExport} disabled={loading}>
             <Download className="h-4 w-4" />
-            Export PDF Report
+            {t('school.analytics.export_pdf')}
           </Button>
         </div>
-
       </div>
     </div>
   )

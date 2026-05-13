@@ -1,6 +1,9 @@
+'use client'
+
 import { cn } from '@/lib/utils'
 import { Award, Gem, Medal, Rocket, Star } from 'lucide-react'
 import { TIERS } from '@/lib/affiliate/tiers'
+import { useT } from '@/lib/i18n/use-t'
 
 /**
  * Tier types exported for any legacy imports. All tier logic lives in
@@ -65,6 +68,8 @@ export function TierBadge({
   className,
 }: TierBadgeProps) {
   const config = TIER_CONFIG[tier]
+  const t = useT()
+  const localisedLabel = t(`aff_comp.tier.${tier}.label`)
 
   const Icon =
     tier === 'tier-5'
@@ -105,8 +110,12 @@ export function TierBadge({
       )}
     >
       <Icon />
-      {config.label}
-      {showCommission && <span className="opacity-80">· £{config.commission}/signup</span>}
+      {localisedLabel}
+      {showCommission && (
+        <span className="opacity-80">
+          · £{config.commission}/{t('aff_comp.calc.signups_dot')}
+        </span>
+      )}
     </span>
   )
 }

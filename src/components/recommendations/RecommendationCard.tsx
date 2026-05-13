@@ -2,15 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import {
-  AlertTriangle,
-  ArrowRight,
-  Flame,
-  Sparkles,
-  X,
-} from 'lucide-react'
+import { AlertTriangle, ArrowRight, Flame, Sparkles, X } from 'lucide-react'
 
 import type { Recommendation, RecommendationType } from '@/lib/recommendations/engine'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Icon + colour mapping ──────────────────────────────────────────────────
 
@@ -44,10 +39,10 @@ const TYPE_CONFIG: Record<
   },
 }
 
-const PRIORITY_LABELS: Record<Recommendation['priority'], { label: string; colour: string }> = {
-  high: { label: 'High priority', colour: 'text-red-400' },
-  medium: { label: 'Suggested', colour: 'text-clay-600' },
-  low: { label: 'Optional', colour: 'text-muted-foreground' },
+const PRIORITY_CONFIG: Record<Recommendation['priority'], { key: string; colour: string }> = {
+  high: { key: 'recommend.priority.high', colour: 'text-red-400' },
+  medium: { key: 'recommend.priority.medium', colour: 'text-clay-600' },
+  low: { key: 'recommend.priority.low', colour: 'text-muted-foreground' },
 }
 
 // ─── Dismiss helpers ────────────────────────────────────────────────────────
@@ -87,9 +82,12 @@ interface RecommendationCardProps {
 }
 
 export function RecommendationCard({ recommendation, onDismiss }: RecommendationCardProps) {
+  const t = useT()
   const [dismissed, setDismissed] = useState(false)
   const { Icon, colour, bg, ring } = TYPE_CONFIG[recommendation.type]
-  const priority = PRIORITY_LABELS[recommendation.priority]
+  const priority = PRIORITY_CONFIG[recommendation.priority]
+  const priorityLabel = t(priority.key)
+  const dismissPrefix = t('recommend.card.dismiss_label_prefix')
 
   if (dismissed) return null
 
@@ -111,7 +109,7 @@ export function RecommendationCard({ recommendation, onDismiss }: Recommendation
         type="button"
         onClick={handleDismiss}
         className="absolute right-2 top-2 rounded-md p-1 text-muted-foreground opacity-0 transition-opacity hover:bg-background/80 hover:text-foreground group-hover:opacity-100"
-        aria-label={`Dismiss recommendation: ${recommendation.title}`}
+        aria-label={`${dismissPrefix} ${recommendation.title}`}
       >
         <X className="size-3.5" />
       </button>
@@ -131,13 +129,11 @@ export function RecommendationCard({ recommendation, onDismiss }: Recommendation
               {recommendation.title}
             </h3>
             <span className={`text-[10px] font-medium uppercase tracking-wider ${priority.colour}`}>
-              {priority.label}
+              {priorityLabel}
             </span>
           </div>
 
-          <p className="text-xs text-muted-foreground line-clamp-2">
-            {recommendation.description}
-          </p>
+          <p className="text-xs text-muted-foreground line-clamp-2">{recommendation.description}</p>
 
           <p className="mt-1.5 text-[11px] italic text-muted-foreground/80">
             {recommendation.reason}

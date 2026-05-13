@@ -1,11 +1,17 @@
+import type { Metadata } from 'next'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import AffiliateResources from '@/components/affiliates/AffiliateResources'
+import { tMany } from '@/lib/i18n/t'
 
-export const metadata = {
-  title: 'Affiliate Resources — The English Hub',
-  description:
-    'Ready-to-paste promo scripts, captions, and templates for The English Hub affiliates.',
+// 2026-05-13: metadata wired to i18n — title + description come from
+// `affiliates.resources.meta.*` keys so AR mode serves Khaleeji copy.
+export async function generateMetadata(): Promise<Metadata> {
+  const [title, description] = await tMany([
+    'affiliates.resources.meta.title',
+    'affiliates.resources.meta.description',
+  ])
+  return { title, description }
 }
 
 // ─── /affiliates/resources ──────────────────────────────────────────────────

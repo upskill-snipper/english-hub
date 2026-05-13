@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuthStore } from '@/store/auth-store'
+import { useT } from '@/lib/i18n/use-t'
 import {
   ArrowLeft,
   Download,
@@ -25,6 +26,7 @@ import {
  * portal because consent for that age band sits with the parent.
  */
 export default function DataExportPage() {
+  const t = useT()
   const router = useRouter()
   const { user } = useAuthStore()
 
@@ -51,7 +53,7 @@ export default function DataExportPage() {
 
       if (!res.ok) {
         // Try to parse a JSON error envelope; fall back to a friendly default.
-        let message = 'Something went wrong while preparing your data.'
+        let message = t('account.export.err_generic')
         try {
           const data = await res.json()
           if (typeof data?.error === 'string') message = data.error
@@ -60,9 +62,9 @@ export default function DataExportPage() {
         }
 
         if (res.status === 429) {
-          message = 'You can only download your data once an hour. Please try again later.'
+          message = t('account.export.err_rate_limit')
         } else if (res.status === 401) {
-          message = 'Please sign in again to download your data.'
+          message = t('account.export.err_unauth')
         }
 
         setError(message)
@@ -90,7 +92,7 @@ export default function DataExportPage() {
 
       setSuccess(true)
     } catch {
-      setError('We couldn’t reach the server. Check your connection and try again.')
+      setError(t('account.export.err_network'))
     } finally {
       setLoading(false)
     }
@@ -112,13 +114,11 @@ export default function DataExportPage() {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to account
+          {t('account.back_to_account')}
         </Link>
 
-        <h1 className="text-3xl font-bold text-foreground mb-2">Download my data</h1>
-        <p className="text-muted-foreground mb-8">
-          Get a copy of everything we hold about you — yours to keep, share, or move somewhere else.
-        </p>
+        <h1 className="text-3xl font-bold text-foreground mb-2">{t('account.export.title')}</h1>
+        <p className="text-muted-foreground mb-8">{t('account.export.subtitle')}</p>
 
         <section
           aria-labelledby="data-export-heading"
@@ -127,22 +127,19 @@ export default function DataExportPage() {
           <div className="flex items-center gap-3 mb-4">
             <FileJson className="w-5 h-5 text-primary" />
             <h2 id="data-export-heading" className="text-xl font-semibold text-foreground">
-              What’s in your file?
+              {t('account.export.what_in_file')}
             </h2>
           </div>
 
-          <p className="text-sm text-muted-foreground mb-4">
-            We’ll bundle everything into one JSON file so you can read it, save it, or send it to
-            another service. It includes:
-          </p>
+          <p className="text-sm text-muted-foreground mb-4">{t('account.export.bundle_intro')}</p>
 
           <ul className="text-sm text-foreground space-y-2 mb-6 list-disc pl-5 marker:text-primary">
-            <li>Your profile (name, email, year group, country)</li>
-            <li>The exam board you chose</li>
-            <li>Quiz scores and game scores</li>
-            <li>Marking history (essays you submitted and the feedback)</li>
-            <li>Your consent choices (cookies, marketing, AI training)</li>
-            <li>A record of past data requests</li>
+            <li>{t('account.export.bullet_profile')}</li>
+            <li>{t('account.export.bullet_board')}</li>
+            <li>{t('account.export.bullet_scores')}</li>
+            <li>{t('account.export.bullet_marking')}</li>
+            <li>{t('account.export.bullet_consent')}</li>
+            <li>{t('account.export.bullet_requests')}</li>
           </ul>
 
           {error && (
@@ -163,7 +160,7 @@ export default function DataExportPage() {
               className="flex items-start gap-2 rounded-lg p-3 mb-4 text-sm bg-emerald-500/10 border border-emerald-500/30 text-teal-700"
             >
               <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" />
-              <span>Done — check your downloads folder for the JSON file.</span>
+              <span>{t('account.export.success')}</span>
             </div>
           )}
 
@@ -171,18 +168,18 @@ export default function DataExportPage() {
             {loading ? (
               <>
                 <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                Preparing your file…
+                {t('account.export.button_preparing')}
               </>
             ) : (
               <>
                 <Download className="w-4 h-4 mr-2" />
-                Download my data
+                {t('account.export.button')}
               </>
             )}
           </button>
 
           <p className="text-xs text-muted-foreground mt-3">
-            You can download your data once every hour.
+            {t('account.export.rate_limit_note')}
           </p>
         </section>
 
@@ -193,14 +190,10 @@ export default function DataExportPage() {
           <div className="flex items-center gap-3 mb-3">
             <Shield className="w-5 h-5 text-primary" />
             <h2 id="legal-basis-heading" className="text-lg font-semibold text-foreground">
-              Why we let you do this
+              {t('account.export.legal_basis_heading')}
             </h2>
           </div>
-          <p className="text-sm text-muted-foreground">
-            UK GDPR gives you the right to a copy of your personal data (Article 15) and the right
-            to take it with you in a portable format (Article 20). This page exists so you don’t
-            have to email anyone — your data, your choice.
-          </p>
+          <p className="text-sm text-muted-foreground">{t('account.export.legal_basis_body')}</p>
         </section>
 
         <section
@@ -210,16 +203,15 @@ export default function DataExportPage() {
           <div className="flex items-center gap-3 mb-3">
             <Users className="w-5 h-5 text-primary" />
             <h2 id="under-13-heading" className="text-lg font-semibold text-foreground">
-              What about under-13 accounts?
+              {t('account.export.under13_heading')}
             </h2>
           </div>
           <p className="text-sm text-muted-foreground">
-            If you’re under 13, your parent or guardian downloads your data on your behalf from the{' '}
+            {t('account.export.under13_body_prefix')}{' '}
             <Link href="/parent/data-export" className="text-primary hover:underline">
-              parent data export page
+              {t('account.export.under13_link_text')}
             </Link>
-            . That’s a Children’s Code requirement — the grown-up holds the keys until you’re old
-            enough to do it yourself.
+            {t('account.export.under13_body_suffix')}
           </p>
         </section>
       </div>

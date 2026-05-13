@@ -33,6 +33,7 @@ import {
   AlertTriangle,
   GraduationCap,
 } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -221,27 +222,27 @@ function formatDate(dateStr: string): string {
   })
 }
 
-function statusBadge(status: ModuleProgressItem['status']) {
+function statusBadge(status: ModuleProgressItem['status'], t: (k: string) => string) {
   switch (status) {
     case 'complete':
       return (
         <span className="inline-flex items-center gap-1 rounded-full bg-green-500/10 border border-green-500/20 px-2 py-0.5 text-xs font-medium text-green-400">
           <CheckCircle className="h-3 w-3" />
-          Complete
+          {t('school.students.detail.module.complete')}
         </span>
       )
     case 'in_progress':
       return (
         <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-xs font-medium text-clay-600">
           <Clock className="h-3 w-3" />
-          In Progress
+          {t('school.students.detail.module.in_progress')}
         </span>
       )
     case 'not_started':
       return (
         <span className="inline-flex items-center gap-1 rounded-full bg-border/50 px-2 py-0.5 text-xs font-medium text-muted-foreground">
           <Minus className="h-3 w-3" />
-          Not Started
+          {t('school.students.detail.module.not_started')}
         </span>
       )
   }
@@ -300,11 +301,31 @@ function ExamReadinessGaugeInline({ score }: { score: number }) {
     <div className="flex flex-col items-center">
       <div className="relative" style={{ width: size, height: size }}>
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90">
-          <circle cx={size / 2} cy={size / 2} r={radius} fill="none" className="stroke-muted" strokeWidth={strokeWidth} />
-          <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke={color} strokeWidth={strokeWidth} strokeDasharray={circumference} strokeDashoffset={offset} strokeLinecap="round" className="transition-all duration-700 ease-out" />
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            fill="none"
+            className="stroke-muted"
+            strokeWidth={strokeWidth}
+          />
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            fill="none"
+            stroke={color}
+            strokeWidth={strokeWidth}
+            strokeDasharray={circumference}
+            strokeDashoffset={offset}
+            strokeLinecap="round"
+            className="transition-all duration-700 ease-out"
+          />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className={`text-lg font-bold ${gcseGradeColor(percentageToGCSEGrade(score))}`}>Grade {percentageToGCSEGrade(score)}</span>
+          <span className={`text-lg font-bold ${gcseGradeColor(percentageToGCSEGrade(score))}`}>
+            Grade {percentageToGCSEGrade(score)}
+          </span>
           <span className="text-[10px] text-muted-foreground">{score}%</span>
         </div>
       </div>
@@ -357,8 +378,22 @@ function LineChart({
         const y = padding.top + chartHeight - (tick / max) * chartHeight
         return (
           <g key={tick}>
-            <line x1={padding.left} y1={y} x2={width - padding.right} y2={y} className="stroke-border" strokeWidth={0.5} strokeDasharray="4 4" />
-            <text x={padding.left - 8} y={y + 4} textAnchor="end" className="fill-muted-foreground" fontSize={10}>
+            <line
+              x1={padding.left}
+              y1={y}
+              x2={width - padding.right}
+              y2={y}
+              className="stroke-border"
+              strokeWidth={0.5}
+              strokeDasharray="4 4"
+            />
+            <text
+              x={padding.left - 8}
+              y={y + 4}
+              textAnchor="end"
+              className="fill-muted-foreground"
+              fontSize={10}
+            >
               {tick}%
             </text>
           </g>
@@ -369,15 +404,36 @@ function LineChart({
       <path d={areaD} fill={color} opacity={0.1} />
 
       {/* Line */}
-      <path d={pathD} fill="none" stroke={color} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d={pathD}
+        fill="none"
+        stroke={color}
+        strokeWidth={2.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
 
       {/* Data points */}
       {points.map((p, i) => (
         <g key={i}>
           <circle cx={p.x} cy={p.y} r={4} fill={color} className="transition-all duration-200" />
-          <circle cx={p.x} cy={p.y} r={6} fill={color} opacity={0} className="hover:opacity-20 transition-opacity" />
+          <circle
+            cx={p.x}
+            cy={p.y}
+            r={6}
+            fill={color}
+            opacity={0}
+            className="hover:opacity-20 transition-opacity"
+          />
           {/* Value label on hover area */}
-          <text x={p.x} y={p.y - 10} textAnchor="middle" className="fill-foreground" fontSize={10} fontWeight={600}>
+          <text
+            x={p.x}
+            y={p.y - 10}
+            textAnchor="middle"
+            className="fill-foreground"
+            fontSize={10}
+            fontWeight={600}
+          >
             {values[i]}%
           </text>
         </g>
@@ -557,9 +613,7 @@ function useTeacherNotes(studentId: string) {
   const updateNote = useCallback(
     (id: string, text: string) => {
       saveNotes(
-        notes.map((n) =>
-          n.id === id ? { ...n, text, updatedAt: new Date().toISOString() } : n,
-        ),
+        notes.map((n) => (n.id === id ? { ...n, text, updatedAt: new Date().toISOString() } : n)),
       )
     },
     [notes, saveNotes],
@@ -578,6 +632,7 @@ function useTeacherNotes(studentId: string) {
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function StudentDrilldownPage() {
+  const t = useT()
   const params = useParams()
   const studentId = params.studentId as string
 
@@ -659,12 +714,10 @@ export default function StudentDrilldownPage() {
 
   const quizChartData = useMemo(() => {
     if (!student?.quizHistory) return []
-    return student.quizHistory
-      .slice(-10)
-      .map((q) => ({
-        label: formatDate(q.date).replace(/\s\d{4}$/, ''),
-        score: Math.round((q.score / q.maxScore) * 100),
-      }))
+    return student.quizHistory.slice(-10).map((q) => ({
+      label: formatDate(q.date).replace(/\s\d{4}$/, ''),
+      score: Math.round((q.score / q.maxScore) * 100),
+    }))
   }, [student])
 
   // ── Action handlers ─────────────────────────────────────────────────────
@@ -675,7 +728,9 @@ export default function StudentDrilldownPage() {
 
   const handleGenerateStudyPlan = () => {
     // Placeholder: would trigger API call to generate AI study plan
-    alert(`Study plan generation requested for ${student?.name}. This feature will create a personalised revision schedule based on their strengths and weaknesses.`)
+    alert(
+      `Study plan generation requested for ${student?.name}. This feature will create a personalised revision schedule based on their strengths and weaknesses.`,
+    )
   }
 
   const handleContactParent = () => {
@@ -730,7 +785,8 @@ export default function StudentDrilldownPage() {
           <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border bg-card/50 py-16 text-center">
             <p className="text-lg font-semibold text-foreground">Student not found</p>
             <p className="mt-2 text-sm text-muted-foreground">
-              The student you are looking for does not exist or you do not have permission to view their profile.
+              The student you are looking for does not exist or you do not have permission to view
+              their profile.
             </p>
           </div>
         </div>
@@ -779,7 +835,6 @@ export default function StudentDrilldownPage() {
   return (
     <div className="min-h-screen bg-background text-foreground print:bg-white print:text-black">
       <div className="px-4 py-8 sm:px-6 lg:px-8">
-
         {/* ── Back Link ──────────────────────────────────────────────────── */}
         <div className="mb-6 flex items-center justify-between print:hidden">
           <Link
@@ -792,7 +847,12 @@ export default function StudentDrilldownPage() {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" onClick={handleGenerateStudyPlan} className="gap-1.5">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleGenerateStudyPlan}
+              className="gap-1.5"
+            >
               <CalendarDays className="h-4 w-4" />
               <span className="hidden sm:inline">Generate Study Plan</span>
             </Button>
@@ -817,11 +877,17 @@ export default function StudentDrilldownPage() {
                 <Badge variant="secondary" className="bg-primary/10 text-primary border-0">
                   {student.yearGroup}
                 </Badge>
-                <Badge variant="outline" className="border-blue-500/20 text-blue-400 bg-blue-500/10">
+                <Badge
+                  variant="outline"
+                  className="border-blue-500/20 text-blue-400 bg-blue-500/10"
+                >
                   {student.examBoard}
                 </Badge>
                 {student.className && (
-                  <Badge variant="outline" className="border-violet-500/20 text-violet-400 bg-violet-500/10">
+                  <Badge
+                    variant="outline"
+                    className="border-violet-500/20 text-violet-400 bg-violet-500/10"
+                  >
                     {student.className}
                   </Badge>
                 )}
@@ -861,7 +927,9 @@ export default function StudentDrilldownPage() {
 
             {/* Right: Grade Prediction Card */}
             <div className="flex flex-col items-center gap-3 sm:min-w-[160px]">
-              <div className={`flex flex-col items-center gap-1 rounded-xl border-2 p-4 ${gradeBgClass(student.predictedGrade)}`}>
+              <div
+                className={`flex flex-col items-center gap-1 rounded-xl border-2 p-4 ${gradeBgClass(student.predictedGrade)}`}
+              >
                 <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
                   Predicted Grade
                 </span>
@@ -876,18 +944,20 @@ export default function StudentDrilldownPage() {
                   ) : (
                     <Minus className="h-3.5 w-3.5 text-muted-foreground" />
                   )}
-                  <span className={`text-xs font-medium ${
-                    student.trajectory.trend === 'improving'
-                      ? 'text-green-400'
-                      : student.trajectory.trend === 'declining'
-                      ? 'text-red-400'
-                      : 'text-muted-foreground'
-                  }`}>
+                  <span
+                    className={`text-xs font-medium ${
+                      student.trajectory.trend === 'improving'
+                        ? 'text-green-400'
+                        : student.trajectory.trend === 'declining'
+                          ? 'text-red-400'
+                          : 'text-muted-foreground'
+                    }`}
+                  >
                     {student.trajectory.trend === 'improving'
                       ? 'Upward trajectory'
                       : student.trajectory.trend === 'declining'
-                      ? 'Downward trajectory'
-                      : 'Holding steady'}
+                        ? 'Downward trajectory'
+                        : 'Holding steady'}
                   </span>
                 </div>
               </div>
@@ -916,10 +986,14 @@ export default function StudentDrilldownPage() {
               <BarChart3 className="h-4 w-4" />
               <span className="text-xs font-medium uppercase tracking-wider">Working At Grade</span>
             </div>
-            <p className={`text-2xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(student.averageQuizScore))}`}>
+            <p
+              className={`text-2xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(student.averageQuizScore))}`}
+            >
               Grade {percentageToGCSEGrade(student.averageQuizScore)}
             </p>
-            <p className="text-xs text-muted-foreground mt-1">Based on quiz average ({student.averageQuizScore}%)</p>
+            <p className="text-xs text-muted-foreground mt-1">
+              Based on quiz average ({student.averageQuizScore}%)
+            </p>
           </div>
 
           <div className="rounded-xl border border-border bg-card p-5">
@@ -956,9 +1030,7 @@ export default function StudentDrilldownPage() {
               <Flame className="h-4 w-4" />
               <span className="text-xs font-medium uppercase tracking-wider">Streak</span>
             </div>
-            <p className="text-2xl font-bold tabular-nums text-clay-600">
-              {student.currentStreak}
-            </p>
+            <p className="text-2xl font-bold tabular-nums text-clay-600">{student.currentStreak}</p>
             <p className="text-xs text-muted-foreground mt-1">Days</p>
           </div>
         </div>
@@ -970,7 +1042,10 @@ export default function StudentDrilldownPage() {
               Module Completion
             </h2>
             <span className="text-sm font-semibold tabular-nums">
-              {completionPct}% <span className="text-muted-foreground font-normal">({student.modulesCompleted}/{student.totalModules})</span>
+              {completionPct}%{' '}
+              <span className="text-muted-foreground font-normal">
+                ({student.modulesCompleted}/{student.totalModules})
+              </span>
             </span>
           </div>
           <div className="h-3 w-full overflow-hidden rounded-full bg-muted">
@@ -1043,7 +1118,6 @@ export default function StudentDrilldownPage() {
 
         {/* ── Two-Column Layout: Modules + Strengths/Weaknesses ────────────── */}
         <div className="mt-6 grid gap-6 lg:grid-cols-3">
-
           {/* Left Column: Module Progress Table */}
           <div className="lg:col-span-2 rounded-xl border border-border bg-card p-6">
             <div className="mb-4 flex items-center justify-between">
@@ -1094,7 +1168,7 @@ export default function StudentDrilldownPage() {
                           <p className="text-xs text-muted-foreground">{mod.courseName}</p>
                         </div>
                       </td>
-                      <td className="py-3 pr-4">{statusBadge(mod.status)}</td>
+                      <td className="py-3 pr-4">{statusBadge(mod.status, t)}</td>
                       <td className="py-3 pr-4">
                         {mod.quizScore !== null ? (
                           <div className="flex items-center gap-2">
@@ -1104,7 +1178,9 @@ export default function StudentDrilldownPage() {
                                 style={{ width: `${mod.quizScore}%` }}
                               />
                             </div>
-                            <span className={`text-xs font-medium tabular-nums ${scoreTextColor(mod.quizScore)}`}>
+                            <span
+                              className={`text-xs font-medium tabular-nums ${scoreTextColor(mod.quizScore)}`}
+                            >
                               {mod.quizScore}%
                             </span>
                           </div>
@@ -1201,10 +1277,17 @@ export default function StudentDrilldownPage() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Overall Score</span>
-                  <span className={`font-semibold tabular-nums ${scoreTextColor(student.averageQuizScore)}`}>{student.averageQuizScore}%</span>
+                  <span
+                    className={`font-semibold tabular-nums ${scoreTextColor(student.averageQuizScore)}`}
+                  >
+                    {student.averageQuizScore}%
+                  </span>
                 </div>
                 <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-                  <div className={`h-full rounded-full transition-all duration-500 ${scoreBarColor(student.averageQuizScore)}`} style={{ width: `${student.averageQuizScore}%` }} />
+                  <div
+                    className={`h-full rounded-full transition-all duration-500 ${scoreBarColor(student.averageQuizScore)}`}
+                    style={{ width: `${student.averageQuizScore}%` }}
+                  />
                 </div>
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Completion</span>
@@ -1213,7 +1296,10 @@ export default function StudentDrilldownPage() {
                   </span>
                 </div>
                 <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-                  <div className="h-full rounded-full bg-primary transition-all duration-500" style={{ width: `${completionPct}%` }} />
+                  <div
+                    className="h-full rounded-full bg-primary transition-all duration-500"
+                    style={{ width: `${completionPct}%` }}
+                  />
                 </div>
               </div>
             </div>
@@ -1271,14 +1357,11 @@ export default function StudentDrilldownPage() {
                     week.trend === 'up'
                       ? 'bg-green-500'
                       : week.trend === 'down'
-                      ? 'bg-red-500'
-                      : 'bg-border'
+                        ? 'bg-red-500'
+                        : 'bg-border'
 
                   return (
-                    <div
-                      key={i}
-                      className="group relative flex flex-1 flex-col items-center"
-                    >
+                    <div key={i} className="group relative flex flex-1 flex-col items-center">
                       <div className="pointer-events-none absolute -top-8 z-10 hidden rounded bg-background border border-border px-2 py-1 text-xs font-medium whitespace-nowrap group-hover:block">
                         {percentageToGCSEGradeLabel(week.score)} ({week.score}%)
                       </div>
@@ -1329,8 +1412,12 @@ export default function StudentDrilldownPage() {
                         const pct = Math.round((exam.score / exam.maxScore) * 100)
                         return (
                           <tr key={exam.id}>
-                            <td className="py-3 pr-4 font-medium text-foreground">{exam.examName}</td>
-                            <td className="py-3 pr-4 text-xs text-muted-foreground">{formatDate(exam.date)}</td>
+                            <td className="py-3 pr-4 font-medium text-foreground">
+                              {exam.examName}
+                            </td>
+                            <td className="py-3 pr-4 text-xs text-muted-foreground">
+                              {formatDate(exam.date)}
+                            </td>
                             <td className="py-3 pr-4">
                               <div className="flex items-center gap-2">
                                 <div className="h-2 w-16 overflow-hidden rounded-full bg-muted">
@@ -1339,21 +1426,26 @@ export default function StudentDrilldownPage() {
                                     style={{ width: `${pct}%` }}
                                   />
                                 </div>
-                                <span className={`text-xs font-semibold tabular-nums ${scoreTextColor(pct)}`}>
+                                <span
+                                  className={`text-xs font-semibold tabular-nums ${scoreTextColor(pct)}`}
+                                >
                                   {exam.score}/{exam.maxScore}
                                 </span>
                               </div>
                             </td>
                             <td className="py-3 pr-4">
-                              <Badge variant="outline" className={`text-xs ${
-                                exam.grade === '9' || exam.grade === '8'
-                                  ? 'border-purple-500/30 text-purple-400'
-                                  : exam.grade === '7' || exam.grade === '6'
-                                  ? 'border-green-500/30 text-green-400'
-                                  : exam.grade === '5' || exam.grade === '4'
-                                  ? 'border-amber-500/30 text-clay-600'
-                                  : 'border-red-500/30 text-red-400'
-                              }`}>
+                              <Badge
+                                variant="outline"
+                                className={`text-xs ${
+                                  exam.grade === '9' || exam.grade === '8'
+                                    ? 'border-purple-500/30 text-purple-400'
+                                    : exam.grade === '7' || exam.grade === '6'
+                                      ? 'border-green-500/30 text-green-400'
+                                      : exam.grade === '5' || exam.grade === '4'
+                                        ? 'border-amber-500/30 text-clay-600'
+                                        : 'border-red-500/30 text-red-400'
+                                }`}
+                              >
                                 Grade {exam.grade}
                               </Badge>
                             </td>
@@ -1419,13 +1511,15 @@ export default function StudentDrilldownPage() {
                               essay.score >= 70
                                 ? 'border-green-500/30 text-green-400'
                                 : essay.score >= 50
-                                ? 'border-amber-500/30 text-clay-600'
-                                : 'border-red-500/30 text-red-400'
+                                  ? 'border-amber-500/30 text-clay-600'
+                                  : 'border-red-500/30 text-red-400'
                             }`}
                           >
                             {essay.grade}
                           </Badge>
-                          <span className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(essay.score))}`}>
+                          <span
+                            className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(essay.score))}`}
+                          >
                             {percentageToGCSEGradeLabel(essay.score)}
                           </span>
                         </div>
@@ -1433,7 +1527,10 @@ export default function StudentDrilldownPage() {
                       {essay.feedbackPoints.length > 0 && (
                         <div className="mt-3 space-y-1">
                           {essay.feedbackPoints.map((point, i) => (
-                            <div key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+                            <div
+                              key={i}
+                              className="flex items-start gap-2 text-xs text-muted-foreground"
+                            >
                               <span className="mt-1 h-1 w-1 rounded-full bg-muted-foreground shrink-0" />
                               <span>{point}</span>
                             </div>
@@ -1682,7 +1779,6 @@ export default function StudentDrilldownPage() {
             </>
           )}
         </div>
-
       </div>
     </div>
   )

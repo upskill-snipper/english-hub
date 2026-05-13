@@ -30,6 +30,7 @@ import { Clock, Sparkles, AlertTriangle, ArrowRight } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 interface TrialCountdownBannerProps {
   /** ISO string or Date. Null when the user has no active trial. */
@@ -61,6 +62,7 @@ export function TrialCountdownBanner({
   isPremium,
   className,
 }: TrialCountdownBannerProps) {
+  const t = useT()
   // Normalise once per render — props may be a Date (server-rendered) or
   // an ISO string (after JSON round-trip via the client cache).
   const targetMs =
@@ -91,17 +93,22 @@ export function TrialCountdownBanner({
   // request without us having to track the calendar boundary explicitly.
   const isLastDay = remaining.totalMs < 24 * 60 * 60 * 1000
 
+  // Headline is composed of locale-formatted numeric segments + a
+  // translated "left in your free trial" tail. Splitting like this
+  // keeps the dictionary free of `{n}`-style ICU placeholders.
+  const leftSuffix = t('billing.trial.left_suffix')
   const headline = (() => {
     if (isLastDay) {
       if (remaining.hours >= 1) {
-        return `${remaining.hours}h ${remaining.minutes}m left in your free trial`
+        return `${remaining.hours}${t('billing.trial.unit_h')} ${remaining.minutes}${t('billing.trial.unit_m')} ${leftSuffix}`
       }
-      return `${remaining.minutes}m left in your free trial`
+      return `${remaining.minutes}${t('billing.trial.unit_m')} ${leftSuffix}`
     }
-    const dayLabel = remaining.days === 1 ? 'day' : 'days'
+    const dayLabel =
+      remaining.days === 1 ? t('billing.trial.unit_day') : t('billing.trial.unit_days')
     // Show days + hours so the timer visibly ticks across the
     // first-of-the-day boundary.
-    return `${remaining.days} ${dayLabel} ${remaining.hours}h left in your free trial`
+    return `${remaining.days} ${dayLabel} ${remaining.hours}${t('billing.trial.unit_h')} ${leftSuffix}`
   })()
 
   const Icon = isLastDay ? AlertTriangle : Clock
@@ -139,9 +146,7 @@ export function TrialCountdownBanner({
         <div className="min-w-0">
           <p className="text-sm font-semibold leading-tight sm:text-base">{headline}</p>
           <p className="mt-0.5 text-xs text-ink-600 dark:text-muted-foreground sm:text-sm">
-            {isLastDay
-              ? 'Your trial ends today — keep your essays, AI feedback, and progress.'
-              : 'Upgrade now to keep AI marking, mock exams, and unlimited revision tools.'}
+            {isLastDay ? t('billing.trial.subline_last_day') : t('billing.trial.subline_default')}
           </p>
         </div>
       </div>
@@ -158,11 +163,11 @@ export function TrialCountdownBanner({
       >
         {isLastDay ? (
           <>
-            Upgrade now <ArrowRight className="size-3.5" />
+            {t('billing.trial.cta_upgrade_now')} <ArrowRight className="size-3.5" />
           </>
         ) : (
           <>
-            <Sparkles className="size-3.5" /> Upgrade now
+            <Sparkles className="size-3.5" /> {t('billing.trial.cta_upgrade_now')}
           </>
         )}
       </Button>

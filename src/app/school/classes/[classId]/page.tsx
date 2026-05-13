@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useState, useEffect, useCallback } from "react"
-import { useParams } from "next/navigation"
-import Link from "next/link"
+import { useState, useEffect, useCallback } from 'react'
+import { useParams } from 'next/navigation'
+import Link from 'next/link'
 import {
   ArrowLeft,
   Users,
@@ -16,16 +16,17 @@ import {
   Search,
   Loader2,
   X,
-} from "lucide-react"
-import { toast } from "sonner"
-import { cn } from "@/lib/utils"
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
+} from 'lucide-react'
+import { toast } from 'sonner'
+import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -61,51 +62,51 @@ interface SchoolStudent {
 // ── Mock data (shown while API loads or on error) ─────────────────────────────
 
 const MOCK_CLASS: ClassDetail = {
-  id: "mock-1",
-  name: "Year 10 English — Set 1",
-  year_group: "Year 10",
-  exam_board: "AQA",
+  id: 'mock-1',
+  name: 'Year 10 English — Set 1',
+  year_group: 'Year 10',
+  exam_board: 'AQA',
   teacher_id: null,
-  teacher_name: "Ms. Johnson",
+  teacher_name: 'Ms. Johnson',
   student_count: 4,
 }
 
 const MOCK_STUDENTS: ClassStudent[] = [
   {
-    student_id: "s1",
-    full_name: "Alice Hartley",
-    email: "alice@school.ac.uk",
-    year_group: "Year 10",
+    student_id: 's1',
+    full_name: 'Alice Hartley',
+    email: 'alice@school.ac.uk',
+    year_group: 'Year 10',
     last_activity: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(),
     avg_quiz_score: 78,
     modules_completed: 12,
     completion_rate: 80,
   },
   {
-    student_id: "s2",
-    full_name: "Ben Okafor",
-    email: "ben@school.ac.uk",
-    year_group: "Year 10",
+    student_id: 's2',
+    full_name: 'Ben Okafor',
+    email: 'ben@school.ac.uk',
+    year_group: 'Year 10',
     last_activity: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3).toISOString(),
     avg_quiz_score: 54,
     modules_completed: 8,
     completion_rate: 53,
   },
   {
-    student_id: "s3",
-    full_name: "Clara Ng",
-    email: "clara@school.ac.uk",
-    year_group: "Year 10",
+    student_id: 's3',
+    full_name: 'Clara Ng',
+    email: 'clara@school.ac.uk',
+    year_group: 'Year 10',
     last_activity: new Date(Date.now() - 1000 * 60 * 60 * 24 * 14).toISOString(),
     avg_quiz_score: 35,
     modules_completed: 3,
     completion_rate: 20,
   },
   {
-    student_id: "s4",
-    full_name: "Daniel Reeves",
-    email: "daniel@school.ac.uk",
-    year_group: "Year 10",
+    student_id: 's4',
+    full_name: 'Daniel Reeves',
+    email: 'daniel@school.ac.uk',
+    year_group: 'Year 10',
     last_activity: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
     avg_quiz_score: 91,
     modules_completed: 15,
@@ -117,76 +118,75 @@ const MOCK_STUDENTS: ClassStudent[] = [
 
 function boardBadgeClass(board: string | null): string {
   switch (board) {
-    case "AQA":
-      return "bg-purple-500/10 text-purple-400 border-purple-500/20"
-    case "Edexcel":
-    case "Edexcel IGCSE":
-    case "Edexcel IAL":
-      return "bg-blue-500/10 text-blue-400 border-blue-500/20"
-    case "OCR":
-      return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-    case "WJEC":
-      return "bg-red-500/10 text-red-400 border-red-500/20"
-    case "CAIE IGCSE":
-      return "bg-amber-500/10 text-clay-600 border-amber-500/20"
+    case 'AQA':
+      return 'bg-purple-500/10 text-purple-400 border-purple-500/20'
+    case 'Edexcel':
+    case 'Edexcel IGCSE':
+    case 'Edexcel IAL':
+      return 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+    case 'OCR':
+      return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+    case 'WJEC':
+      return 'bg-red-500/10 text-red-400 border-red-500/20'
+    case 'CAIE IGCSE':
+      return 'bg-amber-500/10 text-clay-600 border-amber-500/20'
     default:
-      return "bg-muted text-muted-foreground"
+      return 'bg-muted text-muted-foreground'
   }
 }
 
 function progressBarColor(pct: number): string {
-  if (pct >= 70) return "bg-green-500"
-  if (pct >= 40) return "bg-amber-500"
-  return "bg-red-500"
+  if (pct >= 70) return 'bg-green-500'
+  if (pct >= 40) return 'bg-amber-500'
+  return 'bg-red-500'
 }
 
 function scoreColor(score: number | null): string {
-  if (score === null) return "text-muted-foreground"
-  if (score >= 70) return "text-green-400"
-  if (score >= 40) return "text-clay-600"
-  return "text-red-400"
+  if (score === null) return 'text-muted-foreground'
+  if (score >= 70) return 'text-green-400'
+  if (score >= 40) return 'text-clay-600'
+  return 'text-red-400'
 }
 
-function formatLastActive(dateStr: string | null): string {
-  if (!dateStr) return "Never active"
+function formatLastActive(dateStr: string | null, t: (k: string) => string): string {
+  if (!dateStr) return t('school.classes.detail.relative.never')
   const diff = Date.now() - new Date(dateStr).getTime()
   const days = Math.floor(diff / 86400000)
-  if (days === 0) return "Today"
-  if (days === 1) return "Yesterday"
-  if (days < 7) return `${days} days ago`
-  if (days < 30) return `${Math.floor(days / 7)}w ago`
-  return `${Math.floor(days / 30)}mo ago`
+  if (days === 0) return t('school.classes.detail.relative.today')
+  if (days === 1) return t('school.classes.detail.relative.yesterday')
+  if (days < 7) return `${days} ${t('school.classes.detail.relative.days_suffix')}`
+  if (days < 30) return `${Math.floor(days / 7)}${t('school.classes.detail.relative.weeks_suffix')}`
+  return `${Math.floor(days / 30)}${t('school.classes.detail.relative.months_suffix')}`
 }
 
 function isAtRisk(student: ClassStudent): boolean {
   const noRecentActivity =
-    !student.last_activity ||
-    Date.now() - new Date(student.last_activity).getTime() > 7 * 86400000
+    !student.last_activity || Date.now() - new Date(student.last_activity).getTime() > 7 * 86400000
   return (student.avg_quiz_score !== null && student.avg_quiz_score < 40) || noRecentActivity
 }
 
 // ── CSV Export ────────────────────────────────────────────────────────────────
 
 function exportCsv(students: ClassStudent[], className: string) {
-  const header = "Name,Email,Year Group,Last Active,Progress %,Modules Completed"
+  const header = 'Name,Email,Year Group,Last Active,Progress %,Modules Completed'
   const rows = students.map((s) =>
     [
-      s.full_name ?? "",
+      s.full_name ?? '',
       s.email,
-      s.year_group ?? "",
-      s.last_activity ? new Date(s.last_activity).toLocaleDateString("en-GB") : "",
-      s.avg_quiz_score ?? "",
+      s.year_group ?? '',
+      s.last_activity ? new Date(s.last_activity).toLocaleDateString('en-GB') : '',
+      s.avg_quiz_score ?? '',
       s.modules_completed,
     ]
       .map((v) => `"${String(v).replace(/"/g, '""')}"`)
-      .join(",")
+      .join(','),
   )
-  const csv = [header, ...rows].join("\n")
-  const blob = new Blob([csv], { type: "text/csv" })
+  const csv = [header, ...rows].join('\n')
+  const blob = new Blob([csv], { type: 'text/csv' })
   const url = URL.createObjectURL(blob)
-  const a = document.createElement("a")
+  const a = document.createElement('a')
   a.href = url
-  a.download = `${className.replace(/\s+/g, "_")}_students.csv`
+  a.download = `${className.replace(/\s+/g, '_')}_students.csv`
   a.click()
   URL.revokeObjectURL(url)
 }
@@ -196,6 +196,7 @@ function exportCsv(students: ClassStudent[], className: string) {
 interface AddStudentsModalProps {
   classId: string
   currentStudentIds: Set<string>
+  t: (k: string) => string
   onClose: () => void
   onAdded: (ids: string[]) => void
 }
@@ -203,10 +204,11 @@ interface AddStudentsModalProps {
 function AddStudentsModal({
   classId,
   currentStudentIds,
+  t,
   onClose,
   onAdded,
 }: AddStudentsModalProps) {
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState('')
   const [allStudents, setAllStudents] = useState<SchoolStudent[]>([])
   const [loadingStudents, setLoadingStudents] = useState(true)
   const [selected, setSelected] = useState<Set<string>>(new Set())
@@ -215,7 +217,7 @@ function AddStudentsModal({
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch("/api/school/students")
+        const res = await fetch('/api/school/students')
         if (res.ok) {
           const data = await res.json()
           setAllStudents(data.students ?? [])
@@ -233,7 +235,7 @@ function AddStudentsModal({
     (s) =>
       !currentStudentIds.has(s.student_id) &&
       (s.full_name?.toLowerCase().includes(search.toLowerCase()) ||
-        s.email.toLowerCase().includes(search.toLowerCase()))
+        s.email.toLowerCase().includes(search.toLowerCase())),
   )
 
   function toggle(id: string) {
@@ -255,8 +257,8 @@ function AddStudentsModal({
       if (!student) continue
       try {
         const res = await fetch(`/api/school/classes/${classId}/students`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: student.email }),
         })
         if (res.ok) succeeded.push(studentId)
@@ -267,12 +269,14 @@ function AddStudentsModal({
     setAdding(false)
     if (succeeded.length > 0) {
       toast.success(
-        `Added ${succeeded.length} student${succeeded.length > 1 ? "s" : ""} to class`
+        `${t('school.classes.detail.add_modal.toast_added_prefix')} ${succeeded.length} ${succeeded.length > 1 ? t('school.classes.detail.add_modal.toast_added_plural') : t('school.classes.detail.add_modal.toast_added_singular')}`,
       )
       onAdded(succeeded)
     }
     if (succeeded.length < ids.length) {
-      toast.error(`${ids.length - succeeded.length} student(s) could not be added`)
+      toast.error(
+        `${ids.length - succeeded.length} ${t('school.classes.detail.add_modal.toast_failed_suffix')}`,
+      )
     }
     onClose()
   }
@@ -282,7 +286,9 @@ function AddStudentsModal({
       <div className="w-full max-w-lg rounded-xl border border-border bg-card shadow-2xl flex flex-col max-h-[80vh]">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-border px-5 py-4">
-          <h2 className="text-base font-semibold text-foreground">Add Students to Class</h2>
+          <h2 className="text-base font-semibold text-foreground">
+            {t('school.classes.detail.add_modal.title')}
+          </h2>
           <Button variant="ghost" size="icon" className="h-7 w-7" onClick={onClose}>
             <X className="h-4 w-4" />
           </Button>
@@ -293,7 +299,7 @@ function AddStudentsModal({
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search by name or email..."
+              placeholder={t('school.classes.detail.add_modal.search_placeholder')}
               className="pl-9"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -310,7 +316,9 @@ function AddStudentsModal({
           )}
           {!loadingStudents && available.length === 0 && (
             <p className="py-8 text-center text-sm text-muted-foreground">
-              {search ? "No students match your search" : "All school students are already in this class"}
+              {search
+                ? t('school.classes.detail.add_modal.empty_search')
+                : t('school.classes.detail.add_modal.empty_all')}
             </p>
           )}
           {!loadingStudents &&
@@ -319,23 +327,23 @@ function AddStudentsModal({
                 key={s.student_id}
                 onClick={() => toggle(s.student_id)}
                 className={cn(
-                  "w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors",
+                  'w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors',
                   selected.has(s.student_id)
-                    ? "bg-primary/10 border border-primary/30"
-                    : "hover:bg-muted/50 border border-transparent"
+                    ? 'bg-primary/10 border border-primary/30'
+                    : 'hover:bg-muted/50 border border-transparent',
                 )}
               >
                 <div
                   className={cn(
-                    "h-4 w-4 shrink-0 rounded border transition-colors",
+                    'h-4 w-4 shrink-0 rounded border transition-colors',
                     selected.has(s.student_id)
-                      ? "bg-primary border-primary"
-                      : "border-muted-foreground/40"
+                      ? 'bg-primary border-primary'
+                      : 'border-muted-foreground/40',
                   )}
                 />
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-sm font-medium text-foreground">
-                    {s.full_name ?? "Unknown"}
+                    {s.full_name ?? t('school.classes.detail.unknown')}
                   </p>
                   <p className="truncate text-xs text-muted-foreground">{s.email}</p>
                 </div>
@@ -351,19 +359,17 @@ function AddStudentsModal({
         {/* Footer */}
         <div className="flex items-center justify-between border-t border-border px-5 py-3">
           <span className="text-xs text-muted-foreground">
-            {selected.size > 0 ? `${selected.size} selected` : "Select students to add"}
+            {selected.size > 0
+              ? `${selected.size} ${t('school.classes.detail.add_modal.footer_selected')}`
+              : t('school.classes.detail.add_modal.footer_select')}
           </span>
           <div className="flex gap-2">
             <Button variant="outline" size="sm" onClick={onClose}>
-              Cancel
+              {t('school.classes.action.cancel')}
             </Button>
-            <Button
-              size="sm"
-              disabled={selected.size === 0 || adding}
-              onClick={handleAdd}
-            >
+            <Button size="sm" disabled={selected.size === 0 || adding} onClick={handleAdd}>
               {adding && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
-              Add Selected
+              {t('school.classes.detail.add_modal.add_selected')}
             </Button>
           </div>
         </div>
@@ -376,9 +382,10 @@ function AddStudentsModal({
 
 interface AnalyticsTabProps {
   students: ClassStudent[]
+  t: (k: string) => string
 }
 
-function AnalyticsTab({ students }: AnalyticsTabProps) {
+function AnalyticsTab({ students, t }: AnalyticsTabProps) {
   const scored = students.filter((s) => s.avg_quiz_score !== null)
   const avgScore =
     scored.length > 0
@@ -387,9 +394,7 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
 
   const completionRate =
     students.length > 0
-      ? Math.round(
-          students.reduce((sum, s) => sum + s.completion_rate, 0) / students.length
-        )
+      ? Math.round(students.reduce((sum, s) => sum + s.completion_rate, 0) / students.length)
       : 0
 
   const atRisk = students.filter(isAtRisk)
@@ -400,7 +405,12 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
 
   // Fabricate 4-week activity bars from last_activity data
   const now = Date.now()
-  const weekLabels = ["3w ago", "2w ago", "Last week", "This week"]
+  const weekLabels = [
+    t('school.classes.detail.analytics.week.three_ago'),
+    t('school.classes.detail.analytics.week.two_ago'),
+    t('school.classes.detail.analytics.week.last'),
+    t('school.classes.detail.analytics.week.this'),
+  ]
   const weekCounts = weekLabels.map((_, i) => {
     const weekStart = now - (4 - i) * 7 * 86400000
     const weekEnd = now - (3 - i) * 7 * 86400000
@@ -420,22 +430,23 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-              Class Average Score
+              {t('school.classes.detail.analytics.avg_score_title')}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <p
               className={cn(
-                "text-5xl font-bold tabular-nums",
-                avgScore === null
-                  ? "text-muted-foreground"
-                  : scoreColor(avgScore)
+                'text-5xl font-bold tabular-nums',
+                avgScore === null ? 'text-muted-foreground' : scoreColor(avgScore),
               )}
             >
-              {avgScore !== null ? percentageToGCSEGradeLabel(avgScore) : "--"}
+              {avgScore !== null ? percentageToGCSEGradeLabel(avgScore) : '--'}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
-              {scored.length} student{scored.length !== 1 ? "s" : ""} with quiz data
+              {scored.length}{' '}
+              {scored.length === 1
+                ? t('school.classes.detail.analytics.avg_score_sub_one')
+                : t('school.classes.detail.analytics.avg_score_sub_many')}
             </p>
           </CardContent>
         </Card>
@@ -444,16 +455,19 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-              Assignment Completion
+              {t('school.classes.detail.analytics.completion_title')}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className={cn("text-5xl font-bold tabular-nums", scoreColor(completionRate))}>
+            <p className={cn('text-5xl font-bold tabular-nums', scoreColor(completionRate))}>
               {completionRate}%
             </p>
             <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted">
               <div
-                className={cn("h-full rounded-full transition-all duration-700", progressBarColor(completionRate))}
+                className={cn(
+                  'h-full rounded-full transition-all duration-700',
+                  progressBarColor(completionRate),
+                )}
                 style={{ width: `${completionRate}%` }}
               />
             </div>
@@ -461,19 +475,24 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
         </Card>
 
         {/* Students at risk */}
-        <Card className={atRisk.length > 0 ? "border-red-500/20" : ""}>
+        <Card className={atRisk.length > 0 ? 'border-red-500/20' : ''}>
           <CardHeader className="pb-2">
             <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wide flex items-center gap-1.5">
               <AlertTriangle className="h-3.5 w-3.5 text-red-400" />
-              Students at Risk
+              {t('school.classes.detail.analytics.at_risk_title')}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className={cn("text-5xl font-bold tabular-nums", atRisk.length > 0 ? "text-red-400" : "text-green-400")}>
+            <p
+              className={cn(
+                'text-5xl font-bold tabular-nums',
+                atRisk.length > 0 ? 'text-red-400' : 'text-green-400',
+              )}
+            >
               {atRisk.length}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
-              Below 40% or inactive 7+ days
+              {t('school.classes.detail.analytics.at_risk_sub')}
             </p>
           </CardContent>
         </Card>
@@ -485,26 +504,28 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-sm font-semibold">
               <TrendingUp className="h-4 w-4 text-green-400" />
-              Top Performers
+              {t('school.classes.detail.analytics.top_performers')}
             </CardTitle>
           </CardHeader>
           <CardContent>
             {topPerformers.length === 0 ? (
-              <p className="text-sm text-muted-foreground">No quiz data yet</p>
+              <p className="text-sm text-muted-foreground">
+                {t('school.classes.detail.analytics.no_quiz_data')}
+              </p>
             ) : (
               <ol className="space-y-3">
                 {topPerformers.map((s, i) => (
                   <li key={s.student_id} className="flex items-center gap-3">
                     <span
                       className={cn(
-                        "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold",
+                        'flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold',
                         i === 0
-                          ? "bg-amber-500/20 text-clay-600"
+                          ? 'bg-amber-500/20 text-clay-600'
                           : i === 1
-                          ? "bg-slate-500/20 text-slate-400"
-                          : i === 2
-                          ? "bg-orange-500/20 text-clay-600"
-                          : "bg-muted text-muted-foreground"
+                            ? 'bg-slate-500/20 text-slate-400'
+                            : i === 2
+                              ? 'bg-orange-500/20 text-clay-600'
+                              : 'bg-muted text-muted-foreground',
                       )}
                     >
                       {i + 1}
@@ -514,7 +535,12 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
                         {s.full_name ?? s.email}
                       </p>
                     </div>
-                    <span className={cn("text-sm font-semibold tabular-nums", gcseGradeColor(percentageToGCSEGrade(s.avg_quiz_score ?? 0)))}>
+                    <span
+                      className={cn(
+                        'text-sm font-semibold tabular-nums',
+                        gcseGradeColor(percentageToGCSEGrade(s.avg_quiz_score ?? 0)),
+                      )}
+                    >
                       {percentageToGCSEGradeLabel(s.avg_quiz_score ?? 0)}
                     </span>
                   </li>
@@ -529,7 +555,7 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-sm font-semibold">
               <BarChart3 className="h-4 w-4 text-primary" />
-              Weekly Activity (last 4 weeks)
+              {t('school.classes.detail.analytics.weekly_activity')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -550,7 +576,7 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
               ))}
             </div>
             <p className="mt-2 text-xs text-muted-foreground">
-              Active students per week (based on last activity)
+              {t('school.classes.detail.analytics.weekly_activity_sub')}
             </p>
           </CardContent>
         </Card>
@@ -562,7 +588,7 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-sm font-semibold text-red-400">
               <AlertTriangle className="h-4 w-4" />
-              Students Needing Attention
+              {t('school.classes.detail.analytics.attention')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -586,20 +612,27 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
                         )}
                         {noActivity && (
                           <span className="text-xs text-clay-600">
-                            Last active: {formatLastActive(s.last_activity)}
+                            {t('school.classes.detail.analytics.last_active_prefix')}{' '}
+                            {formatLastActive(s.last_activity, t)}
                           </span>
                         )}
                       </div>
                     </div>
                     <div className="flex gap-1.5 shrink-0">
                       {lowScore && (
-                        <Badge variant="outline" className="border-red-500/30 text-red-400 text-[10px]">
-                          Low score
+                        <Badge
+                          variant="outline"
+                          className="border-red-500/30 text-red-400 text-[10px]"
+                        >
+                          {t('school.classes.detail.analytics.badge.low_score')}
                         </Badge>
                       )}
                       {noActivity && (
-                        <Badge variant="outline" className="border-amber-500/30 text-clay-600 text-[10px]">
-                          Inactive
+                        <Badge
+                          variant="outline"
+                          className="border-amber-500/30 text-clay-600 text-[10px]"
+                        >
+                          {t('school.classes.detail.analytics.badge.inactive')}
                         </Badge>
                       )}
                     </div>
@@ -617,6 +650,7 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
 // ── Main Page ─────────────────────────────────────────────────────────────────
 
 export default function ClassDetailPage() {
+  const t = useT()
   const params = useParams()
   const classId = params.classId as string
 
@@ -625,7 +659,7 @@ export default function ClassDetailPage() {
   const [loading, setLoading] = useState(true)
 
   // Students tab state
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState('')
   const [removingId, setRemovingId] = useState<string | null>(null)
   const [addModalOpen, setAddModalOpen] = useState(false)
 
@@ -675,21 +709,21 @@ export default function ClassDetailPage() {
     setRemovingId(studentId)
     try {
       const res = await fetch(`/api/school/classes/${classId}/students`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ student_id: studentId }),
       })
       if (res.ok) {
         setStudents((prev) => prev.filter((s) => s.student_id !== studentId))
         setClassInfo((prev) =>
-          prev ? { ...prev, student_count: Math.max(0, prev.student_count - 1) } : prev
+          prev ? { ...prev, student_count: Math.max(0, prev.student_count - 1) } : prev,
         )
-        toast.success("Student removed from class")
+        toast.success(t('school.classes.detail.toast.removed'))
       } else {
-        toast.error("Failed to remove student")
+        toast.error(t('school.classes.detail.toast.remove_failed'))
       }
     } catch {
-      toast.error("Failed to remove student")
+      toast.error(t('school.classes.detail.toast.remove_failed'))
     } finally {
       setRemovingId(null)
     }
@@ -699,7 +733,7 @@ export default function ClassDetailPage() {
 
   function handleStudentsAdded(addedIds: string[]) {
     setClassInfo((prev) =>
-      prev ? { ...prev, student_count: prev.student_count + addedIds.length } : prev
+      prev ? { ...prev, student_count: prev.student_count + addedIds.length } : prev,
     )
     // Refresh student list from API
     fetch(`/api/school/classes/${classId}/students`)
@@ -715,8 +749,8 @@ export default function ClassDetailPage() {
   const filteredStudents = students.filter(
     (s) =>
       !search ||
-      (s.full_name ?? "").toLowerCase().includes(search.toLowerCase()) ||
-      s.email.toLowerCase().includes(search.toLowerCase())
+      (s.full_name ?? '').toLowerCase().includes(search.toLowerCase()) ||
+      s.email.toLowerCase().includes(search.toLowerCase()),
   )
 
   const currentStudentIds = new Set(students.map((s) => s.student_id))
@@ -750,12 +784,15 @@ export default function ClassDetailPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="px-4 py-6 sm:px-6 lg:px-8 space-y-6">
-
         {/* Back button */}
         <Link href="/school/classes">
-          <Button variant="ghost" size="sm" className="gap-1.5 text-muted-foreground hover:text-foreground -ml-2">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="gap-1.5 text-muted-foreground hover:text-foreground -ml-2"
+          >
             <ArrowLeft className="h-4 w-4" />
-            Classes
+            {t('school.classes.detail.back')}
           </Button>
         </Link>
 
@@ -774,7 +811,7 @@ export default function ClassDetailPage() {
               {cls.exam_board && (
                 <Badge
                   variant="outline"
-                  className={cn("text-xs uppercase", boardBadgeClass(cls.exam_board))}
+                  className={cn('text-xs uppercase', boardBadgeClass(cls.exam_board))}
                 >
                   {cls.exam_board}
                 </Badge>
@@ -793,7 +830,7 @@ export default function ClassDetailPage() {
             <span className="flex items-center gap-1.5">
               <Users className="h-4 w-4 shrink-0" />
               <span className="font-medium text-foreground">{cls.student_count}</span>
-              &nbsp;students
+              &nbsp;{t('school.classes.detail.students_suffix')}
             </span>
           </div>
         </div>
@@ -803,23 +840,23 @@ export default function ClassDetailPage() {
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-sm font-semibold">
               <BookOpen className="h-4 w-4 text-primary" />
-              Assign Work
+              {t('school.classes.detail.assign_work')}
             </CardTitle>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-3">
             <Button
               variant="outline"
               size="sm"
-              onClick={() => toast.info("Set Homework — coming soon!")}
+              onClick={() => toast.info(t('school.classes.detail.coming_soon_homework'))}
             >
-              Set Homework
+              {t('school.classes.detail.set_homework')}
             </Button>
             <Button
               variant="outline"
               size="sm"
-              onClick={() => toast.info("Create Assignment — coming soon!")}
+              onClick={() => toast.info(t('school.classes.detail.coming_soon_assignment'))}
             >
-              Create Assignment
+              {t('school.classes.detail.create_assignment')}
             </Button>
           </CardContent>
         </Card>
@@ -829,11 +866,11 @@ export default function ClassDetailPage() {
           <TabsList>
             <TabsTrigger value="students" className="gap-1.5">
               <Users className="h-4 w-4" />
-              Students
+              {t('school.classes.detail.tab.students')}
             </TabsTrigger>
             <TabsTrigger value="analytics" className="gap-1.5">
               <BarChart3 className="h-4 w-4" />
-              Analytics
+              {t('school.classes.detail.tab.analytics')}
             </TabsTrigger>
           </TabsList>
 
@@ -844,7 +881,7 @@ export default function ClassDetailPage() {
               <div className="relative flex-1 min-w-48">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
-                  placeholder="Search students..."
+                  placeholder={t('school.classes.detail.search_placeholder')}
                   className="pl-9"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
@@ -857,7 +894,7 @@ export default function ClassDetailPage() {
                 onClick={() => setAddModalOpen(true)}
               >
                 <Plus className="h-4 w-4" />
-                Add Students
+                {t('school.classes.detail.add_students')}
               </Button>
               <Button
                 size="sm"
@@ -866,7 +903,7 @@ export default function ClassDetailPage() {
                 onClick={() => exportCsv(displayStudents, cls.name)}
               >
                 <Download className="h-4 w-4" />
-                Export CSV
+                {t('school.classes.detail.export_csv')}
               </Button>
             </div>
 
@@ -877,22 +914,22 @@ export default function ClassDetailPage() {
                   <thead>
                     <tr className="border-b border-border">
                       <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                        Name
+                        {t('school.classes.detail.col.name')}
                       </th>
                       <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                        Email
+                        {t('school.classes.detail.col.email')}
                       </th>
                       <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                        Year
+                        {t('school.classes.detail.col.year')}
                       </th>
                       <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                        Last Active
+                        {t('school.classes.detail.col.last_active')}
                       </th>
                       <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide min-w-36">
-                        Progress
+                        {t('school.classes.detail.col.progress')}
                       </th>
                       <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                        Done
+                        {t('school.classes.detail.col.done')}
                       </th>
                       <th className="px-4 py-3" />
                     </tr>
@@ -900,19 +937,21 @@ export default function ClassDetailPage() {
                   <tbody className="divide-y divide-border">
                     {filteredStudents.length === 0 && (
                       <tr>
-                        <td colSpan={7} className="px-4 py-10 text-center text-sm text-muted-foreground">
-                          {search ? "No students match your search" : "No students in this class yet"}
+                        <td
+                          colSpan={7}
+                          className="px-4 py-10 text-center text-sm text-muted-foreground"
+                        >
+                          {search
+                            ? t('school.classes.detail.no_search_match')
+                            : t('school.classes.detail.no_in_class')}
                         </td>
                       </tr>
                     )}
                     {filteredStudents.map((s) => (
-                      <tr
-                        key={s.student_id}
-                        className="group hover:bg-muted/30 transition-colors"
-                      >
+                      <tr key={s.student_id} className="group hover:bg-muted/30 transition-colors">
                         <td className="px-4 py-3 font-medium text-foreground whitespace-nowrap">
                           <span className="flex items-center gap-1.5">
-                            {s.full_name ?? "Unknown"}
+                            {s.full_name ?? t('school.classes.detail.unknown')}
                             {isAtRisk(s) && (
                               <AlertTriangle className="h-3.5 w-3.5 text-red-400 shrink-0" />
                             )}
@@ -931,31 +970,33 @@ export default function ClassDetailPage() {
                           )}
                         </td>
                         <td className="px-4 py-3 text-muted-foreground whitespace-nowrap text-xs">
-                          {formatLastActive(s.last_activity)}
+                          {formatLastActive(s.last_activity, t)}
                         </td>
                         <td className="px-4 py-3 min-w-36">
                           <div className="flex items-center gap-2">
                             <div className="flex-1 h-2 overflow-hidden rounded-full bg-muted">
                               <div
                                 className={cn(
-                                  "h-full rounded-full transition-all duration-500",
-                                  progressBarColor(s.avg_quiz_score ?? 0)
+                                  'h-full rounded-full transition-all duration-500',
+                                  progressBarColor(s.avg_quiz_score ?? 0),
                                 )}
                                 style={{ width: `${Math.min(s.avg_quiz_score ?? 0, 100)}%` }}
                               />
                             </div>
                             <span
                               className={cn(
-                                "text-xs font-semibold tabular-nums w-8 shrink-0 text-right",
-                                scoreColor(s.avg_quiz_score)
+                                'text-xs font-semibold tabular-nums w-8 shrink-0 text-right',
+                                scoreColor(s.avg_quiz_score),
                               )}
                             >
-                              {s.avg_quiz_score !== null ? `G${percentageToGCSEGrade(s.avg_quiz_score)}` : "—"}
+                              {s.avg_quiz_score !== null
+                                ? `G${percentageToGCSEGrade(s.avg_quiz_score)}`
+                                : '—'}
                             </span>
                           </div>
                         </td>
                         <td className="px-4 py-3 text-muted-foreground tabular-nums text-xs whitespace-nowrap">
-                          {s.modules_completed} modules
+                          {s.modules_completed} {t('school.classes.detail.modules_suffix')}
                         </td>
                         <td className="px-4 py-3">
                           <Button
@@ -964,14 +1005,16 @@ export default function ClassDetailPage() {
                             className="h-7 px-2 gap-1 text-muted-foreground hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"
                             disabled={removingId === s.student_id}
                             onClick={() => handleRemove(s.student_id)}
-                            title="Remove from class"
+                            title={t('school.classes.detail.remove_title')}
                           >
                             {removingId === s.student_id ? (
                               <Loader2 className="h-3.5 w-3.5 animate-spin" />
                             ) : (
                               <UserMinus className="h-3.5 w-3.5" />
                             )}
-                            <span className="text-xs hidden sm:inline">Remove</span>
+                            <span className="text-xs hidden sm:inline">
+                              {t('school.classes.detail.remove')}
+                            </span>
                           </Button>
                         </td>
                       </tr>
@@ -984,7 +1027,7 @@ export default function ClassDetailPage() {
 
           {/* ── Analytics Tab ── */}
           <TabsContent value="analytics" className="mt-4">
-            <AnalyticsTab students={displayStudents} />
+            <AnalyticsTab students={displayStudents} t={t} />
           </TabsContent>
         </Tabs>
       </div>
@@ -994,6 +1037,7 @@ export default function ClassDetailPage() {
         <AddStudentsModal
           classId={classId}
           currentStudentIds={currentStudentIds}
+          t={t}
           onClose={() => setAddModalOpen(false)}
           onAdded={handleStudentsAdded}
         />

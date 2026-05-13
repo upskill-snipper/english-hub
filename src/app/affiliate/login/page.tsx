@@ -13,9 +13,11 @@ import {
   seedMockData,
   setAccount,
 } from '@/components/affiliate/mock-data'
+import { useT } from '@/lib/i18n/use-t'
 import { ArrowLeft, Sparkles } from 'lucide-react'
 
 export default function AffiliateLoginPage() {
+  const t = useT()
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -26,7 +28,7 @@ export default function AffiliateLoginPage() {
     e.preventDefault()
     setError(null)
     if (!email || !password) {
-      setError('Enter both email and password.')
+      setError(t('aff.login.enter_both'))
       return
     }
     setLoading(true)
@@ -52,7 +54,7 @@ export default function AffiliateLoginPage() {
           render={<Link href="/affiliate" />}
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to programme
+          {t('aff.login.back_to_programme')}
         </Button>
 
         <Card>
@@ -61,34 +63,29 @@ export default function AffiliateLoginPage() {
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary">
                 <Sparkles className="w-4 h-4" />
               </div>
-              <CardTitle className="text-2xl">Partner login</CardTitle>
+              <CardTitle className="text-2xl">{t('aff.login.title')}</CardTitle>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Welcome back. Sign in to access your dashboard.
-            </p>
+            <p className="text-sm text-muted-foreground">{t('aff.login.subtitle')}</p>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t('aff.login.email_label')}</Label>
                 <Input
                   id="email"
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
+                  placeholder={t('aff.login.email_placeholder')}
                 />
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Password</Label>
-                  <Link
-                    href="#"
-                    className="text-xs text-primary hover:underline"
-                  >
-                    Forgot?
+                  <Label htmlFor="password">{t('aff.login.password_label')}</Label>
+                  <Link href="#" className="text-xs text-primary hover:underline">
+                    {t('aff.login.forgot')}
                   </Link>
                 </div>
                 <Input
@@ -108,13 +105,13 @@ export default function AffiliateLoginPage() {
               )}
 
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? 'Signing in...' : 'Sign in'}
+                {loading ? t('aff.login.signing_in') : t('aff.login.sign_in')}
               </Button>
 
               <p className="text-xs text-muted-foreground text-center">
-                New here?{' '}
+                {t('aff.login.new_here')}{' '}
                 <Link href="/affiliate/signup" className="text-primary hover:underline">
-                  Apply to join
+                  {t('aff.login.apply_to_join')}
                 </Link>
               </p>
             </form>

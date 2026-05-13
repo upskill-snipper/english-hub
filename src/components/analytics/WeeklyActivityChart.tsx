@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils'
 import type { WeeklyDay } from '@/hooks/useAnalytics'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { useT } from '@/lib/i18n/use-t'
 
 interface WeeklyActivityChartProps {
   data: WeeklyDay[]
@@ -10,6 +11,7 @@ interface WeeklyActivityChartProps {
 }
 
 export function WeeklyActivityChart({ data, className }: WeeklyActivityChartProps) {
+  const t = useT()
   const maxMinutes = Math.max(...data.map((d) => d.studyMinutes), 1)
   const maxQuestions = Math.max(...data.map((d) => d.questionsAnswered), 1)
   const totalMinutes = data.reduce((s, d) => s + d.studyMinutes, 0)
@@ -21,11 +23,12 @@ export function WeeklyActivityChart({ data, className }: WeeklyActivityChartProp
       <div className="mb-4 flex items-center gap-4 text-xs text-muted-foreground">
         <div className="flex items-center gap-1.5">
           <span className="inline-block h-2.5 w-2.5 rounded-sm bg-primary" />
-          Study time ({totalMinutes}m)
+          {t('analytics.weekly.study_time')} ({totalMinutes}
+          {t('analytics.unit.minute_short')})
         </div>
         <div className="flex items-center gap-1.5">
           <span className="inline-block h-2.5 w-2.5 rounded-sm bg-blue-400" />
-          Questions ({totalQuestions})
+          {t('analytics.weekly.questions')} ({totalQuestions})
         </div>
       </div>
 
@@ -38,7 +41,10 @@ export function WeeklyActivityChart({ data, className }: WeeklyActivityChartProp
           return (
             <Tooltip key={day.date}>
               <TooltipTrigger className="flex flex-1 flex-col items-center gap-1">
-                <div className="relative flex w-full items-end justify-center" style={{ height: 130 }}>
+                <div
+                  className="relative flex w-full items-end justify-center"
+                  style={{ height: 130 }}
+                >
                   {/* Study time bar */}
                   <div
                     className="w-full max-w-8 rounded-t-md bg-primary/80 transition-all duration-300"
@@ -60,10 +66,11 @@ export function WeeklyActivityChart({ data, className }: WeeklyActivityChartProp
               <TooltipContent side="top">
                 <p className="text-xs font-medium">{day.date}</p>
                 <p className="text-xs text-muted-foreground">
-                  {day.studyMinutes}m study time
+                  {day.studyMinutes}
+                  {t('analytics.unit.minute_short')} {t('analytics.weekly.study_time')}
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  {day.questionsAnswered} questions
+                  {day.questionsAnswered} {t('analytics.weekly.questions').toLowerCase()}
                 </p>
               </TooltipContent>
             </Tooltip>

@@ -11,6 +11,7 @@ import {
   type StudyPlanData,
 } from '@/lib/recommendations/engine'
 import { useBoard } from '@/hooks/useBoard'
+import { useT } from '@/lib/i18n/use-t'
 import { RecommendationCard, getDismissedIds } from './RecommendationCard'
 
 // ─── LocalStorage Keys ──────────────────────────────────────────────────────
@@ -69,7 +70,7 @@ function loadProgress(): UserProgress {
 // ─── Component ──────────────────────────────────────────────────────────────
 
 interface RecommendationSectionProps {
-  /** Optional heading override */
+  /** Optional heading override. Defaults to the translated section title. */
   title?: string
   /** Limit the number of visible cards (default: 5) */
   maxCards?: number
@@ -78,10 +79,12 @@ interface RecommendationSectionProps {
 }
 
 export function RecommendationSection({
-  title = 'Recommended for you',
+  title,
   maxCards = 5,
   className = '',
 }: RecommendationSectionProps) {
+  const t = useT()
+  const heading = title ?? t('recommend.section.title')
   const { board, isHydrated } = useBoard()
   const [mounted, setMounted] = useState(false)
   const [dismissedIds, setDismissedIds] = useState<Set<string>>(new Set())
@@ -124,16 +127,12 @@ export function RecommendationSection({
     <section className={`space-y-4 ${className}`}>
       <div className="flex items-center gap-2">
         <Lightbulb className="size-4 text-amber-500" />
-        <h2 className="text-heading-sm font-heading text-foreground">{title}</h2>
+        <h2 className="text-heading-sm font-heading text-foreground">{heading}</h2>
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
         {visibleRecs.map((rec) => (
-          <RecommendationCard
-            key={rec.id}
-            recommendation={rec}
-            onDismiss={handleDismiss}
-          />
+          <RecommendationCard key={rec.id} recommendation={rec} onDismiss={handleDismiss} />
         ))}
       </div>
     </section>

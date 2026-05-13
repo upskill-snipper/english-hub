@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useState, useEffect, useCallback } from "react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useState, useEffect, useCallback } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import {
   CheckCircle,
   Upload,
@@ -13,40 +13,34 @@ import {
   ArrowLeft,
   Copy,
   Download,
-} from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { createClient } from "@/lib/supabase/client"
-import { useAuthStore } from "@/store/auth-store"
+} from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { createClient } from '@/lib/supabase/client'
+import { useAuthStore } from '@/store/auth-store'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
 const TOTAL_STEPS = 5
-const STORAGE_KEY = "school_onboarding_state"
-const COMPLETION_KEY = "school_onboarding_complete"
+const STORAGE_KEY = 'school_onboarding_state'
+const COMPLETION_KEY = 'school_onboarding_complete'
 
-const YEAR_GROUPS = [
-  "Year 7",
-  "Year 8",
-  "Year 9",
-  "Year 10",
-  "Year 11",
-  "Year 12",
-  "Year 13",
-]
+const YEAR_GROUPS = ['Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11', 'Year 12', 'Year 13']
 
-const EXAM_BOARDS = [
-  "AQA",
-  "Edexcel (Pearson)",
-  "OCR",
-  "WJEC/Eduqas",
-  "IGCSE (Cambridge/CAIE)",
-]
+const EXAM_BOARDS = ['AQA', 'Edexcel (Pearson)', 'OCR', 'WJEC/Eduqas', 'IGCSE (Cambridge/CAIE)']
 
-const STEP_LABELS = ["Welcome", "Teachers", "Students", "Classes", "Complete"]
+// Dictionary keys for the 5 wizard step labels, resolved at render time.
+const STEP_LABEL_KEYS = [
+  'onboarding.step.welcome',
+  'onboarding.step.teachers',
+  'onboarding.step.students',
+  'onboarding.step.classes',
+  'onboarding.step.complete',
+] as const
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -86,7 +80,7 @@ interface JoinCodeEntry {
 // ── localStorage helpers ─────────────────────────────────────────────────────
 
 function loadWizardState(): WizardState {
-  if (typeof window === "undefined") {
+  if (typeof window === 'undefined') {
     return {
       currentStep: 1,
       teacherEmailsAdded: [],
@@ -122,11 +116,7 @@ function AnimatedCheckmark() {
   return (
     <div className="flex items-center justify-center mb-4">
       <div className="w-24 h-24">
-        <svg
-          viewBox="0 0 100 100"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
-        >
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
           <circle
             cx="50"
             cy="50"
@@ -137,7 +127,7 @@ function AnimatedCheckmark() {
             strokeLinecap="round"
             strokeDasharray="276"
             strokeDashoffset="276"
-            style={{ animation: "eh-circle 0.65s ease-out 0.1s forwards" }}
+            style={{ animation: 'eh-circle 0.65s ease-out 0.1s forwards' }}
           />
           <polyline
             points="28,52 44,68 72,34"
@@ -148,7 +138,7 @@ function AnimatedCheckmark() {
             strokeLinejoin="round"
             strokeDasharray="64"
             strokeDashoffset="64"
-            style={{ animation: "eh-check 0.4s ease-out 0.75s forwards" }}
+            style={{ animation: 'eh-check 0.4s ease-out 0.75s forwards' }}
           />
         </svg>
       </div>
@@ -167,15 +157,19 @@ function AnimatedCheckmark() {
 // ── Step indicator ───────────────────────────────────────────────────────────
 
 function StepIndicator({ currentStep }: { currentStep: number }) {
+  const t = useT()
   const pct = Math.round(((currentStep - 1) / (TOTAL_STEPS - 1)) * 100)
 
   return (
     <div className="w-full mb-8">
       <div className="flex items-center justify-between mb-2">
         <span className="text-xs text-zinc-500">
-          Step {currentStep} of {TOTAL_STEPS}
+          {t('onboarding.step_label_prefix')} {currentStep} {t('onboarding.step_of')} {TOTAL_STEPS}
         </span>
-        <span className="text-xs text-zinc-500">{pct}% complete</span>
+        <span className="text-xs text-zinc-500">
+          {pct}
+          {t('onboarding.percent_complete_suffix')}
+        </span>
       </div>
 
       {/* Progress bar */}
@@ -188,33 +182,30 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
 
       {/* Step dots */}
       <div className="flex items-start justify-between">
-        {STEP_LABELS.map((label, i) => {
+        {STEP_LABEL_KEYS.map((labelKey, i) => {
           const stepNum = i + 1
           const done = stepNum < currentStep
           const active = stepNum === currentStep
+          const label = t(labelKey)
           return (
-            <div key={label} className="flex flex-col items-center gap-1.5 flex-1">
+            <div key={labelKey} className="flex flex-col items-center gap-1.5 flex-1">
               <div
                 className={[
-                  "w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all duration-300 mx-auto",
+                  'w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all duration-300 mx-auto',
                   done
-                    ? "bg-indigo-500 border-indigo-500 text-white"
+                    ? 'bg-indigo-500 border-indigo-500 text-white'
                     : active
-                    ? "bg-zinc-900 border-indigo-500 text-indigo-400"
-                    : "bg-zinc-900 border-zinc-700 text-zinc-600",
-                ].join(" ")}
+                      ? 'bg-zinc-900 border-indigo-500 text-indigo-400'
+                      : 'bg-zinc-900 border-zinc-700 text-zinc-600',
+                ].join(' ')}
               >
                 {done ? <CheckCircle className="w-4 h-4" /> : stepNum}
               </div>
               <span
                 className={[
-                  "text-[10px] text-center leading-tight hidden sm:block",
-                  active
-                    ? "text-indigo-400 font-medium"
-                    : done
-                    ? "text-zinc-400"
-                    : "text-zinc-600",
-                ].join(" ")}
+                  'text-[10px] text-center leading-tight hidden sm:block',
+                  active ? 'text-indigo-400 font-medium' : done ? 'text-zinc-400' : 'text-zinc-600',
+                ].join(' ')}
               >
                 {label}
               </span>
@@ -231,25 +222,25 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
 export default function SchoolOnboardingPage() {
   const router = useRouter()
   const { user } = useAuthStore()
+  const t = useT()
 
   // Wizard persistence
-  const [wizardState, setWizardState] = useState<WizardState>(() =>
-    loadWizardState()
-  )
+  const [wizardState, setWizardState] = useState<WizardState>(() => loadWizardState())
 
-  // School data
+  // School data — `schoolName` placeholder uses the en string; the
+  // render path overrides with the translated default if data is missing.
   const [stats, setStats] = useState<SchoolStats>({
     teacherCount: 0,
     studentCount: 0,
     classCount: 0,
-    schoolName: "Your School",
+    schoolName: 'Your School',
     joinCode: null,
   })
   const [teachers, setTeachers] = useState<TeacherMember[]>([])
   const [statsLoading, setStatsLoading] = useState(true)
 
   // Step 2 — teacher invite
-  const [inviteEmail, setInviteEmail] = useState("")
+  const [inviteEmail, setInviteEmail] = useState('')
   const [inviteList, setInviteList] = useState<string[]>([])
   const [inviteSending, setInviteSending] = useState(false)
   const [inviteError, setInviteError] = useState<string | null>(null)
@@ -260,10 +251,10 @@ export default function SchoolOnboardingPage() {
 
   // Step 4 — class creation
   const [classForm, setClassForm] = useState<ClassForm>({
-    name: "",
-    year_group: "",
-    exam_board: "",
-    teacher_id: "",
+    name: '',
+    year_group: '',
+    exam_board: '',
+    teacher_id: '',
   })
   const [classCreating, setClassCreating] = useState(false)
   const [classError, setClassError] = useState<string | null>(null)
@@ -291,10 +282,10 @@ export default function SchoolOnboardingPage() {
       const supabase = createClient()
 
       const { data: membership } = await supabase
-        .from("school_members")
-        .select("*, schools(*)")
-        .eq("user_id", user!.id)
-        .eq("invite_status", "accepted")
+        .from('school_members')
+        .select('*, schools(*)')
+        .eq('user_id', user!.id)
+        .eq('invite_status', 'accepted')
         .limit(1)
         .single()
 
@@ -309,29 +300,29 @@ export default function SchoolOnboardingPage() {
       const [studentsRes, teachersRes, classesRes, membersListRes, joinCodesRes] =
         await Promise.all([
           supabase
-            .from("school_members")
-            .select("id", { count: "exact", head: true })
-            .eq("school_id", schoolId)
-            .eq("role", "student")
-            .eq("invite_status", "accepted"),
+            .from('school_members')
+            .select('id', { count: 'exact', head: true })
+            .eq('school_id', schoolId)
+            .eq('role', 'student')
+            .eq('invite_status', 'accepted'),
           supabase
-            .from("school_members")
-            .select("id", { count: "exact", head: true })
-            .eq("school_id", schoolId)
-            .in("role", ["teacher", "head_of_department"])
-            .eq("invite_status", "accepted"),
+            .from('school_members')
+            .select('id', { count: 'exact', head: true })
+            .eq('school_id', schoolId)
+            .in('role', ['teacher', 'head_of_department'])
+            .eq('invite_status', 'accepted'),
           supabase
-            .from("classes")
-            .select("id", { count: "exact", head: true })
-            .eq("school_id", schoolId)
-            .eq("is_active", true),
+            .from('classes')
+            .select('id', { count: 'exact', head: true })
+            .eq('school_id', schoolId)
+            .eq('is_active', true),
           supabase
-            .from("school_members")
-            .select("id, full_name")
-            .eq("school_id", schoolId)
-            .in("role", ["teacher", "head_of_department"])
-            .eq("invite_status", "accepted"),
-          fetch("/api/school/join-codes"),
+            .from('school_members')
+            .select('id, full_name')
+            .eq('school_id', schoolId)
+            .in('role', ['teacher', 'head_of_department'])
+            .eq('invite_status', 'accepted'),
+          fetch('/api/school/join-codes'),
         ])
 
       let joinCode: string | null = null
@@ -340,9 +331,7 @@ export default function SchoolOnboardingPage() {
           const jcData = (await joinCodesRes.json()) as {
             join_codes?: JoinCodeEntry[]
           }
-          const usable = (jcData.join_codes ?? []).find(
-            (c) => c.is_usable && !c.class_id
-          )
+          const usable = (jcData.join_codes ?? []).find((c) => c.is_usable && !c.class_id)
           if (usable) joinCode = usable.code
         }
       } catch {
@@ -353,7 +342,7 @@ export default function SchoolOnboardingPage() {
         teacherCount: teachersRes.count ?? 0,
         studentCount: studentsRes.count ?? 0,
         classCount: classesRes.count ?? 0,
-        schoolName: schoolRow?.name ?? "Your School",
+        schoolName: schoolRow?.name ?? 'Your School',
         joinCode,
       })
       setTeachers((membersListRes.data ?? []) as TeacherMember[])
@@ -374,23 +363,23 @@ export default function SchoolOnboardingPage() {
   }
 
   function skipToDashboard() {
-    localStorage.setItem(COMPLETION_KEY, "true")
-    router.push("/school/dashboard")
+    localStorage.setItem(COMPLETION_KEY, 'true')
+    router.push('/school/dashboard')
   }
 
   function completeDashboard() {
-    localStorage.setItem(COMPLETION_KEY, "true")
+    localStorage.setItem(COMPLETION_KEY, 'true')
     localStorage.removeItem(STORAGE_KEY)
-    router.push("/school/dashboard")
+    router.push('/school/dashboard')
   }
 
   // ── Step 2 helpers ───────────────────────────────────────────────────────
 
   function addEmailToList() {
     const email = inviteEmail.trim().toLowerCase()
-    if (!email || !email.includes("@") || inviteList.includes(email)) return
+    if (!email || !email.includes('@') || inviteList.includes(email)) return
     setInviteList((prev) => [...prev, email])
-    setInviteEmail("")
+    setInviteEmail('')
   }
 
   function removeFromList(email: string) {
@@ -402,20 +391,20 @@ export default function SchoolOnboardingPage() {
     setInviteSending(true)
     setInviteError(null)
     try {
-      const res = await fetch("/api/school/invite", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ emails: inviteList, role: "teacher" }),
+      const res = await fetch('/api/school/invite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ emails: inviteList, role: 'teacher' }),
       })
       if (!res.ok) {
         const err = (await res.json().catch(() => ({}))) as { error?: string }
-        throw new Error(err.error ?? "Failed to send invites")
+        throw new Error(err.error ?? t('onboarding.s2.invite_failed'))
       }
       setInviteSuccess(true)
       updateWizardState({ teacherEmailsAdded: inviteList })
       setInviteList([])
     } catch (e) {
-      setInviteError(e instanceof Error ? e.message : "Something went wrong")
+      setInviteError(e instanceof Error ? e.message : t('onboarding.s2.generic_error'))
     } finally {
       setInviteSending(false)
     }
@@ -438,7 +427,7 @@ export default function SchoolOnboardingPage() {
 
   async function createClass() {
     if (!classForm.name.trim()) {
-      setClassError("Class name is required.")
+      setClassError(t('onboarding.s4.class_name_required'))
       return
     }
     setClassCreating(true)
@@ -449,20 +438,20 @@ export default function SchoolOnboardingPage() {
       if (classForm.exam_board) body.exam_board = classForm.exam_board
       if (classForm.teacher_id) body.teacher_id = classForm.teacher_id
 
-      const res = await fetch("/api/school/classes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/school/classes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })
       if (!res.ok) {
         const err = (await res.json().catch(() => ({}))) as { error?: string }
-        throw new Error(err.error ?? "Failed to create class")
+        throw new Error(err.error ?? t('onboarding.s4.create_failed'))
       }
       setClassSuccess(true)
       updateWizardState({ classCreated: true })
       setStats((prev) => ({ ...prev, classCount: prev.classCount + 1 }))
     } catch (e) {
-      setClassError(e instanceof Error ? e.message : "Something went wrong")
+      setClassError(e instanceof Error ? e.message : t('onboarding.s2.generic_error'))
     } finally {
       setClassCreating(false)
     }
@@ -470,28 +459,26 @@ export default function SchoolOnboardingPage() {
 
   // ── Shared button classes ────────────────────────────────────────────────
 
-  const pillActive = "bg-indigo-600 border-indigo-500 text-white"
-  const pillInactive =
-    "bg-zinc-800 border-zinc-700 text-zinc-400 hover:border-zinc-600"
+  const pillActive = 'bg-indigo-600 border-indigo-500 text-white'
+  const pillInactive = 'bg-zinc-800 border-zinc-700 text-zinc-400 hover:border-zinc-600'
 
   // ── Render ───────────────────────────────────────────────────────────────
 
   return (
     <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-start py-10 px-4">
       <div className="w-full max-w-2xl">
-
         {/* Top bar */}
         <div className="flex items-center justify-between mb-6">
           <span className="text-sm font-semibold text-zinc-300 tracking-wide">
-            The English Hub{" "}
-            <span className="text-zinc-600 font-normal">/ Setup</span>
+            The English Hub{' '}
+            <span className="text-zinc-600 font-normal">/ {t('onboarding.brand_suffix')}</span>
           </span>
           {currentStep > 1 && (
             <button
               onClick={skipToDashboard}
               className="text-xs text-zinc-500 hover:text-zinc-300 underline underline-offset-2 transition-colors"
             >
-              Skip setup, go to dashboard
+              {t('onboarding.skip_to_dashboard')}
             </button>
           )}
         </div>
@@ -508,43 +495,40 @@ export default function SchoolOnboardingPage() {
                   <GraduationCap className="w-5 h-5 text-indigo-400" />
                 </div>
                 <Badge className="bg-amber-500/10 text-clay-600 border-amber-500/20 text-xs font-semibold">
-                  FOUNDER ACCESS
+                  {t('onboarding.s1.founder_badge')}
                 </Badge>
               </div>
               <CardTitle className="text-2xl text-zinc-100 leading-snug">
-                Welcome to The English Hub,{" "}
+                {t('onboarding.s1.welcome_prefix')}{' '}
                 <span className="text-indigo-400">
-                  {statsLoading ? "..." : stats.schoolName}
+                  {statsLoading
+                    ? '...'
+                    : stats.schoolName === 'Your School'
+                      ? t('onboarding.default_school_name')
+                      : stats.schoolName}
                 </span>
                 !
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-5">
-              <p className="text-zinc-400 leading-relaxed text-sm">
-                Your school account is ready. This short wizard will help you
-                configure teachers, students, and your first class in just a few
-                minutes.
-              </p>
+              <p className="text-zinc-400 leading-relaxed text-sm">{t('onboarding.s1.intro')}</p>
 
               {/* Access summary */}
               <div className="rounded-lg border border-indigo-500/20 bg-indigo-500/5 p-4 space-y-3">
                 <p className="text-xs font-semibold text-indigo-300 uppercase tracking-wider">
-                  What you have access to
+                  {t('onboarding.s1.access_heading')}
                 </p>
                 <ul className="space-y-2">
                   {[
-                    "FOUNDER access active until August 2026",
-                    "Unlimited teachers and students",
-                    "All resources, lessons, and worksheets",
-                    "Assignments, progress tracking, and analytics",
-                    "Priority support and early feature access",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-2.5 text-sm text-zinc-300"
-                    >
+                    'onboarding.s1.access.0',
+                    'onboarding.s1.access.1',
+                    'onboarding.s1.access.2',
+                    'onboarding.s1.access.3',
+                    'onboarding.s1.access.4',
+                  ].map((key) => (
+                    <li key={key} className="flex items-center gap-2.5 text-sm text-zinc-300">
                       <CheckCircle className="w-4 h-4 text-green-400 shrink-0" />
-                      {item}
+                      {t(key)}
                     </li>
                   ))}
                 </ul>
@@ -554,7 +538,7 @@ export default function SchoolOnboardingPage() {
                 onClick={nextStep}
                 className="w-full bg-indigo-600 hover:bg-indigo-500 text-white"
               >
-                Get Started
+                {t('onboarding.s1.cta')}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </CardContent>
@@ -571,20 +555,17 @@ export default function SchoolOnboardingPage() {
                 </div>
                 {!statsLoading && (
                   <Badge className="bg-zinc-800 text-zinc-300 border-zinc-700 text-xs">
-                    {stats.teacherCount} teacher
-                    {stats.teacherCount !== 1 ? "s" : ""} added
+                    {stats.teacherCount}{' '}
+                    {stats.teacherCount === 1
+                      ? t('onboarding.s2.teacher_added_singular')
+                      : t('onboarding.s2.teachers_count_suffix')}
                   </Badge>
                 )}
               </div>
-              <CardTitle className="text-xl text-zinc-100">
-                Add Your Teachers
-              </CardTitle>
-              <p className="text-sm text-zinc-400 mt-1">
-                Choose how you would like to bring your teaching staff on board.
-              </p>
+              <CardTitle className="text-xl text-zinc-100">{t('onboarding.s2.title')}</CardTitle>
+              <p className="text-sm text-zinc-400 mt-1">{t('onboarding.s2.subtitle')}</p>
             </CardHeader>
             <CardContent className="space-y-4">
-
               {/* Option A — bulk import */}
               <div className="rounded-lg border border-zinc-700 bg-zinc-800/40 p-4">
                 <div className="flex items-start gap-3">
@@ -593,10 +574,10 @@ export default function SchoolOnboardingPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-zinc-200">
-                      Option A — Upload Excel / CSV
+                      {t('onboarding.s2.option_a_title')}
                     </p>
                     <p className="text-xs text-zinc-500 mt-0.5">
-                      Import many teachers at once from a spreadsheet.
+                      {t('onboarding.s2.option_a_body')}
                     </p>
                     <Link href="/school/import?type=teacher">
                       <Button
@@ -604,7 +585,7 @@ export default function SchoolOnboardingPage() {
                         variant="outline"
                         className="mt-3 border-zinc-600 text-zinc-300 hover:bg-zinc-700"
                       >
-                        Go to Import Tool
+                        {t('onboarding.s2.go_to_import')}
                         <ArrowRight className="w-3 h-3 ml-1.5" />
                       </Button>
                     </Link>
@@ -620,10 +601,10 @@ export default function SchoolOnboardingPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-zinc-200">
-                      Option B — Invite individually
+                      {t('onboarding.s2.option_b_title')}
                     </p>
                     <p className="text-xs text-zinc-500 mt-0.5">
-                      Send email invitations to teachers one by one.
+                      {t('onboarding.s2.option_b_body')}
                     </p>
                   </div>
                 </div>
@@ -631,10 +612,10 @@ export default function SchoolOnboardingPage() {
                 <div className="flex gap-2">
                   <Input
                     type="email"
-                    placeholder="teacher@school.ac.uk"
+                    placeholder={t('onboarding.s2.email_placeholder')}
                     value={inviteEmail}
                     onChange={(e) => setInviteEmail(e.target.value)}
-                    onKeyDown={(e) => e.key === "Enter" && addEmailToList()}
+                    onKeyDown={(e) => e.key === 'Enter' && addEmailToList()}
                     className="bg-zinc-900 border-zinc-700 text-zinc-200 placeholder:text-zinc-600 text-sm"
                   />
                   <Button
@@ -643,7 +624,7 @@ export default function SchoolOnboardingPage() {
                     size="sm"
                     className="border-zinc-600 text-zinc-300 hover:bg-zinc-700 shrink-0"
                   >
-                    Add
+                    {t('onboarding.s2.add_btn')}
                   </Button>
                 </div>
 
@@ -659,7 +640,7 @@ export default function SchoolOnboardingPage() {
                           onClick={() => removeFromList(email)}
                           className="text-zinc-600 hover:text-zinc-400 text-xs transition-colors"
                         >
-                          Remove
+                          {t('onboarding.s2.remove_btn')}
                         </button>
                       </div>
                     ))}
@@ -670,26 +651,20 @@ export default function SchoolOnboardingPage() {
                       className="w-full bg-blue-600 hover:bg-blue-500 text-white mt-1"
                     >
                       {inviteSending
-                        ? "Sending..."
-                        : `Send ${inviteList.length} Invite${inviteList.length !== 1 ? "s" : ""}`}
+                        ? t('onboarding.s2.sending')
+                        : `${t('onboarding.s2.send_invites_prefix')} ${inviteList.length} ${inviteList.length === 1 ? t('onboarding.s2.send_invites_singular') : t('onboarding.s2.send_invites_plural')}`}
                     </Button>
                   </div>
                 )}
 
-                {inviteError && (
-                  <p className="text-xs text-red-400">{inviteError}</p>
-                )}
+                {inviteError && <p className="text-xs text-red-400">{inviteError}</p>}
                 {inviteSuccess && (
-                  <p className="text-xs text-green-400">
-                    Invites sent. Teachers will receive an email to join.
-                  </p>
+                  <p className="text-xs text-green-400">{t('onboarding.s2.success')}</p>
                 )}
               </div>
 
               {/* Option C — skip */}
-              <p className="text-xs text-zinc-600 text-center">
-                Option C — skip for now and continue below.
-              </p>
+              <p className="text-xs text-zinc-600 text-center">{t('onboarding.s2.option_c')}</p>
 
               {/* Nav */}
               <div className="flex items-center justify-between pt-1">
@@ -700,7 +675,7 @@ export default function SchoolOnboardingPage() {
                   className="border-zinc-700 text-zinc-400 hover:bg-zinc-800"
                 >
                   <ArrowLeft className="w-3 h-3 mr-1.5" />
-                  Back
+                  {t('onboarding.nav.back')}
                 </Button>
                 <div className="flex gap-2">
                   <Button
@@ -709,14 +684,14 @@ export default function SchoolOnboardingPage() {
                     size="sm"
                     className="border-zinc-700 text-zinc-500 hover:bg-zinc-800"
                   >
-                    Skip for now
+                    {t('onboarding.nav.skip_for_now')}
                   </Button>
                   <Button
                     onClick={nextStep}
                     size="sm"
                     className="bg-indigo-600 hover:bg-indigo-500 text-white"
                   >
-                    Continue
+                    {t('onboarding.nav.continue')}
                     <ArrowRight className="w-3 h-3 ml-1.5" />
                   </Button>
                 </div>
@@ -735,20 +710,17 @@ export default function SchoolOnboardingPage() {
                 </div>
                 {!statsLoading && (
                   <Badge className="bg-zinc-800 text-zinc-300 border-zinc-700 text-xs">
-                    {stats.studentCount} student
-                    {stats.studentCount !== 1 ? "s" : ""} added
+                    {stats.studentCount}{' '}
+                    {stats.studentCount === 1
+                      ? t('onboarding.s3.student_added_singular')
+                      : t('onboarding.s3.students_count_suffix')}
                   </Badge>
                 )}
               </div>
-              <CardTitle className="text-xl text-zinc-100">
-                Add Your Students
-              </CardTitle>
-              <p className="text-sm text-zinc-400 mt-1">
-                Import a class list or share your school join code.
-              </p>
+              <CardTitle className="text-xl text-zinc-100">{t('onboarding.s3.title')}</CardTitle>
+              <p className="text-sm text-zinc-400 mt-1">{t('onboarding.s3.subtitle')}</p>
             </CardHeader>
             <CardContent className="space-y-4">
-
               {/* Option A — bulk import */}
               <div className="rounded-lg border border-zinc-700 bg-zinc-800/40 p-4">
                 <div className="flex items-start gap-3">
@@ -757,10 +729,10 @@ export default function SchoolOnboardingPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-zinc-200">
-                      Option A — Upload Excel / CSV
+                      {t('onboarding.s3.option_a_title')}
                     </p>
                     <p className="text-xs text-zinc-500 mt-0.5">
-                      Import a full year group or class list from a spreadsheet.
+                      {t('onboarding.s3.option_a_body')}
                     </p>
                     <Link href="/school/import?type=student">
                       <Button
@@ -768,7 +740,7 @@ export default function SchoolOnboardingPage() {
                         variant="outline"
                         className="mt-3 border-zinc-600 text-zinc-300 hover:bg-zinc-700"
                       >
-                        Go to Import Tool
+                        {t('onboarding.s2.go_to_import')}
                         <ArrowRight className="w-3 h-3 ml-1.5" />
                       </Button>
                     </Link>
@@ -784,10 +756,10 @@ export default function SchoolOnboardingPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-zinc-200">
-                      Option B — Share your school join code
+                      {t('onboarding.s3.option_b_title')}
                     </p>
                     <p className="text-xs text-zinc-500 mt-0.5">
-                      Students enter this code to join your school instantly.
+                      {t('onboarding.s3.option_b_body')}
                     </p>
 
                     {stats.joinCode ? (
@@ -804,36 +776,29 @@ export default function SchoolOnboardingPage() {
                           className="border-zinc-600 text-zinc-300 hover:bg-zinc-700 shrink-0"
                         >
                           <Copy className="w-3.5 h-3.5 mr-1.5" />
-                          {codeCopied ? "Copied!" : "Copy"}
+                          {codeCopied ? t('onboarding.s3.copied') : t('onboarding.s3.copy_btn')}
                         </Button>
                       </div>
                     ) : (
                       <p className="text-xs text-zinc-500 mt-3">
-                        No active join code found.{" "}
-                        <Link
-                          href="/school/settings"
-                          className="text-indigo-400 hover:underline"
-                        >
-                          Generate one in Settings.
+                        {t('onboarding.s3.no_code_pre')}{' '}
+                        <Link href="/school/settings" className="text-indigo-400 hover:underline">
+                          {t('onboarding.s3.generate_in_settings')}
                         </Link>
                       </p>
                     )}
 
                     <p className="text-xs text-zinc-600 mt-2">
-                      Students visit{" "}
-                      <span className="text-zinc-400">
-                        englishhub.app/school/join
-                      </span>{" "}
-                      and enter the code above.
+                      {t('onboarding.s3.students_visit_pre')}{' '}
+                      <span className="text-zinc-400">englishhub.app/school/join</span>{' '}
+                      {t('onboarding.s3.students_visit_post')}
                     </p>
                   </div>
                 </div>
               </div>
 
               {/* Option C */}
-              <p className="text-xs text-zinc-600 text-center">
-                Option C — skip for now and continue below.
-              </p>
+              <p className="text-xs text-zinc-600 text-center">{t('onboarding.s2.option_c')}</p>
 
               {/* Nav */}
               <div className="flex items-center justify-between pt-1">
@@ -844,7 +809,7 @@ export default function SchoolOnboardingPage() {
                   className="border-zinc-700 text-zinc-400 hover:bg-zinc-800"
                 >
                   <ArrowLeft className="w-3 h-3 mr-1.5" />
-                  Back
+                  {t('onboarding.nav.back')}
                 </Button>
                 <div className="flex gap-2">
                   <Button
@@ -853,14 +818,14 @@ export default function SchoolOnboardingPage() {
                     size="sm"
                     className="border-zinc-700 text-zinc-500 hover:bg-zinc-800"
                   >
-                    Skip for now
+                    {t('onboarding.nav.skip_for_now')}
                   </Button>
                   <Button
                     onClick={nextStep}
                     size="sm"
                     className="bg-indigo-600 hover:bg-indigo-500 text-white"
                   >
-                    Continue
+                    {t('onboarding.nav.continue')}
                     <ArrowRight className="w-3 h-3 ml-1.5" />
                   </Button>
                 </div>
@@ -878,34 +843,27 @@ export default function SchoolOnboardingPage() {
                   <BookOpen className="w-5 h-5 text-clay-600" />
                 </div>
               </div>
-              <CardTitle className="text-xl text-zinc-100">
-                Create Your First Class
-              </CardTitle>
-              <p className="text-sm text-zinc-400 mt-1">
-                Set up a class so you can assign resources and track progress.
-              </p>
+              <CardTitle className="text-xl text-zinc-100">{t('onboarding.s4.title')}</CardTitle>
+              <p className="text-sm text-zinc-400 mt-1">{t('onboarding.s4.subtitle')}</p>
             </CardHeader>
             <CardContent className="space-y-4">
               {classSuccess ? (
                 <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-5 text-center">
                   <CheckCircle className="w-9 h-9 text-green-400 mx-auto mb-2" />
                   <p className="text-sm font-semibold text-green-300">
-                    Class created successfully!
+                    {t('onboarding.s4.success_title')}
                   </p>
-                  <p className="text-xs text-zinc-500 mt-1">
-                    You can create more classes later from the Classes page.
-                  </p>
+                  <p className="text-xs text-zinc-500 mt-1">{t('onboarding.s4.success_body')}</p>
                 </div>
               ) : (
                 <div className="space-y-4">
                   {/* Class name */}
                   <div className="space-y-1.5">
                     <Label className="text-sm text-zinc-300">
-                      Class Name{" "}
-                      <span className="text-red-400">*</span>
+                      {t('onboarding.s4.class_name_label')} <span className="text-red-400">*</span>
                     </Label>
                     <Input
-                      placeholder="e.g. 10B English Language"
+                      placeholder={t('onboarding.s4.class_name_placeholder')}
                       value={classForm.name}
                       onChange={(e) =>
                         setClassForm((prev) => ({
@@ -919,7 +877,9 @@ export default function SchoolOnboardingPage() {
 
                   {/* Year group */}
                   <div className="space-y-2">
-                    <Label className="text-sm text-zinc-300">Year Group</Label>
+                    <Label className="text-sm text-zinc-300">
+                      {t('onboarding.s4.year_group_label')}
+                    </Label>
                     <div className="flex flex-wrap gap-2">
                       {YEAR_GROUPS.map((yg) => (
                         <button
@@ -927,16 +887,13 @@ export default function SchoolOnboardingPage() {
                           onClick={() =>
                             setClassForm((prev) => ({
                               ...prev,
-                              year_group:
-                                prev.year_group === yg ? "" : yg,
+                              year_group: prev.year_group === yg ? '' : yg,
                             }))
                           }
                           className={[
-                            "px-3 py-1.5 rounded-md text-xs font-medium border transition-all",
-                            classForm.year_group === yg
-                              ? pillActive
-                              : pillInactive,
-                          ].join(" ")}
+                            'px-3 py-1.5 rounded-md text-xs font-medium border transition-all',
+                            classForm.year_group === yg ? pillActive : pillInactive,
+                          ].join(' ')}
                         >
                           {yg}
                         </button>
@@ -946,7 +903,9 @@ export default function SchoolOnboardingPage() {
 
                   {/* Exam board */}
                   <div className="space-y-2">
-                    <Label className="text-sm text-zinc-300">Exam Board</Label>
+                    <Label className="text-sm text-zinc-300">
+                      {t('onboarding.s4.exam_board_label')}
+                    </Label>
                     <div className="flex flex-wrap gap-2">
                       {EXAM_BOARDS.map((board) => (
                         <button
@@ -954,16 +913,13 @@ export default function SchoolOnboardingPage() {
                           onClick={() =>
                             setClassForm((prev) => ({
                               ...prev,
-                              exam_board:
-                                prev.exam_board === board ? "" : board,
+                              exam_board: prev.exam_board === board ? '' : board,
                             }))
                           }
                           className={[
-                            "px-3 py-1.5 rounded-md text-xs font-medium border transition-all",
-                            classForm.exam_board === board
-                              ? pillActive
-                              : pillInactive,
-                          ].join(" ")}
+                            'px-3 py-1.5 rounded-md text-xs font-medium border transition-all',
+                            classForm.exam_board === board ? pillActive : pillInactive,
+                          ].join(' ')}
                         >
                           {board}
                         </button>
@@ -975,7 +931,7 @@ export default function SchoolOnboardingPage() {
                   {teachers.length > 0 && (
                     <div className="space-y-2">
                       <Label className="text-sm text-zinc-300">
-                        Assign Teacher
+                        {t('onboarding.s4.assign_teacher_label')}
                       </Label>
                       <div className="flex flex-wrap gap-2">
                         {teachers.map((t) => (
@@ -984,16 +940,13 @@ export default function SchoolOnboardingPage() {
                             onClick={() =>
                               setClassForm((prev) => ({
                                 ...prev,
-                                teacher_id:
-                                  prev.teacher_id === t.id ? "" : t.id,
+                                teacher_id: prev.teacher_id === t.id ? '' : t.id,
                               }))
                             }
                             className={[
-                              "px-3 py-1.5 rounded-md text-xs font-medium border transition-all",
-                              classForm.teacher_id === t.id
-                                ? pillActive
-                                : pillInactive,
-                            ].join(" ")}
+                              'px-3 py-1.5 rounded-md text-xs font-medium border transition-all',
+                              classForm.teacher_id === t.id ? pillActive : pillInactive,
+                            ].join(' ')}
                           >
                             {t.full_name}
                           </button>
@@ -1002,16 +955,14 @@ export default function SchoolOnboardingPage() {
                     </div>
                   )}
 
-                  {classError && (
-                    <p className="text-xs text-red-400">{classError}</p>
-                  )}
+                  {classError && <p className="text-xs text-red-400">{classError}</p>}
 
                   <Button
                     onClick={createClass}
                     disabled={classCreating || !classForm.name.trim()}
                     className="w-full bg-indigo-600 hover:bg-indigo-500 text-white disabled:opacity-50"
                   >
-                    {classCreating ? "Creating..." : "Create Class"}
+                    {classCreating ? t('onboarding.s4.creating') : t('onboarding.s4.create_btn')}
                   </Button>
                 </div>
               )}
@@ -1025,7 +976,7 @@ export default function SchoolOnboardingPage() {
                   className="border-zinc-700 text-zinc-400 hover:bg-zinc-800"
                 >
                   <ArrowLeft className="w-3 h-3 mr-1.5" />
-                  Back
+                  {t('onboarding.nav.back')}
                 </Button>
                 {classSuccess ? (
                   <Button
@@ -1033,7 +984,7 @@ export default function SchoolOnboardingPage() {
                     size="sm"
                     className="bg-indigo-600 hover:bg-indigo-500 text-white"
                   >
-                    Continue
+                    {t('onboarding.nav.continue')}
                     <ArrowRight className="w-3 h-3 ml-1.5" />
                   </Button>
                 ) : (
@@ -1043,7 +994,7 @@ export default function SchoolOnboardingPage() {
                     size="sm"
                     className="border-zinc-700 text-zinc-500 hover:bg-zinc-800"
                   >
-                    Skip - I'll do this later
+                    {t('onboarding.s4.skip_later')}
                   </Button>
                 )}
               </div>
@@ -1057,36 +1008,33 @@ export default function SchoolOnboardingPage() {
             <CardHeader className="pb-2">
               <AnimatedCheckmark />
               <CardTitle className="text-2xl text-zinc-100 text-center">
-                You're All Set!
+                {t('onboarding.s5.title')}
               </CardTitle>
               <p className="text-sm text-zinc-400 text-center mt-1">
-                Your school is configured and ready to go.
+                {t('onboarding.s5.subtitle')}
               </p>
             </CardHeader>
             <CardContent className="space-y-5 pt-4">
-
               {/* Summary */}
               <div className="grid grid-cols-3 gap-3">
                 {[
                   {
-                    label: "Teachers",
+                    label: t('onboarding.s5.stat.teachers'),
                     value: stats.teacherCount,
                     icon: <Users className="w-4 h-4 text-blue-400" />,
-                    color: "text-blue-400",
+                    color: 'text-blue-400',
                   },
                   {
-                    label: "Students",
+                    label: t('onboarding.s5.stat.students'),
                     value: stats.studentCount,
-                    icon: (
-                      <GraduationCap className="w-4 h-4 text-emerald-400" />
-                    ),
-                    color: "text-emerald-400",
+                    icon: <GraduationCap className="w-4 h-4 text-emerald-400" />,
+                    color: 'text-emerald-400',
                   },
                   {
-                    label: "Classes",
+                    label: t('onboarding.s5.stat.classes'),
                     value: stats.classCount,
                     icon: <BookOpen className="w-4 h-4 text-clay-600" />,
-                    color: "text-clay-600",
+                    color: 'text-clay-600',
                   },
                 ].map((item) => (
                   <div
@@ -1094,13 +1042,8 @@ export default function SchoolOnboardingPage() {
                     className="rounded-lg border border-zinc-700 bg-zinc-800/50 p-3 text-center"
                   >
                     <div className="flex justify-center mb-1">{item.icon}</div>
-                    <p
-                      className={[
-                        "text-2xl font-bold tabular-nums",
-                        item.color,
-                      ].join(" ")}
-                    >
-                      {statsLoading ? "-" : item.value}
+                    <p className={['text-2xl font-bold tabular-nums', item.color].join(' ')}>
+                      {statsLoading ? '-' : item.value}
                     </p>
                     <p className="text-xs text-zinc-500 mt-0.5">{item.label}</p>
                   </div>
@@ -1113,10 +1056,10 @@ export default function SchoolOnboardingPage() {
                   <Button
                     variant="outline"
                     className="w-full border-zinc-700 text-zinc-300 hover:bg-zinc-800"
-                    onClick={() => router.push("/school/import")}
+                    onClick={() => router.push('/school/import')}
                   >
                     <Download className="w-4 h-4 mr-2" />
-                    Download Login Details
+                    {t('onboarding.s5.download_logins')}
                   </Button>
                 )}
 
@@ -1124,7 +1067,7 @@ export default function SchoolOnboardingPage() {
                   onClick={completeDashboard}
                   className="w-full bg-indigo-600 hover:bg-indigo-500 text-white"
                 >
-                  Go to Dashboard
+                  {t('onboarding.s5.go_dashboard')}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
 
@@ -1133,7 +1076,7 @@ export default function SchoolOnboardingPage() {
                     variant="outline"
                     className="w-full border-zinc-700 text-zinc-400 hover:bg-zinc-800"
                   >
-                    View Setup Guide
+                    {t('onboarding.s5.view_guide')}
                   </Button>
                 </Link>
               </div>

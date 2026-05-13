@@ -77,10 +77,13 @@ function formatRelativeDate(iso: string, t: Translator) {
 }
 
 function getGreetingKey() {
+  // Routes through the `your_hub.greeting.*` namespace. The fallback in
+  // dictionary.ts ensures these still render in English even if the AR
+  // entry is missing — see lookup() behaviour.
   const hour = new Date().getHours()
-  if (hour < 12) return 'dash.greeting.morning'
-  if (hour < 17) return 'dash.greeting.afternoon'
-  return 'dash.greeting.evening'
+  if (hour < 12) return 'your_hub.greeting.morning'
+  if (hour < 17) return 'your_hub.greeting.afternoon'
+  return 'your_hub.greeting.evening'
 }
 
 // courseMap is now built dynamically inside the component — see useMemo below
@@ -296,7 +299,7 @@ export default function DashboardPage() {
 
   const quickActions = [
     {
-      label: t('header.nav.your_hub'),
+      label: t('your_hub.cta.title'),
       href: '/revision',
       icon: Layers,
       color: 'text-primary',
@@ -497,12 +500,12 @@ export default function DashboardPage() {
             </div>
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
-                <h2 className="font-semibold text-foreground">{t('header.nav.your_hub')}</h2>
+                <h2 className="font-semibold text-foreground">{t('your_hub.cta.title')}</h2>
                 <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
-                  {t('dash.your_hub.badge')}
+                  {t('your_hub.cta.badge')}
                 </Badge>
               </div>
-              <p className="mt-0.5 text-sm text-muted-foreground">{t('dash.your_hub.blurb')}</p>
+              <p className="mt-0.5 text-sm text-muted-foreground">{t('your_hub.cta.blurb')}</p>
             </div>
             <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
           </Link>

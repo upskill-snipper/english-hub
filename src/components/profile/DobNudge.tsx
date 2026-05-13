@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { AlertCircle, Check, Loader2, X } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 
 // Renders a dismissable banner prompting the user to confirm their date of
 // birth, but ONLY when the server-side check reports they have the
@@ -12,6 +13,7 @@ import { AlertCircle, Check, Loader2, X } from 'lucide-react'
 const DISMISS_KEY = 'dob-nudge-dismissed-until'
 
 export function DobNudge() {
+  const t = useT()
   const [show, setShow] = useState(false)
   const [dob, setDob] = useState('')
   const [state, setState] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
@@ -50,7 +52,7 @@ export function DobNudge() {
       setTimeout(() => setShow(false), 1500)
     } catch (e) {
       setState('error')
-      setError(e instanceof Error ? e.message : 'Something went wrong')
+      setError(e instanceof Error ? e.message : t('profile.dob.error_generic'))
     }
   }
 
@@ -66,11 +68,8 @@ export function DobNudge() {
     >
       <AlertCircle className="size-5 flex-shrink-0" />
       <div className="flex-1 text-sm">
-        <p className="font-medium text-foreground">Please confirm your date of birth</p>
-        <p className="text-muted-foreground">
-          We&rsquo;re missing this from your profile. It helps us give the right age-appropriate
-          experience and meet our safeguarding obligations.
-        </p>
+        <p className="font-medium text-foreground">{t('profile.dob.title')}</p>
+        <p className="text-muted-foreground">{t('profile.dob.body')}</p>
       </div>
       <div className="flex items-center gap-2">
         <input
@@ -79,7 +78,7 @@ export function DobNudge() {
           max={new Date().toISOString().slice(0, 10)}
           onChange={(e) => setDob(e.target.value)}
           className="rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground"
-          aria-label="Date of birth"
+          aria-label={t('profile.dob.input_label')}
         />
         <button
           onClick={submit}
@@ -91,11 +90,11 @@ export function DobNudge() {
           ) : state === 'saved' ? (
             <Check className="size-4" />
           ) : null}
-          {state === 'saved' ? 'Saved' : 'Save'}
+          {state === 'saved' ? t('profile.dob.saved') : t('profile.dob.save')}
         </button>
         <button
           onClick={dismissFor24h}
-          aria-label="Dismiss for 24 hours"
+          aria-label={t('profile.dob.dismiss_label')}
           className="rounded-md p-1.5 text-muted-foreground hover:text-foreground"
         >
           <X className="size-4" />

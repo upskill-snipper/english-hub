@@ -20,11 +20,13 @@ import {
   type AffiliateClick,
   type AffiliateConversion,
 } from '@/components/affiliate/mock-data'
+import { useT } from '@/lib/i18n/use-t'
 import { MousePointerClick, TrendingUp, PoundSterling, Users, ArrowUpRight } from 'lucide-react'
 
 // Phase-7: Supabase — hydrate dashboard from server queries instead of localStorage
 
 export default function AffiliateDashboardPage() {
+  const t = useT()
   const [account, setAccountState] = useState<AffiliateAccount | null>(null)
   const [clicks, setClicks] = useState<AffiliateClick[]>([])
   const [conversions, setConversions] = useState<AffiliateConversion[]>([])
@@ -85,7 +87,7 @@ export default function AffiliateDashboardPage() {
   if (!hydrated) {
     return (
       <div className="flex min-h-screen items-center justify-center text-sm text-muted-foreground">
-        Loading...
+        {t('action.loading')}
       </div>
     )
   }
@@ -98,14 +100,18 @@ export default function AffiliateDashboardPage() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div>
               <p className="text-sm text-muted-foreground">
-                Welcome back{account?.name ? `, ${account.name.split(' ')[0]}` : ''}
+                {account?.name
+                  ? `${t('aff.dashboard.welcome_back')}, ${account.name.split(' ')[0]}`
+                  : t('aff.dashboard.welcome_back')}
               </p>
-              <h1 className="text-3xl font-bold text-foreground mt-1">Dashboard</h1>
+              <h1 className="text-3xl font-bold text-foreground mt-1">
+                {t('aff.dashboard.title')}
+              </h1>
             </div>
             <div className="flex items-center gap-3">
               <TierBadge tier={tier} size="lg" showCommission />
               <Button size="sm" render={<Link href="/affiliate/links" />}>
-                Create link
+                {t('aff.dashboard.create_link')}
                 <ArrowUpRight className="w-4 h-4" />
               </Button>
             </div>
@@ -116,22 +122,22 @@ export default function AffiliateDashboardPage() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <StatCard
             icon={MousePointerClick}
-            label="Total clicks"
+            label={t('aff.dashboard.total_clicks')}
             value={stats.totalClicks.toLocaleString()}
           />
           <StatCard
             icon={Users}
-            label="Conversions"
+            label={t('aff.dashboard.conversions')}
             value={stats.totalConversions.toLocaleString()}
           />
           <StatCard
             icon={TrendingUp}
-            label="Conversion rate"
+            label={t('aff.dashboard.conversion_rate')}
             value={`${stats.conversionRate.toFixed(1)}%`}
           />
           <StatCard
             icon={PoundSterling}
-            label="Total earnings"
+            label={t('aff.dashboard.total_earnings')}
             value={`£${stats.earnings.toFixed(2)}`}
             highlight
           />
@@ -140,11 +146,13 @@ export default function AffiliateDashboardPage() {
         {/* Tier progress */}
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle>Tier progress</CardTitle>
+            <CardTitle>{t('aff.dashboard.tier_progress')}</CardTitle>
             <p className="text-sm text-muted-foreground">
               {nextTierConfig
-                ? `${nextTierConfig.minReferrals - conversions.length} more referrals to unlock ${nextTierConfig.label}`
-                : 'Congratulations — you have reached our top tier.'}
+                ? t('aff.dashboard.tier_progress_subtitle')
+                    .replace('{n}', String(nextTierConfig.minReferrals - conversions.length))
+                    .replace('{tier}', nextTierConfig.label)
+                : t('aff.dashboard.top_tier_reached')}
             </p>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -152,13 +160,13 @@ export default function AffiliateDashboardPage() {
               <div className="flex items-center gap-2">
                 <TierBadge tier={tier} size="sm" />
                 <span className="text-muted-foreground">
-                  {currentTierConfig.commission}% current rate
+                  {`${currentTierConfig.commission}% ${t('aff.dashboard.current_rate')}`}
                 </span>
               </div>
               {nextTier && (
                 <div className="flex items-center gap-2">
                   <span className="text-muted-foreground">
-                    {nextTierConfig?.commission}% next rate
+                    {`${nextTierConfig?.commission}% ${t('aff.dashboard.next_rate')}`}
                   </span>
                   <TierBadge tier={nextTier} size="sm" />
                 </div>
@@ -177,8 +185,14 @@ export default function AffiliateDashboardPage() {
               />
             </div>
             <div className="flex items-center justify-between text-xs text-muted-foreground">
-              <span>{conversions.length} referrals</span>
-              {nextTierConfig && <span>{nextTierConfig.minReferrals} goal</span>}
+              <span>
+                {conversions.length} {t('aff.dashboard.referrals_count_label')}
+              </span>
+              {nextTierConfig && (
+                <span>
+                  {nextTierConfig.minReferrals} {t('aff.dashboard.goal_label')}
+                </span>
+              )}
             </div>
           </CardContent>
         </Card>
@@ -186,23 +200,29 @@ export default function AffiliateDashboardPage() {
         {/* Top links */}
         <Card>
           <CardHeader>
-            <CardTitle>Top-performing links</CardTitle>
-            <p className="text-sm text-muted-foreground">
-              Your best revenue generators this period
-            </p>
+            <CardTitle>{t('aff.dashboard.top_links_title')}</CardTitle>
+            <p className="text-sm text-muted-foreground">{t('aff.dashboard.top_links_subtitle')}</p>
           </CardHeader>
           <CardContent>
             {topLinks.length === 0 ? (
-              <p className="text-sm text-muted-foreground">No data yet.</p>
+              <p className="text-sm text-muted-foreground">{t('aff.dashboard.no_data')}</p>
             ) : (
               <div className="overflow-x-auto -mx-5">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border/60 text-xs uppercase tracking-wide text-muted-foreground">
-                      <th className="py-2 px-5 text-left font-medium">Link</th>
-                      <th className="py-2 px-3 text-right font-medium">Clicks</th>
-                      <th className="py-2 px-3 text-right font-medium">Conv.</th>
-                      <th className="py-2 px-5 text-right font-medium">Earnings</th>
+                      <th className="py-2 px-5 text-left font-medium">
+                        {t('aff.dashboard.col_link')}
+                      </th>
+                      <th className="py-2 px-3 text-right font-medium">
+                        {t('aff.dashboard.col_clicks')}
+                      </th>
+                      <th className="py-2 px-3 text-right font-medium">
+                        {t('aff.dashboard.col_conv')}
+                      </th>
+                      <th className="py-2 px-5 text-right font-medium">
+                        {t('aff.dashboard.col_earnings')}
+                      </th>
                     </tr>
                   </thead>
                   <tbody>

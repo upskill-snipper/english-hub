@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom'
 import { FileText, FileDown, Presentation, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { events } from '@/lib/gtag'
+import { useT } from '@/lib/i18n/use-t'
 
 /**
  * DownloadMenu — Dead-simple download button group.
@@ -73,9 +74,11 @@ export function DownloadMenu({
   options,
   size = 'default',
   className,
-  label = 'Download',
+  label,
   variant = 'default',
 }: DownloadMenuProps) {
+  const t = useT()
+  const resolvedLabel = label ?? t('download.menu.label')
   const [open, setOpen] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
   const [style, setStyle] = useState<ResourceStyle>('cream')
@@ -185,7 +188,7 @@ export function DownloadMenu({
       .then(() => opt.onClick(style))
       .then(() => {
         try {
-          setToast(`${opt.label} started`)
+          setToast(`${opt.label} ${t('download.toast.started')}`)
           setTimeout(() => {
             try {
               setToast(null)
@@ -201,7 +204,7 @@ export function DownloadMenu({
         // eslint-disable-next-line no-console
         console.error(`[DownloadMenu] Download failed (${opt.format}):`, err)
         try {
-          setToast(`${opt.label} failed — try again`)
+          setToast(`${opt.label} ${t('download.toast.failed')}`)
           setTimeout(() => {
             try {
               setToast(null)
@@ -236,6 +239,12 @@ export function DownloadMenu({
   // The menu itself — rendered via Portal so it escapes any overflow-hidden
   // parent (e.g. the Card wrapping it on /demo/teacher/resources). Uses
   // fixed positioning anchored to the trigger via getBoundingClientRect.
+  const styleLabelKey: Record<ResourceStyle, string> = {
+    cream: 'download.style.cream',
+    dark: 'download.style.dark',
+    whiteboard: 'download.style.whiteboard',
+  }
+
   const menu =
     open && menuPos ? (
       <div
@@ -252,7 +261,7 @@ export function DownloadMenu({
         {/* Style picker */}
         <div className="border-b border-ink-100 bg-cream-50 px-3 py-2">
           <p className="font-mono text-[9px] font-medium uppercase tracking-[0.18em] text-ink-500 mb-1.5">
-            Style
+            {t('download.style.label')}
           </p>
           <div className="flex gap-1">
             {(['cream', 'dark', 'whiteboard'] as ResourceStyle[]).map((s) => (
@@ -267,7 +276,7 @@ export function DownloadMenu({
                     : 'bg-card text-muted-foreground hover:bg-muted',
                 )}
               >
-                {s}
+                {t(styleLabelKey[s])}
               </button>
             ))}
           </div>
@@ -276,7 +285,7 @@ export function DownloadMenu({
         {/* Format options */}
         <div className="py-1">
           <p className="font-mono text-[9px] font-medium uppercase tracking-[0.18em] text-ink-500 px-3 py-1.5">
-            Format
+            {t('download.format.label')}
           </p>
           {options.map((opt) => (
             <button
@@ -307,7 +316,7 @@ export function DownloadMenu({
           aria-haspopup="menu"
         >
           <FileDown className="h-4 w-4" />
-          <span>{label}</span>
+          <span>{resolvedLabel}</span>
           <ChevronDown
             className={cn('h-3.5 w-3.5 opacity-60 transition-transform', open && 'rotate-180')}
           />
@@ -322,7 +331,13 @@ export function DownloadMenu({
 /* ── Inline toast ──────────────────────────────────────────────────── */
 
 function DownloadToast({ message, onDismiss }: { message: string; onDismiss: () => void }) {
-  const isError = message.toLowerCase().includes('failed')
+  const t = useT()
+  // Detect error variant via either the EN "failed" or the translated failure
+  // copy from the dictionary — both spellings flow through the same toast
+  // surface so the styling stays consistent across locales.
+  const failedToken = t('download.toast.failed').toLowerCase()
+  const lower = message.toLowerCase()
+  const isError = lower.includes('failed') || (failedToken && lower.includes(failedToken))
   return (
     <div className="fixed top-6 right-6 z-50">
       <div
@@ -342,7 +357,7 @@ function DownloadToast({ message, onDismiss }: { message: string; onDismiss: () 
             isError ? 'text-clay-600' : 'text-teal-700',
           )}
         >
-          Dismiss
+          {t('download.toast.dismiss')}
         </button>
       </div>
     </div>

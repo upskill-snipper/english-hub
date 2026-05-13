@@ -35,6 +35,7 @@ import { cn } from '@/lib/utils'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { useT } from '@/lib/i18n/use-t'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // DATA
@@ -1877,6 +1878,7 @@ const GameCard = memo(function GameCard({
   isActive: boolean
   onPlay: () => void
 }) {
+  const t = useT()
   const difficultyColor =
     game.difficulty === 'Easy'
       ? 'text-emerald-400'
@@ -1907,9 +1909,11 @@ const GameCard = memo(function GameCard({
       {game.locked && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-background/70 backdrop-blur-[2px] rounded-2xl">
           <Lock className="size-8 text-muted-foreground mb-2" />
-          <span className="text-sm font-semibold text-muted-foreground">Sign up to play</span>
+          <span className="text-sm font-semibold text-muted-foreground">
+            {t('games_page.card.locked_signup')}
+          </span>
           <Button size="sm" className="mt-3">
-            Get Started
+            {t('games_page.card.locked_cta')}
           </Button>
         </div>
       )}
@@ -1931,7 +1935,7 @@ const GameCard = memo(function GameCard({
         <CardContent className="relative z-[1] pt-0">
           {game.href ? (
             <Button size="sm" className="w-full" render={<Link href={game.href} />}>
-              Play Now
+              {t('games_page.card.play_now')}
               <Zap className="size-3.5 ml-1" />
             </Button>
           ) : (
@@ -1944,7 +1948,7 @@ const GameCard = memo(function GameCard({
                 onPlay()
               }}
             >
-              {isActive ? 'Playing...' : 'Play Now'}
+              {isActive ? t('games_page.card.playing') : t('games_page.card.play_now')}
               {!isActive && <Zap className="size-3.5 ml-1" />}
             </Button>
           )}
@@ -1962,6 +1966,7 @@ export default function GamesPage() {
   const [activeGame, setActiveGame] = useState<string | null>(null)
   const { board } = useBoard()
   const boardConfig = getBoardConfig(board)
+  const t = useT()
 
   const handleExit = useCallback(() => setActiveGame(null), [])
 
@@ -2002,7 +2007,7 @@ export default function GamesPage() {
         audienceRole="student"
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-6">
-        <Breadcrumb items={[{ label: 'Games' }]} />
+        <Breadcrumb items={[{ label: t('games_page.breadcrumb') }]} />
       </div>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border/40">
@@ -2023,7 +2028,7 @@ export default function GamesPage() {
           <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-1.5 mb-6">
             <Gamepad2 className="size-4 text-primary" />
             <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-              Learn through play
+              {t('games_page.eyebrow_learn_through_play')}
             </span>
           </div>
 
@@ -2031,33 +2036,35 @@ export default function GamesPage() {
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 mb-4 ml-2">
               <Sparkles className="size-3.5 text-primary" />
               <span className="text-xs font-bold text-primary uppercase tracking-wider">
-                For {boardConfig.shortName}
+                {t('games_page.eyebrow_for_board_prefix')} {boardConfig.shortName}
               </span>
             </div>
           )}
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground tracking-tight leading-tight mb-4">
-            English{' '}
+            {t('games_page.title_english')}{' '}
             <span className="bg-gradient-to-r from-emerald-400 via-violet-400 to-amber-400 bg-clip-text text-transparent">
-              Games
+              {t('games_page.title_games')}
             </span>
           </h1>
 
           <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
             {boardConfig
-              ? `Sharpen your English skills with games tailored to ${boardConfig.shortName} set texts and themes.`
-              : 'Sharpen your English skills with fun, interactive games. Perfect for KS3 and GCSE revision.'}
+              ? `${t('games_page.hero_with_board_prefix')} ${boardConfig.shortName} ${t('games_page.hero_with_board_suffix')}`
+              : t('games_page.hero_default')}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8 text-xs text-muted-foreground">
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="size-3.5 text-emerald-400" /> 7 Free Games
+              <CheckCircle className="size-3.5 text-emerald-400" />{' '}
+              {t('games_page.badge_free_games')}
             </span>
             <span className="flex items-center gap-1.5">
-              <Trophy className="size-3.5 text-clay-600" /> Track Your Score
+              <Trophy className="size-3.5 text-clay-600" /> {t('games_page.badge_track_score')}
             </span>
             <span className="flex items-center gap-1.5">
-              <Sparkles className="size-3.5 text-violet-400" /> Instant Feedback
+              <Sparkles className="size-3.5 text-violet-400" />{' '}
+              {t('games_page.badge_instant_feedback')}
             </span>
           </div>
         </div>
@@ -2078,7 +2085,7 @@ export default function GamesPage() {
               onClick={() => setActiveGame(null)}
               className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
             >
-              <ArrowLeft className="size-4" /> Back to all games
+              <ArrowLeft className="size-4" /> {t('games_page.back_to_all_games')}
             </button>
             <Card className="overflow-hidden">
               <CardContent className="p-4 sm:p-6">{renderGame()}</CardContent>
@@ -2088,7 +2095,7 @@ export default function GamesPage() {
 
         <div className={cn(activeGame && 'opacity-60')}>
           <h2 className="text-lg font-bold text-foreground mb-5">
-            {activeGame ? 'Other Games' : 'Choose a Game'}
+            {activeGame ? t('games_page.heading_other_games') : t('games_page.heading_choose_game')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {visibleGames.map((game) => (

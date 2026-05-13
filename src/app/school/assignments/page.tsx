@@ -2,12 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
-import {
-  Plus,
-  ClipboardList,
-  Search,
-  Loader2,
-} from 'lucide-react'
+import { Plus, ClipboardList, Search, Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 import { Card, CardContent } from '@/components/ui/card'
@@ -18,10 +13,12 @@ import { Separator } from '@/components/ui/separator'
 import { AssignmentCard } from '@/components/school/AssignmentCard'
 import type { Assignment } from '@/lib/types/assignment'
 import { getAssignments } from '@/lib/types/assignment'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Main Component ───────────────────────────────────────────────────── */
 
 export default function AssignmentsListingPage() {
+  const t = useT()
   const [assignments, setAssignments] = useState<Assignment[]>([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
@@ -49,9 +46,7 @@ export default function AssignmentsListingPage() {
     if (search.trim()) {
       const q = search.toLowerCase()
       list = list.filter(
-        (a) =>
-          a.title.toLowerCase().includes(q) ||
-          a.description.toLowerCase().includes(q),
+        (a) => a.title.toLowerCase().includes(q) || a.description.toLowerCase().includes(q),
       )
     }
 
@@ -93,17 +88,20 @@ export default function AssignmentsListingPage() {
           </div>
           <div>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl text-foreground">
-              Assignments
+              {t('school.assignments.title')}
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              {activeCount} active assignment{activeCount !== 1 ? 's' : ''} &middot;{' '}
-              {overallCompletion}% overall completion
+              {activeCount}{' '}
+              {activeCount !== 1
+                ? t('school.assignments.active_plural')
+                : t('school.assignments.active_singular')}{' '}
+              &middot; {overallCompletion}% {t('school.assignments.overall_completion')}
             </p>
           </div>
         </div>
         <Button render={<Link href="/school/assignments/create" />}>
           <Plus className="h-4 w-4" />
-          New Assignment
+          {t('school.assignments.new')}
         </Button>
       </div>
 
@@ -114,7 +112,7 @@ export default function AssignmentsListingPage() {
         <div className="relative flex-1 max-w-sm">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search assignments..."
+            placeholder={t('school.assignments.search_placeholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-9"
@@ -123,10 +121,30 @@ export default function AssignmentsListingPage() {
 
         <Tabs value={tab} onValueChange={(v) => v && setTab(v)}>
           <TabsList className="bg-transparent gap-1.5 p-0">
-            <TabsTrigger value="active" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Active</TabsTrigger>
-            <TabsTrigger value="draft" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Drafts</TabsTrigger>
-            <TabsTrigger value="closed" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Closed</TabsTrigger>
-            <TabsTrigger value="all" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">All</TabsTrigger>
+            <TabsTrigger
+              value="active"
+              className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+            >
+              {t('school.assignments.tab.active')}
+            </TabsTrigger>
+            <TabsTrigger
+              value="draft"
+              className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+            >
+              {t('school.assignments.tab.drafts')}
+            </TabsTrigger>
+            <TabsTrigger
+              value="closed"
+              className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+            >
+              {t('school.assignments.tab.closed')}
+            </TabsTrigger>
+            <TabsTrigger
+              value="all"
+              className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+            >
+              {t('school.assignments.tab.all')}
+            </TabsTrigger>
           </TabsList>
         </Tabs>
       </div>
@@ -143,17 +161,19 @@ export default function AssignmentsListingPage() {
           <CardContent className="flex flex-col items-center justify-center py-16 text-center">
             <ClipboardList className="mb-3 h-10 w-10 text-muted-foreground" />
             <h3 className="mb-1 font-semibold text-foreground">
-              {search ? 'No matching assignments' : 'No assignments yet'}
+              {search
+                ? t('school.assignments.empty.no_match')
+                : t('school.assignments.empty.none_yet')}
             </h3>
             <p className="mb-4 text-sm text-muted-foreground">
               {search
-                ? 'Try adjusting your search terms.'
-                : 'Create your first assignment to start tracking student work.'}
+                ? t('school.assignments.empty.search_hint')
+                : t('school.assignments.empty.create_hint')}
             </p>
             {!search && (
               <Button render={<Link href="/school/assignments/create" />}>
                 <Plus className="h-4 w-4" />
-                Create Assignment
+                {t('school.assignments.create_cta')}
               </Button>
             )}
           </CardContent>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ALevelBoardHub } from '@/app/a-level/_components/BoardHub'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'AQA A-Level English — The English Hub',
@@ -9,13 +10,11 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-export default function AqaALevelHubPage() {
+export default async function AqaALevelHubPage() {
+  const boardName = await t('alevel.aqa.board_name')
+  const summary = await t('alevel.aqa.summary')
+
   return (
-    <ALevelBoardHub
-      boardName="AQA A-Level English"
-      examCode="7712 / 7702"
-      hubSlug="aqa"
-      summary="AQA A-Level covers English Literature (7712) and Language (7702). Students study Shakespeare tragedies, modern drama, pre- and post-1900 poetry, and a range of prose from Gothic to dystopian traditions."
-    />
+    <ALevelBoardHub boardName={boardName} examCode="7712 / 7702" hubSlug="aqa" summary={summary} />
   )
 }

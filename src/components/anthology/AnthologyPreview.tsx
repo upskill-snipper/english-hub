@@ -18,6 +18,7 @@ import {
   downloadAnthologyWord,
   type AnthologyDocument,
 } from '@/lib/anthology'
+import { useT } from '@/lib/i18n/use-t'
 
 interface AnthologyPreviewProps {
   /** The typed Anthology document to render */
@@ -36,6 +37,7 @@ export default function AnthologyPreview({
   className = '',
   fileName,
 }: AnthologyPreviewProps) {
+  const t = useT()
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [scale, setScale] = useState(0.5)
@@ -78,20 +80,20 @@ export default function AnthologyPreview({
       {showControls && (
         <div className="flex items-center justify-between rounded-lg bg-ink-950 px-4 py-2.5">
           <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-ink-400">
-            Document Preview
+            {t('anth.preview.label')}
           </span>
           <div className="flex items-center gap-2">
             <button
               onClick={handleDownload}
               className="rounded-full bg-cream-100 px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-ink-800 transition-colors hover:bg-cream-200"
             >
-              Download .doc
+              {t('anth.preview.download_word')}
             </button>
             <button
               onClick={handlePrint}
               className="rounded-full bg-clay-500 px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-cream-50 transition-colors hover:bg-clay-400"
             >
-              Print / PDF
+              {t('anth.preview.print_pdf')}
             </button>
           </div>
         </div>
@@ -104,7 +106,7 @@ export default function AnthologyPreview({
       >
         <iframe
           ref={iframeRef}
-          title="Anthology document preview"
+          title={t('anth.preview.iframe_title')}
           className="pointer-events-none border-0"
           style={{
             width: '794px',

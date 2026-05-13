@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { createDefaultAccount, seedMockData, setAccount } from '@/components/affiliate/mock-data'
+import { useT } from '@/lib/i18n/use-t'
 import { ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react'
 
 interface FormState {
@@ -27,23 +28,24 @@ const INITIAL_STATE: FormState = {
 }
 
 const AUDIENCE_OPTIONS = [
-  '< 1,000',
-  '1,000 – 5,000',
-  '5,000 – 25,000',
-  '25,000 – 100,000',
-  '100,000+',
-]
+  { value: '< 1,000', labelKey: 'aff.signup.audience.under_1k' },
+  { value: '1,000 – 5,000', labelKey: 'aff.signup.audience.1k_5k' },
+  { value: '5,000 – 25,000', labelKey: 'aff.signup.audience.5k_25k' },
+  { value: '25,000 – 100,000', labelKey: 'aff.signup.audience.25k_100k' },
+  { value: '100,000+', labelKey: 'aff.signup.audience.over_100k' },
+] as const
 
 const NICHE_OPTIONS = [
-  'English tutoring',
-  'School / classroom',
-  'Parenting & homeschool',
-  'EdTech reviews',
-  'Language learning',
-  'Other',
-]
+  { value: 'English tutoring', labelKey: 'aff.signup.niche.english_tutoring' },
+  { value: 'School / classroom', labelKey: 'aff.signup.niche.school_classroom' },
+  { value: 'Parenting & homeschool', labelKey: 'aff.signup.niche.parenting_homeschool' },
+  { value: 'EdTech reviews', labelKey: 'aff.signup.niche.edtech_reviews' },
+  { value: 'Language learning', labelKey: 'aff.signup.niche.language_learning' },
+  { value: 'Other', labelKey: 'aff.signup.niche.other' },
+] as const
 
 export default function AffiliateSignupPage() {
+  const t = useT()
   const router = useRouter()
   const [form, setForm] = useState<FormState>(INITIAL_STATE)
   const [submitted, setSubmitted] = useState(false)
@@ -84,7 +86,7 @@ export default function AffiliateSignupPage() {
           render={<Link href="/affiliate" />}
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to programme
+          {t('aff.signup.back_to_programme')}
         </Button>
 
         {submitted ? (
@@ -93,8 +95,10 @@ export default function AffiliateSignupPage() {
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/15 text-primary mx-auto mb-4">
                 <CheckCircle2 className="w-7 h-7" />
               </div>
-              <h2 className="text-2xl font-bold text-foreground mb-2">Application received</h2>
-              <p className="text-muted-foreground">Redirecting to your dashboard...</p>
+              <h2 className="text-2xl font-bold text-foreground mb-2">
+                {t('aff.signup.received_title')}
+              </h2>
+              <p className="text-muted-foreground">{t('aff.signup.redirecting')}</p>
             </CardContent>
           </Card>
         ) : (
@@ -104,28 +108,26 @@ export default function AffiliateSignupPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary">
                   <Sparkles className="w-4 h-4" />
                 </div>
-                <CardTitle className="text-2xl">Apply to become an affiliate</CardTitle>
+                <CardTitle className="text-2xl">{t('aff.signup.title')}</CardTitle>
               </div>
-              <p className="text-sm text-muted-foreground">
-                Tell us about yourself and your audience. Applications are reviewed within 48 hours.
-              </p>
+              <p className="text-sm text-muted-foreground">{t('aff.signup.subtitle')}</p>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Full name</Label>
+                  <Label htmlFor="name">{t('aff.signup.full_name_label')}</Label>
                   <Input
                     id="name"
                     name="name"
                     required
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="Jane Doe"
+                    placeholder={t('aff.signup.full_name_placeholder')}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">{t('aff.signup.email_label')}</Label>
                   <Input
                     id="email"
                     name="email"
@@ -133,24 +135,24 @@ export default function AffiliateSignupPage() {
                     required
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="you@example.com"
+                    placeholder={t('aff.signup.email_placeholder')}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="website">Website or social handle</Label>
+                  <Label htmlFor="website">{t('aff.signup.website_label')}</Label>
                   <Input
                     id="website"
                     name="website"
                     required
                     value={form.website}
                     onChange={handleChange}
-                    placeholder="https://yourblog.com or @yourhandle"
+                    placeholder={t('aff.signup.website_placeholder')}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="audienceSize">Audience size</Label>
+                  <Label htmlFor="audienceSize">{t('aff.signup.audience_size_label')}</Label>
                   <select
                     id="audienceSize"
                     name="audienceSize"
@@ -160,18 +162,18 @@ export default function AffiliateSignupPage() {
                     className="h-10 w-full rounded-lg border border-input bg-transparent px-3.5 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25"
                   >
                     <option value="" disabled>
-                      Select a range
+                      {t('aff.signup.audience_size_placeholder')}
                     </option>
                     {AUDIENCE_OPTIONS.map((opt) => (
-                      <option key={opt} value={opt}>
-                        {opt}
+                      <option key={opt.value} value={opt.value}>
+                        {t(opt.labelKey)}
                       </option>
                     ))}
                   </select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="niche">Content niche</Label>
+                  <Label htmlFor="niche">{t('aff.signup.niche_label')}</Label>
                   <select
                     id="niche"
                     name="niche"
@@ -181,24 +183,24 @@ export default function AffiliateSignupPage() {
                     className="h-10 w-full rounded-lg border border-input bg-transparent px-3.5 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25"
                   >
                     <option value="" disabled>
-                      Select a niche
+                      {t('aff.signup.niche_placeholder')}
                     </option>
                     {NICHE_OPTIONS.map((opt) => (
-                      <option key={opt} value={opt}>
-                        {opt}
+                      <option key={opt.value} value={opt.value}>
+                        {t(opt.labelKey)}
                       </option>
                     ))}
                   </select>
                 </div>
 
                 <Button type="submit" className="w-full" disabled={loading}>
-                  {loading ? 'Submitting...' : 'Submit application'}
+                  {loading ? t('aff.signup.submitting') : t('aff.signup.submit')}
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
-                  Already a partner?{' '}
+                  {t('aff.signup.already_partner')}{' '}
                   <Link href="/affiliate/login" className="text-primary hover:underline">
-                    Log in
+                    {t('aff.signup.log_in')}
                   </Link>
                 </p>
               </form>

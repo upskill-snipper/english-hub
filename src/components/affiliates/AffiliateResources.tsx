@@ -16,6 +16,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 interface AffiliateResourcesProps {
   referralUrl: string
@@ -39,16 +40,13 @@ function fillTemplate(raw: string, code: string, link: string): string {
 
 interface Template {
   id: string
-  title: string
-  description: string
+  /** i18n key suffix under aff_comp.resources.tpl.<id>.* */
   body: string
 }
 
 const twitterTemplates: Template[] = [
   {
     id: 'tw-thread',
-    title: 'Long-form thread starter',
-    description: 'Use as the first tweet of a thread. Best for explainer or story-led content.',
     body: `#ad — Here's how my GCSE English students prep with The English Hub. \u{1F9F5}
 
 It's a UK-built revision app with AI essay marking, a structured course library, and instant feedback. Annual subscription works out under £2/month with my code {CODE}.
@@ -59,14 +57,10 @@ It's a UK-built revision app with AI essay marking, a structured course library,
   },
   {
     id: 'tw-short',
-    title: 'Short tweet',
-    description: 'Single-tweet pitch. Drop into replies or your own timeline.',
     body: `If you're revising GCSE English, this is the platform I'd start with. Annual works out under £2/month with my code {CODE}. #ad [link]`,
   },
   {
     id: 'tw-reply',
-    title: 'Reply hook',
-    description: 'Drop into replies on revision / GCSE / parent threads.',
     body: `Quick tip — affiliate code {CODE} drops the annual plan to £20 (saves £9.99). Trial it free for 7 days first. Annual subscription only. #ad [link]`,
   },
 ]
@@ -74,8 +68,6 @@ It's a UK-built revision app with AI essay marking, a structured course library,
 const instagramTemplates: Template[] = [
   {
     id: 'ig-caption',
-    title: 'Photo + caption',
-    description: 'Pair with a screenshot of the AI essay marker or a study-desk flat-lay.',
     body: `#ad
 
 Revising for GCSE English without losing your mind — this is what's actually working for my students this year.
@@ -95,9 +87,6 @@ Free for 7 days. After that the annual plan is £20/year with my code (saves £9
 const tiktokTemplates: Template[] = [
   {
     id: 'tt-caption',
-    title: 'TikTok caption',
-    description:
-      'Vertical-video friendly. Pin the link in your bio and reference the code on screen.',
     body: `#ad The GCSE English revision app I wish I'd had \u{1F62D}
 
 AI essay marking, full courses, instant feedback. 7-day free trial, then £20/year with code {CODE} (saves £9.99). Annual subscription only.
@@ -111,8 +100,6 @@ AI essay marking, full courses, instant feedback. 7-day free trial, then £20/ye
 const emailTemplates: Template[] = [
   {
     id: 'em-newsletter',
-    title: 'Email / newsletter',
-    description: 'Send to a Substack or mailing list. Subject line at the top, body underneath.',
     body: `Subject: The revision tool I've been recommending to every GCSE English parent
 
 ———
@@ -141,8 +128,6 @@ Best,
 const blogTemplates: Template[] = [
   {
     id: 'bg-review',
-    title: 'Blog post / review article',
-    description: '~200 words. Paste into a WordPress, Ghost, or Substack post.',
     body: `> Affiliate disclosure: this post contains affiliate links. If you sign up through them, I earn a small commission at no extra cost to you. The opinions below are my own and I only recommend tools I'd actually use. (FTC / ASA compliance.)
 
 ———
@@ -160,47 +145,48 @@ Try The English Hub here: [link]`,
 // Group all templates for rendering
 interface PlatformGroup {
   id: string
-  title: string
+  /** i18n key for the platform title under aff_comp.resources.platform.<id> */
+  i18nKey: string
+  /** i18n key for the blurb under aff_comp.resources.platform.<id>_blurb */
+  blurbKey: string
   icon: React.ElementType
-  blurb: string
   templates: Template[]
 }
 
 const platformGroups: PlatformGroup[] = [
   {
     id: 'twitter',
-    title: 'Twitter / X',
+    i18nKey: 'aff_comp.resources.platform.twitter',
+    blurbKey: 'aff_comp.resources.platform.twitter_blurb',
     icon: Twitter,
-    blurb:
-      'Three lengths so you can match the format you post in. #ad goes at the start, before the link.',
     templates: twitterTemplates,
   },
   {
     id: 'instagram',
-    title: 'Instagram',
+    i18nKey: 'aff_comp.resources.platform.instagram',
+    blurbKey: 'aff_comp.resources.platform.instagram_blurb',
     icon: Instagram,
-    blurb: 'Caption built for a single photo or carousel. Push followers to your link in bio.',
     templates: instagramTemplates,
   },
   {
     id: 'tiktok',
-    title: 'TikTok',
+    i18nKey: 'aff_comp.resources.platform.tiktok',
+    blurbKey: 'aff_comp.resources.platform.tiktok_blurb',
     icon: Music2,
-    blurb: 'Vertical-video friendly. Keep #ad visible on screen as well as in the caption.',
     templates: tiktokTemplates,
   },
   {
     id: 'email',
-    title: 'Email / newsletter',
+    i18nKey: 'aff_comp.resources.platform.email',
+    blurbKey: 'aff_comp.resources.platform.email_blurb',
     icon: Mail,
-    blurb: 'Subject line + body for sending to a mailing list, Substack, or parent group.',
     templates: emailTemplates,
   },
   {
     id: 'blog',
-    title: 'Blog / review article',
+    i18nKey: 'aff_comp.resources.platform.blog',
+    blurbKey: 'aff_comp.resources.platform.blog_blurb',
     icon: FileText,
-    blurb: 'Long-form review with a clear FTC / ASA disclosure block at the top.',
     templates: blogTemplates,
   },
 ]
@@ -211,6 +197,7 @@ export default function AffiliateResources({
   affiliateName,
 }: AffiliateResourcesProps) {
   const [copiedId, setCopiedId] = useState<CopiedId>(null)
+  const t = useT()
 
   const handleCopy = async (text: string, id: string) => {
     try {
@@ -231,17 +218,18 @@ export default function AffiliateResources({
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Dashboard
+          {t('aff_comp.resources.back')}
         </Link>
 
         <div className="flex items-center gap-3 mb-2">
           <Sparkles className="w-7 h-7 text-primary" />
-          <h1 className="text-3xl font-bold text-foreground">Affiliate Resources</h1>
+          <h1 className="text-3xl font-bold text-foreground">{t('aff_comp.resources.heading')}</h1>
         </div>
         <p className="text-muted-foreground mb-8">
-          Hi {affiliateName.split(' ')[0]} — ready-to-paste scripts with your code{' '}
-          <span className="font-mono font-semibold text-foreground">{affiliateCode}</span> and link
-          already filled in. Pick a template, hit Copy, paste it on the platform.
+          {t('aff_comp.resources.intro_prefix')} {affiliateName.split(' ')[0]} —{' '}
+          {t('aff_comp.resources.intro_body')}{' '}
+          <span className="font-mono font-semibold text-foreground">{affiliateCode}</span>{' '}
+          {t('aff_comp.resources.intro_suffix')}
         </p>
 
         {/* ─── Compliance reminder callout ─────────────────────────────── */}
@@ -251,26 +239,26 @@ export default function AffiliateResources({
         >
           <AlertTriangle className="w-5 h-5 mt-0.5 text-amber-500 flex-shrink-0" />
           <div className="text-sm leading-relaxed text-foreground/90">
-            <p className="font-semibold text-foreground mb-1">Compliance reminder</p>
+            <p className="font-semibold text-foreground mb-1">
+              {t('aff_comp.resources.compliance_title')}
+            </p>
             <p>
-              You <span className="font-semibold">must</span> clearly disclose this is a paid
-              promotion. The UK Advertising Standards Authority (ASA) and CAP Code require{' '}
-              <span className="font-mono font-semibold">#ad</span> to appear at the start of social
-              posts, before any link. Misleading omission can result in your account being
-              terminated and commission withheld. For longer formats (blog, email), use the
-              affiliate-disclosure block included at the top of each template.
+              {t('aff_comp.resources.compliance_body_part1')}{' '}
+              <span className="font-semibold">{t('aff_comp.resources.compliance_body_must')}</span>{' '}
+              {t('aff_comp.resources.compliance_body_part2')}{' '}
+              <span className="font-mono font-semibold">#ad</span>{' '}
+              {t('aff_comp.resources.compliance_body_part3')}
             </p>
           </div>
         </div>
 
         {/* ─── Section A: Your unique link ─────────────────────────────── */}
         <section className="mb-12">
-          <SectionHeading icon={LinkIcon} title="Your unique referral link" />
+          <SectionHeading icon={LinkIcon} title={t('aff_comp.resources.link_section_title')} />
           <div className="bg-card border border-border rounded-xl p-6 space-y-4">
             <div>
               <label className="block text-sm font-medium text-muted-foreground mb-2">
-                This is the link to share. Anyone who signs up within 30 days of clicking gets
-                credited to you.
+                {t('aff_comp.resources.link_section_intro')}
               </label>
               <div className="flex flex-col sm:flex-row gap-2">
                 <div className="flex-1 bg-background rounded-lg border border-border px-4 py-3 font-mono text-sm text-foreground break-all">
@@ -284,12 +272,12 @@ export default function AffiliateResources({
                   {copiedId === 'main-link' ? (
                     <>
                       <Check className="w-4 h-4" />
-                      Copied
+                      {t('aff_comp.copied')}
                     </>
                   ) : (
                     <>
                       <Copy className="w-4 h-4" />
-                      Copy link
+                      {t('aff_comp.resources.copy_link')}
                     </>
                   )}
                 </Button>
@@ -299,24 +287,22 @@ export default function AffiliateResources({
             <div className="grid sm:grid-cols-2 gap-4 pt-2">
               <div className="rounded-lg bg-background/60 border border-border/60 p-4">
                 <p className="text-xs uppercase tracking-wider font-semibold text-muted-foreground mb-1">
-                  Your code
+                  {t('aff_comp.resources.your_code')}
                 </p>
                 <p className="font-mono text-base font-semibold text-foreground">{affiliateCode}</p>
               </div>
               <div className="rounded-lg bg-background/60 border border-border/60 p-4">
                 <p className="text-xs uppercase tracking-wider font-semibold text-muted-foreground mb-1">
-                  Attribution window
+                  {t('aff_comp.resources.attribution_window')}
                 </p>
                 <p className="text-sm text-foreground">
-                  30-day cookie. Any signup within 30 days of a click on your link is credited to
-                  you.
+                  {t('aff_comp.resources.attribution_desc')}
                 </p>
               </div>
             </div>
 
             <p className="text-xs text-muted-foreground pt-1">
-              Note: the discount applies to annual subscriptions only — Student Annual or Teacher
-              Annual.
+              {t('aff_comp.resources.discount_note')}
             </p>
           </div>
         </section>
@@ -324,22 +310,18 @@ export default function AffiliateResources({
         {/* ─── Annual-only reminder above the templates ────────────────── */}
         <div className="mb-10 rounded-xl border border-amber-500/30 bg-amber-500/10 p-5">
           <p className="text-sm font-semibold text-foreground">
-            Lean into the annual hook in your captions.
+            {t('aff_comp.resources.annual_lean_title')}
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            You earn commission on annual subscriptions only. Your code unlocks &pound;9.99 off
-            either annual plan: Student Annual &pound;20/year (normally &pound;29.99) or Teacher
-            Annual &pound;58/year (normally &pound;67.99). Monthly plans aren&rsquo;t discounted and
-            don&rsquo;t earn commission. Every template below calls out &ldquo;annual subscription
-            only&rdquo; so the rule is on the page when followers click through.
+            {t('aff_comp.resources.annual_lean_body')}
           </p>
         </div>
 
         {/* ─── Sections B–F: Platform templates ────────────────────────── */}
         {platformGroups.map((group) => (
           <section key={group.id} className="mb-12">
-            <SectionHeading icon={group.icon} title={group.title} />
-            <p className="text-muted-foreground mb-5 text-sm">{group.blurb}</p>
+            <SectionHeading icon={group.icon} title={t(group.i18nKey)} />
+            <p className="text-muted-foreground mb-5 text-sm">{t(group.blurbKey)}</p>
             <div className="space-y-4">
               {group.templates.map((tpl) => {
                 const filled = fillTemplate(tpl.body, affiliateCode, referralUrl)
@@ -347,8 +329,11 @@ export default function AffiliateResources({
                   <TemplateCard
                     key={tpl.id}
                     id={tpl.id}
-                    title={tpl.title}
-                    description={tpl.description}
+                    title={t(`aff_comp.resources.tpl.${tpl.id}.title`)}
+                    description={t(`aff_comp.resources.tpl.${tpl.id}.desc`)}
+                    previewPrefix={t('aff_comp.resources.tpl.preview_prefix')}
+                    copyLabel={t('aff_comp.copy')}
+                    copiedLabel={t('aff_comp.copied')}
                     body={filled}
                     copiedId={copiedId}
                     onCopy={handleCopy}
@@ -362,10 +347,10 @@ export default function AffiliateResources({
         {/* ─── Bottom CTA ─── */}
         <div className="bg-card border border-border rounded-xl p-6 text-center">
           <p className="text-foreground font-semibold mb-1">
-            That's everything you need to start posting.
+            {t('aff_comp.resources.bottom.headline')}
           </p>
           <p className="text-sm text-muted-foreground mb-4">
-            Pick a template, hit copy, paste it. Your code is already in there.
+            {t('aff_comp.resources.bottom.body')}
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Button variant="outline" onClick={() => handleCopy(referralUrl, 'bottom-link')}>
@@ -374,9 +359,13 @@ export default function AffiliateResources({
               ) : (
                 <Copy className="w-4 h-4" />
               )}
-              {copiedId === 'bottom-link' ? 'Copied' : 'Copy link'}
+              {copiedId === 'bottom-link'
+                ? t('aff_comp.copied')
+                : t('aff_comp.resources.copy_link')}
             </Button>
-            <Button render={<Link href="/affiliates/dashboard" />}>View Dashboard</Button>
+            <Button render={<Link href="/affiliates/dashboard" />}>
+              {t('aff_comp.resources.bottom.view_dashboard')}
+            </Button>
           </div>
         </div>
       </div>
@@ -399,6 +388,9 @@ function TemplateCard({
   id,
   title,
   description,
+  previewPrefix,
+  copyLabel,
+  copiedLabel,
   body,
   copiedId,
   onCopy,
@@ -406,6 +398,9 @@ function TemplateCard({
   id: string
   title: string
   description: string
+  previewPrefix: string
+  copyLabel: string
+  copiedLabel: string
   body: string
   copiedId: CopiedId
   onCopy: (text: string, id: string) => void
@@ -425,7 +420,7 @@ function TemplateCard({
         </div>
         <button
           onClick={() => onCopy(body, id)}
-          aria-label={isCopied ? 'Copied to clipboard' : `Copy ${title}`}
+          aria-label={isCopied ? copiedLabel : `${copyLabel} ${title}`}
           className={
             'flex-shrink-0 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold border transition-colors ' +
             (isCopied
@@ -436,12 +431,12 @@ function TemplateCard({
           {isCopied ? (
             <>
               <Check className="w-3.5 h-3.5" />
-              Copied
+              {copiedLabel}
             </>
           ) : (
             <>
               <span aria-hidden>{'\u{1F4CB}'}</span>
-              Copy
+              {copyLabel}
             </>
           )}
         </button>
@@ -449,7 +444,7 @@ function TemplateCard({
 
       {/* Preview line */}
       <p className="text-xs font-mono text-muted-foreground mb-3 truncate">
-        Preview: <span className="text-foreground/80">{preview}</span>
+        {previewPrefix} <span className="text-foreground/80">{preview}</span>
       </p>
 
       {/* Full text — readonly textarea so it can be selected/copied manually too */}

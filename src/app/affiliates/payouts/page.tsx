@@ -1,9 +1,13 @@
+import type { Metadata } from 'next'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import AffiliatePayoutsClient from './AffiliatePayoutsClient'
+import { t } from '@/lib/i18n/t'
 
-export const metadata = {
-  title: 'Affiliate Payouts — The English Hub',
+// 2026-05-13: metadata wired to i18n — document title resolves through
+// `affiliates.payouts.meta.title` so the AR locale serves Khaleeji copy.
+export async function generateMetadata(): Promise<Metadata> {
+  return { title: await t('affiliates.payouts.meta.title') }
 }
 
 // ─── /affiliates/payouts ────────────────────────────────────────────────────

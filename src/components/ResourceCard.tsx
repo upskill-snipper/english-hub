@@ -1,29 +1,30 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Types ───────────────────────────────────────────────────── */
 
-type ResourceTypeBadge = 'Study Guide' | 'Practice' | 'Notes';
-type ExamBoardLabel = 'AQA' | 'Edexcel' | 'Cambridge' | 'OCR';
-type DifficultyLevel = 1 | 2 | 3 | 4 | 5;
+type ResourceTypeBadge = 'Study Guide' | 'Practice' | 'Notes'
+type ExamBoardLabel = 'AQA' | 'Edexcel' | 'Cambridge' | 'OCR'
+type DifficultyLevel = 1 | 2 | 3 | 4 | 5
 
 interface ResourceCardData {
-  id: string;
-  title: string;
-  description?: string;
-  type: ResourceTypeBadge;
-  examBoard: ExamBoardLabel;
-  subject: 'English Language' | 'English Literature';
-  difficulty: DifficultyLevel;
-  href: string;
-  tag?: string;
+  id: string
+  title: string
+  description?: string
+  type: ResourceTypeBadge
+  examBoard: ExamBoardLabel
+  subject: 'English Language' | 'English Literature'
+  difficulty: DifficultyLevel
+  href: string
+  tag?: string
 }
 
 interface ResourceCardProps {
-  resource: ResourceCardData;
-  className?: string;
+  resource: ResourceCardData
+  className?: string
 }
 
 /* ─── Constants ───────────────────────────────────────────────── */
@@ -44,7 +45,7 @@ const TYPE_STYLES: Record<ResourceTypeBadge, { bg: string; text: string; ring: s
     text: 'text-yellow-700',
     ring: 'ring-yellow-200',
   },
-};
+}
 
 /** @deprecated Board colours removed — kept for type compat */
 const BOARD_COLORS: Record<ExamBoardLabel, string> = {
@@ -52,7 +53,7 @@ const BOARD_COLORS: Record<ExamBoardLabel, string> = {
   Edexcel: 'bg-success-50 text-success-700',
   Cambridge: 'bg-warn-50 text-warn-700',
   OCR: 'bg-purple-50 text-purple-700',
-};
+}
 
 /* ─── Icons ───────────────────────────────────────────────────── */
 
@@ -66,25 +67,31 @@ function ArrowRight() {
       stroke="currentColor"
       aria-hidden="true"
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-      />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
     </svg>
-  );
+  )
 }
 
 /* ─── Difficulty dots ─────────────────────────────────────────── */
 
+const DIFFICULTY_KEYS: readonly string[] = [
+  'resource.difficulty.beginner',
+  'resource.difficulty.easy',
+  'resource.difficulty.intermediate',
+  'resource.difficulty.challenging',
+  'resource.difficulty.advanced',
+]
+
 function DifficultyIndicator({ level }: { level: DifficultyLevel }) {
-  const labels = ['Beginner', 'Easy', 'Intermediate', 'Challenging', 'Advanced'];
+  const t = useT()
+  const label = t(DIFFICULTY_KEYS[level - 1])
+  const aria = t('resource.difficulty.aria')
+    .replace('{label}', label)
+    .replace('{level}', String(level))
 
   return (
-    <div className="flex items-center gap-1.5" title={labels[level - 1]}>
-      <span className="sr-only">
-        Difficulty: {labels[level - 1]} ({level} of 5)
-      </span>
+    <div className="flex items-center gap-1.5" title={label}>
+      <span className="sr-only">{aria}</span>
       {[1, 2, 3, 4, 5].map((dot) => (
         <span
           key={dot}
@@ -95,16 +102,28 @@ function DifficultyIndicator({ level }: { level: DifficultyLevel }) {
         />
       ))}
       <span className="ml-1 text-xs text-muted-foreground" aria-hidden="true">
-        {labels[level - 1]}
+        {label}
       </span>
     </div>
-  );
+  )
 }
 
 /* ─── ResourceCard component ──────────────────────────────────── */
 
+const TYPE_KEYS: Record<ResourceTypeBadge, string> = {
+  'Study Guide': 'resource.type.study_guide',
+  Practice: 'resource.type.practice',
+  Notes: 'resource.type.notes',
+}
+
+const SUBJECT_KEYS: Record<ResourceCardData['subject'], string> = {
+  'English Language': 'resource.subject.english_language',
+  'English Literature': 'resource.subject.english_literature',
+}
+
 function ResourceCard({ resource, className = '' }: ResourceCardProps) {
-  const typeStyle = TYPE_STYLES[resource.type];
+  const t = useT()
+  const typeStyle = TYPE_STYLES[resource.type]
 
   return (
     <Link
@@ -124,7 +143,7 @@ function ResourceCard({ resource, className = '' }: ResourceCardProps) {
         <span
           className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset ${typeStyle.bg} ${typeStyle.text} ${typeStyle.ring}`}
         >
-          {resource.type}
+          {t(TYPE_KEYS[resource.type])}
         </span>
       </div>
 
@@ -155,38 +174,35 @@ function ResourceCard({ resource, className = '' }: ResourceCardProps) {
       {/* Bottom row: subject, difficulty, CTA */}
       <div className="mt-4 flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-muted-foreground">{resource.subject}</span>
+          <span className="text-xs font-medium text-muted-foreground">
+            {t(SUBJECT_KEYS[resource.subject])}
+          </span>
           <DifficultyIndicator level={resource.difficulty} />
         </div>
 
         <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent transition-colors duration-200 group-hover:text-primary">
-          Start revising <ArrowRight />
+          {t('resource.cta.start_revising')} <ArrowRight />
         </span>
       </div>
     </Link>
-  );
+  )
 }
 
 /* ─── Grid wrapper ────────────────────────────────────────────── */
 
 interface ResourceGridProps {
-  children: React.ReactNode;
-  className?: string;
+  children: React.ReactNode
+  className?: string
 }
 
 function ResourceGrid({ children, className = '' }: ResourceGridProps) {
   return (
     <div
-      className={[
-        'grid gap-5 sm:grid-cols-2 lg:grid-cols-3',
-        className,
-      ]
-        .filter(Boolean)
-        .join(' ')}
+      className={['grid gap-5 sm:grid-cols-2 lg:grid-cols-3', className].filter(Boolean).join(' ')}
     >
       {children}
     </div>
-  );
+  )
 }
 
 export {
@@ -197,4 +213,4 @@ export {
   type ResourceTypeBadge,
   type ExamBoardLabel,
   type DifficultyLevel,
-};
+}

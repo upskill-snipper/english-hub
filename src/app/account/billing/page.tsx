@@ -13,6 +13,7 @@ import { trackEvent } from '@/lib/gtag'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { getCourseName } from '@/lib/utils'
 import { fireTrustpilotInvite } from '@/lib/trustpilot/fire-invite-js'
+import { useT } from '@/lib/i18n/use-t'
 import {
   CreditCard,
   Crown,
@@ -33,6 +34,7 @@ interface EnrolmentRow {
 }
 
 export default function BillingPage() {
+  const t = useT()
   const router = useRouter()
   const { user, profile } = useAuthStore()
   const { referral: rewardfulReferral } = useRewardful()
@@ -125,9 +127,7 @@ export default function BillingPage() {
             ? 'teacher_annual'
             : null
       if (productIdForPlan === null) {
-        setError(
-          `Your code “${codeField.appliedCode}” only applies to annual plans — Student Annual (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year) or Teacher Annual (£${PRICING.TEACHER_ANNUAL_WITH_CODE}/year). Head to the pricing page to upgrade onto an annual plan, or remove the code to continue with this plan at the standard price.`,
-        )
+        setError(t('account.billing.err_code_annual_only'))
         setCheckoutLoading(null)
         return
       }
@@ -152,7 +152,7 @@ export default function BillingPage() {
             setCheckoutLoading(null)
             return
           }
-          setError(json.error || "We couldn't apply that code right now. Please try again.")
+          setError(json.error || t('account.billing.err_code_generic'))
           setCheckoutLoading(null)
           return
         }
@@ -161,7 +161,7 @@ export default function BillingPage() {
         window.location.href = json.url
         return
       } catch {
-        setError('Something went wrong applying the code. Please try again.')
+        setError(t('account.billing.err_code_apply_failed'))
         setCheckoutLoading(null)
         return
       }
@@ -191,7 +191,7 @@ export default function BillingPage() {
           setCheckoutLoading(null)
           return
         }
-        setError(data.error || 'Failed to create checkout session.')
+        setError(data.error || t('account.billing.err_checkout_failed'))
         setCheckoutLoading(null)
         return
       }
@@ -203,7 +203,7 @@ export default function BillingPage() {
       phCapture(PH_EVENTS.SUBSCRIPTION_STARTED, { plan })
       window.location.href = data.url
     } catch {
-      setError('Something went wrong. Please try again.')
+      setError(t('account.billing.err_generic'))
       setCheckoutLoading(null)
     }
   }
@@ -220,14 +220,14 @@ export default function BillingPage() {
       const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error || 'Failed to open billing portal.')
+        setError(data.error || t('account.billing.err_portal_failed'))
         setPortalLoading(false)
         return
       }
 
       window.location.href = data.url
     } catch {
-      setError('Something went wrong. Please try again.')
+      setError(t('account.billing.err_generic'))
       setPortalLoading(false)
     }
   }
@@ -248,10 +248,10 @@ export default function BillingPage() {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to account
+          {t('account.back_to_account')}
         </Link>
 
-        <h1 className="text-3xl font-bold text-foreground mb-8">Billing &amp; Subscription</h1>
+        <h1 className="text-3xl font-bold text-foreground mb-8">{t('account.billing.title')}</h1>
 
         {error && (
           <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-6 text-red-400 text-sm">
@@ -261,28 +261,27 @@ export default function BillingPage() {
 
         {needsEmailVerification && (
           <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4 mb-6 text-clay-600 text-sm">
-            <p className="font-semibold mb-1">Verify your email before upgrading</p>
+            <p className="font-semibold mb-1">{t('account.billing.verify_email_title')}</p>
             <p className="mb-3">
-              We&rsquo;ve sent a fresh link to{' '}
-              <span className="font-medium">{user?.email ?? 'your inbox'}</span>. Confirm it and
-              come back to finish checkout.
+              {t('account.billing.verify_email_prefix')}{' '}
+              <span className="font-medium">
+                {user?.email ?? t('account.billing.verify_email_fallback')}
+              </span>
+              . {t('account.billing.verify_email_suffix')}
             </p>
             <Link
               href="/auth/resend-verification"
               className="inline-flex items-center gap-1.5 text-amber-700 underline underline-offset-2 hover:text-amber-700 transition-colors"
             >
-              Resend now
+              {t('account.billing.resend_now')}
             </Link>
           </div>
         )}
 
         {profile?.subscription_status === 'past_due' && (
           <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mb-6 text-clay-600 text-sm">
-            <p className="font-semibold mb-1">Payment failed</p>
-            <p>
-              We were unable to process your last payment. Please update your payment method to keep
-              your Premium access.
-            </p>
+            <p className="font-semibold mb-1">{t('account.billing.past_due_title')}</p>
+            <p>{t('account.billing.past_due_body')}</p>
             <button
               onClick={handleManageSubscription}
               disabled={portalLoading}
@@ -293,7 +292,7 @@ export default function BillingPage() {
               ) : (
                 <ExternalLink className="w-3.5 h-3.5" />
               )}
-              Update payment method
+              {t('account.billing.update_payment_method')}
             </button>
           </div>
         )}
@@ -302,7 +301,9 @@ export default function BillingPage() {
         <section className="bg-card border border-border rounded-xl p-6 mb-6">
           <div className="flex items-center gap-3 mb-4">
             <Crown className="w-5 h-5 text-primary" />
-            <h2 className="text-xl font-semibold text-foreground">Current Plan</h2>
+            <h2 className="text-xl font-semibold text-foreground">
+              {t('account.billing.current_plan')}
+            </h2>
           </div>
 
           <div className="flex items-center gap-3 mb-4">
@@ -316,14 +317,18 @@ export default function BillingPage() {
               }`}
             >
               {isPro && <Sparkles className="w-3.5 h-3.5" />}
-              {isPro ? 'Premium' : isCancelled ? 'Premium (Cancelled)' : 'Free'}
+              {isPro
+                ? t('account.billing.plan_premium')
+                : isCancelled
+                  ? t('account.billing.plan_premium_cancelled')
+                  : t('account.billing.plan_free')}
             </span>
           </div>
 
           {subscriptionEnd && (
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
               <Calendar className="w-4 h-4" />
-              {isPro ? 'Renews' : 'Access until'}{' '}
+              {isPro ? t('account.billing.renews') : t('account.billing.access_until')}{' '}
               {subscriptionEnd.toLocaleDateString('en-GB', {
                 day: 'numeric',
                 month: 'long',
@@ -341,21 +346,18 @@ export default function BillingPage() {
               {portalLoading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                  Loading...
+                  {t('account.billing.loading')}
                 </>
               ) : (
                 <>
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  Manage Subscription
+                  {t('account.billing.manage_subscription')}
                 </>
               )}
             </button>
           ) : (
             <div className="space-y-4">
-              <p className="text-muted-foreground text-sm">
-                Upgrade to Premium for unlimited access to all courses, practice papers, and premium
-                features.
-              </p>
+              <p className="text-muted-foreground text-sm">{t('account.billing.upgrade_blurb')}</p>
 
               {/* Promo / affiliate code field — same component as /pricing.
                   Renders above the plan options so users can apply a code
@@ -368,31 +370,38 @@ export default function BillingPage() {
                 {/* Student Monthly */}
                 <div className="border border-border rounded-xl p-5 hover:border-primary/50 transition-colors">
                   <div className="flex items-center justify-between mb-1">
-                    <h3 className="text-lg font-semibold text-foreground">Student</h3>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {t('account.billing.student')}
+                    </h3>
                     <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
-                      Early Access
+                      {t('account.billing.early_access')}
                     </span>
                   </div>
                   <p className="text-2xl font-bold text-primary mb-1">
                     {PRICING.CURRENCY}
                     {PRICING.STUDENT_MONTHLY}
-                    <span className="text-sm font-normal text-muted-foreground">/month</span>
+                    <span className="text-sm font-normal text-muted-foreground">
+                      {t('account.billing.per_month')}
+                    </span>
                   </p>
                   <p className="text-xs text-muted-foreground mb-1">
-                    or {PRICING.CURRENCY}
-                    {PRICING.STUDENT_ANNUAL}/year
+                    {t('account.billing.or_per_year_prefix')} {PRICING.CURRENCY}
+                    {PRICING.STUDENT_ANNUAL}
+                    {t('account.billing.per_year')}
                   </p>
                   <p className="text-[11px] text-muted-foreground/80 mb-1">
-                    Standard{' '}
+                    {t('account.billing.standard')}{' '}
                     <span className="line-through">
                       {PRICING.CURRENCY}
-                      {PRICING.STUDENT_MONTHLY_STANDARD}/month
+                      {PRICING.STUDENT_MONTHLY_STANDARD}
+                      {t('account.billing.per_month')}
                     </span>{' '}
                     / {PRICING.CURRENCY}
                     <span className="line-through">
-                      {PRICING.STUDENT_ANNUAL_STANDARD}/year
+                      {PRICING.STUDENT_ANNUAL_STANDARD}
+                      {t('account.billing.per_year')}
                     </span>{' '}
-                    from {PRICING.PRICE_INCREASE_DATE}
+                    {t('account.billing.from_date_prefix')} {PRICING.PRICE_INCREASE_DATE}
                   </p>
                   <p className="text-sm text-emerald-500 font-semibold mb-2">
                     {PRICING.TRIAL_TEXT}
@@ -400,14 +409,15 @@ export default function BillingPage() {
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-primary" />
-                      All courses included
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5 text-primary" />3 free uses per feature
+                      {t('account.billing.feature_all_courses')}
                     </li>
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-primary" />
-                      Cancel anytime
+                      {t('account.billing.feature_three_free_uses')}
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <CheckCircle className="w-3.5 h-3.5 text-primary" />
+                      {t('account.billing.feature_cancel_anytime')}
                     </li>
                   </ul>
                   <button
@@ -418,10 +428,10 @@ export default function BillingPage() {
                     {checkoutLoading === 'student_monthly' ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                        Loading...
+                        {t('account.billing.loading')}
                       </>
                     ) : (
-                      'Upgrade Student'
+                      t('account.billing.upgrade_student')
                     )}
                   </button>
                 </div>
@@ -429,31 +439,38 @@ export default function BillingPage() {
                 {/* Teacher */}
                 <div className="border border-purple-500/30 rounded-xl p-5 hover:border-purple-500/50 transition-colors">
                   <div className="flex items-center justify-between mb-1">
-                    <h3 className="text-lg font-semibold text-foreground">Teacher</h3>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {t('account.billing.teacher')}
+                    </h3>
                     <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700">
-                      Early Access
+                      {t('account.billing.early_access')}
                     </span>
                   </div>
                   <p className="text-2xl font-bold text-purple-400 mb-1">
                     {PRICING.CURRENCY}
                     {PRICING.TEACHER_MONTHLY}
-                    <span className="text-sm font-normal text-muted-foreground">/month</span>
+                    <span className="text-sm font-normal text-muted-foreground">
+                      {t('account.billing.per_month')}
+                    </span>
                   </p>
                   <p className="text-xs text-muted-foreground mb-1">
-                    or {PRICING.CURRENCY}
-                    {PRICING.TEACHER_ANNUAL}/year
+                    {t('account.billing.or_per_year_prefix')} {PRICING.CURRENCY}
+                    {PRICING.TEACHER_ANNUAL}
+                    {t('account.billing.per_year')}
                   </p>
                   <p className="text-[11px] text-muted-foreground/80 mb-1">
-                    Standard{' '}
+                    {t('account.billing.standard')}{' '}
                     <span className="line-through">
                       {PRICING.CURRENCY}
-                      {PRICING.TEACHER_MONTHLY_STANDARD}/month
+                      {PRICING.TEACHER_MONTHLY_STANDARD}
+                      {t('account.billing.per_month')}
                     </span>{' '}
                     / {PRICING.CURRENCY}
                     <span className="line-through">
-                      {PRICING.TEACHER_ANNUAL_STANDARD}/year
+                      {PRICING.TEACHER_ANNUAL_STANDARD}
+                      {t('account.billing.per_year')}
                     </span>{' '}
-                    from {PRICING.PRICE_INCREASE_DATE}
+                    {t('account.billing.from_date_prefix')} {PRICING.PRICE_INCREASE_DATE}
                   </p>
                   <p className="text-sm text-emerald-500 font-semibold mb-2">
                     {PRICING.TRIAL_TEXT}
@@ -461,15 +478,15 @@ export default function BillingPage() {
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-purple-400" />
-                      Everything in Student
+                      {t('account.billing.feature_everything_in_student')}
                     </li>
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-purple-400" />
-                      AI Lesson Builder
+                      {t('account.billing.feature_ai_lesson_builder')}
                     </li>
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-purple-400" />
-                      Student Analytics
+                      {t('account.billing.feature_student_analytics')}
                     </li>
                   </ul>
                   <button
@@ -480,10 +497,10 @@ export default function BillingPage() {
                     {checkoutLoading === 'teacher_monthly' ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                        Loading...
+                        {t('account.billing.loading')}
                       </>
                     ) : (
-                      'Upgrade Teacher'
+                      t('account.billing.upgrade_teacher')
                     )}
                   </button>
                 </div>
@@ -498,13 +515,13 @@ export default function BillingPage() {
         <section className="bg-card border border-border rounded-xl p-6">
           <div className="flex items-center gap-3 mb-4">
             <BookOpen className="w-5 h-5 text-primary" />
-            <h2 className="text-xl font-semibold text-foreground">Course Purchases</h2>
+            <h2 className="text-xl font-semibold text-foreground">
+              {t('account.billing.course_purchases')}
+            </h2>
           </div>
 
           {enrolments.length === 0 ? (
-            <p className="text-muted-foreground text-sm">
-              You have not purchased any individual courses yet.
-            </p>
+            <p className="text-muted-foreground text-sm">{t('account.billing.no_purchases')}</p>
           ) : (
             <div className="divide-y divide-border">
               {enrolments.map((enrolment) => (
@@ -517,7 +534,7 @@ export default function BillingPage() {
                       {getCourseName(enrolment.course_id)}
                     </p>
                     <p className="text-muted-foreground text-xs">
-                      Enrolled{' '}
+                      {t('account.billing.enrolled')}{' '}
                       {new Date(enrolment.enrolled_at).toLocaleDateString('en-GB', {
                         day: 'numeric',
                         month: 'short',
@@ -535,10 +552,10 @@ export default function BillingPage() {
                     }`}
                   >
                     {enrolment.payment_type === 'subscription'
-                      ? 'Subscription'
+                      ? t('account.billing.payment_subscription')
                       : enrolment.payment_type === 'one_time'
-                        ? 'Purchased'
-                        : 'Free'}
+                        ? t('account.billing.payment_one_time')
+                        : t('account.billing.payment_free')}
                   </span>
                 </div>
               ))}

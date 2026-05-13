@@ -1,9 +1,10 @@
-"use client"
+'use client'
 
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
-import { formatGBP } from "@/lib/analytics/nrr"
-import type { MonthlyMRR } from "@/lib/analytics/mrr-movements"
-import { cn } from "@/lib/utils"
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { formatGBP } from '@/lib/analytics/nrr'
+import type { MonthlyMRR } from '@/lib/analytics/mrr-movements'
+import { useT } from '@/lib/i18n/use-t'
+import { cn } from '@/lib/utils'
 
 interface MRRWaterfallChartProps {
   month: MonthlyMRR
@@ -25,25 +26,21 @@ interface Bar {
  * to ending MRR via new/expansion/upgrade/contraction/downgrade/churn bars.
  */
 export function MRRWaterfallChart({ month, className }: MRRWaterfallChartProps) {
+  const t = useT()
   const bars: Bar[] = []
   let cursor = month.startingMRR
 
   bars.push({
-    key: "start",
-    label: "Starting MRR",
+    key: 'start',
+    label: t('analytics.mrr.starting'),
     amount: month.startingMRR,
     barStart: 0,
     barTop: month.startingMRR,
-    colour: "bg-ink-500/70",
+    colour: 'bg-ink-500/70',
     isTotal: true,
   })
 
-  const addMovement = (
-    key: string,
-    label: string,
-    amount: number,
-    colour: string,
-  ) => {
+  const addMovement = (key: string, label: string, amount: number, colour: string) => {
     if (amount === 0) return
     const signed = amount
     const nextCursor = cursor + signed
@@ -53,31 +50,31 @@ export function MRRWaterfallChart({ month, className }: MRRWaterfallChartProps) 
     cursor = nextCursor
   }
 
-  addMovement("new", "New", month.newMRR, "bg-emerald-500/80")
-  addMovement("expansion", "Expansion", month.expansionMRR, "bg-emerald-400/80")
-  addMovement("upgrade", "Upgrade", month.upgradeMRR, "bg-emerald-300/80")
+  addMovement('new', t('analytics.mrr.new'), month.newMRR, 'bg-emerald-500/80')
+  addMovement('expansion', t('analytics.mrr.expansion'), month.expansionMRR, 'bg-emerald-400/80')
+  addMovement('upgrade', t('analytics.mrr.upgrade'), month.upgradeMRR, 'bg-emerald-300/80')
   addMovement(
-    "reactivation",
-    "Reactivation",
+    'reactivation',
+    t('analytics.mrr.reactivation'),
     month.reactivationMRR,
-    "bg-sky-400/80",
+    'bg-sky-400/80',
   )
   addMovement(
-    "contraction",
-    "Contraction",
+    'contraction',
+    t('analytics.mrr.contraction'),
     -month.contractionMRR,
-    "bg-orange-400/80",
+    'bg-orange-400/80',
   )
-  addMovement("downgrade", "Downgrade", -month.downgradeMRR, "bg-orange-500/80")
-  addMovement("churn", "Churn", -month.churnMRR, "bg-red-500/80")
+  addMovement('downgrade', t('analytics.mrr.downgrade'), -month.downgradeMRR, 'bg-orange-500/80')
+  addMovement('churn', t('analytics.mrr.churn'), -month.churnMRR, 'bg-red-500/80')
 
   bars.push({
-    key: "end",
-    label: "Ending MRR",
+    key: 'end',
+    label: t('analytics.mrr.ending'),
     amount: month.endingMRR,
     barStart: 0,
     barTop: month.endingMRR,
-    colour: "bg-ink-400/80",
+    colour: 'bg-ink-400/80',
     isTotal: true,
   })
 
@@ -86,10 +83,10 @@ export function MRRWaterfallChart({ month, className }: MRRWaterfallChartProps) 
   const range = max - min || 1
 
   return (
-    <div className={cn("w-full", className)}>
+    <div className={cn('w-full', className)}>
       <p className="mb-4 text-xs text-muted-foreground">
-        {month.label} &middot; Starting {formatGBP(month.startingMRR, true)} →
-        Ending {formatGBP(month.endingMRR, true)}
+        {month.label} &middot; {t('analytics.mrr.starting')} {formatGBP(month.startingMRR, true)} →{' '}
+        {t('analytics.mrr.ending')} {formatGBP(month.endingMRR, true)}
       </p>
 
       <div
@@ -104,14 +101,14 @@ export function MRRWaterfallChart({ month, className }: MRRWaterfallChartProps) 
             <div
               key={bar.key}
               className="relative flex flex-1 flex-col items-center justify-end"
-              style={{ height: "100%" }}
+              style={{ height: '100%' }}
             >
               <Tooltip>
                 <TooltipTrigger>
                   <div className="relative h-full w-full">
                     <div
                       className={cn(
-                        "absolute left-1/2 w-4/5 -translate-x-1/2 rounded-t-md transition-transform hover:scale-105",
+                        'absolute left-1/2 w-4/5 -translate-x-1/2 rounded-t-md transition-transform hover:scale-105',
                         bar.colour,
                       )}
                       style={{
@@ -126,7 +123,7 @@ export function MRRWaterfallChart({ month, className }: MRRWaterfallChartProps) 
                   <p className="tabular-nums text-muted-foreground">
                     {bar.isTotal
                       ? formatGBP(bar.amount, true)
-                      : `${isNegative ? "-" : "+"}${formatGBP(Math.abs(bar.amount), true)}`}
+                      : `${isNegative ? '-' : '+'}${formatGBP(Math.abs(bar.amount), true)}`}
                   </p>
                 </TooltipContent>
               </Tooltip>
@@ -138,26 +135,21 @@ export function MRRWaterfallChart({ month, className }: MRRWaterfallChartProps) 
       {/* X-axis labels */}
       <div className="mt-2 flex gap-3">
         {bars.map((bar) => (
-          <div
-            key={`${bar.key}-label`}
-            className="flex flex-1 flex-col items-center gap-0.5"
-          >
-            <span className="text-[10px] font-medium text-foreground">
-              {bar.label}
-            </span>
+          <div key={`${bar.key}-label`} className="flex flex-1 flex-col items-center gap-0.5">
+            <span className="text-[10px] font-medium text-foreground">{bar.label}</span>
             <span
               className={cn(
-                "text-[10px] tabular-nums",
+                'text-[10px] tabular-nums',
                 bar.isTotal
-                  ? "text-muted-foreground"
+                  ? 'text-muted-foreground'
                   : bar.amount < 0
-                    ? "text-red-400"
-                    : "text-emerald-400",
+                    ? 'text-red-400'
+                    : 'text-emerald-400',
               )}
             >
               {bar.isTotal
                 ? formatGBP(bar.amount, true)
-                : `${bar.amount < 0 ? "-" : "+"}${formatGBP(Math.abs(bar.amount), true)}`}
+                : `${bar.amount < 0 ? '-' : '+'}${formatGBP(Math.abs(bar.amount), true)}`}
             </span>
           </div>
         ))}

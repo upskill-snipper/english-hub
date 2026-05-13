@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ALevelBoardHub } from '@/app/a-level/_components/BoardHub'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'WJEC Eduqas A-Level English — The English Hub',
@@ -9,13 +10,16 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-export default function EduqasALevelHubPage() {
+export default async function EduqasALevelHubPage() {
+  const boardName = await t('alevel.eduqas.board_name')
+  const summary = await t('alevel.eduqas.summary')
+
   return (
     <ALevelBoardHub
-      boardName="WJEC Eduqas A-Level English"
+      boardName={boardName}
       examCode="Eduqas A-Level"
       hubSlug="eduqas"
-      summary="WJEC Eduqas A-Level covers English Literature and Language. Students work across poetry, drama, prose and unseen texts, with a comparative essay component and coursework worth 20% of the qualification."
+      summary={summary}
     />
   )
 }

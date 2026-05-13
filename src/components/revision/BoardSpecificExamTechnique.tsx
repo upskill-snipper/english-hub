@@ -9,9 +9,22 @@
  *
  * IGCSE boards (Edexcel IGCSE, Cambridge 0500, Cambridge 0990) are handled
  * by redirecting users to their dedicated /igcse/... routes.
+ *
+ * i18n: the EN literals below are the single source of truth. Client
+ * consumers may call `useTranslatedBoardContent(board)` to receive a
+ * version of the content with each translatable field passed through the
+ * `revision.exam_technique.<board>.*` namespace via `useT()`. Missing keys
+ * fall back to the original EN string (see lookup() in dictionary.ts).
+ *
+ * NOTE: this module has no `'use client'` directive so that server pages
+ * can keep importing the static data + pure helpers. The translation hook
+ * below uses `useT()`, which is itself a client hook — calling it from a
+ * server component will error, exactly as React expects.
  */
 
+import { useMemo } from 'react'
 import type { ExamBoard } from '@/lib/board/board-config'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Types ──────────────────────────────────────────────────────────── */
 
@@ -1703,4 +1716,127 @@ export function getIgcseRedirectPath(board: ExamBoard | null): string | null {
     default:
       return null
   }
+}
+
+/* ── i18n translation hook ─────────────────────────────────────────── */
+
+/**
+ * Translate a single field using the `revision.exam_technique.<board>.<field>`
+ * namespace, with graceful fallback to the original EN string. The dictionary
+ * `lookup()` returns `[[key]]` for missing entries — we treat that as a miss
+ * and return the EN fallback instead, so EN consumers see no regression.
+ */
+function translateField(
+  t: (key: string) => string,
+  board: GcseBoard,
+  field: string,
+  fallback: string,
+): string {
+  const key = `revision.exam_technique.${board}.${field}`
+  const resolved = t(key)
+  return resolved.startsWith('[[') && resolved.endsWith(']]') ? fallback : resolved
+}
+
+function translatePaperRow(
+  t: (key: string) => string,
+  board: GcseBoard,
+  paperIndex: number,
+  rowIndex: number,
+  row: PaperTimingRow,
+): PaperTimingRow {
+  const base = `papers.${paperIndex}.rows.${rowIndex}`
+  return {
+    ...row,
+    label: translateField(t, board, `${base}.label`, row.label),
+    detail: translateField(t, board, `${base}.detail`, row.detail),
+    marks: row.marks != null ? translateField(t, board, `${base}.marks`, row.marks) : row.marks,
+  }
+}
+
+function translatePaper(
+  t: (key: string) => string,
+  board: GcseBoard,
+  index: number,
+  paper: PaperBreakdown,
+): PaperBreakdown {
+  const base = `papers.${index}`
+  return {
+    title: translateField(t, board, `${base}.title`, paper.title),
+    badge: translateField(t, board, `${base}.badge`, paper.badge),
+    description: translateField(t, board, `${base}.description`, paper.description),
+    rows: paper.rows.map((row, i) => translatePaperRow(t, board, index, i, row)),
+    tip: paper.tip != null ? translateField(t, board, `${base}.tip`, paper.tip) : paper.tip,
+    warning:
+      paper.warning != null
+        ? translateField(t, board, `${base}.warning`, paper.warning)
+        : paper.warning,
+  }
+}
+
+function translateQuestionType(
+  t: (key: string) => string,
+  board: GcseBoard,
+  index: number,
+  q: QuestionTypeRow,
+): QuestionTypeRow {
+  const base = `question_types.${index}`
+  return {
+    paper: translateField(t, board, `${base}.paper`, q.paper),
+    question: translateField(t, board, `${base}.question`, q.question),
+    marks: translateField(t, board, `${base}.marks`, q.marks),
+    description: translateField(t, board, `${base}.description`, q.description),
+    approach: translateField(t, board, `${base}.approach`, q.approach),
+  }
+}
+
+function translateEssay(
+  t: (key: string) => string,
+  board: GcseBoard,
+  essay: BoardEssayContent,
+): BoardEssayContent {
+  return {
+    intro: translateField(t, board, 'essay.intro', essay.intro),
+    aoFocus: essay.aoFocus.map((s, i) => translateField(t, board, `essay.ao_focus.${i}`, s)),
+    structureTips: essay.structureTips.map((s, i) =>
+      translateField(t, board, `essay.structure_tips.${i}`, s),
+    ),
+    examinerChecklist: essay.examinerChecklist.map((s, i) =>
+      translateField(t, board, `essay.examiner_checklist.${i}`, s),
+    ),
+    headlineEssayLabel: translateField(
+      t,
+      board,
+      'essay.headline_essay_label',
+      essay.headlineEssayLabel,
+    ),
+    headlineEssayGuidance: translateField(
+      t,
+      board,
+      'essay.headline_essay_guidance',
+      essay.headlineEssayGuidance,
+    ),
+  }
+}
+
+/**
+ * Client hook that returns the board exam-technique content with every
+ * translatable string passed through the `revision.exam_technique.<board>.*`
+ * namespace. Memoised on the resolved locale (via the identity of the
+ * `t` function returned by `useT`), so re-renders are free until the
+ * language toggle fires.
+ */
+export function useTranslatedBoardContent(board: GcseBoard): BoardExamTechniqueContent {
+  const t = useT()
+  return useMemo(() => {
+    const raw = getBoardExamTechniqueContent(board)
+    return {
+      boardName: translateField(t, board, 'board_name', raw.boardName),
+      shortName: translateField(t, board, 'short_name', raw.shortName),
+      totalDuration: translateField(t, board, 'total_duration', raw.totalDuration),
+      structureSummary: translateField(t, board, 'structure_summary', raw.structureSummary),
+      papers: raw.papers.map((paper, i) => translatePaper(t, board, i, paper)),
+      questionTypes: raw.questionTypes.map((q, i) => translateQuestionType(t, board, i, q)),
+      essay: translateEssay(t, board, raw.essay),
+    }
+  }, [t, board])
 }

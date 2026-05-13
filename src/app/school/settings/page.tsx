@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useState } from 'react'
 import {
   Settings,
   Building2,
@@ -10,21 +10,16 @@ import {
   Trash2,
   Copy,
   RefreshCw,
-} from "lucide-react"
-import { toast } from "sonner"
+} from 'lucide-react'
+import { toast } from 'sonner'
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Switch } from '@/components/ui/switch'
+import { useT } from '@/lib/i18n/use-t'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -57,35 +52,29 @@ interface AdminUser {
   id: string
   name: string
   email: string
-  role: "admin" | "teacher"
+  role: 'admin' | 'teacher'
 }
 
 // ---------------------------------------------------------------------------
 // Mock data
 // ---------------------------------------------------------------------------
 
-const EXAM_BOARDS = [
-  "AQA",
-  "Edexcel (Pearson)",
-  "OCR",
-  "WJEC/Eduqas",
-  "IGCSE (Cambridge/CAIE)",
-]
+const EXAM_BOARDS = ['AQA', 'Edexcel (Pearson)', 'OCR', 'WJEC/Eduqas', 'IGCSE (Cambridge/CAIE)']
 
 const CURRICULUM_OPTIONS = [
-  "GCSE English Language",
-  "GCSE English Literature",
-  "A-Level English Language",
-  "A-Level English Literature",
-  "KS3 English (Years 7-9)",
+  'GCSE English Language',
+  'GCSE English Literature',
+  'A-Level English Language',
+  'A-Level English Literature',
+  'KS3 English (Years 7-9)',
 ]
 
-const MOCK_JOIN_CODE = "EH-XK92-DELTA"
+const MOCK_JOIN_CODE = 'EH-XK92-DELTA'
 
 const MOCK_ADMINS: AdminUser[] = [
-  { id: "1", name: "Sarah Johnson", email: "s.johnson@school.ac.uk", role: "admin" },
-  { id: "2", name: "David Clarke", email: "d.clarke@school.ac.uk", role: "admin" },
-  { id: "3", name: "Emma Wilson", email: "e.wilson@school.ac.uk", role: "teacher" },
+  { id: '1', name: 'Sarah Johnson', email: 's.johnson@school.ac.uk', role: 'admin' },
+  { id: '2', name: 'David Clarke', email: 'd.clarke@school.ac.uk', role: 'admin' },
+  { id: '3', name: 'Emma Wilson', email: 'e.wilson@school.ac.uk', role: 'teacher' },
 ]
 
 // ---------------------------------------------------------------------------
@@ -93,13 +82,13 @@ const MOCK_ADMINS: AdminUser[] = [
 // ---------------------------------------------------------------------------
 
 async function putSettings(section: string, data: unknown): Promise<void> {
-  const res = await fetch("/api/school/settings", {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
+  const res = await fetch('/api/school/settings', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ section, data }),
   })
   if (!res.ok) {
-    throw new Error("Failed to save settings")
+    throw new Error('Failed to save settings')
   }
 }
 
@@ -108,17 +97,18 @@ async function putSettings(section: string, data: unknown): Promise<void> {
 // ---------------------------------------------------------------------------
 
 function SchoolProfileSection() {
+  const t = useT()
   const [saving, setSaving] = useState(false)
   const [profile, setProfile] = useState<SchoolProfile>({
-    name: "Westfield Academy",
-    type: "Secondary",
-    examBoard: "AQA",
-    curriculum: ["GCSE English Language", "GCSE English Literature"],
-    address: "12 School Lane",
-    city: "Manchester",
-    postcode: "M14 5TP",
-    contactEmail: "admin@westfieldacademy.ac.uk",
-    phone: "0161 555 0192",
+    name: 'Westfield Academy',
+    type: 'Secondary',
+    examBoard: 'AQA',
+    curriculum: ['GCSE English Language', 'GCSE English Literature'],
+    address: '12 School Lane',
+    city: 'Manchester',
+    postcode: 'M14 5TP',
+    contactEmail: 'admin@westfieldacademy.ac.uk',
+    phone: '0161 555 0192',
   })
 
   function handleChange(field: keyof SchoolProfile, value: string | string[]) {
@@ -128,10 +118,10 @@ function SchoolProfileSection() {
   async function handleSave() {
     setSaving(true)
     try {
-      await putSettings("profile", profile)
-      toast.success("School profile saved successfully.")
+      await putSettings('profile', profile)
+      toast.success(t('school.settings.profile.save_success'))
     } catch {
-      toast.error("Failed to save school profile. Please try again.")
+      toast.error(t('school.settings.profile.save_fail'))
     } finally {
       setSaving(false)
     }
@@ -142,58 +132,60 @@ function SchoolProfileSection() {
       <CardHeader>
         <div className="flex items-center gap-2">
           <Building2 className="h-5 w-5 text-muted-foreground" />
-          <CardTitle>School Profile</CardTitle>
+          <CardTitle>{t('school.settings.profile.title')}</CardTitle>
         </div>
-        <CardDescription>
-          Update your school&apos;s public information and contact details.
-        </CardDescription>
+        <CardDescription>{t('school.settings.profile.desc')}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-5">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
-            <Label htmlFor="school-name">School Name</Label>
+            <Label htmlFor="school-name">{t('school.settings.profile.school_name')}</Label>
             <Input
               id="school-name"
               value={profile.name}
-              onChange={(e) => handleChange("name", e.target.value)}
-              placeholder="e.g. Westfield Academy"
+              onChange={(e) => handleChange('name', e.target.value)}
+              placeholder={t('school.settings.profile.school_name_placeholder')}
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="school-type">School Type</Label>
+            <Label htmlFor="school-type">{t('school.settings.profile.school_type')}</Label>
             <Input
               id="school-type"
               value={profile.type}
-              onChange={(e) => handleChange("type", e.target.value)}
-              placeholder="e.g. Secondary, Sixth Form, FE College"
+              onChange={(e) => handleChange('type', e.target.value)}
+              placeholder={t('school.settings.profile.school_type_placeholder')}
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
-            <Label htmlFor="exam-board">Exam Board</Label>
+            <Label htmlFor="exam-board">{t('school.settings.profile.exam_board')}</Label>
             <select
               id="exam-board"
               value={profile.examBoard}
-              onChange={(e) => handleChange("examBoard", e.target.value)}
+              onChange={(e) => handleChange('examBoard', e.target.value)}
               className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 text-foreground"
             >
-              <option value="" disabled>Select exam board...</option>
+              <option value="" disabled>
+                {t('school.settings.profile.exam_board_placeholder')}
+              </option>
               {EXAM_BOARDS.map((board) => (
-                <option key={board} value={board}>{board}</option>
+                <option key={board} value={board}>
+                  {board}
+                </option>
               ))}
             </select>
             <p className="text-xs text-muted-foreground">
-              Content and assessments are tailored to your exam board.
+              {t('school.settings.profile.exam_board_help')}
             </p>
           </div>
         </div>
 
         <div className="space-y-2">
-          <Label>Curriculum</Label>
+          <Label>{t('school.settings.profile.curriculum_label')}</Label>
           <p className="text-xs text-muted-foreground">
-            Select all qualifications your school teaches.
+            {t('school.settings.profile.curriculum_help')}
           </p>
           <div className="space-y-2">
             {CURRICULUM_OPTIONS.map((option) => (
@@ -205,7 +197,7 @@ function SchoolProfileSection() {
                     const next = e.target.checked
                       ? [...profile.curriculum, option]
                       : profile.curriculum.filter((c) => c !== option)
-                    handleChange("curriculum", next)
+                    handleChange('curriculum', next)
                   }}
                   className="h-4 w-4 accent-primary rounded"
                 />
@@ -216,77 +208,79 @@ function SchoolProfileSection() {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="address">Address</Label>
+          <Label htmlFor="address">{t('school.settings.profile.address')}</Label>
           <Input
             id="address"
             value={profile.address}
-            onChange={(e) => handleChange("address", e.target.value)}
-            placeholder="Street address"
+            onChange={(e) => handleChange('address', e.target.value)}
+            placeholder={t('school.settings.profile.address_placeholder')}
           />
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
-            <Label htmlFor="city">City</Label>
+            <Label htmlFor="city">{t('school.settings.profile.city')}</Label>
             <Input
               id="city"
               value={profile.city}
-              onChange={(e) => handleChange("city", e.target.value)}
-              placeholder="City"
+              onChange={(e) => handleChange('city', e.target.value)}
+              placeholder={t('school.settings.profile.city_placeholder')}
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="postcode">Postcode</Label>
+            <Label htmlFor="postcode">{t('school.settings.profile.postcode')}</Label>
             <Input
               id="postcode"
               value={profile.postcode}
-              onChange={(e) => handleChange("postcode", e.target.value)}
-              placeholder="e.g. M14 5TP"
+              onChange={(e) => handleChange('postcode', e.target.value)}
+              placeholder={t('school.settings.profile.postcode_placeholder')}
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
-            <Label htmlFor="contact-email">Contact Email</Label>
+            <Label htmlFor="contact-email">{t('school.settings.profile.contact_email')}</Label>
             <Input
               id="contact-email"
               type="email"
               value={profile.contactEmail}
-              onChange={(e) => handleChange("contactEmail", e.target.value)}
-              placeholder="admin@school.ac.uk"
+              onChange={(e) => handleChange('contactEmail', e.target.value)}
+              placeholder={t('school.settings.profile.contact_email_placeholder')}
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="phone">Phone</Label>
+            <Label htmlFor="phone">{t('school.settings.profile.phone')}</Label>
             <Input
               id="phone"
               type="tel"
               value={profile.phone}
-              onChange={(e) => handleChange("phone", e.target.value)}
-              placeholder="e.g. 0161 555 0192"
+              onChange={(e) => handleChange('phone', e.target.value)}
+              placeholder={t('school.settings.profile.phone_placeholder')}
             />
           </div>
         </div>
 
         <div className="space-y-1.5">
-          <Label>School Logo</Label>
+          <Label>{t('school.settings.profile.logo_label')}</Label>
           <div className="flex items-center gap-3">
             <div className="flex h-16 w-16 items-center justify-center rounded-lg border border-dashed border-border bg-muted/40 text-xs text-muted-foreground">
-              Logo
+              {t('school.settings.profile.logo_text')}
             </div>
             <div>
               <Button variant="outline" size="sm" disabled className="mb-1 block">
-                Upload Logo
+                {t('school.settings.profile.upload_logo')}
               </Button>
-              <p className="text-xs text-muted-foreground">PNG or SVG, max 1 MB. Coming soon.</p>
+              <p className="text-xs text-muted-foreground">
+                {t('school.settings.profile.logo_help')}
+              </p>
             </div>
           </div>
         </div>
 
         <div className="flex justify-end pt-1">
           <Button onClick={handleSave} disabled={saving}>
-            {saving ? "Saving..." : "Save Profile"}
+            {saving ? t('school.settings.profile.saving') : t('school.settings.profile.save_btn')}
           </Button>
         </div>
       </CardContent>
@@ -299,6 +293,7 @@ function SchoolProfileSection() {
 // ---------------------------------------------------------------------------
 
 function SubscriptionSection() {
+  const t = useT()
   const isFounder = true // Replace with actual plan check
 
   return (
@@ -306,47 +301,49 @@ function SubscriptionSection() {
       <CardHeader>
         <div className="flex items-center gap-2">
           <CreditCard className="h-5 w-5 text-muted-foreground" />
-          <CardTitle>Subscription &amp; Access</CardTitle>
+          <CardTitle>{t('school.settings.subscription.title')}</CardTitle>
         </div>
-        <CardDescription>
-          Your current plan and billing information.
-        </CardDescription>
+        <CardDescription>{t('school.settings.subscription.desc')}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-5">
         <div className="rounded-lg border border-border bg-muted/30 p-4 space-y-3">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-foreground">Current Plan</p>
+              <p className="text-sm font-medium text-foreground">
+                {t('school.settings.subscription.current_plan')}
+              </p>
               <p className="text-base font-semibold text-foreground mt-0.5">
-                {isFounder ? "Founding School Partner" : "School Partnership"}
+                {isFounder
+                  ? t('school.settings.subscription.founder_plan')
+                  : t('school.settings.subscription.standard_plan')}
               </p>
             </div>
             {isFounder && (
               <Badge className="bg-primary/15 text-primary border border-primary/30 text-xs font-semibold">
-                FOUNDING PARTNER
+                {t('school.settings.subscription.founding_badge')}
               </Badge>
             )}
           </div>
 
           <div className="flex items-center gap-2">
             <Badge className="bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-xs">
-              Active
+              {t('school.settings.subscription.active')}
             </Badge>
             <span className="text-sm text-muted-foreground">
               {isFounder
-                ? "Founding Schools Programme -- preferential rate locked"
-                : "Active subscription"}
+                ? t('school.settings.subscription.founder_note')
+                : t('school.settings.subscription.standard_note')}
             </span>
           </div>
 
           <p className="text-xs text-muted-foreground">
-            Contact us to discuss renewal terms. Founding schools have locked preferential rates.
+            {t('school.settings.subscription.contact_note')}
           </p>
         </div>
 
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">
-            Billing enquiries:{" "}
+            {t('school.settings.subscription.billing_pre')}{' '}
             <a
               href="mailto:info@Upskillenergy.com"
               className="text-primary underline-offset-4 hover:underline"
@@ -355,7 +352,9 @@ function SubscriptionSection() {
             </a>
           </p>
           <Button variant="outline" size="sm">
-            {isFounder ? "Upgrade to Paid Plan" : "Renew Subscription"}
+            {isFounder
+              ? t('school.settings.subscription.upgrade_btn')
+              : t('school.settings.subscription.renew_btn')}
           </Button>
         </div>
       </CardContent>
@@ -368,6 +367,7 @@ function SubscriptionSection() {
 // ---------------------------------------------------------------------------
 
 function AdminAccountsSection() {
+  const t = useT()
   const [admins, setAdmins] = useState<AdminUser[]>(MOCK_ADMINS)
   const [saving, setSaving] = useState<string | null>(null)
 
@@ -375,20 +375,18 @@ function AdminAccountsSection() {
     const target = admins.find((a) => a.id === id)
     if (!target) return
 
-    const newRole = target.role === "admin" ? "teacher" : "admin"
+    const newRole = target.role === 'admin' ? 'teacher' : 'admin'
     setSaving(id)
     try {
-      await putSettings("admins", { userId: id, role: newRole })
-      setAdmins((prev) =>
-        prev.map((a) => (a.id === id ? { ...a, role: newRole } : a))
-      )
+      await putSettings('admins', { userId: id, role: newRole })
+      setAdmins((prev) => prev.map((a) => (a.id === id ? { ...a, role: newRole } : a)))
       toast.success(
-        newRole === "admin"
-          ? `${target.name} promoted to admin.`
-          : `${target.name} demoted to teacher.`
+        newRole === 'admin'
+          ? `${target.name} ${t('school.settings.admins.promoted_suffix')}`
+          : `${target.name} ${t('school.settings.admins.demoted_suffix')}`,
       )
     } catch {
-      toast.error("Failed to update role. Please try again.")
+      toast.error(t('school.settings.admins.update_fail'))
     } finally {
       setSaving(null)
     }
@@ -400,15 +398,13 @@ function AdminAccountsSection() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Settings className="h-5 w-5 text-muted-foreground" />
-            <CardTitle>Admin Accounts</CardTitle>
+            <CardTitle>{t('school.settings.admins.title')}</CardTitle>
           </div>
           <Button variant="outline" size="sm">
-            Add Admin
+            {t('school.settings.admins.add')}
           </Button>
         </div>
-        <CardDescription>
-          Manage which teachers have admin access to school settings.
-        </CardDescription>
+        <CardDescription>{t('school.settings.admins.desc')}</CardDescription>
       </CardHeader>
       <CardContent>
         <ul className="divide-y divide-border">
@@ -420,10 +416,12 @@ function AdminAccountsSection() {
               </div>
               <div className="flex items-center gap-3">
                 <Badge
-                  variant={admin.role === "admin" ? "default" : "outline"}
+                  variant={admin.role === 'admin' ? 'default' : 'outline'}
                   className="capitalize text-xs"
                 >
-                  {admin.role}
+                  {admin.role === 'admin'
+                    ? t('school.settings.admins.role.admin')
+                    : t('school.settings.admins.role.teacher')}
                 </Badge>
                 <Button
                   variant="ghost"
@@ -433,10 +431,10 @@ function AdminAccountsSection() {
                   onClick={() => toggleRole(admin.id)}
                 >
                   {saving === admin.id
-                    ? "Saving..."
-                    : admin.role === "admin"
-                    ? "Demote"
-                    : "Promote"}
+                    ? t('school.settings.admins.saving')
+                    : admin.role === 'admin'
+                      ? t('school.settings.admins.demote')
+                      : t('school.settings.admins.promote')}
                 </Button>
               </div>
             </li>
@@ -452,6 +450,7 @@ function AdminAccountsSection() {
 // ---------------------------------------------------------------------------
 
 function NotificationsSection() {
+  const t = useT()
   const [saving, setSaving] = useState(false)
   const [settings, setSettings] = useState<NotificationSettings>({
     newStudentJoin: true,
@@ -466,10 +465,10 @@ function NotificationsSection() {
   async function handleSave() {
     setSaving(true)
     try {
-      await putSettings("notifications", settings)
-      toast.success("Notification preferences saved.")
+      await putSettings('notifications', settings)
+      toast.success(t('school.settings.notif.save_success'))
     } catch {
-      toast.error("Failed to save notification settings.")
+      toast.error(t('school.settings.notif.save_fail'))
     } finally {
       setSaving(false)
     }
@@ -477,19 +476,19 @@ function NotificationsSection() {
 
   const rows: { key: keyof NotificationSettings; label: string; description: string }[] = [
     {
-      key: "newStudentJoin",
-      label: "New student joins",
-      description: "Receive an email when a student joins your school.",
+      key: 'newStudentJoin',
+      label: t('school.settings.notif.new_student_label'),
+      description: t('school.settings.notif.new_student_desc'),
     },
     {
-      key: "weeklyDigest",
-      label: "Weekly analytics digest",
-      description: "A weekly summary of class performance and engagement.",
+      key: 'weeklyDigest',
+      label: t('school.settings.notif.weekly_label'),
+      description: t('school.settings.notif.weekly_desc'),
     },
     {
-      key: "atRiskAlerts",
-      label: "At-risk student alerts",
-      description: "Get notified when a student shows signs of disengagement.",
+      key: 'atRiskAlerts',
+      label: t('school.settings.notif.at_risk_label'),
+      description: t('school.settings.notif.at_risk_desc'),
     },
   ]
 
@@ -498,11 +497,9 @@ function NotificationsSection() {
       <CardHeader>
         <div className="flex items-center gap-2">
           <Bell className="h-5 w-5 text-muted-foreground" />
-          <CardTitle>Notifications</CardTitle>
+          <CardTitle>{t('school.settings.notif.title')}</CardTitle>
         </div>
-        <CardDescription>
-          Choose which email notifications you receive.
-        </CardDescription>
+        <CardDescription>{t('school.settings.notif.desc')}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-5">
         <ul className="divide-y divide-border">
@@ -512,16 +509,13 @@ function NotificationsSection() {
                 <p className="text-sm font-medium text-foreground">{label}</p>
                 <p className="text-xs text-muted-foreground mt-0.5">{description}</p>
               </div>
-              <Switch
-                checked={settings[key]}
-                onCheckedChange={() => handleToggle(key)}
-              />
+              <Switch checked={settings[key]} onCheckedChange={() => handleToggle(key)} />
             </li>
           ))}
         </ul>
         <div className="flex justify-end">
           <Button onClick={handleSave} disabled={saving}>
-            {saving ? "Saving..." : "Save Notifications"}
+            {saving ? t('school.settings.notif.saving') : t('school.settings.notif.save_btn')}
           </Button>
         </div>
       </CardContent>
@@ -534,10 +528,11 @@ function NotificationsSection() {
 // ---------------------------------------------------------------------------
 
 function SecuritySection() {
+  const t = useT()
   const [saving, setSaving] = useState(false)
   const [settings, setSettings] = useState<SecuritySettings>({
-    passwordPolicy: "strong",
-    sessionTimeout: "60",
+    passwordPolicy: 'strong',
+    sessionTimeout: '60',
   })
 
   function handleChange(field: keyof SecuritySettings, value: string) {
@@ -547,10 +542,10 @@ function SecuritySection() {
   async function handleSave() {
     setSaving(true)
     try {
-      await putSettings("security", settings)
-      toast.success("Security settings saved.")
+      await putSettings('security', settings)
+      toast.success(t('school.settings.security.save_success'))
     } catch {
-      toast.error("Failed to save security settings.")
+      toast.error(t('school.settings.security.save_fail'))
     } finally {
       setSaving(false)
     }
@@ -561,63 +556,63 @@ function SecuritySection() {
       <CardHeader>
         <div className="flex items-center gap-2">
           <Shield className="h-5 w-5 text-muted-foreground" />
-          <CardTitle>Security</CardTitle>
+          <CardTitle>{t('school.settings.security.title')}</CardTitle>
         </div>
-        <CardDescription>
-          Configure password and session policies for school accounts.
-        </CardDescription>
+        <CardDescription>{t('school.settings.security.desc')}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-5">
         <div className="space-y-1.5">
-          <Label htmlFor="password-policy">Password Policy</Label>
+          <Label htmlFor="password-policy">{t('school.settings.security.password_policy')}</Label>
           <select
             id="password-policy"
             value={settings.passwordPolicy}
-            onChange={(e) => handleChange("passwordPolicy", e.target.value)}
+            onChange={(e) => handleChange('passwordPolicy', e.target.value)}
             className="flex h-9 w-full max-w-xs rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 text-foreground"
           >
-            <option value="basic">Basic (8+ characters)</option>
-            <option value="strong">Strong (12+ chars, mixed case, number)</option>
-            <option value="very-strong">Very Strong (16+ chars, symbol required)</option>
+            <option value="basic">{t('school.settings.security.policy.basic')}</option>
+            <option value="strong">{t('school.settings.security.policy.strong')}</option>
+            <option value="very-strong">{t('school.settings.security.policy.very_strong')}</option>
           </select>
           <p className="text-xs text-muted-foreground">
-            Applied to all teacher and student accounts within this school.
+            {t('school.settings.security.policy_help')}
           </p>
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="session-timeout">Session Timeout (minutes)</Label>
+          <Label htmlFor="session-timeout">{t('school.settings.security.session_timeout')}</Label>
           <Input
             id="session-timeout"
             type="number"
             min="15"
             max="480"
             value={settings.sessionTimeout}
-            onChange={(e) => handleChange("sessionTimeout", e.target.value)}
+            onChange={(e) => handleChange('sessionTimeout', e.target.value)}
             className="max-w-xs"
           />
           <p className="text-xs text-muted-foreground">
-            Users will be logged out after this period of inactivity.
+            {t('school.settings.security.session_help')}
           </p>
         </div>
 
         <div className="rounded-lg border border-border bg-muted/30 px-4 py-3">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-foreground">Two-Factor Authentication</p>
+              <p className="text-sm font-medium text-foreground">
+                {t('school.settings.security.tfa_label')}
+              </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Require 2FA for all admin accounts.
+                {t('school.settings.security.tfa_desc')}
               </p>
             </div>
             <Badge variant="outline" className="text-xs text-muted-foreground border-border">
-              Coming Soon
+              {t('school.settings.security.coming_soon')}
             </Badge>
           </div>
         </div>
 
         <div className="flex justify-end">
           <Button onClick={handleSave} disabled={saving}>
-            {saving ? "Saving..." : "Save Security"}
+            {saving ? t('school.settings.security.saving') : t('school.settings.security.save_btn')}
           </Button>
         </div>
       </CardContent>
@@ -630,32 +625,33 @@ function SecuritySection() {
 // ---------------------------------------------------------------------------
 
 function GdprSection() {
+  const t = useT()
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
-  const [confirmText, setConfirmText] = useState("")
+  const [confirmText, setConfirmText] = useState('')
   const [deleting, setDeleting] = useState(false)
   const [exporting, setExporting] = useState(false)
 
   async function handleExport() {
     setExporting(true)
     try {
-      await putSettings("gdpr", { action: "export" })
-      toast.success("Export initiated. You will receive an email when your data is ready.")
+      await putSettings('gdpr', { action: 'export' })
+      toast.success(t('school.settings.gdpr.export_success'))
     } catch {
-      toast.error("Failed to initiate export. Please try again.")
+      toast.error(t('school.settings.gdpr.export_fail'))
     } finally {
       setExporting(false)
     }
   }
 
   async function handleDelete() {
-    if (confirmText !== "DELETE") return
+    if (confirmText !== 'DELETE') return
     setDeleting(true)
     try {
-      await putSettings("gdpr", { action: "delete" })
-      toast.success("Deletion request submitted. Your account will be removed within 30 days.")
+      await putSettings('gdpr', { action: 'delete' })
+      toast.success(t('school.settings.gdpr.delete_success'))
       setShowDeleteConfirm(false)
     } catch {
-      toast.error("Failed to submit deletion request.")
+      toast.error(t('school.settings.gdpr.delete_fail'))
     } finally {
       setDeleting(false)
     }
@@ -666,37 +662,36 @@ function GdprSection() {
       <CardHeader>
         <div className="flex items-center gap-2">
           <Shield className="h-5 w-5 text-muted-foreground" />
-          <CardTitle>GDPR &amp; Data</CardTitle>
+          <CardTitle>{t('school.settings.gdpr.title')}</CardTitle>
         </div>
-        <CardDescription>
-          Manage your school&apos;s data in compliance with UK GDPR requirements.
-        </CardDescription>
+        <CardDescription>{t('school.settings.gdpr.desc')}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-5">
         <div className="rounded-lg border border-border bg-muted/30 px-4 py-3 space-y-1">
-          <p className="text-sm font-medium text-foreground">Data Retention Policy</p>
+          <p className="text-sm font-medium text-foreground">
+            {t('school.settings.gdpr.retention_label')}
+          </p>
           <p className="text-sm text-muted-foreground">
-            Student performance data is retained for the duration of your active subscription.
-            Upon account deletion, all personal data is permanently removed within 30 days in
-            accordance with UK GDPR Article 17 (Right to Erasure).
+            {t('school.settings.gdpr.retention_body')}
           </p>
         </div>
 
         <div className="flex flex-col gap-2 sm:flex-row">
           <Button variant="outline" onClick={handleExport} disabled={exporting}>
-            {exporting ? "Requesting..." : "Export All School Data"}
+            {exporting
+              ? t('school.settings.gdpr.requesting')
+              : t('school.settings.gdpr.export_btn')}
           </Button>
         </div>
 
         <div className="rounded-lg border border-destructive/40 bg-destructive/5 px-4 py-4 space-y-3">
           <div className="flex items-center gap-2">
             <Trash2 className="h-4 w-4 text-destructive" />
-            <p className="text-sm font-semibold text-destructive">Danger Zone</p>
+            <p className="text-sm font-semibold text-destructive">
+              {t('school.settings.gdpr.danger_zone')}
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground">
-            Permanently delete your school account and all associated data. This action cannot
-            be undone.
-          </p>
+          <p className="text-sm text-muted-foreground">{t('school.settings.gdpr.danger_body')}</p>
           {!showDeleteConfirm ? (
             <Button
               variant="outline"
@@ -704,13 +699,14 @@ function GdprSection() {
               className="border-destructive/50 text-destructive hover:bg-destructive/10 hover:text-destructive"
               onClick={() => setShowDeleteConfirm(true)}
             >
-              Delete School Account
+              {t('school.settings.gdpr.delete_btn')}
             </Button>
           ) : (
             <div className="space-y-3 pt-1">
               <p className="text-sm text-muted-foreground">
-                Type <span className="font-mono font-semibold text-destructive">DELETE</span> to
-                confirm.
+                {t('school.settings.gdpr.type_delete_pre')}{' '}
+                <span className="font-mono font-semibold text-destructive">DELETE</span>{' '}
+                {t('school.settings.gdpr.type_delete_post')}
               </p>
               <Input
                 value={confirmText}
@@ -724,19 +720,21 @@ function GdprSection() {
                   size="sm"
                   className="border-destructive/50 text-destructive hover:bg-destructive/10 hover:text-destructive"
                   onClick={handleDelete}
-                  disabled={confirmText !== "DELETE" || deleting}
+                  disabled={confirmText !== 'DELETE' || deleting}
                 >
-                  {deleting ? "Deleting..." : "Confirm Delete"}
+                  {deleting
+                    ? t('school.settings.gdpr.deleting')
+                    : t('school.settings.gdpr.confirm_delete')}
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => {
                     setShowDeleteConfirm(false)
-                    setConfirmText("")
+                    setConfirmText('')
                   }}
                 >
-                  Cancel
+                  {t('school.settings.gdpr.cancel')}
                 </Button>
               </div>
             </div>
@@ -752,6 +750,7 @@ function GdprSection() {
 // ---------------------------------------------------------------------------
 
 function JoinCodeSection() {
+  const t = useT()
   const [joinCode, setJoinCode] = useState(MOCK_JOIN_CODE)
   const [regenerating, setRegenerating] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -759,17 +758,20 @@ function JoinCodeSection() {
   async function handleRegenerate() {
     setRegenerating(true)
     try {
-      const res = await fetch("/api/school/settings", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ section: "join-code", data: { action: "regenerate" } }),
+      const res = await fetch('/api/school/settings', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ section: 'join-code', data: { action: 'regenerate' } }),
       })
-      if (!res.ok) throw new Error("Failed")
+      if (!res.ok) throw new Error('Failed')
       const json = await res.json().catch(() => ({}))
-      setJoinCode(json.joinCode ?? `EH-${Math.random().toString(36).slice(2, 6).toUpperCase()}-${Math.random().toString(36).slice(2, 7).toUpperCase()}`)
-      toast.success("Join code regenerated. Share the new code with your school.")
+      setJoinCode(
+        json.joinCode ??
+          `EH-${Math.random().toString(36).slice(2, 6).toUpperCase()}-${Math.random().toString(36).slice(2, 7).toUpperCase()}`,
+      )
+      toast.success(t('school.settings.joincode.regen_success'))
     } catch {
-      toast.error("Failed to regenerate join code.")
+      toast.error(t('school.settings.joincode.regen_fail'))
     } finally {
       setRegenerating(false)
     }
@@ -779,10 +781,10 @@ function JoinCodeSection() {
     try {
       await navigator.clipboard.writeText(joinCode)
       setCopied(true)
-      toast.success("Join code copied to clipboard.")
+      toast.success(t('school.settings.joincode.copy_success'))
       setTimeout(() => setCopied(false), 2000)
     } catch {
-      toast.error("Failed to copy join code.")
+      toast.error(t('school.settings.joincode.copy_fail'))
     }
   }
 
@@ -791,11 +793,9 @@ function JoinCodeSection() {
       <CardHeader>
         <div className="flex items-center gap-2">
           <Settings className="h-5 w-5 text-muted-foreground" />
-          <CardTitle>Join Code</CardTitle>
+          <CardTitle>{t('school.settings.joincode.title')}</CardTitle>
         </div>
-        <CardDescription>
-          Share this code with students and teachers so they can join your school.
-        </CardDescription>
+        <CardDescription>{t('school.settings.joincode.desc')}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-5">
         <div className="flex items-center gap-3">
@@ -804,31 +804,20 @@ function JoinCodeSection() {
               {joinCode}
             </p>
           </div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleCopy}
-            className="shrink-0"
-          >
+          <Button variant="outline" size="sm" onClick={handleCopy} className="shrink-0">
             <Copy className="mr-1.5 h-3.5 w-3.5" />
-            {copied ? "Copied!" : "Copy"}
+            {copied ? t('school.settings.joincode.copied') : t('school.settings.joincode.copy')}
           </Button>
         </div>
 
-        <p className="text-sm text-muted-foreground">
-          Share this code with students or teachers to let them join your school on The English
-          Hub. Regenerating the code will invalidate the old one.
-        </p>
+        <p className="text-sm text-muted-foreground">{t('school.settings.joincode.body')}</p>
 
         <div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleRegenerate}
-            disabled={regenerating}
-          >
-            <RefreshCw className={`mr-1.5 h-3.5 w-3.5 ${regenerating ? "animate-spin" : ""}`} />
-            {regenerating ? "Regenerating..." : "Regenerate Code"}
+          <Button variant="outline" size="sm" onClick={handleRegenerate} disabled={regenerating}>
+            <RefreshCw className={`mr-1.5 h-3.5 w-3.5 ${regenerating ? 'animate-spin' : ''}`} />
+            {regenerating
+              ? t('school.settings.joincode.regenerating')
+              : t('school.settings.joincode.regenerate')}
           </Button>
         </div>
       </CardContent>
@@ -841,15 +830,16 @@ function JoinCodeSection() {
 // ---------------------------------------------------------------------------
 
 export default function SchoolSettingsPage() {
+  const t = useT()
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-8 flex items-center gap-3">
         <Settings className="h-6 w-6 text-muted-foreground" />
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">School Settings</h1>
-          <p className="mt-0.5 text-sm text-muted-foreground">
-            Manage your school profile, billing, security, and more.
-          </p>
+          <h1 className="text-2xl font-bold tracking-tight text-foreground">
+            {t('school.settings.title')}
+          </h1>
+          <p className="mt-0.5 text-sm text-muted-foreground">{t('school.settings.subtitle')}</p>
         </div>
       </div>
 

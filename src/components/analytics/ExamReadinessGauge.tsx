@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils'
 import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
+import { useT } from '@/lib/i18n/use-t'
 
 interface ExamReadinessGaugeProps {
   percentage: number
@@ -22,15 +23,16 @@ function getReadinessTrackColor(pct: number): string {
   return 'stroke-red-500'
 }
 
-function getReadinessLabel(pct: number): string {
-  if (pct >= 80) return 'Exam Ready'
-  if (pct >= 60) return 'Good Progress'
-  if (pct >= 40) return 'Building Up'
-  if (pct >= 20) return 'Getting Started'
-  return 'Just Starting'
+function readinessLabelKey(pct: number): string {
+  if (pct >= 80) return 'analytics.readiness.exam_ready'
+  if (pct >= 60) return 'analytics.readiness.good_progress'
+  if (pct >= 40) return 'analytics.readiness.building_up'
+  if (pct >= 20) return 'analytics.readiness.getting_started'
+  return 'analytics.readiness.just_starting'
 }
 
 export function ExamReadinessGauge({ percentage, className }: ExamReadinessGaugeProps) {
+  const t = useT()
   const clampedPct = Math.min(Math.max(percentage, 0), 100)
 
   // SVG circle math
@@ -43,12 +45,7 @@ export function ExamReadinessGauge({ percentage, className }: ExamReadinessGauge
   return (
     <div className={cn('flex flex-col items-center gap-2', className)}>
       <div className="relative" style={{ width: size, height: size }}>
-        <svg
-          width={size}
-          height={size}
-          viewBox={`0 0 ${size} ${size}`}
-          className="-rotate-90"
-        >
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90">
           {/* Background track */}
           <circle
             cx={size / 2}
@@ -64,7 +61,10 @@ export function ExamReadinessGauge({ percentage, className }: ExamReadinessGauge
             cy={size / 2}
             r={radius}
             fill="none"
-            className={cn('transition-all duration-700 ease-out', getReadinessTrackColor(clampedPct))}
+            className={cn(
+              'transition-all duration-700 ease-out',
+              getReadinessTrackColor(clampedPct),
+            )}
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
             strokeDashoffset={offset}
@@ -73,16 +73,16 @@ export function ExamReadinessGauge({ percentage, className }: ExamReadinessGauge
         </svg>
         {/* Center text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className={cn('text-lg font-bold', gcseGradeColor(percentageToGCSEGrade(clampedPct)))}>
-            Grade {percentageToGCSEGrade(clampedPct)}
+          <span
+            className={cn('text-lg font-bold', gcseGradeColor(percentageToGCSEGrade(clampedPct)))}
+          >
+            {t('analytics.grade.label')} {percentageToGCSEGrade(clampedPct)}
           </span>
-          <span className="text-[10px] tabular-nums text-muted-foreground">
-            {clampedPct}%
-          </span>
+          <span className="text-[10px] tabular-nums text-muted-foreground">{clampedPct}%</span>
         </div>
       </div>
       <span className={cn('text-xs font-medium', getReadinessColor(clampedPct))}>
-        {getReadinessLabel(clampedPct)}
+        {t(readinessLabelKey(clampedPct))}
       </span>
     </div>
   )

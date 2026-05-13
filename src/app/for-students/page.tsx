@@ -14,6 +14,7 @@ import {
   GraduationCap,
   Rocket,
 } from 'lucide-react'
+import { t, tMany } from '@/lib/i18n/t'
 
 export const metadata = {
   title: 'GCSE and IGCSE English revision for students — The English Hub',
@@ -50,72 +51,99 @@ export const metadata = {
 // one-glance product summary. The body repeats the main value props in
 // scannable text + points the visitor to registration.
 //
-// Sits alongside /for-teachers, /for-schools, /for-parents — all share the
-// InfographicBanner pattern at the top (commit introducing this page).
+// All copy routes through the `student.*` namespace in
+// src/lib/i18n/dictionary.ts.
 // ────────────────────────────────────────────────────────────────────────────
 
-const features = [
+const featureKeys = [
   {
     icon: BookOpen,
-    title: 'All-in-one learning',
-    desc: 'Lessons, practice, mock exams, and revision notes for every skill — reading, writing, listening, speaking.',
+    title: 'student.feature.all_in_one.title',
+    desc: 'student.feature.all_in_one.desc',
   },
   {
     icon: Target,
-    title: 'Personalised learning',
-    desc: 'Smart recommendations that adapt to where you are and push toward the grade you want.',
+    title: 'student.feature.personalised.title',
+    desc: 'student.feature.personalised.desc',
   },
   {
     icon: TrendingUp,
-    title: 'Track & achieve',
-    desc: 'See your progress week-by-week. Set goals. Celebrate every win with predicted-grade tracking.',
+    title: 'student.feature.track.title',
+    desc: 'student.feature.track.desc',
   },
   {
     icon: Globe2,
-    title: 'Real world, real you',
-    desc: 'Build the English confidence you’ll actually use at school, university, work, and everywhere after.',
+    title: 'student.feature.real_world.title',
+    desc: 'student.feature.real_world.desc',
   },
-]
+] as const
 
-const outcomes = [
-  { icon: GraduationCap, label: 'Better grades' },
-  { icon: Rocket, label: 'More confidence' },
-  { icon: Globe2, label: 'Global opportunities' },
-  { icon: Sparkles, label: 'Your future. Your choice.' },
-]
+const outcomeKeys = [
+  { icon: GraduationCap, key: 'student.outcome.better_grades' },
+  { icon: Rocket, key: 'student.outcome.confidence' },
+  { icon: Globe2, key: 'student.outcome.global' },
+  { icon: Sparkles, key: 'student.outcome.future' },
+] as const
 
-// Student-targeted FAQs. Surfaced both visually at the bottom of the page and
-// as FAQPage JSON-LD for rich-result eligibility (TICKET-4 in seo audit).
-// Brand-voice rules: factual, no marketing flourishes, no exclamation marks,
-// no unverified user counts or testimonials.
-const faqs = [
-  {
-    question: 'What exam boards do you cover?',
-    answer:
-      'We cover AQA, Edexcel, OCR and WJEC Eduqas for GCSE English Language and Literature, plus Cambridge IGCSE and Edexcel IGCSE Literature and Language A.',
-  },
-  {
-    question: 'Is there a free trial?',
-    answer:
-      'Yes. You can start a 7-day free trial with a card on file, and even without a trial you get three free uses of every premium feature.',
-  },
-  {
-    question: 'Do you mark my essays with AI?',
-    answer:
-      'Yes. Submitted essays are marked by AI against the assessment objective rubric of the exam board you have selected.',
-  },
-  {
-    question: 'Can I switch exam boards later?',
-    answer:
-      'Yes. You can switch exam boards at any time from Settings, or directly from the BoardSwitcher in the top navigation.',
-  },
-  {
-    question: 'How much does it cost?',
-    answer: 'Student plans start at £3.49 per month, or £29.99 if you pay annually.',
-  },
-]
+const faqKeyPairs = [
+  { q: 'student.faq.boards.q', a: 'student.faq.boards.a' },
+  { q: 'student.faq.trial.q', a: 'student.faq.trial.a' },
+  { q: 'student.faq.ai.q', a: 'student.faq.ai.a' },
+  { q: 'student.faq.switch.q', a: 'student.faq.switch.a' },
+  { q: 'student.faq.cost.q', a: 'student.faq.cost.a' },
+] as const
 
-export default function ForStudentsPage() {
+export default async function ForStudentsPage() {
+  // Resolve all i18n strings up-front.
+  const [
+    badge,
+    heroPre,
+    heroEmph,
+    heroSubtitle,
+    ctaStartFree,
+    ctaSeePricing,
+    uspTitle,
+    uspBody,
+    faqHeading,
+    bottomTitle,
+    bottomBody,
+    bottomCtaCreate,
+    bottomCtaCompare,
+  ] = await tMany([
+    'student.badge',
+    'student.hero.title_pre',
+    'student.hero.title_emph',
+    'student.hero.subtitle',
+    'student.cta.start_free',
+    'student.cta.see_pricing',
+    'student.usp.title',
+    'student.usp.body',
+    'student.faq.heading',
+    'student.bottom.title',
+    'student.bottom.body',
+    'student.bottom.cta_create',
+    'student.bottom.cta_compare',
+  ])
+
+  const features = await Promise.all(
+    featureKeys.map(async (f) => ({
+      icon: f.icon,
+      title: await t(f.title),
+      desc: await t(f.desc),
+    })),
+  )
+
+  const outcomes = await Promise.all(
+    outcomeKeys.map(async (o) => ({ icon: o.icon, label: await t(o.key) })),
+  )
+
+  const faqs = await Promise.all(
+    faqKeyPairs.map(async (pair) => ({
+      question: await t(pair.q),
+      answer: await t(pair.a),
+    })),
+  )
+
   return (
     <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
@@ -140,14 +168,13 @@ export default function ForStudentsPage() {
             className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-6 gap-2 px-4 py-1.5"
           >
             <GraduationCap className="w-4 h-4" />
-            For students
+            {badge}
           </Badge>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground">
-            Your GCSE or IGCSE English revision, <span className="text-primary">in one place</span>
+            {heroPre} <span className="text-primary">{heroEmph}</span>
           </h1>
           <p className="mt-5 max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed">
-            Personalised revision built around your exam board. AI-marked essays, anthology guides,
-            mock papers and grade tracking.
+            {heroSubtitle}
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -156,7 +183,7 @@ export default function ForStudentsPage() {
               className="text-base h-12 px-6"
               render={<Link href="/auth/register" />}
             >
-              Start free &mdash; no card
+              {ctaStartFree}
               <ArrowRight className="w-4 h-4" />
             </Button>
             <Button
@@ -165,7 +192,7 @@ export default function ForStudentsPage() {
               className="text-base h-12 px-6"
               render={<Link href="/pricing" />}
             >
-              See pricing
+              {ctaSeePricing}
             </Button>
           </div>
         </div>
@@ -206,12 +233,8 @@ export default function ForStudentsPage() {
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
               <Sparkles className="h-5 w-5 text-primary" />
             </div>
-            <h2 className="text-2xl font-bold text-foreground">
-              A complete, personalised learning hub
-            </h2>
-            <p className="mt-3 max-w-xl mx-auto text-muted-foreground">
-              GCSE and IGCSE English revision, AI marked against the AO rubric.
-            </p>
+            <h2 className="text-2xl font-bold text-foreground">{uspTitle}</h2>
+            <p className="mt-3 max-w-xl mx-auto text-muted-foreground">{uspBody}</p>
           </div>
         </div>
       </section>
@@ -237,7 +260,7 @@ export default function ForStudentsPage() {
       <section className="px-4 sm:px-6 py-16">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center">
-            Frequently asked questions
+            {faqHeading}
           </h2>
           <dl className="mt-8 space-y-6">
             {faqs.map((faq) => (
@@ -253,20 +276,15 @@ export default function ForStudentsPage() {
       {/* Bottom CTA */}
       <section className="px-4 sm:px-6 py-16">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
-            Ready to level up your English?
-          </h2>
-          <p className="mt-3 text-muted-foreground">
-            Free trial, no card. Cancel any time. Unlimited courses, flashcards, and revision notes
-            &mdash; 3 free uses of every AI tool before you decide.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground">{bottomTitle}</h2>
+          <p className="mt-3 text-muted-foreground">{bottomBody}</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <Button
               size="lg"
               className="text-base h-12 px-6"
               render={<Link href="/auth/register" />}
             >
-              Create free account
+              {bottomCtaCreate}
               <ArrowRight className="w-4 h-4" />
             </Button>
             <Button
@@ -275,7 +293,7 @@ export default function ForStudentsPage() {
               className="text-base h-12 px-6"
               render={<Link href="/pricing" />}
             >
-              Compare plans
+              {bottomCtaCompare}
             </Button>
           </div>
         </div>

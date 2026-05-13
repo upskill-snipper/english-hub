@@ -14,13 +14,8 @@ import {
   type AffiliateAccount,
   type AffiliateConversion,
 } from '@/components/affiliate/mock-data'
-import {
-  Banknote,
-  Check,
-  CircleDollarSign,
-  Info,
-  Wallet,
-} from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
+import { Banknote, Check, CircleDollarSign, Info, Wallet } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 // Phase-7: Supabase — move payout history and payment method to secure tables
@@ -39,6 +34,7 @@ interface MockPayout {
 }
 
 export default function AffiliatePayoutsPage() {
+  const t = useT()
   const [account, setAccountState] = useState<AffiliateAccount | null>(null)
   const [conversions, setConversions] = useState<AffiliateConversion[]>([])
   const [method, setMethod] = useState<'paypal' | 'bank'>('paypal')
@@ -57,16 +53,13 @@ export default function AffiliatePayoutsPage() {
   }, [])
 
   const pendingBalance = useMemo(
-    () =>
-      conversions
-        .filter((c) => c.status !== 'paid')
-        .reduce((sum, c) => sum + c.commission, 0),
-    [conversions]
+    () => conversions.filter((c) => c.status !== 'paid').reduce((sum, c) => sum + c.commission, 0),
+    [conversions],
   )
 
   const lifetimeEarnings = useMemo(
     () => conversions.reduce((sum, c) => sum + c.commission, 0),
-    [conversions]
+    [conversions],
   )
 
   const payouts: MockPayout[] = useMemo(
@@ -96,7 +89,7 @@ export default function AffiliatePayoutsPage() {
         date: '2026-02-02',
       },
     ],
-    []
+    [],
   )
 
   const handleSavePaymentMethod = (e: React.FormEvent) => {
@@ -118,10 +111,8 @@ export default function AffiliatePayoutsPage() {
       <AffiliateSidebar />
       <main className="flex-1 px-4 py-8 sm:px-8 max-w-5xl mx-auto w-full">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground">Payouts</h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Review your balance, manage how you get paid, and view history.
-          </p>
+          <h1 className="text-3xl font-bold text-foreground">{t('aff.payouts.title')}</h1>
+          <p className="text-sm text-muted-foreground mt-1">{t('aff.payouts.subtitle')}</p>
         </header>
 
         {/* Balance summary */}
@@ -133,11 +124,9 @@ export default function AffiliatePayoutsPage() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                  Pending balance
+                  {t('aff.payouts.pending_balance')}
                 </p>
-                <p className="text-2xl font-bold text-primary mt-1">
-                  £{pendingBalance.toFixed(2)}
-                </p>
+                <p className="text-2xl font-bold text-primary mt-1">£{pendingBalance.toFixed(2)}</p>
               </div>
             </CardContent>
           </Card>
@@ -148,7 +137,7 @@ export default function AffiliatePayoutsPage() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                  Lifetime earnings
+                  {t('aff.payouts.lifetime_earnings')}
                 </p>
                 <p className="text-2xl font-bold text-foreground mt-1">
                   £{lifetimeEarnings.toFixed(2)}
@@ -163,11 +152,9 @@ export default function AffiliatePayoutsPage() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                  Minimum payout
+                  {t('aff.payouts.minimum_payout')}
                 </p>
-                <p className="text-2xl font-bold text-foreground mt-1">
-                  £{MINIMUM_PAYOUT_GBP}
-                </p>
+                <p className="text-2xl font-bold text-foreground mt-1">£{MINIMUM_PAYOUT_GBP}</p>
               </div>
             </CardContent>
           </Card>
@@ -179,20 +166,18 @@ export default function AffiliatePayoutsPage() {
           </div>
           <div className="text-sm text-muted-foreground">
             <span className="text-foreground font-medium">
-              Payouts are issued monthly
+              {t('aff.payouts.monthly_note_lead')}
             </span>{' '}
-            on the 2nd business day after month-end, provided your balance has reached the
-            £{MINIMUM_PAYOUT_GBP} minimum. Commissions are locked in after a 14-day refund
-            window.
+            {t('aff.payouts.monthly_note_body').replace('{min}', String(MINIMUM_PAYOUT_GBP))}
           </div>
         </div>
 
         {/* Payment method form */}
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle>Payment method</CardTitle>
+            <CardTitle>{t('aff.payouts.payment_method')}</CardTitle>
             <p className="text-sm text-muted-foreground">
-              Choose how you&apos;d like to receive your commission.
+              {t('aff.payouts.payment_method_subtitle')}
             </p>
           </CardHeader>
           <CardContent>
@@ -207,44 +192,43 @@ export default function AffiliatePayoutsPage() {
                       'rounded-lg border px-4 py-3 text-sm font-medium transition-colors text-left',
                       method === m
                         ? 'border-primary/40 bg-primary/10 text-primary'
-                        : 'border-border/60 bg-transparent text-muted-foreground hover:bg-accent hover:text-foreground'
+                        : 'border-border/60 bg-transparent text-muted-foreground hover:bg-accent hover:text-foreground',
                     )}
                   >
-                    {m === 'paypal' ? 'PayPal' : 'Bank transfer (BACS)'}
+                    {m === 'paypal' ? t('aff.payouts.method_paypal') : t('aff.payouts.method_bank')}
                   </button>
                 ))}
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="details">
-                  {method === 'paypal' ? 'PayPal email' : 'Account reference'}
+                  {method === 'paypal'
+                    ? t('aff.payouts.paypal_email_label')
+                    : t('aff.payouts.account_ref_label')}
                 </Label>
                 <Input
                   id="details"
                   placeholder={
                     method === 'paypal'
-                      ? 'you@example.com'
-                      : 'Sort code / account number'
+                      ? t('aff.payouts.paypal_email_placeholder')
+                      : t('aff.payouts.account_ref_placeholder')
                   }
                   value={details}
                   onChange={(e) => setDetails(e.target.value)}
                   required
                 />
                 {method === 'bank' && (
-                  <p className="text-xs text-muted-foreground">
-                    Do not enter your full banking details here — this is a demo form.
-                    Use a reference nickname only.
-                  </p>
+                  <p className="text-xs text-muted-foreground">{t('aff.payouts.bank_demo_hint')}</p>
                 )}
               </div>
 
               <Button type="submit">
                 {saved ? (
                   <>
-                    <Check className="h-4 w-4" /> Saved
+                    <Check className="h-4 w-4" /> {t('aff.payouts.saved')}
                   </>
                 ) : (
-                  'Save payment method'
+                  t('aff.payouts.save_payment_method')
                 )}
               </Button>
             </form>
@@ -254,33 +238,36 @@ export default function AffiliatePayoutsPage() {
         {/* Payout history */}
         <Card>
           <CardHeader>
-            <CardTitle>Payout history</CardTitle>
+            <CardTitle>{t('aff.payouts.history_title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto -mx-5">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60 text-xs uppercase tracking-wide text-muted-foreground">
-                    <th className="py-2 px-5 text-left font-medium">Period</th>
-                    <th className="py-2 px-3 text-left font-medium">Method</th>
-                    <th className="py-2 px-3 text-left font-medium">Date</th>
-                    <th className="py-2 px-3 text-left font-medium">Status</th>
-                    <th className="py-2 px-5 text-right font-medium">Amount</th>
+                    <th className="py-2 px-5 text-left font-medium">
+                      {t('aff.payouts.col_period')}
+                    </th>
+                    <th className="py-2 px-3 text-left font-medium">
+                      {t('aff.payouts.col_method')}
+                    </th>
+                    <th className="py-2 px-3 text-left font-medium">{t('aff.payouts.col_date')}</th>
+                    <th className="py-2 px-3 text-left font-medium">
+                      {t('aff.payouts.col_status')}
+                    </th>
+                    <th className="py-2 px-5 text-right font-medium">
+                      {t('aff.payouts.col_amount')}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {payouts.map((p) => (
-                    <tr
-                      key={p.id}
-                      className="border-b border-border/40 last:border-0"
-                    >
-                      <td className="py-3 px-5 font-medium text-foreground">
-                        {p.period}
-                      </td>
+                    <tr key={p.id} className="border-b border-border/40 last:border-0">
+                      <td className="py-3 px-5 font-medium text-foreground">{p.period}</td>
                       <td className="py-3 px-3 text-muted-foreground">{p.method}</td>
                       <td className="py-3 px-3 text-muted-foreground">{p.date}</td>
                       <td className="py-3 px-3">
-                        <StatusBadge status={p.status} />
+                        <StatusBadge status={p.status} t={t} />
                       </td>
                       <td className="py-3 px-5 text-right font-semibold text-foreground">
                         £{p.amount.toFixed(2)}
@@ -297,7 +284,7 @@ export default function AffiliatePayoutsPage() {
   )
 }
 
-function StatusBadge({ status }: { status: PayoutStatus }) {
+function StatusBadge({ status, t }: { status: PayoutStatus; t: (k: string) => string }) {
   const styles =
     status === 'paid'
       ? 'bg-primary/15 text-primary border-primary/30'
@@ -305,13 +292,17 @@ function StatusBadge({ status }: { status: PayoutStatus }) {
         ? 'bg-accent text-foreground border-border'
         : 'bg-muted text-muted-foreground border-border'
   const label =
-    status === 'paid' ? 'Paid' : status === 'processing' ? 'Processing' : 'Pending'
+    status === 'paid'
+      ? t('aff.payouts.status_paid')
+      : status === 'processing'
+        ? t('aff.payouts.status_processing')
+        : t('aff.payouts.status_pending')
 
   return (
     <span
       className={cn(
         'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium',
-        styles
+        styles,
       )}
     >
       {label}

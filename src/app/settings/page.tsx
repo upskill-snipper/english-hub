@@ -17,8 +17,10 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { Button } from '@/components/ui/button'
 import { ChangeBoardButton } from '@/components/board/ChangeBoardButton'
+import { useT } from '@/lib/i18n/use-t'
 
 export default function SettingsPage() {
+  const t = useT()
   const { user, profile } = useAuthStore()
   const { board, isHydrated } = useBoard()
   const config = getBoardConfig(board)
@@ -55,12 +57,12 @@ export default function SettingsPage() {
           className="mb-8 inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="size-4" />
-          Back to dashboard
+          {t('settings.back_to_dashboard')}
         </Link>
 
         <div className="mb-8 flex items-center gap-3">
           <SettingsIcon className="size-6 text-primary" aria-hidden="true" />
-          <h1 className="text-3xl font-bold text-foreground">Settings</h1>
+          <h1 className="text-3xl font-bold text-foreground">{t('settings.title')}</h1>
         </div>
 
         {/* ─── Your exam board ───────────────────────────────────── */}
@@ -70,11 +72,8 @@ export default function SettingsPage() {
         >
           <div className="mb-4 flex items-center gap-3">
             <BookOpen className="size-5 text-primary" aria-hidden="true" />
-            <h2
-              id="board-heading"
-              className="text-xl font-semibold text-foreground"
-            >
-              Your exam board
+            <h2 id="board-heading" className="text-xl font-semibold text-foreground">
+              {t('settings.board.heading')}
             </h2>
           </div>
 
@@ -84,45 +83,28 @@ export default function SettingsPage() {
             <>
               <div className="mb-4 rounded-lg border border-border bg-background/40 p-4">
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                  Currently studying
+                  {t('settings.board.currently_studying')}
                 </p>
-                <p className="mt-1 text-lg font-semibold text-foreground">
-                  {config.fullName}
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {config.description}
-                </p>
+                <p className="mt-1 text-lg font-semibold text-foreground">{config.fullName}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{config.description}</p>
               </div>
 
               <div
                 role="note"
                 className="mb-4 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-50 p-3 text-sm text-amber-700"
               >
-                <AlertTriangle
-                  className="mt-0.5 size-4 shrink-0"
-                  aria-hidden="true"
-                />
-                <p>
-                  Changing your board will filter your content to the new
-                  board. Your progress is preserved.
-                </p>
+                <AlertTriangle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+                <p>{t('settings.board.change_warning')}</p>
               </div>
 
               <ChangeBoardButton variant="card" />
             </>
           ) : (
             <>
-              <p className="mb-4 text-sm text-muted-foreground">
-                You haven't picked an exam board yet. Choose one to personalise
-                your revision content.
-              </p>
-              <Button
-                variant="default"
-                size="lg"
-                render={<Link href="/board-select" />}
-              >
+              <p className="mb-4 text-sm text-muted-foreground">{t('settings.board.empty')}</p>
+              <Button variant="default" size="lg" render={<Link href="/board-select" />}>
                 <BookOpen className="size-4" />
-                Choose your exam board
+                {t('settings.board.choose_cta')}
               </Button>
             </>
           )}
@@ -135,17 +117,14 @@ export default function SettingsPage() {
         >
           <div className="mb-4 flex items-center gap-3">
             <UserIcon className="size-5 text-primary" aria-hidden="true" />
-            <h2
-              id="account-heading"
-              className="text-xl font-semibold text-foreground"
-            >
-              Account
+            <h2 id="account-heading" className="text-xl font-semibold text-foreground">
+              {t('settings.account.heading')}
             </h2>
           </div>
 
           <div className="space-y-3">
             <div>
-              <label className="label">Email</label>
+              <label className="label">{t('settings.account.email_label')}</label>
               <input
                 type="email"
                 value={user?.email ?? ''}
@@ -153,14 +132,11 @@ export default function SettingsPage() {
                 className="input-field cursor-not-allowed opacity-60"
               />
               <p className="mt-1 text-xs text-muted-foreground">
-                For full account settings (name, password, deletion) visit your{' '}
-                <Link
-                  href="/account"
-                  className="text-primary underline-offset-4 hover:underline"
-                >
-                  account page
+                {t('settings.account.full_settings_prefix')}{' '}
+                <Link href="/account" className="text-primary underline-offset-4 hover:underline">
+                  {t('settings.account.account_page_link')}
                 </Link>
-                .
+                {t('settings.account.full_settings_suffix')}
               </p>
             </div>
           </div>
@@ -173,26 +149,23 @@ export default function SettingsPage() {
         >
           <div className="mb-4 flex items-center gap-3">
             <Bell className="size-5 text-primary" aria-hidden="true" />
-            <h2
-              id="notifications-heading"
-              className="text-xl font-semibold text-foreground"
-            >
-              Notifications
+            <h2 id="notifications-heading" className="text-xl font-semibold text-foreground">
+              {t('settings.notifications.heading')}
             </h2>
           </div>
 
           <div className="space-y-4">
             <NotificationToggle
               icon={<Mail className="size-4" />}
-              label="Email reminders"
-              description="Weekly revision reminders and study streak nudges."
+              label={t('settings.notifications.email_label')}
+              description={t('settings.notifications.email_description')}
               checked={emailNotifications}
               onChange={setEmailNotifications}
             />
             <NotificationToggle
               icon={<Bell className="size-4" />}
-              label="Product updates"
-              description="Occasional announcements about new features."
+              label={t('settings.notifications.product_label')}
+              description={t('settings.notifications.product_description')}
               checked={productUpdates}
               onChange={setProductUpdates}
             />

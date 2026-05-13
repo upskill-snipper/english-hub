@@ -1,44 +1,46 @@
-'use client';
+'use client'
 
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Types ───────────────────────────────────────────────────── */
 
-type Subject = 'english-language' | 'english-literature' | null;
-type ExamBoard = 'aqa' | 'edexcel' | 'caie' | 'ocr';
-type ResourceType = 'study-guide' | 'practice' | 'notes' | 'all';
-type Difficulty = 'foundation' | 'higher' | null;
+type Subject = 'english-language' | 'english-literature' | null
+type ExamBoard = 'aqa' | 'edexcel' | 'caie' | 'ocr'
+type ResourceType = 'study-guide' | 'practice' | 'notes' | 'all'
+type Difficulty = 'foundation' | 'higher' | null
 
 interface ResourceFilters {
-  subject: Subject;
+  subject: Subject
   /** @deprecated Exam board filtering removed — kept for type compatibility */
-  examBoards: ExamBoard[];
-  topic: string;
-  type: ResourceType;
-  difficulty: Difficulty;
-  search: string;
+  examBoards: ExamBoard[]
+  topic: string
+  type: ResourceType
+  difficulty: Difficulty
+  search: string
 }
 
 interface ResourceFilterProps {
-  filters: ResourceFilters;
-  onChange: (filters: ResourceFilters) => void;
-  className?: string;
+  filters: ResourceFilters
+  onChange: (filters: ResourceFilters) => void
+  className?: string
 }
 
 /* ─── Constants ───────────────────────────────────────────────── */
 
-const SUBJECTS: { value: Subject; label: string }[] = [
-  { value: 'english-language', label: 'English Language' },
-  { value: 'english-literature', label: 'English Literature' },
-];
+const SUBJECTS: { value: Subject; labelKey: string }[] = [
+  { value: 'english-language', labelKey: 'resource.subject.english_language' },
+  { value: 'english-literature', labelKey: 'resource.subject.english_literature' },
+]
 
-const RESOURCE_TYPES: { value: ResourceType; label: string }[] = [
-  { value: 'all', label: 'All Types' },
-  { value: 'study-guide', label: 'Study Guides' },
-  { value: 'practice', label: 'Practice' },
-  { value: 'notes', label: 'Notes' },
-];
+const RESOURCE_TYPES: { value: ResourceType; labelKey: string }[] = [
+  { value: 'all', labelKey: 'resource.filter.type.all' },
+  { value: 'study-guide', labelKey: 'resource.filter.type.study_guides' },
+  { value: 'practice', labelKey: 'resource.filter.type.practice' },
+  { value: 'notes', labelKey: 'resource.filter.type.notes' },
+]
 
+/** Canonical English topic values (kept stable for filter state / URLs). */
 const LANGUAGE_TOPICS = [
   'Reading Comprehension',
   'Creative Writing',
@@ -46,7 +48,7 @@ const LANGUAGE_TOPICS = [
   'Language Techniques',
   'Comparing Perspectives',
   'Spoken Language',
-];
+]
 
 const LITERATURE_TOPICS = [
   'Shakespeare',
@@ -55,7 +57,25 @@ const LITERATURE_TOPICS = [
   '19th Century Novel',
   'Unseen Poetry',
   'Drama',
-];
+]
+
+const LANGUAGE_TOPIC_KEYS: Record<string, string> = {
+  'Reading Comprehension': 'resource.filter.topic.lang.reading_comprehension',
+  'Creative Writing': 'resource.filter.topic.lang.creative_writing',
+  'Transactional Writing': 'resource.filter.topic.lang.transactional_writing',
+  'Language Techniques': 'resource.filter.topic.lang.language_techniques',
+  'Comparing Perspectives': 'resource.filter.topic.lang.comparing_perspectives',
+  'Spoken Language': 'resource.filter.topic.lang.spoken_language',
+}
+
+const LITERATURE_TOPIC_KEYS: Record<string, string> = {
+  Shakespeare: 'resource.filter.topic.lit.shakespeare',
+  'Poetry Anthology': 'resource.filter.topic.lit.poetry_anthology',
+  'Modern Prose': 'resource.filter.topic.lit.modern_prose',
+  '19th Century Novel': 'resource.filter.topic.lit.nineteenth_century_novel',
+  'Unseen Poetry': 'resource.filter.topic.lit.unseen_poetry',
+  Drama: 'resource.filter.topic.lit.drama',
+}
 
 /* ─── Default filters ─────────────────────────────────────────── */
 
@@ -66,7 +86,7 @@ const DEFAULT_FILTERS: ResourceFilters = {
   type: 'all',
   difficulty: null,
   search: '',
-};
+}
 
 /* ─── Icons ───────────────────────────────────────────────────── */
 
@@ -86,7 +106,7 @@ function SearchIcon({ className }: { className?: string }) {
         d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
       />
     </svg>
-  );
+  )
 }
 
 function FilterIcon({ className }: { className?: string }) {
@@ -105,7 +125,7 @@ function FilterIcon({ className }: { className?: string }) {
         d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75"
       />
     </svg>
-  );
+  )
 }
 
 function ChevronDown({ className }: { className?: string }) {
@@ -120,7 +140,7 @@ function ChevronDown({ className }: { className?: string }) {
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
     </svg>
-  );
+  )
 }
 
 function CloseIcon({ className }: { className?: string }) {
@@ -135,7 +155,7 @@ function CloseIcon({ className }: { className?: string }) {
     >
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
     </svg>
-  );
+  )
 }
 
 /* ─── Pill button ─────────────────────────────────────────────── */
@@ -146,12 +166,12 @@ function Pill({
   children,
   size = 'md',
 }: {
-  selected: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-  size?: 'sm' | 'md';
+  selected: boolean
+  onClick: () => void
+  children: React.ReactNode
+  size?: 'sm' | 'md'
 }) {
-  const sizeClasses = size === 'sm' ? 'px-2.5 py-1 text-xs' : 'px-3.5 py-1.5 text-sm';
+  const sizeClasses = size === 'sm' ? 'px-2.5 py-1 text-xs' : 'px-3.5 py-1.5 text-sm'
 
   return (
     <button
@@ -171,7 +191,7 @@ function Pill({
     >
       {children}
     </button>
-  );
+  )
 }
 
 /* ─── Topic dropdown ──────────────────────────────────────────── */
@@ -181,25 +201,31 @@ function TopicDropdown({
   value,
   onChange,
 }: {
-  subject: Subject;
-  value: string;
-  onChange: (topic: string) => void;
+  subject: Subject
+  value: string
+  onChange: (topic: string) => void
 }) {
-  const topics = subject === 'english-literature' ? LITERATURE_TOPICS : LANGUAGE_TOPICS;
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const t = useT()
+  const topics = subject === 'english-literature' ? LITERATURE_TOPICS : LANGUAGE_TOPICS
+  const topicKeys = subject === 'english-literature' ? LITERATURE_TOPIC_KEYS : LANGUAGE_TOPIC_KEYS
+  const translateTopic = (topic: string) => {
+    const key = topicKeys[topic]
+    return key ? t(key) : topic
+  }
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
+        setOpen(false)
       }
     }
     if (open) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [open]);
+  }, [open])
 
   return (
     <div ref={ref} className="relative">
@@ -216,7 +242,7 @@ function TopicDropdown({
         aria-expanded={open}
         aria-haspopup="listbox"
       >
-        {value || 'Topic'}
+        {value ? translateTopic(value) : t('resource.filter.topic.button')}
         <ChevronDown
           className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
         />
@@ -230,24 +256,26 @@ function TopicDropdown({
           <button
             type="button"
             onClick={() => {
-              onChange('');
-              setOpen(false);
+              onChange('')
+              setOpen(false)
             }}
             className={`w-full px-4 py-2 text-left text-sm transition-colors ${
-              !value ? 'bg-primary/10 font-medium text-primary' : 'text-muted-foreground hover:bg-muted'
+              !value
+                ? 'bg-primary/10 font-medium text-primary'
+                : 'text-muted-foreground hover:bg-muted'
             }`}
             role="option"
             aria-selected={!value}
           >
-            All Topics
+            {t('resource.filter.topic.all')}
           </button>
           {topics.map((topic) => (
             <button
               key={topic}
               type="button"
               onClick={() => {
-                onChange(topic);
-                setOpen(false);
+                onChange(topic)
+                setOpen(false)
               }}
               className={`w-full px-4 py-2 text-left text-sm transition-colors ${
                 value === topic
@@ -257,54 +285,55 @@ function TopicDropdown({
               role="option"
               aria-selected={value === topic}
             >
-              {topic}
+              {translateTopic(topic)}
             </button>
           ))}
         </div>
       )}
     </div>
-  );
+  )
 }
 
 /* ─── Active filter count ─────────────────────────────────────── */
 
 function countActiveFilters(filters: ResourceFilters): number {
-  let count = 0;
-  if (filters.subject) count++;
-  if (filters.topic) count++;
-  if (filters.type !== 'all') count++;
-  if (filters.difficulty) count++;
-  if (filters.search) count++;
-  return count;
+  let count = 0
+  if (filters.subject) count++
+  if (filters.topic) count++
+  if (filters.type !== 'all') count++
+  if (filters.difficulty) count++
+  if (filters.search) count++
+  return count
 }
 
 /* ─── ResourceFilter component ────────────────────────────────── */
 
 function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterProps) {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const panelRef = useRef<HTMLDivElement>(null);
-  const activeCount = countActiveFilters(filters);
+  const t = useT()
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const panelRef = useRef<HTMLDivElement>(null)
+  const activeCount = countActiveFilters(filters)
 
   const updateFilter = useCallback(
     <K extends keyof ResourceFilters>(key: K, value: ResourceFilters[K]) => {
-      onChange({ ...filters, [key]: value });
+      onChange({ ...filters, [key]: value })
     },
     [filters, onChange],
-  );
+  )
 
   const clearAll = useCallback(() => {
-    onChange(DEFAULT_FILTERS);
-  }, [onChange]);
+    onChange(DEFAULT_FILTERS)
+  }, [onChange])
 
   // Lock body scroll when mobile panel is open
   useEffect(() => {
     if (mobileOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'
       return () => {
-        document.body.style.overflow = '';
-      };
+        document.body.style.overflow = ''
+      }
     }
-  }, [mobileOpen]);
+  }, [mobileOpen])
 
   /* ── Shared filter controls ─────────────────────────────────── */
   const filterControls = (mobile: boolean) => (
@@ -313,7 +342,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       <div className={mobile ? '' : 'flex items-center gap-2'}>
         {mobile && (
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Subject
+            {t('resource.filter.label.subject')}
           </p>
         )}
         <div className="flex flex-wrap gap-2">
@@ -321,11 +350,9 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
             <Pill
               key={s.value}
               selected={filters.subject === s.value}
-              onClick={() =>
-                updateFilter('subject', filters.subject === s.value ? null : s.value)
-              }
+              onClick={() => updateFilter('subject', filters.subject === s.value ? null : s.value)}
             >
-              {s.label}
+              {t(s.labelKey)}
             </Pill>
           ))}
         </div>
@@ -335,14 +362,14 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Topic
+            {t('resource.filter.label.topic')}
           </p>
         )}
         {!mobile && <div className="h-6 w-px bg-muted" aria-hidden="true" />}
         <TopicDropdown
           subject={filters.subject}
           value={filters.topic}
-          onChange={(t) => updateFilter('topic', t)}
+          onChange={(next) => updateFilter('topic', next)}
         />
       </div>
 
@@ -350,19 +377,19 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Resource Type
+            {t('resource.filter.label.resource_type')}
           </p>
         )}
         {!mobile && <div className="h-6 w-px bg-muted" aria-hidden="true" />}
         <div className="flex flex-wrap gap-2">
-          {RESOURCE_TYPES.map((t) => (
+          {RESOURCE_TYPES.map((rt) => (
             <Pill
-              key={t.value}
-              selected={filters.type === t.value}
-              onClick={() => updateFilter('type', t.value)}
+              key={rt.value}
+              selected={filters.type === rt.value}
+              onClick={() => updateFilter('type', rt.value)}
               size="sm"
             >
-              {t.label}
+              {t(rt.labelKey)}
             </Pill>
           ))}
         </div>
@@ -372,7 +399,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Difficulty
+            {t('resource.filter.label.difficulty')}
           </p>
         )}
         {!mobile && <div className="h-6 w-px bg-muted" aria-hidden="true" />}
@@ -381,18 +408,16 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
             <Pill
               key={d}
               selected={filters.difficulty === d}
-              onClick={() =>
-                updateFilter('difficulty', filters.difficulty === d ? null : d)
-              }
+              onClick={() => updateFilter('difficulty', filters.difficulty === d ? null : d)}
               size="sm"
             >
-              {d.charAt(0).toUpperCase() + d.slice(1)}
+              {t(`resource.filter.difficulty.${d}`)}
             </Pill>
           ))}
         </div>
       </div>
     </>
-  );
+  )
 
   return (
     <div className={className}>
@@ -407,7 +432,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
               </div>
               <input
                 type="search"
-                placeholder="Search resources..."
+                placeholder={t('resource.filter.search_placeholder')}
                 value={filters.search}
                 onChange={(e) => updateFilter('search', e.target.value)}
                 className="w-full rounded-lg border border-border bg-card py-2 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
@@ -421,7 +446,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
                 className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-red-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 <CloseIcon className="h-3.5 w-3.5" />
-                Clear filters
+                {t('resource.filter.clear')}
                 <span className="ml-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
                   {activeCount}
                 </span>
@@ -430,9 +455,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
           </div>
 
           {/* Filter pills row */}
-          <div className="mt-3 flex flex-wrap items-center gap-3">
-            {filterControls(false)}
-          </div>
+          <div className="mt-3 flex flex-wrap items-center gap-3">{filterControls(false)}</div>
         </div>
       </div>
 
@@ -445,7 +468,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
           </div>
           <input
             type="search"
-            placeholder="Search resources..."
+            placeholder={t('resource.filter.search_placeholder')}
             value={filters.search}
             onChange={(e) => updateFilter('search', e.target.value)}
             className="w-full rounded-xl border border-border bg-card py-2.5 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
@@ -458,7 +481,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
           className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-card px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-primary/10 hover:border-primary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           <FilterIcon className="h-4 w-4" />
-          Filters
+          {t('resource.filter.button')}
           {activeCount > 0 && (
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-semibold text-white">
               {activeCount}
@@ -483,16 +506,16 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
             style={{ animation: 'slideUp 0.3s ease-out' }}
             className="absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-2xl bg-card shadow-2xl"
             role="dialog"
-            aria-label="Filter options"
+            aria-label={t('resource.filter.dialog_aria')}
           >
             {/* Handle */}
             <div className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-card px-5 py-4">
-              <h2 className="text-lg font-bold text-foreground">Filters</h2>
+              <h2 className="text-lg font-bold text-foreground">{t('resource.filter.heading')}</h2>
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
                 className="rounded-full p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                aria-label="Close filters"
+                aria-label={t('resource.filter.close_aria')}
               >
                 <CloseIcon className="h-5 w-5" />
               </button>
@@ -506,26 +529,26 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
               <button
                 type="button"
                 onClick={() => {
-                  clearAll();
-                  setMobileOpen(false);
+                  clearAll()
+                  setMobileOpen(false)
                 }}
                 className="flex-1 rounded-xl border border-border px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
-                Clear All
+                {t('resource.filter.clear_all')}
               </button>
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
                 className="flex-1 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
-                Apply Filters
+                {t('resource.filter.apply')}
               </button>
             </div>
           </div>
         </div>
       )}
     </div>
-  );
+  )
 }
 
 export {
@@ -537,4 +560,4 @@ export {
   type ExamBoard,
   type ResourceType,
   type Difficulty,
-};
+}

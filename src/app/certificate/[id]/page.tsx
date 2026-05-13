@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CertificatePage from './client-page'
+import { t } from '@/lib/i18n/t'
 
 interface Props {
   params: Promise<{ id: string }>
@@ -7,9 +8,8 @@ interface Props {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params
-  const title = 'Certificate of Achievement | The English Hub'
-  const description =
-    'View and verify this Certificate of Achievement from The English Hub. Awarded for successful completion of a GCSE English course.'
+  const title = await t('certificate.page_title')
+  const description = await t('certificate.page_description')
 
   return {
     title,

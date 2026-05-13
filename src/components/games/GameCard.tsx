@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { gcseGradeColor, gcseGradeBg, type GCSEGrade } from '@/lib/grades'
 import { getHighScore, getLastPlayed } from '@/lib/game-scores'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -33,17 +34,17 @@ const DIFFICULTY_COLORS: Record<string, string> = {
   Higher: 'bg-red-500/10 text-red-400 border-red-500/20',
 }
 
-function formatRelativeTime(timestamp: number): string {
+function formatRelativeTime(timestamp: number, t: (key: string) => string): string {
   const diff = Date.now() - timestamp
   const minutes = Math.floor(diff / 60_000)
-  if (minutes < 1) return 'Just now'
-  if (minutes < 60) return `${minutes}m ago`
+  if (minutes < 1) return t('games.card.just_now')
+  if (minutes < 60) return `${minutes}${t('games.card.minutes_ago_suffix')}`
   const hours = Math.floor(minutes / 60)
-  if (hours < 24) return `${hours}h ago`
+  if (hours < 24) return `${hours}${t('games.card.hours_ago_suffix')}`
   const days = Math.floor(hours / 24)
-  if (days < 7) return `${days}d ago`
+  if (days < 7) return `${days}${t('games.card.days_ago_suffix')}`
   const weeks = Math.floor(days / 7)
-  if (weeks < 4) return `${weeks}w ago`
+  if (weeks < 4) return `${weeks}${t('games.card.weeks_ago_suffix')}`
   return new Date(timestamp).toLocaleDateString('en-GB', {
     day: 'numeric',
     month: 'short',
@@ -67,6 +68,12 @@ function ArrowRight() {
 
 // ─── Component ──────────────────────────────────────────────────────────────
 
+const DIFFICULTY_KEY_MAP: Record<string, string> = {
+  Foundation: 'games.difficulty.foundation',
+  Crossover: 'games.difficulty.crossover',
+  Higher: 'games.difficulty.higher',
+}
+
 export default function GameCard({
   gameId,
   title,
@@ -76,6 +83,7 @@ export default function GameCard({
   difficulty,
   className,
 }: GameCardProps) {
+  const t = useT()
   const [bestGrade, setBestGrade] = useState<GCSEGrade | null>(null)
   const [lastPlayed, setLastPlayed] = useState<number | null>(null)
 
@@ -93,7 +101,7 @@ export default function GameCard({
         'transition-all duration-300 ease-out',
         'hover:shadow-md hover:border-primary/30 hover:-translate-y-0.5',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
-        className
+        className,
       )}
     >
       {/* Top row: icon + best grade badge */}
@@ -114,10 +122,10 @@ export default function GameCard({
                   ? 'border-blue-500/20'
                   : bestGrade >= 4
                     ? 'border-amber-500/20'
-                    : 'border-red-500/20'
+                    : 'border-red-500/20',
             )}
           >
-            Grade {bestGrade}
+            {t('games.card.grade_label')} {bestGrade}
           </span>
         )}
       </div>
@@ -142,21 +150,21 @@ export default function GameCard({
             <span
               className={cn(
                 'inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium',
-                DIFFICULTY_COLORS[difficulty] ?? 'bg-cream-100 text-muted-foreground border-border'
+                DIFFICULTY_COLORS[difficulty] ?? 'bg-cream-100 text-muted-foreground border-border',
               )}
             >
-              {difficulty}
+              {DIFFICULTY_KEY_MAP[difficulty] ? t(DIFFICULTY_KEY_MAP[difficulty]) : difficulty}
             </span>
           )}
           {lastPlayed && (
             <span className="text-xs text-muted-foreground">
-              {formatRelativeTime(lastPlayed)}
+              {formatRelativeTime(lastPlayed, t)}
             </span>
           )}
         </div>
 
         <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent transition-colors duration-200 group-hover:text-primary">
-          Play <ArrowRight />
+          {t('games.card.play_cta')} <ArrowRight />
         </span>
       </div>
     </Link>

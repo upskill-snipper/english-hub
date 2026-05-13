@@ -7,12 +7,14 @@ import { Input } from '@/components/ui/input'
 import { TierBadge, getTierFromReferrals } from './TierBadge'
 import { calculateCommissionGbp, PUBLIC_TIER_LADDER } from '@/lib/affiliate/tiers'
 import { Calculator, PoundSterling } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 
 // 19 April 2026: rewritten for flat-rate tiered affiliate commissions.
 // Student plan is now £20/year flat; commission is per-signup, lifetime-counted.
 
 export function CommissionCalculator() {
   const [signups, setSignups] = useState(50)
+  const t = useT()
 
   const tier = getTierFromReferrals(Math.max(0, signups - 1))
 
@@ -20,6 +22,7 @@ export function CommissionCalculator() {
     // Compute total lifetime earnings by stepping through tier buckets.
     let cumulativeTotal = 0
     const bucketBreakdown: Array<{
+      tierKey: 'tier-1' | 'tier-2' | 'tier-3' | 'tier-4' | 'tier-5'
       range: string
       count: number
       perSignup: number
@@ -36,6 +39,7 @@ export function CommissionCalculator() {
         const subtotal = inThisBucket * tierRow.commissionGbp
         cumulativeTotal += subtotal
         bucketBreakdown.push({
+          tierKey: tierRow.tier,
           range: tierRow.range,
           count: inThisBucket,
           perSignup: tierRow.commissionGbp,
@@ -64,15 +68,15 @@ export function CommissionCalculator() {
             <Calculator className="h-4 w-4" />
           </div>
           <div>
-            <CardTitle>Commission Calculator</CardTitle>
-            <p className="text-xs text-muted-foreground mt-0.5">Estimate your lifetime earnings</p>
+            <CardTitle>{t('aff_comp.calc.title')}</CardTitle>
+            <p className="text-xs text-muted-foreground mt-0.5">{t('aff_comp.calc.subtitle')}</p>
           </div>
         </div>
       </CardHeader>
       <CardContent className="space-y-5">
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <Label htmlFor="signups">Total signups referred (lifetime)</Label>
+            <Label htmlFor="signups">{t('aff_comp.calc.total_signups_label')}</Label>
             <span className="text-sm font-semibold text-foreground">
               {signups.toLocaleString('en-GB')}
             </span>
@@ -97,17 +101,20 @@ export function CommissionCalculator() {
         <div className="rounded-xl border border-border/60 bg-muted/30 p-4 space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs text-muted-foreground uppercase tracking-wide">
-              Your current tier
+              {t('aff_comp.calc.current_tier')}
             </span>
             <TierBadge tier={tier} showCommission />
           </div>
           <div>
-            <p className="text-xs text-muted-foreground">Total lifetime earnings</p>
+            <p className="text-xs text-muted-foreground">
+              {t('aff_comp.calc.total_lifetime_earnings')}
+            </p>
             <p className="text-3xl font-bold text-primary">{fmt(total)}</p>
           </div>
           <p className="text-xs text-muted-foreground">
-            Your next signup earns <strong className="text-foreground">£{currentPerSignup}</strong>.
-            Paid 60 days after each signup&rsquo;s trial converts to paid.
+            {t('aff_comp.calc.next_signup_prefix')}{' '}
+            <strong className="text-foreground">£{currentPerSignup}</strong>
+            {t('aff_comp.calc.next_signup_suffix')}
           </p>
 
           {breakdown.length > 1 && (
@@ -115,7 +122,8 @@ export function CommissionCalculator() {
               {breakdown.map((b) => (
                 <div key={b.range} className="flex justify-between">
                   <span className="text-muted-foreground">
-                    Signups {b.range} ({b.count.toLocaleString('en-GB')} × £{b.perSignup})
+                    {t('aff_comp.calc.signups_label')} {b.range} ({b.count.toLocaleString('en-GB')}{' '}
+                    × £{b.perSignup})
                   </span>
                   <span className="font-medium text-foreground">{fmt(b.subtotal)}</span>
                 </div>
@@ -126,15 +134,19 @@ export function CommissionCalculator() {
 
         <div className="border-t border-border pt-4">
           <p className="text-xs font-semibold text-foreground uppercase tracking-wide mb-2">
-            Tier ladder (lifetime signups)
+            {t('aff_comp.calc.tier_ladder')}
           </p>
           <div className="space-y-1 text-xs">
-            {PUBLIC_TIER_LADDER.map((t) => (
-              <div key={t.tier} className="flex justify-between">
+            {PUBLIC_TIER_LADDER.map((row) => (
+              <div key={row.tier} className="flex justify-between">
                 <span className="text-muted-foreground">
-                  {t.label} &middot; signups {t.range}
+                  {t(`aff_comp.tier.${row.tier}.label`)} &middot; {t('aff_comp.calc.signups_dot')}{' '}
+                  {row.range}
                 </span>
-                <span className="font-semibold text-foreground">£{t.commissionGbp}/signup</span>
+                <span className="font-semibold text-foreground">
+                  £{row.commissionGbp}
+                  {t('aff_comp.calc.per_signup_suffix')}
+                </span>
               </div>
             ))}
           </div>

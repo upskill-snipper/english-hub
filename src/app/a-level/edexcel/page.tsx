@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ALevelBoardHub } from '@/app/a-level/_components/BoardHub'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'Pearson Edexcel A-Level English — The English Hub',
@@ -9,13 +10,16 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-export default function EdexcelALevelHubPage() {
+export default async function EdexcelALevelHubPage() {
+  const boardName = await t('alevel.edexcel.board_name')
+  const summary = await t('alevel.edexcel.summary')
+
   return (
     <ALevelBoardHub
-      boardName="Pearson Edexcel A-Level English"
+      boardName={boardName}
       examCode="9ET0 / 9EN0"
       hubSlug="edexcel"
-      summary="Pearson Edexcel A-Level covers English Literature (9ET0) and Language (9EN0). Students tackle Shakespeare and drama, post-2000 poetry and prose, modernist texts, and a comparative independent study."
+      summary={summary}
     />
   )
 }

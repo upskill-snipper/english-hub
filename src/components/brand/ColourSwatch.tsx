@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { t } from '@/lib/i18n/t'
 
 type Props = {
   hex: string
@@ -12,11 +13,19 @@ type Props = {
 /**
  * Single colour chip for the /brand palette section. Shows the hex value,
  * the British semantic name, the design-token identifier, and a short
- * usage note.
+ * usage note. The colour name, design-token id, and hex value are all
+ * pulled from props (the call site applies any `brand.palette.*` lookups
+ * via `await t()` before passing them in); this component only owns the
+ * surrounding chrome strings (the screen-reader label).
  */
-export function ColourSwatch({ hex, name, token, usage, lightChip = false }: Props) {
+export async function ColourSwatch({ hex, name, token, usage, lightChip = false }: Props) {
+  const swatchLabel = await t('brand.colour.aria_swatch')
   return (
-    <div className="rounded-xl border border-border/40 overflow-hidden bg-card/40">
+    <div
+      className="rounded-xl border border-border/40 overflow-hidden bg-card/40"
+      role="group"
+      aria-label={`${swatchLabel}: ${name} (${hex})`}
+    >
       <div
         className={cn(
           'aspect-[5/3] w-full flex items-end p-4',

@@ -14,6 +14,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 import {
   ArrowLeft,
   Mail,
@@ -66,6 +67,7 @@ interface TestResponse {
 }
 
 export default function EmailDiagnosticsPage() {
+  const t = useT()
   const [status, setStatus] = useState<StatusResponse | null>(null)
   const [statusLoading, setStatusLoading] = useState(true)
   const [statusError, setStatusError] = useState<string | null>(null)
@@ -90,7 +92,7 @@ export default function EmailDiagnosticsPage() {
       }
       setStatus(data)
     } catch (err) {
-      setStatusError(err instanceof Error ? err.message : 'Unknown error')
+      setStatusError(err instanceof Error ? err.message : t('admin.email.unknown_error'))
     } finally {
       setStatusLoading(false)
     }
@@ -115,7 +117,7 @@ export default function EmailDiagnosticsPage() {
       setTestResult({
         ok: false,
         reason: 'network',
-        detail: err instanceof Error ? err.message : 'Unknown error',
+        detail: err instanceof Error ? err.message : t('admin.email.unknown_error'),
       })
     } finally {
       setTestLoading(false)
@@ -134,13 +136,13 @@ export default function EmailDiagnosticsPage() {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to admin
+          {t('admin.back_to_admin')}
         </Link>
 
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
             <Mail className="w-7 h-7 text-primary" />
-            <h1 className="text-3xl font-bold text-foreground">Email Diagnostics</h1>
+            <h1 className="text-3xl font-bold text-foreground">{t('admin.email.title')}</h1>
           </div>
           <button
             onClick={loadStatus}
@@ -148,18 +150,20 @@ export default function EmailDiagnosticsPage() {
             className="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors disabled:opacity-50"
           >
             <RefreshCw className={`w-4 h-4 ${statusLoading ? 'animate-spin' : ''}`} />
-            Refresh
+            {t('admin.refresh')}
           </button>
         </div>
 
         {/* ── Resend domain status ───────────────────────────────── */}
         <section className="bg-card border border-border rounded-xl p-6 mb-6">
-          <h2 className="text-lg font-semibold text-foreground mb-4">Resend domain status</h2>
+          <h2 className="text-lg font-semibold text-foreground mb-4">
+            {t('admin.email.domain_status')}
+          </h2>
 
           {statusLoading && (
             <div className="flex items-center gap-2 text-muted-foreground text-sm">
               <Loader2 className="w-4 h-4 animate-spin" />
-              Calling Resend API...
+              {t('admin.email.calling_api')}
             </div>
           )}
 
@@ -193,16 +197,16 @@ export default function EmailDiagnosticsPage() {
               {target && target.records && target.records.length > 0 && (
                 <details className="text-sm" open={!isVerified}>
                   <summary className="cursor-pointer text-muted-foreground hover:text-foreground">
-                    DNS records ({target.records.length})
+                    {t('admin.email.dns_records')} ({target.records.length})
                   </summary>
                   <div className="overflow-x-auto mt-3">
                     <table className="w-full text-xs">
                       <thead>
                         <tr className="border-b border-border text-left text-muted-foreground">
-                          <th className="pb-2 pr-3 font-medium">Status</th>
-                          <th className="pb-2 pr-3 font-medium">Type</th>
-                          <th className="pb-2 pr-3 font-medium">Name</th>
-                          <th className="pb-2 pr-3 font-medium">Value</th>
+                          <th className="pb-2 pr-3 font-medium">{t('admin.email.col.status')}</th>
+                          <th className="pb-2 pr-3 font-medium">{t('admin.email.col.type')}</th>
+                          <th className="pb-2 pr-3 font-medium">{t('admin.email.col.name')}</th>
+                          <th className="pb-2 pr-3 font-medium">{t('admin.email.col.value')}</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-border">
@@ -216,7 +220,7 @@ export default function EmailDiagnosticsPage() {
                                     : 'bg-amber-500/10 text-amber-400'
                                 }`}
                               >
-                                {r.status ?? 'unknown'}
+                                {r.status ?? t('admin.email.status_unknown')}
                               </span>
                             </td>
                             <td className="py-2 pr-3 font-mono">{r.type}</td>
@@ -241,17 +245,15 @@ export default function EmailDiagnosticsPage() {
 
         {/* ── Send test email ───────────────────────────────────── */}
         <section className="bg-card border border-border rounded-xl p-6 mb-6">
-          <h2 className="text-lg font-semibold text-foreground mb-4">Send test email</h2>
-          <p className="text-sm text-muted-foreground mb-4">
-            Sends a "Test from The English Hub" email via the same Resend wrapper used by the app.
-            If the domain isn't verified yet, Resend will accept the call but most inboxes will
-            reject delivery — try sending to the Resend account holder's address first.
-          </p>
+          <h2 className="text-lg font-semibold text-foreground mb-4">
+            {t('admin.email.send_test_title')}
+          </h2>
+          <p className="text-sm text-muted-foreground mb-4">{t('admin.email.send_test_body')}</p>
 
           <form onSubmit={sendTest} className="space-y-3">
             <div>
               <label className="block text-xs text-muted-foreground mb-1" htmlFor="email-to">
-                Recipient email
+                {t('admin.email.recipient_label')}
               </label>
               <input
                 id="email-to"
@@ -259,20 +261,20 @@ export default function EmailDiagnosticsPage() {
                 required
                 value={testTo}
                 onChange={(e) => setTestTo(e.target.value)}
-                placeholder="you@example.com"
+                placeholder={t('admin.email.recipient_placeholder')}
                 className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:border-primary"
               />
             </div>
             <div>
               <label className="block text-xs text-muted-foreground mb-1" htmlFor="email-token">
-                x-admin-token (optional — only if ADMIN_DIAGNOSTIC_TOKEN is set on the server)
+                {t('admin.email.token_label')}
               </label>
               <input
                 id="email-token"
                 type="password"
                 value={testToken}
                 onChange={(e) => setTestToken(e.target.value)}
-                placeholder="leave blank if not configured"
+                placeholder={t('admin.email.token_placeholder')}
                 className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:border-primary"
               />
             </div>
@@ -286,7 +288,7 @@ export default function EmailDiagnosticsPage() {
               ) : (
                 <Send className="w-4 h-4" />
               )}
-              Send test
+              {t('admin.email.send_test')}
             </button>
           </form>
 
@@ -300,15 +302,20 @@ export default function EmailDiagnosticsPage() {
             >
               {testResult.ok ? (
                 <>
-                  <div className="font-medium">Sent.</div>
+                  <div className="font-medium">{t('admin.email.sent')}</div>
                   <div className="text-xs mt-1">
-                    Resend message ID: <span className="font-mono">{testResult.messageId}</span>
+                    {t('admin.email.resend_msg_id')}{' '}
+                    <span className="font-mono">{testResult.messageId}</span>
                   </div>
-                  <div className="text-xs">Delivered to: {testResult.to}</div>
+                  <div className="text-xs">
+                    {t('admin.email.delivered_to')} {testResult.to}
+                  </div>
                 </>
               ) : (
                 <>
-                  <div className="font-medium">Failed: {testResult.reason}</div>
+                  <div className="font-medium">
+                    {t('admin.email.failed_prefix')} {testResult.reason}
+                  </div>
                   {testResult.hint && <div className="text-xs mt-1">{testResult.hint}</div>}
                   {testResult.detail && (
                     <div className="text-xs mt-1 font-mono break-all opacity-80">
@@ -324,17 +331,15 @@ export default function EmailDiagnosticsPage() {
         {/* ── Runbook ───────────────────────────────────────────── */}
         <section className="bg-card border border-border rounded-xl p-6">
           <h2 className="text-lg font-semibold text-foreground mb-4">
-            Runbook: sign-up email not arriving
+            {t('admin.email.runbook_title')}
           </h2>
           <ol className="text-sm text-foreground space-y-3 list-decimal list-inside">
             <li>
-              <strong>Verify the sending domain.</strong> Status above must read VERIFIED. If
-              PENDING or FAILED, add the DNS records below at Cloudflare (the most likely root
-              cause).
+              <strong>{t('admin.email.runbook.1_strong')}</strong> {t('admin.email.runbook.1_body')}
             </li>
             <li>
-              <strong>Resend free-tier sandbox.</strong> Until the domain is verified, Resend only
-              delivers to the Resend account holder's verified email. Sign in at{' '}
+              <strong>{t('admin.email.runbook.2_strong')}</strong>{' '}
+              {t('admin.email.runbook.2_body_pre')}{' '}
               <a
                 className="text-primary underline"
                 href="https://resend.com/domains"
@@ -346,8 +351,8 @@ export default function EmailDiagnosticsPage() {
               .
             </li>
             <li>
-              <strong>Send a test above</strong> to the founder's own inbox. Inspect Resend
-              dashboard{' '}
+              <strong>{t('admin.email.runbook.3_strong')}</strong>{' '}
+              {t('admin.email.runbook.3_body_pre')}{' '}
               <a
                 className="text-primary underline"
                 href="https://resend.com/emails"
@@ -356,26 +361,22 @@ export default function EmailDiagnosticsPage() {
               >
                 /emails
               </a>{' '}
-              for delivery status.
+              {t('admin.email.runbook.3_body_post')}
             </li>
             <li>
-              <strong>Check Supabase Auth logs.</strong> Project &rarr; Logs &rarr; "auth" — search
-              for the user's email; look for "smtp" / "send" entries. If empty, Supabase didn't even
-              attempt a send and SMTP credentials probably weren't saved cleanly.
+              <strong>{t('admin.email.runbook.4_strong')}</strong> {t('admin.email.runbook.4_body')}
             </li>
             <li>
-              <strong>Check Supabase SMTP settings.</strong> Auth &rarr; SMTP Settings:
+              <strong>{t('admin.email.runbook.5_strong')}</strong> {t('admin.email.runbook.5_body')}
               <span className="block ml-4 mt-1 font-mono text-xs text-muted-foreground">
                 host=smtp.resend.com · port=587 · username=resend · sender=noreply@theenglishhub.app
               </span>
             </li>
             <li>
-              <strong>Confirm "Confirm email" is ON</strong> in Auth &rarr; Providers &rarr; Email.
-              If disabled, no verification email is ever generated.
+              <strong>{t('admin.email.runbook.6_strong')}</strong> {t('admin.email.runbook.6_body')}
             </li>
             <li>
-              <strong>Last resort.</strong> Check the recipient's spam/junk folder. Until DKIM is
-              verified, Gmail and Outlook aggressively junk anything from theenglishhub.app.
+              <strong>{t('admin.email.runbook.7_strong')}</strong> {t('admin.email.runbook.7_body')}
             </li>
           </ol>
         </section>
@@ -383,11 +384,10 @@ export default function EmailDiagnosticsPage() {
         {/* ── DNS records ───────────────────────────────────────── */}
         <section className="bg-card border border-border rounded-xl p-6 mt-6">
           <h2 className="text-lg font-semibold text-foreground mb-4">
-            Cloudflare DNS records for theenglishhub.app
+            {t('admin.email.dns_title')}
           </h2>
           <p className="text-sm text-muted-foreground mb-4">
-            Add these in Cloudflare DNS. Resend itself is the source of truth for the two DKIM
-            CNAMEs — copy them from{' '}
+            {t('admin.email.dns_body_pre')}{' '}
             <a
               className="text-primary underline"
               href="https://resend.com/domains"
@@ -396,19 +396,19 @@ export default function EmailDiagnosticsPage() {
             >
               resend.com/domains
             </a>{' '}
-            after adding theenglishhub.app there.{' '}
-            <strong>Set proxy status to DNS-only (grey cloud)</strong> for every record.
+            {t('admin.email.dns_body_post')} <strong>{t('admin.email.dns_body_strong')}</strong>{' '}
+            {t('admin.email.dns_body_for_every')}
           </p>
 
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
                 <tr className="border-b border-border text-left text-muted-foreground">
-                  <th className="pb-2 pr-3 font-medium">#</th>
-                  <th className="pb-2 pr-3 font-medium">Type</th>
-                  <th className="pb-2 pr-3 font-medium">Name</th>
-                  <th className="pb-2 pr-3 font-medium">Value</th>
-                  <th className="pb-2 font-medium">Purpose</th>
+                  <th className="pb-2 pr-3 font-medium">{t('admin.email.col.num')}</th>
+                  <th className="pb-2 pr-3 font-medium">{t('admin.email.col.type')}</th>
+                  <th className="pb-2 pr-3 font-medium">{t('admin.email.col.name')}</th>
+                  <th className="pb-2 pr-3 font-medium">{t('admin.email.col.value')}</th>
+                  <th className="pb-2 font-medium">{t('admin.email.col.purpose')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border text-foreground align-top">
@@ -419,25 +419,25 @@ export default function EmailDiagnosticsPage() {
                   <td className="py-2 pr-3 font-mono break-all">
                     v=spf1 include:_spf.resend.com ~all
                   </td>
-                  <td className="py-2 text-muted-foreground">SPF</td>
+                  <td className="py-2 text-muted-foreground">{t('admin.email.dns.spf')}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-3">2</td>
                   <td className="py-2 pr-3 font-mono">CNAME</td>
                   <td className="py-2 pr-3 font-mono">resend._domainkey</td>
                   <td className="py-2 pr-3 font-mono break-all opacity-70">
-                    (value shown in Resend dashboard — copy verbatim)
+                    {t('admin.email.dns.dkim_value_placeholder')}
                   </td>
-                  <td className="py-2 text-muted-foreground">DKIM #1</td>
+                  <td className="py-2 text-muted-foreground">{t('admin.email.dns.dkim1')}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-3">3</td>
                   <td className="py-2 pr-3 font-mono">CNAME</td>
                   <td className="py-2 pr-3 font-mono">resend2._domainkey</td>
                   <td className="py-2 pr-3 font-mono break-all opacity-70">
-                    (value shown in Resend dashboard — copy verbatim)
+                    {t('admin.email.dns.dkim_value_placeholder')}
                   </td>
-                  <td className="py-2 text-muted-foreground">DKIM #2</td>
+                  <td className="py-2 text-muted-foreground">{t('admin.email.dns.dkim2')}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-3">4</td>
@@ -446,16 +446,13 @@ export default function EmailDiagnosticsPage() {
                   <td className="py-2 pr-3 font-mono break-all">
                     v=DMARC1; p=none; rua=mailto:dmarc@theenglishhub.app
                   </td>
-                  <td className="py-2 text-muted-foreground">DMARC</td>
+                  <td className="py-2 text-muted-foreground">{t('admin.email.dns.dmarc')}</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p className="text-xs text-muted-foreground mt-4">
-            After adding the records, wait ~5 minutes and click "Verify DNS records" inside Resend.
-            The Refresh button above will re-check live status.
-          </p>
+          <p className="text-xs text-muted-foreground mt-4">{t('admin.email.dns_footer')}</p>
         </section>
       </div>
     </div>

@@ -2807,6 +2807,314 @@ export const DICTIONARY: Dictionary = {
   },
   'account.delete_account': { en: 'Delete My Account', ar: 'احذف حسابي' },
   'account.deleting': { en: 'Deleting...', ar: 'يحذف…' },
+
+  // ── /account/billing ────────────────────────────────────────────────
+  'account.back_to_account': { en: 'Back to account', ar: 'رجوع للحساب' },
+  'account.billing.title': { en: 'Billing & Subscription', ar: 'الفواتير والاشتراك' },
+  'account.billing.verify_email_title': {
+    en: 'Verify your email before upgrading',
+    ar: 'وثّق إيميلك قبل لا ترقّي',
+  },
+  'account.billing.verify_email_prefix': {
+    en: 'We’ve sent a fresh link to',
+    ar: 'أبغى أقولّك إنّا رسّلنا رابط جديد لـ',
+  },
+  'account.billing.verify_email_suffix': {
+    en: 'Confirm it and come back to finish checkout.',
+    ar: 'أكّده وارجع تكمّل عملية الدفع.',
+  },
+  'account.billing.verify_email_fallback': { en: 'your inbox', ar: 'بريدك' },
+  'account.billing.resend_now': { en: 'Resend now', ar: 'رسّل من جديد الحين' },
+  'account.billing.past_due_title': { en: 'Payment failed', ar: 'الدفعة ما مشت' },
+  'account.billing.past_due_body': {
+    en: 'We were unable to process your last payment. Please update your payment method to keep your Premium access.',
+    ar: 'ما قدرنا نمشّي آخر دفعة. حدّث طريقة الدفع عشان تحتفظ بدخولك الپريميوم.',
+  },
+  'account.billing.update_payment_method': {
+    en: 'Update payment method',
+    ar: 'حدّث طريقة الدفع',
+  },
+  'account.billing.current_plan': { en: 'Current Plan', ar: 'خطتك الحالية' },
+  'account.billing.plan_premium': { en: 'Premium', ar: 'پريميوم' },
+  'account.billing.plan_premium_cancelled': {
+    en: 'Premium (Cancelled)',
+    ar: 'پريميوم (ملغية)',
+  },
+  'account.billing.plan_free': { en: 'Free', ar: 'مجاني' },
+  'account.billing.renews': { en: 'Renews', ar: 'يتجدّد' },
+  'account.billing.access_until': { en: 'Access until', ar: 'الدخول لين' },
+  'account.billing.loading': { en: 'Loading...', ar: 'لحظة…' },
+  'account.billing.manage_subscription': {
+    en: 'Manage Subscription',
+    ar: 'دير اشتراكك',
+  },
+  'account.billing.upgrade_blurb': {
+    en: 'Upgrade to Premium for unlimited access to all courses, practice papers, and premium features.',
+    ar: 'رقّي لپريميوم وادخل بلا حدود على كل الكورسات وأوراق التدريب ومزايا الپريميوم.',
+  },
+  'account.billing.early_access': { en: 'Early Access', ar: 'دخول مبكّر' },
+  'account.billing.student': { en: 'Student', ar: 'طالب' },
+  'account.billing.teacher': { en: 'Teacher', ar: 'معلم' },
+  'account.billing.per_month': { en: '/month', ar: '/شهر' },
+  'account.billing.or_per_year_prefix': { en: 'or', ar: 'أو' },
+  'account.billing.per_year': { en: '/year', ar: '/سنة' },
+  'account.billing.standard': { en: 'Standard', ar: 'السعر العادي' },
+  'account.billing.from_date_prefix': { en: 'from', ar: 'من تاريخ' },
+  'account.billing.feature_all_courses': {
+    en: 'All courses included',
+    ar: 'كل الكورسات داخلة',
+  },
+  'account.billing.feature_three_free_uses': {
+    en: '3 free uses per feature',
+    ar: '٣ استخدامات ببلاش لكل ميزة',
+  },
+  'account.billing.feature_cancel_anytime': {
+    en: 'Cancel anytime',
+    ar: 'تلغي وقت ما تبي',
+  },
+  'account.billing.feature_everything_in_student': {
+    en: 'Everything in Student',
+    ar: 'كل اللي بخطة الطالب',
+  },
+  'account.billing.feature_ai_lesson_builder': {
+    en: 'AI Lesson Builder',
+    ar: 'بناء الدروس بالذكاء الاصطناعي',
+  },
+  'account.billing.feature_student_analytics': {
+    en: 'Student Analytics',
+    ar: 'تحليلات الطلبة',
+  },
+  'account.billing.upgrade_student': { en: 'Upgrade Student', ar: 'رقّي خطة الطالب' },
+  'account.billing.upgrade_teacher': { en: 'Upgrade Teacher', ar: 'رقّي خطة المعلم' },
+  'account.billing.course_purchases': { en: 'Course Purchases', ar: 'مشتريات الكورسات' },
+  'account.billing.no_purchases': {
+    en: 'You have not purchased any individual courses yet.',
+    ar: 'ما اشتريت أي كورس لحد الحين.',
+  },
+  'account.billing.enrolled': { en: 'Enrolled', ar: 'مسجّل' },
+  'account.billing.payment_subscription': { en: 'Subscription', ar: 'اشتراك' },
+  'account.billing.payment_one_time': { en: 'Purchased', ar: 'مشتراة' },
+  'account.billing.payment_free': { en: 'Free', ar: 'ببلاش' },
+  'account.billing.err_code_annual_only': {
+    en: 'Your code only applies to annual plans — Student Annual or Teacher Annual. Head to the pricing page to upgrade onto an annual plan, or remove the code to continue with this plan at the standard price.',
+    ar: 'كودك يشتغل بس مع الخطط السنوية — خطة الطالب السنوية أو خطة المعلم السنوية. روح صفحة الأسعار ورقّي على خطة سنوية، أو شيل الكود وكمّل بهذي الخطة بالسعر العادي.',
+  },
+  'account.billing.err_code_generic': {
+    en: "We couldn't apply that code right now. Please try again.",
+    ar: 'ما قدرنا نطبّق الكود الحين. جرّب مرة ثانية لو سمحت.',
+  },
+  'account.billing.err_code_apply_failed': {
+    en: 'Something went wrong applying the code. Please try again.',
+    ar: 'صار في خطأ وإحنا نطبّق الكود. جرّب مرة ثانية لو سمحت.',
+  },
+  'account.billing.err_checkout_failed': {
+    en: 'Failed to create checkout session.',
+    ar: 'ما قدرنا نفتح صفحة الدفع.',
+  },
+  'account.billing.err_generic': {
+    en: 'Something went wrong. Please try again.',
+    ar: 'صار في خطأ. جرّب مرة ثانية لو سمحت.',
+  },
+  'account.billing.err_portal_failed': {
+    en: 'Failed to open billing portal.',
+    ar: 'ما قدرنا نفتح بوّابة الفواتير.',
+  },
+
+  // ── /account/data-export ────────────────────────────────────────────
+  'account.export.title': { en: 'Download my data', ar: 'نزّل بياناتي' },
+  'account.export.subtitle': {
+    en: 'Get a copy of everything we hold about you — yours to keep, share, or move somewhere else.',
+    ar: 'احصل على نسخة من كل اللي عندنا عنك — لك إنت، تحتفظ فيها أو ترسلها أو تنقلها وين ما تبي.',
+  },
+  'account.export.what_in_file': { en: 'What’s in your file?', ar: 'شنو في ملفك؟' },
+  'account.export.bundle_intro': {
+    en: 'We’ll bundle everything into one JSON file so you can read it, save it, or send it to another service. It includes:',
+    ar: 'بنحط كل شي في ملف JSON واحد عشان تقدر تقراه أو تحفظه أو ترسله لخدمة ثانية. فيه:',
+  },
+  'account.export.bullet_profile': {
+    en: 'Your profile (name, email, year group, country)',
+    ar: 'ملفك الشخصي (الاسم، الإيميل، السنة الدراسية، الدولة)',
+  },
+  'account.export.bullet_board': {
+    en: 'The exam board you chose',
+    ar: 'بورد الامتحان اللي اخترته',
+  },
+  'account.export.bullet_scores': {
+    en: 'Quiz scores and game scores',
+    ar: 'نتائج الكويزات والألعاب',
+  },
+  'account.export.bullet_marking': {
+    en: 'Marking history (essays you submitted and the feedback)',
+    ar: 'سجل التصحيح (المقالات اللي سلّمتها والملاحظات عليها)',
+  },
+  'account.export.bullet_consent': {
+    en: 'Your consent choices (cookies, marketing, AI training)',
+    ar: 'اختياراتك للموافقات (الكوكيز، الإعلانات، تدريب الذكاء الاصطناعي)',
+  },
+  'account.export.bullet_requests': {
+    en: 'A record of past data requests',
+    ar: 'سجل بطلبات البيانات السابقة',
+  },
+  'account.export.success': {
+    en: 'Done — check your downloads folder for the JSON file.',
+    ar: 'خلصت — شوف مجلّد التنزيلات وبتلقى ملف JSON.',
+  },
+  'account.export.button': { en: 'Download my data', ar: 'نزّل بياناتي' },
+  'account.export.button_preparing': {
+    en: 'Preparing your file…',
+    ar: 'نجهّز ملفك… لحظة',
+  },
+  'account.export.rate_limit_note': {
+    en: 'You can download your data once every hour.',
+    ar: 'تقدر تنزّل بياناتك مرة وحدة كل ساعة.',
+  },
+  'account.export.legal_basis_heading': {
+    en: 'Why we let you do this',
+    ar: 'ليش نخلّيك تسوّي هذا',
+  },
+  'account.export.legal_basis_body': {
+    en: 'UK GDPR gives you the right to a copy of your personal data (Article 15) and the right to take it with you in a portable format (Article 20). This page exists so you don’t have to email anyone — your data, your choice.',
+    ar: 'نظام GDPR البريطاني يعطيك الحق إنك تاخذ نسخة من بياناتك الشخصية (المادة ١٥) والحق إنك تنقلها معك بصيغة قابلة للنقل (المادة ٢٠). الصفحة هذي موجودة عشان ما تحتاج ترسل إيميل لأحد — بياناتك، واختيارك.',
+  },
+  'account.export.under13_heading': {
+    en: 'What about under-13 accounts?',
+    ar: 'شلون مع حسابات اللي تحت ١٣ سنة؟',
+  },
+  'account.export.under13_body_prefix': {
+    en: 'If you’re under 13, your parent or guardian downloads your data on your behalf from the',
+    ar: 'لو إنت تحت ١٣، أهلك أو وليّك ينزّل بياناتك عنك من',
+  },
+  'account.export.under13_link_text': {
+    en: 'parent data export page',
+    ar: 'صفحة تنزيل بيانات الأهل',
+  },
+  'account.export.under13_body_suffix': {
+    en: '. That’s a Children’s Code requirement — the grown-up holds the keys until you’re old enough to do it yourself.',
+    ar: '. هذا شرط من قانون الأطفال — الكبير يمسك المفاتيح لين تكبر وتسوّيها بنفسك.',
+  },
+  'account.export.err_generic': {
+    en: 'Something went wrong while preparing your data.',
+    ar: 'صار في خطأ وإحنا نجهّز بياناتك.',
+  },
+  'account.export.err_rate_limit': {
+    en: 'You can only download your data once an hour. Please try again later.',
+    ar: 'تقدر تنزّل بياناتك مرة وحدة بالساعة. جرّب بعدين لو سمحت.',
+  },
+  'account.export.err_unauth': {
+    en: 'Please sign in again to download your data.',
+    ar: 'سجّل دخول من جديد عشان تنزّل بياناتك.',
+  },
+  'account.export.err_network': {
+    en: 'We couldn’t reach the server. Check your connection and try again.',
+    ar: 'ما قدرنا نوصل للسيرفر. شوف اتصالك وجرّب مرة ثانية.',
+  },
+
+  // ── /account/delete (full erasure page) ─────────────────────────────
+  'account.delete.title': { en: 'Delete my account', ar: 'احذف حسابي' },
+  'account.delete.subtitle': {
+    en: 'You can ask us to remove your account and personal data at any time. This page walks you through what happens next.',
+    ar: 'تقدر تطلب منّا نشيل حسابك وبياناتك الشخصية وقت ما تبي. الصفحة هذي بتشرح لك شنو يصير بعدين.',
+  },
+  'account.delete.what_gets_deleted': {
+    en: 'What gets deleted',
+    ar: 'شنو يتحذف',
+  },
+  'account.delete.bullet_profile_label': { en: 'Your profile', ar: 'ملفك الشخصي' },
+  'account.delete.bullet_profile_body': {
+    en: ' — name, email, school, year group, exam board, password.',
+    ar: ' — الاسم، الإيميل، المدرسة، السنة الدراسية، بورد الامتحان، الرمز السري.',
+  },
+  'account.delete.bullet_scores_label': {
+    en: 'Your scores and grades',
+    ar: 'نتائجك ودرجاتك',
+  },
+  'account.delete.bullet_scores_body': {
+    en: ' — every quiz attempt, predicted grade, and progress record tied to your account.',
+    ar: ' — كل محاولات الكويزات والدرجات المتوقعة وسجل التقدّم المرتبط بحسابك.',
+  },
+  'account.delete.bullet_essays_label': {
+    en: 'Your essay history',
+    ar: 'سجل مقالاتك',
+  },
+  'account.delete.bullet_essays_body': {
+    en: ' — essays you submitted, AI feedback, and saved drafts.',
+    ar: ' — المقالات اللي سلّمتها، ملاحظات الذكاء الاصطناعي، والمسوّدات المحفوظة.',
+  },
+  'account.delete.aggregate_label': {
+    en: 'Aggregate analytics',
+    ar: 'التحليلات الإجمالية',
+  },
+  'account.delete.aggregate_body_prefix': {
+    en: ' (e.g. “how many users completed Lesson 3 this month”) are kept in ',
+    ar: ' (مثل: «كم مستخدم خلّص الدرس ٣ هذا الشهر») نحتفظ فيها بشكل ',
+  },
+  'account.delete.aggregate_anonymised': { en: 'anonymised', ar: 'مجهول الهوية' },
+  'account.delete.aggregate_body_suffix': {
+    en: ' form so we can keep improving the product. They cannot be linked back to you. Payment records are kept separately for 7 years where HMRC requires it.',
+    ar: ' عشان نقدر نطوّر المنتج. ما تقدر ترجع لك. سجلات الدفع نحتفظ فيها لمدة ٧ سنوات لو طلبتها HMRC.',
+  },
+  'account.delete.grace_heading': {
+    en: '30-day grace period',
+    ar: 'فترة سماح ٣٠ يوم',
+  },
+  'account.delete.grace_body_prefix': {
+    en: 'We hold your data for ',
+    ar: 'إحنا نحتفظ ببياناتك ',
+  },
+  'account.delete.grace_30_days': { en: '30 days', ar: '٣٠ يوم' },
+  'account.delete.grace_body_suffix': {
+    en: ' before permanently deleting it. During that time you can email ',
+    ar: ' قبل لا نحذفها بشكل نهائي. خلال هالفترة تقدر ترسل إيميل لـ ',
+  },
+  'account.delete.grace_restore_tail': {
+    en: ' and we’ll restore your account.',
+    ar: ' وبنرجّع حسابك.',
+  },
+  'account.delete.grace_after_note': {
+    en: 'After 30 days, deletion is permanent and cannot be undone.',
+    ar: 'بعد ٣٠ يوم، الحذف يصير نهائي وما تقدر ترجع عنه.',
+  },
+  'account.delete.confirm_heading': { en: 'Confirm deletion', ar: 'أكّد الحذف' },
+  'account.delete.type_to_confirm': {
+    en: 'Please type DELETE in the confirmation field to continue.',
+    ar: 'اكتب DELETE في خانة التأكيد عشان تكمّل لو سمحت.',
+  },
+  'account.delete.help_text': {
+    en: 'We require this so accidental clicks can’t delete your account.',
+    ar: 'نطلب هذا عشان ضغطة بالغلط ما تحذف حسابك.',
+  },
+  'account.delete.submit': { en: 'Delete my account', ar: 'احذف حسابي' },
+  'account.delete.submitting': { en: 'Submitting…', ar: 'يرسل… لحظة' },
+  'account.delete.cancel': { en: 'Cancel', ar: 'إلغاء' },
+  'account.delete.err_generic': {
+    en: 'We could not process your request. Please try again or email dpo@theenglishhub.app.',
+    ar: 'ما قدرنا نعالج طلبك. جرّب مرة ثانية أو رسّل إيميل لـ dpo@theenglishhub.app.',
+  },
+  'account.delete.err_network': {
+    en: 'Network error. Please check your connection and try again, or email dpo@theenglishhub.app.',
+    ar: 'في خطأ بالشبكة. شوف اتصالك وجرّب مرة ثانية، أو رسّل إيميل لـ dpo@theenglishhub.app.',
+  },
+  'account.delete.success_heading': {
+    en: 'Account scheduled for deletion',
+    ar: 'حسابك مجدول للحذف',
+  },
+  'account.delete.success_prefix': {
+    en: 'Your English Hub account will be permanently deleted on ',
+    ar: 'حسابك في English Hub بينحذف بشكل نهائي يوم ',
+  },
+  'account.delete.success_suffix_prefix': {
+    en: '. Until then, you can email ',
+    ar: '. لين هالوقت، تقدر ترسل إيميل لـ ',
+  },
+  'account.delete.success_suffix_tail': {
+    en: ' to restore your account.',
+    ar: ' عشان ترجّع حسابك.',
+  },
+  'account.delete.success_signed_out': {
+    en: 'You have been signed out. We’ll send a confirmation email shortly. Returning to the home page…',
+    ar: 'تم تسجيل خروجك. بنرسّل لك إيميل تأكيد بعد لحظة. نرجّعك للصفحة الرئيسية…',
+  },
+
   'grade.now': { en: 'Now', ar: 'الحين' },
   'grade.predicted': { en: 'Predicted', ar: 'المتوقعة' },
   'grade.target': { en: 'Target', ar: 'الهدف' },
@@ -3811,6 +4119,387 @@ export const DICTIONARY: Dictionary = {
   },
   'school.dash.demo.cta': { en: 'View Demo Dashboard', ar: 'شوف لوحة الديمو' },
 
+  // ─── School / Students list ─────────────────────────────────────
+  'school.students.title': { en: 'Students', ar: 'الطلاب' },
+  'school.students.import': { en: 'Import Students', ar: 'استورد الطلاب' },
+  'school.students.add': { en: 'Add Student', ar: 'ضيف طالب' },
+  'school.students.stats.total': { en: 'Total Students', ar: 'إجمالي الطلاب' },
+  'school.students.stats.active_week': { en: 'Active This Week', ar: 'النشطين هالأسبوع' },
+  'school.students.stats.not_active': { en: 'Not Yet Active', ar: 'ما اشتغلوا بعد' },
+  'school.students.stats.suspended': { en: 'Suspended', ar: 'موقوفين' },
+  'school.students.stats.of_total': { en: 'of total', ar: 'من الإجمالي' },
+  'school.students.search_placeholder': {
+    en: 'Search by name or email...',
+    ar: 'دوّر بالاسم أو الإيميل…',
+  },
+  'school.students.filter.year_group': { en: 'Year Group', ar: 'الصف الدراسي' },
+  'school.students.filter.all_years': { en: 'All Years', ar: 'كل الصفوف' },
+  'school.students.filter.status': { en: 'Status', ar: 'الحالة' },
+  'school.students.filter.all_status': { en: 'All Status', ar: 'كل الحالات' },
+  'school.students.filter.class': { en: 'Class', ar: 'الصف' },
+  'school.students.filter.all_classes': { en: 'All Classes', ar: 'كل الصفوف' },
+  'school.students.filter.clear': { en: 'Clear filters', ar: 'امسح الفلاتر' },
+  'school.students.status.active': { en: 'Active', ar: 'نشط' },
+  'school.students.status.inactive': { en: 'Inactive', ar: 'غير نشط' },
+  'school.students.status.suspended': { en: 'Suspended', ar: 'موقوف' },
+  'school.students.col.name': { en: 'Name', ar: 'الاسم' },
+  'school.students.col.email': { en: 'Email', ar: 'الإيميل' },
+  'school.students.col.year': { en: 'Year', ar: 'الصف' },
+  'school.students.col.class': { en: 'Class', ar: 'الصف' },
+  'school.students.col.last_active': { en: 'Last Active', ar: 'آخر نشاط' },
+  'school.students.col.progress': { en: 'Progress', ar: 'التقدّم' },
+  'school.students.col.working_at': { en: 'Working At', ar: 'الدرجة الحالية' },
+  'school.students.col.status': { en: 'Status', ar: 'الحالة' },
+  'school.students.col.actions': { en: 'Actions', ar: 'الإجراءات' },
+  'school.students.col.grade_prefix': { en: 'Grade', ar: 'درجة' },
+  'school.students.relative.never': { en: 'Never', ar: 'أبد' },
+  'school.students.relative.just_now': { en: 'Just now', ar: 'الحين' },
+  'school.students.relative.today': { en: 'Today', ar: 'اليوم' },
+  'school.students.relative.yesterday': { en: 'Yesterday', ar: 'أمس' },
+  'school.students.relative.minutes_suffix': { en: 'minutes ago', ar: 'دقيقة' },
+  'school.students.relative.days_suffix': { en: 'days ago', ar: 'يوم' },
+  'school.students.relative.week_one': { en: '1 week ago', ar: 'أسبوع' },
+  'school.students.relative.weeks_suffix': { en: 'weeks ago', ar: 'أسابيع' },
+  'school.students.relative.month_one': { en: '1 month ago', ar: 'شهر' },
+  'school.students.relative.months_suffix': { en: 'months ago', ar: 'شهر' },
+  'school.students.unassigned': { en: 'Unassigned', ar: 'بدون صف' },
+  'school.students.aria.select_all': { en: 'Select all on page', ar: 'حدّد الكل بالصفحة' },
+  'school.students.aria.select_one': { en: 'Select student', ar: 'حدّد الطالب' },
+  'school.students.aria.clear_search': { en: 'Clear search', ar: 'امسح البحث' },
+  'school.students.aria.clear_selection': { en: 'Clear selection', ar: 'امسح التحديد' },
+  'school.students.aria.prev_page': { en: 'Previous page', ar: 'الصفحة السابقة' },
+  'school.students.aria.next_page': { en: 'Next page', ar: 'الصفحة التالية' },
+  'school.students.aria.student_actions': { en: 'Student actions', ar: 'إجراءات الطالب' },
+  'school.students.action.view_progress': { en: 'View Progress', ar: 'شوف التقدّم' },
+  'school.students.action.move_to_class': { en: 'Move to Class', ar: 'نقل لصف' },
+  'school.students.action.reset_password': { en: 'Reset Password', ar: 'صفّر كلمة السر' },
+  'school.students.action.suspend': { en: 'Suspend', ar: 'وقّف' },
+  'school.students.action.unsuspend': { en: 'Unsuspend', ar: 'فك الإيقاف' },
+  'school.students.action.remove_school': { en: 'Remove from School', ar: 'احذف من المدرسة' },
+  'school.students.action.reset_passwords': { en: 'Reset Passwords', ar: 'صفّر كلمات السر' },
+  'school.students.action.export_selected': { en: 'Export Selected', ar: 'صدّر المحدّد' },
+  'school.students.action.move_students': { en: 'Move Students', ar: 'نقل الطلاب' },
+  'school.students.action.select_class': { en: 'Select a class', ar: 'اختر صف' },
+  'school.students.selected_count': { en: 'selected', ar: 'محدّد' },
+  'school.students.remove.title': { en: 'Remove Student', ar: 'احذف الطالب' },
+  'school.students.remove.body_prefix': {
+    en: 'Are you sure you want to remove',
+    ar: 'متأكد إنك تبي تحذف',
+  },
+  'school.students.remove.body_suffix': {
+    en: 'from your school? This action cannot be undone.',
+    ar: 'من مدرستك؟ ما يمكن ترجع الإجراء.',
+  },
+  'school.students.action.cancel': { en: 'Cancel', ar: 'إلغاء' },
+  'school.students.empty.title': { en: 'No students yet', ar: 'ما عندك طلاب بعد' },
+  'school.students.empty.body': {
+    en: 'Import your students via Excel or share your school join code.',
+    ar: 'استورد الطلاب من إكسل أو شارك كود الانضمام مال مدرستك.',
+  },
+  'school.students.empty.view_join_code': { en: 'View Join Code', ar: 'شوف كود الانضمام' },
+  'school.students.no_filter_results': {
+    en: 'No students match your filters.',
+    ar: 'ما في طلاب يطابقون الفلاتر.',
+  },
+  'school.students.pagination.showing': { en: 'Showing', ar: 'يعرض' },
+  'school.students.pagination.of': { en: 'of', ar: 'من' },
+  'school.students.pagination.students': { en: 'students', ar: 'طالب' },
+  'school.students.detail.back': { en: 'Students', ar: 'الطلاب' },
+  'school.students.detail.module.complete': { en: 'Complete', ar: 'مكتمل' },
+  'school.students.detail.module.in_progress': { en: 'In Progress', ar: 'شغّال عليه' },
+  'school.students.detail.module.not_started': { en: 'Not Started', ar: 'ما بدا' },
+  'school.students.detail.child_ref': { en: 'your child', ar: 'ابنك أو بنتك' },
+
+  // ─── School / Teachers list ─────────────────────────────────────
+  'school.teachers.title': { en: 'Teachers', ar: 'المعلمين' },
+  'school.teachers.import': { en: 'Import Teachers', ar: 'استورد المعلمين' },
+  'school.teachers.invite': { en: 'Invite Teachers', ar: 'ادعُ المعلمين' },
+  'school.teachers.stats.total': { en: 'Total Teachers', ar: 'إجمالي المعلمين' },
+  'school.teachers.stats.active_week': { en: 'Active This Week', ar: 'النشطين هالأسبوع' },
+  'school.teachers.stats.classes_covered': { en: 'Classes Covered', ar: 'الصفوف المغطّاة' },
+  'school.teachers.stats.suspended': { en: 'Suspended', ar: 'موقوفين' },
+  'school.teachers.stats.of_total': { en: 'of total', ar: 'من الإجمالي' },
+  'school.teachers.search_placeholder': {
+    en: 'Search by name or email...',
+    ar: 'دوّر بالاسم أو الإيميل…',
+  },
+  'school.teachers.filter.role': { en: 'Role', ar: 'الدور' },
+  'school.teachers.filter.all_roles': { en: 'All Roles', ar: 'كل الأدوار' },
+  'school.teachers.filter.status': { en: 'Status', ar: 'الحالة' },
+  'school.teachers.filter.all_status': { en: 'All Status', ar: 'كل الحالات' },
+  'school.teachers.filter.clear': { en: 'Clear filters', ar: 'امسح الفلاتر' },
+  'school.teachers.role.teacher': { en: 'Teacher', ar: 'معلم' },
+  'school.teachers.role.head_of_dept': { en: 'Head of Dept', ar: 'رئيس قسم' },
+  'school.teachers.role.head_of_department': { en: 'Head of Department', ar: 'رئيس القسم' },
+  'school.teachers.role.admin': { en: 'Admin', ar: 'إدارة' },
+  'school.teachers.status.active': { en: 'Active', ar: 'نشط' },
+  'school.teachers.status.inactive': { en: 'Inactive', ar: 'غير نشط' },
+  'school.teachers.status.suspended': { en: 'Suspended', ar: 'موقوف' },
+  'school.teachers.col.name': { en: 'Name', ar: 'الاسم' },
+  'school.teachers.col.email': { en: 'Email', ar: 'الإيميل' },
+  'school.teachers.col.role': { en: 'Role', ar: 'الدور' },
+  'school.teachers.col.classes': { en: 'Classes', ar: 'الصفوف' },
+  'school.teachers.col.last_active': { en: 'Last Active', ar: 'آخر نشاط' },
+  'school.teachers.col.status': { en: 'Status', ar: 'الحالة' },
+  'school.teachers.col.actions': { en: 'Actions', ar: 'الإجراءات' },
+  'school.teachers.class_singular': { en: 'class', ar: 'صف' },
+  'school.teachers.class_plural': { en: 'classes', ar: 'صفوف' },
+  'school.teachers.classes_none': { en: 'None', ar: 'ولا شي' },
+  'school.teachers.aria.select_all': { en: 'Select all on page', ar: 'حدّد الكل بالصفحة' },
+  'school.teachers.aria.select_one': { en: 'Select teacher', ar: 'حدّد المعلم' },
+  'school.teachers.aria.clear_search': { en: 'Clear search', ar: 'امسح البحث' },
+  'school.teachers.aria.clear_selection': { en: 'Clear selection', ar: 'امسح التحديد' },
+  'school.teachers.aria.prev_page': { en: 'Previous page', ar: 'الصفحة السابقة' },
+  'school.teachers.aria.next_page': { en: 'Next page', ar: 'الصفحة التالية' },
+  'school.teachers.aria.teacher_actions': { en: 'Teacher actions', ar: 'إجراءات المعلم' },
+  'school.teachers.action.edit': { en: 'Edit Teacher', ar: 'عدّل المعلم' },
+  'school.teachers.action.reset_password': { en: 'Reset Password', ar: 'صفّر كلمة السر' },
+  'school.teachers.action.suspend': { en: 'Suspend', ar: 'وقّف' },
+  'school.teachers.action.unsuspend': { en: 'Unsuspend', ar: 'فك الإيقاف' },
+  'school.teachers.action.remove_school': { en: 'Remove from School', ar: 'احذف من المدرسة' },
+  'school.teachers.action.reset_passwords': { en: 'Reset Passwords', ar: 'صفّر كلمات السر' },
+  'school.teachers.action.export_selected': { en: 'Export Selected', ar: 'صدّر المحدّد' },
+  'school.teachers.selected_count': { en: 'selected', ar: 'محدّد' },
+  'school.teachers.remove.title': { en: 'Remove Teacher', ar: 'احذف المعلم' },
+  'school.teachers.remove.body_prefix': {
+    en: 'Are you sure you want to remove',
+    ar: 'متأكد إنك تبي تحذف',
+  },
+  'school.teachers.remove.body_suffix': {
+    en: 'from your school? Their classes will become unassigned.',
+    ar: 'من مدرستك؟ صفوفه بتنحرر من غير معلم.',
+  },
+  'school.teachers.edit.title': { en: 'Edit Teacher', ar: 'عدّل المعلم' },
+  'school.teachers.edit.role_label': { en: 'Role', ar: 'الدور' },
+  'school.teachers.edit.status_label': { en: 'Status', ar: 'الحالة' },
+  'school.teachers.edit.save': { en: 'Save Changes', ar: 'احفظ التعديلات' },
+  'school.teachers.action.cancel': { en: 'Cancel', ar: 'إلغاء' },
+  'school.teachers.empty.title': { en: 'No teachers yet', ar: 'ما عندك معلمين بعد' },
+  'school.teachers.empty.body': {
+    en: 'Invite your teachers via email or import them from a spreadsheet.',
+    ar: 'ادعِ معلميك بالإيميل أو استوردهم من ملف.',
+  },
+  'school.teachers.no_filter_results': {
+    en: 'No teachers match your filters.',
+    ar: 'ما في معلمين يطابقون الفلاتر.',
+  },
+  'school.teachers.pagination.showing': { en: 'Showing', ar: 'يعرض' },
+  'school.teachers.pagination.of': { en: 'of', ar: 'من' },
+  'school.teachers.pagination.teachers': { en: 'teachers', ar: 'معلم' },
+
+  // ─── School / Classes list ──────────────────────────────────────
+  'school.classes.title': { en: 'Classes', ar: 'الصفوف' },
+  'school.classes.subtitle': {
+    en: 'Manage and monitor your English classes',
+    ar: 'دير وراقب صفوف الإنجليزي مالتك.',
+  },
+  'school.classes.create': { en: 'Create Class', ar: 'سوِّ صف' },
+  'school.classes.create_modal.title': { en: 'Create New Class', ar: 'سوِّ صف يديد' },
+  'school.classes.create_modal.body': {
+    en: 'Set up a new class for your students.',
+    ar: 'جهّز صف يديد لطلابك.',
+  },
+  'school.classes.create_modal.submit': { en: 'Create Class', ar: 'سوِّ الصف' },
+  'school.classes.edit_modal.title': { en: 'Edit Class', ar: 'عدّل الصف' },
+  'school.classes.edit_modal.body': {
+    en: 'Update the details for this class.',
+    ar: 'حدّث تفاصيل الصف.',
+  },
+  'school.classes.edit_modal.submit': { en: 'Save Changes', ar: 'احفظ التعديلات' },
+  'school.classes.delete_modal.title': { en: 'Delete Class', ar: 'احذف الصف' },
+  'school.classes.delete_modal.body_prefix': {
+    en: 'Are you sure you want to delete',
+    ar: 'متأكد إنك تبي تحذف',
+  },
+  'school.classes.delete_modal.body_suffix': {
+    en: '? This action cannot be undone and will remove all associated student enrollments.',
+    ar: '؟ ما يمكن ترجع الإجراء وراح تنحذف كل تسجيلات الطلاب.',
+  },
+  'school.classes.delete_modal.deleting': { en: 'Deleting...', ar: 'يحذف…' },
+  'school.classes.delete_modal.submit': { en: 'Delete Class', ar: 'احذف الصف' },
+  'school.classes.form.name_label': { en: 'Class Name', ar: 'اسم الصف' },
+  'school.classes.form.name_placeholder': {
+    en: 'e.g. Year 10 English - Set 1',
+    ar: 'مثلًا: صف ١٠ إنجليزي - المجموعة ١',
+  },
+  'school.classes.form.year_label': { en: 'Year Group', ar: 'الصف الدراسي' },
+  'school.classes.form.year_placeholder': { en: 'Select year group', ar: 'اختر الصف الدراسي' },
+  'school.classes.form.board_label': { en: 'Exam Board', ar: 'هيئة الامتحان' },
+  'school.classes.form.board_placeholder': { en: 'Select exam board', ar: 'اختر هيئة الامتحان' },
+  'school.classes.form.teacher_label': { en: 'Assign Teacher', ar: 'عيّن معلم' },
+  'school.classes.form.teacher_placeholder': {
+    en: 'Select teacher (optional)',
+    ar: 'اختر المعلم (اختياري)',
+  },
+  'school.classes.form.teacher_loading': { en: 'Loading teachers...', ar: 'يحمّل المعلمين…' },
+  'school.classes.form.year_academic_label': { en: 'Academic Year', ar: 'السنة الدراسية' },
+  'school.classes.form.year_academic_placeholder': {
+    en: 'Select academic year',
+    ar: 'اختر السنة الدراسية',
+  },
+  'school.classes.form.admin_suffix': { en: '(Admin)', ar: '(إدارة)' },
+  'school.classes.form.saving': { en: 'Saving...', ar: 'يحفظ…' },
+  'school.classes.filter.year': { en: 'Year Group', ar: 'الصف الدراسي' },
+  'school.classes.filter.all_years': { en: 'All Year Groups', ar: 'كل الصفوف الدراسية' },
+  'school.classes.filter.board': { en: 'Exam Board', ar: 'هيئة الامتحان' },
+  'school.classes.filter.all_boards': { en: 'All Boards', ar: 'كل الهيئات' },
+  'school.classes.filter.clear': { en: 'Clear filters', ar: 'امسح الفلاتر' },
+  'school.classes.card.students_label': { en: 'students', ar: 'طالب' },
+  'school.classes.card.avg_score': { en: 'Avg Score', ar: 'معدّل العلامات' },
+  'school.classes.card.view': { en: 'View', ar: 'افتح' },
+  'school.classes.card.edit_title': { en: 'Edit class', ar: 'عدّل الصف' },
+  'school.classes.card.delete_title': { en: 'Delete class', ar: 'احذف الصف' },
+  'school.classes.card.last_active.none': { en: 'No activity yet', ar: 'ما في نشاط بعد' },
+  'school.classes.card.last_active.today': { en: 'Active today', ar: 'نشط اليوم' },
+  'school.classes.card.last_active.yesterday': { en: 'Active yesterday', ar: 'نشط أمس' },
+  'school.classes.card.last_active.days_prefix': { en: 'Active', ar: 'نشط من' },
+  'school.classes.card.last_active.days_suffix': { en: 'days ago', ar: 'يوم' },
+  'school.classes.card.last_active.weeks_suffix': { en: 'weeks ago', ar: 'أسابيع' },
+  'school.classes.card.last_active.months_suffix': { en: 'months ago', ar: 'شهر' },
+  'school.classes.error.title': {
+    en: 'Could not load classes. Please try again.',
+    ar: 'ما قدرنا نحمّل الصفوف. حاول مرة ثانية.',
+  },
+  'school.classes.error.retry': { en: 'Try again', ar: 'حاول مرة ثانية' },
+  'school.classes.empty.title': { en: 'No classes created yet', ar: 'ما في صفوف معمولة بعد' },
+  'school.classes.empty.body': {
+    en: 'Create your first class to get started.',
+    ar: 'سوِّ أول صف عشان تبدي.',
+  },
+  'school.classes.empty.cta': { en: 'Create Your First Class', ar: 'سوِّ أول صف' },
+  'school.classes.no_filter_results': {
+    en: 'No classes match your filters.',
+    ar: 'ما في صفوف يطابقون الفلاتر.',
+  },
+  'school.classes.action.cancel': { en: 'Cancel', ar: 'إلغاء' },
+  'school.classes.detail.back': { en: 'Classes', ar: 'الصفوف' },
+  'school.classes.detail.students_suffix': { en: 'students', ar: 'طالب' },
+  'school.classes.detail.assign_work': { en: 'Assign Work', ar: 'كلّف بشغل' },
+  'school.classes.detail.set_homework': { en: 'Set Homework', ar: 'عطِ واجب بيت' },
+  'school.classes.detail.create_assignment': { en: 'Create Assignment', ar: 'سوِّ واجب' },
+  'school.classes.detail.coming_soon_homework': {
+    en: 'Set Homework — coming soon!',
+    ar: 'عطِ واجب بيت — يي قريب!',
+  },
+  'school.classes.detail.coming_soon_assignment': {
+    en: 'Create Assignment — coming soon!',
+    ar: 'سوِّ واجب — يي قريب!',
+  },
+  'school.classes.detail.tab.students': { en: 'Students', ar: 'الطلاب' },
+  'school.classes.detail.tab.analytics': { en: 'Analytics', ar: 'التحليلات' },
+  'school.classes.detail.search_placeholder': { en: 'Search students...', ar: 'دوّر على طالب…' },
+  'school.classes.detail.add_students': { en: 'Add Students', ar: 'ضيف طلاب' },
+  'school.classes.detail.export_csv': { en: 'Export CSV', ar: 'صدّر CSV' },
+  'school.classes.detail.col.name': { en: 'Name', ar: 'الاسم' },
+  'school.classes.detail.col.email': { en: 'Email', ar: 'الإيميل' },
+  'school.classes.detail.col.year': { en: 'Year', ar: 'الصف' },
+  'school.classes.detail.col.last_active': { en: 'Last Active', ar: 'آخر نشاط' },
+  'school.classes.detail.col.progress': { en: 'Progress', ar: 'التقدّم' },
+  'school.classes.detail.col.done': { en: 'Done', ar: 'مكتمل' },
+  'school.classes.detail.unknown': { en: 'Unknown', ar: 'مجهول' },
+  'school.classes.detail.remove': { en: 'Remove', ar: 'احذف' },
+  'school.classes.detail.remove_title': { en: 'Remove from class', ar: 'احذف من الصف' },
+  'school.classes.detail.modules_suffix': { en: 'modules', ar: 'وحدة' },
+  'school.classes.detail.no_in_class': {
+    en: 'No students in this class yet',
+    ar: 'ما في طلاب بالصف بعد',
+  },
+  'school.classes.detail.no_search_match': {
+    en: 'No students match your search',
+    ar: 'ما في طلاب يطابقون البحث',
+  },
+  'school.classes.detail.relative.never': { en: 'Never active', ar: 'أبد ما اشتغل' },
+  'school.classes.detail.relative.today': { en: 'Today', ar: 'اليوم' },
+  'school.classes.detail.relative.yesterday': { en: 'Yesterday', ar: 'أمس' },
+  'school.classes.detail.relative.days_suffix': { en: 'days ago', ar: 'يوم' },
+  'school.classes.detail.relative.weeks_suffix': { en: 'w ago', ar: 'أسبوع' },
+  'school.classes.detail.relative.months_suffix': { en: 'mo ago', ar: 'شهر' },
+  'school.classes.detail.toast.removed': {
+    en: 'Student removed from class',
+    ar: 'الطالب انحذف من الصف',
+  },
+  'school.classes.detail.toast.remove_failed': {
+    en: 'Failed to remove student',
+    ar: 'ما قدرنا نحذف الطالب',
+  },
+  'school.classes.detail.add_modal.title': { en: 'Add Students to Class', ar: 'ضيف طلاب للصف' },
+  'school.classes.detail.add_modal.empty_search': {
+    en: 'No students match your search',
+    ar: 'ما في طلاب يطابقون البحث',
+  },
+  'school.classes.detail.add_modal.empty_all': {
+    en: 'All school students are already in this class',
+    ar: 'كل طلاب المدرسة موجودين بالصف.',
+  },
+  'school.classes.detail.add_modal.footer_select': {
+    en: 'Select students to add',
+    ar: 'حدّد الطلاب اللي تبي تضيفهم',
+  },
+  'school.classes.detail.add_modal.footer_selected': { en: 'selected', ar: 'محدّد' },
+  'school.classes.detail.add_modal.add_selected': { en: 'Add Selected', ar: 'ضيف المحدّد' },
+  'school.classes.detail.add_modal.search_placeholder': {
+    en: 'Search by name or email...',
+    ar: 'دوّر بالاسم أو الإيميل…',
+  },
+  'school.classes.detail.add_modal.toast_added_prefix': { en: 'Added', ar: 'انضافوا' },
+  'school.classes.detail.add_modal.toast_added_singular': {
+    en: 'student to class',
+    ar: 'طالب للصف',
+  },
+  'school.classes.detail.add_modal.toast_added_plural': {
+    en: 'students to class',
+    ar: 'طلاب للصف',
+  },
+  'school.classes.detail.add_modal.toast_failed_suffix': {
+    en: 'student(s) could not be added',
+    ar: 'طالب ما قدرنا نضيفهم',
+  },
+  'school.classes.detail.analytics.avg_score_title': {
+    en: 'Class Average Score',
+    ar: 'معدّل علامات الصف',
+  },
+  'school.classes.detail.analytics.avg_score_sub_one': {
+    en: 'student with quiz data',
+    ar: 'طالب عنده بيانات اختبار',
+  },
+  'school.classes.detail.analytics.avg_score_sub_many': {
+    en: 'students with quiz data',
+    ar: 'طلاب عندهم بيانات اختبار',
+  },
+  'school.classes.detail.analytics.completion_title': {
+    en: 'Assignment Completion',
+    ar: 'إنجاز الواجبات',
+  },
+  'school.classes.detail.analytics.at_risk_title': { en: 'Students at Risk', ar: 'طلاب بخطر' },
+  'school.classes.detail.analytics.at_risk_sub': {
+    en: 'Below 40% or inactive 7+ days',
+    ar: 'أقل من ٤٠٪ أو ما اشتغلوا ٧ أيام+',
+  },
+  'school.classes.detail.analytics.top_performers': { en: 'Top Performers', ar: 'الأفضل أداءً' },
+  'school.classes.detail.analytics.no_quiz_data': {
+    en: 'No quiz data yet',
+    ar: 'ما في بيانات اختبار بعد',
+  },
+  'school.classes.detail.analytics.weekly_activity': {
+    en: 'Weekly Activity (last 4 weeks)',
+    ar: 'النشاط الأسبوعي (آخر ٤ أسابيع)',
+  },
+  'school.classes.detail.analytics.weekly_activity_sub': {
+    en: 'Active students per week (based on last activity)',
+    ar: 'الطلاب النشطين بالأسبوع (حسب آخر نشاط)',
+  },
+  'school.classes.detail.analytics.week.three_ago': { en: '3w ago', ar: 'قبل ٣ أسابيع' },
+  'school.classes.detail.analytics.week.two_ago': { en: '2w ago', ar: 'قبل أسبوعين' },
+  'school.classes.detail.analytics.week.last': { en: 'Last week', ar: 'الأسبوع اللي طاف' },
+  'school.classes.detail.analytics.week.this': { en: 'This week', ar: 'هالأسبوع' },
+  'school.classes.detail.analytics.attention': {
+    en: 'Students Needing Attention',
+    ar: 'طلاب يبون متابعة',
+  },
+  'school.classes.detail.analytics.last_active_prefix': { en: 'Last active:', ar: 'آخر نشاط:' },
+  'school.classes.detail.analytics.badge.low_score': { en: 'Low score', ar: 'علامة واطية' },
+  'school.classes.detail.analytics.badge.inactive': { en: 'Inactive', ar: 'غير نشط' },
+
   // ─── Flashcards / study tools ───────────────────────────────────
   'flash.mode.study': { en: 'Study', ar: 'ادرس' },
   'flash.mode.match': { en: 'Match', ar: 'طابق' },
@@ -4423,6 +5112,405 @@ export const DICTIONARY: Dictionary = {
   'analysis.how_to_use.h2': { en: 'How to use this guide', ar: 'شلون تستخدم الدليل' },
   'analysis.read_analysis': { en: 'Read analysis', ar: 'اقرا التحليل' },
   'analysis.cta.open_revision_hub': { en: 'Open Revision Hub', ar: 'افتح مركز المراجعة' },
+
+  // ─── Analysis hub additions (wired by sub-pages) ─────────────────
+  // Khaleeji: شنو / أبغى / الحين / وايد / دوّر / شوف / إحنا / ببلاش.
+  // Exam codes (AQA, Edexcel, OCR, GCSE) and brand stay Latin.
+  'analysis.hub.eyebrow': { en: 'Analysis library', ar: 'مكتبة التحليل' },
+  'analysis.hub.h1': { en: 'GCSE English Analysis Hub', ar: 'مركز تحليل GCSE English' },
+  'analysis.hub.for_board': { en: 'Filtered for', ar: 'مفلتر لـ' },
+  'analysis.hub.intro': {
+    en: 'In-depth analysis, themed essays and quote-by-quote breakdowns for every GCSE English Literature set text and the Language paper.',
+    ar: 'تحليل عميق ومقالات حول الثيمات وتفكيك الاقتباسات وحدة وحدة لكل نص أدبي مقرر في GCSE English Literature وورقة Language.',
+  },
+  'analysis.hub.section.texts': { en: 'Texts', ar: 'النصوص' },
+  'analysis.hub.section.poetry': { en: 'Poetry', ar: 'الشعر' },
+  'analysis.hub.section.language': { en: 'Language Paper', ar: 'ورقة Language' },
+  'analysis.hub.section.revision': {
+    en: 'Revision and Grade Guides',
+    ar: 'أدلة المراجعة والدرجات',
+  },
+  'analysis.hub.cta.open_analysis': { en: 'Open analysis', ar: 'افتح التحليل' },
+  'analysis.hub.cross.h2': { en: 'Cross-text revision', ar: 'مراجعة شاملة بين النصوص' },
+  'analysis.hub.cross.body': {
+    en: 'Compare characters, themes and quotes across your set texts in one place.',
+    ar: 'قارن الشخصيات والثيمات والاقتباسات بين النصوص المقررة عندك بمكان واحد.',
+  },
+  'analysis.hub.cross.cta': { en: 'Open Revision Hub', ar: 'افتح مركز المراجعة' },
+
+  // ─── Macbeth analysis hub ─────────────────────────────────────────
+  'analysis.macbeth.intro': {
+    en: 'Grade-9 Macbeth analysis from GCSE markers — 15 famous quotations, every major theme and character, and a step-by-step Grade 9 essay guide.',
+    ar: 'تحليل Macbeth بمستوى Grade 9 من مصححي GCSE — ١٥ اقتباس مشهور، كل ثيمة وشخصية رئيسية، ودليل خطوة بخطوة لمقال Grade 9.',
+  },
+  'analysis.macbeth.how_to_use_body': {
+    en: "Start with a quote you'd like to analyse or jump straight to a theme. Each page works as a standalone revision card, and the whole set links back to the full Macbeth revision guide for context.",
+    ar: 'ابدأ باقتباس تبغى تحلّله أو روح مباشرة لثيمة. كل صفحة تشتغل كبطاقة مراجعة مستقلة، وكل المجموعة ترجع لدليل مراجعة Macbeth الكامل عشان السياق.',
+  },
+  'analysis.macbeth.cta.notes': {
+    en: 'Open full Macbeth revision notes',
+    ar: 'افتح ملاحظات مراجعة Macbeth الكاملة',
+  },
+  'analysis.macbeth.quotes.h2': {
+    en: 'Quote-by-quote analysis',
+    ar: 'تحليل الاقتباسات وحدة وحدة',
+  },
+  'analysis.macbeth.quotes.body': {
+    en: 'Fifteen of the most-quoted lines in Macbeth, each unpacked at Grade 9 with method, effect and context notes.',
+    ar: 'خمسطعش من أكثر السطور اللي يتم اقتباسها في Macbeth، كل وحدة مفكَّكة بمستوى Grade 9 مع الأسلوب والأثر والسياق.',
+  },
+  'analysis.macbeth.themes.h2': { en: 'Themes & characters', ar: 'الثيمات والشخصيات' },
+  'analysis.macbeth.themes.body': {
+    en: "Every major theme in Macbeth — ambition, guilt, the supernatural, kingship and gender — plus character studies and Shakespeare's craft.",
+    ar: 'كل ثيمة رئيسية في Macbeth — الطموح، الذنب، الخوارق، الملكية، والنوع — مع دراسات للشخصيات وأسلوب Shakespeare.',
+  },
+  'analysis.macbeth.foot.h2': { en: 'Revise Macbeth in full', ar: 'راجع Macbeth كامل' },
+  'analysis.macbeth.foot.body': {
+    en: 'Move from analysis to revision with the full Macbeth study guide — scene summaries, all key quotes and Grade 9 model answers for every board.',
+    ar: 'انتقل من التحليل للمراجعة مع دليل دراسة Macbeth الكامل — ملخصات المشاهد، كل الاقتباسات المهمة، ونماذج إجابة Grade 9 لكل بورد.',
+  },
+  'analysis.macbeth.foot.cta': { en: 'Open Macbeth revision', ar: 'افتح مراجعة Macbeth' },
+
+  // ─── Jekyll and Hyde analysis hub ─────────────────────────────────
+  'analysis.jekyll.intro': {
+    en: "Stevenson's Gothic novella unpacked — Victorian duality, atavism, repression and the Carew murder, with line-by-line quote analysis and four character studies.",
+    ar: 'رواية Stevenson القوطية الصغيرة مفكَّكة — الازدواجية الفيكتورية، التراجع البدائي، الكبت، وجريمة Carew، مع تحليل سطر بسطر للاقتباسات وأربع دراسات للشخصيات.',
+  },
+  'analysis.jekyll.cta.full_revision': { en: 'Full revision guide', ar: 'دليل المراجعة الكامل' },
+  'analysis.jekyll.cta.notes': { en: 'Revision notes', ar: 'ملاحظات المراجعة' },
+  'analysis.jekyll.quote.h2': {
+    en: 'Quote-by-quote analysis',
+    ar: 'تحليل الاقتباسات وحدة وحدة',
+  },
+  'analysis.jekyll.quote.sub': {
+    en: 'Line-by-line breakdowns of the most-cited passages, ranked by how markers reward them.',
+    ar: 'تفكيك سطر بسطر لأكثر المقاطع استشهاداً، مرتّبة حسب كيف يكافئها المصححون.',
+  },
+  'analysis.jekyll.char.h2': {
+    en: 'Characters, themes & context',
+    ar: 'الشخصيات والثيمات والسياق',
+  },
+  'analysis.jekyll.char.sub': {
+    en: 'Four character studies, four theme essays, Victorian context and a Grade 9 essay guide.',
+    ar: 'أربع دراسات للشخصيات، أربع مقالات حول الثيمات، السياق الفيكتوري، ودليل مقال Grade 9.',
+  },
+  'analysis.jekyll.foot.h2': { en: 'Revise the whole novella', ar: 'راجع الرواية كاملة' },
+  'analysis.jekyll.foot.body': {
+    en: 'Pair this analysis with the full Jekyll and Hyde revision guide — chapter summaries, every key quote and exam-ready essay plans.',
+    ar: 'اجمع هذا التحليل مع دليل مراجعة Jekyll and Hyde الكامل — ملخصات الفصول، كل الاقتباسات المهمة، وخطط مقال جاهزة للامتحان.',
+  },
+  'analysis.jekyll.foot.cta': {
+    en: 'Open Jekyll and Hyde revision',
+    ar: 'افتح مراجعة Jekyll and Hyde',
+  },
+
+  // ─── A Christmas Carol analysis hub ───────────────────────────────
+  'analysis.carol.intro': {
+    en: "Dickens's redemption story unpacked — Victorian poverty, Malthusian doctrine, allegorical ghosts, and the Cratchit family's moral weight.",
+    ar: 'قصة الفداء عند Dickens مفكَّكة — الفقر الفيكتوري، نظرية Malthus، الأشباح الرمزية، والثقل الأخلاقي لعائلة Cratchit.',
+  },
+  'analysis.carol.quotes.h2': { en: 'Key quote analysis', ar: 'تحليل الاقتباسات المهمة' },
+  'analysis.carol.char.h2': {
+    en: 'Characters, themes & context',
+    ar: 'الشخصيات والثيمات والسياق',
+  },
+  'analysis.carol.foot.h2': { en: 'Revise A Christmas Carol', ar: 'راجع A Christmas Carol' },
+  'analysis.carol.foot.body': {
+    en: 'Move from analysis to revision with the full A Christmas Carol revision hub — stave summaries, all key quotes and Grade 9 model answers.',
+    ar: 'انتقل من التحليل للمراجعة مع مركز مراجعة A Christmas Carol الكامل — ملخصات المقاطع، كل الاقتباسات المهمة، ونماذج إجابة Grade 9.',
+  },
+
+  // ─── An Inspector Calls analysis hub ──────────────────────────────
+  'analysis.inspector.h1': { en: 'analysis hub', ar: 'مركز التحليل' },
+  'analysis.inspector.intro': {
+    en: "Priestley's 1945 morality play unpacked for GCSE — collective responsibility, the Inspector's prophetic warning, class, gender and the Birling family's hypocrisy.",
+    ar: 'مسرحية Priestley الأخلاقية مالت ١٩٤٥ مفكَّكة لـ GCSE — المسؤولية الجماعية، التحذير النبوي للمفتش، الطبقة، النوع، ونفاق عائلة Birling.',
+  },
+  'analysis.inspector.quote.h2': {
+    en: 'Quote-by-quote analysis',
+    ar: 'تحليل الاقتباسات وحدة وحدة',
+  },
+  'analysis.inspector.char.h2': {
+    en: 'Characters, themes & context',
+    ar: 'الشخصيات والثيمات والسياق',
+  },
+  'analysis.inspector.how.body': {
+    en: "Each analysis is a standalone Grade 9 revision card. Aim to read three or four before your next mock — the Inspector's speeches reward density of analysis more than breadth of quotes.",
+    ar: 'كل تحليل بطاقة مراجعة Grade 9 مستقلة. اقرا ثلاث أو أربع قبل الـ mock الجاي — خطابات المفتش تكافئ عمق التحليل أكثر من عدد الاقتباسات.',
+  },
+  'analysis.inspector.how.cta': { en: 'Open Grade 9 targets', ar: 'افتح أهداف Grade 9' },
+  'analysis.inspector.rights_notice': {
+    en: 'Quotations from An Inspector Calls © J. B. Priestley estate, used here for educational commentary under fair-dealing exceptions. No copyrighted past-paper content is reproduced.',
+    ar: 'الاقتباسات من An Inspector Calls © تركة J. B. Priestley، مستخدمة هنا للشرح التعليمي تحت استثناءات الاستخدام العادل. ما يتم نسخ أي محتوى محمي من الأوراق السابقة.',
+  },
+
+  // ─── AQA Love and Relationships analysis hub ──────────────────────
+  'analysis.love.intro': {
+    en: 'Grade-9 AQA Love and Relationships analysis from GCSE markers — side-by-side poem comparisons, every major theme, and the unseen comparison technique decoded.',
+    ar: 'تحليل AQA Love and Relationships بمستوى Grade 9 من مصححي GCSE — مقارنات بين القصائد جنباً إلى جنب، كل ثيمة رئيسية، وفكفكة لتقنية المقارنة على القصيدة المجهولة.',
+  },
+  'analysis.love.how.body': {
+    en: 'Pick a comparison pairing to drill, then read the corresponding theme essay to widen your evidence. Each page links back to the full Love and Relationships revision guide.',
+    ar: 'اختر مقارنة عشان تتمرّن عليها، وبعدين اقرا مقال الثيمة المرتبط فيها عشان توسّع الأدلة عندك. كل صفحة ترجع لدليل مراجعة Love and Relationships الكامل.',
+  },
+  'analysis.love.how.cta': {
+    en: 'Open Love and Relationships revision',
+    ar: 'افتح مراجعة Love and Relationships',
+  },
+  'analysis.love.compare.h2': { en: 'Poem comparison pairings', ar: 'مقارنات القصائد' },
+  'analysis.love.compare.body': {
+    en: 'Ten high-yield comparison pairings, ranked by how often the pairing earns Grade 9 in examiner reports.',
+    ar: 'عشر مقارنات عالية المردود، مرتّبة حسب كم مرة المقارنة جابت Grade 9 في تقارير المصححين.',
+  },
+  'analysis.love.themes.h2': { en: 'Themes across the anthology', ar: 'الثيمات عبر الأنثولوجي' },
+  'analysis.love.themes.body': {
+    en: 'Eight cross-anthology theme essays — romantic love, family love, lost love, possessive love, memory, time, nature and distance.',
+    ar: 'ثمانية مقالات ثيمات عبر الأنثولوجي — الحب الرومانسي، حب العائلة، الحب الضائع، الحب التملّكي، الذكرى، الوقت، الطبيعة، والمسافة.',
+  },
+  'analysis.love.technique.h2': { en: 'Exam technique', ar: 'تقنية الامتحان' },
+  'analysis.love.technique.body': {
+    en: 'How AQA examiners mark the comparison question, the poems worth memorising and the structural frames that hit Grade 9.',
+    ar: 'كيف مصححي AQA يصححون سؤال المقارنة، القصائد اللي تستاهل الحفظ، وقوالب البناء اللي توصّل Grade 9.',
+  },
+  'analysis.love.foot.h2': { en: 'Revise the full anthology', ar: 'راجع الأنثولوجي الكامل' },
+  'analysis.love.foot.body': {
+    en: 'Move from analysis to revision with the full Love and Relationships revision hub — every poem, every key quote and Grade 9 model answers.',
+    ar: 'انتقل من التحليل للمراجعة مع مركز مراجعة Love and Relationships الكامل — كل قصيدة، كل اقتباس مهم، ونماذج إجابة Grade 9.',
+  },
+  'analysis.love.foot.cta': {
+    en: 'Open Love and Relationships revision',
+    ar: 'افتح مراجعة Love and Relationships',
+  },
+
+  // ─── AQA Power and Conflict analysis hub ──────────────────────────
+  'analysis.power.h1_suffix': { en: 'analysis & revision', ar: 'تحليل ومراجعة' },
+  'analysis.power.intro': {
+    en: 'Grade-9 AQA Power and Conflict analysis from GCSE markers — poem comparisons, every major theme, key quotes and the comparison technique that hits Level 6.',
+    ar: 'تحليل AQA Power and Conflict بمستوى Grade 9 من مصححي GCSE — مقارنات بين القصائد، كل ثيمة رئيسية، الاقتباسات المهمة، وتقنية المقارنة اللي توصّل Level 6.',
+  },
+  'analysis.power.how.body': {
+    en: 'Start with a comparison pairing, then back it up with a theme essay. Every page links to the full Power and Conflict revision guide.',
+    ar: 'ابدأ بمقارنة، وبعدين اسندها بمقال ثيمة. كل صفحة ترجع لدليل مراجعة Power and Conflict الكامل.',
+  },
+  'analysis.power.how.cta': {
+    en: 'Open Power and Conflict revision',
+    ar: 'افتح مراجعة Power and Conflict',
+  },
+  'analysis.power.compare.h2': { en: 'Poem comparison pairings', ar: 'مقارنات القصائد' },
+  'analysis.power.compare.body': {
+    en: 'Ten high-yield Power and Conflict pairings, drawn from the most common AQA exam combinations.',
+    ar: 'عشر مقارنات عالية المردود في Power and Conflict، مأخوذة من أكثر تركيبات امتحان AQA شيوعاً.',
+  },
+  'analysis.power.themes.h2': { en: 'Themes across the anthology', ar: 'الثيمات عبر الأنثولوجي' },
+  'analysis.power.themes.body': {
+    en: 'Eight cross-anthology theme essays — power of nature, power of humans, reality of conflict, memory, identity, loss, suffering and corruption.',
+    ar: 'ثمانية مقالات ثيمات عبر الأنثولوجي — قوة الطبيعة، قوة البشر، حقيقة الصراع، الذكرى، الهوية، الفقد، المعاناة، والفساد.',
+  },
+  'analysis.power.technique.h2': { en: 'Exam technique', ar: 'تقنية الامتحان' },
+  'analysis.power.technique.body': {
+    en: 'How AQA examiners mark the comparison question, the poems worth memorising and the structural frames that hit Grade 9.',
+    ar: 'كيف مصححي AQA يصححون سؤال المقارنة، القصائد اللي تستاهل الحفظ، وقوالب البناء اللي توصّل Grade 9.',
+  },
+  'analysis.power.foot.h2': { en: 'Revise the full anthology', ar: 'راجع الأنثولوجي الكامل' },
+  'analysis.power.foot.body': {
+    en: 'Move from analysis to revision with the full Power and Conflict revision hub — every poem, every key quote and Grade 9 model answers.',
+    ar: 'انتقل من التحليل للمراجعة مع مركز مراجعة Power and Conflict الكامل — كل قصيدة، كل اقتباس مهم، ونماذج إجابة Grade 9.',
+  },
+  'analysis.power.foot.cta': {
+    en: 'Open Power and Conflict revision',
+    ar: 'افتح مراجعة Power and Conflict',
+  },
+
+  // ─── Language Paper analysis hub ──────────────────────────────────
+  'analysis.lang.breadcrumb_current': { en: 'Language Paper', ar: 'ورقة Language' },
+  'analysis.lang.h1': {
+    en: 'AQA Language Paper 1 & 2 — question-by-question technique',
+    ar: 'AQA Language Paper 1 و 2 — تقنية سؤال بسؤال',
+  },
+  'analysis.lang.intro': {
+    en: 'Marker-written walkthroughs for every AQA English Language Paper 1 and Paper 2 question — Grade 9 model answers, timing strategy and the lexis examiners reward.',
+    ar: 'شروحات من مصححين لكل سؤال في AQA English Language Paper 1 و Paper 2 — نماذج إجابة Grade 9، خطة الوقت، والمصطلحات اللي يكافئها المصححون.',
+  },
+  'analysis.lang.how.body': {
+    en: 'Pick a question you struggle with, work through the walkthrough, then attempt the model answer cold. Aim for two questions per study session.',
+    ar: 'اختر سؤال تعاني منه، اشتغل على الشرح، وبعدين جرّب نموذج الإجابة من راسك. هدفك سؤالين بكل جلسة دراسة.',
+  },
+  'analysis.lang.how.cta': { en: 'Open Language revision', ar: 'افتح مراجعة Language' },
+  'analysis.lang.p1q.h2': { en: 'Paper 1 questions', ar: 'أسئلة Paper 1' },
+  'analysis.lang.p1q.body': {
+    en: 'Every Paper 1 question — list four things, language analysis, structure, evaluation and creative writing.',
+    ar: 'كل سؤال في Paper 1 — عدّد أربع أشياء، تحليل اللغة، البناء، التقييم، والكتابة الإبداعية.',
+  },
+  'analysis.lang.p1t.h2': { en: 'Paper 1 writing technique', ar: 'تقنية الكتابة في Paper 1' },
+  'analysis.lang.p1t.body': {
+    en: 'Descriptive writing, narrative writing, timing strategy and the structural features that hit Grade 9 on Question 3.',
+    ar: 'الكتابة الوصفية، الكتابة السردية، خطة الوقت، وعناصر البناء اللي توصّل Grade 9 في السؤال الثالث.',
+  },
+  'analysis.lang.p2q.h2': { en: 'Paper 2 questions', ar: 'أسئلة Paper 2' },
+  'analysis.lang.p2q.body': {
+    en: 'Every Paper 2 question — true/false, summary, language, comparison and transactional writing.',
+    ar: 'كل سؤال في Paper 2 — صح/خطأ، التلخيص، اللغة، المقارنة، والكتابة المعاملاتية.',
+  },
+  'analysis.lang.p2t.h2': { en: 'Paper 2 writing technique', ar: 'تقنية الكتابة في Paper 2' },
+  'analysis.lang.p2t.body': {
+    en: 'Article writing, letter writing, speech writing, the summary question and the comparison sentence frames.',
+    ar: 'كتابة المقال، كتابة الرسالة، كتابة الخطاب، سؤال التلخيص، وقوالب جمل المقارنة.',
+  },
+  'analysis.lang.gen.h2': { en: 'General technique', ar: 'تقنية عامة' },
+  'analysis.lang.gen.body': {
+    en: 'The 25 techniques every Language student must know, the AFOREST/DAFFOREST devices and a Grade 9 vocabulary bank.',
+    ar: 'الخمسة وعشرين تقنية اللي لازم يعرفها كل طالب Language، أدوات AFOREST/DAFFOREST، وبنك مفردات Grade 9.',
+  },
+  'analysis.lang.foot.h2': { en: 'Revise the Language paper', ar: 'راجع ورقة Language' },
+  'analysis.lang.foot.body': {
+    en: 'Pair this technique work with the full Language revision hub — practice extracts, mark schemes and Grade 9 model answers.',
+    ar: 'اجمع هذي التقنية مع مركز مراجعة Language الكامل — مقاطع للتدريب، schemes للتصحيح، ونماذج إجابة Grade 9.',
+  },
+  'analysis.lang.foot.cta': { en: 'Open Language revision', ar: 'افتح مراجعة Language' },
+
+  // ─── Revision and grade guides hub (/analysis/revision) ──────────
+  'analysis.revision.breadcrumb_current': {
+    en: 'Revision and Grade Guides',
+    ar: 'أدلة المراجعة والدرجات',
+  },
+  'analysis.revision.h1': {
+    en: 'GCSE English Revision & Grade Guides',
+    ar: 'أدلة مراجعة ودرجات GCSE English',
+  },
+  'analysis.revision.intro': {
+    en: 'Twenty-five marker-written guides on hitting Grade 9, building a revision timetable, the night before the exam and how parents can help.',
+    ar: 'خمسة وعشرين دليل من المصححين عن الوصول لـ Grade 9، بناء جدول مراجعة، الليلة اللي قبل الامتحان، وكيف الأهل يقدرون يساعدون.',
+  },
+  'analysis.revision.section.grade': { en: 'Grade targets', ar: 'أهداف الدرجات' },
+  'analysis.revision.section.grade_body': {
+    en: 'How to hit Grade 9, 7 and 5 — plus boundaries, resits and pass-rate statistics.',
+    ar: 'كيف توصّل Grade 9 و 7 و 5 — مع الحدود، إعادة الامتحان، وإحصائيات النجاح.',
+  },
+  'analysis.revision.section.planning': { en: 'Revision planning', ar: 'تخطيط المراجعة' },
+  'analysis.revision.section.planning_body': {
+    en: 'Timetables, last-minute plans, spaced repetition, active recall and mind mapping.',
+    ar: 'الجداول، خطط اللحظة الأخيرة، التكرار المتباعد، الاسترجاع النشط، ورسم الخرائط الذهنية.',
+  },
+  'analysis.revision.section.exam': { en: 'Exam day', ar: 'يوم الامتحان' },
+  'analysis.revision.section.exam_body': {
+    en: 'The night before, what to bring, dealing with anxiety and what happens if you fail.',
+    ar: 'الليلة اللي قبل، شنو تجيب معاك، التعامل مع التوتر، وشنو يصير لو ما نجحت.',
+  },
+  'analysis.revision.section.parents': { en: 'For parents', ar: 'لأولياء الأمور' },
+  'analysis.revision.section.parents_body': {
+    en: 'GCSE English explained, how to help with revision and the difference between Language and Literature.',
+    ar: 'GCSE English بشرح بسيط، كيف تساعد في المراجعة، والفرق بين Language و Literature.',
+  },
+  'analysis.revision.footer.h2': { en: 'Get personalised feedback', ar: 'احصل على ملاحظات شخصية' },
+  'analysis.revision.footer.body': {
+    en: 'Upload an essay and get marker-style feedback on your AOs in minutes — calibrated to your exam board.',
+    ar: 'ارفع مقال واحصل على ملاحظات بأسلوب المصححين على الـ AOs خلال دقائق — معايرة على بورد امتحانك.',
+  },
+  'analysis.revision.footer.cta_primary': { en: 'Create a free account', ar: 'سوِّ حساب ببلاش' },
+  'analysis.revision.footer.cta_secondary': {
+    en: 'Open the Revision Hub',
+    ar: 'افتح مركز المراجعة',
+  },
+
+  // ─── AI feedback head-to-head page ─────────────────────────────────
+  'analysis.ai_feedback.breadcrumb_current': {
+    en: 'AI Feedback: Head to Head',
+    ar: 'ملاحظات الذكاء الاصطناعي: مقارنة مباشرة',
+  },
+  'analysis.ai_feedback.eyebrow': {
+    en: 'Marker-built AI · Board-specific feedback',
+    ar: 'ذكاء اصطناعي مبني للمصححين · ملاحظات خاصة بكل بورد',
+  },
+  'analysis.ai_feedback.cta.upload': { en: 'Upload an essay', ar: 'ارفع مقال' },
+  'analysis.ai_feedback.cta.pricing': { en: 'See pricing', ar: 'شوف الأسعار' },
+  'analysis.ai_feedback.cta.get_feedback': {
+    en: 'Get marker feedback on your essay',
+    ar: 'احصل على ملاحظات المصححين على مقالك',
+  },
+  'analysis.ai_feedback.cta.macbeth_revision': {
+    en: 'Macbeth revision hub',
+    ar: 'مركز مراجعة Macbeth',
+  },
+  'analysis.ai_feedback.foot.h2': { en: 'Get this on your essay', ar: 'احصل على هذا على مقالك' },
+  'analysis.ai_feedback.foot.body': {
+    en: "Upload your own essay and we'll mark it three ways — AQA, Edexcel and OCR — so you can see exactly what your board rewards.",
+    ar: 'ارفع مقالك وإحنا بنصححه بثلاث طرق — AQA و Edexcel و OCR — عشان تشوف بالضبط شنو يكافئه بوردك.',
+  },
+  'analysis.ai_feedback.methodology': { en: 'Methodology', ar: 'المنهجية' },
+
+  // ─── Catch-all sub-page (/analysis/[...slug]) chrome ──────────────
+  'analysis.slug.byline_prefix': {
+    en: 'Marker-written · GCSE English Literature',
+    ar: 'مكتوب من المصححين · GCSE English Literature',
+  },
+  'analysis.slug.covers_all_boards': {
+    en: 'Covers all major boards',
+    ar: 'يغطي كل البوردات الرئيسية',
+  },
+  'analysis.slug.what_you_need': { en: 'What you need to know about', ar: 'شنو لازم تعرف عن' },
+  'analysis.slug.about': { en: 'About', ar: 'عن' },
+  'analysis.slug.how_assessed': { en: 'How this is assessed', ar: 'كيف يتم تقييم هذا' },
+  'analysis.slug.marks_label': { en: 'marks', ar: 'درجة' },
+  'analysis.slug.recommended_label': { en: 'recommended', ar: 'موصى به' },
+  'analysis.slug.key_quotes_h2': { en: 'Key quotations', ar: 'الاقتباسات المهمة' },
+  'analysis.slug.exam_tips_for': { en: 'Exam tips for', ar: 'نصائح الامتحان لـ' },
+  'analysis.slug.grade9_h2': { en: 'What Grade 9 answers do', ar: 'شنو تسوي إجابات Grade 9' },
+  'analysis.slug.applying_to': { en: 'Applying this to', ar: 'تطبيق هذا على' },
+  'analysis.slug.applying_body': {
+    en: 'Use the analysis above as a structural frame for your own response — pick two or three quotations, attach the methods analysis, and weave the assessment context into your conclusion.',
+    ar: 'استخدم التحليل فوق كقالب بناء لإجابتك — اختر اقتباسين أو ثلاثة، الصق تحليل الأسلوب، وادمج سياق التقييم في خاتمتك.',
+  },
+  'analysis.slug.cta_block_prompt': {
+    en: 'Ready to test it on your own writing? Upload an essay and get marker-style feedback in minutes.',
+    ar: 'جاهز تجرّبه على كتابتك؟ ارفع مقال واحصل على ملاحظات بأسلوب المصححين خلال دقائق.',
+  },
+  'analysis.slug.cta_get_feedback': { en: 'Get marker feedback', ar: 'احصل على ملاحظات المصححين' },
+  'analysis.slug.cta_see_pricing': { en: 'See pricing', ar: 'شوف الأسعار' },
+  'analysis.slug.faqs_h2': { en: 'Frequently asked questions', ar: 'أسئلة شائعة' },
+  'analysis.slug.related_prefix': { en: 'More from', ar: 'المزيد من' },
+  'analysis.slug.back_to_all': { en: 'Back to all', ar: 'رجوع للكل' },
+
+  // ─── Sub-page chrome (cleaner namespace for shared components) ─────
+  // Used by the per-text _components helpers (jekyll-hyde/AnalysisPage,
+  // inspector-calls/analysis-page) and any future analysis sub-page.
+  'analysis.subpage.byline_team': {
+    en: 'Written by GCSE markers · The English Hub editorial team',
+    ar: 'كتبه مصححي GCSE · فريق تحرير The English Hub',
+  },
+  'analysis.subpage.related_h2': { en: 'Related analyses', ar: 'تحليلات ذات صلة' },
+  'analysis.subpage.read_analysis': { en: 'Read analysis', ar: 'اقرا التحليل' },
+  'analysis.subpage.revision_eyebrow': { en: 'Revision hub', ar: 'مركز المراجعة' },
+  'analysis.subpage.revision_inspector_h3': {
+    en: 'Revise An Inspector Calls for GCSE English Literature',
+    ar: 'راجع An Inspector Calls لـ GCSE English Literature',
+  },
+  'analysis.subpage.revision_inspector_body': {
+    en: 'Grade 5, 7 and 9 revision plans, model answers and exam technique from experienced GCSE markers.',
+    ar: 'خطط مراجعة Grade 5 و 7 و 9، نماذج إجابات، وتقنية امتحان من مصححي GCSE ذوي خبرة.',
+  },
+  'analysis.subpage.revision_cta': { en: 'Go to revision', ar: 'روح للمراجعة' },
+  'analysis.subpage.cat_chip_gcse': { en: 'GCSE Analysis', ar: 'تحليل GCSE' },
+  'analysis.subpage.cta_full_revision': { en: 'Full revision guide', ar: 'دليل المراجعة الكامل' },
+  'analysis.subpage.cta_revision_notes': { en: 'Revision notes', ar: 'ملاحظات المراجعة' },
+  'analysis.subpage.ready_to_revise_h2': {
+    en: 'Ready to revise the whole novella?',
+    ar: 'جاهز تراجع الرواية كاملة؟',
+  },
+  'analysis.subpage.jekyll_blurb': {
+    en: 'Get the complete Jekyll and Hyde study guide — chapter summaries, every key quotation, every theme, and exam-ready essay plans for AQA, Edexcel and OCR.',
+    ar: 'احصل على دليل دراسة Jekyll and Hyde الكامل — ملخصات الفصول، كل اقتباس مهم، كل ثيمة، وخطط مقال جاهزة للامتحان لـ AQA و Edexcel و OCR.',
+  },
+  'analysis.subpage.jekyll_hub_link': { en: 'Jekyll & Hyde Analysis', ar: 'تحليل Jekyll & Hyde' },
+  'analysis.subpage.jekyll_all_link': {
+    en: 'All Jekyll & Hyde analyses',
+    ar: 'كل تحليلات Jekyll & Hyde',
+  },
+  'analysis.subpage.jekyll_chip': { en: 'Jekyll & Hyde', ar: 'Jekyll & Hyde' },
+  'analysis.subpage.home_breadcrumb': { en: 'Home', ar: 'الرئيسية' },
+  'analysis.subpage.inspector_back_to_hub': {
+    en: 'Back to Inspector Calls hub',
+    ar: 'رجوع لمركز Inspector Calls',
+  },
   'parent.your_child': { en: 'your child', ar: 'ابنك أو بنتك' },
   'parent.unlink': { en: 'Unlink', ar: 'فك الربط' },
   'parent.unlinking': { en: 'Unlinking…', ar: 'لحظة، يفك الربط…' },
@@ -4543,6 +5631,3962 @@ export const DICTIONARY: Dictionary = {
   },
   'safeguard.send_report_cta': { en: 'Send Report', ar: 'أرسل البلاغ' },
   'safeguard.sending_report': { en: 'Sending your report...', ar: 'نرسل بلاغك… لحظة' },
+
+  // ─── Settings page (top-level /settings) ─────────────────────────────
+  // Gender policy: masculine-default Khaleeji addressing, consistent with
+  // the rest of the dictionary. Required Khaleeji vocab applied:
+  // الحين / دوّر / اختر / ابغى-style imperatives where natural; no Levantine.
+  'settings.back_to_dashboard': { en: 'Back to dashboard', ar: 'رجوع للوحة' },
+  'settings.title': { en: 'Settings', ar: 'الإعدادات' },
+  'settings.board.heading': { en: 'Your exam board', ar: 'بورد الامتحان مالك' },
+  'settings.board.currently_studying': {
+    en: 'Currently studying',
+    ar: 'تدرس الحين',
+  },
+  'settings.board.change_warning': {
+    en: 'Changing your board will filter your content to the new board. Your progress is preserved.',
+    ar: 'إذا غيّرت البورد، بنفلتر المحتوى للبورد الجديد. تقدمك يضل محفوظ.',
+  },
+  'settings.board.empty': {
+    en: "You haven't picked an exam board yet. Choose one to personalise your revision content.",
+    ar: 'لسا ما اخترت بورد امتحان. اختر واحد عشان نخصّص لك محتوى المراجعة.',
+  },
+  'settings.board.choose_cta': {
+    en: 'Choose your exam board',
+    ar: 'اختر بورد الامتحان مالك',
+  },
+  'settings.account.heading': { en: 'Account', ar: 'الحساب' },
+  'settings.account.email_label': { en: 'Email', ar: 'الإيميل' },
+  'settings.account.full_settings_prefix': {
+    en: 'For full account settings (name, password, deletion) visit your',
+    ar: 'لإعدادات الحساب الكاملة (الاسم، الباسوورد، الحذف) روح',
+  },
+  'settings.account.account_page_link': {
+    en: 'account page',
+    ar: 'صفحة الحساب مالك',
+  },
+  'settings.account.full_settings_suffix': { en: '.', ar: '.' },
+  'settings.notifications.heading': { en: 'Notifications', ar: 'الإشعارات' },
+  'settings.notifications.email_label': {
+    en: 'Email reminders',
+    ar: 'تذكيرات الإيميل',
+  },
+  'settings.notifications.email_description': {
+    en: 'Weekly revision reminders and study streak nudges.',
+    ar: 'تذكيرات مراجعة أسبوعية وتنبيهات للسلسلة مالتك.',
+  },
+  'settings.notifications.product_label': {
+    en: 'Product updates',
+    ar: 'تحديثات المنتج',
+  },
+  'settings.notifications.product_description': {
+    en: 'Occasional announcements about new features.',
+    ar: 'إعلانات بين فترة وفترة عن الميزات الجديدة.',
+  },
+
+  // ─── Admin (root + affiliates + email diagnostics + verify user) ──
+  'admin.back_to_dashboard': { en: 'Back to dashboard', ar: 'رجوع للوحة' },
+  'admin.back_to_admin': { en: 'Back to admin', ar: 'رجوع للأدمن' },
+  'admin.refresh': { en: 'Refresh', ar: 'حدّث' },
+  'admin.error_load_stats': {
+    en: 'Failed to load admin stats.',
+    ar: 'ما قدرنا نحمّل إحصائيات الأدمن.',
+  },
+  'admin.error_generic': {
+    en: 'Something went wrong. Please try again.',
+    ar: 'صار في خطأ. جرّب مرة ثانية لو سمحت.',
+  },
+  'admin.network_error': {
+    en: 'Network error. Please try again.',
+    ar: 'خطأ في الشبكة. جرّب مرة ثانية.',
+  },
+  'admin.action_failed': { en: 'Action failed', ar: 'العملية ما نجحت' },
+  'admin.network_error_short': { en: 'Network error', ar: 'خطأ في الشبكة' },
+
+  // Root /admin
+  'admin.root.title': { en: 'Admin Panel', ar: 'لوحة الأدمن' },
+  'admin.root.stat.total_users': { en: 'Total Users', ar: 'إجمالي المستخدمين' },
+  'admin.root.stat.active_subscribers': { en: 'Active Subscribers', ar: 'المشتركين الفعّالين' },
+  'admin.root.stat.total_enrolments': { en: 'Total Enrolments', ar: 'إجمالي التسجيلات' },
+  'admin.root.stat.certificates_issued': { en: 'Certificates Issued', ar: 'الشهادات الصادرة' },
+  'admin.root.recent_registrations': { en: 'Recent Registrations', ar: 'التسجيلات الأخيرة' },
+  'admin.root.recent_enrolments': { en: 'Recent Enrolments', ar: 'التسجيلات الأخيرة في الدورات' },
+  'admin.root.col.email': { en: 'Email', ar: 'الإيميل' },
+  'admin.root.col.name': { en: 'Name', ar: 'الاسم' },
+  'admin.root.col.year': { en: 'Year', ar: 'الصف' },
+  'admin.root.col.plan': { en: 'Plan', ar: 'الباقة' },
+  'admin.root.col.joined': { en: 'Joined', ar: 'تاريخ الانضمام' },
+  'admin.root.col.user_id': { en: 'User ID', ar: 'معرّف المستخدم' },
+  'admin.root.col.course': { en: 'Course', ar: 'الدورة' },
+  'admin.root.col.type': { en: 'Type', ar: 'النوع' },
+  'admin.root.col.date': { en: 'Date', ar: 'التاريخ' },
+  'admin.root.empty_users': { en: 'No users yet.', ar: 'ما في مستخدمين الحين.' },
+  'admin.root.empty_enrolments': { en: 'No enrolments yet.', ar: 'ما في تسجيلات الحين.' },
+
+  // /admin/affiliates
+  'admin.aff.title': { en: 'Affiliate Management', ar: 'إدارة الشراكات' },
+  'admin.aff.error_load': { en: 'Failed to load affiliates', ar: 'ما قدرنا نحمّل الشركاء' },
+  'admin.aff.stat.total': { en: 'Total Affiliates', ar: 'إجمالي الشركاء' },
+  'admin.aff.stat.pending': { en: 'Pending', ar: 'قيد المراجعة' },
+  'admin.aff.stat.active': { en: 'Active', ar: 'نشطين' },
+  'admin.aff.stat.commission_paid': { en: 'Total Commission Paid', ar: 'إجمالي العمولات المدفوعة' },
+  'admin.aff.filter.all': { en: 'All', ar: 'الكل' },
+  'admin.aff.filter.pending': { en: 'pending', ar: 'قيد المراجعة' },
+  'admin.aff.filter.active': { en: 'active', ar: 'نشطين' },
+  'admin.aff.filter.suspended': { en: 'suspended', ar: 'موقوفين' },
+  'admin.aff.filter.terminated': { en: 'terminated', ar: 'منهيين' },
+  'admin.aff.pending_applications': { en: 'Pending Applications', ar: 'الطلبات قيد المراجعة' },
+  'admin.aff.under_18': { en: 'Under 18', ar: 'تحت ١٨' },
+  'admin.aff.tiktok_label': { en: 'TikTok:', ar: 'TikTok:' },
+  'admin.aff.ig_label': { en: 'IG:', ar: 'IG:' },
+  'admin.aff.followers_label': { en: 'Followers:', ar: 'المتابعين:' },
+  'admin.aff.content_plan_label': { en: 'Content plan:', ar: 'خطة المحتوى:' },
+  'admin.aff.view_best_post': { en: 'View best post', ar: 'شوف أفضل منشور' },
+  'admin.aff.guardian_label': { en: 'Guardian:', ar: 'ولي الأمر:' },
+  'admin.aff.approve': { en: 'Approve', ar: 'اعتمد' },
+  'admin.aff.minor_badge': { en: 'Minor', ar: 'قاصر' },
+  'admin.aff.all_affiliates': { en: 'All Affiliates', ar: 'كل الشركاء' },
+  'admin.aff.none_found': { en: 'No affiliates found.', ar: 'ما في شركاء.' },
+  'admin.aff.col.name': { en: 'Name', ar: 'الاسم' },
+  'admin.aff.col.status': { en: 'Status', ar: 'الحالة' },
+  'admin.aff.col.tier': { en: 'Tier', ar: 'المستوى' },
+  'admin.aff.col.referrals': { en: 'Referrals', ar: 'الإحالات' },
+  'admin.aff.col.paid': { en: 'Paid', ar: 'مدفوع' },
+  'admin.aff.col.pending': { en: 'Pending', ar: 'قيد المراجعة' },
+  'admin.aff.col.joined': { en: 'Joined', ar: 'تاريخ الانضمام' },
+  'admin.aff.suffix_affiliates': { en: 'Affiliates', ar: 'الشركاء' },
+  'admin.aff.status.pending': { en: 'pending', ar: 'قيد المراجعة' },
+  'admin.aff.status.agreement_sent': { en: 'agreement_sent', ar: 'الاتفاقية مرسلة' },
+  'admin.aff.status.agreement_signed': { en: 'agreement_signed', ar: 'الاتفاقية موقّعة' },
+  'admin.aff.status.active': { en: 'active', ar: 'نشط' },
+  'admin.aff.status.suspended': { en: 'suspended', ar: 'موقوف' },
+  'admin.aff.status.terminated': { en: 'terminated', ar: 'منهي' },
+  'admin.aff.payout.title': { en: 'Monthly Payout Calculator', ar: 'حاسبة العمولات الشهرية' },
+  'admin.aff.payout.year': { en: 'Year', ar: 'السنة' },
+  'admin.aff.payout.month': { en: 'Month', ar: 'الشهر' },
+  'admin.aff.payout.calc': { en: 'Calculate Payouts', ar: 'احسب العمولات' },
+  'admin.aff.payout.calculating': { en: 'Calculating...', ar: 'لحظة، نحسب…' },
+  'admin.aff.payout.fail_calc': { en: 'Failed to calculate payouts', ar: 'ما قدرنا نحسب العمولات' },
+  'admin.aff.payout.fail_update': { en: 'Failed to update payout', ar: 'ما قدرنا نحدّث العمولة' },
+  'admin.aff.payout.created_prefix': { en: 'payout(s) created:', ar: 'عمولة/عمولات تم إنشاؤها:' },
+  'admin.aff.payout.affiliate_prefix': { en: 'Affiliate:', ar: 'الشريك:' },
+  'admin.aff.payout.referral_suffix': { en: 'referral(s)', ar: 'إحالة' },
+  'admin.aff.payout.mark_disclosure': { en: 'Mark Disclosure OK', ar: 'سجّل الإفصاح كصحيح' },
+
+  // /admin/email-diagnostics
+  'admin.email.title': { en: 'Email Diagnostics', ar: 'تشخيص الإيميلات' },
+  'admin.email.domain_status': { en: 'Resend domain status', ar: 'حالة دومين Resend' },
+  'admin.email.calling_api': { en: 'Calling Resend API...', ar: 'لحظة، نتصل بـ Resend API…' },
+  'admin.email.dns_records': { en: 'DNS records', ar: 'سجلات DNS' },
+  'admin.email.col.status': { en: 'Status', ar: 'الحالة' },
+  'admin.email.col.type': { en: 'Type', ar: 'النوع' },
+  'admin.email.col.name': { en: 'Name', ar: 'الاسم' },
+  'admin.email.col.value': { en: 'Value', ar: 'القيمة' },
+  'admin.email.col.purpose': { en: 'Purpose', ar: 'الغرض' },
+  'admin.email.col.num': { en: '#', ar: '#' },
+  'admin.email.status_unknown': { en: 'unknown', ar: 'غير معروف' },
+  'admin.email.send_test_title': { en: 'Send test email', ar: 'أرسل إيميل تجريبي' },
+  'admin.email.send_test_body': {
+    en: 'Sends a "Test from The English Hub" email via the same Resend wrapper used by the app. If the domain isn\'t verified yet, Resend will accept the call but most inboxes will reject delivery — try sending to the Resend account holder\'s address first.',
+    ar: 'يرسل إيميل "Test from The English Hub" عبر نفس Resend اللي يستخدمه التطبيق. إذا الدومين ما تم التحقق منه، Resend راح يقبل الطلب بس أغلب الإيميلات راح ترفض الاستلام — جرّب ترسل لإيميل صاحب حساب Resend أولاً.',
+  },
+  'admin.email.recipient_label': { en: 'Recipient email', ar: 'إيميل المستلم' },
+  'admin.email.recipient_placeholder': { en: 'you@example.com', ar: 'you@example.com' },
+  'admin.email.token_label': {
+    en: 'x-admin-token (optional — only if ADMIN_DIAGNOSTIC_TOKEN is set on the server)',
+    ar: 'x-admin-token (اختياري — بس إذا ADMIN_DIAGNOSTIC_TOKEN معيّن على السيرفر)',
+  },
+  'admin.email.token_placeholder': {
+    en: 'leave blank if not configured',
+    ar: 'خلّه فاضي إذا ما هو معيّن',
+  },
+  'admin.email.send_test': { en: 'Send test', ar: 'أرسل التجريبي' },
+  'admin.email.sent': { en: 'Sent.', ar: 'تم الإرسال.' },
+  'admin.email.resend_msg_id': { en: 'Resend message ID:', ar: 'معرّف رسالة Resend:' },
+  'admin.email.delivered_to': { en: 'Delivered to:', ar: 'وصل إلى:' },
+  'admin.email.failed_prefix': { en: 'Failed:', ar: 'فشل:' },
+  'admin.email.unknown_error': { en: 'Unknown error', ar: 'خطأ غير معروف' },
+  'admin.email.runbook_title': {
+    en: 'Runbook: sign-up email not arriving',
+    ar: 'دليل العمل: إيميل التسجيل ما يوصل',
+  },
+  'admin.email.runbook.1_strong': {
+    en: 'Verify the sending domain.',
+    ar: 'تحقّق من دومين الإرسال.',
+  },
+  'admin.email.runbook.1_body': {
+    en: 'Status above must read VERIFIED. If PENDING or FAILED, add the DNS records below at Cloudflare (the most likely root cause).',
+    ar: 'الحالة فوق لازم تكون VERIFIED. إذا PENDING أو FAILED، ضِف سجلات DNS اللي تحت في Cloudflare (السبب الأرجح).',
+  },
+  'admin.email.runbook.2_strong': {
+    en: 'Resend free-tier sandbox.',
+    ar: 'وضع التجربة في Resend (الباقة المجانية).',
+  },
+  'admin.email.runbook.2_body_pre': {
+    en: "Until the domain is verified, Resend only delivers to the Resend account holder's verified email. Sign in at",
+    ar: 'لين الدومين يصير verified، Resend بس يوصّل لإيميل صاحب الحساب المتحقق منه. سجّل دخول من',
+  },
+  'admin.email.runbook.3_strong': { en: 'Send a test above', ar: 'أرسل تجريبي فوق' },
+  'admin.email.runbook.3_body_pre': {
+    en: "to the founder's own inbox. Inspect Resend dashboard",
+    ar: 'لإيميل المؤسس. شوف لوحة Resend',
+  },
+  'admin.email.runbook.3_body_post': { en: 'for delivery status.', ar: 'عشان تشيّك حالة الإيصال.' },
+  'admin.email.runbook.4_strong': {
+    en: 'Check Supabase Auth logs.',
+    ar: 'شيّك سجلات Supabase Auth.',
+  },
+  'admin.email.runbook.4_body': {
+    en: 'Project → Logs → "auth" — search for the user\'s email; look for "smtp" / "send" entries. If empty, Supabase didn\'t even attempt a send and SMTP credentials probably weren\'t saved cleanly.',
+    ar: 'Project → Logs → "auth" — دوّر على إيميل المستخدم؛ شوف إذا في "smtp" / "send". إذا فاضي، Supabase ما حاول يرسل أصلاً وغالباً بيانات SMTP ما انحفظت صح.',
+  },
+  'admin.email.runbook.5_strong': {
+    en: 'Check Supabase SMTP settings.',
+    ar: 'شيّك إعدادات SMTP في Supabase.',
+  },
+  'admin.email.runbook.5_body': { en: 'Auth → SMTP Settings:', ar: 'Auth → SMTP Settings:' },
+  'admin.email.runbook.6_strong': {
+    en: 'Confirm "Confirm email" is ON',
+    ar: 'تأكّد إن "Confirm email" مفعّل',
+  },
+  'admin.email.runbook.6_body': {
+    en: 'in Auth → Providers → Email. If disabled, no verification email is ever generated.',
+    ar: 'في Auth → Providers → Email. إذا معطّل، ما يصير في إيميل تحقّق أصلاً.',
+  },
+  'admin.email.runbook.7_strong': { en: 'Last resort.', ar: 'آخر حل.' },
+  'admin.email.runbook.7_body': {
+    en: "Check the recipient's spam/junk folder. Until DKIM is verified, Gmail and Outlook aggressively junk anything from theenglishhub.app.",
+    ar: 'شيّك مجلد الـ spam/junk عند المستلم. لين DKIM يصير verified، Gmail وOutlook راح يحطون أي شي من theenglishhub.app في الـ junk.',
+  },
+  'admin.email.dns_title': {
+    en: 'Cloudflare DNS records for theenglishhub.app',
+    ar: 'سجلات DNS في Cloudflare لـ theenglishhub.app',
+  },
+  'admin.email.dns_body_pre': {
+    en: 'Add these in Cloudflare DNS. Resend itself is the source of truth for the two DKIM CNAMEs — copy them from',
+    ar: 'ضِف هذي في Cloudflare DNS. Resend هو المرجع للـ DKIM CNAME الاثنين — انسخهم من',
+  },
+  'admin.email.dns_body_post': {
+    en: 'after adding theenglishhub.app there.',
+    ar: 'بعد ما تضيف theenglishhub.app هناك.',
+  },
+  'admin.email.dns_body_strong': {
+    en: 'Set proxy status to DNS-only (grey cloud)',
+    ar: 'خلّ الـ proxy على DNS-only (السحابة الرمادية)',
+  },
+  'admin.email.dns_body_for_every': { en: 'for every record.', ar: 'لكل سجل.' },
+  'admin.email.dns.spf': { en: 'SPF', ar: 'SPF' },
+  'admin.email.dns.dkim1': { en: 'DKIM #1', ar: 'DKIM #1' },
+  'admin.email.dns.dkim2': { en: 'DKIM #2', ar: 'DKIM #2' },
+  'admin.email.dns.dmarc': { en: 'DMARC', ar: 'DMARC' },
+  'admin.email.dns.dkim_value_placeholder': {
+    en: '(value shown in Resend dashboard — copy verbatim)',
+    ar: '(القيمة معروضة في لوحة Resend — انسخها كما هي)',
+  },
+  'admin.email.dns_footer': {
+    en: 'After adding the records, wait ~5 minutes and click "Verify DNS records" inside Resend. The Refresh button above will re-check live status.',
+    ar: 'بعد ما تضيف السجلات، انتظر ٥ دقائق تقريباً وانقر "Verify DNS records" داخل Resend. زر "حدّث" فوق راح يعيد فحص الحالة.',
+  },
+
+  // /admin/verify-user
+  'admin.verify.title': { en: 'Manual email verification', ar: 'تحقّق يدوي من الإيميل' },
+  'admin.verify.body_pre': {
+    en: "Emergency tool. Use when the verification-email pipeline is broken (e.g. Resend domain not yet verified, SMTP outage, reviewer email forwarding swallowing the link). Marks the user's email as confirmed in Supabase and ensures the matching Prisma",
+    ar: 'أداة طوارئ. استخدمها لما خط إيميلات التحقّق يكون معطّل (مثلاً دومين Resend ما تم التحقق منه، أو SMTP واقف، أو forwarding يبلع الرابط). تعلّم إيميل المستخدم كمؤكَّد في Supabase وتتأكّد من وجود الـ',
+  },
+  'admin.verify.body_post': { en: 'row exists.', ar: 'المطابق في Prisma.' },
+  'admin.verify.email_label': { en: 'User email address', ar: 'إيميل المستخدم' },
+  'admin.verify.email_placeholder': { en: 'user@example.com', ar: 'user@example.com' },
+  'admin.verify.invalid_email': {
+    en: 'Please enter a valid email address.',
+    ar: 'لطفاً ادخل إيميل صحيح.',
+  },
+  'admin.verify.request_failed': { en: 'Request failed', ar: 'الطلب فشل' },
+  'admin.verify.unexpected_response': {
+    en: 'Unexpected response from server.',
+    ar: 'رد غير متوقع من السيرفر.',
+  },
+  'admin.verify.submitting': { en: 'Verifying...', ar: 'لحظة، نتحقّق…' },
+  'admin.verify.submit': { en: 'Verify user manually', ar: 'تحقّق من المستخدم يدوياً' },
+  'admin.verify.already_confirmed': {
+    en: 'Already verified — no change needed.',
+    ar: 'تم التحقق من قبل — ما في تغيير.',
+  },
+  'admin.verify.success': { en: 'User verified successfully.', ar: 'تم التحقق من المستخدم بنجاح.' },
+  'admin.verify.dt.email': { en: 'Email', ar: 'الإيميل' },
+  'admin.verify.dt.supabase_id': { en: 'Supabase user ID', ar: 'معرّف المستخدم في Supabase' },
+  'admin.verify.dt.prisma_id': { en: 'Prisma user ID', ar: 'معرّف المستخدم في Prisma' },
+  'admin.verify.user_can_signin_pre': {
+    en: 'The user can now sign in at',
+    ar: 'المستخدم يقدر يسجّل دخول الحين من',
+  },
+  'admin.verify.user_can_signin_post': { en: '.', ar: '.' },
+
+  // ─── Anthology document preview ────────────────────────────────────
+  'anth.preview.label': { en: 'Document Preview', ar: 'معاينة الوثيقة' },
+  'anth.preview.download_word': { en: 'Download .doc', ar: 'نزّل .doc' },
+  'anth.preview.print_pdf': { en: 'Print / PDF', ar: 'طبع / PDF' },
+  'anth.preview.iframe_title': {
+    en: 'Anthology document preview',
+    ar: 'معاينة وثيقة الأنثولوجي',
+  },
+
+  // ─── Marketing — infographic banner ────────────────────────────────
+  'marketing.infographic.region_label': {
+    en: 'Marketing infographic',
+    ar: 'إنفوغرافيك تسويقي',
+  },
+
+  // ─── Google OAuth sign-in button ───────────────────────────────────
+  // Google brand stays Latin per Gulf convention.
+  'auth.google.continue': { en: 'Continue with Google', ar: 'كمّل مع Google' },
+  'auth.google.redirecting': { en: 'Redirecting…', ar: 'لحظة، نحوّلك…' },
+  'auth.google.aria_signin': {
+    en: 'Sign in with Google',
+    ar: 'سجّل دخول بـ Google',
+  },
+  'auth.google.error.not_enabled': {
+    en: 'Google sign-in is not available right now. Please sign in with your email and password instead.',
+    ar: 'دخول Google مو متاح الحين. لطفاً سجّل دخول بالإيميل والرمز السري بدال.',
+  },
+  'auth.google.error.generic': {
+    en: 'We could not start Google sign-in. Please try again, or sign in with your email and password instead.',
+    ar: 'ما قدرنا نبدأ دخول Google. جرّب مرة ثانية، أو سجّل دخول بالإيميل والرمز السري بدال.',
+  },
+
+  // ─── Layout shell (root-layout-shell + ConsentGatedAnalytics) ────────
+  'layout.main_content_label': { en: 'Main content', ar: 'المحتوى الرئيسي' },
+  'layout.region.header': { en: 'Site header', ar: 'هيدر الموقع' },
+  'layout.region.footer': { en: 'Site footer', ar: 'فوتر الموقع' },
+  'layout.analytics.label': { en: 'Analytics', ar: 'الإحصائيات' },
+
+  // ─── Disclaimer (ExamBoardDisclaimer + WithContext) ───────────────────
+  'disclaimer.full': {
+    en: 'The English Hub is an independent educational platform. GCSE is a registered trademark of Ofqual. IGCSE is a registered trademark of Cambridge Assessment International Education.',
+    ar: 'The English Hub منصة تعليمية مستقلة. GCSE علامة تجارية مسجلة لـ Ofqual. وIGCSE علامة تجارية مسجلة لـ Cambridge Assessment International Education.',
+  },
+  'disclaimer.compact': {
+    en: 'The English Hub is an independent educational platform.',
+    ar: 'The English Hub منصة تعليمية مستقلة.',
+  },
+  'disclaimer.marketing': {
+    en: 'The English Hub is an independent educational platform.',
+    ar: 'The English Hub منصة تعليمية مستقلة.',
+  },
+  'disclaimer.ai_feedback': {
+    en: 'This feedback is generated by AI and is for practice purposes only. It does not represent an official assessment. Actual exam results may differ.',
+    ar: 'هذي الملاحظات صُنعت بالذكاء الاصطناعي وهي للتدريب بس. ما تعتبر تقييم رسمي. نتائج الامتحان الحقيقية ممكن تختلف.',
+  },
+  'disclaimer.full_link': { en: 'Full disclaimer', ar: 'الإفصاح الكامل' },
+  'disclaimer.aria.exam_board': { en: 'Exam board disclaimer', ar: 'إفصاح بورد الامتحان' },
+  'disclaimer.aria.ai_feedback': {
+    en: 'AI feedback disclaimer',
+    ar: 'إفصاح ملاحظات الذكاء الاصطناعي',
+  },
+
+  // ─── Feature gating (FeatureGate + FeatureLockout) ────────────────────
+  'feature.usage.one_remaining': {
+    en: '1 of {total} free use remaining',
+    ar: 'باقي لك استخدام واحد من {total} ببلاش',
+  },
+  'feature.usage.n_remaining': {
+    en: '{remaining} of {total} free uses remaining',
+    ar: 'باقي لك {remaining} من {total} استخدامات ببلاش',
+  },
+  'feature.lockout.title_suffix': { en: 'is now locked', ar: 'صار مقفول الحين' },
+  'feature.lockout.description': {
+    en: "You've used all {total} free submissions. Upgrade to Premium for unlimited access.",
+    ar: 'استخدمت كل {total} إرسالات ببلاش. رقّي لـ Premium عشان وصول بلا حدود.',
+  },
+  'feature.lockout.plan_title': { en: 'Premium Plan', ar: 'باقة Premium' },
+  'feature.lockout.plan_pricing': {
+    en: 'Students from {currency}{student}/month · teachers from {currency}{teacher}/month',
+    ar: 'الطلاب من {currency}{student}/شهر · المعلمين من {currency}{teacher}/شهر',
+  },
+  'feature.lockout.cta_trial': { en: 'Start 7-day trial', ar: 'ابدأ التجربة ٧ أيام' },
+  'feature.lockout.trial_note': {
+    en: "Trial requires a valid card. Cancel before day 7 and you won't be charged.",
+    ar: 'التجربة تحتاج بطاقة صالحة. سكّر قبل اليوم السابع وما راح ينخصم منك شي.',
+  },
+  'feature.benefit.ai_essay_marking': {
+    en: 'Get detailed, exam-board-aligned feedback on every essay with AI-powered marking.',
+    ar: 'احصل على ملاحظات تفصيلية لكل مقال على أساس متطلبات بورد الامتحان مع تصحيح بالذكاء الاصطناعي.',
+  },
+  'feature.benefit.mock_exam': {
+    en: 'Practise with full-length mock exams that mirror real GCSE and A-Level papers.',
+    ar: 'تدرّب على امتحانات تجريبية كاملة تشبه ورقات GCSE وA-Level الحقيقية.',
+  },
+  'feature.benefit.feedback_report': {
+    en: 'Generate comprehensive feedback reports to share with students and parents.',
+    ar: 'سوِّ تقارير ملاحظات شاملة عشان تشاركها مع الطلاب وأولياء الأمور.',
+  },
+  'feature.benefit.ai_study_recommendations': {
+    en: "Receive personalised study plans tailored to each student's strengths and gaps.",
+    ar: 'احصل على خطط دراسية شخصية تناسب نقاط القوة والثغرات لكل طالب.',
+  },
+  'feature.benefit.ai_lesson_plan': {
+    en: 'Create curriculum-aligned lesson plans in minutes with AI assistance.',
+    ar: 'سوِّ خطط دروس متوافقة مع المنهج بدقائق بمساعدة الذكاء الاصطناعي.',
+  },
+  'feature.benefit.worksheet_builder': {
+    en: 'Build differentiated worksheets with auto-generated questions and mark schemes.',
+    ar: 'سوِّ أوراق عمل متنوعة مع أسئلة وأنظمة تصحيح تتولّد تلقائياً.',
+  },
+  'feature.benefit.mark_scheme_generator': {
+    en: 'Generate detailed mark schemes aligned to exam board criteria.',
+    ar: 'سوِّ أنظمة تصحيح تفصيلية على أساس معايير بورد الامتحان.',
+  },
+  'feature.benefit.export_pptx_word': {
+    en: 'Export lesson materials directly to PowerPoint and Word for easy classroom use.',
+    ar: 'صدّر مواد الدروس مباشرة لـ PowerPoint وWord عشان استخدام سهل في الفصل.',
+  },
+  'feature.benefit.class_analytics': {
+    en: 'Track class-wide progress with detailed performance analytics and insights.',
+    ar: 'تابع تقدم الفصل كامل مع تحليلات أداء ومعلومات تفصيلية.',
+  },
+  'feature.benefit.student_reports': {
+    en: 'Generate individual student progress reports with targeted improvement areas.',
+    ar: 'سوِّ تقارير تقدم فردية للطلاب مع تحديد مجالات التحسين.',
+  },
+  'feature.name.ai_essay_marking': {
+    en: 'AI Essay Marking',
+    ar: 'تصحيح المقالات بالذكاء الاصطناعي',
+  },
+  'feature.name.mock_exam': { en: 'Mock Exam Practice', ar: 'تدريب امتحانات تجريبية' },
+  'feature.name.feedback_report': { en: 'Feedback Report', ar: 'تقرير الملاحظات' },
+  'feature.name.ai_study_recommendations': {
+    en: 'AI Study Recommendations',
+    ar: 'توصيات دراسية بالذكاء الاصطناعي',
+  },
+  'feature.name.ai_lesson_plan': { en: 'AI Lesson Plan', ar: 'خطة درس بالذكاء الاصطناعي' },
+  'feature.name.worksheet_builder': { en: 'Worksheet Builder', ar: 'منشئ أوراق العمل' },
+  'feature.name.mark_scheme_generator': { en: 'Answer Guide Generator', ar: 'منشئ دليل الإجابات' },
+  'feature.name.export_pptx_word': { en: 'PowerPoint/Word Export', ar: 'تصدير PowerPoint/Word' },
+  'feature.name.class_analytics': { en: 'Class Analytics', ar: 'تحليلات الفصل' },
+  'feature.name.student_reports': { en: 'Student Reports', ar: 'تقارير الطلاب' },
+
+  // ─── Resource catalogue (ResourceCard + ResourceFilter) ───────────────
+  'resource.type.study_guide': { en: 'Study Guide', ar: 'دليل المذاكرة' },
+  'resource.type.practice': { en: 'Practice', ar: 'تدريب' },
+  'resource.type.notes': { en: 'Notes', ar: 'ملاحظات' },
+  'resource.subject.english_language': { en: 'English Language', ar: 'اللغة الإنجليزية' },
+  'resource.subject.english_literature': { en: 'English Literature', ar: 'الأدب الإنجليزي' },
+  'resource.cta.start_revising': { en: 'Start revising', ar: 'ابدأ المراجعة' },
+  'resource.difficulty.beginner': { en: 'Beginner', ar: 'مبتدئ' },
+  'resource.difficulty.easy': { en: 'Easy', ar: 'سهل' },
+  'resource.difficulty.intermediate': { en: 'Intermediate', ar: 'متوسط' },
+  'resource.difficulty.challenging': { en: 'Challenging', ar: 'صعب' },
+  'resource.difficulty.advanced': { en: 'Advanced', ar: 'متقدّم' },
+  'resource.difficulty.aria': {
+    en: 'Difficulty: {label} ({level} of 5)',
+    ar: 'الصعوبة: {label} ({level} من ٥)',
+  },
+  'resource.filter.search_placeholder': { en: 'Search resources...', ar: 'دوّر على المصادر…' },
+  'resource.filter.label.subject': { en: 'Subject', ar: 'المادة' },
+  'resource.filter.label.topic': { en: 'Topic', ar: 'الموضوع' },
+  'resource.filter.label.resource_type': { en: 'Resource Type', ar: 'نوع المصدر' },
+  'resource.filter.label.difficulty': { en: 'Difficulty', ar: 'الصعوبة' },
+  'resource.filter.topic.all': { en: 'All Topics', ar: 'كل المواضيع' },
+  'resource.filter.topic.button': { en: 'Topic', ar: 'الموضوع' },
+  'resource.filter.type.all': { en: 'All Types', ar: 'كل الأنواع' },
+  'resource.filter.type.study_guides': { en: 'Study Guides', ar: 'أدلة المذاكرة' },
+  'resource.filter.type.practice': { en: 'Practice', ar: 'تدريب' },
+  'resource.filter.type.notes': { en: 'Notes', ar: 'ملاحظات' },
+  'resource.filter.difficulty.foundation': { en: 'Foundation', ar: 'أساسي' },
+  'resource.filter.difficulty.higher': { en: 'Higher', ar: 'متقدّم' },
+  'resource.filter.clear': { en: 'Clear filters', ar: 'امسح الفلاتر' },
+  'resource.filter.clear_all': { en: 'Clear All', ar: 'امسح الكل' },
+  'resource.filter.apply': { en: 'Apply Filters', ar: 'طبّق الفلاتر' },
+  'resource.filter.button': { en: 'Filters', ar: 'الفلاتر' },
+  'resource.filter.heading': { en: 'Filters', ar: 'الفلاتر' },
+  'resource.filter.dialog_aria': { en: 'Filter options', ar: 'خيارات الفلترة' },
+  'resource.filter.close_aria': { en: 'Close filters', ar: 'سكّر الفلاتر' },
+  'resource.filter.topic.lang.reading_comprehension': {
+    en: 'Reading Comprehension',
+    ar: 'فهم المقروء',
+  },
+  'resource.filter.topic.lang.creative_writing': {
+    en: 'Creative Writing',
+    ar: 'الكتابة الإبداعية',
+  },
+  'resource.filter.topic.lang.transactional_writing': {
+    en: 'Transactional Writing',
+    ar: 'الكتابة الوظيفية',
+  },
+  'resource.filter.topic.lang.language_techniques': {
+    en: 'Language Techniques',
+    ar: 'أساليب اللغة',
+  },
+  'resource.filter.topic.lang.comparing_perspectives': {
+    en: 'Comparing Perspectives',
+    ar: 'مقارنة وجهات النظر',
+  },
+  'resource.filter.topic.lang.spoken_language': { en: 'Spoken Language', ar: 'اللغة المنطوقة' },
+  'resource.filter.topic.lit.shakespeare': { en: 'Shakespeare', ar: 'شكسبير' },
+  'resource.filter.topic.lit.poetry_anthology': { en: 'Poetry Anthology', ar: 'مجموعة الشعر' },
+  'resource.filter.topic.lit.modern_prose': { en: 'Modern Prose', ar: 'النثر الحديث' },
+  'resource.filter.topic.lit.nineteenth_century_novel': {
+    en: '19th Century Novel',
+    ar: 'روايات القرن التاسع عشر',
+  },
+  'resource.filter.topic.lit.unseen_poetry': { en: 'Unseen Poetry', ar: 'الشعر غير المرئي' },
+  'resource.filter.topic.lit.drama': { en: 'Drama', ar: 'الدراما' },
+
+  // ─── Flashcards hub page (revision/flashcards top-level) ─────────────
+  'flashcards.hub.breadcrumb_revision': { en: 'Revision', ar: 'المراجعة' },
+  'flashcards.hub.breadcrumb_flashcards': { en: 'Flashcards', ar: 'الكروت' },
+  'flashcards.hub.heading': { en: 'Smart Review Flashcards', ar: 'كروت المراجعة الذكية' },
+  'flashcards.hub.subheading': {
+    en: 'Master GCSE English with spaced-repetition flashcards. Quotes, techniques, vocabulary and exam skills with progress tracking.',
+    ar: 'احفظ مادة GCSE English بكروت المراجعة المتباعدة. اقتباسات وتقنيات وكلمات ومهارات امتحان مع متابعة تقدّمك.',
+  },
+  'flashcards.hub.cta_start': { en: 'Start studying', ar: 'ابدأ المذاكرة' },
+  'flashcards.hub.cta_browse': { en: 'Browse decks', ar: 'تصفّح الباقات' },
+
+  // ─── Games hub page (top-level /games) ───────────────────────────────
+  'games_page.breadcrumb': { en: 'Games', ar: 'الألعاب' },
+  'games_page.eyebrow_learn_through_play': { en: 'Learn through play', ar: 'تعلّم باللعب' },
+  'games_page.eyebrow_for_board_prefix': { en: 'For', ar: 'لـ' },
+  'games_page.title_english': { en: 'English', ar: 'الإنجليزي' },
+  'games_page.title_games': { en: 'Games', ar: 'ألعاب' },
+  'games_page.hero_with_board_prefix': {
+    en: 'Sharpen your English skills with games tailored to',
+    ar: 'طوّر مهاراتك في الإنجليزي مع ألعاب مفصّلة على',
+  },
+  'games_page.hero_with_board_suffix': { en: 'set texts and themes.', ar: 'نصوصها وتيمها.' },
+  'games_page.hero_default': {
+    en: 'Sharpen your English skills with fun, interactive games. Perfect for KS3 and GCSE revision.',
+    ar: 'طوّر مهاراتك في الإنجليزي بألعاب ممتعة وتفاعلية. حلوة لمراجعة KS3 و GCSE.',
+  },
+  'games_page.badge_free_games': { en: '7 Free Games', ar: '٧ ألعاب ببلاش' },
+  'games_page.badge_track_score': { en: 'Track Your Score', ar: 'تابع نتيجتك' },
+  'games_page.badge_instant_feedback': { en: 'Instant Feedback', ar: 'ردّ فوري' },
+  'games_page.back_to_all_games': { en: 'Back to all games', ar: 'رجوع لكل الألعاب' },
+  'games_page.heading_other_games': { en: 'Other Games', ar: 'ألعاب ثانية' },
+  'games_page.heading_choose_game': { en: 'Choose a Game', ar: 'اختر لعبة' },
+  'games_page.card.play_now': { en: 'Play Now', ar: 'العب الحين' },
+  'games_page.card.playing': { en: 'Playing...', ar: 'يلعب…' },
+  'games_page.card.locked_signup': { en: 'Sign up to play', ar: 'سجّل عشان تلعب' },
+  'games_page.card.locked_cta': { en: 'Get Started', ar: 'ابدأ' },
+
+  // ─── Poetry hub page (revision/poetry top-level) ─────────────────────
+  'poetry.breadcrumb_revision': { en: 'Revision', ar: 'المراجعة' },
+  'poetry.breadcrumb_poetry': { en: 'Poetry', ar: 'الشِعر' },
+  'poetry.boardless.title': { en: 'Choose your exam board', ar: 'اختر بورد الامتحان مالك' },
+  'poetry.boardless.description': {
+    en: 'Each exam board uses a different poetry anthology. Pick yours so we can show you only the poems you actually need to learn.',
+    ar: 'كل بورد عنده مختارات شِعرية مختلفة. اختر بوردك عشان نوريك القصائد اللي تحتاج تذاكرها بس.',
+  },
+  'poetry.boardless.fallback_title': { en: 'Choose your exam board', ar: 'اختر بوردك' },
+  'poetry.boardless.fallback_description': {
+    en: 'Pick a board to see your poetry anthology.',
+    ar: 'اختر بوردك عشان تشوف مختاراتك الشِعرية.',
+  },
+  'poetry.back_to_revision': { en: 'Back to Revision Hub', ar: 'رجوع لمركز المراجعة' },
+  'poetry.change_board': { en: 'Change board', ar: 'غيّر البورد' },
+  'poetry.badge_poetry_suffix': { en: 'Poetry', ar: 'شِعر' },
+  'poetry.badge_poetry_revision': { en: 'Poetry Revision', ar: 'مراجعة الشِعر' },
+  'poetry.choose_your_board_cta': { en: 'Choose your exam board', ar: 'اختر بورد الامتحان مالك' },
+  'poetry.wrong_board_banner': {
+    en: "That page belongs to a different exam board. Here's your anthology instead.",
+    ar: 'هذي الصفحة لبورد ثاني. هذي مختاراتك إنت.',
+  },
+  'poetry.aqa.title': { en: 'AQA Poetry Anthology', ar: 'مختارات AQA الشِعرية' },
+  'poetry.edexcel.title': { en: 'Edexcel Poetry Anthology', ar: 'مختارات Edexcel الشِعرية' },
+  'poetry.edexcel.description': {
+    en: "The Pearson Edexcel anthology is split into themed clusters. You'll study one cluster: Conflict or Time and Place.",
+    ar: 'مختارات Pearson Edexcel مقسّمة على مجموعات بحسب التيم. بتذاكر مجموعة وحدة: Conflict أو Time and Place.',
+  },
+  'poetry.edexcel.cluster_conflict.title': { en: 'Conflict', ar: 'Conflict' },
+  'poetry.edexcel.cluster_conflict.desc': {
+    en: 'War, struggle, internal turmoil and the cost of conflict.',
+    ar: 'الحرب والصراع والاضطراب الداخلي وتكلفة النزاع.',
+  },
+  'poetry.edexcel.cluster_time_place.title': { en: 'Time and Place', ar: 'Time and Place' },
+  'poetry.edexcel.cluster_time_place.desc': {
+    en: 'Memory, landscape, identity and a sense of belonging.',
+    ar: 'الذكريات والمكان والهوية والإحساس بالانتماء.',
+  },
+  'poetry.edexcel.view_full': {
+    en: 'View full Edexcel anthology hub',
+    ar: 'شوف مركز مختارات Edexcel كامل',
+  },
+  'poetry.ocr.title': { en: 'Towards a World Unknown', ar: 'Towards a World Unknown' },
+  'poetry.ocr.description': {
+    en: "The OCR anthology has 4 thematic clusters of 15 poems each. You'll study one cluster prescribed by your teacher.",
+    ar: 'مختارات OCR فيها ٤ مجموعات تيمية، كل وحدة ١٥ قصيدة. بتذاكر مجموعة وحدة بحسب اللي اختاره معلّمك.',
+  },
+  'poetry.ocr.cluster_lar.title': { en: 'Love and Relationships', ar: 'Love and Relationships' },
+  'poetry.ocr.cluster_lar.desc': {
+    en: 'Romantic, familial and complicated forms of love across centuries.',
+    ar: 'الحب الرومانسي والعائلي والمعقّد عبر قرون.',
+  },
+  'poetry.ocr.cluster_conflict.title': { en: 'Conflict', ar: 'Conflict' },
+  'poetry.ocr.cluster_conflict.desc': {
+    en: 'Personal, political and global conflict in poetry.',
+    ar: 'الصراع الشخصي والسياسي والعالمي في الشِعر.',
+  },
+  'poetry.ocr.cluster_youth_age.title': { en: 'Youth and Age', ar: 'Youth and Age' },
+  'poetry.ocr.cluster_youth_age.desc': {
+    en: 'Time, growing up, mortality and looking back.',
+    ar: 'الوقت والكِبر والموت والنظر للماضي.',
+  },
+  'poetry.ocr.cluster_power_nature.title': {
+    en: 'Power and the Natural World',
+    ar: 'Power and the Natural World',
+  },
+  'poetry.ocr.cluster_power_nature.desc': {
+    en: "Nature's force, human power and our relationship with the environment.",
+    ar: 'قوة الطبيعة والقوة البشرية وعلاقتنا بالبيئة.',
+  },
+  'poetry.ocr.view_full': {
+    en: 'View full OCR anthology hub',
+    ar: 'شوف مركز مختارات OCR كامل',
+  },
+  'poetry.eduqas.title': { en: 'Eduqas Poetry Anthology', ar: 'مختارات Eduqas الشِعرية' },
+  'poetry.eduqas.description': {
+    en: "The Eduqas 2025 anthology has 12 poems that all students study. You'll be asked to compare two of them in the exam — strong pairings are essential. Six of the twelve remain in copyright; quotations are short fair-dealing extracts.",
+    ar: 'مختارات Eduqas 2025 فيها ١٢ قصيدة كل الطلاب يذاكرونها. في الامتحان لازم تقارن بين قصيدتين — اختيار الزوج المناسب وايد مهم. ست قصايد من الـ١٢ لسّا تحت حقوق النشر؛ الاقتباسات قصيرة بحدود الاستخدام العادل.',
+  },
+  'poetry.eduqas.view': { en: 'View Eduqas anthology', ar: 'شوف مختارات Eduqas' },
+  'poetry.edexcel_igcse.title': {
+    en: 'Edexcel IGCSE Poetry Anthology',
+    ar: 'مختارات Edexcel IGCSE الشِعرية',
+  },
+  'poetry.edexcel_igcse.description': {
+    en: 'Pearson Edexcel IGCSE prescribes its own poetry anthology. Head to the IGCSE area for the poems you need.',
+    ar: 'Pearson Edexcel IGCSE عنده مختاراته الخاصة. روح قسم IGCSE عشان القصايد اللي تحتاجها.',
+  },
+  'poetry.edexcel_igcse.view': { en: 'View Edexcel IGCSE poetry', ar: 'شوف شِعر Edexcel IGCSE' },
+  'poetry.cambridge.title': {
+    en: 'No poetry anthology for your board',
+    ar: 'ما في مختارات شِعرية لبوردك',
+  },
+  'poetry.cambridge.description': {
+    en: "Cambridge IGCSE First Language English doesn't include a poetry anthology. Focus on Paper 1 reading skills instead — that's where your time pays off.",
+    ar: 'Cambridge IGCSE First Language English ما فيه مختارات شِعرية. ركّز على مهارات القراءة في Paper 1 — هذا اللي يستاهل وقتك.',
+  },
+  'poetry.cambridge.paper1_cta': { en: 'Go to Paper 1 reading', ar: 'روح لقراءة Paper 1' },
+  'poetry.cambridge_lit.title': {
+    en: 'Cambridge IGCSE Literature in English',
+    ar: 'Cambridge IGCSE Literature in English',
+  },
+  'poetry.cambridge_lit.description': {
+    en: 'The Cambridge Literature spec uses the Songs of Ourselves anthology. Detailed guides for each prescribed poem are on the Cambridge Lit hub.',
+    ar: 'مواصفات Cambridge Literature تستخدم مختارات Songs of Ourselves. شروح كل قصيدة مقرّرة موجودة في مركز Cambridge Lit.',
+  },
+  'poetry.cambridge_lit.cta': {
+    en: 'Open Cambridge Literature hub',
+    ar: 'افتح مركز Cambridge Literature',
+  },
+  'poetry.edexcel_lang.title': {
+    en: "Edexcel IGCSE Language A doesn't have a poetry anthology",
+    ar: 'Edexcel IGCSE Language A ما فيه مختارات شِعرية',
+  },
+  'poetry.edexcel_lang.description': {
+    en: 'The Language A spec (4EA1) focuses on non-fiction, transactional writing, and unseen prose — not a poetry anthology. Head to the Anthology section under Paper 1 for your prescribed texts.',
+    ar: 'مواصفات Language A (4EA1) تركّز على نصوص غير قصصية والكتابة الوظيفية والنثر غير المرئي — مو مختارات شِعرية. روح قسم Anthology تحت Paper 1 عشان نصوصك المقرّرة.',
+  },
+  'poetry.edexcel_lang.cta': { en: 'Go to Language A anthology', ar: 'روح لمختارات Language A' },
+  'poetry.a_level.title': {
+    en: "A-Level poetry isn't an anthology cluster",
+    ar: 'شِعر A-Level مو مجموعة مختارات',
+  },
+  'poetry.a_level.description': {
+    en: 'At A-Level, poetry is studied as part of a wider literature paper, not as a separate cluster. Use the unified hub to access your A-Level-specific resources.',
+    ar: 'في A-Level، الشِعر يتدرّس كجزء من ورقة أدب أوسع، مو كمجموعة مستقلّة. استخدم المركز الموحّد عشان مواد A-Level مالتك.',
+  },
+  'poetry.a_level.cta': { en: 'Open your A-Level hub', ar: 'افتح مركز A-Level' },
+  'poetry.ial.title': {
+    en: 'Edexcel IAL English Literature',
+    ar: 'Edexcel IAL English Literature',
+  },
+  'poetry.ial.description': {
+    en: "The IAL Literature paper draws on Edexcel's anthology. Open your IAL hub for spec-specific resources.",
+    ar: 'ورقة IAL Literature تعتمد على مختارات Edexcel. افتح مركز IAL مالك عشان المواد المخصّصة للمواصفات.',
+  },
+  'poetry.ial.cta': { en: 'Open IAL hub', ar: 'افتح مركز IAL' },
+  'poetry.ks3.title': {
+    en: 'KS3 poetry is themed, not anthology-based',
+    ar: 'شِعر KS3 بحسب التيمات، مو بحسب المختارات',
+  },
+  'poetry.ks3.description': {
+    en: 'KS3 lessons cover a rotating set of poems by theme rather than a fixed anthology. Use the unified KS3 hub for your year-group resources.',
+    ar: 'دروس KS3 تغطّي مجموعة قصايد متغيّرة بحسب التيم، مو مختارات ثابتة. استخدم مركز KS3 الموحّد عشان مواد مرحلتك.',
+  },
+  'poetry.ks3.cta': { en: 'Open KS3 hub', ar: 'افتح مركز KS3' },
+  'poetry.seo.h2_marked': {
+    en: 'How GCSE English poetry is marked',
+    ar: 'كيف ينصحح شِعر GCSE English',
+  },
+  'poetry.seo.h2_aos': { en: 'AO1 vs AO2 vs AO3 in poetry', ar: 'AO1 و AO2 و AO3 في الشِعر' },
+  'poetry.seo.h2_comparison': {
+    en: 'Poetry comparison questions explained',
+    ar: 'شرح أسئلة المقارنة في الشِعر',
+  },
+  'poetry.seo.about_h2': {
+    en: 'About GCSE English poetry revision',
+    ar: 'عن مراجعة شِعر GCSE English',
+  },
+  'poetry.anthology_links.heading_your': { en: 'Your anthology', ar: 'مختاراتك' },
+  'poetry.anthology_links.heading_other': {
+    en: 'Other anthologies on the platform',
+    ar: 'مختارات ثانية في المنصّة',
+  },
+  'poetry.anthology_links.heading_generic': {
+    en: 'Anthology-specific revision',
+    ar: 'مراجعة بحسب المختارات',
+  },
+  'poetry.anthology_links.fallback_note': {
+    en: 'Your selected board does not have a dedicated anthology in this section. Other boards are listed below for reference — each is labelled with the board it belongs to.',
+    ar: 'بوردك ما عنده مختارات مخصّصة في هالقسم. تحت لك بقية البوردات للاسترشاد — كل وحدة مكتوب عليها البورد مالها.',
+  },
+  'poetry.cluster.open': { en: 'Open', ar: 'افتح' },
+
+  // ─── Texts hub page (revision/texts top-level) ───────────────────────
+  'texts.boardless.h2': {
+    en: 'GCSE English Literature set texts — revision library',
+    ar: 'النصوص المقرّرة لـ GCSE English Literature — مكتبة المراجعة',
+  },
+  'texts.boardless.intro': {
+    en: 'Choose a text to see full revision notes, character maps, theme trackers, model paragraphs, and past-paper practice. Each entry below is tagged with the boards that prescribe it — pick your exam board to filter to just yours.',
+    ar: 'اختر نص عشان تشوف ملاحظات المراجعة الكاملة وخرائط الشخصيات وتتبّع التيمات وفقرات نموذجية وتمارين من امتحانات سابقة. كل عنوان تحت مكتوب عليه البورد اللي يقرّره — اختر بوردك عشان نوريك مالك بس.',
+  },
+  'texts.section.shakespeare': { en: 'Shakespeare', ar: 'شكسبير' },
+  'texts.section.c19_novel': { en: '19th-century novel', ar: 'روايات القرن التاسع عشر' },
+  'texts.section.modern_prose_drama': { en: 'Modern prose + drama', ar: 'النثر والدراما الحديثة' },
+  'texts.section.igcse_a_level': { en: 'IGCSE + A-Level texts', ar: 'نصوص IGCSE و A-Level' },
+  'texts.section.pearson_anthology': {
+    en: 'Pearson IGCSE Language A (4EA1) anthology',
+    ar: 'مختارات Pearson IGCSE Language A (4EA1)',
+  },
+  'texts.section.pearson_anthology_note': {
+    en: 'Section A non-fiction, Section B poetry and Section C prose for the Pearson Edexcel International GCSE English Language A specification.',
+    ar: 'Section A نصوص غير قصصية، Section B شِعر، و Section C نثر — لمواصفات Pearson Edexcel International GCSE English Language A.',
+  },
+  'texts.label.non_fiction': { en: 'Non-fiction:', ar: 'نصوص غير قصصية:' },
+  'texts.label.poetry': { en: 'Poetry:', ar: 'شِعر:' },
+  'texts.label.prose': { en: 'Prose:', ar: 'نثر:' },
+  'texts.coming_soon': { en: 'Coming soon', ar: 'قريب' },
+  'texts.personalise.title': { en: 'Personalise your revision', ar: 'فصّل مراجعتك على بوردك' },
+  'texts.personalise.body': {
+    en: "Pick your exam board to filter the texts above to just the ones you're sitting, and to unlock progress tracking.",
+    ar: 'اختر بوردك عشان نفلتر النصوص فوق على اللي بتدخل امتحانهم بس، وعشان تفتح متابعة التقدّم.',
+  },
+  'texts.personalise.cta': { en: 'Choose your exam board', ar: 'اختر بورد الامتحان مالك' },
+
+  // ─── Anthology hub page (igcse/edexcel-lang/anthology) ───────────────
+  'anth_page.back_to_lang_a': { en: 'Back to Language A', ar: 'رجوع لـ Language A' },
+  'anth_page.badge_paper': { en: 'Paper 1 Section A', ar: 'Paper 1 Section A' },
+  'anth_page.badge_texts_count': { en: '10 texts', ar: '١٠ نصوص' },
+  'anth_page.hero_title': {
+    en: 'Paper 1 Section A — Anthology Non-Fiction',
+    ar: 'Paper 1 Section A — نصوص غير قصصية من المختارات',
+  },
+  'anth_page.hero_lead_pre': {
+    en: 'Ten prescribed non-fiction texts for Edexcel IGCSE English Language A Paper 1. Each text has been analysed with',
+    ar: 'عشر نصوص غير قصصية مقرّرة لـ Edexcel IGCSE English Language A Paper 1. كل نص متحلّل مع',
+  },
+  'anth_page.hero_lf': { en: 'language features', ar: 'الخصائص اللغوية' },
+  'anth_page.hero_sa': { en: 'structural analysis', ar: 'التحليل البنائي' },
+  'anth_page.hero_vocab': { en: 'key vocabulary', ar: 'الكلمات المفتاحية' },
+  'anth_page.hero_practice': {
+    en: 'exam-style practice questions',
+    ar: 'أسئلة تمرينية على شكل امتحان',
+  },
+  'anth_page.hero_lead_and': { en: 'and', ar: 'و' },
+  'anth_page.cta_start_studying': { en: 'Start studying', ar: 'ابدأ المذاكرة' },
+  'anth_page.version_warning_label': {
+    en: 'Anthology version warning:',
+    ar: 'تنبيه نسخة المختارات:',
+  },
+  'anth_page.version_warning_body': {
+    en: 'This site teaches the Edexcel IGCSE Anthology Issue 2 (ISBN 978-1-446-93108-0, Pearson Education). Two of the non-fiction texts in this Paper 1 Section A anthology are adapted versions that differ from their freely-available online originals.',
+    ar: 'هذا الموقع يدرّس Edexcel IGCSE Anthology Issue 2 (ISBN 978-1-446-93108-0, Pearson Education). نصّين من النصوص غير القصصية في Paper 1 Section A نسخ معدّلة تختلف عن الأصول المتاحة أونلاين ببلاش.',
+  },
+  'anth_page.use_anthology_emph': {
+    en: 'Always use the anthology version',
+    ar: 'استخدم نسخة المختارات دايماً',
+  },
+  'anth_page.use_anthology_body': {
+    en: 'when answering Edexcel exam questions — examiners will mark against the anthology text, not the Guardian originals you may find on revision websites.',
+    ar: 'لما تجاوب أسئلة Edexcel — المصحّحون يصحّحون بناءً على نص المختارات، مو نسخ The Guardian اللي تلقاها في مواقع المراجعة.',
+  },
+  'anth_page.texts_heading': { en: 'All 10 Anthology Texts', ar: 'كل الـ١٠ نصوص من المختارات' },
+  'anth_page.texts_intro': {
+    en: "Each text page includes key extracts, language and structural analysis, writer's purpose, vocabulary, exam practice and comparison links. Select a text to begin your study.",
+    ar: 'كل صفحة نص فيها مقاطع أساسية وتحليل لغوي وبنائي وأهداف الكاتب والمفردات وتمارين امتحان وروابط المقارنة. اختر نص عشان تبدأ.',
+  },
+  'anth_page.text_index_prefix': { en: 'Text', ar: 'نص' },
+  'anth_page.study_this_text': { en: 'Study this text', ar: 'ذاكر هذا النص' },
+  'anth_page.expect_heading': {
+    en: 'Paper 1 Section A — What to Expect',
+    ar: 'Paper 1 Section A — شنو تتوقّع',
+  },
+  'anth_page.expect_intro': {
+    en: 'In Paper 1 Section A you will be given an extract from one of the ten anthology texts. You will answer three types of question:',
+    ar: 'في Paper 1 Section A بيعطونك مقطع من أحد النصوص العشرة. بتجاوب على ثلاث أنواع أسئلة:',
+  },
+  'anth_page.expect_q1_label': { en: 'Retrieval (Q1):', ar: 'الاسترجاع (Q1):' },
+  'anth_page.expect_q1_body': {
+    en: '"List four things about..." — straightforward identification of information from the text. Worth 4 marks.',
+    ar: '"اذكر أربعة أشياء عن…" — استخراج مباشر للمعلومات من النص. القيمة ٤ درجات.',
+  },
+  'anth_page.expect_q2_label': { en: 'Language analysis (Q2):', ar: 'تحليل اللغة (Q2):' },
+  'anth_page.expect_q2_body': {
+    en: '"How does the writer use language to..." — close analysis of specific techniques and their effects on the reader. Worth 12 marks.',
+    ar: '"كيف يستخدم الكاتب اللغة عشان…" — تحليل دقيق لتقنيات معيّنة وأثرها على القارئ. القيمة ١٢ درجة.',
+  },
+  'anth_page.expect_q3_label': { en: 'Structural analysis (Q3):', ar: 'تحليل البنية (Q3):' },
+  'anth_page.expect_q3_body': {
+    en: '"How does the writer structure the text to..." — analysis of how the text is organised to engage and influence the reader. Worth 12 marks.',
+    ar: '"كيف يبني الكاتب النص عشان…" — تحليل كيف ينظّم النص ليجذب القارئ ويؤثّر فيه. القيمة ١٢ درجة.',
+  },
+  'anth_page.study_all_note': {
+    en: 'You should study all ten texts. You will not know which text will appear in the exam until you open the paper.',
+    ar: 'لازم تذاكر كل النصوص العشرة. ما بتعرف أي نص بيجي في الامتحان لين تفتح الورقة.',
+  },
+  'anth_page.footer_align': {
+    en: 'Aligned with Pearson Edexcel specification 4EA1 · Paper 1 Section A',
+    ar: 'متوافق مع مواصفات Pearson Edexcel 4EA1 · Paper 1 Section A',
+  },
+
+  // ─── Model answers (grade tabs + summary) ───────────────────────────
+  'model_answers.grade.label.9': { en: 'Grade 9', ar: 'الدرجة ٩' },
+  'model_answers.grade.label.7': { en: 'Grade 7', ar: 'الدرجة ٧' },
+  'model_answers.grade.label.5': { en: 'Grade 5', ar: 'الدرجة ٥' },
+  'model_answers.grade.label.3': { en: 'Grade 3', ar: 'الدرجة ٣' },
+  'model_answers.grade.descriptor.exceptional': { en: 'Exceptional', ar: 'ممتاز وايد' },
+  'model_answers.grade.descriptor.strong': { en: 'Strong', ar: 'قوي' },
+  'model_answers.grade.descriptor.solid': { en: 'Solid', ar: 'زين' },
+  'model_answers.grade.descriptor.developing': { en: 'Developing', ar: 'في تطوّر' },
+  'model_answers.summary.heading_prefix': {
+    en: 'What makes this a',
+    ar: 'شنو اللي يخلّيها',
+  },
+  'model_answers.tabs.empty': {
+    en: 'No model answer available for',
+    ar: 'ما في إجابة نموذجية الحين لـ',
+  },
+  'model_answers.tabs.empty_suffix': { en: 'yet.', ar: '.' },
+
+  // ─── Profile (DOB nudge banner) ─────────────────────────────────────
+  'profile.dob.title': {
+    en: 'Please confirm your date of birth',
+    ar: 'لو سمحت، أكّد تاريخ ميلادك',
+  },
+  'profile.dob.body': {
+    en: "We're missing this from your profile. It helps us give the right age-appropriate experience and meet our safeguarding obligations.",
+    ar: 'الحين هذا ناقص من ملفك الشخصي. يساعدنا نعطيك تجربة مناسبة لعمرك ونلتزم بالتزامات الحماية مالنا.',
+  },
+  'profile.dob.input_label': { en: 'Date of birth', ar: 'تاريخ الميلاد' },
+  'profile.dob.save': { en: 'Save', ar: 'احفظ' },
+  'profile.dob.saving': { en: 'Saving…', ar: 'لحظة، نحفظ…' },
+  'profile.dob.saved': { en: 'Saved', ar: 'انحفظ' },
+  'profile.dob.dismiss_label': {
+    en: 'Dismiss for 24 hours',
+    ar: 'سكّر لمدة ٢٤ ساعة',
+  },
+  'profile.dob.error_generic': {
+    en: 'Something went wrong',
+    ar: 'صار في خطأ',
+  },
+
+  // ─── Recommendations (cards + section) ──────────────────────────────
+  'recommend.section.title': {
+    en: 'Recommended for you',
+    ar: 'موصى به لك',
+  },
+  'recommend.priority.high': { en: 'High priority', ar: 'أولوية عالية' },
+  'recommend.priority.medium': { en: 'Suggested', ar: 'نقترح عليك' },
+  'recommend.priority.low': { en: 'Optional', ar: 'اختياري' },
+  'recommend.card.dismiss_label_prefix': {
+    en: 'Dismiss recommendation:',
+    ar: 'سكّر التوصية:',
+  },
+
+  // ─── Teacher pages (public marketing + library + demo + school admin) ──
+  // Used by:
+  //   /resources/teacher-library    -> teacher_page.library.*
+  //   /demo/teacher                  -> teacher_page.demo.*
+  //   /school/teachers               -> teacher_page.school_admin.*
+  // (Dashboard surfaces under /dashboard/teacher/* keep their own teacher.* keys.)
+  'teacher_page.library.eyebrow': { en: 'For Teachers', ar: 'للمعلمين' },
+  'teacher_page.library.eyebrow_board_prefix': { en: 'For', ar: 'لـ' },
+  'teacher_page.library.title': { en: 'Teacher Resources Library', ar: 'مكتبة موارد المعلم' },
+  'teacher_page.library.subtitle': {
+    en: 'Free, classroom-ready teaching resources for GCSE English. Everything you need — planned, printable, and ready to use tomorrow. No sign-up required.',
+    ar: 'موارد تدريس ببلاش وجاهزة للفصل لـ GCSE English. كل اللي تحتاجه — مخطّط، قابل للطباعة، وجاهز تستخدمه بكرة. ما يحتاج تسجيل.',
+  },
+  'teacher_page.library.badge.free': { en: '100% free', ar: 'ببلاش 100٪' },
+  'teacher_page.library.badge.no_account': { en: 'No account needed', ar: 'ما يحتاج حساب' },
+  'teacher_page.library.badge.boards': {
+    en: 'AQA / Edexcel / OCR / Eduqas',
+    ar: 'AQA / Edexcel / OCR / Eduqas',
+  },
+  'teacher_page.library.browse_heading': { en: 'Browse by category', ar: 'تصفّح حسب التصنيف' },
+  'teacher_page.library.browse_cta': { en: 'Browse resources', ar: 'شوف الموارد' },
+  'teacher_page.library.footer_title': {
+    en: 'Looking for something specific?',
+    ar: 'تدوّر شي معيّن؟',
+  },
+  'teacher_page.library.footer_body': {
+    en: 'Browse our full teaching resources hub for assessment tools, exam specs, and printable classroom materials.',
+    ar: 'تصفّح هب موارد التدريس الكامل لأدوات التقييم، مواصفات الامتحان، ومواد الفصل القابلة للطباعة.',
+  },
+  'teacher_page.library.footer_link': { en: 'Visit main teaching hub', ar: 'روح للهب الرئيسي' },
+
+  // Library category cards
+  'teacher_page.library.cat.lesson_plans.title': { en: 'Lesson Plans', ar: 'خطط الدروس' },
+  'teacher_page.library.cat.lesson_plans.kind': { en: 'Lesson Plan', ar: 'خطة درس' },
+  'teacher_page.library.cat.lesson_plans.count': { en: '20 plans', ar: '٢٠ خطة' },
+  'teacher_page.library.cat.lesson_plans.desc': {
+    en: 'Full 60-minute lesson plans with learning objectives, starters, main activities, plenaries, and differentiation notes.',
+    ar: 'خطط دروس كاملة ٦٠ دقيقة مع أهداف التعلّم، أنشطة افتتاحية، أنشطة رئيسية، خاتمة، وملاحظات التمييز.',
+  },
+  'teacher_page.library.cat.worksheets.title': { en: 'Worksheets', ar: 'أوراق عمل' },
+  'teacher_page.library.cat.worksheets.kind': { en: 'Worksheet', ar: 'ورقة عمل' },
+  'teacher_page.library.cat.worksheets.count': { en: '25 worksheets', ar: '٢٥ ورقة عمل' },
+  'teacher_page.library.cat.worksheets.desc': {
+    en: 'Print-ready student worksheets for comprehension, analysis, writing scaffolds, and exam skills practice.',
+    ar: 'أوراق عمل جاهزة للطباعة للفهم، التحليل، دعم الكتابة، وتدريب مهارات الامتحان.',
+  },
+  'teacher_page.library.cat.mark_schemes.title': { en: 'Mark Schemes', ar: 'جداول التصحيح' },
+  'teacher_page.library.cat.mark_schemes.kind': { en: 'Mark Scheme', ar: 'جدول تصحيح' },
+  'teacher_page.library.cat.mark_schemes.count': {
+    en: 'All major boards',
+    ar: 'كل البوردات الرئيسية',
+  },
+  'teacher_page.library.cat.mark_schemes.desc': {
+    en: 'AQA, Edexcel, OCR, and Eduqas mark scheme references with grade descriptors and assessment objectives.',
+    ar: 'مراجع جداول تصحيح لـ AQA, Edexcel, OCR, Eduqas مع واصفات الدرجات وأهداف التقييم.',
+  },
+  'teacher_page.library.cat.revision_packs.title': { en: 'Revision Packs', ar: 'حزم مراجعة' },
+  'teacher_page.library.cat.revision_packs.kind': { en: 'Revision Pack', ar: 'حزمة مراجعة' },
+  'teacher_page.library.cat.revision_packs.count': {
+    en: 'Set text packs',
+    ar: 'حزم النصوص المقررة',
+  },
+  'teacher_page.library.cat.revision_packs.desc': {
+    en: 'Ready-made revision booklets by set text — quote banks, theme notes, character analysis, and essay plans.',
+    ar: 'كتيّبات مراجعة جاهزة لكل نص مقرر — بنوك اقتباسات، ملاحظات مواضيع، تحليل شخصيات، وخطط مقالات.',
+  },
+  'teacher_page.library.cat.starters.title': { en: 'Starter Activities', ar: 'أنشطة افتتاحية' },
+  'teacher_page.library.cat.starters.kind': { en: 'Starter', ar: 'افتتاحية' },
+  'teacher_page.library.cat.starters.count': { en: '20 starters', ar: '٢٠ نشاط افتتاحي' },
+  'teacher_page.library.cat.starters.desc': {
+    en: '20 quick 5-minute starters to hook your class — vocabulary, retrieval practice, analysis warm-ups.',
+    ar: '٢٠ نشاط افتتاحي سريع ٥ دقائق يشد فصلك — مفردات، تدريب استرجاع، تسخين تحليل.',
+  },
+  'teacher_page.library.cat.homework.title': { en: 'Homework Tasks', ar: 'مهام منزلية' },
+  'teacher_page.library.cat.homework.kind': { en: 'Homework', ar: 'واجب' },
+  'teacher_page.library.cat.homework.count': { en: 'Task library', ar: 'مكتبة المهام' },
+  'teacher_page.library.cat.homework.desc': {
+    en: 'Meaningful homework tasks that extend classroom learning without creating a marking mountain.',
+    ar: 'مهام منزلية ذات معنى تمد التعلّم الصفي بدون ما تكدّس جبل تصحيح.',
+  },
+
+  // /demo/teacher dashboard chrome
+  'teacher_page.demo.banner_eyebrow': { en: 'Teacher Demo', ar: 'ديمو المعلم' },
+  'teacher_page.demo.banner_body': {
+    en: 'See what your dashboard looks like',
+    ar: 'شوف شكل لوحتك',
+  },
+  'teacher_page.demo.welcome_prefix': { en: 'Welcome back,', ar: 'حياك الله،' },
+  'teacher_page.demo.department_suffix': {
+    en: 'Department — Riverside Academy',
+    ar: 'القسم — Riverside Academy',
+  },
+  'teacher_page.demo.stat.classes': { en: 'Classes', ar: 'الفصول' },
+  'teacher_page.demo.stat.classes_sub': { en: 'Across Years 10-13', ar: 'في السنوات ١٠–١٣' },
+  'teacher_page.demo.stat.students': { en: 'Students', ar: 'الطلاب' },
+  'teacher_page.demo.stat.students_sub': { en: 'need attention', ar: 'يحتاجون انتباه' },
+  'teacher_page.demo.stat.avg_score': { en: 'Avg Score', ar: 'متوسط الدرجات' },
+  'teacher_page.demo.stat.grade_prefix': { en: 'Grade', ar: 'درجة' },
+  'teacher_page.demo.stat.term_change': { en: '+2% this term', ar: '+٢٪ هذا الترم' },
+  'teacher_page.demo.stat.due_soon': { en: 'Due Soon', ar: 'قريب التسليم' },
+  'teacher_page.demo.stat.awaiting_marking': { en: 'awaiting marking', ar: 'بانتظار التصحيح' },
+  'teacher_page.demo.at_risk_heading_suffix': { en: 'Students At Risk', ar: 'طالب في خطر' },
+  'teacher_page.demo.classes_heading': { en: 'My Classes', ar: 'فصولي' },
+  'teacher_page.demo.year_prefix': { en: 'Year', ar: 'السنة' },
+  'teacher_page.demo.avg_score_label': { en: 'avg score', ar: 'متوسط الدرجة' },
+  'teacher_page.demo.students_label': { en: 'students', ar: 'طلاب' },
+  'teacher_page.demo.at_risk_short': { en: 'at risk', ar: 'في خطر' },
+  'teacher_page.demo.todays_lessons': { en: "Today's Lessons", ar: 'دروس اليوم' },
+  'teacher_page.demo.assignments_due': { en: 'Assignments Due', ar: 'الواجبات المستحقة' },
+  'teacher_page.demo.marking_queue': { en: 'Marking Queue', ar: 'قائمة التصحيح' },
+  'teacher_page.demo.marked_prefix': { en: 'marked', ar: 'تم تصحيح' },
+  'teacher_page.demo.total_prefix': { en: 'total', ar: 'الإجمالي' },
+  'teacher_page.demo.needs_marking': { en: 'Needs Marking', ar: 'يحتاج تصحيح' },
+  'teacher_page.demo.submitted_label': { en: 'submitted', ar: 'تم التسليم' },
+  'teacher_page.demo.view_btn': { en: 'View', ar: 'شوف' },
+  'teacher_page.demo.all_caught_up': { en: 'All caught up!', ar: 'كل شي تمام!' },
+  'teacher_page.demo.class_performance': { en: 'Class Performance', ar: 'أداء الفصول' },
+  'teacher_page.demo.quick_actions': { en: 'Quick Actions', ar: 'إجراءات سريعة' },
+  'teacher_page.demo.qa.lesson_builder_label': { en: 'Lesson Builder', ar: 'بنّاء الدروس' },
+  'teacher_page.demo.qa.lesson_builder_desc': {
+    en: 'Plan and create lessons',
+    ar: 'خطّط وأنشئ دروس',
+  },
+  'teacher_page.demo.qa.my_students_label': { en: 'My Students', ar: 'طلابي' },
+  'teacher_page.demo.qa.my_students_desc': {
+    en: 'View student profiles',
+    ar: 'شوف ملفات الطلاب',
+  },
+  'teacher_page.demo.qa.resources_label': { en: 'Resources', ar: 'الموارد' },
+  'teacher_page.demo.qa.resources_desc': { en: 'Teaching materials', ar: 'مواد التدريس' },
+  'teacher_page.demo.qa.markbook_label': { en: 'Mark Book', ar: 'دفتر الدرجات' },
+  'teacher_page.demo.qa.markbook_desc': { en: 'Grades and records', ar: 'درجات وسجلات' },
+  'teacher_page.demo.cta_title': {
+    en: 'Ready to use this with your own classes?',
+    ar: 'جاهز تستخدمها مع فصولك؟',
+  },
+  'teacher_page.demo.cta_body': {
+    en: 'Get real-time student analytics, AI-powered essay marking, and lesson planning tools — all in one place.',
+    ar: 'احصل على تحليلات طلاب لحظية، تصحيح مقالات بـ AI، وأدوات تخطيط دروس — كلها في مكان واحد.',
+  },
+  'teacher_page.demo.cta_btn': { en: 'Start Your Free Trial', ar: 'ابدأ التجربة المجانية' },
+
+  // /school/teachers admin chrome
+  'teacher_page.school_admin.role.teacher': { en: 'Teacher', ar: 'معلم' },
+  'teacher_page.school_admin.role.head_of_dept': { en: 'Head of Dept', ar: 'رئيس القسم' },
+  'teacher_page.school_admin.role.admin': { en: 'Admin', ar: 'أدمن' },
+  'teacher_page.school_admin.status.active': { en: 'Active', ar: 'فعّال' },
+  'teacher_page.school_admin.status.inactive': { en: 'Inactive', ar: 'غير فعّال' },
+  'teacher_page.school_admin.status.suspended': { en: 'Suspended', ar: 'موقوف' },
+  'teacher_page.school_admin.never': { en: 'Never', ar: 'أبداً' },
+  'teacher_page.school_admin.just_now': { en: 'Just now', ar: 'الحين' },
+  'teacher_page.school_admin.minutes_ago_suffix': { en: 'minutes ago', ar: 'دقيقة' },
+  'teacher_page.school_admin.today': { en: 'Today', ar: 'اليوم' },
+  'teacher_page.school_admin.yesterday': { en: 'Yesterday', ar: 'أمس' },
+  'teacher_page.school_admin.days_ago_suffix': { en: 'days ago', ar: 'يوم' },
+  'teacher_page.school_admin.one_week_ago': { en: '1 week ago', ar: 'قبل أسبوع' },
+  'teacher_page.school_admin.weeks_ago_suffix': { en: 'weeks ago', ar: 'أسابيع' },
+  'teacher_page.school_admin.one_month_ago': { en: '1 month ago', ar: 'قبل شهر' },
+  'teacher_page.school_admin.months_ago_suffix': { en: 'months ago', ar: 'شهر' },
+  'teacher_page.school_admin.actions_aria': { en: 'Teacher actions', ar: 'إجراءات المعلم' },
+  'teacher_page.school_admin.action.edit': { en: 'Edit Teacher', ar: 'عدّل المعلم' },
+  'teacher_page.school_admin.action.reset_password': {
+    en: 'Reset Password',
+    ar: 'إعادة تعيين كلمة المرور',
+  },
+  'teacher_page.school_admin.action.suspend': { en: 'Suspend', ar: 'أوقف' },
+  'teacher_page.school_admin.action.unsuspend': { en: 'Unsuspend', ar: 'فعّل' },
+  'teacher_page.school_admin.action.remove': { en: 'Remove from School', ar: 'احذف من المدرسة' },
+  'teacher_page.school_admin.dialog.remove_title': { en: 'Remove Teacher', ar: 'حذف معلم' },
+  'teacher_page.school_admin.dialog.remove_body_pre': {
+    en: 'Are you sure you want to remove',
+    ar: 'متأكد تبغى تحذف',
+  },
+  'teacher_page.school_admin.dialog.remove_body_post': {
+    en: 'from your school? Their classes will become unassigned.',
+    ar: 'من مدرستك؟ فصوله راح تصير بدون تعيين.',
+  },
+  'teacher_page.school_admin.dialog.cancel': { en: 'Cancel', ar: 'إلغاء' },
+  'teacher_page.school_admin.dialog.confirm_remove': { en: 'Remove Teacher', ar: 'احذف المعلم' },
+
+  // ─── Onboarding (/school/onboarding 5-step wizard) ────────────────────
+  // Brief asks for `onboarding.*` namespace; this is the only onboarding
+  // surface that exists in the app. School-admin-only — addresses the
+  // founder/admin (M default per binary gender policy).
+  'onboarding.brand_suffix': { en: 'Setup', ar: 'الإعداد' },
+  'onboarding.skip_to_dashboard': {
+    en: 'Skip setup, go to dashboard',
+    ar: 'تخطّ الإعداد، روح للوحة',
+  },
+  'onboarding.step_label_prefix': { en: 'Step', ar: 'الخطوة' },
+  'onboarding.step_of': { en: 'of', ar: 'من' },
+  'onboarding.percent_complete_suffix': { en: '% complete', ar: '٪ مكتمل' },
+  'onboarding.step.welcome': { en: 'Welcome', ar: 'حياك الله' },
+  'onboarding.step.teachers': { en: 'Teachers', ar: 'المعلمون' },
+  'onboarding.step.students': { en: 'Students', ar: 'الطلاب' },
+  'onboarding.step.classes': { en: 'Classes', ar: 'الفصول' },
+  'onboarding.step.complete': { en: 'Complete', ar: 'تمام' },
+
+  // Step 1 — Welcome screen
+  'onboarding.s1.founder_badge': { en: 'FOUNDER ACCESS', ar: 'وصول FOUNDER' },
+  'onboarding.s1.welcome_prefix': {
+    en: 'Welcome to The English Hub,',
+    ar: 'حياك الله في The English Hub،',
+  },
+  'onboarding.s1.intro': {
+    en: 'Your school account is ready. This short wizard will help you configure teachers, students, and your first class in just a few minutes.',
+    ar: 'حساب مدرستك جاهز. هذا المساعد القصير راح يساعدك تعدّ المعلمين والطلاب وأول فصل خلال دقائق.',
+  },
+  'onboarding.s1.access_heading': {
+    en: 'What you have access to',
+    ar: 'وش عندك صلاحية له',
+  },
+  'onboarding.s1.access.0': {
+    en: 'FOUNDER access active until August 2026',
+    ar: 'صلاحية FOUNDER فعّالة لحد أغسطس ٢٠٢٦',
+  },
+  'onboarding.s1.access.1': {
+    en: 'Unlimited teachers and students',
+    ar: 'معلمين وطلاب بلا حدود',
+  },
+  'onboarding.s1.access.2': {
+    en: 'All resources, lessons, and worksheets',
+    ar: 'كل الموارد والدروس وأوراق العمل',
+  },
+  'onboarding.s1.access.3': {
+    en: 'Assignments, progress tracking, and analytics',
+    ar: 'واجبات وتتبّع تقدّم وتحليلات',
+  },
+  'onboarding.s1.access.4': {
+    en: 'Priority support and early feature access',
+    ar: 'دعم أولوية ووصول مبكّر للميزات',
+  },
+  'onboarding.s1.cta': { en: 'Get Started', ar: 'يلا نبدأ' },
+
+  // Step 2 — Add teachers
+  'onboarding.s2.title': { en: 'Add Your Teachers', ar: 'ضيف معلميك' },
+  'onboarding.s2.subtitle': {
+    en: 'Choose how you would like to bring your teaching staff on board.',
+    ar: 'اختر كيف تبغى تضيف طاقمك التدريسي.',
+  },
+  'onboarding.s2.teachers_count_suffix': { en: 'teachers added', ar: 'معلم مضاف' },
+  'onboarding.s2.teacher_added_singular': { en: 'teacher added', ar: 'معلم مضاف' },
+  'onboarding.s2.option_a_title': {
+    en: 'Option A — Upload Excel / CSV',
+    ar: 'الخيار A — حمّل Excel / CSV',
+  },
+  'onboarding.s2.option_a_body': {
+    en: 'Import many teachers at once from a spreadsheet.',
+    ar: 'استورد عدد معلمين دفعة وحدة من جدول بيانات.',
+  },
+  'onboarding.s2.go_to_import': { en: 'Go to Import Tool', ar: 'روح لأداة الاستيراد' },
+  'onboarding.s2.option_b_title': {
+    en: 'Option B — Invite individually',
+    ar: 'الخيار B — ادعُ كل واحد على حدة',
+  },
+  'onboarding.s2.option_b_body': {
+    en: 'Send email invitations to teachers one by one.',
+    ar: 'أرسل دعوات إيميل للمعلمين واحد واحد.',
+  },
+  'onboarding.s2.email_placeholder': {
+    en: 'teacher@school.ac.uk',
+    ar: 'teacher@school.ac.uk',
+  },
+  'onboarding.s2.add_btn': { en: 'Add', ar: 'ضيف' },
+  'onboarding.s2.remove_btn': { en: 'Remove', ar: 'احذف' },
+  'onboarding.s2.send_invites_prefix': { en: 'Send', ar: 'أرسل' },
+  'onboarding.s2.send_invites_singular': { en: 'Invite', ar: 'دعوة' },
+  'onboarding.s2.send_invites_plural': { en: 'Invites', ar: 'دعوات' },
+  'onboarding.s2.sending': { en: 'Sending...', ar: 'يرسل… لحظة' },
+  'onboarding.s2.success': {
+    en: 'Invites sent. Teachers will receive an email to join.',
+    ar: 'تم إرسال الدعوات. المعلمون بيوصلهم إيميل للانضمام.',
+  },
+  'onboarding.s2.option_c': {
+    en: 'Option C — skip for now and continue below.',
+    ar: 'الخيار C — تخطّ الحين وكمّل تحت.',
+  },
+  'onboarding.s2.invite_failed': { en: 'Failed to send invites', ar: 'فشل إرسال الدعوات' },
+  'onboarding.s2.generic_error': { en: 'Something went wrong', ar: 'صار في خطأ' },
+
+  // Step 3 — Add students
+  'onboarding.s3.title': { en: 'Add Your Students', ar: 'ضيف طلابك' },
+  'onboarding.s3.subtitle': {
+    en: 'Import a class list or share your school join code.',
+    ar: 'استورد قائمة فصل أو شارك كود انضمام المدرسة.',
+  },
+  'onboarding.s3.students_count_suffix': { en: 'students added', ar: 'طالب مضاف' },
+  'onboarding.s3.student_added_singular': { en: 'student added', ar: 'طالب مضاف' },
+  'onboarding.s3.option_a_title': {
+    en: 'Option A — Upload Excel / CSV',
+    ar: 'الخيار A — حمّل Excel / CSV',
+  },
+  'onboarding.s3.option_a_body': {
+    en: 'Import a full year group or class list from a spreadsheet.',
+    ar: 'استورد سنة كاملة أو قائمة فصل من جدول بيانات.',
+  },
+  'onboarding.s3.option_b_title': {
+    en: 'Option B — Share your school join code',
+    ar: 'الخيار B — شارك كود انضمام المدرسة',
+  },
+  'onboarding.s3.option_b_body': {
+    en: 'Students enter this code to join your school instantly.',
+    ar: 'الطلاب يدخلون هذا الكود ليلتحقون بمدرستك على طول.',
+  },
+  'onboarding.s3.copy_btn': { en: 'Copy', ar: 'انسخ' },
+  'onboarding.s3.copied': { en: 'Copied!', ar: 'تم النسخ!' },
+  'onboarding.s3.no_code_pre': {
+    en: 'No active join code found.',
+    ar: 'ما في كود انضمام فعّال.',
+  },
+  'onboarding.s3.generate_in_settings': {
+    en: 'Generate one in Settings.',
+    ar: 'أنشئ واحد من الإعدادات.',
+  },
+  'onboarding.s3.students_visit_pre': { en: 'Students visit', ar: 'الطلاب يروحون' },
+  'onboarding.s3.students_visit_post': {
+    en: 'and enter the code above.',
+    ar: 'ويدخلون الكود فوق.',
+  },
+
+  // Step 4 — Create first class
+  'onboarding.s4.title': { en: 'Create Your First Class', ar: 'أنشئ أول فصل لك' },
+  'onboarding.s4.subtitle': {
+    en: 'Set up a class so you can assign resources and track progress.',
+    ar: 'سوِّ فصل عشان تقدر تعيّن موارد وتتبّع التقدّم.',
+  },
+  'onboarding.s4.success_title': {
+    en: 'Class created successfully!',
+    ar: 'تم إنشاء الفصل بنجاح!',
+  },
+  'onboarding.s4.success_body': {
+    en: 'You can create more classes later from the Classes page.',
+    ar: 'تقدر تنشئ فصول ثانية لاحقاً من صفحة الفصول.',
+  },
+  'onboarding.s4.class_name_label': { en: 'Class Name', ar: 'اسم الفصل' },
+  'onboarding.s4.class_name_required': {
+    en: 'Class name is required.',
+    ar: 'اسم الفصل لازم.',
+  },
+  'onboarding.s4.class_name_placeholder': {
+    en: 'e.g. 10B English Language',
+    ar: 'مثلاً 10B English Language',
+  },
+  'onboarding.s4.year_group_label': { en: 'Year Group', ar: 'السنة الدراسية' },
+  'onboarding.s4.exam_board_label': { en: 'Exam Board', ar: 'بورد الامتحان' },
+  'onboarding.s4.assign_teacher_label': { en: 'Assign Teacher', ar: 'عيّن معلم' },
+  'onboarding.s4.create_btn': { en: 'Create Class', ar: 'أنشئ الفصل' },
+  'onboarding.s4.creating': { en: 'Creating...', ar: 'ينشئ… لحظة' },
+  'onboarding.s4.create_failed': { en: 'Failed to create class', ar: 'فشل إنشاء الفصل' },
+  'onboarding.s4.skip_later': {
+    en: "Skip - I'll do this later",
+    ar: 'تخطّ — راح أسوّيها لاحقاً',
+  },
+
+  // Step 5 — Done
+  'onboarding.s5.title': { en: "You're All Set!", ar: 'كل شي جاهز!' },
+  'onboarding.s5.subtitle': {
+    en: 'Your school is configured and ready to go.',
+    ar: 'مدرستك معدّة وجاهزة.',
+  },
+  'onboarding.s5.stat.teachers': { en: 'Teachers', ar: 'المعلمون' },
+  'onboarding.s5.stat.students': { en: 'Students', ar: 'الطلاب' },
+  'onboarding.s5.stat.classes': { en: 'Classes', ar: 'الفصول' },
+  'onboarding.s5.download_logins': { en: 'Download Login Details', ar: 'حمّل بيانات الدخول' },
+  'onboarding.s5.go_dashboard': { en: 'Go to Dashboard', ar: 'روح للوحة' },
+  'onboarding.s5.view_guide': { en: 'View Setup Guide', ar: 'شوف دليل الإعداد' },
+
+  // Shared wizard nav
+  'onboarding.nav.back': { en: 'Back', ar: 'رجوع' },
+  'onboarding.nav.continue': { en: 'Continue', ar: 'كمّل' },
+  'onboarding.nav.skip_for_now': { en: 'Skip for now', ar: 'تخطّ الحين' },
+  'onboarding.default_school_name': { en: 'Your School', ar: 'مدرستك' },
+
+  // ─── Reading assessment surface (overview + test + results) ─────────
+  'assessment.reading.breadcrumb.dashboard': { en: 'Dashboard', ar: 'لوحتك' },
+  'assessment.reading.breadcrumb.this_page': { en: 'Reading Assessment', ar: 'تقييم القراءة' },
+  'assessment.reading.page_title': {
+    en: 'Reading Comprehension Assessment',
+    ar: 'تقييم القراءة والفهم',
+  },
+  'assessment.reading.page_subtitle': {
+    en: 'Measure your reading age, decoding skills, and fluency',
+    ar: 'قِس عمر القراءة مالك ومهارات فك الكلمات والطلاقة',
+  },
+  'assessment.reading.profile_heading': { en: 'Your Reading Profile', ar: 'ملف القراءة مالك' },
+  'assessment.reading.label.reading_age': { en: 'Reading Age', ar: 'عمر القراءة' },
+  'assessment.reading.label.decoding_age': { en: 'Decoding Age', ar: 'عمر فك الكلمات' },
+  'assessment.reading.label.fluency_age': { en: 'Fluency Age', ar: 'عمر الطلاقة' },
+  'assessment.reading.comparison.above': { en: 'Above expected', ar: 'أعلى من المتوقع' },
+  'assessment.reading.comparison.at': { en: 'At expected level', ar: 'بالمستوى المتوقع' },
+  'assessment.reading.comparison.below': { en: 'Below expected', ar: 'أقل من المتوقع' },
+  'assessment.reading.gcse_equivalent': { en: 'GCSE Equivalent', ar: 'المعادل لدرجة GCSE' },
+  'assessment.reading.grade_prefix': { en: 'Grade', ar: 'درجة' },
+  'assessment.reading.score_breakdown': { en: 'Score Breakdown', ar: 'تفصيل النتيجة' },
+  'assessment.reading.comprehension': { en: 'Comprehension', ar: 'الفهم' },
+  'assessment.reading.decoding': { en: 'Decoding', ar: 'فك الكلمات' },
+  'assessment.reading.fluency': { en: 'Fluency', ar: 'الطلاقة' },
+  'assessment.reading.wpm_short': { en: 'WPM', ar: 'كلمة/دقيقة' },
+  'assessment.reading.accuracy_label': { en: 'accuracy', ar: 'دقّة' },
+  'assessment.reading.strengths': { en: 'Strengths', ar: 'نقاط القوة' },
+  'assessment.reading.areas_for_development': {
+    en: 'Areas for Development',
+    ar: 'مجالات للتطوير',
+  },
+  'assessment.reading.recommended_next_steps': {
+    en: 'Recommended Next Steps',
+    ar: 'الخطوات الجاية المقترحة',
+  },
+  'assessment.reading.next_step.read_widely': { en: 'Read widely', ar: 'اقرا وايد ومن كل اتجاه' },
+  'assessment.reading.next_step.read_widely_body': {
+    en: 'Aim for 15-20 minutes of reading daily across fiction and non-fiction at your reading level.',
+    ar: 'حاول تقرا 15-20 دقيقة كل يوم بين روايات وكتب معلومات على مستواك في القراءة.',
+  },
+  'assessment.reading.next_step.practise_comprehension': {
+    en: 'Practise comprehension',
+    ar: 'تمرّن على الفهم',
+  },
+  'assessment.reading.next_step.practise_comprehension_body': {
+    en: 'Work through reading comprehension exercises, focusing on inference and evaluation questions.',
+    ar: 'اشتغل على تمارين الفهم القرائي، وركّز على أسئلة الاستنتاج والتقييم.',
+  },
+  'assessment.reading.next_step.build_vocab': { en: 'Build vocabulary', ar: 'وسّع مفرداتك' },
+  'assessment.reading.next_step.build_vocab_body': {
+    en: 'Learn new words in context. Keep a vocabulary journal and review unfamiliar words regularly.',
+    ar: 'تعلّم كلمات جديدة من السياق. سوِّ دفتر مفردات وراجع الكلمات الغريبة بشكل مستمر.',
+  },
+  'assessment.reading.retake': { en: 'Retake Assessment', ar: 'أعد التقييم' },
+  'assessment.reading.download_results': { en: 'Download Results', ar: 'حمّل النتائج' },
+  'assessment.reading.download.title': {
+    en: 'Reading Assessment Results',
+    ar: 'نتائج تقييم القراءة',
+  },
+  'assessment.reading.download.note': {
+    en: 'Note: This is a screening tool, not a diagnostic assessment.',
+    ar: 'ملاحظة: هذي أداة فحص أولي، مو تشخيص رسمي.',
+  },
+  'assessment.reading.download.date_label': { en: 'Date', ar: 'التاريخ' },
+  'assessment.reading.download.strengths_label': { en: 'Strengths:', ar: 'نقاط القوة:' },
+  'assessment.reading.download.areas_label': {
+    en: 'Areas for Development:',
+    ar: 'مجالات للتطوير:',
+  },
+  'assessment.reading.methodology.title': { en: 'Methodology', ar: 'المنهجية' },
+  'assessment.reading.methodology.how_it_works': {
+    en: 'How the test works',
+    ar: 'كيف يشتغل الاختبار',
+  },
+  'assessment.reading.methodology.how_it_works_body': {
+    en: 'This assessment uses graded passages of increasing difficulty (Year 3 to Year 13 level) to measure reading ability across three dimensions: comprehension, decoding, and fluency.',
+    ar: 'هذا التقييم يستخدم نصوص متدرّجة في الصعوبة (من السنة الثالثة لين السنة الثالثة عشرة) عشان يقيس القدرة على القراءة في ثلاث محاور: الفهم وفك الكلمات والطلاقة.',
+  },
+  'assessment.reading.methodology.comprehension_body': {
+    en: 'Measured through a combination of literal (retrieval), inferential (reading between the lines), and evaluative (analysis and judgment) questions on each passage. Both multiple-choice and short-answer formats are used.',
+    ar: 'نقيسه بمزيج من الأسئلة الحرفية (استرجاع) والاستنتاجية (قراءة ما بين السطور) والتقييمية (تحليل وحكم) على كل نص. ونستخدم اختيار من متعدد وإجابات قصيرة.',
+  },
+  'assessment.reading.methodology.decoding_body': {
+    en: 'Measured through word recognition accuracy, including both real words and pseudo-words (nonsense words that follow English phonetic patterns, similar to the Year 1 phonics screening check). This isolates decoding ability from vocabulary knowledge.',
+    ar: 'نقيسه بدقّة التعرّف على الكلمات، تشمل كلمات حقيقية وكلمات وهمية (كلمات بلا معنى تتبع أنماط الأصوات الإنجليزية، شبيه باختبار الصوتيات في السنة الأولى). هذا يفصل قدرة فك الكلمات عن معرفة المفردات.',
+  },
+  'assessment.reading.methodology.fluency_body': {
+    en: 'Measured through words-per-minute reading speed, adjusted for accuracy. The adjusted WPM (words read correctly per minute) is compared against age-related norms.',
+    ar: 'نقيسها بسرعة القراءة بالكلمة في الدقيقة، معدَّلة على أساس الدقّة. والكلمات الصحيحة بالدقيقة تنقارن بمعايير الفئة العمرية.',
+  },
+  'assessment.reading.methodology.standardisation': { en: 'Standardisation', ar: 'المعايرة' },
+  'assessment.reading.methodology.standardisation_body': {
+    en: 'Results are standardised against UK national curriculum reading expectations. The reading age is calculated as a weighted composite: comprehension (50%), decoding (25%), and fluency (25%). This weighting reflects the primacy of comprehension in reading ability while acknowledging the foundational importance of decoding and fluency.',
+    ar: 'النتائج تنعاير على أساس توقعات منهج القراءة الوطني البريطاني. ويحسب عمر القراءة كمتوسط مرجَّح: الفهم (50%) وفك الكلمات (25%) والطلاقة (25%). هذا الوزن يعكس أهمية الفهم في القدرة على القراءة مع الاعتراف بأن فك الكلمات والطلاقة أساس مهم.',
+  },
+  'assessment.reading.methodology.basis': { en: 'Methodology basis', ar: 'مرجعيّة المنهجية' },
+  'assessment.reading.methodology.basis_body': {
+    en: 'The assessment draws on methodology from established standardised reading tests including the NFER Group Reading Test, the Salford Sentence Reading Test, the Suffolk Reading Scale, and the York Assessment of Reading for Comprehension (YARC). Grade boundaries are mapped to chronological reading age norms used in these assessments.',
+    ar: 'التقييم يستند على منهجية اختبارات قراءة معتمدة، منها NFER Group Reading Test وSalford Sentence Reading Test وSuffolk Reading Scale وYork Assessment of Reading for Comprehension (YARC). وحدود الدرجات تنطابق مع معايير عمر القراءة المستخدمة في هذي الاختبارات.',
+  },
+  'assessment.reading.methodology.limitations': { en: 'Limitations', ar: 'حدود الأداة' },
+  'assessment.reading.methodology.limitations_body': {
+    en: 'This is a screening tool, not a diagnostic assessment. It provides an indicative reading age that can help identify strengths and areas for development. For a formal diagnosis of reading difficulties such as dyslexia, a qualified educational psychologist or specialist teacher assessment is required. Results should be interpreted alongside teacher judgment and other evidence of reading ability.',
+    ar: 'هذي أداة فحص أولي، مو تشخيص رسمي. تعطي عمر قراءة استرشادي يساعد في تحديد نقاط القوة ومجالات التطوير. للتشخيص الرسمي لصعوبات القراءة مثل عسر القراءة، لازم اختصاصي نفسي تربوي مؤهَّل أو معلّم متخصِّص. والنتائج تنفسَّر مع حكم المعلم ودلائل ثانية على القدرة في القراءة.',
+  },
+
+  // ─── Reading assessment — landing page (what we measure + how) ──────
+  'assessment.reading.landing.what_title': {
+    en: 'What this test measures',
+    ar: 'شنو يقيس هذا الاختبار',
+  },
+  'assessment.reading.landing.what_subtitle': {
+    en: 'A comprehensive assessment of reading ability across three dimensions',
+    ar: 'تقييم شامل للقدرة على القراءة في ثلاث محاور',
+  },
+  'assessment.reading.landing.reading_age_body': {
+    en: 'Your overall reading comprehension level, expressed as an age equivalent. Measures understanding of both fiction and non-fiction texts.',
+    ar: 'مستوى الفهم القرائي العام مالك، معبَّر عنه بعمر مكافئ. يقيس فهمك للنصوص الأدبية ونصوص المعلومات.',
+  },
+  'assessment.reading.landing.decoding_age_body': {
+    en: 'Your ability to recognise and decode words accurately, including real words and pseudo-words that test phonics knowledge.',
+    ar: 'قدرتك على التعرّف على الكلمات وفكّها بدقّة، تشمل كلمات حقيقية وكلمات وهمية تختبر معرفتك بالصوتيات.',
+  },
+  'assessment.reading.landing.fluency_age_body': {
+    en: 'Your reading speed combined with accuracy. Fluent readers read smoothly and quickly while maintaining comprehension.',
+    ar: 'سرعتك في القراءة مع الدقّة. القارئ الطليق يقرا بسلاسة وبسرعة وفي نفس الوقت يفهم.',
+  },
+  'assessment.reading.landing.how_title': { en: 'How it works', ar: 'كيف يشتغل' },
+  'assessment.reading.landing.step1_title': { en: 'Enter your age', ar: 'دخّل عمرك' },
+  'assessment.reading.landing.step1_body': {
+    en: 'So we can compare your reading level to age-related expectations.',
+    ar: 'عشان نقارن مستوى القراءة مالك بالتوقعات حسب العمر.',
+  },
+  'assessment.reading.landing.step2_title': {
+    en: 'Read graded passages',
+    ar: 'اقرا نصوص متدرّجة',
+  },
+  'assessment.reading.landing.step2_body': {
+    en: 'Starting from simpler texts and progressing to more challenging ones. Your reading is timed.',
+    ar: 'نبدأ من نصوص بسيطة ونرتفع لنصوص أصعب. وقراءتك بتنحسب بالوقت.',
+  },
+  'assessment.reading.landing.step3_title': {
+    en: 'Answer comprehension questions',
+    ar: 'جاوب أسئلة الفهم',
+  },
+  'assessment.reading.landing.step3_body': {
+    en: 'A mix of multiple-choice and short-answer questions test your understanding at each level.',
+    ar: 'مزيج من أسئلة اختيار من متعدد وإجابات قصيرة تختبر فهمك في كل مستوى.',
+  },
+  'assessment.reading.landing.step4_title': {
+    en: 'Complete word recognition exercises',
+    ar: 'خلّص تمارين التعرّف على الكلمات',
+  },
+  'assessment.reading.landing.step4_body': {
+    en: 'Identify real words and pseudo-words to assess your decoding skills.',
+    ar: 'ميّز الكلمات الحقيقية من الكلمات الوهمية عشان نقيس مهارة فك الكلمات.',
+  },
+  'assessment.reading.landing.step5_title': { en: 'Get your results', ar: 'احصل على نتائجك' },
+  'assessment.reading.landing.step5_body': {
+    en: 'Receive your reading age, decoding age, and fluency age with detailed feedback.',
+    ar: 'بتحصل على عمر القراءة وعمر فك الكلمات وعمر الطلاقة مع ملاحظات تفصيلية.',
+  },
+  'assessment.reading.landing.duration': {
+    en: 'Approximately 20-30 minutes',
+    ar: 'يستغرق تقريباً 20-30 دقيقة',
+  },
+  'assessment.reading.landing.scope': {
+    en: '10 passages, 40 questions',
+    ar: '10 نصوص، 40 سؤال',
+  },
+  'assessment.reading.landing.levels': {
+    en: 'Year 3 to Year 13 levels',
+    ar: 'مستويات من السنة الثالثة لين السنة الثالثة عشرة',
+  },
+  'assessment.reading.landing.start_cta': { en: 'Start Assessment', ar: 'ابدأ التقييم' },
+
+  // ─── Reading assessment — test phases ──────────────────────────────
+  'assessment.reading.test.breadcrumb.parent': { en: 'Reading Assessment', ar: 'تقييم القراءة' },
+  'assessment.reading.test.breadcrumb.this': { en: 'Test', ar: 'الاختبار' },
+  'assessment.reading.test.age.title': { en: 'Before we begin', ar: 'قبل لا نبدأ' },
+  'assessment.reading.test.age.subtitle': {
+    en: 'Enter your age so we can compare your reading level to age-related expectations.',
+    ar: 'دخّل عمرك عشان نقارن مستوى القراءة مالك بالتوقعات حسب العمر.',
+  },
+  'assessment.reading.test.age.years_label': { en: 'Age (years)', ar: 'العمر (سنوات)' },
+  'assessment.reading.test.age.months_label': { en: 'Months', ar: 'الأشهر' },
+  'assessment.reading.test.age.years_suffix': { en: 'years', ar: 'سنة' },
+  'assessment.reading.test.age.months_suffix': { en: 'months', ar: 'شهر' },
+  'assessment.reading.test.age.note': {
+    en: 'Your age is used only to compare your reading level against expected norms. It does not affect your raw scores.',
+    ar: 'عمرك يستخدم بس لمقارنة مستوى القراءة بالمعايير المتوقعة. ما يأثّر على درجاتك الخام.',
+  },
+  'assessment.reading.test.age.begin_cta': { en: 'Begin Assessment', ar: 'ابدأ التقييم' },
+  'assessment.reading.test.progress.passage_count_prefix': {
+    en: 'Passage',
+    ar: 'النص',
+  },
+  'assessment.reading.test.progress.of_word': { en: 'of', ar: 'من' },
+  'assessment.reading.test.passage.level_suffix': { en: 'Level', ar: 'المستوى' },
+  'assessment.reading.test.passage.years_suffix': { en: 'years', ar: 'سنوات' },
+  'assessment.reading.test.passage.fiction': { en: 'Fiction', ar: 'أدبي' },
+  'assessment.reading.test.passage.nonfiction': { en: 'Non-fiction', ar: 'معلوماتي' },
+  'assessment.reading.test.passage.words': { en: 'words', ar: 'كلمة' },
+  'assessment.reading.test.passage.finished_cta': {
+    en: 'I have finished reading',
+    ar: 'خلّصت القراءة',
+  },
+  'assessment.reading.test.passage.read_carefully': {
+    en: 'Read carefully — you cannot return once you start the questions.',
+    ar: 'اقرا بتركيز — ما تقدر ترجع للنص لمّا تبدأ الأسئلة.',
+  },
+  'assessment.reading.test.passage.unlock_prefix': {
+    en: 'Take your time to read properly. Button unlocks in',
+    ar: 'خذ وقتك واقرا زين. الزر بينفتح بعد',
+  },
+  'assessment.reading.test.passage.unlock_suffix': { en: 's.', ar: ' ثانية.' },
+  'assessment.reading.test.question.question_word': { en: 'Question', ar: 'السؤال' },
+  'assessment.reading.test.question.of_word': { en: 'of', ar: 'من' },
+  'assessment.reading.test.question.skill.literal': { en: 'literal', ar: 'حرفي' },
+  'assessment.reading.test.question.skill.inferential': { en: 'inferential', ar: 'استنتاجي' },
+  'assessment.reading.test.question.skill.evaluative': { en: 'evaluative', ar: 'تقييمي' },
+  'assessment.reading.test.question.skill.other': { en: 'skill', ar: 'مهارة' },
+  'assessment.reading.test.question.mark_singular': { en: 'mark', ar: 'درجة' },
+  'assessment.reading.test.question.mark_plural': { en: 'marks', ar: 'درجات' },
+  'assessment.reading.test.question.placeholder': {
+    en: 'Type your answer here...',
+    ar: 'اكتب جوابك هني…',
+  },
+  'assessment.reading.test.question.answer_aria': { en: 'Your answer', ar: 'جوابك' },
+  'assessment.reading.test.question.from_memory_note': {
+    en: 'Answer from memory — you cannot return to the passage.',
+    ar: 'جاوب من ذاكرتك — ما تقدر ترجع للنص.',
+  },
+  'assessment.reading.test.question.next_section': { en: 'Next Section', ar: 'القسم التالي' },
+  'assessment.reading.test.question.next_question': { en: 'Next Question', ar: 'السؤال التالي' },
+  'assessment.reading.test.decoding.heading': { en: 'Word Recognition', ar: 'التعرّف على الكلمات' },
+  'assessment.reading.test.decoding.instruction': {
+    en: 'Read the word below. Do you recognise it? Is it a real English word?',
+    ar: 'اقرا الكلمة اللي تحت. تعرفها؟ هل هي كلمة إنجليزية حقيقية؟',
+  },
+  'assessment.reading.test.decoding.progress_label': {
+    en: 'Decoding Progress',
+    ar: 'تقدّم فك الكلمات',
+  },
+  'assessment.reading.test.decoding.level_prefix': { en: 'Level', ar: 'المستوى' },
+  'assessment.reading.test.decoding.real_word': { en: 'Real Word', ar: 'كلمة حقيقية' },
+  'assessment.reading.test.decoding.not_real_word': { en: 'Not a Real Word', ar: 'مو كلمة حقيقية' },
+  'assessment.reading.test.complete.calculating': {
+    en: 'Calculating your results...',
+    ar: 'لحظة، نحسب نتائجك…',
+  },
+  'assessment.reading.test.ceiling.heading': { en: 'Assessment complete', ar: 'خلّصنا التقييم' },
+  'assessment.reading.test.ceiling.body': {
+    en: 'We have enough data to calculate your reading age. You do not need to continue with the remaining passages.',
+    ar: 'صار عندنا بيانات كافية لحساب عمر القراءة مالك. ما تحتاج تكمّل النصوص الباقية.',
+  },
+  'assessment.reading.test.ceiling.note': {
+    en: 'Your score is based on the passages you completed. Passages you did not attempt do not affect your result.',
+    ar: 'نتيجتك على أساس النصوص اللي خلّصتها. والنصوص اللي ما حلّيتها ما تأثّر على النتيجة.',
+  },
+  'assessment.reading.test.ceiling.continue_cta': {
+    en: 'Continue to Word Recognition',
+    ar: 'كمّل لقسم التعرّف على الكلمات',
+  },
+
+  // ─── Certificate of Achievement page ───────────────────────────────
+  'certificate.page_title': {
+    en: 'Certificate of Achievement | The English Hub',
+    ar: 'شهادة إنجاز | The English Hub',
+  },
+  'certificate.page_description': {
+    en: 'View and verify this Certificate of Achievement from The English Hub. Awarded for successful completion of a GCSE English course.',
+    ar: 'شوف وتحقّق من شهادة الإنجاز هذي من The English Hub. ممنوحة على إكمال دورة GCSE في اللغة الإنجليزية بنجاح.',
+  },
+  'certificate.back_to_dashboard': { en: 'Back to dashboard', ar: 'رجوع للوحة' },
+  'certificate.share': { en: 'Share', ar: 'شارك' },
+  'certificate.copied': { en: 'Copied!', ar: 'تم النسخ!' },
+  'certificate.download_pdf': { en: 'Download PDF', ar: 'حمّل PDF' },
+  'certificate.brand_caption': { en: 'The English Hub', ar: 'The English Hub' },
+  'certificate.title': { en: 'Certificate of Achievement', ar: 'شهادة إنجاز' },
+  'certificate.recipient_lead': { en: 'This is to certify that', ar: 'نشهد بأنّ' },
+  'certificate.course_lead': {
+    en: 'has successfully completed',
+    ar: 'أكمل بنجاح',
+  },
+  'certificate.fallback_student': { en: 'Student', ar: 'الطالب' },
+  'certificate.field.grade': { en: 'Grade', ar: 'الدرجة' },
+  'certificate.field.score': { en: 'Score', ar: 'النتيجة' },
+  'certificate.field.date': { en: 'Date', ar: 'التاريخ' },
+  'certificate.id_prefix': { en: 'Certificate ID:', ar: 'رقم الشهادة:' },
+  'certificate.verify_prefix': { en: 'Verify at', ar: 'تحقّق على' },
+  'certificate.whats_next': { en: "What's Next?", ar: 'شنو بعدها؟' },
+  'certificate.next.browse_courses_title': {
+    en: 'Browse More Courses',
+    ar: 'تصفّح دورات أكثر',
+  },
+  'certificate.next.browse_courses_body': {
+    en: 'Continue your learning journey',
+    ar: 'كمّل مسيرتك في التعلّم',
+  },
+  'certificate.next.practice_title': { en: 'Practice Questions', ar: 'أسئلة تدريبية' },
+  'certificate.next.practice_body': {
+    en: 'Test your knowledge further',
+    ar: 'اختبر معرفتك أكثر',
+  },
+  'certificate.next.dashboard_title': { en: 'Return to Dashboard', ar: 'رجوع للوحة' },
+  'certificate.next.dashboard_body': {
+    en: 'View your progress and stats',
+    ar: 'شوف تقدّمك وإحصائياتك',
+  },
+  'certificate.share.title': {
+    en: 'The English Hub Certificate',
+    ar: 'شهادة من The English Hub',
+  },
+  'certificate.share.text_lead': { en: 'Certificate of', ar: 'شهادة' },
+  'certificate.share.text_awarded': { en: 'awarded to', ar: 'ممنوحة إلى' },
+  'certificate.not_found': { en: 'Certificate not found.', ar: 'ما لقينا الشهادة.' },
+
+  // ─── Safeguarding policy page (MSA — formal body) ──────────────────
+  'safeguard.page.meta_title': {
+    en: 'Safeguarding Policy',
+    ar: 'سياسة حماية الأطفال',
+  },
+  'safeguard.page.meta_description': {
+    en: 'Our safeguarding policy sets out how The English Hub protects children and young people aged 14-18 using our online education platform. UK-compliant and reviewed annually.',
+    ar: 'تُحدِّد سياسة حماية الأطفال لدينا الكيفية التي يحمي بها The English Hub الأطفال والشباب من سنّ 14 إلى 18 المستخدمين لمنصّة التعليم الإلكتروني. متوافقة مع الأنظمة البريطانية ومُراجَعة سنويًا.',
+  },
+  'safeguard.back_home': { en: 'Back to Home', ar: 'رجوع للرئيسية' },
+  'safeguard.h1': { en: 'Safeguarding Policy', ar: 'سياسة حماية الأطفال' },
+  'safeguard.trading_as_pre': {
+    en: 'Upskill Energy Limited, trading as',
+    ar: 'شركة Upskill Energy Limited، تُتاجر باسم',
+  },
+  'safeguard.last_updated_line': {
+    en: 'Last updated: March 2026 · Next review: March 2027',
+    ar: 'آخر تحديث: مارس 2026 · المراجعة القادمة: مارس 2027',
+  },
+  'safeguard.report_concern_now_cta': {
+    en: 'Report a Concern',
+    ar: 'بلّغ عن مخاوف الحين',
+  },
+  'safeguard.contents': { en: 'Contents', ar: 'الفهرس' },
+  'safeguard.toc.commitment': { en: 'Commitment Statement', ar: 'بيان الالتزام' },
+  'safeguard.toc.scope': { en: 'Scope', ar: 'نطاق التطبيق' },
+  'safeguard.toc.dsl': {
+    en: 'Designated Safeguarding Lead',
+    ar: 'مسؤول الحماية المُعيَّن',
+  },
+  'safeguard.toc.principles': { en: 'Key Principles', ar: 'المبادئ الرئيسية' },
+  'safeguard.toc.online_safety': {
+    en: 'Online Safety Measures',
+    ar: 'تدابير السلامة الإلكترونية',
+  },
+  'safeguard.toc.reporting': { en: 'Reporting Procedures', ar: 'إجراءات الإبلاغ' },
+  'safeguard.toc.data_protection': {
+    en: 'Data Protection in Safeguarding',
+    ar: 'حماية البيانات في سياق حماية الأطفال',
+  },
+  'safeguard.toc.training': {
+    en: 'Staff and Contractor Training',
+    ar: 'تدريب الموظفين والمتعاقدين',
+  },
+  'safeguard.toc.review': { en: 'Review Schedule', ar: 'جدول المراجعة' },
+  'safeguard.toc.external_contacts': {
+    en: 'External Contacts',
+    ar: 'جهات الاتصال الخارجية',
+  },
+  // §1 Commitment
+  'safeguard.s1.title': { en: 'Commitment Statement', ar: 'بيان الالتزام' },
+  'safeguard.s1.p1': {
+    en: 'The English Hub is committed to safeguarding and promoting the welfare of all children and young people who use our platform. We recognise that everyone has a responsibility to safeguard children, and we take this responsibility seriously.',
+    ar: 'يلتزم The English Hub بحماية جميع الأطفال والشباب الذين يستخدمون منصّتنا وتعزيز رفاههم. ونُدرك أنّ على كلّ فردٍ مسؤوليّةً في حماية الأطفال، ونتعامل مع هذه المسؤوليّة بجدّيّةٍ تامّة.',
+  },
+  'safeguard.s1.p2': {
+    en: 'We are committed to creating a safe online learning environment where young people aged 14–18 can develop their English language skills without risk of harm, abuse, or exploitation. We will always act in the best interests of the child and take all reasonable steps to ensure their safety and wellbeing.',
+    ar: 'نلتزم بإنشاء بيئة تعلُّمٍ إلكترونيّة آمنة يستطيع فيها الشباب من سنّ 14 إلى 18 تطوير مهاراتهم في اللغة الإنجليزيّة دون أيّ خطر إيذاءٍ أو إساءةٍ أو استغلال. وسنتصرّف دائمًا بما يحقِّق المصلحة الفُضلى للطفل، ونتّخذ كلّ الخطوات المعقولة لضمان سلامته ورفاهه.',
+  },
+  'safeguard.s1.p3': {
+    en: 'This policy is underpinned by the principles set out in the Children Act 1989, the Children Act 2004, Working Together to Safeguard Children (2023), and the Keeping Children Safe in Education (2024) statutory guidance.',
+    ar: 'تستند هذه السياسة إلى المبادئ المنصوص عليها في قانون الأطفال لسنة 1989، وقانون الأطفال لسنة 2004، ووثيقة "العمل معًا لحماية الأطفال" لسنة 2023، والتوجيه القانوني "إبقاء الأطفال آمنين في التعليم" لسنة 2024.',
+  },
+  // §2 Scope
+  'safeguard.s2.title': { en: 'Scope', ar: 'نطاق التطبيق' },
+  'safeguard.s2.intro': { en: 'This policy applies to:', ar: 'تنطبق هذه السياسة على:' },
+  'safeguard.s2.item1': {
+    en: 'All users under the age of 18 who access The English Hub platform',
+    ar: 'جميع المستخدمين دون سنّ 18 الذين يدخلون منصّة The English Hub',
+  },
+  'safeguard.s2.item2': {
+    en: 'All staff, contractors, freelancers, and volunteers engaged by Upskill Energy Limited in connection with the platform',
+    ar: 'جميع الموظفين والمتعاقدين والمستقلّين والمتطوّعين العاملين لدى Upskill Energy Limited فيما يتّصل بالمنصّة',
+  },
+  'safeguard.s2.item3': {
+    en: 'All AI-generated content, learning materials, and interactive features provided through the platform',
+    ar: 'جميع المحتوى الذي يُولِّده الذكاء الاصطناعي والمواد التعليميّة والميزات التفاعلية المُقدَّمة عبر المنصّة',
+  },
+  'safeguard.s2.item4': {
+    en: 'Parents, guardians, and carers of young people using the platform',
+    ar: 'أولياء الأمور والأوصياء ومُقدِّمي الرعاية للشباب المستخدمين للمنصّة',
+  },
+  'safeguard.s2.outro': {
+    en: 'The English Hub is an online education platform designed for learners aged 14–18. As such, safeguarding considerations are embedded into every aspect of our product design, content creation, and operational processes.',
+    ar: 'The English Hub منصّة تعليمٍ إلكترونيّة مُصمَّمة للمتعلِّمين من سنّ 14 إلى 18. ولذا فإنّ اعتبارات الحماية مُدمجةٌ في كلّ جانبٍ من جوانب تصميم المنتج وإعداد المحتوى والعمليات التشغيليّة.',
+  },
+  // §3 DSL
+  'safeguard.s3.title': {
+    en: 'Designated Safeguarding Lead',
+    ar: 'مسؤول الحماية المُعيَّن',
+  },
+  'safeguard.s3.p1': {
+    en: 'Upskill Energy Limited has appointed a Designated Safeguarding Lead (DSL) who holds overall responsibility for safeguarding and child protection across the platform. The DSL is trained to the appropriate level and undertakes refresher training at least every two years.',
+    ar: 'عيَّنت Upskill Energy Limited مسؤول حمايةٍ مُعيَّنًا (DSL) يتحمّل المسؤوليّة الشاملة عن حماية الأطفال على المنصّة. وقد تلقّى مسؤول الحماية تدريبًا بالمستوى المناسب، ويخضع لتدريبٍ تنشيطيٍّ كلّ سنتَين على الأقلّ.',
+  },
+  'safeguard.s3.card.heading': {
+    en: 'Designated Safeguarding Lead',
+    ar: 'مسؤول الحماية المُعيَّن',
+  },
+  'safeguard.s3.card.name_label': { en: 'Name:', ar: 'الاسم:' },
+  'safeguard.s3.card.email_label': { en: 'Email:', ar: 'البريد الإلكتروني:' },
+  'safeguard.s3.card.phone_label': { en: 'Telephone:', ar: 'الهاتف:' },
+  'safeguard.s3.card.note': {
+    en: 'The DSL will acknowledge all safeguarding concerns within 24 hours and ensure appropriate action is taken without delay.',
+    ar: 'سيُقِرّ مسؤول الحماية بتلقّي كلّ بلاغٍ خلال 24 ساعة، ويضمن اتّخاذ الإجراء المناسب دون تأخير.',
+  },
+  'safeguard.s3.how_title': { en: 'How to Report a Concern', ar: 'كيفيّة الإبلاغ عن مخاوف' },
+  'safeguard.s3.how_body_pre': {
+    en: "If you have concerns about a child's safety, contact our Designated Safeguarding Lead at",
+    ar: 'إذا كانت لديك مخاوف بشأن سلامة طفل، تواصل مع مسؤول الحماية المُعيَّن عبر',
+  },
+  'safeguard.s3.how_body_or_call': { en: 'or call', ar: 'أو اتّصل بـ' },
+  'safeguard.s3.how_body_emergency': {
+    en: '. In an emergency, call',
+    ar: '. في حالات الطوارئ، اتّصل بـ',
+  },
+  'safeguard.s3.how_body_999': { en: '999', ar: '999' },
+  'safeguard.s3.how_body_ceop_pre': {
+    en: '. You can also report concerns to CEOP at',
+    ar: '. يمكنك أيضًا الإبلاغ إلى CEOP عبر',
+  },
+  'safeguard.s3.how_body_childline': {
+    en: 'or contact Childline on',
+    ar: 'أو التواصل مع Childline على',
+  },
+  'safeguard.s3.p_outro': {
+    en: "The DSL is responsible for referring cases of suspected abuse or allegations to the relevant local authority children's social care team, liaising with the police and other agencies where appropriate, and maintaining accurate and secure safeguarding records.",
+    ar: 'يتولّى مسؤول الحماية إحالة حالات الاشتباه في الإساءة أو الادّعاءات إلى فريق رعاية الأطفال الاجتماعيّة في السلطة المحليّة المختصّة، والتنسيق مع الشرطة والجهات الأخرى عند الاقتضاء، وحفظ سجلّات الحماية بدقّةٍ وأمان.',
+  },
+  // §4 Principles
+  'safeguard.s4.title': { en: 'Key Principles', ar: 'المبادئ الرئيسية' },
+  'safeguard.s4.intro': {
+    en: 'Our approach to safeguarding is guided by the following core principles:',
+    ar: 'يستند نهجنا في حماية الأطفال إلى المبادئ الجوهريّة التالية:',
+  },
+  'safeguard.s4.bestint_term': { en: 'Best interests of the child:', ar: 'المصلحة الفُضلى للطفل:' },
+  'safeguard.s4.bestint_body': {
+    en: 'The welfare of the child is paramount. All decisions and actions will prioritise the safety and wellbeing of the young person above all other considerations.',
+    ar: 'رفاه الطفل هو الأولويّة العليا. جميع القرارات والإجراءات ستضع سلامة الشاب ورفاهه فوق أيّ اعتبارٍ آخر.',
+  },
+  'safeguard.s4.prop_term': { en: 'Proportionate responses:', ar: 'استجابات متناسبة:' },
+  'safeguard.s4.prop_body': {
+    en: 'We will respond to safeguarding concerns proportionately, taking into account the nature and severity of the concern, the age and vulnerability of the child, and relevant context.',
+    ar: 'سنستجيب للبلاغات بشكلٍ متناسبٍ مع طبيعة المخاوف وخطورتها، وسنّ الطفل ومستوى هشاشته، والسياق ذي الصلة.',
+  },
+  'safeguard.s4.parents_term': {
+    en: 'Working with parents and guardians:',
+    ar: 'العمل مع أولياء الأمور والأوصياء:',
+  },
+  'safeguard.s4.parents_body': {
+    en: 'We will work in partnership with parents, guardians, and carers to support the safety and wellbeing of young people, unless doing so would place the child at further risk of harm.',
+    ar: 'سنعمل بالشراكة مع أولياء الأمور والأوصياء ومُقدِّمي الرعاية لدعم سلامة الشباب ورفاههم، ما لم يكن ذلك سيُعرِّض الطفل لمزيدٍ من خطر الإيذاء.',
+  },
+  'safeguard.s4.listen_term': {
+    en: 'Listening to children and young people:',
+    ar: 'الإصغاء للأطفال والشباب:',
+  },
+  'safeguard.s4.listen_body': {
+    en: 'We will take the views, wishes, and feelings of young people seriously, and ensure they are listened to and involved in decisions that affect them.',
+    ar: 'سنأخذ آراء الشباب ورغباتهم ومشاعرهم على محمل الجدّ، ونضمن إصغاءنا لهم وإشراكهم في القرارات التي تخصّهم.',
+  },
+  'safeguard.s4.zero_term': { en: 'Zero tolerance of abuse:', ar: 'لا تسامح مع الإساءة:' },
+  'safeguard.s4.zero_body': {
+    en: 'We operate a zero-tolerance approach to any form of abuse, exploitation, or harmful behaviour directed at children and young people.',
+    ar: 'نتبنّى سياسة لا تسامحٍ مع أيّ شكلٍ من أشكال الإساءة أو الاستغلال أو السلوك المُؤذي الموجَّه نحو الأطفال والشباب.',
+  },
+  'safeguard.s4.trans_term': {
+    en: 'Transparency and accountability:',
+    ar: 'الشفافية والمساءلة:',
+  },
+  'safeguard.s4.trans_body': {
+    en: 'We are open about our safeguarding practices and will hold ourselves accountable for maintaining the highest standards of child protection.',
+    ar: 'نعمل بشفافيّةٍ بشأن ممارساتنا في حماية الأطفال، ونُخضِع أنفسنا للمساءلة في الحفاظ على أعلى معايير الحماية.',
+  },
+  // §5 Online safety
+  'safeguard.s5.title': { en: 'Online Safety Measures', ar: 'تدابير السلامة الإلكترونية' },
+  'safeguard.s5.intro': {
+    en: 'As a digital education platform serving young people, we implement robust online safety measures across every layer of the product:',
+    ar: 'بوصفنا منصّةَ تعليمٍ رقميّةً تخدم الشباب، نُطبِّق تدابير سلامةٍ إلكترونيّة قويّة على كلّ مستوى من مستويات المنتج:',
+  },
+  'safeguard.s5.h1': { en: '5.1 AI Content Filtering', ar: '5.1 تصفية محتوى الذكاء الاصطناعي' },
+  'safeguard.s5.h1_body': {
+    en: 'All AI-generated content on the platform is subject to automated filtering designed to detect and prevent the presentation of harmful, inappropriate, or age-inappropriate material. Our filtering systems are regularly reviewed and updated to address emerging risks.',
+    ar: 'يخضع كلّ المحتوى المُولَّد بالذكاء الاصطناعي على المنصّة لتصفيةٍ آليّةٍ مُصمَّمة لاكتشاف ومنع عرض أيّ موادّ ضارّة أو غير لائقة أو غير ملائمة للعمر. وتُراجَع أنظمة التصفية وتُحدَّث بانتظامٍ للتعامل مع المخاطر المستجدّة.',
+  },
+  'safeguard.s5.h2': { en: '5.2 No Direct Messaging', ar: '5.2 لا توجد مراسلات مباشرة' },
+  'safeguard.s5.h2_body': {
+    en: 'The English Hub does not provide any direct messaging, chat, or private communication features between users. This design decision eliminates the risk of grooming, bullying, or other harmful interactions between users on the platform.',
+    ar: 'لا يُتيح The English Hub أيّ مراسلاتٍ مباشرة أو دردشةٍ أو وسائل تواصلٍ خاصّ بين المستخدمين. ويُلغي هذا القرار التصميميّ مخاطر الاستدراج والتنمّر وغيرها من التفاعلات الضارّة بين المستخدمين على المنصّة.',
+  },
+  'safeguard.s5.h3': {
+    en: '5.3 No Sharing of Personal Information',
+    ar: '5.3 منع مشاركة المعلومات الشخصيّة',
+  },
+  'safeguard.s5.h3_body': {
+    en: 'The platform does not permit users to share personal information (such as full names, addresses, phone numbers, photographs, or social media handles) with other users. User profiles are not publicly visible.',
+    ar: 'لا تسمح المنصّة للمستخدمين بمشاركة المعلومات الشخصيّة (مثل الأسماء الكاملة، والعناوين، وأرقام الهواتف، والصور، أو حسابات التواصل الاجتماعي) مع غيرهم. ولا تظهر ملفّات المستخدمين للجمهور.',
+  },
+  'safeguard.s5.h4': {
+    en: '5.4 Parental Consent for Under-16s',
+    ar: '5.4 موافقة وليّ الأمر لمَن هم دون 16',
+  },
+  'safeguard.s5.h4_body': {
+    en: 'In compliance with the UK General Data Protection Regulation (UK GDPR) and the Age Appropriate Design Code, we require verifiable parental or guardian consent before processing the personal data of any user under the age of 16. Consent mechanisms are built into our registration process.',
+    ar: 'امتثالًا للائحة العامّة لحماية البيانات في المملكة المتّحدة (UK GDPR) ومدوّنة التصميم المناسب للعمر، نشترط الحصول على موافقةٍ موثوقة من وليّ الأمر أو الوصيّ قبل معالجة البيانات الشخصيّة لأيّ مستخدمٍ دون سنّ 16. وآليّات الموافقة مُدمجةٌ في عمليّة التسجيل.',
+  },
+  'safeguard.s5.h5': {
+    en: '5.5 Age-Appropriate Design (ICO Code Compliance)',
+    ar: '5.5 التصميم المناسب للعمر (الامتثال لمدوّنة ICO)',
+  },
+  'safeguard.s5.h5_body': {
+    en: "The English Hub is designed in accordance with the ICO's Age Appropriate Design Code (Children's Code). This includes:",
+    ar: 'صُمِّم The English Hub وفقًا لمدوّنة التصميم المناسب للعمر الصادرة عن ICO (مدوّنة الأطفال). ويشمل ذلك:',
+  },
+  'safeguard.s5.h5_li1': {
+    en: 'Privacy settings configured to the highest level by default',
+    ar: 'ضبط إعدادات الخصوصيّة على أعلى مستوى افتراضيًّا',
+  },
+  'safeguard.s5.h5_li2': {
+    en: 'Data collection minimised to only what is necessary for the educational service',
+    ar: 'حصر جمع البيانات على ما هو ضروريّ للخدمة التعليميّة فقط',
+  },
+  'safeguard.s5.h5_li3': {
+    en: 'No profiling of children for marketing or commercial purposes',
+    ar: 'عدم تكوين ملفّات تعريفيّة للأطفال لأغراضٍ تسويقيّة أو تجاريّة',
+  },
+  'safeguard.s5.h5_li4': {
+    en: 'No nudge techniques or design patterns that encourage users to weaken their privacy protections',
+    ar: 'عدم استخدام أساليب التحفيز أو الأنماط التصميميّة التي تدفع المستخدمين إلى إضعاف حماية خصوصيّتهم',
+  },
+  'safeguard.s5.h5_li5': {
+    en: 'Clear, age-appropriate privacy information provided to young users',
+    ar: 'تقديم معلومات خصوصيّةٍ واضحة وملائمة لعمر المستخدمين الصغار',
+  },
+  'safeguard.s5.h5_li6': {
+    en: 'Data Protection Impact Assessments (DPIAs) conducted for all features and services likely to be accessed by children',
+    ar: 'إجراء تقييمات أثر حماية البيانات (DPIAs) لكلّ الميزات والخدمات التي يُحتمل وصول الأطفال إليها',
+  },
+  // §6 Reporting
+  'safeguard.s6.title': { en: 'Reporting Procedures', ar: 'إجراءات الإبلاغ' },
+  'safeguard.s6.intro': {
+    en: 'If you have a safeguarding concern about a child or young person using The English Hub, you should report it immediately using one of the following methods:',
+    ar: 'إذا كانت لديك مخاوف تتعلّق بحماية طفلٍ أو شابّ يستخدم The English Hub، فعليك الإبلاغ فورًا بإحدى الطرق التالية:',
+  },
+  'safeguard.s6.li1_term': { en: 'Online reporting form:', ar: 'نموذج الإبلاغ الإلكتروني:' },
+  'safeguard.s6.li1_link': { en: 'Submit a report', ar: 'أرسل بلاغًا' },
+  'safeguard.s6.li1_post': {
+    en: '— available 24/7, anonymous reporting accepted',
+    ar: '— متاح على مدار الساعة طوال أيّام الأسبوع، ويُقبل البلاغ المجهول الهويّة',
+  },
+  'safeguard.s6.li2_term': { en: 'Email the DSL:', ar: 'البريد الإلكتروني لمسؤول الحماية:' },
+  'safeguard.s6.provide': {
+    en: 'When reporting a concern, please provide:',
+    ar: 'عند الإبلاغ، يُرجى تقديم:',
+  },
+  'safeguard.s6.provide_li1': {
+    en: 'A description of the concern, including what you have seen, heard, or been told',
+    ar: 'وصف المخاوف، بما في ذلك ما رأيتَه أو سمعتَه أو ما قيل لك',
+  },
+  'safeguard.s6.provide_li2': {
+    en: 'The date and time of the incident (if applicable)',
+    ar: 'تاريخ ووقت الواقعة (إن وُجد)',
+  },
+  'safeguard.s6.provide_li3': {
+    en: 'Any relevant usernames or identifying information (if known)',
+    ar: 'أيّ أسماء مستخدمين ذات صلة أو معلومات تعريفيّة (إن عُرفت)',
+  },
+  'safeguard.s6.provide_li4': {
+    en: 'Your contact details (optional but helpful for follow-up)',
+    ar: 'بيانات الاتّصال الخاصّة بك (اختياريّة، لكنّها مفيدة للمتابعة)',
+  },
+  'safeguard.s6.flow_title': {
+    en: 'What happens when you report?',
+    ar: 'ماذا يحدث عند الإبلاغ؟',
+  },
+  'safeguard.s6.flow_li1': {
+    en: 'Your report is received securely and assigned a reference number',
+    ar: 'يُستلَم بلاغك بطريقةٍ آمنة ويُمنح رقمًا مرجعيًّا',
+  },
+  'safeguard.s6.flow_li2': {
+    en: 'The DSL reviews the report within 24 hours',
+    ar: 'يُراجع مسؤول الحماية البلاغ خلال 24 ساعة',
+  },
+  'safeguard.s6.flow_li3': {
+    en: 'The DSL determines the appropriate course of action, which may include contacting the young person, their parent/guardian, or external agencies',
+    ar: 'يُحدِّد مسؤول الحماية مسار الإجراء المناسب، الذي قد يشمل التواصل مع الشاب أو وليّ أمره أو الجهات الخارجيّة',
+  },
+  'safeguard.s6.flow_li4': {
+    en: "Where there is an immediate risk of significant harm, the DSL will contact the police and/or local authority children's services without delay",
+    ar: 'حيث يوجد خطرٌ فوريٌّ بإيذاءٍ كبير، يتواصل مسؤول الحماية مع الشرطة و/أو خدمات الأطفال في السلطة المحليّة دون تأخير',
+  },
+  'safeguard.s6.flow_li5': {
+    en: 'A record of the concern and actions taken is securely stored',
+    ar: 'يُحفظ سجلّ المخاوف والإجراءات المتّخذة بطريقةٍ آمنة',
+  },
+  'safeguard.s6.outro_pre': {
+    en: 'If a child is in immediate danger,',
+    ar: 'إذا كان الطفل في خطرٍ مُحدِق،',
+  },
+  'safeguard.s6.outro_call': { en: 'call', ar: 'فاتّصل بـ' },
+  'safeguard.s6.outro_999': { en: '999', ar: '999' },
+  'safeguard.s6.outro_post': {
+    en: 'without delay. Do not wait to submit a report through the platform.',
+    ar: 'دون تأخير. ولا تنتظر تقديم بلاغٍ عبر المنصّة.',
+  },
+  // §7 Data protection
+  'safeguard.s7.title': {
+    en: 'Data Protection in Safeguarding',
+    ar: 'حماية البيانات في سياق حماية الأطفال',
+  },
+  'safeguard.s7.intro': {
+    en: 'Safeguarding data is handled with the highest level of care and in compliance with the UK GDPR and Data Protection Act 2018:',
+    ar: 'تُعالَج بيانات الحماية بأعلى مستوى من العناية، وبما يتوافق مع UK GDPR وقانون حماية البيانات لسنة 2018:',
+  },
+  'safeguard.s7.lawful_term': { en: 'Lawful basis:', ar: 'الأساس القانوني:' },
+  'safeguard.s7.lawful_body': {
+    en: 'Safeguarding data is processed under Article 6(1)(d) (vital interests) and Article 6(1)(e) (public task) of the UK GDPR, and Article 9(2)(c) (vital interests) for special category data.',
+    ar: 'تُعالَج بيانات الحماية وفقًا للمادّة 6(1)(د) (المصالح الحيوية) والمادّة 6(1)(هـ) (المهمّة العامّة) من UK GDPR، والمادّة 9(2)(ج) (المصالح الحيوية) للبيانات من الفئات الخاصّة.',
+  },
+  'safeguard.s7.access_term': { en: 'Access controls:', ar: 'ضوابط الوصول:' },
+  'safeguard.s7.access_body': {
+    en: 'Only the DSL and authorised personnel with a legitimate need have access to safeguarding records. Access is strictly limited on a need-to-know basis.',
+    ar: 'يقتصر الوصول إلى سجلّات الحماية على مسؤول الحماية والموظفين المخوَّلين ممَّن لديهم حاجةٌ مشروعة. والوصول مُقيَّدٌ بشكلٍ صارمٍ وفق مبدأ الحاجة إلى المعرفة.',
+  },
+  'safeguard.s7.storage_term': { en: 'Secure storage:', ar: 'التخزين الآمن:' },
+  'safeguard.s7.storage_body': {
+    en: 'Safeguarding records are stored securely with encryption at rest and in transit. Records are kept separately from general user data.',
+    ar: 'تُحفظ سجلّات الحماية بشكلٍ آمنٍ مع التشفير أثناء التخزين والنقل. وتُحفظ السجلّات منفصلةً عن بيانات المستخدمين العامّة.',
+  },
+  'safeguard.s7.ret_term': { en: 'Retention:', ar: 'مدّة الاحتفاظ:' },
+  'safeguard.s7.ret_body': {
+    en: "Safeguarding records are retained in accordance with statutory guidance and relevant retention schedules. Records relating to child protection concerns are retained until the individual's 25th birthday, or for 6 years from the date of the last entry (whichever is longer).",
+    ar: 'تُحفظ سجلّات الحماية وفقًا للتوجيهات القانونيّة وجداول الاحتفاظ ذات الصلة. وتُحفظ السجلّات المتعلّقة بمخاوف حماية الأطفال حتى عيد ميلاد الفرد الخامس والعشرين، أو لمدّة 6 سنواتٍ من تاريخ آخر إدخال (أيّهما أطول).',
+  },
+  'safeguard.s7.share_term': { en: 'Information sharing:', ar: 'مشاركة المعلومات:' },
+  'safeguard.s7.share_body': {
+    en: "Safeguarding information will be shared with external agencies (such as local authority children's services, the police, or the NSPCC) where necessary to protect a child. Data protection legislation is not a barrier to sharing information where failure to do so would place a child at risk.",
+    ar: 'ستُشارَك معلومات الحماية مع الجهات الخارجيّة (مثل خدمات الأطفال في السلطة المحليّة أو الشرطة أو NSPCC) عند الضرورة لحماية الطفل. وتشريعات حماية البيانات ليست عائقًا أمام مشاركة المعلومات إذا كان عدم المشاركة سيُعرِّض الطفل للخطر.',
+  },
+  // §8 Training
+  'safeguard.s8.title': {
+    en: 'Staff and Contractor Training',
+    ar: 'تدريب الموظفين والمتعاقدين',
+  },
+  'safeguard.s8.intro': {
+    en: 'All individuals working on behalf of Upskill Energy Limited who may come into contact with safeguarding matters are required to:',
+    ar: 'يُطلب من جميع الأفراد العاملين نيابةً عن Upskill Energy Limited والذين قد يتعاملون مع أمور الحماية:',
+  },
+  'safeguard.s8.li1': {
+    en: 'Complete safeguarding awareness training upon commencement of their role',
+    ar: 'إتمام تدريب التوعية بحماية الأطفال عند بدء العمل',
+  },
+  'safeguard.s8.li2': {
+    en: 'Undertake refresher training at least annually, or more frequently where required',
+    ar: 'الخضوع لتدريبٍ تنشيطيٍّ مرّةً واحدة سنويًّا على الأقلّ، أو أكثر عند الحاجة',
+  },
+  'safeguard.s8.li3': {
+    en: 'Read and confirm understanding of this safeguarding policy',
+    ar: 'قراءة هذه السياسة وتأكيد فهمها',
+  },
+  'safeguard.s8.li4': {
+    en: 'Understand how to recognise signs of abuse, neglect, and exploitation',
+    ar: 'فهم كيفيّة التعرّف على علامات الإساءة والإهمال والاستغلال',
+  },
+  'safeguard.s8.li5': {
+    en: 'Know how to report safeguarding concerns through the correct channels',
+    ar: 'معرفة كيفيّة الإبلاغ عن مخاوف الحماية عبر القنوات الصحيحة',
+  },
+  'safeguard.s8.dsl_para': {
+    en: 'The DSL receives enhanced safeguarding training, including inter-agency working, in line with Working Together to Safeguard Children and Keeping Children Safe in Education requirements.',
+    ar: 'يتلقّى مسؤول الحماية تدريبًا مُعزَّزًا في حماية الأطفال، يشمل العمل المُشترَك بين الجهات، تماشيًا مع متطلّبات "العمل معًا لحماية الأطفال" و"إبقاء الأطفال آمنين في التعليم".',
+  },
+  'safeguard.s8.records': {
+    en: 'Records of all safeguarding training are maintained centrally and reviewed regularly to ensure compliance.',
+    ar: 'تُحفظ سجلّات كلّ تدريبات الحماية مركزيًّا وتُراجَع بانتظامٍ لضمان الامتثال.',
+  },
+  // §9 Review
+  'safeguard.s9.title': { en: 'Review Schedule', ar: 'جدول المراجعة' },
+  'safeguard.s9.intro': {
+    en: 'This safeguarding policy is reviewed and updated at least annually by the Designated Safeguarding Lead, or sooner if:',
+    ar: 'تُراجَع هذه السياسة وتُحدَّث مرّةً واحدة سنويًّا على الأقلّ من قِبل مسؤول الحماية المُعيَّن، أو في وقتٍ أقرب إذا:',
+  },
+  'safeguard.s9.li1': {
+    en: 'There are changes to relevant legislation or statutory guidance',
+    ar: 'طرأت تغييرات على التشريعات أو التوجيهات القانونيّة ذات الصلة',
+  },
+  'safeguard.s9.li2': {
+    en: 'A safeguarding incident identifies areas for improvement',
+    ar: 'كشفت إحدى الحوادث عن جوانب تحتاج إلى تحسين',
+  },
+  'safeguard.s9.li3': {
+    en: 'New features or services are introduced that affect the safety of young users',
+    ar: 'استُحدِثت ميزاتٌ أو خدماتٌ جديدة تُؤثِّر على سلامة المستخدمين الصغار',
+  },
+  'safeguard.s9.li4': {
+    en: 'Feedback from users, parents, or external agencies indicates a need for change',
+    ar: 'أشارت ملاحظات المستخدمين أو أولياء الأمور أو الجهات الخارجيّة إلى الحاجة إلى تغيير',
+  },
+  'safeguard.s9.outro': {
+    en: 'Each review is documented, and the updated policy is published on the platform and communicated to all staff and contractors.',
+    ar: 'تُوثَّق كلّ مراجعة، وتُنشر السياسة المُحدَّثة على المنصّة، ويُبلَّغ بها جميع الموظفين والمتعاقدين.',
+  },
+  'safeguard.s9.version_label': { en: 'Current version:', ar: 'الإصدار الحالي:' },
+  'safeguard.s9.next_review_label': { en: 'Next review due:', ar: 'موعد المراجعة القادمة:' },
+  'safeguard.s9.version_value': { en: 'March 2026', ar: 'مارس 2026' },
+  'safeguard.s9.next_review_value': { en: 'March 2027', ar: 'مارس 2027' },
+  // §10 External contacts
+  'safeguard.s10.title': { en: 'External Contacts', ar: 'جهات الاتصال الخارجية' },
+  'safeguard.s10.intro': {
+    en: 'If you need immediate help or wish to report a concern to an external organisation, the following services are available:',
+    ar: 'إذا كنت بحاجةٍ إلى مساعدةٍ فوريّة أو ترغب في الإبلاغ إلى منظّمةٍ خارجيّة، فإنّ الخدمات التالية متاحة:',
+  },
+  'safeguard.s10.childline.title': { en: 'Childline', ar: 'Childline' },
+  'safeguard.s10.childline.body': {
+    en: 'Free, confidential helpline for children and young people under 19.',
+    ar: 'خطّ مساعدةٍ مجّاني وسرّي للأطفال والشباب دون سنّ 19.',
+  },
+  'safeguard.s10.nspcc.title': { en: 'NSPCC Helpline', ar: 'خطّ مساعدة NSPCC' },
+  'safeguard.s10.nspcc.body': {
+    en: 'For adults concerned about the welfare of a child.',
+    ar: 'للبالغين الذين يقلقون على رفاه طفل.',
+  },
+  'safeguard.s10.ceop.title': {
+    en: 'CEOP (Child Exploitation and Online Protection)',
+    ar: 'CEOP (لمكافحة استغلال الأطفال والحماية الإلكترونية)',
+  },
+  'safeguard.s10.ceop.body': {
+    en: 'Report online sexual abuse or exploitation of children.',
+    ar: 'الإبلاغ عن الإساءة الجنسيّة الإلكترونيّة أو استغلال الأطفال.',
+  },
+  'safeguard.s10.ceop.cta': { en: 'Report to CEOP online', ar: 'أبلِغ CEOP إلكترونيًّا' },
+  'safeguard.s10.la.title': {
+    en: "Local Authority Children's Services",
+    ar: 'خدمات الأطفال في السلطة المحليّة',
+  },
+  'safeguard.s10.la.body_pre': {
+    en: "Contact your local council's children's services team to report concerns about a child in your area. You can find your local authority via",
+    ar: 'تواصل مع فريق خدمات الأطفال في مجلسك المحليّ للإبلاغ عن مخاوف بشأن طفل في منطقتك. ويمكنك العثور على السلطة المحليّة عبر',
+  },
+  'safeguard.s10.la.gov_link': { en: 'GOV.UK', ar: 'GOV.UK' },
+  'safeguard.s10.emerg.title': { en: 'Emergency Services', ar: 'خدمات الطوارئ' },
+  'safeguard.s10.emerg.body_pre': {
+    en: 'If a child is in immediate danger, call',
+    ar: 'إذا كان الطفل في خطرٍ مُحدِق، فاتّصل بـ',
+  },
+  'safeguard.s10.emerg.body_post': { en: 'without delay.', ar: 'دون تأخير.' },
+  // Footer
+  'safeguard.footer_disclaimer': {
+    en: 'This policy is owned and maintained by Upskill Energy Limited, trading as The English Hub. Registered in England and Wales.',
+    ar: 'هذه السياسة مملوكة ويُديرها Upskill Energy Limited، التي تُتاجر باسم The English Hub. مُسجَّلة في إنجلترا وويلز.',
+  },
+  'safeguard.footer.return_home': { en: 'Return to Home', ar: 'رجوع للرئيسية' },
+
+  // ─── Safeguarding report form (Khaleeji — supportive CTAs) ─────────
+  'safeguard.report.support_title': {
+    en: 'If you need to talk to someone right now',
+    ar: 'إذا تبغى تكلّم أحد الحين',
+  },
+  'safeguard.report.support_subtitle': {
+    en: 'These services are free, confidential, and available 24/7.',
+    ar: 'الخدمات هذي ببلاش وسرّية ومتاحة على مدار الساعة.',
+  },
+  'safeguard.report.childline_label': { en: 'Childline', ar: 'Childline' },
+  'safeguard.report.childline_note': {
+    en: 'Free, confidential helpline for under 19s',
+    ar: 'خط مساعدة ببلاش وسرّي لمن هم دون 19',
+  },
+  'safeguard.report.nspcc_label': { en: 'NSPCC Helpline', ar: 'خط مساعدة NSPCC' },
+  'safeguard.report.nspcc_note': {
+    en: 'For adults worried about a child',
+    ar: 'للكبار اللي قلقانين على طفل',
+  },
+  'safeguard.report.ceop_label': { en: 'CEOP', ar: 'CEOP' },
+  'safeguard.report.ceop_link': { en: 'Report online', ar: 'بلّغ عبر النت' },
+  'safeguard.report.ceop_note': {
+    en: 'Report online abuse or exploitation',
+    ar: 'بلّغ عن إساءة أو استغلال عبر النت',
+  },
+  'safeguard.report.confirm_heading': {
+    en: "You've done the right thing by speaking up",
+    ar: 'أحسنت لمّا تكلّمت',
+  },
+  'safeguard.report.confirm_body': {
+    en: 'Thank you for telling us. Your report has been received and our safeguarding team will look at it carefully.',
+    ar: 'شكراً إنك خبّرتنا. بلاغك وصل وفريق الحماية مالنا بيشوفه بتركيز.',
+  },
+  'safeguard.report.ref_label': { en: 'Your reference number', ar: 'رقم البلاغ مالك' },
+  'safeguard.report.ref_note': {
+    en: 'Keep this safe in case you need to follow up.',
+    ar: 'احفظه عندك زين عسى تحتاج تتابع.',
+  },
+  'safeguard.report.next.title': { en: 'What happens next?', ar: 'شنو بيصير بعدين؟' },
+  'safeguard.report.next.body': {
+    en: 'A member of our safeguarding team will review your report. If you left contact details, we may get in touch to follow up. If this is urgent, please contact one of the services below directly.',
+    ar: 'فيه شخص من فريق الحماية بيراجع بلاغك. إذا تركت بياناتك، ممكن نتواصل وياك للمتابعة. وإذا الموضوع عاجل، تواصل مباشرة مع إحدى الجهات اللي تحت.',
+  },
+  'safeguard.report.return_home': { en: 'Return to Home', ar: 'رجوع للرئيسية' },
+  'safeguard.report.page_heading': {
+    en: 'Need help or worried about something?',
+    ar: 'تحتاج مساعدة أو في شي يقلقك؟',
+  },
+  'safeguard.report.page_subhead': {
+    en: "Whether it's about you or someone else, we're here to help. You can tell us as much or as little as you feel comfortable with. You don't have to give your name.",
+    ar: 'سواء عنك أو عن شخص ثاني، إحنا هني لنساعدك. تقدر تكتب اللي يريحك — قليل أو وايد. وما يلزم تعطي اسمك.',
+  },
+  'safeguard.report.reassure_title': { en: 'Speaking up takes courage', ar: 'الكلام شجاعة' },
+  'safeguard.report.reassure_body': {
+    en: "Whatever you're going through, you deserve support. Everything you share here will be treated seriously and confidentially by our safeguarding team.",
+    ar: 'مهما اللي تعيشه، تستاهل دعم. وكل شي تكتبه هني بيتعامل وياه فريق الحماية بجدّ وسرّية.',
+  },
+  'safeguard.report.field.type_legend': {
+    en: 'What best describes your concern?',
+    ar: 'شنو يصف اللي يقلقك أكثر؟',
+  },
+  'safeguard.report.field.type.worried_self': {
+    en: "I'm worried about myself",
+    ar: 'أنا قلقان على نفسي',
+  },
+  'safeguard.report.field.type.worried_other': {
+    en: "I'm worried about someone else",
+    ar: 'أنا قلقان على شخص ثاني',
+  },
+  'safeguard.report.field.type.platform': {
+    en: "I want to report something I've seen on the platform",
+    ar: 'أبغى أبلّغ عن شي شفته على المنصة',
+  },
+  'safeguard.report.field.type.other': { en: 'Other concern', ar: 'شي ثاني' },
+  'safeguard.report.field.description_label': {
+    en: "Tell us what happened or what you're worried about",
+    ar: 'خبّرنا شنو صار أو شنو اللي يقلقك',
+  },
+  'safeguard.report.field.description_help': {
+    en: 'Take your time. Share as much or as little as you feel comfortable with.',
+    ar: 'خذ وقتك. اكتب اللي يريحك — قليل أو وايد.',
+  },
+  'safeguard.report.field.description_placeholder': {
+    en: 'You can write freely here...',
+    ar: 'تقدر تكتب بحرية هني…',
+  },
+  'safeguard.report.your_details': { en: 'Your details', ar: 'بياناتك' },
+  'safeguard.report.optional': { en: '(optional)', ar: '(اختياري)' },
+  'safeguard.report.your_details_help': {
+    en: 'You can report anonymously. If you leave your details, we can follow up with you.',
+    ar: 'تقدر تبلّغ بدون اسم. وإذا تركت بياناتك، نقدر نتابع وياك.',
+  },
+  'safeguard.report.field.name_label': { en: 'Your name', ar: 'اسمك' },
+  'safeguard.report.field.name_placeholder': { en: 'Optional', ar: 'اختياري' },
+  'safeguard.report.field.contact_label': {
+    en: 'Email or phone number',
+    ar: 'الإيميل أو رقم الموبايل',
+  },
+  'safeguard.report.field.contact_placeholder': { en: 'Optional', ar: 'اختياري' },
+  'safeguard.report.err.select_type': {
+    en: 'Please select what your concern is about.',
+    ar: 'يا ليت تختار شنو موضوع البلاغ.',
+  },
+  'safeguard.report.err.description_required': {
+    en: "Please tell us what happened or what you're worried about.",
+    ar: 'يا ليت تخبّرنا شنو صار أو شنو اللي يقلقك.',
+  },
+  'safeguard.report.err.generic': {
+    en: 'Something went wrong. Please try again.',
+    ar: 'صار في خطأ. جرّب مرة ثانية لو سمحت.',
+  },
+  'safeguard.report.confidential_footer': {
+    en: 'Your report will be handled confidentially by our designated safeguarding lead.',
+    ar: 'بلاغك بيتعامل وياه مسؤول الحماية بسرّية تامّة.',
+  },
+
+  // ─── /revision (revision_page.*) ───────────────────────────────────
+  'revision_page.hero.badge_default': { en: 'GCSE English Revision', ar: 'مراجعة GCSE English' },
+  'revision_page.hero.heading_suffix': { en: 'Hub', ar: 'Hub' },
+  'revision_page.hero.heading_prefix_generic': { en: 'Your', ar: 'مالك' },
+  'revision_page.hero.heading_prefix_board': { en: 'Your', ar: 'مالك' },
+  'revision_page.hero.blurb_default': {
+    en: 'Your unified home for {board} English. Revision guides, AI study tools, progress tracking, and exam technique — all built around your specification.',
+    ar: 'بيتك الموحَّد لـ{board} English. أدلة مراجعة، أدوات دراسة بالذكاء الاصطناعي، تتبّع التقدّم، وتقنيات الامتحان — كله مبني على المنهج مالك.',
+  },
+  'revision_page.hero.blurb_cambridge': {
+    en: 'Your unified home for {board} First Language English. Revision, study tools, progress tracking, and exam technique — all built around your specification.',
+    ar: 'بيتك الموحَّد لـ{board} First Language English. مراجعة، أدوات دراسة، تتبّع التقدّم، وتقنيات الامتحان — كله مبني على المنهج مالك.',
+  },
+  'revision_page.stats.subjects': { en: 'Subjects', ar: 'المواد' },
+  'revision_page.stats.resources': { en: 'Resources', ar: 'المصادر' },
+  'revision_page.stats.flashcards': { en: 'Flashcards', ar: 'بطاقات تعليمية' },
+  'revision_page.stats.quizzes': { en: 'Quizzes', ar: 'اختبارات' },
+  'revision_page.snapshot.aria': { en: 'Your progress snapshot', ar: 'لمحة عن التقدّم مالك' },
+  'revision_page.snapshot.streak.label': { en: 'Streak', ar: 'سلسلة الدراسة' },
+  'revision_page.snapshot.streak.title': { en: 'Your study streak', ar: 'سلسلة الدراسة مالك' },
+  'revision_page.snapshot.streak.body': {
+    en: 'Keep going daily — every session you complete on a quiz, set text, or mock exam builds your streak.',
+    ar: 'كمّل يومي — كل جلسة تخلّصها على اختبار، نص مقرَّر، أو امتحان تجريبي تبني السلسلة مالك.',
+  },
+  'revision_page.snapshot.streak.cta': { en: 'View full analytics', ar: 'شوف التحليلات الكاملة' },
+  'revision_page.snapshot.progress.label': { en: 'Progress', ar: 'التقدّم' },
+  'revision_page.snapshot.progress.title': { en: '{board} coverage', ar: 'تغطية {board}' },
+  'revision_page.snapshot.progress.body': {
+    en: "Track how much of the {board} syllabus you've covered and where you still have gaps.",
+    ar: 'تتبّع كم غطّيت من منهج {board} ووين باقي عندك ثغرات.',
+  },
+  'revision_page.snapshot.progress.cta': { en: "See what's next", ar: 'شوف شنو الجاي' },
+  'revision_page.snapshot.ai.label': { en: 'AI feedback', ar: 'ملاحظات الذكاء الاصطناعي' },
+  'revision_page.snapshot.ai.title': { en: 'Latest marked work', ar: 'آخر شغل مصحَّح' },
+  'revision_page.snapshot.ai.body': {
+    en: 'AI grades on your recent essays, with the top three improvements to take forward.',
+    ar: 'درجات الذكاء الاصطناعي على آخر مقالاتك، مع أهم ثلاث نقاط تحسين تاخذها معك.',
+  },
+  'revision_page.snapshot.ai.cta': { en: 'Open feedback', ar: 'افتح الملاحظات' },
+  'revision_page.study_plan.badge': { en: 'Personalised for {board}', ar: 'مفصّل لـ{board}' },
+  'revision_page.study_plan.title': { en: 'Build your study plan', ar: 'سوِّ خطة الدراسة مالك' },
+  'revision_page.study_plan.body': {
+    en: 'Answer a few quick questions and get a week-by-week revision plan tailored to your exam date, target grade, and weakest area — using {board} texts and papers.',
+    ar: 'جاوب على كم سؤال سريع وتاخذ خطة مراجعة أسبوع بأسبوع مفصّلة على تاريخ امتحانك، الدرجة المستهدفة، وأضعف مجال — باستخدام نصوص وأوراق {board}.',
+  },
+  'revision_page.study_plan.cta': { en: 'Start diagnostic', ar: 'ابدأ التشخيص' },
+  'revision_page.sections.heading': { en: 'Explore Sections', ar: 'استكشف الأقسام' },
+  'revision_page.sections.for_board_badge': { en: 'For {board}', ar: 'لـ{board}' },
+  'revision_page.sections.start_revising': { en: 'Start revising', ar: 'ابدأ المراجعة' },
+  'revision_page.sections.prepares_for': { en: 'Prepares for {paper}', ar: 'يحضّر لـ{paper}' },
+  'revision_page.paper.lit_lang': { en: 'Lit + Lang', ar: 'Lit + Lang' },
+  'revision_page.paper.lit': { en: 'Literature', ar: 'Literature' },
+  'revision_page.paper.lang': { en: 'Language', ar: 'Language' },
+  'revision_page.igcse.title': { en: 'IGCSE Resources', ar: 'مصادر IGCSE' },
+  'revision_page.igcse.body': {
+    en: 'We have dedicated guides, exam papers, and walkthroughs for {board}.',
+    ar: 'عندنا أدلة مخصّصة، أوراق امتحانات، وشروحات لـ{board}.',
+  },
+  'revision_page.igcse.body_fallback': { en: 'your IGCSE specification', ar: 'منهج IGCSE مالك' },
+  'revision_page.igcse.cta': { en: 'Open IGCSE hub', ar: 'افتح هاب IGCSE' },
+  'revision_page.toolkit.heading': { en: 'Your Toolkit', ar: 'الأدوات مالك' },
+  'revision_page.toolkit.open_tool': { en: 'Open tool', ar: 'افتح الأداة' },
+  'revision_page.analytics.badge_new': { en: 'New', ar: 'جديد' },
+  'revision_page.analytics.title': { en: 'Your Analytics', ar: 'التحليلات مالك' },
+  'revision_page.analytics.body': {
+    en: 'Deep-dive dashboards showing time studied, accuracy by topic, predicted grade trajectory, and where to focus next.',
+    ar: 'لوحات تفصيلية تبيّن وقت الدراسة، الدقّة حسب الموضوع، مسار الدرجة المتوقَّعة، ووين تركّز الجاي.',
+  },
+  'revision_page.analytics.cta': { en: 'Open analytics', ar: 'افتح التحليلات' },
+  'revision_page.featured.badge': { en: 'Featured for {board}', ar: 'مميَّز لـ{board}' },
+  'revision_page.featured.by': {
+    en: 'by {author}. One of the most-studied texts on your specification.',
+    ar: 'بقلم {author}. من أكثر النصوص اللي يدرسونها في المنهج مالك.',
+  },
+  'revision_page.featured.cta': { en: 'Open study guide', ar: 'افتح دليل الدراسة' },
+  'revision_page.motivation.title': {
+    en: 'Consistent revision beats cramming every time',
+    ar: 'المراجعة المنتظمة تتغلّب على الحشو دايماً',
+  },
+  'revision_page.motivation.body': {
+    en: 'Students who revise for 20 minutes a day outperform those who cram for hours before the exam. Start with one section above and build the habit.',
+    ar: 'الطلاب اللي يراجعون ٢٠ دقيقة باليوم يتفوّقون على اللي يحشّون ساعات قبل الامتحان. ابدأ بقسم وحد فوق وابني العادة.',
+  },
+  'revision_page.motivation.cta': { en: 'Start a quick session', ar: 'ابدأ جلسة سريعة' },
+  'revision_page.section.poetry.title': { en: 'Poetry', ar: 'الشعر' },
+  'revision_page.section.poetry.desc': {
+    en: 'Interactive analysis of every anthology poem. Annotations, comparisons, and practice questions.',
+    ar: 'تحليل تفاعلي لكل قصيدة من المجموعة الشعرية. شروحات، مقارنات، وأسئلة تطبيقية.',
+  },
+  'revision_page.section.poetry.stats': { en: '30+ poems', ar: '٣٠+ قصيدة' },
+  'revision_page.section.poetry.tag': { en: 'Popular', ar: 'الأكثر شعبية' },
+  'revision_page.section.texts.title': { en: 'Set Texts', ar: 'النصوص المقرَّرة' },
+  'revision_page.section.texts.desc': {
+    en: 'In-depth study guides for Shakespeare, 19th-century novels, and modern texts with reading tracker.',
+    ar: 'أدلة دراسة مفصّلة لـShakespeare وروايات القرن التاسع عشر والنصوص الحديثة مع متتبّع القراءة.',
+  },
+  'revision_page.section.texts.stats': { en: '20+ texts', ar: '٢٠+ نص' },
+  'revision_page.section.language.title': { en: 'Language Skills', ar: 'مهارات اللغة' },
+  'revision_page.section.language.desc': {
+    en: 'Reading comprehension, creative writing, transactional writing, and SPaG mastery.',
+    ar: 'القراءة والاستيعاب، الكتابة الإبداعية، الكتابة الوظيفية، وإتقان SPaG.',
+  },
+  'revision_page.section.language.stats': { en: '4 skill areas', ar: '٤ مجالات مهارية' },
+  'revision_page.section.flashcards.title': { en: 'Flashcards', ar: 'بطاقات تعليمية' },
+  'revision_page.section.flashcards.desc': {
+    en: 'Smart review flashcards for quotes, terminology, and key concepts. Study smarter, not harder.',
+    ar: 'بطاقات مراجعة ذكية للاقتباسات والمصطلحات والمفاهيم الأساسية. ادرس بذكاء، مو بتعب.',
+  },
+  'revision_page.section.flashcards.stats': { en: '500+ cards', ar: '٥٠٠+ بطاقة' },
+  'revision_page.section.flashcards.tag': { en: 'New', ar: 'جديد' },
+  'revision_page.section.exam_technique.title': { en: 'Exam Technique', ar: 'تقنيات الامتحان' },
+  'revision_page.section.exam_technique.desc': {
+    en: 'Essay structures, timing strategies, question types, and marking guide breakdowns for every paper.',
+    ar: 'هيكل المقالات، استراتيجيات الوقت، أنواع الأسئلة، وتحليل دليل التصحيح لكل ورقة.',
+  },
+  'revision_page.section.exam_technique.stats': { en: '12 guides', ar: '١٢ دليل' },
+  'revision_page.section.grade_targets.title': { en: 'Grade Targets', ar: 'الدرجات المستهدفة' },
+  'revision_page.section.grade_targets.desc': {
+    en: 'Personalised revision plans based on your target grade. Know exactly what to focus on.',
+    ar: 'خطط مراجعة مفصّلة على الدرجة المستهدفة مالك. تعرف بالضبط شنو تركّز عليه.',
+  },
+  'revision_page.section.grade_targets.stats': { en: 'Grades 1-9', ar: 'الدرجات ١-٩' },
+  'revision_page.section.quiz.title': { en: 'Quick Quizzes', ar: 'اختبارات سريعة' },
+  'revision_page.section.quiz.desc': {
+    en: 'Test yourself with timed quizzes on any topic. Instant feedback and progress tracking.',
+    ar: 'اختبر نفسك بكويزات مؤقَّتة على أي موضوع. ملاحظات فورية وتتبّع للتقدّم.',
+  },
+  'revision_page.section.quiz.stats': { en: '100+ quizzes', ar: '١٠٠+ اختبار' },
+  'revision_page.section.reading_assessment.title': {
+    en: 'Reading Assessment',
+    ar: 'تقييم القراءة',
+  },
+  'revision_page.section.reading_assessment.desc': {
+    en: 'Timed reading tests with extracts and mark schemes. Benchmark your comprehension against GCSE/IGCSE standards.',
+    ar: 'اختبارات قراءة مؤقَّتة مع مقتطفات ومخططات تصحيح. قارن استيعابك مع معايير GCSE/IGCSE.',
+  },
+  'revision_page.section.reading_assessment.stats': { en: 'Diagnostic', ar: 'تشخيصي' },
+  'revision_page.section.mock_exams.title': { en: 'Mock Exams', ar: 'امتحانات تجريبية' },
+  'revision_page.section.mock_exams.desc': {
+    en: 'Full timed mock papers for every board with examiner-grade feedback. Build exam stamina before the real thing.',
+    ar: 'أوراق امتحان كاملة مؤقَّتة لكل بورد مع ملاحظات بمستوى الممتحن. ابني قدرة التحمّل قبل الامتحان الحقيقي.',
+  },
+  'revision_page.section.mock_exams.stats': { en: 'Full papers', ar: 'أوراق كاملة' },
+  'revision_page.section.practice.title': { en: 'Practice', ar: 'تطبيق' },
+  'revision_page.section.practice.desc': {
+    en: 'Bite-sized practice tasks for every skill — analysis paragraphs, comparisons, creative writing prompts.',
+    ar: 'مهام تطبيقية صغيرة لكل مهارة — فقرات تحليل، مقارنات، ومواضيع كتابة إبداعية.',
+  },
+  'revision_page.section.practice.stats': { en: 'Daily drills', ar: 'تمارين يومية' },
+  'revision_page.section.games.title': { en: 'Games', ar: 'ألعاب' },
+  'revision_page.section.games.desc': {
+    en: 'Vocabulary, quote-match and terminology games — learn faster by playing.',
+    ar: 'ألعاب مفردات ومطابقة اقتباسات ومصطلحات — تعلّم أسرع باللعب.',
+  },
+  'revision_page.section.games.stats': { en: 'Play to learn', ar: 'العب وتعلّم' },
+  'revision_page.section.resources.title': { en: 'Resources Hub', ar: 'هاب المصادر' },
+  'revision_page.section.resources.desc': {
+    en: 'The full library: poetry guides, set-text packs, exam papers, themes, context, glossary and more.',
+    ar: 'المكتبة الكاملة: أدلة شعر، حزم نصوص مقرَّرة، أوراق امتحانات، مواضيع، سياق، قاموس، وأكثر.',
+  },
+  'revision_page.section.resources.stats': { en: '300+ guides', ar: '٣٠٠+ دليل' },
+  'revision_page.section.revision_notes.title': { en: 'Revision Notes', ar: 'ملخّصات المراجعة' },
+  'revision_page.section.revision_notes.desc': {
+    en: 'Concise per-text revision notes you can skim before an exam — every set text, every key topic.',
+    ar: 'ملخّصات مراجعة مختصرة لكل نص تقدر تقراها بسرعة قبل الامتحان — كل نص مقرَّر، كل موضوع أساسي.',
+  },
+  'revision_page.section.revision_notes.stats': { en: '20+ texts', ar: '٢٠+ نص' },
+  'revision_page.section.model_answers.title': { en: 'Model Answers', ar: 'الإجابات النموذجية' },
+  'revision_page.section.model_answers.desc': {
+    en: 'Top-grade exemplar answers for literature essays, language analysis and creative writing tasks.',
+    ar: 'إجابات نموذجية بأعلى الدرجات لمقالات Literature وتحليل Language ومهام الكتابة الإبداعية.',
+  },
+  'revision_page.section.model_answers.stats': { en: 'Grade 7-9', ar: 'الدرجات ٧-٩' },
+  'revision_page.section.comparison.title': {
+    en: 'Comparison Essay Guide',
+    ar: 'دليل مقالة المقارنة',
+  },
+  'revision_page.section.comparison.desc': {
+    en: 'Step-by-step structure, sentence stems and worked examples for poetry and unseen comparison questions.',
+    ar: 'هيكل خطوة بخطوة، جمل افتتاحية، وأمثلة محلولة لأسئلة مقارنة الشعر والنصوص غير المرئية.',
+  },
+  'revision_page.section.comparison.stats': { en: 'Structure + stems', ar: 'هيكل + جمل افتتاحية' },
+  'revision_page.section.vocabulary.title': { en: 'Vocabulary', ar: 'المفردات' },
+  'revision_page.section.vocabulary.desc': {
+    en: 'Academic, analytical and descriptive word banks to upgrade your essays and creative writing.',
+    ar: 'بنوك مفردات أكاديمية وتحليلية ووصفية تطوّر مقالاتك والكتابة الإبداعية مالك.',
+  },
+  'revision_page.section.vocabulary.stats': { en: '1000+ words', ar: '١٠٠٠+ كلمة' },
+  'revision_page.section.writing_skills.title': { en: 'Writing Skills', ar: 'مهارات الكتابة' },
+  'revision_page.section.writing_skills.desc': {
+    en: 'Creative, analytical, persuasive and grammar guides — the craft skills behind every paper.',
+    ar: 'أدلة الكتابة الإبداعية والتحليلية والإقناعية والقواعد — المهارات الحرفية وراء كل ورقة.',
+  },
+  'revision_page.section.writing_skills.stats': { en: '4 skill areas', ar: '٤ مجالات مهارية' },
+  'revision_page.section.common_errors.title': { en: 'Common Errors', ar: 'الأخطاء الشائعة' },
+  'revision_page.section.common_errors.desc': {
+    en: '30 mistakes that cost marks — misquotations, wrong contexts, anthology version mix-ups. Verified against board specs.',
+    ar: '٣٠ غلطة تكلّفك درجات — اقتباسات غلط، سياقات خطأ، خلط بين نسخ المجموعات. مدقَّقة مع مواصفات البورد.',
+  },
+  'revision_page.section.common_errors.stats': { en: '30 verified flags', ar: '٣٠ تنبيه مدقَّق' },
+  'revision_page.section.common_errors.tag': { en: 'New', ar: 'جديد' },
+  'revision_page.toolkit.revision_builder.title': { en: 'Revision Builder', ar: 'منشئ المراجعة' },
+  'revision_page.toolkit.revision_builder.desc': {
+    en: 'Generate AI revision notes tailored to your weak areas, target grade, and study history.',
+    ar: 'سوِّ ملخّصات مراجعة بالذكاء الاصطناعي مفصّلة على نقاط ضعفك، الدرجة المستهدفة، وتاريخ الدراسة.',
+  },
+  'revision_page.toolkit.revision_builder.stats': { en: 'AI-powered', ar: 'بالذكاء الاصطناعي' },
+  'revision_page.toolkit.revision_builder.tag': { en: 'AI', ar: 'AI' },
+  'revision_page.toolkit.test_builder.title': { en: 'Test Builder', ar: 'منشئ الاختبارات' },
+  'revision_page.toolkit.test_builder.desc': {
+    en: "Create custom tests from your board's texts and topics, auto-scored with grade equivalents.",
+    ar: 'سوِّ اختبارات مخصّصة من نصوص ومواضيع البورد مالك، مصحَّحة تلقائياً مع ما يعادلها من درجات.',
+  },
+  'revision_page.toolkit.test_builder.stats': { en: 'Custom tests', ar: 'اختبارات مخصّصة' },
+  'revision_page.toolkit.test_builder.tag': { en: 'AI', ar: 'AI' },
+  'revision_page.toolkit.personalised.title': { en: 'Personalised Revision', ar: 'مراجعة مخصّصة' },
+  'revision_page.toolkit.personalised.desc': {
+    en: 'A revision guide built from your data — targets weakest areas, then stretches you higher.',
+    ar: 'دليل مراجعة مبني من بياناتك — يستهدف نقاط الضعف، ثم يرفعك أعلى.',
+  },
+  'revision_page.toolkit.personalised.stats': { en: 'Data-driven', ar: 'مبني على البيانات' },
+  'revision_page.toolkit.personalised.tag': { en: 'New', ar: 'جديد' },
+  'revision_page.toolkit.my_materials.title': { en: 'My Materials', ar: 'الموادّ مالي' },
+  'revision_page.toolkit.my_materials.desc': {
+    en: 'Every custom test, revision note, and quote bank you have saved, in one searchable place.',
+    ar: 'كل اختبار مخصّص وملخّص مراجعة وبنك اقتباسات حفظته، في مكان وحد تقدر تدوّر فيه.',
+  },
+  'revision_page.toolkit.my_materials.stats': { en: 'Your library', ar: 'المكتبة مالك' },
+  'revision_page.toolkit.progress.title': { en: 'Progress', ar: 'التقدّم' },
+  'revision_page.toolkit.progress.desc': {
+    en: 'Track scores, study streaks, and predicted grades based on everything you have done.',
+    ar: 'تتبّع الدرجات، سلاسل الدراسة، والدرجات المتوقَّعة بناءً على كل اللي سوّيته.',
+  },
+  'revision_page.toolkit.progress.stats': { en: 'Grade predictor', ar: 'متنبّئ الدرجة' },
+
+  // ─── /resources/vocabulary (vocab.*) ───────────────────────────────
+  'vocab.hero.eyebrow': { en: 'Resources', ar: 'المصادر' },
+  'vocab.hero.title': { en: 'Vocabulary Builder', ar: 'منشئ المفردات' },
+  'vocab.hero.subtitle': {
+    en: 'Upgrade your vocabulary for every type of GCSE English writing. Academic essays, creative pieces, literary analysis, and persuasive texts — find the right word every time.',
+    ar: 'طوّر المفردات مالك لكل نوع كتابة GCSE English. مقالات أكاديمية، نصوص إبداعية، تحليل أدبي، ونصوص إقناعية — لقّ الكلمة الصح كل مرة.',
+  },
+  'vocab.cta.academic': { en: 'Academic Words', ar: 'كلمات أكاديمية' },
+  'vocab.cta.descriptive': { en: 'Descriptive Words', ar: 'كلمات وصفية' },
+  'vocab.cta.analytical': { en: 'Analytical Words', ar: 'كلمات تحليلية' },
+  'vocab.category.academic.title': { en: 'Academic Vocabulary', ar: 'المفردات الأكاديمية' },
+  'vocab.category.academic.desc': {
+    en: "50+ tier 2 and tier 3 words for essay writing. Organised by function — analysis, evaluation, comparison, and description. Replace overused words like 'good', 'bad', and 'shows' with sophisticated alternatives.",
+    ar: '٥٠+ كلمة من tier 2 وtier 3 للمقالات. مرتَّبة حسب الوظيفة — تحليل، تقييم، مقارنة، ووصف. غيّر الكلمات المتكرّرة مثل good وbad وshows ببدائل أرقى.',
+  },
+  'vocab.category.academic.count': { en: '50+', ar: '٥٠+' },
+  'vocab.category.academic.topic.analysis': { en: 'Analysis words', ar: 'كلمات التحليل' },
+  'vocab.category.academic.topic.evaluation': { en: 'Evaluation words', ar: 'كلمات التقييم' },
+  'vocab.category.academic.topic.comparison': { en: 'Comparison words', ar: 'كلمات المقارنة' },
+  'vocab.category.academic.topic.description': { en: 'Description words', ar: 'كلمات الوصف' },
+  'vocab.category.academic.topic.replace': { en: 'Words to replace', ar: 'كلمات تستبدلها' },
+  'vocab.category.descriptive.title': { en: 'Descriptive Vocabulary', ar: 'المفردات الوصفية' },
+  'vocab.category.descriptive.desc': {
+    en: 'Build a rich bank of sensory, emotional, and atmospheric vocabulary for creative writing. 200+ words organised by category — senses, emotions, weather, character, and setting.',
+    ar: 'ابني بنك غني من المفردات الحسّية والعاطفية والجوّية للكتابة الإبداعية. ٢٠٠+ كلمة مرتَّبة حسب الفئة — الحواس، المشاعر، الجو، الشخصية، والمكان.',
+  },
+  'vocab.category.descriptive.count': { en: '200+', ar: '٢٠٠+' },
+  'vocab.category.descriptive.topic.sensory': { en: 'Sensory vocabulary', ar: 'مفردات حسّية' },
+  'vocab.category.descriptive.topic.emotion': { en: 'Emotion vocabulary', ar: 'مفردات المشاعر' },
+  'vocab.category.descriptive.topic.weather': { en: 'Weather & atmosphere', ar: 'الجو والأجواء' },
+  'vocab.category.descriptive.topic.character': { en: 'Character description', ar: 'وصف الشخصية' },
+  'vocab.category.descriptive.topic.setting': { en: 'Setting description', ar: 'وصف المكان' },
+  'vocab.category.analytical.title': { en: 'Analytical Vocabulary', ar: 'المفردات التحليلية' },
+  'vocab.category.analytical.desc': {
+    en: "Master the language of literary and linguistic analysis. Evaluative adverbs, tentative phrasing, comparative connectives, and precise vocabulary for discussing writer's methods.",
+    ar: 'أتقن لغة التحليل الأدبي واللغوي. ظروف تقييم، صياغة احترازية، روابط مقارنة، ومفردات دقيقة لمناقشة أساليب الكاتب.',
+  },
+  'vocab.category.analytical.count': { en: '80+', ar: '٨٠+' },
+  'vocab.category.analytical.topic.evaluative': { en: 'Evaluative adverbs', ar: 'ظروف التقييم' },
+  'vocab.category.analytical.topic.tentative': { en: 'Tentative language', ar: 'اللغة الاحترازية' },
+  'vocab.category.analytical.topic.comparative': {
+    en: 'Comparative connectives',
+    ar: 'روابط المقارنة',
+  },
+  'vocab.category.analytical.topic.methods': {
+    en: "Writer's methods vocabulary",
+    ar: 'مفردات أساليب الكاتب',
+  },
+  'vocab.category.persuasive.title': { en: 'Persuasive Vocabulary', ar: 'المفردات الإقناعية' },
+  'vocab.category.persuasive.desc': {
+    en: 'Powerful language for argumentative and persuasive writing. Emotive vocabulary, rhetorical intensifiers, and authoritative phrasing to make your writing convincing.',
+    ar: 'لغة قوية للكتابة الجدلية والإقناعية. مفردات عاطفية، مكثّفات بلاغية، وصياغة مرجعية تخلّي كتابتك مقنعة.',
+  },
+  'vocab.category.persuasive.count': { en: '40+', ar: '٤٠+' },
+  'vocab.category.persuasive.topic.emotive': { en: 'Emotive language', ar: 'اللغة العاطفية' },
+  'vocab.category.persuasive.topic.intensifiers': {
+    en: 'Rhetorical intensifiers',
+    ar: 'المكثّفات البلاغية',
+  },
+  'vocab.category.persuasive.topic.authoritative': {
+    en: 'Authoritative phrasing',
+    ar: 'الصياغة المرجعية',
+  },
+  'vocab.category.persuasive.topic.connectives': {
+    en: 'Connectives for argument',
+    ar: 'روابط الحجاج',
+  },
+  'vocab.card.count_suffix': { en: 'words', ar: 'كلمة' },
+  'vocab.card.explore_cta': { en: 'Explore vocabulary', ar: 'استكشف المفردات' },
+  'vocab.upgrade.title': { en: 'Upgrade Your Vocabulary', ar: 'طوِّر المفردات مالك' },
+  'vocab.upgrade.subtitle': {
+    en: 'Stop using overused words. Search below or browse the table to find more sophisticated alternatives that will impress examiners.',
+    ar: 'بطّل تستخدم الكلمات المتكرّرة. دوّر تحت أو تصفّح الجدول وألقَ بدائل أرقى تعجب الممتحنين.',
+  },
+  'vocab.upgrade.search_placeholder': {
+    en: 'Search for a word to upgrade...',
+    ar: 'دوّر كلمة تبغى تطوّرها…',
+  },
+  'vocab.upgrade.no_matches': {
+    en: 'No matches found. Try searching for a different word.',
+    ar: 'ما لقينا نتائج. جرّب كلمة ثانية.',
+  },
+  'vocab.continue.heading': { en: 'Continue exploring', ar: 'كمّل الاستكشاف' },
+  'vocab.continue.writing_skills.title': { en: 'Writing Skills', ar: 'مهارات الكتابة' },
+  'vocab.continue.writing_skills.desc': {
+    en: 'Master creative, persuasive, and analytical writing.',
+    ar: 'أتقن الكتابة الإبداعية والإقناعية والتحليلية.',
+  },
+  'vocab.continue.techniques.title': { en: 'Techniques Reference', ar: 'مرجع التقنيات' },
+  'vocab.continue.techniques.desc': {
+    en: '60+ language and structural devices explained.',
+    ar: '٦٠+ أداة لغوية وبنائية مع شرحها.',
+  },
+  'vocab.continue.all.title': { en: 'All Resources', ar: 'كل المصادر' },
+  'vocab.continue.all.desc': {
+    en: 'Browse all revision resources.',
+    ar: 'تصفّح كل مصادر المراجعة.',
+  },
+
+  // ─── /revision/study-plan (study_page.*) ───────────────────────────
+  'study_page.loading': { en: 'Loading your study plan…', ar: 'نحمّل خطة الدراسة مالك… لحظة' },
+  'study_page.title': { en: 'Build your GCSE study plan', ar: 'سوِّ خطة دراسة GCSE مالك' },
+
+  // ─── /dashboard ("Your Hub") (your_hub.*) ─────────────────────────
+  'your_hub.greeting.morning': { en: 'Good morning', ar: 'صباح الخير' },
+  'your_hub.greeting.afternoon': { en: 'Good afternoon', ar: 'مساء الخير' },
+  'your_hub.greeting.evening': { en: 'Good evening', ar: 'مساء الخير' },
+  'your_hub.cta.title': { en: 'Your Hub', ar: 'Hub مالك' },
+  'your_hub.cta.badge': { en: 'Revision · Toolkit · Analytics', ar: 'مراجعة · أدوات · تحليلات' },
+  'your_hub.cta.blurb': {
+    en: 'Your unified revision home — guides, AI tools, progress, and exam technique.',
+    ar: 'بيت المراجعة الموحَّد مالك — أدلة، أدوات ذكاء اصطناعي، تقدّم، وتقنيات الامتحان.',
+  },
+
+  // ─── /for-students (student.*) ─────────────────────────────────────
+  'student.badge': { en: 'For students', ar: 'للطلاب' },
+  'student.hero.title_pre': {
+    en: 'Your GCSE or IGCSE English revision,',
+    ar: 'مراجعة GCSE أو IGCSE English مالك،',
+  },
+  'student.hero.title_emph': { en: 'in one place', ar: 'في مكان وحد' },
+  'student.hero.subtitle': {
+    en: 'Personalised revision built around your exam board. AI-marked essays, anthology guides, mock papers and grade tracking.',
+    ar: 'مراجعة مخصّصة على بورد الامتحان مالك. مقالات مصحَّحة بالذكاء الاصطناعي، أدلة المجموعات الشعرية، أوراق تجريبية، وتتبّع الدرجات.',
+  },
+  'student.cta.start_free': { en: 'Start free — no card', ar: 'ابدأ ببلاش — بدون كرت' },
+  'student.cta.see_pricing': { en: 'See pricing', ar: 'شوف الأسعار' },
+  'student.feature.all_in_one.title': { en: 'All-in-one learning', ar: 'تعلّم متكامل' },
+  'student.feature.all_in_one.desc': {
+    en: 'Lessons, practice, mock exams, and revision notes for every skill — reading, writing, listening, speaking.',
+    ar: 'دروس، تطبيق، امتحانات تجريبية، وملخّصات مراجعة لكل مهارة — قراءة، كتابة، استماع، تحدّث.',
+  },
+  'student.feature.personalised.title': { en: 'Personalised learning', ar: 'تعلّم مخصّص' },
+  'student.feature.personalised.desc': {
+    en: 'Smart recommendations that adapt to where you are and push toward the grade you want.',
+    ar: 'توصيات ذكية تتكيّف مع وين انت ودافعتك للدرجة اللي تبغاها.',
+  },
+  'student.feature.track.title': { en: 'Track & achieve', ar: 'تتبّع وحقِّق' },
+  'student.feature.track.desc': {
+    en: 'See your progress week-by-week. Set goals. Celebrate every win with predicted-grade tracking.',
+    ar: 'شوف تقدّمك أسبوع بأسبوع. حدّد أهدافك. احتفل بكل إنجاز مع تتبّع الدرجة المتوقَّعة.',
+  },
+  'student.feature.real_world.title': { en: 'Real world, real you', ar: 'عالم حقيقي، انت الحقيقي' },
+  'student.feature.real_world.desc': {
+    en: "Build the English confidence you'll actually use at school, university, work, and everywhere after.",
+    ar: 'ابني الثقة في الإنجليزي اللي بتستخدمها فعلاً في المدرسة والجامعة والشغل وكل مكان بعدها.',
+  },
+  'student.outcome.better_grades': { en: 'Better grades', ar: 'درجات أحسن' },
+  'student.outcome.confidence': { en: 'More confidence', ar: 'ثقة أكثر' },
+  'student.outcome.global': { en: 'Global opportunities', ar: 'فرص عالمية' },
+  'student.outcome.future': { en: 'Your future. Your choice.', ar: 'مستقبلك. اختيارك.' },
+  'student.usp.title': {
+    en: 'A complete, personalised learning hub',
+    ar: 'هاب تعلّم متكامل ومخصّص',
+  },
+  'student.usp.body': {
+    en: 'GCSE and IGCSE English revision, AI marked against the AO rubric.',
+    ar: 'مراجعة GCSE وIGCSE English، مصحَّحة بالذكاء الاصطناعي على معايير AO.',
+  },
+  'student.faq.heading': { en: 'Frequently asked questions', ar: 'الأسئلة الشائعة' },
+  'student.faq.boards.q': { en: 'What exam boards do you cover?', ar: 'أي بوردات امتحان تغطّون؟' },
+  'student.faq.boards.a': {
+    en: 'We cover AQA, Edexcel, OCR and WJEC Eduqas for GCSE English Language and Literature, plus Cambridge IGCSE and Edexcel IGCSE Literature and Language A.',
+    ar: 'نغطّي AQA وEdexcel وOCR وWJEC Eduqas لـGCSE English Language وLiterature، بالإضافة لـCambridge IGCSE وEdexcel IGCSE Literature وLanguage A.',
+  },
+  'student.faq.trial.q': { en: 'Is there a free trial?', ar: 'في تجربة ببلاش؟' },
+  'student.faq.trial.a': {
+    en: 'Yes. You can start a 7-day free trial with a card on file, and even without a trial you get three free uses of every premium feature.',
+    ar: 'إيه. تقدر تبدأ تجربة ٧ أيام ببلاش مع كرت محفوظ، وحتى بدون التجربة عندك ثلاث استخدامات ببلاش لكل ميزة بريميوم.',
+  },
+  'student.faq.ai.q': {
+    en: 'Do you mark my essays with AI?',
+    ar: 'تصحّحون مقالاتي بالذكاء الاصطناعي؟',
+  },
+  'student.faq.ai.a': {
+    en: 'Yes. Submitted essays are marked by AI against the assessment objective rubric of the exam board you have selected.',
+    ar: 'إيه. المقالات المرسلة مصحَّحة بالذكاء الاصطناعي حسب معايير assessment objective لبورد الامتحان اللي اخترته.',
+  },
+  'student.faq.switch.q': {
+    en: 'Can I switch exam boards later?',
+    ar: 'أقدر أغيّر بورد الامتحان بعدين؟',
+  },
+  'student.faq.switch.a': {
+    en: 'Yes. You can switch exam boards at any time from Settings, or directly from the BoardSwitcher in the top navigation.',
+    ar: 'إيه. تقدر تغيّر بورد الامتحان أي وقت من الإعدادات، أو مباشرة من BoardSwitcher في القائمة العلوية.',
+  },
+  'student.faq.cost.q': { en: 'How much does it cost?', ar: 'كم السعر؟' },
+  'student.faq.cost.a': {
+    en: 'Student plans start at £3.49 per month, or £29.99 if you pay annually.',
+    ar: 'باقات الطلاب تبدأ من £3.49 بالشهر، أو £29.99 لو دفعت سنوي.',
+  },
+  'student.bottom.title': {
+    en: 'Ready to level up your English?',
+    ar: 'جاهز ترفّع مستوى الإنجليزي مالك؟',
+  },
+  'student.bottom.body': {
+    en: 'Free trial, no card. Cancel any time. Unlimited courses, flashcards, and revision notes — 3 free uses of every AI tool before you decide.',
+    ar: 'تجربة ببلاش، بدون كرت. ألغ في أي وقت. دورات وبطاقات وملخّصات مراجعة بلا حدود — ٣ استخدامات ببلاش لكل أداة ذكاء اصطناعي قبل ما تقرّر.',
+  },
+  'student.bottom.cta_create': { en: 'Create free account', ar: 'سوِّ حساب ببلاش' },
+  'student.bottom.cta_compare': { en: 'Compare plans', ar: 'قارن الباقات' },
+
+  // ─── Help Centre (/help) — Khaleeji UI strings ───────────────────────
+  'help.title': { en: 'Help Centre', ar: 'مركز المساعدة' },
+  'help.intro_lead': {
+    en: "Find answers to your questions about The English Hub. Can't find what you're looking for?",
+    ar: 'لقا الإجابات عن أسئلتك حول The English Hub. ما لقيت اللي تبغاه؟',
+  },
+  'help.intro_check_faqs': { en: 'Check our FAQs', ar: 'شوف الأسئلة الشائعة' },
+  'help.intro_or': { en: 'or', ar: 'أو' },
+  'help.intro_get_in_touch': { en: 'get in touch', ar: 'تواصل معانا' },
+  'help.search_placeholder': {
+    en: "Search for help — e.g. 'mock exam', 'cancel subscription', 'exam board'...",
+    ar: "دوّر على مساعدة — مثلاً 'امتحان تجريبي'، 'إلغاء الاشتراك'، 'بورد الامتحان'...",
+  },
+  'help.no_results_pre': { en: 'No results found for', ar: 'ما في نتايج لـ' },
+  'help.no_results_tail': { en: '. Try a different search term or', ar: '. جرّب كلمة ثانية أو' },
+  'help.contact_support_link': { en: 'contact our support team', ar: 'تواصل مع فريق الدعم' },
+  'help.response_times_h2': { en: 'Response times', ar: 'أوقات الرد' },
+  'help.rt.student_label': { en: 'Student / parent:', ar: 'طالب / ولي أمر:' },
+  'help.rt.student_value': { en: 'within 1 working day', ar: 'خلال يوم عمل واحد' },
+  'help.rt.teacher_label': { en: 'Teacher:', ar: 'معلم:' },
+  'help.rt.teacher_value': {
+    en: 'within 4 working hours (UK school hours, Mon-Fri)',
+    ar: 'خلال ٤ ساعات عمل (ساعات المدارس البريطانية، الاثنين-الجمعة)',
+  },
+  'help.rt.school_label': { en: 'School admin:', ar: 'إدارة المدرسة:' },
+  'help.rt.school_value': {
+    en: 'within 2 hours during UK school hours (priority queue)',
+    ar: 'خلال ساعتين في أوقات الدراسة البريطانية (طابور أولوية)',
+  },
+  'help.rt.security_label': {
+    en: 'Security / vulnerability disclosures:',
+    ar: 'الإبلاغ عن ثغرات أمنية:',
+  },
+  'help.rt.security_value': {
+    en: 'acknowledgement within 24 hours, full triage within 5 working days —',
+    ar: 'تأكيد الاستلام خلال ٢٤ ساعة، فحص كامل خلال ٥ أيام عمل —',
+  },
+  'help.still_need_help_h2': { en: 'Still need help?', ar: 'لسا تحتاج مساعدة؟' },
+  'help.still_need_help_body': {
+    en: 'Our support team is here to help. Response targets are listed above.',
+    ar: 'فريق الدعم موجود لمساعدتك. الأوقات المتوقعة للرد فوق.',
+  },
+  'help.contact_support_cta': { en: 'Contact Support', ar: 'تواصل مع الدعم' },
+  'help.cat.getting_started.title': { en: 'Getting Started', ar: 'البداية' },
+  'help.cat.getting_started.desc': {
+    en: 'New to The English Hub? Start here.',
+    ar: 'جديد على The English Hub؟ ابدأ من هنا.',
+  },
+  'help.cat.courses.title': { en: 'Courses & Learning', ar: 'الدورات والتعلم' },
+  'help.cat.courses.desc': {
+    en: 'Understanding our course content and structure.',
+    ar: 'فهم محتوى الدورات وهيكلها.',
+  },
+  'help.cat.mocks.title': { en: 'Mock Exams', ar: 'الامتحانات التجريبية' },
+  'help.cat.mocks.desc': { en: 'Practise under exam conditions.', ar: 'تدرّب تحت ظروف الامتحان.' },
+  'help.cat.practice.title': { en: 'Practice & Revision', ar: 'التدريب والمراجعة' },
+  'help.cat.practice.desc': {
+    en: 'Sharpen your skills with targeted practice.',
+    ar: 'طوّر مهاراتك بتدريب مركّز.',
+  },
+  'help.cat.billing.title': { en: 'Account & Billing', ar: 'الحساب والفواتير' },
+  'help.cat.billing.desc': {
+    en: 'Manage your subscription and account.',
+    ar: 'إدارة الاشتراك والحساب.',
+  },
+  'help.cat.schools.title': { en: 'Schools & Teachers', ar: 'المدارس والمعلمين' },
+  'help.cat.schools.desc': {
+    en: 'Information for schools and teaching staff.',
+    ar: 'معلومات للمدارس وكادر التدريس.',
+  },
+  'help.cat.parents.title': { en: 'Parents', ar: 'أولياء الأمور' },
+  'help.cat.parents.desc': { en: "Supporting your child's learning.", ar: 'دعم تعلّم ولدك.' },
+  'help.cat.technical.title': { en: 'Technical Issues', ar: 'المشاكل التقنية' },
+  'help.cat.technical.desc': {
+    en: 'Troubleshooting and technical support.',
+    ar: 'حل المشاكل والدعم التقني.',
+  },
+  'help.gs.q1.q': { en: 'How do I create an account?', ar: 'كيف أسوّي حساب؟' },
+  'help.gs.q1.a': {
+    en: 'Visit theenglishhub.app and click "Get Started" or "Sign Up". You can register with your email address or sign in with Google. Your 30-day free trial starts automatically — no payment details required upfront.',
+    ar: "ادخل theenglishhub.app واضغط 'ابدأ' أو 'سوِّ حساب'. تقدر تسجّل بإيميلك أو تدخل بحساب Google. تجربة الـ ٣٠ يوم المجانية تبدأ تلقائياً — ما تحتاج بيانات دفع من البداية.",
+  },
+  'help.gs.q2.q': {
+    en: 'What exam boards do you support?',
+    ar: 'وش بوردات الامتحان اللي تدعمونها؟',
+  },
+  'help.gs.q2.a': {
+    en: "We support all major English exam boards: AQA, Edexcel, OCR, WJEC/Eduqas, and Cambridge IGCSE. When you set up your profile, select your exam board and we'll tailor all content, revision materials, and mock exams to match your specification.",
+    ar: 'إحنا ندعم كل بوردات الإنجليزي الرئيسية: AQA, Edexcel, OCR, WJEC/Eduqas, و Cambridge IGCSE. لمّا تسوي ملفك، اختر البورد ونخصّص لك كل المحتوى والمراجعة والامتحانات التجريبية حسب المنهج مالك.',
+  },
+  'help.gs.q3.q': {
+    en: 'How do I choose my exam board and course?',
+    ar: 'كيف أختار البورد والكورس؟',
+  },
+  'help.gs.q3.a': {
+    en: "During registration, you'll be asked to select your exam board and whether you're studying English Language, English Literature, or both. You can change these at any time from your account settings.",
+    ar: 'وقت التسجيل، بنسألك تختار البورد، وهل تدرس English Language أو English Literature أو الاثنين. تقدر تغيّر هذي الاختيارات أي وقت من إعدادات الحساب.',
+  },
+  'help.gs.q4.q': {
+    en: 'Is there a free trial? Do I need a card?',
+    ar: 'في تجربة مجانية؟ أحتاج بطاقة؟',
+  },
+  'help.gs.q4.a': {
+    en: "Two things. Every paid plan starts with a 7-day free trial — that requires full sign-up with a valid card. Cancel before day 7 and you won't be charged. Separately, every registered account gets 3 free uses of most premium features (AI marking, mock exams, lesson plans, etc.) with no card required, so you can demo the product first.",
+    ar: 'شيئين. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام — تتطلب تسجيل كامل ببطاقة. ألغِ قبل اليوم السابع وما تنحاسب. وبشكل منفصل، كل حساب مسجل ياخذ ٣ استخدامات مجانية لأغلب المميزات (التصحيح بالـ AI، الامتحانات التجريبية، خطط الدروس...) بدون بطاقة، عشان تجرّب الأول.',
+  },
+  'help.co.q1.q': { en: 'What courses are available?', ar: 'وش الكورسات المتوفرة؟' },
+  'help.co.q1.a': {
+    en: 'We offer comprehensive courses for GCSE English Language and English Literature across all major exam boards. Each course is broken down into topics that match your specification, with lessons, examples, and practice activities.',
+    ar: 'نقدّم كورسات شاملة لـ GCSE English Language و English Literature لكل البوردات الرئيسية. كل كورس مقسم لمواضيع تطابق المنهج مالك، فيها دروس وأمثلة وأنشطة تدريب.',
+  },
+  'help.co.q2.q': {
+    en: 'Are the courses aligned to my exam specification?',
+    ar: 'الكورسات مطابقة لمواصفات الامتحان مالي؟',
+  },
+  'help.co.q2.a': {
+    en: "Absolutely. Every course is mapped directly to the exam board specification you've selected. Our content covers all the skills, texts, and question types you'll encounter in your actual exams.",
+    ar: 'أكيد. كل كورس متطابق مباشرة مع مواصفات البورد اللي اخترته. المحتوى يغطي كل المهارات والنصوص وأنواع الأسئلة اللي بتقابلها في الامتحان الفعلي.',
+  },
+  'help.co.q3.q': {
+    en: 'Can I study both English Language and Literature?',
+    ar: 'أقدر أدرس English Language و Literature مع بعض؟',
+  },
+  'help.co.q3.a': {
+    en: 'Yes. Your subscription gives you full access to both English Language and English Literature courses for your chosen exam board. You can switch between them freely.',
+    ar: 'إيه. الاشتراك يعطيك وصول كامل لكورسات English Language و English Literature للبورد اللي اخترته. تقدر تتنقل بينهم براحتك.',
+  },
+  'help.co.q4.q': {
+    en: 'How do I track my progress through a course?',
+    ar: 'كيف أتابع تقدمي في الكورس؟',
+  },
+  'help.co.q4.a': {
+    en: 'Your dashboard shows your progress through each course topic. Completed lessons are marked with a tick, and you can see your overall completion percentage. The dashboard also highlights areas where you might need more practice.',
+    ar: 'لوحتك تبيّن تقدمك في كل موضوع. الدروس المنجزة عليها علامة صح، وتشوف نسبة الإنجاز الكلية. اللوحة كمان تبرز المواضيع اللي تحتاج تدريب أكثر.',
+  },
+  'help.me.q1.q': { en: 'How do mock exams work?', ar: 'كيف تشتغل الامتحانات التجريبية؟' },
+  'help.me.q1.a': {
+    en: "Our mock exams simulate the real exam experience. You'll answer questions in timed conditions that match your exam board's format. After completing a mock, you receive detailed feedback, a grade estimate, and suggestions for improvement.",
+    ar: 'الامتحانات التجريبية تحاكي تجربة الامتحان الحقيقي. تجاوب الأسئلة بوقت محدد يطابق صيغة البورد مالك. بعد ما تخلّص، تستلم ملاحظات تفصيلية وتقدير درجة واقتراحات للتحسين.',
+  },
+  'help.me.q2.q': { en: 'Are mock exams timed?', ar: 'الامتحانات التجريبية بوقت محدد؟' },
+  'help.me.q2.a': {
+    en: 'Yes. Each mock exam uses the same time allocation as the real exam so you can practise your time management. You can see a countdown timer during the exam. If you prefer, you can also attempt mocks in untimed "practice mode".',
+    ar: "إيه. كل امتحان تجريبي يستخدم نفس الوقت المخصص للامتحان الحقيقي عشان تتدرّب على إدارة الوقت. تشوف عداد تنازلي وقت الامتحان. وإذا تبغى، تقدر تحلّ بـ 'وضع التدريب' بدون توقيت.",
+  },
+  'help.me.q3.q': {
+    en: 'How are my mock exams marked?',
+    ar: 'كيف تتصحّح الامتحانات التجريبية مالي؟',
+  },
+  'help.me.q3.a': {
+    en: 'Mock exams are marked using AI that has been trained on real examiner mark schemes and grade boundaries. You receive a mark, a grade estimate, and detailed feedback on each answer explaining what you did well and how to improve.',
+    ar: 'الامتحانات التجريبية تتصحح بواسطة AI مدرّب على مخططات تصحيح حقيقية وحدود الدرجات. تستلم درجة وتقدير وملاحظات تفصيلية على كل إجابة تشرح وش سويته زين وكيف تحسّن.',
+  },
+  'help.me.q4.q': { en: 'Can I retake a mock exam?', ar: 'أقدر أعيد الامتحان التجريبي؟' },
+  'help.me.q4.a': {
+    en: 'Yes, you can retake any mock exam as many times as you like. Each attempt is saved so you can track your improvement over time. We recommend reviewing the feedback from each attempt before retrying.',
+    ar: 'إيه، تقدر تعيد أي امتحان تجريبي بقدر ما تبغى. كل محاولة محفوظة عشان تتابع تطورك مع الوقت. ننصح تراجع ملاحظات كل محاولة قبل تعيد.',
+  },
+  'help.pr.q1.q': {
+    en: 'What types of practice questions are available?',
+    ar: 'وش أنواع أسئلة التدريب المتوفرة؟',
+  },
+  'help.pr.q1.a': {
+    en: 'We offer practice questions for every question type on your exam: reading comprehension, language analysis, creative writing, essay responses, and more. Each question comes with a model answer so you can see what a top-grade response looks like.',
+    ar: 'نقدّم أسئلة تدريب لكل نوع سؤال في امتحانك: استيعاب القراءة، تحليل اللغة، الكتابة الإبداعية، إجابات المقال، وأكثر. كل سؤال معاه إجابة نموذجية عشان تشوف شكل الإجابة الممتازة.',
+  },
+  'help.pr.q2.q': { en: 'What are revision materials?', ar: 'وش هي مواد المراجعة؟' },
+  'help.pr.q2.a': {
+    en: 'Our revision section includes concise notes, key quotes, character summaries, theme overviews, and technique guides for all set texts and skills. Everything is organised by topic and exam board so you can find exactly what you need.',
+    ar: 'قسم المراجعة فيه ملاحظات مختصرة، اقتباسات أساسية، ملخصات شخصيات، نظرة عامة على الأفكار، وأدلة الأساليب لكل النصوص والمهارات المقررة. كل شي مرتب حسب الموضوع والبورد عشان تلقا اللي تبغى.',
+  },
+  'help.pr.q3.q': {
+    en: 'Can I focus on specific topics I find difficult?',
+    ar: 'أقدر أركّز على مواضيع معينة صعبة عليّ؟',
+  },
+  'help.pr.q3.a': {
+    en: 'Yes. You can filter practice questions and revision materials by topic, question type, or difficulty level. Your dashboard also highlights weak areas based on your mock exam and practice results, so you know where to focus.',
+    ar: 'إيه. تقدر تفلتر أسئلة التدريب والمراجعة حسب الموضوع أو نوع السؤال أو الصعوبة. لوحتك تبرز كمان النقاط الضعيفة بناءً على نتايج الامتحانات والتدريب، عشان تعرف وين تركّز.',
+  },
+  'help.pr.q4.q': {
+    en: 'Where can I see the most common mistakes that cost marks?',
+    ar: 'وين أشوف الأخطاء الشائعة اللي تخسّر درجات؟',
+  },
+  'help.pr.q4.a': {
+    en: 'We have two guides. Visit /revision/common-errors for the 30 most common factual errors — misquotations, wrong contexts, anthology version mix-ups — verified against board specifications and primary sources. For technique and craft mistakes (retelling the story, no terminology, vague effects), see /revision/exam-technique/common-mistakes.',
+    ar: 'عندنا دليلين. روح لـ /revision/common-errors عشان ٣٠ خطأ معلوماتي شائع — اقتباسات غلط، سياقات خاطئة، خلط نسخ الأنطولوجيا — متحقق منها مقابل مواصفات البوردات والمصادر الأساسية. لأخطاء الأسلوب والصنعة (إعادة سرد القصة، بدون مصطلحات، تأثيرات غامضة)، شوف /revision/exam-technique/common-mistakes.',
+  },
+  'help.ab.q1.q': { en: 'How much does The English Hub cost?', ar: 'كم سعر The English Hub؟' },
+  'help.ab.q1.a': {
+    en: 'Early Access / Founding pricing (locked until August 2026): Students £3.99/month or £29.99/year — and £20/year with any affiliate code or the public code 2026ENGLISH (save £9.99). Teachers £6.99/month or £67.99/year. Standard pricing from August 2026: Students £7.99/month or £69.99/year. Teachers £11.99/month or £99/year. Every paid plan starts with a 7-day free trial (card required). You also get 3 free uses of most premium features before the paywall, no card required. Cancel anytime. Prices shown in GBP.',
+    ar: 'أسعار Early Access / Founding (مثبتة حتى أغسطس ٢٠٢٦): الطلاب £3.99/شهر أو £29.99/سنة — و£20/سنة مع أي كود شريك أو الكود العام 2026ENGLISH (وفّر £9.99). المعلمين £6.99/شهر أو £67.99/سنة. الأسعار العادية من أغسطس ٢٠٢٦: الطلاب £7.99/شهر أو £69.99/سنة. المعلمين £11.99/شهر أو £99/سنة. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام (بطاقة مطلوبة). كمان تاخذ ٣ استخدامات مجانية لأغلب المميزات قبل جدار الدفع، بدون بطاقة. ألغِ متى ما تبغى. الأسعار بـ GBP.',
+  },
+  'help.ab.q2.q': { en: 'Can I cancel my subscription?', ar: 'أقدر ألغي الاشتراك مالي؟' },
+  'help.ab.q2.a': {
+    en: "Yes, you can cancel anytime from your account settings. If you cancel, you'll retain access until the end of your current billing period. There are no cancellation fees or penalties.",
+    ar: 'إيه، تقدر تلغي أي وقت من إعدادات الحساب. لو ألغيت، يضل لك وصول حتى نهاية فترة الفوترة الحالية. ما في رسوم إلغاء ولا غرامات.',
+  },
+  'help.ab.q3.q': { en: 'How do I update my payment method?', ar: 'كيف أحدّث طريقة الدفع؟' },
+  'help.ab.q3.a': {
+    en: 'Go to Account Settings > Billing to update your payment card. All payments are processed securely through Stripe.',
+    ar: 'روح Account Settings > Billing عشان تحدّث بطاقة الدفع. كل المدفوعات تتم بأمان عبر Stripe.',
+  },
+  'help.ab.q4.q': {
+    en: 'What happens when my 7-day trial ends?',
+    ar: 'وش يصير لمّا تخلص تجربة الـ ٧ أيام؟',
+  },
+  'help.ab.q4.a': {
+    en: "We send a reminder email a couple of days before the trial ends. If you do nothing, your chosen subscription activates and your card is charged the plan price. Cancel any time before day 7 from your account settings and you won't be charged at all.",
+    ar: 'نرسل لك إيميل تذكير قبل انتهاء التجربة بيومين. إذا ما سويت شي، يتفعّل اشتراكك المختار وتنحاسب بطاقتك بسعر الخطة. ألغِ في أي وقت قبل اليوم ٧ من إعدادات الحساب، وما تنحاسب أبد.',
+  },
+  'help.st.q1.q': { en: 'Do you offer school plans?', ar: 'تقدّمون خطط للمدارس؟' },
+  'help.st.q1.a': {
+    en: 'Yes! Our Founding Schools Programme is a strategic partnership limited to the first 10 schools. Founding rate: £4,000/year — anchored against projected Standard Pricing of £8,000/year from August 2026. Schools that joined in wave 1 at £3,000 are grandfathered at that rate. Founding schools receive full platform access, priority onboarding, early features, and locked preferential pricing. Visit our For Schools page or contact info@Upskillenergy.com to learn more.',
+    ar: 'إيه! برنامج المدارس المؤسسة Founding Schools Programme شراكة استراتيجية محدودة لأول ١٠ مدارس. سعر التأسيس: £4,000/سنة — مرتبط بالأسعار العادية المتوقعة £8,000/سنة من أغسطس ٢٠٢٦. المدارس اللي انضمت في الموجة ١ بـ£3,000 محتفظة بسعرها. مدارس التأسيس تستلم وصول كامل، تأهيل بالأولوية، مميزات مبكرة، وأسعار تفضيلية مثبتة. شوف صفحة For Schools أو راسلنا على info@Upskillenergy.com.',
+  },
+  'help.st.q2.q': { en: 'Is there a teacher dashboard?', ar: 'في لوحة للمعلم؟' },
+  'help.st.q2.a': {
+    en: 'School licenses include a teacher dashboard where you can view individual and class-wide progress, assign specific practice tasks, monitor mock exam results, and identify students who may need additional support.',
+    ar: 'تراخيص المدارس فيها لوحة معلم تقدر تشوف فيها تقدم الطلاب فردياً وللصف كامل، تكلّف مهام تدريب معينة، تتابع نتايج الامتحانات التجريبية، وتعرف الطلاب اللي يحتاجون دعم إضافي.',
+  },
+  'help.st.q3.q': { en: 'Can I set assignments for my students?', ar: 'أقدر أكلّف الطلاب مهام؟' },
+  'help.st.q3.a': {
+    en: 'Yes. With a school license, teachers can assign specific practice questions, revision topics, or mock exams to individual students or entire classes, with due dates and progress tracking.',
+    ar: 'إيه. مع ترخيص المدرسة، المعلمين يقدرون يكلّفون أسئلة تدريب معينة أو مواضيع مراجعة أو امتحانات تجريبية لطلاب فرديين أو صفوف كاملة، مع تواريخ تسليم ومتابعة التقدم.',
+  },
+  'help.pa.q1.q': { en: "How can I track my child's progress?", ar: 'كيف أتابع تقدم ولدي؟' },
+  'help.pa.q1.a': {
+    en: "Parents can link to their child's account to receive weekly progress reports via email. These reports cover time spent studying, topics completed, mock exam grades, and areas that need attention. Visit our For Parents page to learn more.",
+    ar: 'أولياء الأمور يقدرون يربطون حسابهم بحساب ولدهم عشان يستلمون تقارير تقدم أسبوعية بالإيميل. التقارير تغطي الوقت المستثمر في الدراسة، المواضيع المنجزة، درجات الامتحانات التجريبية، والنقاط اللي تحتاج اهتمام. شوف صفحة For Parents لمزيد من المعلومات.',
+  },
+  'help.pa.q2.q': { en: 'Is the content safe and appropriate?', ar: 'المحتوى آمن ومناسب؟' },
+  'help.pa.q2.a': {
+    en: 'All content on The English Hub is educational and aligned with the national curriculum. Set texts are those prescribed by exam boards. Our platform contains no advertising, social features, or inappropriate content.',
+    ar: 'كل المحتوى في The English Hub تعليمي ومتوافق مع المنهج الوطني. النصوص المقررة هي اللي تحددها بوردات الامتحان. المنصة ما فيها إعلانات ولا ميزات اجتماعية ولا محتوى غير مناسب.',
+  },
+  'help.pa.q3.q': {
+    en: 'Can I purchase a subscription for my child?',
+    ar: 'أقدر أشتري اشتراك لولدي؟',
+  },
+  'help.pa.q3.a': {
+    en: 'Yes. You can create an account and manage the subscription on behalf of your child. Students under 16 should have a parent or guardian manage their account. You retain full control over billing from your account settings.',
+    ar: 'إيه. تقدر تسوي حساب وتدير الاشتراك نيابة عن ولدك. الطلاب تحت ١٦ سنة يفترض ولي الأمر أو الوصي يدير حسابهم. تحتفظ بالتحكم الكامل بالفوترة من إعدادات الحساب.',
+  },
+  'help.te.q1.q': {
+    en: 'What devices can I use The English Hub on?',
+    ar: 'وش الأجهزة اللي أقدر أستخدم عليها The English Hub؟',
+  },
+  'help.te.q1.a': {
+    en: 'The English Hub works on any device with a modern web browser — laptops, desktops, tablets, and smartphones. No app download is required. We recommend Chrome, Safari, Firefox, or Edge for the best experience.',
+    ar: 'The English Hub يشتغل على أي جهاز فيه متصفح حديث — لابتوب، ديسكتوب، تابلت، موبايل. ما تحتاج تنزّل تطبيق. ننصح بـ Chrome أو Safari أو Firefox أو Edge للأفضل تجربة.',
+  },
+  'help.te.q2.q': {
+    en: "The site isn't loading properly. What should I do?",
+    ar: 'الموقع ما يفتح كويس. وش أسوّي؟',
+  },
+  'help.te.q2.a': {
+    en: 'Try clearing your browser cache and cookies, then refresh the page. Make sure your browser is up to date. If the issue persists, try a different browser or device. You can also check our status page or contact support.',
+    ar: 'جرّب امسح cache و cookies من المتصفح، وحدّث الصفحة. تأكد إن المتصفح محدث. إذا المشكلة استمرت، جرّب متصفح أو جهاز ثاني. تقدر كمان تشوف صفحة الحالة أو تتواصل مع الدعم.',
+  },
+  'help.te.q3.q': {
+    en: "I've forgotten my password. How do I reset it?",
+    ar: 'نسيت الباسوورد. كيف أعيد تعيينه؟',
+  },
+  'help.te.q3.a': {
+    en: 'Click "Log In" then "Forgot Password". Enter your email address and we\'ll send you a password reset link. The link expires after 24 hours. If you signed up with Google, use the "Sign in with Google" option instead.',
+    ar: "اضغط 'Log In' بعدين 'Forgot Password'. ادخل إيميلك ونرسل لك رابط إعادة تعيين الباسوورد. الرابط ينتهي بعد ٢٤ ساعة. إذا سجّلت بـ Google، استخدم 'Sign in with Google' بدل.",
+  },
+  'help.te.q4.q': {
+    en: "My mock exam feedback isn't showing. What should I do?",
+    ar: 'ملاحظات الامتحان التجريبي ما تبيّن. وش أسوّي؟',
+  },
+  'help.te.q4.a': {
+    en: "Feedback is usually generated within a few seconds of submitting your exam. If it hasn't appeared after a minute, try refreshing the page. If the problem continues, contact our support team with the exam name and the time you submitted it.",
+    ar: 'الملاحظات عادة تطلع خلال ثواني من تسليم الامتحان. إذا ما طلعت بعد دقيقة، حدّث الصفحة. إذا المشكلة استمرت، تواصل مع الدعم واذكر اسم الامتحان ووقت التسليم.',
+  },
+
+  // ─── Help / Contact (/help/contact) ───────────────────────────────────
+  'help.contact.title': { en: 'Get in Touch', ar: 'تواصل معانا' },
+  'help.contact.lead': {
+    en: 'Whether you have a question, a problem, or just want to say hi -- pick the right channel below and we will get back to you as quickly as we can.',
+    ar: 'لو عندك سؤال أو مشكلة أو بس تبغى تسلّم -- اختر القناة المناسبة تحت، ونرد عليك بأسرع ما يمكن.',
+  },
+  'help.contact.channels_heading': { en: 'Contact channels', ar: 'قنوات التواصل' },
+  'help.contact.ch.general.label': { en: 'General Support', ar: 'الدعم العام' },
+  'help.contact.ch.general.desc': {
+    en: 'Questions about your account, essays, feedback, or anything else? This is the best place to start.',
+    ar: 'أسئلة عن حسابك، المقالات، الملاحظات أو أي شي ثاني؟ هذي أفضل نقطة بداية.',
+  },
+  'help.contact.ch.dpo.label': { en: 'Data Protection Officer', ar: 'مسؤول حماية البيانات' },
+  'help.contact.ch.dpo.desc': {
+    en: 'Want to download, correct, or delete your personal data? Our DPO handles all data rights requests.',
+    ar: 'تبغى تنزّل أو تصحّح أو تمسح بياناتك الشخصية؟ مسؤول البيانات يتولّى طلبات الحقوق.',
+  },
+  'help.contact.ch.safeguarding.label': { en: 'Safeguarding', ar: 'الحماية' },
+  'help.contact.ch.safeguarding.desc': {
+    en: 'If you feel unsafe, or if you are worried about yourself or another young person, please reach out here. We take this seriously.',
+    ar: 'لو تحس إنك مو بأمان، أو قلقان على نفسك أو على شاب ثاني، تواصل هنا. إحنا ناخذها بجدية.',
+  },
+  'help.contact.ch.complaints.label': { en: 'Complaints', ar: 'الشكاوى' },
+  'help.contact.ch.complaints.desc': {
+    en: 'Not happy with how something was handled? We want to hear about it so we can put it right.',
+    ar: 'مو راضي عن طريقة تعاملنا مع شي؟ نبغى نسمع عشان نصلحه.',
+  },
+  'help.contact.company_heading': { en: 'About the Company', ar: 'عن الشركة' },
+  'help.contact.company.name_label': { en: 'Company Name', ar: 'اسم الشركة' },
+  'help.contact.company.name_value': { en: 'Upskill Energy Limited', ar: 'Upskill Energy Limited' },
+  'help.contact.company.registered_label': { en: 'Registered In', ar: 'مسجلة في' },
+  'help.contact.company.registered_value': { en: 'England and Wales', ar: 'إنجلترا وويلز' },
+  'help.contact.company.general_label': { en: 'General Support', ar: 'الدعم العام' },
+  'help.contact.company.dpo_label': { en: 'Data Protection', ar: 'حماية البيانات' },
+  'help.contact.rt_heading': { en: 'When will I hear back?', ar: 'متى يردون عليّ؟' },
+  'help.contact.rt.general_label': { en: 'General support:', ar: 'الدعم العام:' },
+  'help.contact.rt.general_value': { en: 'within 1 working day', ar: 'خلال يوم عمل واحد' },
+  'help.contact.rt.data_label': { en: 'Data requests:', ar: 'طلبات البيانات:' },
+  'help.contact.rt.data_value': {
+    en: 'within 30 days (usually much sooner)',
+    ar: 'خلال ٣٠ يوم (عادة أسرع بكثير)',
+  },
+  'help.contact.rt.safeguarding_label': { en: 'Safeguarding:', ar: 'الحماية:' },
+  'help.contact.rt.safeguarding_value': {
+    en: 'prioritised -- we aim to respond within 24 hours',
+    ar: 'بالأولوية -- نهدف للرد خلال ٢٤ ساعة',
+  },
+  'help.contact.rt.complaints_label': { en: 'Complaints:', ar: 'الشكاوى:' },
+  'help.contact.rt.complaints_value': {
+    en: 'acknowledged within 2 working days, resolved within 20',
+    ar: 'تأكيد الاستلام خلال يومي عمل، حلها خلال ٢٠',
+  },
+  'help.contact.ico_heading': { en: 'Not satisfied with our response?', ar: 'مو راضي عن ردنا؟' },
+  'help.contact.ico_body': {
+    en: "If you have raised a concern about your data and you are not happy with how we have handled it, you have the right to complain to the UK's data protection regulator, the Information Commissioner's Office (ICO).",
+    ar: "لو رفعت شكوى عن بياناتك وما رضيت عن طريقة تعاملنا، لك الحق تشتكي للجهة الرقابية البريطانية لحماية البيانات، Information Commissioner's Office (ICO).",
+  },
+  'help.contact.ico_cta': { en: 'Make a complaint to the ICO', ar: 'قدّم شكوى لـ ICO' },
+  'help.contact.back_to_help': { en: 'Back to Help Centre', ar: 'رجوع لمركز المساعدة' },
+
+  // ─── Help / Report (/help/report) ─────────────────────────────────────
+  'help.report.back_to_help': { en: '← Back to Help Centre', ar: '← رجوع لمركز المساعدة' },
+  'help.report.title': { en: 'Report an Issue', ar: 'بلّغ عن مشكلة' },
+  'help.report.lead': {
+    en: "Found something that isn't working? Let us know and we'll fix it as soon as possible.",
+    ar: 'لقيت شي ما يشتغل؟ خبّرنا ونصلحه بأسرع وقت.',
+  },
+  'help.report.type_label': {
+    en: 'What type of issue are you reporting?',
+    ar: 'وش نوع المشكلة اللي تبلّغ عنها؟',
+  },
+  'help.report.type.bug.label': { en: 'Bug / Something broken', ar: 'مشكلة برمجية / شي خربان' },
+  'help.report.type.bug.desc': {
+    en: "A feature isn't working as expected",
+    ar: 'ميزة ما تشتغل زي ما هي مفروض',
+  },
+  'help.report.type.content.label': { en: 'Content error', ar: 'خطأ في المحتوى' },
+  'help.report.type.content.desc': {
+    en: 'Incorrect information, typo, or missing content',
+    ar: 'معلومة غلط، خطأ كتابي، أو محتوى ناقص',
+  },
+  'help.report.type.a11y.label': { en: 'Accessibility issue', ar: 'مشكلة وصول' },
+  'help.report.type.a11y.desc': {
+    en: 'Difficulty using the site with assistive technology',
+    ar: 'صعوبة في استخدام الموقع مع تقنيات مساعدة',
+  },
+  'help.report.type.perf.label': { en: 'Performance issue', ar: 'مشكلة أداء' },
+  'help.report.type.perf.desc': {
+    en: 'Slow loading, freezing, or crashing',
+    ar: 'تحميل بطيء، تجمّد، أو انهيار',
+  },
+  'help.report.type.security.label': { en: 'Security concern', ar: 'مخاوف أمنية' },
+  'help.report.type.security.desc': {
+    en: 'Privacy or security vulnerability',
+    ar: 'ثغرة خصوصية أو أمنية',
+  },
+  'help.report.type.other.label': { en: 'Other', ar: 'غير ذلك' },
+  'help.report.type.other.desc': {
+    en: 'Something else not listed above',
+    ar: 'شي ثاني مو موجود فوق',
+  },
+  'help.report.desc_label': { en: 'Describe the issue', ar: 'اشرح المشكلة' },
+  'help.report.desc_hint': {
+    en: 'Please include steps to reproduce the issue if possible.',
+    ar: 'لطفاً اكتب خطوات إعادة المشكلة إذا تقدر.',
+  },
+  'help.report.desc_placeholder': {
+    en: 'When I click on... I expected... but instead...',
+    ar: 'لمّا ضغطت على... كنت أتوقع... لكن بدل ذلك...',
+  },
+  'help.report.url_label': { en: 'Page URL', ar: 'رابط الصفحة' },
+  'help.report.optional': { en: '(optional)', ar: '(اختياري)' },
+  'help.report.browser_label': { en: 'Browser', ar: 'المتصفح' },
+  'help.report.browser_placeholder': { en: 'Select browser', ar: 'اختر متصفح' },
+  'help.report.email_label': { en: 'Your email', ar: 'إيميلك' },
+  'help.report.email_optional': { en: '(optional — for follow-up)', ar: '(اختياري — للمتابعة)' },
+  'help.report.submit': { en: 'Submit Report', ar: 'أرسل البلاغ' },
+  'help.report.submitted_title': { en: 'Report Submitted', ar: 'تم إرسال البلاغ' },
+  'help.report.submitted_body': {
+    en: 'Thank you for reporting this issue. Our team will investigate and get back to you if needed.',
+    ar: 'شكراً على البلاغ. فريقنا بيحقّق ويرد عليك إذا احتاج.',
+  },
+  'help.report.back_to_help_cta': { en: 'Back to Help Centre', ar: 'رجوع لمركز المساعدة' },
+  'help.report.another': { en: 'Report Another', ar: 'بلّغ عن مشكلة ثانية' },
+
+  // ─── Help / Suggestions (/help/suggestions) ───────────────────────────
+  'help.sug.title': { en: 'Suggestions', ar: 'اقتراحات' },
+  'help.sug.lead': {
+    en: "Have an idea to improve The English Hub? We'd love to hear it. Every suggestion is read by our team.",
+    ar: 'عندك فكرة لتطوير The English Hub؟ نبغى نسمعها. فريقنا يقرأ كل اقتراح.',
+  },
+  'help.sug.cat_label': { en: 'What area is your suggestion about?', ar: 'اقتراحك في أي مجال؟' },
+  'help.sug.cat.feature': { en: 'New Feature', ar: 'ميزة جديدة' },
+  'help.sug.cat.content': { en: 'Content Request', ar: 'طلب محتوى' },
+  'help.sug.cat.ui': { en: 'Design / UI', ar: 'تصميم / واجهة' },
+  'help.sug.cat.board': { en: 'Exam Board Coverage', ar: 'تغطية بوردات الامتحان' },
+  'help.sug.cat.tools': { en: 'Study Tools', ar: 'أدوات الدراسة' },
+  'help.sug.cat.other': { en: 'Other', ar: 'غير ذلك' },
+  'help.sug.title_label': { en: 'Suggestion title', ar: 'عنوان الاقتراح' },
+  'help.sug.title_placeholder': { en: 'A short summary of your idea', ar: 'ملخص قصير لفكرتك' },
+  'help.sug.desc_label': { en: 'Tell us more', ar: 'وضّح أكثر' },
+  'help.sug.desc_hint': {
+    en: 'Describe your suggestion in detail. How would it help you or other students?',
+    ar: 'اشرح اقتراحك بالتفصيل. كيف بيساعدك أو يساعد طلاب ثانيين؟',
+  },
+  'help.sug.desc_placeholder': {
+    en: 'I think it would be great if...',
+    ar: 'أعتقد إنه راح يكون رائع لو...',
+  },
+  'help.sug.email_label': { en: 'Your email', ar: 'إيميلك' },
+  'help.sug.email_optional': {
+    en: '(optional — we may follow up)',
+    ar: '(اختياري — ممكن نتابع معاك)',
+  },
+  'help.sug.submit': { en: 'Submit Suggestion', ar: 'أرسل الاقتراح' },
+  'help.sug.thanks_title': { en: 'Thank You!', ar: 'شكراً!' },
+  'help.sug.thanks_body': {
+    en: 'Your suggestion has been received. We review every idea and use them to make The English Hub better for everyone.',
+    ar: 'وصلنا اقتراحك. نراجع كل فكرة ونستخدمها لتحسين The English Hub للجميع.',
+  },
+  'help.sug.another': { en: 'Submit Another', ar: 'أرسل اقتراح ثاني' },
+  'help.sug.popular_h2': { en: 'Popular Requests', ar: 'الطلبات الشائعة' },
+  'help.sug.req.past_papers': {
+    en: 'Past paper question bank',
+    ar: 'بنك أسئلة من الأوراق السابقة',
+  },
+  'help.sug.req.audio_poems': { en: 'Audio recordings of poems', ar: 'تسجيلات صوتية للقصائد' },
+  'help.sug.req.dark_mode': { en: 'Dark mode', ar: 'الوضع الداكن' },
+  'help.sug.req.wjec_guides': { en: 'WJEC full text guides', ar: 'أدلة WJEC الكاملة للنصوص' },
+  'help.sug.req.mobile_app': { en: 'Mobile app', ar: 'تطبيق موبايل' },
+  'help.sug.status.planned': { en: 'Planned', ar: 'مخطط' },
+  'help.sug.status.under_review': { en: 'Under Review', ar: 'قيد المراجعة' },
+  'help.sug.status.in_progress': { en: 'In Progress', ar: 'قيد التنفيذ' },
+
+  // ─── FAQs (/faqs) ─────────────────────────────────────────────────────
+  'faqs.title': { en: 'Frequently asked questions', ar: 'الأسئلة الشائعة' },
+  'faqs.intro_lead': {
+    en: 'Everything you need to know about The English Hub — GCSE and IGCSE English, AI marking, school licences, safeguarding, and more. For anything not covered here, visit our',
+    ar: 'كل اللي تحتاج تعرفه عن The English Hub — GCSE و IGCSE English، التصحيح بالـ AI، تراخيص المدارس، الحماية، وأكثر. لأي شي ما هو هنا، روح لـ',
+  },
+  'faqs.intro_help_link': { en: 'Help Centre', ar: 'مركز المساعدة' },
+  'faqs.sections_aria': { en: 'FAQ sections', ar: 'أقسام الأسئلة الشائعة' },
+  'faqs.cant_find_h2': { en: "Can't find what you're looking for?", ar: 'ما لقيت اللي تبغاه؟' },
+  'faqs.cant_find_body': {
+    en: 'Our team is happy to help with any questions not covered here.',
+    ar: 'فريقنا جاهز يساعدك في أي سؤال مو موجود هنا.',
+  },
+  'faqs.visit_help_cta': { en: 'Visit Help Centre', ar: 'روح لمركز المساعدة' },
+  'faqs.contact_support_cta': { en: 'Contact Support', ar: 'تواصل مع الدعم' },
+  'faqs.sec.general.title': { en: 'General', ar: 'عام' },
+  'faqs.sec.pricing.title': { en: 'Pricing & Billing', ar: 'الأسعار والفوترة' },
+  'faqs.sec.courses.title': { en: 'Courses & Content', ar: 'الدورات والمحتوى' },
+  'faqs.sec.ai.title': { en: 'AI Marking & Feedback', ar: 'التصحيح والملاحظات بالـ AI' },
+  'faqs.sec.technical.title': { en: 'Technical', ar: 'تقني' },
+  'faqs.sec.privacy.title': { en: 'Privacy & Safety', ar: 'الخصوصية والأمان' },
+  'faqs.sec.schools.title': { en: 'Schools & Teachers', ar: 'المدارس والمعلمين' },
+  'faqs.g1.q': { en: 'What is The English Hub?', ar: 'وش هو The English Hub؟' },
+  'faqs.g1.a': {
+    en: 'The English Hub is an online learning platform designed specifically for GCSE and IGCSE English students. We provide board-specific courses, mock exams with AI-powered feedback, practice questions with model answers, and comprehensive revision materials for English Language and English Literature.',
+    ar: 'The English Hub منصة تعلّم أونلاين مصممة خصيصاً لطلاب GCSE و IGCSE English. نقدّم كورسات خاصة بكل بورد، امتحانات تجريبية مع ملاحظات بالـ AI، أسئلة تدريب مع إجابات نموذجية، ومواد مراجعة شاملة لـ English Language و English Literature.',
+  },
+  'faqs.g2.q': { en: 'Who is The English Hub for?', ar: 'لمين The English Hub؟' },
+  'faqs.g2.a': {
+    en: "The English Hub is built for GCSE and IGCSE English students (typically aged 14–16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account for weekly progress reports.",
+    ar: 'The English Hub معمول لطلاب GCSE و IGCSE English (عادة ١٤-١٦ سنة)، لكن يستخدمه كمان طلاب KS3 اللي يبغون يتقدمون. المعلمين يستخدمون تراخيص المدارس عشان يكلّفون المهام ويتابعون تقدم الصف، وأولياء الأمور يقدرون يربطون حسابهم بحساب الولد للحصول على تقارير أسبوعية.',
+  },
+  'faqs.g3.q': { en: 'Which exam boards are supported?', ar: 'وش بوردات الامتحان المدعومة؟' },
+  'faqs.g3.a': {
+    en: 'AQA, Edexcel (GCSE + International), OCR, WJEC / Eduqas, Cambridge IGCSE (0500 + 0475), and Pearson Edexcel International. Built around how examiners actually mark, so every course, mock exam, practice question, and revision note is tailored to your specific board and specification.',
+    ar: 'AQA, Edexcel (GCSE + International), OCR, WJEC / Eduqas, Cambridge IGCSE (0500 + 0475), و Pearson Edexcel International. مبني على طريقة المصححين الفعلية، فكل كورس وامتحان تجريبي وسؤال تدريب وملاحظة مراجعة مخصص للبورد ومواصفاتك بالتحديد.',
+  },
+  'faqs.g4.q': {
+    en: 'Is The English Hub suitable for IGCSE Cambridge 0500 and 0475?',
+    ar: 'The English Hub مناسب لـ IGCSE Cambridge 0500 و 0475؟',
+  },
+  'faqs.g4.a': {
+    en: 'Yes. We cover Cambridge First Language English 0500 and Literature in English 0475 alongside UK GCSE (AQA, Edexcel, Eduqas, OCR) and International A-Level — with board-specific mark schemes, assessment objectives, and set-text coverage.',
+    ar: 'إيه. نغطي Cambridge First Language English 0500 و Literature in English 0475 جنباً إلى جنب مع UK GCSE (AQA, Edexcel, Eduqas, OCR) و International A-Level — بمخططات تصحيح وأهداف تقييم ونصوص مقررة خاصة بكل بورد.',
+  },
+  'faqs.g5.q': {
+    en: 'Does The English Hub cover AQA Power and Conflict?',
+    ar: 'The English Hub يغطي AQA Power and Conflict؟',
+  },
+  'faqs.g5.a': {
+    en: 'Yes — full revision notes, annotated model paragraphs, and past-paper practice for all 15 poems in the AQA Power and Conflict anthology, aligned to AO1 / AO2 / AO3 mark distribution.',
+    ar: 'إيه — ملاحظات مراجعة كاملة، فقرات نموذجية مع شروحات، وتدريب على الأوراق السابقة لكل الـ ١٥ قصيدة في أنطولوجيا AQA Power and Conflict، مع توزيع علامات AO1 / AO2 / AO3.',
+  },
+  'faqs.g6.q': { en: 'Do I need to download an app?', ar: 'محتاج أنزّل تطبيق؟' },
+  'faqs.g6.a': {
+    en: 'No. The English Hub is a web application that works in any modern browser on laptops, desktops, tablets, and smartphones. Just visit theenglishhub.app and log in — no downloads or installations required.',
+    ar: 'لا. The English Hub تطبيق ويب يشتغل على أي متصفح حديث على لابتوب، ديسكتوب، تابلت، وموبايل. بس روح theenglishhub.app وسجّل دخول — بدون تنزيل أو تثبيت.',
+  },
+  'faqs.g7.q': {
+    en: 'How is The English Hub different from other revision sites?',
+    ar: 'وش يميّز The English Hub عن مواقع المراجعة الثانية؟',
+  },
+  'faqs.g7.a': {
+    en: 'Unlike generic revision platforms, every piece of content on The English Hub is written specifically for your exam board. Our mock exams use AI trained on real mark schemes to give you detailed, criteria-referenced feedback. We focus exclusively on English, so the depth and quality of our content is unmatched.',
+    ar: 'مو زي منصات المراجعة العامة، كل محتوى في The English Hub مكتوب خصيصاً للبورد مالك. الامتحانات التجريبية تستخدم AI مدرّب على مخططات تصحيح حقيقية لتعطيك ملاحظات تفصيلية مرتبطة بالمعايير. نركّز حصرياً على الإنجليزي، فعمق وجودة محتوانا ما لها مثيل.',
+  },
+  'faqs.p1.q': { en: 'How much does The English Hub cost?', ar: 'كم سعر The English Hub؟' },
+  'faqs.p2.q': {
+    en: 'Is there a free trial? Do I need a card?',
+    ar: 'في تجربة مجانية؟ أحتاج بطاقة؟',
+  },
+  'faqs.p2.a': {
+    en: 'Yes. Every paid plan starts with a 7-day free trial. The trial requires full sign-up with a valid payment method — so the subscription can convert automatically if you do not cancel before day 7. Separately, you can demo most premium features for 3 free uses without a card.',
+    ar: 'إيه. كل خطة مدفوعة تبدأ بتجربة مجانية ٧ أيام. التجربة تتطلب تسجيل كامل بطريقة دفع صالحة — عشان الاشتراك يتحوّل تلقائياً إذا ما ألغيت قبل اليوم ٧. وبشكل منفصل، تقدر تجرّب أغلب المميزات ٣ مرات مجاناً بدون بطاقة.',
+  },
+  'faqs.p3.q': {
+    en: 'What happens after my 7-day trial ends?',
+    ar: 'وش يصير بعد ما تخلص تجربة الـ ٧ أيام؟',
+  },
+  'faqs.p3.a': {
+    en: 'We send you a reminder email a couple of days before the trial ends. If you do nothing, your chosen subscription activates and your card is charged the plan price. Cancel any time before day 7 from your account settings and you will not be charged at all.',
+    ar: 'نرسل لك إيميل تذكير قبل انتهاء التجربة بيومين. إذا ما سويت شي، يتفعّل اشتراكك وتنحاسب بطاقتك بسعر الخطة. ألغِ أي وقت قبل اليوم ٧ من إعدادات الحساب، وما تنحاسب أبد.',
+  },
+  'faqs.p4.q': { en: 'Can I cancel my subscription?', ar: 'أقدر ألغي الاشتراك؟' },
+  'faqs.p4.a': {
+    en: 'Yes, you can cancel your subscription at any time from your account settings. There are no cancellation fees. When you cancel, you keep access to all features until the end of your current billing period.',
+    ar: 'إيه، تقدر تلغي الاشتراك أي وقت من إعدادات الحساب. ما في رسوم إلغاء. لمّا تلغي، تحتفظ بالوصول لكل المميزات حتى نهاية فترة الفوترة الحالية.',
+  },
+  'faqs.p5.q': { en: 'What payment methods do you accept?', ar: 'وش طرق الدفع المقبولة؟' },
+  'faqs.p5.a': {
+    en: 'We accept all major debit and credit cards (Visa, Mastercard, American Express) processed securely through Stripe. We do not store your card details on our servers.',
+    ar: 'نقبل كل بطاقات الخصم والائتمان الرئيسية (Visa, Mastercard, American Express) عبر Stripe بأمان. ما نحفظ بيانات بطاقتك في سيرفراتنا.',
+  },
+  'faqs.p6.q': { en: 'Can I get a refund?', ar: 'أقدر أسترجع فلوسي؟' },
+  'faqs.p6.a': {
+    en: "If you're not satisfied within the first 14 days of a paid subscription, contact our support team and we'll arrange a full refund. After 14 days, you can cancel to prevent future charges, but we don't offer partial refunds for the current billing period.",
+    ar: 'لو ما رضيت في أول ١٤ يوم من اشتراك مدفوع، تواصل مع فريق الدعم ونرتّب لك استرجاع كامل. بعد ١٤ يوم، تقدر تلغي عشان توقف الرسوم المستقبلية، لكن ما نقدّم استرجاع جزئي لفترة الفوترة الحالية.',
+  },
+  'faqs.c1.q': {
+    en: 'What subjects and courses are available?',
+    ar: 'وش المواد والكورسات المتوفرة؟',
+  },
+  'faqs.c1.a': {
+    en: 'We offer courses for GCSE English Language and GCSE English Literature across all major exam boards. Each course covers every topic required by your exam board with structured lessons, worked examples, and practice activities.',
+    ar: 'نقدّم كورسات لـ GCSE English Language و GCSE English Literature لكل البوردات الرئيسية. كل كورس يغطي كل موضوع يتطلبه البورد مع دروس منظمة وأمثلة مشروحة وأنشطة تدريب.',
+  },
+  'faqs.c2.q': { en: 'How do mock exams work?', ar: 'كيف تشتغل الامتحانات التجريبية؟' },
+  'faqs.c2.a': {
+    en: 'Our mock exams replicate the format, timing, and question styles of real exams for your specific exam board. After you submit your responses, our AI (trained on official mark schemes) provides a mark, grade estimate, and detailed feedback on each answer — highlighting strengths and areas for improvement.',
+    ar: 'الامتحانات التجريبية مالنا تحاكي صيغة وتوقيت وأنماط أسئلة الامتحانات الحقيقية للبورد مالك. بعد ما تسلّم، الـ AI (المدرّب على مخططات تصحيح رسمية) يعطيك درجة وتقدير وملاحظات تفصيلية على كل إجابة — يبرز نقاط القوة والمواضع اللي تحتاج تحسين.',
+  },
+  'faqs.c3.q': { en: 'What are practice questions?', ar: 'وش هي أسئلة التدريب؟' },
+  'faqs.c3.a': {
+    en: 'Practice questions let you focus on individual question types (e.g. language analysis, creative writing, essay responses). Each question comes with a model answer so you can compare your response against a top-grade example and understand what earns top marks.',
+    ar: 'أسئلة التدريب تخلّيك تركّز على أنواع أسئلة فردية (مثلاً تحليل اللغة، الكتابة الإبداعية، إجابات المقال). كل سؤال معاه إجابة نموذجية عشان تقارن إجابتك بمثال درجة ممتازة وتفهم وش يجيب الدرجات العليا.',
+  },
+  'faqs.c4.q': {
+    en: 'Are set texts covered for English Literature?',
+    ar: 'النصوص المقررة لـ English Literature مغطاة؟',
+  },
+  'faqs.c4.a': {
+    en: 'Yes. We cover all the set texts for each exam board, including character guides, theme analyses, key quote banks, and essay planning resources. Popular texts include Macbeth, An Inspector Calls, A Christmas Carol, Jekyll and Hyde, Power and Conflict poetry, and many more.',
+    ar: 'إيه. نغطي كل النصوص المقررة لكل بورد، تشمل أدلة الشخصيات، تحليلات الأفكار، بنوك الاقتباسات الأساسية، وموارد تخطيط المقالات. النصوص الشائعة تشمل Macbeth, An Inspector Calls, A Christmas Carol, Jekyll and Hyde, شعر Power and Conflict، وأكثر.',
+  },
+  'faqs.c5.q': { en: 'How often is content updated?', ar: 'كل قد إيش يتحدّث المحتوى؟' },
+  'faqs.c5.a': {
+    en: "We continuously update our content to reflect the latest exam board requirements, mark schemes, and published guidance. When exam boards make changes, we update our materials promptly so you're always revising the right content.",
+    ar: 'إحنا نحدّث المحتوى باستمرار عشان يعكس آخر متطلبات البوردات ومخططات التصحيح والإرشادات المنشورة. لمّا البوردات تغيّر شي، نحدّث موادنا فوراً عشان دايماً تراجع المحتوى الصحيح.',
+  },
+  'faqs.a1.q': { en: 'How does the AI mark my essay?', ar: 'كيف الـ AI يصحّح مقالي؟' },
+  'faqs.a1.a': {
+    en: 'Claude (Anthropic) reads the essay, compares it against the published AO descriptors for your board, and returns scores plus specific improvement feedback in 20–40 seconds. Every response is flagged with its confidence level and can be human-reviewed on request.',
+    ar: 'Claude (من Anthropic) يقرأ المقال، يقارنه بأوصاف الـ AO المنشورة للبورد مالك، ويعطيك درجات مع ملاحظات تحسين محددة في ٢٠-٤٠ ثانية. كل رد عليه مستوى ثقة وممكن يراجعه إنسان عند الطلب.',
+  },
+  'faqs.a2.q': { en: 'What if the AI gets the mark wrong?', ar: 'وش لو الـ AI صحّح غلط؟' },
+  'faqs.a2.a': {
+    en: "Every AI-marked essay has a one-click 'request human review' option. A human examiner re-marks within 48 hours. We're transparent that AI marking is indicative, not authoritative — the mark scheme remains the examiner's.",
+    ar: "كل مقال صحّحه AI فيه خيار 'طلب مراجعة بشرية' بضغطة واحدة. مصحّح بشري يعيد التصحيح خلال ٤٨ ساعة. إحنا شفّافين إن تصحيح الـ AI استرشادي مو نهائي — مخطط التصحيح يضل ملك المصحّح.",
+  },
+  'faqs.a3.q': {
+    en: 'Do you mark essays in real time in class?',
+    ar: 'تصحّحون المقالات في الفصل بشكل فوري؟',
+  },
+  'faqs.a3.a': {
+    en: 'Yes. Teachers can bulk-submit 30 essays and receive AO-aligned feedback per student in under 10 minutes — usually while the lesson is still running.',
+    ar: 'إيه. المعلمين يقدرون يسلّمون ٣٠ مقال دفعة واحدة ويستلمون ملاحظات حسب الـ AO لكل طالب في أقل من ١٠ دقايق — عادة وقت ما الدرس لسا شغّال.',
+  },
+  'faqs.t1.q': {
+    en: 'What browsers and devices are supported?',
+    ar: 'وش المتصفحات والأجهزة المدعومة؟',
+  },
+  'faqs.t1.a': {
+    en: 'The English Hub works on any device with a modern web browser. We support the latest versions of Chrome, Safari, Firefox, and Microsoft Edge on Windows, macOS, iOS, Android, and ChromeOS.',
+    ar: 'The English Hub يشتغل على أي جهاز فيه متصفح حديث. ندعم آخر إصدارات Chrome, Safari, Firefox, و Microsoft Edge على Windows, macOS, iOS, Android, و ChromeOS.',
+  },
+  'faqs.t2.q': {
+    en: "I can't log in to my account. What should I do?",
+    ar: 'ما أقدر أسجّل دخول. وش أسوّي؟',
+  },
+  'faqs.t2.a': {
+    en: 'First, check that you\'re using the correct email address. If you\'ve forgotten your password, click "Forgot Password" on the login page to receive a reset link. If you signed up with Google, use the "Sign in with Google" button. If you\'re still having trouble, contact our support team.',
+    ar: "الأول، تأكد إنك تستخدم الإيميل الصحيح. لو نسيت الباسوورد، اضغط 'Forgot Password' في صفحة الدخول وبيوصلك رابط إعادة تعيين. لو سجّلت بـ Google، استخدم زر 'Sign in with Google'. لو لسا في مشكلة، تواصل مع فريق الدعم.",
+  },
+  'faqs.t3.q': {
+    en: "The page isn't loading or looks broken. How do I fix it?",
+    ar: 'الصفحة ما تفتح أو شكلها خربان. كيف أصلحها؟',
+  },
+  'faqs.t3.a': {
+    en: 'Try these steps: (1) clear your browser cache and cookies, (2) refresh the page, (3) try a different browser, (4) check your internet connection. If the problem persists, it may be a temporary issue on our end — try again in a few minutes or contact support.',
+    ar: 'جرّب الخطوات: (١) امسح cache و cookies من المتصفح، (٢) حدّث الصفحة، (٣) جرّب متصفح ثاني، (٤) شيك على الإنترنت. لو المشكلة استمرت، ممكن تكون مشكلة مؤقتة عندنا — جرّب بعد دقايق أو تواصل مع الدعم.',
+  },
+  'faqs.t4.q': { en: 'How do I reset my password?', ar: 'كيف أعيد تعيين الباسوورد؟' },
+  'faqs.t4.a': {
+    en: "Click 'Forgot password?' on the login page. Enter your email address and we'll send you a reset link. If you don't receive the email within a few minutes, check your spam folder or contact info@upskillenergy.com.",
+    ar: "اضغط 'Forgot password?' في صفحة الدخول. ادخل إيميلك ونرسل لك رابط إعادة تعيين. لو ما وصلك الإيميل خلال دقايق، شيك على spam أو راسلنا على info@upskillenergy.com.",
+  },
+  'faqs.t5.q': {
+    en: 'Can I use The English Hub offline?',
+    ar: 'أقدر أستخدم The English Hub بدون إنترنت؟',
+  },
+  'faqs.t5.a': {
+    en: 'The English Hub requires an internet connection to access courses, submit mock exams, and receive feedback. We recommend a stable broadband or mobile data connection for the best experience.',
+    ar: 'The English Hub يحتاج اتصال إنترنت للوصول للكورسات وتسليم الامتحانات التجريبية واستلام الملاحظات. ننصح باتصال broadband أو بيانات موبايل مستقر للأفضل تجربة.',
+  },
+  'faqs.pr1.q': { en: 'How is my data protected?', ar: 'كيف تتم حماية بياناتي؟' },
+  'faqs.pr1.a': {
+    en: "We're UK GDPR compliant, registered with the ICO (registration ZC016690), host all data in EU regions (Supabase + Vercel), and treat every under-18 user under the ICO Children's Code 15 standards. A full DPIA is available at /compliance.",
+    ar: "نمتثل لقانون UK GDPR، ومسجّلون لدى ICO (رقم التسجيل ZC016690)، ونستضيف جميع البيانات في مناطق الاتحاد الأوروبي (Supabase + Vercel)، ونعامل كل مستخدم دون ١٨ سنة وفقاً لمعايير ICO Children's Code الـ١٥. تقييم تأثير حماية البيانات (DPIA) الكامل متاح على /compliance.",
+  },
+  'faqs.pr2.q': { en: 'Is my data safe and private?', ar: 'هل بياناتي آمنة وخاصة؟' },
+  'faqs.pr2.a': {
+    en: 'Yes. All data is encrypted in transit and at rest. We comply with UK GDPR and never sell your personal information. For full details, read our Privacy Policy. Students under 16 should have a parent or guardian manage their account.',
+    ar: 'نعم. جميع البيانات مشفّرة أثناء النقل والتخزين. نمتثل لقانون UK GDPR ولا نبيع معلوماتك الشخصية مطلقاً. للتفاصيل الكاملة، يُرجى الاطلاع على سياسة الخصوصية. يجب على الطلاب دون ١٦ سنة أن يديرَ ولي الأمر أو الوصي حسابهم.',
+  },
+  'faqs.pr3.q': {
+    en: 'What parental controls are available?',
+    ar: 'وش أدوات الرقابة الأبوية المتاحة؟',
+  },
+  'faqs.pr3.a': {
+    en: "Parents can link to their child's account to receive weekly progress reports. For students under 16, we require parental consent during registration. Parents can view their child's learning activity, and request data access or deletion at any time. See our Privacy Policy for full details on how we protect children's data.",
+    ar: 'يستطيع أولياء الأمور ربط حسابهم بحساب الطفل لاستلام تقارير تقدم أسبوعية. للطلاب دون ١٦ سنة، نشترط موافقة ولي الأمر عند التسجيل. يمكن لولي الأمر الاطلاع على نشاط التعلّم، وطلب الوصول إلى البيانات أو حذفها في أي وقت. راجع سياسة الخصوصية للتفاصيل الكاملة حول كيفية حماية بيانات الأطفال.',
+  },
+  'faqs.pr4.q': {
+    en: "Can parents track their child's progress?",
+    ar: 'أولياء الأمور يقدرون يتابعون تقدم الولد؟',
+  },
+  'faqs.pr4.a': {
+    en: "Yes — parents get a weekly report and a child-linked dashboard. Parental controls and ICO Children's Code defaults apply throughout.",
+    ar: "إيه — أولياء الأمور يستلمون تقرير أسبوعي ولوحة مرتبطة بالولد. تنطبق إعدادات الرقابة الأبوية ومعايير ICO Children's Code الافتراضية في كل مكان.",
+  },
+  'faqs.pr5.q': {
+    en: "How do I link my parent account to my child's?",
+    ar: 'كيف أربط حسابي كولي أمر بحساب ولدي؟',
+  },
+  'faqs.pr5.a': {
+    en: "Your child can send you a linking invitation from their account settings, or you can contact info@upskillenergy.com with your child's registered email. Once linked, you'll receive weekly progress reports and can manage consent preferences.",
+    ar: 'ولدك يقدر يرسل لك دعوة ربط من إعدادات حسابه، أو تقدر تتواصل معانا على info@upskillenergy.com وتعطينا الإيميل المسجل لولدك. بعد الربط، بتستلم تقارير أسبوعية وتدير تفضيلات الموافقات.',
+  },
+  'faqs.s1.q': { en: 'Can my school buy a licence?', ar: 'مدرستي تقدر تشتري ترخيص؟' },
+  'faqs.s2.q': {
+    en: 'Do you offer a free trial for schools?',
+    ar: 'تقدّمون تجربة مجانية للمدارس؟',
+  },
+  'faqs.s2.a': {
+    en: 'Yes — schools get a 7-day free pilot with up to 60 students. Book a 20-minute call at /demo/school to set it up.',
+    ar: 'إيه — المدارس تاخذ تجربة مجانية ٧ أيام لـ ٦٠ طالب. احجز مكالمة ٢٠ دقيقة على /demo/school عشان نرتّبها.',
+  },
+  'faqs.s3.q': {
+    en: 'How does the Founding Schools Programme work?',
+    ar: 'كيف يشتغل برنامج المدارس المؤسسة؟',
+  },
+  'faqs.s4.q': { en: 'What does the teacher dashboard include?', ar: 'وش تشمل لوحة المعلم؟' },
+  'faqs.s4.a': {
+    en: 'The teacher dashboard lets you view individual student progress and class-wide analytics, assign specific practice tasks and mock exams, set deadlines, and identify students who may need additional support. You can also see which topics your class is strongest and weakest on.',
+    ar: 'لوحة المعلم تخلّيك تشوف تقدم كل طالب وتحليلات الصف الكامل، تكلّف مهام تدريب وامتحانات تجريبية معينة، تحدّد مواعيد التسليم، وتعرف الطلاب اللي يحتاجون دعم إضافي. كمان تشوف وش المواضيع اللي صفك أقوى أو أضعف فيها.',
+  },
+  'faqs.s5.q': { en: 'How do I onboard my students?', ar: 'كيف أضيف طلابي؟' },
+  'faqs.s5.a': {
+    en: 'Once your school licence is set up, you can invite students via email or share a class join code. Students create their own accounts and are automatically linked to your school. Bulk onboarding via CSV upload is also available.',
+    ar: 'بعد ما يتفعّل ترخيص المدرسة، تقدر تدعو الطلاب بالإيميل أو تشارك كود انضمام للصف. الطلاب يسوّون حساباتهم وتنربط تلقائياً بمدرستك. الإضافة الجماعية عبر رفع CSV متاحة كمان.',
+  },
+  'faqs.s6.q': { en: 'Do you offer training for teachers?', ar: 'تقدّمون تدريب للمعلمين؟' },
+  'faqs.s6.a': {
+    en: 'Yes. All school licences include a free onboarding session where we walk your department through the platform, teacher dashboard, and assignment features. We also provide ongoing support and can arrange additional training if needed.',
+    ar: 'إيه. كل تراخيص المدارس فيها جلسة تأهيل مجانية نمشي فيها قسمك على المنصة ولوحة المعلم وميزات التكليفات. نقدّم كمان دعم مستمر ونقدر نرتّب تدريب إضافي عند الحاجة.',
+  },
+
+  // ─── Cookie Policy (/cookie-policy) — formal MSA legal body ──────────
+  'cookie_policy.last_updated_value': { en: 'March 2026', ar: 'مارس ٢٠٢٦' },
+  'cookie_policy.s1.h2': {
+    en: '1. What are cookies?',
+    ar: '١. ما هي ملفات تعريف الارتباط (الكوكيز)؟',
+  },
+  'cookie_policy.s1.p1': {
+    en: 'Cookies are small text files that are placed on your device (computer, tablet, or mobile phone) when you visit a website. They are widely used to make websites work more efficiently, provide a better user experience, and supply information to the owners of the site. Cookies allow a website to recognise your device and remember certain information about your session, such as your login status or preferences.',
+    ar: 'ملفات تعريف الارتباط (الكوكيز) هي ملفات نصية صغيرة تُوضع على جهازك (الحاسوب أو الجهاز اللوحي أو الهاتف المحمول) عند زيارتك لموقع إلكتروني. وتُستخدم على نطاق واسع لجعل المواقع تعمل بكفاءة أعلى، وتوفير تجربة استخدام أفضل، وإمداد مالكي الموقع بالمعلومات. وتُمكِّن الكوكيز الموقع من التعرّف على جهازك وتذكّر معلومات معيّنة عن جلستك، كحالة تسجيل الدخول أو تفضيلاتك.',
+  },
+  'cookie_policy.s1.p2': {
+    en: 'Some cookies are deleted when you close your browser (session cookies), while others remain on your device for a set period or until you delete them (persistent cookies).',
+    ar: 'تُحذَف بعض الكوكيز عند إغلاق المتصفح (كوكيز الجلسة)، بينما تبقى أخرى على جهازك لفترة محدّدة أو إلى أن تقوم بحذفها (الكوكيز الدائمة).',
+  },
+  'cookie_policy.s2.h2': { en: '2. How we use cookies', ar: '٢. كيف نستخدم الكوكيز' },
+  'cookie_policy.s2.p1': {
+    en: 'The English Hub (theenglishhub.app) uses cookies and similar technologies for a variety of purposes, including authenticating users, remembering user preferences, processing payments, tracking affiliate referrals, and monitoring errors to improve site reliability. We describe each category in detail below.',
+    ar: 'يستخدم The English Hub (theenglishhub.app) ملفات تعريف الارتباط والتقنيات المماثلة لأغراض متعددة، تشمل مصادقة المستخدمين، وتذكّر تفضيلاتهم، ومعالجة المدفوعات، وتتبّع إحالات الشركاء، ومراقبة الأخطاء لتحسين موثوقية الموقع. ونصف كل فئة بالتفصيل أدناه.',
+  },
+  'cookie_policy.s3.h2': { en: '3. Types of cookies we use', ar: '٣. أنواع الكوكيز التي نستخدمها' },
+  'cookie_policy.s3.essential.h3': { en: '3.1 Essential cookies', ar: '٣.١ الكوكيز الضرورية' },
+  'cookie_policy.s3.essential.p': {
+    en: 'These cookies are strictly necessary for the website to function. They enable core features such as user authentication, session management, and security. Without these cookies you would not be able to log in, access your courses, or complete a purchase. Because they are essential, they do not require consent under UK PECR.',
+    ar: 'هذه الكوكيز ضرورية تماماً لعمل الموقع. وتُتيح ميزات أساسية كمصادقة المستخدم وإدارة الجلسات والأمان. وبدونها لن تتمكّن من تسجيل الدخول أو الوصول إلى دوراتك أو إتمام عملية شراء. ولأنها ضرورية، فإنها لا تستلزم الحصول على موافقة بموجب لائحة PECR في المملكة المتحدة.',
+  },
+  'cookie_policy.s3.essential.li1_strong': {
+    en: 'Supabase authentication session',
+    ar: 'جلسة مصادقة Supabase',
+  },
+  'cookie_policy.s3.essential.li1_text': {
+    en: ' — maintains your signed-in state so you do not need to log in on every page.',
+    ar: ' — يحافظ على حالة تسجيل دخولك حتى لا تحتاج إلى تسجيل الدخول في كل صفحة.',
+  },
+  'cookie_policy.s3.essential.li2_strong': {
+    en: 'CSRF protection token',
+    ar: 'رمز الحماية من CSRF',
+  },
+  'cookie_policy.s3.essential.li2_text': {
+    en: ' — guards against cross-site request forgery attacks by validating that form submissions originate from our site.',
+    ar: ' — يحمي من هجمات تزوير الطلبات عبر المواقع، من خلال التحقق من أن طلبات النماذج صادرة من موقعنا.',
+  },
+  'cookie_policy.s3.functional.h3': { en: '3.2 Functional cookies', ar: '٣.٢ الكوكيز الوظيفية' },
+  'cookie_policy.s3.functional.p': {
+    en: 'Functional cookies remember choices you make to improve your experience. They are not strictly necessary but help us provide enhanced functionality and personalisation.',
+    ar: 'تتذكّر الكوكيز الوظيفية الخيارات التي تُحدّدها لتحسين تجربتك. وهي ليست ضرورية تماماً، لكنها تساعدنا على تقديم وظائف معزّزة وتخصيص أفضل.',
+  },
+  'cookie_policy.s3.functional.li1_strong': {
+    en: 'Board selection preference',
+    ar: 'تفضيل اختيار البورد',
+  },
+  'cookie_policy.s3.functional.li1_text': {
+    en: ' — remembers your chosen exam board (e.g. AQA, Edexcel, OCR, WJEC Eduqas) so content is filtered appropriately across sessions.',
+    ar: ' — يتذكّر البورد الذي اخترته (مثل AQA أو Edexcel أو OCR أو WJEC Eduqas) لتصفية المحتوى بشكل ملائم عبر الجلسات.',
+  },
+  'cookie_policy.s3.functional.li2_strong': { en: 'Theme preference', ar: 'تفضيل المظهر' },
+  'cookie_policy.s3.functional.li2_text': {
+    en: ' — stores whether you prefer light or dark mode so the interface matches your choice on return visits.',
+    ar: ' — يخزّن ما إذا كنت تُفضّل الوضع الفاتح أم الداكن ليتطابق المظهر مع اختيارك عند الزيارات اللاحقة.',
+  },
+  'cookie_policy.s3.analytics.h3': {
+    en: '3.3 Analytics and error-tracking cookies',
+    ar: '٣.٣ كوكيز التحليلات وتتبّع الأخطاء',
+  },
+  'cookie_policy.s3.analytics.p': {
+    en: 'We use Google Analytics 4 (GA4) to understand how visitors use the site, such as which pages are most popular and how users navigate between them. GA4 cookies are only set after you give consent. We use Sentry to monitor application errors and performance. Sentry may set cookies or use similar technologies to collect diagnostic data such as error stack traces, browser type, and page URL. This data helps us identify and fix bugs quickly. Neither Google Analytics nor Sentry uses this information for advertising purposes.',
+    ar: 'نستخدم Google Analytics 4 (GA4) لفهم كيفية استخدام الزوار للموقع، كأكثر الصفحات شعبية وكيفية تنقّل المستخدمين بينها. ولا تُضبط كوكيز GA4 إلا بعد الحصول على موافقتك. ونستخدم Sentry لمراقبة أخطاء التطبيق وأدائه. وقد يضبط Sentry كوكيز أو يستخدم تقنيات مماثلة لجمع بيانات تشخيصية، كآثار الأخطاء ونوع المتصفح ورابط الصفحة. وتساعدنا هذه البيانات على تحديد الأخطاء وإصلاحها بسرعة. ولا يستخدم Google Analytics ولا Sentry هذه المعلومات لأغراض إعلانية.',
+  },
+  'cookie_policy.s3.third_party.h3': {
+    en: '3.4 Third-party cookies',
+    ar: '٣.٤ كوكيز الأطراف الثالثة',
+  },
+  'cookie_policy.s3.third_party.p': {
+    en: "Certain third-party services we integrate with may set their own cookies on your device. We do not control these cookies; they are governed by the respective third party's privacy and cookie policies.",
+    ar: 'قد تَضبط بعض خدمات الأطراف الثالثة التي نتكامل معها كوكيز خاصة بها على جهازك. ونحن لا نتحكّم في هذه الكوكيز؛ بل تخضع لسياسات الخصوصية والكوكيز الخاصة بكل طرف ثالث.',
+  },
+  'cookie_policy.s3.third_party.li1_strong': { en: 'Stripe', ar: 'Stripe' },
+  'cookie_policy.s3.third_party.li1_text_before': {
+    en: ' — our payment processor sets cookies to enable secure payment transactions, detect fraud, and remember payment session information. See ',
+    ar: ' — معالج المدفوعات لدينا يَضبط كوكيز لتمكين المعاملات الآمنة، واكتشاف الاحتيال، وتذكّر معلومات جلسة الدفع. راجع ',
+  },
+  'cookie_policy.s3.third_party.li1_link': {
+    en: "Stripe's Privacy Policy",
+    ar: 'سياسة الخصوصية الخاصة بـ Stripe',
+  },
+  'cookie_policy.s3.third_party.li2_strong': { en: 'Rewardful', ar: 'Rewardful' },
+  'cookie_policy.s3.third_party.li2_text_before': {
+    en: ' — our affiliate tracking service sets cookies to attribute referrals to the correct affiliate partner. These cookies record a referral identifier when you arrive via an affiliate link. See ',
+    ar: ' — خدمة تتبّع الشركاء التي نستخدمها تَضبط كوكيز لنسب الإحالات إلى الشريك الصحيح. وتسجّل هذه الكوكيز معرّف إحالة عند وصولك عبر رابط شريك. راجع ',
+  },
+  'cookie_policy.s3.third_party.li2_link': {
+    en: "Rewardful's Privacy Policy",
+    ar: 'سياسة الخصوصية الخاصة بـ Rewardful',
+  },
+  'cookie_policy.s4.h2': { en: '4. Cookies in detail', ar: '٤. تفاصيل الكوكيز' },
+  'cookie_policy.s4.p': {
+    en: 'The table below lists the specific cookies set by The English Hub and its third-party partners.',
+    ar: 'يَسرد الجدول أدناه الكوكيز المحدّدة التي يَضبطها The English Hub وشركاؤه من الأطراف الثالثة.',
+  },
+  'cookie_policy.s4.th_name': { en: 'Name', ar: 'الاسم' },
+  'cookie_policy.s4.th_provider': { en: 'Provider', ar: 'المزوّد' },
+  'cookie_policy.s4.th_purpose': { en: 'Purpose', ar: 'الغرض' },
+  'cookie_policy.s4.th_duration': { en: 'Duration', ar: 'المدة' },
+  'cookie_policy.s4.th_type': { en: 'Type', ar: 'النوع' },
+  'cookie_policy.s4.type.essential': { en: 'Essential', ar: 'ضروري' },
+  'cookie_policy.s4.type.functional': { en: 'Functional', ar: 'وظيفي' },
+  'cookie_policy.s4.type.analytics': { en: 'Analytics', ar: 'تحليلي' },
+  'cookie_policy.s4.type.third_party': { en: 'Third-party', ar: 'طرف ثالث' },
+  'cookie_policy.s4.dur_session': { en: 'Session', ar: 'الجلسة' },
+  'cookie_policy.s4.dur_1y': { en: '1 year', ar: 'سنة واحدة' },
+  'cookie_policy.s4.dur_2y': { en: '2 years', ar: 'سنتان' },
+  'cookie_policy.s4.dur_up_1y': { en: 'Up to 1 year', ar: 'حتى سنة واحدة' },
+  'cookie_policy.s4.dur_30m': { en: '30 minutes', ar: '٣٠ دقيقة' },
+  'cookie_policy.s4.dur_60d': { en: '60 days', ar: '٦٠ يوماً' },
+  'cookie_policy.s4.purp_sb_auth': {
+    en: 'Stores the authenticated user session (access and refresh tokens)',
+    ar: 'يخزّن جلسة المستخدم المُصادَق عليه (رموز الوصول والتحديث)',
+  },
+  'cookie_policy.s4.purp_sb_pkce': {
+    en: 'PKCE code verifier for secure OAuth authentication flow',
+    ar: 'مُحقِّق رمز PKCE لتدفّق مصادقة OAuth الآمن',
+  },
+  'cookie_policy.s4.purp_csrf': {
+    en: 'Protects against cross-site request forgery attacks',
+    ar: 'يحمي من هجمات تزوير الطلبات عبر المواقع',
+  },
+  'cookie_policy.s4.purp_board': {
+    en: 'Remembers your selected exam board (e.g. AQA, Edexcel)',
+    ar: 'يتذكّر بورد الامتحان الذي اخترته (مثل AQA أو Edexcel)',
+  },
+  'cookie_policy.s4.purp_theme': {
+    en: 'Stores your light/dark mode preference',
+    ar: 'يخزّن تفضيلك للوضع الفاتح/الداكن',
+  },
+  'cookie_policy.s4.purp_sentry': {
+    en: 'Tracks error replay session for debugging and performance monitoring',
+    ar: 'يتتبّع جلسة إعادة تشغيل الأخطاء لأغراض التشخيص ومراقبة الأداء',
+  },
+  'cookie_policy.s4.purp_ga': {
+    en: 'Distinguishes unique visitors by assigning a randomly generated identifier',
+    ar: 'يميّز الزوار الفرديين من خلال تعيين معرّف عشوائي',
+  },
+  'cookie_policy.s4.purp_ga_session': {
+    en: 'Maintains session state for Google Analytics 4',
+    ar: 'يحافظ على حالة الجلسة لـ Google Analytics 4',
+  },
+  'cookie_policy.s4.purp_stripe_mid': {
+    en: 'Fraud prevention — unique identifier for the device',
+    ar: 'الوقاية من الاحتيال — معرّف فريد للجهاز',
+  },
+  'cookie_policy.s4.purp_stripe_sid': {
+    en: 'Fraud prevention — unique identifier for the browsing session',
+    ar: 'الوقاية من الاحتيال — معرّف فريد لجلسة التصفّح',
+  },
+  'cookie_policy.s4.purp_rewardful': {
+    en: 'Stores the affiliate referral identifier to attribute sign-ups',
+    ar: 'يخزّن معرّف إحالة الشريك لنسب التسجيلات',
+  },
+  'cookie_policy.s4.note_wildcard': {
+    en: 'Cookie names containing an asterisk (*) indicate a wildcard — the actual name includes your project reference and may vary.',
+    ar: 'تُشير أسماء الكوكيز التي تحتوي على علامة نجمية (*) إلى نمط متغيّر — الاسم الفعلي يتضمّن مرجع مشروعك وقد يختلف.',
+  },
+  'cookie_policy.s5.h2': {
+    en: '5. Cookie duration and retention',
+    ar: '٥. مدة الكوكيز والاحتفاظ بها',
+  },
+  'cookie_policy.s5.p_session_strong': { en: 'Session cookies', ar: 'كوكيز الجلسة' },
+  'cookie_policy.s5.p_session_text': {
+    en: ' are temporary and are deleted automatically when you close your browser.',
+    ar: ' هي كوكيز مؤقتة تُحذَف تلقائياً عند إغلاق المتصفح.',
+  },
+  'cookie_policy.s5.p_persistent_strong': { en: 'Persistent cookies', ar: 'الكوكيز الدائمة' },
+  'cookie_policy.s5.p_persistent_text': {
+    en: ' remain on your device for the duration specified in the table above, or until you manually delete them. We review cookie retention periods regularly to ensure data is not kept longer than necessary.',
+    ar: ' تبقى على جهازك للمدة المحدّدة في الجدول أعلاه، أو إلى أن تقوم بحذفها يدوياً. ونراجع فترات الاحتفاظ بالكوكيز بصفة منتظمة لضمان عدم الاحتفاظ بالبيانات لفترة أطول مما هو ضروري.',
+  },
+  'cookie_policy.s6.h2': {
+    en: '6. How to manage and disable cookies',
+    ar: '٦. كيفية إدارة الكوكيز وتعطيلها',
+  },
+  'cookie_policy.s6.p_intro': {
+    en: 'Most web browsers allow you to control cookies through their settings. You can typically find these options in the "Settings", "Preferences", or "Privacy" section of your browser. Common actions include:',
+    ar: 'تُتيح معظم المتصفحات لك التحكّم في الكوكيز من خلال إعداداتها. وتوجد هذه الخيارات عادةً ضمن قسم "الإعدادات" أو "التفضيلات" أو "الخصوصية" في متصفحك. وتشمل الإجراءات الشائعة:',
+  },
+  'cookie_policy.s6.li1': {
+    en: 'Viewing which cookies are currently stored and deleting individual cookies',
+    ar: 'عرض الكوكيز المخزّنة حالياً وحذف كل منها على حدة',
+  },
+  'cookie_policy.s6.li2': {
+    en: 'Blocking all cookies or only third-party cookies',
+    ar: 'حظر جميع الكوكيز أو حظر كوكيز الأطراف الثالثة فقط',
+  },
+  'cookie_policy.s6.li3': {
+    en: 'Configuring your browser to notify you before a cookie is set',
+    ar: 'تكوين المتصفح لإخطارك قبل ضبط كوكيز',
+  },
+  'cookie_policy.s6.li4': {
+    en: 'Clearing all cookies when you close the browser',
+    ar: 'مسح جميع الكوكيز عند إغلاق المتصفح',
+  },
+  'cookie_policy.s6.p_outro': {
+    en: "For step-by-step instructions, refer to your browser's help documentation:",
+    ar: 'للحصول على إرشادات تفصيلية، راجع وثائق المساعدة الخاصة بمتصفحك:',
+  },
+  'cookie_policy.s6.browser_chrome': { en: 'Google Chrome', ar: 'Google Chrome' },
+  'cookie_policy.s6.browser_firefox': { en: 'Mozilla Firefox', ar: 'Mozilla Firefox' },
+  'cookie_policy.s6.browser_safari': { en: 'Apple Safari', ar: 'Apple Safari' },
+  'cookie_policy.s6.browser_edge': { en: 'Microsoft Edge', ar: 'Microsoft Edge' },
+  'cookie_policy.s7.h2': { en: '7. Impact of disabling cookies', ar: '٧. أثر تعطيل الكوكيز' },
+  'cookie_policy.s7.p_intro': {
+    en: 'If you choose to disable or block cookies, please be aware that some parts of The English Hub may not function correctly. In particular:',
+    ar: 'إذا اخترت تعطيل الكوكيز أو حظرها، فيُرجى ملاحظة أن بعض أجزاء The English Hub قد لا تعمل بشكل صحيح. وعلى وجه الخصوص:',
+  },
+  'cookie_policy.s7.li1_strong': { en: 'Blocking essential cookies', ar: 'حظر الكوكيز الضرورية' },
+  'cookie_policy.s7.li1_text': {
+    en: ' will prevent you from signing in, accessing purchased courses, and completing payment transactions.',
+    ar: ' سيمنعك من تسجيل الدخول، والوصول إلى الدورات المشتراة، وإتمام معاملات الدفع.',
+  },
+  'cookie_policy.s7.li2_strong': { en: 'Blocking functional cookies', ar: 'حظر الكوكيز الوظيفية' },
+  'cookie_policy.s7.li2_text': {
+    en: ' means your exam board and theme preferences will not be saved between visits, and you will need to select them each time.',
+    ar: ' يعني أن تفضيلات بورد الامتحان والمظهر لن تُحفظ بين الزيارات، وستحتاج إلى اختيارها في كل مرة.',
+  },
+  'cookie_policy.s7.li3_strong': { en: 'Blocking analytics cookies', ar: 'حظر كوكيز التحليلات' },
+  'cookie_policy.s7.li3_text': {
+    en: ' will not affect your use of the site but may reduce our ability to detect and resolve technical issues promptly.',
+    ar: ' لن يؤثر على استخدامك للموقع، لكنه قد يُقلّل من قدرتنا على اكتشاف المشكلات التقنية ومعالجتها بسرعة.',
+  },
+  'cookie_policy.s7.li4_strong': {
+    en: 'Blocking third-party cookies',
+    ar: 'حظر كوكيز الأطراف الثالثة',
+  },
+  'cookie_policy.s7.li4_text': {
+    en: ' may prevent payment processing through Stripe and may mean affiliate referrals are not tracked correctly.',
+    ar: ' قد يمنع معالجة الدفع عبر Stripe، وقد يعني أن إحالات الشركاء لن تُتتبَّع بصورة صحيحة.',
+  },
+  'cookie_policy.s8.h2': {
+    en: '8. UK PECR compliance',
+    ar: '٨. الامتثال للائحة PECR في المملكة المتحدة',
+  },
+  'cookie_policy.s8.p1': {
+    en: 'The English Hub complies with the UK Privacy and Electronic Communications Regulations 2003 (PECR), as amended, alongside the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.',
+    ar: 'يمتثل The English Hub للائحة الخصوصية والاتصالات الإلكترونية في المملكة المتحدة لعام ٢٠٠٣ (PECR) بصيغتها المُعدَّلة، إلى جانب اللائحة العامة لحماية البيانات في المملكة المتحدة (UK GDPR) وقانون حماية البيانات لعام ٢٠١٨.',
+  },
+  'cookie_policy.s8.p2_pre': {
+    en: 'Under PECR, we are permitted to set ',
+    ar: 'بموجب لائحة PECR، يُسمح لنا بضبط ',
+  },
+  'cookie_policy.s8.p2_strong': { en: 'strictly necessary cookies', ar: 'الكوكيز الضرورية تماماً' },
+  'cookie_policy.s8.p2_post': {
+    en: ' (essential cookies) without prior consent, as they are required for the service you have requested. For all other cookies — including functional, analytics, and third-party cookies — we obtain your consent before placing them on your device. You may withdraw your consent at any time by adjusting your browser settings or contacting us.',
+    ar: ' (الكوكيز الأساسية) دون موافقة مسبقة، لأنها مطلوبة لتقديم الخدمة التي طلبتها. أما بالنسبة لجميع الكوكيز الأخرى — بما فيها الوظيفية والتحليلية وكوكيز الأطراف الثالثة — فإننا نحصل على موافقتك قبل وضعها على جهازك. ويمكنك سحب موافقتك في أي وقت عن طريق ضبط إعدادات المتصفح أو الاتصال بنا.',
+  },
+  'cookie_policy.s8.p3_pre': {
+    en: 'We regularly review and update our cookie practices to ensure continued compliance with applicable regulations. If you have questions about our use of cookies or wish to exercise your data rights, please contact us at ',
+    ar: 'نراجع ممارساتنا المتعلّقة بالكوكيز ونُحدّثها بصفة دورية لضمان استمرار الامتثال للأنظمة المعمول بها. وإذا كانت لديك أي استفسارات بشأن استخدامنا للكوكيز أو رغبت في ممارسة حقوقك المتعلّقة بالبيانات، فيُرجى التواصل معنا على ',
+  },
+  'cookie_policy.s9.h2': {
+    en: '9. Changes to this Cookie Policy',
+    ar: '٩. التعديلات على سياسة الكوكيز هذه',
+  },
+  'cookie_policy.s9.p': {
+    en: 'We may update this Cookie Policy from time to time to reflect changes in our practices or for legal, regulatory, or operational reasons. When we make material changes, we will update the "Last updated" date at the top of this page. We encourage you to review this page periodically to stay informed about how we use cookies.',
+    ar: 'قد نُحدّث سياسة الكوكيز هذه من وقت لآخر لتعكس التغييرات في ممارساتنا أو لأسباب قانونية أو تنظيمية أو تشغيلية. وعند إجراء تغييرات جوهرية، سنُحدِّث تاريخ "آخر تحديث" في أعلى هذه الصفحة. ونحثّك على مراجعة هذه الصفحة دورياً للاطلاع على كيفية استخدامنا للكوكيز.',
+  },
+  'cookie_policy.s10.h2': { en: '10. Privacy Policy', ar: '١٠. سياسة الخصوصية' },
+  'cookie_policy.s10.p_pre': {
+    en: 'For more information about how we collect, use, and protect your personal data, please read our ',
+    ar: 'لمزيد من المعلومات حول كيفية جمعنا لبياناتك الشخصية واستخدامها وحمايتها، يُرجى الاطلاع على ',
+  },
+  'cookie_policy.s10.p_link': { en: 'Privacy Policy', ar: 'سياسة الخصوصية' },
+
+  // ─── Refund Policy (/refund-policy) — formal MSA legal body ──────────
+  'refund.title': { en: 'Refund Policy', ar: 'سياسة استرداد الأموال' },
+  'refund.operated_by': {
+    en: 'Operated by Upskill Energy Limited, trading as The English Hub',
+    ar: 'تُشغَّل من قِبَل Upskill Energy Limited، تحت الاسم التجاري The English Hub',
+  },
+  'refund.last_updated_value': { en: 'March 2026', ar: 'مارس ٢٠٢٦' },
+  'refund.s1.h2': { en: '1. Overview', ar: '١. نظرة عامة' },
+  'refund.s1.p1_pre': {
+    en: 'At The English Hub ("we", "us", "our"), we want you to be completely satisfied with your purchase. This refund policy explains your rights when you buy a subscription or course through ',
+    ar: 'في The English Hub ("نحن"، "لنا"، "خاصتنا")، نحرص على رضاك التامّ عن مشترياتك. وتوضّح سياسة الاسترداد هذه حقوقك عند شراء اشتراك أو دورة عبر ',
+  },
+  'refund.s1.p1_link': { en: 'theenglishhub.app', ar: 'theenglishhub.app' },
+  'refund.s1.p1_post': {
+    en: '. It applies to all customers, including those based in the United Kingdom, and reflects your rights under the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013.',
+    ar: '. وتنطبق هذه السياسة على جميع العملاء، بمن فيهم المقيمون في المملكة المتحدة، وتعكس حقوقك بموجب لائحة عقود المستهلكين (المعلومات والإلغاء والرسوم الإضافية) لعام ٢٠١٣.',
+  },
+  'refund.s1.p2': {
+    en: 'All payments are processed securely through Stripe. We do not store your card details on our servers.',
+    ar: 'تُعالَج جميع المدفوعات بأمان من خلال Stripe. ولا نقوم بتخزين بيانات بطاقتك على خوادمنا.',
+  },
+  'refund.s2.h2': {
+    en: '2. Your 14-day cooling-off period',
+    ar: '٢. فترة التروّي البالغة ١٤ يوماً',
+  },
+  'refund.s2.p1': {
+    en: 'Under the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013, when you purchase digital content or a subscription online you have the right to cancel within 14 days of your purchase without giving any reason. This is sometimes called the "cooling-off period".',
+    ar: 'بموجب لائحة عقود المستهلكين (المعلومات والإلغاء والرسوم الإضافية) لعام ٢٠١٣، فإنه عند شرائك محتوى رقمي أو اشتراك عبر الإنترنت، يحقّ لك الإلغاء خلال ١٤ يوماً من تاريخ الشراء دون إبداء أي سبب. وتُسمّى هذه الفترة أحياناً "فترة التروّي".',
+  },
+  'refund.s2.p2': {
+    en: 'However, please note that once you begin accessing or downloading digital content (for example, starting a course lesson or downloading course materials), you may lose this right if you gave your explicit consent to begin receiving the content before the end of the cooling-off period. We will always ask for your consent before delivering digital content during the cooling-off period and inform you that doing so will affect your cancellation rights.',
+    ar: 'غير أنه يُرجى ملاحظة أنه بمجرد بدء وصولك إلى المحتوى الرقمي أو تنزيله (مثل بدء درس في دورة أو تنزيل موادّ دراسية)، فقد تفقد هذا الحق إذا كنت قد منحت موافقتك الصريحة على البدء في تلقّي المحتوى قبل انتهاء فترة التروّي. وسنطلب موافقتك دائماً قبل تقديم محتوى رقمي خلال فترة التروّي، وسنُعلمك بأن منحك هذه الموافقة سيؤثر على حقك في الإلغاء.',
+  },
+  'refund.s3.h2': { en: '3. Subscription cancellations', ar: '٣. إلغاءات الاشتراك' },
+  'refund.s3.p_intro': {
+    en: 'You can cancel your subscription at any time from your account settings or through the Stripe billing portal. When you cancel:',
+    ar: 'يمكنك إلغاء اشتراكك في أي وقت من خلال إعدادات حسابك أو عبر بوابة الفوترة في Stripe. وعند الإلغاء:',
+  },
+  'refund.s3.li1': {
+    en: 'Your subscription will remain active until the end of your current billing period. You will continue to have full access to all subscription features until that date.',
+    ar: 'يظل اشتراكك ساري المفعول حتى نهاية فترة الفوترة الحالية. وستظل لديك صلاحية وصول كاملة إلى جميع ميزات الاشتراك حتى ذلك التاريخ.',
+  },
+  'refund.s3.li2': {
+    en: 'You will not be charged again after cancellation. No further payments will be taken once the current period ends.',
+    ar: 'لن تتم محاسبتك مرة أخرى بعد الإلغاء. ولن تُسحب أي مدفوعات إضافية بعد انتهاء الفترة الحالية.',
+  },
+  'refund.s3.li3': {
+    en: 'If you cancel within 14 days of your first subscription payment and have not substantially used the platform (for example, you have not completed any course modules), you are entitled to a full refund of that payment under your cooling-off rights.',
+    ar: 'إذا ألغيت الاشتراك خلال ١٤ يوماً من أول دفعة، ولم تستخدم المنصة استخداماً جوهرياً (كأن لا تكون قد أكملت أيّ وحدات من الدورات)، فيحق لك استرداد كامل تلك الدفعة بموجب حقوق التروّي.',
+  },
+  'refund.s3.p_outro': {
+    en: 'We do not offer partial refunds for unused portions of a billing period outside the 14-day cooling-off window, because you retain access to the service for the remainder of the period you have already paid for.',
+    ar: 'لا نُقدّم استرداداً جزئياً عن الأجزاء غير المستخدَمة من فترة الفوترة خارج نافذة التروّي البالغة ١٤ يوماً، نظراً لاحتفاظك بحق الوصول إلى الخدمة لما تبقّى من الفترة التي دفعت ثمنها بالفعل.',
+  },
+  'refund.s4.h2': { en: '4. Free trial', ar: '٤. التجربة المجانية' },
+  'refund.s4.p_intro': {
+    en: 'We offer a 30-day free trial so you can explore The English Hub before committing to a paid plan. During the trial:',
+    ar: 'نُقدّم تجربة مجانية لمدة ٣٠ يوماً حتى تتمكّن من استكشاف The English Hub قبل الالتزام بخطة مدفوعة. وخلال هذه التجربة:',
+  },
+  'refund.s4.li1': {
+    en: 'You will not be charged anything for the first 30 days.',
+    ar: 'لن تتم محاسبتك بأي مبلغ خلال أول ٣٠ يوماً.',
+  },
+  'refund.s4.li2': {
+    en: 'If you cancel at any point during the 30-day trial, your account will simply revert to a free account and you will never be billed.',
+    ar: 'إذا ألغيت الاشتراك في أي وقت خلال فترة التجربة، فسيعود حسابك ببساطة إلى حساب مجاني ولن تُحاسَب أبداً.',
+  },
+  'refund.s4.li3': {
+    en: 'If you do not cancel before the trial ends, your chosen subscription plan will begin and your payment method will be charged automatically.',
+    ar: 'إذا لم تُلغِ قبل انتهاء التجربة، فستبدأ خطة الاشتراك التي اخترتها، وستتم محاسبة طريقة الدفع تلقائياً.',
+  },
+  'refund.s4.p_outro': {
+    en: 'We recommend setting a reminder if you are unsure whether you want to continue. You can check your trial end date at any time in your account settings.',
+    ar: 'نوصي بضبط تذكير إذا كنت غير متأكد من رغبتك في الاستمرار. ويمكنك مراجعة تاريخ انتهاء التجربة في أي وقت من إعدادات حسابك.',
+  },
+  'refund.s5.h2': { en: '5. One-time course purchases', ar: '٥. عمليات الشراء لمرة واحدة للدورات' },
+  'refund.s5.p_intro': {
+    en: 'If you purchase an individual course as a one-time payment (outside of a subscription), the following refund terms apply:',
+    ar: 'إذا اشتريت دورة فردية بدفعة واحدة (خارج نطاق الاشتراك)، فإن شروط الاسترداد التالية تنطبق:',
+  },
+  'refund.s5.li1_strong': { en: 'Course not started:', ar: 'الدورة لم تبدأ بعد:' },
+  'refund.s5.li1_text': {
+    en: ' You may request a full refund within 14 days of purchase if you have not started the course (i.e., you have not opened or accessed any lesson content). This is in line with your statutory cooling-off rights.',
+    ar: ' يمكنك طلب استرداد كامل خلال ١٤ يوماً من تاريخ الشراء إذا لم تبدأ الدورة (أي لم تَفتح أو تَصل إلى أي محتوى للدروس). ويتوافق ذلك مع حقوق التروّي القانونية الخاصة بك.',
+  },
+  'refund.s5.li2_strong': { en: 'Course started:', ar: 'الدورة بدأت:' },
+  'refund.s5.li2_text': {
+    en: ' If you have begun the course by accessing lesson content, you will have given your explicit consent to receive digital content during the cooling-off period. In that case, a refund may not be available. However, if you experience a genuine issue with the course (for example, the content is materially different from what was described), please contact us and we will review your case.',
+    ar: ' إذا بدأت الدورة عن طريق الوصول إلى محتوى الدروس، فإنك تكون قد منحت موافقتك الصريحة على تلقّي المحتوى الرقمي خلال فترة التروّي. وفي هذه الحالة، قد لا يكون الاسترداد متاحاً. ومع ذلك، إذا واجهت مشكلة حقيقية في الدورة (مثل اختلاف المحتوى اختلافاً جوهرياً عمّا تم وصفه)، فيُرجى التواصل معنا وسنُراجع حالتك.',
+  },
+  'refund.s6.h2': { en: '6. How to request a refund', ar: '٦. كيفية طلب الاسترداد' },
+  'refund.s6.p_intro': {
+    en: 'To request a refund, you can either:',
+    ar: 'لطلب الاسترداد، يمكنك القيام بأحد الأمور التالية:',
+  },
+  'refund.s6.li1_strong': { en: 'Email us', ar: 'راسلنا عبر البريد الإلكتروني' },
+  'refund.s6.li1_text_pre': { en: ' at ', ar: ' على ' },
+  'refund.s6.li1_text_post': {
+    en: ' with your account email address and a brief description of why you would like a refund. We aim to respond to all refund requests within two business days.',
+    ar: ' مرفقاً بريد حسابك الإلكتروني ووصفاً مختصراً لسبب رغبتك في الاسترداد. ونسعى للرد على جميع طلبات الاسترداد خلال يومَي عمل.',
+  },
+  'refund.s6.li2_strong': {
+    en: 'Use the Stripe billing portal',
+    ar: 'استخدم بوابة الفوترة في Stripe',
+  },
+  'refund.s6.li2_text': {
+    en: ' accessible from your account settings. The portal allows you to manage your subscription and payment details directly, including cancellation.',
+    ar: ' وهي متاحة من إعدادات حسابك. وتُمكّنك البوابة من إدارة اشتراكك وتفاصيل الدفع مباشرةً، بما في ذلك الإلغاء.',
+  },
+  'refund.s6.p_outro': {
+    en: 'Please include the email address associated with your account so we can locate your purchase quickly. If you are a parent or guardian requesting a refund on behalf of a student, please mention this in your email so we can verify the account.',
+    ar: 'يُرجى تضمين البريد الإلكتروني المرتبط بحسابك حتى نتمكّن من تحديد عملية الشراء بسرعة. وإذا كنت ولي أمر أو وصياً تطلب الاسترداد نيابةً عن طالب، فيُرجى الإشارة إلى ذلك في بريدك ليتسنّى لنا التحقق من الحساب.',
+  },
+  'refund.s7.h2': { en: '7. Refund processing time', ar: '٧. مدة معالجة الاسترداد' },
+  'refund.s7.p1': {
+    en: 'Once a refund has been approved, it will be processed within 5 to 10 business days. The exact time it takes for the refund to appear in your account depends on your bank or card provider. In most cases, refunds are completed within five business days, but some providers may take up to ten.',
+    ar: 'بعد الموافقة على الاسترداد، تتم معالجته خلال ٥ إلى ١٠ أيام عمل. وتتوقّف المدة الفعلية لظهور المبلغ المُستردّ في حسابك على البنك أو مزوّد البطاقة الخاصة بك. وفي معظم الحالات، تكتمل عمليات الاسترداد خلال خمسة أيام عمل، غير أن بعض المزوّدين قد يستغرقون حتى عشرة أيام.',
+  },
+  'refund.s7.p2_pre': {
+    en: 'If you have not received your refund after ten business days, please check with your bank or card provider first. If the issue persists, contact us at ',
+    ar: 'إذا لم تستلم المبلغ المُستردّ بعد عشرة أيام عمل، فيُرجى التواصل مع البنك أو مزوّد البطاقة أولاً. وفي حال استمرار المشكلة، تواصل معنا على ',
+  },
+  'refund.s7.p2_post': { en: ' and we will investigate.', ar: ' وسنُجري التحقيق اللازم.' },
+  'refund.s8.h2': { en: '8. Method of refund', ar: '٨. طريقة الاسترداد' },
+  'refund.s8.p': {
+    en: 'All refunds are returned to the original payment method used at the time of purchase. Refunds are processed through Stripe, our payment provider. We are unable to issue refunds to a different card, bank account, or payment method. If the original payment method is no longer active (for example, an expired card), the refund will typically still be routed to your account by your bank. If you have any difficulty receiving your refund, please contact your bank or card provider.',
+    ar: 'تُعاد جميع المبالغ المُستردّة إلى طريقة الدفع الأصلية المستخدمة وقت الشراء. وتتم معالجة المبالغ المُستردّة عبر Stripe، مزوّد المدفوعات لدينا. ولا نستطيع إصدار استرداد إلى بطاقة أو حساب بنكي أو طريقة دفع مختلفة. وإذا كانت طريقة الدفع الأصلية لم تعد نشطة (كانتهاء صلاحية البطاقة)، فعادةً ما يُعيد البنك توجيه المبلغ المُستردّ إلى حسابك. وإذا واجهت أي صعوبة في استلام المبلغ المُستردّ، فيُرجى التواصل مع البنك أو مزوّد البطاقة.',
+  },
+  'refund.s9.h2': { en: '9. Exceptions', ar: '٩. الاستثناءات' },
+  'refund.s9.p_intro': {
+    en: 'Refunds are not available in the following circumstances:',
+    ar: 'لا يُتاح الاسترداد في الحالات التالية:',
+  },
+  'refund.s9.li1_strong': { en: 'Completed courses:', ar: 'الدورات المكتملة:' },
+  'refund.s9.li1_text': {
+    en: ' If you have completed a course in full (i.e., accessed all lessons and received a completion certificate), a refund cannot be issued for that course.',
+    ar: ' إذا أكملت الدورة بالكامل (أي وصلت إلى جميع الدروس واستلمت شهادة الإكمال)، فلا يمكن إصدار استرداد عن تلك الدورة.',
+  },
+  'refund.s9.li2_strong': {
+    en: 'Digital content consumed with explicit consent:',
+    ar: 'المحتوى الرقمي المُستهلَك بموافقة صريحة:',
+  },
+  'refund.s9.li2_text': {
+    en: ' Where you have given your explicit consent to begin receiving digital content before the end of the 14-day cooling-off period and acknowledged that doing so means you lose your right to cancel, we are not obliged to offer a refund. This is consistent with Regulation 37 of the Consumer Contracts Regulations 2013.',
+    ar: ' في الحالات التي تكون فيها قد منحت موافقتك الصريحة على البدء في تلقّي المحتوى الرقمي قبل نهاية فترة التروّي البالغة ١٤ يوماً، وأقررت بأن ذلك يعني فقدان حقك في الإلغاء، فلسنا ملزمين بتقديم استرداد. ويتماشى هذا مع المادة ٣٧ من لائحة عقود المستهلكين لعام ٢٠١٣.',
+  },
+  'refund.s9.li3_strong': { en: 'Abuse of refund policy:', ar: 'إساءة استخدام سياسة الاسترداد:' },
+  'refund.s9.li3_text': {
+    en: ' We reserve the right to refuse a refund if we have reasonable grounds to believe the refund system is being misused, for example by repeatedly purchasing and refunding the same content.',
+    ar: ' نحتفظ بالحق في رفض الاسترداد إذا كانت لدينا أسباب معقولة للاعتقاد بأن نظام الاسترداد يُساء استخدامه، مثل شراء المحتوى نفسه واستردادِه مراراً وتكراراً.',
+  },
+  'refund.s9.p_outro': {
+    en: 'These exceptions do not affect your statutory rights. If you believe you have been treated unfairly, you are welcome to contact us and we will do our best to resolve the matter.',
+    ar: 'لا تؤثر هذه الاستثناءات على حقوقك القانونية. وإذا كنت تعتقد أنه قد تمت معاملتك بصورة غير عادلة، فيُسعدنا تواصلك معنا، وسنبذل قصارى جهدنا لحلّ الأمر.',
+  },
+  'refund.s10.h2': { en: '10. Your statutory rights', ar: '١٠. حقوقك القانونية' },
+  'refund.s10.p': {
+    en: 'Nothing in this policy affects your statutory rights under UK consumer law, including the Consumer Rights Act 2015 and the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013. If digital content is faulty or not as described, you have additional rights to a repair, replacement, or refund regardless of the exceptions listed above.',
+    ar: 'لا يؤثر أي بند في هذه السياسة على حقوقك القانونية بموجب قوانين المستهلك في المملكة المتحدة، بما في ذلك قانون حقوق المستهلك لعام ٢٠١٥ ولائحة عقود المستهلكين (المعلومات والإلغاء والرسوم الإضافية) لعام ٢٠١٣. وإذا كان المحتوى الرقمي معيباً أو غير مطابق للوصف، فإنك تتمتّع بحقوق إضافية في الإصلاح أو الاستبدال أو الاسترداد بصرف النظر عن الاستثناءات المذكورة أعلاه.',
+  },
+  'refund.s11.h2': { en: '11. Contact us', ar: '١١. تواصل معنا' },
+  'refund.s11.p_intro': {
+    en: 'If you have any questions about this refund policy or need help with a refund request, please get in touch:',
+    ar: 'إذا كانت لديك أي استفسارات بشأن سياسة الاسترداد هذه، أو احتجت إلى مساعدة بشأن طلب استرداد، فيُرجى التواصل معنا:',
+  },
+  'refund.s11.email_label': { en: 'Email:', ar: 'البريد الإلكتروني:' },
+  'refund.s11.contact_form_label': { en: 'Contact form:', ar: 'نموذج التواصل:' },
+
+  // ─── Terms of Service (/terms) — formal MSA legal body ────────────────
+  'terms.title': { en: 'Terms of Service', ar: 'شروط الخدمة' },
+  'terms.last_updated_value': { en: 'March 2026', ar: 'مارس ٢٠٢٦' },
+  'terms.s1.h2': { en: '1. Introduction', ar: '١. مقدّمة' },
+  'terms.s1.p1': {
+    en: 'These Terms of Service ("Terms") govern your access to and use of The English Hub (accessible at theenglishhub.app), operated by Upskill Energy Limited (Company No. 16511479), trading as The English Hub, a company registered in England and Wales ("we", "us", "our"). By creating an account or using any part of our platform, you agree to be bound by these Terms. If you do not agree, you must not use the Service.',
+    ar: 'تَحكُم شروط الخدمة هذه ("الشروط") وصولك إلى The English Hub (المتاح على theenglishhub.app) واستخدامك له، وهو يُشغَّل من قِبَل Upskill Energy Limited (رقم الشركة 16511479)، تحت الاسم التجاري The English Hub، وهي شركة مسجّلة في إنجلترا وويلز ("نحن"، "لنا"، "خاصتنا"). وبإنشائك حساباً أو استخدامك أي جزء من منصّتنا، فإنك توافق على الالتزام بهذه الشروط. وإذا لم توافق عليها، فيجب عليك عدم استخدام الخدمة.',
+  },
+  'terms.s1.p2': {
+    en: 'The English Hub is an online learning platform designed to support students studying GCSE English Language and English Literature. Our Service includes structured courses, interactive practice exercises, timed mock examinations, AI-powered essay feedback, and revision resources. The platform is intended as a supplementary educational tool and does not replace formal schooling or professional tutoring.',
+    ar: 'The English Hub هي منصة تعلّم إلكتروني مُصمَّمة لدعم الطلاب الذين يدرسون GCSE English Language و English Literature. وتشمل خدمتنا دورات مُهيكلة، وتمارين تدريب تفاعلية، وامتحانات تجريبية مُحدّدة الوقت، وملاحظات على المقالات بواسطة الذكاء الاصطناعي، وموارد للمراجعة. والمنصة مُخصَّصة لتكون أداةً تعليمية تكميلية، ولا تَحلّ محلّ التعليم النظامي أو الدروس الخصوصية المهنية.',
+  },
+  'terms.s2.h2': { en: '2. Eligibility', ar: '٢. الأهلية' },
+  'terms.s2.p1': {
+    en: "You must be at least 13 years of age (the age of digital consent in the UK under the Data Protection Act 2018) to create an account on The English Hub. If you are under 16 years of age, you must have the consent of a parent or legal guardian before registering. By creating an account for a user under 16, the parent or guardian agrees to these Terms on the minor's behalf and accepts responsibility for the minor's use of the Service.",
+    ar: 'يجب ألا يقلّ عمرك عن ١٣ عاماً (سنّ الموافقة الرقمية في المملكة المتحدة بموجب قانون حماية البيانات لعام ٢٠١٨) لإنشاء حساب على The English Hub. وإذا كان عمرك أقلّ من ١٦ عاماً، فيجب الحصول على موافقة ولي الأمر أو الوصي القانوني قبل التسجيل. وبإنشاء حساب لمستخدم دون السادسة عشرة، يوافق ولي الأمر أو الوصي على هذه الشروط نيابةً عن القاصر، ويتحمّل مسؤولية استخدام القاصر للخدمة.',
+  },
+  'terms.s2.p2': {
+    en: 'School and institutional accounts are provisioned and managed by the subscribing educational institution. Where a school creates accounts on behalf of its students, the school is responsible for obtaining any necessary parental consents and for ensuring compliance with applicable data protection legislation, including the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. Individual students using school-provisioned accounts are also bound by these Terms.',
+    ar: 'تُنشأ حسابات المدارس والمؤسسات وتُدار من قِبَل المؤسسة التعليمية المُشترِكة. وعندما تُنشئ المدرسة حسابات نيابةً عن طلابها، تكون المدرسة مسؤولة عن الحصول على أي موافقات أبوية لازمة، وعن ضمان الامتثال لتشريعات حماية البيانات المعمول بها، بما في ذلك اللائحة العامة لحماية البيانات في المملكة المتحدة (UK GDPR) وقانون حماية البيانات لعام ٢٠١٨. ويلتزم الطلاب الأفراد الذين يستخدمون حسابات مُقدَّمة من المدرسة بهذه الشروط أيضاً.',
+  },
+  'terms.s3.h2': { en: '3. Account Responsibilities', ar: '٣. مسؤوليات الحساب' },
+  'terms.s3.p1': {
+    en: 'You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You must provide accurate and complete information when registering and keep your details up to date. You agree to notify us immediately at info@Upskillenergy.com if you become aware of any unauthorised use of your account.',
+    ar: 'تتحمّل المسؤولية عن الحفاظ على سرّية بيانات اعتماد حسابك، وعن جميع الأنشطة التي تجري تحت حسابك. ويجب عليك تقديم معلومات دقيقة وكاملة عند التسجيل، والحفاظ على تحديث بياناتك. وتوافق على إخطارنا فوراً على info@Upskillenergy.com إذا علمت بأي استخدام غير مُصرَّح به لحسابك.',
+  },
+  'terms.s3.p2': {
+    en: 'Each account is for a single individual user. You may not share your login credentials with any other person or allow multiple individuals to use a single account. We reserve the right to suspend or terminate accounts where we reasonably believe sharing is taking place.',
+    ar: 'يُخصَّص كل حساب لمستخدم فردي واحد. ولا يجوز لك مشاركة بيانات تسجيل دخولك مع أي شخص آخر، أو السماح لعدّة أفراد باستخدام حساب واحد. ونحتفظ بالحق في تعليق الحسابات أو إنهائها متى ما كان لدينا اعتقاد معقول بحدوث مشاركة.',
+  },
+  'terms.s4.h2': { en: '4. Subscription Plans', ar: '٤. خطط الاشتراك' },
+  'terms.s4.p_intro': {
+    en: 'The English Hub offers the following subscription plans for individual users (as of 21 April 2026). All plans renew automatically until cancelled. The prices listed below are "Early Access / Founding" rates and apply to all new sign-ups until 31 July 2026. From August 2026 the Standard rates shown in parentheses become the advertised price; existing subscribers who joined on an Early Access rate keep their rate until the subscription is cancelled or lapses.',
+    ar: 'يُقدّم The English Hub خطط الاشتراك التالية للمستخدمين الأفراد (اعتباراً من ٢١ أبريل ٢٠٢٦). وتتجدّد جميع الخطط تلقائياً حتى إلغائها. والأسعار المُدرَجة أدناه هي أسعار "Early Access / Founding" وتنطبق على جميع المُسجَّلين الجدد حتى ٣١ يوليو ٢٠٢٦. واعتباراً من أغسطس ٢٠٢٦، تُصبح الأسعار العادية المُدرَجة بين قوسين هي السعر المُعلَن؛ ويحتفظ المشتركون الحاليون الذين انضمّوا بسعر Early Access بسعرهم حتى إلغاء الاشتراك أو انقضائه.',
+  },
+  'terms.s4.li_sm_strong': { en: 'Student Plan — Monthly:', ar: 'خطة الطالب — شهرية:' },
+  'terms.s4.li_sm_text': {
+    en: ' £3.99 per month, billed monthly on a recurring basis (Standard from August 2026: £7.99 per month). Full access to every feature on the platform.',
+    ar: ' £3.99 شهرياً، تُحتسَب شهرياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £7.99 شهرياً). صلاحية وصول كاملة لكل ميزة على المنصة.',
+  },
+  'terms.s4.li_sa_strong': { en: 'Student Plan — Annual:', ar: 'خطة الطالب — سنوية:' },
+  'terms.s4.li_sa_text': {
+    en: ' £29.99 per year, billed annually on a recurring basis (Standard from August 2026: £69.99 per year). Full access to every feature on the platform.',
+    ar: ' £29.99 سنوياً، تُحتسَب سنوياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £69.99 سنوياً). صلاحية وصول كاملة لكل ميزة على المنصة.',
+  },
+  'terms.s4.li_sa_promo_strong': {
+    en: 'Student Plan — Annual with affiliate or promo code:',
+    ar: 'خطة الطالب — سنوية بكود شريك أو كود ترويجي:',
+  },
+  'terms.s4.li_sa_promo_text_pre': {
+    en: ' £20 per year when the checkout includes a valid affiliate code, or the public promotional code ',
+    ar: ' £20 سنوياً عندما تتضمّن عملية الدفع كود شريك صالح، أو الكود الترويجي العام ',
+  },
+  'terms.s4.li_sa_promo_text_post': {
+    en: '. Feature access is identical to the standard annual plan.',
+    ar: '. صلاحية الوصول إلى الميزات مطابقة للخطة السنوية القياسية.',
+  },
+  'terms.s4.li_tm_strong': { en: 'Teacher Plan — Monthly:', ar: 'خطة المعلم — شهرية:' },
+  'terms.s4.li_tm_text': {
+    en: ' £6.99 per month, billed monthly on a recurring basis (Standard from August 2026: £11.99 per month). Includes AI lesson planning, worksheet builder, bulk essay marking, and class analytics in addition to all student features.',
+    ar: ' £6.99 شهرياً، تُحتسَب شهرياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £11.99 شهرياً). تشمل تخطيط الدروس بالذكاء الاصطناعي، وبناء أوراق العمل، وتصحيح المقالات بالجملة، وتحليلات الفصل، إضافةً إلى جميع ميزات الطالب.',
+  },
+  'terms.s4.li_ta_strong': { en: 'Teacher Plan — Annual:', ar: 'خطة المعلم — سنوية:' },
+  'terms.s4.li_ta_text': {
+    en: ' £67.99 per year, billed annually on a recurring basis (Standard from August 2026: £99 per year). Same feature set as the Teacher Monthly plan.',
+    ar: ' £67.99 سنوياً، تُحتسَب سنوياً على أساس متكرر (السعر العادي من أغسطس ٢٠٢٦: £99 سنوياً). نفس مجموعة الميزات الموجودة في خطة المعلم الشهرية.',
+  },
+  'terms.s4.li_fs_strong': { en: 'Founding Schools Programme:', ar: 'برنامج المدارس المؤسِّسة:' },
+  'terms.s4.li_fs_text': {
+    en: ' £4,000 per year (Standard from August 2026: £8,000 per year). Strictly limited to the first 10 schools. Includes whole-school licence, bulk onboarding, teacher dashboards, and locked preferential pricing for 2–3 years. Schools who joined the programme in wave 1 at £3,000 per year are grandfathered at that rate.',
+    ar: ' £4,000 سنوياً (السعر العادي من أغسطس ٢٠٢٦: £8,000 سنوياً). يقتصر بشكل صارم على أول ١٠ مدارس. ويشمل ترخيصاً للمدرسة بأكملها، وتأهيلاً جماعياً، ولوحات للمعلمين، وأسعاراً تفضيلية مثبتة لمدة ٢-٣ سنوات. وتحتفظ المدارس التي انضمّت إلى البرنامج في الموجة الأولى بسعر £3,000 سنوياً بذلك السعر.',
+  },
+  'terms.s4.p_vat_strong': { en: 'VAT.', ar: 'ضريبة القيمة المضافة.' },
+  'terms.s4.p_vat_text': {
+    en: ' Prices shown in GBP. Where VAT applies at the point of sale, it is included in the displayed price.',
+    ar: ' الأسعار مُدرَجة بالجنيه الإسترليني. وعندما تنطبق ضريبة القيمة المضافة عند نقطة البيع، فإنها تكون مُدرَجة ضمن السعر المعروض.',
+  },
+  'terms.s4.p_trial_strong': { en: '7-day free trial.', ar: 'تجربة مجانية لمدة ٧ أيام.' },
+  'terms.s4.p_trial_text': {
+    en: ' New subscribers are eligible for a single 7-day free trial on their first paid plan. The trial requires full sign-up with a valid payment method. During the trial period you will have full access to the platform. If you do not cancel before the trial ends, your chosen subscription plan activates automatically and your payment method is charged the applicable plan price. You will receive a reminder email at least two days before the trial expires. Cancel any time before the end of day seven from your account settings and you will not be charged.',
+    ar: ' يحقّ للمشتركين الجدد الاستفادة من تجربة مجانية واحدة لمدة ٧ أيام عند أول خطة مدفوعة. وتتطلّب التجربة تسجيلاً كاملاً بطريقة دفع صالحة. وستحظى خلال فترة التجربة بصلاحية وصول كاملة إلى المنصة. وإذا لم تُلغِ قبل انتهاء التجربة، فستُفعَّل خطة الاشتراك التي اخترتها تلقائياً، وتُحتسَب على طريقة الدفع لديك قيمة الخطة المعمول بها. وستستلم بريداً إلكترونياً للتذكير قبل انقضاء التجربة بيومَين على الأقل. ويمكنك الإلغاء في أي وقت قبل نهاية اليوم السابع من إعدادات حسابك، ولن تتم محاسبتك.',
+  },
+  'terms.s4.p_demo_strong': { en: 'Pre-paywall demo.', ar: 'تجربة ما قبل جدار الدفع.' },
+  'terms.s4.p_demo_text': {
+    en: ' Separately from the trial, every registered account may use most premium features up to three times without providing payment details so you can evaluate the product before committing.',
+    ar: ' بشكل مستقلّ عن التجربة، يُتاح لكل حساب مُسجَّل استخدام معظم الميزات المُتميّزة حتى ثلاث مرّات دون تقديم بيانات دفع، لتتمكّن من تقييم المنتج قبل الالتزام.',
+  },
+  'terms.s4.p_codes_strong': {
+    en: 'Promotional and affiliate codes.',
+    ar: 'الأكواد الترويجية وأكواد الشركاء.',
+  },
+  'terms.s4.p_codes_text_pre': {
+    en: ' Affiliate codes and the public code',
+    ar: ' تنطبق أكواد الشركاء والكود العام',
+  },
+  'terms.s4.p_codes_text_post': {
+    en: " apply only to the Student Annual plan and reduce the first year's price to £20. Subsequent renewals are charged at the then-current standard annual rate (currently £29.99) unless a further valid code is applied at renewal. Affiliate codes cannot be combined, and cannot be applied retroactively to existing subscriptions.",
+    ar: ' فقط على خطة الطالب السنوية، وتُخفِّض سعر السنة الأولى إلى £20. وتُحتسَب التجديدات اللاحقة بالسعر السنوي القياسي المعمول به آنذاك (£29.99 حالياً)، ما لم يتم تطبيق كود صالح آخر عند التجديد. ولا يمكن دمج أكواد الشركاء، ولا يمكن تطبيقها بأثر رجعي على الاشتراكات القائمة.',
+  },
+  'terms.s4.p_renewals': {
+    en: "Subscriptions renew automatically at the end of each billing cycle unless cancelled. The renewal price will be the price in effect at the time of renewal. We will give you at least 14 days' notice of any price increase, and the new price will apply from your next renewal date after that notice period.",
+    ar: 'تتجدّد الاشتراكات تلقائياً في نهاية كل دورة فوترة ما لم يتم إلغاؤها. وسيكون سعر التجديد هو السعر المعمول به وقت التجديد. وسنُخطرك قبل أيّ زيادة في السعر بمدة لا تقلّ عن ١٤ يوماً، ويُطبَّق السعر الجديد اعتباراً من تاريخ تجديدك التالي بعد فترة الإشعار تلك.',
+  },
+  'terms.s5.h2': { en: '5. One-Time Course Purchases', ar: '٥. عمليات الشراء لمرة واحدة للدورات' },
+  'terms.s5.p1': {
+    en: 'In addition to subscription plans, The English Hub may offer individual courses or resource packs available for one-time purchase. Once purchased, you will have ongoing access to the course content for as long as the course remains available on the platform. One-time purchases are separate from your subscription and are not affected by subscription cancellation.',
+    ar: 'بالإضافة إلى خطط الاشتراك، قد يُقدّم The English Hub دورات فردية أو حزم موارد متاحة للشراء لمرة واحدة. وبعد الشراء، ستحظى بصلاحية وصول مستمر إلى محتوى الدورة طالما ظلّت الدورة متاحة على المنصة. وعمليات الشراء لمرة واحدة منفصلة عن اشتراكك، ولا تتأثر بإلغاء الاشتراك.',
+  },
+  'terms.s5.p2': {
+    en: "We reserve the right to retire or substantially update course content. Where a purchased course is retired, we will provide at least 90 days' notice and ensure you can download any associated materials before removal.",
+    ar: 'نحتفظ بالحق في إيقاف محتوى الدورات أو تحديثه تحديثاً جوهرياً. وعند إيقاف دورة مُشتراة، سنُخطرك بذلك قبل مدة لا تقلّ عن ٩٠ يوماً، ونضمن إمكانية تنزيلك لأي موادّ مُرتبطة بها قبل إزالتها.',
+  },
+  'terms.s6.h2': { en: '6. Payment Terms', ar: '٦. شروط الدفع' },
+  'terms.s6.p1': {
+    en: 'All payments are processed securely by Stripe, our third-party payment processor. We do not store your full payment card details on our servers. By providing your payment information, you authorise us to charge the applicable fees to your chosen payment method. All prices are quoted in British Pounds Sterling (GBP). Where VAT applies, it is included in the displayed price.',
+    ar: 'تُعالَج جميع المدفوعات بأمان عبر Stripe، معالج المدفوعات التابع لطرف ثالث لدينا. ولا نُخزّن بيانات بطاقة الدفع الكاملة على خوادمنا. وبتقديمك معلومات الدفع، فإنك تُفوّضنا بتحصيل الرسوم المعمول بها من طريقة الدفع التي اخترتها. وجميع الأسعار مذكورة بالجنيه الإسترليني (GBP). وعندما تنطبق ضريبة القيمة المضافة، فإنها تكون مُدرَجة ضمن السعر المعروض.',
+  },
+  'terms.s6.p2': {
+    en: 'If a payment fails, we will attempt to process it again and notify you by email. If payment remains unsuccessful after 7 days, we may suspend your access until the outstanding amount is resolved. You are responsible for ensuring your payment information is current and valid.',
+    ar: 'إذا فشلت عملية الدفع، فسنُحاول معالجتها مرة أخرى وسنُخطرك بذلك عبر البريد الإلكتروني. وإذا ظلّ الدفع غير ناجح بعد ٧ أيام، فقد نُعلّق وصولك حتى تتم تسوية المبلغ المُستحقّ. وتقع عليك مسؤولية الحفاظ على معلومات دفعك مُحدّثة وصالحة.',
+  },
+  'terms.s7.h2': {
+    en: '7. AI-Generated Content Disclaimer',
+    ar: '٧. إخلاء المسؤولية عن المحتوى المُولَّد بالذكاء الاصطناعي',
+  },
+  'terms.s7.p1': {
+    en: 'The English Hub uses artificial intelligence to provide automated feedback on essays, written responses, and other submissions. This AI-generated feedback is intended as a supplementary learning aid to help you identify areas for improvement and practise your writing skills. It does not constitute a professional academic assessment, a guaranteed prediction of exam performance, or a substitute for feedback from a qualified teacher.',
+    ar: 'يستخدم The English Hub الذكاء الاصطناعي لتقديم ملاحظات آلية على المقالات والإجابات المكتوبة والتقديمات الأخرى. والملاحظات المُولَّدة بالذكاء الاصطناعي مُخصَّصة لتكون أداةً تعليمية تكميلية تُساعدك على تحديد مجالات التحسين والتدرّب على مهارات الكتابة. ولا تُشكّل تقييماً أكاديمياً مهنياً، ولا تنبؤاً مضموناً بأداء الامتحان، ولا بديلاً عن ملاحظات معلّم مؤهَّل.',
+  },
+  'terms.s7.p2': {
+    en: 'While we work to ensure our AI tools are accurate and educationally valuable, automated feedback may occasionally contain errors, omissions, or suggestions that do not align with the marking criteria of a specific exam board. You should always use AI feedback in conjunction with guidance from your teachers and official exam board resources. We accept no liability for any reliance placed solely on AI-generated feedback.',
+    ar: 'في حين نعمل على ضمان أن تكون أدوات الذكاء الاصطناعي لدينا دقيقةً وذات قيمة تعليمية، فإن الملاحظات الآلية قد تتضمّن أحياناً أخطاءً أو إغفالاتٍ أو اقتراحاتٍ لا تتماشى مع معايير التصحيح لبورد امتحان مُحدّد. ويجب عليك دائماً استخدام ملاحظات الذكاء الاصطناعي جنباً إلى جنب مع توجيهات معلّميك والموارد الرسمية لبورد الامتحان. ولا نتحمّل أي مسؤولية عن أي اعتماد يقتصر على الملاحظات المُولَّدة بالذكاء الاصطناعي وحدها.',
+  },
+  'terms.s8.h2': { en: '8. Acceptable Use', ar: '٨. الاستخدام المقبول' },
+  'terms.s8.p_intro': {
+    en: 'You agree to use The English Hub only for its intended educational purposes and in compliance with all applicable laws. You must not:',
+    ar: 'توافق على استخدام The English Hub فقط للأغراض التعليمية المُخصّصة له، وبما يتوافق مع جميع القوانين المعمول بها. ولا يجوز لك:',
+  },
+  'terms.s8.li1': {
+    en: 'Share your account credentials with others or allow another person to access the platform using your account.',
+    ar: 'مشاركة بيانات اعتماد حسابك مع الآخرين، أو السماح لشخص آخر بالوصول إلى المنصة باستخدام حسابك.',
+  },
+  'terms.s8.li2': {
+    en: 'Copy, reproduce, distribute, or publicly display any content from the platform without our prior written consent.',
+    ar: 'نسخ أيّ محتوى من المنصة أو إعادة إنتاجه أو توزيعه أو عرضه علنياً دون موافقتنا الكتابية المُسبَقة.',
+  },
+  'terms.s8.li3': {
+    en: 'Use the platform to engage in cheating, academic dishonesty, or any activity that undermines the integrity of educational assessments.',
+    ar: 'استخدام المنصة للانخراط في الغشّ أو عدم النزاهة الأكاديمية أو أيّ نشاط يُقوّض نزاهة التقييمات التعليمية.',
+  },
+  'terms.s8.li4': {
+    en: 'Submit content that is abusive, obscene, defamatory, discriminatory, or otherwise objectionable.',
+    ar: 'تقديم محتوى مُسيء أو فاحش أو تشهيري أو تمييزي أو غير لائق بأيّ شكل آخر.',
+  },
+  'terms.s8.li5': {
+    en: "Attempt to gain unauthorised access to any part of the platform, other users' accounts, or our systems and infrastructure.",
+    ar: 'محاولة الوصول دون تصريح إلى أيّ جزء من المنصة أو إلى حسابات المستخدمين الآخرين أو إلى أنظمتنا وبنيتنا التحتية.',
+  },
+  'terms.s8.li6': {
+    en: 'Use automated scripts, bots, or other tools to scrape content or interact with the platform in a manner not expressly permitted.',
+    ar: 'استخدام نصوص برمجية آلية أو روبوتات أو أدوات أخرى لاستخراج المحتوى أو التفاعل مع المنصة بطريقة غير مُصرَّح بها صراحةً.',
+  },
+  'terms.s8.li7': {
+    en: 'Interfere with or disrupt the operation of the platform, including through the introduction of viruses or malicious code.',
+    ar: 'التدخّل في تشغيل المنصة أو تعطيله، بما في ذلك من خلال إدخال فيروسات أو شيفرات خبيثة.',
+  },
+  'terms.s8.p_outro': {
+    en: 'We reserve the right to suspend or permanently terminate any account that breaches these acceptable use rules, without refund and without prior notice where the breach is serious.',
+    ar: 'نحتفظ بالحق في تعليق أو إنهاء أيّ حساب يُخالف قواعد الاستخدام المقبول هذه نهائياً، دون استرداد وبدون إشعار مُسبَق متى ما كانت المخالفة جسيمة.',
+  },
+  'terms.s9.h2': { en: '9. Intellectual Property', ar: '٩. الملكية الفكرية' },
+  'terms.s9.p1': {
+    en: 'All content on The English Hub, including but not limited to courses, lessons, practice questions, mock exam papers, videos, graphics, software, and the design and layout of the platform, is owned by Upskill Energy Limited or its licensors and is protected by copyright, trademark, and other intellectual property laws of England and Wales and international treaties. You may not reproduce, modify, distribute, or create derivative works from any platform content without our express written permission.',
+    ar: 'جميع المحتويات على The English Hub، بما في ذلك على سبيل المثال لا الحصر الدورات والدروس وأسئلة التدريب وأوراق الامتحانات التجريبية ومقاطع الفيديو والرسومات والبرامج وتصميم المنصة وتخطيطها، مملوكة لـ Upskill Energy Limited أو لمُرخّصيها، وهي محمية بموجب قوانين حقوق المؤلف والعلامات التجارية وغيرها من قوانين الملكية الفكرية في إنجلترا وويلز والمعاهدات الدولية. ولا يجوز لك إعادة إنتاج أيّ محتوى للمنصة أو تعديله أو توزيعه أو إنشاء أعمال مُشتَقّة منه دون إذن كتابي صريح منا.',
+  },
+  'terms.s9.p2': {
+    en: 'You retain all intellectual property rights in the essays, written responses, and other original content you submit through the platform ("User Content"). By submitting User Content, you grant us a non-exclusive, royalty-free, worldwide licence to use, store, and process your submissions solely for the purposes of providing the Service, including generating AI feedback and improving our educational tools. We will not publish or share your User Content with third parties without your consent, except in anonymised and aggregated form for research and platform improvement purposes.',
+    ar: 'تحتفظ بجميع حقوق الملكية الفكرية في المقالات والإجابات المكتوبة وغيرها من المحتوى الأصلي الذي تُقدّمه عبر المنصة ("محتوى المستخدم"). وبتقديم محتوى المستخدم، فإنك تَمنحنا ترخيصاً غير حصري وخالياً من الإتاوات على نطاق عالمي لاستخدام تقديماتك وتخزينها ومعالجتها، فقط لأغراض تقديم الخدمة، بما في ذلك توليد ملاحظات الذكاء الاصطناعي وتحسين أدواتنا التعليمية. ولن ننشر محتوى المستخدم الخاصّ بك أو نُشاركه مع أطراف ثالثة دون موافقتك، باستثناء الصيغة المُجهَّلة والمُجمَّعة لأغراض البحث وتحسين المنصة.',
+  },
+  'terms.s10.h2': { en: '10. Cancellation and Refunds', ar: '١٠. الإلغاء واسترداد الأموال' },
+  'terms.s10.p1': {
+    en: 'You may cancel your subscription at any time through your account settings or by contacting us at info@Upskillenergy.com. Upon cancellation, you will retain access to the platform until the end of your current billing period. No further charges will be made after cancellation takes effect.',
+    ar: 'يمكنك إلغاء اشتراكك في أي وقت من خلال إعدادات حسابك أو بالتواصل معنا على info@Upskillenergy.com. وعند الإلغاء، ستحتفظ بصلاحية الوصول إلى المنصة حتى نهاية فترة الفوترة الحالية. ولن تُسحب أي رسوم إضافية بعد سَريان مفعول الإلغاء.',
+  },
+  'terms.s10.p2': {
+    en: 'In accordance with the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013, you have the right to cancel a new subscription or one-time purchase within 14 days of the date of purchase for a full refund, provided you have not substantially used the Service during that period. Where you have used the Service during the 14-day cancellation period, we may deduct a proportionate amount reflecting the services already provided.',
+    ar: 'وفقاً للائحة عقود المستهلكين (المعلومات والإلغاء والرسوم الإضافية) لعام ٢٠١٣، يحقّ لك إلغاء اشتراك جديد أو شراء لمرة واحدة خلال ١٤ يوماً من تاريخ الشراء واسترداد المبلغ كاملاً، بشرط ألّا تكون قد استخدمت الخدمة استخداماً جوهرياً خلال تلك الفترة. وعند استخدامك الخدمة خلال فترة الإلغاء البالغة ١٤ يوماً، قد نَخصم مبلغاً تناسبياً يعكس الخدمات المُقدَّمة بالفعل.',
+  },
+  'terms.s10.p3': {
+    en: 'For subscriptions cancelled after the 14-day statutory cancellation period, we offer a pro-rated refund for the unused portion of the current billing cycle if you request a refund within 14 days of your most recent renewal date. Refund requests made more than 14 days after the renewal date will not be eligible for a refund, though your access will continue until the end of the billing period.',
+    ar: 'بالنسبة للاشتراكات المُلغاة بعد فترة الإلغاء القانونية البالغة ١٤ يوماً، نُقدّم استرداداً تناسبياً عن الجزء غير المُستخدَم من دورة الفوترة الحالية إذا طلبت الاسترداد خلال ١٤ يوماً من أحدث تاريخ تجديد. ولن تكون طلبات الاسترداد المُقدَّمة بعد مرور أكثر من ١٤ يوماً على تاريخ التجديد مُؤهَّلة للاسترداد، إلا أن صلاحية وصولك ستستمرّ حتى نهاية فترة الفوترة.',
+  },
+  'terms.s10.p4': {
+    en: 'If your free trial converts to a paid subscription and you did not intend to continue, please contact us within 14 days of the first charge and we will issue a full refund. Refunds are processed to the original payment method and typically take 5 to 10 business days to appear.',
+    ar: 'إذا تحوّلت تجربتك المجانية إلى اشتراك مدفوع ولم تكن تعتزم الاستمرار، فيُرجى التواصل معنا خلال ١٤ يوماً من أول دفعة، وسنُصدر استرداداً كاملاً. وتتم معالجة المبالغ المُستردَّة إلى طريقة الدفع الأصلية، وعادةً ما يستغرق ظهورها من ٥ إلى ١٠ أيام عمل.',
+  },
+  'terms.s11.h2': { en: '11. Limitation of Liability', ar: '١١. تحديد المسؤولية' },
+  'terms.s11.p1': {
+    en: 'To the fullest extent permitted by law, Upskill Energy Limited shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or in connection with your use of the Service, including but not limited to loss of data, loss of academic opportunity, or reliance on AI-generated feedback.',
+    ar: 'إلى أقصى حدّ يسمح به القانون، لا تتحمّل Upskill Energy Limited المسؤولية عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تَبَعية أو عقابية تنشأ عن أو فيما يتعلّق باستخدامك للخدمة، بما في ذلك على سبيل المثال لا الحصر فقدان البيانات، أو فوات فرصة أكاديمية، أو الاعتماد على الملاحظات المُولَّدة بالذكاء الاصطناعي.',
+  },
+  'terms.s11.p2': {
+    en: 'Our total aggregate liability to you for any claims arising under or in connection with these Terms shall not exceed the total amount you have paid to us in the 12 months immediately preceding the event giving rise to the claim.',
+    ar: 'لا تتجاوز مسؤوليتنا الإجمالية الكلية تجاهك عن أي مطالبات تنشأ بموجب هذه الشروط أو فيما يتعلّق بها مجموع المبلغ الذي دفعته لنا خلال الـ١٢ شهراً السابقة مباشرةً للحدث الذي أدّى إلى المطالبة.',
+  },
+  'terms.s11.p3': {
+    en: 'Nothing in these Terms excludes or limits our liability for death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be excluded or limited under the laws of England and Wales. Your statutory rights as a consumer are not affected by these Terms.',
+    ar: 'لا يستثني أيّ بند في هذه الشروط أو يَحدّ من مسؤوليتنا عن الوفاة أو الإصابة الشخصية الناجمة عن إهمالنا، أو عن الاحتيال أو التحريف الاحتيالي، أو عن أيّ مسؤولية أخرى لا يمكن استثناؤها أو الحدّ منها بموجب قوانين إنجلترا وويلز. ولا تتأثّر حقوقك القانونية كمستهلك بهذه الشروط.',
+  },
+  'terms.s11.p4': {
+    en: 'We provide the Service on an "as is" and "as available" basis. While we endeavour to ensure the platform is reliable and available, we do not guarantee uninterrupted or error-free access. We may carry out scheduled maintenance from time to time and will aim to provide reasonable notice of any planned downtime.',
+    ar: 'نُقدّم الخدمة على أساس "كما هي" و"كما تتوفّر". وفي حين نسعى لضمان أن تكون المنصة موثوقة ومُتاحة، فإننا لا نضمن وصولاً متواصلاً أو خالياً من الأخطاء. وقد نُجري عمليات صيانة مُجدوَلة من وقت لآخر، وسنحرص على تقديم إشعار معقول بشأن أيّ توقّفات مُخطّط لها.',
+  },
+  'terms.s12.h2': { en: '12. Governing Law', ar: '١٢. القانون المنظِّم' },
+  'terms.s12.p': {
+    en: 'These Terms are governed by and construed in accordance with the laws of England and Wales. Any disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales, without prejudice to your right as a consumer to bring proceedings in the courts of your country of residence within the United Kingdom.',
+    ar: 'تَخضع هذه الشروط لقوانين إنجلترا وويلز وتُفسَّر وفقاً لها. وتخضع أيّ نزاعات تنشأ بموجب هذه الشروط أو فيما يتعلّق بها للاختصاص القضائي الحصري لمحاكم إنجلترا وويلز، دون المساس بحقك كمستهلك في إقامة الدعاوى أمام محاكم بلد إقامتك داخل المملكة المتحدة.',
+  },
+  'terms.s13.h2': { en: '13. Dispute Resolution', ar: '١٣. تسوية المنازعات' },
+  'terms.s13.p1': {
+    en: 'If you have a complaint or dispute regarding the Service, we encourage you to contact us first at info@Upskillenergy.com so that we can attempt to resolve the matter informally. We will acknowledge your complaint within 5 business days and aim to provide a substantive response within 14 business days.',
+    ar: 'إذا كان لديك شكوى أو نزاع بشأن الخدمة، فنُشجّعك على التواصل معنا أولاً على info@Upskillenergy.com حتى نتمكّن من محاولة تسوية الأمر ودياً. وسنُقرّ باستلام شكواك خلال ٥ أيام عمل، ونسعى لتقديم ردّ موضوعي خلال ١٤ يوم عمل.',
+  },
+  'terms.s13.p2': {
+    en: 'If we are unable to resolve your complaint to your satisfaction, you may refer the dispute to an alternative dispute resolution (ADR) provider. For UK consumers, you may also use the Online Dispute Resolution (ODR) platform provided by the European Commission (where applicable) or contact Citizens Advice for guidance on your consumer rights.',
+    ar: 'إذا تعذّر علينا تسوية شكواك بما يُرضيك، فيمكنك إحالة النزاع إلى جهة لتسوية المنازعات بالطرق البديلة (ADR). وبالنسبة للمستهلكين في المملكة المتحدة، يمكنك أيضاً استخدام منصة تسوية المنازعات عبر الإنترنت (ODR) التي تُوفّرها المفوضية الأوروبية (حيثما ينطبق ذلك)، أو الاتصال بهيئة Citizens Advice للحصول على إرشادات بشأن حقوقك كمستهلك.',
+  },
+  'terms.s14.h2': { en: '14. Changes to These Terms', ar: '١٤. التعديلات على هذه الشروط' },
+  'terms.s14.p1': {
+    en: 'We may update these Terms from time to time to reflect changes to our Service, legal requirements, or business practices. Where we make material changes, we will notify you by email and/or by displaying a prominent notice on the platform at least 30 days before the changes take effect. The "Last updated" date at the top of this page will be revised accordingly.',
+    ar: 'قد نُحدّث هذه الشروط من وقت لآخر لتعكس التغييرات في خدمتنا أو في المتطلبات القانونية أو في الممارسات التجارية. وعند إجراء تغييرات جوهرية، سنُخطرك عبر البريد الإلكتروني و/أو بعرض إشعار بارز على المنصة قبل ما لا يقلّ عن ٣٠ يوماً من سَريان مفعول التغييرات. وسيتم تحديث تاريخ "آخر تحديث" في أعلى هذه الصفحة وفقاً لذلك.',
+  },
+  'terms.s14.p2': {
+    en: 'Your continued use of the Service after the updated Terms come into effect constitutes your acceptance of the revised Terms. If you do not agree with any changes, you should stop using the Service and cancel your subscription before the new Terms take effect.',
+    ar: 'يُشكّل استمرار استخدامك للخدمة بعد سَريان مفعول الشروط المُحدَّثة قبولَك للشروط المُعدَّلة. وإذا لم توافق على أي تغييرات، فينبغي عليك التوقّف عن استخدام الخدمة وإلغاء اشتراكك قبل سَريان مفعول الشروط الجديدة.',
+  },
+  'terms.s15.h2': { en: '15. Contact Us', ar: '١٥. تواصل معنا' },
+  'terms.s15.p1': {
+    en: 'If you have any questions about these Terms of Service, please contact us at:',
+    ar: 'إذا كانت لديك أي أسئلة بشأن شروط الخدمة هذه، فيُرجى التواصل معنا على:',
+  },
+  'terms.s15.p2_l1': {
+    en: 'Upskill Energy Limited, trading as The English Hub',
+    ar: 'Upskill Energy Limited، تحت الاسم التجاري The English Hub',
+  },
+  'terms.s15.p2_l2': {
+    en: 'Email: info@Upskillenergy.com',
+    ar: 'البريد الإلكتروني: info@Upskillenergy.com',
+  },
 }
 
 /**

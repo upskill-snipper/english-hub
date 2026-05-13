@@ -39,6 +39,7 @@ import {
   markAllNotificationsRead,
   applyReadStatus,
 } from '@/lib/teacher-notifications'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Icon map ─────────────────────────────────────────────────────────────────
 
@@ -93,12 +94,10 @@ const PRIORITY_CONFIG = {
 
 // ── Notification types for filter ────────────────────────────────────────────
 
-const ALL_TYPES = Object.entries(NOTIFICATION_TYPE_CONFIG).map(
-  ([key, config]) => ({
-    value: key as NotificationType,
-    label: config.label,
-  })
-)
+const ALL_TYPES = Object.entries(NOTIFICATION_TYPE_CONFIG).map(([key, config]) => ({
+  value: key as NotificationType,
+  label: config.label,
+}))
 
 // ── Date range options ───────────────────────────────────────────────────────
 
@@ -126,8 +125,9 @@ function getDateFrom(range: string): Date | undefined {
 // ── Page Component ───────────────────────────────────────────────────────────
 
 export default function NotificationsPage() {
-  const [notifications, setNotifications] = useState<TeacherNotification[]>(
-    () => generateMockNotifications()
+  const t = useT()
+  const [notifications, setNotifications] = useState<TeacherNotification[]>(() =>
+    generateMockNotifications(),
   )
 
   // Filter state
@@ -153,28 +153,19 @@ export default function NotificationsPage() {
   // Apply filters
   const filteredNotifications = useMemo(() => {
     return filterNotifications(notifications, {
-      types:
-        typeFilter !== 'all' ? [typeFilter as NotificationType] : undefined,
+      types: typeFilter !== 'all' ? [typeFilter as NotificationType] : undefined,
       classId: classFilter !== 'all' ? classFilter : undefined,
       dateFrom: getDateFrom(dateRange),
       readStatus: readFilter as 'all' | 'read' | 'unread',
     })
   }, [notifications, typeFilter, dateRange, classFilter, readFilter])
 
-  const unreadCount = useMemo(
-    () => notifications.filter((n) => !n.read).length,
-    [notifications]
-  )
+  const unreadCount = useMemo(() => notifications.filter((n) => !n.read).length, [notifications])
 
-  const handleRead = useCallback(
-    (id: string) => {
-      markNotificationRead(id)
-      setNotifications((prev) =>
-        prev.map((n) => (n.id === id ? { ...n, read: true } : n))
-      )
-    },
-    []
-  )
+  const handleRead = useCallback((id: string) => {
+    markNotificationRead(id)
+    setNotifications((prev) => prev.map((n) => (n.id === id ? { ...n, read: true } : n)))
+  }, [])
 
   const handleMarkAllRead = useCallback(() => {
     const unreadIds = notifications.filter((n) => !n.read).map((n) => n.id)
@@ -191,7 +182,7 @@ export default function NotificationsPage() {
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
-          Back to Dashboard
+          {t('school.sidebar.back_to_dashboard')}
         </Link>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -199,25 +190,18 @@ export default function NotificationsPage() {
               <Bell className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">
-                Notifications
-              </h1>
+              <h1 className="text-xl font-bold text-foreground">{t('school.notif.title')}</h1>
               <p className="text-sm text-muted-foreground">
                 {unreadCount > 0
-                  ? `${unreadCount} unread notification${unreadCount !== 1 ? 's' : ''}`
-                  : 'All caught up'}
+                  ? `${unreadCount} ${unreadCount !== 1 ? t('school.notifications.unread_plural') : t('school.notifications.unread_singular')}`
+                  : t('school.notifications.all_caught_up')}
               </p>
             </div>
           </div>
           {unreadCount > 0 && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleMarkAllRead}
-              className="text-xs"
-            >
+            <Button variant="outline" size="sm" onClick={handleMarkAllRead} className="text-xs">
               <CheckCheck className="mr-1.5 h-3.5 w-3.5" />
-              Mark all as read
+              {t('school.notif.mark_all_read')}
             </Button>
           )}
         </div>
@@ -227,15 +211,15 @@ export default function NotificationsPage() {
       <div className="mb-6 flex flex-wrap items-center gap-3 rounded-lg border border-border bg-card/50 p-3">
         <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <Filter className="h-3.5 w-3.5" />
-          <span className="hidden sm:inline">Filters:</span>
+          <span className="hidden sm:inline">{t('school.notifications.filters_label')}</span>
         </div>
 
         <Select value={typeFilter} onValueChange={setTypeFilter}>
           <SelectTrigger className="h-8 w-[170px] text-xs">
-            <SelectValue placeholder="All types" />
+            <SelectValue placeholder={t('school.notifications.all_types')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All types</SelectItem>
+            <SelectItem value="all">{t('school.notifications.all_types')}</SelectItem>
             {ALL_TYPES.map((t) => (
               <SelectItem key={t.value} value={t.value}>
                 {t.label}
@@ -246,7 +230,7 @@ export default function NotificationsPage() {
 
         <Select value={dateRange} onValueChange={setDateRange}>
           <SelectTrigger className="h-8 w-[140px] text-xs">
-            <SelectValue placeholder="All time" />
+            <SelectValue placeholder={t('school.notifications.all_time')} />
           </SelectTrigger>
           <SelectContent>
             {DATE_RANGES.map((d) => (
@@ -259,10 +243,10 @@ export default function NotificationsPage() {
 
         <Select value={classFilter} onValueChange={setClassFilter}>
           <SelectTrigger className="h-8 w-[160px] text-xs">
-            <SelectValue placeholder="All classes" />
+            <SelectValue placeholder={t('school.notifications.all_classes')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All classes</SelectItem>
+            <SelectItem value="all">{t('school.notifications.all_classes')}</SelectItem>
             {classOptions.map((c) => (
               <SelectItem key={c.value} value={c.value}>
                 {c.label}
@@ -273,12 +257,12 @@ export default function NotificationsPage() {
 
         <Select value={readFilter} onValueChange={setReadFilter}>
           <SelectTrigger className="h-8 w-[120px] text-xs">
-            <SelectValue placeholder="All" />
+            <SelectValue placeholder={t('school.notifications.all')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All</SelectItem>
-            <SelectItem value="unread">Unread</SelectItem>
-            <SelectItem value="read">Read</SelectItem>
+            <SelectItem value="all">{t('school.notifications.all')}</SelectItem>
+            <SelectItem value="unread">{t('school.notifications.unread')}</SelectItem>
+            <SelectItem value="read">{t('school.notifications.read')}</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -289,10 +273,10 @@ export default function NotificationsPage() {
           <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-border py-16 text-center">
             <Bell className="mb-3 h-8 w-8 text-muted-foreground/70" />
             <p className="text-sm font-medium text-muted-foreground">
-              No notifications match your filters
+              {t('school.notifications.empty_match')}
             </p>
             <p className="mt-1 text-xs text-muted-foreground/70">
-              Try adjusting the filters above
+              {t('school.notifications.empty_match_hint')}
             </p>
           </div>
         ) : (
@@ -308,14 +292,14 @@ export default function NotificationsPage() {
                   'group flex gap-4 rounded-lg border border-border p-4 transition-all',
                   notification.read
                     ? 'bg-card/30 opacity-70 hover:opacity-100'
-                    : 'bg-card shadow-sm hover:shadow-md'
+                    : 'bg-card shadow-sm hover:shadow-md',
                 )}
               >
                 {/* Icon */}
                 <div
                   className={cn(
                     'flex h-10 w-10 shrink-0 items-center justify-center rounded-full',
-                    config.bg
+                    config.bg,
                   )}
                 >
                   <Icon className={cn('h-5 w-5', config.color)} />
@@ -328,10 +312,7 @@ export default function NotificationsPage() {
                       <div className="flex items-center gap-2">
                         {!notification.read && (
                           <span
-                            className={cn(
-                              'inline-block h-2 w-2 rounded-full',
-                              priorityConf.dot
-                            )}
+                            className={cn('inline-block h-2 w-2 rounded-full', priorityConf.dot)}
                           />
                         )}
                         <h3
@@ -339,7 +320,7 @@ export default function NotificationsPage() {
                             'text-sm',
                             notification.read
                               ? 'text-muted-foreground'
-                              : 'font-semibold text-foreground'
+                              : 'font-semibold text-foreground',
                           )}
                         >
                           {notification.title}
@@ -364,10 +345,7 @@ export default function NotificationsPage() {
                         {notification.className}
                       </Badge>
                     )}
-                    <Badge
-                      variant="outline"
-                      className={cn('h-5 text-[10px]', priorityConf.color)}
-                    >
+                    <Badge variant="outline" className={cn('h-5 text-[10px]', priorityConf.color)}>
                       {priorityConf.label}
                     </Badge>
                   </div>
@@ -377,7 +355,7 @@ export default function NotificationsPage() {
                     {notification.actionUrl && (
                       <Link href={notification.actionUrl}>
                         <Button variant="outline" size="sm" className="h-7 text-xs">
-                          View details
+                          {t('school.notifications.view_details')}
                         </Button>
                       </Link>
                     )}
@@ -388,7 +366,7 @@ export default function NotificationsPage() {
                         className="h-7 text-xs text-muted-foreground"
                         onClick={() => handleRead(notification.id)}
                       >
-                        Mark as read
+                        {t('school.notifications.mark_as_read')}
                       </Button>
                     )}
                   </div>
@@ -402,8 +380,8 @@ export default function NotificationsPage() {
       {/* Summary footer */}
       {filteredNotifications.length > 0 && (
         <div className="mt-6 text-center text-xs text-muted-foreground">
-          Showing {filteredNotifications.length} of {notifications.length}{' '}
-          notification{notifications.length !== 1 ? 's' : ''}
+          Showing {filteredNotifications.length} of {notifications.length} notification
+          {notifications.length !== 1 ? 's' : ''}
         </div>
       )}
     </div>

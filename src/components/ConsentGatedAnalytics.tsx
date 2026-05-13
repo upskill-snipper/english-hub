@@ -33,6 +33,7 @@ import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
 import Script from 'next/script'
 import { hasAnalyticsConsent } from '@/components/cookie-consent'
+import { useT } from '@/lib/i18n/use-t'
 
 // Dynamic, client-only imports. `ssr: false` + `loading: () => null`
 // means these modules are code-split into their own chunk and loaded
@@ -48,6 +49,7 @@ const SpeedInsights = dynamic(
 )
 
 export function ConsentGatedAnalytics() {
+  const t = useT()
   const [consented, setConsented] = useState(false)
 
   useEffect(() => {
@@ -67,7 +69,7 @@ export function ConsentGatedAnalytics() {
   if (!consented) return null
 
   return (
-    <>
+    <div role="region" aria-label={t('layout.analytics.label')} className="sr-only">
       <Analytics />
       <SpeedInsights />
       {process.env.NEXT_PUBLIC_REWARDFUL_KEY && (
@@ -77,6 +79,6 @@ export function ConsentGatedAnalytics() {
           strategy="afterInteractive"
         />
       )}
-    </>
+    </div>
   )
 }

@@ -6,7 +6,6 @@ import { UpgradeModal } from '@/components/UpgradeModal'
 import { FeatureLockout } from '@/components/FeatureLockout'
 import {
   type GatedFeature,
-  FEATURE_NAMES,
   getFeatureUsage,
   incrementFeatureUsage,
   getRemainingUses,
@@ -15,6 +14,7 @@ import {
   FREE_USES_PER_FEATURE,
 } from '@/lib/feature-gating'
 import { useAuthProfile } from '@/store/auth-store'
+import { useT } from '@/lib/i18n/use-t'
 
 interface FeatureGateProps {
   feature: GatedFeature
@@ -36,9 +36,12 @@ interface FeatureGateProps {
  */
 export function FeatureGate({ feature, children, onUse }: FeatureGateProps) {
   const profile = useAuthProfile()
+  const t = useT()
   const [modalOpen, setModalOpen] = useState(false)
   const [modalVariant, setModalVariant] = useState<'warning' | 'nudge'>('nudge')
-  const [locked, setLocked] = useState(() => !isUserPremium(profile?.subscription_status) && isFeatureLocked(feature))
+  const [locked, setLocked] = useState(
+    () => !isUserPremium(profile?.subscription_status) && isFeatureLocked(feature),
+  )
   const [remaining, setRemaining] = useState(() => getRemainingUses(feature))
 
   const premium = isUserPremium(profile?.subscription_status)
@@ -107,13 +110,12 @@ export function FeatureGate({ feature, children, onUse }: FeatureGateProps) {
     <div className="relative">
       {/* Usage badge */}
       <div className="mb-3 flex items-center gap-2">
-        <Badge
-          variant={remaining === 1 ? 'destructive' : 'secondary'}
-          className="text-xs"
-        >
+        <Badge variant={remaining === 1 ? 'destructive' : 'secondary'} className="text-xs">
           {remaining === 1
-            ? `1 of ${FREE_USES_PER_FEATURE} free use remaining`
-            : `${remaining} of ${FREE_USES_PER_FEATURE} free uses remaining`}
+            ? t('feature.usage.one_remaining').replace('{total}', String(FREE_USES_PER_FEATURE))
+            : t('feature.usage.n_remaining')
+                .replace('{remaining}', String(remaining))
+                .replace('{total}', String(FREE_USES_PER_FEATURE))}
         </Badge>
       </div>
 

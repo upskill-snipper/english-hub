@@ -3,12 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ClipboardList,
-  Plus,
-  Loader2,
-} from 'lucide-react'
+import { ArrowLeft, ClipboardList, Plus, Loader2 } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -29,10 +24,8 @@ import type {
   AssignmentStatus,
   AssignmentSubmission,
 } from '@/lib/types/assignment'
-import {
-  addAssignment,
-  ASSIGNMENT_TYPE_LABELS,
-} from '@/lib/types/assignment'
+import { addAssignment, ASSIGNMENT_TYPE_LABELS } from '@/lib/types/assignment'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Mock data for classes and resources ───────────────────────────────── */
 // In production these would come from API/store; using localStorage stubs for now
@@ -89,6 +82,7 @@ const MOCK_STUDENTS: Record<string, { id: string; name: string }[]> = {
 /* ── Component ─────────────────────────────────────────────────────────── */
 
 export default function CreateAssignmentPage() {
+  const t = useT()
   const router = useRouter()
   const [saving, setSaving] = useState(false)
 
@@ -148,7 +142,7 @@ export default function CreateAssignmentPage() {
         render={<Link href="/school/assignments" />}
       >
         <ArrowLeft className="h-4 w-4" />
-        Back to Assignments
+        {t('school.assignments.back')}
       </Button>
 
       {/* Header */}
@@ -158,10 +152,10 @@ export default function CreateAssignmentPage() {
         </div>
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-foreground">
-            Create Assignment
+            {t('school.assignments.create.title')}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Set up a new assignment for your class.
+            {t('school.assignments.create.subtitle')}
           </p>
         </div>
       </div>
@@ -171,18 +165,16 @@ export default function CreateAssignmentPage() {
       <form onSubmit={handleSubmit}>
         <Card>
           <CardHeader>
-            <CardTitle>Assignment Details</CardTitle>
-            <CardDescription>
-              Fill in the details below to create a new assignment.
-            </CardDescription>
+            <CardTitle>{t('school.assignments.create.form_title')}</CardTitle>
+            <CardDescription>{t('school.assignments.create.form_subtitle')}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             {/* Title */}
             <div className="space-y-2">
-              <Label htmlFor="title">Title *</Label>
+              <Label htmlFor="title">{t('school.assignments.field.title')} *</Label>
               <Input
                 id="title"
-                placeholder="e.g. Macbeth Act 3 Essay"
+                placeholder={t('school.assignments.field.title_placeholder')}
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
@@ -191,10 +183,10 @@ export default function CreateAssignmentPage() {
 
             {/* Description / Instructions */}
             <div className="space-y-2">
-              <Label htmlFor="description">Instructions</Label>
+              <Label htmlFor="description">{t('school.assignments.field.instructions')}</Label>
               <Textarea
                 id="description"
-                placeholder="Add instructions or context for your students..."
+                placeholder={t('school.assignments.field.instructions_placeholder')}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 rows={4}
@@ -204,10 +196,10 @@ export default function CreateAssignmentPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               {/* Class */}
               <div className="space-y-2">
-                <Label>Class *</Label>
+                <Label>{t('school.assignments.field.class')} *</Label>
                 <Select value={classId} onValueChange={(v) => setClassId(v ?? '')}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select a class" />
+                    <SelectValue placeholder={t('school.assignments.field.class_placeholder')} />
                   </SelectTrigger>
                   <SelectContent>
                     {MOCK_CLASSES.map((cls) => (
@@ -221,7 +213,7 @@ export default function CreateAssignmentPage() {
 
               {/* Type */}
               <div className="space-y-2">
-                <Label>Type *</Label>
+                <Label>{t('school.assignments.field.type')} *</Label>
                 <Select
                   value={type}
                   onValueChange={(v) => {
@@ -230,7 +222,7 @@ export default function CreateAssignmentPage() {
                   }}
                 >
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select type" />
+                    <SelectValue placeholder={t('school.assignments.field.type_placeholder')} />
                   </SelectTrigger>
                   <SelectContent>
                     {(Object.entries(ASSIGNMENT_TYPE_LABELS) as [AssignmentType, string][]).map(
@@ -248,10 +240,12 @@ export default function CreateAssignmentPage() {
             {/* Linked Resource */}
             {type && hasResources && (
               <div className="space-y-2">
-                <Label>Linked Resource</Label>
+                <Label>{t('school.assignments.field.linked_resource')}</Label>
                 <Select value={resourceId} onValueChange={(v) => setResourceId(v ?? '')}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Link a resource (optional)" />
+                    <SelectValue
+                      placeholder={t('school.assignments.field.linked_resource_placeholder')}
+                    />
                   </SelectTrigger>
                   <SelectContent>
                     {availableResources.map((r) => (
@@ -262,7 +256,7 @@ export default function CreateAssignmentPage() {
                   </SelectContent>
                 </Select>
                 <p className="text-xs text-muted-foreground">
-                  Optionally link a {ASSIGNMENT_TYPE_LABELS[type as AssignmentType]?.toLowerCase()} to this assignment.
+                  {t('school.assignments.field.linked_resource_hint')}
                 </p>
               </div>
             )}
@@ -270,7 +264,7 @@ export default function CreateAssignmentPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               {/* Due Date */}
               <div className="space-y-2">
-                <Label htmlFor="dueDate">Due Date *</Label>
+                <Label htmlFor="dueDate">{t('school.assignments.field.due_date')} *</Label>
                 <Input
                   id="dueDate"
                   type="datetime-local"
@@ -282,7 +276,7 @@ export default function CreateAssignmentPage() {
 
               {/* Status */}
               <div className="space-y-2">
-                <Label>Status</Label>
+                <Label>{t('school.assignments.field.status')}</Label>
                 <Select
                   value={status}
                   onValueChange={(v) => setStatus((v ?? 'active') as AssignmentStatus)}
@@ -291,12 +285,12 @@ export default function CreateAssignmentPage() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="draft">Draft</SelectItem>
-                    <SelectItem value="active">Active</SelectItem>
+                    <SelectItem value="draft">{t('school.assignments.status.draft')}</SelectItem>
+                    <SelectItem value="active">{t('school.assignments.status.active')}</SelectItem>
                   </SelectContent>
                 </Select>
                 <p className="text-xs text-muted-foreground">
-                  Draft assignments are not visible to students.
+                  {t('school.assignments.field.status_hint')}
                 </p>
               </div>
             </div>
@@ -305,26 +299,19 @@ export default function CreateAssignmentPage() {
 
         {/* Actions */}
         <div className="mt-6 flex items-center justify-end gap-3">
-          <Button
-            type="button"
-            variant="outline"
-            render={<Link href="/school/assignments" />}
-          >
-            Cancel
+          <Button type="button" variant="outline" render={<Link href="/school/assignments" />}>
+            {t('school.assignments.action.cancel')}
           </Button>
-          <Button
-            type="submit"
-            disabled={saving || !title.trim() || !classId || !type || !dueDate}
-          >
+          <Button type="submit" disabled={saving || !title.trim() || !classId || !type || !dueDate}>
             {saving ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                Creating...
+                {t('school.assignments.action.creating')}
               </>
             ) : (
               <>
                 <Plus className="h-4 w-4" />
-                Create Assignment
+                {t('school.assignments.create_cta')}
               </>
             )}
           </Button>

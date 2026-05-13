@@ -27,6 +27,7 @@ import {
   Users,
   Award,
 } from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
 
 interface AffiliatePublicPageProps {
   applicationStatus?: string
@@ -63,6 +64,7 @@ function HeroSection({
   applicationStatus?: string
   isLoggedIn?: boolean
 }) {
+  const t = useT()
   return (
     <section className="relative px-4 pt-24 pb-20 sm:pt-32 sm:pb-28 text-center overflow-hidden">
       {/* Background glow */}
@@ -71,15 +73,16 @@ function HeroSection({
       <div className="relative max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
           <Sparkles className="w-4 h-4" />
-          Partnership Programme
+          {t('aff_comp.public.partnership_badge')}
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
-          Partner with <span className="text-primary">The English Hub</span>
+          {t('aff_comp.public.hero.title_part1')}{' '}
+          <span className="text-primary">{t('aff_comp.public.hero.title_brand')}</span>
         </h1>
 
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Help students achieve their potential. Earn while making a real difference in education.
+          {t('aff_comp.public.hero.subtitle')}
         </p>
 
         {!applicationStatus && (
@@ -89,7 +92,7 @@ function HeroSection({
               className="text-base px-10 h-13 shadow-lg shadow-primary/20"
               render={<a href="#apply" />}
             >
-              Get your code — instant
+              {t('aff_comp.public.cta.get_code')}
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
             <Button
@@ -98,7 +101,7 @@ function HeroSection({
               className="text-base px-8 h-13"
               render={<a href="#how-it-works" />}
             >
-              Learn More
+              {t('aff_comp.public.cta.learn_more')}
             </Button>
           </div>
         )}
@@ -110,31 +113,32 @@ function HeroSection({
 /* ─── Status Banner ─────────────────────────────────────────── */
 
 function StatusBanner({ status }: { status: string }) {
-  const config = {
+  const t = useT()
+  const config: Record<
+    string,
+    { icon: typeof Clock; titleKey: string; messageKey: string; color: string }
+  > = {
     pending: {
       icon: Clock,
-      title: 'Legacy application on file',
-      message:
-        'You have an older application on the legacy review queue. The programme is now self-serve — pick a code below and your account will activate instantly, overriding the old application.',
+      titleKey: 'aff_comp.public.status.pending.title',
+      messageKey: 'aff_comp.public.status.pending.message',
       color: 'bg-blue-500/10 border-blue-500/30 text-blue-400',
     },
     agreement_sent: {
       icon: FileText,
-      title: 'Agreement Ready to Sign',
-      message:
-        'Your application has been approved! Please check your email for the partnership agreement to sign.',
+      titleKey: 'aff_comp.public.status.agreement_sent.title',
+      messageKey: 'aff_comp.public.status.agreement_sent.message',
       color: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400',
     },
     agreement_signed: {
       icon: CheckCircle2,
-      title: 'Setting Up Your Account',
-      message:
-        "Your agreement is signed. We're setting up your affiliate account — your dashboard will be ready shortly.",
+      titleKey: 'aff_comp.public.status.agreement_signed.title',
+      messageKey: 'aff_comp.public.status.agreement_signed.message',
       color: 'bg-primary/10 border-primary/30 text-primary',
     },
   }
 
-  const c = config[status as keyof typeof config]
+  const c = config[status]
   if (!c) return null
   const Icon = c.icon
 
@@ -143,8 +147,8 @@ function StatusBanner({ status }: { status: string }) {
       <div className="max-w-3xl mx-auto">
         <div className={`rounded-2xl border p-6 sm:p-8 text-center ${c.color}`}>
           <Icon className="w-8 h-8 mx-auto mb-3" />
-          <h2 className="text-xl font-semibold text-foreground mb-2">{c.title}</h2>
-          <p className="text-muted-foreground">{c.message}</p>
+          <h2 className="text-xl font-semibold text-foreground mb-2">{t(c.titleKey)}</h2>
+          <p className="text-muted-foreground">{t(c.messageKey)}</p>
         </div>
       </div>
     </section>
@@ -154,27 +158,25 @@ function StatusBanner({ status }: { status: string }) {
 /* ─── Why Partner ────────────────────────────────────────────── */
 
 function WhyPartnerSection() {
+  const t = useT()
   const reasons = [
     {
       icon: Heart,
       color: 'text-rose-400 bg-rose-500/10',
-      title: 'Make a Real Difference',
-      description:
-        'Students improve their grades and build genuine confidence. Teachers save hours every week. Your recommendations change outcomes.',
+      titleKey: 'aff_comp.public.why.reason1.title',
+      descKey: 'aff_comp.public.why.reason1.desc',
     },
     {
       icon: PoundSterling,
       color: 'text-emerald-400 bg-emerald-500/10',
-      title: 'Earn Competitive Commission',
-      description:
-        'Receive commission on every subscription you refer. Recurring value for a recommendation you believe in.',
+      titleKey: 'aff_comp.public.why.reason2.title',
+      descKey: 'aff_comp.public.why.reason2.desc',
     },
     {
       icon: Rocket,
       color: 'text-primary bg-primary/10',
-      title: 'Premium Product, Easy Sell',
-      description:
-        'An AI-powered English revision platform that students genuinely love. The product speaks for itself — you just open the door.',
+      titleKey: 'aff_comp.public.why.reason3.title',
+      descKey: 'aff_comp.public.why.reason3.desc',
     },
   ]
 
@@ -183,17 +185,17 @@ function WhyPartnerSection() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Why Partner With Us
+            {t('aff_comp.public.why.heading')}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            This is more than an affiliate programme — it is a partnership built on shared impact.
+            {t('aff_comp.public.why.subheading')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {reasons.map((r) => (
             <Card
-              key={r.title}
+              key={r.titleKey}
               className="text-center p-0 border-border/40 hover:border-border/80 transition-colors"
             >
               <CardContent className="pt-8 pb-8 px-6">
@@ -202,8 +204,8 @@ function WhyPartnerSection() {
                 >
                   <r.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">{r.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{r.description}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-3">{t(r.titleKey)}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{t(r.descKey)}</p>
               </CardContent>
             </Card>
           ))}
@@ -216,27 +218,27 @@ function WhyPartnerSection() {
 /* ─── How It Works ───────────────────────────────────────────── */
 
 function HowItWorksSection() {
+  const t = useT()
   const steps = [
     {
       icon: ClipboardCheck,
-      title: 'Sign in',
-      description: 'Quick sign-in so your earnings tie to your account. 30 seconds.',
+      titleKey: 'aff_comp.public.how.step1.title',
+      descKey: 'aff_comp.public.how.step1.desc',
     },
     {
       icon: UserCheck,
-      title: 'Get your code',
-      description: 'Pick a code (or we generate one). Instant activation — no review, no wait.',
+      titleKey: 'aff_comp.public.how.step2.title',
+      descKey: 'aff_comp.public.how.step2.desc',
     },
     {
       icon: Share2,
-      title: 'Share your link',
-      description: 'Copy the ready-made post templates, swap in your code, include #ad, post away.',
+      titleKey: 'aff_comp.public.how.step3.title',
+      descKey: 'aff_comp.public.how.step3.desc',
     },
     {
       icon: TrendingUp,
-      title: 'Earn Commission',
-      description:
-        'You earn commission on every annual subscription (Student or Teacher) bought via your code or link. Tracked in real-time on your dashboard.',
+      titleKey: 'aff_comp.public.how.step4.title',
+      descKey: 'aff_comp.public.how.step4.desc',
     },
   ]
 
@@ -244,9 +246,11 @@ function HowItWorksSection() {
     <section id="how-it-works" className="px-4 py-20 sm:py-24 bg-muted/30">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">How It Works</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            {t('aff_comp.public.how.heading')}
+          </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            From application to earning — a simple, transparent process.
+            {t('aff_comp.public.how.subheading')}
           </p>
         </div>
 
@@ -255,7 +259,7 @@ function HowItWorksSection() {
           <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-border" />
 
           {steps.map((step, i) => (
-            <div key={step.title} className="relative text-center">
+            <div key={step.titleKey} className="relative text-center">
               {/* Step number circle */}
               <div className="relative mx-auto mb-5">
                 <div className="w-20 h-20 rounded-full bg-card border-2 border-primary/20 flex items-center justify-center mx-auto relative z-10">
@@ -265,9 +269,9 @@ function HowItWorksSection() {
                   {i + 1}
                 </div>
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">{t(step.titleKey)}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-[240px] mx-auto">
-                {step.description}
+                {t(step.descKey)}
               </p>
             </div>
           ))}
@@ -276,12 +280,10 @@ function HowItWorksSection() {
         {/* Annual-only commission rule — most important fact for new affiliates. */}
         <div className="mt-12 max-w-3xl mx-auto rounded-2xl border border-amber-500/30 bg-amber-500/10 p-6 text-center">
           <p className="text-sm font-semibold text-foreground">
-            You earn commission on annual subscriptions only.
+            {t('aff_comp.public.how.annual_only_lead')}
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Your code unlocks £9.99 off either annual plan: Student Annual £20/year (normally
-            £29.99) or Teacher Annual £58/year (normally £67.99). Student Monthly and Teacher
-            Monthly plans aren&apos;t discounted by your code and don&apos;t earn commission.
+            {t('aff_comp.public.how.annual_only_body')}
           </p>
         </div>
       </div>
@@ -292,11 +294,24 @@ function HowItWorksSection() {
 /* ─── Commission Structure ───────────────────────────────────── */
 
 function CommissionSection() {
+  const t = useT()
   const tiers = [
-    { plan: 'Student Monthly', commission: '£5.00' },
-    { plan: 'Student Annual', commission: '£15.00' },
-    { plan: 'Teacher Monthly', commission: '£7.00' },
-    { plan: 'Teacher Annual', commission: '£20.00' },
+    {
+      planKey: 'aff_comp.public.commission.plan.student_monthly',
+      commission: '£5.00',
+    },
+    {
+      planKey: 'aff_comp.public.commission.plan.student_annual',
+      commission: '£15.00',
+    },
+    {
+      planKey: 'aff_comp.public.commission.plan.teacher_monthly',
+      commission: '£7.00',
+    },
+    {
+      planKey: 'aff_comp.public.commission.plan.teacher_annual',
+      commission: '£20.00',
+    },
   ]
 
   return (
@@ -304,10 +319,10 @@ function CommissionSection() {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Commission Structure
+            {t('aff_comp.public.commission.heading')}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Transparent, competitive rates for every referral.
+            {t('aff_comp.public.commission.subheading')}
           </p>
         </div>
 
@@ -317,20 +332,22 @@ function CommissionSection() {
               <thead>
                 <tr className="border-b border-border/60 bg-muted/40">
                   <th className="text-left py-4 px-6 font-semibold text-foreground">
-                    Subscription Plan
+                    {t('aff_comp.public.commission.col_plan')}
                   </th>
                   <th className="text-right py-4 px-6 font-semibold text-foreground">
-                    Your Commission
+                    {t('aff_comp.public.commission.col_commission')}
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border/40">
-                {tiers.map((t) => (
-                  <tr key={t.plan} className="hover:bg-muted/20 transition-colors">
-                    <td className="py-4 px-6 text-foreground font-medium">{t.plan}</td>
+                {tiers.map((tr) => (
+                  <tr key={tr.planKey} className="hover:bg-muted/20 transition-colors">
+                    <td className="py-4 px-6 text-foreground font-medium">{t(tr.planKey)}</td>
                     <td className="py-4 px-6 text-right">
-                      <span className="text-primary font-bold text-base">{t.commission}</span>
-                      <span className="text-muted-foreground text-xs ml-1">per signup</span>
+                      <span className="text-primary font-bold text-base">{tr.commission}</span>
+                      <span className="text-muted-foreground text-xs ml-1">
+                        {t('aff_comp.public.commission.per_signup')}
+                      </span>
                     </td>
                   </tr>
                 ))}
@@ -340,8 +357,7 @@ function CommissionSection() {
         </Card>
 
         <p className="text-muted-foreground text-sm mt-5 text-center">
-          Commissions confirmed after 30 days of active subscription. Paid monthly via bank
-          transfer.
+          {t('aff_comp.public.commission.footnote')}
         </p>
       </div>
     </section>
@@ -351,15 +367,28 @@ function CommissionSection() {
 /* ─── Your Impact ────────────────────────────────────────────── */
 
 function ImpactSection() {
+  const t = useT()
   // 2026-04-25: previous stats ("2,400+ Students using the platform",
   // "15,000+ Essays marked by AI", "4.8/5 Average student rating") were
   // not verifiable at launch and have been withdrawn per brand-voice §11.5.
   // Same for the previous fabricated "Sophie T." testimonial. Real Founding
   // Creator testimonials will be added once consenting partners join.
   const stats = [
-    { value: '20%', label: 'Recurring commission', icon: GraduationCap },
-    { value: '30-day', label: 'Cookie window', icon: Users },
-    { value: '£20/yr', label: 'Your code drops the price for followers', icon: Award },
+    {
+      valueKey: 'aff_comp.public.impact.stat1.value',
+      labelKey: 'aff_comp.public.impact.stat1.label',
+      icon: GraduationCap,
+    },
+    {
+      valueKey: 'aff_comp.public.impact.stat2.value',
+      labelKey: 'aff_comp.public.impact.stat2.label',
+      icon: Users,
+    },
+    {
+      valueKey: 'aff_comp.public.impact.stat3.value',
+      labelKey: 'aff_comp.public.impact.stat3.label',
+      icon: Award,
+    },
   ]
 
   const testimonials: Array<{ quote: string; name: string; role: string }> = [
@@ -373,21 +402,21 @@ function ImpactSection() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Your Impact Matters
+            {t('aff_comp.public.impact.heading')}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Our partners do not just earn — they help students unlock their potential.
+            {t('aff_comp.public.impact.subheading')}
           </p>
         </div>
 
         {/* Stats */}
         <div className="grid sm:grid-cols-3 gap-6 mb-14">
           {stats.map((s) => (
-            <Card key={s.label} className="text-center p-0 border-border/40">
+            <Card key={s.labelKey} className="text-center p-0 border-border/40">
               <CardContent className="py-8 px-6">
                 <s.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-3xl font-bold text-foreground mb-1">{s.value}</div>
-                <div className="text-sm text-muted-foreground">{s.label}</div>
+                <div className="text-3xl font-bold text-foreground mb-1">{t(s.valueKey)}</div>
+                <div className="text-sm text-muted-foreground">{t(s.labelKey)}</div>
               </CardContent>
             </Card>
           ))}
@@ -396,15 +425,15 @@ function ImpactSection() {
         {/* Testimonials */}
         {testimonials.length > 0 ? (
           <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.map((t) => (
-              <Card key={t.name} className="p-0 border-border/40">
+            {testimonials.map((tm) => (
+              <Card key={tm.name} className="p-0 border-border/40">
                 <CardContent className="py-8 px-6">
                   <p className="text-foreground leading-relaxed mb-5 italic">
-                    &ldquo;{t.quote}&rdquo;
+                    &ldquo;{tm.quote}&rdquo;
                   </p>
                   <div>
-                    <div className="font-semibold text-foreground">{t.name}</div>
-                    <div className="text-sm text-muted-foreground">{t.role}</div>
+                    <div className="font-semibold text-foreground">{tm.name}</div>
+                    <div className="text-sm text-muted-foreground">{tm.role}</div>
                   </div>
                 </CardContent>
               </Card>
@@ -414,8 +443,7 @@ function ImpactSection() {
           <div className="max-w-2xl mx-auto text-center">
             <Card className="p-8 border-dashed border-border/60 bg-card/40">
               <p className="text-muted-foreground italic">
-                We are at launch. Founding Creator words will appear here as the first partners join
-                — verified, consented, real.
+                {t('aff_comp.public.impact.empty_testimonials')}
               </p>
             </Card>
           </div>
@@ -428,35 +456,38 @@ function ImpactSection() {
 /* ─── What You Get ───────────────────────────────────────────── */
 
 function WhatYouGetSection() {
+  const t = useT()
   const perks = [
-    { icon: Link2, text: 'Personal affiliate link and promo code' },
-    { icon: BarChart3, text: 'Real-time dashboard with earnings tracking' },
-    { icon: GraduationCap, text: 'Impact metrics — students helped, grades improved' },
-    { icon: FileText, text: 'Ready-made social media content and captions' },
-    { icon: Headphones, text: 'Priority support from our partnerships team' },
-    { icon: Award, text: 'Complimentary Premium subscription while you are an active partner' },
+    { icon: Link2, textKey: 'aff_comp.public.what_you_get.perk1' },
+    { icon: BarChart3, textKey: 'aff_comp.public.what_you_get.perk2' },
+    { icon: GraduationCap, textKey: 'aff_comp.public.what_you_get.perk3' },
+    { icon: FileText, textKey: 'aff_comp.public.what_you_get.perk4' },
+    { icon: Headphones, textKey: 'aff_comp.public.what_you_get.perk5' },
+    { icon: Award, textKey: 'aff_comp.public.what_you_get.perk6' },
   ]
 
   return (
     <section className="px-4 py-20 sm:py-24">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">What You Get</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            {t('aff_comp.public.what_you_get.heading')}
+          </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Everything you need to succeed as a partner.
+            {t('aff_comp.public.what_you_get.subheading')}
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-4">
           {perks.map((p) => (
             <div
-              key={p.text}
+              key={p.textKey}
               className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border/40 hover:border-border/80 transition-colors"
             >
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                 <p.icon className="w-5 h-5 text-primary" />
               </div>
-              <p className="text-foreground text-sm leading-relaxed pt-2">{p.text}</p>
+              <p className="text-foreground text-sm leading-relaxed pt-2">{t(p.textKey)}</p>
             </div>
           ))}
         </div>
@@ -468,39 +499,16 @@ function WhatYouGetSection() {
 /* ─── FAQ ─────────────────────────────────────────────────────── */
 
 function FAQSection() {
+  const t = useT()
   const faqs = [
-    {
-      q: 'Who can apply?',
-      a: 'Students, ex-students, tutors, teachers, and anyone with an audience interested in GCSE/IGCSE English revision. We welcome creators of all sizes — there is no minimum follower count.',
-    },
-    {
-      q: 'How do I get paid?',
-      a: 'Commissions are confirmed 30 days after each signup (to allow for refunds). Confirmed commissions are paid on the 1st of each month via bank transfer.',
-    },
-    {
-      q: 'What are the commission rates?',
-      a: 'You earn between £5 and £20 per signup depending on the subscription plan. See the commission table above for the full breakdown.',
-    },
-    {
-      q: 'How long does approval take?',
-      a: 'Zero. Enrolment is self-serve and instant — your code is live the moment you submit the form. We do not review applications.',
-    },
-    {
-      q: 'Do I need a certain follower count?',
-      a: 'No minimum follower count is required. We value authentic engagement and genuine passion for education over raw numbers. Micro-influencers are very welcome.',
-    },
-    {
-      q: 'What content should I create?',
-      a: 'Whatever feels natural to you — TikToks, Instagram Reels, YouTube videos, blog posts, or Stories. We provide ready-made content ideas and captions to help you get started. All promotional posts must include #ad disclosure (ASA requirement).',
-    },
-    {
-      q: 'Can I apply if I am under 18?',
-      a: 'Yes! We welcome student creators. If you are under 18, we will need your parent or guardian to confirm they are aware and provide consent.',
-    },
-    {
-      q: 'Do I get a free subscription?',
-      a: 'Active partners receive a complimentary Premium subscription for as long as they remain in the programme.',
-    },
+    { qKey: 'aff_comp.public.faq.q1.q', aKey: 'aff_comp.public.faq.q1.a' },
+    { qKey: 'aff_comp.public.faq.q2.q', aKey: 'aff_comp.public.faq.q2.a' },
+    { qKey: 'aff_comp.public.faq.q3.q', aKey: 'aff_comp.public.faq.q3.a' },
+    { qKey: 'aff_comp.public.faq.q4.q', aKey: 'aff_comp.public.faq.q4.a' },
+    { qKey: 'aff_comp.public.faq.q5.q', aKey: 'aff_comp.public.faq.q5.a' },
+    { qKey: 'aff_comp.public.faq.q6.q', aKey: 'aff_comp.public.faq.q6.a' },
+    { qKey: 'aff_comp.public.faq.q7.q', aKey: 'aff_comp.public.faq.q7.a' },
+    { qKey: 'aff_comp.public.faq.q8.q', aKey: 'aff_comp.public.faq.q8.a' },
   ]
 
   return (
@@ -508,13 +516,13 @@ function FAQSection() {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Frequently Asked Questions
+            {t('aff_comp.public.faq.heading')}
           </h2>
         </div>
 
         <div className="space-y-3">
           {faqs.map((f) => (
-            <FAQ key={f.q} q={f.q} a={f.a} />
+            <FAQ key={f.qKey} q={t(f.qKey)} a={t(f.aKey)} />
           ))}
         </div>
       </div>
@@ -545,23 +553,24 @@ function FAQ({ q, a }: { q: string; a: string }) {
 /* ─── Application Section ────────────────────────────────────── */
 
 function ApplicationSection({ isLoggedIn }: { isLoggedIn?: boolean }) {
+  const t = useT()
   return (
     <section id="apply" className="px-4 py-20 sm:py-24">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Get your affiliate code
+            {t('aff_comp.public.apply.heading')}
           </h2>
           <p className="text-muted-foreground text-lg">
             {isLoggedIn
-              ? 'Pick a code (or let us generate one) and start sharing immediately. No review, no wait.'
-              : 'Sign in or create an account first — takes 30 seconds.'}
+              ? t('aff_comp.public.apply.subheading_logged_in')
+              : t('aff_comp.public.apply.subheading_logged_out')}
           </p>
           <p className="mt-3 text-sm text-muted-foreground max-w-xl mx-auto">
             <span className="font-semibold text-foreground">
-              You earn commission on annual subscriptions only.
+              {t('aff_comp.public.apply.annual_only_note_lead')}
             </span>{' '}
-            Your code unlocks £9.99 off either annual plan — Student £20/yr or Teacher £58/yr.
+            {t('aff_comp.public.apply.annual_only_note_body')}
           </p>
         </div>
 
@@ -571,10 +580,11 @@ function ApplicationSection({ isLoggedIn }: { isLoggedIn?: boolean }) {
           <Card className="p-0 border-border/40">
             <CardContent className="py-12 px-6 text-center">
               <UserCheck className="w-12 h-12 text-primary mx-auto mb-5" />
-              <h3 className="text-xl font-semibold text-foreground mb-3">Sign in first</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">
+                {t('aff_comp.public.apply.signin_first')}
+              </h3>
               <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-                We need an account so your earnings are tied to you. Once signed in, you will get
-                your code on this page in one click.
+                {t('aff_comp.public.apply.signin_blurb')}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
@@ -582,7 +592,7 @@ function ApplicationSection({ isLoggedIn }: { isLoggedIn?: boolean }) {
                   className="text-base px-8 h-12"
                   render={<Link href="/auth/register?redirect=/affiliates%23apply" />}
                 >
-                  Create account
+                  {t('aff_comp.public.apply.create_account')}
                 </Button>
                 <Button
                   variant="outline"
@@ -590,7 +600,7 @@ function ApplicationSection({ isLoggedIn }: { isLoggedIn?: boolean }) {
                   className="text-base px-8 h-12"
                   render={<Link href="/auth/login?redirect=/affiliates%23apply" />}
                 >
-                  Sign in
+                  {t('aff_comp.public.apply.sign_in')}
                 </Button>
               </div>
             </CardContent>
@@ -604,36 +614,39 @@ function ApplicationSection({ isLoggedIn }: { isLoggedIn?: boolean }) {
 /* ─── Program Basics ─────────────────────────────────────────── */
 
 function ProgramBasicsSection() {
+  const t = useT()
   return (
     <section className="px-4 py-16 sm:py-20">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">
-          Program basics
+          {t('aff_comp.public.basics.heading')}
         </h2>
         <dl className="grid md:grid-cols-2 gap-4">
           <div className="p-6 rounded-lg border border-border/40 bg-card">
-            <dt className="font-semibold text-foreground mb-2">Attribution window</dt>
-            <dd className="text-muted-foreground">30-day cookie. Last-touch model.</dd>
-          </div>
-          <div className="p-6 rounded-lg border border-border/40 bg-card">
-            <dt className="font-semibold text-foreground mb-2">Minimum payout</dt>
+            <dt className="font-semibold text-foreground mb-2">
+              {t('aff_comp.public.basics.attribution.title')}
+            </dt>
             <dd className="text-muted-foreground">
-              £20 — payments made bi-monthly via BACS or PayPal.
+              {t('aff_comp.public.basics.attribution.desc')}
             </dd>
           </div>
           <div className="p-6 rounded-lg border border-border/40 bg-card">
-            <dt className="font-semibold text-foreground mb-2">Lifetime value tier</dt>
-            <dd className="text-muted-foreground">
-              Top 20 partners earn a continued percentage on subscription renewals for the lifetime
-              of the referred account.
-            </dd>
+            <dt className="font-semibold text-foreground mb-2">
+              {t('aff_comp.public.basics.min_payout.title')}
+            </dt>
+            <dd className="text-muted-foreground">{t('aff_comp.public.basics.min_payout.desc')}</dd>
           </div>
           <div className="p-6 rounded-lg border border-border/40 bg-card">
-            <dt className="font-semibold text-foreground mb-2">Commission</dt>
-            <dd className="text-muted-foreground">
-              30% of first-year revenue for every paying student you refer; 15% of first-year
-              revenue for school seat-licences.
-            </dd>
+            <dt className="font-semibold text-foreground mb-2">
+              {t('aff_comp.public.basics.ltv.title')}
+            </dt>
+            <dd className="text-muted-foreground">{t('aff_comp.public.basics.ltv.desc')}</dd>
+          </div>
+          <div className="p-6 rounded-lg border border-border/40 bg-card">
+            <dt className="font-semibold text-foreground mb-2">
+              {t('aff_comp.public.basics.commission.title')}
+            </dt>
+            <dd className="text-muted-foreground">{t('aff_comp.public.basics.commission.desc')}</dd>
           </div>
         </dl>
       </div>
@@ -650,6 +663,7 @@ function BottomCTA({
   isLoggedIn?: boolean
   applicationStatus?: string
 }) {
+  const t = useT()
   if (applicationStatus) return null
 
   return (
@@ -660,18 +674,17 @@ function BottomCTA({
 
           <div className="relative">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-              Join our growing community of partners
+              {t('aff_comp.public.bottom_cta.heading')}
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto mb-8 text-base">
-              Help students succeed while building a meaningful income stream. Self-serve enrolment
-              — your code is ready in one click.
+              {t('aff_comp.public.bottom_cta.body')}
             </p>
             <Button
               size="lg"
               className="text-base px-10 h-12 shadow-lg shadow-primary/20"
               render={<a href="#apply" />}
             >
-              Get your code
+              {t('aff_comp.public.bottom_cta.button')}
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
           </div>
@@ -694,6 +707,7 @@ interface EnrolSuccess {
 }
 
 function EnrolForm() {
+  const t = useT()
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [result, setResult] = useState<EnrolSuccess | null>(null)
@@ -736,7 +750,7 @@ function EnrolForm() {
       })
       const data = await res.json()
       if (!res.ok) {
-        setError(data.error || 'Something went wrong. Please try again.')
+        setError(data.error || t('aff_comp.enrol.error_generic'))
       } else {
         setResult({
           code: data.code,
@@ -746,7 +760,7 @@ function EnrolForm() {
         })
       }
     } catch {
-      setError('Network error. Please try again.')
+      setError(t('aff_comp.enrol.error_network'))
     }
     setSubmitting(false)
   }
@@ -768,9 +782,9 @@ function EnrolForm() {
 
           <div>
             <label htmlFor="chosen_code" className="label">
-              Your affiliate code{' '}
+              {t('aff_comp.enrol.field.code.label')}{' '}
               <span className="text-muted-foreground font-normal">
-                (optional — we will generate one if you leave this blank)
+                {t('aff_comp.enrol.field.code.optional')}
               </span>
             </label>
             <input
@@ -779,17 +793,18 @@ function EnrolForm() {
               name="chosen_code"
               value={chosenCode}
               onChange={(e) => handleCodeChange(e.target.value)}
-              placeholder="e.g. SARAH25 or ENGLISH-WITH-MAYA"
+              placeholder={t('aff_comp.enrol.field.code.placeholder')}
               maxLength={20}
               className="input-field font-mono tracking-wide uppercase"
               autoComplete="off"
             />
             <p className="text-xs text-muted-foreground mt-1.5">
-              4-20 characters. Letters, numbers, hyphens. We will uppercase it automatically.
+              {t('aff_comp.enrol.field.code.hint')}
               {codePreview && codePreview !== chosenCode.trim() && (
                 <>
                   {' '}
-                  Preview: <span className="font-mono text-foreground">{codePreview}</span>
+                  {t('aff_comp.enrol.field.code.preview_prefix')}{' '}
+                  <span className="font-mono text-foreground">{codePreview}</span>
                 </>
               )}
             </p>
@@ -797,16 +812,16 @@ function EnrolForm() {
 
           <div>
             <label htmlFor="display_name" className="label">
-              Display name{' '}
+              {t('aff_comp.enrol.field.display_name.label')}{' '}
               <span className="text-muted-foreground font-normal">
-                (optional — shown on your dashboard)
+                {t('aff_comp.enrol.field.display_name.optional')}
               </span>
             </label>
             <input
               type="text"
               id="display_name"
               name="display_name"
-              placeholder="Sarah"
+              placeholder={t('aff_comp.enrol.field.display_name.placeholder')}
               maxLength={60}
               className="input-field"
             />
@@ -821,18 +836,20 @@ function EnrolForm() {
                 onChange={(e) => setIs18Plus(e.target.checked)}
                 className="mt-1"
               />
-              <span className="text-sm text-muted-foreground">I am 18 or over</span>
+              <span className="text-sm text-muted-foreground">
+                {t('aff_comp.enrol.age.18_plus')}
+              </span>
             </label>
 
             {!is18Plus && (
               <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-5 space-y-4">
                 <p className="text-sm text-amber-800 font-medium">
-                  Since you are under 18, we need a parent or guardian contact on file:
+                  {t('aff_comp.enrol.age.under18_lead')}
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="guardian_name" className="label">
-                      Guardian name *
+                      {t('aff_comp.enrol.field.guardian_name')}
                     </label>
                     <input
                       type="text"
@@ -844,7 +861,7 @@ function EnrolForm() {
                   </div>
                   <div>
                     <label htmlFor="guardian_email" className="label">
-                      Guardian email *
+                      {t('aff_comp.enrol.field.guardian_email')}
                     </label>
                     <input
                       type="email"
@@ -867,11 +884,11 @@ function EnrolForm() {
                 className="mt-1"
               />
               <span className="text-sm text-muted-foreground">
-                I understand every promotional post must include a clear{' '}
-                <strong className="text-foreground">#ad</strong> disclosure (ASA + CAP Code). I have
-                read the{' '}
+                {t('aff_comp.enrol.disclosure_check_part1')}{' '}
+                <strong className="text-foreground">#ad</strong>{' '}
+                {t('aff_comp.enrol.disclosure_check_part2')}{' '}
                 <a href="/affiliates/resources" className="underline">
-                  posting guidelines
+                  {t('aff_comp.enrol.disclosure_check_link')}
                 </a>
                 . *
               </span>
@@ -884,11 +901,11 @@ function EnrolForm() {
             size="lg"
             className="w-full h-12 text-base"
           >
-            {submitting ? 'Creating your code…' : 'Get my affiliate code'}
+            {submitting ? t('aff_comp.enrol.submit_creating') : t('aff_comp.enrol.submit')}
           </Button>
 
           <p className="text-xs text-muted-foreground text-center">
-            Instant activation. No review queue. Share links the moment you click.
+            {t('aff_comp.enrol.footnote')}
           </p>
         </form>
       </CardContent>
@@ -899,6 +916,7 @@ function EnrolForm() {
 /* ─── Success card — shown after enrolment ───────────────────── */
 
 function EnrolSuccessCard({ result }: { result: EnrolSuccess }) {
+  const t = useT()
   return (
     <div className="space-y-6">
       <Card className="p-0 border-border/40">
@@ -909,15 +927,17 @@ function EnrolSuccessCard({ result }: { result: EnrolSuccess }) {
             </div>
           </div>
           <h3 className="text-2xl font-bold text-foreground text-center mb-2">
-            {result.already_enrolled ? 'You are already enrolled' : 'You are in.'}
+            {result.already_enrolled
+              ? t('aff_comp.enrol.success.title_already')
+              : t('aff_comp.enrol.success.title_new')}
           </h3>
           <p className="text-muted-foreground text-center mb-8">
-            Start sharing — every signup through your link or code is tracked automatically.
+            {t('aff_comp.enrol.success.body')}
           </p>
 
           <div className="space-y-4">
-            <CopyRow label="Your affiliate code" value={result.code} monospace />
-            <CopyRow label="Your referral link" value={result.referral_url} />
+            <CopyRow label={t('aff_comp.enrol.success.label_code')} value={result.code} monospace />
+            <CopyRow label={t('aff_comp.enrol.success.label_link')} value={result.referral_url} />
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -926,7 +946,7 @@ function EnrolSuccessCard({ result }: { result: EnrolSuccess }) {
               className="text-base px-6 h-12 flex-1"
               render={<Link href={result.dashboard_url} />}
             >
-              Go to your dashboard
+              {t('aff_comp.enrol.success.go_dashboard')}
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
             <Button
@@ -935,7 +955,7 @@ function EnrolSuccessCard({ result }: { result: EnrolSuccess }) {
               className="text-base px-6 h-12"
               render={<Link href="/affiliates/resources" />}
             >
-              Full resources
+              {t('aff_comp.enrol.success.full_resources')}
             </Button>
           </div>
         </CardContent>
@@ -955,6 +975,7 @@ function CopyRow({
   value: string
   monospace?: boolean
 }) {
+  const t = useT()
   const [copied, setCopied] = useState(false)
   const handleCopy = async () => {
     try {
@@ -977,7 +998,7 @@ function CopyRow({
           {value}
         </div>
         <Button type="button" variant="outline" onClick={handleCopy} className="px-4 shrink-0">
-          {copied ? 'Copied' : 'Copy'}
+          {copied ? t('aff_comp.copied') : t('aff_comp.copy')}
         </Button>
       </div>
     </div>
@@ -987,6 +1008,9 @@ function CopyRow({
 /* ─── Post templates (starter kit) ───────────────────────────── */
 
 function PostTemplates({ code, referralUrl }: { code: string; referralUrl: string }) {
+  const t = useT()
+  // The template bodies stay in English-language source — they are content the
+  // affiliate copies to share on social. Surrounding chrome is i18n'd.
   const templates = [
     {
       platform: 'TikTok (15-30s)',
@@ -1010,25 +1034,26 @@ function PostTemplates({ code, referralUrl }: { code: string; referralUrl: strin
     <Card className="p-0 border-border/40">
       <CardContent className="p-6 sm:p-8">
         <div className="mb-6">
-          <h3 className="text-lg font-semibold text-foreground mb-1">Starter post templates</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-1">
+            {t('aff_comp.public.templates.heading')}
+          </h3>
           <p className="text-sm text-muted-foreground">
-            Copy, paste, personalise. Every template already includes the mandatory{' '}
-            <strong className="text-foreground">#ad</strong> disclosure required by ASA + CAP Code.
+            {t('aff_comp.public.templates.intro_part1')}{' '}
+            <strong className="text-foreground">#ad</strong>{' '}
+            {t('aff_comp.public.templates.intro_part2')}
           </p>
         </div>
         <div className="space-y-5">
-          {templates.map((t) => (
-            <PostTemplateCard key={t.platform} platform={t.platform} body={t.body} />
+          {templates.map((tpl) => (
+            <PostTemplateCard key={tpl.platform} platform={tpl.platform} body={tpl.body} />
           ))}
         </div>
         <div className="mt-6 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-900">
-          <p className="font-semibold mb-1">Disclosure must be prominent</p>
+          <p className="font-semibold mb-1">{t('aff_comp.public.templates.disclosure_title')}</p>
           <p>
-            <strong>#ad</strong> must appear at the start of a caption, not buried at the end, and
-            must be visible without &quot;more&quot;/&quot;read more&quot; truncation. On video: say
-            &quot;this is a paid partnership&quot; or show the word <strong>ad</strong> on-screen
-            for at least 3 seconds. Failing to disclose is an ASA breach and we will suspend your
-            account.
+            <strong>#ad</strong> {t('aff_comp.public.templates.disclosure_body_part1')}{' '}
+            {t('aff_comp.public.templates.disclosure_body_part2')} <strong>ad</strong>{' '}
+            {t('aff_comp.public.templates.disclosure_body_part3')}
           </p>
         </div>
       </CardContent>
@@ -1037,6 +1062,7 @@ function PostTemplates({ code, referralUrl }: { code: string; referralUrl: strin
 }
 
 function PostTemplateCard({ platform, body }: { platform: string; body: string }) {
+  const t = useT()
   const [copied, setCopied] = useState(false)
   const handleCopy = async () => {
     try {
@@ -1054,7 +1080,7 @@ function PostTemplateCard({ platform, body }: { platform: string; body: string }
           {platform}
         </span>
         <Button type="button" variant="outline" size="sm" onClick={handleCopy}>
-          {copied ? 'Copied' : 'Copy'}
+          {copied ? t('aff_comp.copied') : t('aff_comp.copy')}
         </Button>
       </div>
       <pre className="whitespace-pre-wrap text-sm text-foreground font-sans leading-relaxed">

@@ -48,6 +48,7 @@ import {
 
 import type { LessonPresentation } from '@/data/curriculum/y7-presentation-content'
 import type { TeacherPresentation } from '@/lib/pptx/content-adapter'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Build the full catalogue ───────────────────────────────────────────────
 
@@ -61,28 +62,20 @@ const allCurriculumPresentations: LessonPresentation[] = [
 
 const catalogue: PresentationCatalogueEntry[] = [
   ...allCurriculumPresentations.map(toCatalogueEntry),
-  ...teacherPowerpoints.map((tp) =>
-    teacherToCatalogueEntry(tp as unknown as TeacherPresentation),
-  ),
+  ...teacherPowerpoints.map((tp) => teacherToCatalogueEntry(tp as unknown as TeacherPresentation)),
 ]
 
 // Lookup maps keyed by id for quick access during download
-const curriculumById = new Map(
-  allCurriculumPresentations.map((p) => [p.id, p]),
-)
+const curriculumById = new Map(allCurriculumPresentations.map((p) => [p.id, p]))
 const teacherById = new Map(
   teacherPowerpoints.map((tp) => [tp.id, tp as unknown as TeacherPresentation]),
 )
 
 // ─── Derive filter options ──────────────────────────────────────────────────
 
-const YEAR_GROUPS = Array.from(
-  new Set(catalogue.map((e) => e.yearGroup)),
-).sort()
+const YEAR_GROUPS = Array.from(new Set(catalogue.map((e) => e.yearGroup))).sort()
 
-const BOARDS = Array.from(
-  new Set(catalogue.map((e) => e.examBoard)),
-).sort()
+const BOARDS = Array.from(new Set(catalogue.map((e) => e.examBoard))).sort()
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
 
@@ -133,6 +126,7 @@ function groupByYearGroup(entries: PresentationCatalogueEntry[]): YearGroupSecti
 // ─── Component ──────────────────────────────────────────────────────────────
 
 export default function PresentationLibraryPage() {
+  const t = useT()
   // Filters
   const [searchQuery, setSearchQuery] = useState('')
   const [yearFilter, setYearFilter] = useState('all')
@@ -152,17 +146,11 @@ export default function PresentationLibraryPage() {
   const filtered = useMemo(() => {
     return catalogue.filter((entry) => {
       if (yearFilter !== 'all' && entry.yearGroup !== yearFilter) return false
-      if (
-        boardFilter !== 'all' &&
-        entry.examBoard !== boardFilter &&
-        entry.examBoard !== 'All'
-      )
+      if (boardFilter !== 'all' && entry.examBoard !== boardFilter && entry.examBoard !== 'All')
         return false
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase()
-        const haystack = [entry.title, entry.termUnit, entry.yearGroup]
-          .join(' ')
-          .toLowerCase()
+        const haystack = [entry.title, entry.termUnit, entry.yearGroup].join(' ').toLowerCase()
         if (!haystack.includes(q)) return false
       }
       return true
@@ -216,9 +204,7 @@ export default function PresentationLibraryPage() {
 
       if (!response.ok) {
         const err = await response.json().catch(() => ({}))
-        throw new Error(
-          (err as { error?: string }).error ?? 'Failed to generate PowerPoint',
-        )
+        throw new Error((err as { error?: string }).error ?? 'Failed to generate PowerPoint')
       }
 
       // Trigger download
@@ -234,9 +220,7 @@ export default function PresentationLibraryPage() {
     } catch (err) {
       console.error('Download failed:', err)
       alert(
-        err instanceof Error
-          ? err.message
-          : 'An error occurred while generating the PowerPoint.',
+        err instanceof Error ? err.message : 'An error occurred while generating the PowerPoint.',
       )
     } finally {
       setDownloadingId(null)
@@ -259,27 +243,25 @@ export default function PresentationLibraryPage() {
             </Link>
             <Presentation className="h-6 w-6 text-blue-500" />
             <h1 className="text-2xl font-bold tracking-tight">
-              Presentation Library
+              {t('school.lessons.library.title')}
             </h1>
           </div>
-          <p className="text-muted-foreground mt-1 ml-8">
-            Pre-built lesson presentations ready to download as PowerPoint. Browse
-            by year group, search by topic, and download in one click.
-          </p>
+          <p className="text-muted-foreground mt-1 ml-8">{t('school.lessons.library.subtitle')}</p>
 
           {/* Stats */}
           <div className="mt-4 ml-8 flex flex-wrap gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <Layers className="h-4 w-4" />
-              {catalogue.length} presentations
+              {catalogue.length} {t('school.lessons.library.presentations_suffix')}
             </span>
             <span className="flex items-center gap-1.5">
               <GraduationCap className="h-4 w-4" />
-              {YEAR_GROUPS.length} year groups
+              {YEAR_GROUPS.length} {t('school.lessons.library.year_groups_suffix')}
             </span>
             <span className="flex items-center gap-1.5">
               <BookOpen className="h-4 w-4" />
-              {catalogue.reduce((sum, e) => sum + e.slideCount, 0)} total slides
+              {catalogue.reduce((sum, e) => sum + e.slideCount, 0)}{' '}
+              {t('school.lessons.library.total_slides_suffix')}
             </span>
           </div>
         </div>
@@ -293,7 +275,7 @@ export default function PresentationLibraryPage() {
             <div className="relative flex-1 min-w-[200px] max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search presentations..."
+                placeholder={t('school.lessons.library.search_placeholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9 bg-background"
@@ -301,16 +283,13 @@ export default function PresentationLibraryPage() {
             </div>
 
             {/* Year Group */}
-            <Select
-              value={yearFilter}
-              onValueChange={(v) => setYearFilter(v ?? 'all')}
-            >
+            <Select value={yearFilter} onValueChange={(v) => setYearFilter(v ?? 'all')}>
               <SelectTrigger className="w-[140px] bg-background">
                 <GraduationCap className="h-4 w-4 mr-1.5 text-muted-foreground" />
-                <SelectValue placeholder="Year group" />
+                <SelectValue placeholder={t('school.lessons.library.year_group')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Years</SelectItem>
+                <SelectItem value="all">{t('school.lessons.library.all_years')}</SelectItem>
                 {YEAR_GROUPS.map((yg) => (
                   <SelectItem key={yg} value={yg}>
                     {yg}
@@ -320,16 +299,13 @@ export default function PresentationLibraryPage() {
             </Select>
 
             {/* Board */}
-            <Select
-              value={boardFilter}
-              onValueChange={(v) => setBoardFilter(v ?? 'all')}
-            >
+            <Select value={boardFilter} onValueChange={(v) => setBoardFilter(v ?? 'all')}>
               <SelectTrigger className="w-[140px] bg-background">
                 <Filter className="h-4 w-4 mr-1.5 text-muted-foreground" />
-                <SelectValue placeholder="Board" />
+                <SelectValue placeholder={t('school.lessons.library.board')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Boards</SelectItem>
+                <SelectItem value="all">{t('school.lessons.library.all_boards')}</SelectItem>
                 {BOARDS.map((b) => (
                   <SelectItem key={b} value={b}>
                     {b}
@@ -350,7 +326,7 @@ export default function PresentationLibraryPage() {
                 }}
                 className="text-muted-foreground"
               >
-                Clear filters
+                {t('school.lessons.library.clear_filters')}
               </Button>
             )}
           </div>
@@ -363,9 +339,7 @@ export default function PresentationLibraryPage() {
           <div className="text-center py-16 text-muted-foreground">
             <Presentation className="h-12 w-12 mx-auto mb-3 opacity-30" />
             <p className="text-lg font-medium">No presentations found</p>
-            <p className="text-sm mt-1">
-              Try adjusting your search or filters.
-            </p>
+            <p className="text-sm mt-1">Try adjusting your search or filters.</p>
           </div>
         ) : (
           <div className="space-y-8">
@@ -384,10 +358,7 @@ export default function PresentationLibraryPage() {
                       <ChevronDown className="h-5 w-5 text-muted-foreground" />
                     )}
                     <h2 className="text-lg font-semibold">{group.label}</h2>
-                    <Badge
-                      variant="outline"
-                      className="text-xs text-muted-foreground"
-                    >
+                    <Badge variant="outline" className="text-xs text-muted-foreground">
                       {group.entries.length} presentation{group.entries.length !== 1 ? 's' : ''}
                     </Badge>
                   </button>
@@ -425,13 +396,8 @@ export default function PresentationLibraryPage() {
                                     {entry.examBoard}
                                   </Badge>
                                 )}
-                                <Badge
-                                  variant="outline"
-                                  className={sourceColour(entry.source)}
-                                >
-                                  {entry.source === 'curriculum'
-                                    ? 'Curriculum'
-                                    : 'Teacher Pack'}
+                                <Badge variant="outline" className={sourceColour(entry.source)}>
+                                  {entry.source === 'curriculum' ? 'Curriculum' : 'Teacher Pack'}
                                 </Badge>
                               </div>
 
@@ -493,9 +459,7 @@ export default function PresentationLibraryPage() {
                                   variant="outline"
                                   onClick={() => togglePreview(entry.id)}
                                   title={
-                                    isPreviewing
-                                      ? 'Hide slide preview'
-                                      : 'Preview slide titles'
+                                    isPreviewing ? 'Hide slide preview' : 'Preview slide titles'
                                   }
                                 >
                                   {isPreviewing ? (

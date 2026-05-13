@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { t } from '@/lib/i18n/t'
 
 import TextsRevisionView from './texts-view'
 
@@ -19,15 +20,11 @@ export default async function TextsRevisionPage() {
       {!board && (
         <section className="mx-auto max-w-5xl px-4 pt-8 pb-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            GCSE English Literature set texts — revision library
+            {await t('texts.boardless.h2')}
           </h2>
-          <p className="mt-2 text-slate-600">
-            Choose a text to see full revision notes, character maps, theme trackers, model
-            paragraphs, and past-paper practice. Each entry below is tagged with the boards that
-            prescribe it — pick your exam board to filter to just yours.
-          </p>
+          <p className="mt-2 text-slate-600">{await t('texts.boardless.intro')}</p>
 
-          <h3 className="mt-6 text-lg font-semibold">Shakespeare</h3>
+          <h3 className="mt-6 text-lg font-semibold">{await t('texts.section.shakespeare')}</h3>
           <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
             <li>
               <Link className="text-blue-700 hover:underline" href="/revision/texts/macbeth">
@@ -67,7 +64,7 @@ export default async function TextsRevisionPage() {
             </li>
           </ul>
 
-          <h3 className="mt-6 text-lg font-semibold">19th-century novel</h3>
+          <h3 className="mt-6 text-lg font-semibold">{await t('texts.section.c19_novel')}</h3>
           <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
             <li>
               <Link
@@ -122,7 +119,9 @@ export default async function TextsRevisionPage() {
             </li>
           </ul>
 
-          <h3 className="mt-6 text-lg font-semibold">Modern prose + drama</h3>
+          <h3 className="mt-6 text-lg font-semibold">
+            {await t('texts.section.modern_prose_drama')}
+          </h3>
           <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
             <li>
               <Link
@@ -172,7 +171,7 @@ export default async function TextsRevisionPage() {
             </li>
           </ul>
 
-          <h3 className="mt-6 text-lg font-semibold">IGCSE + A-Level texts</h3>
+          <h3 className="mt-6 text-lg font-semibold">{await t('texts.section.igcse_a_level')}</h3>
           <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
             <li>
               The Kite Runner{' '}
@@ -199,14 +198,15 @@ export default async function TextsRevisionPage() {
             </li>
           </ul>
 
-          <h3 className="mt-6 text-lg font-semibold">Pearson IGCSE Language A (4EA1) anthology</h3>
+          <h3 className="mt-6 text-lg font-semibold">
+            {await t('texts.section.pearson_anthology')}
+          </h3>
           <p className="mt-1 text-sm text-slate-600">
-            Section A non-fiction, Section B poetry and Section C prose for the Pearson Edexcel
-            International GCSE English Language A specification.
+            {await t('texts.section.pearson_anthology_note')}
           </p>
           <ul className="mt-2 list-disc space-y-1 pl-6 text-slate-700">
             <li>
-              <strong>Non-fiction:</strong>{' '}
+              <strong>{await t('texts.label.non_fiction')}</strong>{' '}
               <Link
                 className="text-blue-700 hover:underline"
                 href="/revision/texts/the-danger-of-a-single-story"
@@ -276,7 +276,7 @@ export default async function TextsRevisionPage() {
               .
             </li>
             <li>
-              <strong>Poetry:</strong>{' '}
+              <strong>{await t('texts.label.poetry')}</strong>{' '}
               <Link
                 className="text-blue-700 hover:underline"
                 href="/revision/poetry/pearson-igcse/disabled"
@@ -384,7 +384,7 @@ export default async function TextsRevisionPage() {
               .
             </li>
             <li>
-              <strong>Prose:</strong>{' '}
+              <strong>{await t('texts.label.prose')}</strong>{' '}
               <Link className="text-blue-700 hover:underline" href="/revision/texts/the-door">
                 The Door
               </Link>
@@ -459,16 +459,13 @@ export default async function TextsRevisionPage() {
       ) : (
         <section className="mx-auto max-w-5xl px-4 pb-10 sm:px-6 lg:px-8">
           <div className="rounded-lg border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-lg font-semibold">Personalise your revision</h3>
-            <p className="mt-1 text-slate-600">
-              Pick your exam board to filter the texts above to just the ones you&apos;re sitting,
-              and to unlock progress tracking.
-            </p>
+            <h3 className="text-lg font-semibold">{await t('texts.personalise.title')}</h3>
+            <p className="mt-1 text-slate-600">{await t('texts.personalise.body')}</p>
             <Link
               href="/board-select?next=/revision/texts"
               className="mt-3 inline-block rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
             >
-              Choose your exam board
+              {await t('texts.personalise.cta')}
             </Link>
           </div>
         </section>

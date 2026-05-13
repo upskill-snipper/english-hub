@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { t } from '@/lib/i18n/t'
+import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy',
@@ -15,9 +15,207 @@ export const metadata: Metadata = {
 }
 
 export default async function CookiePolicyPage() {
-  const title = await t('legal.cookie_policy')
-  const operatedBy = await t('legal.operated_by')
-  const lastUpdatedLabel = await t('page.last_updated')
+  const v = await tMany([
+    'legal.cookie_policy',
+    'legal.operated_by',
+    'page.last_updated',
+    'cookie_policy.last_updated_value',
+    'cookie_policy.s1.h2',
+    'cookie_policy.s1.p1',
+    'cookie_policy.s1.p2',
+    'cookie_policy.s2.h2',
+    'cookie_policy.s2.p1',
+    'cookie_policy.s3.h2',
+    'cookie_policy.s3.essential.h3',
+    'cookie_policy.s3.essential.p',
+    'cookie_policy.s3.essential.li1_strong',
+    'cookie_policy.s3.essential.li1_text',
+    'cookie_policy.s3.essential.li2_strong',
+    'cookie_policy.s3.essential.li2_text',
+    'cookie_policy.s3.functional.h3',
+    'cookie_policy.s3.functional.p',
+    'cookie_policy.s3.functional.li1_strong',
+    'cookie_policy.s3.functional.li1_text',
+    'cookie_policy.s3.functional.li2_strong',
+    'cookie_policy.s3.functional.li2_text',
+    'cookie_policy.s3.analytics.h3',
+    'cookie_policy.s3.analytics.p',
+    'cookie_policy.s3.third_party.h3',
+    'cookie_policy.s3.third_party.p',
+    'cookie_policy.s3.third_party.li1_strong',
+    'cookie_policy.s3.third_party.li1_text_before',
+    'cookie_policy.s3.third_party.li1_link',
+    'cookie_policy.s3.third_party.li2_strong',
+    'cookie_policy.s3.third_party.li2_text_before',
+    'cookie_policy.s3.third_party.li2_link',
+    'cookie_policy.s4.h2',
+    'cookie_policy.s4.p',
+    'cookie_policy.s4.th_name',
+    'cookie_policy.s4.th_provider',
+    'cookie_policy.s4.th_purpose',
+    'cookie_policy.s4.th_duration',
+    'cookie_policy.s4.th_type',
+    'cookie_policy.s4.type.essential',
+    'cookie_policy.s4.type.functional',
+    'cookie_policy.s4.type.analytics',
+    'cookie_policy.s4.type.third_party',
+    'cookie_policy.s4.dur_session',
+    'cookie_policy.s4.dur_1y',
+    'cookie_policy.s4.dur_2y',
+    'cookie_policy.s4.dur_up_1y',
+    'cookie_policy.s4.dur_30m',
+    'cookie_policy.s4.dur_60d',
+    'cookie_policy.s4.purp_sb_auth',
+    'cookie_policy.s4.purp_sb_pkce',
+    'cookie_policy.s4.purp_csrf',
+    'cookie_policy.s4.purp_board',
+    'cookie_policy.s4.purp_theme',
+    'cookie_policy.s4.purp_sentry',
+    'cookie_policy.s4.purp_ga',
+    'cookie_policy.s4.purp_ga_session',
+    'cookie_policy.s4.purp_stripe_mid',
+    'cookie_policy.s4.purp_stripe_sid',
+    'cookie_policy.s4.purp_rewardful',
+    'cookie_policy.s4.note_wildcard',
+    'cookie_policy.s5.h2',
+    'cookie_policy.s5.p_session_strong',
+    'cookie_policy.s5.p_session_text',
+    'cookie_policy.s5.p_persistent_strong',
+    'cookie_policy.s5.p_persistent_text',
+    'cookie_policy.s6.h2',
+    'cookie_policy.s6.p_intro',
+    'cookie_policy.s6.li1',
+    'cookie_policy.s6.li2',
+    'cookie_policy.s6.li3',
+    'cookie_policy.s6.li4',
+    'cookie_policy.s6.p_outro',
+    'cookie_policy.s6.browser_chrome',
+    'cookie_policy.s6.browser_firefox',
+    'cookie_policy.s6.browser_safari',
+    'cookie_policy.s6.browser_edge',
+    'cookie_policy.s7.h2',
+    'cookie_policy.s7.p_intro',
+    'cookie_policy.s7.li1_strong',
+    'cookie_policy.s7.li1_text',
+    'cookie_policy.s7.li2_strong',
+    'cookie_policy.s7.li2_text',
+    'cookie_policy.s7.li3_strong',
+    'cookie_policy.s7.li3_text',
+    'cookie_policy.s7.li4_strong',
+    'cookie_policy.s7.li4_text',
+    'cookie_policy.s8.h2',
+    'cookie_policy.s8.p1',
+    'cookie_policy.s8.p2_pre',
+    'cookie_policy.s8.p2_strong',
+    'cookie_policy.s8.p2_post',
+    'cookie_policy.s8.p3_pre',
+    'cookie_policy.s9.h2',
+    'cookie_policy.s9.p',
+    'cookie_policy.s10.h2',
+    'cookie_policy.s10.p_pre',
+    'cookie_policy.s10.p_link',
+  ])
+  let i = 0
+  const next = () => v[i++]
+
+  const title = next()
+  const operatedBy = next()
+  const lastUpdatedLabel = next()
+  const lastUpdatedValue = next()
+  const s1H2 = next()
+  const s1P1 = next()
+  const s1P2 = next()
+  const s2H2 = next()
+  const s2P1 = next()
+  const s3H2 = next()
+  const s3EssH3 = next()
+  const s3EssP = next()
+  const s3EssLi1S = next()
+  const s3EssLi1T = next()
+  const s3EssLi2S = next()
+  const s3EssLi2T = next()
+  const s3FuncH3 = next()
+  const s3FuncP = next()
+  const s3FuncLi1S = next()
+  const s3FuncLi1T = next()
+  const s3FuncLi2S = next()
+  const s3FuncLi2T = next()
+  const s3AnaH3 = next()
+  const s3AnaP = next()
+  const s3TpH3 = next()
+  const s3TpP = next()
+  const s3TpLi1S = next()
+  const s3TpLi1TB = next()
+  const s3TpLi1L = next()
+  const s3TpLi2S = next()
+  const s3TpLi2TB = next()
+  const s3TpLi2L = next()
+  const s4H2 = next()
+  const s4P = next()
+  const thName = next()
+  const thProv = next()
+  const thPurp = next()
+  const thDur = next()
+  const thType = next()
+  const typeEss = next()
+  const typeFunc = next()
+  const typeAna = next()
+  const typeTp = next()
+  const durSession = next()
+  const dur1y = next()
+  const dur2y = next()
+  const durUp1y = next()
+  const dur30m = next()
+  const dur60d = next()
+  const purpSbAuth = next()
+  const purpSbPkce = next()
+  const purpCsrf = next()
+  const purpBoard = next()
+  const purpTheme = next()
+  const purpSentry = next()
+  const purpGa = next()
+  const purpGaSession = next()
+  const purpStripeMid = next()
+  const purpStripeSid = next()
+  const purpRewardful = next()
+  const noteWildcard = next()
+  const s5H2 = next()
+  const s5SessS = next()
+  const s5SessT = next()
+  const s5PerS = next()
+  const s5PerT = next()
+  const s6H2 = next()
+  const s6PIntro = next()
+  const s6Li1 = next()
+  const s6Li2 = next()
+  const s6Li3 = next()
+  const s6Li4 = next()
+  const s6POutro = next()
+  const brChrome = next()
+  const brFirefox = next()
+  const brSafari = next()
+  const brEdge = next()
+  const s7H2 = next()
+  const s7PIntro = next()
+  const s7Li1S = next()
+  const s7Li1T = next()
+  const s7Li2S = next()
+  const s7Li2T = next()
+  const s7Li3S = next()
+  const s7Li3T = next()
+  const s7Li4S = next()
+  const s7Li4T = next()
+  const s8H2 = next()
+  const s8P1 = next()
+  const s8P2Pre = next()
+  const s8P2S = next()
+  const s8P2Post = next()
+  const s8P3Pre = next()
+  const s9H2 = next()
+  const s9P = next()
+  const s10H2 = next()
+  const s10PPre = next()
+  const s10PLink = next()
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
@@ -25,123 +223,86 @@ export default async function CookiePolicyPage() {
       <p className="mt-2 text-sm text-muted-foreground">
         {operatedBy}
         <br />
-        {lastUpdatedLabel}: March 2026
+        {lastUpdatedLabel}: {lastUpdatedValue}
       </p>
 
       <div className="mt-8 space-y-8">
         {/* What are cookies */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">1. What are cookies?</h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            Cookies are small text files that are placed on your device (computer, tablet, or mobile
-            phone) when you visit a website. They are widely used to make websites work more
-            efficiently, provide a better user experience, and supply information to the owners of
-            the site. Cookies allow a website to recognise your device and remember certain
-            information about your session, such as your login status or preferences.
-          </p>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            Some cookies are deleted when you close your browser (session cookies), while others
-            remain on your device for a set period or until you delete them (persistent cookies).
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{s1H2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s1P1}</p>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s1P2}</p>
         </section>
 
         {/* How we use cookies */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">2. How we use cookies</h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            The English Hub (theenglishhub.app) uses cookies and similar technologies for a variety
-            of purposes, including authenticating users, remembering user preferences, processing
-            payments, tracking affiliate referrals, and monitoring errors to improve site
-            reliability. We describe each category in detail below.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{s2H2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s2P1}</p>
         </section>
 
         {/* Types of cookies */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">3. Types of cookies we use</h2>
+          <h2 className="text-xl font-semibold text-foreground">{s3H2}</h2>
 
           {/* Essential */}
-          <h3 className="mt-4 text-lg font-medium text-foreground">3.1 Essential cookies</h3>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            These cookies are strictly necessary for the website to function. They enable core
-            features such as user authentication, session management, and security. Without these
-            cookies you would not be able to log in, access your courses, or complete a purchase.
-            Because they are essential, they do not require consent under UK PECR.
-          </p>
+          <h3 className="mt-4 text-lg font-medium text-foreground">{s3EssH3}</h3>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s3EssP}</p>
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
-              <strong>Supabase authentication session</strong> — maintains your signed-in state so
-              you do not need to log in on every page.
+              <strong>{s3EssLi1S}</strong>
+              {s3EssLi1T}
             </li>
             <li>
-              <strong>CSRF protection token</strong> — guards against cross-site request forgery
-              attacks by validating that form submissions originate from our site.
+              <strong>{s3EssLi2S}</strong>
+              {s3EssLi2T}
             </li>
           </ul>
 
           {/* Functional */}
-          <h3 className="mt-4 text-lg font-medium text-foreground">3.2 Functional cookies</h3>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            Functional cookies remember choices you make to improve your experience. They are not
-            strictly necessary but help us provide enhanced functionality and personalisation.
-          </p>
+          <h3 className="mt-4 text-lg font-medium text-foreground">{s3FuncH3}</h3>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s3FuncP}</p>
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
-              <strong>Board selection preference</strong> — remembers your chosen exam board (e.g.
-              AQA, Edexcel, OCR, WJEC Eduqas) so content is filtered appropriately across sessions.
+              <strong>{s3FuncLi1S}</strong>
+              {s3FuncLi1T}
             </li>
             <li>
-              <strong>Theme preference</strong> — stores whether you prefer light or dark mode so
-              the interface matches your choice on return visits.
+              <strong>{s3FuncLi2S}</strong>
+              {s3FuncLi2T}
             </li>
           </ul>
 
           {/* Analytics / Error tracking */}
-          <h3 className="mt-4 text-lg font-medium text-foreground">
-            3.3 Analytics and error-tracking cookies
-          </h3>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            We use Google Analytics 4 (GA4) to understand how visitors use the site, such as which
-            pages are most popular and how users navigate between them. GA4 cookies are only set
-            after you give consent. We use Sentry to monitor application errors and performance.
-            Sentry may set cookies or use similar technologies to collect diagnostic data such as
-            error stack traces, browser type, and page URL. This data helps us identify and fix bugs
-            quickly. Neither Google Analytics nor Sentry uses this information for advertising
-            purposes.
-          </p>
+          <h3 className="mt-4 text-lg font-medium text-foreground">{s3AnaH3}</h3>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s3AnaP}</p>
 
           {/* Third-party */}
-          <h3 className="mt-4 text-lg font-medium text-foreground">3.4 Third-party cookies</h3>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            Certain third-party services we integrate with may set their own cookies on your device.
-            We do not control these cookies; they are governed by the respective third party&rsquo;s
-            privacy and cookie policies.
-          </p>
+          <h3 className="mt-4 text-lg font-medium text-foreground">{s3TpH3}</h3>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s3TpP}</p>
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
-              <strong>Stripe</strong> — our payment processor sets cookies to enable secure payment
-              transactions, detect fraud, and remember payment session information. See{' '}
+              <strong>{s3TpLi1S}</strong>
+              {s3TpLi1TB}
               <a
                 href="https://stripe.com/gb/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground"
               >
-                Stripe&rsquo;s Privacy Policy
+                {s3TpLi1L}
               </a>
               .
             </li>
             <li>
-              <strong>Rewardful</strong> — our affiliate tracking service sets cookies to attribute
-              referrals to the correct affiliate partner. These cookies record a referral identifier
-              when you arrive via an affiliate link. See{' '}
+              <strong>{s3TpLi2S}</strong>
+              {s3TpLi2TB}
               <a
                 href="https://www.rewardful.com/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground"
               >
-                Rewardful&rsquo;s Privacy Policy
+                {s3TpLi2L}
               </a>
               .
             </li>
@@ -150,155 +311,124 @@ export default async function CookiePolicyPage() {
 
         {/* Cookie table */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">4. Cookies in detail</h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            The table below lists the specific cookies set by The English Hub and its third-party
-            partners.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{s4H2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s4P}</p>
           <div className="mt-4 overflow-x-auto rounded-lg border border-border">
             <table className="w-full text-sm text-left">
               <thead className="bg-muted/50 text-foreground">
                 <tr>
-                  <th className="px-4 py-3 font-semibold">Name</th>
-                  <th className="px-4 py-3 font-semibold">Provider</th>
-                  <th className="px-4 py-3 font-semibold">Purpose</th>
-                  <th className="px-4 py-3 font-semibold">Duration</th>
-                  <th className="px-4 py-3 font-semibold">Type</th>
+                  <th className="px-4 py-3 font-semibold">{thName}</th>
+                  <th className="px-4 py-3 font-semibold">{thProv}</th>
+                  <th className="px-4 py-3 font-semibold">{thPurp}</th>
+                  <th className="px-4 py-3 font-semibold">{thDur}</th>
+                  <th className="px-4 py-3 font-semibold">{thType}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border text-muted-foreground">
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">sb-*-auth-token</td>
                   <td className="px-4 py-3">Supabase</td>
-                  <td className="px-4 py-3">
-                    Stores the authenticated user session (access and refresh tokens)
-                  </td>
-                  <td className="px-4 py-3">Up to 1 year</td>
-                  <td className="px-4 py-3">Essential</td>
+                  <td className="px-4 py-3">{purpSbAuth}</td>
+                  <td className="px-4 py-3">{durUp1y}</td>
+                  <td className="px-4 py-3">{typeEss}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">sb-*-auth-token-code-verifier</td>
                   <td className="px-4 py-3">Supabase</td>
-                  <td className="px-4 py-3">
-                    PKCE code verifier for secure OAuth authentication flow
-                  </td>
-                  <td className="px-4 py-3">Session</td>
-                  <td className="px-4 py-3">Essential</td>
+                  <td className="px-4 py-3">{purpSbPkce}</td>
+                  <td className="px-4 py-3">{durSession}</td>
+                  <td className="px-4 py-3">{typeEss}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">csrf_token</td>
                   <td className="px-4 py-3">The English Hub</td>
-                  <td className="px-4 py-3">Protects against cross-site request forgery attacks</td>
-                  <td className="px-4 py-3">Session</td>
-                  <td className="px-4 py-3">Essential</td>
+                  <td className="px-4 py-3">{purpCsrf}</td>
+                  <td className="px-4 py-3">{durSession}</td>
+                  <td className="px-4 py-3">{typeEss}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">board-preference</td>
                   <td className="px-4 py-3">The English Hub</td>
-                  <td className="px-4 py-3">
-                    Remembers your selected exam board (e.g. AQA, Edexcel)
-                  </td>
-                  <td className="px-4 py-3">1 year</td>
-                  <td className="px-4 py-3">Functional</td>
+                  <td className="px-4 py-3">{purpBoard}</td>
+                  <td className="px-4 py-3">{dur1y}</td>
+                  <td className="px-4 py-3">{typeFunc}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">theme</td>
                   <td className="px-4 py-3">The English Hub</td>
-                  <td className="px-4 py-3">Stores your light/dark mode preference</td>
-                  <td className="px-4 py-3">1 year</td>
-                  <td className="px-4 py-3">Functional</td>
+                  <td className="px-4 py-3">{purpTheme}</td>
+                  <td className="px-4 py-3">{dur1y}</td>
+                  <td className="px-4 py-3">{typeFunc}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">sentryReplaySession</td>
                   <td className="px-4 py-3">Sentry</td>
-                  <td className="px-4 py-3">
-                    Tracks error replay session for debugging and performance monitoring
-                  </td>
-                  <td className="px-4 py-3">Session</td>
-                  <td className="px-4 py-3">Analytics</td>
+                  <td className="px-4 py-3">{purpSentry}</td>
+                  <td className="px-4 py-3">{durSession}</td>
+                  <td className="px-4 py-3">{typeAna}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">_ga</td>
                   <td className="px-4 py-3">Google Analytics</td>
-                  <td className="px-4 py-3">
-                    Distinguishes unique visitors by assigning a randomly generated identifier
-                  </td>
-                  <td className="px-4 py-3">2 years</td>
-                  <td className="px-4 py-3">Analytics</td>
+                  <td className="px-4 py-3">{purpGa}</td>
+                  <td className="px-4 py-3">{dur2y}</td>
+                  <td className="px-4 py-3">{typeAna}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">_ga_*</td>
                   <td className="px-4 py-3">Google Analytics</td>
-                  <td className="px-4 py-3">Maintains session state for Google Analytics 4</td>
-                  <td className="px-4 py-3">2 years</td>
-                  <td className="px-4 py-3">Analytics</td>
+                  <td className="px-4 py-3">{purpGaSession}</td>
+                  <td className="px-4 py-3">{dur2y}</td>
+                  <td className="px-4 py-3">{typeAna}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">__stripe_mid</td>
                   <td className="px-4 py-3">Stripe</td>
-                  <td className="px-4 py-3">Fraud prevention — unique identifier for the device</td>
-                  <td className="px-4 py-3">1 year</td>
-                  <td className="px-4 py-3">Third-party</td>
+                  <td className="px-4 py-3">{purpStripeMid}</td>
+                  <td className="px-4 py-3">{dur1y}</td>
+                  <td className="px-4 py-3">{typeTp}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">__stripe_sid</td>
                   <td className="px-4 py-3">Stripe</td>
-                  <td className="px-4 py-3">
-                    Fraud prevention — unique identifier for the browsing session
-                  </td>
-                  <td className="px-4 py-3">30 minutes</td>
-                  <td className="px-4 py-3">Third-party</td>
+                  <td className="px-4 py-3">{purpStripeSid}</td>
+                  <td className="px-4 py-3">{dur30m}</td>
+                  <td className="px-4 py-3">{typeTp}</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-mono text-xs">rewardful_referral</td>
                   <td className="px-4 py-3">Rewardful</td>
-                  <td className="px-4 py-3">
-                    Stores the affiliate referral identifier to attribute sign-ups
-                  </td>
-                  <td className="px-4 py-3">60 days</td>
-                  <td className="px-4 py-3">Third-party</td>
+                  <td className="px-4 py-3">{purpRewardful}</td>
+                  <td className="px-4 py-3">{dur60d}</td>
+                  <td className="px-4 py-3">{typeTp}</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Cookie names containing an asterisk (*) indicate a wildcard — the actual name includes
-            your project reference and may vary.
-          </p>
+          <p className="mt-2 text-sm text-muted-foreground">{noteWildcard}</p>
         </section>
 
         {/* Cookie duration */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">
-            5. Cookie duration and retention
-          </h2>
+          <h2 className="text-xl font-semibold text-foreground">{s5H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            <strong>Session cookies</strong> are temporary and are deleted automatically when you
-            close your browser. <strong>Persistent cookies</strong> remain on your device for the
-            duration specified in the table above, or until you manually delete them. We review
-            cookie retention periods regularly to ensure data is not kept longer than necessary.
+            <strong>{s5SessS}</strong>
+            {s5SessT} <strong>{s5PerS}</strong>
+            {s5PerT}
           </p>
         </section>
 
         {/* Managing cookies */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">
-            6. How to manage and disable cookies
-          </h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            Most web browsers allow you to control cookies through their settings. You can typically
-            find these options in the &ldquo;Settings&rdquo;, &ldquo;Preferences&rdquo;, or
-            &ldquo;Privacy&rdquo; section of your browser. Common actions include:
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{s6H2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s6PIntro}</p>
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
-            <li>Viewing which cookies are currently stored and deleting individual cookies</li>
-            <li>Blocking all cookies or only third-party cookies</li>
-            <li>Configuring your browser to notify you before a cookie is set</li>
-            <li>Clearing all cookies when you close the browser</li>
+            <li>{s6Li1}</li>
+            <li>{s6Li2}</li>
+            <li>{s6Li3}</li>
+            <li>{s6Li4}</li>
           </ul>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            For step-by-step instructions, refer to your browser&rsquo;s help documentation:
-          </p>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s6POutro}</p>
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
               <a
@@ -307,7 +437,7 @@ export default async function CookiePolicyPage() {
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground"
               >
-                Google Chrome
+                {brChrome}
               </a>
             </li>
             <li>
@@ -317,7 +447,7 @@ export default async function CookiePolicyPage() {
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground"
               >
-                Mozilla Firefox
+                {brFirefox}
               </a>
             </li>
             <li>
@@ -327,7 +457,7 @@ export default async function CookiePolicyPage() {
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground"
               >
-                Apple Safari
+                {brSafari}
               </a>
             </li>
             <li>
@@ -337,7 +467,7 @@ export default async function CookiePolicyPage() {
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground"
               >
-                Microsoft Edge
+                {brEdge}
               </a>
             </li>
           </ul>
@@ -345,51 +475,39 @@ export default async function CookiePolicyPage() {
 
         {/* Impact of disabling */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">7. Impact of disabling cookies</h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            If you choose to disable or block cookies, please be aware that some parts of The
-            English Hub may not function correctly. In particular:
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{s7H2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s7PIntro}</p>
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
-              <strong>Blocking essential cookies</strong> will prevent you from signing in,
-              accessing purchased courses, and completing payment transactions.
+              <strong>{s7Li1S}</strong>
+              {s7Li1T}
             </li>
             <li>
-              <strong>Blocking functional cookies</strong> means your exam board and theme
-              preferences will not be saved between visits, and you will need to select them each
-              time.
+              <strong>{s7Li2S}</strong>
+              {s7Li2T}
             </li>
             <li>
-              <strong>Blocking analytics cookies</strong> will not affect your use of the site but
-              may reduce our ability to detect and resolve technical issues promptly.
+              <strong>{s7Li3S}</strong>
+              {s7Li3T}
             </li>
             <li>
-              <strong>Blocking third-party cookies</strong> may prevent payment processing through
-              Stripe and may mean affiliate referrals are not tracked correctly.
+              <strong>{s7Li4S}</strong>
+              {s7Li4T}
             </li>
           </ul>
         </section>
 
         {/* UK PECR */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">8. UK PECR compliance</h2>
+          <h2 className="text-xl font-semibold text-foreground">{s8H2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s8P1}</p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            The English Hub complies with the UK Privacy and Electronic Communications Regulations
-            2003 (PECR), as amended, alongside the UK General Data Protection Regulation (UK GDPR)
-            and the Data Protection Act 2018.
+            {s8P2Pre}
+            <strong>{s8P2S}</strong>
+            {s8P2Post}
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            Under PECR, we are permitted to set <strong>strictly necessary cookies</strong>{' '}
-            (essential cookies) without prior consent, as they are required for the service you have
-            requested. For all other cookies — including functional, analytics, and third-party
-            cookies — we obtain your consent before placing them on your device. You may withdraw
-            your consent at any time by adjusting your browser settings or contacting us.
-          </p>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            We regularly review and update our cookie practices to ensure continued compliance with
-            applicable regulations. If you have questions about our use of cookies or wish to
-            exercise your data rights, please contact us at{' '}
+            {s8P3Pre}
             <a href="mailto:info@Upskillenergy.com" className="underline hover:text-foreground">
               info@Upskillenergy.com
             </a>
@@ -399,25 +517,17 @@ export default async function CookiePolicyPage() {
 
         {/* Changes */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">
-            9. Changes to this Cookie Policy
-          </h2>
-          <p className="mt-2 text-muted-foreground leading-relaxed">
-            We may update this Cookie Policy from time to time to reflect changes in our practices
-            or for legal, regulatory, or operational reasons. When we make material changes, we will
-            update the &ldquo;Last updated&rdquo; date at the top of this page. We encourage you to
-            review this page periodically to stay informed about how we use cookies.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground">{s9H2}</h2>
+          <p className="mt-2 text-muted-foreground leading-relaxed">{s9P}</p>
         </section>
 
         {/* Link to privacy policy */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground">10. Privacy Policy</h2>
+          <h2 className="text-xl font-semibold text-foreground">{s10H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            For more information about how we collect, use, and protect your personal data, please
-            read our{' '}
+            {s10PPre}
             <Link href="/privacy-policy" className="underline hover:text-foreground">
-              Privacy Policy
+              {s10PLink}
             </Link>
             .
           </p>

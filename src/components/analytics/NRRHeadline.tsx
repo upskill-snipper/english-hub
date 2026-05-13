@@ -1,9 +1,10 @@
-"use client"
+'use client'
 
-import { TrendingUp, TrendingDown, Minus } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { formatPct } from "@/lib/analytics/nrr"
-import { cn } from "@/lib/utils"
+import { TrendingUp, TrendingDown, Minus } from 'lucide-react'
+import { Card, CardContent } from '@/components/ui/card'
+import { formatPct } from '@/lib/analytics/nrr'
+import { useT } from '@/lib/i18n/use-t'
+import { cn } from '@/lib/utils'
 
 interface NRRHeadlineProps {
   headlineNRR: number
@@ -22,22 +23,19 @@ export function NRRHeadline({
   trailing12NRR,
   className,
 }: NRRHeadlineProps) {
+  const t = useT()
   const isPositive = momChange > 0.05
   const isNegative = momChange < -0.05
   const Arrow = isPositive ? TrendingUp : isNegative ? TrendingDown : Minus
   const trendColor = isPositive
-    ? "text-emerald-400"
+    ? 'text-emerald-400'
     : isNegative
-      ? "text-red-400"
-      : "text-muted-foreground"
-  const trendBg = isPositive
-    ? "bg-emerald-500/10"
-    : isNegative
-      ? "bg-red-500/10"
-      : "bg-muted"
+      ? 'text-red-400'
+      : 'text-muted-foreground'
+  const trendBg = isPositive ? 'bg-emerald-500/10' : isNegative ? 'bg-red-500/10' : 'bg-muted'
 
   return (
-    <Card className={cn("relative overflow-hidden", className)}>
+    <Card className={cn('relative overflow-hidden', className)}>
       {/* Subtle gradient accent */}
       <div
         aria-hidden
@@ -47,7 +45,7 @@ export function NRRHeadline({
         {/* Headline figure */}
         <div className="flex flex-col gap-2">
           <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            Net Revenue Retention
+            {t('analytics.nrr.headline_title')}
           </p>
           <div className="flex items-end gap-4">
             <span className="text-6xl font-bold tracking-tight tabular-nums text-foreground md:text-7xl">
@@ -55,42 +53,35 @@ export function NRRHeadline({
             </span>
             <span
               className={cn(
-                "mb-2 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold",
+                'mb-2 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold',
                 trendBg,
                 trendColor,
               )}
             >
               <Arrow className="h-3.5 w-3.5" />
-              {momChange >= 0 ? "+" : ""}
-              {momChange.toFixed(1)} pts MoM
+              {momChange >= 0 ? '+' : ''}
+              {momChange.toFixed(1)} {t('analytics.nrr.pts_mom')}
             </span>
           </div>
-          <p className="text-sm text-muted-foreground">
-            Existing customer retention including expansion. Above 100%
-            indicates net expansion.
-          </p>
+          <p className="text-sm text-muted-foreground">{t('analytics.nrr.description')}</p>
         </div>
 
         {/* Secondary metrics */}
         <div className="grid grid-cols-2 gap-4 md:gap-6">
           <SecondaryMetric
-            label="Previous month"
+            label={t('analytics.nrr.previous_month')}
             value={formatPct(previousNRR)}
           />
           <SecondaryMetric
-            label="Trailing 12mo"
+            label={t('analytics.nrr.trailing_12mo')}
             value={formatPct(trailing12NRR)}
             highlight
           />
           <SecondaryMetric
-            label="Gross retention"
+            label={t('analytics.nrr.gross_retention')}
             value={formatPct(grossRetention)}
           />
-          <SecondaryMetric
-            label="Investor target"
-            value="≥ 110%"
-            muted
-          />
+          <SecondaryMetric label={t('analytics.nrr.investor_target')} value="≥ 110%" muted />
         </div>
       </CardContent>
     </Card>
@@ -110,14 +101,12 @@ function SecondaryMetric({
 }) {
   return (
     <div className="flex flex-col gap-0.5">
-      <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-        {label}
-      </p>
+      <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{label}</p>
       <p
         className={cn(
-          "text-2xl font-semibold tabular-nums",
-          highlight && "text-emerald-400",
-          muted && "text-muted-foreground",
+          'text-2xl font-semibold tabular-nums',
+          highlight && 'text-emerald-400',
+          muted && 'text-muted-foreground',
         )}
       >
         {value}

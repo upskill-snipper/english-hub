@@ -23,6 +23,7 @@
 
 import { useMemo } from 'react'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 export type GradeCounts = Record<number, number> | Record<string, number>
 
@@ -73,28 +74,28 @@ const BAND_DOT_BG: Record<'top' | 'pass' | 'below', string> = {
 
 const BAND_CARD: Record<
   'top' | 'pass' | 'below',
-  { ring: string; bg: string; text: string; subtext: string; label: string }
+  { ring: string; bg: string; text: string; subtext: string; labelKey: string }
 > = {
   top: {
     ring: 'border-teal-700/30',
     bg: 'bg-teal-700/5',
     text: 'text-teal-700',
     subtext: 'text-teal-700/80',
-    label: 'Grade 7-9 (Strong pass+)',
+    labelKey: 'analytics.grade_band.top',
   },
   pass: {
     ring: 'border-blue-500/30',
     bg: 'bg-blue-500/5',
     text: 'text-blue-700 dark:text-blue-400',
     subtext: 'text-blue-700/80 dark:text-blue-400/80',
-    label: 'Grade 4-6 (Standard pass+)',
+    labelKey: 'analytics.grade_band.pass',
   },
   below: {
     ring: 'border-red-500/30',
     bg: 'bg-red-500/5',
     text: 'text-red-600 dark:text-red-400',
     subtext: 'text-red-600/80 dark:text-red-400/80',
-    label: 'Grade 1-3 (Below pass)',
+    labelKey: 'analytics.grade_band.below',
   },
 }
 
@@ -104,7 +105,7 @@ function bandFor(grade: number): 'top' | 'pass' | 'below' {
 
 export function GradeDistributionChart({
   counts,
-  title = 'Working At Grade Distribution',
+  title,
   titleAs: TitleTag = 'h3',
   showBars = true,
   showStacked = true,
@@ -113,6 +114,9 @@ export function GradeDistributionChart({
   barHeight = 200,
   className,
 }: GradeDistributionChartProps) {
+  const t = useT()
+  const resolvedTitle =
+    title === null ? null : (title ?? t('analytics.grade.working_at_distribution'))
   const { data, total, max, bands } = useMemo(() => {
     const arr = [9, 8, 7, 6, 5, 4, 3, 2, 1].map((g) => {
       // Accept both numeric and string keys; treat undefined as 0.
@@ -140,12 +144,13 @@ export function GradeDistributionChart({
   if (total === 0) {
     return (
       <div className={cn('w-full', className)}>
-        {title && (
-          <TitleTag className="mb-3 text-sm font-semibold text-foreground">{title}</TitleTag>
+        {resolvedTitle && (
+          <TitleTag className="mb-3 text-sm font-semibold text-foreground">
+            {resolvedTitle}
+          </TitleTag>
         )}
         <div className="rounded-lg border border-dashed border-border bg-card/50 p-6 text-center text-sm text-muted-foreground">
-          No grade data yet — once students complete assessments, their working grades will appear
-          here.
+          {t('analytics.grade.no_data_yet')}
         </div>
       </div>
     )
@@ -154,11 +159,11 @@ export function GradeDistributionChart({
   return (
     <div className={cn('w-full space-y-5', className)}>
       {/* ── Title + inline legend ────────────────────────────────────────── */}
-      {(title || !hideLegend) && (
+      {(resolvedTitle || !hideLegend) && (
         <div className="flex flex-wrap items-center justify-between gap-3">
-          {title ? (
+          {resolvedTitle ? (
             <TitleTag className="text-sm font-semibold text-foreground sm:text-base">
-              {title}
+              {resolvedTitle}
             </TitleTag>
           ) : (
             <span />
@@ -167,28 +172,28 @@ export function GradeDistributionChart({
             <div
               className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-muted-foreground sm:text-xs"
               role="list"
-              aria-label="Grade band legend"
+              aria-label={t('analytics.grade.legend_aria')}
             >
               <span className="flex items-center gap-1.5" role="listitem">
                 <span
                   className={cn('inline-block h-2.5 w-2.5 rounded-full', BAND_DOT_BG.top)}
                   aria-hidden="true"
                 />
-                Grade 7-9
+                {t('analytics.grade.range_7_9')}
               </span>
               <span className="flex items-center gap-1.5" role="listitem">
                 <span
                   className={cn('inline-block h-2.5 w-2.5 rounded-full', BAND_DOT_BG.pass)}
                   aria-hidden="true"
                 />
-                Grade 4-6
+                {t('analytics.grade.range_4_6')}
               </span>
               <span className="flex items-center gap-1.5" role="listitem">
                 <span
                   className={cn('inline-block h-2.5 w-2.5 rounded-full', BAND_DOT_BG.below)}
                   aria-hidden="true"
                 />
-                Grade 1-3
+                {t('analytics.grade.range_1_3')}
               </span>
             </div>
           )}
@@ -201,7 +206,7 @@ export function GradeDistributionChart({
           <div
             className="flex h-3.5 w-full overflow-hidden rounded-full border border-border/50 bg-muted"
             role="img"
-            aria-label={`Grade distribution: ${bands.top} students at Grade 7-9, ${bands.pass} at Grade 4-6, ${bands.below} at Grade 1-3`}
+            aria-label={`${t('analytics.grade.distribution_aria_prefix')}: ${bands.top} ${t('analytics.unit.students')} ${t('analytics.grade.range_7_9')}, ${bands.pass} ${t('analytics.grade.range_4_6')}, ${bands.below} ${t('analytics.grade.range_1_3')}`}
           >
             {(['top', 'pass', 'below'] as const).map((band) => {
               const value = bands[band]
@@ -212,13 +217,14 @@ export function GradeDistributionChart({
                   key={band}
                   className={cn(BAND_BAR_BG[band], 'transition-all')}
                   style={{ width: `${pct}%` }}
-                  title={`${BAND_CARD[band].label}: ${value} student${value === 1 ? '' : 's'} (${Math.round(pct)}%)`}
+                  title={`${t(BAND_CARD[band].labelKey)}: ${value} ${t('analytics.unit.students')} (${Math.round(pct)}%)`}
                 />
               )
             })}
           </div>
           <p className="mt-1.5 text-[11px] text-muted-foreground">
-            {total} student{total === 1 ? '' : 's'} total · {pctOf(bands.top)}% achieving Grade 7-9
+            {total} {t('analytics.unit.students_total')} · {pctOf(bands.top)}%{' '}
+            {t('analytics.grade.achieving_7_9')}
           </p>
         </div>
       )}
@@ -230,7 +236,7 @@ export function GradeDistributionChart({
             className="flex items-end gap-1.5 sm:gap-2"
             style={{ height: barHeight }}
             role="img"
-            aria-label="Grade distribution bar chart, Grade 9 to Grade 1"
+            aria-label={t('analytics.grade.bar_chart_aria')}
           >
             {data.map(({ grade, count, band }) => {
               const heightPct = max > 0 ? Math.max((count / max) * 100, count > 0 ? 6 : 0) : 0
@@ -239,7 +245,7 @@ export function GradeDistributionChart({
                 <div
                   key={grade}
                   className="group flex flex-1 flex-col items-center gap-1.5"
-                  title={`Grade ${grade}: ${count} student${count === 1 ? '' : 's'} (${pct}%)`}
+                  title={`${t('analytics.grade.label')} ${grade}: ${count} ${t('analytics.unit.students')} (${pct}%)`}
                 >
                   {/* Count + % stacked above bar */}
                   <div className="flex flex-col items-center leading-tight">
@@ -270,8 +276,8 @@ export function GradeDistributionChart({
             })}
           </div>
           <div className="mt-2 flex items-center justify-between text-[10px] text-muted-foreground/80">
-            <span>Top of pass · 9</span>
-            <span>Bottom · 1</span>
+            <span>{t('analytics.grade.top_of_pass')}</span>
+            <span>{t('analytics.grade.bottom')}</span>
           </div>
         </div>
       )}
@@ -294,7 +300,7 @@ export function GradeDistributionChart({
                     · {pct}%
                   </span>
                 </div>
-                <p className={cn('text-[11px] font-medium', cfg.subtext)}>{cfg.label}</p>
+                <p className={cn('text-[11px] font-medium', cfg.subtext)}>{t(cfg.labelKey)}</p>
                 {/* Mini sparkline bar showing this band's contribution */}
                 <div
                   className="h-1.5 w-full overflow-hidden rounded-full bg-muted/60"

@@ -1,52 +1,50 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react'
+import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Report type options ────────────────────────────────────────────────
 
 const REPORT_TYPES = [
   {
-    value: "WORRIED_ABOUT_MYSELF",
-    label: "I'm worried about myself",
-    severity: "HIGH" as const,
+    value: 'WORRIED_ABOUT_MYSELF',
+    labelKey: 'safeguard.report.field.type.worried_self',
+    severity: 'HIGH' as const,
   },
   {
-    value: "WORRIED_ABOUT_SOMEONE",
-    label: "I'm worried about someone else",
-    severity: "HIGH" as const,
+    value: 'WORRIED_ABOUT_SOMEONE',
+    labelKey: 'safeguard.report.field.type.worried_other',
+    severity: 'HIGH' as const,
   },
   {
-    value: "PLATFORM_CONCERN",
-    label: "I want to report something I've seen on the platform",
-    severity: "MEDIUM" as const,
+    value: 'PLATFORM_CONCERN',
+    labelKey: 'safeguard.report.field.type.platform',
+    severity: 'MEDIUM' as const,
   },
   {
-    value: "OTHER",
-    label: "Other concern",
-    severity: "LOW" as const,
+    value: 'OTHER',
+    labelKey: 'safeguard.report.field.type.other',
+    severity: 'LOW' as const,
   },
-] as const;
+] as const
 
-type ReportTypeValue = (typeof REPORT_TYPES)[number]["value"];
+type ReportTypeValue = (typeof REPORT_TYPES)[number]['value']
 
-const DESCRIPTION_MAX = 5000;
+const DESCRIPTION_MAX = 5000
 
 interface SubmissionResult {
-  referenceNumber: string;
+  referenceNumber: string
 }
 
 // ─── External support resources ─────────────────────────────────────────
 
 function SupportResources() {
+  const t = useT()
   return (
     <div className="rounded-xl border border-accent/20 bg-accent/5 p-5">
-      <h2 className="text-sm font-semibold text-primary">
-        If you need to talk to someone right now
-      </h2>
-      <p className="mt-1 text-xs text-muted-foreground">
-        These services are free, confidential, and available 24/7.
-      </p>
+      <h2 className="text-sm font-semibold text-primary">{t('safeguard.report.support_title')}</h2>
+      <p className="mt-1 text-xs text-muted-foreground">{t('safeguard.report.support_subtitle')}</p>
       <ul className="mt-3 space-y-2.5 text-sm text-muted-foreground">
         <li className="flex items-start gap-2">
           <span
@@ -63,7 +61,7 @@ function SupportResources() {
             </svg>
           </span>
           <div>
-            <strong>Childline</strong> &mdash;{" "}
+            <strong>{t('safeguard.report.childline_label')}</strong> &mdash;{' '}
             <a
               href="tel:08001111"
               className="font-semibold text-accent hover:text-primary underline"
@@ -71,7 +69,7 @@ function SupportResources() {
               0800 1111
             </a>
             <span className="block text-xs text-muted-foreground">
-              Free, confidential helpline for under 19s
+              {t('safeguard.report.childline_note')}
             </span>
           </div>
         </li>
@@ -90,7 +88,7 @@ function SupportResources() {
             </svg>
           </span>
           <div>
-            <strong>NSPCC Helpline</strong> &mdash;{" "}
+            <strong>{t('safeguard.report.nspcc_label')}</strong> &mdash;{' '}
             <a
               href="tel:08088005000"
               className="font-semibold text-accent hover:text-primary underline"
@@ -98,7 +96,7 @@ function SupportResources() {
               0808 800 5000
             </a>
             <span className="block text-xs text-muted-foreground">
-              For adults worried about a child
+              {t('safeguard.report.nspcc_note')}
             </span>
           </div>
         </li>
@@ -121,60 +119,61 @@ function SupportResources() {
             </svg>
           </span>
           <div>
-            <strong>CEOP</strong> &mdash;{" "}
+            <strong>{t('safeguard.report.ceop_label')}</strong> &mdash;{' '}
             <a
               href="https://www.ceop.police.uk/ceop-reporting/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-accent hover:text-primary underline"
             >
-              Report online
+              {t('safeguard.report.ceop_link')}
             </a>
             <span className="block text-xs text-muted-foreground">
-              Report online abuse or exploitation
+              {t('safeguard.report.ceop_note')}
             </span>
           </div>
         </li>
       </ul>
     </div>
-  );
+  )
 }
 
 // ─── Main page component ────────────────────────────────────────────────
 
 export default function SafeguardingReportPage() {
-  const [reportType, setReportType] = useState<ReportTypeValue | "">("");
-  const [description, setDescription] = useState("");
-  const [reporterName, setReporterName] = useState("");
-  const [reporterContact, setReporterContact] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<SubmissionResult | null>(null);
+  const t = useT()
+  const [reportType, setReportType] = useState<ReportTypeValue | ''>('')
+  const [description, setDescription] = useState('')
+  const [reporterName, setReporterName] = useState('')
+  const [reporterContact, setReporterContact] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [result, setResult] = useState<SubmissionResult | null>(null)
 
   function getAutoSeverity(): string {
-    const match = REPORT_TYPES.find((rt) => rt.value === reportType);
-    return match?.severity ?? "LOW";
+    const match = REPORT_TYPES.find((rt) => rt.value === reportType)
+    return match?.severity ?? 'LOW'
   }
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setError(null);
+    e.preventDefault()
+    setError(null)
 
     if (!reportType) {
-      setError("Please select what your concern is about.");
-      return;
+      setError(t('safeguard.report.err.select_type'))
+      return
     }
     if (!description.trim()) {
-      setError("Please tell us what happened or what you're worried about.");
-      return;
+      setError(t('safeguard.report.err.description_required'))
+      return
     }
 
-    setSubmitting(true);
+    setSubmitting(true)
 
     try {
-      const res = await fetch("/api/safeguarding/report", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/safeguarding/report', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           reportType,
           description: description.trim(),
@@ -182,23 +181,19 @@ export default function SafeguardingReportPage() {
           reporterName: reporterName.trim() || undefined,
           reporterContact: reporterContact.trim() || undefined,
         }),
-      });
+      })
 
       if (!res.ok) {
-        const body = await res.json().catch(() => null);
-        throw new Error(
-          body?.error ?? "Something went wrong. Please try again."
-        );
+        const body = await res.json().catch(() => null)
+        throw new Error(body?.error ?? t('safeguard.report.err.generic'))
       }
 
-      const data = await res.json();
-      setResult({ referenceNumber: data.referenceNumber });
+      const data = await res.json()
+      setResult({ referenceNumber: data.referenceNumber })
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : "Something went wrong."
-      );
+      setError(err instanceof Error ? err.message : t('safeguard.report.err.generic'))
     } finally {
-      setSubmitting(false);
+      setSubmitting(false)
     }
   }
 
@@ -228,33 +223,23 @@ export default function SafeguardingReportPage() {
           </div>
 
           <h1 className="text-2xl font-semibold text-primary">
-            You&apos;ve done the right thing by speaking up
+            {t('safeguard.report.confirm_heading')}
           </h1>
-          <p className="mt-2 text-muted-foreground">
-            Thank you for telling us. Your report has been received and our
-            safeguarding team will look at it carefully.
-          </p>
+          <p className="mt-2 text-muted-foreground">{t('safeguard.report.confirm_body')}</p>
 
           <div className="mt-6 rounded-lg bg-muted p-4 text-sm">
-            <p className="text-muted-foreground">Your reference number</p>
+            <p className="text-muted-foreground">{t('safeguard.report.ref_label')}</p>
             <p className="mt-1 text-lg font-mono font-semibold text-primary">
               {result.referenceNumber}
             </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              Keep this safe in case you need to follow up.
-            </p>
+            <p className="mt-1 text-xs text-muted-foreground">{t('safeguard.report.ref_note')}</p>
           </div>
 
           <div className="mt-6 rounded-lg bg-primary/5 border border-primary/20 p-4 text-sm text-muted-foreground">
             <p>
-              <strong>What happens next?</strong>
+              <strong>{t('safeguard.report.next.title')}</strong>
             </p>
-            <p className="mt-1">
-              A member of our safeguarding team will review your report. If
-              you left contact details, we may get in touch to follow up. If
-              this is urgent, please contact one of the services below
-              directly.
-            </p>
+            <p className="mt-1">{t('safeguard.report.next.body')}</p>
           </div>
 
           {/* Support resources */}
@@ -264,12 +249,12 @@ export default function SafeguardingReportPage() {
 
           <div className="mt-8">
             <Link href="/" className="btn-primary text-sm">
-              Return to Home
+              {t('safeguard.report.return_home')}
             </Link>
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   // ────── Report form ──────
@@ -281,29 +266,17 @@ export default function SafeguardingReportPage() {
           href="/"
           className="text-sm text-muted-foreground hover:text-primary transition-colors"
         >
-          &larr; Back to Home
+          &larr; {t('safeguard.back_home')}
         </Link>
       </div>
 
-      <h1 className="text-2xl font-semibold text-primary">
-        Need help or worried about something?
-      </h1>
-      <p className="mt-2 text-sm text-muted-foreground">
-        Whether it&apos;s about you or someone else, we&apos;re here to help.
-        You can tell us as much or as little as you feel comfortable with.
-        You don&apos;t have to give your name.
-      </p>
+      <h1 className="text-2xl font-semibold text-primary">{t('safeguard.report.page_heading')}</h1>
+      <p className="mt-2 text-sm text-muted-foreground">{t('safeguard.report.page_subhead')}</p>
 
       {/* Reassurance banner */}
       <div className="mt-4 rounded-lg border border-success/20 bg-success/5 p-4 text-sm text-muted-foreground">
-        <p className="font-medium text-success-700">
-          Speaking up takes courage
-        </p>
-        <p className="mt-1">
-          Whatever you&apos;re going through, you deserve support. Everything
-          you share here will be treated seriously and confidentially by our
-          safeguarding team.
-        </p>
+        <p className="font-medium text-success-700">{t('safeguard.report.reassure_title')}</p>
+        <p className="mt-1">{t('safeguard.report.reassure_body')}</p>
       </div>
 
       {/* External support - always visible */}
@@ -316,8 +289,7 @@ export default function SafeguardingReportPage() {
         {/* Report type */}
         <fieldset>
           <legend className="block text-sm font-medium text-muted-foreground">
-            What best describes your concern?{" "}
-            <span className="text-red-500">*</span>
+            {t('safeguard.report.field.type_legend')} <span className="text-red-500">*</span>
           </legend>
           <div className="mt-2 space-y-2">
             {REPORT_TYPES.map((rt) => (
@@ -325,8 +297,8 @@ export default function SafeguardingReportPage() {
                 key={rt.value}
                 className={`flex cursor-pointer items-center gap-3 rounded-lg border p-3 text-sm transition-colors ${
                   reportType === rt.value
-                    ? "border-primary bg-primary/5 text-primary"
-                    : "border-border bg-card text-muted-foreground hover:border-border"
+                    ? 'border-primary bg-primary/5 text-primary'
+                    : 'border-border bg-card text-muted-foreground hover:border-border'
                 }`}
               >
                 <input
@@ -339,9 +311,7 @@ export default function SafeguardingReportPage() {
                 />
                 <span
                   className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 ${
-                    reportType === rt.value
-                      ? "border-primary"
-                      : "border-border"
+                    reportType === rt.value ? 'border-primary' : 'border-border'
                   }`}
                   aria-hidden="true"
                 >
@@ -349,7 +319,7 @@ export default function SafeguardingReportPage() {
                     <span className="h-2.5 w-2.5 rounded-full bg-primary" />
                   )}
                 </span>
-                {rt.label}
+                {t(rt.labelKey)}
               </label>
             ))}
           </div>
@@ -357,33 +327,26 @@ export default function SafeguardingReportPage() {
 
         {/* Description */}
         <div>
-          <label
-            htmlFor="description"
-            className="block text-sm font-medium text-muted-foreground"
-          >
-            Tell us what happened or what you&apos;re worried about{" "}
-            <span className="text-red-500">*</span>
+          <label htmlFor="description" className="block text-sm font-medium text-muted-foreground">
+            {t('safeguard.report.field.description_label')} <span className="text-red-500">*</span>
           </label>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            Take your time. Share as much or as little as you feel comfortable
-            with.
+            {t('safeguard.report.field.description_help')}
           </p>
           <textarea
             id="description"
             value={description}
-            onChange={(e) =>
-              setDescription(e.target.value.slice(0, DESCRIPTION_MAX))
-            }
+            onChange={(e) => setDescription(e.target.value.slice(0, DESCRIPTION_MAX))}
             rows={6}
             className="input-field mt-1 resize-y"
-            placeholder="You can write freely here..."
+            placeholder={t('safeguard.report.field.description_placeholder')}
             required
           />
           <p
             className={`mt-1 text-right text-xs ${
               description.length >= DESCRIPTION_MAX
-                ? "text-red-500 font-medium"
-                : "text-muted-foreground"
+                ? 'text-red-500 font-medium'
+                : 'text-muted-foreground'
             }`}
           >
             {description.length}/{DESCRIPTION_MAX}
@@ -393,12 +356,13 @@ export default function SafeguardingReportPage() {
         {/* Optional contact details */}
         <div className="rounded-lg border border-border bg-muted p-4">
           <p className="text-sm font-medium text-muted-foreground">
-            Your details{" "}
-            <span className="font-normal text-muted-foreground">(optional)</span>
+            {t('safeguard.report.your_details')}{' '}
+            <span className="font-normal text-muted-foreground">
+              {t('safeguard.report.optional')}
+            </span>
           </p>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            You can report anonymously. If you leave your details, we can
-            follow up with you.
+            {t('safeguard.report.your_details_help')}
           </p>
 
           <div className="mt-3 space-y-3">
@@ -407,7 +371,7 @@ export default function SafeguardingReportPage() {
                 htmlFor="reporterName"
                 className="block text-xs font-medium text-muted-foreground"
               >
-                Your name
+                {t('safeguard.report.field.name_label')}
               </label>
               <input
                 id="reporterName"
@@ -415,7 +379,7 @@ export default function SafeguardingReportPage() {
                 value={reporterName}
                 onChange={(e) => setReporterName(e.target.value)}
                 className="input-field mt-1"
-                placeholder="Optional"
+                placeholder={t('safeguard.report.field.name_placeholder')}
                 maxLength={100}
               />
             </div>
@@ -424,7 +388,7 @@ export default function SafeguardingReportPage() {
                 htmlFor="reporterContact"
                 className="block text-xs font-medium text-muted-foreground"
               >
-                Email or phone number
+                {t('safeguard.report.field.contact_label')}
               </label>
               <input
                 id="reporterContact"
@@ -432,7 +396,7 @@ export default function SafeguardingReportPage() {
                 value={reporterContact}
                 onChange={(e) => setReporterContact(e.target.value)}
                 className="input-field mt-1"
-                placeholder="Optional"
+                placeholder={t('safeguard.report.field.contact_placeholder')}
                 maxLength={200}
               />
             </div>
@@ -450,19 +414,14 @@ export default function SafeguardingReportPage() {
         )}
 
         {/* Submit */}
-        <button
-          type="submit"
-          disabled={submitting}
-          className="btn-primary w-full"
-        >
-          {submitting ? "Sending your report..." : "Send Report"}
+        <button type="submit" disabled={submitting} className="btn-primary w-full">
+          {submitting ? t('safeguard.sending_report') : t('safeguard.send_report_cta')}
         </button>
 
         <p className="text-center text-xs text-muted-foreground">
-          Your report will be handled confidentially by our designated
-          safeguarding lead.
+          {t('safeguard.report.confidential_footer')}
         </p>
       </form>
     </div>
-  );
+  )
 }

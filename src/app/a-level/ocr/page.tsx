@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ALevelBoardHub } from '@/app/a-level/_components/BoardHub'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'OCR A-Level English — The English Hub',
@@ -9,13 +10,11 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-export default function OcrALevelHubPage() {
+export default async function OcrALevelHubPage() {
+  const boardName = await t('alevel.ocr.board_name')
+  const summary = await t('alevel.ocr.summary')
+
   return (
-    <ALevelBoardHub
-      boardName="OCR A-Level English"
-      examCode="H472 / H470"
-      hubSlug="ocr"
-      summary="OCR A-Level covers English Literature (H472) and Language (H470). Students cover Shakespeare drama, pre- and post-1900 poetry and prose, and a close reading of modern texts with an independent NEA component."
-    />
+    <ALevelBoardHub boardName={boardName} examCode="H472 / H470" hubSlug="ocr" summary={summary} />
   )
 }

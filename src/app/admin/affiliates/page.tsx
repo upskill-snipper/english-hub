@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuthStore } from '@/store/auth-store'
+import { useT } from '@/lib/i18n/use-t'
 import {
   Shield,
   ArrowLeft,
@@ -49,6 +50,7 @@ interface AffiliateWithStats {
 export default function AdminAffiliatesPage() {
   const router = useRouter()
   const { user, profile } = useAuthStore()
+  const t = useT()
 
   const [affiliates, setAffiliates] = useState<AffiliateWithStats[]>([])
   const [loading, setLoading] = useState(true)
@@ -68,9 +70,7 @@ export default function AdminAffiliatesPage() {
     setLoading(true)
     setError(null)
     try {
-      const url = filter
-        ? `/api/admin/affiliates?status=${filter}`
-        : '/api/admin/affiliates'
+      const url = filter ? `/api/admin/affiliates?status=${filter}` : '/api/admin/affiliates'
       const res = await fetch(url)
 
       if (res.status === 401) {
@@ -87,10 +87,10 @@ export default function AdminAffiliatesPage() {
       setAuthorized(true)
       setAffiliates(data)
     } catch {
-      setError('Failed to load affiliates')
+      setError(t('admin.aff.error_load'))
     }
     setLoading(false)
-  }, [filter, router])
+  }, [filter, router, t])
 
   useEffect(() => {
     if (!user && !useAuthStore.getState().isLoading) {
@@ -114,10 +114,10 @@ export default function AdminAffiliatesPage() {
         await fetchAffiliates()
       } else {
         const data = await res.json()
-        alert(data.error || 'Action failed')
+        alert(data.error || t('admin.action_failed'))
       }
     } catch {
-      alert('Network error')
+      alert(t('admin.network_error_short'))
     }
     setActionLoading(null)
   }
@@ -134,12 +134,16 @@ export default function AdminAffiliatesPage() {
       const data = await res.json()
       setPayoutResult(data)
     } catch {
-      setPayoutResult({ error: 'Failed to calculate payouts' })
+      setPayoutResult({ error: t('admin.aff.payout.fail_calc') })
     }
     setPayoutLoading(false)
   }
 
-  const handlePayoutAction = async (payoutId: string, status: string, extra: Record<string, unknown> = {}) => {
+  const handlePayoutAction = async (
+    payoutId: string,
+    status: string,
+    extra: Record<string, unknown> = {},
+  ) => {
     try {
       const res = await fetch('/api/admin/affiliates/payout', {
         method: 'POST',
@@ -148,12 +152,12 @@ export default function AdminAffiliatesPage() {
       })
       if (!res.ok) {
         const data = await res.json()
-        alert(data.error || 'Failed to update payout')
+        alert(data.error || t('admin.aff.payout.fail_update'))
       } else {
         handleCalculatePayouts()
       }
     } catch {
-      alert('Network error')
+      alert(t('admin.network_error_short'))
     }
   }
 
@@ -180,13 +184,13 @@ export default function AdminAffiliatesPage() {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to admin
+          {t('admin.back_to_admin')}
         </Link>
 
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
             <Shield className="w-7 h-7 text-primary" />
-            <h1 className="text-3xl font-bold text-foreground">Affiliate Management</h1>
+            <h1 className="text-3xl font-bold text-foreground">{t('admin.aff.title')}</h1>
           </div>
           <button
             onClick={fetchAffiliates}
@@ -194,7 +198,7 @@ export default function AdminAffiliatesPage() {
             className="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-lg border border-border text-muted-foreground hover:text-foreground transition-colors"
           >
             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
-            Refresh
+            {t('admin.refresh')}
           </button>
         </div>
 
@@ -206,19 +210,31 @@ export default function AdminAffiliatesPage() {
 
         {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <StatCard icon={<Users className="w-5 h-5" />} label="Total Affiliates" value={affiliates.length} />
-          <StatCard icon={<Clock className="w-5 h-5" />} label="Pending" value={pending.length} />
-          <StatCard icon={<CheckCircle2 className="w-5 h-5" />} label="Active" value={active.length} />
+          <StatCard
+            icon={<Users className="w-5 h-5" />}
+            label={t('admin.aff.stat.total')}
+            value={affiliates.length}
+          />
+          <StatCard
+            icon={<Clock className="w-5 h-5" />}
+            label={t('admin.aff.stat.pending')}
+            value={pending.length}
+          />
+          <StatCard
+            icon={<CheckCircle2 className="w-5 h-5" />}
+            label={t('admin.aff.stat.active')}
+            value={active.length}
+          />
           <StatCard
             icon={<DollarSign className="w-5 h-5" />}
-            label="Total Commission Paid"
+            label={t('admin.aff.stat.commission_paid')}
             value={formatGBP(affiliates.reduce((s, a) => s + a.stats.total_commission_paid, 0))}
           />
         </div>
 
         {/* Filter */}
         <div className="flex gap-2 mb-6 flex-wrap">
-          {['', 'pending', 'active', 'suspended', 'terminated'].map((f) => (
+          {(['', 'pending', 'active', 'suspended', 'terminated'] as const).map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
@@ -228,7 +244,7 @@ export default function AdminAffiliatesPage() {
                   : 'bg-card border border-border text-muted-foreground hover:text-foreground'
               }`}
             >
-              {f || 'All'}
+              {f === '' ? t('admin.aff.filter.all') : t(`admin.aff.filter.${f}`)}
             </button>
           ))}
         </div>
@@ -238,7 +254,7 @@ export default function AdminAffiliatesPage() {
           <section className="card p-6 mb-6">
             <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-clay-600" />
-              Pending Applications ({pending.length})
+              {t('admin.aff.pending_applications')} ({pending.length})
             </h2>
             <div className="space-y-4">
               {pending.map((a) => (
@@ -249,15 +265,27 @@ export default function AdminAffiliatesPage() {
                         <span className="font-semibold text-foreground">{a.full_name}</span>
                         {a.is_minor && (
                           <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/10 text-clay-600">
-                            Under 18
+                            {t('admin.aff.under_18')}
                           </span>
                         )}
                       </div>
                       <p className="text-sm text-muted-foreground">{a.email}</p>
                       <div className="flex gap-4 mt-2 text-xs text-muted-foreground">
-                        {a.tiktok_handle && <span>TikTok: {a.tiktok_handle}</span>}
-                        {a.instagram_handle && <span>IG: {a.instagram_handle}</span>}
-                        {a.approx_follower_count && <span>Followers: {a.approx_follower_count}</span>}
+                        {a.tiktok_handle && (
+                          <span>
+                            {t('admin.aff.tiktok_label')} {a.tiktok_handle}
+                          </span>
+                        )}
+                        {a.instagram_handle && (
+                          <span>
+                            {t('admin.aff.ig_label')} {a.instagram_handle}
+                          </span>
+                        )}
+                        {a.approx_follower_count && (
+                          <span>
+                            {t('admin.aff.followers_label')} {a.approx_follower_count}
+                          </span>
+                        )}
                       </div>
                       {a.audience_description && (
                         <p className="text-sm text-muted-foreground mt-2 italic">
@@ -266,7 +294,7 @@ export default function AdminAffiliatesPage() {
                       )}
                       {a.content_plan && (
                         <p className="text-sm text-muted-foreground mt-1">
-                          <strong>Content plan:</strong> {a.content_plan}
+                          <strong>{t('admin.aff.content_plan_label')}</strong> {a.content_plan}
                         </p>
                       )}
                       {a.best_post_url && (
@@ -276,12 +304,13 @@ export default function AdminAffiliatesPage() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-1"
                         >
-                          View best post <ExternalLink className="w-3 h-3" />
+                          {t('admin.aff.view_best_post')} <ExternalLink className="w-3 h-3" />
                         </a>
                       )}
                       {a.is_minor && a.parental_consent_guardian_name && (
                         <p className="text-xs text-clay-600 mt-2">
-                          Guardian: {a.parental_consent_guardian_name} ({a.parental_consent_guardian_email})
+                          {t('admin.aff.guardian_label')} {a.parental_consent_guardian_name} (
+                          {a.parental_consent_guardian_email})
                         </p>
                       )}
                     </div>
@@ -292,7 +321,7 @@ export default function AdminAffiliatesPage() {
                         className="btn-primary px-3 py-2 text-sm gap-1"
                       >
                         <CheckCircle2 className="w-4 h-4" />
-                        Approve
+                        {t('admin.aff.approve')}
                       </button>
                       <button
                         onClick={() => handleAction(a.id, 'reject')}
@@ -312,22 +341,27 @@ export default function AdminAffiliatesPage() {
         {/* All Affiliates Table */}
         <section className="card p-6 mb-6">
           <h2 className="text-lg font-semibold text-foreground mb-4">
-            {filter ? `${filter.charAt(0).toUpperCase() + filter.slice(1)} Affiliates` : 'All Affiliates'} ({affiliates.length})
+            {filter
+              ? `${t(`admin.aff.filter.${filter}`).charAt(0).toUpperCase() + t(`admin.aff.filter.${filter}`).slice(1)} ${t('admin.aff.suffix_affiliates')}`
+              : t('admin.aff.all_affiliates')}{' '}
+            ({affiliates.length})
           </h2>
           {affiliates.length === 0 ? (
-            <p className="text-muted-foreground text-sm py-8 text-center">No affiliates found.</p>
+            <p className="text-muted-foreground text-sm py-8 text-center">
+              {t('admin.aff.none_found')}
+            </p>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border text-left text-muted-foreground">
-                    <th className="pb-3 pr-4 font-medium">Name</th>
-                    <th className="pb-3 pr-4 font-medium">Status</th>
-                    <th className="pb-3 pr-4 font-medium">Tier</th>
-                    <th className="pb-3 pr-4 font-medium">Referrals</th>
-                    <th className="pb-3 pr-4 font-medium">Paid</th>
-                    <th className="pb-3 pr-4 font-medium">Pending</th>
-                    <th className="pb-3 font-medium">Joined</th>
+                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.name')}</th>
+                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.status')}</th>
+                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.tier')}</th>
+                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.referrals')}</th>
+                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.paid')}</th>
+                    <th className="pb-3 pr-4 font-medium">{t('admin.aff.col.pending')}</th>
+                    <th className="pb-3 font-medium">{t('admin.aff.col.joined')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
@@ -347,19 +381,21 @@ export default function AdminAffiliatesPage() {
                           {a.full_name}
                           {a.is_minor && (
                             <span className="text-[10px] px-1.5 py-0.5 rounded bg-yellow-500/10 text-clay-600">
-                              Minor
+                              {t('admin.aff.minor_badge')}
                             </span>
                           )}
                         </div>
                       </td>
                       <td className="py-3 pr-4">
-                        <StatusBadge status={a.status} />
+                        <StatusBadge status={a.status} t={t} />
                       </td>
                       <td className="py-3 pr-4">{a.tier}</td>
                       <td className="py-3 pr-4">{a.stats.total_referrals}</td>
                       <td className="py-3 pr-4">{formatGBP(a.stats.total_commission_paid)}</td>
                       <td className="py-3 pr-4">{formatGBP(a.stats.pending_commission)}</td>
-                      <td className="py-3 text-muted-foreground text-xs">{formatDate(a.created_at)}</td>
+                      <td className="py-3 text-muted-foreground text-xs">
+                        {formatDate(a.created_at)}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -372,11 +408,11 @@ export default function AdminAffiliatesPage() {
         <section className="card p-6">
           <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
             <DollarSign className="w-5 h-5 text-primary" />
-            Monthly Payout Calculator
+            {t('admin.aff.payout.title')}
           </h2>
           <div className="flex items-end gap-4 mb-4">
             <div>
-              <label className="label">Year</label>
+              <label className="label">{t('admin.aff.payout.year')}</label>
               <input
                 type="number"
                 value={payoutYear}
@@ -385,7 +421,7 @@ export default function AdminAffiliatesPage() {
               />
             </div>
             <div>
-              <label className="label">Month</label>
+              <label className="label">{t('admin.aff.payout.month')}</label>
               <select
                 value={payoutMonth}
                 onChange={(e) => setPayoutMonth(Number(e.target.value))}
@@ -403,7 +439,7 @@ export default function AdminAffiliatesPage() {
               disabled={payoutLoading}
               className="btn-primary px-4 py-3 text-sm"
             >
-              {payoutLoading ? 'Calculating...' : 'Calculate Payouts'}
+              {payoutLoading ? t('admin.aff.payout.calculating') : t('admin.aff.payout.calc')}
             </button>
           </div>
 
@@ -416,7 +452,7 @@ export default function AdminAffiliatesPage() {
               ) : (
                 <div>
                   <p className="text-muted-foreground text-sm mb-3">
-                    {payoutResult.payouts.length} payout(s) created:
+                    {payoutResult.payouts.length} {t('admin.aff.payout.created_prefix')}
                   </p>
                   <div className="space-y-2">
                     {payoutResult.payouts.map((p: any) => (
@@ -426,10 +462,11 @@ export default function AdminAffiliatesPage() {
                       >
                         <div>
                           <span className="text-sm text-foreground font-medium">
-                            Affiliate: {p.affiliate_id.slice(0, 8)}...
+                            {t('admin.aff.payout.affiliate_prefix')} {p.affiliate_id.slice(0, 8)}...
                           </span>
                           <span className="text-sm text-muted-foreground ml-3">
-                            {p.referral_count} referral(s) · {formatGBP(p.gross_commission_gbp)}
+                            {p.referral_count} {t('admin.aff.payout.referral_suffix')} ·{' '}
+                            {formatGBP(p.gross_commission_gbp)}
                           </span>
                         </div>
                         <div className="flex gap-2">
@@ -441,7 +478,7 @@ export default function AdminAffiliatesPage() {
                             }
                             className="text-xs px-2 py-1 rounded border border-border text-muted-foreground hover:text-foreground"
                           >
-                            Mark Disclosure OK
+                            {t('admin.aff.payout.mark_disclosure')}
                           </button>
                         </div>
                       </div>
@@ -457,7 +494,7 @@ export default function AdminAffiliatesPage() {
   )
 }
 
-function StatusBadge({ status }: { status: string }) {
+function StatusBadge({ status, t }: { status: string; t: (key: string) => string }) {
   const styles: Record<string, string> = {
     pending: 'bg-yellow-500/10 text-clay-600',
     agreement_sent: 'bg-blue-500/10 text-blue-400',
@@ -466,9 +503,20 @@ function StatusBadge({ status }: { status: string }) {
     suspended: 'bg-orange-500/10 text-clay-600',
     terminated: 'bg-red-500/10 text-red-400',
   }
+  const knownStatuses = [
+    'pending',
+    'agreement_sent',
+    'agreement_signed',
+    'active',
+    'suspended',
+    'terminated',
+  ]
+  const label = knownStatuses.includes(status) ? t(`admin.aff.status.${status}`) : status
   return (
-    <span className={`inline-block text-xs px-2 py-0.5 rounded-full ${styles[status] ?? 'bg-border text-muted-foreground'}`}>
-      {status}
+    <span
+      className={`inline-block text-xs px-2 py-0.5 rounded-full ${styles[status] ?? 'bg-border text-muted-foreground'}`}
+    >
+      {label}
     </span>
   )
 }

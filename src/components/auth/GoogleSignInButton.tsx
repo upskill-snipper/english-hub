@@ -5,6 +5,7 @@ import { Loader2 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { cn } from '@/lib/utils'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import { useT } from '@/lib/i18n/use-t'
 
 interface GoogleSignInButtonProps {
   /** Where to redirect after successful Google sign-in. Validated by the existing validateRedirect helper at the consuming site. Defaults to /dashboard */
@@ -13,7 +14,12 @@ interface GoogleSignInButtonProps {
   variant?: 'outline' | 'primary'
   /** Optional className passthrough for layout */
   className?: string
-  /** Render label text — default 'Continue with Google' */
+  /**
+   * Render label text. When omitted (the default), the component reads the
+   * `auth.google.continue` key from the dictionary so the label translates
+   * with the active locale. Pass a string here only if a caller needs a
+   * page-specific label (rare).
+   */
   label?: string
 }
 
@@ -36,10 +42,15 @@ export default function GoogleSignInButton({
   redirectTo,
   variant = 'outline',
   className,
-  label = 'Continue with Google',
+  label,
 }: GoogleSignInButtonProps) {
+  const t = useT()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  // Fall back to the dictionary label when the caller does not override it.
+  // Resolved here (not at the destructure default) so the locale is read at
+  // render time — useT() picks up the active cookie/locale.
+  const resolvedLabel = label ?? t('auth.google.continue')
 
   // Hard guard: if the env flag isn't explicitly 'true', render nothing.
   // This prevents the raw Supabase 'provider is not enabled' error from
@@ -72,8 +83,8 @@ export default function GoogleSignInButton({
       // than the raw JSON.
       const raw = oauthError.message?.toLowerCase() ?? ''
       const friendly = raw.includes('provider is not enabled')
-        ? 'Google sign-in is not available right now. Please sign in with your email and password instead.'
-        : 'We could not start Google sign-in. Please try again, or sign in with your email and password instead.'
+        ? t('auth.google.error.not_enabled')
+        : t('auth.google.error.generic')
       setError(friendly)
       setLoading(false)
       return
@@ -97,7 +108,7 @@ export default function GoogleSignInButton({
         type="button"
         onClick={handleClick}
         disabled={loading}
-        aria-label="Sign in with Google"
+        aria-label={t('auth.google.aria_signin')}
         className={cn(baseStyles, variantStyles)}
       >
         {loading ? (
@@ -105,7 +116,7 @@ export default function GoogleSignInButton({
         ) : (
           <GoogleLogo aria-hidden="true" />
         )}
-        <span>{loading ? 'Redirecting…' : label}</span>
+        <span>{loading ? t('auth.google.redirecting') : resolvedLabel}</span>
       </button>
 
       {error && (

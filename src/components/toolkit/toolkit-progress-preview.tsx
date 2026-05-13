@@ -1,12 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import {
-  BookOpen,
-  Flame,
-  Trophy,
-  TrendingUp,
-} from 'lucide-react'
+import { BookOpen, Flame, Trophy, TrendingUp } from 'lucide-react'
 import {
   LS_KEYS,
   lsGet,
@@ -16,6 +11,7 @@ import {
   type GameScoreEntry,
 } from './toolkit-types'
 import { percentageToGCSEGrade } from '@/lib/grades'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Progress Preview ──────────────────────────────────────────────────────
 // A compact row of stat cards shown at the top of the Toolkit Hub.
@@ -30,9 +26,9 @@ function calculateStreak(): number {
     const dates: string[] = JSON.parse(raw)
     if (!dates.length) return 0
 
-    const unique = [
-      ...new Set(dates.map((d) => new Date(d).toISOString().slice(0, 10))),
-    ].sort().reverse()
+    const unique = [...new Set(dates.map((d) => new Date(d).toISOString().slice(0, 10)))]
+      .sort()
+      .reverse()
 
     const today = new Date().toISOString().slice(0, 10)
     const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10)
@@ -43,9 +39,7 @@ function calculateStreak(): number {
     for (let i = 1; i < unique.length; i++) {
       const prev = new Date(unique[i - 1])
       const curr = new Date(unique[i])
-      const diffDays = Math.round(
-        (prev.getTime() - curr.getTime()) / (1000 * 60 * 60 * 24)
-      )
+      const diffDays = Math.round((prev.getTime() - curr.getTime()) / (1000 * 60 * 60 * 24))
       if (diffDays === 1) {
         streak++
       } else {
@@ -74,19 +68,16 @@ function StatCard({ icon: Icon, label, value, colour, bgColour, sub }: StatCardP
         <Icon className={`h-5 w-5 ${colour}`} />
       </div>
       <div>
-        <p className="font-mono text-xs text-muted-foreground uppercase tracking-wide">
-          {label}
-        </p>
+        <p className="font-mono text-xs text-muted-foreground uppercase tracking-wide">{label}</p>
         <p className="text-xl font-serif font-medium">{value}</p>
-        {sub && (
-          <p className="text-xs text-muted-foreground">{sub}</p>
-        )}
+        {sub && <p className="text-xs text-muted-foreground">{sub}</p>}
       </div>
     </div>
   )
 }
 
 export function ToolkitProgressPreview() {
+  const t = useT()
   const [mounted, setMounted] = useState(false)
   const [quizzes, setQuizzes] = useState(0)
   const [avgScore, setAvgScore] = useState(0)
@@ -105,10 +96,7 @@ export function ToolkitProgressPreview() {
     setStreak(calculateStreak())
 
     // Calculate average score and predicted grade
-    const allScores = [
-      ...quizHistory.map((q) => q.score),
-      ...gameScores.map((g) => g.score),
-    ]
+    const allScores = [...quizHistory.map((q) => q.score), ...gameScores.map((g) => g.score)]
     if (allScores.length > 0) {
       const avg = allScores.reduce((a, b) => a + b, 0) / allScores.length
       setAvgScore(Math.round(avg))
@@ -126,36 +114,46 @@ export function ToolkitProgressPreview() {
     )
   }
 
+  const dayLabel = streak === 1 ? t('toolkit.progress.day') : t('toolkit.progress.days')
+  const gradeLabel = t('toolkit.progress.grade_prefix')
+  const avgSuffix = t('toolkit.progress.avg_suffix')
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
       <StatCard
         icon={Trophy}
-        label="Quizzes Taken"
+        label={t('toolkit.progress.quizzes_taken')}
         value={quizzes}
         colour="text-violet-500"
         bgColour="bg-violet-500/10"
       />
       <StatCard
         icon={BookOpen}
-        label="Poems Studied"
+        label={t('toolkit.progress.poems_studied')}
         value={poems}
         colour="text-blue-500"
         bgColour="bg-blue-500/10"
       />
       <StatCard
         icon={Flame}
-        label="Study Streak"
-        value={`${streak} day${streak !== 1 ? 's' : ''}`}
+        label={t('toolkit.progress.study_streak')}
+        value={`${streak} ${dayLabel}`}
         colour="text-amber-500"
         bgColour="bg-amber-500/10"
       />
       <StatCard
         icon={TrendingUp}
-        label="Predicted Grade"
-        value={predictedGrade > 0 ? `Grade ${predictedGrade}` : '--'}
+        label={t('toolkit.progress.predicted_grade')}
+        value={predictedGrade > 0 ? `${gradeLabel} ${predictedGrade}` : '--'}
         colour={predictedGrade > 0 ? gradeColour(predictedGrade) : 'text-muted-foreground'}
-        bgColour={predictedGrade >= 7 ? 'bg-emerald-500/10' : predictedGrade >= 4 ? 'bg-amber-500/10' : 'bg-muted'}
-        sub={avgScore > 0 ? `${avgScore}% avg` : 'Take quizzes to predict'}
+        bgColour={
+          predictedGrade >= 7
+            ? 'bg-emerald-500/10'
+            : predictedGrade >= 4
+              ? 'bg-amber-500/10'
+              : 'bg-muted'
+        }
+        sub={avgScore > 0 ? `${avgScore}% ${avgSuffix}` : t('toolkit.progress.take_quizzes_hint')}
       />
     </div>
   )

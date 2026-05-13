@@ -1,6 +1,15 @@
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, GraduationCap, PenLine } from 'lucide-react'
+import { t } from '@/lib/i18n/t'
+
+/* ── Shared building block for Jekyll and Hyde analysis sub-pages ─────
+ *
+ * Server component. Chrome strings (breadcrumb labels, byline, "Ready
+ * to revise", CTAs, related-analyses heading) route through
+ * `analysis.subpage.*` for Khaleeji AR. Literary body content stays
+ * in source language — children pass through untouched.
+ * ───────────────────────────────────────────────────────────────────── */
 
 type Related = {
   title: string
@@ -110,7 +119,7 @@ export function Quote({
   )
 }
 
-export function AnalysisPage({
+export async function AnalysisPage({
   slug,
   h1,
   intro,
@@ -121,6 +130,21 @@ export function AnalysisPage({
   children,
   related,
 }: AnalysisPageProps) {
+  // Chrome translations — async server component handles them inline.
+  const homeLabel = await t('analysis.subpage.home_breadcrumb')
+  const hubLink = await t('analysis.subpage.jekyll_hub_link')
+  const allLink = await t('analysis.subpage.jekyll_all_link')
+  const chip = await t('analysis.subpage.jekyll_chip')
+  const gcseChip = await t('analysis.subpage.cat_chip_gcse')
+  const bylinePrefix = await t('analysis.byline.written_by')
+  const bylineMarkers = await t('analysis.byline.markers_short')
+  const bylineAt = await t('analysis.byline.at_brand')
+  const readyH2 = await t('analysis.subpage.ready_to_revise_h2')
+  const readyBody = await t('analysis.subpage.jekyll_blurb')
+  const fullCta = await t('analysis.subpage.cta_full_revision')
+  const notesCta = await t('analysis.subpage.cta_revision_notes')
+  const relatedH2 = await t('analysis.subpage.related_h2')
+
   return (
     <article className="mx-auto max-w-3xl px-4 pb-16 pt-8 sm:px-6">
       <ArticleJsonLd
@@ -136,13 +160,13 @@ export function AnalysisPage({
         <ol className="flex flex-wrap items-center gap-1">
           <li>
             <Link href="/" className="hover:text-foreground">
-              Home
+              {homeLabel}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
             <Link href="/analysis/jekyll-hyde" className="hover:text-foreground">
-              Jekyll &amp; Hyde Analysis
+              {hubLink}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
@@ -155,16 +179,16 @@ export function AnalysisPage({
         className="mb-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
       >
         <ArrowLeft className="size-3.5" />
-        All Jekyll &amp; Hyde analyses
+        {allLink}
       </Link>
 
       <header className="mb-8 border-b border-border pb-6">
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <span className="rounded-full bg-violet-500/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-violet-700 dark:text-violet-300">
-            Jekyll &amp; Hyde
+            {chip}
           </span>
           <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">
-            GCSE Analysis
+            {gcseChip}
           </span>
         </div>
 
@@ -175,7 +199,7 @@ export function AnalysisPage({
         <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
           <GraduationCap className="size-4 text-primary" aria-hidden="true" />
           <span>
-            Written by <strong className="text-foreground">GCSE markers</strong> at The English Hub
+            {bylinePrefix} <strong className="text-foreground">{bylineMarkers}</strong> {bylineAt}
           </span>
         </div>
       </header>
@@ -190,19 +214,14 @@ export function AnalysisPage({
         <div className="flex items-start gap-3">
           <PenLine className="mt-1 size-5 shrink-0 text-violet-400" aria-hidden="true" />
           <div className="flex-1">
-            <h2 className="text-lg font-bold text-foreground">
-              Ready to revise the whole novella?
-            </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Get the complete Jekyll and Hyde study guide — chapter summaries, every key quotation,
-              every theme, and exam-ready essay plans for AQA, Edexcel and OCR.
-            </p>
+            <h2 className="text-lg font-bold text-foreground">{readyH2}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">{readyBody}</p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
                 href="/revision/texts/jekyll-and-hyde"
                 className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
               >
-                Full revision guide
+                {fullCta}
                 <ArrowRight className="size-3.5" />
               </Link>
               <Link
@@ -210,7 +229,7 @@ export function AnalysisPage({
                 className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
               >
                 <BookOpen className="size-3.5" />
-                Revision notes
+                {notesCta}
               </Link>
             </div>
           </div>
@@ -220,7 +239,7 @@ export function AnalysisPage({
       {/* Related */}
       {related.length > 0 && (
         <section className="mt-10">
-          <h2 className="mb-4 text-xl font-bold text-foreground">Related analyses</h2>
+          <h2 className="mb-4 text-xl font-bold text-foreground">{relatedH2}</h2>
           <ul className="grid gap-3 sm:grid-cols-2">
             {related.map((r) => (
               <li key={r.href}>

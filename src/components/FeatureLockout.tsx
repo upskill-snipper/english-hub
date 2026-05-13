@@ -12,25 +12,35 @@ import {
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { type GatedFeature, FEATURE_NAMES, FREE_USES_PER_FEATURE } from '@/lib/feature-gating'
+import { type GatedFeature, FREE_USES_PER_FEATURE } from '@/lib/feature-gating'
 import { PRICING } from '@/constants/pricing'
 import { PromoCodePrompt } from '@/components/billing/AffiliateCodeField'
+import { useT } from '@/lib/i18n/use-t'
 
-const FEATURE_BENEFITS: Record<GatedFeature, string> = {
-  ai_essay_marking:
-    'Get detailed, exam-board-aligned feedback on every essay with AI-powered marking.',
-  mock_exam: 'Practise with full-length mock exams that mirror real GCSE and A-Level papers.',
-  feedback_report: 'Generate comprehensive feedback reports to share with students and parents.',
-  ai_study_recommendations:
-    "Receive personalised study plans tailored to each student's strengths and gaps.",
-  ai_lesson_plan: 'Create curriculum-aligned lesson plans in minutes with AI assistance.',
-  worksheet_builder:
-    'Build differentiated worksheets with auto-generated questions and mark schemes.',
-  mark_scheme_generator: 'Generate detailed mark schemes aligned to exam board criteria.',
-  export_pptx_word:
-    'Export lesson materials directly to PowerPoint and Word for easy classroom use.',
-  class_analytics: 'Track class-wide progress with detailed performance analytics and insights.',
-  student_reports: 'Generate individual student progress reports with targeted improvement areas.',
+const FEATURE_BENEFIT_KEYS: Record<GatedFeature, string> = {
+  ai_essay_marking: 'feature.benefit.ai_essay_marking',
+  mock_exam: 'feature.benefit.mock_exam',
+  feedback_report: 'feature.benefit.feedback_report',
+  ai_study_recommendations: 'feature.benefit.ai_study_recommendations',
+  ai_lesson_plan: 'feature.benefit.ai_lesson_plan',
+  worksheet_builder: 'feature.benefit.worksheet_builder',
+  mark_scheme_generator: 'feature.benefit.mark_scheme_generator',
+  export_pptx_word: 'feature.benefit.export_pptx_word',
+  class_analytics: 'feature.benefit.class_analytics',
+  student_reports: 'feature.benefit.student_reports',
+}
+
+const FEATURE_NAME_KEYS: Record<GatedFeature, string> = {
+  ai_essay_marking: 'feature.name.ai_essay_marking',
+  mock_exam: 'feature.name.mock_exam',
+  feedback_report: 'feature.name.feedback_report',
+  ai_study_recommendations: 'feature.name.ai_study_recommendations',
+  ai_lesson_plan: 'feature.name.ai_lesson_plan',
+  worksheet_builder: 'feature.name.worksheet_builder',
+  mark_scheme_generator: 'feature.name.mark_scheme_generator',
+  export_pptx_word: 'feature.name.export_pptx_word',
+  class_analytics: 'feature.name.class_analytics',
+  student_reports: 'feature.name.student_reports',
 }
 
 interface FeatureLockoutProps {
@@ -38,8 +48,17 @@ interface FeatureLockoutProps {
 }
 
 export function FeatureLockout({ feature }: FeatureLockoutProps) {
-  const featureName = FEATURE_NAMES[feature]
-  const benefit = FEATURE_BENEFITS[feature]
+  const t = useT()
+  const featureName = t(FEATURE_NAME_KEYS[feature])
+  const benefit = t(FEATURE_BENEFIT_KEYS[feature])
+  const pricingLine = t('feature.lockout.plan_pricing')
+    .replace('{currency}', PRICING.CURRENCY)
+    .replace('{student}', String(PRICING.STUDENT_MONTHLY))
+    .replace('{teacher}', String(PRICING.TEACHER_MONTHLY))
+  const description = t('feature.lockout.description').replace(
+    '{total}',
+    String(FREE_USES_PER_FEATURE),
+  )
 
   return (
     <Card className="mx-auto max-w-md border-amber-200/60 dark:border-amber-800/40">
@@ -47,11 +66,10 @@ export function FeatureLockout({ feature }: FeatureLockoutProps) {
         <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30">
           <Lock className="size-7 text-amber-600" />
         </div>
-        <CardTitle className="text-lg">{featureName} is now locked</CardTitle>
-        <CardDescription>
-          You&apos;ve used all {FREE_USES_PER_FEATURE} free submissions. Upgrade to Premium for
-          unlimited access.
-        </CardDescription>
+        <CardTitle className="text-lg">
+          {featureName} {t('feature.lockout.title_suffix')}
+        </CardTitle>
+        <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="rounded-lg border border-border/60 bg-muted/30 p-4">
@@ -59,12 +77,8 @@ export function FeatureLockout({ feature }: FeatureLockoutProps) {
         </div>
         <div className="mt-4 flex items-center justify-between rounded-lg border border-border/60 bg-muted/30 p-4">
           <div>
-            <p className="text-sm font-semibold">Premium Plan</p>
-            <p className="text-xs text-muted-foreground">
-              Students from {PRICING.CURRENCY}
-              {PRICING.STUDENT_MONTHLY}/month &middot; teachers from {PRICING.CURRENCY}
-              {PRICING.TEACHER_MONTHLY}/month
-            </p>
+            <p className="text-sm font-semibold">{t('feature.lockout.plan_title')}</p>
+            <p className="text-xs text-muted-foreground">{pricingLine}</p>
           </div>
           <Badge variant="default" className="bg-emerald-600 hover:bg-emerald-600">
             {PRICING.TRIAL_TEXT}
@@ -74,11 +88,11 @@ export function FeatureLockout({ feature }: FeatureLockoutProps) {
       <CardFooter className="flex-col gap-2">
         <Button render={<Link href="/pricing" />} size="lg" className="w-full">
           <Crown className="size-4" />
-          Start 7-day trial
+          {t('feature.lockout.cta_trial')}
         </Button>
         <PromoCodePrompt className="w-full" />
         <p className="text-xs text-muted-foreground text-center">
-          Trial requires a valid card. Cancel before day 7 and you won&apos;t be charged.
+          {t('feature.lockout.trial_note')}
         </p>
       </CardFooter>
     </Card>

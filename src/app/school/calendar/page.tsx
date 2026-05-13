@@ -53,13 +53,24 @@ import {
   urgencyColor,
   BOARDS,
 } from '@/data/exam-dates'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
 const DAY_LABELS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] as const
 const MONTH_NAMES = [
-  'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December',
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ] as const
 
 const URGENCY_DOT: Record<string, string> = {
@@ -102,6 +113,7 @@ interface RevisionWeek {
 // ── Page component ───────────────────────────────────────────────────────────
 
 export default function CalendarPage() {
+  const t = useT()
   // View state
   const [view, setView] = useState<'month' | 'week'>('month')
   const [revisionMode, setRevisionMode] = useState(false)
@@ -114,7 +126,12 @@ export default function CalendarPage() {
   // Lesson slots (local state — in production this would come from a database)
   const [lessons, setLessons] = useState<LessonSlot[]>([])
   const [assignments, setAssignments] = useState<AssignmentDue[]>([
-    { id: 'a1', date: '2026-05-15', title: 'Mock Paper 1 — Creative Writing', className: 'Year 11 Set 1' },
+    {
+      id: 'a1',
+      date: '2026-05-15',
+      title: 'Mock Paper 1 — Creative Writing',
+      className: 'Year 11 Set 1',
+    },
     { id: 'a2', date: '2026-05-08', title: 'Poetry Anthology Essay', className: 'Year 11 Set 2' },
     { id: 'a3', date: '2026-05-22', title: 'Macbeth Revision Booklet', className: 'Year 10 Set 1' },
   ])
@@ -256,9 +273,7 @@ export default function CalendarPage() {
   function onDrop(dateStr: string) {
     if (!dragRef.current) return
     setLessons((prev) =>
-      prev.map((l) =>
-        l.id === dragRef.current!.lessonId ? { ...l, date: dateStr } : l,
-      ),
+      prev.map((l) => (l.id === dragRef.current!.lessonId ? { ...l, date: dateStr } : l)),
     )
     dragRef.current = null
   }
@@ -311,15 +326,13 @@ export default function CalendarPage() {
       {/* ── Header ─────────────────────────────────────────────────────── */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Exam Calendar</h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Plan revision, track exams and manage lesson schedules
-          </p>
+          <h1 className="text-2xl font-bold tracking-tight">{t('school.calendar.title')}</h1>
+          <p className="text-sm text-muted-foreground mt-1">{t('school.calendar.subtitle')}</p>
         </div>
         <div className="flex items-center gap-2 print:hidden">
           <Button variant="outline" size="sm" onClick={handlePrint}>
             <Printer className="h-4 w-4 mr-1.5" />
-            Print
+            {t('school.calendar.print')}
           </Button>
           <Button
             variant={revisionMode ? 'default' : 'outline'}
@@ -327,16 +340,13 @@ export default function CalendarPage() {
             onClick={() => setRevisionMode((v) => !v)}
           >
             <Timer className="h-4 w-4 mr-1.5" />
-            Revision Mode
+            {t('school.calendar.revision_mode')}
           </Button>
         </div>
       </div>
 
       {/* ── Countdown widget ───────────────────────────────────────────── */}
-      <ExamCountdown
-        board={boardFilter !== 'all' ? boardFilter : undefined}
-        variant="full"
-      />
+      <ExamCountdown board={boardFilter !== 'all' ? boardFilter : undefined} variant="full" />
 
       {/* ── Controls ───────────────────────────────────────────────────── */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between print:hidden">
@@ -346,7 +356,7 @@ export default function CalendarPage() {
             <ChevronLeft className="h-4 w-4" />
           </Button>
           <Button variant="ghost" size="sm" onClick={goToday}>
-            Today
+            {t('school.calendar.today')}
           </Button>
           <Button variant="outline" size="icon" onClick={() => navigate(1)}>
             <ChevronRight className="h-4 w-4" />
@@ -359,10 +369,10 @@ export default function CalendarPage() {
           <Select value={boardFilter} onValueChange={(v) => setBoardFilter(v ?? 'all')}>
             <SelectTrigger className="w-[140px] h-8 text-xs">
               <Filter className="h-3 w-3 mr-1" />
-              <SelectValue placeholder="Exam Board" />
+              <SelectValue placeholder={t('school.calendar.exam_board')} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Boards</SelectItem>
+              <SelectItem value="all">{t('school.calendar.all_boards')}</SelectItem>
               {BOARDS.map((b) => (
                 <SelectItem key={b} value={b}>
                   {b}
@@ -373,10 +383,10 @@ export default function CalendarPage() {
 
           <Select value={classFilter} onValueChange={(v) => setClassFilter(v ?? 'all')}>
             <SelectTrigger className="w-[140px] h-8 text-xs">
-              <SelectValue placeholder="Class" />
+              <SelectValue placeholder={t('school.calendar.class')} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Classes</SelectItem>
+              <SelectItem value="all">{t('school.calendar.all_classes')}</SelectItem>
               <SelectItem value="y11-set1">Year 11 Set 1</SelectItem>
               <SelectItem value="y11-set2">Year 11 Set 2</SelectItem>
               <SelectItem value="y10-set1">Year 10 Set 1</SelectItem>
@@ -387,11 +397,11 @@ export default function CalendarPage() {
             <TabsList className="h-8">
               <TabsTrigger value="month" className="text-xs px-2.5">
                 <LayoutGrid className="h-3 w-3 mr-1" />
-                Month
+                {t('school.calendar.month')}
               </TabsTrigger>
               <TabsTrigger value="week" className="text-xs px-2.5">
                 <List className="h-3 w-3 mr-1" />
-                Week
+                {t('school.calendar.week')}
               </TabsTrigger>
             </TabsList>
           </Tabs>
@@ -407,11 +417,9 @@ export default function CalendarPage() {
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-base">
               <CalendarCheck className="h-5 w-5 text-primary" />
-              Revision Countdown Plan
+              {t('school.calendar.revision_countdown.title')}
             </CardTitle>
-            <CardDescription>
-              Weekly revision topics leading up to your exams
-            </CardDescription>
+            <CardDescription>{t('school.calendar.revision_countdown.subtitle')}</CardDescription>
           </CardHeader>
           <CardContent className="p-0">
             <div className="divide-y divide-border">
@@ -502,48 +510,56 @@ export default function CalendarPage() {
       <Dialog open={addLessonOpen} onOpenChange={setAddLessonOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Add Lesson</DialogTitle>
+            <DialogTitle>{t('school.calendar.add_lesson')}</DialogTitle>
           </DialogHeader>
           <div className="space-y-4 py-2">
             <div className="space-y-2">
-              <Label htmlFor="lesson-title">Title</Label>
+              <Label htmlFor="lesson-title">{t('school.calendar.lesson.title')}</Label>
               <Input
                 id="lesson-title"
                 value={addLessonTitle}
                 onChange={(e) => setAddLessonTitle(e.target.value)}
-                placeholder="e.g. Macbeth Act 3 Analysis"
+                placeholder={t('school.calendar.lesson.title_placeholder')}
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-2">
-                <Label htmlFor="lesson-subject">Subject</Label>
+                <Label htmlFor="lesson-subject">{t('school.calendar.lesson.subject')}</Label>
                 <Input
                   id="lesson-subject"
                   value={addLessonSubject}
                   onChange={(e) => setAddLessonSubject(e.target.value)}
-                  placeholder="English"
+                  placeholder={t('school.calendar.lesson.subject_placeholder')}
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="lesson-period">Period (optional)</Label>
+                <Label htmlFor="lesson-period">{t('school.calendar.lesson.period')}</Label>
                 <Input
                   id="lesson-period"
                   value={addLessonPeriod}
                   onChange={(e) => setAddLessonPeriod(e.target.value)}
-                  placeholder="P3"
+                  placeholder={t('school.calendar.lesson.period_placeholder')}
                 />
               </div>
             </div>
             <p className="text-xs text-muted-foreground">
-              Date: {addLessonDate ? new Date(addLessonDate + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : ''}
+              {t('school.calendar.lesson.date_label')}:{' '}
+              {addLessonDate
+                ? new Date(addLessonDate + 'T00:00:00').toLocaleDateString('en-GB', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                  })
+                : ''}
             </p>
           </div>
           <DialogFooter>
             <DialogClose render={<Button variant="ghost" size="sm" />}>
-              Cancel
+              {t('school.calendar.cancel')}
             </DialogClose>
             <Button size="sm" onClick={handleAddLesson} disabled={!addLessonTitle.trim()}>
-              Add Lesson
+              {t('school.calendar.add_lesson')}
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -653,8 +669,14 @@ function MonthView({
                     )}
                     title={`${exam.board} — ${exam.paper}`}
                   >
-                    <span className={cn('inline-block w-1.5 h-1.5 rounded-full mr-1', URGENCY_DOT[colour])} />
-                    {exam.board} {exam.subject.includes('Literature') ? 'Lit' : 'Lang'} P{exam.paper.match(/\d/) || '?'}
+                    <span
+                      className={cn(
+                        'inline-block w-1.5 h-1.5 rounded-full mr-1',
+                        URGENCY_DOT[colour],
+                      )}
+                    />
+                    {exam.board} {exam.subject.includes('Literature') ? 'Lit' : 'Lang'} P
+                    {exam.paper.match(/\d/) || '?'}
                   </div>
                 )
               })}
@@ -671,7 +693,10 @@ function MonthView({
                   <GripVertical className="h-2.5 w-2.5 shrink-0 opacity-50" />
                   <span className="truncate flex-1">{lesson.title}</span>
                   <button
-                    onClick={(e) => { e.stopPropagation(); onRemoveLesson(lesson.id) }}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onRemoveLesson(lesson.id)
+                    }}
                     className="opacity-0 group-hover/lesson:opacity-100 shrink-0 print:hidden"
                   >
                     <X className="h-2.5 w-2.5 text-blue-500 hover:text-red-500" />
@@ -748,17 +773,13 @@ function WeekView({
               <div
                 className={cn(
                   'flex flex-col items-center justify-center shrink-0 w-14 h-14 rounded-lg',
-                  isToday
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-muted text-muted-foreground',
+                  isToday ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground',
                 )}
               >
                 <span className="text-[10px] uppercase font-medium">
                   {DAY_LABELS[(day.getDay() + 6) % 7]}
                 </span>
-                <span className="text-lg font-bold tabular-nums leading-none">
-                  {day.getDate()}
-                </span>
+                <span className="text-lg font-bold tabular-nums leading-none">{day.getDate()}</span>
               </div>
 
               {/* Content */}
@@ -780,7 +801,12 @@ function WeekView({
                             : 'border-emerald-500/30 dark:border-emerald-800',
                       )}
                     >
-                      <span className={cn('mt-0.5 h-2.5 w-2.5 rounded-full shrink-0', URGENCY_DOT[colour])} />
+                      <span
+                        className={cn(
+                          'mt-0.5 h-2.5 w-2.5 rounded-full shrink-0',
+                          URGENCY_DOT[colour],
+                        )}
+                      />
                       <div className="min-w-0">
                         <p className="text-sm font-semibold">
                           {exam.board} — {exam.subject}
@@ -895,9 +921,7 @@ function generateRevisionTopics(
 
   for (const exam of examsSoon) {
     const examDate = new Date(exam.date + 'T00:00:00')
-    const daysAway = Math.ceil(
-      (examDate.getTime() - weekStart.getTime()) / (1000 * 60 * 60 * 24),
-    )
+    const daysAway = Math.ceil((examDate.getTime() - weekStart.getTime()) / (1000 * 60 * 60 * 24))
 
     if (exam.subject.includes('Language')) {
       if (daysAway <= 7) {

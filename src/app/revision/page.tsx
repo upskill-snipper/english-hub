@@ -46,42 +46,43 @@ import { isIgcseBoard } from '@/lib/board/board-filter'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { RecentlyStudied } from './_components/recently-studied'
 import { TrialCountdownBannerServer } from '@/components/billing/TrialCountdownBannerServer'
+import { t } from '@/lib/i18n/t'
 
 // ─── Section data ──────────────────────────────────────────────────────────
 
 interface RevisionSection {
-  title: string
-  description: string
+  /** i18n key for the section title (revision_page.section.*.title). */
+  titleKey: string
+  /** i18n key for the description. */
+  descKey: string
   href: string
   icon: typeof BookOpen
   colour: string
   bgColour: string
-  stats: string
-  tag?: string
+  /** i18n key for the stats string. */
+  statsKey: string
+  /** Optional i18n key for the tag badge ("Popular", "New", "AI"). */
+  tagKey?: string
   /** Boards this section is shown to. Omit to show for all. */
   boards?: ExamBoard[]
   /**
    * Which exam paper(s) this section prepares the student for.
-   *   ['lit']        → Literature paper only (Shakespeare, anthology poetry, novels)
-   *   ['lang']       → Language paper only (reading comprehension, creative writing, SPaG)
-   *   ['lit', 'lang']→ Both — cross-paper skill (essay technique, mock papers, study plan)
-   *   undefined      → Generic / not paper-specific (e.g. flashcards, progress)
-   *
-   * Rendered as a badge next to each card so students don't waste time on the
-   * wrong paper. GCSE Lit-only and Lang-only candidates exist; both-papers is the
-   * default but can't be assumed.
+   *   ['lit']        → Literature paper only
+   *   ['lang']       → Language paper only
+   *   ['lit', 'lang']→ Both — cross-paper skill
+   *   undefined      → Generic / not paper-specific
    */
   papers?: ReadonlyArray<'lit' | 'lang'>
 }
 
-/** Human-readable label for the paper badge. Returns null for generic sections. */
-function paperLabel(papers: RevisionSection['papers']): string | null {
+/** Translation key for the paper-badge label. Returns null for generic sections. */
+function paperLabelKey(papers: RevisionSection['papers']): string | null {
   if (!papers || papers.length === 0) return null
   const hasLit = papers.includes('lit')
   const hasLang = papers.includes('lang')
-  if (hasLit && hasLang) return 'Lit + Lang'
-  if (hasLit) return 'Literature'
-  if (hasLang) return 'Language'
+  if (hasLit && hasLang) return 'revision_page.paper.lit_lang'
+  if (hasLit) return 'revision_page.paper.lit'
+  if (hasLang) return 'revision_page.paper.lang'
   return null
 }
 
@@ -98,264 +99,240 @@ function paperBadgeClasses(papers: RevisionSection['papers']): string {
 
 const ALL_SECTIONS: RevisionSection[] = [
   {
-    title: 'Poetry',
-    description:
-      'Interactive analysis of every anthology poem. Annotations, comparisons, and practice questions.',
+    titleKey: 'revision_page.section.poetry.title',
+    descKey: 'revision_page.section.poetry.desc',
     href: '/revision/poetry',
     icon: FileText,
     colour: 'text-rose-400',
     bgColour: 'bg-rose-500/10',
-    stats: '30+ poems',
-    tag: 'Popular',
-    // All boards study poetry EXCEPT Cambridge (0500/0990) which are language only
+    statsKey: 'revision_page.section.poetry.stats',
+    tagKey: 'revision_page.section.poetry.tag',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
     papers: ['lit'],
   },
   {
-    title: 'Set Texts',
-    description:
-      'In-depth study guides for Shakespeare, 19th-century novels, and modern texts with reading tracker.',
+    titleKey: 'revision_page.section.texts.title',
+    descKey: 'revision_page.section.texts.desc',
     href: '/revision/texts',
     icon: BookText,
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
-    stats: '20+ texts',
+    statsKey: 'revision_page.section.texts.stats',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
     papers: ['lit'],
   },
   {
-    title: 'Language Skills',
-    description:
-      'Reading comprehension, creative writing, transactional writing, and SPaG mastery.',
+    titleKey: 'revision_page.section.language.title',
+    descKey: 'revision_page.section.language.desc',
     href: '/revision/language',
     icon: PenTool,
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
-    stats: '4 skill areas',
+    statsKey: 'revision_page.section.language.stats',
     papers: ['lang'],
   },
   {
-    title: 'Flashcards',
-    description:
-      'Smart review flashcards for quotes, terminology, and key concepts. Study smarter, not harder.',
+    titleKey: 'revision_page.section.flashcards.title',
+    descKey: 'revision_page.section.flashcards.desc',
     href: '/revision/flashcards',
     icon: Layers,
     colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
-    stats: '500+ cards',
-    tag: 'New',
+    statsKey: 'revision_page.section.flashcards.stats',
+    tagKey: 'revision_page.section.flashcards.tag',
   },
   {
-    title: 'Exam Technique',
-    description:
-      'Essay structures, timing strategies, question types, and marking guide breakdowns for every paper.',
+    titleKey: 'revision_page.section.exam_technique.title',
+    descKey: 'revision_page.section.exam_technique.desc',
     href: '/revision/exam-technique',
     icon: Target,
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
-    stats: '12 guides',
+    statsKey: 'revision_page.section.exam_technique.stats',
     papers: ['lit', 'lang'],
   },
   {
-    title: 'Grade Targets',
-    description:
-      'Personalised revision plans based on your target grade. Know exactly what to focus on.',
+    titleKey: 'revision_page.section.grade_targets.title',
+    descKey: 'revision_page.section.grade_targets.desc',
     href: '/revision/grade-targets',
     icon: TrendingUp,
     colour: 'text-cyan-400',
     bgColour: 'bg-cyan-500/10',
-    stats: 'Grades 1-9',
+    statsKey: 'revision_page.section.grade_targets.stats',
     papers: ['lit', 'lang'],
   },
   {
-    title: 'Quick Quizzes',
-    description:
-      'Test yourself with timed quizzes on any topic. Instant feedback and progress tracking.',
+    titleKey: 'revision_page.section.quiz.title',
+    descKey: 'revision_page.section.quiz.desc',
     href: '/revision/quiz',
     icon: Zap,
     colour: 'text-clay-600',
     bgColour: 'bg-orange-500/10',
-    stats: '100+ quizzes',
+    statsKey: 'revision_page.section.quiz.stats',
     papers: ['lit', 'lang'],
   },
   {
-    title: 'Reading Assessment',
-    description:
-      'Timed reading tests with extracts and mark schemes. Benchmark your comprehension against GCSE/IGCSE standards.',
+    titleKey: 'revision_page.section.reading_assessment.title',
+    descKey: 'revision_page.section.reading_assessment.desc',
     href: '/assessment/reading',
     icon: ClipboardList,
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
-    stats: 'Diagnostic',
+    statsKey: 'revision_page.section.reading_assessment.stats',
     papers: ['lang'],
   },
   {
-    title: 'Mock Exams',
-    description:
-      'Full timed mock papers for every board with examiner-grade feedback. Build exam stamina before the real thing.',
+    titleKey: 'revision_page.section.mock_exams.title',
+    descKey: 'revision_page.section.mock_exams.desc',
     href: '/mock-exams',
     icon: Timer,
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
-    stats: 'Full papers',
+    statsKey: 'revision_page.section.mock_exams.stats',
     papers: ['lit', 'lang'],
   },
   {
-    title: 'Practice',
-    description:
-      'Bite-sized practice tasks for every skill \u2014 analysis paragraphs, comparisons, creative writing prompts.',
+    titleKey: 'revision_page.section.practice.title',
+    descKey: 'revision_page.section.practice.desc',
     href: '/practice',
     icon: Dumbbell,
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
-    stats: 'Daily drills',
+    statsKey: 'revision_page.section.practice.stats',
     papers: ['lit', 'lang'],
   },
   {
-    title: 'Games',
-    description: 'Vocabulary, quote-match and terminology games \u2014 learn faster by playing.',
+    titleKey: 'revision_page.section.games.title',
+    descKey: 'revision_page.section.games.desc',
     href: '/games',
     icon: Gamepad2,
     colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
-    stats: 'Play to learn',
+    statsKey: 'revision_page.section.games.stats',
   },
   {
-    title: 'Resources Hub',
-    description:
-      'The full library: poetry guides, set-text packs, exam papers, themes, context, glossary and more.',
+    titleKey: 'revision_page.section.resources.title',
+    descKey: 'revision_page.section.resources.desc',
     href: '/resources',
     icon: Library,
     colour: 'text-amber-400',
     bgColour: 'bg-amber-500/10',
-    stats: '300+ guides',
+    statsKey: 'revision_page.section.resources.stats',
   },
   {
-    title: 'Revision Notes',
-    description:
-      'Concise per-text revision notes you can skim before an exam \u2014 every set text, every key topic.',
+    titleKey: 'revision_page.section.revision_notes.title',
+    descKey: 'revision_page.section.revision_notes.desc',
     href: '/resources/revision-notes',
     icon: StickyNote,
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
-    stats: '20+ texts',
+    statsKey: 'revision_page.section.revision_notes.stats',
     papers: ['lit'],
   },
   {
-    title: 'Model Answers',
-    description:
-      'Top-grade exemplar answers for literature essays, language analysis and creative writing tasks.',
+    titleKey: 'revision_page.section.model_answers.title',
+    descKey: 'revision_page.section.model_answers.desc',
     href: '/resources/model-answers',
     icon: CheckSquare,
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
-    stats: 'Grade 7-9',
+    statsKey: 'revision_page.section.model_answers.stats',
     papers: ['lit', 'lang'],
   },
   {
-    title: 'Comparison Essay Guide',
-    description:
-      'Step-by-step structure, sentence stems and worked examples for poetry and unseen comparison questions.',
+    titleKey: 'revision_page.section.comparison.title',
+    descKey: 'revision_page.section.comparison.desc',
     href: '/revision/poetry/love-and-relationships/comparison-guide',
     icon: GitCompare,
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
-    stats: 'Structure + stems',
+    statsKey: 'revision_page.section.comparison.stats',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
     papers: ['lit'],
   },
   {
-    title: 'Vocabulary',
-    description:
-      'Academic, analytical and descriptive word banks to upgrade your essays and creative writing.',
+    titleKey: 'revision_page.section.vocabulary.title',
+    descKey: 'revision_page.section.vocabulary.desc',
     href: '/resources/vocabulary',
     icon: Quote,
     colour: 'text-rose-400',
     bgColour: 'bg-rose-500/10',
-    stats: '1000+ words',
+    statsKey: 'revision_page.section.vocabulary.stats',
     papers: ['lang'],
   },
   {
-    title: 'Writing Skills',
-    description:
-      'Creative, analytical, persuasive and grammar guides \u2014 the craft skills behind every paper.',
+    titleKey: 'revision_page.section.writing_skills.title',
+    descKey: 'revision_page.section.writing_skills.desc',
     href: '/resources/writing-skills',
     icon: Edit3,
     colour: 'text-cyan-400',
     bgColour: 'bg-cyan-500/10',
-    stats: '4 skill areas',
+    statsKey: 'revision_page.section.writing_skills.stats',
     papers: ['lang'],
   },
   {
-    title: 'Common Errors',
-    description:
-      '30 mistakes that cost marks \u2014 misquotations, wrong contexts, anthology version mix-ups. Verified against board specs.',
+    titleKey: 'revision_page.section.common_errors.title',
+    descKey: 'revision_page.section.common_errors.desc',
     href: '/revision/common-errors',
     icon: ShieldAlert,
     colour: 'text-rose-400',
     bgColour: 'bg-rose-500/10',
-    stats: '30 verified flags',
-    tag: 'New',
+    statsKey: 'revision_page.section.common_errors.stats',
+    tagKey: 'revision_page.section.common_errors.tag',
     papers: ['lit'],
   },
 ]
 
 // ─── Toolkit sections (surfaced from /toolkit/* into the hub) ──────────────
-// These cards link to the existing /toolkit/* pages so deep links keep working.
 
 const TOOLKIT_SECTIONS: RevisionSection[] = [
   {
-    title: 'Revision Builder',
-    description:
-      'Generate AI revision notes tailored to your weak areas, target grade, and study history.',
+    titleKey: 'revision_page.toolkit.revision_builder.title',
+    descKey: 'revision_page.toolkit.revision_builder.desc',
     href: '/toolkit/revision-builder',
     icon: FileText,
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
-    stats: 'AI-powered',
-    tag: 'AI',
+    statsKey: 'revision_page.toolkit.revision_builder.stats',
+    tagKey: 'revision_page.toolkit.revision_builder.tag',
   },
   {
-    title: 'Test Builder',
-    description:
-      'Create custom tests from your board\u2019s texts and topics, auto-scored with grade equivalents.',
+    titleKey: 'revision_page.toolkit.test_builder.title',
+    descKey: 'revision_page.toolkit.test_builder.desc',
     href: '/toolkit/test-builder',
     icon: PenTool,
     colour: 'text-violet-400',
     bgColour: 'bg-violet-500/10',
-    stats: 'Custom tests',
-    tag: 'AI',
+    statsKey: 'revision_page.toolkit.test_builder.stats',
+    tagKey: 'revision_page.toolkit.test_builder.tag',
   },
   {
-    title: 'Personalised Revision',
-    description:
-      'A revision guide built from your data \u2014 targets weakest areas, then stretches you higher.',
+    titleKey: 'revision_page.toolkit.personalised.title',
+    descKey: 'revision_page.toolkit.personalised.desc',
     href: '/toolkit/personalised-revision',
     icon: Target,
     colour: 'text-rose-400',
     bgColour: 'bg-rose-500/10',
-    stats: 'Data-driven',
-    tag: 'New',
+    statsKey: 'revision_page.toolkit.personalised.stats',
+    tagKey: 'revision_page.toolkit.personalised.tag',
   },
   {
-    title: 'My Materials',
-    description:
-      'Every custom test, revision note, and quote bank you have saved, in one searchable place.',
+    titleKey: 'revision_page.toolkit.my_materials.title',
+    descKey: 'revision_page.toolkit.my_materials.desc',
     href: '/toolkit/my-materials',
     icon: FolderOpen,
     colour: 'text-amber-400',
     bgColour: 'bg-amber-500/10',
-    stats: 'Your library',
+    statsKey: 'revision_page.toolkit.my_materials.stats',
   },
   {
-    title: 'Progress',
-    description:
-      'Track scores, study streaks, and predicted grades based on everything you have done.',
+    titleKey: 'revision_page.toolkit.progress.title',
+    descKey: 'revision_page.toolkit.progress.desc',
     href: '/toolkit/progress',
     icon: BarChart3,
     colour: 'text-emerald-400',
     bgColour: 'bg-emerald-500/10',
-    stats: 'Grade predictor',
+    statsKey: 'revision_page.toolkit.progress.stats',
   },
 ]
 
@@ -365,20 +342,9 @@ function getSectionsForBoard(board: ExamBoard | null): RevisionSection[] {
 }
 
 function getToolkitSectionsForBoard(board: ExamBoard | null): RevisionSection[] {
-  // Toolkit tools work across every board — no per-board filtering today,
-  // but we keep the same contract as revision sections for future gating.
   if (!board) return TOOLKIT_SECTIONS
   return TOOLKIT_SECTIONS.filter((s) => !s.boards || s.boards.includes(board))
 }
-
-// ─── Quick stats ──────────────────────────────────────────────────────────
-
-const QUICK_STATS = [
-  { label: 'Subjects', value: '7', icon: BookOpen },
-  { label: 'Resources', value: '200+', icon: FileText },
-  { label: 'Flashcards', value: '500+', icon: Layers },
-  { label: 'Quizzes', value: '100+', icon: Brain },
-]
 
 // ─── Component ──────────────────────────────────────────────────────────────
 
@@ -390,12 +356,86 @@ export default async function RevisionHubPage() {
   const isIgcse = isIgcseBoard(board)
   const isCambridge = board === 'cambridge-0500' || board === 'cambridge-0990'
 
-  // Pick a board-relevant set text for the suggested-next card
   const setTexts = getSetTextsForBoard(board)
-  const featuredText = setTexts.find((t) => t.slug === 'macbeth') ?? setTexts[0]
+  const featuredText = setTexts.find((tx) => tx.slug === 'macbeth') ?? setTexts[0]
 
   const boardName = config?.shortName ?? 'GCSE'
-  const headingPrefix = config ? `Your ${boardName}` : 'Your'
+  const headingPrefix = config
+    ? await t('revision_page.hero.heading_prefix_board')
+    : await t('revision_page.hero.heading_prefix_generic')
+
+  // Resolve i18n strings up-front so JSX stays clean.
+  const i18n = {
+    heroBadge: config ? config.fullName : await t('revision_page.hero.badge_default'),
+    heroSuffix: await t('revision_page.hero.heading_suffix'),
+    heroBlurb: isCambridge
+      ? (await t('revision_page.hero.blurb_cambridge')).replace('{board}', boardName)
+      : (await t('revision_page.hero.blurb_default')).replace('{board}', boardName),
+    statSubjects: await t('revision_page.stats.subjects'),
+    statResources: await t('revision_page.stats.resources'),
+    statFlashcards: await t('revision_page.stats.flashcards'),
+    statQuizzes: await t('revision_page.stats.quizzes'),
+    snapshotAria: await t('revision_page.snapshot.aria'),
+    streakLabel: await t('revision_page.snapshot.streak.label'),
+    streakTitle: await t('revision_page.snapshot.streak.title'),
+    streakBody: await t('revision_page.snapshot.streak.body'),
+    streakCta: await t('revision_page.snapshot.streak.cta'),
+    progressLabel: await t('revision_page.snapshot.progress.label'),
+    progressTitle: (await t('revision_page.snapshot.progress.title')).replace('{board}', boardName),
+    progressBody: (await t('revision_page.snapshot.progress.body')).replace('{board}', boardName),
+    progressCta: await t('revision_page.snapshot.progress.cta'),
+    aiLabel: await t('revision_page.snapshot.ai.label'),
+    aiTitle: await t('revision_page.snapshot.ai.title'),
+    aiBody: await t('revision_page.snapshot.ai.body'),
+    aiCta: await t('revision_page.snapshot.ai.cta'),
+    studyBadge: (await t('revision_page.study_plan.badge')).replace('{board}', boardName),
+    studyTitle: await t('revision_page.study_plan.title'),
+    studyBody: (await t('revision_page.study_plan.body')).replace('{board}', boardName),
+    studyCta: await t('revision_page.study_plan.cta'),
+    sectionsHeading: await t('revision_page.sections.heading'),
+    forBoardBadge: (await t('revision_page.sections.for_board_badge')).replace(
+      '{board}',
+      boardName,
+    ),
+    startRevising: await t('revision_page.sections.start_revising'),
+    igcseTitle: await t('revision_page.igcse.title'),
+    igcseBody: (await t('revision_page.igcse.body')).replace(
+      '{board}',
+      config?.fullName ?? (await t('revision_page.igcse.body_fallback')),
+    ),
+    igcseCta: await t('revision_page.igcse.cta'),
+    toolkitHeading: await t('revision_page.toolkit.heading'),
+    openTool: await t('revision_page.toolkit.open_tool'),
+    analyticsBadge: await t('revision_page.analytics.badge_new'),
+    analyticsTitle: await t('revision_page.analytics.title'),
+    analyticsBody: await t('revision_page.analytics.body'),
+    analyticsCta: await t('revision_page.analytics.cta'),
+    featuredBadge: (await t('revision_page.featured.badge')).replace('{board}', boardName),
+    motivationTitle: await t('revision_page.motivation.title'),
+    motivationBody: await t('revision_page.motivation.body'),
+    motivationCta: await t('revision_page.motivation.cta'),
+  }
+
+  const featuredBy = featuredText
+    ? (await t('revision_page.featured.by')).replace('{author}', featuredText.author)
+    : ''
+  const featuredCta = await t('revision_page.featured.cta')
+
+  // Helper that bundles i18n lookup of section labels in one place.
+  async function getSectionStrings(s: RevisionSection) {
+    const [title, desc, stats, tag] = await Promise.all([
+      t(s.titleKey),
+      t(s.descKey),
+      t(s.statsKey),
+      s.tagKey ? t(s.tagKey) : Promise.resolve(undefined),
+    ])
+    const paperKey = paperLabelKey(s.papers)
+    const paperLabel = paperKey ? await t(paperKey) : null
+    return { title, desc, stats, tag, paperLabel }
+  }
+
+  const sectionData = await Promise.all(sections.map(getSectionStrings))
+  const toolkitData = await Promise.all(toolkitSections.map(getSectionStrings))
 
   return (
     <div className="space-y-10 pb-16">
@@ -407,7 +447,6 @@ export default async function RevisionHubPage() {
         aria-labelledby="revision-hero-heading"
         className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10"
       >
-        {/* decorative glow */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
@@ -420,23 +459,24 @@ export default async function RevisionHubPage() {
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
             <Sparkles className="mr-1 size-3" aria-hidden="true" />
-            {config ? config.fullName : 'GCSE English Revision'}
+            {i18n.heroBadge}
           </Badge>
           <h1
             id="revision-hero-heading"
             className="text-display-sm font-heading text-foreground sm:text-display"
           >
-            {headingPrefix} Hub
+            {headingPrefix} {boardName} {i18n.heroSuffix}
           </h1>
-          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            {isCambridge
-              ? `Your unified home for ${boardName} First Language English. Revision, study tools, progress tracking, and exam technique \u2014 all built around your specification.`
-              : `Your unified home for ${boardName} English. Revision guides, AI study tools, progress tracking, and exam technique \u2014 all built around your specification.`}
-          </p>
+          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{i18n.heroBlurb}</p>
 
           {/* Quick stats */}
           <div className="mt-6 flex flex-wrap gap-4 sm:gap-6">
-            {QUICK_STATS.map((stat) => (
+            {[
+              { label: i18n.statSubjects, value: '7', icon: BookOpen },
+              { label: i18n.statResources, value: '200+', icon: FileText },
+              { label: i18n.statFlashcards, value: '500+', icon: Layers },
+              { label: i18n.statQuizzes, value: '100+', icon: Brain },
+            ].map((stat) => (
               <div
                 key={stat.label}
                 className="flex items-center gap-2 rounded-lg border border-border/40 bg-background/50 px-3 py-2"
@@ -450,8 +490,8 @@ export default async function RevisionHubPage() {
         </div>
       </section>
 
-      {/* ── Headline analytics (streak, progress, AI feedback) ────────── */}
-      <section aria-label="Your progress snapshot" className="grid gap-4 sm:grid-cols-3">
+      {/* ── Headline analytics ────────── */}
+      <section aria-label={i18n.snapshotAria} className="grid gap-4 sm:grid-cols-3">
         <Link
           href="/revision/analytics"
           className="group flex flex-col justify-between rounded-2xl border border-border/60 bg-card p-5 transition-all hover:border-emerald-500/40 hover:shadow-card-hover"
@@ -461,16 +501,15 @@ export default async function RevisionHubPage() {
               <Flame className="size-5 text-emerald-400" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wider text-muted-foreground">Streak</p>
-              <p className="text-heading-sm font-heading text-foreground">Your study streak</p>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                {i18n.streakLabel}
+              </p>
+              <p className="text-heading-sm font-heading text-foreground">{i18n.streakTitle}</p>
             </div>
           </div>
-          <p className="mt-3 text-xs text-muted-foreground">
-            Keep going daily — every session you complete on a quiz, set text, or mock exam builds
-            your streak.
-          </p>
+          <p className="mt-3 text-xs text-muted-foreground">{i18n.streakBody}</p>
           <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
-            View full analytics <ArrowRight className="size-3" />
+            {i18n.streakCta} <ArrowRight className="size-3" />
           </span>
         </Link>
         <Link
@@ -482,16 +521,15 @@ export default async function RevisionHubPage() {
               <TrendingUp className="size-5 text-cyan-400" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wider text-muted-foreground">Progress</p>
-              <p className="text-heading-sm font-heading text-foreground">{boardName} coverage</p>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                {i18n.progressLabel}
+              </p>
+              <p className="text-heading-sm font-heading text-foreground">{i18n.progressTitle}</p>
             </div>
           </div>
-          <p className="mt-3 text-xs text-muted-foreground">
-            Track how much of the {boardName} syllabus you&apos;ve covered and where you still have
-            gaps.
-          </p>
+          <p className="mt-3 text-xs text-muted-foreground">{i18n.progressBody}</p>
           <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
-            See what&apos;s next <ArrowRight className="size-3" />
+            {i18n.progressCta} <ArrowRight className="size-3" />
           </span>
         </Link>
         <Link
@@ -503,15 +541,15 @@ export default async function RevisionHubPage() {
               <Sparkles className="size-5 text-violet-400" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wider text-muted-foreground">AI feedback</p>
-              <p className="text-heading-sm font-heading text-foreground">Latest marked work</p>
+              <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                {i18n.aiLabel}
+              </p>
+              <p className="text-heading-sm font-heading text-foreground">{i18n.aiTitle}</p>
             </div>
           </div>
-          <p className="mt-3 text-xs text-muted-foreground">
-            AI grades on your recent essays, with the top three improvements to take forward.
-          </p>
+          <p className="mt-3 text-xs text-muted-foreground">{i18n.aiBody}</p>
           <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
-            Open feedback <ArrowRight className="size-3" />
+            {i18n.aiCta} <ArrowRight className="size-3" />
           </span>
         </Link>
       </section>
@@ -526,19 +564,14 @@ export default async function RevisionHubPage() {
             <div>
               <Badge variant="secondary" className="mb-2">
                 <Sparkles className="mr-1 size-3" aria-hidden="true" />
-                Personalised for {boardName}
+                {i18n.studyBadge}
               </Badge>
-              <h2 className="text-heading-md font-heading text-foreground">
-                Build your study plan
-              </h2>
-              <p className="mt-1 max-w-xl text-body-sm text-muted-foreground">
-                Answer a few quick questions and get a week-by-week revision plan tailored to your
-                exam date, target grade, and weakest area -- using {boardName} texts and papers.
-              </p>
+              <h2 className="text-heading-md font-heading text-foreground">{i18n.studyTitle}</h2>
+              <p className="mt-1 max-w-xl text-body-sm text-muted-foreground">{i18n.studyBody}</p>
             </div>
           </div>
           <Button variant="default" size="lg" render={<Link href="/revision/study-plan" />}>
-            Start diagnostic
+            {i18n.studyCta}
             <ArrowRight className="size-4" />
           </Button>
         </div>
@@ -548,64 +581,67 @@ export default async function RevisionHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <GraduationCap className="size-5 text-primary" aria-hidden="true" />
-          <h2 className="text-heading-lg font-heading text-foreground">Explore Sections</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">{i18n.sectionsHeading}</h2>
           {config && (
             <Badge variant="outline" className="ml-1 text-xs">
-              For {boardName}
+              {i18n.forBoardBadge}
             </Badge>
           )}
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {sections.map((section) => (
-            <Link
-              key={section.href}
-              href={section.href}
-              className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
-            >
-              {section.tag && (
-                <Badge
-                  variant="default"
-                  className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
-                >
-                  {section.tag}
-                </Badge>
-              )}
+          {sections.map((section, idx) => {
+            const data = sectionData[idx]
+            return (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
+              >
+                {data.tag && (
+                  <Badge
+                    variant="default"
+                    className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
+                  >
+                    {data.tag}
+                  </Badge>
+                )}
 
-              <div className="mb-3 flex items-center gap-3">
-                <div
-                  className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
-                >
-                  <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
-                </div>
-                <div>
-                  <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
-                    {section.title}
-                  </h3>
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <span className="text-caption text-muted-foreground">{section.stats}</span>
-                    {paperLabel(section.papers) && (
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-px text-[0.65rem] font-mono uppercase tracking-wider ring-1 ${paperBadgeClasses(section.papers)}`}
-                        aria-label={`Prepares for ${paperLabel(section.papers)}`}
-                      >
-                        {paperLabel(section.papers)}
-                      </span>
-                    )}
+                <div className="mb-3 flex items-center gap-3">
+                  <div
+                    className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
+                  >
+                    <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
+                      {data.title}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                      <span className="text-caption text-muted-foreground">{data.stats}</span>
+                      {data.paperLabel && (
+                        <span
+                          className={`inline-flex items-center rounded-full px-2 py-px text-[0.65rem] font-mono uppercase tracking-wider ring-1 ${paperBadgeClasses(section.papers)}`}
+                          aria-label={`Prepares for ${data.paperLabel}`}
+                        >
+                          {data.paperLabel}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
-                {section.description}
-              </p>
+                <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
+                  {data.desc}
+                </p>
 
-              <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                Start revising
-                <ArrowRight className="size-3.5" aria-hidden="true" />
-              </div>
-            </Link>
-          ))}
+                <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                  {i18n.startRevising}
+                  <ArrowRight className="size-3.5" aria-hidden="true" />
+                </div>
+              </Link>
+            )
+          })}
         </div>
 
         {/* IGCSE deep-link callout */}
@@ -616,11 +652,8 @@ export default async function RevisionHubPage() {
                 <GraduationCap className="size-5 text-cyan-400" aria-hidden="true" />
               </div>
               <div className="flex-1">
-                <h3 className="text-heading-md font-heading text-foreground">IGCSE Resources</h3>
-                <p className="mt-1 text-body-sm text-muted-foreground">
-                  We have dedicated guides, exam papers, and walkthroughs for{' '}
-                  {config?.fullName ?? 'your IGCSE specification'}.
-                </p>
+                <h3 className="text-heading-md font-heading text-foreground">{i18n.igcseTitle}</h3>
+                <p className="mt-1 text-body-sm text-muted-foreground">{i18n.igcseBody}</p>
                 <Button
                   variant="outline"
                   size="sm"
@@ -637,7 +670,7 @@ export default async function RevisionHubPage() {
                     />
                   }
                 >
-                  Open IGCSE hub
+                  {i18n.igcseCta}
                   <ArrowRight className="size-3.5" />
                 </Button>
               </div>
@@ -651,65 +684,68 @@ export default async function RevisionHubPage() {
         <div className="mb-5 flex items-center gap-3">
           <Wrench className="size-5 text-primary" aria-hidden="true" />
           <h2 id="your-toolkit-heading" className="text-heading-lg font-heading text-foreground">
-            Your Toolkit
+            {i18n.toolkitHeading}
           </h2>
           {config && (
             <Badge variant="outline" className="ml-1 text-xs">
-              For {boardName}
+              {i18n.forBoardBadge}
             </Badge>
           )}
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {toolkitSections.map((section) => (
-            <Link
-              key={section.href}
-              href={section.href}
-              className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
-            >
-              {section.tag && (
-                <Badge
-                  variant="default"
-                  className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
-                >
-                  {section.tag}
-                </Badge>
-              )}
+          {toolkitSections.map((section, idx) => {
+            const data = toolkitData[idx]
+            return (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
+              >
+                {data.tag && (
+                  <Badge
+                    variant="default"
+                    className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
+                  >
+                    {data.tag}
+                  </Badge>
+                )}
 
-              <div className="mb-3 flex items-center gap-3">
-                <div
-                  className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
-                >
-                  <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
-                </div>
-                <div>
-                  <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
-                    {section.title}
-                  </h3>
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <span className="text-caption text-muted-foreground">{section.stats}</span>
-                    {paperLabel(section.papers) && (
-                      <span
-                        className={`inline-flex items-center rounded-full px-2 py-px text-[0.65rem] font-mono uppercase tracking-wider ring-1 ${paperBadgeClasses(section.papers)}`}
-                        aria-label={`Prepares for ${paperLabel(section.papers)}`}
-                      >
-                        {paperLabel(section.papers)}
-                      </span>
-                    )}
+                <div className="mb-3 flex items-center gap-3">
+                  <div
+                    className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
+                  >
+                    <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
+                      {data.title}
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                      <span className="text-caption text-muted-foreground">{data.stats}</span>
+                      {data.paperLabel && (
+                        <span
+                          className={`inline-flex items-center rounded-full px-2 py-px text-[0.65rem] font-mono uppercase tracking-wider ring-1 ${paperBadgeClasses(section.papers)}`}
+                          aria-label={`Prepares for ${data.paperLabel}`}
+                        >
+                          {data.paperLabel}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
-                {section.description}
-              </p>
+                <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
+                  {data.desc}
+                </p>
 
-              <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                Open tool
-                <ArrowRight className="size-3.5" aria-hidden="true" />
-              </div>
-            </Link>
-          ))}
+                <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                  {i18n.openTool}
+                  <ArrowRight className="size-3.5" aria-hidden="true" />
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </section>
 
@@ -726,22 +762,21 @@ export default async function RevisionHubPage() {
             <div>
               <Badge variant="secondary" className="mb-2">
                 <Sparkles className="mr-1 size-3" aria-hidden="true" />
-                New
+                {i18n.analyticsBadge}
               </Badge>
               <h2
                 id="your-analytics-heading"
                 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors"
               >
-                Your Analytics
+                {i18n.analyticsTitle}
               </h2>
               <p className="mt-1 max-w-xl text-body-sm text-muted-foreground">
-                Deep-dive dashboards showing time studied, accuracy by topic, predicted grade
-                trajectory, and where to focus next.
+                {i18n.analyticsBody}
               </p>
             </div>
           </div>
           <div className="flex items-center gap-1 text-sm font-medium text-primary">
-            Open analytics
+            {i18n.analyticsCta}
             <ArrowRight
               className="size-4 transition-transform group-hover:translate-x-0.5"
               aria-hidden="true"
@@ -760,19 +795,17 @@ export default async function RevisionHubPage() {
             <div>
               <Badge variant="secondary" className="mb-2">
                 <BookText className="mr-1 size-3" aria-hidden="true" />
-                Featured for {boardName}
+                {i18n.featuredBadge}
               </Badge>
               <h2 className="text-heading-md font-heading text-foreground">{featuredText.title}</h2>
-              <p className="mt-1 text-body-sm text-muted-foreground">
-                by {featuredText.author}. One of the most-studied texts on your specification.
-              </p>
+              <p className="mt-1 text-body-sm text-muted-foreground">{featuredBy}</p>
             </div>
             <Button
               variant="outline"
               size="lg"
               render={<Link href={`/revision/texts/${featuredText.slug}`} />}
             >
-              Open study guide
+              {featuredCta}
               <ArrowRight className="size-4" />
             </Button>
           </div>
@@ -782,12 +815,9 @@ export default async function RevisionHubPage() {
       {/* ── Motivational banner ──────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">
         <BarChart3 className="mx-auto mb-3 size-8 text-primary" aria-hidden="true" />
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Consistent revision beats cramming every time
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">{i18n.motivationTitle}</h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Students who revise for 20 minutes a day outperform those who cram for hours before the
-          exam. Start with one section above and build the habit.
+          {i18n.motivationBody}
         </p>
         <Button
           variant="default"
@@ -795,7 +825,7 @@ export default async function RevisionHubPage() {
           className="mt-5"
           render={<Link href="/revision/flashcards" />}
         >
-          Start a quick session
+          {i18n.motivationCta}
           <ArrowRight className="size-4" />
         </Button>
       </section>

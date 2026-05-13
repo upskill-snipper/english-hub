@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
+import { useT } from '@/lib/i18n/use-t'
 
 /**
  * Conditionally renders the root Header and Footer.
@@ -17,6 +18,7 @@ const FULL_LAYOUT_PREFIXES = ['/school', '/demo/school']
 
 export function RootLayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
+  const t = useT()
   const isSchoolRoute = FULL_LAYOUT_PREFIXES.some((p) => pathname.startsWith(p))
 
   if (isSchoolRoute) {
@@ -26,7 +28,12 @@ export function RootLayoutShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <div id="main-content" className="min-h-[calc(100vh-3.5rem)]">
+      <div
+        id="main-content"
+        role="main"
+        aria-label={t('layout.main_content_label')}
+        className="min-h-[calc(100vh-3.5rem)]"
+      >
         {children}
       </div>
       <Footer />

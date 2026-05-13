@@ -4,41 +4,43 @@ import { useState } from 'react'
 import { AffiliateSidebar } from '@/components/affiliate/AffiliateSidebar'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 import { Check, Copy, Download, FileText, Image as ImageIcon } from 'lucide-react'
 
 const BANNERS = [
-  { id: 'banner-1', label: 'Leaderboard', size: '728 × 90' },
-  { id: 'banner-2', label: 'Medium Rectangle', size: '300 × 250' },
-  { id: 'banner-3', label: 'Square', size: '500 × 500' },
-  { id: 'banner-4', label: 'Skyscraper', size: '160 × 600' },
-]
+  { id: 'banner-1', labelKey: 'aff.resources.banner.leaderboard', size: '728 × 90' },
+  { id: 'banner-2', labelKey: 'aff.resources.banner.medium_rectangle', size: '300 × 250' },
+  { id: 'banner-3', labelKey: 'aff.resources.banner.square', size: '500 × 500' },
+  { id: 'banner-4', labelKey: 'aff.resources.banner.skyscraper', size: '160 × 600' },
+] as const
 
 const COPY_TEMPLATES = [
   {
     id: 'tweet-1',
-    label: 'Short social post',
-    body: 'Just discovered @TheEnglishHub — my students have levelled up their writing faster than I thought possible. Worth checking out if you teach IGCSE English 👉 {link}',
+    labelKey: 'aff.resources.copy.short_social.label',
+    bodyKey: 'aff.resources.copy.short_social.body',
   },
   {
     id: 'email-1',
-    label: 'Newsletter blurb',
-    body: "I've been recommending The English Hub to families this term and the results have been remarkable. If your child is preparing for exams, it's the cleanest practice platform I've used. Get a look here: {link}",
+    labelKey: 'aff.resources.copy.newsletter.label',
+    bodyKey: 'aff.resources.copy.newsletter.body',
   },
   {
     id: 'review-1',
-    label: 'Blog review hook',
-    body: 'After testing over a dozen English-learning platforms this year, one keeps standing out: The English Hub. Here is why I recommend it to every student I coach — {link}',
+    labelKey: 'aff.resources.copy.blog_review.label',
+    bodyKey: 'aff.resources.copy.blog_review.body',
   },
-]
+] as const
 
 const SCREENSHOTS = [
-  { id: 'screen-1', label: 'Dashboard overview' },
-  { id: 'screen-2', label: 'Practice question' },
-  { id: 'screen-3', label: 'Essay feedback' },
-  { id: 'screen-4', label: 'Progress report' },
-]
+  { id: 'screen-1', labelKey: 'aff.resources.shot.dashboard_overview' },
+  { id: 'screen-2', labelKey: 'aff.resources.shot.practice_question' },
+  { id: 'screen-3', labelKey: 'aff.resources.shot.essay_feedback' },
+  { id: 'screen-4', labelKey: 'aff.resources.shot.progress_report' },
+] as const
 
 export default function AffiliateResourcesPage() {
+  const t = useT()
   const [copiedId, setCopiedId] = useState<string | null>(null)
 
   const handleCopy = async (text: string, id: string) => {
@@ -56,10 +58,8 @@ export default function AffiliateResourcesPage() {
       <AffiliateSidebar />
       <main className="flex-1 px-4 py-8 sm:px-8 max-w-5xl mx-auto w-full">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground">Marketing Resources</h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Grab ready-to-use banners, copy templates, and product shots.
-          </p>
+          <h1 className="text-3xl font-bold text-foreground">{t('aff.resources.title')}</h1>
+          <p className="text-sm text-muted-foreground mt-1">{t('aff.resources.subtitle')}</p>
         </header>
 
         {/* Banners */}
@@ -69,7 +69,7 @@ export default function AffiliateResourcesPage() {
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary">
                 <ImageIcon className="h-4 w-4" />
               </div>
-              <CardTitle>Banners</CardTitle>
+              <CardTitle>{t('aff.resources.banners_title')}</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
@@ -80,13 +80,11 @@ export default function AffiliateResourcesPage() {
                   className="rounded-xl border border-border/60 overflow-hidden bg-muted/20"
                 >
                   <div className="aspect-[16/9] flex items-center justify-center bg-gradient-to-br from-primary/10 via-accent to-muted text-muted-foreground text-sm">
-                    {banner.label} placeholder
+                    {t(banner.labelKey)} {t('aff.resources.placeholder_suffix')}
                   </div>
                   <div className="flex items-center justify-between p-3 border-t border-border/40">
                     <div>
-                      <p className="text-sm font-medium text-foreground">
-                        {banner.label}
-                      </p>
+                      <p className="text-sm font-medium text-foreground">{t(banner.labelKey)}</p>
                       <p className="text-xs text-muted-foreground">{banner.size}</p>
                     </div>
                     <Button size="sm" variant="outline">
@@ -106,50 +104,46 @@ export default function AffiliateResourcesPage() {
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary">
                 <FileText className="h-4 w-4" />
               </div>
-              <CardTitle>Copy templates</CardTitle>
+              <CardTitle>{t('aff.resources.copy_templates_title')}</CardTitle>
             </div>
             <p className="text-sm text-muted-foreground pt-1">
-              Replace <code className="text-xs">{'{link}'}</code> with your tracking URL before publishing.
+              {t('aff.resources.copy_templates_subtitle_lead')}{' '}
+              <code className="text-xs">{'{link}'}</code>{' '}
+              {t('aff.resources.copy_templates_subtitle_tail')}
             </p>
           </CardHeader>
           <CardContent className="space-y-3">
-            {COPY_TEMPLATES.map((tpl) => (
-              <div
-                key={tpl.id}
-                className="rounded-xl border border-border/60 bg-muted/20 p-4"
-              >
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <p className="text-sm font-medium text-foreground">{tpl.label}</p>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    onClick={() => handleCopy(tpl.body, tpl.id)}
-                  >
-                    {copiedId === tpl.id ? (
-                      <>
-                        <Check className="h-4 w-4" /> Copied
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="h-4 w-4" /> Copy
-                      </>
-                    )}
-                  </Button>
+            {COPY_TEMPLATES.map((tpl) => {
+              const body = t(tpl.bodyKey)
+              return (
+                <div key={tpl.id} className="rounded-xl border border-border/60 bg-muted/20 p-4">
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <p className="text-sm font-medium text-foreground">{t(tpl.labelKey)}</p>
+                    <Button size="sm" variant="outline" onClick={() => handleCopy(body, tpl.id)}>
+                      {copiedId === tpl.id ? (
+                        <>
+                          <Check className="h-4 w-4" /> {t('aff.resources.copied')}
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="h-4 w-4" /> {t('aff.resources.copy')}
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {tpl.body}
-                </p>
-              </div>
-            ))}
+              )
+            })}
           </CardContent>
         </Card>
 
         {/* Screenshots */}
         <Card>
           <CardHeader>
-            <CardTitle>Product screenshots</CardTitle>
+            <CardTitle>{t('aff.resources.screenshots_title')}</CardTitle>
             <p className="text-sm text-muted-foreground pt-1">
-              Use in reviews, videos, and blog posts. Crediting is appreciated but not required.
+              {t('aff.resources.screenshots_subtitle')}
             </p>
           </CardHeader>
           <CardContent>
@@ -160,11 +154,11 @@ export default function AffiliateResourcesPage() {
                   className="rounded-xl border border-border/60 overflow-hidden bg-muted/20"
                 >
                   <div className="aspect-square flex items-center justify-center bg-gradient-to-br from-accent via-muted to-primary/10 text-muted-foreground text-xs text-center px-2">
-                    {shot.label}
+                    {t(shot.labelKey)}
                   </div>
                   <div className="p-2 border-t border-border/40">
                     <Button size="xs" variant="ghost" className="w-full">
-                      <Download className="h-3 w-3" /> Download
+                      <Download className="h-3 w-3" /> {t('aff.resources.download')}
                     </Button>
                   </div>
                 </div>

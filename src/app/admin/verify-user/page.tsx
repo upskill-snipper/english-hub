@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuthStore } from '@/store/auth-store'
+import { useT } from '@/lib/i18n/use-t'
 import { Shield, ArrowLeft, Loader2, CheckCircle2, AlertTriangle, Mail } from 'lucide-react'
 
 interface VerifyResponse {
@@ -17,6 +18,7 @@ interface VerifyResponse {
 export default function AdminVerifyUserPage() {
   const router = useRouter()
   const { user } = useAuthStore()
+  const t = useT()
 
   const [authorized, setAuthorized] = useState(false)
   const [authChecking, setAuthChecking] = useState(true)
@@ -70,7 +72,7 @@ export default function AdminVerifyUserPage() {
 
     const trimmed = email.trim()
     if (!trimmed || !trimmed.includes('@')) {
-      setError('Please enter a valid email address.')
+      setError(t('admin.verify.invalid_email'))
       return
     }
 
@@ -87,14 +89,14 @@ export default function AdminVerifyUserPage() {
       }
 
       if (!res.ok) {
-        setError(data.error || `Request failed (${res.status})`)
+        setError(data.error || `${t('admin.verify.request_failed')} (${res.status})`)
       } else if (data.success) {
         setResult(data as VerifyResponse)
       } else {
-        setError('Unexpected response from server.')
+        setError(t('admin.verify.unexpected_response'))
       }
     } catch {
-      setError('Network error. Please try again.')
+      setError(t('admin.network_error'))
     } finally {
       setSubmitting(false)
     }
@@ -116,25 +118,23 @@ export default function AdminVerifyUserPage() {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to admin
+          {t('admin.back_to_admin')}
         </Link>
 
         <div className="flex items-center gap-3 mb-2">
           <Shield className="w-7 h-7 text-primary" />
-          <h1 className="text-3xl font-bold text-foreground">Manual email verification</h1>
+          <h1 className="text-3xl font-bold text-foreground">{t('admin.verify.title')}</h1>
         </div>
         <p className="text-muted-foreground mb-8">
-          Emergency tool. Use when the verification-email pipeline is broken (e.g. Resend domain not
-          yet verified, SMTP outage, reviewer email forwarding swallowing the link). Marks the
-          user&apos;s email as confirmed in Supabase and ensures the matching Prisma{' '}
-          <code className="px-1 rounded bg-muted text-xs">User</code> row exists.
+          {t('admin.verify.body_pre')} <code className="px-1 rounded bg-muted text-xs">User</code>{' '}
+          {t('admin.verify.body_post')}
         </p>
 
         <div className="bg-card border border-border rounded-xl p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-1.5">
               <label htmlFor="email" className="text-sm font-medium text-foreground">
-                User email address
+                {t('admin.verify.email_label')}
               </label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
@@ -143,7 +143,7 @@ export default function AdminVerifyUserPage() {
                   type="email"
                   value={email}
                   onChange={(ev) => setEmail(ev.target.value)}
-                  placeholder="user@example.com"
+                  placeholder={t('admin.verify.email_placeholder')}
                   className="flex h-10 w-full rounded-md border border-input bg-transparent pl-10 pr-3 py-1 text-sm shadow-xs outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50"
                   required
                   autoComplete="off"
@@ -160,10 +160,10 @@ export default function AdminVerifyUserPage() {
               {submitting ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  Verifying...
+                  {t('admin.verify.submitting')}
                 </>
               ) : (
-                'Verify user manually'
+                t('admin.verify.submit')
               )}
             </button>
           </form>
@@ -186,27 +186,27 @@ export default function AdminVerifyUserPage() {
               <div className="flex items-center gap-2 text-primary font-medium">
                 <CheckCircle2 className="w-4 h-4" />
                 {result.wasAlreadyConfirmed
-                  ? 'Already verified — no change needed.'
-                  : 'User verified successfully.'}
+                  ? t('admin.verify.already_confirmed')
+                  : t('admin.verify.success')}
               </div>
               <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-xs text-muted-foreground">
-                <dt className="font-medium">Email</dt>
+                <dt className="font-medium">{t('admin.verify.dt.email')}</dt>
                 <dd className="font-mono break-all text-foreground">{result.email}</dd>
-                <dt className="font-medium">Supabase user ID</dt>
+                <dt className="font-medium">{t('admin.verify.dt.supabase_id')}</dt>
                 <dd className="font-mono break-all text-foreground">{result.userId}</dd>
                 {result.prismaUserId && (
                   <>
-                    <dt className="font-medium">Prisma user ID</dt>
+                    <dt className="font-medium">{t('admin.verify.dt.prisma_id')}</dt>
                     <dd className="font-mono break-all text-foreground">{result.prismaUserId}</dd>
                   </>
                 )}
               </dl>
               <p className="text-xs text-muted-foreground">
-                The user can now sign in at{' '}
+                {t('admin.verify.user_can_signin_pre')}{' '}
                 <Link href="/auth/login" className="underline">
                   /auth/login
                 </Link>
-                .
+                {t('admin.verify.user_can_signin_post')}
               </p>
             </div>
           )}

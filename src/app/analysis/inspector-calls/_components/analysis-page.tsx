@@ -3,12 +3,17 @@ import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, GraduationCap, Quote } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { t } from '@/lib/i18n/t'
 
 /* ── Shared building blocks for Inspector Calls analysis pages ─────────────
  *
  * Every detail page composes these server components. Keeps markup
  * consistent, minimises bundle size, and relies only on theme tokens
  * so light/dark modes stay correct.
+ *
+ * Chrome strings (byline, related heading, revision CTA, back-to-hub
+ * link) route through `analysis.subpage.*` so Khaleeji AR is picked up
+ * automatically. Literary content stays in source language.
  * ─────────────────────────────────────────────────────────────────── */
 
 export type RelatedLink = {
@@ -63,7 +68,8 @@ export async function ArticleJsonLd({
   )
 }
 
-export function BackLink() {
+export async function BackLink() {
+  const label = await t('analysis.subpage.inspector_back_to_hub')
   return (
     <Button
       variant="ghost"
@@ -72,16 +78,17 @@ export function BackLink() {
       render={<Link href="/analysis/inspector-calls" />}
     >
       <ArrowLeft className="size-3.5" />
-      Back to Inspector Calls hub
+      {label}
     </Button>
   )
 }
 
-export function MarkerByline() {
+export async function MarkerByline() {
+  const label = await t('analysis.subpage.byline_team')
   return (
     <div className="flex items-center gap-2 text-xs text-muted-foreground">
       <GraduationCap className="size-3.5" />
-      <span>Written by GCSE markers &middot; The English Hub editorial team</span>
+      <span>{label}</span>
     </div>
   )
 }
@@ -103,10 +110,12 @@ export function Prose({ children }: { children: React.ReactNode }) {
   return <div className="space-y-4 text-body-sm leading-relaxed text-foreground/90">{children}</div>
 }
 
-export function RelatedAnalyses({ items }: { items: RelatedLink[] }) {
+export async function RelatedAnalyses({ items }: { items: RelatedLink[] }) {
+  const h2 = await t('analysis.subpage.related_h2')
+  const readLabel = await t('analysis.subpage.read_analysis')
   return (
     <section className="space-y-4">
-      <SectionHeading>Related analyses</SectionHeading>
+      <SectionHeading>{h2}</SectionHeading>
       <div className="grid gap-4 sm:grid-cols-2">
         {items.map((item) => (
           <Link
@@ -119,7 +128,7 @@ export function RelatedAnalyses({ items }: { items: RelatedLink[] }) {
             </h3>
             <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{item.blurb}</p>
             <div className="mt-3 flex items-center gap-1 text-[0.7rem] font-medium uppercase tracking-wider text-muted-foreground group-hover:text-primary">
-              Read analysis
+              {readLabel}
               <ArrowRight className="size-3" />
             </div>
           </Link>
@@ -129,7 +138,11 @@ export function RelatedAnalyses({ items }: { items: RelatedLink[] }) {
   )
 }
 
-export function RevisionCta() {
+export async function RevisionCta() {
+  const eyebrow = await t('analysis.subpage.revision_eyebrow')
+  const h3 = await t('analysis.subpage.revision_inspector_h3')
+  const body = await t('analysis.subpage.revision_inspector_body')
+  const cta = await t('analysis.subpage.revision_cta')
   return (
     <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-primary/[0.08] via-card to-card p-6 sm:p-8">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -137,19 +150,14 @@ export function RevisionCta() {
           <div className="flex items-center gap-2">
             <BookOpen className="size-4 text-primary" />
             <span className="text-[0.7rem] font-semibold uppercase tracking-wider text-primary">
-              Revision hub
+              {eyebrow}
             </span>
           </div>
-          <h3 className="text-heading-sm font-heading text-foreground">
-            Revise An Inspector Calls for GCSE English Literature
-          </h3>
-          <p className="text-body-sm text-muted-foreground">
-            Grade 5, 7 and 9 revision plans, model answers and exam technique from experienced GCSE
-            markers.
-          </p>
+          <h3 className="text-heading-sm font-heading text-foreground">{h3}</h3>
+          <p className="text-body-sm text-muted-foreground">{body}</p>
         </div>
         <Button render={<Link href="/revision" />}>
-          Go to revision
+          {cta}
           <ArrowRight className="size-4" />
         </Button>
       </div>

@@ -20,12 +20,18 @@ import type {
   BoardScores,
   GradeDistribution,
 } from '@/lib/analytics/aggregate'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Props ──────────────────────────────────────────────────────────────────
 
 interface AggregateStatsProps {
   /** Which widget(s) to display */
-  variant: 'text-popularity' | 'quiz-score' | 'popular-texts' | 'hardest-questions' | 'full-dashboard'
+  variant:
+    | 'text-popularity'
+    | 'quiz-score'
+    | 'popular-texts'
+    | 'hardest-questions'
+    | 'full-dashboard'
   /** For text-popularity variant: filter to a specific text ID */
   textId?: string
   /** For quiz-score variant: filter to a specific exam board */
@@ -214,20 +220,17 @@ function useAggregateStats() {
 
 // ─── Sub-Components ─────────────────────────────────────────────────────────
 
-function TextPopularityBadge({
-  textId,
-  data,
-}: {
-  textId: string
-  data: AggregateSnapshot
-}) {
-  const text = data.mostStudiedTexts.find((t) => t.textId === textId)
+function TextPopularityBadge({ textId, data }: { textId: string; data: AggregateSnapshot }) {
+  const t = useT()
+  const text = data.mostStudiedTexts.find((tx) => tx.textId === textId)
 
   if (!text) {
     return (
       <div className="inline-flex items-center gap-1.5 rounded-full bg-cream-100 px-3 py-1 text-sm text-ink-600">
         <span className="inline-block h-2 w-2 rounded-full bg-ink-400" />
-        <span>{formatNumber(data.totalStudents)} students on the platform</span>
+        <span>
+          {formatNumber(data.totalStudents)} {t('analytics.badge.students_on_platform')}
+        </span>
       </div>
     )
   }
@@ -236,7 +239,8 @@ function TextPopularityBadge({
     <div className="inline-flex items-center gap-1.5 rounded-full bg-teal-500/10 px-3 py-1 text-sm text-teal-800">
       <span className="inline-block h-2 w-2 rounded-full bg-blue-500" />
       <span>
-        <strong>{formatNumber(text.totalStudents)}</strong> students have studied this text
+        <strong>{formatNumber(text.totalStudents)}</strong>{' '}
+        {t('analytics.badge.students_studied_text')}
       </span>
       <span className={`ml-1 text-xs ${getTrendColor(text.trendDirection)}`}>
         {getTrendIcon(text.trendDirection)}
@@ -245,13 +249,8 @@ function TextPopularityBadge({
   )
 }
 
-function QuizScoreBadge({
-  examBoard,
-  data,
-}: {
-  examBoard?: string
-  data: AggregateSnapshot
-}) {
+function QuizScoreBadge({ examBoard, data }: { examBoard?: string; data: AggregateSnapshot }) {
+  const t = useT()
   const board = examBoard
     ? data.scoresByBoard.find((b) => b.examBoard === examBoard)
     : data.scoresByBoard[0]
@@ -262,7 +261,7 @@ function QuizScoreBadge({
     <div className="inline-flex items-center gap-1.5 rounded-full bg-clay-500/10 px-3 py-1 text-sm text-clay-700">
       <span className="inline-block h-2 w-2 rounded-full bg-purple-500" />
       <span>
-        Average quiz score: <strong>{avgScore}%</strong>
+        {t('analytics.badge.avg_quiz_score')}: <strong>{avgScore}%</strong>
         {board ? ` (${board.examBoard})` : ''}
       </span>
     </div>
@@ -270,17 +269,18 @@ function QuizScoreBadge({
 }
 
 function PopularTextsWidget({ data }: { data: AggregateSnapshot }) {
+  const t = useT()
   const texts =
-    data.weeklyPopularTexts.length > 0
-      ? data.weeklyPopularTexts
-      : data.mostStudiedTexts.slice(0, 5)
+    data.weeklyPopularTexts.length > 0 ? data.weeklyPopularTexts : data.mostStudiedTexts.slice(0, 5)
 
   const isWeekly = data.weeklyPopularTexts.length > 0
 
   return (
     <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
       <h3 className="mb-3 text-sm font-semibold text-foreground">
-        {isWeekly ? 'Most Popular This Week' : 'Most Studied Texts'}
+        {isWeekly
+          ? t('analytics.widget.most_popular_this_week')
+          : t('analytics.widget.most_studied_texts')}
       </h3>
       <ul className="space-y-2">
         {texts.map((text, i) => (
@@ -299,7 +299,7 @@ function PopularTextsWidget({ data }: { data: AggregateSnapshot }) {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-xs text-muted-foreground">
-                {formatNumber(text.totalStudents)} students
+                {formatNumber(text.totalStudents)} {t('analytics.unit.students')}
               </span>
               <span className={`text-xs ${getTrendColor(text.trendDirection)}`}>
                 {getTrendIcon(text.trendDirection)}
@@ -313,35 +313,48 @@ function PopularTextsWidget({ data }: { data: AggregateSnapshot }) {
 }
 
 function HardestQuestionsWidget({ data }: { data: AggregateSnapshot }) {
+  const t = useT()
   const questions = data.hardestQuestions.slice(0, 5)
+
+  const difficultyLabel = (d: QuestionDifficulty['difficulty']) => {
+    switch (d) {
+      case 'easy':
+        return t('analytics.difficulty.easy')
+      case 'medium':
+        return t('analytics.difficulty.medium')
+      case 'hard':
+        return t('analytics.difficulty.hard')
+      case 'very-hard':
+        return t('analytics.difficulty.very_hard')
+    }
+  }
 
   return (
     <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
       <h3 className="mb-3 text-sm font-semibold text-foreground">
-        Hardest Questions
+        {t('analytics.widget.hardest_questions')}
       </h3>
       <ul className="space-y-2">
-        {questions.map((q, i) => (
-          <li
-            key={q.questionId}
-            className="rounded-md border border-border/60 px-3 py-2"
-          >
+        {questions.map((q) => (
+          <li key={q.questionId} className="rounded-md border border-border/60 px-3 py-2">
             <div className="mb-1 flex items-start justify-between gap-2">
-              <p className="text-sm text-foreground line-clamp-2">
-                {q.questionText}
-              </p>
+              <p className="text-sm text-foreground line-clamp-2">{q.questionText}</p>
               <span
                 className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${getDifficultyColor(
-                  q.difficulty
+                  q.difficulty,
                 )}`}
               >
-                {q.difficulty.replace('-', ' ')}
+                {difficultyLabel(q.difficulty)}
               </span>
             </div>
             <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <span>{q.moduleName}</span>
-              <span>{q.correctRate}% correct</span>
-              <span>{formatNumber(q.totalAttempts)} attempts</span>
+              <span>
+                {q.correctRate}% {t('analytics.metric.correct')}
+              </span>
+              <span>
+                {formatNumber(q.totalAttempts)} {t('analytics.unit.attempts')}
+              </span>
             </div>
             {/* Difficulty bar */}
             <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-ink-200/30">
@@ -358,13 +371,14 @@ function HardestQuestionsWidget({ data }: { data: AggregateSnapshot }) {
 }
 
 function FullDashboard({ data }: { data: AggregateSnapshot }) {
+  const t = useT()
   return (
     <div className="space-y-6">
       {/* Summary Cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-            Total Students
+            {t('analytics.summary.total_students')}
           </p>
           <p className="mt-1 text-2xl font-bold text-foreground">
             {formatNumber(data.totalStudents)}
@@ -372,7 +386,7 @@ function FullDashboard({ data }: { data: AggregateSnapshot }) {
         </div>
         <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-            Quiz Attempts
+            {t('analytics.summary.quiz_attempts')}
           </p>
           <p className="mt-1 text-2xl font-bold text-foreground">
             {formatNumber(data.totalQuizAttempts)}
@@ -380,43 +394,35 @@ function FullDashboard({ data }: { data: AggregateSnapshot }) {
         </div>
         <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-            Texts Studied
+            {t('analytics.summary.texts_studied')}
           </p>
-          <p className="mt-1 text-2xl font-bold text-foreground">
-            {data.totalTextsStudied}
-          </p>
+          <p className="mt-1 text-2xl font-bold text-foreground">{data.totalTextsStudied}</p>
         </div>
       </div>
 
       {/* Board Scores */}
       <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
         <h3 className="mb-3 text-sm font-semibold text-foreground">
-          Average Scores by Exam Board
+          {t('analytics.widget.avg_scores_by_board')}
         </h3>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-border text-xs font-medium uppercase text-muted-foreground">
-                <th className="pb-2 pr-4">Board</th>
-                <th className="pb-2 pr-4">Students</th>
-                <th className="pb-2 pr-4">Avg Quiz</th>
-                <th className="pb-2 pr-4">Avg Assessment</th>
-                <th className="pb-2">Completion</th>
+                <th className="pb-2 pr-4">{t('analytics.col.board')}</th>
+                <th className="pb-2 pr-4">{t('analytics.col.students')}</th>
+                <th className="pb-2 pr-4">{t('analytics.col.avg_quiz')}</th>
+                <th className="pb-2 pr-4">{t('analytics.col.avg_assessment')}</th>
+                <th className="pb-2">{t('analytics.col.completion')}</th>
               </tr>
             </thead>
             <tbody>
               {data.scoresByBoard.map((board) => (
                 <tr key={board.examBoard} className="border-b border-border/40">
-                  <td className="py-2 pr-4 font-medium text-foreground">
-                    {board.examBoard}
-                  </td>
-                  <td className="py-2 pr-4 text-ink-600">
-                    {formatNumber(board.totalStudents)}
-                  </td>
+                  <td className="py-2 pr-4 font-medium text-foreground">{board.examBoard}</td>
+                  <td className="py-2 pr-4 text-ink-600">{formatNumber(board.totalStudents)}</td>
                   <td className="py-2 pr-4 text-ink-600">{board.avgQuizScore}%</td>
-                  <td className="py-2 pr-4 text-ink-600">
-                    {board.avgAssessmentScore}%
-                  </td>
+                  <td className="py-2 pr-4 text-ink-600">{board.avgAssessmentScore}%</td>
                   <td className="py-2 text-ink-600">{board.avgCompletionRate}%</td>
                 </tr>
               ))}
@@ -428,7 +434,7 @@ function FullDashboard({ data }: { data: AggregateSnapshot }) {
       {/* Grade Distribution */}
       <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
         <h3 className="mb-3 text-sm font-semibold text-foreground">
-          Grade Distribution
+          {t('analytics.widget.grade_distribution')}
         </h3>
         <div className="flex items-end gap-1">
           {data.gradeDistribution.map((g) => (
@@ -503,13 +509,9 @@ export function AggregateStats({
       {variant === 'text-popularity' && (
         <TextPopularityBadge textId={textId ?? ''} data={snapshot} />
       )}
-      {variant === 'quiz-score' && (
-        <QuizScoreBadge examBoard={examBoard} data={snapshot} />
-      )}
+      {variant === 'quiz-score' && <QuizScoreBadge examBoard={examBoard} data={snapshot} />}
       {variant === 'popular-texts' && <PopularTextsWidget data={snapshot} />}
-      {variant === 'hardest-questions' && (
-        <HardestQuestionsWidget data={snapshot} />
-      )}
+      {variant === 'hardest-questions' && <HardestQuestionsWidget data={snapshot} />}
       {variant === 'full-dashboard' && <FullDashboard data={snapshot} />}
     </div>
   )

@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore, useAuthUserLoading } from '@/store/auth-store'
+import { useT } from '@/lib/i18n/use-t'
 
 /**
  * /account/delete — GDPR Art.17 self-service erasure flow.
@@ -23,6 +24,7 @@ import { useAuthStore, useAuthUserLoading } from '@/store/auth-store'
  * minor user can find and complete it without hunting through tabs.
  */
 export default function DeleteAccountPage() {
+  const t = useT()
   const router = useRouter()
   const supabase = createClient()
   const { user, isLoading: authLoading } = useAuthUserLoading()
@@ -43,7 +45,7 @@ export default function DeleteAccountPage() {
     setError(null)
 
     if (confirmText !== 'DELETE') {
-      setError('Please type DELETE in the confirmation field to continue.')
+      setError(t('account.delete.type_to_confirm'))
       return
     }
 
@@ -61,10 +63,7 @@ export default function DeleteAccountPage() {
       }
 
       if (!res.ok) {
-        setError(
-          data.error ||
-            'We could not process your request. Please try again or email dpo@theenglishhub.app.',
-        )
+        setError(data.error || t('account.delete.err_generic'))
         setSubmitting(false)
         return
       }
@@ -77,9 +76,7 @@ export default function DeleteAccountPage() {
       useAuthStore.getState().clear()
       window.setTimeout(() => router.replace('/'), 6000)
     } catch {
-      setError(
-        'Network error. Please check your connection and try again, or email dpo@theenglishhub.app.',
-      )
+      setError(t('account.delete.err_network'))
       setSubmitting(false)
     }
   }
@@ -113,21 +110,20 @@ export default function DeleteAccountPage() {
                 id="account-delete-success-heading"
                 className="text-xl font-semibold text-foreground"
               >
-                Account scheduled for deletion
+                {t('account.delete.success_heading')}
               </h1>
             </div>
             <p className="text-sm text-muted-foreground mb-3">
-              Your English Hub account will be permanently deleted on{' '}
-              <span className="font-semibold text-foreground">{purgeDateLabel}</span>. Until then,
-              you can email{' '}
+              {t('account.delete.success_prefix')}
+              <span className="font-semibold text-foreground">{purgeDateLabel}</span>
+              {t('account.delete.success_suffix_prefix')}
               <a href="mailto:dpo@theenglishhub.app" className="text-primary hover:underline">
                 dpo@theenglishhub.app
-              </a>{' '}
-              to restore your account.
+              </a>
+              {t('account.delete.success_suffix_tail')}
             </p>
             <p className="text-sm text-muted-foreground">
-              You have been signed out. We&rsquo;ll send a confirmation email shortly. Returning to
-              the home page&hellip;
+              {t('account.delete.success_signed_out')}
             </p>
           </section>
         </div>
@@ -143,18 +139,15 @@ export default function DeleteAccountPage() {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to account
+          {t('account.back_to_account')}
         </Link>
 
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-3">
             <Trash2 className="w-6 h-6 text-red-600" />
-            <h1 className="text-3xl font-bold text-foreground">Delete my account</h1>
+            <h1 className="text-3xl font-bold text-foreground">{t('account.delete.title')}</h1>
           </div>
-          <p className="text-muted-foreground">
-            You can ask us to remove your account and personal data at any time. This page walks you
-            through what happens next.
-          </p>
+          <p className="text-muted-foreground">{t('account.delete.subtitle')}</p>
         </header>
 
         {/* What gets deleted */}
@@ -165,7 +158,7 @@ export default function DeleteAccountPage() {
           <div className="flex items-center gap-3 mb-4">
             <ShieldOff className="w-5 h-5 text-primary" />
             <h2 id="delete-explainer-heading" className="text-xl font-semibold text-foreground">
-              What gets deleted
+              {t('account.delete.what_gets_deleted')}
             </h2>
           </div>
           <ul className="space-y-2 text-sm text-foreground mb-4">
@@ -174,8 +167,8 @@ export default function DeleteAccountPage() {
                 &bull;
               </span>
               <span>
-                <span className="font-semibold">Your profile</span> — name, email, school, year
-                group, exam board, password.
+                <span className="font-semibold">{t('account.delete.bullet_profile_label')}</span>
+                {t('account.delete.bullet_profile_body')}
               </span>
             </li>
             <li className="flex gap-2">
@@ -183,8 +176,8 @@ export default function DeleteAccountPage() {
                 &bull;
               </span>
               <span>
-                <span className="font-semibold">Your scores and grades</span> — every quiz attempt,
-                predicted grade, and progress record tied to your account.
+                <span className="font-semibold">{t('account.delete.bullet_scores_label')}</span>
+                {t('account.delete.bullet_scores_body')}
               </span>
             </li>
             <li className="flex gap-2">
@@ -192,16 +185,18 @@ export default function DeleteAccountPage() {
                 &bull;
               </span>
               <span>
-                <span className="font-semibold">Your essay history</span> — essays you submitted, AI
-                feedback, and saved drafts.
+                <span className="font-semibold">{t('account.delete.bullet_essays_label')}</span>
+                {t('account.delete.bullet_essays_body')}
               </span>
             </li>
           </ul>
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">Aggregate analytics</span> (e.g.
-            &ldquo;how many users completed Lesson 3 this month&rdquo;) are kept in{' '}
-            <em>anonymised</em> form so we can keep improving the product. They cannot be linked
-            back to you. Payment records are kept separately for 7 years where HMRC requires it.
+            <span className="font-semibold text-foreground">
+              {t('account.delete.aggregate_label')}
+            </span>
+            {t('account.delete.aggregate_body_prefix')}
+            <em>{t('account.delete.aggregate_anonymised')}</em>
+            {t('account.delete.aggregate_body_suffix')}
           </p>
         </section>
 
@@ -213,20 +208,19 @@ export default function DeleteAccountPage() {
           <div className="flex items-center gap-3 mb-4">
             <Clock className="w-5 h-5 text-amber-600" />
             <h2 id="delete-grace-heading" className="text-xl font-semibold text-foreground">
-              30-day grace period
+              {t('account.delete.grace_heading')}
             </h2>
           </div>
           <p className="text-sm text-foreground mb-2">
-            We hold your data for <span className="font-semibold">30 days</span> before permanently
-            deleting it. During that time you can email{' '}
+            {t('account.delete.grace_body_prefix')}
+            <span className="font-semibold">{t('account.delete.grace_30_days')}</span>
+            {t('account.delete.grace_body_suffix')}
             <a href="mailto:dpo@theenglishhub.app" className="text-primary hover:underline">
               dpo@theenglishhub.app
-            </a>{' '}
-            and we&rsquo;ll restore your account.
+            </a>
+            {t('account.delete.grace_restore_tail')}
           </p>
-          <p className="text-sm text-muted-foreground">
-            After 30 days, deletion is permanent and cannot be undone.
-          </p>
+          <p className="text-sm text-muted-foreground">{t('account.delete.grace_after_note')}</p>
         </section>
 
         {/* Confirmation form */}
@@ -237,7 +231,7 @@ export default function DeleteAccountPage() {
           <div className="flex items-center gap-3 mb-4">
             <AlertTriangle className="w-5 h-5 text-red-600" />
             <h2 id="delete-confirm-heading" className="text-xl font-semibold text-red-600">
-              Confirm deletion
+              {t('account.delete.confirm_heading')}
             </h2>
           </div>
 
@@ -255,7 +249,9 @@ export default function DeleteAccountPage() {
           <form onSubmit={handleDelete} className="space-y-4">
             <div>
               <label htmlFor="confirmText" className="label">
-                Type <span className="font-mono font-bold text-red-600">DELETE</span> to confirm
+                {t('account.type_delete_prefix')}{' '}
+                <span className="font-mono font-bold text-red-600">DELETE</span>{' '}
+                {t('account.type_delete_suffix')}
               </label>
               <input
                 id="confirmText"
@@ -272,7 +268,7 @@ export default function DeleteAccountPage() {
                 disabled={submitting}
               />
               <p id="confirmText-help" className="text-xs text-muted-foreground mt-1">
-                We require this so accidental clicks can&rsquo;t delete your account.
+                {t('account.delete.help_text')}
               </p>
             </div>
 
@@ -285,12 +281,12 @@ export default function DeleteAccountPage() {
                 {submitting ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    Submitting&hellip;
+                    {t('account.delete.submitting')}
                   </>
                 ) : (
                   <>
                     <Trash2 className="w-4 h-4" />
-                    Delete my account
+                    {t('account.delete.submit')}
                   </>
                 )}
               </button>
@@ -299,7 +295,7 @@ export default function DeleteAccountPage() {
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm border border-border text-foreground hover:bg-muted transition-colors"
                 aria-disabled={submitting}
               >
-                Cancel
+                {t('account.delete.cancel')}
               </Link>
             </div>
           </form>

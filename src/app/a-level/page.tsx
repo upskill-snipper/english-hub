@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'A-Level English — The English Hub',
@@ -15,38 +16,64 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-const boards = [
+type BoardSlug = 'aqa' | 'edexcel' | 'ocr' | 'eduqas'
+
+const boards: {
+  slug: BoardSlug
+  nameKey: string
+  examCode: string
+  descriptionKey: string
+  href: string
+}[] = [
   {
     slug: 'aqa',
-    name: 'AQA A-Level',
+    nameKey: 'alevel.board.aqa.name',
     examCode: '7712 / 7702',
-    description: 'A-Level English Literature (7712) and Language (7702)',
+    descriptionKey: 'alevel.board.aqa.description',
     href: '/a-level/aqa',
   },
   {
     slug: 'edexcel',
-    name: 'Pearson Edexcel A-Level',
+    nameKey: 'alevel.board.edexcel.name',
     examCode: '9ET0 / 9EN0',
-    description: 'A-Level English Literature (9ET0) and Language (9EN0)',
+    descriptionKey: 'alevel.board.edexcel.description',
     href: '/a-level/edexcel',
   },
   {
     slug: 'ocr',
-    name: 'OCR A-Level',
+    nameKey: 'alevel.board.ocr.name',
     examCode: 'H472 / H470',
-    description: 'A-Level English Literature (H472) and Language (H470)',
+    descriptionKey: 'alevel.board.ocr.description',
     href: '/a-level/ocr',
   },
   {
     slug: 'eduqas',
-    name: 'WJEC Eduqas A-Level',
+    nameKey: 'alevel.board.eduqas.name',
     examCode: 'Eduqas',
-    description: 'A-Level English Literature and Language',
+    descriptionKey: 'alevel.board.eduqas.description',
     href: '/a-level/eduqas',
   },
 ]
 
-export default function ALevelHubPage() {
+export default async function ALevelHubPage() {
+  const tBadgeLevel = await t('alevel.hub.badge.uk_a_level')
+  const tBadgeLitLang = await t('alevel.hub.badge.lit_and_lang')
+  const tH1 = await t('alevel.hub.h1')
+  const tLead = await t('alevel.hub.lead')
+  const tChooseBoardH2 = await t('alevel.hub.choose_board_h2')
+  const tFootnote = await t('alevel.hub.footnote')
+  const tOpenPrefix = await t('alevel.hub.open_hub_prefix')
+
+  // Resolve each board's translated strings + short label (first word of name).
+  const resolvedBoards = await Promise.all(
+    boards.map(async (b) => {
+      const name = await t(b.nameKey)
+      const description = await t(b.descriptionKey)
+      const shortLabel = await t(`alevel.board.${b.slug}.short`)
+      return { ...b, name, description, shortLabel }
+    }),
+  )
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -64,20 +91,12 @@ export default function ALevelHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              UK A-Level
+              {tBadgeLevel}
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              Literature & Language
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">{tBadgeLitLang}</Badge>
           </div>
-          <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            A-Level English Hub
-          </h1>
-          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Pick your UK A-Level board below. Full board-specific guides are on our roadmap — in the
-            meantime, use the cross-board revision tools for set-text analysis, essay technique and
-            language study.
-          </p>
+          <h1 className="text-display-sm font-heading text-foreground sm:text-display">{tH1}</h1>
+          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{tLead}</p>
         </div>
       </section>
 
@@ -85,11 +104,11 @@ export default function ALevelHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Choose your exam board</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">{tChooseBoardH2}</h2>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          {boards.map((board) => (
+          {resolvedBoards.map((board) => (
             <Card
               key={board.slug}
               className="group relative flex flex-col overflow-hidden transition-all duration-200 hover:border-border hover:shadow-card-hover"
@@ -117,7 +136,7 @@ export default function ALevelHubPage() {
                     className="w-full"
                     render={<Link href={board.href} />}
                   >
-                    Open {board.name.split(' ')[0]} hub
+                    {tOpenPrefix} {board.shortLabel}
                     <ArrowRight className="size-3.5" />
                   </Button>
                 </div>
@@ -128,9 +147,7 @@ export default function ALevelHubPage() {
       </section>
 
       {/* ── Footnote ───────────────────────────────────────────────── */}
-      <p className="text-center text-body-xs text-muted-foreground/60">
-        Aligned with AQA, Pearson Edexcel, OCR and WJEC Eduqas A-Level English specifications
-      </p>
+      <p className="text-center text-body-xs text-muted-foreground/60">{tFootnote}</p>
     </div>
   )
 }

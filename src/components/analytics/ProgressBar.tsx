@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils'
 import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
+import { useT } from '@/lib/i18n/use-t'
 
 interface ProgressBarProps {
   value: number
@@ -40,6 +41,7 @@ export function ProgressBar({
   color,
   className,
 }: ProgressBarProps) {
+  const t = useT()
   const percentage = max > 0 ? Math.min(Math.round((value / max) * 100), 100) : 0
   const barColor = color ?? getColorClass(percentage)
   const grade = percentageToGCSEGrade(percentage)
@@ -49,26 +51,22 @@ export function ProgressBar({
       {(label || showPercentage) && (
         <div className="mb-1.5 flex items-center justify-between">
           <div className="min-w-0">
-            {label && (
-              <span className="truncate text-sm font-medium text-foreground">{label}</span>
-            )}
-            {sublabel && (
-              <span className="ml-2 text-xs text-muted-foreground">{sublabel}</span>
-            )}
+            {label && <span className="truncate text-sm font-medium text-foreground">{label}</span>}
+            {sublabel && <span className="ml-2 text-xs text-muted-foreground">{sublabel}</span>}
           </div>
           {showPercentage && (
-            <span className={cn('ml-2 shrink-0 text-xs tabular-nums', showAsGrade ? gcseGradeColor(grade) + ' font-semibold' : 'text-muted-foreground')}>
-              {showAsGrade ? `Grade ${grade}` : `${percentage}%`}
+            <span
+              className={cn(
+                'ml-2 shrink-0 text-xs tabular-nums',
+                showAsGrade ? gcseGradeColor(grade) + ' font-semibold' : 'text-muted-foreground',
+              )}
+            >
+              {showAsGrade ? `${t('analytics.grade.label')} ${grade}` : `${percentage}%`}
             </span>
           )}
         </div>
       )}
-      <div
-        className={cn(
-          'w-full overflow-hidden rounded-full bg-muted',
-          sizeClasses[size]
-        )}
-      >
+      <div className={cn('w-full overflow-hidden rounded-full bg-muted', sizeClasses[size])}>
         <div
           className={cn('h-full rounded-full transition-all duration-500 ease-out', barColor)}
           style={{ width: `${percentage}%` }}

@@ -1,25 +1,17 @@
-"use client"
+'use client'
 
-import { useMemo } from "react"
-import Link from "next/link"
-import { ArrowLeft, Download, Grid3x3 } from "lucide-react"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { CohortHeatmap } from "@/components/analytics/CohortHeatmap"
-import {
-  averageRetentionAtAge,
-  cohortsToCSV,
-  generateCohorts,
-} from "@/lib/analytics/cohorts"
-import { formatPct } from "@/lib/analytics/nrr"
+import { useMemo } from 'react'
+import Link from 'next/link'
+import { ArrowLeft, Download, Grid3x3 } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { CohortHeatmap } from '@/components/analytics/CohortHeatmap'
+import { averageRetentionAtAge, cohortsToCSV, generateCohorts } from '@/lib/analytics/cohorts'
+import { formatPct } from '@/lib/analytics/nrr'
+import { useT } from '@/lib/i18n/use-t'
 
 export default function CohortsPage() {
+  const t = useT()
   const cohorts = useMemo(() => generateCohorts(), [])
 
   const summary = useMemo(() => {
@@ -29,17 +21,15 @@ export default function CohortsPage() {
         age: a,
         retention: averageRetentionAtAge(cohorts, a),
       }))
-      .filter(
-        (s): s is { age: number; retention: number } => s.retention !== null,
-      )
+      .filter((s): s is { age: number; retention: number } => s.retention !== null)
   }, [cohorts])
 
   function handleExport() {
-    if (typeof window === "undefined") return
+    if (typeof window === 'undefined') return
     const csv = cohortsToCSV(cohorts)
-    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" })
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' })
     const url = URL.createObjectURL(blob)
-    const link = document.createElement("a")
+    const link = document.createElement('a')
     link.href = url
     link.download = `english-hub-cohorts-${new Date().toISOString().slice(0, 10)}.csv`
     document.body.appendChild(link)
@@ -54,9 +44,14 @@ export default function CohortsPage() {
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <Button render={<Link href="/school/analytics/nrr" />} variant="ghost" size="sm" className="gap-1.5">
-                <ArrowLeft className="h-4 w-4" />
-                NRR Dashboard
+            <Button
+              render={<Link href="/school/analytics/nrr" />}
+              variant="ghost"
+              size="sm"
+              className="gap-1.5"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {t('school.analytics.nrr.back_to_dashboard')}
             </Button>
             <div className="h-6 w-px bg-border" />
             <div className="flex items-center gap-3">
@@ -65,10 +60,10 @@ export default function CohortsPage() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold tracking-tight">
-                  Cohort Retention Heatmap
+                  {t('school.analytics.cohorts.title')}
                 </h1>
                 <p className="text-sm text-muted-foreground">
-                  Revenue retained by signup cohort, month over month
+                  {t('school.analytics.cohorts.subtitle')}
                 </p>
               </div>
             </div>
@@ -80,7 +75,7 @@ export default function CohortsPage() {
             onClick={handleExport}
           >
             <Download className="h-4 w-4" />
-            Export for investors
+            {t('school.analytics.nrr.export_investors')}
           </Button>
         </div>
 
@@ -90,19 +85,18 @@ export default function CohortsPage() {
             <Card key={s.age}>
               <CardContent className="p-5">
                 <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                  Month {s.age} retention
+                  {t('school.analytics.cohorts.month_prefix')} {s.age}{' '}
+                  {t('school.analytics.cohorts.retention_suffix')}
                 </p>
                 <p
                   className={`mt-1 text-3xl font-bold tabular-nums ${
-                    s.retention >= 100
-                      ? "text-emerald-400"
-                      : "text-clay-600"
+                    s.retention >= 100 ? 'text-emerald-400' : 'text-clay-600'
                   }`}
                 >
                   {formatPct(s.retention)}
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  Average across all cohorts
+                  {t('school.analytics.cohorts.avg_all_cohorts')}
                 </p>
               </CardContent>
             </Card>
@@ -112,12 +106,8 @@ export default function CohortsPage() {
         {/* Full heatmap */}
         <Card>
           <CardHeader>
-            <CardTitle>24-Month Cohort Heatmap</CardTitle>
-            <CardDescription>
-              Each row is a monthly signup cohort. Columns show how much of the
-              cohort&apos;s initial MRR is retained N months later. Values above
-              100% indicate net expansion.
-            </CardDescription>
+            <CardTitle>{t('school.analytics.cohorts.heatmap_title')}</CardTitle>
+            <CardDescription>{t('school.analytics.cohorts.heatmap_subtitle')}</CardDescription>
           </CardHeader>
           <CardContent>
             <CohortHeatmap table={cohorts} maxMonthsShown={cohorts.maxAge} />
@@ -127,26 +117,21 @@ export default function CohortsPage() {
         {/* How to read it */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">How to read this chart</CardTitle>
+            <CardTitle className="text-base">{t('school.analytics.cohorts.how_to_read')}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2 text-sm text-muted-foreground">
             <p>
-              <span className="font-medium text-foreground">M0</span> is the
-              signup month, always 100%. Columns to the right track what
-              happens to each cohort as time passes.
+              <span className="font-medium text-foreground">M0</span> is the signup month, always
+              100%. Columns to the right track what happens to each cohort as time passes.
             </p>
             <p>
-              <span className="font-medium text-emerald-400">
-                Green cells above 100%
-              </span>{" "}
-              mean expansion outpaces churn — the cohort is now paying more
-              than it did at signup.
+              <span className="font-medium text-emerald-400">Green cells above 100%</span> mean
+              expansion outpaces churn — the cohort is now paying more than it did at signup.
             </p>
             <p>
               <span className="font-medium text-clay-600">Amber</span> and
-              <span className="font-medium text-red-400"> red cells</span>{" "}
-              indicate contraction or churn exceeding expansion for that cohort
-              at that age.
+              <span className="font-medium text-red-400"> red cells</span> indicate contraction or
+              churn exceeding expansion for that cohort at that age.
             </p>
           </CardContent>
         </Card>

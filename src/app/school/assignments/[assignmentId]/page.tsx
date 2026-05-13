@@ -18,13 +18,7 @@ import {
 import { cn } from '@/lib/utils'
 import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -44,6 +38,7 @@ import {
   ASSIGNMENT_TYPE_LABELS,
   ASSIGNMENT_STATUS_LABELS,
 } from '@/lib/types/assignment'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Helpers ───────────────────────────────────────────────────────────── */
 
@@ -88,6 +83,7 @@ function formatDate(iso: string): string {
 /* ── Component ─────────────────────────────────────────────────────────── */
 
 export default function AssignmentDetailPage() {
+  const t = useT()
   const params = useParams()
   const router = useRouter()
   const assignmentId = params.assignmentId as string
@@ -124,14 +120,16 @@ export default function AssignmentDetailPage() {
           render={<Link href="/school/assignments" />}
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Assignments
+          {t('school.assignments.back')}
         </Button>
         <Card className="border-dashed">
           <CardContent className="flex flex-col items-center justify-center py-16 text-center">
             <AlertTriangle className="mb-3 h-10 w-10 text-muted-foreground" />
-            <h3 className="mb-1 font-semibold text-foreground">Assignment not found</h3>
+            <h3 className="mb-1 font-semibold text-foreground">
+              {t('school.assignments.not_found.title')}
+            </h3>
             <p className="text-sm text-muted-foreground">
-              This assignment may have been deleted or does not exist.
+              {t('school.assignments.not_found.body')}
             </p>
           </CardContent>
         </Card>
@@ -159,14 +157,10 @@ export default function AssignmentDetailPage() {
       : null
 
   const highestScore =
-    gradedSubmissions.length > 0
-      ? Math.max(...gradedSubmissions.map((s) => s.score ?? 0))
-      : null
+    gradedSubmissions.length > 0 ? Math.max(...gradedSubmissions.map((s) => s.score ?? 0)) : null
 
   const lowestScore =
-    gradedSubmissions.length > 0
-      ? Math.min(...gradedSubmissions.map((s) => s.score ?? 0))
-      : null
+    gradedSubmissions.length > 0 ? Math.min(...gradedSubmissions.map((s) => s.score ?? 0)) : null
 
   const isOverdue = assignment.status === 'active' && new Date(assignment.dueDate) < new Date()
 
@@ -232,7 +226,7 @@ export default function AssignmentDetailPage() {
         render={<Link href="/school/assignments" />}
       >
         <ArrowLeft className="h-4 w-4" />
-        Back to Assignments
+        {t('school.assignments.back')}
       </Button>
 
       {/* Header */}
@@ -253,14 +247,17 @@ export default function AssignmentDetailPage() {
                 {ASSIGNMENT_STATUS_LABELS[assignment.status]}
               </Badge>
               {isOverdue && (
-                <Badge variant="outline" className="text-xs border-red-500/30 bg-red-500/10 text-red-400">
-                  Overdue
+                <Badge
+                  variant="outline"
+                  className="text-xs border-red-500/30 bg-red-500/10 text-red-400"
+                >
+                  {t('school.assignments.badge.overdue')}
                 </Badge>
               )}
             </div>
             <p className="mt-1 text-sm text-muted-foreground">
               {ASSIGNMENT_TYPE_LABELS[assignment.type]}
-              {assignment.resourceId && ` \u00b7 Resource linked`}
+              {assignment.resourceId && ` \u00b7 ${t('school.assignments.resource_linked')}`}
             </p>
           </div>
         </div>
@@ -275,9 +272,9 @@ export default function AssignmentDetailPage() {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="draft">Draft</SelectItem>
-              <SelectItem value="active">Active</SelectItem>
-              <SelectItem value="closed">Closed</SelectItem>
+              <SelectItem value="draft">{t('school.assignments.status.draft')}</SelectItem>
+              <SelectItem value="active">{t('school.assignments.status.active')}</SelectItem>
+              <SelectItem value="closed">{t('school.assignments.status.closed')}</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -304,7 +301,9 @@ export default function AssignmentDetailPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold tabular-nums text-foreground">{totalStudents}</p>
-                <p className="text-xs text-muted-foreground">Students</p>
+                <p className="text-xs text-muted-foreground">
+                  {t('school.assignments.stat.students')}
+                </p>
               </div>
             </div>
           </CardContent>
@@ -317,11 +316,9 @@ export default function AssignmentDetailPage() {
                 <CheckCircle className="h-4 w-4 text-green-400" />
               </div>
               <div>
-                <p className="text-2xl font-bold tabular-nums text-foreground">
-                  {completionRate}%
-                </p>
+                <p className="text-2xl font-bold tabular-nums text-foreground">{completionRate}%</p>
                 <p className="text-xs text-muted-foreground">
-                  Submitted ({submitted}/{totalStudents})
+                  {t('school.assignments.stat.submitted')} ({submitted}/{totalStudents})
                 </p>
               </div>
             </div>
@@ -335,13 +332,17 @@ export default function AssignmentDetailPage() {
                 <BarChart3 className="h-4 w-4 text-purple-400" />
               </div>
               <div>
-                <p className={cn(
-                  'text-2xl font-bold tabular-nums',
-                  avgScore !== null ? scoreColor(avgScore) : 'text-foreground',
-                )}>
+                <p
+                  className={cn(
+                    'text-2xl font-bold tabular-nums',
+                    avgScore !== null ? scoreColor(avgScore) : 'text-foreground',
+                  )}
+                >
                   {avgScore !== null ? `${avgScore}%` : '--'}
                 </p>
-                <p className="text-xs text-muted-foreground">Avg Score</p>
+                <p className="text-xs text-muted-foreground">
+                  {t('school.assignments.stat.avg_score')}
+                </p>
               </div>
             </div>
           </CardContent>
@@ -357,7 +358,9 @@ export default function AssignmentDetailPage() {
                 <p className="text-sm font-semibold text-foreground">
                   {formatDate(assignment.dueDate)}
                 </p>
-                <p className="text-xs text-muted-foreground">Due Date</p>
+                <p className="text-xs text-muted-foreground">
+                  {t('school.assignments.stat.due_date')}
+                </p>
               </div>
             </div>
           </CardContent>
@@ -368,19 +371,15 @@ export default function AssignmentDetailPage() {
       {gradedSubmissions.length > 0 && (
         <div className="mb-6 flex items-center gap-6 text-sm text-muted-foreground">
           <span>
-            Highest:{' '}
-            <span className={cn('font-semibold', scoreColor(highestScore!))}>
-              {highestScore}%
-            </span>
+            {t('school.assignments.range.highest')}:{' '}
+            <span className={cn('font-semibold', scoreColor(highestScore!))}>{highestScore}%</span>
           </span>
           <span>
-            Lowest:{' '}
-            <span className={cn('font-semibold', scoreColor(lowestScore!))}>
-              {lowestScore}%
-            </span>
+            {t('school.assignments.range.lowest')}:{' '}
+            <span className={cn('font-semibold', scoreColor(lowestScore!))}>{lowestScore}%</span>
           </span>
           <span>
-            Graded:{' '}
+            {t('school.assignments.range.graded')}:{' '}
             <span className="font-semibold text-foreground">
               {graded}/{totalStudents}
             </span>
@@ -393,9 +392,11 @@ export default function AssignmentDetailPage() {
       {/* Submissions Table */}
       <Card>
         <CardHeader>
-          <CardTitle>Student Submissions</CardTitle>
+          <CardTitle>{t('school.assignments.submissions.title')}</CardTitle>
           <CardDescription>
-            {pending} pending &middot; {submitted - graded} submitted &middot; {graded} graded
+            {pending} {t('school.assignments.submissions.pending')} &middot; {submitted - graded}{' '}
+            {t('school.assignments.submissions.submitted')} &middot; {graded}{' '}
+            {t('school.assignments.submissions.graded')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -403,12 +404,24 @@ export default function AssignmentDetailPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border text-left">
-                  <th className="pb-3 pr-4 font-medium text-muted-foreground">Student</th>
-                  <th className="pb-3 pr-4 font-medium text-muted-foreground">Status</th>
-                  <th className="pb-3 pr-4 font-medium text-muted-foreground">Submitted</th>
-                  <th className="pb-3 pr-4 font-medium text-muted-foreground">Score</th>
-                  <th className="pb-3 pr-4 font-medium text-muted-foreground">Feedback</th>
-                  <th className="pb-3 font-medium text-muted-foreground">Actions</th>
+                  <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    {t('school.assignments.col.student')}
+                  </th>
+                  <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    {t('school.assignments.col.status')}
+                  </th>
+                  <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    {t('school.assignments.col.submitted')}
+                  </th>
+                  <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    {t('school.assignments.col.score')}
+                  </th>
+                  <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                    {t('school.assignments.col.feedback')}
+                  </th>
+                  <th className="pb-3 font-medium text-muted-foreground">
+                    {t('school.assignments.col.actions')}
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -444,10 +457,15 @@ export default function AssignmentDetailPage() {
                           value={editScore}
                           onChange={(e) => setEditScore(e.target.value)}
                           className="w-20 h-8"
-                          placeholder="0-100"
+                          placeholder={t('school.assignments.grade.placeholder')}
                         />
                       ) : sub.score !== undefined ? (
-                        <span className={cn('font-semibold tabular-nums', gcseGradeColor(percentageToGCSEGrade(sub.score)))}>
+                        <span
+                          className={cn(
+                            'font-semibold tabular-nums',
+                            gcseGradeColor(percentageToGCSEGrade(sub.score)),
+                          )}
+                        >
                           {percentageToGCSEGradeLabel(sub.score)}
                         </span>
                       ) : (
@@ -460,7 +478,7 @@ export default function AssignmentDetailPage() {
                           value={editFeedback}
                           onChange={(e) => setEditFeedback(e.target.value)}
                           className="min-h-[60px] text-xs"
-                          placeholder="Add feedback..."
+                          placeholder={t('school.assignments.feedback.placeholder')}
                         />
                       ) : sub.feedback ? (
                         <span className="flex items-center gap-1 text-xs text-muted-foreground max-w-[200px] truncate">
@@ -475,14 +493,14 @@ export default function AssignmentDetailPage() {
                       {editingStudentId === sub.studentId ? (
                         <div className="flex items-center gap-1">
                           <Button size="sm" onClick={handleSaveGrade}>
-                            Save
+                            {t('school.assignments.action.save')}
                           </Button>
                           <Button
                             size="sm"
                             variant="ghost"
                             onClick={() => setEditingStudentId(null)}
                           >
-                            Cancel
+                            {t('school.assignments.action.cancel')}
                           </Button>
                         </div>
                       ) : (
@@ -493,7 +511,7 @@ export default function AssignmentDetailPage() {
                               variant="outline"
                               onClick={() => handleMarkSubmitted(sub.studentId)}
                             >
-                              Mark Submitted
+                              {t('school.assignments.action.mark_submitted')}
                             </Button>
                           )}
                           {(sub.status === 'submitted' || sub.status === 'graded') && (
@@ -502,7 +520,9 @@ export default function AssignmentDetailPage() {
                               variant="outline"
                               onClick={() => handleStartGrading(sub)}
                             >
-                              {sub.status === 'graded' ? 'Edit Grade' : 'Grade'}
+                              {sub.status === 'graded'
+                                ? t('school.assignments.action.edit_grade')
+                                : t('school.assignments.action.grade')}
                             </Button>
                           )}
                         </div>
@@ -517,7 +537,7 @@ export default function AssignmentDetailPage() {
           {assignment.submissions.length === 0 && (
             <div className="py-8 text-center text-muted-foreground">
               <Users className="mx-auto mb-2 h-8 w-8 opacity-50" />
-              <p className="text-sm">No students assigned yet.</p>
+              <p className="text-sm">{t('school.assignments.no_students')}</p>
             </div>
           )}
         </CardContent>

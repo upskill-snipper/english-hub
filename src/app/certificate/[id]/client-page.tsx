@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase/client'
 import { getCourseName } from '@/lib/utils'
 import { formatPercentageWithGrade } from '@/lib/grades'
 import type { Certificate } from '@/lib/types'
+import { useT } from '@/lib/i18n/use-t'
 import {
   Award,
   Download,
@@ -21,6 +22,7 @@ import {
 } from 'lucide-react'
 
 export default function CertificatePage() {
+  const t = useT()
   const { id } = useParams<{ id: string }>()
   const supabase = createClient()
   const certificateRef = useRef<HTMLDivElement>(null)
@@ -46,7 +48,7 @@ export default function CertificatePage() {
       .single()
 
     if (certError || !cert) {
-      setError('Certificate not found.')
+      setError(t('certificate.not_found'))
       setLoading(false)
       return
     }
@@ -64,7 +66,7 @@ export default function CertificatePage() {
         .eq('id', cert.user_id)
         .single()
 
-      setStudentName(profile?.full_name || 'Student')
+      setStudentName(profile?.full_name || t('certificate.fallback_student'))
     }
     setLoading(false)
   }
@@ -87,8 +89,8 @@ export default function CertificatePage() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'The English Hub Certificate',
-          text: `Certificate of ${certificate?.grade} awarded to ${studentName}`,
+          title: t('certificate.share.title'),
+          text: `${t('certificate.share.text_lead')} ${certificate?.grade} ${t('certificate.share.text_awarded')} ${studentName}`,
           url,
         })
       } catch {
@@ -127,7 +129,7 @@ export default function CertificatePage() {
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to dashboard
+            {t('certificate.back_to_dashboard')}
           </Link>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -138,21 +140,18 @@ export default function CertificatePage() {
               {shareSuccess ? (
                 <>
                   <CheckCircle className="w-4 h-4 text-primary" />
-                  Copied!
+                  {t('certificate.copied')}
                 </>
               ) : (
                 <>
                   <Share2 className="w-4 h-4" />
-                  Share
+                  {t('certificate.share')}
                 </>
               )}
             </button>
-            <button
-              onClick={handlePrint}
-              className="btn-primary text-sm"
-            >
+            <button onClick={handlePrint} className="btn-primary text-sm">
               <Download className="w-4 h-4 mr-2" />
-              Download PDF
+              {t('certificate.download_pdf')}
             </button>
           </div>
         </div>
@@ -174,10 +173,10 @@ export default function CertificatePage() {
               <Award className="w-8 h-8 text-primary" />
             </div>
             <h2 className="text-sm font-semibold text-primary uppercase tracking-[0.3em] mb-1">
-              The English Hub
+              {t('certificate.brand_caption')}
             </h2>
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-8">
-              Certificate of Achievement
+              {t('certificate.title')}
             </h1>
 
             {/* Divider */}
@@ -185,38 +184,30 @@ export default function CertificatePage() {
 
             {/* Recipient */}
             <p className="text-muted-foreground text-sm uppercase tracking-wider mb-2">
-              This is to certify that
+              {t('certificate.recipient_lead')}
             </p>
-            <p className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
-              {studentName}
-            </p>
+            <p className="text-2xl sm:text-3xl font-bold text-foreground mb-6">{studentName}</p>
 
             {/* Course */}
             <p className="text-muted-foreground text-sm uppercase tracking-wider mb-2">
-              has successfully completed
+              {t('certificate.course_lead')}
             </p>
-            <p className="text-xl sm:text-2xl font-semibold text-foreground mb-6">
-              {courseName}
-            </p>
+            <p className="text-xl sm:text-2xl font-semibold text-foreground mb-6">{courseName}</p>
 
             {/* Grade and Score */}
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-background/50 rounded-xl px-6 py-4 mb-8">
               <div>
                 <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">
-                  Grade
+                  {t('certificate.field.grade')}
                 </p>
-                <p
-                  className={`text-xl font-bold ${getGradeColor(
-                    certificate.grade
-                  )}`}
-                >
+                <p className={`text-xl font-bold ${getGradeColor(certificate.grade)}`}>
                   {certificate.grade}
                 </p>
               </div>
               <div className="w-px h-10 bg-border" />
               <div>
                 <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">
-                  Score
+                  {t('certificate.field.score')}
                 </p>
                 <p className="text-xl font-bold text-foreground">
                   {formatPercentageWithGrade(certificate.score)}
@@ -225,7 +216,7 @@ export default function CertificatePage() {
               <div className="w-px h-10 bg-border" />
               <div>
                 <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">
-                  Date
+                  {t('certificate.field.date')}
                 </p>
                 <p className="text-xl font-bold text-foreground">
                   {issuedDate.toLocaleDateString('en-GB', {
@@ -243,14 +234,14 @@ export default function CertificatePage() {
             {/* Verification */}
             <div className="text-center">
               <p className="text-muted-foreground text-xs mb-1">
-                Certificate ID: {certificate.id}
+                {t('certificate.id_prefix')} {certificate.id}
               </p>
               <Link
                 href={verifyUrl}
                 className="inline-flex items-center gap-1 text-primary text-xs hover:underline"
               >
                 <ExternalLink className="w-3 h-3" />
-                Verify at {verifyUrl}
+                {t('certificate.verify_prefix')} {verifyUrl}
               </Link>
             </div>
           </div>
@@ -259,7 +250,7 @@ export default function CertificatePage() {
         {/* What's Next? section */}
         <div className="print:hidden mt-12">
           <h2 className="text-2xl font-bold text-foreground text-center mb-6">
-            What&apos;s Next?
+            {t('certificate.whats_next')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Link
@@ -267,24 +258,36 @@ export default function CertificatePage() {
               className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-6 text-center hover:border-primary/50 hover:shadow-md transition-all"
             >
               <BookOpen className="w-8 h-8 text-primary" />
-              <span className="font-semibold text-foreground">Browse More Courses</span>
-              <span className="text-sm text-muted-foreground">Continue your learning journey</span>
+              <span className="font-semibold text-foreground">
+                {t('certificate.next.browse_courses_title')}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {t('certificate.next.browse_courses_body')}
+              </span>
             </Link>
             <Link
               href="/practice"
               className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-6 text-center hover:border-primary/50 hover:shadow-md transition-all"
             >
               <HelpCircle className="w-8 h-8 text-primary" />
-              <span className="font-semibold text-foreground">Practice Questions</span>
-              <span className="text-sm text-muted-foreground">Test your knowledge further</span>
+              <span className="font-semibold text-foreground">
+                {t('certificate.next.practice_title')}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {t('certificate.next.practice_body')}
+              </span>
             </Link>
             <Link
               href="/dashboard"
               className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-6 text-center hover:border-primary/50 hover:shadow-md transition-all"
             >
               <LayoutDashboard className="w-8 h-8 text-primary" />
-              <span className="font-semibold text-foreground">Return to Dashboard</span>
-              <span className="text-sm text-muted-foreground">View your progress and stats</span>
+              <span className="font-semibold text-foreground">
+                {t('certificate.next.dashboard_title')}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {t('certificate.next.dashboard_body')}
+              </span>
             </Link>
           </div>
         </div>

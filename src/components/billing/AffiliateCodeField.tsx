@@ -36,6 +36,7 @@ import { Tag, Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { PRICING } from '@/constants/pricing'
+import { useT } from '@/lib/i18n/use-t'
 
 interface ValidationResult {
   valid: boolean
@@ -63,6 +64,7 @@ export function useAffiliateCodeField(opts?: {
    */
   initialCode?: string | null
 }): AffiliateCodeFieldState {
+  const t = useT()
   const initial = (opts?.initialCode ?? '').toUpperCase().trim()
   const [code, setCode] = useState(initial)
   const [appliedCode, setAppliedCode] = useState<string | null>(null)
@@ -74,7 +76,7 @@ export function useAffiliateCodeField(opts?: {
   async function apply() {
     const trimmed = code.trim().toUpperCase()
     if (!trimmed) {
-      setErrorMessage('Enter a code first.')
+      setErrorMessage(t('billing.affiliate.error.empty'))
       return
     }
     setValidating(true)
@@ -90,7 +92,7 @@ export function useAffiliateCodeField(opts?: {
       if (!result || !result.valid) {
         setAppliedCode(null)
         setAppliedDiscount(null)
-        setErrorMessage('Sorry, that code isn’t valid. Check the spelling and try again.')
+        setErrorMessage(t('billing.affiliate.error.invalid'))
         return
       }
 
@@ -101,7 +103,7 @@ export function useAffiliateCodeField(opts?: {
       console.error('[AffiliateCodeField] validate failed:', err)
       setAppliedCode(null)
       setAppliedDiscount(null)
-      setErrorMessage('Could not validate the code right now. Please try again.')
+      setErrorMessage(t('billing.affiliate.error.network'))
     } finally {
       setValidating(false)
     }
@@ -162,6 +164,7 @@ export function PromoCodePrompt({
   compact?: boolean
   className?: string
 }) {
+  const t = useT()
   const router = useRouter()
   const [code, setCode] = useState('')
   const trimmed = code.trim().toUpperCase()
@@ -177,20 +180,20 @@ export function PromoCodePrompt({
       <form
         onSubmit={submit}
         className={`flex items-center gap-2 ${className}`}
-        aria-label="Apply affiliate or promo code"
+        aria-label={t('billing.affiliate.aria_apply')}
       >
         <Input
           type="text"
           value={code}
           onChange={(e) => setCode(e.target.value.toUpperCase())}
-          placeholder="Affiliate or promo code"
+          placeholder={t('billing.affiliate.placeholder_compact')}
           maxLength={64}
           autoCapitalize="characters"
           spellCheck={false}
           className="h-9 flex-1 font-mono text-sm uppercase tracking-wider"
         />
         <Button type="submit" size="sm" variant="outline" disabled={!trimmed}>
-          Apply
+          {t('billing.affiliate.apply_short')}
         </Button>
       </form>
     )
@@ -202,28 +205,34 @@ export function PromoCodePrompt({
     >
       <div className="mb-2 flex items-center gap-2">
         <Tag className="h-3.5 w-3.5 text-amber-700" />
-        <p className="text-xs font-semibold text-foreground">Have an affiliate or promo code?</p>
+        <p className="text-xs font-semibold text-foreground">
+          {t('billing.affiliate.prompt_heading')}
+        </p>
       </div>
       <form onSubmit={submit} className="flex gap-2">
         <Input
           type="text"
           value={code}
           onChange={(e) => setCode(e.target.value.toUpperCase())}
-          placeholder={`e.g. ${PRICING.AFFILIATE_PROMO_CODE}`}
+          placeholder={`${t('billing.affiliate.eg_prefix')} ${PRICING.AFFILIATE_PROMO_CODE}`}
           maxLength={64}
           autoCapitalize="characters"
           spellCheck={false}
           className="h-9 flex-1 font-mono text-sm uppercase tracking-wider"
         />
         <Button type="submit" size="sm" disabled={!trimmed} className="whitespace-nowrap">
-          Apply
+          {t('billing.affiliate.apply_short')}
         </Button>
       </form>
       <p className="mt-2 text-[11px] text-muted-foreground">
-        Saves {PRICING.CURRENCY}
-        {PRICING.STUDENT_ANNUAL_SAVINGS} on annual subscriptions: Student Annual ({PRICING.CURRENCY}
-        {PRICING.STUDENT_ANNUAL_WITH_CODE}/yr) or Teacher Annual ({PRICING.CURRENCY}
-        {PRICING.TEACHER_ANNUAL_WITH_CODE}/yr). No discount on monthly plans.
+        {t('billing.affiliate.compact_blurb_saves')} {PRICING.CURRENCY}
+        {PRICING.STUDENT_ANNUAL_SAVINGS} {t('billing.affiliate.compact_blurb_on_annual')}:{' '}
+        {t('billing.affiliate.label_student_annual')} ({PRICING.CURRENCY}
+        {PRICING.STUDENT_ANNUAL_WITH_CODE}
+        {t('billing.affiliate.per_year_short')}) {t('billing.affiliate.or')}{' '}
+        {t('billing.affiliate.label_teacher_annual')} ({PRICING.CURRENCY}
+        {PRICING.TEACHER_ANNUAL_WITH_CODE}
+        {t('billing.affiliate.per_year_short')}). {t('billing.affiliate.no_monthly_discount')}
       </p>
     </div>
   )
@@ -247,11 +256,24 @@ export function AffiliateCodeField({
   errorMessage,
   apply,
   remove,
-  heading = 'Have an affiliate or promo code?',
+  heading,
   subheading,
   className = '',
 }: AffiliateCodeFieldProps) {
-  const defaultSubheading = `Applies to annual subscriptions only — enter a creator's code or our public code ${PRICING.AFFILIATE_PROMO_CODE} to save £${PRICING.STUDENT_ANNUAL_SAVINGS} on Student Annual (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/yr instead of £${PRICING.STUDENT_ANNUAL}) or Teacher Annual (£${PRICING.TEACHER_ANNUAL_WITH_CODE}/yr instead of £${PRICING.TEACHER_ANNUAL}).`
+  const t = useT()
+  const resolvedHeading = heading ?? t('billing.affiliate.heading')
+  // Subheading is a long sentence interleaved with PRICING constants. We
+  // translate the static fragments and splice the numeric values inline
+  // so the dictionary key set stays free of locale-specific number
+  // formatting.
+  const defaultSubheading =
+    `${t('billing.affiliate.subheading_intro')} ${PRICING.AFFILIATE_PROMO_CODE} ` +
+    `${t('billing.affiliate.subheading_save_prefix')} £${PRICING.STUDENT_ANNUAL_SAVINGS} ` +
+    `${t('billing.affiliate.subheading_on_student_annual')} (£${PRICING.STUDENT_ANNUAL_WITH_CODE}` +
+    `${t('billing.affiliate.per_year_short')} ${t('billing.affiliate.instead_of')} £${PRICING.STUDENT_ANNUAL}) ` +
+    `${t('billing.affiliate.or')} ${t('billing.affiliate.subheading_on_teacher_annual')} ` +
+    `(£${PRICING.TEACHER_ANNUAL_WITH_CODE}${t('billing.affiliate.per_year_short')} ` +
+    `${t('billing.affiliate.instead_of')} £${PRICING.TEACHER_ANNUAL}).`
 
   return (
     <div
@@ -262,7 +284,7 @@ export function AffiliateCodeField({
           <Tag className="h-4 w-4 text-amber-700" />
         </div>
         <div className="flex-1">
-          <h3 className="text-sm font-semibold text-foreground">{heading}</h3>
+          <h3 className="text-sm font-semibold text-foreground">{resolvedHeading}</h3>
           <p className="mt-0.5 text-xs text-muted-foreground">{subheading ?? defaultSubheading}</p>
         </div>
       </div>
@@ -273,19 +295,24 @@ export function AffiliateCodeField({
             <CheckCircle2 className="h-4 w-4 text-emerald-600" />
             <div>
               <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                Code <span className="font-mono">{appliedCode}</span> applied
+                {t('billing.affiliate.applied_prefix')}{' '}
+                <span className="font-mono">{appliedCode}</span>{' '}
+                {t('billing.affiliate.applied_suffix')}
               </p>
               <p className="text-xs text-muted-foreground">
-                Saves {PRICING.CURRENCY}
-                {PRICING.STUDENT_ANNUAL_SAVINGS} on annual: Student{' '}
+                {t('billing.affiliate.saves_prefix')} {PRICING.CURRENCY}
+                {PRICING.STUDENT_ANNUAL_SAVINGS} {t('billing.affiliate.on_annual_label')}:{' '}
+                {t('billing.affiliate.label_student')}{' '}
                 <span className="font-semibold text-foreground">
                   {PRICING.CURRENCY}
-                  {PRICING.STUDENT_ANNUAL_WITH_CODE}/yr
+                  {PRICING.STUDENT_ANNUAL_WITH_CODE}
+                  {t('billing.affiliate.per_year_short')}
                 </span>{' '}
-                · Teacher{' '}
+                · {t('billing.affiliate.label_teacher')}{' '}
                 <span className="font-semibold text-foreground">
                   {PRICING.CURRENCY}
-                  {PRICING.TEACHER_ANNUAL_WITH_CODE}/yr
+                  {PRICING.TEACHER_ANNUAL_WITH_CODE}
+                  {t('billing.affiliate.per_year_short')}
                 </span>
               </p>
             </div>
@@ -297,7 +324,7 @@ export function AffiliateCodeField({
             onClick={remove}
             className="text-xs text-muted-foreground hover:text-foreground"
           >
-            Remove
+            {t('billing.affiliate.remove')}
           </Button>
         </div>
       ) : (
@@ -312,7 +339,7 @@ export function AffiliateCodeField({
             type="text"
             value={code}
             onChange={(e) => setCode(e.target.value.toUpperCase())}
-            placeholder={`e.g. ${PRICING.AFFILIATE_PROMO_CODE}`}
+            placeholder={`${t('billing.affiliate.eg_prefix')} ${PRICING.AFFILIATE_PROMO_CODE}`}
             maxLength={64}
             autoCapitalize="characters"
             spellCheck={false}
@@ -323,10 +350,10 @@ export function AffiliateCodeField({
             {validating ? (
               <>
                 <Loader2 className="mr-1.5 h-4 w-4 animate-spin" />
-                Checking…
+                {t('billing.affiliate.checking')}
               </>
             ) : (
-              'Apply code'
+              t('billing.affiliate.apply_code')
             )}
           </Button>
         </form>

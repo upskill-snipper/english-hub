@@ -5,16 +5,8 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuthStore } from '@/store/auth-store'
 import { getCourseName } from '@/lib/utils'
-import {
-  Shield,
-  Users,
-  Crown,
-  BookOpen,
-  Award,
-  Loader2,
-  ArrowLeft,
-  RefreshCw,
-} from 'lucide-react'
+import { useT } from '@/lib/i18n/use-t'
+import { Shield, Users, Crown, BookOpen, Award, Loader2, ArrowLeft, RefreshCw } from 'lucide-react'
 
 interface AdminStats {
   totalUsers: number
@@ -41,6 +33,7 @@ interface AdminStats {
 export default function AdminPage() {
   const router = useRouter()
   const { user, profile } = useAuthStore()
+  const t = useT()
 
   const [stats, setStats] = useState<AdminStats | null>(null)
   const [loading, setLoading] = useState(true)
@@ -77,7 +70,7 @@ export default function AdminPage() {
       const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error || 'Failed to load admin stats.')
+        setError(data.error || t('admin.error_load_stats'))
         setLoading(false)
         return
       }
@@ -85,7 +78,7 @@ export default function AdminPage() {
       setAuthorized(true)
       setStats(data)
     } catch {
-      setError('Something went wrong. Please try again.')
+      setError(t('admin.error_generic'))
     }
 
     setLoading(false)
@@ -107,13 +100,13 @@ export default function AdminPage() {
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to dashboard
+          {t('admin.back_to_dashboard')}
         </Link>
 
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
             <Shield className="w-7 h-7 text-primary" />
-            <h1 className="text-3xl font-bold text-foreground">Admin Panel</h1>
+            <h1 className="text-3xl font-bold text-foreground">{t('admin.root.title')}</h1>
           </div>
           <button
             onClick={fetchStats}
@@ -121,7 +114,7 @@ export default function AdminPage() {
             className="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
           >
             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
-            Refresh
+            {t('admin.refresh')}
           </button>
         </div>
 
@@ -137,22 +130,22 @@ export default function AdminPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <StatCard
                 icon={<Users className="w-5 h-5" />}
-                label="Total Users"
+                label={t('admin.root.stat.total_users')}
                 value={stats.totalUsers}
               />
               <StatCard
                 icon={<Crown className="w-5 h-5" />}
-                label="Active Subscribers"
+                label={t('admin.root.stat.active_subscribers')}
                 value={stats.activeSubscribers}
               />
               <StatCard
                 icon={<BookOpen className="w-5 h-5" />}
-                label="Total Enrolments"
+                label={t('admin.root.stat.total_enrolments')}
                 value={stats.totalEnrolments}
               />
               <StatCard
                 icon={<Award className="w-5 h-5" />}
-                label="Certificates Issued"
+                label={t('admin.root.stat.certificates_issued')}
                 value={stats.certificateCount}
               />
             </div>
@@ -160,34 +153,28 @@ export default function AdminPage() {
             {/* Recent Users */}
             <section className="bg-card border border-border rounded-xl p-6 mb-6">
               <h2 className="text-lg font-semibold text-foreground mb-4">
-                Recent Registrations
+                {t('admin.root.recent_registrations')}
               </h2>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border text-left text-muted-foreground">
-                      <th className="pb-3 pr-4 font-medium">Email</th>
-                      <th className="pb-3 pr-4 font-medium">Name</th>
-                      <th className="pb-3 pr-4 font-medium">Year</th>
-                      <th className="pb-3 pr-4 font-medium">Plan</th>
-                      <th className="pb-3 font-medium">Joined</th>
+                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.email')}</th>
+                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.name')}</th>
+                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.year')}</th>
+                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.plan')}</th>
+                      <th className="pb-3 font-medium">{t('admin.root.col.joined')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     {stats.recentUsers.map((u) => (
                       <tr key={u.id} className="text-foreground">
-                        <td className="py-3 pr-4 font-mono text-xs">
-                          {u.email}
+                        <td className="py-3 pr-4 font-mono text-xs">{u.email}</td>
+                        <td className="py-3 pr-4">
+                          {u.full_name || <span className="text-muted-foreground">--</span>}
                         </td>
                         <td className="py-3 pr-4">
-                          {u.full_name || (
-                            <span className="text-muted-foreground">--</span>
-                          )}
-                        </td>
-                        <td className="py-3 pr-4">
-                          {u.year_group || (
-                            <span className="text-muted-foreground">--</span>
-                          )}
+                          {u.year_group || <span className="text-muted-foreground">--</span>}
                         </td>
                         <td className="py-3 pr-4">
                           <span
@@ -213,7 +200,7 @@ export default function AdminPage() {
                 </table>
                 {stats.recentUsers.length === 0 && (
                   <p className="text-muted-foreground text-sm py-4 text-center">
-                    No users yet.
+                    {t('admin.root.empty_users')}
                   </p>
                 )}
               </div>
@@ -222,16 +209,16 @@ export default function AdminPage() {
             {/* Recent Enrolments */}
             <section className="bg-card border border-border rounded-xl p-6">
               <h2 className="text-lg font-semibold text-foreground mb-4">
-                Recent Enrolments
+                {t('admin.root.recent_enrolments')}
               </h2>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border text-left text-muted-foreground">
-                      <th className="pb-3 pr-4 font-medium">User ID</th>
-                      <th className="pb-3 pr-4 font-medium">Course</th>
-                      <th className="pb-3 pr-4 font-medium">Type</th>
-                      <th className="pb-3 font-medium">Date</th>
+                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.user_id')}</th>
+                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.course')}</th>
+                      <th className="pb-3 pr-4 font-medium">{t('admin.root.col.type')}</th>
+                      <th className="pb-3 font-medium">{t('admin.root.col.date')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
@@ -240,17 +227,15 @@ export default function AdminPage() {
                         <td className="py-3 pr-4 font-mono text-xs truncate max-w-[120px]">
                           {e.user_id.slice(0, 8)}...
                         </td>
-                        <td className="py-3 pr-4">
-                          {getCourseName(e.course_id)}
-                        </td>
+                        <td className="py-3 pr-4">{getCourseName(e.course_id)}</td>
                         <td className="py-3 pr-4">
                           <span
                             className={`inline-block text-xs px-2 py-0.5 rounded-full ${
                               e.payment_type === 'subscription'
                                 ? 'bg-primary/10 text-primary'
                                 : e.payment_type === 'one_time'
-                                ? 'bg-brand-blue/10 text-brand-blue'
-                                : 'bg-border text-muted-foreground'
+                                  ? 'bg-brand-blue/10 text-brand-blue'
+                                  : 'bg-border text-muted-foreground'
                             }`}
                           >
                             {e.payment_type}
@@ -269,7 +254,7 @@ export default function AdminPage() {
                 </table>
                 {stats.recentEnrolments.length === 0 && (
                   <p className="text-muted-foreground text-sm py-4 text-center">
-                    No enrolments yet.
+                    {t('admin.root.empty_enrolments')}
                   </p>
                 )}
               </div>
@@ -281,24 +266,14 @@ export default function AdminPage() {
   )
 }
 
-function StatCard({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode
-  label: string
-  value: number
-}) {
+function StatCard({ icon, label, value }: { icon: React.ReactNode; label: string; value: number }) {
   return (
     <div className="bg-card border border-border rounded-xl p-5">
       <div className="flex items-center gap-2 text-primary mb-2">
         {icon}
         <span className="text-sm text-muted-foreground">{label}</span>
       </div>
-      <p className="text-3xl font-bold text-foreground">
-        {value.toLocaleString()}
-      </p>
+      <p className="text-3xl font-bold text-foreground">{value.toLocaleString()}</p>
     </div>
   )
 }

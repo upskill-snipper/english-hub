@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useMemo, useState } from "react"
-import Link from "next/link"
+import { useMemo, useState } from 'react'
+import Link from 'next/link'
 import {
   ArrowLeft,
   Download,
@@ -10,28 +10,19 @@ import {
   TrendingDown,
   TrendingUp,
   Wallet,
-} from "lucide-react"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { NRRHeadline } from "@/components/analytics/NRRHeadline"
-import { CohortHeatmap } from "@/components/analytics/CohortHeatmap"
-import {
-  downloadNRRCsv,
-  formatGBP,
-  formatPct,
-  getNRRSummary,
-} from "@/lib/analytics/nrr"
-import { generateCohorts } from "@/lib/analytics/cohorts"
-import { cn } from "@/lib/utils"
+} from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { NRRHeadline } from '@/components/analytics/NRRHeadline'
+import { CohortHeatmap } from '@/components/analytics/CohortHeatmap'
+import { downloadNRRCsv, formatGBP, formatPct, getNRRSummary } from '@/lib/analytics/nrr'
+import { generateCohorts } from '@/lib/analytics/cohorts'
+import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 export default function NRRDashboardPage() {
+  const t = useT()
   const summary = useMemo(() => getNRRSummary(), [])
   const cohorts = useMemo(() => generateCohorts(), [])
   const [hovered, setHovered] = useState<string | null>(null)
@@ -68,9 +59,14 @@ export default function NRRDashboardPage() {
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <Button render={<Link href="/school/analytics" />} variant="ghost" size="sm" className="gap-1.5">
-                <ArrowLeft className="h-4 w-4" />
-                Analytics
+            <Button
+              render={<Link href="/school/analytics" />}
+              variant="ghost"
+              size="sm"
+              className="gap-1.5"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {t('school.analytics.back_to_analytics')}
             </Button>
             <div className="h-6 w-px bg-border" />
             <div className="flex items-center gap-3">
@@ -79,23 +75,33 @@ export default function NRRDashboardPage() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold tracking-tight">
-                  Net Revenue Retention
+                  {t('school.analytics.nrr.title')}
                 </h1>
                 <p className="text-sm text-muted-foreground">
-                  Investor-grade view of recurring revenue health
+                  {t('school.analytics.nrr.subtitle')}
                 </p>
               </div>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <Button render={<Link href="/school/analytics/nrr/cohorts" />} variant="outline" size="sm" className="gap-1.5">
-                <Grid3x3 className="h-4 w-4" />
-                Cohort Heatmap
+            <Button
+              render={<Link href="/school/analytics/nrr/cohorts" />}
+              variant="outline"
+              size="sm"
+              className="gap-1.5"
+            >
+              <Grid3x3 className="h-4 w-4" />
+              {t('school.analytics.nrr.cohort_heatmap')}
             </Button>
-            <Button render={<Link href="/school/analytics/nrr/movements" />} variant="outline" size="sm" className="gap-1.5">
-                <Wallet className="h-4 w-4" />
-                Movements
+            <Button
+              render={<Link href="/school/analytics/nrr/movements" />}
+              variant="outline"
+              size="sm"
+              className="gap-1.5"
+            >
+              <Wallet className="h-4 w-4" />
+              {t('school.analytics.nrr.movements')}
             </Button>
             <Button
               size="sm"
@@ -103,7 +109,7 @@ export default function NRRDashboardPage() {
               onClick={() => downloadNRRCsv(summary)}
             >
               <Download className="h-4 w-4" />
-              Export for investors
+              {t('school.analytics.nrr.export_investors')}
             </Button>
           </div>
         </div>
@@ -122,30 +128,24 @@ export default function NRRDashboardPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <LineChart className="h-4 w-4 text-primary" />
-              Monthly NRR Trend
+              {t('school.analytics.nrr.trend_title')}
             </CardTitle>
-            <CardDescription>
-              Last 24 months. Target line at 100%.
-            </CardDescription>
+            <CardDescription>{t('school.analytics.nrr.trend_subtitle')}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex items-end gap-1.5" style={{ height: 200 }}>
               {summary.points.map((p) => {
                 const range = Math.max(maxNRR - minNRR, 1)
                 const normalized =
-                  ((p.nrr - minNRR + chartPadding) /
-                    (range + chartPadding * 2)) *
-                  100
+                  ((p.nrr - minNRR + chartPadding) / (range + chartPadding * 2)) * 100
                 const targetLine =
-                  ((100 - minNRR + chartPadding) /
-                    (range + chartPadding * 2)) *
-                  100
+                  ((100 - minNRR + chartPadding) / (range + chartPadding * 2)) * 100
                 const above = p.nrr >= 100
                 return (
                   <div
                     key={p.month}
                     className="group relative flex flex-1 flex-col items-center justify-end"
-                    style={{ height: "100%" }}
+                    style={{ height: '100%' }}
                     onMouseEnter={() => setHovered(p.month)}
                     onMouseLeave={() => setHovered(null)}
                   >
@@ -156,18 +156,16 @@ export default function NRRDashboardPage() {
                     />
                     <div
                       className={cn(
-                        "w-full max-w-7 rounded-t-sm transition-all duration-200",
-                        above ? "bg-emerald-500/80" : "bg-amber-500/80",
-                        hovered === p.month && "bg-primary",
+                        'w-full max-w-7 rounded-t-sm transition-all duration-200',
+                        above ? 'bg-emerald-500/80' : 'bg-amber-500/80',
+                        hovered === p.month && 'bg-primary',
                       )}
                       style={{ height: `${Math.max(normalized, 2)}%` }}
                     />
                     {hovered === p.month && (
                       <div className="absolute bottom-full z-10 mb-2 whitespace-nowrap rounded-md border border-border bg-popover px-2 py-1 text-[11px] text-popover-foreground shadow-lg">
                         <div className="font-medium">{p.label}</div>
-                        <div className="text-muted-foreground">
-                          NRR {formatPct(p.nrr)}
-                        </div>
+                        <div className="text-muted-foreground">NRR {formatPct(p.nrr)}</div>
                         <div className="text-muted-foreground">
                           GRR {formatPct(p.grossRetention)}
                         </div>
@@ -187,29 +185,29 @@ export default function NRRDashboardPage() {
         {/* ── Movement Breakdown ──────────────────────────────────────────── */}
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           <BreakdownCard
-            title="Expansion"
-            subtitle="Seats & usage added"
+            title={t('school.analytics.nrr.expansion')}
+            subtitle={t('school.analytics.nrr.expansion_sub')}
             total={totals.expansion + totals.upgrade}
             positive
             items={[
-              { label: "Expansion", value: totals.expansion },
-              { label: "Upgrades", value: totals.upgrade },
+              { label: t('school.analytics.nrr.expansion'), value: totals.expansion },
+              { label: t('school.analytics.nrr.upgrades'), value: totals.upgrade },
             ]}
           />
           <BreakdownCard
-            title="Contraction"
-            subtitle="Seats & plans reduced"
+            title={t('school.analytics.nrr.contraction')}
+            subtitle={t('school.analytics.nrr.contraction_sub')}
             total={totals.contraction + totals.downgrade}
             items={[
-              { label: "Contraction", value: totals.contraction },
-              { label: "Downgrades", value: totals.downgrade },
+              { label: t('school.analytics.nrr.contraction'), value: totals.contraction },
+              { label: t('school.analytics.nrr.downgrades'), value: totals.downgrade },
             ]}
           />
           <BreakdownCard
-            title="Churn"
-            subtitle="Full cancellations"
+            title={t('school.analytics.nrr.churn')}
+            subtitle={t('school.analytics.nrr.churn_sub')}
             total={totals.churn}
-            items={[{ label: "Churned MRR", value: totals.churn }]}
+            items={[{ label: t('school.analytics.nrr.churned_mrr'), value: totals.churn }]}
             danger
           />
         </div>
@@ -220,15 +218,18 @@ export default function NRRDashboardPage() {
             <div>
               <CardTitle className="flex items-center gap-2">
                 <Grid3x3 className="h-4 w-4 text-primary" />
-                Cohort Retention
+                {t('school.analytics.nrr.cohort_retention')}
               </CardTitle>
-              <CardDescription>
-                Percentage of initial MRR retained, per signup month
-              </CardDescription>
+              <CardDescription>{t('school.analytics.nrr.cohort_retention_sub')}</CardDescription>
             </div>
-            <Button render={<Link href="/school/analytics/nrr/cohorts" />} variant="outline" size="sm" className="gap-1.5">
-                Full heatmap
-                <TrendingUp className="h-3.5 w-3.5" />
+            <Button
+              render={<Link href="/school/analytics/nrr/cohorts" />}
+              variant="outline"
+              size="sm"
+              className="gap-1.5"
+            >
+              {t('school.analytics.nrr.full_heatmap')}
+              <TrendingUp className="h-3.5 w-3.5" />
             </Button>
           </CardHeader>
           <CardContent>
@@ -257,11 +258,7 @@ function BreakdownCard({
   positive?: boolean
   danger?: boolean
 }) {
-  const accent = positive
-    ? "text-emerald-400"
-    : danger
-      ? "text-red-400"
-      : "text-clay-600"
+  const accent = positive ? 'text-emerald-400' : danger ? 'text-red-400' : 'text-clay-600'
   const Icon = positive ? TrendingUp : TrendingDown
   return (
     <Card>
@@ -271,35 +268,22 @@ function BreakdownCard({
             <CardTitle className="text-base">{title}</CardTitle>
             <CardDescription>{subtitle}</CardDescription>
           </div>
-          <Badge
-            variant="outline"
-            className={cn("gap-1", accent)}
-          >
+          <Badge variant="outline" className={cn('gap-1', accent)}>
             <Icon className="h-3 w-3" />
             24mo
           </Badge>
         </div>
       </CardHeader>
       <CardContent>
-        <p
-          className={cn(
-            "text-3xl font-bold tabular-nums",
-            accent,
-          )}
-        >
-          {positive ? "+" : danger || !positive ? "-" : ""}
+        <p className={cn('text-3xl font-bold tabular-nums', accent)}>
+          {positive ? '+' : danger || !positive ? '-' : ''}
           {formatGBP(total, true)}
         </p>
         <div className="mt-4 space-y-2">
           {items.map((it) => (
-            <div
-              key={it.label}
-              className="flex items-center justify-between text-xs"
-            >
+            <div key={it.label} className="flex items-center justify-between text-xs">
               <span className="text-muted-foreground">{it.label}</span>
-              <span className="tabular-nums font-medium">
-                {formatGBP(it.value, true)}
-              </span>
+              <span className="tabular-nums font-medium">{formatGBP(it.value, true)}</span>
             </div>
           ))}
         </div>

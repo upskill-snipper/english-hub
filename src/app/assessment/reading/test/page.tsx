@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useState, useEffect, useCallback, useRef } from "react"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import {
   BookOpen,
   ArrowRight,
@@ -14,19 +14,19 @@ import {
   Timer,
   ChevronRight,
   Loader2,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
-import { Separator } from "@/components/ui/separator"
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Progress } from '@/components/ui/progress'
+import { Separator } from '@/components/ui/separator'
 import {
   READING_PASSAGES,
   DECODING_WORDS,
   type ReadingPassage,
   type ComprehensionQuestion,
   type DecodingWord,
-} from "@/data/reading-passages"
+} from '@/data/reading-passages'
 import {
   calculateReadingAge,
   scoreAnswer,
@@ -34,11 +34,12 @@ import {
   type DecodingAnswer,
   type FluencyTiming,
   type AssessmentInput,
-} from "@/lib/reading-assessment"
+} from '@/lib/reading-assessment'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
-type TestPhase = "age-input" | "passage" | "questions" | "decoding" | "ceiling-reached" | "complete"
+type TestPhase = 'age-input' | 'passage' | 'questions' | 'decoding' | 'ceiling-reached' | 'complete'
 
 interface TestState {
   phase: TestPhase
@@ -65,7 +66,13 @@ interface TestState {
 
 // ─── Timer Display ───────────────────────────────────────────────────────────
 
-function TimerDisplay({ startTime, offsetSeconds = 0 }: { startTime: number | null; offsetSeconds?: number }) {
+function TimerDisplay({
+  startTime,
+  offsetSeconds = 0,
+}: {
+  startTime: number | null
+  offsetSeconds?: number
+}) {
   const [elapsed, setElapsed] = useState(Math.floor(offsetSeconds))
 
   useEffect(() => {
@@ -83,10 +90,13 @@ function TimerDisplay({ startTime, offsetSeconds = 0 }: { startTime: number | nu
   const secs = elapsed % 60
 
   return (
-    <div className="flex items-center gap-1.5 text-sm text-muted-foreground tabular-nums" aria-label={`Elapsed time: ${mins} minutes ${secs} seconds`}>
+    <div
+      className="flex items-center gap-1.5 text-sm text-muted-foreground tabular-nums"
+      aria-label={`${mins}:${secs.toString().padStart(2, '0')}`}
+    >
       <Timer className="h-4 w-4" aria-hidden="true" />
       <span>
-        {mins}:{secs.toString().padStart(2, "0")}
+        {mins}:{secs.toString().padStart(2, '0')}
       </span>
     </div>
   )
@@ -103,14 +113,16 @@ function TestProgress({
   totalSteps: number
   label: string
 }) {
+  const t = useT()
   const percentage = Math.round((currentStep / totalSteps) * 100)
+  const ofWord = t('assessment.reading.test.progress.of_word')
 
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between text-xs text-muted-foreground">
         <span>{label}</span>
         <span>
-          {currentStep} of {totalSteps}
+          {currentStep} {ofWord} {totalSteps}
         </span>
       </div>
       <div
@@ -119,7 +131,7 @@ function TestProgress({
         aria-valuenow={percentage}
         aria-valuemin={0}
         aria-valuemax={100}
-        aria-label={`${label}: ${currentStep} of ${totalSteps}`}
+        aria-label={`${label}: ${currentStep} ${ofWord} ${totalSteps}`}
       >
         <div
           className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-blue-500 transition-all duration-500"
@@ -132,11 +144,8 @@ function TestProgress({
 
 // ─── Age Input Phase ─────────────────────────────────────────────────────────
 
-function AgeInputPhase({
-  onSubmit,
-}: {
-  onSubmit: (years: number, months: number) => void
-}) {
+function AgeInputPhase({ onSubmit }: { onSubmit: (years: number, months: number) => void }) {
+  const t = useT()
   const [years, setYears] = useState(14)
   const [months, setMonths] = useState(0)
 
@@ -144,16 +153,14 @@ function AgeInputPhase({
     <div className="mx-auto max-w-lg space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>Before we begin</CardTitle>
-          <CardDescription>
-            Enter your age so we can compare your reading level to age-related expectations.
-          </CardDescription>
+          <CardTitle>{t('assessment.reading.test.age.title')}</CardTitle>
+          <CardDescription>{t('assessment.reading.test.age.subtitle')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-muted-foreground mb-2">
-                Age (years)
+                {t('assessment.reading.test.age.years_label')}
               </label>
               <select
                 value={years}
@@ -162,14 +169,14 @@ function AgeInputPhase({
               >
                 {Array.from({ length: 15 }, (_, i) => i + 6).map((y) => (
                   <option key={y} value={y} className="bg-popover text-popover-foreground">
-                    {y} years
+                    {y} {t('assessment.reading.test.age.years_suffix')}
                   </option>
                 ))}
               </select>
             </div>
             <div>
               <label className="block text-sm font-medium text-muted-foreground mb-2">
-                Months
+                {t('assessment.reading.test.age.months_label')}
               </label>
               <select
                 value={months}
@@ -178,7 +185,7 @@ function AgeInputPhase({
               >
                 {Array.from({ length: 12 }, (_, i) => i).map((m) => (
                   <option key={m} value={m} className="bg-popover text-popover-foreground">
-                    {m} months
+                    {m} {t('assessment.reading.test.age.months_suffix')}
                   </option>
                 ))}
               </select>
@@ -189,14 +196,13 @@ function AgeInputPhase({
             <div className="flex items-start gap-2">
               <AlertTriangle className="h-4 w-4 text-clay-600 mt-0.5 shrink-0" aria-hidden="true" />
               <p className="text-xs text-muted-foreground">
-                Your age is used only to compare your reading level against expected norms.
-                It does not affect your raw scores.
+                {t('assessment.reading.test.age.note')}
               </p>
             </div>
           </div>
 
           <Button className="w-full" onClick={() => onSubmit(years, months)}>
-            Begin Assessment
+            {t('assessment.reading.test.age.begin_cta')}
             <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
           </Button>
         </CardContent>
@@ -224,6 +230,7 @@ function PassagePhase({
   startTime: number | null
   elapsedOffset?: number
 }) {
+  const t = useT()
   // Minimum seconds required before the "finished reading" button is enabled.
   // Based on 600 WPM (10 words per second) which is FAR above natural reading.
   const minReadSeconds = Math.max(10, Math.ceil(passage.wordCount / 10))
@@ -249,12 +256,15 @@ function PassagePhase({
       <div className="flex items-center justify-between">
         <div>
           <Badge variant="outline" className="mb-2 text-xs">
-            {passage.yearGroup} Level ({passage.ageRange} years)
+            {passage.yearGroup} {t('assessment.reading.test.passage.level_suffix')} (
+            {passage.ageRange} {t('assessment.reading.test.passage.years_suffix')})
           </Badge>
           <h2 className="text-lg font-bold text-foreground">{passage.title}</h2>
           <p className="text-xs text-muted-foreground mt-1">
-            {passage.genre === "fiction" ? "Fiction" : "Non-fiction"} &middot;{" "}
-            {passage.wordCount} words
+            {passage.genre === 'fiction'
+              ? t('assessment.reading.test.passage.fiction')
+              : t('assessment.reading.test.passage.nonfiction')}{' '}
+            &middot; {passage.wordCount} {t('assessment.reading.test.passage.words')}
           </p>
         </div>
         <TimerDisplay startTime={startTime} offsetSeconds={elapsedOffset} />
@@ -262,8 +272,11 @@ function PassagePhase({
 
       <Card>
         <CardContent className="pt-5">
-          <div className="prose prose-invert prose-sm max-w-none select-none" style={{ userSelect: "none" }}>
-            {passage.text.split("\n\n").map((para, i) => (
+          <div
+            className="prose prose-invert prose-sm max-w-none select-none"
+            style={{ userSelect: 'none' }}
+          >
+            {passage.text.split('\n\n').map((para, i) => (
               <p key={i} className="text-sm leading-relaxed text-foreground/80 mb-4 last:mb-0">
                 {para}
               </p>
@@ -276,15 +289,16 @@ function PassagePhase({
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           <Clock className="h-3.5 w-3.5" aria-hidden="true" />
           {canFinish ? (
-            <span>Read carefully — you cannot return once you start the questions.</span>
+            <span>{t('assessment.reading.test.passage.read_carefully')}</span>
           ) : (
             <span>
-              Take your time to read properly. Button unlocks in {secondsRemaining}s.
+              {t('assessment.reading.test.passage.unlock_prefix')} {secondsRemaining}
+              {t('assessment.reading.test.passage.unlock_suffix')}
             </span>
           )}
         </div>
         <Button onClick={onFinishReading} disabled={!canFinish}>
-          I have finished reading
+          {t('assessment.reading.test.passage.finished_cta')}
           <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
         </Button>
       </div>
@@ -307,35 +321,49 @@ function QuestionsPhase({
   onAnswerChange: (answer: string) => void
   onSubmitAnswer: () => void
 }) {
+  const t = useT()
   const question = passage.questions[currentQuestionIndex]
   if (!question) return null
 
   const isLast = currentQuestionIndex === passage.questions.length - 1
 
+  const skillKey =
+    question.skill === 'literal'
+      ? 'assessment.reading.test.question.skill.literal'
+      : question.skill === 'inferential'
+        ? 'assessment.reading.test.question.skill.inferential'
+        : question.skill === 'evaluative'
+          ? 'assessment.reading.test.question.skill.evaluative'
+          : 'assessment.reading.test.question.skill.other'
+
   return (
     <div className="space-y-6">
       <div>
         <Badge variant="outline" className="mb-2 text-xs">
-          {passage.title} &middot; Question {currentQuestionIndex + 1} of{" "}
+          {passage.title} &middot; {t('assessment.reading.test.question.question_word')}{' '}
+          {currentQuestionIndex + 1} {t('assessment.reading.test.question.of_word')}{' '}
           {passage.questions.length}
         </Badge>
         <div className="flex items-center gap-2 mt-1">
           <Badge
             variant="outline"
             className={`text-xs ${
-              question.skill === "literal"
-                ? "border-blue-500/20 text-blue-400"
-                : question.skill === "inferential"
-                  ? "border-violet-500/20 text-violet-400"
-                  : question.skill === "evaluative"
-                    ? "border-amber-500/20 text-clay-600"
-                    : "border-emerald-500/20 text-emerald-400"
+              question.skill === 'literal'
+                ? 'border-blue-500/20 text-blue-400'
+                : question.skill === 'inferential'
+                  ? 'border-violet-500/20 text-violet-400'
+                  : question.skill === 'evaluative'
+                    ? 'border-amber-500/20 text-clay-600'
+                    : 'border-emerald-500/20 text-emerald-400'
             }`}
           >
-            {question.skill}
+            {t(skillKey)}
           </Badge>
           <span className="text-xs text-primary-foreground/30">
-            {question.points} {question.points === 1 ? "mark" : "marks"}
+            {question.points}{' '}
+            {question.points === 1
+              ? t('assessment.reading.test.question.mark_singular')
+              : t('assessment.reading.test.question.mark_plural')}
           </span>
         </div>
       </div>
@@ -344,7 +372,7 @@ function QuestionsPhase({
         <CardContent className="pt-5 space-y-4">
           <p className="text-sm font-medium text-foreground">{question.question}</p>
 
-          {question.type === "multiple-choice" && question.options ? (
+          {question.type === 'multiple-choice' && question.options ? (
             <div className="space-y-2">
               {question.options.map((option) => (
                 <button
@@ -352,16 +380,16 @@ function QuestionsPhase({
                   onClick={() => onAnswerChange(option.id)}
                   className={`w-full text-left rounded-xl border p-4 text-sm transition-all duration-200 ${
                     currentAnswer === option.id
-                      ? "border-emerald-500/40 bg-emerald-500/10 text-foreground"
-                      : "border-border bg-muted/50 text-muted-foreground hover:border-border/60 hover:bg-muted"
+                      ? 'border-emerald-500/40 bg-emerald-500/10 text-foreground'
+                      : 'border-border bg-muted/50 text-muted-foreground hover:border-border/60 hover:bg-muted'
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div
                       className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
                         currentAnswer === option.id
-                          ? "border-emerald-500 bg-emerald-500 text-primary-foreground"
-                          : "border-border/60 text-muted-foreground"
+                          ? 'border-emerald-500 bg-emerald-500 text-primary-foreground'
+                          : 'border-border/60 text-muted-foreground'
                       }`}
                     >
                       {option.id.toUpperCase()}
@@ -373,10 +401,10 @@ function QuestionsPhase({
             </div>
           ) : (
             <textarea
-              aria-label="Your answer"
+              aria-label={t('assessment.reading.test.question.answer_aria')}
               value={currentAnswer}
               onChange={(e) => onAnswerChange(e.target.value)}
-              placeholder="Type your answer here..."
+              placeholder={t('assessment.reading.test.question.placeholder')}
               rows={4}
               className="w-full rounded-xl border border-border bg-muted/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/30 resize-none"
             />
@@ -386,13 +414,12 @@ function QuestionsPhase({
 
       <div className="flex items-center justify-between">
         <p className="text-xs text-muted-foreground max-w-[200px]">
-          Answer from memory — you cannot return to the passage.
+          {t('assessment.reading.test.question.from_memory_note')}
         </p>
-        <Button
-          onClick={onSubmitAnswer}
-          disabled={!currentAnswer.trim()}
-        >
-          {isLast ? "Next Section" : "Next Question"}
+        <Button onClick={onSubmitAnswer} disabled={!currentAnswer.trim()}>
+          {isLast
+            ? t('assessment.reading.test.question.next_section')
+            : t('assessment.reading.test.question.next_question')}
           <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
         </Button>
       </div>
@@ -413,6 +440,7 @@ function DecodingPhase({
   onAnswer: (correct: boolean) => void
   decodingStartTime: number | null
 }) {
+  const t = useT()
   const word = words[currentIndex]
   if (!word) return null
 
@@ -421,28 +449,29 @@ function DecodingPhase({
       <div>
         <div className="flex items-center gap-2 mb-2">
           <Eye className="h-5 w-5 text-blue-400" aria-hidden="true" />
-          <h2 className="text-lg font-bold text-foreground">Word Recognition</h2>
+          <h2 className="text-lg font-bold text-foreground">
+            {t('assessment.reading.test.decoding.heading')}
+          </h2>
         </div>
         <p className="text-sm text-muted-foreground">
-          Read the word below. Do you recognise it? Is it a real English word?
+          {t('assessment.reading.test.decoding.instruction')}
         </p>
       </div>
 
       <TestProgress
         currentStep={currentIndex + 1}
         totalSteps={words.length}
-        label="Decoding Progress"
+        label={t('assessment.reading.test.decoding.progress_label')}
       />
 
       <Card>
         <CardContent className="pt-5">
           <div className="flex flex-col items-center py-8">
             <div className="mb-2 text-xs text-primary-foreground/30">
-              Level {word.level} &middot; {word.phonicPattern}
+              {t('assessment.reading.test.decoding.level_prefix')} {word.level} &middot;{' '}
+              {word.phonicPattern}
             </div>
-            <div className="text-4xl font-bold text-foreground mb-8 tracking-wide">
-              {word.word}
-            </div>
+            <div className="text-4xl font-bold text-foreground mb-8 tracking-wide">{word.word}</div>
             <div className="flex gap-4">
               <Button
                 variant="outline"
@@ -450,7 +479,7 @@ function DecodingPhase({
                 onClick={() => onAnswer(word.isReal === true)}
               >
                 <CheckCircle className="h-4 w-4 mr-2 text-emerald-400" aria-hidden="true" />
-                Real Word
+                {t('assessment.reading.test.decoding.real_word')}
               </Button>
               <Button
                 variant="outline"
@@ -458,7 +487,7 @@ function DecodingPhase({
                 onClick={() => onAnswer(word.isReal === false)}
               >
                 <AlertTriangle className="h-4 w-4 mr-2 text-red-400" aria-hidden="true" />
-                Not a Real Word
+                {t('assessment.reading.test.decoding.not_real_word')}
               </Button>
             </div>
           </div>
@@ -475,10 +504,17 @@ function DecodingPhase({
 // ─── Completing Phase ────────────────────────────────────────────────────────
 
 function CompletingPhase() {
+  const t = useT()
   return (
-    <div className="flex flex-col items-center justify-center py-16 space-y-4" role="status" aria-live="polite">
+    <div
+      className="flex flex-col items-center justify-center py-16 space-y-4"
+      role="status"
+      aria-live="polite"
+    >
       <Loader2 className="h-8 w-8 text-emerald-400 animate-spin" aria-hidden="true" />
-      <p className="text-sm text-muted-foreground">Calculating your results...</p>
+      <p className="text-sm text-muted-foreground">
+        {t('assessment.reading.test.complete.calculating')}
+      </p>
     </div>
   )
 }
@@ -486,6 +522,7 @@ function CompletingPhase() {
 // ─── Ceiling Reached Phase ──────────────────────────────────────────────────
 
 function CeilingReachedPhase({ onContinue }: { onContinue: () => void }) {
+  const t = useT()
   return (
     <div className="mx-auto max-w-lg space-y-6">
       <Card>
@@ -495,11 +532,10 @@ function CeilingReachedPhase({ onContinue }: { onContinue: () => void }) {
               <CheckCircle className="h-6 w-6 text-emerald-400" aria-hidden="true" />
             </div>
             <h2 className="text-lg font-bold text-foreground">
-              Assessment complete
+              {t('assessment.reading.test.ceiling.heading')}
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
-              We have enough data to calculate your reading age. You do not need
-              to continue with the remaining passages.
+              {t('assessment.reading.test.ceiling.body')}
             </p>
           </div>
 
@@ -509,14 +545,13 @@ function CeilingReachedPhase({ onContinue }: { onContinue: () => void }) {
             <div className="flex items-start gap-2">
               <BookOpen className="h-4 w-4 text-blue-400 mt-0.5 shrink-0" aria-hidden="true" />
               <p className="text-xs text-muted-foreground">
-                Your score is based on the passages you completed. Passages you
-                did not attempt do not affect your result.
+                {t('assessment.reading.test.ceiling.note')}
               </p>
             </div>
           </div>
 
           <Button className="w-full" onClick={onContinue}>
-            Continue to Word Recognition
+            {t('assessment.reading.test.ceiling.continue_cta')}
             <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
           </Button>
         </CardContent>
@@ -539,6 +574,7 @@ function shuffle<T>(items: readonly T[]): T[] {
 
 export default function ReadingTestPage() {
   const router = useRouter()
+  const t = useT()
 
   // Per-session randomization: each time a student starts the test, the
   // questions within each passage are shuffled and the decoding word pool
@@ -548,14 +584,14 @@ export default function ReadingTestPage() {
     READING_PASSAGES.map((p) => ({
       ...p,
       questions: shuffle(p.questions),
-    }))
+    })),
   ).current
 
   // Randomize decoding words on each test start — pick 24 words across all levels
   const decodingWordSet = useRef(shuffle(DECODING_WORDS).slice(0, 24)).current
 
   const [state, setState] = useState<TestState>({
-    phase: "age-input",
+    phase: 'age-input',
     currentPassageIndex: 0,
     chronologicalAge: { years: 14, months: 0 },
     comprehensionAnswers: [],
@@ -566,7 +602,7 @@ export default function ReadingTestPage() {
     currentDecodingIndex: 0,
     decodingStartTime: null,
     currentQuestionIndex: 0,
-    currentAnswer: "",
+    currentAnswer: '',
     consecutiveWrong: 0,
     passageScores: [],
     ceilingReached: false,
@@ -574,11 +610,11 @@ export default function ReadingTestPage() {
 
   const totalSteps = passages.length * 2 + 1 // passages + questions + decoding
   const currentStep =
-    state.phase === "age-input"
+    state.phase === 'age-input'
       ? 0
-      : state.phase === "decoding"
+      : state.phase === 'decoding'
         ? passages.length * 2 + 1
-        : state.currentPassageIndex * 2 + (state.phase === "questions" ? 1 : 0) + 1
+        : state.currentPassageIndex * 2 + (state.phase === 'questions' ? 1 : 0) + 1
 
   // ── Handlers ─────────────────────────────────────────────────────────────
 
@@ -586,7 +622,7 @@ export default function ReadingTestPage() {
     setState((prev) => ({
       ...prev,
       chronologicalAge: { years, months },
-      phase: "passage",
+      phase: 'passage',
       passageStartTime: Date.now(),
       passageElapsedBeforePause: 0,
     }))
@@ -612,9 +648,9 @@ export default function ReadingTestPage() {
           wordsCorrect: Math.round(passage.wordCount * 0.95),
         },
       ],
-      phase: "questions",
+      phase: 'questions',
       currentQuestionIndex: 0,
-      currentAnswer: "",
+      currentAnswer: '',
       // Keep passageStartTime null during questions — timer paused
       passageStartTime: null,
     }))
@@ -657,9 +693,7 @@ export default function ReadingTestPage() {
     if (isLastQuestion) {
       // Calculate this passage's score
       const passageQuestionIds = new Set(passage.questions.map((q) => q.id))
-      const passageAnswers = newAnswers.filter((a) =>
-        passageQuestionIds.has(a.questionId)
-      )
+      const passageAnswers = newAnswers.filter((a) => passageQuestionIds.has(a.questionId))
       let passageCorrect = 0
       for (const a of passageAnswers) {
         const q = passage.questions.find((pq) => pq.id === a.questionId)
@@ -695,8 +729,8 @@ export default function ReadingTestPage() {
         consecutiveWrong: newConsecutiveWrong,
         passageScores: newPassageScores,
         ceilingReached: true,
-        phase: "ceiling-reached",
-        currentAnswer: "",
+        phase: 'ceiling-reached',
+        currentAnswer: '',
       }))
       return
     }
@@ -709,10 +743,10 @@ export default function ReadingTestPage() {
           comprehensionAnswers: newAnswers,
           consecutiveWrong: newConsecutiveWrong,
           passageScores: newPassageScores,
-          phase: "decoding",
+          phase: 'decoding',
           currentDecodingIndex: 0,
           decodingStartTime: Date.now(),
-          currentAnswer: "",
+          currentAnswer: '',
         }))
       } else {
         // Move to next passage — fresh timer for new passage
@@ -721,12 +755,12 @@ export default function ReadingTestPage() {
           comprehensionAnswers: newAnswers,
           consecutiveWrong: newConsecutiveWrong,
           passageScores: newPassageScores,
-          phase: "passage",
+          phase: 'passage',
           currentPassageIndex: prev.currentPassageIndex + 1,
           passageStartTime: Date.now(),
           passageElapsedBeforePause: 0,
           currentQuestionIndex: 0,
-          currentAnswer: "",
+          currentAnswer: '',
         }))
       }
     } else {
@@ -737,7 +771,7 @@ export default function ReadingTestPage() {
         consecutiveWrong: newConsecutiveWrong,
         passageScores: newPassageScores,
         currentQuestionIndex: prev.currentQuestionIndex + 1,
-        currentAnswer: "",
+        currentAnswer: '',
       }))
     }
   }, [
@@ -755,7 +789,7 @@ export default function ReadingTestPage() {
   const handleCeilingContinue = useCallback(() => {
     setState((prev) => ({
       ...prev,
-      phase: "decoding",
+      phase: 'decoding',
       currentDecodingIndex: 0,
       decodingStartTime: Date.now(),
     }))
@@ -766,9 +800,7 @@ export default function ReadingTestPage() {
       const word = decodingWordSet[state.currentDecodingIndex]
       if (!word) return
 
-      const responseTimeMs = state.decodingStartTime
-        ? Date.now() - state.decodingStartTime
-        : 3000
+      const responseTimeMs = state.decodingStartTime ? Date.now() - state.decodingStartTime : 3000
 
       const newAnswer: DecodingAnswer = {
         wordId: word.id,
@@ -784,7 +816,7 @@ export default function ReadingTestPage() {
         setState((prev) => ({
           ...prev,
           decodingAnswers: newAnswers,
-          phase: "complete",
+          phase: 'complete',
         }))
       } else {
         setState((prev) => ({
@@ -795,13 +827,13 @@ export default function ReadingTestPage() {
         }))
       }
     },
-    [state.currentDecodingIndex, state.decodingStartTime, state.decodingAnswers, decodingWordSet]
+    [state.currentDecodingIndex, state.decodingStartTime, state.decodingAnswers, decodingWordSet],
   )
 
   // ── Calculate results and redirect ───────────────────────────────────────
 
   useEffect(() => {
-    if (state.phase !== "complete") return
+    if (state.phase !== 'complete') return
 
     // Gather all questions from the passages we used
     const allQuestions = passages.flatMap((p) => p.questions)
@@ -809,7 +841,7 @@ export default function ReadingTestPage() {
     // Calculate how many passages were actually attempted
     const attemptedPassageIds = new Set<string>()
     for (const a of state.comprehensionAnswers) {
-      const passageId = a.questionId.replace(/q\d+$/, "")
+      const passageId = a.questionId.replace(/q\d+$/, '')
       attemptedPassageIds.add(passageId)
     }
 
@@ -828,18 +860,15 @@ export default function ReadingTestPage() {
 
     // Store result in sessionStorage for the results page
     try {
-      sessionStorage.setItem("reading-assessment-result", JSON.stringify(result))
-      sessionStorage.setItem(
-        "reading-assessment-age",
-        JSON.stringify(state.chronologicalAge)
-      )
+      sessionStorage.setItem('reading-assessment-result', JSON.stringify(result))
+      sessionStorage.setItem('reading-assessment-age', JSON.stringify(state.chronologicalAge))
     } catch {
       // ignore storage errors
     }
 
     // Navigate to results
     const timer = setTimeout(() => {
-      router.push("/assessment/reading")
+      router.push('/assessment/reading')
     }, 1500)
 
     return () => clearTimeout(timer)
@@ -864,32 +893,37 @@ export default function ReadingTestPage() {
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-          <Link href="/assessment/reading" className="hover:text-muted-foreground transition-colors">
-            Reading Assessment
+          <Link
+            href="/assessment/reading"
+            className="hover:text-muted-foreground transition-colors"
+          >
+            {t('assessment.reading.test.breadcrumb.parent')}
           </Link>
           <span>/</span>
-          <span className="text-muted-foreground">Test</span>
+          <span className="text-muted-foreground">
+            {t('assessment.reading.test.breadcrumb.this')}
+          </span>
         </div>
 
-        {state.phase !== "age-input" && state.phase !== "complete" && state.phase !== "ceiling-reached" && (
-          <TestProgress
-            currentStep={currentStep}
-            totalSteps={totalSteps}
-            label={
-              state.phase === "decoding"
-                ? "Word Recognition"
-                : `Passage ${state.currentPassageIndex + 1} of ${passages.length}`
-            }
-          />
-        )}
+        {state.phase !== 'age-input' &&
+          state.phase !== 'complete' &&
+          state.phase !== 'ceiling-reached' && (
+            <TestProgress
+              currentStep={currentStep}
+              totalSteps={totalSteps}
+              label={
+                state.phase === 'decoding'
+                  ? t('assessment.reading.test.decoding.heading')
+                  : `${t('assessment.reading.test.progress.passage_count_prefix')} ${state.currentPassageIndex + 1} ${t('assessment.reading.test.progress.of_word')} ${passages.length}`
+              }
+            />
+          )}
       </div>
 
       {/* Phases */}
-      {state.phase === "age-input" && (
-        <AgeInputPhase onSubmit={handleAgeSubmit} />
-      )}
+      {state.phase === 'age-input' && <AgeInputPhase onSubmit={handleAgeSubmit} />}
 
-      {state.phase === "passage" && currentPassage && (
+      {state.phase === 'passage' && currentPassage && (
         <PassagePhase
           passage={currentPassage}
           onFinishReading={handleFinishReading}
@@ -898,7 +932,7 @@ export default function ReadingTestPage() {
         />
       )}
 
-      {state.phase === "questions" && currentPassage && (
+      {state.phase === 'questions' && currentPassage && (
         <QuestionsPhase
           passage={currentPassage}
           currentQuestionIndex={state.currentQuestionIndex}
@@ -908,11 +942,11 @@ export default function ReadingTestPage() {
         />
       )}
 
-      {state.phase === "ceiling-reached" && (
+      {state.phase === 'ceiling-reached' && (
         <CeilingReachedPhase onContinue={handleCeilingContinue} />
       )}
 
-      {state.phase === "decoding" && (
+      {state.phase === 'decoding' && (
         <DecodingPhase
           words={decodingWordSet}
           currentIndex={state.currentDecodingIndex}
@@ -921,7 +955,7 @@ export default function ReadingTestPage() {
         />
       )}
 
-      {state.phase === "complete" && <CompletingPhase />}
+      {state.phase === 'complete' && <CompletingPhase />}
     </div>
   )
 }

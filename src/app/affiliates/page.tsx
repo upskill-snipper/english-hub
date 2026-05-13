@@ -1,7 +1,9 @@
+import type { Metadata } from 'next'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import AffiliatePublicPage from '@/components/affiliates/AffiliatePublicPage'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 // 2026-05-01: SEO/integrity pass — title rewritten to query-aligned form,
 // description shortened to 120-155 char band, canonical URL added.
@@ -11,33 +13,39 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // and a "30% / 15% of first-year" dt block) so no single percentage is
 // safe to repeat in metadata until the affiliate terms are reconciled.
 // H1 + FAQ for this route live in <AffiliatePublicPage>, not this file.
-export const metadata = {
-  title: 'Affiliate programme — The English Hub',
-  description:
-    'Earn recurring commission promoting GCSE and IGCSE English revision with The English Hub. Pick a code, share your link, get paid monthly.',
-  alternates: { canonical: 'https://theenglishhub.app/affiliates' },
-  openGraph: {
-    title: 'Affiliate programme — The English Hub',
-    description:
-      'Earn recurring commission promoting GCSE and IGCSE English revision with The English Hub. Pick a code, share your link, get paid monthly.',
-    images: [
-      {
-        url: '/api/og?title=The+English+Hub+affiliate+programme&subtitle=Earn+promoting+GCSE+English+revision',
-        width: 1200,
-        height: 630,
-        alt: 'The English Hub affiliate programme — earn promoting GCSE English revision',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Affiliate programme — The English Hub',
-    description:
-      'Earn recurring commission promoting GCSE and IGCSE English revision with The English Hub. Pick a code, share your link, get paid monthly.',
-    images: [
-      '/api/og?title=The+English+Hub+affiliate+programme&subtitle=Earn+promoting+GCSE+English+revision',
-    ],
-  },
+// 2026-05-13: metadata wired to i18n — title/description/OG alt come from
+// `affiliates.public.meta.*` keys so AR mode swaps to Khaleeji copy.
+export async function generateMetadata(): Promise<Metadata> {
+  const [title, description, ogImageAlt] = await tMany([
+    'affiliates.public.meta.title',
+    'affiliates.public.meta.description',
+    'affiliates.public.meta.og_image_alt',
+  ])
+  return {
+    title,
+    description,
+    alternates: { canonical: 'https://theenglishhub.app/affiliates' },
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: '/api/og?title=The+English+Hub+affiliate+programme&subtitle=Earn+promoting+GCSE+English+revision',
+          width: 1200,
+          height: 630,
+          alt: ogImageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [
+        '/api/og?title=The+English+Hub+affiliate+programme&subtitle=Earn+promoting+GCSE+English+revision',
+      ],
+    },
+  }
 }
 
 // ─── /affiliates ────────────────────────────────────────────────────────────
@@ -58,11 +66,16 @@ export default async function AffiliatesPage() {
     data: { user },
   } = await supabase.auth.getUser()
 
+  const [breadcrumbHome, breadcrumbSelf] = await tMany([
+    'affiliates.breadcrumb.home',
+    'affiliates.breadcrumb.self',
+  ])
+
   const breadcrumbs = (
     <BreadcrumbJsonLd
       items={[
-        { name: 'Home', url: 'https://theenglishhub.app' },
-        { name: 'Affiliates', url: 'https://theenglishhub.app/affiliates' },
+        { name: breadcrumbHome, url: 'https://theenglishhub.app' },
+        { name: breadcrumbSelf, url: 'https://theenglishhub.app/affiliates' },
       ]}
     />
   )

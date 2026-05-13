@@ -3,152 +3,278 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { PressHero, PressSection, StatPlaceholder } from '@/components/press/PressLayout'
 import { Mail, Download, ExternalLink, Building2, FileText } from 'lucide-react'
+import { tMany } from '@/lib/i18n/t'
 
 // NOTE: British English throughout. No fabricated stats, press quotes, or awards.
 //       2026-05-04: Founder references removed — the platform is presented
 //       as a product, not a personal brand. Press enquiries route to the
 //       press@ inbox, not a named founder.
+//       2026-05-13: Wired through i18n (`press.*` namespace). All user-facing
+//       strings now route through the dictionary so the AR / EN toggle
+//       flips this page in step with the rest of the site.
 
-export default function PressPage() {
+export default async function PressPage() {
+  const [
+    heroEyebrow,
+    heroTitle,
+    heroLede,
+    overviewEyebrow,
+    overviewTitle,
+    overviewP1,
+    overviewP2,
+    factsEyebrow,
+    factsTitle,
+    factsEntityLabel,
+    factsEntityName,
+    factsEntityCompanyNo,
+    factsEntityJurisdiction,
+    factsOfficeLabel,
+    factsOfficeShort,
+    factsOfficeBodyPre,
+    factsOfficeBodyPost,
+    factsIcoLabel,
+    factsIcoRegistration,
+    factsIcoController,
+    factsFoundedLabel,
+    factsFoundedYear,
+    factsFoundedBootstrapped,
+    statsEyebrow,
+    statsTitle,
+    statsLede,
+    statsActivePupils,
+    statsEssaysMarked,
+    statsTeachersOnboarded,
+    statsSchoolsInProgramme,
+    productEyebrow,
+    productTitle,
+    productAudienceH3,
+    productAudiencePupils,
+    productAudienceParents,
+    productAudienceTeachers,
+    productAudienceHeads,
+    productPricingH3,
+    productPricingPupilStrong,
+    productPricingPupilBody,
+    productPricingTeacherStrong,
+    productPricingTeacherBody,
+    productPricingFoundingStrong,
+    productPricingFoundingBody,
+    productPricingGbpNote,
+    productDistinctH3,
+    productDistinctBoards,
+    productDistinctPlainEnglish,
+    productDistinctBoardSelection,
+    productDistinctChildrensCode,
+    contactEyebrow,
+    contactTitle,
+    contactBodyPre,
+    contactBodyPost,
+    contactCtaEmail,
+    contactCtaGeneral,
+    kitEyebrow,
+    kitTitle,
+    kitBody,
+    kitArchiveTitle,
+    kitArchiveBodyPre,
+    kitArchiveBodyMid,
+    kitArchiveBodyPost,
+    kitDownloadDisabled,
+    kitDownloadTitle,
+    coverageEyebrow,
+    coverageTitle,
+    coverageNone,
+    awardsEyebrow,
+    awardsTitle,
+    awardsNone,
+    awardsTrustpilot,
+    footerEntity,
+    footerBrandLine,
+  ] = await tMany([
+    'press.hero.eyebrow',
+    'press.hero.title',
+    'press.hero.lede',
+    'press.overview.eyebrow',
+    'press.overview.title',
+    'press.overview.p1',
+    'press.overview.p2',
+    'press.facts.eyebrow',
+    'press.facts.title',
+    'press.facts.entity.label',
+    'press.facts.entity.name',
+    'press.facts.entity.company_no',
+    'press.facts.entity.jurisdiction',
+    'press.facts.office.label',
+    'press.facts.office.short',
+    'press.facts.office.body_pre',
+    'press.facts.office.body_post',
+    'press.facts.ico.label',
+    'press.facts.ico.registration',
+    'press.facts.ico.controller',
+    'press.facts.founded.label',
+    'press.facts.founded.year',
+    'press.facts.founded.bootstrapped',
+    'press.stats.eyebrow',
+    'press.stats.title',
+    'press.stats.lede',
+    'press.stats.active_pupils',
+    'press.stats.essays_marked',
+    'press.stats.teachers_onboarded',
+    'press.stats.schools_in_programme',
+    'press.product.eyebrow',
+    'press.product.title',
+    'press.product.audience.h3',
+    'press.product.audience.pupils',
+    'press.product.audience.parents',
+    'press.product.audience.teachers',
+    'press.product.audience.heads',
+    'press.product.pricing.h3',
+    'press.product.pricing.pupil_strong',
+    'press.product.pricing.pupil_body',
+    'press.product.pricing.teacher_strong',
+    'press.product.pricing.teacher_body',
+    'press.product.pricing.founding_strong',
+    'press.product.pricing.founding_body',
+    'press.product.pricing.gbp_note',
+    'press.product.distinct.h3',
+    'press.product.distinct.boards',
+    'press.product.distinct.plain_english',
+    'press.product.distinct.board_selection',
+    'press.product.distinct.childrens_code',
+    'press.contact.eyebrow',
+    'press.contact.title',
+    'press.contact.body_pre',
+    'press.contact.body_post',
+    'press.contact.cta.email',
+    'press.contact.cta.general',
+    'press.kit.eyebrow',
+    'press.kit.title',
+    'press.kit.body',
+    'press.kit.archive_title',
+    'press.kit.archive_body_pre',
+    'press.kit.archive_body_mid',
+    'press.kit.archive_body_post',
+    'press.kit.download_disabled',
+    'press.kit.download_title',
+    'press.coverage.eyebrow',
+    'press.coverage.title',
+    'press.coverage.none',
+    'press.awards.eyebrow',
+    'press.awards.title',
+    'press.awards.none',
+    'press.awards.trustpilot',
+    'press.footer.entity',
+    'press.footer.brand_line',
+  ])
+
   return (
     <main className="min-h-screen bg-background">
-      <PressHero
-        eyebrow="Press & media"
-        title="Press & media — The English Hub"
-        lede="Everything a journalist, reviewer, or partner needs to write about The English Hub: a plain-English product summary, verifiable company facts, assets, and a direct line to the press desk."
-      />
+      <PressHero eyebrow={heroEyebrow} title={heroTitle} lede={heroLede} />
 
       {/* 60-second overview */}
-      <PressSection eyebrow="60-second overview" title="What The English Hub is, in plain English">
-        <p>
-          The English Hub is a GCSE and IGCSE English study app for pupils in the United Kingdom,
-          with a companion web platform for teachers and schools. Pupils revise set texts, practise
-          exam questions, and submit written work for structured feedback. Teachers build lessons,
-          set homework, and track progress against the specification their school teaches.
-        </p>
-        <p>
-          What makes it different: every piece of feedback, every mark scheme reference, and every
-          model answer is anchored to the real examiners’ mark schemes used by AQA, Edexcel, OCR,
-          Eduqas, and Cambridge. The artificial intelligence layer is trained on those rubrics, not
-          generic writing heuristics.
-        </p>
+      <PressSection eyebrow={overviewEyebrow} title={overviewTitle}>
+        <p>{overviewP1}</p>
+        <p>{overviewP2}</p>
       </PressSection>
 
       {/* Company facts */}
-      <PressSection eyebrow="The facts" title="Company facts">
+      <PressSection eyebrow={factsEyebrow} title={factsTitle}>
         <div className="not-prose grid sm:grid-cols-2 gap-4">
           <Card className="p-5 border-border/40">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground mb-2">
-              Legal entity
+              {factsEntityLabel}
             </p>
-            <p className="font-semibold text-foreground">Upskill Energy Limited</p>
-            <p className="text-sm text-muted-foreground mt-1">Company number 16511479</p>
-            <p className="text-sm text-muted-foreground">Registered in England &amp; Wales</p>
+            <p className="font-semibold text-foreground">{factsEntityName}</p>
+            <p className="text-sm text-muted-foreground mt-1">{factsEntityCompanyNo}</p>
+            <p className="text-sm text-muted-foreground">{factsEntityJurisdiction}</p>
           </Card>
           <Card className="p-5 border-border/40">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground mb-2">
-              Registered office
+              {factsOfficeLabel}
             </p>
-            <p className="text-sm text-foreground">Registered in England &amp; Wales.</p>
+            <p className="text-sm text-foreground">{factsOfficeShort}</p>
             <p className="text-sm text-muted-foreground mt-1">
-              The full registered office is available via Companies House (company number 16511479).
-              For postal correspondence please email{' '}
+              {factsOfficeBodyPre}{' '}
               <a
                 href="mailto:press@theenglishhub.app"
                 className="text-primary underline underline-offset-4"
               >
                 press@theenglishhub.app
               </a>
-              .
+              {factsOfficeBodyPost}
             </p>
           </Card>
           <Card className="p-5 border-border/40">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground mb-2">
-              Data protection
+              {factsIcoLabel}
             </p>
-            <p className="text-sm text-foreground">ICO registration ZC016690</p>
-            <p className="text-sm text-muted-foreground mt-1">Data controller under the UK GDPR.</p>
+            <p className="text-sm text-foreground">{factsIcoRegistration}</p>
+            <p className="text-sm text-muted-foreground mt-1">{factsIcoController}</p>
           </Card>
           <Card className="p-5 border-border/40">
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground mb-2">
-              Founded
+              {factsFoundedLabel}
             </p>
-            <p className="text-sm text-foreground">2025, based in the United Kingdom.</p>
-            <p className="text-sm text-muted-foreground mt-1">Bootstrapped and teacher-led.</p>
+            <p className="text-sm text-foreground">{factsFoundedYear}</p>
+            <p className="text-sm text-muted-foreground mt-1">{factsFoundedBootstrapped}</p>
           </Card>
         </div>
       </PressSection>
 
       {/* Key stats (placeholders, honest) */}
-      <PressSection eyebrow="Key figures" title="Usage and impact">
-        <p className="text-muted-foreground">
-          We will publish headline figures when they are independently verifiable. Until then, we
-          leave these markers in place rather than use approximations.
-        </p>
+      <PressSection eyebrow={statsEyebrow} title={statsTitle}>
+        <p className="text-muted-foreground">{statsLede}</p>
         <div className="not-prose mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <StatPlaceholder label="Active pupils" />
-          <StatPlaceholder label="Essays marked" />
-          <StatPlaceholder label="Teachers onboarded" />
-          <StatPlaceholder label="Schools in the programme" />
+          <StatPlaceholder label={statsActivePupils} />
+          <StatPlaceholder label={statsEssaysMarked} />
+          <StatPlaceholder label={statsTeachersOnboarded} />
+          <StatPlaceholder label={statsSchoolsInProgramme} />
         </div>
       </PressSection>
 
       {/* Product details */}
-      <PressSection eyebrow="Product details" title="Who it is for, and how it is sold">
-        <h3 className="font-serif text-xl text-foreground">Target audience</h3>
+      <PressSection eyebrow={productEyebrow} title={productTitle}>
+        <h3 className="font-serif text-xl text-foreground">{productAudienceH3}</h3>
         <ul>
-          <li>GCSE and IGCSE English pupils (Years 9\u201311) preparing for terminal exams.</li>
-          <li>Parents looking for structured, exam-specification-aligned revision.</li>
-          <li>Secondary English teachers who want to reclaim planning and marking time.</li>
-          <li>Heads of English and senior leaders running the Founding Schools Programme.</li>
+          <li>{productAudiencePupils}</li>
+          <li>{productAudienceParents}</li>
+          <li>{productAudienceTeachers}</li>
+          <li>{productAudienceHeads}</li>
         </ul>
 
-        <h3 className="font-serif text-xl text-foreground mt-8">Pricing (Early Access)</h3>
+        <h3 className="font-serif text-xl text-foreground mt-8">{productPricingH3}</h3>
         <ul>
           <li>
-            <strong>Pupil &middot; mobile.</strong> Free core revision with a monthly Premium tier
-            for unlimited AI feedback and mock papers. Pricing shown at checkout.
+            <strong>{productPricingPupilStrong}</strong> {productPricingPupilBody}
           </li>
           <li>
-            <strong>Teacher Premium.</strong> &pound;6.99/month or &pound;67.99/year (Early Access).
-            Standard pricing &pound;11.99/month or &pound;99/year from August 2026.
+            <strong>{productPricingTeacherStrong}</strong> {productPricingTeacherBody}
           </li>
           <li>
-            <strong>Founding Schools Programme.</strong> &pound;4,000/year for the first ten
-            schools, anchored against projected standard pricing of &pound;8,000/year.
+            <strong>{productPricingFoundingStrong}</strong> {productPricingFoundingBody}
           </li>
         </ul>
-        <p className="text-sm text-muted-foreground">Prices shown in GBP.</p>
+        <p className="text-sm text-muted-foreground">{productPricingGbpNote}</p>
 
-        <h3 className="font-serif text-xl text-foreground mt-8">What makes it distinct</h3>
+        <h3 className="font-serif text-xl text-foreground mt-8">{productDistinctH3}</h3>
         <ul>
-          <li>
-            Feedback trained on the actual mark schemes published by AQA, Edexcel, OCR, Eduqas, and
-            Cambridge — not generic writing rubrics.
-          </li>
-          <li>Feedback explained in plain English, calibrated to the AO rubric.</li>
-          <li>
-            Every school picks its board during setup, so pupils only ever see content that maps to
-            their specification.
-          </li>
-          <li>
-            Children’s Code posture: minimal data, no behavioural advertising, parent-visible
-            controls.
-          </li>
+          <li>{productDistinctBoards}</li>
+          <li>{productDistinctPlainEnglish}</li>
+          <li>{productDistinctBoardSelection}</li>
+          <li>{productDistinctChildrensCode}</li>
         </ul>
       </PressSection>
 
       {/* Press contact */}
-      <PressSection eyebrow="Press enquiries" title="Talk to us">
+      <PressSection eyebrow={contactEyebrow} title={contactTitle}>
         <p>
-          For interviews, review access, quotes, or fact-checking, email{' '}
+          {contactBodyPre}{' '}
           <a
             href="mailto:press@theenglishhub.app"
             className="text-primary underline underline-offset-4"
           >
             press@theenglishhub.app
           </a>
-          . We reply within one UK working day.
+          {contactBodyPost}
         </p>
         <div className="not-prose mt-6 flex flex-col sm:flex-row gap-3">
           <Button
@@ -158,10 +284,10 @@ export default function PressPage() {
             render={<a href="mailto:press@theenglishhub.app" />}
           >
             <Mail className="w-4 h-4 mr-2" />
-            Email the press desk
+            {contactCtaEmail}
           </Button>
           <Button variant="outline" size="lg" className="h-12" render={<Link href="/contact" />}>
-            General contact
+            {contactCtaGeneral}
           </Button>
         </div>
       </PressSection>
@@ -171,12 +297,8 @@ export default function PressPage() {
           route to press@theenglishhub.app via the press desk above. */}
 
       {/* Press kit */}
-      <PressSection eyebrow="Press kit" title="Download the media kit">
-        <p>
-          A single archive with the logo pack, app icon at 512 and 1024 pixels, three in-app
-          screenshots, a fifteen-second muted demo clip, and the boilerplate &ldquo;about Upskill
-          Energy Limited&rdquo; paragraph.
-        </p>
+      <PressSection eyebrow={kitEyebrow} title={kitTitle}>
+        <p>{kitBody}</p>
         <div className="not-prose mt-6">
           <Card className="p-6 border-dashed border-border/60 bg-card/40">
             <div className="flex items-start gap-4">
@@ -184,16 +306,17 @@ export default function PressPage() {
                 <FileText className="w-5 h-5 text-primary" />
               </div>
               <div className="flex-1">
-                <p className="font-semibold text-foreground">The English Hub — press kit (ZIP)</p>
+                <p className="font-semibold text-foreground">{kitArchiveTitle}</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Press kit ZIP coming soon. In the meantime, email{' '}
+                  {kitArchiveBodyPre}{' '}
                   <a
                     href="mailto:press@theenglishhub.app"
                     className="text-primary underline underline-offset-4"
                   >
                     press@theenglishhub.app
                   </a>{' '}
-                  and we will send the latest assets within one working day.
+                  {kitArchiveBodyMid}
+                  {kitArchiveBodyPost}
                 </p>
                 <div className="mt-4">
                   {/* Press kit ZIP coming soon. Replace with real download once /public/brand/press-kit.zip exists. */}
@@ -202,10 +325,10 @@ export default function PressPage() {
                     size="sm"
                     disabled
                     aria-disabled="true"
-                    title="Press kit coming soon"
+                    title={kitDownloadTitle}
                   >
                     <Download className="w-4 h-4 mr-2" />
-                    Press kit — coming soon
+                    {kitDownloadDisabled}
                   </Button>
                 </div>
               </div>
@@ -215,26 +338,19 @@ export default function PressPage() {
       </PressSection>
 
       {/* Recent coverage */}
-      <PressSection eyebrow="In the press" title="Recent coverage">
+      <PressSection eyebrow={coverageEyebrow} title={coverageTitle}>
         <div className="not-prose">
           <Card className="p-6 border-border/40 bg-card/40">
-            <p className="text-sm text-muted-foreground">
-              No coverage yet — we are working with launch PR partners and will list pieces here as
-              they appear. If you are covering the UK ed-tech or exam beat, we would like to hear
-              from you.
-            </p>
+            <p className="text-sm text-muted-foreground">{coverageNone}</p>
           </Card>
         </div>
       </PressSection>
 
       {/* Awards */}
-      <PressSection eyebrow="Recognition" title="Awards and reviews">
+      <PressSection eyebrow={awardsEyebrow} title={awardsTitle}>
         <div className="not-prose">
           <Card className="p-6 border-border/40 bg-card/40">
-            <p className="text-sm text-muted-foreground">
-              No awards to report. Verified user reviews are published on our Trustpilot profile as
-              they come in.
-            </p>
+            <p className="text-sm text-muted-foreground">{awardsNone}</p>
             <div className="mt-4">
               <Button
                 variant="outline"
@@ -245,7 +361,7 @@ export default function PressPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View on Trustpilot
+                    {awardsTrustpilot}
                     <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
                   </a>
                 }
@@ -260,11 +376,9 @@ export default function PressPage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 mb-4 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
             <Building2 className="w-3.5 h-3.5" />
-            Upskill Energy Limited
+            {footerEntity}
           </div>
-          <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-            For brand, logo, or colour guidance, please contact us directly.
-          </p>
+          <p className="text-sm text-muted-foreground max-w-xl mx-auto">{footerBrandLine}</p>
         </div>
       </section>
     </main>

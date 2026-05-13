@@ -36,6 +36,7 @@ import type {
   AffiliatePayout,
   AffiliateCommissionDefaults,
 } from '@/lib/types'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ────────────────────────── Props ────────────────────────── */
 
@@ -55,22 +56,19 @@ interface AffiliateDashboardProps {
 
 const MOCK_TESTIMONIALS = [
   {
-    quote:
-      'Thanks to The English Hub, I went from a Grade 4 to a Grade 7 in just 3 months.',
+    quote: 'Thanks to The English Hub, I went from a Grade 4 to a Grade 7 in just 3 months.',
     name: 'Year 11 Student',
     role: 'GCSE English',
     avatar: 'S',
   },
   {
-    quote:
-      'The AI marking changed everything for my essay writing. My teacher was amazed.',
+    quote: 'The AI marking changed everything for my essay writing. My teacher was amazed.',
     name: 'Year 10 Student',
     role: 'GCSE English Literature',
     avatar: 'A',
   },
   {
-    quote:
-      'I used to spend 6 hours planning per week. Now it\'s under 1 hour.',
+    quote: "I used to spend 6 hours planning per week. Now it's under 1 hour.",
     name: 'English Teacher',
     role: 'Secondary School',
     avatar: 'T',
@@ -97,24 +95,22 @@ const formatDate = (dateStr: string) =>
     year: 'numeric',
   })
 
-const formatRelativeTime = (dateStr: string) => {
-  const now = new Date()
-  const date = new Date(dateStr)
-  const diffMs = now.getTime() - date.getTime()
-  const diffMins = Math.floor(diffMs / 60000)
-  const diffHours = Math.floor(diffMins / 60)
-  const diffDays = Math.floor(diffHours / 24)
+function useFormatRelativeTime() {
+  const t = useT()
+  return (dateStr: string) => {
+    const now = new Date()
+    const date = new Date(dateStr)
+    const diffMs = now.getTime() - date.getTime()
+    const diffMins = Math.floor(diffMs / 60000)
+    const diffHours = Math.floor(diffMins / 60)
+    const diffDays = Math.floor(diffHours / 24)
 
-  if (diffMins < 1) return 'Just now'
-  if (diffMins < 60) return `${diffMins}m ago`
-  if (diffHours < 24) return `${diffHours}h ago`
-  if (diffDays < 7) return `${diffDays}d ago`
-  return formatDate(dateStr)
-}
-
-const anonymiseName = (index: number) => {
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  return `User ${letters[index % 26]}${letters[(index * 7 + 3) % 26]}`
+    if (diffMins < 1) return t('aff_comp.dash.activity.just_now')
+    if (diffMins < 60) return `${diffMins}${t('aff_comp.dash.activity.minutes_ago_suffix')}`
+    if (diffHours < 24) return `${diffHours}${t('aff_comp.dash.activity.hours_ago_suffix')}`
+    if (diffDays < 7) return `${diffDays}${t('aff_comp.dash.activity.days_ago_suffix')}`
+    return formatDate(dateStr)
+  }
 }
 
 /* ────────────────────────── Component ────────────────────── */
@@ -130,12 +126,18 @@ export default function AffiliateDashboard({
   totalClicks,
   commissionRates,
 }: AffiliateDashboardProps) {
+  const t = useT()
+  const formatRelativeTime = useFormatRelativeTime()
   const [copiedLink, setCopiedLink] = useState(false)
   const [copiedCode, setCopiedCode] = useState(false)
   const [earningsTab, setEarningsTab] = useState<'thisMonth' | 'lastMonth' | 'allTime'>('thisMonth')
 
-  const viaToken =
-    affiliate.rewardful_link_token ?? affiliate.rewardful_affiliate_id ?? 'YOUR_CODE'
+  const anonymiseName = (index: number) => {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    return `${t('aff_comp.dash.earnings.user_prefix')} ${letters[index % 26]}${letters[(index * 7 + 3) % 26]}`
+  }
+
+  const viaToken = affiliate.rewardful_link_token ?? affiliate.rewardful_affiliate_id ?? 'YOUR_CODE'
   const affiliateUrl = `https://theenglishhub.app?via=${viaToken}`
   const promoCode = viaToken.toUpperCase()
 
@@ -154,7 +156,7 @@ export default function AffiliateDashboard({
 
   /* ── Computed data ── */
   const activeReferrals = referrals.filter(
-    (r) => r.converted_to_paid_at && r.commission_status !== 'voided'
+    (r) => r.converted_to_paid_at && r.commission_status !== 'voided',
   )
   const conversionRate =
     totalClicks > 0 ? ((activeReferrals.length / totalClicks) * 100).toFixed(1) : '0.0'
@@ -178,16 +180,14 @@ export default function AffiliateDashboard({
     switch (tab) {
       case 'thisMonth':
         return referrals.filter(
-          (r) =>
-            r.converted_to_paid_at &&
-            new Date(r.converted_to_paid_at) >= monthStart
+          (r) => r.converted_to_paid_at && new Date(r.converted_to_paid_at) >= monthStart,
         )
       case 'lastMonth':
         return referrals.filter(
           (r) =>
             r.converted_to_paid_at &&
             new Date(r.converted_to_paid_at) >= lastMonthStart &&
-            new Date(r.converted_to_paid_at) <= lastMonthEnd
+            new Date(r.converted_to_paid_at) <= lastMonthEnd,
         )
       case 'allTime':
         return referrals.filter((r) => r.converted_to_paid_at)
@@ -232,15 +232,12 @@ export default function AffiliateDashboard({
   const shareText = `Check out The English Hub — AI-powered GCSE English revision! ${affiliateUrl}`
 
   const handleShareTwitter = () => {
-    window.open(
-      `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`,
-      '_blank'
-    )
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`, '_blank')
   }
   const handleShareEmail = () => {
     window.open(
       `mailto:?subject=${encodeURIComponent('Check out The English Hub')}&body=${encodeURIComponent(shareText)}`,
-      '_blank'
+      '_blank',
     )
   }
 
@@ -253,11 +250,18 @@ export default function AffiliateDashboard({
       voided: 'bg-red-500/10 text-red-400 border-red-500/20',
       refunded: 'bg-orange-500/10 text-clay-600 border-orange-500/20',
     }
+    const statusLabel: Record<string, string> = {
+      pending: t('aff_comp.dash.status.pending'),
+      confirmed: t('aff_comp.dash.status.confirmed'),
+      paid: t('aff_comp.dash.status.paid'),
+      voided: t('aff_comp.dash.status.voided'),
+      refunded: t('aff_comp.dash.status.refunded'),
+    }
     return (
       <span
         className={`inline-block text-xs px-2.5 py-0.5 rounded-full border font-medium ${styles[status] ?? 'bg-muted text-muted-foreground border-border'}`}
       >
-        {status}
+        {statusLabel[status] ?? status}
       </span>
     )
   }
@@ -276,7 +280,7 @@ export default function AffiliateDashboard({
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to dashboard
+          {t('aff_comp.dash.back_to_dashboard')}
         </Link>
 
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
@@ -286,15 +290,16 @@ export default function AffiliateDashboard({
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-                Affiliate Portal
+                {t('aff_comp.dash.portal_title')}
               </h1>
               <p className="text-sm text-muted-foreground">
-                Welcome back, {affiliate.full_name.split(' ')[0]}
+                {t('aff_comp.dash.welcome_back')} {affiliate.full_name.split(' ')[0]}
               </p>
             </div>
           </div>
           <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold w-fit">
-            Tier {affiliate.tier} Partner
+            {t('aff_comp.dash.tier_partner_prefix')} {affiliate.tier}{' '}
+            {t('aff_comp.dash.tier_partner_suffix')}
           </span>
         </div>
 
@@ -302,19 +307,20 @@ export default function AffiliateDashboard({
         <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4 mb-8 flex items-start gap-3">
           <AlertTriangle className="w-5 h-5 text-clay-600 mt-0.5 shrink-0" />
           <div className="text-sm text-yellow-800/90">
-            <strong>Required for every post:</strong> Include{' '}
+            <strong>{t('aff_comp.dash.disclosure_required_prefix')}</strong>{' '}
+            {t('aff_comp.dash.disclosure_required_prefix') ? ' ' : ''}
             <code className="bg-yellow-500/20 px-1.5 py-0.5 rounded text-yellow-700 font-mono text-xs">
               #ad
             </code>{' '}
-            in the first 3 words of your caption. Posts without disclosure will not earn
-            commission.{' '}
+            {t('aff_comp.dash.disclosure_required_middle')}{' '}
             <a
               href="https://www.asa.org.uk/advice-online/recognising-ads-social-media.html"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-yellow-100 inline-flex items-center gap-1"
             >
-              ASA guidance <ExternalLink className="inline w-3 h-3" />
+              {t('aff_comp.dash.disclosure_asa_link_text')}{' '}
+              <ExternalLink className="inline w-3 h-3" />
             </a>
           </div>
         </div>
@@ -328,9 +334,13 @@ export default function AffiliateDashboard({
             borderGlow="border-emerald-500/20"
             icon={<PoundSterling className="w-5 h-5" />}
             iconColor="text-emerald-400"
-            label="Total Earnings"
+            label={t('aff_comp.dash.stat.total_earnings')}
             value={formatGBP(totalEarnings)}
-            trend={thisMonthEarnings > 0 ? `+${formatGBP(thisMonthEarnings)} this month` : undefined}
+            trend={
+              thisMonthEarnings > 0
+                ? `+${formatGBP(thisMonthEarnings)} ${t('aff_comp.dash.stat.this_month_trend_prefix')}`
+                : undefined
+            }
             trendUp={thisMonthEarnings > 0}
           />
           <GradientStatCard
@@ -338,18 +348,22 @@ export default function AffiliateDashboard({
             borderGlow="border-blue-500/20"
             icon={<Users className="w-5 h-5" />}
             iconColor="text-blue-400"
-            label="Active Referrals"
+            label={t('aff_comp.dash.stat.active_referrals')}
             value={String(activeReferrals.length)}
-            trend={`${referrals.length} total signups`}
+            trend={`${referrals.length} ${t('aff_comp.dash.stat.total_signups_suffix')}`}
           />
           <GradientStatCard
             gradient="from-amber-600/20 via-amber-500/10 to-orange-600/5"
             borderGlow="border-amber-500/20"
             icon={<Clock className="w-5 h-5" />}
             iconColor="text-clay-600"
-            label="Pending Commission"
+            label={t('aff_comp.dash.stat.pending_commission')}
             value={formatGBP(pendingEarnings)}
-            trend={confirmedEarnings > 0 ? `${formatGBP(confirmedEarnings)} confirmed` : 'Awaiting confirmation'}
+            trend={
+              confirmedEarnings > 0
+                ? `${formatGBP(confirmedEarnings)} ${t('aff_comp.dash.stat.confirmed_suffix')}`
+                : t('aff_comp.dash.stat.awaiting_confirmation')
+            }
           />
           {/* Conversion rate card with ring chart */}
           <div
@@ -359,19 +373,16 @@ export default function AffiliateDashboard({
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
                   <Percent className="w-5 h-5 text-purple-400" />
-                  <span className="text-sm text-muted-foreground">Conversion Rate</span>
+                  <span className="text-sm text-muted-foreground">
+                    {t('aff_comp.dash.stat.conversion_rate')}
+                  </span>
                 </div>
-                <p className="text-2xl sm:text-3xl font-bold text-foreground">
-                  {conversionRate}%
-                </p>
+                <p className="text-2xl sm:text-3xl font-bold text-foreground">{conversionRate}%</p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  {totalClicks} clicks total
+                  {totalClicks} {t('aff_comp.dash.stat.clicks_total')}
                 </p>
               </div>
-              <svg
-                className="w-20 h-20 -rotate-90 shrink-0"
-                viewBox="0 0 80 80"
-              >
+              <svg className="w-20 h-20 -rotate-90 shrink-0" viewBox="0 0 80 80">
                 <circle
                   cx="40"
                   cy="40"
@@ -410,9 +421,9 @@ export default function AffiliateDashboard({
         <section className="mb-10">
           <div className="flex items-center gap-2 mb-6">
             <Sparkles className="w-5 h-5 text-primary" />
-            <h2 className="text-xl font-bold text-foreground">Your Impact</h2>
+            <h2 className="text-xl font-bold text-foreground">{t('aff_comp.dash.impact.title')}</h2>
             <span className="text-xs text-muted-foreground ml-1">
-              The difference you&apos;re making
+              {t('aff_comp.dash.impact.subtitle')}
             </span>
           </div>
 
@@ -421,57 +432,57 @@ export default function AffiliateDashboard({
             <ImpactCard
               icon={<GraduationCap className="w-6 h-6" />}
               value={String(studentCount)}
-              label="Students you've helped"
-              sublabel="improving their grades"
+              label={t('aff_comp.dash.impact.students_helped')}
+              sublabel={t('aff_comp.dash.impact.improving_grades')}
               color="text-emerald-400"
               bg="bg-emerald-500/10"
             />
             <ImpactCard
               icon={<BookOpen className="w-6 h-6" />}
               value={hoursLearning.toLocaleString()}
-              label="Hours of learning"
-              sublabel="delivered through your link"
+              label={t('aff_comp.dash.impact.hours_learning')}
+              sublabel={t('aff_comp.dash.impact.via_your_link')}
               color="text-blue-400"
               bg="bg-blue-500/10"
             />
             <ImpactCard
               icon={<Award className="w-6 h-6" />}
               value="+1.2"
-              label="Avg grade improvement"
-              sublabel="across referred students"
+              label={t('aff_comp.dash.impact.avg_grade_improvement')}
+              sublabel={t('aff_comp.dash.impact.across_referred_students')}
               color="text-clay-600"
               bg="bg-amber-500/10"
-              badge="grades"
+              badge={t('aff_comp.dash.impact.badge_grades')}
             />
             <ImpactCard
               icon={<Timer className="w-6 h-6" />}
               value={String(teacherHoursSaved)}
-              label="Teacher hours saved"
-              sublabel="across referred teachers"
+              label={t('aff_comp.dash.impact.teacher_hours_saved')}
+              sublabel={t('aff_comp.dash.impact.across_referred_teachers')}
               color="text-purple-400"
               bg="bg-purple-500/10"
-              badge="hours"
+              badge={t('aff_comp.dash.impact.badge_hours')}
             />
           </div>
 
           {/* Testimonial cards */}
           <div className="grid md:grid-cols-3 gap-4">
-            {MOCK_TESTIMONIALS.map((t, i) => (
+            {MOCK_TESTIMONIALS.map((tm, i) => (
               <div
                 key={i}
                 className="relative bg-card border border-border rounded-xl p-5 hover:border-primary/20 transition-colors group"
               >
                 <Quote className="w-8 h-8 text-primary/15 absolute top-4 right-4 group-hover:text-primary/25 transition-colors" />
                 <p className="text-sm text-foreground/90 leading-relaxed mb-4 italic">
-                  &ldquo;{t.quote}&rdquo;
+                  &ldquo;{tm.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center text-xs font-bold text-primary">
-                    {t.avatar}
+                    {tm.avatar}
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-foreground">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                    <p className="text-xs font-medium text-foreground">{tm.name}</p>
+                    <p className="text-xs text-muted-foreground">{tm.role}</p>
                   </div>
                 </div>
                 <div className="absolute bottom-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
@@ -486,16 +497,18 @@ export default function AffiliateDashboard({
         <section className="mb-10">
           <div className="flex items-center gap-2 mb-6">
             <BarChart3 className="w-5 h-5 text-primary" />
-            <h2 className="text-xl font-bold text-foreground">Earnings Breakdown</h2>
+            <h2 className="text-xl font-bold text-foreground">
+              {t('aff_comp.dash.earnings.heading')}
+            </h2>
           </div>
 
           {/* Tabs */}
           <div className="flex gap-1 mb-4 bg-card border border-border rounded-lg p-1 w-fit">
             {(
               [
-                ['thisMonth', 'This Month'],
-                ['lastMonth', 'Last Month'],
-                ['allTime', 'All Time'],
+                ['thisMonth', t('aff_comp.dash.earnings.tab_this_month')],
+                ['lastMonth', t('aff_comp.dash.earnings.tab_last_month')],
+                ['allTime', t('aff_comp.dash.earnings.tab_all_time')],
               ] as const
             ).map(([key, label]) => (
               <button
@@ -515,15 +528,21 @@ export default function AffiliateDashboard({
           {/* Summary row */}
           <div className="grid grid-cols-3 gap-3 mb-4">
             <div className="bg-card border border-border rounded-lg p-4 text-center">
-              <p className="text-xs text-muted-foreground mb-1">Pending</p>
+              <p className="text-xs text-muted-foreground mb-1">
+                {t('aff_comp.dash.earnings.pending')}
+              </p>
               <p className="text-lg font-bold text-clay-600">{formatGBP(periodPending)}</p>
             </div>
             <div className="bg-card border border-border rounded-lg p-4 text-center">
-              <p className="text-xs text-muted-foreground mb-1">Confirmed</p>
+              <p className="text-xs text-muted-foreground mb-1">
+                {t('aff_comp.dash.earnings.confirmed')}
+              </p>
               <p className="text-lg font-bold text-blue-400">{formatGBP(periodConfirmed)}</p>
             </div>
             <div className="bg-card border border-border rounded-lg p-4 text-center">
-              <p className="text-xs text-muted-foreground mb-1">Paid</p>
+              <p className="text-xs text-muted-foreground mb-1">
+                {t('aff_comp.dash.earnings.paid')}
+              </p>
               <p className="text-lg font-bold text-emerald-400">{formatGBP(periodPaid)}</p>
             </div>
           </div>
@@ -532,18 +551,28 @@ export default function AffiliateDashboard({
           <div className="bg-card border border-border rounded-xl overflow-hidden">
             {filteredReferrals.length === 0 ? (
               <p className="text-muted-foreground text-sm py-12 text-center">
-                No referrals in this period yet.
+                {t('aff_comp.dash.earnings.empty')}
               </p>
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border text-left text-muted-foreground bg-secondary/30">
-                      <th className="px-5 py-3 font-medium">Referral</th>
-                      <th className="px-5 py-3 font-medium">Plan</th>
-                      <th className="px-5 py-3 font-medium">Commission</th>
-                      <th className="px-5 py-3 font-medium">Status</th>
-                      <th className="px-5 py-3 font-medium">Date</th>
+                      <th className="px-5 py-3 font-medium">
+                        {t('aff_comp.dash.earnings.col_referral')}
+                      </th>
+                      <th className="px-5 py-3 font-medium">
+                        {t('aff_comp.dash.earnings.col_plan')}
+                      </th>
+                      <th className="px-5 py-3 font-medium">
+                        {t('aff_comp.dash.earnings.col_commission')}
+                      </th>
+                      <th className="px-5 py-3 font-medium">
+                        {t('aff_comp.dash.earnings.col_status')}
+                      </th>
+                      <th className="px-5 py-3 font-medium">
+                        {t('aff_comp.dash.earnings.col_date')}
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
@@ -554,12 +583,12 @@ export default function AffiliateDashboard({
                       >
                         <td className="px-5 py-3 font-medium">{anonymiseName(i)}</td>
                         <td className="px-5 py-3 capitalize text-muted-foreground">
-                          {r.plan_type ?? '\u2014'}
+                          {r.plan_type ?? '—'}
                         </td>
                         <td className="px-5 py-3 font-semibold">
                           {r.commission_amount_gbp != null
                             ? formatGBP(r.commission_amount_gbp)
-                            : '\u2014'}
+                            : '—'}
                         </td>
                         <td className="px-5 py-3">{statusBadge(r.commission_status)}</td>
                         <td className="px-5 py-3 text-muted-foreground text-xs">
@@ -582,7 +611,9 @@ export default function AffiliateDashboard({
         <section className="mb-10">
           <div className="flex items-center gap-2 mb-6">
             <Share2 className="w-5 h-5 text-primary" />
-            <h2 className="text-xl font-bold text-foreground">Your Links &amp; Promo</h2>
+            <h2 className="text-xl font-bold text-foreground">
+              {t('aff_comp.dash.links.heading')}
+            </h2>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-4">
@@ -590,7 +621,7 @@ export default function AffiliateDashboard({
             <div className="bg-card border border-border rounded-xl p-6">
               <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
                 <ExternalLink className="w-4 h-4 text-primary" />
-                Your Affiliate Link
+                {t('aff_comp.dash.links.affiliate_link')}
               </h3>
               <div className="flex items-center gap-2 mb-3">
                 <div className="flex-1 bg-background rounded-lg border border-border px-4 py-3 font-mono text-sm text-muted-foreground truncate">
@@ -600,19 +631,15 @@ export default function AffiliateDashboard({
                   onClick={handleCopyLink}
                   className="btn-primary px-4 py-3 gap-2 text-sm shrink-0"
                 >
-                  {copiedLink ? (
-                    <Check className="w-4 h-4" />
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
-                  {copiedLink ? 'Copied!' : 'Copy'}
+                  {copiedLink ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  {copiedLink ? t('aff_comp.copied_bang') : t('aff_comp.copy')}
                 </button>
               </div>
 
               {/* Promo Code */}
               <h3 className="text-sm font-semibold text-foreground mb-3 mt-5 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary" />
-                Personal Promo Code
+                {t('aff_comp.dash.links.promo_code')}
               </h3>
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex-1 bg-background rounded-lg border border-border px-4 py-3 font-mono text-lg font-bold text-foreground tracking-wider text-center">
@@ -622,27 +649,25 @@ export default function AffiliateDashboard({
                   onClick={handleCopyCode}
                   className="btn-secondary px-4 py-3 gap-2 text-sm shrink-0"
                 >
-                  {copiedCode ? (
-                    <Check className="w-4 h-4" />
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
-                  {copiedCode ? 'Copied!' : 'Copy'}
+                  {copiedCode ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  {copiedCode ? t('aff_comp.copied_bang') : t('aff_comp.copy')}
                 </button>
               </div>
 
               {commissionRates && (
                 <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-                  You earn{' '}
+                  {t('aff_comp.dash.links.rates_part1')}{' '}
                   <strong className="text-foreground">
                     £{commissionRates.commission_annual_gbp}
                   </strong>{' '}
-                  per annual signup{' \u00B7 '}
+                  {t('aff_comp.dash.links.rates_part2')}
+                  {' · '}
                   <strong className="text-foreground">
                     £{commissionRates.commission_monthly_gbp}
                   </strong>{' '}
-                  per monthly signup{' \u00B7 '}
-                  Paid monthly on the 1st
+                  {t('aff_comp.dash.links.rates_part3')}
+                  {' · '}
+                  {t('aff_comp.dash.links.rates_part4')}
                 </p>
               )}
             </div>
@@ -651,7 +676,7 @@ export default function AffiliateDashboard({
             <div className="bg-card border border-border rounded-xl p-6 flex flex-col">
               <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
                 <QrCode className="w-4 h-4 text-primary" />
-                QR Code
+                {t('aff_comp.dash.links.qr_code')}
               </h3>
               {/* Simple text-based QR placeholder */}
               <div className="bg-card rounded-xl p-4 w-fit mx-auto mb-5">
@@ -662,61 +687,53 @@ export default function AffiliateDashboard({
                         key={`${ri}-${ci}`}
                         className={`w-[6px] h-[6px] rounded-[1px] ${cell ? 'bg-foreground' : 'bg-card'}`}
                       />
-                    ))
+                    )),
                   )}
                 </div>
               </div>
               <p className="text-xs text-muted-foreground text-center mb-5">
-                Share this QR code in your content
+                {t('aff_comp.dash.links.qr_blurb')}
               </p>
 
               {/* Share buttons */}
-              <h3 className="text-sm font-semibold text-foreground mb-3">Share on</h3>
+              <h3 className="text-sm font-semibold text-foreground mb-3">
+                {t('aff_comp.dash.links.share_on')}
+              </h3>
               <div className="grid grid-cols-2 gap-2 mt-auto">
                 <button
                   onClick={handleCopyLink}
                   className="btn-secondary px-3 py-2.5 text-xs gap-2"
                 >
                   <Copy className="w-3.5 h-3.5" />
-                  Copy Link
+                  {t('aff_comp.dash.links.copy_link')}
                 </button>
                 <button
                   onClick={handleShareTwitter}
                   className="btn-secondary px-3 py-2.5 text-xs gap-2"
                 >
                   <XIcon className="w-3.5 h-3.5" />
-                  Twitter / X
+                  {t('aff_comp.dash.links.twitter_x')}
                 </button>
                 <button
-                  onClick={() =>
-                    window.open(
-                      `https://www.instagram.com/`,
-                      '_blank'
-                    )
-                  }
+                  onClick={() => window.open(`https://www.instagram.com/`, '_blank')}
                   className="btn-secondary px-3 py-2.5 text-xs gap-2"
                 >
                   <InstagramIcon className="w-3.5 h-3.5" />
-                  Instagram
+                  {t('aff_comp.dash.links.instagram')}
                 </button>
                 <button
-                  onClick={() =>
-                    window.open(
-                      `https://www.tiktok.com/`,
-                      '_blank'
-                    )
-                  }
+                  onClick={() => window.open(`https://www.tiktok.com/`, '_blank')}
                   className="btn-secondary px-3 py-2.5 text-xs gap-2"
                 >
                   <TikTokIcon className="w-3.5 h-3.5" />
-                  TikTok
+                  {t('aff_comp.dash.links.tiktok')}
                 </button>
                 <button
                   onClick={handleShareEmail}
                   className="btn-secondary px-3 py-2.5 text-xs gap-2 col-span-2"
                 >
                   <Mail className="w-3.5 h-3.5" />
-                  Email
+                  {t('aff_comp.dash.links.email')}
                 </button>
               </div>
             </div>
@@ -731,19 +748,16 @@ export default function AffiliateDashboard({
           <section className="lg:col-span-3 bg-card border border-border rounded-xl p-6">
             <div className="flex items-center gap-2 mb-6">
               <BarChart3 className="w-5 h-5 text-primary" />
-              <h2 className="text-lg font-bold text-foreground">Monthly Earnings</h2>
+              <h2 className="text-lg font-bold text-foreground">
+                {t('aff_comp.dash.chart.monthly_earnings')}
+              </h2>
             </div>
             <div className="flex items-end gap-3 h-48">
               {MOCK_MONTHLY_EARNINGS.map((m) => {
                 const heightPct = (m.amount / chartMax) * 100
                 return (
-                  <div
-                    key={m.month}
-                    className="flex-1 flex flex-col items-center gap-2"
-                  >
-                    <span className="text-xs text-muted-foreground font-medium">
-                      £{m.amount}
-                    </span>
+                  <div key={m.month} className="flex-1 flex flex-col items-center gap-2">
+                    <span className="text-xs text-muted-foreground font-medium">£{m.amount}</span>
                     <div className="w-full relative flex-1 flex items-end">
                       <div
                         className="w-full rounded-t-md bg-gradient-to-t from-primary/80 to-primary/40 transition-all duration-500"
@@ -760,9 +774,11 @@ export default function AffiliateDashboard({
               <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
                 <span className="flex items-center gap-1">
                   <Activity className="w-3.5 h-3.5" />
-                  Click-through trend
+                  {t('aff_comp.dash.chart.ctr_trend')}
                 </span>
-                <span>{totalClicks} total clicks</span>
+                <span>
+                  {totalClicks} {t('aff_comp.dash.chart.clicks_total_suffix')}
+                </span>
               </div>
               <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
                 <div
@@ -770,7 +786,7 @@ export default function AffiliateDashboard({
                   style={{
                     width: `${Math.min(
                       (totalClicks / Math.max(totalClicks * 1.5, 100)) * 100,
-                      100
+                      100,
                     )}%`,
                   }}
                 />
@@ -782,11 +798,13 @@ export default function AffiliateDashboard({
           <section className="lg:col-span-2 bg-card border border-border rounded-xl p-6">
             <div className="flex items-center gap-2 mb-6">
               <Activity className="w-5 h-5 text-primary" />
-              <h2 className="text-lg font-bold text-foreground">Recent Activity</h2>
+              <h2 className="text-lg font-bold text-foreground">
+                {t('aff_comp.dash.activity.heading')}
+              </h2>
             </div>
             {activityItems.length === 0 ? (
               <p className="text-muted-foreground text-sm py-8 text-center">
-                No activity yet. Share your link to get started!
+                {t('aff_comp.dash.activity.empty')}
               </p>
             ) : (
               <div className="space-y-1">
@@ -819,12 +837,10 @@ export default function AffiliateDashboard({
                     <div className="flex-1 min-w-0">
                       <p className="text-sm text-foreground truncate">
                         {item.type === 'signup'
-                          ? item.status === 'paid'
-                            ? 'Commission confirmed'
-                            : item.status === 'confirmed'
-                              ? 'Commission confirmed'
-                              : 'New signup via your link'
-                          : 'Payout processed'}
+                          ? item.status === 'paid' || item.status === 'confirmed'
+                            ? t('aff_comp.dash.activity.commission_confirmed')
+                            : t('aff_comp.dash.activity.new_signup')
+                          : t('aff_comp.dash.activity.payout_processed')}
                         {item.amount != null && (
                           <span className="font-semibold text-primary ml-1">
                             {formatGBP(item.amount)}
@@ -917,9 +933,7 @@ function ImpactCard({
       </div>
       <div className="flex items-baseline gap-1.5">
         <p className="text-2xl font-bold text-foreground">{value}</p>
-        {badge && (
-          <span className="text-xs text-muted-foreground font-medium">{badge}</span>
-        )}
+        {badge && <span className="text-xs text-muted-foreground font-medium">{badge}</span>}
       </div>
       <p className="text-sm font-medium text-foreground mt-1">{label}</p>
       <p className="text-xs text-muted-foreground">{sublabel}</p>
@@ -939,7 +953,15 @@ function XIcon({ className }: { className?: string }) {
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
       <circle cx="12" cy="12" r="5.5" />
       <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
@@ -957,15 +979,15 @@ function TikTokIcon({ className }: { className?: string }) {
 
 /* ── QR-like decorative pattern (11x11 grid) ── */
 const QR_PATTERN = [
-  [1,1,1,1,1,1,1,0,1,0,1],
-  [1,0,0,0,0,0,1,0,0,1,0],
-  [1,0,1,1,1,0,1,0,1,0,1],
-  [1,0,1,1,1,0,1,0,0,1,1],
-  [1,0,1,1,1,0,1,0,1,0,0],
-  [1,0,0,0,0,0,1,0,1,1,0],
-  [1,1,1,1,1,1,1,0,1,0,1],
-  [0,0,0,0,0,0,0,0,0,1,0],
-  [1,0,1,0,1,1,1,0,1,1,1],
-  [0,1,0,1,0,0,0,0,1,0,0],
-  [1,1,1,0,1,0,1,0,1,1,1],
+  [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+  [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0],
+  [1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1],
+  [1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1],
+  [1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0],
+  [1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0],
+  [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+  [1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1],
+  [0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0],
+  [1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1],
 ]

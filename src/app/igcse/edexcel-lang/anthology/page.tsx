@@ -21,6 +21,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology — The English Hub',
@@ -140,7 +141,7 @@ export default async function AnthologyHubPage() {
           render={<Link href="/igcse/edexcel-lang" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Language A
+          {await t('anth_page.back_to_lang_a')}
         </Button>
       </div>
 
@@ -153,20 +154,21 @@ export default async function AnthologyHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge className="bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-clay-600">
               <Sparkles className="mr-1 size-3" />
-              Paper 1 Section A
+              {await t('anth_page.badge_paper')}
             </Badge>
-            <Badge variant="secondary">10 texts</Badge>
+            <Badge variant="secondary">{await t('anth_page.badge_texts_count')}</Badge>
             <Badge variant="secondary">4EA1</Badge>
           </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display font-serif">
-            Paper 1 Section A &mdash; Anthology Non-Fiction
+            {await t('anth_page.hero_title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Ten prescribed non-fiction texts for Edexcel IGCSE English Language A Paper 1. Each text
-            has been analysed with <strong className="text-foreground">language features</strong>,{' '}
-            <strong className="text-foreground">structural analysis</strong>,{' '}
-            <strong className="text-foreground">key vocabulary</strong> and{' '}
-            <strong className="text-foreground">exam-style practice questions</strong>.
+            {await t('anth_page.hero_lead_pre')}{' '}
+            <strong className="text-foreground">{await t('anth_page.hero_lf')}</strong>,{' '}
+            <strong className="text-foreground">{await t('anth_page.hero_sa')}</strong>,{' '}
+            <strong className="text-foreground">{await t('anth_page.hero_vocab')}</strong>{' '}
+            {await t('anth_page.hero_lead_and')}{' '}
+            <strong className="text-foreground">{await t('anth_page.hero_practice')}</strong>.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Button
@@ -174,7 +176,7 @@ export default async function AnthologyHubPage() {
               render={<Link href="/igcse/edexcel-lang/anthology/the-danger-of-a-single-story" />}
             >
               <BookOpen className="size-4" />
-              Start studying
+              {await t('anth_page.cta_start_studying')}
               <ArrowRight className="size-4" />
             </Button>
           </div>
@@ -187,11 +189,8 @@ export default async function AnthologyHubPage() {
         className="rounded-xl border border-amber-500/40 bg-amber-500/[0.08] p-5 text-body-sm text-card-foreground"
       >
         <p className="mb-2">
-          <strong className="text-foreground">Anthology version warning:</strong> This site teaches
-          the <strong className="text-foreground">Edexcel IGCSE Anthology Issue 2</strong> (ISBN
-          978-1-446-93108-0, Pearson Education). Two of the non-fiction texts in this Paper 1
-          Section A anthology are <strong className="text-foreground">adapted</strong> versions that
-          differ from their freely-available online originals:
+          <strong className="text-foreground">{await t('anth_page.version_warning_label')}</strong>{' '}
+          {await t('anth_page.version_warning_body')}
         </p>
         <ol className="mb-2 list-decimal space-y-1 pl-5 text-muted-foreground">
           <li>
@@ -210,9 +209,8 @@ export default async function AnthologyHubPage() {
           </li>
         </ol>
         <p className="mb-2 text-foreground">
-          <strong>Always use the anthology version</strong> when answering Edexcel exam questions
-          &mdash; examiners will mark against the anthology text, not the <em>Guardian</em>{' '}
-          originals you may find on revision websites.
+          <strong>{await t('anth_page.use_anthology_emph')}</strong>{' '}
+          {await t('anth_page.use_anthology_body')}
         </p>
         <p className="mb-2 text-body-xs text-muted-foreground">
           Other in-anthology textual differences from online sources include: <em>Half-Caste</em>{' '}
@@ -231,58 +229,62 @@ export default async function AnthologyHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">All 10 Anthology Texts</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {await t('anth_page.texts_heading')}
+          </h2>
           <Badge variant="secondary" className="ml-auto">
-            10 texts
+            {await t('anth_page.badge_texts_count')}
           </Badge>
         </div>
         <p className="mb-6 max-w-3xl text-body-sm text-muted-foreground">
-          Each text page includes key extracts, language and structural analysis, writer&apos;s
-          purpose, vocabulary, exam practice and comparison links. Select a text to begin your
-          study.
+          {await t('anth_page.texts_intro')}
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {texts.map((t, i) => {
-            const Icon = t.icon
-            return (
-              <Card
-                key={t.slug}
-                className="group flex flex-col transition-all duration-200 hover:border-border hover:shadow-card-hover"
-              >
-                <CardHeader className="pb-3">
-                  <div className="mb-3 flex items-center gap-3">
-                    <div className="flex size-10 items-center justify-center rounded-lg bg-amber-500/10">
-                      <Icon className="size-5 text-amber-600 dark:text-clay-600" />
+          {await Promise.all(
+            texts.map(async (txt, i) => {
+              const Icon = txt.icon
+              return (
+                <Card
+                  key={txt.slug}
+                  className="group flex flex-col transition-all duration-200 hover:border-border hover:shadow-card-hover"
+                >
+                  <CardHeader className="pb-3">
+                    <div className="mb-3 flex items-center gap-3">
+                      <div className="flex size-10 items-center justify-center rounded-lg bg-amber-500/10">
+                        <Icon className="size-5 text-amber-600 dark:text-clay-600" />
+                      </div>
+                      <span className="font-mono text-body-xs text-muted-foreground">
+                        {await t('anth_page.text_index_prefix')} {i + 1}
+                      </span>
                     </div>
-                    <span className="font-mono text-body-xs text-muted-foreground">
-                      Text {i + 1}
-                    </span>
-                  </div>
-                  <CardTitle className="text-heading-sm font-heading leading-tight font-serif">
-                    {t.title}
-                  </CardTitle>
-                  <CardDescription className="pt-1">{t.author}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex flex-1 flex-col gap-3">
-                  <p className="text-body-xs text-muted-foreground uppercase tracking-wide">
-                    {t.type}
-                  </p>
-                  <p className="text-body-sm text-muted-foreground leading-relaxed">{t.theme}</p>
-                  <div className="mt-auto pt-2">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      render={<Link href={`/igcse/edexcel-lang/anthology/${t.slug}`} />}
-                    >
-                      Study this text
-                      <ArrowRight className="size-3.5" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            )
-          })}
+                    <CardTitle className="text-heading-sm font-heading leading-tight font-serif">
+                      {txt.title}
+                    </CardTitle>
+                    <CardDescription className="pt-1">{txt.author}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex flex-1 flex-col gap-3">
+                    <p className="text-body-xs text-muted-foreground uppercase tracking-wide">
+                      {txt.type}
+                    </p>
+                    <p className="text-body-sm text-muted-foreground leading-relaxed">
+                      {txt.theme}
+                    </p>
+                    <div className="mt-auto pt-2">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        render={<Link href={`/igcse/edexcel-lang/anthology/${txt.slug}`} />}
+                      >
+                        {await t('anth_page.study_this_text')}
+                        <ArrowRight className="size-3.5" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            }),
+          )}
         </div>
       </section>
 
@@ -291,40 +293,34 @@ export default async function AnthologyHubPage() {
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Paper 1 Section A — What to Expect
+            {await t('anth_page.expect_heading')}
           </h2>
         </div>
         <div className="space-y-4 text-body-sm text-foreground">
-          <p>
-            In Paper 1 Section A you will be given an extract from one of the ten anthology texts.
-            You will answer three types of question:
-          </p>
+          <p>{await t('anth_page.expect_intro')}</p>
           <ol className="list-decimal space-y-2 pl-5">
             <li>
-              <strong>Retrieval (Q1):</strong> &ldquo;List four things about...&rdquo; —
-              straightforward identification of information from the text. Worth 4 marks.
+              <strong>{await t('anth_page.expect_q1_label')}</strong>{' '}
+              {await t('anth_page.expect_q1_body')}
             </li>
             <li>
-              <strong>Language analysis (Q2):</strong> &ldquo;How does the writer use language
-              to...&rdquo; — close analysis of specific techniques and their effects on the reader.
-              Worth 12 marks.
+              <strong>{await t('anth_page.expect_q2_label')}</strong>{' '}
+              {await t('anth_page.expect_q2_body')}
             </li>
             <li>
-              <strong>Structural analysis (Q3):</strong> &ldquo;How does the writer structure the
-              text to...&rdquo; — analysis of how the text is organised to engage and influence the
-              reader. Worth 12 marks.
+              <strong>{await t('anth_page.expect_q3_label')}</strong>{' '}
+              {await t('anth_page.expect_q3_body')}
             </li>
           </ol>
           <p className="rounded-lg bg-muted p-4 text-body-sm text-muted-foreground">
-            You should study all ten texts. You will not know which text will appear in the exam
-            until you open the paper.
+            {await t('anth_page.study_all_note')}
           </p>
         </div>
       </section>
 
       {/* ── Footer ──────────────────────────────────────────────────── */}
       <footer className="pt-4 text-center text-body-xs text-muted-foreground">
-        Aligned with Pearson Edexcel specification 4EA1 &middot; Paper 1 Section A
+        {await t('anth_page.footer_align')}
       </footer>
     </div>
   )

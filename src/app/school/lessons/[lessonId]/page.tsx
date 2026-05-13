@@ -34,6 +34,7 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { PrintableWorksheet, type WorksheetSection } from '@/components/school/PrintableWorksheet'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -1201,6 +1202,7 @@ const LESSON_PRINT_STYLES = `
 // ── Main Component ───────────────────────────────────────────────────────────
 
 export default function LessonDetailPage() {
+  const t = useT()
   const params = useParams()
   const lessonId = params.lessonId as string
   const worksheetRef = useRef<HTMLDivElement>(null)
@@ -1306,7 +1308,7 @@ export default function LessonDetailPage() {
             data-print-hide
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Lesson Plans
+            {t('school.lessons.back')}
           </Link>
 
           {/* ── HEADER ─────────────────────────────────────────────── */}
@@ -1317,7 +1319,7 @@ export default function LessonDetailPage() {
                   {isRecommended && (
                     <Badge className="bg-amber-500/10 text-clay-600 border-amber-500/20 text-xs">
                       <Sparkles className="h-3 w-3 mr-1" />
-                      Suggested by Analytics
+                      {t('school.lessons.suggested_by_analytics')}
                     </Badge>
                   )}
                   <Badge variant="outline" className="text-xs">
@@ -1346,13 +1348,14 @@ export default function LessonDetailPage() {
                 </h1>
                 {lesson.text && (
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Text: <span className="font-medium text-foreground">{lesson.text}</span>
+                    {t('school.lessons.text_label')}:{' '}
+                    <span className="font-medium text-foreground">{lesson.text}</span>
                   </p>
                 )}
                 <div className="mt-2 flex items-center gap-4 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1">
                     <Clock className="h-4 w-4" />
-                    {lesson.duration} minutes
+                    {lesson.duration} {t('school.lessons.minutes')}
                   </span>
                 </div>
               </div>
@@ -1361,11 +1364,11 @@ export default function LessonDetailPage() {
               <div className="flex flex-col gap-2 shrink-0 no-print" data-print-hide>
                 <Button onClick={handlePrint} variant="outline" size="sm">
                   <Printer className="h-4 w-4" />
-                  Print Lesson Plan
+                  {t('school.lessons.print_plan')}
                 </Button>
                 <Button variant="default" size="sm">
                   <Users className="h-4 w-4" />
-                  Assign to Class
+                  {t('school.lessons.assign_to_class')}
                 </Button>
               </div>
             </div>
@@ -1391,7 +1394,7 @@ export default function LessonDetailPage() {
                 <CardHeader className="pb-3">
                   <CardTitle className="text-sm flex items-center gap-2">
                     <Target className="h-4 w-4 text-primary" />
-                    Learning Objectives
+                    {t('school.lessons.section.learning_objectives')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -1435,7 +1438,7 @@ export default function LessonDetailPage() {
                 <CardHeader className="pb-3">
                   <CardTitle className="text-sm flex items-center gap-2">
                     <CheckSquare className="h-4 w-4 text-green-400" />
-                    Success Criteria
+                    {t('school.lessons.section.success_criteria')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -1476,7 +1479,7 @@ export default function LessonDetailPage() {
               {/* ── Prior Knowledge ───────────────────────────────── */}
               <div className="print-section">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-                  Prior Knowledge Required
+                  {t('school.lessons.section.prior_knowledge')}
                 </h3>
                 <ul className="space-y-1">
                   {lesson.priorKnowledge.map((pk, i) => (
@@ -1493,7 +1496,7 @@ export default function LessonDetailPage() {
                 <CardHeader className="pb-3">
                   <CardTitle className="text-sm flex items-center gap-2">
                     <FileText className="h-4 w-4 text-blue-400" />
-                    Resources Needed
+                    {t('school.lessons.section.resources_needed')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -1515,14 +1518,14 @@ export default function LessonDetailPage() {
                 <div className="mb-4 flex items-center justify-between">
                   <h2 className="text-lg font-bold text-foreground flex items-center gap-2">
                     <Clock className="h-5 w-5 text-primary" />
-                    Lesson Structure
+                    {t('school.lessons.section.lesson_structure')}
                   </h2>
                   <div className="flex items-center gap-2 no-print" data-print-hide>
                     <Button variant="ghost" size="sm" onClick={expandAll}>
-                      Expand All
+                      {t('school.lessons.expand_all')}
                     </Button>
                     <Button variant="ghost" size="sm" onClick={collapseAll}>
-                      Collapse All
+                      {t('school.lessons.collapse_all')}
                     </Button>
                   </div>
                 </div>

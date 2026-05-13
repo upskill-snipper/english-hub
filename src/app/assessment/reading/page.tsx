@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import Link from "next/link"
+import { useState } from 'react'
+import Link from 'next/link'
 import {
   BookOpen,
   Brain,
@@ -20,16 +20,17 @@ import {
   Eye,
   Volume2,
   FileText,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
 import {
   type ReadingAssessmentResult,
   formatAgeScore,
   compareToChronologicalAge,
-} from "@/lib/reading-assessment"
+} from '@/lib/reading-assessment'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Age Gauge Component ─────────────────────────────────────────────────────
 
@@ -43,31 +44,32 @@ function AgeGauge({
   label: string
   age: { years: number; months: number }
   icon: React.ElementType
-  color: "emerald" | "blue" | "violet"
+  color: 'emerald' | 'blue' | 'violet'
   chronologicalAge?: { years: number; months: number }
 }) {
+  const t = useT()
   const comparison = chronologicalAge
     ? compareToChronologicalAge(age, chronologicalAge.years, chronologicalAge.months)
     : null
 
   const colorClasses = {
     emerald: {
-      bg: "from-teal-800/10 to-teal-800/5",
-      border: "border-teal-800/20",
-      text: "text-teal-800",
-      badge: "bg-teal-800/10 text-teal-800 border-teal-800/20",
+      bg: 'from-teal-800/10 to-teal-800/5',
+      border: 'border-teal-800/20',
+      text: 'text-teal-800',
+      badge: 'bg-teal-800/10 text-teal-800 border-teal-800/20',
     },
     blue: {
-      bg: "from-blue-500/10 to-blue-500/5",
-      border: "border-blue-500/20",
-      text: "text-blue-600",
-      badge: "bg-blue-500/10 text-blue-600 border-blue-500/20",
+      bg: 'from-blue-500/10 to-blue-500/5',
+      border: 'border-blue-500/20',
+      text: 'text-blue-600',
+      badge: 'bg-blue-500/10 text-blue-600 border-blue-500/20',
     },
     violet: {
-      bg: "from-clay-500/10 to-clay-500/5",
-      border: "border-clay-500/20",
-      text: "text-clay-500",
-      badge: "bg-clay-500/10 text-clay-500 border-clay-500/20",
+      bg: 'from-clay-500/10 to-clay-500/5',
+      border: 'border-clay-500/20',
+      text: 'text-clay-500',
+      badge: 'bg-clay-500/10 text-clay-500 border-clay-500/20',
     },
   }
 
@@ -75,9 +77,18 @@ function AgeGauge({
 
   const comparisonBadge = comparison
     ? {
-        above: { label: "Above expected", className: "bg-teal-800/10 text-teal-800 border-teal-800/20" },
-        at: { label: "At expected level", className: "bg-amber-500/10 text-amber-700 border-amber-500/20" },
-        below: { label: "Below expected", className: "bg-red-500/10 text-red-600 border-red-500/20" },
+        above: {
+          label: t('assessment.reading.comparison.above'),
+          className: 'bg-teal-800/10 text-teal-800 border-teal-800/20',
+        },
+        at: {
+          label: t('assessment.reading.comparison.at'),
+          className: 'bg-amber-500/10 text-amber-700 border-amber-500/20',
+        },
+        below: {
+          label: t('assessment.reading.comparison.below'),
+          className: 'bg-red-500/10 text-red-600 border-red-500/20',
+        },
       }[comparison]
     : null
 
@@ -89,9 +100,7 @@ function AgeGauge({
         </div>
         <h3 className="font-semibold text-ink-900">{label}</h3>
       </div>
-      <div className="text-3xl font-bold text-ink-900 mb-2">
-        {formatAgeScore(age)}
-      </div>
+      <div className="text-3xl font-bold text-ink-900 mb-2">{formatAgeScore(age)}</div>
       {comparisonBadge && (
         <Badge variant="outline" className={`text-xs ${comparisonBadge.className}`}>
           {comparisonBadge.label}
@@ -112,28 +121,31 @@ function ResultsDisplay({
   chronologicalAge: { years: number; months: number }
   onRetake: () => void
 }) {
+  const t = useT()
   return (
     <div className="space-y-8">
       {/* Age Gauges */}
       <div>
-        <h2 className="text-xl font-bold text-ink-900 mb-4">Your Reading Profile</h2>
+        <h2 className="text-xl font-bold text-ink-900 mb-4">
+          {t('assessment.reading.profile_heading')}
+        </h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <AgeGauge
-            label="Reading Age"
+            label={t('assessment.reading.label.reading_age')}
             age={result.readingAge}
             icon={BookOpen}
             color="emerald"
             chronologicalAge={chronologicalAge}
           />
           <AgeGauge
-            label="Decoding Age"
+            label={t('assessment.reading.label.decoding_age')}
             age={result.decodingAge}
             icon={Eye}
             color="blue"
             chronologicalAge={chronologicalAge}
           />
           <AgeGauge
-            label="Fluency Age"
+            label={t('assessment.reading.label.fluency_age')}
             age={result.fluencyAge}
             icon={Volume2}
             color="violet"
@@ -151,9 +163,9 @@ function ResultsDisplay({
                 <Target className="h-5 w-5 text-amber-600" />
               </div>
               <div>
-                <p className="text-sm text-ink-500">GCSE Equivalent</p>
+                <p className="text-sm text-ink-500">{t('assessment.reading.gcse_equivalent')}</p>
                 <p className="text-2xl font-bold text-ink-900">
-                  Grade {result.gcseEquivalent}
+                  {t('assessment.reading.grade_prefix')} {result.gcseEquivalent}
                 </p>
               </div>
             </div>
@@ -166,36 +178,32 @@ function ResultsDisplay({
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <BarChart3 className="h-5 w-5 text-ink-500" />
-            Score Breakdown
+            {t('assessment.reading.score_breakdown')}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-border p-4">
-              <p className="text-xs text-ink-500 mb-1">Comprehension</p>
+              <p className="text-xs text-ink-500 mb-1">{t('assessment.reading.comprehension')}</p>
               <p className="text-2xl font-bold text-ink-900">
                 {result.rawScores.comprehension.score}/{result.rawScores.comprehension.maxScore}
               </p>
-              <p className="text-sm text-ink-500">
-                {result.rawScores.comprehension.percentage}%
-              </p>
+              <p className="text-sm text-ink-500">{result.rawScores.comprehension.percentage}%</p>
             </div>
             <div className="rounded-xl border border-border p-4">
-              <p className="text-xs text-ink-500 mb-1">Decoding</p>
+              <p className="text-xs text-ink-500 mb-1">{t('assessment.reading.decoding')}</p>
               <p className="text-2xl font-bold text-ink-900">
                 {result.rawScores.decoding.score}/{result.rawScores.decoding.maxScore}
               </p>
-              <p className="text-sm text-ink-500">
-                {result.rawScores.decoding.percentage}%
-              </p>
+              <p className="text-sm text-ink-500">{result.rawScores.decoding.percentage}%</p>
             </div>
             <div className="rounded-xl border border-border p-4">
-              <p className="text-xs text-ink-500 mb-1">Fluency</p>
+              <p className="text-xs text-ink-500 mb-1">{t('assessment.reading.fluency')}</p>
               <p className="text-2xl font-bold text-ink-900">
-                {result.rawScores.fluency.adjustedWpm} WPM
+                {result.rawScores.fluency.adjustedWpm} {t('assessment.reading.wpm_short')}
               </p>
               <p className="text-sm text-ink-500">
-                {result.rawScores.fluency.accuracy}% accuracy
+                {result.rawScores.fluency.accuracy}% {t('assessment.reading.accuracy_label')}
               </p>
             </div>
           </div>
@@ -207,7 +215,7 @@ function ResultsDisplay({
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-teal-800" />
-            Strengths
+            {t('assessment.reading.strengths')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -227,7 +235,7 @@ function ResultsDisplay({
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Target className="h-5 w-5 text-amber-600" />
-            Areas for Development
+            {t('assessment.reading.areas_for_development')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -245,33 +253,39 @@ function ResultsDisplay({
       {/* Recommended Next Steps */}
       <Card>
         <CardHeader>
-          <CardTitle>Recommended Next Steps</CardTitle>
+          <CardTitle>{t('assessment.reading.recommended_next_steps')}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="flex items-start gap-3 rounded-xl border border-border p-4">
             <BookOpen className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
             <div>
-              <p className="text-sm font-medium text-ink-900">Read widely</p>
+              <p className="text-sm font-medium text-ink-900">
+                {t('assessment.reading.next_step.read_widely')}
+              </p>
               <p className="text-xs text-ink-500">
-                Aim for 15-20 minutes of reading daily across fiction and non-fiction at your reading level.
+                {t('assessment.reading.next_step.read_widely_body')}
               </p>
             </div>
           </div>
           <div className="flex items-start gap-3 rounded-xl border border-border p-4">
             <FileText className="h-5 w-5 text-clay-500 mt-0.5 shrink-0" />
             <div>
-              <p className="text-sm font-medium text-ink-900">Practise comprehension</p>
+              <p className="text-sm font-medium text-ink-900">
+                {t('assessment.reading.next_step.practise_comprehension')}
+              </p>
               <p className="text-xs text-ink-500">
-                Work through reading comprehension exercises, focusing on inference and evaluation questions.
+                {t('assessment.reading.next_step.practise_comprehension_body')}
               </p>
             </div>
           </div>
           <div className="flex items-start gap-3 rounded-xl border border-border p-4">
             <Brain className="h-5 w-5 text-teal-800 mt-0.5 shrink-0" />
             <div>
-              <p className="text-sm font-medium text-ink-900">Build vocabulary</p>
+              <p className="text-sm font-medium text-ink-900">
+                {t('assessment.reading.next_step.build_vocab')}
+              </p>
               <p className="text-xs text-ink-500">
-                Learn new words in context. Keep a vocabulary journal and review unfamiliar words regularly.
+                {t('assessment.reading.next_step.build_vocab_body')}
               </p>
             </div>
           </div>
@@ -282,48 +296,50 @@ function ResultsDisplay({
       <div className="flex flex-wrap gap-3">
         <Button onClick={onRetake} variant="outline">
           <RotateCcw className="h-4 w-4 mr-2" />
-          Retake Assessment
+          {t('assessment.reading.retake')}
         </Button>
         <Button
           variant="outline"
           onClick={() => {
             // Simple text-based "download" of results
             const text = [
-              "Reading Assessment Results",
-              "========================",
-              "",
-              `Reading Age: ${formatAgeScore(result.readingAge)}`,
-              `Decoding Age: ${formatAgeScore(result.decodingAge)}`,
-              `Fluency Age: ${formatAgeScore(result.fluencyAge)}`,
-              "",
-              `Comprehension: ${result.rawScores.comprehension.score}/${result.rawScores.comprehension.maxScore} (${result.rawScores.comprehension.percentage}%)`,
-              `Decoding: ${result.rawScores.decoding.score}/${result.rawScores.decoding.maxScore} (${result.rawScores.decoding.percentage}%)`,
-              `Fluency: ${result.rawScores.fluency.adjustedWpm} adjusted WPM (${result.rawScores.fluency.accuracy}% accuracy)`,
-              result.gcseEquivalent ? `GCSE Equivalent: Grade ${result.gcseEquivalent}` : "",
-              "",
-              "Strengths:",
+              t('assessment.reading.download.title'),
+              '========================',
+              '',
+              `${t('assessment.reading.label.reading_age')}: ${formatAgeScore(result.readingAge)}`,
+              `${t('assessment.reading.label.decoding_age')}: ${formatAgeScore(result.decodingAge)}`,
+              `${t('assessment.reading.label.fluency_age')}: ${formatAgeScore(result.fluencyAge)}`,
+              '',
+              `${t('assessment.reading.comprehension')}: ${result.rawScores.comprehension.score}/${result.rawScores.comprehension.maxScore} (${result.rawScores.comprehension.percentage}%)`,
+              `${t('assessment.reading.decoding')}: ${result.rawScores.decoding.score}/${result.rawScores.decoding.maxScore} (${result.rawScores.decoding.percentage}%)`,
+              `${t('assessment.reading.fluency')}: ${result.rawScores.fluency.adjustedWpm} ${t('assessment.reading.wpm_short')} (${result.rawScores.fluency.accuracy}% ${t('assessment.reading.accuracy_label')})`,
+              result.gcseEquivalent
+                ? `${t('assessment.reading.gcse_equivalent')}: ${t('assessment.reading.grade_prefix')} ${result.gcseEquivalent}`
+                : '',
+              '',
+              t('assessment.reading.download.strengths_label'),
               ...result.strengths.map((s) => `  - ${s}`),
-              "",
-              "Areas for Development:",
+              '',
+              t('assessment.reading.download.areas_label'),
               ...result.areasForDevelopment.map((a) => `  - ${a}`),
-              "",
-              "Note: This is a screening tool, not a diagnostic assessment.",
-              `Date: ${new Date().toLocaleDateString("en-GB")}`,
+              '',
+              t('assessment.reading.download.note'),
+              `${t('assessment.reading.download.date_label')}: ${new Date().toLocaleDateString('en-GB')}`,
             ]
               .filter(Boolean)
-              .join("\n")
+              .join('\n')
 
-            const blob = new Blob([text], { type: "text/plain" })
+            const blob = new Blob([text], { type: 'text/plain' })
             const url = URL.createObjectURL(blob)
-            const a = document.createElement("a")
+            const a = document.createElement('a')
             a.href = url
-            a.download = `reading-assessment-${new Date().toISOString().split("T")[0]}.txt`
+            a.download = `reading-assessment-${new Date().toISOString().split('T')[0]}.txt`
             a.click()
             URL.revokeObjectURL(url)
           }}
         >
           <Download className="h-4 w-4 mr-2" />
-          Download Results
+          {t('assessment.reading.download_results')}
         </Button>
       </div>
     </div>
@@ -333,6 +349,7 @@ function ResultsDisplay({
 // ─── Methodology Section ─────────────────────────────────────────────────────
 
 function MethodologySection() {
+  const t = useT()
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -344,7 +361,7 @@ function MethodologySection() {
         >
           <CardTitle className="flex items-center gap-2">
             <Info className="h-5 w-5 text-ink-500" />
-            Methodology
+            {t('assessment.reading.methodology.title')}
           </CardTitle>
           {expanded ? (
             <ChevronUp className="h-5 w-5 text-ink-500" />
@@ -357,63 +374,45 @@ function MethodologySection() {
         <CardContent className="space-y-4">
           <div className="space-y-3 text-sm text-ink-600">
             <div>
-              <h4 className="font-medium text-ink-900 mb-1">How the test works</h4>
-              <p>
-                This assessment uses graded passages of increasing difficulty (Year 3 to Year 13 level)
-                to measure reading ability across three dimensions: comprehension, decoding, and fluency.
-              </p>
+              <h4 className="font-medium text-ink-900 mb-1">
+                {t('assessment.reading.methodology.how_it_works')}
+              </h4>
+              <p>{t('assessment.reading.methodology.how_it_works_body')}</p>
             </div>
 
             <Separator />
 
             <div>
-              <h4 className="font-medium text-ink-900 mb-1">Comprehension</h4>
-              <p>
-                Measured through a combination of literal (retrieval), inferential (reading between
-                the lines), and evaluative (analysis and judgment) questions on each passage.
-                Both multiple-choice and short-answer formats are used.
-              </p>
+              <h4 className="font-medium text-ink-900 mb-1">
+                {t('assessment.reading.comprehension')}
+              </h4>
+              <p>{t('assessment.reading.methodology.comprehension_body')}</p>
             </div>
 
             <div>
-              <h4 className="font-medium text-ink-900 mb-1">Decoding</h4>
-              <p>
-                Measured through word recognition accuracy, including both real words and
-                pseudo-words (nonsense words that follow English phonetic patterns, similar to the
-                Year 1 phonics screening check). This isolates decoding ability from vocabulary knowledge.
-              </p>
+              <h4 className="font-medium text-ink-900 mb-1">{t('assessment.reading.decoding')}</h4>
+              <p>{t('assessment.reading.methodology.decoding_body')}</p>
             </div>
 
             <div>
-              <h4 className="font-medium text-ink-900 mb-1">Fluency</h4>
-              <p>
-                Measured through words-per-minute reading speed, adjusted for accuracy.
-                The adjusted WPM (words read correctly per minute) is compared against
-                age-related norms.
-              </p>
+              <h4 className="font-medium text-ink-900 mb-1">{t('assessment.reading.fluency')}</h4>
+              <p>{t('assessment.reading.methodology.fluency_body')}</p>
             </div>
 
             <Separator />
 
             <div>
-              <h4 className="font-medium text-ink-900 mb-1">Standardisation</h4>
-              <p>
-                Results are standardised against UK national curriculum reading expectations.
-                The reading age is calculated as a weighted composite: comprehension (50%),
-                decoding (25%), and fluency (25%). This weighting reflects the primacy of
-                comprehension in reading ability while acknowledging the foundational
-                importance of decoding and fluency.
-              </p>
+              <h4 className="font-medium text-ink-900 mb-1">
+                {t('assessment.reading.methodology.standardisation')}
+              </h4>
+              <p>{t('assessment.reading.methodology.standardisation_body')}</p>
             </div>
 
             <div>
-              <h4 className="font-medium text-ink-900 mb-1">Methodology basis</h4>
-              <p>
-                The assessment draws on methodology from established standardised reading tests
-                including the NFER Group Reading Test, the Salford Sentence Reading Test,
-                the Suffolk Reading Scale, and the York Assessment of Reading for Comprehension (YARC).
-                Grade boundaries are mapped to chronological reading age norms used in these assessments.
-              </p>
+              <h4 className="font-medium text-ink-900 mb-1">
+                {t('assessment.reading.methodology.basis')}
+              </h4>
+              <p>{t('assessment.reading.methodology.basis_body')}</p>
             </div>
 
             <Separator />
@@ -421,14 +420,11 @@ function MethodologySection() {
             <div className="flex items-start gap-2 rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
               <AlertTriangle className="h-5 w-5 text-amber-700 mt-0.5 shrink-0" />
               <div>
-                <h4 className="font-medium text-amber-700 mb-1">Limitations</h4>
+                <h4 className="font-medium text-amber-700 mb-1">
+                  {t('assessment.reading.methodology.limitations')}
+                </h4>
                 <p className="text-ink-600">
-                  This is a screening tool, not a diagnostic assessment. It provides an
-                  indicative reading age that can help identify strengths and areas for
-                  development. For a formal diagnosis of reading difficulties such as dyslexia,
-                  a qualified educational psychologist or specialist teacher assessment is required.
-                  Results should be interpreted alongside teacher judgment and other evidence of
-                  reading ability.
+                  {t('assessment.reading.methodology.limitations_body')}
                 </p>
               </div>
             </div>
@@ -442,21 +438,22 @@ function MethodologySection() {
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
 export default function ReadingAssessmentPage() {
+  const t = useT()
   const [result, setResult] = useState<ReadingAssessmentResult | null>(null)
   const [chronologicalAge, setChronologicalAge] = useState({ years: 14, months: 0 })
 
   // Check if results were stored from the test page
   // Using useEffect to check sessionStorage on mount
   const [loaded, setLoaded] = useState(false)
-  if (!loaded && typeof window !== "undefined") {
+  if (!loaded && typeof window !== 'undefined') {
     try {
-      const stored = sessionStorage.getItem("reading-assessment-result")
-      const storedAge = sessionStorage.getItem("reading-assessment-age")
+      const stored = sessionStorage.getItem('reading-assessment-result')
+      const storedAge = sessionStorage.getItem('reading-assessment-age')
       if (stored) {
         setResult(JSON.parse(stored))
         if (storedAge) setChronologicalAge(JSON.parse(storedAge))
-        sessionStorage.removeItem("reading-assessment-result")
-        sessionStorage.removeItem("reading-assessment-age")
+        sessionStorage.removeItem('reading-assessment-result')
+        sessionStorage.removeItem('reading-assessment-age')
       }
     } catch {
       // ignore
@@ -470,10 +467,10 @@ export default function ReadingAssessmentPage() {
       <div className="mb-8">
         <div className="flex items-center gap-2 text-sm text-ink-500 mb-4">
           <Link href="/dashboard" className="hover:text-ink-600 transition-colors">
-            Dashboard
+            {t('assessment.reading.breadcrumb.dashboard')}
           </Link>
           <span>/</span>
-          <span className="text-ink-600">Reading Assessment</span>
+          <span className="text-ink-600">{t('assessment.reading.breadcrumb.this_page')}</span>
         </div>
 
         <div className="flex items-center gap-4 mb-4">
@@ -482,11 +479,9 @@ export default function ReadingAssessmentPage() {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-ink-900 sm:text-3xl">
-              Reading Comprehension Assessment
+              {t('assessment.reading.page_title')}
             </h1>
-            <p className="text-sm text-ink-500 mt-1">
-              Measure your reading age, decoding skills, and fluency
-            </p>
+            <p className="text-sm text-ink-500 mt-1">{t('assessment.reading.page_subtitle')}</p>
           </div>
         </div>
       </div>
@@ -502,41 +497,42 @@ export default function ReadingAssessmentPage() {
           {/* What this test measures */}
           <Card>
             <CardHeader>
-              <CardTitle>What this test measures</CardTitle>
-              <CardDescription>
-                A comprehensive assessment of reading ability across three dimensions
-              </CardDescription>
+              <CardTitle>{t('assessment.reading.landing.what_title')}</CardTitle>
+              <CardDescription>{t('assessment.reading.landing.what_subtitle')}</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="rounded-xl border border-teal-800/15 bg-gradient-to-br from-teal-800/5 to-teal-800/[0.02] p-4">
                   <div className="flex items-center gap-2 mb-2">
                     <BookOpen className="h-5 w-5 text-teal-800" />
-                    <h3 className="font-semibold text-ink-900 text-sm">Reading Age</h3>
+                    <h3 className="font-semibold text-ink-900 text-sm">
+                      {t('assessment.reading.label.reading_age')}
+                    </h3>
                   </div>
                   <p className="text-xs text-ink-500">
-                    Your overall reading comprehension level, expressed as an age equivalent.
-                    Measures understanding of both fiction and non-fiction texts.
+                    {t('assessment.reading.landing.reading_age_body')}
                   </p>
                 </div>
                 <div className="rounded-xl border border-blue-500/15 bg-gradient-to-br from-blue-500/5 to-blue-500/[0.02] p-4">
                   <div className="flex items-center gap-2 mb-2">
                     <Eye className="h-5 w-5 text-blue-600" />
-                    <h3 className="font-semibold text-ink-900 text-sm">Decoding Age</h3>
+                    <h3 className="font-semibold text-ink-900 text-sm">
+                      {t('assessment.reading.label.decoding_age')}
+                    </h3>
                   </div>
                   <p className="text-xs text-ink-500">
-                    Your ability to recognise and decode words accurately, including
-                    real words and pseudo-words that test phonics knowledge.
+                    {t('assessment.reading.landing.decoding_age_body')}
                   </p>
                 </div>
                 <div className="rounded-xl border border-clay-500/15 bg-gradient-to-br from-clay-500/5 to-clay-500/[0.02] p-4">
                   <div className="flex items-center gap-2 mb-2">
                     <Timer className="h-5 w-5 text-clay-500" />
-                    <h3 className="font-semibold text-ink-900 text-sm">Fluency Age</h3>
+                    <h3 className="font-semibold text-ink-900 text-sm">
+                      {t('assessment.reading.label.fluency_age')}
+                    </h3>
                   </div>
                   <p className="text-xs text-ink-500">
-                    Your reading speed combined with accuracy. Fluent readers read
-                    smoothly and quickly while maintaining comprehension.
+                    {t('assessment.reading.landing.fluency_age_body')}
                   </p>
                 </div>
               </div>
@@ -546,39 +542,39 @@ export default function ReadingAssessmentPage() {
           {/* How it works */}
           <Card>
             <CardHeader>
-              <CardTitle>How it works</CardTitle>
+              <CardTitle>{t('assessment.reading.landing.how_title')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 {[
                   {
                     step: 1,
-                    title: "Enter your age",
-                    description: "So we can compare your reading level to age-related expectations.",
+                    title: t('assessment.reading.landing.step1_title'),
+                    description: t('assessment.reading.landing.step1_body'),
                     icon: Target,
                   },
                   {
                     step: 2,
-                    title: "Read graded passages",
-                    description: "Starting from simpler texts and progressing to more challenging ones. Your reading is timed.",
+                    title: t('assessment.reading.landing.step2_title'),
+                    description: t('assessment.reading.landing.step2_body'),
                     icon: BookOpen,
                   },
                   {
                     step: 3,
-                    title: "Answer comprehension questions",
-                    description: "A mix of multiple-choice and short-answer questions test your understanding at each level.",
+                    title: t('assessment.reading.landing.step3_title'),
+                    description: t('assessment.reading.landing.step3_body'),
                     icon: Brain,
                   },
                   {
                     step: 4,
-                    title: "Complete word recognition exercises",
-                    description: "Identify real words and pseudo-words to assess your decoding skills.",
+                    title: t('assessment.reading.landing.step4_title'),
+                    description: t('assessment.reading.landing.step4_body'),
                     icon: Eye,
                   },
                   {
                     step: 5,
-                    title: "Get your results",
-                    description: "Receive your reading age, decoding age, and fluency age with detailed feedback.",
+                    title: t('assessment.reading.landing.step5_title'),
+                    description: t('assessment.reading.landing.step5_body'),
                     icon: BarChart3,
                   },
                 ].map((item) => (
@@ -600,15 +596,15 @@ export default function ReadingAssessmentPage() {
           <div className="flex flex-wrap gap-4">
             <div className="flex items-center gap-2 text-sm text-ink-500">
               <Timer className="h-4 w-4" />
-              <span>Approximately 20-30 minutes</span>
+              <span>{t('assessment.reading.landing.duration')}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-ink-500">
               <FileText className="h-4 w-4" />
-              <span>10 passages, 40 questions</span>
+              <span>{t('assessment.reading.landing.scope')}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-ink-500">
               <Target className="h-4 w-4" />
-              <span>Year 3 to Year 13 levels</span>
+              <span>{t('assessment.reading.landing.levels')}</span>
             </div>
           </div>
 
@@ -618,7 +614,7 @@ export default function ReadingAssessmentPage() {
             className="w-full sm:w-auto"
             render={<Link href="/assessment/reading/test" />}
           >
-            Start Assessment
+            {t('assessment.reading.landing.start_cta')}
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
 
