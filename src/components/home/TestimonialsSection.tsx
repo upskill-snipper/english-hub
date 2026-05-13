@@ -2,69 +2,63 @@
 
 import { Card } from '@/components/ui/card'
 import { Quote, Star } from 'lucide-react'
-
-const testimonials = [
-  {
-    quote: 'I went from a Grade 4 to a 7 in six months. The structured courses and model answers made everything click.',
-    name: 'Sophie T.',
-    role: 'Year 11 — AQA',
-  },
-  {
-    quote: "My daughter's confidence has completely changed. She actually wants to revise now and her mock results have gone up two grades.",
-    name: 'Mark H.',
-    role: 'Parent',
-  },
-  {
-    quote: 'The AI essay feedback is like having a tutor available 24/7. It spotted weaknesses my teacher missed.',
-    name: 'James R.',
-    role: 'Year 11 — Edexcel',
-  },
-  {
-    quote: 'As a Head of English, the analytics dashboard alone saves me hours each week. We can track every student across all year groups.',
-    name: 'Mrs Patterson',
-    role: 'Head of English',
-  },
-  {
-    quote: 'The mock exams with grade boundaries are exactly like the real thing. I felt so prepared walking into my actual exam.',
-    name: 'Priya K.',
-    role: 'Year 11 — OCR',
-  },
-  {
-    quote: 'Finally an English resource that covers all the boards properly. The lesson builder has halved my planning time.',
-    name: 'Mr Davies',
-    role: 'English Teacher',
-  },
-]
+import { useT } from '@/lib/i18n/use-t'
 
 export default function TestimonialsSection() {
+  const t = useT()
+
+  const testimonials = [
+    {
+      quote: t('home.testimonials.sophie.quote'),
+      name: t('home.testimonials.sophie.name'),
+      role: t('home.testimonials.sophie.role'),
+    },
+    {
+      quote: t('home.testimonials.mark.quote'),
+      name: t('home.testimonials.mark.name'),
+      role: t('home.testimonials.mark.role'),
+    },
+    {
+      quote: t('home.testimonials.james.quote'),
+      name: t('home.testimonials.james.name'),
+      role: t('home.testimonials.james.role'),
+    },
+    {
+      quote: t('home.testimonials.patterson.quote'),
+      name: t('home.testimonials.patterson.name'),
+      role: t('home.testimonials.patterson.role'),
+    },
+    {
+      quote: t('home.testimonials.priya.quote'),
+      name: t('home.testimonials.priya.name'),
+      role: t('home.testimonials.priya.role'),
+    },
+    {
+      quote: t('home.testimonials.davies.quote'),
+      name: t('home.testimonials.davies.name'),
+      role: t('home.testimonials.davies.role'),
+    },
+  ]
+
   return (
     <section className="py-24 sm:py-32">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-foreground">
-            What Our Students Say
-          </h2>
+          <h2 className="text-foreground">{t('home.testimonials.h2')}</h2>
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
-          {testimonials.map((t) => (
-            <Card key={t.name} className="p-8 flex flex-col border-border/40">
+          {testimonials.map((tm) => (
+            <Card key={tm.name} className="p-8 flex flex-col border-border/40">
               <Quote className="w-7 h-7 text-primary/25 mb-4" />
-              <p className="text-foreground leading-relaxed flex-1">
-                &ldquo;{t.quote}&rdquo;
-              </p>
+              <p className="text-foreground leading-relaxed flex-1">&ldquo;{tm.quote}&rdquo;</p>
               <div className="flex items-center gap-1.5 mt-6 mb-1">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 text-clay-600 fill-amber-400"
-                  />
+                  <Star key={i} className="w-4 h-4 text-clay-600 fill-amber-400" />
                 ))}
               </div>
-              <p className="text-sm font-bold tracking-tight text-foreground">
-                {t.name}
-              </p>
-              <p className="text-xs text-muted-foreground">{t.role}</p>
+              <p className="text-sm font-bold tracking-tight text-foreground">{tm.name}</p>
+              <p className="text-xs text-muted-foreground">{tm.role}</p>
             </Card>
           ))}
         </div>

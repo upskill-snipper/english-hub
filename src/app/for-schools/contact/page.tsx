@@ -24,32 +24,52 @@ import { useT } from '@/lib/i18n/use-t'
 
 // ---------------------------------------------------------------------------
 // Constants
+//
+// Each option keeps a stable value (used by the API contract at
+// /api/school/contact) and a translation key for the display label, so the
+// AR locale never changes the payload sent to the server.
 // ---------------------------------------------------------------------------
 
 const ROLES = [
-  'Head of Department',
-  'Head of English',
-  'Deputy Head',
-  'Headteacher',
-  'MAT Lead',
-  'Other',
-]
+  { value: 'Head of Department', key: 'for_schools_contact.role.head_of_department' },
+  { value: 'Head of English', key: 'for_schools_contact.role.head_of_english' },
+  { value: 'Deputy Head', key: 'for_schools_contact.role.deputy_head' },
+  { value: 'Headteacher', key: 'for_schools_contact.role.headteacher' },
+  { value: 'MAT Lead', key: 'for_schools_contact.role.mat_lead' },
+  { value: 'Other', key: 'for_schools_contact.role.other' },
+] as const
 
-const STUDENT_COUNTS = ['Under 100', '100-300', '300-500', '500-1000', '1000+']
+const STUDENT_COUNTS = [
+  { value: 'Under 100', key: 'for_schools_contact.student_count.under_100' },
+  { value: '100-300', key: 'for_schools_contact.student_count.100_300' },
+  { value: '300-500', key: 'for_schools_contact.student_count.300_500' },
+  { value: '500-1000', key: 'for_schools_contact.student_count.500_1000' },
+  { value: '1000+', key: 'for_schools_contact.student_count.1000_plus' },
+] as const
 
-const EXAM_BOARDS = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'IGCSE/CAIE']
+const EXAM_BOARDS = [
+  { value: 'AQA', key: 'exam_board.aqa' },
+  { value: 'Edexcel', key: 'exam_board.edexcel' },
+  { value: 'OCR', key: 'exam_board.ocr' },
+  { value: 'WJEC', key: 'exam_board.wjec' },
+  { value: 'IGCSE/CAIE', key: 'exam_board.igcse_caie' },
+] as const
 
 const COUNTRY_CODES = [
-  { code: '+44', label: 'UK (+44)' },
-  { code: '+1', label: 'US/CA (+1)' },
-  { code: '+971', label: 'UAE (+971)' },
-  { code: '+974', label: 'Qatar (+974)' },
-  { code: '+65', label: 'Singapore (+65)' },
-  { code: '+852', label: 'HK (+852)' },
-  { code: '+61', label: 'Australia (+61)' },
-]
+  { code: '+44', key: 'country_code.uk' },
+  { code: '+1', key: 'country_code.us_ca' },
+  { code: '+971', key: 'country_code.uae' },
+  { code: '+974', key: 'country_code.qatar' },
+  { code: '+65', key: 'country_code.singapore' },
+  { code: '+852', key: 'country_code.hk' },
+  { code: '+61', key: 'country_code.australia' },
+] as const
 
-const PREFERRED_CONTACT_OPTIONS = ['Email', 'Phone', 'Either'] as const
+const PREFERRED_CONTACT_OPTIONS = [
+  { value: 'Email', key: 'for_schools_contact.preferred.email' },
+  { value: 'Phone', key: 'for_schools_contact.preferred.phone' },
+  { value: 'Either', key: 'for_schools_contact.preferred.either' },
+] as const
 
 // ---------------------------------------------------------------------------
 // NativeSelect (matches register page style)
@@ -61,12 +81,14 @@ function NativeSelect({
   onChange,
   options,
   placeholder,
+  t,
 }: {
   id: string
   value: string
   onChange: (v: string) => void
-  options: string[]
+  options: ReadonlyArray<{ value: string; key: string }>
   placeholder?: string
+  t: (key: string) => string
 }) {
   return (
     <select
@@ -81,8 +103,8 @@ function NativeSelect({
         </option>
       )}
       {options.map((opt) => (
-        <option key={opt} value={opt}>
-          {opt}
+        <option key={opt.value} value={opt.value}>
+          {t(opt.key)}
         </option>
       ))}
     </select>
@@ -255,7 +277,7 @@ function FoundingSchoolsPanel() {
 // Success screen
 // ---------------------------------------------------------------------------
 
-function SuccessScreen() {
+function SuccessScreen({ t }: { t: (key: string) => string }) {
   return (
     <div className="flex flex-col items-center gap-6 py-12 text-center">
       <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-emerald-500 bg-emerald-500/10">
@@ -263,16 +285,13 @@ function SuccessScreen() {
       </div>
       <div className="space-y-2 max-w-md">
         <h2 className="text-2xl font-bold text-foreground">
-          Thanks! We&apos;ll be in touch within 24 hours.
+          {t('for_schools_contact.success.title')}
         </h2>
-        <p className="text-muted-foreground">
-          One of our schools team will reach out to schedule your 20-minute call. Check your inbox
-          (and spam folder) for a confirmation.
-        </p>
+        <p className="text-muted-foreground">{t('for_schools_contact.success.body')}</p>
       </div>
       <Button render={<Link href="/for-schools" />} variant="outline">
         <ChevronLeft className="h-4 w-4" />
-        Back to Schools
+        {t('for_schools_contact.back_to_schools')}
       </Button>
     </div>
   )
@@ -300,16 +319,19 @@ export default function BookACallPage() {
 
   function validate(): boolean {
     const errs: Partial<Record<keyof ContactForm, string>> = {}
-    if (!form.schoolName.trim()) errs.schoolName = 'School name is required.'
-    if (!form.contactName.trim()) errs.contactName = 'Your name is required.'
+    if (!form.schoolName.trim())
+      errs.schoolName = t('for_schools_contact.error.school_name_required')
+    if (!form.contactName.trim())
+      errs.contactName = t('for_schools_contact.error.contact_name_required')
     if (!form.email.trim()) {
-      errs.email = 'Email is required.'
+      errs.email = t('for_schools_contact.error.email_required')
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      errs.email = 'Please enter a valid email address.'
+      errs.email = t('for_schools_contact.error.email_invalid')
     }
-    if (!form.role) errs.role = 'Please select your role.'
-    if (!form.studentCount) errs.studentCount = 'Please select student count.'
-    if (!form.examBoard) errs.examBoard = 'Please select your exam board.'
+    if (!form.role) errs.role = t('for_schools_contact.error.role_required')
+    if (!form.studentCount)
+      errs.studentCount = t('for_schools_contact.error.student_count_required')
+    if (!form.examBoard) errs.examBoard = t('for_schools_contact.error.exam_board_required')
     setErrors(errs)
     return Object.keys(errs).length === 0
   }
@@ -335,10 +357,10 @@ export default function BookACallPage() {
       if (res.ok) {
         setSuccess(true)
       } else {
-        setSubmitError(json.error ?? 'Something went wrong. Please try again.')
+        setSubmitError(json.error ?? t('for_schools_contact.error.generic'))
       }
     } catch {
-      setSubmitError('Could not send your request. Please check your connection and try again.')
+      setSubmitError(t('for_schools_contact.error.network'))
     } finally {
       setSubmitting(false)
     }
@@ -352,7 +374,7 @@ export default function BookACallPage() {
     return (
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="mx-auto max-w-2xl">
-          <SuccessScreen />
+          <SuccessScreen t={t} />
         </div>
       </main>
     )
@@ -368,7 +390,7 @@ export default function BookACallPage() {
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors"
           >
             <ChevronLeft className="h-4 w-4" />
-            Back to Schools
+            {t('for_schools_contact.back_to_schools')}
           </Link>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {t('for_schools_contact.h1')}
@@ -386,10 +408,13 @@ export default function BookACallPage() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* School name */}
                 <div className="space-y-1.5">
-                  <Label htmlFor="schoolName">School Name *</Label>
+                  <Label htmlFor="schoolName">
+                    {t('for_schools_contact.field.school_name')}{' '}
+                    <span className="text-destructive">*</span>
+                  </Label>
                   <Input
                     id="schoolName"
-                    placeholder="e.g. Oakfield Academy"
+                    placeholder={t('for_schools_contact.placeholder.school_name')}
                     value={form.schoolName}
                     onChange={(e) => patch({ schoolName: e.target.value })}
                   />
@@ -398,10 +423,13 @@ export default function BookACallPage() {
 
                 {/* Contact name */}
                 <div className="space-y-1.5">
-                  <Label htmlFor="contactName">Your Name *</Label>
+                  <Label htmlFor="contactName">
+                    {t('for_schools_contact.field.contact_name')}{' '}
+                    <span className="text-destructive">*</span>
+                  </Label>
                   <Input
                     id="contactName"
-                    placeholder="e.g. Jane Smith"
+                    placeholder={t('for_schools_contact.placeholder.contact_name')}
                     value={form.contactName}
                     onChange={(e) => patch({ contactName: e.target.value })}
                   />
@@ -410,11 +438,14 @@ export default function BookACallPage() {
 
                 {/* Email */}
                 <div className="space-y-1.5">
-                  <Label htmlFor="email">Email *</Label>
+                  <Label htmlFor="email">
+                    {t('for_schools_contact.field.email')}{' '}
+                    <span className="text-destructive">*</span>
+                  </Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="jane.smith@school.ac.uk"
+                    placeholder={t('for_schools_contact.placeholder.email')}
                     value={form.email}
                     onChange={(e) => patch({ email: e.target.value })}
                   />
@@ -423,7 +454,7 @@ export default function BookACallPage() {
 
                 {/* Phone with country code */}
                 <div className="space-y-1.5">
-                  <Label htmlFor="phone">Phone (optional)</Label>
+                  <Label htmlFor="phone">{t('for_schools_contact.field.phone')}</Label>
                   <div className="flex gap-2">
                     <select
                       id="countryCode"
@@ -433,14 +464,14 @@ export default function BookACallPage() {
                     >
                       {COUNTRY_CODES.map((cc) => (
                         <option key={cc.code} value={cc.code}>
-                          {cc.label}
+                          {t(cc.key)}
                         </option>
                       ))}
                     </select>
                     <Input
                       id="phone"
                       type="tel"
-                      placeholder="7700 000000"
+                      placeholder={t('for_schools_contact.placeholder.phone')}
                       value={form.phone}
                       onChange={(e) => patch({ phone: e.target.value })}
                       className="flex-1"
@@ -450,22 +481,22 @@ export default function BookACallPage() {
 
                 {/* Preferred contact method */}
                 <div className="space-y-1.5">
-                  <Label>Preferred Contact Method</Label>
+                  <Label>{t('for_schools_contact.field.preferred_contact')}</Label>
                   <div className="flex gap-4">
                     {PREFERRED_CONTACT_OPTIONS.map((option) => (
                       <label
-                        key={option}
+                        key={option.value}
                         className="flex items-center gap-2 cursor-pointer text-sm text-foreground"
                       >
                         <input
                           type="radio"
                           name="preferredContact"
-                          value={option}
-                          checked={form.preferredContact === option}
+                          value={option.value}
+                          checked={form.preferredContact === option.value}
                           onChange={(e) => patch({ preferredContact: e.target.value })}
                           className="accent-primary h-4 w-4"
                         />
-                        {option}
+                        {t(option.key)}
                       </label>
                     ))}
                   </div>
@@ -473,49 +504,61 @@ export default function BookACallPage() {
 
                 {/* Role */}
                 <div className="space-y-1.5">
-                  <Label htmlFor="role">Role *</Label>
+                  <Label htmlFor="role">
+                    {t('for_schools_contact.field.role')}{' '}
+                    <span className="text-destructive">*</span>
+                  </Label>
                   <NativeSelect
                     id="role"
                     value={form.role}
                     onChange={(v) => patch({ role: v })}
                     options={ROLES}
-                    placeholder="Select your role..."
+                    placeholder={t('for_schools_contact.placeholder.role')}
+                    t={t}
                   />
                   <FieldError msg={errors.role} />
                 </div>
 
                 {/* Student count */}
                 <div className="space-y-1.5">
-                  <Label htmlFor="studentCount">Number of Students in English Department *</Label>
+                  <Label htmlFor="studentCount">
+                    {t('for_schools_contact.field.student_count')}{' '}
+                    <span className="text-destructive">*</span>
+                  </Label>
                   <NativeSelect
                     id="studentCount"
                     value={form.studentCount}
                     onChange={(v) => patch({ studentCount: v })}
                     options={STUDENT_COUNTS}
-                    placeholder="Select student count..."
+                    placeholder={t('for_schools_contact.placeholder.student_count')}
+                    t={t}
                   />
                   <FieldError msg={errors.studentCount} />
                 </div>
 
                 {/* Exam board */}
                 <div className="space-y-1.5">
-                  <Label htmlFor="examBoard">Exam Board *</Label>
+                  <Label htmlFor="examBoard">
+                    {t('for_schools_contact.field.exam_board')}{' '}
+                    <span className="text-destructive">*</span>
+                  </Label>
                   <NativeSelect
                     id="examBoard"
                     value={form.examBoard}
                     onChange={(v) => patch({ examBoard: v })}
                     options={EXAM_BOARDS}
-                    placeholder="Select exam board..."
+                    placeholder={t('for_schools_contact.placeholder.exam_board')}
+                    t={t}
                   />
                   <FieldError msg={errors.examBoard} />
                 </div>
 
                 {/* Message */}
                 <div className="space-y-1.5">
-                  <Label htmlFor="message">Message (optional)</Label>
+                  <Label htmlFor="message">{t('for_schools_contact.field.message')}</Label>
                   <Textarea
                     id="message"
-                    placeholder="Anything else you'd like us to know ahead of the call?"
+                    placeholder={t('for_schools_contact.placeholder.message')}
                     value={form.message}
                     onChange={(e) => patch({ message: e.target.value })}
                     rows={4}
@@ -535,12 +578,12 @@ export default function BookACallPage() {
                   {submitting ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      Sending...
+                      {t('for_schools_contact.sending')}
                     </>
                   ) : (
                     <>
                       <Phone className="h-4 w-4" />
-                      Book My Call
+                      {t('for_schools_contact.submit')}
                     </>
                   )}
                 </Button>
@@ -561,12 +604,12 @@ export default function BookACallPage() {
 
         {/* Footer */}
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          Prefer to register directly?{' '}
+          {t('for_schools_contact.prefer_register_prefix')}{' '}
           <Link
             href="/for-schools/register"
             className="text-primary underline-offset-2 hover:underline"
           >
-            Self-serve registration
+            {t('for_schools_contact.prefer_register_link')}
           </Link>
         </p>
       </div>

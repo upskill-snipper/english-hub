@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 interface Poem {
   title: string
@@ -124,6 +125,7 @@ const POEMS: Poem[] = [
 ]
 
 export default function OCRLoveAndRelationshipsPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd

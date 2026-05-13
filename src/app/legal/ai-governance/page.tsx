@@ -17,6 +17,7 @@
  */
 
 import type { Metadata } from 'next'
+import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'AI Governance & Ethics',
@@ -24,585 +25,844 @@ export const metadata: Metadata = {
     'How The English Hub maps to Qatar’s PDPPL, Cybercrime Law, NCSA AI Guidelines, MCIT Ethical AI Principles, and adjacent frameworks. Includes an honest gap list and remediation roadmap.',
 }
 
-export default function AIGovernancePage() {
+export default async function AIGovernancePage() {
+  const v = await tMany([
+    'legal_long.ai_gov.h1',
+    'legal_long.ai_gov.operator_pre',
+    'legal_long.ai_gov.operator_mid',
+    'legal_long.ai_gov.review_stamp',
+    'legal_long.ai_gov.intro',
+    // S1
+    'legal_long.ai_gov.s1.h2',
+    'legal_long.ai_gov.s1.p1',
+    'legal_long.ai_gov.s1.t.col1',
+    'legal_long.ai_gov.s1.t.col2',
+    'legal_long.ai_gov.s1.t.col3',
+    'legal_long.ai_gov.s1.t.r1.c1',
+    'legal_long.ai_gov.s1.t.r1.c2',
+    'legal_long.ai_gov.s1.t.r1.c3',
+    'legal_long.ai_gov.s1.t.r2.c1',
+    'legal_long.ai_gov.s1.t.r2.c2',
+    'legal_long.ai_gov.s1.t.r2.c3',
+    'legal_long.ai_gov.s1.t.r3.c1',
+    'legal_long.ai_gov.s1.t.r3.c2',
+    'legal_long.ai_gov.s1.t.r3.c3',
+    'legal_long.ai_gov.s1.t.r4.c1',
+    'legal_long.ai_gov.s1.t.r4.c2',
+    'legal_long.ai_gov.s1.t.r4.c3',
+    'legal_long.ai_gov.s1.t.r5.c1',
+    'legal_long.ai_gov.s1.t.r5.c2',
+    'legal_long.ai_gov.s1.t.r5.c3',
+    'legal_long.ai_gov.s1.t.r6.c1',
+    'legal_long.ai_gov.s1.t.r6.c2',
+    'legal_long.ai_gov.s1.t.r6.c3',
+    'legal_long.ai_gov.s1.t.r7.c1',
+    'legal_long.ai_gov.s1.t.r7.c2',
+    'legal_long.ai_gov.s1.t.r7.c3',
+    'legal_long.ai_gov.s1.t.r8.c1',
+    'legal_long.ai_gov.s1.t.r8.c2',
+    'legal_long.ai_gov.s1.t.r8.c3',
+    'legal_long.ai_gov.s1.outro',
+    // S2
+    'legal_long.ai_gov.s2.h2',
+    'legal_long.ai_gov.s2.p1',
+    'legal_long.ai_gov.s2.h3_compliant',
+    'legal_long.ai_gov.s2.li_c1',
+    'legal_long.ai_gov.s2.li_c2',
+    'legal_long.ai_gov.s2.li_c3',
+    'legal_long.ai_gov.s2.li_c4',
+    'legal_long.ai_gov.s2.h3_gaps',
+    'legal_long.ai_gov.s2.li_g1',
+    'legal_long.ai_gov.s2.li_g2',
+    'legal_long.ai_gov.s2.li_g3',
+    'legal_long.ai_gov.s2.rem1_strong',
+    'legal_long.ai_gov.s2.rem1_text',
+    'legal_long.ai_gov.s2.rem2_strong',
+    'legal_long.ai_gov.s2.rem2_text',
+    // S3
+    'legal_long.ai_gov.s3.h2',
+    'legal_long.ai_gov.s3.p1',
+    'legal_long.ai_gov.s3.h3_do',
+    'legal_long.ai_gov.s3.li_do1',
+    'legal_long.ai_gov.s3.li_do2',
+    'legal_long.ai_gov.s3.li_do3',
+    'legal_long.ai_gov.s3.h3_gaps',
+    'legal_long.ai_gov.s3.li_g1',
+    'legal_long.ai_gov.s3.li_g2',
+    'legal_long.ai_gov.s3.rem3_strong',
+    'legal_long.ai_gov.s3.rem3_text',
+    // S4
+    'legal_long.ai_gov.s4.h2',
+    'legal_long.ai_gov.s4.p1',
+    'legal_long.ai_gov.s4.t.col1',
+    'legal_long.ai_gov.s4.t.col2',
+    'legal_long.ai_gov.s4.t.r1.c1',
+    'legal_long.ai_gov.s4.t.r1.c2',
+    'legal_long.ai_gov.s4.t.r2.c1',
+    'legal_long.ai_gov.s4.t.r2.c2',
+    'legal_long.ai_gov.s4.t.r3.c1',
+    'legal_long.ai_gov.s4.t.r3.c2',
+    'legal_long.ai_gov.s4.t.r4.c1',
+    'legal_long.ai_gov.s4.t.r4.c2',
+    'legal_long.ai_gov.s4.t.r5.c1',
+    'legal_long.ai_gov.s4.t.r5.c2',
+    'legal_long.ai_gov.s4.t.r6.c1',
+    'legal_long.ai_gov.s4.t.r6.c2',
+    'legal_long.ai_gov.s4.rem4_strong',
+    'legal_long.ai_gov.s4.rem4_text',
+    'legal_long.ai_gov.s4.rem5_strong',
+    'legal_long.ai_gov.s4.rem5_text',
+    // S5
+    'legal_long.ai_gov.s5.h2',
+    'legal_long.ai_gov.s5.p1',
+    'legal_long.ai_gov.s5.li1_strong',
+    'legal_long.ai_gov.s5.li1_text',
+    'legal_long.ai_gov.s5.li2_strong',
+    'legal_long.ai_gov.s5.li2_text',
+    'legal_long.ai_gov.s5.li3_strong',
+    'legal_long.ai_gov.s5.li3_text',
+    'legal_long.ai_gov.s5.li4_strong',
+    'legal_long.ai_gov.s5.li4_text',
+    'legal_long.ai_gov.s5.li5_strong',
+    'legal_long.ai_gov.s5.li5_text',
+    'legal_long.ai_gov.s5.li6_strong',
+    'legal_long.ai_gov.s5.li6_text',
+    'legal_long.ai_gov.s5.rem6_strong',
+    'legal_long.ai_gov.s5.rem6_text',
+    'legal_long.ai_gov.s5.rem7_strong',
+    'legal_long.ai_gov.s5.rem7_text',
+    // S6
+    'legal_long.ai_gov.s6.h2',
+    'legal_long.ai_gov.s6.li1_strong',
+    'legal_long.ai_gov.s6.li1_text',
+    'legal_long.ai_gov.s6.li2_strong',
+    'legal_long.ai_gov.s6.li2_text',
+    'legal_long.ai_gov.s6.li3_strong',
+    'legal_long.ai_gov.s6.li3_text',
+    'legal_long.ai_gov.s6.rem8_strong',
+    'legal_long.ai_gov.s6.rem8_text',
+    // S7 - table
+    'legal_long.ai_gov.s7.h2',
+    'legal_long.ai_gov.s7.t.col1',
+    'legal_long.ai_gov.s7.t.col2',
+    'legal_long.ai_gov.s7.t.col3',
+    'legal_long.ai_gov.s7.t.col4',
+    'legal_long.ai_gov.s7.r1.action',
+    'legal_long.ai_gov.s7.r1.owner',
+    'legal_long.ai_gov.s7.r1.target',
+    'legal_long.ai_gov.s7.r2.action',
+    'legal_long.ai_gov.s7.r2.owner',
+    'legal_long.ai_gov.s7.r2.target',
+    'legal_long.ai_gov.s7.r3.action',
+    'legal_long.ai_gov.s7.r3.owner',
+    'legal_long.ai_gov.s7.r3.target',
+    'legal_long.ai_gov.s7.r4.action',
+    'legal_long.ai_gov.s7.r4.owner',
+    'legal_long.ai_gov.s7.r4.target',
+    'legal_long.ai_gov.s7.r5.action',
+    'legal_long.ai_gov.s7.r5.owner',
+    'legal_long.ai_gov.s7.r5.target',
+    'legal_long.ai_gov.s7.r6.action',
+    'legal_long.ai_gov.s7.r6.owner',
+    'legal_long.ai_gov.s7.r6.target',
+    'legal_long.ai_gov.s7.r7.action',
+    'legal_long.ai_gov.s7.r7.owner',
+    'legal_long.ai_gov.s7.r7.target',
+    'legal_long.ai_gov.s7.r8.action',
+    'legal_long.ai_gov.s7.r8.owner',
+    'legal_long.ai_gov.s7.r8.target',
+    'legal_long.ai_gov.s7.r9.action',
+    'legal_long.ai_gov.s7.r9.owner',
+    'legal_long.ai_gov.s7.r9.target',
+    'legal_long.ai_gov.s7.r10.action',
+    'legal_long.ai_gov.s7.r10.owner',
+    'legal_long.ai_gov.s7.r10.target',
+    'legal_long.ai_gov.s7.r11.action',
+    'legal_long.ai_gov.s7.r11.owner',
+    'legal_long.ai_gov.s7.r11.target',
+    'legal_long.ai_gov.s7.r12.action',
+    'legal_long.ai_gov.s7.r12.owner',
+    'legal_long.ai_gov.s7.r12.target',
+    // S8
+    'legal_long.ai_gov.s8.h2',
+    'legal_long.ai_gov.s8.p1',
+    'legal_long.ai_gov.s8.h3_short',
+    'legal_long.ai_gov.s8.li_s1',
+    'legal_long.ai_gov.s8.li_s2',
+    'legal_long.ai_gov.s8.li_s3',
+    'legal_long.ai_gov.s8.p_priority',
+    'legal_long.ai_gov.s8.rem9_strong',
+    'legal_long.ai_gov.s8.rem9_text',
+    'legal_long.ai_gov.s8.rem10_strong',
+    'legal_long.ai_gov.s8.rem10_text',
+    'legal_long.ai_gov.s8.rem11_strong',
+    'legal_long.ai_gov.s8.rem11_text',
+    // S9
+    'legal_long.ai_gov.s9.h2',
+    'legal_long.ai_gov.s9.p1',
+    'legal_long.ai_gov.s9.li_g1',
+    'legal_long.ai_gov.s9.li_g2',
+    'legal_long.ai_gov.s9.li_g3',
+    'legal_long.ai_gov.s9.li_g4',
+    'legal_long.ai_gov.s9.p2',
+    'legal_long.ai_gov.s9.li_n1',
+    'legal_long.ai_gov.s9.li_n2',
+    'legal_long.ai_gov.s9.li_n3',
+    'legal_long.ai_gov.s9.p3',
+    // S11 (Audit findings - displayed before s10 in source)
+    'legal_long.ai_gov.s11.h2',
+    'legal_long.ai_gov.s11.p1',
+    'legal_long.ai_gov.s11.a_h3',
+    'legal_long.ai_gov.s11.a_li1',
+    'legal_long.ai_gov.s11.a_li2',
+    'legal_long.ai_gov.s11.b_h3',
+    'legal_long.ai_gov.s11.b_li1',
+    'legal_long.ai_gov.s11.b_li2',
+    'legal_long.ai_gov.s11.c_h3',
+    'legal_long.ai_gov.s11.c_li1',
+    'legal_long.ai_gov.s11.c_li2',
+    'legal_long.ai_gov.s11.c_li3',
+    'legal_long.ai_gov.s11.d_h3',
+    'legal_long.ai_gov.s11.d_p',
+    'legal_long.ai_gov.s11.e_h3',
+    'legal_long.ai_gov.s11.e_p',
+    'legal_long.ai_gov.s11.f_h3',
+    'legal_long.ai_gov.s11.f_p',
+    'legal_long.ai_gov.s11.outro',
+    // S10 (contact)
+    'legal_long.ai_gov.s10.h2',
+    'legal_long.ai_gov.s10.p1',
+    'legal_long.ai_gov.s10.email',
+    'legal_long.ai_gov.s10.p2',
+    'legal_long.ai_gov.s10.outro',
+  ])
+  let i = 0
+  const n = () => v[i++]
+
+  const h1 = n(),
+    opPre = n(),
+    opMid = n(),
+    reviewStamp = n(),
+    intro = n()
+  // S1
+  const s1H2 = n(),
+    s1P1 = n(),
+    s1Tc1 = n(),
+    s1Tc2 = n(),
+    s1Tc3 = n(),
+    s1R1c1 = n(),
+    s1R1c2 = n(),
+    s1R1c3 = n(),
+    s1R2c1 = n(),
+    s1R2c2 = n(),
+    s1R2c3 = n(),
+    s1R3c1 = n(),
+    s1R3c2 = n(),
+    s1R3c3 = n(),
+    s1R4c1 = n(),
+    s1R4c2 = n(),
+    s1R4c3 = n(),
+    s1R5c1 = n(),
+    s1R5c2 = n(),
+    s1R5c3 = n(),
+    s1R6c1 = n(),
+    s1R6c2 = n(),
+    s1R6c3 = n(),
+    s1R7c1 = n(),
+    s1R7c2 = n(),
+    s1R7c3 = n(),
+    s1R8c1 = n(),
+    s1R8c2 = n(),
+    s1R8c3 = n(),
+    s1Out = n()
+  // S2
+  const s2H2 = n(),
+    s2P1 = n(),
+    s2HC = n(),
+    s2C1 = n(),
+    s2C2 = n(),
+    s2C3 = n(),
+    s2C4 = n(),
+    s2HG = n(),
+    s2G1 = n(),
+    s2G2 = n(),
+    s2G3 = n(),
+    s2R1S = n(),
+    s2R1T = n(),
+    s2R2S = n(),
+    s2R2T = n()
+  // S3
+  const s3H2 = n(),
+    s3P1 = n(),
+    s3HDo = n(),
+    s3Do1 = n(),
+    s3Do2 = n(),
+    s3Do3 = n(),
+    s3HG = n(),
+    s3G1 = n(),
+    s3G2 = n(),
+    s3R3S = n(),
+    s3R3T = n()
+  // S4
+  const s4H2 = n(),
+    s4P1 = n(),
+    s4Tc1 = n(),
+    s4Tc2 = n(),
+    s4R1c1 = n(),
+    s4R1c2 = n(),
+    s4R2c1 = n(),
+    s4R2c2 = n(),
+    s4R3c1 = n(),
+    s4R3c2 = n(),
+    s4R4c1 = n(),
+    s4R4c2 = n(),
+    s4R5c1 = n(),
+    s4R5c2 = n(),
+    s4R6c1 = n(),
+    s4R6c2 = n(),
+    s4R4S = n(),
+    s4R4T = n(),
+    s4R5S = n(),
+    s4R5T = n()
+  // S5
+  const s5H2 = n(),
+    s5P1 = n(),
+    s5L1S = n(),
+    s5L1T = n(),
+    s5L2S = n(),
+    s5L2T = n(),
+    s5L3S = n(),
+    s5L3T = n(),
+    s5L4S = n(),
+    s5L4T = n(),
+    s5L5S = n(),
+    s5L5T = n(),
+    s5L6S = n(),
+    s5L6T = n(),
+    s5R6S = n(),
+    s5R6T = n(),
+    s5R7S = n(),
+    s5R7T = n()
+  // S6
+  const s6H2 = n(),
+    s6L1S = n(),
+    s6L1T = n(),
+    s6L2S = n(),
+    s6L2T = n(),
+    s6L3S = n(),
+    s6L3T = n(),
+    s6R8S = n(),
+    s6R8T = n()
+  // S7 table
+  const s7H2 = n(),
+    s7Tc1 = n(),
+    s7Tc2 = n(),
+    s7Tc3 = n(),
+    s7Tc4 = n(),
+    s7R1a = n(),
+    s7R1o = n(),
+    s7R1t = n(),
+    s7R2a = n(),
+    s7R2o = n(),
+    s7R2t = n(),
+    s7R3a = n(),
+    s7R3o = n(),
+    s7R3t = n(),
+    s7R4a = n(),
+    s7R4o = n(),
+    s7R4t = n(),
+    s7R5a = n(),
+    s7R5o = n(),
+    s7R5t = n(),
+    s7R6a = n(),
+    s7R6o = n(),
+    s7R6t = n(),
+    s7R7a = n(),
+    s7R7o = n(),
+    s7R7t = n(),
+    s7R8a = n(),
+    s7R8o = n(),
+    s7R8t = n(),
+    s7R9a = n(),
+    s7R9o = n(),
+    s7R9t = n(),
+    s7R10a = n(),
+    s7R10o = n(),
+    s7R10t = n(),
+    s7R11a = n(),
+    s7R11o = n(),
+    s7R11t = n(),
+    s7R12a = n(),
+    s7R12o = n(),
+    s7R12t = n()
+  // S8
+  const s8H2 = n(),
+    s8P1 = n(),
+    s8HShort = n(),
+    s8S1 = n(),
+    s8S2 = n(),
+    s8S3 = n(),
+    s8Pri = n(),
+    s8R9S = n(),
+    s8R9T = n(),
+    s8R10S = n(),
+    s8R10T = n(),
+    s8R11S = n(),
+    s8R11T = n()
+  // S9
+  const s9H2 = n(),
+    s9P1 = n(),
+    s9G1 = n(),
+    s9G2 = n(),
+    s9G3 = n(),
+    s9G4 = n(),
+    s9P2 = n(),
+    s9N1 = n(),
+    s9N2 = n(),
+    s9N3 = n(),
+    s9P3 = n()
+  // S11
+  const s11H2 = n(),
+    s11P1 = n(),
+    s11Ah3 = n(),
+    s11Al1 = n(),
+    s11Al2 = n(),
+    s11Bh3 = n(),
+    s11Bl1 = n(),
+    s11Bl2 = n(),
+    s11Ch3 = n(),
+    s11Cl1 = n(),
+    s11Cl2 = n(),
+    s11Cl3 = n(),
+    s11Dh3 = n(),
+    s11Dp = n(),
+    s11Eh3 = n(),
+    s11Ep = n(),
+    s11Fh3 = n(),
+    s11Fp = n(),
+    s11Out = n()
+  // S10
+  const s10H2 = n(),
+    s10P1 = n(),
+    s10Email = n(),
+    s10P2 = n(),
+    s10Out = n()
+
   return (
     <>
-      <h1 className="text-3xl font-bold mb-2">AI Governance &amp; Ethics</h1>
+      <h1 className="text-3xl font-bold mb-2">{h1}</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        <strong>The English Hub</strong> — operated by Upskill Energy Limited
+        <strong>{opPre}</strong>
+        {opMid}
         <br />
-        Last reviewed: 12 May 2026 · Next review: November 2026
+        {reviewStamp}
       </p>
 
-      <p className="mb-8">
-        This page is an honest assessment of where The English Hub sits against the regulatory and
-        voluntary frameworks that govern AI systems and personal data when they touch users in
-        Qatar. We have written it for school Data Protection Officers, parents, and diligence
-        reviewers. It is not marketing copy. Where we fall short, we say so, and we list the work we
-        still owe you.
-      </p>
+      <p className="mb-8">{intro}</p>
 
+      {/* Section 1 */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">1. What applies to us, and what doesn’t</h2>
-        <p className="mb-3">
-          The English Hub is operated by a UK-based company. We are <strong>not</strong> a
-          QCB-licensed financial entity, <strong>not</strong> registered in the Qatar Financial
-          Centre (QFC), <strong>not</strong> designated Critical National Infrastructure, and{' '}
-          <strong>not</strong> a supplier to any Qatari government agency. That immediately narrows
-          the binding surface area.
-        </p>
+        <h2 className="text-2xl font-bold mb-4">{s1H2}</h2>
+        <p className="mb-3">{s1P1}</p>
         <div className="overflow-x-auto mb-4">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-start py-2 pe-3">Instrument</th>
-                <th className="text-start py-2 pe-3">Binding on us?</th>
-                <th className="text-start py-2">Why</th>
+                <th className="text-start py-2 pe-3">{s1Tc1}</th>
+                <th className="text-start py-2 pe-3">{s1Tc2}</th>
+                <th className="text-start py-2">{s1Tc3}</th>
               </tr>
             </thead>
             <tbody className="[&_td]:py-2 [&_td]:pe-3 [&_td]:align-top">
               <tr className="border-b border-border/40">
-                <td>PDPPL (Law 13/2016)</td>
-                <td>
-                  <strong>Yes</strong>, for data of individuals in Qatar
-                </td>
-                <td>Extra-territorial reach via service offered to Qatar residents</td>
+                <td>{s1R1c1}</td>
+                <td>{s1R1c2}</td>
+                <td>{s1R1c3}</td>
               </tr>
               <tr className="border-b border-border/40">
-                <td>Cybercrime Law (Law 14/2014)</td>
-                <td>
-                  <strong>Yes</strong>, for any content delivered into Qatar
-                </td>
-                <td>Content offences are jurisdictional, not licence-gated</td>
+                <td>{s1R2c1}</td>
+                <td>{s1R2c2}</td>
+                <td>{s1R2c3}</td>
               </tr>
               <tr className="border-b border-border/40">
-                <td>QCB AI Guideline (Sept 2024)</td>
-                <td>No — we hold no QCB licence</td>
-                <td>Used voluntarily as a reference standard</td>
+                <td>{s1R3c1}</td>
+                <td>{s1R3c2}</td>
+                <td>{s1R3c3}</td>
               </tr>
               <tr className="border-b border-border/40">
-                <td>NCSA AI Guidelines v1.0 (Feb 2024)</td>
-                <td>No — voluntary</td>
-                <td>Treated as expected practice; alignment in progress</td>
+                <td>{s1R4c1}</td>
+                <td>{s1R4c2}</td>
+                <td>{s1R4c3}</td>
               </tr>
               <tr className="border-b border-border/40">
-                <td>MCIT Ethical AI Principles (2025)</td>
-                <td>No — voluntary</td>
-                <td>Adopted as our internal ethical baseline</td>
+                <td>{s1R5c1}</td>
+                <td>{s1R5c2}</td>
+                <td>{s1R5c3}</td>
               </tr>
               <tr className="border-b border-border/40">
-                <td>NIA / NIMF / NDCP</td>
-                <td>No — not CNI, not government</td>
-                <td>Tracked but not implemented</td>
+                <td>{s1R6c1}</td>
+                <td>{s1R6c2}</td>
+                <td>{s1R6c3}</td>
               </tr>
               <tr className="border-b border-border/40">
-                <td>Cloud Policy Framework</td>
-                <td>No — not a licensed Qatari cloud provider</td>
-                <td>Referenced when selecting subprocessors</td>
+                <td>{s1R7c1}</td>
+                <td>{s1R7c2}</td>
+                <td>{s1R7c3}</td>
               </tr>
               <tr>
-                <td>QFC Data Protection Regulations 2021</td>
-                <td>No — not QFC-registered</td>
-                <td>Separate jurisdiction</td>
+                <td>{s1R8c1}</td>
+                <td>{s1R8c2}</td>
+                <td>{s1R8c3}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>{s1Out}</p>
+      </section>
+
+      {/* Section 2 */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">{s2H2}</h2>
+        <p className="mb-3">{s2P1}</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-2">{s2HC}</h3>
+        <ul className="list-disc ps-6 space-y-2 mb-4">
+          <li>{s2C1}</li>
+          <li>{s2C2}</li>
+          <li>{s2C3}</li>
+          <li>{s2C4}</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-2">{s2HG}</h3>
+        <ul className="list-disc ps-6 space-y-2 mb-4">
+          <li>{s2G1}</li>
+          <li>{s2G2}</li>
+          <li>{s2G3}</li>
+        </ul>
+        <p>
+          <strong>{s2R1S}</strong>
+          {s2R1T}
+        </p>
+        <p>
+          <strong>{s2R2S}</strong>
+          {s2R2T}
+        </p>
+      </section>
+
+      {/* Section 3 */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">{s3H2}</h2>
+        <p className="mb-3">{s3P1}</p>
+        <h3 className="text-lg font-semibold mb-2">{s3HDo}</h3>
+        <ul className="list-disc ps-6 space-y-2 mb-4">
+          <li>{s3Do1}</li>
+          <li>{s3Do2}</li>
+          <li>{s3Do3}</li>
+        </ul>
+        <h3 className="text-lg font-semibold mb-2">{s3HG}</h3>
+        <ul className="list-disc ps-6 space-y-2 mb-4">
+          <li>{s3G1}</li>
+          <li>{s3G2}</li>
+        </ul>
+        <p>
+          <strong>{s3R3S}</strong>
+          {s3R3T}
+        </p>
+      </section>
+
+      {/* Section 4 */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4">{s4H2}</h2>
+        <p className="mb-3">{s4P1}</p>
+        <div className="overflow-x-auto mb-4">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-start py-2 pe-3">{s4Tc1}</th>
+                <th className="text-start py-2">{s4Tc2}</th>
+              </tr>
+            </thead>
+            <tbody className="[&_td]:py-2 [&_td]:pe-3 [&_td]:align-top">
+              <tr className="border-b border-border/40">
+                <td>{s4R1c1}</td>
+                <td>{s4R1c2}</td>
+              </tr>
+              <tr className="border-b border-border/40">
+                <td>{s4R2c1}</td>
+                <td>{s4R2c2}</td>
+              </tr>
+              <tr className="border-b border-border/40">
+                <td>{s4R3c1}</td>
+                <td>{s4R3c2}</td>
+              </tr>
+              <tr className="border-b border-border/40">
+                <td>{s4R4c1}</td>
+                <td>{s4R4c2}</td>
+              </tr>
+              <tr className="border-b border-border/40">
+                <td>{s4R5c1}</td>
+                <td>{s4R5c2}</td>
+              </tr>
+              <tr>
+                <td>{s4R6c1}</td>
+                <td>{s4R6c2}</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p>
-          The honest summary: PDPPL and the Cybercrime Law are the two instruments that genuinely
-          bite. Everything else is voluntary best-practice that we either align to or are openly
-          working toward.
+          <strong>{s4R4S}</strong>
+          {s4R4T}
+        </p>
+        <p>
+          <strong>{s4R5S}</strong>
+          {s4R5T}
         </p>
       </section>
 
+      {/* Section 5 */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">
-          2. PDPPL — where we comply, where there are gaps
-        </h2>
-        <p className="mb-3">
-          PDPPL is narrower than GDPR. It requires a lawful basis, transparency, purpose limitation,
-          security, and explicit consent for sensitive data. It does <strong>not</strong> grant a
-          GDPR-style Article 22 right against solely-automated decisions, but it does class
-          children’s data as sensitive.
-        </p>
-
-        <h3 className="text-lg font-semibold mt-6 mb-2">Where we currently comply</h3>
-        <ul className="list-disc ps-6 space-y-2 mb-4">
-          <li>
-            Personal data is stored in Supabase (EU region), encrypted at rest and in transit.
-          </li>
-          <li>
-            We publish a privacy notice describing categories of data, purposes, and retention.
-          </li>
-          <li>We support data access and deletion requests via email (see section 10).</li>
-          <li>We do not sell personal data and do not use it to train third-party AI models.</li>
-        </ul>
-
-        <h3 className="text-lg font-semibold mt-6 mb-2">Where there are gaps we acknowledge</h3>
-        <ul className="list-disc ps-6 space-y-2 mb-4">
-          <li>
-            We have <strong>not yet appointed a named Data Controller representative</strong> for
-            Qatar-resident users, and PDPPL’s consent and notification requirements for sensitive
-            data (including children’s) are not yet supported by a structured workflow on our signup
-            path.
-          </li>
-          <li>
-            Subprocessors operate across multiple jurisdictions: Stripe (USA), PostHog (EU/US), GA4
-            (USA), Vercel hosting (USA), Sentry (USA). PDPPL permits cross-border transfer with
-            safeguards but does not have an adequacy list, so we currently rely on contractual
-            safeguards rather than a formal transfer impact assessment per Qatar resident.
-          </li>
-          <li>
-            We do not yet maintain a register of processing activities specific to Qatar users.
-          </li>
-        </ul>
-        <p>
-          <strong>Remediation (1):</strong> Build a Qatar-specific privacy notice supplement listing
-          each subprocessor, its jurisdiction, and the contractual safeguard.
-        </p>
-        <p>
-          <strong>Remediation (2):</strong> Implement a Record of Processing Activities (RoPA) and
-          review quarterly.
-        </p>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">
-          3. Cybercrime Law — relevance for AI-generated content
-        </h2>
-        <p className="mb-3">
-          Law 14/2014 criminalises, among other things, content that infringes social values, public
-          order, or the reputation of others, and content that is false or misleading. Because our
-          platform generates explanatory content, model answers, and feedback using LLMs, an
-          autonomous agent producing such material is not a defence — the operator carries the risk.
-        </p>
-        <h3 className="text-lg font-semibold mb-2">What we do</h3>
-        <ul className="list-disc ps-6 space-y-2 mb-4">
-          <li>
-            All AI-generated student-facing study material is produced from a curated curriculum
-            prompt set, not free-form user prompts to a raw model.
-          </li>
-          <li>We do not publish AI-generated content about identifiable individuals.</li>
-          <li>We rate-limit and log all generation events for after-the-fact review.</li>
-        </ul>
-        <h3 className="text-lg font-semibold mb-2">Gaps</h3>
-        <ul className="list-disc ps-6 space-y-2 mb-4">
-          <li>
-            We do <strong>not</strong> yet run a pre-publication content classifier specifically
-            tuned to Qatari content offences.
-          </li>
-          <li>
-            Student-submitted essays processed by AI may contain content that, if echoed back
-            unfiltered, could constitute an offence on republication.
-          </li>
-        </ul>
-        <p>
-          <strong>Remediation (3):</strong> Add a Qatar-aware content safety layer (classifier +
-          denylist) in front of any AI output rendered to a Qatar-resident user, and log decisions
-          for audit.
-        </p>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">
-          4. NCSA AI Guidelines — voluntary alignment status
-        </h2>
-        <p className="mb-3">
-          NCSA v1.0 covers the AI lifecycle: design, data, development, deployment, monitoring,
-          decommissioning. We treat it as a self-assessment checklist.
-        </p>
-        <div className="overflow-x-auto mb-4">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-start py-2 pe-3">Lifecycle stage</th>
-                <th className="text-start py-2">Status</th>
-              </tr>
-            </thead>
-            <tbody className="[&_td]:py-2 [&_td]:pe-3 [&_td]:align-top">
-              <tr className="border-b border-border/40">
-                <td>Design (intended use, risk tier)</td>
-                <td>Partial — informal, not documented</td>
-              </tr>
-              <tr className="border-b border-border/40">
-                <td>Data governance (sourcing, quality, bias)</td>
-                <td>
-                  Partial — curriculum content is sourced and reviewed; third-party training data is
-                  out of our control
-                </td>
-              </tr>
-              <tr className="border-b border-border/40">
-                <td>Development (testing, validation)</td>
-                <td>Partial — manual QA, no formal eval set</td>
-              </tr>
-              <tr className="border-b border-border/40">
-                <td>Deployment (human oversight, fallbacks)</td>
-                <td>Yes — humans review flagged outputs</td>
-              </tr>
-              <tr className="border-b border-border/40">
-                <td>Monitoring (drift, incident response)</td>
-                <td>Partial — Sentry catches errors but not model-quality drift</td>
-              </tr>
-              <tr>
-                <td>Decommissioning</td>
-                <td>Not documented</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>
-          <strong>Remediation (4):</strong> Publish an AI System Card for each AI feature (essay
-          feedback, model-answer generation, vocabulary explainer), including intended use, known
-          limits, and an evaluation summary.
-        </p>
-        <p>
-          <strong>Remediation (5):</strong> Stand up a quarterly drift and quality review with
-          documented criteria and a rollback plan.
-        </p>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">
-          5. MCIT Ethical AI Principles — alignment status
-        </h2>
-        <p className="mb-3">Six principles. Honest scoring below.</p>
+        <h2 className="text-2xl font-bold mb-4">{s5H2}</h2>
+        <p className="mb-3">{s5P1}</p>
         <ol className="list-decimal ps-6 space-y-3 mb-4">
           <li>
-            <strong>Do no harm.</strong> Output is for revision support, not high-stakes decisions.{' '}
-            <em>Aligned.</em>
+            <strong>{s5L1S}</strong>
+            {s5L1T}
           </li>
           <li>
-            <strong>Safety and reliability.</strong> We do not yet publish accuracy or failure-mode
-            statistics. <em>Partial — see Remediation 4.</em>
+            <strong>{s5L2S}</strong>
+            {s5L2T}
           </li>
           <li>
-            <strong>Fairness.</strong> We have not yet tested AI-generated feedback for systematic
-            bias against students writing in non-British English, second-language learners
-            (including Gulf Arabic L1 speakers), or specific socioeconomic vocabulary. <em>Gap.</em>
+            <strong>{s5L3S}</strong>
+            {s5L3T}
           </li>
           <li>
-            <strong>Environment.</strong> We use third-party model APIs; energy footprint is not
-            measured or disclosed. <em>Gap.</em>
+            <strong>{s5L4S}</strong>
+            {s5L4T}
           </li>
           <li>
-            <strong>Privacy.</strong> Covered in section 2. <em>Partial.</em>
+            <strong>{s5L5S}</strong>
+            {s5L5T}
           </li>
           <li>
-            <strong>Transparency.</strong> We do not consistently label AI-generated content
-            in-product. <em>Gap — see Remediation 6.</em>
+            <strong>{s5L6S}</strong>
+            {s5L6T}
           </li>
         </ol>
         <p>
-          <strong>Remediation (6):</strong> Add a visible &ldquo;Generated with AI — review before
-          relying on&rdquo; label on every AI-produced essay-feedback panel, model answer, and
-          auto-generated blog post.
+          <strong>{s5R6S}</strong>
+          {s5R6T}
         </p>
         <p>
-          <strong>Remediation (7):</strong> Commission an annual fairness audit across
-          English-language proficiency tiers and publish the summary.
+          <strong>{s5R7S}</strong>
+          {s5R7T}
         </p>
       </section>
 
+      {/* Section 6 */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">
-          6. QCB / NIA / NDCP / Cloud Policy — when these apply to us
-        </h2>
+        <h2 className="text-2xl font-bold mb-4">{s6H2}</h2>
         <ul className="list-disc ps-6 space-y-3 mb-4">
           <li>
-            <strong>QCB AI Guideline</strong> binds licensed financial entities. We are not one. We
-            do, however, treat its model-risk-management framing as a useful reference, particularly
-            its emphasis on documented model governance and explainability.
+            <strong>{s6L1S}</strong>
+            {s6L1T}
           </li>
           <li>
-            <strong>NIA / NIMF / NDCP</strong> are mandatory for Critical National Infrastructure
-            and government supply chains. The English Hub is neither. If a Qatari ministry or state
-            school procures our service under a government contract, NIA controls become
-            contractually relevant and we would need a gap assessment.
+            <strong>{s6L2S}</strong>
+            {s6L2T}
           </li>
           <li>
-            <strong>Cloud Policy Framework</strong> binds licensed Qatari cloud providers. None of
-            our hosting or storage is operated under a Qatari cloud licence. Our subprocessors are:
-            Vercel (USA, edge), Cloudflare (global edge), Supabase (EU primary), Stripe (USA),
-            PostHog (EU/US), GA4 (USA), Sentry (USA).
+            <strong>{s6L3S}</strong>
+            {s6L3T}
           </li>
         </ul>
         <p>
-          <strong>Remediation (8):</strong> Maintain a published subprocessor list with
-          jurisdiction, purpose, and the contractual transfer mechanism, updated on change.
+          <strong>{s6R8S}</strong>
+          {s6R8T}
         </p>
       </section>
 
+      {/* Section 7 */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">7. Honest gaps + remediation roadmap</h2>
+        <h2 className="text-2xl font-bold mb-4">{s7H2}</h2>
         <div className="overflow-x-auto mb-4">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-start py-2 pe-2">#</th>
-                <th className="text-start py-2 pe-3">Action</th>
-                <th className="text-start py-2 pe-3">Owner</th>
-                <th className="text-start py-2">Target</th>
+                <th className="text-start py-2 pe-2">{s7Tc1}</th>
+                <th className="text-start py-2 pe-3">{s7Tc2}</th>
+                <th className="text-start py-2 pe-3">{s7Tc3}</th>
+                <th className="text-start py-2">{s7Tc4}</th>
               </tr>
             </thead>
             <tbody className="[&_td]:py-1.5 [&_td]:pe-3">
               <tr className="border-b border-border/30">
                 <td>1</td>
-                <td>Qatar-specific privacy notice supplement</td>
-                <td>DPO</td>
-                <td>Q3 2026</td>
+                <td>{s7R1a}</td>
+                <td>{s7R1o}</td>
+                <td>{s7R1t}</td>
               </tr>
               <tr className="border-b border-border/30">
                 <td>2</td>
-                <td>Record of Processing Activities (RoPA)</td>
-                <td>DPO</td>
-                <td>Q3 2026</td>
+                <td>{s7R2a}</td>
+                <td>{s7R2o}</td>
+                <td>{s7R2t}</td>
               </tr>
               <tr className="border-b border-border/30">
                 <td>3</td>
-                <td>Qatar-aware content safety layer for AI output</td>
-                <td>Engineering</td>
-                <td>Q4 2026</td>
+                <td>{s7R3a}</td>
+                <td>{s7R3o}</td>
+                <td>{s7R3t}</td>
               </tr>
               <tr className="border-b border-border/30">
                 <td>4</td>
-                <td>Publish AI System Cards per feature</td>
-                <td>Product</td>
-                <td>Q4 2026</td>
+                <td>{s7R4a}</td>
+                <td>{s7R4o}</td>
+                <td>{s7R4t}</td>
               </tr>
               <tr className="border-b border-border/30">
                 <td>5</td>
-                <td>Quarterly drift &amp; quality review with rollback plan</td>
-                <td>Engineering</td>
-                <td>Q3 2026</td>
+                <td>{s7R5a}</td>
+                <td>{s7R5o}</td>
+                <td>{s7R5t}</td>
               </tr>
               <tr className="border-b border-border/30">
                 <td>6</td>
-                <td>&ldquo;Generated with AI&rdquo; labels across the product</td>
-                <td>Product</td>
-                <td>Q3 2026</td>
+                <td>{s7R6a}</td>
+                <td>{s7R6o}</td>
+                <td>{s7R6t}</td>
               </tr>
               <tr className="border-b border-border/30">
                 <td>7</td>
-                <td>Annual fairness audit, summary published</td>
-                <td>DPO + external</td>
-                <td>Q1 2027</td>
+                <td>{s7R7a}</td>
+                <td>{s7R7o}</td>
+                <td>{s7R7t}</td>
               </tr>
               <tr className="border-b border-border/30">
                 <td>8</td>
-                <td>Published subprocessor list with jurisdictions</td>
-                <td>DPO</td>
-                <td>Q3 2026</td>
+                <td>{s7R8a}</td>
+                <td>{s7R8o}</td>
+                <td>{s7R8t}</td>
               </tr>
               <tr className="border-b border-border/30">
                 <td>9</td>
-                <td>Parental-consent flow for under-18 signups</td>
-                <td>Product</td>
-                <td>Q3 2026</td>
+                <td>{s7R9a}</td>
+                <td>{s7R9o}</td>
+                <td>{s7R9t}</td>
               </tr>
               <tr className="border-b border-border/30">
                 <td>10</td>
-                <td>Cookie consent banner with granular categories</td>
-                <td>Engineering</td>
-                <td>Q2 2026</td>
+                <td>{s7R10a}</td>
+                <td>{s7R10o}</td>
+                <td>{s7R10t}</td>
               </tr>
               <tr className="border-b border-border/30">
                 <td>11</td>
-                <td>DPIA for the AI content pipeline</td>
-                <td>DPO</td>
-                <td>Q4 2026</td>
+                <td>{s7R11a}</td>
+                <td>{s7R11o}</td>
+                <td>{s7R11t}</td>
               </tr>
               <tr>
                 <td>12</td>
-                <td>Incident response runbook including notification timelines</td>
-                <td>Engineering</td>
-                <td>Q3 2026</td>
+                <td>{s7R12a}</td>
+                <td>{s7R12o}</td>
+                <td>{s7R12t}</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
+      {/* Section 8 */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">8. Children’s data — special call-out</h2>
-        <p className="mb-3">
-          Our core audience is GCSE and IGCSE students, the vast majority of whom are aged 14–17 and
-          therefore minors under both Qatari and most international frameworks. PDPPL classes
-          children’s data as <strong>sensitive personal data</strong>, which requires explicit,
-          informed consent — and for minors, that consent must come from a parent or legal guardian.
-        </p>
-        <h3 className="text-lg font-semibold mt-6 mb-2">Where we currently fall short</h3>
+        <h2 className="text-2xl font-bold mb-4">{s8H2}</h2>
+        <p className="mb-3">{s8P1}</p>
+        <h3 className="text-lg font-semibold mt-6 mb-2">{s8HShort}</h3>
         <ul className="list-disc ps-6 space-y-2 mb-4">
-          <li>
-            Our signup flow asks for an email and password. It does <strong>not</strong> currently
-            verify age or capture verifiable parental consent for users under 18.
-          </li>
-          <li>
-            Marketing communications, in-app analytics, and AI-generated feedback all process the
-            personal data of these minors.
-          </li>
-          <li>
-            We do not currently offer a parent-facing dashboard for reviewing and revoking consent.
-          </li>
+          <li>{s8S1}</li>
+          <li>{s8S2}</li>
+          <li>{s8S3}</li>
         </ul>
-        <p className="mb-3">
-          This is the most material gap on the page. We are treating it as a priority.
+        <p className="mb-3">{s8Pri}</p>
+        <p>
+          <strong>{s8R9S}</strong>
+          {s8R9T}
         </p>
         <p>
-          <strong>Remediation (9):</strong> Build a parental-consent flow gated on age at signup:
-          under-18 users enter a guardian email; signup completes only after the guardian confirms
-          consent via a separate verified link. Maintain a consent log.
+          <strong>{s8R10S}</strong>
+          {s8R10T}
         </p>
         <p>
-          <strong>Remediation (10):</strong> Add a parent dashboard for consent review, data export,
-          and account deletion, scoped to the child’s account.
-        </p>
-        <p>
-          <strong>Remediation (11):</strong> Minimise behavioural analytics on confirmed under-18
-          accounts; disable third-party analytics SDKs (GA4, PostHog session replay) by default for
-          these users.
+          <strong>{s8R11S}</strong>
+          {s8R11T}
         </p>
       </section>
 
+      {/* Section 9 */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">9. AI use disclosure</h2>
-        <p className="mb-3">
-          We use third-party large language models (currently OpenAI and Anthropic APIs, subject to
-          change) to generate:
-        </p>
+        <h2 className="text-2xl font-bold mb-4">{s9H2}</h2>
+        <p className="mb-3">{s9P1}</p>
         <ul className="list-disc ps-6 space-y-1 mb-4">
-          <li>Essay feedback and model annotations</li>
-          <li>Practice questions and model answers</li>
-          <li>Vocabulary explanations and grammar walkthroughs</li>
-          <li>Auto-generated blog content (clearly labelled as such)</li>
+          <li>{s9G1}</li>
+          <li>{s9G2}</li>
+          <li>{s9G3}</li>
+          <li>{s9G4}</li>
         </ul>
-        <p className="mb-3">
-          We do <strong>not</strong>:
-        </p>
+        <p className="mb-3">{s9P2}</p>
         <ul className="list-disc ps-6 space-y-1 mb-4">
-          <li>
-            Use AI to make decisions about a student’s progression, eligibility, or grading that
-            have legal or similarly significant effects
-          </li>
-          <li>Send personal data beyond the student’s submitted text to model providers</li>
-          <li>
-            Permit model providers to retain prompts for training (we use no-retention endpoints
-            where contractually available)
-          </li>
+          <li>{s9N1}</li>
+          <li>{s9N2}</li>
+          <li>{s9N3}</li>
         </ul>
-        <p>
-          Where AI is involved, we are working to label it in-product (Remediation 6). The
-          underlying model name and the prompt template version for any generated artefact can be
-          requested via the contact below.
-        </p>
+        <p>{s9P3}</p>
       </section>
 
+      {/* Section 11 — Audit findings */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">11. Internal audit findings (May 2026)</h2>
-        <p className="mb-3">
-          This page is paired with an internal compliance audit completed 12 May 2026. The findings
-          below are reproduced verbatim — these are real gaps we have identified in our own code,
-          not theoretical risks. We are publishing them rather than hiding them because the
-          framework rewards transparency and a candid roadmap.
-        </p>
+        <h2 className="text-2xl font-bold mb-4">{s11H2}</h2>
+        <p className="mb-3">{s11P1}</p>
 
-        <h3 className="text-lg font-semibold mt-6 mb-2">A. Signup-flow consent gaps</h3>
+        <h3 className="text-lg font-semibold mt-6 mb-2">{s11Ah3}</h3>
         <ul className="list-disc ps-6 space-y-2 mb-4">
-          <li>
-            The registration page uses an implicit &ldquo;By creating an account, you agree
-            to&hellip;&rdquo; link rather than an explicit consent checkbox. PDPPL Art. 4 requires
-            affirmative action, and Art. 17 requires a <strong>separate</strong> explicit consent
-            for cross-border transfer that the current form does not collect.
-          </li>
-          <li>The contact form has no consent checkbox and no in-line privacy-policy link.</li>
+          <li>{s11Al1}</li>
+          <li>{s11Al2}</li>
         </ul>
 
-        <h3 className="text-lg font-semibold mt-6 mb-2">
-          B. Children&rsquo;s data — material legal risk
-        </h3>
+        <h3 className="text-lg font-semibold mt-6 mb-2">{s11Bh3}</h3>
         <ul className="list-disc ps-6 space-y-2 mb-4">
-          <li>
-            16- and 17-year-olds bypass guardian consent entirely and self-onboard. PDPPL treats{' '}
-            <strong>all under-18s</strong> as minors requiring guardian consent. This is the single
-            biggest legal exposure for a GCSE/IGCSE platform marketed in Qatar.
-          </li>
-          <li>
-            For 13&ndash;15 the flow collects a guardian email and fires a <em>non-blocking</em>
-            parent-notify. Signup completes regardless of whether the guardian ever responds. This
-            is &ldquo;notice&rdquo; rather than &ldquo;verifiable parental consent&rdquo;.
-          </li>
+          <li>{s11Bl1}</li>
+          <li>{s11Bl2}</li>
         </ul>
 
-        <h3 className="text-lg font-semibold mt-6 mb-2">C. Architecture vs. notice mismatch</h3>
+        <h3 className="text-lg font-semibold mt-6 mb-2">{s11Ch3}</h3>
         <ul className="list-disc ps-6 space-y-2 mb-4">
-          <li>
-            The Qatar Privacy Notice (<code>/legal/privacy-qatar</code>) states that data is
-            transferred to the UK under an IDTA. The actual data path is
-            Supabase&nbsp;EU&nbsp;&rarr;&nbsp;Anthropic&nbsp;US&nbsp;&rarr;&nbsp;Sentry&nbsp;EU&nbsp;&rarr;&nbsp;GA4&nbsp;US&nbsp;&rarr;&nbsp;Rewardful&nbsp;US.
-            Anthropic, GA4, and Rewardful currently have{' '}
-            <strong>no documented Qatar-specific transfer mechanism</strong>.
-          </li>
-          <li>
-            Our Supabase region is documented inconsistently across internal registers (EU Frankfurt
-            vs UK). The single source of truth needs reconciliation.
-          </li>
-          <li>
-            Rewardful&rsquo;s third-party script is unconditionally CSP-allow-listed but is not
-            gated by the cookie-consent flag that protects GA4 and PostHog.
-          </li>
+          <li>{s11Cl1}</li>
+          <li>{s11Cl2}</li>
+          <li>{s11Cl3}</li>
         </ul>
 
-        <h3 className="text-lg font-semibold mt-6 mb-2">
-          D. Right of human review — policy without UI
-        </h3>
-        <p className="mb-4">
-          Our policy text promises a right to request human review of AI feedback. That button does
-          not yet exist on the student-facing feedback component. A teacher-override surface exists
-          for school accounts; an equivalent self-serve route for direct-to-consumer students does
-          not.
-        </p>
+        <h3 className="text-lg font-semibold mt-6 mb-2">{s11Dh3}</h3>
+        <p className="mb-4">{s11Dp}</p>
 
-        <h3 className="text-lg font-semibold mt-6 mb-2">E. DPIA status</h3>
-        <p className="mb-4">
-          Our internal DPIA for AI features is at <strong>draft v0.9</strong> with author and DPO
-          placeholders unfilled. Finalising it sits in Remediation 11.
-        </p>
+        <h3 className="text-lg font-semibold mt-6 mb-2">{s11Eh3}</h3>
+        <p className="mb-4">{s11Ep}</p>
 
-        <h3 className="text-lg font-semibold mt-6 mb-2">F. AI labelling coverage</h3>
-        <p className="mb-4">
-          The essay-feedback panel and <code>/legal/ai-transparency</code> page do disclose AI use.
-          Blog content&mdash;which is currently part-generated by our agent pipeline&mdash;is
-          <strong> not</strong> flagged as AI-assisted on the public page. Remediation 6 covers
-          this.
-        </p>
+        <h3 className="text-lg font-semibold mt-6 mb-2">{s11Fh3}</h3>
+        <p className="mb-4">{s11Fp}</p>
 
-        <p className="text-muted-foreground text-sm mt-6">
-          We commit to refreshing this section on every material code change to the signup, consent,
-          or AI surfaces. If you are reading this on a date more than three months from the
-          &ldquo;Last reviewed&rdquo; stamp at the top of the page, please email us to ask whether
-          the audit has been refreshed.
-        </p>
+        <p className="text-muted-foreground text-sm mt-6">{s11Out}</p>
       </section>
 
+      {/* Section 10 — Contact */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">10. Contact for data subject requests</h2>
+        <h2 className="text-2xl font-bold mb-4">{s10H2}</h2>
+        <p className="mb-3">{s10P1}</p>
         <p className="mb-3">
-          If you are a student, parent, or school in Qatar and want to exercise any of the rights
-          available under PDPPL (access, correction, deletion, withdrawal of consent), or you want
-          to raise a concern about an AI-generated output, contact us at:
+          <strong>{s10Email}</strong>
         </p>
-        <p className="mb-3">
-          <strong>privacy@theenglishhub.app</strong>
-        </p>
-        <p className="mb-3">
-          We will acknowledge within 5 working days and respond substantively within 30 days. If you
-          are not satisfied with our response, you may escalate to the National Cyber Security
-          Agency of Qatar (NCSA) as the relevant supervisory authority for PDPPL.
-        </p>
-        <p className="text-muted-foreground text-sm mt-6">
-          This page is reviewed at least every six months and after any material change to our AI
-          features, subprocessors, or governance posture. The next scheduled review is November
-          2026.
-        </p>
+        <p className="mb-3">{s10P2}</p>
+        <p className="text-muted-foreground text-sm mt-6">{s10Out}</p>
       </section>
     </>
   )

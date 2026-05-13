@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'AQA GCSE English Literature resources — The English Hub',
@@ -145,7 +146,8 @@ const assessmentObjectives = [
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
-export default function AqaEnglishLiteraturePage() {
+export default async function AqaEnglishLiteraturePage() {
+  const [h1, intro] = await tMany(['resources.lit.aqa.h1', 'resources.lit.aqa.intro'])
   return (
     <>
       <BreadcrumbJsonLd
@@ -165,14 +167,8 @@ export default function AqaEnglishLiteraturePage() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             GCSE Revision
           </p>
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            AQA English Literature
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Everything you need to revise for AQA GCSE English Literature (8702). In-depth study
-            guides, exam technique, assessment objective breakdowns, and poetry analysis &mdash; all
-            in one place.
-          </p>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">{h1}</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{intro}</p>
         </div>
       </section>
 

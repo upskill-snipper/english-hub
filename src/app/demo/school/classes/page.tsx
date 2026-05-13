@@ -1,42 +1,44 @@
-"use client"
+'use client'
 
-import { useState, useMemo } from "react"
-import Link from "next/link"
-import { BookOpen, Users, Plus, Search, X, GraduationCap } from "lucide-react"
-import { toast } from "sonner"
-import { DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data"
-import { ReadingAgeInline } from "@/components/ReadingProfileCard"
-import { useScrollRestore } from "@/hooks/useScrollRestore"
-import { percentageToGCSEGrade } from "@/lib/grades"
+import { useState, useMemo } from 'react'
+import Link from 'next/link'
+import { BookOpen, Users, Plus, Search, X, GraduationCap } from 'lucide-react'
+import { toast } from 'sonner'
+import { DEMO_CLASSES, DEMO_STUDENTS } from '@/data/demo-data'
+import { ReadingAgeInline } from '@/components/ReadingProfileCard'
+import { useScrollRestore } from '@/hooks/useScrollRestore'
+import { percentageToGCSEGrade } from '@/lib/grades'
+import { useT } from '@/lib/i18n/use-t'
 
 function boardBadgeClass(board: string): string {
   switch (board) {
-    case "AQA":
-      return "bg-clay-500/10 text-clay-600 border-clay-500/20"
-    case "Edexcel":
-      return "bg-teal-800/10 text-teal-700 border-teal-800/20"
-    case "OCR":
-      return "bg-teal-800/10 text-teal-700 border-teal-800/20"
-    case "WJEC":
-      return "bg-red-500/10 text-red-400 border-red-500/20"
-    case "CAIE IGCSE":
-      return "bg-amber-500/10 text-clay-600 border-amber-500/20"
-    case "KS3":
-      return "bg-teal-800/10 text-teal-700 border-teal-800/20"
+    case 'AQA':
+      return 'bg-clay-500/10 text-clay-600 border-clay-500/20'
+    case 'Edexcel':
+      return 'bg-teal-800/10 text-teal-700 border-teal-800/20'
+    case 'OCR':
+      return 'bg-teal-800/10 text-teal-700 border-teal-800/20'
+    case 'WJEC':
+      return 'bg-red-500/10 text-red-400 border-red-500/20'
+    case 'CAIE IGCSE':
+      return 'bg-amber-500/10 text-clay-600 border-amber-500/20'
+    case 'KS3':
+      return 'bg-teal-800/10 text-teal-700 border-teal-800/20'
     default:
-      return "bg-ink-200/10 text-ink-600 border-neutral-500/20"
+      return 'bg-ink-200/10 text-ink-600 border-neutral-500/20'
   }
 }
 
 function progressBarColor(pct: number): string {
-  if (pct >= 70) return "bg-teal-700"
-  if (pct >= 40) return "bg-amber-500"
-  return "bg-red-500"
+  if (pct >= 70) return 'bg-teal-700'
+  if (pct >= 40) return 'bg-amber-500'
+  return 'bg-red-500'
 }
 
 export default function DemoClassesPage() {
   useScrollRestore()
-  const [search, setSearch] = useState("")
+  const t = useT()
+  const [search, setSearch] = useState('')
 
   const classesWithStats = useMemo(() => {
     return DEMO_CLASSES.map((cls) => {
@@ -47,9 +49,13 @@ export default function DemoClassesPage() {
           ? Math.round(students.reduce((sum, s) => sum + s.averageScore, 0) / students.length)
           : cls.avgScore
       const studentsWithRA = students.filter((s) => s.readingAge != null)
-      const avgReadingAge = studentsWithRA.length > 0
-        ? Math.round(studentsWithRA.reduce((sum, s) => sum + (s.readingAge ?? 0), 0) / studentsWithRA.length)
-        : null
+      const avgReadingAge =
+        studentsWithRA.length > 0
+          ? Math.round(
+              studentsWithRA.reduce((sum, s) => sum + (s.readingAge ?? 0), 0) /
+                studentsWithRA.length,
+            )
+          : null
       return { ...cls, actualStudentCount, computedAvgScore: avgScore, avgReadingAge }
     })
   }, [])
@@ -62,7 +68,7 @@ export default function DemoClassesPage() {
         cls.name.toLowerCase().includes(q) ||
         cls.teacher.toLowerCase().includes(q) ||
         cls.examBoard.toLowerCase().includes(q) ||
-        cls.yearGroup.toLowerCase().includes(q)
+        cls.yearGroup.toLowerCase().includes(q),
     )
   }, [search, classesWithStats])
 
@@ -71,21 +77,21 @@ export default function DemoClassesPage() {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Classes</h1>
+          <h1 className="text-2xl font-bold tracking-tight">{t('demo_school.classes.title')}</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            {DEMO_CLASSES.length} classes across all year groups
+            {DEMO_CLASSES.length} {t('demo_school.classes.subtitle_suffix')}
           </p>
         </div>
         <button
           onClick={() =>
-            toast.info("Available with full account", {
-              description: "Register your school to create and manage classes.",
+            toast.info(t('demo_school.classes.create_toast_title'), {
+              description: t('demo_school.classes.create_toast_desc'),
             })
           }
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors self-start sm:self-auto"
         >
           <Plus className="h-4 w-4" />
-          Create Class
+          {t('demo_school.classes.create_btn')}
         </button>
       </div>
 
@@ -94,14 +100,14 @@ export default function DemoClassesPage() {
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <input
           type="text"
-          placeholder="Search classes by name, teacher, exam board..."
+          placeholder={t('demo_school.classes.search_placeholder')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="w-full rounded-lg border border-border bg-card pl-10 pr-10 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
         />
         {search && (
           <button
-            onClick={() => setSearch("")}
+            onClick={() => setSearch('')}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
           >
             <X className="h-4 w-4" />
@@ -113,7 +119,7 @@ export default function DemoClassesPage() {
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center justify-center rounded-xl border border-border bg-card py-16 text-center">
           <BookOpen className="h-10 w-10 text-muted-foreground/50 mb-3" />
-          <p className="text-sm text-muted-foreground">No classes match your search.</p>
+          <p className="text-sm text-muted-foreground">{t('demo_school.classes.empty')}</p>
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -150,7 +156,7 @@ export default function DemoClassesPage() {
               <div className="grid grid-cols-4 gap-3 mb-4">
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">
-                    Students
+                    {t('demo_school.classes.col.students')}
                   </p>
                   <div className="flex items-center gap-1">
                     <Users className="h-3 w-3 text-muted-foreground" />
@@ -159,13 +165,18 @@ export default function DemoClassesPage() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">
-                    Avg Score
+                    {t('demo_school.classes.col.avg_score')}
                   </p>
-                  <span className="text-sm font-semibold">{cls.computedAvgScore}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(cls.computedAvgScore)})</span></span>
+                  <span className="text-sm font-semibold">
+                    {cls.computedAvgScore}%{' '}
+                    <span className="text-xs font-normal text-muted-foreground">
+                      (G{percentageToGCSEGrade(cls.computedAvgScore)})
+                    </span>
+                  </span>
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">
-                    Reading Age
+                    {t('demo_school.classes.col.reading_age')}
                   </p>
                   <span className="text-sm font-semibold">
                     <ReadingAgeInline readingAge={cls.avgReadingAge} yearGroup={cls.yearGroup} />
@@ -173,7 +184,7 @@ export default function DemoClassesPage() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">
-                    Completion
+                    {t('demo_school.classes.col.completion')}
                   </p>
                   <span className="text-sm font-semibold">{cls.completionRate}%</span>
                 </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import {
@@ -18,6 +19,15 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+
+async function readServerLocale(): Promise<'en' | 'ar'> {
+  try {
+    const h = await headers()
+    return h.get('x-lang') === 'ar' ? 'ar' : 'en'
+  } catch {
+    return 'en'
+  }
+}
 export const metadata: Metadata = {
   title: 'An Inspector Calls Acts Analysis | The English Hub',
   description:
@@ -35,12 +45,15 @@ type QuoteAnalysis = {
   quote: string
   speaker: string
   analysis: string
+  speakerAr?: string
+  analysisAr?: string
 }
 
 type Technique = {
   device: string
   example: string
   effect: string
+  effectAr?: string
 }
 
 type ActData = {
@@ -50,17 +63,26 @@ type ActData = {
   quotes: QuoteAnalysis[]
   languageTechniques: Technique[]
   dramaticTechniques: Technique[]
+  titleAr?: string
+  summaryAr?: string[]
 }
 
 const acts: ActData[] = [
   {
     number: 1,
     title: 'Act One — Celebration and Exposure',
+    titleAr: 'الفصل الأول — الاحتفال والانكشاف',
     summary: [
       'The play opens on the Birling family celebrating the engagement of Sheila to Gerald Croft. Arthur Birling dominates the evening with after-dinner speeches about progress, self-reliance and the impossibility of war. His confidence is undercut by dramatic irony: the audience knows that the Titanic will sink and that two world wars are coming. Priestley deliberately makes Birling wrong about everything to discredit the capitalist philosophy he represents.',
       'Inspector Goole arrives to investigate the suicide of a young woman called Eva Smith. He reveals that Birling sacked Eva from his factory after she helped lead a strike for higher wages. Birling defends himself by insisting he paid standard rates and that cheap labour is essential to business. His language reduces Eva to an economic unit rather than a person.',
       'Sheila is then shown a photograph and recognises Eva as the shop girl she had dismissed from Milwards out of jealous spite. Unlike her father, Sheila immediately feels guilt and shame. Her rapid acceptance of responsibility marks the beginning of her moral transformation and separates her from the older generation.',
       'By the end of Act One, Gerald has visibly reacted to the name Daisy Renton, and the audience senses that further revelations are coming. Priestley structures the act to move from complacent celebration to uncomfortable exposure, establishing the pattern of interrogation that will continue throughout the play.',
+    ],
+    summaryAr: [
+      'تفتح المسرحية على عائلة Birling وهي تحتفل بخطوبة Sheila من Gerald Croft. يهيمن Arthur Birling على الأمسية بخطب ما بعد العشاء عن التقدم والاعتماد على النفس واستحالة الحرب. لكن ثقته تتحطّم بالسخرية الدرامية: الجمهور يدري إن Titanic راح تغرق وإن حربين عالميتين جايّات. تعمّد Priestley يجعل Birling غلطان في كل شي عشان يفقد الفلسفة الرأسمالية اللي يمثلها مصداقيتها.',
+      'يوصل Inspector Goole عشان يحقق في انتحار بنت شابة اسمها Eva Smith. يكشف إن Birling طرد Eva من مصنعه بعد ما ساعدت في قيادة إضراب يطالب برفع الأجور. يدافع Birling عن نفسه ويصرّ إنه كان يدفع الأجور القياسية وإن العمالة الرخيصة ضرورية للأعمال. لغته تختزل Eva إلى وحدة اقتصادية مو إلى إنسانة.',
+      'وبعدها يُعرض على Sheila صورة وتتعرّف على Eva كبنت كانت تشتغل في محل Milwards واللي تسبّبت في فصلها من باب الغيرة الحقودة. وعلى عكس أبوها، تحسّ Sheila بالذنب والعار على طول. تَقَبُّلها السريع للمسؤولية يعلّم بداية تحوّلها الأخلاقي ويفصلها عن الجيل الأكبر.',
+      'في نهاية الفصل الأول، يتفاعل Gerald بشكل واضح مع اسم Daisy Renton، ويحسّ الجمهور إن في مكاشفات ثانية جايّة. صاغ Priestley الفصل عشان ينتقل من احتفال راضٍ بالنفس إلى انكشاف غير مريح، ويؤسّس نمط الاستجواب اللي راح يستمر طول المسرحية.',
     ],
     quotes: [
       {
@@ -150,11 +172,18 @@ const acts: ActData[] = [
   {
     number: 2,
     title: 'Act Two — Complicity and Denial',
+    titleAr: 'الفصل الثاني — التواطؤ والإنكار',
     summary: [
       'Act Two opens with the continuation of Gerald\u2019s confession. He admits that he kept Eva \u2014 now calling herself Daisy Renton \u2014 as his mistress, installing her in a friend\u2019s flat before ending the affair when it suited him. Gerald claims genuine affection, but the power imbalance is clear: he rescued her from Alderman Meggarty\u2019s predatory attention only to make her dependent on himself.',
       'Sheila recognises that Gerald\u2019s story confirms a pattern of exploitation by wealthy men. She returns the engagement ring, demonstrating that her moral awakening extends to her personal life. Priestley uses this moment to show that accepting responsibility has real consequences.',
       'The Inspector then turns to Sybil Birling, who chaired the Brumley Women\u2019s Charity Organisation. Eva, now pregnant and desperate, had appealed to the committee for help. Sybil refused her application, offended that Eva had initially given the name "Mrs Birling." Sybil\u2019s refusal was motivated by class snobbery and personal pique rather than any assessment of Eva\u2019s need.',
       'In a devastating piece of dramatic irony, Sybil insists that the father of the child should bear full responsibility. She does not yet know that the father is her own son Eric. The audience and Sheila can see the trap closing, but Sybil walks into it with absolute confidence, making her eventual humiliation a direct consequence of her own moral blindness.',
+    ],
+    summaryAr: [
+      '\u064a\u0641\u062a\u062d \u0627\u0644\u0641\u0635\u0644 \u0627\u0644\u062b\u0627\u0646\u064a \u0628\u0645\u0648\u0627\u0635\u0644\u0629 \u0627\u0639\u062a\u0631\u0627\u0641 Gerald. \u064a\u0639\u062a\u0631\u0641 \u0625\u0646\u0647 \u0627\u062d\u062a\u0641\u0638 \u0628\u0640 Eva \u2014 \u0627\u0644\u0644\u064a \u0635\u0627\u0631\u062a \u062a\u0633\u0645\u0651\u064a \u0646\u0641\u0633\u0647\u0627 Daisy Renton \u2014 \u0643\u0639\u0634\u064a\u0642\u0629\u060c \u0648\u0633\u0643\u0651\u0646\u0647\u0627 \u0641\u064a \u0634\u0642\u0629 \u0635\u062f\u064a\u0642\u0647 \u0642\u0628\u0644 \u0645\u0627 \u064a\u0646\u0647\u064a \u0627\u0644\u0639\u0644\u0627\u0642\u0629 \u0644\u0645\u0651\u0627 \u0646\u0627\u0633\u0628\u0647. \u064a\u062f\u0651\u0639\u064a Gerald \u0625\u0646\u0647 \u0643\u0627\u0646 \u064a\u0643\u0646\u0651 \u0644\u0647\u0627 \u0645\u0634\u0627\u0639\u0631 \u0635\u0627\u062f\u0642\u0629\u060c \u0644\u0643\u0646 \u0627\u062e\u062a\u0644\u0627\u0644 \u0627\u0644\u0633\u0644\u0637\u0629 \u0648\u0627\u0636\u062d: \u0623\u0646\u0642\u0630\u0647\u0627 \u0645\u0646 \u0627\u0647\u062a\u0645\u0627\u0645 Alderman Meggarty \u0627\u0644\u062c\u0634\u0639 \u0628\u0633 \u0639\u0634\u0627\u0646 \u064a\u062e\u0644\u0651\u064a\u0647\u0627 \u0645\u0639\u062a\u0645\u062f\u0629 \u0639\u0644\u064a\u0647 \u0647\u0648.',
+      '\u062a\u0644\u0627\u062d\u0638 Sheila \u0625\u0646 \u0642\u0635\u0629 Gerald \u062a\u0624\u0643\u0651\u062f \u0646\u0645\u0637 \u0627\u0633\u062a\u063a\u0644\u0627\u0644 \u064a\u0645\u0627\u0631\u0633\u0647 \u0627\u0644\u0631\u062c\u0627\u0644 \u0627\u0644\u0623\u062b\u0631\u064a\u0627\u0621. \u062a\u0631\u062c\u0651\u0639 \u062e\u0627\u062a\u0645 \u0627\u0644\u062e\u0637\u0648\u0628\u0629\u060c \u0648\u062a\u062b\u0628\u062a \u0625\u0646 \u0635\u062d\u0648\u062a\u0647\u0627 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a\u0629 \u062a\u0645\u062a\u062f \u0644\u062d\u064a\u0627\u062a\u0647\u0627 \u0627\u0644\u0634\u062e\u0635\u064a\u0629. \u064a\u0633\u062a\u0639\u0645\u0644 Priestley \u0647\u0627\u064a \u0627\u0644\u0644\u062d\u0638\u0629 \u0639\u0634\u0627\u0646 \u064a\u0628\u064a\u0651\u0646 \u0625\u0646 \u062a\u064e\u0642\u064e\u0628\u064f\u0651\u0644 \u0627\u0644\u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0644\u0647 \u0639\u0648\u0627\u0642\u0628 \u062d\u0642\u064a\u0642\u064a\u0629.',
+      '\u0648\u0628\u0639\u062f\u0647\u0627 \u064a\u062a\u0648\u062c\u0651\u0647 \u0627\u0644\u0645\u0641\u062a\u0634 \u0625\u0644\u0649 Sybil Birling\u060c \u0627\u0644\u0644\u064a \u062a\u0631\u0623\u0633\u062a \u0644\u062c\u0646\u0629 Brumley Women\u2019s Charity Organisation. \u0643\u0627\u0646\u062a Eva\u060c \u0627\u0644\u0644\u064a \u0635\u0627\u0631\u062a \u062d\u0627\u0645\u0644 \u0648\u0645\u062d\u062a\u0627\u062c\u0629\u060c \u0642\u062f \u0637\u0644\u0628\u062a \u0645\u0633\u0627\u0639\u062f\u0629 \u0645\u0646 \u0627\u0644\u0644\u062c\u0646\u0629. \u0631\u0641\u0636\u062a Sybil \u0637\u0644\u0628\u0647\u0627\u060c \u0648\u0627\u0646\u0632\u0639\u062c\u062a \u0644\u0623\u0646 Eva \u0623\u0639\u0637\u062a \u0627\u0633\u0645 "Mrs Birling" \u0641\u064a \u0627\u0644\u0628\u062f\u0627\u064a\u0629. \u0643\u0627\u0646 \u0631\u0641\u0636 Sybil \u062f\u0627\u0641\u0639\u0647 \u0627\u0644\u062a\u0643\u0628\u0651\u0631 \u0627\u0644\u0637\u0628\u0642\u064a \u0648\u0627\u0644\u0627\u0633\u062a\u064a\u0627\u0621 \u0627\u0644\u0634\u062e\u0635\u064a \u0645\u0648 \u0623\u064a \u062a\u0642\u064a\u064a\u0645 \u062d\u0642\u064a\u0642\u064a \u0644\u062d\u0627\u062c\u0629 Eva.',
+      '\u0641\u064a \u0642\u0637\u0639\u0629 \u0633\u062e\u0631\u064a\u0629 \u062f\u0631\u0627\u0645\u064a\u0629 \u0645\u062f\u0645\u0651\u0631\u0629\u060c \u062a\u0635\u0631\u0651 Sybil \u0625\u0646 \u0623\u0628 \u0627\u0644\u0637\u0641\u0644 \u0644\u0627\u0632\u0645 \u064a\u062a\u062d\u0645\u0651\u0644 \u0627\u0644\u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0643\u0627\u0645\u0644\u0629. \u0648\u0647\u064a \u0645\u0627 \u062a\u062f\u0631\u064a \u0644\u062d\u062f \u0627\u0644\u0622\u0646 \u0625\u0646 \u0627\u0644\u0623\u0628 \u0647\u0648 \u0627\u0628\u0646\u0647\u0627 Eric. \u0627\u0644\u062c\u0645\u0647\u0648\u0631 \u0648 Sheila \u064a\u0634\u0648\u0641\u0648\u0646 \u0627\u0644\u0645\u0635\u064a\u062f\u0629 \u062a\u0646\u063a\u0644\u0642\u060c \u0644\u0643\u0646 Sybil \u062a\u0645\u0634\u064a \u0641\u064a\u0647\u0627 \u0628\u062b\u0642\u0629 \u0645\u0637\u0644\u0642\u0629\u060c \u0648\u062a\u062c\u0639\u0644 \u0625\u0630\u0644\u0627\u0644\u0647\u0627 \u0627\u0644\u0644\u0627\u062d\u0642 \u0646\u062a\u064a\u062c\u0629 \u0645\u0628\u0627\u0634\u0631\u0629 \u0644\u0639\u0645\u0627\u0647\u0627 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a.',
     ],
     quotes: [
       {
@@ -244,11 +273,18 @@ const acts: ActData[] = [
   {
     number: 3,
     title: 'Act Three — Reckoning and Repetition',
+    titleAr: 'الفصل الثالث — الحساب والتكرار',
     summary: [
       'Eric returns and the full chain of responsibility is laid bare. He confesses that he met Eva at a bar, forced himself on her when drunk, and got her pregnant. He stole money from his father\u2019s firm to support her, but she refused to accept stolen money \u2014 showing more moral integrity than any of the Birlings. Eric\u2019s confession is the most violent in the play, and Priestley does not soften it.',
       'The Inspector delivers his final speech before leaving. He warns the Birlings that if people do not learn to share responsibility for one another, they will be taught it in "fire and blood and anguish." The speech is both a political manifesto and a prophecy: the audience knows that two world wars fulfilled the warning. Priestley uses the Inspector as a mouthpiece for the democratic socialist argument that society must take collective responsibility for its weakest members.',
       'After the Inspector departs, the family fractures along generational lines. Gerald and Arthur investigate and discover that no police inspector called Goole exists, and that no girl has died at the local infirmary. The older Birlings celebrate their apparent escape, trying to return to the comfort of the evening\u2019s opening. Sheila and Eric, however, insist that the moral lesson matters regardless of whether the Inspector was real.',
       'The telephone rings. A real inspector is on his way to investigate a girl\u2019s suicide. The play ends on this devastating circularity: the Birlings will face the same reckoning again. Priestley\u2019s final message is that moral responsibility cannot be evaded by discrediting the messenger. The cycle will repeat until the lesson is learned.',
+    ],
+    summaryAr: [
+      '\u064a\u0631\u062c\u0639 Eric \u0648\u062a\u062a\u0639\u0631\u0651\u0649 \u0633\u0644\u0633\u0644\u0629 \u0627\u0644\u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0643\u0627\u0645\u0644\u0629. \u064a\u0639\u062a\u0631\u0641 \u0625\u0646\u0647 \u0642\u0627\u0628\u0644 Eva \u0641\u064a \u0628\u0627\u0631\u060c \u0648\u0641\u0631\u0636 \u0646\u0641\u0633\u0647 \u0639\u0644\u064a\u0647\u0627 \u0648\u0647\u0648 \u0633\u0643\u0631\u0627\u0646\u060c \u0648\u062d\u0628\u0651\u0644\u0647\u0627. \u0633\u0631\u0642 \u0641\u0644\u0648\u0633 \u0645\u0646 \u0634\u0631\u0643\u0629 \u0623\u0628\u0648\u0647 \u0639\u0634\u0627\u0646 \u064a\u0635\u0631\u0641 \u0639\u0644\u064a\u0647\u0627\u060c \u0644\u0643\u0646\u0647\u0627 \u0631\u0641\u0636\u062a \u062a\u0642\u0628\u0644 \u0627\u0644\u0641\u0644\u0648\u0633 \u0627\u0644\u0645\u0633\u0631\u0648\u0642\u0629 \u2014 \u0648\u0623\u0638\u0647\u0631\u062a \u0646\u0632\u0627\u0647\u0629 \u0623\u062e\u0644\u0627\u0642\u064a\u0629 \u0623\u0643\u0628\u0631 \u0645\u0646 \u0623\u064a \u0648\u0627\u062d\u062f \u0645\u0646 \u0622\u0644 Birling. \u0627\u0639\u062a\u0631\u0627\u0641 Eric \u0647\u0648 \u0627\u0644\u0623\u0634\u062f \u0639\u0646\u0641\u0627\u064b \u0641\u064a \u0627\u0644\u0645\u0633\u0631\u062d\u064a\u0629\u060c \u0648 Priestley \u0645\u0627 \u064a\u062e\u0641\u0651\u0641\u0647.',
+      '\u064a\u0644\u0642\u064a \u0627\u0644\u0645\u0641\u062a\u0634 \u062e\u0637\u0628\u062a\u0647 \u0627\u0644\u062e\u062a\u0627\u0645\u064a\u0629 \u0642\u0628\u0644 \u0645\u0627 \u064a\u0645\u0634\u064a. \u064a\u062d\u0630\u0651\u0631 \u0622\u0644 Birling \u0625\u0646\u0647 \u0625\u0630\u0627 \u0627\u0644\u0646\u0627\u0633 \u0645\u0627 \u062a\u0639\u0644\u0651\u0645\u0648\u0627 \u064a\u062a\u0634\u0627\u0631\u0643\u0648\u0646 \u0627\u0644\u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0639\u0646 \u0628\u0639\u0636\u0647\u0645 \u0627\u0644\u0628\u0639\u0636\u060c \u0631\u0627\u062d \u064a\u062a\u0639\u0644\u0651\u0645\u0648\u0646\u0647\u0627 \u0641\u064a "fire and blood and anguish" (\u0646\u0627\u0631 \u0648\u062f\u0645 \u0648\u0639\u0630\u0627\u0628). \u0627\u0644\u062e\u0637\u0628\u0629 \u0647\u064a \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u0628\u064a\u0627\u0646 \u0633\u064a\u0627\u0633\u064a \u0648\u0646\u0628\u0648\u0621\u0629: \u0627\u0644\u062c\u0645\u0647\u0648\u0631 \u064a\u062f\u0631\u064a \u0625\u0646 \u062d\u0631\u0628\u064a\u0646 \u0639\u0627\u0644\u0645\u064a\u062a\u064a\u0646 \u062d\u0642\u0651\u0642\u062a\u0627 \u0647\u0630\u0627 \u0627\u0644\u062a\u062d\u0630\u064a\u0631. \u064a\u0633\u062a\u0639\u0645\u0644 Priestley \u0627\u0644\u0645\u0641\u062a\u0634 \u0643\u0645\u0646\u0628\u0631 \u0644\u062d\u062c\u0629 \u0627\u0644\u0627\u0634\u062a\u0631\u0627\u0643\u064a\u0629 \u0627\u0644\u062f\u064a\u0645\u0642\u0631\u0627\u0637\u064a\u0629: \u0625\u0646 \u0627\u0644\u0645\u062c\u062a\u0645\u0639 \u0644\u0627\u0632\u0645 \u064a\u062a\u062d\u0645\u0651\u0644 \u0627\u0644\u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0627\u0644\u062c\u0645\u0627\u0639\u064a\u0629 \u0639\u0646 \u0623\u0636\u0639\u0641 \u0623\u0641\u0631\u0627\u062f\u0647.',
+      '\u0628\u0639\u062f \u0645\u0627 \u064a\u063a\u0627\u062f\u0631 \u0627\u0644\u0645\u0641\u062a\u0634\u060c \u062a\u062a\u0635\u062f\u0651\u0639 \u0627\u0644\u0639\u0627\u0626\u0644\u0629 \u0639\u0644\u0649 \u062e\u0637\u0648\u0637 \u0627\u0644\u0623\u062c\u064a\u0627\u0644. \u064a\u062a\u062d\u0631\u0651\u0649 Gerald \u0648 Arthur \u0648\u064a\u0643\u062a\u0634\u0641\u0648\u0646 \u0625\u0646\u0647 \u0645\u0627 \u0641\u064a \u0645\u0641\u062a\u0634 \u0634\u0631\u0637\u0629 \u0628\u0647\u0630\u0627 \u0627\u0644\u0627\u0633\u0645 Goole\u060c \u0648\u0625\u0646\u0647 \u0645\u0627 \u0641\u064a \u0628\u0646\u062a \u0645\u0627\u062a\u062a \u0641\u064a \u0627\u0644\u0645\u0633\u062a\u0634\u0641\u0649 \u0627\u0644\u0645\u062d\u0644\u064a. \u0643\u0628\u0627\u0631 \u0622\u0644 Birling \u064a\u062d\u062a\u0641\u0644\u0648\u0646 \u0628\u0647\u0631\u0648\u0628\u0647\u0645 \u0627\u0644\u0638\u0627\u0647\u0631\u064a\u060c \u0648\u064a\u062d\u0627\u0648\u0644\u0648\u0646 \u064a\u0631\u062c\u0639\u0648\u0646 \u0644\u0631\u0627\u062d\u0629 \u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u0623\u0645\u0633\u064a\u0629. \u0644\u0643\u0646 Sheila \u0648 Eric \u064a\u0635\u0631\u0651\u0648\u0646 \u0625\u0646 \u0627\u0644\u062f\u0631\u0633 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a \u064a\u0647\u0645\u0651 \u0628\u063a\u0636\u0651 \u0627\u0644\u0646\u0638\u0631 \u0639\u0646 \u0648\u0627\u0642\u0639\u064a\u0629 \u0627\u0644\u0645\u0641\u062a\u0634.',
+      '\u064a\u0631\u0646\u0651 \u0627\u0644\u062a\u0644\u0641\u0648\u0646. \u0645\u0641\u062a\u0634 \u062d\u0642\u064a\u0642\u064a \u0641\u064a \u0637\u0631\u064a\u0642\u0647 \u0639\u0634\u0627\u0646 \u064a\u062d\u0642\u0642 \u0641\u064a \u0627\u0646\u062a\u062d\u0627\u0631 \u0628\u0646\u062a. \u062a\u0646\u062a\u0647\u064a \u0627\u0644\u0645\u0633\u0631\u062d\u064a\u0629 \u0639\u0644\u0649 \u0647\u0630\u064a \u0627\u0644\u062f\u0627\u0626\u0631\u064a\u0629 \u0627\u0644\u0645\u062f\u0645\u0651\u0631\u0629: \u0622\u0644 Birling \u0631\u0627\u062d \u064a\u0648\u0627\u062c\u0647\u0648\u0646 \u0646\u0641\u0633 \u0627\u0644\u062d\u0633\u0627\u0628 \u0645\u0631\u0629 \u062b\u0627\u0646\u064a\u0629. \u0627\u0644\u0631\u0633\u0627\u0644\u0629 \u0627\u0644\u062e\u062a\u0627\u0645\u064a\u0629 \u0644\u0640 Priestley \u0647\u064a \u0625\u0646 \u0627\u0644\u0645\u0633\u0624\u0648\u0644\u064a\u0629 \u0627\u0644\u0623\u062e\u0644\u0627\u0642\u064a\u0629 \u0645\u0627 \u062a\u0646\u0641\u0643 \u0628\u062a\u0634\u0648\u064a\u0647 \u0627\u0644\u0631\u0633\u0648\u0644. \u0627\u0644\u062f\u0648\u0631\u0629 \u0631\u0627\u062d \u062a\u062a\u0643\u0631\u0651\u0631 \u0644\u064a\u0646 \u0645\u0627 \u064a\u062a\u0639\u0644\u0651\u0645 \u0627\u0644\u062f\u0631\u0633.',
     ],
     quotes: [
       {
@@ -353,16 +389,26 @@ export default async function ActsPage() {
   if (board && !allowedBoards.includes(board)) {
     redirect('/revision/texts')
   }
+  const locale = await readServerLocale()
+  const isAr = locale === 'ar'
+  const pick = (en: string, ar?: string) => (isAr && ar ? ar : en)
+  const pickArr = (en: string[], ar?: string[]) => (isAr && ar && ar.length === en.length ? ar : en)
 
   return (
-    <div className="space-y-10 pb-16">
+    <div className="space-y-10 pb-16" dir={isAr ? 'rtl' : 'ltr'}>
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "An Inspector Calls", url: "https://theenglishhub.app/revision/texts/an-inspector-calls" },
-          { name: "Act-by-Act Analysis", url: "https://theenglishhub.app/revision/texts/an-inspector-calls/acts" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'An Inspector Calls',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
+          },
+          {
+            name: 'Act-by-Act Analysis',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls/acts',
+          },
         ]}
       />
       {/* Hero */}
@@ -377,13 +423,13 @@ export default async function ActsPage() {
             render={<Link href="/revision/texts/an-inspector-calls" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to An Inspector Calls
+            {isAr ? 'رجوع لـ An Inspector Calls' : 'Back to An Inspector Calls'}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Drama className="mr-1 size-3 text-violet-400" />
-              Act-by-Act Analysis
+              {isAr ? 'تحليل فصلاً بفصل' : 'Act-by-Act Analysis'}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
@@ -392,14 +438,15 @@ export default async function ActsPage() {
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            An Inspector Calls &mdash; Acts Analysis
+            {isAr ? 'An Inspector Calls — تحليل الفصول' : 'An Inspector Calls — Acts Analysis'}
           </h1>
           <p className="mt-2 text-body-lg text-muted-foreground">
-            by J.B. Priestley &mdash; 1945
+            {isAr ? 'تأليف J.B. Priestley — 1945' : 'by J.B. Priestley — 1945'}
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Detailed analysis of all three acts with key quotations, language
-            techniques and dramatic devices. Every quote is 15 words or fewer.
+            {isAr
+              ? 'تحليل تفصيلي لكل فصول المسرحية الثلاثة مع الاقتباسات المفتاحية والأساليب اللغوية والوسائل الدرامية. كل اقتباس 15 كلمة أو أقل بالإنجليزية.'
+              : 'Detailed analysis of all three acts with key quotations, language techniques and dramatic devices. Every quote is 15 words or fewer.'}
           </p>
         </div>
       </section>
@@ -412,9 +459,7 @@ export default async function ActsPage() {
             <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
               <BookOpen className="size-5 text-violet-400" />
             </div>
-            <h2 className="text-heading-lg font-heading text-foreground">
-              {act.title}
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">{act.title}</h2>
           </div>
 
           {/* Summary */}
@@ -441,15 +486,9 @@ export default async function ActsPage() {
               {act.quotes.map((q, i) => (
                 <Card key={i}>
                   <CardContent className="space-y-2 p-5">
-                    <p className="text-body-md font-medium italic text-foreground">
-                      {q.quote}
-                    </p>
-                    <p className="text-caption uppercase tracking-wide text-primary">
-                      {q.speaker}
-                    </p>
-                    <p className="text-body-sm text-muted-foreground">
-                      {q.analysis}
-                    </p>
+                    <p className="text-body-md font-medium italic text-foreground">{q.quote}</p>
+                    <p className="text-caption uppercase tracking-wide text-primary">{q.speaker}</p>
+                    <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -468,12 +507,8 @@ export default async function ActsPage() {
               {act.languageTechniques.map((t, i) => (
                 <Card key={i}>
                   <CardHeader>
-                    <CardTitle className="text-heading-md font-heading">
-                      {t.device}
-                    </CardTitle>
-                    <CardDescription className="italic">
-                      {t.example}
-                    </CardDescription>
+                    <CardTitle className="text-heading-md font-heading">{t.device}</CardTitle>
+                    <CardDescription className="italic">{t.example}</CardDescription>
                   </CardHeader>
                   <CardContent className="text-body-sm text-muted-foreground">
                     {t.effect}
@@ -495,12 +530,8 @@ export default async function ActsPage() {
               {act.dramaticTechniques.map((t, i) => (
                 <Card key={i}>
                   <CardHeader>
-                    <CardTitle className="text-heading-md font-heading">
-                      {t.device}
-                    </CardTitle>
-                    <CardDescription className="italic">
-                      {t.example}
-                    </CardDescription>
+                    <CardTitle className="text-heading-md font-heading">{t.device}</CardTitle>
+                    <CardDescription className="italic">{t.example}</CardDescription>
                   </CardHeader>
                   <CardContent className="text-body-sm text-muted-foreground">
                     {t.effect}
@@ -511,9 +542,7 @@ export default async function ActsPage() {
           </div>
 
           {/* Divider between acts */}
-          {act.number < 3 && (
-            <div className="border-t border-border/40 pt-4" />
-          )}
+          {act.number < 3 && <div className="border-t border-border/40 pt-4" />}
         </section>
       ))}
 
@@ -522,9 +551,7 @@ export default async function ActsPage() {
         <Card className="bg-primary/5">
           <CardContent className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div>
-              <h3 className="text-heading-md font-heading text-foreground">
-                Continue studying
-              </h3>
+              <h3 className="text-heading-md font-heading text-foreground">Continue studying</h3>
               <p className="mt-1 text-body-sm text-muted-foreground">
                 Explore essay plans and key quotes for An Inspector Calls.
               </p>
@@ -551,11 +578,10 @@ export default async function ActsPage() {
 
       {/* Fair-dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations (&le;15 words each) reproduced under the fair dealing
-        provision of the Copyright, Designs and Patents Act 1988 for the purpose
-        of criticism, review and educational study.{' '}
-        <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
-        available from your school or local library.
+        Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
+        Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational
+        study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text available from
+        your school or local library.
       </p>
     </div>
   )

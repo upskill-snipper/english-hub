@@ -6,17 +6,24 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t, tMany } from '@/lib/i18n/t'
 
-export const metadata: Metadata = {
-  title: 'Grade-9 Model Essays — Annotated Paragraph-by-Paragraph | The English Hub',
-  description:
-    'Annotated Grade-9 model essays for Macbeth, An Inspector Calls, A Christmas Carol, Jekyll and Hyde, and Romeo and Juliet. Paragraph-by-paragraph commentary so you can see exactly how a top-band response is built.',
-  alternates: { canonical: 'https://theenglishhub.app/revision/model-essays' },
-  openGraph: {
-    title: 'Grade-9 Model Essays — Annotated Paragraph-by-Paragraph',
-    description:
-      'Top-band annotated model essays for the most-taught GCSE Literature texts. Each essay is broken down paragraph-by-paragraph with technique commentary.',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const [title, description, ogTitle, ogDescription] = await tMany([
+    'revision.model_essays.index.meta_title',
+    'revision.model_essays.index.meta_description',
+    'revision.model_essays.index.og_title',
+    'revision.model_essays.index.og_description',
+  ])
+  return {
+    title,
+    description,
+    alternates: { canonical: 'https://theenglishhub.app/revision/model-essays' },
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+    },
+  }
 }
 
 /* ─── Shared types ─────────────────────────────────────────────── */
@@ -46,31 +53,34 @@ type TextKey =
   | 'jekyll-and-hyde'
   | 'romeo-and-juliet'
 
-const TEXT_GROUPS: { key: TextKey; label: string; tagline: string }[] = [
+// Author/work labels stay literary (English) so students see the
+// canonical text title examiners use. Taglines route through t() because
+// they're index-page chrome explaining each text.
+const TEXT_GROUPS: { key: TextKey; label: string; taglineKey: string }[] = [
   {
     key: 'macbeth',
     label: 'Macbeth',
-    tagline: 'Ambition, guilt and the supernatural in Shakespeare’s shortest tragedy.',
+    taglineKey: 'revision.model_essays.index.tagline_macbeth',
   },
   {
     key: 'an-inspector-calls',
     label: 'An Inspector Calls',
-    tagline: 'Priestley’s morality play on collective responsibility and class.',
+    taglineKey: 'revision.model_essays.index.tagline_inspector_calls',
   },
   {
     key: 'a-christmas-carol',
     label: 'A Christmas Carol',
-    tagline: 'Dickens’s allegorical novella on transformation, charity, and want.',
+    taglineKey: 'revision.model_essays.index.tagline_christmas_carol',
   },
   {
     key: 'jekyll-and-hyde',
     label: 'Jekyll and Hyde',
-    tagline: 'Stevenson’s Gothic study of duality and the Victorian self.',
+    taglineKey: 'revision.model_essays.index.tagline_jekyll_hyde',
   },
   {
     key: 'romeo-and-juliet',
     label: 'Romeo and Juliet',
-    tagline: 'Shakespeare’s tragedy of love, fate, and feud.',
+    taglineKey: 'revision.model_essays.index.tagline_romeo_juliet',
   },
 ]
 
@@ -105,11 +115,53 @@ function camelKey(key: TextKey): string {
 /* ─── Page ─────────────────────────────────────────────────────── */
 
 export default async function ModelEssaysIndexPage() {
+  // Resolve chrome strings once per render. Author/work labels and essay
+  // titles stay English (literary content per scope) — everything else
+  // routes through t().
+  const [
+    tBreadcrumbRevision,
+    tBreadcrumbModelEssays,
+    tBackToHub,
+    tBadgeModelEssays,
+    tAnnotatedSingular,
+    tAnnotatedPlural,
+    tH1,
+    tHeroBody,
+    tEssaySingular,
+    tEssayPlural,
+    tEmptyPrefix,
+    tEmptySuffix,
+    tFooterH2,
+    tFooterBody,
+  ] = await tMany([
+    'footer.section.revision',
+    'revision.model_essays.index.badge_model_essays',
+    'revision.model_essays.index.back_to_revision_hub',
+    'revision.model_essays.index.badge_model_essays',
+    'revision.model_essays.index.annotated_essays_singular',
+    'revision.model_essays.index.annotated_essays_plural',
+    'revision.model_essays.index.h1',
+    'revision.model_essays.index.hero_body',
+    'revision.model_essays.index.count_essay_singular',
+    'revision.model_essays.index.count_essay_plural',
+    'revision.model_essays.index.empty_state_prefix',
+    'revision.model_essays.index.empty_state_suffix',
+    'revision.model_essays.index.footer_h2',
+    'revision.model_essays.index.footer_body',
+  ])
+
   const groups = await Promise.all(
-    TEXT_GROUPS.map(async (g) => ({ ...g, essays: await loadEssaysFor(g.key) })),
+    TEXT_GROUPS.map(async (g) => ({
+      ...g,
+      tagline: await t(g.taglineKey),
+      essays: await loadEssaysFor(g.key),
+    })),
   )
 
-  const breadcrumbItems = [{ label: 'Revision', href: '/revision' }, { label: 'Model essays' }]
+  const breadcrumbItems = [
+    { label: tBreadcrumbRevision, href: '/revision' },
+    { label: tBreadcrumbModelEssays },
+  ]
 
   const totalEssays = groups.reduce((acc, g) => acc + g.essays.length, 0)
 
@@ -139,29 +191,23 @@ export default async function ModelEssaysIndexPage() {
               render={<Link href="/revision" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to Revision Hub
+              {tBackToHub}
             </Button>
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <Sparkles className="mr-1 size-3" />
-                Model essays
+                {tBadgeModelEssays}
               </Badge>
               {totalEssays > 0 && (
                 <Badge variant="outline">
-                  {totalEssays} annotated essay{totalEssays === 1 ? '' : 's'}
+                  {totalEssays} {totalEssays === 1 ? tAnnotatedSingular : tAnnotatedPlural}
                 </Badge>
               )}
             </div>
 
-            <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Grade-9 model essays — annotated paragraph-by-paragraph
-            </h1>
-            <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-              Read a top-band response, then read the marker’s thinking next to every paragraph.
-              Each essay is broken into the moves a Grade-9 candidate makes — thesis, embedded
-              quotation, methodical AO2, deft AO3 — so you can copy the structure, not the words.
-            </p>
+            <h1 className="text-display-sm font-heading text-foreground sm:text-display">{tH1}</h1>
+            <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{tHeroBody}</p>
           </div>
         </section>
 
@@ -179,14 +225,14 @@ export default async function ModelEssaysIndexPage() {
                 <p className="text-body-sm text-muted-foreground">{group.tagline}</p>
               </div>
               <span className="text-caption text-muted-foreground">
-                {group.essays.length} essay{group.essays.length === 1 ? '' : 's'}
+                {group.essays.length} {group.essays.length === 1 ? tEssaySingular : tEssayPlural}
               </span>
             </div>
 
             {group.essays.length === 0 ? (
               <div className="rounded-2xl border border-dashed border-border/60 bg-card/50 p-6 text-center">
                 <p className="text-body-sm text-muted-foreground">
-                  Model essays for {group.label} are being written and will appear here shortly.
+                  {tEmptyPrefix} {group.label} {tEmptySuffix}
                 </p>
               </div>
             ) : (
@@ -205,13 +251,9 @@ export default async function ModelEssaysIndexPage() {
           className="rounded-2xl border border-border/60 bg-card p-6"
         >
           <h2 id="fair-dealing-heading" className="text-heading-sm font-heading text-foreground">
-            About these model essays
+            {tFooterH2}
           </h2>
-          <p className="mt-2 text-body-sm text-muted-foreground">
-            All essays are written by The English Hub for revision use. Any quoted text from the
-            primary works is reproduced as a short fair-dealing extract for the purpose of criticism
-            and review under section 30 of the Copyright, Designs and Patents Act 1988.
-          </p>
+          <p className="mt-2 text-body-sm text-muted-foreground">{tFooterBody}</p>
         </section>
       </div>
     </>
@@ -220,9 +262,15 @@ export default async function ModelEssaysIndexPage() {
 
 /* ─── Sub-components ───────────────────────────────────────────── */
 
-function EssayCard({ textKey, essay }: { textKey: TextKey; essay: ModelEssay }) {
+async function EssayCard({ textKey, essay }: { textKey: TextKey; essay: ModelEssay }) {
   const href = `/revision/model-essays/${textKey}/${essay.slug}`
   const wordCount = formatWordCount(essay.wordCount)
+  const [tGradePrefix, tWordsSuffix, tMoreSuffix, tViewEssay] = await tMany([
+    'revision.model_essays.index.card_grade_prefix',
+    'revision.model_essays.index.card_words_suffix',
+    'revision.model_essays.index.card_more_suffix',
+    'revision.model_essays.index.card_view_essay',
+  ])
   return (
     <Link
       href={href}
@@ -233,7 +281,7 @@ function EssayCard({ textKey, essay }: { textKey: TextKey; essay: ModelEssay }) 
           <FileText className="size-5 text-primary" />
         </div>
         <Badge variant="default" className="shrink-0">
-          Grade {essay.targetGrade}
+          {tGradePrefix} {essay.targetGrade}
         </Badge>
       </div>
 
@@ -241,22 +289,26 @@ function EssayCard({ textKey, essay }: { textKey: TextKey; essay: ModelEssay }) 
         <h3 className="text-heading-sm font-heading font-serif text-foreground group-hover:text-primary">
           {essay.title}
         </h3>
-        {wordCount && <p className="mt-1 text-caption text-muted-foreground">{wordCount} words</p>}
+        {wordCount && (
+          <p className="mt-1 text-caption text-muted-foreground">
+            {wordCount} {tWordsSuffix}
+          </p>
+        )}
       </div>
 
       {essay.keyTechniques?.length > 0 && (
         <div className="flex flex-wrap gap-1.5">
-          {essay.keyTechniques.slice(0, 3).map((t) => (
+          {essay.keyTechniques.slice(0, 3).map((technique) => (
             <span
-              key={t}
+              key={technique}
               className="inline-flex items-center rounded-full border border-border/60 bg-background px-2 py-0.5 text-[0.65rem] font-medium uppercase tracking-wider text-muted-foreground"
             >
-              {t}
+              {technique}
             </span>
           ))}
           {essay.keyTechniques.length > 3 && (
             <span className="text-[0.65rem] text-muted-foreground">
-              +{essay.keyTechniques.length - 3} more
+              +{essay.keyTechniques.length - 3} {tMoreSuffix}
             </span>
           )}
         </div>
@@ -264,7 +316,7 @@ function EssayCard({ textKey, essay }: { textKey: TextKey; essay: ModelEssay }) 
 
       <div className="mt-auto inline-flex items-center gap-1 pt-2 text-xs font-medium text-primary">
         <BookOpen className="size-3.5" />
-        View annotated essay
+        {tViewEssay}
         <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
       </div>
     </Link>

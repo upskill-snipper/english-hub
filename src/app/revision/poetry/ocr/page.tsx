@@ -18,11 +18,12 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 interface Cluster {
   slug: string
-  title: string
-  description: string
+  titleKey: string
+  descKey: string
   count: number
   icon: typeof Heart
   iconColor: string
@@ -32,9 +33,8 @@ interface Cluster {
 const CLUSTERS: Cluster[] = [
   {
     slug: 'love-and-relationships',
-    title: 'Love and Relationships',
-    description:
-      'Romantic, familial and complex relationships from Byron and Wordsworth to Carol Ann Duffy and John Cooper Clarke.',
+    titleKey: 'poetry_hub.ocr.cluster.lr.title',
+    descKey: 'poetry_hub.ocr.cluster.lr.desc',
     count: 15,
     icon: Heart,
     iconColor: 'text-pink-400',
@@ -42,9 +42,8 @@ const CLUSTERS: Cluster[] = [
   },
   {
     slug: 'conflict',
-    title: 'Conflict',
-    description:
-      'War, prejudice and personal struggle, from Tennyson and Owen to Agard, Zephaniah and Imtiaz Dharker.',
+    titleKey: 'poetry_hub.ocr.cluster.conflict.title',
+    descKey: 'poetry_hub.ocr.cluster.conflict.desc',
     count: 15,
     icon: Swords,
     iconColor: 'text-red-400',
@@ -52,9 +51,8 @@ const CLUSTERS: Cluster[] = [
   },
   {
     slug: 'youth-and-age',
-    title: 'Youth and Age',
-    description:
-      'Childhood, growing up, parenthood and mortality, from Yeats and Keats to Helen Dunmore and Carol Rumens.',
+    titleKey: 'poetry_hub.ocr.cluster.ya.title',
+    descKey: 'poetry_hub.ocr.cluster.ya.desc',
     count: 15,
     icon: Clock,
     iconColor: 'text-clay-600',
@@ -62,9 +60,8 @@ const CLUSTERS: Cluster[] = [
   },
   {
     slug: 'power-and-natural-world',
-    title: 'Power and the Natural World',
-    description:
-      'Nature, environment and human power, from Shelley and Blake to Ted Hughes, Seamus Heaney and Achebe.',
+    titleKey: 'poetry_hub.ocr.cluster.pnw.title',
+    descKey: 'poetry_hub.ocr.cluster.pnw.desc',
     count: 15,
     icon: Mountain,
     iconColor: 'text-emerald-400',
@@ -73,6 +70,7 @@ const CLUSTERS: Cluster[] = [
 ]
 
 export default function OCRPoetryHubPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -95,7 +93,7 @@ export default function OCRPoetryHubPage() {
           render={<Link href="/revision/poetry" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Poetry
+          {t('poetry_hub.ocr.back_to_poetry')}
         </Button>
       </div>
 
@@ -108,19 +106,16 @@ export default function OCRPoetryHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              OCR GCSE English Literature J352
+              {t('poetry_hub.ocr.badge_spec')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Towards a World Unknown
+            {t('poetry_hub.ocr.hero_title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            The OCR poetry anthology contains 60 poems split across 4 themed clusters of 15 poems
-            each. For your exam, you only need to study{' '}
-            <strong className="text-foreground">one cluster</strong> -- the one chosen by your
-            school or teacher.
+            {t('poetry_hub.ocr.hero_lead')}
           </p>
         </div>
       </section>
@@ -138,12 +133,10 @@ export default function OCRPoetryHubPage() {
           <Info className="mt-0.5 size-5 shrink-0 text-primary" />
           <div>
             <h2 className="text-heading-sm font-heading text-foreground">
-              Which cluster do I study?
+              {t('poetry_hub.ocr.which_cluster')}
             </h2>
             <p className="mt-1 text-body-sm text-muted-foreground">
-              Check with your teacher to find out which of the 4 clusters your class is studying.
-              Most schools choose one cluster at the start of Year 10 and stick with it through to
-              the exam. You will be assessed on poems from that cluster only.
+              {t('poetry_hub.ocr.which_cluster_body')}
             </p>
           </div>
         </div>
@@ -153,7 +146,9 @@ export default function OCRPoetryHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">The Four Clusters</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.ocr.four_clusters')}
+          </h2>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
@@ -170,14 +165,18 @@ export default function OCRPoetryHubPage() {
                     <cluster.icon className={`size-5 ${cluster.iconColor}`} />
                   </div>
                   <div>
-                    <CardTitle className="text-heading-md font-heading">{cluster.title}</CardTitle>
-                    <CardDescription>{cluster.count} poems</CardDescription>
+                    <CardTitle className="text-heading-md font-heading">
+                      {t(cluster.titleKey)}
+                    </CardTitle>
+                    <CardDescription>
+                      {cluster.count} {t('poetry_hub.ocr.poems_count')}
+                    </CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col gap-4">
                 <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  {cluster.description}
+                  {t(cluster.descKey)}
                 </p>
                 <div className="mt-auto pt-2">
                   <Button
@@ -186,7 +185,7 @@ export default function OCRPoetryHubPage() {
                     className="w-full"
                     render={<Link href={`/revision/poetry/ocr/${cluster.slug}`} />}
                   >
-                    Study {cluster.title}
+                    {t('poetry_hub.ocr.study')} {t(cluster.titleKey)}
                     <ArrowRight className="size-3.5" />
                   </Button>
                 </div>
@@ -198,12 +197,11 @@ export default function OCRPoetryHubPage() {
 
       {/* ── Copyright note ──────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">About these study pages</h2>
+        <h2 className="text-heading-sm font-heading text-foreground">
+          {t('poetry_hub.ocr.about_pages_title')}
+        </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-          For older, public-domain poems we provide full interactive study pages with annotations,
-          context, and quotation analysis. For poems still in copyright, we provide context, themes,
-          and key quotation analysis only -- you will need a copy of the OCR anthology (
-          <em>Towards a World Unknown</em>, ISBN 9781398384408) to read the full text.
+          {t('poetry_hub.ocr.about_pages_body')}
         </p>
       </section>
 
@@ -211,11 +209,10 @@ export default function OCRPoetryHubPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-primary" />
         <h2 className="text-heading-lg font-heading text-foreground">
-          Studying a different exam board?
+          {t('poetry_hub.ocr.different_board_title')}
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Head back to the Poetry hub to switch boards or explore unseen poetry techniques and
-          general poetry skills that apply to every exam board.
+          {t('poetry_hub.ocr.different_board_body')}
         </p>
         <Button
           variant="default"
@@ -223,7 +220,7 @@ export default function OCRPoetryHubPage() {
           className="mt-5"
           render={<Link href="/revision/poetry" />}
         >
-          Back to Poetry Hub
+          {t('poetry_hub.ocr.back_to_hub')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

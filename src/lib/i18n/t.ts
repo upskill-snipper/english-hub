@@ -38,6 +38,20 @@ async function resolveLocale(): Promise<Locale> {
   }
 }
 
+/**
+ * Public server-side locale getter. Use when a page needs to choose
+ * between pre-translated content fields (e.g. `detail` / `detailAr`)
+ * rather than going through the dictionary.
+ */
+export async function getLocale(): Promise<Locale> {
+  return resolveLocale()
+}
+
+/** Helper: pick the AR variant when locale === 'ar' and it exists, else EN. */
+export function pickLocaleField<T>(locale: Locale, en: T, ar: T | undefined): T {
+  return locale === 'ar' && ar !== undefined ? ar : en
+}
+
 export async function t(key: string): Promise<string> {
   const locale = await resolveLocale()
   return lookup(key, locale)

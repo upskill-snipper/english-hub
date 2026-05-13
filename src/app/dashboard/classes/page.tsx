@@ -1,7 +1,8 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react'
+import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
    Uses mock data until these API routes are implemented:
@@ -10,88 +11,169 @@ import Link from "next/link";
    ───────────────────────────────────────────────────────────────────── */
 
 interface Student {
-  id: string;
-  name: string;
-  email: string;
-  averageScore: number;
-  essaysSubmitted: number;
-  lastActive: string;
-  projectedGrade: string;
+  id: string
+  name: string
+  email: string
+  averageScore: number
+  essaysSubmitted: number
+  lastActive: string
+  projectedGrade: string
 }
 
 interface ClassGroup {
-  id: string;
-  name: string;
-  subject: string;
-  examBoard: string;
-  yearGroup: number;
-  students: Student[];
-  createdAt: string;
+  id: string
+  name: string
+  subject: string
+  examBoard: string
+  yearGroup: number
+  students: Student[]
+  createdAt: string
 }
 
 const MOCK_CLASSES: ClassGroup[] = [
   {
-    id: "c1",
-    name: "10A English Literature",
-    subject: "English Literature",
-    examBoard: "AQA",
+    id: 'c1',
+    name: '10A English Literature',
+    subject: 'English Literature',
+    examBoard: 'AQA',
     yearGroup: 10,
     students: [
-      { id: "s1", name: "Emma Thompson", email: "emma.t@school.edu", averageScore: 82, essaysSubmitted: 12, lastActive: "2026-03-23", projectedGrade: "7" },
-      { id: "s2", name: "Oliver Chen", email: "oliver.c@school.edu", averageScore: 75, essaysSubmitted: 10, lastActive: "2026-03-22", projectedGrade: "6" },
-      { id: "s3", name: "Amira Patel", email: "amira.p@school.edu", averageScore: 88, essaysSubmitted: 14, lastActive: "2026-03-23", projectedGrade: "8" },
-      { id: "s4", name: "James Wilson", email: "james.w@school.edu", averageScore: 64, essaysSubmitted: 7, lastActive: "2026-03-20", projectedGrade: "5" },
-      { id: "s5", name: "Sophie Brown", email: "sophie.b@school.edu", averageScore: 71, essaysSubmitted: 9, lastActive: "2026-03-21", projectedGrade: "6" },
+      {
+        id: 's1',
+        name: 'Emma Thompson',
+        email: 'emma.t@school.edu',
+        averageScore: 82,
+        essaysSubmitted: 12,
+        lastActive: '2026-03-23',
+        projectedGrade: '7',
+      },
+      {
+        id: 's2',
+        name: 'Oliver Chen',
+        email: 'oliver.c@school.edu',
+        averageScore: 75,
+        essaysSubmitted: 10,
+        lastActive: '2026-03-22',
+        projectedGrade: '6',
+      },
+      {
+        id: 's3',
+        name: 'Amira Patel',
+        email: 'amira.p@school.edu',
+        averageScore: 88,
+        essaysSubmitted: 14,
+        lastActive: '2026-03-23',
+        projectedGrade: '8',
+      },
+      {
+        id: 's4',
+        name: 'James Wilson',
+        email: 'james.w@school.edu',
+        averageScore: 64,
+        essaysSubmitted: 7,
+        lastActive: '2026-03-20',
+        projectedGrade: '5',
+      },
+      {
+        id: 's5',
+        name: 'Sophie Brown',
+        email: 'sophie.b@school.edu',
+        averageScore: 71,
+        essaysSubmitted: 9,
+        lastActive: '2026-03-21',
+        projectedGrade: '6',
+      },
     ],
-    createdAt: "2025-09-05",
+    createdAt: '2025-09-05',
   },
   {
-    id: "c2",
-    name: "11B English Language",
-    subject: "English Language",
-    examBoard: "AQA",
+    id: 'c2',
+    name: '11B English Language',
+    subject: 'English Language',
+    examBoard: 'AQA',
     yearGroup: 11,
     students: [
-      { id: "s6", name: "Liam Harris", email: "liam.h@school.edu", averageScore: 79, essaysSubmitted: 15, lastActive: "2026-03-23", projectedGrade: "7" },
-      { id: "s7", name: "Chloe Adams", email: "chloe.a@school.edu", averageScore: 85, essaysSubmitted: 18, lastActive: "2026-03-23", projectedGrade: "8" },
-      { id: "s8", name: "Ryan Davies", email: "ryan.d@school.edu", averageScore: 62, essaysSubmitted: 8, lastActive: "2026-03-19", projectedGrade: "5" },
+      {
+        id: 's6',
+        name: 'Liam Harris',
+        email: 'liam.h@school.edu',
+        averageScore: 79,
+        essaysSubmitted: 15,
+        lastActive: '2026-03-23',
+        projectedGrade: '7',
+      },
+      {
+        id: 's7',
+        name: 'Chloe Adams',
+        email: 'chloe.a@school.edu',
+        averageScore: 85,
+        essaysSubmitted: 18,
+        lastActive: '2026-03-23',
+        projectedGrade: '8',
+      },
+      {
+        id: 's8',
+        name: 'Ryan Davies',
+        email: 'ryan.d@school.edu',
+        averageScore: 62,
+        essaysSubmitted: 8,
+        lastActive: '2026-03-19',
+        projectedGrade: '5',
+      },
     ],
-    createdAt: "2025-09-05",
+    createdAt: '2025-09-05',
   },
   {
-    id: "c3",
-    name: "10C IGCSE Literature",
-    subject: "English Literature",
-    examBoard: "CAIE",
+    id: 'c3',
+    name: '10C IGCSE Literature',
+    subject: 'English Literature',
+    examBoard: 'CAIE',
     yearGroup: 10,
     students: [
-      { id: "s9", name: "Isabella Martinez", email: "isabella.m@school.edu", averageScore: 91, essaysSubmitted: 16, lastActive: "2026-03-23", projectedGrade: "9" },
-      { id: "s10", name: "Noah Kim", email: "noah.k@school.edu", averageScore: 73, essaysSubmitted: 11, lastActive: "2026-03-22", projectedGrade: "6" },
+      {
+        id: 's9',
+        name: 'Isabella Martinez',
+        email: 'isabella.m@school.edu',
+        averageScore: 91,
+        essaysSubmitted: 16,
+        lastActive: '2026-03-23',
+        projectedGrade: '9',
+      },
+      {
+        id: 's10',
+        name: 'Noah Kim',
+        email: 'noah.k@school.edu',
+        averageScore: 73,
+        essaysSubmitted: 11,
+        lastActive: '2026-03-22',
+        projectedGrade: '6',
+      },
     ],
-    createdAt: "2025-09-08",
+    createdAt: '2025-09-08',
   },
-];
+]
 
 function getGradeColor(grade: string): string {
-  const num = parseInt(grade);
+  const num = parseInt(grade)
   if (!isNaN(num)) {
-    if (num >= 7) return "text-green-600";
-    if (num >= 5) return "text-amber-600";
-    return "text-red-600";
+    if (num >= 7) return 'text-green-600'
+    if (num >= 5) return 'text-amber-600'
+    return 'text-red-600'
   }
-  return "text-muted-foreground";
+  return 'text-muted-foreground'
 }
 
 export default function ClassesPage() {
-  const [selectedClass, setSelectedClass] = useState<string | null>(null);
-  const [showCreateModal, setShowCreateModal] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const t = useT()
+  const [selectedClass, setSelectedClass] = useState<string | null>(null)
+  const [showCreateModal, setShowCreateModal] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
 
-  const activeClass = MOCK_CLASSES.find((c) => c.id === selectedClass);
+  const activeClass = MOCK_CLASSES.find((c) => c.id === selectedClass)
 
   const filteredStudents = activeClass?.students.filter((s) =>
-    s.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+    s.name.toLowerCase().includes(searchQuery.toLowerCase()),
+  )
 
   return (
     <div className="min-h-screen bg-muted">
@@ -103,18 +185,16 @@ export default function ClassesPage() {
               href="/dashboard/teacher"
               className="text-sm text-primary hover:underline mb-2 inline-block"
             >
-              ← Back to Dashboard
+              {t('dashboard.classes.back')}
             </Link>
-            <h1 className="text-3xl font-bold text-foreground">My Classes</h1>
-            <p className="text-muted-foreground mt-1">
-              Manage your classes and track student progress
-            </p>
+            <h1 className="text-3xl font-bold text-foreground">{t('dashboard.classes.h1')}</h1>
+            <p className="text-muted-foreground mt-1">{t('dashboard.classes.intro')}</p>
           </div>
           <button
             onClick={() => setShowCreateModal(true)}
             className="bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-primary/80 transition-colors"
           >
-            + Create Class
+            {t('dashboard.classes.create')}
           </button>
         </div>
 
@@ -122,19 +202,19 @@ export default function ClassesPage() {
           {/* Class List Sidebar */}
           <div className="lg:col-span-1 space-y-3">
             <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-              Your Classes ({MOCK_CLASSES.length})
+              {t('dashboard.classes.your_classes')} ({MOCK_CLASSES.length})
             </h2>
             {MOCK_CLASSES.map((cls) => (
               <button
                 key={cls.id}
                 onClick={() => {
-                  setSelectedClass(cls.id);
-                  setSearchQuery("");
+                  setSelectedClass(cls.id)
+                  setSearchQuery('')
                 }}
                 className={`w-full text-left p-4 rounded-xl border transition-all ${
                   selectedClass === cls.id
-                    ? "bg-card border-primary shadow-md ring-1 ring-primary/20"
-                    : "bg-card border-border hover:border-primary/40 hover:shadow-sm"
+                    ? 'bg-card border-primary shadow-md ring-1 ring-primary/20'
+                    : 'bg-card border-border hover:border-primary/40 hover:shadow-sm'
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
@@ -144,16 +224,16 @@ export default function ClassesPage() {
                   </span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  {cls.students.length} students · Year {cls.yearGroup}
+                  {cls.students.length} {t('dashboard.classes.students_count')} ·{' '}
+                  {t('dashboard.classes.year_label')} {cls.yearGroup}
                 </p>
                 <div className="mt-2 flex items-center gap-3 text-xs text-muted-foreground">
                   <span>{cls.subject}</span>
                   <span>·</span>
                   <span>
-                    Avg:{" "}
+                    {t('dashboard.classes.avg')}:{' '}
                     {Math.round(
-                      cls.students.reduce((a, s) => a + s.averageScore, 0) /
-                        cls.students.length
+                      cls.students.reduce((a, s) => a + s.averageScore, 0) / cls.students.length,
                     )}
                     %
                   </span>
@@ -170,20 +250,18 @@ export default function ClassesPage() {
                 <div className="p-6 border-b border-border">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h2 className="text-xl font-bold text-foreground">
-                        {activeClass.name}
-                      </h2>
+                      <h2 className="text-xl font-bold text-foreground">{activeClass.name}</h2>
                       <p className="text-sm text-muted-foreground mt-1">
-                        {activeClass.subject} · {activeClass.examBoard} · Year{" "}
-                        {activeClass.yearGroup}
+                        {activeClass.subject} · {activeClass.examBoard} ·{' '}
+                        {t('dashboard.classes.year_label')} {activeClass.yearGroup}
                       </p>
                     </div>
                     <div className="flex gap-2">
                       <button className="text-sm bg-muted text-muted-foreground px-3 py-1.5 rounded-lg hover:bg-muted transition-colors">
-                        Edit Class
+                        {t('dashboard.classes.edit')}
                       </button>
                       <button className="text-sm bg-primary/10 text-primary px-3 py-1.5 rounded-lg hover:bg-primary/20 transition-colors">
-                        + Add Student
+                        {t('dashboard.classes.add_student')}
                       </button>
                     </div>
                   </div>
@@ -194,28 +272,29 @@ export default function ClassesPage() {
                       <p className="text-2xl font-bold text-foreground">
                         {activeClass.students.length}
                       </p>
-                      <p className="text-xs text-muted-foreground">Students</p>
+                      <p className="text-xs text-muted-foreground">
+                        {t('dashboard.classes.stat.students')}
+                      </p>
                     </div>
                     <div className="bg-muted rounded-lg p-3 text-center">
                       <p className="text-2xl font-bold text-primary">
                         {Math.round(
-                          activeClass.students.reduce(
-                            (a, s) => a + s.averageScore,
-                            0
-                          ) / activeClass.students.length
+                          activeClass.students.reduce((a, s) => a + s.averageScore, 0) /
+                            activeClass.students.length,
                         )}
                         %
                       </p>
-                      <p className="text-xs text-muted-foreground">Class Average</p>
+                      <p className="text-xs text-muted-foreground">
+                        {t('dashboard.classes.stat.class_avg')}
+                      </p>
                     </div>
                     <div className="bg-muted rounded-lg p-3 text-center">
                       <p className="text-2xl font-bold text-green-600">
-                        {activeClass.students.reduce(
-                          (a, s) => a + s.essaysSubmitted,
-                          0
-                        )}
+                        {activeClass.students.reduce((a, s) => a + s.essaysSubmitted, 0)}
                       </p>
-                      <p className="text-xs text-muted-foreground">Total Essays</p>
+                      <p className="text-xs text-muted-foreground">
+                        {t('dashboard.classes.stat.total_essays')}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -224,7 +303,7 @@ export default function ClassesPage() {
                 <div className="p-4 border-b border-border">
                   <input
                     type="text"
-                    placeholder="Search students..."
+                    placeholder={t('dashboard.classes.search')}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
@@ -236,35 +315,38 @@ export default function ClassesPage() {
                   <table className="w-full">
                     <thead>
                       <tr className="text-left text-xs text-muted-foreground uppercase tracking-wider">
-                        <th className="px-6 py-3 font-medium">Student</th>
-                        <th className="px-4 py-3 font-medium">Avg Score</th>
-                        <th className="px-4 py-3 font-medium">Essays</th>
-                        <th className="px-4 py-3 font-medium">Grade</th>
-                        <th className="px-4 py-3 font-medium">Last Active</th>
+                        <th className="px-6 py-3 font-medium">
+                          {t('dashboard.classes.col.student')}
+                        </th>
+                        <th className="px-4 py-3 font-medium">
+                          {t('dashboard.classes.col.avg_score')}
+                        </th>
+                        <th className="px-4 py-3 font-medium">
+                          {t('dashboard.classes.col.essays')}
+                        </th>
+                        <th className="px-4 py-3 font-medium">
+                          {t('dashboard.classes.col.grade')}
+                        </th>
+                        <th className="px-4 py-3 font-medium">
+                          {t('dashboard.classes.col.last_active')}
+                        </th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-border">
                       {(filteredStudents ?? []).map((student) => (
-                        <tr
-                          key={student.id}
-                          className="hover:bg-muted transition-colors"
-                        >
+                        <tr key={student.id} className="hover:bg-muted transition-colors">
                           <td className="px-6 py-3">
-                            <p className="font-medium text-foreground text-sm">
-                              {student.name}
-                            </p>
-                            <p className="text-xs text-muted-foreground">
-                              {student.email}
-                            </p>
+                            <p className="font-medium text-foreground text-sm">{student.name}</p>
+                            <p className="text-xs text-muted-foreground">{student.email}</p>
                           </td>
                           <td className="px-4 py-3">
                             <span
                               className={`font-semibold text-sm ${
                                 student.averageScore >= 70
-                                  ? "text-green-600"
+                                  ? 'text-green-600'
                                   : student.averageScore >= 50
-                                  ? "text-amber-600"
-                                  : "text-red-600"
+                                    ? 'text-amber-600'
+                                    : 'text-red-600'
                               }`}
                             >
                               {student.averageScore}%
@@ -276,20 +358,17 @@ export default function ClassesPage() {
                           <td className="px-4 py-3">
                             <span
                               className={`font-semibold text-sm ${getGradeColor(
-                                student.projectedGrade
+                                student.projectedGrade,
                               )}`}
                             >
                               {student.projectedGrade}
                             </span>
                           </td>
                           <td className="px-4 py-3 text-sm text-muted-foreground">
-                            {new Date(student.lastActive).toLocaleDateString(
-                              "en-GB",
-                              {
-                                day: "numeric",
-                                month: "short",
-                              }
-                            )}
+                            {new Date(student.lastActive).toLocaleDateString('en-GB', {
+                              day: 'numeric',
+                              month: 'short',
+                            })}
                           </td>
                         </tr>
                       ))}
@@ -314,12 +393,9 @@ export default function ClassesPage() {
                   />
                 </svg>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Select a Class
+                  {t('dashboard.classes.empty.title')}
                 </h3>
-                <p className="text-muted-foreground text-sm">
-                  Choose a class from the sidebar to view student progress and
-                  manage your group.
-                </p>
+                <p className="text-muted-foreground text-sm">{t('dashboard.classes.empty.body')}</p>
               </div>
             )}
           </div>
@@ -330,23 +406,23 @@ export default function ClassesPage() {
           <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
             <div className="bg-card rounded-2xl shadow-xl max-w-md w-full p-6">
               <h3 className="text-xl font-bold text-foreground mb-4">
-                Create New Class
+                {t('dashboard.classes.modal.title')}
               </h3>
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1">
-                    Class Name
+                    {t('dashboard.classes.modal.name')}
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. 10A English Literature"
+                    placeholder={t('dashboard.classes.modal.name_ph')}
                     className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-1">
-                      Subject
+                      {t('dashboard.classes.modal.subject')}
                     </label>
                     <select className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
                       <option>English Literature</option>
@@ -355,7 +431,7 @@ export default function ClassesPage() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-1">
-                      Exam Board
+                      {t('dashboard.classes.modal.board')}
                     </label>
                     <select className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
                       <option>AQA</option>
@@ -368,13 +444,13 @@ export default function ClassesPage() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1">
-                    Year Group
+                    {t('dashboard.classes.modal.year')}
                   </label>
                   <select className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
-                    <option>Year 10</option>
-                    <option>Year 11</option>
-                    <option>Year 12</option>
-                    <option>Year 13</option>
+                    <option>{t('dashboard.classes.year_label')} 10</option>
+                    <option>{t('dashboard.classes.year_label')} 11</option>
+                    <option>{t('dashboard.classes.year_label')} 12</option>
+                    <option>{t('dashboard.classes.year_label')} 13</option>
                   </select>
                 </div>
               </div>
@@ -383,13 +459,13 @@ export default function ClassesPage() {
                   onClick={() => setShowCreateModal(false)}
                   className="flex-1 px-4 py-2 border border-border rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors"
                 >
-                  Cancel
+                  {t('dashboard.classes.modal.cancel')}
                 </button>
                 <button
                   onClick={() => setShowCreateModal(false)}
                   className="flex-1 px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/80 transition-colors"
                 >
-                  Create Class
+                  {t('dashboard.classes.modal.create')}
                 </button>
               </div>
             </div>
@@ -397,5 +473,5 @@ export default function ClassesPage() {
         )}
       </div>
     </div>
-  );
+  )
 }

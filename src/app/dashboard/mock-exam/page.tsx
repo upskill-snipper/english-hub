@@ -42,6 +42,7 @@ import {
 } from '@/store/exam-store'
 import { useBoard } from '@/hooks/useBoard'
 import { useExamTimer, type TimerWarning } from '@/hooks/useExamTimer'
+import { useT } from '@/lib/i18n/use-t'
 
 import {
   Card,
@@ -142,6 +143,7 @@ function legacyBoardNamesForExamBoard(board: string | null): string[] {
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
 export default function MockExamPage() {
+  const t = useT()
   const { user, isLoading } = useAuthUserLoading()
   const router = useRouter()
   const { phase, _hasHydrated } = useExamPhaseStatus()
@@ -171,7 +173,7 @@ export default function MockExamPage() {
   if (!_hasHydrated || !boardHydrated) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="animate-pulse text-muted-foreground">Loading...</div>
+        <div className="animate-pulse text-muted-foreground">{t('dashboard.mock.loading')}</div>
       </div>
     )
   }
@@ -190,6 +192,7 @@ export default function MockExamPage() {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function ExamConfigScreen() {
+  const t = useT()
   const { board: globalBoard } = useBoard()
 
   // Restrict the visible boards to the legacy names that match the user's
@@ -244,10 +247,10 @@ function ExamConfigScreen() {
             <FileText className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold tracking-tight text-foreground">Mock Exam Mode</h1>
-            <p className="text-sm text-muted-foreground">
-              Simulate real exam conditions with timed papers
-            </p>
+            <h1 className="text-2xl font-bold tracking-tight text-foreground">
+              {t('dashboard.mock.h1')}
+            </h1>
+            <p className="text-sm text-muted-foreground">{t('dashboard.mock.intro')}</p>
           </div>
         </div>
       </div>
@@ -255,7 +258,7 @@ function ExamConfigScreen() {
       {/* Step 1: Board Selection */}
       <section className="mb-6">
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-          1. Select Exam Board
+          {t('dashboard.mock.step1')}
         </h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {boards.map((board) => {
@@ -282,8 +285,10 @@ function ExamConfigScreen() {
                   {board}
                 </div>
                 <div className="mt-0.5 text-xs text-muted-foreground">
-                  {getMockExamsByBoard(board).length} paper
-                  {getMockExamsByBoard(board).length !== 1 ? 's' : ''} available
+                  {getMockExamsByBoard(board).length}{' '}
+                  {getMockExamsByBoard(board).length !== 1
+                    ? t('dashboard.mock.paper_avail_p')
+                    : t('dashboard.mock.paper_avail_s')}
                 </div>
                 {isSelected && (
                   <CheckCircle className={cn('absolute top-2 right-2 h-4 w-4', config.color)} />
@@ -298,7 +303,7 @@ function ExamConfigScreen() {
       {selectedBoard && (
         <section className="mb-6 animate-fade-in">
           <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-            2. Select Paper
+            {t('dashboard.mock.step2')}
           </h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {availablePapers.map((paper) => {
@@ -318,7 +323,7 @@ function ExamConfigScreen() {
                 >
                   <div className="flex items-center gap-2 mb-1">
                     <Badge variant="outline" className="text-xs">
-                      Paper {paper.paperNumber}
+                      {t('dashboard.mock.paper_label')} {paper.paperNumber}
                     </Badge>
                     <Badge variant="secondary" className="text-xs">
                       <Clock className="mr-1 h-3 w-3" />
@@ -330,12 +335,12 @@ function ExamConfigScreen() {
                   <div className="mt-2 flex flex-wrap gap-1.5">
                     {paper.sections.map((s) => (
                       <span key={s.id} className="text-xs text-muted-foreground">
-                        {s.title} ({s.totalMarks} marks)
+                        {s.title} ({s.totalMarks} {t('dashboard.mock.marks')})
                       </span>
                     ))}
                   </div>
                   <div className="mt-2 text-xs font-medium text-muted-foreground">
-                    Total: {paper.totalMarks} marks
+                    {t('dashboard.mock.total')}: {paper.totalMarks} {t('dashboard.mock.marks')}
                   </div>
                   {isSelected && (
                     <CheckCircle className={cn('absolute top-2 right-2 h-4 w-4', config.color)} />
@@ -351,7 +356,7 @@ function ExamConfigScreen() {
       {selectedPaper && (
         <section className="mb-6 animate-fade-in">
           <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-            3. Ready to Begin
+            {t('dashboard.mock.step3')}
           </h2>
           <Card>
             <CardHeader>
@@ -368,7 +373,9 @@ function ExamConfigScreen() {
                     <div className="text-sm font-semibold text-foreground">
                       {formatExamTime(selectedPaper.totalTimeMinutes)}
                     </div>
-                    <div className="text-xs text-muted-foreground">Time allowed</div>
+                    <div className="text-xs text-muted-foreground">
+                      {t('dashboard.mock.time_allowed')}
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -377,12 +384,14 @@ function ExamConfigScreen() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-foreground">
-                      {selectedPaper.sections.length} section
-                      {selectedPaper.sections.length !== 1 ? 's' : ''}
+                      {selectedPaper.sections.length}{' '}
+                      {selectedPaper.sections.length !== 1
+                        ? t('dashboard.mock.section_p')
+                        : t('dashboard.mock.section_s')}
                     </div>
                     <div className="text-xs text-muted-foreground">
-                      {selectedPaper.sections.reduce((a, s) => a + s.questions.length, 0)} questions
-                      total
+                      {selectedPaper.sections.reduce((a, s) => a + s.questions.length, 0)}{' '}
+                      {t('dashboard.mock.questions_total')}
                     </div>
                   </div>
                 </div>
@@ -392,9 +401,11 @@ function ExamConfigScreen() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-foreground">
-                      {selectedPaper.totalMarks} marks
+                      {selectedPaper.totalMarks} {t('dashboard.mock.marks')}
                     </div>
-                    <div className="text-xs text-muted-foreground">Total available</div>
+                    <div className="text-xs text-muted-foreground">
+                      {t('dashboard.mock.total_avail')}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -29,7 +29,7 @@ const whenIHaveFears: PoemData = {
         },
         {
           type: 'Key quote',
-          note: 'The poem\'s opening establishes its central tension: Keats is afraid of dying before he has accomplished what he wants to.',
+          note: "The poem's opening establishes its central tension: Keats is afraid of dying before he has accomplished what he wants to.",
           color: '#f59e0b',
         },
       ],
@@ -80,7 +80,7 @@ const whenIHaveFears: PoemData = {
       ],
     },
     {
-      text: 'When I behold, upon the night\'s starred face,',
+      text: "When I behold, upon the night's starred face,",
       annotations: [
         {
           type: 'Anaphora',
@@ -230,6 +230,20 @@ const whenIHaveFears: PoemData = {
     <p>Scholars usually identify the "fair creature of an hour" in this poem as a young woman Keats had briefly met, possibly at Vauxhall Gardens. He never met his great love, Fanny Brawne, until later in 1818. The poem treats love itself as fleeting: even the ones we love most are "of an hour".</p>
   `,
 
+  contextAr: `
+    <h3>John Keats (1795–1821)</h3>
+    <p>John Keats واحد من أكبر شعراء الرومانسية الإنجليزية، يم Wordsworth وColeridge وByron وShelley. تدرّب جراحاً قبل ما يكرّس نفسه للشعر. مات بالسلّ في روما وعمره 25 سنة بس، وما نشر في حياته إلا ثلاث دواوين نحيلة. على الرغم من حياته القصيرة، كتب من أعظم القصائد في الأدب الإنجليزي، منها "Ode to a Nightingale"، و"Ode on a Grecian Urn"، و"To Autumn".</p>
+
+    <h3>وقت الكتابة (1818)</h3>
+    <p>"When I Have Fears" كُتبت في <strong>يناير 1818</strong>، وعمر Keats 22 سنة. كانت أول sonnet يكتبها بصيغة Shakespearean (مو بصيغة Petrarchan الإيطالية اللي كان يكتب فيها قبل). ما انتشرت في حياته؛ صدرت بعد موته.</p>
+
+    <h3>السلّ وفقدان العائلة</h3>
+    <p>Keats عنده كل الأسباب يخاف إنه يموت صغير. أمه ماتت بالسلّ وعمره 14، وهو مرّض أخوه الأصغر Tom من نفس المرض (Tom مات وعمره 19، بعد كتابة هالقصيدة بشهور). Keats كان عنده تدريب طبّي، فيقدر يميّز علامات السلّ في نفسه بدري. المخاوف في هالقصيدة ما كانت مجرّدة — كانت مؤسَّسة على تجربة شخصية.</p>
+
+    <h3>"fair creature of an hour"</h3>
+    <p>الباحثون عادة يعرّفون "fair creature of an hour" في القصيدة على إنها امرأة شابة قابلها Keats قبالة قصيرة، ممكن في Vauxhall Gardens. هو ما قابل حبّه الكبير، Fanny Brawne، إلا بعد ذلك في 1818. القصيدة تتعامل مع الحب نفسه على إنه عابر: حتى أكثر اللي نحبّهم هم "of an hour".</p>
+  `,
+
   summary: `Quatrain 1 (lines 1--4): The speaker fears dying ("ceasing to be") before he can write down all the poetry that fills his "teeming brain". He uses a harvest metaphor: his thoughts are crops and his pen the harvester, and his unwritten books should be storehouses ("garners") full of "ripened grain". He fears the harvest of his mind will never be reaped.
 
 Quatrain 2 (lines 5--8): He fears never being able to capture in words the "huge cloudy symbols" he sees in the night sky -- the vast mythic and imaginative subjects he wants to write about. Even tracing their "shadows" requires the magic of inspiration ("the magic hand of chance"), and he may not live long enough.
@@ -239,6 +253,16 @@ Quatrain 3 (lines 9--12): He addresses a "fair creature of an hour" -- a beloved
 Couplet (lines 12--14): The poem turns. Standing alone on the "shore / Of the wide world", Keats reflects on his fears. In the face of the vastness of the world and death, he concludes that both "love and fame" -- the things he was afraid of losing -- "sink to nothingness". This is a paradoxical comfort: if they are nothing, losing them is no loss.
 
 Overall meaning: The poem is a young man\'s confrontation with the prospect of an early death. He lists the things he fears losing: poetry, wonder, love. But the volta brings a strange consolation -- in the face of mortality, even the most important things become small. Whether this is genuine peace or bleak resignation is left for the reader to decide.`,
+
+  summaryAr: `Quatrain 1 (الأبيات 1–4): المتكلّم يخاف يموت ("cease to be") قبل ما يقدر يكتب كل الشعر اللي يملأ "teeming brain". يستخدم استعارة الحصاد: أفكاره محاصيل، وقلمه الحاصد، وكتبه اللي ما كتبها لازم تكون مخازن ("garners") مليانة "ripened grain". يخاف إن حصاد عقله ما يتمّ أبداً.
+
+Quatrain 2 (الأبيات 5–8): يخاف إنه ما يقدر يلتقط بالكلمات "huge cloudy symbols" اللي يشوفها في سما الليل — المواضيع الأسطورية والخيالية الواسعة اللي يبغي يكتب عنها. حتى تتبّع "shadows" يتطلّب سحر الإلهام ("the magic hand of chance")، وممكن ما يعيش لمدة كافية.
+
+Quatrain 3 (الأبيات 9–12): يخاطب "fair creature of an hour" — امرأة محبوبة — ويخاف ما يشوفها مرة ثانية ولا يجرّب "faery power" لـ"unreflecting love" (الحب اللي ما يتوقّف يفكّر).
+
+Couplet (الأبيات 12–14): القصيدة تتحوّل. وهو واقف بروحه على "shore / Of the wide world"، Keats يتأمّل في مخاوفه. أمام شساعة العالم والموت، يستنتج إن "love and fame" — الأشياء اللي خاف يفقدها — "sink to nothingness". هذي عزاء مفارقة: إذا كانت لا شي، ففقدها مو خسارة.
+
+المعنى العام: القصيدة مواجهة شاب لاحتمال موت مبكّر. يعدّد الأشياء اللي يخاف يفقدها: الشعر، والدهشة، والحب. لكن الـvolta تجيب عزاء غريب — أمام الموت، حتى أهم الأشياء تصير صغيرة. تركَ للقارئ يقرّر إذا هذا سلام حقيقي ولّا استسلام كئيب.`,
 
   formAndStructure: `Form: A Shakespearean (English) sonnet -- 14 lines, divided into three quatrains and a final rhyming couplet, with the rhyme scheme ABAB CDCD EFEF GG. Keats deliberately chose the English form for this poem; he had previously been writing Italian (Petrarchan) sonnets.
 
@@ -254,42 +278,75 @@ Extended metaphor: Quatrain 1 contains a sustained agricultural metaphor -- glea
 
 Tone: The poem moves from anxious anticipation to a kind of weary, contemplative acceptance. The tone never becomes peaceful, but it does become resigned.`,
 
+  formAndStructureAr: `Form (الشكل): Shakespearean (English) sonnet — 14 بيت، مقسّمة لثلاث quatrains وcouplet ختامي بقافية، نظام القافية ABAB CDCD EFEF GG. Keats اختار صيغة الـEnglish لهالقصيدة عمداً؛ قبلها كان يكتب Italian (Petrarchan) sonnets.
+
+Metre (الوزن): iambic pentameter — عشرة مقاطع في كل بيت، بخمسة iambs (أزواج من غير-منبور / منبور). الوزن منتظم لكن مو متصلّب؛ Keats يغيّره شوي للتوكيد.
+
+ثلاث quatrains، ثلاث مخاوف: كل quatrain يقدّم خوف مختلف، يبدأ بـ"When..." — تركيب يسمّى anaphora. Quatrain 1: خوف ما يكتب شعره. Quatrain 2: خوف ما يلتقط رؤاه الكونية. Quatrain 3: خوف يفقد الحب. المخاوف تتدرّج من العام (الشعر، الشهرة) إلى الخاص (الحب).
+
+Volta: التحوّل التقليدي في الـsonnet يصير في البيت 12 — "—then on the shore". الشرطة دراماتيكية: تعلّم مادّياً اللحظة اللي Keats يوقف فيها عن تكديس المخاوف ويبدأ يردّ عليها. بعد التحوّل، النبرة تتغيّر من قلقة إلى متأمّلة.
+
+الـCouplet الختامي: البيتان الأخيران يوصلون لحلّ. مثل كل sonnets شيكسبيرية، الـcouplet يقدّم تلخيص قاطع للحجّة. Keats يوصل لعزاء مفارقة: أمام الشساعة والموت، "love and fame to nothingness do sink".
+
+استعارة ممتدّة: Quatrain 1 يحتوي على استعارة زراعية مستمرّة — gleaning، وكتب كـgarners، وripened grain. هذا يخلّي كتابة الشعر تحسّ بأنها عملية طبيعية عضوية تحتاج وقت عشان تنضج.
+
+النبرة (tone): القصيدة تتحرّك من ترقّب قلق إلى نوع من القبول المتعب المتأمّل. النبرة ما تصير هادية، لكن تصير مستسلمة.`,
+
   keyQuotes: [
     {
       quote: 'When I have fears that I may cease to be',
       analysis:
         'The opening line states the central anxiety simply. "Cease to be" is a gentle euphemism -- Keats cannot bring himself to say "die" outright. The simplicity of the line makes it feel intimate, almost confessional.',
       themes: ['Mortality', 'Fear', 'Self-confession'],
+      analysisAr:
+        'البيت الافتتاحي يقول القلق المركزي ببساطة. وعبارة "cease to be" تلطيف لطيف — Keats ما يقدر يقول "die" مباشرة. وبساطة البيت تخلّيه يحسّ بأنه حميمي، شبه اعتراف.',
+      themesAr: ['الموت', 'الخوف', 'الاعتراف الذاتي'],
     },
     {
       quote: 'Before my pen has gleaned my teeming brain',
       analysis:
         'A vivid agricultural metaphor: his brain is a field full of grain ("teeming") and his pen is the harvester ("gleaning" means to pick up grain after a harvest). His fear is that he will die before all his poetry can be reaped. The image makes creativity feel organic and natural -- and finite.',
       themes: ['Creativity', 'Unfulfilled potential', 'Time'],
+      analysisAr:
+        'استعارة زراعية واضحة: عقله حقل ملان حبوب ("teeming")، وقلمه الحاصد ("gleaning" يعني تلتقط الحبّ بعد الحصاد). خوفه إنه يموت قبل ما يتحصد كل شعره. الصورة تخلّي الإبداع يحسّ بأنه عضوي وطبيعي — وإنه محدود.',
+      themesAr: ['الإبداع', 'الإمكانات المتعثّرة', 'الوقت'],
     },
     {
       quote: 'high-pilèd books, in charactery, / Hold like rich garners the full ripened grain',
       analysis:
         'The harvest metaphor is sustained: books are "garners" (granaries) and his thoughts are "ripened grain". The image of "high-pilèd books" suggests vast literary ambition -- he imagines a long career producing many volumes. He fears never building that pile.',
       themes: ['Ambition', 'Creativity', 'Harvest imagery'],
+      analysisAr:
+        'استعارة الحصاد مستمرّة: الكتب "garners" (مخازن حبوب)، وأفكاره "ripened grain". وصورة "high-pilèd books" تلمّح لطموح أدبي واسع — هو يتصوّر مسيرة طويلة ينتج فيها مجلّدات كثيرة. يخاف ما يبني هالكومة أبداً.',
+      themesAr: ['الطموح', 'الإبداع', 'صور الحصاد'],
     },
     {
       quote: 'Huge cloudy symbols of a high romance',
       analysis:
         'A characteristically Romantic image. "Huge" and "cloudy" make the symbols vague and vast; "high romance" elevates them to noble, mythic subjects. Keats sees the night sky as a great book of stories he has not yet written. He fears never being able to translate those visions into words.',
       themes: ['Wonder', 'Inspiration', 'Romantic imagination'],
+      analysisAr:
+        'صورة رومانسية بشكل مميّز. كلمتا "huge" و"cloudy" تخلّيان الرموز غامضة وواسعة؛ و"high romance" ترفعها لمواضيع أسطورية نبيلة. Keats يشوف سما الليل كأنها كتاب قصص كبير لسّا ما كتبه. يخاف ما يقدر يحوّل هالرؤى لكلمات.',
+      themesAr: ['الدهشة', 'الإلهام', 'الخيال الرومانسي'],
     },
     {
       quote: 'fair creature of an hour',
       analysis:
         'A sudden, intimate address to a beloved woman. "Of an hour" suggests their love is brief, fleeting -- a single hour\'s connection. The phrase is bittersweet: he treasures her, but he knows the love cannot last. Love itself is mortal, just like he is.',
       themes: ['Love', 'Brevity', 'Mortality'],
+      analysisAr:
+        'مخاطبة مفاجئة حميمة لامرأة محبوبة. وعبارة "of an hour" تلمّح إن حبّهم قصير وعابر — وصل لساعة واحدة. العبارة فيها مرارة وحلاوة: هو يقدّرها، لكن يعرف إن الحب ما يدوم. الحب نفسه فاني، زيّه تماماً.',
+      themesAr: ['الحب', 'القصر', 'الموت'],
     },
     {
-      quote: 'on the shore / Of the wide world I stand alone, and think / Till love and fame to nothingness do sink',
+      quote:
+        'on the shore / Of the wide world I stand alone, and think / Till love and fame to nothingness do sink',
       analysis:
         'The poem\'s closing image and resolution. The speaker stands alone on the edge of the world, contemplating its vastness. The famous final line concludes that, faced with mortality, even "love and fame" become nothing. This is paradoxical: it could be read as peaceful (his fears were misplaced) or bleak (everything is meaningless). Keats leaves the ambiguity for the reader.',
       themes: ['Resolution', 'Insignificance', 'Meaninglessness'],
+      analysisAr:
+        'الصورة الختامية والحلّ في القصيدة. المتكلّم يقف وحده على حافة العالم، يتأمّل في شساعته. والبيت الأخير الشهير يستنتج إنه، أمام الموت، حتى "love and fame" تصير لا شي. وهذا تناقض: يمكن يُقرأ هادي (مخاوفه كانت في غير محلّها) أو كئيب (كل شي بلا معنى). Keats يترك الغموض للقارئ.',
+      themesAr: ['الحلّ', 'انعدام الأهمية', 'انعدام المعنى'],
     },
   ],
 
@@ -300,6 +357,8 @@ Tone: The poem moves from anxious anticipation to a kind of weary, contemplative
       effect:
         'Each quatrain begins with "When" or "And when". This builds a structured list of fears, each more personal than the last. The repetition gives the poem a rhetorical, building quality, like a series of waves rising before they break at the volta.',
       lineRef: 0,
+      effectAr:
+        'كل quatrain يبدأ بـ"When" أو "And when". وهذا يبني قائمة منظَّمة من المخاوف، كل واحدة أشخصن من اللي قبلها. التكرار يعطي القصيدة صفة خطابية متصاعدة، مثل سلسلة موج يطلع قبل ما ينكسر عند الـvolta.',
     },
     {
       device: 'Extended metaphor',
@@ -307,13 +366,17 @@ Tone: The poem moves from anxious anticipation to a kind of weary, contemplative
       effect:
         'Quatrain 1 sustains a single agricultural metaphor across four lines. Writing becomes harvesting; the brain becomes a field; books become granaries. The metaphor makes creativity feel organic and natural -- and shows how much labour is required to bring it to fruition.',
       lineRef: 1,
+      effectAr:
+        'Quatrain 1 يحافظ على استعارة زراعية واحدة على طول أربعة أبيات. الكتابة تصير حصاد؛ والعقل يصير حقل؛ والكتب تصير مخازن حبوب. الاستعارة تخلّي الإبداع يحسّ بأنه عضوي وطبيعي — وتبيّن كم يحتاج جهد عشان يثمر.',
     },
     {
       device: 'Personification',
-      example: 'night\'s starred face',
+      example: "night's starred face",
       effect:
         'The night is given a face, decorated with stars. This transforms the cosmos into a watching presence. By giving the night a face, Keats makes the universe feel personal and animate.',
       lineRef: 4,
+      effectAr:
+        'الليل يُعطى وجه، مزيّن بالنجوم. وهذا يحوّل الكون إلى حضور مراقب. لمّا Keats يعطي الليل وجه، يخلّي الكون يحسّ بأنه شخصي وحيّ.',
     },
     {
       device: 'Volta',
@@ -321,6 +384,8 @@ Tone: The poem moves from anxious anticipation to a kind of weary, contemplative
       effect:
         'The dash creates a dramatic break. After 11 lines of building fears, the poem suddenly turns. The volta marks the moment when Keats stops listing his anxieties and tries to come to terms with them.',
       lineRef: 11,
+      effectAr:
+        'الشرطة تخلق انكسار دراماتيكي. بعد 11 بيت من تكديس المخاوف، القصيدة فجأة تتحوّل. الـvolta تعلّم اللحظة اللي Keats يوقف فيها عن تعداد قلقه ويحاول يتصالح معاه.',
     },
     {
       device: 'Imagery (visual)',
@@ -328,6 +393,8 @@ Tone: The poem moves from anxious anticipation to a kind of weary, contemplative
       effect:
         'The closing image places the speaker on a beach, alone, gazing at vast distances. He becomes a tiny figure at the edge of an immense world. The visual emphasises his insignificance and isolation.',
       lineRef: 12,
+      effectAr:
+        'الصورة الختامية تحطّ المتكلّم على شطّ، وحده، يطلّ على مسافات شاسعة. يصير شخصية صغيرة على حافة عالم هائل. الصورة البصرية تأكّد ضآلته وعزلته.',
     },
     {
       device: 'Diction',
@@ -335,6 +402,8 @@ Tone: The poem moves from anxious anticipation to a kind of weary, contemplative
       effect:
         'Keats avoids the word "die" throughout the poem, using gentler phrases like "cease to be". The euphemism softens the harshness but also reveals how difficult it is for him to face his mortality directly.',
       lineRef: 0,
+      effectAr:
+        'Keats يتجنّب كلمة "die" طول القصيدة، ويستخدم عبارات ألطف زي "cease to be". التلطيف يخفّف القسوة، لكن في نفس الوقت يكشف كم صعب عليه يواجه موته مباشرة.',
     },
     {
       device: 'Iambic pentameter',
@@ -342,6 +411,8 @@ Tone: The poem moves from anxious anticipation to a kind of weary, contemplative
       effect:
         'The regular ten-syllable lines give the poem a measured, controlled quality. Even when the speaker is afraid, the metre remains steady -- Keats is in control of the form even as he confronts the loss of control over his own life.',
       lineRef: 0,
+      effectAr:
+        'الأبيات المنتظمة بعشرة مقاطع تعطي القصيدة صفة موزونة مضبوطة. حتى لمّا المتكلّم خايف، الوزن يبقى ثابت — Keats مسيطر على الشكل حتى وهو يواجه فقدان السيطرة على حياته.',
     },
   ],
 }
@@ -358,22 +429,197 @@ const comparisons = [
 ]
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'wihf-1', question: 'What is the speaker afraid of?', type: 'multiple-choice', options: ['Spiders', 'Dying before he can write all the poetry he wants to and before he can experience love fully', 'Public speaking', 'Failure in exams'], correctIndex: 1, explanation: 'Keats fears dying young — before he can write all the poetry stored in his brain, before he can trace the "shadows" of stars, and before he can fully experience love.', topic: 'Meaning', difficulty: 'foundation' },
-  { id: 'wihf-2', question: 'What does "high-piled books in charactery" mean?', type: 'multiple-choice', options: ['A library', 'The many books of poetry Keats wants to write — his brain is "teeming" with unwritten work', 'Other people\'s books', 'A bookshop'], correctIndex: 1, explanation: 'Keats imagines the many books he hopes to fill with his poetry. "High-piled" suggests abundance; "charactery" means written characters. His creative ambition is vast.', topic: 'Language', difficulty: 'foundation' },
-  { id: 'wihf-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'A Shakespearean sonnet — three quatrains and a couplet', 'A ballad', 'Blank verse'], correctIndex: 1, explanation: 'A Shakespearean sonnet with three quatrains exploring different fears and a final couplet that resolves them — temporarily — through contemplation of nothingness.', topic: 'Structure', difficulty: 'foundation' },
-  { id: 'wihf-4', question: 'What does "cease to be" mean?', type: 'multiple-choice', options: ['To stop writing', 'To die — a euphemism for death that Keats later used again in Ode to a Nightingale', 'To stop thinking', 'To leave'], correctIndex: 1, explanation: '"Cease to be" is a gentle euphemism for death. Keats used the same phrase in Ode to a Nightingale ("half in love with easeful Death"). It reflects his constant awareness of mortality.', topic: 'Language', difficulty: 'higher' },
-  { id: 'wihf-5', question: 'When was the poem written and why is the context significant?', type: 'multiple-choice', options: ['1850, in old age', '1818, when Keats was 22 — he would die of tuberculosis just three years later, aged 25', '1794', '1914'], correctIndex: 1, explanation: 'Written in January 1818 when Keats was 22. He was already showing symptoms of the tuberculosis that would kill him in 1821 aged 25. His fear of dying young was tragically justified.', topic: 'Context', difficulty: 'higher' },
-  { id: 'wihf-6', question: 'What does "the night\'s starr\'d face" represent?', type: 'multiple-choice', options: ['Astronomy', 'The beauty and mystery of the universe — Keats fears he will die before understanding or capturing it in poetry', 'A constellation', 'A mask'], correctIndex: 1, explanation: 'The starry sky represents all the beauty and mystery Keats wants to explore in his poetry. He fears death will prevent him from "tracing" (understanding and writing about) these "huge cloudy symbols".', topic: 'Language', difficulty: 'higher' },
-  { id: 'wihf-7', question: 'How does the final couplet resolve the poem?', type: 'multiple-choice', options: ['It offers hope', '"Love and fame to nothingness do sink" — facing the void, both love and ambition seem insignificant. The resolution is bleak contemplation.', 'It celebrates life', 'It promises immortality'], correctIndex: 1, explanation: 'The couplet does not offer comfort. Standing at "the shore of the wide world", Keats watches love and fame sink into nothingness. The resolution is the acceptance of cosmic insignificance.', topic: 'Structure', difficulty: 'grade-9' },
-  { id: 'wihf-8', question: 'What does "unreflecting love" suggest?', type: 'multiple-choice', options: ['Love that has no mirror', 'Love experienced in the moment without intellectual analysis — pure, spontaneous feeling that Keats fears he\'ll miss', 'Love that is reflected back', 'Self-love'], correctIndex: 1, explanation: '"Unreflecting" means unmediated by thought — pure, spontaneous, instinctive love. Keats fears he will die before experiencing this kind of raw, direct emotional connection.', topic: 'Language', difficulty: 'grade-9' },
-  { id: 'wihf-9', question: 'How does Keats use the harvest metaphor?', type: 'multiple-choice', options: ['He is a farmer', '"Before my pen has gleaned my teeming brain" — his brain is a field full of grain; his pen must harvest it. Death threatens before the harvest is complete.', 'He enjoys autumn', 'The metaphor is about food'], correctIndex: 1, explanation: 'The extended harvest metaphor presents Keats\'s brain as a fertile field "teeming" with ideas. His pen must "glean" (harvest) them into books. The fear is that death will destroy the crop before harvest.', topic: 'Language', difficulty: 'grade-9' },
-  { id: 'wihf-10', question: 'Which poem pairs well with When I Have Fears?', type: 'multiple-choice', options: ['She Walks in Beauty', 'Crossing the Bar by Tennyson', 'The Eagle', 'Neutral Tones'], correctIndex: 1, explanation: 'Both address mortality but differently. Keats faces death with anxiety and unfulfilled desire; Tennyson faces it with calm acceptance. They represent youth\'s fear vs age\'s peace.', topic: 'Comparison', difficulty: 'grade-9' },
+  {
+    id: 'wihf-1',
+    question: 'What is the speaker afraid of?',
+    type: 'multiple-choice',
+    options: [
+      'Spiders',
+      'Dying before he can write all the poetry he wants to and before he can experience love fully',
+      'Public speaking',
+      'Failure in exams',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Keats fears dying young — before he can write all the poetry stored in his brain, before he can trace the "shadows" of stars, and before he can fully experience love.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'wihf-2',
+    question: 'What does "high-piled books in charactery" mean?',
+    type: 'multiple-choice',
+    options: [
+      'A library',
+      'The many books of poetry Keats wants to write — his brain is "teeming" with unwritten work',
+      "Other people's books",
+      'A bookshop',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Keats imagines the many books he hopes to fill with his poetry. "High-piled" suggests abundance; "charactery" means written characters. His creative ambition is vast.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'wihf-3',
+    question: 'What form does the poem use?',
+    type: 'multiple-choice',
+    options: [
+      'Free verse',
+      'A Shakespearean sonnet — three quatrains and a couplet',
+      'A ballad',
+      'Blank verse',
+    ],
+    correctIndex: 1,
+    explanation:
+      'A Shakespearean sonnet with three quatrains exploring different fears and a final couplet that resolves them — temporarily — through contemplation of nothingness.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'wihf-4',
+    question: 'What does "cease to be" mean?',
+    type: 'multiple-choice',
+    options: [
+      'To stop writing',
+      'To die — a euphemism for death that Keats later used again in Ode to a Nightingale',
+      'To stop thinking',
+      'To leave',
+    ],
+    correctIndex: 1,
+    explanation:
+      '"Cease to be" is a gentle euphemism for death. Keats used the same phrase in Ode to a Nightingale ("half in love with easeful Death"). It reflects his constant awareness of mortality.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'wihf-5',
+    question: 'When was the poem written and why is the context significant?',
+    type: 'multiple-choice',
+    options: [
+      '1850, in old age',
+      '1818, when Keats was 22 — he would die of tuberculosis just three years later, aged 25',
+      '1794',
+      '1914',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Written in January 1818 when Keats was 22. He was already showing symptoms of the tuberculosis that would kill him in 1821 aged 25. His fear of dying young was tragically justified.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'wihf-6',
+    question: 'What does "the night\'s starr\'d face" represent?',
+    type: 'multiple-choice',
+    options: [
+      'Astronomy',
+      'The beauty and mystery of the universe — Keats fears he will die before understanding or capturing it in poetry',
+      'A constellation',
+      'A mask',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The starry sky represents all the beauty and mystery Keats wants to explore in his poetry. He fears death will prevent him from "tracing" (understanding and writing about) these "huge cloudy symbols".',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'wihf-7',
+    question: 'How does the final couplet resolve the poem?',
+    type: 'multiple-choice',
+    options: [
+      'It offers hope',
+      '"Love and fame to nothingness do sink" — facing the void, both love and ambition seem insignificant. The resolution is bleak contemplation.',
+      'It celebrates life',
+      'It promises immortality',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The couplet does not offer comfort. Standing at "the shore of the wide world", Keats watches love and fame sink into nothingness. The resolution is the acceptance of cosmic insignificance.',
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'wihf-8',
+    question: 'What does "unreflecting love" suggest?',
+    type: 'multiple-choice',
+    options: [
+      'Love that has no mirror',
+      "Love experienced in the moment without intellectual analysis — pure, spontaneous feeling that Keats fears he'll miss",
+      'Love that is reflected back',
+      'Self-love',
+    ],
+    correctIndex: 1,
+    explanation:
+      '"Unreflecting" means unmediated by thought — pure, spontaneous, instinctive love. Keats fears he will die before experiencing this kind of raw, direct emotional connection.',
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'wihf-9',
+    question: 'How does Keats use the harvest metaphor?',
+    type: 'multiple-choice',
+    options: [
+      'He is a farmer',
+      '"Before my pen has gleaned my teeming brain" — his brain is a field full of grain; his pen must harvest it. Death threatens before the harvest is complete.',
+      'He enjoys autumn',
+      'The metaphor is about food',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The extended harvest metaphor presents Keats\'s brain as a fertile field "teeming" with ideas. His pen must "glean" (harvest) them into books. The fear is that death will destroy the crop before harvest.',
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'wihf-10',
+    question: 'Which poem pairs well with When I Have Fears?',
+    type: 'multiple-choice',
+    options: ['She Walks in Beauty', 'Crossing the Bar by Tennyson', 'The Eagle', 'Neutral Tones'],
+    correctIndex: 1,
+    explanation:
+      "Both address mortality but differently. Keats faces death with anxiety and unfulfilled desire; Tennyson faces it with calm acceptance. They represent youth's fear vs age's peace.",
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Key Themes', summary: 'When I Have Fears explores the fear of dying young — before fulfilling creative ambition or fully experiencing love.', keyPoints: ['Fear of premature death — tragically justified', 'Creative ambition — so much poetry unwritten', 'Love — the desire for "unreflecting love" before death', 'Cosmic insignificance — love and fame sink to nothingness'] },
-  { topic: 'Language & Imagery', summary: 'Keats uses harvest metaphor, celestial imagery, and the poignant euphemism "cease to be" to explore mortality.', keyPoints: ['"Gleaned my teeming brain" — harvest metaphor for creativity', '"Night\'s starr\'d face" — beauty Keats fears he\'ll never capture', '"Cease to be" — gentle euphemism for death', '"Love and fame to nothingness do sink" — bleak conclusion'] },
-  { topic: 'Structure & Form', summary: 'A Shakespearean sonnet — three quatrains of escalating fears resolved (bleakly) in a final couplet.', keyPoints: ['Quatrain 1: fear of unwritten poetry', 'Quatrain 2: fear of unexplored beauty', 'Quatrain 3: fear of unlived love', 'Couplet: bleak acceptance of nothingness'] },
+  {
+    topic: 'Key Themes',
+    summary:
+      'When I Have Fears explores the fear of dying young — before fulfilling creative ambition or fully experiencing love.',
+    keyPoints: [
+      'Fear of premature death — tragically justified',
+      'Creative ambition — so much poetry unwritten',
+      'Love — the desire for "unreflecting love" before death',
+      'Cosmic insignificance — love and fame sink to nothingness',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary:
+      'Keats uses harvest metaphor, celestial imagery, and the poignant euphemism "cease to be" to explore mortality.',
+    keyPoints: [
+      '"Gleaned my teeming brain" — harvest metaphor for creativity',
+      "\"Night's starr'd face\" — beauty Keats fears he'll never capture",
+      '"Cease to be" — gentle euphemism for death',
+      '"Love and fame to nothingness do sink" — bleak conclusion',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary:
+      'A Shakespearean sonnet — three quatrains of escalating fears resolved (bleakly) in a final couplet.',
+    keyPoints: [
+      'Quatrain 1: fear of unwritten poetry',
+      'Quatrain 2: fear of unexplored beauty',
+      'Quatrain 3: fear of unlived love',
+      'Couplet: bleak acceptance of nothingness',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -391,11 +637,14 @@ export default function WhenIHaveFearsPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "OCR Poetry", url: "https://theenglishhub.app/revision/poetry/ocr" },
-          { name: "When I Have Fears", url: "https://theenglishhub.app/revision/poetry/ocr/when-i-have-fears" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          { name: 'OCR Poetry', url: 'https://theenglishhub.app/revision/poetry/ocr' },
+          {
+            name: 'When I Have Fears',
+            url: 'https://theenglishhub.app/revision/poetry/ocr/when-i-have-fears',
+          },
         ]}
       />
       <div>
@@ -418,7 +667,9 @@ export default function WhenIHaveFearsPage() {
             <p className="text-body-sm text-muted-foreground">
               John Keats &middot; Youth and Age cluster
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">OCR</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              OCR
+            </Badge>
           </div>
         </div>
       </div>
@@ -441,10 +692,10 @@ export default function WhenIHaveFearsPage() {
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">
         <p className="text-xs text-muted-foreground leading-relaxed">
-          The text of &ldquo;When I Have Fears&rdquo; is in the public domain. All annotations
-          and critical commentary on this page are original to english-hub and are provided for
-          private study and educational purposes under the fair dealing provisions of the
-          Copyright, Designs and Patents Act 1988.
+          The text of &ldquo;When I Have Fears&rdquo; is in the public domain. All annotations and
+          critical commentary on this page are original to english-hub and are provided for private
+          study and educational purposes under the fair dealing provisions of the Copyright, Designs
+          and Patents Act 1988.
         </p>
       </section>
 

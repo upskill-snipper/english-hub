@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -232,7 +233,12 @@ function PoemRow({ poem, clusterPath }: { poem: PoemEntry; clusterPath: string }
   )
 }
 
-export default function AqaPoetryPage() {
+export default async function AqaPoetryPage() {
+  const [aqaLitBackLabel, heroH1, heroIntro] = await tMany([
+    'resources.lit.aqa.h1',
+    'resources.lit.aqa.poetry.h1',
+    'resources.lit.aqa.poetry.intro',
+  ])
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
@@ -242,16 +248,12 @@ export default function AqaPoetryPage() {
             href="/resources/english-literature/aqa"
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            &larr; AQA English Literature
+            &larr; {aqaLitBackLabel}
           </Link>
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Poetry Anthology — Full Guide
+            {heroH1}
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            AQA GCSE English Literature &middot; Paper 2, Section B
-            <br />
-            Power &amp; Conflict and Love &amp; Relationships — All 30 Poems
-          </p>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">{heroIntro}</p>
         </div>
       </section>
 

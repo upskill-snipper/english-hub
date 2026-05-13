@@ -7,6 +7,7 @@ import { Clock, GraduationCap } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { getAllLessonPlans, getLessonPlan, type LessonPlan } from '@/lib/lesson-plans/list'
+import { tMany } from '@/lib/i18n/t'
 
 const SITE_URL = 'https://theenglishhub.app'
 const LESSON_PLANS_URL = `${SITE_URL}/resources/teaching/lesson-plans`
@@ -63,6 +64,16 @@ export default async function LessonPlanPage({ params }: PageProps) {
 
   const url = `${LESSON_PLANS_URL}/${plan.slug}`
 
+  const [bcResources, bcTeaching, bcLessonPlans, comingSoonPill, objectivesH2, tbaBody] =
+    await tMany([
+      'resources.teaching.lp.idx.bc.resources',
+      'resources.teaching.lp.idx.bc.teaching',
+      'resources.teaching.lp.detail.bc.lesson_plans',
+      'resources.teaching.lp.detail.coming_soon_pill',
+      'resources.teaching.lp.detail.objectives_h2',
+      'resources.teaching.lp.detail.tba.body',
+    ])
+
   return (
     <main className="min-h-screen">
       <BreadcrumbJsonLd
@@ -92,7 +103,7 @@ export default async function LessonPlanPage({ params }: PageProps) {
               <ol className="flex flex-wrap items-center gap-1">
                 <li>
                   <Link href="/resources" className="hover:text-foreground transition-colors">
-                    Resources
+                    {bcResources}
                   </Link>
                 </li>
                 <li aria-hidden="true">/</li>
@@ -101,7 +112,7 @@ export default async function LessonPlanPage({ params }: PageProps) {
                     href="/resources/teaching"
                     className="hover:text-foreground transition-colors"
                   >
-                    Teaching
+                    {bcTeaching}
                   </Link>
                 </li>
                 <li aria-hidden="true">/</li>
@@ -110,7 +121,7 @@ export default async function LessonPlanPage({ params }: PageProps) {
                     href="/resources/teaching/lesson-plans"
                     className="hover:text-foreground transition-colors"
                   >
-                    Lesson plans
+                    {bcLessonPlans}
                   </Link>
                 </li>
                 <li aria-hidden="true">/</li>
@@ -132,7 +143,7 @@ export default async function LessonPlanPage({ params }: PageProps) {
 
             {plan.status === 'coming-soon' ? (
               <p className="mt-4 inline-flex items-center rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-muted-foreground">
-                Full plan coming soon
+                {comingSoonPill}
               </p>
             ) : null}
           </div>
@@ -145,7 +156,7 @@ export default async function LessonPlanPage({ params }: PageProps) {
                 id="learning-objectives"
                 className="font-heading text-xl font-semibold tracking-tight"
               >
-                Learning objectives
+                {objectivesH2}
               </h2>
               <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-foreground/90">
                 {plan.learningObjectives.map((objective) => (
@@ -162,10 +173,7 @@ export default async function LessonPlanPage({ params }: PageProps) {
           ) : (
             <Card>
               <CardContent className="py-8 text-center">
-                <p className="text-sm text-muted-foreground">
-                  Detailed activities and resources are being finalised. Join the list below to be
-                  notified when this plan is published.
-                </p>
+                <p className="text-sm text-muted-foreground">{tbaBody}</p>
               </CardContent>
             </Card>
           )}

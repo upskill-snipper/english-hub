@@ -3,11 +3,24 @@ import { poetryFlashcardDecks } from './flashcard-poetry'
 import { setTextFlashcardDecks } from './flashcard-set-texts'
 import { vocabularyDecks } from './flashcard-vocabulary'
 import { examTechniqueDecks } from './flashcard-exam-technique'
+import { khaleejiVocabDecks } from './flashcard-khaleeji-decks'
 
 export interface FlashCard {
   id: string
   front: string
   back: string
+  /**
+   * Optional Khaleeji-Arabic (gulf-dialect) translation of the definition/back side.
+   * When absent, UI should gracefully fall back to the English `back` field.
+   * `term` (`front`) is kept in English by design — only the explanation is translated.
+   */
+  backAr?: string
+  /**
+   * Optional Khaleeji-Arabic transliteration / equivalent for the front.
+   * For literary technique decks this is typically the Latin/transliterated form
+   * (e.g. "metaphor" → "ميتافور").
+   */
+  frontAr?: string
 }
 
 export interface FlashcardDeck {
@@ -2600,6 +2613,7 @@ export const flashcardDecks: FlashcardDeck[] = [
   ...setTextFlashcardDecks,
   ...vocabularyDecks,
   ...examTechniqueDecks,
+  ...khaleejiVocabDecks,
 
   // ===== NARRATIVE TECHNIQUES DECK (50 cards) =====
   {

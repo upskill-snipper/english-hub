@@ -1,18 +1,20 @@
 'use client'
 
-const phrases = [
-  'Master the sonnet',
-  'Plan before you write',
-  'Annotate everything',
-  'Know your AOs',
-  'Model answer libraries',
-  'Read twice, write once',
-  'Timed, not rushed',
-]
+import { useT } from '@/lib/i18n/use-t'
 
-const separator = ' \u2736 ' // ✶
+const separator = ' ✶ ' // ✶
 
 export default function MarqueeStrip() {
+  const t = useT()
+  const phrases = [
+    t('home.marquee.phrase.1'),
+    t('home.marquee.phrase.2'),
+    t('home.marquee.phrase.3'),
+    t('home.marquee.phrase.4'),
+    t('home.marquee.phrase.5'),
+    t('home.marquee.phrase.6'),
+    t('home.marquee.phrase.7'),
+  ]
   const text = phrases.join(separator) + separator
 
   return (

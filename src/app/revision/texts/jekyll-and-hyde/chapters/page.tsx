@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { ArrowLeft, BookOpen, Feather, Users, Layers, Quote } from 'lucide-react'
@@ -27,6 +28,10 @@ type LanguageTechnique = {
   technique: string
   quote: string
   effect: string
+  // Khaleeji-AR variants. English quotation stays in EN per brand
+  // convention; technique label + effect commentary translate.
+  techniqueAr?: string
+  effectAr?: string
 }
 
 type ChapterData = {
@@ -37,6 +42,12 @@ type ChapterData = {
   characterDevelopment: string
   languageAnalysis: LanguageTechnique[]
   structuralSignificance: string
+  // Khaleeji-AR variants. Chapter `title` (e.g. "Story of the Door")
+  // stays in EN — these are exam-canonical headings.
+  summaryAr?: string
+  keyEventsAr?: string[]
+  characterDevelopmentAr?: string
+  structuralSignificanceAr?: string
 }
 
 /* ─── Data ───────────────────────────────────────────────────── */
@@ -47,6 +58,8 @@ const chapters: ChapterData[] = [
     title: 'Story of the Door',
     summary:
       'The novella opens with the lawyer Mr Gabriel Utterson and his distant cousin Richard Enfield on one of their regular Sunday walks through London. Passing a neglected door in a side street, Enfield recounts a disturbing incident he witnessed: late at night, a small, deformed man trampled a young girl at a street corner, showing complete indifference to her screams. A crowd gathered and forced the man to pay compensation. He disappeared through the sinister door and returned with a cheque for one hundred pounds signed by Dr Henry Jekyll. The man gave his name as Edward Hyde. Utterson is troubled because he is the executor of Jekyll\'s will, which leaves everything to Hyde in the event of Jekyll\'s death or "disappearance." The chapter ends with Utterson resolving to find out more about the mysterious Hyde.',
+    summaryAr:
+      'الرواية تفتح على المحامي Mr Gabriel Utterson وقريبه البعيد Richard Enfield وهما في واحدة من جولاتهم المعتادة يوم الأحد في London. لمن يمرّون بباب مهمل في شارع جانبي، Enfield يحكي حادثة مزعجة شهدها: في ساعة متأخّرة من الليل، رجال صغير ومشوّه داس بنت صغيرة في زاوية الشارع، وما اهتم أبد بصراخها. تجمّع الناس وأجبروه يدفع تعويض. اختفى من نفس الباب الشرير، ورجع بشيك بمئة جنيه موقّع من Dr Henry Jekyll. عرّف نفسه باسم Edward Hyde. Utterson ينقبض لأنه منفّذ وصية Jekyll، اللي تترك كل شي لـ Hyde في حالة موت Jekyll أو "disappearance". الفصل يختم بـ Utterson وهو مصمّم يعرف أكثر عن Hyde الغامض.',
     keyEvents: [
       'Enfield describes witnessing Hyde trample a young girl in the street',
       'Hyde pays compensation with a cheque signed by the respectable Dr Jekyll',
@@ -97,6 +110,8 @@ const chapters: ChapterData[] = [
     title: 'Search for Mr Hyde',
     summary:
       'Utterson, disturbed by what Enfield has told him, examines Jekyll\'s will more closely. It states that in the event of Jekyll\'s death or unexplained absence for more than three months, all his possessions should pass to Edward Hyde. Utterson visits Dr Lanyon, an old mutual friend, who confirms that he and Jekyll have fallen out over Jekyll\'s "unscientific" experiments. Utterson begins to stake out the door, eventually confronting Hyde in person. He finds Hyde small, pale, and deeply repellent, describing "Satan\'s signature" on his face. Hyde gives Utterson his Soho address. Utterson then visits Jekyll, who is not at home, and learns from Poole the butler that the servants have orders to obey Hyde. Utterson fears that Hyde is blackmailing Jekyll.',
+    summaryAr:
+      'Utterson، منزعج من حكاية Enfield، يفحص وصية Jekyll بدقة أكثر. الوصية تنص إن في حالة موت Jekyll أو غيابه غير المبرّر لأكثر من ثلاث أشهر، كل ممتلكاته تنتقل إلى Edward Hyde. Utterson يروح Dr Lanyon، صديق قديم لهم اثنين، اللي يأكّد إنه وJekyll تخاصموا بسبب تجارب Jekyll "unscientific". Utterson يبدأ يرابط عند الباب، وفي الآخر يقابل Hyde وجهاً لوجه. يلقاه صغير، شاحب، ونافر بشدّة، ويصف وجهه بأنه "Satan\'s signature". Hyde يعطي Utterson عنوانه في Soho. Utterson يزور Jekyll، اللي مو في البيت، ويعرف من Poole الخدّام إن الخدم عندهم أوامر يطيعون Hyde. Utterson يخاف إن Hyde يبتزّ Jekyll.',
     keyEvents: [
       "Utterson reads Jekyll's unusual will leaving everything to Hyde",
       'Dr Lanyon dismisses Jekyll\'s science as "unscientific balderdash"',
@@ -148,6 +163,8 @@ const chapters: ChapterData[] = [
     title: 'Dr Jekyll Was Quite at Ease',
     summary:
       'Two weeks later, Jekyll hosts a dinner party attended by Utterson and other old friends. After the guests leave, Utterson raises his concerns about Hyde and the will. Jekyll becomes visibly agitated but assures Utterson that he can "be rid of Mr Hyde" whenever he chooses. He asks Utterson, as his lawyer and friend, to honour the will and look after Hyde\'s interests if anything should happen to him. Jekyll describes his situation as "painful" but insists it can be resolved at any moment. Utterson reluctantly agrees.',
+    summaryAr:
+      'بعد أسبوعين، Jekyll يستضيف عشاء يحضره Utterson وأصدقاء قدامى. بعد ما يطلع الضيوف، Utterson يطرح قلقه عن Hyde والوصية. Jekyll يصير عصبي ويبيّن عليه الاضطراب، لكنه يطمئن Utterson إنه يقدر "be rid of Mr Hyde" متى ما يبا. يطلب من Utterson، باعتباره محاميه وصديقه، يحترم الوصية ويعتني بمصالح Hyde لو صار له شي. Jekyll يصف وضعه بأنه "painful"، لكنه يصرّ إن المسألة قابلة للحل بأي لحظة. Utterson يوافق على مضض.',
     keyEvents: [
       'Jekyll hosts a dinner party, appearing his usual sociable self',
       'Utterson confronts Jekyll about Hyde after the other guests leave',
@@ -200,6 +217,8 @@ const chapters: ChapterData[] = [
     title: 'The Carew Murder Case',
     summary:
       "Nearly a year later, a maidservant witnesses the brutal murder of Sir Danvers Carew, an elderly and distinguished Member of Parliament. From her window, she sees a small man (whom she recognises as Hyde) attack Carew without provocation, beating him to death with a heavy walking cane. She faints and does not wake until the early hours, when she calls the police. The broken cane is identified as one Utterson once gave to Jekyll. Utterson leads the police to Hyde's lodgings in Soho, which are lavishly furnished but ransacked, with papers half-burned in the grate. Hyde has vanished. Despite a large reward, he is not found.",
+    summaryAr:
+      'بعد سنة تقريباً، خادمة تشهد جريمة فظيعة: مقتل Sir Danvers Carew، عضو برلمان عجوز ومرموق. من نافذتها، تشوف رجال صغير (تعرفه إنه Hyde) يهاجم Carew بدون أي استفزاز، ويضربه بعصا مشي ثقيلة لين الموت. تطيح مغمى عليها وما تصحى إلا في الساعات الأولى من الصبح، فتتصل بالشرطة. العصا المكسورة تنعرف بإنها كانت هدية من Utterson لـ Jekyll. Utterson يقود الشرطة لسكن Hyde في Soho، اللي ملقى مفروش بفخامة لكن مقلوب رأساً على عقب، وأوراق محروقة نص حرق في الموقد. Hyde اختفى. مع وجود مكافأة كبيرة، ما يلقونه.',
     keyEvents: [
       'A maidservant witnesses Hyde murder Sir Danvers Carew with a walking cane',
       'The murder is unprovoked and extraordinarily violent',
@@ -251,6 +270,8 @@ const chapters: ChapterData[] = [
     title: 'Incident of the Letter',
     summary:
       'Utterson visits Jekyll, who appears "deadly sick." Jekyll swears he is finished with Hyde and will never see him again. He shows Utterson a letter apparently from Hyde, promising to disappear and assuring Jekyll he has a means of escape. Jekyll claims it was delivered by hand but will not explain further. On his way out, Utterson asks Poole about the letter; Poole says nothing came by hand that day, only regular post. Later, Utterson\'s head clerk, Mr Guest, who is an expert in handwriting, notices that Hyde\'s letter bears a striking resemblance to Jekyll\'s own handwriting, albeit with a different slope. Utterson realises with a "chill" that Jekyll may have forged the letter on Hyde\'s behalf.',
+    summaryAr:
+      'Utterson يزور Jekyll، اللي يبيّن عليه إنه "deadly sick". Jekyll يحلف إنه خلّص من Hyde وما يباه يشوفه ثاني مرة. يوري Utterson رسالة من ظاهرها إنها من Hyde، تعد بالاختفاء وتطمئن Jekyll إن عنده وسيلة هرب. Jekyll يدّعي إن الرسالة وصلت باليد، لكن ما يشرح أكثر. وهو طالع، Utterson يسأل Poole عن الرسالة؛ Poole يقول ما وصل شي باليد ذيك الساعة، بس البريد العادي. بعدها، كاتب Utterson الأول Mr Guest، اللي خبير في خطوط اليد، يلاحظ إن رسالة Hyde تشبه خط Jekyll بشكل ملفت، بس الميلان مختلف. Utterson يدرك بـ "chill" إن Jekyll يمكن زوّر الرسالة باسم Hyde.',
     keyEvents: [
       'Utterson visits a sick and frightened Jekyll in his laboratory',
       'Jekyll produces a letter supposedly from Hyde, pledging to vanish',
@@ -301,6 +322,8 @@ const chapters: ChapterData[] = [
     title: 'Remarkable Incident of Dr Lanyon',
     summary:
       'With Hyde seemingly gone, Jekyll appears to return to his old self. For more than two months he is sociable, charitable, and religious, hosting dinners and renewing his friendship with Lanyon. Then, abruptly, Jekyll shuts his door again. When Utterson visits Lanyon, he is shocked to find him gravely ill, with the look of death upon him. Lanyon refuses to discuss Jekyll and says: "I wish to see or hear no more of Dr Jekyll." He says he has had a shock from which he will not recover. Within weeks, Lanyon is dead. He leaves Utterson a sealed letter marked "not to be opened till the death or disappearance of Dr Henry Jekyll." Utterson, true to his professional honour, resists the temptation to open it.',
+    summaryAr:
+      'بمجرد ما يبيّن Hyde إنه راح، Jekyll يبيّن إنه رجع لطبيعته القديمة. لأكثر من شهرين هو اجتماعي وكريم ومتديّن، يستضيف عشاءات ويجدّد صداقته مع Lanyon. ثم، فجأة، Jekyll يسكّر بابه ثاني مرة. لمن يزور Utterson Lanyon، يتفاجأ إنه مريض بشكل خطر، وعليه شبح الموت. Lanyon يرفض يتكلّم عن Jekyll ويقول: "I wish to see or hear no more of Dr Jekyll". يقول إنه أصابته صدمة ما يقدر يتعافى منها. خلال أسابيع، Lanyon يموت. يترك لـ Utterson رسالة مختومة مكتوب عليها "not to be opened till the death or disappearance of Dr Henry Jekyll". Utterson، وفياً لشرف مهنته، يقاوم إغراء فتحها.',
     keyEvents: [
       'Jekyll returns to social life for over two months, apparently free of Hyde',
       'Jekyll suddenly becomes a recluse again, refusing all visitors',
@@ -353,6 +376,8 @@ const chapters: ChapterData[] = [
     title: 'Incident at the Window',
     summary:
       'Utterson and Enfield are again on their Sunday walk and pass Jekyll\'s house. They see Jekyll sitting at an upstairs window, looking like "some disconsolate prisoner." They exchange pleasantries and invite him to join them. Jekyll agrees but then, mid-sentence, an expression of "abject terror and despair" crosses his face. He abruptly shuts the window and vanishes. Utterson and Enfield walk away in horrified silence. This is one of the shortest chapters in the novella.',
+    summaryAr:
+      'Utterson وEnfield مرة ثانية في جولتهم يوم الأحد ويمرّون ببيت Jekyll. يشوفون Jekyll قاعد عند نافذة في الطابق العلوي، يبيّن مثل "some disconsolate prisoner". يتبادلون التحية ويدعونه ينضم لهم. Jekyll يوافق، لكن فجأة، في منتصف جملته، يطلع على وجهه تعبير من "abject terror and despair". يسكّر النافذة بشكل مفاجئ ويختفي. Utterson وEnfield يمشون بصمت مرعوب. هذا واحد من أقصر فصول الرواية.',
     keyEvents: [
       "Utterson and Enfield pass Jekyll's house on their regular walk",
       'Jekyll appears at the window looking imprisoned and melancholy',
@@ -405,6 +430,8 @@ const chapters: ChapterData[] = [
     title: 'The Last Night',
     summary:
       "Jekyll's butler Poole arrives at Utterson's house in a state of terror. He believes his master has been murdered and replaced by someone else, because the voice behind the locked laboratory door no longer sounds like Jekyll. Together they return to Jekyll's house, where the servants are huddled in the hallway, terrified. Poole describes how the figure behind the door has been desperately sending him out for a particular chemical salt, rejecting every batch as impure. They hear a voice crying and weeping behind the door. Poole is convinced he once caught a glimpse of the occupant and saw a creature wearing a mask who \"cried out like a rat\" and fled. Utterson and Poole break down the door with an axe. Inside they find the body of Edward Hyde, still twitching in Jekyll's oversized clothes, dead by suicide from a vial of poison. Jekyll is nowhere to be found. On the desk they discover an updated will naming Utterson as beneficiary, a short note from Jekyll, and Lanyon's sealed letter.",
+    summaryAr:
+      'Poole خدّام Jekyll ييي بيت Utterson في حالة رعب. مقتنع إن سيده قد قُتل وحد ثاني صار مكانه، لأن الصوت اللي وراء باب المختبر المسكّر ما عاد يشبه صوت Jekyll. سوا يرجعون لبيت Jekyll، والخدم ملتمّين في الرواق وخايفين. Poole يصف شلون الشخص اللي وراء الباب يطلّبه بإلحاح ملح كيميائي معيّن، ويرفض كل دفعة ويقول عنها مغشوشة. يسمعون صوت يبكي وراء الباب. Poole مقتنع إنه شاف لمحة من الشخص ولاحظ إنه مخلوق لابس قناع و"cried out like a rat" وهرب. Utterson وPoole يكسرون الباب بفأس. داخل المختبر يلقون جثة Edward Hyde، لسّى تترعش، لابس ثياب Jekyll اللي وايد أكبر من حجمه، منتحر بقارورة سم. Jekyll مو موجود في أي مكان. على المكتب يحصّلون وصية محدّثة باسم Utterson كمستفيد، وملاحظة قصيرة من Jekyll، ورسالة Lanyon المختومة.',
     keyEvents: [
       "Poole arrives at Utterson's door in a panic, believing Jekyll has been murdered",
       'The servants are gathered in terror, sensing something is terribly wrong',
@@ -459,6 +486,8 @@ const chapters: ChapterData[] = [
     title: "Dr Lanyon's Narrative",
     summary:
       'This chapter is Lanyon\'s letter, read by Utterson after the events of Chapter 8. Lanyon describes receiving a desperate, registered letter from Jekyll instructing him to go to Jekyll\'s laboratory, retrieve a specific drawer of chemicals, and bring it to his own house. At midnight, a small, repulsive man arrives at Lanyon\'s door: it is Hyde. He mixes the chemicals into a potion and offers Lanyon the choice to leave the room or to stay and witness something that will "stagger the unbelief of Satan." Lanyon chooses to stay. Hyde drinks the potion and, before Lanyon\'s eyes, transforms into Henry Jekyll. Lanyon writes that the shock of what he witnessed has been fatal: "my life is shaken to its roots; sleep has left me; the deadliest terror sits by me at all hours." He is dying of the knowledge.',
+    summaryAr:
+      'هالفصل هو رسالة Lanyon، يقرأها Utterson بعد أحداث الفصل الثامن. Lanyon يصف إنه استلم رسالة مسجّلة وعاجلة من Jekyll، يأمره فيها يروح مختبر Jekyll، ويأخذ درج معيّن فيه مواد كيميائية، ويرجع به لبيته. منتصف الليل، رجال صغير ونافر ييي على باب Lanyon: هو Hyde. يخلط المواد ويسوّي جرعة، ويعطي Lanyon الخيار: يطلع من الغرفة ولّا يبقى ويشهد شي بـ"stagger the unbelief of Satan". Lanyon يختار يبقى. Hyde يشرب الجرعة، وقدام عيون Lanyon، يتحوّل إلى Henry Jekyll. Lanyon يكتب إن صدمة اللي شافه كانت قاتلة: "my life is shaken to its roots; sleep has left me; the deadliest terror sits by me at all hours". هو يموت بفعل المعرفة نفسها.',
     keyEvents: [
       'Lanyon receives a frantic letter from Jekyll with precise instructions',
       "Lanyon retrieves a drawer of chemicals from Jekyll's laboratory",
@@ -512,6 +541,8 @@ const chapters: ChapterData[] = [
     title: "Henry Jekyll's Full Statement of the Case",
     summary:
       'The final chapter is Jekyll\'s own written confession, composed as his last act before Hyde takes over permanently. Jekyll explains that he had long been fascinated by the duality of human nature and felt burdened by the need to conceal his pleasures behind a facade of respectability. He discovered a chemical compound that could separate his dual nature, allowing him to transform into the purely evil Edward Hyde. At first, Jekyll relished the freedom: as Hyde, he could indulge every vice without consequence, then return to his respectable life by drinking the potion again. However, the transformations gradually became involuntary. One morning Jekyll woke as Hyde without taking the potion. Hyde grew stronger and more dominant with each transformation. Jekyll tried to stop but found he could not resist the temptation. After Hyde murdered Carew, Jekyll resolved never to transform again, but he eventually succumbed. The crucial salt needed for the potion began to run out, and new batches did not work — Jekyll suspects the original salt contained an unknown impurity that was the true catalyst. Trapped in his laboratory, transforming involuntarily and running out of the potion, Jekyll writes his confession knowing that by the time Utterson reads it, Hyde will have taken over completely. He ends: "I bring the life of that unhappy Henry Jekyll to an end."',
+    summaryAr:
+      'الفصل الأخير هو اعتراف Jekyll نفسه المكتوب، يخطّه كآخر شي يسوّيه قبل ما يستولي Hyde بشكل دائم. Jekyll يشرح إنه كان من زمان مفتون بازدواجية النفس البشرية، وكان يحس بثقل الحاجة لإخفاء ملذّاته وراء واجهة الاحترام. اكتشف مركّب كيميائي يقدر يفصل بين جانبيه، يخلّيه يتحوّل إلى Edward Hyde الشرير الصرف. في البداية، Jekyll استمتع بالحرّية: كـ Hyde، يقدر ينغمس بأي رذيلة بلا عواقب، ثم يرجع لحياته المحترمة بشرب الجرعة مرة ثانية. لكن، التحوّلات شيئاً فشيئاً صارت بلا إرادة. صبح واحد، Jekyll قام كـ Hyde بدون ما يشرب الجرعة. Hyde يقوى ويسيطر مع كل تحوّل. Jekyll حاول يوقف، لكن ما قدر يقاوم الإغراء. بعد ما قتل Hyde Sir Danvers Carew، Jekyll تعهّد إنه ما يتحوّل ثاني، لكنه استسلم في الآخر. الملح الجوهري اللي يحتاجه للجرعة بدأ يخلّص، والدفعات الجديدة ما تشتغل — Jekyll يشك إن الملح الأصلي كان فيه شائبة مجهولة هي المحفّز الحقيقي. محاصر داخل مختبره، يتحوّل بلا إرادة والجرعة تخلّص، Jekyll يكتب اعترافه وهو يعرف إنه لمن يقرأه Utterson، Hyde يكون استولى بشكل كامل. يختم بـ: "I bring the life of that unhappy Henry Jekyll to an end."',
     keyEvents: [
       'Jekyll confesses his lifelong struggle with duality and concealed desires',
       'He describes creating the potion to separate his good and evil natures',
@@ -571,9 +602,12 @@ export default async function JekyllChaptersPage() {
   if (board && !allowedBoards.includes(board)) {
     redirect('/revision/texts')
   }
+  const h = await headers()
+  const isAr = h.get('x-lang') === 'ar'
+  const pickStr = (en: string, ar?: string) => (isAr && ar ? ar : en)
 
   return (
-    <div className="space-y-10 pb-16">
+    <div className="space-y-10 pb-16" dir={isAr ? 'rtl' : undefined}>
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -668,7 +702,7 @@ export default async function JekyllChaptersPage() {
               {ch.number}
             </span>
             <h2 className="text-heading-lg font-heading text-foreground">
-              Chapter {ch.number}: {ch.title}
+              {isAr ? 'الفصل' : 'Chapter'} {ch.number}: {ch.title}
             </h2>
           </div>
 
@@ -677,11 +711,11 @@ export default async function JekyllChaptersPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-heading-md font-heading">
                 <BookOpen className="size-4 text-blue-400" />
-                Summary
+                {isAr ? 'الملخص' : 'Summary'}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground">
-              <p>{ch.summary}</p>
+              <p>{pickStr(ch.summary, ch.summaryAr)}</p>
             </CardContent>
           </Card>
 

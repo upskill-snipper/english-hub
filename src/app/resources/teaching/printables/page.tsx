@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { getAllPrintables, type Printable } from '@/lib/printables/list'
+import { tMany } from '@/lib/i18n/t'
 
 const SITE_URL = 'https://theenglishhub.app'
 const INDEX_PATH = '/resources/teaching/printables'
@@ -37,7 +38,17 @@ const BREADCRUMB_ITEMS = [
   { name: 'Printables', url: INDEX_URL },
 ]
 
-function PrintableCard({ printable }: { printable: Printable }) {
+function PrintableCard({
+  printable,
+  comingLabel,
+  availableLabel,
+  viewDetailsLabel,
+}: {
+  printable: Printable
+  comingLabel: string
+  availableLabel: string
+  viewDetailsLabel: string
+}) {
   const href = `${INDEX_PATH}/${printable.slug}`
   const comingSoon = printable.status === 'coming-soon'
 
@@ -45,7 +56,7 @@ function PrintableCard({ printable }: { printable: Printable }) {
     <Link
       href={href}
       className="group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-2xl"
-      aria-label={`${printable.title} — ${comingSoon ? 'coming soon, get notified' : 'open printable'}`}
+      aria-label={`${printable.title} — ${comingSoon ? comingLabel : availableLabel}`}
     >
       <Card className="h-full transition-colors duration-200 group-hover:border-primary/40">
         <CardHeader>
@@ -60,18 +71,18 @@ function PrintableCard({ printable }: { printable: Printable }) {
         <CardContent className="flex items-center justify-between gap-3 mt-auto">
           {comingSoon ? (
             <Badge variant="default" className="font-medium">
-              Coming soon — get notified
+              {comingLabel}
             </Badge>
           ) : (
             <Badge variant="default" className="font-medium">
-              Available now
+              {availableLabel}
             </Badge>
           )}
           <span
             aria-hidden="true"
             className="text-sm text-muted-foreground group-hover:text-foreground transition-colors"
           >
-            View details
+            {viewDetailsLabel}
           </span>
         </CardContent>
       </Card>
@@ -81,6 +92,17 @@ function PrintableCard({ printable }: { printable: Printable }) {
 
 export default async function PrintablesIndexPage() {
   const printables = await getAllPrintables()
+  const [eyebrow, h1, intro, comingLabel, availableLabel, viewDetailsLabel, emptyTitle, emptyBody] =
+    await tMany([
+      'resources.teaching.print.idx.eyebrow',
+      'resources.teaching.print.idx.h1',
+      'resources.teaching.print.idx.intro',
+      'resources.teaching.print.idx.coming',
+      'resources.teaching.print.idx.available',
+      'resources.teaching.print.idx.view_details',
+      'resources.teaching.print.idx.empty.title',
+      'resources.teaching.print.idx.empty.body',
+    ])
 
   return (
     <>
@@ -88,33 +110,28 @@ export default async function PrintablesIndexPage() {
 
       <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <header className="max-w-3xl mb-10">
-          <p className="text-sm font-medium text-muted-foreground mb-2">Free teaching resources</p>
+          <p className="text-sm font-medium text-muted-foreground mb-2">{eyebrow}</p>
           <h1 className="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-            Free printables for GCSE &amp; IGCSE English
+            {h1}
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Classroom-ready PDFs covering set texts, exam technique, and writing skills. Each
-            printable maps to a specific exam board where it applies, and is free for teachers and
-            students to download. New sheets are released regularly — drop your email on any page
-            below to be notified when it goes live.
-          </p>
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">{intro}</p>
         </header>
 
         {printables.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-border/60 bg-muted/30 p-8 text-center">
-            <h2 className="font-heading text-lg font-semibold text-foreground">
-              Printables landing soon
-            </h2>
-            <p className="mt-2 text-sm text-muted-foreground max-w-prose mx-auto">
-              We&apos;re finalising the first batch of printables. Check back shortly, or browse our
-              other free resources in the meantime.
-            </p>
+            <h2 className="font-heading text-lg font-semibold text-foreground">{emptyTitle}</h2>
+            <p className="mt-2 text-sm text-muted-foreground max-w-prose mx-auto">{emptyBody}</p>
           </div>
         ) : (
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {printables.map((printable) => (
               <li key={printable.slug} className="flex">
-                <PrintableCard printable={printable} />
+                <PrintableCard
+                  printable={printable}
+                  comingLabel={comingLabel}
+                  availableLabel={availableLabel}
+                  viewDetailsLabel={viewDetailsLabel}
+                />
               </li>
             ))}
           </ul>

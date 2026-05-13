@@ -1,20 +1,48 @@
 'use client'
 
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
-/* ─────────── Chip card data ─────────── */
-
-const chipCards = [
-  { label: 'AI Essay Feedback', detail: 'Instant grade + targets', rotate: '-3deg', bg: 'bg-clay-400' },
-  { label: '30 Poems Deep-Dived', detail: 'Annotation & analysis', rotate: '2deg', bg: 'bg-sage-500' },
-  { label: '130+ Mock Exams', detail: 'Timed & auto-marked', rotate: '-1.5deg', bg: 'bg-ochre-500' },
-  { label: 'Grade Ladder', detail: '1–9 revision paths', rotate: '2.5deg', bg: 'bg-teal-600' },
-  { label: '7 GCSE Games', detail: 'Learn through play', rotate: '-2deg', bg: 'bg-ink-700' },
-]
-
+// Board codes (AQA/Edexcel/OCR/WJEC/IGCSE/KS3) stay in Latin per i18n policy.
 const boards = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'IGCSE', 'KS3']
 
 export default function AnthologyHero() {
+  const t = useT()
+
+  /* ─────────── Chip card data ─────────── */
+  const chipCards = [
+    {
+      label: t('home.anth_hero.chip.ai_label'),
+      detail: t('home.anth_hero.chip.ai_detail'),
+      rotate: '-3deg',
+      bg: 'bg-clay-400',
+    },
+    {
+      label: t('home.anth_hero.chip.poems_label'),
+      detail: t('home.anth_hero.chip.poems_detail'),
+      rotate: '2deg',
+      bg: 'bg-sage-500',
+    },
+    {
+      label: t('home.anth_hero.chip.mocks_label'),
+      detail: t('home.anth_hero.chip.mocks_detail'),
+      rotate: '-1.5deg',
+      bg: 'bg-ochre-500',
+    },
+    {
+      label: t('home.anth_hero.chip.ladder_label'),
+      detail: t('home.anth_hero.chip.ladder_detail'),
+      rotate: '2.5deg',
+      bg: 'bg-teal-600',
+    },
+    {
+      label: t('home.anth_hero.chip.games_label'),
+      detail: t('home.anth_hero.chip.games_detail'),
+      rotate: '-2deg',
+      bg: 'bg-ink-700',
+    },
+  ]
+
   return (
     <section className="relative overflow-hidden">
       {/* Main card */}
@@ -32,11 +60,11 @@ export default function AnthologyHero() {
 
           {/* Meta bar */}
           <div className="relative mb-8 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm font-mono tracking-wide text-cream-200/60">
-            <span>The English Hub &middot; Anthology Edition</span>
+            <span>{t('home.anth_hero.meta_brand')}</span>
             <span className="hidden sm:inline text-cream-200/30">|</span>
-            <span>Vol. I &mdash; Spring MMXXVI</span>
+            <span>{t('home.anth_hero.meta_vol')}</span>
             <span className="hidden sm:inline text-cream-200/30">|</span>
-            <span>15 pathways &middot; 470 lessons</span>
+            <span>{t('home.anth_hero.meta_stats')}</span>
           </div>
 
           {/* Grid: content left, chips right */}
@@ -45,15 +73,16 @@ export default function AnthologyHero() {
             <div>
               {/* Eyebrow */}
               <p className="mb-4 text-sm font-medium tracking-widest uppercase text-clay-300">
-                An anthology for English &middot; 2026
+                {t('home.anth_hero.eyebrow')}
               </p>
 
               {/* Display heading */}
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-extrabold leading-[1.05] tracking-tight text-cream-50 mb-6">
-                Read close.{' '}
-                <em className="italic">Write</em> bold.
+                {t('home.anth_hero.h1.read')}{' '}
+                <em className="italic">{t('home.anth_hero.h1.write')}</em>{' '}
+                {t('home.anth_hero.h1.bold')}
                 <br />
-                Land the{' '}
+                {t('home.anth_hero.h1.land')}{' '}
                 <span className="relative inline-flex items-center justify-center">
                   <span className="relative z-10">9</span>
                   <span className="absolute inset-0 flex items-center justify-center">
@@ -64,8 +93,7 @@ export default function AnthologyHero() {
 
               {/* Dek */}
               <p className="font-serif text-cream-200 text-lg sm:text-[22px] leading-relaxed max-w-lg mb-8">
-                Structured courses, AI essay feedback, mock exams, and revision tools
-                &mdash; all mapped to your exam board. One platform, every grade.
+                {t('home.anth_hero.dek')}
               </p>
 
               {/* CTAs */}
@@ -74,17 +102,17 @@ export default function AnthologyHero() {
                   href="/auth/register"
                   className="inline-flex items-center gap-2 rounded-full bg-clay-500 px-7 py-3 text-sm font-bold text-cream-50 transition-colors hover:bg-clay-600 shadow-lg shadow-clay-500/25"
                 >
-                  Start free &mdash; no card &rarr;
+                  {t('home.anth_hero.cta_start')}
                 </Link>
                 <Link
                   href="/demo/school"
                   className="inline-flex items-center gap-2 rounded-full border border-cream-200/25 px-6 py-3 text-sm font-semibold text-cream-100 transition-colors hover:bg-cream-50/10"
                 >
-                  Try the demo
+                  {t('home.anth_hero.cta_demo')}
                 </Link>
               </div>
 
-              {/* Board badges */}
+              {/* Board badges (Latin codes — no translation) */}
               <div className="flex flex-wrap items-center gap-2">
                 {boards.map((b) => (
                   <span
@@ -98,7 +126,10 @@ export default function AnthologyHero() {
             </div>
 
             {/* Right column — stacked chip tiles */}
-            <div className="relative hidden lg:flex flex-col items-center gap-3 py-4" aria-hidden="true">
+            <div
+              className="relative hidden lg:flex flex-col items-center gap-3 py-4"
+              aria-hidden="true"
+            >
               {chipCards.map((chip, i) => (
                 <div
                   key={chip.label}

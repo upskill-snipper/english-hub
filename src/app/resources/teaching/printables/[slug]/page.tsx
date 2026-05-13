@@ -5,6 +5,7 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import { Badge } from '@/components/ui/badge'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { getPrintable, getPrintableSlugs, type Printable } from '@/lib/printables/list'
+import { tMany } from '@/lib/i18n/t'
 
 const SITE_URL = 'https://theenglishhub.app'
 const INDEX_PATH = '/resources/teaching/printables'
@@ -68,11 +69,19 @@ function buildBreadcrumbs(printable: Printable) {
   ]
 }
 
-function StatusBadge({ printable }: { printable: Printable }) {
+function StatusBadge({
+  printable,
+  comingLabel,
+  availableLabel,
+}: {
+  printable: Printable
+  comingLabel: string
+  availableLabel: string
+}) {
   if (printable.status === 'available' && printable.pdfUrl) {
-    return <Badge variant="default">Available now</Badge>
+    return <Badge variant="default">{availableLabel}</Badge>
   }
-  return <Badge variant="default">Coming soon — get notified</Badge>
+  return <Badge variant="default">{comingLabel}</Badge>
 }
 
 export default async function PrintablePage({ params }: { params: Promise<Params> }) {
@@ -91,10 +100,14 @@ export default async function PrintablePage({ params }: { params: Promise<Params
   const canonical = buildCanonical(printable.slug)
   const breadcrumbs = buildBreadcrumbs(printable)
 
-  const captureDescription =
-    printable.status === 'available' && printable.pdfUrl
-      ? 'Drop your email and we’ll send the printable straight to your inbox.'
-      : `We’ll email you the moment ${printable.title} is ready to download.`
+  const [bcHome, bcResources, bcTeaching, bcPrintables, comingLabel, availableLabel] = await tMany([
+    'resources.teaching.print.detail.bc.home',
+    'resources.teaching.lp.idx.bc.resources',
+    'resources.teaching.lp.idx.bc.teaching',
+    'resources.teaching.print.detail.bc.printables',
+    'resources.teaching.print.idx.coming',
+    'resources.teaching.print.idx.available',
+  ])
 
   return (
     <>
@@ -115,25 +128,25 @@ export default async function PrintablePage({ params }: { params: Promise<Params
           <ol className="flex flex-wrap items-center gap-1.5 text-muted-foreground">
             <li>
               <Link href="/" className="hover:text-foreground">
-                Home
+                {bcHome}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
               <Link href="/resources" className="hover:text-foreground">
-                Resources
+                {bcResources}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
               <Link href="/resources/teaching" className="hover:text-foreground">
-                Teaching
+                {bcTeaching}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
               <Link href={INDEX_PATH} className="hover:text-foreground">
-                Printables
+                {bcPrintables}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
@@ -148,7 +161,11 @@ export default async function PrintablePage({ params }: { params: Promise<Params
             <Badge variant="secondary">{printable.educationalLevel}</Badge>
             {printable.examBoard ? <Badge variant="outline">{printable.examBoard}</Badge> : null}
             {printable.text ? <Badge variant="outline">{printable.text}</Badge> : null}
-            <StatusBadge printable={printable} />
+            <StatusBadge
+              printable={printable}
+              comingLabel={comingLabel}
+              availableLabel={availableLabel}
+            />
           </div>
           <h1 className="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
             {printable.title}

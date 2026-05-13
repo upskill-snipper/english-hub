@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import StudyTools from '@/components/study/StudyTools'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { useT } from '@/lib/i18n/use-t'
 
 interface Poem {
   title: string
@@ -124,6 +125,7 @@ const POEMS: Poem[] = [
 ]
 
 export default function OCRConflictPage() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -146,7 +148,7 @@ export default function OCRConflictPage() {
           render={<Link href="/revision/poetry/ocr" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to OCR Anthology
+          {t('poetry_hub.ocr.back_to_anthology')}
         </Button>
       </div>
 
@@ -158,15 +160,16 @@ export default function OCRConflictPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              OCR Towards a World Unknown
+              {t('poetry_hub.ocr.badge_anthology')}
             </Badge>
             <Badge className="bg-primary/10 text-primary border-primary/20">OCR</Badge>
           </div>
 
-          <h1 className="text-display-sm font-heading text-foreground sm:text-display">Conflict</h1>
+          <h1 className="text-display-sm font-heading text-foreground sm:text-display">
+            {t('poetry_hub.ocr.cluster.conflict.title')}
+          </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            15 poems exploring war, prejudice, identity and personal struggle. From Tennyson and
-            Owen to Agard, Zephaniah and Imtiaz Dharker.
+            {t('poetry_hub.ocr.conflict.hero_lead')}
           </p>
         </div>
       </section>
@@ -181,7 +184,9 @@ export default function OCRConflictPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Swords className="size-5 text-red-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">All 15 Poems</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.ocr.all_15')}
+          </h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -216,7 +221,9 @@ export default function OCRConflictPage() {
 
               <div className="mt-3">
                 <Badge variant="outline" className="text-[0.65rem]">
-                  {poem.publicDomain ? 'Full study page' : 'Key quotations only'}
+                  {poem.publicDomain
+                    ? t('poetry_hub.ocr.full_study')
+                    : t('poetry_hub.ocr.quotes_only')}
                 </Badge>
               </div>
             </Link>
@@ -225,27 +232,26 @@ export default function OCRConflictPage() {
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-5 sm:p-6">
-        <h2 className="text-heading-sm font-heading text-foreground">Why are some poems locked?</h2>
+        <h2 className="text-heading-sm font-heading text-foreground">
+          {t('poetry_hub.ocr.why_locked')}
+        </h2>
         <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-          Older poems are public domain so we provide full annotated study pages. More recent poems
-          are still in copyright -- for those we offer context, themes and key quotation analysis
-          only. You will need a copy of the OCR <em>Towards a World Unknown</em> anthology to read
-          the full text.
+          {t('poetry_hub.ocr.why_locked_body')}
         </p>
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
-          <strong className="text-foreground">Rights notice.</strong> Ten of the fifteen OCR
-          Conflict poems remain in copyright &mdash; Agard&rsquo;s <em>Half-caste</em> and{' '}
-          <em>Flag</em> (&copy; Hodder / John Agard), Clarke&rsquo;s <em>Catrin</em> (&copy;
-          Carcanet Press), Satyamurti&rsquo;s <em>War Photographer</em> (&copy; Bloodaxe Books),
-          Carson&rsquo;s <em>Belfast Confetti</em> (&copy; Gallery Press), Casey&rsquo;s{' '}
-          <em>The Class Game</em> (&copy; estate of Mary Casey), Weir&rsquo;s <em>Poppies</em>{' '}
-          (&copy; Templar Poetry), Zephaniah&rsquo;s <em>No Problem</em> (&copy; Bloodaxe Books),
-          Levertov&rsquo;s <em>What Were They Like?</em> (&copy; New Directions) and Dharker&rsquo;s{' '}
-          <em>Honour Killing</em> (&copy; Bloodaxe Books). Quotations on individual set-text pages
-          are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism, review, quotation).
-          For full text, students should consult the board-licensed OCR{' '}
-          <em>Towards a World Unknown</em> anthology (J352, ISBN 9781398384408). Per the Verified
-          Library QC: rights-contact mapping for some restricted poems in this cluster is{' '}
+          <strong className="text-foreground">{t('poetry_hub.ocr.rights_notice_label')}</strong> Ten
+          of the fifteen OCR Conflict poems remain in copyright &mdash; Agard&rsquo;s{' '}
+          <em>Half-caste</em> and <em>Flag</em> (&copy; Hodder / John Agard), Clarke&rsquo;s{' '}
+          <em>Catrin</em> (&copy; Carcanet Press), Satyamurti&rsquo;s <em>War Photographer</em>{' '}
+          (&copy; Bloodaxe Books), Carson&rsquo;s <em>Belfast Confetti</em> (&copy; Gallery Press),
+          Casey&rsquo;s <em>The Class Game</em> (&copy; estate of Mary Casey), Weir&rsquo;s{' '}
+          <em>Poppies</em> (&copy; Templar Poetry), Zephaniah&rsquo;s <em>No Problem</em> (&copy;
+          Bloodaxe Books), Levertov&rsquo;s <em>What Were They Like?</em> (&copy; New Directions)
+          and Dharker&rsquo;s <em>Honour Killing</em> (&copy; Bloodaxe Books). Quotations on
+          individual set-text pages are short fair-dealing extracts under CDPA 1988 &sect;30
+          (criticism, review, quotation). For full text, students should consult the board-licensed
+          OCR <em>Towards a World Unknown</em> anthology (J352, ISBN 9781398384408). Per the
+          Verified Library QC: rights-contact mapping for some restricted poems in this cluster is{' '}
           <strong className="text-foreground">partial</strong> &mdash; for extended quotation use
           beyond fair-dealing extracts, contact the publisher directly.
         </p>
@@ -253,14 +259,16 @@ export default function OCRConflictPage() {
 
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 text-center">
         <BookOpen className="mx-auto mb-3 size-8 text-red-400" />
-        <h2 className="text-heading-lg font-heading text-foreground">Explore other clusters</h2>
+        <h2 className="text-heading-lg font-heading text-foreground">
+          {t('poetry_hub.ocr.explore_other_clusters')}
+        </h2>
         <Button
           variant="default"
           size="lg"
           className="mt-5"
           render={<Link href="/revision/poetry/ocr" />}
         >
-          Back to OCR Anthology
+          {t('poetry_hub.ocr.back_to_anthology')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

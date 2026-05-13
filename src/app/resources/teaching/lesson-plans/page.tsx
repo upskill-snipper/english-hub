@@ -5,6 +5,7 @@ import { Clock, GraduationCap } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { getAllLessonPlans, type LessonPlan } from '@/lib/lesson-plans/list'
+import { tMany } from '@/lib/i18n/t'
 
 const PAGE_URL = 'https://theenglishhub.app/resources/teaching/lesson-plans'
 const PAGE_TITLE = 'Free GCSE & IGCSE English lesson plans — The English Hub'
@@ -29,8 +30,28 @@ export const metadata: Metadata = {
   },
 }
 
-export default function LessonPlansIndexPage() {
+export default async function LessonPlansIndexPage() {
   const lessonPlans = getAllLessonPlans()
+
+  const [
+    bcResources,
+    bcTeaching,
+    bcLessonPlans,
+    h1,
+    intro,
+    comingSoonLabel,
+    emptyTitle,
+    emptyBody,
+  ] = await tMany([
+    'resources.teaching.lp.idx.bc.resources',
+    'resources.teaching.lp.idx.bc.teaching',
+    'resources.teaching.lp.idx.bc.lesson_plans',
+    'resources.teaching.lp.idx.h1',
+    'resources.teaching.lp.idx.intro',
+    'resources.teaching.lp.idx.coming_soon',
+    'resources.teaching.lp.idx.empty.title',
+    'resources.teaching.lp.idx.empty.body',
+  ])
 
   return (
     <main className="min-h-screen">
@@ -50,7 +71,7 @@ export default function LessonPlansIndexPage() {
             <ol className="flex flex-wrap items-center gap-1">
               <li>
                 <Link href="/resources" className="hover:text-foreground transition-colors">
-                  Resources
+                  {bcResources}
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
@@ -59,21 +80,20 @@ export default function LessonPlansIndexPage() {
                   href="/resources/teaching"
                   className="hover:text-foreground transition-colors"
                 >
-                  Teaching
+                  {bcTeaching}
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li className="text-foreground" aria-current="page">
-                Lesson plans
+                {bcLessonPlans}
               </li>
             </ol>
           </nav>
           <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Free lesson plans for GCSE & IGCSE English
+            {h1}
           </h1>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg leading-relaxed">
-            Classroom-ready plans with learning objectives, activities, and timings. Pick a plan,
-            tweak it for your class, teach it tomorrow.
+            {intro}
           </p>
         </div>
       </section>
@@ -81,12 +101,12 @@ export default function LessonPlansIndexPage() {
       {/* List */}
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         {lessonPlans.length === 0 ? (
-          <EmptyState />
+          <EmptyState title={emptyTitle} body={emptyBody} />
         ) : (
           <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {lessonPlans.map((plan) => (
               <li key={plan.slug}>
-                <LessonPlanCard plan={plan} />
+                <LessonPlanCard plan={plan} comingSoonLabel={comingSoonLabel} />
               </li>
             ))}
           </ul>
@@ -96,7 +116,7 @@ export default function LessonPlansIndexPage() {
   )
 }
 
-function LessonPlanCard({ plan }: { plan: LessonPlan }) {
+function LessonPlanCard({ plan, comingSoonLabel }: { plan: LessonPlan; comingSoonLabel: string }) {
   const isComingSoon = plan.status === 'coming-soon'
   const href = `/resources/teaching/lesson-plans/${plan.slug}`
 
@@ -114,7 +134,7 @@ function LessonPlanCard({ plan }: { plan: LessonPlan }) {
           ) : null}
           {isComingSoon ? (
             <span className="inline-flex items-center rounded-full border border-border bg-background px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-              Coming soon
+              {comingSoonLabel}
             </span>
           ) : null}
         </div>
@@ -167,15 +187,12 @@ function LessonPlanCard({ plan }: { plan: LessonPlan }) {
   )
 }
 
-function EmptyState() {
+function EmptyState({ title, body }: { title: string; body: string }) {
   return (
     <Card>
       <CardContent className="py-10 text-center">
-        <h2 className="font-heading text-lg font-semibold">Lesson plans are on the way</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          We&apos;re publishing free, classroom-ready plans for GCSE and IGCSE English. Check back
-          soon.
-        </p>
+        <h2 className="font-heading text-lg font-semibold">{title}</h2>
+        <p className="mt-2 text-sm text-muted-foreground">{body}</p>
       </CardContent>
     </Card>
   )

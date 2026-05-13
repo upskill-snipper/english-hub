@@ -37,6 +37,10 @@
 // the full set. Consulted by lookup() as a fallback after DICTIONARY.
 import { TOOLKIT_DICTIONARY } from './dictionary-toolkit'
 import { SCHOOL_COMP_DICTIONARY } from './dictionary-school-comp'
+import { LEGAL_LONG_DICTIONARY } from './dictionary-legal-long'
+import { DASH_INTERNAL_DICTIONARY } from './dictionary-dash-internal'
+import { DEMO_PAGES_DICTIONARY } from './dictionary-demo-pages'
+import { POETRY_HUB_DICTIONARY } from './dictionary-poetry-hub'
 
 export type Locale = 'en' | 'ar'
 
@@ -6596,6 +6600,112 @@ export const DICTIONARY: Dictionary = {
     ar: 'متوافق مع مواصفات Pearson Edexcel 4EA1 · Paper 1 Section A',
   },
 
+  // ─── Anthology per-text sub-pages (shared scaffolding) ─────────────
+  'anth_text.back_to_anthology': { en: 'Back to Anthology', ar: 'رجوع للمختارات' },
+  'anth_text.badge_lang_a': {
+    en: 'Edexcel IGCSE Language A',
+    ar: 'Edexcel IGCSE Language A',
+  },
+  'anth_text.badge_paper_1a': { en: 'Paper 1 Section A', ar: 'Paper 1 Section A' },
+  'anth_text.section.context': { en: 'Context', ar: 'السياق' },
+  'anth_text.section.themes': { en: 'Themes', ar: 'الموضوعات' },
+  'anth_text.section.extract_focuses': { en: 'Extract Focuses', ar: 'محاور المقتطف' },
+  'anth_text.section.extract_focuses.intro': {
+    en: 'Key moments in the extract and what each one is doing structurally and thematically. Refer to the licensed anthology for the exact wording.',
+    ar: 'لحظات مفتاحيّة في المقتطف ووظيفة كلٍّ منها بنائيّاً وموضوعيّاً. ارجع إلى المختارات المرخّصة للنصّ الحرفيّ.',
+  },
+  'anth_text.section.language_analysis': { en: 'Language Analysis', ar: 'تحليل اللغة' },
+  'anth_text.section.language_analysis.intro': {
+    en: 'Key language features used by the writer and their effects on the reader. Discussed by technique rather than by quotation; bring exact wording from your anthology when you write up answers.',
+    ar: 'الخصائص اللغويّة الرئيسة عند الكاتب وأثرها في القارئ. النقاش هنا بحسب الأسلوب لا بحسب الاقتباس؛ احضر النصّ الحرفيّ من مختاراتك حين تحرّر إجاباتك.',
+  },
+  'anth_text.section.structural_analysis': { en: 'Structural Analysis', ar: 'التحليل البنائيّ' },
+  'anth_text.section.structural.opening': { en: 'Opening', ar: 'الافتتاح' },
+  'anth_text.section.structural.development': { en: 'Development', ar: 'التطوّر' },
+  'anth_text.section.structural.climax': { en: 'Climax', ar: 'الذروة' },
+  'anth_text.section.structural.resolution': { en: 'Resolution', ar: 'الخاتمة' },
+  'anth_text.section.structural.perspective': {
+    en: 'Narrative perspective',
+    ar: 'منظور السرد',
+  },
+  'anth_text.section.writers_purpose': { en: "Writer's Purpose", ar: 'مقصد الكاتب' },
+  'anth_text.writers_purpose.achieve': {
+    en: 'What is the writer trying to achieve?',
+    ar: 'ما الذي يسعى الكاتب إلى تحقيقه؟',
+  },
+  'anth_text.writers_purpose.reader_feel': {
+    en: 'How does the writer want the reader to feel?',
+    ar: 'كيف يريد الكاتب أن يشعر القارئ؟',
+  },
+  'anth_text.writers_purpose.message': {
+    en: 'Central message or argument',
+    ar: 'الرسالة المركزيّة أو الحُجّة',
+  },
+  'anth_text.section.exam_practice': { en: 'Exam Practice', ar: 'تدريب الامتحان' },
+  'anth_text.exam.model_outline': { en: 'Model answer outline', ar: 'مخطّط الإجابة النموذجيّة' },
+  'anth_text.section.compare_with': { en: 'Compare With', ar: 'قارن مع' },
+  'anth_text.compare_with.intro': {
+    en: 'Strong pairings for comparison questions in the exam.',
+    ar: 'مقارنات قويّة لأسئلة المقابلة في الامتحان.',
+  },
+  'anth_text.rebuilt_label': {
+    en: 'Page rebuilt April 2026.',
+    ar: 'أُعيد بناء الصفحة في أبريل 2026.',
+  },
+  'anth_text.rebuilt_body': {
+    en: 'This page has been rewritten to remove unverifiable direct quotations. Analysis discusses structure, technique and effect without putting specific words into the writer’s mouth. For the exact text of the extract, students should use the licensed Pearson Edexcel anthology.',
+    ar: 'أُعيدت كتابة هذه الصفحة لإزالة الاقتباسات الحرفيّة غير الموثّقة. يناقش التحليلُ البنية والأسلوب والأثر دون أن ينسب ألفاظاً بعينها إلى الكاتب. للحصول على النصّ الحرفيّ للمقتطف، ينبغي للطلاب الرجوع إلى مختارات Pearson Edexcel المرخّصة.',
+  },
+  'anth_text.rights_notice_label': { en: 'Rights notice:', ar: 'إشعار الحقوق:' },
+  'anth_text.footer_align': {
+    en: 'Aligned with Pearson Edexcel specification 4EA1.',
+    ar: 'متوافق مع مواصفات Pearson Edexcel 4EA1.',
+  },
+  'anth_text.moment_prefix': { en: 'Moment', ar: 'لحظة' },
+  'anth_text.section.key_moments': { en: 'Key Moments', ar: 'اللحظات المفتاحيّة' },
+  'anth_text.use_with_anthology': {
+    en: 'Use with your anthology',
+    ar: 'استعمله مع مختاراتك',
+  },
+  'anth_text.key_moments.intro': {
+    en: 'Map of the extract’s key moments. Look up the exact wording in your licensed anthology.',
+    ar: 'خريطةُ اللحظات المفتاحيّة في المقتطف. ابحث عن النصّ الحرفيّ في مختاراتك المرخّصة.',
+  },
+  'anth_text.teacher_note': { en: 'Teacher note', ar: 'ملاحظة المعلّم' },
+  'anth_text.section.key_vocabulary': { en: 'Key Vocabulary', ar: 'المفردات المفتاحيّة' },
+  'anth_text.section.structural.paragraphing': {
+    en: 'Paragraph structure',
+    ar: 'بنية الفقرات',
+  },
+  'anth_text.section.structural.time': { en: 'Use of time', ar: 'توظيف الزمن' },
+  'anth_text.section.structural.opening_closing': {
+    en: 'Opening & closing techniques',
+    ar: 'أساليب الافتتاح والختام',
+  },
+  'anth_text.section.structural.tone': { en: 'Tone', ar: 'النبرة' },
+  'anth_text.section.structural.voice_shift': {
+    en: 'Shifts in voice',
+    ar: 'تبدّلات الصوت',
+  },
+  'anth_text.section.structural.repetition': {
+    en: 'Repetition and motif',
+    ar: 'التكرار والموتيف',
+  },
+  'anth_text.section.structural.imagery': { en: 'Imagery', ar: 'الصور البلاغيّة' },
+  'anth_text.writers_purpose.achieve_past': {
+    en: 'What was the writer trying to achieve?',
+    ar: 'ما الذي كان الكاتب يسعى إلى تحقيقه؟',
+  },
+  'anth_text.writers_purpose.reader_feel_past': {
+    en: 'How did the writer want the reader to feel?',
+    ar: 'كيف أراد الكاتب أن يشعر القارئ؟',
+  },
+  'anth_text.section.key_extracts': { en: 'Key Extracts', ar: 'مقاطع مفتاحيّة' },
+  'anth_text.section.language_analysis.guidance_intro': {
+    en: 'Key language techniques to look for in the anthology extract. Specific quotations will be added after primary-source review — for now, locate examples in your licensed anthology and apply the guidance below.',
+    ar: 'تقنيّات لغويّة رئيسة لرصدها في المقتطف من المختارات. ستُضاف الاقتباسات المحدّدة بعد مراجعة المصادر الأوليّة — لحينه، حدّد الأمثلة في مختاراتك المرخّصة وطبّق الإرشاد أدناه.',
+  },
+
   // ─── Model answers (grade tabs + summary) ───────────────────────────
   'model_answers.grade.label.9': { en: 'Grade 9', ar: 'الدرجة ٩' },
   'model_answers.grade.label.7': { en: 'Grade 7', ar: 'الدرجة ٧' },
@@ -10213,6 +10323,705 @@ export const DICTIONARY: Dictionary = {
     ar: 'الكتابة السردية والوصفية واستراتيجيات نظام التصحيح',
   },
 
+  // ─── Cambridge IGCSE — nested study pages (igcse.cambridge.*) ────────
+  // Per-paper exam-technique, model answers, mark scheme breakdowns.
+  // English model answers and extracts stay English by design; surrounding
+  // pedagogical commentary and headings flip to Khaleeji Arabic when AR
+  // is active. MSA register for syllabus-formal headings; Khaleeji for
+  // student-facing narrative explanation.
+  'igcse.cambridge.back_paper_1': { en: 'Paper 1 hub', ar: 'صفحة Paper 1' },
+  'igcse.cambridge.back_paper_2': { en: 'Paper 2 hub', ar: 'صفحة Paper 2' },
+  'igcse.cambridge.back_composition': {
+    en: 'Back to composition',
+    ar: 'رجوع لـ Composition',
+  },
+  'igcse.cambridge.back_narrative': {
+    en: 'Back to narrative',
+    ar: 'رجوع للـ Narrative',
+  },
+  'igcse.cambridge.badge.language_a': { en: 'IGCSE Language A', ar: 'IGCSE Language A' },
+  'igcse.cambridge.badge.language_b': { en: 'IGCSE Language B', ar: 'IGCSE Language B' },
+  'igcse.cambridge.badge.cambridge_0500': {
+    en: 'Cambridge IGCSE 0500',
+    ar: 'Cambridge IGCSE 0500',
+  },
+  'igcse.cambridge.badge.cambridge_0990': {
+    en: 'Cambridge IGCSE 0990',
+    ar: 'Cambridge IGCSE 0990',
+  },
+  'igcse.cambridge.badge.cambridge_lang_b': {
+    en: 'Cambridge IGCSE Language B',
+    ar: 'Cambridge IGCSE Language B',
+  },
+  'igcse.cambridge.badge.cambridge_igcse': {
+    en: 'Cambridge IGCSE',
+    ar: 'Cambridge IGCSE',
+  },
+  'igcse.cambridge.badge.igcse_language': {
+    en: 'IGCSE Language',
+    ar: 'IGCSE Language',
+  },
+  'igcse.cambridge.badge.paper_1_models': { en: 'Paper 1 models', ar: 'نماذج Paper 1' },
+  'igcse.cambridge.badge.paper_2_models': { en: 'Paper 2 models', ar: 'نماذج Paper 2' },
+  'igcse.cambridge.badge.paper_2_section_b': {
+    en: 'Paper 2 Section B',
+    ar: 'Paper 2 — Section B',
+  },
+  'igcse.cambridge.badge.paper_1': { en: 'Paper 1', ar: 'Paper 1' },
+  'igcse.cambridge.badge.question_types': {
+    en: 'Question types',
+    ar: 'أنواع الأسئلة',
+  },
+  'igcse.cambridge.examiner_note': { en: 'Examiner note', ar: 'ملاحظة المصحّح' },
+  'igcse.cambridge.point': { en: 'Point', ar: 'نقطة' },
+  'igcse.cambridge.paragraph': { en: 'Paragraph', ar: 'فقرة' },
+  'igcse.cambridge.opening': { en: 'Opening', ar: 'المقدمة' },
+  'igcse.cambridge.closing': { en: 'Closing', ar: 'الخاتمة' },
+  'igcse.cambridge.question': { en: 'Question', ar: 'السؤال' },
+  'igcse.cambridge.task': { en: 'Task', ar: 'المهمة' },
+  'igcse.cambridge.source_passage': { en: 'Source passage', ar: 'النص المصدر' },
+  'igcse.cambridge.model_summary': { en: 'Model summary', ar: 'نموذج الملخّص' },
+  'igcse.cambridge.aligns_paper_1_reading': {
+    en: 'Aligns with Cambridge syllabus 0500 — Paper 1 Reading',
+    ar: 'يتوافق مع منهج Cambridge 0500 — Paper 1 Reading',
+  },
+  'igcse.cambridge.aligns_paper_2_writing': {
+    en: 'Aligns with Cambridge syllabus 0500 — Paper 2 Writing',
+    ar: 'يتوافق مع منهج Cambridge 0500 — Paper 2 Writing',
+  },
+
+  // ─── Paper 1 / Q3 — Summary writing ───────────────────────────────────
+  'igcse.cambridge.summary.hero_title': {
+    en: 'Summary writing (Q3)',
+    ar: 'كتابة الملخّص (Q3)',
+  },
+  'igcse.cambridge.summary.hero_lead': {
+    en: 'Question 3 is worth 25 marks — the biggest single mark chunk in Paper 1. Fifteen marks are for reading (the points you find) and ten are for writing (how concisely and clearly you express them).',
+    ar: 'السؤال الثالث يساوي 25 درجة — أكبر مجموعة درجات في Paper 1. خمستعشر درجة لـ Reading (النقاط اللي تلقاها) وعشر درجات لـ Writing (مدى وضوحها واختصارها لمّا تعبّر عنها).',
+  },
+  'igcse.cambridge.summary.split_h2': {
+    en: 'How the 25 marks split',
+    ar: 'كيف توزّع الـ 25 درجة',
+  },
+  'igcse.cambridge.summary.reading_badge': {
+    en: 'Reading skills — 15 marks',
+    ar: 'مهارات القراءة — 15 درجة',
+  },
+  'igcse.cambridge.summary.reading_h3': { en: 'Content points', ar: 'النقاط المحتوية' },
+  'igcse.cambridge.summary.reading_body': {
+    en: 'One mark per relevant idea identified from Texts A and C. Top candidates identify around 15 distinct points.',
+    ar: 'درجة لكل فكرة ذات صلة تلقاها في Texts A و C. أعلى الطلاب يلقّون حوالي 15 نقطة مختلفة.',
+  },
+  'igcse.cambridge.summary.writing_badge': {
+    en: 'Writing skills — 10 marks',
+    ar: 'مهارات الكتابة — 10 درجات',
+  },
+  'igcse.cambridge.summary.writing_h3': {
+    en: 'Style, structure, own words',
+    ar: 'الأسلوب، البناء، وكلامك الخاص',
+  },
+  'igcse.cambridge.summary.writing_body': {
+    en: 'Level 5 (9–10 marks): concise, fluent, cohesive, consistently in your own words. No lifting.',
+    ar: 'Level 5 (9–10 درجات): مختصر، سلس، مترابط، وبكلامك أنت طول الوقت. بدون نسخ من النص.',
+  },
+  'igcse.cambridge.summary.method_h2': {
+    en: 'Five-step method',
+    ar: 'طريقة من خمس خطوات',
+  },
+  'igcse.cambridge.summary.dos_h2': { en: "Do and don't", ar: 'سوّ وما تسوّي' },
+  'igcse.cambridge.summary.dos_h3': { en: 'Do', ar: 'سوّ' },
+  'igcse.cambridge.summary.dos_desc': {
+    en: 'These habits push you to Level 5.',
+    ar: 'هالعادات تطلّعك Level 5.',
+  },
+  'igcse.cambridge.summary.donts_h3': { en: "Don't", ar: 'لا تسوّي' },
+  'igcse.cambridge.summary.donts_desc': {
+    en: 'These habits cap you in Level 2–3.',
+    ar: 'هالعادات تحبسك في Level 2–3.',
+  },
+  'igcse.cambridge.summary.worked_h2': {
+    en: 'Worked opening — dangers of urban cycling',
+    ar: 'مقدمة مشروحة — أخطار ركوب الدراجة في المدينة',
+  },
+  'igcse.cambridge.summary.worked_intro': {
+    en: 'Imagine the question asks for the dangers faced by city cyclists. Here is an opening that covers six points in about 70 words:',
+    ar: 'تخيّل إن السؤال يطلب أخطار راكبي الدراجة في المدينة. هذي مقدمة تغطّي ست نقاط في حوالي 70 كلمة:',
+  },
+  'igcse.cambridge.summary.worked_note': {
+    en: "Notice: no quotation, no opinion, every sentence a new point, and the phrasing is the student's own.",
+    ar: 'لاحظ: بدون اقتباس، بدون رأي شخصي، كل جملة فيها نقطة جديدة، والصياغة من الطالب نفسه.',
+  },
+
+  // ─── Paper 1 / Q2 — Language analysis ─────────────────────────────────
+  'igcse.cambridge.lang.hero_title': {
+    en: 'Language analysis (Q2)',
+    ar: 'تحليل اللغة (Q2)',
+  },
+  'igcse.cambridge.lang.hero_lead': {
+    en: 'Question 2 asks how the writer uses language to convey meaning and create effect. Fifteen marks. Around 25 minutes. Choose eight powerful words or phrases and analyse them in layered detail.',
+    ar: 'السؤال الثاني يسأل عن كيف يستخدم الكاتب اللغة لإيصال المعنى وخلق التأثير. خمستعشر درجة. حوالي 25 دقيقة. اختر ثمان كلمات أو عبارات قوية وحللهن بطبقات.',
+  },
+  'igcse.cambridge.lang.examiners_h2': {
+    en: 'What the examiners want',
+    ar: 'شنو يبغى المصحّحون',
+  },
+  'igcse.cambridge.lang.l5_badge': {
+    en: 'Level 5 (13–15)',
+    ar: 'Level 5 (13–15)',
+  },
+  'igcse.cambridge.lang.l5_body': {
+    en: 'Judicious and wide-ranging choices; precise explanation of connotations and effects across the whole response.',
+    ar: 'اختيارات مدروسة وواسعة المدى؛ شرح دقيق للدلالات والتأثيرات في كل أجزاء الإجابة.',
+  },
+  'igcse.cambridge.lang.l2_badge': { en: 'Level 2 (4–6)', ar: 'Level 2 (4–6)' },
+  'igcse.cambridge.lang.l2_body': {
+    en: 'Limited range of choices; mostly paraphrase of meaning with little or no explanation of effect.',
+    ar: 'اختيارات محدودة المدى؛ غالباً إعادة صياغة للمعنى مع شرح بسيط أو معدوم للتأثير.',
+  },
+  'igcse.cambridge.lang.framework_h2': {
+    en: 'A five-step framework for every paragraph',
+    ar: 'إطار من خمس خطوات لكل فقرة',
+  },
+  'igcse.cambridge.lang.vocab_h2': {
+    en: 'Useful analytical vocabulary',
+    ar: 'مفردات تحليلية مفيدة',
+  },
+  'igcse.cambridge.lang.worked_h2': { en: 'Worked paragraph', ar: 'فقرة مشروحة' },
+  'igcse.cambridge.lang.worked_intro': {
+    en: 'Writer describes a cityscape at dusk: "Skyscrapers loomed like sleeping giants, their mirrored faces bleeding orange fire."',
+    ar: 'الكاتب يصف المدينة عند المغيب: "Skyscrapers loomed like sleeping giants, their mirrored faces bleeding orange fire."',
+  },
+  'igcse.cambridge.lang.mistakes_h2': { en: 'Common mistakes', ar: 'أخطاء شائعة' },
+
+  // ─── Paper 1 — Reading techniques ─────────────────────────────────────
+  'igcse.cambridge.reading_tech.hero_title': {
+    en: 'Reading techniques',
+    ar: 'تقنيات القراءة',
+  },
+  'igcse.cambridge.reading_tech.hero_lead': {
+    en: 'You have 2 hours and around 2,000 words of unseen text to read. Use the right technique for the right job — never read every passage at the same speed.',
+    ar: 'عندك ساعتين وحوالي 2000 كلمة من نصوص ما شفتها قبل. استخدم التقنية الصح للمهمة الصح — لا تقرأ كل النصوص بنفس السرعة.',
+  },
+  'igcse.cambridge.reading_tech.purpose_label': { en: 'Purpose:', ar: 'الهدف:' },
+  'igcse.cambridge.reading_tech.how_label': { en: 'How to do it', ar: 'كيف تسوّيها' },
+  'igcse.cambridge.reading_tech.pitfall_label': {
+    en: 'Common pitfall:',
+    ar: 'فخّ شائع:',
+  },
+  'igcse.cambridge.reading_tech.workflow_h2': {
+    en: 'Putting it all together in the exam',
+    ar: 'كيف تجمعها كلها في الامتحان',
+  },
+  'igcse.cambridge.reading_tech.step1_bold': {
+    en: 'Skim all three passages',
+    ar: 'اقرأ النصوص الثلاثة قراءة سريعة (Skim)',
+  },
+  'igcse.cambridge.reading_tech.step1_rest': {
+    en: ' quickly at the start. Do not try to remember details — just get the tone and topic.',
+    ar: ' بسرعة في البداية. لا تحاول تتذكّر التفاصيل — بس امسك النبرة والموضوع.',
+  },
+  'igcse.cambridge.reading_tech.step2_bold': {
+    en: 'Read Q1 questions first',
+    ar: 'اقرأ أسئلة Q1 الأول',
+  },
+  'igcse.cambridge.reading_tech.step2_rest': {
+    en: ', then scan Text A for each answer in order.',
+    ar: '، بعدها سوّ Scan لـ Text A عشان كل إجابة بالترتيب.',
+  },
+  'igcse.cambridge.reading_tech.step3_bold': {
+    en: 'Close read Text B',
+    ar: 'اقرأ Text B قراءة دقيقة',
+  },
+  'igcse.cambridge.reading_tech.step3_rest': {
+    en: ' for Q2. Annotate powerful words and link each to an effect.',
+    ar: ' عشان Q2. علّم على الكلمات القوية واربط كل وحدة بالتأثير.',
+  },
+  'igcse.cambridge.reading_tech.step4_bold': {
+    en: 'Point-spot Texts A and C',
+    ar: 'دوّر النقاط في Texts A و C',
+  },
+  'igcse.cambridge.reading_tech.step4_rest': {
+    en: ' for Q3 summary. Underline every discrete piece of information.',
+    ar: ' عشان ملخّص Q3. سطّر تحت كل معلومة منفصلة.',
+  },
+
+  // ─── Paper 1 — Model answers ──────────────────────────────────────────
+  'igcse.cambridge.p1_models.hero_title': {
+    en: 'Paper 1 model answers',
+    ar: 'نماذج إجابات Paper 1',
+  },
+  'igcse.cambridge.p1_models.hero_lead': {
+    en: 'Five model answers across all three Paper 1 question types: retrieval (Q1), language analysis (Q2 at Grade C and A* compared side by side), and summary writing (Q3). Every answer includes examiner-style annotations explaining exactly what earns marks.',
+    ar: 'خمسة نماذج إجابات تغطّي أنواع أسئلة Paper 1 الثلاثة: الاستخراج (Q1)، تحليل اللغة (Q2 بمقارنة Grade C مع A* جنب بعض)، وكتابة الملخّص (Q3). كل إجابة فيها ملاحظات على طريقة المصحّح تشرح بالضبط شنو يجيب الدرجات.',
+  },
+  'igcse.cambridge.p1_models.q1_h2': {
+    en: 'Question 1 — Retrieval',
+    ar: 'السؤال الأول — الاستخراج',
+  },
+  'igcse.cambridge.p1_models.q1_intro': {
+    en: 'Question 1 tests your ability to locate and rephrase information from the passage. You are given a specific focus (e.g. "dangers" or "benefits") and must list relevant points in your own words. Short notes are acceptable. Aim for 12–15 points to be safe — the mark scheme rewards breadth of reading.',
+    ar: 'السؤال الأول يختبر قدرتك على إيجاد المعلومات في النص وإعادة صياغتها. يعطونك تركيز محدد (مثلاً "dangers" أو "benefits") ولازم تسرد النقاط ذات الصلة بكلامك. النقاط القصيرة مقبولة. صوّب على 12–15 نقطة عشان تأمّن نفسك — الـ Mark Scheme يكافئ سعة القراءة.',
+  },
+  'igcse.cambridge.p1_models.q2_h2': {
+    en: 'Question 2 — Language analysis: Grade C vs A*',
+    ar: 'السؤال الثاني — تحليل اللغة: Grade C مقابل A*',
+  },
+  'igcse.cambridge.p1_models.q2_intro': {
+    en: 'Question 2 asks how the writer uses language to create meaning and effect. Below is the same passage analysed at Grade C and then at Grade A*, so you can see precisely what separates an average response from a top-band one.',
+    ar: 'السؤال الثاني يسأل عن كيف يستخدم الكاتب اللغة لخلق المعنى والتأثير. تحت تلقى نفس النص محلَّل على Grade C وبعدها على Grade A*، عشان تشوف بالضبط شنو يفرق إجابة عادية عن إجابة من أعلى Band.',
+  },
+  'igcse.cambridge.p1_models.q2_response_label': {
+    en: 'response',
+    ar: 'إجابة',
+  },
+  'igcse.cambridge.p1_models.q2_diff_title': {
+    en: 'What separates Grade C from A*?',
+    ar: 'شنو يفرق Grade C عن A*؟',
+  },
+  'igcse.cambridge.p1_models.q2_c_label': {
+    en: 'Grade C tends to...',
+    ar: 'Grade C يميل لـ...',
+  },
+  'igcse.cambridge.p1_models.q2_a_label': {
+    en: 'Grade A* tends to...',
+    ar: 'Grade A* يميل لـ...',
+  },
+  'igcse.cambridge.p1_models.q3_h2': {
+    en: 'Question 3 — Summary',
+    ar: 'السؤال الثالث — الملخّص',
+  },
+  'igcse.cambridge.p1_models.q3_intro': {
+    en: 'Question 3 asks you to summarise information from two passages into a single continuous paragraph of about 250 words. You are marked on content (how many relevant points you include) and language (how effectively you use your own words). No quotation, no opinion, no bullet points.',
+    ar: 'السؤال الثالث يطلب منك تلخّص معلومات من نصّين في فقرة وحدة متّصلة حوالي 250 كلمة. تتقيّم على المحتوى (كم نقطة ذات صلة تذكر) واللغة (مدى فعالية استخدام كلامك). بدون اقتباس، بدون رأي، بدون نقاط منفصلة.',
+  },
+
+  // ─── Paper 2 — Directed writing ───────────────────────────────────────
+  'igcse.cambridge.dw.hero_title': { en: 'Directed writing', ar: 'الكتابة الموجَّهة' },
+  'igcse.cambridge.dw.hero_lead': {
+    en: 'Section A is worth 40 marks. Fifteen for how well you read the stimulus, twenty-five for how well you adapt tone and style to the required form. Getting the form wrong costs you half your writing marks, so the first thing to get right is the shape.',
+    ar: 'Section A يساوي 40 درجة. خمستعشر على مدى فهمك للنص المحفّز، وخمس وعشرين على مدى تكييفك للنبرة والأسلوب حسب الـ Form المطلوب. لو غلطت في الـ Form تخسر نص درجات الكتابة، فأهم شي تضبط الشكل من البداية.',
+  },
+  'igcse.cambridge.dw.split_h2': {
+    en: 'How the 40 marks split',
+    ar: 'كيف توزّع الـ 40 درجة',
+  },
+  'igcse.cambridge.dw.reading_badge': {
+    en: 'Reading — 15 marks',
+    ar: 'Reading — 15 درجة',
+  },
+  'igcse.cambridge.dw.reading_body': {
+    en: 'Select and develop relevant ideas from the stimulus text. Show that you understand implicit as well as explicit meanings.',
+    ar: 'اختار وطوّر الأفكار ذات الصلة من النص المحفّز. بيّن إنك فاهم المعاني الصريحة والضمنية.',
+  },
+  'igcse.cambridge.dw.writing_badge': {
+    en: 'Writing — 25 marks',
+    ar: 'Writing — 25 درجة',
+  },
+  'igcse.cambridge.dw.writing_body': {
+    en: 'Content and structure, style and accuracy. Register, form, tone, organisation, vocabulary, grammar, spelling and punctuation all count.',
+    ar: 'المحتوى والبناء، الأسلوب والدقة. الـ Register والـ Form والنبرة والتنظيم والمفردات والقواعد والإملاء والترقيم كلها تنحسب.',
+  },
+  'igcse.cambridge.dw.forms_h2': {
+    en: 'The four main forms',
+    ar: 'الـ Forms الأربعة الرئيسية',
+  },
+  'igcse.cambridge.dw.opening_closing_label': {
+    en: 'Opening and closing',
+    ar: 'المقدمة والخاتمة',
+  },
+  'igcse.cambridge.dw.register_label': { en: 'Register', ar: 'الـ Register' },
+  'igcse.cambridge.dw.features_label': { en: 'Key features', ar: 'السمات الرئيسية' },
+  'igcse.cambridge.dw.process_h2': {
+    en: 'Seven-step process in the exam',
+    ar: 'سبع خطوات في الامتحان',
+  },
+
+  // ─── Paper 2 — Descriptive writing ────────────────────────────────────
+  'igcse.cambridge.desc.hero_title': {
+    en: 'Descriptive writing',
+    ar: 'الكتابة الوصفية',
+  },
+  'igcse.cambridge.desc.hero_lead': {
+    en: 'Descriptive writing is not about lots of adjectives — it is about selecting the right details and layering them so the reader can step into the scene. Worth 40 marks in Section B.',
+    ar: 'الكتابة الوصفية مو عن كثرة الصفات — هي عن اختيار التفاصيل الصح وترتيبها بطبقات عشان القارئ يقدر يدخل المشهد. تساوي 40 درجة في Section B.',
+  },
+  'igcse.cambridge.desc.split_h2': {
+    en: 'How the 40 marks split',
+    ar: 'كيف توزّع الـ 40 درجة',
+  },
+  'igcse.cambridge.desc.cs_badge': {
+    en: 'Content & structure — 16',
+    ar: 'المحتوى والبناء — 16',
+  },
+  'igcse.cambridge.desc.cs_body': {
+    en: 'Originality of content, progression of ideas, sense of atmosphere and shape of the composition as a whole.',
+    ar: 'أصالة المحتوى، تقدّم الأفكار، الإحساس بالأجواء، وشكل الإنشاء ككل.',
+  },
+  'igcse.cambridge.desc.sa_badge': {
+    en: 'Style & accuracy — 24',
+    ar: 'الأسلوب والدقة — 24',
+  },
+  'igcse.cambridge.desc.sa_body': {
+    en: 'Range of vocabulary, precision of word choice, varied sentence structure, grammar, spelling and punctuation.',
+    ar: 'مدى المفردات، دقة اختيار الكلمات، تنوّع تركيب الجمل، القواعد، الإملاء، والترقيم.',
+  },
+  'igcse.cambridge.desc.senses_h2': {
+    en: 'Using sensory detail',
+    ar: 'استخدام التفاصيل الحسية',
+  },
+  'igcse.cambridge.desc.structure_h2': {
+    en: 'Five-stage structure',
+    ar: 'بناء من خمس مراحل',
+  },
+  'igcse.cambridge.desc.worked_h2': {
+    en: 'Worked opening — "Describe a busy marketplace"',
+    ar: 'مقدمة مشروحة — "Describe a busy marketplace"',
+  },
+  'igcse.cambridge.desc.worked_note': {
+    en: 'Notice: wide opening, then zoom to the woman, then shift to sound, then another sense. Five lines, five moves.',
+    ar: 'لاحظ: مقدمة واسعة، بعدها زووم على المرأة، بعدها انتقال للصوت، بعدها حاسّة ثانية. خمس سطور، خمس حركات.',
+  },
+  'igcse.cambridge.desc.mistakes_h2': { en: 'Common mistakes', ar: 'أخطاء شائعة' },
+
+  // ─── Paper 2 — Narrative writing ──────────────────────────────────────
+  'igcse.cambridge.narr.hero_title': {
+    en: 'Narrative writing',
+    ar: 'الكتابة السردية',
+  },
+  'igcse.cambridge.narr.hero_lead': {
+    en: 'A narrative composition is a short story — not a summary of a life. In 450 words you need one clear event, one developed character and one controlled shift in mood. Restraint is worth more than spectacle.',
+    ar: 'الإنشاء السردي قصة قصيرة — مو ملخّص حياة كاملة. في 450 كلمة تحتاج حدث وحد واضح، شخصية وحدة مطوَّرة، وتحوّل وحد منضبط في المزاج. الانضباط أفضل من الاستعراض.',
+  },
+  'igcse.cambridge.narr.split_h2': {
+    en: 'How the 40 marks split',
+    ar: 'كيف توزّع الـ 40 درجة',
+  },
+  'igcse.cambridge.narr.cs_badge': {
+    en: 'Content & structure — 16',
+    ar: 'المحتوى والبناء — 16',
+  },
+  'igcse.cambridge.narr.cs_body': {
+    en: 'Originality, pacing, character development, sense of direction, satisfying shape.',
+    ar: 'الأصالة، الإيقاع، تطوير الشخصية، الإحساس بالاتجاه، والشكل المُرضي.',
+  },
+  'igcse.cambridge.narr.sa_badge': {
+    en: 'Style & accuracy — 24',
+    ar: 'الأسلوب والدقة — 24',
+  },
+  'igcse.cambridge.narr.sa_body': {
+    en: 'Precise vocabulary, varied sentence structure, tense consistency, dialogue punctuation, spelling, grammar.',
+    ar: 'مفردات دقيقة، تنوّع في تركيب الجمل، انسجام الأزمنة، علامات ترقيم الحوار، الإملاء، والقواعد.',
+  },
+  'igcse.cambridge.narr.structure_h2': {
+    en: 'Five-stage story structure',
+    ar: 'بناء القصة من خمس مراحل',
+  },
+  'igcse.cambridge.narr.tip_label': { en: 'Tip:', ar: 'نصيحة:' },
+  'igcse.cambridge.narr.char_h2': {
+    en: 'Building a believable character',
+    ar: 'بناء شخصية مقنعة',
+  },
+  'igcse.cambridge.narr.dialogue_h2': {
+    en: 'Writing dialogue cleanly',
+    ar: 'كتابة الحوار بنظافة',
+  },
+  'igcse.cambridge.narr.rules_label': { en: 'Rules', ar: 'القواعد' },
+  'igcse.cambridge.narr.rules_desc': {
+    en: 'Dialogue is where candidates most often lose accuracy marks.',
+    ar: 'الحوار أكثر مكان يخسر فيه الطلاب درجات الدقة.',
+  },
+  'igcse.cambridge.narr.worked_h2': {
+    en: 'Worked opening — "Write a story that begins with a phone call."',
+    ar: 'مقدمة مشروحة — "Write a story that begins with a phone call."',
+  },
+  'igcse.cambridge.narr.worked_note': {
+    en: 'Notice: opens mid-action, one distinguishing habit (waiting), small specific detail (mattress, rain), dialogue doing double duty (revealing past and present).',
+    ar: 'لاحظ: تبدأ في وسط الحركة، عادة مميزة وحدة (الانتظار)، تفصيل صغير محدد (المرتبة، المطر)، والحوار يسوّي شغلين (يكشف الماضي والحاضر).',
+  },
+
+  // ─── Paper 2 — Model answers ──────────────────────────────────────────
+  'igcse.cambridge.p2_models.hero_title': {
+    en: 'Paper 2 model answers',
+    ar: 'نماذج إجابات Paper 2',
+  },
+  'igcse.cambridge.p2_models.hero_lead': {
+    en: 'Five model compositions for Paper 2: three directed writing responses (letter, article, speech) and two Section B compositions (descriptive and narrative). Every paragraph includes examiner annotations explaining what earns top marks.',
+    ar: 'خمسة نماذج إنشاء لـ Paper 2: ثلاث إجابات Directed Writing (رسالة، مقال، خطاب) واثنين إنشاء Section B (وصفي وسردي). كل فقرة فيها ملاحظات المصحّح تشرح شنو يجيب الدرجات العليا.',
+  },
+  'igcse.cambridge.p2_models.dw_h2': {
+    en: 'Section A — Directed writing',
+    ar: 'Section A — الكتابة الموجَّهة',
+  },
+  'igcse.cambridge.p2_models.dw_intro': {
+    en: 'Directed writing asks you to respond to a reading passage in a specific form (letter, article, speech, report). You are marked on how well you use ideas from the passage, how effectively you write in the required form, and the quality of your language. The best answers adapt and extend the source material rather than simply copying it.',
+    ar: 'الـ Directed Writing يطلب منك ترد على نص قراءة بشكل محدد (رسالة، مقال، خطاب، تقرير). تتقيّم على مدى استخدامك للأفكار من النص، ومدى فعاليّة كتابتك بالشكل المطلوب، وجودة لغتك. أفضل الإجابات تكيّف المادة الأصلية وتطوّرها بدل ما تنسخها.',
+  },
+  'igcse.cambridge.p2_models.desc_h2': {
+    en: 'Section B — Descriptive writing',
+    ar: 'Section B — الكتابة الوصفية',
+  },
+  'igcse.cambridge.p2_models.desc_intro': {
+    en: 'Section B offers a choice between descriptive and narrative writing. Descriptive compositions are marked on the quality of your imagery, vocabulary, sentence variety, and structural control. The best descriptive writing creates atmosphere through precise, original sensory detail -- not through plot.',
+    ar: 'Section B يعطيك خيار بين الكتابة الوصفية والسردية. الإنشاء الوصفي يتقيّم على جودة الصور، المفردات، تنوّع الجمل، والسيطرة على البناء. أفضل كتابة وصفية تخلق الأجواء عن طريق تفاصيل حسية دقيقة وأصيلة — مو عن طريق الحبكة.',
+  },
+  'igcse.cambridge.p2_models.narr_h2': {
+    en: 'Section B — Narrative writing',
+    ar: 'Section B — الكتابة السردية',
+  },
+  'igcse.cambridge.p2_models.narr_intro': {
+    en: 'Narrative compositions are marked on plot structure, characterisation, dialogue, tension, and language quality. The best narratives are small in scale (one scene, one turning point) with precise physical detail and restrained emotion. Avoid car chases, dream endings, and plots that try to cover years in 500 words.',
+    ar: 'الإنشاء السردي يتقيّم على بنية الحبكة، رسم الشخصيات، الحوار، التوتر، وجودة اللغة. أفضل القصص صغيرة في حجمها (مشهد وحد، نقطة تحوّل وحدة) مع تفاصيل جسدية دقيقة وانفعال منضبط. تجنّب مطاردات السيارات، نهايات الحلم، والحبكات اللي تحاول تغطي سنين في 500 كلمة.',
+  },
+
+  // ─── Composition — Mark scheme ────────────────────────────────────────
+  'igcse.cambridge.ms.hero_title': {
+    en: 'Composition mark scheme',
+    ar: 'نظام تصحيح الإنشاء',
+  },
+  'igcse.cambridge.ms.hero_lead_pre': {
+    en: 'Cambridge IGCSE Language Paper 2 Section B is marked out of 40, in two parts: ',
+    ar: 'Cambridge IGCSE Language Paper 2 Section B يتقيّم من 40، وينقسم لقسمين: ',
+  },
+  'igcse.cambridge.ms.hero_lead_cs': {
+    en: '16 for content and structure',
+    ar: '16 درجة للمحتوى والبناء',
+  },
+  'igcse.cambridge.ms.hero_lead_and': { en: ' and ', ar: ' و' },
+  'igcse.cambridge.ms.hero_lead_sa': {
+    en: '24 for style and accuracy',
+    ar: '24 درجة للأسلوب والدقة',
+  },
+  'igcse.cambridge.ms.hero_lead_post': {
+    en: '. Understanding the split is the fastest way to stop losing marks on the wrong things.',
+    ar: '. فهم هالتقسيم أسرع طريقة عشان توقف تخسر درجات على أشياء ما تستاهل.',
+  },
+  'igcse.cambridge.ms.cs_title': {
+    en: 'Content and structure',
+    ar: 'المحتوى والبناء',
+  },
+  'igcse.cambridge.ms.cs_share': {
+    en: '40% of the composition mark',
+    ar: '40٪ من درجة الإنشاء',
+  },
+  'igcse.cambridge.ms.cs_marks_strong': { en: '16 marks.', ar: '16 درجة.' },
+  'igcse.cambridge.ms.cs_marks_body': {
+    en: ' Is your composition well-shaped? Does it develop an idea? Does it engage the reader from opening to closing?',
+    ar: ' هل إنشاؤك مبنيّ زين؟ هل يطوّر فكرة؟ هل يشدّ القارئ من المقدمة للخاتمة؟',
+  },
+  'igcse.cambridge.ms.cs_questions_intro': {
+    en: 'Key questions examiners ask:',
+    ar: 'الأسئلة الرئيسية اللي يسألها المصحّحون:',
+  },
+  'igcse.cambridge.ms.cs_q1': {
+    en: 'Does the piece have a clear shape — beginning, middle, end?',
+    ar: 'هل القطعة لها شكل واضح — بداية، وسط، نهاية؟',
+  },
+  'igcse.cambridge.ms.cs_q2': {
+    en: 'Are paragraphs sequenced with purpose?',
+    ar: 'هل الفقرات مرتّبة بهدف؟',
+  },
+  'igcse.cambridge.ms.cs_q3': {
+    en: 'Is there originality in the ideas or the angle?',
+    ar: 'هل في أصالة في الأفكار أو الزاوية؟',
+  },
+  'igcse.cambridge.ms.cs_q4': {
+    en: 'Does the ending feel earned, not tacked on?',
+    ar: 'هل النهاية تحسّ إنها مستحقة، مو ملصوقة في الآخر؟',
+  },
+  'igcse.cambridge.ms.sa_title': {
+    en: 'Style and accuracy',
+    ar: 'الأسلوب والدقة',
+  },
+  'igcse.cambridge.ms.sa_share': {
+    en: '60% of the composition mark',
+    ar: '60٪ من درجة الإنشاء',
+  },
+  'igcse.cambridge.ms.sa_marks_strong': { en: '24 marks.', ar: '24 درجة.' },
+  'igcse.cambridge.ms.sa_marks_body': {
+    en: ' This is the bigger pillar. It rewards vocabulary range, sentence variety, technical accuracy, and a confident register.',
+    ar: ' هذا الركن الأكبر. يكافئ سعة المفردات، تنوّع الجمل، الدقة الفنية، والـ Register الواثق.',
+  },
+  'igcse.cambridge.ms.sa_questions_intro': {
+    en: 'Key questions examiners ask:',
+    ar: 'الأسئلة الرئيسية اللي يسألها المصحّحون:',
+  },
+  'igcse.cambridge.ms.sa_q1': {
+    en: 'Is the vocabulary precise and sometimes ambitious?',
+    ar: 'هل المفردات دقيقة وأحياناً طموحة؟',
+  },
+  'igcse.cambridge.ms.sa_q2': {
+    en: 'Are sentence structures varied and controlled?',
+    ar: 'هل تراكيب الجمل متنوّعة ومنضبطة؟',
+  },
+  'igcse.cambridge.ms.sa_q3': {
+    en: 'Are spelling, punctuation and grammar secure?',
+    ar: 'هل الإملاء والترقيم والقواعد مضبوطة؟',
+  },
+  'igcse.cambridge.ms.sa_q4': {
+    en: 'Is the register (formal, informal, narrative) consistent?',
+    ar: 'هل الـ Register (رسمي، غير رسمي، سردي) متّسق؟',
+  },
+  'igcse.cambridge.ms.cs_bands_h2': {
+    en: 'Content and structure — band descriptors',
+    ar: 'المحتوى والبناء — وصف الـ Bands',
+  },
+  'igcse.cambridge.ms.sa_bands_h2': {
+    en: 'Style and accuracy — band descriptors',
+    ar: 'الأسلوب والدقة — وصف الـ Bands',
+  },
+  'igcse.cambridge.ms.marks_label': { en: 'marks', ar: 'درجة' },
+  'igcse.cambridge.ms.push_h2': {
+    en: 'How to push up a band',
+    ar: 'كيف تطلع Band فوق',
+  },
+  'igcse.cambridge.ms.push_4to5_c_title': {
+    en: 'From Band 4 to Band 5 (content)',
+    ar: 'من Band 4 لـ Band 5 (المحتوى)',
+  },
+  'igcse.cambridge.ms.push_4to5_c_body': {
+    en: 'Make the opening and closing echo. Cut any paragraph that does not move the shape forward. Add one unexpected detail per paragraph.',
+    ar: 'خلّ المقدمة والخاتمة يتجاوبون. اقطع أي فقرة ما تخدم الشكل. ضيف تفصيل غير متوقّع في كل فقرة.',
+  },
+  'igcse.cambridge.ms.push_4to5_s_title': {
+    en: 'From Band 4 to Band 5 (style)',
+    ar: 'من Band 4 لـ Band 5 (الأسلوب)',
+  },
+  'igcse.cambridge.ms.push_4to5_s_body': {
+    en: 'Replace five vague words with precise ones. Break one long sentence into two or three. Add one short sentence per paragraph.',
+    ar: 'بدّل خمس كلمات مبهمة بكلمات دقيقة. قسّم جملة طويلة لاثنتين أو ثلاث. ضيف جملة قصيرة في كل فقرة.',
+  },
+  'igcse.cambridge.ms.push_5to6_c_title': {
+    en: 'From Band 5 to Band 6 (content)',
+    ar: 'من Band 5 لـ Band 6 (المحتوى)',
+  },
+  'igcse.cambridge.ms.push_5to6_c_body': {
+    en: 'Build and sustain an extended metaphor across the whole piece. Invert the opening image in the closing line.',
+    ar: 'ابنِ Extended Metaphor واحدة وحافظ عليها على طول القطعة. اقلب صورة المقدمة في السطر الأخير.',
+  },
+  'igcse.cambridge.ms.push_5to6_s_title': {
+    en: 'From Band 5 to Band 6 (style)',
+    ar: 'من Band 5 لـ Band 6 (الأسلوب)',
+  },
+  'igcse.cambridge.ms.push_5to6_s_body': {
+    en: 'Use one rhetorical device per piece — tricolon, anaphora or asyndeton — and hold register steady from first line to last.',
+    ar: 'استخدم Rhetorical Device وحدة بالقطعة — Tricolon أو Anaphora أو Asyndeton — وثبّت الـ Register من أول سطر لآخر سطر.',
+  },
+  'igcse.cambridge.ms.disclaimer': {
+    en: 'Band descriptors are paraphrased for clarity and are not the official Cambridge mark scheme wording. Always refer to the current Cambridge IGCSE Language specification and published mark schemes for authoritative criteria.',
+    ar: 'وصف الـ Bands معاد صياغته للتوضيح، وما هو الصياغة الرسمية لـ Cambridge Mark Scheme. ارجع دائماً للمواصفات الحالية لـ Cambridge IGCSE Language ولجداول التصحيح المنشورة لأخذ المعايير المعتمدة.',
+  },
+
+  // ─── Narrative structure (composition) ────────────────────────────────
+  'igcse.cambridge.narr_struct.tech_badge': {
+    en: 'Technique 1 of 4',
+    ar: 'تقنية 1 من 4',
+  },
+  'igcse.cambridge.narr_struct.hero_title': {
+    en: 'Story structure',
+    ar: 'بناء القصة',
+  },
+  'igcse.cambridge.narr_struct.hero_lead_pre': {
+    en: 'A 450-word short story has no time for a full novel arc. Use a compressed five-part structure, drop in using ',
+    ar: 'قصة قصيرة من 450 كلمة ما عندها وقت لقوس رواية كامل. استخدم بناء مضغوط من خمس أجزاء، وادخل عن طريق ',
+  },
+  'igcse.cambridge.narr_struct.hero_lead_em': {
+    en: 'in medias res',
+    ar: 'in medias res',
+  },
+  'igcse.cambridge.narr_struct.hero_lead_post': {
+    en: ', and make every paragraph earn its place.',
+    ar: '، وخلّ كل فقرة تستحق مكانها.',
+  },
+  'igcse.cambridge.narr_struct.freytag_title': {
+    en: "Freytag's triangle, simplified",
+    ar: 'مثلث Freytag، مبسَّط',
+  },
+  'igcse.cambridge.narr_struct.freytag_body_pre': {
+    en: "Gustav Freytag's triangle was designed for five-act plays but it adapts perfectly to short stories if you compress it. Exposition becomes ",
+    ar: 'مثلث Gustav Freytag صُمِّم لمسرحيات الخمس فصول، بس يتكيّف بشكل ممتاز للقصص القصيرة إذا ضغطته. الـ Exposition تصير ',
+  },
+  'igcse.cambridge.narr_struct.freytag_one_setting': {
+    en: 'one line of setting',
+    ar: 'سطر وحد لتحديد المكان',
+  },
+  'igcse.cambridge.narr_struct.freytag_rising_becomes': {
+    en: '. Rising action becomes ',
+    ar: '. الـ Rising Action تصير ',
+  },
+  'igcse.cambridge.narr_struct.freytag_one_obstacle': {
+    en: 'one obstacle',
+    ar: 'عقبة وحدة',
+  },
+  'igcse.cambridge.narr_struct.freytag_climax_is': {
+    en: '. Climax is ',
+    ar: '. الـ Climax هو ',
+  },
+  'igcse.cambridge.narr_struct.freytag_one_moment': {
+    en: 'one moment',
+    ar: 'لحظة وحدة',
+  },
+  'igcse.cambridge.narr_struct.freytag_falling_is': {
+    en: '. Falling action is ',
+    ar: '. الـ Falling Action هي ',
+  },
+  'igcse.cambridge.narr_struct.freytag_one_consequence': {
+    en: 'one consequence',
+    ar: 'نتيجة وحدة',
+  },
+  'igcse.cambridge.narr_struct.freytag_resolution_is': {
+    en: '. Resolution is ',
+    ar: '. الـ Resolution هي ',
+  },
+  'igcse.cambridge.narr_struct.freytag_one_image': {
+    en: 'one quiet closing image',
+    ar: 'صورة ختامية هادية',
+  },
+  'igcse.cambridge.narr_struct.freytag_body_post': {
+    en: '. Five beats, each tiny, each essential.',
+    ar: '. خمس نبضات، كل وحدة صغيرة، كل وحدة أساسية.',
+  },
+  'igcse.cambridge.narr_struct.arc_h2': {
+    en: 'The five-part arc (450 words)',
+    ar: 'القوس الخماسي (450 كلمة)',
+  },
+  'igcse.cambridge.narr_struct.openings_h2': {
+    en: 'Four opening techniques',
+    ar: 'أربع تقنيات للمقدمة',
+  },
+  'igcse.cambridge.narr_struct.end_h2': { en: 'How to end', ar: 'كيف تختم' },
+  'igcse.cambridge.narr_struct.end1_bold': {
+    en: 'Echo the opening image.',
+    ar: 'كرّر صورة المقدمة.',
+  },
+  'igcse.cambridge.narr_struct.end1_body': {
+    en: ' Not the same sentence. The same object or place, now different.',
+    ar: ' مو نفس الجملة. نفس الشي أو المكان، بس متغيّر.',
+  },
+  'igcse.cambridge.narr_struct.end2_bold': {
+    en: 'End on an action, not a reflection.',
+    ar: 'اختم بحركة، مو بتأمل.',
+  },
+  'igcse.cambridge.narr_struct.end2_body': {
+    en: ' Let the reader feel the meaning instead of being told it.',
+    ar: ' خلّ القارئ يحسّ بالمعنى بدل ما تخبره فيه.',
+  },
+  'igcse.cambridge.narr_struct.end3_bold': {
+    en: 'Avoid "and then I woke up".',
+    ar: 'تجنّب "and then I woke up".',
+  },
+  'igcse.cambridge.narr_struct.end3_body': {
+    en: ' Examiners have read ten thousand of them. Same for "it was all a dream" and "then the teacher walked in".',
+    ar: ' المصحّحون قرأوا عشرة آلاف منها. نفس الشي لـ "it was all a dream" و "then the teacher walked in".',
+  },
+  'igcse.cambridge.narr_struct.end4_bold': {
+    en: 'Cut the last sentence.',
+    ar: 'احذف الجملة الأخيرة.',
+  },
+  'igcse.cambridge.narr_struct.end4_body': {
+    en: ' Write your ending, then delete the final sentence. Nine times out of ten, the story is stronger without it.',
+    ar: ' اكتب نهايتك، بعدها احذف الجملة الأخيرة. تسع مرات من عشر، القصة تكون أقوى بدونها.',
+  },
+
   // ─── Pearson Edexcel IGCSE Literature hub (edexcel.lit.*) ────────────
   'edexcel.lit.hero_badge': {
     en: 'International GCSE English Literature',
@@ -10845,6 +11654,96 @@ export const DICTIONARY: Dictionary = {
   'analysis.deep.model_essay.fallback_title': {
     en: 'Model essay — The English Hub',
     ar: 'مقال نموذجي — The English Hub',
+  },
+
+  // ── Model-essays index page (revision/model-essays) ──
+  // Chrome only — exam-text labels (Macbeth, Jekyll, etc.) stay literary
+  // content. Author/work descriptions stay literary so students see the
+  // canonical phrasing examiners use. EVERYTHING else routes through t().
+  'revision.model_essays.index.meta_title': {
+    en: 'Grade-9 Model Essays — Annotated Paragraph-by-Paragraph | The English Hub',
+    ar: 'مقالات نموذجية Grade-9 — شرح فقرة بفقرة | The English Hub',
+  },
+  'revision.model_essays.index.meta_description': {
+    en: 'Annotated Grade-9 model essays for Macbeth, An Inspector Calls, A Christmas Carol, Jekyll and Hyde, and Romeo and Juliet. Paragraph-by-paragraph commentary so you can see exactly how a top-band response is built.',
+    ar: 'مقالات نموذجية مشروحة Grade-9 على Macbeth و An Inspector Calls و A Christmas Carol و Jekyll and Hyde و Romeo and Juliet. شرح فقرة بفقرة عشان تشوف بالضبط شلون تتبني الإجابة من عيار Grade-9.',
+  },
+  'revision.model_essays.index.og_title': {
+    en: 'Grade-9 Model Essays — Annotated Paragraph-by-Paragraph',
+    ar: 'مقالات نموذجية Grade-9 — شرح فقرة بفقرة',
+  },
+  'revision.model_essays.index.og_description': {
+    en: 'Top-band annotated model essays for the most-taught GCSE Literature texts. Each essay is broken down paragraph-by-paragraph with technique commentary.',
+    ar: 'مقالات نموذجية مشروحة من أعلى فئة على أكثر نصوص GCSE Literature تدريساً. كل مقال متفصّل فقرة بفقرة مع تعليق على الأسلوب.',
+  },
+  'revision.model_essays.index.back_to_revision_hub': {
+    en: 'Back to Revision Hub',
+    ar: 'رجوع لمركز المراجعة',
+  },
+  'revision.model_essays.index.badge_model_essays': {
+    en: 'Model essays',
+    ar: 'مقالات نموذجية',
+  },
+  'revision.model_essays.index.annotated_essays_singular': {
+    en: 'annotated essay',
+    ar: 'مقال مشروح',
+  },
+  'revision.model_essays.index.annotated_essays_plural': {
+    en: 'annotated essays',
+    ar: 'مقالات مشروحة',
+  },
+  'revision.model_essays.index.h1': {
+    en: 'Grade-9 model essays — annotated paragraph-by-paragraph',
+    ar: 'مقالات نموذجية Grade-9 — شرح فقرة بفقرة',
+  },
+  'revision.model_essays.index.hero_body': {
+    en: 'Read a top-band response, then read the marker’s thinking next to every paragraph. Each essay is broken into the moves a Grade-9 candidate makes — thesis, embedded quotation, methodical AO2, deft AO3 — so you can copy the structure, not the words.',
+    ar: 'اقرأ إجابة من أعلى فئة، وبعدين شوف تفكير المصحّح جنب كل فقرة. كل مقال متقسّم على الحركات اللي يسوّيها طالب Grade-9 — الحجّة، الاقتباس المدمج، تحليل AO2 منهجي، AO3 ذكي — عشان تنسخ الشكل، مو الكلمات.',
+  },
+  'revision.model_essays.index.tagline_macbeth': {
+    en: 'Ambition, guilt and the supernatural in Shakespeare’s shortest tragedy.',
+    ar: 'الطموح والذنب والخوارق في أقصر تراجيديا كتبها Shakespeare.',
+  },
+  'revision.model_essays.index.tagline_inspector_calls': {
+    en: 'Priestley’s morality play on collective responsibility and class.',
+    ar: 'مسرحية أخلاقية لـ Priestley عن المسؤولية الجماعية والطبقة الاجتماعية.',
+  },
+  'revision.model_essays.index.tagline_christmas_carol': {
+    en: 'Dickens’s allegorical novella on transformation, charity, and want.',
+    ar: 'رواية رمزية قصيرة لـ Dickens عن التحوّل والإحسان والحاجة.',
+  },
+  'revision.model_essays.index.tagline_jekyll_hyde': {
+    en: 'Stevenson’s Gothic study of duality and the Victorian self.',
+    ar: 'دراسة قوطية لـ Stevenson عن الازدواجية والذات الفيكتورية.',
+  },
+  'revision.model_essays.index.tagline_romeo_juliet': {
+    en: 'Shakespeare’s tragedy of love, fate, and feud.',
+    ar: 'تراجيديا Shakespeare عن الحب والقدر والثأر.',
+  },
+  'revision.model_essays.index.count_essay_singular': { en: 'essay', ar: 'مقال' },
+  'revision.model_essays.index.count_essay_plural': { en: 'essays', ar: 'مقالات' },
+  'revision.model_essays.index.empty_state_prefix': {
+    en: 'Model essays for',
+    ar: 'المقالات النموذجية لـ',
+  },
+  'revision.model_essays.index.empty_state_suffix': {
+    en: 'are being written and will appear here shortly.',
+    ar: 'قيد الكتابة الحين وبتظهر هنا قريب.',
+  },
+  'revision.model_essays.index.card_grade_prefix': { en: 'Grade', ar: 'Grade' },
+  'revision.model_essays.index.card_words_suffix': { en: 'words', ar: 'كلمة' },
+  'revision.model_essays.index.card_more_suffix': { en: 'more', ar: 'إضافية' },
+  'revision.model_essays.index.card_view_essay': {
+    en: 'View annotated essay',
+    ar: 'شوف المقال المشروح',
+  },
+  'revision.model_essays.index.footer_h2': {
+    en: 'About these model essays',
+    ar: 'عن المقالات النموذجية',
+  },
+  'revision.model_essays.index.footer_body': {
+    en: 'All essays are written by The English Hub for revision use. Any quoted text from the primary works is reproduced as a short fair-dealing extract for the purpose of criticism and review under section 30 of the Copyright, Designs and Patents Act 1988.',
+    ar: 'كل المقالات مكتوبة من The English Hub لغرض المراجعة. أي نص مقتبس من الأعمال الأصلية منشور كمقتطف قصير لغرض النقد والمراجعة تحت قسم ٣٠ من قانون Copyright, Designs and Patents Act 1988.',
   },
 
   // ── Set-text deep page (revision/texts/[slug]) ─────────────────────
@@ -13032,6 +13931,203 @@ export const DICTIONARY: Dictionary = {
     en: 'A 20-minute conversation about whether The English Hub fits your department.',
     ar: 'مكالمة ٢٠ دقيقة عن هل The English Hub يناسب قسمك ولا لا.',
   },
+  'for_schools_contact.back_to_schools': { en: 'Back to Schools', ar: 'رجوع للمدارس' },
+  'for_schools_contact.field.school_name': { en: 'School Name', ar: 'اسم المدرسة' },
+  'for_schools_contact.placeholder.school_name': {
+    en: 'e.g. Oakfield Academy',
+    ar: 'مثلاً Oakfield Academy',
+  },
+  'for_schools_contact.field.contact_name': { en: 'Your Name', ar: 'اسمك' },
+  'for_schools_contact.placeholder.contact_name': {
+    en: 'e.g. Jane Smith',
+    ar: 'مثلاً Jane Smith',
+  },
+  'for_schools_contact.field.email': { en: 'Email', ar: 'الإيميل' },
+  'for_schools_contact.placeholder.email': {
+    en: 'jane.smith@school.ac.uk',
+    ar: 'jane.smith@school.ac.uk',
+  },
+  'for_schools_contact.field.phone': { en: 'Phone (optional)', ar: 'رقم التلفون (اختياري)' },
+  'for_schools_contact.placeholder.phone': { en: '7700 000000', ar: '٧٧٠٠ ٠٠٠٠٠٠' },
+  'for_schools_contact.field.preferred_contact': {
+    en: 'Preferred Contact Method',
+    ar: 'الوسيلة المفضّلة للتواصل',
+  },
+  'for_schools_contact.preferred.email': { en: 'Email', ar: 'إيميل' },
+  'for_schools_contact.preferred.phone': { en: 'Phone', ar: 'تلفون' },
+  'for_schools_contact.preferred.either': { en: 'Either', ar: 'الاثنين' },
+  'for_schools_contact.field.role': { en: 'Role', ar: 'المنصب' },
+  'for_schools_contact.placeholder.role': { en: 'Select your role...', ar: 'اختر منصبك...' },
+  'for_schools_contact.role.head_of_department': { en: 'Head of Department', ar: 'رئيس قسم' },
+  'for_schools_contact.role.head_of_english': {
+    en: 'Head of English',
+    ar: 'رئيس قسم اللغة الإنجليزية',
+  },
+  'for_schools_contact.role.deputy_head': { en: 'Deputy Head', ar: 'نائب المدير' },
+  'for_schools_contact.role.headteacher': { en: 'Headteacher', ar: 'مدير المدرسة' },
+  'for_schools_contact.role.mat_lead': { en: 'MAT Lead', ar: 'قائد المجموعة المدرسية (MAT)' },
+  'for_schools_contact.role.other': { en: 'Other', ar: 'غير ذلك' },
+  'for_schools_contact.field.student_count': {
+    en: 'Number of Students in English Department',
+    ar: 'عدد الطلاب في قسم اللغة الإنجليزية',
+  },
+  'for_schools_contact.placeholder.student_count': {
+    en: 'Select student count...',
+    ar: 'اختر عدد الطلاب...',
+  },
+  'for_schools_contact.student_count.under_100': { en: 'Under 100', ar: 'أقل من ١٠٠' },
+  'for_schools_contact.student_count.100_300': { en: '100-300', ar: '١٠٠-٣٠٠' },
+  'for_schools_contact.student_count.300_500': { en: '300-500', ar: '٣٠٠-٥٠٠' },
+  'for_schools_contact.student_count.500_1000': { en: '500-1000', ar: '٥٠٠-١٠٠٠' },
+  'for_schools_contact.student_count.1000_plus': { en: '1000+', ar: '+١٠٠٠' },
+  'for_schools_contact.field.exam_board': { en: 'Exam Board', ar: 'بورد الامتحان' },
+  'for_schools_contact.placeholder.exam_board': {
+    en: 'Select exam board...',
+    ar: 'اختر بورد الامتحان...',
+  },
+  'for_schools_contact.field.message': { en: 'Message (optional)', ar: 'الرسالة (اختياري)' },
+  'for_schools_contact.placeholder.message': {
+    en: "Anything else you'd like us to know ahead of the call?",
+    ar: 'في شي ثاني تبغانا نعرفه قبل المكالمة؟',
+  },
+  'for_schools_contact.error.school_name_required': {
+    en: 'School name is required.',
+    ar: 'اسم المدرسة مطلوب.',
+  },
+  'for_schools_contact.error.contact_name_required': {
+    en: 'Your name is required.',
+    ar: 'اسمك مطلوب.',
+  },
+  'for_schools_contact.error.email_required': { en: 'Email is required.', ar: 'الإيميل مطلوب.' },
+  'for_schools_contact.error.email_invalid': {
+    en: 'Please enter a valid email address.',
+    ar: 'لو سمحت اكتب إيميل صحيح.',
+  },
+  'for_schools_contact.error.role_required': {
+    en: 'Please select your role.',
+    ar: 'لو سمحت اختر منصبك.',
+  },
+  'for_schools_contact.error.student_count_required': {
+    en: 'Please select student count.',
+    ar: 'لو سمحت اختر عدد الطلاب.',
+  },
+  'for_schools_contact.error.exam_board_required': {
+    en: 'Please select your exam board.',
+    ar: 'لو سمحت اختر بورد الامتحان.',
+  },
+  'for_schools_contact.error.generic': {
+    en: 'Something went wrong. Please try again.',
+    ar: 'صار خلل. لو سمحت جرّب مرة ثانية.',
+  },
+  'for_schools_contact.error.network': {
+    en: 'Could not send your request. Please check your connection and try again.',
+    ar: 'ما قدرنا نرسل طلبك. شيك على اتصال الإنترنت وجرّب مرة ثانية.',
+  },
+  'for_schools_contact.submit': { en: 'Book My Call', ar: 'احجز مكالمتي' },
+  'for_schools_contact.sending': { en: 'Sending...', ar: 'يرسل...' },
+  'for_schools_contact.success.title': {
+    en: "Thanks! We'll be in touch within 24 hours.",
+    ar: 'مشكور! بنتواصل معاك خلال ٢٤ ساعة.',
+  },
+  'for_schools_contact.success.body': {
+    en: 'One of our schools team will reach out to schedule your 20-minute call. Check your inbox (and spam folder) for a confirmation.',
+    ar: 'حد من فريق المدارس راح يتواصل معاك عشان يحدد موعد مكالمة ٢٠ دقيقة. شيك على الإيميل (وفولدر السبام) للتأكيد.',
+  },
+  'for_schools_contact.prefer_register_prefix': {
+    en: 'Prefer to register directly?',
+    ar: 'تفضّل تسجّل مباشرة؟',
+  },
+  'for_schools_contact.prefer_register_link': {
+    en: 'Self-serve registration',
+    ar: 'التسجيل الذاتي',
+  },
+
+  // ─── Country codes (used in phone fields) ──────────────────────────
+  'country_code.uk': { en: 'UK (+44)', ar: 'بريطانيا (٤٤+)' },
+  'country_code.us_ca': { en: 'US/CA (+1)', ar: 'أمريكا/كندا (١+)' },
+  'country_code.uae': { en: 'UAE (+971)', ar: 'الإمارات (٩٧١+)' },
+  'country_code.qatar': { en: 'Qatar (+974)', ar: 'قطر (٩٧٤+)' },
+  'country_code.singapore': { en: 'Singapore (+65)', ar: 'سنغافورة (٦٥+)' },
+  'country_code.hk': { en: 'HK (+852)', ar: 'هونغ كونغ (٨٥٢+)' },
+  'country_code.australia': { en: 'Australia (+61)', ar: 'أستراليا (٦١+)' },
+
+  // ─── Exam board labels (whitelist values keep their canonical strings) ──
+  'exam_board.aqa': { en: 'AQA', ar: 'AQA' },
+  'exam_board.edexcel': { en: 'Edexcel', ar: 'Edexcel' },
+  'exam_board.ocr': { en: 'OCR', ar: 'OCR' },
+  'exam_board.wjec': { en: 'WJEC', ar: 'WJEC' },
+  'exam_board.igcse_caie': { en: 'IGCSE/CAIE', ar: 'IGCSE/CAIE' },
+  'exam_board.other': { en: 'Other', ar: 'غير ذلك' },
+
+  // ─── Year group labels (English keystage names stay Latin) ─────────
+  'year_group.year_7': { en: 'Year 7', ar: 'Year 7' },
+  'year_group.year_8': { en: 'Year 8', ar: 'Year 8' },
+  'year_group.year_9': { en: 'Year 9', ar: 'Year 9' },
+  'year_group.year_10': { en: 'Year 10', ar: 'Year 10' },
+  'year_group.year_11': { en: 'Year 11', ar: 'Year 11' },
+  'year_group.year_12': { en: 'Year 12', ar: 'Year 12' },
+  'year_group.year_13': { en: 'Year 13', ar: 'Year 13' },
+  'year_group.adult': { en: 'Adult', ar: 'بالغ' },
+  'year_group.other': { en: 'Other', ar: 'غير ذلك' },
+
+  // ─── BookCallForm (for-schools page client island) ──────────────────
+  'book_call.field.school_name': { en: 'School Name', ar: 'اسم المدرسة' },
+  'book_call.placeholder.school_name': {
+    en: 'e.g. Riverside Academy',
+    ar: 'مثلاً Riverside Academy',
+  },
+  'book_call.field.contact_name': { en: 'Your Name', ar: 'اسمك' },
+  'book_call.placeholder.contact_name': { en: 'e.g. Mrs J. Smith', ar: 'مثلاً Mrs J. Smith' },
+  'book_call.field.email': { en: 'School Email', ar: 'إيميل المدرسة' },
+  'book_call.placeholder.email': { en: 'j.smith@school.ac.uk', ar: 'j.smith@school.ac.uk' },
+  'book_call.field.role': { en: 'Your Role', ar: 'منصبك' },
+  'book_call.placeholder.role': { en: 'Select your role', ar: 'اختر منصبك' },
+  'book_call.role.head_of_english': { en: 'Head of English', ar: 'رئيس قسم اللغة الإنجليزية' },
+  'book_call.role.english_teacher': { en: 'English Teacher', ar: 'معلم/معلمة لغة إنجليزية' },
+  'book_call.role.head_of_department': { en: 'Head of Department', ar: 'رئيس قسم' },
+  'book_call.role.assistant_head': { en: 'Assistant Headteacher', ar: 'مساعد مدير المدرسة' },
+  'book_call.role.deputy_head': { en: 'Deputy Headteacher', ar: 'نائب مدير المدرسة' },
+  'book_call.role.headteacher': { en: 'Headteacher', ar: 'مدير المدرسة' },
+  'book_call.role.mat_leader': { en: 'MAT Leader', ar: 'قائد المجموعة المدرسية (MAT)' },
+  'book_call.role.other': { en: 'Other', ar: 'غير ذلك' },
+  'book_call.field.student_count': {
+    en: 'Approx. Number of Students',
+    ar: 'العدد التقريبي للطلاب',
+  },
+  'book_call.placeholder.student_count': {
+    en: 'Select a range (optional)',
+    ar: 'اختر نطاق (اختياري)',
+  },
+  'book_call.student_count.under_100': { en: 'Under 100 students', ar: 'أقل من ١٠٠ طالب' },
+  'book_call.student_count.100_300': { en: '100 - 300 students', ar: '١٠٠ - ٣٠٠ طالب' },
+  'book_call.student_count.300_600': { en: '300 - 600 students', ar: '٣٠٠ - ٦٠٠ طالب' },
+  'book_call.student_count.600_1000': { en: '600 - 1,000 students', ar: '٦٠٠ - ١٬٠٠٠ طالب' },
+  'book_call.student_count.over_1000': { en: 'Over 1,000 students', ar: 'أكثر من ١٬٠٠٠ طالب' },
+  'book_call.student_count.mat': { en: 'Multi-Academy Trust', ar: 'مجموعة مدارس (MAT)' },
+  'book_call.field.message': {
+    en: 'Anything else we should know? (optional)',
+    ar: 'في شي ثاني تبغانا نعرفه؟ (اختياري)',
+  },
+  'book_call.placeholder.message': {
+    en: 'Tell us about your department, any specific needs, or your preferred call time...',
+    ar: 'احكِ لنا عن قسمك، أي احتياجات معيّنة، أو الوقت المفضّل للمكالمة...',
+  },
+  'book_call.submit': { en: 'Book a 20-Minute Call', ar: 'احجز مكالمة ٢٠ دقيقة' },
+  'book_call.sending': { en: 'Sending...', ar: 'يرسل...' },
+  'book_call.success.title': { en: 'Thank you!', ar: 'مشكور!' },
+  'book_call.success.body': {
+    en: 'We have received your request and will be in touch within one working day to arrange your call. Check your inbox for a confirmation email.',
+    ar: 'استلمنا طلبك وبنتواصل معاك خلال يوم عمل لترتيب المكالمة. شيك على إيميلك للتأكيد.',
+  },
+  'book_call.error.generic': {
+    en: 'Something went wrong. Please try again.',
+    ar: 'صار خلل. لو سمحت جرّب مرة ثانية.',
+  },
+  'book_call.reply_note': {
+    en: 'We reply within one working day. No obligation, no hard sell.',
+    ar: 'نرد خلال يوم عمل. بدون التزام، بدون ضغط.',
+  },
+  'book_call.or_email_us_at': { en: 'Or email us at', ar: 'أو راسلنا على' },
 
   // ─── Dashboard pages ────────────────────────────────────────────────
   'dashboard.parent.h1': { en: 'Parent Dashboard', ar: 'لوحة ولي الأمر' },
@@ -13068,6 +14164,513 @@ export const DICTIONARY: Dictionary = {
   'loading.quiz.label': { en: 'Loading quiz…', ar: 'لحظة، نجيب الاختبار…' },
   'loading.texts.label': { en: 'Loading texts…', ar: 'لحظة، نجيب النصوص…' },
   'loading.school.label': { en: 'Loading school dashboard…', ar: 'لحظة، نجهّز لوحة المدرسة…' },
+
+  // ─── Resources / Teaching hub (B2B teacher-facing) ─────────────────
+  // Brand + technical terms (GCSE, IGCSE, AQA, Edexcel, OCR, Cambridge,
+  // AO1-AO6, KS3, PEE) stay in Latin script. Body Arabic = MSA
+  // (technical content for teachers); navigation chrome = Khaleeji.
+  'resources.teaching.access.title_only': { en: 'Teacher Access Only', ar: 'دخول للمعلمين فقط' },
+  'resources.teaching.access.body': {
+    en: 'Teaching resources are only available to verified teacher accounts. Please log in with a teacher account or contact support if you believe this is an error.',
+    ar: 'موارد التدريس متاحة لحسابات المعلمين الموثّقة فقط. سجّل دخولك بحساب معلم أو تواصل مع الدعم لو تعتقد أنّ هذا خطأ.',
+  },
+  'resources.teaching.access.back': { en: 'Back to Resources', ar: 'رجوع للموارد' },
+  'resources.teaching.hero.eyebrow': { en: 'Teacher Resources', ar: 'موارد المعلمين' },
+  'resources.teaching.hero.title': { en: 'Teaching Resources Hub', ar: 'مركز موارد التدريس' },
+  'resources.teaching.hero.subtitle': {
+    en: 'Ready-made lesson plans, assessment tools, and printable resources designed for GCSE and IGCSE English teachers.',
+    ar: 'خطط دروس جاهزة وأدوات تقييم وموارد قابلة للطباعة، مصمّمة لمعلّمي اللغة الإنجليزية في GCSE و IGCSE.',
+  },
+  'resources.teaching.stats.lesson_plans': { en: 'Lesson Plans', ar: 'خطط الدروس' },
+  'resources.teaching.stats.assessment': { en: 'Assessment Tools', ar: 'أدوات التقييم' },
+  'resources.teaching.stats.boards': { en: 'Exam Boards', ar: 'هيئات الامتحان' },
+  'resources.teaching.stats.topics': { en: 'Topics Covered', ar: 'المواضيع المغطّاة' },
+  'resources.teaching.browse.title': { en: 'Browse Resources', ar: 'تصفّح الموارد' },
+  'resources.teaching.browse.subtitle': {
+    en: 'Everything you need to plan, teach, and assess GCSE English.',
+    ar: 'كل اللي تحتاجه عشان تخطّط وتدرّس وتقيّم GCSE English.',
+  },
+  'resources.teaching.cards.lp.title': { en: 'Lesson Plans', ar: 'خطط الدروس' },
+  'resources.teaching.cards.lp.desc': {
+    en: 'Ready-made lesson plans for GCSE English Language and Literature. Covering every major text, topic, and exam skill with differentiated activities.',
+    ar: 'خطط دروس جاهزة لـ GCSE English Language و Literature. تغطّي كل النصوص والمواضيع ومهارات الامتحان الرئيسية، مع أنشطة متمايزة.',
+  },
+  'resources.teaching.cards.assess.title': { en: 'Assessment Tools', ar: 'أدوات التقييم' },
+  'resources.teaching.cards.assess.desc': {
+    en: 'Quick quiz generators, essay question banks, mark scheme templates, and progress tracker downloads for formative and summative assessment.',
+    ar: 'مولّدات اختبارات سريعة، وبنوك أسئلة مقالية، وقوالب أنظمة درجات، وملفات تتبّع التقدّم، للتقييم التكويني والختامي.',
+  },
+  'resources.teaching.cards.print.title': { en: 'Printable Resources', ar: 'موارد قابلة للطباعة' },
+  'resources.teaching.cards.print.desc': {
+    en: 'Downloadable worksheets, revision mats, knowledge organisers, and display materials you can print for classroom use.',
+    ar: 'أوراق عمل قابلة للتنزيل، ومخطّطات مراجعة، ومنظّمات معرفة، ومواد عرض للطباعة للاستخدام داخل الصف.',
+  },
+  'resources.teaching.cards.specs.title': {
+    en: 'Exam Board Specifications',
+    ar: 'مواصفات هيئات الامتحان',
+  },
+  'resources.teaching.cards.specs.desc': {
+    en: 'Direct links to the official AQA, Edexcel, OCR, and Cambridge IGCSE specifications, sample papers, and examiner reports.',
+    ar: 'روابط مباشرة لمواصفات AQA و Edexcel و OCR و Cambridge IGCSE الرسمية، وعيّنات الأوراق، وتقارير المراجع.',
+  },
+  'resources.teaching.cards.coming': { en: 'Coming Soon', ar: 'قريباً' },
+  'resources.teaching.cards.explore': { en: 'Explore', ar: 'استكشف' },
+  'resources.teaching.specs.title': {
+    en: 'Exam Board Specifications',
+    ar: 'مواصفات هيئات الامتحان',
+  },
+  'resources.teaching.specs.subtitle': {
+    en: 'Quick access to official specifications, sample papers, and examiner reports.',
+    ar: 'وصول سريع للمواصفات الرسمية وعيّنات الأوراق وتقارير المراجع.',
+  },
+
+  // ─── Resources / Teaching / Lesson plans (index) ────────────────────
+  'resources.teaching.lp.idx.bc.resources': { en: 'Resources', ar: 'الموارد' },
+  'resources.teaching.lp.idx.bc.teaching': { en: 'Teaching', ar: 'التدريس' },
+  'resources.teaching.lp.idx.bc.lesson_plans': { en: 'Lesson plans', ar: 'خطط الدروس' },
+  'resources.teaching.lp.idx.h1': {
+    en: 'Free lesson plans for GCSE & IGCSE English',
+    ar: 'خطط دروس مجانية لـ GCSE و IGCSE English',
+  },
+  'resources.teaching.lp.idx.intro': {
+    en: 'Classroom-ready plans with learning objectives, activities, and timings. Pick a plan, tweak it for your class, teach it tomorrow.',
+    ar: 'خطط جاهزة للصف، فيها أهداف التعلّم والأنشطة والتوقيتات. اختر خطة وعدّلها لصفّك ودرّسها باكر.',
+  },
+  'resources.teaching.lp.idx.coming_soon': { en: 'Coming soon', ar: 'قريباً' },
+  'resources.teaching.lp.idx.empty.title': {
+    en: 'Lesson plans are on the way',
+    ar: 'خطط الدروس في الطريق',
+  },
+  'resources.teaching.lp.idx.empty.body': {
+    en: "We're publishing free, classroom-ready plans for GCSE and IGCSE English. Check back soon.",
+    ar: 'إحنا ننشر خطط مجانية وجاهزة للصف لـ GCSE و IGCSE English. ارجع لنا بعد فترة.',
+  },
+
+  // ─── Resources / Teaching / Lesson plan (detail) ────────────────────
+  'resources.teaching.lp.detail.bc.lesson_plans': { en: 'Lesson plans', ar: 'خطط الدروس' },
+  'resources.teaching.lp.detail.coming_soon_pill': {
+    en: 'Full plan coming soon',
+    ar: 'الخطة الكاملة قريباً',
+  },
+  'resources.teaching.lp.detail.objectives_h2': { en: 'Learning objectives', ar: 'أهداف التعلّم' },
+  'resources.teaching.lp.detail.tba.body': {
+    en: 'Detailed activities and resources are being finalised. Join the list below to be notified when this plan is published.',
+    ar: 'الأنشطة والموارد التفصيلية يتم تجهيزها. سجّل في القائمة أسفل ليصلك إشعار حين تُنشر هذه الخطة.',
+  },
+
+  // ─── Resources / Teaching / Printables ──────────────────────────────
+  'resources.teaching.print.idx.eyebrow': {
+    en: 'Free teaching resources',
+    ar: 'موارد تدريس مجانية',
+  },
+  'resources.teaching.print.idx.h1': {
+    en: 'Free printables for GCSE & IGCSE English',
+    ar: 'مواد قابلة للطباعة مجاناً لـ GCSE و IGCSE English',
+  },
+  'resources.teaching.print.idx.intro': {
+    en: 'Classroom-ready PDFs covering set texts, exam technique, and writing skills. Each printable maps to a specific exam board where it applies, and is free for teachers and students to download. New sheets are released regularly — drop your email on any page below to be notified when it goes live.',
+    ar: 'ملفات PDF جاهزة للصف، تغطّي النصوص المقرّرة وتقنيات الامتحان ومهارات الكتابة. كل مادة قابلة للطباعة مرتبطة بهيئة امتحان معيّنة عند الانطباق، ومجانية للمعلّمين والطلاب. أوراق جديدة تُنشر بانتظام — حطّ إيميلك في أيّ صفحة أسفل ليصلك إشعار عند النشر.',
+  },
+  'resources.teaching.print.idx.coming': {
+    en: 'Coming soon — get notified',
+    ar: 'قريباً — استلم إشعاراً',
+  },
+  'resources.teaching.print.idx.available': { en: 'Available now', ar: 'متاح الحين' },
+  'resources.teaching.print.idx.view_details': { en: 'View details', ar: 'عرض التفاصيل' },
+  'resources.teaching.print.idx.empty.title': {
+    en: 'Printables landing soon',
+    ar: 'المواد القابلة للطباعة قريباً',
+  },
+  'resources.teaching.print.idx.empty.body': {
+    en: "We're finalising the first batch of printables. Check back shortly, or browse our other free resources in the meantime.",
+    ar: 'إحنا نجهّز الدفعة الأولى من المواد القابلة للطباعة. ارجع لنا بعد قليل، ولا تصفّح موارد ببلاش الثانية لين ذيك.',
+  },
+  'resources.teaching.print.detail.bc.home': { en: 'Home', ar: 'الرئيسية' },
+  'resources.teaching.print.detail.bc.printables': {
+    en: 'Printables',
+    ar: 'المواد القابلة للطباعة',
+  },
+
+  // ─── Teacher Library lesson plans ───────────────────────────────────
+  'resources.tl.lp.bc.teacher_library': { en: 'Teacher Library', ar: 'مكتبة المعلّم' },
+  'resources.tl.lp.bc.lesson_plans': { en: 'Lesson Plans', ar: 'خطط الدروس' },
+  'resources.tl.lp.idx.for_teachers': { en: 'For Teachers', ar: 'للمعلمين' },
+  'resources.tl.lp.idx.for_board': { en: 'For', ar: 'لـ' },
+  'resources.tl.lp.idx.h1': { en: 'Lesson Plans', ar: 'خطط الدروس' },
+  'resources.tl.lp.idx.intro_a': {
+    en: 'ready-to-teach GCSE English lesson plans. Each plan includes learning objectives, a starter, main activity, plenary, differentiation notes, and a homework task.',
+    ar: 'خطة درس جاهزة للتدريس في GCSE English. كل خطة تتضمّن أهداف التعلّم ونشاطاً افتتاحياً ونشاطاً رئيسياً وخلاصة وملاحظات تمييز ومهمّة منزلية.',
+  },
+  'resources.tl.lp.detail.kind': { en: 'Lesson Plan', ar: 'خطة درس' },
+  'resources.tl.lp.detail.kind.comparison': { en: 'Comparison Lesson', ar: 'درس مقارنة' },
+  'resources.tl.lp.detail.meta.year': { en: 'Year Group', ar: 'الصف الدراسي' },
+  'resources.tl.lp.detail.meta.duration': { en: 'Duration', ar: 'المدّة' },
+  'resources.tl.lp.detail.meta.board': { en: 'Exam Board', ar: 'هيئة الامتحان' },
+  'resources.tl.lp.detail.meta.subject': { en: 'Subject', ar: 'المادّة' },
+  'resources.tl.lp.detail.subject.literature': { en: 'Literature', ar: 'Literature' },
+  'resources.tl.lp.detail.pdf.cta': { en: 'Download as PDF', ar: 'حمّل PDF' },
+  'resources.tl.lp.detail.pdf.note': { en: 'PDF export coming soon', ar: 'تصدير PDF قريباً' },
+  'resources.tl.lp.detail.h2.objectives': { en: 'Learning Objectives', ar: 'أهداف التعلّم' },
+  'resources.tl.lp.detail.objectives.intro': {
+    en: 'By the end of this lesson, students will be able to:',
+    ar: 'بنهاية هذا الدرس، سيكون الطلاب قادرين على:',
+  },
+  // Macbeth-Ambition specific
+  'resources.tl.lp.macbeth.title': {
+    en: 'Macbeth: Ambition & the Supernatural',
+    ar: 'Macbeth: الطموح والخارق للطبيعة',
+  },
+  'resources.tl.lp.macbeth.bc.last': { en: 'Macbeth: Ambition', ar: 'Macbeth: الطموح' },
+  'resources.tl.lp.macbeth.intro': {
+    en: "A full 60-minute lesson exploring how Shakespeare presents ambition as a destructive force through Macbeth's soliloquies and his encounters with the witches.",
+    ar: 'درس كامل مدّته ٦٠ دقيقة يستكشف كيف يقدّم Shakespeare الطموح بوصفه قوّة مدمّرة من خلال مناجاة Macbeth الذاتية ولقاءاته مع الساحرات.',
+  },
+  // Inspector-Calls specific
+  'resources.tl.lp.ic.title': {
+    en: 'An Inspector Calls: Social Responsibility (Act 1)',
+    ar: 'An Inspector Calls: المسؤولية الاجتماعية (الفصل الأول)',
+  },
+  'resources.tl.lp.ic.bc.last': {
+    en: 'Inspector Calls: Responsibility',
+    ar: 'Inspector Calls: المسؤولية',
+  },
+  'resources.tl.lp.ic.intro': {
+    en: "A 60-minute lesson examining how Priestley introduces the theme of responsibility through Mr Birling's birthday speech and the Inspector's arrival. Includes a guided close reading and a structured essay paragraph.",
+    ar: 'درس مدّته ٦٠ دقيقة يبحث في كيفية تقديم Priestley لموضوع المسؤولية من خلال خطاب عيد ميلاد السيد Birling ووصول المفتّش. يتضمّن قراءة موجّهة عن قرب وفقرة مقالية منظّمة.',
+  },
+  // Power-conflict comparison specific
+  'resources.tl.lp.pcc.title': {
+    en: 'Ozymandias vs My Last Duchess: Power Comparison',
+    ar: 'Ozymandias مقابل My Last Duchess: مقارنة السلطة',
+  },
+  'resources.tl.lp.pcc.bc.last': {
+    en: 'Ozymandias vs My Last Duchess',
+    ar: 'Ozymandias مقابل My Last Duchess',
+  },
+  'resources.tl.lp.pcc.intro': {
+    en: 'A structured comparison lesson for the AQA Power & Conflict anthology. Students build a side-by-side analysis of two poems that present dangerous, possessive power — and draft their opening comparative paragraph.',
+    ar: 'درس مقارنة منظّم لأنطولوجيا AQA Power & Conflict. يبني الطلاب تحليلاً جنباً إلى جنب لقصيدتين تقدّمان السلطة الخطيرة والاستحواذية، ويصوغون فقرتهم المقارنة الافتتاحية.',
+  },
+
+  // ─── English Literature / AQA hub & Poetry hero ────────────────────
+  'resources.lit.aqa.h1': { en: 'AQA GCSE English Literature', ar: 'AQA GCSE English Literature' },
+  'resources.lit.aqa.intro': {
+    en: 'AQA GCSE English Literature set-text guides for Macbeth, Romeo and Juliet, Power and Conflict poetry, exam technique and Grade 9 essay plans.',
+    ar: 'أدلّة النصوص المقرّرة في AQA GCSE English Literature: Macbeth و Romeo and Juliet وشعر Power and Conflict، إلى جانب تقنيات الامتحان وخطط مقالات Grade 9.',
+  },
+  'resources.lit.aqa.poetry.h1': { en: 'AQA Poetry Anthology', ar: 'أنطولوجيا الشعر — AQA' },
+  'resources.lit.aqa.poetry.intro': {
+    en: 'Full analysis of all 30 poems in the AQA GCSE English Literature poetry anthology — Power and Conflict & Love and Relationships clusters with themes, language analysis, structure, and comparison ideas.',
+    ar: 'تحليل كامل لجميع القصائد الـ٣٠ في أنطولوجيا AQA GCSE English Literature: عنقودا Power and Conflict و Love and Relationships، مع الموضوعات وتحليل اللغة والبنية وأفكار المقارنة.',
+  },
+
+  // ─── Marketing sections (mock-exam adjacent home blocks) ───────────
+  // MockExamsSection
+  'home.mock.badge_new': { en: 'New Feature', ar: 'ميزة جديدة' },
+  'home.mock.h2': {
+    en: 'Full Mock Exams & AI Feedback',
+    ar: 'موكات كاملة + تغذية راجعة بالذكاء الاصطناعي',
+  },
+  'home.mock.lead_default': {
+    en: 'The most comprehensive exam preparation tools available. Practice under real exam conditions and get instant AI-powered feedback on your writing.',
+    ar: 'أشمل أدوات تحضير للامتحان. تمرّن بظروف الامتحان الحقيقية واحصل على تغذية راجعة فورية بالذكاء الاصطناعي على كتابتك.',
+  },
+  'home.mock.card.exams_title_default': { en: 'Full Mock Exam Papers', ar: 'موكات امتحانات كاملة' },
+  'home.mock.card.exams_desc_default': {
+    en: 'Full-length timed exams matching the real GCSE format. Every paper includes detailed model answers at multiple grade bands and official mark schemes.',
+    ar: 'موكات كاملة بتوقيت حقيقي مطابقة لشكل GCSE. كل ورقة فيها إجابات نموذجية بمستويات درجات مختلفة ومخططات تصحيح رسمية.',
+  },
+  'home.mock.card.exams_cta_default': { en: 'Try a Free Mock Exam →', ar: 'جرّب موك ببلاش ←' },
+  'home.mock.card.feedback_title': {
+    en: 'AI Essay Feedback',
+    ar: 'تغذية راجعة على المقالات بالذكاء الاصطناعي',
+  },
+  'home.mock.card.feedback_desc_default': {
+    en: 'Submit your essay and get instant, expert-level feedback. Our AI analyses your work against real GCSE mark schemes and shows you exactly how to improve.',
+    ar: 'أرسل مقالك واحصل على تغذية راجعة فورية بمستوى الخبراء. الذكاء الاصطناعي يحلّل عملك على أساس مخططات تصحيح GCSE الحقيقية ويبيّن لك بالضبط كيف تتحسّن.',
+  },
+  'home.mock.card.feedback_cta': {
+    en: 'Start Free Trial for AI Feedback →',
+    ar: 'ابدأ التجربة المجانية للتغذية الراجعة ←',
+  },
+  'home.mock.feedback.bullet.grade': {
+    en: 'Estimated grade band (4-5, 6-7, or 8-9)',
+    ar: 'تقدير مستوى الدرجة (4-5 أو 6-7 أو 8-9)',
+  },
+  'home.mock.feedback.bullet.ao': {
+    en: 'Assessment objective scores with comments',
+    ar: 'درجات أهداف التقييم AO مع تعليقات',
+  },
+  'home.mock.feedback.bullet.strengths': {
+    en: 'Specific strengths with direct quotes',
+    ar: 'نقاط قوة محدّدة مع اقتباسات مباشرة',
+  },
+  'home.mock.feedback.bullet.improvements': {
+    en: 'Actionable improvement suggestions',
+    ar: 'اقتراحات تحسين قابلة للتطبيق',
+  },
+  'home.mock.feedback.bullet.annotation': {
+    en: 'Paragraph-by-paragraph annotation',
+    ar: 'شرح فقرة بفقرة',
+  },
+  // Per-board paper-count labels (board codes stay Latin)
+  'home.mock.papers.aqa': { en: 'AQA Papers', ar: 'موكات AQA' },
+  'home.mock.papers.edexcel': { en: 'Edexcel Papers', ar: 'موكات Edexcel' },
+  'home.mock.papers.ocr': { en: 'OCR Papers', ar: 'موكات OCR' },
+  'home.mock.papers.eduqas': { en: 'WJEC Eduqas Papers', ar: 'موكات WJEC Eduqas' },
+  'home.mock.papers.edexcel_igcse': { en: 'Edexcel IGCSE Papers', ar: 'موكات Edexcel IGCSE' },
+  'home.mock.papers.cambridge_0500': {
+    en: 'Cambridge First Language Papers',
+    ar: 'موكات Cambridge First Language',
+  },
+  'home.mock.papers.cambridge_0990': {
+    en: 'Cambridge First Language (9-1) Papers',
+    ar: 'موكات Cambridge First Language (9-1)',
+  },
+
+  // ExamGuideSection
+  'home.guide.h2': { en: "Your Board's Exam Guide", ar: 'دليل الامتحان مال بوردك' },
+  'home.guide.lead': {
+    en: 'Paper structure, mark schemes, and expert tips — tailored to your board.',
+    ar: 'تركيب الورقة ومخططات التصحيح ونصائح الخبراء — على مقاس بوردك.',
+  },
+  'home.guide.your_board': { en: 'Your board', ar: 'بوردك' },
+  'home.guide.cta_full': { en: 'View Full Guide →', ar: 'شوف الدليل الكامل ←' },
+  'home.guide.card_desc': {
+    en: 'Paper structure, mark schemes, and expert tips.',
+    ar: 'تركيب الورقة ومخططات التصحيح ونصائح الخبراء.',
+  },
+
+  // PoemOfTheDay
+  'home.poem.kicker': { en: 'Poem of the Day', ar: 'قصيدة اليوم' },
+  'home.poem.title': { en: '"I Wandered Lonely as a Cloud"', ar: '"I Wandered Lonely as a Cloud"' },
+  'home.poem.author': { en: '— William Wordsworth', ar: '— William Wordsworth' },
+  'home.poem.summary': {
+    en: 'Wordsworth\'s most iconic Romantic lyric. Explore how natural imagery, personification, and the "inward eye" motif create a meditation on memory and solitude — a staple of GCSE and iGCSE English Literature.',
+    ar: 'أشهر قصيدة رومانسية لـ Wordsworth. شوف شلون الصور الطبيعية والتشخيص ودافع "العين الباطنة" يصنعون تأملاً في الذاكرة والوحدة — أساسي في GCSE و iGCSE Literature.',
+  },
+  'home.poem.tag.romanticism': { en: 'Romanticism', ar: 'الرومانسية' },
+  'home.poem.tag.nature': { en: 'Nature', ar: 'الطبيعة' },
+  'home.poem.tag.personification': { en: 'Personification', ar: 'التشخيص' },
+  'home.poem.cta_library': { en: 'Explore the poetry library →', ar: 'استكشف مكتبة الشعر ←' },
+
+  // MarqueeStrip
+  'home.marquee.phrase.1': { en: 'Master the sonnet', ar: 'أتقن السوناتة' },
+  'home.marquee.phrase.2': { en: 'Plan before you write', ar: 'خطّط قبل لا تكتب' },
+  'home.marquee.phrase.3': { en: 'Annotate everything', ar: 'علّق على كل شي' },
+  'home.marquee.phrase.4': { en: 'Know your AOs', ar: 'اعرف الـ AOs مالك' },
+  'home.marquee.phrase.5': { en: 'Model answer libraries', ar: 'مكتبات إجابات نموذجية' },
+  'home.marquee.phrase.6': { en: 'Read twice, write once', ar: 'اقرا مرتين، اكتب مرة' },
+  'home.marquee.phrase.7': { en: 'Timed, not rushed', ar: 'بتوقيت، مو على عجل' },
+
+  // PathwayCardsSection
+  'home.path.h2': { en: 'Choose Your Path', ar: 'اختر مسارك' },
+  'home.path.lead': {
+    en: 'Structured learning pathways designed for every stage of your English journey.',
+    ar: 'مسارات تعلّم منظّمة لكل مرحلة من رحلتك بالإنجليزي.',
+  },
+  'home.path.card.ks3_title': { en: 'KS3 Reading & Writing', ar: 'قراءة وكتابة KS3' },
+  'home.path.card.ks3_subtitle': { en: 'Years 7–9', ar: 'السنوات ٧–٩' },
+  'home.path.card.ks3_desc': {
+    en: 'Build your foundation with core reading comprehension, analysis, and writing skills.',
+    ar: 'ابني أساسك بمهارات الفهم والتحليل والكتابة.',
+  },
+  'home.path.card.lang_title': { en: 'GCSE Language', ar: 'GCSE Language' },
+  'home.path.card.all_boards': { en: 'All Boards', ar: 'كل البوردات' },
+  'home.path.card.lang_desc': {
+    en: 'Master reading analysis and writing techniques for your Language papers.',
+    ar: 'أتقن تحليل القراءة وتقنيات الكتابة لأوراق Language مالتك.',
+  },
+  'home.path.card.lit_title': { en: 'GCSE Literature', ar: 'GCSE Literature' },
+  'home.path.card.lit_desc': {
+    en: 'Poetry, prose, and drama — essay technique and textual analysis for top grades.',
+    ar: 'شعر ونثر ومسرح — تقنية المقال والتحليل النصّي للدرجات العليا.',
+  },
+  'home.path.card.revision_title': { en: 'Revision & Exam Prep', ar: 'مراجعة وتحضير امتحان' },
+  'home.path.card.revision_subtitle': { en: 'Exam-Ready', ar: 'جاهز للامتحان' },
+  'home.path.card.revision_desc': {
+    en: 'Intensive revision courses to boost your grade in weeks, not months.',
+    ar: 'كورسات مراجعة مكثّفة ترفع درجتك بأسابيع، مو بشهور.',
+  },
+
+  // FeatureHighlightsSection
+  'home.features.h2': { en: 'Why Students Love Us', ar: 'ليش الطلاب يحبّوننا' },
+  'home.features.lead': {
+    en: 'Everything you need to go from uncertain to unstoppable.',
+    ar: 'كل اللي تحتاجه لتنتقل من متردّد لمتفوّق.',
+  },
+  'home.features.expert_title': { en: 'Expert-Written Content', ar: 'محتوى من خبراء' },
+  'home.features.expert_desc': {
+    en: 'Written by English teachers and markers who know exactly what gets top marks.',
+    ar: 'مكتوب من معلمين ومصحّحين يعرفون بالضبط شنو يجيب درجات عالية.',
+  },
+  'home.features.cert_title': { en: 'Certificate on Completion', ar: 'شهادة عند الإكمال' },
+  'home.features.cert_desc': {
+    en: 'Earn a verifiable digital certificate for every course you complete. Share it with pride.',
+    ar: 'احصل على شهادة رقمية موثّقة لكل كورس تكمله. شاركها بفخر.',
+  },
+  'home.features.top_title': { en: 'Built for Top Grades', ar: 'مصمّم للدرجات العليا' },
+  'home.features.top_desc': {
+    en: 'Clear explanations, a structured approach, and exam-focused content aligned to the AO rubric.',
+    ar: 'شروحات واضحة ومنهج منظّم ومحتوى يركّز على الامتحان ومحاذي لمعيار AO.',
+  },
+  'home.features.library_title': { en: 'Full Course Library', ar: 'مكتبة كورسات كاملة' },
+  'home.features.library_desc': {
+    en: 'From KS3 Reading to GCSE and IGCSE Literature — courses for every stage of your English journey, with new content added regularly.',
+    ar: 'من قراءة KS3 إلى GCSE و IGCSE Literature — كورسات لكل مرحلة من رحلتك بالإنجليزي، مع محتوى جديد بانتظام.',
+  },
+  'home.features.ai_title': { en: 'AI-Powered Feedback', ar: 'تغذية راجعة بالذكاء الاصطناعي' },
+  'home.features.ai_desc': {
+    en: 'Submit essays and get instant, expert-level feedback with grade estimates, strengths, and improvements.',
+    ar: 'أرسل مقالاتك واحصل على تغذية راجعة فورية بمستوى الخبراء مع تقدير درجة ونقاط قوة وتحسينات.',
+  },
+  'home.features.pace_title': { en: 'Study at Your Own Pace', ar: 'ادرس على راحتك' },
+  'home.features.pace_desc': {
+    en: 'All content is available 24/7. Study at your own pace, on your own schedule, with no deadlines.',
+    ar: 'كل المحتوى متاح ٢٤/٧. ادرس على راحتك وجدولك من غير مواعيد نهائية.',
+  },
+  'home.features.device_title': { en: 'Works on Any Device', ar: 'يشتغل على أي جهاز' },
+  'home.features.device_desc': {
+    en: 'Desktop, tablet, or mobile — your courses sync seamlessly so you can study anywhere.',
+    ar: 'كمبيوتر أو تابلت أو موبايل — كورساتك تتزامن بسلاسة عشان تدرس من أي مكان.',
+  },
+  'home.features.cancel_title': { en: 'Cancel Anytime', ar: 'الغ في أي وقت' },
+  'home.features.cancel_desc': {
+    en: 'No lock-in contracts. Start with a 7-day free trial (card required) and cancel anytime — no questions asked.',
+    ar: 'ما في عقود مقفّلة. ابدأ بتجربة ٧ أيام ببلاش (مع بطاقة) وألغ في أي وقت — من غير ما نسألك.',
+  },
+
+  // BentoFeatures
+  'home.bento.eyebrow': { en: '01 — Contents', ar: '٠١ — المحتويات' },
+  'home.bento.h2.before': { en: 'A ', ar: 'قسم إنجليزي ' },
+  'home.bento.h2.emph': { en: 'complete', ar: 'كامل' },
+  'home.bento.h2.after': { en: ' English department, re-shelved.', ar: '، مرتّب من جديد.' },
+  'home.bento.ai_title': { en: 'AI Essay Feedback', ar: 'تغذية راجعة بالذكاء الاصطناعي' },
+  'home.bento.ai_desc': {
+    en: 'Submit any essay. Get grade, AO breakdown, and next-step targets in seconds.',
+    ar: 'أرسل أي مقال. خذ درجة وتفصيل AO وأهداف الخطوة الجاية بثواني.',
+  },
+  'home.bento.ai_demo.compelling': {
+    en: '"compelling" — precise vocabulary choice elevates register',
+    ar: '"compelling" — اختيار مفردات دقيق يرفع المستوى',
+  },
+  'home.bento.ai_demo.cyclical': {
+    en: '"cyclical" — structural technique impresses markers',
+    ar: '"cyclical" — تقنية بنيوية تعجب المصحّحين',
+  },
+  'home.bento.ai_demo.grade8': { en: 'Grade 8', ar: 'Grade 8' },
+  'home.bento.ladder_title': { en: 'Grade Ladder', ar: 'سلّم الدرجات' },
+  'home.bento.ladder_desc': {
+    en: 'Visual 1–9 progression. See exactly what separates each grade boundary.',
+    ar: 'تدرّج مرئي ١–٩. شوف بالضبط شنو يفرق كل حد درجة.',
+  },
+  'home.bento.mocks_title': { en: 'Mock Exams', ar: 'موكات' },
+  'home.bento.mocks_desc': {
+    en: 'Timed papers with real grade boundaries. Auto-marked where possible.',
+    ar: 'موكات بتوقيت وحدود درجات حقيقية. مصحّحة تلقائياً قدر الإمكان.',
+  },
+  'home.bento.mocks_count_label': { en: 'Papers available', ar: 'موكات متاحة' },
+  'home.bento.annotation_title': { en: 'Annotation Studio', ar: 'استوديو التعليقات' },
+  'home.bento.annotation_desc': {
+    en: 'Highlight, tag, and analyse key quotes from set texts and unseen extracts.',
+    ar: 'علّم وحدّد وحلّل الاقتباسات المهمة من النصوص المقرّرة والمقاطع غير المرئية.',
+  },
+  'home.bento.annotation_attribution': {
+    en: '— Mary Shelley, Frankenstein',
+    ar: '— Mary Shelley, Frankenstein',
+  },
+  'home.bento.games_title': { en: 'Grade Games', ar: 'ألعاب الدرجات' },
+  'home.bento.games_desc': {
+    en: '7 revision games that make practice feel like play. From spelling bees to quote battles.',
+    ar: '٧ ألعاب مراجعة تخلّي التمرين كأنه لعب. من ألعاب الإملاء إلى معارك الاقتباسات.',
+  },
+  'home.bento.games.spelling_bee': { en: 'Spelling Bee', ar: 'لعبة الإملاء' },
+  'home.bento.games.quote_battle': { en: 'Quote Battle', ar: 'معركة الاقتباسات' },
+  'home.bento.games.word_ladder': { en: 'Word Ladder', ar: 'سلّم الكلمات' },
+  'home.bento.games.vocab_sprint': { en: 'Vocab Sprint', ar: 'سباق المفردات' },
+  'home.bento.games.grammar_rush': { en: 'Grammar Rush', ar: 'سرعة القواعد' },
+  'home.bento.games.ao_snap': { en: 'AO Snap', ar: 'AO Snap' },
+  'home.bento.games.lit_bingo': { en: 'Lit Bingo', ar: 'بنغو الأدب' },
+  'home.bento.boards_title': { en: 'Exam Board Hub', ar: 'مركز البوردات' },
+  'home.bento.boards_desc': {
+    en: 'Every spec, every AO, every grade descriptor — organised by your board.',
+    ar: 'كل مواصفة وكل AO وكل وصف درجة — منظّمة حسب بوردك.',
+  },
+
+  // AnthologyHero
+  'home.anth_hero.meta_brand': {
+    en: 'The English Hub · Anthology Edition',
+    ar: 'The English Hub · إصدار المختارات',
+  },
+  'home.anth_hero.meta_vol': { en: 'Vol. I — Spring MMXXVI', ar: 'المجلد الأول — ربيع MMXXVI' },
+  'home.anth_hero.meta_stats': { en: '15 pathways · 470 lessons', ar: '١٥ مسار · ٤٧٠ درس' },
+  'home.anth_hero.eyebrow': {
+    en: 'An anthology for English · 2026',
+    ar: 'مختارات للإنجليزي · ٢٠٢٦',
+  },
+  'home.anth_hero.h1.read': { en: 'Read close.', ar: 'اقرا بدقة.' },
+  'home.anth_hero.h1.write': { en: 'Write', ar: 'اكتب' },
+  'home.anth_hero.h1.bold': { en: 'bold.', ar: 'بجرأة.' },
+  'home.anth_hero.h1.land': { en: 'Land the', ar: 'احصل على' },
+  'home.anth_hero.dek': {
+    en: 'Structured courses, AI essay feedback, mock exams, and revision tools — all mapped to your exam board. One platform, every grade.',
+    ar: 'كورسات منظّمة وتغذية راجعة بالذكاء الاصطناعي وموكات وأدوات مراجعة — كلها معايرة على بوردك. منصة واحدة لكل درجة.',
+  },
+  'home.anth_hero.cta_start': { en: 'Start free — no card →', ar: 'ابدأ ببلاش — من غير بطاقة ←' },
+  'home.anth_hero.cta_demo': { en: 'Try the demo', ar: 'جرّب الديمو' },
+  'home.anth_hero.chip.ai_label': {
+    en: 'AI Essay Feedback',
+    ar: 'تغذية راجعة بالذكاء الاصطناعي',
+  },
+  'home.anth_hero.chip.ai_detail': { en: 'Instant grade + targets', ar: 'درجة + أهداف فورية' },
+  'home.anth_hero.chip.poems_label': { en: '30 Poems Deep-Dived', ar: '٣٠ قصيدة بتحليل عميق' },
+  'home.anth_hero.chip.poems_detail': { en: 'Annotation & analysis', ar: 'تعليق وتحليل' },
+  'home.anth_hero.chip.mocks_label': { en: '130+ Mock Exams', ar: 'أكثر من ١٣٠ موك' },
+  'home.anth_hero.chip.mocks_detail': { en: 'Timed & auto-marked', ar: 'بتوقيت وتصحيح تلقائي' },
+  'home.anth_hero.chip.ladder_label': { en: 'Grade Ladder', ar: 'سلّم الدرجات' },
+  'home.anth_hero.chip.ladder_detail': { en: '1–9 revision paths', ar: 'مسارات مراجعة ١–٩' },
+  'home.anth_hero.chip.games_label': { en: '7 GCSE Games', ar: '٧ ألعاب GCSE' },
+  'home.anth_hero.chip.games_detail': { en: 'Learn through play', ar: 'تعلّم باللعب' },
+
+  // AnthologyTestimonials + TestimonialsSection
+  'home.anth_testimonials.h2': { en: "What they're saying.", ar: 'شنو يقولون.' },
+  'home.testimonials.h2': { en: 'What Our Students Say', ar: 'شنو يقولون طلابنا' },
+  'home.testimonials.sophie.quote': {
+    en: 'I went from a Grade 4 to a 7 in six months. The structured courses and model answers made everything click.',
+    ar: 'انتقلت من Grade 4 إلى 7 خلال ست شهور. الكورسات المنظّمة والإجابات النموذجية خلّت كل شي يتضح.',
+  },
+  'home.testimonials.sophie.name': { en: 'Sophie T.', ar: 'Sophie T.' },
+  'home.testimonials.sophie.role': { en: 'Year 11 — AQA', ar: 'السنة ١١ — AQA' },
+  'home.testimonials.mark.quote': {
+    en: "My daughter's confidence has completely changed. She actually wants to revise now and her mock results have gone up two grades.",
+    ar: 'ثقة بنتي تغيّرت تماماً. صارت تبغى تراجع، وموكاتها ارتفعت درجتين.',
+  },
+  'home.testimonials.mark.name': { en: 'Mark H.', ar: 'Mark H.' },
+  'home.testimonials.mark.role': { en: 'Parent', ar: 'ولي أمر' },
+  'home.testimonials.james.quote': {
+    en: 'The AI essay feedback is like having a tutor available 24/7. It spotted weaknesses my teacher missed.',
+    ar: 'التغذية الراجعة بالذكاء الاصطناعي كأنها مدرّس متاح ٢٤/٧. اكتشفت نقاط ضعف فاتت معلّمي.',
+  },
+  'home.testimonials.james.name': { en: 'James R.', ar: 'James R.' },
+  'home.testimonials.james.role': { en: 'Year 11 — Edexcel', ar: 'السنة ١١ — Edexcel' },
+  'home.testimonials.patterson.quote': {
+    en: 'As a Head of English, the analytics dashboard alone saves me hours each week. We can track every student across all year groups.',
+    ar: 'كرئيسة قسم إنجليزي، لوحة التحليلات وحدها توفّر علي ساعات كل أسبوع. نقدر نتابع كل طالب في كل سنة.',
+  },
+  'home.testimonials.patterson.name': { en: 'Mrs Patterson', ar: 'Mrs Patterson' },
+  'home.testimonials.patterson.role': { en: 'Head of English', ar: 'رئيسة قسم إنجليزي' },
+  'home.testimonials.priya.quote': {
+    en: 'The mock exams with grade boundaries are exactly like the real thing. I felt so prepared walking into my actual exam.',
+    ar: 'الموكات بحدود الدرجات مطابقة للحقيقي. حسّيت بجاهزية كاملة قبل امتحاني الفعلي.',
+  },
+  'home.testimonials.priya.name': { en: 'Priya K.', ar: 'Priya K.' },
+  'home.testimonials.priya.role': { en: 'Year 11 — OCR', ar: 'السنة ١١ — OCR' },
+  'home.testimonials.davies.quote': {
+    en: 'Finally an English resource that covers all the boards properly. The lesson builder has halved my planning time.',
+    ar: 'أخيراً مصدر إنجليزي يغطي كل البوردات صح. باني الدروس قلّل وقت التخطيط للنص.',
+  },
+  'home.testimonials.davies.name': { en: 'Mr Davies', ar: 'Mr Davies' },
+  'home.testimonials.davies.role': { en: 'English Teacher', ar: 'معلّم إنجليزي' },
 }
 
 /**
@@ -13088,7 +14691,14 @@ export function lookup(key: string, locale: Locale): string {
   // on collision — by convention toolkit keys live under the
   // tools.*, quiz_build.*, lesson_build.*, grade_predict.*, essay_check.*
   // namespaces so collisions shouldn't arise.
-  const entry = DICTIONARY[key] ?? TOOLKIT_DICTIONARY[key] ?? SCHOOL_COMP_DICTIONARY[key]
+  const entry =
+    DICTIONARY[key] ??
+    TOOLKIT_DICTIONARY[key] ??
+    SCHOOL_COMP_DICTIONARY[key] ??
+    LEGAL_LONG_DICTIONARY[key] ??
+    DASH_INTERNAL_DICTIONARY[key] ??
+    DEMO_PAGES_DICTIONARY[key] ??
+    POETRY_HUB_DICTIONARY[key]
   if (!entry) return `[[${key}]]`
   if (locale === 'ar' && entry.ar) return entry.ar
   return entry.en

@@ -14,7 +14,289 @@ export const metadata: Metadata = {
 }
 
 export default async function DataProcessingPage() {
-  const [h1, updated] = await tMany(['data_processing.h1', 'data_processing.updated'])
+  const v = await tMany([
+    'data_processing.h1',
+    'data_processing.updated',
+    // Section 1
+    'legal_long.data_processing.s1.h2',
+    'legal_long.data_processing.s1.p1',
+    'legal_long.data_processing.s1.p2_pre',
+    'legal_long.data_processing.s1.p2_controller',
+    'legal_long.data_processing.s1.p2_mid1',
+    'legal_long.data_processing.s1.p2_processor',
+    'legal_long.data_processing.s1.p2_post',
+    // Section 2
+    'legal_long.data_processing.s2.h2',
+    'legal_long.data_processing.s2.p1_pre',
+    'legal_long.data_processing.s2.p1_strong',
+    'legal_long.data_processing.s2.p1_post',
+    'legal_long.data_processing.s2.p2_pre',
+    'legal_long.data_processing.s2.p2_strong',
+    'legal_long.data_processing.s2.p2_post',
+    'legal_long.data_processing.s2.p3',
+    // Section 3
+    'legal_long.data_processing.s3.h2',
+    'legal_long.data_processing.s3.p1',
+    'legal_long.data_processing.s3.h3_student',
+    'legal_long.data_processing.s3.st_li1',
+    'legal_long.data_processing.s3.st_li2',
+    'legal_long.data_processing.s3.st_li3',
+    'legal_long.data_processing.s3.st_li4',
+    'legal_long.data_processing.s3.st_li5',
+    'legal_long.data_processing.s3.st_li6',
+    'legal_long.data_processing.s3.st_li7',
+    'legal_long.data_processing.s3.h3_teacher',
+    'legal_long.data_processing.s3.tc_li1',
+    'legal_long.data_processing.s3.tc_li2',
+    'legal_long.data_processing.s3.tc_li3',
+    'legal_long.data_processing.s3.p_outro',
+    // Section 4
+    'legal_long.data_processing.s4.h2',
+    'legal_long.data_processing.s4.p1',
+    'legal_long.data_processing.s4.li1',
+    'legal_long.data_processing.s4.li2',
+    'legal_long.data_processing.s4.li3',
+    'legal_long.data_processing.s4.li4',
+    'legal_long.data_processing.s4.li5',
+    'legal_long.data_processing.s4.li6',
+    'legal_long.data_processing.s4.li7',
+    // Section 5
+    'legal_long.data_processing.s5.h2',
+    'legal_long.data_processing.s5.p1',
+    'legal_long.data_processing.s5.h3_enc',
+    'legal_long.data_processing.s5.enc_li1',
+    'legal_long.data_processing.s5.enc_li2',
+    'legal_long.data_processing.s5.enc_li3',
+    'legal_long.data_processing.s5.h3_acc',
+    'legal_long.data_processing.s5.acc_li1',
+    'legal_long.data_processing.s5.acc_li2',
+    'legal_long.data_processing.s5.acc_li3',
+    'legal_long.data_processing.s5.acc_li4',
+    'legal_long.data_processing.s5.h3_inf',
+    'legal_long.data_processing.s5.inf_li1',
+    'legal_long.data_processing.s5.inf_li2',
+    'legal_long.data_processing.s5.inf_li3',
+    'legal_long.data_processing.s5.inf_li4',
+    'legal_long.data_processing.s5.h3_org',
+    'legal_long.data_processing.s5.org_li1',
+    'legal_long.data_processing.s5.org_li2',
+    'legal_long.data_processing.s5.org_li3',
+    // Section 6
+    'legal_long.data_processing.s6.h2',
+    'legal_long.data_processing.s6.p1',
+    'legal_long.data_processing.s6.t.col1',
+    'legal_long.data_processing.s6.t.col2',
+    'legal_long.data_processing.s6.t.col3',
+    'legal_long.data_processing.s6.r1.c1',
+    'legal_long.data_processing.s6.r1.c2',
+    'legal_long.data_processing.s6.r1.c3',
+    'legal_long.data_processing.s6.r2.c1',
+    'legal_long.data_processing.s6.r2.c2',
+    'legal_long.data_processing.s6.r2.c3',
+    'legal_long.data_processing.s6.r3.c1',
+    'legal_long.data_processing.s6.r3.c2',
+    'legal_long.data_processing.s6.r3.c3',
+    'legal_long.data_processing.s6.r4.c1',
+    'legal_long.data_processing.s6.r4.c2',
+    'legal_long.data_processing.s6.r4.c3',
+    'legal_long.data_processing.s6.r5.c1',
+    'legal_long.data_processing.s6.r5.c2',
+    'legal_long.data_processing.s6.r5.c3',
+    'legal_long.data_processing.s6.r6.c1',
+    'legal_long.data_processing.s6.r6.c2',
+    'legal_long.data_processing.s6.r6.c3',
+    'legal_long.data_processing.s6.r7.c1',
+    'legal_long.data_processing.s6.r7.c2',
+    'legal_long.data_processing.s6.r7.c3',
+    'legal_long.data_processing.s6.p_outro',
+    // Section 7
+    'legal_long.data_processing.s7.h2',
+    'legal_long.data_processing.s7.p1',
+    'legal_long.data_processing.s7.li1_strong',
+    'legal_long.data_processing.s7.li1_text',
+    'legal_long.data_processing.s7.li2_strong',
+    'legal_long.data_processing.s7.li2_text',
+    'legal_long.data_processing.s7.li3_strong',
+    'legal_long.data_processing.s7.li3_text',
+    'legal_long.data_processing.s7.li4_strong',
+    'legal_long.data_processing.s7.li4_text',
+    'legal_long.data_processing.s7.p_outro',
+    // Section 8
+    'legal_long.data_processing.s8.h2',
+    'legal_long.data_processing.s8.p1',
+    'legal_long.data_processing.s8.li1_pre',
+    'legal_long.data_processing.s8.li1_strong',
+    'legal_long.data_processing.s8.li1_post',
+    'legal_long.data_processing.s8.li2',
+    'legal_long.data_processing.s8.li3',
+    'legal_long.data_processing.s8.li4',
+    // Section 9
+    'legal_long.data_processing.s9.h2',
+    'legal_long.data_processing.s9.p1',
+    'legal_long.data_processing.s9.p2',
+    'legal_long.data_processing.s9.li1_strong',
+    'legal_long.data_processing.s9.li1_text',
+    'legal_long.data_processing.s9.li2_strong',
+    'legal_long.data_processing.s9.li2_text',
+    'legal_long.data_processing.s9.li3_strong',
+    'legal_long.data_processing.s9.li3_text',
+    // Section 10
+    'legal_long.data_processing.s10.h2',
+    'legal_long.data_processing.s10.p1',
+    'legal_long.data_processing.s10.p2',
+    // Section 11
+    'legal_long.data_processing.s11.h2',
+    'legal_long.data_processing.s11.p1',
+    'legal_long.data_processing.s11.li1',
+    'legal_long.data_processing.s11.li2',
+    'legal_long.data_processing.s11.li3',
+    'legal_long.data_processing.s11.li4',
+    'legal_long.data_processing.s11.li5',
+    'legal_long.data_processing.s11.li6',
+    'legal_long.data_processing.s11.p2_pre',
+    'legal_long.data_processing.s11.p2_post',
+    // Section 12
+    'data_processing.contact_h2',
+    'data_processing.contact_body',
+    'legal_long.data_processing.s12.li1_strong',
+    'legal_long.data_processing.s12.li2_strong',
+  ])
+  let i = 0
+  const n = () => v[i++]
+  const h1 = n(),
+    updated = n()
+  const s1H2 = n(),
+    s1P1 = n(),
+    s1P2Pre = n(),
+    s1P2Ctrl = n(),
+    s1P2Mid = n(),
+    s1P2Proc = n(),
+    s1P2Post = n()
+  const s2H2 = n(),
+    s2P1Pre = n(),
+    s2P1Strong = n(),
+    s2P1Post = n(),
+    s2P2Pre = n(),
+    s2P2Strong = n(),
+    s2P2Post = n(),
+    s2P3 = n()
+  const s3H2 = n(),
+    s3P1 = n(),
+    s3HStu = n(),
+    s3St1 = n(),
+    s3St2 = n(),
+    s3St3 = n(),
+    s3St4 = n(),
+    s3St5 = n(),
+    s3St6 = n(),
+    s3St7 = n(),
+    s3HTc = n(),
+    s3Tc1 = n(),
+    s3Tc2 = n(),
+    s3Tc3 = n(),
+    s3POut = n()
+  const s4H2 = n(),
+    s4P1 = n(),
+    s4Li1 = n(),
+    s4Li2 = n(),
+    s4Li3 = n(),
+    s4Li4 = n(),
+    s4Li5 = n(),
+    s4Li6 = n(),
+    s4Li7 = n()
+  const s5H2 = n(),
+    s5P1 = n(),
+    s5HEnc = n(),
+    s5Enc1 = n(),
+    s5Enc2 = n(),
+    s5Enc3 = n(),
+    s5HAcc = n(),
+    s5Acc1 = n(),
+    s5Acc2 = n(),
+    s5Acc3 = n(),
+    s5Acc4 = n(),
+    s5HInf = n(),
+    s5Inf1 = n(),
+    s5Inf2 = n(),
+    s5Inf3 = n(),
+    s5Inf4 = n(),
+    s5HOrg = n(),
+    s5Org1 = n(),
+    s5Org2 = n(),
+    s5Org3 = n()
+  const s6H2 = n(),
+    s6P1 = n(),
+    s6Tc1 = n(),
+    s6Tc2 = n(),
+    s6Tc3 = n(),
+    s6R1c1 = n(),
+    s6R1c2 = n(),
+    s6R1c3 = n(),
+    s6R2c1 = n(),
+    s6R2c2 = n(),
+    s6R2c3 = n(),
+    s6R3c1 = n(),
+    s6R3c2 = n(),
+    s6R3c3 = n(),
+    s6R4c1 = n(),
+    s6R4c2 = n(),
+    s6R4c3 = n(),
+    s6R5c1 = n(),
+    s6R5c2 = n(),
+    s6R5c3 = n(),
+    s6R6c1 = n(),
+    s6R6c2 = n(),
+    s6R6c3 = n(),
+    s6R7c1 = n(),
+    s6R7c2 = n(),
+    s6R7c3 = n(),
+    s6POut = n()
+  const s7H2 = n(),
+    s7P1 = n(),
+    s7Li1S = n(),
+    s7Li1T = n(),
+    s7Li2S = n(),
+    s7Li2T = n(),
+    s7Li3S = n(),
+    s7Li3T = n(),
+    s7Li4S = n(),
+    s7Li4T = n(),
+    s7POut = n()
+  const s8H2 = n(),
+    s8P1 = n(),
+    s8L1Pre = n(),
+    s8L1S = n(),
+    s8L1Post = n(),
+    s8L2 = n(),
+    s8L3 = n(),
+    s8L4 = n()
+  const s9H2 = n(),
+    s9P1 = n(),
+    s9P2 = n(),
+    s9L1S = n(),
+    s9L1T = n(),
+    s9L2S = n(),
+    s9L2T = n(),
+    s9L3S = n(),
+    s9L3T = n()
+  const s10H2 = n(),
+    s10P1 = n(),
+    s10P2 = n()
+  const s11H2 = n(),
+    s11P1 = n(),
+    s11Li1 = n(),
+    s11Li2 = n(),
+    s11Li3 = n(),
+    s11Li4 = n(),
+    s11Li5 = n(),
+    s11Li6 = n(),
+    s11P2Pre = n(),
+    s11P2Post = n()
+  const s12H2 = n(),
+    s12P1 = n(),
+    s12Li1S = n(),
+    s12Li2S = n()
+
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{h1}</h1>
@@ -23,437 +305,270 @@ export default async function DataProcessingPage() {
       <div className="mt-8 prose dark:prose-invert max-w-none space-y-8">
         {/* 1. Introduction */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">1. Introduction</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            This page provides information for schools, multi-academy trusts, and other educational
-            institutions (&quot;Schools&quot;) about how The English Hub processes personal data
-            when providing its GCSE English revision and learning platform services. It is intended
-            to support Schools in meeting their accountability obligations under the UK General Data
-            Protection Regulation (UK GDPR) and the Data Protection Act 2018.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s1H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s1P1}</p>
           <p className="text-muted-foreground leading-relaxed mt-3">
-            Where a School subscribes to The English Hub for use by its students and staff, the
-            School acts as the <strong className="text-foreground">data controller</strong> and The
-            English Hub acts as the <strong className="text-foreground">data processor</strong>,
-            processing personal data on behalf of and under the instructions of the School. This
-            relationship is governed by a Data Processing Agreement (DPA) that can be executed
-            between the School and The English Hub.
+            {s1P2Pre}
+            <strong className="text-foreground">{s1P2Ctrl}</strong>
+            {s1P2Mid}
+            <strong className="text-foreground">{s1P2Proc}</strong>
+            {s1P2Post}
           </p>
         </section>
 
         {/* 2. Data Controller and Data Processor */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            2. Data Controller and Data Processor Relationship
-          </h2>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s2H2}</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Under UK GDPR, the <strong className="text-foreground">data controller</strong>{' '}
-            determines the purposes and means of processing personal data. When a School procures
-            The English Hub for its students, the School is the data controller because it decides
-            why and how student data is processed through the platform.
+            {s2P1Pre}
+            <strong className="text-foreground">{s2P1Strong}</strong>
+            {s2P1Post}
           </p>
           <p className="text-muted-foreground leading-relaxed mt-3">
-            The English Hub acts as the <strong className="text-foreground">data processor</strong>,
-            processing personal data solely for the purpose of delivering the educational platform
-            services as instructed by the School. We do not use School-provided personal data for
-            our own purposes, such as marketing or profiling, beyond what is necessary to operate
-            the platform.
+            {s2P2Pre}
+            <strong className="text-foreground">{s2P2Strong}</strong>
+            {s2P2Post}
           </p>
-          <p className="text-muted-foreground leading-relaxed mt-3">
-            As data controller, the School retains responsibility for ensuring that an appropriate
-            lawful basis exists for processing (typically the legitimate interest of providing
-            education, or where applicable, consent), that students and parents/guardians are
-            informed via the School&apos;s own privacy notice, and that data subject rights requests
-            are handled in accordance with UK GDPR.
-          </p>
+          <p className="text-muted-foreground leading-relaxed mt-3">{s2P3}</p>
         </section>
 
         {/* 3. Categories of Personal Data Processed */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            3. Categories of Personal Data Processed
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            When a School uses The English Hub, the following categories of personal data may be
-            processed:
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s3H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s3P1}</p>
 
-          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">Student Data</h3>
+          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s3HStu}</h3>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
-            <li>Full name and display name</li>
-            <li>Email address (school-issued or personal, as provided by the School)</li>
-            <li>
-              Learning progress and performance data (quiz scores, lesson completion, revision
-              streaks)
-            </li>
-            <li>Essay and written response submissions</li>
-            <li>AI-generated feedback on submitted work</li>
-            <li>Course enrolment and subject selections</li>
-            <li>Session and login activity (timestamps, device type, browser)</li>
+            <li>{s3St1}</li>
+            <li>{s3St2}</li>
+            <li>{s3St3}</li>
+            <li>{s3St4}</li>
+            <li>{s3St5}</li>
+            <li>{s3St6}</li>
+            <li>{s3St7}</li>
           </ul>
 
-          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">Teacher and Staff Data</h3>
+          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s3HTc}</h3>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
-            <li>Full name and email address</li>
-            <li>Role and administrative permissions within the School&apos;s account</li>
-            <li>Account activity logs</li>
+            <li>{s3Tc1}</li>
+            <li>{s3Tc2}</li>
+            <li>{s3Tc3}</li>
           </ul>
 
-          <p className="text-muted-foreground leading-relaxed mt-3">
-            We do not knowingly process special category data (e.g. health data, ethnicity, or
-            religious beliefs). If any such data is inadvertently included in essay submissions, it
-            is not extracted, categorised, or used for any purpose beyond generating feedback on the
-            written work.
-          </p>
+          <p className="text-muted-foreground leading-relaxed mt-3">{s3POut}</p>
         </section>
 
-        {/* 4. Purpose and Lawful Basis */}
+        {/* 4. Purpose */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            4. Purpose of Processing
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            Personal data is processed solely to provide the educational platform services agreed
-            between the School and The English Hub. This includes:
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s4H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s4P1}</p>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
-            <li>Authenticating students and staff and managing account access</li>
-            <li>Delivering GCSE English revision content, quizzes, and mock exams</li>
-            <li>Providing AI-powered essay marking and feedback using large language models</li>
-            <li>
-              Tracking learning progress to enable students and teachers to monitor performance
-            </li>
-            <li>Generating reports and analytics for the School&apos;s own educational use</li>
-            <li>Providing technical support and resolving platform issues</li>
-            <li>
-              Processing payments for School subscriptions (billing data is handled by Stripe and is
-              not stored on our servers)
-            </li>
+            <li>{s4Li1}</li>
+            <li>{s4Li2}</li>
+            <li>{s4Li3}</li>
+            <li>{s4Li4}</li>
+            <li>{s4Li5}</li>
+            <li>{s4Li6}</li>
+            <li>{s4Li7}</li>
           </ul>
         </section>
 
-        {/* 5. Technical and Organisational Security Measures */}
+        {/* 5. Security */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            5. Technical and Organisational Security Measures
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            The English Hub implements appropriate technical and organisational measures to protect
-            personal data against unauthorised access, loss, destruction, or alteration, in
-            accordance with Article 32 of the UK GDPR. These measures include:
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s5H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s5P1}</p>
 
-          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">Encryption</h3>
+          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s5HEnc}</h3>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
-            <li>
-              All data in transit is encrypted using TLS 1.2 or higher (HTTPS enforced across all
-              endpoints)
-            </li>
-            <li>
-              Data at rest is encrypted using AES-256 encryption via our database provider
-              (Supabase/PostgreSQL)
-            </li>
-            <li>Passwords are hashed using bcrypt and are never stored in plain text</li>
+            <li>{s5Enc1}</li>
+            <li>{s5Enc2}</li>
+            <li>{s5Enc3}</li>
           </ul>
 
-          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">
-            Access Control and Authentication
-          </h3>
+          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s5HAcc}</h3>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
-            <li>
-              Row Level Security (RLS) policies are enforced at the database level via Supabase,
-              ensuring that users can only access data they are authorised to view
-            </li>
-            <li>
-              Authentication is managed through Supabase Auth with support for email/password and
-              OAuth providers
-            </li>
-            <li>
-              Role-based access control separates student, teacher, and administrator permissions
-            </li>
-            <li>
-              API endpoints are protected with authenticated session tokens and server-side
-              validation
-            </li>
+            <li>{s5Acc1}</li>
+            <li>{s5Acc2}</li>
+            <li>{s5Acc3}</li>
+            <li>{s5Acc4}</li>
           </ul>
 
-          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">
-            Infrastructure and Monitoring
-          </h3>
+          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s5HInf}</h3>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
-            <li>
-              The platform is hosted on Vercel&apos;s edge network with automatic DDoS protection
-              and global CDN
-            </li>
-            <li>
-              Error monitoring and alerting is provided by Sentry, enabling rapid identification and
-              resolution of issues
-            </li>
-            <li>
-              Regular dependency updates and vulnerability scanning are performed as part of our
-              development process
-            </li>
-            <li>Access to production systems is restricted to authorised personnel only</li>
+            <li>{s5Inf1}</li>
+            <li>{s5Inf2}</li>
+            <li>{s5Inf3}</li>
+            <li>{s5Inf4}</li>
           </ul>
 
-          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">Organisational Measures</h3>
+          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">{s5HOrg}</h3>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
-            <li>
-              Staff with access to personal data are trained on data protection responsibilities
-            </li>
-            <li>
-              We maintain internal data processing records in accordance with Article 30 of the UK
-              GDPR
-            </li>
-            <li>
-              Incident response procedures are in place for identifying, reporting, and managing
-              data breaches
-            </li>
+            <li>{s5Org1}</li>
+            <li>{s5Org2}</li>
+            <li>{s5Org3}</li>
           </ul>
         </section>
 
         {/* 6. Sub-Processors */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">6. Sub-Processors</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            The English Hub engages the following third-party sub-processors to deliver its
-            services. Each sub-processor has been assessed for adequate data protection standards.
-            Schools will be notified of any material changes to this list.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s6H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s6P1}</p>
 
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-sm text-muted-foreground border border-border rounded-lg">
               <thead>
                 <tr className="border-b border-border bg-muted/30">
-                  <th className="px-4 py-3 text-left font-semibold text-foreground">
-                    Sub-Processor
-                  </th>
-                  <th className="px-4 py-3 text-left font-semibold text-foreground">Purpose</th>
-                  <th className="px-4 py-3 text-left font-semibold text-foreground">
-                    Data Location
-                  </th>
+                  <th className="px-4 py-3 text-left font-semibold text-foreground">{s6Tc1}</th>
+                  <th className="px-4 py-3 text-left font-semibold text-foreground">{s6Tc2}</th>
+                  <th className="px-4 py-3 text-left font-semibold text-foreground">{s6Tc3}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b border-border">
-                  <td className="px-4 py-3 font-medium text-foreground">Supabase</td>
-                  <td className="px-4 py-3">Database hosting, authentication, and file storage</td>
-                  <td className="px-4 py-3">EU (Frankfurt, Germany)</td>
+                  <td className="px-4 py-3 font-medium text-foreground">{s6R1c1}</td>
+                  <td className="px-4 py-3">{s6R1c2}</td>
+                  <td className="px-4 py-3">{s6R1c3}</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="px-4 py-3 font-medium text-foreground">Stripe</td>
-                  <td className="px-4 py-3">Payment processing for School subscriptions</td>
-                  <td className="px-4 py-3">EU/US</td>
+                  <td className="px-4 py-3 font-medium text-foreground">{s6R2c1}</td>
+                  <td className="px-4 py-3">{s6R2c2}</td>
+                  <td className="px-4 py-3">{s6R2c3}</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="px-4 py-3 font-medium text-foreground">Anthropic (Claude AI)</td>
-                  <td className="px-4 py-3">AI-powered essay marking and feedback generation</td>
-                  <td className="px-4 py-3">US</td>
+                  <td className="px-4 py-3 font-medium text-foreground">{s6R3c1}</td>
+                  <td className="px-4 py-3">{s6R3c2}</td>
+                  <td className="px-4 py-3">{s6R3c3}</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="px-4 py-3 font-medium text-foreground">Vercel</td>
-                  <td className="px-4 py-3">Application hosting, edge functions, and CDN</td>
-                  <td className="px-4 py-3">Global (edge network)</td>
+                  <td className="px-4 py-3 font-medium text-foreground">{s6R4c1}</td>
+                  <td className="px-4 py-3">{s6R4c2}</td>
+                  <td className="px-4 py-3">{s6R4c3}</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="px-4 py-3 font-medium text-foreground">Sentry</td>
-                  <td className="px-4 py-3">Error monitoring and performance tracking</td>
-                  <td className="px-4 py-3">US</td>
+                  <td className="px-4 py-3 font-medium text-foreground">{s6R5c1}</td>
+                  <td className="px-4 py-3">{s6R5c2}</td>
+                  <td className="px-4 py-3">{s6R5c3}</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="px-4 py-3 font-medium text-foreground">Resend</td>
-                  <td className="px-4 py-3">
-                    Transactional email delivery (contact form confirmations, trial notifications)
-                  </td>
-                  <td className="px-4 py-3">US</td>
+                  <td className="px-4 py-3 font-medium text-foreground">{s6R6c1}</td>
+                  <td className="px-4 py-3">{s6R6c2}</td>
+                  <td className="px-4 py-3">{s6R6c3}</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-foreground">Microsoft Azure</td>
-                  <td className="px-4 py-3">Backend API hosting and data processing</td>
-                  <td className="px-4 py-3">UK (UK South)</td>
+                  <td className="px-4 py-3 font-medium text-foreground">{s6R7c1}</td>
+                  <td className="px-4 py-3">{s6R7c2}</td>
+                  <td className="px-4 py-3">{s6R7c3}</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p className="text-muted-foreground leading-relaxed mt-3">
-            Essay content submitted to Anthropic&apos;s Claude API for marking is processed under
-            Anthropic&apos;s commercial API terms, which state that input data is not used to train
-            their models. We do not send student names or email addresses to the AI model — only the
-            essay text and marking criteria.
-          </p>
+          <p className="text-muted-foreground leading-relaxed mt-3">{s6POut}</p>
         </section>
 
-        {/* 7. Data Retention and Deletion */}
+        {/* 7. Retention */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            7. Data Retention and Deletion
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            Personal data processed on behalf of a School is retained only for as long as necessary
-            to provide the agreed services:
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s7H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s7P1}</p>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
-              <strong className="text-foreground">During the subscription:</strong> Student and
-              staff data is retained for the duration of the School&apos;s active subscription to
-              enable platform functionality.
+              <strong className="text-foreground">{s7Li1S}</strong>
+              {s7Li1T}
             </li>
             <li>
-              <strong className="text-foreground">On account deletion:</strong> When a School or
-              individual account is deleted, all associated personal data is permanently removed
-              from our live systems within 30 days. Backups containing the data are purged within 90
-              days.
+              <strong className="text-foreground">{s7Li2S}</strong>
+              {s7Li2T}
             </li>
             <li>
-              <strong className="text-foreground">On request:</strong> Schools may request deletion
-              of specific student data at any time. We will action such requests within 30 days of
-              receipt.
+              <strong className="text-foreground">{s7Li3S}</strong>
+              {s7Li3T}
             </li>
             <li>
-              <strong className="text-foreground">End of contract:</strong> Upon termination of the
-              School&apos;s subscription, we will delete or return all personal data in accordance
-              with the School&apos;s instructions, unless retention is required by law.
+              <strong className="text-foreground">{s7Li4S}</strong>
+              {s7Li4T}
             </li>
           </ul>
-          <p className="text-muted-foreground leading-relaxed mt-3">
-            Schools may request an export of their data in a commonly used, machine-readable format
-            (CSV or JSON) prior to account closure.
-          </p>
+          <p className="text-muted-foreground leading-relaxed mt-3">{s7POut}</p>
         </section>
 
-        {/* 8. Data Breach Notification */}
+        {/* 8. Breach */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            8. Data Breach Notification
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            In the event of a personal data breach that affects data processed on behalf of a
-            School, The English Hub will:
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s8H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s8P1}</p>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
-              Notify the affected School without undue delay, and in any event within{' '}
-              <strong className="text-foreground">72 hours</strong> of becoming aware of the breach,
-              as required by Article 33 of the UK GDPR
+              {s8L1Pre}
+              <strong className="text-foreground">{s8L1S}</strong>
+              {s8L1Post}
             </li>
-            <li>
-              Provide details of the nature of the breach, the categories and approximate number of
-              data subjects affected, the likely consequences, and the measures taken or proposed to
-              address the breach
-            </li>
-            <li>
-              Cooperate with the School in its obligations to notify the Information
-              Commissioner&apos;s Office (ICO) and affected data subjects where required
-            </li>
-            <li>
-              Document all breaches, including those that do not require notification, and make
-              records available to the School on request
-            </li>
+            <li>{s8L2}</li>
+            <li>{s8L3}</li>
+            <li>{s8L4}</li>
           </ul>
         </section>
 
-        {/* 9. International Data Transfers */}
+        {/* 9. International transfers */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            9. International Data Transfers
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            Our primary database infrastructure is hosted within the European Union (Supabase,
-            Frankfurt). However, some sub-processors operate in the United States, which means
-            personal data may be transferred outside the UK and EEA.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mt-3">
-            Where personal data is transferred to countries outside the UK that have not received an
-            adequacy decision from the UK Secretary of State, we ensure appropriate safeguards are
-            in place. These include:
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s9H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s9P1}</p>
+          <p className="text-muted-foreground leading-relaxed mt-3">{s9P2}</p>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
-              <strong className="text-foreground">
-                International Data Transfer Agreement (IDTA) / Standard Contractual Clauses (SCCs):
-              </strong>{' '}
-              Our sub-processors that transfer data to the US operate under the UK IDTA or EU
-              Standard Contractual Clauses as adopted under UK GDPR, supplemented by additional
-              technical measures where appropriate.
+              <strong className="text-foreground">{s9L1S}</strong>
+              {s9L1T}
             </li>
             <li>
-              <strong className="text-foreground">EU-US Data Privacy Framework:</strong> Where
-              applicable, sub-processors are certified under the EU-US Data Privacy Framework, which
-              has been recognised as providing adequate protection by the European Commission.
+              <strong className="text-foreground">{s9L2S}</strong>
+              {s9L2T}
             </li>
             <li>
-              <strong className="text-foreground">Transfer Impact Assessments:</strong> We conduct
-              assessments to evaluate the legal framework of the recipient country and the
-              effectiveness of supplementary measures.
+              <strong className="text-foreground">{s9L3S}</strong>
+              {s9L3T}
             </li>
           </ul>
         </section>
 
         {/* 10. Data Subject Rights */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            10. Data Subject Rights
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            Where The English Hub processes data as a data processor on behalf of a School, data
-            subject access requests (DSARs) and other rights requests should be directed to the
-            School as the data controller. The English Hub will assist the School in responding to
-            such requests in accordance with our obligations under Article 28 of the UK GDPR.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mt-3">
-            We provide Schools with the technical capability to access, rectify, export, and delete
-            student data through the platform&apos;s administrative dashboard. For requests that
-            cannot be fulfilled through the dashboard, Schools may contact us directly and we will
-            respond within a reasonable timeframe.
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s10H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s10P1}</p>
+          <p className="text-muted-foreground leading-relaxed mt-3">{s10P2}</p>
         </section>
 
-        {/* 11. Requesting a Formal DPA */}
+        {/* 11. Requesting a DPA */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            11. Requesting a Formal Data Processing Agreement
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            Schools and educational institutions that require a formal Data Processing Agreement
-            (DPA) or Data Processing Addendum can request one by contacting our partnerships team.
-            Our DPA is compliant with Article 28 of the UK GDPR and covers all the matters outlined
-            on this page, including detailed provisions on:
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s11H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s11P1}</p>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
-            <li>Subject matter, duration, nature, and purpose of processing</li>
-            <li>Obligations and rights of the data controller</li>
-            <li>Technical and organisational security measures (Annex)</li>
-            <li>Sub-processor management and notification procedures</li>
-            <li>Audit rights and compliance verification</li>
-            <li>Data return and deletion on termination</li>
+            <li>{s11Li1}</li>
+            <li>{s11Li2}</li>
+            <li>{s11Li3}</li>
+            <li>{s11Li4}</li>
+            <li>{s11Li5}</li>
+            <li>{s11Li6}</li>
           </ul>
           <p className="text-muted-foreground leading-relaxed mt-3">
-            To request a DPA or discuss data protection arrangements, please contact us at{' '}
+            {s11P2Pre}
             <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">
               info@Upskillenergy.com
             </a>
-            . We are also happy to review and sign your School&apos;s own DPA template if preferred.
+            {s11P2Post}
           </p>
         </section>
 
         {/* 12. Contact */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">12. Contact Us</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            If you have any questions about how we process data on behalf of your School, or if you
-            need further information to complete a Data Protection Impact Assessment (DPIA) or
-            vendor security review, please get in touch:
-          </p>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{s12H2}</h2>
+          <p className="text-muted-foreground leading-relaxed">{s12P1}</p>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
-              <strong className="text-foreground">School partnerships and DPA requests:</strong>{' '}
+              <strong className="text-foreground">{s12Li1S}</strong>
               <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">
                 info@Upskillenergy.com
               </a>
             </li>
             <li>
-              <strong className="text-foreground">Data protection enquiries:</strong>{' '}
+              <strong className="text-foreground">{s12Li2S}</strong>
               <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">
                 info@Upskillenergy.com
               </a>

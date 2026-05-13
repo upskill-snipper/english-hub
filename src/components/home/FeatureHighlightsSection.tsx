@@ -10,58 +10,60 @@ import {
   Clock,
   Sparkles,
 } from 'lucide-react'
-
-const features = [
-  {
-    icon: GraduationCap,
-    title: 'Expert-Written Content',
-    desc: 'Written by English teachers and markers who know exactly what gets top marks.',
-  },
-  {
-    icon: Award,
-    title: 'Certificate on Completion',
-    desc: 'Earn a verifiable digital certificate for every course you complete. Share it with pride.',
-  },
-  {
-    icon: Star,
-    title: 'Built for Top Grades',
-    desc: 'Clear explanations, a structured approach, and exam-focused content aligned to the AO rubric.',
-  },
-  {
-    icon: BookOpen,
-    title: 'Full Course Library',
-    desc: 'From KS3 Reading to GCSE and IGCSE Literature — courses for every stage of your English journey, with new content added regularly.',
-  },
-  {
-    icon: Sparkles,
-    title: 'AI-Powered Feedback',
-    desc: 'Submit essays and get instant, expert-level feedback with grade estimates, strengths, and improvements.',
-  },
-  {
-    icon: Clock,
-    title: 'Study at Your Own Pace',
-    desc: 'All content is available 24/7. Study at your own pace, on your own schedule, with no deadlines.',
-  },
-  {
-    icon: Smartphone,
-    title: 'Works on Any Device',
-    desc: 'Desktop, tablet, or mobile — your courses sync seamlessly so you can study anywhere.',
-  },
-  {
-    icon: Shield,
-    title: 'Cancel Anytime',
-    desc: 'No lock-in contracts. Start with a 7-day free trial (card required) and cancel anytime — no questions asked.',
-  },
-]
+import { useT } from '@/lib/i18n/use-t'
 
 export default function FeatureHighlightsSection() {
+  const t = useT()
+  const features = [
+    {
+      icon: GraduationCap,
+      title: t('home.features.expert_title'),
+      desc: t('home.features.expert_desc'),
+    },
+    {
+      icon: Award,
+      title: t('home.features.cert_title'),
+      desc: t('home.features.cert_desc'),
+    },
+    {
+      icon: Star,
+      title: t('home.features.top_title'),
+      desc: t('home.features.top_desc'),
+    },
+    {
+      icon: BookOpen,
+      title: t('home.features.library_title'),
+      desc: t('home.features.library_desc'),
+    },
+    {
+      icon: Sparkles,
+      title: t('home.features.ai_title'),
+      desc: t('home.features.ai_desc'),
+    },
+    {
+      icon: Clock,
+      title: t('home.features.pace_title'),
+      desc: t('home.features.pace_desc'),
+    },
+    {
+      icon: Smartphone,
+      title: t('home.features.device_title'),
+      desc: t('home.features.device_desc'),
+    },
+    {
+      icon: Shield,
+      title: t('home.features.cancel_title'),
+      desc: t('home.features.cancel_desc'),
+    },
+  ]
+
   return (
     <section className="py-24 sm:py-32 bg-card/20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-foreground">Why Students Love Us</h2>
+          <h2 className="text-foreground">{t('home.features.h2')}</h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-            Everything you need to go from uncertain to unstoppable.
+            {t('home.features.lead')}
           </p>
         </div>
 

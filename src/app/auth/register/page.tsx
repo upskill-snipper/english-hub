@@ -29,6 +29,27 @@ import { getChildDefaults, getChildProfileDefaults } from '@/lib/privacy/child-d
 import { trackEvent } from '@/lib/gtag'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
+
+// Year-group whitelist values stay stable (used by Supabase upsert at the
+// `year_group` column). Only display labels route through t().
+const YEAR_GROUP_LABEL_KEYS: Record<(typeof YEAR_GROUPS)[number], string> = {
+  'Year 7': 'year_group.year_7',
+  'Year 8': 'year_group.year_8',
+  'Year 9': 'year_group.year_9',
+  'Year 10': 'year_group.year_10',
+  'Year 11': 'year_group.year_11',
+  'Year 12': 'year_group.year_12',
+  'Year 13': 'year_group.year_13',
+  Adult: 'year_group.adult',
+  Other: 'year_group.other',
+}
+const EXAM_BOARD_LABEL_KEYS: Record<(typeof EXAM_BOARDS)[number], string> = {
+  AQA: 'exam_board.aqa',
+  Edexcel: 'exam_board.edexcel',
+  OCR: 'exam_board.ocr',
+  WJEC: 'exam_board.wjec',
+  Other: 'exam_board.other',
+}
 import {
   Card,
   CardContent,
@@ -758,7 +779,7 @@ function RegisterForm() {
                       <option value="">{t('form.select_year_group')}</option>
                       {YEAR_GROUPS.map((yg) => (
                         <option key={yg} value={yg}>
-                          {yg}
+                          {t(YEAR_GROUP_LABEL_KEYS[yg])}
                         </option>
                       ))}
                     </select>
@@ -779,7 +800,7 @@ function RegisterForm() {
                     <option value="">{t('form.select_exam_board')}</option>
                     {EXAM_BOARDS.map((board) => (
                       <option key={board} value={board}>
-                        {board}
+                        {t(EXAM_BOARD_LABEL_KEYS[board])}
                       </option>
                     ))}
                   </select>
