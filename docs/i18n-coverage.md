@@ -188,6 +188,68 @@ commit. All three commits TS clean. No regressions.
   (analysis pages, parent dashboard, teacher dashboard, demo school chrome,
   legal AR banner components), binary M/F gender policy reversed,
   +~70 dictionary keys.
+- `a41fe4b9` — WAVE I: 25 parallel agents, 116 files wired. Admin tree,
+  affiliate hub + programme + portal, A-Level pages, account billing/
+  export/delete, 9 analytics widgets, billing + brand components,
+  model-answers/profile/recommendations, games + revision components,
+  press + about/verified-content, anthology preview + Google sign-in,
+  toolkit + DownloadMenu + EmptyState, school students/teachers/classes
+  (list + detail), 11 school analytics/assignments/lessons/calendar/
+  notifications pages, /help + /faqs + /cookie-policy full body + /refund
+  - /terms (legal MSA), reading-assessment + certificate + safeguarding,
+    flashcards/games/poetry/anthology top-level, vocabulary + revision +
+    study + dashboard greetings, school onboarding + teacher library +
+    demo/teacher, /settings, analysis chrome gap fix (132 missing keys),
+    layout shells + disclaimers + feature gates. Dictionary +1,850 keys.
+- `af68d1e8` — WAVE J: 30 parallel agents, 73 files wired + KS3 lesson
+  content AR translation. /igcse + /igcse/cambridge + /igcse/edexcel +
+  /igcse/edexcel-lang hubs (chrome only; 156 nested study pages fall
+  back to EN body), /learn course player + final assessment (with
+  gender-branched .f keys), Trustpilot + SEO + UI components, school/
+  lessons hub, 14 error.tsx + 3 not-found.tsx + app/loading.tsx, deep
+  analysis slug pages, PoetryHubAQAClient + anthology hub. PLUS:
+  - Y7 T1 weeks 2-11: 206 lesson content fields translated
+  - Y8 T1 weeks 2-11: 206 lesson content fields translated
+  - Y9 T1 weeks 2-11: 190 lesson content fields translated
+    Dictionary +~2,000 keys (now ~5,500 entries total). Side dictionaries
+    for school_comp._ and toolkit._ namespaces added and wired through
+    lookup() fallback.
+
+## Final scope statement (post wave J)
+
+- **~340 source files** route user-visible strings through `t()`/`useT()`.
+- **~5,500 dictionary entries**, every one EN + Khaleeji-AR (with legal
+  long-form sections in formal MSA per regulator convention).
+- **600+ KS3 lesson content fields** translated across Y7/Y8/Y9 Term 1
+  weeks 2-11 — actual instructional content, not just chrome.
+- **Gender policy verified**: explicit binary M/F. "ابنك أو بنتك" for
+  parent-child references; .f-suffix keys for feminine verb endings
+  where Profile.gender is supplied (currently only /learn/assessment
+  uses this).
+- **Khaleeji verified**: required vocab present, Levantine absent
+  across all new entries.
+- **Brand convention verified**: The English Hub, GCSE, IGCSE, KS3,
+  AO1-AO6, all exam-board names (AQA/Edexcel/OCR/WJEC/Eduqas/Cambridge),
+  paper codes (8700/8702/9ET0/9EN0/0500/0990/4ET1/4EA1/H472/H470/7712/
+  7702), regulator codes (PDPPL/GDPR/ICO/NFER/YARC/NSPCC/CEOP/GOV.UK),
+  and brand asset names (PowerPoint/Word/Stripe/CSV/SSO/PayPal/BACS/
+  Trustpilot/Resend/Supabase/Cloudflare) all kept Latin per Gulf
+  convention.
+
+## Still pending (genuine gaps)
+
+- **Long-tail content**: blog post MDX bodies (43 posts need `.ar.mdx`
+  siblings), per-board KS3 lesson content for Y7/Y8/Y9 Terms 2 & 3
+  (~50 lessons per term per year = 900 more fields), individual
+  vocabulary list entries, per-poem analysis bodies, set-text guide
+  long-form prose.
+- **Pages that don't exist**: /docs, /careers, /jobs, /partners,
+  /investors, /community, /events, /webinars, /podcasts, /newsletter,
+  /book, /trial, /upgrade (top-level), /checkout (top-level). Agents
+  flagged these as "no work needed".
+- **AI model output**: the model itself still answers in English when
+  asked AR essay-feedback. Prompt-side workstream — separate concern
+  from the chrome dictionary.
 
 ## Wave H surfaces (29 files, commit a203c080)
 

@@ -36,6 +36,7 @@
 // grade_predict.*, essay_check.*) — see ./dictionary-toolkit.ts for
 // the full set. Consulted by lookup() as a fallback after DICTIONARY.
 import { TOOLKIT_DICTIONARY } from './dictionary-toolkit'
+import { SCHOOL_COMP_DICTIONARY } from './dictionary-school-comp'
 
 export type Locale = 'en' | 'ar'
 
@@ -12184,7 +12185,7 @@ export function lookup(key: string, locale: Locale): string {
   // on collision — by convention toolkit keys live under the
   // tools.*, quiz_build.*, lesson_build.*, grade_predict.*, essay_check.*
   // namespaces so collisions shouldn't arise.
-  const entry = DICTIONARY[key] ?? TOOLKIT_DICTIONARY[key]
+  const entry = DICTIONARY[key] ?? TOOLKIT_DICTIONARY[key] ?? SCHOOL_COMP_DICTIONARY[key]
   if (!entry) return `[[${key}]]`
   if (locale === 'ar' && entry.ar) return entry.ar
   return entry.en
