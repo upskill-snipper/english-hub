@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 import {
   LayoutDashboard,
   Users,
@@ -151,6 +152,7 @@ function computeStudentMetrics(students: typeof DEMO_STUDENTS) {
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function DemoSchoolDashboardPage() {
+  const t = useT()
   const [selectedClass, setSelectedClass] = useState<string>('all')
   const [selectedYear, setSelectedYear] = useState<string>('all')
 
@@ -345,12 +347,14 @@ export default function DemoSchoolDashboardPage() {
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-teal-700/80">
-                Avg Working At
+                {t('demo_school.dash.avg_working_at')}
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
-                Grade {metrics.avgWorkingAt}
+                {t('analytics.grade.label')} {metrics.avgWorkingAt}
               </p>
-              <p className="mt-1 text-xs text-muted-foreground">Current attainment level</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {t('demo_school.dash.current_attainment')}
+              </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-700/15">
               <BookOpen className="h-5 w-5 text-teal-700" />
@@ -363,10 +367,10 @@ export default function DemoSchoolDashboardPage() {
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-teal-700/80">
-                Avg Predicted
+                {t('demo_school.dash.avg_predicted')}
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
-                Grade {metrics.avgPredicted}
+                {t('analytics.grade.label')} {metrics.avgPredicted}
               </p>
               <p
                 className={`mt-1 flex items-center gap-1 text-xs ${metrics.avgPredicted >= metrics.avgWorkingAt ? 'text-teal-700' : 'text-red-400'}`}
@@ -377,8 +381,8 @@ export default function DemoSchoolDashboardPage() {
                   <TrendingDown className="h-3 w-3" />
                 )}
                 {metrics.avgPredicted >= metrics.avgWorkingAt
-                  ? 'Positive trajectory'
-                  : 'Declining trajectory'}
+                  ? t('demo_school.dash.positive_trajectory')
+                  : t('demo_school.dash.declining_trajectory')}
               </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-700/15">
@@ -392,13 +396,14 @@ export default function DemoSchoolDashboardPage() {
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-teal-700/80">
-                On Track
+                {t('demo_school.dash.on_track')}
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
                 {metrics.onTrackPct}%
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
-                {metrics.onTrackCount} of {metrics.total} students
+                {t('demo_school.dash.of_students').replace('{n}', String(metrics.total))} (
+                {metrics.onTrackCount})
               </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-800/10">
@@ -412,12 +417,14 @@ export default function DemoSchoolDashboardPage() {
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-clay-600/80">
-                Avg Target
+                {t('demo_school.dash.avg_target')}
               </p>
               <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
-                Grade {metrics.avgTarget}
+                {t('analytics.grade.label')} {metrics.avgTarget}
               </p>
-              <p className="mt-1 text-xs text-muted-foreground">Aspirational target</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {t('demo_school.dash.aspirational_target')}
+              </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/15">
               <GraduationCap className="h-5 w-5 text-clay-600" />
@@ -434,7 +441,7 @@ export default function DemoSchoolDashboardPage() {
           <Card className="border-border bg-card/60">
             <CardHeader className="pb-2">
               <CardTitle className="text-base font-semibold text-foreground">
-                Working At Grade Distribution
+                {t('demo_school.dash.working_at_distribution')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -687,7 +694,7 @@ export default function DemoSchoolDashboardPage() {
           <Card className="border-border bg-card/60">
             <CardHeader className="pb-3">
               <CardTitle className="text-base font-semibold text-foreground">
-                Quick Actions
+                {t('demo_school.dash.quick_actions')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -744,7 +751,7 @@ export default function DemoSchoolDashboardPage() {
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
                 <TrendingUp className="h-4 w-4 text-teal-700" />
-                Top Improving Students
+                {t('demo_school.dash.top_improving_students')}
               </CardTitle>
             </CardHeader>
             <CardContent>

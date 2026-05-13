@@ -45,6 +45,7 @@ export const SCREENSHOT_FIX_DICTIONARY: Dictionary = {
   'demo_school.dash.of_students': { en: 'of {n} students', ar: 'من {n} طالب' },
   'demo_school.dash.avg_predicted': { en: 'AVG PREDICTED', ar: 'متوسط المتوقع' },
   'demo_school.dash.positive_trajectory': { en: 'Positive trajectory', ar: 'اتجاه إيجابي' },
+  'demo_school.dash.declining_trajectory': { en: 'Declining trajectory', ar: 'اتجاه متراجع' },
   'demo_school.dash.avg_working_at': { en: 'AVG WORKING AT', ar: 'متوسط الدرجة الحالية' },
   'demo_school.dash.current_attainment': {
     en: 'Current attainment level',
