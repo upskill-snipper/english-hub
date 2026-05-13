@@ -1,3 +1,7 @@
+'use client'
+
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
@@ -17,6 +21,13 @@ export const metadata: Metadata = {
 /* ─── Page component ─────────────────────────────────────────── */
 
 export default function WritingSkillsPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -90,14 +101,16 @@ export default function WritingSkillsPage() {
       {/* ═══════════════════════════════════════════════════════════ */}
       <section id="articles" className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Article Writing</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            {tr(`Article Writing`)}
+          </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Articles are one of the most common forms in Paper 2. They appear in newspapers,
             magazines, or online publications and can inform, persuade, argue, or entertain.
           </p>
 
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
-            <h3 className="text-lg font-bold text-primary">Essential Conventions</h3>
+            <h3 className="text-lg font-bold text-primary">{tr(`Essential Conventions`)}</h3>
             <div className="mt-4 space-y-4">
               <div className="flex items-start gap-3">
                 <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
@@ -119,7 +132,7 @@ export default function WritingSkillsPage() {
                   2
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">Subheading (optional)</p>
+                  <p className="font-semibold text-foreground">{tr(`Subheading (optional)`)}</p>
                   <p className="text-sm text-muted-foreground">
                     A secondary line that expands on the headline or gives context.
                   </p>
@@ -134,7 +147,7 @@ export default function WritingSkillsPage() {
                   3
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">Byline (optional)</p>
+                  <p className="font-semibold text-foreground">{tr(`Byline (optional)`)}</p>
                   <p className="text-sm text-muted-foreground">
                     &ldquo;By [Your Name]&rdquo; &mdash; shows awareness of form conventions.
                   </p>
@@ -145,7 +158,7 @@ export default function WritingSkillsPage() {
                   4
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">Engaging Opening</p>
+                  <p className="font-semibold text-foreground">{tr(`Engaging Opening`)}</p>
                   <p className="text-sm text-muted-foreground">
                     Hook the reader immediately. Use a rhetorical question, a shocking statistic, a
                     bold statement, or an anecdote.
@@ -157,7 +170,7 @@ export default function WritingSkillsPage() {
                   5
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">Structured Body</p>
+                  <p className="font-semibold text-foreground">{tr(`Structured Body`)}</p>
                   <p className="text-sm text-muted-foreground">
                     Clear paragraphs with topic sentences. Use discourse markers
                     (&ldquo;Furthermore,&rdquo; &ldquo;However,&rdquo; &ldquo;On the other
@@ -171,7 +184,7 @@ export default function WritingSkillsPage() {
                   6
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">Strong Conclusion</p>
+                  <p className="font-semibold text-foreground">{tr(`Strong Conclusion`)}</p>
                   <p className="text-sm text-muted-foreground">
                     Return to your main argument. End with a call to action, a thought-provoking
                     question, or a memorable final line.
@@ -182,12 +195,12 @@ export default function WritingSkillsPage() {
           </div>
 
           <div className="mt-6 rounded-xl border-l-4 border-accent bg-primary/10 p-6">
-            <h3 className="font-bold text-primary">Example Article Opening</h3>
+            <h3 className="font-bold text-primary">{tr(`Example Article Opening`)}</h3>
             <div className="mt-3 text-sm text-foreground leading-relaxed space-y-2">
               <p className="font-bold text-lg text-foreground">
                 The Library Is Dying &mdash; And Nobody Seems to Care
               </p>
-              <p className="text-xs italic text-muted-foreground">By J. Carter</p>
+              <p className="text-xs italic text-muted-foreground">{tr(`By J. Carter`)}</p>
               <p>
                 Picture this. It is a Tuesday afternoon and the local library &mdash; the one your
                 grandmother used, the one where you read your first chapter book, the one with the
@@ -209,7 +222,7 @@ export default function WritingSkillsPage() {
       {/* ═══════════════════════════════════════════════════════════ */}
       <section id="letters" className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Letter Writing</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{tr(`Letter Writing`)}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Letters can be formal or informal depending on the audience. In exams, you are usually
             writing a formal letter to someone in authority (headteacher, MP, newspaper editor,
@@ -219,7 +232,7 @@ export default function WritingSkillsPage() {
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {/* Formal letter */}
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-              <h3 className="text-lg font-bold text-primary">Formal Letter Format</h3>
+              <h3 className="text-lg font-bold text-primary">{tr(`Formal Letter Format`)}</h3>
               <div className="mt-4 rounded-lg bg-muted p-4 text-sm text-foreground font-mono leading-relaxed space-y-2">
                 <p>[Your address]</p>
                 <p>[Town/City]</p>
@@ -227,13 +240,13 @@ export default function WritingSkillsPage() {
                 <p className="mt-2">[Date]</p>
                 <p className="mt-2">[Recipient&rsquo;s name/title]</p>
                 <p>[Their address]</p>
-                <p className="mt-2">Dear Mr/Mrs/Ms [Surname],</p>
+                <p className="mt-2">{tr(`Dear Mr/Mrs/Ms [Surname],`)}</p>
                 <p className="mt-2 italic text-muted-foreground">[Body paragraphs]</p>
-                <p className="mt-2">Yours sincerely,</p>
+                <p className="mt-2">{tr(`Yours sincerely,`)}</p>
                 <p>[Your name]</p>
               </div>
               <div className="mt-4 rounded-lg bg-primary/10 p-4">
-                <p className="text-sm font-medium text-primary">Key rules:</p>
+                <p className="text-sm font-medium text-primary">{tr(`Key rules:`)}</p>
                 <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                   <li>
                     &bull; If you know the name: &ldquo;Dear Mr Smith&rdquo; &rarr; &ldquo;Yours
@@ -253,19 +266,19 @@ export default function WritingSkillsPage() {
 
             {/* Informal letter */}
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-              <h3 className="text-lg font-bold text-accent">Informal Letter Format</h3>
+              <h3 className="text-lg font-bold text-accent">{tr(`Informal Letter Format`)}</h3>
               <div className="mt-4 rounded-lg bg-muted p-4 text-sm text-foreground font-mono leading-relaxed space-y-2">
                 <p>[Your address]</p>
                 <p>[Date]</p>
-                <p className="mt-2">Dear [First name],</p>
+                <p className="mt-2">{tr(`Dear [First name],`)}</p>
                 <p className="mt-2 italic text-muted-foreground">
                   [Body paragraphs &mdash; personal, warm tone]
                 </p>
-                <p className="mt-2">Best wishes / Love / See you soon,</p>
+                <p className="mt-2">{tr(`Best wishes / Love / See you soon,`)}</p>
                 <p>[Your name]</p>
               </div>
               <div className="mt-4 rounded-lg bg-primary/10 p-4">
-                <p className="text-sm font-medium text-primary">Key rules:</p>
+                <p className="text-sm font-medium text-primary">{tr(`Key rules:`)}</p>
                 <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; Conversational but still well-written</li>
                   <li>
@@ -280,9 +293,9 @@ export default function WritingSkillsPage() {
           </div>
 
           <div className="mt-6 rounded-xl border-l-4 border-primary bg-primary/10 p-6">
-            <h3 className="font-bold text-primary">Example Formal Letter Opening</h3>
+            <h3 className="font-bold text-primary">{tr(`Example Formal Letter Opening`)}</h3>
             <div className="mt-3 text-sm text-foreground leading-relaxed space-y-2">
-              <p>Dear Ms Thornton,</p>
+              <p>{tr(`Dear Ms Thornton,`)}</p>
               <p>
                 I am writing to express my deep concern regarding the proposed closure of Greenfield
                 Community Centre. As a resident of Greenfield for over fifteen years and a regular
@@ -306,7 +319,7 @@ export default function WritingSkillsPage() {
       {/* ═══════════════════════════════════════════════════════════ */}
       <section id="speeches" className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Speech Writing</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{tr(`Speech Writing`)}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             A speech is written to be <strong>heard</strong>, not read. It needs to sound natural,
             use rhetorical devices, and engage the audience directly. Think of it as a conversation
@@ -359,7 +372,7 @@ export default function WritingSkillsPage() {
           </div>
 
           <div className="mt-6 rounded-xl border-l-4 border-accent bg-primary/10 p-6">
-            <h3 className="font-bold text-primary">Example Speech Opening</h3>
+            <h3 className="font-bold text-primary">{tr(`Example Speech Opening`)}</h3>
             <div className="mt-3 text-sm text-foreground leading-relaxed space-y-2">
               <p className="italic text-muted-foreground">
                 Task: Write a speech to your year group arguing that social media does more harm
@@ -377,7 +390,7 @@ export default function WritingSkillsPage() {
                 have ever been. We have a thousand followers and no one to talk to. We curate our
                 lives for strangers and forget to live them for ourselves.
               </p>
-              <p>And I think it is time we talked about why.</p>
+              <p>{tr(`And I think it is time we talked about why.`)}</p>
             </div>
           </div>
         </div>
@@ -388,7 +401,7 @@ export default function WritingSkillsPage() {
       {/* ═══════════════════════════════════════════════════════════ */}
       <section id="reviews" className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Review Writing</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{tr(`Review Writing`)}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Reviews evaluate something &mdash; a film, book, restaurant, product, or event &mdash;
             and offer a personal opinion supported by evidence. The key is a{' '}
@@ -396,7 +409,7 @@ export default function WritingSkillsPage() {
           </p>
 
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
-            <h3 className="text-lg font-bold text-primary">Review Structure</h3>
+            <h3 className="text-lg font-bold text-primary">{tr(`Review Structure`)}</h3>
             <div className="mt-4 space-y-4">
               <div className="flex items-start gap-3">
                 <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
@@ -428,7 +441,7 @@ export default function WritingSkillsPage() {
                   3
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">Detailed Evaluation</p>
+                  <p className="font-semibold text-foreground">{tr(`Detailed Evaluation`)}</p>
                   <p className="text-sm text-muted-foreground">
                     Discuss specific aspects (e.g., atmosphere, service, acting, plot, design). Use
                     descriptive language and give your opinion on each. Include positives and
@@ -441,7 +454,7 @@ export default function WritingSkillsPage() {
                   4
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">Personal Voice</p>
+                  <p className="font-semibold text-foreground">{tr(`Personal Voice`)}</p>
                   <p className="text-sm text-muted-foreground">
                     Use first person (&ldquo;I&rdquo;), share your personal experience, and let your
                     personality come through. Humour, wit, and vivid descriptions are welcome.
@@ -453,7 +466,9 @@ export default function WritingSkillsPage() {
                   5
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">Conclusion &amp; Recommendation</p>
+                  <p className="font-semibold text-foreground">
+                    {tr(`Conclusion &amp; Recommendation`)}
+                  </p>
                   <p className="text-sm text-muted-foreground">
                     Summarise your overall verdict. Would you recommend it? To whom? A star rating
                     is optional but shows form awareness.
@@ -469,7 +484,7 @@ export default function WritingSkillsPage() {
               <p className="font-bold text-lg text-foreground">
                 More Style Than Substance: A Review of The Jade Dragon
               </p>
-              <p className="text-xs text-muted-foreground">Rating: 3/5</p>
+              <p className="text-xs text-muted-foreground">{tr(`Rating: 3/5`)}</p>
               <p>
                 The Jade Dragon wants you to be impressed, and for the first five minutes, you are.
                 The restaurant is stunning &mdash; all exposed brick, hanging lanterns, and the kind
@@ -478,7 +493,7 @@ export default function WritingSkillsPage() {
                 each dish. &ldquo;Pan-seared sea bass with a whisper of yuzu and micro herbs foraged
                 from the Kentish hillside.&rdquo; It sounds extraordinary.
               </p>
-              <p>The problem is, it tastes ordinary.</p>
+              <p>{tr(`The problem is, it tastes ordinary.`)}</p>
             </div>
           </div>
         </div>
@@ -489,7 +504,7 @@ export default function WritingSkillsPage() {
       {/* ═══════════════════════════════════════════════════════════ */}
       <section id="essays" className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Essay Writing</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{tr(`Essay Writing`)}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             An essay presents a structured argument or discussion on a given topic. Unlike articles,
             essays do not need headlines or bylines &mdash; they are structured around a clear
@@ -497,7 +512,7 @@ export default function WritingSkillsPage() {
           </p>
 
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
-            <h3 className="text-lg font-bold text-primary">Essay Structure</h3>
+            <h3 className="text-lg font-bold text-primary">{tr(`Essay Structure`)}</h3>
             <div className="mt-4 space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <p className="font-semibold text-foreground">Introduction</p>
@@ -508,7 +523,7 @@ export default function WritingSkillsPage() {
                 </ul>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <p className="font-semibold text-foreground">Body Paragraphs (3-4)</p>
+                <p className="font-semibold text-foreground">{tr(`Body Paragraphs (3-4)`)}</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; Each paragraph = one main point supporting your thesis</li>
                   <li>
@@ -533,7 +548,7 @@ export default function WritingSkillsPage() {
           </div>
 
           <div className="mt-6 rounded-xl border-l-4 border-accent bg-primary/10 p-6">
-            <h3 className="font-bold text-primary">Example Essay Opening</h3>
+            <h3 className="font-bold text-primary">{tr(`Example Essay Opening`)}</h3>
             <div className="mt-3 text-sm text-foreground leading-relaxed space-y-2">
               <p className="italic text-muted-foreground">
                 Task: &ldquo;School uniform stifles individuality.&rdquo; Write an essay in which
@@ -562,7 +577,9 @@ export default function WritingSkillsPage() {
       {/* ═══════════════════════════════════════════════════════════ */}
       <section id="universal-tips" className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Universal Writing Tips</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            {tr(`Universal Writing Tips`)}
+          </h2>
           <p className="mt-3 text-muted-foreground">
             These principles apply to every form of writing for real purposes and will help you hit
             the top marking-guide levels.
@@ -593,7 +610,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-              <h3 className="font-bold text-accent">Vocabulary (Technical accuracy)</h3>
+              <h3 className="font-bold text-accent">{tr(`Vocabulary (Technical accuracy)`)}</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -617,7 +634,9 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-              <h3 className="font-bold text-success">Sentence Variety (Technical accuracy)</h3>
+              <h3 className="font-bold text-success">
+                {tr(`Sentence Variety (Technical accuracy)`)}
+              </h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-success" />
@@ -641,7 +660,9 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-              <h3 className="font-bold text-warn">Punctuation Variety (Technical accuracy)</h3>
+              <h3 className="font-bold text-warn">
+                {tr(`Punctuation Variety (Technical accuracy)`)}
+              </h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />

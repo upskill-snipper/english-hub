@@ -1,3 +1,7 @@
+'use client'
+
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
@@ -14,6 +18,13 @@ export const metadata: Metadata = {
 /* ─── Page component ─────────────────────────────────────────── */
 
 export default function OCRPoetryPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
@@ -51,21 +62,21 @@ export default function OCRPoetryPage() {
               <strong> another poem of your choice</strong> from the same cluster.
             </p>
             <p>
-              The OCR anthology, <em>Towards a World Unknown</em> (J352, ISBN 9781398384408), is
-              divided into four thematic clusters of 15 poems each:
+              The OCR anthology, <em>{tr(`Towards a World Unknown`)}</em> (J352, ISBN
+              9781398384408), is divided into four thematic clusters of 15 poems each:
             </p>
             <ul className="ml-6 list-disc space-y-1">
               <li>
-                <strong>Love and Relationships</strong>
+                <strong>{tr(`Love and Relationships`)}</strong>
               </li>
               <li>
                 <strong>Conflict</strong>
               </li>
               <li>
-                <strong>Youth and Age</strong>
+                <strong>{tr(`Youth and Age`)}</strong>
               </li>
               <li>
-                <strong>Power and the Natural World</strong>
+                <strong>{tr(`Power and the Natural World`)}</strong>
               </li>
             </ul>
             <p>
@@ -96,7 +107,7 @@ export default function OCRPoetryPage() {
                 attitude towards the subject?
               </p>
               <p className="mt-2 text-sm">
-                <strong>Questions to ask:</strong> What is the situation in the poem? Who is
+                <strong>{tr(`Questions to ask:`)}</strong> What is the situation in the poem? Who is
                 speaking? To whom? What is their attitude? Does the meaning change by the end?
               </p>
             </div>
@@ -110,9 +121,9 @@ export default function OCRPoetryPage() {
                 defiant? Does the tone shift during the poem? If so, where and why?
               </p>
               <p className="mt-2 text-sm">
-                <strong>Key vocabulary for tone:</strong> wistful, sardonic, melancholic, reverent,
-                indignant, resigned, contemplative, anguished, jubilant, detached, intimate,
-                confrontational.
+                <strong>{tr(`Key vocabulary for tone:`)}</strong> wistful, sardonic, melancholic,
+                reverent, indignant, resigned, contemplative, anguished, jubilant, detached,
+                intimate, confrontational.
               </p>
             </div>
 
@@ -129,24 +140,25 @@ export default function OCRPoetryPage() {
                   recurring images (motifs)? What do they symbolise?
                 </li>
                 <li>
-                  <strong>Figurative language</strong> &mdash; Similes, metaphors, personification,
-                  symbolism. What is being compared to what? What does this reveal?
+                  <strong>{tr(`Figurative language`)}</strong> &mdash; Similes, metaphors,
+                  personification, symbolism. What is being compared to what? What does this reveal?
                 </li>
                 <li>
-                  <strong>Word choice (diction)</strong> &mdash; Zoom into individual words. What
-                  are their connotations? Why has the poet chosen this word over an alternative?
+                  <strong>{tr(`Word choice (diction)`)}</strong> &mdash; Zoom into individual words.
+                  What are their connotations? Why has the poet chosen this word over an
+                  alternative?
                 </li>
                 <li>
-                  <strong>Semantic fields</strong> &mdash; Are there groups of related words? What
-                  atmosphere or theme do they reinforce?
+                  <strong>{tr(`Semantic fields`)}</strong> &mdash; Are there groups of related
+                  words? What atmosphere or theme do they reinforce?
                 </li>
                 <li>
-                  <strong>Sound devices</strong> &mdash; Alliteration, sibilance, assonance,
+                  <strong>{tr(`Sound devices`)}</strong> &mdash; Alliteration, sibilance, assonance,
                   onomatopoeia. What auditory effect do they create?
                 </li>
                 <li>
-                  <strong>Sensory language</strong> &mdash; Appeals to sight, sound, touch, taste,
-                  and smell.
+                  <strong>{tr(`Sensory language`)}</strong> &mdash; Appeals to sight, sound, touch,
+                  taste, and smell.
                 </li>
               </ul>
             </div>
@@ -165,16 +177,16 @@ export default function OCRPoetryPage() {
                   relate to the content?
                 </li>
                 <li>
-                  <strong>Stanza structure</strong> &mdash; How many stanzas? Are they regular or
-                  irregular? What does the structure suggest?
+                  <strong>{tr(`Stanza structure`)}</strong> &mdash; How many stanzas? Are they
+                  regular or irregular? What does the structure suggest?
                 </li>
                 <li>
-                  <strong>Rhyme scheme</strong> &mdash; Is there a regular rhyme scheme? Half-rhyme?
-                  No rhyme? What effect does this create?
+                  <strong>{tr(`Rhyme scheme`)}</strong> &mdash; Is there a regular rhyme scheme?
+                  Half-rhyme? No rhyme? What effect does this create?
                 </li>
                 <li>
-                  <strong>Metre and rhythm</strong> &mdash; Is there a regular beat? Where does it
-                  break? What effect does this have?
+                  <strong>{tr(`Metre and rhythm`)}</strong> &mdash; Is there a regular beat? Where
+                  does it break? What effect does this have?
                 </li>
                 <li>
                   <strong>Enjambment</strong> &mdash; Lines that run on without a pause. Creates
@@ -189,8 +201,8 @@ export default function OCRPoetryPage() {
                   or direction. Common in sonnets.
                 </li>
                 <li>
-                  <strong>Opening and ending</strong> &mdash; How does the poem begin and end? Is
-                  there a circular structure? A dramatic shift? A resolution or lack of one?
+                  <strong>{tr(`Opening and ending`)}</strong> &mdash; How does the poem begin and
+                  end? Is there a circular structure? A dramatic shift? A resolution or lack of one?
                 </li>
               </ul>
             </div>
@@ -203,11 +215,11 @@ export default function OCRPoetryPage() {
                 Consider:
               </p>
               <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
-                <li>When was the poem written? What was happening historically?</li>
-                <li>What was the poet&rsquo;s background and experiences?</li>
-                <li>What literary movement or tradition does the poem belong to?</li>
-                <li>How might the original audience have responded?</li>
-                <li>How might a modern reader respond differently?</li>
+                <li>{tr(`When was the poem written? What was happening historically?`)}</li>
+                <li>{tr(`What was the poet&rsquo;s background and experiences?`)}</li>
+                <li>{tr(`What literary movement or tradition does the poem belong to?`)}</li>
+                <li>{tr(`How might the original audience have responded?`)}</li>
+                <li>{tr(`How might a modern reader respond differently?`)}</li>
               </ul>
             </div>
           </div>
@@ -255,18 +267,18 @@ export default function OCRPoetryPage() {
 
             {/* What to compare */}
             <div>
-              <h3 className="text-xl font-semibold text-foreground">What to Compare</h3>
-              <p className="mt-2">Compare across multiple layers &mdash; not just theme:</p>
+              <h3 className="text-xl font-semibold text-foreground">{tr(`What to Compare`)}</h3>
+              <p className="mt-2">{tr(`Compare across multiple layers &mdash; not just theme:`)}</p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
-                  <p className="font-semibold text-primary">Themes and Ideas</p>
+                  <p className="font-semibold text-primary">{tr(`Themes and Ideas`)}</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     How do both poets explore the same theme? Do they agree or disagree? Do they
                     focus on different aspects?
                   </p>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
-                  <p className="font-semibold text-primary">Language and Imagery</p>
+                  <p className="font-semibold text-primary">{tr(`Language and Imagery`)}</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     What types of imagery do the poets use? Are there contrasting semantic fields?
                     Different tones?
@@ -280,14 +292,14 @@ export default function OCRPoetryPage() {
                   </p>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
-                  <p className="font-semibold text-primary">Voice and Perspective</p>
+                  <p className="font-semibold text-primary">{tr(`Voice and Perspective`)}</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Who is speaking in each poem? First person vs third person? Personal vs
                     universal? How does perspective shape meaning?
                   </p>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
-                  <p className="font-semibold text-primary">Tone and Mood</p>
+                  <p className="font-semibold text-primary">{tr(`Tone and Mood`)}</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     What is the emotional atmosphere of each poem? Where do the tones differ? How
                     does tone relate to meaning?
@@ -305,7 +317,9 @@ export default function OCRPoetryPage() {
 
             {/* Comparative language */}
             <div>
-              <h3 className="text-xl font-semibold text-foreground">Comparative Language to Use</h3>
+              <h3 className="text-xl font-semibold text-foreground">
+                {tr(`Comparative Language to Use`)}
+              </h3>
               <p className="mt-2">
                 Use these phrases to integrate comparison throughout your response:
               </p>
@@ -354,7 +368,9 @@ export default function OCRPoetryPage() {
 
             <div className="space-y-4">
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="text-lg font-semibold text-foreground">Power and Powerlessness</h3>
+                <h3 className="text-lg font-semibold text-foreground">
+                  {tr(`Power and Powerlessness`)}
+                </h3>
                 <p className="mt-2 text-sm">
                   Who holds power in the poem? Is it political, personal, natural, or emotional
                   power? How is powerlessness conveyed? Is power gained, lost, abused, or resisted?
@@ -363,7 +379,7 @@ export default function OCRPoetryPage() {
               </div>
 
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="text-lg font-semibold text-foreground">Loss and Memory</h3>
+                <h3 className="text-lg font-semibold text-foreground">{tr(`Loss and Memory`)}</h3>
                 <p className="mt-2 text-sm">
                   Many poems explore the pain of loss &mdash; of a person, a place, innocence, or
                   identity. How does the poet use memory as a way of coping with loss? Is the tone
@@ -373,7 +389,9 @@ export default function OCRPoetryPage() {
               </div>
 
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="text-lg font-semibold text-foreground">Identity and Belonging</h3>
+                <h3 className="text-lg font-semibold text-foreground">
+                  {tr(`Identity and Belonging`)}
+                </h3>
                 <p className="mt-2 text-sm">
                   How does the speaker define themselves? Is their identity stable or in crisis? Do
                   they feel they belong, or are they an outsider? Consider the role of culture,
@@ -394,7 +412,9 @@ export default function OCRPoetryPage() {
               </div>
 
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="text-lg font-semibold text-foreground">Conflict and Violence</h3>
+                <h3 className="text-lg font-semibold text-foreground">
+                  {tr(`Conflict and Violence`)}
+                </h3>
                 <p className="mt-2 text-sm">
                   Is the conflict physical (war, violence) or emotional (internal struggle,
                   relationship conflict)? How does the poet present the consequences of conflict? Is
@@ -404,7 +424,7 @@ export default function OCRPoetryPage() {
               </div>
 
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="text-lg font-semibold text-foreground">Time and Change</h3>
+                <h3 className="text-lg font-semibold text-foreground">{tr(`Time and Change`)}</h3>
                 <p className="mt-2 text-sm">
                   How does the poet represent the passage of time? Is time comforting or
                   threatening? Does the poem look back at the past, contemplate the present, or
@@ -424,7 +444,7 @@ export default function OCRPoetryPage() {
             Analytical Paragraph Framework
           </h2>
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
-            <p>Each paragraph in your comparison essay should follow this structure:</p>
+            <p>{tr(`Each paragraph in your comparison essay should follow this structure:`)}</p>
             <div className="mt-3 space-y-3">
               <div className="rounded-lg border border-border bg-card p-4 shadow-md">
                 <p className="font-semibold text-primary">1. Comparative topic sentence</p>
@@ -488,7 +508,7 @@ export default function OCRPoetryPage() {
           <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">Create Comparison Grids</h3>
+                <h3 className="font-semibold text-foreground">{tr(`Create Comparison Grids`)}</h3>
                 <p className="mt-2 text-sm">
                   Make a grid with themes along the top and poems down the side. Tick which poems
                   relate to which themes. This helps you see at a glance which poems pair well
@@ -496,7 +516,7 @@ export default function OCRPoetryPage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">Memorise Key Quotations</h3>
+                <h3 className="font-semibold text-foreground">{tr(`Memorise Key Quotations`)}</h3>
                 <p className="mt-2 text-sm">
                   For each poem, learn 3&ndash;5 short quotations (2&ndash;4 words each). Short
                   quotations are easier to remember and embed in your analysis. Write them on
@@ -504,7 +524,9 @@ export default function OCRPoetryPage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">Practise Timed Comparisons</h3>
+                <h3 className="font-semibold text-foreground">
+                  {tr(`Practise Timed Comparisons`)}
+                </h3>
                 <p className="mt-2 text-sm">
                   Give yourself 40 minutes (the exam allocation) to write a comparison. Practise
                   with different poem pairings and different themes. The more you practise, the
@@ -512,7 +534,7 @@ export default function OCRPoetryPage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">Annotate Every Poem</h3>
+                <h3 className="font-semibold text-foreground">{tr(`Annotate Every Poem`)}</h3>
                 <p className="mt-2 text-sm">
                   Create detailed annotations for every poem in your cluster. Note key techniques,
                   word-level analysis, structural features, and contextual links. These annotations
@@ -520,7 +542,7 @@ export default function OCRPoetryPage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">Know the Poems Inside Out</h3>
+                <h3 className="font-semibold text-foreground">{tr(`Know the Poems Inside Out`)}</h3>
                 <p className="mt-2 text-sm">
                   You need to write about your chosen poem from memory. Read each poem so many times
                   that you can summarise its content, structure, and key techniques without looking
@@ -549,38 +571,39 @@ export default function OCRPoetryPage() {
           <div className="mt-4">
             <ul className="ml-6 list-disc space-y-3 text-muted-foreground leading-relaxed">
               <li>
-                <strong>Writing about each poem separately</strong> &mdash; This is the most common
-                mistake. You must compare throughout, not write about Poem A then Poem B.
+                <strong>{tr(`Writing about each poem separately`)}</strong> &mdash; This is the most
+                common mistake. You must compare throughout, not write about Poem A then Poem B.
               </li>
               <li>
-                <strong>Only comparing themes</strong> &mdash; Saying &ldquo;both poems are about
-                love&rdquo; is not enough. You must compare
+                <strong>{tr(`Only comparing themes`)}</strong> &mdash; Saying &ldquo;both poems are
+                about love&rdquo; is not enough. You must compare
                 <em> methods</em>: how the poets use language, form, and structure to explore the
                 theme.
               </li>
               <li>
-                <strong>Forgetting to analyse the printed poem</strong> &mdash; The printed poem is
-                right in front of you. Use it. Quote directly and analyse word-level choices.
+                <strong>{tr(`Forgetting to analyse the printed poem`)}</strong> &mdash; The printed
+                poem is right in front of you. Use it. Quote directly and analyse word-level
+                choices.
               </li>
               <li>
-                <strong>Not knowing quotations from memory</strong> &mdash; Your chosen poem is not
-                printed. If you can&rsquo;t quote from it, your analysis will be thin and
+                <strong>{tr(`Not knowing quotations from memory`)}</strong> &mdash; Your chosen poem
+                is not printed. If you can&rsquo;t quote from it, your analysis will be thin and
                 unsubstantiated.
               </li>
               <li>
-                <strong>Ignoring form and structure</strong> &mdash; Many students focus only on
-                language. Analysing form, stanza structure, rhyme, enjambment, and caesura
+                <strong>{tr(`Ignoring form and structure`)}</strong> &mdash; Many students focus
+                only on language. Analysing form, stanza structure, rhyme, enjambment, and caesura
                 demonstrates sophisticated understanding.
               </li>
               <li>
-                <strong>Context as an afterthought</strong> &mdash; Do not bolt context onto the end
-                of a paragraph. Embed it naturally within your analysis of the poet&rsquo;s choices
-                and their effects.
+                <strong>{tr(`Context as an afterthought`)}</strong> &mdash; Do not bolt context onto
+                the end of a paragraph. Embed it naturally within your analysis of the poet&rsquo;s
+                choices and their effects.
               </li>
               <li>
-                <strong>Superficial analysis</strong> &mdash; Don&rsquo;t just name a technique.
-                Zoom into individual words, explore their connotations, and explain precisely what
-                effect they create for the reader.
+                <strong>{tr(`Superficial analysis`)}</strong> &mdash; Don&rsquo;t just name a
+                technique. Zoom into individual words, explore their connotations, and explain
+                precisely what effect they create for the reader.
               </li>
             </ul>
           </div>

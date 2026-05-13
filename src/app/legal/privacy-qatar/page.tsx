@@ -1,3 +1,7 @@
+'use client'
+
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -7,9 +11,16 @@ export const metadata: Metadata = {
 }
 
 export default function QatarPrivacyNoticePage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
-      <h1 className="text-3xl font-bold mb-2">Privacy Notice — State of Qatar</h1>
+      <h1 className="text-3xl font-bold mb-2">{tr(`Privacy Notice — State of Qatar`)}</h1>
       <p className="text-muted-foreground text-sm mb-6">
         Effective Date: 22 March 2026
         <br />
@@ -28,9 +39,9 @@ export default function QatarPrivacyNoticePage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">1. Identity of the Data Controller</h2>
         <p>
-          <strong>The English Hub</strong> is a trading name of{' '}
-          <strong>Upskill Energy Limited</strong>, a company incorporated in the United Kingdom.
-          Upskill Energy Limited is the data controller responsible for the collection and
+          <strong>{tr(`The English Hub`)}</strong> is a trading name of{' '}
+          <strong>{tr(`Upskill Energy Limited`)}</strong>, a company incorporated in the United
+          Kingdom. Upskill Energy Limited is the data controller responsible for the collection and
           processing of your personal data through The English Hub platform and services offered
           within the State of Qatar.
         </p>
@@ -59,30 +70,34 @@ export default function QatarPrivacyNoticePage() {
 
         <h3 className="text-lg font-semibold mb-2">Account and Identity Data</h3>
         <ul className="list-disc pl-6 space-y-1 mb-3">
-          <li>Full name, email address, telephone number</li>
-          <li>Date of birth, nationality, and country of residence</li>
-          <li>Qatar ID number (where required for service delivery)</li>
+          <li>{tr(`Full name, email address, telephone number`)}</li>
+          <li>{tr(`Date of birth, nationality, and country of residence`)}</li>
+          <li>{tr(`Qatar ID number (where required for service delivery)`)}</li>
         </ul>
 
-        <h3 className="text-lg font-semibold mb-2">Educational and Professional Data</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`Educational and Professional Data`)}</h3>
         <ul className="list-disc pl-6 space-y-1 mb-3">
-          <li>English language proficiency level</li>
-          <li>Learning history, course enrolments, and progress records</li>
-          <li>Assessment scores and certification records</li>
+          <li>{tr(`English language proficiency level`)}</li>
+          <li>{tr(`Learning history, course enrolments, and progress records`)}</li>
+          <li>{tr(`Assessment scores and certification records`)}</li>
         </ul>
 
-        <h3 className="text-lg font-semibold mb-2">Technical and Usage Data</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`Technical and Usage Data`)}</h3>
         <ul className="list-disc pl-6 space-y-1 mb-3">
-          <li>IP address, device identifiers, browser type</li>
-          <li>Platform usage data (pages visited, session duration)</li>
+          <li>{tr(`IP address, device identifiers, browser type`)}</li>
+          <li>{tr(`Platform usage data (pages visited, session duration)`)}</li>
           <li>Cookies and similar technologies (subject to consent)</li>
         </ul>
 
-        <h3 className="text-lg font-semibold mb-2">AI Interaction Data</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`AI Interaction Data`)}</h3>
         <ul className="list-disc pl-6 space-y-1 mb-3">
-          <li>Inputs provided to AI-powered learning tools</li>
-          <li>AI-generated feedback and assessment outputs</li>
-          <li>Voice recordings (where speech assessment is enabled, with explicit consent only)</li>
+          <li>{tr(`Inputs provided to AI-powered learning tools`)}</li>
+          <li>{tr(`AI-generated feedback and assessment outputs`)}</li>
+          <li>
+            {tr(
+              `Voice recordings (where speech assessment is enabled, with explicit consent only)`,
+            )}
+          </li>
         </ul>
 
         <p className="text-sm">
@@ -120,33 +135,39 @@ export default function QatarPrivacyNoticePage() {
             </thead>
             <tbody>
               <tr>
-                <td className="px-4 py-2 border-b font-medium">Service Delivery</td>
+                <td className="px-4 py-2 border-b font-medium">{tr(`Service Delivery`)}</td>
                 <td className="px-4 py-2 border-b">
                   Account management and educational content delivery
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b font-medium">Personalised Learning</td>
+                <td className="px-4 py-2 border-b font-medium">{tr(`Personalised Learning`)}</td>
                 <td className="px-4 py-2 border-b">
                   Tailored content, recommendations, and assessments
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b font-medium">AI-Powered Tools</td>
+                <td className="px-4 py-2 border-b font-medium">{tr(`AI-Powered Tools`)}</td>
                 <td className="px-4 py-2 border-b">
                   AI-driven feedback, pronunciation assessment, adaptive learning
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b font-medium">Assessment & Certification</td>
-                <td className="px-4 py-2 border-b">Tests, certificates, and academic records</td>
+                <td className="px-4 py-2 border-b font-medium">
+                  {tr(`Assessment & Certification`)}
+                </td>
+                <td className="px-4 py-2 border-b">
+                  {tr(`Tests, certificates, and academic records`)}
+                </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b font-medium">Payment Processing</td>
-                <td className="px-4 py-2 border-b">Payments, invoices, and billing management</td>
+                <td className="px-4 py-2 border-b font-medium">{tr(`Payment Processing`)}</td>
+                <td className="px-4 py-2 border-b">
+                  {tr(`Payments, invoices, and billing management`)}
+                </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b font-medium">Legal Compliance</td>
+                <td className="px-4 py-2 border-b font-medium">{tr(`Legal Compliance`)}</td>
                 <td className="px-4 py-2 border-b">
                   Compliance with applicable laws in Qatar and the UK
                 </td>
@@ -174,16 +195,16 @@ export default function QatarPrivacyNoticePage() {
           In accordance with the PDPPL, we require your <strong>explicit consent</strong> before
           transferring data outside Qatar.
         </p>
-        <h3 className="text-lg font-semibold mb-2">Safeguards in Place</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`Safeguards in Place`)}</h3>
         <ul className="list-disc pl-6 space-y-1">
           <li>
-            <strong>UK International Data Transfer Agreement (IDTA)</strong> providing a recognised
-            legal framework
+            <strong>{tr(`UK International Data Transfer Agreement (IDTA)`)}</strong> providing a
+            recognised legal framework
           </li>
           <li>Encryption in transit (TLS 1.2+) and at rest (AES-256)</li>
-          <li>Strict role-based access controls</li>
-          <li>Binding contractual obligations with all sub-processors</li>
-          <li>Periodic security and compliance audits</li>
+          <li>{tr(`Strict role-based access controls`)}</li>
+          <li>{tr(`Binding contractual obligations with all sub-processors`)}</li>
+          <li>{tr(`Periodic security and compliance audits`)}</li>
         </ul>
         <p className="mt-3 text-sm">
           You have the right to withhold or withdraw consent for cross-border transfer. This may
@@ -198,8 +219,12 @@ export default function QatarPrivacyNoticePage() {
           <table className="min-w-full text-sm border border-border">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-2 border-b font-semibold">Data Category</th>
-                <th className="text-left px-4 py-2 border-b font-semibold">Retention Period</th>
+                <th className="text-left px-4 py-2 border-b font-semibold">
+                  {tr(`Data Category`)}
+                </th>
+                <th className="text-left px-4 py-2 border-b font-semibold">
+                  {tr(`Retention Period`)}
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -208,11 +233,11 @@ export default function QatarPrivacyNoticePage() {
                 <td className="px-4 py-2 border-b">Account duration + 3 years</td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b">Educational records and certificates</td>
+                <td className="px-4 py-2 border-b">{tr(`Educational records and certificates`)}</td>
                 <td className="px-4 py-2 border-b">7 years after issuance</td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b">Payment and billing records</td>
+                <td className="px-4 py-2 border-b">{tr(`Payment and billing records`)}</td>
                 <td className="px-4 py-2 border-b">7 years from transaction date</td>
               </tr>
               <tr>
@@ -224,7 +249,7 @@ export default function QatarPrivacyNoticePage() {
                 <td className="px-4 py-2 border-b">12 months (anonymised thereafter)</td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b">Communication records</td>
+                <td className="px-4 py-2 border-b">{tr(`Communication records`)}</td>
                 <td className="px-4 py-2 border-b">3 years from last interaction</td>
               </tr>
             </tbody>
@@ -285,7 +310,9 @@ export default function QatarPrivacyNoticePage() {
       {/* Section 10 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">9. Data Breach Notification</h2>
-        <p className="mb-3">In the event of a personal data breach likely to affect your rights:</p>
+        <p className="mb-3">
+          {tr(`In the event of a personal data breach likely to affect your rights:`)}
+        </p>
         <ol className="list-decimal pl-6 space-y-1">
           <li>
             We will notify the <strong>NCGAA within 72 hours</strong>
@@ -305,22 +332,22 @@ export default function QatarPrivacyNoticePage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">10. Children&apos;s Data Protection</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Users under 18 are considered minors under Qatari law</li>
+          <li>{tr(`Users under 18 are considered minors under Qatari law`)}</li>
           <li>
             We do not knowingly collect data from children under 13 without verified parental
             consent
           </li>
-          <li>For users aged 13-17, we require explicit parental or guardian consent</li>
+          <li>{tr(`For users aged 13-17, we require explicit parental or guardian consent`)}</li>
           <li>
             Parents and guardians can access, review, and request deletion of their child&apos;s
             data at any time
           </li>
-          <li>No targeted advertising served to minors</li>
+          <li>{tr(`No targeted advertising served to minors`)}</li>
           <li>
             AI features used by minors are subject to additional safeguards including human
             oversight
           </li>
-          <li>No behavioural profiles of minors for commercial purposes</li>
+          <li>{tr(`No behavioural profiles of minors for commercial purposes`)}</li>
         </ul>
       </section>
 
@@ -331,49 +358,51 @@ export default function QatarPrivacyNoticePage() {
           <table className="min-w-full text-sm border border-border">
             <thead className="bg-muted">
               <tr>
-                <th className="text-left px-4 py-2 border-b font-semibold">AI Feature</th>
+                <th className="text-left px-4 py-2 border-b font-semibold">{tr(`AI Feature`)}</th>
                 <th className="text-left px-4 py-2 border-b font-semibold">Purpose</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="px-4 py-2 border-b">Adaptive Learning Engine</td>
+                <td className="px-4 py-2 border-b">{tr(`Adaptive Learning Engine`)}</td>
                 <td className="px-4 py-2 border-b">
                   Adjusts course difficulty based on performance
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b">Language Feedback Tools</td>
+                <td className="px-4 py-2 border-b">{tr(`Language Feedback Tools`)}</td>
                 <td className="px-4 py-2 border-b">
                   Real-time grammar, vocabulary, and writing corrections
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b">Speech Assessment</td>
+                <td className="px-4 py-2 border-b">{tr(`Speech Assessment`)}</td>
                 <td className="px-4 py-2 border-b">
                   Pronunciation and fluency evaluation (with consent)
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b">Progress Analytics</td>
+                <td className="px-4 py-2 border-b">{tr(`Progress Analytics`)}</td>
                 <td className="px-4 py-2 border-b">
                   Personalised learning reports and recommendations
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b">Chatbot Support</td>
-                <td className="px-4 py-2 border-b">Automated responses to common queries</td>
+                <td className="px-4 py-2 border-b">{tr(`Chatbot Support`)}</td>
+                <td className="px-4 py-2 border-b">
+                  {tr(`Automated responses to common queries`)}
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p className="mb-3">Your rights regarding AI processing:</p>
+        <p className="mb-3">{tr(`Your rights regarding AI processing:`)}</p>
         <ul className="list-disc pl-6 space-y-1">
           <li>Right to be informed when AI is processing your data</li>
-          <li>Right to request human review of any AI-generated assessment</li>
-          <li>Right to opt out of specific AI features</li>
+          <li>{tr(`Right to request human review of any AI-generated assessment`)}</li>
+          <li>{tr(`Right to opt out of specific AI features`)}</li>
           <li>Right to an explanation of AI-generated feedback</li>
-          <li>Your data is not used to train third-party AI models without consent</li>
+          <li>{tr(`Your data is not used to train third-party AI models without consent`)}</li>
         </ul>
       </section>
 
@@ -401,10 +430,12 @@ export default function QatarPrivacyNoticePage() {
             further 30 days with notice.
           </p>
         </div>
-        <p className="mb-3">If you are not satisfied, you may lodge a complaint with:</p>
+        <p className="mb-3">{tr(`If you are not satisfied, you may lodge a complaint with:`)}</p>
         <div className="bg-muted rounded-lg p-4 text-sm">
-          <p className="font-semibold">National Cyber Governance and Assurance Authority (NCGAA)</p>
-          <p>State of Qatar</p>
+          <p className="font-semibold">
+            {tr(`National Cyber Governance and Assurance Authority (NCGAA)`)}
+          </p>
+          <p>{tr(`State of Qatar`)}</p>
           <p>
             Website:{' '}
             <a href="https://www.ncsa.gov.qa" target="_blank" rel="noopener noreferrer">

@@ -1,3 +1,7 @@
+'use client'
+
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -7,11 +11,18 @@ export const metadata: Metadata = {
 }
 
 export default function CancellationPolicyPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
-      <h1 className="text-3xl font-bold mb-2">Cancellation Policy</h1>
+      <h1 className="text-3xl font-bold mb-2">{tr(`Cancellation Policy`)}</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        <strong>The English Hub</strong> — operated by Upskill Energy Limited
+        <strong>{tr(`The English Hub`)}</strong> — operated by Upskill Energy Limited
         <br />
         Last updated: 22 March 2026
       </p>
@@ -29,9 +40,9 @@ export default function CancellationPolicyPage() {
           <li>
             You have <strong>14 days</strong> to change your mind — no questions asked
           </li>
-          <li>Cancelling is easy: online or by email</li>
-          <li>If you cancel, we will refund you within 14 days</li>
-          <li>We will never make it hard for you to leave</li>
+          <li>{tr(`Cancelling is easy: online or by email`)}</li>
+          <li>{tr(`If you cancel, we will refund you within 14 days`)}</li>
+          <li>{tr(`We will never make it hard for you to leave`)}</li>
         </ul>
       </div>
 
@@ -44,7 +55,7 @@ export default function CancellationPolicyPage() {
           <strong>any reason</strong> and receive a <strong>full refund</strong>.
         </p>
 
-        <h3 className="text-lg font-semibold mb-2">What If You Want Immediate Access?</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`What If You Want Immediate Access?`)}</h3>
         <p className="mb-3">
           Because The English Hub is a digital service, we will ask for your explicit consent before
           giving you immediate access during the cooling-off period. You must actively tick a
@@ -52,14 +63,14 @@ export default function CancellationPolicyPage() {
         </p>
         <ul className="list-disc pl-6 space-y-2">
           <li>
-            <strong>If you consent and then cancel within 14 days:</strong> You will receive a
-            refund minus a proportionate charge for the days you used the service. For example, if
+            <strong>{tr(`If you consent and then cancel within 14 days:`)}</strong> You will receive
+            a refund minus a proportionate charge for the days you used the service. For example, if
             you have the Student Monthly plan at &pound;3.49 and cancel after 5 days, we deduct 5/30
             of &pound;3.49 (&pound;0.58) and refund &pound;2.91.
           </li>
           <li>
-            <strong>If you do not consent:</strong> Your access begins after the 14-day period ends.
-            Cancel within those 14 days for a full refund.
+            <strong>{tr(`If you do not consent:`)}</strong> Your access begins after the 14-day
+            period ends. Cancel within those 14 days for a full refund.
           </li>
         </ul>
       </section>
@@ -72,25 +83,31 @@ export default function CancellationPolicyPage() {
             <thead className="bg-muted">
               <tr>
                 <th className="text-left px-4 py-2 border-b font-semibold">Situation</th>
-                <th className="text-left px-4 py-2 border-b font-semibold">What you get back</th>
+                <th className="text-left px-4 py-2 border-b font-semibold">
+                  {tr(`What you get back`)}
+                </th>
                 <th className="text-left px-4 py-2 border-b font-semibold">When</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="px-4 py-2 border-b">Cancel within 14 days (no immediate access)</td>
-                <td className="px-4 py-2 border-b">Full refund</td>
-                <td className="px-4 py-2 border-b">Within 14 days of cancellation</td>
+                <td className="px-4 py-2 border-b">
+                  {tr(`Cancel within 14 days (no immediate access)`)}
+                </td>
+                <td className="px-4 py-2 border-b">{tr(`Full refund`)}</td>
+                <td className="px-4 py-2 border-b">{tr(`Within 14 days of cancellation`)}</td>
               </tr>
               <tr>
                 <td className="px-4 py-2 border-b">
                   Cancel within 14 days (with immediate access)
                 </td>
-                <td className="px-4 py-2 border-b">Refund minus pro-rata charge</td>
-                <td className="px-4 py-2 border-b">Within 14 days of cancellation</td>
+                <td className="px-4 py-2 border-b">{tr(`Refund minus pro-rata charge`)}</td>
+                <td className="px-4 py-2 border-b">{tr(`Within 14 days of cancellation`)}</td>
               </tr>
               <tr>
-                <td className="px-4 py-2 border-b">Cancel monthly subscription after 14 days</td>
+                <td className="px-4 py-2 border-b">
+                  {tr(`Cancel monthly subscription after 14 days`)}
+                </td>
                 <td className="px-4 py-2 border-b">
                   No refund; access continues until end of billing period
                 </td>
@@ -100,7 +117,7 @@ export default function CancellationPolicyPage() {
           </table>
         </div>
         <div className="bg-muted rounded-lg p-4 mt-4 text-sm">
-          <p className="font-semibold mb-1">Example: Annual pro-rata refund</p>
+          <p className="font-semibold mb-1">{tr(`Example: Annual pro-rata refund`)}</p>
           <p>
             You pay &pound;67.99 for a 12-month plan and cancel after 4 months and 10 days. You have
             used 5 months (4 complete + 1 partial). Refund for the remaining 7 months: &pound;67.99
@@ -112,20 +129,20 @@ export default function CancellationPolicyPage() {
       {/* Section 3 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">3. Renewal Reminders</h2>
-        <h3 className="text-lg font-semibold mb-2">Monthly Subscriptions</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`Monthly Subscriptions`)}</h3>
         <p className="mb-3">
           We will send a renewal reminder before every 6th payment (roughly every 6 months), at
           least <strong>7 days</strong> before the payment is taken.
         </p>
-        <h3 className="text-lg font-semibold mb-2">Annual Subscriptions</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`Annual Subscriptions`)}</h3>
         <p className="mb-3">
           We will send a renewal reminder at least <strong>30 days</strong> before the renewal date.
         </p>
-        <p>Every renewal reminder will include:</p>
+        <p>{tr(`Every renewal reminder will include:`)}</p>
         <ol className="list-decimal pl-6 space-y-1 mt-2">
-          <li>The date your next payment will be taken</li>
-          <li>The amount that will be charged</li>
-          <li>Any price changes with old and new prices clearly stated</li>
+          <li>{tr(`The date your next payment will be taken`)}</li>
+          <li>{tr(`The amount that will be charged`)}</li>
+          <li>{tr(`Any price changes with old and new prices clearly stated`)}</li>
           <li>A direct link to cancel online and our email address</li>
         </ol>
       </section>
@@ -138,23 +155,23 @@ export default function CancellationPolicyPage() {
           need to phone us or write a letter.
         </p>
 
-        <h3 className="text-lg font-semibold mb-2">Option A — Cancel Online</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`Option A — Cancel Online`)}</h3>
         <ol className="list-decimal pl-6 space-y-1 mb-4">
-          <li>Log in to your account</li>
+          <li>{tr(`Log in to your account`)}</li>
           <li>
-            Go to <strong>Account Settings</strong>
+            Go to <strong>{tr(`Account Settings`)}</strong>
           </li>
           <li>
-            Click <strong>Manage Subscription</strong>
+            Click <strong>{tr(`Manage Subscription`)}</strong>
           </li>
           <li>
-            Click <strong>Cancel Subscription</strong>
+            Click <strong>{tr(`Cancel Subscription`)}</strong>
           </li>
-          <li>Confirm cancellation</li>
-          <li>Receive confirmation email immediately</li>
+          <li>{tr(`Confirm cancellation`)}</li>
+          <li>{tr(`Receive confirmation email immediately`)}</li>
         </ol>
 
-        <h3 className="text-lg font-semibold mb-2">Option B — Cancel by Email</h3>
+        <h3 className="text-lg font-semibold mb-2">{tr(`Option B — Cancel by Email`)}</h3>
         <p className="mb-3">
           Send an email to <a href="mailto:info@Upskillenergy.com">info@Upskillenergy.com</a> with
           your full name, account email, and &quot;I want to cancel my subscription.&quot; We will
@@ -162,15 +179,15 @@ export default function CancellationPolicyPage() {
         </p>
 
         <div className="bg-success/5 border border-success/20 rounded-lg p-4 text-sm">
-          <p className="font-semibold mb-2">We will never:</p>
+          <p className="font-semibold mb-2">{tr(`We will never:`)}</p>
           <ul className="list-disc pl-6 space-y-1">
             <li>Require you to phone a premium-rate number</li>
-            <li>Ask you to navigate through multiple confusing screens</li>
+            <li>{tr(`Ask you to navigate through multiple confusing screens`)}</li>
             <li>
               Use dark patterns, persuasive language, countdown timers, or emotional tricks to
               discourage you
             </li>
-            <li>Charge you a fee for cancelling</li>
+            <li>{tr(`Charge you a fee for cancelling`)}</li>
           </ul>
         </div>
       </section>
@@ -179,10 +196,10 @@ export default function CancellationPolicyPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">5. Effect of Cancellation on Your Access</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Your access continues until the end of your current paid period</li>
-          <li>On the day your paid period ends, premium content access will stop</li>
-          <li>Any free features remain available to you</li>
-          <li>You can resubscribe at any time</li>
+          <li>{tr(`Your access continues until the end of your current paid period`)}</li>
+          <li>{tr(`On the day your paid period ends, premium content access will stop`)}</li>
+          <li>{tr(`Any free features remain available to you`)}</li>
+          <li>{tr(`You can resubscribe at any time`)}</li>
         </ul>
       </section>
 
@@ -226,7 +243,7 @@ export default function CancellationPolicyPage() {
           <p>
             Email: <a href="mailto:info@Upskillenergy.com">info@Upskillenergy.com</a>
           </p>
-          <p>Operated by: Upskill Energy Limited</p>
+          <p>{tr(`Operated by: Upskill Energy Limited`)}</p>
         </div>
       </section>
 
@@ -242,7 +259,7 @@ export default function CancellationPolicyPage() {
 
       {/* Model Cancellation Form */}
       <section className="mb-4">
-        <h2 className="text-2xl font-bold mb-4">Model Cancellation Form</h2>
+        <h2 className="text-2xl font-bold mb-4">{tr(`Model Cancellation Form`)}</h2>
         <p className="text-sm text-muted-foreground mb-3">
           As required by the Consumer Contracts (Information, Cancellation and Additional Charges)
           Regulations 2013, Schedule 3
@@ -259,19 +276,19 @@ export default function CancellationPolicyPage() {
           </p>
           <ul className="space-y-2">
             <li>
-              <strong>Date subscription was started:</strong> ____________________
+              <strong>{tr(`Date subscription was started:`)}</strong> ____________________
             </li>
             <li>
-              <strong>Your name:</strong> ____________________
+              <strong>{tr(`Your name:`)}</strong> ____________________
             </li>
             <li>
-              <strong>Your email address:</strong> ____________________
+              <strong>{tr(`Your email address:`)}</strong> ____________________
             </li>
             <li>
-              <strong>Your address (optional):</strong> ____________________
+              <strong>{tr(`Your address (optional):`)}</strong> ____________________
             </li>
             <li>
-              <strong>Date of this notice:</strong> ____________________
+              <strong>{tr(`Date of this notice:`)}</strong> ____________________
             </li>
           </ul>
           <p className="mt-4 text-xs text-muted-foreground italic">
