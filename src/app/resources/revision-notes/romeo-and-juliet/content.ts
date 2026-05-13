@@ -71,7 +71,6 @@ export const STRINGS: Record<string, Bi> = {
 
 السياق التاريخي`,
   },
-  s33: { en: `Elizabethan Marriage and Patriarchy`, ar: `زواج الإليزابيثي وال家長權威` },
   s34: { en: `Italian Setting and Honour Culture`, ar: `ثقافة الشرف في setting إيطالي` },
   s35: { en: `The Sonnet Tradition`, ar: `العادة الشعرية القصيدة الرباعية` },
   s36: { en: `Plague in Elizabethan London`, ar: `الوباء في لندن الإليزابيثية` },
