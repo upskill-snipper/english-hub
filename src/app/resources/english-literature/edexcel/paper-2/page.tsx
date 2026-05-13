@@ -1,3 +1,5 @@
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
@@ -15,7 +17,18 @@ export const metadata: Metadata = {
 
 /* ─── Page component ─────────────────────────────────────────── */
 
-export default function Paper2Page() {
+export default async function Paper2Page() {
+  // Resolve AR via server-side t() helper + content.ts fallback
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+  // Note: this server component reads from content.ts directly; the
+  // server-side t() helper resolves the locale from the request header.
+
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
@@ -39,14 +52,16 @@ export default function Paper2Page() {
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Exam structure ────────────────────────────────────── */}
         <section>
-          <h2 className="text-2xl font-bold text-foreground">Exam Structure</h2>
+          <h2 className="text-2xl font-bold text-foreground">{_tr(`Exam Structure`)}</h2>
           <p className="mt-2 text-muted-foreground">
             Paper 2 has three sections. The exam is closed-book throughout.
           </p>
 
           <div className="mt-6 grid gap-6 lg:grid-cols-3">
             <div className="rounded-xl border border-border p-6 shadow-md">
-              <h3 className="text-lg font-bold text-foreground">Section A: 19th-Century Novel</h3>
+              <h3 className="text-lg font-bold text-foreground">
+                {_tr(`Section A: 19th-Century Novel`)}
+              </h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">
                 40 marks &middot; ~55 minutes
               </p>
@@ -72,7 +87,9 @@ export default function Paper2Page() {
             </div>
 
             <div className="rounded-xl border border-border p-6 shadow-md">
-              <h3 className="text-lg font-bold text-foreground">Section B: Poetry Anthology</h3>
+              <h3 className="text-lg font-bold text-foreground">
+                {_tr(`Section B: Poetry Anthology`)}
+              </h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">
                 24 marks &middot; ~40 minutes
               </p>
@@ -93,7 +110,9 @@ export default function Paper2Page() {
             </div>
 
             <div className="rounded-xl border border-border p-6 shadow-md">
-              <h3 className="text-lg font-bold text-foreground">Section C: Unseen Poetry</h3>
+              <h3 className="text-lg font-bold text-foreground">
+                {_tr(`Section C: Unseen Poetry`)}
+              </h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">
                 16 marks &middot; ~35 minutes
               </p>
@@ -362,7 +381,9 @@ export default function Paper2Page() {
 
         {/* ── Poetry Anthology ──────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">Section B: Poetry Anthology</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            {_tr(`Section B: Poetry Anthology`)}
+          </h2>
           <p className="mt-2 text-muted-foreground">
             Your school will have studied one cluster. You must compare a named poem (printed in the
             exam) with one of your choice from the same cluster.
@@ -370,7 +391,7 @@ export default function Paper2Page() {
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div className="rounded-xl border border-border p-6 shadow-md">
-              <h3 className="text-lg font-bold text-foreground">Relationships Cluster</h3>
+              <h3 className="text-lg font-bold text-foreground">{_tr(`Relationships Cluster`)}</h3>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 {[
                   'Sonnet 43 — Elizabeth Barrett Browning',
@@ -404,7 +425,7 @@ export default function Paper2Page() {
             </div>
 
             <div className="rounded-xl border border-border p-6 shadow-md">
-              <h3 className="text-lg font-bold text-foreground">Conflict Cluster</h3>
+              <h3 className="text-lg font-bold text-foreground">{_tr(`Conflict Cluster`)}</h3>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 {[
                   'The Charge of the Light Brigade — Alfred Lord Tennyson',
@@ -441,7 +462,7 @@ export default function Paper2Page() {
 
         {/* ── Unseen poetry ─────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">Section C: Unseen Poetry</h2>
+          <h2 className="text-2xl font-bold text-foreground">{_tr(`Section C: Unseen Poetry`)}</h2>
           <p className="mt-2 text-muted-foreground">
             You will be given two poems you have never seen before. This section tests your ability
             to analyse poetry independently.
@@ -457,7 +478,9 @@ export default function Paper2Page() {
                 or experience.
               </p>
               <div className="mt-4 space-y-3">
-                <h4 className="text-sm font-semibold text-foreground">Step-by-step approach:</h4>
+                <h4 className="text-sm font-semibold text-foreground">
+                  {_tr(`Step-by-step approach:`)}
+                </h4>
                 <ol className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex gap-3">
                     <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
@@ -472,7 +495,9 @@ export default function Paper2Page() {
                     <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                       2
                     </span>
-                    <span>Identify the poem&apos;s subject matter, tone, and overall message.</span>
+                    <span>
+                      {_tr(`Identify the poem&apos;s subject matter, tone, and overall message.`)}
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
@@ -505,7 +530,9 @@ export default function Paper2Page() {
                 You must compare how the poets present a similar theme or idea across both poems.
               </p>
               <div className="mt-4 space-y-3">
-                <h4 className="text-sm font-semibold text-foreground">Tips for comparison:</h4>
+                <h4 className="text-sm font-semibold text-foreground">
+                  {_tr(`Tips for comparison:`)}
+                </h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -540,26 +567,28 @@ export default function Paper2Page() {
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">Language</h4>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>Metaphor and simile</li>
+                    <li>{_tr(`Metaphor and simile`)}</li>
                     <li>Personification</li>
                     <li>Semantic fields</li>
-                    <li>Sensory language</li>
-                    <li>Tone and register</li>
+                    <li>{_tr(`Sensory language`)}</li>
+                    <li>{_tr(`Tone and register`)}</li>
                     <li>Connotations of word choices</li>
-                    <li>Symbolism and imagery</li>
-                    <li>Repetition and listing</li>
+                    <li>{_tr(`Symbolism and imagery`)}</li>
+                    <li>{_tr(`Repetition and listing`)}</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground">Structure &amp; Form</h4>
+                  <h4 className="text-sm font-semibold text-foreground">
+                    {_tr(`Structure &amp; Form`)}
+                  </h4>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>Stanza arrangement</li>
-                    <li>Enjambment and caesura</li>
-                    <li>Rhyme scheme</li>
-                    <li>Rhythm and metre</li>
-                    <li>Volta (a shift or turn)</li>
-                    <li>Opening and closing lines</li>
-                    <li>Form (sonnet, ballad, free verse)</li>
+                    <li>{_tr(`Stanza arrangement`)}</li>
+                    <li>{_tr(`Enjambment and caesura`)}</li>
+                    <li>{_tr(`Rhyme scheme`)}</li>
+                    <li>{_tr(`Rhythm and metre`)}</li>
+                    <li>{_tr(`Volta (a shift or turn)`)}</li>
+                    <li>{_tr(`Opening and closing lines`)}</li>
+                    <li>{_tr(`Form (sonnet, ballad, free verse)`)}</li>
                     <li>Narrative voice and perspective</li>
                   </ul>
                 </div>
@@ -570,7 +599,7 @@ export default function Paper2Page() {
 
         {/* ── Timing guide ──────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">Timing Guide</h2>
+          <h2 className="text-2xl font-bold text-foreground">{_tr(`Timing Guide`)}</h2>
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -592,13 +621,13 @@ export default function Paper2Page() {
                   <td className="py-3 pr-4 font-medium">B: Anthology Poetry</td>
                   <td className="py-3 pr-4">24</td>
                   <td className="py-3 pr-4">~40 mins</td>
-                  <td className="py-3">Compare named poem with your choice</td>
+                  <td className="py-3">{_tr(`Compare named poem with your choice`)}</td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="py-3 pr-4 font-medium">C(a): Unseen Poem 1</td>
                   <td className="py-3 pr-4">8</td>
                   <td className="py-3 pr-4">~20 mins</td>
-                  <td className="py-3">Read twice, 3-4 PEA paragraphs</td>
+                  <td className="py-3">{_tr(`Read twice, 3-4 PEA paragraphs`)}</td>
                 </tr>
                 <tr>
                   <td className="py-3 pr-4 font-medium">C(b): Unseen Comparison</td>
@@ -613,7 +642,7 @@ export default function Paper2Page() {
 
         {/* ── Exam technique ────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">Paper 2 Exam Technique</h2>
+          <h2 className="text-2xl font-bold text-foreground">{_tr(`Paper 2 Exam Technique`)}</h2>
 
           <div className="mt-6 rounded-xl bg-muted p-6">
             <h3 className="text-lg font-bold text-foreground">19th-Century Novel — Top Tips</h3>
@@ -621,31 +650,31 @@ export default function Paper2Page() {
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>Memorise short, versatile quotes</strong> — since there is no extract, you
-                  need quotes ready for multiple topics. Learn 15-20 key quotes that cover major
-                  themes and characters.
+                  <strong>{_tr(`Memorise short, versatile quotes`)}</strong> — since there is no
+                  extract, you need quotes ready for multiple topics. Learn 15-20 key quotes that
+                  cover major themes and characters.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>Context is crucial</strong> — 19th-century novels are rooted in their
-                  historical context. Link to the writer&apos;s purpose, social conditions, and
-                  literary movements (e.g., Gothic, Romantic, Victorian realism).
+                  <strong>{_tr(`Context is crucial`)}</strong> — 19th-century novels are rooted in
+                  their historical context. Link to the writer&apos;s purpose, social conditions,
+                  and literary movements (e.g., Gothic, Romantic, Victorian realism).
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>SPaG matters</strong> — 4 marks are awarded for spelling, punctuation, and
-                  grammar. Write clearly and use literary terminology accurately.
+                  <strong>{_tr(`SPaG matters`)}</strong> — 4 marks are awarded for spelling,
+                  punctuation, and grammar. Write clearly and use literary terminology accurately.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong>Show awareness of the whole text</strong> — reference the beginning,
-                  middle, and end to demonstrate complete knowledge.
+                  <strong>{_tr(`Show awareness of the whole text`)}</strong> — reference the
+                  beginning, middle, and end to demonstrate complete knowledge.
                 </span>
               </li>
             </ul>

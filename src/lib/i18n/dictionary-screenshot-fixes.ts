@@ -135,4 +135,18 @@ export const SCREENSHOT_FIX_DICTIONARY: Dictionary = {
 
   // ─── EAL nav (added in EAL launch wave) ──────────────────────────
   'header.nav.eal': { en: 'EAL', ar: 'EAL' },
+
+  // ─── Mobile-sheet labels (added in mobile-RTL audit wave) ────────
+  // The mobile menu sheet previously hardcoded EN — Arabic users got
+  // an EN sheet behind an AR site. Keys map every visible label.
+  'header.nav.account': { en: 'Account', ar: 'الحساب' },
+  'header.nav.school_dashboard': { en: 'School Dashboard', ar: 'لوحة المدرسة' },
+  'header.cta.upgrade': { en: 'Upgrade', ar: 'ترقية' },
+  'header.action.sign_out': { en: 'Sign out', ar: 'تسجيل خروج' },
+  'header.board.studying': { en: 'Studying', ar: 'يدرس' },
+  'header.board.change': { en: 'Change board', ar: 'غيّر البورد' },
+  'header.board.reset': { en: 'Reset exam board', ar: 'إعادة تعيين البورد' },
+  'header.board.select_short': { en: 'Select board', ar: 'اختر البورد' },
+  'header.board.select_button': { en: 'Select your exam board', ar: 'اختر بورد الامتحان مالك' },
+  'header.action.open_menu': { en: 'Open menu', ar: 'افتح القائمة' },
 }

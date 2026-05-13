@@ -27,7 +27,7 @@ export const EAL: EALCurriculum = {
       },
       concept: {
         en: 'English uses three article forms: a, an, and the. "A" (or "an" before a vowel sound) is the indefinite article — it introduces something for the first time, or refers to one of many. "The" is the definite article — it points to a specific thing already known. Many singular countable nouns NEED an article — you cannot say "I bought book" in English the way you might say "اشتريت كتاب" in Arabic. The rule: every singular countable noun in English needs either a, an, the, or another determiner (this, my, one). Plural and uncountable nouns can stand alone when general ("Books are important") but take "the" when specific ("The books on the table are mine").',
-        ar: '',
+        ar: 'الإنجليزي عنده ثلاث صيغ للأدوات: a / an / the. "a" (أو "an" قبل صوت متحرّك) هي أداة التنكير — تستخدمها لمّا تذكر الشي أول مرّة، أو تشير لواحد من ضمن عدد. "the" أداة التعريف — تشير لشي معروف ومحدّد. وايد من الأسماء المعدودة المفردة في الإنجليزي تحتاج أداة — ما تقدر تقول "I bought book" كما تقول بالعربي "اشتريت كتاب". القاعدة: كل اسم معدود مفرد في الإنجليزي لازم يجي معاه a، an، the، أو محدّد ثاني (this, my, one). الأسماء الجمع وغير المعدودة تقف بدون أداة لمّا تكون عامّة ("Books are important")، بس تاخذ "the" لمّا تكون محدّدة ("The books on the table are mine").',
       },
       examples: [
         {
@@ -202,7 +202,7 @@ export const EAL: EALCurriculum = {
       },
       concept: {
         en: 'Every English declarative sentence follows the pattern: SUBJECT → VERB → OBJECT (or COMPLEMENT). "The boy reads the book." Subject = the boy. Verb = reads. Object = the book. Arabic frequently begins with the verb: "قرأ الولد الكتاب" (read-the boy-the book). If you write English the same way ("Reads the boy the book"), it sounds like a question or wrong. The fix: always lead with WHO is doing the action, then WHAT they are doing. Questions invert this (Verb-Subject-Object: "Does the boy read?") but statements never do. Adverbs of frequency (always, often, never) sit BETWEEN subject and verb: "She always reads." Adverbs of time/place go at the end: "She reads the book in the library every evening."',
-        ar: '',
+        ar: 'كل جملة خبرية في الإنجليزي تتبع نمط واحد: SUBJECT → VERB → OBJECT (أو COMPLEMENT). "The boy reads the book." الفاعل = the boy. الفعل = reads. المفعول = the book. العربي وايد مرّات يبدأ بالفعل: "قرأ الولد الكتاب". إذا كتبت إنجليزيك بنفس الترتيب ("Reads the boy the book")، يطلع شكلها سؤال أو خطأ صريح. الحل: ابدأ دايماً بـ "مَن" يسوّي الحدث، ثم "وش" يسوّي. الأسئلة تعكس الترتيب (Verb-Subject-Object: "Does the boy read?") بس الجمل الخبرية أبد ما تعكس. ظروف التكرار (always, often, never) تجي بين الفاعل والفعل: "She always reads." ظروف الزمان والمكان تجي في الآخر: "She reads the book in the library every evening."',
       },
       examples: [
         {
@@ -737,7 +737,7 @@ export const EAL: EALCurriculum = {
       },
       concept: {
         en: 'Regular plural = -s (book → books). After s/x/ch/sh add -es (bus → buses, box → boxes). After consonant + y, change y to ies (city → cities). Irregular plurals: man → men, woman → women, child → children, foot → feet, tooth → teeth, mouse → mice, person → people. Uncountable nouns (information, advice, furniture, equipment, news, water, music) never take -s and use singular verbs. To count them, use a unit phrase: "a piece of advice", "two pieces of information", "three slices of bread". "News" looks plural but is uncountable singular: "The news IS bad."',
-        ar: '',
+        ar: 'الجمع المنتظم = -s (book → books). بعد الحروف s/x/ch/sh نضيف -es (bus → buses, box → boxes). بعد حرف ساكن + y نقلب y إلى ies (city → cities). الجموع الشاذة: man → men, woman → women, child → children, foot → feet, tooth → teeth, mouse → mice, person → people. الأسماء غير المعدودة (information, advice, furniture, equipment, news, water, music) أبد ما تاخذ -s وتجي مع فعل مفرد. لو تبي تعدّها، استخدم وحدة قياس: "a piece of advice"، "two pieces of information"، "three slices of bread". "News" شكلها جمع بس هي مفرد غير معدود: "The news IS bad."',
       },
       examples: [
         {
@@ -1007,7 +1007,7 @@ export const EAL: EALCurriculum = {
       },
       concept: {
         en: `CAPITALS: start of every sentence. Proper nouns (names of people, places, books, days, months — Macbeth, London, January, Monday, Shakespeare). The pronoun "I" — always capital. Titles in headings (The Tragedy of Macbeth). FULL STOPS end sentences. COMMAS separate items in lists, mark off subordinate clauses, separate the speaker from their words (She said, "I will go."). SEMICOLONS join two complete sentences too closely related to separate: "Macbeth is ambitious; his wife is more so." COLONS introduce lists or explanations. APOSTROPHES show possession ("Macbeth's sword") or contractions ("don't" = "do not"). QUOTATION MARKS surround speech and embedded quotations in essays. AVOID run-on sentences — two complete thoughts joined only by a comma is wrong (with the famous "She came, she saw, she conquered" being a special rhetorical case).`,
-        ar: '',
+        ar: `CAPITALS: بداية كل جملة بحرف كبير. أسماء الأعلام (أشخاص، أماكن، كتب، أيام، شهور — Macbeth, London, January, Monday, Shakespeare). الضمير "I" — دايماً بحرف كبير. العناوين في الهيدنغز (The Tragedy of Macbeth). FULL STOPS تنهي الجمل. COMMAS تفصل العناصر في القوائم، وتعزل الجمل الفرعية، وتفصل المتكلّم عن كلامه (She said, "I will go."). SEMICOLONS تربط جملتين كاملتين قريبتين بالمعنى للحدّ اللي ما يستاهل تفصلهم: "Macbeth is ambitious; his wife is more so." COLONS تقدّم قوائم أو شروحات. APOSTROPHES تبيّن الملكية ("Macbeth's sword") أو الاختصار ("don't" = "do not"). QUOTATION MARKS تحيط بالكلام المنقول والاقتباسات في المقالات. تجنّب run-on sentences — جمعك جملتين كاملتين بفاصلة بس غلط (الجملة الشهيرة "She came, she saw, she conquered" حالة بلاغية خاصة).`,
       },
       examples: [
         {

@@ -1,3 +1,5 @@
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 /**
  * /legal/privacy-qatar-supplement — corrected privacy supplement for
  * residents of the State of Qatar.
@@ -23,12 +25,23 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/legal/privacy-qatar-supplement' },
 }
 
-export default function PrivacyQatarSupplementPage() {
+export default async function PrivacyQatarSupplementPage() {
+  // Resolve AR via server-side t() helper + content.ts fallback
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+  // Note: this server component reads from content.ts directly; the
+  // server-side t() helper resolves the locale from the request header.
+
   return (
     <>
-      <h1 className="text-3xl font-bold mb-2">Qatar Privacy Notice Supplement</h1>
+      <h1 className="text-3xl font-bold mb-2">{_tr(`Qatar Privacy Notice Supplement`)}</h1>
       <p className="text-muted-foreground text-sm mb-6">
-        <strong>The English Hub</strong> — operated by Upskill Energy Limited (UK)
+        <strong>{_tr(`The English Hub`)}</strong> — operated by Upskill Energy Limited (UK)
         <br />
         Version 1.0 · Issued 12 May 2026
       </p>
@@ -46,9 +59,9 @@ export default function PrivacyQatarSupplementPage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-3">1. Who is the controller</h2>
         <p className="mb-3">
-          The data controller is <strong>Upskill Energy Limited</strong>, a company registered in
-          England and Wales, operating the service at https://www.theenglishhub.app. We are not
-          established in Qatar.
+          The data controller is <strong>{_tr(`Upskill Energy Limited`)}</strong>, a company
+          registered in England and Wales, operating the service at https://www.theenglishhub.app.
+          We are not established in Qatar.
         </p>
         <p>
           The named DPO is contactable at <strong>privacy@theenglishhub.app</strong>. The DPO is the
@@ -64,9 +77,9 @@ export default function PrivacyQatarSupplementPage() {
         </h2>
         <ul className="list-disc ps-6 space-y-2">
           <li>
-            <strong>Consent (PDPPL Article 4)</strong> — the default. Captured at signup, refreshed
-            at meaningful change-points. For users under 18, consent is captured from the guardian
-            (see Section 6).
+            <strong>{_tr(`Consent (PDPPL Article 4)`)}</strong> — the default. Captured at signup,
+            refreshed at meaningful change-points. For users under 18, consent is captured from the
+            guardian (see Section 6).
           </li>
           <li>
             <strong>Explicit cross-border consent (PDPPL Article 17)</strong> — because the service
@@ -75,12 +88,12 @@ export default function PrivacyQatarSupplementPage() {
             the moment it is needed.
           </li>
           <li>
-            <strong>Contractual necessity</strong> for activities required to deliver the paid
-            service the user has subscribed to.
+            <strong>{_tr(`Contractual necessity`)}</strong> for activities required to deliver the
+            paid service the user has subscribed to.
           </li>
           <li>
-            <strong>Legal obligation</strong> for tax retention and lawful requests from competent
-            authorities.
+            <strong>{_tr(`Legal obligation`)}</strong> for tax retention and lawful requests from
+            competent authorities.
           </li>
         </ul>
         <p className="mt-3 text-sm text-muted-foreground">
@@ -108,34 +121,36 @@ export default function PrivacyQatarSupplementPage() {
           on which features the user uses.
         </p>
 
-        <h3 className="text-lg font-semibold mt-6 mb-2">By jurisdiction</h3>
+        <h3 className="text-lg font-semibold mt-6 mb-2">{_tr(`By jurisdiction`)}</h3>
         <ul className="list-disc ps-6 space-y-3 text-sm">
           <li>
-            <strong>European Union (Frankfurt, Germany).</strong> Supabase (Postgres + object
-            storage), PostHog (analytics, when consented), and Sentry (error monitoring). The bulk
-            of your data — account, essay submissions, marking results, consent ledger — sits here
-            at rest.
+            <strong>{_tr(`European Union (Frankfurt, Germany).`)}</strong> Supabase (Postgres +
+            object storage), PostHog (analytics, when consented), and Sentry (error monitoring). The
+            bulk of your data — account, essay submissions, marking results, consent ledger — sits
+            here at rest.
           </li>
           <li>
-            <strong>United States.</strong> Anthropic (AI essay marking), Postmark (transactional
-            email), Google Analytics 4 (analytics when consented), Rewardful (affiliate when
-            consented), RevenueCat (mobile IAP), Trustpilot (reviews when consented), Vercel (web
-            hosting), Stripe (payment failover; primary is in Ireland). Not covered by a Qatar
-            adequacy decision; we rely on subprocessor-specific DPAs containing Standard Contractual
-            Clauses analogues + explicit cross-border consent under PDPPL Article 17.
+            <strong>{_tr(`United States.`)}</strong> Anthropic (AI essay marking), Postmark
+            (transactional email), Google Analytics 4 (analytics when consented), Rewardful
+            (affiliate when consented), RevenueCat (mobile IAP), Trustpilot (reviews when
+            consented), Vercel (web hosting), Stripe (payment failover; primary is in Ireland). Not
+            covered by a Qatar adequacy decision; we rely on subprocessor-specific DPAs containing
+            Standard Contractual Clauses analogues + explicit cross-border consent under PDPPL
+            Article 17.
           </li>
           <li>
             <strong>Ireland.</strong> Stripe's primary payment processing entity for European
             customers. Failover to Stripe US.
           </li>
           <li>
-            <strong>Global edge.</strong> Cloudflare anycast edge for CDN + WAF. No personal data
-            stored at the edge; only ephemeral request/response metadata.
+            <strong>{_tr(`Global edge.`)}</strong> Cloudflare anycast edge for CDN + WAF. No
+            personal data stored at the edge; only ephemeral request/response metadata.
           </li>
           <li>
-            <strong>United Kingdom.</strong> Seat of the controller. The DPO operates from the UK.
-            Administrative records (rights requests, audit logs of staff access) may be reviewed in
-            the UK. The UK is <strong>not</strong> the operational store for your account data.
+            <strong>{_tr(`United Kingdom.`)}</strong> Seat of the controller. The DPO operates from
+            the UK. Administrative records (rights requests, audit logs of staff access) may be
+            reviewed in the UK. The UK is <strong>not</strong> the operational store for your
+            account data.
           </li>
         </ul>
       </section>
@@ -144,25 +159,25 @@ export default function PrivacyQatarSupplementPage() {
         <h2 className="text-2xl font-bold mb-3">4. Cross-border transfer mechanisms</h2>
         <ul className="list-disc ps-6 space-y-3 text-sm">
           <li>
-            <strong>Transfers to the European Union</strong> (Supabase, PostHog, Sentry). EU's data
-            protection regime as broadly accepted by Qatari diligence reviewers, plus signed DPAs
-            with EU-form SCCs where the subprocessor is a non-EU parent.
+            <strong>{_tr(`Transfers to the European Union`)}</strong> (Supabase, PostHog, Sentry).
+            EU's data protection regime as broadly accepted by Qatari diligence reviewers, plus
+            signed DPAs with EU-form SCCs where the subprocessor is a non-EU parent.
           </li>
           <li>
-            <strong>Transfers to the United Kingdom</strong> (controller seat, DPO, internal
-            records). The UK has a national regime substantially equivalent to the EU's; we treat it
-            as a safe destination under PDPPL.
+            <strong>{_tr(`Transfers to the United Kingdom`)}</strong> (controller seat, DPO,
+            internal records). The UK has a national regime substantially equivalent to the EU's; we
+            treat it as a safe destination under PDPPL.
           </li>
           <li>
-            <strong>Transfers to the United States.</strong> No Qatar adequacy decision. We rely on
-            (a) explicit cross-border consent under PDPPL Article 17, (b) subprocessor-specific DPAs
-            incorporating SCCs or equivalent, (c) technical safeguards: TLS 1.3, encryption at rest,
-            payload minimisation, opaque identifiers for Anthropic, and contractual zero-retention
-            terms for AI inference.
+            <strong>{_tr(`Transfers to the United States.`)}</strong> No Qatar adequacy decision. We
+            rely on (a) explicit cross-border consent under PDPPL Article 17, (b)
+            subprocessor-specific DPAs incorporating SCCs or equivalent, (c) technical safeguards:
+            TLS 1.3, encryption at rest, payload minimisation, opaque identifiers for Anthropic, and
+            contractual zero-retention terms for AI inference.
           </li>
           <li>
-            <strong>Cloudflare global edge.</strong> DPA + ephemeral processing (no data stored at
-            the edge).
+            <strong>{_tr(`Cloudflare global edge.`)}</strong> DPA + ephemeral processing (no data
+            stored at the edge).
           </li>
         </ul>
         <p className="mt-3 text-sm text-muted-foreground">
@@ -180,33 +195,33 @@ export default function PrivacyQatarSupplementPage() {
         </p>
         <ul className="list-disc ps-6 space-y-2 text-sm">
           <li>
-            <strong>Right of access (PDPPL Article 13)</strong> — confirmation that we process your
-            data and a copy of what we hold, including sources, purposes, recipients (subprocessors
-            named in Section 3), and retention period.
+            <strong>{_tr(`Right of access (PDPPL Article 13)`)}</strong> — confirmation that we
+            process your data and a copy of what we hold, including sources, purposes, recipients
+            (subprocessors named in Section 3), and retention period.
           </li>
           <li>
-            <strong>Right to correction</strong> — most fields self-service; non-self-service
-            corrections handled by the DPO.
+            <strong>{_tr(`Right to correction`)}</strong> — most fields self-service;
+            non-self-service corrections handled by the DPO.
           </li>
           <li>
-            <strong>Right to deletion</strong> — deletion of your account and personal data, subject
-            only to retention required by law (tax records for paid customers). Children's data
-            deleted in full, including consent ledger entries beyond the evidentiary minimum, on
-            guardian request.
+            <strong>{_tr(`Right to deletion`)}</strong> — deletion of your account and personal
+            data, subject only to retention required by law (tax records for paid customers).
+            Children's data deleted in full, including consent ledger entries beyond the evidentiary
+            minimum, on guardian request.
           </li>
           <li>
-            <strong>Right to withdraw consent</strong> — as easy as the original consent.
+            <strong>{_tr(`Right to withdraw consent`)}</strong> — as easy as the original consent.
             Withdrawing cross-border consent stops the corresponding feature.
           </li>
           <li>
-            <strong>Right to object</strong> to processing on a legitimate-interest basis (only
-            error monitoring qualifies). Honoured by excluding the user's session from Sentry
+            <strong>{_tr(`Right to object`)}</strong> to processing on a legitimate-interest basis
+            (only error monitoring qualifies). Honoured by excluding the user's session from Sentry
             capture.
           </li>
           <li>
-            <strong>Right to lodge a complaint</strong> with the National Cyber Security Agency
-            (NCSA) of the State of Qatar. We will cooperate with any NCSA enquiry and will not
-            retaliate against users who exercise this right.
+            <strong>{_tr(`Right to lodge a complaint`)}</strong> with the National Cyber Security
+            Agency (NCSA) of the State of Qatar. We will cooperate with any NCSA enquiry and will
+            not retaliate against users who exercise this right.
           </li>
         </ul>
         <p className="mt-3">

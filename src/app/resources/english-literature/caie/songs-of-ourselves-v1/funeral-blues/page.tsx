@@ -1,3 +1,5 @@
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -16,7 +18,18 @@ export const metadata: Metadata = {
   },
 }
 
-export default function FuneralBluesPage() {
+export default async function FuneralBluesPage() {
+  // Resolve AR via server-side t() helper + content.ts fallback
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+  // Note: this server component reads from content.ts directly; the
+  // server-side t() helper resolves the locale from the request header.
+
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-10 sm:py-14">
       <CourseJsonLd
@@ -62,7 +75,9 @@ export default function FuneralBluesPage() {
             <BookOpen className="size-5 text-slate-500" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Funeral Blues</h1>
+            <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+              {_tr(`Funeral Blues`)}
+            </h1>
             <p className="text-sm text-muted-foreground">
               W.H. Auden (1907&ndash;1973) &middot; 1940 revised version
             </p>
@@ -84,12 +99,13 @@ export default function FuneralBluesPage() {
       <div className="flex items-start gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3">
         <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-600" />
         <p className="text-xs text-muted-foreground">
-          <strong className="text-foreground">Version note:</strong> Cambridge 0475 anthologises the{' '}
-          <strong>1940 revised four-stanza version</strong> of <em>Funeral Blues</em> &mdash; the
-          canonical poem published in <em>Another Time</em>. This is <strong>not</strong> the longer
-          1936 cabaret version <em>Twelve Songs IX</em> from <em>The Ascent of F6</em>, which has
-          different verses. Make sure you are studying the 1940 version reproduced in the Cambridge
-          anthology.
+          <strong className="text-foreground">{_tr(`Version note:`)}</strong> Cambridge 0475
+          anthologises the <strong>1940 revised four-stanza version</strong> of{' '}
+          <em>{_tr(`Funeral Blues`)}</em> &mdash; the canonical poem published in{' '}
+          <em>{_tr(`Another Time`)}</em>. This is <strong>not</strong> the longer 1936 cabaret
+          version <em>{_tr(`Twelve Songs IX`)}</em> from <em>{_tr(`The Ascent of F6`)}</em>, which
+          has different verses. Make sure you are studying the 1940 version reproduced in the
+          Cambridge anthology.
         </p>
       </div>
 
@@ -99,13 +115,13 @@ export default function FuneralBluesPage() {
             <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
               <Scale className="size-5 text-blue-700" />
             </div>
-            <CardTitle className="text-base">UK rights notice</CardTitle>
+            <CardTitle className="text-base">{_tr(`UK rights notice`)}</CardTitle>
           </div>
         </CardHeader>
         <CardContent className="space-y-2 text-sm text-muted-foreground">
           <p>
-            The 1940 revised text of <em>Funeral Blues</em> is in copyright (W.H. Auden / Faber
-            &amp; Faber; Auden died 1973, so the poem enters UK public domain in{' '}
+            The 1940 revised text of <em>{_tr(`Funeral Blues`)}</em> is in copyright (W.H. Auden /
+            Faber &amp; Faber; Auden died 1973, so the poem enters UK public domain in{' '}
             <strong>2044</strong>). The full poem cannot be reproduced on this site. Pupils should
             consult the school-issued Cambridge anthology for the verified text.
           </p>
@@ -117,7 +133,7 @@ export default function FuneralBluesPage() {
       </Card>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-bold">At a glance</h2>
+        <h2 className="text-xl font-bold">{_tr(`At a glance`)}</h2>
         <Card>
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
@@ -128,9 +144,10 @@ export default function FuneralBluesPage() {
               <strong className="text-foreground">Year:</strong> 1940 (revised version)
             </p>
             <p>
-              <strong className="text-foreground">First publication:</strong> <em>Another Time</em>{' '}
-              (Faber &amp; Faber / Random House, 1940). The earlier 1936 form appeared as
-              &lsquo;Song IX&rsquo; in the Auden / Isherwood play <em>The Ascent of F6</em>.
+              <strong className="text-foreground">{_tr(`First publication:`)}</strong>{' '}
+              <em>{_tr(`Another Time`)}</em> (Faber &amp; Faber / Random House, 1940). The earlier
+              1936 form appeared as &lsquo;Song IX&rsquo; in the Auden / Isherwood play{' '}
+              <em>{_tr(`The Ascent of F6`)}</em>.
             </p>
             <p>
               <strong className="text-foreground">Themes:</strong> grief and bereavement; love and
@@ -138,8 +155,8 @@ export default function FuneralBluesPage() {
               public indifference; the apparent uselessness of consolation.
             </p>
             <p>
-              <strong className="text-foreground">Form & structure:</strong> four quatrains in
-              rhymed couplets (AABB &times; 4); largely iambic pentameter / loose long line; the
+              <strong className="text-foreground">{_tr(`Form & structure:`)}</strong> four quatrains
+              in rhymed couplets (AABB &times; 4); largely iambic pentameter / loose long line; the
               imperative voice dominates throughout, building from the household (telephone, clock,
               dog) outwards to the cosmic (sun, moon, stars, ocean).
             </p>
@@ -167,7 +184,7 @@ export default function FuneralBluesPage() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-bold">Notes for study</h2>
+        <h2 className="text-xl font-bold">{_tr(`Notes for study`)}</h2>
         <Card>
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
@@ -180,14 +197,14 @@ export default function FuneralBluesPage() {
             </p>
             <p>
               Auden originally wrote the poem as a satirical mock-elegy for a public figure in{' '}
-              <em>The Ascent of F6</em>. By 1940 he had re-cast it as a private love elegy. Read in
-              that biographical frame, the poem expresses queer mourning at a moment when same- sex
-              love could not be openly named.
+              <em>{_tr(`The Ascent of F6`)}</em>. By 1940 he had re-cast it as a private love elegy.
+              Read in that biographical frame, the poem expresses queer mourning at a moment when
+              same- sex love could not be openly named.
             </p>
             <p>
               Pairs well in Paper 1 with: <em>Remember</em> (Rossetti) on memory after death;{' '}
-              <em>The City Planners</em> on order vs. disorder; or any war poem (e.g.{' '}
-              <em>Anthem for Doomed Youth</em>) on the public/private gap of bereavement.
+              <em>{_tr(`The City Planners`)}</em> on order vs. disorder; or any war poem (e.g.{' '}
+              <em>{_tr(`Anthem for Doomed Youth`)}</em>) on the public/private gap of bereavement.
             </p>
           </CardContent>
         </Card>
@@ -199,7 +216,7 @@ export default function FuneralBluesPage() {
             <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
               <Construction className="size-5 text-amber-700" />
             </div>
-            <CardTitle className="text-base">Full study guide in production</CardTitle>
+            <CardTitle className="text-base">{_tr(`Full study guide in production`)}</CardTitle>
           </div>
         </CardHeader>
         <CardContent className="space-y-3 text-sm text-muted-foreground">
@@ -227,8 +244,10 @@ export default function FuneralBluesPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Source attribution</CardTitle>
-          <CardDescription>Cambridge IGCSE 0475 Songs of Ourselves Vol 1 Part 4</CardDescription>
+          <CardTitle className="text-base">{_tr(`Source attribution`)}</CardTitle>
+          <CardDescription>
+            {_tr(`Cambridge IGCSE 0475 Songs of Ourselves Vol 1 Part 4`)}
+          </CardDescription>
         </CardHeader>
         <CardContent className="text-xs text-muted-foreground">
           <p>

@@ -1,3 +1,5 @@
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -106,7 +108,18 @@ const poems = [
   { title: 'Checking Out Me History', author: 'John Agard' },
 ]
 
-export default function Paper2Page() {
+export default async function Paper2Page() {
+  // Resolve AR via server-side t() helper + content.ts fallback
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+  // Note: this server component reads from content.ts directly; the
+  // server-side t() helper resolves the locale from the request header.
+
   return (
     <>
       {/* Hero */}
@@ -126,14 +139,16 @@ export default function Paper2Page() {
 
       {/* Paper structure */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-foreground">Paper Structure</h2>
+        <h2 className="text-2xl font-bold text-foreground">{_tr(`Paper Structure`)}</h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-3">
           <div className="rounded-xl border border-border p-6">
-            <h3 className="text-lg font-bold text-primary">Section A: Modern Texts (34 marks)</h3>
+            <h3 className="text-lg font-bold text-primary">
+              {_tr(`Section A: Modern Texts (34 marks)`)}
+            </h3>
             <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
-              <li>Answer on your studied modern prose or drama text</li>
-              <li>One essay question from a choice of two</li>
-              <li>No extract provided - write from memory</li>
+              <li>{_tr(`Answer on your studied modern prose or drama text`)}</li>
+              <li>{_tr(`One essay question from a choice of two`)}</li>
+              <li>{_tr(`No extract provided - write from memory`)}</li>
               <li>
                 <span className="font-medium text-foreground">Time:</span> ~45 minutes
               </li>
@@ -148,9 +163,9 @@ export default function Paper2Page() {
               Section B: Poetry Anthology (30 marks)
             </h3>
             <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
-              <li>One poem printed for you from the anthology</li>
-              <li>Compare it with another poem of your choice</li>
-              <li>Must be from the same cluster (Power and Conflict)</li>
+              <li>{_tr(`One poem printed for you from the anthology`)}</li>
+              <li>{_tr(`Compare it with another poem of your choice`)}</li>
+              <li>{_tr(`Must be from the same cluster (Power and Conflict)`)}</li>
               <li>
                 <span className="font-medium text-foreground">Time:</span> ~45 minutes
               </li>
@@ -161,10 +176,12 @@ export default function Paper2Page() {
             </ul>
           </div>
           <div className="rounded-xl border border-border p-6">
-            <h3 className="text-lg font-bold text-primary">Section C: Unseen Poetry (32 marks)</h3>
+            <h3 className="text-lg font-bold text-primary">
+              {_tr(`Section C: Unseen Poetry (32 marks)`)}
+            </h3>
             <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
-              <li>Part 1: Analyse one unseen poem (24 marks)</li>
-              <li>Part 2: Compare with a second unseen poem (8 marks)</li>
+              <li>{_tr(`Part 1: Analyse one unseen poem (24 marks)`)}</li>
+              <li>{_tr(`Part 2: Compare with a second unseen poem (8 marks)`)}</li>
               <li>No prior knowledge needed - just analytical skills</li>
               <li>
                 <span className="font-medium text-foreground">Time:</span> ~45 minutes (30 + 15)
@@ -181,7 +198,7 @@ export default function Paper2Page() {
       {/* Modern texts */}
       <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">Section A: Modern Texts</h2>
+          <h2 className="text-2xl font-bold text-foreground">{_tr(`Section A: Modern Texts`)}</h2>
           <p className="mt-2 text-muted-foreground">
             You study one modern prose or drama text. This is a closed-book essay with no extract -
             you must use memorised quotations.
@@ -269,7 +286,7 @@ export default function Paper2Page() {
 
         {/* Comparison pairs */}
         <div className="mt-10">
-          <h3 className="text-lg font-bold text-foreground">Key Comparison Pairs</h3>
+          <h3 className="text-lg font-bold text-foreground">{_tr(`Key Comparison Pairs`)}</h3>
           <p className="mt-2 text-sm text-muted-foreground">
             Having pre-prepared comparison pairs saves time in the exam. Here are reliable pairings
             by theme:
@@ -334,21 +351,21 @@ export default function Paper2Page() {
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground list-decimal pl-5">
                 <li>
-                  <span className="font-semibold">Read the poem three times.</span> First for the
-                  overall gist, second to identify the speaker and situation, third to spot
+                  <span className="font-semibold">{_tr(`Read the poem three times.`)}</span> First
+                  for the overall gist, second to identify the speaker and situation, third to spot
                   techniques.
                 </li>
                 <li>
-                  <span className="font-semibold">Identify the subject and tone.</span> What is the
-                  poem about? What is the speaker&apos;s attitude? Does the tone shift?
+                  <span className="font-semibold">{_tr(`Identify the subject and tone.`)}</span>{' '}
+                  What is the poem about? What is the speaker&apos;s attitude? Does the tone shift?
                 </li>
                 <li>
-                  <span className="font-semibold">Examine structure.</span> Look at stanza lengths,
-                  line lengths, enjambment, caesura, rhyme scheme, and how the poem progresses from
-                  beginning to end.
+                  <span className="font-semibold">{_tr(`Examine structure.`)}</span> Look at stanza
+                  lengths, line lengths, enjambment, caesura, rhyme scheme, and how the poem
+                  progresses from beginning to end.
                 </li>
                 <li>
-                  <span className="font-semibold">Analyse language.</span> Pick out imagery
+                  <span className="font-semibold">{_tr(`Analyse language.`)}</span> Pick out imagery
                   (metaphor, simile, personification), powerful word choices, sound devices
                   (alliteration, sibilance, onomatopoeia).
                 </li>
@@ -358,8 +375,8 @@ export default function Paper2Page() {
                   response it creates.
                 </li>
                 <li>
-                  <span className="font-semibold">Write 4-5 paragraphs</span> using PETAL structure.
-                  Start with an overview, then zoom into specific details.
+                  <span className="font-semibold">{_tr(`Write 4-5 paragraphs`)}</span> using PETAL
+                  structure. Start with an overview, then zoom into specific details.
                 </li>
               </ol>
             </div>
@@ -375,17 +392,19 @@ export default function Paper2Page() {
                 </p>
                 <ul className="space-y-2 list-disc pl-5">
                   <li>
-                    <span className="font-semibold">Focus on similarities and differences</span> in
-                    how the poets present the theme given in the question.
+                    <span className="font-semibold">
+                      {_tr(`Focus on similarities and differences`)}
+                    </span>{' '}
+                    in how the poets present the theme given in the question.
                   </li>
                   <li>
-                    <span className="font-semibold">Use comparison connectives:</span>{' '}
+                    <span className="font-semibold">{_tr(`Use comparison connectives:`)}</span>{' '}
                     &quot;Similarly,&quot; &quot;In contrast,&quot; &quot;Both
                     poets...however,&quot; &quot;While [Poet A] uses...,[Poet B] instead...&quot;
                   </li>
                   <li>
-                    <span className="font-semibold">Compare methods,</span> not just content. How do
-                    the poets use different techniques to explore a similar idea?
+                    <span className="font-semibold">{_tr(`Compare methods,`)}</span> not just
+                    content. How do the poets use different techniques to explore a similar idea?
                   </li>
                   <li>
                     <span className="font-semibold">You only need to analyse the second poem</span>{' '}

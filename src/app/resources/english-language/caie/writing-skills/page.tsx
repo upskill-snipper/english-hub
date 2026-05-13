@@ -1,3 +1,5 @@
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
@@ -26,7 +28,18 @@ export const metadata: Metadata = {
 
 /* ─── Page component ─────────────────────────────────────────── */
 
-export default function WritingSkillsPage() {
+export default async function WritingSkillsPage() {
+  // Resolve AR via server-side t() helper + content.ts fallback
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+  // Note: this server component reads from content.ts directly; the
+  // server-side t() helper resolves the locale from the request header.
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -143,7 +156,7 @@ export default function WritingSkillsPage() {
                   Their Address Line 1<br />
                   Their Address Line 2
                 </p>
-                <p className="mt-4">Dear Mr/Mrs/Ms [Surname],</p>
+                <p className="mt-4">{_tr(`Dear Mr/Mrs/Ms [Surname],`)}</p>
                 <p className="italic text-muted-foreground mt-2">
                   [Subject line &mdash; optional but useful]
                 </p>
@@ -195,7 +208,7 @@ export default function WritingSkillsPage() {
               </p>
               <div className="space-y-2 text-sm text-muted-foreground font-mono">
                 <p className="text-right">Date</p>
-                <p className="mt-4">Dear [First name] / Hi [Name],</p>
+                <p className="mt-4">{_tr(`Dear [First name] / Hi [Name],`)}</p>
                 <p className="italic text-muted-foreground mt-2">
                   [Opening: reference to shared experience or reason for writing]
                 </p>
@@ -243,7 +256,7 @@ export default function WritingSkillsPage() {
                 Template
               </p>
               <div className="space-y-2 text-sm text-muted-foreground font-mono">
-                <p className="font-bold">REPORT ON [TOPIC]</p>
+                <p className="font-bold">{_tr(`REPORT ON [TOPIC]`)}</p>
                 <p>
                   Prepared by: [Your name / role]
                   <br />
@@ -298,7 +311,7 @@ export default function WritingSkillsPage() {
               <div className="space-y-2 text-sm text-muted-foreground font-mono">
                 <p className="font-bold text-lg">[EYE-CATCHING HEADLINE]</p>
                 <p className="italic">[Optional subheading / strapline]</p>
-                <p>By [Your name]</p>
+                <p>{_tr(`By [Your name]`)}</p>
                 <p className="italic text-muted-foreground mt-2">
                   [Hook opening &mdash; grab the reader&rsquo;s attention immediately]
                 </p>
@@ -348,7 +361,7 @@ export default function WritingSkillsPage() {
                 Template
               </p>
               <div className="space-y-2 text-sm text-muted-foreground font-mono">
-                <p>Good morning/afternoon, [audience] &mdash;</p>
+                <p>{_tr(`Good morning/afternoon, [audience] &mdash;`)}</p>
                 <p className="italic text-muted-foreground mt-2">
                   [Opening: introduce yourself and your topic. Hook the audience.]
                 </p>
@@ -359,7 +372,7 @@ export default function WritingSkillsPage() {
                 <p className="italic text-muted-foreground">
                   [Conclusion: powerful closing statement or call to action.]
                 </p>
-                <p className="mt-2">Thank you.</p>
+                <p className="mt-2">{_tr(`Thank you.`)}</p>
               </div>
             </div>
 
@@ -598,7 +611,7 @@ export default function WritingSkillsPage() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5">
               <p className="text-2xl font-bold text-primary">15</p>
-              <p className="text-sm font-semibold text-foreground">Content Marks</p>
+              <p className="text-sm font-semibold text-foreground">{_tr(`Content Marks`)}</p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 1 mark for each relevant content point identified from the passage. The marking
                 guide lists specific points &mdash; you get credit for each distinct idea you
@@ -607,7 +620,9 @@ export default function WritingSkillsPage() {
             </div>
             <div className="rounded-lg border border-border bg-card p-5">
               <p className="text-2xl font-bold text-accent">10</p>
-              <p className="text-sm font-semibold text-foreground">Writing Quality Marks</p>
+              <p className="text-sm font-semibold text-foreground">
+                {_tr(`Writing Quality Marks`)}
+              </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Assessed on: use of own words (not lifting), fluency and coherence of writing,
                 accuracy of grammar and spelling, and appropriate use of connectives to link ideas.
@@ -631,14 +646,16 @@ export default function WritingSkillsPage() {
           </p>
 
           {/* Opening techniques */}
-          <h3 className="mt-8 text-lg font-semibold text-foreground">Opening Techniques</h3>
+          <h3 className="mt-8 text-lg font-semibold text-foreground">
+            {_tr(`Opening Techniques`)}
+          </h3>
           <p className="mt-2 text-sm text-muted-foreground">
             Your opening is crucial &mdash; it sets the tone and determines whether the marker is
             engaged from the start.
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">In Medias Res</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`In Medias Res`)}</p>
               <p className="mt-1 text-xs text-muted-foreground">
                 Start in the middle of the action. Drop the reader into a dramatic moment with no
                 preamble.
@@ -648,7 +665,7 @@ export default function WritingSkillsPage() {
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">Atmospheric Description</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`Atmospheric Description`)}</p>
               <p className="mt-1 text-xs text-muted-foreground">
                 Begin with vivid setting description that establishes mood and foreshadows events.
               </p>
@@ -668,7 +685,9 @@ export default function WritingSkillsPage() {
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">Prolepsis (Flash-forward)</p>
+              <p className="text-sm font-semibold text-primary">
+                {_tr(`Prolepsis (Flash-forward)`)}
+              </p>
               <p className="mt-1 text-xs text-muted-foreground">
                 Hint at a future event to create suspense, then go back to tell the story.
               </p>
@@ -685,18 +704,20 @@ export default function WritingSkillsPage() {
           </h3>
           <div className="mt-4 space-y-3">
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">Show, Don&rsquo;t Tell</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`Show, Don&rsquo;t Tell`)}</p>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                 Instead of stating emotions directly, reveal them through actions, dialogue, and
                 physical details.
               </p>
               <div className="mt-2 grid gap-2 sm:grid-cols-2">
                 <div className="rounded bg-warn-50 p-2">
-                  <p className="text-xs font-semibold text-warn-700">Telling (weak)</p>
+                  <p className="text-xs font-semibold text-warn-700">{_tr(`Telling (weak)`)}</p>
                   <p className="text-xs text-muted-foreground">&ldquo;He was nervous.&rdquo;</p>
                 </div>
                 <div className="rounded bg-success-50 p-2">
-                  <p className="text-xs font-semibold text-success-700">Showing (strong)</p>
+                  <p className="text-xs font-semibold text-success-700">
+                    {_tr(`Showing (strong)`)}
+                  </p>
                   <p className="text-xs text-muted-foreground">
                     &ldquo;His fingers drummed against the desk. He checked his watch for the fifth
                     time.&rdquo;
@@ -706,7 +727,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">Varied Pace</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`Varied Pace`)}</p>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                 Control the speed of your story. Slow down for important moments (use detailed
                 description, sensory language). Speed up for action (use short sentences, rapid
@@ -723,7 +744,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">Effective Endings</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`Effective Endings`)}</p>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                 Avoid clich&eacute;d endings (&ldquo;it was all a dream&rdquo;, &ldquo;I woke
                 up&rdquo;). Instead, try: a circular ending that mirrors the opening; a moment of
@@ -757,21 +778,21 @@ export default function WritingSkillsPage() {
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-3">
             <div className="rounded-lg border border-border p-4 text-center">
-              <p className="font-semibold text-primary">Zoom Technique</p>
+              <p className="font-semibold text-primary">{_tr(`Zoom Technique`)}</p>
               <p className="mt-2 text-xs text-muted-foreground">
                 Wide shot &rarr; medium shot &rarr; close-up &rarr; wide shot. Move from a panoramic
                 view to tiny details, then pull back.
               </p>
             </div>
             <div className="rounded-lg border border-border p-4 text-center">
-              <p className="font-semibold text-primary">Senses Journey</p>
+              <p className="font-semibold text-primary">{_tr(`Senses Journey`)}</p>
               <p className="mt-2 text-xs text-muted-foreground">
                 Structure your description around the five senses, moving from sight to sound to
                 touch to smell to taste.
               </p>
             </div>
             <div className="rounded-lg border border-border p-4 text-center">
-              <p className="font-semibold text-primary">Time Progression</p>
+              <p className="font-semibold text-primary">{_tr(`Time Progression`)}</p>
               <p className="mt-2 text-xs text-muted-foreground">
                 Describe the same scene at different times &mdash; dawn to dusk, or season to season
                 &mdash; showing how it changes.

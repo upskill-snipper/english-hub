@@ -1,3 +1,5 @@
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
@@ -416,7 +418,18 @@ const poems = [
 
 /* ─── Page component ─────────────────────────────────────────── */
 
-export default function PoetryAnalysisPage() {
+export default async function PoetryAnalysisPage() {
+  // Resolve AR via server-side t() helper + content.ts fallback
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+  // Note: this server component reads from content.ts directly; the
+  // server-side t() helper resolves the locale from the request header.
+
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
@@ -438,12 +451,12 @@ export default function PoetryAnalysisPage() {
       <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16 lg:py-20">
         {/* ── Cambridge syllabus set-text notice ─────────────────────── */}
         <div className="mb-10 rounded-lg border border-amber-500/30 bg-amber-500/10 p-5 text-sm text-foreground">
-          <p className="font-semibold">Set-text notice</p>
+          <p className="font-semibold">{_tr(`Set-text notice`)}</p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            This cluster is based on the Cambridge IGCSE 0475 syllabus <em>Songs of Ourselves</em>{' '}
-            Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster (<em>The Thought-Fox</em>,{' '}
-            <em>Hawk Roosting</em>, <em>Wind</em>). Cambridge International rotates set texts every
-            two years &mdash; always confirm via{' '}
+            This cluster is based on the Cambridge IGCSE 0475 syllabus{' '}
+            <em>{_tr(`Songs of Ourselves`)}</em> Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster
+            (<em>{_tr(`The Thought-Fox`)}</em>, <em>{_tr(`Hawk Roosting`)}</em>, <em>Wind</em>).
+            Cambridge International rotates set texts every two years &mdash; always confirm via{' '}
             <a
               href="https://www.cambridgeinternational.org/syllabus"
               target="_blank"
@@ -453,12 +466,12 @@ export default function PoetryAnalysisPage() {
               cambridgeinternational.org/syllabus
             </a>{' '}
             before relying on this list for the current exam window. The poems analysed below are
-            legacy reference choices from the wider <em>Songs of Ourselves</em> anthology &mdash;
-            use them as templates for technique, comparison, and AO coverage.
+            legacy reference choices from the wider <em>{_tr(`Songs of Ourselves`)}</em> anthology
+            &mdash; use them as templates for technique, comparison, and AO coverage.
           </p>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            <strong className="text-foreground">Cluster rights:</strong> Four poems in the verified
-            Vol&nbsp;1 Part&nbsp;4 + Hughes clusters are in copyright (Atwood, Auden,
+            <strong className="text-foreground">{_tr(`Cluster rights:`)}</strong> Four poems in the
+            verified Vol&nbsp;1 Part&nbsp;4 + Hughes clusters are in copyright (Atwood, Auden,
             Hughes&nbsp;&times;3). Quotations are short fair-dealing extracts. Anthology publisher:
             Cambridge University Press (
             <a
@@ -504,19 +517,19 @@ export default function PoetryAnalysisPage() {
               </ul>
             </div>
             <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
-              <h3 className="font-semibold text-foreground">What markers look for</h3>
+              <h3 className="font-semibold text-foreground">{_tr(`What markers look for`)}</h3>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>
-                  &bull; <strong>Close reading:</strong> analysis of specific words and phrases, not
-                  just general themes
+                  &bull; <strong>{_tr(`Close reading:`)}</strong> analysis of specific words and
+                  phrases, not just general themes
                 </li>
                 <li>
-                  &bull; <strong>Writer&rsquo;s methods:</strong> how form, structure, and language
-                  create meaning
+                  &bull; <strong>{_tr(`Writer&rsquo;s methods:`)}</strong> how form, structure, and
+                  language create meaning
                 </li>
                 <li>
-                  &bull; <strong>Personal response:</strong> genuine engagement, not formulaic
-                  analysis
+                  &bull; <strong>{_tr(`Personal response:`)}</strong> genuine engagement, not
+                  formulaic analysis
                 </li>
                 <li>
                   &bull; <strong>Comparison:</strong> when comparing poems, sustained and integrated
@@ -540,7 +553,7 @@ export default function PoetryAnalysisPage() {
           </h2>
           <div className="mt-6 space-y-4">
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">Structuring a Comparison</h3>
+              <h3 className="font-semibold text-foreground">{_tr(`Structuring a Comparison`)}</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Cambridge rewards <strong>integrated comparison</strong>. Rather than writing about
                 Poem A and then Poem B, weave your analysis together using connectives such as:
@@ -566,27 +579,27 @@ export default function PoetryAnalysisPage() {
               </div>
             </div>
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">What to Compare</h3>
+              <h3 className="font-semibold text-foreground">{_tr(`What to Compare`)}</h3>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>
                   &bull; <strong>Theme:</strong> How does each poem explore the topic? What
                   attitudes does each poet convey?
                 </li>
                 <li>
-                  &bull; <strong>Tone and mood:</strong> Is the tone celebratory, elegiac, angry,
-                  reflective?
+                  &bull; <strong>{_tr(`Tone and mood:`)}</strong> Is the tone celebratory, elegiac,
+                  angry, reflective?
                 </li>
                 <li>
-                  &bull; <strong>Form and structure:</strong> Sonnet vs. free verse? Regular stanzas
-                  vs. irregular? How does form support meaning?
+                  &bull; <strong>{_tr(`Form and structure:`)}</strong> Sonnet vs. free verse?
+                  Regular stanzas vs. irregular? How does form support meaning?
                 </li>
                 <li>
-                  &bull; <strong>Language and imagery:</strong> Metaphor, simile, personification,
-                  sound devices &mdash; how do they differ?
+                  &bull; <strong>{_tr(`Language and imagery:`)}</strong> Metaphor, simile,
+                  personification, sound devices &mdash; how do they differ?
                 </li>
                 <li>
-                  &bull; <strong>Speaker and perspective:</strong> First person vs. third person?
-                  Personal vs. dramatic?
+                  &bull; <strong>{_tr(`Speaker and perspective:`)}</strong> First person vs. third
+                  person? Personal vs. dramatic?
                 </li>
                 <li>
                   &bull; <strong>Ending:</strong> How does each poem resolve (or refuse to resolve)?
@@ -594,7 +607,9 @@ export default function PoetryAnalysisPage() {
               </ul>
             </div>
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">Example Comparison Pairings</h3>
+              <h3 className="font-semibold text-foreground">
+                {_tr(`Example Comparison Pairings`)}
+              </h3>
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <strong>Time and transience:</strong> &ldquo;Ozymandias&rdquo; and &ldquo;Sonnet
@@ -607,7 +622,7 @@ export default function PoetryAnalysisPage() {
                   with aching nostalgia while Fanthorpe uses humour and playful language.
                 </li>
                 <li>
-                  <strong>Power and nature:</strong> &ldquo;Hawk Roosting&rdquo; and
+                  <strong>{_tr(`Power and nature:`)}</strong> &ldquo;Hawk Roosting&rdquo; and
                   &ldquo;Horses&rdquo; &mdash; both present powerful animals, but the hawk is a
                   speaker asserting dominance while the horses are observed with awe by a human
                   speaker.
@@ -660,7 +675,9 @@ export default function PoetryAnalysisPage() {
                 <div className="space-y-5 px-5 py-5 sm:px-6">
                   {/* Form */}
                   <div>
-                    <h4 className="text-sm font-semibold text-foreground">Form &amp; Structure</h4>
+                    <h4 className="text-sm font-semibold text-foreground">
+                      {_tr(`Form &amp; Structure`)}
+                    </h4>
                     <p className="mt-1 text-sm text-muted-foreground">{poem.form}</p>
                   </div>
 
@@ -672,7 +689,9 @@ export default function PoetryAnalysisPage() {
 
                   {/* Detailed analysis */}
                   <div>
-                    <h4 className="text-sm font-semibold text-foreground">Detailed Analysis</h4>
+                    <h4 className="text-sm font-semibold text-foreground">
+                      {_tr(`Detailed Analysis`)}
+                    </h4>
                     <div className="mt-2 space-y-3">
                       {poem.analysis.map((a, ai) => (
                         <div key={ai} className="rounded-lg bg-muted p-3">
@@ -685,7 +704,7 @@ export default function PoetryAnalysisPage() {
 
                   {/* Key quotes */}
                   <div>
-                    <h4 className="text-sm font-semibold text-foreground">Key Quotes</h4>
+                    <h4 className="text-sm font-semibold text-foreground">{_tr(`Key Quotes`)}</h4>
                     <ul className="mt-2 space-y-1.5">
                       {poem.keyQuotes.map((q, qi) => (
                         <li key={qi} className="flex items-start gap-2 text-sm">

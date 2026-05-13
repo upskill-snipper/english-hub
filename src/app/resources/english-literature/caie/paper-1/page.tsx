@@ -1,3 +1,5 @@
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
@@ -106,7 +108,18 @@ const proseTexts = [
 
 /* ─── Page component ─────────────────────────────────────────── */
 
-export default function Paper1Page() {
+export default async function Paper1Page() {
+  // Resolve AR via server-side t() helper + content.ts fallback
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+  // Note: this server component reads from content.ts directly; the
+  // server-side t() helper resolves the locale from the request header.
+
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
@@ -128,12 +141,12 @@ export default function Paper1Page() {
       <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16 lg:py-20">
         {/* ── Cambridge syllabus set-text notice ─────────────────────── */}
         <div className="mb-10 rounded-lg border border-amber-500/30 bg-amber-500/10 p-5 text-sm text-foreground">
-          <p className="font-semibold">Set-text notice</p>
+          <p className="font-semibold">{_tr(`Set-text notice`)}</p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            This cluster is based on the Cambridge IGCSE 0475 syllabus <em>Songs of Ourselves</em>{' '}
-            Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster (<em>The Thought-Fox</em>,{' '}
-            <em>Hawk Roosting</em>, <em>Wind</em>). Cambridge International rotates set texts every
-            two years &mdash; always confirm via{' '}
+            This cluster is based on the Cambridge IGCSE 0475 syllabus{' '}
+            <em>{_tr(`Songs of Ourselves`)}</em> Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster
+            (<em>{_tr(`The Thought-Fox`)}</em>, <em>{_tr(`Hawk Roosting`)}</em>, <em>Wind</em>).
+            Cambridge International rotates set texts every two years &mdash; always confirm via{' '}
             <a
               href="https://www.cambridgeinternational.org/syllabus"
               target="_blank"
@@ -143,13 +156,13 @@ export default function Paper1Page() {
               cambridgeinternational.org/syllabus
             </a>{' '}
             before relying on this list for the current exam window. Prose options:{' '}
-            <em>Things Fall Apart</em> (Achebe) / <em>To Kill a Mockingbird</em> (Lee). The poem and
-            prose lists below are legacy reference selections &mdash; cross-check against the
-            syllabus PDF for your exam window.
+            <em>{_tr(`Things Fall Apart`)}</em> (Achebe) / <em>{_tr(`To Kill a Mockingbird`)}</em>{' '}
+            (Lee). The poem and prose lists below are legacy reference selections &mdash;
+            cross-check against the syllabus PDF for your exam window.
           </p>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            <strong className="text-foreground">Cluster rights:</strong> Four poems in the verified
-            Vol&nbsp;1 Part&nbsp;4 + Hughes clusters are in copyright (Atwood, Auden,
+            <strong className="text-foreground">{_tr(`Cluster rights:`)}</strong> Four poems in the
+            verified Vol&nbsp;1 Part&nbsp;4 + Hughes clusters are in copyright (Atwood, Auden,
             Hughes&nbsp;&times;3). Quotations are short fair-dealing extracts. Anthology publisher:
             Cambridge University Press (
             <a
@@ -171,7 +184,7 @@ export default function Paper1Page() {
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">Section A &mdash; Poetry</h3>
+              <h3 className="font-semibold text-foreground">{_tr(`Section A &mdash; Poetry`)}</h3>
               <p className="mt-1 text-sm text-muted-foreground">25 marks</p>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li>
@@ -191,7 +204,7 @@ export default function Paper1Page() {
               </ul>
             </div>
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">Section B &mdash; Prose</h3>
+              <h3 className="font-semibold text-foreground">{_tr(`Section B &mdash; Prose`)}</h3>
               <p className="mt-1 text-sm text-muted-foreground">25 marks</p>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li>
@@ -248,7 +261,9 @@ export default function Paper1Page() {
           </div>
 
           <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-5">
-            <h3 className="font-semibold text-foreground">Approaching a Poetry Question</h3>
+            <h3 className="font-semibold text-foreground">
+              {_tr(`Approaching a Poetry Question`)}
+            </h3>
             <ol className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li>
                 <strong>1. Read the question carefully.</strong> Underline the key words. If it says
@@ -317,21 +332,21 @@ export default function Paper1Page() {
           </h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">Passage-Based Questions</h3>
+              <h3 className="font-semibold text-foreground">{_tr(`Passage-Based Questions`)}</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <strong>Advantages:</strong> The text is in front of you. You can analyse specific
                   language closely. Good if you find it hard to memorise quotes.
                 </li>
                 <li>
-                  <strong>What to do:</strong> Work through the extract methodically. Comment on
-                  language, imagery, structure, and tone. But <em>always</em> connect outward to the
-                  rest of the text.
+                  <strong>{_tr(`What to do:`)}</strong> Work through the extract methodically.
+                  Comment on language, imagery, structure, and tone. But <em>always</em> connect
+                  outward to the rest of the text.
                 </li>
                 <li>
-                  <strong>Common mistake:</strong> Paraphrasing the passage instead of analysing it.
-                  Markers want analysis of <em>how</em> the writer creates effects, not a summary of{' '}
-                  <em>what</em> happens.
+                  <strong>{_tr(`Common mistake:`)}</strong> Paraphrasing the passage instead of
+                  analysing it. Markers want analysis of <em>how</em> the writer creates effects,
+                  not a summary of <em>what</em> happens.
                 </li>
                 <li>
                   <strong>Top tip:</strong> Consider what comes before and after the extract. Why is
@@ -340,20 +355,20 @@ export default function Paper1Page() {
               </ul>
             </div>
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">Essay Questions</h3>
+              <h3 className="font-semibold text-foreground">{_tr(`Essay Questions`)}</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <strong>Advantages:</strong> You can choose which parts of the text to discuss.
                   Good if you know the text very well and have strong personal interpretations.
                 </li>
                 <li>
-                  <strong>What to do:</strong> Plan 3&ndash;4 key points before writing. Each
-                  paragraph needs a clear argument supported by quotation and analysis. Track the
-                  development of your argument across the essay.
+                  <strong>{_tr(`What to do:`)}</strong> Plan 3&ndash;4 key points before writing.
+                  Each paragraph needs a clear argument supported by quotation and analysis. Track
+                  the development of your argument across the essay.
                 </li>
                 <li>
-                  <strong>Common mistake:</strong> Telling the story rather than analysing it. An
-                  essay answer should be thematic and analytical, not a narrative retelling.
+                  <strong>{_tr(`Common mistake:`)}</strong> Telling the story rather than analysing
+                  it. An essay answer should be thematic and analytical, not a narrative retelling.
                 </li>
                 <li>
                   <strong>Top tip:</strong> Address the question in every paragraph. The best
@@ -365,7 +380,9 @@ export default function Paper1Page() {
           </div>
 
           <div className="mt-6 rounded-lg border border-border bg-card p-5 shadow-md">
-            <h3 className="font-semibold text-foreground">Model Paragraph Structure (PEAL)</h3>
+            <h3 className="font-semibold text-foreground">
+              {_tr(`Model Paragraph Structure (PEAL)`)}
+            </h3>
             <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p>
                 <strong className="text-primary">P</strong>oint &mdash; Make a clear analytical

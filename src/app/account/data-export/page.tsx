@@ -208,7 +208,7 @@ export default function DataExportPage() {
           </div>
           <p className="text-sm text-muted-foreground">
             {t('account.export.under13_body_prefix')}{' '}
-            <Link href="/parent/data-export" className="text-primary hover:underline">
+            <Link href="/parent/delete-data" className="text-primary hover:underline">
               {t('account.export.under13_link_text')}
             </Link>
             {t('account.export.under13_body_suffix')}

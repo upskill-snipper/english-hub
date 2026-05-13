@@ -185,14 +185,14 @@ export function Header() {
                     className="rounded-full px-4 py-1.5 text-sm font-medium text-[#0F1411] transition-colors duration-200"
                     style={{ background: '#E8A382' }}
                   >
-                    Dashboard
+                    {t('header.nav.dashboard')}
                   </Link>
                   <Link
                     href="/affiliates/dashboard"
                     className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
                   >
                     <Handshake className="mr-1 h-3.5 w-3.5" />
-                    Affiliates
+                    {t('header.nav.affiliates')}
                   </Link>
                 </>
               ) : (
@@ -201,21 +201,21 @@ export function Header() {
                     href="/dashboard"
                     className="rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
                   >
-                    Dashboard
+                    {t('header.nav.dashboard')}
                   </Link>
                   <Link
                     href="/affiliates/dashboard"
                     className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
                   >
                     <Handshake className="mr-1 h-3.5 w-3.5" />
-                    Affiliates
+                    {t('header.nav.affiliates')}
                   </Link>
                   <Link
                     href="/pricing"
                     className="rounded-full px-4 py-1.5 text-sm font-medium text-[#0F1411] transition-colors duration-200"
                     style={{ background: '#E8A382' }}
                   >
-                    Upgrade
+                    {t('header.cta.upgrade')}
                   </Link>
                 </>
               )}
@@ -223,7 +223,7 @@ export function Header() {
                 href="/account"
                 className="rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
               >
-                Account
+                {t('header.nav.account')}
               </Link>
               {isSchoolMember && (
                 <Link
@@ -231,7 +231,7 @@ export function Header() {
                   className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] transition-colors duration-200"
                 >
                   <School className="mr-1.5 h-4 w-4" />
-                  School
+                  {t('header.nav.school_dashboard')}
                 </Link>
               )}
               <SignOutButton />
@@ -277,7 +277,7 @@ export function Header() {
               <button
                 type="button"
                 className="inline-flex items-center justify-center h-9 w-9 rounded-full text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/10 transition-colors duration-200 lg:hidden"
-                aria-label="Open menu"
+                aria-label={t('header.action.open_menu')}
               />
             }
           >
@@ -299,7 +299,9 @@ export function Header() {
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2 min-w-0">
                         <BookOpen className="h-4 w-4 shrink-0 text-[#B5B8B3]" aria-hidden="true" />
-                        <span className="text-xs font-medium text-[#B5B8B3]">Studying</span>
+                        <span className="text-xs font-medium text-[#B5B8B3]">
+                          {t('header.board.studying')}
+                        </span>
                       </div>
                       <Badge
                         variant="secondary"
@@ -317,7 +319,7 @@ export function Header() {
                         onClick={() => setMobileOpen(false)}
                         className="flex items-center justify-center w-full rounded-full border border-white/20 px-3 py-1.5 text-sm font-medium text-[#FBF7F0] hover:bg-white/10 transition-colors"
                       >
-                        Change board
+                        {t('header.board.change')}
                       </Link>
                       <Link
                         href="/board-select?change=1"
@@ -325,7 +327,7 @@ export function Header() {
                         className="inline-flex items-center justify-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-red-400 transition-colors hover:bg-red-400/10"
                       >
                         <RefreshCw className="h-3 w-3" aria-hidden="true" />
-                        Reset exam board
+                        {t('header.board.reset')}
                       </Link>
                     </div>
                   </div>
@@ -337,7 +339,7 @@ export function Header() {
                     style={{ background: '#E8A382' }}
                   >
                     <BookOpen className="mr-1.5 h-4 w-4" />
-                    Select your exam board
+                    {t('header.board.select_button')}
                   </Link>
                 )}
               </div>
@@ -378,7 +380,7 @@ export function Header() {
                         className="flex items-center justify-center w-full rounded-full px-3 py-2 text-sm font-medium text-[#0F1411] transition-colors"
                         style={{ background: '#E8A382' }}
                       >
-                        Dashboard
+                        {t('header.nav.dashboard')}
                       </Link>
                       <Link
                         href="/affiliates/dashboard"
@@ -386,7 +388,7 @@ export function Header() {
                         className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                       >
                         <Handshake className="mr-1.5 h-4 w-4" />
-                        Affiliates
+                        {t('header.nav.affiliates')}
                       </Link>
                     </>
                   ) : (
@@ -396,7 +398,7 @@ export function Header() {
                         onClick={() => setMobileOpen(false)}
                         className="w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                       >
-                        Dashboard
+                        {t('header.nav.dashboard')}
                       </Link>
                       <Link
                         href="/affiliates/dashboard"
@@ -404,7 +406,7 @@ export function Header() {
                         className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                       >
                         <Handshake className="mr-1.5 h-4 w-4" />
-                        Affiliates
+                        {t('header.nav.affiliates')}
                       </Link>
                       <Link
                         href="/pricing"
@@ -412,7 +414,7 @@ export function Header() {
                         className="flex items-center justify-center w-full rounded-full px-3 py-2 text-sm font-medium text-[#0F1411] transition-colors"
                         style={{ background: '#E8A382' }}
                       >
-                        Upgrade
+                        {t('header.cta.upgrade')}
                       </Link>
                     </>
                   )}
@@ -421,7 +423,7 @@ export function Header() {
                     onClick={() => setMobileOpen(false)}
                     className="w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                   >
-                    Account
+                    {t('header.nav.account')}
                   </Link>
                   {isSchoolMember && (
                     <Link
@@ -430,7 +432,7 @@ export function Header() {
                       className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                     >
                       <School className="mr-1.5 h-4 w-4" />
-                      School Dashboard
+                      {t('header.nav.school_dashboard')}
                     </Link>
                   )}
                   <SignOutButton />
@@ -443,7 +445,7 @@ export function Header() {
                     className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                   >
                     <Sparkles className="mr-1.5 h-4 w-4" />
-                    Try Demo
+                    {t('header.nav.try_demo')}
                   </Link>
                   <Link
                     href="/affiliates"
@@ -451,14 +453,14 @@ export function Header() {
                     className="inline-flex items-center w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                   >
                     <Handshake className="mr-1.5 h-4 w-4" />
-                    Affiliates
+                    {t('header.nav.affiliates')}
                   </Link>
                   <Link
                     href="/auth/login"
                     onClick={() => setMobileOpen(false)}
                     className="w-full rounded-lg px-3 py-2 text-sm text-[#B5B8B3] hover:text-[#FBF7F0] hover:bg-white/5 transition-colors"
                   >
-                    Log in
+                    {t('header.cta.login')}
                   </Link>
                   <Link
                     href="/auth/register"
@@ -466,10 +468,19 @@ export function Header() {
                     className="mt-1 flex items-center justify-center w-full rounded-full px-3 py-2.5 text-sm font-medium text-[#0F1411] transition-colors"
                     style={{ background: '#E8A382' }}
                   >
-                    Start free &rarr;
+                    {t('header.cta.start_free')} &rarr;
                   </Link>
                 </>
               )}
+
+              {/* Language toggle inside the mobile sheet — previously only
+                  the desktop nav rendered it, so mobile users had no way
+                  to switch between EN and AR once they were on a small
+                  screen. Render it last and centered for both EN + AR. */}
+              <Separator className="my-3 bg-white/10" />
+              <div className="flex justify-center pb-1">
+                <LanguageToggle className="border-white/15 bg-white/5 text-[#B5B8B3]" />
+              </div>
             </nav>
           </SheetContent>
         </Sheet>
@@ -479,6 +490,7 @@ export function Header() {
 }
 
 function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydrated: boolean }) {
+  const t = useT()
   // Avoid hydration mismatch — render a placeholder until the persisted store is ready.
   if (!isHydrated) {
     return <div className="h-8 w-20" aria-hidden="true" />
@@ -493,7 +505,7 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
         className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-[#B5B8B3] hover:text-[#FBF7F0] hover:border-white/30 transition-colors duration-200"
       >
         <BookOpen className="h-3.5 w-3.5" />
-        Select board
+        {t('header.board.select_short')}
       </Link>
     )
   }
@@ -515,7 +527,7 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" sideOffset={6} className="w-72">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Your exam board</DropdownMenuLabel>
+          <DropdownMenuLabel>{t('header.board.studying')}</DropdownMenuLabel>
           <div className="px-1.5 pb-1.5">
             <p className="text-sm font-semibold text-foreground leading-tight">{config.fullName}</p>
             <p className="mt-1 text-xs text-muted-foreground leading-snug">{config.description}</p>
@@ -523,14 +535,14 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem render={<Link href="/board-select?change=1" />}>
-          Change board
+          {t('header.board.change')}
         </DropdownMenuItem>
         <DropdownMenuItem
           render={<Link href="/board-select?change=1" />}
           className="text-destructive focus:text-destructive"
         >
           <RefreshCw className="mr-2 h-3.5 w-3.5" aria-hidden="true" />
-          Reset exam board
+          {t('header.board.reset')}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -539,6 +551,7 @@ function BoardSwitcher({ board, isHydrated }: { board: ExamBoard | null; isHydra
 
 function SignOutButton() {
   const clear = useAuthStore((s) => s.clear)
+  const t = useT()
 
   async function handleSignOut() {
     const { createClient } = await import('@/lib/supabase/client')
@@ -555,7 +568,7 @@ function SignOutButton() {
       className="inline-flex items-center rounded-full px-3 py-1.5 text-sm text-[#B5B8B3] hover:text-red-400 transition-colors duration-200"
     >
       <LogOut className="mr-1.5 h-4 w-4" />
-      Sign out
+      {t('header.action.sign_out')}
     </button>
   )
 }

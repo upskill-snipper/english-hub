@@ -1,3 +1,5 @@
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -97,7 +99,18 @@ function ExaminerCommentary({ children }: { children: React.ReactNode }) {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function UnseenPoetryPage() {
+export default async function UnseenPoetryPage() {
+  // Resolve AR via server-side t() helper + content.ts fallback
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+  // Note: this server component reads from content.ts directly; the
+  // server-side t() helper resolves the locale from the request header.
+
   return (
     <>
       {/* Hero */}
@@ -138,7 +151,7 @@ export default function UnseenPoetryPage() {
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-foreground">Unseen Poetry</li>
+          <li className="font-medium text-foreground">{_tr(`Unseen Poetry`)}</li>
         </ol>
       </nav>
 
@@ -241,8 +254,9 @@ export default function UnseenPoetryPage() {
                     and <em>what</em> impact they have on the reader.
                   </p>
                   <Tip>
-                    Use the formula: <strong>What + How + Why</strong>. What does the poet do? How
-                    do they do it (which technique)? Why does it matter (effect on the reader)?
+                    Use the formula: <strong>{_tr(`What + How + Why`)}</strong>. What does the poet
+                    do? How do they do it (which technique)? Why does it matter (effect on the
+                    reader)?
                   </Tip>
                 </div>
 
@@ -473,8 +487,10 @@ export default function UnseenPoetryPage() {
 
               <div className="mb-6 overflow-hidden rounded-xl border border-border">
                 <div className="grid grid-cols-2 text-sm font-bold bg-muted text-foreground">
-                  <div className="px-4 py-3">Weak (Separate)</div>
-                  <div className="px-4 py-3 border-l border-border">Strong (Integrated)</div>
+                  <div className="px-4 py-3">{_tr(`Weak (Separate)`)}</div>
+                  <div className="px-4 py-3 border-l border-border">
+                    {_tr(`Strong (Integrated)`)}
+                  </div>
                 </div>
                 <div className="grid grid-cols-2 text-sm">
                   <div className="px-4 py-3 border-t border-border text-muted-foreground">
@@ -490,7 +506,9 @@ export default function UnseenPoetryPage() {
                 </div>
               </div>
 
-              <h3 className="mb-4 text-lg font-bold text-foreground">Comparison Structure</h3>
+              <h3 className="mb-4 text-lg font-bold text-foreground">
+                {_tr(`Comparison Structure`)}
+              </h3>
               <div className="space-y-3">
                 {[
                   {
@@ -535,21 +553,23 @@ export default function UnseenPoetryPage() {
               </h3>
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
-                  <p className="font-bold text-foreground text-sm mb-2">Showing Similarity</p>
+                  <p className="font-bold text-foreground text-sm mb-2">
+                    {_tr(`Showing Similarity`)}
+                  </p>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>Similarly, both poets...</li>
-                    <li>In the same way, Poem B also...</li>
-                    <li>This idea is echoed in Poem B, where...</li>
-                    <li>Like Poem A, the second poem presents...</li>
+                    <li>{_tr(`Similarly, both poets...`)}</li>
+                    <li>{_tr(`In the same way, Poem B also...`)}</li>
+                    <li>{_tr(`This idea is echoed in Poem B, where...`)}</li>
+                    <li>{_tr(`Like Poem A, the second poem presents...`)}</li>
                   </ul>
                 </div>
                 <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                   <p className="font-bold text-foreground text-sm mb-2">Showing Difference</p>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>In contrast, Poem B...</li>
+                    <li>{_tr(`In contrast, Poem B...`)}</li>
                     <li>Whereas Poem A presents... , Poem B suggests...</li>
                     <li>However, the second poet takes a different approach by...</li>
-                    <li>While both poems explore [theme], their methods diverge...</li>
+                    <li>{_tr(`While both poems explore [theme], their methods diverge...`)}</li>
                   </ul>
                 </div>
               </div>
@@ -560,7 +580,7 @@ export default function UnseenPoetryPage() {
             {/* ── Practice Poem 1 ──────────────────────────────────── */}
             <Section id="practice-1" title="6a. Practice Poem 1">
               <PoemBlock
-                title="Storm on the Island"
+                title={_tr(`Storm on the Island`)}
                 author="Seamus Heaney (adapted extract)"
                 lines={[
                   'We are prepared: we build our houses squat,',
@@ -715,7 +735,7 @@ export default function UnseenPoetryPage() {
             <Section id="practice-3" title="6c. Practice Poem 3">
               {/* VERIFY: previous PoemBlock contained heavily fabricated lines presented as Carol Rumens's The Émigrée (e.g. "its hills are paperwhite", "its sky shines like a coin", "my city comes to me in its own white plane", "It lies down in front of me, docile as paper", "city of walls"). These do NOT appear in the real Rumens poem and are dangerous in an "unseen poetry" practice section because students preparing for AQA P&C would mistake them for the set text. Replaced with the verified opening of The Émigrée + a note flagging the rest of the practice extract for re-verification against the primary source before any further use. */}
               <PoemBlock
-                title="The Émigrée"
+                title={_tr(`The Émigrée`)}
                 author="Carol Rumens (verified opening only — full extract under review)"
                 lines={[
                   'There once was a country... I left it as a child',
@@ -790,35 +810,36 @@ export default function UnseenPoetryPage() {
             <Section id="mistakes" title="7. Common Mistakes to Avoid">
               <div className="space-y-3">
                 <Warning>
-                  <strong>Feature spotting without analysis.</strong> Identifying a metaphor and
-                  moving on is not analysis. You must explain <em>how</em> the metaphor creates
-                  meaning, <em>what</em> it connotes, and <em>why</em> the poet chose it. &ldquo;The
-                  poet uses a metaphor&rdquo; earns almost no marks. &ldquo;The metaphor of
-                  &lsquo;fire&rsquo; connotes destruction and uncontrollable rage, reflecting the
+                  <strong>{_tr(`Feature spotting without analysis.`)}</strong> Identifying a
+                  metaphor and moving on is not analysis. You must explain <em>how</em> the metaphor
+                  creates meaning, <em>what</em> it connotes, and <em>why</em> the poet chose it.
+                  &ldquo;The poet uses a metaphor&rdquo; earns almost no marks. &ldquo;The metaphor
+                  of &lsquo;fire&rsquo; connotes destruction and uncontrollable rage, reflecting the
                   speaker&apos;s consuming anger&rdquo; earns many more.
                 </Warning>
 
                 <Warning>
-                  <strong>Retelling the poem.</strong> Do not write a summary of what happens in the
-                  poem. Every sentence should analyse how meaning is created, not describe events.
+                  <strong>{_tr(`Retelling the poem.`)}</strong> Do not write a summary of what
+                  happens in the poem. Every sentence should analyse how meaning is created, not
+                  describe events.
                 </Warning>
 
                 <Warning>
-                  <strong>Ignoring structure.</strong> Many candidates focus entirely on language
-                  and ignore structure (stanza form, line breaks, enjambment, caesura, volta).
-                  Structural analysis can earn you marks that other candidates miss.
+                  <strong>{_tr(`Ignoring structure.`)}</strong> Many candidates focus entirely on
+                  language and ignore structure (stanza form, line breaks, enjambment, caesura,
+                  volta). Structural analysis can earn you marks that other candidates miss.
                 </Warning>
 
                 <Warning>
-                  <strong>Quoting entire lines.</strong> Embed short, precise quotations (a word or
-                  phrase) into your sentences. Long block quotations waste time and suggest you
-                  cannot select effectively.
+                  <strong>{_tr(`Quoting entire lines.`)}</strong> Embed short, precise quotations (a
+                  word or phrase) into your sentences. Long block quotations waste time and suggest
+                  you cannot select effectively.
                 </Warning>
 
                 <Warning>
-                  <strong>Writing about Poem A then Poem B separately.</strong> In comparison
-                  questions, you must integrate your comparison. Every paragraph should mention both
-                  poems.
+                  <strong>{_tr(`Writing about Poem A then Poem B separately.`)}</strong> In
+                  comparison questions, you must integrate your comparison. Every paragraph should
+                  mention both poems.
                 </Warning>
 
                 <Warning>
@@ -850,7 +871,7 @@ export default function UnseenPoetryPage() {
                     <tr className="bg-muted text-foreground text-left">
                       <th className="px-4 py-3 font-semibold">Phase</th>
                       <th className="px-4 py-3 font-semibold">Time</th>
-                      <th className="px-4 py-3 font-semibold">What to Do</th>
+                      <th className="px-4 py-3 font-semibold">{_tr(`What to Do`)}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -973,7 +994,9 @@ export default function UnseenPoetryPage() {
                 ))}
               </div>
 
-              <h3 className="mb-4 text-lg font-bold text-foreground">Key Technical Terms</h3>
+              <h3 className="mb-4 text-lg font-bold text-foreground">
+                {_tr(`Key Technical Terms`)}
+              </h3>
               <div className="grid gap-3 sm:grid-cols-2">
                 {[
                   {

@@ -1,30 +1,42 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/paper-1' },
-  title: "Paper 1: Reading | Cambridge IGCSE English Language",
+  title: 'Paper 1: Reading | Cambridge IGCSE English Language',
   description:
-    "Complete guide to Cambridge IGCSE English Language Paper 1 (Reading). Covers comprehension question types, summary writing, note-making, and passage analysis with marker tips.",
+    'Complete guide to Cambridge IGCSE English Language Paper 1 (Reading). Covers comprehension question types, summary writing, note-making, and passage analysis with marker tips.',
   keywords: [
-    "IGCSE English Language Paper 1",
-    "Cambridge reading comprehension",
-    "IGCSE summary writing",
-    "IGCSE note-making",
-    "CAIE 0500 Paper 1",
-    "IGCSE reading tips",
+    'IGCSE English Language Paper 1',
+    'Cambridge reading comprehension',
+    'IGCSE summary writing',
+    'IGCSE note-making',
+    'CAIE 0500 Paper 1',
+    'IGCSE reading tips',
   ],
-};
+}
 
 /* ─── Page component ─────────────────────────────────────────── */
 
-export default function Paper1ReadingPage() {
+export default async function Paper1ReadingPage() {
+  // Resolve AR via server-side t() helper + content.ts fallback
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+  // Note: this server component reads from content.ts directly; the
+  // server-side t() helper resolves the locale from the request header.
+
   return (
     <>
-
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl">
@@ -32,7 +44,14 @@ export default function Paper1ReadingPage() {
             href="/resources/english-language/caie"
             className="mb-4 inline-flex items-center text-sm text-muted-foreground hover:text-foreground"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="mr-1 h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             Back to CAIE English Language
@@ -40,20 +59,17 @@ export default function Paper1ReadingPage() {
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Paper 1: Reading
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">
-            Core Paper 1 &amp; Extended Paper 2
-          </p>
+          <p className="mt-2 text-lg text-muted-foreground">Core Paper 1 &amp; Extended Paper 2</p>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            This paper tests your ability to read and understand passages of
-            writing, identify information, select relevant material, and
-            demonstrate understanding of how writers achieve effects.
+            This paper tests your ability to read and understand passages of writing, identify
+            information, select relevant material, and demonstrate understanding of how writers
+            achieve effects.
           </p>
         </div>
       </section>
 
       {/* ── Main content ──────────────────────────────────────── */}
       <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16">
-
         {/* Paper structure */}
         <section aria-labelledby="structure-heading">
           <h2 id="structure-heading" className="text-2xl font-bold text-foreground">
@@ -64,27 +80,36 @@ export default function Paper1ReadingPage() {
               <thead>
                 <tr className="border-b-2 border-primary/20">
                   <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
-                  <th className="py-3 pr-4 font-semibold text-foreground">What You Do</th>
+                  <th className="py-3 pr-4 font-semibold text-foreground">{_tr(`What You Do`)}</th>
                   <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
-                  <th className="py-3 font-semibold text-foreground">Suggested Time</th>
+                  <th className="py-3 font-semibold text-foreground">{_tr(`Suggested Time`)}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border text-muted-foreground">
                 <tr>
-                  <td className="py-3 pr-4 font-medium">Question 1</td>
-                  <td className="py-3 pr-4">Detailed comprehension &mdash; factual retrieval, inference, vocabulary in context</td>
+                  <td className="py-3 pr-4 font-medium">{_tr(`Question 1`)}</td>
+                  <td className="py-3 pr-4">
+                    Detailed comprehension &mdash; factual retrieval, inference, vocabulary in
+                    context
+                  </td>
                   <td className="py-3 pr-4">25</td>
                   <td className="py-3">25 minutes</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-medium">Question 2</td>
-                  <td className="py-3 pr-4">Summary &mdash; select and organise ideas from one or both passages</td>
+                  <td className="py-3 pr-4 font-medium">{_tr(`Question 2`)}</td>
+                  <td className="py-3 pr-4">
+                    {_tr(`Summary &mdash; select and organise ideas from one or both passages`)}
+                  </td>
                   <td className="py-3 pr-4">25</td>
                   <td className="py-3">30 minutes</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-medium">Question 3</td>
-                  <td className="py-3 pr-4">Language analysis &mdash; how the writer uses language to create effects</td>
+                  <td className="py-3 pr-4 font-medium">{_tr(`Question 3`)}</td>
+                  <td className="py-3 pr-4">
+                    {_tr(
+                      `Language analysis &mdash; how the writer uses language to create effects`,
+                    )}
+                  </td>
                   <td className="py-3 pr-4">25</td>
                   <td className="py-3">55 minutes</td>
                 </tr>
@@ -92,9 +117,9 @@ export default function Paper1ReadingPage() {
             </table>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Extended paper total: 80 marks in 2 hours (plus 5 marks for
-            spelling, punctuation, and grammar across the paper). Core candidates
-            sit Paper 1 with slightly different question formats.
+            Extended paper total: 80 marks in 2 hours (plus 5 marks for spelling, punctuation, and
+            grammar across the paper). Core candidates sit Paper 1 with slightly different question
+            formats.
           </p>
         </section>
 
@@ -106,8 +131,8 @@ export default function Paper1ReadingPage() {
             Comprehension Question Types &amp; How to Answer
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            Question 1 tests your understanding of the passage through several
-            sub-questions. Here are the main types you will encounter:
+            Question 1 tests your understanding of the passage through several sub-questions. Here
+            are the main types you will encounter:
           </p>
 
           <div className="mt-6 space-y-6">
@@ -117,11 +142,13 @@ export default function Paper1ReadingPage() {
                 1. Factual Retrieval (&ldquo;According to the passage&hellip;&rdquo;)
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                These questions ask you to find specific information from the
-                passage. The answer is explicitly stated in the text.
+                These questions ask you to find specific information from the passage. The answer is
+                explicitly stated in the text.
               </p>
               <div className="mt-3 rounded bg-muted p-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">How to answer</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {_tr(`How to answer`)}
+                </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -133,13 +160,13 @@ export default function Paper1ReadingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Use your own words where the question asks &mdash; do not
-                    &ldquo;lift&rdquo; entire sentences unless instructed.
+                    Use your own words where the question asks &mdash; do not &ldquo;lift&rdquo;
+                    entire sentences unless instructed.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Check how many marks are available &mdash; this tells you how
-                    many separate points are needed.
+                    Check how many marks are available &mdash; this tells you how many separate
+                    points are needed.
                   </li>
                 </ul>
               </div>
@@ -151,26 +178,26 @@ export default function Paper1ReadingPage() {
                 2. Inference (&ldquo;What do you learn about&hellip;&rdquo;)
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                These questions require you to read between the lines. The answer
-                is implied rather than directly stated.
+                These questions require you to read between the lines. The answer is implied rather
+                than directly stated.
               </p>
               <div className="mt-3 rounded bg-muted p-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">How to answer</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {_tr(`How to answer`)}
+                </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Identify what is suggested or implied, not just what is
-                    literally said.
+                    Identify what is suggested or implied, not just what is literally said.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Support your inference with a short quotation or textual
-                    reference.
+                    Support your inference with a short quotation or textual reference.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Use phrases like &ldquo;This suggests that&hellip;&rdquo; or
-                    &ldquo;This implies&hellip;&rdquo; to show you are inferring.
+                    Use phrases like &ldquo;This suggests that&hellip;&rdquo; or &ldquo;This
+                    implies&hellip;&rdquo; to show you are inferring.
                   </li>
                 </ul>
               </div>
@@ -182,11 +209,13 @@ export default function Paper1ReadingPage() {
                 3. Vocabulary in Context (&ldquo;Explain the meaning of&hellip;&rdquo;)
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                You are given a word or phrase from the passage and asked to
-                explain its meaning <em>as it is used in the passage</em>.
+                You are given a word or phrase from the passage and asked to explain its meaning{' '}
+                <em>as it is used in the passage</em>.
               </p>
               <div className="mt-3 rounded bg-muted p-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">How to answer</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {_tr(`How to answer`)}
+                </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -198,13 +227,13 @@ export default function Paper1ReadingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Test your answer by mentally substituting it into the
-                    original sentence &mdash; it should still make sense.
+                    Test your answer by mentally substituting it into the original sentence &mdash;
+                    it should still make sense.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Do not just give a dictionary definition if the word is used
-                    in an unusual or figurative way.
+                    Do not just give a dictionary definition if the word is used in an unusual or
+                    figurative way.
                   </li>
                 </ul>
               </div>
@@ -216,27 +245,27 @@ export default function Paper1ReadingPage() {
                 4. Selecting and Using Information (&ldquo;Give two reasons why&hellip;&rdquo;)
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                These questions ask you to pick out specific points from a
-                defined section of the passage.
+                These questions ask you to pick out specific points from a defined section of the
+                passage.
               </p>
               <div className="mt-3 rounded bg-muted p-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">How to answer</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {_tr(`How to answer`)}
+                </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Note exactly how many points are required (the number of
-                    marks or explicit instruction like &ldquo;give three
-                    reasons&rdquo;).
+                    Note exactly how many points are required (the number of marks or explicit
+                    instruction like &ldquo;give three reasons&rdquo;).
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Make each point separate and distinct &mdash; avoid
-                    repeating the same idea in different words.
+                    Make each point separate and distinct &mdash; avoid repeating the same idea in
+                    different words.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Write concisely &mdash; one or two sentences per point is
-                    usually sufficient.
+                    Write concisely &mdash; one or two sentences per point is usually sufficient.
                   </li>
                 </ul>
               </div>
@@ -252,9 +281,9 @@ export default function Paper1ReadingPage() {
             Summary Writing (Question 2)
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            The summary question is often the most challenging part of the
-            reading paper. You must select relevant ideas from the passage(s)
-            and present them in a concise, coherent piece of continuous prose.
+            The summary question is often the most challenging part of the reading paper. You must
+            select relevant ideas from the passage(s) and present them in a concise, coherent piece
+            of continuous prose.
           </p>
 
           {/* Step-by-step */}
@@ -264,12 +293,11 @@ export default function Paper1ReadingPage() {
                 1
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">Read the question first</h3>
+                <h3 className="font-semibold text-foreground">{_tr(`Read the question first`)}</h3>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Identify exactly what you are being asked to summarise. Underline
-                  the focus of the question &mdash; e.g. &ldquo;the challenges
-                  faced by the villagers&rdquo; or &ldquo;the differences between
-                  the two writers&rsquo; experiences.&rdquo;
+                  Identify exactly what you are being asked to summarise. Underline the focus of the
+                  question &mdash; e.g. &ldquo;the challenges faced by the villagers&rdquo; or
+                  &ldquo;the differences between the two writers&rsquo; experiences.&rdquo;
                 </p>
               </div>
             </div>
@@ -279,12 +307,11 @@ export default function Paper1ReadingPage() {
                 2
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">Identify relevant points</h3>
+                <h3 className="font-semibold text-foreground">{_tr(`Identify relevant points`)}</h3>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Go through the passage(s) and underline or number every point
-                  that is relevant to the question. Aim to find at least 12&ndash;15
-                  content points. Do not include examples, quotations, or
-                  statistics at this stage &mdash; just the ideas.
+                  Go through the passage(s) and underline or number every point that is relevant to
+                  the question. Aim to find at least 12&ndash;15 content points. Do not include
+                  examples, quotations, or statistics at this stage &mdash; just the ideas.
                 </p>
               </div>
             </div>
@@ -294,12 +321,11 @@ export default function Paper1ReadingPage() {
                 3
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">Organise your points</h3>
+                <h3 className="font-semibold text-foreground">{_tr(`Organise your points`)}</h3>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Group similar ideas together. Decide on a logical order. If
-                  you are comparing two passages, you might organise point by
-                  point (alternating) or deal with one passage first and then
-                  the other.
+                  Group similar ideas together. Decide on a logical order. If you are comparing two
+                  passages, you might organise point by point (alternating) or deal with one passage
+                  first and then the other.
                 </p>
               </div>
             </div>
@@ -309,14 +335,13 @@ export default function Paper1ReadingPage() {
                 4
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">Write in your own words</h3>
+                <h3 className="font-semibold text-foreground">{_tr(`Write in your own words`)}</h3>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  This is critical. Cambridge markers specifically penalise
-                  &ldquo;lifting&rdquo; (copying directly from the passage). You
-                  must rephrase the ideas using your own vocabulary and sentence
-                  structures. The marking guide awards up to 15 marks for content
-                  (the number of relevant points) and up to 10 marks for quality
-                  of writing (use of own words, fluency, accuracy).
+                  This is critical. Cambridge markers specifically penalise &ldquo;lifting&rdquo;
+                  (copying directly from the passage). You must rephrase the ideas using your own
+                  vocabulary and sentence structures. The marking guide awards up to 15 marks for
+                  content (the number of relevant points) and up to 10 marks for quality of writing
+                  (use of own words, fluency, accuracy).
                 </p>
               </div>
             </div>
@@ -326,12 +351,13 @@ export default function Paper1ReadingPage() {
                 5
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">Stay within the word limit</h3>
+                <h3 className="font-semibold text-foreground">
+                  {_tr(`Stay within the word limit`)}
+                </h3>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The question will usually specify a word limit (typically around
-                  200&ndash;250 words). Going significantly over may mean you
-                  have included irrelevant material or are not being concise
-                  enough. Going significantly under may mean you have missed
+                  The question will usually specify a word limit (typically around 200&ndash;250
+                  words). Going significantly over may mean you have included irrelevant material or
+                  are not being concise enough. Going significantly under may mean you have missed
                   content points.
                 </p>
               </div>
@@ -340,7 +366,7 @@ export default function Paper1ReadingPage() {
 
           {/* Common mistakes */}
           <div className="mt-8 rounded-lg border border-warn-200 bg-warn-50 p-5">
-            <h3 className="font-semibold text-warn-700">Common Mistakes to Avoid</h3>
+            <h3 className="font-semibold text-warn-700">{_tr(`Common Mistakes to Avoid`)}</h3>
             <ul className="mt-3 space-y-2 text-sm text-warn-800">
               <li className="flex items-start gap-2">
                 <span className="mt-1 font-bold">&times;</span>
@@ -348,8 +374,8 @@ export default function Paper1ReadingPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 font-bold">&times;</span>
-                Including your own opinions or commentary &mdash; a summary
-                should only contain ideas from the passage.
+                Including your own opinions or commentary &mdash; a summary should only contain
+                ideas from the passage.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 font-bold">&times;</span>
@@ -357,13 +383,12 @@ export default function Paper1ReadingPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 font-bold">&times;</span>
-                Repeating the same point in different words (this wastes your
-                word count and does not earn additional marks).
+                Repeating the same point in different words (this wastes your word count and does
+                not earn additional marks).
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 font-bold">&times;</span>
-                Ignoring one of the two passages when the question refers to
-                both.
+                Ignoring one of the two passages when the question refers to both.
               </li>
             </ul>
           </div>
@@ -377,14 +402,14 @@ export default function Paper1ReadingPage() {
             Note-Making Skills
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            Some questions (particularly on the Core paper) may test
-            note-making. This is the skill of extracting key information from a
-            passage and presenting it in an organised, concise format.
+            Some questions (particularly on the Core paper) may test note-making. This is the skill
+            of extracting key information from a passage and presenting it in an organised, concise
+            format.
           </p>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5">
-              <h3 className="font-semibold text-primary">What Markers Want</h3>
+              <h3 className="font-semibold text-primary">{_tr(`What Markers Want`)}</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -444,37 +469,42 @@ export default function Paper1ReadingPage() {
             Language Analysis (Question 3)
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            This is the highest-tariff question and separates good candidates
-            from excellent ones. You must analyse <strong>how</strong> the
-            writer uses language to create specific effects on the reader.
+            This is the highest-tariff question and separates good candidates from excellent ones.
+            You must analyse <strong>how</strong> the writer uses language to create specific
+            effects on the reader.
           </p>
 
           <div className="mt-6 rounded-lg border border-primary/20 bg-primary/10 p-5">
-            <h3 className="font-semibold text-primary">The KEY Formula</h3>
+            <h3 className="font-semibold text-primary">{_tr(`The KEY Formula`)}</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               Use this framework for every analytical point you make:
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
               <div className="rounded bg-card p-3 text-center shadow-md">
                 <p className="text-lg font-bold text-primary">K</p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Keyword / Quote</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {_tr(`Keyword / Quote`)}
+                </p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Select a specific word, phrase, or technique from the passage.
                 </p>
               </div>
               <div className="rounded bg-card p-3 text-center shadow-md">
                 <p className="text-lg font-bold text-primary">E</p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Explain</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  Explain
+                </p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Identify the technique and explain what it means literally.
                 </p>
               </div>
               <div className="rounded bg-card p-3 text-center shadow-md">
                 <p className="text-lg font-bold text-primary">Y</p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Why / Effect</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {_tr(`Why / Effect`)}
+                </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Explain the effect on the reader &mdash; what does the writer
-                  achieve?
+                  Explain the effect on the reader &mdash; what does the writer achieve?
                 </p>
               </div>
             </div>
@@ -486,23 +516,20 @@ export default function Paper1ReadingPage() {
             </h3>
             <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground leading-relaxed">
               <p>
-                The writer describes the storm as a <em>&ldquo;furious
-                beast&rdquo;</em>, using a <strong>metaphor</strong> to compare
-                the storm to a dangerous animal. The adjective
-                &ldquo;furious&rdquo; personifies the storm, suggesting it has
-                human emotions of rage, which makes the reader feel that the
-                storm is unpredictable and threatening. The noun
-                &ldquo;beast&rdquo; has connotations of something wild and
-                uncontrollable, creating a sense of helplessness and fear. This
-                is effective because it makes the reader empathise with the
-                characters who are caught in the storm, heightening the tension
-                in the narrative.
+                The writer describes the storm as a <em>&ldquo;furious beast&rdquo;</em>, using a{' '}
+                <strong>metaphor</strong> to compare the storm to a dangerous animal. The adjective
+                &ldquo;furious&rdquo; personifies the storm, suggesting it has human emotions of
+                rage, which makes the reader feel that the storm is unpredictable and threatening.
+                The noun &ldquo;beast&rdquo; has connotations of something wild and uncontrollable,
+                creating a sense of helplessness and fear. This is effective because it makes the
+                reader empathise with the characters who are caught in the storm, heightening the
+                tension in the narrative.
               </p>
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
-              Notice: specific quotation &rarr; technique identified &rarr;
-              meaning explained &rarr; effect on reader &rarr; link back to
-              question. This is what top-band responses look like.
+              Notice: specific quotation &rarr; technique identified &rarr; meaning explained &rarr;
+              effect on reader &rarr; link back to question. This is what top-band responses look
+              like.
             </p>
           </div>
 
@@ -513,43 +540,45 @@ export default function Paper1ReadingPage() {
             <div className="rounded-lg border border-border p-4">
               <p className="text-sm font-semibold text-primary">Imagery</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Metaphors, similes, personification &mdash; how does the writer
-                paint pictures with words?
+                Metaphors, similes, personification &mdash; how does the writer paint pictures with
+                words?
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">Word Choice</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`Word Choice`)}</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Adjectives, adverbs, verbs with strong connotations. What
-                associations do the chosen words carry?
+                Adjectives, adverbs, verbs with strong connotations. What associations do the chosen
+                words carry?
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">Sentence Structure</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`Sentence Structure`)}</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Short sentences for impact/tension. Long, complex sentences for
-                detailed description. Lists for emphasis.
+                Short sentences for impact/tension. Long, complex sentences for detailed
+                description. Lists for emphasis.
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">Tone &amp; Mood</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`Tone &amp; Mood`)}</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                How does the passage make you feel? Identify the overall tone
-                and explain how specific language choices create it.
+                How does the passage make you feel? Identify the overall tone and explain how
+                specific language choices create it.
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">Sound Devices</p>
+              <p className="text-sm font-semibold text-primary">{_tr(`Sound Devices`)}</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Alliteration, onomatopoeia, sibilance &mdash; how does the
-                writing sound when read aloud?
+                Alliteration, onomatopoeia, sibilance &mdash; how does the writing sound when read
+                aloud?
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
-              <p className="text-sm font-semibold text-primary">Contrast &amp; Juxtaposition</p>
+              <p className="text-sm font-semibold text-primary">
+                {_tr(`Contrast &amp; Juxtaposition`)}
+              </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Does the writer place opposing ideas side by side to emphasise
-                a point or create surprise?
+                Does the writer place opposing ideas side by side to emphasise a point or create
+                surprise?
               </p>
             </div>
           </div>
@@ -567,40 +596,49 @@ export default function Paper1ReadingPage() {
           </p>
           <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">1</span>
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                1
+              </span>
               <span>
-                <strong>Skim-read the entire passage</strong> (2&ndash;3 minutes) to
-                get a sense of the subject, tone, and structure.
+                <strong>{_tr(`Skim-read the entire passage`)}</strong> (2&ndash;3 minutes) to get a
+                sense of the subject, tone, and structure.
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">2</span>
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                2
+              </span>
               <span>
-                <strong>Read the questions</strong> so you know what to look for
-                on your second, more detailed read.
+                <strong>{_tr(`Read the questions`)}</strong> so you know what to look for on your
+                second, more detailed read.
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">3</span>
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                3
+              </span>
               <span>
-                <strong>Re-read the passage carefully</strong>, annotating key
-                words, techniques, and relevant information for each question.
+                <strong>{_tr(`Re-read the passage carefully`)}</strong>, annotating key words,
+                techniques, and relevant information for each question.
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">4</span>
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                4
+              </span>
               <span>
-                <strong>Answer in order</strong> &mdash; Cambridge questions
-                generally follow the passage chronologically, so working through
-                them in order is most efficient.
+                <strong>{_tr(`Answer in order`)}</strong> &mdash; Cambridge questions generally
+                follow the passage chronologically, so working through them in order is most
+                efficient.
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">5</span>
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                5
+              </span>
               <span>
-                <strong>Check mark allocations</strong> &mdash; if a question is
-                worth 3 marks, you need 3 distinct points. If it is worth 1
-                mark, keep your answer brief.
+                <strong>{_tr(`Check mark allocations`)}</strong> &mdash; if a question is worth 3
+                marks, you need 3 distinct points. If it is worth 1 mark, keep your answer brief.
               </span>
             </li>
           </ol>
@@ -608,7 +646,7 @@ export default function Paper1ReadingPage() {
 
         {/* Continue studying */}
         <div className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-foreground">Continue studying</h2>
+          <h2 className="text-xl font-bold text-foreground">{_tr(`Continue studying`)}</h2>
           <p className="mt-2 text-muted-foreground">
             Build your reading comprehension and writing skills further.
           </p>
@@ -649,7 +687,6 @@ export default function Paper1ReadingPage() {
         {/* ── Disclaimer ────────────────────────────────────────── */}
         <ExamBoardDisclaimer variant="content" className="mt-12" />
       </div>
-
     </>
-  );
+  )
 }
