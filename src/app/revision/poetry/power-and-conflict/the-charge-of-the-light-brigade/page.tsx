@@ -291,6 +291,12 @@ const poem: PoemData = {
 <p><strong>Alfred Lord Tennyson</strong> (1809\u20131892) was <strong>Poet Laureate</strong> at the time, a role that carried an expectation to respond to national events. He composed the poem on <strong>2 December 1854</strong>, reportedly in just a few minutes after reading a report in <em>The Times</em> newspaper by W. H. Russell. The phrase <em>\u201Csome one had blunder\u2019d\u201D</em> comes directly from that report.</p>
 <p>Tennyson\u2019s poem was published in <em>The Examiner</em> on 9 December 1854, just weeks after the battle. He later sent 1,000 copies to soldiers in the Crimea at their request, showing that the poem served a <strong>morale-boosting and memorialising function</strong>.</p>`,
 
+  contextAr: `<p><strong>حرب القرم (Crimean War، 1853–1856)</strong> دارت بين روسيا وتحالف يضم بريطانيا وفرنسا والدولة العثمانية وسردينيا. كانت من أولى الحروب اللي يغطّيها مراسلون ومصوّرون من الصحف، وهالشي وصّل واقع الحرب مباشرة للجمهور البريطاني.</p>
+<p><strong>معركة Balaclava (25 أكتوبر 1854)</strong> شافت سوء تواصل كارثي في سلسلة القيادة البريطانية. Lord Raglan كان قاصد إن الـLight Brigade تمنع الروس من سحب المدافع اللي استولوا عليها من تحصين، بس الأمر كان مبهم — حمله Captain Nolan — وفسّره Lord Lucan وLord Cardigan بشكل غلط. الـLight Brigade، حوالي 670 فارس، شنّت هجوم مباشر على وادي محاطه المدافع الروسية من ثلاث جهات.</p>
+<p>من حوالي 670 فارس هجموا، حوالي <strong>110 ماتوا، و161 جُرحوا، وعشرات أُسروا</strong>. الهجوم استمر تقريباً عشرين دقيقة بس، وصار واحد من أشهر الأخطاء العسكرية في تاريخ بريطانيا.</p>
+<p><strong>Alfred Lord Tennyson</strong> (1809–1892) كان وقتها <strong>Poet Laureate</strong> (شاعر البلاط الرسمي)، وهذا منصب يحتّم على صاحبه إنه يستجيب للأحداث الوطنية. كتب القصيدة في <strong>2 ديسمبر 1854</strong>، وحسب الروايات في دقايق معدودة بعد ما قرى تقرير في صحيفة <em>The Times</em> لـW. H. Russell. عبارة <em>"some one had blunder’d"</em> مأخوذة مباشرة من ذاك التقرير.</p>
+<p>القصيدة انتشرت في مجلة <em>The Examiner</em> في 9 ديسمبر 1854، أسابيع بس بعد المعركة. بعدها، أرسل Tennyson 1,000 نسخة للجنود في القرم بناءً على طلبهم، وهذا يبيّن إن القصيدة لعبت دور <strong>رفع المعنويات وتخليد الذكرى</strong>.</p>`,
+
   /* ── Summary ─────────────────────────────────────────────────── */
   summary: `STANZA 1: The poem opens with the Light Brigade riding forward into "the valley of Death." A commanding officer gives the order to charge. The repetition of "half a league" creates a sense of relentless momentum.
 
@@ -303,6 +309,18 @@ STANZA 4: This is the climax of the charge. The soldiers break through the Russi
 STANZA 5: The survivors retreat through the same deadly corridor of cannon fire. This stanza mirrors Stanza 3 in structure, but "in front" becomes "behind," showing the soldiers are now fleeing. "While horse and hero fell" emphasises the continuing losses.
 
 STANZA 6: Tennyson shifts from narrative to direct address. He commands the reader to "Honour the charge they made" and remember the "Noble six hundred." The poem ends as a public memorial and a call to never forget their sacrifice.`,
+
+  summaryAr: `المقطع 1: القصيدة تبدأ والـLight Brigade تتقدّم نحو "the valley of Death". قائد يعطي الأمر بالهجوم. وتكرار "half a league" يخلق إحساس بزخم متواصل ما يتوقّف.
+
+المقطع 2: الجنود يعرفون إن في واحد سوّى غلط فادح ("Some one had blunder’d")، بس مع ذلك ما يشكّون في الأمر ولا يخالفونه. Tennyson يأكّد على واجبهم: "Theirs not to reason why, / Theirs but to do and die."
+
+المقطع 3: الجنود محاطين من ثلاث جهات بالمدافع الروسية. Tennyson يستخدم onomatopoeia ("Volley’d and thunder’d") وpersonification ("jaws of Death"، "mouth of Hell") عشان يوصل حجم الخطر الكاسح اللي يواجهونه.
+
+المقطع 4: ذروة الهجوم. الجنود يخترقون الصفوف الروسية بسيوفهم، والعالم كله ينذهل. بس Tennyson يقطع هالنصر فوراً: "Then they rode back, but not / Not the six hundred." يعني وايد منهم انقتلوا.
+
+المقطع 5: الناجون ينسحبون من نفس الممر القاتل اللي قصفته المدافع. هذا المقطع يعكس بنية المقطع الثالث، بس "in front" تصير "behind"، عشان تبيّن إن الجنود الحين يهربون. وعبارة "While horse and hero fell" تبرز إن الخسائر مستمرّة.
+
+المقطع 6: Tennyson ينتقل من السرد إلى المخاطبة المباشرة. يأمر القارئ "Honour the charge they made" ويتذكّر "Noble six hundred". القصيدة تنتهي كنصب تذكاري عام، ودعوة عشان ما ينسى أحد تضحيتهم.`,
 
   /* ── Form & Structure ────────────────────────────────────────── */
   formAndStructure: `METRE: The poem is predominantly written in dactylic dimeter (a stressed syllable followed by two unstressed: DUM-da-da DUM-da-da), as in "Half a league, half a league" and the refrain "Rode the six hundred" (DUM-da-da DUM-da). This galloping metre mimics the sound of horses\u2019 hooves, pulling the reader forward at the pace of the charge itself. The lines are largely end-stopped, reinforcing the drumbeat regularity.
@@ -319,6 +337,20 @@ NARRATIVE ARC: The poem follows a clear chronological structure: the order to ch
 
 VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhortation\u2014Tennyson stops telling the story and starts commanding the reader to remember.`,
 
+  formAndStructureAr: `الوزن (METRE): القصيدة غالباً مكتوبة في dactylic dimeter (مقطع مشدّد يتلوه مقطعين غير مشدّدين: DUM-da-da DUM-da-da)، مثل "Half a league, half a league" واللازمة "Rode the six hundred" (DUM-da-da DUM-da). هذا الإيقاع المتسارع يحاكي صوت حوافر الخيل، ويجرّ القارئ للأمام بسرعة الهجوم نفسه. والأبيات غالباً end-stopped، وهذا يدعم انتظام إيقاع الطبل.
+
+طول المقاطع: الستّ مقاطع تتفاوت في الطول (8، 9، 9، 12، 11، 6 أبيات)، وتعكس قوس الهجوم. أطول مقطع (4) هو ذروة المعركة؛ أقصر مقطع (6) هو الخاتمة التذكارية، ويعكس عدد الجنود اللي بقوا.
+
+اللازمة (REFRAIN): البيت اللي يتكرّر "Rode the six hundred" يثبّت كل مقطع، بس يتغيّر عبر القصيدة: "Rode the six hundred" ← "Not the six hundred" ← "Left of six hundred" ← "Noble six hundred". هذا التطوّر يتبع الحبكة من الهجوم، للخسارة، للتكريم.
+
+التكرار: Tennyson يستخدم تكرار مكثّف على كل المستويات — كلمات ("cannon"، "valley of Death")، عبارات ("Theirs not to")، وأبيات كاملة. هذا يخلق إيقاع تنويمي شبه ديني، وكأن القصيدة نفسها دقّ طبل أو ترتيلة جنائزية.
+
+القافية: القصيدة تستخدم قافية غير منتظمة (غالباً couplets أو triplets) بدل ما تتقيّد بنظام ثابت. هذا يعطيها طابع الـballad اللي يناسب الإلقاء الشفهي والتخليد العام.
+
+القوس السردي: القصيدة تتبع تسلسل زمني واضح: الأمر بالهجوم (1–2)، الهجوم نفسه (3–4)، الانسحاب (5)، والتكريم (6). هذا يعكس مسار المعركة نفسها.
+
+VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل من السرد إلى الحضّ — Tennyson يبطّل يحكي القصة ويبدأ يأمر القارئ إنه يتذكّر.`,
+
   /* ── Key Quotes ──────────────────────────────────────────────── */
   keyQuotes: [
     {
@@ -326,54 +358,81 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
       analysis:
         'The opening falls in dactylic dimeter (DUM-da-da DUM-da-da) — the predominant metre of the poem, creating the galloping rhythm that propels the reader forward. "League" is an archaic unit of distance, lending the poem a timeless, epic quality. The triple repetition suggests the charge is unstoppable and inevitable.',
       themes: ['Power of war', 'Duty'],
+      analysisAr:
+        'الافتتاحية على وزن dactylic dimeter (DUM-da-da DUM-da-da) — الوزن الغالب في القصيدة، اللي يخلق إيقاع متسارع يدفع القارئ للأمام. كلمة "league" وحدة قياس قديمة للمسافة، تعطي القصيدة طابع ملحمي خارج الزمن. والتكرار الثلاثي يلمّح إن الهجوم ما يقدر يتوقّف، وإنه حتمي.',
+      themesAr: ['قوة الحرب', 'الواجب'],
     },
     {
       quote: 'Into the valley of Death',
       analysis:
         'An allusion to Psalm 23. The capitalised "Death" personifies it as a force the soldiers ride towards knowingly. The phrase recurs as a refrain, binding the poem together and reinforcing the inescapable danger.',
       themes: ['Reality of conflict', 'Death', 'Religion'],
+      analysisAr:
+        'إشارة (allusion) إلى المزمور 23 في العهد القديم. تكبير حرف "D" في "Death" يشخّصها كقوّة الجنود يركبون نحوها وهم يدرون فيها. العبارة تتكرّر كلازمة، تربط القصيدة من بدايتها لنهايتها، وتأكّد إن الخطر ما يقدر أحد يفرّ منه.',
+      themesAr: ['واقع الصراع', 'الموت', 'الدين'],
     },
     {
       quote: 'Some one had blunder\u2019d',
       analysis:
         'A deliberately understated acknowledgement of the catastrophic military error. Tennyson uses the vague "Some one" to avoid naming individuals, keeping the focus on the soldiers\u2019 sacrifice rather than assigning blame to commanding officers.',
       themes: ['Power of authority', 'Human cost of war'],
+      analysisAr:
+        'اعتراف مخفّف جداً عن قصد عن الخطأ العسكري الكارثي. Tennyson يستخدم "Some one" المبهمة عشان يتجنّب تسمية أي ضابط، ويخلّي التركيز على تضحية الجنود بدل ما يلقي اللوم على القيادة.',
+      themesAr: ['سلطة القيادة', 'الكلفة الإنسانية للحرب'],
     },
     {
       quote: 'Theirs not to make reply, / Theirs not to reason why, / Theirs but to do and die',
       analysis:
         'The anaphora ("Theirs not to") and the rhyming couplet "why/die" encapsulate the soldiers\u2019 absolute obedience. It is simultaneously admiring (they were courageous) and tragic (obedience led to death). The monosyllabic "do and die" has a blunt finality.',
       themes: ['Duty and honour', 'Power of authority', 'Conflict'],
+      analysisAr:
+        'الـanaphora ("Theirs not to") والقافية الثنائية "why/die" يلخّصون طاعة الجنود المطلقة. هذا الموقف معجب (لأنهم كانوا شجعان) ومأساوي (لأن الطاعة جابت لهم الموت). والكلمات أحادية المقطع "do and die" لها وقع قاطع ومحسوم.',
+      themesAr: ['الواجب والشرف', 'سلطة القيادة', 'الصراع'],
     },
     {
       quote: 'Cannon to right of them, / Cannon to left of them, / Cannon in front of them',
       analysis:
         'The listing and repetition physically surround the reader with danger, mirroring the soldiers\u2019 entrapment. The prepositions "right," "left," "front" make the hopelessness of the situation spatially concrete.',
       themes: ['Reality of conflict', 'Helplessness', 'Death'],
+      analysisAr:
+        'القائمة والتكرار يحيطون القارئ بالخطر، ويعكسون حصار الجنود. وحروف الجر "right" و"left" و"front" تحط حالة اليأس في إطار مكاني ملموس وواضح.',
+      themesAr: ['واقع الصراع', 'العجز', 'الموت'],
     },
     {
       quote: 'Into the jaws of Death, / Into the mouth of Hell',
       analysis:
         'Death and Hell are personified as devouring beasts. "Jaws" and "mouth" suggest the soldiers are being consumed. The paired personifications elevate the battle to a mythic struggle between humanity and death itself.',
       themes: ['Death', 'Power of nature', 'Conflict'],
+      analysisAr:
+        'الموت والجحيم يتشخّصون كوحوش مفترسة تبتلع. "Jaws" و"mouth" يلمّحون إن الجنود يبلعهم الخطر. الـpersonifications المزدوجة ترفع المعركة لمستوى صراع أسطوري بين الإنسانية والموت نفسه.',
+      themesAr: ['الموت', 'قوة الطبيعة', 'الصراع'],
     },
     {
       quote: 'Then they rode back, but not / Not the six hundred',
       analysis:
         'The enjambment forces a pause before the devastating "Not the six hundred." The double negative and the repetition of "not" make the loss hit harder. The refrain has changed\u2014this structural shift marks the human cost.',
       themes: ['Loss', 'Reality of conflict', 'Human cost of war'],
+      analysisAr:
+        'الـenjambment يفرض توقّف قبل العبارة المدمّرة "Not the six hundred." النفي المزدوج وتكرار "not" يخلّي الخسارة توجع أكثر. اللازمة تغيّرت — وهذا التحوّل البنيوي هو اللي يأشّر للكلفة الإنسانية.',
+      themesAr: ['الخسارة', 'واقع الصراع', 'الكلفة الإنسانية للحرب'],
     },
     {
       quote: 'When can their glory fade? / O the wild charge they made!',
       analysis:
         'The rhetorical question demands the answer "never." "Wild" is ambiguous\u2014it suggests both bravery and recklessness. Tennyson insists the charge should be remembered for its courage, not its futility.',
       themes: ['Memory and remembrance', 'Honour', 'Glory'],
+      analysisAr:
+        'السؤال البلاغي ينتظر الإجابة "أبداً". وكلمة "wild" غامضة — تحتمل الشجاعة، وتحتمل التهوّر. Tennyson يصرّ إن الهجوم لازم ينذكر بسبب الشجاعة، مو بسبب عبثيّته.',
+      themesAr: ['الذاكرة والتخليد', 'الشرف', 'المجد'],
     },
     {
       quote: 'Honour the charge they made! / Honour the Light Brigade, / Noble six hundred!',
       analysis:
         'The imperative "Honour" directly commands the reader to remember. "Noble" redefines the soldiers\u2019 refrain\u2014they are no longer just "six hundred" but "Noble six hundred." Tennyson transforms the poem into a permanent memorial.',
       themes: ['Memory and remembrance', 'Honour', 'Duty'],
+      analysisAr:
+        'الفعل بصيغة الأمر "Honour" يأمر القارئ مباشرة إنه يتذكّر. وكلمة "Noble" تعيد تعريف لازمة الجنود — هم ما عادوا مجرّد "six hundred"، صاروا "Noble six hundred". Tennyson يحوّل القصيدة لنصب تذكاري دائم.',
+      themesAr: ['الذاكرة والتخليد', 'الشرف', 'الواجب'],
     },
   ],
 
@@ -385,6 +444,8 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
       effect:
         'The triple repetition of "Theirs" at the start of successive lines hammers home the soldiers\u2019 total lack of agency. They cannot question; they can only obey. The anaphora creates a list-like rhythm that mirrors the mechanical nature of following orders without thought.',
       lineRef: 13,
+      effectAr:
+        '\u062a\u0643\u0631\u0627\u0631 "Theirs" \u062b\u0644\u0627\u062b \u0645\u0631\u0627\u062a \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0623\u0628\u064a\u0627\u062a \u0645\u062a\u062a\u0627\u0644\u064a\u0629 \u064a\u062b\u0628\u0651\u062a \u0628\u0642\u0648\u0629 \u0641\u0643\u0631\u0629 \u0625\u0646 \u0627\u0644\u062c\u0646\u0648\u062f \u0645\u0627 \u0639\u0646\u062f\u0647\u0645 \u0623\u064a \u0625\u0631\u0627\u062f\u0629 \u0645\u0633\u062a\u0642\u0644\u0651\u0629. \u0645\u0627 \u064a\u0642\u062f\u0631\u0648\u0646 \u064a\u0633\u0623\u0644\u0648\u0646\u061b \u064a\u0642\u062f\u0631\u0648\u0646 \u064a\u0637\u064a\u0639\u0648\u0646 \u0628\u0633. \u0627\u0644\u0640anaphora \u062a\u062e\u0644\u0642 \u0625\u064a\u0642\u0627\u0639 \u0634\u0628\u0647 \u0642\u0627\u0626\u0645\u0629\u060c \u064a\u0639\u0643\u0633 \u0627\u0644\u0637\u0627\u0628\u0639 \u0627\u0644\u0622\u0644\u064a \u0644\u0644\u062a\u0646\u0641\u064a\u0630 \u0628\u062f\u0648\u0646 \u062a\u0641\u0643\u064a\u0631.',
     },
     {
       device: 'Repetition',
@@ -392,6 +453,8 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
       effect:
         'The relentless repetition of "Cannon" physically encloses the reader, recreating the claustrophobia and inescapable danger faced by the soldiers. It also gives the poem a chant-like, incantatory quality suited to public recitation and memorial.',
       lineRef: 19,
+      effectAr:
+        'تكرار كلمة "Cannon" بدون توقّف يحط القارئ في حصار مادي، ويعيد خلق الضيق والإحساس بالخطر اللي ما له مهرب اللي عانى منه الجنود. كذلك يعطي القصيدة طابع ترتيلي شبه ديني، يناسب الإلقاء العام والتخليد التذكاري.',
     },
     {
       device: 'Personification of Death',
@@ -399,6 +462,8 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
       effect:
         'Death and Hell are given physical, predatory features ("jaws," "mouth"), transforming them from abstract concepts into devouring beasts. This elevates the soldiers\u2019 sacrifice to a mythic level and emphasises how they willingly rode towards destruction.',
       lineRef: 25,
+      effectAr:
+        '\u0627\u0644\u0645\u0648\u062a \u0648\u0627\u0644\u062c\u062d\u064a\u0645 \u064a\u0639\u0637\u0648\u0646 \u0645\u0644\u0627\u0645\u062d \u062d\u064a\u0648\u0627\u0646\u064a\u0629 \u0645\u0641\u062a\u0631\u0633\u0629 ("jaws" \u0648"mouth")\u060c \u0641\u064a\u062a\u062d\u0648\u0651\u0644\u0648\u0646 \u0645\u0646 \u0645\u0641\u0627\u0647\u064a\u0645 \u0645\u062c\u0631\u0651\u062f\u0629 \u0625\u0644\u0649 \u0648\u062d\u0648\u0634 \u062a\u0628\u062a\u0644\u0639. \u0647\u0630\u0627 \u064a\u0631\u0641\u0639 \u062a\u0636\u062d\u064a\u0629 \u0627\u0644\u062c\u0646\u0648\u062f \u0644\u0645\u0633\u062a\u0648\u0649 \u0623\u0633\u0637\u0648\u0631\u064a\u060c \u0648\u064a\u0628\u0631\u0632 \u0625\u0646\u0647\u0645 \u0627\u062e\u062a\u0627\u0631\u0648\u0627 \u064a\u0631\u0643\u0628\u0648\u0646 \u0646\u062d\u0648 \u0627\u0644\u062f\u0645\u0627\u0631 \u0648\u0647\u0645 \u064a\u0639\u0631\u0641\u0648\u0646 \u0645\u0635\u064a\u0631\u0647\u0645.',
     },
     {
       device: 'Metonymy',
@@ -406,6 +471,8 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
       effect:
         '"Shot and shell" stands in for the full arsenal of the Russian army. The use of concrete, tactile nouns makes the abstract violence of war physically immediate. "Storm\u2019d" itself is a metaphor comparing gunfire to a force of nature.',
       lineRef: 23,
+      effectAr:
+        '"Shot and shell" \u062a\u0646\u0648\u0628 \u0639\u0646 \u062a\u0631\u0633\u0627\u0646\u0629 \u0627\u0644\u062c\u064a\u0634 \u0627\u0644\u0631\u0648\u0633\u064a \u0643\u0627\u0645\u0644\u0629. \u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0623\u0633\u0645\u0627\u0621 \u062d\u0633\u0651\u064a\u0629 \u0648\u0645\u0644\u0645\u0648\u0633\u0629 \u064a\u062d\u0648\u0651\u0644 \u0639\u0646\u0641 \u0627\u0644\u062d\u0631\u0628 \u0627\u0644\u0645\u062c\u0631\u0651\u062f \u0644\u0634\u064a \u0645\u0627\u062f\u064a\u0651 \u0645\u0628\u0627\u0634\u0631. \u0648\u0643\u0644\u0645\u0629 "Storm\u2019d" \u0628\u0646\u0641\u0633\u0647\u0627 \u0627\u0633\u062a\u0639\u0627\u0631\u0629\u060c \u062a\u0634\u0628\u0651\u0647 \u0625\u0637\u0644\u0627\u0642 \u0627\u0644\u0646\u0627\u0631 \u0628\u0642\u0648\u0629 \u0637\u0628\u064a\u0639\u064a\u0629 \u0643\u0627\u0633\u062d\u0629.',
     },
     {
       device: 'Onomatopoeia',
@@ -413,6 +480,8 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
       effect:
         'The harsh, explosive sounds of "volley\u2019d" and "thunder\u2019d" recreate the aural chaos of the battlefield. The reader is not just told about the noise but made to hear it through the poem\u2019s own sonic texture.',
       lineRef: 22,
+      effectAr:
+        '\u0627\u0644\u0623\u0635\u0648\u0627\u062a \u0627\u0644\u0642\u0627\u0633\u064a\u0629 \u0648\u0627\u0644\u0645\u062a\u0641\u062c\u0651\u0631\u0629 \u0641\u064a "volley\u2019d" \u0648"thunder\u2019d" \u062a\u0639\u064a\u062f \u062e\u0644\u0642 \u0627\u0644\u0641\u0648\u0636\u0649 \u0627\u0644\u0633\u0645\u0639\u064a\u0629 \u0641\u064a \u0633\u0627\u062d\u0629 \u0627\u0644\u0645\u0639\u0631\u0643\u0629. \u0627\u0644\u0642\u0627\u0631\u0626 \u0645\u0627 \u064a\u0643\u062a\u0641\u064a \u0628\u0627\u0644\u0633\u0645\u0627\u0639 \u0639\u0646 \u0627\u0644\u0636\u062c\u0629\u060c \u064a\u062d\u0633\u0651 \u0628\u0647\u0627 \u0641\u0639\u0644\u0627\u064b \u0645\u0646 \u062e\u0644\u0627\u0644 \u0646\u0633\u064a\u062c \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0627\u0644\u0635\u0648\u062a\u064a \u0646\u0641\u0633\u0647.',
     },
     {
       device: 'Rhetorical questions',
@@ -420,6 +489,8 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
       effect:
         'The rhetorical questions in Stanzas 2 and 6 engage the reader directly. The first implies "no" (no man was dismayed), praising the soldiers\u2019 courage. The second demands "never," turning the reader into an active participant in the act of remembrance.',
       lineRef: 10,
+      effectAr:
+        '\u0627\u0644\u0623\u0633\u0626\u0644\u0629 \u0627\u0644\u0628\u0644\u0627\u063a\u064a\u0629 \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639\u064a\u0646 2 \u06486 \u062a\u0634\u0631\u0643 \u0627\u0644\u0642\u0627\u0631\u0626 \u0645\u0628\u0627\u0634\u0631\u0629. \u0627\u0644\u0623\u0648\u0644 \u064a\u0644\u0645\u0651\u062d "\u0644\u0627" (\u0648\u0644\u0627 \u0648\u0627\u062d\u062f \u0627\u0631\u062a\u0639\u0628)\u060c \u0648\u0647\u0630\u064a \u0645\u062f\u062d \u0644\u0634\u062c\u0627\u0639\u0629 \u0627\u0644\u062c\u0646\u0648\u062f. \u0648\u0627\u0644\u062b\u0627\u0646\u064a \u064a\u0646\u062a\u0638\u0631 \u0625\u062c\u0627\u0628\u0629 "\u0623\u0628\u062f\u0627\u064b"\u060c \u0641\u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u0642\u0627\u0631\u0626 \u0645\u0646 \u0645\u062a\u0641\u0631\u0651\u062c \u0644\u0645\u0634\u0627\u0631\u0643 \u0641\u0639\u0644\u064a \u0641\u064a \u0641\u0639\u0644 \u0627\u0644\u062a\u0630\u0643\u0651\u0631.',
     },
     {
       device: 'Imperative verbs',
@@ -427,6 +498,8 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
       effect:
         'Tennyson shifts from third-person narrative to second-person command. The imperative "Honour" transforms the poem from a story about the past into a demand upon the present reader\u2014it is not enough to know what happened; you must actively remember and revere it.',
       lineRef: 53,
+      effectAr:
+        'Tennyson \u064a\u0646\u062a\u0642\u0644 \u0645\u0646 \u0633\u0631\u062f \u0628\u0636\u0645\u064a\u0631 \u0627\u0644\u063a\u0627\u0626\u0628 \u0625\u0644\u0649 \u0623\u0645\u0631 \u0628\u0636\u0645\u064a\u0631 \u0627\u0644\u0645\u062e\u0627\u0637\u0628. \u0648\u0641\u0639\u0644 \u0627\u0644\u0623\u0645\u0631 "Honour" \u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0646 \u0642\u0635\u0629 \u0639\u0646 \u0627\u0644\u0645\u0627\u0636\u064a \u0644\u0645\u0637\u0644\u0628 \u0639\u0644\u0649 \u0627\u0644\u0642\u0627\u0631\u0626 \u0641\u064a \u0627\u0644\u062d\u0627\u0636\u0631 \u2014 \u0645\u0648 \u0643\u0627\u0641\u064a \u0625\u0646\u0643 \u062a\u0639\u0631\u0641 \u0627\u064a\u0634 \u0635\u0627\u0631\u061b \u0644\u0627\u0632\u0645 \u062a\u062a\u0630\u0643\u0651\u0631 \u0648\u062a\u0643\u0631\u0651\u0645.',
     },
     {
       device: 'Diminishing refrain',
@@ -435,6 +508,8 @@ VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhort
       effect:
         'The evolving refrain tracks the arc of the poem: from the full brigade charging, to the devastating losses, to the few survivors, to the final elevation of their sacrifice. The structural change within the refrain itself tells the story of the battle.',
       lineRef: 7,
+      effectAr:
+        'اللازمة المتطوّرة تتتبّع قوس القصيدة كله: من اللواء كامل وهو يهجم، للخسائر المدمّرة، للناجين القلائل، لرفع تضحيتهم في الختام. التغيّر البنيوي في اللازمة نفسها هو اللي يحكي قصة المعركة.',
     },
   ],
 }

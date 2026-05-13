@@ -399,6 +399,16 @@ const poemData: PoemData = {
 
 <p><strong>Form:</strong> The dramatic monologue allows Browning to create dramatic irony — the Duke intends to present himself as a cultured aristocrat, but the reader sees a jealous, controlling murderer. We hear only his voice, yet we sympathise entirely with the silent Duchess.</p>`,
 
+  contextAr: `<p><strong>Robert Browning</strong> نشر قصيدة <em>My Last Duchess</em> سنة 1842 ضمن ديوانه <em>Dramatic Lyrics</em>. القصيدة <strong>dramatic monologue</strong> (مونولوج درامي) — وهو شكل أتقنه Browning، فيه متكلّم واحد بدون قصد منه يكشف للقارئ حقيقة شخصيته.</p>
+
+<p>المتكلّم في القصيدة مستوحى من <strong>Alfonso II, Duke of Ferrara</strong> (1533–1598)، نبيل إيطالي حقيقي من عصر النهضة. زوجته الأولى، <strong>Lucrezia de' Medici</strong>، توفّت في ظروف مريبة وعمرها 17 سنة بس، بعد ثلاث سنوات من الزواج. بعدها، Alfonso بدأ مفاوضات للزواج من Barbara of Austria، بنت أخ Ferdinand II, Count of Tyrol.</p>
+
+<p><strong>السياق التاريخي:</strong> القصور الإيطالية في عصر النهضة كانت مراكز لرعاية الفنون، بس في نفس الوقت كانت مراكز سلطة سياسية قاسية. زيجات الأرستقراطية كانت تحالفات سياسية — النساء يتبادلون كأنهم ممتلكات بين العائلات النافذة. والقصيدة تستعرض كيف كانت <strong>السلطة الذكورية</strong> تشتغل في هذا العالم: الـDuke يعامل زوجته كامتداد لمكانته وممتلكاته.</p>
+
+<p><strong>السياق الفيكتوري:</strong> رغم إن الأحداث في إيطاليا عصر النهضة، Browning كتب القصيدة لجمهور فيكتوري كان بيستوعب النقد للسلطة الذكورية. في أربعينات القرن التاسع عشر، النساء المتزوجات في بريطانيا ما كان عندهم تقريباً أي حقوق قانونية — قانون <em>Married Women's Property Act</em> ما طلع إلا سنة 1882. Browning يستخدم البعد التاريخي عشان يعلّق على سياسات النوع الاجتماعي في زمنه.</p>
+
+<p><strong>الشكل:</strong> الـdramatic monologue يخلّي Browning يخلق dramatic irony — الـDuke يقصد إنه يقدّم نفسه كأرستقراطي مثقّف، بس القارئ يشوف فيه قاتل غيور ومسيطر. ما نسمع غير صوته هو، ومع ذلك نتعاطف بالكامل مع الـDuchess الصامتة.</p>`,
+
   summary: `The Duke of Ferrara shows a visiting envoy a portrait of his former wife — his "last Duchess." As he describes the painting, he reveals his obsessive jealousy: the Duchess smiled too freely, appreciated simple pleasures, and treated everyone with equal warmth, which the Duke found intolerable.
 
 Rather than communicate his displeasure (which he considers "stooping"), the Duke "gave commands" — a chilling euphemism for having her killed. The Duchess's smiles "stopped together," and now she exists only as a painting behind a curtain that he alone controls.
@@ -406,6 +416,14 @@ Rather than communicate his displeasure (which he considers "stooping"), the Duk
 The poem ends with a shocking reveal: the Duke is in the middle of negotiating his next marriage. The entire monologue has been a veiled warning to the envoy (and, through him, to the next wife's family) about what happens to women who do not submit to his absolute authority.
 
 As they leave, the Duke pauses to admire a bronze sculpture of Neptune taming a sea-horse — a final metaphor for his desire to dominate and possess.`,
+
+  summaryAr: `Duke of Ferrara يعرض على مبعوث زائر لوحة لزوجته السابقة — "last Duchess" مالته. ولمّا يوصف اللوحة، يكشف غيرته المرضية: الـDuchess كانت تبتسم بسهولة، وتقدّر المتع البسيطة، وتعامل الكل بنفس الدفء، وهذا شي ما طاقه الـDuke أبداً.
+
+بدل ما يبلّغها بانزعاجه (لأنه يعتبر هذا "stooping"، أي تنازل)، الـDuke "gave commands" — كناية مرعبة عن إنه أمر بقتلها. ابتسامات الـDuchess "stopped together"، والحين هي موجودة فقط كلوحة وراء ستارة هو وحده يتحكّم فيها.
+
+القصيدة تنتهي بكشف صادم: الـDuke في الحين في وسط مفاوضات لزواجه التالي. كل المونولوج كان تحذير مبطّن للمبعوث (وعن طريقه، لعائلة الزوجة المقبلة) عن مصير النساء اللي ما يخضعون لسلطته المطلقة.
+
+ولمّا يطلعون، الـDuke يوقف عشان يتأمّل تمثال برونزي يصوّر Neptune وهو "يروّض" حصان البحر — استعارة ختامية لرغبته في الهيمنة والتملّك.`,
 
   formAndStructure: `DRAMATIC MONOLOGUE
 The entire poem is spoken by a single character — the Duke — to a silent listener (the envoy). Browning's genius is in what the Duke inadvertently reveals: he intends to appear cultured and reasonable, but the reader recognises a murderer. This creates dramatic irony throughout.
@@ -425,24 +443,51 @@ Strategic mid-line pauses ("Looking as if she were alive. I call") create moment
 SINGLE STANZA
 The poem is one continuous block — no stanza breaks, no pauses, no escape. This mirrors the Duke's monologue: once he starts talking, neither the envoy nor the reader can interrupt. The relentless flow reflects his absolute authority over the conversation and, metaphorically, over the women in his life.`,
 
+  formAndStructureAr: `DRAMATIC MONOLOGUE (مونولوج درامي)
+القصيدة كلها يتكلّم بها شخص واحد — الـDuke — لمستمع صامت (المبعوث). عبقرية Browning هي في الأشياء اللي يكشفها الـDuke بدون قصد: هو يقصد إنه يبيّن نفسه مثقّف ومنطقي، بس القارئ يلتقط فوراً إنه قاتل. هالشي يخلق dramatic irony مستمرّة في كل القصيدة.
+
+RHYMING COUPLETS (HEROIC COUPLETS)
+القصيدة تستخدم rhyming couplets (AABB) في iambic pentameter، بس الاستخدام المكثّف للـenjambment يخفي نمط القافية. هذا يعكس طريقة كلام الـDuke: يبدو إنه يحكي بشكل طبيعي وعفوي، بس البنية المحكمة تحت السطح تكشف سيطرته المحسوبة.
+
+ENJAMBMENT
+الأبيات تتسلسل بدون توقّف كثير ("she thanked / Men — good! but thanked / Somehow")، وهذا يعطي إحساس بالتدفّق الحواري. بس الـenjambment أيضاً يجسّد عجز الـDuke عن كبح غضبه — شكاويه تطفح عبر حدود الأبيات رغم محاولته يبيّن نفسه رزين.
+
+IAMBIC PENTAMETER
+الوزن المنتظم يعكس رغبة الـDuke في النظام والسيطرة. ولمّا يكسر الإيقاع — مثلاً في الجملة المتقطّعة "This grew; I gave commands;" — يكون هذا إشارة للحظات شدّة عاطفية تحت قشرته المتحكّمة.
+
+CAESURA
+التوقّفات الاستراتيجية في نص الأبيات ("Looking as if she were alive. I call") تخلق لحظات توتّر درامي. الـcaesura بعد "alive" تجبر القارئ يواجه حقيقة موت الـDuchess قبل ما الـDuke يكمّل كلامه بسلاسة.
+
+SINGLE STANZA (مقطوعة واحدة)
+القصيدة كتلة واحدة متّصلة — ولا فاصل بين المقاطع، ولا توقّف، ولا مهرب. هذا يعكس مونولوج الـDuke: لمّا يبدأ يحكي، لا المبعوث ولا القارئ يقدر يقاطعه. التدفّق المتواصل يعكس سلطته المطلقة على الحوار، وبشكل رمزي على النساء في حياته.`,
+
   keyQuotes: [
     {
       quote: "That's my last Duchess painted on the wall",
       analysis:
         'The possessive pronoun "my" establishes ownership from the very first line. "Last" is ambiguous — it could mean previous or final, hinting that there have been (or will be) others. The Duchess is reduced to a painting, an object on display.',
       themes: ['Power', 'Possession', 'Objectification'],
+      analysisAr:
+        'الضمير الملكي "my" من أول بيت يثبّت فكرة التملّك. وكلمة "last" غامضة — يحتمل إنها بمعنى السابقة، ويحتمل بمعنى الأخيرة، وهذا يلمّح إنه فيه دوقات قبلها وفيه أكيد دوقة بعدها. الـDuchess تختزل إلى لوحة، مجرّد قطعة معروضة.',
+      themesAr: ['السلطة', 'التملّك', 'تشييء المرأة'],
     },
     {
       quote: 'The curtain I have drawn for you, but I',
       analysis:
         'The curtain symbolises the Duke\'s total control over access to the Duchess. In life he could not control who saw her or who she smiled at; in death, he has absolute power. The repetition of "I" emphasises his ego and authority.',
       themes: ['Power', 'Control', 'Jealousy'],
+      analysisAr:
+        'الستارة ترمز لسيطرة الـDuke المطلقة على الوصول للـDuchess. في حياتها كان عاجز يتحكّم بمين يشوفها ومين تبتسم له؛ بعد موتها، صار يملك السلطة المطلقة. تكرار "I" يأكّد على غروره وسلطته.',
+      themesAr: ['السلطة', 'السيطرة', 'الغيرة'],
     },
     {
       quote: 'She had / A heart — how shall I say? — too soon made glad',
       analysis:
         'The parenthetical "how shall I say?" is performed hesitation — the Duke feigns delicacy while delivering a devastating criticism. The Duchess\'s warmth and generosity are reframed as moral failings. "Too soon" suggests she should have been harder to please.',
       themes: ['Jealousy', 'Patriarchy', 'Pride'],
+      analysisAr:
+        'العبارة الاعتراضية "how shall I say?" تردّد متكلّف — الـDuke يتظاهر باللباقة وهو يوجّه نقد قاتل. دفء الـDuchess وكرمها يعيد تأطيرهم كأنهم عيوب أخلاقية. وكلمة "too soon" تلمّح إنه كان يبي يصير إرضاؤها أصعب.',
+      themesAr: ['الغيرة', 'السلطة الذكورية', 'الكبرياء'],
     },
     {
       quote:
@@ -450,30 +495,45 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       analysis:
         'The Duke\'s fury is that his aristocratic lineage — his entire identity — was not valued above all else. The compound modifier "nine-hundred-years-old" emphasises the weight he places on status. The Duchess\'s egalitarian spirit is, to him, an insult.',
       themes: ['Pride', 'Status', 'Patriarchy'],
+      analysisAr:
+        'غضب الـDuke سببه إن نسبه الأرستقراطي — اللي هو هويته كلها — ما اتحط فوق كل شي. الصفة المركّبة "nine-hundred-years-old" تأكّد على الوزن الكبير اللي يعطيه للمكانة الاجتماعية. روح الـDuchess المساواتية، عنده، إهانة شخصية.',
+      themesAr: ['الكبرياء', 'المكانة', 'السلطة الذكورية'],
     },
     {
       quote: "Who'd stoop to blame / This sort of trifling?",
       analysis:
         '"Stoop" is the key word in the poem. The Duke refuses to lower himself to communicate his feelings to his wife — he considers conversation with her beneath his dignity. This refusal to "stoop" leads directly to her death.',
       themes: ['Pride', 'Power', 'Control'],
+      analysisAr:
+        'كلمة "stoop" مفتاح القصيدة. الـDuke يرفض إنه ينزل من قدره عشان يبلّغ زوجته بمشاعره — يعتبر إن مجرّد الحوار معاها أقل من كرامته. هذا الرفض هو السبب المباشر في موتها.',
+      themesAr: ['الكبرياء', 'السلطة', 'السيطرة'],
     },
     {
       quote: 'I gave commands; / Then all smiles stopped together.',
       analysis:
         'The most chilling euphemism in GCSE literature. "Gave commands" distances the Duke from the act of murder — he did not kill her himself but ordered it done. "All smiles stopped" reduces her death to the silencing of her joy. The semicolons create a cold, staccato rhythm.',
       themes: ['Power', 'Violence', 'Control'],
+      analysisAr:
+        'أبشع كناية في منهج GCSE. عبارة "gave commands" تباعد الـDuke عن فعل القتل — هو ما قتلها بيده، أمر بقتلها. وعبارة "all smiles stopped" تختزل موتها إلى إسكات فرحها. الـsemicolons يخلقون إيقاع متقطّع بارد.',
+      themesAr: ['السلطة', 'العنف', 'السيطرة'],
     },
     {
       quote: 'Notice Neptune, though, / Taming a sea-horse',
       analysis:
         'The final image is a metaphor for the Duke himself: like Neptune (god of the sea), he tames and subdues those beneath him. The sea-horse represents the Duchess — a beautiful, wild creature broken by a more powerful force. That the sculpture was "cast in bronze for me" shows art serving his ego.',
       themes: ['Power', 'Dominance', 'Possession'],
+      analysisAr:
+        'الصورة الأخيرة استعارة عن الـDuke نفسه: مثل Neptune (إله البحر)، هو يروّض ويُخضع كل من هم تحته. وحصان البحر يرمز للـDuchess — مخلوق جميل وحر تحطّمه قوة أكبر منه. وحقيقة إن التمثال "cast in bronze for me" تبيّن إن الفن نفسه يخدم غرور الـDuke.',
+      themesAr: ['السلطة', 'الهيمنة', 'التملّك'],
     },
     {
       quote: "his fair daughter's self, as I avowed / At starting, is my object",
       analysis:
         "\"Object\" carries a sinister double meaning: it ostensibly means 'objective' or 'aim,' but it also implies the next wife will be another possession, another item in his collection. The cycle of ownership and potential destruction is set to repeat.",
       themes: ['Objectification', 'Patriarchy', 'Cyclical power'],
+      analysisAr:
+        'كلمة "object" تحمل معنى مزدوج شرّير: ظاهرياً معناها "هدف" أو "غاية"، بس باطنياً تلمّح إن الزوجة الجاية بتكون قطعة ثانية يملكها، عنصر إضافي في مجموعته. دورة التملّك واحتمال التدمير جاهزة عشان تتكرّر.',
+      themesAr: ['تشييء المرأة', 'السلطة الذكورية', 'السلطة الدورية'],
     },
   ],
   languageDevices: [
@@ -483,6 +543,8 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       effect:
         "The Duke claims he lacks skill in speech, yet the entire poem is a masterclass in rhetorical manipulation. Browning creates dramatic irony: the reader sees through the Duke's false modesty to recognise a calculating, eloquent predator.",
       lineRef: 35,
+      effectAr:
+        'الـDuke يدّعي إنه يفتقر لمهارة الكلام، بس القصيدة كلها درس متقن في التلاعب البلاغي. Browning يخلق dramatic irony: القارئ يخترق تواضع الـDuke الزائف ويتعرّف على مفترس محسوب وفصيح.',
     },
     {
       device: 'Euphemism',
@@ -490,6 +552,8 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       effect:
         'The euphemism allows the Duke to confess to murder without ever saying the word. His aristocratic composure is maintained even as he describes the most violent act. The understatement makes the line more chilling, not less.',
       lineRef: 44,
+      effectAr:
+        'الكناية تخلّي الـDuke يعترف بالقتل بدون ما يقول كلمة "قتل" مرّة وحدة. رزانته الأرستقراطية تظل ثابتة وهو يوصف أبشع فعل عنف. والاستخفاف هذا يخلّي البيت أكثر رعباً، مو أقل.',
     },
     {
       device: 'Symbolism (the curtain)',
@@ -497,6 +561,8 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       effect:
         "The curtain over the painting symbolises the Duke's control. In life, the Duchess's smiles were public and uncontrollable; in death, her image is hidden behind a curtain only the Duke can draw. The painting has given him the power he lacked in the marriage.",
       lineRef: 9,
+      effectAr:
+        'الستارة فوق اللوحة ترمز لسيطرة الـDuke. في حياة الـDuchess، ابتسامتها كانت علنية وما يقدر يتحكّم فيها؛ بعد موتها، صورتها مخفية وراء ستارة هو وحده يفتحها. اللوحة عطته السلطة اللي افتقدها في زواجه.',
     },
     {
       device: 'Metaphor (Neptune and the sea-horse)',
@@ -504,6 +570,8 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       effect:
         'The bronze sculpture at the poem\'s end acts as a metaphor for the Duke\'s relationship with women. Like Neptune, he sees himself as a god who tames wild, beautiful creatures. The word "taming" implies violence disguised as control.',
       lineRef: 54,
+      effectAr:
+        'التمثال البرونزي في نهاية القصيدة يشتغل كاستعارة عن علاقة الـDuke بالنساء. مثل Neptune، يشوف نفسه كإله يروّض المخلوقات البرّية الجميلة. وكلمة "taming" تلمّح بعنف ملبّس بثوب السيطرة.',
     },
     {
       device: 'Possessive language',
@@ -511,6 +579,8 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       effect:
         'The poem is saturated with first-person possessive pronouns. The Duke defines everything in relation to himself — his wife, his art, his name. This linguistic pattern reveals a worldview in which people are property.',
       lineRef: 0,
+      effectAr:
+        'القصيدة مشبّعة بضمائر التملّك للمتكلّم. الـDuke يعرّف كل شي بالنسبة لنفسه — زوجته، فنّه، اسمه. هالنمط اللغوي يكشف نظرة للعالم تعتبر الناس فيها ممتلكات.',
     },
     {
       device: 'Enjambment',
@@ -518,6 +588,8 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       effect:
         "The enjambment across line breaks enacts the Duke's loss of composure. His anger overflows the neat couplet form, just as the Duchess's behaviour overflowed the boundaries he tried to impose. The tension between form and content mirrors his internal conflict.",
       lineRef: 30,
+      effectAr:
+        'الـenjambment عبر فواصل الأبيات يجسّد فقدان الـDuke لرزانته. غضبه يفيض من قالب الـcouplets المنظّم، تماماً مثل ما تصرّفات الـDuchess فاضت من الحدود اللي حاول يفرضها عليها. التوتّر بين الشكل والمحتوى يعكس صراعه الداخلي.',
     },
     {
       device: 'Caesura',
@@ -525,6 +597,8 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       effect:
         'The mid-line full stop forces a pause that confronts the reader with the Duchess\'s death. The Duke\'s smooth continuation — "I call / That piece a wonder" — shows his chilling indifference. The caesura creates dramatic shock within his casual tone.',
       lineRef: 1,
+      effectAr:
+        'النقطة في نص البيت تفرض توقّف يواجه فيه القارئ حقيقة موت الـDuchess. واستمرار الـDuke بسلاسة — "I call / That piece a wonder" — يبيّن لامبالاته المرعبة. الـcaesura تخلق صدمة درامية داخل نبرته العادية.',
     },
     {
       device: 'Repetition ("stoop")',
@@ -532,6 +606,8 @@ The poem is one continuous block — no stanza breaks, no pauses, no escape. Thi
       effect:
         '"Stoop" appears three times, each use intensifying the Duke\'s refusal to communicate. The word reveals his fatal pride: he would rather kill his wife than lower himself to explain his feelings. The repetition makes his psychology inescapable.',
       lineRef: 33,
+      effectAr:
+        'كلمة "stoop" تطلع ثلاث مرات، وفي كل مرّة ترفع من مستوى رفض الـDuke للتواصل. الكلمة تكشف كبريائه القاتل: يفضّل يقتل زوجته على إنه ينزل من قدره ويشرح مشاعره. التكرار يخلّي القارئ ما يقدر يهرب من فهم نفسيّته.',
     },
   ],
 }

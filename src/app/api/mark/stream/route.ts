@@ -11,13 +11,13 @@
 // client can rely on that rather than re-parsing tokens.
 // ────────────────────────────────────────────────────────────────────────────
 
-import { NextRequest } from "next/server"
-import Anthropic from "@anthropic-ai/sdk"
-import { createServerSupabaseClient } from "@/lib/supabase/server"
-import { rateLimit } from "@/lib/rate-limit"
-import { hasActiveSubscription } from "@/lib/course-access"
-import { checkMinorAIConsent } from "@/lib/consent-check"
-import { contentSafetyCheck } from "@/lib/content-safety"
+import { NextRequest } from 'next/server'
+import Anthropic from '@anthropic-ai/sdk'
+import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { rateLimit } from '@/lib/rate-limit'
+import { hasActiveSubscription } from '@/lib/course-access'
+import { checkMinorAIConsent } from '@/lib/consent-check'
+import { contentSafetyCheck } from '@/lib/content-safety'
 import {
   badRequestResponse,
   forbiddenResponse,
@@ -25,14 +25,15 @@ import {
   serviceUnavailableResponse,
   unauthorizedResponse,
   unsupportedMediaTypeResponse,
-} from "@/lib/api-response"
-import { isAiOptedOutServer } from "@/lib/ai-preferences"
-import { getMarkScheme } from "@/lib/marking/mark-schemes"
-import { buildMarkingPrompt } from "@/lib/marking/prompt-builder"
-import { generateFeedback } from "@/lib/marking/feedback-generator"
+} from '@/lib/api-response'
+import { isAiOptedOutServer } from '@/lib/ai-preferences'
+import { getMarkScheme } from '@/lib/marking/mark-schemes'
+import { buildMarkingPrompt } from '@/lib/marking/prompt-builder'
+import { generateFeedback } from '@/lib/marking/feedback-generator'
+import { withArabicDirective } from '@/lib/i18n/ai-language-directive'
 
 export const maxDuration = 60
-export const runtime = "nodejs"
+export const runtime = 'nodejs'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -48,8 +49,8 @@ interface MarkStreamRequestBody {
 
 export async function POST(request: NextRequest) {
   // 1. Content-Type
-  const contentType = request.headers.get("content-type")
-  if (!contentType || !contentType.includes("application/json")) {
+  const contentType = request.headers.get('content-type')
+  if (!contentType || !contentType.includes('application/json')) {
     return unsupportedMediaTypeResponse()
   }
 
@@ -60,30 +61,26 @@ export async function POST(request: NextRequest) {
     error: authError,
   } = await supabase.auth.getUser()
   if (authError || !user) {
-    return unauthorizedResponse("You must be signed in to use AI marking.")
+    return unauthorizedResponse('You must be signed in to use AI marking.')
   }
 
   // 3. Premium check
   const isPremium = await hasActiveSubscription(supabase, user.id)
   if (!isPremium) {
-    return forbiddenResponse(
-      "AI marking is a Premium feature. Please upgrade to mark your essays.",
-    )
+    return forbiddenResponse('AI marking is a Premium feature. Please upgrade to mark your essays.')
   }
 
   // 4. Consent
   const consentCheck = await checkMinorAIConsent(user.id)
   if (!consentCheck.allowed) {
-    return forbiddenResponse(
-      consentCheck.reason ?? "Consent is required to use this feature.",
-    )
+    return forbiddenResponse(consentCheck.reason ?? 'Consent is required to use this feature.')
   }
 
   // 4b. AI opt-out enforcement (Children's Code — GAP-12B)
   const aiOptedOut = await isAiOptedOutServer(user.id)
   if (aiOptedOut) {
     return forbiddenResponse(
-      "AI features are currently disabled for your account. To re-enable AI marking, visit your privacy settings or ask a parent/guardian to update your preferences.",
+      'AI features are currently disabled for your account. To re-enable AI marking, visit your privacy settings or ask a parent/guardian to update your preferences.',
     )
   }
 
@@ -99,7 +96,7 @@ export async function POST(request: NextRequest) {
   try {
     body = (await request.json()) as MarkStreamRequestBody
   } catch {
-    return badRequestResponse("Invalid JSON in request body.")
+    return badRequestResponse('Invalid JSON in request body.')
   }
   const validation = validateBody(body)
   if (validation) return badRequestResponse(validation)
@@ -124,15 +121,15 @@ export async function POST(request: NextRequest) {
       studiedText: body.studiedText,
     })
   } catch (err) {
-    return badRequestResponse(err instanceof Error ? err.message : "Invalid question.")
+    return badRequestResponse(err instanceof Error ? err.message : 'Invalid question.')
   }
 
   // 8. API key
   const apiKey = process.env.ANTHROPIC_API_KEY
   if (!apiKey) {
-    console.error("[api/mark/stream] ANTHROPIC_API_KEY not configured")
+    console.error('[api/mark/stream] ANTHROPIC_API_KEY not configured')
     return serviceUnavailableResponse(
-      "AI marking is temporarily unavailable. Please try again later.",
+      'AI marking is temporarily unavailable. Please try again later.',
     )
   }
 
@@ -143,28 +140,23 @@ export async function POST(request: NextRequest) {
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
       const send = (payload: Record<string, unknown>) => {
-        controller.enqueue(
-          encoder.encode(`data: ${JSON.stringify(payload)}\n\n`),
-        )
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify(payload)}\n\n`))
       }
 
-      let accumulated = ""
+      let accumulated = ''
 
       try {
         const messageStream = anthropic.messages.stream({
-          model: "claude-sonnet-4-20250514",
+          model: 'claude-sonnet-4-20250514',
           max_tokens: 4_096,
-          system: prompt.systemPrompt,
-          messages: [{ role: "user", content: prompt.userMessage }],
+          system: withArabicDirective(prompt.systemPrompt, request),
+          messages: [{ role: 'user', content: prompt.userMessage }],
         })
 
         for await (const event of messageStream) {
-          if (
-            event.type === "content_block_delta" &&
-            event.delta.type === "text_delta"
-          ) {
+          if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
             accumulated += event.delta.text
-            send({ type: "token", text: event.delta.text })
+            send({ type: 'token', text: event.delta.text })
           }
         }
 
@@ -176,26 +168,23 @@ export async function POST(request: NextRequest) {
         })
 
         if (!feedback.ok) {
-          if (feedback.error.type === "INVALID_SUBMISSION") {
+          if (feedback.error.type === 'INVALID_SUBMISSION') {
             send({
-              type: "error",
+              type: 'error',
               message:
-                "Your submission does not appear to be an essay. Please paste your own written work for marking.",
+                'Your submission does not appear to be an essay. Please paste your own written work for marking.',
             })
-          } else if (feedback.error.type === "OFF_TOPIC") {
+          } else if (feedback.error.type === 'OFF_TOPIC') {
             send({
-              type: "error",
+              type: 'error',
               message:
-                "This tool only marks GCSE English responses. Please submit English Language or Literature work.",
+                'This tool only marks GCSE English responses. Please submit English Language or Literature work.',
             })
           } else {
-            console.error(
-              "[api/mark/stream] failed to parse model response",
-              feedback.error.reason,
-            )
+            console.error('[api/mark/stream] failed to parse model response', feedback.error.reason)
             send({
-              type: "error",
-              message: "Failed to process the AI response. Please try again.",
+              type: 'error',
+              message: 'Failed to process the AI response. Please try again.',
             })
           }
           controller.close()
@@ -203,17 +192,16 @@ export async function POST(request: NextRequest) {
         }
 
         send({
-          type: "done",
+          type: 'done',
           result: feedback.result,
           remaining: rl.remaining,
         })
         controller.close()
       } catch (err: unknown) {
-        console.error("[api/mark/stream] streaming error", err)
+        console.error('[api/mark/stream] streaming error', err)
         send({
-          type: "error",
-          message:
-            "The AI marking service encountered an error. Please try again.",
+          type: 'error',
+          message: 'The AI marking service encountered an error. Please try again.',
         })
         controller.close()
       }
@@ -223,10 +211,10 @@ export async function POST(request: NextRequest) {
   return new Response(stream, {
     status: 200,
     headers: {
-      "Content-Type": "text/event-stream",
-      "Cache-Control": "no-cache, no-transform",
-      Connection: "keep-alive",
-      "X-Accel-Buffering": "no",
+      'Content-Type': 'text/event-stream',
+      'Cache-Control': 'no-cache, no-transform',
+      Connection: 'keep-alive',
+      'X-Accel-Buffering': 'no',
     },
   })
 }
@@ -234,27 +222,27 @@ export async function POST(request: NextRequest) {
 // ─── Validation ──────────────────────────────────────────────────────────────
 
 function validateBody(body: MarkStreamRequestBody): string | null {
-  if (!body || typeof body !== "object") return "Request body must be an object."
-  if (!body.markSchemeId || typeof body.markSchemeId !== "string") {
-    return "markSchemeId is required."
+  if (!body || typeof body !== 'object') return 'Request body must be an object.'
+  if (!body.markSchemeId || typeof body.markSchemeId !== 'string') {
+    return 'markSchemeId is required.'
   }
-  if (!body.questionId || typeof body.questionId !== "string") {
-    return "questionId is required."
+  if (!body.questionId || typeof body.questionId !== 'string') {
+    return 'questionId is required.'
   }
-  if (!body.questionText || typeof body.questionText !== "string") {
-    return "questionText is required."
+  if (!body.questionText || typeof body.questionText !== 'string') {
+    return 'questionText is required.'
   }
-  if (!body.essay || typeof body.essay !== "string") {
-    return "essay is required."
+  if (!body.essay || typeof body.essay !== 'string') {
+    return 'essay is required.'
   }
   if (body.essay.length < 80) {
-    return "Your essay is too short to mark reliably. Please write at least a few paragraphs."
+    return 'Your essay is too short to mark reliably. Please write at least a few paragraphs.'
   }
   if (body.essay.length > 30_000) {
-    return "Your essay exceeds the 30,000 character limit."
+    return 'Your essay exceeds the 30,000 character limit.'
   }
   if (body.questionText.length > 2_000) {
-    return "The question text exceeds the 2,000 character limit."
+    return 'The question text exceeds the 2,000 character limit.'
   }
   return null
 }

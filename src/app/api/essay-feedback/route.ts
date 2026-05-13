@@ -17,6 +17,7 @@ import {
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { hasActiveSubscription } from '@/lib/course-access'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
+import { withArabicDirective } from '@/lib/i18n/ai-language-directive'
 
 export const maxDuration = 60
 
@@ -125,7 +126,10 @@ export async function POST(request: NextRequest) {
 
     // 1. Authenticate
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
 
     if (authError || !user) {
       return unauthorizedResponse('You must be signed in to use essay feedback.')
@@ -134,7 +138,9 @@ export async function POST(request: NextRequest) {
     // 1b. Subscription check — essay feedback is a Premium feature
     const isPremium = await hasActiveSubscription(supabase, user.id)
     if (!isPremium) {
-      return forbiddenResponse('Essay feedback is a Premium feature. Please upgrade your subscription to access AI-powered feedback.')
+      return forbiddenResponse(
+        'Essay feedback is a Premium feature. Please upgrade your subscription to access AI-powered feedback.',
+      )
     }
 
     // 2. Parental consent check for minor users
@@ -147,7 +153,7 @@ export async function POST(request: NextRequest) {
     const aiOptedOut = await isAiOptedOutServer(user.id)
     if (aiOptedOut) {
       return forbiddenResponse(
-        "AI features are currently disabled for your account. To re-enable AI feedback, visit your privacy settings or ask a parent/guardian to update your preferences."
+        'AI features are currently disabled for your account. To re-enable AI feedback, visit your privacy settings or ask a parent/guardian to update your preferences.',
       )
     }
 
@@ -184,13 +190,18 @@ export async function POST(request: NextRequest) {
     const apiKey = process.env.ANTHROPIC_API_KEY
     if (!apiKey) {
       console.error('ANTHROPIC_API_KEY not configured')
-      return serviceUnavailableResponse('Essay feedback is temporarily unavailable. Please try again later.')
+      return serviceUnavailableResponse(
+        'Essay feedback is temporarily unavailable. Please try again later.',
+      )
     }
 
     // 7. Call Claude API
     const anthropic = new Anthropic({ apiKey })
 
-    const systemPrompt = buildSystemPrompt(body.board, body.paper, body.questionType)
+    const systemPrompt = withArabicDirective(
+      buildSystemPrompt(body.board, body.paper, body.questionType),
+      request,
+    )
 
     // Defence-in-depth: truncate inputs even though validation should catch oversized ones
     const safeQuestion = body.questionText.slice(0, 500)
@@ -199,14 +210,15 @@ export async function POST(request: NextRequest) {
 
     let message
     try {
-      message = await anthropic.messages.create({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 4096,
-        system: systemPrompt,
-        messages: [
-          { role: 'user', content: userMessage },
-        ],
-      }, { timeout: 50000 })
+      message = await anthropic.messages.create(
+        {
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 4096,
+          system: systemPrompt,
+          messages: [{ role: 'user', content: userMessage }],
+        },
+        { timeout: 50000 },
+      )
     } catch (aiError: unknown) {
       const err = aiError as { status?: number; message?: string; error?: { type?: string } }
 
@@ -223,12 +235,16 @@ export async function POST(request: NextRequest) {
       // Anthropic rate limit (upstream)
       if (err.status === 429) {
         console.error('[api/essay-feedback] Anthropic rate limit hit')
-        return serviceUnavailableResponse('The AI service is temporarily overloaded. Please try again in a moment.')
+        return serviceUnavailableResponse(
+          'The AI service is temporarily overloaded. Please try again in a moment.',
+        )
       }
 
       // Other Anthropic errors are service errors
       console.error('[api/essay-feedback] Anthropic API error:', aiError)
-      return serviceUnavailableResponse('The AI feedback service is currently unavailable. Please try again later.')
+      return serviceUnavailableResponse(
+        'The AI feedback service is currently unavailable. Please try again later.',
+      )
     }
 
     // 8. Parse Claude's response
@@ -251,10 +267,14 @@ export async function POST(request: NextRequest) {
 
       // Check if Claude flagged the submission as invalid
       if (parsed.error === 'INVALID_SUBMISSION') {
-        return badRequestResponse('Your submission does not appear to be an essay. Please paste your own written work for feedback.')
+        return badRequestResponse(
+          'Your submission does not appear to be an essay. Please paste your own written work for feedback.',
+        )
       }
       if (parsed.error === 'OFF_TOPIC') {
-        return badRequestResponse('This tool only provides feedback on GCSE English essays. Please submit English Language or Literature work.')
+        return badRequestResponse(
+          'This tool only provides feedback on GCSE English essays. Please submit English Language or Literature work.',
+        )
       }
 
       // Validate required fields are present and correct types
@@ -286,9 +306,10 @@ export async function POST(request: NextRequest) {
     if (feedback.improvements) {
       feedback.improvements = feedback.improvements.map((imp) => ({
         ...imp,
-        suggestion: imp.suggestion && imp.suggestion.length > 250
-          ? imp.suggestion.slice(0, 247) + '...'
-          : imp.suggestion,
+        suggestion:
+          imp.suggestion && imp.suggestion.length > 250
+            ? imp.suggestion.slice(0, 247) + '...'
+            : imp.suggestion,
       }))
     }
 

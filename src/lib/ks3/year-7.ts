@@ -16,13 +16,22 @@ import type { Year, Lesson, LessonFocus } from './types'
 // Compact lesson builder — Y7 T1 was authored before this helper landed
 // and uses the full {focus, skillCodes, whatStudentsDo, task, successCriteria}
 // form directly. T2 and T3 use this helper for readability.
-type Quick = { focus: LessonFocus; skills: string[]; do: string; task: string; success: string }
+type Quick = {
+  focus: LessonFocus
+  skills: string[]
+  do: string
+  task: string
+  success: string
+  doAr?: string
+  taskAr?: string
+  successAr?: string
+}
 const lesson = (q: Quick): Lesson => ({
   focus: q.focus,
   skillCodes: q.skills,
-  whatStudentsDo: { en: q.do },
-  task: { en: q.task },
-  successCriteria: { en: q.success },
+  whatStudentsDo: q.doAr ? { en: q.do, ar: q.doAr } : { en: q.do },
+  task: q.taskAr ? { en: q.task, ar: q.taskAr } : { en: q.task },
+  successCriteria: q.successAr ? { en: q.success, ar: q.successAr } : { en: q.success },
 })
 
 const Y7_T1: Year['terms'][number] = {
@@ -1205,20 +1214,22 @@ const Y7_T2: Year['terms'][number] = {
       label: { en: 'Term 2.1 — Poetry anthology', ar: 'الفصل 2.1 — مختارات شعرية' },
       assessment: {
         en: 'Analytical essay comparing two anthology poems on a shared theme (e.g. outsiders, longing) — 45 minutes.',
+        ar: 'مقالة تحليلية تقارن بين قصيدتين من المختارات تشتركان في موضوع واحد (مثل المهمَّشين أو الشوق) — 45 دقيقة.',
       },
       weeks: [
         {
           number: 2,
           pages: 'Half-caste — John Agard',
           keyVocabulary: [
-            { en: 'dialect' },
-            { en: 'identity' },
-            { en: 'phonetic' },
-            { en: 'challenge' },
-            { en: 'voice' },
+            { en: 'dialect', ar: 'لهجة' },
+            { en: 'identity', ar: 'هوية' },
+            { en: 'phonetic', ar: 'صوتي' },
+            { en: 'challenge', ar: 'تحدٍّ' },
+            { en: 'voice', ar: 'صوت' },
           ],
           contextNote: {
             en: 'Agard writes in Guyanese Creole to confront the term "half-caste". The poem questions why mixed identity is treated as incomplete.',
+            ar: 'يكتب أغارد بلهجة الكريول الغيانية لمواجهة مصطلح "half-caste". تتساءل القصيدة لماذا تُعامَل الهوية المختلطة كأنها ناقصة.',
           },
           lessons: [
             lesson({
@@ -1227,6 +1238,10 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read poem aloud twice; gloss "half-caste", "Picasso", "tchaikovsky".',
               task: 'Underline three lines where Agard directly addresses the reader ("Explain yuself…").',
               success: 'Can quote one line where the speaker challenges the reader.',
+              doAr: 'اقرأ القصيدة بصوت عالٍ مرّتين، واشرح كلمات "half-caste" و"Picasso" و"tchaikovsky".',
+              taskAr:
+                'ضع خطًّا تحت ثلاثة أسطر يخاطب فيها أغارد القارئ مباشرةً (مثل "Explain yuself…").',
+              successAr: 'يقدر الطالب على اقتباس سطر واحد يتحدّى فيه المتكلّم القارئ.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1234,6 +1249,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Discuss why Agard mixes Creole and standard English; teacher models "The dialect shows…".',
               task: 'Pair-talk: how does the missing punctuation change the pace?',
               success: 'Names one effect of the Creole voice.',
+              doAr: 'ناقش لماذا يمزج أغارد بين الكريول والإنجليزية الفصحى، ويعرض المعلّم نموذج "The dialect shows…".',
+              taskAr: 'حوار ثنائي: كيف يؤثّر غياب علامات الترقيم على إيقاع القصيدة؟',
+              successAr: 'يذكر الطالب أثرًا واحدًا لاستخدام صوت الكريول.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1241,6 +1259,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Live-model a WHAT/HOW/WHY paragraph using a Creole quote.',
               task: 'Copy modelled paragraph; label WHAT/HOW/WHY.',
               success: 'Understands the analytical paragraph shape for poetry.',
+              doAr: 'يعرض المعلّم نموذجًا مباشرًا لفقرة WHAT/HOW/WHY مع اقتباس من الكريول.',
+              taskAr: 'انسخ الفقرة النموذجية وضع علامات WHAT/HOW/WHY على أجزائها.',
+              successAr: 'يستوعب الطالب شكل الفقرة التحليلية الخاصّة بالشعر.',
             }),
             lesson({
               focus: 'application',
@@ -1248,6 +1269,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Scaffolded paragraph using "yu mean when light an shadow / mix in de sky".',
               task: 'Fill-in-the-blanks paragraph using "This shows…".',
               success: 'Inference goes beyond literal meaning.',
+              doAr: 'فقرة مدعومة بالسقالات باستخدام السطر "yu mean when light an shadow / mix in de sky".',
+              taskAr: 'أكمل فراغات الفقرة مستخدمًا عبارة "This shows…".',
+              successAr: 'يتجاوز الاستنتاج المعنى الحرفي.',
             }),
             lesson({
               focus: 'independent-outcome',
@@ -1255,6 +1279,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Independent paragraph with reduced scaffold.',
               task: 'How does Agard challenge the reader?',
               success: 'One paragraph with embedded quote + "This shows…" inference.',
+              doAr: 'اكتب فقرة مستقلّة بدعم أقل من السقالات.',
+              taskAr: 'كيف يتحدّى أغارد القارئ؟',
+              successAr: 'فقرة واحدة فيها اقتباس مدمج واستنتاج بصيغة "This shows…".',
             }),
           ],
         },
@@ -1262,14 +1289,15 @@ const Y7_T2: Year['terms'][number] = {
           number: 3,
           pages: 'Refugee Blues — W. H. Auden',
           keyVocabulary: [
-            { en: 'refrain' },
-            { en: 'displacement' },
-            { en: 'persecution' },
-            { en: 'stanza' },
-            { en: 'lament' },
+            { en: 'refrain', ar: 'لازمة' },
+            { en: 'displacement', ar: 'تشريد' },
+            { en: 'persecution', ar: 'اضطهاد' },
+            { en: 'stanza', ar: 'مقطع شعري' },
+            { en: 'lament', ar: 'رثاء' },
           ],
           contextNote: {
             en: "Auden's 1939 ballad for Jewish refugees fleeing Nazi Germany. The blues form gives the poem a slow, sorrowful rhythm.",
+            ar: 'قصيدة كتبها أودن سنة 1939 عن اللاجئين اليهود الفارّين من ألمانيا النازية. يمنح قالب البلوز القصيدة إيقاعًا بطيئًا حزينًا.',
           },
           lessons: [
             lesson({
@@ -1278,6 +1306,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read all 12 stanzas; note the "my dear" refrain.',
               task: 'List three places refugees are rejected (consul, committee, public meeting).',
               success: 'Can list three rejections with line references.',
+              doAr: 'اقرأ المقاطع الإثني عشر كاملةً وانتبه إلى لازمة "my dear".',
+              taskAr: 'اذكر ثلاثة مواقف يُرفض فيها اللاجئون (القنصل، اللجنة، اجتماع عام).',
+              successAr: 'يقدر الطالب على إدراج ثلاثة مواقف رفض مع الإشارة إلى الأسطر.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1285,6 +1316,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Discuss the blues form: three-line stanzas, repeated phrase, sad mood.',
               task: 'Pair-share: what effect does "my dear" repeated 12 times have?',
               success: 'Explains one effect of the refrain to a partner.',
+              doAr: 'ناقش قالب البلوز: المقاطع الثلاثية الأسطر، العبارة المتكرّرة، الحال الحزينة.',
+              taskAr: 'حوار ثنائي: ما الأثر الذي تتركه عبارة "my dear" المكرّرة اثنتي عشرة مرّة؟',
+              successAr: 'يشرح الطالب لزميله أثرًا واحدًا من آثار اللازمة.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1292,6 +1326,9 @@ const Y7_T2: Year['terms'][number] = {
               do: "Model varied sentences: simple + compound + complex about the poem's mood.",
               task: "Write three sentences of different lengths about the poem's mood.",
               success: 'Three sentences with full stops, capitals, varied length.',
+              doAr: 'يعرض المعلّم نموذجًا لجمل متنوّعة: بسيطة ومركّبة ومركّبة معقّدة عن مزاج القصيدة.',
+              taskAr: 'اكتب ثلاث جمل مختلفة الأطوال عن مزاج القصيدة.',
+              successAr: 'ثلاث جمل بنقاط وحروف كبيرة في بداياتها وأطوال متباينة.',
             }),
             lesson({
               focus: 'application',
@@ -1299,6 +1336,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model inference on "Saw a door opened and a cat let in: / But they weren\'t German Jews, my dear".',
               task: 'Use "This shows…" to explain the comparison of refugees and the cat.',
               success: "Inference connects the cat image to the refugees' treatment.",
+              doAr: 'يعرض المعلّم نموذج استنتاج على السطر "Saw a door opened and a cat let in: / But they weren\'t German Jews, my dear".',
+              taskAr: 'استخدم عبارة "This shows…" لشرح المقارنة بين اللاجئين والقطّة.',
+              successAr: 'يربط الاستنتاج بين صورة القطّة ومعاملة اللاجئين.',
             }),
             lesson({
               focus: 'independent-outcome',
@@ -1306,6 +1346,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Plan a paragraph using a quotation bank from the lesson.',
               task: 'How does Auden present rejection?',
               success: 'Paragraph names a feature (refrain/contrast), quotes, explains.',
+              doAr: 'خطّط لفقرة باستخدام بنك الاقتباسات الذي بُني في الحصّة.',
+              taskAr: 'كيف يقدّم أودن صورة الرفض؟',
+              successAr: 'فقرة تسمّي خاصّيّة (لازمة أو تضاد) وتقتبس وتشرح.',
             }),
           ],
         },
@@ -1313,14 +1356,15 @@ const Y7_T2: Year['terms'][number] = {
           number: 4,
           pages: 'The Highwayman — Alfred Noyes',
           keyVocabulary: [
-            { en: 'narrative' },
-            { en: 'imagery' },
-            { en: 'metaphor' },
-            { en: 'rhythm' },
-            { en: 'tragedy' },
+            { en: 'narrative', ar: 'سرد' },
+            { en: 'imagery', ar: 'صور أدبية' },
+            { en: 'metaphor', ar: 'استعارة' },
+            { en: 'rhythm', ar: 'إيقاع' },
+            { en: 'tragedy', ar: 'مأساة' },
           ],
           contextNote: {
             en: 'A 1906 narrative ballad set on a moonlit moor. Bess sacrifices herself to warn the highwayman of the redcoats waiting in ambush.',
+            ar: 'قصيدة سردية من عام 1906 تدور في مستنقعات مقمرة. تضحّي بِس بنفسها لتحذير قاطع الطريق من الجنود ذوي المعاطف الحمراء المتربّصين به.',
           },
           lessons: [
             lesson({
@@ -1329,6 +1373,10 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read Part 1; track the story like a film: who, where, when.',
               task: 'Select three quotations that build the moonlit setting ("ghostly galleon", "ribbon of moonlight").',
               success: 'Can quote three setting details accurately.',
+              doAr: 'اقرأ الجزء الأوّل، وتتبّع القصّة كأنها فيلم: من، أين، متى.',
+              taskAr:
+                'اختر ثلاثة اقتباسات تبني الأجواء المقمرة (مثل "ghostly galleon" و"ribbon of moonlight").',
+              successAr: 'يقدر الطالب على اقتباس ثلاث تفاصيل دقيقة عن المكان.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1336,6 +1384,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read Part 2; model the extended metaphor of moon as "ghostly galleon".',
               task: 'Discuss why Noyes uses ship imagery on land.',
               success: 'Explains one effect of the moon-as-ship image.',
+              doAr: 'اقرأ الجزء الثاني، ويعرض المعلّم نموذجًا للاستعارة الممتدّة "moon as ghostly galleon".',
+              taskAr: 'ناقش لماذا يستعمل نويز صور السفن في مشهد برّي.',
+              successAr: 'يشرح الطالب أثرًا واحدًا لصورة القمر كسفينة.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1343,6 +1394,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model how to "zoom in" on a single word (e.g. "torrent" in "torrent of darkness").',
               task: 'Zoom in on one word: meaning, feeling, picture.',
               success: 'Gives meaning, feeling and picture for one word.',
+              doAr: 'يعرض المعلّم نموذجًا للتركيز "zoom-in" على كلمة واحدة (مثل "torrent" في "torrent of darkness").',
+              taskAr: 'ركّز على كلمة واحدة: المعنى، الإحساس، الصورة.',
+              successAr: 'يقدّم الطالب المعنى والإحساس والصورة لكلمة واحدة.',
             }),
             lesson({
               focus: 'application',
@@ -1350,6 +1404,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model analysis of Bess\'s death: "her musket shattered the moonlight".',
               task: "Write a paragraph on how Noyes makes Bess's death dramatic.",
               success: 'Paragraph zooms in on at least one word.',
+              doAr: 'يعرض المعلّم تحليلًا نموذجيًا لموت بِس عند السطر "her musket shattered the moonlight".',
+              taskAr: 'اكتب فقرة عن كيف يجعل نويز موت بِس مشهدًا دراميًا.',
+              successAr: 'تركّز الفقرة "zoom-in" على كلمة واحدة على الأقل.',
             }),
             lesson({
               focus: 'independent-outcome',
@@ -1357,6 +1414,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Recap zoom-in technique.',
               task: 'How does Noyes build a tragic mood?',
               success: 'Two paragraphs, two quotations, one zoom-in each.',
+              doAr: 'راجع تقنية التركيز "zoom-in".',
+              taskAr: 'كيف يبني نويز الحال المأساوية في القصيدة؟',
+              successAr: 'فقرتان واقتباسان وتركيز واحد على كلمة في كلّ فقرة.',
             }),
           ],
         },
@@ -1364,14 +1424,15 @@ const Y7_T2: Year['terms'][number] = {
           number: 5,
           pages: 'My Last Duchess — Robert Browning (extract)',
           keyVocabulary: [
-            { en: 'monologue' },
-            { en: 'duke' },
-            { en: 'jealousy' },
-            { en: 'control' },
-            { en: 'speaker' },
+            { en: 'monologue', ar: 'مونولوج' },
+            { en: 'duke', ar: 'دوق' },
+            { en: 'jealousy', ar: 'غيرة' },
+            { en: 'control', ar: 'سيطرة' },
+            { en: 'speaker', ar: 'متكلّم' },
           ],
           contextNote: {
             en: 'A dramatic monologue set in Renaissance Italy. The Duke shows a visitor a painting of his late wife and reveals — without meaning to — that he had her killed.',
+            ar: 'مونولوج درامي تدور أحداثه في إيطاليا عصر النهضة. يُري الدوق ضيفه لوحة لزوجته الراحلة ويكشف من حيث لا يقصد أنه أمر بقتلها.',
           },
           lessons: [
             lesson({
@@ -1380,6 +1441,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read lines 1-24; gloss "Frà Pandolf", "countenance".',
               task: 'Answer five literal questions: who speaks, to whom, about whom, when, where.',
               success: 'Identifies speaker, listener, subject.',
+              doAr: 'اقرأ الأسطر من 1 إلى 24، واشرح "Frà Pandolf" و"countenance".',
+              taskAr: 'أجب عن خمسة أسئلة حرفية: من يتكلّم، إلى من، عن من، متى، أين.',
+              successAr: 'يحدّد الطالب المتكلّم والمستمع وموضوع الحديث.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1387,6 +1451,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read "I gave commands; / Then all smiles stopped together". Model the implied meaning.',
               task: 'Pair-talk: what does the Duke mean? Use "This suggests…".',
               success: "Voices an inference about the Duke's commands.",
+              doAr: 'اقرأ السطرين "I gave commands; / Then all smiles stopped together"، ويعرض المعلّم نموذج المعنى الضمني.',
+              taskAr: 'حوار ثنائي: ماذا يقصد الدوق؟ استخدم عبارة "This suggests…".',
+              successAr: 'ينطق الطالب باستنتاج حول أوامر الدوق.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1394,6 +1461,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model a paragraph on jealousy using "She had / A heart… too soon made glad".',
               task: 'Annotate teacher model: highlight point, quotation, explanation.',
               success: 'Labels the three parts of a PEE paragraph.',
+              doAr: 'يعرض المعلّم نموذج فقرة عن الغيرة باستخدام السطر "She had / A heart… too soon made glad".',
+              taskAr: 'علِّق على نموذج المعلّم: أبرز النقطة والاقتباس والشرح.',
+              successAr: 'يضع الطالب علامات على الأجزاء الثلاثة لفقرة PEE.',
             }),
             lesson({
               focus: 'application',
@@ -1401,6 +1471,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model how the Duke\'s power shows in "Notice Neptune… / Taming a sea-horse".',
               task: 'Write a paragraph on how Browning presents the Duke as controlling.',
               success: 'Paragraph names a feature and explains character.',
+              doAr: 'يعرض المعلّم نموذجًا لتجلّي قوّة الدوق في السطرين "Notice Neptune… / Taming a sea-horse".',
+              taskAr: 'اكتب فقرة عن كيف يصوّر براوننغ الدوق بأنه شخصيّة مسيطرة.',
+              successAr: 'تسمّي الفقرة سمة لغوية وتشرح الشخصية.',
             }),
             lesson({
               focus: 'independent-outcome',
@@ -1408,6 +1481,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Plan: one paragraph on jealousy, one on power.',
               task: 'How does Browning present the Duke?',
               success: 'Both paragraphs use quotations and clear explanations.',
+              doAr: 'خطّط: فقرة عن الغيرة وأخرى عن القوّة.',
+              taskAr: 'كيف يقدّم براوننغ شخصية الدوق؟',
+              successAr: 'فقرتان تستخدمان اقتباسات وشروحًا واضحة.',
             }),
           ],
         },
@@ -1415,14 +1491,15 @@ const Y7_T2: Year['terms'][number] = {
           number: 6,
           pages: 'Caged Bird — Maya Angelou',
           keyVocabulary: [
-            { en: 'symbolism' },
-            { en: 'contrast' },
-            { en: 'freedom' },
-            { en: 'oppression' },
-            { en: 'extended metaphor' },
+            { en: 'symbolism', ar: 'رمزية' },
+            { en: 'contrast', ar: 'تضاد' },
+            { en: 'freedom', ar: 'حرّية' },
+            { en: 'oppression', ar: 'اضطهاد' },
+            { en: 'extended metaphor', ar: 'استعارة ممتدّة' },
           ],
           contextNote: {
             en: 'Angelou contrasts a free bird and a caged bird as an extended metaphor for freedom and racial oppression in 20th-century America.',
+            ar: 'تضع أنجيلو طائرًا حرًّا في مقابل طائر محبوس في قفص بوصفها استعارة ممتدّة للحرّية والاضطهاد العرقي في أمريكا القرن العشرين.',
           },
           lessons: [
             lesson({
@@ -1431,6 +1508,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read poem; mark stanzas as "free bird" or "caged bird".',
               task: 'Make a two-column table: three quotations for each bird.',
               success: 'Table has six accurate quotations.',
+              doAr: 'اقرأ القصيدة وضع علامة على كلّ مقطع: "free bird" أو "caged bird".',
+              taskAr: 'اصنع جدولًا من عمودين فيه ثلاثة اقتباسات لكلّ طائر.',
+              successAr: 'يحتوي الجدول على ستّة اقتباسات دقيقة.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1438,6 +1518,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Define "extended metaphor"; discuss what each bird represents.',
               task: 'Pair-talk: why does Angelou repeat the caged bird stanza?',
               success: 'Explains one reason for the repetition.',
+              doAr: 'عرّف "extended metaphor"، وناقش ما يرمز إليه كلّ طائر.',
+              taskAr: 'حوار ثنائي: لماذا تكرّر أنجيلو مقطع الطائر المحبوس؟',
+              successAr: 'يشرح الطالب سببًا واحدًا للتكرار.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1445,6 +1528,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model contrastive connectives: "whereas", "in contrast", "however".',
               task: 'Write three contrast sentences comparing the two birds.',
               success: 'Three sentences each use a different contrastive connective.',
+              doAr: 'يعرض المعلّم نماذج لروابط التضاد: "whereas" و"in contrast" و"however".',
+              taskAr: 'اكتب ثلاث جمل تضاد تقارن بين الطائرين.',
+              successAr: 'تستعمل كلّ جملة من الجمل الثلاث رابط تضاد مختلفًا.',
             }),
             lesson({
               focus: 'application',
@@ -1452,6 +1538,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model a paragraph on the caged bird using "his wings are clipped and his feet are tied".',
               task: 'Write a PEE paragraph on how Angelou presents the caged bird.',
               success: 'Paragraph zooms in on "clipped" or "tied".',
+              doAr: 'يعرض المعلّم نموذج فقرة عن الطائر المحبوس باستخدام السطر "his wings are clipped and his feet are tied".',
+              taskAr: 'اكتب فقرة PEE عن كيف تقدّم أنجيلو صورة الطائر المحبوس.',
+              successAr: 'تركّز الفقرة على كلمة "clipped" أو "tied".',
             }),
             lesson({
               focus: 'independent-outcome',
@@ -1459,6 +1548,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Plan a comparative paragraph: free bird vs caged bird.',
               task: 'Write one comparative paragraph using "whereas" or "however".',
               success: 'Paragraph quotes both birds and uses a contrast connective.',
+              doAr: 'خطّط لفقرة مقارنة: الطائر الحرّ مقابل الطائر المحبوس.',
+              taskAr: 'اكتب فقرة مقارنة واحدة باستخدام "whereas" أو "however".',
+              successAr: 'تقتبس الفقرة من كلا الطائرين وتستخدم رابط تضاد.',
             }),
           ],
         },
@@ -1466,14 +1558,15 @@ const Y7_T2: Year['terms'][number] = {
           number: 7,
           pages: 'The Listeners — Walter de la Mare + HT1 assessment',
           keyVocabulary: [
-            { en: 'atmosphere' },
-            { en: 'mystery' },
-            { en: 'phantom' },
-            { en: 'silence' },
-            { en: 'compare' },
+            { en: 'atmosphere', ar: 'الجو العام' },
+            { en: 'mystery', ar: 'غموض' },
+            { en: 'phantom', ar: 'طيف' },
+            { en: 'silence', ar: 'صمت' },
+            { en: 'compare', ar: 'قارن' },
           ],
           contextNote: {
             en: 'Assessment week. A 1912 narrative poem of unexplained mystery. Pairs naturally with The Highwayman for the comparative assessment.',
+            ar: 'أسبوع التقييم. قصيدة سردية من عام 1912 يكتنفها غموض لا تفسير له، وتقترن طبيعيًا مع The Highwayman في تقييم المقارنة.',
           },
           lessons: [
             lesson({
@@ -1482,6 +1575,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read aloud; identify how de la Mare builds an eerie atmosphere.',
               task: 'List four quotations that create mystery ("moonlit door", "phantom listeners").',
               success: 'Quotes four atmosphere-building details.',
+              doAr: 'اقرأ القصيدة بصوت عالٍ، وحدّد كيف يبني دو لا مير الأجواء المثيرة للريبة.',
+              taskAr: 'اذكر أربعة اقتباسات تصنع الغموض (مثل "moonlit door" و"phantom listeners").',
+              successAr: 'يقتبس الطالب أربعة تفاصيل تبني الجوّ العام.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1489,6 +1585,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Compare this poem to The Highwayman: both moonlit, both mysterious.',
               task: 'Pair-talk: which poem feels more frightening, and why?',
               success: 'Shares a comparative point with a quotation.',
+              doAr: 'قارن هذه القصيدة بقصيدة The Highwayman: كلتاهما مقمرة وغامضة.',
+              taskAr: 'حوار ثنائي: أيّ القصيدتين أكثر إثارةً للخوف، ولماذا؟',
+              successAr: 'يشارك الطالب نقطة مقارنة مع اقتباس.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1496,6 +1595,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model comparative sentence stems: "Both poems…", "However, de la Mare…", "Unlike Noyes…".',
               task: 'Write three comparative sentences using the stems.',
               success: 'Each sentence makes a clear comparison.',
+              doAr: 'يعرض المعلّم بدايات جمل المقارنة: "Both poems…" و"However, de la Mare…" و"Unlike Noyes…".',
+              taskAr: 'اكتب ثلاث جمل مقارنة باستخدام بدايات الجمل المعروضة.',
+              successAr: 'تقدّم كلّ جملة مقارنة واضحة.',
             }),
             lesson({
               focus: 'application',
@@ -1503,6 +1605,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model a 45-minute comparative paragraph: "Both poets use moonlight to create mood".',
               task: 'Draft one comparative paragraph on mood in two anthology poems.',
               success: 'Paragraph uses one quotation from each poem.',
+              doAr: 'يعرض المعلّم نموذج فقرة مقارنة مدّتها 45 دقيقة: "Both poets use moonlight to create mood".',
+              taskAr: 'اكتب مسوّدة فقرة مقارنة واحدة عن المزاج في قصيدتين من المختارات.',
+              successAr: 'تستخدم الفقرة اقتباسًا واحدًا من كلّ قصيدة.',
             }),
             lesson({
               focus: 'assessment',
@@ -1510,6 +1615,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'HT1 assessment: 45-minute comparative paragraph under timed conditions.',
               task: 'How do two poets create atmosphere?',
               success: 'Paragraph quotes both poems and compares effects.',
+              doAr: 'تقييم النصف الأوّل: فقرة مقارنة مدّتها 45 دقيقة في ظروف زمنية محدّدة.',
+              taskAr: 'كيف يصنع شاعران الأجواء العامّة؟',
+              successAr: 'تقتبس الفقرة من كلتا القصيدتين وتقارن الآثار.',
             }),
           ],
         },
@@ -1520,20 +1628,22 @@ const Y7_T2: Year['terms'][number] = {
       label: { en: 'Term 2.2 — Pre-1914 short stories', ar: 'الفصل 2.2 — قصص قصيرة قبل 1914' },
       assessment: {
         en: 'Analytical response on one pre-1914 short story — "How does Dickens/Wells build tension in [extract]?" — 60 minutes.',
+        ar: 'إجابة تحليلية على قصّة قصيرة واحدة من قبل عام 1914 — "كيف يبني ديكنز/ويلز التوتّر في [المقتطف]؟" — 60 دقيقة.',
       },
       weeks: [
         {
           number: 8,
           pages: 'The Signalman — Charles Dickens (opening)',
           keyVocabulary: [
-            { en: 'gothic' },
-            { en: 'foreboding' },
-            { en: 'isolation' },
-            { en: 'spectre' },
-            { en: 'cutting' },
+            { en: 'gothic', ar: 'قوطي' },
+            { en: 'foreboding', ar: 'نذير' },
+            { en: 'isolation', ar: 'عزلة' },
+            { en: 'spectre', ar: 'شبح' },
+            { en: 'cutting', ar: 'ممرّ محفور (cutting)' },
           ],
           contextNote: {
             en: 'Dickens (1866) wrote this after surviving the Staplehurst rail crash. The narrator visits a lonely signalman haunted by a warning ghost.',
+            ar: 'كتب ديكنز هذه القصّة سنة 1866 بعد نجاته من حادث قطار Staplehurst. يزور الراوي عامل إشارات وحيدًا يطارده شبح يحمل التحذيرات.',
           },
           lessons: [
             lesson({
@@ -1542,6 +1652,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read the opening to "Halloa! Below there!". Gloss "cutting", "saturnine".',
               task: 'Select three quotations describing the setting as gloomy.',
               success: 'Quotes three accurate setting details.',
+              doAr: 'اقرأ المقطع الافتتاحي حتى عبارة "Halloa! Below there!"، واشرح كلمتي "cutting" و"saturnine".',
+              taskAr: 'اختر ثلاثة اقتباسات تصف المكان بأنه كئيب.',
+              successAr: 'يقتبس الطالب ثلاث تفاصيل دقيقة عن المكان.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1549,6 +1662,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Discuss "depressing and forbidding air"; introduce the gothic genre.',
               task: 'Pair-talk: list three features that make this setting feel gothic.',
               success: 'Names three gothic features verbally.',
+              doAr: 'ناقش عبارة "depressing and forbidding air"، وقدّم النوع الأدبي القوطي.',
+              taskAr: 'حوار ثنائي: عدّد ثلاث ملامح تجعل المكان قوطيًّا.',
+              successAr: 'يذكر الطالب شفهيًا ثلاث ملامح قوطيّة.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1556,6 +1672,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model PEE on the setting: point + "great dungeon" + explanation.',
               task: "Write one PEE paragraph on Dickens's description of the cutting.",
               success: 'Paragraph quotes one image and explains its effect.',
+              doAr: 'يعرض المعلّم نموذج فقرة PEE عن المكان: نقطة + "great dungeon" + شرح.',
+              taskAr: 'اكتب فقرة PEE واحدة عن وصف ديكنز للممرّ المحفور.',
+              successAr: 'تقتبس الفقرة صورة واحدة وتشرح أثرها.',
             }),
             lesson({
               focus: 'application',
@@ -1563,6 +1682,9 @@ const Y7_T2: Year['terms'][number] = {
               do: "Model a structural feature: the narrator's slow descent into the cutting.",
               task: 'Annotate the descent paragraph; label two structural choices.',
               success: 'Labels two structural choices accurately.',
+              doAr: 'يعرض المعلّم نموذجًا لخاصّية بنائية: نزول الراوي البطيء إلى الممرّ.',
+              taskAr: 'علِّق على فقرة النزول وضع علامات على اختيارَيْن بنائيَّيْن.',
+              successAr: 'يضع الطالب علامات دقيقة على اختيارَيْن بنائيَّيْن.',
             }),
             lesson({
               focus: 'independent-outcome',
@@ -1570,6 +1692,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Plan a paragraph on the opening atmosphere.',
               task: 'How does Dickens make the opening feel threatening?',
               success: 'Two paragraphs use quotations and explain effects.',
+              doAr: 'خطّط لفقرة عن الجو العام في الافتتاح.',
+              taskAr: 'كيف يجعل ديكنز الافتتاح مهدّدًا؟',
+              successAr: 'فقرتان تستخدمان اقتباسات وتشرحان الآثار.',
             }),
           ],
         },
@@ -1577,14 +1702,15 @@ const Y7_T2: Year['terms'][number] = {
           number: 9,
           pages: 'The Signalman — middle and ending',
           keyVocabulary: [
-            { en: 'tension' },
-            { en: 'supernatural' },
-            { en: 'omen' },
-            { en: 'climax' },
-            { en: 'narrator' },
+            { en: 'tension', ar: 'توتّر' },
+            { en: 'supernatural', ar: 'ما وراء الطبيعة' },
+            { en: 'omen', ar: 'نذير' },
+            { en: 'climax', ar: 'ذروة' },
+            { en: 'narrator', ar: 'راوٍ' },
           ],
           contextNote: {
             en: 'Three visitations from a spectre, each before a disaster. Dickens leaves the cause of the final death ambiguous.',
+            ar: 'يظهر الشبح ثلاث مرّات، كلّ مرّة قبل وقوع كارثة. يترك ديكنز سبب الموت في الخاتمة غامضًا.',
           },
           lessons: [
             lesson({
@@ -1593,6 +1719,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read the three visitations; track the order.',
               task: 'List the three warnings and the events that follow each.',
               success: 'Sequences all three warnings correctly.',
+              doAr: 'اقرأ ظهورات الشبح الثلاثة وتتبّع ترتيبها.',
+              taskAr: 'اذكر التحذيرات الثلاثة والأحداث التي تلت كلّ تحذير.',
+              successAr: 'يرتّب الطالب التحذيرات الثلاثة ترتيبًا صحيحًا.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1600,6 +1729,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Discuss the final twist: did the driver shout the same words as the ghost?',
               task: "Pair-talk: is the ghost real, or in the signalman's mind?",
               success: 'Gives a reasoned answer with one quotation.',
+              doAr: 'ناقش المفاجأة الختامية: هل صاح السائق بنفس كلمات الشبح؟',
+              taskAr: 'حوار ثنائي: هل الشبح حقيقي أم هو من نسج خيال عامل الإشارات؟',
+              successAr: 'يقدّم الطالب إجابة مدعومة باقتباس واحد.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1607,6 +1739,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model how Dickens builds tension through short sentences ("For God\'s sake clear the way!").',
               task: 'Write four sentences that build tension, including one short, sharp sentence.',
               success: 'Sentences vary in length; one is deliberately short.',
+              doAr: 'يعرض المعلّم نموذجًا لكيفية بناء ديكنز التوتّر بجمل قصيرة (مثل "For God\'s sake clear the way!").',
+              taskAr: 'اكتب أربع جمل تبني التوتّر، على أن تكون إحداها قصيرة وحادّة.',
+              successAr: 'تتفاوت الجمل في الطول، وإحداها قصيرة عن قصد.',
             }),
             lesson({
               focus: 'application',
@@ -1614,6 +1749,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model a paragraph on how Dickens uses repetition ("Halloa! Below there!") to build tension.',
               task: 'Write a PEE paragraph on tension in one of the three warnings.',
               success: 'Paragraph names technique and explains.',
+              doAr: 'يعرض المعلّم نموذج فقرة عن كيف يستعمل ديكنز التكرار (مثل "Halloa! Below there!") لبناء التوتّر.',
+              taskAr: 'اكتب فقرة PEE عن التوتّر في تحذير واحد من التحذيرات الثلاثة.',
+              successAr: 'تسمّي الفقرة التقنية وتشرحها.',
             }),
             lesson({
               focus: 'independent-outcome',
@@ -1621,6 +1759,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Plan two paragraphs: one on language, one on structure.',
               task: 'How does Dickens build tension at the ending?',
               success: 'Two paragraphs cover one language and one structural feature.',
+              doAr: 'خطّط لفقرتين: واحدة عن اللغة وأخرى عن البنية.',
+              taskAr: 'كيف يبني ديكنز التوتّر في الخاتمة؟',
+              successAr: 'فقرتان تغطّيان خاصّية لغوية وخاصّية بنائية.',
             }),
           ],
         },
@@ -1628,14 +1769,15 @@ const Y7_T2: Year['terms'][number] = {
           number: 10,
           pages: 'The Red Room — H. G. Wells',
           keyVocabulary: [
-            { en: 'fear' },
-            { en: 'rationalism' },
-            { en: 'first person' },
-            { en: 'shadow' },
-            { en: 'darkness' },
+            { en: 'fear', ar: 'خوف' },
+            { en: 'rationalism', ar: 'عقلانية' },
+            { en: 'first person', ar: 'ضمير المتكلّم' },
+            { en: 'shadow', ar: 'ظلّ' },
+            { en: 'darkness', ar: 'ظلام' },
           ],
           contextNote: {
             en: 'Wells (1896) wrote a ghost story where the real horror is fear itself. A confident young man dares to spend the night in a haunted room.',
+            ar: 'كتب ويلز عام 1896 قصّة أشباح يكون الرعب الحقيقي فيها هو الخوف نفسه. شابّ واثق من نفسه يجرؤ على قضاء ليلة في غرفة مسكونة.',
           },
           lessons: [
             lesson({
@@ -1644,6 +1786,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read the opening; identify the narrator\'s confident tone ("I can assure you").',
               task: "List three quotations showing the narrator's confidence.",
               success: 'Quotes three confident statements.',
+              doAr: 'اقرأ المقطع الافتتاحي وحدّد نبرة الثقة عند الراوي (مثل "I can assure you").',
+              taskAr: 'اذكر ثلاثة اقتباسات تظهر ثقة الراوي بنفسه.',
+              successAr: 'يقتبس الطالب ثلاث تصريحات واثقة.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1651,6 +1796,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Compare the old custodians to the young narrator: who is more believable?',
               task: 'Pair-talk: how does Wells make us trust the narrator at first?',
               success: 'Gives one reason we trust the narrator.',
+              doAr: 'قارن الحرّاس المسنّين بالراوي الشاب: من الأكثر مصداقية؟',
+              taskAr: 'حوار ثنائي: كيف يجعلنا ويلز نثق بالراوي في البداية؟',
+              successAr: 'يقدّم الطالب سببًا واحدًا للثقة بالراوي.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1658,6 +1806,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model how sentence length shortens as fear grows ("My candle flared… It was gone").',
               task: 'Rewrite a short passage making sentences gradually shorter.',
               success: 'Sentences clearly shorten across the passage.',
+              doAr: 'يعرض المعلّم نموذجًا لتقصّر الجمل كلّما اشتدّ الخوف (مثل "My candle flared… It was gone").',
+              taskAr: 'أعد كتابة مقطع قصير بحيث تصير جمله أقصر تدريجيًا.',
+              successAr: 'تتقاصر الجمل بوضوح على امتداد المقطع.',
             }),
             lesson({
               focus: 'application',
@@ -1665,6 +1816,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model a paragraph on how Wells personifies the shadows.',
               task: "Write a PEE paragraph on Wells's presentation of fear.",
               success: 'Paragraph identifies a language feature and explains.',
+              doAr: 'يعرض المعلّم نموذج فقرة عن كيف يجسّد ويلز الظلال (تشخيص).',
+              taskAr: 'اكتب فقرة PEE عن تقديم ويلز لمشاعر الخوف.',
+              successAr: 'تحدّد الفقرة سمة لغوية وتشرحها.',
             }),
             lesson({
               focus: 'independent-outcome',
@@ -1672,6 +1826,9 @@ const Y7_T2: Year['terms'][number] = {
               do: "Plan a paragraph on the narrator's change from confident to fearful.",
               task: 'How does Wells present fear in The Red Room?',
               success: 'Two paragraphs track the change in the narrator.',
+              doAr: 'خطّط لفقرة عن تحوّل الراوي من واثق إلى خائف.',
+              taskAr: 'كيف يقدّم ويلز مشاعر الخوف في The Red Room؟',
+              successAr: 'فقرتان تتتبّعان التحوّل في شخصيّة الراوي.',
             }),
           ],
         },
@@ -1679,14 +1836,15 @@ const Y7_T2: Year['terms'][number] = {
           number: 11,
           pages: 'The Necklace — Guy de Maupassant',
           keyVocabulary: [
-            { en: 'irony' },
-            { en: 'twist' },
-            { en: 'pride' },
-            { en: 'social class' },
-            { en: 'protagonist' },
+            { en: 'irony', ar: 'مفارقة' },
+            { en: 'twist', ar: 'مفاجأة' },
+            { en: 'pride', ar: 'كبرياء' },
+            { en: 'social class', ar: 'الطبقة الاجتماعية' },
+            { en: 'protagonist', ar: 'بطل' },
           ],
           contextNote: {
             en: 'Maupassant (1884): Mathilde borrows a necklace, loses it, and works ten years to replace it — only to learn the original was fake.',
+            ar: 'كتبها موباسان عام 1884: تستعير ماتيلد عقدًا وتفقده، ثم تعمل عشر سنوات لتعويضه، لتكتشف في النهاية أن الأصل كان مزيّفًا.',
           },
           lessons: [
             lesson({
@@ -1695,6 +1853,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Read the story in two halves; summarise the plot in six sentences.',
               task: 'Write a six-sentence plot summary.',
               success: 'Summary covers borrowing, loss, debt and twist.',
+              doAr: 'اقرأ القصّة على جزأين، ولخّص الحبكة في ستّ جمل.',
+              taskAr: 'اكتب ملخّصًا للحبكة في ستّ جمل.',
+              successAr: 'يغطّي الملخّص الاستعارة والفقدان والدين والمفاجأة.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1702,6 +1863,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Define dramatic irony; discuss the final reveal: "my necklace was paste".',
               task: "Pair-talk: who is to blame for Mathilde's ten lost years?",
               success: 'Reasoned answer naming Mathilde or society.',
+              doAr: 'عرّف "dramatic irony"، وناقش الكشف الأخير: "my necklace was paste".',
+              taskAr: 'حوار ثنائي: من المسؤول عن السنوات العشر الضائعة من حياة ماتيلد؟',
+              successAr: 'إجابة مدعومة بالأسباب تحمّل المسؤولية لماتيلد أو للمجتمع.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1709,6 +1873,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model Maupassant\'s lists of longing ("the silent antechambers… the perfumed little rooms").',
               task: "Write a list of three describing a character's longing.",
               success: 'List of three is grammatically parallel.',
+              doAr: 'يعرض المعلّم نموذجًا لقوائم الشوق عند موباسان (مثل "the silent antechambers… the perfumed little rooms").',
+              taskAr: 'اكتب قائمة من ثلاثة عناصر تصف شوق شخصية ما.',
+              successAr: 'القائمة الثلاثيّة متوازية نحويًا.',
             }),
             lesson({
               focus: 'application',
@@ -1716,6 +1883,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model a paragraph on how the twist makes us rethink Mathilde.',
               task: "Write a PEE paragraph on Maupassant's use of irony.",
               success: 'Paragraph quotes the reveal and explains the irony.',
+              doAr: 'يعرض المعلّم نموذج فقرة عن كيف تدفعنا المفاجأة إلى إعادة التفكير في شخصية ماتيلد.',
+              taskAr: 'اكتب فقرة PEE عن استخدام موباسان للمفارقة.',
+              successAr: 'تقتبس الفقرة لحظة الكشف وتشرح المفارقة.',
             }),
             lesson({
               focus: 'independent-outcome',
@@ -1723,6 +1893,9 @@ const Y7_T2: Year['terms'][number] = {
               do: "Plan two paragraphs: one on Mathilde's pride, one on the twist.",
               task: 'How does Maupassant present Mathilde?',
               success: 'Two paragraphs use quotations and track her change.',
+              doAr: 'خطّط لفقرتين: واحدة عن كبرياء ماتيلد وأخرى عن المفاجأة.',
+              taskAr: 'كيف يقدّم موباسان شخصية ماتيلد؟',
+              successAr: 'فقرتان تستخدمان اقتباسات وتتتبّعان تحوّلها.',
             }),
           ],
         },
@@ -1730,14 +1903,15 @@ const Y7_T2: Year['terms'][number] = {
           number: 12,
           pages: 'Comparison: tension in three pre-1914 stories',
           keyVocabulary: [
-            { en: 'compare' },
-            { en: 'method' },
-            { en: 'effect' },
-            { en: 'similarity' },
-            { en: 'difference' },
+            { en: 'compare', ar: 'قارن' },
+            { en: 'method', ar: 'أسلوب' },
+            { en: 'effect', ar: 'أثر' },
+            { en: 'similarity', ar: 'تشابه' },
+            { en: 'difference', ar: 'اختلاف' },
           ],
           contextNote: {
             en: 'All three writers build tension differently: Dickens through setting/repetition, Wells through sentence length, Maupassant through dramatic irony.',
+            ar: 'يبني الكُتّاب الثلاثة التوتّر بطرق مختلفة: ديكنز عبر المكان والتكرار، وويلز عبر طول الجمل، وموباسان عبر المفارقة الدرامية.',
           },
           lessons: [
             lesson({
@@ -1746,6 +1920,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Recap one tension quotation from each story.',
               task: 'Fill a grid: writer / quotation / method / effect for all three stories.',
               success: 'Grid has three accurate quotations and three named methods.',
+              doAr: 'راجع اقتباسًا واحدًا يبني التوتّر من كلّ قصّة.',
+              taskAr: 'املأ جدولًا: الكاتب / الاقتباس / الأسلوب / الأثر للقصص الثلاث.',
+              successAr: 'يحتوي الجدول على ثلاثة اقتباسات دقيقة وثلاثة أساليب مسمّاة.',
             }),
             lesson({
               focus: 'reading-discussion',
@@ -1753,6 +1930,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Discuss which writer builds tension best, and why.',
               task: 'Pair-talk: rank the three stories for tension with reasons.',
               success: 'Ranking uses one quotation as evidence.',
+              doAr: 'ناقش أيّ الكُتّاب أفضل في بناء التوتّر، ولماذا.',
+              taskAr: 'حوار ثنائي: رتّب القصص الثلاث بحسب التوتّر مع ذكر الأسباب.',
+              successAr: 'يستعمل الترتيب اقتباسًا واحدًا دليلًا.',
             }),
             lesson({
               focus: 'explicit-writing',
@@ -1760,6 +1940,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model comparative paragraph: "Both Dickens and Wells… However, Dickens uses…".',
               task: 'Write one comparative paragraph using the modelled stems.',
               success: 'Paragraph quotes two stories and uses a contrast connective.',
+              doAr: 'يعرض المعلّم نموذج فقرة مقارنة: "Both Dickens and Wells… However, Dickens uses…".',
+              taskAr: 'اكتب فقرة مقارنة واحدة باستخدام بدايات الجمل المعروضة.',
+              successAr: 'تقتبس الفقرة من قصّتين وتستخدم رابط تضاد.',
             }),
             lesson({
               focus: 'application',
@@ -1767,6 +1950,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model a second paragraph comparing Dickens and Maupassant on endings.',
               task: 'Write a comparative paragraph on the endings of two stories.',
               success: 'Paragraph quotes both endings and names one similarity or difference.',
+              doAr: 'يعرض المعلّم نموذج فقرة ثانية تقارن بين خاتمتي ديكنز وموباسان.',
+              taskAr: 'اكتب فقرة مقارنة عن خاتمتي قصّتين.',
+              successAr: 'تقتبس الفقرة من كلتا الخاتمتين وتسمّي تشابهًا أو اختلافًا واحدًا.',
             }),
             lesson({
               focus: 'independent-outcome',
@@ -1774,6 +1960,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Plan a full comparative essay on tension across three stories.',
               task: 'Draft three comparative paragraphs: one per story pairing.',
               success: 'Three paragraphs, each with two quotations and a clear comparison.',
+              doAr: 'خطّط لمقالة مقارنة كاملة عن التوتّر في القصص الثلاث.',
+              taskAr: 'اكتب مسوّدة ثلاث فقرات مقارنة: فقرة لكلّ اقتران بين قصّتين.',
+              successAr: 'ثلاث فقرات في كلّ منها اقتباسان ومقارنة واضحة.',
             }),
           ],
         },
@@ -1781,14 +1970,15 @@ const Y7_T2: Year['terms'][number] = {
           number: 13,
           pages: 'The Signalman revisited — HT2 assessment',
           keyVocabulary: [
-            { en: 'analyse' },
-            { en: 'tension' },
-            { en: 'evidence' },
-            { en: 'method' },
-            { en: 'response' },
+            { en: 'analyse', ar: 'حلِّل' },
+            { en: 'tension', ar: 'توتّر' },
+            { en: 'evidence', ar: 'دليل' },
+            { en: 'method', ar: 'أسلوب' },
+            { en: 'response', ar: 'إجابة' },
           ],
           contextNote: {
             en: 'Assessment week: 60-minute analytical response on how Dickens builds tension in The Signalman.',
+            ar: 'أسبوع التقييم: إجابة تحليلية مدّتها 60 دقيقة عن كيف يبني ديكنز التوتّر في قصّة The Signalman.',
           },
           lessons: [
             lesson({
@@ -1797,6 +1987,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Re-read three key Signalman passages: descent, second warning, final scene.',
               task: 'Build a quotation bank of six tension-building details.',
               success: 'Six quotations covering setting, language and structure.',
+              doAr: 'أعد قراءة ثلاثة مقاطع رئيسية من The Signalman: النزول، التحذير الثاني، المشهد الأخير.',
+              taskAr: 'ابنِ بنكًا من ستّة اقتباسات تُسهم في بناء التوتّر.',
+              successAr: 'ستّة اقتباسات تغطّي المكان واللغة والبنية.',
             }),
             lesson({
               focus: 'consolidation-discussion',
@@ -1804,6 +1997,9 @@ const Y7_T2: Year['terms'][number] = {
               do: "Discuss Dickens's three main tension methods: setting, repetition, ambiguity.",
               task: 'Pair-talk: match each quotation to one of the three methods.',
               success: 'Matches all six quotations to a method.',
+              doAr: 'ناقش أساليب ديكنز الثلاثة الرئيسة لبناء التوتّر: المكان، التكرار، الغموض.',
+              taskAr: 'حوار ثنائي: طابق كلّ اقتباس مع أحد الأساليب الثلاثة.',
+              successAr: 'يطابق الطالب الاقتباسات الستّة كلّها مع الأساليب.',
             }),
             lesson({
               focus: 'paragraph-rehearsal',
@@ -1811,6 +2007,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model an introduction: "Dickens builds tension through setting, language and structure".',
               task: 'Write an introduction and one body paragraph on setting.',
               success: 'Introduction names three methods; paragraph quotes the cutting.',
+              doAr: 'يعرض المعلّم نموذج مقدّمة: "Dickens builds tension through setting, language and structure".',
+              taskAr: 'اكتب مقدّمة وفقرة جسمية واحدة عن المكان.',
+              successAr: 'المقدّمة تسمّي ثلاثة أساليب، والفقرة تقتبس وصف الممرّ المحفور.',
             }),
             lesson({
               focus: 'application',
@@ -1818,6 +2017,9 @@ const Y7_T2: Year['terms'][number] = {
               do: 'Model a body paragraph on language ("For God\'s sake clear the way!").',
               task: "Write a second body paragraph on Dickens's use of language.",
               success: 'Paragraph quotes a line and names a language feature.',
+              doAr: 'يعرض المعلّم نموذج فقرة جسمية عن اللغة (مثل "For God\'s sake clear the way!").',
+              taskAr: 'اكتب فقرة جسمية ثانية عن استخدام ديكنز للّغة.',
+              successAr: 'تقتبس الفقرة سطرًا وتسمّي خاصّية لغوية.',
             }),
             lesson({
               focus: 'assessment',
@@ -1826,6 +2028,9 @@ const Y7_T2: Year['terms'][number] = {
               task: 'How does Dickens build tension in The Signalman?',
               success:
                 'Three paragraphs each quote and explain one method (setting, language, structure).',
+              doAr: 'تقييم النصف الثاني: إجابة تحليلية مدّتها 60 دقيقة في ظروف زمنية محدّدة.',
+              taskAr: 'كيف يبني ديكنز التوتّر في قصّة The Signalman؟',
+              successAr: 'ثلاث فقرات تقتبس وتشرح كلّ منها أسلوبًا واحدًا (المكان، اللغة، البنية).',
             }),
           ],
         },
@@ -1863,56 +2068,78 @@ const Y7_T3: Year['terms'][number] = {
     {
       id: '3.1',
       label: { en: 'Term 3.1 — Shakespeare', ar: 'الفصل 3.1 — شكسبير' },
-      assessment: { en: 'Shakespeare performance + 30-minute analytical paragraph on a scene.' },
+      assessment: {
+        en: 'Shakespeare performance + 30-minute analytical paragraph on a scene.',
+        ar: 'أداء مَشهد شكسبيري + فقرة تحليلية مدّتها 30 دقيقة حول أحد المشاهد.',
+      },
       weeks: [
         {
           number: 2,
           pages: 'Act 1.1 — Court of Theseus',
           keyVocabulary: [
-            { en: 'court' },
-            { en: 'decree' },
-            { en: 'forbidden' },
-            { en: 'defiance' },
-            { en: 'obedience' },
+            { en: 'court', ar: 'البلاط الملكي' },
+            { en: 'decree', ar: 'مرسوم' },
+            { en: 'forbidden', ar: 'محظور' },
+            { en: 'defiance', ar: 'تحدٍّ / عصيان' },
+            { en: 'obedience', ar: 'طاعة' },
           ],
           contextNote: {
             en: "Athens court. Egeus drags Hermia before Theseus because she refuses Demetrius. Athenian law gives the father power over his daughter's match.",
+            ar: 'بلاط أثينا. يجرّ إيجيوس ابنته هيرميا أمام ثيسيوس لأنّها ترفض الزواج من ديميتريوس. يمنح القانون الأثيني الأبَ سلطةَ اختيار زوج ابنته.',
           },
           lessons: [
             lesson({
               focus: 'explicit-reading',
               skills: ['7R.1', '7R.2'],
               do: 'Read Theseus\'s opening + Egeus\'s complaint aloud. Annotate "Full of vexation come I, with complaint / Against my child".',
+              doAr: 'اقرؤوا بصوتٍ عالٍ مَطلع كلام ثيسيوس وشكوى إيجيوس، ثمّ علّقوا على عبارة "Full of vexation come I, with complaint / Against my child".',
               task: 'Highlight every word in 1.1 lines 1–45 that signals law, ownership or hierarchy.',
+              taskAr:
+                'ظلّلوا كلّ كلمة في الأسطر 1–45 من المشهد 1.1 تدلّ على القانون أو التملّك أو التراتُب الهرَمي.',
               success: 'Lists 6+ legal/hierarchical words.',
+              successAr: 'يُدرج الطالب ستّ كلمات أو أكثر من معجم القانون أو التراتُب الهرَمي.',
             }),
             lesson({
               focus: 'reading-discussion',
               skills: ['7R.3', '7SL.1', '7SL.2'],
               do: 'Hot-seat Hermia. Model: "I would my father look\'d but with my eyes" — what does she risk?',
+              doAr: 'مَقعَد الاستجواب لشخصية هيرميا. النموذج: "I would my father look\'d but with my eyes" — ماذا تخاطر هيرميا بفقدانه؟',
               task: "Pair-debate: is Hermia's defiance brave or foolish?",
+              taskAr: 'نقاشٌ ثنائي: هل تحدّي هيرميا شجاعةٌ أم تهوّر؟',
               success: 'Contributes a point supported by a short quotation.',
+              successAr: 'يُقدّم الطالب نقطةً مدعومةً باقتباس قصير.',
             }),
             lesson({
               focus: 'explicit-writing',
               skills: ['7W.1', '7W.4'],
               do: 'Model: "Shakespeare presents the Athenian court as ___ through ___, which suggests ___".',
+              doAr: 'النموذج: "يُقدّم شكسبير البلاط الأثيني على أنّه ___ من خلال ___، ممّا يُلمِح إلى ___".',
               task: 'Write one paragraph on how Theseus\'s "die the death, or to abjure / For ever the society of men" establishes authority.',
+              taskAr:
+                'اكتبوا فقرةً واحدة تبيّنون فيها كيف يُرسّخ قول ثيسيوس "die the death, or to abjure / For ever the society of men" سلطتَه.',
               success: 'Paragraph has claim, embedded quote, one inference about power.',
+              successAr: 'تشتمل الفقرة على دعوى واضحة واقتباسٍ مُضمّن واستنتاجٍ واحد عن السلطة.',
             }),
             lesson({
               focus: 'application',
               skills: ['7W.1', '7W.3'],
               do: 'Zoom in on "decree" — connotations of permanence, law, public record.',
+              doAr: 'ركّزوا على كلمة "decree" وما تحمله من إيحاءات الديمومة والقانون والتسجيل الرسمي.',
               task: 'Write a paragraph zooming in on "obedience" or "decree".',
+              taskAr: 'اكتبوا فقرةً تُحلّلون فيها بدقّة كلمة "obedience" أو "decree".',
               success: 'Explores at least two layers of meaning.',
+              successAr: 'يستكشف الطالب طبقتَين على الأقلّ من المعنى.',
             }),
             lesson({
               focus: 'independent-outcome',
               skills: ['7R.4', '7W.1', '7W.4', '7W.9'],
               do: 'Recap paragraph structure.',
+              doAr: 'مراجعةٌ سريعة لبنية الفقرة التحليلية.',
               task: "How does Shakespeare present Hermia's predicament in Act 1.1?",
+              taskAr: 'كيف يُقدّم شكسبير ورطة هيرميا في المشهد 1.1؟',
               success: 'Clear argument, two embedded quotations, three Tier-2 words.',
+              successAr:
+                'يبني الطالب حجّةً واضحة، ويُضمّن اقتباسَين، ويوظّف ثلاث كلمات من المستوى الثاني.',
             }),
           ],
         },
@@ -1920,52 +2147,71 @@ const Y7_T3: Year['terms'][number] = {
           number: 3,
           pages: 'Act 2.1 — Fairy realm',
           keyVocabulary: [
-            { en: 'enchantment' },
-            { en: 'supernatural' },
-            { en: 'mischief' },
-            { en: 'jealousy' },
-            { en: 'hierarchy' },
+            { en: 'enchantment', ar: 'سحرٌ آسر' },
+            { en: 'supernatural', ar: 'خارقٌ للطبيعة' },
+            { en: 'mischief', ar: 'شيطنة / عبث' },
+            { en: 'jealousy', ar: 'غَيرة' },
+            { en: 'hierarchy', ar: 'تراتُب هرَمي' },
           ],
           contextNote: {
             en: 'The wood: Puck boasts of mischief; Oberon and Titania quarrel over a changeling boy. The supernatural quarrel disorders nature itself.',
+            ar: 'في الغابة: يتفاخر باك بشيطنته، ويتشاجر أوبيرون وتيتانيا على صبيٍّ مُتبدَّل. ويُخلّ خلافهما الخارق بنظام الطبيعة نفسها.',
           },
           lessons: [
             lesson({
               focus: 'explicit-reading',
               skills: ['7R.1', '7R.5'],
               do: 'Read Titania\'s "forgeries of jealousy" speech. Map the disorders (winds, fogs, rivers, corn, sheep).',
+              doAr: 'اقرؤوا خطاب تيتانيا "forgeries of jealousy"، ثمّ ارسموا خريطةً لمظاهر الخلل (الرياح، الضباب، الأنهار، الحبوب، الأغنام).',
               task: 'Underline every image of disorder in lines 81–117.',
+              taskAr: 'ضعوا خطّاً تحت كلّ صورة من صور الخلل في الأسطر 81–117.',
               success: 'Lists 5+ disorder images linked to the fairy quarrel.',
+              successAr: 'يُدرج الطالب خمس صور للخلل أو أكثر، مربوطةً بشِجار الجنّ.',
             }),
             lesson({
               focus: 'reading-discussion',
               skills: ['7R.3', '7R.6', '7SL.1'],
               do: "Compare Theseus's court (Week 2) with the fairy realm. In court, law silences women; in the wood, Titania matches Oberon line for line.",
+              doAr: 'قارنوا بين بلاط ثيسيوس (الأسبوع الثاني) وعالم الجنّ. ففي البلاط، يُسكِت القانون النساء، أمّا في الغابة فتُسايِر تيتانيا أوبيرون سطراً بسطر.',
               task: 'In threes, list three differences between court and wood.',
+              taskAr: 'في مجموعاتٍ ثلاثية، أحصُوا ثلاثة فروق بين البلاط والغابة.',
               success:
                 'Identifies differences in power, language, setting; supports with quotation.',
+              successAr: 'يُحدّد الطالب فروقاً في السلطة واللغة والمكان، ويدعمها باقتباس.',
             }),
             lesson({
               focus: 'explicit-writing',
               skills: ['7W.1', '7W.4'],
               do: "Model: \"Shakespeare presents Titania as defiant because she refuses Oberon's demand: 'Set your heart at rest: / The fairy land buys not the child of me.'\"",
+              doAr: 'النموذج: "يُقدّم شكسبير تيتانيا متمرّدةً لأنّها ترفض مطلب أوبيرون: \'Set your heart at rest: / The fairy land buys not the child of me.\'"',
               task: 'Write a paragraph on how Shakespeare presents the supernatural in 2.1.',
+              taskAr:
+                'اكتبوا فقرةً تبيّنون فيها كيف يُقدّم شكسبير العنصر الخارق للطبيعة في المشهد 2.1.',
               success:
                 'Paragraph names a method (imagery, blank verse, repetition), embeds a quote, infers an effect.',
+              successAr:
+                'تذكر الفقرة وسيلةً أدبية (الصور، الشعر المُرسَل، التكرار)، وتُضمّن اقتباساً، وتستنتج أثَراً.',
             }),
             lesson({
               focus: 'application',
               skills: ['7W.2', '7W.3'],
               do: 'Demonstrate connecting two quotations with "Furthermore".',
+              doAr: 'اعرضوا كيفية الرَّبط بين اقتباسَين باستخدام أداة "Furthermore".',
               task: "Add a second paragraph to yesterday's work on Oberon's plotting.",
+              taskAr: 'أضيفوا فقرةً ثانية إلى عمل الأمس عن مكائد أوبيرون.',
               success: 'Pupils link two paragraphs cohesively; one Tier-2 word used.',
+              successAr:
+                'يربط الطالب بين فقرتَين برباطٍ سلس، ويوظّف كلمةً واحدة من المستوى الثاني.',
             }),
             lesson({
               focus: 'independent-outcome',
               skills: ['7R.4', '7W.1', '7W.4', '7W.9'],
               do: 'Recap "whereas" and "by contrast" for comparison.',
+              doAr: 'مراجعةُ أدوات المقارنة "whereas" و"by contrast".',
               task: 'How does Shakespeare present the quarrel between Oberon and Titania?',
+              taskAr: 'كيف يُقدّم شكسبير الشِّجار بين أوبيرون وتيتانيا؟',
               success: 'Comparative language, two quotations, explains effect on natural world.',
+              successAr: 'يوظّف الطالب لغةَ المقارنة واقتباسَين، ويشرح الأثر على عالم الطبيعة.',
             }),
           ],
         },
@@ -1973,52 +2219,72 @@ const Y7_T3: Year['terms'][number] = {
           number: 4,
           pages: "Act 3.1 — Bottom's transformation",
           keyVocabulary: [
-            { en: 'transformation' },
-            { en: 'absurdity' },
-            { en: 'dramatic-irony' },
-            { en: 'comedy' },
-            { en: 'oblivious' },
+            { en: 'transformation', ar: 'تحوّل' },
+            { en: 'absurdity', ar: 'عبثيّة' },
+            { en: 'dramatic-irony', ar: 'مفارقة درامية' },
+            { en: 'comedy', ar: 'كوميديا' },
+            { en: 'oblivious', ar: 'غافل' },
           ],
           contextNote: {
             en: 'The Mechanicals rehearse "Pyramus and Thisbe". Puck conjures an ass\'s head onto Bottom; Titania (drugged) falls in love. Prose vs verse marks the comic gulf.',
+            ar: 'يتدرّب الحرفيّون على مسرحية "Pyramus and Thisbe". يُلبس باك رأس حمار لبوتُم، فتقع تيتانيا في غرامه (وهي تحت تأثير سحرٍ مُخدِّر). التبايُن بين النثر والشعر يَكشف عن الهوّة الكوميدية.',
           },
           lessons: [
             lesson({
               focus: 'explicit-reading',
               skills: ['7R.1', '7R.2'],
               do: 'Read Titania\'s "What angel wakes me from my flowery bed?" alongside Bottom\'s "let them play it in blank verse".',
+              doAr: 'اقرؤوا بيت تيتانيا "What angel wakes me from my flowery bed?" بمحاذاة كلام بوتُم "let them play it in blank verse".',
               task: 'Mark the prose/verse switch on the scene.',
+              taskAr: 'ضعوا علامةً على موضع الانتقال من النثر إلى الشعر في المشهد.',
               success:
                 'Identifies the switch and explains it signals status / comedy / supernatural.',
+              successAr:
+                'يُحدّد الطالب موضع الانتقال ويشرح أنّه دالٌّ على المكانة الاجتماعية أو الكوميديا أو الخارق.',
             }),
             lesson({
               focus: 'reading-discussion',
               skills: ['7R.3', '7SL.2', '7SL.3'],
               do: "Define dramatic irony: audience knows Bottom has an ass's head; Bottom does not.",
+              doAr: 'عرِّفوا المفارقة الدرامية: الجمهور يعلم أنّ بوتُم يحمل رأس حمار، أمّا هو فلا يعلم.',
               task: 'Perform a 90-second extract in pairs. Discuss what makes it funny.',
+              taskAr: 'أدّوا مقطعاً مدّته تسعون ثانية في ثنائيّات، ثمّ ناقشوا ما يجعله مُضحكاً.',
               success: 'Names dramatic irony, absurdity or transformation as a source of comedy.',
+              successAr:
+                'يُسمّي الطالب المفارقة الدرامية أو العبثية أو التحوّل بوصفها مصدراً للكوميديا.',
             }),
             lesson({
               focus: 'explicit-writing',
               skills: ['7W.1', '7W.4'],
               do: "Model: \"Shakespeare creates comedy through dramatic irony when Titania declares 'I love thee' to a man wearing an ass's head.\"",
+              doAr: 'النموذج: "يصنع شكسبير الكوميديا عبر المفارقة الدرامية حين تُعلن تيتانيا \'I love thee\' لرجلٍ يحمل رأس حمار."',
               task: 'Write a paragraph on how Shakespeare creates comedy in Act 3.1.',
+              taskAr: 'اكتبوا فقرةً تبيّنون فيها كيف يصنع شكسبير الكوميديا في المشهد 3.1.',
               success: 'Uses "dramatic irony", embeds a quote, infers audience effect.',
+              successAr:
+                'يستخدم الطالب مصطلح "المفارقة الدرامية"، ويُضمّن اقتباساً، ويستنتج الأثر في الجمهور.',
             }),
             lesson({
               focus: 'application',
               skills: ['7W.3', '7W.4'],
               do: 'Analyse Bottom\'s obliviousness: "I see their knavery: this is to make an ass of me".',
+              doAr: 'حلِّلوا غفلة بوتُم في عبارة "I see their knavery: this is to make an ass of me".',
               task: 'Write a paragraph zooming in on "oblivious" or "absurdity".',
+              taskAr: 'اكتبوا فقرةً تُحلّلون فيها بدقّة كلمة "oblivious" أو "absurdity".',
               success: "Explains how Bottom's lack of awareness deepens comedy.",
+              successAr: 'يشرح الطالب كيف تُعمِّق غفلةُ بوتُم البُعدَ الكوميدي.',
             }),
             lesson({
               focus: 'independent-outcome',
               skills: ['7R.4', '7W.1', '7W.4', '7W.9'],
               do: 'Recap: name method, embed quote, explain effect.',
+              doAr: 'مراجعة: سمِّ الوسيلة، وضمِّن الاقتباس، واشرح الأثر.',
               task: 'How does Shakespeare make Act 3.1 entertaining?',
+              taskAr: 'كيف يجعل شكسبير المشهد 3.1 مُمتعاً؟',
               success:
                 'Two distinct methods (e.g. dramatic irony, prose/verse contrast), each with quotation.',
+              successAr:
+                'يوظّف الطالب وسيلتَين متمايزتَين (كالمفارقة الدرامية والتباين بين النثر والشعر)، مع اقتباسٍ لكلٍّ منهما.',
             }),
           ],
         },
@@ -2026,50 +2292,69 @@ const Y7_T3: Year['terms'][number] = {
           number: 5,
           pages: 'Act 5.1 — Play-within-a-play',
           keyVocabulary: [
-            { en: 'meta-theatre' },
-            { en: 'framing' },
-            { en: 'audience' },
-            { en: 'performance' },
-            { en: 'resolution' },
+            { en: 'meta-theatre', ar: 'مسرحٌ موازٍ / مسرحٌ داخل المسرح' },
+            { en: 'framing', ar: 'تأطير' },
+            { en: 'audience', ar: 'الجمهور' },
+            { en: 'performance', ar: 'أداء' },
+            { en: 'resolution', ar: 'حلّ / خاتمة' },
           ],
           contextNote: {
             en: 'Lovers reconciled and married. Mechanicals perform Pyramus and Thisbe at court. We watch them watching a play — meta-theatre. Puck closes by breaking the frame.',
+            ar: 'يصطلح العشّاق ويتزوّجون. ويُؤدّي الحرفيّون مسرحية "Pyramus and Thisbe" في البلاط، فنُشاهدهم وهم يُشاهدون مسرحيّة — وهذا هو المسرح الموازي. ويختم باك بكسر الإطار الدرامي.',
           },
           lessons: [
             lesson({
               focus: 'explicit-reading',
               skills: ['7R.1', '7R.5'],
               do: 'Read Theseus: "The best in this kind are but shadows; and the worst are no worse, if imagination amend them." Gloss "shadows" = actors.',
+              doAr: 'اقرؤوا قول ثيسيوس: "The best in this kind are but shadows; and the worst are no worse, if imagination amend them." واشرحوا أنّ "shadows" تعني الممثّلين.',
               task: 'Label nested layers of audience: real / court / Mechanicals / characters.',
+              taskAr:
+                'ضعوا تسمياتٍ لطبقات الجمهور المتداخلة: الجمهور الواقعي / البلاط / الحرفيّون / الشخصيات.',
               success: 'Identifies three nested levels; links to meta-theatre.',
+              successAr: 'يُحدّد الطالب ثلاث طبقات متداخلة، ويربطها بمفهوم المسرح الموازي.',
             }),
             lesson({
               focus: 'reading-discussion',
               skills: ['7R.3', '7R.6', '7SL.1'],
               do: 'Why does Shakespeare end with Puck\'s speech to us? "If we shadows have offended, / Think but this…"',
+              doAr: 'لماذا يختم شكسبير المسرحية بخطاب باك إلينا؟ "If we shadows have offended, / Think but this…"',
               task: 'Pair-discuss: does the play offer real resolution, or does Puck unsettle it?',
+              taskAr: 'نقاشٌ ثنائي: هل تُقدّم المسرحية حلًّا فِعليًّا، أم أنّ باك يُربك ذلك الحلّ؟',
               success: 'Articulates a view on resolution with reference to Puck or Theseus.',
+              successAr: 'يُعبّر الطالب عن رأيٍ في الخاتمة مُستنداً إلى باك أو ثيسيوس.',
             }),
             lesson({
               focus: 'explicit-writing',
               skills: ['7W.1', '7W.4'],
               do: 'Model: "Shakespeare frames the Mechanicals\' play within the court\'s wedding, drawing attention to performance itself."',
+              doAr: 'النموذج: "يُؤطّر شكسبير مسرحيّة الحرفيّين داخل عُرس البلاط، فيلفت الانتباه إلى فعل الأداء نفسه."',
               task: 'Write a paragraph on the play-within-a-play as a comment on theatre.',
+              taskAr: 'اكتبوا فقرةً عن المسرحية داخل المسرحية باعتبارها تعليقاً على فنّ المسرح.',
               success: 'Uses "framing" or "meta-theatre", embeds a quote, explains an effect.',
+              successAr:
+                'يستخدم الطالب مصطلحَي "framing" أو "meta-theatre"، ويُضمّن اقتباساً، ويشرح الأثر.',
             }),
             lesson({
               focus: 'application',
               skills: ['7W.3', '7W.4'],
               do: 'Analyse Puck\'s direct address "Give me your hands, if we be friends."',
+              doAr: 'حلِّلوا الخطاب المباشر من باك إلى الجمهور: "Give me your hands, if we be friends."',
               task: "Write a paragraph on Puck's closing speech and its effect on the audience.",
+              taskAr: 'اكتبوا فقرةً عن خاتمة باك وأثرها في الجمهور.',
               success: 'Explains how direct address creates intimacy or reflection on illusion.',
+              successAr:
+                'يشرح الطالب كيف يُولّد الخطاب المباشر شعوراً بالحميمية أو تأمّلاً في الوهم المسرحي.',
             }),
             lesson({
               focus: 'independent-outcome',
               skills: ['7R.4', '7W.1', '7W.4', '7W.9'],
               do: 'Recap: resolution = marriages, harmony, return from disorder.',
+              doAr: 'مراجعة: الحلّ = الزيجات والوئام والعودة من الفوضى.',
               task: 'How does Shakespeare resolve the play in Act 5.1?',
+              taskAr: 'كيف يحلّ شكسبير عُقدة المسرحية في المشهد 5.1؟',
               success: "Addresses both marriages and Puck's unsettling final speech.",
+              successAr: 'يتناول الطالب الزيجات وخاتمة باك المُربِكة على حدٍّ سواء.',
             }),
           ],
         },
@@ -2077,52 +2362,70 @@ const Y7_T3: Year['terms'][number] = {
           number: 6,
           pages: 'Cross-act comparison: love and power',
           keyVocabulary: [
-            { en: 'parallel' },
-            { en: 'motif' },
-            { en: 'comic-resolution' },
-            { en: 'harmony' },
-            { en: 'contrast' },
+            { en: 'parallel', ar: 'تَوازٍ' },
+            { en: 'motif', ar: 'موتيف / فكرةٌ متكرّرة' },
+            { en: 'comic-resolution', ar: 'حلٌّ كوميدي' },
+            { en: 'harmony', ar: 'وئام' },
+            { en: 'contrast', ar: 'تباين' },
           ],
           contextNote: {
             en: 'Court (1.1) imposes order through law; the wood (2.1, 3.1) suspends it; final court (5.1) re-imposes a transformed order. Love and power are the twin motifs.',
+            ar: 'البلاط (1.1) يفرض النظام عبر القانون، والغابة (2.1 و3.1) تُعطّله، ثمّ يعود البلاط في المشهد الختامي (5.1) ليفرض نظاماً مُتحوّلاً. الحبّ والسلطة هما الموتيفان التوأمان.',
           },
           lessons: [
             lesson({
               focus: 'consolidation-reading',
               skills: ['7R.5', '7R.6'],
               do: 'Build a comparison grid: Theseus/Hippolyta, Oberon/Titania, four lovers, Bottom/Titania. Love and power columns.',
+              doAr: 'ابنوا شبكة مقارنة: ثيسيوس/هيبوليتا، أوبيرون/تيتانيا، العشّاق الأربعة، بوتُم/تيتانيا. مع عمودَين للحبّ والسلطة.',
               task: 'Complete the grid in books with one quotation per pairing.',
+              taskAr: 'أكملوا الشبكة في الدفاتر، مع اقتباسٍ واحد لكلّ ثنائي.',
               success: 'Grid contains four pairings with at least one quotation each.',
+              successAr: 'تشمل الشبكة أربعة أزواج، مع اقتباسٍ واحد لكلّ زوج على الأقلّ.',
             }),
             lesson({
               focus: 'consolidation-discussion',
               skills: ['7R.6', '7SL.1', '7SL.3'],
               do: 'Model: "Whereas the court silences Hermia, the wood gives Titania a voice. Both, however, end in marriage."',
+              doAr: 'النموذج: "في حين يُسكِت البلاط هيرميا، تمنح الغابة تيتانيا صوتاً؛ غير أنّ المسارَين ينتهيان معاً بالزواج."',
               task: 'Class debate: does the play celebrate love or expose it as absurd?',
+              taskAr: 'نقاشٌ صَفّي: هل تحتفي المسرحية بالحبّ، أم تكشف عبثيّته؟',
               success: 'Uses "whereas" or "by contrast"; references at least two scenes.',
+              successAr: 'يستخدم الطالب "whereas" أو "by contrast"، ويستشهد بمشهدَين على الأقلّ.',
             }),
             lesson({
               focus: 'explicit-writing',
               skills: ['7W.1', '7W.4'],
               do: 'Model: "In Act 1.1, Theseus warns Hermia she must \'die the death\'; by Act 5.1, the same Duke presides over her marriage to Lysander."',
+              doAr: 'النموذج: "في المشهد 1.1، يُنذِر ثيسيوس هيرميا بأنّها لا بدّ أن \'die the death\'؛ ثمّ في المشهد 5.1، يُشرف الدوق نفسه على زواجها من ليساندر."',
               task: 'Write a comparative paragraph on authority across the play.',
+              taskAr: 'اكتبوا فقرةً مقارنة عن السلطة عبر المسرحية.',
               success:
                 'Compares two scenes, embeds two quotations, identifies a shift or parallel.',
+              successAr:
+                'يقارن الطالب بين مشهدَين، ويُضمّن اقتباسَين، ويُحدّد تحوّلاً أو تَوازياً.',
             }),
             lesson({
               focus: 'application',
               skills: ['7W.3', '7W.4'],
               do: "Use \"motif\" — transformation runs from Hermia's defiance to Bottom's ass-head to the lovers' shifting affections.",
+              doAr: 'استخدموا مصطلح "motif" — يسري التحوّل من تحدّي هيرميا، إلى رأس حمار بوتُم، إلى عواطف العشّاق المتقلّبة.',
               task: 'Write a paragraph tracing the motif of transformation across two scenes.',
+              taskAr: 'اكتبوا فقرةً تتبّعون فيها موتيف التحوّل عبر مشهدَين.',
               success: 'Names the motif, gives two examples, explains how it builds.',
+              successAr: 'يُسمّي الطالب الموتيف، ويُقدّم مثالَين، ويشرح كيف يتنامى.',
             }),
             lesson({
               focus: 'independent-outcome',
               skills: ['7R.6', '7W.1', '7W.4', '7W.9'],
               do: 'Plan a 30-minute essay on the board.',
+              doAr: 'خطِّطوا مقالةً مدّتها 30 دقيقة على السبّورة.',
               task: "How does Shakespeare present love and power across A Midsummer Night's Dream?",
+              taskAr: "كيف يُقدّم شكسبير الحبّ والسلطة في مسرحية A Midsummer Night's Dream؟",
               success:
                 'References three of four scenes, three embedded quotations, clear conclusion.',
+              successAr:
+                'يُشير الطالب إلى ثلاثة مشاهد من الأربعة، ويُضمّن ثلاثة اقتباسات، ويصوغ خاتمةً واضحة.',
             }),
           ],
         },
@@ -2130,51 +2433,69 @@ const Y7_T3: Year['terms'][number] = {
           number: 7,
           pages: 'Assessment week — performance + analytical paragraph',
           keyVocabulary: [
-            { en: 'rehearsal' },
-            { en: 'projection' },
-            { en: 'intonation' },
-            { en: 'analytical' },
-            { en: 'evidence' },
+            { en: 'rehearsal', ar: 'بروفة' },
+            { en: 'projection', ar: 'إيصال الصوت' },
+            { en: 'intonation', ar: 'تنغيم' },
+            { en: 'analytical', ar: 'تحليلي' },
+            { en: 'evidence', ar: 'دليل / شاهد' },
           ],
           contextNote: {
             en: 'Assessment week. Group Shakespeare performance + 30-minute analytical paragraph on a scene of choice.',
+            ar: 'أسبوع التقييم: أداء شكسبيري جماعي + فقرة تحليلية مدّتها 30 دقيقة على مشهدٍ يختاره الطالب.',
           },
           lessons: [
             lesson({
               focus: 'explicit-reading',
               skills: ['7R.1', '7R.2'],
               do: 'Issue extract choices (12–16 lines from 1.1, 2.1, 3.1, 5.1). Model annotation: stresses, pauses, tone shifts.',
+              doAr: 'وزّعوا خيارات المقاطع (12–16 سطراً من المشاهد 1.1 و2.1 و3.1 و5.1). اعرضوا نموذج تعليق: مواضع التشديد والوقَفات وتحوّلات النبرة.',
               task: 'Annotate your extract for performance: stresses, pauses, tone.',
+              taskAr: 'علِّقوا على مقطعكم استعداداً للأداء: مواضع التشديد والوقَفات والنبرة.',
               success: 'Extract fully annotated with at least six marks.',
+              successAr: 'يكون المقطع مُعلَّقاً عليه بالكامل بستّ علاماتٍ على الأقلّ.',
             }),
             lesson({
               focus: 'reading-discussion',
               skills: ['7SL.1', '7SL.2', '7SL.3'],
               do: 'Rehearsal workshop. Demonstrate projection, eye-contact, consonants on "Out of this wood do not desire to go."',
+              doAr: 'ورشة بروفة. اعرضوا إيصال الصوت والتواصل البصري ونُطق الصوامت في عبارة "Out of this wood do not desire to go."',
               task: 'Rehearse in groups of 3–4; peer-feedback on projection and intonation.',
+              taskAr:
+                'تدرّبوا في مجموعاتٍ من 3–4، مع تغذية راجعة من الأقران على إيصال الصوت والتنغيم.',
               success: 'Each pupil acts on at least one piece of feedback.',
+              successAr: 'يعمل كلّ طالبٍ بملاحظةٍ واحدة على الأقلّ من التغذية الراجعة.',
             }),
             lesson({
               focus: 'application',
               skills: ['7SL.1', '7SL.2', '7SL.3'],
               do: 'Remind of success criteria: clear voice, sustained character, accurate text.',
+              doAr: 'ذكِّروا بمعايير النجاح: وضوح الصوت، وثبات الشخصية، ودقّة النصّ.',
               task: 'Perform extracts to the class. Audience completes feedback slips.',
+              taskAr: 'أدّوا المقاطع أمام الصفّ، ويملأ الجمهور بطاقات التغذية الراجعة.',
               success: 'Performance is audible, sustained, textually accurate.',
+              successAr: 'الأداء مسموع وثابت ومُطابق للنصّ.',
             }),
             lesson({
               focus: 'paragraph-rehearsal',
               skills: ['7W.1', '7W.4'],
               do: 'Plan the 30-minute paragraph: choose scene, pick two quotations, draft topic sentence.',
+              doAr: 'خطِّطوا للفقرة ذات الثلاثين دقيقة: اختاروا المشهد، وانتقوا اقتباسَين، وصُغوا الجملة الافتتاحية.',
               task: 'Plan an analytical paragraph on a chosen scene.',
+              taskAr: 'خطِّطوا فقرةً تحليلية على مشهدٍ مختار.',
               success: 'Plan has clear claim, two quotations, one-paragraph structure.',
+              successAr: 'تشتمل الخطّة على دعوى واضحة واقتباسَين وبنيةِ فقرةٍ واحدة.',
             }),
             lesson({
               focus: 'assessment',
               skills: ['7R.4', '7W.1', '7W.4', '7W.9'],
               do: 'Brief recap of success criteria. No further modelling.',
+              doAr: 'مراجعةٌ موجزة لمعايير النجاح، دون نمذجةٍ إضافية.',
               task: '30-minute analytical paragraph on a chosen scene from the play.',
+              taskAr: 'فقرة تحليلية مدّتها 30 دقيقة على مشهدٍ مختار من المسرحية.',
               success:
                 'Precise claim, two accurate embedded quotations, method-and-effect analysis, Tier-2 vocab.',
+              successAr:
+                'دعوى دقيقة، واقتباسان مُضمَّنان بدقّة، وتحليلٌ للوسيلة والأثر، ومفردات من المستوى الثاني.',
             }),
           ],
         },
@@ -2188,6 +2509,7 @@ const Y7_T3: Year['terms'][number] = {
       },
       assessment: {
         en: 'Extended narrative writing (1,000–1,500 words) drafted, peer-reviewed, redrafted — final piece assessed.',
+        ar: 'كتابة سردية موسّعة (1,000–1,500 كلمة): مسودّة أولى، ثمّ مراجعة الأقران، ثمّ إعادة صياغة — يُقيَّم العمل النهائي.',
       },
       weeks: [],
     },

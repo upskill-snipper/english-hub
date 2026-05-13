@@ -4,6 +4,27 @@ import { useState, useCallback, useRef, useEffect } from 'react'
 import DOMPurify from 'dompurify'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
+import type { Locale } from '@/lib/i18n/dictionary'
+
+/* ── Locale helper (mirrors useT()'s cookie read) ──────────────── */
+function readLocaleCookie(): Locale {
+  if (typeof document === 'undefined') return 'en'
+  const match = document.cookie.match(/(?:^|;\s*)eh-lang=(en|bi|ar)\b/)
+  return match?.[1] === 'ar' ? 'ar' : 'en'
+}
+
+function useLocale(): Locale {
+  const [locale, setLocale] = useState<Locale>('en')
+  useEffect(() => {
+    setLocale(readLocaleCookie())
+    function onLangChange() {
+      setLocale(readLocaleCookie())
+    }
+    window.addEventListener('eh-lang-change', onLangChange)
+    return () => window.removeEventListener('eh-lang-change', onLangChange)
+  }, [])
+  return locale
+}
 
 /* ── Types ──────────────────────────────────────────────────────── */
 
@@ -22,6 +43,9 @@ export interface KeyQuote {
   quote: string
   analysis: string
   themes: string[]
+  // Khaleeji-leaning AR commentary on the quote (quote itself stays in EN).
+  analysisAr?: string
+  themesAr?: string[]
 }
 
 export interface LanguageDevice {
@@ -29,8 +53,22 @@ export interface LanguageDevice {
   example: string
   effect: string
   lineRef: number
+  // Khaleeji-leaning AR commentary on the device's effect.
+  // `device` term and `example` (EN quotation) stay in EN.
+  effectAr?: string
 }
 
+/**
+ * Per-poem analysis content.
+ *
+ * AR variants (Khaleeji-leaning literary explanatory prose) are
+ * optional. When the user is in `ar` locale and the AR variant
+ * exists, the viewer renders it; otherwise it falls back to EN.
+ *
+ * Convention: technical terms (volta, enjambment, caesura,
+ * sibilance, plosive) stay in Latin or transliterated; English
+ * quotations stay in English; poet names stay in Latin.
+ */
 export interface PoemData {
   title: string
   poet: string
@@ -40,6 +78,11 @@ export interface PoemData {
   formAndStructure: string
   keyQuotes: KeyQuote[]
   languageDevices: LanguageDevice[]
+  // AR variants for the prose-string fields. Keep optional so the
+  // bulk of the anthology (translation-pending) stays type-clean.
+  contextAr?: string
+  summaryAr?: string
+  formAndStructureAr?: string
 }
 
 /* ── Analysis panel types ───────────────────────────────────────── */
@@ -188,44 +231,58 @@ function FormPanel({ text }: { text: string }) {
   )
 }
 
-function QuotesPanel({ quotes }: { quotes: KeyQuote[] }) {
+function QuotesPanel({ quotes, locale }: { quotes: KeyQuote[]; locale: Locale }) {
   return (
     <div className="space-y-4">
-      {quotes.map((q, i) => (
-        <div key={i} className="rounded-md border border-amber-500/20 bg-amber-500/5 p-3">
-          <p className="text-sm font-medium text-amber-700 italic mb-1.5">
-            &ldquo;{q.quote}&rdquo;
-          </p>
-          <p className="text-sm text-card-foreground mb-2">{q.analysis}</p>
-          <div className="flex flex-wrap gap-1.5">
-            {q.themes.map((t) => (
-              <span
-                key={t}
-                className="rounded-full bg-amber-500/10 px-2 py-0.5 text-xs text-clay-600"
-              >
-                {t}
-              </span>
-            ))}
+      {quotes.map((q, i) => {
+        // Quotation itself always renders in English (per editorial policy).
+        const analysis = locale === 'ar' && q.analysisAr ? q.analysisAr : q.analysis
+        const themes = locale === 'ar' && q.themesAr ? q.themesAr : q.themes
+        return (
+          <div key={i} className="rounded-md border border-amber-500/20 bg-amber-500/5 p-3">
+            <p className="text-sm font-medium text-amber-700 italic mb-1.5" dir="ltr" lang="en">
+              &ldquo;{q.quote}&rdquo;
+            </p>
+            <p className="text-sm text-card-foreground mb-2">{analysis}</p>
+            <div className="flex flex-wrap gap-1.5">
+              {themes.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full bg-amber-500/10 px-2 py-0.5 text-xs text-clay-600"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
 
-function LanguagePanel({ devices }: { devices: LanguageDevice[] }) {
+function LanguagePanel({ devices, locale }: { devices: LanguageDevice[]; locale: Locale }) {
   return (
     <div className="space-y-3">
-      {devices.map((d, i) => (
-        <div key={i} className="rounded-md border border-emerald-500/20 bg-emerald-500/5 p-3">
-          <div className="flex items-baseline justify-between mb-1">
-            <span className="text-sm font-medium text-emerald-700">{d.device}</span>
-            <span className="text-xs text-muted-foreground">Line {d.lineRef + 1}</span>
+      {devices.map((d, i) => {
+        // Device label (volta, enjambment…) and the English example
+        // always render in Latin / English.
+        const effect = locale === 'ar' && d.effectAr ? d.effectAr : d.effect
+        return (
+          <div key={i} className="rounded-md border border-emerald-500/20 bg-emerald-500/5 p-3">
+            <div className="flex items-baseline justify-between mb-1">
+              <span className="text-sm font-medium text-emerald-700" dir="ltr">
+                {d.device}
+              </span>
+              <span className="text-xs text-muted-foreground">Line {d.lineRef + 1}</span>
+            </div>
+            <p className="text-sm text-card-foreground italic mb-1" dir="ltr" lang="en">
+              &ldquo;{d.example}&rdquo;
+            </p>
+            <p className="text-sm text-muted-foreground">{effect}</p>
           </div>
-          <p className="text-sm text-card-foreground italic mb-1">&ldquo;{d.example}&rdquo;</p>
-          <p className="text-sm text-muted-foreground">{d.effect}</p>
-        </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
@@ -234,6 +291,7 @@ function LanguagePanel({ devices }: { devices: LanguageDevice[] }) {
 
 export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
   const t = useT()
+  const locale = useLocale()
   const [activeTabs, setActiveTabs] = useState<Set<AnalysisTab>>(new Set())
   const [popoverLine, setPopoverLine] = useState<number | null>(null)
   const lineRefs = useRef<Map<number, HTMLElement>>(new Map())
@@ -471,11 +529,31 @@ export function InteractivePoemViewer({ poem }: { poem: PoemData }) {
 
             {/* Panel content */}
             <div className="px-4 pb-5 sm:px-5 overflow-y-auto max-h-[60vh] lg:max-h-[calc(100vh-280px)]">
-              {activePanelTab === 'context' && <ContextPanel html={poem.context} />}
-              {activePanelTab === 'summary' && <SummaryPanel text={poem.summary} />}
-              {activePanelTab === 'form' && <FormPanel text={poem.formAndStructure} />}
-              {activePanelTab === 'quotes' && <QuotesPanel quotes={poem.keyQuotes} />}
-              {activePanelTab === 'language' && <LanguagePanel devices={poem.languageDevices} />}
+              {activePanelTab === 'context' && (
+                <ContextPanel
+                  html={locale === 'ar' && poem.contextAr ? poem.contextAr : poem.context}
+                />
+              )}
+              {activePanelTab === 'summary' && (
+                <SummaryPanel
+                  text={locale === 'ar' && poem.summaryAr ? poem.summaryAr : poem.summary}
+                />
+              )}
+              {activePanelTab === 'form' && (
+                <FormPanel
+                  text={
+                    locale === 'ar' && poem.formAndStructureAr
+                      ? poem.formAndStructureAr
+                      : poem.formAndStructure
+                  }
+                />
+              )}
+              {activePanelTab === 'quotes' && (
+                <QuotesPanel quotes={poem.keyQuotes} locale={locale} />
+              )}
+              {activePanelTab === 'language' && (
+                <LanguagePanel devices={poem.languageDevices} locale={locale} />
+              )}
             </div>
           </div>
         )}

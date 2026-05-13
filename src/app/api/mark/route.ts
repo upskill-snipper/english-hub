@@ -32,6 +32,7 @@ import { getMarkScheme } from '@/lib/marking/mark-schemes'
 import { buildMarkingPrompt } from '@/lib/marking/prompt-builder'
 import { generateFeedback } from '@/lib/marking/feedback-generator'
 import { fireStudentFirstMark } from '@/lib/trustpilot/trigger-invite'
+import { withArabicDirective } from '@/lib/i18n/ai-language-directive'
 
 export const maxDuration = 60
 
@@ -152,7 +153,7 @@ export async function POST(request: NextRequest) {
         {
           model: 'claude-sonnet-4-20250514',
           max_tokens: 4_096,
-          system: prompt.systemPrompt,
+          system: withArabicDirective(prompt.systemPrompt, request),
           messages: [{ role: 'user', content: prompt.userMessage }],
         },
         { timeout: 50_000 },

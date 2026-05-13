@@ -669,6 +669,11 @@ const exposureData: PoemData = {
 <p>The poem\'s central argument is that the soldiers\' true enemy is not the opposing army but <strong>the weather itself</strong>. More men died from exposure, trench foot, and hypothermia than from direct combat in many sectors of the Western Front. Owen challenges the patriotic propaganda of the time by showing war as futile, purposeless suffering rather than glorious sacrifice.</p>
 <p>Owen was killed in action on <strong>4 November 1918</strong>, just one week before the Armistice. "Exposure" was published posthumously in 1920.</p>`,
 
+  contextAr: `<p><strong>Wilfred Owen</strong> (1893–1918) يعتبر أعظم شاعر كتب عن الحرب العالمية الأولى. تطوّع سنة 1915، وعاش رعب حرب الخنادق على الجبهة الغربية بنفسه، بما في ذلك معركة Somme.</p>
+<p>قصيدة <strong>"Exposure"</strong> كتبت مسوّداتها في 1917–18، في واحد من أبرد شتاءات الحرب، وقت ما كان Owen في الخنادق قريب من Beaumont Hamel. القصيدة تستند مباشرة على رسائله لأهله، اللي وصف فيها البرد كعذاب أصعب من نيران العدو.</p>
+<p>الفكرة الأساسية في القصيدة إن العدو الحقيقي للجنود مو الجيش المقابل، بل <strong>الطقس نفسه</strong>. في وايد قطاعات من الجبهة الغربية، عدد اللي ماتوا من البرد و"trench foot" والـhypothermia كان أكبر من اللي ماتوا في القتال المباشر. Owen يتحدّى الدعاية الوطنية في زمنه، ويبيّن إن الحرب معاناة بلا هدف، مو تضحية مجيدة.</p>
+<p>Owen قُتل في المعركة في <strong>4 نوفمبر 1918</strong>، أسبوع واحد بس قبل هدنة (Armistice). قصيدة "Exposure" نُشرت بعد وفاته في 1920.</p>`,
+
   summary: `"Exposure" describes a group of soldiers waiting in the trenches during a freezing winter night. Nothing happens -- no attack comes, no relief arrives. Instead, the men endure the relentless assault of icy winds, snow, and frost.
 
 The poem moves through the long hours of darkness into dawn, but dawn brings no hope, only more cold. The soldiers hallucinate about the warm homes they have left behind, but these visions offer no comfort -- the doors of home are "closed" to them.
@@ -676,6 +681,14 @@ The poem moves through the long hours of darkness into dawn, but dawn brings no 
 By the final stanzas, the men are dying of exposure. A burial party arrives, but even death changes nothing. The refrain "But nothing happens" hammers home the futility: the soldiers are trapped in an endless cycle of suffering without purpose, without glory, and without resolution.
 
 Owen\'s message is bleak and deliberate: war is not heroic combat but passive, meaningless endurance. The real enemy is not the opposing army but the indifferent, merciless forces of nature.`,
+
+  summaryAr: `قصيدة "Exposure" توصف مجموعة جنود ينتظرون في الخنادق ليلة شتاء قارسة. ولا شي يصير — لا هجوم، ولا مدد. بدل ما يصير شي، الرجال يتحمّلون عاصفة متواصلة من رياح متجمّدة، ثلج، وصقيع.
+
+القصيدة تتحرّك عبر ساعات الظلام الطويلة إلى الفجر، بس الفجر ما يجيب أي أمل، يجيب برد زيادة بس. الجنود يهلوسون عن بيوتهم الدافية اللي تركوها، بس هذي الرؤى ما تعطي راحة — أبواب البيوت "closed" في وجوههم.
+
+في المقاطع الأخيرة، الرجال يموتون من البرد. تجي فرقة دفن، بس حتى الموت ما يغيّر شي. اللازمة "But nothing happens" تثبّت بقوة فكرة العبثية: الجنود محاصرين في دورة معاناة بلا نهاية، بلا هدف، بلا مجد، بلا حل.
+
+رسالة Owen قاتمة ومقصودة: الحرب مو قتال بطولي، هي تحمّل سلبي بلا معنى. والعدو الحقيقي مو الجيش المقابل، بل قوى الطبيعة اللي ما ترحم.`,
 
   formAndStructure: `FORM:
 - 8 stanzas of 5 lines each (quintains), giving the poem a regular, controlled appearance that contrasts with the chaos and suffering it describes.
@@ -695,54 +708,96 @@ ELLIPSIS:
 CYCLICAL STRUCTURE:
 - Stanzas 7 and 8 repeat almost identical lines, creating a loop. The poem has no resolution or climax -- it enacts the very stalemate it describes.`,
 
+  formAndStructureAr: `الشكل (FORM):
+- 8 مقاطع، كل واحد فيها 5 أبيات (quintains)، وهالشي يعطي القصيدة مظهر منتظم ومنضبط، يتناقض مع الفوضى والمعاناة اللي توصفها.
+- الوزن غالباً hexameter (ست نبرات مشدّدة في كل بيت)، يخلق إيقاع بطيء وثقيل يعكس مرور الوقت اللي ما يخلص وإرهاق الجنود.
+- البيت الأخير في كل مقطع أقصر بشكل ملحوظ (نصف بيت)، يخلق سقطة موسيقية تجسّد الطاقة وهي تتسرّب من أجساد الجنود.
+
+القافية (RHYME):
+- Owen يستخدم pararhyme (يسمّى أيضاً half-rhyme أو slant rhyme) عبر القصيدة كلها: "knive us / nervous"، "silence / nonchalance"، "snow / renew"، "wire / war". القوافي اللي تشبه القافية بس ما توصلها تخلق إحساس بالنشاز والتوتّر — ما فيه شي مريح أو محلول في هالقصيدة.
+- الـpararhyme كانت توقيع Owen الأسلوبي. الأصوات الساكنة تتطابق بس الحركات تتغيّر، فينتج صوت مزعج وغير منسجم.
+
+اللازمة (REFRAIN):
+- "But nothing happens" تتكرّر في نهاية المقاطع 1 و3 و5 (مع تنويع: "For love of God seems dying") و6، ويتردّد صداها في الأبيات الختامية. هي العمود الفقري البنيوي والنواة الفكرية للقصيدة.
+
+ELLIPSIS:
+- Owen يستخدم نقاط الحذف ("...") في نهاية كثير من الأبيات، يخلّيها تتلاشى في الصمت. هذا يعكس إرهاق الجنود، عجزهم عن إكمال أفكارهم، والانتظار اللي ما يخلص.
+
+البنية الدائرية (CYCLICAL STRUCTURE):
+- المقطعين 7 و8 يكرّرون أبيات تكاد تكون متطابقة، ويخلقون حلقة مغلقة. القصيدة ما لها حل ولا ذروة — هي تجسّد الجمود اللي توصفه.`,
+
   keyQuotes: [
     {
       quote: 'Our brains ache, in the merciless iced east winds that knive us',
       analysis:
         'The opening line establishes collective suffering ("Our") and personifies the wind as a deliberate, merciless attacker. Owen coins the verb "knive" to make the cold feel like a stabbing weapon. The internal rhyme of "iced" and "east" creates a harsh, cutting sound.',
       themes: ['Power of Nature', 'Suffering'],
+      analysisAr:
+        'البيت الأول يثبّت فكرة المعاناة الجماعية ("Our")، ويشخّص الريح كأنها مهاجم متعمّد ما يرحم. Owen يبتدع فعل "knive" (يطعن بسكين) عشان يخلّي البرد يحسّ كأنه سلاح يطعن. والقافية الداخلية بين "iced" و"east" تخلق صوت قاطع وحاد.',
+      themesAr: ['قوة الطبيعة', 'المعاناة'],
     },
     {
       quote: 'merciless iced east winds that knive us',
       analysis:
         'Concentrated personification: the wind is "merciless" (without pity) and actively attacks with knife-like precision. Owen transforms weather into a sentient enemy more dangerous than the opposing army.',
       themes: ['Power of Nature', 'Reality of Conflict'],
+      analysisAr:
+        'personification مكثّفة: الريح "merciless" (بلا رحمة)، وتهاجم بدقة شفرة السكين. Owen يحوّل الطقس من ظاهرة طبيعية لعدو واعي، أخطر من الجيش المقابل.',
+      themesAr: ['قوة الطبيعة', 'واقع الصراع'],
     },
     {
       quote: 'But nothing happens',
       analysis:
         'The poem\'s devastating refrain. Its simplicity is its power -- four monosyllabic words that encapsulate the entire experience of trench warfare: endless, purposeless waiting. The anticlimax is the point. "But" creates expectation that is immediately denied.',
       themes: ['Futility / Loss', 'Reality of Conflict'],
+      analysisAr:
+        'اللازمة المدمّرة في القصيدة. بساطتها هي قوّتها — أربع كلمات أحادية المقطع تختصر كل تجربة حرب الخنادق: انتظار بلا نهاية وبلا هدف. خيبة الذروة (anticlimax) هذي هي المقصد. وكلمة "But" تخلق توقّع، وفوراً تكسره.',
+      themesAr: ['العبثية / الفقد', 'واقع الصراع'],
     },
     {
       quote: 'Sudden successive flights of bullets streak the silence',
       analysis:
         'A rare moment of action, rendered through sibilance ("Sudden successive...streak the silence") that mimics the hissing sound of bullets. Yet even this violence is immediately overshadowed by the cold, which Owen declares "less deadly" than snow.',
       themes: ['Reality of Conflict', 'Power of Nature'],
+      analysisAr:
+        'لحظة حركة نادرة، يوصلها لنا Owen عبر sibilance ("Sudden successive...streak the silence") تحاكي صوت صفير الرصاص. بس حتى هذا العنف، يطلع البرد فوراً أقوى منه، لدرجة إن Owen يقول إنه "less deadly" من الثلج.',
+      themesAr: ['واقع الصراع', 'قوة الطبيعة'],
     },
     {
       quote: 'Dawn massing in the east her melancholy army',
       analysis:
         'Dawn is personified as a female military commander assembling troops. Owen subverts the conventional association of dawn with hope -- here it brings only another wave of cold and misery. Nature wages its own war against the soldiers.',
       themes: ['Power of Nature', 'Suffering'],
+      analysisAr:
+        'الفجر يتشخّص كقائدة عسكرية تحشد جنودها. Owen يقلب الإيحاء التقليدي للفجر اللي يربطه بالأمل — هنا الفجر يجيب موجة برد ومعاناة جديدة بس. الطبيعة تشن حربها الخاصة على الجنود.',
+      themesAr: ['قوة الطبيعة', 'المعاناة'],
     },
     {
       quote: 'Is it that we are dying?',
       analysis:
         'A haunting rhetorical question that opens the final stanza. The soldiers are so numbed by cold and exhaustion that they cannot distinguish between life and death. It captures the total physical and psychological disintegration caused by exposure.',
       themes: ['Suffering', 'Futility / Loss'],
+      analysisAr:
+        'سؤال بلاغي يفتح المقطع الأخير ويبقى يطنّ في الذهن. الجنود مخدّرين من البرد والإرهاق لدرجة إنهم ما يقدرون يميّزون بين الحياة والموت. السؤال يلتقط الانهيار الجسدي والنفسي الكامل اللي يسبّبه التعرّض للبرد.',
+      themesAr: ['المعاناة', 'العبثية / الفقد'],
     },
     {
       quote: 'For love of God seems dying',
       analysis:
         "Deliberately ambiguous: their love of God is fading, or God's love for them is dying. Either reading suggests spiritual abandonment. Owen, who had been deeply religious, implies that the horrors of war have destroyed faith itself.",
       themes: ['Futility / Loss', 'Suffering'],
+      analysisAr:
+        'الغموض مقصود: إما إن حبّهم لله يتلاشى، وإما إن حب الله لهم يموت. كلا القراءتين توحي بهجران روحي. Owen، اللي كان متديّن وايد، يلمّح إن أهوال الحرب دمّرت الإيمان نفسه.',
+      themesAr: ['العبثية / الفقد', 'المعاناة'],
     },
     {
       quote: 'Shutters and doors, all closed: on us the doors are closed',
       analysis:
         'Repetition of "closed" shifts from literal to metaphorical: the physical doors of home are shut, and so are the doors to life, warmth, and hope. The soldiers are permanently excluded from the world they fought to protect.',
       themes: ['Futility / Loss', 'Suffering'],
+      analysisAr:
+        'تكرار كلمة "closed" ينتقل من المعنى الحرفي للرمزي: أبواب البيت الماديّة مقفّلة، وكذلك أبواب الحياة والدفء والأمل. الجنود مستثنون من العالم اللي حاربوا عشان يحمونه، استثناء دائم.',
+      themesAr: ['العبثية / الفقد', 'المعاناة'],
     },
   ],
 
@@ -753,6 +808,8 @@ CYCLICAL STRUCTURE:
       effect:
         'The wind is given human cruelty ("merciless") and weaponised action ("knive"). Throughout the poem, nature is the true antagonist -- more dangerous than the enemy army. This personification reinforces Owen\'s argument that war\'s greatest suffering comes not from combat but from the elements.',
       lineRef: 0,
+      effectAr:
+        'الريح تُعطى قسوة بشرية ("merciless") وفعل يشبه فعل السلاح ("knive"). عبر القصيدة كلها، الطبيعة هي الخصم الحقيقي — أخطر من جيش العدو. الـpersonification هذي تدعم حجّة Owen إن أعظم معاناة في الحرب ما تجي من القتال، تجي من الطقس.',
     },
     {
       device: 'Pararhyme (half-rhyme)',
@@ -760,6 +817,8 @@ CYCLICAL STRUCTURE:
       effect:
         "Owen's signature technique. The consonants match but the vowels shift, producing sounds that almost rhyme but never quite resolve. This creates a persistent sense of discomfort and incompleteness that mirrors the soldiers' unresolved suffering and the poem's refusal to offer closure.",
       lineRef: 3,
+      effectAr:
+        'التقنية اللي تميّز Owen. الأصوات الساكنة تتطابق بس الحركات تتغيّر، فينتج صوت يكاد يصير قافية بس ما يصلها. هالشي يخلق إحساس متواصل بعدم الارتياح وعدم الاكتمال، يعكس معاناة الجنود اللي ما لها حل، ورفض القصيدة إنها تعطي القارئ أي خاتمة.',
     },
     {
       device: 'Rhetorical questions',
@@ -767,6 +826,8 @@ CYCLICAL STRUCTURE:
       effect:
         "Breaks the descriptive mode with a direct, unanswerable question. It voices the soldiers' bewilderment and sense of purposelessness. There is no answer because the war itself has no justifiable purpose in Owen's view.",
       lineRef: 11,
+      effectAr:
+        'يكسر نمط الوصف بسؤال مباشر ما له إجابة. السؤال يعبّر عن حيرة الجنود وإحساسهم إن وجودهم بلا هدف. وما فيه إجابة لأن الحرب نفسها، عند Owen، ما لها أي مبرّر يدافع عنه.',
     },
     {
       device: 'Semantic field of suffering',
@@ -774,6 +835,8 @@ CYCLICAL STRUCTURE:
       effect:
         'A sustained vocabulary of pain, exhaustion, and physical deterioration runs through the entire poem. This relentless accumulation of suffering words creates an oppressive atmosphere and prevents the reader from finding any comfort or relief.',
       lineRef: 0,
+      effectAr:
+        'حقل دلالي متواصل من الألم والإرهاق والتدهور الجسدي يمشي عبر القصيدة كلها. هالتراكم اللي ما يهدأ لكلمات المعاناة يخلق جو ضاغط، ويمنع القارئ من إنه يلقى أي راحة أو متنفّس.',
     },
     {
       device: 'Sibilance',
@@ -781,6 +844,8 @@ CYCLICAL STRUCTURE:
       effect:
         'The repeated "s" sounds mimic the hissing whistle of bullets and the whispering wind. Sibilance creates a tense, hushed atmosphere throughout the poem, reflecting the soldiers\' anxious vigilance in the freezing dark.',
       lineRef: 18,
+      effectAr:
+        'تكرار صوت "s" يحاكي صفير الرصاص وهمس الريح. الـsibilance تخلق جو متوتّر مكتوم عبر القصيدة كلها، وتعكس يقظة الجنود القلقة في الظلمة المتجمّدة.',
     },
     {
       device: 'Ellipsis',
@@ -788,6 +853,8 @@ CYCLICAL STRUCTURE:
       effect:
         "Owen uses trailing ellipses at the ends of lines to suggest thoughts left unfinished, energy fading, and the endless, unresolvable nature of the soldiers' wait. The dots visually enact the soldiers trailing off into silence and exhaustion.",
       lineRef: 0,
+      effectAr:
+        'Owen يستخدم نقاط الحذف في نهاية الأبيات عشان يلمّح بأفكار ما اكتملت، وطاقة تتلاشى، وانتظار ما له نهاية ولا حل. النقاط بصرياً تجسّد الجنود وهم يتلاشون في الصمت والإرهاق.',
     },
     {
       device: 'Juxtaposition (home vs. trenches)',
@@ -795,6 +862,8 @@ CYCLICAL STRUCTURE:
       effect:
         'Owen repeatedly contrasts the warmth and safety of home ("kind fires", "crickets jingle", "innocent mice") with the frozen horror of the trenches. This juxtaposition emphasises what the soldiers have lost and highlights the unbridgeable gap between civilian life and the reality of war.',
       lineRef: 24,
+      effectAr:
+        'Owen يقابل مرّة بعد مرّة بين دفء البيت وأمانه ("kind fires"، "crickets jingle"، "innocent mice") ورعب الخنادق المتجمّد. الـjuxtaposition تأكّد على اللي خسرته الجنود، وتبرز الهوّة اللي ما تنردم بين الحياة المدنية وواقع الحرب.',
     },
   ],
 }
