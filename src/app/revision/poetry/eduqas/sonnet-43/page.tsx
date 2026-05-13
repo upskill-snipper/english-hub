@@ -196,6 +196,26 @@ const sonnet43: PoemData = {
     <p>For centuries, sonnets had been written BY men ABOUT women. EBB writes as a woman declaring love TO a man. This was unusual and powerful. She claims for herself the same right to passionate, articulate love that male poets had always taken.</p>
   `,
 
+  contextAr: `
+    <h3>Elizabeth Barrett Browning (1806–1861)</h3>
+    <p>EBB من أشهر شعراء العصر الفيكتوري. عانت من مرض مزمن من سنّ المراهقة، وكانت معظم وقتها حبيسة بيت أبوها في لندن. نشرت أول مجموعة شعرية وعمرها 14 سنة، وانذكر اسمها لمنصب Poet Laureate بعد وفاة Wordsworth.</p>
+
+    <h3>الحب والزواج</h3>
+    <p>في 1845، EBB بدت تبادل رسائل مع الشاعر الأصغر منها Robert Browning. وقعوا في الحب عبر الرسائل. أبوها منعها من الزواج، فهربوا سوا إلى إيطاليا في 1846. عاشوا 15 سنة زواج سعيد لين توفت EBB في 1861.</p>
+
+    <h3>Sonnets from the Portuguese (1850)</h3>
+    <p>"Sonnet 43" (المعروفة أيضاً باسم "How do I love thee?") هي القصيدة قبل الأخيرة في سلسلة EBB <em>Sonnets from the Portuguese</em>. العنوان مزحة خاصة بين الاثنين — Robert كان يناديها "البرتغالية الصغيرة". الـ44 sonnet تتبع تطوّر حبها لـRobert.</p>
+
+    <h3>تقليد Petrarchan Sonnet</h3>
+    <p>EBB تكتب على تقليد <strong>Petrarch</strong>، الشاعر الإيطالي من القرن 14، اللي قصايده لـ"Laura" حدّدت شعر الحب لقرون. باستخدام هذا الشكل، تضع حبها داخل تقليد أدبي طويل — بس باعتبارها امرأة تكتب لرجل، تقلب أدوار الجنسين التقليدية.</p>
+
+    <h3>الشك الديني الفيكتوري</h3>
+    <p>EBB عاشت في فترة أزمة في الإيمان الديني الفيكتوري. عبارة "my lost saints" توحي إنها مرّت بشك أو فقدان للإيمان. حبها لـRobert استرجع التجربة الروحية — الحب صار دين.</p>
+
+    <h3>الصوت الأنثوي</h3>
+    <p>طوال قرون، الـsonnets كانت تُكتب من قبل الرجال عن النساء. EBB تكتب كامرأة تعلن الحب لرجل. هذا شي غير مألوف وقوي. تطالب لنفسها بنفس الحق في الحب العاطفي الفصيح اللي أخذه الشعراء الرجال طول التاريخ.</p>
+  `,
+
   summary: `Lines 1-4: The speaker opens with a rhetorical question - "How do I love thee?" - and offers to count the ways. She claims her love reaches the spatial limits her soul can reach, "to the depth and breadth and height", to "the ends of being and ideal grace". This is mystical, cosmic love.
 
 Lines 5-8: Love also operates at the everyday level - "by sun and candle-light", in "most quiet need". Love is both ordinary and necessary. She loves freely (like men who strive for political rights) and purely (like those who reject vanity).
@@ -205,6 +225,16 @@ Lines 9-12: Love absorbs the passion she once felt for "old griefs" and her "chi
 Lines 13-14: The closing couplet promises that, if God allows, she will love him even better after death. Love transcends mortality.
 
 Overall meaning: "Sonnet 43" is one of the greatest love poems in English. EBB attempts to "count" the dimensions, intensities, and durations of her love. The poem moves from cosmic scale to domestic scale, from physical to spiritual, and finally to eternal. It is a complete declaration of total devotion.`,
+
+  summaryAr: `الأبيات 1–4: المتكلّمة تفتح بسؤال بلاغي — "How do I love thee?" — وتعرض إنها تعدّ الطرق. تدّعي إن حبها يصل لأقصى حدود مكانية تقدر روحها تبلغها: "to the depth and breadth and height"، لـ"the ends of being and ideal grace". هذا حب صوفي كوني.
+
+الأبيات 5–8: الحب يشتغل بعد على المستوى اليومي — "by sun and candle-light"، في "most quiet need". الحب عادي وضروري. تحبّه بحرية (مثل الرجال اللي يكافحون من أجل الحقوق السياسية) وبنقاء (مثل اللي يرفضون الغرور).
+
+الأبيات 9–12: الحب يستوعب الشغف اللي كانت تحسّه من قبل تجاه "old griefs" و"childhood's faith". اعتقدت إنها فقدت القدرة على الحب لما فقدت "my lost saints" (إيمانها)، بس حب Robert استرجعها. حبها الحين كل كيانها — "breath, smiles, tears".
+
+الأبيات 13–14: المقطع الختامي يوعد إنه، إذا الله أراد، بتحبّه أكثر بعد الموت. الحب يتجاوز الموت.
+
+المعنى العام: "Sonnet 43" من أعظم قصايد الحب في اللغة الإنجليزية. EBB تحاول "تعدّ" أبعاد وقوّة ومدى حبها. القصيدة تتحرّك من المقياس الكوني للمقياس البيتي، من الجسدي للروحي، وأخيراً للأبدي. هي إعلان كامل بالتفاني الكلّي.`,
 
   formAndStructure: `Form: Petrarchan sonnet (Italian sonnet) - 14 lines with an octave (8 lines) and sestet (6 lines). The traditional form gives the poem dignity and places it in the long European tradition of love poetry.
 
@@ -222,30 +252,58 @@ Religious diction: "Soul", "ideal grace", "lost saints", "if God choose" - the p
 
 Closure: The final line promises eternity. The poem ends not with limitation but with expansion - love continues beyond death. The closing couplet has the certainty of a vow.`,
 
+  formAndStructureAr: `Form: Petrarchan sonnet (الـsonnet الإيطالي) — 14 بيت، فيها octave (8 أبيات) وsestet (6 أبيات). الشكل التقليدي يعطي القصيدة هيبة، ويحطّها داخل تقليد أوروبي طويل في شعر الحب.
+
+Rhyme scheme: ABBAABBA في الـoctave، CDCDCD في الـsestet (تنويعة Petrarchan). القوافي محبوكة بإحكام، مع تكرارات وايدة، تخلق إحساس بالانسجام التام.
+
+Metre: iambic pentameter طول القصيدة. الإيقاع المنتظم يعطي القصيدة جودة ثابتة، تشبه الصلاة. بعض الأبيات تتباطأ عن قصد بحروف العلة الطويلة عشان التأكيد.
+
+Anaphora: "I love thee" تتكرّر وايد طول القصيدة، تخلق إيقاع تعويذي. التكرار يبني شدّة عاطفية، ويعطي القصيدة كأنها litany أو دعاء.
+
+Volta: التحوّل التقليدي يجي في البيت 9 — "I love thee with the passion put to use". الـoctave يعدّ أنواع الحب؛ الـsestet يصير أكثر شخصي واعترافي، يعتمد على آلام المتكلّمة في الماضي.
+
+اللغة المكانية: القصيدة تستخدم لغة الأبعاد — depth, breadth, height. الحب يعطى حجم مادي حتى لو هو غير مادي. هذا يخلّي المجرّد يحسّ ملموس.
+
+اللغة الدينية: "Soul"، "ideal grace"، "lost saints"، "if God choose" — القصيدة مشبّعة بلغة روحية. الحب يصير تجربة دينية، يستبدل الإيمان أو يكمّله.
+
+الخاتمة: البيت الأخير يوعد بالأبدية. القصيدة ما تنتهي بحدّ بل بتوسّع — الحب يستمر بعد الموت. المقطع الختامي عنده يقين القَسَم.`,
+
   keyQuotes: [
     {
       quote: 'How do I love thee? Let me count the ways',
       analysis:
         'One of the most famous opening lines in English poetry. The rhetorical question is direct and intimate. "Count the ways" suggests love can be itemised - but the rest of the poem shows it cannot. The speaker tries to measure something immeasurable.',
       themes: ['Love', 'Direct address', 'Famous opening'],
+      analysisAr:
+        'من أشهر أبيات الافتتاح في الشعر الإنجليزي. السؤال البلاغي مباشر وحميم. "Count the ways" توحي إن الحب يقدر يُعدّ — بس بقية القصيدة تبيّن إنه ما يقدر. المتكلّمة تحاول تقيس شي ما يتقاس.',
+      themesAr: ['الحب', 'الخطاب المباشر', 'افتتاحية شهيرة'],
     },
     {
       quote: 'I love thee to the depth and breadth and height / My soul can reach',
       analysis:
         'The speaker uses spatial dimensions - "depth, breadth, height" - to measure love. The tricolon creates a sense of total coverage. But these are also the dimensions her SOUL can reach, suggesting love is spiritual as well as physical. The scale is cosmic.',
       themes: ['Cosmic love', 'Tricolon', 'Spirituality'],
+      analysisAr:
+        'المتكلّمة تستخدم أبعاد مكانية — "depth, breadth, height" — عشان تقيس الحب. الـtricolon يخلق إحساس بالتغطية الكاملة. بس هذي بعد أبعاد روحها — هي اللي تقدر توصل لها — وهذا يوحي إن الحب روحي وجسدي مع بعض. المقياس كوني.',
+      themesAr: ['الحب الكوني', 'Tricolon', 'الروحانية'],
     },
     {
       quote: 'For the ends of being and ideal grace',
       analysis:
         '"Ends of being" - the limits of existence itself. "Ideal grace" - perfect divine grace, the highest spiritual concept. The speaker compares her love to a soul reaching toward God. Love has theological scale.',
       themes: ['Religion', 'Limits', 'Divine love'],
+      analysisAr:
+        '"Ends of being" — حدود الوجود نفسه. "Ideal grace" — النعمة الإلهية المثالية، أعلى مفهوم روحي. المتكلّمة تشبّه حبها بروح تمدّ نفسها نحو الله. الحب عنده مقياس لاهوتي.',
+      themesAr: ['الدين', 'الحدود', 'الحب الإلهي'],
     },
     {
       quote: "I love thee to the level of every day's / Most quiet need",
       analysis:
         'After the cosmic scale, the poem moves to the domestic. Love is also "everyday" and "quiet" - not just grand passion but daily companionship. The shift from universal to intimate is deeply moving. Love must operate at all scales.',
       themes: ['Everyday love', 'Domesticity', 'Quiet devotion'],
+      analysisAr:
+        'بعد المقياس الكوني، القصيدة تنتقل للحياة البيتية. الحب بعد "everyday" و"quiet" — مو بس شغف عظيم، بل صحبة يومية. الانتقال من الكوني للحميم مؤثّر وايد. الحب لازم يشتغل على كل المقاييس.',
+      themesAr: ['الحب اليومي', 'الحياة البيتية', 'التفاني الهادئ'],
     },
     {
       quote:
@@ -253,24 +311,36 @@ Closure: The final line promises eternity. The poem ends not with limitation but
       analysis:
         'Two parallel similes. Love is "free" (not coerced) like political struggle for justice. Love is "pure" (not selfish) like those who reject vanity. EBB compares love to noble moral pursuits. Love is not separate from ethics but a form of ethical commitment.',
       themes: ['Freedom', 'Purity', 'Moral love'],
+      analysisAr:
+        'similes متوازيين. الحب "حر" (مو مفروض) مثل الكفاح السياسي من أجل العدل. الحب "نقي" (مو أناني) مثل اللي يرفضون الغرور. EBB تشبّه الحب بمساعي أخلاقية نبيلة. الحب مو منفصل عن الأخلاق، بل هو نوع من الالتزام الأخلاقي.',
+      themesAr: ['الحرية', 'النقاء', 'الحب الأخلاقي'],
     },
     {
       quote: 'I love thee with the passion put to use / In my old griefs',
       analysis:
         'The speaker reveals personal history. The intense emotions of past sufferings are now redirected into love. Pain has become passion. This makes the love feel earned, not naive - it carries the weight of past experience.',
       themes: ['Past suffering', 'Transformation', 'Personal history'],
+      analysisAr:
+        'المتكلّمة تكشف تاريخها الشخصي. المشاعر الحادّة اللي كانت في الآلام السابقة الحين موجّهة للحب. الألم صار شغف. هذا يخلّي الحب يحسّ مستحقّ، مو ساذج — يحمل ثقل التجربة السابقة.',
+      themesAr: ['الألم السابق', 'التحوّل', 'التاريخ الشخصي'],
     },
     {
       quote: 'I love thee with a love I seemed to lose / With my lost saints',
       analysis:
         "A confession of past spiritual loss. The speaker had lost her saints - her religious faith or sacred figures. She thought she had lost the capacity for that kind of devotion. But Robert's love has restored it. Love replaces religion - or completes it.",
       themes: ['Religious doubt', 'Restoration', 'Love and faith'],
+      analysisAr:
+        'اعتراف بفقدان روحي سابق. المتكلّمة فقدت قدّيسيها — إيمانها الديني أو الشخصيات المقدّسة عندها. اعتقدت إنها فقدت القدرة على هالنوع من التفاني. بس حب Robert استرجعه. الحب يستبدل الدين — أو يكمّله.',
+      themesAr: ['الشك الديني', 'الاسترجاع', 'الحب والإيمان'],
     },
     {
       quote: 'I shall but love thee better after death',
       analysis:
         'The closing line is an extraordinary promise. Love does not end at death - it intensifies. The speaker rejects mortality as a limit on love. This is the most romantic possible declaration: love is eternal, beyond physical existence.',
       themes: ['Eternal love', 'Death', 'Transcendence'],
+      analysisAr:
+        'البيت الختامي وعد استثنائي. الحب ما ينتهي عند الموت — بل يزداد. المتكلّمة ترفض الموت كحدّ للحب. هذا أرومانسي إعلان ممكن: الحب أبدي، يتجاوز الوجود المادي.',
+      themesAr: ['الحب الأبدي', 'الموت', 'التجاوز'],
     },
   ],
 
@@ -281,6 +351,8 @@ Closure: The final line promises eternity. The poem ends not with limitation but
       effect:
         'The phrase "I love thee" repeats throughout the poem, creating an incantatory rhythm. The repetition builds emotional intensity and gives the poem the quality of a prayer or vow. Each repetition adds a new dimension of love.',
       lineRef: 1,
+      effectAr:
+        'عبارة "I love thee" تتكرّر طول القصيدة، تخلق إيقاع تعويذي. التكرار يبني شدّة عاطفية، ويعطي القصيدة جودة الدعاء أو القَسَم. كل تكرار يضيف بُعد جديد من الحب.',
     },
     {
       device: 'Tricolon',
@@ -288,6 +360,8 @@ Closure: The final line promises eternity. The poem ends not with limitation but
       effect:
         "Three spatial dimensions create a sense of total coverage. The tricolon makes love feel measurable, even as it claims to exceed measurement. The list captures the speaker's attempt to articulate the inexpressible.",
       lineRef: 2,
+      effectAr:
+        'ثلاثة أبعاد مكانية تخلق إحساس بتغطية كاملة. الـtricolon يخلّي الحب يحسّ كأنه قابل للقياس، حتى وهو يدّعي إنه يتجاوز القياس. القائمة تلتقط محاولة المتكلّمة إنها تعبّر عن اللي ما يتعبّر عنه.',
     },
     {
       device: 'Religious diction',
@@ -295,6 +369,8 @@ Closure: The final line promises eternity. The poem ends not with limitation but
       effect:
         "The poem is saturated with religious language. Love becomes a spiritual experience, equivalent to faith. The speaker's past religious doubt is transformed into a new kind of devotion - to her beloved.",
       lineRef: 3,
+      effectAr:
+        'القصيدة مشبّعة بلغة دينية. الحب يصير تجربة روحية، تعادل الإيمان. الشك الديني السابق عند المتكلّمة يتحوّل لنوع جديد من التفاني — لمحبوبها.',
     },
     {
       device: 'Sonnet form',
@@ -302,6 +378,8 @@ Closure: The final line promises eternity. The poem ends not with limitation but
       effect:
         'The 14-line Petrarchan form gives the poem dignity and places it in centuries of love poetry tradition. The strict form contains and shapes the overflowing emotion. The contrast between formal control and passionate content creates power.',
       lineRef: 1,
+      effectAr:
+        'شكل Petrarchan من 14 بيت يعطي القصيدة هيبة، ويحطّها داخل قرون من تقليد شعر الحب. الشكل الصارم يحتوي ويصوغ العاطفة الفائضة. التضاد بين السيطرة الشكلية والمحتوى الشغوف يخلق قوة.',
     },
     {
       device: 'Volta',
@@ -309,6 +387,8 @@ Closure: The final line promises eternity. The poem ends not with limitation but
       effect:
         'The traditional turn at line 9 shifts the poem from public, abstract dimensions of love to personal, confessional ones. The speaker reveals her past suffering and lost faith. The volta makes the poem feel deeply personal.',
       lineRef: 9,
+      effectAr:
+        'التحوّل التقليدي في البيت 9 ينقل القصيدة من أبعاد الحب العامة المجرّدة لأبعاد شخصية اعترافية. المتكلّمة تكشف عن آلامها السابقة وإيمانها المفقود. الـvolta يخلّي القصيدة تحسّ عميقة الشخصانية.',
     },
     {
       device: 'Simile',
@@ -316,6 +396,8 @@ Closure: The final line promises eternity. The poem ends not with limitation but
       effect:
         'The similes compare love to noble moral pursuits - political struggle and humility. Love is not separate from ethics but a form of ethical commitment. The comparisons elevate love to the status of moral virtue.',
       lineRef: 7,
+      effectAr:
+        'الـsimiles تشبّه الحب بمساعي أخلاقية نبيلة — الكفاح السياسي والتواضع. الحب مو منفصل عن الأخلاق، بل نوع من الالتزام الأخلاقي. المقارنات ترفع الحب لمستوى الفضيلة الأخلاقية.',
     },
     {
       device: 'Iambic pentameter',
@@ -323,6 +405,8 @@ Closure: The final line promises eternity. The poem ends not with limitation but
       effect:
         'The regular metre creates a steady, prayer-like rhythm. The iambic pulse mirrors a heartbeat, making the poem feel both controlled and deeply alive. The rhythm carries the reader smoothly through emotional intensity.',
       lineRef: 7,
+      effectAr:
+        'الوزن المنتظم يخلق إيقاع ثابت يشبه الدعاء. نبض الـiambic يحاكي ضربات القلب، يخلّي القصيدة تحسّ مسيطر عليها وحيّة في نفس الوقت. الإيقاع ينقل القارئ بانسيابية عبر الشدّة العاطفية.',
     },
   ],
 }

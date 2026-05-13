@@ -1,8 +1,15 @@
+'use client'
+
 import { Skeleton } from '@/components/ui/skeleton'
+import { useT } from '@/lib/i18n/use-t'
 
 export default function Loading() {
+  const t = useT()
   return (
     <div className="space-y-10 pb-16">
+      <p className="sr-only" role="status" aria-live="polite">
+        {t('loading.poetry.label')}
+      </p>
       {/* Hero section */}
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-card p-6 sm:p-8 lg:p-10">
         <div className="relative space-y-4">

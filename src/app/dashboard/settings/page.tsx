@@ -1,14 +1,15 @@
-"use client";
+'use client'
 
-import { useEffect, useState, useCallback } from "react";
-import Link from "next/link";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Toggle } from "@/components/ui/Toggle";
-import { Modal } from "@/components/ui/Modal";
-import { ToastProvider, useToast } from "@/components/ui/Toast";
+import { useEffect, useState, useCallback } from 'react'
+import Link from 'next/link'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
+import { Toggle } from '@/components/ui/Toggle'
+import { Modal } from '@/components/ui/Modal'
+import { ToastProvider, useToast } from '@/components/ui/Toast'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Inline wrappers ────────────────────────────────────────────────────
 
@@ -21,11 +22,11 @@ function LabeledInput({
   className,
   ...props
 }: React.ComponentProps<typeof Input> & {
-  label?: string;
-  error?: string;
-  helpText?: string;
+  label?: string
+  error?: string
+  helpText?: string
 }) {
-  const inputId = id ?? label?.toLowerCase().replace(/\s+/g, "-");
+  const inputId = id ?? label?.toLowerCase().replace(/\s+/g, '-')
   return (
     <div className="space-y-1.5">
       {label && (
@@ -33,18 +34,11 @@ function LabeledInput({
           {label}
         </Label>
       )}
-      <Input
-        id={inputId}
-        aria-invalid={!!error}
-        className={className}
-        {...props}
-      />
+      <Input id={inputId} aria-invalid={!!error} className={className} {...props} />
       {error && <p className="text-xs text-destructive">{error}</p>}
-      {!error && helpText && (
-        <p className="text-xs text-muted-foreground">{helpText}</p>
-      )}
+      {!error && helpText && <p className="text-xs text-muted-foreground">{helpText}</p>}
     </div>
-  );
+  )
 }
 
 /** Button wrapper that adds a loading spinner and disables while loading */
@@ -81,91 +75,91 @@ function LoadingButton({
       )}
       {children}
     </Button>
-  );
+  )
 }
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
 interface UserProfile {
-  id: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  age: number;
-  isMinor: boolean;
-  school: string | null;
-  country: string;
-  createdAt: string;
+  id: string
+  email: string
+  firstName: string
+  lastName: string
+  age: number
+  isMinor: boolean
+  school: string | null
+  country: string
+  createdAt: string
 }
 
 interface BillingEntry {
-  id: string;
-  date: string;
-  description: string;
-  amount: string;
-  status: "paid" | "pending" | "failed";
+  id: string
+  date: string
+  description: string
+  amount: string
+  status: 'paid' | 'pending' | 'failed'
 }
 
 interface SubscriptionInfo {
-  plan: string;
-  status: string;
-  nextBillingDate: string | null;
+  plan: string
+  status: string
+  nextBillingDate: string | null
 }
 
 // ─── Mock data ──────────────────────────────────────────────────────────
 
 const MOCK_SUBSCRIPTION: SubscriptionInfo = {
-  plan: "Monthly",
-  status: "Active",
-  nextBillingDate: "2026-04-22",
-};
+  plan: 'Monthly',
+  status: 'Active',
+  nextBillingDate: '2026-04-22',
+}
 
 const MOCK_BILLING: BillingEntry[] = [
   {
-    id: "inv_1",
-    date: "2026-03-22",
-    description: "Monthly plan",
-    amount: "\u00a34.99",
-    status: "paid",
+    id: 'inv_1',
+    date: '2026-03-22',
+    description: 'Monthly plan',
+    amount: '\u00a34.99',
+    status: 'paid',
   },
   {
-    id: "inv_2",
-    date: "2026-02-22",
-    description: "Monthly plan",
-    amount: "\u00a34.99",
-    status: "paid",
+    id: 'inv_2',
+    date: '2026-02-22',
+    description: 'Monthly plan',
+    amount: '\u00a34.99',
+    status: 'paid',
   },
   {
-    id: "inv_3",
-    date: "2026-01-22",
-    description: "Monthly plan",
-    amount: "\u00a34.99",
-    status: "paid",
+    id: 'inv_3',
+    date: '2026-01-22',
+    description: 'Monthly plan',
+    amount: '\u00a34.99',
+    status: 'paid',
   },
-];
+]
 
 // ─── Country labels ─────────────────────────────────────────────────────
 
 const COUNTRY_LABELS: Record<string, string> = {
-  UK: "United Kingdom",
-  QA: "Qatar",
-  OTHER: "Other",
-};
+  UK: 'United Kingdom',
+  QA: 'Qatar',
+  OTHER: 'Other',
+}
 
 // ─── Password requirements helper ───────────────────────────────────────
 
 interface PasswordCheck {
-  label: string;
-  met: boolean;
+  label: string
+  met: boolean
 }
 
 function getPasswordChecks(password: string): PasswordCheck[] {
   return [
-    { label: "At least 8 characters", met: password.length >= 8 },
-    { label: "One uppercase letter", met: /[A-Z]/.test(password) },
-    { label: "One lowercase letter", met: /[a-z]/.test(password) },
-    { label: "One number", met: /[0-9]/.test(password) },
-  ];
+    { label: 'At least 8 characters', met: password.length >= 8 },
+    { label: 'One uppercase letter', met: /[A-Z]/.test(password) },
+    { label: 'One lowercase letter', met: /[a-z]/.test(password) },
+    { label: 'One number', met: /[0-9]/.test(password) },
+  ]
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -176,59 +170,59 @@ function ProfileTab({
   profile,
   onProfileUpdated,
 }: {
-  profile: UserProfile;
-  onProfileUpdated: (p: UserProfile) => void;
+  profile: UserProfile
+  onProfileUpdated: (p: UserProfile) => void
 }) {
-  const { toast } = useToast();
-  const [firstName, setFirstName] = useState(profile.firstName);
-  const [lastName, setLastName] = useState(profile.lastName);
-  const [school, setSchool] = useState(profile.school ?? "");
-  const [saving, setSaving] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const { toast } = useToast()
+  const [firstName, setFirstName] = useState(profile.firstName)
+  const [lastName, setLastName] = useState(profile.lastName)
+  const [school, setSchool] = useState(profile.school ?? '')
+  const [saving, setSaving] = useState(false)
+  const [errors, setErrors] = useState<Record<string, string>>({})
 
   const isDirty =
     firstName !== profile.firstName ||
     lastName !== profile.lastName ||
-    (school || null) !== profile.school;
+    (school || null) !== profile.school
 
   async function handleSave(e: React.FormEvent) {
-    e.preventDefault();
-    setErrors({});
+    e.preventDefault()
+    setErrors({})
 
     if (!firstName.trim()) {
-      setErrors({ firstName: "First name is required" });
-      return;
+      setErrors({ firstName: 'First name is required' })
+      return
     }
     if (!lastName.trim()) {
-      setErrors({ lastName: "Last name is required" });
-      return;
+      setErrors({ lastName: 'Last name is required' })
+      return
     }
 
-    setSaving(true);
+    setSaving(true)
     try {
-      const res = await fetch("/api/user/profile", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/user/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           firstName: firstName.trim(),
           lastName: lastName.trim(),
           school: school.trim() || null,
         }),
-      });
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (!res.ok) {
         if (data.errors) {
-          const flat: Record<string, string> = {};
+          const flat: Record<string, string> = {}
           for (const [key, msgs] of Object.entries(data.errors)) {
-            flat[key] = (msgs as string[])[0];
+            flat[key] = (msgs as string[])[0]
           }
-          setErrors(flat);
+          setErrors(flat)
         } else {
-          toast("error", data.error || "Failed to save profile.");
+          toast('error', data.error || 'Failed to save profile.')
         }
-        return;
+        return
       }
 
       onProfileUpdated({
@@ -236,12 +230,12 @@ function ProfileTab({
         firstName: data.user.firstName,
         lastName: data.user.lastName,
         school: data.user.school,
-      });
-      toast("success", "Profile updated successfully.");
+      })
+      toast('success', 'Profile updated successfully.')
     } catch {
-      toast("error", "Something went wrong. Please try again.");
+      toast('error', 'Something went wrong. Please try again.')
     } finally {
-      setSaving(false);
+      setSaving(false)
     }
   }
 
@@ -315,7 +309,7 @@ function ProfileTab({
         Save changes
       </LoadingButton>
     </form>
-  );
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -323,63 +317,60 @@ function ProfileTab({
 // ═══════════════════════════════════════════════════════════════════════
 
 function PasswordTab() {
-  const { toast } = useToast();
-  const [currentPassword, setCurrentPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [saving, setSaving] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const { toast } = useToast()
+  const [currentPassword, setCurrentPassword] = useState('')
+  const [newPassword, setNewPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [saving, setSaving] = useState(false)
+  const [errors, setErrors] = useState<Record<string, string>>({})
 
-  const checks = getPasswordChecks(newPassword);
-  const allChecksMet = checks.every((c) => c.met);
-  const passwordsMatch = newPassword === confirmPassword;
+  const checks = getPasswordChecks(newPassword)
+  const allChecksMet = checks.every((c) => c.met)
+  const passwordsMatch = newPassword === confirmPassword
   const canSubmit =
-    currentPassword.length > 0 &&
-    allChecksMet &&
-    confirmPassword.length > 0 &&
-    passwordsMatch;
+    currentPassword.length > 0 && allChecksMet && confirmPassword.length > 0 && passwordsMatch
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setErrors({});
+    e.preventDefault()
+    setErrors({})
 
-    if (!canSubmit) return;
+    if (!canSubmit) return
 
-    setSaving(true);
+    setSaving(true)
     try {
-      const res = await fetch("/api/user/password", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/user/password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           currentPassword,
           newPassword,
           confirmNewPassword: confirmPassword,
         }),
-      });
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (!res.ok) {
         if (data.errors) {
-          const flat: Record<string, string> = {};
+          const flat: Record<string, string> = {}
           for (const [key, msgs] of Object.entries(data.errors)) {
-            flat[key] = (msgs as string[])[0];
+            flat[key] = (msgs as string[])[0]
           }
-          setErrors(flat);
+          setErrors(flat)
         } else {
-          toast("error", data.error || "Failed to change password.");
+          toast('error', data.error || 'Failed to change password.')
         }
-        return;
+        return
       }
 
-      toast("success", "Password changed successfully.");
-      setCurrentPassword("");
-      setNewPassword("");
-      setConfirmPassword("");
+      toast('success', 'Password changed successfully.')
+      setCurrentPassword('')
+      setNewPassword('')
+      setConfirmPassword('')
     } catch {
-      toast("error", "Something went wrong. Please try again.");
+      toast('error', 'Something went wrong. Please try again.')
     } finally {
-      setSaving(false);
+      setSaving(false)
     }
   }
 
@@ -411,7 +402,7 @@ function PasswordTab() {
               <li
                 key={check.label}
                 className={`flex items-center gap-2 text-xs ${
-                  check.met ? "text-green-600" : "text-muted-foreground"
+                  check.met ? 'text-green-600' : 'text-muted-foreground'
                 }`}
               >
                 {check.met ? (
@@ -454,9 +445,7 @@ function PasswordTab() {
         onChange={(e) => setConfirmPassword(e.target.value)}
         error={
           errors.confirmNewPassword ||
-          (confirmPassword.length > 0 && !passwordsMatch
-            ? "Passwords do not match"
-            : undefined)
+          (confirmPassword.length > 0 && !passwordsMatch ? 'Passwords do not match' : undefined)
         }
         autoComplete="new-password"
       />
@@ -465,7 +454,7 @@ function PasswordTab() {
         Change password
       </LoadingButton>
     </form>
-  );
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -473,45 +462,43 @@ function PasswordTab() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function CommunicationTab() {
-  const { toast } = useToast();
-  const [productUpdates, setProductUpdates] = useState(true);
-  const [tipsContent, setTipsContent] = useState(false);
-  const [marketing, setMarketing] = useState(false);
-  const [saving, setSaving] = useState(false);
+  const { toast } = useToast()
+  const [productUpdates, setProductUpdates] = useState(true)
+  const [tipsContent, setTipsContent] = useState(false)
+  const [marketing, setMarketing] = useState(false)
+  const [saving, setSaving] = useState(false)
 
   // Track initial values to detect changes
   const [initial, setInitial] = useState({
     productUpdates: true,
     tipsContent: false,
     marketing: false,
-  });
+  })
 
   const isDirty =
     productUpdates !== initial.productUpdates ||
     tipsContent !== initial.tipsContent ||
-    marketing !== initial.marketing;
+    marketing !== initial.marketing
 
   async function handleSave() {
-    setSaving(true);
+    setSaving(true)
     try {
       // Stub: PUT /api/user/communication — simulated until endpoint exists
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500))
 
-      setInitial({ productUpdates, tipsContent, marketing });
-      toast("success", "Communication preferences saved.");
+      setInitial({ productUpdates, tipsContent, marketing })
+      toast('success', 'Communication preferences saved.')
     } catch {
-      toast("error", "Failed to save preferences. Please try again.");
+      toast('error', 'Failed to save preferences. Please try again.')
     } finally {
-      setSaving(false);
+      setSaving(false)
     }
   }
 
   return (
     <div className="space-y-6 max-w-lg">
       <div>
-        <h3 className="text-sm font-semibold text-foreground">
-          Email notifications
-        </h3>
+        <h3 className="text-sm font-semibold text-foreground">Email notifications</h3>
         <p className="mt-1 text-xs text-muted-foreground">
           Choose which emails you would like to receive.
         </p>
@@ -527,12 +514,10 @@ function CommunicationTab() {
             />
           </div>
           <div>
-            <p className="text-sm font-medium text-foreground">
-              Essential emails
-            </p>
+            <p className="text-sm font-medium text-foreground">Essential emails</p>
             <p className="text-xs text-muted-foreground">
-              Billing confirmations, security alerts, and account notifications.
-              These cannot be disabled.
+              Billing confirmations, security alerts, and account notifications. These cannot be
+              disabled.
             </p>
           </div>
         </div>
@@ -560,9 +545,8 @@ function CommunicationTab() {
           />
           {marketing && (
             <p className="mt-2 ml-14 text-xs text-clay-600 bg-amber-500/10 rounded-lg px-3 py-2">
-              By enabling marketing emails, you explicitly consent to receiving
-              promotional communications. You can withdraw this consent at any
-              time.
+              By enabling marketing emails, you explicitly consent to receiving promotional
+              communications. You can withdraw this consent at any time.
             </p>
           )}
         </div>
@@ -572,7 +556,7 @@ function CommunicationTab() {
         Save preferences
       </LoadingButton>
     </div>
-  );
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -580,8 +564,8 @@ function CommunicationTab() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function SubscriptionTab() {
-  const subscription = MOCK_SUBSCRIPTION;
-  const billing = MOCK_BILLING;
+  const subscription = MOCK_SUBSCRIPTION
+  const billing = MOCK_BILLING
 
   return (
     <div className="space-y-8 max-w-2xl">
@@ -591,18 +575,16 @@ function SubscriptionTab() {
         <div className="mt-3 grid gap-3 sm:grid-cols-3">
           <div>
             <p className="text-xs text-muted-foreground">Plan</p>
-            <p className="mt-0.5 text-sm font-medium text-foreground">
-              {subscription.plan}
-            </p>
+            <p className="mt-0.5 text-sm font-medium text-foreground">{subscription.plan}</p>
           </div>
           <div>
             <p className="text-xs text-muted-foreground">Status</p>
             <p className="mt-0.5">
               <span
                 className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                  subscription.status === "Active"
-                    ? "bg-green-500/10 text-green-600"
-                    : "bg-muted text-foreground"
+                  subscription.status === 'Active'
+                    ? 'bg-green-500/10 text-green-600'
+                    : 'bg-muted text-foreground'
                 }`}
               >
                 {subscription.status}
@@ -613,11 +595,12 @@ function SubscriptionTab() {
             <p className="text-xs text-muted-foreground">Next billing date</p>
             <p className="mt-0.5 text-sm font-medium text-foreground">
               {subscription.nextBillingDate
-                ? new Date(subscription.nextBillingDate).toLocaleDateString(
-                    "en-GB",
-                    { day: "numeric", month: "long", year: "numeric" }
-                  )
-                : "N/A"}
+                ? new Date(subscription.nextBillingDate).toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                  })
+                : 'N/A'}
             </p>
           </div>
         </div>
@@ -637,13 +620,9 @@ function SubscriptionTab() {
 
       {/* Billing history */}
       <div>
-        <h3 className="text-sm font-semibold text-foreground">
-          Billing history
-        </h3>
+        <h3 className="text-sm font-semibold text-foreground">Billing history</h3>
         {billing.length === 0 ? (
-          <p className="mt-3 text-sm text-muted-foreground">
-            No billing history available.
-          </p>
+          <p className="mt-3 text-sm text-muted-foreground">No billing history available.</p>
         ) : (
           <div className="mt-3 overflow-x-auto">
             <table className="w-full text-sm">
@@ -679,30 +658,25 @@ function SubscriptionTab() {
                 {billing.map((entry) => (
                   <tr key={entry.id}>
                     <td className="py-2.5 pr-4 text-foreground">
-                      {new Date(entry.date).toLocaleDateString("en-GB", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
+                      {new Date(entry.date).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
                       })}
                     </td>
-                    <td className="py-2.5 pr-4 text-foreground">
-                      {entry.description}
-                    </td>
-                    <td className="py-2.5 pr-4 font-medium text-foreground">
-                      {entry.amount}
-                    </td>
+                    <td className="py-2.5 pr-4 text-foreground">{entry.description}</td>
+                    <td className="py-2.5 pr-4 font-medium text-foreground">{entry.amount}</td>
                     <td className="py-2.5">
                       <span
                         className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
-                          entry.status === "paid"
-                            ? "bg-green-500/10 text-green-600"
-                            : entry.status === "pending"
-                              ? "bg-amber-500/10 text-clay-600"
-                              : "bg-red-500/10 text-red-600"
+                          entry.status === 'paid'
+                            ? 'bg-green-500/10 text-green-600'
+                            : entry.status === 'pending'
+                              ? 'bg-amber-500/10 text-clay-600'
+                              : 'bg-red-500/10 text-red-600'
                         }`}
                       >
-                        {entry.status.charAt(0).toUpperCase() +
-                          entry.status.slice(1)}
+                        {entry.status.charAt(0).toUpperCase() + entry.status.slice(1)}
                       </span>
                     </td>
                   </tr>
@@ -713,7 +687,7 @@ function SubscriptionTab() {
         )}
       </div>
     </div>
-  );
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -721,41 +695,41 @@ function SubscriptionTab() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function DataPrivacyTab() {
-  const { toast } = useToast();
-  const [downloading, setDownloading] = useState(false);
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [deleteConfirm, setDeleteConfirm] = useState("");
-  const [deleting, setDeleting] = useState(false);
+  const { toast } = useToast()
+  const [downloading, setDownloading] = useState(false)
+  const [showDeleteModal, setShowDeleteModal] = useState(false)
+  const [deleteConfirm, setDeleteConfirm] = useState('')
+  const [deleting, setDeleting] = useState(false)
 
   async function handleDownloadData() {
-    setDownloading(true);
+    setDownloading(true)
     try {
       // Stub: POST /api/user/data-export — simulated until endpoint exists
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000))
       toast(
-        "success",
-        "Your data export has been requested. You will receive an email when it is ready."
-      );
+        'success',
+        'Your data export has been requested. You will receive an email when it is ready.',
+      )
     } catch {
-      toast("error", "Failed to request data export. Please try again.");
+      toast('error', 'Failed to request data export. Please try again.')
     } finally {
-      setDownloading(false);
+      setDownloading(false)
     }
   }
 
   async function handleDeleteAccount() {
-    if (deleteConfirm !== "DELETE") return;
+    if (deleteConfirm !== 'DELETE') return
 
-    setDeleting(true);
+    setDeleting(true)
     try {
       // Stub: DELETE /api/user/account — simulated until endpoint exists
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast("info", "Account deletion has been initiated.");
-      setShowDeleteModal(false);
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+      toast('info', 'Account deletion has been initiated.')
+      setShowDeleteModal(false)
     } catch {
-      toast("error", "Failed to delete account. Please try again.");
+      toast('error', 'Failed to delete account. Please try again.')
     } finally {
-      setDeleting(false);
+      setDeleting(false)
     }
   }
 
@@ -763,9 +737,7 @@ function DataPrivacyTab() {
     <div className="space-y-8 max-w-lg">
       {/* Links */}
       <div className="space-y-3">
-        <h3 className="text-sm font-semibold text-foreground">
-          Privacy management
-        </h3>
+        <h3 className="text-sm font-semibold text-foreground">Privacy management</h3>
         <nav className="space-y-2" aria-label="Privacy settings navigation">
           <Link
             href="/dashboard/privacy"
@@ -793,12 +765,10 @@ function DataPrivacyTab() {
 
       {/* Data export */}
       <div>
-        <h3 className="text-sm font-semibold text-foreground">
-          Download your data
-        </h3>
+        <h3 className="text-sm font-semibold text-foreground">Download your data</h3>
         <p className="mt-1 text-xs text-muted-foreground">
-          Request a copy of all data we hold about you. You will receive an
-          email with a download link once the export is ready.
+          Request a copy of all data we hold about you. You will receive an email with a download
+          link once the export is ready.
         </p>
         <LoadingButton
           variant="outline"
@@ -817,8 +787,8 @@ function DataPrivacyTab() {
           Delete your account
         </h3>
         <p className="mt-1 text-xs text-red-600">
-          This action is permanent and cannot be undone. All your data, essays,
-          feedback, and subscription will be permanently deleted.
+          This action is permanent and cannot be undone. All your data, essays, feedback, and
+          subscription will be permanently deleted.
         </p>
         <LoadingButton
           variant="destructive"
@@ -834,8 +804,8 @@ function DataPrivacyTab() {
       <Modal
         open={showDeleteModal}
         onClose={() => {
-          setShowDeleteModal(false);
-          setDeleteConfirm("");
+          setShowDeleteModal(false)
+          setDeleteConfirm('')
         }}
         title="Delete your account?"
         actions={
@@ -844,8 +814,8 @@ function DataPrivacyTab() {
               variant="ghost"
               size="sm"
               onClick={() => {
-                setShowDeleteModal(false);
-                setDeleteConfirm("");
+                setShowDeleteModal(false)
+                setDeleteConfirm('')
               }}
             >
               Cancel
@@ -855,7 +825,7 @@ function DataPrivacyTab() {
               size="sm"
               onClick={handleDeleteAccount}
               loading={deleting}
-              disabled={deleteConfirm !== "DELETE"}
+              disabled={deleteConfirm !== 'DELETE'}
             >
               Permanently delete
             </LoadingButton>
@@ -870,19 +840,13 @@ function DataPrivacyTab() {
             <ul className="mt-2 space-y-1 text-xs text-red-600 list-disc list-inside">
               <li>All your essays and feedback will be permanently deleted</li>
               <li>Your subscription will be cancelled immediately</li>
-              <li>
-                You will lose access to all data associated with this account
-              </li>
+              <li>You will lose access to all data associated with this account</li>
               <li>This action complies with your right to erasure under GDPR</li>
             </ul>
           </div>
           <div>
-            <label
-              htmlFor="delete-confirm"
-              className="block text-sm font-medium text-foreground"
-            >
-              Type <span className="font-mono font-bold">DELETE</span> to
-              confirm
+            <label htmlFor="delete-confirm" className="block text-sm font-medium text-foreground">
+              Type <span className="font-mono font-bold">DELETE</span> to confirm
             </label>
             <input
               id="delete-confirm"
@@ -897,7 +861,7 @@ function DataPrivacyTab() {
         </div>
       </Modal>
     </div>
-  );
+  )
 }
 
 // ─── Chevron icon ───────────────────────────────────────────────────────
@@ -912,13 +876,9 @@ function ChevronRightIcon() {
       strokeWidth={2}
       aria-hidden="true"
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M9 5l7 7-7 7"
-      />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
     </svg>
-  );
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -926,26 +886,27 @@ function ChevronRightIcon() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function SettingsContent() {
-  const { toast } = useToast();
-  const [profile, setProfile] = useState<UserProfile | null>(null);
-  const [loading, setLoading] = useState(true);
+  const t = useT()
+  const { toast } = useToast()
+  const [profile, setProfile] = useState<UserProfile | null>(null)
+  const [loading, setLoading] = useState(true)
 
   const fetchProfile = useCallback(async () => {
     try {
-      const res = await fetch("/api/user/profile");
-      if (!res.ok) throw new Error("Failed to load profile");
-      const data: UserProfile = await res.json();
-      setProfile(data);
+      const res = await fetch('/api/user/profile')
+      if (!res.ok) throw new Error('Failed to load profile')
+      const data: UserProfile = await res.json()
+      setProfile(data)
     } catch {
-      toast("error", "Failed to load your profile. Please refresh the page.");
+      toast('error', 'Failed to load your profile. Please refresh the page.')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  }, [toast]);
+  }, [toast])
 
   useEffect(() => {
-    fetchProfile();
-  }, [fetchProfile]);
+    fetchProfile()
+  }, [fetchProfile])
 
   if (loading) {
     return (
@@ -957,19 +918,19 @@ function SettingsContent() {
           <div className="h-40 w-full rounded bg-muted" />
         </div>
       </div>
-    );
+    )
   }
 
   if (!profile) {
     return (
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
         <p className="text-sm text-muted-foreground">
-          Unable to load your profile.{" "}
+          Unable to load your profile.{' '}
           <button
             type="button"
             onClick={() => {
-              setLoading(true);
-              fetchProfile();
+              setLoading(true)
+              fetchProfile()
             }}
             className="font-medium text-accent hover:text-primary"
           >
@@ -977,27 +938,50 @@ function SettingsContent() {
           </button>
         </p>
       </div>
-    );
+    )
   }
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-primary sm:text-3xl">
-          Account Settings
+          {t('dashboard.settings.h1')}
         </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Manage your profile, security, and preferences.
-        </p>
+        <p className="mt-1 text-sm text-muted-foreground">{t('dashboard.settings.intro')}</p>
       </div>
 
       <Tabs defaultValue="profile">
         <TabsList className="bg-transparent gap-1.5 p-0 flex-wrap">
-          <TabsTrigger value="profile" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Profile</TabsTrigger>
-          <TabsTrigger value="password" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Password</TabsTrigger>
-          <TabsTrigger value="communication" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Communication</TabsTrigger>
-          <TabsTrigger value="subscription" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Subscription</TabsTrigger>
-          <TabsTrigger value="data-privacy" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Data &amp; Privacy</TabsTrigger>
+          <TabsTrigger
+            value="profile"
+            className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+          >
+            Profile
+          </TabsTrigger>
+          <TabsTrigger
+            value="password"
+            className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+          >
+            Password
+          </TabsTrigger>
+          <TabsTrigger
+            value="communication"
+            className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+          >
+            Communication
+          </TabsTrigger>
+          <TabsTrigger
+            value="subscription"
+            className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+          >
+            Subscription
+          </TabsTrigger>
+          <TabsTrigger
+            value="data-privacy"
+            className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40"
+          >
+            Data &amp; Privacy
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="profile">
@@ -1017,7 +1001,7 @@ function SettingsContent() {
         </TabsContent>
       </Tabs>
     </div>
-  );
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -1029,5 +1013,5 @@ export default function SettingsPage() {
     <ToastProvider>
       <SettingsContent />
     </ToastProvider>
-  );
+  )
 }

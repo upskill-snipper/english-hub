@@ -218,10 +218,22 @@ const motherAnyDistancePoem: PoemData = {
     '<p>The poem explores the <strong>emotional complexity of growing up</strong>: the desire for independence battling against the security of parental love. It captures a universal moment \u2014 leaving home \u2014 with tenderness and honesty.</p>' +
     '<p>Armitage has described the poem as being about <strong>the point at which you have to let go</strong>, acknowledging that both parent and child find this difficult.</p>',
 
+  contextAr:
+    '<p><strong>Simon Armitage (مواليد 1963)</strong> شاعر بريطاني معاصر من Marsden في West Yorkshire. هو UK Poet Laureate من مايو 2019، خلف Carol Ann Duffy (2009–2019). أصلاً تدرّب كموظف مراقبة المفرج عنهم، والحين أستاذ في جامعة Leeds، وخدم كأستاذ الشعر في Oxford من 2015 إلى 2019. شعره معروف بلغته العاميّة، وحسّ الفكاهة الجاف، واستكشاف الحياة اليوميّة. (ملاحظة: على الرغم إن قصائده في الـanthology تشمل قطع حرب مثل <em>Remains</em> و<em>The Manhunt</em>، Armitage أبد ما خدم في أي دور عسكري أو قتالي — هذي القصائد مبنيّة على مقابلات مع جنود سابقين.)</p>' +
+    '<p>قصيدة <strong>"Mother, any distance"</strong> انتشرت في ديوان <em>Book of Matches</em> (1993)، مجموعة كل قصيدة فيها مصمّمة عشان تطول قد ما يطول اشتعال عود ثقاب. القصيدة مستوحاة من تجربة Armitage الشخصيّة في مغادرة بيت الأهل.</p>' +
+    '<p><strong>الاستعارة الممتدّة</strong> (extended metaphor) عن شريط القياس تربطه بـ<strong>الحبل السرّي</strong> — الرابط الجسدي بين الأم والابن. مع تنقّل المتكلّم (ذكر) في بيته الجديد، الشريط يتمدّد، ولازم في النهاية ينحرّر، تماماً مثل الابن لازم في النهاية ينفصل عن والديه.</p>' +
+    '<p>القصيدة تستكشف <strong>التعقيد العاطفي للنضوج</strong>: الرغبة في الاستقلال تتصارع مع أمان الحب الأبوي. تلتقط لحظة عامّة كل واحد فينا يمرّ فيها — مغادرة بيت الأهل — بحنان وصدق.</p>' +
+    '<p>Armitage وصف القصيدة على إنها عن <strong>اللحظة اللي لازم تخلّي يدك تنفلت فيها</strong>، ويعترف إن الأم والابن كلاهما يلقى هالشي صعب.</p>',
+
   summary:
     'Stanza 1 (lines 1\u20134): The speaker asks his mother to help him measure his new home. The domestic task is grounded in reality but the exaggerated language ("acres", "prairies") hints at the daunting scale of adult independence.\n\n' +
     'Stanza 2 (lines 5\u20138): The mother holds the "zero-end" of the tape while the speaker moves away. The tape becomes an umbilical cord, stretching through the house. The stanza ends with "Anchor. Kite." \u2014 two powerful metaphors for the mother\u2019s stability and the speaker\u2019s desire for freedom.\n\n' +
     'Stanza 3 (lines 9\u201312): The speaker reaches the top of the house and looks out through a hatch at "an endless sky". The poem ends with the unresolved phrase "to fall or fly" \u2014 independence could bring triumph or disaster, and the speaker stands on the threshold between the two.',
+
+  summaryAr:
+    '\u0627\u0644\u0645\u0642\u0637\u0639 1 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 1\u20134): \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u064a\u0637\u0644\u0628 \u0645\u0646 \u0648\u0627\u0644\u062f\u062a\u0647 \u0625\u0646\u0647\u0627 \u062a\u0633\u0627\u0639\u062f\u0647 \u064a\u0642\u064a\u0633 \u0628\u064a\u062a\u0647 \u0627\u0644\u062c\u062f\u064a\u062f. \u0627\u0644\u0645\u0647\u0645\u0651\u0629 \u0627\u0644\u0639\u0627\u062f\u064a\u0651\u0629 \u0627\u0644\u0628\u064a\u062a\u064a\u0651\u0629 \u062a\u0631\u0633\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0641\u064a \u0627\u0644\u0648\u0627\u0642\u0639\u060c \u0628\u0633 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0645\u0628\u0627\u0644\u063a \u0641\u064a\u0647\u0627 ("acres"\u060c "prairies") \u062a\u0644\u0645\u0651\u062d \u0644\u062d\u062c\u0645 \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644 \u0627\u0644\u0628\u0627\u0644\u063a \u0627\u0644\u0645\u0631\u0639\u0628.\n\n' +
+    '\u0627\u0644\u0645\u0642\u0637\u0639 2 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 5\u20138): \u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649) \u062a\u0645\u0633\u0643 "zero-end" \u0645\u0646 \u0627\u0644\u0634\u0631\u064a\u0637\u060c \u0648\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u064a\u0628\u062a\u0639\u062f. \u0627\u0644\u0634\u0631\u064a\u0637 \u064a\u062a\u062d\u0648\u0651\u0644 \u0625\u0644\u0649 \u062d\u0628\u0644 \u0633\u0631\u0651\u064a\u060c \u064a\u062a\u0645\u062f\u0651\u062f \u0639\u0628\u0631 \u0627\u0644\u0628\u064a\u062a. \u0627\u0644\u0645\u0642\u0637\u0639 \u064a\u062e\u062a\u0645 \u0628\u0640"Anchor. Kite." \u2014 \u0627\u0633\u062a\u0639\u0627\u0631\u062a\u064a\u0646 \u0642\u0648\u064a\u0651\u062a\u064a\u0646 \u0644\u062b\u0628\u0627\u062a \u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649) \u0648\u0631\u063a\u0628\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0641\u064a \u0627\u0644\u062d\u0631\u064a\u0651\u0629.\n\n' +
+    '\u0627\u0644\u0645\u0642\u0637\u0639 3 (\u0627\u0644\u0623\u0628\u064a\u0627\u062a 9\u201312): \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u064a\u0648\u0635\u0644 \u0642\u0645\u0651\u0629 \u0627\u0644\u0628\u064a\u062a \u0648\u064a\u0637\u0644\u0651 \u0645\u0646 \u0641\u062a\u062d\u0629 \u0633\u0642\u0641 \u0639\u0644\u0649 "an endless sky". \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u062e\u062a\u0645 \u0628\u0639\u0628\u0627\u0631\u0629 \u0645\u0639\u0644\u0651\u0642\u0629 "to fall or fly" \u2014 \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644 \u064a\u0645\u0643\u0646 \u064a\u062c\u064a\u0628 \u0646\u0635\u0631 \u0623\u0648 \u0643\u0627\u0631\u062b\u0629\u060c \u0648\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u064a\u0642\u0641 \u0639\u0644\u0649 \u0639\u062a\u0628\u0629 \u0628\u064a\u0646 \u0627\u0644\u0627\u062b\u0646\u064a\u0646.',
 
   formAndStructure:
     'Form: A loose, extended sonnet \u2014 the poem has 15 lines (one more than the traditional 14-line sonnet), echoing the love-sonnet tradition while exceeding it. Its irregular line lengths and lack of a strict rhyme scheme reflect the messy, imperfect reality of this parent-child relationship.\n\n' +
@@ -232,54 +244,119 @@ const motherAnyDistancePoem: PoemData = {
     'End-stopped final line: "to fall or fly" ends the poem with a stark choice, leaving the outcome unresolved \u2014 the speaker is suspended between two possibilities.\n\n' +
     'Extended metaphor: The measuring tape/umbilical cord metaphor is sustained throughout the entire poem, giving it structural and thematic coherence.',
 
+  formAndStructureAr:
+    'Form: sonnet ممتدّ ومرخّى — القصيدة 15 بيت (بيت زيادة عن الـsonnet التقليدي اللي هو 14 بيت)، فيها صدى لتقليد love-sonnet بس تتعدّاه. أطوال الأبيات غير المنتظمة وغياب نظام قافية صارم يعكسان الواقع الفوضوي وغير المثالي لهالعلاقة بين الأم والابن.\n\n' +
+    'بنية المقاطع: ثلاث مقاطع بأطوال غير متساوية (تقريباً 4، 8، و3 أبيات)، مع وضع البيت الأخير "to fall or fly" بشكل مستقل عشان التأكيد. عدم التماثل يحاكي طريقة تمدّد شريط القياس والانفصال التدريجي اللي يجسّده.\n\n' +
+    'Enjambment: مستخدم بكثافة طول القصيدة، خصوصاً في "then leaving / up the stairs" و"recording / length". الأبيات تنساب لبعضها، تماماً مثل ما ينساب الشريط عبر البيت، فتخلق إحساس بحركة متواصلة بعيداً عن الوالدة (أنثى).\n\n' +
+    'Caesura: "Anchor. Kite." يستخدم نقاط دراماتيكيّة في نص البيت عشان يخلق صورتين قويّتين متضادّتين، تختصران التوتر المركزي في القصيدة.\n\n' +
+    'Rhyme: half-rhymes متقطّعة ("doors/floors"، "sky/fly") تخلق إحساس باتّصال شبه مكتمل، تعكس الرابط اللي يتمدّد بس ما انقطع.\n\n' +
+    'البيت الأخير المنغلق: "to fall or fly" يختم القصيدة بخيار حادّ، يترك النتيجة معلّقة بدون حلّ — المتكلّم (ذكر) معلّق بين احتمالين.\n\n' +
+    'الاستعارة الممتدّة (extended metaphor): استعارة شريط القياس / الحبل السرّي تستمر طول القصيدة، فتعطيها تماسك بنيوي وموضوعي.',
+
   keyQuotes: [
     {
       quote: 'Mother, any distance greater than a single span',
       analysis:
         'The direct address and reference to "a single span" (an arm\'s length) establishes the poem\'s core idea: the speaker has outgrown the close physical proximity of childhood and must now navigate greater distances alone.',
       themes: ['Family', 'Growing Up', 'Independence'],
+      analysisAr:
+        '\u0627\u0644\u0646\u062f\u0627\u0621 \u0627\u0644\u0645\u0628\u0627\u0634\u0631 \u0648\u0627\u0644\u0625\u0634\u0627\u0631\u0629 \u0625\u0644\u0649 "a single span" (\u0637\u0648\u0644 \u0627\u0644\u0630\u0631\u0627\u0639) \u062a\u0631\u0633\u064a \u0627\u0644\u0641\u0643\u0631\u0629 \u0627\u0644\u062c\u0648\u0647\u0631\u064a\u0651\u0629 \u0644\u0644\u0642\u0635\u064a\u062f\u0629: \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u062a\u062c\u0627\u0648\u0632 \u0642\u0631\u0628 \u0627\u0644\u0637\u0641\u0648\u0644\u0629 \u0627\u0644\u062c\u0633\u062f\u064a\u060c \u0648\u0644\u0627\u0632\u0645 \u064a\u062a\u0646\u0642\u0651\u0644 \u0627\u0644\u062d\u064a\u0646 \u0641\u064a \u0645\u0633\u0627\u0641\u0627\u062a \u0623\u0643\u0628\u0631 \u0628\u0631\u0648\u062d\u0647.',
+      themesAr: [
+        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
+        '\u0627\u0644\u0646\u0636\u0648\u062c',
+        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
+      ],
     },
     {
       quote: 'the acres of the walls, the prairies of the floors',
       analysis:
         "Hyperbolic metaphors that transform a domestic interior into a vast landscape. The new home feels overwhelmingly large, reflecting the speaker's anxiety about the scale of adult responsibility.",
       themes: ['Independence', 'Fear', 'Growing Up'],
+      analysisAr:
+        '\u0627\u0633\u062a\u0639\u0627\u0631\u0627\u062a \u0645\u0628\u0627\u0644\u063a \u0641\u064a\u0647\u0627 \u062a\u062d\u0648\u0651\u0644 \u0627\u0644\u0641\u0636\u0627\u0621 \u0627\u0644\u0628\u064a\u062a\u064a \u0627\u0644\u062f\u0627\u062e\u0644\u064a \u0625\u0644\u0649 \u0645\u0634\u0647\u062f \u0637\u0628\u064a\u0639\u064a \u0634\u0627\u0633\u0639. \u0627\u0644\u0628\u064a\u062a \u0627\u0644\u062c\u062f\u064a\u062f \u064a\u0628\u064a\u0651\u0646 \u0636\u062e\u0645 \u0628\u0634\u0643\u0644 \u0633\u0627\u062d\u0642\u060c \u0648\u064a\u0639\u0643\u0633 \u0642\u0644\u0642 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0645\u0646 \u062d\u062c\u0645 \u0645\u0633\u0624\u0648\u0644\u064a\u0651\u0629 \u0627\u0644\u0628\u0627\u0644\u063a\u064a\u0646.',
+      themesAr: [
+        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
+        '\u0627\u0644\u062e\u0648\u0641',
+        '\u0627\u0644\u0646\u0636\u0648\u062c',
+      ],
     },
     {
       quote: 'You at the zero-end',
       analysis:
         'The mother is at the origin point \u2014 where everything begins. "Zero" suggests she is the foundation, the starting point of the speaker\'s entire life. He measures his distance from her.',
       themes: ['Family', 'Dependence', 'Origins'],
+      analysisAr:
+        '\u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649) \u062a\u0642\u0641 \u0639\u0646\u062f \u0646\u0642\u0637\u0629 \u0627\u0644\u0623\u0635\u0644 \u2014 \u062d\u064a\u062b \u064a\u0628\u062f\u0623 \u0643\u0644 \u0634\u064a. \u0643\u0644\u0645\u0629 "zero" \u062a\u0648\u062d\u064a \u0625\u0646\u0647\u0627 \u0647\u064a (\u0623\u0646\u062b\u0649) \u0627\u0644\u0623\u0633\u0627\u0633\u060c \u0646\u0642\u0637\u0629 \u0627\u0646\u0637\u0644\u0627\u0642 \u062d\u064a\u0627\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0643\u0644\u0651\u0647\u0627. \u0647\u0648 \u064a\u0642\u064a\u0633 \u0628\u064f\u0639\u062f\u0647 \u0639\u0646\u0647\u0627.',
+      themesAr: [
+        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
+        '\u0627\u0644\u0627\u0639\u062a\u0645\u0627\u062f',
+        '\u0627\u0644\u0623\u0635\u0648\u0644',
+      ],
     },
     {
       quote: 'reporting metres, centimetres back to base',
       analysis:
         'Military-style language casts the speaker as an explorer or soldier venturing into unknown territory, with the mother as "base" \u2014 the safe point to return to.',
       themes: ['Independence', 'Security', 'Family'],
+      analysisAr:
+        '\u0644\u063a\u0629 \u0639\u0633\u0643\u0631\u064a\u0651\u0629 \u0627\u0644\u0637\u0627\u0628\u0639 \u062a\u0635\u0648\u0651\u0631 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0643\u0645\u0633\u062a\u0643\u0634\u0641 \u0623\u0648 \u062c\u0646\u062f\u064a \u064a\u062e\u0648\u0636 \u0641\u064a \u0623\u0631\u0636 \u0645\u062c\u0647\u0648\u0644\u0629\u060c \u0648\u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649) \u0647\u064a \u0627\u0644\u0640"base" \u2014 \u0627\u0644\u0646\u0642\u0637\u0629 \u0627\u0644\u0622\u0645\u0646\u0629 \u0627\u0644\u0644\u064a \u064a\u0631\u062c\u0639 \u0644\u0647\u0627.',
+      themesAr: [
+        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
+        '\u0627\u0644\u0623\u0645\u0627\u0646',
+        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
+      ],
     },
     {
       quote: 'the line still feeding out, unreeling',
       analysis:
         'The tape/umbilical cord continues to unspool. "Feeding" echoes a mother nourishing her child. The connection sustains the speaker even at a distance, but it is thinning.',
       themes: ['Family', 'Connection', 'Separation'],
+      analysisAr:
+        '\u0627\u0644\u0634\u0631\u064a\u0637 / \u0627\u0644\u062d\u0628\u0644 \u0627\u0644\u0633\u0631\u0651\u064a \u064a\u0633\u062a\u0645\u0631 \u0628\u0627\u0644\u0627\u0646\u0641\u0643\u0627\u0643. \u0643\u0644\u0645\u0629 "feeding" \u062a\u0633\u062a\u062d\u0636\u0631 \u0635\u0648\u0631\u0629 \u0627\u0644\u0623\u0645 (\u0623\u0646\u062b\u0649) \u0648\u0647\u064a \u062a\u063a\u0630\u0651\u064a \u0627\u0628\u0646\u0647\u0627. \u0627\u0644\u0627\u062a\u0635\u0627\u0644 \u064a\u062f\u064a\u0645 \u0648\u062c\u0648\u062f \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u062d\u062a\u0649 \u0639\u0646 \u0628\u064f\u0639\u062f\u060c \u0628\u0633 \u064a\u0635\u064a\u0631 \u0623\u0631\u0642\u0651 \u0648\u064a\u0631\u0642\u0651.',
+      themesAr: [
+        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
+        '\u0627\u0644\u0627\u062a\u0635\u0627\u0644',
+        '\u0627\u0644\u0627\u0646\u0641\u0635\u0627\u0644',
+      ],
     },
     {
       quote: 'Anchor. Kite.',
       analysis:
         "Two single-word sentences that crystallise the poem's central conflict. The mother is an anchor (grounding, stable, heavy) and the speaker is a kite (airborne, free, but dependent on the string). The tension between these is never resolved.",
       themes: ['Family', 'Independence', 'Tension'],
+      analysisAr:
+        '\u062c\u0645\u0644\u062a\u064a\u0646 \u0643\u0644 \u0648\u062d\u062f\u0629 \u0643\u0644\u0645\u0629 \u0648\u0627\u062d\u062f\u0629\u060c \u062a\u062e\u062a\u0635\u0631\u0627\u0646 \u0627\u0644\u0635\u0631\u0627\u0639 \u0627\u0644\u0645\u0631\u0643\u0632\u064a \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649) \u0647\u064a \u0645\u0631\u0633\u0627\u0629 (\u062a\u062b\u0628\u0651\u062a\u060c \u062a\u0633\u062a\u0642\u0631\u060c \u062b\u0642\u064a\u0644\u0629)\u060c \u0648\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0637\u064a\u0651\u0627\u0631\u0629 \u0648\u0631\u0642 (\u0645\u062d\u0644\u0651\u0642\u060c \u062d\u0631\u060c \u0628\u0633 \u0645\u0639\u062a\u0645\u062f \u0639\u0644\u0649 \u0627\u0644\u062e\u064a\u0637). \u0627\u0644\u062a\u0648\u062a\u0631 \u0628\u064a\u0646 \u0627\u0644\u0627\u062b\u0646\u064a\u0646 \u0645\u0627 \u064a\u0646\u062d\u0644\u0651 \u0623\u0628\u062f\u0627\u064b.',
+      themesAr: [
+        '\u0627\u0644\u0639\u0627\u0626\u0644\u0629',
+        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
+        '\u0627\u0644\u062a\u0648\u062a\u0651\u0631',
+      ],
     },
     {
       quote: 'an endless sky',
       analysis:
         'The sky represents limitless possibility and freedom, but "endless" also implies a void \u2014 without boundaries or safety. Independence is exciting but terrifying.',
       themes: ['Independence', 'Fear', 'Freedom'],
+      analysisAr:
+        '\u0627\u0644\u0633\u0645\u0627\u0621 \u062a\u0631\u0645\u0632 \u0644\u0644\u0625\u0645\u0643\u0627\u0646\u064a\u0651\u0627\u062a \u0627\u0644\u0644\u064a \u0645\u0627 \u0644\u0647\u0627 \u062d\u062f\u0648\u062f \u0648\u0644\u0644\u062d\u0631\u064a\u0651\u0629\u060c \u0628\u0633 \u0643\u0644\u0645\u0629 "endless" \u062a\u0648\u062d\u064a \u0643\u0645\u0627\u0646 \u0628\u0641\u0631\u0627\u063a \u2014 \u0628\u062f\u0648\u0646 \u062d\u062f\u0648\u062f \u0648\u0644\u0627 \u0623\u0645\u0627\u0646. \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644 \u0645\u062b\u064a\u0631 \u0648\u0645\u0631\u0639\u0628 \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a.',
+      themesAr: [
+        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
+        '\u0627\u0644\u062e\u0648\u0641',
+        '\u0627\u0644\u062d\u0631\u064a\u0651\u0629',
+      ],
     },
     {
       quote: 'to fall or fly',
       analysis:
         "The poem's final line presents two outcomes with equal weight. There is no reassurance \u2014 the speaker genuinely does not know whether independence will bring success or failure. The ambiguity is deliberate and powerful.",
       themes: ['Independence', 'Growing Up', 'Uncertainty'],
+      analysisAr:
+        '\u0627\u0644\u0628\u064a\u062a \u0627\u0644\u0623\u062e\u064a\u0631 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u064a\u0642\u062f\u0651\u0645 \u0627\u062d\u062a\u0645\u0627\u0644\u064a\u0646 \u0628\u0648\u0632\u0646 \u0645\u062a\u0633\u0627\u0648\u064a. \u0645\u0627 \u0641\u064a\u0647 \u0637\u0645\u0623\u0646\u064a\u0646\u0629 \u2014 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0635\u0627\u062f\u0642\u0627\u064b \u0645\u0627 \u064a\u062f\u0631\u064a \u0625\u0630\u0627 \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644 \u0631\u0627\u062d \u064a\u062c\u064a\u0628 \u0644\u0647 \u0646\u062c\u0627\u062d \u0623\u0648 \u0641\u0634\u0644. \u0627\u0644\u063a\u0645\u0648\u0636 \u0645\u0642\u0635\u0648\u062f \u0648\u0642\u0648\u064a.',
+      themesAr: [
+        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
+        '\u0627\u0644\u0646\u0636\u0648\u062c',
+        '\u0639\u062f\u0645 \u0627\u0644\u064a\u0642\u064a\u0646',
+      ],
     },
   ],
 
@@ -290,6 +367,8 @@ const motherAnyDistancePoem: PoemData = {
       effect:
         'The measuring tape represents the umbilical cord connecting mother and child. As the speaker moves through the house, the tape stretches \u2014 just as the emotional bond stretches when a child leaves home. This metaphor unifies the entire poem.',
       lineRef: 5,
+      effectAr:
+        '\u0634\u0631\u064a\u0637 \u0627\u0644\u0642\u064a\u0627\u0633 \u064a\u0645\u062b\u0651\u0644 \u0627\u0644\u062d\u0628\u0644 \u0627\u0644\u0633\u0631\u0651\u064a \u0627\u0644\u0644\u064a \u064a\u0631\u0628\u0637 \u0627\u0644\u0623\u0645 \u0628\u0627\u0644\u0627\u0628\u0646. \u0645\u0639 \u062a\u0646\u0642\u0651\u0644 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u0641\u064a \u0627\u0644\u0628\u064a\u062a\u060c \u0627\u0644\u0634\u0631\u064a\u0637 \u064a\u062a\u0645\u062f\u0651\u062f \u2014 \u062a\u0645\u0627\u0645\u0627\u064b \u0645\u062b\u0644 \u0645\u0627 \u064a\u062a\u0645\u062f\u0651\u062f \u0627\u0644\u0631\u0627\u0628\u0637 \u0627\u0644\u0639\u0627\u0637\u0641\u064a \u0644\u0645\u0627 \u0627\u0644\u0627\u0628\u0646 \u064a\u063a\u0627\u062f\u0631 \u0628\u064a\u062a \u0627\u0644\u0623\u0647\u0644. \u0647\u0627\u0644\u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u062a\u0648\u062d\u0651\u062f \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0627\u0645\u0644\u0629.',
     },
     {
       device: 'Hyperbole',
@@ -297,6 +376,8 @@ const motherAnyDistancePoem: PoemData = {
       effect:
         'Exaggerating the size of the rooms makes the new home feel overwhelmingly vast, reflecting the speaker\'s anxiety. "Prairies" evokes the American frontier \u2014 uncharted, wild territory.',
       lineRef: 3,
+      effectAr:
+        '\u0627\u0644\u0645\u0628\u0627\u0644\u063a\u0629 \u0641\u064a \u062d\u062c\u0645 \u0627\u0644\u063a\u0631\u0641 \u062a\u062e\u0644\u0651\u064a \u0627\u0644\u0628\u064a\u062a \u0627\u0644\u062c\u062f\u064a\u062f \u064a\u0628\u064a\u0651\u0646 \u0634\u0627\u0633\u0639 \u0628\u0634\u0643\u0644 \u0633\u0627\u062d\u0642\u060c \u0648\u062a\u0639\u0643\u0633 \u0642\u0644\u0642 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631). \u0643\u0644\u0645\u0629 "prairies" \u062a\u0633\u062a\u062d\u0636\u0631 \u0633\u0647\u0648\u0644 \u0627\u0644\u062d\u062f\u0648\u062f \u0627\u0644\u0623\u0645\u0631\u064a\u0643\u064a\u0629 \u2014 \u0623\u0631\u0636 \u063a\u064a\u0631 \u0645\u0643\u062a\u0634\u0641\u0629 \u0648\u0628\u0631\u0651\u064a\u0629.',
     },
     {
       device: 'Metaphor',
@@ -304,6 +385,8 @@ const motherAnyDistancePoem: PoemData = {
       effect:
         'Two contrasting metaphors compressed into two words. The anchor grounds and restricts; the kite soars but needs a string. Together they capture the push-and-pull of the parent-child relationship during separation.',
       lineRef: 7,
+      effectAr:
+        '\u0627\u0633\u062a\u0639\u0627\u0631\u062a\u064a\u0646 \u0645\u062a\u0636\u0627\u062f\u0651\u062a\u064a\u0646 \u0645\u0643\u062b\u0651\u0641\u062a\u064a\u0646 \u0641\u064a \u0643\u0644\u0645\u062a\u064a\u0646. \u0627\u0644\u0645\u0631\u0633\u0627\u0629 \u062a\u062b\u0628\u0651\u062a \u0648\u062a\u0642\u064a\u0651\u062f\u061b \u0648\u0627\u0644\u0637\u064a\u0651\u0627\u0631\u0629 \u0627\u0644\u0648\u0631\u0642 \u062a\u062d\u0644\u0651\u0642 \u0628\u0633 \u062a\u062d\u062a\u0627\u062c \u062e\u064a\u0637. \u0645\u0639 \u0628\u0639\u0636 \u064a\u0644\u062a\u0642\u0637\u0627\u0646 \u0634\u062f \u0648\u062c\u0630\u0628 \u0627\u0644\u0639\u0644\u0627\u0642\u0629 \u0628\u064a\u0646 \u0627\u0644\u0623\u0645 \u0648\u0627\u0644\u0627\u0628\u0646 \u0648\u0642\u062a \u0627\u0644\u0627\u0646\u0641\u0635\u0627\u0644.',
     },
     {
       device: 'Enjambment',
@@ -311,6 +394,8 @@ const motherAnyDistancePoem: PoemData = {
       effect:
         'The line break physically enacts the separation. "Leaving" hangs at the end of the line before the reader discovers it is just "up the stairs" \u2014 momentarily, it feels like leaving for good.',
       lineRef: 5,
+      effectAr:
+        '\u0627\u0646\u0643\u0633\u0627\u0631 \u0627\u0644\u0628\u064a\u062a \u064a\u062c\u0633\u0651\u062f \u0627\u0644\u0627\u0646\u0641\u0635\u0627\u0644 \u062c\u0633\u062f\u064a\u0627\u064b. \u0643\u0644\u0645\u0629 "leaving" \u062a\u062a\u0639\u0644\u0651\u0642 \u0641\u064a \u0622\u062e\u0631 \u0627\u0644\u0628\u064a\u062a \u0642\u0628\u0644 \u0645\u0627 \u064a\u0643\u062a\u0634\u0641 \u0627\u0644\u0642\u0627\u0631\u0626 \u0625\u0646\u0647\u0627 \u0628\u0633 "up the stairs" \u2014 \u0644\u0644\u062d\u0638\u0629\u060c \u064a\u062d\u0633\u0651 \u0643\u0623\u0646\u0647 \u0645\u063a\u0627\u062f\u0631\u0629 \u0646\u0647\u0627\u0626\u064a\u0629.',
     },
     {
       device: 'Ambiguity',
@@ -318,6 +403,8 @@ const motherAnyDistancePoem: PoemData = {
       effect:
         'The final line refuses to resolve the poem\'s tension. "Fall" and "fly" are given equal weight, reflecting the genuine uncertainty of growing up. The reader is left suspended, just like the speaker.',
       lineRef: 11,
+      effectAr:
+        '\u0627\u0644\u0628\u064a\u062a \u0627\u0644\u0623\u062e\u064a\u0631 \u064a\u0631\u0641\u0636 \u0625\u0646\u0647 \u064a\u062d\u0644\u0651 \u0627\u0644\u062a\u0648\u062a\u0631 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. "fall" \u0648"fly" \u062a\u0639\u0637\u0649 \u0644\u0643\u0644 \u0648\u062d\u062f\u0629 \u0648\u0632\u0646 \u0645\u062a\u0633\u0627\u0648\u064a\u060c \u0641\u064a\u0639\u0643\u0633\u0627\u0646 \u0639\u062f\u0645 \u0627\u0644\u064a\u0642\u064a\u0646 \u0627\u0644\u0635\u0627\u062f\u0642 \u0641\u064a \u0627\u0644\u0646\u0636\u0648\u062c. \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0628\u0642\u0649 \u0645\u0639\u0644\u0651\u0642\u060c \u062a\u0645\u0627\u0645\u0627\u064b \u0645\u062b\u0644 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631).',
     },
     {
       device: 'Symbolism',
@@ -325,6 +412,8 @@ const motherAnyDistancePoem: PoemData = {
       effect:
         'The hatch is a threshold between childhood (the house, the mother) and adulthood (the open sky). Stepping through it means leaving safety behind. The "endless sky" symbolises infinite possibility and vulnerability.',
       lineRef: 10,
+      effectAr:
+        '\u0641\u062a\u062d\u0629 \u0627\u0644\u0633\u0642\u0641 \u0639\u062a\u0628\u0629 \u0628\u064a\u0646 \u0627\u0644\u0637\u0641\u0648\u0644\u0629 (\u0627\u0644\u0628\u064a\u062a\u060c \u0627\u0644\u0648\u0627\u0644\u062f\u0629 (\u0623\u0646\u062b\u0649)) \u0648\u0627\u0644\u0628\u0644\u0648\u063a (\u0627\u0644\u0633\u0645\u0627\u0621 \u0627\u0644\u0645\u0641\u062a\u0648\u062d\u0629). \u0627\u0644\u062e\u0637\u0648\u0629 \u0645\u0646 \u062e\u0644\u0627\u0644\u0647\u0627 \u062a\u0639\u0646\u064a \u062a\u0631\u0643 \u0627\u0644\u0623\u0645\u0627\u0646 \u0648\u0631\u0627\u0621 \u0627\u0644\u0638\u0647\u0631. "endless sky" \u062a\u0631\u0645\u0632 \u0644\u0644\u0625\u0645\u0643\u0627\u0646\u064a\u0651\u0627\u062a \u0627\u0644\u0644\u0627 \u0646\u0647\u0627\u0626\u064a\u0629 \u0648\u0644\u0644\u0627\u0646\u0643\u0634\u0627\u0641.',
     },
     {
       device: 'Caesura',
@@ -332,6 +421,8 @@ const motherAnyDistancePoem: PoemData = {
       effect:
         'The full stops create dramatic pauses, breaking the flowing rhythm of the poem. Each word lands with impact, forcing the reader to consider "Anchor" and "Kite" as separate, weighty ideas.',
       lineRef: 7,
+      effectAr:
+        '\u0627\u0644\u0646\u0642\u0627\u0637 \u062a\u062e\u0644\u0642 \u062a\u0648\u0642\u0651\u0641\u0627\u062a \u062f\u0631\u0627\u0645\u0627\u062a\u064a\u0643\u064a\u0651\u0629\u060c \u062a\u0643\u0633\u0631 \u0627\u0644\u0625\u064a\u0642\u0627\u0639 \u0627\u0644\u0645\u0646\u0633\u0627\u0628 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0643\u0644 \u0643\u0644\u0645\u0629 \u062a\u0646\u0632\u0644 \u0628\u0623\u062b\u0631\u060c \u0648\u062a\u0641\u0631\u0636 \u0639\u0644\u0649 \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0641\u0643\u0651\u0631 \u0641\u064a "Anchor" \u0648"Kite" \u0643\u0623\u0641\u0643\u0627\u0631 \u0645\u0646\u0641\u0635\u0644\u0629 \u062b\u0642\u064a\u0644\u0629 \u0627\u0644\u0648\u0632\u0646.',
     },
     {
       device: 'Neologism',
@@ -339,6 +430,8 @@ const motherAnyDistancePoem: PoemData = {
       effect:
         '"Space-making" is a coined compound word. The speaker is actively creating distance \u2014 it is a deliberate, effortful action, not passive drifting. Language itself bends to express this new experience.',
       lineRef: 9,
+      effectAr:
+        '"Space-making" \u0643\u0644\u0645\u0629 \u0645\u0631\u0643\u0651\u0628\u0629 \u0645\u0646\u062d\u0648\u062a\u0629. \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0630\u0643\u0631) \u064a\u0646\u0634\u0626 \u0627\u0644\u0645\u0633\u0627\u0641\u0629 \u0628\u0641\u0639\u0644 \u0646\u0634\u0637 \u2014 \u0647\u0648 \u0641\u0639\u0644 \u0645\u0642\u0635\u0648\u062f \u0648\u062c\u0647\u062f\u060c \u0645\u0648 \u0627\u0646\u062c\u0631\u0627\u0641 \u0633\u0644\u0628\u064a. \u0627\u0644\u0644\u063a\u0629 \u0646\u0641\u0633\u0647\u0627 \u062a\u0646\u062d\u0646\u064a \u0639\u0634\u0627\u0646 \u062a\u0639\u0628\u0651\u0631 \u0639\u0646 \u0647\u0630\u064a \u0627\u0644\u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u062c\u062f\u064a\u062f\u0629.',
     },
   ],
 }

@@ -389,6 +389,12 @@ const POEM: PoemData = {
 <p>The Romantics valued <strong>emotion over reason</strong>, celebrated the <strong>power and beauty of nature</strong>, and explored the concept of <strong>the sublime</strong> -- the idea that encounters with vast, powerful, or terrifying natural phenomena could produce awe, wonder, and even spiritual transformation. <strong>Edmund Burke</strong> (in <em>A Philosophical Enquiry into the Origin of Our Ideas of the Sublime and Beautiful</em>, 1757) defined the sublime as the union of <strong>terror and awe</strong>; <strong>Immanuel Kant</strong> later refined this in his <em>Critique of Judgement</em> (1790), arguing the sublime arises when the mind confronts something so vast it overwhelms the imagination yet ultimately affirms reason's grandeur. Wordsworth's mountain encounter dramatises exactly this Burkean--Kantian sublime.</p>
 <p>In this extract, the young Wordsworth steals a boat and rows across a lake at night. A mountain appears to rise up and pursue him, filling him with existential terror. The experience permanently changes his understanding of nature from something nurturing to something vast and unknowable -- a "spot of time" (Wordsworth's term for a formative memory) that shapes the adult poet's mind.</p>`,
 
+  contextAr: `<p><strong>William Wordsworth</strong> (1770–1850) واحد من مؤسّسي <strong>الحركة الرومانسية (Romantic movement)</strong> في الشعر الإنجليزي. ترعرع في منطقة <strong>Lake District</strong>، ومناظر Cumbria الطبيعية أثّرت تأثير عميق على كتابته وفلسفته.</p>
+<p><em>The Prelude</em> هي قصيدة Wordsworth الملحمية <strong>السيريّة الذاتية (autobiographical)</strong>، تتبّع نمو ذهنه من الطفولة لين الكبر. بدأ يكتبها في <strong>1799</strong>، ونقّحها بشكل متواصل طول حياته (نسخة 1805 في 13 كتاب؛ النسخة النهائية 1850 في 14 كتاب)، و<strong>انتشرت بعد وفاته في 1850</strong>. <strong>منهج AQA Power &amp; Conflict يعتمد نسخة 1850 (بعد الوفاة)</strong>، والمقطع مأخوذ من <strong>Book I</strong>، يحكي حادثة طفولية عن سرقة قارب في بحيرة Ullswater.</p>
+<p><strong>ملاحظة عن النسخة:</strong> AQA يعتمد <strong>نسخة 1850 المنشورة من <em>The Prelude</em></strong>. أما OCR فيعتمد <strong>نسخة 1799 المؤلّفة من جزئين</strong> — والصياغة مختلفة اختلاف جوهري. لازم دايماً تستشهد من نسخة anthology AQA (1850) في هالصفحة.</p>
+<p>الرومانسيون كانوا يقدّرون <strong>العاطفة على العقل</strong>، ويحتفون بـ<strong>قوة الطبيعة وجمالها</strong>، ويستكشفون مفهوم <strong>الـsublime (الجلال المهيب)</strong> — وهو الفكرة إن مواجهة الإنسان لظواهر طبيعية ضخمة أو مرعبة أو مهيبة تقدر تنتج إحساس بالرهبة والدهشة، وحتى تحوّل روحي. <strong>Edmund Burke</strong> (في كتابه <em>A Philosophical Enquiry into the Origin of Our Ideas of the Sublime and Beautiful</em>، 1757) عرّف الـsublime على إنه اجتماع <strong>الرعب والرهبة</strong>؛ ثم <strong>Immanuel Kant</strong> هذّب هالفكرة في <em>Critique of Judgement</em> (1790)، وقال إن الـsublime يطلع لمّا يواجه الذهن شي ضخم لدرجة إنه يطغى على الخيال، بس في النهاية يأكّد عظمة العقل. مواجهة Wordsworth للجبل تجسّد بالضبط هالنوع من الـsublime البِركي-الكانطي.</p>
+<p>في هالمقطع، الـWordsworth الصغير يسرق قارب ويجدّف في بحيرة بالليل. ويظهر جبل كأنه يقوم ويلحقه، فيمتلئ برعب وجودي. التجربة تغيّر فهمه للطبيعة تغيير دائم — من شي حنون لشي ضخم ومجهول — وتصير "spot of time" (مصطلح Wordsworth للذكرى التكوينية) اللي يصيغ ذهن الشاعر لمّا يكبر.</p>`,
+
   summary: `CONFIDENCE AND FREEDOM (Lines 1--11)
 The speaker recalls a summer evening when, guided by nature ("led by her"), he found a small boat and impulsively took it out onto a lake. He rows with energy and confidence ("lustily I dipped my oars"), feeling at one with the natural world. The boat moves gracefully, compared to a swan, and the scene is calm and beautiful.
 
@@ -400,6 +406,18 @@ Terrified, the boy turns back with "trembling oars" -- a stark contrast to his e
 
 LASTING PSYCHOLOGICAL IMPACT (Lines 24--35)
 The final section describes the aftermath. For many days the boy's mind is troubled by "a dim and undetermined sense / Of unknown modes of being." The familiar, comforting images of nature (trees, sky, green fields) are replaced by "huge and mighty forms" that haunt his thoughts by day and trouble his dreams. The experience has permanently altered his relationship with the natural world.`,
+
+  summaryAr: `الثقة والحرية (الأبيات 1–11)
+المتكلّم يتذكّر مغرب صيف، لمّا قادته الطبيعة ("led by her")، فلقى قارب صغير وأخذه بشكل اندفاعي وطلع فيه على بحيرة. يجدّف بطاقة وثقة ("lustily I dipped my oars")، ويحسّ إنه واحد مع الطبيعة. القارب يتحرّك بانسياب، مشبّه بالـswan (البجعة)، والمنظر هادئ وحلو.
+
+المواجهة مع الجبل (الأبيات 12–19)
+المزاج ينقلب فجأة عند الـvolta. قمّة جبل ضخمة وسوداء تطلع من خلف الأفق. يبدو إن لها إرادتها الخاصة ("voluntary power") وتقوم مثل مخلوق حي ("upreared its head"). الجبل يصير كأنه يخطو ورا الولد، ويتحوّل من مجرّد منظر إلى قوة مرعبة لها هدف.
+
+الخوف والتراجع (الأبيات 19–23)
+الولد، وهو خايف، يرجّع القارب بـ"trembling oars" — وهذا تضاد قوي مع ثقته السابقة. "Stole" طريقه عبر الماء الصامت، ورجّع القارب لمكانه. الفعل "stole" يعكس "stealth" اللي قبل، بس الحين الولد هو اللي يتسلّل خايف، مو في مغامرة.
+
+الأثر النفسي الدائم (الأبيات 24–35)
+المقطع الأخير يوصف ما صار بعدها. لأيام عديدة، ذهن الولد متعب بـ"a dim and undetermined sense / Of unknown modes of being." الصور المألوفة المريحة للطبيعة (شجر، سماء، حقول خضراء) تنبدل بـ"huge and mighty forms" تطارد أفكاره في النهار وتزعج أحلامه. التجربة غيّرت علاقته بالعالم الطبيعي بشكل دائم.`,
 
   formAndStructure: `BLANK VERSE
 Written in unrhymed iambic pentameter (blank verse), giving the poem a natural, conversational rhythm that mirrors the flow of memory and thought. The lack of rhyme allows Wordsworth to build long, flowing sentences that carry the reader forward.
@@ -419,60 +437,105 @@ The dramatic turning point occurs around line 16 with "When, from behind that cr
 SINGLE VERSE PARAGRAPH
 The extract is one continuous block of text with no stanza breaks, reflecting the unbroken flow of memory and the way the experience consumed his consciousness entirely.`,
 
+  formAndStructureAr: `Blank verse
+مكتوبة بالـiambic pentameter بدون قافية (blank verse)، وهذا يعطي القصيدة إيقاع طبيعي شبه محادثة، يحاكي تدفّق الذاكرة والأفكار. غياب القافية يخلّي Wordsworth يبني جمل طويلة منسابة تشدّ القارئ معاها.
+
+Enjambment
+الـenjambment مستخدم بكثافة عبر المقطع، يخلق إحساس بالاندفاع والإلحاح. الأبيات تنساب لبعضها، وهذا يحاكي حركة القارب في الماء وفي نفس الوقت يحاكي طريقة تفيض فيها الذكريات والمشاعر فوق الحدود. أمثلة مهمّة: "my boat / Went heaving" و"my brain / Worked with a dim and undetermined sense".
+
+Caesura
+الـcaesura مستخدم في لحظات محورية عشان يخلق توقّفات تكسر التدفّق: "And troubled pleasure." تجبر القارئ يقف ويفكّر في الـoxymoron. و"Upreared its head." تخلق وقفة دراميّة كاملة في أوج لحظة الرعب.
+
+سرد بضمير المتكلّم مع نظرة استرجاعية
+القصيدة مكتوبة بضمير المتكلّم، يرجع للوراء على تجربة طفولة من منظور رجل كبير. هالازدواج في وجهة النظر يخلّي Wordsworth ينقل في نفس الوقت الإحساس المباشر للولد، والفهم الناضج للرجل وهو يتأمّل في معنى التجربة.
+
+Volta / نقطة التحوّل
+الـvolta يطلع تقريباً عند البيت 16 مع "When, from behind that craggy steep". المزاج ينقلب من الثقة والمتعة إلى الرهبة والرعب. البنية تحاكي رحلة: خروج (ثقة) ← مواجهة (sublime مرعب) ← رجوع (انسحاب) ← ما بعدها (تأمّل).
+
+مقطع شعري واحد متواصل
+المقطع كتلة واحدة من النص بدون فواصل بين الـstanzas، وهذا يعكس تدفّق الذاكرة بلا انقطاع، والطريقة اللي ابتلعت فيها التجربة وعي الولد بالكامل.`,
+
   keyQuotes: [
     {
       quote: 'One summer evening (led by her)',
       analysis:
         'Nature is personified as a guiding female figure. The parenthetical aside suggests this is something the adult narrator now understands -- that nature was leading him towards a formative experience.',
       themes: ['Power of nature', 'Memory', 'The sublime'],
+      analysisAr:
+        'الطبيعة تُجسَّد (personification) على هيئة شخصية أنثى تقود الولد. الجملة الاعتراضية بين القوسين توحي إن هذا شي يفهمه الراوي لمّا كبر — إن الطبيعة كانت تقوده نحو تجربة تكوينية تغيّره.',
+      themesAr: ['قوة الطبيعة', 'الذاكرة', 'الـsublime'],
     },
     {
       quote: 'lustily I dipped my oars',
       analysis:
         'The adverb "lustily" conveys youthful energy, physical confidence, and enthusiasm. The boy feels powerful and in control of his environment -- a confidence that will be dramatically overturned.',
       themes: ['Youth', 'Confidence', 'Growing up'],
+      analysisAr:
+        'الـadverb "lustily" ينقل طاقة شبابية وثقة جسدية وحماس. الولد يحسّ إنه قوي ومسيطر على المكان حواليه — وهي ثقة بتنقلب رأساً على عقب بشكل دراميّ.',
+      themesAr: ['الشباب', 'الثقة', 'النضوج'],
     },
     {
       quote: 'troubled pleasure',
       analysis:
         'This oxymoron captures the duality of the experience: excitement mixed with guilt about stealing the boat. It foreshadows the deeper "trouble" to come and suggests that transgression and growth are linked.',
       themes: ['Guilt', 'Growing up', 'The sublime'],
+      analysisAr:
+        'هذا الـoxymoron يلتقط ازدواجية التجربة: حماس مخلوط بشعور بالذنب على سرقة القارب. ويلمّح بـ"trouble" أعمق راح يجي قدّام، ويوحي إن التجاوز والنمو شيء واحد مربوط ببعض.',
+      themesAr: ['الذنب', 'النضوج', 'الـsublime'],
     },
     {
       quote: 'a huge peak, black and huge',
       analysis:
         'The repetition of "huge" emphasises the overwhelming scale of the mountain. "Black" adds menace and darkness. The inversion of the normal adjective order creates a sense of the mountain growing larger as the boy stares at it.',
       themes: ['Power of nature', 'The sublime', 'Fear'],
+      analysisAr:
+        'تكرار كلمة "huge" يأكّد على حجم الجبل الطاغي. وكلمة "black" تضيف خطر وظلمة. وقلب ترتيب الـadjectives عن المعتاد يخلق إحساس إن الجبل يكبر ويكبر كل ما الولد يطالعه.',
+      themesAr: ['قوة الطبيعة', 'الـsublime', 'الخوف'],
     },
     {
       quote: 'Upreared its head',
       analysis:
         'The mountain is personified as a creature rising up. "Upreared" suggests something rearing back, like a horse or serpent, giving the mountain animal-like threat. The mountain seems to assert its dominance over the boy.',
       themes: ['Power of nature', 'The sublime', 'Fear'],
+      analysisAr:
+        'الجبل يتجسّد (personification) كأنه مخلوق يقوم فجأة. كلمة "upreared" توحي بشي يتراجع للوراء ثم يهجم، مثل الحصان أو الثعبان، فتعطي الجبل تهديد شبيه بالحيوان. الجبل كأنه يفرض هيمنته على الولد.',
+      themesAr: ['قوة الطبيعة', 'الـsublime', 'الخوف'],
     },
     {
       quote: 'measured motion like a living thing',
       analysis:
         'The simile makes the mountain seem animate and purposeful. "Measured motion" suggests slow, deliberate pursuit -- the mountain is not chaotic but controlled and powerful, which makes it more terrifying.',
       themes: ['Power of nature', 'The sublime', 'Personification'],
+      analysisAr:
+        'الـsimile يخلّي الجبل يبيّن كأنه حي وله هدف. "Measured motion" توحي بمطاردة بطيئة محسوبة — الجبل مو فوضوي، هو منظّم وقوي، وهذا اللي يخلّيه أكثر رعب.',
+      themesAr: ['قوة الطبيعة', 'الـsublime', 'الـpersonification'],
     },
     {
       quote: 'unknown modes of being',
       analysis:
         'This abstract phrase suggests the boy has glimpsed something beyond human comprehension -- perhaps a spiritual or divine power within nature. The experience opens his mind to forces that cannot be rationally understood.',
       themes: ['The sublime', 'Spirituality', 'Growing up'],
+      analysisAr:
+        'هالعبارة المجرّدة توحي إن الولد لمح شي ما يقدر يفهمه عقل البشر — يمكن قوة روحية أو إلهية موجودة جوّا الطبيعة. التجربة تفتح ذهنه على قوى ما يقدر العقل يفسّرها.',
+      themesAr: ['الـsublime', 'الروحانية', 'النضوج'],
     },
     {
       quote: 'huge and mighty forms, that do not live / Like living men',
       analysis:
         'The final haunting image. The "forms" are not human but they move through his mind as if alive. Nature has permanently altered his consciousness -- it is no longer a backdrop but an active, overwhelming presence in his inner life.',
       themes: ['Power of nature', 'Memory', 'The sublime'],
+      analysisAr:
+        'الصورة الأخيرة المسكنة. الـ"forms" مو بشر، بس تتحرّك في ذهنه كأنها حيّة. الطبيعة غيّرت وعيه تغيير دائم — ما عادت مجرّد خلفية، صارت حضور فعّال وطاغي في حياته الداخلية.',
+      themesAr: ['قوة الطبيعة', 'الذاكرة', 'الـsublime'],
     },
     {
       quote: 'No familiar shapes / Remained',
       analysis:
         'The negation of everything familiar shows how completely the experience has transformed his perception. The comforting pastoral world has been replaced by something vast and unknowable.',
       themes: ['Loss of innocence', 'The sublime', 'Growing up'],
+      analysisAr:
+        'نفي كل شي مألوف يبيّن كيف غيّرت التجربة إدراكه بشكل كامل. العالم الريفي الهادي اللي كان يريحه انبدل بشي ضخم ومجهول ما يقدر يستوعبه.',
+      themesAr: ['فقد البراءة', 'الـsublime', 'النضوج'],
     },
   ],
 

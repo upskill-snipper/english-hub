@@ -136,58 +136,125 @@ const walkingAwayPoem: PoemData = {
   ],
   context:
     '<p><strong>C. Day-Lewis</strong> (1904\u20131972) was UK <strong>Poet Laureate from 1968 until his death in 1972</strong>. The poem was published in 1962 in <em>The Gate and Other Poems</em> and is dedicated to his eldest son <strong>Sean Day-Lewis</strong> (the journalist). The poem looks back \u2014 "eighteen years ago, almost to the day" \u2014 to a memory of watching young Sean walk away from his father at the start of a school football match.</p><p>(Note: this is <em>not</em> Daniel Day-Lewis the actor \u2014 Daniel was the poet\'s youngest son, born in 1957.)</p><p>Written eighteen years after the event, the poem explores the universal experience of a <strong>parent letting go</strong> of a child. The specific memory \u2014 a football match \u2014 becomes a metaphor for every moment a child steps further into independence.</p><p>The poem grapples with the <strong>paradox of parental love</strong>: that truly loving someone means allowing them to leave. This connects to broader themes of <strong>growing up</strong>, <strong>identity formation</strong>, and the <strong>pain of separation</strong> that is inherent in all loving relationships.</p><p>Day-Lewis wrote the poem in mature middle age, giving it the quality of <strong>mature reflection</strong> rather than immediate emotion. The distance of time allows him to articulate what he could not express in the moment.</p>',
+
+  contextAr:
+    '<p><strong>C. Day-Lewis</strong> (1904\u20131972) \u0643\u0627\u0646 <strong>\u0634\u0627\u0639\u0631 \u0628\u0631\u064a\u0637\u0627\u0646\u064a\u0627 \u0627\u0644\u0631\u0633\u0645\u064a (Poet Laureate) \u0645\u0646 \u0633\u0646\u0629 1968 \u0644\u064a\u0646 \u0648\u0641\u0627\u062a\u0647 \u0633\u0646\u0629 1972</strong>. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0637\u0644\u0639\u062a \u0633\u0646\u0629 1962 \u0641\u064a \u062f\u064a\u0648\u0627\u0646 <em>The Gate and Other Poems</em>\u060c \u0648\u0645\u0647\u062f\u0627\u0629 \u0644\u0648\u0644\u062f\u0647 \u0627\u0644\u0623\u0643\u0628\u0631 <strong>Sean Day-Lewis</strong> (\u0627\u0644\u0635\u062d\u0641\u064a). \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0631\u062c\u0639 \u0628\u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u2014 "eighteen years ago, almost to the day" \u2014 \u0644\u0630\u0643\u0631\u0649 \u0627\u0644\u0623\u0628 \u0648\u0647\u0648 \u064a\u062a\u0641\u0631\u0651\u062c \u0639\u0644\u0649 Sean \u0627\u0644\u0635\u063a\u064a\u0631 \u0644\u0645\u0651\u0627 \u0645\u0634\u0649 \u0639\u0646\u0647 \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0645\u0628\u0627\u0631\u0627\u0629 \u0643\u0631\u0629 \u0642\u062f\u0645 \u0645\u062f\u0631\u0633\u064a\u0629.</p><p>(\u0645\u0644\u0627\u062d\u0638\u0629: \u0647\u0630\u0627 <em>\u0645\u0648</em> Daniel Day-Lewis \u0627\u0644\u0645\u0645\u062b\u0651\u0644 \u2014 Daniel \u0647\u0648 \u0648\u0644\u062f \u0627\u0644\u0634\u0627\u0639\u0631 \u0627\u0644\u0623\u0635\u063a\u0631\u060c \u0645\u0648\u0627\u0644\u064a\u062f 1957.)</p><p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0643\u062a\u0648\u0628\u0629 \u0628\u0639\u062f 18 \u0633\u0646\u0629 \u0645\u0646 \u0627\u0644\u062d\u062f\u062b\u060c \u062a\u0633\u062a\u0643\u0634\u0641 \u062a\u062c\u0631\u0628\u0629 \u0625\u0646\u0633\u0627\u0646\u064a\u0629 \u064a\u0645\u0631 \u0641\u064a\u0647\u0627 \u0643\u0644 \u0623\u0628 \u0623\u0648 \u0623\u0645: <strong>\u0625\u0646 \u0627\u0644\u0648\u0627\u062d\u062f \u064a\u062e\u0644\u0651\u064a \u0648\u0644\u062f\u0647 \u064a\u0645\u0634\u064a</strong>. \u0627\u0644\u0630\u0643\u0631\u0649 \u0627\u0644\u0645\u062d\u062f\u0651\u062f\u0629 \u2014 \u0645\u0628\u0627\u0631\u0627\u0629 \u0643\u0631\u0629 \u0642\u062f\u0645 \u2014 \u062a\u062a\u062d\u0648\u0651\u0644 \u0644\u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0639\u0646 \u0643\u0644 \u0644\u062d\u0638\u0629 \u064a\u062e\u0637\u0648 \u0641\u064a\u0647\u0627 \u0627\u0644\u0639\u064a\u0627\u0644 \u062e\u0637\u0648\u0629 \u062c\u062f\u064a\u062f\u0629 \u0628\u0627\u062a\u062c\u0627\u0647 \u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644.</p><p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0635\u0627\u0631\u0639 <strong>\u0645\u0641\u0627\u0631\u0642\u0629 \u0627\u0644\u062d\u0628 \u0627\u0644\u0623\u0628\u0648\u064a</strong>: \u0625\u0646 \u0627\u0644\u0648\u0627\u062d\u062f \u0644\u0645\u0651\u0627 \u064a\u062d\u0628 \u0648\u0644\u062f\u0647 \u0641\u0639\u0644\u0627\u064b\u060c \u0644\u0627\u0632\u0645 \u064a\u062e\u0644\u0651\u064a\u0647 \u064a\u0645\u0634\u064a. \u0648\u0647\u0630\u0627 \u064a\u0631\u0628\u0637 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u0645\u0648\u0627\u0636\u064a\u0639 \u0623\u0648\u0633\u0639: <strong>\u0627\u0644\u0643\u0628\u0631</strong>\u060c \u0648<strong>\u062a\u0643\u0648\u064a\u0646 \u0627\u0644\u0647\u0648\u064a\u0629</strong>\u060c \u0648<strong>\u0623\u0644\u0645 \u0627\u0644\u0641\u0631\u0627\u0642</strong> \u0627\u0644\u0644\u064a \u0645\u0627 \u064a\u0637\u0644\u0639 \u0645\u0646\u0647 \u0623\u064a \u0639\u0644\u0627\u0642\u0629 \u0645\u062d\u0628\u0651\u0629.</p><p>Day-Lewis \u0643\u062a\u0628 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0648\u0647\u0648 \u0641\u064a \u0645\u0646\u062a\u0635\u0641 \u0627\u0644\u0639\u0645\u0631 \u0627\u0644\u0646\u0627\u0636\u062c\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0637\u064a\u0647\u0627 \u0637\u0627\u0628\u0639 <strong>\u062a\u0623\u0645\u0651\u0644 \u0646\u0627\u0636\u062c</strong> \u0623\u0643\u062b\u0631 \u0645\u0646 \u0631\u062f\u0629 \u0641\u0639\u0644 \u0644\u062d\u0638\u064a\u0651\u0629. \u0628\u064f\u0639\u062f \u0627\u0644\u0648\u0642\u062a \u0633\u0645\u062d \u0644\u0647 \u064a\u0635\u064a\u063a \u0645\u0627 \u0639\u062c\u0632 \u064a\u0642\u0648\u0644\u0647 \u0641\u064a \u062a\u0644\u0643 \u0627\u0644\u0644\u062d\u0638\u0629.</p>',
+
   summary:
     "The speaker recalls watching his young son walk away to play his first football match eighteen years ago. He remembers the physical wrench of separation as the child moved into the world independently for the first time. Using metaphors of satellites and fledgling birds, he captures the child's vulnerability and his own helplessness. In the final stanza, the father reflects that although he has experienced worse partings since, this one still haunts him because it represents the fundamental truth that love requires letting go.",
+
+  summaryAr:
+    '\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 (\u0627\u0644\u0623\u0628) \u064a\u062a\u0630\u0643\u0651\u0631 \u0625\u0646\u0647 \u0642\u0628\u0644 18 \u0633\u0646\u0629 \u0634\u0627\u0641 \u0648\u0644\u062f\u0647 \u0627\u0644\u0635\u063a\u064a\u0631 \u0648\u0647\u0648 \u064a\u0645\u0634\u064a \u0639\u0646\u0647 \u0639\u0634\u0627\u0646 \u064a\u0644\u0639\u0628 \u0623\u0648\u0644 \u0645\u0628\u0627\u0631\u0627\u0629 \u0643\u0631\u0629 \u0642\u062f\u0645 \u0641\u064a \u062d\u064a\u0627\u062a\u0647. \u064a\u0630\u0643\u0631 \u0627\u0644\u0623\u0644\u0645 \u0627\u0644\u062c\u0633\u062f\u064a \u0644\u0644\u0641\u0631\u0627\u0642 \u0644\u0645\u0651\u0627 \u0627\u0644\u0648\u0644\u062f \u062e\u0637\u0649 \u0644\u0644\u0639\u0627\u0644\u0645 \u0627\u0644\u062e\u0627\u0631\u062c\u064a \u0628\u0634\u0643\u0644 \u0645\u0633\u062a\u0642\u0644 \u0644\u0623\u0648\u0644 \u0645\u0631\u0651\u0629. \u0639\u0646 \u0637\u0631\u064a\u0642 \u0627\u0633\u062a\u0639\u0627\u0631\u0627\u062a \u0627\u0644\u0640satellite \u0648\u0627\u0644\u0637\u064a\u0648\u0631 \u0627\u0644\u0635\u063a\u064a\u0631\u0629 (fledgling)\u060c \u0627\u0644\u0623\u0628 \u064a\u0635\u0648\u0651\u0631 \u0647\u0634\u0627\u0634\u0629 \u0627\u0644\u0648\u0644\u062f \u0648\u0639\u062c\u0632 \u0627\u0644\u0623\u0628 \u0646\u0641\u0633\u0647. \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0623\u062e\u064a\u0631\u060c \u0627\u0644\u0623\u0628 \u064a\u062a\u0623\u0645\u0651\u0644 \u0625\u0646\u0647 \u0639\u0627\u0634 \u0641\u0631\u0627\u0642\u0627\u062a \u0623\u0635\u0639\u0628 \u0628\u0639\u062f \u0630\u064a\u0643 \u0627\u0644\u0633\u0646\u0629\u060c \u0628\u0633 \u0647\u0630\u0627 \u0627\u0644\u0641\u0631\u0627\u0642 \u0627\u0644\u0635\u063a\u064a\u0631 \u0647\u0648 \u0627\u0644\u0644\u064a \u0644\u064a\u0646 \u0627\u0644\u062d\u064a\u0646 \u064a\u0644\u0627\u062d\u0642\u0647\u060c \u0644\u0623\u0646\u0647 \u064a\u0645\u062b\u0651\u0644 \u0627\u0644\u062d\u0642\u064a\u0642\u0629 \u0627\u0644\u062c\u0648\u0647\u0631\u064a\u0651\u0629: \u0625\u0646 \u0627\u0644\u062d\u0628 \u064a\u0642\u062a\u0636\u064a \u0625\u0646 \u0627\u0644\u0648\u0627\u062d\u062f \u064a\u062e\u0644\u0651\u064a.',
+
   formAndStructure:
     'Form: Five quintains (five-line stanzas) with a loose ABACA rhyme scheme, giving the poem a gentle, reflective rhythm without rigidity.\n\nStructure: Chronological movement from past memory (stanzas 1\u20133) to present reflection (stanzas 4\u20135), mirroring the process of understanding that comes with time.\n\nRhyme: Partial, imperfect rhymes reflect the imperfect, painful nature of the separation being described.\n\nTense: Shifts from past ("I watched") to present ("I can see now"), enacting the movement from experience to understanding.\n\nEnjambment: Lines frequently run on, particularly across stanza breaks, mirroring the continuous, unresolved nature of parental anxiety.\n\nTone: Reflective and measured, with an undertone of persistent grief. The calm surface conceals deep emotional pain.',
+
+  formAndStructureAr:
+    'Form (\u0627\u0644\u0634\u0643\u0644): \u062e\u0645\u0633 \u0645\u0642\u0627\u0637\u0639\u060c \u0643\u0644 \u0645\u0642\u0637\u0639 quintain (\u062e\u0645\u0633\u0629 \u0623\u0628\u064a\u0627\u062a)\u060c \u0628\u0646\u0638\u0627\u0645 \u0642\u0627\u0641\u064a\u0629 \u0645\u0631\u0646 ABACA\u060c \u064a\u0639\u0637\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0625\u064a\u0642\u0627\u0639 \u0644\u0637\u064a\u0641 \u0648\u062a\u0623\u0645\u0651\u0644\u064a \u0628\u062f\u0648\u0646 \u062a\u0635\u0644\u0651\u0628.\n\n\u0627\u0644\u0628\u0646\u064a\u0629: \u062d\u0631\u0643\u0629 \u0632\u0645\u0646\u064a\u0629 \u0645\u062a\u0633\u0644\u0633\u0644\u0629 \u0645\u0646 \u0630\u0643\u0631\u0649 \u0627\u0644\u0645\u0627\u0636\u064a (\u0627\u0644\u0645\u0642\u0627\u0637\u0639 1\u20133) \u0644\u062a\u0623\u0645\u0651\u0644 \u0627\u0644\u062d\u0627\u0636\u0631 (\u0627\u0644\u0645\u0642\u0627\u0637\u0639 4\u20135)\u060c \u062a\u0639\u0643\u0633 \u0639\u0645\u0644\u064a\u0629 \u0627\u0644\u0641\u0647\u0645 \u0627\u0644\u0644\u064a \u062a\u064a\u064a\u064a \u0645\u0639 \u0627\u0644\u0648\u0642\u062a.\n\n\u0627\u0644\u0642\u0627\u0641\u064a\u0629 (Rhyme): \u0642\u0648\u0627\u0641\u064a \u062c\u0632\u0626\u064a\u0629 \u0648\u063a\u064a\u0631 \u062a\u0627\u0645\u0651\u0629 (half-rhyme)\u060c \u062a\u0639\u0643\u0633 \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u0646\u0627\u0642\u0635\u0629 \u0648\u0627\u0644\u0645\u0624\u0644\u0645\u0629 \u0644\u0644\u0641\u0631\u0627\u0642 \u0627\u0644\u0644\u064a \u062a\u0648\u0635\u0641\u0647 \u0627\u0644\u0642\u0635\u064a\u062f\u0629.\n\n\u0627\u0644\u0632\u0645\u0646 (Tense): \u064a\u062a\u0646\u0642\u0651\u0644 \u0645\u0646 \u0627\u0644\u0645\u0627\u0636\u064a ("I watched") \u0644\u0644\u062d\u0627\u0636\u0631 ("I can see now")\u060c \u0648\u0647\u0630\u0627 \u0627\u0644\u0627\u0646\u062a\u0642\u0627\u0644 \u064a\u062c\u0633\u0651\u062f \u0627\u0644\u062d\u0631\u0643\u0629 \u0645\u0646 \u0627\u0644\u062a\u062c\u0631\u0628\u0629 \u0644\u0644\u0641\u0647\u0645.\n\nEnjambment: \u0627\u0644\u0623\u0628\u064a\u0627\u062a \u062a\u0646\u0633\u0627\u0628 \u0644\u0628\u0639\u0636\u0647\u0627 \u0628\u0634\u0643\u0644 \u0645\u062a\u0643\u0631\u0651\u0631\u060c \u062e\u0635\u0648\u0635\u0627\u064b \u0639\u0628\u0631 \u0641\u0648\u0627\u0635\u0644 \u0627\u0644\u0645\u0642\u0627\u0637\u0639\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0643\u0633 \u0627\u0644\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u0645\u062a\u0648\u0627\u0635\u0644\u0629 \u0648\u063a\u064a\u0631 \u0627\u0644\u0645\u062d\u0644\u0648\u0644\u0629 \u0644\u0642\u0644\u0642 \u0627\u0644\u0623\u0628\u0648\u0651\u0629.\n\n\u0627\u0644\u0646\u0628\u0631\u0629 (Tone): \u062a\u0623\u0645\u0651\u0644\u064a\u0629 \u0648\u0645\u062a\u0632\u0646\u0629\u060c \u0645\u0639 \u0637\u0628\u0642\u0629 \u0645\u0633\u062a\u062a\u0631\u0629 \u0645\u0646 \u062d\u0632\u0646 \u062f\u0627\u0626\u0645. \u0627\u0644\u0633\u0637\u062d \u0627\u0644\u0647\u0627\u062f\u0626 \u064a\u062e\u0641\u064a \u0623\u0644\u0645 \u0646\u0641\u0633\u064a \u0639\u0645\u064a\u0642.',
   keyQuotes: [
     {
       quote: 'It is eighteen years ago, almost to the day',
       analysis:
         'The precision shows this memory has been relived repeatedly. "Almost to the day" suggests an unwilled anniversary \u2014 the pain returns annually.',
       themes: ['Memory', 'Time', 'Loss'],
+      analysisAr:
+        '\u0627\u0644\u062f\u0642\u0651\u0629 \u0641\u064a \u0627\u0644\u062a\u0627\u0631\u064a\u062e \u062a\u0628\u064a\u0651\u0646 \u0625\u0646 \u0627\u0644\u0630\u0643\u0631\u0649 \u0627\u0646\u0639\u0627\u0634\u062a \u0641\u064a \u0628\u0627\u0644\u0647 \u0645\u0631\u0651\u0629 \u0628\u0639\u062f \u0645\u0631\u0651\u0629. \u0639\u0628\u0627\u0631\u0629 "almost to the day" \u062a\u0644\u0645\u0651\u062d \u0628\u0630\u0643\u0631\u0649 \u0633\u0646\u0648\u064a\u0651\u0629 \u0645\u0627 \u064a\u0642\u062f\u0631 \u0627\u0644\u0623\u0628 \u064a\u062a\u062d\u0643\u0651\u0645 \u0641\u064a\u0647\u0627 \u2014 \u0627\u0644\u0623\u0644\u0645 \u064a\u0631\u062c\u0639\u0644\u0647 \u0643\u0644 \u0633\u0646\u0629.',
+      themesAr: [
+        '\u0627\u0644\u0630\u0643\u0631\u0649',
+        '\u0627\u0644\u0648\u0642\u062a',
+        '\u0627\u0644\u0641\u0642\u062f',
+      ],
     },
     {
       quote: 'my heart went with you as you walked away',
       analysis:
         "The father's heart literally departing with the child is both metaphor and felt truth. It establishes that separation is a form of physical loss.",
       themes: ['Parental love', 'Separation', 'Pain'],
+      analysisAr:
+        '\u0642\u0644\u0628 \u0627\u0644\u0623\u0628 \u0627\u0644\u0644\u064a \u064a\u0645\u0634\u064a \u062d\u0631\u0641\u064a\u0627\u064b \u0645\u0639 \u0648\u0644\u062f\u0647 \u0647\u0648 \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a \u0627\u0633\u062a\u0639\u0627\u0631\u0629 \u0648\u062d\u0642\u064a\u0642\u0629 \u0645\u062d\u0633\u0648\u0633\u0629. \u0648\u0647\u0630\u0627 \u0627\u0644\u062a\u0635\u0648\u064a\u0631 \u064a\u062b\u0628\u0651\u062a \u0625\u0646 \u0627\u0644\u0641\u0631\u0627\u0642 \u0646\u0648\u0639 \u0645\u0646 \u0627\u0644\u0641\u0642\u062f \u0627\u0644\u062c\u0633\u062f\u064a.',
+      themesAr: [
+        '\u0627\u0644\u062d\u0628 \u0627\u0644\u0623\u0628\u0648\u064a',
+        '\u0627\u0644\u0641\u0631\u0627\u0642',
+        '\u0627\u0644\u0623\u0644\u0645',
+      ],
     },
     {
       quote: 'Like a satellite wrenched from its orbit',
       analysis:
         'The cosmic simile elevates a small domestic moment to universal significance. "Wrenched" conveys violence and pain \u2014 this separation is not gentle.',
       themes: ['Separation', 'Pain', 'Growing up'],
+      analysisAr:
+        '\u0627\u0644\u0640simile \u0627\u0644\u0643\u0648\u0646\u064a \u064a\u0631\u0641\u0639 \u0644\u062d\u0638\u0629 \u0645\u0646\u0632\u0644\u064a\u0651\u0629 \u0635\u063a\u064a\u0631\u0629 \u0644\u0645\u0633\u062a\u0648\u0649 \u0645\u0639\u0646\u0649 \u0643\u0648\u0646\u064a \u0648\u0639\u0627\u0645. \u0643\u0644\u0645\u0629 "wrenched" \u062a\u0646\u0642\u0644 \u0627\u0644\u0639\u0646\u0641 \u0648\u0627\u0644\u0623\u0644\u0645 \u2014 \u0647\u0630\u0627 \u0627\u0644\u0641\u0631\u0627\u0642 \u0645\u0648 \u0641\u0631\u0627\u0642 \u0644\u0637\u064a\u0641.',
+      themesAr: [
+        '\u0627\u0644\u0641\u0631\u0627\u0642',
+        '\u0627\u0644\u0623\u0644\u0645',
+        '\u0627\u0644\u0643\u0628\u0631',
+      ],
     },
     {
       quote: 'Half-fledged, half-knowing',
       analysis:
         'Bird imagery presents the child as not yet ready to fly independently. The repetition of "half" emphasises incompleteness and vulnerability.',
       themes: ['Vulnerability', 'Growing up', 'Protection'],
+      analysisAr:
+        '\u0635\u0648\u0631 \u0627\u0644\u0637\u064a\u0648\u0631 \u062a\u0642\u062f\u0651\u0645 \u0627\u0644\u0648\u0644\u062f \u0639\u0644\u0649 \u0625\u0646\u0647 \u0644\u064a\u0646 \u0627\u0644\u062d\u064a\u0646 \u0645\u0627 \u0647\u0648 \u062c\u0627\u0647\u0632 \u064a\u0637\u064a\u0631 \u0644\u062d\u0627\u0644\u0647. \u0648\u062a\u0643\u0631\u0627\u0631 \u0643\u0644\u0645\u0629 "half" \u064a\u0623\u0643\u0651\u062f \u0639\u0644\u0649 \u0646\u0642\u0635 \u0627\u0644\u0646\u0636\u062c \u0648\u0639\u0644\u0649 \u0627\u0644\u0647\u0634\u0627\u0634\u0629.',
+      themesAr: [
+        '\u0627\u0644\u0647\u0634\u0627\u0634\u0629',
+        '\u0627\u0644\u0643\u0628\u0631',
+        '\u0627\u0644\u062d\u0645\u0627\u064a\u0629',
+      ],
     },
     {
       quote: 'I have had worse partings',
       analysis:
         'This understated acknowledgement makes the final revelation more powerful \u2014 that this small parting haunts him most of all.',
       themes: ['Loss', 'Memory', 'Perspective'],
+      analysisAr:
+        '\u0647\u0630\u0627 \u0627\u0644\u0627\u0639\u062a\u0631\u0627\u0641 \u0627\u0644\u0645\u062a\u062d\u0641\u0651\u0638 (understatement) \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0643\u0634\u0641 \u0627\u0644\u0623\u062e\u064a\u0631 \u0623\u0642\u0648\u0649 \u0628\u0643\u062b\u064a\u0631 \u2014 \u0625\u0646 \u0647\u0630\u0627 \u0627\u0644\u0641\u0631\u0627\u0642 \u0627\u0644\u0635\u063a\u064a\u0631 \u0647\u0648 \u0627\u0644\u0644\u064a \u064a\u0644\u0627\u062d\u0642 \u0627\u0644\u0623\u0628 \u0623\u0643\u062b\u0631 \u0645\u0646 \u063a\u064a\u0631\u0647.',
+      themesAr: [
+        '\u0627\u0644\u0641\u0642\u062f',
+        '\u0627\u0644\u0630\u0643\u0631\u0649',
+        '\u0627\u0644\u0645\u0646\u0638\u0648\u0631',
+      ],
     },
     {
       quote: 'Gnaws at my mind still',
       analysis:
         'The verb "gnaws" is visceral and animalistic, suggesting the memory is a persistent, consuming pain that erodes him from within.',
       themes: ['Memory', 'Pain', 'Persistence'],
+      analysisAr:
+        '\u0627\u0644\u0641\u0639\u0644 "gnaws" \u062d\u0633\u0651\u064a \u0648\u062d\u064a\u0648\u0627\u0646\u064a\u060c \u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0630\u0643\u0631\u0649 \u0623\u0644\u0645 \u0645\u0633\u062a\u0645\u0631 \u064a\u0642\u0636\u0645 \u0627\u0644\u0623\u0628 \u0645\u0646 \u062c\u0648\u0651\u0627\u0647 \u0648\u064a\u0633\u062a\u0646\u0632\u0641\u0647 \u0639\u0644\u0649 \u0645\u0631\u0651 \u0627\u0644\u0633\u0646\u064a\u0646.',
+      themesAr: [
+        '\u0627\u0644\u0630\u0643\u0631\u0649',
+        '\u0627\u0644\u0623\u0644\u0645',
+        '\u0627\u0644\u0627\u0633\u062a\u0645\u0631\u0627\u0631',
+      ],
     },
     {
       quote: 'selfhood begins with a walking away',
       analysis:
         'The child must separate from the parent to become an individual. Identity requires independence, which requires distance.',
       themes: ['Identity', 'Independence', 'Growing up'],
+      analysisAr:
+        '\u0627\u0644\u0648\u0644\u062f \u0644\u0627\u0632\u0645 \u064a\u0646\u0641\u0635\u0644 \u0639\u0646 \u0623\u0628\u0648\u0647 \u0639\u0634\u0627\u0646 \u064a\u0635\u064a\u0631 \u0625\u0646\u0633\u0627\u0646 \u0645\u0633\u062a\u0642\u0644 \u0628\u0630\u0627\u062a\u0647. \u0627\u0644\u0647\u0648\u064a\u0629 \u062a\u062a\u0637\u0644\u0651\u0628 \u0627\u0633\u062a\u0642\u0644\u0627\u0644\u060c \u0648\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644 \u064a\u062a\u0637\u0644\u0651\u0628 \u0645\u0633\u0627\u0641\u0629.',
+      themesAr: [
+        '\u0627\u0644\u0647\u0648\u064a\u0629',
+        '\u0627\u0644\u0627\u0633\u062a\u0642\u0644\u0627\u0644',
+        '\u0627\u0644\u0643\u0628\u0631',
+      ],
     },
     {
       quote: 'love is proved in the letting go',
       analysis:
         'The poem\'s concluding aphorism: real love is demonstrated not by holding on but by releasing. "Proved" means both tested and demonstrated.',
       themes: ['Love', 'Sacrifice', 'Parental love'],
+      analysisAr:
+        '\u0627\u0644\u062d\u0643\u0645\u0629 \u0627\u0644\u062e\u062a\u0627\u0645\u064a\u0651\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629: \u0627\u0644\u062d\u0628 \u0627\u0644\u062d\u0642\u064a\u0642\u064a \u0645\u0627 \u064a\u062b\u0628\u062a \u0628\u0627\u0644\u062a\u0645\u0633\u0651\u0643\u060c \u064a\u062b\u0628\u062a \u0628\u0627\u0644\u062a\u062e\u0644\u064a\u0629. \u0643\u0644\u0645\u0629 "proved" \u062a\u062d\u0645\u0644 \u0645\u0639\u0646\u064a\u064a\u0646: "\u064a\u064f\u062e\u062a\u0628\u0631" \u0648"\u064a\u064f\u0628\u0631\u0647\u0646".',
+      themesAr: [
+        '\u0627\u0644\u062d\u0628',
+        '\u0627\u0644\u062a\u0636\u062d\u064a\u0629',
+        '\u0627\u0644\u062d\u0628 \u0627\u0644\u0623\u0628\u0648\u064a',
+      ],
     },
   ],
   languageDevices: [
@@ -197,6 +264,8 @@ const walkingAwayPoem: PoemData = {
       effect:
         'The cosmic comparison elevates a personal moment to universal significance. "Wrenched" conveys the violence of separation, while "orbit" implies the child was once held in the parent\'s gravitational pull.',
       lineRef: 11,
+      effectAr:
+        'المقارنة الكونية ترفع لحظة شخصية لمستوى معنى عام وكوني. كلمة "wrenched" تنقل عنف الفراق، بينما "orbit" تلمّح إن الولد كان أصلاً ممسوك بجاذبية أبوه.',
     },
     {
       device: 'Metaphor',
@@ -204,6 +273,8 @@ const walkingAwayPoem: PoemData = {
       effect:
         "Bird imagery presents the child as a young bird not yet ready to fly, emphasising vulnerability and the parent's anxiety about whether they can survive independently.",
       lineRef: 12,
+      effectAr:
+        'صور الطيور تقدّم الولد كأنه طير صغير لين الحين ما هو جاهز يطير، وتأكّد على هشاشته وعلى قلق الأب: هل ولده يقدر يعيش بدونه؟',
     },
     {
       device: 'Sensory language',
@@ -211,6 +282,8 @@ const walkingAwayPoem: PoemData = {
       effect:
         'The visceral, animalistic verb "gnaws" makes the abstract concept of memory physically painful, suggesting persistent, consuming grief.',
       lineRef: 18,
+      effectAr:
+        'الفعل الحسّي والحيواني "gnaws" يحوّل المفهوم المجرّد (الذكرى) إلى ألم مادي محسوس، ويلمّح بحزن مستمر يقضم الأب من جوّاه.',
     },
     {
       device: 'Aphorism',
@@ -218,6 +291,8 @@ const walkingAwayPoem: PoemData = {
       effect:
         "The final line condenses the poem's meaning into a memorable, universal statement. Its simplicity and balance give it proverbial authority.",
       lineRef: 22,
+      effectAr:
+        'البيت الأخير يكثّف معنى القصيدة في عبارة عامّة لافتة. بساطته وتوازنه يعطونه سلطة الحكمة الشعبيّة (proverbial authority).',
     },
     {
       device: 'Enjambment',
@@ -225,6 +300,8 @@ const walkingAwayPoem: PoemData = {
       effect:
         'The line break isolates "Gnaws" at the start of the line, giving it greater impact and enacting the way the memory catches him unexpectedly.',
       lineRef: 17,
+      effectAr:
+        'كسر البيت يعزل كلمة "Gnaws" في بداية السطر الجديد، فيعطيها وقع أقوى ويجسّد كيف إن الذكرى تباغت الأب بدون مقدّمات.',
     },
     {
       device: 'Religious allusion',
@@ -232,6 +309,8 @@ const walkingAwayPoem: PoemData = {
       effect:
         'Elevates parental love to something divine and beyond full human expression, suggesting the letting-go is a sacred, almost spiritual act.',
       lineRef: 20,
+      effectAr:
+        'يرفع الحب الأبوي لمنزلة قريبة من الإلهي، وأكبر من قدرة اللغة البشريّة على التعبير عنه. ويلمّح إن فعل التخلية فعل مقدّس، قريب من الروحي.',
     },
     {
       device: 'Pathetic fallacy',
@@ -239,6 +318,8 @@ const walkingAwayPoem: PoemData = {
       effect:
         'The autumn setting mirrors the transition from childhood to independence. "Just turning" parallels the child who is just beginning to change.',
       lineRef: 1,
+      effectAr:
+        'مشهد الخريف يعكس الانتقال من الطفولة للاستقلال. عبارة "just turning" (الورق توّه يتغيّر لونه) توازي حالة الولد اللي توّه يبدأ يتغيّر.',
     },
   ],
 }

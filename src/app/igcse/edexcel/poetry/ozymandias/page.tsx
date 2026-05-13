@@ -273,42 +273,63 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       analysis:
         'The statue is introduced through what is missing — the body has gone, only the legs remain. "Trunkless" is a striking, almost grotesque adjective: monumental power reduced to a pair of shins in the sand. Shelley begins with absence rather than presence, and the absence is the real subject of the poem.',
       themes: ['Power', 'Decay', 'Imagery'],
+      analysisAr:
+        'يُقدَّم التمثالُ عبر ما هو غائبٌ منه — الجسد قد ذهب، ولم يبقَ إلّا الساقان. وصفةُ "trunkless" لافتةٌ تكاد تكون بشعة: عظمةٌ صارت ساقَيْن في الرمل. يبدأ Shelley بالغياب لا بالحضور، والغياب هو الموضوع الحقيقيّ للقصيدة.',
+      themesAr: ['السلطة', 'الفناء', 'الصورة'],
     },
     {
       quote: 'a shattered visage lies, whose frown, / And wrinkled lip, and sneer of cold command',
       analysis:
         'The pharaoh\'s face is broken but his contempt is still legible. The triadic list — "frown… wrinkled lip… sneer" — piles up signs of hostility. "Cold command" with its hard consonants gives the king a chilly, military authority. The face rules even after the kingdom has vanished.',
       themes: ['Tyranny', 'Power', 'Pride'],
+      analysisAr:
+        'وجهُ الفرعون مُحطَّم، لكنّ ازدراءه ما زال يُقرأ. القائمةُ الثلاثيّة — "frown… wrinkled lip… sneer" — تكدّس علاماتِ العداء. وعبارة "cold command" بصوامتها الصلبة تمنح الملكَ سلطةً عسكريّةً باردة. الوجهُ يحكم حتى بعد أن اختفت المملكة.',
+      themesAr: ['الطغيان', 'السلطة', 'الكِبر'],
     },
     {
       quote: 'The hand that mocked them and the heart that fed',
       analysis:
         '"Mocked" carries a brilliant double meaning: the sculptor\'s hand both mimicked (reproduced) and ridiculed (mocked) the king\'s passions. Either way, the artist outlives the ruler. The "heart that fed" is the king\'s — he kept his cruelties alive — but it is now silent, while the sculptor\'s work still speaks.',
       themes: ['Art vs. power', 'Pride', 'Time'],
+      analysisAr:
+        'لفظة "mocked" تحمل معنىً مزدوجاً بارعاً: يدُ النحّات حاكتْ (نسخت) ولكنّها سخرت أيضاً من شَهَوات الملك. وعلى المعنيين يبقى الفنّان بعد الحاكم. أمّا "heart that fed" فقلب الملك — أبقى قسوتَه حيّة — لكنّه الآن صامت، فيما عملُ النحّات ما زال يتكلّم.',
+      themesAr: ['الفنّ في مقابل السلطة', 'الكِبر', 'الزمن'],
     },
     {
       quote: 'My name is Ozymandias, king of kings',
       analysis:
         'The pharaoh introduces himself with biblical grandeur — "king of kings" is a phrase used of Christ in Revelation and of imperial monarchs in the Old Testament. Ozymandias claims the highest possible status. The reader, looking at the rubble, feels the size of the gap between his claim and the reality.',
       themes: ['Hubris', 'Authority', 'Empire'],
+      analysisAr:
+        'يُقدّم الفرعون نفسه بفخامةٍ كتابيّة — "king of kings" عبارةٌ تُستعمل عن المسيح في Revelation وعن الأباطرة في العهد القديم. يدّعي Ozymandias المنزلةَ الأعلى. أمّا القارئ، وهو ينظر إلى الأنقاض، فيُحسّ بحجم الهوّة بين الادّعاء والواقع.',
+      themesAr: ['الكِبر', 'السلطة', 'الإمبراطوريّة'],
     },
     {
       quote: 'Look on my Works, ye Mighty, and despair!',
       analysis:
         'The most-quoted line in the poem and the climax of the king\'s boast. He commands rival rulers ("ye Mighty") to despair at what he has built. The cruel irony is that the only "Works" remaining are two trunkless legs and a half-buried face — so the line tells the truth, but not the truth Ozymandias intended. (The Edexcel anthology Issue 2 reads "Look on my Works", not the more common "Look upon my works".)',
       themes: ['Hubris', 'Irony', 'Tyranny'],
+      analysisAr:
+        'أكثر سطور القصيدة تداولاً، وذروةُ تفاخر الملك. يأمر الحكّامَ المنافسين ("ye Mighty") بأن يفقدوا الأمل أمام ما بناه. والمفارقةُ القاسية أنّ الـ"Works" الباقية لا تتجاوز ساقَيْن بلا جذع ووجهاً نصف مدفون — فالسطر يقول الحقيقة، لكن ليست الحقيقة التي قصدها Ozymandias. (تطبع نسخةُ Edexcel anthology Issue 2 "Look on my Works"، لا "Look upon my works" الأشهرَ شيوعاً.)',
+      themesAr: ['الكِبر', 'المفارقة', 'الطغيان'],
     },
     {
       quote: 'Nothing beside remains',
       analysis:
         'The volta of the sonnet, and one of the most devastating short sentences in English poetry. Three words and a full stop. The previous 11 lines have built up the king; the next three will dissolve him into desert. The bareness of the phrase enacts what it describes.',
       themes: ['Decay', 'Time', 'Mortality'],
+      analysisAr:
+        'الـ volta في السونيتة، ومن أشدّ الجمل القصيرة وقعاً في الشعر الإنجليزيّ. ثلاثُ كلماتٍ ونقطة. الأسطرُ الإحدى عشرة السابقة بَنَتْ الملك؛ والثلاثةُ التالية ستذيبه في الصحراء. والعُريُ في العبارة يُجسّد ما تصفه.',
+      themesAr: ['الفناء', 'الزمن', 'الموت'],
     },
     {
       quote: 'The lone and level sands stretch far away',
       analysis:
         'The closing line. Alliteration ("lone… level… sands… stretch") and long vowels make the line itself stretch out, as if the desert continues past the page. Nothing remains of the empire except endless, indifferent sand. The poem refuses a moral — it just leaves the reader in the silence.',
       themes: ['Time', 'Indifference of nature', 'Empire'],
+      analysisAr:
+        'السطر الختاميّ. الجناسُ ("lone… level… sands… stretch") والصوائتُ الممدودة تجعل السطر نفسَه يتمدّد، كأنّ الصحراء تتجاوز حدود الصفحة. لم يبقَ من الإمبراطوريّة إلّا رملٌ لا نهاية له لا يكترث. تأبى القصيدة أن تُلقي درساً أخلاقيّاً — تترك القارئ في الصمت.',
+      themesAr: ['الزمن', 'لامبالاة الطبيعة', 'الإمبراطوريّة'],
     },
   ],
 
@@ -319,6 +340,8 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       effect:
         "Shelley pushes the king several voices away from us. The poem is the speaker quoting a traveller quoting a statue's inscription. Each frame increases the distance, making Ozymandias feel small and remote — a ruler who needs three layers of reporting before he can be heard.",
       lineRef: 1,
+      effectAr:
+        'يُبعد Shelley الملكَ عنّا بأصواتٍ عدّة. القصيدةُ متكلّمٌ يقتبس عن رحّالةٍ يقتبس عن نقشٍ على تمثال. كلُّ طبقةٍ تزيد المسافة، وتجعل Ozymandias يبدو صغيراً قَصيّاً — حاكمٌ يحتاج إلى ثلاث طبقاتٍ من النقل قبل أن يُسمَع صوته.',
     },
     {
       device: 'Caesura',
@@ -326,6 +349,8 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       effect:
         'The full stop in the middle of line 3 breaks the line into separate fragments — like the statue itself. Throughout the poem, Shelley uses mid-line pauses to mimic the rubble: each phrase isolated, as if scattered across the desert.',
       lineRef: 3,
+      effectAr:
+        'النقطةُ في وسط السطر الثالث تُكسّر السطر إلى شظايا منفصلة — كالتمثال نفسه. وعلى امتداد القصيدة يستعمل Shelley وقفاتٍ في وسط السطر تحاكي الأنقاض: كلّ عبارةٍ معزولة، كأنّها مبعثرة في الصحراء.',
     },
     {
       device: 'Triadic list',
@@ -333,6 +358,8 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       effect:
         'A three-part list of facial features, each one hostile. The cumulative effect is a face composed entirely of contempt. Shelley denies us a single human expression on the king — only the residue of his anger.',
       lineRef: 5,
+      effectAr:
+        'قائمةٌ ثلاثيّة من ملامح الوجه، كلّها عدوانيّ. أثرُها التراكميّ وجهٌ مصنوعٌ بالكامل من الازدراء. يحرمنا Shelley من تعبيرٍ إنسانيٍّ واحدٍ على الملك — لا يبقى إلّا أثرُ غضبه.',
     },
     {
       device: 'Pun (mocked)',
@@ -340,6 +367,8 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       effect:
         '"Mocked" means both "imitated" and "ridiculed". The sculptor\'s hand reproduced the king\'s passions, but in doing so it also exposed them. Shelley quietly hands the victory to the artist: the sculptor outlives the tyrant.',
       lineRef: 8,
+      effectAr:
+        'لفظة "mocked" تعني "حاكى" و"سخر" معاً. يدُ النحّات نسخت شَهَوات الملك، وبفعل النسخ كشفتها. يُسلّم Shelley النصرَ هادئاً للفنّان: النحّات يبقى بعد الطاغية.',
     },
     {
       device: 'Dramatic irony',
@@ -347,6 +376,8 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       effect:
         "Ozymandias's boast comes true in the opposite way to what he meant. He intended other kings to despair at his power; instead, every reader despairs at the inevitability of all empires falling. The line works against itself.",
       lineRef: 11,
+      effectAr:
+        'تتحقّق مفاخرةُ Ozymandias على النقيض ممّا قصد. أرادها أن تجعل الملوكَ الآخرين ييأسون من سلطته؛ فإذا بكلّ قارئٍ ييأس من حتميّة سقوط كلّ الإمبراطوريّات. السطر يعمل ضدّ نفسه.',
     },
     {
       device: 'Volta',
@@ -354,6 +385,8 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       effect:
         "The classic sonnet turn arrives at line 12 in three flat words. After the king's thunder, this short sentence is almost silent. The contrast in pace and volume is what makes the irony land — Ozymandias shouts; time replies in a whisper.",
       lineRef: 12,
+      effectAr:
+        'انعطافةُ السونيتة الكلاسيكيّة تأتي في السطر الثاني عشر بثلاث كلماتٍ مسطّحة. بعد رعد الملك، تكاد هذه الجملةُ القصيرة تكون صامتة. والتقابل في الإيقاع والحجم هو ما يُمكّن المفارقة من الوصول — يصرخ Ozymandias؛ يُجيب الزمن بهمس.',
     },
     {
       device: 'Alliteration',
@@ -361,8 +394,51 @@ Closing image: Shelley ends with the long, drawn-out alliteration of "lone and l
       effect:
         'The repeated "l" sounds and long vowels stretch the line out across the page. The metre is loose and slow, mimicking the endless flatness of desert. Shelley ends not with a moral but with an image of indifferent space.',
       lineRef: 14,
+      effectAr:
+        'صوتُ الـ"l" المكرّر والصوائتُ الممدودة تُمدّ السطرَ عبر الصفحة. الوزنُ رخوٌ بطيء يحاكي بسطَ الصحراء الذي لا ينتهي. يختم Shelley لا بموعظةٍ بل بصورةٍ لمكانٍ لا يكترث.',
     },
   ],
+
+  contextAr: `
+    <h3>Percy Bysshe Shelley (1792–1822)</h3>
+    <p>كان Shelley من كبار الشعراء الرومانسيّين الإنجليز إلى جانب Byron وKeats. كان راديكاليّاً سياسيّاً يؤمن بالجمهوريّة والإلحاد وإلغاء الملكيّة — آراءٌ صدمت بريطانيا في مطلع القرن التاسع عشر. غرق في حادث إبحارٍ قرب سواحل إيطاليا وهو في التاسعة والعشرين.</p>
+
+    <h3>الكتابة والنشر</h3>
+    <p>كُتبت "Ozymandias" في أواخر سنة 1817 ونُشرت في <em>The Examiner</em> يوم 11 يناير 1818. كَتَبها Shelley في إطار مسابقة سونيتاتٍ ودّيّة مع صديقه <strong>Horace Smith</strong>، الذي كتب قصيدةً على الموضوع نفسه. صارت نسخةُ Shelley مشهورةً عالميّاً؛ وكادت نسخةُ Smith أن تُنسى.</p>
+
+    <h3>Ozymandias التاريخيّ</h3>
+    <p>"Ozymandias" هو النقلُ الإغريقيّ لـ"User-maat-Re"، اسم العرش لـ<strong>الفرعون Ramesses II</strong> (حوالي 1303–1213 ق.م.)، أحد أقوى حكّام مصر القديمة. سجّل المؤرّخ الإغريقيّ Diodorus Siculus نقشاً على تمثالٍ ضخم لـRamesses: "ملكُ الملوك أنا Ozymandias. مَن أراد أن يعلم عظمَ ملكي وموضعَ قبري، فليتجاوز شيئاً من أعمالي." يُعيد Shelley تخيّلَ هذه العبارة لعصر الرومانسيّة الجديد.</p>
+
+    <h3>تمثالُ British Museum</h3>
+    <p>وصلت سنة 1816 الشظيّةُ العليا من تمثالٍ ضخم لـRamesses II — يُعرف بـ"Younger Memnon" — إلى British Museum. ومن شبه المؤكّد أنّ Shelley علم به من تقارير الصحف. وتولّدت القصيدة جزئيّاً من ضجّة الاقتناء الجديد، وإن لم يَرَه Shelley بنفسه قبل أن يكتب.</p>
+
+    <h3>السياسة</h3>
+    <p>كان Shelley يكتب في عصر الثورات الأوروبيّة. وتُقرأ القصيدةُ غالباً هجوماً على الطغيان عامّةً — كان Napoleon قد هُزم قبل سنتين فقط (سنة 1815). الفكرةُ كونيّة: كلُّ إمبراطوريّةٍ تسقط في النهاية، ولا يبقى من الطاغية إلّا سِجلُّ الفنّان عنه.</p>
+  `,
+
+  summaryAr: `السطور 1–4: يلقى المتكلّمُ رحّالةً يُحدّثه عن تمثالٍ مُحطَّمٍ في صحراءٍ بعيدة. كلّ ما تبقّى ساقا حجرٍ ضخمتان بلا جسد — وعلى مقربةٍ منهما، نصف مدفونٍ في الرمل، وجهٌ مكسور.
+
+السطور 5–8: على الوجه تجهّمٌ، شفةٌ متغضّنة، و"sneer of cold command". فهم النحّاتُ المجهول موضوعه فهماً تامّاً — شَهَواتُ الملك الازدرائيّة ما زالت مرئيّةً "stamped on" على حجرٍ ميّت، وإن طال غيابُ الملك ويده.
+
+السطور 9–11: نقشٌ على القاعدة يحفظ تفاخرَ الملك بنفسه: "My name is Ozymandias, king of kings: / Look on my Works, ye Mighty, and despair!" قصد بها أنّ لا حاكمَ منافساً يستطيع مجاراته.
+
+السطور 12–14: لكنّ حول التمثال المكسور "nothing beside remains". تحيط بـ"colossal Wreck" صحراءٌ فارغة لا نهاية لها. الرمالُ "stretch far away" — اختفت الإمبراطوريّة، ولم يبقَ إلّا سِجلّ الفنّان لازدراء الطاغية.
+
+المعنى الإجماليّ: تأمّلٌ في زوال السلطة السياسيّة. يستعمل Shelley مفاخرةَ فرعونٍ مصريّ المُحطَّمة ليُحاجج بأنّ كلّ إمبراطوريّات البشر تنتهي على النحو نفسه. الزمن يساوي بين كلّ الطغاة؛ ولا يبقى أحدٌ بعد الحاكم سوى الفنّ.`,
+
+  formAndStructureAr: `الشكل: سونيتةٌ من أربعة عشر سطراً، لكنّها هجين — يستعير Shelley من التقليدَين البتراركيّ والشيكسبيريّ دون التزام بأحدهما. ونظامُ القافية غير معتاد: ABABACDCEDEFEF. والقوافي الناقصة ("stone / frown / command"، "appear / despair") تردّد صدى مبنىً نصفُه منهار.
+
+السرد المؤطَّر: تَبني القصيدة طبقاتٍ متعدّدة من المسافة — يسمع متكلّمُ Shelley من رحّالةٍ رأى تمثيلَ نحّاتٍ لوجه ملك، فيما يُقتبَس كلامُ الملك نفسه من قاعدة التمثال. نحن على بُعد أصواتٍ عدّة من Ozymandias. وهذا التداخل يجعل الملك يبدو صغيراً قَصيّاً.
+
+iambic pentameter: الوزنُ إجمالاً iambic pentameter، لكنّ Shelley يُخلّ به باستمرار (مثل: "Stand in the desert. Near them, on the sand,"). الوزنُ المكسور يحاكي التمثالَ المكسور.
+
+الـ volta: انعطافةُ السونيتة الكلاسيكيّة في السطر الثاني عشر — "Nothing beside remains." ثلاثُ كلماتٍ قِصارٍ مُطرَقة تكسر مفاخرةَ الملك. بعد إحدى عشرة سطراً تُصوّر هيئةَ السلطة، يهدم النصفُ الثاني من القصيدة كلّ شيءٍ في جملةٍ واحدة.
+
+الـ caesura: الوقفاتُ القويّة في وسط السطر ("Stand in the desert. Near them, on the sand,") تُبطئ القصيدةَ وتُجبر القارئ على الانتقال من صورةٍ إلى صورة. وأقوى الـ caesuras النقطةُ في السطر الثاني عشر، التي تكسر المفاخرةَ إلى الأبد.
+
+الكلام المباشر: الكلام المباشر الوحيد يُنسب إلى Ozymandias نفسه — وهو أكثر أجزاء القصيدة سخريةً. وبحفظِ كلمات الملك بنصّها، يدع Shelley الملكَ يَهدم نفسَه.
+
+الصورة الختاميّة: يختم Shelley بالجناس المطوَّل في "lone and level sands stretch far away." ووزنُ السطر يَمتدّ ويلين، فيحاكي الفراغَ الذي لا نهاية له. لا تختم القصيدةُ — تنحلّ.`,
 }
 
 /* ── Comparison poems ─────────────────────────────────────────────── */

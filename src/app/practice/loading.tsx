@@ -1,6 +1,14 @@
+'use client'
+
+import { useT } from '@/lib/i18n/use-t'
+
 export default function Loading() {
+  const t = useT()
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <p className="sr-only" role="status" aria-live="polite">
+        {t('loading.practice.label')}
+      </p>
       <div className="h-8 w-56 animate-pulse rounded bg-muted mb-6" />
       <div className="flex gap-2 mb-6">
         {Array.from({ length: 3 }).map((_, i) => (

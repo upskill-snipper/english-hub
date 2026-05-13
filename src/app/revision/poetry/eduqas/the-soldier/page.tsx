@@ -191,11 +191,37 @@ const soldier: PoemData = {
     <p>The poem reflects <strong>Edwardian patriotism</strong> - a confident belief in England\'s moral and cultural superiority. England is presented as a mother who gives life and meaning. To die for England is therefore the highest possible honour.</p>
   `,
 
+  contextAr: `
+    <h3>Rupert Brooke (1887–1915)</h3>
+    <p>Brooke شاعر إنجليزي اشتهر بقصايد الحرب المثالية. كان شخصية وسيمة كاريزماتية، خرّيج Cambridge، وصار رمز قومي للشباب الوطني. كان صديق Virginia Woolf وكتّاب Bloomsbury الثانيين.</p>
+
+    <h3>الكتابة (1914)</h3>
+    <p>"The Soldier" انكتبت في بداية الحرب العالمية الأولى، قبل ما Brooke يخوض أي قتال. كان يشوف الحرب كحملة نبيلة مطهّرة. القصيدة تعكس النظرة المتفائلة والرومانسية للحرب اللي كانت شايعة في 1914.</p>
+
+    <h3>موت Brooke</h3>
+    <p>Brooke توفي في إبريل 1915، وعمره 27 سنة، في طريقه لحملة Gallipoli. مات مو في معركة، بل بسبب تسمّم دم من قرصة بعوضة ملوّثة. دفنوه في الجزيرة اليونانية Skyros — "ركن من حقل غريب" فعلاً.</p>
+
+    <h3>الرمز القومي</h3>
+    <p>بعد موته، Brooke صار شخصية شهيد لبريطانيا الوطنية. عميد كاتدرائية St Paul قرى "The Soldier" في عظة يوم Easter Sunday 1915. Winston Churchill كتب نعيه. صورة Brooke الرومانسية للتضحية الإنجليزية استُخدمت في الدعاية طول الحرب.</p>
+
+    <h3>نظرة ما قبل حرب الخنادق</h3>
+    <p>القصيدة تنتمي للمرحلة الأولى من الحرب العالمية الأولى، قبل أهوال Somme وPasschendaele اللي غيّرت الموقف الشعبي. Brooke ما شاف الخنادق أبد. رؤيته للموت النبيل تتناقض بشكل صارخ مع قصايد Owen وSassoon وRosenberg اللاحقة، اللي عاشوا واقع الحرب الصناعية.</p>
+
+    <h3>الوطنية الإدواردية</h3>
+    <p>القصيدة تعكس <strong>الوطنية الإدواردية</strong> — إيمان واثق بالتفوّق الأخلاقي والثقافي لإنجلترا. إنجلترا تُقدَّم كأم تعطي الحياة والمعنى. الموت من أجل إنجلترا هو أعلى شرف ممكن.</p>
+  `,
+
   summary: `Octave (lines 1-8): The speaker addresses the reader: if he should die in war, they should think of him as having made "some corner of a foreign field" forever English. His body, made of English soil, will enrich foreign earth. He emphasises that England has given him everything - it has shaped him, given him life, beauty, and freedom.
 
 Sestet (lines 9-14): The speaker turns from his physical body to his spiritual heart. After death, his soul will become "a pulse in the eternal mind", returning to a kind of cosmic consciousness all the gifts England gave him: thoughts, sights, sounds, dreams, laughter, gentleness. The poem ends with the image of "hearts at peace, under an English heaven".
 
 Overall meaning: "The Soldier" is a romantic, idealistic vision of patriotic sacrifice. Brooke imagines death in war as a noble act that unites the soldier with England forever. The poem makes no mention of pain, fear, or violence - death is presented as peaceful, beautiful, and sacred. It is the perfect example of the patriotic poetry that Owen would later attack as "the old Lie".`,
+
+  summaryAr: `الـoctave (الأبيات 1–8): المتكلّم يخاطب القارئ: إذا مات في الحرب، يفترض إنهم يفكّرون فيه إنه سوّى "some corner of a foreign field" إنجليزي للأبد. جسمه، اللي مصنوع من تراب إنجليزي، بيخصّب الأرض الغريبة. يأكّد إن إنجلترا عطته كل شي — شكّلته، عطته الحياة، الجمال، والحرية.
+
+الـsestet (الأبيات 9–14): المتكلّم ينتقل من جسمه المادي لقلبه الروحي. بعد الموت، روحه تصير "a pulse in the eternal mind"، تردّ لنوع من الوعي الكوني كل الهبات اللي عطتها له إنجلترا: أفكار، مناظر، أصوات، أحلام، ضحك، لطف. القصيدة تنتهي بصورة "hearts at peace, under an English heaven".
+
+المعنى العام: "The Soldier" رؤية رومانسية مثالية للتضحية الوطنية. Brooke يتصوّر الموت في الحرب كعمل نبيل يوحّد الجندي بإنجلترا للأبد. القصيدة ما تذكر ألم ولا خوف ولا عنف — الموت يُقدَّم هادئ، جميل، مقدّس. هي المثال المثالي للشعر الوطني اللي بعدين Owen هاجمه كـ"the old Lie".`,
 
   formAndStructure: `Form: Petrarchan sonnet with a Shakespearean rhyme scheme. The traditional sonnet form gives the poem dignity and authority - it sounds noble, official, even religious.
 
@@ -213,54 +239,94 @@ Diction: The vocabulary is archaic and elevated - "blest", "evil shed away", "et
 
 Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has made peace with the idea of death. This calm tone is what makes the poem powerful - and, to later readers, troubling.`,
 
+  formAndStructureAr: `Form: Petrarchan sonnet مع نظام قافية Shakespearean. الشكل التقليدي للـsonnet يعطي القصيدة هيبة وسلطة — يحسّ نبيل، رسمي، حتى ديني.
+
+Rhyme scheme: ABABCDCD في الـoctave، EFGEFG في الـsestet. القافية الصارمة التقليدية تعزّز إحساس النظام والقيم الموروثة. تحسّ كأنها ترنيمة أو دعاء.
+
+Metre: iambic pentameter طول القصيدة. الإيقاع المنتظم الثابت يعطي القصيدة طابع هادي ومسيطر عليه. ما فيه أي اضطراب وزني — كل شي مرتّب ومؤكّد.
+
+تقسيم الـoctave/sestet: الـoctave يركّز على الجسم (التضحية المادية)؛ الـsestet يركّز على الروح (التجاوز الروحي). الـvolta التقليدي يعلّم الانتقال من الأرضي للسماوي.
+
+Volta: في بداية الـsestet ("And think, this heart...")، القصيدة تتحوّل من الجسم المادي للقلب الروحي. الانتقال من الموت المادي للخلود الروحي.
+
+التكرار: "England" و"English" تتكرّر طول القصيدة (8 مرات في 14 بيت). التكرار يخلق ترتيل شبه ديني، يثبّت إنجلترا كموضوع التفاني الأساسي.
+
+اللغة: المفردات قديمة ورفيعة — "blest"، "evil shed away"، "eternal mind". اللغة تحسّ توراتية ومراسمية، ترفع القصيدة فوق الكلام العادي.
+
+النبرة: هادية، واثقة، تعبّدية. ما فيه خوف ولا شك. المتكلّم تصالح مع فكرة الموت. هالنبرة الهادية هي اللي تخلّي القصيدة قوية — وللقرّاء المتأخّرين، مزعجة.`,
+
   keyQuotes: [
     {
       quote: 'If I should die, think only this of me',
       analysis:
         'The opening establishes the speaker\'s composed attitude to death. "If I should die" treats his own death as a calm possibility. "Think only this of me" - the speaker controls the narrative, instructing the reader how to remember him. There is no panic.',
       themes: ['Patriotic sacrifice', 'Death', 'Control of narrative'],
+      analysisAr:
+        'الافتتاحية تأسّس موقف المتكلّم المتزن من الموت. "If I should die" يتعامل مع موته كاحتمال هادي. "Think only this of me" — المتكلّم يسيطر على السرد، يوجّه القارئ كيف يتذكّره. ما فيه هلع.',
+      themesAr: ['التضحية الوطنية', 'الموت', 'السيطرة على السرد'],
     },
     {
       quote: 'some corner of a foreign field / That is for ever England',
       analysis:
         'The famous central conceit. The soldier\'s death creates eternal English territory abroad. "For ever" makes the claim hyperbolic - his sacrifice is permanent, monumental. England expands through individual death.',
       themes: ['Patriotism', 'Empire', 'Sacrifice'],
+      analysisAr:
+        'الـconceit المركزي الشهير. موت الجندي يخلق أرض إنجليزية أبدية في الخارج. "For ever" تخلّي الادّعاء مبالغ — تضحيته دائمة، ضخمة. إنجلترا تتمدّد عبر موت الفرد.',
+      themesAr: ['الوطنية', 'الإمبراطورية', 'التضحية'],
     },
     {
       quote: 'A dust whom England bore, shaped, made aware',
       analysis:
         'England is personified as a mother who gave the speaker life, character, and consciousness. The triple verb "bore, shaped, made aware" captures the totality of England\'s gift. The speaker owes everything to his country.',
       themes: ['Patriotism', 'Identity', 'Personification'],
+      analysisAr:
+        'إنجلترا مشخصنة كأم عطت المتكلّم الحياة والشخصية والوعي. الفعل الثلاثي "bore, shaped, made aware" يلتقط شمولية هبة إنجلترا. المتكلّم يدين لبلده بكل شي.',
+      themesAr: ['الوطنية', 'الهوية', 'Personification'],
     },
     {
       quote: "A body of England's, breathing English air",
       analysis:
         'The speaker is not just from England - he IS England. His body is "England\'s", his breath is "English". The repetition obliterates any separation between self and nation. This is total patriotism.',
       themes: ['Identity', 'Nationalism', 'Repetition'],
+      analysisAr:
+        'المتكلّم مو بس من إنجلترا — هو إنجلترا. جسمه "England\'s"، نفسه "English". التكرار يمحي أي فصل بين الذات والوطن. هذي وطنية كاملة.',
+      themesAr: ['الهوية', 'القومية', 'التكرار'],
     },
     {
       quote: 'Washed by the rivers, blest by suns of home',
       analysis:
         'Religious language ("blest") sanctifies English nature. Rivers and sun are gifts from England, blessings from a sacred place. The line idealises the English landscape as a holy benediction.',
       themes: ['Pastoral', 'Religion', 'Idealisation'],
+      analysisAr:
+        'اللغة الدينية ("blest") تقدّس الطبيعة الإنجليزية. الأنهار والشمس هبات من إنجلترا، بركات من مكان مقدّس. البيت يضفي مثالية على المنظر الإنجليزي كنعمة مقدّسة.',
+      themesAr: ['الريفي', 'الدين', 'المثالية'],
     },
     {
       quote: 'this heart, all evil shed away',
       analysis:
         'The volta of the sonnet. Death is presented as purification - all evil falls away. The speaker imagines becoming pure through dying. This is the romantic view of war as morally cleansing.',
       themes: ['Purification', 'Death', 'Idealism'],
+      analysisAr:
+        'الـvolta في الـsonnet. الموت يُقدَّم كتطهير — كل الشر يسقط. المتكلّم يتصوّر إنه يصير نقي من خلال الموت. هذي الرؤية الرومانسية للحرب كمطهّرة أخلاقياً.',
+      themesAr: ['التطهير', 'الموت', 'المثالية'],
     },
     {
       quote: 'A pulse in the eternal mind',
       analysis:
         'Mystical, near-religious metaphor. The dead soldier becomes a heartbeat in some cosmic consciousness. Death is not an end but a continuation of awareness in a greater whole. This is poetic, but completely unscientific.',
       themes: ['Spirituality', 'Death', 'Continuity'],
+      analysisAr:
+        'استعارة صوفية شبه دينية. الجندي الميت يصير نبضة في وعي كوني. الموت مو نهاية بل امتداد للوعي في كلّ أكبر. هذا شاعري، بس غير علمي تماماً.',
+      themesAr: ['الروحانية', 'الموت', 'الاستمرارية'],
     },
     {
       quote: 'In hearts at peace, under an English heaven',
       analysis:
         "The closing line is the poem's most extreme image - even heaven is English. Brooke imagines paradise as having a national identity. This is the height of patriotic devotion: not just England forever, but England in eternity. The image is beautiful, troubling, and entirely typical of pre-trench-warfare patriotism.",
       themes: ['Heaven', 'Nationalism', 'Eternal England'],
+      analysisAr:
+        'البيت الختامي هو أكثر صورة متطرّفة في القصيدة — حتى الجنّة إنجليزية. Brooke يتصوّر الفردوس بهوية قومية. هذي قمّة التفاني الوطني: مو بس إنجلترا للأبد، بل إنجلترا في الأبدية. الصورة جميلة ومزعجة ونموذجية تماماً للوطنية ما قبل حرب الخنادق.',
+      themesAr: ['الجنّة', 'القومية', 'إنجلترا الأبدية'],
     },
   ],
 
@@ -271,6 +337,8 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
       effect:
         "England is personified as a mother throughout the poem. She gives birth, shapes character, provides flowers and freedom. This makes patriotism feel familial and natural - dying for England becomes like dying for one's mother.",
       lineRef: 5,
+      effectAr:
+        'إنجلترا مشخصنة كأم طول القصيدة. تلد، تشكّل الشخصية، تعطي زهور وحرية. هذا يخلّي الوطنية تحسّ عائلية وطبيعية — الموت من أجل إنجلترا يصير مثل الموت من أجل أم الإنسان.',
     },
     {
       device: 'Repetition',
@@ -278,6 +346,8 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
       effect:
         'England and English are repeated 8 times in 14 lines. The repetition functions like an incantation, fixing England as the only meaningful identity. The reader cannot escape the word - just as the speaker cannot escape his national identity.',
       lineRef: 3,
+      effectAr:
+        '"England" و"English" تتكرّر 8 مرات في 14 بيت. التكرار يشتغل كتعويذة، يثبّت إنجلترا كالهوية الوحيدة ذات المعنى. القارئ ما يقدر يهرب من الكلمة — مثل ما المتكلّم ما يقدر يهرب من هويته القومية.',
     },
     {
       device: 'Religious diction',
@@ -285,6 +355,8 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
       effect:
         'The language is religious and ceremonial. England becomes a sacred place; death becomes purification; the afterlife is "an English heaven". The religious tone elevates patriotism into a kind of faith.',
       lineRef: 8,
+      effectAr:
+        'اللغة دينية ومراسمية. إنجلترا تصير مكان مقدّس؛ الموت يصير تطهير؛ الحياة الآخرة "an English heaven". النبرة الدينية ترفع الوطنية لنوع من الإيمان.',
     },
     {
       device: 'Sonnet form',
@@ -292,6 +364,8 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
       effect:
         "The sonnet form is traditionally used for love poetry. Brooke writes a love poem to his country. The form's dignified tradition gives the patriotic content authority and beauty - it sounds inherited, eternal, sacred.",
       lineRef: 1,
+      effectAr:
+        'شكل الـsonnet يُستخدم تقليدياً لشعر الحب. Brooke يكتب قصيدة حب لبلده. تقليد الشكل المهيب يعطي المحتوى الوطني سلطة وجمال — يحسّ موروث، أبدي، مقدّس.',
     },
     {
       device: 'Hyperbole',
@@ -299,6 +373,8 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
       effect:
         'The poem repeatedly uses hyperbolic language - "for ever", "eternal", "heaven". The exaggeration is not accidental - Brooke\'s patriotism is deliberately monumental. Nothing about this vision is small or modest.',
       lineRef: 3,
+      effectAr:
+        'القصيدة تستخدم لغة مبالغة بشكل متكرّر — "for ever"، "eternal"، "heaven". المبالغة مو صدفة — وطنية Brooke ضخمة عن قصد. ما فيه شي في هالرؤية صغير ولا متواضع.',
     },
     {
       device: 'Volta',
@@ -306,6 +382,8 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
       effect:
         'The traditional sonnet turn moves the poem from body (octave) to soul (sestet). The shift signals a move from physical sacrifice to spiritual immortality. The volta is the structural heart of the patriotic vision.',
       lineRef: 9,
+      effectAr:
+        'التحوّل التقليدي في الـsonnet ينقل القصيدة من الجسم (octave) للروح (sestet). الانتقال يأشّر للحركة من التضحية المادية للخلود الروحي. الـvolta هو القلب البنيوي للرؤية الوطنية.',
     },
     {
       device: 'Imagery (pastoral)',
@@ -313,6 +391,8 @@ Tone: Calm, confident, devotional. There is no fear or doubt. The speaker has ma
       effect:
         'Brooke uses idyllic pastoral imagery - flowers, rivers, sunshine. England is presented as a beautiful, gentle landscape. The reader is invited to love England as a place worth dying for.',
       lineRef: 6,
+      effectAr:
+        'Brooke يستخدم صور ريفية مثالية — زهور، أنهار، أشعة شمس. إنجلترا تُقدَّم كمنظر جميل ولطيف. القارئ يُدعى يحبّ إنجلترا كمكان يستحقّ الموت من أجله.',
     },
   ],
 }

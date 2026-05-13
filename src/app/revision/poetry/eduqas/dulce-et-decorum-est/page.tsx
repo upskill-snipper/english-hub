@@ -356,6 +356,26 @@ const dulce: PoemData = {
     <p>WW1 trench warfare was characterised by terrible conditions: mud, cold, rats, lice, disease, and constant shelling. Soldiers spent days under bombardment, often unable to move. The exhaustion and trauma described in the poem were universal experiences.</p>
   `,
 
+  contextAr: `
+    <h3>Wilfred Owen (1893-1918)</h3>
+    <p>Owen شاعر إنجليزي وجندي. حارب في خنادق الحرب العالمية الأولى وانقتل في المعركة قبل أسبوع واحد من الهدنة في نوفمبر 1918. كان عمره 25. أكثر شعره عن الحرب نُشر بعد وفاته، على يد صديقه Siegfried Sassoon.</p>
+
+    <h3>الكتابة (1917-1918)</h3>
+    <p>قصيدة "Dulce et Decorum Est" مكتوبة في أكتوبر 1917 لمّا كان Owen يتعالج من صدمة القذائف (shell shock) في مستشفى Craiglockhart الحربي في إدنبرة. أُرسل إلى هناك بعد سلسلة من التجارب الصادمة في الخنادق.</p>
+
+    <h3>العنوان</h3>
+    <p>العنوان من الشاعر الروماني <strong>Horace</strong>: "Dulce et decorum est pro patria mori" — "حلوٌ ولائقٌ أن يموت المرء من أجل وطنه". هاي اللازمة اللاتينية كانت تُستخدم على نطاق واسع في الدعاية الوطنية لتشجيع الشباب على الانخراط في الجيش. Owen يسمّيها "the old Lie".</p>
+
+    <h3>غاز الكلور</h3>
+    <p>الأسلحة الكيميائية (الكلور، الفوسجين، غاز الخردل) استُخدمت لأول مرّة في الحرب العالمية الأولى وسبّبت ميتات مرعبة. غاز الكلور يهاجم الرئتين، ويغرّق الضحية في سوائل جسده. الجنود كان لازم يلبسون أقنعتهم خلال ثواني من أي هجوم.</p>
+
+    <h3>غرض Owen</h3>
+    <p>Owen كتب في مقدّمته: "My subject is War, and the pity of War. The Poetry is in the pity." شاف إن من واجبه يفضح حقيقة الحرب لأهل البيوت اللي يدعمونها. القصيدة في أصلها كانت موجّهة إلى <strong>Jessie Pope</strong>، شاعرة شعبوية شوفينية كان شغلها يشجّع الشباب على التطوّع.</p>
+
+    <h3>حرب الخنادق</h3>
+    <p>حرب الخنادق في الحرب العالمية الأولى تميّزت بظروف فظيعة: طين، برد، فئران، قمل، أمراض، وقصف متواصل. الجنود يقضّون أياماً تحت القصف، كثير ما يعجزون عن الحركة. والإرهاق والصدمة الموصوفان في القصيدة كانوا تجارب عامة على كل الجبهة.</p>
+  `,
+
   summary: `Stanza 1 - Exhaustion: Soldiers stagger back from the front line "like old beggars". They are exhausted, lame, blind, marching half-asleep through mud. Some have lost their boots. They cannot hear the gas shells dropping behind them.
 
 Stanza 2 - The gas attack: Suddenly there is a shout - "Gas! GAS!" The men scramble to put on their gas masks. But one soldier fails. Through the misty panes of his mask, the speaker watches him drown in poison gas as if "under a green sea".
@@ -365,6 +385,16 @@ Stanza 3 (short) - Trauma: The speaker reveals that this scene returns in his dr
 Stanza 4 - Direct address: Owen addresses the reader (and especially those who promote war). He invites us to witness the dead soldier\'s body being thrown into a wagon. He describes the body in graphic detail - the writhing eyes, the gargling blood, the corrupted lungs. He concludes that anyone who saw this would not tell young soldiers "the old Lie": that it is sweet and fitting to die for one\'s country.
 
 Overall meaning: The poem is a savage attack on the patriotic propaganda that sent young men to die in WW1. Owen uses graphic, ugly imagery to expose the gap between the romantic ideal of war and its actual horror. The poem is a moral argument: those who promote war are lying to children.`,
+
+  summaryAr: `المقطع 1 - الإرهاق: الجنود يتراجعون من الخط الأمامي وهم يترنّحون "like old beggars". مرهَقين، عرجاء، عميان، يمشون نص نائمين في الطين. بعضهم فقد جزماته. وما يسمعون قذائف الغاز اللي تنزل خلفهم.
+
+المقطع 2 - هجوم الغاز: فجأة صرخة — "Gas! GAS!" الرجال يتدافعون عشان يلبسون أقنعة الغاز. بس واحد ما يقدر يلبس. ومن وراء زجاج قناعه المضبّب، المتكلّم يشوف الجندي يغرق في الغاز السام كأنه "under a green sea".
+
+المقطع 3 (قصير) - الصدمة: المتكلّم يكشف إن هاي اللحظة ترجع في أحلامه. الرجل المحتضر "plunges at me, guttering, choking, drowning". الصدمة دائمة.
+
+المقطع 4 - المخاطبة المباشرة: Owen يخاطب القارئ (وبالأخص اللي يروّجون للحرب). يدعونا عشان نشهد جثة الجندي الميت وهي ترمى في عربة. يصف الجثة بتفاصيل مرعبة — العيون اللي تتلوّى، الدم اللي يتغرغر، الرئتين الفاسدتين. ويختم إن أي واحد يشوف هاي المنظر ما راح يحكي لشباب الجنود "the old Lie": إنه حلوٌ ولائق أن يموت الواحد من أجل وطنه.
+
+المعنى العام: القصيدة هجوم وحشي على الدعاية الوطنية اللي أرسلت الشباب ليموتون في الحرب العالمية الأولى. Owen يستخدم صور بصرية فاحشة وقبيحة عشان يفضح الفجوة بين المثال الرومانسي للحرب ورعبها الفعلي. والقصيدة حجة أخلاقية: اللي يروّجون للحرب يكذبون على الأطفال.`,
 
   formAndStructure: `Form: Loosely structured into four stanzas of varying lengths. The form mirrors the chaos of war - it cannot be neatly contained.
 
@@ -386,54 +416,98 @@ Direct address: The poem ends by speaking directly to the reader ("My friend"). 
 
 Sound: Heavy use of harsh consonants ("trudge", "sludge", "guttering") and unpleasant vowel sounds. The poem is deliberately ugly to mirror the ugliness of war.`,
 
+  formAndStructureAr: `الشكل: أربع مقاطع متفاوتة الطول، بنية فضفاضة. الشكل يعكس فوضى الحرب — ما يقدر يُحتوى بنظام.
+
+نظام القافية: قافية متناوبة ABAB طول القصيدة، بس فيها اضطرابات مقصودة وقوافي شبه (pararhyme). القافية تعطي نظام متوتّر تحت المحتوى الفوضوي.
+
+الوزن: غالباً iambic pentameter، بس Owen يكسر الوزن كثير عشان يعكس واقع الخنادق المضطرب. الإيقاع يتعثّر ويتهادى مثل الجنود.
+
+البنية الرباعية: كل مقطع له وظيفة مختلفة:
+- المقطع 1 (8 أبيات): بطيء، مرهَق — يضع مشهد التراجع من الخندق.
+- المقطع 2 (6 أبيات): سريع، مذعور — هجوم الغاز.
+- المقطع 3 (بيتين): قصير، معزول — الصدمة في ذهن المتكلّم.
+- المقطع 4 (12 بيتاً): طويل، حجاجي — مخاطبة مباشرة للقارئ.
+
+Volta: في تحوّلان. الأول "Gas! GAS!" — الانتقال المفاجئ من الإرهاق إلى الذعر. الثاني "If in some smothering dreams" — الانتقال من الحدث الماضي إلى الحجة الحاضرة.
+
+تحوّلات الزمن: القصيدة تتحرّك من الماضي (التجربة) إلى الحاضر (الصدمة المتكرّرة) إلى الشرطي ("If you could hear..."). Owen يخلّي الماضي ما له هرب.
+
+المخاطبة المباشرة: القصيدة تنتهي بكلام مباشر للقارئ ("My friend"). هذا يكسر الحائط الرابع — ما عدنا شاهدين فقط، صرنا متّهَمين.
+
+الصوت: استخدام كثيف للحروف الساكنة القاسية ("trudge"، "sludge"، "guttering") وحركات صوتية مزعجة. القصيدة قبيحة عمداً عشان تعكس قبح الحرب.`,
+
   keyQuotes: [
     {
       quote: 'Bent double, like old beggars under sacks',
       analysis:
         'The opening line immediately demolishes the romantic view of war. The soldiers are not strong young heroes but "old beggars" - prematurely aged, humiliated, crushed under the weight of their packs. The simile reverses every patriotic image.',
       themes: ['Reality of war', 'Suffering', 'Anti-heroic'],
+      analysisAr:
+        'البيت الافتتاحي يهدم فوراً النظرة الرومانسية للحرب. الجنود مو أبطال شبّان أقوياء، بل "old beggars" — شاخوا قبل أوانهم، مهانين، محطّمين تحت ثقل أمتعتهم. والتشبيه يقلب كل صورة وطنية متخيّلة.',
+      themesAr: ['حقيقة الحرب', 'المعاناة', 'مضادّ للبطولة'],
     },
     {
       quote: 'Knock-kneed, coughing like hags, we cursed through sludge',
       analysis:
         'Owen uses ugly, undignified comparisons - the soldiers are like "hags" (ugly old women). They "cursed" - using obscenity, not glorious speech. They moved through "sludge" - mud and filth. Every word destroys nobility.',
       themes: ['Reality of war', 'Degradation', 'Anti-heroic'],
+      analysisAr:
+        'Owen يستخدم تشبيهات قبيحة ومُذِلّة — الجنود مثل "hags" (عجائز قبيحات). و"cursed" — يستخدمون السباب، مو الكلام البطولي. ويتحرّكون عبر "sludge" — طين ووسخ. كل كلمة تدمّر الشرف.',
+      themesAr: ['حقيقة الحرب', 'الإذلال', 'مضادّ للبطولة'],
     },
     {
       quote: 'GAS! Quick, boys! - An ecstasy of fumbling',
       analysis:
         'The capitalisation captures the rising panic. The oxymoron "ecstasy of fumbling" pairs an emotion of joy with frantic incompetence. "Ecstasy" comes from a Greek word meaning "standing outside oneself" - the soldiers are dissociated by terror.',
       themes: ['Panic', 'Trauma', 'Sudden violence'],
+      analysisAr:
+        'الكتابة بالحروف الكبيرة (capitalisation) تجسّد الذعر اللي يتصاعد. والتضاد (oxymoron) "ecstasy of fumbling" يجمع شعور الفرح مع التخبّط المضطرب. كلمة "ecstasy" أصلها يوناني يعني "الوقوف خارج الذات" — الجنود انفصلوا عن أنفسهم من الرعب.',
+      themesAr: ['الذعر', 'الصدمة', 'عنف مفاجئ'],
     },
     {
       quote: 'As under a green sea, I saw him drowning',
       analysis:
         'The chlorine gas is imagined as a green sea. The dying man "drowns" because gas fills the lungs with fluid. The simile makes an alien chemical death feel familiar - and the helplessness of the speaker watching through his own mask is heartbreaking.',
       themes: ['Death', 'Helplessness', 'Chemical warfare'],
+      analysisAr:
+        'غاز الكلور متخيَّل كبحر أخضر. والرجل المحتضر "يغرق" لأن الغاز يعمّر الرئتين بسائل. والتشبيه يخلّي ميتة كيميائية غريبة تحسّ مألوفة — وعجز المتكلّم وهو يشوفه من وراء قناعه يكسر القلب.',
+      themesAr: ['الموت', 'العجز', 'الحرب الكيميائية'],
     },
     {
       quote: 'He plunges at me, guttering, choking, drowning',
       analysis:
         'The tricolon of present-tense verbs makes the moment immediate and inescapable. "Guttering" is what a candle does as it dies - the soldier\'s life flickers out slowly. The use of present tense shows the trauma never ends - the dead man is always dying in the speaker\'s mind.',
       themes: ['Trauma', 'PTSD', 'Lasting impact'],
+      analysisAr:
+        'الـtricolon من أفعال بصيغة المضارع يخلّي اللحظة فورية ومستحيلة الهرب. كلمة "guttering" تدلّ على ما تفعله الشمعة وهي تحتضر — حياة الجندي تتلاشى ببطء. واستخدام المضارع يبيّن إن الصدمة ما تنتهي — الرجل الميت دايماً يحتضر في ذهن المتكلّم.',
+      themesAr: ['الصدمة', 'PTSD', 'الأثر الدائم'],
     },
     {
       quote: "His hanging face, like a devil's sick of sin",
       analysis:
         'A shocking simile that reverses expectations. Even a devil - the embodiment of evil - would be sickened by what war does. Owen invokes religious imagery to suggest war is worse than damnation.',
       themes: ['Horror', 'Evil', 'Disgust'],
+      analysisAr:
+        'تشبيه صادم يقلب التوقعات. حتى الشيطان — تجسيد الشر — راح يقرف من اللي تفعله الحرب. Owen يستحضر الصور الدينية ليلمّح إن الحرب أسوأ من اللعنة الأبدية.',
+      themesAr: ['الرعب', 'الشر', 'الاشمئزاز'],
     },
     {
       quote: 'My friend, you would not tell with such high zest / To children',
       analysis:
         'Owen addresses the reader directly. "My friend" is bitterly sarcastic. "Children" emphasises the youth of soldiers - they are not adults making informed choices but boys deceived by lies. The accusation is moral and personal.',
       themes: ['Argument', 'Moral outrage', 'Youth'],
+      analysisAr:
+        'Owen يخاطب القارئ بشكل مباشر. وعبارة "My friend" ساخرة بمرارة. وكلمة "children" تأكّد على صغر سن الجنود — مو راشدين يقرّرون عن دراية، بل أولاد مخدوعين بأكاذيب. والاتهام أخلاقي وشخصي.',
+      themesAr: ['الحجة', 'الغضب الأخلاقي', 'الصغر'],
     },
     {
       quote: 'The old Lie: Dulce et decorum est / Pro patria mori',
       analysis:
         'The poem ends by naming "the old Lie" - the Latin phrase claiming it is sweet and fitting to die for your country. After everything we have just witnessed, the patriotic motto sounds obscene. The capital "L" on "Lie" makes it monumental - a foundational deception that has killed millions.',
       themes: ['Anti-war', 'Patriotism critique', 'Deception'],
+      analysisAr:
+        'القصيدة تنتهي بتسمية "the old Lie" — العبارة اللاتينية اللي تدّعي إنه حلو ولائق أن يموت الإنسان من أجل وطنه. بعد كل اللي شاهدناه، اللازمة الوطنية تطنّ فاحشةً. والحرف الكبير "L" في "Lie" يخلّيها هائلة — خداع مؤسّس قتل الملايين.',
+      themesAr: ['مضادّ للحرب', 'نقد الوطنية', 'الخداع'],
     },
   ],
 
@@ -444,6 +518,8 @@ Sound: Heavy use of harsh consonants ("trudge", "sludge", "guttering") and unple
       effect:
         "Owen's similes consistently use ugly, degrading comparisons. Soldiers are like beggars, hags, devils, cancer victims. Every comparison strips away any romantic or heroic image of war. The cumulative effect is overwhelming disgust.",
       lineRef: 1,
+      effectAr:
+        'تشبيهات Owen دايماً تستخدم مقارنات قبيحة ومُذِلّة. الجنود مثل المتسوّلين، العجائز، الشياطين، مرضى السرطان. كل مقارنة تنزع أي صورة رومانسية أو بطولية للحرب. والأثر التراكمي اشمئزاز ساحق.',
     },
     {
       device: 'Sensory imagery',
@@ -451,6 +527,8 @@ Sound: Heavy use of harsh consonants ("trudge", "sludge", "guttering") and unple
       effect:
         'Owen forces the reader to see, hear, and almost taste the horror. The sensory details are deliberately graphic and unpleasant. The reader cannot look away - just as the speaker cannot escape the memory.',
       lineRef: 16,
+      effectAr:
+        'Owen يجبر القارئ يشوف ويسمع ويتذوّق الرعب تقريباً. التفاصيل الحسّية فاحشة ومزعجة عمداً. والقارئ ما يقدر يبعد نظره — تماماً مثل ما المتكلّم ما يقدر يهرب من الذكرى.',
     },
     {
       device: 'Direct address',
@@ -458,6 +536,8 @@ Sound: Heavy use of harsh consonants ("trudge", "sludge", "guttering") and unple
       effect:
         'In the final stanza, Owen addresses the reader directly, especially those who romanticise war. The "you" forces complicity. We are no longer passive witnesses - we are part of the lie if we don\'t see the truth.',
       lineRef: 17,
+      effectAr:
+        'في المقطع الأخير، Owen يخاطب القارئ بشكل مباشر، وبالأخص اللي يرومنسون الحرب. الضمير "you" يفرض الشراكة. ما عدنا شاهدين سلبيين — صرنا جزء من الكذبة لو ما شفنا الحقيقة.',
     },
     {
       device: 'Volta',
@@ -465,6 +545,8 @@ Sound: Heavy use of harsh consonants ("trudge", "sludge", "guttering") and unple
       effect:
         'The poem accelerates from slow, exhausted trudging to immediate panic. The shift in pace mirrors the unpredictability of war - peace and horror are seconds apart.',
       lineRef: 9,
+      effectAr:
+        'القصيدة تتسارع من مشية بطيئة ومرهَقة إلى ذعر فوري. والانتقال في الإيقاع يعكس عدم القابلية للتنبّؤ في الحرب — السكينة والرعب ما بينهم إلا ثواني.',
     },
     {
       device: 'Latin allusion',
@@ -472,6 +554,8 @@ Sound: Heavy use of harsh consonants ("trudge", "sludge", "guttering") and unple
       effect:
         "Owen quotes Horace's patriotic motto only to demolish it. The Latin sounds high-minded and noble - until you place it after the description of a man drowning in poison gas. The juxtaposition is the poem's entire argument.",
       lineRef: 27,
+      effectAr:
+        'Owen يقتبس لازمة Horace الوطنية فقط ليهدمها. اللاتينية تطنّ سامية ونبيلة — لين ما تحطّها بعد وصف رجل يغرق في غاز سام. والمقارنة الجنبية هي حجّة القصيدة بكاملها.',
     },
     {
       device: 'Tricolon',
@@ -479,6 +563,8 @@ Sound: Heavy use of harsh consonants ("trudge", "sludge", "guttering") and unple
       effect:
         "Three present-tense verbs in a row make the death immediate and inescapable. The accumulation creates a sense of slow suffocation. The fact that they are present tense - happening now, in the speaker's mind - is devastating.",
       lineRef: 16,
+      effectAr:
+        'ثلاث أفعال بالمضارع ورا بعض تخلّي الموت فوري ومستحيل الهرب. والتراكم يخلق إحساس بخنق بطيء. وحقيقة إنها بالمضارع — تصير الحين، في ذهن المتكلّم — مدمّرة.',
     },
     {
       device: 'Diction',
@@ -486,6 +572,8 @@ Sound: Heavy use of harsh consonants ("trudge", "sludge", "guttering") and unple
       effect:
         "Owen's word choices are deliberately ugly. The harsh consonants and unpleasant sounds make the poem itself feel disgusting. The language enacts the horror it describes.",
       lineRef: 2,
+      effectAr:
+        'اختيارات Owen للكلمات قبيحة عمداً. الحروف الساكنة القاسية والأصوات المزعجة تخلّي القصيدة بنفسها تحسّ مقرفة. واللغة تجسّد الرعب اللي توصفه.',
     },
   ],
 }

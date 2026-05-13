@@ -188,48 +188,72 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       analysis:
         'The opening is brilliantly ironic. "Excuse me" is mock-polite — the speaker pretends to apologise for existing. "Standing on one leg" literalises "half" immediately, showing that if the term were true, the speaker would be physically incomplete. The absurdity is deliberate and sets the tone for the whole poem.',
       themes: ['Identity', 'Irony', 'Absurdity'],
+      analysisAr:
+        'مفتتحٌ ساخرٌ ببراعة. عبارة "Excuse me" متأدّبةٌ تأدّباً متصنّعاً — يتظاهر المتكلّم بأنّه يعتذر عن وجوده. أمّا "standing on one leg" فتُحرفي "half" فوراً، لتُري أنّ كلمة "half-caste" لو كانت صحيحة لكان المتكلّم ناقصاً جسديّاً. والعبثيّةُ مقصودة، وتضبط نبرة القصيدة كلّها.',
+      themesAr: ['الهويّة', 'المفارقة', 'العبثيّة'],
     },
     {
       quote: 'Explain yuself / wha yu mean',
       analysis:
         'The repeated demand turns the power dynamic around. Normally, mixed-race people are expected to explain or justify their identity. Here, the speaker demands that the person who used the term explain themselves. The Caribbean Creole spelling ("yuself", "wha yu") asserts the speaker\'s linguistic identity as valid and powerful.',
       themes: ['Power', 'Language', 'Challenge'],
+      analysisAr:
+        'الطلبُ المكرَّر يقلب موازين القوّة. عادةً يُطلَب من أصحاب الهُويّات المختلطة أن يُبرّروا هُويّتهم. أمّا هنا فيُطالب المتكلّمُ مَن استعمل التعبيرَ بأن يشرحَ هو نفسه. والكتابةُ بالكريول الكاريبيّ ("yuself"، "wha yu") تُؤكّد أنّ هُويّةَ المتكلّم اللغويّة مشروعةٌ ومُقتدِرة.',
+      themesAr: ['السلطة', 'اللغة', 'التحدّي'],
     },
     {
       quote: '[See anthology — Picasso paint-mixing analogy]',
       analysis:
         'The first of three analogies. When a great artist mixes colours, the result is celebrated as genius. Nobody calls a Picasso painting "half-caste". The analogy exposes the double standard: mixing is valued in art but denigrated in human identity. The rhetorical question demands the listener confront their own inconsistency. Refer to your Edexcel IGCSE anthology for the exact wording.',
       themes: ['Art', 'Double standards', 'Mixing'],
+      analysisAr:
+        'أولى المماثلات الثلاث. حين يخلط فنّانٌ عظيمٌ ألوانَه يحتفي العالم بالنتيجة عبقريّةً. لا أحدَ يصف لوحةَ Picasso بـ"half-caste". تكشف المماثلةُ ازدواجَ المعايير: الخلطُ ممدوحٌ في الفنّ، مذمومٌ في هُويّة الإنسان. والسؤالُ البلاغيّ يُلزم السامعَ بأن يُواجه تناقضَه. ارجع إلى الـEdexcel IGCSE anthology للنصّ الكامل.',
+      themesAr: ['الفنّ', 'ازدواج المعايير', 'الخلط'],
     },
     {
       quote: '[See anthology — Tchaikovsky black-and-white-keys analogy]',
       analysis:
         'The musical analogy is particularly sharp because it uses black and white piano keys — the very colours of racial categorisation. Nobody calls a chord "half-caste". The pun on black/white exposes how arbitrary racial categories are when applied to harmony. Refer to your Edexcel IGCSE anthology for the exact wording.',
       themes: ['Music', 'Race', 'Harmony'],
+      analysisAr:
+        'المماثلةُ الموسيقيّة حادّةٌ جدّاً لأنّها تستعمل مفاتيح البيانو السوداء والبيضاء — لونَي التصنيف العِرقيّ نفسَه. لا أحدَ يصف وَتراً موسيقيّاً بـ"half-caste". والتوريةُ بين الأبيض والأسود تكشف عُسفَ التصنيفات العِرقيّة حين تُطبَّق على الانسجام الموسيقيّ. ارجع إلى الـEdexcel IGCSE anthology للنصّ الكامل.',
+      themesAr: ['الموسيقى', 'العِرق', 'الانسجام'],
     },
     {
       quote: '[See anthology — half-a-shadow literalisation]',
       analysis:
         'The literalisation of "half" reaches its most powerful point. If the speaker is truly half a person, he would cast half a shadow — a physical impossibility. By making the metaphor literal, Agard reveals it as nonsense. The image is both comic and chilling: to call someone "half-caste" is to deny them their full humanity. Refer to your Edexcel IGCSE anthology for the exact wording.',
       themes: ['Dehumanisation', 'Literalisation', 'Identity'],
+      analysisAr:
+        'تبلغ حرفنةُ كلمة "half" أوجها هنا. لو كان المتكلّمُ حقّاً نصفَ إنسان لألقى نصفَ ظِلٍّ — وهذا مستحيلٌ جسديّاً. وبإحالة الاستعارة إلى الحرف يكشف Agard أنّها بلا معنى. والصورة هزليّة ومخيفةٌ معاً: مَن يصف الآخرَ بـ"half-caste" يُنكر إنسانيّته الكاملة. ارجع إلى الـEdexcel IGCSE anthology للنصّ الكامل.',
+      themesAr: ['نزع الإنسانيّة', 'الحرفنة', 'الهويّة'],
     },
     {
       quote: '[See anthology — accumulating list of "halves"]',
       analysis:
         'The accumulation of "halves" builds to a crescendo of absurdity. Half a dream, half an eye, half an ear — each image is more ridiculous than the last. The list overwhelms the listener with evidence that the concept of "half" a person makes no sense. The technique is rhetorically powerful: quantity becomes quality. Refer to your Edexcel IGCSE anthology for the exact wording.',
       themes: ['Accumulation', 'Absurdity', 'Rhetoric'],
+      analysisAr:
+        'يتراكم الـ"halves" حتى يبلغ ذروةَ السخف. نصفُ حلم، نصفُ عين، نصفُ أُذن — كلّ صورةٍ أسخف من سابقتها. تُغرق القائمةُ السامعَ بالبراهين على أنّ فكرة "نصف إنسان" بلا معنى. تقنيّةٌ بلاغيّة قويّة: الكَمّ يصير كيفاً. ارجع إلى الـEdexcel IGCSE anthology للنصّ الكامل.',
+      themesAr: ['التراكم', 'العبثيّة', 'البلاغة'],
     },
     {
       quote: 'come back tomorrow / wid de whole of yu eye',
       analysis:
         'The command to "come back tomorrow" turns the tables completely. Now it is the listener who is incomplete — they have been looking with half an eye, listening with half an ear. The speaker will only share his full story when the listener brings their full, unprejudiced attention. The challenge is direct, confident and empowering.',
       themes: ['Challenge', 'Wholeness', 'Power reversal'],
+      analysisAr:
+        'يقلب أمرُ "come back tomorrow" الطاولةَ تماماً. صار السامعُ هو الناقص — كان ينظر بنصف عينٍ ويُصغي بنصف أُذن. ولن يُشاركه المتكلّمُ كاملَ قصّته إلّا متى أحضر انتباهه كاملاً غيرَ مُتحيّز. والتحدّي مباشرٌ واثقٌ مُمكِّن.',
+      themesAr: ['التحدّي', 'الكمال', 'انقلاب موازين القوى'],
     },
     {
       quote: 'de other half / of my story',
       analysis:
         'The final words reclaim "half" one last time. The speaker has a complete identity — a whole story — but the listener has only heard half of it because they have been too prejudiced to listen properly. The poem ends with a promise and a challenge: there is more to the speaker than a label. The listener must earn the right to hear it.',
       themes: ['Identity', 'Completeness', 'Empowerment'],
+      analysisAr:
+        'الكلمات الأخيرة تستردّ "half" مرّةً أخيرة. للمتكلّم هُويّةٌ تامّة — قصّةٌ كاملة — لكنّ السامعَ لم يسمع منها إلّا نصفاً لأنّه أشدّ تحيّزاً من أن يُصغي كما ينبغي. تختم القصيدة بوعدٍ وتحدّ: المتكلّمُ أكبر من أن يُختزل في وَسم. وعلى السامع أن يستحقّ سماعَ الباقي.',
+      themesAr: ['الهويّة', 'الاكتمال', 'التمكين'],
     },
   ],
 
@@ -240,6 +264,8 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       effect:
         'Agard takes the word "half" literally: if "half-caste" is true, the speaker can only stand on one leg, cast half a shadow, dream half a dream. By making the metaphor literal, the poet exposes it as absurd and cruel. This is the poem\'s central technique.',
       lineRef: 1,
+      effectAr:
+        'يأخذ Agard كلمة "half" بحرفيّتها: لو كان "half-caste" تعبيراً صحيحاً، لما استطاع المتكلّم إلّا الوقوفَ على ساقٍ واحدة، وإلقاءَ نصف ظِلّ، وحُلمَ نصف حُلم. وبإحالة الاستعارة إلى الحرف يكشف الشاعرُ سخفَها وقسوتَها. وهذه تقنيّةُ القصيدة المحوريّة.',
     },
     {
       device: 'Analogy',
@@ -247,6 +273,8 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       effect:
         'Three analogies (art, music, weather) show that mixing is celebrated everywhere except race. Each analogy adds another layer of evidence that the term "half-caste" is intellectually bankrupt. The analogies move from high culture (Picasso, Tchaikovsky) to everyday life (weather), showing that the principle applies universally.',
       lineRef: 6,
+      effectAr:
+        'مماثلاتٌ ثلاث (الفنّ، الموسيقى، الطقس) تُري أنّ الخلطَ محتفىً به في كلّ مكانٍ إلّا في العِرق. كلّ مماثلةٍ تُضيف برهاناً جديداً على إفلاس مصطلح "half-caste". وتنتقل المماثلاتُ من الثقافة الرفيعة (Picasso وTchaikovsky) إلى الحياة اليوميّة (الطقس)، فتُري أنّ المبدأ يسري على كلّ شيء.',
     },
     {
       device: 'Caribbean Creole dialect',
@@ -254,6 +282,8 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       effect:
         'Writing in Creole English is itself a political act. Standard English represents colonial power; Creole represents Caribbean identity. By refusing Standard English, Agard asserts the value of his heritage. The dialect also makes the poem feel spoken, direct and personal — a real voice, not a literary exercise.',
       lineRef: 4,
+      effectAr:
+        'الكتابةُ بالكريول الإنجليزيّ موقفٌ سياسيّ بذاته. الـStandard English يُمثّل القوّةَ الاستعماريّة؛ والـCreole يُمثّل الهُويّةَ الكاريبيّة. وبرفضِ الـStandard English يُثبت Agard قيمةَ تراثه. وتمنح اللهجة القصيدةَ كذلك إحساساً منطوقاً مباشراً شخصيّاً — صوتاً حقيقيّاً لا تمريناً أدبيّاً.',
     },
     {
       device: 'Repetition / Refrain',
@@ -261,6 +291,8 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       effect:
         'The refrain "Explain yuself" is repeated throughout the poem, creating a relentless, insistent demand. Each repetition becomes more forceful. The word "half" is also repeated obsessively, each use making the term sound more absurd. The repetition mimics the way prejudice is itself repetitive — the same lazy label applied again and again.',
       lineRef: 4,
+      effectAr:
+        'لازمة "Explain yuself" تتكرّر على امتداد القصيدة، فتُولّد طلباً لا يهدأ. كلّ تكرار أعنف من سابقه. وكلمة "half" تتكرّر بإلحاحٍ مهووس، وكلّ استعمالٍ يجعلها أشدّ سخفاً. والتكرارُ يحاكي طبيعةَ التحيّز الذي يكرّر نفسه: وَسمٌ كسولٌ يُلقى مرّةً بعد مرّة.',
     },
     {
       device: 'Rhetorical questions',
@@ -268,6 +300,8 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       effect:
         'The rhetorical questions force the listener to answer "no" — of course a painting isn\'t "half-caste". Each "no" builds the logical case that a person isn\'t "half-caste" either. The questions are unanswerable, which is the point: the term cannot be defended.',
       lineRef: 6,
+      effectAr:
+        'الأسئلةُ البلاغيّة تُجبر السامعَ على الإجابة بـ"لا" — فاللوحةُ بالطبع ليست "half-caste". وكلّ "لا" تبني الحُجّةَ المنطقيّة على أنّ الإنسانَ كذلك ليس "half-caste". الأسئلةُ بلا جوابٍ ممكن، وهذا هو المقصد: المصطلحُ لا يُدافَع عنه.',
     },
     {
       device: 'Direct address and imperative verbs',
@@ -275,8 +309,58 @@ Enjambment: Lines flow into each other without stops, creating a sense of rapid,
       effect:
         'The poem is addressed directly to "yu" — the person who used the term. This makes the poem feel confrontational and personal. The imperatives ("explain", "come back") are commands, not requests. The speaker takes authority over the conversation, reversing the power dynamic that the label tried to impose.',
       lineRef: 0,
+      effectAr:
+        'القصيدة موجَّهةٌ مباشرةً إلى "yu" — الشخص الذي استعمل المصطلح. وهذا يكسبها طابعاً مواجِهاً شخصيّاً. وصِيَغُ الأمر ("explain"، "come back") أوامرٌ لا طلبات. يستولي المتكلّم على سُلطة الحوار، فيقلب موازين القوى التي حاول الوَسمُ فرضَها.',
     },
   ],
+
+  contextAr: `
+    <h3>John Agard (مواليد 1949)</h3>
+    <p>John Agard شاعرٌ وكاتبُ مسرحٍ وأدبِ أطفالٍ من غويانا، يعيش في بريطانيا. وُلد في British Guiana (Guyana الآن) وانتقل إلى إنكلترا سنة 1977. كثيراً ما يستكشف عمله موضوعات <strong>الهُويّة الثقافيّة</strong> و<strong>العِرق</strong> و<strong>اللغة</strong>. يكتب بالإنجليزيّة الفصحى وبالكريول الكاريبيّ معاً، وكثيراً ما يخلط بينهما داخل قصيدةٍ واحدة. وفي 2012 نال Queen\'s Gold Medal for Poetry.</p>
+
+    <h3>مصطلح "half-caste"</h3>
+    <p>كلمة "caste" من البرتغاليّة/الإسبانيّة <em>casta</em>، بمعنى "العِرق" أو "النسب". واستُعمل "half-caste" تاريخيّاً لوصف ذوي التراث العِرقيّ المختلط، بإيحاءٍ أنّهم <strong>ناقصون</strong> أو <strong>أدنى</strong> — حرفيّاً "نصفُ" إنسان. وقد صار المصطلح اليوم مرفوضاً على نطاقٍ واسع بوصفه مهيناً. كتب Agard هذه القصيدةَ ليُفكّك الكلمة ويكشف قسوتها.</p>
+
+    <h3>بريطانيا المتعدّدة الثقافات</h3>
+    <p>كُتبت القصيدة في سياق <strong>بريطانيا المتعدّدة الثقافات</strong> في أواخر القرن العشرين. جاءت الهجرة من الكاريبي (جيلُ "Windrush" منذ 1948 فصاعداً) بمجتمعاتٍ جديدة إلى بريطانيا، وجاءت معها كذلك توتّراتٌ عِرقيّة وتمييزٌ وتحاملٌ يوميّ. تواجه قصيدةُ Agard العنصريّةَ اليوميّة — لا الاعتداءات العنيفة، بل الاستعمال الطائش لوَسمٍ يُقلّل الإنسان.</p>
+
+    <h3>اللغة والسلطة</h3>
+    <p>يكتب Agard قصدياً بالـ<strong>Caribbean Creole English</strong> — "yu"، "wid"، "dem"، "wha". خيارٌ سياسيّ. الفصحى الإنجليزيّة لغةُ القوّة الاستعماريّة التي حكمت Guyana في الماضي. وبالكتابة بالكريول يُثبت Agard قيمةَ تراثه اللغويّ وجماله. اللهجةُ نفسُها هي الحُجّة: خلطُ اللغات، كخلط الأعراق، يُنتج ما هو أغنى لا أنقص.</p>
+
+    <h3>شعر الأداء</h3>
+    <p>"Half-Caste" قصيدةُ <strong>أداءٍ</strong> — كُتبت لتُلقى صوتاً. وAgard مُؤدٍّ معروف، وإيقاعات القصيدة وتكرارها ونداؤها المباشر تعمل كلّها في أبهى صورها متى سُمعت. ونداءُ "Explain yuself" المواجِه موجَّهٌ إلى جمهورٍ حيّ، فيُحسّ كلُّ سامعٍ بأنّ التحدّي شخصيّ.</p>
+  `,
+
+  summaryAr: `تبدأ القصيدة بتأدّبٍ متصنّع — "Excuse me / standing on one leg / I\'m half-caste". يتقمّص المتكلّم الوَسمَ المهين ليُفكّكه، مؤدّياً معناه الحرفيّ ليُبيّن سخفه.
+
+ثمّ يطالب المتكلّمُ السامعَ بأن يشرح ما يقصده بـ"half-caste". وهذا الطلب — "Explain yuself / wha yu mean" — يتكرّر على امتداد القصيدة لازمةً، فيُلقي عبءَ الشرح على من استعمل الكلمة.
+
+يستعمل Agard ثلاث مماثلاتٍ ليُري أنّ الخلطَ محتفىً به في كلّ مكانٍ إلّا في الهُويّة العِرقيّة. خلط Picasso الأحمر والأخضر — لم يصف أحدٌ فنّه بـ"half-caste". خلط Tchaikovsky مفاتيح البيانو السوداء والبيضاء — لم يصف أحدٌ موسيقاه بـ"half-caste". وخلطُ الطقس الإنجليزيّ بين شمسٍ وغيمٍ — لم يصف أحدٌ السماء بـ"half-caste".
+
+ثمّ يُحرفي المتكلّمُ استعارةَ "half". لو كان نصفَ إنسانٍ لألقى نصفَ ظِلّ، وحَلَم نصفَ حُلم، ورأى بنصف عين، وأصغى بنصف أُذن. وتراكمُ الاستحالات الجسديّة يجعل المصطلحَ يبدو أسخف وأسخف.
+
+تختم القصيدة بتحدٍّ قويّ. يأمر المتكلّمُ السامعَ بأن "come back tomorrow / wid de whole of yu eye" (وأن يُحضر كاملَ أُذنه وعقله). ولن يُشاركه "de other half / of my story" إلّا متى أقبل إنساناً كاملاً غيرَ مُتحيّز. وانقلابُ الموازين تامّ: السامعُ، لا المتكلّم، هو الناقص طوال الوقت.
+
+المعنى الإجماليّ: "Half-Caste" قصيدةٌ تستعمل الفُكاهة والمفارقة واللهجة الكاريبيّة لمواجهة التحيّز العِرقيّ. يستردّ Agard كلمةً مهينة، ويكشف سخفها بالمماثلة والحرفنة، ثمّ ينقل السلطةَ في النهاية من الواسم إلى الموسوم.`,
+
+  formAndStructureAr: `الشكل: شعرٌ حرّ — لا وزنَ منتظم ولا قافية. القصيدة مونولوغٌ دراميّ متّصل موجَّهٌ مباشرةً إلى سامع. وهذا يلائم أصلَها قصيدةَ أداءٍ ونبرتَها الحواريّة المواجِهة.
+
+طول السطر: أسطرٌ قصيرة حادّة، كثيراً ما تتكوّن من كلماتٍ قليلة. وهذا يُولّد إيقاعاً متقطّعاً مُلِحّاً — كأنّ المتكلّم يَخِزُ السامعَ بأصبعه. وقِصَر الأسطر يحاكي كذلك أنماط الكلام المنطوق.
+
+اللهجة: كُتبت القصيدةُ كلُّها بالكريول الكاريبيّ الإنجليزيّ — "yu"، "wid"، "dem"، "wha". اختيارٌ بنائيّ لا زخرفة. تُؤكّد اللهجةُ الهُويّةَ الثقافيّة وتقاوم هيمنةَ الفصحى الإنجليزيّة. وخلطُ اللغات يحاكي خلطَ الأعراق الذي تحتفي به القصيدة.
+
+التكرار: "Explain yuself / wha yu mean" يتكرّر لازمةً، فيُولّد إحساساً بطلبٍ لا يهدأ. وكلمة "half" تتكرّر عشرات المرّات، كلّ مرّةٍ تجعلها أشدّ سخفاً.
+
+البنية في ثلاث حركات:
+• الحركة الأولى (الافتتاح): يُقدّم المتكلّمُ نفسَه بتواضعٍ متصنّع ويُعلن الموضوع.
+• الحركة الثانية (الوسط): ثلاثُ مماثلاتٍ — Picasso، Tchaikovsky، الطقس الإنجليزيّ — تُري كلٌّ منها أنّ الخلطَ محتفىً به في الفنّ والموسيقى والطبيعة.
+• الحركة الثالثة (الختام): حرفنةُ "half" (نصفُ ظِلّ، نصفُ حُلم، نصفُ عين) ثمّ التحدّي الختاميّ للسامع.
+
+النبرة: تأدّبٌ متصنّع، مفارقة، مواجهة، فُكاهة، غضب. والفُكاهة جوهريّة — يجعل Agard السامعَ يضحك من سخف المصطلح، ثمّ يُحسّ بالغضب تحت الضحك.
+
+غياب الترقيم والحروف الكبيرة: تستعمل القصيدة ترقيماً ضئيلاً ولا حروفَ كبيرة (إلّا في أسماء الأعلام). وهذا ينزع هرميّات نحو الفصحى الإنجليزيّة — فِعل مقاومةٍ لغويٍّ آخر.
+
+الـ enjambment: تنساب الأسطرُ بعضُها في بعضٍ دون وقفات، فيتولّد إحساسٌ بكلامٍ سريعٍ لا يُقطع. لن يُسكَت المتكلّمُ ولن يُقاطَع.`,
 }
 
 /* ── Comparison poems ─────────────────────────────────────────────── */

@@ -140,6 +140,12 @@ const poppiesData: PoemData = {
 <p>Unlike many war poems written from a soldier's perspective, "Poppies" focuses on the <strong>domestic, emotional cost</strong> of conflict — the grief, anxiety, and loss experienced by those left behind. The poem deliberately blurs time periods: it could be set during WWI, WWII, or any modern conflict, making the mother's experience timeless and universal.</p>
 <p>Key contextual threads include the tension between the <strong>domestic world</strong> (pinning lapels, school blazers, playground voices) and the <strong>military world</strong> (Armistice Sunday, war graves, poppies), and the way <strong>textile imagery</strong> — felt, bias binding, tucks, darts, pleats — weaves throughout as a metaphor for the mother stitching together fragments of memory and grief.</p>`,
 
+  contextAr: `<p><strong>Jane Weir</strong> شاعرة بريطانية مواليد سنة 1963، تربّت في Manchester وعاشت كمان في إيطاليا. تشتغل مصمّمة منسوجات، وتأثير عالم النسيج — الخياطة والحياكة والقماش — يسري في شعرها كله.</p>
+<p>قصيدة <strong>"Poppies"</strong> نُشرت سنة 2009 ضمن مجموعة كلّفتها فيها Carol Ann Duffy (اللي كانت وقتها Poet Laureate) عشان توثّق النزاعات الحديثة. القصيدة مكتوبة على لسان <strong>أم</strong> ابنها راح للحرب، رغم إن Weir قالت إنها تنطبق على أي أم تودّع عيالها.</p>
+<p>الأحداث تدور حوالين <strong>Remembrance Day</strong> (Armistice Sunday، 11 نوفمبر) وتستثمر رمزية الـ<strong>poppies</strong> (شقائق النعمان) — الورد اللي طلع في ساحات معارك Flanders في الحرب العالمية الأولى، وصار من بعدها رمز عالمي للتذكّر وإحياء ذكرى الشهداء.</p>
+<p>على عكس كثير من قصائد الحرب اللي تكتب من زاوية الجندي، "Poppies" تركّز على <strong>التكلفة المنزلية والعاطفية</strong> للصراع — الحزن والقلق والفقد اللي يعيشه أهل المقاتل في البيت. القصيدة عن قصد تطمس الفترات الزمنية: ممكن تكون في الحرب العالمية الأولى، أو الثانية، أو أي نزاع حديث، وهذا الشي يخلّي تجربة الأم خالدة وعالمية.</p>
+<p>من أهم الخيوط السياقية: التوتّر بين <strong>عالم البيت</strong> (تثبيت الـlapels، البليزرات المدرسية، أصوات الملعب) و<strong>عالم العسكر</strong> (Armistice Sunday، قبور الجنود، الـpoppies)، وأسلوب <strong>صور المنسوجات</strong> — felt، bias binding، tucks، darts، pleats — اللي تحاك في القصيدة كاستعارة لمحاولة الأم إنها تخيّط مع بعض شظايا الذكرى والحزن.</p>`,
+
   summary: `"Poppies" traces a mother's experience of letting her son go to war, structured around the rituals of Remembrance Day. The poem opens three days before Armistice Sunday, with the mother pinning a poppy to her son's lapel — an act that merges the domestic ritual of preparing a child for school with the formal act of military remembrance.
 
 As the son departs, the mother is left with fragments of memory: childhood games, the texture of his hair, his playground voice. The poem moves between past and present, blurring the timeline so that the child leaving for school and the soldier leaving for war become indistinguishable.
@@ -147,6 +153,14 @@ As the son departs, the mother is left with fragments of memory: childhood games
 After her son has gone, the mother releases a songbird from its cage — a symbolic act of letting go. She visits the war memorial, where she leans against it "like a bird," listening for her son's voice on the wind. The poem ends with this image of desperate, fragile hope — the mother still searching for connection to her absent child.
 
 Throughout, Weir uses textile imagery (felt, bias binding, tucks, darts, pleats) to convey the mother's attempt to hold things together, and sensory, tactile language to express grief that is physical and overwhelming rather than abstract.`,
+
+  summaryAr: `قصيدة "Poppies" تتبع تجربة أم وهي تخلّي ابنها يروح للحرب، والقصيدة مبنية على طقوس Remembrance Day. تفتتح القصيدة قبل Armistice Sunday بثلاثة أيام، والأم تثبّت "poppy" على lapel ابنها — فعل يدمج بين الطقس البيتي اللي تجهّز فيه طفلها للمدرسة وبين المراسم العسكرية الرسمية لإحياء ذكرى الشهداء.
+
+ولمّا الابن يطلع، الأم تتبقّى مع شظايا الذكرى: ألعاب الطفولة، ملمس شعره، صوته في الملعب. القصيدة تتنقّل بين الماضي والحاضر، وتطمس الجدول الزمني، عشان الطفل اللي طالع للمدرسة والجندي اللي طالع للحرب يصيرون شي واحد ما تقدر تفرّق بينهم.
+
+بعد ما يروح الابن، الأم تفك "songbird" من القفص — فعل رمزي للتخلية والإفلات. وتزور النصب التذكاري للحرب، وتميل عليه "like a bird"، تنصت لصوت ابنها مع الهواء. القصيدة تنتهي بهالصورة من الأمل اليائس والهش — الأم لساتها تدوّر على وصل مع طفلها الغايب.
+
+على طول القصيدة، Weir تستخدم صور المنسوجات (felt، bias binding، tucks، darts، pleats) عشان توصّل محاولة الأم إنها تمسك الأشياء مع بعض، ولغة حسّية وملموسة عشان تعبّر عن حزن جسدي طاغي مو مجرّد فكرة مجرّدة.`,
 
   formAndStructure: `FORM: Free verse with no regular rhyme scheme or metre. The lack of formal structure mirrors the mother's emotional state — uncontained, unpredictable, and resistant to neat resolution. The poem is written in the first person, giving us direct access to the mother's interior world.
 
@@ -160,42 +174,72 @@ STANZAS: The poem's four uneven stanzas (of varying length) reject regularity. T
 
 TENSE SHIFTS: The poem shifts between past and present tense, blurring the boundary between memory and the present moment. This temporal instability suggests the mother is trapped between past happiness and present grief.`,
 
+  formAndStructureAr: `FORM (الشكل): free verse بدون قافية ثابتة ولا وزن منتظم. غياب البناء الرسمي يعكس الحالة العاطفية للأم — منفلتة، غير متوقّعة، وترفض أي حلّ مرتّب. القصيدة مكتوبة بضمير المتكلّم، وهذا يعطينا منفذ مباشر لعالم الأم الداخلي.
+
+STRUCTURE (البناء): القصيدة تتحرّك بالترابط الذهني مو بالترتيب الزمني، وتتنقّل بين ذكريات الماضي وحزن الحاضر. الجمل طويلة ومتدفّقة، تعبر فواصل الأبيات والمقاطع عن طريق enjambment مكثّف، وهذا يجسّد كيف الذكريات والمشاعر تطفح بدون سيطرة من لحظة لثانية.
+
+ENJAMBMENT: هذا أهم ميزة بنيوية في القصيدة. الأبيات تنكسر في نص العبارة ("I pinned one / onto your lapel")، في نص الجملة، حتى في نص المجموعة اللفظية، وهذا يخلق إحساس بانقطاع النفس وفيضان عاطفي. الـenjambment عبر فواصل المقاطع له ثقل خاص — الأفكار ترفض إنها تنحبس داخل حدود مرتّبة.
+
+SENTENCE LENGTH (طول الجملة): Weir تستخدم جمل طويلة ومعقّدة تعكس تيّار وعي الأم. القوائم ("tucks, darts, pleats") تتراكم تفاصيل بطريقة هوسية. التباين بين هالجمل المتدفّقة والشظايا القصيرة المكسّرة في آخر القصيدة ("I think I—") يوصّل تشظّي الأم العاطفي المتزايد.
+
+STANZAS (المقاطع): مقاطع القصيدة الأربعة غير المنتظمة (بأطوال مختلفة) ترفض الانتظام. ولا نمط مرتّب — شكل القصيدة على الصفحة نفسه مضطرب وغير متناظر، وهذا يعكس اضطراب الفقد.
+
+TENSE SHIFTS (تبدّل الأزمنة): القصيدة تتنقّل بين الماضي والحاضر، وتطمس الحدود بين الذكرى واللحظة الحاضرة. هالاضطراب الزمني يلمّح إن الأم محبوسة بين سعادة الماضي وحزن الحاضر.`,
+
   keyQuotes: [
     {
       quote: 'three days before Armistice Sunday',
       analysis:
         'The specific temporal marker grounds the poem in the rituals of remembrance. "Three days before" creates anticipation and dread — the mother is already preparing for the formal acknowledgment of loss. The reference to Armistice Sunday connects individual grief to collective, national mourning.',
       themes: ['Loss and absence', 'Memory', 'War and conflict'],
+      analysisAr:
+        'الإشارة الزمنية المحدّدة تثبّت القصيدة في طقوس التذكّر. عبارة "three days before" تخلق ترقّب وخوف — الأم من الحين تجهّز نفسها للاعتراف الرسمي بالفقد. والإشارة لـArmistice Sunday تربط الحزن الفردي بالحداد الجماعي الوطني.',
+      themesAr: ['الفقد والغياب', 'الذكرى', 'الحرب والصراع'],
     },
     {
       quote: 'spasms of paper red',
       analysis:
         'The word "spasms" transforms the artificial poppy into something visceral and bodily — it suggests involuntary pain, convulsions, even death throes. "Paper red" is a transferred epithet: the redness belongs to blood and poppies, but is applied to paper, collapsing the boundary between the symbolic poppy and real bloodshed.',
       themes: ['War and conflict', 'Grief', 'Symbolism'],
+      analysisAr:
+        'كلمة "spasms" تحوّل الـpoppy الاصطناعية إلى شي حسّي وجسدي — تلمّح بألم لا إرادي، تشنّجات، حتى نزع روح. وعبارة "paper red" هي transferred epithet: الاحمرار في الأصل صفة للدم والـpoppies، بس تُنسب للورق، وهذا يطمس الحدود بين الـpoppy الرمزية وبين سفك دم حقيقي.',
+      themesAr: ['الحرب والصراع', 'الحزن', 'الرمزية'],
     },
     {
       quote: 'I pinned one onto your lapel',
       analysis:
         'The tender, domestic act of pinning a poppy carries enormous weight. It evokes a mother pinning a name badge on a school blazer, but also the formal ritual of wearing a poppy for Remembrance. The verb "pinned" suggests both attachment and the sharp pain of a pin — love and hurt are inseparable.',
       themes: ['Loss and absence', 'Family', 'Domestic vs military'],
+      analysisAr:
+        'فعل تثبيت الـpoppy، رغم إنه حنون وبيتي، يحمل ثقل عاطفي كبير. يستحضر صورة الأم وهي تثبّت بطاقة الاسم على blazer مدرسي، بس في نفس الوقت يستحضر الطقس الرسمي للبس الـpoppy في Remembrance. الفعل "pinned" يلمّح بالتعلّق والتلاحم، بس يلمّح كمان بألم وخز الدبّوس — المحبة والوجع ما تفرّقهم عن بعض.',
+      themesAr: ['الفقد والغياب', 'الأسرة', 'البيتي مقابل العسكري'],
     },
     {
       quote: 'released a song bird from its cage',
       analysis:
         'A central metaphor for letting go. The caged bird represents the child held safe at home; releasing it symbolises the mother allowing her son to leave for war. The "song bird" implies beauty and fragility, while the cage suggests both protection and confinement. The act is both generous and devastating.',
       themes: ['Loss and absence', 'Freedom', 'Family'],
+      analysisAr:
+        'استعارة محورية للتخلية والإفلات. الطير المسجون في القفص يمثّل الطفل اللي تخبّيه الأم وتحفظه في البيت؛ وإطلاقه يرمز للأم وهي تخلّي ابنها يطلع للحرب. كلمة "song bird" تلمّح بالجمال والهشاشة، والـcage يلمّح بالحماية وكمان بالحبس. الفعل سخي ومدمّر في نفس الوقت.',
+      themesAr: ['الفقد والغياب', 'الحرية', 'الأسرة'],
     },
     {
       quote: 'the world overflowing',
       analysis:
         'This phrase captures the mother\'s sense of being overwhelmed — her grief is so vast that it cannot be contained. "Overflowing" connects to the enjambment throughout the poem: emotions, like the verse itself, refuse to stay within boundaries. It also suggests abundance — the world is full of things that remind her of her son.',
       themes: ['Grief', 'Memory', 'Nature'],
+      analysisAr:
+        'هالعبارة تلتقط إحساس الأم إنها مغمورة وما عاد تتحمّل — حزنها واسع لدرجة إنها ما تقدر تحتويه. كلمة "overflowing" تتربط بالـenjambment اللي يجري في كل القصيدة: المشاعر، مثل الأبيات نفسها، ترفض تنحبس داخل الحدود. وكمان تلمّح بوفرة — الدنيا مليانة أشياء تذكّرها بابنها.',
+      themesAr: ['الحزن', 'الذكرى', 'الطبيعة'],
     },
     {
       quote: 'leaned against it like a bird',
       analysis:
         'The simile compares the mother to a bird — small, fragile, vulnerable. She leans against the war memorial seeking support, just as a bird might press against a branch for shelter. The bird imagery connects to the earlier songbird and dove, creating a symbolic thread: the mother, like the birds, is caught between freedom and loss.',
       themes: ['Loss and absence', 'Vulnerability', 'Nature'],
+      analysisAr:
+        'التشبيه يقارن الأم بطير — صغيرة، هشّة، ضعيفة. تميل على النصب التذكاري تطلب سند، تماماً مثل ما الطير ممكن يستند على فرع عشان يستظل. صور الطيور تتربط بالـsongbird والـdove اللي ذكرتهم القصيدة من قبل، وتخلق خيط رمزي مستمر: الأم، مثل الطيور، عالقة بين الحرية والفقد.',
+      themesAr: ['الفقد والغياب', 'الهشاشة', 'الطبيعة'],
     },
     {
       quote: 'to graze my nose across the top of your head',

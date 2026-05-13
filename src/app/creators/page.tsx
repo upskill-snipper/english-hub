@@ -21,8 +21,10 @@ import {
   Loader2,
 } from 'lucide-react'
 import { PRICING } from '@/constants/pricing'
+import { useT } from '@/lib/i18n/use-t'
 
 export default function CreatorsPage() {
+  const t = useT()
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -30,24 +32,23 @@ export default function CreatorsPage() {
         <div className="max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4" />
-            Creator Partners
+            {t('creators.badge')}
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            Earn Money Sharing Education
+            {t('creators.h1')}
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Join The English Hub&apos;s affiliate program. Earn 20% recurring commission
-            on every student you refer.
+            {t('creators.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#apply" className="btn-primary text-lg px-8 py-4">
-              Apply to Become a Partner
+              {t('creators.cta.apply')}
             </a>
             <a
               href="mailto:info@Upskillenergy.com"
               className="text-muted-foreground hover:text-foreground transition-colors text-sm underline underline-offset-2"
             >
-              Already an affiliate? Contact us
+              {t('creators.cta.contact')}
             </a>
           </div>
         </div>
@@ -57,32 +58,36 @@ export default function CreatorsPage() {
       <section className="px-4 py-16 bg-card/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-foreground text-center mb-12">
-            How It Works
+            {t('creators.how.h2')}
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <Step
               number={1}
+              stepLabel={t('creators.how.step_label')}
               icon={<CheckCircle2 className="w-6 h-6" />}
-              title="Apply to become a partner"
-              description="Fill out the form below. We review applications within 48 hours."
+              title={t('creators.how.step1.title')}
+              description={t('creators.how.step1.desc')}
             />
             <Step
               number={2}
+              stepLabel={t('creators.how.step_label')}
               icon={<Link2 className="w-6 h-6" />}
-              title="Get your unique referral link"
-              description="Once approved, you get a personal link and tracking dashboard."
+              title={t('creators.how.step2.title')}
+              description={t('creators.how.step2.desc')}
             />
             <Step
               number={3}
+              stepLabel={t('creators.how.step_label')}
               icon={<Share2 className="w-6 h-6" />}
-              title="Share with your audience"
-              description="Post on TikTok, YouTube, Instagram, or any platform you use."
+              title={t('creators.how.step3.title')}
+              description={t('creators.how.step3.desc')}
             />
             <Step
               number={4}
+              stepLabel={t('creators.how.step_label')}
               icon={<PoundSterling className="w-6 h-6" />}
-              title="Earn 20% recurring monthly"
-              description="Earn 20% of every subscription — paid every month they stay subscribed."
+              title={t('creators.how.step4.title')}
+              description={t('creators.how.step4.desc')}
             />
           </div>
         </div>
@@ -94,31 +99,39 @@ export default function CreatorsPage() {
           <div className="flex items-center justify-center gap-3 mb-8">
             <Calculator className="w-6 h-6 text-primary" />
             <h2 className="text-2xl font-bold text-foreground text-center">
-              Earning Calculator
+              {t('creators.calc.h2')}
             </h2>
           </div>
           <p className="text-muted-foreground text-center mb-8">
-            See how much you could earn with our 20% recurring commission on the{' '}
-            {PRICING.CURRENCY}{PRICING.MONTHLY}/mo plan.
+            {t('creators.calc.intro')} {PRICING.CURRENCY}
+            {PRICING.MONTHLY}
+            {t('creators.calc.plan_suffix')}
           </p>
           <div className="grid sm:grid-cols-3 gap-6">
             <EarningCard
               students={100}
               monthly={Number((100 * PRICING.MONTHLY * 0.2).toFixed(2))}
+              studentsReferred={t('creators.calc.students_referred')}
+              perMonth={t('creators.calc.per_month')}
             />
             <EarningCard
               students={500}
               monthly={Number((500 * PRICING.MONTHLY * 0.2).toFixed(2))}
               highlighted
+              studentsReferred={t('creators.calc.students_referred')}
+              perMonth={t('creators.calc.per_month')}
             />
             <EarningCard
               students={1000}
               monthly={Number((1000 * PRICING.MONTHLY * 0.2).toFixed(2))}
+              studentsReferred={t('creators.calc.students_referred')}
+              perMonth={t('creators.calc.per_month')}
             />
           </div>
           <p className="text-muted-foreground text-xs text-center mt-4">
-            Based on {PRICING.CURRENCY}{PRICING.MONTHLY}/mo subscription price.
-            Commission is recurring for as long as the student remains subscribed.
+            {t('creators.calc.footnote_prefix')} {PRICING.CURRENCY}
+            {PRICING.MONTHLY}
+            {t('creators.calc.footnote_suffix')}
           </p>
         </div>
       </section>
@@ -129,33 +142,33 @@ export default function CreatorsPage() {
           <div className="flex items-center justify-center gap-3 mb-8">
             <Lightbulb className="w-6 h-6 text-primary" />
             <h2 className="text-2xl font-bold text-foreground text-center">
-              Content Ideas That Convert
+              {t('creators.ideas.h2')}
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
             <ContentIdea
               icon={<Video className="w-5 h-5" />}
-              title='"English exam hacks"'
-              description="15-30 second TikToks or YouTube Shorts showing quick tips from the platform."
-              platform="TikTok / Shorts"
+              title={t('creators.ideas.hacks.title')}
+              description={t('creators.ideas.hacks.desc')}
+              platform={t('creators.ideas.hacks.platform')}
             />
             <ContentIdea
               icon={<Video className="w-5 h-5" />}
-              title='"How I got a Grade 9"'
-              description="Study vlogs showing your revision routine using The English Hub."
-              platform="YouTube / TikTok"
+              title={t('creators.ideas.grade9.title')}
+              description={t('creators.ideas.grade9.desc')}
+              platform={t('creators.ideas.grade9.platform')}
             />
             <ContentIdea
               icon={<Video className="w-5 h-5" />}
-              title='"Best GCSE revision resources"'
-              description='Review and comparison videos — include The English Hub in your "top 5" list.'
-              platform="YouTube / Instagram"
+              title={t('creators.ideas.best.title')}
+              description={t('creators.ideas.best.desc')}
+              platform={t('creators.ideas.best.platform')}
             />
             <ContentIdea
               icon={<Clock className="w-5 h-5" />}
-              title='"Study with me" sessions'
-              description="Film yourself revising with The English Hub open on screen. Great for long-form content."
-              platform="YouTube / TikTok LIVE"
+              title={t('creators.ideas.swm.title')}
+              description={t('creators.ideas.swm.desc')}
+              platform={t('creators.ideas.swm.platform')}
             />
           </div>
         </div>
@@ -165,38 +178,38 @@ export default function CreatorsPage() {
       <section className="px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-foreground text-center mb-8">
-            Partner Benefits
+            {t('creators.benefits.h2')}
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <Benefit
               icon={<PoundSterling className="w-5 h-5" />}
-              title="20% recurring commission"
-              description="Earn on every payment, not just the first. As long as they subscribe, you earn."
+              title={t('creators.benefits.recurring.title')}
+              description={t('creators.benefits.recurring.desc')}
             />
             <Benefit
               icon={<Clock className="w-5 h-5" />}
-              title="30-day cookie window"
-              description="If someone clicks your link, you get credit for 30 days — even if they don't sign up immediately."
+              title={t('creators.benefits.cookie.title')}
+              description={t('creators.benefits.cookie.desc')}
             />
             <Benefit
               icon={<BarChart3 className="w-5 h-5" />}
-              title="Real-time dashboard"
-              description="Track clicks, signups, and earnings in real time from your affiliate dashboard."
+              title={t('creators.benefits.dashboard.title')}
+              description={t('creators.benefits.dashboard.desc')}
             />
             <Benefit
               icon={<Tag className="w-5 h-5" />}
-              title="Custom discount codes"
-              description="Give your audience exclusive discount codes to boost conversions."
+              title={t('creators.benefits.codes.title')}
+              description={t('creators.benefits.codes.desc')}
             />
             <Benefit
               icon={<Wallet className="w-5 h-5" />}
-              title="Monthly payouts"
-              description="Confirmed commissions are paid on the 1st of each month via PayPal or bank transfer."
+              title={t('creators.benefits.payout.title')}
+              description={t('creators.benefits.payout.desc')}
             />
             <Benefit
               icon={<Users className="w-5 h-5" />}
-              title="Dedicated support"
-              description="Get direct access to our team for content ideas, assets, and promotional support."
+              title={t('creators.benefits.support.title')}
+              description={t('creators.benefits.support.desc')}
             />
           </div>
         </div>
@@ -206,11 +219,9 @@ export default function CreatorsPage() {
       <section id="apply" className="px-4 py-16 bg-card/50">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold text-foreground text-center mb-2">
-            Apply to Become a Creator Partner
+            {t('creators.apply.h2')}
           </h2>
-          <p className="text-muted-foreground text-center mb-8">
-            We review all applications within 48 hours.
-          </p>
+          <p className="text-muted-foreground text-center mb-8">{t('creators.apply.intro')}</p>
           <CreatorApplicationForm />
         </div>
       </section>
@@ -219,37 +230,16 @@ export default function CreatorsPage() {
       <section className="px-4 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold text-foreground text-center mb-8">
-            Frequently Asked Questions
+            {t('creators.faq.h2')}
           </h2>
           <div className="space-y-3">
-            <FAQ
-              q="What platforms can I promote on?"
-              a="TikTok, YouTube, Instagram, Twitter/X, blogs, WhatsApp groups — anywhere you have an audience interested in English revision."
-            />
-            <FAQ
-              q="How does tracking work?"
-              a="You get a unique referral link (e.g. theenglishhub.app?via=yourcode). When someone clicks it, a 30-day cookie tracks them. If they subscribe within 30 days, you earn the commission."
-            />
-            <FAQ
-              q="When do I get paid?"
-              a="Commissions are confirmed 30 days after each signup (to allow for refunds). Confirmed commissions are paid on the 1st of each month via PayPal or bank transfer."
-            />
-            <FAQ
-              q="Can I apply if I'm under 18?"
-              a="Yes! We welcome student creators. If you're under 18, we'll just need parental consent."
-            />
-            <FAQ
-              q="Do I need a minimum number of followers?"
-              a="No strict minimum, but we look for engaged audiences interested in GCSE/IGCSE English. Quality matters more than quantity."
-            />
-            <FAQ
-              q="Do I need to disclose that it's an ad?"
-              a="Yes. UK advertising rules (ASA/CAP) require you to include #ad in every promotional post. This must be clearly visible."
-            />
-            <FAQ
-              q="Is there a limit to how much I can earn?"
-              a="No cap. The more students you refer, the more you earn. Commission is recurring for as long as each student stays subscribed."
-            />
+            <FAQ q={t('creators.faq.q1')} a={t('creators.faq.a1')} />
+            <FAQ q={t('creators.faq.q2')} a={t('creators.faq.a2')} />
+            <FAQ q={t('creators.faq.q3')} a={t('creators.faq.a3')} />
+            <FAQ q={t('creators.faq.q4')} a={t('creators.faq.a4')} />
+            <FAQ q={t('creators.faq.q5')} a={t('creators.faq.a5')} />
+            <FAQ q={t('creators.faq.q6')} a={t('creators.faq.a6')} />
+            <FAQ q={t('creators.faq.q7')} a={t('creators.faq.a7')} />
           </div>
         </div>
       </section>
@@ -261,11 +251,13 @@ export default function CreatorsPage() {
 
 function Step({
   number,
+  stepLabel,
   icon,
   title,
   description,
 }: {
   number: number
+  stepLabel: string
   icon: React.ReactNode
   title: string
   description: string
@@ -275,7 +267,9 @@ function Step({
       <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
         {icon}
       </div>
-      <div className="text-xs text-muted-foreground mb-1">Step {number}</div>
+      <div className="text-xs text-muted-foreground mb-1">
+        {stepLabel} {number}
+      </div>
       <h3 className="text-base font-semibold text-foreground mb-2">{title}</h3>
       <p className="text-sm text-muted-foreground">{description}</p>
     </div>
@@ -286,26 +280,29 @@ function EarningCard({
   students,
   monthly,
   highlighted,
+  studentsReferred,
+  perMonth,
 }: {
   students: number
   monthly: number
   highlighted?: boolean
+  studentsReferred: string
+  perMonth: string
 }) {
   return (
     <div
       className={`rounded-xl p-6 text-center ${
-        highlighted
-          ? 'border-2 border-primary bg-primary/5'
-          : 'card'
+        highlighted ? 'border-2 border-primary bg-primary/5' : 'card'
       }`}
     >
       <p className="text-muted-foreground text-sm mb-2">
-        {students.toLocaleString()} students referred
+        {students.toLocaleString()} {studentsReferred}
       </p>
       <p className="text-3xl font-bold text-foreground mb-1">
-        {PRICING.CURRENCY}{monthly.toFixed(2)}
+        {PRICING.CURRENCY}
+        {monthly.toFixed(2)}
       </p>
-      <p className="text-muted-foreground text-xs">per month, recurring</p>
+      <p className="text-muted-foreground text-xs">{perMonth}</p>
     </div>
   )
 }
@@ -374,9 +371,7 @@ function FAQ({ q, a }: { q: string; a: string }) {
           <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" />
         )}
       </button>
-      {open && (
-        <div className="px-4 pb-4 text-sm text-muted-foreground">{a}</div>
-      )}
+      {open && <div className="px-4 pb-4 text-sm text-muted-foreground">{a}</div>}
     </div>
   )
 }
@@ -384,6 +379,7 @@ function FAQ({ q, a }: { q: string; a: string }) {
 /* ── Application Form ───────────────────────────────────── */
 
 function CreatorApplicationForm() {
+  const t = useT()
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
@@ -409,12 +405,12 @@ function CreatorApplicationForm() {
       const result = await res.json()
 
       if (!res.ok) {
-        setError(result.error || 'Something went wrong. Please try again.')
+        setError(result.error || t('creators.form.error_generic'))
       } else {
         setSuccess(true)
       }
     } catch {
-      setError('Network error. Please try again.')
+      setError(t('creators.form.error_network'))
     }
 
     setSubmitting(false)
@@ -425,11 +421,10 @@ function CreatorApplicationForm() {
       <div className="card p-8 text-center">
         <CheckCircle2 className="w-12 h-12 text-primary mx-auto mb-4" />
         <h3 className="text-xl font-semibold text-foreground mb-2">
-          Application Submitted!
+          {t('creators.success.title')}
         </h3>
         <p className="text-muted-foreground">
-          We&apos;ll review your application within 48 hours and email you with next
-          steps. If you have any questions, contact us at{' '}
+          {t('creators.success.body_pre')}{' '}
           <a href="mailto:info@Upskillenergy.com" className="text-primary underline">
             info@Upskillenergy.com
           </a>
@@ -451,7 +446,7 @@ function CreatorApplicationForm() {
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" className="label">
-            Full Name *
+            {t('creators.form.name')}
           </label>
           <input
             type="text"
@@ -465,62 +460,46 @@ function CreatorApplicationForm() {
         </div>
         <div>
           <label htmlFor="email" className="label">
-            Email Address *
+            {t('creators.form.email')}
           </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            className="input-field"
-          />
+          <input type="email" id="email" name="email" required className="input-field" />
         </div>
       </div>
 
       <div>
         <label htmlFor="platform" className="label">
-          Primary Platform *
+          {t('creators.form.platform')}
         </label>
-        <select
-          id="platform"
-          name="platform"
-          required
-          className="input-field"
-        >
-          <option value="">Select your main platform...</option>
-          <option value="tiktok">TikTok</option>
-          <option value="youtube">YouTube</option>
-          <option value="instagram">Instagram</option>
-          <option value="twitter">Twitter / X</option>
-          <option value="blog">Blog / Website</option>
-          <option value="other">Other</option>
+        <select id="platform" name="platform" required className="input-field">
+          <option value="">{t('creators.form.platform_placeholder')}</option>
+          <option value="tiktok">{t('creators.form.platform.tiktok')}</option>
+          <option value="youtube">{t('creators.form.platform.youtube')}</option>
+          <option value="instagram">{t('creators.form.platform.instagram')}</option>
+          <option value="twitter">{t('creators.form.platform.twitter')}</option>
+          <option value="blog">{t('creators.form.platform.blog')}</option>
+          <option value="other">{t('creators.form.platform.other')}</option>
         </select>
       </div>
 
       <div>
         <label htmlFor="handle" className="label">
-          Social Handle / URL
+          {t('creators.form.handle')}
         </label>
         <input
           type="text"
           id="handle"
           name="handle"
-          placeholder="@yourhandle or https://..."
+          placeholder={t('creators.form.handle_placeholder')}
           className="input-field"
         />
       </div>
 
       <div>
         <label htmlFor="follower_count" className="label">
-          Approximate Follower Count *
+          {t('creators.form.followers')}
         </label>
-        <select
-          id="follower_count"
-          name="follower_count"
-          required
-          className="input-field"
-        >
-          <option value="">Select...</option>
+        <select id="follower_count" name="follower_count" required className="input-field">
+          <option value="">{t('creators.form.followers_placeholder')}</option>
           <option value="<1K">&lt;1K</option>
           <option value="1K-5K">1K - 5K</option>
           <option value="5K-25K">5K - 25K</option>
@@ -531,7 +510,7 @@ function CreatorApplicationForm() {
 
       <div>
         <label htmlFor="content_description" className="label">
-          Describe the content you&apos;d create to promote The English Hub *
+          {t('creators.form.content')}
         </label>
         <textarea
           id="content_description"
@@ -541,22 +520,18 @@ function CreatorApplicationForm() {
           maxLength={500}
           rows={3}
           className="input-field"
-          placeholder="e.g. I'd make TikTok videos showing English exam hacks and revision tips..."
+          placeholder={t('creators.form.content_placeholder')}
         />
       </div>
 
-      <button
-        type="submit"
-        disabled={submitting}
-        className="btn-primary w-full py-4"
-      >
+      <button type="submit" disabled={submitting} className="btn-primary w-full py-4">
         {submitting ? (
           <>
             <Loader2 className="w-4 h-4 animate-spin mr-2 inline" />
-            Submitting...
+            {t('creators.form.submitting')}
           </>
         ) : (
-          'Submit Application'
+          t('creators.form.submit')
         )}
       </button>
     </form>

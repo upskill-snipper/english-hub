@@ -409,6 +409,23 @@ const toAutumn: PoemData = {
     <p>For the Edexcel Time and Place cluster, "To Autumn" is essential because it captures a single specific time (a few days in mid-September 1819) in a single specific place (the countryside outside Winchester). The poem is rooted in a real walk on a real day \u2014 yet it manages to feel universal.</p>
   `,
 
+  contextAr: `
+    <h3>John Keats (1795&ndash;1821)</h3>
+    <p><strong>John Keats</strong> \u0634\u0627\u0639\u0631 \u0631\u0648\u0645\u0627\u0646\u0633\u064a \u0645\u0646 \u0627\u0644\u062c\u064a\u0644 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u062c\u0646\u0628\u0627\u064b \u0625\u0644\u0649 \u062c\u0646\u0628 \u0645\u0639 Byron \u0648 Shelley. \u062a\u0648\u0641\u0651\u064a \u0628\u0627\u0644\u0633\u0644\u0651 \u0648\u0639\u0645\u0631\u0647 25 \u0633\u0646\u0629 \u0628\u0633\u060c \u0648\u0643\u0627\u0646 \u0642\u062f \u0623\u0646\u062a\u062c \u0625\u0646\u062a\u0627\u062c\u0627\u064b \u0627\u0633\u062a\u062b\u0646\u0627\u0626\u064a\u0627\u064b \u0641\u064a \u0622\u062e\u0631 \u0633\u0646\u0648\u0627\u062a \u062d\u064a\u0627\u062a\u0647. \u0643\u0627\u0646 \u0645\u0646\u062a\u0628\u0647\u0627\u064b \u0628\u0639\u0645\u0642 \u0644\u0644\u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u062d\u0633\u0651\u064a\u0629\u060c \u0648\u0644\u0644\u0639\u0644\u0627\u0642\u0629 \u0628\u064a\u0646 \u0627\u0644\u062c\u0645\u0627\u0644 \u0648\u0627\u0644\u0641\u0646\u0627\u0621.</p>
+
+    <h3>\u0633\u0628\u062a\u0645\u0628\u0631 1819</h3>
+    <p>Keats \u0643\u062a\u0628 "To Autumn" \u064a\u0648\u0645 19 \u0633\u0628\u062a\u0645\u0628\u0631 1819\u060c \u0627\u0644\u064a\u0648\u0645 \u0627\u0644\u0644\u064a \u0639\u0642\u0628 \u0645\u0634\u064a\u0629 \u0642\u0631\u0628 Winchester. \u0648\u0648\u0635\u0641 \u0627\u0644\u0645\u0634\u064a\u0629 \u0641\u064a \u0631\u0633\u0627\u0644\u0629: "\u0643\u0645 \u0647\u064a \u062c\u0645\u064a\u0644\u0629 \u0627\u0644\u0641\u0635\u0648\u0644 \u0627\u0644\u062d\u064a\u0646 \u2014 \u0648\u0643\u0645 \u0647\u0648 \u0644\u0637\u064a\u0641 \u0627\u0644\u0647\u0648\u0627\u0621. \u0641\u064a\u0647 \u062d\u062f\u0651\u0629 \u0645\u0639\u062a\u062f\u0644\u0629... \u0645\u0627 \u062d\u0628\u0651\u064a\u062a \u062d\u0642\u0648\u0644 \u0627\u0644\u0642\u0634\u0651 \u0628\u0642\u062f \u0645\u0627 \u0623\u062d\u0628\u0651\u0647\u0627 \u0627\u0644\u062d\u064a\u0646... \u0628\u0637\u0631\u064a\u0642\u0629 \u0645\u0627\u060c \u062d\u0642\u0644 \u0642\u0634\u0651 \u064a\u0628\u062f\u0648 \u062f\u0627\u0641\u0626\u0627\u064b \u2014 \u0645\u062b\u0644 \u0645\u0627 \u0628\u0639\u0636 \u0627\u0644\u0644\u0648\u062d\u0627\u062a \u062a\u0628\u062f\u0648 \u062f\u0627\u0641\u0626\u0629."</p>
+
+    <h3>\u0648\u062d\u062f\u0629 \u0645\u0646 \u0627\u0644\u0642\u0635\u0627\u0626\u062f \u0627\u0644\u0639\u0638\u064a\u0645\u0629 (odes)</h3>
+    <p>"To Autumn" \u0622\u062e\u0631 \u0627\u0644\u0642\u0635\u0627\u0626\u062f \u0627\u0644\u0639\u0638\u064a\u0645\u0629 (odes) \u0639\u0646\u062f Keats\u060c \u0628\u0639\u062f "Ode to a Nightingale" \u0648 "Ode on a Grecian Urn" \u0648 "Ode on Melancholy". \u0648\u0627\u064a\u062f \u0646\u0642\u0651\u0627\u062f \u064a\u0639\u062a\u0628\u0631\u0648\u0646\u0647\u0627 \u0623\u0643\u062b\u0631 \u0642\u0635\u064a\u062f\u0629 \u0648\u0635\u0644\u062a \u0644\u0643\u0645\u0627\u0644 \u0634\u0643\u0644\u064a \u0641\u064a \u0645\u0633\u064a\u0631\u062a\u0647 \u0627\u0644\u0642\u0635\u064a\u0631\u0629.</p>
+
+    <h3>\u0627\u0644\u0633\u064a\u0627\u0642 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a</h3>
+    <p>\u0627\u0644\u0634\u0639\u0631\u0627\u0621 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a\u0648\u0646 \u0627\u062d\u062a\u0641\u0644\u0648\u0627 \u0628\u0627\u0644\u0639\u0627\u0644\u0645 \u0627\u0644\u0637\u0628\u064a\u0639\u064a \u0648\u0627\u0644\u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u062d\u0633\u064a\u0629 \u0627\u0644\u0645\u0628\u0627\u0634\u0631\u0629. "To Autumn" \u063a\u064a\u0631 \u0627\u0639\u062a\u064a\u0627\u062f\u064a\u0629 \u0628\u064a\u0646 \u0642\u0635\u0627\u0626\u062f Keats \u0627\u0644\u0640odes \u0644\u0623\u0646\u0647\u0627 \u062a\u0628\u0642\u0649 \u062a\u0645\u0627\u0645\u0627\u064b \u0641\u064a \u0627\u0644\u062e\u0627\u0631\u062c\u060c \u0641\u064a \u0627\u0644\u0639\u0627\u0644\u0645\u060c \u0628\u0644\u0627 \u0623\u064a\u0651 \u062a\u0633\u0627\u0624\u0644 \u062a\u062c\u0631\u064a\u062f\u064a. \u0647\u064a \u0642\u0635\u064a\u062f\u0629 \u0642\u0628\u0648\u0644 \u2014 \u0642\u0628\u0648\u0644 \u0644\u0644\u0641\u0635\u0644\u060c \u0644\u0644\u0648\u0642\u062a\u060c \u0648\u0644\u0644\u0641\u0646\u0627\u0621.</p>
+
+    <h3>\u0627\u0644\u0632\u0645\u0627\u0646 \u0648\u0627\u0644\u0645\u0643\u0627\u0646 \u0641\u064a \u0647\u0627\u0644\u0642\u0635\u064a\u062f\u0629</h3>
+    <p>\u0628\u0627\u0644\u0646\u0633\u0628\u0629 \u0644\u0645\u062c\u0645\u0648\u0639\u0629 Edexcel Time and Place\u060c "To Autumn" \u0642\u0635\u064a\u062f\u0629 \u062c\u0648\u0647\u0631\u064a\u0629 \u0644\u0623\u0646\u0647\u0627 \u062a\u0644\u062a\u0642\u0637 \u0632\u0645\u0627\u0646\u0627\u064b \u0645\u062d\u062f\u0651\u062f\u0627\u064b \u0628\u0639\u064a\u0646\u0647 (\u0623\u064a\u0627\u0645 \u0642\u0644\u064a\u0644\u0629 \u0645\u0646\u062a\u0635\u0641 \u0633\u0628\u062a\u0645\u0628\u0631 1819) \u0641\u064a \u0645\u0643\u0627\u0646 \u0645\u062d\u062f\u0651\u062f \u0628\u0639\u064a\u0646\u0647 (\u0631\u064a\u0641 \u062e\u0627\u0631\u062c Winchester). \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u062a\u062c\u0630\u0651\u0631\u0629 \u0641\u064a \u0645\u0634\u064a\u0629 \u062d\u0642\u064a\u0642\u064a\u0629 \u0641\u064a \u064a\u0648\u0645 \u062d\u0642\u064a\u0642\u064a \u2014 \u0648\u0645\u0639 \u0643\u0630\u0627 \u062a\u0646\u062c\u062d \u0625\u0646\u0647\u0627 \u062a\u062d\u0633\u0651 \u0643\u0648\u0646\u064a\u0629.</p>
+  `,
+
   summary: `Stanza 1 \u2014 the harvest at its peak: Keats addresses autumn directly. He describes the season conspiring with the sun to ripen and overload the world with fruit. Vines hang heavy around cottage eaves, apple branches bend, gourds swell, hazel shells plump up, and bees fill their honeycombs. Everything is overflowing.
 
 Stanza 2 \u2014 autumn personified: Autumn is imagined as a person, glimpsed in different rural scenes. She sits "careless" on a granary floor with her hair lifted by the wind. She sleeps in a half-reaped field, drowsed by poppies. She works as a gleaner crossing a brook with a heavy load. She watches cider drip from a press, hour by hour. The mood is dreamy and slow.
@@ -416,6 +433,14 @@ Stanza 2 \u2014 autumn personified: Autumn is imagined as a person, glimpsed in 
 Stanza 3 \u2014 the music of autumn: Keats begins by asking about the songs of spring, then immediately answers his own question: autumn has its own music. He describes the sounds of evening: gnats wailing, lambs bleating from the hills, crickets singing, a robin whistling, and gathering swallows twittering as they prepare to migrate. The poem ends with the swallows in the sky \u2014 about to leave, but still here.
 
 Overall meaning: An ode of pure acceptance. Where most poems about autumn mourn the coming of winter, Keats refuses to mourn. He celebrates the season\u2019s abundance, its quiet labour, and its own particular music. The poem is about the value of one specific time of year in one specific place \u2014 and, by extension, about accepting time itself.`,
+
+  summaryAr: `\u0627\u0644\u0645\u0642\u0637\u0639 1 \u2014 \u0627\u0644\u062d\u0635\u0627\u062f \u0641\u064a \u0630\u0631\u0648\u062a\u0647: Keats \u064a\u062e\u0627\u0637\u0628 \u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u0628\u0627\u0634\u0631\u0629. \u0648\u064a\u0635\u0641 \u0627\u0644\u0641\u0635\u0644 \u0648\u0647\u0648 \u064a\u062a\u0622\u0645\u0631 \u0645\u0639 \u0627\u0644\u0634\u0645\u0633 \u0639\u0634\u0627\u0646 \u064a\u0646\u0636\u0651\u062c\u0648\u0646 \u0643\u0644 \u0634\u064a \u0648\u064a\u0639\u0628\u0651\u0648\u0646 \u0627\u0644\u062f\u0646\u064a\u0627 \u0641\u0627\u0643\u0647\u0629. \u0627\u0644\u0643\u0631\u0648\u0645 \u062a\u062a\u062f\u0644\u0651\u0649 \u062b\u0642\u064a\u0644\u0629 \u062d\u0648\u0644 \u0623\u0641\u0627\u0631\u064a\u0632 \u0627\u0644\u0623\u0643\u0648\u0627\u062e\u060c \u0648\u0623\u063a\u0635\u0627\u0646 \u0627\u0644\u062a\u0641\u0651\u0627\u062d \u062a\u0646\u062d\u0646\u064a\u060c \u0648\u062b\u0645\u0627\u0631 \u0627\u0644\u0642\u0631\u0639 \u062a\u0646\u062a\u0641\u062e\u060c \u0648\u0623\u0635\u062f\u0627\u0641 \u0627\u0644\u0628\u0646\u062f\u0642 \u062a\u0645\u062a\u0644\u0626\u060c \u0648\u0627\u0644\u0646\u062d\u0644 \u064a\u0639\u0645\u0651\u0631 \u0634\u0645\u0639\u0647. \u0643\u0644 \u0634\u064a \u0637\u0627\u0641\u062d.
+
+\u0627\u0644\u0645\u0642\u0637\u0639 2 \u2014 \u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u0634\u062e\u0651\u0635\u0627\u064b: \u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u062a\u062e\u064a\u0651\u0644 \u0643\u0623\u0646\u0647 \u0634\u062e\u0635\u060c \u064a\u064f\u0644\u0645\u062d \u0641\u064a \u0645\u0634\u0627\u0647\u062f \u0631\u064a\u0641\u064a\u0629 \u0645\u062e\u062a\u0644\u0641\u0629. \u062a\u062c\u0644\u0633 "careless" (\u0645\u0631\u062a\u0627\u062d\u0629) \u0639\u0644\u0649 \u0623\u0631\u0636\u064a\u0629 \u0628\u064a\u062f\u0631 (granary)\u060c \u0648\u0634\u0639\u0631\u0647\u0627 \u062a\u0644\u0627\u0639\u0628\u0647 \u0631\u064a\u062d \u0627\u0644\u062a\u0630\u0631\u064a\u0629 (winnowing wind). \u062a\u0646\u0627\u0645 \u0641\u064a \u062d\u0642\u0644 \u0646\u064f\u0635\u0641 \u0645\u062d\u0635\u0648\u062f\u060c \u062a\u062e\u062f\u0651\u0631\u0647\u0627 \u0631\u0648\u0627\u0626\u062d \u0627\u0644\u062e\u0634\u062e\u0627\u0634 (poppies). \u062a\u0634\u062a\u063a\u0644 \u0643\u0640gleaner (\u0644\u0642\u0651\u0627\u0637\u0629 \u0633\u0646\u0627\u0628\u0644) \u062a\u0639\u0628\u0631 \u062c\u062f\u0648\u0644\u0627\u064b \u0648\u062d\u0645\u0644\u0647\u0627 \u062b\u0642\u064a\u0644. \u062a\u062a\u0641\u0631\u0651\u062c \u0639\u0644\u0649 \u0639\u0635\u064a\u0631 \u0627\u0644\u062a\u0641\u0627\u062d \u064a\u0642\u0637\u0631 \u0645\u0646 \u0645\u0639\u0635\u0631\u0629 (cider press)\u060c \u0633\u0627\u0639\u0629 \u0639\u0642\u0628 \u0633\u0627\u0639\u0629. \u0648\u0627\u0644\u062c\u0648 \u062d\u0627\u0644\u0645 \u0648\u0628\u0637\u064a\u0621.
+
+\u0627\u0644\u0645\u0642\u0637\u0639 3 \u2014 \u0645\u0648\u0633\u064a\u0642\u0649 \u0627\u0644\u062e\u0631\u064a\u0641: Keats \u064a\u0628\u062f\u0623 \u0628\u0633\u0624\u0627\u0644 \u0639\u0646 \u0623\u063a\u0627\u0646\u064a \u0627\u0644\u0631\u0628\u064a\u0639\u060c \u062b\u0645 \u064a\u062c\u0627\u0648\u0628 \u0639\u0644\u0649 \u0633\u0624\u0627\u0644\u0647 \u0628\u0646\u0641\u0633\u0647 \u0641\u0648\u0631\u0627\u064b: \u0627\u0644\u062e\u0631\u064a\u0641 \u0639\u0646\u062f\u0647 \u0645\u0648\u0633\u064a\u0642\u0627\u0647 \u0627\u0644\u062e\u0627\u0635\u0651\u0629. \u0648\u064a\u0635\u0641 \u0623\u0635\u0648\u0627\u062a \u0627\u0644\u0645\u0633\u0627\u0621: \u0627\u0644\u0628\u0639\u0648\u0636 \u064a\u0646\u0648\u062d\u060c \u0627\u0644\u062e\u0631\u0627\u0641 \u0627\u0644\u0643\u0628\u064a\u0631\u0629 \u062a\u062b\u063a\u0648 \u0645\u0646 \u0627\u0644\u062a\u0644\u0627\u0644\u060c \u0627\u0644\u0635\u0631\u0627\u0635\u064a\u0631 \u062a\u063a\u0646\u0651\u064a\u060c \u0623\u0628\u0648 \u0627\u0644\u062d\u0646\u0651\u0627\u0621 (red-breast) \u064a\u0635\u0641\u0651\u0631\u060c \u0648\u0637\u064a\u0648\u0631 \u0627\u0644\u0633\u0646\u0648\u0646\u0648 (swallows) \u062a\u062a\u062c\u0645\u0651\u0639 \u0648\u062a\u0632\u0642\u0632\u0642 \u0648\u0647\u064a \u062a\u062a\u062c\u0647\u0651\u0632 \u0644\u0644\u0647\u062c\u0631\u0629. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u062a\u0647\u064a \u0648\u0627\u0644\u0633\u0646\u0648\u0646\u0648 \u0641\u064a \u0627\u0644\u0633\u0645\u0627\u0621 \u2014 \u0639\u0644\u0649 \u0648\u0634\u0643 \u0627\u0644\u0631\u062d\u064a\u0644\u060c \u0628\u0633 \u0644\u0627\u0632\u0627\u0644\u062a \u0647\u0646\u0627.
+
+\u0627\u0644\u0645\u0639\u0646\u0649 \u0627\u0644\u0625\u062c\u0645\u0627\u0644\u064a: ode \u0645\u0646 \u0627\u0644\u0642\u0628\u0648\u0644 \u0627\u0644\u062e\u0627\u0644\u0635. \u0641\u064a \u062d\u064a\u0646 \u0625\u0646 \u0623\u063a\u0644\u0628 \u0627\u0644\u0642\u0635\u0627\u0626\u062f \u0639\u0646 \u0627\u0644\u062e\u0631\u064a\u0641 \u062a\u0646\u0648\u062d \u0639\u0644\u0649 \u0642\u062f\u0648\u0645 \u0627\u0644\u0634\u062a\u0627\u0621\u060c Keats \u064a\u0631\u0641\u0636 \u0625\u0646\u0647 \u064a\u0646\u0648\u062d. \u064a\u062d\u062a\u0641\u0644 \u0628\u0648\u0641\u0631\u0629 \u0627\u0644\u0641\u0635\u0644\u060c \u0648\u0639\u0645\u0644\u0647 \u0627\u0644\u0647\u0627\u062f\u0626\u060c \u0648\u0645\u0648\u0633\u064a\u0642\u0627\u0647 \u0627\u0644\u062e\u0627\u0635\u0651\u0629. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0639\u0646 \u0642\u064a\u0645\u0629 \u0648\u0642\u062a \u0645\u062d\u062f\u0651\u062f \u0645\u0646 \u0627\u0644\u0633\u0646\u0629 \u0641\u064a \u0645\u0643\u0627\u0646 \u0645\u062d\u062f\u0651\u062f \u2014 \u0648\u0628\u0627\u0644\u0627\u0645\u062a\u062f\u0627\u062f\u060c \u0639\u0646 \u0642\u0628\u0648\u0644 \u0627\u0644\u0648\u0642\u062a \u0628\u0646\u0641\u0633\u0647.`,
 
   formAndStructure: `Form: Three eleven-line stanzas. Each stanza has a slightly different rhyme scheme but they share an overall pattern (ABAB CDEDCCE in stanza 1; ABAB CDECDDE in stanzas 2 and 3). The form is unique to this ode \u2014 Keats invented a new shape for it.
 
@@ -431,54 +456,124 @@ Apostrophe: The whole poem addresses autumn directly, as "thee" and "thou". This
 
 Sound: Keats packs the poem with assonance, alliteration and rich vowel sounds ("mists and mellow fruitfulness", "soft-lifted by the winnowing wind"). The poem is meant to be felt in the mouth as well as understood by the mind.`,
 
+  formAndStructureAr: `\u0627\u0644\u0634\u0643\u0644: \u062b\u0644\u0627\u062b\u0629 \u0645\u0642\u0627\u0637\u0639 \u0643\u0644 \u0648\u0627\u062d\u062f \u0641\u064a\u0647\u0645 \u0623\u062d\u062f \u0639\u0634\u0631 \u0628\u064a\u062a\u0627\u064b. \u0643\u0644 \u0645\u0642\u0637\u0639 \u0639\u0646\u062f\u0647 \u0646\u0638\u0627\u0645 \u0642\u0627\u0641\u064a\u0629 \u0645\u062e\u062a\u0644\u0641 \u0634\u0648\u064a\u0651\u060c \u0628\u0633 \u064a\u062a\u0634\u0627\u0631\u0643\u0648\u0646 \u0646\u0645\u0637\u0627\u064b \u0639\u0627\u0645\u0651\u0627\u064b (ABAB CDEDCCE \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 1\u061b ABAB CDECDDE \u0641\u064a \u0627\u0644\u0645\u0642\u0627\u0637\u0639 2 \u0648 3). \u0627\u0644\u0634\u0643\u0644 \u062e\u0627\u0635\u0651 \u0628\u0647\u0627\u0644\u0640ode \u062a\u062d\u062f\u064a\u062f\u0627\u064b \u2014 Keats \u0627\u062e\u062a\u0631\u0639 \u0634\u0643\u0644\u0627\u064b \u062c\u062f\u064a\u062f\u0627\u064b \u0644\u0647\u0627.
+
+\u0627\u0644\u0628\u0646\u064a\u0629 \u0630\u0627\u062a \u062b\u0644\u0627\u062b \u0645\u0631\u0627\u062d\u0644: \u0627\u0644\u0645\u0642\u0627\u0637\u0639 \u0627\u0644\u062b\u0644\u0627\u062b\u0629 \u062a\u0648\u0627\u0641\u0642 \u062b\u0644\u0627\u062b \u0645\u0631\u0627\u062d\u0644 \u0645\u0646 \u0627\u0644\u062e\u0631\u064a\u0641. \u0627\u0644\u0645\u0642\u0637\u0639 1 \u0630\u0631\u0648\u0629 \u0648\u0641\u0631\u0629 \u0627\u0644\u062d\u0635\u0627\u062f. \u0627\u0644\u0645\u0642\u0637\u0639 2 \u0648\u0633\u0637 \u0627\u0644\u062d\u0635\u0627\u062f \u0627\u0644\u0628\u0637\u064a\u0621 \u0627\u0644\u0646\u0627\u0639\u0633\u060c \u0648\u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u0634\u062e\u0651\u0635. \u0627\u0644\u0645\u0642\u0637\u0639 3 \u0645\u0633\u0627\u0621 \u0627\u0644\u0641\u0635\u0644 \u0627\u0644\u0645\u062a\u0623\u062e\u0651\u0631\u060c \u064a\u0647\u064a\u0645\u0646 \u0639\u0644\u064a\u0647 \u0627\u0644\u0635\u0648\u062a \u0628\u062f\u0644 \u0627\u0644\u0628\u0635\u0631.
+
+\u062a\u0642\u062f\u0651\u0645 \u0627\u0644\u0632\u0645\u0646: \u0627\u0644\u0640ode \u062a\u062a\u062d\u0631\u0651\u0643 \u0645\u0646 \u0646\u0636\u062c \u0627\u0644\u0635\u0628\u062d (\u0627\u0644\u0645\u0642\u0637\u0639 1)\u060c \u0625\u0644\u0649 \u0631\u0627\u062d\u0629 \u0628\u0639\u062f \u0627\u0644\u0638\u0647\u0631 (\u0627\u0644\u0645\u0642\u0637\u0639 2)\u060c \u0625\u0644\u0649 \u0645\u0648\u0633\u064a\u0642\u0649 \u0627\u0644\u0645\u0633\u0627\u0621 (\u0627\u0644\u0645\u0642\u0637\u0639 3). \u0648\u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u062c\u0631\u0651\u0628 \u0645\u0648 \u064a\u0648\u0645 \u062e\u0631\u064a\u0641\u060c \u0628\u0644 \u0642\u0648\u0633 \u0627\u0644\u0641\u0635\u0644 \u0643\u0644\u0651\u0647 \u0645\u0636\u063a\u0648\u0637 \u0641\u064a \u062b\u0644\u0627\u062b\u0629 \u0645\u0642\u0627\u0637\u0639.
+
+Volta: \u0627\u0644\u0627\u0646\u0639\u0637\u0627\u0641 \u064a\u062c\u064a \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u0645\u0642\u0637\u0639 3: "Where are the songs of spring? Ay, where are they? / Think not of them, thou hast thy music too." Keats \u064a\u0631\u0641\u0636 \u0625\u0646\u0647 \u064a\u0646\u0648\u062d \u0639\u0644\u0649 \u0645\u0627 \u0645\u0636\u0649\u060c \u0648\u0628\u062f\u0644 \u0630\u0644\u0643 \u064a\u062d\u062a\u0641\u0644 \u0628\u0645\u0627 \u0647\u0648 \u062d\u0627\u0636\u0631.
+
+Iambic pentameter: \u0627\u0644\u0623\u0628\u064a\u0627\u062a \u0641\u064a \u0627\u0644\u063a\u0627\u0644\u0628 iambic pentameter \u0645\u0646\u062a\u0638\u0645\u060c \u064a\u0639\u0637\u064a \u0627\u0644\u0640ode \u0646\u0628\u0636\u0627\u064b \u0648\u0642\u0648\u0631\u0627\u064b \u0634\u0628\u0647 \u0643\u0644\u0627\u0633\u064a\u0643\u064a. \u0648\u0627\u0644\u0648\u0632\u0646 \u0647\u0627\u062f\u0626 \u063a\u064a\u0631 \u0645\u0633\u062a\u0639\u062c\u0644 \u2014 \u0627\u0644\u0634\u0643\u0644 \u0628\u0646\u0641\u0633\u0647 \u0645\u0627 \u0639\u0646\u062f\u0647 \u0639\u062c\u0644\u0629.
+
+Apostrophe: \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\u0627 \u062a\u062e\u0627\u0637\u0628 \u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u0628\u0627\u0634\u0631\u0629\u060c \u0628\u0636\u0645\u0627\u0626\u0631 "thee" \u0648"thou". \u0647\u0627\u0644\u062a\u0634\u062e\u064a\u0635 \u0627\u0644\u0645\u0645\u062a\u062f\u0651 \u0647\u0648 \u0627\u0644\u0644\u064a \u064a\u0639\u0637\u064a \u0627\u0644\u0640ode \u062d\u0645\u064a\u0645\u064a\u062a\u0647\u0627: Keats \u0641\u064a \u0645\u062d\u0627\u062f\u062b\u0629 \u0645\u0639 \u0627\u0644\u0641\u0635\u0644\u060c \u0645\u0648 \u0645\u062c\u0631\u0651\u062f \u0648\u0635\u0641 \u0644\u0647.
+
+\u0627\u0644\u0635\u0648\u062a: Keats \u064a\u062d\u0634\u0648 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u0640assonance \u0648 alliteration \u0648\u0623\u0635\u0648\u0627\u062a \u062d\u0631\u0643\u064a\u0629 \u063a\u0646\u064a\u0629 ("mists and mellow fruitfulness", "soft-lifted by the winnowing wind"). \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0639\u0645\u0648\u0644\u0629 \u0639\u0634\u0627\u0646 \u062a\u064f\u062d\u0633\u0651 \u0641\u064a \u0627\u0644\u0641\u0645 \u0628\u0642\u062f \u0645\u0627 \u062a\u064f\u0641\u0647\u0645 \u0628\u0627\u0644\u0639\u0642\u0644.`,
+
   keyQuotes: [
     {
       quote: 'Season of mists and mellow fruitfulness',
       analysis:
         'One of the most famous opening lines in English poetry. The sibilant "s" sounds and soft "m" sounds create a hushed, drowsy atmosphere from the very first phrase. "Fruitfulness" (an unusual abstract noun) sums up the entire stanza\u2019s focus on abundance.',
       themes: ['Abundance', 'Time', 'Season'],
+      analysisAr:
+        '\u0648\u062d\u062f\u0629 \u0645\u0646 \u0623\u0634\u0647\u0631 \u0627\u0641\u062a\u062a\u0627\u062d\u064a\u0627\u062a \u0641\u064a \u0627\u0644\u0634\u0639\u0631 \u0627\u0644\u0625\u0646\u062c\u0644\u064a\u0632\u064a. \u0623\u0635\u0648\u0627\u062a \u0627\u0644\u0640"s" \u0627\u0644\u0635\u0641\u064a\u0631\u064a\u0629 \u0648\u0627\u0644\u0640"m" \u0627\u0644\u0646\u0627\u0639\u0645\u0629 \u062a\u062e\u0644\u0642 \u062c\u0648\u0651\u0627\u064b \u0635\u0627\u0645\u062a\u0627\u064b \u0646\u0627\u0639\u0633\u0627\u064b \u0645\u0646 \u0623\u0648\u0644 \u0639\u0628\u0627\u0631\u0629. \u0648\u0643\u0644\u0645\u0629 "Fruitfulness" (\u0627\u0633\u0645 \u062a\u062c\u0631\u064a\u062f\u064a \u063a\u064a\u0631 \u0645\u0639\u062a\u0627\u062f) \u062a\u0644\u062e\u0651\u0635 \u062a\u0631\u0643\u064a\u0632 \u0627\u0644\u0645\u0642\u0637\u0639 \u0643\u0644\u0651\u0647 \u0639\u0644\u0649 \u0627\u0644\u0648\u0641\u0631\u0629.',
+      themesAr: [
+        '\u0627\u0644\u0648\u0641\u0631\u0629',
+        '\u0627\u0644\u0648\u0642\u062a',
+        '\u0627\u0644\u0641\u0635\u0644',
+      ],
     },
     {
       quote: 'Conspiring with him how to load and bless / With fruit',
       analysis:
         '"Conspiring" is a slightly unsettling word \u2014 conspiracies are usually negative \u2014 but Keats uses it playfully. Autumn and the sun are working together, almost plotting, to overload the world. The pairing of "load" and "bless" suggests both physical weight and spiritual generosity.',
       themes: ['Personification', 'Abundance', 'Generosity'],
+      analysisAr:
+        '\u0643\u0644\u0645\u0629 "Conspiring" \u0645\u0632\u0639\u062c\u0629 \u0634\u0648\u064a\u0651 \u2014 \u0627\u0644\u0645\u0624\u0627\u0645\u0631\u0627\u062a \u0639\u0627\u062f\u0629 \u0633\u0644\u0628\u064a\u0629 \u2014 \u0628\u0633 Keats \u064a\u0633\u062a\u062e\u062f\u0645\u0647\u0627 \u0628\u0645\u0631\u062d. \u0627\u0644\u062e\u0631\u064a\u0641 \u0648\u0627\u0644\u0634\u0645\u0633 \u064a\u0634\u062a\u063a\u0644\u0648\u0646 \u0645\u0639 \u0628\u0639\u0636\u060c \u0634\u0628\u0647 \u064a\u062a\u0622\u0645\u0631\u0648\u0646\u060c \u0639\u0634\u0627\u0646 \u064a\u062b\u0642\u0651\u0644\u0648\u0646 \u0627\u0644\u062f\u0646\u064a\u0627. \u0648\u0627\u0642\u062a\u0631\u0627\u0646 "load" \u0648"bless" \u064a\u0644\u0645\u0651\u062d \u0644\u0644\u0648\u0632\u0646 \u0627\u0644\u0645\u0627\u062f\u064a \u0648\u0627\u0644\u0643\u0631\u0645 \u0627\u0644\u0631\u0648\u062d\u064a \u0641\u064a \u0646\u0641\u0633 \u0627\u0644\u0648\u0642\u062a.',
+      themesAr: [
+        '\u0627\u0644\u062a\u0634\u062e\u064a\u0635',
+        '\u0627\u0644\u0648\u0641\u0631\u0629',
+        '\u0627\u0644\u0643\u0631\u0645',
+      ],
     },
     {
       quote: 'Until they think warm days will never cease',
       analysis:
         'A quietly devastating line. The bees, lulled by the abundance, do not realise winter is coming. The phrase "will never cease" sounds optimistic, but Keats has framed it inside the bees\u2019 deluded perspective \u2014 we know better.',
       themes: ['Time', 'Illusion', 'Mortality'],
+      analysisAr:
+        '\u0628\u064a\u062a \u0645\u062f\u0645\u0651\u0631 \u0628\u0647\u062f\u0648\u0621. \u0627\u0644\u0646\u062d\u0644\u060c \u0627\u0644\u0644\u064a \u0647\u062f\u0651\u0623\u062a\u0647 \u0627\u0644\u0648\u0641\u0631\u0629\u060c \u0645\u0627 \u064a\u062f\u0631\u0643 \u0625\u0646 \u0627\u0644\u0634\u062a\u0627\u0621 \u064a\u0627\u064a\u064a. \u0648\u0639\u0628\u0627\u0631\u0629 "will never cease" \u062a\u0633\u0645\u0639 \u0645\u062a\u0641\u0627\u0626\u0644\u0629\u060c \u0628\u0633 Keats \u0623\u0637\u0651\u0631\u0647\u0627 \u062f\u0627\u062e\u0644 \u0648\u062c\u0647\u0629 \u0646\u0638\u0631 \u0627\u0644\u0646\u062d\u0644 \u0627\u0644\u0645\u062e\u062f\u0648\u0639\u0629 \u2014 \u0648\u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0639\u0631\u0641 \u0623\u0643\u062b\u0631 \u0645\u0646\u0647\u0645.',
+      themesAr: [
+        '\u0627\u0644\u0648\u0642\u062a',
+        '\u0627\u0644\u0648\u0647\u0645',
+        '\u0627\u0644\u0641\u0646\u0627\u0621',
+      ],
     },
     {
       quote: 'Thee sitting careless on a granary floor',
       analysis:
         'The personification of autumn becomes a single visual portrait: a figure resting amid stored grain. "Careless" means free of care, not negligent \u2014 the season is at peace because the work is done. Keats turns autumn into a real, paintable being.',
       themes: ['Personification', 'Stillness', 'Harvest'],
+      analysisAr:
+        '\u062a\u0634\u062e\u064a\u0635 \u0627\u0644\u062e\u0631\u064a\u0641 \u064a\u062a\u0628\u0644\u0648\u0631 \u0641\u064a \u0628\u0648\u0631\u062a\u0631\u064a\u0647 \u0628\u0635\u0631\u064a \u0648\u0627\u062d\u062f: \u0634\u062e\u0635\u064a\u0629 \u062a\u0633\u062a\u0631\u064a\u062d \u0648\u0633\u0637 \u062d\u0628\u0648\u0628 \u0645\u062e\u0632\u0651\u0646\u0629. \u0643\u0644\u0645\u0629 "Careless" \u0645\u0639\u0646\u0627\u0647\u0627 \u0645\u062a\u062d\u0631\u0651\u0631\u0629 \u0645\u0646 \u0627\u0644\u0647\u0645\u0651\u060c \u0645\u0648 \u0645\u0647\u0645\u0644\u0629 \u2014 \u0627\u0644\u0641\u0635\u0644 \u0641\u064a \u0633\u0644\u0627\u0645 \u0644\u0623\u0646 \u0627\u0644\u0634\u063a\u0644 \u062e\u0644\u0635. Keats \u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u062e\u0631\u064a\u0641 \u0625\u0644\u0649 \u0643\u0627\u0626\u0646 \u062d\u0642\u064a\u0642\u064a \u064a\u0645\u0643\u0646 \u0631\u0633\u0645\u0647.',
+      themesAr: [
+        '\u0627\u0644\u062a\u0634\u062e\u064a\u0635',
+        '\u0627\u0644\u0633\u0643\u0648\u0646',
+        '\u0627\u0644\u062d\u0635\u0627\u062f',
+      ],
     },
     {
       quote: 'Drows\u2019d with the fume of poppies',
       analysis:
         'Poppies were associated with opium and sleep. Autumn is in a kind of narcotic dream, slowed almost to a stop. The image is sensual but also slightly dangerous \u2014 oblivion is close to the surface of the season.',
       themes: ['Sleep', 'Slowness', 'Sensuality'],
+      analysisAr:
+        '\u0627\u0644\u062e\u0634\u062e\u0627\u0634 (poppies) \u0643\u0627\u0646 \u0645\u0631\u062a\u0628\u0637\u0627\u064b \u0628\u0627\u0644\u0623\u0641\u064a\u0648\u0646 \u0648\u0627\u0644\u0646\u0648\u0645. \u0627\u0644\u062e\u0631\u064a\u0641 \u0641\u064a \u0646\u0648\u0639 \u0645\u0646 \u0627\u0644\u062d\u0644\u0645 \u0627\u0644\u0645\u062e\u062f\u0651\u0631\u060c \u0623\u0628\u0637\u0623 \u0645\u0627 \u064a\u0643\u0648\u0646. \u0648\u0627\u0644\u0635\u0648\u0631\u0629 \u062d\u0633\u0651\u064a\u0629 \u0644\u0643\u0646 \u0641\u064a\u0647\u0627 \u062e\u0637\u0631 \u0634\u0648\u064a\u0651 \u2014 \u0627\u0644\u0646\u0633\u064a\u0627\u0646 \u0642\u0631\u064a\u0628 \u0645\u0646 \u0633\u0637\u062d \u0627\u0644\u0641\u0635\u0644.',
+      themesAr: [
+        '\u0627\u0644\u0646\u0648\u0645',
+        '\u0627\u0644\u0628\u0637\u0621',
+        '\u0627\u0644\u062d\u0633\u0651\u064a\u0629',
+      ],
     },
     {
       quote: 'Where are the songs of spring? Ay, where are they?',
       analysis:
         'The volta. For a moment Keats seems to mourn the lost spring. But the next line refuses to: "Think not of them, thou hast thy music too." The ode\u2019s great act of acceptance is to refuse the temptation of nostalgia and turn fully to the present.',
       themes: ['Acceptance', 'Time', 'Music'],
+      analysisAr:
+        '\u0627\u0644\u0640volta. \u0644\u0644\u062d\u0638\u0629 \u064a\u0628\u062f\u0648 Keats \u0643\u0623\u0646\u0647 \u064a\u0646\u0648\u062d \u0639\u0644\u0649 \u0627\u0644\u0631\u0628\u064a\u0639 \u0627\u0644\u0644\u064a \u0631\u0627\u062d. \u0628\u0633 \u0627\u0644\u0628\u064a\u062a \u0627\u0644\u0644\u064a \u0628\u0639\u062f\u0647 \u064a\u0631\u0641\u0636 \u0647\u0630\u0627: "Think not of them, thou hast thy music too." \u0648\u0627\u0644\u0641\u0639\u0644 \u0627\u0644\u0639\u0638\u064a\u0645 \u0644\u0644\u0642\u0628\u0648\u0644 \u0641\u064a \u0627\u0644\u0640ode \u0647\u0648 \u0631\u0641\u0636 \u0625\u063a\u0631\u0627\u0621 \u0627\u0644\u062d\u0646\u064a\u0646 \u0648\u0627\u0644\u062a\u0648\u062c\u0651\u0647 \u0643\u0627\u0645\u0644\u0627\u064b \u0644\u0644\u062d\u0627\u0636\u0631.',
+      themesAr: [
+        '\u0627\u0644\u0642\u0628\u0648\u0644',
+        '\u0627\u0644\u0648\u0642\u062a',
+        '\u0627\u0644\u0645\u0648\u0633\u064a\u0642\u0649',
+      ],
     },
     {
       quote: 'While barred clouds bloom the soft-dying day',
       analysis:
         '"Bloom" is the verb used for spring flowers, here applied to evening clouds. Keats borrows spring\u2019s vocabulary for autumn\u2019s sky. "Soft-dying" yokes gentleness with death \u2014 the day is ending, but beautifully, without struggle.',
       themes: ['Beauty', 'Death', 'Time'],
+      analysisAr:
+        '\u0643\u0644\u0645\u0629 "Bloom" \u0641\u0639\u0644 \u064a\u064f\u0633\u062a\u062e\u062f\u0645 \u0644\u0632\u0647\u0648\u0631 \u0627\u0644\u0631\u0628\u064a\u0639\u060c \u0648\u0647\u0646\u0627 \u062a\u0646\u0637\u0628\u0642 \u0639\u0644\u0649 \u0633\u062d\u0628 \u0627\u0644\u0645\u0633\u0627\u0621. Keats \u064a\u0633\u062a\u0639\u064a\u0631 \u0645\u0641\u0631\u062f\u0627\u062a \u0627\u0644\u0631\u0628\u064a\u0639 \u0644\u0633\u0645\u0627\u0621 \u0627\u0644\u062e\u0631\u064a\u0641. \u0648\u0639\u0628\u0627\u0631\u0629 "Soft-dying" \u062a\u0631\u0628\u0637 \u0627\u0644\u0631\u0642\u0651\u0629 \u0628\u0627\u0644\u0645\u0648\u062a \u2014 \u0627\u0644\u064a\u0648\u0645 \u064a\u0646\u062a\u0647\u064a\u060c \u0644\u0643\u0646 \u0628\u062c\u0645\u0627\u0644\u060c \u0628\u0644\u0627 \u0635\u0631\u0627\u0639.',
+      themesAr: [
+        '\u0627\u0644\u062c\u0645\u0627\u0644',
+        '\u0627\u0644\u0645\u0648\u062a',
+        '\u0627\u0644\u0648\u0642\u062a',
+      ],
     },
     {
       quote: 'And gathering swallows twitter in the skies',
       analysis:
         'The closing line. Swallows gather before migrating \u2014 they are about to leave for winter. The poem ends not with departure itself but with the moment just before. Autumn is complete; what comes next is implied but not described. The ode ends in stillness.',
       themes: ['Departure', 'Migration', 'Time'],
+      analysisAr:
+        '\u0627\u0644\u0628\u064a\u062a \u0627\u0644\u062e\u062a\u0627\u0645\u064a. \u0627\u0644\u0633\u0646\u0648\u0646\u0648 \u064a\u062a\u062c\u0645\u0651\u0639\u0648\u0646 \u0642\u0628\u0644 \u0627\u0644\u0647\u062c\u0631\u0629 \u2014 \u0647\u0645 \u0639\u0644\u0649 \u0648\u0634\u0643 \u0627\u0644\u0631\u062d\u064a\u0644 \u0644\u0644\u0634\u062a\u0627\u0621. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0627 \u062a\u0646\u062a\u0647\u064a \u0628\u0627\u0644\u0631\u062d\u064a\u0644 \u0628\u0646\u0641\u0633\u0647\u060c \u0628\u0644 \u0628\u0627\u0644\u0644\u062d\u0638\u0629 \u0627\u0644\u0644\u064a \u0642\u0628\u0644\u0647 \u0645\u0628\u0627\u0634\u0631\u0629. \u0627\u0644\u062e\u0631\u064a\u0641 \u0627\u0643\u062a\u0645\u0644\u061b \u0648\u0645\u0627 \u064a\u062c\u064a \u0628\u0639\u062f\u064a\u0646 \u0645\u062a\u0636\u0645\u0651\u0646 \u0644\u0643\u0646\u0647 \u0645\u0627 \u064a\u064f\u0648\u0635\u0641. \u0627\u0644\u0640ode \u062a\u0646\u062a\u0647\u064a \u0628\u0633\u0643\u0648\u0646.',
+      themesAr: [
+        '\u0627\u0644\u0631\u062d\u064a\u0644',
+        '\u0627\u0644\u0647\u062c\u0631\u0629',
+        '\u0627\u0644\u0648\u0642\u062a',
+      ],
     },
   ],
 
@@ -489,6 +584,8 @@ Sound: Keats packs the poem with assonance, alliteration and rich vowel sounds (
       effect:
         'Autumn is personified throughout the ode as a woman: working, resting, watching. The sustained personification turns the season into a companion the speaker knows. The whole poem is essentially an address to her.',
       lineRef: 13,
+      effectAr:
+        '\u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u0634\u062e\u0651\u0635 \u0637\u0648\u0644 \u0627\u0644\u0640ode \u0643\u0627\u0645\u0631\u0623\u0629: \u062a\u0634\u062a\u063a\u0644\u060c \u062a\u0633\u062a\u0631\u064a\u062d\u060c \u062a\u062a\u0641\u0631\u0651\u062c. \u0648\u0627\u0644\u062a\u0634\u062e\u064a\u0635 \u0627\u0644\u0645\u0645\u062a\u062f\u0651 \u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u0641\u0635\u0644 \u0625\u0644\u0649 \u0631\u0641\u064a\u0642\u0629 \u064a\u0639\u0631\u0641\u0647\u0627 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\u0627 \u0628\u062c\u0648\u0647\u0631\u0647\u0627 \u0645\u062e\u0627\u0637\u0628\u0629 \u0644\u0647\u0627.',
     },
     {
       device: 'Sensory imagery',
@@ -496,6 +593,8 @@ Sound: Keats packs the poem with assonance, alliteration and rich vowel sounds (
       effect:
         'Keats packs the ode with tactile, visual and even tasteable details. The reader can almost feel the swelling fruit and the damp honeycomb. Romantic poetry valued direct sensory experience as a route to truth.',
       lineRef: 0,
+      effectAr:
+        'Keats \u064a\u062d\u0634\u0648 \u0627\u0644\u0640ode \u0628\u062a\u0641\u0627\u0635\u064a\u0644 \u0644\u0645\u0633\u064a\u0629 \u0648\u0628\u0635\u0631\u064a\u0629 \u0648\u062d\u062a\u0649 \u062a\u0633\u062a\u0630\u0648\u0642\u0647\u0627. \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u0643\u0627\u062f \u064a\u062d\u0633\u0651 \u0627\u0644\u0641\u0627\u0643\u0647\u0629 \u0648\u0647\u064a \u062a\u0646\u062a\u0641\u062e \u0648\u0627\u0644\u0634\u0645\u0639 \u0627\u0644\u0631\u0637\u0628. \u0648\u0627\u0644\u0634\u0639\u0631 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a \u0642\u062f\u0651\u0631 \u0627\u0644\u062a\u062c\u0631\u0628\u0629 \u0627\u0644\u062d\u0633\u0651\u064a\u0629 \u0627\u0644\u0645\u0628\u0627\u0634\u0631\u0629 \u0643\u0637\u0631\u064a\u0642 \u0625\u0644\u0649 \u0627\u0644\u062d\u0642\u064a\u0642\u0629.',
     },
     {
       device: 'Sound patterning',
@@ -503,6 +602,8 @@ Sound: Keats packs the poem with assonance, alliteration and rich vowel sounds (
       effect:
         'Alliteration ("soft", "lifted"), assonance ("soft", "winnowing"), and the gentle "w" sounds combine to make the line itself feel like a soft breeze. The form imitates the content.',
       lineRef: 14,
+      effectAr:
+        'Alliteration \u0628\u064a\u0646 "soft" \u0648"lifted"\u060c assonance \u0628\u064a\u0646 "soft" \u0648"winnowing"\u060c \u0648\u0623\u0635\u0648\u0627\u062a "w" \u0627\u0644\u0646\u0627\u0639\u0645\u0629\u060c \u0643\u0644\u0651\u0647\u0627 \u062a\u062a\u0636\u0627\u0641\u0631 \u0639\u0634\u0627\u0646 \u0627\u0644\u0628\u064a\u062a \u0628\u0646\u0641\u0633\u0647 \u064a\u062d\u0633\u0651 \u0643\u0623\u0646\u0647 \u0646\u0633\u064a\u0645 \u062e\u0641\u064a\u0641. \u0627\u0644\u0634\u0643\u0644 \u064a\u0642\u0644\u0651\u062f \u0627\u0644\u0645\u062d\u062a\u0648\u0649.',
     },
     {
       device: 'Three-stage structure',
@@ -510,13 +611,18 @@ Sound: Keats packs the poem with assonance, alliteration and rich vowel sounds (
       effect:
         'Each stanza marks a different stage of the season and a different time of day. The reader experiences a whole autumn in three movements. The structure carries the meaning: time is passing, gently but inevitably.',
       lineRef: 11,
+      effectAr:
+        '\u0643\u0644 \u0645\u0642\u0637\u0639 \u064a\u0639\u0644\u0651\u0645 \u0639\u0644\u0649 \u0645\u0631\u062d\u0644\u0629 \u0645\u062e\u062a\u0644\u0641\u0629 \u0645\u0646 \u0627\u0644\u0641\u0635\u0644 \u0648\u0648\u0642\u062a \u0645\u062e\u062a\u0644\u0641 \u0645\u0646 \u0627\u0644\u064a\u0648\u0645. \u0627\u0644\u0642\u0627\u0631\u0626 \u064a\u062c\u0631\u0651\u0628 \u062e\u0631\u064a\u0641\u0627\u064b \u0643\u0627\u0645\u0644\u0627\u064b \u0641\u064a \u062b\u0644\u0627\u062b \u062d\u0631\u0643\u0627\u062a. \u0648\u0627\u0644\u0628\u0646\u064a\u0629 \u062a\u062d\u0645\u0644 \u0627\u0644\u0645\u0639\u0646\u0649: \u0627\u0644\u0648\u0642\u062a \u064a\u0645\u0631\u0651\u060c \u0628\u0631\u0642\u0651\u0629 \u0628\u0633 \u0628\u062d\u062a\u0645\u064a\u0629.',
     },
     {
       device: 'Volta',
-      example: 'Where are the songs of spring? Ay, where are they? / Think not of them, thou hast thy music too',
+      example:
+        'Where are the songs of spring? Ay, where are they? / Think not of them, thou hast thy music too',
       effect:
         'The turn at the start of stanza 3 refuses nostalgia. Keats opens the door to mourning spring and then closes it again. The ode\u2019s philosophical move is this refusal \u2014 a celebration of the present in its own right.',
       lineRef: 23,
+      effectAr:
+        '\u0627\u0644\u0627\u0646\u0639\u0637\u0627\u0641 \u0641\u064a \u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u0645\u0642\u0637\u0639 3 \u064a\u0631\u0641\u0636 \u0627\u0644\u062d\u0646\u064a\u0646. Keats \u064a\u0641\u062a\u062d \u0627\u0644\u0628\u0627\u0628 \u0644\u0644\u0646\u0648\u0627\u062d \u0639\u0644\u0649 \u0627\u0644\u0631\u0628\u064a\u0639 \u062b\u0645 \u064a\u0633\u0643\u0651\u0631\u0647 \u0645\u0631\u0629 \u062b\u0627\u0646\u064a\u0629. \u0648\u0627\u0644\u062d\u0631\u0643\u0629 \u0627\u0644\u0641\u0644\u0633\u0641\u064a\u0629 \u0644\u0644\u0640ode \u0647\u064a \u0647\u0627\u0644\u0631\u0641\u0636 \u2014 \u0627\u062d\u062a\u0641\u0627\u0644 \u0628\u0627\u0644\u062d\u0627\u0636\u0631 \u0628\u062d\u0642\u0651\u0647 \u0647\u0648.',
     },
     {
       device: 'Apostrophe',
@@ -524,6 +630,8 @@ Sound: Keats packs the poem with assonance, alliteration and rich vowel sounds (
       effect:
         'The whole poem is addressed to autumn. Apostrophe (direct address to an absent or non-human being) gives the ode its intimate, conversational tone. Autumn is not just observed \u2014 she is spoken to.',
       lineRef: 24,
+      effectAr:
+        '\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0644\u0651\u0647\u0627 \u0645\u062e\u0627\u0637\u0628\u0629 \u0645\u0648\u062c\u0651\u0647\u0629 \u0644\u0644\u062e\u0631\u064a\u0641. \u0627\u0644\u0640apostrophe (\u0645\u062e\u0627\u0637\u0628\u0629 \u0645\u0628\u0627\u0634\u0631\u0629 \u0644\u0634\u064a \u063a\u0627\u0626\u0628 \u0623\u0648 \u063a\u064a\u0631 \u0628\u0634\u0631\u064a) \u062a\u0639\u0637\u064a \u0627\u0644\u0640ode \u0646\u0628\u0631\u062a\u0647\u0627 \u0627\u0644\u062d\u0645\u064a\u0645\u064a\u0629 \u0627\u0644\u0645\u062d\u0627\u0648\u0650\u0631\u0629. \u0627\u0644\u062e\u0631\u064a\u0641 \u0645\u0648 \u0641\u0642\u0637 \u0645\u0644\u0627\u062d\u0638 \u2014 \u0647\u0648 \u0645\u0643\u0644\u064e\u0651\u0645.',
     },
   ],
 }
@@ -556,22 +664,202 @@ const comparisons = [
 ]
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'ta-1', question: 'What is the poem celebrating?', type: 'multiple-choice', options: ['Spring', 'The richness and beauty of autumn — presented as a season of fulfilment rather than decay', 'Winter', 'Summer'], correctIndex: 1, explanation: 'Keats celebrates autumn as a season of abundance and beauty rather than decline, presenting it as the culmination of the year\'s growth.', topic: 'Meaning', difficulty: 'foundation' },
-  { id: 'ta-2', question: 'How is Autumn personified?', type: 'multiple-choice', options: ['As a warrior', 'As a relaxed figure sitting, sleeping, and gleaning among the harvest', 'As a child', 'As an old man'], correctIndex: 1, explanation: 'Autumn is personified as a figure sitting on a granary floor, sleeping in a half-reaped furrow, and watching cider press. Each image shows abundance and leisure.', topic: 'Language', difficulty: 'foundation' },
-  { id: 'ta-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['Free verse', 'Three stanzas of 11 lines each — an ode form', 'A sonnet', 'Quatrains'], correctIndex: 1, explanation: 'An ode with three regular 11-line stanzas, each with a consistent rhyme scheme. The ode form is suited to celebrating a subject with elevated language.', topic: 'Structure', difficulty: 'foundation' },
-  { id: 'ta-4', question: 'How does each stanza focus on a different sense?', type: 'multiple-choice', options: ['They don\'t', 'Stanza 1: sight/touch (ripeness), Stanza 2: sight (personification), Stanza 3: sound (music)', 'All focus on smell', 'All focus on taste'], correctIndex: 1, explanation: 'Each stanza emphasises a different sensory experience — tactile abundance (1), visual personification (2), and aural music (3) — creating a complete sensory immersion in autumn.', topic: 'Structure', difficulty: 'higher' },
-  { id: 'ta-5', question: 'When was the poem written?', type: 'multiple-choice', options: ['1850', '19 September 1819, after Keats walked through the water-meadows near Winchester', '1794', '1914'], correctIndex: 1, explanation: 'Written on 19 September 1819 after an evening walk near Winchester. Keats was deeply moved by the warm stubble-fields and the gathering swallows.', topic: 'Context', difficulty: 'higher' },
-  { id: 'ta-6', question: 'What does "Where are the songs of Spring?" acknowledge?', type: 'multiple-choice', options: ['Spring is better', 'The passing of time — but Keats immediately insists autumn has its own, equally beautiful music', 'Spring will return', 'The speaker is sad'], correctIndex: 1, explanation: 'The rhetorical question briefly acknowledges loss, but Keats immediately asserts that autumn has its own beauty: "Think not of them, thou hast thy music too."', topic: 'Language', difficulty: 'higher' },
-  { id: 'ta-7', question: 'What does "Close bosom-friend of the maturing sun" suggest?', type: 'multiple-choice', options: ['The sun is hot', 'Autumn and the sun are intimate allies working together to bring fruit to perfect ripeness', 'Sunburn', 'The sun is setting'], correctIndex: 1, explanation: 'Autumn and the sun are presented as intimate friends conspiring to ripen everything. The warmth of their relationship mirrors the warmth of the season.', topic: 'Language', difficulty: 'higher' },
-  { id: 'ta-8', question: 'How does Keats handle the theme of mortality?', type: 'multiple-choice', options: ['He ignores it', 'Autumn\'s beauty is heightened by its transience — the beauty is more precious because it is fleeting', 'He fears death directly', 'He celebrates immortality'], correctIndex: 1, explanation: 'Keats (who was dying of tuberculosis) creates beauty from transience. Autumn is beautiful precisely because it is passing — the awareness of endings makes the present more vivid.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'ta-9', question: 'What is the effect of the gathering swallows at the end?', type: 'multiple-choice', options: ['Spring is coming', 'The swallows preparing to migrate signal the end of autumn and approaching winter — beauty accompanied by gentle farewell', 'The birds are feeding', 'It describes morning'], correctIndex: 1, explanation: 'The gathering swallows are preparing to leave for winter. This final image is both beautiful and poignant — autumn\'s music includes its own farewell.', topic: 'Language', difficulty: 'grade-9' },
-  { id: 'ta-10', question: 'Why is To Autumn considered one of the greatest English poems?', type: 'multiple-choice', options: ['It rhymes well', 'It perfectly balances sensory richness with philosophical depth — celebrating beauty while acknowledging its transience', 'It is very old', 'It is very long'], correctIndex: 1, explanation: 'To Autumn achieves a rare balance: it is sensorially rich (every line is full of texture, sound, and colour) while carrying profound philosophical weight about time, mortality, and acceptance.', topic: 'Themes', difficulty: 'grade-9' },
+  {
+    id: 'ta-1',
+    question: 'What is the poem celebrating?',
+    type: 'multiple-choice',
+    options: [
+      'Spring',
+      'The richness and beauty of autumn — presented as a season of fulfilment rather than decay',
+      'Winter',
+      'Summer',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Keats celebrates autumn as a season of abundance and beauty rather than decline, presenting it as the culmination of the year's growth.",
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ta-2',
+    question: 'How is Autumn personified?',
+    type: 'multiple-choice',
+    options: [
+      'As a warrior',
+      'As a relaxed figure sitting, sleeping, and gleaning among the harvest',
+      'As a child',
+      'As an old man',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Autumn is personified as a figure sitting on a granary floor, sleeping in a half-reaped furrow, and watching cider press. Each image shows abundance and leisure.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ta-3',
+    question: 'What form does the poem use?',
+    type: 'multiple-choice',
+    options: [
+      'Free verse',
+      'Three stanzas of 11 lines each — an ode form',
+      'A sonnet',
+      'Quatrains',
+    ],
+    correctIndex: 1,
+    explanation:
+      'An ode with three regular 11-line stanzas, each with a consistent rhyme scheme. The ode form is suited to celebrating a subject with elevated language.',
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'ta-4',
+    question: 'How does each stanza focus on a different sense?',
+    type: 'multiple-choice',
+    options: [
+      "They don't",
+      'Stanza 1: sight/touch (ripeness), Stanza 2: sight (personification), Stanza 3: sound (music)',
+      'All focus on smell',
+      'All focus on taste',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Each stanza emphasises a different sensory experience — tactile abundance (1), visual personification (2), and aural music (3) — creating a complete sensory immersion in autumn.',
+    topic: 'Structure',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ta-5',
+    question: 'When was the poem written?',
+    type: 'multiple-choice',
+    options: [
+      '1850',
+      '19 September 1819, after Keats walked through the water-meadows near Winchester',
+      '1794',
+      '1914',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Written on 19 September 1819 after an evening walk near Winchester. Keats was deeply moved by the warm stubble-fields and the gathering swallows.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ta-6',
+    question: 'What does "Where are the songs of Spring?" acknowledge?',
+    type: 'multiple-choice',
+    options: [
+      'Spring is better',
+      'The passing of time — but Keats immediately insists autumn has its own, equally beautiful music',
+      'Spring will return',
+      'The speaker is sad',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The rhetorical question briefly acknowledges loss, but Keats immediately asserts that autumn has its own beauty: "Think not of them, thou hast thy music too."',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ta-7',
+    question: 'What does "Close bosom-friend of the maturing sun" suggest?',
+    type: 'multiple-choice',
+    options: [
+      'The sun is hot',
+      'Autumn and the sun are intimate allies working together to bring fruit to perfect ripeness',
+      'Sunburn',
+      'The sun is setting',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Autumn and the sun are presented as intimate friends conspiring to ripen everything. The warmth of their relationship mirrors the warmth of the season.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'ta-8',
+    question: 'How does Keats handle the theme of mortality?',
+    type: 'multiple-choice',
+    options: [
+      'He ignores it',
+      "Autumn's beauty is heightened by its transience — the beauty is more precious because it is fleeting",
+      'He fears death directly',
+      'He celebrates immortality',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Keats (who was dying of tuberculosis) creates beauty from transience. Autumn is beautiful precisely because it is passing — the awareness of endings makes the present more vivid.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ta-9',
+    question: 'What is the effect of the gathering swallows at the end?',
+    type: 'multiple-choice',
+    options: [
+      'Spring is coming',
+      'The swallows preparing to migrate signal the end of autumn and approaching winter — beauty accompanied by gentle farewell',
+      'The birds are feeding',
+      'It describes morning',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The gathering swallows are preparing to leave for winter. This final image is both beautiful and poignant — autumn's music includes its own farewell.",
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'ta-10',
+    question: 'Why is To Autumn considered one of the greatest English poems?',
+    type: 'multiple-choice',
+    options: [
+      'It rhymes well',
+      'It perfectly balances sensory richness with philosophical depth — celebrating beauty while acknowledging its transience',
+      'It is very old',
+      'It is very long',
+    ],
+    correctIndex: 1,
+    explanation:
+      'To Autumn achieves a rare balance: it is sensorially rich (every line is full of texture, sound, and colour) while carrying profound philosophical weight about time, mortality, and acceptance.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Key Themes', summary: 'To Autumn celebrates the richness of the season while gently acknowledging mortality and the passage of time.', keyPoints: ['Abundance — autumn as fulfilment rather than decay', 'Transience — beauty is more precious because it is fleeting', 'Acceptance — the poem embraces endings rather than fearing them', 'Keats was dying — personal mortality informs the gentle farewell'] },
-  { topic: 'Language & Imagery', summary: 'Keats uses personification, sensory imagery across all five senses, and rich, accumulative language to immerse the reader in autumn.', keyPoints: ['Autumn personified as a relaxed figure among the harvest', '"Close bosom-friend of the maturing sun" — intimate alliance', 'Multi-sensory — sight, touch, taste, smell, sound', '"Gathering swallows" — gentle farewell image'] },
-  { topic: 'Structure & Form', summary: 'An ode in three 11-line stanzas, each focused on a different sense, progressing from abundance to acceptance.', keyPoints: ['Ode form — elevated celebration', 'Three stanzas: ripeness (1), personification (2), music (3)', 'Progression from morning to evening — time passing', 'Regular rhyme scheme — orderly celebration'] },
+  {
+    topic: 'Key Themes',
+    summary:
+      'To Autumn celebrates the richness of the season while gently acknowledging mortality and the passage of time.',
+    keyPoints: [
+      'Abundance — autumn as fulfilment rather than decay',
+      'Transience — beauty is more precious because it is fleeting',
+      'Acceptance — the poem embraces endings rather than fearing them',
+      'Keats was dying — personal mortality informs the gentle farewell',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary:
+      'Keats uses personification, sensory imagery across all five senses, and rich, accumulative language to immerse the reader in autumn.',
+    keyPoints: [
+      'Autumn personified as a relaxed figure among the harvest',
+      '"Close bosom-friend of the maturing sun" — intimate alliance',
+      'Multi-sensory — sight, touch, taste, smell, sound',
+      '"Gathering swallows" — gentle farewell image',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary:
+      'An ode in three 11-line stanzas, each focused on a different sense, progressing from abundance to acceptance.',
+    keyPoints: [
+      'Ode form — elevated celebration',
+      'Three stanzas: ripeness (1), personification (2), music (3)',
+      'Progression from morning to evening — time passing',
+      'Regular rhyme scheme — orderly celebration',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -589,11 +877,11 @@ export default function ToAutumnPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "Edexcel Poetry", url: "https://theenglishhub.app/revision/poetry/edexcel" },
-          { name: "To Autumn", url: "https://theenglishhub.app/revision/poetry/edexcel/to-autumn" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          { name: 'Edexcel Poetry', url: 'https://theenglishhub.app/revision/poetry/edexcel' },
+          { name: 'To Autumn', url: 'https://theenglishhub.app/revision/poetry/edexcel/to-autumn' },
         ]}
       />
       <div>
@@ -616,7 +904,9 @@ export default function ToAutumnPage() {
             <p className="text-body-sm text-muted-foreground">
               John Keats &middot; Edexcel Time and Place anthology
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Edexcel</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              Edexcel
+            </Badge>
           </div>
         </div>
       </div>
@@ -675,10 +965,9 @@ export default function ToAutumnPage() {
 
       <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[0.7rem] leading-relaxed text-muted-foreground">
         <p>
-          &ldquo;To Autumn&rdquo; by John Keats (1819) is in the public domain.
-          All quotations on this page are used for the purpose of criticism,
-          review and educational study under fair dealing (s.30 Copyright,
-          Designs and Patents Act 1988).
+          &ldquo;To Autumn&rdquo; by John Keats (1819) is in the public domain. All quotations on
+          this page are used for the purpose of criticism, review and educational study under fair
+          dealing (s.30 Copyright, Designs and Patents Act 1988).
         </p>
       </footer>
     </div>

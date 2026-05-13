@@ -342,48 +342,72 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout — from nos
       analysis:
         'The speaker defines herself by class and physical labour. "Cottage maiden" is humble; "hardened by sun and air" means her skin is tanned from outdoor work — not beautiful by Victorian standards of pale femininity. Yet there is dignity in the description. She was real, natural, honest — qualities the lord\'s world lacks.',
       themes: ['Class', 'Innocence', 'Nature'],
+      analysisAr:
+        'تُعرّف المتكلّمةُ نفسَها بطبقتها وعملها البدنيّ. "Cottage maiden" متواضعة؛ و"hardened by sun and air" تعني أنّ بشرتها سُمرت من العمل في الخلاء — وهو ما لم يكن جمالاً وفق معايير الأنوثة الفيكتوريّة الشاحبة. ومع ذلك ففي الوصف وقارٌ. كانت حقيقيّةً طبيعيّةً صادقة — صفاتٌ يفتقر إليها عالم اللورد.',
+      themesAr: ['الطبقة', 'البراءة', 'الطبيعة'],
     },
     {
       quote: 'Not mindful I was fair',
       analysis:
         "She did not know she was beautiful, or did not think about it. This unconscious beauty made her vulnerable — she had no defences because she did not know she needed them. The line also establishes her as without vanity or ambition, making the lord's exploitation of her innocence more cruel.",
       themes: ['Innocence', 'Beauty', 'Vulnerability'],
+      analysisAr:
+        'لم تكن تعلم أنّها جميلة، أو لم تَلتفِت إلى ذلك. هذا الجمالُ اللاواعي جعلها هشّة — لم تكن تملك دفاعاتٍ لأنّها لم تكن تعلم أنّها بحاجةٍ إليها. ويُؤكّد السطر كذلك أنّها بلا غرور ولا طموح، فيكون استغلال اللورد لبراءتها أشدّ قسوة.',
+      themesAr: ['البراءة', 'الجمال', 'الهشاشة'],
     },
     {
       quote: 'He lured me to his palace home',
       analysis:
         '"Lured" is the language of trapping — the lord is a predator, the speaker his prey. The word places all the agency and blame on the lord. She did not choose to go; she was lured. "Palace home" contrasts sharply with her "cottage" — the class gulf between them is spatial as well as social.',
       themes: ['Predation', 'Class', 'Power'],
+      analysisAr:
+        'لفظة "lured" من معجم النصب والإيقاع — اللوردُ صيّاد، والمتكلّمةُ فريسته. الكلمةُ تضع الفاعليّةَ واللومَ كلَّهما على اللورد. لم تختر الذهاب؛ بل اسْتُدرجَت. وتضادّ "palace home" حادٌّ مع "cottage"-ها — الهوّةُ الطبقيّة بينهما مكانيّةٌ كما هي اجتماعيّة.',
+      themesAr: ['الاستدراج', 'الطبقة', 'السلطة'],
     },
     {
       quote: 'He wore me like a silken knot, / He changed me like a glove',
       analysis:
         'Two devastating similes. A silken knot is decorative but disposable; a glove is worn and removed at will. Both reduce the speaker from a person to an object — something the lord used for his pleasure and discarded when he wanted something new. The casualness of "changed" is chilling.',
       themes: ['Objectification', 'Disposal', 'Power'],
+      analysisAr:
+        'تشبيهان موجعان. عُقدةُ الحرير زينةٌ قابلةٌ للنبذ؛ والقفّازُ يُلبَس ويُخلَع كما يشاء صاحبه. كلاهما يَختزل المتكلّمةَ من إنسانٍ إلى شيء — استعمله اللورد لمتعته ثمّ تخلّى عنه حين شاء آخر. والتلقائيّة في "changed" مرعبة.',
+      themesAr: ['التشييء', 'النبذ', 'السلطة'],
     },
     {
       quote: 'So now I moan, an unclean thing, / Who might have been a dove',
       analysis:
         '"Unclean thing" versus "dove" — the speaker measures the distance between what she is (ruined, impure) and what she could have been (innocent, pure). "Unclean" has biblical connotations of contamination. That she calls herself a "thing" shows how completely she has internalised society\'s dehumanisation of fallen women.',
       themes: ['Fallen woman', 'Purity', 'Self-judgement'],
+      analysisAr:
+        '"Unclean thing" في مقابل "dove" — تَقيس المتكلّمةُ المسافةَ بين ما هي عليه (مدمَّرة، غير طاهرة) وما كان يمكن أن تكونه (بريئة، نقيّة). للفظة "unclean" دلالاتٌ كتابيّة بالتلوّث. وأن تصف نفسَها بـ"thing" يُظهر مقدار ما استبطنته من تجريد المجتمع للنساء "الساقطات" من إنسانيّتهنّ.',
+      themesAr: ['المرأة الساقطة', 'الطهارة', 'الحكم على الذات'],
     },
     {
       quote: 'Chose you, and cast me by',
       analysis:
         'The brutal economy of this line captures the lord\'s power. Two verbs — "chose" and "cast" — and two women\'s fates are decided. The speaker is discarded like waste. The parallelism shows that choosing Kate and discarding the speaker were simultaneous, linked actions — one woman\'s gain is another\'s ruin.',
       themes: ['Choice', 'Disposal', 'Power'],
+      analysisAr:
+        'الاقتصاد القاسي في هذا السطر يلتقط سلطة اللورد. فعلان — "chose" و"cast" — وقَدَران لامرأتين يُحسمان. تُنبَذ المتكلّمةُ كأنّها نفاية. والتوازي يُري أنّ اختيار Kate ونبذ المتكلّمة فِعلان متزامنان مترابطان — مكسبُ امرأةٍ خسارةُ امرأةٍ أخرى.',
+      themesAr: ['الاختيار', 'النبذ', 'السلطة'],
     },
     {
       quote: 'My fair-haired son, my shame, my pride',
       analysis:
         'The poem\'s most complex line. The son is simultaneously her "shame" (proof of her sexual fall) and her "pride" (the child she loves). The paradox refuses to let the reader see the son as simply one or the other. "Fair-haired" echoes the "flaxen hair" the lord once praised — the son carries his father\'s features. The speaker reclaims what was done to her through love for her child.',
       themes: ['Motherhood', 'Paradox', 'Reclamation'],
+      analysisAr:
+        'أعقد سطور القصيدة. الابنُ في آنٍ معاً "shame" (دليلُ السقوط) و"pride" (الطفل الذي تحبّه). تأبى المفارقةُ أن نختزله في أحد الوصفين. وعبارة "fair-haired" تردّد صدى "flaxen hair" التي مدحها اللورد ذات يوم — الابنُ يحمل ملامح أبيه. تستردّ المتكلّمةُ ما فُعل بها عبر محبّتها لطفلها.',
+      themesAr: ['الأمومة', 'المفارقة', 'الاسترداد'],
     },
     {
       quote: 'Your father would give lands for one',
       analysis:
         'The final reversal. The lord, who discarded the speaker, now desperately needs what she has: a male heir. In Victorian society, landed estates required heirs. The speaker — powerless, ruined, "unclean" — holds the one thing wealth and status cannot buy. The power dynamic has completely inverted.',
       themes: ['Power reversal', 'Heir', 'Irony'],
+      analysisAr:
+        'الانعطافة الختاميّة. اللوردُ الذي نَبذ المتكلّمةَ يحتاج الآن في يأسٍ إلى ما عندها: وريثٌ ذَكَر. في المجتمع الفيكتوريّ كانت الإقطاعاتُ تستلزم وريثاً. والمتكلّمةُ — الضعيفةُ المدمَّرةُ "unclean" — تملك الشيء الوحيد الذي لا يشتريه مالٌ ولا جاه. وموازين القوى انقلبت بالكامل.',
+      themesAr: ['انقلاب موازين القوى', 'الوريث', 'المفارقة'],
     },
   ],
 
@@ -394,6 +418,8 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout — from nos
       effect:
         'The similes reduce the speaker from a human being to an accessory. A silken knot is tied and untied; a glove is worn and removed. Both images convey the lord\'s casual, careless treatment of a woman as a disposable object. The luxury of "silken" makes the disposal worse — even as an object, she was only briefly valued.',
       lineRef: 12,
+      effectAr:
+        'يَختزل التشبيهان المتكلّمةَ من إنسانٍ إلى ملحقٍ زينة. عقدةُ الحرير تُعقد وتُحلّ؛ والقفّاز يُلبَس ويُخلَع. الصورتان تُوصلان كيف عاملها اللورد ببرودٍ كأنّها شيءٌ قابلٌ للنبذ. وفخامةُ "silken" تجعل النبذَ أشدّ وقعاً — حتى بوصفها شيئاً، لم تَدُم قيمتُها إلّا لحظات.',
     },
     {
       device: 'Dramatic monologue / Direct address',
@@ -401,6 +427,8 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout — from nos
       effect:
         "The poem is addressed directly to Kate, creating an intimate confrontation. The speaker is not making a public argument but a private accusation. The direct address forces the reader into Kate's position — we must listen, as Kate must, to the speaker's pain and challenge.",
       lineRef: 18,
+      effectAr:
+        'القصيدة موجَّهةٌ مباشرةً إلى Kate، فتولّد مواجهةً حميمة. المتكلّمةُ لا تطرح حُجّةً علنيّة بل اتّهاماً خاصّاً. والنداءُ المباشر يُلزم القارئَ بأن يضع نفسه في موضع Kate — علينا أن نُصغي، كما يجب على Kate أن تُصغي، إلى ألم المتكلّمة وتحدّيها.',
     },
     {
       device: 'Semantic field of predation',
@@ -408,6 +436,8 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout — from nos
       effect:
         'The verbs describing the lord\'s behaviour come from the semantic field of hunting and trapping. He "lured" (baited), "found out" (tracked), "wore" (used), and "cast by" (discarded). The consistent animal-hunting language makes the lord a predator throughout, which undercuts any reading of the relationship as romantic.',
       lineRef: 10,
+      effectAr:
+        'الأفعال التي تصف سلوك اللورد تنتمي إلى حقل الصيد والاستدراج. "lured" (أغرى بطعم)، "found out" (تتبّع)، "wore" (استعمل)، و"cast by" (نَبَذ). واتّساق معجم صيد الحيوان يجعل اللورد صيّاداً طوال القصيدة، فيُفرّغ أيَّ قراءةٍ غزليّة للعلاقة.',
     },
     {
       device: 'Paradox / Oxymoron',
@@ -415,6 +445,8 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout — from nos
       effect:
         'The son is simultaneously shame and pride — the evidence of the speaker\'s ruin and the source of her only joy. The paradox refuses simple moral categories. Rossetti challenges Victorian morality by showing that what society calls "shame" can also be the deepest source of love.',
       lineRef: 31,
+      effectAr:
+        'الابنُ في آنٍ معاً عارٌ وفخر — دليلُ خراب المتكلّمة ومصدرُ فرحها الوحيد. المفارقةُ تأبى التصنيفات الأخلاقيّة البسيطة. تتحدّى Rossetti أخلاق العصر الفيكتوريّ ببرهنتها على أنّ ما يسمّيه المجتمع "عاراً" يمكن أن يكون كذلك أعمقَ مصادر الحبّ.',
     },
     {
       device: 'Rhetorical questions',
@@ -422,6 +454,8 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout — from nos
       effect:
         'The questions demand answers that cannot be given. "Why did a great lord find me out?" — there is no good reason. "If you stood where I stand" — Kate cannot answer. The questions expose the injustice of the speaker\'s situation and challenge Kate\'s moral superiority.',
       lineRef: 5,
+      effectAr:
+        'الأسئلةُ تطلب إجاباتٍ لا يمكن تقديمها. "Why did a great lord find me out?" — لا سببَ وجيهاً. "If you stood where I stand" — لا تستطيع Kate أن تُجيب. تكشف الأسئلةُ ظلمَ وضع المتكلّمة وتُفنّد ادّعاءَ Kate بالأفضليّة الأخلاقيّة.',
     },
     {
       device: 'Ballad form',
@@ -429,8 +463,60 @@ Tone: Bitter, accusatory, proud, tender. The tone shifts throughout — from nos
       effect:
         'The ballad form connects the poem to a long tradition of folk songs about seduction, betrayal and abandoned women. The simple, song-like form makes the poem feel oral and traditional — as if this story has been told many times by many women. The regularity of the rhyme creates a controlled, measured tone that contains powerful emotions.',
       lineRef: 0,
+      effectAr:
+        'شكلُ الـ ballad يربط القصيدةَ بتقليدٍ طويل من الأغاني الشعبيّة عن الإغواء والخيانة والنساء المنبوذات. وبساطةُ الشكل الغنائيّة تكسب القصيدةَ طابعاً شفويّاً تقليديّاً — كأنّ هذه القصّة قد رُويت مرّاتٍ كثيرة على ألسنة نساءٍ كثيرات. وانتظامُ القافية يُولّد نبرةً مضبوطةً تحتوي عواطف هائلة.',
     },
   ],
+
+  contextAr: `
+    <h3>Christina Rossetti (1830–1894)</h3>
+    <p>من أبرز شعراء العصر الفيكتوريّ في الإنجليزيّة. كانت ضمن الحركة الفنّيّة <strong>Pre-Raphaelite</strong> (أخوها Dante Gabriel Rossetti من مؤسّسيها). متديّنةٌ التزاماً (أنغليكانيّة كاثوليكيّة)، وكثيرٌ من شعرها يستكشف <strong>الحبّ والفقد والإيمان وتجربة المرأة</strong>. لم تتزوّج وإن خُطبت مرّتين.</p>
+
+    <h3>"المرأة الساقطة" في المجتمع الفيكتوريّ</h3>
+    <p>في إنجلترا الفيكتوريّة كانت المرأةُ التي تُمارس الجنس خارج الزواج تُعتبر <strong>"fallen woman"</strong> — مَوصومةً إلى الأبد. تفقد مكانتها الاجتماعيّة وفرصها في الزواج وغالباً عائلتها. كان الازدواج صارخاً: لا يلحق الرجالَ شيءٌ من هذه التبعات. كانت Rossetti مدركةً تماماً لهذا الظلم. تطوّعت في <strong>Magdalene penitentiary</strong> (دارٌ للنساء "الساقطات" وللعاهرات السابقات)، فاطّلعت على الألم الحقيقيّ الذي تُولّده هذه القواعد.</p>
+
+    <h3>الطبقة والسلطة</h3>
+    <p>تستكشف "Cousin Kate" كيف يتقاطع <strong>الطبقة</strong> و<strong>النوع الاجتماعيّ</strong> في توليد الهشاشة. المتكلّمةُ "cottage maiden" — من الطبقة العاملة لا حماةَ لها. واللوردُ الـ"great" عنده ثروةٌ ومكانةٌ وسلطة. يستطيع أن يُغوي وينبذ بلا تبعات لأنّ النظامَ الاجتماعيّ يحميه ويعاقبها. تكشف Rossetti هذا الظلم دون وعظ — تُسلّم الحُجّةَ لصوت المتكلّمة.</p>
+
+    <h3>اختيارات النساء</h3>
+    <p>تسأل القصيدة هل كان لـKate خيارٌ حقيقيّ. تزوّجت Kate اللوردَ، لكن هل كانت "مربوطة" بحبٍّ حقيقيّ أم بـ"survey of gold"؟ تسأل المتكلّمةُ هل كانت Kate ستتصرّف مختلفةً في موضعها. وتُلمح Rossetti إلى أنّ للنساء في هذا المجتمع فاعليّةً محدودةً جدّاً — تتحدّد أقدارهنّ باختيارات الرجال لا باختياراتهنّ.</p>
+
+    <h3>النشر</h3>
+    <p>نُشرت "Cousin Kate" في مجموعة Rossetti الأولى <em>Goblin Market and Other Poems</em> (سنة 1862). أرست هذه المجموعةُ مكانتها شاعرةً كبرى، وتضمّ عدّة قصائد تستكشف الجنسانيّةَ الأنثويّة والاستغلال والمقاومة.</p>
+  `,
+
+  summaryAr: `المقطع الأوّل (السطور 1–4): تُقدّم المتكلّمةُ نفسها "cottage maiden" — من طبقةٍ عاملة، سُمرت بشرتها من الشمس، راضيةً بحياتها. لم تكن واعيةً جمالَها ("Not mindful I was fair"). هذه البراءة جعلتها هشّة.
+
+المقطع الثاني (السطور 5–8): تسأل لماذا تبيّنها "great lord" ومدح جمالها. سؤالُ "Why did a great lord find me out" المتكرَّر اتّهاميّ — هو من جاء يبحث عنها. اهتمامُه لم يجلب لها سعادةً بل همّاً ("care").
+
+المقطع الثالث (السطور 9–12): "lured" اللوردُ المتكلّمةَ إلى قصره، أغواها، وعاملها كأنّها مُلكية. كانت "worn like a silken knot" و"changed like a glove" — أشياء زينةٍ تُستعمَل وتُنبَذ. الاستعاراتُ تُختزلها من إنسانٍ إلى شيء.
+
+المقطع الرابع (السطور 13–15): الآن، بعد نبذها، تصير المتكلّمةُ "an unclean thing" — مُستعمَلةً جنسيّاً، مدمَّرةً اجتماعيّاً. وكان يمكن أن تظلّ بريئة ("a dove") لو لم يُفسدها اللورد. لقد استبطنت حُكم المجتمع عليها.
+
+المقطع الخامس (السطور 16–19): تُخاطب المتكلّمةُ Cousin Kate مباشرةً. ازدادت Kate جمالاً، فلفتت أنظار اللورد، فاختارها — أمّا المتكلّمة فـ"cast by". نالت Kate الزواج، ونالت المتكلّمةُ العار.
+
+المقطع السادس (السطور 20–23): تتحدّى المتكلّمةُ Kate — هل كانت Kate ستتصرّف مختلفةً في موضعها؟ والمدلولُ أنّ فضيلةَ Kate حظٌّ لا تفوّق أخلاقيّ.
+
+المقطع السابع (السطور 24–30): انعطافةُ القصيدة. للمتكلّمة شيءٌ ليس عند Kate: ابن. هو "my shame, my pride" — دليلُ سقوطها ومحبوبُها معاً. وكان اللورد ليعطي "lands" مقابل وريث. والمنبوذةُ المسكينةُ تملك الآن ما لا يشتريه مال.
+
+المعنى الإجماليّ: "Cousin Kate" مونولوغٌ دراميّ يستكشف الاستغلال الجنسيّ والطبقة وازدواج الأخلاق الفيكتوريّ. تُعطي Rossetti صوتاً لـ"fallen woman" وتكشف ظلم نظامٍ يُعاقب النساء على أفعال الرجال. والانعطافةُ الختاميّة — ابنُ المتكلّمة بوصفه انتصارَها — تتحدّى فكرةَ أنّ الطهارةَ الجنسيّة هي قيمةُ المرأة الوحيدة.`,
+
+  formAndStructureAr: `الشكل: شكلُ الـ ballad — ستّةُ مقاطع من أربعة أسطر (مع مقطعٍ ختاميّ أطول من سبعة أسطر). يُستخدَم شكلُ الـ ballad تقليديّاً للسرد، خاصّةً قصصِ الحبّ والخيانة والظلم. اختيارُ Rossetti يربط القصيدةَ بتقليدِ أغاني النساء عن الإغواء والهجر.
+
+نظام القافية: ABAB — بسيطٌ منتظم، كأنشودةٍ شعبيّة. وبساطةُ الشكل تتقابل مع تعقيد عواطف المتكلّمة. القوافي المنتظمة تكسب القصيدةَ صفةَ ضبطٍ ووَزن، كأنّ المتكلّمةَ قد رتّبت قصّتها مرّاتٍ كثيرة.
+
+الوزن: iambic إجمالاً، يتناوب tetrameter وtrimeter. هذا وزنُ الـ ballad — وهو الشكلُ نفسُه الذي يستعمله Hardy في "The Man He Killed". إيقاعُ الأغنية الشعبيّة يكسب القصيدةَ طابعاً شفويّاً، كأنّ المتكلّمة تروي قصّتها بصوتٍ مسموع أمام جمهور (أو أمام Kate نفسها).
+
+البنية في ثلاث حركات:
+• المقاطع 1–3: قصّة المتكلّمة — الإغواء، الاستغلال، النبذ.
+• المقاطع 4–6: المقارنة بـKate — ازدواج المعايير.
+• المقطع 7: الانعطافة — ابنُ المتكلّمة انتصاراً لها.
+
+المونولوغ الدراميّ: تُخاطب المتكلّمةُ Kate مباشرةً ("O Lady Kate, my cousin Kate")، فتولّد نبرةً حميمةً مواجِهة. ليست خطبةً علنيّة بل محاسبةً خاصّة بين امرأتين.
+
+المقطع الختاميّ: المقطع الأخير أطول من سواه (سبعةُ أسطر بدل أربعة)، ممّا يمنحه ثقلاً إضافيّاً. وفيه انعطافةُ القصيدة وذروتها العاطفيّة. واتّساعُ الشكل يحاكي اتّساعَ سلطة المتكلّمة.
+
+النبرة: مرارة، اتّهام، فخر، حنان. تتقلّب على امتداد القصيدة — من حزنٍ حنينيّ (المقطع الأوّل) إلى غضب (المقاطع 2–4) إلى تحدّ (المقاطع 5–6) إلى فخرٍ أموميّ شَرِس (المقطع 7).`,
 }
 
 /* ── Comparison poems ─────────────────────────────────────────────── */

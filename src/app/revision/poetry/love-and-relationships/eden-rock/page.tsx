@@ -123,58 +123,108 @@ const edenRockPoem: PoemData = {
   ],
   context:
     '<p><strong>Charles Causley</strong> (1917\u20132003) was a Cornish poet who lost his father when he was young and was deeply affected by his mother\'s death. "Eden Rock" was published in 1988 and is widely read as a poem about <strong>approaching death</strong> and the hope of being reunited with deceased parents.</p><p>The poem recreates a childhood <strong>memory or vision</strong> of his parents as young people at a place called Eden Rock. The extraordinary precision of detail \u2014 specific ages, colours, fabrics \u2014 gives the scene a <strong>hyper-real, dreamlike</strong> quality, as though the speaker is seeing his parents more clearly than memory alone could allow.</p><p><strong>Important:</strong> "Eden Rock" is <strong>invented by Causley</strong> \u2014 it is NOT a real place. Causley confirmed in interview: "I have no idea, I mean I made it up!" Some revision sites incorrectly identify it with a Cornish location. Causley was Cornish, but Eden Rock itself is fictional, drawing on the biblical Garden of Eden and the dream-vision tradition.</p><p>The title alludes to the <strong>Garden of Eden</strong> \u2014 a lost paradise. The poem suggests that death may not be an ending but a <strong>return to an innocent, perfect state</strong> where loved ones wait. Causley never married and lived with his mother until her death, making the poem intensely personal.</p><p>Key themes include <strong>memory and nostalgia</strong>, the <strong>boundary between life and death</strong>, <strong>parental love</strong>, and the possibility of <strong>reunion after death</strong>.</p>',
+
+  contextAr:
+    '<p><strong>Charles Causley</strong> (1917\u20132003) \u0634\u0627\u0639\u0631 \u0645\u0646 Cornwall\u060c \u0641\u0642\u062f \u0623\u0628\u0648\u0647 \u0648\u0647\u0648 \u0635\u063a\u064a\u0631\u060c \u0648\u062a\u0623\u062b\u0651\u0631 \u0648\u0627\u064a\u062f \u0628\u0648\u0641\u0627\u0629 \u0623\u0645\u0647. \u0642\u0635\u064a\u062f\u0629 "Eden Rock" \u0627\u0646\u062a\u0634\u0631\u062a \u0633\u0646\u0629 1988\u060c \u0648\u064a\u064f\u0642\u0631\u0623 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0639\u0644\u0649 \u0646\u0637\u0627\u0642 \u0648\u0627\u0633\u0639 \u0639\u0644\u0649 \u0625\u0646\u0647\u0627 \u0642\u0635\u064a\u062f\u0629 \u0639\u0646 <strong>\u0627\u0644\u0627\u0642\u062a\u0631\u0627\u0628 \u0645\u0646 \u0627\u0644\u0645\u0648\u062a</strong> \u0648\u0639\u0646 \u0627\u0644\u0623\u0645\u0644 \u0641\u064a \u0627\u0644\u0644\u0642\u0627\u0621 \u0645\u0639 \u0627\u0644\u0648\u0627\u0644\u062f\u064a\u0646 \u0627\u0644\u0645\u062a\u0648\u0641\u0651\u064a\u064a\u0646.</p><p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0639\u064a\u062f \u0628\u0646\u0627\u0621 <strong>\u0630\u0643\u0631\u0649 \u0645\u0646 \u0627\u0644\u0637\u0641\u0648\u0644\u0629 \u0623\u0648 \u0631\u0624\u064a\u0629</strong> \u0644\u0648\u0627\u0644\u062f\u064a\u0647 \u0648\u0647\u0645 \u0634\u0628\u0627\u0628 \u0641\u064a \u0645\u0643\u0627\u0646 \u0627\u0633\u0645\u0647 Eden Rock. \u0627\u0644\u062f\u0642\u0651\u0629 \u0627\u0644\u0627\u0633\u062a\u062b\u0646\u0627\u0626\u064a\u0629 \u0641\u064a \u0627\u0644\u062a\u0641\u0627\u0635\u064a\u0644 \u2014 \u0623\u0639\u0645\u0627\u0631 \u0645\u062d\u062f\u0651\u062f\u0629\u060c \u0623\u0644\u0648\u0627\u0646\u060c \u0623\u0642\u0645\u0634\u0629 \u2014 \u062a\u0639\u0637\u064a \u0627\u0644\u0645\u0634\u0647\u062f \u0637\u0627\u0628\u0639 <strong>\u062d\u0642\u064a\u0642\u064a \u0628\u0634\u0643\u0644 \u0645\u0641\u0631\u0637\u060c \u062d\u0644\u0645\u064a</strong>\u060c \u0643\u0623\u0646 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0634\u0648\u0641 \u0648\u0627\u0644\u062f\u064a\u0647 \u0628\u0648\u0636\u0648\u062d \u0623\u0643\u0628\u0631 \u0645\u0646 \u0627\u0644\u0644\u064a \u062a\u0633\u0645\u062d \u0641\u064a\u0647 \u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u0627\u0644\u0639\u0627\u062f\u064a\u0629.</p><p><strong>\u0645\u0644\u0627\u062d\u0638\u0629 \u0645\u0647\u0645\u0629:</strong> "Eden Rock" \u0645\u0643\u0627\u0646 <strong>\u0627\u062e\u062a\u0631\u0639\u0647 Causley</strong> \u2014 \u0645\u0648 \u0645\u0643\u0627\u0646 \u062d\u0642\u064a\u0642\u064a. Causley \u0646\u0641\u0633\u0647 \u0623\u0643\u0651\u062f \u0641\u064a \u0645\u0642\u0627\u0628\u0644\u0629: "I have no idea, I mean I made it up!" \u0628\u0639\u0636 \u0645\u0648\u0627\u0642\u0639 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629 \u062a\u062e\u0637\u0626 \u0648\u062a\u0631\u0628\u0637 \u0627\u0644\u0627\u0633\u0645 \u0628\u0645\u0643\u0627\u0646 \u0641\u064a Cornwall. \u0635\u062d\u064a\u062d \u0625\u0646 Causley \u0645\u0646 Cornwall\u060c \u0628\u0633 Eden Rock \u0646\u0641\u0633\u0647 \u062e\u064a\u0627\u0644\u064a\u060c \u064a\u0633\u062a\u0644\u0647\u0645 \u0645\u0646 Garden of Eden \u0641\u064a \u0627\u0644\u0643\u062a\u0627\u0628 \u0627\u0644\u0645\u0642\u062f\u0651\u0633 \u0648\u0645\u0646 \u062a\u0642\u0644\u064a\u062f \u0631\u0624\u0649 \u0627\u0644\u0623\u062d\u0644\u0627\u0645.</p><p>\u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u0641\u064a\u0647 allusion \u0644\u0640<strong>Garden of Eden</strong> \u2014 \u0627\u0644\u0641\u0631\u062f\u0648\u0633 \u0627\u0644\u0645\u0641\u0642\u0648\u062f. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0644\u0645\u0651\u062d \u0625\u0646 \u0627\u0644\u0645\u0648\u062a \u064a\u062d\u062a\u0645\u0644 \u0645\u0627 \u064a\u0643\u0648\u0646 \u0646\u0647\u0627\u064a\u0629\u060c \u0628\u0644 <strong>\u0631\u062c\u0648\u0639 \u0644\u062d\u0627\u0644 \u0628\u0631\u064a\u0621 \u0643\u0627\u0645\u0644</strong> \u0641\u064a\u0647 \u0623\u062d\u0628\u0651\u0627\u0624\u0643 \u064a\u0646\u062a\u0638\u0631\u0648\u0646\u0643. Causley \u0645\u0627 \u062a\u0632\u0648\u0651\u062c \u0623\u0628\u062f\u060c \u0648\u0639\u0627\u0634 \u0645\u0639 \u0623\u0645\u0647 \u0644\u064a\u0646 \u062a\u0648\u0641\u0651\u062a\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0634\u062e\u0635\u064a\u0629 \u0648\u0627\u064a\u062f.</p><p>\u0623\u0647\u0645 \u0627\u0644\u0645\u0648\u0627\u0636\u064a\u0639: <strong>\u0627\u0644\u0630\u0627\u0643\u0631\u0629 \u0648\u0627\u0644\u062d\u0646\u064a\u0646</strong>\u060c \u0648<strong>\u0627\u0644\u062d\u062f\u0651 \u0628\u064a\u0646 \u0627\u0644\u062d\u064a\u0627\u0629 \u0648\u0627\u0644\u0645\u0648\u062a</strong>\u060c \u0648<strong>\u0627\u0644\u062d\u0628 \u0627\u0644\u0623\u0628\u0648\u064a</strong>\u060c \u0648\u0625\u0645\u0643\u0627\u0646\u064a\u0629 <strong>\u0627\u0644\u0644\u0642\u0627\u0621 \u0628\u0639\u062f \u0627\u0644\u0645\u0648\u062a</strong>.</p>',
   summary:
     'The speaker describes a vision of his parents as young people waiting for him at Eden Rock, a picnic spot. His father is twenty-five, his mother twenty-three \u2014 ages they could only have been decades before the poem was written. Every detail of the scene is described with impossible precision: clothing, food, colours. As the vision intensifies, the sky whitens unnaturally, lit by three suns. A stream separates the speaker from his parents, but crossing it is "not as hard as you might think." The speaker accepts what is happening with quiet wonder: "I had not thought that it would be like this."',
+
+  summaryAr:
+    '\u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0648\u0635\u0641 \u0631\u0624\u064a\u0629 \u0644\u0648\u0627\u0644\u062f\u064a\u0647 \u0648\u0647\u0645 \u0634\u0628\u0627\u0628\u060c \u064a\u0646\u062a\u0638\u0631\u0648\u0646\u0647 \u0641\u064a Eden Rock\u060c \u0645\u0643\u0627\u0646 \u0645\u062e\u0635\u0651\u0635 \u0644\u0644\u0646\u0632\u0647\u0629 (picnic). \u0627\u0644\u0623\u0628 \u0639\u0645\u0631\u0647 \u062e\u0645\u0633\u0629 \u0648\u0639\u0634\u0631\u064a\u0646\u060c \u0648\u0627\u0644\u0623\u0645 \u062b\u0644\u0627\u062b\u0629 \u0648\u0639\u0634\u0631\u064a\u0646 \u2014 \u0648\u0647\u064a \u0623\u0639\u0645\u0627\u0631 \u0645\u0627 \u0643\u0627\u0646\u0648\u0627 \u0641\u064a\u0647\u0627 \u0625\u0644\u0627 \u0642\u0628\u0644 \u0639\u0642\u0648\u062f \u0645\u0646 \u0632\u0645\u0646 \u0643\u062a\u0627\u0628\u0629 \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0643\u0644 \u062a\u0641\u0635\u064a\u0644\u0629 \u0641\u064a \u0627\u0644\u0645\u0634\u0647\u062f \u0645\u0648\u0635\u0648\u0641\u0629 \u0628\u062f\u0642\u0651\u0629 \u0645\u0633\u062a\u062d\u064a\u0644\u0629: \u0627\u0644\u0645\u0644\u0627\u0628\u0633\u060c \u0627\u0644\u0623\u0643\u0644\u060c \u0627\u0644\u0623\u0644\u0648\u0627\u0646. \u0648\u0645\u0639 \u062a\u0643\u062b\u0651\u0641 \u0627\u0644\u0631\u0624\u064a\u0629\u060c \u0627\u0644\u0633\u0645\u0627\u0621 \u062a\u0628\u064a\u0636\u0651 \u0628\u0634\u0643\u0644 \u063a\u064a\u0631 \u0637\u0628\u064a\u0639\u064a\u060c \u0643\u0623\u0646 \u062b\u0644\u0627\u062b \u0634\u0645\u0648\u0633 \u062a\u0646\u0648\u0651\u0631\u0647\u0627. \u0633\u0627\u0642\u064a\u0629 \u062a\u0641\u0635\u0644 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0639\u0646 \u0648\u0627\u0644\u062f\u064a\u0647\u060c \u0628\u0633 \u0639\u0628\u0648\u0631\u0647\u0627 "not as hard as you might think" (\u0645\u0648 \u0635\u0639\u0628 \u0645\u062b\u0644 \u0645\u0627 \u062a\u062a\u062e\u064a\u0651\u0644). \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u064a\u0642\u0628\u0644 \u0627\u0644\u0644\u064a \u064a\u0635\u064a\u0631 \u0628\u062f\u0647\u0634\u0629 \u0647\u0627\u062f\u0626\u0629: "I had not thought that it would be like this".',
   formAndStructure:
     "Form: Four quatrains followed by shorter standalone lines, creating a structure that moves steadily toward a climactic final revelation.\n\nStructure: The poem builds from precise, grounded description to increasingly dreamlike, supernatural imagery, mirroring the speaker's crossing from life toward death.\n\nTense: Present tense throughout creates immediacy and collapses past and present, making the dead parents seem alive and present now.\n\nRhyme: No regular rhyme scheme, but subtle echoes and half-rhymes create a gentle, lulling musicality that avoids harshness.\n\nLine lengths: Relatively regular, creating a calm, measured pace that contrasts with the extraordinary subject matter.\n\nThe final short lines \u2014 separated by stanza breaks \u2014 create pauses before the poem's devastating, understated conclusions.",
+
+  formAndStructureAr:
+    '\u0627\u0644\u0634\u0643\u0644 (Form): \u0623\u0631\u0628\u0639\u0629 quatrain \u064a\u062a\u0628\u0639\u0647\u0627 \u0623\u0628\u064a\u0627\u062a \u0642\u0635\u064a\u0631\u0629 \u0645\u0646\u0641\u0635\u0644\u0629\u060c \u0648\u0647\u0630\u0627 \u064a\u062e\u0644\u0642 \u0628\u0646\u064a\u0629 \u062a\u062a\u062d\u0631\u0651\u0643 \u0628\u062b\u0628\u0627\u062a \u0644\u0648\u0631\u0627 \u0627\u0644\u0643\u0634\u0641 \u0627\u0644\u0646\u0647\u0627\u0626\u064a.\n\n' +
+    '\u0627\u0644\u0628\u0646\u064a\u0629 (Structure): \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0628\u0646\u0649 \u0645\u0646 \u0648\u0635\u0641 \u062f\u0642\u064a\u0642 \u0648\u0645\u0631\u0633\u0651\u062e \u0641\u064a \u0627\u0644\u0623\u0631\u0636\u060c \u0644\u064a\u0646 \u062a\u0646\u062a\u0642\u0644 \u0644\u0635\u0648\u0631 \u062d\u0644\u0645\u064a\u0629 \u0648\u0641\u0648\u0642 \u0637\u0628\u064a\u0639\u064a\u0629\u060c \u0648\u0647\u0630\u0627 \u064a\u0639\u0643\u0633 \u0639\u0628\u0648\u0631 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0645\u0646 \u0627\u0644\u062d\u064a\u0627\u0629 \u0644\u0648\u0631\u0627 \u0627\u0644\u0645\u0648\u062a.\n\n' +
+    '\u0627\u0644\u0632\u0645\u0646 (Tense): \u0627\u0644\u0632\u0645\u0646 \u0627\u0644\u062d\u0627\u0636\u0631 \u0637\u0648\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u064a\u062e\u0644\u0642 \u0625\u062d\u0633\u0627\u0633 \u0628\u0627\u0644\u0645\u0628\u0627\u0634\u0631\u0629\u060c \u0648\u064a\u062f\u0645\u062c \u0627\u0644\u0645\u0627\u0636\u064a \u0645\u0639 \u0627\u0644\u062d\u0627\u0636\u0631\u060c \u0639\u0634\u0627\u0646 \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0648\u0627\u0644\u062f\u064a\u0646 \u0627\u0644\u0645\u062a\u0648\u0641\u0651\u064a\u064a\u0646 \u064a\u0628\u0627\u0646\u0648\u0646 \u0623\u062d\u064a\u0627\u0621 \u0648\u062d\u0627\u0636\u0631\u064a\u0646 \u0641\u064a \u0647\u0627\u0644\u0644\u062d\u0638\u0629.\n\n' +
+    '\u0627\u0644\u0642\u0627\u0641\u064a\u0629 (Rhyme): \u0645\u0627 \u0641\u064a\u0647 \u0646\u0638\u0627\u0645 \u0642\u0627\u0641\u064a\u0629 \u0645\u0646\u062a\u0638\u0645\u060c \u0628\u0633 \u0623\u0635\u062f\u0627\u0621 \u062e\u0641\u064a\u0641\u0629 \u0648half-rhymes \u062a\u062e\u0644\u0642 \u0645\u0648\u0633\u064a\u0642\u0649 \u0644\u0637\u064a\u0641\u0629 \u0648\u0645\u064f\u0647\u062f\u0651\u0626\u0629\u060c \u062a\u062a\u062c\u0646\u0651\u0628 \u0627\u0644\u0642\u0633\u0648\u0629.\n\n' +
+    '\u0637\u0648\u0644 \u0627\u0644\u0623\u0628\u064a\u0627\u062a: \u0634\u0628\u0647 \u0645\u0646\u062a\u0638\u0645\u060c \u064a\u062e\u0644\u0642 \u0625\u064a\u0642\u0627\u0639 \u0647\u0627\u062f\u0626 \u0648\u0645\u0642\u064a\u0651\u0633\u060c \u064a\u062a\u0646\u0627\u0642\u0636 \u0645\u0639 \u0627\u0644\u0645\u0648\u0636\u0648\u0639 \u0627\u0644\u0627\u0633\u062a\u062b\u0646\u0627\u0626\u064a.\n\n' +
+    '\u0627\u0644\u0623\u0628\u064a\u0627\u062a \u0627\u0644\u0642\u0635\u064a\u0631\u0629 \u0641\u064a \u0627\u0644\u0646\u0647\u0627\u064a\u0629 \u2014 \u0645\u0641\u0635\u0648\u0644\u0629 \u0628\u0641\u0648\u0627\u0635\u0644 \u0628\u064a\u0646 \u0627\u0644\u0645\u0642\u0627\u0637\u0639 \u2014 \u062a\u062e\u0644\u0642 \u062a\u0648\u0642\u0651\u0641\u0627\u062a \u0642\u0628\u0644 \u062e\u0627\u062a\u0645\u0629 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0627\u0644\u0645\u062f\u0645\u0651\u0631\u0629 \u0627\u0644\u0645\u064f\u0642\u062a\u0635\u062f\u0629 \u0641\u064a \u0627\u0644\u0643\u0644\u0627\u0645.',
   keyQuotes: [
     {
       quote: 'They are waiting for me somewhere beyond Eden Rock:',
       analysis:
         '"Beyond" places the parents past a threshold the speaker has not yet crossed. "Eden" evokes paradise and innocence, suggesting death is a return to a perfect state. "Eden Rock" is an invented threshold place — Causley confirmed: "I have no idea, I mean I made it up!"',
       themes: ['Death', 'Paradise', 'Reunion'],
+      analysisAr:
+        'كلمة "beyond" تحط الوالدين بعد عتبة المتكلّم لين الحين ما عبرها. وكلمة "Eden" تستدعي الفردوس والبراءة، وتلمّح إن الموت رجوع لحال كامل. واسم "Eden Rock" مكان عتبة اخترعه Causley — هو نفسه أكّد: "I have no idea, I mean I made it up!"',
+      themesAr: ['الموت', 'الفردوس', 'اللقاء بعد الفراق'],
     },
     {
       quote: 'My father, twenty-five',
       analysis:
         "Specifying the father's age makes him younger than the speaker writing the poem, creating a poignant reversal where the child outlives the parent's youth.",
       themes: ['Memory', 'Time', 'Loss'],
+      analysisAr:
+        'تحديد عمر الأب يخلّيه أصغر من المتكلّم وقت كتابة القصيدة، وهذا يخلق انعكاس مؤثّر: الابن عاش أطول من شباب أبوه.',
+      themesAr: ['الذاكرة', 'الزمن', 'الفقد'],
     },
     {
       quote: 'looks and looks',
       analysis:
         "The simple repetition conveys deep, wordless love between the parents. The present tense makes their love eternal \u2014 still happening in the speaker's vision.",
       themes: ['Love', 'Memory', 'Permanence'],
+      analysisAr:
+        '\u0627\u0644\u062a\u0643\u0631\u0627\u0631 \u0627\u0644\u0628\u0633\u064a\u0637 \u064a\u0646\u0642\u0644 \u062d\u0628 \u0639\u0645\u064a\u0642 \u0648\u0635\u0627\u0645\u062a \u0628\u064a\u0646 \u0627\u0644\u0648\u0627\u0644\u062f\u064a\u0646. \u0648\u0627\u0644\u0632\u0645\u0646 \u0627\u0644\u062d\u0627\u0636\u0631 \u064a\u062e\u0644\u0651\u064a \u062d\u0628\u0651\u0647\u0645 \u0623\u0628\u062f\u064a \u2014 \u0644\u064a\u0646 \u0627\u0644\u062d\u064a\u0646 \u064a\u0635\u064a\u0631 \u0641\u064a \u0631\u0624\u064a\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645.',
+      themesAr: [
+        '\u0627\u0644\u062d\u0628',
+        '\u0627\u0644\u0630\u0627\u0643\u0631\u0629',
+        '\u0627\u0644\u062f\u0648\u0627\u0645',
+      ],
     },
     {
       quote: 'The sky whitens as if lit by three suns',
       analysis:
         'The impossible, supernatural light marks the shift from memory to vision, from earthly to otherworldly. Three suns may allude to the Trinity.',
       themes: ['Supernatural', 'Death', 'Transcendence'],
+      analysisAr:
+        'الضوء المستحيل وفوق الطبيعي يأشّر على الانتقال من الذاكرة للرؤية، ومن الأرضي للعالم الآخر. والثلاث شموس يحتمل إنها allusion للـTrinity.',
+      themesAr: ['ما فوق الطبيعي', 'الموت', 'التسامي'],
     },
     {
       quote: 'My mother shades her eyes and looks my way',
       analysis:
         "The mother's gesture of shading her eyes suggests she is looking across a great distance or a blinding light \u2014 the boundary between life and death.",
       themes: ['Motherhood', 'Death', 'Boundary'],
+      analysisAr:
+        '\u062d\u0631\u0643\u0629 \u0627\u0644\u0623\u0645 \u0648\u0647\u064a \u062a\u0638\u0644\u0651\u0644 \u0639\u064a\u0648\u0646\u0647\u0627 \u062a\u0648\u062d\u064a \u0625\u0646\u0647\u0627 \u062a\u062a\u0637\u0644\u0651\u0639 \u0639\u0628\u0631 \u0645\u0633\u0627\u0641\u0629 \u0628\u0639\u064a\u062f\u0629 \u0623\u0648 \u0636\u0648\u0621 \u064a\u0639\u0645\u064a \u2014 \u0627\u0644\u062d\u062f\u0651 \u0628\u064a\u0646 \u0627\u0644\u062d\u064a\u0627\u0629 \u0648\u0627\u0644\u0645\u0648\u062a.',
+      themesAr: [
+        '\u0627\u0644\u0623\u0645\u0648\u0645\u0629',
+        '\u0627\u0644\u0645\u0648\u062a',
+        '\u0627\u0644\u062d\u062f\u0651 \u0627\u0644\u0641\u0627\u0635\u0644',
+      ],
     },
     {
       quote: 'Over the drifted stream',
       analysis:
         'The stream is a traditional symbol of the boundary between life and death (the River Styx). "Drifted" suggests it has shifted, perhaps become easier to cross.',
       themes: ['Death', 'Crossing', 'Symbolism'],
+      analysisAr:
+        'الساقية رمز تقليدي للحدّ بين الحياة والموت (نهر Styx في الأسطورة اليونانية). وكلمة "drifted" توحي إنها انزاحت، يحتمل إنها صارت أسهل في العبور.',
+      themesAr: ['الموت', 'العبور', 'الرمزية'],
     },
     {
       quote: 'Crossing is / Not as hard as you might think',
       analysis:
         'Enjambment isolates "Crossing is" at the line end, creating suspense. The reassuring tone transforms death from terror into gentle acceptance.',
       themes: ['Death', 'Acceptance', 'Comfort'],
+      analysisAr:
+        'الـenjambment يعزل "Crossing is" في نهاية البيت، فيخلق تشويق. والنبرة المُطمئنة تحوّل الموت من رعب إلى قبول لطيف.',
+      themesAr: ['الموت', 'القبول', 'الراحة'],
     },
     {
       quote: 'I had not thought that it would be like this',
       analysis:
         'The most devastating line. "It" is never named \u2014 death, the afterlife, reunion. The understatement makes it more powerful than any dramatic exclamation.',
       themes: ['Death', 'Acceptance', 'Wonder'],
+      analysisAr:
+        '\u0623\u0643\u062b\u0631 \u0628\u064a\u062a \u064a\u0647\u062f\u0651 \u0627\u0644\u0642\u0627\u0631\u0626 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0643\u0644\u0645\u0629 "it" \u0623\u0628\u062f \u0645\u0627 \u062a\u062a\u0633\u0645\u0651\u0649 \u2014 \u0627\u0644\u0645\u0648\u062a\u060c \u0627\u0644\u062d\u064a\u0627\u0629 \u0627\u0644\u062b\u0627\u0646\u064a\u0629\u060c \u0627\u0644\u0644\u0642\u0627\u0621. \u0648\u0627\u0644\u0640understatement (\u0627\u0644\u0627\u0642\u062a\u0635\u0627\u062f \u0641\u064a \u0627\u0644\u0643\u0644\u0627\u0645) \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0628\u064a\u062a \u0623\u0642\u0648\u0649 \u0645\u0646 \u0623\u064a \u0635\u0631\u062e\u0629 \u062f\u0631\u0627\u0645\u064a\u0629.',
+      themesAr: [
+        '\u0627\u0644\u0645\u0648\u062a',
+        '\u0627\u0644\u0642\u0628\u0648\u0644',
+        '\u0627\u0644\u062f\u0647\u0634\u0629',
+      ],
     },
   ],
   languageDevices: [
@@ -184,6 +234,8 @@ const edenRockPoem: PoemData = {
       effect:
         'The title evokes the Garden of Eden \u2014 a lost paradise of innocence. It frames death not as an ending but as a return to a perfect, prelapsarian state.',
       lineRef: 0,
+      effectAr:
+        '\u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u064a\u0633\u062a\u062f\u0639\u064a Garden of Eden \u2014 \u0627\u0644\u0641\u0631\u062f\u0648\u0633 \u0627\u0644\u0645\u0641\u0642\u0648\u062f \u0627\u0644\u0644\u064a \u064a\u0631\u0645\u0632 \u0644\u0644\u0628\u0631\u0627\u0621\u0629. \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0635\u0648\u0651\u0631 \u0627\u0644\u0645\u0648\u062a \u0645\u0648 \u0639\u0644\u0649 \u0625\u0646\u0647 \u0646\u0647\u0627\u064a\u0629\u060c \u0628\u0644 \u0639\u0644\u0649 \u0625\u0646\u0647 \u0631\u062c\u0648\u0639 \u0644\u062d\u0627\u0644 \u0643\u0627\u0645\u0644 \u0642\u0628\u0644 \u0627\u0644\u0633\u0642\u0648\u0637 (prelapsarian).',
     },
     {
       device: 'Present tense narration',
@@ -191,6 +243,8 @@ const edenRockPoem: PoemData = {
       effect:
         'Using present tense for a memory (or vision) collapses time, making the dead parents seem alive and present. It creates dreamlike immediacy.',
       lineRef: 0,
+      effectAr:
+        'استخدام الزمن الحاضر لذكرى (أو رؤية) يدمج الأزمنة مع بعض، ويخلّي الوالدين المتوفّيين يبانون أحياء وحاضرين. هذا يخلق إحساس مباشر يشبه الحلم.',
     },
     {
       device: 'Precise visual detail',
@@ -198,6 +252,8 @@ const edenRockPoem: PoemData = {
       effect:
         'The photographic specificity of ages, colours, and clothing creates hyper-real clarity, suggesting this is more than ordinary memory \u2014 perhaps a vision.',
       lineRef: 1,
+      effectAr:
+        '\u0627\u0644\u062f\u0642\u0651\u0629 \u0627\u0644\u0641\u0648\u062a\u0648\u063a\u0631\u0627\u0641\u064a\u0629 \u0641\u064a \u0627\u0644\u0623\u0639\u0645\u0627\u0631 \u0648\u0627\u0644\u0623\u0644\u0648\u0627\u0646 \u0648\u0627\u0644\u0645\u0644\u0627\u0628\u0633 \u062a\u062e\u0644\u0642 \u0648\u0636\u0648\u062d \u062d\u0642\u064a\u0642\u064a \u0628\u0634\u0643\u0644 \u0645\u0641\u0631\u0637\u060c \u0648\u064a\u0644\u0645\u0651\u062d \u0625\u0646 \u0647\u0630\u064a \u0645\u0648 \u0630\u0627\u0643\u0631\u0629 \u0639\u0627\u062f\u064a\u0629 \u2014 \u064a\u062d\u062a\u0645\u0644 \u062a\u0643\u0648\u0646 \u0631\u0624\u064a\u0629.',
     },
     {
       device: 'Supernatural imagery',
@@ -205,6 +261,8 @@ const edenRockPoem: PoemData = {
       effect:
         'The impossible light signals a shift from the natural to the transcendent. The scene is no longer a memory but a threshold experience.',
       lineRef: 16,
+      effectAr:
+        'الضوء المستحيل يأشّر على انتقال من الطبيعي إلى المتسامي. المشهد ما عاد ذاكرة، بل تجربة عند العتبة بين عالمين.',
     },
     {
       device: 'Symbolism',
@@ -212,6 +270,8 @@ const edenRockPoem: PoemData = {
       effect:
         'The stream separating the speaker from his parents echoes the mythological River Styx \u2014 the boundary between the living and the dead.',
       lineRef: 18,
+      effectAr:
+        '\u0627\u0644\u0633\u0627\u0642\u064a\u0629 \u0627\u0644\u0644\u064a \u062a\u0641\u0635\u0644 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0639\u0646 \u0648\u0627\u0644\u062f\u064a\u0647 \u062a\u0635\u062f\u0651\u0649 \u0644\u0646\u0647\u0631 Styx \u0641\u064a \u0627\u0644\u0645\u064a\u062b\u0648\u0644\u0648\u062c\u064a\u0627 \u0627\u0644\u064a\u0648\u0646\u0627\u0646\u064a\u0629 \u2014 \u0627\u0644\u062d\u062f\u0651 \u0627\u0644\u0641\u0627\u0635\u0644 \u0628\u064a\u0646 \u0627\u0644\u0623\u062d\u064a\u0627\u0621 \u0648\u0627\u0644\u0623\u0645\u0648\u0627\u062a.',
     },
     {
       device: 'Understatement',
@@ -219,6 +279,8 @@ const edenRockPoem: PoemData = {
       effect:
         'The restrained, conversational tone at the poem\'s climax is more emotionally devastating than dramatic language would be. The unnamed "it" resonates with mystery.',
       lineRef: 23,
+      effectAr:
+        'النبرة المنضبطة والحوارية في ذروة القصيدة تهدّ القارئ عاطفياً أكثر مما تهده اللغة الدرامية. وكلمة "it" اللي ما تتسمّى تتردّد بصدى من الغموض.',
     },
     {
       device: 'Enjambment',
@@ -226,6 +288,8 @@ const edenRockPoem: PoemData = {
       effect:
         'The line break isolates "Crossing is" and forces a pause before the reassurance, enacting the hesitation before the final step across the threshold.',
       lineRef: 19,
+      effectAr:
+        'كسر السطر يعزل "Crossing is" ويفرض توقّف قبل عبارة الطمأنينة، فيمثّل التردّد قبل الخطوة الأخيرة عبر العتبة.',
     },
   ],
 }

@@ -1,6 +1,14 @@
+'use client'
+
+import { useT } from '@/lib/i18n/use-t'
+
 export default function CourseDetailLoading() {
+  const t = useT()
   return (
     <div className="min-h-screen bg-background">
+      <p className="sr-only" role="status" aria-live="polite">
+        {t('loading.course_detail.label')}
+      </p>
       {/* Header skeleton */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">

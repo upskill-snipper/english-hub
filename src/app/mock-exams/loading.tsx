@@ -1,6 +1,14 @@
+'use client'
+
+import { useT } from '@/lib/i18n/use-t'
+
 export default function Loading() {
+  const t = useT()
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <p className="sr-only" role="status" aria-live="polite">
+        {t('loading.mock_exams.label')}
+      </p>
       <div className="h-8 w-48 animate-pulse rounded bg-muted mb-2" />
       <div className="h-4 w-72 animate-pulse rounded bg-muted mb-8" />
       <div className="space-y-4">

@@ -231,6 +231,22 @@ const REMAINS: PoemData = {
   <li>Part of the broader AQA Power and Conflict anthology, exploring how power (military authority) creates lasting psychological conflict within individuals</li>
 </ul>`,
 
+  contextAr: `<p><strong>Simon Armitage</strong> (مواليد 1963) شاعر إنجليزي معاصر من Marsden في West Yorkshire. صار UK Poet Laureate من مايو 2019، وخلف Carol Ann Duffy (اللي كانت في هالمنصب من 2009 إلى 2019). في الأصل تدرّب يكون probation officer، وحالياً هو بروفيسور في جامعة Leeds، وشغل منصب Oxford Professor of Poetry من 2015 إلى 2019. معروف بأسلوبه السلس والمحكي، اللي يستلهم من اللهجة الإنجليزية الشمالية في الحياة اليومية.</p>
+
+<p><strong>ملاحظة سيرة مهمّة:</strong> Armitage ما خدم أبد في أي دور عسكري أو قتالي. قصيدة <em>"Remains"</em> (2007) كُتبت لصالح وثائقي قناة Channel 4 <em>The Not Dead</em>، وهي مبنية على مقابلات مع قدامى محاربي حرب Iraq War — مو على تجربة شخصية. القصيدة تعتمد على شهادة جندي (غالباً يُعرّف باسم Guardsman Tromans، اللي خدم في Basra وعانى لاحقاً من PTSD حاد)؛ دور Armitage كان إنه يترجم شعرياً هالشهادات.</p>
+
+<p>القصيدة تستكشف <strong>الأثر النفسي بعد فعل القتل</strong> في الحرب الحديثة. على عكس شعر الحرب القديم اللي ركّز على الخنادق والوطنية، قصيدة "Remains" تواجه الحقيقة إن الجنود يحملون صدمة المعركة معاهم لفترة طويلة بعد ما يرجعون لبيوتهم.</p>
+
+<p><strong>نقاط سياقية مهمّة:</strong></p>
+<ul>
+  <li>Armitage نفسه ما خدم في أي حرب — القصيدة مبنية على مقابلات وثائقية، مو على تجربة شخصية</li>
+  <li>مبنية على شهادة جندي حقيقي — Armitage يصير صوت ينطق بلسان قدامى المحاربين اللي يصعب عليهم يعبّرون عن تجاربهم</li>
+  <li>الأحداث صارت أيام حرب Iraq War (من 2003 وما بعدها) — صراع مثير للجدل، انتقد فيه وايد ناس مبرّرات الحرب</li>
+  <li>الغموض حول كون الـlooter مسلّح ولا لا يعكس التعقيد الأخلاقي للحرب الحضرية الحديثة، اللي يصير فيها صعب التفريق بين المقاتلين والمدنيين</li>
+  <li>القصيدة كُتبت عشان ترفع الوعي بمرض PTSD عند الجنود الراجعين من الحرب، وكثير منهم ما حصلوا دعم نفسي كافي</li>
+  <li>تنتمي لمجموعة AQA Power and Conflict الأوسع، اللي تستكشف كيف السلطة (السلطة العسكرية) تخلق صراع نفسي طويل المدى داخل الأفراد</li>
+</ul>`,
+
   summary: `The speaker recounts a seemingly routine military incident: he and two fellow soldiers are sent to deal with looters at a bank. One looter runs and the three soldiers open fire, killing him. The speaker is uncertain whether the man was armed.
 
 After the shooting, the soldiers casually handle the body -- tossing his insides back in and carting him away. The speaker initially tries to dismiss it: "End of story, except not really."
@@ -238,6 +254,14 @@ After the shooting, the soldiers casually handle the body -- tossing his insides
 The second half of the poem reveals the true cost. The memory of the dead man haunts the speaker relentlessly. Neither drink nor drugs can erase the image. The dead man is "dug in behind enemy lines" -- entrenched in the speaker's mind like an occupying force.
 
 The poem ends with a devastating final couplet: "His bloody life in my bloody hands." The speaker is trapped in an endless cycle of guilt, unable to escape responsibility for a death that may or may not have been justified. The poem moves from casual narration to raw psychological torment, mirroring the way trauma can surface long after the event itself.`,
+
+  summaryAr: `المتحدث يروي حادثة عسكرية تبدو روتينية: هو واثنين من رفاقه الجنود يتم إرسالهم عشان يتعاملون مع looters في بنك. واحد من اللصوص يركض، والجنود الثلاثة يفتحون النار ويقتلونه. المتحدث ما متأكّد إذا الرجال كان مسلّح ولا لا.
+
+بعد إطلاق النار، الجنود يتعاملون مع الجثة بشكل عابر — يدفعون أحشاءه داخل جسمه ويحملونها بعيد. المتحدث في البداية يحاول يطنّش الموضوع: "End of story, except not really."
+
+النصف الثاني من القصيدة يكشف الكلفة الحقيقية. ذكرى الرجال الميت تطارد المتحدث بلا هوادة. لا الشرب ولا المخدّرات تقدر تمحي الصورة. الرجال الميت "dug in behind enemy lines" — متمركز داخل عقل المتحدث مثل قوة احتلال.
+
+القصيدة تنتهي بـcouplet ختامي مدمّر: "His bloody life in my bloody hands." المتحدث محاصر في دورة ذنب ما لها نهاية، عاجز عن الهروب من مسؤوليته عن موت ممكن يكون مبرّر وممكن لا. القصيدة تنتقل من سرد عابر إلى عذاب نفسي خام، تعكس كيف الصدمة تقدر تطلع للسطح بعد فترة طويلة من الحدث نفسه.`,
 
   formAndStructure: `FORM:
 -- Free verse with no regular rhyme scheme, reflecting the chaotic and unstructured nature of both the combat incident and the speaker's fragmented mental state
@@ -260,54 +284,99 @@ KEY STRUCTURAL EFFECTS:
 -- Repetition of "all three" in the shooting stanzas shows the speaker trying to share the guilt
 -- The shift from communal "we" to isolated "I" and "my" tracks the journey from shared action to solitary guilt`,
 
+  formAndStructureAr: `الشكل (FORM):
+-- free verse بلا نظام قافية منتظم، يعكس الطبيعة الفوضوية وغير المنظّمة لحادثة المعركة والحالة الذهنية المتشظّية للمتحدث.
+-- مكتوبة بأسلوب dramatic monologue — المتحدث يخاطب القارئ مباشرة، ويخلق نبرة حميمة واعترافية.
+-- القصيدة مبنية على شهادة حقيقية، وهالشي يعطيها مصداقية وثائقية.
+
+البنية (STRUCTURE):
+-- 8 مقاطع بأطوال غير منتظمة، تتدرّج من مقاطع سردية أطول إلى couplet ختامي قصير ومعزول.
+-- القصيدة فيها volta واضحة عند "End of story, except not really" — كل شي قبل هذي اللحظة هو الحدث، وكل شي بعدها هو الأثر النفسي.
+-- enjambment يمشي عبر القصيدة كلها، خصوصاً عبر فواصل المقاطع ("the / blood-shadow")، يخلق إحساس بأفكار تنسكب بلا ضابط.
+-- الـcouplet الختامي معزول عمداً، يعكس العزلة العاطفية للمتحدث وكيف الذكرى ترفض إنها تتركّز بشكل مرتّب في الماضي.
+
+الصوت والزمن (VOICE & TENSE):
+-- تبدأ بـpast tense (يسرد الحدث)، بس تنتقل إلى present tense ("he's here in my head") عشان توضّح إن الذكرى مستمرّة وما تنترك.
+-- لغة محكية وعفوية ("legs it"، "all chip in"، "End of story") تتناقض مع لحظات صور مكثّفة ومفصّلة — الصوت اليومي يخلّي الرعب أصدم.
+-- الافتتاحية القصصية "On another occasion" توحي إن هذي حادثة من ضمن وايد حوادث مشابهة، وهالشي يطبّع العنف.
+
+التأثيرات البنيوية المهمّة:
+-- caesura عند "End of story, except not really" تفرض وقفة، تعكس محاولة المتحدث الفاشلة إنه يتجاوز.
+-- تكرار "all three" في مقاطع إطلاق النار يبيّن المتحدث وهو يحاول يوزّع الذنب.
+-- الانتقال من "we" الجماعية إلى "I" و"my" المعزولتين يرصد الرحلة من فعل مشترك إلى ذنب فردي.`,
+
   keyQuotes: [
     {
       quote: 'On another occasion',
       analysis:
         'The casual, anecdotal opening suggests this killing is just one of many routine incidents. "Another" implies repetition and desensitisation -- the speaker has experienced so much violence it has become mundane.',
       themes: ['Conflict', 'Power of memory'],
+      analysisAr:
+        'الافتتاحية القصصية والعابرة توحي إن هذا الفعل القتلي هو مجرّد واحد من ضمن وايد حوادث روتينية. كلمة "Another" تلمّح للتكرار وفقدان الحس — المتحدث شاف عنف وايد لدرجة إن العنف صار شي عادي.',
+      themesAr: ['الصراع', 'قوة الذاكرة'],
     },
     {
       quote: 'probably armed, possibly not',
       analysis:
         'The descending certainty (from "probably" to "possibly") reveals the speaker\'s moral doubt. He cannot be sure the killing was justified, and this uncertainty is the seed of his later guilt and PTSD.',
       themes: ['Guilt', 'Moral ambiguity', 'Conflict'],
+      analysisAr:
+        'اليقين النازل (من "probably" إلى "possibly" الأضعف) يكشف الشك الأخلاقي عند المتحدث. ما يقدر يتأكّد إن القتل كان مبرّر، وهالغموض هو بذرة الذنب والـPTSD اللي يحسّون بهم لاحقاً.',
+      themesAr: ['الذنب', 'الغموض الأخلاقي', 'الصراع'],
     },
     {
       quote: 'tosses his guts back into his body',
       analysis:
         'Shockingly graphic and casual. The verb "tosses" implies a throwaway gesture, as if the man\'s insides are rubbish. This reveals how war desensitises soldiers to extreme violence -- at the time, they felt nothing.',
       themes: ['Reality of conflict', 'Desensitisation'],
+      analysisAr:
+        'وصف مفصّل وعابر بشكل صادم. الفعل "tosses" يلمّح لحركة عابرة وعفوية، كأن أحشاء الرجال زبالة. هالشي يكشف كيف الحرب تفقّد الجنود إحساسهم تجاه العنف المتطرّف — وقتها، ما حسّوا بأي شي.',
+      themesAr: ['واقع الصراع', 'فقدان الحس'],
     },
     {
       quote: 'End of story, except not really',
       analysis:
         'The volta of the poem. The caesura creates a pause that mirrors the speaker\'s failed attempt to close the chapter. "Except not really" is devastatingly understated -- this one line signals the shift from narrative to psychological torment.',
       themes: ['Power of memory', 'PTSD', 'Guilt'],
+      analysisAr:
+        'هذي الـvolta في القصيدة. الـcaesura تخلق وقفة، تعكس محاولة المتحدث الفاشلة إنه يغلق الفصل. وعبارة "Except not really" مكتومة بشكل مدمّر — هذا البيت الواحد يشير لانتقال من السرد إلى العذاب النفسي.',
+      themesAr: ['قوة الذاكرة', 'PTSD', 'الذنب'],
     },
     {
       quote: 'dug in behind enemy lines',
       analysis:
         "Extended military metaphor. The dead man has invaded the speaker's mind like a soldier entrenched in hostile territory. Ironically, the speaker's own psyche has become the battlefield -- the war has followed him home.",
       themes: ['Power of memory', 'PTSD', 'Conflict'],
+      analysisAr:
+        'metaphor عسكرية ممتدّة. الرجال الميت غزى عقل المتحدث مثل جندي متمركز في أرض معادية. السخرية هنا إن نفس المتحدث نفسها صارت ساحة المعركة — الحرب لحقت ورّاه وجت معاه للبيت.',
+      themesAr: ['قوة الذاكرة', 'PTSD', 'الصراع'],
     },
     {
       quote: 'blood-shadow stays on the street',
       analysis:
         'A compound metaphor fusing blood stain and shadow. The verb "stays" insists the trace will not leave; the "shadow" suggests the man\'s death has left a permanent, dark imprint — both on the street and on the speaker\'s conscience.',
       themes: ['Guilt', 'Power of memory'],
+      analysisAr:
+        'metaphor مركّبة تدمج بقعة الدم والظل. الفعل "stays" يصرّ إن الأثر ما بيروح؛ و"shadow" يلمّح إن موت الرجال خلّا بصمة دائمة ومظلمة — على الشارع وعلى ضمير المتحدث.',
+      themesAr: ['الذنب', 'قوة الذاكرة'],
     },
     {
       quote: "he's here in my head when I close my eyes",
       analysis:
         'The shift to present tense makes the haunting immediate and ongoing. "Here in my head" shows the dead man has become an inescapable mental presence -- the speaker cannot find peace even in sleep.',
       themes: ['PTSD', 'Power of memory', 'Individual vs. authority'],
+      analysisAr:
+        'الانتقال إلى present tense يخلّي المطاردة فورية ومستمرّة. وعبارة "Here in my head" تبيّن إن الرجال الميت صار حضور ذهني ما يمكن الهروب منه — المتحدث ما يقدر يلقى راحة حتى وهو نايم.',
+      themesAr: ['PTSD', 'قوة الذاكرة', 'الفرد ضد السلطة'],
     },
     {
       quote: 'His bloody life in my bloody hands',
       analysis:
         'A devastating pun: "bloody" works as a colloquial intensifier (swearing) and literal description (blood-stained). The idiom "blood on your hands" (meaning guilt for a death) is made horrifyingly literal. The end-stopped final line is inescapable and definitive.',
       themes: ['Guilt', 'Reality of conflict', 'PTSD'],
+      analysisAr:
+        'pun مدمّرة: كلمة "bloody" تشتغل كمكثّف عامّي (شتيمة بريطانية) وكوصف حرفي (ملطّخ بالدم). والـidiom "blood on your hands" (يعني تحمّل ذنب موت أحد) يتحوّل إلى شي حرفي ومرعب. والبيت الختامي المنتهي بنقطة (end-stopped) ما فيه مهرب وحاسم.',
+      themesAr: ['الذنب', 'واقع الصراع', 'PTSD'],
     },
     // VERIFY: previously contained fabricated key quote 'near to the knuckle' — this idiom does NOT appear in Armitage's Remains. Removed.
   ],
@@ -319,6 +388,8 @@ KEY STRUCTURAL EFFECTS:
       effect:
         'The informal, everyday language creates a sense of authenticity -- this sounds like a real soldier speaking, not a polished literary voice. It also normalises the violence, making the later horror more shocking by contrast.',
       lineRef: 2,
+      effectAr:
+        'اللغة غير الرسمية واليومية تخلق إحساس بالمصداقية — تسمع كأن جندي حقيقي يتكلم، مو صوت أدبي مصقول. وعلاوة على ذلك، تطبّع العنف، وبالمقارنة تخلّي الرعب اللي يجي بعدها أصدم.',
     },
     {
       device: 'Euphemism',
@@ -326,6 +397,8 @@ KEY STRUCTURAL EFFECTS:
       effect:
         'The speaker tries to dismiss the killing as a closed chapter using a casual, dismissive phrase. The euphemism reveals his coping mechanism -- trying to minimise the significance of taking a life. Its immediate contradiction ("except not really") exposes the failure of this strategy.',
       lineRef: 18,
+      effectAr:
+        'المتحدث يحاول يطنّش فعل القتل كأنه فصل مغلق، باستخدام عبارة عابرة وتطنيشية. الـeuphemism تكشف آلية تأقلمه — يحاول يقلّل من أهمية إنه أخذ حياة. والتناقض الفوري ("except not really") يفضح فشل هالاستراتيجية.',
     },
     {
       device: 'Repetition',
@@ -333,6 +406,8 @@ KEY STRUCTURAL EFFECTS:
       effect:
         'Repeated emphasis on the collective action ("all three", "all of the same mind") reveals the speaker\'s desperation to distribute guilt. By insisting others were equally responsible, he tries -- and fails -- to lessen his personal burden.',
       lineRef: 14,
+      effectAr:
+        'التأكيد المتكرّر على الفعل الجماعي ("all three"، "all of the same mind") يكشف يأس المتحدث في توزيع الذنب. لمّا يصرّ إن غيره كان مسؤول بالتساوي، يحاول — ويفشل — إنه يخفّف عبئه الشخصي.',
     },
     {
       device: 'Graphic imagery',
@@ -340,6 +415,8 @@ KEY STRUCTURAL EFFECTS:
       effect:
         'The visceral, almost unbearable detail forces the reader to confront the physical reality of violence. The casual verb "tosses" paired with such horrific content creates a jarring dissonance that reflects the soldier\'s desensitisation.',
       lineRef: 15,
+      effectAr:
+        'التفصيل المؤلم اللي يكاد ما يتحمّل يجبر القارئ إنه يواجه الواقع الجسدي للعنف. الفعل العابر "tosses" مع محتوى مرعب بهالقد يخلق تنافر صادم، يعكس فقدان الحس عند الجندي.',
     },
     {
       device: 'Pun ("bloody")',

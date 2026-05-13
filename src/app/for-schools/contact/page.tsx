@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { useT } from '@/lib/i18n/use-t'
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -189,8 +190,7 @@ function FoundingSchoolsPanel() {
 
           <div className="rounded-md border border-yellow-500/30 bg-yellow-500/10 px-4 py-3 space-y-1.5">
             <p className="text-sm font-semibold text-amber-700">
-              Founding Schools:{' '}
-              <span className="text-foreground">£4,000/year</span>{' '}
+              Founding Schools: <span className="text-foreground">£4,000/year</span>{' '}
               <span className="text-muted-foreground/80">
                 (Standard <span className="line-through">£8,000</span> from August 2026)
               </span>
@@ -283,6 +283,7 @@ function SuccessScreen() {
 // ---------------------------------------------------------------------------
 
 export default function BookACallPage() {
+  const t = useT()
   const [form, setForm] = useState<ContactForm>(INITIAL_FORM)
   const [errors, setErrors] = useState<Partial<Record<keyof ContactForm, string>>>({})
   const [submitting, setSubmitting] = useState(false)
@@ -370,10 +371,10 @@ export default function BookACallPage() {
             Back to Schools
           </Link>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Book a Call with Our Schools Team
+            {t('for_schools_contact.h1')}
           </h1>
           <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-            A 20-minute conversation about whether The English Hub fits your department.
+            {t('for_schools_contact.intro')}
           </p>
         </div>
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 /* ───────────────────── Metadata ───────────────────── */
 
 const SITE_URL = 'https://theenglishhub.app'
@@ -38,79 +39,44 @@ export const metadata: Metadata = {
   },
 }
 
-/* ───────────────────── FAQ data ───────────────────── */
-
-const FAQS: { question: string; answer: string }[] = [
-  {
-    question: 'Does the platform support multiple boards within one school licence?',
-    answer:
-      'Yes. A single department licence covers every board we publish. If half your cohort sits Cambridge 0500 and the other half sits Pearson Edexcel 4EA1, both groups work from the same licence — each student sees revision pages keyed to their own specification, and teachers can move between boards without switching account.',
-  },
-  {
-    question:
-      "How does AI marking handle international students whose first language isn't English?",
-    answer:
-      'The AI marks against the same mark scheme criteria the board uses, so feedback focuses on assessment objectives — reading, analysis, structure, vocabulary, and accuracy — rather than on whether English is a first language. EAL students often benefit because the feedback is specific (which sentence, which AO) rather than general. Teachers always review and can adjust marks before the student sees them.',
-  },
-  {
-    question: 'Can we customise revision schedules for a longer or shorter academic year?',
-    answer:
-      'Revision content is on-demand rather than tied to a fixed UK academic calendar. Department leads pick which papers, set texts, and skills to prioritise; students work through them at their own pace. Schools running a Northern Hemisphere August–June year, a Southern Hemisphere January–November year, or a split-semester model all use the same library.',
-  },
-  {
-    question: 'Is content available offline for schools with limited connectivity?',
-    answer:
-      'The platform is web-delivered and requires a connection to load pages, submit essays for AI marking, and sync teacher dashboards. Printable resources — model answers, mark-scheme breakdowns, practice papers — can be downloaded as PDFs in advance for use in classrooms with intermittent connectivity. We do not currently ship a fully offline app.',
-  },
-  {
-    question: 'How do you handle GDPR and non-EU/UK data residency?',
-    answer:
-      'The English Hub is operated from the UK and applies UK GDPR standards to all accounts globally, regardless of where the school is based. Schools in jurisdictions with their own data-protection regimes (for example UAE, Singapore, or Hong Kong) can request a data-processing addendum before signing. Specific residency requirements should be raised during onboarding so we can confirm compatibility before contracts are issued.',
-  },
-]
-
-/* ───────────────────── IGCSE specs ───────────────────── */
+/* ───────────────────── IGCSE specs (codes/hrefs are not translated) ─ */
 
 type Spec = {
   code: string
-  name: string
-  board: string
-  blurb: string
   href: string
+  nameKey: string
+  blurbKey: string
+  board: 'Pearson Edexcel' | 'Cambridge International'
 }
 
 const SPECS: Spec[] = [
   {
     code: '4ET1',
-    name: 'Pearson Edexcel IGCSE English Literature',
-    board: 'Pearson Edexcel',
-    blurb:
-      'Closed-book examination covering an anthology, a modern drama or prose text, and a Shakespeare play. Two papers, with an optional coursework route.',
     href: '/igcse/edexcel',
+    nameKey: 'intl.spec.4et1.name',
+    blurbKey: 'intl.spec.4et1.blurb',
+    board: 'Pearson Edexcel',
   },
   {
     code: '4EA1',
-    name: 'Pearson Edexcel IGCSE English Language A',
-    board: 'Pearson Edexcel',
-    blurb:
-      'Anthology-based reading and writing exam with a transactional and imaginative writing component. Widely sat by international centres.',
     href: '/igcse/edexcel-lang',
+    nameKey: 'intl.spec.4ea1.name',
+    blurbKey: 'intl.spec.4ea1.blurb',
+    board: 'Pearson Edexcel',
   },
   {
     code: '0500',
-    name: 'Cambridge IGCSE First Language English',
-    board: 'Cambridge International',
-    blurb:
-      'Reading, directed writing, and composition across two papers. The default Cambridge route for first-language English speakers in international schools.',
     href: '/igcse/cambridge/0500',
+    nameKey: 'intl.spec.0500.name',
+    blurbKey: 'intl.spec.0500.blurb',
+    board: 'Cambridge International',
   },
   {
     code: '0990',
-    name: 'Cambridge IGCSE English Language (9–1)',
-    board: 'Cambridge International',
-    blurb:
-      'The 9–1 graded sibling of 0500, with the same paper structure but reformed grade boundaries aligned to the UK reformed scale.',
     href: '/igcse/cambridge/0990',
+    nameKey: 'intl.spec.0990.name',
+    blurbKey: 'intl.spec.0990.blurb',
+    board: 'Cambridge International',
   },
 ]
 
@@ -119,13 +85,218 @@ const SPECS: Spec[] = [
 export default async function InternationalSchoolIgcsePage() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
 
+  const keys = [
+    'qatar.breadcrumb_home',
+    'intl.breadcrumb_current',
+    'intl.eyebrow_hero',
+    'intl.h1',
+    'intl.intro',
+    'intl.cta.licence',
+    'intl.cta.teachers',
+    'intl.why.eyebrow',
+    'intl.why.h2',
+    'intl.why.body1',
+    'intl.why.body2_intro',
+    'intl.why.li1_strong',
+    'intl.why.li1',
+    'intl.why.li2_strong',
+    'intl.why.li2',
+    'intl.why.li3_strong',
+    'intl.why.li3',
+    'intl.why.li4_strong',
+    'intl.why.li4',
+    'intl.why.li5_strong',
+    'intl.why.li5',
+    'intl.specs.eyebrow',
+    'intl.specs.h2',
+    'intl.specs.intro',
+    'intl.specs.open_hub',
+    'intl.spec.4et1.name',
+    'intl.spec.4et1.blurb',
+    'intl.spec.4ea1.name',
+    'intl.spec.4ea1.blurb',
+    'intl.spec.0500.name',
+    'intl.spec.0500.blurb',
+    'intl.spec.0990.name',
+    'intl.spec.0990.blurb',
+    'intl.coverage.eyebrow',
+    'intl.coverage.h2',
+    'intl.coverage.intro',
+    'intl.coverage.ks3_strong',
+    'intl.coverage.ks3_body',
+    'intl.coverage.gcse_strong',
+    'intl.coverage.gcse_body',
+    'intl.coverage.igcse_strong',
+    'intl.coverage.igcse_body',
+    'intl.coverage.note',
+    'intl.coverage.note_link1',
+    'intl.coverage.note_mid',
+    'intl.coverage.note_link2',
+    'intl.coverage.note_end',
+    'intl.start.eyebrow',
+    'intl.start.h2',
+    'intl.start.intro',
+    'intl.start.step1.title',
+    'intl.start.step1.body',
+    'intl.start.step2.title',
+    'intl.start.step2.body',
+    'intl.start.step3.title',
+    'intl.start.step3.body',
+    'intl.start.step_label',
+    'intl.start.cta1',
+    'intl.start.cta2',
+    'intl.multi.eyebrow',
+    'intl.multi.h2',
+    'intl.multi.body1',
+    'intl.multi.body2',
+    'intl.multi.body3_pre',
+    'intl.multi.body3_link1',
+    'intl.multi.body3_mid',
+    'intl.multi.body3_link2',
+    'intl.multi.body3_end',
+    'intl.faqs.eyebrow',
+    'intl.faqs.h2',
+    'intl.cta_final.eyebrow',
+    'intl.cta_final.h2',
+    'intl.cta_final.body_pre',
+    'intl.cta_final.body_link1',
+    'intl.cta_final.body_mid',
+    'intl.cta_final.body_link2',
+    'intl.faq.q1',
+    'intl.faq.a1',
+    'intl.faq.q2',
+    'intl.faq.a2',
+    'intl.faq.q3',
+    'intl.faq.a3',
+    'intl.faq.q4',
+    'intl.faq.a4',
+    'intl.faq.q5',
+    'intl.faq.a5',
+  ]
+  const v = await tMany(keys)
+  // Build a dictionary keyed by index for readability
+  const [
+    bcHome,
+    bcCurrent,
+    eyebrowHero,
+    h1,
+    intro,
+    ctaLicence,
+    ctaTeachers,
+    whyEyebrow,
+    whyH2,
+    whyBody1,
+    whyBody2Intro,
+    whyLi1Strong,
+    whyLi1,
+    whyLi2Strong,
+    whyLi2,
+    whyLi3Strong,
+    whyLi3,
+    whyLi4Strong,
+    whyLi4,
+    whyLi5Strong,
+    whyLi5,
+    specsEyebrow,
+    specsH2,
+    specsIntro,
+    specsOpenHub,
+    spec4et1Name,
+    spec4et1Blurb,
+    spec4ea1Name,
+    spec4ea1Blurb,
+    spec0500Name,
+    spec0500Blurb,
+    spec0990Name,
+    spec0990Blurb,
+    coverageEyebrow,
+    coverageH2,
+    coverageIntro,
+    coverageKs3Strong,
+    coverageKs3Body,
+    coverageGcseStrong,
+    coverageGcseBody,
+    coverageIgcseStrong,
+    coverageIgcseBody,
+    coverageNote,
+    coverageNoteLink1,
+    coverageNoteMid,
+    coverageNoteLink2,
+    coverageNoteEnd,
+    startEyebrow,
+    startH2,
+    startIntro,
+    startStep1Title,
+    startStep1Body,
+    startStep2Title,
+    startStep2Body,
+    startStep3Title,
+    startStep3Body,
+    startStepLabel,
+    startCta1,
+    startCta2,
+    multiEyebrow,
+    multiH2,
+    multiBody1,
+    multiBody2,
+    multiBody3Pre,
+    multiBody3Link1,
+    multiBody3Mid,
+    multiBody3Link2,
+    multiBody3End,
+    faqsEyebrow,
+    faqsH2,
+    ctaFinalEyebrow,
+    ctaFinalH2,
+    ctaFinalBodyPre,
+    ctaFinalLink1,
+    ctaFinalBodyMid,
+    ctaFinalLink2,
+    faqQ1,
+    faqA1,
+    faqQ2,
+    faqA2,
+    faqQ3,
+    faqA3,
+    faqQ4,
+    faqA4,
+    faqQ5,
+    faqA5,
+  ] = v
+
+  // Map spec key → resolved name/blurb for the SPECS grid
+  const specNames: Record<string, string> = {
+    'intl.spec.4et1.name': spec4et1Name,
+    'intl.spec.4et1.blurb': spec4et1Blurb,
+    'intl.spec.4ea1.name': spec4ea1Name,
+    'intl.spec.4ea1.blurb': spec4ea1Blurb,
+    'intl.spec.0500.name': spec0500Name,
+    'intl.spec.0500.blurb': spec0500Blurb,
+    'intl.spec.0990.name': spec0990Name,
+    'intl.spec.0990.blurb': spec0990Blurb,
+  }
+
+  const FAQS: { question: string; answer: string }[] = [
+    { question: faqQ1, answer: faqA1 },
+    { question: faqQ2, answer: faqA2 },
+    { question: faqQ3, answer: faqA3 },
+    { question: faqQ4, answer: faqA4 },
+    { question: faqQ5, answer: faqA5 },
+  ]
+
+  const steps = [
+    { n: '01', title: startStep1Title, body: startStep1Body },
+    { n: '02', title: startStep2Title, body: startStep2Body },
+    { n: '03', title: startStep3Title, body: startStep3Body },
+  ]
+
   return (
     <main className="min-h-screen bg-ink-950">
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
-          { name: 'Home', url: SITE_URL },
-          { name: 'International schools', url: PAGE_URL },
+          { name: bcHome, url: SITE_URL },
+          { name: bcCurrent, url: PAGE_URL },
         ]}
       />
       <FAQPageJsonLd nonce={nonce} faqs={FAQS} />
@@ -135,27 +306,25 @@ export default async function InternationalSchoolIgcsePage() {
         <div className="mx-auto max-w-[1100px] px-4 sm:px-6 pt-12 sm:pt-16">
           <nav className="mb-6 text-xs text-cream-200/55" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-cream-50 underline-offset-4 hover:underline">
-              Home
+              {bcHome}
             </Link>
             <span className="mx-2" aria-hidden="true">
               /
             </span>
-            <span className="text-cream-100/85">International schools</span>
+            <span className="text-cream-100/85">{bcCurrent}</span>
           </nav>
 
           <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-300">
-            For British international schools
+            {eyebrowHero}
           </p>
           <h1
             id="hero-heading"
             className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
           >
-            IGCSE English revision for British international schools
+            {h1}
           </h1>
           <p className="mt-5 max-w-2xl text-base sm:text-lg text-cream-100/80 leading-relaxed">
-            One platform that covers Pearson Edexcel and Cambridge IGCSE English side by side —
-            calibrated to mark schemes, exam-zone-agnostic, and built so a head of department can
-            roll the same workflow across mixed-board cohorts.
+            {intro}
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
@@ -163,73 +332,51 @@ export default async function InternationalSchoolIgcsePage() {
               href="/for-schools"
               className="inline-flex items-center gap-2 rounded-2xl bg-clay-300 px-5 py-3 text-sm font-medium text-ink-950 transition-colors hover:bg-clay-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-clay-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
             >
-              Department licence options <span aria-hidden="true">&rarr;</span>
+              {ctaLicence} <span aria-hidden="true">&rarr;</span>
             </Link>
             <Link
               href="/for-teachers"
               className="inline-flex items-center gap-2 rounded-2xl border border-cream-200/30 bg-cream-50/[0.04] px-5 py-3 text-sm font-medium text-cream-50 transition-colors hover:bg-cream-50/[0.08] focus:outline-none focus-visible:ring-2 focus-visible:ring-cream-200 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
             >
-              For individual teachers
+              {ctaTeachers}
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── Why The English Hub ─────────────────────────────────────── */}
+      {/* ── Why ─────────────────────────────────────────────────────── */}
       <Section id="why">
-        <Eyebrow tone="emerald">Why us</Eyebrow>
-        <SectionHeading id="why-heading">
-          Why The English Hub for international schools
-        </SectionHeading>
+        <Eyebrow tone="emerald">{whyEyebrow}</Eyebrow>
+        <SectionHeading id="why-heading">{whyH2}</SectionHeading>
         <Prose>
-          <p>
-            International English departments sit at an awkward intersection. The texts and
-            specifications are British, the students often aren&rsquo;t, and the resources you can
-            actually buy from UK publishers tend to assume a UK timetable, a UK calendar, and a
-            UK-centric reference frame. The English Hub is built for the way British international
-            schools actually run — not the way UK schools do.
-          </p>
-          <p>What that means in practice:</p>
+          <p>{whyBody1}</p>
+          <p>{whyBody2Intro}</p>
           <ul>
             <li>
-              <strong>Spec-aligned revision.</strong> Every revision page is keyed to one exam board
-              and one paper. Cambridge 0500 students never see Pearson 4ET1 mark schemes by
-              accident, and vice versa.
+              <strong>{whyLi1Strong}</strong> {whyLi1}
             </li>
             <li>
-              <strong>AI-marked practice.</strong> Students submit essays, the AI marks against the
-              correct board&rsquo;s assessment objectives, and the teacher reviews before the
-              student sees the feedback. Removes the bottleneck of marking 60 mock essays in a week.
+              <strong>{whyLi2Strong}</strong> {whyLi2}
             </li>
             <li>
-              <strong>Multi-board coverage in one product.</strong> Pearson Edexcel 4ET1, 4EA1, and
-              Cambridge 0500, 0990 — covered in the same library, accessible from the same
-              department licence.
+              <strong>{whyLi3Strong}</strong> {whyLi3}
             </li>
             <li>
-              <strong>Exam-zone-agnostic content.</strong> Pages don&rsquo;t assume a UK-shaped
-              academic year. Whether your students sit in May/June or November, the revision library
-              works the same way.
+              <strong>{whyLi4Strong}</strong> {whyLi4}
             </li>
             <li>
-              <strong>Calibrated to mark schemes.</strong> Model answers, AO weightings, and
-              feedback rubrics are built from each board&rsquo;s published mark scheme — not from
-              one teacher&rsquo;s house style.
+              <strong>{whyLi5Strong}</strong> {whyLi5}
             </li>
           </ul>
         </Prose>
       </Section>
 
-      {/* ── Specs covered ──────────────────────────────────────────── */}
+      {/* ── Specs ──────────────────────────────────────────────────── */}
       <Section id="specs" divider>
-        <Eyebrow tone="clay">Specifications</Eyebrow>
-        <SectionHeading id="specs-heading">IGCSE English specs we cover</SectionHeading>
+        <Eyebrow tone="clay">{specsEyebrow}</Eyebrow>
+        <SectionHeading id="specs-heading">{specsH2}</SectionHeading>
         <Prose>
-          <p>
-            Four IGCSE English specifications are the backbone of most British international school
-            English departments. Every page on The English Hub is keyed to one of them — pick the
-            spec your students sit and the rest follows.
-          </p>
+          <p>{specsIntro}</p>
         </Prose>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -246,97 +393,66 @@ export default async function InternationalSchoolIgcsePage() {
                 <span className="font-mono text-xs text-cream-200/60">{spec.code}</span>
               </div>
               <h3 className="mt-2 font-serif text-lg font-semibold text-cream-50 leading-snug">
-                {spec.name}
+                {specNames[spec.nameKey]}
               </h3>
-              <p className="mt-2 text-sm text-cream-100/75 leading-relaxed">{spec.blurb}</p>
+              <p className="mt-2 text-sm text-cream-100/75 leading-relaxed">
+                {specNames[spec.blurbKey]}
+              </p>
               <p className="mt-3 text-xs font-medium text-clay-300 group-hover:text-clay-200">
-                Open hub <span aria-hidden="true">&rarr;</span>
+                {specsOpenHub}
               </p>
             </Link>
           ))}
         </div>
       </Section>
 
-      {/* ── Curriculum coverage ────────────────────────────────────── */}
+      {/* ── Coverage ───────────────────────────────────────────────── */}
       <Section id="coverage" divider>
-        <Eyebrow tone="emerald">Curriculum coverage</Eyebrow>
-        <SectionHeading id="coverage-heading">
-          Coverage across the British international school curriculum
-        </SectionHeading>
+        <Eyebrow tone="emerald">{coverageEyebrow}</Eyebrow>
+        <SectionHeading id="coverage-heading">{coverageH2}</SectionHeading>
         <Prose>
-          <p>
-            Most British international schools follow a recognisable shape — Key Stage 3 in the
-            lower years, then either GCSE or IGCSE for the 14–16 cohort, depending on which exam
-            zone the school enters. The English Hub is built around the same shape:
-          </p>
+          <p>{coverageIntro}</p>
           <ul>
             <li>
-              <strong>Key Stage 3 (Years 7–9).</strong> Foundational reading, analysis, and writing
-              skills. Schools running a UK-curriculum lower school can use these as the on-ramp to
-              IGCSE. KS3-specific landing pages are still being added — for now, browse the full
-              revision library for KS3 material.
+              <strong>{coverageKs3Strong}</strong> {coverageKs3Body}
             </li>
             <li>
-              <strong>GCSE (for UK-curriculum branches).</strong> Schools whose 14–16 cohort sits UK
-              GCSE rather than IGCSE — for example a campus aligned with a UK partner school — can
-              use the AQA, Pearson Edexcel, OCR, and WJEC Eduqas hubs.
+              <strong>{coverageGcseStrong}</strong> {coverageGcseBody}
             </li>
             <li>
-              <strong>IGCSE (the international standard).</strong> Pearson Edexcel and Cambridge
-              International, the two specifications most British international schools enter. Linked
-              above.
+              <strong>{coverageIgcseStrong}</strong> {coverageIgcseBody}
             </li>
           </ul>
           <p>
-            Not sure which board your school enters? The{' '}
+            {coverageNote}{' '}
             <Link href="/board-select" className="underline underline-offset-4 hover:text-clay-300">
-              board-select page
-            </Link>{' '}
-            walks through the options by level, or jump straight to the{' '}
+              {coverageNoteLink1}
+            </Link>
+            {coverageNoteMid}
             <Link href="/igcse" className="underline underline-offset-4 hover:text-clay-300">
-              IGCSE hub
-            </Link>{' '}
-            if you already know it&rsquo;s IGCSE.
+              {coverageNoteLink2}
+            </Link>
+            {coverageNoteEnd}
           </p>
         </Prose>
       </Section>
 
-      {/* ── How department leads get started ──────────────────────── */}
+      {/* ── Get started ────────────────────────────────────────────── */}
       <Section id="get-started" divider>
-        <Eyebrow tone="clay">For heads of department</Eyebrow>
-        <SectionHeading id="get-started-heading">How department leads get started</SectionHeading>
+        <Eyebrow tone="clay">{startEyebrow}</Eyebrow>
+        <SectionHeading id="get-started-heading">{startH2}</SectionHeading>
         <Prose>
-          <p>
-            Rolling a new platform across an English department is rarely a same-day decision. We
-            recommend a three-step plan that lets you trial the product on a single class before
-            committing the whole faculty.
-          </p>
+          <p>{startIntro}</p>
         </Prose>
 
         <ol className="mt-8 grid gap-4 sm:grid-cols-3">
-          {[
-            {
-              n: '01',
-              title: 'Pick your dominant board',
-              body: 'Identify the IGCSE specification that the largest share of your cohort sits — usually Cambridge 0500/0990 or Pearson Edexcel 4ET1/4EA1. Start there. The other boards remain available within the same licence.',
-            },
-            {
-              n: '02',
-              title: 'Trial with a single class',
-              body: 'Run one Year 10 or Year 11 group through the platform for a half-term — set practice papers, use AI marking on a mock essay, and review the analytics. No fabricated success stories — judge it on your own students.',
-            },
-            {
-              n: '03',
-              title: 'Roll across the department',
-              body: 'Once the trial class has proof points your colleagues recognise, expand to the rest of the faculty under one department licence. Onboarding shifts from per-teacher to whole-team.',
-            },
-          ].map((step) => (
+          {steps.map((step) => (
             <li
               key={step.n}
               className="rounded-2xl border border-cream-200/12 bg-cream-50/[0.03] p-5"
             >
               <span className="font-mono text-xs tracking-[0.14em] text-emerald-300">
-                Step {step.n}
+                {startStepLabel} {step.n}
               </span>
               <h3 className="mt-2 font-serif text-lg font-semibold text-cream-50 leading-snug">
                 {step.title}
@@ -351,55 +467,42 @@ export default async function InternationalSchoolIgcsePage() {
             href="/for-schools"
             className="inline-flex items-center gap-2 rounded-2xl bg-clay-300 px-5 py-3 text-sm font-medium text-ink-950 transition-colors hover:bg-clay-200"
           >
-            See department licence options <span aria-hidden="true">&rarr;</span>
+            {startCta1} <span aria-hidden="true">&rarr;</span>
           </Link>
           <Link
             href="/for-teachers"
             className="inline-flex items-center gap-2 rounded-2xl border border-cream-200/30 bg-cream-50/[0.04] px-5 py-3 text-sm font-medium text-cream-50 transition-colors hover:bg-cream-50/[0.08]"
           >
-            Individual teacher plans
+            {startCta2}
           </Link>
         </div>
       </Section>
 
       {/* ── Multi-board workflow ──────────────────────────────────── */}
       <Section id="multi-board" divider>
-        <Eyebrow tone="emerald">Mixed cohorts</Eyebrow>
-        <SectionHeading id="multi-board-heading">
-          Multi-board international department workflow
-        </SectionHeading>
+        <Eyebrow tone="emerald">{multiEyebrow}</Eyebrow>
+        <SectionHeading id="multi-board-heading">{multiH2}</SectionHeading>
         <Prose>
+          <p>{multiBody1}</p>
+          <p>{multiBody2}</p>
           <p>
-            Plenty of British international schools don&rsquo;t enter every student for the same
-            board. A school might run Cambridge 0500 as the default, but enter a small EAL cohort
-            for Pearson 4EA1 because the anthology suits them better. Or it might be the opposite —
-            Pearson dominant, with a Cambridge sub-group for legacy reasons.
-          </p>
-          <p>
-            One department licence on The English Hub covers every IGCSE board we publish. There are
-            no per-board upgrades and no second account to manage. Each student sees revision pages
-            keyed to their own specification; each teacher can flip between boards from the same
-            dashboard. The workflow looks the same whether you run one board or four.
-          </p>
-          <p>
-            Pricing for a department licence depends on faculty size rather than board count — see
-            the{' '}
+            {multiBody3Pre}
             <Link href="/pricing" className="underline underline-offset-4 hover:text-clay-300">
-              pricing page
-            </Link>{' '}
-            for the current rate, and{' '}
+              {multiBody3Link1}
+            </Link>
+            {multiBody3Mid}
             <Link href="/for-schools" className="underline underline-offset-4 hover:text-clay-300">
-              the schools page
-            </Link>{' '}
-            for the founding-schools programme if you&rsquo;re joining early.
+              {multiBody3Link2}
+            </Link>
+            {multiBody3End}
           </p>
         </Prose>
       </Section>
 
       {/* ── FAQs ──────────────────────────────────────────────────── */}
       <Section id="faqs" divider>
-        <Eyebrow tone="clay">FAQs</Eyebrow>
-        <SectionHeading id="faqs-heading">Frequently asked questions</SectionHeading>
+        <Eyebrow tone="clay">{faqsEyebrow}</Eyebrow>
+        <SectionHeading id="faqs-heading">{faqsH2}</SectionHeading>
 
         <dl className="mt-8 space-y-6">
           {FAQS.map((faq) => (
@@ -416,30 +519,27 @@ export default async function InternationalSchoolIgcsePage() {
         </dl>
       </Section>
 
-      {/* ── CTA + Email capture ──────────────────────────────────── */}
+      {/* ── CTA ───────────────────────────────────────────────────── */}
       <Section id="cta" divider>
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center">
           <div>
-            <Eyebrow tone="emerald">Next step</Eyebrow>
-            <SectionHeading id="cta-heading">
-              Bring The English Hub into your department
-            </SectionHeading>
+            <Eyebrow tone="emerald">{ctaFinalEyebrow}</Eyebrow>
+            <SectionHeading id="cta-heading">{ctaFinalH2}</SectionHeading>
             <Prose>
               <p>
-                If you&rsquo;re a head of English or a department lead, the fastest route is the{' '}
+                {ctaFinalBodyPre}
                 <Link
                   href="/for-schools"
                   className="underline underline-offset-4 hover:text-clay-300"
                 >
-                  schools page
-                </Link>{' '}
-                — it covers licence shape, onboarding, and pricing. If you&rsquo;re a single teacher
-                trialling for your own classes,{' '}
+                  {ctaFinalLink1}
+                </Link>
+                {ctaFinalBodyMid}
                 <Link
                   href="/for-teachers"
                   className="underline underline-offset-4 hover:text-clay-300"
                 >
-                  start on the teacher plan
+                  {ctaFinalLink2}
                 </Link>
                 .
               </p>

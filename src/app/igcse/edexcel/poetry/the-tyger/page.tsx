@@ -163,7 +163,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Blacksmith imagery',
-          note: 'The creator is now imagined as a blacksmith. Hammer and chain are tools for shaping metal. This grounds the creation in hard physical labour — and echoes Blake\'s own work as an engraver who shaped metal plates.',
+          note: "The creator is now imagined as a blacksmith. Hammer and chain are tools for shaping metal. This grounds the creation in hard physical labour — and echoes Blake's own work as an engraver who shaped metal plates.",
           color: '#10b981',
         },
       ],
@@ -173,7 +173,7 @@ const poem: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: 'The tiger\'s brain was forged in a furnace — a blazing, industrial fire. This is the language of Blake\'s age: the beginning of the Industrial Revolution, with its dark satanic mills. The tiger is something forged.',
+          note: "The tiger's brain was forged in a furnace — a blazing, industrial fire. This is the language of Blake's age: the beginning of the Industrial Revolution, with its dark satanic mills. The tiger is something forged.",
           color: '#10b981',
         },
       ],
@@ -210,7 +210,7 @@ const poem: PoemData = {
       ],
     },
     {
-      text: 'And water\'d heaven with their tears:',
+      text: "And water'd heaven with their tears:",
       annotations: [
         {
           type: 'Cosmic imagery',
@@ -290,7 +290,7 @@ const poem: PoemData = {
         },
         {
           type: 'Volta',
-          note: 'The single-word change is the poem\'s hidden volta. After all the questions about how, Blake reveals that the real question is who would dare. Creation becomes an act of moral courage, not just divine power.',
+          note: "The single-word change is the poem's hidden volta. After all the questions about how, Blake reveals that the real question is who would dare. Creation becomes an act of moral courage, not just divine power.",
           color: '#a855f7',
         },
       ],
@@ -361,48 +361,72 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
       analysis:
         'The most famous opening in English poetry. The repeated "Tyger Tyger" has the feel of a chant or spell — the speaker summoning the tiger into presence. "Burning bright" establishes the tiger as a creature of fire and light, while "forests of the night" places him in a dreamlike, symbolic darkness. The contrast of bright fire against dark forest is visual and metaphorical — the tiger is the single point of terrifying light in a dark world.',
       themes: ['Creation', 'Fear', 'Awe'],
+      analysisAr:
+        'أشهر مفتتحٍ في الشعر الإنجليزيّ. تكرار "Tyger Tyger" يحمل وقعَ ترتيلٍ أو رُقية، كأنّ المتكلّم يستحضر النمر إلى الحضور. وعبارة "burning bright" تُؤسّس النمرَ كائناً من نارٍ ونور، بينما "forests of the night" تضعه في ظلامٍ حُلميّ رمزيّ. والتقابل بين النار الساطعة والغابة المظلمة بصريٌّ واستعاريّ — النمر نقطةُ النور المخيفة الوحيدة في عالمٍ معتم.',
+      themesAr: ['الخَلق', 'الخوف', 'الرهبة'],
     },
     {
       quote: 'What immortal hand or eye, / Could frame thy fearful symmetry?',
       analysis:
         'The poem\'s central question. "Immortal hand or eye" implies a god-like maker. "Fearful symmetry" is the key paradox — how can something be both perfectly designed (symmetrical) and terrifying (fearful)? Blake is asking whether the maker of the tiger is a benevolent creator or a more complicated, daring force. The line is repeated in the final stanza with one crucial change — "Could" becomes "Dare" — which shifts the question from possibility to courage.',
       themes: ['Creation', 'Divine power', 'Paradox'],
+      analysisAr:
+        'سؤال القصيدة المحوريّ. عبارة "immortal hand or eye" تُلمح إلى صانعٍ يشبه الإله. أمّا "fearful symmetry" فهي المفارقةُ المركزيّة — كيف يكون الشيء متقنَ التصميم (متناظراً) ومخيفاً معاً؟ يسأل Blake هل صانعُ النمر خالقٌ رحيم أم قوّةٌ أعقد، أجرأ. ويُكرَّر السطر في المقطع الأخير مع تغييرٍ حاسم — "Could" يصير "Dare" — فيتحوّل السؤال من الإمكان إلى الجرأة.',
+      themesAr: ['الخَلق', 'القدرة الإلهيّة', 'المفارقة'],
     },
     {
       quote: 'What the hand dare seize the fire?',
       analysis:
         'Direct allusion to Prometheus, the Greek titan who stole fire from the gods to give to humanity. The creator of the tiger is imagined as Promethean — daring to reach into divine territory and bring something powerful back. "Dare" is a key word used repeatedly: creation involves courage, not just power. Blake respects the daring of the maker, even while he is frightened by what was made.',
       themes: ['Prometheus', 'Daring', 'Theft of fire'],
+      analysisAr:
+        'إشارةٌ مباشرة إلى Prometheus، التيتان الإغريقيّ الذي سرق النارَ من الآلهة وقدّمها للبشر. يُتخيَّل خالقُ النمر بروميثيوسيّاً — يجرؤ على الدخول في حِمى الإلهيّ ليخرج بشيءٍ بالغ القوّة. ولفظة "Dare" مفتاحيّة، تتكرّر مراراً: الخلق شجاعةٌ، لا قدرةٌ فحسب. يحترم Blake جرأةَ الصانع، حتى وهو خائفٌ ممّا صَنع.',
+      themesAr: ['بروميثيوس', 'الجرأة', 'سرقة النار'],
     },
     {
       quote: 'In what furnace was thy brain?',
       analysis:
         'The creator is imagined as a blacksmith, and the tiger\'s brain is literally forged in a furnace. This is industrial imagery — hammer, chain, furnace, anvil — and it transforms the creator into a factory god. Blake lived at the beginning of the Industrial Revolution and hated the "dark satanic mills", but here he uses industrial language to describe divine creation. The tiger is not a gentle product; it is something forged in fire.',
       themes: ['Industry', 'Creation', 'Forging'],
+      analysisAr:
+        'يُتخيَّل الخالقُ حدّاداً، ودماغُ النمر يُسبَك حرفيّاً في الفرن. صورٌ صناعيّة — المطرقة والسلسلة والفرن والسندان — تُحوّل الخالقَ إلى إلهٍ مصنعيّ. عاش Blake في فجر الثورة الصناعيّة وكان يكره "dark satanic mills"، لكنّه هنا يستعمل لغةَ الصناعة لوصف الخلق الإلهيّ. النمر ليس منتجاً رقيقاً، بل شيءٌ يُطرَق في النار.',
+      themesAr: ['الصناعة', 'الخَلق', 'السباكة'],
     },
     {
-      quote: 'When the stars threw down their spears, / And water\'d heaven with their tears',
+      quote: "When the stars threw down their spears, / And water'd heaven with their tears",
       analysis:
         'A cosmic, apocalyptic image. The stars throwing down their spears is often read as a reference to the fall of the rebel angels in Paradise Lost — their weapons dropped in defeat. The stars then weep over heaven. Whatever was made, it was significant enough to make the cosmos itself mourn. This stanza lifts the tiger out of zoology and into myth — its creation is a heavenly event.',
       themes: ['Cosmic response', 'Mourning', 'Fall'],
+      analysisAr:
+        'صورةٌ كونيّة أبوكاليبتيّة. كثيراً ما تُقرأ النجوم الرامية رماحَها بوصفها إشارةً إلى سقوط الملائكة العاصية في Paradise Lost — يُسقطون أسلحتهم في الهزيمة. ثمّ تبكي النجومُ السماء. ومهما كان المخلوق، فقد كان من العِظَم بحيث أبكى الكون نفسَه. يُخرج هذا المقطعُ النمرَ من علم الحيوان إلى الميثولوجيا — خَلقُه حدثٌ سماويّ.',
+      themesAr: ['الردّ الكونيّ', 'الرثاء', 'السقوط'],
     },
     {
       quote: 'Did he smile his work to see?',
       analysis:
         'The most theologically disturbing line in the poem. In Genesis, God looks at his creation and "saw that it was good". Blake asks whether the creator smiled at the sight of the tiger. The idea of a god smiling at the birth of a terrifying creature is profoundly unsettling. It calls into question the simple equation of "God = good" that children\'s catechisms teach. Blake does not answer the question — he leaves it open, and that openness is devastating.',
       themes: ['God and evil', 'Creation', 'Divine pleasure'],
+      analysisAr:
+        'أكثر سطور القصيدة إقلاقاً من الوجهة اللاهوتيّة. في سِفر التكوين ينظر الله إلى خَلقه فـ"saw that it was good". يسأل Blake هل ابتسم الخالقُ عند رؤية النمر. فكرة أن يبتسم إلهٌ لميلاد كائنٍ مخيف مزعجةٌ جدّاً. تضع علامةَ استفهام على المعادلة البسيطة "God = good" التي تُلقَّن في تعليم الأطفال الدينيّ. لا يُجيب Blake عن السؤال — يتركه مفتوحاً، وهذا الانفتاح هو ما يُكسبه فداحته.',
+      themesAr: ['الله والشرّ', 'الخَلق', 'الرضا الإلهيّ'],
     },
     {
       quote: 'Did he who made the Lamb make thee?',
       analysis:
         'The poem\'s central theological problem in a single line. "The Lamb" was Blake\'s earlier poem about Jesus as a gentle, loving creator. Now he asks: did the same God make both? How can one creator produce both the innocent Lamb and the terrifying Tyger? This is the problem of evil in miniature — and Blake presents it without solution. The question makes the poem not just about tigers but about the whole nature of God and the world.',
       themes: ['Problem of evil', 'Dualism', 'God'],
+      analysisAr:
+        'مشكلة القصيدة اللاهوتيّة الكبرى في سطرٍ واحد. كانت "The Lamb" قصيدةَ Blake السابقة عن Jesus خالقاً رقيقاً محبّاً. والآن يسأل: هل الإلهُ نفسُه صنعهما معاً؟ كيف يُنتج خالقٌ واحدٌ الـLambَ البريء والـTygerَ المرعب؟ هذه مشكلةُ الشرّ مختزَلةً — يقدّمها Blake بلا حلّ. وبهذا السؤال تنتقل القصيدة من حديثٍ عن النمور إلى حديثٍ عن طبيعة الله والعالم بأسرها.',
+      themesAr: ['مشكلة الشرّ', 'الثنائيّة', 'الله'],
     },
     {
       quote: 'Dare frame thy fearful symmetry?',
       analysis:
         'The final line of the poem — almost the same as the fourth line, but with "Could" replaced by "Dare". The change is the hidden volta of the poem. At the beginning, the question was about possibility: COULD any god be powerful enough to make the tiger? By the end, the question has become about courage: DARE any god take the moral risk of making such a creature? The single word change transforms the whole meaning.',
       themes: ['Daring', 'Courage', 'Moral risk'],
+      analysisAr:
+        'السطر الختاميّ للقصيدة — مطابقٌ تقريباً للسطر الرابع، لكنّ "Could" استُبدلت بـ"Dare". هذا التغيير هو الـ volta الخفيّة. في البداية كان السؤال عن الإمكان: هل من إلهٍ قادر على صُنع النمر؟ في الختام صار سؤالاً عن الجرأة: هل من إلهٍ يجرؤ على المخاطرة الأخلاقيّة بصُنع كائنٍ كهذا؟ تغييرُ كلمةٍ واحدة يقلب المعنى كلّه.',
+      themesAr: ['الجرأة', 'الشجاعة', 'المخاطرة الأخلاقيّة'],
     },
   ],
 
@@ -413,6 +437,8 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
       effect:
         'The entire poem is constructed from unanswered questions. Blake asks and asks, but never resolves. This creates a sustained feeling of awe and bewilderment — the speaker cannot understand what he sees. The lack of answers is the point: some mysteries cannot be solved, only felt.',
       lineRef: 2,
+      effectAr:
+        'تتكوّن القصيدة بأسرها من أسئلةٍ بلا جواب. يسأل Blake ويسأل دون أن يحسم. وهذا يُولّد إحساساً متّصلاً بالرهبة والحَيرة — لا يقدر المتكلّمُ على فهم ما يرى. غيابُ الإجابات هو المقصد: ثمّ ألغاز لا تُحَلّ، إنّما تُحَسّ.',
     },
     {
       device: 'Symbolism',
@@ -420,6 +446,8 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
       effect:
         'Every noun in the poem is loaded with symbolic meaning. The tiger stands for fear, evil, energy, beauty, revolution, or the unknown. The lamb stands for innocence and Christ. Fire stands for creation and destruction. The "forests of the night" stand for the mysterious unknown. Blake builds his poem from symbols, leaving the reader to decode them.',
       lineRef: 0,
+      effectAr:
+        'كلّ اسمٍ في القصيدة محمَّلٌ بدلالةٍ رمزيّة. النمر يرمز للخوف، أو الشرّ، أو الطاقة، أو الجمال، أو الثورة، أو المجهول. والـLamb يرمز للبراءة والمسيح. والنار للخلق والدمار. أمّا "forests of the night" فترمز للمجهول الغامض. يبني Blake قصيدته من الرموز ويترك للقارئ فكَّ شفرتها.',
     },
     {
       device: 'Allusion (Prometheus)',
@@ -427,20 +455,26 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
       effect:
         'The allusion to Prometheus, who stole fire from the gods, gives the creator a mythological frame. Creation becomes transgressive — reaching into forbidden territory to bring something powerful back. The creator is not a peaceful craftsman but a daring thief.',
       lineRef: 7,
+      effectAr:
+        'الإحالة إلى Prometheus، الذي سرق النارَ من الآلهة، تُكسب الخالقَ إطاراً ميثولوجيّاً. الخلق يصير اعتداءً — اقتحاماً لأرضٍ محرّمة لإحضار شيءٍ بالغ القوّة. الخالقُ هنا ليس صانعاً مسالماً بل سارقاً جريئاً.',
     },
     {
       device: 'Extended metaphor (blacksmith)',
       example: 'What the hammer? what the chain… In what furnace was thy brain? / What the anvil?',
       effect:
-        'Stanza 4 extends a single metaphor: the creator as blacksmith. This domesticates divine creation — it becomes physical labour, not magic. The tools of an industrial forge become the tools of God. This connects creation to Blake\'s own time and the anxieties of the Industrial Revolution.',
+        "Stanza 4 extends a single metaphor: the creator as blacksmith. This domesticates divine creation — it becomes physical labour, not magic. The tools of an industrial forge become the tools of God. This connects creation to Blake's own time and the anxieties of the Industrial Revolution.",
       lineRef: 13,
+      effectAr:
+        'يمدّ المقطع الرابع استعارةً واحدة: الخالق حدّاداً. وهذا يُؤنِس الخلق الإلهيّ — يصير عملاً جسديّاً لا سحراً. أدواتُ المصنع الصناعيّ تصير أدواتِ الله. وبهذا يربط Blake الخلقَ بزمانه هو وبقلقه من الثورة الصناعيّة.',
     },
     {
       device: 'Trochaic tetrameter',
       example: 'TYger TYger BURNing BRIGHT',
       effect:
-        'The driving, stressed-unstressed rhythm gives the poem a hammering, insistent beat — perfect for a poem about forging. The missing final syllable in most lines makes the rhythm punchy and urgent. The childish simplicity of the metre (it sounds like a nursery rhyme) contrasts starkly with the poem\'s dark theological content.',
+        "The driving, stressed-unstressed rhythm gives the poem a hammering, insistent beat — perfect for a poem about forging. The missing final syllable in most lines makes the rhythm punchy and urgent. The childish simplicity of the metre (it sounds like a nursery rhyme) contrasts starkly with the poem's dark theological content.",
       lineRef: 0,
+      effectAr:
+        'الإيقاع الطَرَقيّ المُشدَّد ثمّ غير المُشدَّد يكسب القصيدةَ نبضاً مُطرِقاً مُلِحّاً — مناسباً لقصيدةٍ عن السباكة. وسقوطُ المقطع الأخير غير المُشدَّد في معظم الأسطر يجعل الإيقاعَ حادّاً عاجلاً. وبساطةُ الوزن الطفوليّة (يبدو كأنشودةٍ للأطفال) تتقابل بصورةٍ حادّة مع مضمون القصيدة اللاهوتيّ القاتم.',
     },
     {
       device: 'Single-word change / Circular structure',
@@ -448,8 +482,68 @@ Relationship to "The Lamb": The poem is best read alongside "The Lamb" from Song
       effect:
         'The poem opens and closes with almost the same stanza, but one word has changed. "Could" becomes "Dare". This tiny edit transforms the whole meaning: the question shifts from divine possibility to divine courage. The circularity traps the reader in the question, and the single-word change gives the whole poem its volta.',
       lineRef: 23,
+      effectAr:
+        'تفتح القصيدةُ وتُغلَق بالمقطع نفسه تقريباً، لكنّ كلمةً واحدة تغيّرت. "Could" صارت "Dare". هذا التعديل الضئيل يقلب المعنى كلّه: ينتقل السؤال من الإمكان الإلهيّ إلى الجرأة الإلهيّة. والتركيبُ الدائريّ يحبس القارئَ في السؤال، فيما يُهدي تغييرُ الكلمة الواحدة القصيدةَ كلَّها volta-ها.',
     },
   ],
+
+  contextAr: `
+    <h3>William Blake (1757–1827)</h3>
+    <p>كان Blake شاعراً ورسّاماً وفنّان طباعةٍ إنجليزيّاً، يُعدّ عادةً أوّل شعراء الرومانسيّة. كان صاحبَ رؤى — زعم أنّه يرى الملائكة والأنبياء — ويجمع عمله بين السياسة الراديكاليّة والمسيحيّة غير الأُرثوذكسيّة والمخيال البصريّ الاستثنائيّ. لم يلقَ اعترافاً في حياته، وصار اليوم من أعظم شخصيّات الأدب الإنجليزيّ.</p>
+
+    <h3>Songs of Innocence and Experience</h3>
+    <p>نُشرت "The Tyger" سنة 1794 ضمن <em>Songs of Innocence and of Experience</em>، التي عنوانها الفرعيّ "Shewing the Two Contrary States of the Human Soul". يقرن الكتابُ <strong>قصائد البراءة</strong> (الرقيقة الرعويّة الطفوليّة) بـ<strong>قصائد التجربة</strong> (الأشدّ قتامة وتساؤلاً ونضجاً). تنتمي "The Tyger" إلى <em>Songs of Experience</em>، وهي مقرونةٌ بـ<strong>"The Lamb"</strong> من <em>Songs of Innocence</em>.</p>
+
+    <h3>"The Lamb" و"The Tyger"</h3>
+    <p>"The Lamb" قصيدةٌ رقيقة يسأل فيها المتكلّمُ حملاً: "Little Lamb, who made thee?" — ثمّ يُجيب بفرح: المسيحُ الوديع الرقيق صنعك. تعكس "The Tyger" هذا قصداً. يسأل المتكلّمُ كائناً أشدّ خطراً السؤالَ نفسه، لكنّه لا يجد جواباً. تسأل القصيدتان معاً: كيف يصنع الإلهُ نفسُه حملاناً بريئة ونمراً مرعباً معاً؟ هي مشكلةُ الشرّ بلغةٍ طفوليّةٍ بسيطة.</p>
+
+    <h3>الثورة الفرنسيّة</h3>
+    <p>كَتب Blake "The Tyger" سنة 1794، في خضمّ <strong>الثورة الفرنسيّة</strong> (1789–1799) — زمنٍ من أملٍ استثنائيّ وعنفٍ استثنائيّ. ويقرأ كثيرٌ من النقّاد النمرَ رمزاً للطاقة الثوريّة: جميلةً، مرعبة، خارجَ السيطرة. أيّد Blake مُثُل الثورة لكنّه أعربَ عن رعبه من إرهاب الـTerror. ولعلّ النمرَ رمزُه للقوّة الثوريّة العنيفة الضروريّة المدمّرة.</p>
+
+    <h3>الثورة الصناعيّة</h3>
+    <p>صورُ الحدّاد — المطرقة والسلسلة والفرن والسندان — تعكس عالم <strong>الثورة الصناعيّة</strong> التي كانت تُحوّل إنجلترا في زمن كتابته. كان Blake يكره "dark satanic mills" الصناعيّة. ويُتخيَّل النمرُ شيئاً سُبك في المصنع — ما يجعل الخالقَ مهيباً ومرعباً معاً، كأنّه إلهٌ مصنعيّ.</p>
+
+    <h3>الطباعةُ المُضاءة</h3>
+    <p>طبع Blake قصائده بأسلوبٍ من اختراعه سمّاه "<strong>illuminated printing</strong>" — حفر الكلمات والصور معاً على ألواح نحاسيّة ثمّ يدويّاً يُلوّن كلّ صفحة. نُشرت "The Tyger" لوحةً بصفحةٍ كاملة عليها صورةُ نمر (طريفٌ أنّ نمر Blake المرسوم لا يبدو شديد الفزع — وهذا ما يُناقَش كثيراً في النقد).</p>
+  `,
+
+  summaryAr: `المقطع الأوّل (السطور 1–4): يُخاطب المتكلّمُ النمرَ مباشرةً. النمر "burning bright" في "forests of the night". يطرح المتكلّم السؤالَ المحوريّ: أيُّ "immortal hand or eye" قد يخلق مثلَ هذا الكائن؟ والـ"fearful symmetry" — تصميمه الجميل المرعب — يدلّ على صانعٍ هائل القدرة.
+
+المقطع الثاني (السطور 5–8): يتساءل المتكلّمُ من أين جاء النمر. أمن الأعماق البحريّة أم من الأعالي السماويّة؟ لا بدّ أنّ نارَ عينيه استُلّت من مكانٍ بعيد. ولا بدّ أنّ للخالق أجنحةً وجرأةَ بطلٍ ميثولوجيّ كـPrometheus ليأخذ النارَ ويستعملها.
+
+المقطع الثالث (السطور 9–12): يتخيّل المتكلّم العملَ الجسديّ في خلق النمر. "shoulder" الخالق و"art"-ه اضطرّا إلى "twist the sinews" لقلبه. وحين بدأ القلب ينبض، لا بدّ أنّ يدَ الخالق وقدمَه كانتا في رعب — مرعبتين أو مذعورتين.
+
+المقطع الرابع (السطور 13–16): يُتخيَّل الخالق الآن حدّاداً. أيُّ مطرقةٍ وسلسلةٍ وفرنٍ وسندان شكّلت دماغ النمر؟ مَن يجرؤ على إمساك مثل هذه "deadly terrors"؟ الصورُ الصناعيّة تجعل الخلقَ يبدو عملاً ثقيلاً خطراً.
+
+المقطع الخامس (السطور 17–20): لحظةٌ كونيّة — النجوم تطرح رماحَها وتسقي السماءَ بدموعها. شيءٌ في الكون بكى لخلق النمر. يسأل المتكلّم: هل ابتسم الخالقُ حين رأى ما صنع؟ ثمّ السؤال اللاهوتيّ المحوريّ: "Did he who made the Lamb make thee?" أَيُمكن للإله نفسه أن يكون صانع الحَمَل البريء والنمر المرعب معاً؟
+
+المقطع السادس (السطور 21–24): تعود القصيدة إلى مفتتحها. "Tyger Tyger, burning bright" — لكنّ السطر الرابع تغيّر من "Could frame thy fearful symmetry?" إلى "Dare frame thy fearful symmetry?" انتقل السؤال من الإمكان إلى الجرأة. ولا جواب — يظلّ السؤال مفتوحاً.
+
+المعنى الإجماليّ: "The Tyger" قصيدةُ رهبةٍ وفزعٍ أمام الخلق نفسِه. يسأل Blake كيف يخلق الإلهُ نفسه حملاناً وديعةً ونموراً مرعبة — مشكلةَ الشرّ بلغةٍ طفوليّة. لا تمنح القصيدةُ جواباً: هي سلسلةُ أسئلةٍ بلا أجوبة. ولعلّ النمرَ رمزٌ للطاقة الثوريّة، أو لعنف الطبيعة، أو للشرّ، أو ببساطةٍ لكلّ ما في العالم يُحَسّ جميلاً ومخيفاً في آنٍ معاً.`,
+
+  formAndStructureAr: `الشكل: ستّ رباعيّات من أربعة أسطر — مجموعها 24 سطراً. تبدو القصيدة بسيطةً أُنشوديّة، وهذا يتقابل تقابلاً حادّاً مع الأسئلة اللاهوتيّة العميقة التي تطرحها.
+
+نظام القافية: AABB من بدايتها إلى نهايتها — أبياتٌ مزدوجة. وبساطةُ القوافي الأقرب إلى أناشيد الأطفال أمرٌ حيويّ. يجعل Blake أسئلتَه المرعبة تبدو كأنشودة. وهذا جزءٌ من أثر القصيدة: الشكل البسيط يحمل ثقلاً فلسفيّاً هائلاً.
+
+الوزن: trochaic tetrameter — أربع نبراتٍ في السطر، بنمطٍ مُشدَّد ثمّ غير مُشدَّد (TY-ger TY-ger BURN-ing BRIGHT). ومعظم الأسطر تُسقط المقطعَ غير المُشدَّد الأخير، فيكون الإيقاعُ حادّاً مُلِحّاً. ووقعُ الطَرْق ملائمٌ لقصيدةٍ عن إلهٍ حدّادٍ يَطرُق كائناً.
+
+اللازمة: المقطعان الأوّل والأخير متطابقان تقريباً مع تغييرٍ حاسم. "Could frame thy fearful symmetry?" (في المقطع الأوّل) صار "Dare frame thy fearful symmetry?" (في المقطع السادس). تغييرُ الكلمة الواحدة هذا ينقل السؤال من الإمكان إلى الجرأة. وهو الـ volta الخفيّ — تنقلب الحُجّة كلّها على هذه الكلمة الواحدة.
+
+الأسئلة: القصيدة مصنوعةٌ من أسئلة. كلّ مقطعٍ، إلّا مقطعَ الحدّاد (الرابع)، يتضمّن سؤالاً على الأقلّ. لا يُجيب المتكلّم قطّ. وهذا جوهريّ في معنى القصيدة: Blake لا يقول لنا ماذا يعني النمر، بل يجعلنا نشعر بالرهبة والفزع اللذين لا جواب لهما.
+
+التركيب الدائريّ: تنتهي القصيدة حيث بدأت، كأنّ تساؤل المتكلّم لم يُقرّبه من جوابٍ. لكنّ القارئ تغيّر بفعل الرحلة عبر الأسئلة. والدائريّة تُجسّد فكرةَ أنّ أسئلة الخلق لا تُحَلّ — نظلّ نطرح السؤال نفسه.
+
+تطوّر المقاطع:
+• الأوّل: النمر والسؤال الأوّل.
+• الثاني: الأصول الكونيّة والجرأة البروميثيوسيّة.
+• الثالث: الخلق الجسديّ — الكتفان والأوتار والقلب.
+• الرابع: الحدّاد — المطرقة والفرن والسندان.
+• الخامس: الردّ الكونيّ ومقارنة الـLamb.
+• السادس: العودة إلى المفتتح مع التغيير الحاسم.
+
+النبرة: رهبة وخوف ودهشة وحَيرة. المتكلّم مغمور. الشكلُ البسيط والتكرار الطفوليّ يحبسان وراءهما عاطفةً هائلةً لا تُسيطَر عليها.
+
+العلاقة بـ"The Lamb": تُقرأ القصيدةُ في أفضل أحوالها مع "The Lamb" من Songs of Innocence. تستعمل القصيدتان أشكالاً متشابهة وتطرحان أسئلةً متشابهة لكنّهما تبلغان مزاجَين متعاكسَين. متكلّمُ الـLamb يعرف الجواب ("He is called by thy name, / For he calls himself a Lamb")؛ متكلّمُ الـTyger لا جواب عنده البتّة.`,
 }
 
 /* ── Comparison poems ─────────────────────────────────────────────── */
@@ -460,7 +554,7 @@ const comparisons = [
     poet: 'Imtiaz Dharker',
     href: '/igcse/edexcel/poetry',
     reason:
-      'Both poems treat a simple element — fire for Blake, water for Dharker — as something close to divine. Both use the language of wonder and worship for everyday forces. Compare Blake\'s fearful awe at the tiger with Dharker\'s grateful joy at the burst water pipe.',
+      "Both poems treat a simple element — fire for Blake, water for Dharker — as something close to divine. Both use the language of wonder and worship for everyday forces. Compare Blake's fearful awe at the tiger with Dharker's grateful joy at the burst water pipe.",
     themes: ['Awe', 'Creation', 'The sacred'],
   },
   {
@@ -468,7 +562,7 @@ const comparisons = [
     poet: 'Louis MacNeice',
     href: '/igcse/edexcel/poetry',
     reason:
-      'Both poems ask unanswerable questions about creation and the world\'s darkness. Blake asks whether God dared make the tiger; MacNeice\'s unborn child begs protection from a world full of evil. Compare the two poets\' very different ways of expressing fear of what has been made.',
+      "Both poems ask unanswerable questions about creation and the world's darkness. Blake asks whether God dared make the tiger; MacNeice's unborn child begs protection from a world full of evil. Compare the two poets' very different ways of expressing fear of what has been made.",
     themes: ['Fear of creation', 'Evil', 'Unanswered questions'],
   },
   {
@@ -476,7 +570,7 @@ const comparisons = [
     poet: 'Carol Ann Duffy',
     href: '/igcse/edexcel/poetry',
     reason:
-      'Both poems confront terrible things and ask us to see them. Blake\'s tiger and Duffy\'s photographs both contain the fearful beauty of destruction. Compare how each writer uses art to force the reader to look at what they would rather avoid.',
+      "Both poems confront terrible things and ask us to see them. Blake's tiger and Duffy's photographs both contain the fearful beauty of destruction. Compare how each writer uses art to force the reader to look at what they would rather avoid.",
     themes: ['Confronting evil', 'Art and witness'],
   },
 ]
@@ -502,9 +596,7 @@ export default function TheTygerPage() {
             <BookOpen className="size-5 text-rose-400" />
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">
-              The Tyger
-            </h1>
+            <h1 className="text-heading-lg font-heading text-foreground">The Tyger</h1>
             <p className="text-body-sm text-muted-foreground">
               William Blake &middot; Edexcel IGCSE Anthology
             </p>
@@ -522,13 +614,11 @@ export default function TheTygerPage() {
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />
-          <h2 className="text-heading-sm font-heading text-foreground">
-            Compare with
-          </h2>
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5">
-          The Edexcel exam asks you to compare the named poem with another
-          from the anthology. These are strong pairings for The Tyger.
+          The Edexcel exam asks you to compare the named poem with another from the anthology. These
+          are strong pairings for The Tyger.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -542,9 +632,7 @@ export default function TheTygerPage() {
                 {c.title}
               </h3>
               <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                {c.reason}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
               <div className="flex flex-wrap gap-1.5">
                 {c.themes.map((t) => (
                   <span

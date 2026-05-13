@@ -562,48 +562,72 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       analysis:
         'A flat, brutal sentence that withholds emotion. Owen simply states the body. "Sewn short at elbow" focuses on the empty cloth — the absence of the limb made visible in the way the suit has been altered. The plainness is what makes it unbearable.',
       themes: ['Disability', 'Loss', 'Body'],
+      analysisAr:
+        'جملةٌ مسطّحةٌ قاسية، يُمسك فيها Owen عن إبداء أيّ عاطفة، فيكتفي بذكر الجسد كما هو. عبارة "sewn short at elbow" تُسلّط الضوء على القماش الفارغ، إذ يُجعل غيابُ الطرف ظاهراً في كيفية تعديل البِزّة نفسها. وقسوةُ هذه الجملة في بساطتها؛ هذه السذاجة اللفظية هي ما يجعل القارئ عاجزاً عن الاحتمال.',
+      themesAr: ['الإعاقة', 'الفقد', 'الجسد'],
     },
     {
       quote: 'before he threw away his knees',
       analysis:
         'A devastating phrasing. Owen places the verb of agency on the soldier himself — he didn\'t lose his knees, he "threw [them] away". The word choice blames the younger self for enlisting, and the casual idiom (you "throw away" something cheap) reveals the soldier\'s bitterness about his own naivety.',
       themes: ['Regret', 'Self-blame', 'Disability'],
+      analysisAr:
+        'صياغة موجعة في موضعها. يُسند Owen فعل الفاعلية إلى الجنديّ نفسه؛ فهو لم يفقد ركبتيه، بل "ألقى [بهما] جانباً". هذا الاختيار اللفظيّ يُلقي اللوم على الذات الفتيّة التي تطوّعت، أمّا العبارة العاميّة (التي تُقال عادةً عمّا هو رخيص يُستغنى عنه) فتكشف عن مرارة الجنديّ من سذاجته السابقة.',
+      themesAr: ['الندم', 'لوم الذات', 'الإعاقة'],
     },
     {
       quote: 'All of them touch him like some queer disease',
       analysis:
         'A complete reversal of pre-war life. Where once he could touch girls, now they recoil from him as if he is contaminated. "Queer" here means strange or unsettling — and "disease" makes disability into something contagious in the social imagination. Owen exposes how disability is not just a physical condition but a social exile.',
       themes: ['Disability', 'Isolation', 'Touch'],
+      analysisAr:
+        'انقلابٌ تامّ لحياة ما قبل الحرب. فبعد أن كان قادراً على لمس الفتيات، صرن يتنحّين عنه كأنّه ملوّث. وكلمة "queer" هنا تعني الغريب المُربك، فيما تُحوّل لفظةُ "disease" الإعاقةَ إلى شيءٍ مُعدٍ في المخيال الاجتماعي. يكشف Owen أنّ الإعاقة ليست حالةً جسديّة فحسب، بل هي نفيٌ اجتماعيّ.',
+      themesAr: ['الإعاقة', 'العزلة', 'اللمس'],
     },
     {
       quote: 'Poured it down shell-holes till the veins ran dry',
       analysis:
         'A horrifying metaphor. The soldier\'s blood is "poured" into the holes left by shell explosions, as if he has emptied himself into the war. "Veins ran dry" makes him a vessel drained for nothing. Owen turns sacrifice into waste — the blood didn\'t buy anything.',
       themes: ['War', 'Sacrifice', 'Loss'],
+      analysisAr:
+        'استعارةٌ مرعبة. فدمُ الجنديّ "يُسكب" في الحُفر التي خلّفتها انفجارات القذائف، كأنّه قد أفرغ نفسه في الحرب. وعبارة "veins ran dry" تجعله إناءً استُنزِف دون مقابل. يُحوّل Owen التضحية إلى هدر؛ فالدم لم يشترِ شيئاً.',
+      themesAr: ['الحرب', 'التضحية', 'الفقد'],
     },
     {
       quote: "He thought he'd better join. — He wonders why.",
       analysis:
         'The most damning line in the poem. He enlisted on a drunken whim — "he thought he\'d better join". The em-dash and the four-word follow-up — "He wonders why." — drop the entire cost of the war onto a casual, half-conscious decision. There was no real reason; only a moment of bravado.',
       themes: ['Recruitment', 'Regret', 'Naivety'],
+      analysisAr:
+        'أشدّ سطور القصيدة إدانةً. فقد تطوّع بنزوةٍ سُكْرى، إذ "he thought he\'d better join". الشَّرطةُ الطويلة ثم الجملة المختصرة من أربع كلمات — "He wonders why." — تُسقطان كلفةَ الحرب كلّها على قرارٍ عابرٍ شبهِ غافل. لم يكن ثمّ سبب حقيقيّ؛ كانت لحظةَ مفاخرةٍ ليس إلّا.',
+      themesAr: ['التجنيد', 'الندم', 'السذاجة'],
     },
     {
       quote: 'Smiling they wrote his lie: aged nineteen years',
       analysis:
         'A condemnation of the recruiting officers. They knowingly accepted his false age — he was probably 17. "Smiling" is the killing word: they enlisted a child and pretended not to notice. Owen blames the system as much as the boy.',
       themes: ['Recruitment', 'Institutional guilt', 'Age'],
+      analysisAr:
+        'إدانةٌ لضبّاط التجنيد. فقد قبلوا عن علمٍ سنَّه الزائف؛ إذ كان على الأرجح في السابعة عشرة. وكلمة "Smiling" هي القاتلة في السطر: قد جنّدوا طفلاً وتظاهروا بأنّهم لم يلحظوا. يُحمّل Owen المنظومةَ من اللوم بقدرِ ما يُحمّل الفتى.',
+      themesAr: ['التجنيد', 'الذنب المؤسّسيّ', 'العمر'],
     },
     {
       quote: "the women's eyes / Passed from him to the strong men that were whole",
       analysis:
         'The cruellest line in the poem. After all the soldier\'s memories of being attractive to girls, the women now look past him to "the strong men that were whole". "Whole" carries the full force: it means physically intact, but also human in a way he no longer is. He has been erased from the field of desire.',
       themes: ['Disability', 'Masculinity', 'Erasure'],
+      analysisAr:
+        'أقسى سطور القصيدة. بعد كلّ ذكريات الجنديّ عن جاذبيّته للفتيات، صارت النساء يتجاوزنه بأعينهنّ إلى "the strong men that were whole". لفظةُ "whole" تحمل الثقل كلّه: فهي تعني السليم جسديّاً، وتعني كذلك الإنسانَ بمعنى لم يعد يستحقّه. لقد مُحي من حقل الرغبة.',
+      themesAr: ['الإعاقة', 'الذكورة', 'المحو'],
     },
     {
       quote: "Why don't they come?",
       analysis:
         'The poem\'s closing line, repeated. The soldier cannot move himself; he is waiting for nurses to put him to bed. The childlike, helpless tone — "Why don\'t they come?" — is unbearable. Owen ends not with a statement but with an unanswered question, leaving the reader in the silence.',
       themes: ['Helplessness', 'Disability', 'Waiting'],
+      analysisAr:
+        'السطر الختاميّ المكرّر. لا يقدر الجنديّ على تحريك نفسه؛ هو ينتظر الممرّضات ليُضجعنه. ونبرةُ "Why don\'t they come?" الطفوليّة العاجزة لا تُحتمل. يختم Owen لا بتقريرٍ بل بسؤالٍ معلَّقٍ بلا جواب، فيتركنا في الصمت الذي يلي السؤال.',
+      themesAr: ['العجز', 'الإعاقة', 'الانتظار'],
     },
   ],
 
@@ -614,6 +638,8 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       effect:
         'Owen pioneered pararhyme — rhymes where the consonants match but the vowels don\'t. The almost-rhymes leave the ear unsettled, like a body that doesn\'t quite work properly. Throughout "Disabled" the technique creates a sense of brokenness in the very sound of the poem.',
       lineRef: 1,
+      effectAr:
+        'يُعدّ Owen رائداً في توظيف الـ pararhyme، وهي قوافٍ تتطابق فيها الصوامتُ دون الصوائت. هذه القوافي الشبه تامّة تُبقي الأذنَ في قلقٍ مستمرّ، كأنّها جسدٌ لا يعمل على وجهٍ سليم. وعلى امتداد قصيدة "Disabled" تُولّد هذه التقنيةُ إحساساً بالتصدّع في صوت القصيدة ذاته.',
     },
     {
       device: 'Caesura',
@@ -621,6 +647,8 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       effect:
         "A heavy mid-line stop that fragments the verse. The fractured rhythm mirrors the soldier's fractured body. Owen uses caesura repeatedly to refuse the smoothness of pre-war pastoral verse.",
       lineRef: 3,
+      effectAr:
+        'وقفةٌ ثقيلة في وسط السطر تُشظّي البيتَ. الإيقاع المتصدّع يحاكي جسد الجنديّ المتصدّع. ويُلحّ Owen على استعمال الـ caesura ليرفضَ سلاسةَ الشعر الرعويّ السابقِ للحرب.',
     },
     {
       device: 'Personification',
@@ -628,6 +656,8 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       effect:
         'Sleep is personified as a mother. The soldier is locked outside maternal warmth — sleep mothers everyone except him. The image makes his loneliness intimate and devastating.',
       lineRef: 6,
+      effectAr:
+        'يُشخَّص النومُ هنا أُمّاً. الجنديّ موصدةٌ في وجهه الدفءُ الأموميّ؛ فالنومُ يحتضن الكلّ إلّاه. هذه الصورة تجعل وحدتَه حميمةً ومدمّرة في آنٍ معاً.',
     },
     {
       device: 'Juxtaposition',
@@ -635,6 +665,8 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       effect:
         'Owen juxtaposes football blood (a badge of glory) with battlefield blood (the loss of his legs). The same bodily image carries opposite meanings — pre-war pride against post-war ruin.',
       lineRef: 22,
+      effectAr:
+        'يُجاور Owen بين دمِ مباراة كرة القدم (وسامِ مجدٍ آنذاك) ودمِ ساحة المعركة (الذي كلّفه ساقيه). الصورة الجسديّة ذاتُها تحمل معنيين متضادّين؛ كبرياء ما قبل الحرب في مقابل خراب ما بعدها.',
     },
     {
       device: 'Bathos',
@@ -642,6 +674,8 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       effect:
         'Owen mixes high official language ("esprit de corps") with banal fillers ("hints for young recruits"). The recruiting culture is exposed as a mishmash of phrases, none of them connected to the reality of war.',
       lineRef: 35,
+      effectAr:
+        'يخلط Owen بين اللغة الرسميّة الرفيعة ("esprit de corps") وحشوٍ ركيكٍ مبتذل ("hints for young recruits"). تُكشف ثقافةُ التجنيد عن كونها خليطاً من العبارات الجاهزة، لا تربطها بحقيقة الحرب رابطة.',
     },
     {
       device: 'Repetition / closing question',
@@ -649,8 +683,56 @@ Closing question: The final two lines are a repeated question. Owen ends not wit
       effect:
         'The poem ends with a question repeated twice. There is no answer. Owen refuses resolution — the helpless waiting is the final image. The repetition makes the silence after the question deafening.',
       lineRef: 47,
+      effectAr:
+        'تنتهي القصيدة بسؤالٍ يُكرَّر مرّتين، ولا جواب. يأبى Owen أن يَختِم بحلّ؛ فالانتظار العاجز هو الصورة الأخيرة. والتكرارُ يُحوّل الصمتَ الذي يلي السؤال إلى صَخَبٍ مُصِمّ.',
     },
   ],
+
+  contextAr: `
+    <h3>Wilfred Owen (1893–1918)</h3>
+    <p>يُعدّ Owen أكثر شعراء الحرب العالميّة الأولى البريطانيّين دراسةً وتداولاً. قاتل ملازماً في فوج Manchester، وعُولج من صدمة القذائف في مستشفى Craiglockhart عام 1917 (حيث التقى Siegfried Sassoon)، وقُتل في الميدان يوم 4 نوفمبر 1918، أي قبل الهدنة بأسبوعٍ تامّ. كان عمره خمساً وعشرين سنة.</p>
+
+    <h3>الكتابة</h3>
+    <p>كُتبت "Disabled" في <strong>مستشفى Craiglockhart العسكريّ في أكتوبر 1917</strong>، حيث كان Owen يتلقّى علاج صدمة القذائف. استلهم القصيدة من شابٍّ مبتورِ الأطراف رآه في المستشفى، ومن صور الجرحى المعروضة في الأجنحة. عرض المسوّدة على Sassoon فأثنى عليها.</p>
+
+    <h3>النشر</h3>
+    <p>نُشرت القصيدة أوّل مرّة سنة 1920، أي بعد عامين من رحيله، ضمن ديوانه <em>Poems</em> (تحرير Sassoon، عن دار Chatto &amp; Windus). لم يكن Owen قد رأى من شعره مطبوعاً في حياته سوى أربع قصائد. وقد كرّست أمُّه، Susan Owen، سنواتٍ من عمرها لضمان بقاء أعماله.</p>
+
+    <h3>ثقافة التجنيد</h3>
+    <p>تُدين القصيدة ثقافةَ التجنيد زمن الحرب، التي أرغمت فتياناً — كثيرٌ منهم دون السنّ القانونيّة — على التطوّع. الملصقاتُ، وأغاني صالات الموسيقى، وحملاتُ "الريشة البيضاء" التي تَصِم الشابّ بالجبن، كلّ ذلك دفع الفتيان دفعاً إلى الجيش. كان Owen أكبر سنّاً حين تطوّع، لكنّه شهد بأمّ عينه كيف يُستدرَج المراهقون: "Smiling they wrote his lie: aged nineteen years."</p>
+
+    <h3>الإعاقة والجبهة الداخليّة</h3>
+    <p>بحلول 1918 كان ثمّ <strong>أكثر من 41,000 مبتور</strong> من القوّات البريطانيّة وحدها. عاد كثيرٌ منهم إلى معاشات شحيحة، وعزلةٍ اجتماعيّة، وبلدٍ سرعان ما حوّل بصره عنهم. تُصرّ "Disabled" على الكشف عن الكلفة الإنسانيّة التي حاول الخطاب الرسميّ إخفاءها.</p>
+
+    <h3>تمهيد Owen</h3>
+    <p>كتب Owen تمهيداً شهيراً للمجموعة التي كان يخطّط لإصدارها سنة 1918: "موضوعي هو الحرب، وشَفقتُها. الشعر يكمن في الشفقة." وتجسّد "Disabled" هذا البرنامج تمام التجسيد؛ فلا تمجيد، بل التفاتٌ متأنٍّ إلى رجلٍ جريحٍ بعينه.</p>
+  `,
+
+  summaryAr: `المقطع الأوّل (السطور 1–6): شابٌّ جنديّ بُترت ساقاه وذراعه الواحدة من فوق المرفق، يجلس في كرسيٍّ متحرّكٍ في حديقة مستشفى "ينتظر الظلام". أصواتُ الفتيان اللاعبين في الحديقة تبدو له موجعةً، حتى يحملهم النوم بعيداً.
+
+المقطع الثاني (السطور 7–13): يتذكّر المدينة قبل الحرب، بأضوائها وموسيقاها وفتياتها. الآن لم يعد يقدر على الإمساك بخصرِ فتاة. النساءُ يلمسنه "like some queer disease". لقد فقد الجسد الذي كان يجعله مرغوباً.
+
+المقطع الثالث (السطور 14–21): يتذكّر أنّ فنّاناً رسمه ذات يوم إعجاباً بوجهه، "younger than his youth, last year". أمّا الآن فقد هَرِم. لقد سُكِب دمه في حُفر القذائف، و"half his lifetime lapsed in the hot race" في غمرة المعركة.
+
+المقطع الرابع (السطور 22–37): أطولُ المقاطع، يعود إلى لحظة التطوّع. تطوّع بنزوةِ سُكْرٍ بعد مباراة كرة القدم، جزئيّاً لأنّ أحدهم قال إنّه "look a god in kilts"، وجزئيّاً ليُعجب فتاةً اسمها Meg. لم يفكّر بألمانيا ولا بالنمسا. ابتسم ضبّاط التجنيد وسجّلوا سنّه الزائف في السجلّات. ثمّ سيق إلى المعركة "with drums and cheers".
+
+المقطع الخامس (السطور 38–47): العودة إلى الوطن. لا حشودَ، إنّما "a solemn man" يحمل فاكهة. سيُمضي الآن "a few sick years in institutes". أعينُ النساء "passed from him to the strong men that were whole". وتختم القصيدة بسؤاله المكرَّر "Why don\'t they come?" — منتظراً عاجزاً من يُضجعه في فراشه.
+
+المعنى الإجماليّ: لوحةٌ موجعة لشابٍّ جنديٍّ أُفرغت حياته من معناها بسبب حربٍ خُدع فيها إلى التطوّع. يُهاجم Owen ثقافةَ التجنيد، وزِيف البريق العسكريّ، ولا مبالاةَ الجبهة الداخليّة. وتلك "الشفقة" التي وعد بها في تمهيده موجَّهةٌ هنا إلى شابٍّ بعينه، عاديٍّ مفرد.`,
+
+  formAndStructureAr: `الشكل: خمسة مقاطع متفاوتة الطول (ستة وسبعة وثمانية وستّة عشر وعشرة). المقطع الرابع — مشهد التطوّع — هو الأطول قاطبةً، وهو ما يحاكي كيف يظلّ ذلك القرارُ الأحمق مهيمناً على ذهن الجنديّ.
+
+نظام القافية: ABABCD CCDCED CCEFCC FF GFAGBHCBHCC IFFCGCDCDD — مضطربٌ، يكثر فيه الـ half-rhyme والـ pararhyme (التقنية التي يُعدّ Owen رائدَها، إذ تتطابق الصوامتُ دون الصوائت، كما في "park / dark" و"hilts / kilts"). هذه القوافي الشبه تامّة تُحاكي جسداً لا يعمل كما ينبغي.
+
+الـ iambic pentameter: الوزن إجمالاً iambic pentameter، لكنّ Owen يكسره باستمرار. وانكساراتُ الإيقاع تحاكي انكسار جسد الجنديّ وحياته.
+
+تركيب الزمن: تتنقّل القصيدة بين الحاضر القاتم (المقطعان الأوّل والخامس) والماضي المُستعاد (المقاطع الثاني والثالث والرابع). هذه البنية نفسُها ضربٌ من الصدمة؛ يظلّ ينجرف إلى ما كان عليه، ثمّ يُجَرّ إلى ما هو عليه الآن.
+
+الـ volta: في القصيدة عدّةُ تحوّلات صغرى. أكبرها في مفتتح المقطع الرابع، حيث تتراجع القصيدة إلى لحظة التطوّع — وفي خاتمة المقطع الخامس، حيث يدخل أخيراً صوتُ الجنديّ ذاته: "How cold and late it is!"
+
+الـ caesura: يستخدم Owen وقفاتٍ ثقيلة في وسط السطر ("Legless, sewn short at elbow.") لتفتيت السطر. هذه الحركة المتصدّعة في البيت تحاكي الحركة المتصدّعة في جسد الجنديّ.
+
+السؤال الختاميّ: ينتهي البيتان الأخيران بسؤالٍ مكرَّر. لا يختم Owen بدرسٍ أخلاقيّ بل بعجزٍ خالص: "Why don\'t they come?" تأبى القصيدة أن تمنحنا جواباً.`,
 }
 
 /* ── Comparison poems ─────────────────────────────────────────────── */

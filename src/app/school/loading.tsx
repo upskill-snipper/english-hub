@@ -1,6 +1,14 @@
+'use client'
+
+import { useT } from '@/lib/i18n/use-t'
+
 export default function Loading() {
+  const t = useT()
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-8">
+      <p className="sr-only" role="status" aria-live="polite">
+        {t('loading.school.label')}
+      </p>
       <div className="h-8 w-56 animate-pulse rounded bg-muted mb-2" />
       <div className="h-4 w-80 animate-pulse rounded bg-muted mb-8" />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">

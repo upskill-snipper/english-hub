@@ -168,6 +168,14 @@ const POEM: PoemData = {
 <p><strong>Political oppression:</strong> References to tyrants, massacres, bulldozers, and rising frontiers evoke authoritarian regimes that destroy cities, erase cultures, and prevent citizens from returning. The poem suggests that while physical places can be destroyed, memories cannot be controlled by those in power.</p>
 <p><strong>Identity and belonging:</strong> The speaker exists between two worlds -- exiled from a homeland they remember with love, and undocumented in a new country where they lack formal identity. Memory becomes the true "passport" and source of selfhood.</p>`,
 
+  contextAr: `<p><strong>Carol Rumens</strong> (مواليد 1944) شاعرة وروائية وناقدة بريطانية. مع إنها هي بنفسها مو émigrée، إلا إنها مهتمّة وايد بسياسة وثقافة شرق أوروبا، خصوصاً تجارب الناس اللي تشرّدوا بسبب الصراعات السياسية.</p>
+<p><strong>المدينة المجهولة:</strong> المدينة في القصيدة <strong>ما لها اسم</strong> عن قصد، عشان القصيدة تخاطب كل شخص تشرّد. Rumens أكّدت إن غياب التفاصيل مقصود. لا تحدّدها على إنها سراييفو أو بيروت أو أي مكان بعينه — العمومية هي بيت القصيد.</p>
+<p><strong>الهجرة والمنفى:</strong> القصيدة تستكشف تجربة الإجبار على ترك الوطن — واقع عاشه ملايين البشر بسبب الحرب والقمع السياسي وتغيّر الأنظمة. بلد المتكلّمة ما تتسمّى عن قصد، وهذا يخلّي القصيدة عالمية مو مرتبطة بصراع واحد بعينه.</p>
+<p><strong>سياق الحرب الباردة:</strong> القصيدة كُتبت سنة 1993، وتتجاوب مع التشريد في حقبة الحرب الباردة، وسقوط جدار برلين (1989)، وتفكّك الاتحاد السوفيتي ويوغوسلافيا. وايد من الناس انفصلوا عن أوطانهم اللي تغيّرت مادياً أو مُحيت سياسياً.</p>
+<p><strong>الحنين مقابل الواقع:</strong> التوتّر الأساسي في القصيدة بين ذاكرة المتكلّمة المثالية والمشمسة عن وطنها، وبين الواقع الحاضر القاسي من حرب وطغيان ودمار. الذاكرة تتحوّل لشكل من أشكال المقاومة ضد المحو السياسي.</p>
+<p><strong>القمع السياسي:</strong> الإشارات للطغاة (tyrants) والمذابح (massacres) والجرّافات (bulldozers) والحدود اللي ترتفع (frontiers) تستحضر أنظمة استبدادية تدمّر المدن وتمحي الثقافات وتمنع المواطنين من الرجوع. القصيدة تلمّح إن الأماكن المادية ممكن تتدمّر، بس الذاكرة ما يقدر أصحاب السلطة يسيطرون عليها.</p>
+<p><strong>الهوية والانتماء:</strong> المتكلّمة تعيش بين عالمين — منفية من وطن تتذكّره بحب، وبدون أوراق رسمية في بلد جديد ما تملك فيه هوية موثّقة. الذاكرة تصير "passport" الحقيقي ومصدر الذات.</p>`,
+
   summary: `The speaker reflects on a country they left as a child, describing memories bathed in an unchanging sunlight that no amount of political violence or personal distance can extinguish.
 
 In the first stanza, the speaker introduces their homeland through the lens of childhood memory. Despite acknowledging that the country may now be at war or under tyrannical rule, their memory remains "sunlight-clear" -- vivid, warm, and permanently imprinted.
@@ -175,6 +183,14 @@ In the first stanza, the speaker introduces their homeland through the lens of c
 The second stanza develops the contrast between the beautiful remembered city and its possible destruction. White streets and graceful slopes give way to massacres and bulldozers. The speaker is told they cannot return, and the city may have been erased, yet the refrain insists: the impression of sunlight endures.
 
 The final stanza is the most defiant. Memory becomes a "passport" granting free access to every corner of the lost city. The city personified takes the speaker dancing. In the new country, the speaker has no official identity, but the authorities cannot penetrate their inner world. The poem closes with the speaker "deporting myself to sunlight" -- a powerful reclaiming of the language of exile, transforming forced removal into a daily, voluntary return to the light of memory.`,
+
+  summaryAr: `المتكلّمة تتذكّر بلد تركتها وهي صغيرة، وتوصف ذكريات مغمورة بشمس ما تتغيّر، ما يقدر يطفيها لا عنف سياسي ولا بعد مكاني.
+
+في المقطع الأول، المتكلّمة تعرّف وطنها من خلال عدسة ذكريات الطفولة. مع إنها تعترف إن البلد يمكن الآن في حرب أو تحت حكم طغيان، ذاكرتها تبقى "sunlight-clear" — حيّة ودافية ومطبوعة بشكل دائم.
+
+المقطع الثاني يطوّر التباين بين المدينة الجميلة المتذكَّرة وبين دمارها المحتمل. الشوارع البيضاء والمنحدرات الرشيقة تتحوّل إلى مذابح وجرّافات. المتكلّمة يقولون لها ما تقدر ترجع، ويمكن المدينة انمحت، بس اللازمة (refrain) تصرّ: انطباع الشمس يدوم.
+
+المقطع الأخير هو الأكثر تحدّياً. الذاكرة تصير "passport" يمنحها حرية الوصول لكل ركن من المدينة المفقودة. المدينة، بالتشخيص، تأخذها ترقص. وفي البلد الجديد، المتكلّمة ما عندها هوية رسمية، بس السلطات ما تقدر تخترق عالمها الداخلي. القصيدة تختم بالمتكلّمة وهي "deporting myself to sunlight" — استرجاع قوي للغة المنفى، يحوّل الإبعاد القسري إلى عودة يومية اختيارية لنور الذاكرة.`,
 
   formAndStructure: `Form: Free verse with no regular rhyme scheme or metre, reflecting the fragmented, displaced nature of the émigrée's experience.
 
@@ -190,54 +206,92 @@ First person: The consistent use of "I" and "my" throughout creates an intimate,
 
 Contrast: The structure consistently juxtaposes the bright, idealised past against the dark, violent present, but always returns to light -- suggesting memory's triumph over political destruction.`,
 
+  formAndStructureAr: `الشكل: free verse بدون نظام قافية ولا وزن منتظم، يعكس الطبيعة المتشظّية والمشرّدة لتجربة الـémigrée.
+
+ثلاث مقاطع (stanzas): القصيدة منظّمة في ثلاث مقاطع كبيرة بأطوال متقاربة. كل مقطع ينتهي بإشارة لـ"sunlight"، ويخلق refrain هيكلي يثبّت القصيدة.
+
+اللازمة (Refrain): كلمة "sunlight" تختم كل مقطع، وتتطوّر من ذاكرة سلبية ("branded by an impression of sunlight") لتحدٍّ فاعل ("deporting myself to sunlight"). هذا التدرّج يعكس تأكيد المتكلّمة المتنامي لهويتها.
+
+Enjambment: الأبيات وايد منها تتواصل بدون توقّف، ويخلق هذا تدفّق ذهني (stream-of-consciousness) يعكس طريقة عمل الذاكرة — غير متوقّعة، ترابطية، صعب تتحكّم فيها.
+
+Caesura: التوقّفات في وسط البيت ("I can't get to now. There may be a massacre") تخلق تحوّلات نبرية مفاجئة، تنقل القارئ بصدمة من الجمال إلى العنف.
+
+ضمير المتكلّم (First person): استخدام "I" و"my" بشكل مستمر يخلق نبرة حميمة وشخصية. ولغة التملّك ("my memory"، "my city") تأكّد على ملكية المتكلّمة لوطنها.
+
+التباين (Contrast): البنية باستمرار تضع الماضي المضيء المثالي قبال الحاضر المظلم العنيف، بس دائماً ترجع للنور — يلمّح بانتصار الذاكرة على الدمار السياسي.`,
+
   keyQuotes: [
     {
       quote: 'There once was a country... I left it as a child',
       analysis:
         'The fairy-tale opening ("There once was") creates a sense of nostalgia and distance, as if the homeland exists only in story. The ellipsis represents a gap in memory or a reluctance to fully confront the past. Leaving "as a child" explains why the memory is so pure and uncomplicated.',
       themes: ['Memory', 'Loss', 'Identity'],
+      analysisAr:
+        'الافتتاحية بصيغة الحكاية ("There once was") تخلق إحساس بالحنين والبعد، وكأن الوطن موجود بس في القصص. والـellipsis تمثّل فجوة في الذاكرة أو تردّد في مواجهة الماضي بالكامل. ومغادرة البلد "as a child" تفسّر ليش الذاكرة طاهرة وبسيطة.',
+      themesAr: ['الذاكرة', 'الخسارة', 'الهوية'],
     },
     {
       quote: 'my memory of it is sunlight-clear',
       analysis:
         'The compound adjective "sunlight-clear" fuses the poem\'s central motif of light with absolute clarity. The memory is presented as transparent and uncorrupted, contrasting with the murky political reality of the present.',
       themes: ['Memory', 'Light imagery', 'Nostalgia'],
+      analysisAr:
+        'الصفة المركّبة "sunlight-clear" تدمج بين موتيف النور المحوري في القصيدة وبين الوضوح المطلق. الذاكرة تُقدَّم شفّافة وما تشوبها شائبة، وتتناقض مع الواقع السياسي الضبابي في الحاضر.',
+      themesAr: ['الذاكرة', 'صور النور', 'الحنين'],
     },
     {
       quote: 'I am branded by an impression of sunlight',
       analysis:
         '"Branded" carries connotations of both ownership (as in cattle branding) and permanent marking (as in a burn). The memory is not gentle -- it is seared into the speaker, suggesting both pain and permanence. This refrain anchors each stanza.',
       themes: ['Memory', 'Identity', 'Power of the past'],
+      analysisAr:
+        'كلمة "branded" فيها إيحاء بالملكية (مثل وسم المواشي) وبالعلامة الدائمة (مثل حرق). الذاكرة مو هاديّة — هي مكويّة على المتكلّمة، وهذا يلمّح بالألم وبالدوام في نفس الوقت. وهذي اللازمة (refrain) تثبّت كل مقطع.',
+      themesAr: ['الذاكرة', 'الهوية', 'قوة الماضي'],
     },
     {
       quote: 'it may be sick with tyrants',
       analysis:
         'Personification of the country as "sick" suggests tyranny is a disease infecting the nation. The tentative "may be" shows the speaker is cut off from current information, relying on speculation rather than knowledge.',
       themes: ['Political oppression', 'Conflict', 'Displacement'],
+      analysisAr:
+        'تشخيص البلد على إنها "sick" يلمّح بإن الطغيان مرض يصيب الأمة. وعبارة "may be" المتردّدة تبيّن إن المتكلّمة مقطوعة عن المعلومات الحالية، تعتمد على التخمين مو على المعرفة.',
+      themesAr: ['القمع السياسي', 'الصراع', 'التشريد'],
     },
     {
       quote: 'frontiers rise between us',
       analysis:
         'Personification of borders as actively "rising" presents political boundaries as aggressive, living barriers. "Between us" implies a personal, almost romantic separation between the speaker and their city.',
       themes: ['Conflict', 'Political oppression', 'Displacement'],
+      analysisAr:
+        'تشخيص الحدود على إنها "rise" بشكل فاعل يقدّم الحواجز السياسية كحواجز عدوانية وحيّة. وعبارة "between us" تلمّح بانفصال شخصي، شبه رومانسي، بين المتكلّمة ومدينتها.',
+      themesAr: ['الصراع', 'القمع السياسي', 'التشريد'],
     },
     {
       quote: 'My memory is a passport',
       analysis:
         "This metaphor is the poem's most powerful image. A passport is a document of identity and freedom of movement -- things the émigrée has been denied. By making memory a passport, the speaker asserts that internal experience transcends political control.",
       themes: ['Memory', 'Identity', 'Power', 'Defiance'],
+      analysisAr:
+        'هذي الاستعارة هي أقوى صورة في القصيدة. الـpassport وثيقة هوية وحرية تنقّل — وهذي الأشياء الـémigrée محرومة منها. لمّا تخلّي المتكلّمة الذاكرة passport، فهي تأكّد إن التجربة الداخلية تتجاوز السيطرة السياسية.',
+      themesAr: ['الذاكرة', 'الهوية', 'السلطة', 'التحدّي'],
     },
     {
       quote: 'My city takes me dancing through the streets',
       analysis:
         'Personification of the city as a dance partner creates an image of joyful intimacy. The city actively welcomes and embraces the speaker, suggesting a reciprocal relationship of love. This happens in dreams, where political restrictions have no power.',
       themes: ['Memory', 'Belonging', 'Joy', 'Personification'],
+      analysisAr:
+        'تشخيص المدينة كشريك رقص يخلق صورة حميمة وفرحة. المدينة بشكل فاعل ترحّب بالمتكلّمة وتحضنها، وهذا يلمّح بعلاقة حب متبادلة. وهذا يصير في الأحلام، لين القيود السياسية ما لها سلطة.',
+      themesAr: ['الذاكرة', 'الانتماء', 'الفرح', 'التشخيص'],
     },
     {
       quote: 'Every morning I am deporting myself to sunlight',
       analysis:
         'The final line subverts the violent language of "deportation" -- normally something done to a person against their will -- into a voluntary, daily act of self-determination. The speaker chooses to return to the light of memory, transforming exile from punishment into liberation.',
       themes: ['Defiance', 'Memory', 'Identity', 'Power'],
+      analysisAr:
+        'البيت الأخير يقلب لغة "deportation" العنيفة — اللي عادة شي يُفرض على الشخص رغماً عنه — إلى فعل اختياري يومي من تقرير المصير. المتكلّمة تختار ترجع لنور الذاكرة، وتحوّل المنفى من عقوبة إلى تحرّر.',
+      themesAr: ['التحدّي', 'الذاكرة', 'الهوية', 'السلطة'],
     },
   ],
 

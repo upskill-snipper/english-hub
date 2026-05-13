@@ -39,6 +39,7 @@ import { Label } from '@/components/ui/label'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -108,9 +109,7 @@ function getWeekLabel(weekKey: string): string {
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })
 }
 
-function computeWeeklyActivity(
-  moduleProgress: ChildProgress['module_progress']
-): WeeklyActivity[] {
+function computeWeeklyActivity(moduleProgress: ChildProgress['module_progress']): WeeklyActivity[] {
   const weekMap = new Map<string, { modules: number; time: number; scores: number[] }>()
 
   // Generate last 8 weeks
@@ -142,9 +141,10 @@ function computeWeeklyActivity(
       label: getWeekLabel(week),
       modulesCompleted: data.modules,
       timeSpentSeconds: data.time,
-      avgScore: data.scores.length > 0
-        ? Math.round(data.scores.reduce((a, b) => a + b, 0) / data.scores.length)
-        : null,
+      avgScore:
+        data.scores.length > 0
+          ? Math.round(data.scores.reduce((a, b) => a + b, 0) / data.scores.length)
+          : null,
     }))
 }
 
@@ -220,7 +220,8 @@ function LinkChildForm({ onLinked }: { onLinked: () => void }) {
           Link Your Child&rsquo;s Account
         </CardTitle>
         <CardDescription>
-          Enter your child&rsquo;s email address or invite code to connect your accounts and view their progress.
+          Enter your child&rsquo;s email address or invite code to connect your accounts and view
+          their progress.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -260,7 +261,9 @@ function LinkChildForm({ onLinked }: { onLinked: () => void }) {
           {linkSuccess && (
             <Alert>
               <CheckCircle className="h-4 w-4 text-primary" />
-              <AlertDescription>Successfully linked! A confirmation has been sent to your child&rsquo;s account.</AlertDescription>
+              <AlertDescription>
+                Successfully linked! A confirmation has been sent to your child&rsquo;s account.
+              </AlertDescription>
             </Alert>
           )}
 
@@ -277,6 +280,7 @@ function LinkChildForm({ onLinked }: { onLinked: () => void }) {
 // ── Main Component ───────────────────────────────────────────────────────────
 
 export default function ParentDashboardPage() {
+  const t = useT()
   const { user, profile, isLoading: authLoading } = useAuthStore()
   const [allCourses, setAllCourses] = useState<CourseData[]>([])
   const [childProgress, setChildProgress] = useState<ChildProgress | null>(null)
@@ -287,7 +291,7 @@ export default function ParentDashboardPage() {
 
   const courseMap = useMemo(
     () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
-    [allCourses]
+    [allCourses],
   )
 
   // Load course data dynamically
@@ -340,12 +344,12 @@ export default function ParentDashboardPage() {
 
   const completedModulesCount = useMemo(
     () => childProgress?.module_progress.filter((mp) => mp.completed).length ?? 0,
-    [childProgress]
+    [childProgress],
   )
 
   const totalTimeSeconds = useMemo(
     () => childProgress?.module_progress.reduce((sum, mp) => sum + mp.time_spent_seconds, 0) ?? 0,
-    [childProgress]
+    [childProgress],
   )
 
   const thisWeekTimeSeconds = useMemo(() => {
@@ -371,7 +375,7 @@ export default function ParentDashboardPage() {
       .filter((mp) => mp.completed && mp.completed_at)
       .map((mp) => new Date(mp.completed_at!).toDateString())
     const uniqueDates = Array.from(new Set(completedDates)).sort(
-      (a, b) => new Date(b).getTime() - new Date(a).getTime()
+      (a, b) => new Date(b).getTime() - new Date(a).getTime(),
     )
 
     let count = 0
@@ -398,33 +402,34 @@ export default function ParentDashboardPage() {
   }, [childProgress])
 
   const weeklyActivity = useMemo(
-    () => childProgress ? computeWeeklyActivity(childProgress.module_progress) : [],
-    [childProgress]
+    () => (childProgress ? computeWeeklyActivity(childProgress.module_progress) : []),
+    [childProgress],
   )
 
   const courseProgressList = useMemo(() => {
     if (!childProgress) return []
-    return childProgress.enrolments.map((e) => {
-      const course = courseMap.get(e.course_id)
-      if (!course) return null
-      const totalModules = course.moduleList.length
-      const completed = childProgress.module_progress.filter(
-        (mp) => mp.course_id === e.course_id && mp.completed
-      ).length
-      const scores = childProgress.module_progress
-        .filter((mp) => mp.course_id === e.course_id && mp.quiz_score !== null)
-        .map((mp) => mp.quiz_score!)
-      const avgScore = scores.length > 0
-        ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
-        : null
-      return {
-        course,
-        totalModules,
-        completedModules: completed,
-        progress: totalModules > 0 ? (completed / totalModules) * 100 : 0,
-        avgScore,
-      }
-    }).filter(Boolean) as Array<{
+    return childProgress.enrolments
+      .map((e) => {
+        const course = courseMap.get(e.course_id)
+        if (!course) return null
+        const totalModules = course.moduleList.length
+        const completed = childProgress.module_progress.filter(
+          (mp) => mp.course_id === e.course_id && mp.completed,
+        ).length
+        const scores = childProgress.module_progress
+          .filter((mp) => mp.course_id === e.course_id && mp.quiz_score !== null)
+          .map((mp) => mp.quiz_score!)
+        const avgScore =
+          scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null
+        return {
+          course,
+          totalModules,
+          completedModules: completed,
+          progress: totalModules > 0 ? (completed / totalModules) * 100 : 0,
+          avgScore,
+        }
+      })
+      .filter(Boolean) as Array<{
       course: CourseData
       totalModules: number
       completedModules: number
@@ -440,7 +445,11 @@ export default function ParentDashboardPage() {
       if (mp.quiz_score === null) continue
       const course = courseMap.get(mp.course_id)
       if (!course) continue
-      const entry = courseScores.get(mp.course_id) ?? { total: 0, count: 0, courseName: course.title }
+      const entry = courseScores.get(mp.course_id) ?? {
+        total: 0,
+        count: 0,
+        courseName: course.title,
+      }
       entry.total += mp.quiz_score
       entry.count++
       courseScores.set(mp.course_id, entry)
@@ -467,7 +476,8 @@ export default function ParentDashboardPage() {
 
   const examReadiness = useMemo(() => {
     if (!childProgress || courseProgressList.length === 0) return 0
-    const avgCompletion = courseProgressList.reduce((sum, cp) => sum + cp.progress, 0) / courseProgressList.length
+    const avgCompletion =
+      courseProgressList.reduce((sum, cp) => sum + cp.progress, 0) / courseProgressList.length
     const scoreComponent = averageScore ?? 0
     // Weighted: 60% completion, 40% average score
     return Math.round(avgCompletion * 0.6 + scoreComponent * 0.4)
@@ -483,12 +493,11 @@ export default function ParentDashboardPage() {
     const recentScores = childProgress.module_progress
       .filter(
         (mp) =>
-          mp.quiz_score !== null &&
-          mp.completed_at &&
-          new Date(mp.completed_at) >= fourWeeksAgo
+          mp.quiz_score !== null && mp.completed_at && new Date(mp.completed_at) >= fourWeeksAgo,
       )
       .map((mp) => mp.quiz_score!)
-    if (recentScores.length === 0) return averageScore !== null ? percentageToGCSEGrade(averageScore) : null
+    if (recentScores.length === 0)
+      return averageScore !== null ? percentageToGCSEGrade(averageScore) : null
     const recentAvg = Math.round(recentScores.reduce((a, b) => a + b, 0) / recentScores.length)
     return percentageToGCSEGrade(recentAvg)
   }, [childProgress, averageScore])
@@ -513,7 +522,12 @@ export default function ParentDashboardPage() {
 
   async function handleUnlink() {
     if (!childProgress?.child_id) return
-    if (!confirm('Are you sure you want to unlink your child\'s account? You will lose access to their progress data.')) return
+    if (
+      !confirm(
+        "Are you sure you want to unlink your child's account? You will lose access to their progress data.",
+      )
+    )
+      return
     setUnlinking(true)
     try {
       const res = await fetch('/api/parent/link-child', {
@@ -564,18 +578,15 @@ export default function ParentDashboardPage() {
     <TooltipProvider>
       <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-
           {/* ── Header ──────────────────────────────────────────── */}
           <div className="mb-6 animate-fade-in">
             <div className="flex items-center gap-3 mb-1">
               <BarChart3 className="h-6 w-6 text-primary" />
               <h1 className="text-2xl font-bold tracking-tight sm:text-3xl text-foreground">
-                Parent Dashboard
+                {t('dashboard.parent.h1')}
               </h1>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Track your child&rsquo;s learning progress and exam readiness.
-            </p>
+            <p className="text-sm text-muted-foreground">{t('dashboard.parent.intro')}</p>
           </div>
 
           {/* ── Error Banner ──────────────────────────────────── */}
@@ -615,9 +626,12 @@ export default function ParentDashboardPage() {
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mb-4">
                     <UserPlus className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="mb-1 text-lg font-semibold text-foreground">No child account linked</h3>
+                  <h3 className="mb-1 text-lg font-semibold text-foreground">
+                    No child account linked
+                  </h3>
                   <p className="mb-6 text-sm text-muted-foreground max-w-md">
-                    Link your child&rsquo;s account to start seeing their learning progress, quiz scores, and exam readiness.
+                    Link your child&rsquo;s account to start seeing their learning progress, quiz
+                    scores, and exam readiness.
                   </p>
                 </CardContent>
               </Card>
@@ -635,7 +649,9 @@ export default function ParentDashboardPage() {
                     <AvatarFallback>{childInitials}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="text-sm font-semibold text-foreground">{childProgress.child_name}</p>
+                    <p className="text-sm font-semibold text-foreground">
+                      {childProgress.child_name}
+                    </p>
                     <p className="text-xs text-muted-foreground">{childProgress.child_email}</p>
                   </div>
                   <Badge variant="outline" className="ml-2">
@@ -666,14 +682,16 @@ export default function ParentDashboardPage() {
                             <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
                               Working At Grade
                             </p>
-                            <div className={cn(
-                              'inline-flex items-center justify-center h-14 w-14 rounded-xl border-2 text-2xl font-extrabold',
-                              workingAtGrade >= 7
-                                ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
-                                : workingAtGrade >= 5
-                                ? 'border-amber-500/30 bg-amber-500/10 text-clay-600'
-                                : 'border-red-500/30 bg-red-500/10 text-red-400'
-                            )}>
+                            <div
+                              className={cn(
+                                'inline-flex items-center justify-center h-14 w-14 rounded-xl border-2 text-2xl font-extrabold',
+                                workingAtGrade >= 7
+                                  ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
+                                  : workingAtGrade >= 5
+                                    ? 'border-amber-500/30 bg-amber-500/10 text-clay-600'
+                                    : 'border-red-500/30 bg-red-500/10 text-red-400',
+                              )}
+                            >
                               {workingAtGrade}
                             </div>
                           </div>
@@ -688,14 +706,16 @@ export default function ParentDashboardPage() {
                             <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
                               Predicted Grade
                             </p>
-                            <div className={cn(
-                              'inline-flex items-center justify-center h-14 w-14 rounded-xl border-2 text-2xl font-extrabold',
-                              predictedGrade >= 7
-                                ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
-                                : predictedGrade >= 5
-                                ? 'border-amber-500/30 bg-amber-500/10 text-clay-600'
-                                : 'border-red-500/30 bg-red-500/10 text-red-400'
-                            )}>
+                            <div
+                              className={cn(
+                                'inline-flex items-center justify-center h-14 w-14 rounded-xl border-2 text-2xl font-extrabold',
+                                predictedGrade >= 7
+                                  ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
+                                  : predictedGrade >= 5
+                                    ? 'border-amber-500/30 bg-amber-500/10 text-clay-600'
+                                    : 'border-red-500/30 bg-red-500/10 text-red-400',
+                              )}
+                            >
                               {predictedGrade}
                             </div>
                           </div>
@@ -715,7 +735,8 @@ export default function ParentDashboardPage() {
                       )}
                     </div>
                     <p className="text-center text-xs text-muted-foreground mt-3">
-                      GCSE grades 1&ndash;9 &middot; Based on {childFirstName}&rsquo;s recent performance and progress trajectory
+                      GCSE grades 1&ndash;9 &middot; Based on {childFirstName}&rsquo;s recent
+                      performance and progress trajectory
                     </p>
                   </CardContent>
                 </Card>
@@ -777,37 +798,45 @@ export default function ParentDashboardPage() {
                     <div className="relative flex h-24 w-24 shrink-0 items-center justify-center">
                       <svg className="h-24 w-24 -rotate-90" viewBox="0 0 100 100">
                         <circle
-                          cx="50" cy="50" r="42"
+                          cx="50"
+                          cy="50"
+                          r="42"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="8"
                           className="text-muted/30"
                         />
                         <circle
-                          cx="50" cy="50" r="42"
+                          cx="50"
+                          cy="50"
+                          r="42"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="8"
                           strokeLinecap="round"
                           strokeDasharray={`${examReadiness * 2.64} 264`}
                           className={cn(
-                            examReadiness >= 70 ? 'text-emerald-400' :
-                            examReadiness >= 40 ? 'text-clay-600' :
-                            'text-red-400'
+                            examReadiness >= 70
+                              ? 'text-emerald-400'
+                              : examReadiness >= 40
+                                ? 'text-clay-600'
+                                : 'text-red-400',
                           )}
                         />
                       </svg>
-                      <span className="absolute text-2xl font-bold text-foreground">{examReadiness}</span>
+                      <span className="absolute text-2xl font-bold text-foreground">
+                        {examReadiness}
+                      </span>
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">
                         {examReadiness >= 80
                           ? `${childFirstName} is well-prepared. Keep up the great work!`
                           : examReadiness >= 60
-                          ? `${childFirstName} is making good progress. A few more sessions will boost their readiness.`
-                          : examReadiness >= 40
-                          ? `${childFirstName} is getting there, but more practice is needed in key areas.`
-                          : `${childFirstName} needs more study time to build exam confidence. Encourage regular sessions.`}
+                            ? `${childFirstName} is making good progress. A few more sessions will boost their readiness.`
+                            : examReadiness >= 40
+                              ? `${childFirstName} is getting there, but more practice is needed in key areas.`
+                              : `${childFirstName} needs more study time to build exam confidence. Encourage regular sessions.`}
                       </p>
                     </div>
                   </div>
@@ -831,7 +860,7 @@ export default function ParentDashboardPage() {
                           <div
                             className={cn(
                               'w-full rounded-t-md transition-all duration-300',
-                              w.modulesCompleted > 0 ? 'bg-primary' : 'bg-muted/50'
+                              w.modulesCompleted > 0 ? 'bg-primary' : 'bg-muted/50',
                             )}
                             style={{
                               height: `${Math.max(4, (w.modulesCompleted / maxModules) * 120)}px`,
@@ -840,7 +869,10 @@ export default function ParentDashboardPage() {
                           <span className="text-[10px] text-muted-foreground">{w.label}</span>
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>{w.modulesCompleted} modules &middot; {formatDuration(w.timeSpentSeconds)}</p>
+                          <p>
+                            {w.modulesCompleted} modules &middot;{' '}
+                            {formatDuration(w.timeSpentSeconds)}
+                          </p>
                           {w.avgScore !== null && <p>Avg score: {w.avgScore}%</p>}
                         </TooltipContent>
                       </Tooltip>
@@ -856,7 +888,8 @@ export default function ParentDashboardPage() {
                   <CardHeader>
                     <CardTitle>Course Progress</CardTitle>
                     <CardDescription>
-                      {courseProgressList.length} course{courseProgressList.length !== 1 ? 's' : ''} enrolled
+                      {courseProgressList.length} course{courseProgressList.length !== 1 ? 's' : ''}{' '}
+                      enrolled
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -927,7 +960,9 @@ export default function ParentDashboardPage() {
                             <div className="flex items-center gap-3">
                               <TrendingDown className="h-4 w-4 text-clay-600 shrink-0" />
                               <div>
-                                <p className="text-sm font-medium text-foreground">{area.courseName}</p>
+                                <p className="text-sm font-medium text-foreground">
+                                  {area.courseName}
+                                </p>
                                 <p className="text-xs text-muted-foreground">
                                   {childFirstName} needs more practice here
                                 </p>
@@ -948,7 +983,9 @@ export default function ParentDashboardPage() {
               <Card className="mb-6 animate-fade-in">
                 <CardHeader>
                   <CardTitle>Recent Activity</CardTitle>
-                  <CardDescription>{childFirstName}&rsquo;s latest completed modules</CardDescription>
+                  <CardDescription>
+                    {childFirstName}&rsquo;s latest completed modules
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   {recentActivity.length === 0 ? (
@@ -961,9 +998,7 @@ export default function ParentDashboardPage() {
                       <div className="space-y-0">
                         {recentActivity.map((activity, index) => {
                           const course = courseMap.get(activity.course_id)
-                          const mod = course?.moduleList.find(
-                            (m) => m.id === activity.module_id
-                          )
+                          const mod = course?.moduleList.find((m) => m.id === activity.module_id)
                           return (
                             <div key={activity.id}>
                               <div className="flex items-center gap-3 py-3">

@@ -74,7 +74,7 @@ const sheDweltAmongTheUntroddenWays: PoemData = {
         },
         {
           type: 'Key quote',
-          note: 'The poem\'s most famous image. Lucy\'s entire being -- delicate, modest, easy to overlook -- is captured in this single metaphor.',
+          note: "The poem's most famous image. Lucy's entire being -- delicate, modest, easy to overlook -- is captured in this single metaphor.",
           color: '#f59e0b',
         },
       ],
@@ -185,6 +185,20 @@ const sheDweltAmongTheUntroddenWays: PoemData = {
     <p>The poem is a short lyric in ballad form, drawing on traditional folk songs about lost love. Wordsworth deliberately uses simple language and stanza form to make the poem feel timeless and universal -- like a song everyone has always known.</p>
   `,
 
+  contextAr: `
+    <h3>William Wordsworth (1770–1850)</h3>
+    <p>William Wordsworth واحد من الآباء المؤسّسين للرومانسية الإنجليزية. هو وColeridge كتبوا مع بعض <em>Lyrical Ballads</em> (1798)، الكتاب اللي ساعد في انطلاق الحركة الرومانسية. كان يؤمن إن الشعر لازم يُكتب بـ"اللغة الحقيقية للناس"، وإنه لازم يتكلّم عن حيوات الناس العاديين، والطبيعة، والإحساس الشخصي العميق.</p>
+
+    <h3>قصائد Lucy</h3>
+    <p>"She Dwelt Among the Untrodden Ways" وحدة من خمس قصائد قصيرة معروفة بـ<strong>"Lucy Poems"</strong>، كلّها مكتوبة بين 1798 و1801. تحكي عن بنت اسمها Lucy تعيش في الريف، وتموت وهي صغيرة. الباحثين لين الحين يختلفون: هل Lucy حقيقية، أو متخيّلة، أو مبنية على أخته Dorothy؟ القصائد مكتوبة وWordsworth كان في زيارة لألمانيا، بعيد عن إنجلترا، وهذا يمكن يفسّر نبرتها — حنين من مسافة بعيدة.</p>
+
+    <h3>المثال الرومانسي: قيمة الناس المغمورين</h3>
+    <p>القصيدة تعكس قيمة محورية في الرومانسية: الإيمان إن حيوات الناس العاديين والمخفيّين تستاهل بنفس قدر حيوات المشاهير. Wordsworth يختار بشكل مقصود إنسانة الدنيا ما لاحظتها ("none to praise / And very few to love") عشان يقول إن كل حياة بشرية تحمل قيمة عميقة. هالفكرة كانت راديكالية في زمن كان الشعر فيه يحتفي بالملوك والجنود والمفكّرين الكبار.</p>
+
+    <h3>الشكل والتقليد الغنائي</h3>
+    <p>القصيدة قصيدة غنائية قصيرة في قالب الـballad، مستفيدة من الأغاني الشعبية التقليدية عن الحب المفقود. Wordsworth يستخدم عن قصد لغة بسيطة وشكل مقطعي بسيط عشان يخلّي القصيدة تحسّ بها خالدة عامّة — مثل أغنية كل الناس يعرفونها من الأزل.</p>
+  `,
+
   summary: `Stanza 1: The speaker introduces a woman who lived in a remote part of the English countryside ("the springs of Dove"). She was so isolated that there was almost no one to praise her, and only a few people loved her. Wordsworth establishes her obscurity as the central fact of her life.
 
 Stanza 2: The speaker gives two contradictory images of her. First, she is "a violet by a mossy stone" -- a small, easily overlooked wild flower. Then she is "fair as a star, when only one / Is shining in the sky" -- the brightest, only thing in an empty universe. The two images capture both her humility (to the world) and her preciousness (to those who loved her).
@@ -192,6 +206,14 @@ Stanza 2: The speaker gives two contradictory images of her. First, she is "a vi
 Stanza 3: The poem reveals that she has died: "When Lucy ceased to be." Her name is given for the first time -- Lucy. The poem ends with the speaker breaking down: "But she is in her grave, and, oh, / The difference to me!" After the careful restraint of the previous stanzas, the final lines express all the grief.
 
 Overall meaning: The poem is a quiet elegy for an obscure woman whose death has devastated the speaker. Wordsworth\'s argument is that ordinary lives matter -- that someone the world barely noticed can be the most important person in another person\'s world.`,
+
+  summaryAr: `المقطع الأول: المتكلّم يقدّم لنا بنت كانت تعيش في منطقة نائية في الريف الإنجليزي ("the springs of Dove"). كانت معزولة لدرجة إنه ما كان فيه ولا أحد تقريباً يمدحها، ومحبّينها معدودين على الأصابع. Wordsworth يأسّس عدم شهرتها كحقيقة محورية في حياتها.
+
+المقطع الثاني: المتكلّم يعطينا صورتين متناقضتين عنها. أول وحدة: هي "a violet by a mossy stone" — زهرة برّية صغيرة سهل ما أحد يلاحظها. وثاني وحدة: "fair as a star, when only one / Is shining in the sky" — النجمة الوحيدة في سماء خاوية، اللي تملأ المشهد كلّه. الصورتين تلتقطون تواضعها (بالنسبة للعالم) وغلاوتها (عند اللي يحبّونها).
+
+المقطع الثالث: القصيدة تكشف إنها ماتت: "When Lucy ceased to be." اسمها يطلع لأول مرة — Lucy. القصيدة تنتهي والمتكلّم ينهار: "But she is in her grave, and, oh, / The difference to me!" بعد الكبح الحذر في المقاطع السابقة، الأبيات الأخيرة تفجّر كل الحزن.
+
+المعنى العام: القصيدة مرثية هادية لبنت مغمورة موتها هدّ المتكلّم. الفكرة عند Wordsworth إن حيوات الناس العاديين تستاهل — وإن إنسانة الدنيا تقريباً ما لاحظتها يقدر يكون أهم إنسان في عالم إنسان ثاني.`,
 
   formAndStructure: `Form: Three stanzas of four lines each (quatrains), with an alternating rhyme scheme (ABAB). The form is borrowed from the traditional folk ballad -- simple, song-like, easy to remember. This deliberately humble form reflects the humble subject.
 
@@ -205,36 +227,63 @@ Restraint and release: Most of the poem is restrained, almost matter-of-fact. Th
 
 Simple diction: Wordsworth deliberately uses plain, everyday words. There are no learned references, no Latinate vocabulary -- just simple English. This simplicity makes the loss feel real and universal.`,
 
+  formAndStructureAr: `Form (الشكل): ثلاث مقاطع، كل مقطع أربعة أبيات (quatrains)، بنظام قافية متناوب (ABAB). الشكل مستعار من الـfolk ballad التقليدية — بسيط، أشبه بأغنية، سهل يَحفظ. هالشكل المتواضع عن قصد يعكس بساطة الموضوع.
+
+Metre (الوزن): القصيدة تتناوب بين iambic tetrameter (أربع أقدام) وiambic trimeter (ثلاث أقدام). هذا هو الـballad metre الكلاسيكي، ويعطي القصيدة إيقاع لطيف هادي أشبه بالأغنية.
+
+البنية الثلاثية: كل مقطع له وظيفة. المقطع الأول يقدّم Lucy وخمولها عن أنظار الناس. المقطع الثاني يستخدم استعارتين (violet وstar) عشان يلتقط طبيعتها المزدوجة. المقطع الثالث يكشف موتها وحزن المتكلّم.
+
+Volta (نقطة التحوّل): التحوّل يصير في آخر بيتين: "But she is in her grave, and, oh, / The difference to me!" بعد الوصف الهادي في المقطعين الأول والثاني، المتكلّم أخيراً يفسح المجال لمشاعره تطلع.
+
+الكبح والإفراج (restraint and release): معظم القصيدة مكبوحة، شبه واقعية. الإحساس مكبوت. بس في النهاية، مع كلمة "oh"، حزن المتكلّم أخيراً ينفلت. هالانفجار المتراكم هو اللي يعطي القصيدة قوّتها.
+
+اللغة البسيطة (simple diction): Wordsworth يستخدم بشكل مقصود كلمات يومية بسيطة. ما فيه إشارات علمية، ولا مفردات لاتينية معقّدة — إنجليزي بسيط فقط. هالبساطة تخلّي الفقد يحسّ به حقيقي وعام.`,
+
   keyQuotes: [
     {
       quote: 'A Maid whom there were none to praise / And very few to love',
       analysis:
         'The bleak fact at the heart of the poem: the world barely noticed her. "None to praise" is absolute -- no one celebrated her at all. "Very few to love" is the gentlest of mitigations. The understatement makes her obscurity feel even more poignant.',
       themes: ['Obscurity', 'Hidden value', 'Loneliness'],
+      analysisAr:
+        'الحقيقة الكئيبة في قلب القصيدة: العالم بالكاد لاحظها. "None to praise" مطلقة — ولا أحد احتفى بها. و"very few to love" أرق تخفيف ممكن. الـunderstatement يخلّي خمولها يحسّ به أكثر إيلاماً.',
+      themesAr: ['الخمول عن أنظار الناس', 'القيمة المخفية', 'الوحدة'],
     },
     {
       quote: 'A violet by a mossy stone / Half hidden from the eye!',
       analysis:
-        'The poem\'s most famous metaphor. A violet is small, modest, and easily missed -- particularly when half-hidden behind a stone. Wordsworth captures Lucy\'s entire character in this image: delicate, beautiful, but invisible to anyone who is not looking carefully. The exclamation mark expresses surprise and tenderness at the discovery.',
+        "The poem's most famous metaphor. A violet is small, modest, and easily missed -- particularly when half-hidden behind a stone. Wordsworth captures Lucy's entire character in this image: delicate, beautiful, but invisible to anyone who is not looking carefully. The exclamation mark expresses surprise and tenderness at the discovery.",
       themes: ['Hidden beauty', 'Nature imagery', 'Modesty'],
+      analysisAr:
+        'أشهر استعارة في القصيدة. زهرة الـviolet صغيرة، متواضعة، سهل ما يلاحظها أحد — خصوصاً وهي مدفونة نص دفنها يم حجر. Wordsworth يلتقط شخصية Lucy كلّها في هالصورة: رقيقة، حلوة، بس مخفية عن أيّ أحد ما يدقّق بنظره. وعلامة التعجّب توحي بالدهشة والحنان من اكتشافها.',
+      themesAr: ['الجمال المخفي', 'صور الطبيعة', 'التواضع'],
     },
     {
       quote: 'Fair as a star, when only one / Is shining in the sky',
       analysis:
         'The second metaphor reverses the first. Now Lucy is not small but vast -- she fills the entire sky. The paradox is the heart of the poem: to the world she was tiny, but to those who loved her she was everything. The "only one" is crucial: when no other star is shining, the single star becomes the universe.',
       themes: ['Uniqueness', 'Devotion', 'Subjective value'],
+      analysisAr:
+        'الاستعارة الثانية تقلب الأولى. الحين Lucy مو صغيرة بل شاسعة — تملأ السما كلّها. والـparadox هو جوهر القصيدة: بالنسبة للعالم كانت ضئيلة، بس عند اللي يحبّونها كانت كل شي. عبارة "only one" مفتاحية: لمّا ما فيه نجمة ثانية تشعّ، النجمة الوحيدة تصير الكون كلّه.',
+      themesAr: ['التفرّد', 'التعلّق العميق', 'القيمة الذاتية'],
     },
     {
       quote: 'She lived unknown, and few could know / When Lucy ceased to be',
       analysis:
         'Her death is given the gentlest possible euphemism: "ceased to be". She did not violently die -- she simply stopped existing. The fact that "few could know" she had died compounds the tragedy: even her death was unrecorded by the world. Her name, finally revealed here, takes on a quiet weight.',
       themes: ['Death', 'Obscurity', 'Quiet tragedy'],
+      analysisAr:
+        'موتها يوصف بأرقّ euphemism ممكن: "ceased to be". ما ماتت بعنف — بس ببساطة توقّفت عن الوجود. وحقيقة إن "few could know" إنها ماتت تضاعف المأساة: حتى موتها ما سجّله العالم. واسمها — اللي يطلع لأول مرة هني — يحمل ثقل هادي.',
+      themesAr: ['الموت', 'الخمول', 'المأساة الصامتة'],
     },
     {
       quote: 'But she is in her grave, and, oh, / The difference to me!',
       analysis:
         'After eleven lines of restraint, the speaker finally breaks down. The single interjection "oh" is the emotional climax of the poem. "The difference to me" -- the world is unchanged by her death, but for him, everything has changed. The contrast between the simplicity of the words and the weight of feeling makes this one of the most quietly devastating endings in English poetry.',
       themes: ['Grief', 'Loss', 'Subjective experience'],
+      analysisAr:
+        'بعد إحدى عشرة بيت من الكبح، المتكلّم أخيراً ينهار. كلمة "oh" الوحيدة هي ذروة الإحساس في القصيدة. و"The difference to me" — العالم ما تغيّر بموتها، بس بالنسبة له، كل شي تغيّر. التضاد بين بساطة الكلمات وثقل المشاعر يخلّي هالخاتمة من أكثر الخواتم تدميراً بهدوء في الشعر الإنجليزي.',
+      themesAr: ['الحزن', 'الفقد', 'التجربة الذاتية'],
     },
   ],
 
@@ -243,15 +292,19 @@ Simple diction: Wordsworth deliberately uses plain, everyday words. There are no
       device: 'Metaphor',
       example: 'A violet by a mossy stone / Half hidden from the eye',
       effect:
-        'Lucy is compared to a small, modest wild flower partly hidden behind a stone. The metaphor captures her entire being: delicate, beautiful, but invisible to anyone not paying attention. It is the poem\'s most famous image.',
+        "Lucy is compared to a small, modest wild flower partly hidden behind a stone. The metaphor captures her entire being: delicate, beautiful, but invisible to anyone not paying attention. It is the poem's most famous image.",
       lineRef: 4,
+      effectAr:
+        'Lucy مشبّهة بزهرة برّية صغيرة متواضعة، نصّها مدفون يم حجر. الـmetaphor يلتقط كيانها كلّه: رقيقة، حلوة، بس مخفية عن أي أحد ما ينتبه. هذي أشهر صورة في القصيدة.',
     },
     {
       device: 'Simile',
       example: 'Fair as a star, when only one / Is shining in the sky',
       effect:
-        'Lucy is compared to the only star in the sky -- bright, lonely, and completely dominating the speaker\'s view. The simile captures her uniqueness to those who loved her: in their universe, she was the only light.',
+        "Lucy is compared to the only star in the sky -- bright, lonely, and completely dominating the speaker's view. The simile captures her uniqueness to those who loved her: in their universe, she was the only light.",
       lineRef: 6,
+      effectAr:
+        'Lucy مشبّهة بالنجمة الوحيدة في السما — مضيّة، وحيدة، تسيطر على مشهد المتكلّم كلّه. الـsimile يلتقط تفرّدها عند اللي يحبّونها: في كونهم، كانت هي النور الوحيد.',
     },
     {
       device: 'Juxtaposition',
@@ -259,6 +312,8 @@ Simple diction: Wordsworth deliberately uses plain, everyday words. There are no
       effect:
         'The two main metaphors of stanza 2 are deliberately contradictory. Lucy is both tiny (a hidden flower) and immense (the only star). Wordsworth uses the contradiction to capture how the same person can be insignificant to the world and everything to one person.',
       lineRef: 4,
+      effectAr:
+        'الاستعارتان الرئيسيتان في المقطع الثاني متناقضتين عن قصد. Lucy ضئيلة (زهرة مخفية) وضخمة (النجمة الوحيدة) في نفس الوقت. Wordsworth يستخدم التناقض عشان يلتقط كيف يقدر نفس الشخص يكون لا شي بالنسبة للعالم وكل شي بالنسبة لشخص واحد.',
     },
     {
       device: 'Caesura',
@@ -266,6 +321,8 @@ Simple diction: Wordsworth deliberately uses plain, everyday words. There are no
       effect:
         'The commas around "oh" create a stuttering pause that mimics the speaker\'s catching breath. Grammatically, the line is broken; emotionally, the speaker is breaking down.',
       lineRef: 10,
+      effectAr:
+        'الفواصل اللي تحوط كلمة "oh" تخلق توقّف متلجلج، يحاكي شهقة المتكلّم. نحوياً، البيت مكسّر؛ عاطفياً، المتكلّم ينهار.',
     },
     {
       device: 'Euphemism',
@@ -273,6 +330,8 @@ Simple diction: Wordsworth deliberately uses plain, everyday words. There are no
       effect:
         'Her death is described gently and indirectly. Wordsworth avoids harsh words like "died" or "killed" -- she just "ceased to be". The euphemism makes her death feel quiet and unobtrusive, like the rest of her life.',
       lineRef: 9,
+      effectAr:
+        'موتها يوصف بهدوء وبشكل غير مباشر. Wordsworth يتجنّب كلمات قاسية مثل "died" أو "killed" — هي بس "ceased to be". الـeuphemism يخلّي موتها يحسّ به هادي وغير ملفت، مثل بقية حياتها.',
     },
     {
       device: 'Understatement',
@@ -280,6 +339,8 @@ Simple diction: Wordsworth deliberately uses plain, everyday words. There are no
       effect:
         'After all the restraint, the speaker simply says her death has made "the difference" to him. He does not say his world has shattered; he just says she is the difference. The understatement is more powerful than any wail of grief could be.',
       lineRef: 11,
+      effectAr:
+        'بعد كل الكبح، المتكلّم بكل بساطة يقول إن موتها سوّى له "the difference". ما يقول إن عالمه تحطّم؛ بس يقول إنها الفرق. الـunderstatement أقوى من أي صراخ حزن ممكن يطلع.',
     },
     {
       device: 'Plain diction',
@@ -287,6 +348,8 @@ Simple diction: Wordsworth deliberately uses plain, everyday words. There are no
       effect:
         'Wordsworth uses simple, ordinary language throughout -- no Latinate vocabulary, no learned references. This plainness reflects Lucy\'s humble life and Wordsworth\'s belief that poetry should be written in "the real language of men".',
       lineRef: 0,
+      effectAr:
+        'Wordsworth يستخدم لغة بسيطة يومية طول القصيدة — بدون مفردات لاتينية، بدون إشارات علمية. هالبساطة تعكس حياة Lucy المتواضعة، وقناعة Wordsworth إن الشعر لازم يُكتب بـ"اللغة الحقيقية للناس".',
     },
   ],
 }
@@ -297,28 +360,204 @@ const comparisons = [
     poet: 'Love and Relationships cluster',
     href: '/revision/poetry/ocr/love-and-relationships',
     reason:
-      'See the full OCR Love and Relationships anthology for more poems that pair well with Wordsworth\'s quiet lament for Lucy.',
+      "See the full OCR Love and Relationships anthology for more poems that pair well with Wordsworth's quiet lament for Lucy.",
     themes: ['Loss', 'Love', 'Wordsworth'],
   },
 ]
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'sd-1', question: 'What is the poem about?', type: 'multiple-choice', options: ['A famous woman', 'A simple, unknown woman (Lucy) who lived and died in obscurity, mourned only by the speaker', 'A queen', 'A journey'], correctIndex: 1, explanation: 'Wordsworth mourns Lucy — a woman who lived a simple, solitary life by the River Dove, unknown to the wider world. Her death goes unnoticed by all except the speaker.', topic: 'Meaning', difficulty: 'foundation' },
-  { id: 'sd-2', question: 'What does "A violet by a mossy stone / Half hidden from the eye" suggest?', type: 'multiple-choice', options: ['She grows flowers', 'Lucy is compared to a modest, hidden flower — beautiful but unnoticed by the world', 'She is a gardener', 'Flowers are important'], correctIndex: 1, explanation: 'The violet simile presents Lucy as naturally beautiful but modest and hidden. She does not seek attention — her beauty exists quietly, like a flower half-concealed by moss.', topic: 'Language', difficulty: 'foundation' },
-  { id: 'sd-3', question: 'What form does the poem use?', type: 'multiple-choice', options: ['A sonnet', 'Three quatrains with ABAB rhyme — a ballad-like simplicity matching Lucy\'s simplicity', 'Free verse', 'Blank verse'], correctIndex: 1, explanation: 'Three short quatrains with ABAB rhyme. The extreme simplicity of form matches Lucy\'s simple, unassuming life.', topic: 'Structure', difficulty: 'foundation' },
-  { id: 'sd-4', question: 'What is the effect of the final stanza?', type: 'multiple-choice', options: ['It is happy', 'The blunt, simple statement "But she is in her grave" is devastating in its plainness — death stated without decoration', 'It introduces a new character', 'It offers hope'], correctIndex: 1, explanation: '"But she is in her grave" is deliberately plain and unpoetic. After the flower and star imagery, this blunt statement of death is devastating precisely because of its simplicity.', topic: 'Language', difficulty: 'higher' },
-  { id: 'sd-5', question: 'Who is Lucy?', type: 'multiple-choice', options: ['A real historical figure', 'Possibly fictional, possibly based on a real person — one of Wordsworth\'s mysterious "Lucy poems"', 'Wordsworth\'s wife', 'His mother'], correctIndex: 1, explanation: 'Lucy\'s identity is debated. She may be fictional, or based on someone Wordsworth knew. The mystery adds to the poem\'s poignancy — even in the poem, Lucy remains half-hidden.', topic: 'Context', difficulty: 'higher' },
-  { id: 'sd-6', question: 'What does "Fair as a star, when only one / Is shining in the sky" suggest?', type: 'multiple-choice', options: ['She is an astronomer', 'Lucy\'s beauty is unique and solitary — she stands out not by competing but by existing alone', 'She is famous', 'Stars are bright'], correctIndex: 1, explanation: 'The single star simile presents Lucy as uniquely beautiful — not because she outshines others, but because she is the only one visible. Her beauty is solitary and self-sufficient.', topic: 'Language', difficulty: 'higher' },
-  { id: 'sd-7', question: 'What does "She lived unknown, and few could know / When Lucy ceased to be" suggest about her life?', type: 'multiple-choice', options: ['She was famous', 'Her life and death went unnoticed by the world — only the speaker truly knew and mourns her', 'Many people knew her', 'She moved away'], correctIndex: 1, explanation: 'Lucy lived and died in complete obscurity. The world did not notice her existence or her absence. Only the speaker knew her, making his grief intensely personal and isolated.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'sd-8', question: 'What does "the difference to me!" express?', type: 'multiple-choice', options: ['Indifference', 'The exclamation reveals the vast gap between the world\'s indifference and the speaker\'s devastating personal loss', 'Confusion', 'Happiness'], correctIndex: 1, explanation: 'The final exclamation is the poem\'s emotional climax. The world notices nothing, but for the speaker, everything has changed. The understatement of "difference" paradoxically intensifies the grief.', topic: 'Language', difficulty: 'grade-9' },
-  { id: 'sd-9', question: 'How does Wordsworth use simplicity as a poetic technique?', type: 'multiple-choice', options: ['He is a simple writer', 'The poem\'s extreme simplicity of language and form mirrors Lucy\'s simple life — and makes the grief more powerful', 'Simplicity is accidental', 'He prefers complex language'], correctIndex: 1, explanation: 'The deliberate simplicity — short lines, plain words, natural imagery — mirrors Lucy\'s modest life. The absence of elaborate language makes the raw emotion more powerful.', topic: 'Structure', difficulty: 'grade-9' },
-  { id: 'sd-10', question: 'Which poem pairs well for comparison?', type: 'multiple-choice', options: ['The Eagle', 'She Walks in Beauty by Byron', 'Crossing the Bar', 'When I Have Fears'], correctIndex: 1, explanation: 'Both celebrate female beauty but differently — Byron\'s subject is glamorous and public; Wordsworth\'s Lucy is hidden and unknown. Both use natural imagery for beauty.', topic: 'Comparison', difficulty: 'grade-9' },
+  {
+    id: 'sd-1',
+    question: 'What is the poem about?',
+    type: 'multiple-choice',
+    options: [
+      'A famous woman',
+      'A simple, unknown woman (Lucy) who lived and died in obscurity, mourned only by the speaker',
+      'A queen',
+      'A journey',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Wordsworth mourns Lucy — a woman who lived a simple, solitary life by the River Dove, unknown to the wider world. Her death goes unnoticed by all except the speaker.',
+    topic: 'Meaning',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sd-2',
+    question: 'What does "A violet by a mossy stone / Half hidden from the eye" suggest?',
+    type: 'multiple-choice',
+    options: [
+      'She grows flowers',
+      'Lucy is compared to a modest, hidden flower — beautiful but unnoticed by the world',
+      'She is a gardener',
+      'Flowers are important',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The violet simile presents Lucy as naturally beautiful but modest and hidden. She does not seek attention — her beauty exists quietly, like a flower half-concealed by moss.',
+    topic: 'Language',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sd-3',
+    question: 'What form does the poem use?',
+    type: 'multiple-choice',
+    options: [
+      'A sonnet',
+      "Three quatrains with ABAB rhyme — a ballad-like simplicity matching Lucy's simplicity",
+      'Free verse',
+      'Blank verse',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Three short quatrains with ABAB rhyme. The extreme simplicity of form matches Lucy's simple, unassuming life.",
+    topic: 'Structure',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'sd-4',
+    question: 'What is the effect of the final stanza?',
+    type: 'multiple-choice',
+    options: [
+      'It is happy',
+      'The blunt, simple statement "But she is in her grave" is devastating in its plainness — death stated without decoration',
+      'It introduces a new character',
+      'It offers hope',
+    ],
+    correctIndex: 1,
+    explanation:
+      '"But she is in her grave" is deliberately plain and unpoetic. After the flower and star imagery, this blunt statement of death is devastating precisely because of its simplicity.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'sd-5',
+    question: 'Who is Lucy?',
+    type: 'multiple-choice',
+    options: [
+      'A real historical figure',
+      'Possibly fictional, possibly based on a real person — one of Wordsworth\'s mysterious "Lucy poems"',
+      "Wordsworth's wife",
+      'His mother',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Lucy's identity is debated. She may be fictional, or based on someone Wordsworth knew. The mystery adds to the poem's poignancy — even in the poem, Lucy remains half-hidden.",
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'sd-6',
+    question: 'What does "Fair as a star, when only one / Is shining in the sky" suggest?',
+    type: 'multiple-choice',
+    options: [
+      'She is an astronomer',
+      "Lucy's beauty is unique and solitary — she stands out not by competing but by existing alone",
+      'She is famous',
+      'Stars are bright',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The single star simile presents Lucy as uniquely beautiful — not because she outshines others, but because she is the only one visible. Her beauty is solitary and self-sufficient.',
+    topic: 'Language',
+    difficulty: 'higher',
+  },
+  {
+    id: 'sd-7',
+    question:
+      'What does "She lived unknown, and few could know / When Lucy ceased to be" suggest about her life?',
+    type: 'multiple-choice',
+    options: [
+      'She was famous',
+      'Her life and death went unnoticed by the world — only the speaker truly knew and mourns her',
+      'Many people knew her',
+      'She moved away',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Lucy lived and died in complete obscurity. The world did not notice her existence or her absence. Only the speaker knew her, making his grief intensely personal and isolated.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'sd-8',
+    question: 'What does "the difference to me!" express?',
+    type: 'multiple-choice',
+    options: [
+      'Indifference',
+      "The exclamation reveals the vast gap between the world's indifference and the speaker's devastating personal loss",
+      'Confusion',
+      'Happiness',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The final exclamation is the poem\'s emotional climax. The world notices nothing, but for the speaker, everything has changed. The understatement of "difference" paradoxically intensifies the grief.',
+    topic: 'Language',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'sd-9',
+    question: 'How does Wordsworth use simplicity as a poetic technique?',
+    type: 'multiple-choice',
+    options: [
+      'He is a simple writer',
+      "The poem's extreme simplicity of language and form mirrors Lucy's simple life — and makes the grief more powerful",
+      'Simplicity is accidental',
+      'He prefers complex language',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The deliberate simplicity — short lines, plain words, natural imagery — mirrors Lucy's modest life. The absence of elaborate language makes the raw emotion more powerful.",
+    topic: 'Structure',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'sd-10',
+    question: 'Which poem pairs well for comparison?',
+    type: 'multiple-choice',
+    options: ['The Eagle', 'She Walks in Beauty by Byron', 'Crossing the Bar', 'When I Have Fears'],
+    correctIndex: 1,
+    explanation:
+      "Both celebrate female beauty but differently — Byron's subject is glamorous and public; Wordsworth's Lucy is hidden and unknown. Both use natural imagery for beauty.",
+    topic: 'Comparison',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Key Themes', summary: 'The poem mourns a simple, unknown woman whose death goes unnoticed by the world but devastates the speaker.', keyPoints: ['Obscurity — Lucy lived and died unknown', 'Personal vs universal — the world is indifferent; the speaker is devastated', 'Simplicity — Lucy\'s modest beauty mirrors the poem\'s plain style', 'Loss — "the difference to me!" is deeply personal grief'] },
-  { topic: 'Language & Imagery', summary: 'Wordsworth uses violet and star similes, plain diction, and devastating understatement to mourn Lucy.', keyPoints: ['Violet — modest, hidden beauty', 'Single star — unique, solitary beauty', '"But she is in her grave" — blunt statement of death', '"The difference to me!" — understatement masking devastation'] },
-  { topic: 'Structure & Form', summary: 'Three simple quatrains with ABAB rhyme — extreme simplicity mirrors Lucy\'s simple life.', keyPoints: ['Three quatrains — brevity reflects a brief life', 'ABAB rhyme — simple, ballad-like form', 'Plain language — no decoration, matching Lucy\'s modesty', 'Final exclamation — the only emotional outburst'] },
+  {
+    topic: 'Key Themes',
+    summary:
+      'The poem mourns a simple, unknown woman whose death goes unnoticed by the world but devastates the speaker.',
+    keyPoints: [
+      'Obscurity — Lucy lived and died unknown',
+      'Personal vs universal — the world is indifferent; the speaker is devastated',
+      "Simplicity — Lucy's modest beauty mirrors the poem's plain style",
+      'Loss — "the difference to me!" is deeply personal grief',
+    ],
+  },
+  {
+    topic: 'Language & Imagery',
+    summary:
+      'Wordsworth uses violet and star similes, plain diction, and devastating understatement to mourn Lucy.',
+    keyPoints: [
+      'Violet — modest, hidden beauty',
+      'Single star — unique, solitary beauty',
+      '"But she is in her grave" — blunt statement of death',
+      '"The difference to me!" — understatement masking devastation',
+    ],
+  },
+  {
+    topic: 'Structure & Form',
+    summary:
+      "Three simple quatrains with ABAB rhyme — extreme simplicity mirrors Lucy's simple life.",
+    keyPoints: [
+      'Three quatrains — brevity reflects a brief life',
+      'ABAB rhyme — simple, ballad-like form',
+      "Plain language — no decoration, matching Lucy's modesty",
+      'Final exclamation — the only emotional outburst',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -336,11 +575,14 @@ export default function SheDweltPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Poetry", url: "https://theenglishhub.app/revision/poetry" },
-          { name: "OCR Poetry", url: "https://theenglishhub.app/revision/poetry/ocr" },
-          { name: "She Dwelt Among the Untrodden Ways", url: "https://theenglishhub.app/revision/poetry/ocr/she-dwelt-among-the-untrodden-ways" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Poetry', url: 'https://theenglishhub.app/revision/poetry' },
+          { name: 'OCR Poetry', url: 'https://theenglishhub.app/revision/poetry/ocr' },
+          {
+            name: 'She Dwelt Among the Untrodden Ways',
+            url: 'https://theenglishhub.app/revision/poetry/ocr/she-dwelt-among-the-untrodden-ways',
+          },
         ]}
       />
       <div>
@@ -365,7 +607,9 @@ export default function SheDweltPage() {
             <p className="text-body-sm text-muted-foreground">
               William Wordsworth &middot; Love and Relationships cluster
             </p>
-            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">OCR</Badge>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">
+              OCR
+            </Badge>
           </div>
         </div>
       </div>
@@ -388,10 +632,10 @@ export default function SheDweltPage() {
 
       <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">
         <p className="text-xs text-muted-foreground leading-relaxed">
-          The text of &ldquo;She Dwelt Among the Untrodden Ways&rdquo; is in the public domain.
-          All annotations and critical commentary on this page are original to english-hub and
-          are provided for private study and educational purposes under the fair dealing
-          provisions of the Copyright, Designs and Patents Act 1988.
+          The text of &ldquo;She Dwelt Among the Untrodden Ways&rdquo; is in the public domain. All
+          annotations and critical commentary on this page are original to english-hub and are
+          provided for private study and educational purposes under the fair dealing provisions of
+          the Copyright, Designs and Patents Act 1988.
         </p>
       </section>
 

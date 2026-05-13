@@ -36,6 +36,7 @@ import {
 } from '@/lib/generate-docx'
 import { generateLessonPlanPptx } from '@/lib/generate-pptx'
 import { DownloadMenu } from '@/components/DownloadMenu'
+import { useT } from '@/lib/i18n/use-t'
 import {
   act1LessonPlan,
   characterWorksheetMeta,
@@ -285,6 +286,7 @@ const subscriptionFeatures = [
 /* ------------------------------------------------------------------ */
 
 export default function FreeResourcesPage() {
+  const t = useT()
   const [showAnswers, setShowAnswers] = useState<Record<number, boolean>>({})
 
   function toggleAnswer(index: number) {
@@ -304,11 +306,11 @@ export default function FreeResourcesPage() {
             100% Free -- No Account Required
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Free Teaching Resources <span className="block text-primary">An Inspector Calls</span>
+            {t('for_teachers_free.h1')}{' '}
+            <span className="block text-primary">An Inspector Calls</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Download a complete lesson, worksheet, and teaching guide for AQA GCSE English
-            Literature -- free, no signup required. See exactly what you get with a subscription.
+            {t('for_teachers_free.intro')}
           </p>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground/80">
             Resources available for all major exam boards (AQA, Edexcel, OCR, WJEC, IGCSE/CAIE).

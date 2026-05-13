@@ -12165,6 +12165,909 @@ export const DICTIONARY: Dictionary = {
     en: 'AI test builder and revision notes',
     ar: 'منشئ الاختبارات وملخصات المراجعة بالذكاء الاصطناعي',
   },
+
+  // ─── Qatar IGCSE landing page ───────────────────────────────────────
+  'qatar.breadcrumb_home': { en: 'Home', ar: 'الرئيسية' },
+  'qatar.breadcrumb_current': { en: 'Qatar IGCSE English', ar: 'IGCSE إنجليزي قطر' },
+  'qatar.badge': {
+    en: 'For students at international schools in Qatar',
+    ar: 'لطلاب المدارس العالمية في قطر',
+  },
+  'qatar.h1': {
+    en: 'IGCSE English revision for students in Qatar',
+    ar: 'مراجعة IGCSE إنجليزي لطلاب قطر',
+  },
+  'qatar.intro': {
+    en: 'Structured revision for the two IGCSE English specifications used in most British international schools in Doha — Pearson Edexcel (4ET1 Literature, 4EA1 Language A) and Cambridge (0500 First Language, 0990 redesigned). Calibrated to mark schemes, paced for the Qatar academic year, and accessible from school WiFi.',
+    ar: 'مراجعة مرتّبة للسبيسز اللي تستخدمها أغلب المدارس البريطانية العالمية بالدوحة — Pearson Edexcel (4ET1 الأدب، 4EA1 اللغة A) و Cambridge (0500 اللغة الأولى، 0990 المُحدّث). معايرة على مخططات التصحيح، ومضبوطة على السنة الدراسية القطرية، وتفتح من واي فاي المدرسة.',
+  },
+  'qatar.cta.get_started': { en: 'Get started', ar: 'ابدأ الحين' },
+  'qatar.cta.see_specs': { en: 'See spec coverage', ar: 'شوف تغطية السبيسز' },
+  'qatar.specs.h2': {
+    en: 'Which IGCSE English specs are sat in Qatar?',
+    ar: 'يا هي سبيسز IGCSE إنجليزي اللي تنذاكر بقطر؟',
+  },
+  'qatar.specs.intro': {
+    en: 'Most international schools in Doha follow a British curriculum and enter their Year 11 cohort for International GCSE English. The two boards you will see most often on timetables are Pearson Edexcel and Cambridge International — different awarding organisations with different paper structures, different anthologies, and different assessment objectives. Knowing which one your school enters you for matters, because preparing for the wrong paper wastes revision time.',
+    ar: 'أغلب المدارس العالمية بالدوحة تمشي على المنهج البريطاني وتسجل طلاب Year 11 لـ International GCSE English. اثنين بوردز بتشوفهم وايد بالجدول: Pearson Edexcel و Cambridge International — منظمتين تصدير شهادات مختلفتين، بأوراق امتحان وكتب أدبية وأهداف تقييم مختلفة. لازم تعرف يا بورد يحطّك مدرستك فيه، لأن المذاكرة للورقة الغلط وقت ضايع.',
+  },
+  'qatar.specs.edexcel.title': {
+    en: 'Pearson Edexcel International GCSE',
+    ar: 'Pearson Edexcel International GCSE',
+  },
+  'qatar.specs.edexcel.4et1': {
+    en: '4ET1 — Literature. Two-paper exam covering an anthology of poetry and prose, an unseen poetry question, and your studied drama and prose texts. Edexcel publishes its own anthology and a fixed list of set drama and prose options.',
+    ar: '4ET1 — الأدب. امتحان من ورقتين يغطي مختارات شعر ونثر، سؤال شعر ما تشوفه قبل، ودراما ونثر مدروسة. Edexcel تنشر مختاراتها الخاصة وقائمة ثابتة لاختيارات الدراما والنثر.',
+  },
+  'qatar.specs.edexcel.4ea1': {
+    en: '4EA1 — English Language A. Reading and writing assessed across two papers, with an anthology of non-fiction passages used as the reading stimulus. Imaginative and transactional writing both appear.',
+    ar: '4EA1 — لغة إنجليزية A. قراءة وكتابة على ورقتين، مع مختارات قطع غير قصصية مستخدمة كمحفّز قراءة. كتابة إبداعية ومعاملاتية كلهم يطلعون.',
+  },
+  'qatar.specs.cambridge.title': { en: 'Cambridge IGCSE', ar: 'Cambridge IGCSE' },
+  'qatar.specs.cambridge.0500': {
+    en: '0500 — English as a First Language. The long-running Cambridge spec: reading skills assessed through unseen non-fiction passages, plus directed and composition writing. No published anthology — the passages are unseen on the day.',
+    ar: '0500 — الإنجليزية كلغة أولى. سبيس Cambridge القديم: مهارات القراءة تنقاس على قطع غير قصصية ما تشوفها قبل، مع كتابة موجّهة وإنشاء. ما في مختارات منشورة — القطع تطلع يوم الامتحان.',
+  },
+  'qatar.specs.cambridge.0990': {
+    en: '0990 — redesigned variant. Aligned to the Cambridge 9-1 grading scale used internationally. Question design has been refreshed compared with 0500, and grade boundaries report on the 9-1 scale. Schools choose 0500 or 0990 depending on which grading scale their leavers need on transcripts.',
+    ar: '0990 — النسخة المُحدّثة. مرتبطة بسلّم تقييم Cambridge 9-1 المستخدم عالمياً. تصميم الأسئلة تجدّد عن 0500، والحدود تطلع على سلّم 9-1. المدارس تختار 0500 أو 0990 على حسب يا سلّم تقييم يبغونه الخريجين بالشهادة.',
+  },
+  'qatar.specs.note': {
+    en: 'If you are unsure which spec your school uses, your English teacher or head of year is the quickest source of truth — the spec code usually appears on your mock paper, your timetable, and your end-of-year report.',
+    ar: 'لو ما تدري يا سبيس مدرستك تستخدم، معلم الإنجليزي مالك أو رئيس الصف أسرع مصدر — كود السبيس عادةً يطلع على ورقة الموك مالك، والجدول، وتقرير آخر السنة.',
+  },
+  'qatar.help.h2': {
+    en: 'How The English Hub helps Qatar IGCSE students',
+    ar: 'شلون The English Hub يساعد طلاب IGCSE بقطر',
+  },
+  'qatar.help.intro': {
+    en: 'The platform is built around board-specific revision paths, so the work you put in lines up with the paper you sit in May or June. There are four core surfaces a Qatar-based IGCSE student will use day to day.',
+    ar: 'المنصة مبنية على مسارات مراجعة لكل بورد، عشان الشغل اللي تسوّيه يطابق الورقة اللي بتذاكرها بمايو ولا يونيو. في أربع واجهات أساسية الطالب القطري ل IGCSE بيستخدمها كل يوم.',
+  },
+  'qatar.help.edexcel.title': {
+    en: 'Full anthology coverage for Pearson Edexcel',
+    ar: 'تغطية كاملة للمختارات Pearson Edexcel',
+  },
+  'qatar.help.edexcel.body': {
+    en: 'Every poem in the Edexcel poetry anthology has its own analysis page — language, form, structure, context, and a comparison route into the rest of the cluster. Drama, Shakespeare and prose set texts each have a chapters / scenes breakdown, themes, key quotations, and essay-plan templates.',
+    ar: 'كل قصيدة بمختارات Edexcel الشعرية عندها صفحة تحليل خاصة فيها — لغة، شكل، تركيب، سياق، ومسار مقارنة لباقي المجموعة. الدراما و Shakespeare والنثر المقرّر كل واحد عنده تقسيم فصول / مشاهد، ثيمات، اقتباسات أساسية، وقوالب خطط مقالات.',
+  },
+  'qatar.help.edexcel.4et1_link': { en: 'Open the Edexcel 4ET1 hub', ar: 'افتح صفحة Edexcel 4ET1' },
+  'qatar.help.edexcel.4ea1_link': {
+    en: 'Open the Edexcel 4EA1 Language A hub',
+    ar: 'افتح صفحة Edexcel 4EA1 لغة A',
+  },
+  'qatar.help.cambridge.title': {
+    en: 'Cambridge unseen-poetry and unseen-prose walkthroughs',
+    ar: 'شرح Cambridge للشعر والنثر اللي ما تشوفه قبل',
+  },
+  'qatar.help.cambridge.body': {
+    en: 'Cambridge 0500 and 0990 lean heavily on unseen reading. The platform has a library of worked walkthroughs across descriptive nature writing, classic novel openings, modernist fiction, travel writing and dialogue analysis — modelling the exact thinking process the mark scheme rewards. Use them as a daily 20-minute warm-up.',
+    ar: 'Cambridge 0500 و 0990 يعتمدون وايد على القراءة الغير مرئية. المنصة فيها مكتبة شروحات تشمل كتابة وصف طبيعة، بدايات روايات كلاسيكية، أدب حداثي، أدب رحلات، وتحليل حوار — تنمذج التفكير اللي بالضبط يطلب مخطط التصحيح. استخدمها كتسخين يومي ٢٠ دقيقة.',
+  },
+  'qatar.help.cambridge.0500_link': {
+    en: 'Open the Cambridge 0500 hub',
+    ar: 'افتح صفحة Cambridge 0500',
+  },
+  'qatar.help.cambridge.0990_link': {
+    en: 'Open the Cambridge 0990 hub',
+    ar: 'افتح صفحة Cambridge 0990',
+  },
+  'qatar.help.ai.title': {
+    en: 'AI-marked essay practice',
+    ar: 'تدريب مقالات بتصحيح الذكاء الاصطناعي',
+  },
+  'qatar.help.ai.body': {
+    en: 'Submit a full essay and the platform returns paragraph-level feedback against the assessment objectives for your spec — AO1 evidence, AO2 language and structure, AO3 context where it applies, AO4 comparison for Edexcel anthology questions. The feedback is calibrated to mark schemes, not a generic English checker, so the notes you get back match what your teacher would write in the margin.',
+    ar: 'أرسل مقال كامل والمنصة ترجع لك ملاحظات على مستوى الفقرات مقابل أهداف التقييم لسبيسك — AO1 الأدلة، AO2 اللغة والتركيب، AO3 السياق حيث ينطبق، AO4 المقارنة لأسئلة مختارات Edexcel. الملاحظات معايرة على مخططات التصحيح مو فاحص إنجليزي عام، فالنوتات اللي تجيك تطابق اللي معلمك بيكتبه بالهامش.',
+  },
+  'qatar.help.paths.title': { en: 'Board-specific revision paths', ar: 'مسارات مراجعة لكل بورد' },
+  'qatar.help.paths.body': {
+    en: 'Pick your board on the first visit and the dashboard re-orders itself: only your papers, only your set texts, only your assessment objectives. Less scrolling through irrelevant content, more time on the tasks that move your grade.',
+    ar: 'اختر بوردك أول زيارة واللوحة ترتّب نفسها: بس أوراقك، بس نصوصك المقرّرة، بس أهداف تقييمك. ما تمرّر بين محتوى ما يخصّك، ووقت أكثر على المهام اللي ترفع درجتك.',
+  },
+  'qatar.timezone.h2': {
+    en: 'Time-zone-friendly revision: Qatar is GMT+3',
+    ar: 'مراجعة مناسبة للتوقيت: قطر GMT+3',
+  },
+  'qatar.timezone.body1': {
+    en: 'Qatar runs on Arabia Standard Time, which is three hours ahead of UK time. For IGCSE revision that small offset is genuinely useful. Most UK students are still in lessons when Doha schools have already finished for the day, which means a Qatar-based student sitting down at four in the afternoon is opening the platform before the UK evening peak — pages load fast and AI essay feedback comes back without a queue.',
+    ar: 'قطر تمشي على توقيت السعودية، ثلاث ساعات قدّام توقيت بريطانيا. لمراجعة IGCSE هالفرق الصغير مفيد فعلاً. أغلب طلاب بريطانيا لسا بالحصص لمن مدارس الدوحة خلصت يومها، يعني الطالب القطري اللي يجلس الساعة أربع العصر يفتح المنصة قبل ذروة المساء البريطاني — الصفحات تفتح بسرعة وملاحظات الذكاء الاصطناعي ترجع بدون طابور.',
+  },
+  'qatar.timezone.body2': {
+    en: 'The same offset matters in May and June. Most IGCSE exam papers are written under a common international timetable, but the support and clarification windows around them tend to follow UK working hours. Revising in the Doha afternoon means you finish your session and bank your progress before UK email queues even open.',
+    ar: 'نفس الفرق مهم بمايو ويونيو. أغلب أوراق امتحانات IGCSE تتكتب على جدول دولي مشترك، بس نوافذ الدعم والتوضيح حولها تمشي على ساعات العمل البريطانية. مذاكرة بعصر الدوحة يعني تخلّص جلستك وتحفظ تقدّمك قبل ما طوابير إيميل بريطانيا تفتح.',
+  },
+  'qatar.timezone.tip_title': {
+    en: 'A practical scheduling tip for Qatar students',
+    ar: 'نصيحة جدولة عملية لطلاب قطر',
+  },
+  'qatar.timezone.tip_body': {
+    en: 'The most productive single block of the week for many Qatar-based students is a weekend morning. Friday and Saturday mornings are quiet, the heat is manageable, and the family afternoon — visits, meals, errands — has not yet started. A two-hour block from around eight to ten in the morning, two days a week, is enough to keep an entire IGCSE Literature anthology in active recall. Use weekday afternoons for shorter twenty-minute drills and save the weekend mornings for full essay writing.',
+    ar: 'أكثر فترة منتجة بالأسبوع لوايد طلاب قطر هي صباح ويك اند. صباح الجمعة والسبت هادي، الحر محتمل، وعصر العايلة — زيارات وأكل ومشاوير — ما بدا بعد. ساعتين تقريباً من الثمانية للعشرة الصباح، يومين بالأسبوع، يكفون عشان تخلّي كل مختارات أدب IGCSE بذاكرتك النشطة. استخدم عصر أيام الدراسة لتدريبات قصيرة ٢٠ دقيقة، وخلّ صباح الويك اند لكتابة المقالات الكاملة.',
+  },
+  'qatar.anthology.h2': {
+    en: 'Edexcel IGCSE 4ET1 anthology in detail',
+    ar: 'مختارات Edexcel IGCSE 4ET1 بالتفصيل',
+  },
+  'qatar.anthology.body1': {
+    en: 'The Edexcel International GCSE English Literature anthology is a fixed collection of poems and prose extracts that you will be expected to know in detail by the time you sit Paper 1. The 4ET1 hub on the platform mirrors the anthology one-to-one — every poem has a dedicated page covering speaker, structure, language techniques, context, and the most common essay angles examiners reward.',
+    ar: 'مختارات Edexcel International GCSE Literature مجموعة ثابتة من القصائد ومقتطفات النثر المفروض تعرفها بالتفصيل لمن تذاكر Paper 1. صفحة 4ET1 على المنصة تطابق المختارات واحد لواحد — كل قصيدة عندها صفحة فيها المتكلم، التركيب، تقنيات اللغة، السياق، وأكثر زوايا مقالات يكافئها الفاحصون.',
+  },
+  'qatar.anthology.body2': {
+    en: 'For 4EA1 Language A students, the non-fiction anthology serves a different purpose: you analyse the passages for writers’ methods rather than memorising them. The anthology hub for the Language A spec walks through each prose passage with the techniques and structural moves you can quote in your reading-skills answer.',
+    ar: 'لطلاب 4EA1 لغة A، مختارات النثر الغير قصصي تخدم غرض مختلف: تحلّل القطع لطرق الكاتب مو تحفظها. صفحة المختارات لسبيس Language A تشرح كل قطعة نثرية مع التقنيات والتحرّكات التركيبية اللي تقدر تستشهد فيها بإجابة مهارات القراءة.',
+  },
+  'qatar.anthology.4et1_link': {
+    en: 'Edexcel 4ET1 Literature hub →',
+    ar: 'صفحة Edexcel 4ET1 الأدب ←',
+  },
+  'qatar.anthology.4ea1_link': { en: 'Edexcel 4EA1 anthology →', ar: 'مختارات Edexcel 4EA1 ←' },
+  'qatar.compare.h2': {
+    en: 'Cambridge 0500 vs 0990 — which one is your school?',
+    ar: 'Cambridge 0500 ولا 0990 — يا واحد مدرستك؟',
+  },
+  'qatar.compare.body1': {
+    en: 'Cambridge International offers two parallel English as a First Language qualifications. 0500 reports grades on the long-standing A*–G scale and is the one many British international schools have used for years. 0990 is the redesigned variant that reports on the 9-1 scale, which lines up neatly with the grading scheme used inside England. Schools whose leavers continue into UK sixth forms or universities sometimes prefer 0990 for that reason, while schools with a more international destination pattern often stay on 0500.',
+    ar: 'Cambridge International تقدّم اثنين شهادات للإنجليزية كلغة أولى. 0500 تطلع الدرجات على سلّم A*–G القديم وهي اللي وايد مدارس بريطانية عالمية تستخدمها من زمان. 0990 النسخة المُحدّثة اللي تطلع على سلّم 9-1، اللي يتطابق مع نظام التقييم المستخدم داخل إنجلترا. المدارس اللي خريجيها بيكملون بسكستث فورم أو جامعات بريطانيا أحياناً يفضّلون 0990، والمدارس اللي وجهات خريجيها أكثر دولية عادةً يستمرون على 0500.',
+  },
+  'qatar.compare.body2': {
+    en: 'From a content standpoint, the skills tested overlap heavily — both papers reward close reading, accurate inference, and controlled writing. The platform has separate hubs for each spec so you only revise against the question types and grade boundaries that apply to you.',
+    ar: 'من ناحية المحتوى، المهارات اللي تنقاس متشابهة وايد — كلا الورقتين تكافئ القراءة الدقيقة، الاستنتاج الصحيح، والكتابة المنضبطة. المنصة عندها صفحات منفصلة لكل سبيس عشان تذاكر بس أنواع الأسئلة وحدود الدرجات اللي تخصّك.',
+  },
+  'qatar.compare.0500_link': { en: 'Cambridge 0500 hub →', ar: 'صفحة Cambridge 0500 ←' },
+  'qatar.compare.0990_link': { en: 'Cambridge 0990 hub →', ar: 'صفحة Cambridge 0990 ←' },
+  'qatar.faq.h2': { en: 'Frequently asked questions', ar: 'الأسئلة الشائعة' },
+  'qatar.faq.q1': {
+    en: 'Is The English Hub aligned to Pearson Edexcel and Cambridge?',
+    ar: 'هل The English Hub متطابق مع Pearson Edexcel و Cambridge؟',
+  },
+  'qatar.faq.a1': {
+    en: 'Yes. The platform has dedicated revision paths for Pearson Edexcel International GCSE English Literature (4ET1) and English Language A (4EA1), as well as Cambridge IGCSE 0500 and the redesigned 0990 variant. Course material, model answers and AI feedback are calibrated to the published assessment objectives and mark schemes for each spec.',
+    ar: 'إي. المنصة عندها مسارات مراجعة مخصّصة لـ Pearson Edexcel International GCSE Literature (4ET1) وLanguage A (4EA1)، بالإضافة لـ Cambridge IGCSE 0500 والنسخة المحدّثة 0990. مواد المنهج، الإجابات النموذجية، وملاحظات الذكاء الاصطناعي معايرة على أهداف التقييم المنشورة ومخططات التصحيح لكل سبيس.',
+  },
+  'qatar.faq.q2': {
+    en: 'Can students in Qatar pay in QAR?',
+    ar: 'يقدرون طلاب قطر يدفعون بالريال القطري؟',
+  },
+  'qatar.faq.a2': {
+    en: 'Subscriptions are billed in GBP through our payment processor. Most international cards issued in Qatar will work and the bank handles the QAR-to-GBP conversion at the time of purchase — the rate shown on your statement comes from your card issuer, not from us. We do not currently offer a QAR-denominated checkout.',
+    ar: 'الاشتراكات تنحاسب بالجنيه الإسترليني عبر معالج الدفع مالنا. أغلب الكروت العالمية المُصدرة بقطر بتشتغل والبنك يسوّي تحويل ريال قطري لجنيه إسترليني وقت الشراء — السعر اللي يطلع بالكشف من مصدر الكارت مالك، مو منا. ما عندنا حالياً دفع بالريال القطري.',
+  },
+  'qatar.faq.q3': {
+    en: 'Does the platform work on the school WiFi (filtered networks)?',
+    ar: 'هل المنصة تشتغل على واي فاي المدرسة (الشبكات المُفلترة)؟',
+  },
+  'qatar.faq.a3': {
+    en: 'The site is hosted on theenglishhub.app over HTTPS with no third-party video host or ad network, which means it usually passes through standard school content filters. If your school uses a strict allowlist, ask your IT department to whitelist theenglishhub.app and any subdomain we use for media. We can supply a written list of domains on request.',
+    ar: 'الموقع مستضاف على theenglishhub.app عبر HTTPS بدون مستضيف فيديو خارجي ولا شبكة إعلانات، يعني عادةً يمر من فلاتر المحتوى المدرسية. لو مدرستك تستخدم قائمة سماح صارمة، اطلب من قسم تكنولوجيا المعلومات يضيف theenglishhub.app وأي subdomain نستخدمه للوسائط. نقدر نوفّر قائمة domains مكتوبة بناءً على الطلب.',
+  },
+  'qatar.faq.q4': {
+    en: 'Is there a teacher-licence for British international schools?',
+    ar: 'هل في ترخيص معلمين للمدارس البريطانية العالمية؟',
+  },
+  'qatar.faq.a4': {
+    en: 'Yes. Teachers at British international schools can register for a teacher account and request a school licence covering their department. Bulk student onboarding by spreadsheet is supported. Contact us through the for-schools page to discuss a quote — pricing is set in GBP and we can invoice schools directly.',
+    ar: 'إي. المعلمون بالمدارس البريطانية العالمية يقدرون يسجلون حساب معلم ويطلبون ترخيص مدرسة يغطي قسمهم. تسجيل الطلاب الجماعي بشيت Excel مدعوم. تواصلوا معانا عبر صفحة for-schools للحديث عن العرض السعري — التسعير بالجنيه الإسترليني ونقدر نصدر فاتورة للمدارس مباشرة.',
+  },
+  'qatar.faq.q5': {
+    en: 'Are revision schedules adapted for the Qatar academic calendar (Sept–June)?',
+    ar: 'هل جداول المراجعة مكيّفة على التقويم الدراسي القطري (سبتمبر–يونيو)؟',
+  },
+  'qatar.faq.a5': {
+    en: 'The default revision pathways are built around the May–June IGCSE exam series, which is the series most Qatar-based students sit, and the academic year runs from September. You can pace any path manually, and the AI study planner lets you input your own term dates and exam dates so the schedule fits the calendar your school actually uses.',
+    ar: 'مسارات المراجعة الافتراضية مبنية حول سلسلة امتحانات IGCSE مايو-يونيو، اللي أغلب طلاب قطر يذاكرونها، والسنة الدراسية تمشي من سبتمبر. تقدر تظبط سرعة أي مسار يدوياً، ومخطط الدراسة بالذكاء الاصطناعي يخليك تدخّل تواريخ الترم والامتحانات مالك عشان الجدول يناسب التقويم اللي مدرستك تستخدمه فعلاً.',
+  },
+  'qatar.cta_final.h2': { en: 'Ready to start?', ar: 'مستعد تبدأ؟' },
+  'qatar.cta_final.body': {
+    en: 'Pick your board and the dashboard tailors itself to your spec — Edexcel 4ET1, Edexcel 4EA1, Cambridge 0500 or Cambridge 0990.',
+    ar: 'اختر بوردك واللوحة بتترتب لسبيسك — Edexcel 4ET1, Edexcel 4EA1, Cambridge 0500 ولا Cambridge 0990.',
+  },
+
+  // ─── GCC IGCSE landing page ─────────────────────────────────────────
+  'gcc.breadcrumb_current': { en: 'GCC IGCSE English', ar: 'IGCSE إنجليزي الخليج' },
+  'gcc.eyebrow': { en: 'Local guide', ar: 'دليل محلي' },
+  'gcc.h1': {
+    en: 'IGCSE English revision for students in the GCC',
+    ar: 'مراجعة IGCSE إنجليزي لطلاب الخليج',
+  },
+  'gcc.intro': {
+    en: 'British curriculum students across the Gulf typically sit either Pearson Edexcel or Cambridge IGCSE English. This page maps the two pathways, points you at the right revision hub for your specification, and answers the questions parents and teachers here actually ask us.',
+    ar: 'طلاب المنهج البريطاني بالخليج عادةً يذاكرون Pearson Edexcel ولا Cambridge IGCSE English. هالصفحة ترسم المسارين، تدلّك على صفحة المراجعة الصحيحة لسبيسك، وتجاوب على الأسئلة اللي يسألونها أولياء الأمور والمعلمين هني فعلاً.',
+  },
+  'gcc.cta.board_select': { en: 'Pick your exam board', ar: 'اختر بورد الامتحان مالك' },
+  'gcc.cta.edexcel_hub': { en: 'Edexcel hub', ar: 'صفحة Edexcel' },
+  'gcc.cta.cambridge_hub': { en: 'Cambridge 0500', ar: 'Cambridge 0500' },
+  'gcc.curriculum.h2': {
+    en: 'British curriculum schools in the GCC',
+    ar: 'مدارس المنهج البريطاني بالخليج',
+  },
+  'gcc.curriculum.body1': {
+    en: 'Most British and international schools across the GCC sit students for either the Pearson Edexcel or Cambridge International IGCSE in English. Both qualifications are recognised by UK universities and by the regional regulators that audit English-medium schools in the Gulf — the choice between them is usually a school-level decision tied to teacher training and historic preference, rather than a difference in academic value.',
+    ar: 'أغلب المدارس البريطانية والعالمية بالخليج تنزّل طلابها لإما Pearson Edexcel ولا Cambridge International IGCSE بالإنجليزي. كلتا الشهادتين معترف فيهم من جامعات بريطانيا والجهات التنظيمية الإقليمية اللي تدقق على مدارس الإنجليزي بالخليج — الاختيار بينهم عادةً قرار على مستوى المدرسة مرتبط بتدريب المعلمين والتفضيل التاريخي، مو فرق بالقيمة الأكاديمية.',
+  },
+  'gcc.curriculum.body2': {
+    en: 'In practice, schools in Dubai and Abu Dhabi tend to lean towards Pearson Edexcel, while the picture in Saudi Arabia and Qatar is more evenly split between the two boards. Kuwait, Bahrain, and Oman show a similar mix. If you are not sure which board your school enters, the simplest check is the specification code printed on your most recent mock paper or the front of your set-text edition: 4ET1 or 4EA1 means Edexcel, 0500 or 0990 means Cambridge.',
+    ar: 'بالواقع، مدارس دبي وأبوظبي تميل لـ Pearson Edexcel، بينما الصورة بالسعودية وقطر أكثر تساوي بين البوردين. الكويت والبحرين وعُمان نفس الخلطة. لو ما تدري يا بورد مدرستك تنزّل، أسهل فحص هو كود السبيس المطبوع على آخر ورقة موك مالك أو غلاف الكتاب المقرّر: 4ET1 ولا 4EA1 تعني Edexcel، و 0500 ولا 0990 تعني Cambridge.',
+  },
+  'gcc.specs.h2': { en: 'Which IGCSE English specs?', ar: 'يا سبيسز IGCSE إنجليزي؟' },
+  'gcc.specs.intro': {
+    en: 'There are four specifications you are realistically going to meet in a GCC classroom. Each has its own paper structure, mark scheme, and set-text list, so the first job of any revision programme is making sure you are practising against the right one.',
+    ar: 'في أربع سبيسز بتقابلهم فعلياً بفصول الخليج. كل واحد عنده تركيب أوراق، مخطط تصحيح، وقائمة نصوص مقرّرة خاصة فيه، فأول مهمة لأي برنامج مراجعة هي التأكد إنك تتدرب على السبيس الصح.',
+  },
+  'gcc.specs.4et1.title': {
+    en: 'Pearson Edexcel IGCSE 4ET1 — English Literature',
+    ar: 'Pearson Edexcel IGCSE 4ET1 — أدب إنجليزي',
+  },
+  'gcc.specs.4et1.body': {
+    en: 'A two-paper closed-book Literature qualification covering modern prose, modern drama, a Shakespeare play, and the Pearson Edexcel Poetry Anthology, plus an unseen-poetry section. The anthology contains 35 prescribed poems from across the English-speaking world.',
+    ar: 'شهادة أدب من ورقتين بدون كتاب مفتوح تغطي النثر الحديث، الدراما الحديثة، مسرحية Shakespeare، ومختارات Pearson Edexcel الشعرية، بالإضافة لجزء شعر غير مرئي. المختارات فيها ٣٥ قصيدة مقرّرة من كل أنحاء العالم الإنجليزي.',
+  },
+  'gcc.specs.4et1_link': { en: 'Open the 4ET1 hub', ar: 'افتح صفحة 4ET1' },
+  'gcc.specs.4ea1.title': {
+    en: 'Pearson Edexcel IGCSE 4EA1 — English Language A',
+    ar: 'Pearson Edexcel IGCSE 4EA1 — لغة إنجليزية A',
+  },
+  'gcc.specs.4ea1.body': {
+    en: 'The Edexcel Language A specification, assessed by exam (with a coursework route available at some centres). Reading is tested on non-fiction extracts; writing covers transactional and imaginative tasks.',
+    ar: 'سبيس Edexcel Language A، يُقيَّم بالامتحان (مع مسار مشروع متاح ببعض المراكز). القراءة تنقاس على مقتطفات غير قصصية؛ الكتابة تغطي مهام معاملاتية وإبداعية.',
+  },
+  'gcc.specs.4ea1_link': { en: 'Open the 4EA1 hub', ar: 'افتح صفحة 4EA1' },
+  'gcc.specs.0500.title': {
+    en: 'Cambridge IGCSE 0500 — English as a First Language',
+    ar: 'Cambridge IGCSE 0500 — الإنجليزية كلغة أولى',
+  },
+  'gcc.specs.0500.body': {
+    en: 'The long-established Cambridge First Language paper. Two written exams test reading comprehension, summary, and directed and composition writing. Many GCC schools that have run Cambridge for years still enter cohorts on 0500.',
+    ar: 'ورقة Cambridge للغة الأولى المعروفة من زمان. امتحانين كتابيين يفحصون الفهم القرائي، التلخيص، والكتابة الموجّهة والإنشاء. وايد مدارس بالخليج تشتغل على Cambridge من سنين لسا تنزّل دفعاتها على 0500.',
+  },
+  'gcc.specs.0500_link': { en: 'Open the 0500 hub', ar: 'افتح صفحة 0500' },
+  'gcc.specs.0990.title': {
+    en: 'Cambridge IGCSE 0990 — English First Language (redesigned)',
+    ar: 'Cambridge IGCSE 0990 — اللغة الإنجليزية الأولى (محدّثة)',
+  },
+  'gcc.specs.0990.body': {
+    en: 'The redesigned Cambridge First Language qualification, with an updated assessment model and 9–1 reporting. Skills overlap heavily with 0500, but the question weightings and rubric wording differ enough that practising against the right paper matters.',
+    ar: 'شهادة Cambridge للغة الأولى المُحدّثة، بنموذج تقييم محدّث وتقارير 9-1. المهارات تتداخل وايد مع 0500، بس أوزان الأسئلة وصياغة المخططات تختلف بدرجة كافية تخلّي التدريب على الورقة الصح مهم.',
+  },
+  'gcc.specs.0990_link': { en: 'Open the 0990 hub', ar: 'افتح صفحة 0990' },
+  'gcc.help.h2': {
+    en: 'How The English Hub helps GCC IGCSE students',
+    ar: 'شلون The English Hub يساعد طلاب IGCSE بالخليج',
+  },
+  'gcc.help.intro': {
+    en: 'Every revision path on the site is calibrated to a specific specification’s mark scheme rather than a generic IGCSE template. That matters for Gulf students because cohorts in the same year group at the same school are often split across boards, and shared revision packs can quietly point you at the wrong rubric.',
+    ar: 'كل مسار مراجعة بالموقع معاير على مخطط تصحيح سبيس معيّن مو قالب IGCSE عام. هذا مهم لطلاب الخليج لأن الدفعات بنفس الصف ونفس المدرسة عادةً منقسمة بين بوردز، وحزم المراجعة المشتركة ممكن توجّهك بهدوء للمخطط الغلط.',
+  },
+  'gcc.help.li1': {
+    en: '**Anthology coverage for 4ET1.** The Pearson Edexcel Poetry Anthology contains 35 prescribed texts. The Edexcel hub walks through each one with form, structure, language notes, and pairings for the Section B comparison.',
+    ar: '**تغطية المختارات لـ 4ET1.** مختارات Pearson Edexcel الشعرية فيها ٣٥ نص مقرّر. صفحة Edexcel تشرح كل واحد بالشكل والتركيب وملاحظات اللغة والاقترانات لمقارنة Section B.',
+  },
+  'gcc.help.li2': {
+    en: '**Unseen-poetry walkthroughs for Cambridge.** Annotated unseen-poetry workings show how to move from first-read to a structured response under exam conditions, mapped to 0500 and 0990 question types.',
+    ar: '**شروحات الشعر الغير مرئي لـ Cambridge.** أعمال شعر غير مرئي مع تعليقات تبيّن شلون تنتقل من القراءة الأولى لإجابة منظّمة بظروف الامتحان، مربوطة بأنواع أسئلة 0500 و 0990.',
+  },
+  'gcc.help.li3': {
+    en: '**AI-marked practice essays.** Submit a response and get feedback against the assessment objectives for your specific board — calibrated to mark schemes rather than a one-size-fits-all rubric.',
+    ar: '**مقالات تدريب بتصحيح ذكاء اصطناعي.** أرسل إجابة وخذ ملاحظات مقابل أهداف التقييم لبوردك المحدّد — معايرة على مخططات التصحيح مو مخطط واحد يناسب الكل.',
+  },
+  'gcc.help.li4': {
+    en: '**Board-aligned revision paths.** The dashboard groups your work by paper, section, and assessment objective, so Edexcel and Cambridge students see different recommended next steps even when they sit in the same classroom.',
+    ar: '**مسارات مراجعة متطابقة مع البورد.** اللوحة تجمّع شغلك بالورقة، القسم، وهدف التقييم، فطلاب Edexcel و Cambridge يشوفون خطوات تالية موصاية مختلفة حتى لو كانوا بنفس الفصل.',
+  },
+  'gcc.help.jump_in': {
+    en: 'You can jump straight into a board now:',
+    ar: 'تقدر تدخل بورد مباشرة الحين:',
+  },
+  'gcc.timezone.h2': {
+    en: 'Time-zones across the GCC: GMT+3 to GMT+4',
+    ar: 'التوقيت بالخليج: GMT+3 إلى GMT+4',
+  },
+  'gcc.timezone.body1': {
+    en: 'Saudi Arabia, Qatar, Bahrain, and Kuwait sit at GMT+3. The UAE and Oman sit one hour ahead at GMT+4. None of the six observe daylight saving, so the offset to the UK is constant in winter and shrinks by an hour in British Summer Time.',
+    ar: 'السعودية وقطر والبحرين والكويت على GMT+3. الإمارات وعُمان ساعة قدّامهم على GMT+4. ولا واحدة من الست تستخدم التوقيت الصيفي، فالفرق مع بريطانيا ثابت بالشتا ويصغر بساعة بالتوقيت الصيفي البريطاني.',
+  },
+  'gcc.timezone.body2': {
+    en: 'For revision scheduling the practical effect is that the productive window after school finishes lands well before the UK’s evening peak. A 4pm-to-7pm session in Riyadh or Doha is a 2pm-to-5pm session in London — early enough that the AI marker and the wider site tend to be quiet, which means faster response times on submitted essays. It is also worth front-loading mock practice: a Sunday evening mock in Dubai finishes long before most UK boarding-school cohorts have started.',
+    ar: 'لجدولة المراجعة الأثر العملي هو إن نافذة الإنتاجية بعد المدرسة تجي قبل ذروة المساء البريطاني بكثير. جلسة من ٤ لـ ٧ مساءً بالرياض ولا الدوحة هي جلسة ٢ لـ ٥ بلندن — مبكر بحيث المصحح الذكي والموقع عموماً يكونون هادين، يعني أوقات استجابة أسرع على المقالات المُرسلة. كمان مفيد تقدّم تدريب الموك: موك الأحد المسا بدبي يخلّص قبل وايد مدارس البوردنغ ببريطانيا حتى تبدأ.',
+  },
+  'gcc.timezone.tip_title': { en: 'Practical scheduling tip', ar: 'نصيحة جدولة عملية' },
+  'gcc.timezone.tip_body': {
+    en: 'Block 90 minutes immediately after school for active revision (essay planning, AI-marked practice, anthology comparisons), and leave the second half of the evening for low-energy review work — flashcards, reading set texts, watching walkthrough notes. The pattern works well across both GMT+3 and GMT+4 schools.',
+    ar: 'احجز ٩٠ دقيقة فوراً بعد المدرسة لمراجعة نشطة (تخطيط مقالات، تدريب بتصحيح ذكاء اصطناعي، مقارنات مختارات)، وخلّ النصف الثاني من المسا لشغل مراجعة طاقة منخفضة — بطاقات مراجعة، قراءة النصوص المقرّرة، متابعة ملاحظات الشروحات. النمط يشتغل زين بمدارس GMT+3 و GMT+4.',
+  },
+  'gcc.week.h2': { en: 'Sunday–Thursday school week', ar: 'أسبوع مدرسة الأحد-الخميس' },
+  'gcc.week.body1': {
+    en: 'Most British curriculum schools across the GCC follow a Sunday-to-Thursday teaching week, with Friday and Saturday as the weekend. The UAE’s public sector moved to a Monday-to-Friday week in 2022, and a small number of UAE schools have followed, but the majority of British and international schools across the region still operate on the Sunday start. That gives revision two clear advantages over the UK rhythm.',
+    ar: 'أغلب مدارس المنهج البريطاني بالخليج تمشي على أسبوع تدريس من الأحد للخميس، والجمعة والسبت ويك اند. القطاع الحكومي بالإمارات تحوّل لأسبوع الاثنين-الجمعة بـ٢٠٢٢، وعدد قليل من مدارس الإمارات تبعهم، بس الأغلبية من المدارس البريطانية والعالمية بالمنطقة لسا على بداية الأحد. هذا يعطي المراجعة ميزتين واضحتين عن إيقاع بريطانيا.',
+  },
+  'gcc.week.body2': {
+    en: 'First, your weekend genuinely is two consecutive days off-timetable, which makes long-form revision blocks (a full past paper under timed conditions, a Shakespeare re-read, an extended essay rewrite) much easier to slot in than they would be for a UK student trying to fit revision around Saturday sport or Sunday family commitments that are already routine. Second, Thursday afternoons effectively function as a Friday — energy drops, prep volume eases, and it is a good moment to review the week’s feedback rather than start anything new.',
+    ar: 'أولاً، ويك اندك فعلاً يومين متتاليين بدون جدول، وهذا يخلّي بلوكات مراجعة طويلة (ورقة سابقة كاملة بظروف وقت، إعادة قراءة Shakespeare، إعادة كتابة مقال موسّع) أسهل وايد عن الطالب البريطاني اللي يحاول يدخّل المراجعة بين رياضة السبت أو التزامات الأحد العائلية الروتينية. ثانياً، عصاري الخميس فعلياً تشتغل كجمعة — الطاقة تنزل، التحضير يخفّ، ووقت زين تراجع ملاحظات الأسبوع مو تبدأ شي جديد.',
+  },
+  'gcc.week.tip_title': { en: 'Adapted study cadence', ar: 'إيقاع دراسة مكيّف' },
+  'gcc.week.tip_body': {
+    en: 'A workable weekly rhythm: heavy lifting on Sunday and Monday (when the term week is fresh), targeted technique work on Tuesday and Wednesday, light review on Thursday, then one timed practice paper plus one rewrite across the weekend. Rotate which paper or section you focus on each week so no element of the specification goes more than a fortnight without practice.',
+    ar: 'إيقاع أسبوعي عملي: شغل ثقيل الأحد والاثنين (لمن أسبوع الترم طازج)، شغل تقنية موجّه الثلاثاء والأربعاء، مراجعة خفيفة الخميس، بعدها ورقة تدريب موقّتة مع إعادة كتابة على الويك اند. غيّر يا ورقة ولا قسم تركّز عليه كل أسبوع عشان ولا عنصر بالسبيس يفوت أكثر من أسبوعين بدون تدريب.',
+  },
+  'gcc.cta.h2': { en: 'Start with your board', ar: 'ابدأ ببوردك' },
+  'gcc.cta.body': {
+    en: 'The fastest way in is to pick your specification and let the dashboard line up the right revision sequence. If you are not sure whether your school enters Edexcel or Cambridge, the board-select page will walk you through it.',
+    ar: 'أسرع طريقة هي تختار سبيسك وتخلي اللوحة ترتّب تسلسل المراجعة الصح. لو ما تدري يا بورد مدرستك تنزّل، صفحة اختيار البورد بتشرحها لك.',
+  },
+  'gcc.cta.button': { en: 'Pick your exam board →', ar: 'اختر بورد الامتحان مالك ←' },
+  'gcc.launch.eyebrow': { en: 'Launch list', ar: 'قائمة الإطلاق' },
+  'gcc.launch.h2': {
+    en: 'Gulf-region resources, in your inbox',
+    ar: 'موارد منطقة الخليج، بإيميلك',
+  },
+  'gcc.launch.body': {
+    en: 'We’re building a small set of GCC-specific revision packs alongside the main board hubs. Drop your email and we’ll send one note when each lands.',
+    ar: 'إحنا نبني مجموعة صغيرة من حزم المراجعة الخاصة بالخليج جنب صفحات البوردز الرئيسية. اكتب إيميلك وبنرسل لك ملاحظة لمن كل واحدة تنزل.',
+  },
+  'gcc.faq.q1': {
+    en: 'Is the platform available across the GCC?',
+    ar: 'هل المنصة متوفرة بكل دول الخليج؟',
+  },
+  'gcc.faq.a1': {
+    en: 'Yes. The English Hub is a public web app served from a global CDN, so students in the UAE, Qatar, Saudi Arabia, Kuwait, Bahrain, and Oman can access it the same way they would from the UK. There is no regional licence to buy and no separate Gulf-only build — the same revision content, AI marker, and account features work over standard residential and school connections.',
+    ar: 'إي. The English Hub تطبيق ويب عام يُقدَّم من CDN عالمي، فطلاب الإمارات وقطر والسعودية والكويت والبحرين وعُمان يقدرون يدخلون نفس طريقة دخول طلاب بريطانيا. ما في ترخيص إقليمي تشتريه ولا نسخة منفصلة للخليج بس — نفس محتوى المراجعة، المصحح الذكي، وخصائص الحساب تشتغل على اتصالات المنازل والمدارس العادية.',
+  },
+  'gcc.faq.q2': {
+    en: 'Can we pay in AED, SAR, or QAR?',
+    ar: 'نقدر ندفع بدرهم إماراتي أو ريال سعودي أو ريال قطري؟',
+  },
+  'gcc.faq.a2': {
+    en: 'Subscription pricing is set in GBP, but card payments are processed by Stripe, which converts from your card’s home currency at the time of charge. Most UAE, Saudi, and Qatari debit and credit cards work without setup, and your bank statement will show the converted amount in AED, SAR, or QAR alongside the GBP charge.',
+    ar: 'أسعار الاشتراك بالجنيه الإسترليني، بس دفعات الكارت تتعالج عن طريق Stripe، اللي يحوّل من عملة كارتك وقت السحب. أغلب كروت الديبت والكريدت الإماراتية والسعودية والقطرية تشتغل بدون إعداد، وكشف بنكك بيبيّن المبلغ المحوّل بالدرهم أو الريال السعودي أو الريال القطري جنب رسم الجنيه الإسترليني.',
+  },
+  'gcc.faq.q3': {
+    en: 'Does The English Hub work on school networks (filtered/proxied)?',
+    ar: 'هل The English Hub يشتغل على شبكات المدارس (المُفلترة/البروكسي)؟',
+  },
+  'gcc.faq.a3': {
+    en: 'The site loads over standard HTTPS on a single domain with no peer-to-peer or video-conferencing requirements, so it usually passes through school filters and proxies without special configuration. If your IT team needs to allowlist anything, the only required hostname is theenglishhub.app and its subdomains. We recommend testing one student account on the school network before rolling out wider.',
+    ar: 'الموقع يفتح عبر HTTPS عادي على domain واحد بدون متطلبات peer-to-peer ولا مكالمات فيديو، فعادةً يمر من فلاتر المدارس والبروكسيز بدون إعداد خاص. لو فريق IT يحتاج يضيف شي للقائمة، الـ hostname الوحيد المطلوب هو theenglishhub.app والـ subdomains مالته. نوصي تجرّب حساب طالب واحد على شبكة المدرسة قبل التوسع.',
+  },
+  'gcc.faq.q4': {
+    en: 'Are there resources for Cambridge AS/A-Level English (KS5)?',
+    ar: 'هل في موارد لـ Cambridge AS/A-Level إنجليزي (KS5)؟',
+  },
+  'gcc.faq.a4': {
+    en: 'Not yet. The current scope is KS3, GCSE, and IGCSE English Language and Literature, including Pearson Edexcel and Cambridge IGCSE specifications. AS/A-Level coverage is on the roadmap but is not live. If A-Level support matters to you, the launch list at the bottom of this page is the right place to be notified when it lands.',
+    ar: 'مو بعد. النطاق الحالي هو KS3 و GCSE و IGCSE لغة وأدب إنجليزي، شامل Pearson Edexcel و Cambridge IGCSE. تغطية AS/A-Level بالخريطة بس مو شغّالة. لو دعم A-Level مهم لك، قائمة الإطلاق بأسفل الصفحة هي المكان الصح تنبهك لمن تنزل.',
+  },
+  'gcc.faq.q5': {
+    en: 'How does the AI marker handle British vs International English spelling?',
+    ar: 'شلون يتعامل المصحح الذكي مع الإملاء البريطاني مقابل الدولي؟',
+  },
+  'gcc.faq.a5': {
+    en: 'The marker is calibrated to UK exam-board mark schemes, which accept both British and International English spellings as long as a candidate is consistent within a response. It will not penalise a student for writing "colour" or "color" provided one form is used throughout. Spelling is only flagged as a technical-accuracy issue when it falls outside accepted variants for the specification.',
+    ar: 'المصحح معاير على مخططات تصحيح بوردز الامتحانات البريطانية، اللي تقبل الإملاء البريطاني والدولي بشرط الطالب يكون متّسق بإجابته. ما يخصم على الطالب اللي يكتب "colour" ولا "color" بشرط استخدام نسخة واحدة طول الإجابة. الإملاء يتأشر بس كمشكلة دقة فنية لمن يطلع برّا النسخ المقبولة للسبيس.',
+  },
+
+  // ─── International school IGCSE landing ─────────────────────────────
+  'intl.breadcrumb_current': { en: 'International schools', ar: 'المدارس العالمية' },
+  'intl.eyebrow_hero': {
+    en: 'For British international schools',
+    ar: 'للمدارس البريطانية العالمية',
+  },
+  'intl.h1': {
+    en: 'IGCSE English revision for British international schools',
+    ar: 'مراجعة IGCSE إنجليزي للمدارس البريطانية العالمية',
+  },
+  'intl.intro': {
+    en: 'One platform that covers Pearson Edexcel and Cambridge IGCSE English side by side — calibrated to mark schemes, exam-zone-agnostic, and built so a head of department can roll the same workflow across mixed-board cohorts.',
+    ar: 'منصة واحدة تغطي Pearson Edexcel و Cambridge IGCSE English جنب لجنب — معايرة على مخططات التصحيح، مستقلة عن منطقة الامتحان، ومبنية بحيث رئيس القسم يقدر يطبّق نفس سير العمل على دفعات بوردز مختلطة.',
+  },
+  'intl.cta.licence': { en: 'Department licence options', ar: 'خيارات ترخيص القسم' },
+  'intl.cta.teachers': { en: 'For individual teachers', ar: 'للمعلمين الأفراد' },
+  'intl.why.eyebrow': { en: 'Why us', ar: 'ليش إحنا' },
+  'intl.why.h2': {
+    en: 'Why The English Hub for international schools',
+    ar: 'ليش The English Hub للمدارس العالمية',
+  },
+  'intl.why.body1': {
+    en: 'International English departments sit at an awkward intersection. The texts and specifications are British, the students often aren’t, and the resources you can actually buy from UK publishers tend to assume a UK timetable, a UK calendar, and a UK-centric reference frame. The English Hub is built for the way British international schools actually run — not the way UK schools do.',
+    ar: 'أقسام الإنجليزي العالمية تجلس بمفترق محرج. النصوص والسبيسز بريطانية، الطلاب عادةً مو بريطانيين، والموارد اللي تقدر فعلاً تشتريها من ناشري بريطانيا تفترض جدول بريطاني وتقويم بريطاني ومرجعية بريطانية. The English Hub مبني للطريقة اللي المدارس البريطانية العالمية تشتغل فيها فعلاً — مو طريقة مدارس بريطانيا.',
+  },
+  'intl.why.body2_intro': { en: 'What that means in practice:', ar: 'يعني هذا بالواقع:' },
+  'intl.why.li1_strong': { en: 'Spec-aligned revision.', ar: 'مراجعة متطابقة مع السبيس.' },
+  'intl.why.li1': {
+    en: 'Every revision page is keyed to one exam board and one paper. Cambridge 0500 students never see Pearson 4ET1 mark schemes by accident, and vice versa.',
+    ar: 'كل صفحة مراجعة مربوطة ببورد امتحان واحد وورقة واحدة. طلاب Cambridge 0500 ولا مرة بيشوفون مخططات Pearson 4ET1 بالغلط، والعكس صحيح.',
+  },
+  'intl.why.li2_strong': { en: 'AI-marked practice.', ar: 'تدريب بتصحيح ذكاء اصطناعي.' },
+  'intl.why.li2': {
+    en: 'Students submit essays, the AI marks against the correct board’s assessment objectives, and the teacher reviews before the student sees the feedback. Removes the bottleneck of marking 60 mock essays in a week.',
+    ar: 'الطلاب يرسلون مقالات، الذكاء الاصطناعي يصحح مقابل أهداف تقييم البورد الصح، والمعلم يراجع قبل الطالب يشوف الملاحظات. يشيل عنق الزجاجة لتصحيح ٦٠ مقال موك بأسبوع.',
+  },
+  'intl.why.li3_strong': {
+    en: 'Multi-board coverage in one product.',
+    ar: 'تغطية بوردز متعددة بمنتج واحد.',
+  },
+  'intl.why.li3': {
+    en: 'Pearson Edexcel 4ET1, 4EA1, and Cambridge 0500, 0990 — covered in the same library, accessible from the same department licence.',
+    ar: 'Pearson Edexcel 4ET1 و 4EA1 و Cambridge 0500 و 0990 — كلهم بنفس المكتبة، تتفتح من نفس ترخيص القسم.',
+  },
+  'intl.why.li4_strong': {
+    en: 'Exam-zone-agnostic content.',
+    ar: 'محتوى مستقل عن منطقة الامتحان.',
+  },
+  'intl.why.li4': {
+    en: 'Pages don’t assume a UK-shaped academic year. Whether your students sit in May/June or November, the revision library works the same way.',
+    ar: 'الصفحات ما تفترض سنة دراسية بشكل بريطاني. سواء طلابك يذاكرون بمايو/يونيو ولا نوفمبر، مكتبة المراجعة تشتغل نفس الطريقة.',
+  },
+  'intl.why.li5_strong': { en: 'Calibrated to mark schemes.', ar: 'معايرة على مخططات التصحيح.' },
+  'intl.why.li5': {
+    en: 'Model answers, AO weightings, and feedback rubrics are built from each board’s published mark scheme — not from one teacher’s house style.',
+    ar: 'الإجابات النموذجية وأوزان AO ومخططات الملاحظات مبنية من مخطط التصحيح المنشور لكل بورد — مو من أسلوب معلم واحد.',
+  },
+  'intl.specs.eyebrow': { en: 'Specifications', ar: 'السبيسز' },
+  'intl.specs.h2': { en: 'IGCSE English specs we cover', ar: 'سبيسز IGCSE إنجليزي اللي نغطيها' },
+  'intl.specs.intro': {
+    en: 'Four IGCSE English specifications are the backbone of most British international school English departments. Every page on The English Hub is keyed to one of them — pick the spec your students sit and the rest follows.',
+    ar: 'أربع سبيسز IGCSE إنجليزي هم العمود الفقري لأغلب أقسام الإنجليزي بالمدارس البريطانية العالمية. كل صفحة على The English Hub مربوطة بواحد منهم — اختر السبيس اللي طلابك يذاكرونه والباقي يجي وراه.',
+  },
+  'intl.specs.open_hub': { en: 'Open hub →', ar: 'افتح الصفحة ←' },
+  'intl.spec.4et1.name': {
+    en: 'Pearson Edexcel IGCSE English Literature',
+    ar: 'Pearson Edexcel IGCSE أدب إنجليزي',
+  },
+  'intl.spec.4et1.blurb': {
+    en: 'Closed-book examination covering an anthology, a modern drama or prose text, and a Shakespeare play. Two papers, with an optional coursework route.',
+    ar: 'امتحان بدون كتاب مفتوح يغطي مختارات، نص دراما أو نثر حديث، ومسرحية Shakespeare. ورقتين، مع مسار مشروع اختياري.',
+  },
+  'intl.spec.4ea1.name': {
+    en: 'Pearson Edexcel IGCSE English Language A',
+    ar: 'Pearson Edexcel IGCSE لغة إنجليزية A',
+  },
+  'intl.spec.4ea1.blurb': {
+    en: 'Anthology-based reading and writing exam with a transactional and imaginative writing component. Widely sat by international centres.',
+    ar: 'امتحان قراءة وكتابة على مختارات مع مكوّن كتابة معاملاتية وإبداعية. وايد مراكز عالمية يذاكرونه.',
+  },
+  'intl.spec.0500.name': {
+    en: 'Cambridge IGCSE First Language English',
+    ar: 'Cambridge IGCSE اللغة الإنجليزية الأولى',
+  },
+  'intl.spec.0500.blurb': {
+    en: 'Reading, directed writing, and composition across two papers. The default Cambridge route for first-language English speakers in international schools.',
+    ar: 'قراءة وكتابة موجّهة وإنشاء على ورقتين. مسار Cambridge الافتراضي للناطقين بالإنجليزية كلغة أولى بالمدارس العالمية.',
+  },
+  'intl.spec.0990.name': {
+    en: 'Cambridge IGCSE English Language (9–1)',
+    ar: 'Cambridge IGCSE لغة إنجليزية (9-1)',
+  },
+  'intl.spec.0990.blurb': {
+    en: 'The 9–1 graded sibling of 0500, with the same paper structure but reformed grade boundaries aligned to the UK reformed scale.',
+    ar: 'النسخة المُقيَّمة بسلّم 9-1 من 0500، بنفس تركيب الأوراق بس حدود درجات مُحدّثة متطابقة مع سلّم بريطانيا المُحدّث.',
+  },
+  'intl.coverage.eyebrow': { en: 'Curriculum coverage', ar: 'تغطية المنهج' },
+  'intl.coverage.h2': {
+    en: 'Coverage across the British international school curriculum',
+    ar: 'التغطية عبر منهج المدرسة البريطانية العالمية',
+  },
+  'intl.coverage.intro': {
+    en: 'Most British international schools follow a recognisable shape — Key Stage 3 in the lower years, then either GCSE or IGCSE for the 14–16 cohort, depending on which exam zone the school enters. The English Hub is built around the same shape:',
+    ar: 'أغلب المدارس البريطانية العالمية تتبع شكل معروف — Key Stage 3 بالسنوات الأولى، بعدها GCSE ولا IGCSE لفئة ١٤-١٦ سنة، على حسب منطقة الامتحان اللي المدرسة تنزّل فيها. The English Hub مبني بنفس الشكل:',
+  },
+  'intl.coverage.ks3_strong': { en: 'Key Stage 3 (Years 7–9).', ar: 'Key Stage 3 (السنوات ٧-٩).' },
+  'intl.coverage.ks3_body': {
+    en: 'Foundational reading, analysis, and writing skills. Schools running a UK-curriculum lower school can use these as the on-ramp to IGCSE. KS3-specific landing pages are still being added — for now, browse the full revision library for KS3 material.',
+    ar: 'مهارات قراءة وتحليل وكتابة أساسية. المدارس اللي تشتغل بمنهج بريطاني للمرحلة الأولى تقدر تستخدمها كبداية نحو IGCSE. صفحات KS3 المخصصة لسا قاعدين نضيفها — للحين، تصفّح مكتبة المراجعة كاملة لمواد KS3.',
+  },
+  'intl.coverage.gcse_strong': {
+    en: 'GCSE (for UK-curriculum branches).',
+    ar: 'GCSE (لفروع المنهج البريطاني).',
+  },
+  'intl.coverage.gcse_body': {
+    en: 'Schools whose 14–16 cohort sits UK GCSE rather than IGCSE — for example a campus aligned with a UK partner school — can use the AQA, Pearson Edexcel, OCR, and WJEC Eduqas hubs.',
+    ar: 'المدارس اللي فئة ١٤-١٦ سنة عندها تذاكر GCSE بريطاني بدل IGCSE — مثلاً فرع متطابق مع مدرسة شريكة ببريطانيا — تقدر تستخدم صفحات AQA و Pearson Edexcel و OCR و WJEC Eduqas.',
+  },
+  'intl.coverage.igcse_strong': {
+    en: 'IGCSE (the international standard).',
+    ar: 'IGCSE (المعيار الدولي).',
+  },
+  'intl.coverage.igcse_body': {
+    en: 'Pearson Edexcel and Cambridge International, the two specifications most British international schools enter. Linked above.',
+    ar: 'Pearson Edexcel و Cambridge International، السبيسين اللي أغلب المدارس البريطانية العالمية تنزّل فيهم. الروابط فوق.',
+  },
+  'intl.coverage.note': {
+    en: 'Not sure which board your school enters?',
+    ar: 'مو متأكد يا بورد مدرستك تنزّل فيه؟',
+  },
+  'intl.coverage.note_link1': { en: 'board-select page', ar: 'صفحة اختيار البورد' },
+  'intl.coverage.note_mid': {
+    en: ' walks through the options by level, or jump straight to the ',
+    ar: ' تشرح الخيارات بحسب المستوى، أو روح مباشرة لـ ',
+  },
+  'intl.coverage.note_link2': { en: 'IGCSE hub', ar: 'صفحة IGCSE' },
+  'intl.coverage.note_end': { en: ' if you already know it’s IGCSE.', ar: ' لو تدري إنه IGCSE.' },
+  'intl.start.eyebrow': { en: 'For heads of department', ar: 'لرؤساء الأقسام' },
+  'intl.start.h2': { en: 'How department leads get started', ar: 'شلون يبدأ رؤساء القسم' },
+  'intl.start.intro': {
+    en: 'Rolling a new platform across an English department is rarely a same-day decision. We recommend a three-step plan that lets you trial the product on a single class before committing the whole faculty.',
+    ar: 'تطبيق منصة جديدة على قسم إنجليزي نادراً قرار يوم واحد. ننصح بخطة ثلاث خطوات تخليك تجرّب المنتج على فصل واحد قبل ما تلتزم بكل الكادر.',
+  },
+  'intl.start.step1.title': { en: 'Pick your dominant board', ar: 'اختر البورد المهيمن' },
+  'intl.start.step1.body': {
+    en: 'Identify the IGCSE specification that the largest share of your cohort sits — usually Cambridge 0500/0990 or Pearson Edexcel 4ET1/4EA1. Start there. The other boards remain available within the same licence.',
+    ar: 'حدّد سبيس IGCSE اللي أكبر نسبة من دفعتك تذاكره — عادةً Cambridge 0500/0990 ولا Pearson Edexcel 4ET1/4EA1. ابدأ هناك. باقي البوردز تبقى متوفرة بنفس الترخيص.',
+  },
+  'intl.start.step2.title': { en: 'Trial with a single class', ar: 'جرّب مع فصل واحد' },
+  'intl.start.step2.body': {
+    en: 'Run one Year 10 or Year 11 group through the platform for a half-term — set practice papers, use AI marking on a mock essay, and review the analytics. No fabricated success stories — judge it on your own students.',
+    ar: 'مرّر مجموعة Year 10 ولا Year 11 على المنصة لنصف ترم — حدّد أوراق تدريب، استخدم تصحيح الذكاء الاصطناعي على مقال موك، وراجع التحليلات. ما في قصص نجاح ملفّقة — احكم عليه ببقية طلابك.',
+  },
+  'intl.start.step3.title': { en: 'Roll across the department', ar: 'طبّق على القسم كله' },
+  'intl.start.step3.body': {
+    en: 'Once the trial class has proof points your colleagues recognise, expand to the rest of the faculty under one department licence. Onboarding shifts from per-teacher to whole-team.',
+    ar: 'لمن الفصل التجريبي يطلع نقاط إثبات يعرفها زملاؤك، توسّع لباقي الكادر تحت ترخيص قسم واحد. الإعداد يتحوّل من لكل معلم لفريق كامل.',
+  },
+  'intl.start.step_label': { en: 'Step', ar: 'الخطوة' },
+  'intl.start.cta1': {
+    en: 'See department licence options',
+    ar: 'شوف خيارات ترخيص القسم',
+  },
+  'intl.start.cta2': { en: 'Individual teacher plans', ar: 'باقات المعلم الفردي' },
+  'intl.multi.eyebrow': { en: 'Mixed cohorts', ar: 'دفعات مختلطة' },
+  'intl.multi.h2': {
+    en: 'Multi-board international department workflow',
+    ar: 'سير عمل قسم عالمي متعدد البوردز',
+  },
+  'intl.multi.body1': {
+    en: 'Plenty of British international schools don’t enter every student for the same board. A school might run Cambridge 0500 as the default, but enter a small EAL cohort for Pearson 4EA1 because the anthology suits them better. Or it might be the opposite — Pearson dominant, with a Cambridge sub-group for legacy reasons.',
+    ar: 'وايد مدارس بريطانية عالمية ما تنزّل كل الطلاب بنفس البورد. ممكن مدرسة تشتغل Cambridge 0500 كافتراضي، بس تنزّل دفعة EAL صغيرة على Pearson 4EA1 لأن المختارات تناسبهم أحسن. ولا العكس — Pearson مهيمن، مع مجموعة Cambridge فرعية لأسباب تاريخية.',
+  },
+  'intl.multi.body2': {
+    en: 'One department licence on The English Hub covers every IGCSE board we publish. There are no per-board upgrades and no second account to manage. Each student sees revision pages keyed to their own specification; each teacher can flip between boards from the same dashboard. The workflow looks the same whether you run one board or four.',
+    ar: 'ترخيص قسم واحد على The English Hub يغطي كل بورد IGCSE ننشره. ما في ترقيات لكل بورد ولا حساب ثاني تديره. كل طالب يشوف صفحات مراجعة مربوطة بسبيسه؛ كل معلم يقدر يتنقل بين البوردز من نفس اللوحة. سير العمل يطلع نفس الشكل سواء تشتغل ببورد واحد ولا أربعة.',
+  },
+  'intl.multi.body3_pre': {
+    en: 'Pricing for a department licence depends on faculty size rather than board count — see the ',
+    ar: 'تسعير ترخيص القسم يعتمد على حجم الكادر مو عدد البوردز — شوف ',
+  },
+  'intl.multi.body3_link1': { en: 'pricing page', ar: 'صفحة الأسعار' },
+  'intl.multi.body3_mid': {
+    en: ' for the current rate, and ',
+    ar: ' للسعر الحالي، و ',
+  },
+  'intl.multi.body3_link2': { en: 'the schools page', ar: 'صفحة المدارس' },
+  'intl.multi.body3_end': {
+    en: ' for the founding-schools programme if you’re joining early.',
+    ar: ' لبرنامج المدارس المؤسسة لو بتنضم بدري.',
+  },
+  'intl.faqs.eyebrow': { en: 'FAQs', ar: 'الأسئلة الشائعة' },
+  'intl.faqs.h2': { en: 'Frequently asked questions', ar: 'الأسئلة الشائعة' },
+  'intl.cta_final.eyebrow': { en: 'Next step', ar: 'الخطوة التالية' },
+  'intl.cta_final.h2': {
+    en: 'Bring The English Hub into your department',
+    ar: 'جيب The English Hub لقسمك',
+  },
+  'intl.cta_final.body_pre': {
+    en: 'If you’re a head of English or a department lead, the fastest route is the ',
+    ar: 'لو إنت رئيس قسم إنجليزي ولا قائد قسم، أسرع طريق هو ',
+  },
+  'intl.cta_final.body_link1': { en: 'schools page', ar: 'صفحة المدارس' },
+  'intl.cta_final.body_mid': {
+    en: ' — it covers licence shape, onboarding, and pricing. If you’re a single teacher trialling for your own classes, ',
+    ar: ' — تغطي شكل الترخيص والإعداد والتسعير. لو إنت معلم واحد تجرّب لفصولك، ',
+  },
+  'intl.cta_final.body_link2': {
+    en: 'start on the teacher plan',
+    ar: 'ابدأ على باقة المعلم',
+  },
+  'intl.faq.q1': {
+    en: 'Does the platform support multiple boards within one school licence?',
+    ar: 'هل المنصة تدعم بوردز متعددة بترخيص مدرسة واحد؟',
+  },
+  'intl.faq.a1': {
+    en: 'Yes. A single department licence covers every board we publish. If half your cohort sits Cambridge 0500 and the other half sits Pearson Edexcel 4EA1, both groups work from the same licence — each student sees revision pages keyed to their own specification, and teachers can move between boards without switching account.',
+    ar: 'إي. ترخيص قسم واحد يغطي كل بورد ننشره. لو نصف دفعتك تذاكر Cambridge 0500 والنصف الثاني Pearson Edexcel 4EA1، كلا المجموعتين تشتغلون من نفس الترخيص — كل طالب يشوف صفحات مراجعة مربوطة بسبيسه، والمعلمين يقدرون يتنقلون بين البوردز بدون تغيير حساب.',
+  },
+  'intl.faq.q2': {
+    en: 'How does AI marking handle international students whose first language isn’t English?',
+    ar: 'شلون يتعامل تصحيح الذكاء الاصطناعي مع الطلاب اللي إنجليزي مو لغتهم الأولى؟',
+  },
+  'intl.faq.a2': {
+    en: 'The AI marks against the same mark scheme criteria the board uses, so feedback focuses on assessment objectives — reading, analysis, structure, vocabulary, and accuracy — rather than on whether English is a first language. EAL students often benefit because the feedback is specific (which sentence, which AO) rather than general. Teachers always review and can adjust marks before the student sees them.',
+    ar: 'الذكاء الاصطناعي يصحح مقابل نفس معايير مخطط التصحيح اللي البورد يستخدمه، فالملاحظات تركّز على أهداف التقييم — قراءة، تحليل، تركيب، مفردات، ودقة — مو على هل الإنجليزية لغة أولى ولا لا. طلاب EAL عادةً يستفيدون لأن الملاحظات محدّدة (يا جملة، يا AO) مو عامة. المعلمون دايماً يراجعون ويقدرون يعدّلون الدرجات قبل الطالب يشوفها.',
+  },
+  'intl.faq.q3': {
+    en: 'Can we customise revision schedules for a longer or shorter academic year?',
+    ar: 'نقدر نخصّص جداول المراجعة لسنة دراسية أطول ولا أقصر؟',
+  },
+  'intl.faq.a3': {
+    en: 'Revision content is on-demand rather than tied to a fixed UK academic calendar. Department leads pick which papers, set texts, and skills to prioritise; students work through them at their own pace. Schools running a Northern Hemisphere August–June year, a Southern Hemisphere January–November year, or a split-semester model all use the same library.',
+    ar: 'محتوى المراجعة عند الطلب مو مربوط بتقويم دراسي بريطاني ثابت. رؤساء الأقسام يختارون يا أوراق ونصوص مقرّرة ومهارات يقدّمونها بالأولوية؛ الطلاب يمشون فيها بسرعتهم. المدارس اللي تشتغل بسنة نصف الكرة الشمالي أغسطس-يونيو، ولا سنة نصف الكرة الجنوبي يناير-نوفمبر، ولا نموذج ترمين مقسّمين، كلهم يستخدمون نفس المكتبة.',
+  },
+  'intl.faq.q4': {
+    en: 'Is content available offline for schools with limited connectivity?',
+    ar: 'هل المحتوى متوفر بدون نت للمدارس اللي اتصالها محدود؟',
+  },
+  'intl.faq.a4': {
+    en: 'The platform is web-delivered and requires a connection to load pages, submit essays for AI marking, and sync teacher dashboards. Printable resources — model answers, mark-scheme breakdowns, practice papers — can be downloaded as PDFs in advance for use in classrooms with intermittent connectivity. We do not currently ship a fully offline app.',
+    ar: 'المنصة على الويب وتحتاج اتصال عشان تفتح الصفحات وترسل المقالات لتصحيح الذكاء الاصطناعي وتزامن لوحات المعلمين. الموارد القابلة للطباعة — إجابات نموذجية، شروحات مخطط التصحيح، أوراق تدريب — تقدر تنزّلها كـ PDFs مسبقاً للاستخدام بالفصول اللي اتصالها متقطّع. ما عندنا حالياً تطبيق يشتغل بدون نت كلياً.',
+  },
+  'intl.faq.q5': {
+    en: 'How do you handle GDPR and non-EU/UK data residency?',
+    ar: 'شلون تتعاملون مع GDPR وإقامة البيانات خارج الاتحاد الأوروبي/بريطانيا؟',
+  },
+  'intl.faq.a5': {
+    en: 'The English Hub is operated from the UK and applies UK GDPR standards to all accounts globally, regardless of where the school is based. Schools in jurisdictions with their own data-protection regimes (for example UAE, Singapore, or Hong Kong) can request a data-processing addendum before signing. Specific residency requirements should be raised during onboarding so we can confirm compatibility before contracts are issued.',
+    ar: 'The English Hub تُدار من بريطانيا وتطبّق معايير UK GDPR على كل الحسابات عالمياً، بغض النظر عن مكان المدرسة. المدارس بالولايات اللي عندها أنظمة حماية بيانات خاصة (مثلاً الإمارات وسنغافورة وهونغ كونغ) تقدر تطلب ملحق معالجة بيانات قبل التوقيع. متطلبات الإقامة المحدّدة لازم تتطرح وقت الإعداد عشان نأكد التوافق قبل ما تصدر العقود.',
+  },
+
+  // ─── Creators landing ───────────────────────────────────────────────
+  'creators.badge': { en: 'Creator Partners', ar: 'شركاء صنّاع المحتوى' },
+  'creators.h1': { en: 'Earn Money Sharing Education', ar: 'اكسب فلوس وأنت تنشر التعليم' },
+  'creators.subtitle': {
+    en: 'Join The English Hub’s affiliate program. Earn 20% recurring commission on every student you refer.',
+    ar: 'انضم لبرنامج الشراكة مالنا. اكسب ٢٠٪ عمولة متكرّرة على كل طالب توصّله.',
+  },
+  'creators.cta.apply': { en: 'Apply to Become a Partner', ar: 'قدّم لتصير شريك' },
+  'creators.cta.contact': {
+    en: 'Already an affiliate? Contact us',
+    ar: 'إنت أصلاً شريك؟ تواصل معانا',
+  },
+  'creators.how.h2': { en: 'How It Works', ar: 'شلون يشتغل' },
+  'creators.how.step1.title': { en: 'Apply to become a partner', ar: 'قدّم لتصير شريك' },
+  'creators.how.step1.desc': {
+    en: 'Fill out the form below. We review applications within 48 hours.',
+    ar: 'عبّي النموذج تحت. نراجع الطلبات خلال ٤٨ ساعة.',
+  },
+  'creators.how.step2.title': {
+    en: 'Get your unique referral link',
+    ar: 'خذ رابط الإحالة الخاص فيك',
+  },
+  'creators.how.step2.desc': {
+    en: 'Once approved, you get a personal link and tracking dashboard.',
+    ar: 'لمن يوافقون، تأخذ رابط شخصي ولوحة متابعة.',
+  },
+  'creators.how.step3.title': { en: 'Share with your audience', ar: 'شاركه مع جمهورك' },
+  'creators.how.step3.desc': {
+    en: 'Post on TikTok, YouTube, Instagram, or any platform you use.',
+    ar: 'انشر على TikTok ولا YouTube ولا Instagram ولا أي منصة تستخدمها.',
+  },
+  'creators.how.step4.title': { en: 'Earn 20% recurring monthly', ar: 'اكسب ٢٠٪ متكرّر شهرياً' },
+  'creators.how.step4.desc': {
+    en: 'Earn 20% of every subscription — paid every month they stay subscribed.',
+    ar: 'اكسب ٢٠٪ من كل اشتراك — يتدفع كل شهر مادام مشترك.',
+  },
+  'creators.how.step_label': { en: 'Step', ar: 'الخطوة' },
+  'creators.calc.h2': { en: 'Earning Calculator', ar: 'حاسبة الأرباح' },
+  'creators.calc.intro': {
+    en: 'See how much you could earn with our 20% recurring commission on the',
+    ar: 'شوف كم تقدر تكسب مع عمولة ٢٠٪ المتكرّرة على',
+  },
+  'creators.calc.plan_suffix': { en: '/mo plan.', ar: 'باقة شهرية.' },
+  'creators.calc.footnote_prefix': { en: 'Based on', ar: 'بناءً على' },
+  'creators.calc.footnote_suffix': {
+    en: '/mo subscription price. Commission is recurring for as long as the student remains subscribed.',
+    ar: 'سعر اشتراك شهري. العمولة متكرّرة طول ما الطالب مشترك.',
+  },
+  'creators.calc.students_referred': { en: 'students referred', ar: 'طالب موصّل' },
+  'creators.calc.per_month': { en: 'per month, recurring', ar: 'بالشهر، متكرّر' },
+  'creators.ideas.h2': { en: 'Content Ideas That Convert', ar: 'أفكار محتوى تجيب نتيجة' },
+  'creators.ideas.hacks.title': { en: '"English exam hacks"', ar: '"حيل امتحان الإنجليزي"' },
+  'creators.ideas.hacks.desc': {
+    en: '15-30 second TikToks or YouTube Shorts showing quick tips from the platform.',
+    ar: 'تيك توك ولا يوتيوب شورتس ١٥-٣٠ ثانية تبيّن نصائح سريعة من المنصة.',
+  },
+  'creators.ideas.hacks.platform': { en: 'TikTok / Shorts', ar: 'TikTok / Shorts' },
+  'creators.ideas.grade9.title': { en: '"How I got a Grade 9"', ar: '"شلون حصلت Grade 9"' },
+  'creators.ideas.grade9.desc': {
+    en: 'Study vlogs showing your revision routine using The English Hub.',
+    ar: 'فلوغ دراسة يبيّن روتين مراجعتك باستخدام The English Hub.',
+  },
+  'creators.ideas.grade9.platform': { en: 'YouTube / TikTok', ar: 'YouTube / TikTok' },
+  'creators.ideas.best.title': {
+    en: '"Best GCSE revision resources"',
+    ar: '"أحسن موارد مراجعة GCSE"',
+  },
+  'creators.ideas.best.desc': {
+    en: 'Review and comparison videos — include The English Hub in your "top 5" list.',
+    ar: 'فيديوهات تقييم ومقارنة — حط The English Hub بقائمة "الخمسة الأوائل".',
+  },
+  'creators.ideas.best.platform': { en: 'YouTube / Instagram', ar: 'YouTube / Instagram' },
+  'creators.ideas.swm.title': { en: '"Study with me" sessions', ar: 'جلسات "ادرس معاي"' },
+  'creators.ideas.swm.desc': {
+    en: 'Film yourself revising with The English Hub open on screen. Great for long-form content.',
+    ar: 'سجّل نفسك تراجع و The English Hub مفتوح على الشاشة. زين للمحتوى الطويل.',
+  },
+  'creators.ideas.swm.platform': { en: 'YouTube / TikTok LIVE', ar: 'YouTube / TikTok LIVE' },
+  'creators.benefits.h2': { en: 'Partner Benefits', ar: 'مزايا الشريك' },
+  'creators.benefits.recurring.title': { en: '20% recurring commission', ar: '٢٠٪ عمولة متكرّرة' },
+  'creators.benefits.recurring.desc': {
+    en: 'Earn on every payment, not just the first. As long as they subscribe, you earn.',
+    ar: 'اكسب على كل دفعة، مو بس الأولى. طول ما هو مشترك، إنت تكسب.',
+  },
+  'creators.benefits.cookie.title': { en: '30-day cookie window', ar: 'نافذة كوكي ٣٠ يوم' },
+  'creators.benefits.cookie.desc': {
+    en: 'If someone clicks your link, you get credit for 30 days — even if they don’t sign up immediately.',
+    ar: 'لو واحد ضغط على رابطك، تأخذ كريديت ٣٠ يوم — حتى لو ما سجّل فوراً.',
+  },
+  'creators.benefits.dashboard.title': { en: 'Real-time dashboard', ar: 'لوحة لحظية' },
+  'creators.benefits.dashboard.desc': {
+    en: 'Track clicks, signups, and earnings in real time from your affiliate dashboard.',
+    ar: 'تابع الضغطات والتسجيلات والأرباح لحظياً من لوحة الشراكة مالك.',
+  },
+  'creators.benefits.codes.title': { en: 'Custom discount codes', ar: 'أكواد خصم مخصصة' },
+  'creators.benefits.codes.desc': {
+    en: 'Give your audience exclusive discount codes to boost conversions.',
+    ar: 'اعطي جمهورك أكواد خصم حصرية ترفع التحويلات.',
+  },
+  'creators.benefits.payout.title': { en: 'Monthly payouts', ar: 'دفعات شهرية' },
+  'creators.benefits.payout.desc': {
+    en: 'Confirmed commissions are paid on the 1st of each month via PayPal or bank transfer.',
+    ar: 'العمولات المؤكّدة تتدفع أول كل شهر عبر PayPal ولا تحويل بنكي.',
+  },
+  'creators.benefits.support.title': { en: 'Dedicated support', ar: 'دعم مخصّص' },
+  'creators.benefits.support.desc': {
+    en: 'Get direct access to our team for content ideas, assets, and promotional support.',
+    ar: 'تأخذ وصول مباشر لفريقنا لأفكار محتوى وأصول ودعم ترويجي.',
+  },
+  'creators.apply.h2': {
+    en: 'Apply to Become a Creator Partner',
+    ar: 'قدّم لتصير شريك صانع محتوى',
+  },
+  'creators.apply.intro': {
+    en: 'We review all applications within 48 hours.',
+    ar: 'نراجع كل الطلبات خلال ٤٨ ساعة.',
+  },
+  'creators.form.name': { en: 'Full Name *', ar: 'الاسم الكامل *' },
+  'creators.form.email': { en: 'Email Address *', ar: 'الإيميل *' },
+  'creators.form.platform': { en: 'Primary Platform *', ar: 'المنصة الأساسية *' },
+  'creators.form.platform_placeholder': {
+    en: 'Select your main platform...',
+    ar: 'اختر منصتك الأساسية...',
+  },
+  'creators.form.platform.tiktok': { en: 'TikTok', ar: 'TikTok' },
+  'creators.form.platform.youtube': { en: 'YouTube', ar: 'YouTube' },
+  'creators.form.platform.instagram': { en: 'Instagram', ar: 'Instagram' },
+  'creators.form.platform.twitter': { en: 'Twitter / X', ar: 'Twitter / X' },
+  'creators.form.platform.blog': { en: 'Blog / Website', ar: 'مدونة / موقع' },
+  'creators.form.platform.other': { en: 'Other', ar: 'غير ذلك' },
+  'creators.form.handle': { en: 'Social Handle / URL', ar: 'الحساب / الرابط' },
+  'creators.form.handle_placeholder': {
+    en: '@yourhandle or https://...',
+    ar: '@حسابك أو https://...',
+  },
+  'creators.form.followers': { en: 'Approximate Follower Count *', ar: 'عدد المتابعين التقريبي *' },
+  'creators.form.followers_placeholder': { en: 'Select...', ar: 'اختر...' },
+  'creators.form.content': {
+    en: 'Describe the content you’d create to promote The English Hub *',
+    ar: 'وصف المحتوى اللي بتسوّيه للترويج لـ The English Hub *',
+  },
+  'creators.form.content_placeholder': {
+    en: 'e.g. I’d make TikTok videos showing English exam hacks and revision tips...',
+    ar: 'مثلاً: بسوّي فيديوهات TikTok تبيّن حيل امتحان الإنجليزي ونصائح مراجعة...',
+  },
+  'creators.form.submit': { en: 'Submit Application', ar: 'أرسل الطلب' },
+  'creators.form.submitting': { en: 'Submitting...', ar: 'يتم الإرسال...' },
+  'creators.form.error_generic': {
+    en: 'Something went wrong. Please try again.',
+    ar: 'صار خلل. حاول مرة ثانية رجاءً.',
+  },
+  'creators.form.error_network': {
+    en: 'Network error. Please try again.',
+    ar: 'خلل بالشبكة. حاول مرة ثانية رجاءً.',
+  },
+  'creators.success.title': { en: 'Application Submitted!', ar: 'الطلب أُرسل!' },
+  'creators.success.body_pre': {
+    en: 'We’ll review your application within 48 hours and email you with next steps. If you have any questions, contact us at',
+    ar: 'بنراجع طلبك خلال ٤٨ ساعة ونرسل إيميل بالخطوات التالية. لو عندك أسئلة، تواصل معانا على',
+  },
+  'creators.faq.h2': { en: 'Frequently Asked Questions', ar: 'الأسئلة الشائعة' },
+  'creators.faq.q1': { en: 'What platforms can I promote on?', ar: 'يا منصات أقدر أروّج عليها؟' },
+  'creators.faq.a1': {
+    en: 'TikTok, YouTube, Instagram, Twitter/X, blogs, WhatsApp groups — anywhere you have an audience interested in English revision.',
+    ar: 'TikTok و YouTube و Instagram و Twitter/X والمدونات وقروبات WhatsApp — أي مكان عندك جمهور مهتم بمراجعة الإنجليزي.',
+  },
+  'creators.faq.q2': { en: 'How does tracking work?', ar: 'شلون يشتغل التتبع؟' },
+  'creators.faq.a2': {
+    en: 'You get a unique referral link (e.g. theenglishhub.app?via=yourcode). When someone clicks it, a 30-day cookie tracks them. If they subscribe within 30 days, you earn the commission.',
+    ar: 'تأخذ رابط إحالة خاص (مثلاً theenglishhub.app?via=yourcode). لمن واحد يضغطه، كوكي ٣٠ يوم يتتبّعه. لو اشترك خلال ٣٠ يوم، تأخذ العمولة.',
+  },
+  'creators.faq.q3': { en: 'When do I get paid?', ar: 'متى أنادفع؟' },
+  'creators.faq.a3': {
+    en: 'Commissions are confirmed 30 days after each signup (to allow for refunds). Confirmed commissions are paid on the 1st of each month via PayPal or bank transfer.',
+    ar: 'العمولات تتأكد بعد ٣٠ يوم من كل تسجيل (للسماح بالاسترجاعات). العمولات المؤكّدة تتدفع أول كل شهر عبر PayPal ولا تحويل بنكي.',
+  },
+  'creators.faq.q4': { en: 'Can I apply if I’m under 18?', ar: 'أقدر أقدّم لو عمري أقل من ١٨؟' },
+  'creators.faq.a4': {
+    en: 'Yes! We welcome student creators. If you’re under 18, we’ll just need parental consent.',
+    ar: 'إي! نرحّب بصنّاع المحتوى الطلاب. لو عمرك أقل من ١٨، بس بنحتاج موافقة الأهل.',
+  },
+  'creators.faq.q5': {
+    en: 'Do I need a minimum number of followers?',
+    ar: 'محتاج حد أدنى من المتابعين؟',
+  },
+  'creators.faq.a5': {
+    en: 'No strict minimum, but we look for engaged audiences interested in GCSE/IGCSE English. Quality matters more than quantity.',
+    ar: 'ما في حد أدنى صارم، بس ندوّر على جمهور متفاعل ومهتم بإنجليزي GCSE/IGCSE. الجودة أهم من الكمية.',
+  },
+  'creators.faq.q6': { en: 'Do I need to disclose that it’s an ad?', ar: 'لازم أوضّح إنه إعلان؟' },
+  'creators.faq.a6': {
+    en: 'Yes. UK advertising rules (ASA/CAP) require you to include #ad in every promotional post. This must be clearly visible.',
+    ar: 'إي. قواعد الإعلانات البريطانية (ASA/CAP) تطلب تحط #ad بكل بوست ترويجي. لازم يكون واضح.',
+  },
+  'creators.faq.q7': {
+    en: 'Is there a limit to how much I can earn?',
+    ar: 'في سقف لكم أقدر أكسب؟',
+  },
+  'creators.faq.a7': {
+    en: 'No cap. The more students you refer, the more you earn. Commission is recurring for as long as each student stays subscribed.',
+    ar: 'ما في سقف. كل ما توصّل طلاب أكثر، تكسب أكثر. العمولة متكرّرة طول ما كل طالب مشترك.',
+  },
+
+  // ─── School landing (B2B) ───────────────────────────────────────────
+  'school.landing.h1': {
+    en: 'The English Hub for schools and trusts',
+    ar: 'The English Hub للمدارس والمؤسسات',
+  },
+  'school.landing.intro': {
+    en: 'Department-wide GCSE and IGCSE English revision with AI marking, mark-scheme calibrated content, and teacher dashboards. Built for English departments, multi-academy trusts, and British international schools.',
+    ar: 'مراجعة GCSE و IGCSE إنجليزي على مستوى القسم مع تصحيح ذكاء اصطناعي، محتوى معاير على مخطط التصحيح، ولوحات معلمين. مبني لأقسام الإنجليزي وشبكات الأكاديميات والمدارس البريطانية العالمية.',
+  },
+  'school.landing.cta.primary': { en: 'See licence options', ar: 'شوف خيارات الترخيص' },
+  'school.landing.cta.secondary': { en: 'Talk to us', ar: 'تواصل معانا' },
+
+  // ─── Data processing (B2B legal) — top section keys only ────────────
+  'data_processing.h1': { en: 'Data Processing Information', ar: 'معلومات معالجة البيانات' },
+  'data_processing.updated': { en: 'Last updated: March 2026', ar: 'آخر تحديث: مارس ٢٠٢٦' },
+  'data_processing.intro_h2': { en: '1. Introduction', ar: '١. مقدمة' },
+  'data_processing.contact_h2': { en: '12. Contact Us', ar: '١٢. تواصل معانا' },
+  'data_processing.contact_body': {
+    en: 'If you have any questions about how we process data on behalf of your School, or if you need further information to complete a Data Protection Impact Assessment (DPIA) or vendor security review, please get in touch:',
+    ar: 'لو عندك أسئلة عن شلون نعالج البيانات نيابة عن مدرستك، أو محتاج معلومات إضافية لإكمال تقييم أثر حماية البيانات (DPIA) أو مراجعة أمن المورّد، تواصل معانا:',
+  },
+
+  // ─── For-schools/contact page ───────────────────────────────────────
+  'for_schools_contact.h1': {
+    en: 'Book a Call with Our Schools Team',
+    ar: 'احجز مكالمة مع فريق المدارس',
+  },
+  'for_schools_contact.intro': {
+    en: 'A 20-minute conversation about whether The English Hub fits your department.',
+    ar: 'مكالمة ٢٠ دقيقة عن هل The English Hub يناسب قسمك ولا لا.',
+  },
+
+  // ─── Dashboard pages ────────────────────────────────────────────────
+  'dashboard.parent.h1': { en: 'Parent Dashboard', ar: 'لوحة ولي الأمر' },
+  'dashboard.parent.intro': {
+    en: 'Track your child’s progress, view reports, and manage account settings.',
+    ar: 'تابع تقدّم ابنك، شوف التقارير، وأدر إعدادات الحساب.',
+  },
+  'dashboard.settings.h1': { en: 'Account Settings', ar: 'إعدادات الحساب' },
+  'dashboard.settings.intro': {
+    en: 'Manage your profile, security, and preferences.',
+    ar: 'أدر ملفك الشخصي والأمان والتفضيلات.',
+  },
+
+  // ─── For-teachers/free-resources ────────────────────────────────────
+  'for_teachers_free.h1': {
+    en: 'Free Teaching Resources',
+    ar: 'موارد تدريس ببلاش',
+  },
+  'for_teachers_free.intro': {
+    en: 'Download a complete lesson, worksheet, and teaching guide for AQA GCSE English Literature — free, no signup required. See exactly what you get with a subscription.',
+    ar: 'نزّل درس كامل وورقة عمل ودليل تدريس لـ AQA GCSE Literature — ببلاش، بدون تسجيل. شوف بالضبط شنو تأخذ مع الاشتراك.',
+  },
+
+  // ─── Loading labels (meaningful AR) ────────────────────────────────
+  // (loading.root.label already defined above — keep single source.)
+  'loading.courses.label': { en: 'Loading courses…', ar: 'لحظة، نجيب المقررات…' },
+  'loading.course_detail.label': { en: 'Loading course…', ar: 'لحظة، نفتح المقرر…' },
+  'loading.dashboard.label': { en: 'Loading your dashboard…', ar: 'لحظة، نجهّز لوحتك…' },
+  'loading.games.label': { en: 'Loading games…', ar: 'لحظة، نجيب الألعاب…' },
+  'loading.mock_exams.label': { en: 'Loading mock exams…', ar: 'لحظة، نجيب الموكات…' },
+  'loading.practice.label': { en: 'Loading practice…', ar: 'لحظة، نجيب التدريبات…' },
+  'loading.revision.label': { en: 'Loading revision…', ar: 'لحظة، نجيب المراجعة…' },
+  'loading.poetry.label': { en: 'Loading poetry…', ar: 'لحظة، نجيب الشعر…' },
+  'loading.quiz.label': { en: 'Loading quiz…', ar: 'لحظة، نجيب الاختبار…' },
+  'loading.texts.label': { en: 'Loading texts…', ar: 'لحظة، نجيب النصوص…' },
+  'loading.school.label': { en: 'Loading school dashboard…', ar: 'لحظة، نجهّز لوحة المدرسة…' },
 }
 
 /**

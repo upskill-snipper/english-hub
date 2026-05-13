@@ -223,6 +223,23 @@ const london: PoemData = {
     <p>Blake was a Christian but a fierce critic of organised religion. He believed the established Church had abandoned its duty to the poor and instead served the powerful. The "blackning Church" image is central to his anti-clerical message.</p>
   `,
 
+  contextAr: `
+    <h3>William Blake (1757-1827)</h3>
+    <p>Blake شاعر ورسّام وفنّان طباعة، ما اعترف فيه أحد إلى حد بعيد في حياته. كان مفكّر راديكالي، يرفض الدين المؤسّسي، ويدعم الثورتين الفرنسية والأمريكية، وينتقد بشدّة التصنيع والعبودية وعمالة الأطفال. ادّعى إنه يشوف رؤى ويحكي مع الملائكة.</p>
+
+    <h3>Songs of Innocence and Experience (1794)</h3>
+    <p>قصيدة "London" تطلع في <em>Songs of Experience</em>، الديوان الأكثر قتامة المُكمّل لـ<em>Songs of Innocence</em>. الديوانان مع بعض يبيّنون "الحالتين المتضادتين للروح الإنسانية". قصيدة "London" تقدّم الـexperience كحالة كئيبة وفاسدة ومليانة معاناة بسبب المؤسسات البشرية.</p>
+
+    <h3>لندن في أواخر القرن الـ18</h3>
+    <p>لندن Blake كانت أكبر مدينة في العالم. والثورة الصناعية دفعت الفقراء من الريف للأحياء المتهالكة في المدينة. ظروف العمل كانت مريعة، عمالة الأطفال كانت منتشرة، والأمراض (وبالأخص الزهري) كانت متفشّية. الأغنياء كانوا يعيشون جنب الفقراء المُعدمين.</p>
+
+    <h3>السياق السياسي</h3>
+    <p>القصيدة مكتوبة في فترة ثورة ورد فعل. الثورة الفرنسية (1789) ألهمت أملاً عند الراديكاليين مثل Blake، بس رعبت المؤسسة البريطانية. Blake كان يشوف الكنيسة والملكية كقوّتين قامعتين متواطئتين في المعاناة الإنسانية.</p>
+
+    <h3>النقد الديني</h3>
+    <p>Blake كان مسيحياً، بس كان منتقد شرس للدين المنظَّم. كان يعتقد إن الكنيسة المُؤسَّسة تخلّت عن واجبها تجاه الفقراء، وصارت تخدم الأقوياء بدلاً عنه. وصورة "blackning Church" مركزية في رسالته المعادية لرجال الدين.</p>
+  `,
+
   summary: `Stanza 1: The speaker walks through London\'s "charter\'d" (owned, regulated) streets near the equally controlled Thames. He observes that everyone he meets bears "marks of weakness, marks of woe" - visible signs of suffering.
 
 Stanza 2: The speaker hears suffering everywhere - in adults\' cries, infants\' cries, voices, and laws ("bans"). He concludes that Londoners wear "mind-forg\'d manacles" - chains they have created in their own minds. They have accepted their oppression.
@@ -232,6 +249,16 @@ Stanza 3: Blake names three institutions and their victims: the Church (which fa
 Stanza 4: At midnight, the speaker hears young prostitutes cursing. Their curses "blast" newborn babies (with disease) and turn marriage into a "marriage hearse" - a funeral. The poem ends with corruption infecting birth, love, and death.
 
 Overall meaning: London is a city of total oppression where institutions (Church, Monarchy, marriage) have failed everyone. Suffering is universal, inescapable, and self-perpetuating. Blake calls for radical change but the poem itself offers no hope - only documentation of the misery.`,
+
+  summaryAr: `المقطع 1: المتكلّم يمشي في شوارع لندن الـ"charter\'d" (مملوكة، مُنظَّمة) قرب نهر التايمز اللي هو الثاني تحت سيطرة مماثلة. ويلاحظ إن كل واحد يلاقيه يحمل "marks of weakness, marks of woe" — علامات معاناة ظاهرة.
+
+المقطع 2: المتكلّم يسمع المعاناة في كل مكان — في صرخات الكبار، وصرخات الأطفال، والأصوات، والقوانين ("bans"). ويستنتج إن أهل لندن لابسين "mind-forg\'d manacles" — قيود صنعوها في عقولهم نفسهم. صاروا يقبلون قمعهم وتسلّيموا له.
+
+المقطع 3: Blake يسمّي ثلاث مؤسسات وضحاياها: الكنيسة (اللي تخذل أطفال منظّفي المداخن)، الملكية (اللي حروبها تقتل الجنود، ودمهم رمزياً يجري على جدران القصر)، والمجتمع بشكل عام.
+
+المقطع 4: في منتصف الليل، المتكلّم يسمع شابّات بائعات هوى يلعنون. ولعناتهم "blast" الرضّع حديثي الولادة (بالمرض)، وتحوّل الزواج إلى "marriage hearse" — جنازة. القصيدة تنتهي والفساد يلوّث الولادة والحب والموت.
+
+المعنى العام: لندن مدينة قمع شامل، تخذل فيها كل المؤسسات (الكنيسة، الملكية، الزواج) الناس بالكامل. والمعاناة كونية ومستمرة وتعيد إنتاج نفسها. Blake يدعو للتغيير الجذري، بس القصيدة بنفسها ما تقدّم أمل — بس توثيق للبؤس.`,
 
   formAndStructure: `Form: Four quatrains (four-line stanzas), tightly controlled. The rigid structure mirrors the constricted lives of Londoners - they cannot escape the form just as they cannot escape the city.
 
@@ -247,54 +274,92 @@ Volta: There is no traditional turn. The poem moves from observation (stanzas 1-
 
 Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds bitter and tired. The closing oxymoron "Marriage hearse" is sonically jarring, leaving the reader unsettled.`,
 
+  formAndStructureAr: `الشكل: أربع quatrains (مقاطع من أربعة أبيات)، مضبوطة بإحكام. البنية الصارمة تعكس حيوات أهل لندن المقيّدة — ما يقدرون يهربون من الشكل، تماماً مثل ما ما يقدرون يهربون من المدينة.
+
+نظام القافية: ABAB طول القصيدة. القوافي المتناوبة المنتظمة تخلق إيقاع متواصل ودقّاق يعكس المعاناة اللي ما لها مهرب.
+
+الوزن: غالباً iambic tetrameter (أربع أقدام في كل بيت). الإيقاع المسيري يخلّي القصيدة تحسّ مثل موكب جنازة بطيء يمشي في المدينة. وبعض الأبيات تحمل نَبَر مختلف عمداً للتشديد.
+
+التكرار والـAnaphora: تكرار "charter\'d" (المقطع 1)، و"every" (المقطع 2)، و"marks" يخلق أثر شامل — المعاناة في كل مكان، ما في أحد يهرب.
+
+ضمير المتكلّم: "I wander"، "I hear"، "I meet" — المتكلّم شاهد، بس سلبي. يراقب وما يقدر يتدخّل. وهذا يعكس موقع قارئ Blake.
+
+Volta: ما في تحوّل تقليدي. القصيدة تنتقل من الملاحظة (المقاطع 1-2) إلى أمثلة محدّدة على فشل المؤسسات (المقاطع 3-4)، بس القتامة تتعمّق بدل ما تنقلب.
+
+الصوت: استخدام كثيف للحروف الساكنة القاسية والحركات الصوتية الحزينة. القصيدة تطنّ مريرة ومتعبة. والتضاد الختامي "Marriage hearse" صوتياً صادم، ويترك القارئ مزعزَع.`,
+
   keyQuotes: [
     {
       quote: "each charter'd street ... charter'd Thames",
       analysis:
         'The repetition of "charter\'d" suggests total control. Streets being owned is one thing, but the Thames - a natural river - being "charter\'d" shows the absurdity. Even nature has been claimed by the wealthy. Blake protests against the privatisation of common space.',
       themes: ['Oppression', 'Power', 'Capitalism'],
+      analysisAr:
+        'تكرار "charter\'d" يوحي بسيطرة شاملة. ملكية الشوارع شي، بس نهر التايمز — وهو نهر طبيعي — يصير "charter\'d"، فهذي عبثية. حتى الطبيعة استولى عليها الأغنياء. Blake يحتجّ على خصخصة الفضاء المشترك.',
+      themesAr: ['القمع', 'السلطة', 'الرأسمالية'],
     },
     {
       quote: 'Marks of weakness, marks of woe',
       analysis:
         'The repetition and alliteration create a hammering, mournful effect. "Marks" suggests permanent signs - suffering has been etched onto Londoners\' faces. The pairing of "weakness" and "woe" links physical decline with emotional pain.',
       themes: ['Suffering', 'Universal misery', 'Oppression'],
+      analysisAr:
+        'التكرار والـalliteration يخلقون أثر دقّاق وحزين. كلمة "marks" توحي بعلامات دائمة — المعاناة محفورة على وجوه أهل لندن. واقتران "weakness" و"woe" يربط التدهور الجسدي بالألم العاطفي.',
+      themesAr: ['المعاناة', 'البؤس الشامل', 'القمع'],
     },
     {
       quote: "The mind-forg'd manacles I hear",
       analysis:
         'The most famous line in the poem. "Mind-forg\'d manacles" is a metaphor for psychological imprisonment - Londoners have internalised their oppression and accepted it as natural. They forge their own chains. This is more devastating than physical chains because it cannot be removed by revolution alone - it requires a change of consciousness.',
       themes: ['Mental imprisonment', 'Oppression', 'Powerlessness'],
+      analysisAr:
+        'أشهر بيت في القصيدة. "Mind-forg\'d manacles" استعارة عن الحبس النفسي — أهل لندن استبطنوا قمعهم وقبلوه كشي طبيعي. صاروا يصنعون قيودهم بأنفسهم. وهذا أكثر تدميراً من القيود المادية، لأن الثورة وحدها ما تقدر تكسره — يحتاج تغيير في الوعي.',
+      themesAr: ['الحبس الذهني', 'القمع', 'العجز'],
     },
     {
       quote: 'every blackning Church appalls',
       analysis:
         '"Blackning" works literally (soot from chimneys) and metaphorically (moral corruption). "Appalls" means both "horrifies" and "makes pale" - the Church is shocked by suffering yet pale with hypocrisy. Blake attacks the institution that should protect the poor for being complicit in their suffering.',
       themes: ['Religion', 'Hypocrisy', 'Institutional failure'],
+      analysisAr:
+        'كلمة "blackning" تشتغل حرفياً (سخام المداخن) ومجازياً (فساد أخلاقي). وكلمة "appalls" تعني "يرعب" و"يجعل شاحباً" مع بعض — الكنيسة مصدومة من المعاناة، بس شاحبة من النفاق. Blake يهاجم المؤسسة اللي المفروض إنها تحمي الفقراء على تواطؤها في معاناتهم.',
+      themesAr: ['الدين', 'النفاق', 'فشل المؤسسات'],
     },
     {
       quote: 'Runs in blood down Palace walls',
       analysis:
         "A shocking visual: the soldier's sigh becomes literal blood staining the palace. Blake makes the monarchy's guilt physical and visible. The image foreshadows revolution - blood on palace walls echoes the French Revolution Blake supported.",
       themes: ['War', 'Monarchy', 'Revolution'],
+      analysisAr:
+        'صورة بصرية صادمة: تنهيدة الجندي تتحوّل إلى دم حرفي يلطّخ القصر. Blake يخلّي ذنب الملكية مادي ومرئي. والصورة تستبق الثورة — الدم على جدران القصر يستحضر الثورة الفرنسية اللي دعمها Blake.',
+      themesAr: ['الحرب', 'الملكية', 'الثورة'],
     },
     {
       quote: 'youthful Harlots curse',
       analysis:
         '"Youthful" emphasises that these prostitutes are young - children forced into sex work by poverty. Their "curse" is multi-layered: they swear, they have venereal disease, and they curse the society that failed them. Blake refuses to romanticise or look away.',
       themes: ['Poverty', 'Exploitation', 'Innocence corrupted'],
+      analysisAr:
+        'كلمة "youthful" تأكّد إن هاي البائعات صغيرات — أطفال أجبرهم الفقر على شغل الجنس. واللعنة ("curse") حقّتهم متعدّدة الطبقات: يسبّون، وعندهم أمراض تناسلية، ويلعنون المجتمع اللي خذلهم. Blake يرفض الرومنسة أو إنه يبعد نظره.',
+      themesAr: ['الفقر', 'الاستغلال', 'البراءة المُفسَدة'],
     },
     {
       quote: 'blights with plagues the Marriage hearse',
       analysis:
         'The poem\'s devastating final image. "Marriage hearse" is an oxymoron - marriage should be a celebration of life, but in Blake\'s London it is a funeral carriage. Venereal disease passed from prostitutes to husbands to wives to babies turns marriage into a death sentence. Corruption infects love itself.',
       themes: ['Disease', 'Love corrupted', 'Death'],
+      analysisAr:
+        'صورة القصيدة الختامية المدمّرة. "Marriage hearse" تضادّ (oxymoron) — الزواج المفروض إنه احتفال بالحياة، بس في لندن Blake هو عربة جنازة. الأمراض التناسلية اللي تنتقل من البائعات للأزواج للزوجات للأطفال تحوّل الزواج إلى حكم بالموت. والفساد يصيب الحب نفسه.',
+      themesAr: ['المرض', 'الحب المُفسَد', 'الموت'],
     },
     {
       quote: 'In every cry of every Man',
       analysis:
         'The anaphoric "every" in stanza 2 creates a totalising effect - no one is exempt from suffering. Blake universalises misery, making it impossible for the reader to imagine any Londoner escaping. The capitalised "Man" suggests humanity itself, not just individuals.',
       themes: ['Universal suffering', 'Powerlessness'],
+      analysisAr:
+        'كلمة "every" المتكرّرة (anaphora) في المقطع الثاني تخلق أثر شامل — ما في أحد معفى من المعاناة. Blake يجعل البؤس كونياً، ويخلّي القارئ ما يقدر يتخيّل أي شخص من أهل لندن يهرب. والحرف الكبير في "Man" يوحي بالإنسانية نفسها، مو بأفراد فقط.',
+      themesAr: ['المعاناة الشاملة', 'العجز'],
     },
   ],
 
@@ -305,6 +370,8 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
       effect:
         'The repetition of "every" creates a relentless, totalising effect. Suffering is not occasional but universal. The reader feels overwhelmed by the catalogue of pain, just as the speaker is overwhelmed walking through the city.',
       lineRef: 4,
+      effectAr:
+        'تكرار "every" يخلق أثر شامل ما يهدأ. المعاناة مو عابرة بل كونية. والقارئ يحسّ بالغرق تحت قائمة الألم، تماماً مثل غرق المتكلّم وهو يمشي في المدينة.',
     },
     {
       device: 'Metaphor',
@@ -312,6 +379,8 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
       effect:
         "Blake's most famous metaphor describes mental imprisonment. The chains are not external but internal - Londoners have created their own oppression by accepting the system. This makes the suffering harder to escape than literal chains, because revolution alone cannot break it.",
       lineRef: 7,
+      effectAr:
+        'أشهر استعارة عند Blake، توصف الحبس الذهني. القيود مو خارجية بل داخلية — أهل لندن خلقوا قمعهم بنفسهم بقبولهم للنظام. هذا يخلّي المعاناة أصعب من القيود الحرفية في الهرب منها، لأن الثورة وحدها ما تقدر تكسرها.',
     },
     {
       device: 'Symbolism',
@@ -319,6 +388,8 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
       effect:
         'The Church symbolises institutional religion\'s moral failure. "Blackning" works as both literal soot and metaphorical corruption. Blake suggests that the very institutions claiming to protect souls are blackened by their complicity with suffering.',
       lineRef: 9,
+      effectAr:
+        'الكنيسة ترمز للفشل الأخلاقي للدين المؤسّسي. كلمة "blackning" تشتغل كسخام حرفي وكفساد مجازي مع بعض. Blake يلمّح إن المؤسسات اللي تدّعي حماية الأرواح هي نفسها مسوّدة بتواطؤها مع المعاناة.',
     },
     {
       device: 'Oxymoron',
@@ -326,6 +397,8 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
       effect:
         "The poem's devastating closing image. Marriage (life, love, hope) is paired with hearse (death, ending). The oxymoron captures how London's corruption infects even the most sacred institutions. It leaves the reader with a permanent jolt of disgust.",
       lineRef: 15,
+      effectAr:
+        'صورة القصيدة الختامية المدمّرة. الزواج (حياة، حب، أمل) مقترن بـhearse (موت، نهاية). والتضاد يجسّد كيف فساد لندن يصيب حتى أكثر المؤسسات قدسيةً. ويخلّي القارئ مع صدمة دائمة من الاشمئزاز.',
     },
     {
       device: 'Imagery (visual)',
@@ -333,6 +406,8 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
       effect:
         'A shocking visual that makes the abstract guilt of the monarchy literal. The soldier\'s "sigh" becomes blood. Blake forces the reader to see what political language hides: the human cost of war and royal power.',
       lineRef: 11,
+      effectAr:
+        'صورة بصرية صادمة تحوّل ذنب الملكية المجرّد إلى شي حرفي. تنهيدة الجندي ("sigh") تصير دم. Blake يجبر القارئ يشوف اللي تخفيه اللغة السياسية: الكلفة الإنسانية للحرب وللسلطة الملكية.',
     },
     {
       device: 'Repetition',
@@ -340,6 +415,8 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
       effect:
         'Heavy repetition creates a hammering, oppressive rhythm. The reader cannot escape the words just as Londoners cannot escape suffering. "Charter\'d" repeated emphasises that even nature has been controlled.',
       lineRef: 1,
+      effectAr:
+        'التكرار الكثيف يخلق إيقاع دقّاق وقامع. القارئ ما يقدر يهرب من الكلمات تماماً مثل ما ما يقدر أهل لندن يهربون من المعاناة. وتكرار "charter\'d" يأكّد إن حتى الطبيعة صارت تحت السيطرة.',
     },
     {
       device: 'Alliteration',
@@ -347,6 +424,8 @@ Sound: Heavy use of harsh consonants and mournful vowel sounds. The poem sounds 
       effect:
         'The alliterative "w" sounds in "weakness" and "woe" create a soft, mournful tone. Combined with the harder "m" of "marks", the effect is exhausted, defeated - the sound of someone tired of seeing suffering.',
       lineRef: 3,
+      effectAr:
+        'الـalliteration على حرف "w" في "weakness" و"woe" يخلق نبرة ناعمة وحزينة. وبدمجها مع حرف "m" الأصلب في "marks"، الأثر مرهَق ومهزوم — صوت شخص تعب من رؤية المعاناة.',
     },
   ],
 }

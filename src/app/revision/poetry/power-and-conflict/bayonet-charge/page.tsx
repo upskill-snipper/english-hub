@@ -230,6 +230,12 @@ const BAYONET_CHARGE: PoemData = {
 <p>The poem is fundamentally <strong>anti-war</strong>. It challenges patriotic propaganda by showing how abstract ideals like "King, honour, human dignity, etcetera" become meaningless when a soldier faces death. (Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don't double the word.) Hughes was influenced by the <strong>First World War poets</strong> (Owen, Sassoon) and the existentialist idea that war reduces humans to mere bodies acting on survival instinct.</p>
 <p>Published in <strong>1957</strong>, twelve years after WWII and during the early Cold War, the poem reflects a society still reckoning with the cost of conflict and suspicious of the rhetoric used to justify it.</p>`,
 
+  contextAr: `<p><strong>Ted Hughes</strong> (1930–1998) واحد من أعرق شعراء بريطانيا، وشغل منصب UK Poet Laureate (شاعر البلاط في المملكة المتحدة) من 1984 إلى وفاته (خلف John Betjeman، وخلفه Andrew Motion). هو من مواليد Yorkshire، وكان زوج Sylvia Plath، وأبو Frieda وNicholas Hughes. اشتهر بتصوير الطبيعة والعنف بشكل عميق ومادي؛ ومن أبرز مجموعاته <em>The Hawk in the Rain</em> (1957)، و<em>Crow</em> (1970)، و<em>Birthday Letters</em> (1998).</p>
+<p><strong>Bayonet Charge</strong> نُشرت في أول مجموعة لـHughes، <em>The Hawk in the Rain</em> (1957)، عن دار Faber &amp; Faber. Hughes انولد سنة 1930 وما خاض أي حرب بنفسه. اعتمد على روايات أبوه William عن الحرب العالمية الأولى — William نجا من معركة Gallipoli، وكان واحد من سبعة عشر ناجي بس من فرقته في Lancashire Fusiliers — عشان يتخيّل رعب الجندي في القصيدة. William ما كان يحكي عن تجاربه إلا نادراً، وهذا الصمت بنفسه شكّل خيال Hughes عن الحرب العالمية الأولى طول عمره.</p>
+<p>الجندي في القصيدة <strong>بلا اسم وعام</strong> بشكل مقصود — يُشار له بضمير "he" بس. هذا الشي يخلّيه شخصية إنسان عادي، يمثّل أي جندي في أي نزاع. Hughes ينزع المجد والرومانسية اللي كانت تُلصق تقليدياً بالحرب، ويعرض <strong>الواقع الخام المرعب</strong> بدلها.</p>
+<p>القصيدة في جوهرها <strong>ضد الحرب</strong>. تتحدّى الدعاية الوطنية وتبيّن كيف المثُل المجرّدة مثل "King, honour, human dignity, etcetera" تنهار وتصير بلا معنى لمّا يواجه الجندي الموت. (Hughes يكتب "etcetera" مرة وحدة — انقل النص حرفياً مثل ما طُبع؛ لا تختصرها إلى "etc."، ولا تكرّر الكلمة.) Hughes تأثّر بـ<strong>شعراء الحرب العالمية الأولى</strong> (Owen، Sassoon)، وبالفكرة الوجودية اللي تشوف إن الحرب ترجع الإنسان إلى مجرد جسد يتحرّك بغريزة البقاء.</p>
+<p>القصيدة نُشرت سنة <strong>1957</strong>، يعني اثني عشر سنة بعد نهاية الحرب العالمية الثانية، في بداية الحرب الباردة. وهي تعكس مجتمع لسّا يحاسب نفسه على ثمن النزاع، ومرتاب من الخطاب اللي يبرّره.</p>`,
+
   /* ── Summary ──────────────────────────────────────────────────── */
 
   summary: `The poem follows an unnamed soldier during a bayonet charge across a battlefield. It captures a single, intense moment of combat.
@@ -241,6 +247,16 @@ Stanza 2: The action slows as the soldier's thoughts take over. He questions why
 Stanza 3: A yellow hare, injured and writhing in the crossfire, jolts the soldier back to action. Confronted by this image of innocent suffering, he abandons all abstract ideals — "King, honour, human dignity, etcetera" — and charges forward driven purely by terror and the survival instinct to escape the "blue crackling air" of the battlefield. (Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don't double the word.)
 
 The poem's arc moves from action to thought and back to action, but the final action is fundamentally different: it is no longer motivated by patriotism but by primal fear.`,
+
+  summaryAr: `القصيدة تتبع جندي بلا اسم وهو في هجوم بالحربة (bayonet charge) عبر ميدان معركة. تلتقط لحظة وحدة مكثّفة من القتال.
+
+المقطع الأول: القصيدة تفتح in medias res — الجندي أصلاً يركض في الميدان وهو تحت النار. Hughes يركّز على الإحساسات الجسديّة الخام: الحر، العرق، ثقل البندقية. الجندي مو بطل، هو أخرق ومنهار.
+
+المقطع الثاني: الحركة تبطّئ، وأفكار الجندي تستولي على المشهد. يسأل نفسه ليش يقاتل، وشو معنى الوطنية بصدق لمّا يواجه الموت. هو محاصر بين الغريزة والعقل، يكاد يوقف وهو يدوّر معنى. المقطع يلتقط لحظة مجمّدة من أزمة وجودية.
+
+المقطع الثالث: أرنب بري أصفر، مصاب ويتلوّى في تبادل إطلاق النار، يهز الجندي ويرجعه للحركة. مواجهة هالمشهد من المعاناة البريئة تخلّيه يتخلّى عن كل المثُل المجرّدة — "King, honour, human dignity, etcetera" — ويهجم قدّام، مدفوع بالرعب الصافي وغريزة البقاء عشان يطلع من "blue crackling air" حق ميدان المعركة. (Hughes يكتب "etcetera" مرة وحدة — انقل النص حرفياً مثل ما طُبع؛ لا تختصرها إلى "etc."، ولا تكرّر الكلمة.)
+
+قوس القصيدة يتحرّك من فعل إلى فكر ويرجع لفعل، بس الفعل الأخير مختلف اختلاف جذري: ما عاد دافعه الوطنية، صار دافعه الخوف البدائي.`,
 
   /* ── Form & Structure ─────────────────────────────────────────── */
 
@@ -263,6 +279,25 @@ Dramatic monologue perspective: Written in third person but with intimate access
 
 Cyclical movement: The poem ends with the same desperate running it began with, but the motivation has shifted from patriotic duty to raw survival — showing war strips away idealism.`,
 
+  formAndStructureAr: `الشكل (FORM): free verse (شعر حر) — ثلاث مقاطع بدون وزن منتظم وبدون قافية ثابتة. القصيدة ليست iambic، وما فيها تفعيلة عَروضيّة موحّدة. Hughes يستخدم تحولات إيقاعيّة مفاجئة وصوت سارد بضمير الغائب omniscient، يقرّب الكاميرا بشكل ضيّق على منظور جندي واحد.
+
+البنية (STRUCTURE): ثلاث مقاطع بأطوال متقاربة، تتبع قوس واضح:
+• المقطع الأول (فعل) — الواقع الجسدي لهجوم الحربة
+• المقطع الثاني (فكر) — التساؤل الداخلي للجندي
+• المقطع الثالث (فعل) — الرجوع للحركة، بس هالمرة بدافع الرعب، مو الوطنية
+
+الافتتاح (OPENING): القصيدة تبدأ in medias res بسطر "Suddenly he awoke and was running"، ترمي القارئ على طول في الفوضى بدون مقدّمة أو سياق.
+
+غياب نظام القافية والوزن: غياب النمط الثابت (free verse، مو iambic) يعكس فوضى المعركة واضطرابها. أطوال الأبيات تتفاوت، تحاكي حركة الجندي وأفكاره غير المنتظمة.
+
+Enjambment: مستخدم بشكل مكثّف عبر القصيدة (مثلاً "raw / In raw-seamed hot khaki")، يخلق إيقاع لاهث ومُلِحّ يحاكي ركض الجندي. القارئ ينجرّ قدّام مثل ما الجندي ينجرّ قدّام.
+
+Caesura: شَرَطات ووقفات في وسط الأبيات (مثلاً "Almost stopped –"، "In bewilderment then he almost stopped –") تخلق لحظات تردّد، تعكس شك الجندي وقربه من الشلل.
+
+منظور المونولوج الدرامي (DRAMATIC MONOLOGUE): مكتوبة بضمير الغائب، بس مع وصول حميم لأفكار الجندي. هالشي يحقّق القرب والشمولية بنفس الوقت — نحس برعبه، بس يقدر يكون أي جندي.
+
+الحركة الدائرية (CYCLICAL MOVEMENT): القصيدة تنتهي بنفس الركض اليائس اللي بدأت فيه، بس الدافع تحوّل من الواجب الوطني إلى البقاء الخام — يبيّن إن الحرب تنزع المثاليّة.`,
+
   /* ── Key Quotes ────────────────────────────────────────────────── */
 
   keyQuotes: [
@@ -271,48 +306,72 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       analysis:
         'The in medias res opening plunges the reader into action. "Suddenly" creates shock and disorientation. "Awoke" suggests the soldier has been jolted from the dream of patriotic idealism into the nightmare of reality.',
       themes: ['Reality of conflict', 'Fear', 'Loss of innocence'],
+      analysisAr:
+        'الافتتاح in medias res يرمي القارئ على طول داخل الفعل. كلمة "Suddenly" تخلق صدمة وتيه. وفعل "Awoke" يلمّح إن الجندي اهتزّ وانتشل من حلم المثاليّة الوطنية إلى كابوس الواقع.',
+      themesAr: ['واقع النزاع', 'الخوف', 'فقدان البراءة'],
     },
     {
       quote: 'raw-seamed hot khaki, his sweat heavy',
       analysis:
         'Visceral tactile imagery emphasises physical suffering. "Raw-seamed" suggests chafing and pain; the uniform that represents duty is literally hurting him. The accumulation of uncomfortable detail strips war of romance.',
       themes: ['Reality of conflict', 'Suffering', 'Power of nature'],
+      analysisAr:
+        'تصوير لمسي (tactile imagery) عميق ومادي يأكّد على المعاناة الجسديّة. كلمة "Raw-seamed" توحي بالاحتكاك والألم؛ البدلة اللي ترمز للواجب فعلياً تأذيه. وتراكم التفاصيل غير المريحة ينزع كل رومانسية عن الحرب.',
+      themesAr: ['واقع النزاع', 'المعاناة', 'قوة الطبيعة'],
     },
     {
       quote: 'The patriotic tear that had brimmed in his eye',
       analysis:
         'Ironic reference to the emotional patriotism that once motivated enlistment. The past tense "had brimmed" shows this feeling is already gone — replaced by terror. Patriotism is presented as naive and manipulative.',
       themes: ['Patriotism vs reality', 'Loss of innocence', 'Power'],
+      analysisAr:
+        'إشارة ساخرة (irony) للوطنية العاطفية اللي دفعت الجندي يتطوّع في الأصل. صيغة الماضي "had brimmed" تبيّن إن هذا الإحساس راح بالفعل — بدّله الرعب. والوطنية تتقدّم هنا على إنها ساذجة وأداة استغلال.',
+      themesAr: ['الوطنية مقابل الواقع', 'فقدان البراءة', 'السلطة'],
     },
     {
       quote: 'In what cold clockwork of the stars and the nations',
       analysis:
         'A metaphor for the impersonal machinery of war and politics. "Cold clockwork" reduces human conflict to a mechanical, predetermined process. The soldier is merely a cog — his individual suffering is irrelevant to those in power.',
       themes: ['Power', 'Individual vs state', 'Helplessness'],
+      analysisAr:
+        'metaphor تصوّر آلة الحرب والسياسة الباردة وغير الإنسانية. "Cold clockwork" ترجع النزاع البشري إلى عملية آليّة محكومة سلفاً. والجندي مجرّد ترس صغير — معاناته الشخصية ما لها أي وزن عند أصحاب السلطة.',
+      themesAr: ['السلطة', 'الفرد مقابل الدولة', 'العجز'],
     },
     {
       quote: 'King, honour, human dignity, etcetera',
       analysis:
         'The dismissive listing of patriotic abstractions, punctuated by Hughes\'s trailing "etcetera", is his most devastating anti-war line. Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don\'t double the word. These grand ideals are reduced to throwaway filler — luxuries the soldier cannot afford in the face of death.',
       themes: ['Patriotism vs reality', 'Loss of innocence', 'Anti-war'],
+      analysisAr:
+        'سرد المجرّدات الوطنية بأسلوب رافض (listing)، يتبعه "etcetera" زي ذيل ساقط من Hughes، هو أقوى سطر مضاد للحرب في القصيدة. Hughes يكتب "etcetera" مرة وحدة — انقل النص حرفياً مثل ما طُبع؛ لا تختصرها إلى "etc."، ولا تكرّر الكلمة. هذي المثُل العظيمة تنزل إلى مرتبة الحشو اللي يُرمى — كماليات (luxuries) ما يقدر الجندي يتحمّلها وهو في وجه الموت.',
+      themesAr: ['الوطنية مقابل الواقع', 'فقدان البراءة', 'مضاد للحرب'],
     },
     {
       quote: 'a yellow hare that rolled like a flame',
       analysis:
         'The hare symbolises innocent nature destroyed by human conflict. "Rolled like a flame" creates a vivid, agonised image. The hare\'s pointless suffering mirrors the soldier\'s own — both are victims of forces beyond their control.',
       themes: ['Power of nature', 'Suffering', 'Innocence'],
+      analysisAr:
+        'الأرنب البري symbol للطبيعة البريئة اللي يدمّرها النزاع البشري. "Rolled like a flame" يخلق صورة حيّة معذّبة. ومعاناة الأرنب اللي بلا هدف تعكس معاناة الجندي نفسه — كلاهما ضحايا لقوى أكبر من قدرتهم على السيطرة.',
+      themesAr: ['قوة الطبيعة', 'المعاناة', 'البراءة'],
     },
     {
       quote: 'blue crackling air',
       analysis:
         'Synaesthesia blending colour and sound creates a surreal, nightmarish battlefield atmosphere. "Crackling" is onomatopoeic, evoking gunfire. The sensory overload reflects the soldier\'s overwhelmed state.',
       themes: ['Reality of conflict', 'Fear', 'Sensory experience'],
+      analysisAr:
+        'synaesthesia تخلط بين اللون والصوت لتولّد جو ميدان معركة سُريالي كأنه كابوس. وكلمة "Crackling" onomatopoeic، تستدعي صوت الرصاص. وفيض الإحساسات الحسي يعكس حالة الانهيار اللي يعيشها الجندي.',
+      themesAr: ['واقع النزاع', 'الخوف', 'التجربة الحسيّة'],
     },
     {
       quote: 'Dropped like luxuries in a yelling alarm',
       analysis:
         'A simile comparing patriotic ideals to luxuries — nice to have in peacetime but instantly abandoned in crisis. "Yelling alarm" suggests panic and urgency. Ideals cannot survive the reality of combat.',
       themes: ['Patriotism vs reality', 'Fear', 'Anti-war'],
+      analysisAr:
+        'simile يقارن المثُل الوطنية بـ"luxuries" — حلوة في وقت السلم بس يتم التخلّي عنها فوراً وقت الأزمة. "Yelling alarm" يوحي بالذعر والاستعجال. والمثُل ما تقدر تنجو في وجه واقع القتال.',
+      themesAr: ['الوطنية مقابل الواقع', 'الخوف', 'مضاد للحرب'],
     },
   ],
 
@@ -325,6 +384,8 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       effect:
         "The poem begins mid-action, immersing the reader in chaos without warning. This mirrors the soldier's own disorientation — there is no preparation, no context, just the raw terror of combat.",
       lineRef: 0,
+      effectAr:
+        'القصيدة تبدأ وسط الفعل، تغمر القارئ في الفوضى بدون أي تنبيه. هالشي يحاكي تيه الجندي نفسه — ما فيه تحضير، ما فيه سياق، فيه بس الرعب الخام للقتال.',
     },
     {
       device: 'Simile',
@@ -332,6 +393,8 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       effect:
         'Compares patriotic feeling to molten iron — something once forged with purpose is now a burning, destructive weight. The industrial imagery dehumanises the soldier, making him part of the war machine.',
       lineRef: 8,
+      effectAr:
+        'simile يقارن الإحساس الوطني بالحديد المنصهر — شي كان مصكوك بهدف، صار الحين ثقل محرق ومدمّر. والتصوير الصناعي ينزع الصفة الإنسانية عن الجندي، ويخلّيه جزء من ماكينة الحرب.',
     },
     {
       device: 'Listing / Bathos',
@@ -339,6 +402,8 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       effect:
         'Three grand abstract nouns are listed then brutally dismissed with a trailing "etcetera". Hughes writes "etcetera" once — cite exactly as printed; do not abbreviate to "etc.", and don\'t double the word. The listing initially builds gravitas, but the single dismissive "etcetera" collapses it, showing how meaningless these ideals are in combat.',
       lineRef: 22,
+      effectAr:
+        'ثلاث أسماء مجرّدة كبيرة تُسرد ثم تُرفض بقسوة بكلمة "etcetera" تترك ذيلها بعدهن. Hughes يكتب "etcetera" مرة وحدة — انقل النص حرفياً مثل ما طُبع؛ لا تختصرها إلى "etc."، ولا تكرّر الكلمة. الـlisting في البداية يبني هيبة وثقل، بس "etcetera" الواحدة الرافضة تنهي كل هالثقل، وتبيّن كيف هالمثُل صارت بلا أي معنى داخل القتال. هذي تقنية bathos.',
     },
     {
       device: 'Caesura',
@@ -346,6 +411,8 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       effect:
         "The abrupt dash and short line create a physical pause, mirroring the soldier's hesitation on the battlefield. It dramatises the tension between the instinct to flee and the impulse to stop and think.",
       lineRef: 5,
+      effectAr:
+        'الشَرْطَة المفاجئة والسطر القصير يخلقون وقفة ماديّة، تحاكي تردّد الجندي في الميدان. وتجسّد التوتر بين غريزة الهروب ودافع التوقّف والتفكير.',
     },
     {
       device: 'Violent imagery',
@@ -353,6 +420,8 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       effect:
         'The compound adjective "shot-slashed" combines the violence of bullets with the agricultural image of ploughed furrows, showing how war destroys the natural landscape. The harsh consonants create an aggressive sonic quality.',
       lineRef: 17,
+      effectAr:
+        'الصفة المركّبة "shot-slashed" تجمع عنف الرصاص مع الصورة الزراعية للأخاديد المحروثة، وتبيّن كيف الحرب تدمّر المنظر الطبيعي. والحروف الساكنة القاسية فيها تولّد جودة صوتيّة عدوانية.',
     },
     {
       device: 'Onomatopoeia / Synaesthesia',
@@ -360,6 +429,8 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       effect:
         '"Crackling" mimics the sound of gunfire while "blue" adds a visual dimension, creating synaesthesia. This sensory overload conveys the overwhelming, nightmarish quality of the battlefield.',
       lineRef: 25,
+      effectAr:
+        '"Crackling" تحاكي صوت الرصاص (onomatopoeia)، و"blue" تضيف بُعد بصري، فينتج synaesthesia. وهذا الفيض الحسي يوصل جودة الميدان الكابوسيّة اللي تطغى على الجندي وتطمسه.',
     },
     {
       device: 'Symbolism',
@@ -367,6 +438,8 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       effect:
         "The hare symbolises nature and innocence caught in human violence. Its suffering — silent, wide-eyed, purposeless — mirrors the soldier's own. It becomes the catalyst that strips away his last patriotic illusions.",
       lineRef: 19,
+      effectAr:
+        'الأرنب symbol للطبيعة والبراءة اللي علقت في العنف البشري. ومعاناته — صامتة، بعيون مفتوحة بسعة، وبلا هدف — تعكس معاناة الجندي. ويصير هو المحفّز اللي يجرّد الجندي من آخر أوهامه الوطنية.',
     },
     {
       device: 'Metaphor',
@@ -374,6 +447,8 @@ Cyclical movement: The poem ends with the same desperate running it began with, 
       effect:
         'War is presented as a vast, impersonal mechanism. "Cold" removes any human warmth; "clockwork" implies predetermined, mechanical forces. The soldier is reduced to a component in a machine he cannot understand or control.',
       lineRef: 11,
+      effectAr:
+        'الحرب تتقدّم على إنها آلة هائلة بلا روح إنسانية. كلمة "Cold" تنزع أي دفء بشري؛ و"clockwork" توحي بقوى آليّة مقرّرة سلفاً. والجندي ينقص لمجرد قطعة داخل ماكينة ما يقدر يفهمها ولا يسيطر عليها.',
     },
   ],
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'Data Processing',
@@ -12,13 +13,12 @@ export const metadata: Metadata = {
   },
 }
 
-export default function DataProcessingPage() {
+export default async function DataProcessingPage() {
+  const [h1, updated] = await tMany(['data_processing.h1', 'data_processing.updated'])
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        Data Processing Information
-      </h1>
-      <p className="mt-2 text-sm text-muted-foreground">Last updated: March 2026</p>
+      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{h1}</h1>
+      <p className="mt-2 text-sm text-muted-foreground">{updated}</p>
 
       <div className="mt-8 prose dark:prose-invert max-w-none space-y-8">
         {/* 1. Introduction */}
@@ -26,9 +26,9 @@ export default function DataProcessingPage() {
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">1. Introduction</h2>
           <p className="text-muted-foreground leading-relaxed">
             This page provides information for schools, multi-academy trusts, and other educational
-            institutions (&quot;Schools&quot;) about how The English Hub processes personal data when
-            providing its GCSE English revision and learning platform services. It is intended to
-            support Schools in meeting their accountability obligations under the UK General Data
+            institutions (&quot;Schools&quot;) about how The English Hub processes personal data
+            when providing its GCSE English revision and learning platform services. It is intended
+            to support Schools in meeting their accountability obligations under the UK General Data
             Protection Regulation (UK GDPR) and the Data Protection Act 2018.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-3">
@@ -53,18 +53,18 @@ export default function DataProcessingPage() {
             why and how student data is processed through the platform.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-3">
-            The English Hub acts as the{' '}
-            <strong className="text-foreground">data processor</strong>, processing personal data
-            solely for the purpose of delivering the educational platform services as instructed by
-            the School. We do not use School-provided personal data for our own purposes, such as
-            marketing or profiling, beyond what is necessary to operate the platform.
+            The English Hub acts as the <strong className="text-foreground">data processor</strong>,
+            processing personal data solely for the purpose of delivering the educational platform
+            services as instructed by the School. We do not use School-provided personal data for
+            our own purposes, such as marketing or profiling, beyond what is necessary to operate
+            the platform.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-3">
             As data controller, the School retains responsibility for ensuring that an appropriate
             lawful basis exists for processing (typically the legitimate interest of providing
             education, or where applicable, consent), that students and parents/guardians are
-            informed via the School&apos;s own privacy notice, and that data subject rights
-            requests are handled in accordance with UK GDPR.
+            informed via the School&apos;s own privacy notice, and that data subject rights requests
+            are handled in accordance with UK GDPR.
           </p>
         </section>
 
@@ -92,9 +92,7 @@ export default function DataProcessingPage() {
             <li>Session and login activity (timestamps, device type, browser)</li>
           </ul>
 
-          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">
-            Teacher and Staff Data
-          </h3>
+          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">Teacher and Staff Data</h3>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>Full name and email address</li>
             <li>Role and administrative permissions within the School&apos;s account</li>
@@ -104,8 +102,8 @@ export default function DataProcessingPage() {
           <p className="text-muted-foreground leading-relaxed mt-3">
             We do not knowingly process special category data (e.g. health data, ethnicity, or
             religious beliefs). If any such data is inadvertently included in essay submissions, it
-            is not extracted, categorised, or used for any purpose beyond generating feedback on
-            the written work.
+            is not extracted, categorised, or used for any purpose beyond generating feedback on the
+            written work.
           </p>
         </section>
 
@@ -121,17 +119,15 @@ export default function DataProcessingPage() {
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>Authenticating students and staff and managing account access</li>
             <li>Delivering GCSE English revision content, quizzes, and mock exams</li>
-            <li>
-              Providing AI-powered essay marking and feedback using large language models
-            </li>
+            <li>Providing AI-powered essay marking and feedback using large language models</li>
             <li>
               Tracking learning progress to enable students and teachers to monitor performance
             </li>
             <li>Generating reports and analytics for the School&apos;s own educational use</li>
             <li>Providing technical support and resolving platform issues</li>
             <li>
-              Processing payments for School subscriptions (billing data is handled by Stripe and
-              is not stored on our servers)
+              Processing payments for School subscriptions (billing data is handled by Stripe and is
+              not stored on our servers)
             </li>
           </ul>
         </section>
@@ -157,9 +153,7 @@ export default function DataProcessingPage() {
               Data at rest is encrypted using AES-256 encryption via our database provider
               (Supabase/PostgreSQL)
             </li>
-            <li>
-              Passwords are hashed using bcrypt and are never stored in plain text
-            </li>
+            <li>Passwords are hashed using bcrypt and are never stored in plain text</li>
           </ul>
 
           <h3 className="text-lg font-medium text-foreground mt-5 mb-2">
@@ -192,21 +186,17 @@ export default function DataProcessingPage() {
               and global CDN
             </li>
             <li>
-              Error monitoring and alerting is provided by Sentry, enabling rapid identification
-              and resolution of issues
+              Error monitoring and alerting is provided by Sentry, enabling rapid identification and
+              resolution of issues
             </li>
             <li>
               Regular dependency updates and vulnerability scanning are performed as part of our
               development process
             </li>
-            <li>
-              Access to production systems is restricted to authorised personnel only
-            </li>
+            <li>Access to production systems is restricted to authorised personnel only</li>
           </ul>
 
-          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">
-            Organisational Measures
-          </h3>
+          <h3 className="text-lg font-medium text-foreground mt-5 mb-2">Organisational Measures</h3>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
               Staff with access to personal data are trained on data protection responsibilities
@@ -247,32 +237,22 @@ export default function DataProcessingPage() {
               <tbody>
                 <tr className="border-b border-border">
                   <td className="px-4 py-3 font-medium text-foreground">Supabase</td>
-                  <td className="px-4 py-3">
-                    Database hosting, authentication, and file storage
-                  </td>
+                  <td className="px-4 py-3">Database hosting, authentication, and file storage</td>
                   <td className="px-4 py-3">EU (Frankfurt, Germany)</td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="px-4 py-3 font-medium text-foreground">Stripe</td>
-                  <td className="px-4 py-3">
-                    Payment processing for School subscriptions
-                  </td>
+                  <td className="px-4 py-3">Payment processing for School subscriptions</td>
                   <td className="px-4 py-3">EU/US</td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="px-4 py-3 font-medium text-foreground">
-                    Anthropic (Claude AI)
-                  </td>
-                  <td className="px-4 py-3">
-                    AI-powered essay marking and feedback generation
-                  </td>
+                  <td className="px-4 py-3 font-medium text-foreground">Anthropic (Claude AI)</td>
+                  <td className="px-4 py-3">AI-powered essay marking and feedback generation</td>
                   <td className="px-4 py-3">US</td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="px-4 py-3 font-medium text-foreground">Vercel</td>
-                  <td className="px-4 py-3">
-                    Application hosting, edge functions, and CDN
-                  </td>
+                  <td className="px-4 py-3">Application hosting, edge functions, and CDN</td>
                   <td className="px-4 py-3">Global (edge network)</td>
                 </tr>
                 <tr className="border-b border-border">
@@ -289,9 +269,7 @@ export default function DataProcessingPage() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium text-foreground">Microsoft Azure</td>
-                  <td className="px-4 py-3">
-                    Backend API hosting and data processing
-                  </td>
+                  <td className="px-4 py-3">Backend API hosting and data processing</td>
                   <td className="px-4 py-3">UK (UK South)</td>
                 </tr>
               </tbody>
@@ -301,8 +279,8 @@ export default function DataProcessingPage() {
           <p className="text-muted-foreground leading-relaxed mt-3">
             Essay content submitted to Anthropic&apos;s Claude API for marking is processed under
             Anthropic&apos;s commercial API terms, which state that input data is not used to train
-            their models. We do not send student names or email addresses to the AI model — only
-            the essay text and marking criteria.
+            their models. We do not send student names or email addresses to the AI model — only the
+            essay text and marking criteria.
           </p>
         </section>
 
@@ -324,8 +302,8 @@ export default function DataProcessingPage() {
             <li>
               <strong className="text-foreground">On account deletion:</strong> When a School or
               individual account is deleted, all associated personal data is permanently removed
-              from our live systems within 30 days. Backups containing the data are purged within
-              90 days.
+              from our live systems within 30 days. Backups containing the data are purged within 90
+              days.
             </li>
             <li>
               <strong className="text-foreground">On request:</strong> Schools may request deletion
@@ -356,8 +334,8 @@ export default function DataProcessingPage() {
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
               Notify the affected School without undue delay, and in any event within{' '}
-              <strong className="text-foreground">72 hours</strong> of becoming aware of the
-              breach, as required by Article 33 of the UK GDPR
+              <strong className="text-foreground">72 hours</strong> of becoming aware of the breach,
+              as required by Article 33 of the UK GDPR
             </li>
             <li>
               Provide details of the nature of the breach, the categories and approximate number of
@@ -386,9 +364,9 @@ export default function DataProcessingPage() {
             personal data may be transferred outside the UK and EEA.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-3">
-            Where personal data is transferred to countries outside the UK that have not received
-            an adequacy decision from the UK Secretary of State, we ensure appropriate safeguards
-            are in place. These include:
+            Where personal data is transferred to countries outside the UK that have not received an
+            adequacy decision from the UK Secretary of State, we ensure appropriate safeguards are
+            in place. These include:
           </p>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
@@ -439,8 +417,8 @@ export default function DataProcessingPage() {
           <p className="text-muted-foreground leading-relaxed">
             Schools and educational institutions that require a formal Data Processing Agreement
             (DPA) or Data Processing Addendum can request one by contacting our partnerships team.
-            Our DPA is compliant with Article 28 of the UK GDPR and covers all the matters
-            outlined on this page, including detailed provisions on:
+            Our DPA is compliant with Article 28 of the UK GDPR and covers all the matters outlined
+            on this page, including detailed provisions on:
           </p>
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>Subject matter, duration, nature, and purpose of processing</li>
@@ -452,14 +430,10 @@ export default function DataProcessingPage() {
           </ul>
           <p className="text-muted-foreground leading-relaxed mt-3">
             To request a DPA or discuss data protection arrangements, please contact us at{' '}
-            <a
-              href="mailto:info@Upskillenergy.com"
-              className="underline text-foreground"
-            >
+            <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">
               info@Upskillenergy.com
             </a>
-            . We are also happy to review and sign your School&apos;s own DPA template if
-            preferred.
+            . We are also happy to review and sign your School&apos;s own DPA template if preferred.
           </p>
         </section>
 
@@ -474,19 +448,13 @@ export default function DataProcessingPage() {
           <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
               <strong className="text-foreground">School partnerships and DPA requests:</strong>{' '}
-              <a
-                href="mailto:info@Upskillenergy.com"
-                className="underline text-foreground"
-              >
+              <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">
                 info@Upskillenergy.com
               </a>
             </li>
             <li>
               <strong className="text-foreground">Data protection enquiries:</strong>{' '}
-              <a
-                href="mailto:info@Upskillenergy.com"
-                className="underline text-foreground"
-              >
+              <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">
                 info@Upskillenergy.com
               </a>
             </li>

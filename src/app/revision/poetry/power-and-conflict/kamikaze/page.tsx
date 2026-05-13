@@ -281,6 +281,12 @@ const kamikazeData: PoemData = {
 <p>Garland has said she was fascinated by accounts of the very few pilots who <strong>turned back</strong> from their missions. These men were shunned by their families and communities, treated as if they were already dead. The poem explores the impossible choice between <strong>duty to country</strong> and the <strong>instinct to live</strong>, and asks whether survival can be worse than death.</p>
 <p>The poem connects to broader themes of <strong>conflict, identity, and the power of nature</strong> to remind us of what matters most.</p>`,
 
+  contextAr: `<p><strong>Beatrice Garland</strong> شاعرة بريطانية معاصرة، وباحثة في الـNHS. قصيدة <em>Kamikaze</em> نُشرت في مجموعتها سنة 2013 <em>The Invention of Fireworks</em>.</p>
+<p>القصيدة مستوحاة من طيّاري الـ<strong>kamikaze</strong> اليابانيّين في الحرب العالمية الثانية — شباب طاروا في مهمّات انتحارية، يضربون طائراتهم عمداً في السفن الحربية للحلفاء. وكلمة <em>kamikaze</em> تترجم "الريح الإلهية" (divine wind)، نسبةً إلى عاصفة typhoon اللي أنقذت Japan من غزو المغول سنة 1281.</p>
+<p>في الثقافة اليابانية، مهمّات الـkamikaze كانت مرتبطة بالـ<strong>شرف، الواجب، والتضحية</strong>. الطيّارون كانوا يحتفى فيهم كأبطال؛ وموتهم كان يُشاف كأقصى فعل ولاء للإمبراطور. ورفض المهمّة أو الفشل فيها كان يجيب <strong>عار</strong> عميق (<em>haji</em>) — مو بس على الشخص نفسه، بل على العائلة كلها.</p>
+<p>Garland قالت إنها انبهرت بقصص الطيّارين القلائل اللي <strong>رجعوا</strong> من مهمّاتهم. هؤلاء الرجال نبذتهم عوائلهم ومجتمعاتهم، وتعاملوا معاهم كأنهم ميّتين أصلاً. القصيدة تستكشف الخيار المستحيل بين <strong>الواجب تجاه الوطن</strong> و<strong>غريزة البقاء</strong>، وتسأل: هل ممكن إن العيش يكون أسوأ من الموت؟</p>
+<p>القصيدة تتّصل بمواضيع أوسع: <strong>الصراع، الهويّة، وقوة الطبيعة</strong> اللي تذكّرنا بشنو اللي يهمّ فعلاً.</p>`,
+
   summary: `The poem tells the story of a Japanese kamikaze pilot during World War II who sets out on his suicide mission at sunrise but turns back before reaching his target. The daughter narrates the story in third person, piecing together what she has been told.
 
 As the pilot flies, he looks down and sees the natural beauty below -- fish gleaming silver in the sea, wood pigeons over mountain passes. These images trigger memories of his childhood: fishing with his brothers and father in the "green-blue translucent sea."
@@ -290,6 +296,16 @@ The beauty of the natural world and the pull of memory overwhelm his sense of mi
 However, his survival brings no relief. His family, bound by the culture of honour and shame, treat him as if he no longer exists. His children and grandchildren learn never to speak of him. He becomes a ghost in his own home -- physically alive but socially dead.
 
 The poem ends with a devastating, unanswered question: "which had been the better way to die" -- the quick death of the kamikaze mission, or the slow, living death of being erased by his own family?`,
+
+  summaryAr: `القصيدة تحكي قصة طيّار kamikaze ياباني في الحرب العالمية الثانية، يطلع في مهمّته الانتحارية مع شروق الشمس، بس يرجع قبل ما يوصل هدفه. البنت تروي القصة بصيغة الغائب، وهي ترتّب الحكاية من اللي سمعته.
+
+الطيّار وهو طاير، يطالع تحت ويشوف جمال الطبيعة — السمك يلمع بلون الفضّة في البحر، وحمام البر فوق ممرّات الجبال. هالمناظر تفجّر فيه ذكريات طفولته: لمّا كان يصطاد السمك مع إخوانه وأبوه في "green-blue translucent sea".
+
+جمال الطبيعة وقوة الذاكرة يطغون على إحساسه بالواجب العسكري. فيقلب طيّارته ويرجع البيت.
+
+بس بقاؤه على قيد الحياة ما يجيب أي راحة. عائلته، اللي مكبّلة بثقافة الشرف والعار، يتعاملون معاه كأنه ما عاد موجود. عياله وأحفاده يتعلّمون إنهم ما يذكرونه أبداً. ويصير شبح في بيته — حيّ جسدياً، بس ميّت اجتماعياً.
+
+القصيدة تنتهي بسؤال مدمّر بلا إجابة: "which had been the better way to die" — موت سريع في مهمّة الـkamikaze، ولا موت بطيء وحيّ تحت محو عائلته؟`,
 
   formAndStructure: `FORM:
 - Free verse with no regular rhyme scheme, reflecting the fragmented, retold nature of the story
@@ -310,6 +326,25 @@ KEY STRUCTURAL FEATURES:
 - The shift from narrative to direct reflection in the final lines creates emotional impact
 - No speech marks are used, blurring the boundary between the daughter's voice and the father's experience`,
 
+  formAndStructureAr: `الشكل (FORM):
+- شعر حرّ (free verse) بلا نظام قافية ثابت، يعكس طبيعة القصة المجزّأة المروية من فم لفم.
+- القصيدة monologue درامي على لسان بنت الطيّار، بس قراءتها أقرب لسرد قصصي.
+- الـenjambment مستخدم بكثرة عبر القصيدة كلها، يخلق حركة سايلة متواصلة تحاكي طيران الطيّار وقوّة جذب الذاكرة اللي ما توقف.
+
+البنية (STRUCTURE):
+- 7 مقاطع بأطوال مختلفة، تنقّل القارئ من المهمّة، للذكريات، للعواقب.
+- القصيدة تبدأ بصيغة الغائب ("Her father")، ووجهة النظر تتبدّل عبرها.
+- المقاطع 1–6 توصف رحلة الطيّار وصور الطبيعة اللي تغيّر قراره.
+- القسم الأخير ينتقل لرد فعل العائلة وعواقب رجوعه.
+- القسم المكتوب italicised في النص الأصلي يأشّر على انتقال لصوت داخلي وأكثر حميمية.
+- بنية دائرية (cyclical): القصيدة تنتهي عاطفياً وين بدأت، بنفس السؤال غير المجاب عنه: "the better way to die".
+
+أبرز السمات البنيوية:
+- الـenjambment اللي يقطع المقاطع (مثل "the fish / swivelled") يخلق حركة متواصلة، يحاكي تيّار فكر الطيّار اللي ما ينقطع.
+- الـcaesura مستخدمة بقلّة، بس بفعالية، مثل "And sometimes, she said" — كلمة "she said" المقحومة تذكّرنا إن الحكاية يد ثانية (secondhand).
+- التحوّل من السرد للتأمّل المباشر في الأبيات الأخيرة يخلق أثر عاطفي قوي.
+- ما فيه علامات اقتباس (speech marks)، فتختلط حدود صوت البنت وتجربة الأب.`,
+
   keyQuotes: [
     // VERIFY: removed key quote 'a sheath of purpose' — this phrase does NOT appear in Garland's Kamikaze. The actual phrase is 'a shaven head / full of powerful incantations'.
     {
@@ -317,48 +352,72 @@ KEY STRUCTURAL FEATURES:
       analysis:
         'The shaved head and ritual incantations evoke samurai/military religious preparation. The pilot is wrapped in ceremonial language that has prepared him for sacrifice — culture, not personal will, drives the mission.',
       themes: ['Duty', 'Conflict', 'Identity'],
+      analysisAr:
+        'الرأس الحليق والتلاوات الطقسية تستحضر تحضيراً ديني/عسكري على طريقة الـsamurai. الطيّار ملفوف بلغة طقوسية حضّرته للتضحية — الثقافة، مو الإرادة الشخصية، هي اللي تسيّر المهمّة.',
+      themesAr: ['الواجب', 'الصراع', 'الهويّة'],
     },
     {
       quote: 'the fish swivelled their silver bodies',
       analysis:
         'Nature imagery with sibilance creates a hypnotic, beautiful sound. The fish represent the vitality of the natural world -- their movement is free and instinctive, contrasting with the rigid, prescribed path of the kamikaze mission.',
       themes: ['Nature', 'Freedom', 'Beauty vs Death'],
+      analysisAr:
+        'صور طبيعية مع sibilance تخلق صوت ساحر وجميل. السمك يمثّل حيوية الطبيعة — حركته حرّة وغريزية، تتناقض مع المسار الصارم المرسوم لمهمّة الـkamikaze.',
+      themesAr: ['الطبيعة', 'الحريّة', 'الجمال مقابل الموت'],
     },
     {
       quote: 'dark, metallic rain',
       analysis:
         'Simile comparing the fish to rain. "Dark" and "metallic" introduce sinister, military connotations into the natural imagery, blurring the line between beauty and destruction.',
       themes: ['Nature', 'Conflict', 'Ambiguity'],
+      analysisAr:
+        'simile تشبّه السمك بالمطر. كلمتين "dark" و"metallic" يدخلون إيحاءات شريرة وعسكرية على الصور الطبيعية، ويطمسون الخط بين الجمال والدمار.',
+      themesAr: ['الطبيعة', 'الصراع', 'الغموض'],
     },
     {
       quote: 'green-blue translucent sea',
       analysis:
         'Rich colour imagery evoking the vivid beauty of the Japanese coastline. "Translucent" suggests clarity and openness -- the opposite of the murky moral situation the pilot faces.',
       themes: ['Nature', 'Memory', 'Beauty vs Death'],
+      analysisAr:
+        'صور لونية غنية تستحضر جمال الساحل الياباني الزاهي. كلمة "translucent" توحي بالصفاء والانفتاح — عكس الموقف الأخلاقي الضبابي اللي يواجهه الطيّار.',
+      themesAr: ['الطبيعة', 'الذاكرة', 'الجمال مقابل الموت'],
     },
     {
       quote: 'the cloud-marked mackerel',
       analysis:
         'A precise, tender detail from the natural world. The specificity of "cloud-marked" shows the pilot truly seeing the world around him, reconnecting with life rather than death.',
       themes: ['Nature', 'Memory', 'Identity'],
+      analysisAr:
+        'تفصيل دقيق وحنون من العالم الطبيعي. الدقّة في كلمة "cloud-marked" تبيّن إن الطيّار صار فعلاً يشوف العالم اللي حوله، ويعيد ربط نفسه بالحياة، مو بالموت.',
+      themesAr: ['الطبيعة', 'الذاكرة', 'الهويّة'],
     },
     {
       quote: 'as though he no longer existed',
       analysis:
         'The family enacts a social death -- the pilot is physically present but treated as invisible. The simile "as though" emphasises that this is a deliberate, chosen act of erasure.',
       themes: ['Shame', 'Family', 'Identity'],
+      analysisAr:
+        'العائلة تنفّذ موت اجتماعي — الطيّار حاضر جسدياً، بس يتعاملون معاه كأنه ما يتشاف. والـsimile في "as though" تأكّد إن هذا فعل محو متعمّد ومختار.',
+      themesAr: ['العار', 'العائلة', 'الهويّة'],
     },
     {
       quote: 'learned not to speak of him',
       analysis:
         'The verb "learned" is devastating -- the silence is not natural but taught. Children are actively trained to erase their own father, showing how cultural expectations override family bonds.',
       themes: ['Shame', 'Family', 'Power'],
+      analysisAr:
+        'الفعل "learned" مدمّر — الصمت مو طبيعي، هو شي يتعلّمونه. العيال يتدرّبون فعلياً على محو أبوهم، ويبيّن هالشي كيف توقّعات الثقافة تتغلّب على روابط العائلة.',
+      themesAr: ['العار', 'العائلة', 'القوّة'],
     },
     {
       quote: 'which had been the better way to die',
       analysis:
         'The poem\'s final, unanswered question. The word "better" is bitterly ironic -- neither option offers a good outcome. The pilot must choose between physical death and social death.',
       themes: ['Conflict', 'Identity', 'Shame'],
+      analysisAr:
+        'السؤال الأخير في القصيدة، اللي ما له إجابة. كلمة "better" مفعمة بسخرية مرّة — ولا خيار من الاثنين يقدّم نتيجة طيّبة. الطيّار مضطر يختار بين الموت الجسدي والموت الاجتماعي.',
+      themesAr: ['الصراع', 'الهويّة', 'العار'],
     },
   ],
 
@@ -369,6 +428,8 @@ KEY STRUCTURAL FEATURES:
       effect:
         'The natural world is presented as beautiful, free, and alive -- a direct contrast to the death-mission. Nature becomes the force that pulls the pilot back to life, representing everything he would lose.',
       lineRef: 8,
+      effectAr:
+        'العالم الطبيعي يُقدَّم جميل، حر، وفيه حياة — تناقض مباشر لمهمّة الموت. الطبيعة تصير القوّة اللي تسحب الطيّار يرجع للحياة، وتمثّل كل شي راح يخسره.',
     },
     {
       device: 'Colour imagery',
@@ -376,6 +437,8 @@ KEY STRUCTURAL FEATURES:
       effect:
         'Garland uses a palette of colours to contrast life and death. "Silver" and "green-blue" evoke beauty and vitality, while "dark" introduces threat. The recurring "silver" creates a motif linking nature to hope.',
       lineRef: 14,
+      effectAr:
+        'Garland تستخدم لوحة ألوان عشان تقابل بين الحياة والموت. "silver" و"green-blue" يستحضرون الجمال والحيوية، بينما "dark" يدخل التهديد. وتكرار "silver" يخلق motif يربط الطبيعة بالأمل.',
     },
     {
       device: 'Simile',
@@ -383,6 +446,8 @@ KEY STRUCTURAL FEATURES:
       effect:
         'The fish are compared to rain, but the adjectives "dark" and "metallic" introduce military connotations. This simile sits at the boundary between beauty and violence, mirroring the poem\'s central tension.',
       lineRef: 22,
+      effectAr:
+        'السمك يتشبّه بالمطر، بس الصفات "dark" و"metallic" يدخلون إيحاءات عسكرية. الـsimile هذي تجلس على الحد الفاصل بين الجمال والعنف، وتعكس التوتّر المركزي في القصيدة.',
     },
     // VERIFY: removed device example 'a sheath of purpose' — phrase not in primary text.
     {
@@ -391,6 +456,8 @@ KEY STRUCTURAL FEATURES:
       effect:
         "The poem moves between the daughter's narration, reported speech, and speculative reconstruction of the father's thoughts. This layering of perspectives shows how the story has been passed down, fragmented and incomplete.",
       lineRef: 38,
+      effectAr:
+        'القصيدة تتنقّل بين سرد البنت، والكلام المنقول، وإعادة بناء افتراضية لأفكار الأب. هالتطبيق الطبقي لوجهات النظر يبيّن كيف انتقلت الحكاية من جيل لجيل، مجزّأة وغير مكتملة.',
     },
     {
       device: 'Contrast',
@@ -398,6 +465,8 @@ KEY STRUCTURAL FEATURES:
       effect:
         'The poem is structured around contrasts: life vs death, duty vs instinct, honour vs shame. These oppositions create the moral tension at the heart of the poem and resist simple resolution.',
       lineRef: 0,
+      effectAr:
+        'القصيدة مبنية على تناقضات: الحياة مقابل الموت، الواجب مقابل الغريزة، الشرف مقابل العار. هالثنائيات تخلق التوتّر الأخلاقي في قلب القصيدة، وتقاوم أي حل سهل.',
     },
     // VERIFY: removed device example 'and he flew into the sun / and he flew into the sun' — these duplicated lines are NOT in Garland's Kamikaze. The opening sequence is 'a flask of water, a samurai sword / in the cockpit, a shaven head / full of powerful incantations / and enough fuel for a one-way / journey into history'.
     {
@@ -406,6 +475,8 @@ KEY STRUCTURAL FEATURES:
       effect:
         "Lines run into each other without pause, creating a flowing, continuous movement. This mirrors the pilot's unbroken train of thought and the relentless pull of memory and nature.",
       lineRef: 7,
+      effectAr:
+        'الأبيات تنساب بدون توقّف، وتخلق حركة متواصلة سايلة. هالشي يحاكي تيّار فكر الطيّار المتواصل، وقوّة جذب الذاكرة والطبيعة اللي ما تنقطع.',
     },
   ],
 }

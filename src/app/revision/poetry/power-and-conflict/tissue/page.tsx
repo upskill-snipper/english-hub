@@ -211,6 +211,11 @@ const TISSUE: PoemData = {
 <p>Dharker is interested in the <strong>fragility of these structures</strong>. Paper is thin, transparent, easily torn -- yet the information written on it (birth certificates, passports, money) wields enormous power. The poem asks whether we might reimagine the world if we acknowledged that all human constructs are as delicate as tissue.</p>
 <p>Dharker was appointed <strong>Chancellor of Edinburgh University</strong> and has won the Queen's Gold Medal for Poetry (2014), reflecting her significance in contemporary British literature.</p>`,
 
+  contextAr: `<p><strong>Imtiaz Dharker</strong> (مواليد 1954) شاعرة وفنّانة ومخرجة، باكستانية-اسكتلندية. ولدت في لاهور في باكستان، وكبرت في Glasgow في اسكتلندا، وعاشت كذلك في الهند. خلفيتها متعدّدة الثقافات تأثّر فيها شعرها بشكل عميق، وهي وايد تستكشف مواضيع <strong>الهوية والحدود والانتماء والحرية</strong>.</p>
+<p>قصيدة <em>Tissue</em> نُشرت في ديوان <strong><em>The terrorist at my table</em></strong> (2006). الديوان يدرس أفكار الخوف والسيطرة وكيف نصنع المعنى. وفي <em>Tissue</em>، Dharker تستخدم استعارة ممتدّة من <strong>الورق</strong> عشان تستكشف كيف إن البشر يبنون هياكل — نصوص دينية وخرائط ووثائق حدود وفواتير — هذي الهياكل تسجّل حياتنا وتسيطر عليها في نفس الوقت.</p>
+<p>Dharker مهتمّة بـ<strong>هشاشة هذي الهياكل</strong>. الورق رفيع وشفاف ويتمزّق بسهولة — بس المعلومات اللي تنكتب عليه (شهادات الميلاد، الجوازات، الفلوس) تحمل قوّة هائلة. القصيدة تسأل: ممكن نعيد تخيّل العالم لو اعترفنا إن كل ما يبنيه البشر هو هشّ مثل الـtissue؟</p>
+<p>Dharker تعيّنت <strong>Chancellor في Edinburgh University</strong>، ونالت Queen's Gold Medal for Poetry سنة 2014، وهذا يعكس مكانتها في الأدب البريطاني المعاصر.</p>`,
+
   summary: `Tissue explores the power and fragility of paper as an extended metaphor for the structures that control human life.
 
 The poem opens by describing paper that has been thinned by use -- the pages of a well-read Koran where family names and histories have been written. Dharker catalogues the many forms paper takes: religious texts, birth records, maps, receipts, and architectural plans.
@@ -220,6 +225,16 @@ In the central stanzas, the speaker imagines buildings made of paper, suggesting
 The poem culminates in the idea that paper could design how we live -- and the final, isolated single-line stanza ("turned into your skin.") equates paper with the human body itself, suggesting that our identities are as constructed and fragile as the documents that define us.
 
 Throughout, Dharker questions human power and permanence, suggesting that acknowledging fragility could "alter things" for the better.`,
+
+  summaryAr: `قصيدة Tissue تستكشف قوة الورق وهشاشته كاستعارة ممتدّة عن الهياكل اللي تسيطر على حياة البشر.
+
+القصيدة تفتتح بوصف ورق رهف من كثر الاستخدام — صفحات قرآن مقروء وايد، فيه أسماء عائلات وتواريخهم. Dharker تعدّد الأشكال الكثيرة اللي ياخذها الورق: نصوص دينية، سجلات ميلاد، خرائط، فواتير، ومخطّطات معمارية.
+
+في المقاطع الوسطى، المتكلّم يتخيّل مباني مصنوعة من ورق، ويلمّح إن الهياكل الكبيرة للسلطة (العواصم، الـmonoliths، الحدود) ممكن يُعاد تخيّلها كأشياء شفافة وهشّة. القصيدة تتنقّل بين العادي (فواتير البقالة) والضخم (الحدود الوطنية)، وتبيّن كيف إن كل ما يبنيه البشر يعتمد على سجلات ورقية.
+
+القصيدة توصل ذروتها في فكرة إن الورق ممكن يصمّم كيف نعيش — والبيت الأخير المنعزل ("turned into your skin.") يساوي بين الورق وجسم الإنسان نفسه، ويلمّح إن هويّاتنا مبنيّة وهشّة مثل الوثائق اللي تعرّفنا.
+
+في كل القصيدة، Dharker تشكّك في قوة البشر ودوامهم، وتلمّح إن الاعتراف بالهشاشة ممكن "alter things" للأحسن.`,
 
   formAndStructure: `FORM: Free verse with no regular rhyme scheme. The lack of a fixed pattern mirrors the poem's argument that rigid structures should be questioned.
 
@@ -233,54 +248,90 @@ SENTENCE STRUCTURE: Many sentences span multiple stanzas, reinforcing the idea t
 
 TONE: Contemplative, quiet, and philosophical. The speaker does not command but suggests ("might," "could"), using conditional language to imagine alternatives rather than demand change.`,
 
+  formAndStructureAr: `FORM: شعر حرّ (free verse) بدون نظام قافية ثابت. غياب النمط الثابت يعكس حجّة القصيدة إن الهياكل الصارمة لازم يتشكّك فيها.
+
+بنية المقاطع (STANZA STRUCTURE): عشر quatrains، يلحقها بيت واحد منعزل في مقطع مستقل ("turned into your skin."). ثبات الـquatrains يخلق توقّع، والبيت الأخير المعزول يكسر هذا التوقّع بقصد — يجسّد فكرة القصيدة إن الهياكل ممكن وينبغي إنها تنكسر. البيت الأخير المعزول مهم بنيوياً — Dharker تكسر انتظام الـquatrains عشان تأكّد على الـvolta من الورق للجسد.
+
+ENJAMBMENT: تسلسل واسع للأبيات بدون توقّف، الجمل تجري عبر فواصل الأبيات والمقاطع طول القصيدة. هذا يخلق إحساس بالتدفّق والاستمرارية، وكأن المعنى (مثل الورق) ما يقدر يُحتوى داخل حدود ضيّقة. وكذلك يعكس شفافية الـtissue — الأفكار تنفذ عبر الحدود.
+
+البيت الأخير المعزول: "turned into your skin." يقف لحاله كمقطع من بيت واحد، منفصل بنيوياً عن الـquatrains العشرة اللي قبله. هذا العزل يأكّد على التحوّل من الورق للجلد، ويجبر القارئ يتوقّف عند أهم فكرة في القصيدة: إن الهوية الإنسانية مبنيّة وهشّة.
+
+بنية الجمل: وايد جمل تمتدّ عبر عدّة مقاطع، وهذا يقوّي فكرة إن المعنى يقاوم الاحتواء. القصيدة تستخدم نقاط قليلة، وهذا يخلق إحساس بفكرة متواصلة.
+
+النبرة (TONE): تأمّلية وهادئة وفلسفية. المتكلّمة ما تأمر، لكن تقترح ("might"، "could")، تستخدم اللغة الشرطية عشان تتخيّل بدائل بدل ما تطالب بتغيير.`,
+
   keyQuotes: [
     {
       quote: 'Paper that lets the light shine through',
       analysis:
         'The opening image establishes paper as something transparent and illuminating. Light symbolises truth, understanding, and clarity. Dharker values what is translucent over what is opaque -- suggesting that openness and fragility are strengths, not weaknesses.',
       themes: ['Power of nature', 'Identity', 'Fragility'],
+      analysisAr:
+        'الصورة الافتتاحية تثبّت الورق كشي شفّاف وينير. الضوء يرمز للحقيقة والفهم والوضوح. Dharker تقدّر الشي الشفاف على الشي المعتم — وتلمّح إن الانفتاح والهشاشة قوّة، مو ضعف.',
+      themesAr: ['قوة الطبيعة', 'الهوية', 'الهشاشة'],
     },
     {
       quote: 'this is what could alter things',
       analysis:
         'A bold, quiet assertion of paper\'s transformative power. The modal verb "could" is deliberately tentative -- Dharker suggests possibility rather than certainty, reflecting her preference for openness over rigid authority.',
       themes: ['Power', 'Change', 'Human constructs'],
+      analysisAr:
+        'تأكيد جريء وهادئ على قدرة الورق التحويلية. الـmodal verb "could" متردّد بقصد — Dharker تلمّح بالإمكانية مو باليقين، وهذا يعكس تفضيلها للانفتاح على السلطة الصارمة.',
+      themesAr: ['القوة', 'التغيير', 'هياكل البشر'],
     },
     {
       quote: 'the back of the Koran, where a hand has written in the names and histories',
       analysis:
         "Connects paper to religious and family records. The specificity of the Koran reflects Dharker's Pakistani-Muslim heritage. Family records inscribed in holy books show how paper documents identity -- birth, marriage, lineage -- binding personal history to sacred text.",
       themes: ['Identity', 'Religion', 'Heritage'],
+      analysisAr:
+        'يربط الورق بالسجلات الدينية والعائلية. خصوصية ذكر القرآن تعكس خلفية Dharker الباكستانية-المسلمة. سجلات العائلة اللي تتنكتب في الكتب المقدّسة تبيّن كيف إن الورق يوثّق الهوية — الميلاد، الزواج، النسب — ويربط التاريخ الشخصي بالنصّ المقدّس.',
+      themesAr: ['الهوية', 'الدين', 'التراث'],
     },
     {
       quote: 'living tissue, raise it to the light',
       analysis:
         'The central metaphor of the poem. "Living tissue" conflates paper with human skin/flesh, suggesting our identities are as thin and fragile as the documents that define us. "Raise it to the light" echoes the opening and implies scrutiny -- if we examine our structures, we see through them.',
       themes: ['Identity', 'Fragility', 'Power of nature'],
+      analysisAr:
+        'الاستعارة المحورية في القصيدة. "Living tissue" تخلط بين الورق وجلد الإنسان أو لحمه، وتلمّح إن هويّاتنا رفيعة وهشّة مثل الوثائق اللي تعرّفنا. وعبارة "raise it to the light" ترجع لصدى الافتتاحية، وتعني التدقيق — لو فحصنا هياكلنا، نشوف من خلالها.',
+      themesAr: ['الهوية', 'الهشاشة', 'قوة الطبيعة'],
     },
     {
       quote: 'If buildings were paper, I might feel their drift and pull',
       analysis:
         'A hypothetical reimagining of solid architecture as fragile paper. "Drift and pull" gives buildings organic, almost living qualities. Dharker challenges the assumed permanence of human constructions, suggesting they should be as flexible and responsive as paper.',
       themes: ['Power', 'Human constructs', 'Fragility'],
+      analysisAr:
+        'إعادة تخيّل افتراضية للعمارة الصلبة كأنها ورق هشّ. عبارة "drift and pull" تعطي المباني صفات عضوية تكاد تكون حيّة. Dharker تتحدّى الدوام المفترض في بنايات البشر، وتلمّح إنها لازم تكون مرنة ومتجاوبة مثل الورق.',
+      themesAr: ['القوة', 'هياكل البشر', 'الهشاشة'],
     },
     {
       quote: 'borderlines, the marks that rivers make, roads, mountain folds',
       analysis:
         'Borders are reimagined as paper creases ("folds"). Dharker conflates man-made borders (political, national) with natural features (rivers, mountains), questioning whether human-imposed divisions are any more permanent than lines on a page.',
       themes: ['Power', 'Conflict', 'Identity'],
+      analysisAr:
+        'الحدود تتعاد تخيّلها كثنيات في الورق ("folds"). Dharker تخلط بين حدود البشر (السياسية والوطنية) والمعالم الطبيعية (الأنهار والجبال)، وتشكّك: هل التقسيمات اللي يفرضها البشر أكثر دواماً من خطوط على ورقة؟',
+      themesAr: ['القوة', 'الصراع', 'الهوية'],
     },
     {
       quote: 'Capitals and monoliths, brought down to near-transparent things',
       analysis:
         'Centres of political power ("capitals") and permanent structures ("monoliths") are reduced to transparency. Dharker subverts expectations of permanence and power, arguing that even the most imposing human structures are ultimately fragile.',
       themes: ['Power', 'Human constructs', 'Fragility'],
+      analysisAr:
+        'مراكز السلطة السياسية ("capitals") والهياكل الدائمة ("monoliths") تتنزّل لمستوى الشفافية. Dharker تقلب توقّعات الدوام والقوة، وتجادل إن حتى أكبر هياكل البشر هي في النهاية هشّة.',
+      themesAr: ['القوة', 'هياكل البشر', 'الهشاشة'],
     },
     {
       quote: 'turned into your skin.',
       analysis:
         'The final isolated single-line stanza completes the transformation from paper to body. "Your skin" uses direct address to make the theme personal: our identities are constructed, layered, and fragile -- as thin as tissue. The line\'s structural isolation (a deliberate break from the ten preceding quatrains) enacts the volta from paper to flesh that it describes.',
       themes: ['Identity', 'Fragility', 'Power of nature'],
+      analysisAr:
+        'البيت الأخير المعزول يكمّل التحوّل من الورق للجسد. عبارة "your skin" تستخدم المخاطبة المباشرة عشان تخلّي الفكرة شخصية: هويّاتنا مبنيّة وطبقات وهشّة — رفيعة مثل الـtissue. العزل البنيوي للبيت (كسرة مقصودة من الـquatrains العشرة اللي قبله) يجسّد الـvolta من الورق للحم اللي يصفه.',
+      themesAr: ['الهوية', 'الهشاشة', 'قوة الطبيعة'],
     },
   ],
 
@@ -291,6 +342,8 @@ TONE: Contemplative, quiet, and philosophical. The speaker does not command but 
       effect:
         'Paper functions as a sustained metaphor throughout the entire poem, representing all human structures -- religious texts, borders, buildings, receipts, skin. By filtering everything through this single image, Dharker argues that all human constructs are fundamentally fragile and interconnected.',
       lineRef: 0,
+      effectAr:
+        'الورق يشتغل كاستعارة ممتدّة عبر القصيدة كلها، ويمثّل كل هياكل البشر — النصوص الدينية، الحدود، المباني، الفواتير، الجلد. عبر تصفية كل شي من خلال هذي الصورة الواحدة، Dharker تجادل إن كل ما يبنيه البشر هو في الأساس هشّ ومترابط.',
     },
     {
       device: 'Light imagery',
@@ -298,6 +351,8 @@ TONE: Contemplative, quiet, and philosophical. The speaker does not command but 
       effect:
         'Recurring light imagery ("shine through," "raise it to the light," "near-transparent") symbolises truth, clarity, and understanding. Dharker associates transparency with positive transformation, suggesting that seeing through structures of power is liberating.',
       lineRef: 16,
+      effectAr:
+        'صور الضوء المتكرّرة ("shine through"، "raise it to the light"، "near-transparent") ترمز للحقيقة والوضوح والفهم. Dharker تربط الشفافية بالتحوّل الإيجابي، وتلمّح إن النفاذ إلى ما وراء هياكل السلطة هو شي يحرّر.',
     },
     {
       device: 'Enjambment',
@@ -305,6 +360,8 @@ TONE: Contemplative, quiet, and philosophical. The speaker does not command but 
       effect:
         "Pervasive enjambment runs sentences across lines and stanzas, preventing meaning from being contained within fixed boundaries. This mirrors the poem's central argument: that structures (borders, records, identities) should not confine us. The flowing form enacts the transparency of tissue.",
       lineRef: 7,
+      effectAr:
+        'الـenjambment الواسع يمدّ الجمل عبر الأبيات والمقاطع، ويمنع المعنى من إنه ينحبس داخل حدود ثابتة. هذا يعكس الحجّة المركزية للقصيدة: إن الهياكل (الحدود والسجلات والهويات) ما يصير تقيّدنا. الشكل المتدفّق يجسّد شفافية الـtissue.',
     },
     {
       device: 'Listing',
@@ -312,6 +369,8 @@ TONE: Contemplative, quiet, and philosophical. The speaker does not command but 
       effect:
         "Dharker catalogues the many uses of paper (birth records, receipts, maps, architectural plans) through extensive listing. This accumulation shows the sheer scale of paper's influence on human life, building a sense of how thoroughly documents control and define us.",
       lineRef: 10,
+      effectAr:
+        'Dharker تعدّد الاستخدامات الكثيرة للورق (سجلات الميلاد، الفواتير، الخرائط، المخطّطات المعمارية) عبر سرد مطوّل. هذا التكدّس يبيّن حجم تأثير الورق على حياة البشر، ويبني إحساس بكم بعمق تتحكّم فينا الوثائق وتعرّفنا.',
     },
     {
       device: 'Imperative mood',
@@ -319,6 +378,8 @@ TONE: Contemplative, quiet, and philosophical. The speaker does not command but 
       effect:
         'The imperative "raise it" is one of the poem\'s few direct commands, creating a moment of urgency amid the contemplative tone. Dharker instructs the reader to scrutinise the structures that define them, transforming passive observation into active enquiry.',
       lineRef: 16,
+      effectAr:
+        'صيغة الأمر "raise it" وحدة من الأوامر المباشرة القليلة في القصيدة، وتخلق لحظة إلحاح وسط النبرة التأمّلية. Dharker توجّه القارئ يدقّق في الهياكل اللي تعرّفه، وتحوّل المراقبة السلبية لتساؤل فعّال.',
     },
     {
       device: 'Symbolism (borders and maps)',
@@ -326,6 +387,8 @@ TONE: Contemplative, quiet, and philosophical. The speaker does not command but 
       effect:
         'Borders symbolise the arbitrary divisions humans impose on the world. By placing "borderlines" alongside natural features like rivers and mountains, Dharker questions whether political boundaries are any more real or permanent than creases in paper.',
       lineRef: 26,
+      effectAr:
+        'الحدود ترمز للتقسيمات الاعتباطية اللي يفرضها البشر على العالم. بحطّها كلمة "borderlines" جنب معالم طبيعية مثل الأنهار والجبال، Dharker تتساءل: هل الحدود السياسية أكثر واقعية أو دواماً من ثنيات في الورق؟',
     },
     {
       device: 'Conditional language',
@@ -333,6 +396,8 @@ TONE: Contemplative, quiet, and philosophical. The speaker does not command but 
       effect:
         'Modal verbs ("could," "might") and conditional "if" create a tentative, speculative tone. Rather than demanding change, Dharker imagines alternatives -- reflecting a belief that questioning and possibility are more powerful than rigid certainty.',
       lineRef: 19,
+      effectAr:
+        'الـmodal verbs ("could"، "might") والشرطية "if" تخلق نبرة مترّددة وتأمّلية. بدل ما تطالب بتغيير، Dharker تتخيّل بدائل — وهذا يعكس قناعتها إن التساؤل والإمكانية أقوى من اليقين الصارم.',
     },
     {
       device: 'Semantic field of fragility',
@@ -340,6 +405,8 @@ TONE: Contemplative, quiet, and philosophical. The speaker does not command but 
       effect:
         'Words associated with thinness and delicacy accumulate throughout, reinforcing the idea that all human structures -- from grand buildings to personal identity -- are fundamentally impermanent and vulnerable.',
       lineRef: 3,
+      effectAr:
+        'الكلمات اللي ترتبط بالرفعة والحساسية تتكدّس عبر القصيدة كلها، وتقوّي فكرة إن كل هياكل البشر — من المباني الكبيرة لين الهوية الشخصية — هي في الأساس عابرة وهشّة.',
     },
   ],
 }
