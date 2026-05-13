@@ -1,5 +1,9 @@
 'use client'
 
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
+
 import { useState } from 'react'
 
 /* ─── Expandable Section Component ─────────────────────────── */
@@ -82,6 +86,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function ThingsFallApartPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -103,7 +114,9 @@ export default function ThingsFallApartPage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Things Fall Apart &mdash; Complete Revision Guide
         </h1>
-        <p className="mt-1 text-lg text-muted-foreground">Chinua Achebe (1930&ndash;2013), 1958</p>
+        <p className="mt-1 text-lg text-muted-foreground">
+          {tr(`Chinua Achebe (1930&ndash;2013), 1958`)}
+        </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Everything you need for your IGCSE or A-Level English Literature exam on Achebe&rsquo;s
           landmark novel about the Igbo society of Umuofia and the arrival of British colonial rule.
@@ -156,60 +169,61 @@ export default function ThingsFallApartPage() {
             </h4>
             <ul className="space-y-2 text-sm leading-relaxed list-disc pl-5">
               <li>
-                <strong>Chapter 1.</strong> Okonkwo is introduced as a famous wrestler and warrior
-                whose fame &ldquo;rested on solid personal achievements&rdquo;. His father Unoka was
-                a debt-ridden flute-player whom the clan called
+                <strong>{tr(`Chapter 1.`)}</strong> Okonkwo is introduced as a famous wrestler and
+                warrior whose fame &ldquo;rested on solid personal achievements&rdquo;. His father
+                Unoka was a debt-ridden flute-player whom the clan called
                 <em> agbala</em> (the same word means &ldquo;woman&rdquo;).
               </li>
               <li>
-                <strong>Chapter 2.</strong> Umuofia receives word that a daughter of the clan has
-                been murdered in the neighbouring village of Mbaino. As compensation, Mbaino sends a
-                young virgin and a fifteen-year-old boy,
+                <strong>{tr(`Chapter 2.`)}</strong> Umuofia receives word that a daughter of the
+                clan has been murdered in the neighbouring village of Mbaino. As compensation,
+                Mbaino sends a young virgin and a fifteen-year-old boy,
                 <em> Ikemefuna</em>, who is placed in Okonkwo&rsquo;s household.
               </li>
               <li>
-                <strong>Chapters 3&ndash;4.</strong> Flashback to Okonkwo borrowing yam seeds from{' '}
-                <em>Nwakibie</em> as a young man, surviving a disastrous farming year, and building
-                his wealth despite his father&rsquo;s ruin. His impatience and quick temper are
-                flagged early.
+                <strong>{tr(`Chapters 3&ndash;4.`)}</strong> Flashback to Okonkwo borrowing yam
+                seeds from <em>Nwakibie</em> as a young man, surviving a disastrous farming year,
+                and building his wealth despite his father&rsquo;s ruin. His impatience and quick
+                temper are flagged early.
               </li>
               <li>
-                <strong>Chapter 5.</strong> The Feast of the New Yam. Okonkwo, restless without
-                work, beats his second wife <em>Ekwefi</em> and shoots at her during the festival.
+                <strong>{tr(`Chapter 5.`)}</strong> The Feast of the New Yam. Okonkwo, restless
+                without work, beats his second wife <em>Ekwefi</em> and shoots at her during the
+                festival.
               </li>
               <li>
-                <strong>Chapter 6.</strong> The wrestling match. Okonkwo&rsquo;s nephew
+                <strong>{tr(`Chapter 6.`)}</strong> The wrestling match. Okonkwo&rsquo;s nephew
                 <em> Maduka</em> wins; a public spectacle of the values Okonkwo prizes.
               </li>
               <li>
-                <strong>Chapter 7.</strong> Ikemefuna has lived with Okonkwo&rsquo;s family for
-                three years; Nwoye looks up to him &ldquo;like an elder brother&rdquo;. The Oracle
-                of the Hills and the Caves declares that Ikemefuna must be killed. The elder{' '}
+                <strong>{tr(`Chapter 7.`)}</strong> Ikemefuna has lived with Okonkwo&rsquo;s family
+                for three years; Nwoye looks up to him &ldquo;like an elder brother&rdquo;. The
+                Oracle of the Hills and the Caves declares that Ikemefuna must be killed. The elder{' '}
                 <em>Ezeudu</em> warns Okonkwo to take no part. Okonkwo accompanies the men, and when
                 the boy runs to him crying &ldquo;My father, they have killed me!&rdquo; Okonkwo
                 &mdash; afraid of being thought weak &mdash; cuts him down with his machete.
               </li>
               <li>
-                <strong>Chapter 8.</strong> Okonkwo cannot eat for two days. Obierika rebukes him:
-                the killing was a thing the Earth would not approve.
+                <strong>{tr(`Chapter 8.`)}</strong> Okonkwo cannot eat for two days. Obierika
+                rebukes him: the killing was a thing the Earth would not approve.
               </li>
               <li>
-                <strong>Chapters 9&ndash;11.</strong> Ezinma, Ekwefi&rsquo;s only surviving child,
-                falls ill. The priestess <em>Chielo</em> carries her through the night to the cave
-                of Agbala. Ekwefi follows in terror; Okonkwo joins her. The scene is one of the
+                <strong>{tr(`Chapters 9&ndash;11.`)}</strong> Ezinma, Ekwefi&rsquo;s only surviving
+                child, falls ill. The priestess <em>Chielo</em> carries her through the night to the
+                cave of Agbala. Ekwefi follows in terror; Okonkwo joins her. The scene is one of the
                 novel&rsquo;s most lyrical.
               </li>
               <li>
-                <strong>Chapter 12.</strong> The <em>uri</em> (bride-price ceremony) of
+                <strong>{tr(`Chapter 12.`)}</strong> The <em>uri</em> (bride-price ceremony) of
                 Obierika&rsquo;s daughter Akueke. A picture of communal celebration that is also a
                 record of how Igbo justice and family work.
               </li>
               <li>
-                <strong>Chapter 13.</strong> The funeral of Ezeudu. Okonkwo&rsquo;s gun explodes and
-                accidentally kills Ezeudu&rsquo;s sixteen-year-old son. The killing of a clansman is
-                a &ldquo;female&rdquo; crime (inadvertent), so Okonkwo and his family are exiled for
-                seven years to his motherland, <em>Mbanta</em>. His compound is burnt the morning
-                after.
+                <strong>{tr(`Chapter 13.`)}</strong> The funeral of Ezeudu. Okonkwo&rsquo;s gun
+                explodes and accidentally kills Ezeudu&rsquo;s sixteen-year-old son. The killing of
+                a clansman is a &ldquo;female&rdquo; crime (inadvertent), so Okonkwo and his family
+                are exiled for seven years to his motherland, <em>Mbanta</em>. His compound is burnt
+                the morning after.
               </li>
             </ul>
 
@@ -218,35 +232,35 @@ export default function ThingsFallApartPage() {
             </h4>
             <ul className="space-y-2 text-sm leading-relaxed list-disc pl-5">
               <li>
-                <strong>Chapter 14.</strong> Okonkwo&rsquo;s mother&rsquo;s kinsman
+                <strong>{tr(`Chapter 14.`)}</strong> Okonkwo&rsquo;s mother&rsquo;s kinsman
                 <em> Uchendu</em> receives him kindly but reminds him: &ldquo;Mother is
                 Supreme&rdquo; &mdash; a man flees to his motherland in sorrow.
               </li>
               <li>
-                <strong>Chapter 15.</strong> Obierika visits and reports the destruction of{' '}
+                <strong>{tr(`Chapter 15.`)}</strong> Obierika visits and reports the destruction of{' '}
                 <em>Abame</em>: a white man rode in on an &ldquo;iron horse&rdquo; (bicycle), the
                 village killed him, and three other white men later returned with soldiers and wiped
                 out the market.
               </li>
               <li>
-                <strong>Chapter 16.</strong> Two years later, Obierika returns and reports that
-                Christian missionaries have come to Umuofia. Nwoye is among the converts.
+                <strong>{tr(`Chapter 16.`)}</strong> Two years later, Obierika returns and reports
+                that Christian missionaries have come to Umuofia. Nwoye is among the converts.
               </li>
               <li>
-                <strong>Chapter 17.</strong> The missionaries in Mbanta ask for land and are
+                <strong>{tr(`Chapter 17.`)}</strong> The missionaries in Mbanta ask for land and are
                 mockingly granted the Evil Forest, where the abandoned twins are left to die. When
                 the church does not fall, the village is unsettled. Nwoye, drawn to the
                 missionaries&rsquo; questions about the killing of Ikemefuna and the abandonment of
                 twins, leaves his father.
               </li>
               <li>
-                <strong>Chapter 18.</strong> The church admits <em>osu</em>
+                <strong>{tr(`Chapter 18.`)}</strong> The church admits <em>osu</em>
                 (caste-outcasts), splitting clan opinion. A convert kills a sacred python; village
                 punishment is imposed but the convert dies of illness first, which the village reads
                 as the gods striking him.
               </li>
               <li>
-                <strong>Chapter 19.</strong> Okonkwo&rsquo;s exile ends. He thanks his
+                <strong>{tr(`Chapter 19.`)}</strong> Okonkwo&rsquo;s exile ends. He thanks his
                 mother&rsquo;s kinsmen with a great feast before returning to Umuofia.
               </li>
             </ul>
@@ -256,40 +270,40 @@ export default function ThingsFallApartPage() {
             </h4>
             <ul className="space-y-2 text-sm leading-relaxed list-disc pl-5">
               <li>
-                <strong>Chapter 20.</strong> Okonkwo returns to a transformed Umuofia. The white
-                government has built a court at Umuofia and a District Commissioner tries cases
-                &ldquo;in ignorance&rdquo; of Igbo custom. Obierika&rsquo;s lament: &ldquo;he has
-                put a knife on the things that held us together and we have fallen apart&rdquo;.
+                <strong>{tr(`Chapter 20.`)}</strong> Okonkwo returns to a transformed Umuofia. The
+                white government has built a court at Umuofia and a District Commissioner tries
+                cases &ldquo;in ignorance&rdquo; of Igbo custom. Obierika&rsquo;s lament: &ldquo;he
+                has put a knife on the things that held us together and we have fallen apart&rdquo;.
               </li>
               <li>
-                <strong>Chapter 21.</strong> Mr Brown, the first missionary, befriends the elder{' '}
-                <em>Akunna</em> and listens. Theological exchanges of comparable seriousness. He
-                builds a school and a small hospital.
+                <strong>{tr(`Chapter 21.`)}</strong> Mr Brown, the first missionary, befriends the
+                elder <em>Akunna</em> and listens. Theological exchanges of comparable seriousness.
+                He builds a school and a small hospital.
               </li>
               <li>
-                <strong>Chapter 22.</strong> Mr Brown leaves on health grounds and is replaced by{' '}
-                <em>Reverend James Smith</em>, who sees no compromise.
+                <strong>{tr(`Chapter 22.`)}</strong> Mr Brown leaves on health grounds and is
+                replaced by <em>{tr(`Reverend James Smith`)}</em>, who sees no compromise.
                 <em> Enoch</em>, an over-zealous convert, unmasks an
                 <em> egwugwu</em> (a masked ancestral spirit) at a public festival &mdash; in Igbo
                 terms, &ldquo;killing&rdquo; the ancestor. The egwugwu burn the church.
               </li>
               <li>
-                <strong>Chapter 23.</strong> The District Commissioner invites the Umuofia leaders
-                to a meeting, then has them seized, beaten, and held to ransom. Okonkwo is among
-                them. Their heads are shaved and they are fined two hundred bags of cowries.
+                <strong>{tr(`Chapter 23.`)}</strong> The District Commissioner invites the Umuofia
+                leaders to a meeting, then has them seized, beaten, and held to ransom. Okonkwo is
+                among them. Their heads are shaved and they are fined two hundred bags of cowries.
               </li>
               <li>
-                <strong>Chapter 24.</strong> The clan gathers to decide on war. A court messenger
-                arrives to disperse the meeting. Okonkwo beheads him with a machete. The crowd lets
-                the other messengers go. Okonkwo realises in that moment that Umuofia will not
-                fight.
+                <strong>{tr(`Chapter 24.`)}</strong> The clan gathers to decide on war. A court
+                messenger arrives to disperse the meeting. Okonkwo beheads him with a machete. The
+                crowd lets the other messengers go. Okonkwo realises in that moment that Umuofia
+                will not fight.
               </li>
               <li>
-                <strong>Chapter 25.</strong> The District Commissioner arrives at Okonkwo&rsquo;s
-                compound to arrest him. Obierika leads them to the back, where Okonkwo&rsquo;s body
-                hangs from a tree. Suicide is, in Igbo custom, an offence against the Earth;
-                clansmen cannot touch the body. The Commissioner reflects that the story might make
-                &ldquo;a reasonable paragraph&rdquo; in his planned book,{' '}
+                <strong>{tr(`Chapter 25.`)}</strong> The District Commissioner arrives at
+                Okonkwo&rsquo;s compound to arrest him. Obierika leads them to the back, where
+                Okonkwo&rsquo;s body hangs from a tree. Suicide is, in Igbo custom, an offence
+                against the Earth; clansmen cannot touch the body. The Commissioner reflects that
+                the story might make &ldquo;a reasonable paragraph&rdquo; in his planned book,{' '}
                 <em>The Pacification of the Primitive Tribes of the Lower Niger</em>.
               </li>
             </ul>
@@ -361,15 +375,15 @@ export default function ThingsFallApartPage() {
         <div id="themes">
           <Section title="Themes" icon="🎭">
             <ThemeCard
-              title="Masculinity and the fear of weakness"
+              title={tr(`Masculinity and the fear of weakness`)}
               description="Okonkwo&rsquo;s public success is built on the rejection of his father; the rejection becomes a phobia. His &lsquo;whole life was dominated by fear, the fear of failure and of weakness&rsquo;. Crucial line: it is not weakness itself but the fear of being thought weak that makes him kill Ikemefuna. The novel never simply endorses Igbo masculinity (the clan elders themselves disapprove of his rashness) but it shows how a culture that rewards visible strength can corner one of its own most diligent sons."
             />
             <ThemeCard
-              title="Tradition and the question of change"
+              title={tr(`Tradition and the question of change`)}
               description="Igbo society is shown as resilient, internally argued, capable of self-criticism. Twins are abandoned; osu are excluded; women can be beaten in some circumstances; the killing of Ikemefuna is contested even before the missionaries arrive. The novel does not stage a pure tradition versus a pure modernity. It shows a society whose own tensions the missionaries are able to exploit. The collapse is double-acted: by Smith-style mission, and by the gaps the clan already had."
             />
             <ThemeCard
-              title="Colonialism, language, and the &lsquo;civilising&rsquo; story"
+              title={tr(`Colonialism, language, and the &lsquo;civilising&rsquo; story`)}
               description="The District Commissioner&rsquo;s book title is the theme spelled out: an entire civilisation reduced to &lsquo;Primitive Tribes of the Lower Niger&rsquo;, and conquest reframed as &lsquo;pacification&rsquo;. Achebe&rsquo;s 1958 reply is the rest of the novel itself. Where Conrad&rsquo;s Heart of Darkness (1899) makes Africans inarticulate, Achebe gives Umuofia a full language of proverbs, kinship terms, ritual, and naming. The form of the novel is the argument."
             />
             <ThemeCard
@@ -381,11 +395,11 @@ export default function ThingsFallApartPage() {
               description="Three generations: Unoka (gentle, artistic, broken); Okonkwo (his repudiation); Nwoye (Okonkwo&rsquo;s refusal turned against him). Achebe traces how a father&rsquo;s shame can shape a son&rsquo;s violence and how that violence in turn drives the next son into another father&rsquo;s arms &mdash; in Nwoye&rsquo;s case, the church&rsquo;s. The pattern is psychological and political at once."
             />
             <ThemeCard
-              title="Fate and chi (personal god)"
+              title={tr(`Fate and chi (personal god)`)}
               description="The Igbo concept of chi is the personal &lsquo;god&rsquo; or destiny that walks alongside each person. The narrator notes the proverb that &lsquo;when a man says yes his chi says yes also&rsquo; and reverses it for Okonkwo: a man whose chi said &lsquo;nay&rsquo;. Free will and fate are not separated in Igbo thought as they are in some Western theologies. Okonkwo&rsquo;s downfall is read by the clan partly as bad chi, partly as the Earth&rsquo;s judgement after Ikemefuna and the funeral killing."
             />
             <ThemeCard
-              title="The art of language and the proverb"
+              title={tr(`The art of language and the proverb`)}
               description="The novel&rsquo;s most-quoted opening line establishes proverbs as the &lsquo;palm-oil&rsquo; with which words are eaten. Achebe writes English in Igbo rhythms: idiomatic translations rather than glossed Igbo phrases. This is a deliberate political choice. He argued in &lsquo;The African Writer and the English Language&rsquo; (1965) that English could be carried into new territory, and that the new English would be &lsquo;in full communion with its ancestral home but altered to suit new African surroundings&rsquo;."
             />
           </Section>
@@ -393,7 +407,7 @@ export default function ThingsFallApartPage() {
 
         {/* ─── Key Quotations ─── */}
         <div id="key-quotations">
-          <Section title="Key Quotations" icon="💬">
+          <Section title={tr(`Key Quotations`)} icon="💬">
             <p className="mb-4 text-sm text-muted-foreground">
               The quotations below are drawn from the standard Heinemann African Writers Series
               edition (1958, reissued 1962 onwards). Page numbers vary between editions; chapter
@@ -484,7 +498,7 @@ export default function ThingsFallApartPage() {
 
         {/* ─── Igbo Culture ─── */}
         <div id="igbo-culture">
-          <Section title="Igbo Culture in the Novel" icon="🌾">
+          <Section title={tr(`Igbo Culture in the Novel`)} icon="🌾">
             <p className="mb-4 text-sm text-muted-foreground">
               The novel teaches Igbo culture as it goes. Examiners reward students who can name and
               use Igbo terms and explain what they mean to Achebe&rsquo;s argument. The list below
@@ -528,7 +542,7 @@ export default function ThingsFallApartPage() {
 
         {/* ─── Context ─── */}
         <div id="context">
-          <Section title="Historical &amp; Literary Context" icon="📜">
+          <Section title={tr(`Historical &amp; Literary Context`)} icon="📜">
             <CharacterCard
               name="Chinua Achebe (1930–2013)"
               description="Born Albert Chinualumogu Achebe in Ogidi, eastern Nigeria. His father was an early Igbo Christian convert; his grandfather kept traditional Igbo beliefs. Educated at the Government College Umuahia and University College Ibadan; first worked at the Nigerian Broadcasting Service. Things Fall Apart (1958) was his first novel. Later novels include Arrow of God (1964) and A Man of the People (1966). Survived the Biafran War (1967–1970) as a propagandist for the secessionist state; afterwards taught at universities in Nigeria and the United States. Died in Boston in 2013."
@@ -566,7 +580,7 @@ export default function ThingsFallApartPage() {
 
         {/* ─── Structure ─── */}
         <div id="structure">
-          <Section title="Structure &amp; Narrative Technique" icon="🏛️">
+          <Section title={tr(`Structure &amp; Narrative Technique`)} icon="🏛️">
             <CharacterCard
               name="Three-part architecture"
               description="Part One (chapters 1–13) is the longest and slowest: the novel takes nearly two-thirds of its length to present Igbo life in Umuofia before any white man appears. Part Two (chapters 14–19) is the exile, where the missionaries enter the frame. Part Three (chapters 20–25) is the return and rapid collapse. The asymmetry is deliberate: the culture takes a long time to build and almost no time to fall."
@@ -592,7 +606,7 @@ export default function ThingsFallApartPage() {
 
         {/* ─── Essay Planning ─── */}
         <div id="essay-planning">
-          <Section title="Essay Planning" icon="✍️">
+          <Section title={tr(`Essay Planning`)} icon="✍️">
             <p className="mb-4 text-sm text-muted-foreground">
               Five fully-planned IGCSE/A-Level questions. Each plan gives a working thesis and
               three-paragraph framework with assessment-objective annotations (AO1: knowledge &amp;
@@ -611,21 +625,22 @@ export default function ThingsFallApartPage() {
                 strong.
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                <strong>Para 1 (AO1/AO2).</strong> The choices Okonkwo could have made differently.
-                Ezeudu&rsquo;s warning before Ikemefuna&rsquo;s death; Obierika&rsquo;s refusal to
-                take part. The killing of the messenger is unsupported by the clan in the moment.
+                <strong>{tr(`Para 1 (AO1/AO2).`)}</strong> The choices Okonkwo could have made
+                differently. Ezeudu&rsquo;s warning before Ikemefuna&rsquo;s death; Obierika&rsquo;s
+                refusal to take part. The killing of the messenger is unsupported by the clan in the
+                moment.
               </p>
               <p className="text-sm text-muted-foreground">
-                <strong>Para 2 (AO2/AO3).</strong> The pressures: a culture that publicly equates
-                gentleness with effeminacy, and a colonial encounter that breaks the clan&rsquo;s
-                unity behind him. Use Obierika&rsquo;s &lsquo;he has put a knife on the things that
-                held us together&rsquo;.
+                <strong>{tr(`Para 2 (AO2/AO3).`)}</strong> The pressures: a culture that publicly
+                equates gentleness with effeminacy, and a colonial encounter that breaks the
+                clan&rsquo;s unity behind him. Use Obierika&rsquo;s &lsquo;he has put a knife on the
+                things that held us together&rsquo;.
               </p>
               <p className="text-sm text-muted-foreground">
-                <strong>Para 3 (AO2/AO3).</strong> The chi proverb: &lsquo;when a man says yes his
-                chi says yes&rsquo; &mdash; reversed for Okonkwo. The Igbo conceptual frame already
-                holds individual choice and external destiny in balance, refusing the binary the
-                question implies.
+                <strong>{tr(`Para 3 (AO2/AO3).`)}</strong> The chi proverb: &lsquo;when a man says
+                yes his chi says yes&rsquo; &mdash; reversed for Okonkwo. The Igbo conceptual frame
+                already holds individual choice and external destiny in balance, refusing the binary
+                the question implies.
               </p>
             </div>
 
@@ -639,17 +654,17 @@ export default function ThingsFallApartPage() {
                 the pattern is broken only by Nwoye walking out of the compound altogether.
               </p>
               <p className="text-sm text-muted-foreground mt-2">
-                <strong>Para 1 (AO1/AO2).</strong> Unoka–Okonkwo: shame as inheritance. The opening
-                chapters set Unoka&rsquo;s debts and effeminacy and Okonkwo&rsquo;s reactive
+                <strong>{tr(`Para 1 (AO1/AO2).`)}</strong> Unoka–Okonkwo: shame as inheritance. The
+                opening chapters set Unoka&rsquo;s debts and effeminacy and Okonkwo&rsquo;s reactive
                 masculinity.
               </p>
               <p className="text-sm text-muted-foreground">
-                <strong>Para 2 (AO2).</strong> Okonkwo–Nwoye: violence transmitted as scolding and
-                beating. Ikemefuna&rsquo;s death is the breaking point; Nwoye becomes the listener
-                Okonkwo cannot.
+                <strong>{tr(`Para 2 (AO2).`)}</strong> Okonkwo–Nwoye: violence transmitted as
+                scolding and beating. Ikemefuna&rsquo;s death is the breaking point; Nwoye becomes
+                the listener Okonkwo cannot.
               </p>
               <p className="text-sm text-muted-foreground">
-                <strong>Para 3 (AO3).</strong> The mission as an alternative father. Mr
+                <strong>{tr(`Para 3 (AO3).`)}</strong> The mission as an alternative father. Mr
                 Brown&rsquo;s school takes Nwoye in; the new name Isaac displaces the patrilineage.
                 The pattern shows colonial recruitment working through existing family wounds.
               </p>
@@ -676,10 +691,10 @@ export default function ThingsFallApartPage() {
                 does the work catharsis usually does.
               </p>
               <p className="text-sm text-muted-foreground">
-                <strong>Para 3 (AO3).</strong> The District Commissioner&rsquo;s closing reflection
-                inverts catharsis into bureaucratic erasure. The novel refuses the consolation a
-                tragedy traditionally offers, because the colonial project is still in motion at the
-                close.
+                <strong>{tr(`Para 3 (AO3).`)}</strong> The District Commissioner&rsquo;s closing
+                reflection inverts catharsis into bureaucratic erasure. The novel refuses the
+                consolation a tragedy traditionally offers, because the colonial project is still in
+                motion at the close.
               </p>
             </div>
 
@@ -705,7 +720,7 @@ export default function ThingsFallApartPage() {
                 articulate.
               </p>
               <p className="text-sm text-muted-foreground">
-                <strong>Para 3 (AO3).</strong> The Commissioner&rsquo;s &lsquo;reasonable
+                <strong>{tr(`Para 3 (AO3).`)}</strong> The Commissioner&rsquo;s &lsquo;reasonable
                 paragraph&rsquo;. The novel ends by quoting the kind of book it has been written to
                 refuse. Use Achebe&rsquo;s &lsquo;An Image of Africa&rsquo; (1975) for the explicit
                 theory.
@@ -734,10 +749,10 @@ export default function ThingsFallApartPage() {
                 interrupt.
               </p>
               <p className="text-sm text-muted-foreground">
-                <strong>Para 3 (AO3).</strong> Uchendu&rsquo;s &lsquo;mother is supreme&rsquo;
-                speech (chapter 14). The motherland is the place of refuge; the Earth (Ani) is the
-                deity Okonkwo&rsquo;s killings have offended. The novel&rsquo;s ethical centre is,
-                in this sense, female.
+                <strong>{tr(`Para 3 (AO3).`)}</strong> Uchendu&rsquo;s &lsquo;mother is
+                supreme&rsquo; speech (chapter 14). The motherland is the place of refuge; the Earth
+                (Ani) is the deity Okonkwo&rsquo;s killings have offended. The novel&rsquo;s ethical
+                centre is, in this sense, female.
               </p>
             </div>
           </Section>
@@ -745,17 +760,17 @@ export default function ThingsFallApartPage() {
 
         {/* ─── Grade 9 Points ─── */}
         <div id="grade-9-points">
-          <Section title="Grade 9 / A* Points" icon="🌟">
+          <Section title={tr(`Grade 9 / A* Points`)} icon="🌟">
             <ul className="space-y-3 text-sm leading-relaxed list-disc pl-5">
               <li>
-                <strong>The structural irony of the closing chapter.</strong> Achebe spends 240
-                pages giving Okonkwo a full interior life, then jumps in the final pages into the
-                District Commissioner&rsquo;s consciousness, where Okonkwo is an anonymous
+                <strong>{tr(`The structural irony of the closing chapter.`)}</strong> Achebe spends
+                240 pages giving Okonkwo a full interior life, then jumps in the final pages into
+                the District Commissioner&rsquo;s consciousness, where Okonkwo is an anonymous
                 &lsquo;man&rsquo;. The point-of-view shift is the colonial reduction in formal
                 terms.
               </li>
               <li>
-                <strong>The novel&rsquo;s argument with Yeats.</strong> The title borrows
+                <strong>{tr(`The novel&rsquo;s argument with Yeats.`)}</strong> The title borrows
                 Yeats&rsquo;s &lsquo;Things fall apart; the centre cannot hold&rsquo;, but
                 Yeats&rsquo;s poem also imagines the &lsquo;rough beast slouching towards
                 Bethlehem&rsquo; &mdash; an image of post-imperial dread that colonialism would
@@ -763,26 +778,26 @@ export default function ThingsFallApartPage() {
                 it.
               </li>
               <li>
-                <strong>The reversal of the chi proverb.</strong> &lsquo;When a man says yes his chi
-                says yes also&rsquo;; the narrator reverses it for Okonkwo (his chi said
+                <strong>{tr(`The reversal of the chi proverb.`)}</strong> &lsquo;When a man says yes
+                his chi says yes also&rsquo;; the narrator reverses it for Okonkwo (his chi said
                 &lsquo;nay&rsquo;). Igbo metaphysics holds choice and destiny together rather than
                 apart, which is why a Western free-will-versus-fate frame mishandles the novel.
               </li>
               <li>
-                <strong>Achebe&rsquo;s 1965 essay on language as evidence.</strong>
+                <strong>{tr(`Achebe&rsquo;s 1965 essay on language as evidence.`)}</strong>
                 &lsquo;The African Writer and the English Language&rsquo; defends the use of English
                 &lsquo;altered to suit new African surroundings&rsquo;. The novel&rsquo;s proverbial
                 style is the practice of the theory; both are part of the answer to colonial
                 cultural authority.
               </li>
               <li>
-                <strong>The asymmetry of the three-part structure.</strong> Part One takes thirteen
-                chapters to establish Igbo life; Parts Two and Three take twelve to dismantle it.
-                The acceleration is part of the argument: cultures take time to build and almost
-                none to break.
+                <strong>{tr(`The asymmetry of the three-part structure.`)}</strong> Part One takes
+                thirteen chapters to establish Igbo life; Parts Two and Three take twelve to
+                dismantle it. The acceleration is part of the argument: cultures take time to build
+                and almost none to break.
               </li>
               <li>
-                <strong>The Mr Brown / James Smith contrast as historical claim.</strong>
+                <strong>{tr(`The Mr Brown / James Smith contrast as historical claim.`)}</strong>
                 Mr Brown&rsquo;s school and dialogue with Akunna are not sentimental; they are
                 Achebe&rsquo;s acknowledgement that the missions did real educational work and
                 recruited some converts on something other than fear. Smith is the alternative. The
@@ -790,7 +805,7 @@ export default function ThingsFallApartPage() {
                 the church as such.
               </li>
               <li>
-                <strong>The novel&rsquo;s internal critique of Igbo society.</strong>
+                <strong>{tr(`The novel&rsquo;s internal critique of Igbo society.`)}</strong>
                 Twins are abandoned; osu are excluded; Ikemefuna is killed; women are beaten. Achebe
                 does not present a paradisal pre-colonial society. The colonial argument is not that
                 Umuofia was perfect, but that it was articulate enough to argue with itself before
@@ -798,7 +813,7 @@ export default function ThingsFallApartPage() {
                 had been arguing about for generations.
               </li>
               <li>
-                <strong>The Earth (Ani) as the novel&rsquo;s ethical centre.</strong>
+                <strong>{tr(`The Earth (Ani) as the novel&rsquo;s ethical centre.`)}</strong>
                 Each of Okonkwo&rsquo;s major transgressions &mdash; killing Ikemefuna, killing
                 Ezeudu&rsquo;s son, his suicide &mdash; is read explicitly as an offence against
                 Ani. The deity who matters most in the moral accounting is female. This complicates
@@ -810,19 +825,21 @@ export default function ThingsFallApartPage() {
 
         {/* ─── Practice Questions ─── */}
         <div id="practice-questions">
-          <Section title="Practice Questions" icon="📝">
+          <Section title={tr(`Practice Questions`)} icon="📝">
             <ul className="space-y-3 text-sm leading-relaxed list-disc pl-5">
               <li>
                 &ldquo;Okonkwo is a victim of his society as much as of himself.&rdquo; Discuss.
               </li>
               <li>
-                How does Achebe present the role of women in <em>Things Fall Apart</em>?
+                How does Achebe present the role of women in <em>{tr(`Things Fall Apart`)}</em>?
               </li>
               <li>
                 How does Achebe use proverbs and storytelling to give the reader access to Igbo
                 culture?
               </li>
-              <li>How does Achebe present the arrival and effect of Christianity in Umuofia?</li>
+              <li>
+                {tr(`How does Achebe present the arrival and effect of Christianity in Umuofia?`)}
+              </li>
               <li>
                 Compare the two missionaries, Mr Brown and Reverend James Smith. What is Achebe
                 asking the reader to notice?
@@ -830,13 +847,14 @@ export default function ThingsFallApartPage() {
               <li>
                 How does the final chapter change the reader&rsquo;s relationship with Okonkwo?
               </li>
-              <li>How important is the relationship between Okonkwo and his son Nwoye?</li>
+              <li>{tr(`How important is the relationship between Okonkwo and his son Nwoye?`)}</li>
               <li>
-                To what extent is <em>Things Fall Apart</em> a tragedy in the classical sense?
+                To what extent is <em>{tr(`Things Fall Apart`)}</em> a tragedy in the classical
+                sense?
               </li>
               <li>
-                How does Achebe answer Joseph Conrad&rsquo;s <em>Heart of Darkness</em> through the
-                form of his novel?
+                How does Achebe answer Joseph Conrad&rsquo;s <em>{tr(`Heart of Darkness`)}</em>{' '}
+                through the form of his novel?
               </li>
               <li>
                 How does Achebe use Igbo religion (chi, Ani, the Oracle, the egwugwu) to structure
@@ -850,31 +868,31 @@ export default function ThingsFallApartPage() {
         <Section title="Exam Tips" icon="🎯">
           <ul className="space-y-2 text-sm leading-relaxed list-disc pl-5">
             <li>
-              <strong>Use Igbo terms accurately.</strong> Examiners reward students who can name{' '}
-              <em>chi</em>, <em>egwugwu</em>, <em>osu</em>, <em>ogbanje</em>,<em> obi</em>, and Ani.
-              Don&rsquo;t cluster them ornamentally; use them where the novel uses them.
+              <strong>{tr(`Use Igbo terms accurately.`)}</strong> Examiners reward students who can
+              name <em>chi</em>, <em>egwugwu</em>, <em>osu</em>, <em>ogbanje</em>,<em> obi</em>, and
+              Ani. Don&rsquo;t cluster them ornamentally; use them where the novel uses them.
             </li>
             <li>
-              <strong>Quote the title&rsquo;s source line and explain the irony.</strong>
+              <strong>{tr(`Quote the title&rsquo;s source line and explain the irony.`)}</strong>
               Most candidates know the title comes from Yeats. Few explain that Yeats&rsquo;s poem
               is itself the kind of European framing the novel is writing against. Doing so signals
               AO3 confidence.
             </li>
             <li>
-              <strong>Cite the closing chapter&rsquo;s point-of-view shift.</strong> If a question
-              lets you, end on it: 240 pages of interiority collapsed into &lsquo;a reasonable
-              paragraph&rsquo;. The form is the argument.
+              <strong>{tr(`Cite the closing chapter&rsquo;s point-of-view shift.`)}</strong> If a
+              question lets you, end on it: 240 pages of interiority collapsed into &lsquo;a
+              reasonable paragraph&rsquo;. The form is the argument.
             </li>
             <li>
-              <strong>Don&rsquo;t idealise Igbo society.</strong> Achebe doesn&rsquo;t. The
+              <strong>{tr(`Don&rsquo;t idealise Igbo society.`)}</strong> Achebe doesn&rsquo;t. The
               strongest essays read the novel&rsquo;s own internal criticisms of twins, <em>osu</em>
               , the killing of Ikemefuna &mdash; and use them to show Achebe&rsquo;s argument is
               documentary, not nostalgic.
             </li>
             <li>
-              <strong>Use Achebe&rsquo;s essays for AO3.</strong> &lsquo;The African Writer and the
-              English Language&rsquo; (1965) and &lsquo;An Image of Africa&rsquo; (1975) are both
-              short and quotable. Examiners recognise them as canonical context.
+              <strong>{tr(`Use Achebe&rsquo;s essays for AO3.`)}</strong> &lsquo;The African Writer
+              and the English Language&rsquo; (1965) and &lsquo;An Image of Africa&rsquo; (1975) are
+              both short and quotable. Examiners recognise them as canonical context.
             </li>
             <li>
               <strong>Watch the proverb count.</strong> One or two embedded proverbs used
@@ -886,12 +904,12 @@ export default function ThingsFallApartPage() {
         {/* ─── Footer ─── */}
         <div className="mt-8 rounded-lg border border-border bg-muted p-5 text-xs text-muted-foreground">
           <p>
-            <strong>Copyright notice.</strong> <em>Things Fall Apart</em> is © 1958 Chinua Achebe /
-            William Heinemann Ltd; rights now held by his estate via Penguin Random House. All
-            quotations on this page are short fair-dealing extracts under the Copyright, Designs and
-            Patents Act 1988 §30 (criticism, review, quotation). For the full text, students should
-            consult an authorised edition (Heinemann African Writers Series; Penguin Modern
-            Classics; or your school&rsquo;s set edition).
+            <strong>{tr(`Copyright notice.`)}</strong> <em>{tr(`Things Fall Apart`)}</em> is © 1958
+            Chinua Achebe / William Heinemann Ltd; rights now held by his estate via Penguin Random
+            House. All quotations on this page are short fair-dealing extracts under the Copyright,
+            Designs and Patents Act 1988 §30 (criticism, review, quotation). For the full text,
+            students should consult an authorised edition (Heinemann African Writers Series; Penguin
+            Modern Classics; or your school&rsquo;s set edition).
           </p>
           <p className="mt-2">
             <strong>[VERIFY] tags</strong> in the quotation list flag wording widely cited in this

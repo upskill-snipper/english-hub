@@ -1,5 +1,9 @@
 'use client'
 
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
+
 import { useState } from 'react'
 
 /* ─── Expandable Section Component ─────────────────────────── */
@@ -82,6 +86,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function AntonyAndCleopatraPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -103,7 +114,9 @@ export default function AntonyAndCleopatraPage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Antony and Cleopatra &mdash; Complete A-Level Revision Guide
         </h1>
-        <p className="mt-1 text-lg text-muted-foreground">William Shakespeare, c.1606&ndash;1607</p>
+        <p className="mt-1 text-lg text-muted-foreground">
+          {tr(`William Shakespeare, c.1606&ndash;1607`)}
+        </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Comprehensive A-Level notes covering plot through the Rome/Egypt opposition, character
           profiles, thematic essays, Jacobean and classical context, verbatim quotations from the
@@ -142,7 +155,11 @@ export default function AntonyAndCleopatraPage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section title="Act-by-Act Summary: The Rome/Egypt Opposition" icon="📖" defaultOpen>
+          <Section
+            title={tr(`Act-by-Act Summary: The Rome/Egypt Opposition`)}
+            icon="📖"
+            defaultOpen
+          >
             <div className="space-y-4">
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
@@ -360,7 +377,7 @@ export default function AntonyAndCleopatraPage() {
 
         {/* ────────────────────────────────── CHARACTERS */}
         <div id="characters">
-          <Section title="Character Profiles" icon="👤">
+          <Section title={tr(`Character Profiles`)} icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Mark Antony"
@@ -416,38 +433,38 @@ export default function AntonyAndCleopatraPage() {
 
         {/* ────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section title="Key Themes" icon="💡">
+          <Section title={tr(`Key Themes`)} icon="💡">
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
-                title="Love vs Duty"
+                title={tr(`Love vs Duty`)}
                 description="The play's central conflict is the irreconcilability of erotic devotion and political obligation. Antony cannot serve both Cleopatra and Rome; the choice that will allow him to live with himself is the choice that destroys him as a triumvir. Shakespeare refuses easy resolution: love is not simply ennobling, nor is duty simply correct. The play offers Antony's repeated attempts at compromise — marriage to Octavia, fighting at sea to please Cleopatra — and shows each compromise hastening his ruin. The lovers achieve dignity only by abandoning compromise altogether and choosing death together."
               />
               <ThemeCard
-                title="Roman Stoicism vs Egyptian Sensuality"
+                title={tr(`Roman Stoicism vs Egyptian Sensuality`)}
                 description="The play's geography is also a moral and aesthetic dialectic. Rome stands for restraint, hierarchy, military discipline, and the language of measurement; Egypt stands for excess, fluidity, sensual abundance, and the language of metaphor. The opening scene literalises this opposition: Philo's stern tetrameter judgement collides with Antony's expansive 'new heaven, new earth'. Shakespeare avoids endorsing either pole: Roman virtue is also coldness, Egyptian variety is also infidelity. The tragedy occurs in the impossible space between the two worlds."
               />
               <ThemeCard
-                title="Power and Empire"
+                title={tr(`Power and Empire`)}
                 description="The play stages the foundational moment of the Roman empire — the transition from triumvirate to Augustan principate. Power in this universe is not declamatory but shrewd; Caesar wins because he calculates, waits, and instrumentalises kinship. Shakespeare juxtaposes Antony's heroic style with Caesar's bureaucratic style and shows the latter triumphing. The play asks whether the new world that Caesar's victory inaugurates is worth what is lost in the process — whether magnanimity, sensual generosity, and personal greatness can survive the politics of empire."
               />
               <ThemeCard
-                title="Theatricality and Performance"
+                title={tr(`Theatricality and Performance`)}
                 description="The play is suffused with self-conscious theatricality. Cleopatra dresses for her death as an actor dresses for a role; she fears that Roman boys will 'boy' her greatness on stage, and Shakespeare's audience watched a boy actor speak that line. Antony understands his life through public performance. Enobarbus narrates Cleopatra at Cydnus as a staged tableau. The asp scene is the most elaborately stage-managed suicide in Shakespeare. The play's interest is not just in what happens but in how characters dramatise what happens — and in whether tragedy can survive its own theatricality."
               />
               <ThemeCard
-                title="Honour and Reputation"
+                title={tr(`Honour and Reputation`)}
                 description="Honour drives most of the play's catastrophic decisions. Antony challenges Caesar to single combat after Actium; he has Thidias whipped to defend Cleopatra's honour; he attempts the Roman death because it is the only honourable end available. Cleopatra's final theatrical suicide is also a reputation-managing performance: she dies 'after the high Roman fashion' to deny Caesar's triumph. The play explores how honour, originally a moral category, becomes in the Roman political world a kind of currency that can be lost as well as kept."
               />
               <ThemeCard
-                title="Betrayal and Loyalty"
+                title={tr(`Betrayal and Loyalty`)}
                 description="Betrayal is everywhere: Cleopatra appears to betray Antony at Actium; Antony's fleet surrenders; Enobarbus deserts; Pompey's allies negotiate behind his back; Caesar betrays Lepidus; even Cleopatra's treasurer Seleucus betrays her to Caesar. Yet Shakespeare also shows extraordinary loyalty: Eros killing himself, Charmian and Iras dying with Cleopatra, Enobarbus dying of remorse. The play asks whether loyalty is possible in the imperial-political world Caesar represents, or whether it survives only in private, doomed enclaves."
               />
               <ThemeCard
-                title="Time, Mutability, and Dissolution"
+                title={tr(`Time, Mutability, and Dissolution`)}
                 description="The play's verbal texture is saturated with imagery of melting, dissolution, and slipping away. 'Let Rome in Tiber melt'; 'the crown o' the earth doth melt'; 'the sides of nature will not sustain it'. The world repeatedly liquefies in the play's metaphors. Critics from A. C. Bradley onwards have noted this hyperbolic, world-collapsing imagery as central to the play's tragic effect: the lovers' death is literally the dissolution of the cosmos as they perceive it. Time, too, is ungovernable: messengers carry old news, plans arrive too late, suicides miscarry by minutes."
               />
               <ThemeCard
-                title="Gender and Political Identity"
+                title={tr(`Gender and Political Identity`)}
                 description="Antony complains that he is 'unqualitied' by emotion, that Cleopatra has 'unmanned' him; Cleopatra dresses Antony in her 'tires and mantles' while she wears his sword; the play repeatedly stages the porousness of gender categories. Roman discourse polices manhood through restraint and continence, and its own anxieties about Antony are framed as anxieties about gender. Cleopatra in her final scene calls herself 'fire and air', surrendering her 'baser' elements — even her gendered embodiment is reconstructed in death. A-Level candidates often profitably read the play through gender criticism."
               />
             </div>
@@ -456,7 +473,7 @@ export default function AntonyAndCleopatraPage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
+          <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               Verbatim quotations from the First Folio (1623), the only authoritative early text.
               Modern editions sometimes differ in punctuation and line-break.
@@ -543,7 +560,7 @@ export default function AntonyAndCleopatraPage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Symbols and Recurring Images" icon="🐍">
+          <Section title={tr(`Symbols and Recurring Images`)} icon="🐍">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">The Asp</h4>
@@ -558,7 +575,7 @@ export default function AntonyAndCleopatraPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Cleopatra&apos;s Barge</h4>
+                <h4 className="font-bold text-foreground">{tr(`Cleopatra&apos;s Barge`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The barge at Cydnus, narrated rather than staged, is the play&apos;s defining
                   symbol of Egyptian aesthetic excess. Enobarbus&apos;s description converts every
@@ -571,7 +588,7 @@ export default function AntonyAndCleopatraPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Roman Armour and the Sword</h4>
+                <h4 className="font-bold text-foreground">{tr(`Roman Armour and the Sword`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Antony&apos;s armour is invested with his Roman identity. Cleopatra is reported to
                   have cross-dressed Antony in her &ldquo;tires and mantles&rdquo; while she wore
@@ -583,7 +600,7 @@ export default function AntonyAndCleopatraPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Dolphin</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Dolphin`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   In Cleopatra&apos;s great Act 5 dream of Antony, she describes him as &ldquo;a
                   dolphin-like&rdquo; figure who &ldquo;showed his back above / The element they
@@ -608,7 +625,9 @@ export default function AntonyAndCleopatraPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Egypt vs Rome as Geographic Poles</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`Egypt vs Rome as Geographic Poles`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play&apos;s most pervasive symbolic structure is binary: Egypt and Rome are
                   not just settings but moral, sensual, climatic, and aesthetic opposites. Egypt:
@@ -626,10 +645,12 @@ export default function AntonyAndCleopatraPage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Historical and Literary Context" icon="🏛️">
+          <Section title={tr(`Historical and Literary Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Composition Date: 1606&ndash;1607</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Composition Date: 1606&ndash;1607`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play was composed in 1606&ndash;1607, in the central period of
                   Shakespeare&apos;s major tragedies (after <em>Macbeth</em> and <em>King Lear</em>,
@@ -659,22 +680,25 @@ export default function AntonyAndCleopatraPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Roman Plays Sequence</h4>
+                <h4 className="font-bold text-primary">{tr(`The Roman Plays Sequence`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  <em>Antony and Cleopatra</em> is part of Shakespeare&apos;s sequence of Roman
-                  plays, which also includes <em>Titus Andronicus</em>, <em>Julius Caesar</em>, and{' '}
-                  <em>Coriolanus</em>. Together these plays examine the Roman political imagination
-                  at three different historical moments: the late Republic (<em>Julius Caesar</em>),
-                  its breakdown (<em>Antony and Cleopatra</em>), and the early Republic (
-                  <em>Coriolanus</em>). The Octavius of <em>Julius Caesar</em> is a junior figure;
-                  the Octavius/Caesar of <em>Antony and Cleopatra</em>, set some fourteen years
-                  later, is the man who will become Augustus. A-Level candidates often pair the two
-                  plays profitably, contrasting the assassination of Julius with the suicide of
-                  Antony as different kinds of Roman political ending.
+                  <em>{tr(`Antony and Cleopatra`)}</em> is part of Shakespeare&apos;s sequence of
+                  Roman plays, which also includes <em>{tr(`Titus Andronicus`)}</em>,{' '}
+                  <em>{tr(`Julius Caesar`)}</em>, and <em>Coriolanus</em>. Together these plays
+                  examine the Roman political imagination at three different historical moments: the
+                  late Republic (<em>{tr(`Julius Caesar`)}</em>), its breakdown (
+                  <em>{tr(`Antony and Cleopatra`)}</em>), and the early Republic (
+                  <em>Coriolanus</em>). The Octavius of <em>{tr(`Julius Caesar`)}</em> is a junior
+                  figure; the Octavius/Caesar of <em>{tr(`Antony and Cleopatra`)}</em>, set some
+                  fourteen years later, is the man who will become Augustus. A-Level candidates
+                  often pair the two plays profitably, contrasting the assassination of Julius with
+                  the suicide of Antony as different kinds of Roman political ending.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">James I and the Union of the Crowns</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`James I and the Union of the Crowns`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Shakespeare wrote the play under James I, who in 1603 had united the crowns of
                   England and Scotland and styled himself &ldquo;King of Great Britain.&rdquo; James
@@ -703,15 +727,18 @@ export default function AntonyAndCleopatraPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Genre Question: Tragedy or History?</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`The Genre Question: Tragedy or History?`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The First Folio classifies <em>Antony and Cleopatra</em> as a tragedy, but it is
-                  unlike Shakespeare&apos;s other tragedies in scale and structure. It has more than
-                  forty scenes, scattered across the Mediterranean, with rapid changes of location
-                  and a refusal of unity of place. The protagonists die at different points (Antony
-                  at the end of Act 4, Cleopatra in Act 5). Some critics treat it as a hybrid Roman
-                  history-tragedy. The breadth of canvas is closer to <em>Henry V</em> than to{' '}
-                  <em>Hamlet</em>, while the verbal magnificence is closer to <em>King Lear</em>.
+                  The First Folio classifies <em>{tr(`Antony and Cleopatra`)}</em> as a tragedy, but
+                  it is unlike Shakespeare&apos;s other tragedies in scale and structure. It has
+                  more than forty scenes, scattered across the Mediterranean, with rapid changes of
+                  location and a refusal of unity of place. The protagonists die at different points
+                  (Antony at the end of Act 4, Cleopatra in Act 5). Some critics treat it as a
+                  hybrid Roman history-tragedy. The breadth of canvas is closer to <em>Henry V</em>{' '}
+                  than to <em>Hamlet</em>, while the verbal magnificence is closer to{' '}
+                  <em>King Lear</em>.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -728,7 +755,7 @@ export default function AntonyAndCleopatraPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Renaissance Egypt</h4>
+                <h4 className="font-bold text-primary">{tr(`Renaissance Egypt`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Renaissance imagination of Egypt was filtered through classical sources
                   (Plutarch, Herodotus, Plotinus) and through hieroglyphic mysticism revived by
@@ -745,7 +772,7 @@ export default function AntonyAndCleopatraPage() {
 
         {/* ────────────────────────────────── STRUCTURE */}
         <div id="structure">
-          <Section title="Dramatic Structure" icon="🔗">
+          <Section title={tr(`Dramatic Structure`)} icon="🔗">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">Forty-Scene Cinema-Like Structure</h4>
@@ -760,7 +787,9 @@ export default function AntonyAndCleopatraPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Bipartite Tragic Death Pattern</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`Bipartite Tragic Death Pattern`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Unusually, the play has two tragic deaths separated by a full act. Antony dies at
                   the end of Act 4; Cleopatra survives through the whole of Act 5. This gives
@@ -783,7 +812,7 @@ export default function AntonyAndCleopatraPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Choric Commentary</h4>
+                <h4 className="font-bold text-foreground">{tr(`Choric Commentary`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Enobarbus, Philo, Demetrius, and Scarus all function as choric voices commenting
                   on the central pair. Enobarbus is the most developed: he interprets Cleopatra to a
@@ -896,11 +925,11 @@ export default function AntonyAndCleopatraPage() {
                       Comparative Angle
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Compare with the more compressed lyrical love of <em>Romeo and Juliet</em>,
-                      where the rhetorical scaffolding is sonnet-form rather than imperial scale; or
-                      with <em>Othello</em>, where Othello&apos;s &ldquo;round unvarnish&apos;d
-                      tale&rdquo; sets rhetoric against military plainness in the opposite
-                      direction.
+                      Compare with the more compressed lyrical love of{' '}
+                      <em>{tr(`Romeo and Juliet`)}</em>, where the rhetorical scaffolding is
+                      sonnet-form rather than imperial scale; or with <em>Othello</em>, where
+                      Othello&apos;s &ldquo;round unvarnish&apos;d tale&rdquo; sets rhetoric against
+                      military plainness in the opposite direction.
                     </p>
                   </div>
                 </div>
@@ -1047,10 +1076,10 @@ export default function AntonyAndCleopatraPage() {
                       Comparative Angle
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Compare with the Octavius of <em>Julius Caesar</em>, set fourteen years
-                      earlier, where he is junior to Antony. Or compare with the Henry V of the
-                      second tetralogy, who also embodies political competence won at the cost of
-                      warmth.
+                      Compare with the Octavius of <em>{tr(`Julius Caesar`)}</em>, set fourteen
+                      years earlier, where he is junior to Antony. Or compare with the Henry V of
+                      the second tetralogy, who also embodies political competence won at the cost
+                      of warmth.
                     </p>
                   </div>
                 </div>
@@ -1193,8 +1222,8 @@ export default function AntonyAndCleopatraPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Compare with the Venice/Cyprus opposition in <em>Othello</em>, where the move
                       from civilised centre to military periphery enables the tragedy. Or with the
-                      court/forest binary of <em>As You Like It</em>, used for comic rather than
-                      tragic ends.
+                      court/forest binary of <em>{tr(`As You Like It`)}</em>, used for comic rather
+                      than tragic ends.
                     </p>
                   </div>
                 </div>
@@ -1323,15 +1352,15 @@ export default function AntonyAndCleopatraPage() {
                   8. The Critical Tradition: From Bradley to Adelman
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  A. C. Bradley in <em>Oxford Lectures on Poetry</em> (1909) argued that the play,
-                  despite its excellence, is not a tragedy of the same order as <em>Hamlet</em> or{' '}
-                  <em>Othello</em>: the protagonists do not have the same intensity of internal
-                  struggle. Janet Adelman in <em>The Common Liar</em> (1973) reframed the play
-                  around the question of Cleopatra&apos;s reliability and the audience&apos;s
-                  difficulty assessing her. More recently, feminist and postcolonial critics have
-                  read Egypt/Rome as racialised and gendered geography. A top-band candidate
-                  references at least one critical position and uses it as a springboard rather than
-                  a conclusion.
+                  A. C. Bradley in <em>{tr(`Oxford Lectures on Poetry`)}</em> (1909) argued that the
+                  play, despite its excellence, is not a tragedy of the same order as{' '}
+                  <em>Hamlet</em> or <em>Othello</em>: the protagonists do not have the same
+                  intensity of internal struggle. Janet Adelman in <em>{tr(`The Common Liar`)}</em>{' '}
+                  (1973) reframed the play around the question of Cleopatra&apos;s reliability and
+                  the audience&apos;s difficulty assessing her. More recently, feminist and
+                  postcolonial critics have read Egypt/Rome as racialised and gendered geography. A
+                  top-band candidate references at least one critical position and uses it as a
+                  springboard rather than a conclusion.
                 </p>
               </div>
             </div>
@@ -1390,23 +1419,23 @@ export default function AntonyAndCleopatraPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Quote verbatim from the Folio.</strong> A-Level examiners reward accurate
-              textual citation; modern editions sometimes differ in spelling and punctuation, but
-              the words must be Shakespeare&apos;s.
+              <strong>{tr(`Quote verbatim from the Folio.`)}</strong> A-Level examiners reward
+              accurate textual citation; modern editions sometimes differ in spelling and
+              punctuation, but the words must be Shakespeare&apos;s.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use Plutarch.</strong> Plutarch&apos;s &ldquo;Life of Marcus Antonius&rdquo;
-              (North&apos;s 1579 English) is the principal source. Comparisons of source and play
-              are particularly rewarded in OCR and Edexcel coursework.
+              <strong>{tr(`Use Plutarch.`)}</strong> Plutarch&apos;s &ldquo;Life of Marcus
+              Antonius&rdquo; (North&apos;s 1579 English) is the principal source. Comparisons of
+              source and play are particularly rewarded in OCR and Edexcel coursework.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Address the genre question.</strong> The play is unusual in scope and
+              <strong>{tr(`Address the genre question.`)}</strong> The play is unusual in scope and
               structure; explicit awareness of how it stretches tragic form earns marks at the top
               band.
             </span>
@@ -1414,33 +1443,34 @@ export default function AntonyAndCleopatraPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Connect Jacobean context.</strong> James I as Augustus, the union of crowns,
-              debates about consolidated rule. The play is not just Roman; it speaks to 1606&ndash;7
-              England.
+              <strong>{tr(`Connect Jacobean context.`)}</strong> James I as Augustus, the union of
+              crowns, debates about consolidated rule. The play is not just Roman; it speaks to
+              1606&ndash;7 England.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Reference critical positions.</strong> Bradley, Adelman, feminist criticism,
-              postcolonial criticism. A* requires engaging with the critical tradition, not
-              summarising it.
+              <strong>{tr(`Reference critical positions.`)}</strong> Bradley, Adelman, feminist
+              criticism, postcolonial criticism. A* requires engaging with the critical tradition,
+              not summarising it.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Trace verbal patterns.</strong> &ldquo;Melt,&rdquo; &ldquo;variety,&rdquo;
-              &ldquo;Egypt&rdquo; as vocative for Cleopatra, the dolphin/colossus imagery. Showing
-              word-recurrence across acts demonstrates close reading at the highest level.
+              <strong>{tr(`Trace verbal patterns.`)}</strong> &ldquo;Melt,&rdquo;
+              &ldquo;variety,&rdquo; &ldquo;Egypt&rdquo; as vocative for Cleopatra, the
+              dolphin/colossus imagery. Showing word-recurrence across acts demonstrates close
+              reading at the highest level.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Don&apos;t simplify the binary.</strong> Egypt and Rome are imaginative
-              geographies, not historical ones. The opposition is the play&apos;s structuring device
-              but Shakespeare repeatedly destabilises it.
+              <strong>{tr(`Don&apos;t simplify the binary.`)}</strong> Egypt and Rome are
+              imaginative geographies, not historical ones. The opposition is the play&apos;s
+              structuring device but Shakespeare repeatedly destabilises it.
             </span>
           </li>
         </ul>
@@ -1449,11 +1479,12 @@ export default function AntonyAndCleopatraPage() {
       {/* Public-domain notice */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>Antony and Cleopatra</em> by William Shakespeare was composed c.1606&ndash;1607 and
-          first printed in the First Folio of 1623. Shakespeare died in 1616 and the text is in the{' '}
-          <strong>public domain</strong>. All quotations on this page are reproduced from the First
-          Folio text via standard scholarly editions; act and scene divisions follow the editorial
-          tradition established by Rowe (1709) and refined by modern editors.
+          <em>{tr(`Antony and Cleopatra`)}</em> by William Shakespeare was composed
+          c.1606&ndash;1607 and first printed in the First Folio of 1623. Shakespeare died in 1616
+          and the text is in the <strong>public domain</strong>. All quotations on this page are
+          reproduced from the First Folio text via standard scholarly editions; act and scene
+          divisions follow the editorial tradition established by Rowe (1709) and refined by modern
+          editors.
         </p>
       </footer>
     </>

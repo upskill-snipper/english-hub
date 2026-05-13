@@ -1,5 +1,9 @@
 'use client'
 
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
+
 import { useState } from 'react'
 
 /* ─── Expandable Section Component ─────────────────────────── */
@@ -82,6 +86,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function AnitaAndMePage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -137,7 +148,7 @@ export default function AnitaAndMePage() {
           <Section title="Plot Summary" icon="📖" defaultOpen>
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Setting and Frame</h4>
+                <h4 className="font-bold text-primary">{tr(`Setting and Frame`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel is set in 1972 in Tollington, a fictional ex-mining village in the West
                   Midlands of England. Meena Kumar &mdash; nine years old at the start &mdash; is
@@ -347,7 +358,7 @@ export default function AnitaAndMePage() {
         <div id="themes">
           <Section title="Themes" icon="🎭">
             <ThemeCard
-              title="Identity and Belonging — British-Indian Dual Identity"
+              title={tr(`Identity and Belonging — British-Indian Dual Identity`)}
               description="The novel's central concern. Meena lives between two cultures: the Punjabi household of cooked dahl, Hindi films, and family gatherings, and the English village of chip-shop visits, sweets, and pop songs. Syal refuses to present these as a simple either/or. Meena is not 'half' anything — she is fully both, even when the two halves contradict each other. The eleven-plus and the move out of Tollington at the end suggest that integration on white English terms requires loss as well as gain. Syal's deeper argument is that 'Britishness' itself must be expanded to include Meena, not the other way around."
             />
             <ThemeCard
@@ -355,7 +366,7 @@ export default function AnitaAndMePage() {
               description="Anita and Me is a Bildungsroman. Over roughly two years, Meena moves from credulous childhood (lies, theft, hero-worship of Anita) to a more grounded adolescence (passing the eleven-plus, choosing family over Anita, beginning to ask harder questions). The narrative voice itself dramatises this: an adult Meena looks back on her younger self with both affection and ironic distance. Syal's coming-of-age is not a triumph but a necessary loss — the child Meena cannot survive intact what she sees and hears."
             />
             <ThemeCard
-              title="Race and Racism in 1970s Britain"
+              title={tr(`Race and Racism in 1970s Britain`)}
               description="The novel is set in the immediate aftermath of Enoch Powell's 'Rivers of Blood' speech (1968) and during the rise of the National Front. Racism in Tollington is rarely organised — it leaks out as everyday casual remarks, the shopkeeper's charitable condescension, Sam Lowbridge's fête outburst. Syal shows that the most damaging racism may be the kind that the perpetrators do not consider racism at all. She also resists letting the village off the hook by suggesting that 'good' white characters are passively complicit when they fall silent at the crucial moment."
             />
             <ThemeCard
@@ -363,15 +374,15 @@ export default function AnitaAndMePage() {
               description="Tollington is a post-industrial ex-mining village whose pit has closed. Its families are working-class, often financially strained, sometimes violent. Syal does not romanticise this community: the Rutters' household is dysfunctional, drink-soaked, and emotionally cold. But she also refuses the easy sneer. Mama and Papa, as middle-class educated immigrants, occupy an awkward position: ethnically marked as outsiders yet socially 'above' their neighbours. Class and race intersect in painful, specific ways throughout the novel."
             />
             <ThemeCard
-              title="Family and Cultural Heritage"
+              title={tr(`Family and Cultural Heritage`)}
               description="The Kumar household, with its rotating cast of 'Aunties' and 'Uncles,' is the moral and emotional centre of the novel. Family meals, Punjabi songs, religious observance, and Nanima's stories transmit a heritage that Meena initially resists and eventually treasures. Syal uses the family to argue that cultural identity is not abstract — it is carried in food, language, music, and the small daily rituals of a household. When Nanima returns to India, the loss for Meena is not just personal but cultural."
             />
             <ThemeCard
-              title="Friendship and Loss of Innocence"
+              title={tr(`Friendship and Loss of Innocence`)}
               description="Anita is Meena's first proper friend outside the family, and the friendship's trajectory mirrors Meena's loss of innocence. Initially, Anita represents freedom and grown-up glamour. Gradually, Meena sees her cruelty, her racism, and the bleakness of her home life. The bicycle accident, the pond rescue of Tracey, and Sam's outburst are all stages in Meena's growing realisation that her friend is not who she imagined. The novel mourns the friendship even as it argues that Meena is right to leave it behind."
             />
             <ThemeCard
-              title="Storytelling and Memory"
+              title={tr(`Storytelling and Memory`)}
               description="Meena calls herself a liar, but Syal reframes her lies as a child's first attempt at authorship. Her instinct to embellish, to perform, and to invent versions of herself is the same instinct that produces the novel we are reading. The retrospective narration (adult Meena recalling 1972) makes memory itself a theme: what survives, what is reshaped, what is lost. Nanima's oral tales from the Punjab and Papa's ghazals show that storytelling is also how culture moves across generations and continents."
             />
           </Section>
@@ -379,16 +390,16 @@ export default function AnitaAndMePage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations" icon="💬">
+          <Section title={tr(`Key Quotations`)} icon="💬">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              The quotations below are widely cited from <em>Anita and Me</em>. Because the novel is
-              less canonically &ldquo;quote-mined&rdquo; than older texts, you should always
-              cross-check exact wording against your own copy of the novel before relying on a
-              quotation in the exam. Where a phrase is paraphrased rather than verbatim, treat it as
-              a reference and put the idea in your own words.
+              The quotations below are widely cited from <em>{tr(`Anita and Me`)}</em>. Because the
+              novel is less canonically &ldquo;quote-mined&rdquo; than older texts, you should
+              always cross-check exact wording against your own copy of the novel before relying on
+              a quotation in the exam. Where a phrase is paraphrased rather than verbatim, treat it
+              as a reference and put the idea in your own words.
             </p>
 
-            <h4 className="font-bold text-foreground mt-4 mb-2">On Identity and Lying</h4>
+            <h4 className="font-bold text-foreground mt-4 mb-2">{tr(`On Identity and Lying`)}</h4>
             <QuoteCard
               quote="I'm really not a liar, I just learned very early on that those of us deprived of history sometimes need to turn to mythology to feel complete, to belong."
               speaker="Meena (narrator, opening)"
@@ -400,7 +411,7 @@ export default function AnitaAndMePage() {
               analysis="The narrator immediately destabilises her own authority, inviting the reader to read her cautiously. This is a self-aware coming-of-age narrator who knows that childhood memory is unreliable. The ironic adult voice frames the entire novel: Meena's lies are also Syal's storytelling craft. [VERIFY.]"
             />
 
-            <h4 className="font-bold text-foreground mt-6 mb-2">On Tollington</h4>
+            <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Tollington`)}</h4>
             <QuoteCard
               quote="I cannot pretend I did not enjoy being the only dark-skinned child in Tollington, although I did not always enjoy the attention it brought me."
               speaker="Meena (narrator)"
@@ -414,14 +425,14 @@ export default function AnitaAndMePage() {
               analysis="The Black Country slang ('cock' = leader, dominant one) places the narrator inside the local working-class lexicon. Meena absorbs Anita's language even as she observes her power. The image positions Anita as masculine, predatory, in charge — and Meena, by extension, as dazzled subordinate. Syal shows the friendship as a hierarchy from the outset. [VERIFY.]"
             />
 
-            <h4 className="font-bold text-foreground mt-6 mb-2">On Race and Belonging</h4>
+            <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Race and Belonging`)}</h4>
             <QuoteCard
               quote="If you can't respect what we believe in, then you don't respect us, and if you don't respect us, you can't love us."
               speaker="Mama, to Meena"
               analysis="Mama articulates the moral logic of cultural identity: respect for heritage is not optional or decorative but a precondition of love. Syal uses Mama as the family's ethical voice. The cumulative if-then structure has the rhythm of an argument she has already had with herself, and which Meena will eventually understand. [VERIFY.]"
             />
 
-            <h4 className="font-bold text-foreground mt-6 mb-2">On Sam Lowbridge</h4>
+            <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Sam Lowbridge`)}</h4>
             <QuoteCard
               quote="We don't want them no more, none of them, sponging off us..."
               speaker="Sam Lowbridge, at the f&ecirc;te"
@@ -437,14 +448,18 @@ export default function AnitaAndMePage() {
               analysis="The phrase ('darkest Africa') is colonial-era missionary language preserved into 1972. Syal weaponises the cliché: a community that congratulates itself on 'saving' distant black children proves unwilling to welcome the brown family living down the street. The charity tin sits on the counter as a visible monument to the village's moral self-image — an image the novel takes apart. [VERIFY exact phrasing in your edition.]"
             />
 
-            <h4 className="font-bold text-foreground mt-6 mb-2">On Family and Hospitality</h4>
+            <h4 className="font-bold text-foreground mt-6 mb-2">
+              {tr(`On Family and Hospitality`)}
+            </h4>
             <QuoteCard
               quote="Aunties and Uncles"
               speaker="Meena (narrator, throughout)"
               analysis="Meena's habitual term for the wide network of Punjabi family friends who circulate through the Kumar household. The capitalisation in the narrator's voice signals their semi-mythic status to the child Meena. Syal uses this language to evoke the texture of immigrant community life: 'Auntie' and 'Uncle' name fictive kin, a chosen extended family that compensates for the relatives left behind in India."
             />
 
-            <h4 className="font-bold text-foreground mt-6 mb-2">On Nanima and Punjabi Heritage</h4>
+            <h4 className="font-bold text-foreground mt-6 mb-2">
+              {tr(`On Nanima and Punjabi Heritage`)}
+            </h4>
             <QuoteCard
               quote="Nanima"
               speaker="Meena's name for her grandmother (Punjabi: maternal grandmother)"
@@ -458,14 +473,14 @@ export default function AnitaAndMePage() {
               analysis="A keyword from the opening passage. Syal links storytelling to the deepest psychic needs of the immigrant child: completeness, belonging. The argument runs through the novel — Papa's ghazals, Nanima's tales, Meena's own lies all function as 'mythology' in this expanded sense. The novel itself, as adult Meena's act of narration, is the most complete of these myths. [VERIFY.]"
             />
 
-            <h4 className="font-bold text-foreground mt-6 mb-2">On Dual Identity</h4>
+            <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Dual Identity`)}</h4>
             <QuoteCard
               quote="too mouthy, clumsy and scabby to be a real Indian girl, too Indian to be a real Tollington wench"
               speaker="Meena (narrator)"
               analysis="The double exclusion — too much for one community, too Indian for the other — is Syal's most concise statement of the dual-identity predicament. The vocabulary itself is split: 'real Indian girl' uses standard English; 'Tollington wench' uses Black Country dialect. The sentence performs the bilingual splitting it describes. The harsh self-description ('mouthy,' 'scabby') captures childhood self-loathing without indulging it: the adult narrator sees the cruelty of the binary that produced these feelings. [VERIFY exact wording.]"
             />
 
-            <h4 className="font-bold text-foreground mt-6 mb-2">On Tollington as Place</h4>
+            <h4 className="font-bold text-foreground mt-6 mb-2">{tr(`On Tollington as Place`)}</h4>
             <QuoteCard
               quote="Tollington"
               speaker="The village itself, treated as a refrain"
@@ -477,14 +492,14 @@ export default function AnitaAndMePage() {
                 Quotation safety note
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                <em>Anita and Me</em> is a contemporary novel still in copyright. Its quotations are
-                not as standardised across study guides as the lines from Shakespeare or Dickens.
-                For the exam, you do not need long verbatim quotations &mdash; short, embedded
-                phrases are usually more effective. If you cannot remember the exact wording, use a
-                clear paraphrase: &ldquo;Meena describes herself as too Indian for Tollington and
-                not Indian enough to be a 'real' Indian girl.&rdquo; Examiners credit accurate
-                reference even without verbatim quotation. Items marked [VERIFY] above should be
-                cross-checked against your own copy of the novel before exam use.
+                <em>{tr(`Anita and Me`)}</em> is a contemporary novel still in copyright. Its
+                quotations are not as standardised across study guides as the lines from Shakespeare
+                or Dickens. For the exam, you do not need long verbatim quotations &mdash; short,
+                embedded phrases are usually more effective. If you cannot remember the exact
+                wording, use a clear paraphrase: &ldquo;Meena describes herself as too Indian for
+                Tollington and not Indian enough to be a 'real' Indian girl.&rdquo; Examiners credit
+                accurate reference even without verbatim quotation. Items marked [VERIFY] above
+                should be cross-checked against your own copy of the novel before exam use.
               </p>
             </div>
           </Section>
@@ -492,7 +507,7 @@ export default function AnitaAndMePage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Symbols and Motifs" icon="🔣">
+          <Section title={tr(`Symbols and Motifs`)} icon="🔣">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">
@@ -576,15 +591,17 @@ export default function AnitaAndMePage() {
           <Section title="Context" icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Meera Syal &mdash; Author Biography</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Meera Syal &mdash; Author Biography`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Meera Syal was born in 1961 in Wolverhampton and grew up in Essington, a small
                   former mining village in Staffordshire on which Tollington is closely based. She
                   is of Punjabi heritage. Trained as an actor, she became a leading figure in
-                  British Asian comedy and drama. <em>Anita and Me</em> (1996) was her first novel
-                  and draws heavily on her childhood; she has described it as semi-autobiographical
-                  rather than literal memoir. Knowing Syal&apos;s background is useful for context
-                  but the novel should be read as a work of fiction.
+                  British Asian comedy and drama. <em>{tr(`Anita and Me`)}</em> (1996) was her first
+                  novel and draws heavily on her childhood; she has described it as
+                  semi-autobiographical rather than literal memoir. Knowing Syal&apos;s background
+                  is useful for context but the novel should be read as a work of fiction.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -593,12 +610,12 @@ export default function AnitaAndMePage() {
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Syal was a writer and performer on the BBC sketch series{' '}
-                  <em>Goodness Gracious Me</em>
+                  <em>{tr(`Goodness Gracious Me`)}</em>
                   (Radio 4 1996, BBC2 1998&ndash;2001) and on the spoof chat show
                   <em> The Kumars at No. 42</em> (2001&ndash;2006, with later revivals). Both shows
                   satirised British-Asian family life and English assumptions about it, making
                   British-Asian voices unprecedentedly visible in mainstream UK television.{' '}
-                  <em>Anita and Me</em> belongs to the same cultural project: British-Asian
+                  <em>{tr(`Anita and Me`)}</em> belongs to the same cultural project: British-Asian
                   experience moved from the margins to the centre of the story.
                 </p>
               </div>
@@ -618,7 +635,9 @@ export default function AnitaAndMePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Post-Powell Anti-Immigrant Politics</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Post-Powell Anti-Immigrant Politics`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Enoch Powell&apos;s &ldquo;Rivers of Blood&rdquo; speech in April 1968 had
                   legitimised open anti-immigration rhetoric in mainstream British politics. The
@@ -631,7 +650,7 @@ export default function AnitaAndMePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Punjabi Heritage and Partition</h4>
+                <h4 className="font-bold text-primary">{tr(`Punjabi Heritage and Partition`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Meena&apos;s parents are Punjabi. The Punjab was violently divided between India
                   and Pakistan at Partition in 1947, with mass displacement and communal killings.
@@ -643,22 +662,23 @@ export default function AnitaAndMePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">British Asian Literature</h4>
+                <h4 className="font-bold text-primary">{tr(`British Asian Literature`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  <em>Anita and Me</em> sits within an emerging British Asian literary tradition
-                  that includes Hanif Kureishi (<em>The Buddha of Suburbia</em>, 1990), Monica Ali (
-                  <em>Brick Lane</em>, 2003) and Zadie Smith (<em>White Teeth</em>, 2000).
-                  Syal&apos;s novel was an early and influential entry in this canon, distinctive
-                  for being set in a working-class West Midlands village rather than London, and for
-                  centring a child&apos;s point of view. Its 2002 film adaptation (screenplay by
-                  Syal) brought it to a wider audience.
+                  <em>{tr(`Anita and Me`)}</em> sits within an emerging British Asian literary
+                  tradition that includes Hanif Kureishi (<em>{tr(`The Buddha of Suburbia`)}</em>,
+                  1990), Monica Ali (<em>{tr(`Brick Lane`)}</em>, 2003) and Zadie Smith (
+                  <em>{tr(`White Teeth`)}</em>, 2000). Syal&apos;s novel was an early and
+                  influential entry in this canon, distinctive for being set in a working-class West
+                  Midlands village rather than London, and for centring a child&apos;s point of
+                  view. Its 2002 film adaptation (screenplay by Syal) brought it to a wider
+                  audience.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Genre &mdash; The Bildungsroman</h4>
+                <h4 className="font-bold text-primary">{tr(`Genre &mdash; The Bildungsroman`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Anita and Me is a Bildungsroman (a coming-of-age novel) in the tradition of
-                  <em> Great Expectations</em>, <em>To Kill a Mockingbird</em>, and Maya
+                  <em> Great Expectations</em>, <em>{tr(`To Kill a Mockingbird`)}</em>, and Maya
                   Angelou&apos;s
                   <em> I Know Why the Caged Bird Sings</em>. Like those books, it uses a child
                   protagonist to defamiliarise the adult world&apos;s racial and class injustices.
@@ -668,15 +688,15 @@ export default function AnitaAndMePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The 1990s of Publication</h4>
+                <h4 className="font-bold text-primary">{tr(`The 1990s of Publication`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  <em>Anita and Me</em> was published in 1996, in a Britain that had become much
-                  more multicultural than the Tollington of 1972 but which was still negotiating
-                  what that multiculturalism meant. The 1990s saw the Stephen Lawrence inquiry, the
-                  rise of New Labour, and renewed debate about national identity. Syal&apos;s
-                  retrospective look at 1972 was therefore also a contribution to a contemporary
-                  argument: a reminder that &ldquo;modern&rdquo; British identity has Punjabi,
-                  Caribbean, and other immigrant histories woven into its fabric.
+                  <em>{tr(`Anita and Me`)}</em> was published in 1996, in a Britain that had become
+                  much more multicultural than the Tollington of 1972 but which was still
+                  negotiating what that multiculturalism meant. The 1990s saw the Stephen Lawrence
+                  inquiry, the rise of New Labour, and renewed debate about national identity.
+                  Syal&apos;s retrospective look at 1972 was therefore also a contribution to a
+                  contemporary argument: a reminder that &ldquo;modern&rdquo; British identity has
+                  Punjabi, Caribbean, and other immigrant histories woven into its fabric.
                 </p>
               </div>
             </div>
@@ -685,11 +705,11 @@ export default function AnitaAndMePage() {
 
         {/* ────────────────────────────────── ESSAY PLANNING */}
         <div id="essay-planning">
-          <Section title="Essay Planning for Common Questions" icon="✍️">
+          <Section title={tr(`Essay Planning for Common Questions`)} icon="✍️">
             <p className="text-sm text-muted-foreground mb-5">
-              Five model plans for the kind of question AQA sets on <em>Anita and Me</em>. Each plan
-              includes a thesis, paragraph structure, and AO links (AO1 = response to text and
-              ideas; AO2 = writer&apos;s methods; AO3 = context).
+              Five model plans for the kind of question AQA sets on <em>{tr(`Anita and Me`)}</em>.
+              Each plan includes a thesis, paragraph structure, and AO links (AO1 = response to text
+              and ideas; AO2 = writer&apos;s methods; AO3 = context).
             </p>
 
             <div className="space-y-6">
@@ -697,7 +717,7 @@ export default function AnitaAndMePage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   1. How does Syal explore ideas about identity and belonging in{' '}
-                  <em>Anita and Me</em>? [30 marks + AO4]
+                  <em>{tr(`Anita and Me`)}</em>? [30 marks + AO4]
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -769,7 +789,7 @@ export default function AnitaAndMePage() {
               {/* Essay 2 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  2. How does Syal present racism in <em>Anita and Me</em>? [30 marks + AO4]
+                  2. How does Syal present racism in <em>{tr(`Anita and Me`)}</em>? [30 marks + AO4]
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -911,7 +931,7 @@ export default function AnitaAndMePage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   4. How does Syal present the importance of family and cultural heritage in{' '}
-                  <em>Anita and Me</em>? [30 marks + AO4]
+                  <em>{tr(`Anita and Me`)}</em>? [30 marks + AO4]
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -1053,7 +1073,7 @@ export default function AnitaAndMePage() {
 
         {/* ────────────────────────────────── PRACTICE QUESTIONS */}
         <div id="practice-questions">
-          <Section title="Practice Questions" icon="📝">
+          <Section title={tr(`Practice Questions`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4">
               AQA-style essay questions (30 marks plus 4 marks for AO4: Spelling, Punctuation and
               Grammar). Practise planning each in 5 minutes and writing the introduction in another
@@ -1093,7 +1113,7 @@ export default function AnitaAndMePage() {
 
       {/* Exam Tips */}
       <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
-        <h3 className="text-lg font-bold text-foreground">Exam Tips for Anita and Me</h3>
+        <h3 className="text-lg font-bold text-foreground">{tr(`Exam Tips for Anita and Me`)}</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -1106,15 +1126,15 @@ export default function AnitaAndMePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Refer to Syal&apos;s methods explicitly.</strong> The bilingual narrative
-              voice, the retrospective adult narrator, food motifs, dialect, free indirect style.
-              Don&apos;t just say &ldquo;Syal shows.&rdquo;
+              <strong>{tr(`Refer to Syal&apos;s methods explicitly.`)}</strong> The bilingual
+              narrative voice, the retrospective adult narrator, food motifs, dialect, free indirect
+              style. Don&apos;t just say &ldquo;Syal shows.&rdquo;
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Anchor context in 1972.</strong> Powell&apos;s 1968 speech, the Heath
+              <strong>{tr(`Anchor context in 1972.`)}</strong> Powell&apos;s 1968 speech, the Heath
               government, Ugandan Asians (1972), the rise of the National Front, the closure of the
               pits.
             </span>
@@ -1122,8 +1142,8 @@ export default function AnitaAndMePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Short embedded quotation beats long block-quote.</strong> The novel is in
-              copyright and you do not need verbatim slabs. A precise paraphrase plus one or two
+              <strong>{tr(`Short embedded quotation beats long block-quote.`)}</strong> The novel is
+              in copyright and you do not need verbatim slabs. A precise paraphrase plus one or two
               short embedded phrases is plenty.
             </span>
           </li>
@@ -1138,9 +1158,9 @@ export default function AnitaAndMePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Address the whole novel.</strong> Don&apos;t over-focus on the f&ecirc;te or
-              the pond. Move from the opening (Meena as liar) to the end (passing the eleven-plus,
-              leaving Tollington) inside every essay.
+              <strong>{tr(`Address the whole novel.`)}</strong> Don&apos;t over-focus on the
+              f&ecirc;te or the pond. Move from the opening (Meena as liar) to the end (passing the
+              eleven-plus, leaving Tollington) inside every essay.
             </span>
           </li>
         </ul>
@@ -1149,10 +1169,10 @@ export default function AnitaAndMePage() {
       {/* Copyright notice */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>Anita and Me</em> by Meera Syal was first published in 1996 and remains in copyright.
-          Quotations on this page are cited briefly for the purpose of academic study and criticism.
-          Students should always verify exact wording against an authorised edition of the novel
-          before relying on a quotation in the exam.
+          <em>{tr(`Anita and Me`)}</em> by Meera Syal was first published in 1996 and remains in
+          copyright. Quotations on this page are cited briefly for the purpose of academic study and
+          criticism. Students should always verify exact wording against an authorised edition of
+          the novel before relying on a quotation in the exam.
         </p>
       </footer>
     </>
