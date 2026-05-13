@@ -41,6 +41,7 @@ import { LEGAL_LONG_DICTIONARY } from './dictionary-legal-long'
 import { DASH_INTERNAL_DICTIONARY } from './dictionary-dash-internal'
 import { DEMO_PAGES_DICTIONARY } from './dictionary-demo-pages'
 import { POETRY_HUB_DICTIONARY } from './dictionary-poetry-hub'
+import { SCREENSHOT_FIX_DICTIONARY } from './dictionary-screenshot-fixes'
 
 export type Locale = 'en' | 'ar'
 
@@ -14698,7 +14699,8 @@ export function lookup(key: string, locale: Locale): string {
     LEGAL_LONG_DICTIONARY[key] ??
     DASH_INTERNAL_DICTIONARY[key] ??
     DEMO_PAGES_DICTIONARY[key] ??
-    POETRY_HUB_DICTIONARY[key]
+    POETRY_HUB_DICTIONARY[key] ??
+    SCREENSHOT_FIX_DICTIONARY[key]
   if (!entry) return `[[${key}]]`
   if (locale === 'ar' && entry.ar) return entry.ar
   return entry.en
