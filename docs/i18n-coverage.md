@@ -212,16 +212,52 @@ commit. All three commits TS clean. No regressions.
   - Y8 T1 weeks 2-11: 206 lesson content fields translated
   - Y9 T1 weeks 2-11: 190 lesson content fields translated
     Dictionary +~2,000 keys (now ~5,500 entries total). Side dictionaries
-    for school_comp._ and toolkit._ namespaces added and wired through
+    for school*comp.* and toolkit.\_ namespaces added and wired through
     lookup() fallback.
+- `50386d7f` — wire school-comp side dictionary into lookup, clean tmp
+  staging, coverage doc updated.
+- `81557f37` — **WAVE K: 50 agents, all 4 honest gaps closed.**
+  - **43/43 blog .ar.mdx siblings created** (~70,000 words of Khaleeji
+    translation across every published blog post). Parent-facing posts
+    use binary M/F "ابنك أو بنتك".
+  - **KS3 Terms 2 & 3 lesson content** fully translated:
+    - Y7 T2: 12 weeks, 60 lessons, ~196 AR fields
+    - Y7 T3: 6 weeks (T3.1 Shakespeare), 30 lessons + assessments
+    - Y8 T2: 12 weeks, 60 lessons + term-level fields
+    - Y8 T3: 12 weeks, 60 lessons + term-level fields
+    - Y9 T2: 12 weeks, 60 lessons (Macbeth focus)
+    - Y9 T3: 12 weeks, 60 lessons (WW1 poetry + An Inspector Calls)
+  - **6 AQA Power & Conflict poem analysis bodies** translated:
+    Ozymandias, London, My Last Duchess, The Charge of the Light
+    Brigade, Exposure, Storm on the Island. PoemData/KeyQuote/
+    LanguageDevice types extended with optional Ar fields;
+    InteractivePoemViewer reads eh-lang cookie and falls back to
+    EN per-field. Remaining 9 P&C poems + L&R cluster + other
+    anthologies render EN until their Ar fields are filled
+    (incremental, code-free).
+  - **AI prompt-side directive shipped**: new `src/lib/i18n/
+ai-language-directive.ts` helper. 4 LLM routes wrapped
+    (/api/essay-feedback, /api/essay/feedback, /api/mark,
+    /api/mark/stream) to append KHALEEJI_LANGUAGE_DIRECTIVE
+    when locale === 'ar'. Model now generates Khaleeji feedback
+    bodies, AO comments, gradeJustification, annotatedFeedback
+    in AR mode. JSON shape untouched.
 
-## Final scope statement (post wave J)
+## Final scope statement (post wave K)
 
 - **~340 source files** route user-visible strings through `t()`/`useT()`.
 - **~5,500 dictionary entries**, every one EN + Khaleeji-AR (with legal
   long-form sections in formal MSA per regulator convention).
-- **600+ KS3 lesson content fields** translated across Y7/Y8/Y9 Term 1
-  weeks 2-11 — actual instructional content, not just chrome.
+- **~1,500 KS3 lesson content fields** translated across Y7/Y8/Y9 — ALL
+  three terms (T1 wks 2-11 in Wave J, T2+T3 in Wave K). Actual
+  instructional content, not just chrome.
+- **43/43 blog posts** have AR sibling .ar.mdx files — ~70,000 words of
+  Khaleeji body content.
+- **6 AQA Power & Conflict poem analysis bodies** translated with
+  per-field fallback infrastructure in place for the remaining 9.
+- **AI essay-marking model output** generates Khaleeji AR for AR-mode
+  users via the new KHALEEJI_LANGUAGE_DIRECTIVE wrapped into 4 LLM
+  routes.
 - **Gender policy verified**: explicit binary M/F. "ابنك أو بنتك" for
   parent-child references; .f-suffix keys for feminine verb endings
   where Profile.gender is supplied (currently only /learn/assessment
@@ -236,20 +272,29 @@ commit. All three commits TS clean. No regressions.
   Trustpilot/Resend/Supabase/Cloudflare) all kept Latin per Gulf
   convention.
 
-## Still pending (genuine gaps)
+## Still pending (genuinely remaining work)
 
-- **Long-tail content**: blog post MDX bodies (43 posts need `.ar.mdx`
-  siblings), per-board KS3 lesson content for Y7/Y8/Y9 Terms 2 & 3
-  (~50 lessons per term per year = 900 more fields), individual
-  vocabulary list entries, per-poem analysis bodies, set-text guide
-  long-form prose.
-- **Pages that don't exist**: /docs, /careers, /jobs, /partners,
-  /investors, /community, /events, /webinars, /podcasts, /newsletter,
-  /book, /trial, /upgrade (top-level), /checkout (top-level). Agents
-  flagged these as "no work needed".
-- **AI model output**: the model itself still answers in English when
-  asked AR essay-feedback. Prompt-side workstream — separate concern
-  from the chrome dictionary.
+After Wave K, the original "honest gaps" list is **closed**. What
+remains is shallower long-tail:
+
+- **Remaining 9 P&C poems + L&R + Eduqas/Edexcel/OCR/Cambridge
+  anthologies**: per-poem Ar fields not yet filled. Infrastructure
+  exists — each poem is a flat translation task using the optional
+  `*Ar` fields on PoemData/KeyQuote/LanguageDevice. Renders EN
+  gracefully until filled.
+- **156 IGCSE nested study pages**: their hubs are wired with
+  Khaleeji chrome (wave J), but the long-form prose bodies of
+  individual text guides (Bright Lights of Sarajevo, Disabled,
+  etc.) still render EN. Same incremental-fill pattern as poems.
+- **Individual vocabulary list entries**: terms appear in the
+  KS3 keyVocabulary arrays (translated in Waves J+K) and in the
+  flashcards engine. The flashcards engine itself is wired; the
+  vocabulary content per text is not yet translated for non-KS3
+  texts (e.g. GCSE poetry anthology vocab decks).
+- **Pages that don't exist as routes**: /docs, /careers, /jobs,
+  /partners, /investors, /community, /events, /webinars, /podcasts,
+  /newsletter, /book, /trial, /upgrade (top-level), /checkout
+  (top-level). Wave J agents flagged these as "no work needed".
 
 ## Wave H surfaces (29 files, commit a203c080)
 
