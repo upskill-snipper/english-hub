@@ -1,3 +1,7 @@
+'use client'
+
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
@@ -17,6 +21,13 @@ export const metadata: Metadata = {
 /* ─── Page component ─────────────────────────────────────────── */
 
 export default function OCRWritingSkillsPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -71,22 +82,26 @@ export default function OCRWritingSkillsPage() {
             </p>
             <div className="mt-3 grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">Content and Organisation</h3>
+                <h3 className="font-semibold text-foreground">{tr(`Content and Organisation`)}</h3>
                 <p className="mt-2 text-sm">
                   Communicate clearly, effectively, and imaginatively, selecting and adapting tone,
                   style, and register for different forms, purposes, and audiences. Organise
                   information and ideas using structural and grammatical features to support
                   coherence and cohesion.
                 </p>
-                <p className="mt-2 text-sm font-medium text-accent">Typically 24 marks per task</p>
+                <p className="mt-2 text-sm font-medium text-accent">
+                  {tr(`Typically 24 marks per task`)}
+                </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
-                <h3 className="font-semibold text-foreground">Technical Accuracy</h3>
+                <h3 className="font-semibold text-foreground">{tr(`Technical Accuracy`)}</h3>
                 <p className="mt-2 text-sm">
                   Use a range of vocabulary and sentence structures for clarity, purpose, and
                   effect, with accurate spelling and punctuation.
                 </p>
-                <p className="mt-2 text-sm font-medium text-accent">Typically 16 marks per task</p>
+                <p className="mt-2 text-sm font-medium text-accent">
+                  {tr(`Typically 16 marks per task`)}
+                </p>
               </div>
             </div>
           </div>
@@ -111,19 +126,19 @@ export default function OCRWritingSkillsPage() {
                   Top Band &mdash; Content and Organisation
                 </h3>
                 <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
-                  <li>Communication is convincing and compelling throughout</li>
+                  <li>{tr(`Communication is convincing and compelling throughout`)}</li>
                   <li>
                     Tone, style, and register are assuredly matched to purpose, form, and audience
                   </li>
                   <li>
                     Extensive and ambitious vocabulary with sustained crafting of linguistic devices
                   </li>
-                  <li>Writing is highly engaging with a range of connected ideas</li>
+                  <li>{tr(`Writing is highly engaging with a range of connected ideas`)}</li>
                   <li>
                     Fluent use of varied structural features: paragraphing, discourse markers,
                     cohesive devices
                   </li>
-                  <li>Ideas are shaped and developed with originality and flair</li>
+                  <li>{tr(`Ideas are shaped and developed with originality and flair`)}</li>
                 </ul>
               </div>
 
@@ -132,12 +147,14 @@ export default function OCRWritingSkillsPage() {
                   Top Band &mdash; Technical Accuracy
                 </h3>
                 <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
-                  <li>Sentence demarcation is consistently secure and accurate</li>
-                  <li>Wide range of punctuation used with a high level of accuracy</li>
-                  <li>Full range of sentence forms used for effect</li>
-                  <li>Standard English is consistently used correctly</li>
-                  <li>Extensive and ambitious vocabulary is used with accuracy</li>
-                  <li>Spelling (including complex and irregular words) is highly accurate</li>
+                  <li>{tr(`Sentence demarcation is consistently secure and accurate`)}</li>
+                  <li>{tr(`Wide range of punctuation used with a high level of accuracy`)}</li>
+                  <li>{tr(`Full range of sentence forms used for effect`)}</li>
+                  <li>{tr(`Standard English is consistently used correctly`)}</li>
+                  <li>{tr(`Extensive and ambitious vocabulary is used with accuracy`)}</li>
+                  <li>
+                    {tr(`Spelling (including complex and irregular words) is highly accurate`)}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -170,20 +187,20 @@ export default function OCRWritingSkillsPage() {
               </p>
               <ol className="ml-6 mt-3 list-decimal space-y-2">
                 <li>
-                  <strong>Identify PAF</strong> &mdash; Circle or underline the Purpose, Audience,
-                  and Form in the question.
+                  <strong>{tr(`Identify PAF`)}</strong> &mdash; Circle or underline the Purpose,
+                  Audience, and Form in the question.
                 </li>
                 <li>
-                  <strong>Brainstorm ideas</strong> &mdash; Write down 5&ndash;6 key points or
-                  arguments you want to make.
+                  <strong>{tr(`Brainstorm ideas`)}</strong> &mdash; Write down 5&ndash;6 key points
+                  or arguments you want to make.
                 </li>
                 <li>
-                  <strong>Order your points</strong> &mdash; Decide on the most logical or impactful
-                  order. Consider starting with your second-strongest point and ending with your
-                  strongest.
+                  <strong>{tr(`Order your points`)}</strong> &mdash; Decide on the most logical or
+                  impactful order. Consider starting with your second-strongest point and ending
+                  with your strongest.
                 </li>
                 <li>
-                  <strong>Plan your opening and closing</strong> &mdash; These are the most
+                  <strong>{tr(`Plan your opening and closing`)}</strong> &mdash; These are the most
                   important parts. Your opening must hook the reader; your closing must leave a
                   lasting impression.
                 </li>
@@ -192,7 +209,9 @@ export default function OCRWritingSkillsPage() {
 
             {/* Openings */}
             <div>
-              <h3 className="text-xl font-semibold text-foreground">Crafting Powerful Openings</h3>
+              <h3 className="text-xl font-semibold text-foreground">
+                {tr(`Crafting Powerful Openings`)}
+              </h3>
               <p className="mt-2">
                 Your opening paragraph sets the tone for the entire response. Here are six
                 strategies for compelling openings:
@@ -246,30 +265,36 @@ export default function OCRWritingSkillsPage() {
 
             {/* Paragraphing */}
             <div>
-              <h3 className="text-xl font-semibold text-foreground">Effective Paragraphing</h3>
+              <h3 className="text-xl font-semibold text-foreground">
+                {tr(`Effective Paragraphing`)}
+              </h3>
               <p className="mt-2">
                 Strong paragraphing is essential for content and organisation. Each paragraph
                 should:
               </p>
               <ul className="ml-6 mt-2 list-disc space-y-2">
                 <li>
-                  <strong>Begin with a clear topic sentence</strong> that introduces the main idea
-                  of the paragraph.
+                  <strong>{tr(`Begin with a clear topic sentence`)}</strong> that introduces the
+                  main idea of the paragraph.
                 </li>
                 <li>
-                  <strong>Develop the idea</strong> with evidence, examples, explanation, or
+                  <strong>{tr(`Develop the idea`)}</strong> with evidence, examples, explanation, or
                   elaboration.
                 </li>
                 <li>
-                  <strong>Link to the next paragraph</strong> using discourse markers or thematic
-                  connections.
+                  <strong>{tr(`Link to the next paragraph`)}</strong> using discourse markers or
+                  thematic connections.
                 </li>
               </ul>
-              <p className="mt-3">Use a range of discourse markers to signal transitions:</p>
+              <p className="mt-3">
+                {tr(`Use a range of discourse markers to signal transitions:`)}
+              </p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="rounded border border-border bg-muted p-3">
                   <p className="text-xs font-semibold uppercase text-muted-foreground">Adding</p>
-                  <p className="mt-1 text-sm">Furthermore, Moreover, In addition, Similarly</p>
+                  <p className="mt-1 text-sm">
+                    {tr(`Furthermore, Moreover, In addition, Similarly`)}
+                  </p>
                 </div>
                 <div className="rounded border border-border bg-muted p-3">
                   <p className="text-xs font-semibold uppercase text-muted-foreground">
@@ -289,14 +314,18 @@ export default function OCRWritingSkillsPage() {
                   <p className="text-xs font-semibold uppercase text-muted-foreground">
                     Concluding
                   </p>
-                  <p className="mt-1 text-sm">Ultimately, In conclusion, Above all, To summarise</p>
+                  <p className="mt-1 text-sm">
+                    {tr(`Ultimately, In conclusion, Above all, To summarise`)}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Counter-arguments */}
             <div>
-              <h3 className="text-xl font-semibold text-foreground">Handling Counter-Arguments</h3>
+              <h3 className="text-xl font-semibold text-foreground">
+                {tr(`Handling Counter-Arguments`)}
+              </h3>
               <p className="mt-2">
                 Top-band argumentative writing always addresses the opposing view. This shows
                 maturity, balance, and sophistication. Use this structure:
@@ -349,7 +378,9 @@ export default function OCRWritingSkillsPage() {
 
             {/* Show don't tell */}
             <div>
-              <h3 className="text-xl font-semibold text-foreground">Show, Don&rsquo;t Tell</h3>
+              <h3 className="text-xl font-semibold text-foreground">
+                {tr(`Show, Don&rsquo;t Tell`)}
+              </h3>
               <p className="mt-2">
                 The single most important principle in creative writing. Instead of telling the
                 reader what a character feels or what a place is like, show them through action,
@@ -357,13 +388,13 @@ export default function OCRWritingSkillsPage() {
               </p>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-lg border border-warn/30 bg-warn-50 p-4">
-                  <p className="text-sm font-semibold text-warn-700">Telling (weak)</p>
+                  <p className="text-sm font-semibold text-warn-700">{tr(`Telling (weak)`)}</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;She was really scared.&rdquo;
                   </p>
                 </div>
                 <div className="rounded-lg border border-success/30 bg-success-50 p-4">
-                  <p className="text-sm font-semibold text-success-700">Showing (strong)</p>
+                  <p className="text-sm font-semibold text-success-700">{tr(`Showing (strong)`)}</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;Her fingers tightened around the banister, knuckles white. Each creak of
                     the staircase sent her heart lurching into her throat.&rdquo;
@@ -372,13 +403,13 @@ export default function OCRWritingSkillsPage() {
               </div>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-lg border border-warn/30 bg-warn-50 p-4">
-                  <p className="text-sm font-semibold text-warn-700">Telling (weak)</p>
+                  <p className="text-sm font-semibold text-warn-700">{tr(`Telling (weak)`)}</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;The house was old and neglected.&rdquo;
                   </p>
                 </div>
                 <div className="rounded-lg border border-success/30 bg-success-50 p-4">
-                  <p className="text-sm font-semibold text-success-700">Showing (strong)</p>
+                  <p className="text-sm font-semibold text-success-700">{tr(`Showing (strong)`)}</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;Paint peeled from the window frames like sunburnt skin. The garden gate
                     hung from a single hinge, swaying in the wind with a rhythmic, mournful
@@ -390,7 +421,9 @@ export default function OCRWritingSkillsPage() {
 
             {/* Vocabulary */}
             <div>
-              <h3 className="text-xl font-semibold text-foreground">Ambitious Vocabulary</h3>
+              <h3 className="text-xl font-semibold text-foreground">
+                {tr(`Ambitious Vocabulary`)}
+              </h3>
               <p className="mt-2">
                 Top-band writing uses precise, vivid vocabulary. Replace generic words with specific
                 alternatives:
@@ -400,7 +433,9 @@ export default function OCRWritingSkillsPage() {
                   <thead>
                     <tr className="border-b-2 border-primary/20 text-left">
                       <th className="py-3 pr-4 font-semibold text-foreground">Generic</th>
-                      <th className="py-3 font-semibold text-foreground">Precise Alternatives</th>
+                      <th className="py-3 font-semibold text-foreground">
+                        {tr(`Precise Alternatives`)}
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
@@ -436,7 +471,9 @@ export default function OCRWritingSkillsPage() {
                     </tr>
                     <tr>
                       <td className="py-3 pr-4">Small</td>
-                      <td className="py-3">Cramped, diminutive, compact, minute, modest, poky</td>
+                      <td className="py-3">
+                        {tr(`Cramped, diminutive, compact, minute, modest, poky`)}
+                      </td>
                     </tr>
                     <tr>
                       <td className="py-3 pr-4">Looked</td>
@@ -454,7 +491,7 @@ export default function OCRWritingSkillsPage() {
                 </table>
               </div>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-4">
-                <p className="text-sm font-medium text-primary">Important note</p>
+                <p className="text-sm font-medium text-primary">{tr(`Important note`)}</p>
                 <p className="mt-1 text-sm text-primary">
                   Ambitious vocabulary must be used accurately. Using a complex word incorrectly is
                   worse than using a simple word correctly. Only use words you are confident about.
@@ -464,14 +501,16 @@ export default function OCRWritingSkillsPage() {
 
             {/* Sentence variety */}
             <div>
-              <h3 className="text-xl font-semibold text-foreground">Sentence Variety for Effect</h3>
+              <h3 className="text-xl font-semibold text-foreground">
+                {tr(`Sentence Variety for Effect`)}
+              </h3>
               <p className="mt-2">
                 Varying your sentence structures is one of the quickest ways to improve your
                 writing. Here are techniques to practise:
               </p>
               <div className="mt-4 space-y-4">
                 <div className="rounded-lg border border-border bg-muted p-5">
-                  <h4 className="font-semibold text-foreground">Start with an adverbial</h4>
+                  <h4 className="font-semibold text-foreground">{tr(`Start with an adverbial`)}</h4>
                   <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;Cautiously, she pushed open the door.&rdquo;
                   </p>
@@ -493,7 +532,9 @@ export default function OCRWritingSkillsPage() {
                 </div>
 
                 <div className="rounded-lg border border-border bg-muted p-5">
-                  <h4 className="font-semibold text-foreground">Use a subordinate clause first</h4>
+                  <h4 className="font-semibold text-foreground">
+                    {tr(`Use a subordinate clause first`)}
+                  </h4>
                   <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;Although the sun was shining, the air carried a bitter chill.&rdquo;
                   </p>
@@ -551,7 +592,7 @@ export default function OCRWritingSkillsPage() {
               </p>
               <div className="mt-3 space-y-3">
                 <div className="rounded-lg border border-border bg-muted p-4">
-                  <p className="font-medium text-foreground">Semicolon ( ; )</p>
+                  <p className="font-medium text-foreground">{tr(`Semicolon ( ; )`)}</p>
                   <p className="mt-1 text-sm">
                     Links two closely related independent clauses. Both sides must be complete
                     sentences. &ldquo;The rain fell relentlessly; the streets were rivers within
@@ -559,14 +600,14 @@ export default function OCRWritingSkillsPage() {
                   </p>
                 </div>
                 <div className="rounded-lg border border-border bg-muted p-4">
-                  <p className="font-medium text-foreground">Colon ( : )</p>
+                  <p className="font-medium text-foreground">{tr(`Colon ( : )`)}</p>
                   <p className="mt-1 text-sm">
                     Introduces an explanation, list, or elaboration of the preceding clause.
                     &ldquo;She had one rule: never look back.&rdquo;
                   </p>
                 </div>
                 <div className="rounded-lg border border-border bg-muted p-4">
-                  <p className="font-medium text-foreground">Dash ( &mdash; )</p>
+                  <p className="font-medium text-foreground">{tr(`Dash ( &mdash; )`)}</p>
                   <p className="mt-1 text-sm">
                     Creates a dramatic pause, interruption, or afterthought. Can be used in pairs
                     for parenthetical information. &ldquo;The door opened &mdash; and there she
@@ -574,7 +615,7 @@ export default function OCRWritingSkillsPage() {
                   </p>
                 </div>
                 <div className="rounded-lg border border-border bg-muted p-4">
-                  <p className="font-medium text-foreground">Ellipsis ( &hellip; )</p>
+                  <p className="font-medium text-foreground">{tr(`Ellipsis ( &hellip; )`)}</p>
                   <p className="mt-1 text-sm">
                     Suggests trailing off, hesitation, or the passage of time. &ldquo;She wanted to
                     say something, but&hellip;&rdquo;
@@ -588,7 +629,7 @@ export default function OCRWritingSkillsPage() {
                   </p>
                 </div>
                 <div className="rounded-lg border border-border bg-muted p-4">
-                  <p className="font-medium text-foreground">Brackets / parentheses ( )</p>
+                  <p className="font-medium text-foreground">{tr(`Brackets / parentheses ( )`)}</p>
                   <p className="mt-1 text-sm">
                     Used for additional information, asides, or clarification. Can create an
                     informal, conversational tone.
@@ -612,8 +653,10 @@ export default function OCRWritingSkillsPage() {
               the following:
             </p>
             <ul className="ml-6 list-disc space-y-2">
-              <li>Every sentence ends with a full stop, question mark, or exclamation mark</li>
-              <li>Capital letters at the start of every sentence and for proper nouns</li>
+              <li>
+                {tr(`Every sentence ends with a full stop, question mark, or exclamation mark`)}
+              </li>
+              <li>{tr(`Capital letters at the start of every sentence and for proper nouns`)}</li>
               <li>
                 Apostrophes used correctly for possession (the dog&rsquo;s lead) and contraction
                 (don&rsquo;t)
@@ -634,7 +677,11 @@ export default function OCRWritingSkillsPage() {
                 Tense consistency: don&rsquo;t switch between past and present unintentionally
               </li>
               <li>Paragraphs are clearly separated</li>
-              <li>Form conventions are correct (e.g., letter has &ldquo;Yours sincerely&rdquo;)</li>
+              <li>
+                {tr(
+                  `Form conventions are correct (e.g., letter has &ldquo;Yours sincerely&rdquo;)`,
+                )}
+              </li>
             </ul>
           </div>
         </section>
