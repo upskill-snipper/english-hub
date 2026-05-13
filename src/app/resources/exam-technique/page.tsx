@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -16,15 +17,13 @@ export const metadata: Metadata = {
 
 const SECTIONS = [
   {
-    title: 'Time Management',
+    id: 'time',
     href: '/resources/exam-technique/time-management',
-    description:
-      'Paper-by-paper timing breakdowns for every exam board. Learn exactly how long to spend on each question, how to plan your time, and what to do if you run out.',
     colour: 'border-accent',
-    badge: 'Essential',
+    iconColour: 'text-accent',
     icon: (
       <svg
-        className="h-10 w-10 text-accent"
+        className="h-10 w-10"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -37,25 +36,15 @@ const SECTIONS = [
         />
       </svg>
     ),
-    topics: [
-      'Paper-by-paper timings',
-      'Marks per minute',
-      'Reading time',
-      'Running out of time',
-      'Planning allocation',
-      'Writing target times',
-    ],
   },
   {
-    title: 'Question Types',
+    id: 'qtypes',
     href: '/resources/exam-technique/question-types',
-    description:
-      'Decode every question type you will face. From "How does the writer..." to comparison questions and creative writing tasks -- learn what each is really asking and how to structure your response.',
     colour: 'border-primary',
-    badge: '6 types',
+    iconColour: 'text-primary',
     icon: (
       <svg
-        className="h-10 w-10 text-primary"
+        className="h-10 w-10"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -68,25 +57,15 @@ const SECTIONS = [
         />
       </svg>
     ),
-    topics: [
-      '"How does the writer..."',
-      '"To what extent..."',
-      'Comparison questions',
-      'Extract-based questions',
-      'Essay questions',
-      'Creative writing tasks',
-    ],
   },
   {
-    title: 'Essay Structure',
+    id: 'essay',
     href: '/resources/exam-technique/essay-structure',
-    description:
-      'Proven templates and frameworks for structuring exam essays. Introduction techniques, PEEL paragraphs, topic sentences, linking, and how many paragraphs you need for different mark allocations.',
     colour: 'border-accent',
-    badge: 'Templates',
+    iconColour: 'text-accent',
     icon: (
       <svg
-        className="h-10 w-10 text-accent"
+        className="h-10 w-10"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -99,25 +78,15 @@ const SECTIONS = [
         />
       </svg>
     ),
-    topics: [
-      'Introduction techniques',
-      'PEEL paragraphs',
-      'Topic sentences',
-      'Linking paragraphs',
-      'Conclusion techniques',
-      'Paragraph count by marks',
-    ],
   },
   {
-    title: 'Exam Day Advice',
+    id: 'day',
     href: '/resources/exam-technique/exam-day',
-    description:
-      'Practical, no-nonsense advice for the day itself. What to bring, how to read the paper, how to plan your answers, how to stay calm, and what to do in the last five minutes.',
     colour: 'border-primary',
-    badge: 'Practical',
+    iconColour: 'text-primary',
     icon: (
       <svg
-        className="h-10 w-10 text-primary"
+        className="h-10 w-10"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -130,14 +99,6 @@ const SECTIONS = [
         />
       </svg>
     ),
-    topics: [
-      'What to bring',
-      'Reading the paper',
-      'Planning answers',
-      'Staying calm',
-      'Last 5 minutes',
-      'Common mistakes',
-    ],
   },
 ] as const
 
@@ -159,7 +120,116 @@ function ArrowRight() {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function ExamTechniquePage() {
+export default async function ExamTechniquePage() {
+  const labels = await tMany([
+    'resources.exam_tech.hero.eyebrow',
+    'resources.exam_tech.hero.title',
+    'resources.exam_tech.hero.subtitle',
+    'resources.exam_tech.bc.home',
+    'resources.exam_tech.bc.resources',
+    'resources.exam_tech.bc.this',
+    'resources.exam_tech.why.title',
+    'resources.exam_tech.why.body1',
+    'resources.exam_tech.why.body2',
+    'resources.exam_tech.explore.title',
+    'resources.exam_tech.explore.subtitle',
+    'resources.exam_tech.cta.read_guide',
+    // Section titles + badges + descriptions + topics keys
+    'resources.exam_tech.sec.time.title',
+    'resources.exam_tech.sec.time.badge',
+    'resources.exam_tech.sec.time.desc',
+    'resources.exam_tech.sec.qtypes.title',
+    'resources.exam_tech.sec.qtypes.badge',
+    'resources.exam_tech.sec.qtypes.desc',
+    'resources.exam_tech.sec.essay.title',
+    'resources.exam_tech.sec.essay.badge',
+    'resources.exam_tech.sec.essay.desc',
+    'resources.exam_tech.sec.day.title',
+    'resources.exam_tech.sec.day.badge',
+    'resources.exam_tech.sec.day.desc',
+    // Quick wins
+    'resources.exam_tech.qw.title',
+    'resources.exam_tech.qw.subtitle',
+    'resources.exam_tech.qw.read.h',
+    'resources.exam_tech.qw.read.b',
+    'resources.exam_tech.qw.plan.h',
+    'resources.exam_tech.qw.plan.b',
+    'resources.exam_tech.qw.clock.h',
+    'resources.exam_tech.qw.clock.b',
+    'resources.exam_tech.qw.quotes.h',
+    'resources.exam_tech.qw.quotes.b',
+    'resources.exam_tech.qw.check.h',
+    'resources.exam_tech.qw.check.b',
+    // Revision CTA
+    'resources.exam_tech.revcta.title',
+    'resources.exam_tech.revcta.body',
+    'resources.exam_tech.revcta.cta',
+    // Continue exploring
+    'resources.exam_tech.cont.title',
+    'resources.exam_tech.cont.model.label',
+    'resources.exam_tech.cont.model.desc',
+    'resources.exam_tech.cont.tech.label',
+    'resources.exam_tech.cont.tech.desc',
+    'resources.exam_tech.cont.all.label',
+    'resources.exam_tech.cont.all.desc',
+  ])
+
+  const [
+    eyebrow,
+    title,
+    subtitle,
+    bcHome,
+    bcResources,
+    bcThis,
+    whyTitle,
+    whyBody1,
+    whyBody2,
+    exploreTitle,
+    exploreSubtitle,
+    ctaReadGuide,
+    sTimeTitle,
+    sTimeBadge,
+    sTimeDesc,
+    sQTitle,
+    sQBadge,
+    sQDesc,
+    sETitle,
+    sEBadge,
+    sEDesc,
+    sDTitle,
+    sDBadge,
+    sDDesc,
+    qwTitle,
+    qwSubtitle,
+    qwReadH,
+    qwReadB,
+    qwPlanH,
+    qwPlanB,
+    qwClockH,
+    qwClockB,
+    qwQuotesH,
+    qwQuotesB,
+    qwCheckH,
+    qwCheckB,
+    revctaTitle,
+    revctaBody,
+    revctaCta,
+    contTitle,
+    contModelLabel,
+    contModelDesc,
+    contTechLabel,
+    contTechDesc,
+    contAllLabel,
+    contAllDesc,
+  ] = labels
+
+  const SECTION_META: Record<string, { title: string; badge: string; desc: string }> = {
+    time: { title: sTimeTitle, badge: sTimeBadge, desc: sTimeDesc },
+    qtypes: { title: sQTitle, badge: sQBadge, desc: sQDesc },
+    essay: { title: sETitle, badge: sEBadge, desc: sEDesc },
+    day: { title: sDTitle, badge: sDBadge, desc: sDDesc },
+  }
+
   return (
     <>
       <ArticleJsonLd
@@ -180,15 +250,12 @@ export default function ExamTechniquePage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Resources
+            {eyebrow}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Exam Technique Guide
+            {title}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Knowing the content is only half the battle. The other half is knowing how to use it
-            under timed conditions. Master the techniques that turn knowledge into top grades.
-          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{subtitle}</p>
         </div>
       </section>
 
@@ -197,35 +264,27 @@ export default function ExamTechniquePage() {
         <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">
-              Home
+              {bcHome}
             </Link>
           </li>
           <li>/</li>
           <li>
             <Link href="/resources" className="hover:text-primary transition-colors">
-              Resources
+              {bcResources}
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-primary">Exam Technique</li>
+          <li className="font-medium text-primary">{bcThis}</li>
         </ol>
       </nav>
 
       {/* Why exam technique matters */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-primary/20 bg-primary/10 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-foreground">Why exam technique matters</h2>
+          <h2 className="text-xl font-bold text-foreground">{whyTitle}</h2>
           <div className="mt-4 space-y-3 text-muted-foreground leading-relaxed">
-            <p>
-              Every year, thousands of students who know the content well still underperform because
-              of poor exam technique. They run out of time, misread question demands, write
-              unfocused essays, or panic on the day. These are all fixable problems.
-            </p>
-            <p>
-              This guide covers the four pillars of exam technique: managing your time,
-              understanding question types, structuring your essays, and performing on exam day.
-              Each section is packed with actionable strategies you can start using immediately.
-            </p>
+            <p>{whyBody1}</p>
+            <p>{whyBody2}</p>
           </div>
         </div>
       </section>
@@ -236,82 +295,53 @@ export default function ExamTechniquePage() {
         aria-labelledby="sections-heading"
       >
         <h2 id="sections-heading" className="text-2xl font-bold text-foreground sm:text-3xl">
-          Explore by topic
+          {exploreTitle}
         </h2>
-        <p className="mt-2 text-muted-foreground">
-          Each guide is designed to be practical, specific, and immediately useful in your revision.
-        </p>
+        <p className="mt-2 text-muted-foreground">{exploreSubtitle}</p>
 
         <div className="mt-8 grid gap-8 md:grid-cols-2">
-          {SECTIONS.map((s) => (
-            <Link
-              key={s.href}
-              href={s.href}
-              className={`group flex flex-col rounded-2xl border-2 ${s.colour} bg-card p-8 shadow-md transition hover:shadow-lg`}
-            >
-              <div className="flex items-start justify-between">
-                {s.icon}
-                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">
-                  {s.badge}
+          {SECTIONS.map((s) => {
+            const meta = SECTION_META[s.id]
+            return (
+              <Link
+                key={s.href}
+                href={s.href}
+                className={`group flex flex-col rounded-2xl border-2 ${s.colour} bg-card p-8 shadow-md transition hover:shadow-lg`}
+              >
+                <div className="flex items-start justify-between">
+                  <span className={s.iconColour}>{s.icon}</span>
+                  <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">
+                    {meta.badge}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  {meta.title}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {meta.desc}
+                </p>
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:text-primary transition-colors">
+                  {ctaReadGuide} <ArrowRight />
                 </span>
-              </div>
-              <h3 className="mt-5 text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                {s.title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {s.description}
-              </p>
-              <ul className="mt-5 flex flex-wrap gap-2">
-                {s.topics.map((t) => (
-                  <li
-                    key={t}
-                    className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
-              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:text-primary transition-colors">
-                Read guide <ArrowRight />
-              </span>
-            </Link>
-          ))}
+              </Link>
+            )
+          })}
         </div>
       </section>
 
       {/* Quick wins */}
       <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-2xl font-bold text-foreground">
-            Five quick wins for any English exam
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
-            No matter your board or paper, these five habits will instantly improve your exam
-            performance.
-          </p>
+          <h2 className="text-center text-2xl font-bold text-foreground">{qwTitle}</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">{qwSubtitle}</p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {[
-              {
-                heading: 'Read the question twice',
-                body: 'Underline the key command words and any specific focus before you start writing.',
-              },
-              {
-                heading: 'Plan before you write',
-                body: 'Spend 3-5 minutes planning. A planned answer is always better than an unplanned one.',
-              },
-              {
-                heading: 'Watch the clock',
-                body: 'Write your target end-time for each question on the paper. Stick to it.',
-              },
-              {
-                heading: 'Use short quotations',
-                body: 'Embed 2-5 word quotes into your sentences. Never copy out whole paragraphs.',
-              },
-              {
-                heading: 'Leave time to check',
-                body: 'Reserve the last 5 minutes for proofreading. Fix SPaG errors and add missing analysis.',
-              },
+              { heading: qwReadH, body: qwReadB },
+              { heading: qwPlanH, body: qwPlanB },
+              { heading: qwClockH, body: qwClockB },
+              { heading: qwQuotesH, body: qwQuotesB },
+              { heading: qwCheckH, body: qwCheckB },
             ].map((tip, i) => (
               <div
                 key={tip.heading}
@@ -331,40 +361,25 @@ export default function ExamTechniquePage() {
       {/* Revision CTA */}
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8 text-center">
-          <h2 className="text-xl font-bold text-foreground">Ready to revise?</h2>
-          <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
-            Put these exam techniques into practice with our interactive revision section -- timed
-            exercises, worked examples, and self-assessment quizzes.
-          </p>
+          <h2 className="text-xl font-bold text-foreground">{revctaTitle}</h2>
+          <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">{revctaBody}</p>
           <Link
             href="/revision/exam-technique"
             className="mt-5 inline-block rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
           >
-            Start exam technique revision
+            {revctaCta}
           </Link>
         </div>
       </section>
 
       {/* Continue exploring */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">Continue exploring</h2>
+        <h2 className="text-2xl font-bold text-foreground">{contTitle}</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
-            {
-              label: 'Model Answers',
-              href: '/resources/model-answers',
-              desc: 'Grade 5, 7, and 9 sample answers with marker commentary.',
-            },
-            {
-              label: 'Techniques Reference',
-              href: '/resources/techniques',
-              desc: 'Language and structural devices with examples and effects.',
-            },
-            {
-              label: 'All Resources',
-              href: '/resources',
-              desc: 'Browse everything by exam board and subject.',
-            },
+            { label: contModelLabel, href: '/resources/model-answers', desc: contModelDesc },
+            { label: contTechLabel, href: '/resources/techniques', desc: contTechDesc },
+            { label: contAllLabel, href: '/resources', desc: contAllDesc },
           ].map((link) => (
             <Link
               key={link.href}

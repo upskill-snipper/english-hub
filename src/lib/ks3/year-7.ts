@@ -60,11 +60,11 @@ const Y7_T1: Year['terms'][number] = {
           number: 2,
           pages: 'Chapter 1, pp. 1–4',
           keyVocabulary: [
-            { en: 'inference' },
-            { en: 'lonely' },
-            { en: 'defensive' },
-            { en: 'isolated' },
-            { en: 'vulnerable' },
+            { en: 'inference', ar: 'الاستنتاج' },
+            { en: 'lonely', ar: 'وحيد' },
+            { en: 'defensive', ar: 'متحفّظ / دفاعي' },
+            { en: 'isolated', ar: 'منعزل' },
+            { en: 'vulnerable', ar: 'هشّ / سريع التأثّر' },
           ],
           contextNote: {
             en: 'Caylin is introduced — first impressions vs hidden struggle.',
@@ -76,12 +76,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.2', '7R.4'],
               whatStudentsDo: {
                 en: "Teacher reads aloud pp. 1–4 using echo strategy. Students track Caylin's behaviour, speech and actions.",
+                ar: 'يقرأ المعلّم الصفحات 1–4 بصوتٍ عالٍ بأسلوب الترديد (echo)، والطلاب يتتبّعون تصرّفات كيلين وكلامها وأفعالها.',
               },
               task: {
                 en: 'What is Caylin trying to do? How does she behave to others? Which words make her seem tough? What do we learn of her home life? What might this suggest?',
+                ar: 'ماذا تحاول كيلين أن تفعل؟ كيف تتعامل مع من حولها؟ ما الكلمات التي تُظهرها قويّة وصلبة؟ ماذا نعرف عن حياتها في البيت؟ ما الذي يُلمَح من ذلك؟',
               },
               successCriteria: {
                 en: 'Can recall key events from the opening. Can identify that Caylin is presented as tough on the outside but may have hidden struggles.',
+                ar: 'يستطيع الطالب استرجاع أهمّ أحداث الافتتاحية. ويستطيع أن يُحدّد أنّ كيلين تظهر صلبة من الخارج، لكنّها قد تُخفي معاناةً داخلية.',
               },
             },
             {
@@ -89,12 +92,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.5', '7SL.3'],
               whatStudentsDo: {
                 en: 'Tables analyse 4 quotations from pp. 1–4 using sentence stems; whole-class feedback; present one inference about Caylin.',
+                ar: 'تُحلّل المجموعات على الطاولات أربعة اقتباسات من الصفحات 1–4 باستخدام صيغ بداية الجمل، ثم يتشارك الصفّ في النقاش، ويُقدّم كلّ فريق استنتاجاً واحداً عن كيلين.',
               },
               task: {
                 en: 'Quote bank: "But not because I\'m her friend." / "Talk about an open invitation." / "I haven\'t had one of those special pink envelopes filled with glitter from anyone for years." / "I don\'t need friends." Stems: "I think Caylin is… because…" / "This suggests…" / "A word/phrase that stands out is…"',
+                ar: 'بنك الاقتباسات: "But not because I\'m her friend." / "Talk about an open invitation." / "I haven\'t had one of those special pink envelopes filled with glitter from anyone for years." / "I don\'t need friends." بدايات الجمل: "أرى أنّ كيلين… لأنّ…" / "هذا يُلمِح إلى…" / "الكلمة أو العبارة اللافتة هي…"',
               },
               successCriteria: {
                 en: 'Can infer that Caylin is defensive, isolated and emotionally guarded. Can use one quotation to support an idea.',
+                ar: 'يستنتج الطالب أنّ كيلين دفاعية ومنعزلة ومتحفّظة عاطفياً، ويستخدم اقتباساً واحداً لدعم فكرته.',
               },
             },
             {
@@ -102,12 +108,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.2', '7R.3', '7W.4'],
               whatStudentsDo: {
                 en: 'Teacher introduces WHAT / HOW / WHY. Live-models one paragraph answering "How is Caylin presented in the opening?" using a direct quote from pp. 1–4. Students copy and label in different colours.',
+                ar: 'يُقدِّم المعلّم صيغة "ماذا / كيف / لماذا" (WHAT / HOW / WHY)، ويكتب أمام الطلاب فقرة نموذجية تُجيب عن سؤال "كيف تُقدَّم كيلين في الافتتاحية؟" باستخدام اقتباس مباشر من الصفحات 1–4. ينسخ الطلاب الفقرة ويُلوّنون كلّ جزء بلون مختلف.',
               },
               task: {
                 en: 'Modelled paragraph: WHAT = Caylin is presented as aggressive/tough; HOW = quotation/word choice/action; WHY = she pushes people away and seems used to surviving alone.',
+                ar: 'الفقرة النموذجية: ماذا = تُقدَّم كيلين شخصيّةً عدوانيّة وصلبة. كيف = اقتباس / اختيار المفردات / فعل ملموس. لماذا = تُبعد الناس عنها وتبدو معتادة على الصمود بمفردها.',
               },
               successCriteria: {
                 en: 'Understands paragraph structure. Can identify WHAT/HOW/WHY using a real example from the novel.',
+                ar: 'يفهم الطالب بنية الفقرة، ويستطيع تحديد أجزاء "ماذا/كيف/لماذا" في مثال حقيقي من الرواية.',
               },
             },
             {
@@ -115,12 +124,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.2', '7W.4'],
               whatStudentsDo: {
                 en: 'Students complete a scaffolded paragraph with gaps using a second quotation from the opening pages; WHAT/HOW/WHY already structured; then label which sentence is which.',
+                ar: 'يُكمل الطلاب فقرة فيها فراغات معتمدةً على اقتباس آخر من صفحات الافتتاحية. يكون هيكل "ماذا/كيف/لماذا" جاهزاً، ثم يُحدّدون أيّ جملة تنتمي إلى أيّ قسم.',
               },
               task: {
                 en: 'Fill in the blanks using a quote (e.g. "I haven\'t had one of those special pink envelopes…"): Caylin is presented as… / This is shown through… / This shows…',
+                ar: 'املأ الفراغات مستعيناً باقتباس (مثل: "I haven\'t had one of those special pink envelopes…"): تُقدَّم كيلين شخصيّةً… / يظهر ذلك من خلال… / يُظهر هذا أنّ…',
               },
               successCriteria: {
                 en: 'Completes paragraph logically. Uses key terms correctly. Correctly identifies WHAT/HOW/WHY sections.',
+                ar: 'يُكمل الطالب الفقرة بشكلٍ منطقي، ويُوظّف المصطلحات الأساسية بدقّة، ويُحدّد أقسام "ماذا/كيف/لماذا" تحديداً صحيحاً.',
               },
             },
             {
@@ -128,12 +140,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.3', '7R.5', '7W.1', '7W.4'],
               whatStudentsDo: {
                 en: 'Vocabulary retrieval (spell, define, use in sentence — 2 current week + 2 prior + 1 analytical word). Then students write their own paragraph choosing from 3 quotations from pp. 1–4; heavily scaffolded frame.',
+                ar: 'استرجاع المفردات (تهجئة، تعريف، توظيف في جملة — مفردتان من الأسبوع الحالي + مفردتان من أسبوعٍ سابق + مفردة تحليلية واحدة). بعد ذلك يكتب الطلاب فقرتهم الخاصة مختارين من بين ثلاثة اقتباسات من الصفحات 1–4 ضمن قالبٍ موجَّه بدعمٍ مرتفع.',
               },
               task: {
                 en: 'What do we learn about Caylin in the opening of the novel? Support level: HIGH. Sentence starters and quotes provided. Write one clear WHAT, use one quotation, explain using "This shows…".',
+                ar: 'ماذا نتعلّم عن كيلين في افتتاحية الرواية؟ مستوى الدعم: مرتفع. تتوفّر بدايات جمل ومجموعة اقتباسات. اكتب جزء "ماذا" واضحاً، ووظّف اقتباساً واحداً، وفسّر باستخدام عبارة "يُظهر هذا أنّ…".',
               },
               successCriteria: {
                 en: 'Can independently produce one analytical paragraph rooted in the text.',
+                ar: 'يستطيع الطالب إنتاج فقرة تحليلية واحدة بشكلٍ مستقل، مرتكزة على النصّ.',
               },
             },
           ],
@@ -142,14 +157,15 @@ const Y7_T1: Year['terms'][number] = {
           number: 3,
           pages: 'Chapter 2, pp. 5–9',
           keyVocabulary: [
-            { en: 'refugee' },
-            { en: 'displaced' },
-            { en: 'resilience' },
-            { en: 'memory' },
-            { en: 'determined' },
+            { en: 'refugee', ar: 'لاجئ' },
+            { en: 'displaced', ar: 'نازح' },
+            { en: 'resilience', ar: 'الصمود / المرونة النفسية' },
+            { en: 'memory', ar: 'الذاكرة' },
+            { en: 'determined', ar: 'مُصمِّم / عازم' },
           ],
           contextNote: {
             en: 'Reema introduced through a race — physical struggle interlaced with memories of Aleppo and her brother Jamal.',
+            ar: 'تُقدَّم شخصية ريما من خلال سباق — جهد جسدي يتشابك مع ذكرياتها عن حلب وأخيها جمال.',
           },
           lessons: [
             {
@@ -157,12 +173,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.2', '7R.4'],
               whatStudentsDo: {
                 en: 'Teacher reads pp. 5–9 with echo strategy. Teacher frames Reema running while remembering home; students track physical action vs emotional memory.',
+                ar: 'يقرأ المعلّم الصفحات 5–9 بأسلوب الترديد، ويُؤطّر مشهد ريما وهي تركض وتسترجع وطنها، والطلاب يتتبّعون الفعل الجسدي مقابل الذاكرة العاطفية.',
               },
               task: {
                 en: 'What is Reema doing? Which words show the race is difficult? Who does she think about? What memories surface? What does this suggest about what she has lost?',
+                ar: 'ماذا تفعل ريما؟ ما الكلمات التي تُظهر أنّ السباق شاقّ؟ بمن تُفكِّر؟ ما الذكريات التي تطفو إلى السطح؟ وماذا يُلمَح من ذلك عن الذي فقدته؟',
               },
               successCriteria: {
                 en: "Can recall key events from Reema's opening chapter. Can identify her as determined yet carrying memories of home.",
+                ar: 'يستطيع الطالب استرجاع أهمّ أحداث الفصل الافتتاحي لريما، ويُحدِّدها شخصيّةً مُصمِّمة لكنّها تحمل ذكريات الوطن.',
               },
             },
             {
@@ -170,12 +189,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.5', '7SL.1', '7SL.2', '7SL.3'],
               whatStudentsDo: {
                 en: 'Tables analyse 4 quotations using stems; whole-class feedback; present one inference about Reema.',
+                ar: 'تُحلّل المجموعات على الطاولات أربعة اقتباسات بالاستعانة ببدايات الجمل، ثم يتشارك الصفّ في النقاش، ويُقدّم كلّ فريق استنتاجاً واحداً عن ريما.',
               },
               task: {
                 en: 'Quotes: "My lungs are burning…" / "I suck the air down despite the pain." / "It was Jamal who first raced with me…" / "Without the courage to keep going…" Stems: "I think Reema is… because…" / "This suggests…" / "A word that stands out is…"',
+                ar: 'الاقتباسات: "My lungs are burning…" / "I suck the air down despite the pain." / "It was Jamal who first raced with me…" / "Without the courage to keep going…" بدايات الجمل: "أرى أنّ ريما… لأنّ…" / "هذا يُلمِح إلى…" / "الكلمة اللافتة هي…"',
               },
               successCriteria: {
                 en: "Can explain what Reema's actions reveal. Can support an idea using evidence.",
+                ar: 'يستطيع الطالب أن يشرح ما تكشفه أفعال ريما، وأن يدعم فكرته بدليلٍ من النصّ.',
               },
             },
             {
@@ -183,12 +205,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.3', '7W.4'],
               whatStudentsDo: {
                 en: 'Teacher revisits WHAT/HOW/WHY. Live-models "How is Reema presented in the opening of Chapter 2?" using one quote and thinking aloud the inference. Students copy and label.',
+                ar: 'يُراجع المعلّم صيغة "ماذا/كيف/لماذا"، ويكتب أمام الطلاب فقرة نموذجية تُجيب عن "كيف تُقدَّم ريما في افتتاحية الفصل الثاني؟" مستعيناً باقتباسٍ واحد، ويُفكّر بصوتٍ مرتفع وهو يستنتج. ينسخ الطلاب الفقرة ويُسمّون أجزاءها.',
               },
               task: {
                 en: 'Model uses: "I suck the air down despite the pain." WHAT = Reema is determined; HOW = quotation, physical struggle, word choice; WHY = keeps going even when painful or difficult.',
+                ar: 'يستعمل النموذج: "I suck the air down despite the pain." ماذا = ريما مُصمِّمة. كيف = اقتباس / جهد جسدي / اختيار المفردات. لماذا = تُواصل المضيّ حتى حين يكون الأمر مؤلماً أو شاقّاً.',
               },
               successCriteria: {
                 en: 'Understands paragraph structure. Can identify WHAT/HOW/WHY in a real example.',
+                ar: 'يفهم الطالب بنية الفقرة، ويُحدّد أجزاء "ماذا/كيف/لماذا" في مثالٍ حقيقي.',
               },
             },
             {
@@ -196,12 +221,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.2', '7W.4'],
               whatStudentsDo: {
                 en: 'Scaffolded fill-in-the-blanks paragraph using a second quote; highlight WHAT/HOW/WHY; peer assess against a checklist.',
+                ar: 'فقرة بفراغات وقالبٍ موجَّه باستخدام اقتباس آخر؛ يُبرز الطالب أجزاء "ماذا/كيف/لماذا" بالتلوين، ثم يُقيّم زميله بالاعتماد على قائمةٍ تدقيقية.',
               },
               task: {
                 en: 'Using "Without the courage to keep going…": Reema is presented as… / This is shown when… / This shows…',
+                ar: 'بالاستعانة باقتباس "Without the courage to keep going…": تُقدَّم ريما شخصيّةً… / يظهر ذلك حين… / يُظهر هذا أنّ…',
               },
               successCriteria: {
                 en: 'Completes paragraph logically. Uses key terms correctly. Identifies WHAT/HOW/WHY.',
+                ar: 'يُكمل الطالب الفقرة بشكلٍ منطقي، ويُوظّف المصطلحات الأساسية بدقّة، ويُحدّد أقسام "ماذا/كيف/لماذا".',
               },
             },
             {
@@ -209,12 +237,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.3', '7R.5', '7W.1', '7W.4'],
               whatStudentsDo: {
                 en: 'Vocabulary retrieval drill. Students write their own paragraph using a scaffolded frame; choose from a quote list rather than a fixed quote.',
+                ar: 'تدريب على استرجاع المفردات، ثم يكتب الطلاب فقرتهم الخاصة ضمن قالبٍ موجَّه، ويختارون اقتباساً من قائمة بدل اقتباسٍ ثابت.',
               },
               task: {
                 en: 'What do we learn about Reema in the opening of her chapter? Support level: MEDIUM–HIGH. Sentence starters provided; quotes list provided; no full paragraph model beside them.',
+                ar: 'ماذا نتعلّم عن ريما في افتتاحية فصلها؟ مستوى الدعم: متوسّط إلى مرتفع. تتوفّر بدايات جمل وقائمة اقتباسات، دون نموذج فقرة كاملة مرافق.',
               },
               successCriteria: {
                 en: 'Can independently build a simple analytical paragraph using action-based evidence.',
+                ar: 'يستطيع الطالب أن يبني فقرة تحليلية بسيطة بشكلٍ مستقل، مستنداً إلى أدلّة مأخوذة من تصرّفات الشخصية.',
               },
             },
           ],
@@ -223,14 +254,15 @@ const Y7_T1: Year['terms'][number] = {
           number: 4,
           pages: 'Chapter 3, pp. 10–14',
           keyVocabulary: [
-            { en: 'poverty' },
-            { en: 'responsibility' },
-            { en: 'ashamed' },
-            { en: 'frustration' },
-            { en: 'sympathy' },
+            { en: 'poverty', ar: 'الفقر' },
+            { en: 'responsibility', ar: 'المسؤولية' },
+            { en: 'ashamed', ar: 'خَجِل' },
+            { en: 'frustration', ar: 'الإحباط' },
+            { en: 'sympathy', ar: 'التعاطف' },
           ],
           contextNote: {
             en: "Caylin's home life surfaces — money worries, sibling responsibility. Readers begin to feel sympathy.",
+            ar: 'تتكشّف حياة كيلين في البيت — هموم المال ومسؤولية الإخوة، ويبدأ القارئ في التعاطف معها.',
           },
           lessons: [
             {
@@ -238,12 +270,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.2', '7R.4'],
               whatStudentsDo: {
                 en: 'Teacher reads pp. 10–14 with echo. Pauses to surface what problems Caylin faces and what this reveals.',
+                ar: 'يقرأ المعلّم الصفحات 10–14 بأسلوب الترديد، ويتوقّف ليُظهر المشاكل التي تواجهها كيلين وما تكشفه عن وضعها.',
               },
               task: {
                 en: "What do we learn about Caylin's home life? What responsibilities does she carry? How do others around her behave? Which moments suggest she is less confident than she appears?",
+                ar: 'ماذا نتعلّم عن حياة كيلين في البيت؟ ما المسؤوليات التي تحملها؟ كيف يتصرّف من حولها؟ ما اللحظات التي تُلمِح إلى أنّها أقلّ ثقة ممّا تبدو عليه؟',
               },
               successCriteria: {
                 en: "Can recall events from this section. Can identify that Caylin's life is harder than it first seemed.",
+                ar: 'يستطيع الطالب استرجاع أحداث هذا القسم، ويُحدّد أنّ حياة كيلين أصعب ممّا بدت في البداية.',
               },
             },
             {
@@ -251,12 +286,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.5', '7SL.1', '7SL.2', '7SL.3'],
               whatStudentsDo: {
                 en: "Tables analyse 4 quotations focused on Caylin's difficulties; present one inference about why readers may begin to feel differently about her.",
+                ar: 'تُحلّل المجموعات على الطاولات أربعة اقتباسات تتمحور حول صعوبات كيلين، ثم يُقدّم كلّ فريق استنتاجاً واحداً يُفسّر لماذا قد يبدأ القرّاء في تغيير شعورهم نحوها.',
               },
               task: {
                 en: 'Stems: "When Caylin…, it shows…" / "This suggests…" / "The writer wants us to realise…"',
+                ar: 'بدايات الجمل: "حين تفعل كيلين…، فإنّ ذلك يُظهر…" / "هذا يُلمِح إلى…" / "تريدنا الكاتبة أن ندرك…"',
               },
               successCriteria: {
                 en: 'Can infer that Caylin is struggling, not simply badly behaved. Can support with evidence.',
+                ar: 'يستنتج الطالب أنّ كيلين تُعاني، لا أنّها مجرّد فتاة سيّئة السلوك، ويدعم ذلك بدليل من النصّ.',
               },
             },
             {
@@ -264,12 +302,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.3', '7W.4'],
               whatStudentsDo: {
                 en: 'Teacher revisits WHAT/HOW/WHY. Live-models "How does the writer make readers feel sympathy for Caylin in Chapter 3?" using one quote and thinking aloud the inference.',
+                ar: 'يُراجع المعلّم صيغة "ماذا/كيف/لماذا"، ويكتب أمام الطلاب فقرة نموذجية تُجيب عن "كيف تجعلنا الكاتبة نتعاطف مع كيلين في الفصل الثالث؟" مستعيناً باقتباسٍ واحد، ويُفكِّر بصوتٍ مرتفع وهو يستنتج.',
               },
               task: {
                 en: "Modelled: WHAT = Caylin's life is difficult; HOW = quotation/action/home-life detail; WHY = readers begin to understand why she is angry.",
+                ar: 'الفقرة النموذجية: ماذا = حياة كيلين صعبة. كيف = اقتباس / فعل ملموس / تفصيل من حياة البيت. لماذا = يبدأ القرّاء في فهم سبب غضبها.',
               },
               successCriteria: {
                 en: 'Understands how writers shift our opinion of a character. Can identify WHAT/HOW/WHY.',
+                ar: 'يفهم الطالب كيف يُحوِّل الكتّاب رأينا في الشخصية، ويُحدّد أجزاء "ماذا/كيف/لماذا".',
               },
             },
             {
@@ -277,10 +318,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.2', '7W.4'],
               whatStudentsDo: {
                 en: 'Scaffolded fill-in-the-blanks paragraph; highlight WHAT/HOW/WHY; peer assess.',
+                ar: 'فقرة بفراغات وقالبٍ موجَّه؛ يُبرز الطالب أجزاء "ماذا/كيف/لماذا" بالتلوين، ثم يُجري تقييماً متبادلاً مع زميله.',
               },
-              task: { en: 'Caylin is presented as… / This is shown when… / This shows…' },
+              task: {
+                en: 'Caylin is presented as… / This is shown when… / This shows…',
+                ar: 'تُقدَّم كيلين شخصيّةً… / يظهر ذلك حين… / يُظهر هذا أنّ…',
+              },
               successCriteria: {
                 en: 'Completes paragraph logically; uses key terms; identifies WHAT/HOW/WHY.',
+                ar: 'يُكمل الطالب الفقرة بشكلٍ منطقي، ويُوظّف المصطلحات الأساسية، ويُحدّد أقسام "ماذا/كيف/لماذا".',
               },
             },
             {
@@ -288,12 +334,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.3', '7R.5', '7W.1', '7W.4'],
               whatStudentsDo: {
                 en: 'Vocabulary retrieval drill. Students write their own paragraph with reduced scaffolding.',
+                ar: 'تدريب على استرجاع المفردات، ثم يكتب الطلاب فقرتهم الخاصة بدعمٍ مُخفَّف.',
               },
               task: {
                 en: 'How does Chapter 3 change our opinion of Caylin? Support: HIGH–MEDIUM. Sentence starters and quote bank; no full paragraph model alongside.',
+                ar: 'كيف يُغيِّر الفصل الثالث رأينا في كيلين؟ مستوى الدعم: مرتفع إلى متوسّط. تتوفّر بدايات جمل وبنك اقتباسات، دون نموذج فقرة كاملة مرافق.',
               },
               successCriteria: {
                 en: 'Can independently produce one analytical paragraph showing developing inference.',
+                ar: 'يستطيع الطالب إنتاج فقرة تحليلية واحدة بشكلٍ مستقل تُظهر استنتاجاً مُتطوِّراً.',
               },
             },
           ],
@@ -302,14 +351,15 @@ const Y7_T1: Year['terms'][number] = {
           number: 5,
           pages: 'Chapter 4, pp. 15–19',
           keyVocabulary: [
-            { en: 'grief' },
-            { en: 'loss' },
-            { en: 'identity' },
-            { en: 'belonging' },
-            { en: 'courage' },
+            { en: 'grief', ar: 'الحزن' },
+            { en: 'loss', ar: 'الفقد' },
+            { en: 'identity', ar: 'الهوية' },
+            { en: 'belonging', ar: 'الانتماء' },
+            { en: 'courage', ar: 'الشجاعة' },
           ],
           contextNote: {
             en: "Reema's memories surface — Jamal, Aleppo. Physical running, emotional return.",
+            ar: 'تطفو ذكريات ريما إلى السطح — جمال وحلب. ركضٌ جسدي وعودة عاطفية إلى ما كان.',
           },
           lessons: [
             {
@@ -317,12 +367,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.2', '7R.4'],
               whatStudentsDo: {
                 en: "Teacher reads pp. 15–19 with echo. Pauses to explore Reema's thoughts, memories of Jamal, references to Aleppo.",
+                ar: 'يقرأ المعلّم الصفحات 15–19 بأسلوب الترديد، ويتوقّف ليستكشف أفكار ريما وذكرياتها عن جمال والإشارات إلى حلب.',
               },
               task: {
                 en: 'What is Reema thinking about during the race? What memories of Jamal are mentioned? Which words show she is still emotionally affected? What does this suggest about what she has lost?',
+                ar: 'بماذا تُفكِّر ريما خلال السباق؟ ما الذكريات التي تُذكَر عن جمال؟ ما الكلمات التي تُظهر أنّها لا تزال متأثّرة عاطفياً؟ وماذا يُلمَح من ذلك عمّا فقدته؟',
               },
               successCriteria: {
                 en: "Can identify how Reema's memories shape our understanding of her.",
+                ar: 'يستطيع الطالب أن يُحدِّد كيف تُشكِّل ذكريات ريما فهمنا لشخصيّتها.',
               },
             },
             {
@@ -330,12 +383,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.5', '7SL.1', '7SL.2', '7SL.3'],
               whatStudentsDo: {
                 en: 'Tables discuss one quote linked to memory/Jamal/courage; record one group inference; whole-class feedback.',
+                ar: 'تُناقش المجموعات على الطاولات اقتباساً واحداً مرتبطاً بالذاكرة أو بجمال أو بالشجاعة، وتُسجِّل استنتاجاً جماعياً واحداً، ثم يتشارك الصفّ في النقاش.',
               },
               task: {
                 en: 'Stems: "This suggests Reema feels…" / "When Reema remembers…, it shows…" / "The writer presents her as…"',
+                ar: 'بدايات الجمل: "هذا يُلمِح إلى أنّ ريما تشعر بـ…" / "حين تتذكّر ريما…، فإنّ ذلك يُظهر…" / "تُقدِّمها الكاتبة شخصيّةً…"',
               },
               successCriteria: {
                 en: "Can infer emotional pressure from Reema's memories and thoughts.",
+                ar: 'يستنتج الطالب الضغط العاطفي من ذكريات ريما وأفكارها.',
               },
             },
             {
@@ -343,33 +399,48 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.3', '7W.4'],
               whatStudentsDo: {
                 en: 'Teacher models embedding a quotation INSIDE the WHAT/HOW/WHY paragraph rather than dropping it separately.',
+                ar: 'يُقدّم المعلّم نموذجاً لدمج الاقتباس داخل فقرة "ماذا/كيف/لماذا" بدلاً من إقحامه منفصلاً.',
               },
               task: {
                 en: "Model paragraph: How do Reema's memories influence the way we see her?",
+                ar: 'الفقرة النموذجية: كيف تُؤثِّر ذكريات ريما في نظرتنا إليها؟',
               },
-              successCriteria: { en: 'Can see how quotations can be blended into writing.' },
+              successCriteria: {
+                en: 'Can see how quotations can be blended into writing.',
+                ar: 'يستوعب الطالب كيف يمكن مزج الاقتباسات داخل الكتابة بسلاسة.',
+              },
             },
             {
               focus: 'application',
               skillCodes: ['7W.1', '7W.2', '7W.4'],
               whatStudentsDo: {
                 en: 'Students complete a partially-scaffolded paragraph (scaffold reduced to sentence openings only); peer assess.',
+                ar: 'يُكمل الطلاب فقرة بدعمٍ جزئي مُختصَر إلى بدايات الجمل فقط، ثم يُجرون تقييماً متبادلاً.',
               },
               task: {
                 en: 'Sentence-opening task with embedded-quotation practice using a Jamal / memory quotation.',
+                ar: 'مهمّة قائمة على بدايات الجمل مع التدرّب على دمج اقتباس مرتبط بجمال أو بالذاكرة.',
               },
-              successCriteria: { en: 'Can embed one quotation and explain it.' },
+              successCriteria: {
+                en: 'Can embed one quotation and explain it.',
+                ar: 'يستطيع الطالب دمج اقتباس واحد داخل الفقرة وشرحه.',
+              },
             },
             {
               focus: 'independent-outcome',
               skillCodes: ['7W.9', '7R.3', '7R.5', '7W.1', '7W.4'],
               whatStudentsDo: {
                 en: 'Vocabulary retrieval. Students choose from a quotation bank and write more independently.',
+                ar: 'استرجاع المفردات، ثم يختار الطلاب من بنك الاقتباسات ويكتبون باستقلاليّة أكبر.',
               },
               task: {
                 en: "How do Reema's memories affect the way the reader sees her? Support: MEDIUM–LOW.",
+                ar: 'كيف تُؤثِّر ذكريات ريما في نظرة القارئ إليها؟ مستوى الدعم: متوسّط إلى منخفض.',
               },
-              successCriteria: { en: 'Paragraph shows clearer independence and evidence choice.' },
+              successCriteria: {
+                en: 'Paragraph shows clearer independence and evidence choice.',
+                ar: 'تُظهر الفقرة استقلالاً أوضح وقدرة أدقّ على اختيار الدليل.',
+              },
             },
           ],
         },
@@ -377,26 +448,32 @@ const Y7_T1: Year['terms'][number] = {
           number: 6,
           pages: 'Chapter 5, pp. 21–26',
           keyVocabulary: [
-            { en: 'judgement' },
-            { en: 'stereotype' },
-            { en: 'misunderstood' },
-            { en: 'pressure' },
-            { en: 'outsider' },
-            { en: 'loneliness' },
+            { en: 'judgement', ar: 'الحكم على الآخرين' },
+            { en: 'stereotype', ar: 'صورة نمطية' },
+            { en: 'misunderstood', ar: 'يُساء فهمه' },
+            { en: 'pressure', ar: 'الضغط' },
+            { en: 'outsider', ar: 'الغريب / المُستبعَد' },
+            { en: 'loneliness', ar: 'الوحدة' },
           ],
-          contextNote: { en: 'Caylin becomes more sympathetic — struggle, loneliness, pressure.' },
+          contextNote: {
+            en: 'Caylin becomes more sympathetic — struggle, loneliness, pressure.',
+            ar: 'تكتسب كيلين تعاطف القارئ أكثر — معاناة ووحدة وضغط.',
+          },
           lessons: [
             {
               focus: 'explicit-reading',
               skillCodes: ['7R.1', '7R.2', '7R.4'],
               whatStudentsDo: {
                 en: "Teacher reads pp. 21–26 with echo. Pauses to discuss Caylin's difficult home life, emotions and responsibilities; introduces thematic words struggle / loneliness / pressure.",
+                ar: 'يقرأ المعلّم الصفحات 21–26 بأسلوب الترديد، ويتوقّف ليُناقش حياة كيلين الصعبة في البيت ومشاعرها ومسؤوليّاتها، ويُقدّم المفردات الموضوعيّة: المعاناة / الوحدة / الضغط.',
               },
               task: {
                 en: 'What problems does Caylin face? Which moments make us feel sympathy? What words suggest she is under pressure?',
+                ar: 'ما المشكلات التي تواجهها كيلين؟ ما اللحظات التي تجعلنا نتعاطف معها؟ ما الكلمات التي تُلمِح إلى أنّها تحت ضغط؟',
               },
               successCriteria: {
                 en: 'Can identify that Caylin is becoming a more sympathetic character.',
+                ar: 'يستطيع الطالب أن يُحدِّد أنّ كيلين أصبحت شخصيّة أكثر استحقاقاً للتعاطف.',
               },
             },
             {
@@ -404,12 +481,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.5', '7SL.1', '7SL.2', '7SL.3'],
               whatStudentsDo: {
                 en: 'Students annotate quotations in groups with less teacher prompting; choose which quotations best show struggle or loneliness.',
+                ar: 'يُعلِّق الطلاب على الاقتباسات ضمن مجموعات بإرشادٍ أقلّ من المعلّم، ويختارون أيّ الاقتباسات يُظهر المعاناة أو الوحدة على أفضل وجه.',
               },
               task: {
                 en: 'Stems: "This shows Caylin feels…" / "This could suggest…" / "The writer wants us to understand…"',
+                ar: 'بدايات الجمل: "يُظهر هذا أنّ كيلين تشعر بـ…" / "قد يُلمِح هذا إلى…" / "تريدنا الكاتبة أن نفهم…"',
               },
               successCriteria: {
                 en: "Can independently discuss Caylin's hidden difficulties using evidence.",
+                ar: 'يستطيع الطالب أن يُناقش معاناة كيلين الخفيّة بشكلٍ مستقل مستعيناً بالأدلّة.',
               },
             },
             {
@@ -417,29 +497,48 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.3', '7W.4'],
               whatStudentsDo: {
                 en: 'Teacher models a paragraph beginning "The writer presents Caylin as…". Students notice this is more analytical than "Caylin is…".',
+                ar: 'يُقدّم المعلّم نموذج فقرة تبدأ بعبارة "تُقدِّم الكاتبة كيلين شخصيّةً…"، وينتبه الطلاب إلى أنّ هذه الصياغة أكثر تحليليّة من "كيلين هي…".',
               },
-              task: { en: 'Character-sympathy paragraph model.' },
-              successCriteria: { en: 'Understands writer-focused analytical opening.' },
+              task: {
+                en: 'Character-sympathy paragraph model.',
+                ar: 'فقرة نموذجية لتحليل تعاطف القارئ مع الشخصية.',
+              },
+              successCriteria: {
+                en: 'Understands writer-focused analytical opening.',
+                ar: 'يفهم الطالب صياغة الافتتاحية التحليلية المُركِّزة على الكاتب.',
+              },
             },
             {
               focus: 'application',
               skillCodes: ['7W.1', '7W.2', '7W.4'],
               whatStudentsDo: {
                 en: 'Reduced-scaffold paragraph with quotation bank only; students choose the best quotation.',
+                ar: 'فقرة بدعمٍ مُخفَّف مع بنك اقتباسات فقط، ويختار الطلاب الاقتباس الأنسب بأنفسهم.',
               },
-              task: { en: 'Guided analytical writing.' },
-              successCriteria: { en: 'Can make a quotation choice independently.' },
+              task: {
+                en: 'Guided analytical writing.',
+                ar: 'كتابة تحليلية موجَّهة.',
+              },
+              successCriteria: {
+                en: 'Can make a quotation choice independently.',
+                ar: 'يستطيع الطالب اختيار الاقتباس المناسب بشكلٍ مستقل.',
+              },
             },
             {
               focus: 'independent-outcome',
               skillCodes: ['7R.3', '7R.5', '7W.1', '7W.4', '7W.9'],
               whatStudentsDo: {
                 en: 'Vocabulary retrieval. Students write one independent paragraph with low scaffold.',
+                ar: 'استرجاع المفردات، ثم يكتب الطلاب فقرة مستقلّة واحدة بدعمٍ منخفض.',
               },
               task: {
                 en: 'How does the writer make readers feel sympathy for Caylin in this chapter?',
+                ar: 'كيف تجعلنا الكاتبة نتعاطف مع كيلين في هذا الفصل؟',
               },
-              successCriteria: { en: 'Can independently write one secure analytical paragraph.' },
+              successCriteria: {
+                en: 'Can independently write one secure analytical paragraph.',
+                ar: 'يستطيع الطالب كتابة فقرة تحليلية واحدة متماسكة بشكلٍ مستقل.',
+              },
             },
           ],
         },
@@ -447,26 +546,35 @@ const Y7_T1: Year['terms'][number] = {
           number: 7,
           pages: 'Chapters 1–5 (consolidation + T1.1 assessment)',
           keyVocabulary: [
-            { en: 'isolation' },
-            { en: 'belonging' },
-            { en: 'outsider' },
-            { en: 'excluded' },
-            { en: 'connection' },
+            { en: 'isolation', ar: 'العزلة' },
+            { en: 'belonging', ar: 'الانتماء' },
+            { en: 'outsider', ar: 'الغريب / المُستبعَد' },
+            { en: 'excluded', ar: 'مُستبعَد / مُقصَى' },
+            { en: 'connection', ar: 'الترابط / الصلة' },
           ],
-          contextNote: { en: 'Consolidation + Term 1.1 assessment week.' },
-          homework: { en: 'Read Chapters 6–7 over October half-term break.' },
+          contextNote: {
+            en: 'Consolidation + Term 1.1 assessment week.',
+            ar: 'أسبوع تثبيت للمعرفة + التقييم الخاص بنصف الفصل 1.1.',
+          },
+          homework: {
+            en: 'Read Chapters 6–7 over October half-term break.',
+            ar: 'اقرأ الفصلين 6–7 خلال إجازة منتصف الفصل في أكتوبر.',
+          },
           lessons: [
             {
               focus: 'consolidation-reading',
               skillCodes: ['7R.2', '7R.4', '7R.6'],
               whatStudentsDo: {
                 en: 'Teacher revisits key extracts. Retrieval activities recap major events. Explicitly revisits ideas: first impressions, hidden struggles, loneliness, loss, sympathy.',
+                ar: 'يُعيد المعلّم النظر في المقاطع المحورية. تُلخِّص أنشطة الاسترجاع أبرز الأحداث، وتُراجَع الأفكار صراحةً: الانطباع الأول، المعاناة الخفية، الوحدة، الفقد، التعاطف.',
               },
               task: {
                 en: 'Retrieval carousel: Which chapter is this from? Which girl is this about? What does this quotation suggest? Did our opinion change?',
+                ar: 'محطّات استرجاع متنقّلة: من أيّ فصل هذا المقطع؟ عن أيّ الفتاتين يدور؟ إلامَ يُلمِح هذا الاقتباس؟ هل تغيّر رأينا؟',
               },
               successCriteria: {
                 en: 'Can confidently recall main events and quotations from both protagonists.',
+                ar: 'يستطيع الطالب أن يسترجع بثقة الأحداث الأساسية والاقتباسات الخاصّة بكلتا البطلتين.',
               },
             },
             {
@@ -474,43 +582,63 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.5', '7SL.3'],
               whatStudentsDo: {
                 en: 'Groups sort quotations under headings: Caylin / Reema / Similar / Different; whole-class verbal feedback.',
+                ar: 'تُصنِّف المجموعات الاقتباسات تحت العناوين: كيلين / ريما / تشابُه / اختلاف، ثم يتشارك الصفّ النقاش الشفهي.',
               },
               task: {
                 en: 'Quote sort + verbal justification. Stems: "This quote shows…" / "Both girls…" / "Unlike Caylin, Reema…"',
+                ar: 'تصنيف الاقتباسات + تبرير شفهي. بدايات الجمل: "يُظهر هذا الاقتباس…" / "كلتا الفتاتين…" / "بخلاف كيلين، فإنّ ريما…"',
               },
-              successCriteria: { en: 'Can verbally compare the two girls using evidence.' },
+              successCriteria: {
+                en: 'Can verbally compare the two girls using evidence.',
+                ar: 'يستطيع الطالب أن يُقارن الفتاتين شفهياً مستعيناً بالأدلّة.',
+              },
             },
             {
               focus: 'paragraph-rehearsal',
               skillCodes: ['7W.1', '7W.2', '7W.4'],
               whatStudentsDo: {
                 en: 'Teacher models one final comparison paragraph quickly, explicitly narrating planning. Students complete a guided plan for a similar question.',
+                ar: 'يكتب المعلّم بسرعة فقرة مقارنة نموذجية أخيرة، شارحاً عمليّة التخطيط بصوتٍ مرتفع، ثم يُكمل الطلاب خطّةً موجَّهة لسؤالٍ مشابه.',
               },
               task: {
                 en: 'Model question: How are Caylin and Reema presented as different but similar?',
+                ar: 'السؤال النموذجي: كيف تُقدَّم كيلين وريما مختلفتين ومتشابهتين في الوقت ذاته؟',
               },
-              successCriteria: { en: 'Understands how to organise evidence before assessment.' },
+              successCriteria: {
+                en: 'Understands how to organise evidence before assessment.',
+                ar: 'يفهم الطالب كيف يُنظِّم الأدلّة قبل التقييم.',
+              },
             },
             {
               focus: 'assessment',
               skillCodes: ['7R.1', '7R.2', '7R.4', '7W.1', '7W.2'],
               whatStudentsDo: {
                 en: 'Google-Form reading quiz (20–25 mins). Multiple choice, quote recognition, simple inference; auto-marked. Covers Chapters 1–5.',
+                ar: 'اختبار قراءة عبر Google Form لمدّة 20–25 دقيقة. اختيار من متعدّد، وتمييز اقتباسات، واستنتاج بسيط، يُصحَّح آلياً، ويُغطّي الفصول 1–5.',
               },
-              task: { en: 'T1.1 Reading Quiz — auto-marked Google Form.' },
-              successCriteria: { en: 'Reading understanding assessed independently.' },
+              task: {
+                en: 'T1.1 Reading Quiz — auto-marked Google Form.',
+                ar: 'اختبار قراءة T1.1 — نموذج Google Form يُصحَّح تلقائياً.',
+              },
+              successCriteria: {
+                en: 'Reading understanding assessed independently.',
+                ar: 'يُقيَّم فهم القراءة لدى الطالب بشكلٍ مستقل.',
+              },
             },
             {
               focus: 'independent-outcome',
               skillCodes: ['7R.3', '7W.1', '7W.4', '7W.9'],
               whatStudentsDo: {
                 en: 'Vocabulary retrieval. Students write one timed analytical paragraph (20 mins).',
+                ar: 'استرجاع المفردات، ثم يكتب الطلاب فقرة تحليلية واحدة محسوبة الوقت (20 دقيقة).',
               },
               task: {
                 en: 'Assessment task: Who do we feel more sympathy for so far — Caylin or Reema?',
+                ar: 'مهمّة التقييم: مَن يستحقّ تعاطفنا أكثر حتى الآن — كيلين أم ريما؟',
               },
               successCriteria: {
                 en: 'Can independently select one quotation and explain it in one paragraph.',
+                ar: 'يستطيع الطالب أن يختار اقتباساً واحداً ويُحلِّله في فقرة واحدة بشكلٍ مستقل.',
               },
             },
           ],
@@ -529,28 +657,35 @@ const Y7_T1: Year['terms'][number] = {
           number: 8,
           pages: 'Chapters 8–9 + read Chapters 10–11 for homework',
           keyVocabulary: [
-            { en: 'prejudice' },
-            { en: 'assumption' },
-            { en: 'stereotype' },
-            { en: 'bias' },
-            { en: 'discrimination' },
+            { en: 'prejudice', ar: 'التحامل / التعصّب' },
+            { en: 'assumption', ar: 'افتراض مُسبَق' },
+            { en: 'stereotype', ar: 'صورة نمطية' },
+            { en: 'bias', ar: 'انحياز' },
+            { en: 'discrimination', ar: 'التمييز' },
           ],
           contextNote: {
             en: 'Both girls experience prejudice and loneliness differently — first comparative writing.',
+            ar: 'تعيش الفتاتان تجربتي التحامل والوحدة بطريقتين مختلفتين — أوّل تجربة كتابة مقارنة.',
           },
-          homework: { en: 'Read Chapters 10–11.' },
+          homework: {
+            en: 'Read Chapters 10–11.',
+            ar: 'اقرأ الفصلين 10–11.',
+          },
           lessons: [
             {
               focus: 'explicit-reading',
               skillCodes: ['7R.2', '7R.4', '7R.6'],
               whatStudentsDo: {
                 en: 'Teacher models first extract; pairs echo-read key paragraphs alternating readers. Track how characters experience prejudice, misunderstanding, isolation.',
+                ar: 'يُقدِّم المعلّم نموذجاً للمقطع الأول، ثم يقرأ الطلاب بالأزواج المقاطع المحورية بأسلوب الترديد مع تبادل القراءة، ويتتبّعون كيف تعيش الشخصيات التحامل وسوء الفهم والعزلة.',
               },
               task: {
                 en: 'Where does Reema feel uncomfortable? What pressures does Caylin face? How are both girls isolated in different ways?',
+                ar: 'أين تشعر ريما بعدم الراحة؟ ما الضغوط التي تواجه كيلين؟ وكيف تُعاني الفتاتان من العزلة بطريقتين مختلفتين؟',
               },
               successCriteria: {
                 en: 'Can explain one way Caylin and Reema both experience loneliness using one quotation from each character.',
+                ar: 'يستطيع الطالب أن يشرح وجهاً واحداً تتشارك فيه كيلين وريما تجربة الوحدة، مستعيناً باقتباس واحد من كلّ شخصية.',
               },
             },
             {
@@ -558,12 +693,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.1', '7R.5', '7SL.2', '7SL.3'],
               whatStudentsDo: {
                 en: 'Groups compare quotations from Chapters 6–9; create comparison notes on loneliness and belonging.',
+                ar: 'تُقارن المجموعات بين الاقتباسات من الفصول 6–9، وتُجهِّز ملاحظات مقارنة حول الوحدة والانتماء.',
               },
               task: {
                 en: 'Stems: "Both girls experience…" / "This suggests…" / "A difference between them is…"',
+                ar: 'بدايات الجمل: "كلتا الفتاتين تعيش…" / "هذا يُلمِح إلى…" / "ومن أوجه الاختلاف بينهما أنّ…"',
               },
               successCriteria: {
                 en: 'Can verbally compare Caylin and Reema using "Both girls…" and at least one quotation.',
+                ar: 'يستطيع الطالب أن يُقارن كيلين وريما شفهياً بصيغة "كلتا الفتاتين…" مدعومةً باقتباسٍ واحد على الأقل.',
               },
             },
             {
@@ -571,28 +709,47 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.3', '7W.4', '7W.9'],
               whatStudentsDo: {
                 en: 'Teacher models a writer-focused WHAT/HOW/WHY paragraph exploring how Williamson presents unfair judgement through character language and reactions. Students identify comparison language and embedded evidence.',
+                ar: 'يكتب المعلّم نموذجاً لفقرة "ماذا/كيف/لماذا" مُركِّزة على الكاتبة، تستكشف كيف تُقدّم ويليامسون الحكم الجائر من خلال لغة الشخصيات وردود فعلها. يُحدّد الطلاب لغة المقارنة والأدلّة المدمجة.',
               },
-              task: { en: 'Model question: How are Caylin and Reema shown to feel lonely?' },
-              successCriteria: { en: 'Understands how to compare two characters using evidence.' },
+              task: {
+                en: 'Model question: How are Caylin and Reema shown to feel lonely?',
+                ar: 'السؤال النموذجي: كيف تُصوَّر كيلين وريما وهما تشعران بالوحدة؟',
+              },
+              successCriteria: {
+                en: 'Understands how to compare two characters using evidence.',
+                ar: 'يفهم الطالب كيف يُقارن بين شخصيّتين بالاستناد إلى الأدلّة.',
+              },
             },
             {
               focus: 'application',
               skillCodes: ['7W.1', '7W.2', '7W.4', '7W.9'],
               whatStudentsDo: {
                 en: 'Partially-scaffolded comparative paragraph with sentence starters and quotation bank.',
+                ar: 'فقرة مقارنة بدعمٍ جزئي تتضمّن بدايات جمل وبنك اقتباسات.',
               },
-              task: { en: 'Guided comparative paragraph task.' },
-              successCriteria: { en: 'Can compare both girls using quotations and explanation.' },
+              task: {
+                en: 'Guided comparative paragraph task.',
+                ar: 'مهمّة كتابة فقرة مقارنة موجَّهة.',
+              },
+              successCriteria: {
+                en: 'Can compare both girls using quotations and explanation.',
+                ar: 'يستطيع الطالب أن يُقارن الفتاتين مستعيناً بالاقتباسات والشرح.',
+              },
             },
             {
               focus: 'independent-outcome',
               skillCodes: ['7R.3', '7R.5', '7W.1', '7W.4', '7W.9'],
               whatStudentsDo: {
                 en: 'Vocabulary retrieval. Students independently write one comparative analytical paragraph (Support level: MEDIUM).',
+                ar: 'استرجاع المفردات، ثم يكتب الطلاب فقرة تحليلية مقارنة واحدة بشكلٍ مستقل (مستوى الدعم: متوسّط).',
               },
-              task: { en: 'How are Caylin and Reema presented as lonely in Chapters 6–9?' },
+              task: {
+                en: 'How are Caylin and Reema presented as lonely in Chapters 6–9?',
+                ar: 'كيف تُقدَّم كيلين وريما شخصيّتين تعيشان الوحدة في الفصول 6–9؟',
+              },
               successCriteria: {
                 en: 'Uses quotations from both characters and explains ideas clearly.',
+                ar: 'يُوظّف اقتباسات من كلتا الشخصيّتين، ويشرح أفكاره بوضوح.',
               },
             },
           ],
@@ -601,25 +758,31 @@ const Y7_T1: Year['terms'][number] = {
           number: 9,
           pages: 'Chapters 12–13 + read Chapters 14–15 for homework',
           keyVocabulary: [
-            { en: 'empathy' },
-            { en: 'similarity' },
-            { en: 'relationship' },
-            { en: 'trust' },
-            { en: 'understanding' },
+            { en: 'empathy', ar: 'التعاطف' },
+            { en: 'similarity', ar: 'التشابه' },
+            { en: 'relationship', ar: 'العلاقة' },
+            { en: 'trust', ar: 'الثقة' },
+            { en: 'understanding', ar: 'الفهم' },
           ],
-          homework: { en: 'Read Chapters 14–15.' },
+          homework: {
+            en: 'Read Chapters 14–15.',
+            ar: 'اقرأ الفصلين 14–15.',
+          },
           lessons: [
             {
               focus: 'explicit-reading',
               skillCodes: ['7R.2', '7R.4'],
               whatStudentsDo: {
                 en: 'Paired reading + retrieval stops. Students alternate reading aloud; teacher pauses for retrieval and vocabulary; circulates and probes understanding.',
+                ar: 'قراءة ثنائية مع محطّات استرجاع. يتبادل الطلاب القراءة بصوتٍ مرتفع، ويتوقّف المعلّم بين الحين والآخر للاسترجاع والمفردات، ويتجوّل في الصفّ ليتفقّد الفهم بأسئلة استقصائية.',
               },
               task: {
                 en: 'Who is judged unfairly? What assumptions do characters make? What evidence suggests misunderstanding?',
+                ar: 'مَن الذي يُحكَم عليه ظلماً؟ ما الافتراضات المُسبَقة التي تتبنّاها الشخصيات؟ وما الأدلّة التي تُلمِح إلى وجود سوء فهم؟',
               },
               successCriteria: {
                 en: 'Can identify one example of unfair judgement and explain why it is unfair.',
+                ar: 'يستطيع الطالب أن يُحدِّد مثالاً واحداً على حكمٍ جائر، وأن يُبيِّن سبب جوره.',
               },
             },
             {
@@ -627,12 +790,15 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7R.5', '7SL.1', '7SL.2', '7SL.3'],
               whatStudentsDo: {
                 en: 'Students analyse quotations linked to judgement and stereotypes; group discussion + whole-class feedback.',
+                ar: 'يُحلّل الطلاب اقتباسات مرتبطة بإصدار الأحكام والصور النمطية ضمن نقاشٍ جماعي، ثم يتشارك الصفّ كاملاً في النقاش.',
               },
               task: {
                 en: 'Stems: "The writer presents…" / "This could suggest…" / "The character assumes…"',
+                ar: 'بدايات الجمل: "تُقدِّم الكاتبة…" / "قد يُلمِح هذا إلى…" / "تفترض الشخصية أنّ…"',
               },
               successCriteria: {
                 en: 'Can identify one example of unfair judgement and explain why.',
+                ar: 'يستطيع الطالب أن يُحدِّد مثالاً واحداً على حكمٍ جائر ويُفسِّر سببه.',
               },
             },
             {
@@ -640,28 +806,47 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.3', '7W.4'],
               whatStudentsDo: {
                 en: 'Teacher models analytical paragraph with writer-focused opening. Students identify how evidence is integrated into explanation.',
+                ar: 'يكتب المعلّم نموذجاً لفقرة تحليلية تبدأ بافتتاحية مُركِّزة على الكاتبة. يُحدِّد الطلاب كيف اندمج الدليل داخل الشرح.',
               },
-              task: { en: 'Model question: How does the writer show unfair judgement?' },
-              successCriteria: { en: 'Understands writer-focused analytical opening.' },
+              task: {
+                en: 'Model question: How does the writer show unfair judgement?',
+                ar: 'السؤال النموذجي: كيف تُصوِّر الكاتبة الحكم الجائر؟',
+              },
+              successCriteria: {
+                en: 'Understands writer-focused analytical opening.',
+                ar: 'يفهم الطالب صياغة الافتتاحية التحليلية المُركِّزة على الكاتب.',
+              },
             },
             {
               focus: 'application',
               skillCodes: ['7W.1', '7W.2'],
               whatStudentsDo: {
                 en: 'Reduced-scaffold analytical paragraph using independently selected quotations.',
+                ar: 'فقرة تحليلية بدعمٍ مُخفَّف، يختار فيها الطالب الاقتباسات بنفسه.',
               },
-              task: { en: 'Guided analytical writing.' },
-              successCriteria: { en: 'Can independently select supporting evidence.' },
+              task: {
+                en: 'Guided analytical writing.',
+                ar: 'كتابة تحليلية موجَّهة.',
+              },
+              successCriteria: {
+                en: 'Can independently select supporting evidence.',
+                ar: 'يستطيع الطالب اختيار الأدلّة الداعمة بشكلٍ مستقل.',
+              },
             },
             {
               focus: 'independent-outcome',
               skillCodes: ['7R.3', '7R.5', '7W.1', '7W.4', '7W.9'],
               whatStudentsDo: {
                 en: 'Vocabulary retrieval. Independent paragraph with low scaffold.',
+                ar: 'استرجاع المفردات، ثم كتابة فقرة مستقلّة بدعمٍ منخفض.',
               },
-              task: { en: 'How does the writer show that characters are judged unfairly?' },
+              task: {
+                en: 'How does the writer show that characters are judged unfairly?',
+                ar: 'كيف تُظهر الكاتبة أنّ الشخصيات يُحكَم عليها ظلماً؟',
+              },
               successCriteria: {
                 en: 'Can identify one example of unfair judgement and explain why it is unfair.',
+                ar: 'يستطيع الطالب أن يُحدِّد مثالاً واحداً على حكمٍ جائر، وأن يُبيِّن سبب جوره.',
               },
             },
           ],
@@ -670,36 +855,47 @@ const Y7_T1: Year['terms'][number] = {
           number: 10,
           pages: 'Chapters 16–17 + read Chapters 18–19 for homework',
           keyVocabulary: [
-            { en: 'symbolism' },
-            { en: 'metaphor' },
-            { en: 'represent' },
-            { en: 'vulnerability' },
-            { en: 'survival' },
+            { en: 'symbolism', ar: 'الرمزية' },
+            { en: 'metaphor', ar: 'استعارة' },
+            { en: 'represent', ar: 'يُمثِّل' },
+            { en: 'vulnerability', ar: 'الهشاشة' },
+            { en: 'survival', ar: 'البقاء / النجاة' },
           ],
-          homework: { en: 'Read Chapters 18–19.' },
+          homework: {
+            en: 'Read Chapters 18–19.',
+            ar: 'اقرأ الفصلين 18–19.',
+          },
           lessons: [
             {
               focus: 'explicit-reading',
               skillCodes: ['7R.2', '7R.4', '7R.6'],
               whatStudentsDo: {
                 en: 'Choral reading + group discussion. Whole class reads extracts together; pause to discuss meaning and identify similarities between the girls. Teacher facilitates rather than leads.',
+                ar: 'قراءة جماعية مُتزامِنة + نقاش مجموعات. يقرأ الصفّ المقاطع معاً، مع توقّفات للنقاش وتحديد أوجه التشابه بين الفتاتين. يكتفي المعلّم بدور المُيسِّر بدل القيادة.',
               },
               task: {
                 en: 'What do the girls have in common? What moments show understanding developing?',
+                ar: 'ما الذي تتشاركه الفتاتان؟ ما اللحظات التي تُظهر تنامي الفهم بينهما؟',
               },
               successCriteria: {
                 en: 'Can explain one similarity between Caylin and Reema that was not clear earlier in the novel.',
+                ar: 'يستطيع الطالب أن يشرح وجهاً واحداً للتشابه بين كيلين وريما لم يكن واضحاً في وقتٍ سابق من الرواية.',
               },
             },
             {
               focus: 'reading-discussion',
               skillCodes: ['7R.5', '7SL.3'],
-              whatStudentsDo: { en: 'Compare quotations showing emotional similarities.' },
+              whatStudentsDo: {
+                en: 'Compare quotations showing emotional similarities.',
+                ar: 'قارن بين اقتباسات تُظهر أوجه تشابُه عاطفي بين الشخصيّتين.',
+              },
               task: {
                 en: 'Stems: "Both characters…" / "This suggests they…" / "The writer begins to show…"',
+                ar: 'بدايات الجمل: "كلتا الشخصيّتين…" / "هذا يُلمِح إلى أنّهما…" / "تبدأ الكاتبة في إظهار…"',
               },
               successCriteria: {
                 en: 'Can explain one similarity that emerges later in the novel.',
+                ar: 'يستطيع الطالب أن يشرح وجهاً واحداً للتشابه يظهر في مراحل لاحقة من الرواية.',
               },
             },
             {
@@ -707,25 +903,48 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.4'],
               whatStudentsDo: {
                 en: 'Teacher models comparative paragraph with embedded quotations and comparative connectives.',
+                ar: 'يكتب المعلّم نموذجاً لفقرة مقارنة باقتباسات مدمجة وأدوات ربط مقارنة.',
               },
-              task: { en: 'Comparative WHAT/HOW/WHY paragraph.' },
-              successCriteria: { en: 'Can embed quotations from two chapters.' },
+              task: {
+                en: 'Comparative WHAT/HOW/WHY paragraph.',
+                ar: 'فقرة مقارنة وفق صيغة "ماذا/كيف/لماذا".',
+              },
+              successCriteria: {
+                en: 'Can embed quotations from two chapters.',
+                ar: 'يستطيع الطالب دمج اقتباسات من فصلَين داخل الفقرة.',
+              },
             },
             {
               focus: 'application',
               skillCodes: ['7W.1', '7W.2'],
-              whatStudentsDo: { en: 'Guided comparative writing with minimal scaffold.' },
-              task: { en: 'Comparative paragraph completion.' },
+              whatStudentsDo: {
+                en: 'Guided comparative writing with minimal scaffold.',
+                ar: 'كتابة مقارنة موجَّهة بدعمٍ مُخفَّف.',
+              },
+              task: {
+                en: 'Comparative paragraph completion.',
+                ar: 'إكمال فقرة مقارنة.',
+              },
               successCriteria: {
                 en: 'Can write one comparative paragraph using evidence from both characters and a comparative connective.',
+                ar: 'يستطيع الطالب كتابة فقرة مقارنة واحدة مستعيناً بأدلّة من كلتا الشخصيّتين وبأداة ربط مقارنة.',
               },
             },
             {
               focus: 'independent-outcome',
               skillCodes: ['7R.3', '7R.5', '7W.1', '7W.4', '7W.9'],
-              whatStudentsDo: { en: 'Independent writing. Support: LOW–MEDIUM.' },
-              task: { en: 'How does the writer begin to connect Caylin and Reema?' },
-              successCriteria: { en: 'Sustained comparison using evidence.' },
+              whatStudentsDo: {
+                en: 'Independent writing. Support: LOW–MEDIUM.',
+                ar: 'كتابة مستقلّة. مستوى الدعم: منخفض إلى متوسّط.',
+              },
+              task: {
+                en: 'How does the writer begin to connect Caylin and Reema?',
+                ar: 'كيف تبدأ الكاتبة في الربط بين كيلين وريما؟',
+              },
+              successCriteria: {
+                en: 'Sustained comparison using evidence.',
+                ar: 'مقارنة مستمرّة ومُتماسِكة قائمة على الأدلّة.',
+              },
             },
           ],
         },
@@ -733,34 +952,47 @@ const Y7_T1: Year['terms'][number] = {
           number: 11,
           pages: 'Chapters 20–22 + read Chapters 23–29 for homework',
           keyVocabulary: [
-            { en: 'acceptance' },
-            { en: 'friendship' },
-            { en: 'loyalty' },
-            { en: 'compassion' },
-            { en: 'support' },
+            { en: 'acceptance', ar: 'القبول' },
+            { en: 'friendship', ar: 'الصداقة' },
+            { en: 'loyalty', ar: 'الولاء' },
+            { en: 'compassion', ar: 'الرحمة / الشفقة' },
+            { en: 'support', ar: 'الدعم' },
           ],
-          homework: { en: 'Read Chapters 23–29.' },
+          homework: {
+            en: 'Read Chapters 23–29.',
+            ar: 'اقرأ الفصول 23–29.',
+          },
           lessons: [
             {
               focus: 'explicit-reading',
               skillCodes: ['7R.1', '7R.5'],
               whatStudentsDo: {
                 en: 'Reciprocal reading. Students take roles (summariser, predictor, clarifier, questioner). Teacher models roles briefly before students lead discussion.',
+                ar: 'قراءة تبادليّة. يتقاسم الطلاب الأدوار (المُلخِّص، المُتوقِّع، المُوضِّح، المُتسائِل). يُقدِّم المعلّم نموذجاً سريعاً لكلّ دور، ثم يقود الطلاب النقاش بأنفسهم.',
               },
               task: {
                 en: 'What does the fox represent? Why might the writer use animals symbolically?',
+                ar: 'ماذا يُمثِّل الثعلب؟ ولماذا قد توظِّف الكاتبة الحيوانات بوصفها رموزاً؟',
               },
-              successCriteria: { en: 'Can explain what the fox symbolises using one quotation.' },
+              successCriteria: {
+                en: 'Can explain what the fox symbolises using one quotation.',
+                ar: 'يستطيع الطالب أن يشرح ما يرمز إليه الثعلب مستعيناً باقتباسٍ واحد.',
+              },
             },
             {
               focus: 'reading-discussion',
               skillCodes: ['7R.5', '7SL.1', '7SL.2', '7SL.3'],
               whatStudentsDo: {
                 en: 'Discuss symbolism quotations in groups; feed back interpretations.',
+                ar: 'تُناقش المجموعات الاقتباسات الرمزيّة، ثم يُشارك كلّ فريق تأويلاته مع الصفّ.',
               },
-              task: { en: 'Stems: "The fox could represent…" / "This symbol suggests…"' },
+              task: {
+                en: 'Stems: "The fox could represent…" / "This symbol suggests…"',
+                ar: 'بدايات الجمل: "قد يُمثِّل الثعلب…" / "يُلمِح هذا الرمز إلى…"',
+              },
               successCriteria: {
                 en: 'Can use evidence to explain how the fox represents vulnerability or survival.',
+                ar: 'يستطيع الطالب أن يستعمل الدليل ليشرح كيف يُمثِّل الثعلب الهشاشة أو النجاة.',
               },
             },
             {
@@ -768,23 +1000,48 @@ const Y7_T1: Year['terms'][number] = {
               skillCodes: ['7W.1', '7W.4'],
               whatStudentsDo: {
                 en: 'Teacher models paragraph analysing symbolism using embedded quotations.',
+                ar: 'يكتب المعلّم نموذجاً لفقرة تُحلِّل الرمزية باستخدام اقتباسات مدمجة.',
               },
-              task: { en: 'Model question: What does the fox symbolise?' },
-              successCriteria: { en: 'Understands basic symbolism analysis.' },
+              task: {
+                en: 'Model question: What does the fox symbolise?',
+                ar: 'السؤال النموذجي: إلامَ يرمز الثعلب؟',
+              },
+              successCriteria: {
+                en: 'Understands basic symbolism analysis.',
+                ar: 'يفهم الطالب الأساسيّات في تحليل الرمزية.',
+              },
             },
             {
               focus: 'application',
               skillCodes: ['7W.2', '7W.4'],
-              whatStudentsDo: { en: 'Guided symbolism paragraph with reduced scaffold.' },
-              task: { en: 'Guided analytical response.' },
-              successCriteria: { en: 'Can explain symbolic meaning clearly.' },
+              whatStudentsDo: {
+                en: 'Guided symbolism paragraph with reduced scaffold.',
+                ar: 'فقرة موجَّهة لتحليل الرمزية بدعمٍ مُخفَّف.',
+              },
+              task: {
+                en: 'Guided analytical response.',
+                ar: 'استجابة تحليلية موجَّهة.',
+              },
+              successCriteria: {
+                en: 'Can explain symbolic meaning clearly.',
+                ar: 'يستطيع الطالب أن يشرح المعنى الرمزي بوضوح.',
+              },
             },
             {
               focus: 'independent-outcome',
               skillCodes: ['7R.3', '7R.5', '7W.1', '7W.4', '7W.9'],
-              whatStudentsDo: { en: 'Vocabulary retrieval. Independent symbolism analysis.' },
-              task: { en: 'How does the writer use the fox symbolically?' },
-              successCriteria: { en: 'Explains symbolism using evidence.' },
+              whatStudentsDo: {
+                en: 'Vocabulary retrieval. Independent symbolism analysis.',
+                ar: 'استرجاع المفردات، ثم تحليل مستقلّ للرمزية.',
+              },
+              task: {
+                en: 'How does the writer use the fox symbolically?',
+                ar: 'كيف توظِّف الكاتبة الثعلب توظيفاً رمزيّاً؟',
+              },
+              successCriteria: {
+                en: 'Explains symbolism using evidence.',
+                ar: 'يشرح الطالب الرمزية بالاستناد إلى الأدلّة.',
+              },
             },
           ],
         },

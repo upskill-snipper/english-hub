@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { HowToJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -390,7 +391,30 @@ const ALL_BOARDS = [AQA_TIMINGS, EDEXCEL_TIMINGS, CAIE_TIMINGS, OCR_TIMINGS]
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function TimeManagementPage() {
+export default async function TimeManagementPage() {
+  const [
+    heroEyebrow,
+    heroTitle,
+    heroSubtitle,
+    golden,
+    divide,
+    runOut,
+    plan,
+    practise,
+    bcExamTech,
+    bcThis,
+  ] = await tMany([
+    'resources.exam_tech.tm.eyebrow',
+    'resources.exam_tech.tm.title',
+    'resources.exam_tech.tm.subtitle',
+    'resources.exam_tech.tm.golden',
+    'resources.exam_tech.tm.divide',
+    'resources.exam_tech.tm.run_out',
+    'resources.exam_tech.tm.plan',
+    'resources.exam_tech.tm.practise',
+    'resources.exam_tech.bc.exam_tech',
+    'resources.exam_tech.tm.bc_this',
+  ])
   return (
     <>
       <HowToJsonLd
@@ -437,15 +461,12 @@ export default function TimeManagementPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Exam Technique
+            {heroEyebrow}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Time Management
+            {heroTitle}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Paper-by-paper timing breakdowns for every major exam board. Know exactly how long to
-            spend on each question before you walk into the exam hall.
-          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{heroSubtitle}</p>
         </div>
       </section>
 
@@ -466,18 +487,18 @@ export default function TimeManagementPage() {
           <li>/</li>
           <li>
             <Link href="/resources/exam-technique" className="hover:text-primary transition-colors">
-              Exam Technique
+              {bcExamTech}
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-primary">Time Management</li>
+          <li className="font-medium text-primary">{bcThis}</li>
         </ol>
       </nav>
 
       {/* Golden rule */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-primary/20 bg-primary/10 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-foreground">The golden rule of exam timing</h2>
+          <h2 className="text-xl font-bold text-foreground">{golden}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             <strong>One mark = approximately one minute.</strong> This simple rule works across
             almost every English exam. A 30-mark question deserves about 30 minutes; an 8-mark
@@ -573,7 +594,7 @@ export default function TimeManagementPage() {
       {/* How to divide time */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">How to divide time per question</h2>
+          <h2 className="text-2xl font-bold text-foreground">{divide}</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
               <h3 className="font-bold text-foreground">Step 1: Calculate your rate</h3>
@@ -615,7 +636,7 @@ export default function TimeManagementPage() {
 
       {/* What to do if you run out of time */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-foreground">What to do if you run out of time</h2>
+        <h2 className="text-2xl font-bold text-foreground">{runOut}</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           It happens. Here is how to salvage the situation and still pick up marks.
         </p>
@@ -672,7 +693,7 @@ export default function TimeManagementPage() {
       {/* Planning time allocation */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">Planning your time allocation</h2>
+          <h2 className="text-2xl font-bold text-foreground">{plan}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Use this framework to create a personalised timing plan for any English exam paper.
           </p>
@@ -727,7 +748,7 @@ export default function TimeManagementPage() {
       {/* Revision link */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
-          <h2 className="text-lg font-bold text-foreground">Ready to practise?</h2>
+          <h2 className="text-lg font-bold text-foreground">{practise}</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Put these timing strategies into practice with timed exam questions and interactive
             exercises.

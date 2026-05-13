@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { t } from '@/lib/i18n/t'
 
 /* ─── Types (mirror sibling data files) ────────────────────────── */
 
@@ -145,7 +146,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { text, slug } = await params
   if (!isTextKey(text)) {
-    return { title: 'Model essay — The English Hub' }
+    return { title: await t('analysis.deep.model_essay.fallback_title') }
   }
   const essays = await loadEssaysFor(text)
   const essay = essays.find((e) => e.slug === slug)
@@ -194,6 +195,19 @@ export default async function ModelEssayPage({
 
   const wordCount = formatWordCount(essay.wordCount)
 
+  // Chrome translations. Essay paragraphs, marker annotations, the essay
+  // title and textLabel stay in source language (literary/marker content
+  // per task scope).
+  const tBackToEssays = await t('analysis.deep.model_essay.back_to_essays')
+  const tGradePrefix = await t('analysis.deep.model_essay.grade_prefix')
+  const tWordsSuffix = await t('analysis.deep.model_essay.words_suffix')
+  const tKeyTechniques = await t('analysis.deep.model_essay.key_techniques')
+  const tFooterH2 = await t('analysis.deep.model_essay.footer_h2')
+  const tFooterBody = await t('analysis.deep.model_essay.footer_body')
+  const tRevisionHub = await t('analysis.deep.model_essay.cta_revision_hub')
+  const tFairDealingPre = await t('analysis.deep.model_essay.fair_dealing_prefix')
+  const tFairDealingPost = await t('analysis.deep.model_essay.fair_dealing_suffix')
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -228,7 +242,7 @@ export default async function ModelEssayPage({
               render={<Link href="/revision/model-essays" />}
             >
               <ArrowLeft className="size-3.5" />
-              Back to model essays
+              {tBackToEssays}
             </Button>
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -236,8 +250,14 @@ export default async function ModelEssayPage({
                 <Sparkles className="mr-1 size-3" />
                 {textLabel}
               </Badge>
-              <Badge variant="default">Grade {essay.targetGrade}</Badge>
-              {wordCount && <Badge variant="outline">{wordCount} words</Badge>}
+              <Badge variant="default">
+                {tGradePrefix} {essay.targetGrade}
+              </Badge>
+              {wordCount && (
+                <Badge variant="outline">
+                  {wordCount} {tWordsSuffix}
+                </Badge>
+              )}
             </div>
 
             <h1 className="text-display-sm font-heading font-serif text-foreground sm:text-display">
@@ -247,15 +267,15 @@ export default async function ModelEssayPage({
             {essay.keyTechniques?.length > 0 && (
               <div className="mt-6">
                 <p className="mb-2 text-caption uppercase tracking-wider text-muted-foreground">
-                  Key techniques
+                  {tKeyTechniques}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
-                  {essay.keyTechniques.map((t) => (
+                  {essay.keyTechniques.map((technique) => (
                     <span
-                      key={t}
+                      key={technique}
                       className="inline-flex items-center rounded-full border border-teal-500/30 bg-teal-500/5 px-2.5 py-1 text-xs font-medium text-teal-700 dark:text-teal-300"
                     >
-                      {t}
+                      {technique}
                     </span>
                   ))}
                 </div>
@@ -280,32 +300,23 @@ export default async function ModelEssayPage({
             id="essay-footer-heading"
             className="text-heading-sm font-heading font-serif text-foreground"
           >
-            Use this essay well
+            {tFooterH2}
           </h2>
-          <p className="text-body-sm text-muted-foreground">
-            Don’t copy the words — copy the moves. Notice how each paragraph opens with a committed
-            argument, embeds a short quotation inside a sentence about method, and only then reaches
-            for context. Try writing your own answer to a comparable question and self-mark against
-            the annotations.
-          </p>
+          <p className="text-body-sm text-muted-foreground">{tFooterBody}</p>
 
           <div className="flex flex-wrap gap-3 pt-2">
             <Button variant="default" size="sm" render={<Link href="/revision/model-essays" />}>
               <ArrowLeft className="size-3.5" />
-              Back to model essays
+              {tBackToEssays}
             </Button>
             <Button variant="outline" size="sm" render={<Link href="/revision" />}>
               <BookOpen className="size-3.5" />
-              Revision hub
+              {tRevisionHub}
             </Button>
           </div>
 
           <p className="border-t border-border/60 pt-4 text-caption text-muted-foreground">
-            Fair-dealing notice: this essay is original revision material written by The English
-            Hub. Any quotations from {textLabel} are reproduced as short fair-dealing extracts for
-            the purpose of criticism and review under section 30 of the Copyright, Designs and
-            Patents Act 1988. All rights in the underlying primary text remain with the original
-            rightsholders.
+            {tFairDealingPre} {textLabel} {tFairDealingPost}
           </p>
         </section>
       </article>
@@ -315,7 +326,16 @@ export default async function ModelEssayPage({
 
 /* ─── Sub-components ───────────────────────────────────────────── */
 
-function ParagraphRow({ index, paragraph }: { index: number; paragraph: ModelEssayParagraph }) {
+async function ParagraphRow({
+  index,
+  paragraph,
+}: {
+  index: number
+  paragraph: ModelEssayParagraph
+}) {
+  const tParagraph = await t('analysis.deep.model_essay.paragraph_label')
+  const tAnnotationFor = await t('analysis.deep.model_essay.annotation_for')
+  const tMarkersNotes = await t('analysis.deep.model_essay.markers_notes')
   return (
     <div className="grid gap-4 rounded-2xl border border-border/60 bg-card p-5 sm:p-6 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] md:gap-6">
       {/* Essay paragraph (serif body) */}
@@ -325,7 +345,7 @@ function ParagraphRow({ index, paragraph }: { index: number; paragraph: ModelEss
             {index + 1}
           </span>
           <span className="text-caption uppercase tracking-wider text-muted-foreground">
-            Paragraph {index + 1}
+            {tParagraph} {index + 1}
           </span>
         </div>
         <ParagraphBody content={paragraph.content} />
@@ -333,12 +353,12 @@ function ParagraphRow({ index, paragraph }: { index: number; paragraph: ModelEss
 
       {/* Annotation column (mono) */}
       <aside
-        aria-label={`Annotation for paragraph ${index + 1}`}
+        aria-label={`${tAnnotationFor} ${index + 1}`}
         className="rounded-xl border border-dashed border-border/60 bg-background/60 p-4"
       >
         <div className="mb-2 flex items-center gap-1.5 text-caption uppercase tracking-wider text-muted-foreground">
           <Quote className="size-3.5" />
-          Marker’s notes
+          {tMarkersNotes}
         </div>
         <p className="font-mono text-xs leading-relaxed text-muted-foreground">
           {paragraph.annotation}

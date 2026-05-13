@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { useBoard } from '@/hooks/useBoard'
 import type { ExamBoard } from '@/lib/board/board-config'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Types ────────────────────────────────────────────────── */
 
@@ -30,41 +31,47 @@ interface MarkSchemeGroup {
 
 /* ─── Static mock marking guide links ─────────────────────── */
 
-const MARK_SCHEMES: MarkSchemeGroup[] = [
+type MarkSchemeGroupDef = {
+  board: string
+  boardIds: ExamBoard[]
+  items: { labelKey: string; href: string }[]
+}
+
+const MARK_SCHEME_DEFS: MarkSchemeGroupDef[] = [
   {
     board: 'AQA',
     boardIds: ['aqa'],
     items: [
-      { label: 'English Literature Paper 1', href: '#' },
-      { label: 'English Literature Paper 2', href: '#' },
-      { label: 'English Language Paper 1', href: '#' },
-      { label: 'English Language Paper 2', href: '#' },
+      { labelKey: 'marking.scheme.lit_p1', href: '#' },
+      { labelKey: 'marking.scheme.lit_p2', href: '#' },
+      { labelKey: 'marking.scheme.lang_p1', href: '#' },
+      { labelKey: 'marking.scheme.lang_p2', href: '#' },
     ],
   },
   {
     board: 'Edexcel',
     boardIds: ['edexcel', 'edexcel-igcse', 'edexcel-igcse-lang', 'ial-edexcel'],
     items: [
-      { label: 'English Literature Paper 1', href: '#' },
-      { label: 'English Literature Paper 2', href: '#' },
-      { label: 'English Language Paper 1', href: '#' },
-      { label: 'English Language Paper 2', href: '#' },
+      { labelKey: 'marking.scheme.lit_p1', href: '#' },
+      { labelKey: 'marking.scheme.lit_p2', href: '#' },
+      { labelKey: 'marking.scheme.lang_p1', href: '#' },
+      { labelKey: 'marking.scheme.lang_p2', href: '#' },
     ],
   },
   {
     board: 'OCR',
     boardIds: ['ocr'],
     items: [
-      { label: 'English Literature Paper 1', href: '#' },
-      { label: 'English Literature Paper 2', href: '#' },
+      { labelKey: 'marking.scheme.lit_p1', href: '#' },
+      { labelKey: 'marking.scheme.lit_p2', href: '#' },
     ],
   },
   {
     board: 'Eduqas',
     boardIds: ['eduqas'],
     items: [
-      { label: 'English Literature Paper 1', href: '#' },
-      { label: 'English Literature Paper 2', href: '#' },
+      { labelKey: 'marking.scheme.lit_p1', href: '#' },
+      { labelKey: 'marking.scheme.lit_p2', href: '#' },
     ],
   },
 ]
@@ -72,6 +79,7 @@ const MARK_SCHEMES: MarkSchemeGroup[] = [
 /* ─── Page ─────────────────────────────────────────────────── */
 
 export default function MarkingHubPage() {
+  const t = useT()
   const [history, setHistory] = useState<MarkingHistoryEntry[]>([])
   const { board: userBoard, isHydrated: isBoardHydrated } = useBoard()
 
@@ -91,9 +99,11 @@ export default function MarkingHubPage() {
   // While the board cookie is still rehydrating, fall back to all guides
   // (matches the historical behaviour and avoids a content flash).
   const visibleMarkSchemes = useMemo(() => {
-    if (!isBoardHydrated || !userBoard) return MARK_SCHEMES
-    return MARK_SCHEMES.filter((g) => g.boardIds.includes(userBoard))
+    if (!isBoardHydrated || !userBoard) return MARK_SCHEME_DEFS
+    return MARK_SCHEME_DEFS.filter((g) => g.boardIds.includes(userBoard))
   }, [userBoard, isBoardHydrated])
+
+  const tWords = t('marking.history.words')
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
@@ -101,22 +111,19 @@ export default function MarkingHubPage() {
       <header className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold tracking-wider text-primary uppercase">
-            The English Hub
+            {t('brand.name')}
           </p>
           <h1 className="mt-1 font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-            AI Essay Marking
+            {t('marking.h1')}
           </h1>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Paste your GCSE English essay and get a predicted grade, full AO breakdown, and
-            marker-style annotations in seconds.
-          </p>
+          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{t('marking.lead')}</p>
         </div>
         <div className="flex gap-2">
           <Button size="lg" render={<Link href="/marking/submit" />}>
-            Mark a new essay
+            {t('marking.cta.new')}
           </Button>
           <Button size="lg" variant="outline" render={<Link href="/marking/history" />}>
-            History
+            {t('marking.cta.history')}
           </Button>
         </div>
       </header>
@@ -124,13 +131,15 @@ export default function MarkingHubPage() {
       {/* ── Recent essays ─────────────────────────────────── */}
       <section className="mb-10">
         <div className="mb-4 flex items-baseline justify-between">
-          <h2 className="font-heading text-xl font-bold text-foreground">Recent essays</h2>
+          <h2 className="font-heading text-xl font-bold text-foreground">
+            {t('marking.recent.h2')}
+          </h2>
           {history.length > 3 && (
             <Link
               href="/marking/history"
               className="text-sm font-medium text-primary hover:underline"
             >
-              View all
+              {t('action.view_all')}
             </Link>
           )}
         </div>
@@ -138,10 +147,10 @@ export default function MarkingHubPage() {
         {recent.length === 0 ? (
           <Card>
             <CardContent className="flex flex-col items-center gap-3 py-10 text-center">
-              <p className="text-sm text-muted-foreground">
-                You haven&apos;t marked any essays yet.
-              </p>
-              <Button render={<Link href="/marking/submit" />}>Mark your first essay</Button>
+              <p className="text-sm text-muted-foreground">{t('marking.recent.empty')}</p>
+              <Button render={<Link href="/marking/submit" />}>
+                {t('marking.recent.empty_cta')}
+              </Button>
             </CardContent>
           </Card>
         ) : (
@@ -162,7 +171,7 @@ export default function MarkingHubPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-xs text-muted-foreground">
-                      {e.wordCount} words · {new Date(e.submittedAt).toLocaleDateString()}
+                      {e.wordCount} {tWords} · {new Date(e.submittedAt).toLocaleDateString()}
                     </p>
                   </CardContent>
                 </Card>
@@ -176,26 +185,22 @@ export default function MarkingHubPage() {
       <section className="mb-10 grid gap-4 sm:grid-cols-2">
         <Card className="border-primary/30 bg-primary/5">
           <CardHeader>
-            <CardTitle>Start a new essay</CardTitle>
-            <CardDescription>
-              Submit a GCSE English response and get your predicted grade plus AO breakdown.
-            </CardDescription>
+            <CardTitle>{t('marking.start_new.title')}</CardTitle>
+            <CardDescription>{t('marking.start_new.desc')}</CardDescription>
           </CardHeader>
           <CardContent>
-            <Button render={<Link href="/marking/submit" />}>New submission</Button>
+            <Button render={<Link href="/marking/submit" />}>{t('marking.start_new.cta')}</Button>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Sample marked essays</CardTitle>
-            <CardDescription>
-              See how markers justify Grade 5, 7 and 9 responses with full annotations.
-            </CardDescription>
+            <CardTitle>{t('marking.samples.title')}</CardTitle>
+            <CardDescription>{t('marking.samples.desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <Button variant="outline" render={<Link href="/marking/sample" />}>
-              View samples
+              {t('marking.samples.cta')}
             </Button>
           </CardContent>
         </Card>
@@ -204,12 +209,12 @@ export default function MarkingHubPage() {
       {/* ── Marking guide library ──────────────────────────── */}
       <section>
         <h2 className="mb-4 font-heading text-xl font-bold text-foreground">
-          Marking guide library
+          {t('marking.library.h2')}
         </h2>
         {visibleMarkSchemes.length === 0 ? (
           <Card>
             <CardContent className="py-8 text-center text-sm text-muted-foreground">
-              Marking guides for your exam board are coming soon.
+              {t('marking.library.coming_soon')}
             </CardContent>
           </Card>
         ) : (
@@ -230,12 +235,12 @@ export default function MarkingHubPage() {
                 <CardContent>
                   <ul className="space-y-1.5">
                     {group.items.map((item) => (
-                      <li key={item.label}>
+                      <li key={item.labelKey + group.board}>
                         <Link
                           href={item.href}
                           className="text-xs text-muted-foreground hover:text-primary"
                         >
-                          {item.label}
+                          {t(item.labelKey)}
                         </Link>
                       </li>
                     ))}

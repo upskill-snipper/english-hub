@@ -7,6 +7,7 @@ import { ArrowRight, BookOpen, Sparkles, Feather, Globe, GraduationCap } from 'l
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { tMany } from '@/lib/i18n/t'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -38,11 +39,21 @@ export const metadata: Metadata = {
   },
 }
 
-const courses = [
+type CourseDef = {
+  slug: string
+  nameKey: string
+  descKey: string
+  icon: typeof Feather
+  iconBg: string
+  iconText: string
+  href: string
+}
+
+const COURSE_DEFS: CourseDef[] = [
   {
     slug: 'literature',
-    name: 'IGCSE Literature',
-    description: 'Poetry, prose, drama & Shakespeare',
+    nameKey: 'igcse.course.literature.name',
+    descKey: 'igcse.course.literature.desc',
     icon: Feather,
     iconBg: 'bg-primary/10',
     iconText: 'text-primary',
@@ -50,8 +61,8 @@ const courses = [
   },
   {
     slug: 'language-a',
-    name: 'IGCSE Language A',
-    description: 'Reading, writing & comprehension (First Language English)',
+    nameKey: 'igcse.course.language_a.name',
+    descKey: 'igcse.course.language_a.desc',
     icon: Globe,
     iconBg: 'bg-primary/10',
     iconText: 'text-primary',
@@ -59,8 +70,8 @@ const courses = [
   },
   {
     slug: 'language-b',
-    name: 'IGCSE Language B',
-    description: 'Reading & writing for all English learners (9-1 grading)',
+    nameKey: 'igcse.course.language_b.name',
+    descKey: 'igcse.course.language_b.desc',
     icon: GraduationCap,
     iconBg: 'bg-primary/10',
     iconText: 'text-primary',
@@ -89,12 +100,40 @@ export default async function IgcseHubPage() {
     }
   }
   // No board set — show the course selector hub below.
+  const courseKeys = COURSE_DEFS.flatMap((c) => [c.nameKey, c.descKey])
+  const t = await tMany([
+    'igcse.crumb.home',
+    'igcse.crumb.self',
+    'igcse.badge.international',
+    'igcse.badge.lit_lang',
+    'igcse.h1',
+    'igcse.lead',
+    'igcse.choose_course_h2',
+    'igcse.start_studying_cta',
+    'igcse.footnote',
+    ...courseKeys,
+  ])
+  const tCrumbHome = t[0]!
+  const tCrumbSelf = t[1]!
+  const tBadgeIntl = t[2]!
+  const tBadgeLitLang = t[3]!
+  const tH1 = t[4]!
+  const tLead = t[5]!
+  const tChooseH2 = t[6]!
+  const tStartCta = t[7]!
+  const tFootnote = t[8]!
+  const courses = COURSE_DEFS.map((c, idx) => ({
+    ...c,
+    name: t[9 + idx * 2]!,
+    description: t[10 + idx * 2]!,
+  }))
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: tCrumbHome, url: 'https://theenglishhub.app' },
+          { name: tCrumbSelf, url: 'https://theenglishhub.app/igcse' },
         ]}
       />
       {/* ── Hero ────────────────────────────────────────────────────── */}
@@ -106,19 +145,12 @@ export default async function IgcseHubPage() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              International GCSE
+              {tBadgeIntl}
             </Badge>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              Literature & Language
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">{tBadgeLitLang}</Badge>
           </div>
-          <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            IGCSE English revision — Pearson Edexcel and Cambridge specs covered
-          </h1>
-          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Choose your course to access full study guides, text analysis, exam technique and past
-            paper resources.
-          </p>
+          <h1 className="text-display-sm font-heading text-foreground sm:text-display">{tH1}</h1>
+          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{tLead}</p>
         </div>
       </section>
 
@@ -126,7 +158,7 @@ export default async function IgcseHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Choose your course</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">{tChooseH2}</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -159,7 +191,7 @@ export default async function IgcseHubPage() {
                       className="w-full"
                       render={<Link href={course.href} />}
                     >
-                      Start studying
+                      {tStartCta}
                       <ArrowRight className="size-3.5" />
                     </Button>
                   </div>
@@ -171,9 +203,7 @@ export default async function IgcseHubPage() {
       </section>
 
       {/* ── Footnote ───────────────────────────────────────────────── */}
-      <p className="text-center text-body-xs text-muted-foreground/60">
-        Content aligned with Pearson Edexcel and Cambridge Assessment syllabuses
-      </p>
+      <p className="text-center text-body-xs text-muted-foreground/60">{tFootnote}</p>
     </div>
   )
 }

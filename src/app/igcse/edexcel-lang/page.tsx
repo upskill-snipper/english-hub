@@ -21,6 +21,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { getBoardMismatchState } from '@/app/igcse/_lib/guard'
 import BoardMismatchBanner from '@/components/board/BoardMismatchBanner'
+import { t } from '@/lib/i18n/t'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
@@ -140,7 +141,7 @@ export default async function EdexcelIgcseLangHubPage() {
             render={<Link href="/igcse" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to IGCSE
+            {await t('igcse.back_to_igcse')}
           </Button>
         </div>
 
@@ -153,32 +154,35 @@ export default async function EdexcelIgcseLangHubPage() {
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
                 <Sparkles className="mr-1 size-3" />
-                International GCSE English Language
+                {await t('edexcel.lang.hero_badge')}
               </Badge>
             </div>
             <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-              Pearson Edexcel IGCSE Language A
+              {await t('edexcel.lang.hero_title')}
             </h1>
             <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-              The Pearson Edexcel International GCSE in English Language (Specification A) is a
-              two-paper qualification covering{' '}
-              <strong className="text-foreground">non-fiction reading</strong>,{' '}
-              <strong className="text-foreground">transactional writing</strong> and a{' '}
-              <strong className="text-foreground">prescribed anthology</strong> of ten non-fiction
-              texts studied for Paper 1 Section A.
+              {await t('edexcel.lang.hero_lead_pre')}
+              <strong className="text-foreground">
+                {await t('edexcel.lang.hero_lead_nf')}
+              </strong>,{' '}
+              <strong className="text-foreground">{await t('edexcel.lang.hero_lead_trans')}</strong>
+              {await t('edexcel.lang.hero_lead_and')}
+              <strong className="text-foreground">{await t('edexcel.lang.hero_lead_anth')}</strong>
+              {await t('edexcel.lang.hero_lead_post')}
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-                <ScrollText className="size-3.5" />2 papers
+                <ScrollText className="size-3.5" />
+                {await t('igcse.papers.count_2')}
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
                 <Clock className="size-3.5" />
-                3h 15m total
+                {await t('edexcel.lang.duration_3h15')}
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
                 <BookOpen className="size-3.5" />
-                10 anthology texts
+                {await t('edexcel.lang.anth_texts_count')}
               </span>
             </div>
           </div>
@@ -194,10 +198,11 @@ export default async function EdexcelIgcseLangHubPage() {
               <Library className="size-5 text-primary" />
             </div>
             <div className="min-w-0 flex-1">
-              <h3 className="font-heading text-body text-foreground">Studying Literature too?</h3>
+              <h3 className="font-heading text-body text-foreground">
+                {await t('edexcel.lang.studying_lit_title')}
+              </h3>
               <p className="text-body-sm text-muted-foreground">
-                See your Pearson Edexcel IGCSE Literature set texts — full study guides for Macbeth,
-                An Inspector Calls, Of Mice and Men and more.
+                {await t('edexcel.lang.studying_lit_body')}
               </p>
             </div>
             <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
@@ -245,10 +250,10 @@ export default async function EdexcelIgcseLangHubPage() {
             </div>
             <div>
               <h2 className="text-heading-lg font-heading text-foreground">
-                Paper 1: Non-Fiction Texts and Transactional Writing
+                {await t('edexcel.lang.paper1.title')}
               </h2>
               <p className="font-mono text-body-xs text-muted-foreground">
-                1 hour 45 minutes &middot; 60 marks &middot; 60% of total
+                {await t('edexcel.lang.paper1.meta')}
               </p>
             </div>
           </div>
@@ -303,10 +308,10 @@ export default async function EdexcelIgcseLangHubPage() {
             </div>
             <div>
               <h2 className="text-heading-lg font-heading text-foreground">
-                Paper 2: Reading and Writing (Non-Fiction)
+                {await t('edexcel.lang.paper2.title')}
               </h2>
               <p className="font-mono text-body-xs text-muted-foreground">
-                1 hour 30 minutes &middot; 40 marks &middot; 40% of total
+                {await t('edexcel.lang.paper2.meta')}
               </p>
             </div>
           </div>
@@ -339,54 +344,62 @@ export default async function EdexcelIgcseLangHubPage() {
             <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10">
               <GraduationCap className="size-5 text-primary" />
             </div>
-            <h2 className="text-heading-lg font-heading text-foreground">Quick Links</h2>
+            <h2 className="text-heading-lg font-heading text-foreground">
+              {await t('igcse.section.quick_links')}
+            </h2>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: 'Anthology Study',
-                description: 'All 10 non-fiction texts with full analysis',
-                href: '/igcse/edexcel-lang/anthology',
-                icon: BookOpen,
-              },
-              {
-                title: 'AI Essay Marking',
-                description: 'Submit writing for AI feedback',
-                href: '/marking',
-                icon: PenTool,
-              },
-              {
-                title: 'Quiz',
-                description: 'Test yourself with language questions',
-                href: '/revision/quiz',
-                icon: Brain,
-              },
-            ].map((tool) => {
-              const Icon = tool.icon
-              return (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
-                >
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                    <Icon className="size-5 text-primary" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h3 className="font-heading text-body text-foreground">{tool.title}</h3>
-                    <p className="text-body-xs text-muted-foreground">{tool.description}</p>
-                  </div>
-                  <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                </Link>
-              )
-            })}
+            {await Promise.all(
+              (
+                [
+                  {
+                    titleKey: 'edexcel.lang.tool.anthology.title',
+                    descKey: 'edexcel.lang.tool.anthology.desc',
+                    href: '/igcse/edexcel-lang/anthology',
+                    icon: BookOpen,
+                  },
+                  {
+                    titleKey: 'igcse.tool.ai_marking.title',
+                    descKey: 'igcse.tool.ai_marking.desc',
+                    href: '/marking',
+                    icon: PenTool,
+                  },
+                  {
+                    titleKey: 'igcse.tool.quiz.title',
+                    descKey: 'edexcel.lang.tool.quiz.desc',
+                    href: '/revision/quiz',
+                    icon: Brain,
+                  },
+                ] as const
+              ).map(async (tool) => {
+                const Icon = tool.icon
+                const title = await t(tool.titleKey)
+                const description = await t(tool.descKey)
+                return (
+                  <Link
+                    key={tool.href}
+                    href={tool.href}
+                    className="group flex items-center gap-4 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-primary/30 hover:bg-primary/[0.03] hover:shadow-card-hover"
+                  >
+                    <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                      <Icon className="size-5 text-primary" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-heading text-body text-foreground">{title}</h3>
+                      <p className="text-body-xs text-muted-foreground">{description}</p>
+                    </div>
+                    <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                  </Link>
+                )
+              }),
+            )}
           </div>
         </section>
 
         {/* ── Footer ──────────────────────────────────────────────────── */}
         <footer className="pt-4 text-center text-body-xs text-muted-foreground">
-          Aligned with Pearson Edexcel specification 4EA1
+          {await t('edexcel.lang.footer_align')}
         </footer>
       </div>
     </>

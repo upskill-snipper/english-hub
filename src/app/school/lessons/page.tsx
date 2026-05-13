@@ -15,6 +15,8 @@ import {
   recommendLessonsMetadata,
   type LessonPlanMetadata,
 } from '@/data/lesson-plans/metadata'
+import type { Locale } from '@/lib/i18n/dictionary'
+import { tSync } from '@/lib/i18n/t'
 
 // Pre-compute filter-dropdown option lists server-side so the client doesn't
 // need to scan the full array just to populate the <Select> components.
@@ -51,6 +53,9 @@ async function fetchRecommendations(): Promise<{
     const host = h.get('host')
     const proto = h.get('x-forwarded-proto') ?? 'http'
     const cookie = h.get('cookie') ?? ''
+    // Resolve the active locale once so all reason strings render in the
+    // same language. Middleware stamps `x-lang` on every request.
+    const locale: Locale = h.get('x-lang') === 'ar' ? 'ar' : 'en'
     if (!host) return { recommended: [], reasons: {} }
 
     const res = await fetch(`${proto}://${host}/api/school/overview`, {
@@ -78,11 +83,18 @@ async function fetchRecommendations(): Promise<{
     const uniqueAreas = Array.from(new Set(weakAreaLabels))
     const recommended = recommendLessonsMetadata(uniqueAreas, 'AQA', 6)
 
+    // Pre-resolve the templates once per request — `tSync` is just a
+    // dictionary lookup, but pulling it out of the inner loop keeps
+    // intent clear and avoids redundant work for large weak-area sets.
+    const weakAreaTemplate = tSync('school.lessons.reason.weak_area', locale)
+    const genericReason = tSync('school.lessons.reason.generic', locale)
+
     // Build reason strings
     for (const cls of classes) {
       for (const area of cls.weak_areas ?? []) {
         if (area.severity !== 'critical' && area.severity !== 'warning') continue
-        const areaText = `${area.module_name ?? area.course_name}`.toLowerCase()
+        const areaLabel = `${area.module_name ?? area.course_name}`
+        const areaText = areaLabel.toLowerCase()
         for (const lp of recommended) {
           if (reasonMap[lp.id]) continue
           const skillMatch = lp.targetedSkills.some(
@@ -90,8 +102,10 @@ async function fetchRecommendations(): Promise<{
           )
           const keywordMatch = lp.keywords.some((k) => areaText.includes(k.toLowerCase()))
           if (skillMatch || keywordMatch) {
-            reasonMap[lp.id] =
-              `${area.students_below_threshold} students below target in ${area.module_name ?? area.course_name} (avg ${Math.round(area.avg_score ?? 0)}%)`
+            reasonMap[lp.id] = weakAreaTemplate
+              .replace('{count}', String(area.students_below_threshold ?? 0))
+              .replace('{area}', areaLabel)
+              .replace('{avg}', String(Math.round(area.avg_score ?? 0)))
           }
         }
       }
@@ -100,7 +114,7 @@ async function fetchRecommendations(): Promise<{
     // Generic reason for anything unmatched
     for (const lp of recommended) {
       if (!reasonMap[lp.id]) {
-        reasonMap[lp.id] = 'Matches identified weak areas across your classes'
+        reasonMap[lp.id] = genericReason
       }
     }
 

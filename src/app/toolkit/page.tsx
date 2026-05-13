@@ -18,6 +18,7 @@ import { getBoardConfig } from '@/lib/board/board-config'
 import { Badge } from '@/components/ui/badge'
 import { ToolkitProgressPreview } from '@/components/toolkit/toolkit-progress-preview'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 // ─── Toolkit Hub (Server Component) ───────────────────────────────────────
 // The student's personal learning command centre. Renders four sections:
@@ -34,53 +35,58 @@ interface ToolkitSection {
   tag?: string
 }
 
-const AI_TOOLS: ToolkitSection[] = [
+type ToolkitSectionDef = {
+  titleKey: string
+  descKey: string
+  href: string
+  icon: typeof Brain
+  colour: string
+  bgColour: string
+  tagKey?: string
+}
+
+const AI_TOOL_DEFS: ToolkitSectionDef[] = [
   {
-    title: 'AI Test Builder',
-    description:
-      "Generate custom tests from your board's texts and topics. Multiple-choice and short-answer questions, scored with GCSE grade equivalents.",
+    titleKey: 'toolkit.ai.test_builder.title',
+    descKey: 'toolkit.ai.test_builder.desc',
     href: '/toolkit/test-builder',
     icon: PenTool,
     colour: 'text-violet-500',
     bgColour: 'bg-violet-500/10',
-    tag: 'AI-Powered',
+    tagKey: 'toolkit.tag.ai_powered',
   },
   {
-    title: 'AI Revision Notes',
-    description:
-      'Get personalised revision summaries tailored to your weak areas, target grade, and study history. Key quotes, themes, and exam tips.',
+    titleKey: 'toolkit.ai.revision_notes.title',
+    descKey: 'toolkit.ai.revision_notes.desc',
     href: '/toolkit/revision-builder',
     icon: FileText,
     colour: 'text-blue-500',
     bgColour: 'bg-blue-500/10',
-    tag: 'AI-Powered',
+    tagKey: 'toolkit.tag.ai_powered',
   },
   {
-    title: 'Personalised Revision',
-    description:
-      'A revision guide built from YOUR data. Targets your weakest areas first, consolidates your current grade, then pushes you higher with stretch questions.',
+    titleKey: 'toolkit.ai.personalised.title',
+    descKey: 'toolkit.ai.personalised.desc',
     href: '/toolkit/personalised-revision',
     icon: Target,
     colour: 'text-rose-500',
     bgColour: 'bg-rose-500/10',
-    tag: 'Data-Driven',
+    tagKey: 'toolkit.tag.data_driven',
   },
 ]
 
-const DASHBOARD_SECTIONS: ToolkitSection[] = [
+const DASHBOARD_SECTION_DEFS: ToolkitSectionDef[] = [
   {
-    title: 'My Progress',
-    description:
-      'Track your scores, study streak, time spent, and see your predicted GCSE grade based on your performance.',
+    titleKey: 'toolkit.dashboard.progress.title',
+    descKey: 'toolkit.dashboard.progress.desc',
     href: '/toolkit/progress',
     icon: BarChart3,
     colour: 'text-emerald-500',
     bgColour: 'bg-emerald-500/10',
   },
   {
-    title: 'My Materials',
-    description:
-      'Access all your saved custom tests, revision notes, and quote banks in one place.',
+    titleKey: 'toolkit.dashboard.materials.title',
+    descKey: 'toolkit.dashboard.materials.desc',
     href: '/toolkit/my-materials',
     icon: FolderOpen,
     colour: 'text-amber-500',
@@ -100,12 +106,70 @@ export default async function ToolkitPage() {
   const board = await getServerBoard()
   const boardConfig = getBoardConfig(board)
 
+  // Pre-resolve every dynamic string.
+  const sectionKeys = [...AI_TOOL_DEFS, ...DASHBOARD_SECTION_DEFS].flatMap((s) => [
+    s.titleKey,
+    s.descKey,
+    s.tagKey ?? '',
+  ])
+  const v = await tMany([
+    'toolkit.crumb.home',
+    'toolkit.crumb.self',
+    'toolkit.h1',
+    'toolkit.lead',
+    'toolkit.ai_heading',
+    'toolkit.open_tool',
+    'toolkit.dashboard_heading',
+    'toolkit.grade_predictor.h2',
+    'toolkit.grade_predictor.body',
+    ...sectionKeys,
+  ])
+  let i = 0
+  const tCrumbHome = v[i++]!
+  const tCrumbSelf = v[i++]!
+  const tH1 = v[i++]!
+  const tLead = v[i++]!
+  const tAiHeading = v[i++]!
+  const tOpenTool = v[i++]!
+  const tDashboardHeading = v[i++]!
+  const tGpH2 = v[i++]!
+  const tGpBody = v[i++]!
+
+  const AI_TOOLS: ToolkitSection[] = AI_TOOL_DEFS.map((d) => {
+    const title = v[i++]!
+    const description = v[i++]!
+    const tag = d.tagKey ? v[i++]! : (i++, undefined)
+    return {
+      title,
+      description,
+      href: d.href,
+      icon: d.icon,
+      colour: d.colour,
+      bgColour: d.bgColour,
+      tag,
+    }
+  })
+  const DASHBOARD_SECTIONS: ToolkitSection[] = DASHBOARD_SECTION_DEFS.map((d) => {
+    const title = v[i++]!
+    const description = v[i++]!
+    const tag = d.tagKey ? v[i++]! : (i++, undefined)
+    return {
+      title,
+      description,
+      href: d.href,
+      icon: d.icon,
+      colour: d.colour,
+      bgColour: d.bgColour,
+      tag,
+    }
+  })
+
   return (
     <main id="main-content" className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'Toolkit', url: 'https://theenglishhub.app/toolkit' },
+          { name: tCrumbHome, url: 'https://theenglishhub.app' },
+          { name: tCrumbSelf, url: 'https://theenglishhub.app/toolkit' },
         ]}
       />
       {/* ── Hero ──────────────────────────────────────────────────── */}
@@ -118,7 +182,7 @@ export default async function ToolkitPage() {
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <h1 className="font-serif text-3xl sm:text-4xl font-medium tracking-tight">
-                  Student Toolkit
+                  {tH1}
                 </h1>
                 {boardConfig && (
                   <Badge variant="outline" className="font-mono text-xs">
@@ -126,10 +190,7 @@ export default async function ToolkitPage() {
                   </Badge>
                 )}
               </div>
-              <p className="text-muted-foreground text-lg max-w-2xl">
-                Your personal learning command centre. Build custom tests, generate revision notes,
-                track your progress, and predict your GCSE grade.
-              </p>
+              <p className="text-muted-foreground text-lg max-w-2xl">{tLead}</p>
             </div>
           </div>
         </div>
@@ -143,7 +204,7 @@ export default async function ToolkitPage() {
         <section>
           <div className="flex items-center gap-2 mb-6">
             <Sparkles className="h-5 w-5 text-primary" />
-            <h2 className="font-serif text-2xl font-medium tracking-tight">AI Study Tools</h2>
+            <h2 className="font-serif text-2xl font-medium tracking-tight">{tAiHeading}</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {AI_TOOLS.map((tool) => (
@@ -174,7 +235,7 @@ export default async function ToolkitPage() {
                 </div>
                 <div className="mt-auto flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                   <Zap className="h-3.5 w-3.5" />
-                  Open tool
+                  {tOpenTool}
                 </div>
               </Link>
             ))}
@@ -185,9 +246,7 @@ export default async function ToolkitPage() {
         <section>
           <div className="flex items-center gap-2 mb-6">
             <TrendingUp className="h-5 w-5 text-primary" />
-            <h2 className="font-serif text-2xl font-medium tracking-tight">
-              Dashboard & Materials
-            </h2>
+            <h2 className="font-serif text-2xl font-medium tracking-tight">{tDashboardHeading}</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {DASHBOARD_SECTIONS.map((section) => (
@@ -225,12 +284,9 @@ export default async function ToolkitPage() {
             </div>
             <div className="flex-1">
               <h2 className="font-serif text-xl sm:text-2xl font-medium mb-1 group-hover:text-primary transition-colors">
-                Grade Predictor
+                {tGpH2}
               </h2>
-              <p className="text-muted-foreground">
-                See your predicted GCSE grade based on quiz scores, mock results, and overall
-                performance data. Updated as you study.
-              </p>
+              <p className="text-muted-foreground">{tGpBody}</p>
             </div>
             <BookOpen className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0 hidden sm:block" />
           </Link>

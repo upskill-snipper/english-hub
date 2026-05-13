@@ -40,86 +40,100 @@ import {
 /*  DATA                                                               */
 /* ------------------------------------------------------------------ */
 
-const STUDENT_FREE_FEATURES = [
-  { feature: 'Exam-board aligned courses', included: true },
-  { feature: 'Revision notes', included: true },
-  { feature: 'Flashcards', included: true },
+// Feature data lives as i18n keys; the actual EN/AR copy is resolved
+// inside <PricingContent /> via useT() so /ar visitors get Arabic strings
+// without duplicating structural metadata (icons, included flag).
+const STUDENT_FREE_FEATURE_KEYS = [
+  { key: 'pricing.feat.student_free.exam_aligned', included: true },
+  { key: 'pricing.feat.student_free.revision_notes', included: true },
+  { key: 'pricing.feat.student_free.flashcards', included: true },
 ]
 
-const STUDENT_PREMIUM_FEATURES = [
-  { feature: 'AI Essay Marking', icon: PenTool },
-  { feature: 'AI Revision Notes', icon: BookOpen },
-  { feature: 'Custom Test Generation', icon: ClipboardList },
-  { feature: 'Mock Exams', icon: ClipboardList },
-  { feature: 'Feedback Reports', icon: FileText },
-  { feature: 'AI Study Recommendations', icon: Brain },
-  { feature: 'Full Progress Analytics', icon: BarChart3 },
-  { feature: 'Exam Technique Guides', icon: Target },
+const STUDENT_PREMIUM_FEATURE_KEYS = [
+  { key: 'pricing.feat.student_premium.essay_marking', icon: PenTool },
+  { key: 'pricing.feat.student_premium.revision_notes', icon: BookOpen },
+  { key: 'pricing.feat.student_premium.custom_tests', icon: ClipboardList },
+  { key: 'pricing.feat.student_premium.mock_exams', icon: ClipboardList },
+  { key: 'pricing.feat.student_premium.feedback_reports', icon: FileText },
+  { key: 'pricing.feat.student_premium.study_recs', icon: Brain },
+  { key: 'pricing.feat.student_premium.progress_analytics', icon: BarChart3 },
+  { key: 'pricing.feat.student_premium.exam_technique', icon: Target },
 ]
 
-const TEACHER_FREE_FEATURES = [
-  { feature: 'Browse resources', included: true },
-  { feature: 'View student list', included: true },
+const TEACHER_FREE_FEATURE_KEYS = [
+  { key: 'pricing.feat.teacher_free.browse_resources', included: true },
+  { key: 'pricing.feat.teacher_free.view_student_list', included: true },
 ]
 
-const TEACHER_PREMIUM_FEATURES = [
-  { feature: 'AI Lesson Plans', icon: Layers },
-  { feature: 'AI Essay Marking', icon: PenTool },
-  { feature: 'Worksheet Builder', icon: FileText },
-  { feature: 'Mark Scheme Generator', icon: ClipboardList },
-  { feature: 'PowerPoint/Word Export', icon: Download },
-  { feature: 'Class Analytics', icon: BarChart3 },
-  { feature: 'Student Reports', icon: Users },
-  { feature: 'Department Benchmarking', icon: Presentation },
+const TEACHER_PREMIUM_FEATURE_KEYS = [
+  { key: 'pricing.feat.teacher_premium.lesson_plans', icon: Layers },
+  { key: 'pricing.feat.teacher_premium.essay_marking', icon: PenTool },
+  { key: 'pricing.feat.teacher_premium.worksheet_builder', icon: FileText },
+  { key: 'pricing.feat.teacher_premium.mark_scheme_gen', icon: ClipboardList },
+  { key: 'pricing.feat.teacher_premium.ppt_word_export', icon: Download },
+  { key: 'pricing.feat.teacher_premium.class_analytics', icon: BarChart3 },
+  { key: 'pricing.feat.teacher_premium.student_reports', icon: Users },
+  { key: 'pricing.feat.teacher_premium.dept_benchmarking', icon: Presentation },
 ]
 
-const SCHOOL_RECEIVES = [
-  'Full platform access for every teacher and student',
-  'Early access to new features before public release',
-  'Direct product input — your feedback shapes the roadmap',
-  'Priority onboarding with dedicated support',
-  'Locked preferential pricing for 2\u20133 years',
-  'Founding partner recognition on the platform',
+const SCHOOL_RECEIVES_KEYS = [
+  'pricing.school_receives.1',
+  'pricing.school_receives.2',
+  'pricing.school_receives.3',
+  'pricing.school_receives.4',
+  'pricing.school_receives.5',
+  'pricing.school_receives.6',
 ]
 
-const FAQ_ITEMS = [
-  {
-    q: 'What do I get for free before I subscribe?',
-    a: `Every visitor and registered user gets ${PRICING.FREE_USES_PER_FEATURE} free uses of most premium features (AI essay marking, mock exams, lesson plans, etc.) before the paywall. Exam-board aligned courses, revision notes, and flashcards remain free with a registered account.`,
-  },
-  {
-    q: 'Do I need a credit card to start the 7-day trial?',
-    a: 'Yes. The 7-day free trial requires full sign-up with a valid payment method. Cancel any time before day 7 and you will not be charged. If you do nothing, the subscription activates automatically and your card is charged.',
-  },
-  {
-    q: 'What does the Student plan cost?',
-    a: `£${PRICING.STUDENT_MONTHLY} per month, or £${PRICING.STUDENT_ANNUAL} per year. With any valid affiliate code — or the house code ${PRICING.AFFILIATE_PROMO_CODE} — the annual plan drops to £${PRICING.STUDENT_ANNUAL_WITH_CODE} (a £${PRICING.STUDENT_ANNUAL_SAVINGS} saving).`,
-  },
-  {
-    q: 'What does the Teacher plan cost?',
-    a: `£${PRICING.TEACHER_MONTHLY} per month, or £${PRICING.TEACHER_ANNUAL} per year. Teacher plans include everything in Student plus AI lesson planning, marking, analytics, and resource export.`,
-  },
-  {
-    q: 'How does the affiliate code discount work?',
-    a: `Enter any valid affiliate code at checkout to unlock the £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year student rate. Or use the public code ${PRICING.AFFILIATE_PROMO_CODE} — this works for everyone and applies the same discount. Only applies to annual student billing.`,
-  },
-  {
-    q: 'Can I switch between monthly and annual billing?',
-    a: 'Yes. You can change your billing cycle at any time from your account settings. When switching to annual, the remaining balance on your monthly plan is pro-rated.',
-  },
-  {
-    q: 'What exam boards do you support?',
-    a: 'We support AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE/CAIE. All content is specifically aligned to your chosen board.',
-  },
-  {
-    q: 'Is the Founding Schools Programme a free trial?',
-    a: `No. It is a strategic partnership limited to ${PRICING.FOUNDER_SCHOOL_LIMIT} schools. Pricing starts at £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year and scales with department size. Founding schools receive locked preferential pricing, early feature access, and direct product input.`,
-  },
-  {
-    q: 'Can I cancel anytime?',
-    a: 'Yes. Both monthly and annual plans can be cancelled from your account settings. No contracts, no cancellation fees. Cancel during the 7-day trial and you pay nothing.',
-  },
+// FAQ items resolve their copy at render time inside <PricingContent />
+// because answers interpolate PRICING constants. See `buildFaqItems(t)`.
+const FAQ_KEY_PAIRS = [
+  { q: 'pricing.faq.q1', a: 'pricing.faq.a1' },
+  { q: 'pricing.faq.q2', a: 'pricing.faq.a2' },
+  { q: 'pricing.faq.q3', a: 'pricing.faq.a3' },
+  { q: 'pricing.faq.q4', a: 'pricing.faq.a4' },
+  { q: 'pricing.faq.q5', a: 'pricing.faq.a5' },
+  { q: 'pricing.faq.q6', a: 'pricing.faq.a6' },
+  { q: 'pricing.faq.q7', a: 'pricing.faq.a7' },
+  { q: 'pricing.faq.q8', a: 'pricing.faq.a8' },
+  { q: 'pricing.faq.q9', a: 'pricing.faq.a9' },
 ]
+
+function buildFaqItems(t: (k: string) => string): { q: string; a: string }[] {
+  const freeUses = PRICING.FREE_USES_PER_FEATURE
+  const studentMonthly = PRICING.STUDENT_MONTHLY
+  const studentAnnual = PRICING.STUDENT_ANNUAL
+  const teacherMonthly = PRICING.TEACHER_MONTHLY
+  const teacherAnnual = PRICING.TEACHER_ANNUAL
+  const code = PRICING.AFFILIATE_PROMO_CODE
+  const withCode = PRICING.STUDENT_ANNUAL_WITH_CODE
+  const savings = PRICING.STUDENT_ANNUAL_SAVINGS
+  const limit = PRICING.FOUNDER_SCHOOL_LIMIT
+  const min = PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')
+
+  return FAQ_KEY_PAIRS.map(({ q, a }, i) => {
+    let answer = t(a)
+    if (i === 0) {
+      answer = answer.replace('{n}', String(freeUses))
+    } else if (i === 2) {
+      answer = answer
+        .replace('{monthly}', String(studentMonthly))
+        .replace('{annual}', String(studentAnnual))
+        .replace('{code}', String(code))
+        .replace('{withCode}', String(withCode))
+        .replace('{savings}', String(savings))
+    } else if (i === 3) {
+      answer = answer
+        .replace('{monthly}', String(teacherMonthly))
+        .replace('{annual}', String(teacherAnnual))
+    } else if (i === 4) {
+      answer = answer.replace('{withCode}', String(withCode)).replace('{code}', String(code))
+    } else if (i === 7) {
+      answer = answer.replace('{limit}', String(limit)).replace('{min}', min)
+    }
+    return { q: t(q), a: answer }
+  })
+}
 
 /* ------------------------------------------------------------------ */
 /*  COMPONENTS                                                         */
@@ -315,7 +329,10 @@ function PricingContent() {
 
       if (productIdForPlan === null) {
         setCheckoutError(
-          `Your code “${codeField.appliedCode}” only applies to annual plans — Student Annual (£${PRICING.STUDENT_ANNUAL_WITH_CODE}/year) or Teacher Annual (£${PRICING.TEACHER_ANNUAL_WITH_CODE}/year). Pick an annual plan to use the discount, or remove the code to continue with this plan at the standard price.`,
+          t('pricing.err.code_annual_only')
+            .replace('{code}', String(codeField.appliedCode))
+            .replace('{studentAnnual}', String(PRICING.STUDENT_ANNUAL_WITH_CODE))
+            .replace('{teacherAnnual}', String(PRICING.TEACHER_ANNUAL_WITH_CODE)),
         )
         setCheckoutErrorPlan(plan)
         setCheckoutLoading(null)
@@ -349,10 +366,7 @@ function PricingContent() {
             window.location.href = '/auth/resend-verification'
             return
           }
-          setCheckoutError(
-            json.error ||
-              "We couldn't apply that code right now. Please try again, or remove the code to continue at the standard price.",
-          )
+          setCheckoutError(json.error || t('pricing.err.code_apply_failed'))
           setCheckoutErrorPlan(plan)
           setCheckoutLoading(null)
           return
@@ -361,7 +375,7 @@ function PricingContent() {
         window.location.href = json.url
         return
       } catch {
-        setCheckoutError('Something went wrong applying the code. Please try again.')
+        setCheckoutError(t('pricing.err.code_generic'))
         setCheckoutErrorPlan(plan)
         setCheckoutLoading(null)
         return
@@ -402,17 +416,15 @@ function PricingContent() {
         // it so the misconfiguration is immediately diagnosable.
         let userMessage: string
         if (data.error === 'Missing required fields: priceId (or plan) and mode') {
-          userMessage =
-            "We couldn't start checkout because the live Stripe price IDs aren't yet wired up in Vercel. The site team needs to add STRIPE_PRICE_STUDENT_MONTHLY / STUDENT_ANNUAL / TEACHER_MONTHLY / TEACHER_ANNUAL to Vercel Production env vars and redeploy."
+          userMessage = t('pricing.err.missing_priceids')
         } else if (data.error === 'Invalid price ID') {
-          userMessage =
-            "We couldn't start checkout — the configured Stripe price ID isn't valid in this Stripe account. Check the env vars match LIVE-mode price IDs and redeploy."
+          userMessage = t('pricing.err.invalid_priceid')
         } else if (data.error === 'Payment processing error. Please try again.') {
           userMessage = data.stripeMessage
-            ? `Stripe rejected the request: ${data.stripeMessage}`
-            : "Stripe rejected the checkout request. This usually means the live Stripe API keys aren't set in Vercel yet, or the keys are from a different account than the price IDs. See business-docs/STRIPE-GO-LIVE-CHECKLIST.md."
+            ? `${t('pricing.err.stripe_rejected_prefix')} ${data.stripeMessage}`
+            : t('pricing.err.stripe_rejected_generic')
         } else {
-          userMessage = data.error || 'Failed to start checkout. Please try again.'
+          userMessage = data.error || t('pricing.err.start_checkout_failed')
         }
         setCheckoutError(userMessage)
         setCheckoutErrorPlan(plan)
@@ -423,7 +435,7 @@ function PricingContent() {
       // Redirect into Stripe-hosted checkout. The 7-day trial begins on landing.
       window.location.href = data.url
     } catch {
-      setCheckoutError('Something went wrong. Please try again.')
+      setCheckoutError(t('pricing.err.generic'))
       setCheckoutErrorPlan(plan)
       setCheckoutLoading(null)
     }
@@ -442,6 +454,9 @@ function PricingContent() {
       ? checkoutError
       : null
 
+  // Resolve FAQ copy once per render — depends on locale via useT().
+  const faqItems = buildFaqItems(t)
+
   return (
     <main className="relative overflow-hidden">
       {/* Funnel: pricing_viewed (consent-gated in src/lib/posthog.ts) */}
@@ -449,7 +464,7 @@ function PricingContent() {
       {/* FAQPage structured data — emitted as <script type="application/ld+json">.
           Client component, so no nonce is passed (nonce prop is optional;
           middleware handles per-request CSP nonces on the response). */}
-      <FAQPageJsonLd faqs={FAQ_ITEMS.map((i) => ({ question: i.q, answer: i.a }))} />
+      <FAQPageJsonLd faqs={faqItems.map((i) => ({ question: i.q, answer: i.a }))} />
       {/* Background gradient effects */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
@@ -496,10 +511,10 @@ function PricingContent() {
               <thead>
                 <tr className="border-b border-border/60 bg-muted/30">
                   <th className="text-left font-semibold text-foreground px-4 py-3 align-middle">
-                    Feature
+                    {t('pricing.compare.col.feature')}
                   </th>
                   <th className="text-center font-bold text-primary px-4 py-3 align-middle">
-                    The English Hub
+                    {t('brand.name')}
                   </th>
                   <th className="text-center font-semibold text-muted-foreground px-4 py-3 align-middle">
                     Seneca
@@ -515,17 +530,17 @@ function PricingContent() {
               <tbody className="[&>tr]:border-b [&>tr]:border-border/40 [&>tr:last-child]:border-0">
                 <tr>
                   <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    Price per student / month
+                    {t('pricing.compare.row.price_per_student')}
                   </td>
                   <td className="px-4 py-3 text-center text-foreground font-semibold align-middle">
                     {PRICING.CURRENCY}
                     {PRICING.STUDENT_MONTHLY}
                   </td>
                   <td className="px-4 py-3 text-center text-muted-foreground align-middle">
-                    Free / £6.99 Premium
+                    {t('pricing.compare.seneca_price')}
                   </td>
                   <td className="px-4 py-3 text-center text-muted-foreground align-middle">
-                    £12–£18/yr (school only)
+                    {t('pricing.compare.gcsepod_price')}
                   </td>
                   <td className="px-4 py-3 text-center text-muted-foreground align-middle">
                     £3.00
@@ -533,7 +548,7 @@ function PricingContent() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    AI essay marking (AO-aligned)
+                    {t('pricing.compare.row.ai_marking')}
                   </td>
                   <td className="px-4 py-3 align-middle">
                     <div className="flex justify-center">
@@ -558,16 +573,18 @@ function PricingContent() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    IGCSE coverage
+                    {t('pricing.compare.row.igcse_coverage')}
                   </td>
                   <td className="px-4 py-3 align-middle">
                     <div className="flex justify-center items-center gap-1.5">
                       <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
-                      <span className="text-xs text-foreground">AQA · Cambridge</span>
+                      <span className="text-xs text-foreground">
+                        {t('pricing.compare.value.aqa_cambridge')}
+                      </span>
                     </div>
                   </td>
                   <td className="px-4 py-3 text-center text-muted-foreground text-xs align-middle">
-                    Partial
+                    {t('pricing.compare.value.partial')}
                   </td>
                   <td className="px-4 py-3 align-middle">
                     <div className="flex justify-center">
@@ -575,12 +592,12 @@ function PricingContent() {
                     </div>
                   </td>
                   <td className="px-4 py-3 text-center text-muted-foreground text-xs align-middle">
-                    Partial
+                    {t('pricing.compare.value.partial')}
                   </td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    Mock-exam bank (full papers)
+                    {t('pricing.compare.row.mock_exam_bank')}
                   </td>
                   <td className="px-4 py-3 text-center font-semibold text-foreground align-middle">
                     172+
@@ -603,12 +620,14 @@ function PricingContent() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    Calibrated to exam-board mark schemes
+                    {t('pricing.compare.row.calibrated_ms')}
                   </td>
                   <td className="px-4 py-3 align-middle">
                     <div className="flex justify-center items-center gap-1.5">
                       <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
-                      <span className="text-xs text-foreground">5 boards</span>
+                      <span className="text-xs text-foreground">
+                        {t('pricing.compare.value.5_boards')}
+                      </span>
                     </div>
                   </td>
                   <td className="px-4 py-3 align-middle">
@@ -629,17 +648,19 @@ function PricingContent() {
                 </tr>
                 <tr>
                   <td className="px-4 py-3 font-medium text-foreground align-middle">
-                    Free trial length
+                    {t('pricing.compare.row.trial_length')}
                   </td>
                   <td className="px-4 py-3 text-center text-foreground font-semibold align-middle">
-                    7 days
+                    {t('pricing.compare.value.7_days')}
                   </td>
                   <td className="px-4 py-3 text-center text-muted-foreground align-middle">
-                    No trial
+                    {t('pricing.compare.value.no_trial')}
                   </td>
-                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">n/a</td>
                   <td className="px-4 py-3 text-center text-muted-foreground align-middle">
-                    7 days
+                    {t('pricing.compare.value.na')}
+                  </td>
+                  <td className="px-4 py-3 text-center text-muted-foreground align-middle">
+                    {t('pricing.compare.value.7_days')}
                   </td>
                 </tr>
               </tbody>
@@ -647,8 +668,7 @@ function PricingContent() {
           </div>
 
           <p className="mt-4 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
-            Pricing and features as of April 2026 — may be out of date; contact competitors for
-            latest.
+            {t('pricing.compare.footnote')}
           </p>
         </div>
       </section>
@@ -720,7 +740,7 @@ function PricingContent() {
                     {PRICING.EARLY_ACCESS_LABEL}
                   </span>
                   <span className="text-[10px] font-medium text-muted-foreground">
-                    · limited time
+                    · {t('pricing.limited_time')}
                   </span>
                 </div>
 
@@ -730,7 +750,7 @@ function PricingContent() {
                     {PRICING.CURRENCY}
                     {PRICING.STUDENT_MONTHLY}
                   </span>
-                  <span className="text-muted-foreground text-base">/month</span>
+                  <span className="text-muted-foreground text-base">{t('pricing.per_month')}</span>
                   <span className="text-sm text-muted-foreground line-through decoration-amber-500/60">
                     {PRICING.CURRENCY}
                     {PRICING.STUDENT_MONTHLY_STANDARD}
@@ -739,35 +759,40 @@ function PricingContent() {
 
                 {/* ONE secondary annual offer */}
                 <p className="text-sm text-muted-foreground mb-3">
-                  or{' '}
+                  {t('pricing.or_prefix')}{' '}
                   <span className="font-semibold text-foreground">
                     {PRICING.CURRENCY}
-                    {PRICING.STUDENT_ANNUAL}/year
+                    {PRICING.STUDENT_ANNUAL}
+                    {t('pricing.per_year_long')}
                   </span>
                   {studentAnnualSavingsVsMonthly > 0 && (
                     <span className="text-muted-foreground/80">
                       {' '}
-                      · save {PRICING.CURRENCY}
-                      {studentAnnualSavingsVsMonthly.toFixed(2)} vs monthly
+                      · {t('pricing.save_vs_monthly_prefix')} {PRICING.CURRENCY}
+                      {studentAnnualSavingsVsMonthly.toFixed(2)}{' '}
+                      {t('pricing.save_vs_monthly_suffix')}
                     </span>
                   )}
                 </p>
 
                 {/* ONE trial line */}
                 <p className="text-sm text-emerald-600 font-semibold mb-3">
-                  {PRICING.TRIAL_TEXT} · card required · cancel before day 7
+                  {PRICING.TRIAL_TEXT} · {t('pricing.trial_line_card_required')}
                 </p>
 
                 {/* ONE upgrade callout — affiliate code */}
                 <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-3 py-2 mb-3">
                   <p className="text-xs font-semibold text-emerald-700">
-                    With any affiliate code or{' '}
+                    {t('pricing.with_any_code_prefix')}{' '}
                     <code className="font-mono bg-emerald-500/15 px-1.5 py-0.5 rounded">
                       {PRICING.AFFILIATE_PROMO_CODE}
                     </code>
-                    : {PRICING.CURRENCY}
-                    {PRICING.STUDENT_ANNUAL_WITH_CODE}/year — save {PRICING.CURRENCY}
-                    {PRICING.STUDENT_ANNUAL_SAVINGS}.
+                    {': '}
+                    {t('pricing.with_any_code_per_year_save')
+                      .replace('{currency}', PRICING.CURRENCY)
+                      .replace('{annual}', String(PRICING.STUDENT_ANNUAL_WITH_CODE))
+                      .replace('{currency}', PRICING.CURRENCY)
+                      .replace('{saving}', String(PRICING.STUDENT_ANNUAL_SAVINGS))}
                   </p>
                 </div>
 
@@ -778,11 +803,11 @@ function PricingContent() {
                 {/* Free features */}
                 <div className="mb-4">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                    Always free
+                    {t('pricing.always_free_label')}
                   </p>
                   <ul className="space-y-2.5">
-                    {STUDENT_FREE_FEATURES.map((f) => (
-                      <FeatureRow key={f.feature} feature={f.feature} included={f.included} free />
+                    {STUDENT_FREE_FEATURE_KEYS.map((f) => (
+                      <FeatureRow key={f.key} feature={t(f.key)} included={f.included} free />
                     ))}
                   </ul>
                 </div>
@@ -790,14 +815,17 @@ function PricingContent() {
                 {/* Premium features */}
                 <div className="mb-6">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                    Premium
+                    {t('pricing.premium_label')}
                     <span className="text-primary/70 normal-case ml-1">
-                      — {PRICING.FREE_USES_PER_FEATURE} free, then unlimited
+                      {t('pricing.premium_then_unlimited_prefix').replace(
+                        '{n}',
+                        String(PRICING.FREE_USES_PER_FEATURE),
+                      )}
                     </span>
                   </p>
                   <ul className="space-y-2.5">
-                    {STUDENT_PREMIUM_FEATURES.map((f) => (
-                      <PremiumFeatureRow key={f.feature} feature={f.feature} icon={f.icon} />
+                    {STUDENT_PREMIUM_FEATURE_KEYS.map((f) => (
+                      <PremiumFeatureRow key={f.key} feature={t(f.key)} icon={f.icon} />
                     ))}
                   </ul>
                 </div>
@@ -812,8 +840,8 @@ function PricingContent() {
                   disabled={checkoutLoading !== null}
                 >
                   {checkoutLoading === 'student_annual'
-                    ? 'Starting checkout…'
-                    : 'Start 7-day free trial'}
+                    ? t('pricing.starting_checkout')
+                    : t('pricing.start_7day_trial')}
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
                 <button
@@ -821,8 +849,9 @@ function PricingContent() {
                   disabled={checkoutLoading !== null}
                   className="mt-2 w-full text-center text-xs text-muted-foreground hover:text-foreground underline-offset-4 hover:underline disabled:opacity-50"
                 >
-                  Prefer monthly? Start with {PRICING.CURRENCY}
-                  {PRICING.STUDENT_MONTHLY}/mo trial instead
+                  {t('pricing.prefer_monthly_prefix')} {PRICING.CURRENCY}
+                  {PRICING.STUDENT_MONTHLY}
+                  {t('pricing.prefer_monthly_suffix')}
                 </button>
                 {studentError && (
                   <p className="mt-3 text-center text-xs text-red-600">{studentError}</p>
@@ -854,7 +883,7 @@ function PricingContent() {
                     {PRICING.EARLY_ACCESS_LABEL}
                   </span>
                   <span className="text-[10px] font-medium text-muted-foreground">
-                    · limited time
+                    · {t('pricing.limited_time')}
                   </span>
                 </div>
 
@@ -864,31 +893,34 @@ function PricingContent() {
                     {PRICING.CURRENCY}
                     {PRICING.TEACHER_MONTHLY}
                   </span>
-                  <span className="text-muted-foreground text-base">/month</span>
+                  <span className="text-muted-foreground text-base">{t('pricing.per_month')}</span>
                   <span className="text-sm text-muted-foreground line-through decoration-amber-500/60">
                     {PRICING.CURRENCY}
                     {PRICING.TEACHER_MONTHLY_STANDARD}
                   </span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-2">
-                  or{' '}
+                  {t('pricing.or_prefix')}{' '}
                   <span className="font-semibold text-foreground">
                     {PRICING.CURRENCY}
-                    {PRICING.TEACHER_ANNUAL}/year
+                    {PRICING.TEACHER_ANNUAL}
+                    {t('pricing.per_year_long')}
                   </span>{' '}
                   <span className="text-muted-foreground/80">
-                    (was{' '}
+                    ({t('pricing.was_strikethrough_prefix')}{' '}
                     <span className="line-through decoration-amber-500/60">
                       {PRICING.CURRENCY}
-                      {PRICING.TEACHER_ANNUAL_STANDARD}/year
+                      {PRICING.TEACHER_ANNUAL_STANDARD}
+                      {t('pricing.per_year_long')}
                     </span>
                     )
                   </span>
                   {teacherAnnualSavingsVsMonthly > 0 && (
                     <span className="text-muted-foreground/80">
                       {' '}
-                      · save {PRICING.CURRENCY}
-                      {teacherAnnualSavingsVsMonthly.toFixed(2)} vs monthly
+                      · {t('pricing.save_vs_monthly_prefix')} {PRICING.CURRENCY}
+                      {teacherAnnualSavingsVsMonthly.toFixed(2)}{' '}
+                      {t('pricing.save_vs_monthly_suffix')}
                     </span>
                   )}
                 </p>
@@ -896,7 +928,7 @@ function PricingContent() {
                   ⚡ {PRICING.PRICE_INCREASE_MESSAGE}
                 </p>
                 <p className="text-sm text-emerald-600 font-semibold mb-3">
-                  {PRICING.TRIAL_TEXT} · card required · cancel before day 7
+                  {PRICING.TRIAL_TEXT} · {t('pricing.trial_line_card_required')}
                 </p>
 
                 {/* Affiliate / promo code callout — mirrors the Student
@@ -905,24 +937,27 @@ function PricingContent() {
                     active affiliate code for a flat £9.99 saving. */}
                 <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-3 py-2 mb-6">
                   <p className="text-xs font-semibold text-emerald-700">
-                    With any affiliate code or{' '}
+                    {t('pricing.with_any_code_prefix')}{' '}
                     <code className="font-mono bg-emerald-500/15 px-1.5 py-0.5 rounded">
                       {PRICING.AFFILIATE_PROMO_CODE}
                     </code>
-                    : {PRICING.CURRENCY}
-                    {PRICING.TEACHER_ANNUAL_WITH_CODE}/year — save {PRICING.CURRENCY}
-                    {PRICING.TEACHER_ANNUAL_SAVINGS}.
+                    {': '}
+                    {t('pricing.with_any_code_per_year_save')
+                      .replace('{currency}', PRICING.CURRENCY)
+                      .replace('{annual}', String(PRICING.TEACHER_ANNUAL_WITH_CODE))
+                      .replace('{currency}', PRICING.CURRENCY)
+                      .replace('{saving}', String(PRICING.TEACHER_ANNUAL_SAVINGS))}
                   </p>
                 </div>
 
                 {/* Free features */}
                 <div className="mb-4">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                    Always free
+                    {t('pricing.always_free_label')}
                   </p>
                   <ul className="space-y-2.5">
-                    {TEACHER_FREE_FEATURES.map((f) => (
-                      <FeatureRow key={f.feature} feature={f.feature} included={f.included} free />
+                    {TEACHER_FREE_FEATURE_KEYS.map((f) => (
+                      <FeatureRow key={f.key} feature={t(f.key)} included={f.included} free />
                     ))}
                   </ul>
                 </div>
@@ -930,14 +965,17 @@ function PricingContent() {
                 {/* Premium features */}
                 <div className="mb-6">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                    Premium
+                    {t('pricing.premium_label')}
                     <span className="text-purple-600/70 normal-case ml-1">
-                      — {PRICING.FREE_USES_PER_FEATURE} free, then unlimited
+                      {t('pricing.premium_then_unlimited_prefix').replace(
+                        '{n}',
+                        String(PRICING.FREE_USES_PER_FEATURE),
+                      )}
                     </span>
                   </p>
                   <ul className="space-y-2.5">
-                    {TEACHER_PREMIUM_FEATURES.map((f) => (
-                      <PremiumFeatureRow key={f.feature} feature={f.feature} icon={f.icon} />
+                    {TEACHER_PREMIUM_FEATURE_KEYS.map((f) => (
+                      <PremiumFeatureRow key={f.key} feature={t(f.key)} icon={f.icon} />
                     ))}
                   </ul>
                 </div>
@@ -952,8 +990,8 @@ function PricingContent() {
                   disabled={checkoutLoading !== null}
                 >
                   {checkoutLoading === 'teacher_annual'
-                    ? 'Starting checkout…'
-                    : 'Start 7-day free trial'}
+                    ? t('pricing.starting_checkout')
+                    : t('pricing.start_7day_trial')}
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
                 <button
@@ -961,8 +999,9 @@ function PricingContent() {
                   disabled={checkoutLoading !== null}
                   className="mt-2 w-full text-center text-xs text-muted-foreground hover:text-foreground underline-offset-4 hover:underline disabled:opacity-50"
                 >
-                  Prefer monthly? Start with {PRICING.CURRENCY}
-                  {PRICING.TEACHER_MONTHLY}/mo trial instead
+                  {t('pricing.prefer_monthly_prefix')} {PRICING.CURRENCY}
+                  {PRICING.TEACHER_MONTHLY}
+                  {t('pricing.prefer_monthly_suffix')}
                 </button>
                 {teacherError && (
                   <p className="mt-3 text-center text-xs text-red-600">{teacherError}</p>
@@ -1005,43 +1044,46 @@ function PricingContent() {
                 {/* Founding Schools price */}
                 <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-6 text-center">
                   <span className="inline-block rounded-full bg-amber-500/20 border border-amber-500/40 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-700 mb-3">
-                    Founding Pricing
+                    {t('pricing.founding_pricing_label')}
                   </span>
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-                      From {PRICING.CURRENCY}
+                      {t('pricing.standard_from_prefix')} {PRICING.CURRENCY}
                       {PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')}
                     </span>
-                    <span className="text-muted-foreground text-sm">/yr</span>
+                    <span className="text-muted-foreground text-sm">
+                      {t('pricing.per_year_short')}
+                    </span>
                   </div>
                   {/* TODO(backend): wire places-remaining to a Supabase row so counter updates automatically */}
                   <p className="mt-3 text-sm font-semibold text-amber-700">
-                    6 places remaining · cohort closes 31 Dec 2026
+                    {t('pricing.places_remaining')}
                   </p>
                   <p className="mt-2 text-xs text-foreground/80">
-                    MAT pricing from {PRICING.CURRENCY}
-                    {PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}/yr — bundled 3+ schools
+                    {t('pricing.mat_pricing_blurb')
+                      .replace('{currency}', PRICING.CURRENCY)
+                      .replace('{amount}', PRICING.SCHOOL_STANDARD.toLocaleString('en-GB'))}
                   </p>
                   <p className="text-muted-foreground text-xs mt-2">
-                    Founding partners lock in this rate for 2&ndash;3 years and shape the platform
-                    roadmap.
+                    {t('pricing.founders_lock_rate')}
                   </p>
                 </div>
                 {/* Standard (projected) price anchor */}
                 <div className="rounded-xl border border-border/60 bg-background/50 p-6 text-center">
                   <span className="inline-block rounded-full bg-muted/40 border border-border px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-3">
-                    Standard Pricing
+                    {t('pricing.standard_pricing_label')}
                   </span>
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-muted-foreground">
                       {PRICING.CURRENCY}
                       {PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}
                     </span>
-                    <span className="text-muted-foreground text-sm">/year</span>
+                    <span className="text-muted-foreground text-sm">
+                      {t('pricing.per_year_long')}
+                    </span>
                   </div>
                   <p className="text-muted-foreground text-xs mt-2">
-                    Estimated standard annual rate once Founders cohort closes. Exact figure set
-                    closer to launch.
+                    {t('pricing.estimated_std_rate')}
                   </p>
                 </div>
               </div>
@@ -1049,24 +1091,23 @@ function PricingContent() {
               {/* Urgency banner */}
               <div className="mb-8 rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 text-center">
                 <p className="text-sm font-semibold text-amber-700">
-                  ⚡ {PRICING.PRICE_INCREASE_MESSAGE} &middot; Founding places fill on a first-come
-                  basis
+                  ⚡ {PRICING.PRICE_INCREASE_MESSAGE} &middot; {t('pricing.urgency_first_come')}
                 </p>
               </div>
 
               {/* What schools receive */}
               <div className="max-w-lg mx-auto mb-10">
                 <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 mb-4 text-center">
-                  What your school receives
+                  {t('pricing.school_receives.heading')}
                 </p>
                 <ul className="space-y-3">
-                  {SCHOOL_RECEIVES.map((item) => (
+                  {SCHOOL_RECEIVES_KEYS.map((key) => (
                     <li
-                      key={item}
+                      key={key}
                       className="flex items-start gap-2.5 text-sm text-muted-foreground"
                     >
                       <CheckCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                      {item}
+                      {t(key)}
                     </li>
                   ))}
                 </ul>
@@ -1076,9 +1117,9 @@ function PricingContent() {
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-4 text-center mb-8">
                 <p className="text-sm text-muted-foreground">
                   <span className="font-semibold text-amber-600">
-                    This programme closes when 10 schools are onboarded.
+                    {t('pricing.programme_closes_strong')}
                   </span>{' '}
-                  Once all places are filled, entry will not reopen at this pricing.
+                  {t('pricing.programme_closes_after')}
                 </p>
               </div>
 
@@ -1098,8 +1139,7 @@ function PricingContent() {
           </Card>
 
           <p className="mt-6 text-center text-sm text-slate-600 max-w-2xl mx-auto">
-            After the 10 founding places: Cohort 2 pricing opens September 2026 at
-            £6,000–£12,000/yr. Founding price is locked for the life of your contract.
+            {t('pricing.cohort_2_note')}
           </p>
 
           <p className="mt-8 text-center text-xs text-muted-foreground/80 max-w-2xl mx-auto">
@@ -1189,7 +1229,7 @@ function PricingContent() {
           <SectionHeading title={t('pricing.faq.title')} />
 
           <div className="rounded-2xl border border-border/60 bg-card px-6 sm:px-8">
-            {FAQ_ITEMS.map((item) => (
+            {faqItems.map((item) => (
               <FAQItem key={item.q} q={item.q} a={item.a} />
             ))}
           </div>

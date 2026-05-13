@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -166,7 +167,28 @@ const QUESTION_TYPES = [
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function QuestionTypesPage() {
+export default async function QuestionTypesPage() {
+  const [
+    heroEyebrow,
+    heroTitle,
+    heroSubtitle,
+    jumpTo,
+    practiseTitle,
+    practiseBody,
+    practiseCta,
+    bcExamTech,
+    bcThis,
+  ] = await tMany([
+    'resources.exam_tech.qt.eyebrow',
+    'resources.exam_tech.qt.title',
+    'resources.exam_tech.qt.subtitle',
+    'resources.exam_tech.qt.jump_to',
+    'resources.exam_tech.qt.practise.title',
+    'resources.exam_tech.qt.practise.body',
+    'resources.exam_tech.qt.practise.cta',
+    'resources.exam_tech.bc.exam_tech',
+    'resources.exam_tech.qt.bc_this',
+  ])
   return (
     <>
       <ArticleJsonLd
@@ -191,16 +213,12 @@ export default function QuestionTypesPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Exam Technique
+            {heroEyebrow}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Question Types
+            {heroTitle}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Every question type you will face in GCSE and IGCSE English, decoded. Understand what
-            each question is really asking, how to structure your answer, and the mistakes that cost
-            students marks.
-          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{heroSubtitle}</p>
         </div>
       </section>
 
@@ -221,18 +239,18 @@ export default function QuestionTypesPage() {
           <li>/</li>
           <li>
             <Link href="/resources/exam-technique" className="hover:text-primary transition-colors">
-              Exam Technique
+              {bcExamTech}
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-primary">Question Types</li>
+          <li className="font-medium text-primary">{bcThis}</li>
         </ol>
       </nav>
 
       {/* Quick navigation */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-          <h2 className="font-bold text-foreground">Jump to a question type</h2>
+          <h2 className="font-bold text-foreground">{jumpTo}</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {QUESTION_TYPES.map((qt) => (
               <a
@@ -324,17 +342,14 @@ export default function QuestionTypesPage() {
       {/* Revision link */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
-          <h2 className="text-lg font-bold text-foreground">Put it into practice</h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Now you know how to approach each question type, practise with timed exercises and
-            worked examples.
-          </p>
+          <h2 className="text-lg font-bold text-foreground">{practiseTitle}</h2>
+          <p className="mt-2 text-sm text-muted-foreground">{practiseBody}</p>
           <div className="mt-4 flex flex-wrap justify-center gap-3">
             <Link
               href="/revision/exam-technique"
               className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
             >
-              Exam technique revision
+              {practiseCta}
             </Link>
             <Link
               href="/resources/exam-technique/essay-structure"

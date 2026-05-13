@@ -3,6 +3,7 @@ import { headers } from 'next/headers'
 import Link from 'next/link'
 import LevelChip, { type Level } from '@/components/home/LevelChip'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany, t } from '@/lib/i18n/t'
 
 /* ───────────────────── Metadata ───────────────────── */
 
@@ -33,76 +34,84 @@ type Board = {
   discClass: string
 }
 
-const GCSE_BOARDS: Board[] = [
+type BoardDef = {
+  id: string
+  nameKey: string
+  initials: string
+  href: string
+  blurbKey: string
+  level: BoardLevel
+  discClass: string
+}
+
+const GCSE_BOARD_DEFS: BoardDef[] = [
   {
     id: 'aqa',
-    name: 'AQA',
+    nameKey: 'exam_boards.aqa.name',
     initials: 'AQA',
     href: '/revision?setBoard=aqa',
-    blurb: 'Power & Conflict, Love & Relationships, Worlds & Lives.',
+    blurbKey: 'exam_boards.aqa.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
   },
   {
     id: 'edexcel',
-    name: 'Pearson Edexcel GCSE',
+    nameKey: 'exam_boards.edexcel.name',
     initials: 'EDX',
     href: '/revision?setBoard=edexcel',
-    blurb: 'Time & Place, Conflict, Relationships anthology.',
+    blurbKey: 'exam_boards.edexcel.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
   },
   {
     id: 'ocr',
-    name: 'OCR',
+    nameKey: 'exam_boards.ocr.name',
     initials: 'OCR',
     href: '/revision?setBoard=ocr',
-    blurb: 'Love, Conflict, Power & Natural World, Youth & Age.',
+    blurbKey: 'exam_boards.ocr.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
   },
   {
     id: 'eduqas',
-    name: 'WJEC Eduqas',
+    nameKey: 'exam_boards.eduqas.name',
     initials: 'WJEC',
     href: '/revision?setBoard=eduqas',
-    blurb: 'Eduqas anthology with annotated walkthroughs.',
+    blurbKey: 'exam_boards.eduqas.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
   },
 ]
 
-const IGCSE_BOARDS: Board[] = [
+const IGCSE_BOARD_DEFS: BoardDef[] = [
   {
     id: 'cambridge-0500',
-    name: 'Cambridge IGCSE (CIE 0500 / 0990)',
+    nameKey: 'exam_boards.cambridge.name',
     initials: 'CIE',
     href: '/revision?setBoard=cambridge-0500',
-    blurb: '0500 and 0990 — Reading, Composition, model answers.',
+    blurbKey: 'exam_boards.cambridge.blurb',
     level: 'igcse',
     discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
   },
   {
     id: 'edexcel-igcse',
-    name: 'Pearson Edexcel IGCSE Literature (4ET1)',
+    nameKey: 'exam_boards.edexcel_igcse.name',
     initials: 'iEDX-Lit',
     href: '/revision?setBoard=edexcel-igcse',
-    blurb: 'Drama, Prose, Shakespeare, Unseen Poetry.',
+    blurbKey: 'exam_boards.edexcel_igcse.blurb',
     level: 'igcse',
     discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
   },
   {
     id: 'edexcel-igcse-lang',
-    name: 'Pearson Edexcel IGCSE Language A (4EA1)',
+    nameKey: 'exam_boards.edexcel_igcse_lang.name',
     initials: 'iEDX-Lang',
     href: '/revision?setBoard=edexcel-igcse-lang',
-    blurb: 'Anthology, non-fiction, transactional writing.',
+    blurbKey: 'exam_boards.edexcel_igcse_lang.blurb',
     level: 'igcse',
     discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
   },
 ]
-
-const ALL_BOARDS: Board[] = [...GCSE_BOARDS, ...IGCSE_BOARDS]
 
 const SITE_URL = 'https://theenglishhub.app'
 
@@ -111,13 +120,83 @@ const SITE_URL = 'https://theenglishhub.app'
 export default async function ExamBoardsPage() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
 
+  // Resolve all dynamic strings up-front.
+  const boardKeys = [...GCSE_BOARD_DEFS, ...IGCSE_BOARD_DEFS].flatMap((b) => [
+    b.nameKey,
+    b.blurbKey,
+  ])
+  const baseKeys = [
+    'exam_boards.crumb.home',
+    'exam_boards.crumb.self',
+    'exam_boards.eyebrow',
+    'exam_boards.h1',
+    'exam_boards.lead',
+    'exam_boards.gcse.heading',
+    'exam_boards.gcse.subheading',
+    'exam_boards.igcse.heading',
+    'exam_boards.igcse.subheading',
+    'exam_boards.why.h2',
+    'exam_boards.why.p1',
+    'exam_boards.why.p2',
+    'exam_boards.why.p3_pre',
+    'exam_boards.why.p3_link',
+    'exam_boards.why.p3_post',
+    'exam_boards.cta.open_board',
+    'exam_boards.aria.open_board',
+    'exam_boards.list.schema_name',
+  ]
+  const v = await tMany([...baseKeys, ...boardKeys])
+  let i = 0
+  const tCrumbHome = v[i++]!
+  const tCrumbSelf = v[i++]!
+  const tEyebrow = v[i++]!
+  const tH1 = v[i++]!
+  const tLead = v[i++]!
+  const tGcseHeading = v[i++]!
+  const tGcseSubheading = v[i++]!
+  const tIgcseHeading = v[i++]!
+  const tIgcseSubheading = v[i++]!
+  const tWhyH2 = v[i++]!
+  const tWhyP1 = v[i++]!
+  const tWhyP2 = v[i++]!
+  const tWhyP3Pre = v[i++]!
+  const tWhyP3Link = v[i++]!
+  const tWhyP3Post = v[i++]!
+  const tOpenBoard = v[i++]!
+  const tAriaOpenBoard = v[i++]!
+  const tListSchema = v[i++]!
+
+  const GCSE_BOARDS: Board[] = GCSE_BOARD_DEFS.map((b) => ({
+    id: b.id,
+    name: v[i++]!,
+    initials: b.initials,
+    href: b.href,
+    blurb: v[i++]!,
+    level: b.level,
+    discClass: b.discClass,
+  }))
+  const IGCSE_BOARDS: Board[] = IGCSE_BOARD_DEFS.map((b) => ({
+    id: b.id,
+    name: v[i++]!,
+    initials: b.initials,
+    href: b.href,
+    blurb: v[i++]!,
+    level: b.level,
+    discClass: b.discClass,
+  }))
+  const ALL_BOARDS = [...GCSE_BOARDS, ...IGCSE_BOARDS]
+
+  // Resolve EN-level GCSE/IGCSE labels for the LevelChip aria — kept inline.
+  const tLevelGcse = await t('exam_boards.level.gcse')
+  const tLevelIgcse = await t('exam_boards.level.igcse')
+
   // ItemList schema groups all seven board landings as a single ranked list,
   // which Google understands as a hub page rather than a duplicate of the
   // homepage's board picker.
   const itemListJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'GCSE and IGCSE English exam boards covered by The English Hub',
+    name: tListSchema,
     itemListOrder: 'https://schema.org/ItemListUnordered',
     numberOfItems: ALL_BOARDS.length,
     itemListElement: ALL_BOARDS.map((board, index) => ({
@@ -133,8 +212,8 @@ export default async function ExamBoardsPage() {
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
-          { name: 'Home', url: SITE_URL },
-          { name: 'Exam boards', url: `${SITE_URL}/exam-boards` },
+          { name: tCrumbHome, url: SITE_URL },
+          { name: tCrumbSelf, url: `${SITE_URL}/exam-boards` },
         ]}
       />
       <script
@@ -148,26 +227,25 @@ export default async function ExamBoardsPage() {
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
           <nav className="mb-6 text-xs text-cream-200/55" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-cream-50 underline-offset-4 hover:underline">
-              Home
+              {tCrumbHome}
             </Link>
             <span className="mx-2" aria-hidden="true">
               /
             </span>
-            <span className="text-cream-100/85">Exam boards</span>
+            <span className="text-cream-100/85">{tCrumbSelf}</span>
           </nav>
           <div className="text-center mb-2">
             <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-300">
-              Internal-link hub
+              {tEyebrow}
             </p>
             <h1
               id="exam-boards-heading"
               className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
             >
-              Exam boards covered
+              {tH1}
             </h1>
             <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
-              Six boards. One revision platform. Every page calibrated to your exam board&rsquo;s
-              mark scheme.
+              {tLead}
             </p>
           </div>
         </div>
@@ -176,18 +254,26 @@ export default async function ExamBoardsPage() {
       {/* ── GCSE grid ───────────────────────────────────────────────── */}
       <BoardSection
         sectionId="gcse-boards"
-        heading="GCSE boards"
-        subheading="Year 10–11, ages 14–16. Tap your board and you&rsquo;ll land on the exact specification you sit."
+        heading={tGcseHeading}
+        subheading={tGcseSubheading}
         boards={GCSE_BOARDS}
+        openBoardLabel={tOpenBoard}
+        ariaOpenBoardTemplate={tAriaOpenBoard}
+        levelGcseLabel={tLevelGcse}
+        levelIgcseLabel={tLevelIgcse}
       />
 
       {/* ── IGCSE grid ──────────────────────────────────────────────── */}
       <BoardSection
         sectionId="igcse-boards"
-        heading="IGCSE boards (international)"
-        subheading="International routes for the same age group. Pick the spec your school enters."
+        heading={tIgcseHeading}
+        subheading={tIgcseSubheading}
         boards={IGCSE_BOARDS}
         showDivider
+        openBoardLabel={tOpenBoard}
+        ariaOpenBoardTemplate={tAriaOpenBoard}
+        levelGcseLabel={tLevelGcse}
+        levelIgcseLabel={tLevelIgcse}
       />
 
       {/* ── Helper copy ─────────────────────────────────────────────── */}
@@ -197,33 +283,20 @@ export default async function ExamBoardsPage() {
             id="why-boards-differ-heading"
             className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50 leading-tight"
           >
-            Why exam boards differ — and what to do if you don&rsquo;t know yours
+            {tWhyH2}
           </h2>
           <div className="mt-5 space-y-4 text-sm sm:text-base text-cream-100/80 leading-relaxed">
+            <p>{tWhyP1}</p>
+            <p>{tWhyP2}</p>
             <p>
-              All six boards on this page sit GCSE or IGCSE English at the same level — grades 9 to
-              1, the same age group, the same broad assessment objectives. What differs is the
-              anthology, the set texts, the paper structure, and the way examiners weight each AO.
-              An AQA Power and Conflict response is marked against a different anthology and a
-              different question stem from an Eduqas Conflict response, even when the underlying
-              skill is the same.
-            </p>
-            <p>
-              That&rsquo;s why every page on The English Hub is keyed to a single board. The Macbeth
-              pages an AQA student sees use AQA&rsquo;s extract-plus-essay structure and AO
-              weighting; the Macbeth pages an Edexcel IGCSE student sees use the 4ET1 closed-book
-              format. Same play, different mark scheme — different revision.
-            </p>
-            <p>
-              If you&rsquo;re not sure which board your school enters you for, ask your English
-              teacher or check a recent piece of marked work for the board logo. You can also{' '}
+              {tWhyP3Pre}{' '}
               <Link
                 href="/board-select"
                 className="underline underline-offset-4 hover:text-clay-300"
               >
-                choose by level on the board-select page
+                {tWhyP3Link}
               </Link>{' '}
-              and we&rsquo;ll walk you through the options.
+              {tWhyP3Post}
             </p>
           </div>
         </div>
@@ -240,6 +313,10 @@ type BoardSectionProps = {
   heading: string
   subheading: string
   showDivider?: boolean
+  openBoardLabel: string
+  ariaOpenBoardTemplate: string
+  levelGcseLabel: string
+  levelIgcseLabel: string
 }
 
 function BoardSection({
@@ -248,6 +325,10 @@ function BoardSection({
   heading,
   subheading,
   showDivider = false,
+  openBoardLabel,
+  ariaOpenBoardTemplate,
+  levelGcseLabel,
+  levelIgcseLabel,
 }: BoardSectionProps) {
   const headingId = `${sectionId}-heading`
 
@@ -272,42 +353,48 @@ function BoardSection({
         </div>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {boards.map((b) => (
-            <li key={b.id}>
-              <Link
-                href={b.href}
-                aria-label={`${b.name} — ${b.level === 'gcse' ? 'GCSE' : 'IGCSE'} — open board`}
-                className={`group relative flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-5 sm:p-6 transition-all hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 ${
-                  b.level === 'gcse'
-                    ? 'hover:border-emerald-400/40 focus-visible:ring-emerald-400'
-                    : 'hover:border-clay-300/40 focus-visible:ring-clay-300'
-                }`}
-              >
-                <LevelChip level={b.level} className="absolute right-4 top-4" />
-                <div className="flex items-center gap-4 pr-16">
-                  <span
-                    aria-hidden="true"
-                    className={`inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 ${b.discClass} font-mono text-xs sm:text-sm font-bold tracking-wide`}
-                  >
-                    {b.initials}
-                  </span>
-                  <h3 className="font-serif text-lg sm:text-xl font-semibold text-cream-50 leading-tight">
-                    {b.name}
-                  </h3>
-                </div>
-                <p className="text-sm text-cream-100/70 leading-relaxed">{b.blurb}</p>
-                <span
-                  className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
+          {boards.map((b) => {
+            const levelLabel = b.level === 'gcse' ? levelGcseLabel : levelIgcseLabel
+            const ariaLabel = ariaOpenBoardTemplate
+              .replace('{name}', b.name)
+              .replace('{level}', levelLabel)
+            return (
+              <li key={b.id}>
+                <Link
+                  href={b.href}
+                  aria-label={ariaLabel}
+                  className={`group relative flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-5 sm:p-6 transition-all hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 ${
                     b.level === 'gcse'
-                      ? 'text-emerald-300 group-hover:text-emerald-200'
-                      : 'text-clay-300 group-hover:text-clay-200'
+                      ? 'hover:border-emerald-400/40 focus-visible:ring-emerald-400'
+                      : 'hover:border-clay-300/40 focus-visible:ring-clay-300'
                   }`}
                 >
-                  Open board <span aria-hidden="true">&rarr;</span>
-                </span>
-              </Link>
-            </li>
-          ))}
+                  <LevelChip level={b.level} className="absolute right-4 top-4" />
+                  <div className="flex items-center gap-4 pr-16">
+                    <span
+                      aria-hidden="true"
+                      className={`inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 ${b.discClass} font-mono text-xs sm:text-sm font-bold tracking-wide`}
+                    >
+                      {b.initials}
+                    </span>
+                    <h3 className="font-serif text-lg sm:text-xl font-semibold text-cream-50 leading-tight">
+                      {b.name}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-cream-100/70 leading-relaxed">{b.blurb}</p>
+                  <span
+                    className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
+                      b.level === 'gcse'
+                        ? 'text-emerald-300 group-hover:text-emerald-200'
+                        : 'text-clay-300 group-hover:text-clay-200'
+                    }`}
+                  >
+                    {openBoardLabel} <span aria-hidden="true">&rarr;</span>
+                  </span>
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </section>

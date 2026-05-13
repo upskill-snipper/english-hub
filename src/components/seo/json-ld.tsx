@@ -6,15 +6,32 @@
 // is still serialised; when served live, middleware sets the nonce in the
 // Content-Security-Policy header so Next's own runtime + these JSON-LD tags
 // all carry the same value).
+//
+// User-visible strings (organisation description, offer names) route through
+// the i18n dictionary so Google's locale-aware rich-result rendering picks up
+// the Arabic copy when `x-lang === 'ar'`. The other exports (Course,
+// Breadcrumb, FAQ, Article, HowTo, LearningResource, Quiz) take their strings
+// as props from callers, so they remain sync and locale-agnostic at this
+// layer — callers translate before passing in.
 
-export function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
+import { tMany } from '@/lib/i18n/t'
+
+export async function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
+  const [siteDescription, studentMonthly, studentAnnual, teacherMonthly, teacherAnnual] =
+    await tMany([
+      'seo.site.description',
+      'seo.offer.student_monthly',
+      'seo.offer.student_annual',
+      'seo.offer.teacher_monthly',
+      'seo.offer.teacher_annual',
+    ])
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     name: 'The English Hub',
     url: 'https://theenglishhub.app',
-    description:
-      'Professional KS3, GCSE, and IGCSE English tutoring platform with structured courses, exam-style practice, and AI-powered feedback.',
+    description: siteDescription,
     areaServed: { '@type': 'Country', name: 'United Kingdom' },
     audience: {
       '@type': 'EducationalAudience',
@@ -25,7 +42,7 @@ export function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
     offers: [
       {
         '@type': 'Offer',
-        name: 'Student Monthly Plan',
+        name: studentMonthly,
         price: '3.49',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
@@ -33,7 +50,7 @@ export function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
       },
       {
         '@type': 'Offer',
-        name: 'Student Annual Plan',
+        name: studentAnnual,
         price: '29.99',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
@@ -41,7 +58,7 @@ export function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
       },
       {
         '@type': 'Offer',
-        name: 'Teacher Monthly Plan',
+        name: teacherMonthly,
         price: '7.99',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
@@ -49,7 +66,7 @@ export function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
       },
       {
         '@type': 'Offer',
-        name: 'Teacher Annual Plan',
+        name: teacherAnnual,
         price: '67.99',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import sitemap from '@/app/sitemap'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -51,9 +52,11 @@ interface SectionDef {
  * Sections are tested in order; each path lands in the first matching section.
  * Anything unmatched falls into the "Other pages" bucket so nothing is hidden.
  */
-const SECTIONS: SectionDef[] = [
+type SectionKeyDef = { headingKey: string; match: (p: string) => boolean }
+
+const SECTION_DEFS: SectionKeyDef[] = [
   {
-    heading: 'Home and key pages',
+    headingKey: 'sitemap.section.home_and_key',
     match: (p) =>
       p === '/' ||
       p === '/board-select' ||
@@ -68,7 +71,7 @@ const SECTIONS: SectionDef[] = [
       p === '/sitemap-html',
   },
   {
-    heading: 'For audiences',
+    headingKey: 'sitemap.section.for_audiences',
     match: (p) =>
       p === '/for-students' ||
       p.startsWith('/for-teachers') ||
@@ -78,7 +81,7 @@ const SECTIONS: SectionDef[] = [
       p === '/creators',
   },
   {
-    heading: 'Revision hubs',
+    headingKey: 'sitemap.section.revision_hubs',
     match: (p) =>
       p === '/revision' ||
       (p.startsWith('/revision/') &&
@@ -86,47 +89,47 @@ const SECTIONS: SectionDef[] = [
         !p.startsWith('/revision/poetry/')),
   },
   {
-    heading: 'Set texts',
+    headingKey: 'sitemap.section.set_texts',
     match: (p) => p.startsWith('/revision/texts'),
   },
   {
-    heading: 'Anthology poems',
+    headingKey: 'sitemap.section.anthology_poems',
     match: (p) => p.startsWith('/revision/poetry/'),
   },
   {
-    heading: 'IGCSE Edexcel',
+    headingKey: 'sitemap.section.igcse_edexcel',
     match: (p) => p === '/igcse/edexcel' || p.startsWith('/igcse/edexcel/'),
   },
   {
-    heading: 'IGCSE Edexcel Language',
+    headingKey: 'sitemap.section.igcse_edexcel_lang',
     match: (p) => p === '/igcse/edexcel-lang' || p.startsWith('/igcse/edexcel-lang/'),
   },
   {
-    heading: 'IGCSE Cambridge',
+    headingKey: 'sitemap.section.igcse_cambridge',
     match: (p) => p === '/igcse/cambridge' || p.startsWith('/igcse/cambridge/'),
   },
   {
-    heading: 'IGCSE',
+    headingKey: 'sitemap.section.igcse',
     match: (p) => p === '/igcse' || p.startsWith('/igcse/'),
   },
   {
-    heading: 'Courses',
+    headingKey: 'sitemap.section.courses',
     match: (p) => p.startsWith('/courses/'),
   },
   {
-    heading: 'Resources',
+    headingKey: 'sitemap.section.resources',
     match: (p) => p === '/resources' || p.startsWith('/resources/'),
   },
   {
-    heading: 'Analysis and assessment',
+    headingKey: 'sitemap.section.analysis_assessment',
     match: (p) => p.startsWith('/analysis/') || p.startsWith('/assessment/'),
   },
   {
-    heading: 'Toolkit',
+    headingKey: 'sitemap.section.toolkit',
     match: (p) => p === '/toolkit' || p.startsWith('/toolkit/'),
   },
   {
-    heading: 'Help and FAQs',
+    headingKey: 'sitemap.section.help_faqs',
     match: (p) =>
       p === '/faqs' ||
       p === '/help' ||
@@ -135,7 +138,7 @@ const SECTIONS: SectionDef[] = [
       p.startsWith('/safeguarding/'),
   },
   {
-    heading: 'Legal',
+    headingKey: 'sitemap.section.legal',
     match: (p) =>
       p === '/privacy-policy' ||
       p === '/terms' ||
@@ -149,8 +152,28 @@ const SECTIONS: SectionDef[] = [
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function SitemapHtmlPage() {
+export default async function SitemapHtmlPage() {
   const entries = sitemap()
+
+  // Resolve section headings once at request time. We pre-load all keys (one
+  // per section, plus the "Other pages" fallback and the H1/lead pair).
+  const allKeys = [
+    'sitemap.h1',
+    'sitemap.lead',
+    'sitemap.section.other',
+    'sitemap.crumb.home',
+    'sitemap.crumb.sitemap',
+    ...SECTION_DEFS.map((s) => s.headingKey),
+  ]
+  const translations = await tMany(allKeys)
+  const tH1 = translations[0]!
+  const tLead = translations[1]!
+  const tOther = translations[2]!
+  const tCrumbHome = translations[3]!
+  const tCrumbSitemap = translations[4]!
+  const sectionHeadings: { heading: string; match: (p: string) => boolean }[] = SECTION_DEFS.map(
+    (s, idx) => ({ heading: translations[5 + idx]!, match: s.match }),
+  )
 
   // Build unique sorted paths.
   const pathSet = new Set<string>()
@@ -162,15 +185,15 @@ export default function SitemapHtmlPage() {
   // Allocate paths to sections.
   const grouped = new Map<string, string[]>()
   const headings: string[] = []
-  for (const section of SECTIONS) {
+  for (const section of sectionHeadings) {
     grouped.set(section.heading, [])
     headings.push(section.heading)
   }
-  const otherHeading = 'Other pages'
+  const otherHeading = tOther
   grouped.set(otherHeading, [])
 
   for (const path of paths) {
-    const section = SECTIONS.find((s) => s.match(path))
+    const section = sectionHeadings.find((s) => s.match(path))
     const heading = section ? section.heading : otherHeading
     grouped.get(heading)!.push(path)
   }
@@ -185,16 +208,13 @@ export default function SitemapHtmlPage() {
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: BASE },
-          { name: 'Sitemap', url: `${BASE}/sitemap-html` },
+          { name: tCrumbHome, url: BASE },
+          { name: tCrumbSitemap, url: `${BASE}/sitemap-html` },
         ]}
       />
       <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Sitemap</h1>
-        <p className="mt-4 text-muted-foreground leading-relaxed">
-          Every page on The English Hub, organised by section. Use this to find anything: revision
-          hubs, set texts, exam boards, resources.
-        </p>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{tH1}</h1>
+        <p className="mt-4 text-muted-foreground leading-relaxed">{tLead}</p>
 
         <div className="mt-12 space-y-12">
           {renderedHeadings.map((heading) => {

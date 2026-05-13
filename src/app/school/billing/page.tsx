@@ -523,6 +523,7 @@ function RenewalCtaCard({
   daysRemaining: number
   schoolName: string
 }) {
+  const t = useT()
   if (daysRemaining > RENEWAL_WARNING_DAYS) return null
 
   return (
@@ -531,11 +532,14 @@ function RenewalCtaCard({
         <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-clay-600" />
         <div className="flex-1 space-y-3">
           <p className="text-sm font-semibold text-amber-700">
-            Your FOUNDER access expires in{' '}
+            {t('school.billing.renewal_cta.pre')}{' '}
             <span className="font-bold">
-              {daysRemaining} {daysRemaining === 1 ? 'day' : 'days'}
+              {daysRemaining}{' '}
+              {daysRemaining === 1
+                ? t('school.billing.day_singular')
+                : t('school.billing.day_plural')}
             </span>
-            . Renew now to maintain uninterrupted access for all students and teachers.
+            {t('school.billing.renewal_cta.post')}
           </p>
           <Button
             className="bg-amber-500 text-amber-950 hover:bg-amber-400 font-semibold"
@@ -543,7 +547,7 @@ function RenewalCtaCard({
             render={<a href={buildRenewalMailto(schoolName)} />}
           >
             <Mail className="mr-2 h-4 w-4" />
-            Contact Us to Renew
+            {t('school.billing.renewal_cta.button')}
           </Button>
         </div>
       </div>
@@ -552,12 +556,13 @@ function RenewalCtaCard({
 }
 
 function BillingContactCard() {
+  const t = useT()
   return (
     <Card className="border-border bg-card/60">
       <CardContent className="flex items-center gap-3 py-4">
         <Mail className="h-4 w-4 shrink-0 text-muted-foreground" />
         <p className="text-sm text-muted-foreground">
-          For billing questions:{' '}
+          {t('school.billing.contact.prefix')}{' '}
           <a
             href={`mailto:${BILLING_EMAIL}`}
             className="font-medium text-primary underline-offset-4 hover:underline"
@@ -575,6 +580,7 @@ function BillingContactCard() {
 // ---------------------------------------------------------------------------
 
 export default function SchoolBillingPage() {
+  const t = useT()
   const [access, setAccess] = useState<SchoolAccessData | null>(null)
   const [stats, setStats] = useState<UsageStats>({ totalStudents: 0, totalTeachers: 0 })
   const [loading, setLoading] = useState(true)
@@ -588,20 +594,20 @@ export default function SchoolBillingPage() {
         const res = await fetch('/api/school/access')
         if (!res.ok) {
           const json = await res.json().catch(() => ({}))
-          setError((json as { error?: string }).error ?? 'Failed to load billing information.')
+          setError((json as { error?: string }).error ?? t('school.billing.error_load'))
           return
         }
         const data: SchoolAccessData = await res.json()
         setAccess(data)
       } catch {
-        setError('Failed to load billing information. Please refresh the page.')
+        setError(t('school.billing.error_load_refresh'))
       } finally {
         setLoading(false)
       }
     }
 
     fetchAccess()
-  }, [])
+  }, [t])
 
   // Fetch usage stats via overview endpoint
   useEffect(() => {
@@ -635,7 +641,7 @@ export default function SchoolBillingPage() {
         <CreditCard className="h-6 w-6 text-muted-foreground" />
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-foreground">
-            Billing &amp; Subscription
+            {t('school.billing.page_title')}
           </h1>
           {access?.schoolName && (
             <p className="mt-0.5 flex items-center gap-1.5 text-sm text-muted-foreground">

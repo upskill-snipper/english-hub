@@ -2,18 +2,14 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { Lightbulb, Brain, BookOpen, Target, Sparkles } from 'lucide-react'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  TooltipProvider,
-} from '@/components/ui/tooltip'
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip'
 import {
   type TipCategory,
   type LearningTip as LearningTipData,
   getTipsByCategory,
 } from '@/data/learning-tips'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Icon map ──────────────────────────────────────────────────────────── */
 
@@ -28,15 +24,18 @@ const CATEGORY_ICONS: Record<TipCategory, typeof Lightbulb> = {
   practice: Target,
 }
 
-const CATEGORY_LABELS: Record<TipCategory, string> = {
-  study: 'Study Tip',
-  exam: 'Exam Tip',
-  grade: 'Grade Insight',
-  motivation: 'Motivation',
-  resource: 'Resource Tip',
-  progress: 'Progress Insight',
-  course: 'Course Tip',
-  practice: 'Practice Tip',
+// Map TipCategory -> dictionary key for the AR-aware label. The visible
+// label is resolved via `useT()` inside the component so a language flip
+// re-renders the tooltip without remounting.
+const CATEGORY_LABEL_KEYS: Record<TipCategory, string> = {
+  study: 'ui.learning_tip.label.study',
+  exam: 'ui.learning_tip.label.exam',
+  grade: 'ui.learning_tip.label.grade',
+  motivation: 'ui.learning_tip.label.motivation',
+  resource: 'ui.learning_tip.label.resource',
+  progress: 'ui.learning_tip.label.progress',
+  course: 'ui.learning_tip.label.course',
+  practice: 'ui.learning_tip.label.practice',
 }
 
 /* ── Props ──────────────────────────────────────────────────────────────── */
@@ -67,10 +66,10 @@ export function LearningTip({
   icon,
 }: LearningTipProps) {
   const [tip, setTip] = useState<LearningTipData | null>(null)
+  const t = useT()
 
   const pickTip = useCallback(() => {
-    const pool =
-      categories.length > 0 ? getTipsByCategory(...categories) : getTipsByCategory()
+    const pool = categories.length > 0 ? getTipsByCategory(...categories) : getTipsByCategory()
     if (pool.length === 0) return
     setTip(pool[Math.floor(Math.random() * pool.length)])
   }, [categories])
@@ -91,7 +90,8 @@ export function LearningTip({
   if (!tip) return children ?? null
 
   const CategoryIcon = CATEGORY_ICONS[tip.category] ?? Lightbulb
-  const label = CATEGORY_LABELS[tip.category] ?? 'Tip'
+  const labelKey = CATEGORY_LABEL_KEYS[tip.category]
+  const label = labelKey ? t(labelKey) : t('ui.learning_tip.label.fallback')
 
   const iconSize = size === 'sm' ? 'h-3.5 w-3.5' : 'h-4 w-4'
 
@@ -100,9 +100,7 @@ export function LearningTip({
     return (
       <TooltipProvider delay={500}>
         <Tooltip onOpenChange={handleOpenChange}>
-          <TooltipTrigger className="inline-flex items-center gap-1">
-            {children}
-          </TooltipTrigger>
+          <TooltipTrigger className="inline-flex items-center gap-1">{children}</TooltipTrigger>
           <TooltipContent
             side={side}
             className="max-w-xs rounded-lg border border-primary/20 bg-card px-3.5 py-2.5 text-card-foreground shadow-lg"
@@ -115,9 +113,7 @@ export function LearningTip({
                 <p className="text-[10px] font-semibold uppercase tracking-wider text-primary">
                   {label}
                 </p>
-                <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
-                  {tip.text}
-                </p>
+                <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{tip.text}</p>
               </div>
             </div>
           </TooltipContent>
@@ -136,7 +132,7 @@ export function LearningTip({
             size === 'sm' ? 'h-5 w-5' : 'h-6 w-6',
             className,
           )}
-          aria-label={`${label}: hover for a helpful tip`}
+          aria-label={`${label}: ${t('ui.learning_tip.aria_label')}`}
         >
           {icon ?? <CategoryIcon className={iconSize} />}
         </TooltipTrigger>
@@ -152,9 +148,7 @@ export function LearningTip({
               <p className="text-[10px] font-semibold uppercase tracking-wider text-primary">
                 {label}
               </p>
-              <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
-                {tip.text}
-              </p>
+              <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{tip.text}</p>
             </div>
           </div>
         </TooltipContent>

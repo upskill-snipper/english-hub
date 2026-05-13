@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Types ─────────────────────────────────────────────────────────── */
 
@@ -27,43 +28,46 @@ interface StyleSelectorInlineProps {
 
 /* ── Style definitions ─────────────────────────────────────────────── */
 
+// Visual + i18n metadata per style. The `labelKey` and `ariaKey` route
+// through the dictionary so AR mode renders Khaleeji copy. English-side
+// labels remain the source of truth and the fallback.
 const STYLES: {
   id: ResourceStyle
-  label: string
+  labelKey: string
+  ariaKey: string
   bg: string
   textLine: string
   accentDot: string
 }[] = [
   {
     id: 'cream',
-    label: 'Cream',
-    bg: 'bg-cream-50',        // #FBF7F0
-    textLine: 'bg-ink-800',   // dark text line
+    labelKey: 'ui.style.cream',
+    ariaKey: 'ui.style.option_aria_label.cream',
+    bg: 'bg-cream-50', // #FBF7F0
+    textLine: 'bg-ink-800', // dark text line
     accentDot: 'bg-clay-400', // terracotta accent
   },
   {
     id: 'dark',
-    label: 'Dark',
-    bg: 'bg-ink-950',         // #0F1411 (near-black)
-    textLine: 'bg-cream-50',  // cream text line
+    labelKey: 'ui.style.dark',
+    ariaKey: 'ui.style.option_aria_label.dark',
+    bg: 'bg-ink-950', // #0F1411 (near-black)
+    textLine: 'bg-cream-50', // cream text line
     accentDot: 'bg-clay-300', // warm terracotta (#E8A382 ≈ #E89764)
   },
   {
     id: 'whiteboard',
-    label: 'Whiteboard',
-    bg: 'bg-card',            // card surface
-    textLine: 'bg-ink-800',   // dark text line
+    labelKey: 'ui.style.whiteboard',
+    ariaKey: 'ui.style.option_aria_label.whiteboard',
+    bg: 'bg-card', // card surface
+    textLine: 'bg-ink-800', // dark text line
     accentDot: 'bg-clay-400', // terracotta accent
   },
 ]
 
 /* ── Swatch preview ────────────────────────────────────────────────── */
 
-function Swatch({
-  style,
-}: {
-  style: (typeof STYLES)[number]
-}) {
+function Swatch({ style }: { style: (typeof STYLES)[number] }) {
   return (
     <div
       className={cn(
@@ -87,10 +91,11 @@ function Swatch({
 /* ── StyleSelector (full, with swatches) ───────────────────────────── */
 
 export function StyleSelector({ value, onChange, className }: StyleSelectorProps) {
+  const t = useT()
   return (
     <div
       role="radiogroup"
-      aria-label="Presentation style"
+      aria-label={t('ui.style.aria_label')}
       className={cn('inline-flex items-end gap-2', className)}
     >
       {STYLES.map((style) => {
@@ -101,7 +106,7 @@ export function StyleSelector({ value, onChange, className }: StyleSelectorProps
             type="button"
             role="radio"
             aria-checked={selected}
-            aria-label={`${style.label} style`}
+            aria-label={t(style.ariaKey)}
             onClick={() => onChange(style.id)}
             className={cn(
               'flex flex-col items-center gap-1.5 rounded-md p-1.5 transition-all duration-200',
@@ -113,7 +118,7 @@ export function StyleSelector({ value, onChange, className }: StyleSelectorProps
           >
             <Swatch style={style} />
             <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-600">
-              {style.label}
+              {t(style.labelKey)}
             </span>
           </button>
         )
@@ -125,10 +130,11 @@ export function StyleSelector({ value, onChange, className }: StyleSelectorProps
 /* ── StyleSelectorInline (compact pill buttons) ────────────────────── */
 
 export function StyleSelectorInline({ value, onChange, className }: StyleSelectorInlineProps) {
+  const t = useT()
   return (
     <div
       role="radiogroup"
-      aria-label="Presentation style"
+      aria-label={t('ui.style.aria_label')}
       className={cn('inline-flex items-center gap-1', className)}
     >
       {STYLES.map((style) => {
@@ -139,7 +145,7 @@ export function StyleSelectorInline({ value, onChange, className }: StyleSelecto
             type="button"
             role="radio"
             aria-checked={selected}
-            aria-label={`${style.label} style`}
+            aria-label={t(style.ariaKey)}
             onClick={() => onChange(style.id)}
             className={cn(
               'rounded-pill px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] transition-all duration-200',
@@ -149,7 +155,7 @@ export function StyleSelectorInline({ value, onChange, className }: StyleSelecto
                 : 'bg-ink-100 text-ink-500 hover:bg-ink-200 hover:text-ink-700',
             )}
           >
-            {style.label}
+            {t(style.labelKey)}
           </button>
         )
       })}

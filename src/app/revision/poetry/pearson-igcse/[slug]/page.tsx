@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { StubStudyGuide } from '../../../texts/_components/stub-study-guide'
+import { t } from '@/lib/i18n/t'
 
 type Params = { slug: string }
 
@@ -26,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const text = getSetText(slug)
   if (!text) {
     return {
-      title: 'Poem Not Found | The English Hub',
-      description: 'The poem you are looking for could not be found.',
+      title: await t('analysis.deep.pearson_poetry.not_found_title'),
+      description: await t('analysis.deep.pearson_poetry.not_found_desc'),
     }
   }
   return {
@@ -50,12 +51,10 @@ export default async function PearsonIgcsePoemPage({ params }: { params: Promise
     return <BrightLightsOfSarajevoStudyGuide />
   }
 
+  const backLabel = await t('analysis.deep.pearson_poetry.back_to_pearson')
+
   return (
-    <StubStudyGuide
-      text={text}
-      backHref="/revision/poetry/pearson-igcse"
-      backLabel="Back to Pearson IGCSE Poetry"
-    />
+    <StubStudyGuide text={text} backHref="/revision/poetry/pearson-igcse" backLabel={backLabel} />
   )
 }
 
@@ -69,7 +68,15 @@ export default async function PearsonIgcsePoemPage({ params }: { params: Promise
  *  - Bosnian War / Siege of Sarajevo (1992-95) historical context.
  *  - Bloodaxe Books rights notice for the poem.
  */
-function BrightLightsOfSarajevoStudyGuide() {
+async function BrightLightsOfSarajevoStudyGuide() {
+  // Chrome translations. The literary body (anthology-version note,
+  // historical context, form/structure analysis, rights notice) stays
+  // in source language by design.
+  const tBack = await t('analysis.deep.pearson_poetry.back_to_pearson')
+  const tPoetryAnthology = await t('analysis.deep.pearson_poetry.poetry_anthology')
+  const tLangABadge = await t('analysis.deep.pearson_poetry.lang_a_badge')
+  const tIssue2Badge = await t('analysis.deep.pearson_poetry.issue_2_badge')
+  const tBy = await t('analysis.deep.pearson_poetry.by_author')
   return (
     <div className="space-y-10 pb-16">
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-blue-500/[0.04] p-6 sm:p-8 lg:p-10">
@@ -81,26 +88,26 @@ function BrightLightsOfSarajevoStudyGuide() {
             render={<Link href="/revision/poetry/pearson-igcse" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Pearson IGCSE Poetry
+            {tBack}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <Badge variant="secondary">Poetry Anthology</Badge>
+            <Badge variant="secondary">{tPoetryAnthology}</Badge>
             <Badge variant="outline" className="text-muted-foreground">
               1995
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              Edexcel IGCSE Language A (4EA1)
+              {tLangABadge}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
-              Anthology Issue 2
+              {tIssue2Badge}
             </Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             The Bright Lights of Sarajevo
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">by Tony Harrison</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">{tBy} Tony Harrison</p>
 
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
             Harrison reports from besieged Sarajevo, where young couples flirt in the dark streets

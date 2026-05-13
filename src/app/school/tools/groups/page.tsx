@@ -18,6 +18,7 @@ import {
 import { cn } from '@/lib/utils'
 import { useSchool } from '@/hooks/useSchool'
 import type { Class } from '@/lib/types'
+import { useT } from '@/lib/i18n/use-t'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -51,18 +52,38 @@ interface Group {
 
 type GroupStrategy = 'mixed' | 'similar' | 'random' | 'custom'
 
-const STRATEGY_OPTIONS: { value: GroupStrategy; label: string; description: string }[] = [
-  { value: 'mixed', label: 'Mixed Ability', description: 'Each group has a range of ability levels' },
-  { value: 'similar', label: 'Similar Ability', description: 'Groups of students at the same level for targeted work' },
-  { value: 'random', label: 'Random', description: 'Randomly shuffled groups' },
-  { value: 'custom', label: 'Custom', description: 'Drag students between groups manually' },
+// Option lists store i18n keys; useT() resolves at render so AR toggles
+// re-render text without re-deriving array identity.
+const STRATEGY_OPTIONS: {
+  value: GroupStrategy
+  labelKey: string
+  descKey: string
+}[] = [
+  {
+    value: 'mixed',
+    labelKey: 'school.group_gen.strategy.mixed.label',
+    descKey: 'school.group_gen.strategy.mixed.desc',
+  },
+  {
+    value: 'similar',
+    labelKey: 'school.group_gen.strategy.similar.label',
+    descKey: 'school.group_gen.strategy.similar.desc',
+  },
+  {
+    value: 'random',
+    labelKey: 'school.group_gen.strategy.random.label',
+    descKey: 'school.group_gen.strategy.random.desc',
+  },
+  {
+    value: 'custom',
+    labelKey: 'school.group_gen.strategy.custom.label',
+    descKey: 'school.group_gen.strategy.custom.desc',
+  },
 ]
 
-const GROUP_NAMES = [
-  'Group A', 'Group B', 'Group C', 'Group D',
-  'Group E', 'Group F', 'Group G', 'Group H',
-  'Group I', 'Group J', 'Group K', 'Group L',
-]
+// Group letter suffixes stay Latin (A, B, C…) — names are paired with a
+// translated "Group / مجموعة" prefix at render time.
+const GROUP_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -97,11 +118,14 @@ function shuffleArray<T>(arr: T[]): T[] {
 function generateGroups(
   students: GroupStudent[],
   numGroups: number,
-  strategy: GroupStrategy
+  strategy: GroupStrategy,
 ): Group[] {
+  // `name` stores the suffix only (letter or numeric fallback). The page
+  // body renders "<i18n-prefix> <suffix>" so the prefix translates with
+  // the locale toggle without re-generating groups.
   const groups: Group[] = Array.from({ length: numGroups }, (_, i) => ({
     id: i,
-    name: GROUP_NAMES[i] ?? `Group ${i + 1}`,
+    name: GROUP_LETTERS[i] ?? `${i + 1}`,
     students: [],
   }))
 
@@ -151,6 +175,7 @@ function formatTime(seconds: number): string {
 export default function GroupGeneratorPage() {
   const router = useRouter()
   const { classes, isLoading: schoolLoading } = useSchool()
+  const t = useT()
 
   // Class & students
   const [selectedClassId, setSelectedClassId] = useState<string | null>(null)
@@ -194,17 +219,25 @@ export default function GroupGeneratorPage() {
 
         const studentList: GroupStudent[] = (data.student_summaries ?? data.students ?? []).map(
           (s: Record<string, unknown>) => {
-            const grade = (s.predicted_grade as string) ??
+            const grade =
+              (s.predicted_grade as string) ??
               (s.avg_quiz_score != null ? String(Math.round(s.avg_quiz_score as number)) : null)
             return {
               id: (s.student_id as string) ?? (s.id as string) ?? '',
-              name: (s.full_name as string) ?? (s.student_name as string) ?? (s.email as string) ?? 'Unknown',
+              name:
+                (s.full_name as string) ??
+                (s.student_name as string) ??
+                (s.email as string) ??
+                'Unknown',
               grade,
               target: (s.target_grade as string) ?? null,
-              trajectory: ((s.trajectory as string) ?? 'stable') as 'improving' | 'stable' | 'declining',
+              trajectory: ((s.trajectory as string) ?? 'stable') as
+                | 'improving'
+                | 'stable'
+                | 'declining',
               abilityLevel: classifyAbility(grade),
             }
-          }
+          },
         )
 
         setStudents(studentList)
@@ -324,18 +357,24 @@ export default function GroupGeneratorPage() {
 
   function handleExport() {
     const selectedClass = classes.find((c) => c.id === selectedClassId)
+    const strategyOpt = STRATEGY_OPTIONS.find((s) => s.value === strategy)
+    const groupPrefix = t('school.group_gen.group_prefix')
     const lines: string[] = [
-      `Group Compositions — ${selectedClass?.name ?? 'Class'}`,
-      `Strategy: ${STRATEGY_OPTIONS.find((s) => s.value === strategy)?.label}`,
-      `Generated: ${new Date().toLocaleDateString('en-GB')}`,
+      `${t('school.group_gen.export.heading')} — ${selectedClass?.name ?? t('school.group_gen.print_class_fallback')}`,
+      `${t('school.group_gen.export.strategy_label')}: ${strategyOpt ? t(strategyOpt.labelKey) : ''}`,
+      `${t('school.group_gen.export.generated_label')}: ${new Date().toLocaleDateString('en-GB')}`,
       '',
     ]
 
     groups.forEach((group) => {
-      lines.push(`${group.name} (${group.students.length} students)`)
+      lines.push(
+        `${groupPrefix} ${group.name} (${group.students.length} ${t('school.group_gen.export.students_suffix')})`,
+      )
       lines.push('—'.repeat(40))
       group.students.forEach((s) => {
-        lines.push(`  ${s.name}  |  Grade: ${s.grade ?? 'N/A'}  |  Ability: ${s.abilityLevel}`)
+        lines.push(
+          `  ${s.name}  |  ${t('school.group_gen.export.grade_label')}: ${s.grade ?? t('school.group_gen.export.na')}  |  ${t('school.group_gen.export.ability_label')}: ${t(`school.group_gen.ability.${s.abilityLevel}`)}`,
+        )
       })
       lines.push('')
     })
@@ -377,21 +416,19 @@ export default function GroupGeneratorPage() {
             <ArrowLeft className="h-4 w-4" />
           </Button>
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Group Generator</h1>
-            <p className="text-sm text-muted-foreground">
-              Create balanced groups for classroom activities
-            </p>
+            <h1 className="text-2xl font-bold tracking-tight">{t('school.group_gen.title')}</h1>
+            <p className="text-sm text-muted-foreground">{t('school.group_gen.subtitle')}</p>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
           <Button variant="outline" size="sm" onClick={handlePrint} disabled={groups.length === 0}>
             <Printer className="mr-1.5 h-3.5 w-3.5" />
-            Print
+            {t('school.group_gen.print')}
           </Button>
           <Button variant="outline" size="sm" onClick={handleExport} disabled={groups.length === 0}>
             <Download className="mr-1.5 h-3.5 w-3.5" />
-            Export
+            {t('school.group_gen.export')}
           </Button>
         </div>
       </div>
@@ -399,11 +436,21 @@ export default function GroupGeneratorPage() {
       {/* Print header */}
       <div className="hidden print:block">
         <h1 className="text-xl font-bold">
-          Group Compositions — {selectedClass?.name ?? 'Class'}
+          {t('school.group_gen.print_heading_prefix')}
+          {selectedClass?.name ?? t('school.group_gen.print_class_fallback')}
         </h1>
         <p className="text-sm text-muted-foreground">
-          Strategy: {STRATEGY_OPTIONS.find((s) => s.value === strategy)?.label} &middot;{' '}
-          {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+          {t('school.group_gen.print_strategy_prefix')}
+          {(() => {
+            const opt = STRATEGY_OPTIONS.find((s) => s.value === strategy)
+            return opt ? t(opt.labelKey) : ''
+          })()}{' '}
+          &middot;{' '}
+          {new Date().toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })}
         </p>
       </div>
 
@@ -411,13 +458,10 @@ export default function GroupGeneratorPage() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 print:hidden">
         {/* Class selector */}
         <div className="space-y-1.5">
-          <Label className="text-xs font-medium">Class</Label>
-          <Select
-            value={selectedClassId ?? undefined}
-            onValueChange={(v) => setSelectedClassId(v)}
-          >
+          <Label className="text-xs font-medium">{t('school.group_gen.class_label')}</Label>
+          <Select value={selectedClassId ?? undefined} onValueChange={(v) => setSelectedClassId(v)}>
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select a class..." />
+              <SelectValue placeholder={t('school.group_gen.class_placeholder')} />
             </SelectTrigger>
             <SelectContent>
               {classes.map((c) => (
@@ -433,7 +477,7 @@ export default function GroupGeneratorPage() {
         <div className="space-y-1.5">
           <Label className="text-xs font-medium">
             <Users className="mr-1 inline h-3.5 w-3.5" />
-            Number of Groups
+            {t('school.group_gen.num_groups')}
           </Label>
           <Input
             type="number"
@@ -446,7 +490,7 @@ export default function GroupGeneratorPage() {
 
         {/* Strategy */}
         <div className="space-y-1.5">
-          <Label className="text-xs font-medium">Grouping Strategy</Label>
+          <Label className="text-xs font-medium">{t('school.group_gen.strategy')}</Label>
           <Select value={strategy} onValueChange={(v) => setStrategy(v as GroupStrategy)}>
             <SelectTrigger className="w-full">
               <SelectValue />
@@ -454,7 +498,7 @@ export default function GroupGeneratorPage() {
             <SelectContent>
               {STRATEGY_OPTIONS.map((opt) => (
                 <SelectItem key={opt.value} value={opt.value}>
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -463,13 +507,9 @@ export default function GroupGeneratorPage() {
 
         {/* Regenerate */}
         <div className="flex items-end">
-          <Button
-            onClick={handleRegenerate}
-            disabled={students.length === 0}
-            className="w-full"
-          >
+          <Button onClick={handleRegenerate} disabled={students.length === 0} className="w-full">
             <Shuffle className="mr-1.5 h-3.5 w-3.5" />
-            Regenerate
+            {t('school.group_gen.regenerate')}
           </Button>
         </div>
       </div>
@@ -478,14 +518,17 @@ export default function GroupGeneratorPage() {
       {selectedClassId && students.length > 0 && (
         <div className="flex items-center gap-2 rounded-lg border border-border bg-muted/30 px-4 py-2 text-sm print:hidden">
           <Badge variant="outline" className="shrink-0">
-            {students.length} students
+            {students.length} {t('school.group_gen.students_suffix')}
           </Badge>
           <span className="text-muted-foreground">
-            {STRATEGY_OPTIONS.find((s) => s.value === strategy)?.description}
+            {(() => {
+              const opt = STRATEGY_OPTIONS.find((s) => s.value === strategy)
+              return opt ? t(opt.descKey) : null
+            })()}
           </span>
           {strategy === 'custom' && (
             <span className="text-xs text-muted-foreground/70">
-              — Drag students between groups to rearrange
+              {t('school.group_gen.drag_hint')}
             </span>
           )}
         </div>
@@ -499,13 +542,13 @@ export default function GroupGeneratorPage() {
       ) : !selectedClassId ? (
         <Card>
           <CardContent className="flex min-h-[40vh] items-center justify-center text-muted-foreground">
-            Select a class to generate groups
+            {t('school.group_gen.empty_select_class')}
           </CardContent>
         </Card>
       ) : students.length === 0 ? (
         <Card>
           <CardContent className="flex min-h-[40vh] items-center justify-center text-muted-foreground">
-            No students found in this class
+            {t('school.group_gen.empty_no_students')}
           </CardContent>
         </Card>
       ) : (
@@ -515,7 +558,7 @@ export default function GroupGeneratorPage() {
             numGroups <= 2 && 'sm:grid-cols-2',
             numGroups === 3 && 'sm:grid-cols-2 lg:grid-cols-3',
             numGroups >= 4 && numGroups <= 6 && 'sm:grid-cols-2 lg:grid-cols-3',
-            numGroups > 6 && 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+            numGroups > 6 && 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
           )}
         >
           {groups.map((group) => {
@@ -528,14 +571,16 @@ export default function GroupGeneratorPage() {
                 key={group.id}
                 className={cn(
                   'transition-all print:break-inside-avoid',
-                  strategy === 'custom' && 'border-dashed'
+                  strategy === 'custom' && 'border-dashed',
                 )}
                 onDragOver={strategy === 'custom' ? handleDragOver : undefined}
                 onDrop={strategy === 'custom' ? (e) => handleDrop(e, group.id) : undefined}
               >
                 <CardHeader className="pb-2">
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-base">{group.name}</CardTitle>
+                    <CardTitle className="text-base">
+                      {t('school.group_gen.group_prefix')} {group.name}
+                    </CardTitle>
                     <Badge variant="outline" className="text-xs">
                       {group.students.length}
                     </Badge>
@@ -544,17 +589,17 @@ export default function GroupGeneratorPage() {
                   <div className="flex gap-1.5 pt-1">
                     {highCount > 0 && (
                       <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[0.6rem] font-medium text-emerald-400">
-                        {highCount} high
+                        {highCount} {t('school.group_gen.ability.high_suffix')}
                       </span>
                     )}
                     {midCount > 0 && (
                       <span className="rounded-full bg-blue-500/20 px-2 py-0.5 text-[0.6rem] font-medium text-blue-400">
-                        {midCount} mid
+                        {midCount} {t('school.group_gen.ability.mid_suffix')}
                       </span>
                     )}
                     {lowCount > 0 && (
                       <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[0.6rem] font-medium text-clay-600">
-                        {lowCount} low
+                        {lowCount} {t('school.group_gen.ability.low_suffix')}
                       </span>
                     )}
                   </div>
@@ -575,7 +620,7 @@ export default function GroupGeneratorPage() {
                         strategy === 'custom'
                           ? 'cursor-grab border border-transparent hover:border-border hover:bg-muted/50'
                           : '',
-                        draggedStudentId === student.id && 'opacity-40'
+                        draggedStudentId === student.id && 'opacity-40',
                       )}
                     >
                       <span className="font-medium">{student.name}</span>
@@ -586,17 +631,19 @@ export default function GroupGeneratorPage() {
                         <span
                           className={cn(
                             'inline-block rounded-full px-1.5 py-0.5 text-[0.6rem] font-medium',
-                            abilityBadgeColor(student.abilityLevel)
+                            abilityBadgeColor(student.abilityLevel),
                           )}
                         >
-                          {student.abilityLevel}
+                          {t(`school.group_gen.ability.${student.abilityLevel}`)}
                         </span>
                       </div>
                     </div>
                   ))}
                   {group.students.length === 0 && (
                     <p className="py-4 text-center text-xs text-muted-foreground">
-                      {strategy === 'custom' ? 'Drop students here' : 'No students'}
+                      {strategy === 'custom'
+                        ? t('school.group_gen.drop_here')
+                        : t('school.group_gen.no_students_in_group')}
                     </p>
                   )}
                 </CardContent>
@@ -612,16 +659,16 @@ export default function GroupGeneratorPage() {
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-base">
               <Timer className="h-4 w-4" />
-              Activity Timer
+              {t('school.group_gen.timer.title')}
             </CardTitle>
-            <CardDescription>Set a countdown timer for group activities</CardDescription>
+            <CardDescription>{t('school.group_gen.timer.desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-end">
               {/* Timer config */}
               <div className="flex items-center gap-2">
                 <div className="space-y-1">
-                  <Label className="text-xs">Minutes</Label>
+                  <Label className="text-xs">{t('school.group_gen.timer.minutes')}</Label>
                   <Input
                     type="number"
                     min={0}
@@ -638,7 +685,7 @@ export default function GroupGeneratorPage() {
                 </div>
                 <span className="mt-6 text-lg font-bold text-muted-foreground">:</span>
                 <div className="space-y-1">
-                  <Label className="text-xs">Seconds</Label>
+                  <Label className="text-xs">{t('school.group_gen.timer.seconds')}</Label>
                   <Input
                     type="number"
                     min={0}
@@ -665,7 +712,7 @@ export default function GroupGeneratorPage() {
                       ? 'animate-pulse border-red-500/50 bg-red-500/10 text-red-400'
                       : timerTotal <= 30 && timerRunning
                         ? 'border-amber-500/50 bg-amber-500/10 text-clay-600'
-                        : 'border-primary/30 bg-primary/5 text-primary'
+                        : 'border-primary/30 bg-primary/5 text-primary',
                 )}
               >
                 {formatTime(timerTotal)}
@@ -674,14 +721,18 @@ export default function GroupGeneratorPage() {
               {/* Controls */}
               <div className="flex gap-2">
                 {!timerRunning ? (
-                  <Button size="sm" onClick={startTimer} disabled={timerMinutes === 0 && timerSeconds === 0 && timerTotal === 0}>
+                  <Button
+                    size="sm"
+                    onClick={startTimer}
+                    disabled={timerMinutes === 0 && timerSeconds === 0 && timerTotal === 0}
+                  >
                     <Play className="mr-1 h-3.5 w-3.5" />
-                    Start
+                    {t('school.group_gen.timer.start')}
                   </Button>
                 ) : (
                   <Button size="sm" variant="outline" onClick={pauseTimer}>
                     <Pause className="mr-1 h-3.5 w-3.5" />
-                    Pause
+                    {t('school.group_gen.timer.pause')}
                   </Button>
                 )}
                 <Button size="sm" variant="outline" onClick={resetTimer}>

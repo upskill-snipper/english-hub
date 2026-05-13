@@ -25,6 +25,7 @@ import { useAuthUserProfile } from '@/store/auth-store'
 import { useCourseStore, useCourseProgress, useCourseActions } from '@/store/course-store'
 import { useBoard } from '@/hooks/useBoard'
 import { matchesBoard } from '@/lib/board-filter'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Quiz Card ───────────────────────────────────────────────────────────────
 
@@ -39,6 +40,7 @@ function QuizCard({
   total: number
   onAnswer: (correct: boolean) => void
 }) {
+  const t = useT()
   const [selected, setSelected] = useState<number | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const isCorrect = selected === quiz.correct
@@ -58,13 +60,15 @@ function QuizCard({
     <div className="card p-6 mb-6">
       <div className="flex items-center justify-between mb-4">
         <span className="text-sm font-medium text-muted-foreground">
-          Question {index + 1} of {total}
+          {t('learn.quiz.question_label')
+            .replace('{current}', String(index + 1))
+            .replace('{total}', String(total))}
         </span>
         {submitted && (
           <span
             className={`text-sm font-semibold ${isCorrect ? 'text-primary' : 'text-destructive'}`}
           >
-            {isCorrect ? 'Correct!' : 'Incorrect'}
+            {isCorrect ? t('learn.quiz.result.correct') : t('learn.quiz.result.incorrect')}
           </span>
         )}
       </div>
@@ -125,7 +129,7 @@ function QuizCard({
           onClick={handleSubmit}
           className="mt-4 btn-primary w-full py-3 text-sm font-semibold"
         >
-          Check Answer
+          {t('learn.quiz.btn.check')}
         </button>
       )}
 
@@ -138,7 +142,9 @@ function QuizCard({
           }`}
         >
           <p className="text-muted-foreground text-sm leading-relaxed">
-            <span className="font-semibold text-foreground">Explanation: </span>
+            <span className="font-semibold text-foreground">
+              {t('learn.quiz.explanation_prefix')}
+            </span>
             {quiz.explanation}
           </p>
         </div>
@@ -185,6 +191,7 @@ function Sidebar({
   open: boolean
   onClose: () => void
 }) {
+  const t = useT()
   const completedCount = course.moduleList.filter((m) => completedModules.has(m.id)).length
   const progressPercent =
     course.moduleList.length > 0 ? Math.round((completedCount / course.moduleList.length) * 100) : 0
@@ -207,7 +214,9 @@ function Sidebar({
         <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
           <BookOpen size={14} />
           <span>
-            {completedCount} / {course.moduleList.length} modules
+            {t('learn.sidebar.modules_count')
+              .replace('{completed}', String(completedCount))
+              .replace('{total}', String(course.moduleList.length))}
           </span>
         </div>
         <div className="w-full h-2 bg-background rounded-full overflow-hidden">
@@ -217,7 +226,7 @@ function Sidebar({
           />
         </div>
         <span className="text-xs text-muted-foreground mt-1 block">
-          {progressPercent}% complete
+          {t('learn.sidebar.percent_complete').replace('{percent}', String(progressPercent))}
         </span>
       </div>
 
@@ -304,7 +313,7 @@ function Sidebar({
                   : 'text-muted-foreground'
               }`}
             >
-              Final Assessment
+              {t('learn.sidebar.final_assessment')}
             </span>
           </a>
         </div>
@@ -342,6 +351,7 @@ function Sidebar({
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
 export default function CoursePlayerPage() {
+  const t = useT()
   const params = useParams()
   const router = useRouter()
   const courseId = params.courseId as string
@@ -566,14 +576,19 @@ export default function CoursePlayerPage() {
   }
 
   if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {
+    // Board names (AQA, OCR, etc.) stay Latin even in AR — replace into the
+    // translated sentence so we don't fork into one key per board.
+    const boardBody = t('learn.board.unavailable.body').split('{board}')
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-background text-foreground">
-        <h1 className="text-2xl font-bold">Course not available</h1>
+        <h1 className="text-2xl font-bold">{t('learn.board.unavailable.title')}</h1>
         <p className="text-muted-foreground text-center max-w-md">
-          This course is for the <strong>{course.board}</strong> exam board.
+          {boardBody[0]}
+          <strong>{course.board}</strong>
+          {boardBody[1] ?? ''}
         </p>
         <Link href="/courses" className="btn-primary text-sm">
-          Browse your courses
+          {t('learn.board.unavailable.browse')}
         </Link>
       </div>
     )
@@ -592,17 +607,14 @@ export default function CoursePlayerPage() {
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <div className="card max-w-md w-full text-center space-y-4 p-8">
           <Lock className="w-12 h-12 text-muted-foreground mx-auto" />
-          <h2 className="text-xl font-bold text-foreground">Upgrade to Continue</h2>
-          <p className="text-muted-foreground">
-            This module requires a subscription. Try the free preview first, or subscribe to unlock
-            all content.
-          </p>
+          <h2 className="text-xl font-bold text-foreground">{t('learn.gate.locked.title')}</h2>
+          <p className="text-muted-foreground">{t('learn.gate.locked.body')}</p>
           <div className="flex gap-3 justify-center">
             <Link href={`/courses/${courseId}`} className="btn-primary">
-              View Course
+              {t('learn.gate.locked.view_course')}
             </Link>
             <Link href="/account/billing" className="btn-secondary">
-              Subscribe
+              {t('learn.gate.locked.subscribe')}
             </Link>
           </div>
         </div>
@@ -634,7 +646,7 @@ export default function CoursePlayerPage() {
             <button
               onClick={() => setSidebarOpen(true)}
               className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Open navigation"
+              aria-label={t('learn.sidebar.open_nav')}
             >
               <Menu size={22} />
             </button>
@@ -644,7 +656,9 @@ export default function CoursePlayerPage() {
                   {course.title}
                 </a>
                 <ChevronRight size={14} />
-                <span className="truncate text-foreground">Module {moduleIndex + 1}</span>
+                <span className="truncate text-foreground">
+                  {t('learn.breadcrumb.module_n').replace('{n}', String(moduleIndex + 1))}
+                </span>
               </div>
               {/* Progress bar */}
               <div className="w-full h-1.5 bg-card rounded-full overflow-hidden">
@@ -655,7 +669,9 @@ export default function CoursePlayerPage() {
               </div>
             </div>
             <span className="text-xs text-muted-foreground whitespace-nowrap hidden sm:block">
-              {completedCount}/{course.moduleList.length} complete
+              {t('learn.header.modules_progress')
+                .replace('{completed}', String(completedCount))
+                .replace('{total}', String(course.moduleList.length))}
             </span>
           </div>
         </header>
@@ -667,7 +683,9 @@ export default function CoursePlayerPage() {
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-sm font-medium text-primary">
-                  Module {moduleIndex + 1} of {course.moduleList.length}
+                  {t('learn.module.label')
+                    .replace('{current}', String(moduleIndex + 1))
+                    .replace('{total}', String(course.moduleList.length))}
                 </span>
                 <span className="flex items-center gap-1 text-sm text-muted-foreground">
                   <Clock size={14} />
@@ -676,7 +694,7 @@ export default function CoursePlayerPage() {
                 {moduleCompleted && (
                   <span className="flex items-center gap-1 text-sm text-primary">
                     <CheckCircle size={14} />
-                    Completed
+                    {t('learn.module.completed_badge')}
                   </span>
                 )}
               </div>
@@ -692,10 +710,10 @@ export default function CoursePlayerPage() {
             {/* Quiz Section */}
             {currentModule.quiz.length > 0 && (
               <section className="mt-12 pt-8 border-t border-border">
-                <h2 className="text-2xl font-bold text-foreground mb-2">Knowledge Check</h2>
-                <p className="text-muted-foreground mb-6">
-                  Test your understanding of this module.
-                </p>
+                <h2 className="text-2xl font-bold text-foreground mb-2">
+                  {t('learn.quiz.section.title')}
+                </h2>
+                <p className="text-muted-foreground mb-6">{t('learn.quiz.section.body')}</p>
 
                 <QuizProgressDots total={currentModule.quiz.length} results={quizResults} />
 
@@ -712,14 +730,16 @@ export default function CoursePlayerPage() {
                 {allQuizAnswered && (
                   <div className="card p-6 text-center">
                     <div className="text-4xl font-bold text-foreground mb-2">
-                      {quizScore}/{currentModule.quiz.length}
+                      {t('learn.quiz.score.summary')
+                        .replace('{score}', String(quizScore))
+                        .replace('{total}', String(currentModule.quiz.length))}
                     </div>
                     <p className="text-muted-foreground">
                       {quizScore === currentModule.quiz.length
-                        ? 'Perfect score! Excellent work.'
+                        ? t('learn.quiz.score.perfect')
                         : quizScore >= currentModule.quiz.length * 0.7
-                          ? 'Great job! You have a solid understanding.'
-                          : 'Review the material and try again to strengthen your understanding.'}
+                          ? t('learn.quiz.score.great')
+                          : t('learn.quiz.score.review')}
                     </p>
                   </div>
                 )}
@@ -742,16 +762,16 @@ export default function CoursePlayerPage() {
                   {completing ? (
                     <span className="flex items-center gap-2">
                       <Loader2 size={20} className="animate-spin" />
-                      Saving progress...
+                      {t('learn.module.btn.saving')}
                     </span>
                   ) : !user ? (
-                    'Sign in to save progress'
+                    t('learn.module.btn.signin_required')
                   ) : currentModule.quiz.length > 0 && !allQuizAnswered ? (
-                    'Complete the quiz to finish this module'
+                    t('learn.module.btn.quiz_required')
                   ) : (
                     <span className="flex items-center gap-2">
                       <CheckCircle size={20} />
-                      Complete Module
+                      {t('learn.module.btn.complete')}
                     </span>
                   )}
                 </button>
@@ -761,8 +781,12 @@ export default function CoursePlayerPage() {
             {moduleCompleted && (
               <div className="mt-8 card p-6 text-center border-primary/30">
                 <CheckCircle size={32} className="text-primary mx-auto mb-2" />
-                <p className="text-foreground font-semibold">Module Completed</p>
-                <p className="text-muted-foreground text-sm mt-1">Your progress has been saved.</p>
+                <p className="text-foreground font-semibold">
+                  {t('learn.module.completed_card.title')}
+                </p>
+                <p className="text-muted-foreground text-sm mt-1">
+                  {t('learn.module.completed_card.body')}
+                </p>
               </div>
             )}
 
@@ -770,18 +794,17 @@ export default function CoursePlayerPage() {
             {isPreviewModule && (!user || profile?.subscription_status !== 'pro') && (
               <div className="mt-10 rounded-xl border border-primary/30 bg-primary/5 p-6 sm:p-8 text-center">
                 <h3 className="text-xl font-bold text-foreground mb-2">
-                  Enjoying this? Start a 7-day free trial for full access.
+                  {t('learn.preview.cta.title')}
                 </h3>
                 <p className="text-muted-foreground mb-5 max-w-lg mx-auto">
-                  Unlock all {course.moduleList.length} modules in this course, plus every course on
-                  the platform.
+                  {t('learn.preview.cta.body').replace('{count}', String(course.moduleList.length))}
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link href="/account/billing" className="btn-primary px-6 py-3 text-base">
-                    Start Free Trial
+                    {t('learn.preview.cta.start_trial')}
                   </Link>
                   <Link href={`/courses/${courseId}`} className="btn-secondary px-6 py-3 text-base">
-                    View Full Course
+                    {t('learn.preview.cta.view_course')}
                   </Link>
                 </div>
               </div>
@@ -795,7 +818,7 @@ export default function CoursePlayerPage() {
                   className="btn-secondary flex items-center gap-2"
                 >
                   <ArrowLeft size={18} />
-                  <span className="hidden sm:inline">Previous:</span>
+                  <span className="hidden sm:inline">{t('learn.module.nav.prev_label')}</span>
                   <span className="truncate max-w-[150px] sm:max-w-[200px]">
                     {prevModule.title}
                   </span>
@@ -809,7 +832,7 @@ export default function CoursePlayerPage() {
                   onClick={() => router.push(`/learn/${courseId}/${nextModule.id}`)}
                   className="btn-primary flex items-center gap-2"
                 >
-                  <span className="hidden sm:inline">Next:</span>
+                  <span className="hidden sm:inline">{t('learn.module.nav.next_label')}</span>
                   <span className="truncate max-w-[150px] sm:max-w-[200px]">
                     {nextModule.title}
                   </span>
@@ -821,7 +844,7 @@ export default function CoursePlayerPage() {
                   className="btn-primary flex items-center gap-2"
                 >
                   <Award size={18} />
-                  Take Final Assessment
+                  {t('learn.module.nav.take_assessment')}
                 </a>
               ) : (
                 <div />

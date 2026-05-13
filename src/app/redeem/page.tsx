@@ -38,6 +38,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import { useT } from '@/lib/i18n/use-t'
 
 /** Matches the regex used by the validate and redeem endpoints. */
 const CODE_REGEX = /^[A-Z0-9_-]{3,64}$/
@@ -61,18 +62,19 @@ function formatPounds(pennies: number): string {
 }
 
 /** Explain a validation failure in plain user-facing language. */
-function reasonToMessage(reason: string | undefined): string {
+function reasonToMessage(reason: string | undefined, t: (k: string) => string): string {
   switch (reason) {
     case 'invalid_format':
-      return 'That code contains characters we don’t recognise. Please check and try again.'
+      return t('redeem.reason.invalid_format')
     case 'unknown_code':
-      return 'We don’t recognise that code. Check the spelling and try again.'
+      return t('redeem.reason.unknown_code')
     default:
-      return 'We could not verify that code right now. Please try again shortly.'
+      return t('redeem.reason.default')
   }
 }
 
 export default function RedeemPage() {
+  const t = useT()
   const searchParams = useSearchParams()
   const initialCode = (searchParams.get('code') ?? '').toUpperCase()
   const deviceRef = searchParams.get('ref')
@@ -86,34 +88,35 @@ export default function RedeemPage() {
   const [redeemError, setRedeemError] = useState<string | null>(null)
 
   /** Quietly validate whenever the user supplies a syntactically valid code. */
-  const validateCode = useCallback(async (raw: string): Promise<void> => {
-    const normalised = raw.trim().toUpperCase()
-    if (!CODE_REGEX.test(normalised)) {
-      setValidation(null)
-      setValidationError(null)
-      return
-    }
-
-    setIsValidating(true)
-    setValidationError(null)
-    try {
-      const res = await fetch(`/api/promo/validate?code=${encodeURIComponent(normalised)}`, {
-        method: 'GET',
-      })
-      const payload = (await res.json()) as ValidateApiResponse
-      setValidation(payload)
-      if (!payload.valid) {
-        setValidationError(reasonToMessage(payload.reason))
+  const validateCode = useCallback(
+    async (raw: string): Promise<void> => {
+      const normalised = raw.trim().toUpperCase()
+      if (!CODE_REGEX.test(normalised)) {
+        setValidation(null)
+        setValidationError(null)
+        return
       }
-    } catch {
-      setValidationError(
-        'We could not reach the server. Please check your connection and try again.',
-      )
-      setValidation(null)
-    } finally {
-      setIsValidating(false)
-    }
-  }, [])
+
+      setIsValidating(true)
+      setValidationError(null)
+      try {
+        const res = await fetch(`/api/promo/validate?code=${encodeURIComponent(normalised)}`, {
+          method: 'GET',
+        })
+        const payload = (await res.json()) as ValidateApiResponse
+        setValidation(payload)
+        if (!payload.valid) {
+          setValidationError(reasonToMessage(payload.reason, t))
+        }
+      } catch {
+        setValidationError(t('redeem.err.unreachable'))
+        setValidation(null)
+      } finally {
+        setIsValidating(false)
+      }
+    },
+    [t],
+  )
 
   // Auto-validate on first paint when a code arrives via the URL.
   useEffect(() => {
@@ -143,13 +146,11 @@ export default function RedeemPage() {
         currentValidation = (await res.json()) as ValidateApiResponse
         setValidation(currentValidation)
         if (!currentValidation.valid) {
-          setValidationError(reasonToMessage(currentValidation.reason))
+          setValidationError(reasonToMessage(currentValidation.reason, t))
           return
         }
       } catch {
-        setValidationError(
-          'We could not reach the server. Please check your connection and try again.',
-        )
+        setValidationError(t('redeem.err.unreachable'))
         return
       } finally {
         setIsValidating(false)
@@ -179,16 +180,16 @@ export default function RedeemPage() {
         return
       }
       if (!res.ok || !payload.url) {
-        setRedeemError(payload.error ?? 'We could not start checkout. Please try again shortly.')
+        setRedeemError(payload.error ?? t('redeem.err.start_checkout'))
         return
       }
       window.location.href = payload.url
     } catch {
-      setRedeemError('Something went wrong while starting checkout. Please try again.')
+      setRedeemError(t('redeem.err.something_wrong'))
     } finally {
       setIsRedeeming(false)
     }
-  }, [code, deviceRef, validation])
+  }, [code, deviceRef, validation, t])
 
   const previewPrice = useMemo<string | null>(() => {
     if (!validation?.valid) return null
@@ -203,32 +204,25 @@ export default function RedeemPage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
       <header className="mb-8 space-y-3">
-        <h1 className="text-3xl font-semibold tracking-tight">Redeem your promo code</h1>
-        <p className="text-muted-foreground">
-          Promo codes are redeemed here on the web. Once you complete checkout, your subscription
-          will sync to any mobile device you use automatically — no further action required.
-        </p>
+        <h1 className="text-3xl font-semibold tracking-tight">{t('redeem.h1')}</h1>
+        <p className="text-muted-foreground">{t('redeem.lead')}</p>
       </header>
 
       {cancelled && (
         <Card className="mb-6 border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
-          Checkout was cancelled. You can try again below, or return to the app and continue with
-          the standard plan.
+          {t('redeem.cancelled')}
         </Card>
       )}
 
       <Card className="space-y-5 p-6">
         {/* Annual-only messaging — clarifies which plans the code applies to before the user types. */}
         <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
-          <p className="font-semibold">Affiliate codes apply to annual subscriptions only.</p>
-          <p className="mt-1 text-amber-800">
-            Save £9.99 on either annual plan: Student Annual £20/yr (normally £29.99) or Teacher
-            Annual £58/yr (normally £67.99). Monthly plans aren&apos;t discounted.
-          </p>
+          <p className="font-semibold">{t('redeem.annual_only.title')}</p>
+          <p className="mt-1 text-amber-800">{t('redeem.annual_only.body')}</p>
         </div>
 
         <label className="block space-y-2">
-          <span className="text-sm font-medium">Promo code</span>
+          <span className="text-sm font-medium">{t('redeem.field.code')}</span>
           <Input
             value={code}
             onChange={(e) => {
@@ -238,20 +232,20 @@ export default function RedeemPage() {
               setRedeemError(null)
             }}
             onBlur={onBlur}
-            placeholder="e.g. 2026ENGLISH"
+            placeholder={t('redeem.field.placeholder')}
             autoCapitalize="characters"
             autoCorrect="off"
             spellCheck={false}
-            aria-label="Promo code"
+            aria-label={t('redeem.field.code')}
             aria-invalid={validation !== null && !validation.valid}
             aria-describedby="promo-helper"
           />
           <p id="promo-helper" className="text-xs text-muted-foreground">
-            Codes are case-insensitive.
+            {t('redeem.field.helper')}
           </p>
         </label>
 
-        {isValidating && <p className="text-sm text-muted-foreground">Checking…</p>}
+        {isValidating && <p className="text-sm text-muted-foreground">{t('redeem.checking')}</p>}
 
         {validationError !== null && (
           <p className="text-sm text-red-600" role="alert">
@@ -261,9 +255,8 @@ export default function RedeemPage() {
 
         {validation?.valid && previewPrice !== null && (
           <div className="rounded-lg bg-emerald-50 p-4 text-sm text-emerald-900">
-            <strong>Code applied.</strong> Student Annual will be{' '}
-            <span className="font-semibold">{previewPrice}</span> for the first year. It then renews
-            at our standard price — cancel anytime.
+            <strong>{t('redeem.applied_strong')}</strong> {t('redeem.applied_pre')}{' '}
+            <span className="font-semibold">{previewPrice}</span> {t('redeem.applied_post')}
           </div>
         )}
 
@@ -293,31 +286,28 @@ export default function RedeemPage() {
           }}
           className="w-full"
         >
-          {isRedeeming ? 'Opening checkout…' : 'Continue to secure checkout'}
+          {isRedeeming ? t('redeem.opening') : t('redeem.continue')}
         </Button>
 
         <p className="text-xs text-muted-foreground">
-          You will be redirected to Stripe to complete payment. By continuing, you agree to our{' '}
+          {t('redeem.legal.pre')}{' '}
           <Link href="/terms" className="underline">
-            Terms of Service
+            {t('redeem.legal.terms')}
           </Link>{' '}
-          and{' '}
+          {t('redeem.legal.and')}{' '}
           <Link href="/privacy-policy" className="underline">
-            Privacy Policy
+            {t('redeem.legal.privacy')}
           </Link>
           .
         </p>
       </Card>
 
       <section className="mt-10 space-y-3 text-sm text-muted-foreground">
-        <h2 className="text-base font-semibold text-foreground">What happens next?</h2>
+        <h2 className="text-base font-semibold text-foreground">{t('redeem.next.h2')}</h2>
         <ol className="list-decimal space-y-2 pl-5">
-          <li>Complete checkout via Stripe using your chosen payment method.</li>
-          <li>Your subscription is activated against your English Hub account immediately.</li>
-          <li>
-            If you use the mobile app, open it and pull to refresh — your new entitlement will
-            appear automatically within a few seconds. No in-app purchase is required.
-          </li>
+          <li>{t('redeem.next.li1')}</li>
+          <li>{t('redeem.next.li2')}</li>
+          <li>{t('redeem.next.li3')}</li>
         </ol>
       </section>
     </div>

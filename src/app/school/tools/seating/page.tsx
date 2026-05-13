@@ -18,6 +18,7 @@ import { useSchool } from '@/hooks/useSchool'
 import type { Class, StudentAnalytics } from '@/lib/types'
 import { SeatingPlan } from '@/components/school/SeatingPlan'
 import type { SeatingStudent } from '@/components/school/SeatingPlan'
+import { useT } from '@/lib/i18n/use-t'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -53,18 +54,43 @@ interface SavedPlan {
 type ArrangeMode = 'mixed' | 'friendship' | 'target' | 'random'
 type ColorMode = 'grade' | 'trajectory' | 'target' | 'gender'
 
-const ARRANGE_OPTIONS: { value: ArrangeMode; label: string; description: string }[] = [
-  { value: 'mixed', label: 'Mixed Ability', description: 'Spread grades evenly across the room' },
-  { value: 'friendship', label: 'Friendship Groups', description: 'Group similar-performing students together' },
-  { value: 'target', label: 'By Target Grade', description: 'Arrange seats by target grade' },
-  { value: 'random', label: 'Random', description: 'Randomly assign seats' },
+// Option lists store i18n keys instead of literal strings — looked up at
+// render time via useT() so toggling AR re-renders without re-deriving
+// option arrays. Selector identity (`value`) stays English/internal.
+const ARRANGE_OPTIONS: {
+  value: ArrangeMode
+  labelKey: string
+  descKey: string
+}[] = [
+  {
+    value: 'mixed',
+    labelKey: 'school.seating.arrange.mixed.label',
+    descKey: 'school.seating.arrange.mixed.desc',
+  },
+  {
+    value: 'friendship',
+    labelKey: 'school.seating.arrange.friendship.label',
+    descKey: 'school.seating.arrange.friendship.desc',
+  },
+  {
+    value: 'target',
+    labelKey: 'school.seating.arrange.target.label',
+    descKey: 'school.seating.arrange.target.desc',
+  },
+  {
+    value: 'random',
+    labelKey: 'school.seating.arrange.random.label',
+    descKey: 'school.seating.arrange.random.desc',
+  },
 ]
 
-const COLOR_OPTIONS: { value: ColorMode; label: string }[] = [
-  { value: 'grade', label: 'Current Grade' },
-  { value: 'trajectory', label: 'Trajectory' },
-  { value: 'target', label: 'Target Grade' },
-  { value: 'gender', label: 'Gender' },
+// GENDER POLICY: binary M/F. The seating colour-by-gender legend maps to
+// the two values rendered as Male / Female (ذكر / أنثى) in AR.
+const COLOR_OPTIONS: { value: ColorMode; labelKey: string }[] = [
+  { value: 'grade', labelKey: 'school.seating.color.grade' },
+  { value: 'trajectory', labelKey: 'school.seating.color.trajectory' },
+  { value: 'target', labelKey: 'school.seating.color.target' },
+  { value: 'gender', labelKey: 'school.seating.color.gender' },
 ]
 
 const LS_KEY = 'english-hub-seating-plans'
@@ -100,7 +126,7 @@ function autoArrange(
   students: SeatingStudent[],
   rows: number,
   cols: number,
-  mode: ArrangeMode
+  mode: ArrangeMode,
 ): SeatAssignment[] {
   const seats = buildInitialSeats(rows, cols)
   let ordered: SeatingStudent[]
@@ -159,6 +185,7 @@ function savePlans(plans: SavedPlan[]) {
 export default function SeatingPlanPage() {
   const router = useRouter()
   const { classes, isLoading: schoolLoading } = useSchool()
+  const t = useT()
 
   // Selection state
   const [selectedClassId, setSelectedClassId] = useState<string | null>(null)
@@ -206,11 +233,20 @@ export default function SeatingPlanPage() {
         const studentList: SeatingStudent[] = (data.student_summaries ?? data.students ?? []).map(
           (s: Record<string, unknown>) => ({
             id: (s.student_id as string) ?? (s.id as string) ?? '',
-            name: (s.full_name as string) ?? (s.student_name as string) ?? (s.email as string) ?? 'Unknown',
-            grade: (s.predicted_grade as string) ?? (s.avg_quiz_score != null ? String(Math.round(s.avg_quiz_score as number)) : null),
+            name:
+              (s.full_name as string) ??
+              (s.student_name as string) ??
+              (s.email as string) ??
+              'Unknown',
+            grade:
+              (s.predicted_grade as string) ??
+              (s.avg_quiz_score != null ? String(Math.round(s.avg_quiz_score as number)) : null),
             target: (s.target_grade as string) ?? null,
-            trajectory: ((s.trajectory as string) ?? 'stable') as 'improving' | 'stable' | 'declining',
-          })
+            trajectory: ((s.trajectory as string) ?? 'stable') as
+              | 'improving'
+              | 'stable'
+              | 'declining',
+          }),
         )
 
         setStudents(studentList)
@@ -242,7 +278,7 @@ export default function SeatingPlanPage() {
         setSeats(buildInitialSeats(newRows, newCols))
       }
     },
-    [students, arrangeMode]
+    [students, arrangeMode],
   )
 
   // Auto-arrange handler
@@ -316,17 +352,15 @@ export default function SeatingPlanPage() {
             <ArrowLeft className="h-4 w-4" />
           </Button>
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Seating Plan</h1>
-            <p className="text-sm text-muted-foreground">
-              Drag and drop students to arrange your classroom
-            </p>
+            <h1 className="text-2xl font-bold tracking-tight">{t('school.seating.title')}</h1>
+            <p className="text-sm text-muted-foreground">{t('school.seating.subtitle')}</p>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
           <Button variant="outline" size="sm" onClick={handlePrint}>
             <Printer className="mr-1.5 h-3.5 w-3.5" />
-            Print
+            {t('school.seating.print')}
           </Button>
           <Button
             variant="outline"
@@ -335,11 +369,11 @@ export default function SeatingPlanPage() {
             disabled={!selectedClassId}
           >
             <Save className="mr-1.5 h-3.5 w-3.5" />
-            Save
+            {t('school.seating.save')}
           </Button>
           <Button variant="outline" size="sm" onClick={() => setShowLoadDialog(true)}>
             <FolderOpen className="mr-1.5 h-3.5 w-3.5" />
-            Load
+            {t('school.seating.load')}
           </Button>
         </div>
       </div>
@@ -347,10 +381,15 @@ export default function SeatingPlanPage() {
       {/* Print header (hidden on screen) */}
       <div className="hidden print:block">
         <h1 className="text-xl font-bold">
-          Seating Plan — {selectedClass?.name ?? 'Class'}
+          {t('school.seating.print_heading_prefix')}
+          {selectedClass?.name ?? t('school.seating.print_heading_class_fallback')}
         </h1>
         <p className="text-sm text-muted-foreground">
-          {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+          {new Date().toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+          })}
         </p>
       </div>
 
@@ -358,13 +397,10 @@ export default function SeatingPlanPage() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 print:hidden">
         {/* Class selector */}
         <div className="space-y-1.5">
-          <Label className="text-xs font-medium">Class</Label>
-          <Select
-            value={selectedClassId ?? undefined}
-            onValueChange={(v) => setSelectedClassId(v)}
-          >
+          <Label className="text-xs font-medium">{t('school.seating.class_label')}</Label>
+          <Select value={selectedClassId ?? undefined} onValueChange={(v) => setSelectedClassId(v)}>
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select a class..." />
+              <SelectValue placeholder={t('school.seating.class_placeholder')} />
             </SelectTrigger>
             <SelectContent>
               {classes.map((c) => (
@@ -380,7 +416,7 @@ export default function SeatingPlanPage() {
         <div className="space-y-1.5">
           <Label className="text-xs font-medium">
             <Grid3X3 className="mr-1 inline h-3.5 w-3.5" />
-            Grid Size
+            {t('school.seating.grid_size')}
           </Label>
           <div className="flex items-center gap-2">
             <Input
@@ -388,7 +424,9 @@ export default function SeatingPlanPage() {
               min={1}
               max={10}
               value={rows}
-              onChange={(e) => handleGridResize(Math.max(1, Math.min(10, parseInt(e.target.value) || 1)), cols)}
+              onChange={(e) =>
+                handleGridResize(Math.max(1, Math.min(10, parseInt(e.target.value) || 1)), cols)
+              }
               className="w-16 text-center"
             />
             <span className="text-xs text-muted-foreground">x</span>
@@ -397,10 +435,14 @@ export default function SeatingPlanPage() {
               min={1}
               max={10}
               value={cols}
-              onChange={(e) => handleGridResize(rows, Math.max(1, Math.min(10, parseInt(e.target.value) || 1)))}
+              onChange={(e) =>
+                handleGridResize(rows, Math.max(1, Math.min(10, parseInt(e.target.value) || 1)))
+              }
               className="w-16 text-center"
             />
-            <span className="text-xs text-muted-foreground">({rows * cols} seats)</span>
+            <span className="text-xs text-muted-foreground">
+              ({rows * cols} {t('school.seating.seats_suffix')})
+            </span>
           </div>
         </div>
 
@@ -408,19 +450,16 @@ export default function SeatingPlanPage() {
         <div className="space-y-1.5">
           <Label className="text-xs font-medium">
             <Shuffle className="mr-1 inline h-3.5 w-3.5" />
-            Auto-Arrange
+            {t('school.seating.auto_arrange')}
           </Label>
-          <Select
-            value={arrangeMode}
-            onValueChange={(v) => handleAutoArrange(v as ArrangeMode)}
-          >
+          <Select value={arrangeMode} onValueChange={(v) => handleAutoArrange(v as ArrangeMode)}>
             <SelectTrigger className="w-full">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
               {ARRANGE_OPTIONS.map((opt) => (
                 <SelectItem key={opt.value} value={opt.value}>
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -431,19 +470,16 @@ export default function SeatingPlanPage() {
         <div className="space-y-1.5">
           <Label className="text-xs font-medium">
             <Palette className="mr-1 inline h-3.5 w-3.5" />
-            Color Code By
+            {t('school.seating.color_code_by')}
           </Label>
-          <Select
-            value={colorMode}
-            onValueChange={(v) => setColorMode(v as ColorMode)}
-          >
+          <Select value={colorMode} onValueChange={(v) => setColorMode(v as ColorMode)}>
             <SelectTrigger className="w-full">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
               {COLOR_OPTIONS.map((opt) => (
                 <SelectItem key={opt.value} value={opt.value}>
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -455,10 +491,13 @@ export default function SeatingPlanPage() {
       {selectedClassId && !loadingStudents && students.length > 0 && (
         <div className="flex items-center gap-2 rounded-lg border border-border bg-muted/30 px-4 py-2 text-sm print:hidden">
           <Badge variant="outline" className="shrink-0">
-            {students.length} students
+            {students.length} {t('school.seating.students_count_suffix')}
           </Badge>
           <span className="text-muted-foreground">
-            {ARRANGE_OPTIONS.find((o) => o.value === arrangeMode)?.description}
+            {(() => {
+              const opt = ARRANGE_OPTIONS.find((o) => o.value === arrangeMode)
+              return opt ? t(opt.descKey) : null
+            })()}
           </span>
           <Button
             variant="ghost"
@@ -467,7 +506,7 @@ export default function SeatingPlanPage() {
             onClick={() => handleAutoArrange(arrangeMode)}
           >
             <Shuffle className="mr-1 h-3 w-3" />
-            Re-shuffle
+            {t('school.seating.reshuffle')}
           </Button>
         </div>
       )}
@@ -480,13 +519,13 @@ export default function SeatingPlanPage() {
       ) : !selectedClassId ? (
         <Card>
           <CardContent className="flex min-h-[40vh] items-center justify-center text-muted-foreground">
-            Select a class to build a seating plan
+            {t('school.seating.empty_select_class')}
           </CardContent>
         </Card>
       ) : students.length === 0 ? (
         <Card>
           <CardContent className="flex min-h-[40vh] items-center justify-center text-muted-foreground">
-            No students found in this class
+            {t('school.seating.empty_no_students')}
           </CardContent>
         </Card>
       ) : (
@@ -506,7 +545,7 @@ export default function SeatingPlanPage() {
       {/* Color legend */}
       {students.length > 0 && (
         <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground print:mt-4">
-          <span className="font-medium">Legend:</span>
+          <span className="font-medium">{t('school.seating.legend.label')}</span>
           {colorMode === 'grade' || colorMode === 'target' ? (
             <>
               <span className="flex items-center gap-1">
@@ -525,17 +564,32 @@ export default function SeatingPlanPage() {
           ) : colorMode === 'trajectory' ? (
             <>
               <span className="flex items-center gap-1">
-                <span className="inline-block h-3 w-3 rounded bg-emerald-500/40" /> Improving
+                <span className="inline-block h-3 w-3 rounded bg-emerald-500/40" />{' '}
+                {t('school.seating.legend.improving')}
               </span>
               <span className="flex items-center gap-1">
-                <span className="inline-block h-3 w-3 rounded bg-blue-500/40" /> Stable
+                <span className="inline-block h-3 w-3 rounded bg-blue-500/40" />{' '}
+                {t('school.seating.legend.stable')}
               </span>
               <span className="flex items-center gap-1">
-                <span className="inline-block h-3 w-3 rounded bg-red-500/40" /> Declining
+                <span className="inline-block h-3 w-3 rounded bg-red-500/40" />{' '}
+                {t('school.seating.legend.declining')}
+              </span>
+            </>
+          ) : colorMode === 'gender' ? (
+            // GENDER POLICY: binary M/F.
+            <>
+              <span className="flex items-center gap-1">
+                <span className="inline-block h-3 w-3 rounded bg-blue-500/40" />{' '}
+                {t('school.seating.gender.male')}
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="inline-block h-3 w-3 rounded bg-pink-500/40" />{' '}
+                {t('school.seating.gender.female')}
               </span>
             </>
           ) : (
-            <span>All students</span>
+            <span>{t('school.seating.legend.all_students')}</span>
           )}
         </div>
       )}
@@ -545,28 +599,26 @@ export default function SeatingPlanPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm print:hidden">
           <Card className="w-full max-w-md">
             <CardHeader>
-              <CardTitle>Save Seating Plan</CardTitle>
-              <CardDescription>
-                Save this layout to load it later
-              </CardDescription>
+              <CardTitle>{t('school.seating.save_title')}</CardTitle>
+              <CardDescription>{t('school.seating.save_desc')}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-1.5">
-                <Label>Plan Name</Label>
+                <Label>{t('school.seating.plan_name_label')}</Label>
                 <Input
                   value={planName}
                   onChange={(e) => setPlanName(e.target.value)}
-                  placeholder="e.g. 10A Spring Term"
+                  placeholder={t('school.seating.plan_name_placeholder')}
                   autoFocus
                   onKeyDown={(e) => e.key === 'Enter' && handleSave()}
                 />
               </div>
               <div className="flex justify-end gap-2">
                 <Button variant="ghost" onClick={() => setShowSaveDialog(false)}>
-                  Cancel
+                  {t('school.seating.cancel')}
                 </Button>
                 <Button onClick={handleSave} disabled={!planName.trim()}>
-                  Save Plan
+                  {t('school.seating.save_btn')}
                 </Button>
               </div>
             </CardContent>
@@ -579,15 +631,13 @@ export default function SeatingPlanPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm print:hidden">
           <Card className="w-full max-w-md">
             <CardHeader>
-              <CardTitle>Load Seating Plan</CardTitle>
-              <CardDescription>
-                Choose a previously saved plan
-              </CardDescription>
+              <CardTitle>{t('school.seating.load_title')}</CardTitle>
+              <CardDescription>{t('school.seating.load_desc')}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               {savedPlans.length === 0 ? (
                 <p className="py-6 text-center text-sm text-muted-foreground">
-                  No saved plans yet
+                  {t('school.seating.no_saved_plans')}
                 </p>
               ) : (
                 <div className="max-h-64 space-y-2 overflow-y-auto">
@@ -601,17 +651,14 @@ export default function SeatingPlanPage() {
                         <div>
                           <p className="text-sm font-medium">{plan.name}</p>
                           <p className="text-xs text-muted-foreground">
-                            {cls?.name ?? 'Unknown class'} &middot; {plan.rows}x{plan.cols} &middot;{' '}
+                            {cls?.name ?? t('school.seating.unknown_class')} &middot; {plan.rows}x
+                            {plan.cols} &middot;{' '}
                             {new Date(plan.savedAt).toLocaleDateString('en-GB')}
                           </p>
                         </div>
                         <div className="flex gap-1">
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => handleLoad(plan)}
-                          >
-                            Load
+                          <Button variant="ghost" size="sm" onClick={() => handleLoad(plan)}>
+                            {t('school.seating.load_btn')}
                           </Button>
                           <Button
                             variant="ghost"
@@ -629,7 +676,7 @@ export default function SeatingPlanPage() {
               )}
               <div className="flex justify-end">
                 <Button variant="ghost" onClick={() => setShowLoadDialog(false)}>
-                  Close
+                  {t('school.seating.close')}
                 </Button>
               </div>
             </CardContent>

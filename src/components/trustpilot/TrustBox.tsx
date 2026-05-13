@@ -16,6 +16,7 @@
  */
 
 import { useEffect } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 
 export type TrustBoxVariant = 'micro-star' | 'horizontal' | 'mini-carousel' | 'starter'
 export type TrustBoxTheme = 'light' | 'dark'
@@ -72,6 +73,7 @@ export function TrustBox({
   theme?: TrustBoxTheme
 }) {
   const businessUnitId = process.env.NEXT_PUBLIC_TRUSTPILOT_BUSINESS_UNIT_ID
+  const t = useT()
 
   useEffect(() => {
     if (!businessUnitId) return
@@ -87,7 +89,7 @@ export function TrustBox({
         className="text-sm underline underline-offset-2 hover:no-underline"
         data-testid="trustbox-fallback"
       >
-        Read our reviews on Trustpilot
+        {t('trustpilot.read_reviews')}
       </a>
     )
   }
@@ -105,8 +107,10 @@ export function TrustBox({
       data-style-width={width}
       data-theme={theme}
     >
+      {/* Brand name "Trustpilot" stays Latin even in AR — trademark, per
+          dictionary brand-name policy. */}
       <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer">
-        Trustpilot
+        {t('trustpilot.brand')}
       </a>
     </div>
   )

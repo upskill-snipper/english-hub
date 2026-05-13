@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { prisma } from '@/lib/prisma'
+import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'Our traction — in the open | The English Hub',
@@ -38,10 +39,7 @@ async function getGrowthStats(): Promise<GrowthStats> {
       isTeacherPlan: false,
       user: {
         deletedAt: null,
-        NOT: [
-          { email: { contains: '+reviewer@' } },
-          { email: { endsWith: '@theenglishhub.app' } },
-        ],
+        NOT: [{ email: { contains: '+reviewer@' } }, { email: { endsWith: '@theenglishhub.app' } }],
       },
     },
   })
@@ -79,55 +77,70 @@ export default async function PublicGrowthDashboardPage() {
     year: 'numeric',
   }).format(new Date())
 
+  const [
+    tDashboardAsOfPre,
+    tH1,
+    tLead,
+    tUnavailable,
+    tMauLabel,
+    tMauHint,
+    tPayingLabel,
+    tPayingHint,
+    tEssaysLabel,
+    tEssaysHint,
+    tFooterPre,
+    tFooterPost,
+  ] = await tMany([
+    'growth.as_of_pre',
+    'growth.h1',
+    'growth.lead',
+    'growth.unavailable',
+    'growth.stat.mau_label',
+    'growth.stat.mau_hint',
+    'growth.stat.paying_label',
+    'growth.stat.paying_hint',
+    'growth.stat.essays_label',
+    'growth.stat.essays_hint',
+    'growth.footer.pre',
+    'growth.footer.post',
+  ])
+
   return (
     <main className="min-h-screen bg-background">
       <section className="max-w-4xl mx-auto px-6 py-24">
         <header className="text-center mb-16">
           <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
-            Public dashboard · as of {asOf}
+            {tDashboardAsOfPre} {asOf}
           </p>
-          <h1 className="text-foreground mb-6 text-4xl md:text-5xl font-semibold">
-            Our traction — in the open
-          </h1>
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-            Investors, partners, and school buyers keep asking for numbers.
-            We publish them. This page is regenerated every hour from the
-            production database — no massaging, no vanity filters.
-          </p>
+          <h1 className="text-foreground mb-6 text-4xl md:text-5xl font-semibold">{tH1}</h1>
+          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">{tLead}</p>
         </header>
 
         {errored || !stats ? (
-          <p className="text-center text-muted-foreground">
-            Metrics are temporarily unavailable — please check back shortly.
-          </p>
+          <p className="text-center text-muted-foreground">{tUnavailable}</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <GrowthStat label={tMauLabel} value={formatNumber(stats.mau)} hint={tMauHint} />
             <GrowthStat
-              label="Monthly active users"
-              value={formatNumber(stats.mau)}
-              hint="Users who logged in within the last 30 days."
-            />
-            <GrowthStat
-              label="Paying students"
+              label={tPayingLabel}
               value={formatNumber(stats.payingStudents)}
-              hint="Active, non-teacher subscriptions. Excludes comp / reviewer accounts."
+              hint={tPayingHint}
             />
             <GrowthStat
-              label="Essays marked"
+              label={tEssaysLabel}
               value={formatNumber(stats.essaysMarked)}
-              hint="Total essays returned with AI feedback since launch."
+              hint={tEssaysHint}
             />
           </div>
         )}
 
         <footer className="mt-16 text-center text-sm text-muted-foreground">
           <p>
-            Numbers refresh hourly. For a board-grade snapshot or due-diligence
-            access, contact{' '}
+            {tFooterPre}{' '}
             <a className="underline" href="mailto:investors@theenglishhub.app">
               investors@theenglishhub.app
             </a>
-            .
+            {tFooterPost}
           </p>
         </footer>
       </section>
@@ -135,24 +148,12 @@ export default async function PublicGrowthDashboardPage() {
   )
 }
 
-function GrowthStat({
-  label,
-  value,
-  hint,
-}: {
-  label: string
-  value: string
-  hint: string
-}) {
+function GrowthStat({ label, value, hint }: { label: string; value: string; hint: string }) {
   return (
     <div className="rounded-lg border border-border bg-card p-6">
       <p className="text-sm font-medium text-muted-foreground">{label}</p>
-      <p className="mt-2 text-4xl font-semibold text-foreground tabular-nums">
-        {value}
-      </p>
-      <p className="mt-3 text-xs text-muted-foreground leading-relaxed">
-        {hint}
-      </p>
+      <p className="mt-2 text-4xl font-semibold text-foreground tabular-nums">{value}</p>
+      <p className="mt-3 text-xs text-muted-foreground leading-relaxed">{hint}</p>
     </div>
   )
 }

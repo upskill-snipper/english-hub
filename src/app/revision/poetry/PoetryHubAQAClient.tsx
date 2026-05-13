@@ -20,8 +20,15 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Poem data ────────────────────────────────────────────────────────────────
+//
+// Poem titles + poet names stay in their original English forms in every
+// locale — translating "Ozymandias" or "Wilfred Owen" would mislead a
+// student studying for an English Literature exam. The surrounding
+// UI chrome (headings, CTAs, progress copy) is what we localise via
+// useT() and the `poetry_hub.*` namespace.
 
 interface Poem {
   title: string
@@ -73,76 +80,97 @@ const LOVE_AND_RELATIONSHIPS: Poem[] = [
   { title: 'Climbing My Grandfather', poet: 'Andrew Waterhouse', slug: 'climbing-my-grandfather' },
 ]
 
-// ─── Poetry techniques ────────────────────────────────────────────────────────
+// ─── Poetry techniques (i18n via dictionary keys) ─────────────────────────────
 
-const POETRY_TECHNIQUES = [
-  { name: 'Metaphor', description: 'A direct comparison without using "like" or "as"' },
-  { name: 'Simile', description: 'A comparison using "like" or "as"' },
-  { name: 'Enjambment', description: 'A sentence or phrase running over the end of a line' },
-  { name: 'Caesura', description: 'A pause in the middle of a line, often using punctuation' },
-  { name: 'Volta', description: 'A turn or shift in argument or tone within a poem' },
-  { name: 'Sibilance', description: 'Repetition of "s" and "sh" sounds' },
-  { name: 'Dramatic monologue', description: 'A poem written as a speech by a single character' },
-  { name: 'Personification', description: 'Giving human qualities to non-human things' },
-  { name: 'Juxtaposition', description: 'Placing contrasting ideas side by side for effect' },
-  { name: 'Pathetic fallacy', description: 'Using weather or nature to reflect mood or emotion' },
-  { name: 'Oxymoron', description: 'Two contradictory words placed together' },
+const POETRY_TECHNIQUE_KEYS = [
+  { name: 'poetry_hub.technique.metaphor.name', description: 'poetry_hub.technique.metaphor.desc' },
+  { name: 'poetry_hub.technique.simile.name', description: 'poetry_hub.technique.simile.desc' },
   {
-    name: 'Semantic field',
-    description: 'A group of words related to a particular theme or subject',
+    name: 'poetry_hub.technique.enjambment.name',
+    description: 'poetry_hub.technique.enjambment.desc',
+  },
+  { name: 'poetry_hub.technique.caesura.name', description: 'poetry_hub.technique.caesura.desc' },
+  { name: 'poetry_hub.technique.volta.name', description: 'poetry_hub.technique.volta.desc' },
+  {
+    name: 'poetry_hub.technique.sibilance.name',
+    description: 'poetry_hub.technique.sibilance.desc',
+  },
+  {
+    name: 'poetry_hub.technique.dramatic_monologue.name',
+    description: 'poetry_hub.technique.dramatic_monologue.desc',
+  },
+  {
+    name: 'poetry_hub.technique.personification.name',
+    description: 'poetry_hub.technique.personification.desc',
+  },
+  {
+    name: 'poetry_hub.technique.juxtaposition.name',
+    description: 'poetry_hub.technique.juxtaposition.desc',
+  },
+  {
+    name: 'poetry_hub.technique.pathetic_fallacy.name',
+    description: 'poetry_hub.technique.pathetic_fallacy.desc',
+  },
+  { name: 'poetry_hub.technique.oxymoron.name', description: 'poetry_hub.technique.oxymoron.desc' },
+  {
+    name: 'poetry_hub.technique.semantic_field.name',
+    description: 'poetry_hub.technique.semantic_field.desc',
   },
 ]
 
 // ─── Comparison pairings ──────────────────────────────────────────────────────
+//
+// Poem titles stay in original English. Theme labels + tips localise
+// via dictionary keys.
 
 const COMPARISON_PAIRINGS = [
   {
-    theme: 'Power of Nature',
+    themeKey: 'poetry_hub.pair.power_of_nature.theme',
     poems: ['Storm on the Island', 'Extract from The Prelude'],
     anthology: 'power-and-conflict' as const,
-    tip: 'Compare how both poets present nature as a threatening, uncontrollable force.',
+    tipKey: 'poetry_hub.pair.power_of_nature.tip',
   },
   {
-    theme: 'Effects of Conflict',
+    themeKey: 'poetry_hub.pair.effects_of_conflict.theme',
     poems: ['Remains', 'War Photographer'],
     anthology: 'power-and-conflict' as const,
-    tip: 'Explore psychological trauma and how memories of conflict haunt both speakers.',
+    tipKey: 'poetry_hub.pair.effects_of_conflict.tip',
   },
   {
-    theme: 'Loss of Power',
+    themeKey: 'poetry_hub.pair.loss_of_power.theme',
     poems: ['Ozymandias', 'My Last Duchess'],
     anthology: 'power-and-conflict' as const,
-    tip: 'Examine how both poems present rulers who try to control but ultimately fail.',
+    tipKey: 'poetry_hub.pair.loss_of_power.tip',
   },
   {
-    theme: 'Identity and Place',
+    themeKey: 'poetry_hub.pair.identity_and_place.theme',
     poems: ['The Émigrée', 'Checking Out Me History'],
     anthology: 'power-and-conflict' as const,
-    tip: 'Compare how both speakers assert their identity against dominant powers.',
+    tipKey: 'poetry_hub.pair.identity_and_place.tip',
   },
   {
-    theme: 'Parental Love',
+    themeKey: 'poetry_hub.pair.parental_love.theme',
     poems: ['Walking Away', 'Follower'],
     anthology: 'love-and-relationships' as const,
-    tip: 'Explore the shifting dynamic between parent and child over time.',
+    tipKey: 'poetry_hub.pair.parental_love.tip',
   },
   {
-    theme: 'Desire and Obsession',
+    themeKey: 'poetry_hub.pair.desire_obsession.theme',
     poems: ["Porphyria's Lover", "Sonnet 29 -- 'I think of thee!'"],
     anthology: 'love-and-relationships' as const,
-    tip: 'Compare passionate desire -- one healthy, one dangerously possessive.',
+    tipKey: 'poetry_hub.pair.desire_obsession.tip',
   },
   {
-    theme: 'Memory and Loss',
+    themeKey: 'poetry_hub.pair.memory_and_loss.theme',
     poems: ['When We Two Parted', 'Neutral Tones'],
     anthology: 'love-and-relationships' as const,
-    tip: 'Both poems use nature imagery to convey the pain of a relationship ending.',
+    tipKey: 'poetry_hub.pair.memory_and_loss.tip',
   },
   {
-    theme: 'Distance in Relationships',
+    themeKey: 'poetry_hub.pair.distance.theme',
     poems: ['Letters from Yorkshire', 'Mother, Any Distance'],
     anthology: 'love-and-relationships' as const,
-    tip: 'Explore how physical distance reveals emotional connection or growing independence.',
+    tipKey: 'poetry_hub.pair.distance.tip',
   },
 ]
 
@@ -153,6 +181,7 @@ const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export function PoetryHubAQAClient() {
+  const t = useT()
   const [studiedSlugs, setStudiedSlugs] = useState<Set<string>>(new Set())
   const [mounted, setMounted] = useState(false)
 
@@ -188,36 +217,36 @@ export function PoetryHubAQAClient() {
             render={<Link href="/revision" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to Revision Hub
+            {t('poetry_hub.back_to_revision')}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              AQA Poetry Anthology
+              {t('poetry_hub.badge_aqa_anthology')}
             </Badge>
             <Link
               href="/board-select"
               className="text-caption text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
             >
-              Change board
+              {t('poetry_hub.change_board')}
             </Link>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Poetry Revision
+            {t('poetry_hub.hero_title')}
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Master all 30 AQA anthology poems across both clusters. Interactive study pages, key
-            quotations, technique analysis, and comparison practice -- everything you need for the
-            poetry exam.
+            {t('poetry_hub.hero_lead')}
           </p>
 
           {/* Progress tracker */}
           {mounted && (
             <div className="mt-6 max-w-md">
               <div className="mb-2 flex items-center justify-between">
-                <span className="text-sm font-medium text-foreground">Poems studied</span>
+                <span className="text-sm font-medium text-foreground">
+                  {t('poetry_hub.progress_label')}
+                </span>
                 <span className="text-sm text-muted-foreground">
                   {studiedCount} / {totalPoems}
                 </span>
@@ -225,10 +254,13 @@ export function PoetryHubAQAClient() {
               <Progress value={progressPercent} className="h-2" />
               <p className="mt-1.5 text-caption text-muted-foreground">
                 {progressPercent === 100
-                  ? 'All poems studied -- amazing work!'
+                  ? t('poetry_hub.progress_all_done')
                   : progressPercent > 0
-                    ? `${progressPercent}% complete -- keep going!`
-                    : 'Start studying poems to track your progress'}
+                    ? t('poetry_hub.progress_keep_going').replace(
+                        '{percent}',
+                        String(progressPercent),
+                      )
+                    : t('poetry_hub.progress_start')}
               </p>
             </div>
           )}
@@ -239,7 +271,9 @@ export function PoetryHubAQAClient() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">AQA Anthology Clusters</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.clusters_heading')}
+          </h2>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
@@ -252,7 +286,7 @@ export function PoetryHubAQAClient() {
                 </div>
                 <div>
                   <CardTitle className="text-heading-md font-heading">Power & Conflict</CardTitle>
-                  <CardDescription>15 poems</CardDescription>
+                  <CardDescription>{t('poetry_hub.fifteen_poems')}</CardDescription>
                 </div>
               </div>
             </CardHeader>
@@ -276,7 +310,7 @@ export function PoetryHubAQAClient() {
                   className="w-full"
                   render={<Link href="/revision/poetry/power-and-conflict" />}
                 >
-                  Study Power & Conflict
+                  {t('poetry_hub.cta_study_pc')}
                   <ArrowRight className="size-3.5" />
                 </Button>
               </div>
@@ -294,7 +328,7 @@ export function PoetryHubAQAClient() {
                   <CardTitle className="text-heading-md font-heading">
                     Love & Relationships
                   </CardTitle>
-                  <CardDescription>15 poems</CardDescription>
+                  <CardDescription>{t('poetry_hub.fifteen_poems')}</CardDescription>
                 </div>
               </div>
             </CardHeader>
@@ -318,7 +352,7 @@ export function PoetryHubAQAClient() {
                   className="w-full"
                   render={<Link href="/revision/poetry/love-and-relationships" />}
                 >
-                  Study Love & Relationships
+                  {t('poetry_hub.cta_study_lr')}
                   <ArrowRight className="size-3.5" />
                 </Button>
               </div>
@@ -331,7 +365,9 @@ export function PoetryHubAQAClient() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <FileText className="size-5 text-rose-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">All 30 AQA Poems</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.all_30_heading')}
+          </h2>
         </div>
 
         <div className="space-y-6">
@@ -397,7 +433,9 @@ export function PoetryHubAQAClient() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Eye className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Unseen Poetry</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.unseen_heading')}
+          </h2>
         </div>
 
         <Card className="overflow-hidden">
@@ -409,37 +447,36 @@ export function PoetryHubAQAClient() {
               <div className="flex-1 space-y-4">
                 <div>
                   <h3 className="text-heading-md font-heading text-foreground">
-                    Tackling Unseen Poetry
+                    {t('poetry_hub.unseen_title')}
                   </h3>
                   <p className="mt-1 text-body-sm text-muted-foreground">
-                    Section C of the poetry paper tests your ability to analyse a poem you have
-                    never seen before. Here are the key strategies:
+                    {t('poetry_hub.unseen_intro')}
                   </p>
                 </div>
                 <ul className="grid gap-2 sm:grid-cols-2 text-body-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-violet-400" />
-                    Read the poem twice -- once for meaning, once for technique
+                    {t('poetry_hub.unseen_tip_1')}
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-violet-400" />
-                    Annotate as you read: circle key words, underline imagery
+                    {t('poetry_hub.unseen_tip_2')}
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-violet-400" />
-                    Identify the speaker, audience, and situation
+                    {t('poetry_hub.unseen_tip_3')}
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-violet-400" />
-                    Comment on structure: form, stanzas, line length, enjambment
+                    {t('poetry_hub.unseen_tip_4')}
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-violet-400" />
-                    Analyse language: imagery, word choice, sound devices
+                    {t('poetry_hub.unseen_tip_5')}
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-violet-400" />
-                    Always explain the effect on the reader, not just name devices
+                    {t('poetry_hub.unseen_tip_6')}
                   </li>
                 </ul>
                 <Button
@@ -447,7 +484,7 @@ export function PoetryHubAQAClient() {
                   size="sm"
                   render={<Link href="/revision/poetry/unseen-poetry" />}
                 >
-                  Practise unseen poetry
+                  {t('poetry_hub.unseen_cta')}
                   <ArrowRight className="size-3.5" />
                 </Button>
               </div>
@@ -460,23 +497,24 @@ export function PoetryHubAQAClient() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Wand2 className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">Poetry Techniques</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.techniques_heading')}
+          </h2>
         </div>
 
         <Card>
           <CardContent className="p-6">
             <p className="mb-4 text-body-sm text-muted-foreground">
-              Key poetic devices you need to know for the exam. Learn to identify them, explain
-              their effect, and link them to the poem's themes.
+              {t('poetry_hub.techniques_intro')}
             </p>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {POETRY_TECHNIQUES.map((technique) => (
+              {POETRY_TECHNIQUE_KEYS.map((technique) => (
                 <div
                   key={technique.name}
                   className="rounded-lg border border-border/60 bg-background/50 p-3"
                 >
-                  <p className="text-sm font-semibold text-foreground">{technique.name}</p>
-                  <p className="mt-0.5 text-xs text-muted-foreground">{technique.description}</p>
+                  <p className="text-sm font-semibold text-foreground">{t(technique.name)}</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">{t(technique.description)}</p>
                 </div>
               ))}
             </div>
@@ -486,7 +524,7 @@ export function PoetryHubAQAClient() {
                 size="sm"
                 render={<Link href="/resources/poetry/techniques" />}
               >
-                Full techniques guide
+                {t('poetry_hub.techniques_cta')}
                 <ArrowRight className="size-3.5" />
               </Button>
             </div>
@@ -498,32 +536,35 @@ export function PoetryHubAQAClient() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <GitCompareArrows className="size-5 text-emerald-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Comparison Practice</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('poetry_hub.comparison_heading')}
+          </h2>
         </div>
 
         <p className="mb-4 text-body-sm text-muted-foreground max-w-2xl">
-          The exam will ask you to compare a named poem with one of your choice. Practise these
-          popular pairings to build confidence in weaving both poems together.
+          {t('poetry_hub.comparison_intro')}
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2">
           {COMPARISON_PAIRINGS.map((pairing) => (
             <div
-              key={pairing.theme}
+              key={pairing.themeKey}
               className="rounded-2xl border border-border/60 bg-card p-5 space-y-3"
             >
               <div className="flex items-center gap-2">
                 <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
                   {pairing.anthology === 'power-and-conflict' ? 'P&C' : 'L&R'}
                 </Badge>
-                <h3 className="text-heading-sm font-heading text-foreground">{pairing.theme}</h3>
+                <h3 className="text-heading-sm font-heading text-foreground">
+                  {t(pairing.themeKey)}
+                </h3>
               </div>
               <div className="flex items-center gap-2 text-sm text-foreground">
                 <span className="font-medium">{pairing.poems[0]}</span>
                 <GitCompareArrows className="size-3.5 text-muted-foreground" />
                 <span className="font-medium">{pairing.poems[1]}</span>
               </div>
-              <p className="text-xs text-muted-foreground">{pairing.tip}</p>
+              <p className="text-xs text-muted-foreground">{t(pairing.tipKey)}</p>
             </div>
           ))}
         </div>
@@ -534,7 +575,7 @@ export function PoetryHubAQAClient() {
         <div className="mb-5 flex items-center gap-3">
           <Sparkles className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Sharpen Your Poetry Marks
+            {t('poetry_hub.sharpen_heading')}
           </h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -547,10 +588,10 @@ export function PoetryHubAQAClient() {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Essay Structure
+                {t('poetry_hub.related.essay_structure.title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Build sustained poetry comparisons.
+                {t('poetry_hub.related.essay_structure.desc')}
               </p>
             </div>
           </Link>
@@ -563,10 +604,10 @@ export function PoetryHubAQAClient() {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Compare Command Words
+                {t('poetry_hub.related.compare_command.title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Decode the comparison question.
+                {t('poetry_hub.related.compare_command.desc')}
               </p>
             </div>
           </Link>
@@ -579,10 +620,10 @@ export function PoetryHubAQAClient() {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Grade 9 Poetry
+                {t('poetry_hub.related.grade_9.title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Conceptualised, top-band readings.
+                {t('poetry_hub.related.grade_9.desc')}
               </p>
             </div>
           </Link>
@@ -595,10 +636,10 @@ export function PoetryHubAQAClient() {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Poetry Quizzes
+                {t('poetry_hub.related.quizzes.title')}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Test your quote and context recall.
+                {t('poetry_hub.related.quizzes.desc')}
               </p>
             </div>
           </Link>
@@ -608,10 +649,11 @@ export function PoetryHubAQAClient() {
       {/* ── Motivational CTA ────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-rose-500/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">
         <FileText className="mx-auto mb-3 size-8 text-rose-400" />
-        <h2 className="text-heading-lg font-heading text-foreground">Start with one poem a day</h2>
+        <h2 className="text-heading-lg font-heading text-foreground">
+          {t('poetry_hub.motivational_heading')}
+        </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Studying just one poem per day means you will cover the entire anthology in a month. Pick
-          the poem you find hardest and start there -- progress beats perfection.
+          {t('poetry_hub.motivational_body')}
         </p>
         <Button
           variant="default"
@@ -619,7 +661,7 @@ export function PoetryHubAQAClient() {
           className="mt-5"
           render={<Link href="/revision/poetry/power-and-conflict/ozymandias" />}
         >
-          Start with Ozymandias
+          {t('poetry_hub.motivational_cta')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

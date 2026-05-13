@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
+import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'Free English Resources',
@@ -40,8 +41,8 @@ import { LearningTip } from '@/components/ui/learning-tip'
 /* ─── Quick Start Cards ──────────────────────────────────────── */
 
 type ResourceCard = {
-  title: string
-  description: string
+  titleKey: string
+  descKey: string
   href: string
   icon: LucideIcon
   // Boards this card is relevant to. Omit (or 'all') to show for everyone.
@@ -50,40 +51,40 @@ type ResourceCard = {
 
 const QUICK_START: ResourceCard[] = [
   {
-    title: 'Revision Notes',
-    description: 'Concise, exam-focused notes for every text and topic.',
+    titleKey: 'resources.hub.quick.revision_notes.title',
+    descKey: 'resources.hub.quick.revision_notes.desc',
     href: '/resources/revision-notes',
     icon: BookOpen,
   },
   {
-    title: 'Writing Skills',
-    description: 'Master creative, persuasive, and analytical writing.',
+    titleKey: 'resources.hub.quick.writing_skills.title',
+    descKey: 'resources.hub.quick.writing_skills.desc',
     href: '/resources/writing-skills',
     icon: PenTool,
   },
   {
-    title: 'Poetry Hub',
-    description: 'Poem-by-poem guides for every anthology cluster.',
+    titleKey: 'resources.hub.quick.poetry.title',
+    descKey: 'resources.hub.quick.poetry.desc',
     href: '/resources/poetry',
     icon: Feather,
     // Cambridge IGCSE has no set poetry anthology
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
-    title: 'Techniques',
-    description: 'Language and structural techniques with real examples.',
+    titleKey: 'resources.hub.quick.techniques.title',
+    descKey: 'resources.hub.quick.techniques.desc',
     href: '/resources/techniques',
     icon: Sparkles,
   },
   {
-    title: 'Model Answers',
-    description: 'Grade 9 exemplars with marker commentary.',
+    titleKey: 'resources.hub.quick.model_answers.title',
+    descKey: 'resources.hub.quick.model_answers.desc',
     href: '/resources/model-answers',
     icon: FileText,
   },
   {
-    title: 'Study Tools',
-    description: 'Flashcards, planners, and revision checklists.',
+    titleKey: 'resources.hub.quick.study_tools.title',
+    descKey: 'resources.hub.quick.study_tools.desc',
     href: '/resources/study-tools',
     icon: Wrench,
   },
@@ -92,7 +93,7 @@ const QUICK_START: ResourceCard[] = [
 /* ─── All Categories ─────────────────────────────────────────── */
 
 type Category = {
-  name: string
+  nameKey: string
   href: string
   icon: LucideIcon
   boards?: ExamBoard[]
@@ -100,32 +101,44 @@ type Category = {
 
 const ALL_CATEGORIES: Category[] = [
   {
-    name: 'English Literature',
+    nameKey: 'resources.hub.cat.english_literature',
     href: '/resources/english-literature',
     icon: BookMarked,
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
-  { name: 'English Language', href: '/resources/english-language', icon: MessageSquare },
-  { name: 'Revision Notes', href: '/resources/revision-notes', icon: BookOpen },
   {
-    name: 'Poetry',
+    nameKey: 'resources.hub.cat.english_language',
+    href: '/resources/english-language',
+    icon: MessageSquare,
+  },
+  {
+    nameKey: 'resources.hub.cat.revision_notes',
+    href: '/resources/revision-notes',
+    icon: BookOpen,
+  },
+  {
+    nameKey: 'resources.hub.cat.poetry',
     href: '/resources/poetry',
     icon: Feather,
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
-  { name: 'Writing Skills', href: '/resources/writing-skills', icon: PenTool },
-  { name: 'Techniques', href: '/resources/techniques', icon: Sparkles },
-  { name: 'Model Answers', href: '/resources/model-answers', icon: FileText },
-  { name: 'Exam Technique', href: '/resources/exam-technique', icon: GraduationCap },
-  { name: 'Grade Targets', href: '/resources/grade-targets', icon: Target },
-  { name: 'Study Tools', href: '/resources/study-tools', icon: Wrench },
-  { name: 'Vocabulary', href: '/resources/vocabulary', icon: Search },
-  { name: 'Glossary', href: '/resources/glossary', icon: Library },
-  { name: 'Context', href: '/resources/context', icon: Lightbulb },
-  { name: 'Themes', href: '/resources/themes', icon: Layers },
-  { name: 'Authors', href: '/resources/authors', icon: Quote },
-  { name: 'Spoken Language', href: '/resources/spoken-language', icon: Mic },
-  { name: 'Teaching', href: '/resources/teaching', icon: Users },
+  { nameKey: 'resources.hub.cat.writing_skills', href: '/resources/writing-skills', icon: PenTool },
+  { nameKey: 'resources.hub.cat.techniques', href: '/resources/techniques', icon: Sparkles },
+  { nameKey: 'resources.hub.cat.model_answers', href: '/resources/model-answers', icon: FileText },
+  {
+    nameKey: 'resources.hub.cat.exam_technique',
+    href: '/resources/exam-technique',
+    icon: GraduationCap,
+  },
+  { nameKey: 'resources.hub.cat.grade_targets', href: '/resources/grade-targets', icon: Target },
+  { nameKey: 'resources.hub.cat.study_tools', href: '/resources/study-tools', icon: Wrench },
+  { nameKey: 'resources.hub.cat.vocabulary', href: '/resources/vocabulary', icon: Search },
+  { nameKey: 'resources.hub.cat.glossary', href: '/resources/glossary', icon: Library },
+  { nameKey: 'resources.hub.cat.context', href: '/resources/context', icon: Lightbulb },
+  { nameKey: 'resources.hub.cat.themes', href: '/resources/themes', icon: Layers },
+  { nameKey: 'resources.hub.cat.authors', href: '/resources/authors', icon: Quote },
+  { nameKey: 'resources.hub.cat.spoken_language', href: '/resources/spoken-language', icon: Mic },
+  { nameKey: 'resources.hub.cat.teaching', href: '/resources/teaching', icon: Users },
 ]
 
 function relevantToBoard<T extends { boards?: ExamBoard[] }>(
@@ -144,18 +157,59 @@ export default async function ResourcesPage() {
   const quickStart = relevantToBoard(QUICK_START, board)
   const categories = relevantToBoard(ALL_CATEGORIES, board)
 
+  // Collect all i18n keys (hero + quick + categories + section headings) in
+  // one batched lookup. Keeps the AR variant a single cookie-flip away.
+  const quickTitleKeys = quickStart.map((q) => q.titleKey)
+  const quickDescKeys = quickStart.map((q) => q.descKey)
+  const categoryKeys = categories.map((c) => c.nameKey)
+
+  const staticKeys = [
+    'resources.hub.eyebrow',
+    'resources.hub.title',
+    'resources.hub.subtitle',
+    'resources.hub.board_prefix',
+    'resources.hub.stat.study_guides',
+    'resources.hub.stat.categories',
+    'resources.hub.popular.title',
+    'resources.hub.popular.subtitle',
+    'resources.hub.all.title',
+    'resources.hub.all.subtitle',
+  ]
+
+  const labels = await tMany([...staticKeys, ...quickTitleKeys, ...quickDescKeys, ...categoryKeys])
+
+  const [
+    eyebrow,
+    title,
+    subtitle,
+    boardPrefix,
+    statStudyGuides,
+    statCategories,
+    popularTitle,
+    popularSubtitle,
+    allTitle,
+    allSubtitle,
+  ] = labels
+  const offset = staticKeys.length
+  const quickTitles = labels.slice(offset, offset + quickTitleKeys.length)
+  const quickDescs = labels.slice(
+    offset + quickTitleKeys.length,
+    offset + quickTitleKeys.length + quickDescKeys.length,
+  )
+  const categoryNames = labels.slice(offset + quickTitleKeys.length + quickDescKeys.length)
+
   return (
     <main className="min-h-screen bg-background">
       {/* ── Hero Section ─────────────────────────────────────────── */}
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
           <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-            Study Resources
+            {eyebrow}
           </span>
 
           <div className="mt-6 flex items-center justify-center gap-2">
             <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-              Everything You Need to Master English
+              {title}
             </h1>
             <LearningTip categories={['resource', 'study']} side="bottom" size="md" />
           </div>
@@ -163,23 +217,20 @@ export default async function ResourcesPage() {
           {boardConfig && (
             <div className="mt-4 flex justify-center">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                For {boardConfig.shortName}
+                {boardPrefix} {boardConfig.shortName}
               </span>
             </div>
           )}
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
-            A comprehensive library of revision notes, model answers, technique guides, and exam
-            preparation tools -- built for GCSE and IGCSE English students.
-          </p>
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">{subtitle}</p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <span className="rounded-full border border-border bg-card px-3.5 py-1 text-sm font-medium text-muted-foreground">
-              {quickStart.length + categories.length} Study Guides
+              {quickStart.length + categories.length} {statStudyGuides}
             </span>
             <span className="text-border">·</span>
             <span className="rounded-full border border-border bg-card px-3.5 py-1 text-sm font-medium text-muted-foreground">
-              {categories.length} Categories
+              {categories.length} {statCategories}
             </span>
           </div>
         </div>
@@ -189,19 +240,19 @@ export default async function ResourcesPage() {
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-2">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground">Popular Resources</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">{popularTitle}</h2>
             <LearningTip categories={['resource', 'study']} />
           </div>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
-            Jump straight into the most-used study materials.
+            {popularSubtitle}
           </p>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {quickStart.map((item) => {
+            {quickStart.map((item, i) => {
               const Icon = item.icon
               return (
                 <Link
-                  key={item.title}
+                  key={item.titleKey}
                   href={item.href}
                   className="group rounded-xl border border-border bg-card p-6 transition-all duration-200 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
                 >
@@ -209,10 +260,10 @@ export default async function ResourcesPage() {
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {item.title}
+                    {quickTitles[i]}
                   </h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                    {item.description}
+                    {quickDescs[i]}
                   </p>
                 </Link>
               )
@@ -225,24 +276,22 @@ export default async function ResourcesPage() {
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground">All Categories</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">{allTitle}</h2>
             <LearningTip categories={['resource', 'exam']} />
           </div>
-          <p className="mt-2 text-muted-foreground">
-            Browse every resource type available on the platform.
-          </p>
+          <p className="mt-2 text-muted-foreground">{allSubtitle}</p>
 
           <div className="mt-10 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-            {categories.map((cat) => {
+            {categories.map((cat, i) => {
               const Icon = cat.icon
               return (
                 <Link
-                  key={cat.name}
+                  key={cat.nameKey}
                   href={cat.href}
                   className="group flex items-center gap-3 rounded-lg border border-transparent px-4 py-3 transition-colors hover:border-border hover:bg-muted"
                 >
                   <Icon className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
-                  <span className="text-sm font-medium text-foreground">{cat.name}</span>
+                  <span className="text-sm font-medium text-foreground">{categoryNames[i]}</span>
                   <ArrowRight className="ml-auto h-3.5 w-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
                 </Link>
               )

@@ -25,6 +25,16 @@ import { useBoard } from '@/hooks/useBoard'
 import { matchesBoard } from '@/lib/board-filter'
 import { shuffleArray, formatTime } from '@/lib/utils'
 import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
+import { useT } from '@/lib/i18n/use-t'
+
+// ─── Gender helper ──────────────────────────────────────────────────────────
+// Binary M/F policy: when `profile.gender === 'f'` we swap to the .f variant
+// of the dictionary key for the few strings where the verb conjugation
+// genuinely differs in Khaleeji. Profile.gender is not (yet) a typed field
+// on Profile, so we soft-read it via Record to avoid a type-system churn.
+function pickGenderedKey(base: string, gender: string | undefined | null): string {
+  return gender === 'f' ? `${base}.f` : base
+}
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -74,11 +84,14 @@ function getGradeBg(grade: string): string {
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
 export default function AssessmentPage() {
+  const t = useT()
   const params = useParams()
   const router = useRouter()
   const courseId = params.courseId as string
   const { user, profile } = useAuthStore()
   const { board: selectedBoard } = useBoard()
+  // Binary M/F: profile.gender isn't yet typed on Profile — soft-read.
+  const gender = (profile as unknown as { gender?: string } | null)?.gender ?? null
 
   const [course, setCourseData] = useState<CourseData | null>(null)
   const [courseLoading, setCourseLoading] = useState(true)
@@ -125,7 +138,7 @@ export default function AssessmentPage() {
     if (!course) return []
 
     if (course.assessmentQuestions && course.assessmentQuestions.length > 0) {
-      return course.assessmentQuestions.map(q => ({ ...q, moduleTitle: 'Assessment' }))
+      return course.assessmentQuestions.map((q) => ({ ...q, moduleTitle: 'Assessment' }))
     }
 
     const questions: AssessmentQuestion[] = []
@@ -192,7 +205,9 @@ export default function AssessmentPage() {
     // Check for unanswered questions and confirm
     const unanswered = questions.length - Object.keys(answers).length
     if (unanswered > 0) {
-      const confirm = window.confirm(`You have ${unanswered} unanswered question(s). Submit anyway?`)
+      const confirm = window.confirm(
+        t('learn.assessment.active.confirm_unanswered').replace('{n}', String(unanswered)),
+      )
       if (!confirm) return
     }
 
@@ -282,13 +297,13 @@ export default function AssessmentPage() {
         }
       } catch (err) {
         console.error('Failed to save assessment:', err)
-        setError('Your results were calculated but could not be saved. Please try again.')
+        setError(t('learn.assessment.result.save_error'))
       }
     }
 
     setResult(assessmentResult)
     setPhase('results')
-  }, [phase, questions, answers, user, courseId])
+  }, [phase, questions, answers, user, courseId, t])
 
   // Keep handleSubmitRef in sync so the timer never uses a stale closure
   handleSubmitRef.current = handleSubmit
@@ -308,14 +323,17 @@ export default function AssessmentPage() {
   }
 
   if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {
+    const boardBody = t('learn.board.unavailable.body').split('{board}')
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-background text-foreground">
-        <h1 className="text-2xl font-bold">Course not available</h1>
+        <h1 className="text-2xl font-bold">{t('learn.board.unavailable.title')}</h1>
         <p className="text-muted-foreground text-center max-w-md">
-          This course is for the <strong>{course.board}</strong> exam board.
+          {boardBody[0]}
+          <strong>{course.board}</strong>
+          {boardBody[1] ?? ''}
         </p>
         <Link href="/courses" className="btn-primary text-sm">
-          Browse your courses
+          {t('learn.board.unavailable.browse')}
         </Link>
       </div>
     )
@@ -334,11 +352,17 @@ export default function AssessmentPage() {
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <div className="card max-w-md w-full text-center space-y-4 p-8">
           <Lock className="w-12 h-12 text-muted-foreground mx-auto" />
-          <h2 className="text-xl font-bold text-foreground">Course Access Required</h2>
-          <p className="text-muted-foreground">You need to purchase this course or subscribe to Premium to access this content.</p>
+          <h2 className="text-xl font-bold text-foreground">
+            {t('learn.assessment.access.title')}
+          </h2>
+          <p className="text-muted-foreground">{t('learn.assessment.access.body')}</p>
           <div className="flex gap-3 justify-center">
-            <Link href={`/courses/${courseId}`} className="btn-primary">View Course</Link>
-            <Link href="/account/billing" className="btn-secondary">Subscribe</Link>
+            <Link href={`/courses/${courseId}`} className="btn-primary">
+              {t('learn.assessment.access.view_course')}
+            </Link>
+            <Link href="/account/billing" className="btn-secondary">
+              {t('learn.assessment.access.subscribe')}
+            </Link>
           </div>
         </div>
       </div>
@@ -356,44 +380,49 @@ export default function AssessmentPage() {
               <Award size={32} className="text-primary" />
             </div>
             <h1 className="text-2xl font-bold text-foreground mb-2">
-              Final Assessment
+              {t('learn.assessment.intro.title')}
             </h1>
             <p className="text-muted-foreground">{course.title}</p>
           </div>
 
           <div className="space-y-4 mb-8">
             <div className="flex items-center justify-between py-3 border-b border-border">
-              <span className="text-muted-foreground">Questions</span>
+              <span className="text-muted-foreground">{t('learn.assessment.intro.questions')}</span>
               <span className="text-foreground font-medium">
                 {Math.min(20, allQuestions.length)}
               </span>
             </div>
             <div className="flex items-center justify-between py-3 border-b border-border">
-              <span className="text-muted-foreground">Time Limit</span>
-              <span className="text-foreground font-medium">30 minutes</span>
+              <span className="text-muted-foreground">
+                {t('learn.assessment.intro.time_limit')}
+              </span>
+              <span className="text-foreground font-medium">
+                {t('learn.assessment.intro.time_value')}
+              </span>
             </div>
             <div className="flex items-center justify-between py-3 border-b border-border">
-              <span className="text-muted-foreground">Pass Mark</span>
-              <span className="text-foreground font-medium">50%</span>
+              <span className="text-muted-foreground">{t('learn.assessment.intro.pass_mark')}</span>
+              <span className="text-foreground font-medium">
+                {t('learn.assessment.intro.pass_value')}
+              </span>
             </div>
             <div className="flex items-center justify-between py-3">
-              <span className="text-muted-foreground">Grading (GCSE 1-9)</span>
+              <span className="text-muted-foreground">
+                {t('learn.assessment.intro.grading_label')}
+              </span>
               <div className="text-right text-sm">
-                <p className="text-brand-warning">Grade 4-5: 40-59%</p>
-                <p className="text-brand-blue">Grade 6-7: 60-79%</p>
-                <p className="text-primary">Grade 8-9: 80%+</p>
+                <p className="text-brand-warning">{t('learn.assessment.intro.grade_band.low')}</p>
+                <p className="text-brand-blue">{t('learn.assessment.intro.grade_band.mid')}</p>
+                <p className="text-primary">{t('learn.assessment.intro.grade_band.high')}</p>
               </div>
             </div>
           </div>
 
           {allQuestions.length === 0 ? (
             <div className="text-center p-4 bg-brand-warning/10 border border-brand-warning/30 rounded-lg">
-              <AlertTriangle
-                size={20}
-                className="text-brand-warning mx-auto mb-2"
-              />
+              <AlertTriangle size={20} className="text-brand-warning mx-auto mb-2" />
               <p className="text-muted-foreground text-sm">
-                No quiz questions available for this course.
+                {t('learn.assessment.intro.no_questions')}
               </p>
             </div>
           ) : (
@@ -403,18 +432,16 @@ export default function AssessmentPage() {
                 disabled={!user || allQuestions.length === 0}
                 className="btn-primary w-full py-4 text-lg"
               >
-                {user ? 'Start Assessment' : 'Sign in to take assessment'}
+                {user
+                  ? t('learn.assessment.intro.start')
+                  : t('learn.assessment.intro.signin_required')}
               </button>
               <button
-                onClick={() =>
-                  router.push(
-                    `/learn/${courseId}/${course.moduleList[0]?.id ?? ''}`
-                  )
-                }
+                onClick={() => router.push(`/learn/${courseId}/${course.moduleList[0]?.id ?? ''}`)}
                 className="btn-secondary w-full"
               >
                 <ArrowLeft size={16} className="mr-2" />
-                Back to Course
+                {t('learn.assessment.intro.back')}
               </button>
             </div>
           )}
@@ -438,7 +465,9 @@ export default function AssessmentPage() {
           <div className="max-w-3xl mx-auto px-4 py-3 md:px-8">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm text-muted-foreground">
-                Question {currentIndex + 1} of {questions.length}
+                {t('learn.assessment.active.question_label')
+                  .replace('{current}', String(currentIndex + 1))
+                  .replace('{total}', String(questions.length))}
               </span>
               <span
                 aria-live="polite"
@@ -469,7 +498,10 @@ export default function AssessmentPage() {
               <>
                 <div className="mb-2">
                   <span className="text-xs text-muted-foreground">
-                    From: {currentQ.moduleTitle}
+                    {t('learn.assessment.active.from').replace(
+                      '{moduleTitle}',
+                      currentQ.moduleTitle,
+                    )}
                   </span>
                 </div>
                 <h2 className="text-xl font-semibold text-foreground mb-6 leading-relaxed">
@@ -505,9 +537,7 @@ export default function AssessmentPage() {
                           >
                             {String.fromCharCode(65 + i)}
                           </span>
-                          <span className="text-foreground pt-0.5">
-                            {option}
-                          </span>
+                          <span className="text-foreground pt-0.5">{option}</span>
                         </div>
                       </button>
                     )
@@ -517,27 +547,23 @@ export default function AssessmentPage() {
                 {/* Navigation */}
                 <div className="flex items-center justify-between">
                   <button
-                    onClick={() =>
-                      setCurrentIndex((prev) => Math.max(0, prev - 1))
-                    }
+                    onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
                     disabled={currentIndex === 0 || phase === 'submitting'}
                     className="btn-secondary flex items-center gap-2"
                   >
                     <ArrowLeft size={18} />
-                    Previous
+                    {t('learn.assessment.active.prev')}
                   </button>
 
                   {currentIndex < questions.length - 1 ? (
                     <button
                       onClick={() =>
-                        setCurrentIndex((prev) =>
-                          Math.min(questions.length - 1, prev + 1)
-                        )
+                        setCurrentIndex((prev) => Math.min(questions.length - 1, prev + 1))
                       }
                       disabled={phase === 'submitting'}
                       className="btn-primary flex items-center gap-2"
                     >
-                      Next
+                      {t('learn.assessment.active.next')}
                       <ArrowRight size={18} />
                     </button>
                   ) : (
@@ -549,11 +575,11 @@ export default function AssessmentPage() {
                       {phase === 'submitting' ? (
                         <>
                           <Loader2 size={18} className="animate-spin" />
-                          Submitting...
+                          {t('learn.assessment.active.submitting')}
                         </>
                       ) : (
                         <>
-                          Submit Assessment
+                          {t('learn.assessment.active.submit')}
                           <CheckCircle size={18} />
                         </>
                       )}
@@ -582,7 +608,9 @@ export default function AssessmentPage() {
                 </div>
 
                 <p className="text-center text-sm text-muted-foreground mt-4">
-                  {answeredCount} of {questions.length} answered
+                  {t('learn.assessment.active.answered_count')
+                    .replace('{answered}', String(answeredCount))
+                    .replace('{total}', String(questions.length))}
                 </p>
               </>
             )}
@@ -615,36 +643,62 @@ export default function AssessmentPage() {
             </div>
 
             <h1 className="text-3xl font-bold text-foreground mb-1">
-              {result.passed ? 'Congratulations!' : 'Assessment Complete'}
-            </h1>
-            <p className="text-muted-foreground mb-6">
               {result.passed
-                ? `You achieved ${result.grade}! Well done.`
-                : 'You did not meet the pass mark. Review the modules and try again.'}
-            </p>
+                ? t('learn.assessment.result.passed_title')
+                : t('learn.assessment.result.failed_title')}
+            </h1>
+            {/* Translate the "Grade N" label through the dictionary so AR
+                renders with the correct number formatting. `result.grade`
+                is always shaped "Grade N" with a 1-digit N. */}
+            {(() => {
+              const gradeNum = parseInt(result.grade.replace('Grade ', ''), 10)
+              const localisedGrade = t('learn.assessment.result.grade_n').replace(
+                '{n}',
+                String(gradeNum),
+              )
+              return (
+                <>
+                  <p className="text-muted-foreground mb-6">
+                    {result.passed
+                      ? t(pickGenderedKey('learn.assessment.result.passed_body', gender)).replace(
+                          '{grade}',
+                          localisedGrade,
+                        )
+                      : t(pickGenderedKey('learn.assessment.result.failed_body', gender))}
+                  </p>
 
-            {/* Score */}
-            <div className="flex items-center justify-center gap-8 mb-6">
-              <div>
-                <div className={`text-5xl font-bold ${gcseGradeColor(percentageToGCSEGrade(result.percentage))}`}>
-                  Grade {percentageToGCSEGrade(result.percentage)}
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">{result.percentage}% ({result.grade})</div>
-              </div>
-              <div
-                className={`px-4 py-2 rounded-lg border ${getGradeBg(
-                  result.grade
-                )}`}
-              >
-                <div className={`text-2xl font-bold ${getGradeColor(result.grade)}`}>
-                  {result.grade}
-                </div>
-                <div className="text-xs text-muted-foreground">Grade</div>
-              </div>
-            </div>
+                  {/* Score */}
+                  <div className="flex items-center justify-center gap-8 mb-6">
+                    <div>
+                      <div
+                        className={`text-5xl font-bold ${gcseGradeColor(percentageToGCSEGrade(result.percentage))}`}
+                      >
+                        {t('learn.assessment.result.grade_n').replace(
+                          '{n}',
+                          String(percentageToGCSEGrade(result.percentage)),
+                        )}
+                      </div>
+                      <div className="text-sm text-muted-foreground mt-1">
+                        {result.percentage}% ({localisedGrade})
+                      </div>
+                    </div>
+                    <div className={`px-4 py-2 rounded-lg border ${getGradeBg(result.grade)}`}>
+                      <div className={`text-2xl font-bold ${getGradeColor(result.grade)}`}>
+                        {localisedGrade}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        {t('learn.assessment.result.grade_label')}
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )
+            })()}
 
             <div className="text-sm text-muted-foreground">
-              {result.score} correct out of {result.total} questions
+              {t('learn.assessment.result.score_line')
+                .replace('{score}', String(result.score))
+                .replace('{total}', String(result.total))}
             </div>
 
             {error && (
@@ -659,7 +713,7 @@ export default function AssessmentPage() {
           <div className="card p-6 mb-8">
             <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
               <BarChart3 size={20} />
-              Question Breakdown
+              {t('learn.assessment.breakdown.title')}
             </h2>
             <div className="space-y-3">
               {questions.map((q, i) => {
@@ -676,34 +730,26 @@ export default function AssessmentPage() {
                     <div className="flex items-start gap-3">
                       <span className="flex-shrink-0 mt-0.5">
                         {answer?.correct ? (
-                          <CheckCircle
-                            size={18}
-                            className="text-primary"
-                          />
+                          <CheckCircle size={18} className="text-primary" />
                         ) : (
-                          <XCircle
-                            size={18}
-                            className="text-destructive"
-                          />
+                          <XCircle size={18} className="text-destructive" />
                         )}
                       </span>
                       <div className="min-w-0 flex-1">
-                        <p className="text-foreground text-sm font-medium mb-1">
-                          {q.question}
-                        </p>
+                        <p className="text-foreground text-sm font-medium mb-1">{q.question}</p>
                         {!answer?.correct && (
                           <div className="text-xs text-muted-foreground mt-1 space-y-1">
                             <p>
                               <span className="text-destructive">
-                                Your answer:{' '}
+                                {t('learn.assessment.breakdown.your_answer')}
                               </span>
                               {answer?.selected >= 0
                                 ? q.options[answer.selected]
-                                : 'Not answered'}
+                                : t('learn.assessment.breakdown.not_answered')}
                             </p>
                             <p>
                               <span className="text-primary">
-                                Correct:{' '}
+                                {t('learn.assessment.breakdown.correct_answer')}
                               </span>
                               {q.options[q.correct]}
                             </p>
@@ -730,7 +776,7 @@ export default function AssessmentPage() {
                 className="btn-primary flex-1 flex items-center justify-center gap-2"
               >
                 <Award size={18} />
-                View Certificate
+                {t('learn.assessment.actions.view_cert')}
               </a>
             )}
             {!result.passed && (
@@ -738,19 +784,15 @@ export default function AssessmentPage() {
                 onClick={startAssessment}
                 className="btn-primary flex-1 flex items-center justify-center gap-2"
               >
-                Try Again
+                {t('learn.assessment.actions.try_again')}
               </button>
             )}
             <button
-              onClick={() =>
-                router.push(
-                  `/learn/${courseId}/${course.moduleList[0]?.id ?? ''}`
-                )
-              }
+              onClick={() => router.push(`/learn/${courseId}/${course.moduleList[0]?.id ?? ''}`)}
               className="btn-secondary flex-1 flex items-center justify-center gap-2"
             >
               <ArrowLeft size={18} />
-              Back to Course
+              {t('learn.assessment.actions.back_to_course')}
             </button>
           </div>
         </div>

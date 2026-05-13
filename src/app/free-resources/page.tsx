@@ -3,6 +3,7 @@ import { headers } from 'next/headers'
 import Link from 'next/link'
 import LevelChip, { type Level } from '@/components/home/LevelChip'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 /* ───────────────────── Metadata ───────────────────── */
 
@@ -60,54 +61,56 @@ type Resource = {
   description: string
 }
 
-const RESOURCES: Resource[] = [
+type ResourceDef = {
+  id: string
+  titleKey: string
+  level: ResourceLevel
+  boardScopeKey: string
+  descKey: string
+}
+
+const RESOURCE_DEFS: ResourceDef[] = [
   {
     id: 'macbeth-quote-bank',
-    title: 'Macbeth quote bank',
+    titleKey: 'free_res.macbeth_qb.title',
     level: 'gcse',
-    boardScope: 'AQA / Edexcel / OCR / Eduqas',
-    description:
-      'Themed quotation pack covering ambition, fate, kingship, and guilt — each quote tagged with act, scene, and the AOs it supports.',
+    boardScopeKey: 'free_res.scope.aqa_edx_ocr_eduqas',
+    descKey: 'free_res.macbeth_qb.desc',
   },
   {
     id: 'power-and-conflict-comparison-grid',
-    title: 'Power and Conflict comparison grid',
+    titleKey: 'free_res.pc_grid.title',
     level: 'gcse',
-    boardScope: 'AQA',
-    description:
-      'Side-by-side comparison grid for all 15 anthology poems, mapping form, structure, language, and shared themes for the Section B comparison.',
+    boardScopeKey: 'free_res.scope.aqa',
+    descKey: 'free_res.pc_grid.desc',
   },
   {
     id: 'an-inspector-calls-character-map',
-    title: 'An Inspector Calls character map',
+    titleKey: 'free_res.aic_map.title',
     level: 'gcse',
-    boardScope: 'Multi-board',
-    description:
-      'Character relationship map with quotation hotspots, AO3 context links, and a one-page revision summary for each Birling family member.',
+    boardScopeKey: 'free_res.scope.multi',
+    descKey: 'free_res.aic_map.desc',
   },
   {
     id: 'ao2-mark-scheme-decoder',
-    title: 'AO2 mark-scheme decoder',
+    titleKey: 'free_res.ao2.title',
     level: 'gcse',
-    boardScope: 'Multi-board',
-    description:
-      'Plain-English breakdown of what AO2 actually rewards — language, structure, form — with exemplar paragraphs marked at grades 5, 7, and 9.',
+    boardScopeKey: 'free_res.scope.multi',
+    descKey: 'free_res.ao2.desc',
   },
   {
     id: 'edexcel-igcse-4et1-anthology-cheatsheet',
-    title: 'Pearson Edexcel IGCSE 4ET1 anthology cheatsheet',
+    titleKey: 'free_res.edx_4et1.title',
     level: 'igcse',
-    boardScope: 'Pearson Edexcel',
-    description:
-      'One-page summary per anthology text — speaker, context, key devices, and the comparison pairings that come up most in past papers.',
+    boardScopeKey: 'free_res.scope.pearson_edexcel',
+    descKey: 'free_res.edx_4et1.desc',
   },
   {
     id: 'cambridge-igcse-0500-vs-0990-difference-guide',
-    title: 'Cambridge IGCSE 0500 vs 0990 difference guide',
+    titleKey: 'free_res.cie_diff.title',
     level: 'igcse',
-    boardScope: 'Cambridge',
-    description:
-      'Specification-level diff between 0500 and 0990 — assessment objectives, paper structure, and how the same writing skills are weighted differently.',
+    boardScopeKey: 'free_res.scope.cambridge',
+    descKey: 'free_res.cie_diff.desc',
   },
 ]
 
@@ -116,13 +119,49 @@ const RESOURCES: Resource[] = [
 export default async function FreeResourcesPage() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
 
+  const resourceKeys = RESOURCE_DEFS.flatMap((r) => [r.titleKey, r.boardScopeKey, r.descKey])
+  const baseKeys = [
+    'free_res.crumb.home',
+    'free_res.crumb.self',
+    'free_res.eyebrow',
+    'free_res.h1',
+    'free_res.lead',
+    'free_res.grid_sr',
+    'free_res.coming_soon',
+    'free_res.notify_when',
+    'free_res.launch_eyebrow',
+    'free_res.notify_h2',
+    'free_res.notify_lead',
+  ]
+  const v = await tMany([...baseKeys, ...resourceKeys])
+  let i = 0
+  const tCrumbHome = v[i++]!
+  const tCrumbSelf = v[i++]!
+  const tEyebrow = v[i++]!
+  const tH1 = v[i++]!
+  const tLead = v[i++]!
+  const tGridSr = v[i++]!
+  const tComingSoon = v[i++]!
+  const tNotifyWhen = v[i++]!
+  const tLaunchEyebrow = v[i++]!
+  const tNotifyH2 = v[i++]!
+  const tNotifyLead = v[i++]!
+
+  const RESOURCES: Resource[] = RESOURCE_DEFS.map((r) => ({
+    id: r.id,
+    title: v[i++]!,
+    level: r.level,
+    boardScope: v[i++]!,
+    description: v[i++]!,
+  }))
+
   return (
     <main className="min-h-screen bg-ink-950">
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
-          { name: 'Home', url: SITE_URL },
-          { name: 'Free resources', url: PAGE_URL },
+          { name: tCrumbHome, url: SITE_URL },
+          { name: tCrumbSelf, url: PAGE_URL },
         ]}
       />
 
@@ -131,26 +170,25 @@ export default async function FreeResourcesPage() {
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
           <nav className="mb-6 text-xs text-cream-200/55" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-cream-50 underline-offset-4 hover:underline">
-              Home
+              {tCrumbHome}
             </Link>
             <span className="mx-2" aria-hidden="true">
               /
             </span>
-            <span className="text-cream-100/85">Free resources</span>
+            <span className="text-cream-100/85">{tCrumbSelf}</span>
           </nav>
           <div className="text-center mb-2">
             <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-300">
-              Lead-magnet library
+              {tEyebrow}
             </p>
             <h1
               id="free-resources-heading"
               className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
             >
-              Free GCSE &amp; IGCSE English resources
+              {tH1}
             </h1>
             <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
-              Quote banks, essay plan workbooks, character maps, and revision packs — calibrated to
-              your exam board. Coming soon.
+              {tLead}
             </p>
           </div>
         </div>
@@ -163,7 +201,7 @@ export default async function FreeResourcesPage() {
       >
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
           <h2 id="resource-grid-heading" className="sr-only">
-            Free resources coming soon
+            {tGridSr}
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {RESOURCES.map((r) => (
@@ -186,9 +224,9 @@ export default async function FreeResourcesPage() {
 
                 <span
                   className="inline-flex w-fit items-center rounded-full border border-clay-300/30 bg-clay-300/[0.08] px-2.5 py-1 font-mono text-[0.6875rem] uppercase tracking-[0.14em] leading-none text-clay-200"
-                  aria-label="Coming soon"
+                  aria-label={tComingSoon}
                 >
-                  Coming soon
+                  {tComingSoon}
                 </span>
 
                 <p className="text-sm text-cream-100/70 leading-relaxed">{r.description}</p>
@@ -199,7 +237,7 @@ export default async function FreeResourcesPage() {
                   }`}
                   aria-hidden="true"
                 >
-                  Get notified when this lands <span aria-hidden="true">&darr;</span>
+                  {tNotifyWhen} <span aria-hidden="true">&darr;</span>
                 </span>
               </li>
             ))}
@@ -216,17 +254,16 @@ export default async function FreeResourcesPage() {
           <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-300">
-                Launch list
+                {tLaunchEyebrow}
               </p>
               <h2
                 id="notify-heading"
                 className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50 leading-tight"
               >
-                Be first to get each pack
+                {tNotifyH2}
               </h2>
               <p className="mt-3 text-sm sm:text-base text-cream-100/75 leading-relaxed">
-                We&rsquo;re building these resources board by board. Drop your email and we&rsquo;ll
-                send one note when each new pack is ready to download — nothing else.
+                {tNotifyLead}
               </p>
             </div>
           </div>

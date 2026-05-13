@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import { AlertTriangle, RotateCcw, Home } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
 
 export default function Error({
   error,
@@ -12,6 +13,8 @@ export default function Error({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  const t = useT()
+
   useEffect(() => {
     // Log to Sentry if available
     console.error('Page error:', error)
@@ -23,17 +26,15 @@ export default function Error({
         <AlertTriangle className="size-8" />
       </div>
       <div className="space-y-2">
-        <h2 className="text-2xl font-bold text-foreground">Something went wrong</h2>
-        <p className="max-w-md text-sm text-muted-foreground">
-          We hit an unexpected error loading this page. Try refreshing, or head back to the homepage.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground">{t('error.section.title')}</h2>
+        <p className="max-w-md text-sm text-muted-foreground">{t('error.section.body')}</p>
       </div>
       <div className="flex gap-3">
         <Button variant="outline" onClick={reset}>
-          <RotateCcw className="mr-2 size-4" /> Try again
+          <RotateCcw className="mr-2 size-4" /> {t('error.section.try_again')}
         </Button>
         <Button render={<Link href="/" />}>
-          <Home className="mr-2 size-4" /> Go home
+          <Home className="mr-2 size-4" /> {t('error.section.go_home')}
         </Button>
       </div>
     </div>

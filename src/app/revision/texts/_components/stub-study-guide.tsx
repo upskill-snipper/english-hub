@@ -5,19 +5,25 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import type { SetText } from '@/lib/board/set-texts'
+import { t } from '@/lib/i18n/t'
 
-const CATEGORY_LABEL: Record<SetText['category'], string> = {
-  shakespeare: 'Shakespeare',
-  '19th-century': '19th-Century Novel',
-  modern: 'Modern Text',
-  'poetry-anthology': 'Poetry Anthology',
-  'non-fiction': 'Non-Fiction Anthology',
-  prose: 'Anthology Prose',
+// Per-category dictionary keys. Looked up at render time via t() so the
+// AR toggle picks up the Khaleeji label without a separate prop change.
+const CATEGORY_KEY: Record<SetText['category'], string> = {
+  shakespeare: 'analysis.deep.set_text.cat.shakespeare',
+  '19th-century': 'analysis.deep.set_text.cat.nineteenth',
+  modern: 'analysis.deep.set_text.cat.modern',
+  'poetry-anthology': 'analysis.deep.set_text.cat.poetry_anthology',
+  'non-fiction': 'analysis.deep.set_text.cat.non_fiction',
+  prose: 'analysis.deep.set_text.cat.prose',
 }
 
 type Props = {
   text: SetText
-  /** Where the "back" button should go. */
+  /**
+   * Where the "back" button should go. When `backLabel` is omitted, the
+   * component renders the localized default ("Back to set texts").
+   */
   backHref?: string
   backLabel?: string
 }
@@ -25,13 +31,25 @@ type Props = {
 /**
  * Lightweight study-guide placeholder used while full content is being authored.
  * Renders the title, author, category and the registered teaser/keyThemes from
- * set-texts.ts, plus a "study guide in production" notice.
+ * set-texts.ts, plus a "study guide in production" notice. All chrome routes
+ * through `analysis.deep.stub.*` so the AR toggle is Khaleeji-aware. The
+ * literary `text.description`, `text.keyThemes`, `text.title`, `text.author`,
+ * and `text.ukRightsNotice` strings remain in source language by design.
  */
-export function StubStudyGuide({
-  text,
-  backHref = '/revision/texts',
-  backLabel = 'Back to set texts',
-}: Props) {
+export async function StubStudyGuide({ text, backHref = '/revision/texts', backLabel }: Props) {
+  const tByAuthor = await t('analysis.deep.stub.by_author')
+  const tLangABadge = await t('analysis.deep.stub.lang_a_badge')
+  const tUkRightsH3 = await t('analysis.deep.stub.uk_rights_h3')
+  const tInProdH3 = await t('analysis.deep.stub.in_production_h3')
+  const tInProdP1Prefix = await t('analysis.deep.stub.in_production_p1_prefix')
+  const tInProdP1Suffix = await t('analysis.deep.stub.in_production_p1_suffix')
+  const tInProdP2 = await t('analysis.deep.stub.in_production_p2')
+  const tBrowseTexts = await t('analysis.deep.stub.cta_browse_texts')
+  const tLangAHub = await t('analysis.deep.stub.cta_lang_a_hub')
+  const tDefaultBack = await t('analysis.deep.stub.default_back_label')
+  const tCategoryLabel = await t(CATEGORY_KEY[text.category])
+  const resolvedBackLabel = backLabel ?? tDefaultBack
+
   return (
     <div className="space-y-10 pb-16">
       <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-blue-500/[0.04] p-6 sm:p-8 lg:p-10">
@@ -46,13 +64,13 @@ export function StubStudyGuide({
             render={<Link href={backHref} />}
           >
             <ArrowLeft className="size-3.5" />
-            {backLabel}
+            {resolvedBackLabel}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="mr-1 size-3" />
-              {CATEGORY_LABEL[text.category]}
+              {tCategoryLabel}
             </Badge>
             {text.year && (
               <Badge variant="outline" className="text-muted-foreground">
@@ -60,14 +78,16 @@ export function StubStudyGuide({
               </Badge>
             )}
             <Badge variant="outline" className="text-muted-foreground">
-              Pearson IGCSE Language A (4EA1)
+              {tLangABadge}
             </Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             {text.title}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">by {text.author}</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {tByAuthor} {text.author}
+          </p>
 
           {text.description && (
             <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">{text.description}</p>
@@ -95,7 +115,7 @@ export function StubStudyGuide({
               <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
                 <Scale className="size-5 text-blue-700" />
               </div>
-              <CardTitle className="text-heading-md font-heading">UK rights notice</CardTitle>
+              <CardTitle className="text-heading-md font-heading">{tUkRightsH3}</CardTitle>
             </div>
           </CardHeader>
           <CardContent className="space-y-2 text-body-sm text-muted-foreground">
@@ -110,31 +130,23 @@ export function StubStudyGuide({
             <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
               <Construction className="size-5 text-clay-600" />
             </div>
-            <CardTitle className="text-heading-md font-heading">
-              Study guide in production
-            </CardTitle>
+            <CardTitle className="text-heading-md font-heading">{tInProdH3}</CardTitle>
           </div>
         </CardHeader>
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
           <p>
-            We are currently writing a full study guide for{' '}
-            <strong className="text-foreground">{text.title}</strong>: line-by-line analysis,
-            language and structure features, key vocabulary and exam-style practice questions
-            aligned with the Pearson Edexcel International GCSE English Language A (4EA1) mark
-            scheme.
+            {tInProdP1Prefix} <strong className="text-foreground">{text.title}</strong>
+            {tInProdP1Suffix}
           </p>
-          <p>
-            In the meantime you can revise other anthology texts, work through writing-skills
-            sessions, or use the unseen-poetry and unseen-prose practice in the IGCSE hub.
-          </p>
+          <p>{tInProdP2}</p>
           <div className="flex flex-wrap gap-3 pt-2">
             <Button variant="outline" size="sm" render={<Link href="/revision/texts" />}>
               <BookOpen className="size-3.5" />
-              Browse other set texts
+              {tBrowseTexts}
               <ArrowRight className="size-3.5" />
             </Button>
             <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel-lang" />}>
-              IGCSE Language A hub
+              {tLangAHub}
               <ArrowRight className="size-3.5" />
             </Button>
           </div>

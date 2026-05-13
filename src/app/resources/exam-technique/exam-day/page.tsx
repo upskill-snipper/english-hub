@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { HowToJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -14,7 +15,34 @@ export const metadata: Metadata = {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function ExamDayPage() {
+export default async function ExamDayPage() {
+  const [
+    heroEyebrow,
+    heroTitle,
+    heroSubtitle,
+    h2WhatBring,
+    h2HowRead,
+    h2HowPlan,
+    h2StayCalm,
+    h2Last5,
+    h2GotThis,
+    h2FinalRev,
+    bcExamTech,
+    bcThis,
+  ] = await tMany([
+    'resources.exam_tech.day.eyebrow',
+    'resources.exam_tech.day.title',
+    'resources.exam_tech.day.subtitle',
+    'resources.exam_tech.day.what_bring',
+    'resources.exam_tech.day.how_read',
+    'resources.exam_tech.day.how_plan',
+    'resources.exam_tech.day.stay_calm',
+    'resources.exam_tech.day.last_5',
+    'resources.exam_tech.day.got_this',
+    'resources.exam_tech.day.final_rev',
+    'resources.exam_tech.bc.exam_tech',
+    'resources.exam_tech.day.bc_this',
+  ])
   return (
     <>
       <HowToJsonLd
@@ -58,15 +86,12 @@ export default function ExamDayPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Exam Technique
+            {heroEyebrow}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Exam Day Advice
+            {heroTitle}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Practical, no-nonsense advice for the day itself. You have done the revision -- now make
-            sure nothing else gets in the way of your best performance.
-          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{heroSubtitle}</p>
         </div>
       </section>
 
@@ -87,17 +112,17 @@ export default function ExamDayPage() {
           <li>/</li>
           <li>
             <Link href="/resources/exam-technique" className="hover:text-primary transition-colors">
-              Exam Technique
+              {bcExamTech}
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-primary">Exam Day</li>
+          <li className="font-medium text-primary">{bcThis}</li>
         </ol>
       </nav>
 
       {/* What to bring */}
       <section className="mx-auto max-w-5xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">What to bring</h2>
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2WhatBring}</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           Pack everything the night before. Do not leave this to the morning.
         </p>
@@ -148,7 +173,7 @@ export default function ExamDayPage() {
       {/* How to read the paper */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">How to read the paper</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2HowRead}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             The first 10-15 minutes of your exam should be spent reading, not writing. This is an
             investment that pays off in every answer you write.
@@ -208,7 +233,7 @@ export default function ExamDayPage() {
 
       {/* How to plan answers */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">How to plan answers</h2>
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2HowPlan}</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           A planned answer is always better than an unplanned one. Planning takes 3-5 minutes but
           saves you from waffle, repetition, and running out of ideas mid-paragraph.
@@ -285,7 +310,7 @@ export default function ExamDayPage() {
       {/* How to stay calm */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">How to stay calm</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2StayCalm}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Exam anxiety is completely normal. The students who perform best are not the ones who
             feel no nerves -- they are the ones who manage their nerves effectively.
@@ -345,9 +370,7 @@ export default function ExamDayPage() {
 
       {/* The last 5 minutes */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-          What to do in the last 5 minutes
-        </h2>
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2Last5}</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           The last five minutes of an exam are some of the most valuable. Use them wisely and you
           can pick up several extra marks.
@@ -405,7 +428,7 @@ export default function ExamDayPage() {
       {/* Final message */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl font-bold text-foreground">You have got this</h2>
+          <h2 className="text-2xl font-bold text-foreground">{h2GotThis}</h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground leading-relaxed">
             The fact that you are reading this page means you care about doing well -- and that
             already puts you ahead. Trust your preparation, follow these strategies, and give every
@@ -431,7 +454,7 @@ export default function ExamDayPage() {
       {/* Revision link */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
-          <h2 className="text-lg font-bold text-foreground">Final revision before exam day</h2>
+          <h2 className="text-lg font-bold text-foreground">{h2FinalRev}</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Run through our interactive exam technique revision to make sure you are fully prepared.
           </p>

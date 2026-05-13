@@ -2,7 +2,11 @@ import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import { ClassComparison } from '@/components/school/ClassComparison'
 import { Skeleton } from '@/components/ui/skeleton'
+import { t } from '@/lib/i18n/t'
 
+// SEO metadata stays in English — Google's English crawl is canonical for this
+// admin-only page (robots: noindex anyway). User-facing chrome below is wired
+// through useT/t for the Khaleeji-AR toggle.
 export const metadata: Metadata = {
   title: 'Compare Classes | The English Hub',
   description:
@@ -10,9 +14,14 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
-function ComparisonFallback() {
+async function ComparisonFallback() {
+  const loadingLabel = await t('school.comparison.loading')
+  const pageTitle = await t('school.comparison.page_title')
+  const pageSubtitle = await t('school.comparison.page_subtitle')
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" role="status" aria-live="polite" aria-label={loadingLabel}>
+      <span className="sr-only">{pageTitle}</span>
+      <span className="sr-only">{pageSubtitle}</span>
       <Skeleton className="h-8 w-64" />
       <Skeleton className="h-4 w-96" />
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -24,10 +33,11 @@ function ComparisonFallback() {
   )
 }
 
-export default function CompareClassesPage() {
+export default async function CompareClassesPage() {
+  const fallback = await ComparisonFallback()
   return (
     <div className="px-4 py-6 sm:px-6 lg:px-8">
-      <Suspense fallback={<ComparisonFallback />}>
+      <Suspense fallback={fallback}>
         <ClassComparison />
       </Suspense>
     </div>

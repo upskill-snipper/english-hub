@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -10,18 +11,16 @@ import { getBoardConfig } from '@/lib/board/board-store'
 
 const ANTHOLOGY_SECTIONS = [
   {
-    title: 'Power and Conflict',
+    titleKey: 'resources.poetry.anth.pac.title',
     href: '/resources/poetry/power-and-conflict',
-    description:
-      'All 15 poems analysed in depth: Ozymandias, London, The Prelude, My Last Duchess, Charge of the Light Brigade, Exposure, Storm on the Island, Bayonet Charge, Remains, Poppies, War Photographer, Tissue, The Émigrée, Kamikaze, and Checking Out Me History.',
+    descKey: 'resources.poetry.anth.pac.desc',
     poems: 15,
     board: 'AQA',
   },
   {
-    title: 'Love and Relationships',
+    titleKey: 'resources.poetry.anth.lar.title',
     href: '/resources/poetry/love-and-relationships',
-    description:
-      "All 15 poems analysed: When We Two Parted, Love's Philosophy, Porphyria's Lover, Sonnet 29, Neutral Tones, Letters from Yorkshire, The Farmer's Bride, Walking Away, Eden Rock, Follower, Mother Any Distance, Before You Were Mine, Winter Swans, Singh Song!, and Climbing My Grandfather.",
+    descKey: 'resources.poetry.anth.lar.desc',
     poems: 15,
     board: 'AQA',
   },
@@ -29,18 +28,16 @@ const ANTHOLOGY_SECTIONS = [
 
 const EDEXCEL_SECTIONS = [
   {
-    title: 'Conflict',
+    titleKey: 'resources.poetry.anth.edex_conflict.title',
     href: '/revision/poetry/edexcel/conflict',
-    description:
-      'All 15 poems in the Edexcel Conflict anthology, exploring war, prejudice, family tension and internal struggle. Featured study pages: A Poison Tree (Blake) and The Destruction of Sennacherib (Byron).',
+    descKey: 'resources.poetry.anth.edex_conflict.desc',
     poems: 15,
     board: 'Edexcel',
   },
   {
-    title: 'Time and Place',
+    titleKey: 'resources.poetry.anth.edex_tap.title',
     href: '/revision/poetry/edexcel/time-and-place',
-    description:
-      'All 15 poems in the Edexcel Time and Place anthology, exploring landscape, memory and identity. Featured study pages: To Autumn (Keats), Composed Upon Westminster Bridge (Wordsworth), London (Blake) and I started Early - Took my Dog (Dickinson).',
+    descKey: 'resources.poetry.anth.edex_tap.desc',
     poems: 15,
     board: 'Edexcel',
   },
@@ -48,10 +45,9 @@ const EDEXCEL_SECTIONS = [
 
 const EDUQAS_SECTIONS = [
   {
-    title: 'WJEC Eduqas Anthology (2025)',
+    titleKey: 'resources.poetry.anth.eduqas.title',
     href: '/revision/poetry/eduqas',
-    description:
-      "All 12 poems in the Eduqas GCSE 2025 anthology, grouped by theme: Childhood & Nature, Love & Relationships, War & Conflict, and Identity & Voice. Includes Blake's The Schoolboy, Wordsworth's Daffodils, Barrett Browning's Sonnet 29, Rossetti's Cousin Kate, Hardy's Drummer Hodge (Boer War 1899), McKay's I Shall Return, Owen's Disabled, Ghose's Decomposition, Clarke's Catrin, Heaney's Blackberry Picking, Garland's Kamikaze and Ewing's Origin Story. Six remain in copyright — quotations are short fair-dealing extracts.",
+    descKey: 'resources.poetry.anth.eduqas.desc',
     poems: 12,
     board: 'Eduqas',
   },
@@ -59,27 +55,24 @@ const EDUQAS_SECTIONS = [
 
 const SKILL_GUIDES = [
   {
-    title: 'Poetry Analysis Techniques',
+    titleKey: 'resources.poetry.skill.techniques.title',
     href: '/resources/poetry/techniques',
-    description:
-      'Master 25+ poetic devices: metaphor, simile, enjambment, caesura, volta, sibilance, and more. Definitions, examples, effects, and how to write about them in your exam.',
-    tag: 'Essential',
+    descKey: 'resources.poetry.skill.techniques.desc',
+    tagKey: 'resources.poetry.skill.techniques.tag',
     icon: 'techniques' as const,
   },
   {
-    title: 'Unseen Poetry',
+    titleKey: 'resources.poetry.skill.unseen.title',
     href: '/resources/poetry/unseen-poetry',
-    description:
-      'Step-by-step method for tackling unseen poetry in the exam. Annotation strategies, timed approaches, comparison techniques, and practice examples with model responses.',
-    tag: 'Exam Skill',
+    descKey: 'resources.poetry.skill.unseen.desc',
+    tagKey: 'resources.poetry.skill.unseen.tag',
     icon: 'unseen' as const,
   },
   {
-    title: 'How to Compare Poems',
+    titleKey: 'resources.poetry.skill.compare.title',
     href: '/resources/poetry/techniques#comparing-poems',
-    description:
-      'A structured approach to comparison questions. Learn how to weave both poems together, choose strong comparison points, and write integrated paragraphs that impress examiners.',
-    tag: 'Key Skill',
+    descKey: 'resources.poetry.skill.compare.desc',
+    tagKey: 'resources.poetry.skill.compare.tag',
     icon: 'compare' as const,
   },
 ]
@@ -127,29 +120,20 @@ const TOP_TEN_POEMS = [
 
 const QUICK_TIPS = [
   {
-    title: 'Memorise Key Quotations',
-    text: 'For anthology poems, aim for 5 short quotations per poem. Single words or phrases are easier to remember and more flexible in an essay than long passages.',
+    titleKey: 'resources.poetry.tip.memorise.title',
+    textKey: 'resources.poetry.tip.memorise.text',
   },
   {
-    title: 'Always Identify Technique + Effect',
-    text: "Naming a device is not enough. You must explain WHY the poet chose it and WHAT effect it creates on the reader. Link to the poem's themes.",
+    titleKey: 'resources.poetry.tip.tech_effect.title',
+    textKey: 'resources.poetry.tip.tech_effect.text',
   },
+  { titleKey: 'resources.poetry.tip.compare.title', textKey: 'resources.poetry.tip.compare.text' },
+  { titleKey: 'resources.poetry.tip.context.title', textKey: 'resources.poetry.tip.context.text' },
   {
-    title: "Compare, Don't Describe",
-    text: "In comparison questions, weave both poems together. Use connectives like 'similarly', 'in contrast', 'whereas', and 'however' to show your analytical thinking.",
+    titleKey: 'resources.poetry.tip.structure.title',
+    textKey: 'resources.poetry.tip.structure.text',
   },
-  {
-    title: 'Context Is Not Biography',
-    text: "Don't narrate the poet's life story. Instead, explain how historical, social, or cultural factors shape the poem's meaning and the reader's interpretation.",
-  },
-  {
-    title: 'Structure Matters',
-    text: 'Comment on form (sonnet, dramatic monologue), stanza shape, line length, enjambment, and caesura. Examiners reward students who analyse structure, not just language.',
-  },
-  {
-    title: 'Plan Your Comparison',
-    text: 'Spend 5 minutes planning. Pick 3 points of comparison. For each, have a quote from both poems. This prevents you from writing about one poem far more than the other.',
-  },
+  { titleKey: 'resources.poetry.tip.plan.title', textKey: 'resources.poetry.tip.plan.text' },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -261,6 +245,7 @@ function getSkillIcon(icon: string) {
 /* ------------------------------------------------------------------ */
 
 export function PoetryHubClient() {
+  const t = useT()
   const { board, isHydrated } = useBoard()
   const boardConfig = getBoardConfig(board)
 
@@ -283,21 +268,20 @@ export function PoetryHubClient() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
-            GCSE English Literature
+            {t('resources.poetry.hero.eyebrow')}
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Poetry Made Clear
+            {t('resources.poetry.hero.title')}
           </h1>
           {isHydrated && boardConfig && (
             <div className="mt-4 flex justify-center">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                For {boardConfig.shortName}
+                {t('resources.poetry.board_prefix')} {boardConfig.shortName}
               </span>
             </div>
           )}
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Everything you need to master GCSE poetry. Anthology analysis, poetic techniques, unseen
-            poetry strategies, and comparison skills &mdash; all in one place.
+            {t('resources.poetry.hero.subtitle')}
           </p>
           {isHydrated && noAnthology && (
             <div className="mx-auto mt-5 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 max-w-2xl text-left">
@@ -315,8 +299,8 @@ export function PoetryHubClient() {
                 />
               </svg>
               <p className="text-sm text-muted-foreground">
-                Your exam board ({boardConfig?.shortName}) does not require a set poetry anthology.
-                You can still use the unseen poetry and analysis technique guides below to prepare.
+                {t('resources.poetry.hero.no_anthology_prefix')} ({boardConfig?.shortName}){' '}
+                {t('resources.poetry.hero.no_anthology_suffix')}
               </p>
             </div>
           )}
@@ -327,14 +311,15 @@ export function PoetryHubClient() {
       {showAQA && (
         <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-foreground">AQA Anthology Analysis</h2>
+            <h2 className="text-2xl font-bold text-foreground">
+              {t('resources.poetry.section.aqa.title')}
+            </h2>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
               AQA
             </span>
           </div>
           <p className="mt-2 max-w-3xl text-muted-foreground">
-            In-depth analysis of every poem in the AQA GCSE anthology. Stanza-by-stanza breakdowns,
-            key quotations with technique identification, themes, context, and comparison links.
+            {t('resources.poetry.section.aqa.subtitle')}
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -347,20 +332,20 @@ export function PoetryHubClient() {
                 <div className="flex items-center gap-1.5">
                   <PoemIcon />
                   <span className="text-sm font-semibold text-foreground">
-                    {section.poems} poems
+                    {section.poems} {t('resources.poetry.poems_suffix')}
                   </span>
                   <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
                     {section.board}
                   </span>
                 </div>
                 <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
-                  {section.title}
+                  {t(section.titleKey)}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {section.description}
+                  {t(section.descKey)}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                  View analysis <ArrowRight />
+                  {t('resources.poetry.cta.view_analysis')} <ArrowRight />
                 </span>
               </Link>
             ))}
@@ -372,14 +357,15 @@ export function PoetryHubClient() {
       {showEdexcel && (
         <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-foreground">Edexcel Anthology Analysis</h2>
+            <h2 className="text-2xl font-bold text-foreground">
+              {t('resources.poetry.section.edexcel.title')}
+            </h2>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
               Edexcel
             </span>
           </div>
           <p className="mt-2 max-w-3xl text-muted-foreground">
-            The Pearson Edexcel anthology has two themed clusters &mdash; you only study one. Choose
-            your cluster below for poem-by-poem study pages, key quotations and comparison practice.
+            {t('resources.poetry.section.edexcel.subtitle')}
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -392,20 +378,20 @@ export function PoetryHubClient() {
                 <div className="flex items-center gap-1.5">
                   <PoemIcon />
                   <span className="text-sm font-semibold text-foreground">
-                    {section.poems} poems
+                    {section.poems} {t('resources.poetry.poems_suffix')}
                   </span>
                   <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
                     {section.board}
                   </span>
                 </div>
                 <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
-                  {section.title}
+                  {t(section.titleKey)}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {section.description}
+                  {t(section.descKey)}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                  View analysis <ArrowRight />
+                  {t('resources.poetry.cta.view_analysis')} <ArrowRight />
                 </span>
               </Link>
             ))}
@@ -417,16 +403,15 @@ export function PoetryHubClient() {
       {showEduqas && (
         <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
-            <h2 className="text-2xl font-bold text-foreground">WJEC Eduqas Anthology Analysis</h2>
+            <h2 className="text-2xl font-bold text-foreground">
+              {t('resources.poetry.section.eduqas.title')}
+            </h2>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
               Eduqas
             </span>
           </div>
           <p className="mt-2 max-w-3xl text-muted-foreground">
-            The WJEC Eduqas 2025 anthology has 12 poems that all students study, grouped by theme.
-            The exam asks you to compare two poems &mdash; building strong pairings is essential.
-            Six of the twelve remain in copyright; quotations on this site are short fair-dealing
-            extracts.
+            {t('resources.poetry.section.eduqas.subtitle')}
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -439,20 +424,20 @@ export function PoetryHubClient() {
                 <div className="flex items-center gap-1.5">
                   <PoemIcon />
                   <span className="text-sm font-semibold text-foreground">
-                    {section.poems} poems
+                    {section.poems} {t('resources.poetry.poems_suffix')}
                   </span>
                   <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
                     {section.board}
                   </span>
                 </div>
                 <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
-                  {section.title}
+                  {t(section.titleKey)}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {section.description}
+                  {t(section.descKey)}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                  View analysis <ArrowRight />
+                  {t('resources.poetry.cta.view_analysis')} <ArrowRight />
                 </span>
               </Link>
             ))}
@@ -464,11 +449,10 @@ export function PoetryHubClient() {
       {showOCR && (
         <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
           <div className="rounded-xl border border-border bg-card p-6">
-            <h2 className="text-xl font-bold text-foreground">OCR Poetry Anthology</h2>
-            <p className="mt-2 text-muted-foreground">
-              Detailed OCR anthology study guides are coming soon. In the meantime, the analysis
-              techniques and unseen poetry resources below will help you prepare for your OCR exam.
-            </p>
+            <h2 className="text-xl font-bold text-foreground">
+              {t('resources.poetry.section.ocr.title')}
+            </h2>
+            <p className="mt-2 text-muted-foreground">{t('resources.poetry.section.ocr.body')}</p>
           </div>
         </section>
       )}
@@ -477,10 +461,11 @@ export function PoetryHubClient() {
       {showEdexcelIgcse && (
         <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
           <div className="rounded-xl border border-border bg-card p-6">
-            <h2 className="text-xl font-bold text-foreground">Edexcel IGCSE Poetry Anthology</h2>
+            <h2 className="text-xl font-bold text-foreground">
+              {t('resources.poetry.section.edex_igcse.title')}
+            </h2>
             <p className="mt-2 text-muted-foreground">
-              Edexcel IGCSE anthology study guides are coming soon. The skills and unseen poetry
-              guides below apply to your specification.
+              {t('resources.poetry.section.edex_igcse.body')}
             </p>
           </div>
         </section>
@@ -489,10 +474,10 @@ export function PoetryHubClient() {
       {/* ── Skills guides ────────────────────────────────────────── */}
       <section className="border-y border-border bg-muted/30 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-foreground">Poetry Skills</h2>
-          <p className="mt-2 text-muted-foreground">
-            Build the analytical skills you need for both anthology and unseen poetry questions.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">
+            {t('resources.poetry.skills.title')}
+          </h2>
+          <p className="mt-2 text-muted-foreground">{t('resources.poetry.skills.subtitle')}</p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SKILL_GUIDES.map((guide) => (
@@ -504,17 +489,17 @@ export function PoetryHubClient() {
                 <div className="flex items-center justify-between">
                   {getSkillIcon(guide.icon)}
                   <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                    {guide.tag}
+                    {t(guide.tagKey)}
                   </span>
                 </div>
                 <h3 className="mt-4 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
-                  {guide.title}
+                  {t(guide.titleKey)}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {guide.description}
+                  {t(guide.descKey)}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                  Start learning <ArrowRight />
+                  {t('resources.poetry.cta.start_learning')} <ArrowRight />
                 </span>
               </Link>
             ))}
@@ -525,11 +510,10 @@ export function PoetryHubClient() {
       {/* ── Top 10 most tested poems (AQA-specific) ──────────────── */}
       {showAQA && (
         <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground">10 Most Commonly Tested Poems</h2>
-          <p className="mt-2 text-muted-foreground">
-            Quick access to the poems that appear most frequently in GCSE exams. Start your revision
-            here.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">
+            {t('resources.poetry.top10.title')}
+          </h2>
+          <p className="mt-2 text-muted-foreground">{t('resources.poetry.top10.subtitle')}</p>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {TOP_TEN_POEMS.map((poem, i) => (
@@ -556,19 +540,19 @@ export function PoetryHubClient() {
       {/* ── Quick tips ───────────────────────────────────────────── */}
       <section className="border-y border-border bg-muted/30 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-foreground">Top Poetry Exam Tips</h2>
-          <p className="mt-2 text-muted-foreground">
-            Essential strategies to maximise your marks in the poetry section.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{t('resources.poetry.tips.title')}</h2>
+          <p className="mt-2 text-muted-foreground">{t('resources.poetry.tips.subtitle')}</p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {QUICK_TIPS.map((tip) => (
               <div
-                key={tip.title}
+                key={tip.titleKey}
                 className="rounded-xl border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-foreground">{tip.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{tip.text}</p>
+                <h3 className="font-semibold text-foreground">{t(tip.titleKey)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {t(tip.textKey)}
+                </p>
               </div>
             ))}
           </div>
@@ -578,31 +562,25 @@ export function PoetryHubClient() {
       {/* ── How poetry is assessed ───────────────────────────────── */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">How Poetry Is Assessed</h2>
-          <p className="mt-2 text-muted-foreground">
-            Understanding the assessment objectives helps you target your revision and write answers
-            that hit every mark.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{t('resources.poetry.ao.title')}</h2>
+          <p className="mt-2 text-muted-foreground">{t('resources.poetry.ao.subtitle')}</p>
 
           <div className="mt-6 space-y-4">
             {[
               {
                 ao: 'AO1',
-                detail:
-                  'Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations of the poems.',
-                tip: 'Embed short quotations fluently into your sentences rather than bolting them on as afterthoughts.',
+                detailKey: 'resources.poetry.ao.ao1.detail',
+                tipKey: 'resources.poetry.ao.ao1.tip',
               },
               {
                 ao: 'AO2',
-                detail:
-                  'Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.',
-                tip: "Name the technique, quote it, then explain the effect. Do not just 'feature-spot' without analysis.",
+                detailKey: 'resources.poetry.ao.ao2.detail',
+                tipKey: 'resources.poetry.ao.ao2.tip',
               },
               {
                 ao: 'AO3',
-                detail:
-                  'Show understanding of the relationships between texts and the contexts in which they were written.',
-                tip: "Link context to meaning. For example, Wilfred Owen's experience in the trenches shapes every image in Exposure.",
+                detailKey: 'resources.poetry.ao.ao3.detail',
+                tipKey: 'resources.poetry.ao.ao3.tip',
               },
             ].map((obj) => (
               <div key={obj.ao} className="rounded-lg border border-border bg-card p-5 shadow-md">
@@ -611,8 +589,10 @@ export function PoetryHubClient() {
                     {obj.ao}
                   </span>
                   <div>
-                    <p className="leading-relaxed text-foreground">{obj.detail}</p>
-                    <p className="mt-2 text-sm font-medium text-primary">Tip: {obj.tip}</p>
+                    <p className="leading-relaxed text-foreground">{t(obj.detailKey)}</p>
+                    <p className="mt-2 text-sm font-medium text-primary">
+                      {t('resources.poetry.ao.tip_prefix')} {t(obj.tipKey)}
+                    </p>
                   </div>
                 </div>
               </div>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { HowToJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -14,7 +15,40 @@ export const metadata: Metadata = {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function EssayStructurePage() {
+export default async function EssayStructurePage() {
+  const [
+    heroEyebrow,
+    heroTitle,
+    heroSubtitle,
+    h2Intro,
+    h2Peel,
+    h2Topic,
+    h2Linking,
+    h2HowMany,
+    h2Conclusion,
+    h2Practise,
+    practiseBody,
+    practiseCtaA,
+    practiseCtaB,
+    bcExamTech,
+    bcThis,
+  ] = await tMany([
+    'resources.exam_tech.es.eyebrow',
+    'resources.exam_tech.es.title',
+    'resources.exam_tech.es.subtitle',
+    'resources.exam_tech.es.intro',
+    'resources.exam_tech.es.peel',
+    'resources.exam_tech.es.topic',
+    'resources.exam_tech.es.linking',
+    'resources.exam_tech.es.how_many',
+    'resources.exam_tech.es.conclusion',
+    'resources.exam_tech.es.practise.title',
+    'resources.exam_tech.es.practise.body',
+    'resources.exam_tech.es.practise.cta_rev',
+    'resources.exam_tech.es.practise.cta_model',
+    'resources.exam_tech.bc.exam_tech',
+    'resources.exam_tech.es.bc_this',
+  ])
   return (
     <>
       <HowToJsonLd
@@ -65,15 +99,12 @@ export default function EssayStructurePage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Exam Technique
+            {heroEyebrow}
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Essay Structure Templates
+            {heroTitle}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            A well-structured essay is easier to write, easier to read, and easier to mark. Use
-            these proven templates to build clear, focused, high-scoring responses every time.
-          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">{heroSubtitle}</p>
         </div>
       </section>
 
@@ -94,17 +125,17 @@ export default function EssayStructurePage() {
           <li>/</li>
           <li>
             <Link href="/resources/exam-technique" className="hover:text-primary transition-colors">
-              Exam Technique
+              {bcExamTech}
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-primary">Essay Structure</li>
+          <li className="font-medium text-primary">{bcThis}</li>
         </ol>
       </nav>
 
       {/* Introduction techniques */}
       <section className="mx-auto max-w-5xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Introduction techniques</h2>
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2Intro}</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           Your introduction sets the tone and direction for your entire essay. It should be concise
           (3-5 sentences), address the question directly, and signal the line of argument you will
@@ -157,9 +188,7 @@ export default function EssayStructurePage() {
       {/* PEEL paragraph template */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            The PEEL paragraph template
-          </h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2Peel}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             PEEL is the most reliable paragraph structure for English essays. Every analytical
             paragraph should follow this pattern. It keeps your writing focused, evidence-based, and
@@ -225,7 +254,7 @@ export default function EssayStructurePage() {
 
       {/* Topic sentences */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Topic sentences</h2>
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2Topic}</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           A topic sentence is the first sentence of each paragraph. It tells the marker exactly what
           the paragraph will be about and how it connects to the question. Strong topic sentences
@@ -283,7 +312,7 @@ export default function EssayStructurePage() {
       {/* Linking paragraphs */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Linking paragraphs</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2Linking}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Your essay should flow logically from one paragraph to the next. Each paragraph should
             build on, contrast with, or develop the idea from the previous one. Here are the main
@@ -351,9 +380,7 @@ export default function EssayStructurePage() {
 
       {/* How many paragraphs */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-          How many paragraphs for different mark allocations
-        </h2>
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2HowMany}</h2>
         <p className="mt-3 text-muted-foreground leading-relaxed">
           The number of paragraphs you write should be proportional to the marks available. Here is
           a practical guide -- these are not rigid rules, but reliable targets.
@@ -456,7 +483,7 @@ export default function EssayStructurePage() {
       {/* Conclusion techniques */}
       <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Conclusion techniques</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{h2Conclusion}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             A strong conclusion does three things: it answers the question decisively, it pulls
             together the threads of your argument, and it leaves the marker with a final insight. It
@@ -508,23 +535,20 @@ export default function EssayStructurePage() {
       {/* Revision link */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
-          <h2 className="text-lg font-bold text-foreground">Practise your essay structure</h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Use these templates with real exam questions and get instant feedback on your paragraph
-            structure.
-          </p>
+          <h2 className="text-lg font-bold text-foreground">{h2Practise}</h2>
+          <p className="mt-2 text-sm text-muted-foreground">{practiseBody}</p>
           <div className="mt-4 flex flex-wrap justify-center gap-3">
             <Link
               href="/revision/exam-technique"
               className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
             >
-              Exam technique revision
+              {practiseCtaA}
             </Link>
             <Link
               href="/resources/model-answers"
               className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground shadow transition hover:bg-muted"
             >
-              See model answers
+              {practiseCtaB}
             </Link>
           </div>
         </div>

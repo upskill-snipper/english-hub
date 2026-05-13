@@ -62,7 +62,10 @@ function getNotificationIcon(type: NotificationType): LucideIcon {
 
 // ── Relative time ────────────────────────────────────────────────────────────
 
-function formatTimestamp(iso: string): string {
+// Render-time relative-time formatter. Accepts a `t` lookup so AR strings
+// resolve via the dictionary; fall-back date format remains en-GB short
+// because numerals/months are already abbreviated and locale-safe.
+function formatTimestamp(iso: string, t: (key: string) => string): string {
   const date = new Date(iso)
   const now = new Date()
   const diffMs = now.getTime() - date.getTime()
@@ -71,12 +74,22 @@ function formatTimestamp(iso: string): string {
 
   if (diffHours < 1) {
     const diffMin = Math.floor(diffMs / (1000 * 60))
-    if (diffMin < 1) return 'Just now'
-    return `${diffMin} min${diffMin !== 1 ? 's' : ''} ago`
+    if (diffMin < 1) return t('school.notifications.time.just_now')
+    const unit =
+      diffMin !== 1
+        ? t('school.notifications.time.min_plural')
+        : t('school.notifications.time.min_singular')
+    return `${diffMin} ${unit}`
   }
-  if (diffHours < 24) return `${diffHours} hour${diffHours !== 1 ? 's' : ''} ago`
-  if (diffDays === 1) return 'Yesterday'
-  if (diffDays < 7) return `${diffDays} days ago`
+  if (diffHours < 24) {
+    const unit =
+      diffHours !== 1
+        ? t('school.notifications.time.hour_plural')
+        : t('school.notifications.time.hour_singular')
+    return `${diffHours} ${unit}`
+  }
+  if (diffDays === 1) return t('school.notifications.time.yesterday')
+  if (diffDays < 7) return `${diffDays} ${t('school.notifications.time.days_ago_suffix')}`
   return date.toLocaleDateString('en-GB', {
     day: 'numeric',
     month: 'short',
@@ -85,27 +98,45 @@ function formatTimestamp(iso: string): string {
 }
 
 // ── Priority config ──────────────────────────────────────────────────────────
-
-const PRIORITY_CONFIG = {
-  high: { label: 'High', color: 'text-red-400', dot: 'bg-red-500' },
-  medium: { label: 'Medium', color: 'text-clay-600', dot: 'bg-amber-500' },
-  low: { label: 'Low', color: 'text-green-400', dot: 'bg-green-500' },
+// Labels stored as i18n keys; resolved at render time via useT.
+const PRIORITY_CONFIG: Record<
+  'high' | 'medium' | 'low',
+  { labelKey: string; color: string; dot: string }
+> = {
+  high: {
+    labelKey: 'school.notifications.priority.high',
+    color: 'text-red-400',
+    dot: 'bg-red-500',
+  },
+  medium: {
+    labelKey: 'school.notifications.priority.medium',
+    color: 'text-clay-600',
+    dot: 'bg-amber-500',
+  },
+  low: {
+    labelKey: 'school.notifications.priority.low',
+    color: 'text-green-400',
+    dot: 'bg-green-500',
+  },
 }
 
 // ── Notification types for filter ────────────────────────────────────────────
-
+// `NOTIFICATION_TYPE_CONFIG[type].label` already ships en-only; AR comes
+// from the dictionary upstream when those entries are added. We keep the
+// label as-is here so missing types degrade gracefully to English.
 const ALL_TYPES = Object.entries(NOTIFICATION_TYPE_CONFIG).map(([key, config]) => ({
   value: key as NotificationType,
   label: config.label,
 }))
 
 // ── Date range options ───────────────────────────────────────────────────────
-
-const DATE_RANGES = [
-  { value: 'all', label: 'All time' },
-  { value: 'today', label: 'Today' },
-  { value: '7d', label: 'Last 7 days' },
-  { value: '30d', label: 'Last 30 days' },
+// 'all' falls back to school.notifications.all_time (used in the SelectValue
+// placeholder); the SelectItem label resolves the same key at render time.
+const DATE_RANGES: { value: string; labelKey: string }[] = [
+  { value: 'all', labelKey: 'school.notifications.all_time' },
+  { value: 'today', labelKey: 'school.notifications.range.today' },
+  { value: '7d', labelKey: 'school.notifications.range.7d' },
+  { value: '30d', labelKey: 'school.notifications.range.30d' },
 ]
 
 function getDateFrom(range: string): Date | undefined {
@@ -235,7 +266,7 @@ export default function NotificationsPage() {
           <SelectContent>
             {DATE_RANGES.map((d) => (
               <SelectItem key={d.value} value={d.value}>
-                {d.label}
+                {t(d.labelKey)}
               </SelectItem>
             ))}
           </SelectContent>
@@ -331,7 +362,7 @@ export default function NotificationsPage() {
                       </p>
                     </div>
                     <span className="shrink-0 text-xs text-muted-foreground tabular-nums">
-                      {formatTimestamp(notification.timestamp)}
+                      {formatTimestamp(notification.timestamp, t)}
                     </span>
                   </div>
 
@@ -346,7 +377,7 @@ export default function NotificationsPage() {
                       </Badge>
                     )}
                     <Badge variant="outline" className={cn('h-5 text-[10px]', priorityConf.color)}>
-                      {priorityConf.label}
+                      {t(priorityConf.labelKey)}
                     </Badge>
                   </div>
 
@@ -380,8 +411,11 @@ export default function NotificationsPage() {
       {/* Summary footer */}
       {filteredNotifications.length > 0 && (
         <div className="mt-6 text-center text-xs text-muted-foreground">
-          Showing {filteredNotifications.length} of {notifications.length} notification
-          {notifications.length !== 1 ? 's' : ''}
+          {t('school.notifications.footer.showing')} {filteredNotifications.length}{' '}
+          {t('school.notifications.footer.of')} {notifications.length}{' '}
+          {notifications.length !== 1
+            ? t('school.notifications.footer.notification_plural')
+            : t('school.notifications.footer.notification_singular')}
         </div>
       )}
     </div>

@@ -21,6 +21,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { SET_TEXTS, getSetText, textAvailableForBoard, type SetText } from '@/lib/board/set-texts'
 import { getServerBoard } from '@/lib/board/get-server-board'
+import { t } from '@/lib/i18n/t'
 
 // ─── Static params ──────────────────────────────────────────────────────────
 
@@ -37,8 +38,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const text = getSetText(slug)
   if (!text) {
     return {
-      title: 'Set Text Not Found | The English Hub',
-      description: 'The set text you are looking for could not be found.',
+      title: await t('analysis.deep.set_text.not_found_title'),
+      description: await t('analysis.deep.set_text.not_found_desc'),
     }
   }
   return {
@@ -52,42 +53,44 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
 // ─── Category metadata ─────────────────────────────────────────────────────
 
+// Category metadata. The `labelKey` is looked up via t() at render time so
+// the AR toggle picks up Khaleeji labels. Icons and colour classes stay as-is.
 const CATEGORY_META: Record<
   SetText['category'],
-  { label: string; icon: typeof Crown; colour: string; bgColour: string }
+  { labelKey: string; icon: typeof Crown; colour: string; bgColour: string }
 > = {
   shakespeare: {
-    label: 'Shakespeare',
+    labelKey: 'analysis.deep.set_text.cat.shakespeare',
     icon: Crown,
     colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
   },
   '19th-century': {
-    label: '19th-Century Novel',
+    labelKey: 'analysis.deep.set_text.cat.nineteenth',
     icon: BookOpen,
     colour: 'text-emerald-700',
     bgColour: 'bg-emerald-500/10',
   },
   modern: {
-    label: 'Modern Text',
+    labelKey: 'analysis.deep.set_text.cat.modern',
     icon: Drama,
     colour: 'text-violet-700',
     bgColour: 'bg-violet-500/10',
   },
   'poetry-anthology': {
-    label: 'Poetry Anthology',
+    labelKey: 'analysis.deep.set_text.cat.poetry_anthology',
     icon: BookOpen,
     colour: 'text-blue-700',
     bgColour: 'bg-blue-500/10',
   },
   'non-fiction': {
-    label: 'Non-Fiction Anthology',
+    labelKey: 'analysis.deep.set_text.cat.non_fiction',
     icon: Newspaper,
     colour: 'text-clay-600',
     bgColour: 'bg-amber-500/10',
   },
   prose: {
-    label: 'Anthology Prose',
+    labelKey: 'analysis.deep.set_text.cat.prose',
     icon: Feather,
     colour: 'text-rose-700',
     bgColour: 'bg-rose-500/10',
@@ -180,6 +183,43 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
   const analysisSlug = ANALYSIS_SLUG_MAP[text.slug]
   const igcseProseSlug = IGCSE_PROSE_SLUG_MAP[text.slug]
 
+  // Chrome translations. Author name, title, description, themes and key
+  // quotations stay in source language — literary content per task scope.
+  const tCategoryLabel = await t(category.labelKey)
+  const tBackToTexts = await t('analysis.deep.set_text.back_to_texts')
+  const tBackToAll = await t('analysis.deep.set_text.back_to_all_texts')
+  const tBy = await t('analysis.deep.set_text.by_author')
+  const tBoardsOne = await t('analysis.deep.set_text.boards_one')
+  const tBoardsManySuffix = await t('analysis.deep.set_text.boards_many_suffix')
+  const tResourcesH2 = await t('analysis.deep.set_text.resources_h2')
+  const tResIntroPre = await t('analysis.deep.set_text.resources_intro_prefix')
+  const tResIntroPost = await t('analysis.deep.set_text.resources_intro_suffix')
+  const tNotesTitle = await t('analysis.deep.set_text.notes_title')
+  const tNotesDesc = await t('analysis.deep.set_text.notes_desc')
+  const tNotesCta = await t('analysis.deep.set_text.notes_cta')
+  const tAnalysisTitle = await t('analysis.deep.set_text.analysis_title')
+  const tAnalysisDesc = await t('analysis.deep.set_text.analysis_desc')
+  const tAnalysisCta = await t('analysis.deep.set_text.analysis_cta')
+  const tIgcseTitle = await t('analysis.deep.set_text.igcse_title')
+  const tIgcseDesc = await t('analysis.deep.set_text.igcse_desc')
+  const tIgcseCta = await t('analysis.deep.set_text.igcse_cta')
+  const tQuizTitle = await t('analysis.deep.set_text.quiz_title')
+  const tQuizDesc = await t('analysis.deep.set_text.quiz_desc')
+  const tQuizCta = await t('analysis.deep.set_text.quiz_cta')
+  const tHowToRevise = await t('analysis.deep.set_text.how_to_revise_prefix')
+  const tHowToReviseIntro = await t('analysis.deep.set_text.how_to_revise_intro')
+  const tTip1H3 = await t('analysis.deep.set_text.tip1_h3')
+  const tTip1Body = await t('analysis.deep.set_text.tip1_body')
+  const tTip2H3 = await t('analysis.deep.set_text.tip2_h3')
+  const tTip2Body = await t('analysis.deep.set_text.tip2_body')
+  const tTip3H3 = await t('analysis.deep.set_text.tip3_h3')
+  const tTip3Body = await t('analysis.deep.set_text.tip3_body')
+  const tTip4H3 = await t('analysis.deep.set_text.tip4_h3')
+  const tTip4Body = await t('analysis.deep.set_text.tip4_body')
+
+  const boardsLabel =
+    text.boards.length === 1 ? tBoardsOne : `${text.boards.length} ${tBoardsManySuffix}`
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Hero ───────────────────────────────────────────────────── */}
@@ -195,24 +235,26 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
             render={<Link href="/revision/texts" />}
           >
             <ArrowLeft className="size-3.5" />
-            Back to set texts
+            {tBackToTexts}
           </Button>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <CategoryIcon className={`mr-1 size-3 ${category.colour}`} />
-              {category.label}
+              {tCategoryLabel}
             </Badge>
             <Badge variant="outline" className="text-muted-foreground">
               <Sparkles className="mr-1 size-3" />
-              {text.boards.length === 1 ? '1 exam board' : `${text.boards.length} exam boards`}
+              {boardsLabel}
             </Badge>
           </div>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             {text.title}
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">by {text.author}</p>
+          <p className="mt-2 text-body-lg text-muted-foreground">
+            {tBy} {text.author}
+          </p>
 
           {text.description && (
             <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">{text.description}</p>
@@ -238,9 +280,9 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-blue-700" />
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">Study Resources</h2>
+            <h2 className="text-heading-lg font-heading text-foreground">{tResourcesH2}</h2>
             <p className="text-body-sm text-muted-foreground">
-              Everything we have on {text.title} in one place.
+              {tResIntroPre} {text.title} {tResIntroPost}
             </p>
           </div>
         </div>
@@ -253,11 +295,9 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
                   <div className="flex size-10 items-center justify-center rounded-xl bg-blue-500/10">
                     <FileText className="size-5 text-blue-700" />
                   </div>
-                  <CardTitle className="text-heading-md font-heading">Revision notes</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tNotesTitle}</CardTitle>
                 </div>
-                <CardDescription className="mt-2">
-                  Concise revision notes covering plot, characters, context and themes.
-                </CardDescription>
+                <CardDescription className="mt-2">{tNotesDesc}</CardDescription>
               </CardHeader>
               <CardContent>
                 <Button
@@ -266,7 +306,7 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
                   className="w-full"
                   render={<Link href={`/resources/revision-notes/${revisionNotesSlug}`} />}
                 >
-                  Open revision notes
+                  {tNotesCta}
                   <ArrowRight className="size-3.5" />
                 </Button>
               </CardContent>
@@ -280,11 +320,9 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
                   <div className="flex size-10 items-center justify-center rounded-xl bg-violet-500/10">
                     <Quote className="size-5 text-violet-700" />
                   </div>
-                  <CardTitle className="text-heading-md font-heading">In-depth analysis</CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tAnalysisTitle}</CardTitle>
                 </div>
-                <CardDescription className="mt-2">
-                  Long-form essays and quote-by-quote analysis written for top grades.
-                </CardDescription>
+                <CardDescription className="mt-2">{tAnalysisDesc}</CardDescription>
               </CardHeader>
               <CardContent>
                 <Button
@@ -293,7 +331,7 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
                   className="w-full"
                   render={<Link href={`/analysis/${analysisSlug}`} />}
                 >
-                  Read analysis
+                  {tAnalysisCta}
                   <ArrowRight className="size-3.5" />
                 </Button>
               </CardContent>
@@ -307,13 +345,9 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
                   <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
                     <Users className="size-5 text-emerald-700" />
                   </div>
-                  <CardTitle className="text-heading-md font-heading">
-                    Edexcel IGCSE guide
-                  </CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{tIgcseTitle}</CardTitle>
                 </div>
-                <CardDescription className="mt-2">
-                  Plot beats, characters, themes and key quotations for the IGCSE prose paper.
-                </CardDescription>
+                <CardDescription className="mt-2">{tIgcseDesc}</CardDescription>
               </CardHeader>
               <CardContent>
                 <Button
@@ -322,7 +356,7 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
                   className="w-full"
                   render={<Link href={`/igcse/edexcel/prose/${igcseProseSlug}`} />}
                 >
-                  Open IGCSE guide
+                  {tIgcseCta}
                   <ArrowRight className="size-3.5" />
                 </Button>
               </CardContent>
@@ -335,11 +369,9 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
                 <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
                   <Lightbulb className="size-5 text-clay-600" />
                 </div>
-                <CardTitle className="text-heading-md font-heading">Active recall quiz</CardTitle>
+                <CardTitle className="text-heading-md font-heading">{tQuizTitle}</CardTitle>
               </div>
-              <CardDescription className="mt-2">
-                Test your knowledge with quote-completion and theme-matching questions.
-              </CardDescription>
+              <CardDescription className="mt-2">{tQuizDesc}</CardDescription>
             </CardHeader>
             <CardContent>
               <Button
@@ -348,7 +380,7 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
                 className="w-full"
                 render={<Link href="/revision/quiz" />}
               >
-                Open the quiz hub
+                {tQuizCta}
                 <ArrowRight className="size-3.5" />
               </Button>
             </CardContent>
@@ -361,46 +393,29 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
         <div className="mb-5 flex items-center gap-3">
           <Lightbulb className="size-5 text-clay-600" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            How to revise {text.title}
+            {tHowToRevise} {text.title}
           </h2>
         </div>
 
         <Card>
           <CardContent className="p-6 sm:p-8">
-            <p className="mb-5 max-w-2xl text-body-sm text-muted-foreground">
-              Follow these steps for high-impact revision. The best students do not just re-read the
-              text — they actively engage with quotation, structure and writer&apos;s intentions.
-            </p>
+            <p className="mb-5 max-w-2xl text-body-sm text-muted-foreground">{tHowToReviseIntro}</p>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">Memorise short quotations</h3>
-                <p className="text-xs text-muted-foreground">
-                  Aim for 10–15 short, versatile quotations. Choose ones that link to multiple
-                  themes and contain analysable language techniques.
-                </p>
+                <h3 className="text-sm font-semibold text-foreground">{tTip1H3}</h3>
+                <p className="text-xs text-muted-foreground">{tTip1Body}</p>
               </div>
               <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">
-                  Track character development
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  Note how each major character changes from start to finish, and what those changes
-                  reveal about the writer&apos;s message.
-                </p>
+                <h3 className="text-sm font-semibold text-foreground">{tTip2H3}</h3>
+                <p className="text-xs text-muted-foreground">{tTip2Body}</p>
               </div>
               <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">Connect themes to context</h3>
-                <p className="text-xs text-muted-foreground">
-                  Always explain why the writer made specific choices. Link themes to the
-                  historical, social or biographical context of the text.
-                </p>
+                <h3 className="text-sm font-semibold text-foreground">{tTip3H3}</h3>
+                <p className="text-xs text-muted-foreground">{tTip3Body}</p>
               </div>
               <div className="space-y-2 rounded-xl border border-border/60 bg-background/50 p-4">
-                <h3 className="text-sm font-semibold text-foreground">Plan timed essays</h3>
-                <p className="text-xs text-muted-foreground">
-                  Practise plans under timed conditions. Aim for three clear paragraphs, each with a
-                  quotation, analysis and contextual link.
-                </p>
+                <h3 className="text-sm font-semibold text-foreground">{tTip4H3}</h3>
+                <p className="text-xs text-muted-foreground">{tTip4Body}</p>
               </div>
             </div>
           </CardContent>
@@ -411,7 +426,7 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
       <div className="flex justify-center">
         <Button variant="ghost" size="sm" render={<Link href="/revision/texts" />}>
           <ArrowLeft className="size-3.5" />
-          Back to all set texts
+          {tBackToAll}
         </Button>
       </div>
     </div>
