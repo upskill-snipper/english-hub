@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -675,7 +677,16 @@ function PoemCard({ poem }: { poem: PoemAnalysis }) {
   )
 }
 
-export default function PoetryPage() {
+export default async function PoetryPage() {
+  void _trServer
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────── */}
@@ -701,10 +712,12 @@ export default function PoetryPage() {
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Quick nav ─────────────────────────────────────────── */}
         <nav className="rounded-xl bg-muted p-6">
-          <h2 className="text-lg font-bold text-foreground">On this page</h2>
+          <h2 className="text-lg font-bold text-foreground">{_tr(`On this page`)}</h2>
           <div className="mt-3 grid gap-4 sm:grid-cols-2">
             <div>
-              <h3 className="text-sm font-semibold text-foreground">Relationships Cluster</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {_tr(`Relationships Cluster`)}
+              </h3>
               <ul className="mt-2 space-y-1 text-sm">
                 {RELATIONSHIPS_POEMS.map((p) => (
                   <li key={p.title}>
@@ -719,7 +732,7 @@ export default function PoetryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-foreground">Conflict Cluster</h3>
+              <h3 className="text-sm font-semibold text-foreground">{_tr(`Conflict Cluster`)}</h3>
               <ul className="mt-2 space-y-1 text-sm">
                 {CONFLICT_POEMS.map((p) => (
                   <li key={p.title}>
@@ -738,7 +751,9 @@ export default function PoetryPage() {
 
         {/* ── Exam overview ─────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">How the Poetry Anthology Works</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            {_tr(`How the Poetry Anthology Works`)}
+          </h2>
           <div className="mt-4 rounded-xl bg-muted p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <p>
               Your school will have studied <strong>one cluster</strong> — either Relationships or
@@ -784,7 +799,9 @@ export default function PoetryPage() {
 
         {/* ── Conflict cluster ──────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">Conflict Cluster — Full Analysis</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            {_tr(`Conflict Cluster — Full Analysis`)}
+          </h2>
           <p className="mt-2 text-muted-foreground">
             15 poems exploring different types of conflict: war, political violence, personal
             battles, prejudice, inner turmoil, and the struggle for identity.
@@ -805,11 +822,13 @@ export default function PoetryPage() {
 
         {/* ── Comparison technique ──────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">How to Write a Poetry Comparison</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            {_tr(`How to Write a Poetry Comparison`)}
+          </h2>
 
           <div className="mt-6 space-y-6">
             <div className="rounded-xl bg-muted p-6">
-              <h3 className="text-lg font-bold text-foreground">Recommended Structure</h3>
+              <h3 className="text-lg font-bold text-foreground">{_tr(`Recommended Structure`)}</h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
@@ -825,10 +844,10 @@ export default function PoetryPage() {
                     2
                   </span>
                   <span>
-                    <strong>Comparative paragraphs (3-4)</strong> — each paragraph should discuss
-                    both poems. Compare a specific technique or idea, using comparative connectives
-                    (&quot;Similarly,&quot; &quot;In contrast,&quot; &quot;Whereas,&quot; &quot;Both
-                    poets&quot;).
+                    <strong>{_tr(`Comparative paragraphs (3-4)`)}</strong> — each paragraph should
+                    discuss both poems. Compare a specific technique or idea, using comparative
+                    connectives (&quot;Similarly,&quot; &quot;In contrast,&quot;
+                    &quot;Whereas,&quot; &quot;Both poets&quot;).
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -836,9 +855,9 @@ export default function PoetryPage() {
                     3
                   </span>
                   <span>
-                    <strong>Analyse methods</strong> — don&apos;t just compare what the poems say,
-                    but how they say it. Compare language choices, structural techniques, form,
-                    tone, and imagery.
+                    <strong>{_tr(`Analyse methods`)}</strong> — don&apos;t just compare what the
+                    poems say, but how they say it. Compare language choices, structural techniques,
+                    form, tone, and imagery.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -846,8 +865,8 @@ export default function PoetryPage() {
                     4
                   </span>
                   <span>
-                    <strong>Include context where relevant</strong> — when and why was the poem
-                    written? How does the poet&apos;s background inform the poem? (context)
+                    <strong>{_tr(`Include context where relevant`)}</strong> — when and why was the
+                    poem written? How does the poet&apos;s background inform the poem? (context)
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -855,34 +874,36 @@ export default function PoetryPage() {
                     5
                   </span>
                   <span>
-                    <strong>Brief conclusion</strong> — which poem is more effective? Or how do they
-                    complement each other?
+                    <strong>{_tr(`Brief conclusion`)}</strong> — which poem is more effective? Or
+                    how do they complement each other?
                   </span>
                 </li>
               </ol>
             </div>
 
             <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
-              <h3 className="text-lg font-bold text-foreground">Useful Comparison Connectives</h3>
+              <h3 className="text-lg font-bold text-foreground">
+                {_tr(`Useful Comparison Connectives`)}
+              </h3>
               <div className="mt-3 grid gap-4 sm:grid-cols-2 text-sm text-muted-foreground">
                 <div>
                   <h4 className="font-semibold text-foreground">Similarities</h4>
                   <ul className="mt-2 space-y-1">
-                    <li>Similarly, [poet] also...</li>
-                    <li>Both poets present...</li>
-                    <li>Like [poem A], [poem B] also...</li>
-                    <li>In the same way...</li>
-                    <li>This idea is echoed in...</li>
+                    <li>{_tr(`Similarly, [poet] also...`)}</li>
+                    <li>{_tr(`Both poets present...`)}</li>
+                    <li>{_tr(`Like [poem A], [poem B] also...`)}</li>
+                    <li>{_tr(`In the same way...`)}</li>
+                    <li>{_tr(`This idea is echoed in...`)}</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">Differences</h4>
                   <ul className="mt-2 space-y-1">
-                    <li>In contrast, [poet]...</li>
-                    <li>Whereas [poem A]..., [poem B]...</li>
-                    <li>However, [poet] takes a different approach...</li>
-                    <li>Unlike [poem A]...</li>
-                    <li>On the other hand...</li>
+                    <li>{_tr(`In contrast, [poet]...`)}</li>
+                    <li>{_tr(`Whereas [poem A]..., [poem B]...`)}</li>
+                    <li>{_tr(`However, [poet] takes a different approach...`)}</li>
+                    <li>{_tr(`Unlike [poem A]...`)}</li>
+                    <li>{_tr(`On the other hand...`)}</li>
                   </ul>
                 </div>
               </div>

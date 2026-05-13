@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { tMany } from '@/lib/i18n/t'
 
+import { t as _trServer } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -234,6 +236,15 @@ function PoemRow({ poem, clusterPath }: { poem: PoemEntry; clusterPath: string }
 }
 
 export default async function AqaPoetryPage() {
+  void _trServer
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   const [aqaLitBackLabel, heroH1, heroIntro] = await tMany([
     'resources.lit.aqa.h1',
     'resources.lit.aqa.poetry.h1',
@@ -260,10 +271,10 @@ export default async function AqaPoetryPage() {
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Quick nav ─────────────────────────────────────────── */}
         <nav className="rounded-xl bg-muted p-6">
-          <h2 className="text-lg font-bold text-foreground">On this page</h2>
+          <h2 className="text-lg font-bold text-foreground">{_tr(`On this page`)}</h2>
           <div className="mt-3 grid gap-4 sm:grid-cols-2">
             <div>
-              <h3 className="text-sm font-semibold text-foreground">Power and Conflict</h3>
+              <h3 className="text-sm font-semibold text-foreground">{_tr(`Power and Conflict`)}</h3>
               <ul className="mt-2 space-y-1 text-sm">
                 {POWER_AND_CONFLICT_POEMS.map((p) => (
                   <li key={p.title}>
@@ -275,7 +286,9 @@ export default async function AqaPoetryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-foreground">Love and Relationships</h3>
+              <h3 className="text-sm font-semibold text-foreground">
+                {_tr(`Love and Relationships`)}
+              </h3>
               <ul className="mt-2 space-y-1 text-sm">
                 {LOVE_AND_RELATIONSHIPS_POEMS.map((p) => (
                   <li key={p.title}>
@@ -291,7 +304,9 @@ export default async function AqaPoetryPage() {
 
         {/* ── Exam overview ─────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">How the AQA Poetry Exam Works</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            {_tr(`How the AQA Poetry Exam Works`)}
+          </h2>
           <div className="mt-4 rounded-xl bg-muted p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <p>
               Your school will have studied <strong>one cluster</strong> — either Power and Conflict
@@ -304,7 +319,7 @@ export default async function AqaPoetryPage() {
               or feeling. This section is worth <strong>30 marks</strong> and you should spend
               approximately <strong>45 minutes</strong> on it (including planning time).
             </p>
-            <p>AQA&apos;s comparison question typically follows this format:</p>
+            <p>{_tr(`AQA&apos;s comparison question typically follows this format:`)}</p>
             <div className="mt-2 rounded-lg border border-primary bg-card p-4 italic text-muted-foreground">
               &ldquo;Compare how poets present [theme/idea] in &lsquo;[named poem]&rsquo; and in one
               other poem from your anthology.&rdquo;
@@ -314,7 +329,9 @@ export default async function AqaPoetryPage() {
 
         {/* ── AO breakdown ────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">Key Skills — What Markers Look For</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            {_tr(`Key Skills — What Markers Look For`)}
+          </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-border p-5 shadow-md">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
@@ -353,7 +370,9 @@ export default async function AqaPoetryPage() {
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 3
               </div>
-              <h3 className="mt-3 font-bold text-foreground">Relating to context (6 marks)</h3>
+              <h3 className="mt-3 font-bold text-foreground">
+                {_tr(`Relating to context (6 marks)`)}
+              </h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Show understanding of the relationships between texts and the contexts in which they
                 were written.
@@ -369,11 +388,15 @@ export default async function AqaPoetryPage() {
 
         {/* ── Timing advice ───────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">Timing &amp; Exam Strategy</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            {_tr(`Timing &amp; Exam Strategy`)}
+          </h2>
           <div className="mt-4 rounded-xl border-2 border-primary bg-blue-500/10 p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <h3 className="font-bold text-foreground">Suggested Time Split (45 mins)</h3>
+                <h3 className="font-bold text-foreground">
+                  {_tr(`Suggested Time Split (45 mins)`)}
+                </h3>
                 <ul className="mt-2 space-y-1.5">
                   <li className="flex gap-2">
                     <span className="font-semibold text-foreground">5 mins</span>
@@ -390,7 +413,9 @@ export default async function AqaPoetryPage() {
                   </li>
                   <li className="flex gap-2">
                     <span className="font-semibold text-foreground">30 mins</span>
-                    <span>Write your comparative essay (aim for 3-4 developed paragraphs).</span>
+                    <span>
+                      {_tr(`Write your comparative essay (aim for 3-4 developed paragraphs).`)}
+                    </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="font-semibold text-foreground">5 mins</span>
@@ -401,7 +426,7 @@ export default async function AqaPoetryPage() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-bold text-foreground">Key Strategies</h3>
+                <h3 className="font-bold text-foreground">{_tr(`Key Strategies`)}</h3>
                 <ul className="mt-2 space-y-1.5">
                   <li>
                     Prepare <strong>2-3 comparison partners</strong> for every poem so you are never
@@ -427,7 +452,9 @@ export default async function AqaPoetryPage() {
 
         {/* ── Power and Conflict cluster ──────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-foreground">Power and Conflict — All 15 Poems</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            {_tr(`Power and Conflict — All 15 Poems`)}
+          </h2>
           <p className="mt-2 text-muted-foreground">
             15 poems exploring the abuse and loss of power, the reality of conflict, the power of
             nature, and the struggle for identity. Click any poem to read the full detailed
@@ -471,7 +498,9 @@ export default async function AqaPoetryPage() {
 
           <div className="mt-6 space-y-6">
             <div className="rounded-xl bg-muted p-6">
-              <h3 className="text-lg font-bold text-foreground">Recommended Paragraph Structure</h3>
+              <h3 className="text-lg font-bold text-foreground">
+                {_tr(`Recommended Paragraph Structure`)}
+              </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
@@ -488,9 +517,9 @@ export default async function AqaPoetryPage() {
                     2
                   </span>
                   <span>
-                    <strong>Comparative paragraphs (3-4)</strong> — each paragraph should discuss{' '}
-                    <strong>both poems</strong>. Compare a specific technique, image, or idea. Use
-                    comparative connectives throughout.
+                    <strong>{_tr(`Comparative paragraphs (3-4)`)}</strong> — each paragraph should
+                    discuss <strong>both poems</strong>. Compare a specific technique, image, or
+                    idea. Use comparative connectives throughout.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -498,10 +527,10 @@ export default async function AqaPoetryPage() {
                     3
                   </span>
                   <span>
-                    <strong>Analyse methods (analysing language and structure)</strong> — don&apos;t
-                    just compare what the poems say, but <em>how</em> they say it. Compare language
-                    choices, structural techniques, form, tone, and imagery. Name the technique and
-                    explain its effect.
+                    <strong>{_tr(`Analyse methods (analysing language and structure)`)}</strong> —
+                    don&apos;t just compare what the poems say, but <em>how</em> they say it.
+                    Compare language choices, structural techniques, form, tone, and imagery. Name
+                    the technique and explain its effect.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -509,10 +538,10 @@ export default async function AqaPoetryPage() {
                     4
                   </span>
                   <span>
-                    <strong>Integrate context (relating to context)</strong> — weave in relevant
-                    context about the poet&apos;s life, the time period, or social attitudes.
-                    Explain how context shapes the poem&apos;s meaning rather than bolting on
-                    biographical facts.
+                    <strong>{_tr(`Integrate context (relating to context)`)}</strong> — weave in
+                    relevant context about the poet&apos;s life, the time period, or social
+                    attitudes. Explain how context shapes the poem&apos;s meaning rather than
+                    bolting on biographical facts.
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -520,34 +549,37 @@ export default async function AqaPoetryPage() {
                     5
                   </span>
                   <span>
-                    <strong>Brief conclusion</strong> — return to your overarching argument. Which
-                    poem is more effective or striking? Or how do they complement each other?
+                    <strong>{_tr(`Brief conclusion`)}</strong> — return to your overarching
+                    argument. Which poem is more effective or striking? Or how do they complement
+                    each other?
                   </span>
                 </li>
               </ol>
             </div>
 
             <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
-              <h3 className="text-lg font-bold text-foreground">Useful Comparison Connectives</h3>
+              <h3 className="text-lg font-bold text-foreground">
+                {_tr(`Useful Comparison Connectives`)}
+              </h3>
               <div className="mt-3 grid gap-4 text-sm text-muted-foreground sm:grid-cols-2">
                 <div>
                   <h4 className="font-semibold text-foreground">Similarities</h4>
                   <ul className="mt-2 space-y-1">
-                    <li>Similarly, [poet] also...</li>
-                    <li>Both poets present...</li>
-                    <li>Like &lsquo;[poem A]&rsquo;, &lsquo;[poem B]&rsquo; also...</li>
-                    <li>In the same way...</li>
-                    <li>This idea is echoed in...</li>
+                    <li>{_tr(`Similarly, [poet] also...`)}</li>
+                    <li>{_tr(`Both poets present...`)}</li>
+                    <li>{_tr(`Like &lsquo;[poem A]&rsquo;, &lsquo;[poem B]&rsquo; also...`)}</li>
+                    <li>{_tr(`In the same way...`)}</li>
+                    <li>{_tr(`This idea is echoed in...`)}</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">Differences</h4>
                   <ul className="mt-2 space-y-1">
-                    <li>In contrast, [poet]...</li>
-                    <li>Whereas &lsquo;[poem A]&rsquo;..., &lsquo;[poem B]&rsquo;...</li>
-                    <li>However, [poet] takes a different approach...</li>
-                    <li>Unlike &lsquo;[poem A]&rsquo;...</li>
-                    <li>On the other hand...</li>
+                    <li>{_tr(`In contrast, [poet]...`)}</li>
+                    <li>{_tr(`Whereas &lsquo;[poem A]&rsquo;..., &lsquo;[poem B]&rsquo;...`)}</li>
+                    <li>{_tr(`However, [poet] takes a different approach...`)}</li>
+                    <li>{_tr(`Unlike &lsquo;[poem A]&rsquo;...`)}</li>
+                    <li>{_tr(`On the other hand...`)}</li>
                   </ul>
                 </div>
               </div>
@@ -555,34 +587,38 @@ export default async function AqaPoetryPage() {
 
             {/* ── Common comparison pairings ─────────────────── */}
             <div className="rounded-xl bg-muted p-6">
-              <h3 className="text-lg font-bold text-foreground">Strong Comparison Pairings</h3>
+              <h3 className="text-lg font-bold text-foreground">
+                {_tr(`Strong Comparison Pairings`)}
+              </h3>
               <div className="mt-4 grid gap-6 sm:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground">Power and Conflict</h4>
+                  <h4 className="text-sm font-semibold text-foreground">
+                    {_tr(`Power and Conflict`)}
+                  </h4>
                   <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                     <li>
-                      <strong>Ozymandias</strong> + <strong>My Last Duchess</strong> — abuse of
-                      power, arrogance
+                      <strong>Ozymandias</strong> + <strong>{_tr(`My Last Duchess`)}</strong> —
+                      abuse of power, arrogance
                     </li>
                     <li>
-                      <strong>Exposure</strong> + <strong>Bayonet Charge</strong> — reality of war,
-                      suffering
+                      <strong>Exposure</strong> + <strong>{_tr(`Bayonet Charge`)}</strong> — reality
+                      of war, suffering
                     </li>
                     <li>
-                      <strong>Remains</strong> + <strong>War Photographer</strong> — guilt, lasting
-                      trauma
+                      <strong>Remains</strong> + <strong>{_tr(`War Photographer`)}</strong> — guilt,
+                      lasting trauma
                     </li>
                     <li>
-                      <strong>Storm on the Island</strong> +{' '}
-                      <strong>Extract from The Prelude</strong> — power of nature, fear
+                      <strong>{_tr(`Storm on the Island`)}</strong> +{' '}
+                      <strong>{_tr(`Extract from The Prelude`)}</strong> — power of nature, fear
                     </li>
                     <li>
                       <strong>Poppies</strong> + <strong>Kamikaze</strong> — family and war,
                       personal cost
                     </li>
                     <li>
-                      <strong>London</strong> + <strong>Checking Out Me History</strong> — anger at
-                      authority, oppression
+                      <strong>London</strong> + <strong>{_tr(`Checking Out Me History`)}</strong> —
+                      anger at authority, oppression
                     </li>
                     <li>
                       <strong>Tissue</strong> + <strong>Ozymandias</strong> — fragility of power,
@@ -591,34 +627,36 @@ export default async function AqaPoetryPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground">Love and Relationships</h4>
+                  <h4 className="text-sm font-semibold text-foreground">
+                    {_tr(`Love and Relationships`)}
+                  </h4>
                   <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                     <li>
-                      <strong>When We Two Parted</strong> + <strong>Neutral Tones</strong> — end of
-                      love, bitterness
+                      <strong>{_tr(`When We Two Parted`)}</strong> +{' '}
+                      <strong>{_tr(`Neutral Tones`)}</strong> — end of love, bitterness
                     </li>
                     <li>
-                      <strong>Love&apos;s Philosophy</strong> + <strong>Sonnet 29</strong> — desire
-                      and longing
+                      <strong>{_tr(`Love&apos;s Philosophy`)}</strong> + <strong>Sonnet 29</strong>{' '}
+                      — desire and longing
                     </li>
                     <li>
-                      <strong>Porphyria&apos;s Lover</strong> +{' '}
-                      <strong>The Farmer&apos;s Bride</strong> — obsession, power imbalance
+                      <strong>{_tr(`Porphyria&apos;s Lover`)}</strong> +{' '}
+                      <strong>{_tr(`The Farmer&apos;s Bride`)}</strong> — obsession, power imbalance
                     </li>
                     <li>
-                      <strong>Walking Away</strong> + <strong>Follower</strong> — parent-child
-                      bonds, letting go
+                      <strong>{_tr(`Walking Away`)}</strong> + <strong>Follower</strong> —
+                      parent-child bonds, letting go
                     </li>
                     <li>
-                      <strong>Mother, any distance</strong> + <strong>Walking Away</strong> —
-                      growing independence
+                      <strong>{_tr(`Mother, any distance`)}</strong> +{' '}
+                      <strong>{_tr(`Walking Away`)}</strong> — growing independence
                     </li>
                     <li>
                       <strong>Eden Rock</strong> + <strong>Follower</strong> — memory, family bonds
                     </li>
                     <li>
-                      <strong>Singh Song!</strong> + <strong>Love&apos;s Philosophy</strong> —
-                      joyful desire, devotion
+                      <strong>{_tr(`Singh Song!`)}</strong> +{' '}
+                      <strong>{_tr(`Love&apos;s Philosophy`)}</strong> — joyful desire, devotion
                     </li>
                   </ul>
                 </div>

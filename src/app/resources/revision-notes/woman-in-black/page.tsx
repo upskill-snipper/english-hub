@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { PracticeQuestion } from '@/components/PracticeQuestion'
 
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
 /* ─── Expandable Section Component ──────────────────────────── */
 
 function Section({
@@ -80,6 +82,13 @@ function Beat({
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function WomanInBlackRevisionPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -111,11 +120,11 @@ export default function WomanInBlackRevisionPage() {
 
       {/* Audit notice */}
       <div className="mb-8 rounded-xl border border-amber-500/40 bg-amber-50/60 p-4 dark:bg-amber-950/20">
-        <p className="text-sm font-semibold text-foreground">Page rebuilt April 2026</p>
+        <p className="text-sm font-semibold text-foreground">{tr(`Page rebuilt April 2026`)}</p>
         <p className="mt-1 text-sm text-muted-foreground">
-          Direct quotations from Susan Hill&apos;s <em>The Woman in Black</em> have been removed
-          pending verified primary-source review. The novella remains in copyright (Vintage /
-          Penguin Random House on behalf of Susan Hill) and is not redistributable. For verbatim
+          Direct quotations from Susan Hill&apos;s <em>{tr(`The Woman in Black`)}</em> have been
+          removed pending verified primary-source review. The novella remains in copyright (Vintage
+          / Penguin Random House on behalf of Susan Hill) and is not redistributable. For verbatim
           quotations, students should work from their own licensed copy of the novella and cite
           directly. The structural, thematic and contextual commentary below remains accurate and
           exam-useful.
@@ -124,7 +133,7 @@ export default function WomanInBlackRevisionPage() {
 
       {/* Quick nav */}
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
-        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-3">{tr(`Jump to section:`)}</p>
         <div className="flex flex-wrap gap-2">
           {[
             'Plot Summary',
@@ -150,7 +159,7 @@ export default function WomanInBlackRevisionPage() {
         {/* ────────────────────────────────────────── PLOT SUMMARY */}
         <Section
           id="plot"
-          title="Chapter-by-Chapter Plot Summary"
+          title={tr(`Chapter-by-Chapter Plot Summary`)}
           badge="12 Chapters"
           colour="bg-muted"
           defaultOpen
@@ -361,7 +370,7 @@ export default function WomanInBlackRevisionPage() {
         <div id="characters">
           <Section
             id="characters"
-            title="Character Profiles"
+            title={tr(`Character Profiles`)}
             badge="6 Characters"
             colour="bg-purple-600"
           >
@@ -485,7 +494,7 @@ export default function WomanInBlackRevisionPage() {
 
         {/* ────────────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section id="themes" title="Major Themes" badge="7 Themes" colour="bg-emerald-600">
+          <Section id="themes" title={tr(`Major Themes`)} badge="7 Themes" colour="bg-emerald-600">
             <div className="space-y-8">
               <div>
                 <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
@@ -632,7 +641,7 @@ export default function WomanInBlackRevisionPage() {
         <div id="key-moments">
           <Section
             id="key-moments"
-            title="Key Moments and Structural Beats"
+            title={tr(`Key Moments and Structural Beats`)}
             badge="What to annotate"
             colour="bg-amber-600"
           >
@@ -644,7 +653,7 @@ export default function WomanInBlackRevisionPage() {
             </p>
             <div className="space-y-6">
               <div>
-                <h3 className="font-bold text-foreground mb-3">Isolation and Setting</h3>
+                <h3 className="font-bold text-foreground mb-3">{tr(`Isolation and Setting`)}</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Beat
                     moment="Arthur's first impression of the bleak, featureless landscape on arrival"
@@ -665,7 +674,9 @@ export default function WomanInBlackRevisionPage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-foreground mb-3">Fear and the Supernatural</h3>
+                <h3 className="font-bold text-foreground mb-3">
+                  {tr(`Fear and the Supernatural`)}
+                </h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Beat
                     moment="Arthur's first auditory haunting &mdash; a child crying from the marshes"
@@ -686,7 +697,7 @@ export default function WomanInBlackRevisionPage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-foreground mb-3">Grief and Revenge</h3>
+                <h3 className="font-bold text-foreground mb-3">{tr(`Grief and Revenge`)}</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Beat
                     moment="Mr Daily's revelation that Jennet went mad with grief and swore vengeance"
@@ -702,7 +713,9 @@ export default function WomanInBlackRevisionPage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-foreground mb-3">Arthur&apos;s Transformation</h3>
+                <h3 className="font-bold text-foreground mb-3">
+                  {tr(`Arthur&apos;s Transformation`)}
+                </h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Beat
                     moment="Early Arthur: defiant, almost exhilarated by the assignment"
@@ -730,11 +743,11 @@ export default function WomanInBlackRevisionPage() {
           <Section id="context" title="Context" colour="bg-cyan-600">
             <div className="space-y-6">
               <div>
-                <h3 className="font-bold text-foreground">The Gothic Tradition</h3>
+                <h3 className="font-bold text-foreground">{tr(`The Gothic Tradition`)}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  <em>The Woman in Black</em> (1983) is a deliberate homage to the Victorian and
-                  Edwardian ghost story tradition. Hill draws on writers like M.R. James, Henry
-                  James (<em>The Turn of the Screw</em>), and Charles Dickens. Key gothic
+                  <em>{tr(`The Woman in Black`)}</em> (1983) is a deliberate homage to the Victorian
+                  and Edwardian ghost story tradition. Hill draws on writers like M.R. James, Henry
+                  James (<em>{tr(`The Turn of the Screw`)}</em>), and Charles Dickens. Key gothic
                   conventions she uses include: an isolated, decaying setting; a rational
                   protagonist whose worldview is challenged; atmospheric tension built through
                   suggestion; a supernatural threat linked to past injustice; and a frame narrative.
@@ -757,7 +770,7 @@ export default function WomanInBlackRevisionPage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-foreground">The Role of Women</h3>
+                <h3 className="font-bold text-foreground">{tr(`The Role of Women`)}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Jennet&apos;s powerlessness reflects the limited agency of women in Victorian
                   society. She could not keep her own child, could not challenge the family&apos;s
@@ -768,7 +781,9 @@ export default function WomanInBlackRevisionPage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-foreground">Rationalism vs the Supernatural</h3>
+                <h3 className="font-bold text-foreground">
+                  {tr(`Rationalism vs the Supernatural`)}
+                </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The Victorian era was characterised by a tension between scientific rationalism
                   and belief in the supernatural. Spiritualism (seances, mediums) was hugely popular
@@ -780,13 +795,16 @@ export default function WomanInBlackRevisionPage() {
               </div>
 
               <div>
-                <h3 className="font-bold text-foreground">Susan Hill and the Modern Ghost Story</h3>
+                <h3 className="font-bold text-foreground">
+                  {tr(`Susan Hill and the Modern Ghost Story`)}
+                </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Susan Hill wrote <em>The Woman in Black</em> in 1983, consciously reviving the
-                  traditional ghost story in a literary era dominated by realism and postmodernism.
-                  The novella&apos;s success (and its long-running stage adaptation) proves the
-                  enduring power of the ghost story form. Hill strips the ghost story to its
-                  essentials: atmosphere, isolation, a wronged spirit, and devastating consequences.
+                  Susan Hill wrote <em>{tr(`The Woman in Black`)}</em> in 1983, consciously reviving
+                  the traditional ghost story in a literary era dominated by realism and
+                  postmodernism. The novella&apos;s success (and its long-running stage adaptation)
+                  proves the enduring power of the ghost story form. Hill strips the ghost story to
+                  its essentials: atmosphere, isolation, a wronged spirit, and devastating
+                  consequences.
                 </p>
               </div>
             </div>
@@ -798,15 +816,15 @@ export default function WomanInBlackRevisionPage() {
           <Section id="exam-tips" title="Exam Tips" colour="bg-primary">
             <div className="space-y-6">
               <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
-                <h3 className="font-bold text-foreground">Structure Your Essay</h3>
+                <h3 className="font-bold text-foreground">{tr(`Structure Your Essay`)}</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>
                     &bull; <strong>Introduction:</strong> Briefly address the question, mention the
                     text&apos;s genre (gothic ghost story), and outline your argument.
                   </li>
                   <li>
-                    &bull; <strong>Each paragraph:</strong> Point &rarr; Evidence (quotation from
-                    your own licensed copy) &rarr; Analysis (language/structure) &rarr; Context
+                    &bull; <strong>{tr(`Each paragraph:`)}</strong> Point &rarr; Evidence (quotation
+                    from your own licensed copy) &rarr; Analysis (language/structure) &rarr; Context
                     &rarr; Link back to question.
                   </li>
                   <li>
@@ -817,37 +835,37 @@ export default function WomanInBlackRevisionPage() {
               </div>
 
               <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
-                <h3 className="font-bold text-foreground">Key Techniques to Discuss</h3>
+                <h3 className="font-bold text-foreground">{tr(`Key Techniques to Discuss`)}</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>
-                    &bull; <strong>First-person narration:</strong> Creates intimacy and reliability
-                    but limits perspective &mdash; we only see what Arthur sees.
+                    &bull; <strong>{tr(`First-person narration:`)}</strong> Creates intimacy and
+                    reliability but limits perspective &mdash; we only see what Arthur sees.
                   </li>
                   <li>
-                    &bull; <strong>Frame narrative:</strong> Creates dramatic irony (we know
+                    &bull; <strong>{tr(`Frame narrative:`)}</strong> Creates dramatic irony (we know
                     something terrible happened) and bookends the story.
                   </li>
                   <li>
-                    &bull; <strong>Pathetic fallacy:</strong> Weather mirrors emotional states
-                    &mdash; fog, mist, darkness reflect danger and the unknown.
+                    &bull; <strong>{tr(`Pathetic fallacy:`)}</strong> Weather mirrors emotional
+                    states &mdash; fog, mist, darkness reflect danger and the unknown.
                   </li>
                   <li>
                     &bull; <strong>Foreshadowing:</strong> The London fog, the locals&apos; silence,
                     the isolated setting all prepare us for horror.
                   </li>
                   <li>
-                    &bull; <strong>Sound imagery:</strong> Hill relies heavily on sound (the pony
-                    and trap, child&apos;s cry, rocking chair) rather than visual horror.
+                    &bull; <strong>{tr(`Sound imagery:`)}</strong> Hill relies heavily on sound (the
+                    pony and trap, child&apos;s cry, rocking chair) rather than visual horror.
                   </li>
                   <li>
-                    &bull; <strong>Withholding information:</strong> The truth about the Woman in
-                    Black is revealed gradually, building suspense.
+                    &bull; <strong>{tr(`Withholding information:`)}</strong> The truth about the
+                    Woman in Black is revealed gradually, building suspense.
                   </li>
                 </ul>
               </div>
 
               <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-                <h3 className="font-bold text-foreground">Common Mistakes to Avoid</h3>
+                <h3 className="font-bold text-foreground">{tr(`Common Mistakes to Avoid`)}</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>
                     &bull; Do not simply retell the story &mdash; analyse <em>how</em> Hill creates
@@ -879,7 +897,7 @@ export default function WomanInBlackRevisionPage() {
         <div id="practice-questions">
           <Section
             id="practice"
-            title="Practice Questions"
+            title={tr(`Practice Questions`)}
             badge="4 Questions"
             colour="bg-orange-600"
           >
@@ -933,11 +951,12 @@ export default function WomanInBlackRevisionPage() {
       {/* Copyright notice */}
       <footer className="mt-8 text-center text-xs text-muted-foreground">
         <p>
-          <strong>Rights notice:</strong> &copy; Vintage / Penguin Random House on behalf of Susan
-          Hill (b. 1942). The text of <em>The Woman in Black</em> remains in copyright; this
-          revision guide presents structural, thematic and contextual commentary only. Direct
-          quotations have been withheld pending verified primary-source review (audit, April 2026).
-          Students should always cite from their own licensed copy of the novella in exam answers.
+          <strong>{tr(`Rights notice:`)}</strong> &copy; Vintage / Penguin Random House on behalf of
+          Susan Hill (b. 1942). The text of <em>{tr(`The Woman in Black`)}</em> remains in
+          copyright; this revision guide presents structural, thematic and contextual commentary
+          only. Direct quotations have been withheld pending verified primary-source review (audit,
+          April 2026). Students should always cite from their own licensed copy of the novella in
+          exam answers.
         </p>
       </footer>
     </>
