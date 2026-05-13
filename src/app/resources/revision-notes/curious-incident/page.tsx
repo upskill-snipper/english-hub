@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import { useState } from 'react'
 
@@ -82,6 +84,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function CuriousIncidentPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -103,7 +112,7 @@ export default function CuriousIncidentPage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           The Curious Incident of the Dog in the Night-Time &mdash; Complete Revision Guide
         </h1>
-        <p className="mt-1 text-lg text-muted-foreground">Mark Haddon, 2003 (novel)</p>
+        <p className="mt-1 text-lg text-muted-foreground">{tr(`Mark Haddon, 2003 (novel)`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Everything you need for your GCSE and IGCSE English Literature exam. Plot summary,
           character profiles, themes with evidence, 12+ verbatim quotations with analysis,
@@ -115,7 +124,7 @@ export default function CuriousIncidentPage() {
 
       {/* Quick nav */}
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
-        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-3">{tr(`Jump to section:`)}</p>
         <div className="flex flex-wrap gap-2">
           {[
             'Plot Summary',
@@ -143,7 +152,7 @@ export default function CuriousIncidentPage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section title="Plot Summary" icon="📖" defaultOpen>
+          <Section title={tr(`Plot Summary`)} icon="📖" defaultOpen>
             <div className="space-y-4">
               <div className="rounded-lg bg-violet-500/5 border border-violet-500/20 p-4">
                 <h4 className="font-bold text-violet-700 dark:text-violet-300">
@@ -459,7 +468,7 @@ export default function CuriousIncidentPage() {
 
         {/* ────────────────────────────────── CHARACTERS */}
         <div id="characters">
-          <Section title="Character Profiles" icon="👤">
+          <Section title={tr(`Character Profiles`)} icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Christopher John Francis Boone"
@@ -515,26 +524,26 @@ export default function CuriousIncidentPage() {
 
         {/* ────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section title="Key Themes" icon="💡">
+          <Section title={tr(`Key Themes`)} icon="💡">
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
-                title="Truth and Lies"
+                title={tr(`Truth and Lies`)}
                 description="Christopher's most cherished principle is that he cannot tell lies — he says he is unable to do so. The plot turns on the lies of others: Ed's lie that Judy is dead, the hidden letters, Ed's lie about not knowing how Wellington died. When Christopher discovers the truth, his entire framework of safety collapses. The novel suggests that for Christopher, lies are not just morally wrong but cognitively unbearable: they break his model of the world. Yet Haddon also shows that lying parents can still love their children — the moral landscape is not as simple as Christopher's literal mind initially treats it."
               />
               <ThemeCard
-                title="Order vs Chaos / Logic vs Emotion"
+                title={tr(`Order vs Chaos / Logic vs Emotion`)}
                 description="Christopher imposes order on a world he experiences as overwhelming: prime-numbered chapters, lists, diagrams, mathematical proofs, and rigid daily routines. He prefers the logical certainty of mathematics to the unpredictability of human emotion. The novel constantly contrasts the ordered with the chaotic: a calm bedroom versus a crowded railway station, a maths problem versus a parental row. Haddon does not present Christopher's preference as defective; rather, he shows that Christopher's strategies are coherent responses to a sensorily overwhelming world. The book asks readers to recognise that 'logic' and 'emotion' are not opposites but two ways of navigating reality."
               />
               <ThemeCard
-                title="Family and Trust"
+                title={tr(`Family and Trust`)}
                 description="The novel anatomises a family that has fractured under the strain of caring for a child with high needs. Both parents love Christopher but have failed him in different ways: Judy by leaving, Ed by lying. The journey to London literalises the family's geographical and emotional rupture. The ending offers a guarded reconciliation: Ed's puppy and Judy's return show that families can be rebuilt slowly, on the terms of the most vulnerable member, but not restored to their original state. Trust, once broken, must be re-earned."
               />
               <ThemeCard
-                title="Difference and Neurodiversity"
+                title={tr(`Difference and Neurodiversity`)}
                 description="Christopher is presented as someone who experiences the world differently — overwhelmed by noise, colour, touch and metaphor, but extraordinary in mathematical reasoning, memory, and pattern recognition. Importantly, the novel itself never uses the words 'autism' or 'Asperger's' (though early dust-jacket marketing did). Haddon has subsequently said publicly that he did not research autism specifically and that Christopher should not be read as a documentary representation. The novel's strength lies in giving the reader Christopher's first-person perspective — sympathetic without sentimentality — and allowing the reader to experience the world as he does. Examiners increasingly expect students to handle this representation thoughtfully."
               />
               <ThemeCard
-                title="Independence and Growing Up"
+                title={tr(`Independence and Growing Up`)}
                 description="The novel is, among other things, a coming-of-age story. Christopher begins by needing his father's reassurance to leave the house and ends by having travelled alone to London, sat an A-Level, and acquired a puppy he cares for himself. Each act of independence is hard-won and not romanticised: he is terrified, vomits, hides under seats, and groans in public. Yet the cumulative effect is a young person who has discovered his own competence. The closing affirmation — 'I can do anything' — is earned, not granted. Independence for Christopher is not the loud rebellion of typical teenage fiction but the quiet acquisition of tools for self-reliance."
               />
               <ThemeCard
@@ -542,11 +551,11 @@ export default function CuriousIncidentPage() {
                 description="The novel dramatises every kind of communication failure: Ed cannot tell Christopher the truth about Judy; Judy's letters are intercepted; police officers misread Christopher's literal answers; Christopher cannot read facial expressions; idioms confuse him; touch overwhelms him. Yet communication still happens, often through unexpected channels — diagrams, lists, written letters, and the very book Christopher is writing. Haddon suggests that conventional speech is only one of many ways minds reach each other. The novel itself is a model of this: a mind that struggles to talk is rendered fully visible to the reader through prose."
               />
               <ThemeCard
-                title="Animals and Honesty"
+                title={tr(`Animals and Honesty`)}
                 description="Christopher prefers animals to people because they 'do not lie.' Toby the rat, Wellington the dog, the fantasy of being alone in the universe with only animals: animals form a moral counterweight to the deceitful world of adults. Wellington's death is therefore not just a crime but a violation of Christopher's most trusted moral category. The puppy Sandy at the end is a small repair of this category. Haddon uses animals as the only reliable point of fidelity in a world full of broken human promises."
               />
               <ThemeCard
-                title="Bravery and Fear"
+                title={tr(`Bravery and Fear`)}
                 description="Although Christopher rarely uses emotional vocabulary, the novel is fundamentally about courage. He is frightened of crowds, strangers, and noise, and yet he undertakes a journey that would daunt most adults. The novel redefines bravery as 'doing the difficult thing while afraid' rather than 'not being afraid.' Christopher's repeated mantra at the end — that he was 'brave' — is one of the few overt emotional statements he makes about himself, and it is presented as fully justified."
               />
             </div>
@@ -555,7 +564,7 @@ export default function CuriousIncidentPage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
+          <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               All quotations are verbatim from Mark Haddon&apos;s 2003 novel. Variations from the
               Simon Stephens stage adaptation (2012) are noted where they exist.
@@ -637,7 +646,7 @@ export default function CuriousIncidentPage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Symbols and Motifs" icon="🔣">
+          <Section title={tr(`Symbols and Motifs`)} icon="🔣">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">1. Prime Numbers</h4>
@@ -728,20 +737,21 @@ export default function CuriousIncidentPage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Historical, Biographical and Literary Context" icon="🏛️">
+          <Section title={tr(`Historical, Biographical and Literary Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Mark Haddon (born 1962)</h4>
+                <h4 className="font-bold text-primary">{tr(`Mark Haddon (born 1962)`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Mark Haddon was born in Northampton in 1962 and educated at Uppingham and Merton
-                  College, Oxford. Before <em>Curious Incident</em> he was best known as a writer
-                  and illustrator of children&apos;s books and as a screenwriter. He had also worked
-                  with young people with various disabilities, but he has consistently said in
-                  interviews and in his blog that he did <strong>not</strong> conduct specific
+                  College, Oxford. Before <em>{tr(`Curious Incident`)}</em> he was best known as a
+                  writer and illustrator of children&apos;s books and as a screenwriter. He had also
+                  worked with young people with various disabilities, but he has consistently said
+                  in interviews and in his blog that he did <strong>not</strong> conduct specific
                   research on autism or Asperger&apos;s when writing the novel and that he is not a
-                  specialist on the subject. This is important context: <em>Curious Incident</em> is
-                  a literary work, not a clinical document, and Haddon has resisted readings that
-                  treat Christopher as a representative case study.
+                  specialist on the subject. This is important context:{' '}
+                  <em>{tr(`Curious Incident`)}</em> is a literary work, not a clinical document, and
+                  Haddon has resisted readings that treat Christopher as a representative case
+                  study.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -756,7 +766,7 @@ export default function CuriousIncidentPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Distinguishing Novel and Play</h4>
+                <h4 className="font-bold text-primary">{tr(`Distinguishing Novel and Play`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Simon Stephens&apos;s stage adaptation premiered at the National Theatre in 2012
                   and later transferred to the West End and Broadway, winning multiple awards
@@ -770,7 +780,7 @@ export default function CuriousIncidentPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Prime-Numbered Chapter Structure</h4>
+                <h4 className="font-bold text-primary">{tr(`Prime-Numbered Chapter Structure`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Christopher numbers chapters using only the primes from 2 onwards. The novel
                   begins with chapter 2 and ends at 233 (a prime). There are 47 chapters in total.
@@ -820,7 +830,7 @@ export default function CuriousIncidentPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Swindon and Setting</h4>
+                <h4 className="font-bold text-primary">{tr(`Swindon and Setting`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Christopher lives in Swindon, a railway and industrial town in Wiltshire. The
                   choice of Swindon &mdash; ordinary, functional, unromantic &mdash; grounds the
@@ -851,10 +861,12 @@ export default function CuriousIncidentPage() {
 
         {/* ────────────────────────────────── STRUCTURE */}
         <div id="structure">
-          <Section title="Narrative Structure and Form" icon="🔗">
+          <Section title={tr(`Narrative Structure and Form`)} icon="🔗">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">First-Person Limited Narration</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`First-Person Limited Narration`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The entire novel is narrated by Christopher in the first person. The reader has
                   access to no perspective except his. This produces some of the novel&apos;s most
@@ -865,7 +877,7 @@ export default function CuriousIncidentPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Detective Fiction Structure</h4>
+                <h4 className="font-bold text-foreground">{tr(`Detective Fiction Structure`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel uses the conventions of the murder mystery: a corpse, suspects, an
                   amateur investigator, door-to-door inquiries, a trail of clues, a confession. Yet
@@ -876,7 +888,9 @@ export default function CuriousIncidentPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Embedded Documents and Diagrams</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`Embedded Documents and Diagrams`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The narrative contains embedded letters (Judy&apos;s letters to Christopher),
                   maths problems with worked solutions, illustrations, maps, and Christopher&apos;s
@@ -887,7 +901,9 @@ export default function CuriousIncidentPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Digressions Numbered with Primes</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`Digressions Numbered with Primes`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Christopher&apos;s narration is regularly interrupted by digressive chapters about
                   prime numbers, the Monty Hall problem, the Cottingley Fairies, the universe, and
@@ -897,7 +913,7 @@ export default function CuriousIncidentPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Chronology and the Two Crimes</h4>
+                <h4 className="font-bold text-foreground">{tr(`Chronology and the Two Crimes`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel&apos;s plot is essentially linear, but it contains two crimes that
                   overlap: the foreground crime (Wellington&apos;s killing) and the background crime
@@ -908,7 +924,7 @@ export default function CuriousIncidentPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Appendix</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Appendix`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel ends with an appendix in which Christopher works through one of his
                   A-Level Maths exam questions in full. This is a striking formal choice: the novel
@@ -935,7 +951,7 @@ export default function CuriousIncidentPage() {
 
         {/* ────────────────────────────────── ESSAY PLANNING */}
         <div id="essay-planning">
-          <Section title="Essay Planning for Common Questions" icon="✍️">
+          <Section title={tr(`Essay Planning for Common Questions`)} icon="✍️">
             <p className="text-sm text-muted-foreground mb-5">
               Five GCSE/IGCSE-style plans plus three A-Level plans. Each contains a thesis,
               paragraph structure, and suggested verbatim quotations.
@@ -1325,7 +1341,7 @@ export default function CuriousIncidentPage() {
                 </p>
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   A-Level 2: To what extent should{' '}
-                  <em>The Curious Incident of the Dog in the Night-Time</em> be read as a
+                  <em>{tr(`The Curious Incident of the Dog in the Night-Time`)}</em> be read as a
                   representation of autistic experience?
                 </h4>
                 <div className="mt-3 space-y-3">
@@ -1401,8 +1417,8 @@ export default function CuriousIncidentPage() {
                 </p>
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   A-Level 3: Compare Haddon&apos;s use of detective fiction conventions in{' '}
-                  <em>Curious Incident</em> with their use in Conan Doyle&apos;s Sherlock Holmes
-                  stories.
+                  <em>{tr(`Curious Incident`)}</em> with their use in Conan Doyle&apos;s Sherlock
+                  Holmes stories.
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -1467,7 +1483,7 @@ export default function CuriousIncidentPage() {
 
       {/* ────────────────────────────────── GRADE 9 POINTS */}
       <div id="grade-9">
-        <Section title="Grade 9 Exemplar Points and Interpretations" icon="⭐">
+        <Section title={tr(`Grade 9 Exemplar Points and Interpretations`)} icon="⭐">
           <p className="text-sm text-muted-foreground mb-4 italic">
             These higher-level interpretations demonstrate the sophisticated analysis needed for top
             grades. Each goes beyond surface reading to consider authorial intent, alternative
@@ -1593,7 +1609,7 @@ export default function CuriousIncidentPage() {
 
       {/* ────────────────────────────────── PRACTICE QUESTIONS */}
       <div id="practice-questions">
-        <Section title="Practice Questions" icon="📝">
+        <Section title={tr(`Practice Questions`)} icon="📝">
           <p className="text-sm text-muted-foreground mb-4">
             Exam-style questions covering the most commonly tested areas. Consider how you would
             structure a response using PEEL paragraphs, embedded verbatim quotations, and contextual
@@ -1667,16 +1683,16 @@ export default function CuriousIncidentPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Distinguish novel from play.</strong> Refer to &ldquo;Haddon&apos;s 2003
-              novel&rdquo; or &ldquo;the novel&rdquo; throughout. If you must mention the 2012 stage
-              adaptation, say &ldquo;the Stephens adaptation&rdquo; explicitly.
+              <strong>{tr(`Distinguish novel from play.`)}</strong> Refer to &ldquo;Haddon&apos;s
+              2003 novel&rdquo; or &ldquo;the novel&rdquo; throughout. If you must mention the 2012
+              stage adaptation, say &ldquo;the Stephens adaptation&rdquo; explicitly.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Handle representation carefully.</strong> The novel does not use the words
-              &lsquo;autism&rsquo; or &lsquo;Asperger&apos;s&rsquo;. Discuss Christopher as a
+              <strong>{tr(`Handle representation carefully.`)}</strong> The novel does not use the
+              words &lsquo;autism&rsquo; or &lsquo;Asperger&apos;s&rsquo;. Discuss Christopher as a
               singular literary character whose experience may resemble neurodivergent perspectives
               without flattening him into a diagnosis.
             </span>
@@ -1684,15 +1700,15 @@ export default function CuriousIncidentPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Embed exact quotations.</strong> Use Christopher&apos;s actual words: &ldquo;I
-              do not tell lies&rdquo;, &ldquo;I find people confusing&rdquo;, &ldquo;Prime numbers
-              are what is left when you have taken all the patterns away.&rdquo;
+              <strong>{tr(`Embed exact quotations.`)}</strong> Use Christopher&apos;s actual words:
+              &ldquo;I do not tell lies&rdquo;, &ldquo;I find people confusing&rdquo;, &ldquo;Prime
+              numbers are what is left when you have taken all the patterns away.&rdquo;
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use Haddon&apos;s methods.</strong> Discuss first-person narration,
+              <strong>{tr(`Use Haddon&apos;s methods.`)}</strong> Discuss first-person narration,
               prime-numbered chapters, embedded diagrams, the appendix, the borrowed Holmes title,
               and the flat tone as deliberate craft choices.
             </span>
@@ -1700,7 +1716,7 @@ export default function CuriousIncidentPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Refer to the writer&apos;s intentions.</strong> &ldquo;Haddon perhaps
+              <strong>{tr(`Refer to the writer&apos;s intentions.`)}</strong> &ldquo;Haddon perhaps
               suggests&hellip;&rdquo; or &ldquo;Haddon uses Christopher&apos;s voice
               to&hellip;&rdquo;
             </span>
@@ -1708,15 +1724,15 @@ export default function CuriousIncidentPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Link the title to Sherlock Holmes.</strong> The phrase &lsquo;the curious
-              incident of the dog in the night-time&rsquo; is a verbatim quotation from Conan
-              Doyle&apos;s &ldquo;Silver Blaze&rdquo; (1892); reference this for top marks.
+              <strong>{tr(`Link the title to Sherlock Holmes.`)}</strong> The phrase &lsquo;the
+              curious incident of the dog in the night-time&rsquo; is a verbatim quotation from
+              Conan Doyle&apos;s &ldquo;Silver Blaze&rdquo; (1892); reference this for top marks.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use precise terminology.</strong> &ldquo;First-person narrator,&rdquo;
+              <strong>{tr(`Use precise terminology.`)}</strong> &ldquo;First-person narrator,&rdquo;
               &ldquo;dramatic irony,&rdquo; &ldquo;epistolary insertion&rdquo; (for the letters),
               &ldquo;genre repurposing,&rdquo; and &ldquo;mimetic form&rdquo; will all earn
               analytical marks.
@@ -1725,8 +1741,8 @@ export default function CuriousIncidentPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Address the whole novel.</strong> Reference the opening (Wellington), the
-              middle (the letters and confession), the journey, and the appendix to show full
+              <strong>{tr(`Address the whole novel.`)}</strong> Reference the opening (Wellington),
+              the middle (the letters and confession), the journey, and the appendix to show full
               coverage.
             </span>
           </li>
@@ -1736,10 +1752,11 @@ export default function CuriousIncidentPage() {
       {/* Copyright notice */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>The Curious Incident of the Dog in the Night-Time</em> by Mark Haddon was first
-          published in 2003 and remains in copyright. Quotations on this page are reproduced briefly
-          for the purposes of educational study and literary criticism. The 2012 stage adaptation by
-          Simon Stephens is a separate copyrighted work; differences are flagged where they appear.
+          <em>{tr(`The Curious Incident of the Dog in the Night-Time`)}</em> by Mark Haddon was
+          first published in 2003 and remains in copyright. Quotations on this page are reproduced
+          briefly for the purposes of educational study and literary criticism. The 2012 stage
+          adaptation by Simon Stephens is a separate copyrighted work; differences are flagged where
+          they appear.
         </p>
       </footer>
     </>

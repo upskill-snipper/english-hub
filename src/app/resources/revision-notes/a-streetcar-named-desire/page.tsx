@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import { useState } from 'react'
 
@@ -82,6 +84,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function StreetcarNamedDesirePage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -103,7 +112,7 @@ export default function StreetcarNamedDesirePage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           A Streetcar Named Desire &mdash; Complete A-Level Revision Guide
         </h1>
-        <p className="mt-1 text-lg text-muted-foreground">Tennessee Williams, 1947</p>
+        <p className="mt-1 text-lg text-muted-foreground">{tr(`Tennessee Williams, 1947`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Everything you need for your A-Level English Literature exam. Scene-by-scene plot
           analysis, character profiles, themes with evidence, 15+ key quotations with analysis,
@@ -114,7 +123,7 @@ export default function StreetcarNamedDesirePage() {
 
       {/* Quick nav */}
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
-        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-3">{tr(`Jump to section:`)}</p>
         <div className="flex flex-wrap gap-2">
           {[
             'Plot Summary',
@@ -139,7 +148,7 @@ export default function StreetcarNamedDesirePage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section title="Scene-by-Scene Summary" icon="📖" defaultOpen>
+          <Section title={tr(`Scene-by-Scene Summary`)} icon="📖" defaultOpen>
             <div className="space-y-4">
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
@@ -472,7 +481,7 @@ export default function StreetcarNamedDesirePage() {
 
         {/* ────────────────────────────────── CHARACTERS */}
         <div id="characters">
-          <Section title="Character Profiles" icon="👤">
+          <Section title={tr(`Character Profiles`)} icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Blanche DuBois"
@@ -512,38 +521,38 @@ export default function StreetcarNamedDesirePage() {
 
         {/* ────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section title="Key Themes" icon="💡">
+          <Section title={tr(`Key Themes`)} icon="💡">
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
-                title="Desire vs Death"
+                title={tr(`Desire vs Death`)}
                 description="The play's structuring opposition. Blanche says 'the opposite is death' &mdash; the opposite, that is, of desire. Williams pairs the streetcar named Desire with the streetcar named Cemeteries, which Blanche must take to reach Elysian Fields (the Greek paradise of the dead). Sex in the play is presented as the only force strong enough to hold off mortality, but it is also linked to it: Blanche's promiscuity follows the deaths at Belle Reve, and Stanley's rape of her destroys what little remains of her sanity. Desire and death are not opposites but a single, inescapable continuum."
               />
               <ThemeCard
-                title="Illusion vs Reality"
+                title={tr(`Illusion vs Reality`)}
                 description="Blanche openly champions illusion over fact: 'I don't want realism. I want magic!' She covers naked bulbs with paper lanterns, avoids daylight, and invents stories about plantations, telegrams and millionaires. Stanley, by contrast, is the play's relentless investigator of fact &mdash; the one who tears off the lantern, exposes Laurel's gossip, and confronts Blanche with the bus ticket. Williams refuses an easy moral: Stanley's brutal truth-telling is itself destructive, and Blanche's lies offer her dignity in the face of unbearable reality. The audience is asked whether truth, in such circumstances, is always preferable."
               />
               <ThemeCard
-                title="Class & The Old South vs New America"
+                title={tr(`Class & The Old South vs New America`)}
                 description="The play stages the collision between the dying agrarian aristocracy of the Old South and the working-class, multi-ethnic, urban modernity of post-war America. Blanche represents Belle Reve &mdash; the white plantation, the genteel teacher, the French surname, the cultivated reading of poetry. Stanley represents the new America &mdash; Polish, urban, industrial, democratic, brusque. Williams refuses to take a simple side. The Old South is shown to be already dead (Belle Reve foreclosed, the &lsquo;epic fornications&rsquo; of the male DuBois ancestors having ruined the estate), but the new America is figured as violent and crude. The play stages the historical defeat of one class by another."
               />
               <ThemeCard
-                title="Sexual Violence"
+                title={tr(`Sexual Violence`)}
                 description="Williams puts rape at the dramatic centre of the play. Stanley's assault on Blanche in Scene 10 is preceded by Mitch's attempt in Scene 9, and follows the long pattern of violence in the Kowalski marriage (the radio smashed, Stella struck on poker night). Williams shows sexual violence in this milieu as habitual rather than aberrant; Eunice's advice is that Stella must &lsquo;not believe&rsquo; the rape in order to keep her family. The play, written before the language of sexual consent existed in American public discourse, is unflinching about the way patriarchal communities silence women's testimony."
               />
               <ThemeCard
-                title="Gender and Patriarchy"
+                title={tr(`Gender and Patriarchy`)}
                 description="The play exposes the asymmetric sexual codes of mid-century America. Blanche's promiscuity ruins her socially and professionally; Stanley's appetite is celebrated as masculine vitality. Mitch refuses to marry Blanche because she is 'not clean enough'; no equivalent purity is demanded of him. The Napoleonic Code Stanley invokes makes a wife's property her husband's. Stella is economically and biologically tied to Stanley. Even the doctor in the closing scene removes his coat and offers his arm: only an acceptably gallant masculine figure can finally lead Blanche away. Williams shows a world in which female autonomy is structurally impossible."
               />
               <ThemeCard
-                title="Mental Illness and Trauma"
+                title={tr(`Mental Illness and Trauma`)}
                 description="Williams was haunted by his own sister Rose's lobotomy in 1943 and Blanche's breakdown is informed by that biographical wound. The Varsouviana polka in Blanche's head, her dissociative monologues, her fixations on cleanliness and light, and her ultimate removal to a state asylum are presented sympathetically as the consequences of cumulative trauma: the deaths at Belle Reve, the suicide of Allan Grey, the disgrace at Laurel, and finally the rape. Williams's portrayal anticipates later understandings of post-traumatic stress and the ways patriarchal medicine policed female sexuality through psychiatric committal."
               />
               <ThemeCard
-                title="Light, Bathing and Cleansing"
+                title={tr(`Light, Bathing and Cleansing`)}
                 description="Throughout the play Blanche bathes obsessively (&lsquo;hydrotherapy&rsquo;, she calls it) and avoids direct light. Both rituals are forms of psychic cleansing. Bathing is a futile attempt to wash off the shame of her sexual past; the avoidance of light hides her ageing body and, more profoundly, the truth of her history. When Mitch tears the paper lantern off the bulb in Scene 9, the literal exposure mirrors moral exposure. Light in the play is ruthless, masculine and modern; soft light is the property of fantasy."
               />
               <ThemeCard
-                title="The American Dream and Its Failure"
+                title={tr(`The American Dream and Its Failure`)}
                 description="Stanley embodies a particular post-war fantasy of upward mobility: ex-soldier, married, factory job, drinking buddies, a baby on the way. Blanche, conversely, is the figure of declining gentility for whom the new America has no place. Williams complicates the optimism of the post-war American myth by showing how it depends on the destruction of its weakest. The play implicitly questions whether the &lsquo;Elysian Fields&rsquo; of the new America are paradise at all or merely an illusion bought at someone else's cost."
               />
             </div>
@@ -552,10 +561,12 @@ export default function StreetcarNamedDesirePage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Historical and Biographical Context" icon="🏛️">
+          <Section title={tr(`Historical and Biographical Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Post-War New Orleans and Elysian Fields</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Post-War New Orleans and Elysian Fields`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Williams sets the play in the spring and summer of 1947 in the French Quarter of
                   New Orleans, on a real street called Elysian Fields. The Quarter was famously
@@ -579,14 +590,15 @@ export default function StreetcarNamedDesirePage() {
                   from severe mental illness and in 1943 was given a prefrontal lobotomy authorised
                   by their parents, which left her permanently institutionalised. Williams was
                   devastated and the figure of the fragile, sensitive woman destroyed by a brutal
-                  world recurs across his plays (Laura in <em>The Glass Menagerie</em>, Blanche,
-                  Catherine in <em>Suddenly Last Summer</em>). Williams was also a gay man at a time
-                  when homosexuality was criminalised; this experience informs both the Allan Grey
-                  backstory and the play&apos;s sympathy for those policed by conventional morality.
+                  world recurs across his plays (Laura in <em>{tr(`The Glass Menagerie`)}</em>,
+                  Blanche, Catherine in <em>{tr(`Suddenly Last Summer`)}</em>). Williams was also a
+                  gay man at a time when homosexuality was criminalised; this experience informs
+                  both the Allan Grey backstory and the play&apos;s sympathy for those policed by
+                  conventional morality.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Southern Gothic Tradition</h4>
+                <h4 className="font-bold text-primary">{tr(`Southern Gothic Tradition`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Williams writes within the Southern Gothic tradition of William Faulkner, Carson
                   McCullers and Flannery O&apos;Connor. Recurring features &mdash; decaying
@@ -599,7 +611,7 @@ export default function StreetcarNamedDesirePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Loss of the Old South</h4>
+                <h4 className="font-bold text-primary">{tr(`The Loss of the Old South`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Belle Reve is the DuBois ancestral plantation in Laurel, Mississippi, &ldquo;a
                   great big place with white columns.&rdquo; By the time the play opens it has been
@@ -613,7 +625,7 @@ export default function StreetcarNamedDesirePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Streetcar Lines as Symbol</h4>
+                <h4 className="font-bold text-primary">{tr(`The Streetcar Lines as Symbol`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Williams takes the title and central image from the real streetcars of New
                   Orleans. The Desire line ran along Royal and Bourbon Streets through the French
@@ -628,7 +640,9 @@ export default function StreetcarNamedDesirePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The 1947 Production and Marlon Brando</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`The 1947 Production and Marlon Brando`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play opened on Broadway in December 1947, directed by Elia Kazan with Jessica
                   Tandy as Blanche and the unknown Marlon Brando as Stanley. Brando&apos;s
@@ -646,7 +660,7 @@ export default function StreetcarNamedDesirePage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
+          <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               15+ quotations organised by theme and character for A-Level revision.
             </p>
@@ -742,10 +756,10 @@ export default function StreetcarNamedDesirePage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Key Symbols" icon="🎭">
+          <Section title={tr(`Key Symbols`)} icon="🎭">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Paper Lantern</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Paper Lantern`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Chinese paper lantern Blanche places over the naked light bulb in Scene 3 is
                   the play&apos;s defining domestic symbol. She tells Mitch &ldquo;I can&apos;t
@@ -773,7 +787,7 @@ export default function StreetcarNamedDesirePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Varsouviana / Polka Music</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Varsouviana / Polka Music`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The polka tune Williams calls &lsquo;the Varsouviana&rsquo; is the music that was
                   playing on the Moon Lake Casino dance floor when Blanche told Allan Grey he
@@ -786,7 +800,7 @@ export default function StreetcarNamedDesirePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Blanche&apos;s Costumes</h4>
+                <h4 className="font-bold text-foreground">{tr(`Blanche&apos;s Costumes`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Williams describes Blanche&apos;s costumes with care. She enters in a &lsquo;white
                   suit with a fluffy bodice, necklace and earrings of pearl, white gloves and
@@ -813,7 +827,7 @@ export default function StreetcarNamedDesirePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Bathing and Cleansing</h4>
+                <h4 className="font-bold text-foreground">{tr(`Bathing and Cleansing`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Blanche bathes obsessively across the play: Scene 2, Scene 7, Scene 8, before the
                   rape in Scene 10. She calls it &lsquo;hydrotherapy&rsquo; and tells Stella the
@@ -826,7 +840,9 @@ export default function StreetcarNamedDesirePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The &lsquo;Blue Piano&rsquo; and Jazz</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`The &lsquo;Blue Piano&rsquo; and Jazz`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Williams&apos;s opening stage directions describe a &lsquo;blue piano&rsquo;
                   &lsquo;expressing the spirit of the life which goes on here.&rsquo; A jazz piano
@@ -839,7 +855,7 @@ export default function StreetcarNamedDesirePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Poker Game</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Poker Game`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The poker games of Scenes 3 and 11 frame the play structurally: the same male
                   ritual at the start of the catastrophe and at its end. Williams describes the
@@ -1242,34 +1258,34 @@ export default function StreetcarNamedDesirePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Treat the play as a play.</strong> AQA and OCR examiners reward analysis of
-              stagecraft. Discuss Williams&apos;s stage directions, the Varsouviana, the blue piano,
-              transparent walls, the paper lantern &mdash; these are dramatic methods, not
-              background detail.
+              <strong>{tr(`Treat the play as a play.`)}</strong> AQA and OCR examiners reward
+              analysis of stagecraft. Discuss Williams&apos;s stage directions, the Varsouviana, the
+              blue piano, transparent walls, the paper lantern &mdash; these are dramatic methods,
+              not background detail.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Anchor every argument in context.</strong> Post-war New Orleans, the decline
-              of the planter South, the censorship of homosexuality, Williams&apos;s sister Rose.
-              The 2015 AQA specification (LITB3) and the OCR closed-book paper both award explicit
-              AO3 marks for context.
+              <strong>{tr(`Anchor every argument in context.`)}</strong> Post-war New Orleans, the
+              decline of the planter South, the censorship of homosexuality, Williams&apos;s sister
+              Rose. The 2015 AQA specification (LITB3) and the OCR closed-book paper both award
+              explicit AO3 marks for context.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Hold opposing readings simultaneously.</strong> AO5 (interpretations) is a
-              major discriminator at A-Level. Stanley as villain vs Stanley as truth-teller. Blanche
-              as victim vs Blanche as architect. Stella as complicit vs Stella as realist. Top
-              answers refuse to choose.
+              <strong>{tr(`Hold opposing readings simultaneously.`)}</strong> AO5 (interpretations)
+              is a major discriminator at A-Level. Stanley as villain vs Stanley as truth-teller.
+              Blanche as victim vs Blanche as architect. Stella as complicit vs Stella as realist.
+              Top answers refuse to choose.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use precise dramatic vocabulary.</strong> Refer to
+              <strong>{tr(`Use precise dramatic vocabulary.`)}</strong> Refer to
               &lsquo;expressionism&rsquo;, &lsquo;Southern Gothic&rsquo;, &lsquo;homosocial&rsquo;,
               &lsquo;Method acting&rsquo;, &lsquo;stage direction&rsquo;, &lsquo;dramatic
               irony&rsquo;, &lsquo;chorus&rsquo;. The vocabulary signals critical fluency.
@@ -1278,18 +1294,18 @@ export default function StreetcarNamedDesirePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Quote precisely and economically.</strong> Embed short fragments rather than
-              long blocks. &lsquo;magic&rsquo;, &lsquo;the kindness of strangers&rsquo;, &lsquo;the
-              opposite is desire&rsquo;, &lsquo;Flores para los muertos&rsquo;. Examiners reward
-              integrated quotation over quotation that interrupts the argument.
+              <strong>{tr(`Quote precisely and economically.`)}</strong> Embed short fragments
+              rather than long blocks. &lsquo;magic&rsquo;, &lsquo;the kindness of strangers&rsquo;,
+              &lsquo;the opposite is desire&rsquo;, &lsquo;Flores para los muertos&rsquo;. Examiners
+              reward integrated quotation over quotation that interrupts the argument.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Address the whole play.</strong> The opening streetcar route, the closing
-              kindness of strangers, the recurring poker games. Top responses move freely across all
-              eleven scenes rather than dwelling on extracts.
+              <strong>{tr(`Address the whole play.`)}</strong> The opening streetcar route, the
+              closing kindness of strangers, the recurring poker games. Top responses move freely
+              across all eleven scenes rather than dwelling on extracts.
             </span>
           </li>
         </ul>

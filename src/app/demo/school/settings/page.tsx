@@ -1,6 +1,8 @@
-"use client"
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
-import { useState } from "react"
+import { useState } from 'react'
 import {
   School,
   Crown,
@@ -14,29 +16,36 @@ import {
   Sparkles,
   BookOpen,
   ChevronDown,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Switch } from "@/components/ui/switch"
-import { Badge } from "@/components/ui/badge"
-import { useToast } from "@/components/ui/Toast"
-import { DEMO_SCHOOL } from "@/data/demo-data"
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Switch } from '@/components/ui/switch'
+import { Badge } from '@/components/ui/badge'
+import { useToast } from '@/components/ui/Toast'
+import { DEMO_SCHOOL } from '@/data/demo-data'
 
 const DEMO_ADMINS = [
-  { name: "Dr. Sarah Mitchell", email: "mitchell@riverside.demo", role: "Owner" },
-  { name: "Mr. James Ward", email: "ward@riverside.demo", role: "Admin" },
-  { name: "Ms. Lucy Fletcher", email: "fletcher@riverside.demo", role: "Admin" },
+  { name: 'Dr. Sarah Mitchell', email: 'mitchell@riverside.demo', role: 'Owner' },
+  { name: 'Mr. James Ward', email: 'ward@riverside.demo', role: 'Admin' },
+  { name: 'Ms. Lucy Fletcher', email: 'fletcher@riverside.demo', role: 'Admin' },
 ]
 
-const DEMO_JOIN_CODE = "RIVER-2025-XK9"
+const DEMO_JOIN_CODE = 'RIVER-2025-XK9'
 
 export default function DemoSettingsPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   const { toast } = useToast()
 
   const [schoolName, setSchoolName] = useState(DEMO_SCHOOL.name)
-  const [schoolAddress, setSchoolAddress] = useState("42 Riverside Drive, London, SE1 7PB")
-  const [schoolPhone, setSchoolPhone] = useState("+44 20 7946 0123")
-  const [schoolEmail, setSchoolEmail] = useState("admin@riverside.demo")
+  const [schoolAddress, setSchoolAddress] = useState('42 Riverside Drive, London, SE1 7PB')
+  const [schoolPhone, setSchoolPhone] = useState('+44 20 7946 0123')
+  const [schoolEmail, setSchoolEmail] = useState('admin@riverside.demo')
 
   const [notifyNewStudent, setNotifyNewStudent] = useState(true)
   const [notifyWeeklyReport, setNotifyWeeklyReport] = useState(true)
@@ -46,13 +55,13 @@ export default function DemoSettingsPage() {
   const [codeCopied, setCodeCopied] = useState(false)
 
   function handleSave() {
-    toast("info", "Changes saved in demo mode. Register for your own school.")
+    toast('info', 'Changes saved in demo mode. Register for your own school.')
   }
 
   function handleCopyCode() {
     navigator.clipboard.writeText(DEMO_JOIN_CODE).catch(() => {})
     setCodeCopied(true)
-    toast("success", "Join code copied to clipboard")
+    toast('success', 'Join code copied to clipboard')
     setTimeout(() => setCodeCopied(false), 2000)
   }
 
@@ -73,18 +82,20 @@ export default function DemoSettingsPage() {
             <School className="h-4.5 w-4.5 text-primary" />
           </div>
           <div>
-            <h2 className="text-base font-semibold">School Profile</h2>
-            <p className="text-xs text-muted-foreground">Basic information about your school</p>
+            <h2 className="text-base font-semibold">{tr(`School Profile`)}</h2>
+            <p className="text-xs text-muted-foreground">
+              {tr(`Basic information about your school`)}
+            </p>
           </div>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="space-y-1.5">
-            <label className="text-sm font-medium text-foreground">School Name</label>
+            <label className="text-sm font-medium text-foreground">{tr(`School Name`)}</label>
             <Input value={schoolName} onChange={(e) => setSchoolName(e.target.value)} />
           </div>
           <div className="space-y-1.5">
-            <label className="text-sm font-medium text-foreground">Email Address</label>
+            <label className="text-sm font-medium text-foreground">{tr(`Email Address`)}</label>
             <Input value={schoolEmail} onChange={(e) => setSchoolEmail(e.target.value)} />
           </div>
           <div className="space-y-1.5">
@@ -92,13 +103,13 @@ export default function DemoSettingsPage() {
             <Input value={schoolAddress} onChange={(e) => setSchoolAddress(e.target.value)} />
           </div>
           <div className="space-y-1.5">
-            <label className="text-sm font-medium text-foreground">Phone Number</label>
+            <label className="text-sm font-medium text-foreground">{tr(`Phone Number`)}</label>
             <Input value={schoolPhone} onChange={(e) => setSchoolPhone(e.target.value)} />
           </div>
         </div>
 
         <div className="mt-5 flex justify-end">
-          <Button onClick={handleSave}>Save Changes</Button>
+          <Button onClick={handleSave}>{tr(`Save Changes`)}</Button>
         </div>
       </section>
 
@@ -109,18 +120,20 @@ export default function DemoSettingsPage() {
             <BookOpen className="h-4.5 w-4.5 text-primary" />
           </div>
           <div>
-            <h2 className="text-base font-semibold">Exam Board & Curriculum</h2>
-            <p className="text-xs text-muted-foreground">Configure your exam board and active specifications</p>
+            <h2 className="text-base font-semibold">{tr(`Exam Board & Curriculum`)}</h2>
+            <p className="text-xs text-muted-foreground">
+              {tr(`Configure your exam board and active specifications`)}
+            </p>
           </div>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="space-y-1.5">
-            <label className="text-sm font-medium text-foreground">Exam Board</label>
+            <label className="text-sm font-medium text-foreground">{tr(`Exam Board`)}</label>
             <Input value={DEMO_SCHOOL.examBoard} readOnly className="bg-muted/50" />
           </div>
           <div className="space-y-1.5">
-            <label className="text-sm font-medium text-foreground">Academic Year</label>
+            <label className="text-sm font-medium text-foreground">{tr(`Academic Year`)}</label>
             <div className="relative">
               <select
                 defaultValue="2025-2026"
@@ -136,7 +149,9 @@ export default function DemoSettingsPage() {
         </div>
 
         <div className="mt-5">
-          <label className="text-sm font-medium text-foreground">Active Curriculum Areas</label>
+          <label className="text-sm font-medium text-foreground">
+            {tr(`Active Curriculum Areas`)}
+          </label>
           <div className="mt-2 flex flex-wrap gap-2">
             <Badge className="bg-green-500/10 text-green-400 border-green-500/25 gap-1.5">
               <Check className="h-3 w-3" />
@@ -154,7 +169,7 @@ export default function DemoSettingsPage() {
         </p>
 
         <div className="mt-5 flex justify-end">
-          <Button onClick={handleSave}>Save Curriculum Settings</Button>
+          <Button onClick={handleSave}>{tr(`Save Curriculum Settings`)}</Button>
         </div>
       </section>
 
@@ -166,7 +181,7 @@ export default function DemoSettingsPage() {
           </div>
           <div>
             <h2 className="text-base font-semibold">Subscription</h2>
-            <p className="text-xs text-muted-foreground">Your current plan and usage</p>
+            <p className="text-xs text-muted-foreground">{tr(`Your current plan and usage`)}</p>
           </div>
         </div>
 
@@ -212,13 +227,17 @@ export default function DemoSettingsPage() {
             </div>
             <div>
               <h2 className="text-base font-semibold">Administrators</h2>
-              <p className="text-xs text-muted-foreground">People who can manage this school</p>
+              <p className="text-xs text-muted-foreground">
+                {tr(`People who can manage this school`)}
+              </p>
             </div>
           </div>
           <Button
             variant="outline"
             size="sm"
-            onClick={() => toast("info", "Changes saved in demo mode. Register for your own school.")}
+            onClick={() =>
+              toast('info', 'Changes saved in demo mode. Register for your own school.')
+            }
           >
             <Users className="h-3.5 w-3.5" />
             Add Admin
@@ -233,7 +252,10 @@ export default function DemoSettingsPage() {
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
-                  {admin.name.split(" ").map((n) => n[0]).join("")}
+                  {admin.name
+                    .split(' ')
+                    .map((n) => n[0])
+                    .join('')}
                 </div>
                 <div>
                   <p className="text-sm font-medium">{admin.name}</p>
@@ -241,14 +263,16 @@ export default function DemoSettingsPage() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Badge variant={admin.role === "Owner" ? "default" : "secondary"}>
+                <Badge variant={admin.role === 'Owner' ? 'default' : 'secondary'}>
                   {admin.role}
                 </Badge>
-                {admin.role !== "Owner" && (
+                {admin.role !== 'Owner' && (
                   <Button
                     variant="ghost"
                     size="icon-xs"
-                    onClick={() => toast("info", "Changes saved in demo mode. Register for your own school.")}
+                    onClick={() =>
+                      toast('info', 'Changes saved in demo mode. Register for your own school.')
+                    }
                   >
                     <span className="text-xs text-muted-foreground">Remove</span>
                   </Button>
@@ -267,7 +291,9 @@ export default function DemoSettingsPage() {
           </div>
           <div>
             <h2 className="text-base font-semibold">Notifications</h2>
-            <p className="text-xs text-muted-foreground">Configure email alerts and updates</p>
+            <p className="text-xs text-muted-foreground">
+              {tr(`Configure email alerts and updates`)}
+            </p>
           </div>
         </div>
 
@@ -276,8 +302,10 @@ export default function DemoSettingsPage() {
             <div className="flex items-center gap-3">
               <Users className="h-4 w-4 text-muted-foreground" />
               <div>
-                <p className="text-sm font-medium">New student signups</p>
-                <p className="text-xs text-muted-foreground">Get notified when a student joins via the join code</p>
+                <p className="text-sm font-medium">{tr(`New student signups`)}</p>
+                <p className="text-xs text-muted-foreground">
+                  {tr(`Get notified when a student joins via the join code`)}
+                </p>
               </div>
             </div>
             <Switch checked={notifyNewStudent} onCheckedChange={setNotifyNewStudent} />
@@ -289,8 +317,10 @@ export default function DemoSettingsPage() {
             <div className="flex items-center gap-3">
               <Mail className="h-4 w-4 text-muted-foreground" />
               <div>
-                <p className="text-sm font-medium">Weekly progress report</p>
-                <p className="text-xs text-muted-foreground">Receive a summary of school-wide activity every Monday</p>
+                <p className="text-sm font-medium">{tr(`Weekly progress report`)}</p>
+                <p className="text-xs text-muted-foreground">
+                  {tr(`Receive a summary of school-wide activity every Monday`)}
+                </p>
               </div>
             </div>
             <Switch checked={notifyWeeklyReport} onCheckedChange={setNotifyWeeklyReport} />
@@ -302,8 +332,10 @@ export default function DemoSettingsPage() {
             <div className="flex items-center gap-3">
               <Shield className="h-4 w-4 text-muted-foreground" />
               <div>
-                <p className="text-sm font-medium">At-risk student alerts</p>
-                <p className="text-xs text-muted-foreground">Immediate alerts when students fall behind</p>
+                <p className="text-sm font-medium">{tr(`At-risk student alerts`)}</p>
+                <p className="text-xs text-muted-foreground">
+                  {tr(`Immediate alerts when students fall behind`)}
+                </p>
               </div>
             </div>
             <Switch checked={notifyAtRisk} onCheckedChange={setNotifyAtRisk} />
@@ -315,8 +347,10 @@ export default function DemoSettingsPage() {
             <div className="flex items-center gap-3">
               <Bell className="h-4 w-4 text-muted-foreground" />
               <div>
-                <p className="text-sm font-medium">Teacher activity updates</p>
-                <p className="text-xs text-muted-foreground">Notifications when teachers create or modify classes</p>
+                <p className="text-sm font-medium">{tr(`Teacher activity updates`)}</p>
+                <p className="text-xs text-muted-foreground">
+                  {tr(`Notifications when teachers create or modify classes`)}
+                </p>
               </div>
             </div>
             <Switch checked={notifyTeacherActivity} onCheckedChange={setNotifyTeacherActivity} />
@@ -324,7 +358,7 @@ export default function DemoSettingsPage() {
         </div>
 
         <div className="mt-6 flex justify-end">
-          <Button onClick={handleSave}>Save Notification Preferences</Button>
+          <Button onClick={handleSave}>{tr(`Save Notification Preferences`)}</Button>
         </div>
       </section>
 
@@ -336,7 +370,9 @@ export default function DemoSettingsPage() {
           </div>
           <div>
             <h2 className="text-base font-semibold">Join Code</h2>
-            <p className="text-xs text-muted-foreground">Share this code so students and teachers can join your school</p>
+            <p className="text-xs text-muted-foreground">
+              {tr(`Share this code so students and teachers can join your school`)}
+            </p>
           </div>
         </div>
 
@@ -350,12 +386,13 @@ export default function DemoSettingsPage() {
             ) : (
               <Copy className="h-4 w-4" />
             )}
-            {codeCopied ? "Copied" : "Copy"}
+            {codeCopied ? 'Copied' : 'Copy'}
           </Button>
         </div>
 
         <p className="mt-3 text-xs text-muted-foreground">
-          Students and teachers enter this code when creating an account to automatically join Riverside Academy.
+          Students and teachers enter this code when creating an account to automatically join
+          Riverside Academy.
         </p>
       </section>
     </div>

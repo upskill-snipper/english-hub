@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import { useState } from 'react'
 
@@ -82,6 +84,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function KingLearPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -103,7 +112,9 @@ export default function KingLearPage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           King Lear &mdash; Complete A-Level Revision Guide
         </h1>
-        <p className="mt-1 text-lg text-muted-foreground">William Shakespeare, c.1605&ndash;1606</p>
+        <p className="mt-1 text-lg text-muted-foreground">
+          {tr(`William Shakespeare, c.1605&ndash;1606`)}
+        </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Substantive A-Level notes for one of Shakespeare&apos;s greatest tragedies. Act-by-act
           plot summary including the Gloucester subplot, detailed character profiles, thematic
@@ -115,7 +126,7 @@ export default function KingLearPage() {
 
       {/* Quick nav */}
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
-        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-3">{tr(`Jump to section:`)}</p>
         <div className="flex flex-wrap gap-2">
           {[
             'Plot Summary',
@@ -140,7 +151,11 @@ export default function KingLearPage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section title="Act-by-Act Plot Summary (with Gloucester Subplot)" icon="📖" defaultOpen>
+          <Section
+            title={tr(`Act-by-Act Plot Summary (with Gloucester Subplot)`)}
+            icon="📖"
+            defaultOpen
+          >
             <p className="text-sm text-muted-foreground mb-4 italic">
               Shakespeare structures <em>King Lear</em> around two parallel plots: the main plot of
               Lear and his three daughters, and the subplot of the Earl of Gloucester and his two
@@ -264,7 +279,7 @@ export default function KingLearPage() {
 
         {/* ────────────────────────────────── CHARACTERS */}
         <div id="characters">
-          <Section title="Character Profiles" icon="👤">
+          <Section title={tr(`Character Profiles`)} icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="King Lear"
@@ -320,14 +335,14 @@ export default function KingLearPage() {
 
         {/* ────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section title="Key Themes" icon="💡">
+          <Section title={tr(`Key Themes`)} icon="💡">
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
-                title="Power and Authority"
+                title={tr(`Power and Authority`)}
                 description="The play opens with the most catastrophic political act imaginable in early modern thought: a king dividing his realm and abdicating power without dying. Shakespeare anatomises what authority is once stripped of its theatrical trappings. Lear retains the &lsquo;name and all th' addition&rsquo; of king while giving away the substance, and discovers — too late — that his daughters value the substance, not the name. Power changes hands violently and repeatedly: from Lear to his daughters, from Gloucester to Edmund, from Cornwall to Albany, and finally to a depleted, exhausted Edgar. The play's political vision is profoundly pessimistic; even a legitimate restoration carries the weight of catastrophe."
               />
               <ThemeCard
-                title="Sight and Blindness"
+                title={tr(`Sight and Blindness`)}
                 description="Few Shakespeare plays use a single image so insistently. Lear's opening fault is one of moral blindness — he cannot see Cordelia's love, nor read his elder daughters' flattery — and Kent's rebuke &lsquo;See better, Lear&rsquo; sets the motif in motion. Gloucester's literal blinding in Act III externalises the metaphor: only when his eyes are gone does he understand his sons. The paradox is sharpened in IV.vi when the blind Gloucester meets the mad Lear: &lsquo;A man may see how this world goes with no eyes. Look with thine ears.&rsquo; True sight in this play is moral, not physical; both fathers must be blinded, literally or figuratively, to perceive what they have done."
               />
               <ThemeCard
@@ -335,19 +350,19 @@ export default function KingLearPage() {
                 description="Madness in <em>King Lear</em> is not merely affliction but a strange form of revelation. Lear's mind cracks under the weight of betrayal, but as it does so he speaks more truth — about justice, about the rich and poor, about the body — than he ever did in sanity. Edgar feigns madness as Poor Tom, and his fragmented, demonic speeches blur the line between performance and possession. The Fool's licensed folly, the king's genuine derangement, and Edgar's assumed lunacy together form a bleak Jacobean meditation on whether reason itself is the highest faculty. Shakespeare seems to suggest that institutional reason has failed, and that wisdom can only be glimpsed from outside it."
               />
               <ThemeCard
-                title="Family and Filial Loyalty"
+                title={tr(`Family and Filial Loyalty`)}
                 description="The play stages a brutal inversion of the Fifth Commandment. Goneril and Regan flatter and then abandon their father; Edmund frames and betrays his. Yet Shakespeare also shows the opposite: Cordelia returns to rescue Lear, Edgar tends his blinded father in disguise, the Fool follows his master into the storm. The bond between parent and child is the play's deepest test of human nature, and the language of &lsquo;nature&rsquo; (a key word repeated more than forty times) is used both to denounce unnatural daughters and to celebrate the bonds that survive. Critically, the play has been read as a study of the patriarchal family in crisis: a father who weaponises his children's love is himself a corrupting force."
               />
               <ThemeCard
-                title="Nature and Order"
+                title={tr(`Nature and Order`)}
                 description="&lsquo;Nature&rsquo; is the play's most contested word. For Lear and Gloucester it means the divinely ordered hierarchy of family and state — the Great Chain of Being — and its violation is monstrous. For Edmund it means raw appetite: &lsquo;Thou, Nature, art my goddess; to thy law / My services are bound.&rsquo; The storm on the heath is the cosmos itself in revolt: a Jacobean audience would have read tempests as omens of disorder in the body politic. Yet Shakespeare resists giving the moral universe a stable centre. The gods are silent, the storm passes, and natural order is not restored — only exhaustion remains."
               />
               <ThemeCard
-                title="Suffering and Redemption"
+                title={tr(`Suffering and Redemption`)}
                 description="<em>King Lear</em> stages suffering on a scale unmatched in Shakespeare. Lear is exposed to the storm; Gloucester is blinded; Edgar lives as a beggar; Cordelia is hanged. Critics from Samuel Johnson onwards have struggled with the play's refusal to redeem this suffering. Some readings (A.C. Bradley, G. Wilson Knight) see Lear as a Christian pilgrimage in which the king is purified through anguish and dies in a kind of grace. Others (Jan Kott, Stephen Greenblatt) see a far bleaker play in which suffering simply happens, the universe is empty, and Cordelia's death is a final cancellation of all redemption. Both readings are textually defensible, and the ambiguity is the play's greatest power."
               />
               <ThemeCard
-                title="Justice and Injustice"
+                title={tr(`Justice and Injustice`)}
                 description="The play repeatedly asks whether the gods are just, and repeatedly refuses to answer. Gloucester famously cries &lsquo;As flies to wanton boys are we to th' gods; / They kill us for their sport,&rsquo; while Edgar later insists &lsquo;The gods are just.&rsquo; The mock-trial Lear conducts on the heath, arraigning a stool as Goneril, parodies the very institutions that have failed him. Cordelia's death is the play's ultimate scandal: she is the most innocent character in the canon, and Shakespeare kills her without explanation. Whether this is a critique of human justice, divine injustice, or simply tragic contingency is left unresolved."
               />
             </div>
@@ -356,10 +371,10 @@ export default function KingLearPage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Historical and Literary Context" icon="🏛️">
+          <Section title={tr(`Historical and Literary Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Jacobean England under James I</h4>
+                <h4 className="font-bold text-primary">{tr(`Jacobean England under James I`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   <em>King Lear</em> was written around 1605&ndash;1606 and first performed at the
                   court of James I on St Stephen&apos;s Day, 26 December 1606. James, who succeeded
@@ -372,23 +387,25 @@ export default function KingLearPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Divine Right of Kings</h4>
+                <h4 className="font-bold text-primary">{tr(`The Divine Right of Kings`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   James I was the most articulate exponent of the Divine Right of Kings, the
                   doctrine that monarchs derived their authority directly from God and were
-                  answerable to him alone. His treatise <em>The Trew Law of Free Monarchies</em>{' '}
-                  (1598) argued that subjects could never legitimately resist a king. Lear&apos;s
-                  abdication is therefore not just imprudent but cosmically transgressive — kingship
-                  cannot be given away. The play tests divine-right theory to destruction: if the
-                  king is the earthly image of God, what becomes of order when he himself is mad,
-                  naked and weeping in a storm?
+                  answerable to him alone. His treatise{' '}
+                  <em>{tr(`The Trew Law of Free Monarchies`)}</em> (1598) argued that subjects could
+                  never legitimately resist a king. Lear&apos;s abdication is therefore not just
+                  imprudent but cosmically transgressive — kingship cannot be given away. The play
+                  tests divine-right theory to destruction: if the king is the earthly image of God,
+                  what becomes of order when he himself is mad, naked and weeping in a storm?
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Sources: Leir, Holinshed and Sidney</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Sources: Leir, Holinshed and Sidney`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Shakespeare drew on at least three principal sources. The anonymous{' '}
-                  <em>True Chronicle History of King Leir</em> (published 1605) provided the
+                  <em>{tr(`True Chronicle History of King Leir`)}</em> (published 1605) provided the
                   love-test and the daughters&apos; ingratitude, but ended happily with Leir
                   restored to the throne; Shakespeare&apos;s decision to kill both Cordelia and Lear
                   is a deliberate, shocking departure. Raphael Holinshed&apos;s <em>Chronicles</em>
@@ -400,7 +417,7 @@ export default function KingLearPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Storm as Cosmic Disorder</h4>
+                <h4 className="font-bold text-primary">{tr(`The Storm as Cosmic Disorder`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   In Jacobean cosmology, weather, politics and human passion were interlinked. The
                   macrocosm (the universe) and the microcosm (the body) reflected each other;
@@ -413,7 +430,7 @@ export default function KingLearPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Great Chain of Being</h4>
+                <h4 className="font-bold text-primary">{tr(`The Great Chain of Being`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Elizabethan and Jacobean worldview was structured around a hierarchy
                   descending from God through angels, monarchs, nobles, commoners, animals and
@@ -426,7 +443,9 @@ export default function KingLearPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Succession Anxiety after Elizabeth</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Succession Anxiety after Elizabeth`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Elizabeth I died in 1603 without naming an heir until her final hours, and the
                   realm endured decades of fear about a contested succession or civil war.
@@ -445,7 +464,7 @@ export default function KingLearPage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
+          <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               17 quotations chosen to cover every major theme and turning point. Memorise the
               speaker and act.
@@ -542,7 +561,7 @@ export default function KingLearPage() {
 
         {/* ────────────────────────────────── SYMBOLS & MOTIFS */}
         <div id="symbols-and-motifs">
-          <Section title="Symbols and Motifs" icon="🔁">
+          <Section title={tr(`Symbols and Motifs`)} icon="🔁">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">The Storm</h4>
@@ -553,12 +572,12 @@ export default function KingLearPage() {
                   shaken to its base by the violation of natural bonds). Shakespeare directs the
                   storm through Lear&apos;s imperatives (&lsquo;Blow, winds&rsquo;) so that the king
                   and the elements seem to share a single voice, even as nature refuses to obey him.
-                  The storm passes, but unlike the tempest at the end of <em>The Tempest</em>, it is
-                  not redemptive — it merely exhausts.
+                  The storm passes, but unlike the tempest at the end of{' '}
+                  <em>{tr(`The Tempest`)}</em>, it is not redemptive — it merely exhausts.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Clothing and Nakedness</h4>
+                <h4 className="font-bold text-foreground">{tr(`Clothing and Nakedness`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Clothing is the visible sign of social position. Lear&apos;s descent is marked by
                   progressive unclothing: he gives away his crown, then his retinue, and finally
@@ -586,7 +605,7 @@ export default function KingLearPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Lear&apos;s Crown</h4>
+                <h4 className="font-bold text-foreground">{tr(`Lear&apos;s Crown`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The crown is given away in I.i and never literally returned. In its place, Lear in
                   IV.vi wears a crown of weeds and wild flowers — &lsquo;crown&apos;d with rank
@@ -597,7 +616,7 @@ export default function KingLearPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Gloucester&apos;s Blinding</h4>
+                <h4 className="font-bold text-foreground">{tr(`Gloucester&apos;s Blinding`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The on-stage gouging of Gloucester&apos;s eyes in III.vii is the play&apos;s most
                   violent symbol: a literal enactment of the metaphor that has run through both
@@ -622,7 +641,7 @@ export default function KingLearPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Animal and Beast Imagery</h4>
+                <h4 className="font-bold text-foreground">{tr(`Animal and Beast Imagery`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play teems with animal imagery, almost always denoting moral degradation. Lear
                   curses Goneril with the famous simile &lsquo;How sharper than a serpent&apos;s
@@ -694,8 +713,8 @@ export default function KingLearPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Cordelia&apos;s death and Lear&apos;s &lsquo;Never, never, never, never,
                       never.&rsquo; AO5: contrast Bradley&apos;s redemptive reading with Jan
-                      Kott&apos;s absurdist <em>Shakespeare Our Contemporary</em>. The play allows
-                      no consolation.
+                      Kott&apos;s absurdist <em>{tr(`Shakespeare Our Contemporary`)}</em>. The play
+                      allows no consolation.
                     </p>
                   </div>
                   <div>
@@ -947,54 +966,56 @@ export default function KingLearPage() {
 
       {/* Exam Tips */}
       <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
-        <h3 className="text-lg font-bold text-foreground">Exam Tips for King Lear at A-Level</h3>
+        <h3 className="text-lg font-bold text-foreground">
+          {tr(`Exam Tips for King Lear at A-Level`)}
+        </h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use the parallel plots.</strong> Examiners reward students who track Lear and
-              Gloucester together. Almost any answer can be enriched by comparing the two
+              <strong>{tr(`Use the parallel plots.`)}</strong> Examiners reward students who track
+              Lear and Gloucester together. Almost any answer can be enriched by comparing the two
               fathers&apos; arcs.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Engage with critical readings (AO5).</strong> A.C. Bradley&apos;s redemptive
-              reading; Jan Kott&apos;s absurdist reading; feminist readings (McLuskie); New
-              Historicist readings (Greenblatt). You don&apos;t need many — two well-chosen critics,
-              deployed accurately, beat a list.
+              <strong>{tr(`Engage with critical readings (AO5).`)}</strong> A.C. Bradley&apos;s
+              redemptive reading; Jan Kott&apos;s absurdist reading; feminist readings (McLuskie);
+              New Historicist readings (Greenblatt). You don&apos;t need many — two well-chosen
+              critics, deployed accurately, beat a list.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Anchor context (AO3) precisely.</strong> Don&apos;t just say &ldquo;Jacobean
-              audiences believed in the Divine Right of Kings.&rdquo; Show how that belief makes a
-              specific moment — Lear&apos;s abdication, the storm, the blinding — register more
-              powerfully.
+              <strong>{tr(`Anchor context (AO3) precisely.`)}</strong> Don&apos;t just say
+              &ldquo;Jacobean audiences believed in the Divine Right of Kings.&rdquo; Show how that
+              belief makes a specific moment — Lear&apos;s abdication, the storm, the blinding —
+              register more powerfully.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Discuss Shakespeare&apos;s craft (AO2).</strong> Verse vs prose; the breakdown
-              of iambic pentameter in Lear&apos;s mad speeches; the Fool&apos;s shift between rhyme
-              and prose; the absence of soliloquy from Lear after Act III.
+              <strong>{tr(`Discuss Shakespeare&apos;s craft (AO2).`)}</strong> Verse vs prose; the
+              breakdown of iambic pentameter in Lear&apos;s mad speeches; the Fool&apos;s shift
+              between rhyme and prose; the absence of soliloquy from Lear after Act III.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Don&apos;t soften the ending.</strong> Cordelia&apos;s death is meant to be
-              shocking. Avoid the temptation to rescue the play with a moralising conclusion; engage
-              with the open question of whether the ending is redemptive or nihilistic.
+              <strong>{tr(`Don&apos;t soften the ending.`)}</strong> Cordelia&apos;s death is meant
+              to be shocking. Avoid the temptation to rescue the play with a moralising conclusion;
+              engage with the open question of whether the ending is redemptive or nihilistic.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use precise terminology.</strong> &ldquo;De casibus tragedy,&rdquo;
+              <strong>{tr(`Use precise terminology.`)}</strong> &ldquo;De casibus tragedy,&rdquo;
               &ldquo;peripeteia,&rdquo; &ldquo;anagnorisis,&rdquo; &ldquo;Machiavel,&rdquo;
               &ldquo;the Great Chain of Being,&rdquo; &ldquo;pathetic fallacy,&rdquo;
               &ldquo;chiasmus,&rdquo; &ldquo;dramatic irony.&rdquo;

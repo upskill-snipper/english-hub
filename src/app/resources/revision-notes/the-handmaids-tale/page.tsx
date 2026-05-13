@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import { useState } from 'react'
 
@@ -82,6 +84,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function HandmaidsTalePage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -103,7 +112,7 @@ export default function HandmaidsTalePage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           The Handmaid&apos;s Tale &mdash; Complete A-Level Revision Guide
         </h1>
-        <p className="mt-1 text-lg text-muted-foreground">Margaret Atwood, 1985</p>
+        <p className="mt-1 text-lg text-muted-foreground">{tr(`Margaret Atwood, 1985`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Comprehensive notes for A-Level English Literature: plot summary including the
           &ldquo;Historical Notes&rdquo; coda, character profiles, themes with critical
@@ -115,7 +124,7 @@ export default function HandmaidsTalePage() {
 
       {/* Quick nav */}
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
-        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-3">{tr(`Jump to section:`)}</p>
         <div className="flex flex-wrap gap-2">
           {[
             'Plot Summary',
@@ -140,7 +149,7 @@ export default function HandmaidsTalePage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section title="Plot Summary" icon="📖" defaultOpen>
+          <Section title={tr(`Plot Summary`)} icon="📖" defaultOpen>
             <div className="space-y-4">
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
@@ -288,7 +297,7 @@ export default function HandmaidsTalePage() {
 
         {/* ────────────────────────────────── CHARACTERS */}
         <div id="characters">
-          <Section title="Character Profiles" icon="👤">
+          <Section title={tr(`Character Profiles`)} icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Offred"
@@ -340,30 +349,30 @@ export default function HandmaidsTalePage() {
 
         {/* ────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section title="Key Themes" icon="💡">
+          <Section title={tr(`Key Themes`)} icon="💡">
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
-                title="Theocracy and State Control"
+                title={tr(`Theocracy and State Control`)}
                 description="Gilead's regime fuses religious fundamentalism with totalitarian state power. Atwood draws on the historical pattern of theocratic governments — 17th-century Puritan New England, Khomeini's Iran — to show how scripture can be weaponised to legitimise oppression. The state controls reproduction, language, movement, dress, and reading. Caste is colour-coded (red Handmaids, blue Wives, green Marthas, black Commanders). The 'Salvagings,' 'Prayvaganzas,' and 'Particicutions' show how spectacle and ritual are used to consolidate power. Atwood's epigraph from Genesis 30 (Rachel and Bilhah) shows how theology is selectively quoted to justify a system that the regime's own architects acknowledge is constructed."
               />
               <ThemeCard
-                title="Gender and Patriarchy"
+                title={tr(`Gender and Patriarchy`)}
                 description="The novel anatomises a society organised entirely around the control of women's bodies. Women are stripped of names, work, money, education, and movement, and assigned roles based on reproductive utility. Atwood is careful to show that patriarchy is not simply 'men oppressing women': women like Serena Joy and the Aunts actively enforce the system, often against other women. The Wives perform the Ceremony with the Handmaid pinned between their legs; the Aunts beat the Handmaids; the Marthas police the household. Atwood draws on second-wave feminist insights (especially Andrea Dworkin and Adrienne Rich) but complicates the picture: 'Better never means better for everyone... It always means worse, for some.'"
               />
               <ThemeCard
-                title="Language as Power"
+                title={tr(`Language as Power`)}
                 description="Gilead controls language to control thought. Reading and writing are forbidden to women; shop signs are replaced with pictures; the Bible is locked in a wooden box opened only by the Commander. Names are stripped (the Handmaids become 'Of-Fred,' 'Of-Glen'). Doublespeak is everywhere: rape is 'the Ceremony,' executions are 'Salvagings,' brothels are 'Jezebel's.' Offred's narrative is itself a linguistic act of resistance: she hoards words, plays with etymologies ('chair, charity, chastity'), and recites the Latin pun in her wardrobe. The novel argues, with Orwell, that 'if thought corrupts language, language can also corrupt thought' — and the inverse: that to keep language alive is to keep thought alive."
               />
               <ThemeCard
-                title="Memory and Resistance"
+                title={tr(`Memory and Resistance`)}
                 description="Memory is Offred's most powerful weapon. Through her flashbacks she keeps her daughter, Luke, Moira, and her mother alive. She also keeps alive the 'Time Before,' refusing to let Gilead colonise her past as well as her present. The narrative's fragmented, non-chronological structure embodies the work of memory under trauma — looping, returning, rewriting. Resistance in the novel is rarely heroic: it is the recital of forbidden words, the kept name, the refusal to forget. Atwood writes against the totalitarian instinct to erase history. Significantly, the novel itself is presented as a kind of recovered testimony — cassette tapes hidden in a footlocker — making the act of remembering and recording the central political action of the book."
               />
               <ThemeCard
-                title="Complicity and Survival"
+                title={tr(`Complicity and Survival`)}
                 description="Atwood resists the romance of pure resistance. Offred is not Moira, and she knows it. She enters into the affair with Nick partly out of desire, partly out of terror; she takes Serena's deal; she fails to ask the new Ofglen if she is Mayday, and afterwards is relieved not to know. Her refrain — 'I would like to believe this is a story I'm telling' — captures the survivor's need to distance herself from her own choices. Atwood implies that most of us, under Gilead, would not be martyrs but Offreds: 'Better' people accommodate themselves to power. The novel is unflinching about the moral costs of survival, but refuses to condemn the survivor."
               />
               <ThemeCard
-                title="Religion as Justification"
+                title={tr(`Religion as Justification`)}
                 description="Atwood's Gilead is not anti-religious — it is over-religious in a particular, distorted way. The regime cherry-picks Old Testament passages (Rachel and Bilhah, Jacob's wives) while ignoring Christ's ethics of mercy and the New Testament's egalitarian strands. Bible verses are quoted by the Aunts to justify Handmaid status; the Beatitudes are even rewritten ('Blessed are the silent'). Atwood's targets are not Christianity itself but the political instrumentalisation of religion. She drew specifically on the Christian Right of the Reagan era, which she watched argue for the rollback of women's rights in language indistinguishable from Aunt Lydia's. Religion here is shown as a tool — 'a thing without a hand or a face,' as Offred reflects — that can be picked up by anyone who wants power."
               />
             </div>
@@ -372,24 +381,28 @@ export default function HandmaidsTalePage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Historical and Literary Context" icon="🏛️">
+          <Section title={tr(`Historical and Literary Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Reagan-Era America (1980&ndash;1985)</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Reagan-Era America (1980&ndash;1985)`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Atwood wrote <em>The Handmaid&apos;s Tale</em> in West Berlin in 1984, then living
-                  near the Iron Curtain. Reagan&apos;s America was a period of resurgent religious
-                  conservatism: the Moral Majority, founded by Jerry Falwell in 1979, was lobbying
-                  to overturn <em>Roe v. Wade</em>, reintroduce school prayer, and roll back the
-                  Equal Rights Amendment (which failed to be ratified in 1982). Phyllis Schlafly led
-                  the STOP-ERA campaign, arguing publicly that women&apos;s liberation was
-                  destroying the family. Atwood has said in interviews that she included nothing in
-                  the novel that had not happened somewhere on Earth. Serena Joy is modelled on
-                  televangelist figures like Tammy Faye Bakker and Schlafly herself.
+                  Atwood wrote <em>{tr(`The Handmaid&apos;s Tale`)}</em> in West Berlin in 1984,
+                  then living near the Iron Curtain. Reagan&apos;s America was a period of resurgent
+                  religious conservatism: the Moral Majority, founded by Jerry Falwell in 1979, was
+                  lobbying to overturn <em>{tr(`Roe v. Wade`)}</em>, reintroduce school prayer, and
+                  roll back the Equal Rights Amendment (which failed to be ratified in 1982).
+                  Phyllis Schlafly led the STOP-ERA campaign, arguing publicly that women&apos;s
+                  liberation was destroying the family. Atwood has said in interviews that she
+                  included nothing in the novel that had not happened somewhere on Earth. Serena Joy
+                  is modelled on televangelist figures like Tammy Faye Bakker and Schlafly herself.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Iran and Religious Fundamentalism</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Iran and Religious Fundamentalism`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Iranian Revolution of 1979 saw a secular monarchy replaced overnight by the
                   Islamic Republic under Ayatollah Khomeini. Women lost the right to dress as they
@@ -432,11 +445,13 @@ export default function HandmaidsTalePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Genre of Dystopia: Orwell and Huxley</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`The Genre of Dystopia: Orwell and Huxley`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel is in dialogue with the great 20th-century dystopias: Orwell&apos;s{' '}
                   <em>1984</em>
-                  (1949) and Huxley&apos;s <em>Brave New World</em> (1932). Atwood inherits
+                  (1949) and Huxley&apos;s <em>{tr(`Brave New World`)}</em> (1932). Atwood inherits
                   Orwell&apos;s interest in totalitarian language control, surveillance, and the
                   rewriting of history; the &ldquo;Historical Notes&rdquo; coda directly echoes the
                   appendix on Newspeak in <em>1984</em>. From Huxley she takes the use of
@@ -466,7 +481,7 @@ export default function HandmaidsTalePage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
+          <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               15+ quotations selected for A-Level analysis. Use these for AO2 (language and form)
               and AO3 (context).
@@ -573,10 +588,10 @@ export default function HandmaidsTalePage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Symbols and Motifs" icon="🔍">
+          <Section title={tr(`Symbols and Motifs`)} icon="🔍">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Colour Red</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Colour Red`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Handmaids wear red &mdash; the colour of menstrual blood, of fertility, of the
                   scarlet letter worn by Hawthorne&apos;s Hester Prynne (a deliberate Atwood echo,
@@ -602,7 +617,7 @@ export default function HandmaidsTalePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Eyes / Wings</h4>
+                <h4 className="font-bold text-foreground">{tr(`Eyes / Wings`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The state&apos;s secret police are called the &ldquo;Eyes,&rdquo; their vehicles
                   bear winged-eye logos, and the phrase &ldquo;Under His Eye&rdquo; is the standard
@@ -613,7 +628,9 @@ export default function HandmaidsTalePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Flowers and Serena&apos;s Garden</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`Flowers and Serena&apos;s Garden`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Serena Joy tends an immaculate garden of tulips and irises &mdash; one of the few
                   activities available to her. The flowers are described in language that
@@ -647,7 +664,7 @@ export default function HandmaidsTalePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Latin Graffiti</h4>
+                <h4 className="font-bold text-foreground">{tr(`Latin Graffiti`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The wardrobe inscription &ldquo;Nolite te bastardes carborundorum&rdquo; is the
                   textual ghost of the previous Offred. Like Scrabble, it is a piece of female
@@ -657,7 +674,7 @@ export default function HandmaidsTalePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Ceremony</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Ceremony`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The monthly state-sanctioned rape, framed by Genesis 30 and conducted with the
                   Wife pinning the Handmaid by the wrists, is a piece of choreographed theology. By
@@ -669,7 +686,7 @@ export default function HandmaidsTalePage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Cassette Tapes</h4>
+                <h4 className="font-bold text-foreground">{tr(`Cassette Tapes`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Historical Notes reveal that Offred&apos;s narrative survives as audio
                   cassettes labelled with old pop song titles (Elvis Presley&apos;s &ldquo;Hound
@@ -697,8 +714,8 @@ export default function HandmaidsTalePage() {
               {/* Q1 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  1. &ldquo;In <em>The Handmaid&apos;s Tale</em>, Atwood exposes the dangers of
-                  theocratic government.&rdquo; To what extent do you agree?
+                  1. &ldquo;In <em>{tr(`The Handmaid&apos;s Tale`)}</em>, Atwood exposes the dangers
+                  of theocratic government.&rdquo; To what extent do you agree?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -768,7 +785,7 @@ export default function HandmaidsTalePage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   2. Discuss Atwood&apos;s presentation of women as both victims and perpetrators in{' '}
-                  <em>The Handmaid&apos;s Tale</em>.
+                  <em>{tr(`The Handmaid&apos;s Tale`)}</em>.
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -840,7 +857,7 @@ export default function HandmaidsTalePage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   3. Explore the significance of language and storytelling in{' '}
-                  <em>The Handmaid&apos;s Tale</em>.
+                  <em>{tr(`The Handmaid&apos;s Tale`)}</em>.
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -900,8 +917,8 @@ export default function HandmaidsTalePage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   4. Compare and contrast Atwood&apos;s presentation of dystopia in{' '}
-                  <em>The Handmaid&apos;s Tale</em> with that of Orwell in{' '}
-                  <em>Nineteen Eighty-Four</em>.
+                  <em>{tr(`The Handmaid&apos;s Tale`)}</em> with that of Orwell in{' '}
+                  <em>{tr(`Nineteen Eighty-Four`)}</em>.
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -954,8 +971,9 @@ export default function HandmaidsTalePage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Pieixoto&apos;s 2195 mockery of Offred&apos;s testimony has no clear Orwellian
                       parallel: it implicates the reader&apos;s present. Atwood asks whether we are
-                      Pieixoto. Compare Huxley&apos;s soft dystopia in <em>Brave New World</em> and
-                      Le Guin&apos;s anti-dystopia in <em>The Dispossessed</em>.
+                      Pieixoto. Compare Huxley&apos;s soft dystopia in{' '}
+                      <em>{tr(`Brave New World`)}</em> and Le Guin&apos;s anti-dystopia in{' '}
+                      <em>{tr(`The Dispossessed`)}</em>.
                     </p>
                   </div>
                 </div>
@@ -1037,7 +1055,7 @@ export default function HandmaidsTalePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use Atwood&apos;s own framing.</strong> She insists the novel is
+              <strong>{tr(`Use Atwood&apos;s own framing.`)}</strong> She insists the novel is
               &ldquo;speculative&rdquo; not &ldquo;science&rdquo; fiction &mdash; nothing in it has
               not happened on Earth. Cite this for AO3.
             </span>
@@ -1045,7 +1063,7 @@ export default function HandmaidsTalePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Quote precisely.</strong> Atwood&apos;s lines &mdash; especially the
+              <strong>{tr(`Quote precisely.`)}</strong> Atwood&apos;s lines &mdash; especially the
               chiasmuses and self-revisions &mdash; reward close attention. Don&apos;t paraphrase:
               quote.
             </span>
@@ -1053,29 +1071,32 @@ export default function HandmaidsTalePage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Always include the Historical Notes.</strong> They are part of the novel and
-              frequently come up in essay questions about narrative structure and reader address.
+              <strong>{tr(`Always include the Historical Notes.`)}</strong> They are part of the
+              novel and frequently come up in essay questions about narrative structure and reader
+              address.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Connect form and content.</strong> The fragmented, non-chronological narrative{' '}
-              <em>is</em> the trauma it describes. Comment on form, not just plot.
+              <strong>{tr(`Connect form and content.`)}</strong> The fragmented, non-chronological
+              narrative <em>is</em> the trauma it describes. Comment on form, not just plot.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use comparative dystopias.</strong> Orwell, Huxley, Zamyatin, Le Guin,
-              Ishiguro&apos;s <em>Never Let Me Go</em>. AO5 examiners reward genre-aware reading.
+              <strong>{tr(`Use comparative dystopias.`)}</strong> Orwell, Huxley, Zamyatin, Le Guin,
+              Ishiguro&apos;s <em>{tr(`Never Let Me Go`)}</em>. AO5 examiners reward genre-aware
+              reading.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Distinguish Atwood&apos;s feminism from a one-note one.</strong> Serena Joy
-              and the Aunts complicate any simple &ldquo;men bad / women good&rdquo; reading.
+              <strong>{tr(`Distinguish Atwood&apos;s feminism from a one-note one.`)}</strong>{' '}
+              Serena Joy and the Aunts complicate any simple &ldquo;men bad / women good&rdquo;
+              reading.
             </span>
           </li>
         </ul>
@@ -1084,8 +1105,8 @@ export default function HandmaidsTalePage() {
       {/* Public-domain notice */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>The Handmaid&apos;s Tale</em> by Margaret Atwood was first published in 1985. The
-          novel is in copyright; quotations are reproduced for educational purposes under
+          <em>{tr(`The Handmaid&apos;s Tale`)}</em> by Margaret Atwood was first published in 1985.
+          The novel is in copyright; quotations are reproduced for educational purposes under
           fair-dealing provisions for criticism and review.
         </p>
       </footer>

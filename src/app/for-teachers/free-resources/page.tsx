@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -286,6 +288,13 @@ const subscriptionFeatures = [
 /* ------------------------------------------------------------------ */
 
 export default function FreeResourcesPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   const t = useT()
   const [showAnswers, setShowAnswers] = useState<Record<number, boolean>>({})
 
@@ -307,7 +316,7 @@ export default function FreeResourcesPage() {
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
             {t('for_teachers_free.h1')}{' '}
-            <span className="block text-primary">An Inspector Calls</span>
+            <span className="block text-primary">{tr(`An Inspector Calls`)}</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             {t('for_teachers_free.intro')}
@@ -343,7 +352,7 @@ export default function FreeResourcesPage() {
               <FileText className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold">Complete Lesson Plan</h2>
+              <h2 className="text-2xl font-bold">{tr(`Complete Lesson Plan`)}</h2>
               <p className="text-sm text-muted-foreground">
                 Displayed in full below and downloadable
               </p>
@@ -387,7 +396,7 @@ export default function FreeResourcesPage() {
 
             {/* Success Criteria */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Success Criteria</h3>
+              <h3 className="text-lg font-semibold mb-3">{tr(`Success Criteria`)}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {lesson.successCriteria.map((sc, i) => (
                   <li key={i} className="flex items-start gap-2">
@@ -530,7 +539,7 @@ export default function FreeResourcesPage() {
 
             {/* Teacher Notes */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Teacher Notes</h3>
+              <h3 className="text-lg font-semibold mb-3">{tr(`Teacher Notes`)}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {lesson.teacherNotes.map((note, i) => (
                   <li key={i} className="flex items-start gap-2">
@@ -578,7 +587,7 @@ export default function FreeResourcesPage() {
           <Card className="p-6 md:p-8 space-y-6 border-border/60 bg-card">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-semibold">An Inspector Calls -- Act 1</h3>
+                <h3 className="font-semibold">{tr(`An Inspector Calls -- Act 1`)}</h3>
                 <p className="text-xs text-muted-foreground">
                   {lesson.board} | {lesson.yearGroup}
                 </p>
@@ -623,7 +632,9 @@ export default function FreeResourcesPage() {
                       </button>
                       {showAnswers[i] && (
                         <div className="mt-3 rounded-md border border-emerald-500/20 bg-emerald-500/5 p-4">
-                          <p className="text-xs font-medium text-teal-700 mb-2">Model Answer:</p>
+                          <p className="text-xs font-medium text-teal-700 mb-2">
+                            {tr(`Model Answer:`)}
+                          </p>
                           <p className="text-sm text-muted-foreground leading-relaxed">
                             {q.modelAnswer}
                           </p>
@@ -655,7 +666,7 @@ export default function FreeResourcesPage() {
               <BookOpen className="h-5 w-5 text-purple-600" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold">Teaching Guide Excerpt</h2>
+              <h2 className="text-2xl font-bold">{tr(`Teaching Guide Excerpt`)}</h2>
               <p className="text-sm text-muted-foreground">
                 Context, themes, characters, quotes, and assessment criteria
               </p>
@@ -665,7 +676,7 @@ export default function FreeResourcesPage() {
           <Card className="p-6 md:p-8 space-y-8 border-border/60 bg-card">
             {/* Context Notes */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Context Notes</h3>
+              <h3 className="text-lg font-semibold mb-3">{tr(`Context Notes`)}</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 {teachingGuide.contextNotes.map((note, i) => (
                   <li key={i} className="flex items-start gap-2">
@@ -678,7 +689,7 @@ export default function FreeResourcesPage() {
 
             {/* Themes */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Key Themes</h3>
+              <h3 className="text-lg font-semibold mb-3">{tr(`Key Themes`)}</h3>
               <div className="grid gap-3 sm:grid-cols-2">
                 {teachingGuide.themes.map((theme) => (
                   <div
@@ -694,7 +705,7 @@ export default function FreeResourcesPage() {
 
             {/* Characters */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Key Characters</h3>
+              <h3 className="text-lg font-semibold mb-3">{tr(`Key Characters`)}</h3>
               <div className="space-y-3">
                 {teachingGuide.characters.map((char) => (
                   <div key={char.name} className="flex items-start gap-3 text-sm">
@@ -712,7 +723,7 @@ export default function FreeResourcesPage() {
 
             {/* Key Quotes */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Key Quotes</h3>
+              <h3 className="text-lg font-semibold mb-3">{tr(`Key Quotes`)}</h3>
               <div className="space-y-4">
                 {teachingGuide.keyQuotes.map((q, i) => (
                   <div key={i} className="rounded-md border-l-2 border-primary/40 pl-4 py-2">
@@ -726,7 +737,7 @@ export default function FreeResourcesPage() {
 
             {/* Assessment Criteria */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Assessment Criteria (AQA GCSE)</h3>
+              <h3 className="text-lg font-semibold mb-3">{tr(`Assessment Criteria (AQA GCSE)`)}</h3>
               <div className="space-y-3">
                 {teachingGuide.assessmentCriteria.map((ac) => (
                   <div key={ac.code} className="flex items-start gap-3 text-sm">
@@ -766,7 +777,7 @@ export default function FreeResourcesPage() {
               <PenTool className="h-5 w-5 text-amber-600" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold">Key Quotes Worksheet</h2>
+              <h2 className="text-2xl font-bold">{tr(`Key Quotes Worksheet`)}</h2>
               <p className="text-sm text-muted-foreground">
                 8 quote analysis tasks using the WHAT-HOW-WHY framework
               </p>
@@ -814,7 +825,7 @@ export default function FreeResourcesPage() {
               <BarChart3 className="h-5 w-5 text-red-600" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold">Mark Scheme</h2>
+              <h2 className="text-2xl font-bold">{tr(`Mark Scheme`)}</h2>
               <p className="text-sm text-muted-foreground">
                 Essay: &quot;How does Priestley present responsibility?&quot;
               </p>
@@ -857,7 +868,7 @@ export default function FreeResourcesPage() {
         {/* ---------------------------------------------------------- */}
         <section>
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold">What Else You Get With a Subscription</h2>
+            <h2 className="text-2xl font-bold">{tr(`What Else You Get With a Subscription`)}</h2>
             <p className="text-muted-foreground mt-2">
               This free pack is just the beginning. Here is what subscribers unlock:
             </p>
@@ -895,7 +906,7 @@ export default function FreeResourcesPage() {
         {/* ---------------------------------------------------------- */}
         <section className="rounded-2xl border border-border/40 bg-gradient-to-br from-primary/5 via-card to-emerald-500/5 p-8 md:p-12 text-center">
           <Award className="h-10 w-10 text-primary mx-auto mb-4" />
-          <h2 className="text-2xl font-bold mb-2">Ready to Transform Your Teaching?</h2>
+          <h2 className="text-2xl font-bold mb-2">{tr(`Ready to Transform Your Teaching?`)}</h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
             Get full access to every lesson plan, worksheet, teaching guide, AI essay marking, and
             student progress tracking. Demo 3 free uses without a card — paid plans start with a

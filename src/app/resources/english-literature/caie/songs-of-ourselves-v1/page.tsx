@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -500,6 +502,13 @@ const assessmentObjectives = [
 /* ─── Page component ─────────────────────────────────────────── */
 
 export default function SongsOfOurselvesV1Page() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
@@ -522,12 +531,12 @@ export default function SongsOfOurselvesV1Page() {
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16 lg:py-20">
         {/* ── Cambridge syllabus set-text notice ─────────────────────── */}
         <div className="mb-6 rounded-lg border border-amber-500/30 bg-amber-500/10 p-5 text-sm text-foreground">
-          <p className="font-semibold">Set-text notice</p>
+          <p className="font-semibold">{tr(`Set-text notice`)}</p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            This cluster is based on the Cambridge IGCSE 0475 syllabus <em>Songs of Ourselves</em>{' '}
-            Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster (<em>The Thought-Fox</em>,{' '}
-            <em>Hawk Roosting</em>, <em>Wind</em>). Cambridge International rotates set texts every
-            two years &mdash; always confirm via{' '}
+            This cluster is based on the Cambridge IGCSE 0475 syllabus{' '}
+            <em>{tr(`Songs of Ourselves`)}</em> Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster (
+            <em>{tr(`The Thought-Fox`)}</em>, <em>{tr(`Hawk Roosting`)}</em>, <em>Wind</em>).
+            Cambridge International rotates set texts every two years &mdash; always confirm via{' '}
             <a
               href="https://www.cambridgeinternational.org/syllabus"
               target="_blank"
@@ -539,13 +548,15 @@ export default function SongsOfOurselvesV1Page() {
             before relying on this list for the current exam window.
           </p>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            <strong className="text-foreground">Verified Vol&nbsp;1 Part&nbsp;4 poems:</strong>{' '}
-            <em>The City Planners</em> (Margaret Atwood, in copyright), <em>Funeral Blues</em>{' '}
-            (W&nbsp;H Auden &mdash; the 1940 revised version, Faber, in copyright;
-            UK&nbsp;PD&nbsp;2044), <em>Rain</em> (Edward Thomas, public domain),{' '}
-            <em>He Never Expected Much</em> (Thomas Hardy, public domain), and{' '}
-            <em>On Finding a Small Fly Crushed in a Book</em> (Charles Tennyson Turner, public
-            domain). The Ted Hughes cluster (Faber) is also in copyright.
+            <strong className="text-foreground">
+              {tr(`Verified Vol&nbsp;1 Part&nbsp;4 poems:`)}
+            </strong>{' '}
+            <em>{tr(`The City Planners`)}</em> (Margaret Atwood, in copyright),{' '}
+            <em>{tr(`Funeral Blues`)}</em> (W&nbsp;H Auden &mdash; the 1940 revised version, Faber,
+            in copyright; UK&nbsp;PD&nbsp;2044), <em>Rain</em> (Edward Thomas, public domain),{' '}
+            <em>{tr(`He Never Expected Much`)}</em> (Thomas Hardy, public domain), and{' '}
+            <em>{tr(`On Finding a Small Fly Crushed in a Book`)}</em> (Charles Tennyson Turner,
+            public domain). The Ted Hughes cluster (Faber) is also in copyright.
           </p>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Anthology publisher: Cambridge University Press &mdash; permissions queries via{' '}
@@ -564,8 +575,8 @@ export default function SongsOfOurselvesV1Page() {
         {/* ── Cluster rights notice ───────────────────────────────── */}
         <div className="mb-10 rounded-lg border border-border bg-muted/50 p-4 text-xs text-muted-foreground">
           <p>
-            <strong className="text-foreground">Rights notice:</strong> Four poems in the verified
-            Vol&nbsp;1 Part&nbsp;4 + Hughes clusters are in copyright (Atwood, Auden,
+            <strong className="text-foreground">{tr(`Rights notice:`)}</strong> Four poems in the
+            verified Vol&nbsp;1 Part&nbsp;4 + Hughes clusters are in copyright (Atwood, Auden,
             Hughes&nbsp;&times;3). Quotations on this page are short fair-dealing extracts used for
             educational analysis under UK&nbsp;CDPA s.30 (criticism and review).
           </p>
@@ -574,14 +585,14 @@ export default function SongsOfOurselvesV1Page() {
         {/* ── Legacy-anthology disclosure ─────────────────────────── */}
         <div className="mb-10 rounded-lg border border-border bg-card p-4 text-xs text-muted-foreground shadow-sm">
           <p>
-            <strong className="text-foreground">Note on poems analysed below:</strong> The
-            poem-by-poem analyses on this page cover commonly-studied <em>Songs of Ourselves</em>{' '}
-            Vol&nbsp;1 selections from earlier exam cycles (Sonnet&nbsp;18, Follower, The
-            Chimney-Sweeper, A Different History, Hunting Snake, Lament). Dedicated analyses for the
-            verified Vol&nbsp;1 Part&nbsp;4 cluster (Atwood, Auden, Thomas, Hardy, Tennyson Turner)
-            and the Ted Hughes cluster will be published separately. Use these legacy analyses as
-            templates for technique, comparison, and assessment-objective coverage rather than as
-            the current Part&nbsp;4 set list.
+            <strong className="text-foreground">{tr(`Note on poems analysed below:`)}</strong> The
+            poem-by-poem analyses on this page cover commonly-studied{' '}
+            <em>{tr(`Songs of Ourselves`)}</em> Vol&nbsp;1 selections from earlier exam cycles
+            (Sonnet&nbsp;18, Follower, The Chimney-Sweeper, A Different History, Hunting Snake,
+            Lament). Dedicated analyses for the verified Vol&nbsp;1 Part&nbsp;4 cluster (Atwood,
+            Auden, Thomas, Hardy, Tennyson Turner) and the Ted Hughes cluster will be published
+            separately. Use these legacy analyses as templates for technique, comparison, and
+            assessment-objective coverage rather than as the current Part&nbsp;4 set list.
           </p>
         </div>
 
@@ -592,24 +603,24 @@ export default function SongsOfOurselvesV1Page() {
           </h2>
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>Songs of Ourselves &mdash; Volume 1</CardTitle>
-              <CardDescription>Cambridge International Poetry Anthology</CardDescription>
+              <CardTitle>{tr(`Songs of Ourselves &mdash; Volume 1`)}</CardTitle>
+              <CardDescription>{tr(`Cambridge International Poetry Anthology`)}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 text-sm text-muted-foreground">
               <p>
-                <strong className="text-foreground">Songs of Ourselves Volume 1</strong> is the set
-                poetry anthology for Cambridge IGCSE English Literature (0475) and Cambridge O Level
-                Literature in English (2010). It contains poems spanning six centuries, from
+                <strong className="text-foreground">{tr(`Songs of Ourselves Volume 1`)}</strong> is
+                the set poetry anthology for Cambridge IGCSE English Literature (0475) and Cambridge
+                O Level Literature in English (2010). It contains poems spanning six centuries, from
                 Shakespeare to contemporary poets, organised into thematic sections.
               </p>
               <p>
-                For <strong>Paper 1 (Poetry and Prose)</strong>, you answer one question on a set
-                poem from the anthology. Questions may ask for close analysis of an extract or
+                For <strong>{tr(`Paper 1 (Poetry and Prose)`)}</strong>, you answer one question on
+                a set poem from the anthology. Questions may ask for close analysis of an extract or
                 comparison of two poems. The best responses demonstrate detailed knowledge of the
                 poems, analysis of the poet&rsquo;s methods, and personal engagement with the text.
               </p>
               <div className="rounded-lg border border-border bg-muted/50 p-4">
-                <h4 className="font-semibold text-foreground">What you need to know</h4>
+                <h4 className="font-semibold text-foreground">{tr(`What you need to know`)}</h4>
                 <ul className="mt-2 space-y-1">
                   <li>
                     &bull; You will study a selection of poems from the anthology, not all of them
@@ -723,7 +734,9 @@ export default function SongsOfOurselvesV1Page() {
 
                   {/* Form & Structure */}
                   <div>
-                    <h4 className="text-sm font-semibold text-foreground">Form &amp; Structure</h4>
+                    <h4 className="text-sm font-semibold text-foreground">
+                      {tr(`Form &amp; Structure`)}
+                    </h4>
                     <p className="mt-1 text-sm text-muted-foreground">
                       <strong className="text-foreground">Form:</strong> {poem.form}
                     </p>
@@ -752,7 +765,9 @@ export default function SongsOfOurselvesV1Page() {
 
                   {/* Detailed analysis */}
                   <div>
-                    <h4 className="text-sm font-semibold text-foreground">Detailed Analysis</h4>
+                    <h4 className="text-sm font-semibold text-foreground">
+                      {tr(`Detailed Analysis`)}
+                    </h4>
                     <div className="mt-2 space-y-3">
                       {poem.analysis.map((a, ai) => (
                         <div key={ai} className="rounded-lg bg-muted p-3">
@@ -794,7 +809,7 @@ export default function SongsOfOurselvesV1Page() {
 
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle>Integrated Comparison Technique</CardTitle>
+              <CardTitle>{tr(`Integrated Comparison Technique`)}</CardTitle>
               <CardDescription>
                 Cambridge rewards sustained, woven comparison &mdash; not &ldquo;Poem A then Poem
                 B&rdquo;
@@ -802,7 +817,7 @@ export default function SongsOfOurselvesV1Page() {
             </CardHeader>
             <CardContent className="space-y-4 text-sm text-muted-foreground">
               <div className="rounded-lg border border-border bg-muted/50 p-4">
-                <h4 className="font-semibold text-foreground">Structuring your response</h4>
+                <h4 className="font-semibold text-foreground">{tr(`Structuring your response`)}</h4>
                 <ol className="mt-2 list-inside list-decimal space-y-1">
                   <li>
                     Open with a thesis that identifies the key similarity or difference between the
@@ -825,7 +840,7 @@ export default function SongsOfOurselvesV1Page() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-foreground">What to compare</h4>
+                <h4 className="font-semibold text-foreground">{tr(`What to compare`)}</h4>
                 <div className="mt-2 grid gap-2 sm:grid-cols-2">
                   {[
                     {
@@ -867,7 +882,9 @@ export default function SongsOfOurselvesV1Page() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-foreground">Useful comparative connectives</h4>
+                <h4 className="font-semibold text-foreground">
+                  {tr(`Useful comparative connectives`)}
+                </h4>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {[
                     'Similarly,',

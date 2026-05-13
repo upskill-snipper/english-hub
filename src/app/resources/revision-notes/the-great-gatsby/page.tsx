@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import { useState } from 'react'
 
@@ -82,6 +84,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function TheGreatGatsbyPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -114,7 +123,7 @@ export default function TheGreatGatsbyPage() {
 
       {/* Quick nav */}
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
-        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-3">{tr(`Jump to section:`)}</p>
         <div className="flex flex-wrap gap-2">
           {[
             'Plot Summary',
@@ -139,7 +148,7 @@ export default function TheGreatGatsbyPage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section title="Chapter-by-Chapter Plot Summary" icon="📖" defaultOpen>
+          <Section title={tr(`Chapter-by-Chapter Plot Summary`)} icon="📖" defaultOpen>
             <div className="space-y-4">
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
@@ -416,7 +425,7 @@ export default function TheGreatGatsbyPage() {
 
         {/* ────────────────────────────────── CHARACTERS */}
         <div id="characters">
-          <Section title="Character Profiles" icon="👤">
+          <Section title={tr(`Character Profiles`)} icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Nick Carraway"
@@ -456,30 +465,30 @@ export default function TheGreatGatsbyPage() {
 
         {/* ────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section title="Key Themes" icon="💡">
+          <Section title={tr(`Key Themes`)} icon="💡">
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
-                title="The American Dream"
+                title={tr(`The American Dream`)}
                 description="Fitzgerald's most famous theme. Gatsby embodies the dream's most romantic version &mdash; that anyone, however humbly born, can remake himself through will and desire. James Gatz's boyhood schedule of self-improvement, recovered by his father in Chapter 9, is a Benjamin-Franklin-style document of American aspiration. But Gatsby's wealth is bootlegging money and his goal is another man's wife: the dream is corrupted at the source. The novel's ending pulls the dream backwards, comparing Gatsby's green light to the 'fresh, green breast of the new world' that the Dutch sailors saw &mdash; suggesting that the American Dream was always a backwards-looking fantasy of recovered innocence, doomed to outpace reality. Fitzgerald is both elegist and critic: he mourns the dream and exposes it."
               />
               <ThemeCard
-                title="Class and Wealth"
+                title={tr(`Class and Wealth`)}
                 description="The novel's geography is the novel's class system. East Egg is old money; West Egg, where Gatsby builds his Norman-style mansion, is new money; the Valley of Ashes is the dust into which industrial wealth is converted. Tom's contempt for Gatsby is not really about morality &mdash; Tom is corrupt himself &mdash; but about lineage. Daisy chooses East Egg because it is permanent. Fitzgerald presents American class as a fortress with the door pulled shut behind those already inside: Gatsby's bootlegging buys him a house but never an identity. The novel anticipates later sociological accounts of how 'old money' polices its own borders by aesthetic means: dress, accent, sport, and casual cruelty."
               />
               <ThemeCard
-                title="Love versus Obsession"
+                title={tr(`Love versus Obsession`)}
                 description="What Gatsby feels for Daisy is not love in any reciprocal sense. He has spent five years building a fantasy version of her, and when the real woman fails to match it, he refuses to accept the gap. Nick observes that 'no amount of fire or freshness can challenge what a man can store up in his ghostly heart.' This is the novel's most penetrating insight into romantic obsession: the beloved becomes a screen for the lover's projection. Daisy is both real (she has feelings, fears, a child) and a function of Gatsby's dream. Her tragedy is that she cannot live up to either role, and in Chapter 7 she stops trying. Fitzgerald is unflinching about the self-centredness inside what looks like devotion."
               />
               <ThemeCard
-                title="Time and Memory"
+                title={tr(`Time and Memory`)}
                 description="Clocks and calendars haunt the novel. Gatsby knocks Nick's mantel clock during the reunion in Chapter 5 &mdash; a comic image of his attempt to stop time. He insists, against Nick, that the past can be repeated. The book's recurring autumn imagery, its compression of action into a single summer, its closing image of 'boats against the current, borne back ceaselessly into the past' all dramatise the impossibility of recovering what is gone. Fitzgerald, writing in 1924&ndash;25, is also conscious of post-war time: the trenches have made innocence retrospectively impossible for an entire generation, and Gatsby's dream of Louisville-before-the-war shares in that wider grief."
               />
               <ThemeCard
-                title="Moral Decay"
+                title={tr(`Moral Decay`)}
                 description="Beneath the surface glamour, the novel charts the rotting of post-war American values. Wolfsheim has fixed the World Series. Gatsby is a bootlegger. Tom is a casual racist and adulterer. Daisy lets a man die for her. Even Nick, who claims honesty, lies and looks the other way. The Valley of Ashes is the novel's literal symbol of this decay &mdash; the by-product of a society that produces wealth without producing meaning. Fitzgerald, who wrote during the Harding-administration corruption scandals, presents the Jazz Age as a society in moral free-fall, its hollowness exposed by the violence of one summer. The blue lawn parties exist because nothing else holds together."
               />
               <ThemeCard
-                title="East versus West / Old Money versus New"
+                title={tr(`East versus West / Old Money versus New`)}
                 description="Nick's closing reflection identifies the novel as 'a story of the West, after all.' Tom, Daisy, Jordan, Gatsby, and Nick are all Midwesterners; only the East has the wealth and the social machinery to undo them. East Egg's old money is established, dynastic, and self-protecting; West Egg's new money is gaudy, anxious, and disposable. Fitzgerald uses this geographical opposition to explore American identity: the Midwest as a site of supposed innocence, the East as the site of corruption, with the Buchanans as people who shuttle between the two and damage everything they touch. Nick's retreat to the Midwest in Chapter 9 is the novel's only available, and only partially convincing, moral resolution."
               />
             </div>
@@ -488,10 +497,10 @@ export default function TheGreatGatsbyPage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Historical and Biographical Context" icon="🏛️">
+          <Section title={tr(`Historical and Biographical Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Jazz Age</h4>
+                <h4 className="font-bold text-primary">{tr(`The Jazz Age`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Fitzgerald himself coined the phrase &ldquo;the Jazz Age&rdquo; for the decade
                   between the end of the First World War in 1918 and the Wall Street Crash of 1929.
@@ -504,7 +513,7 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Prohibition (1920&ndash;1933)</h4>
+                <h4 className="font-bold text-primary">{tr(`Prohibition (1920&ndash;1933)`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Eighteenth Amendment banned the manufacture and sale of alcohol in the United
                   States from January 1920. The result was not sobriety but the largest
@@ -516,7 +525,7 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Post-War Disillusionment</h4>
+                <h4 className="font-bold text-primary">{tr(`Post-War Disillusionment`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The First World War (1914&ndash;1918) had killed roughly 116,000 Americans and
                   destroyed the late-Victorian belief in moral progress. Gatsby and Nick are
@@ -528,19 +537,19 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Lost Generation</h4>
+                <h4 className="font-bold text-primary">{tr(`The Lost Generation`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Gertrude Stein&apos;s phrase, popularised by Hemingway, named the generation of
                   writers who had come of age during or just after the war and gathered as
                   expatriates in Paris in the 1920s. Fitzgerald wrote much of{' '}
-                  <em>The Great Gatsby</em> on the French Riviera in 1924. The Lost
+                  <em>{tr(`The Great Gatsby`)}</em> on the French Riviera in 1924. The Lost
                   Generation&apos;s themes &mdash; the failure of pre-war ideals, the search for
                   meaning in style and sensation, the conviction that something fundamental had
                   broken &mdash; shape the novel&apos;s whole atmosphere.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Wall Street Boom</h4>
+                <h4 className="font-bold text-primary">{tr(`The Wall Street Boom`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Stock prices roughly tripled between 1922 and 1929. Easy credit, new consumer
                   goods (the radio, the automobile), and a wave of speculative wealth created the
@@ -552,7 +561,7 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Fitzgerald and Zelda</h4>
+                <h4 className="font-bold text-primary">{tr(`Fitzgerald and Zelda`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Fitzgerald (1896&ndash;1940) met Zelda Sayre, a Southern belle from Montgomery,
                   Alabama, in 1918 while stationed there as an army officer. She broke off their
@@ -572,7 +581,7 @@ export default function TheGreatGatsbyPage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
+          <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               Eighteen quotations covering plot, character, and theme. Memorise the short ones.
             </p>
@@ -590,7 +599,7 @@ export default function TheGreatGatsbyPage() {
               <QuoteCard
                 quote="This is a valley of ashes&mdash;a fantastic farm where ashes grow like wheat into ridges and hills and grotesque gardens."
                 speaker="Nick (Chapter 2)"
-                analysis="The Valley of Ashes is the novel's great industrial wasteland. The simile &lsquo;like wheat&rsquo; turns industrial waste into a perverse harvest, suggesting that what the Jazz Age cultivates is dust. &lsquo;Grotesque&rsquo; is the key Gothic term: this is the underside of Tom and Daisy's lawns. T. S. Eliot's <em>The Waste Land</em> (1922) is a clear influence."
+                analysis="The Valley of Ashes is the novel's great industrial wasteland. The simile &lsquo;like wheat&rsquo; turns industrial waste into a perverse harvest, suggesting that what the Jazz Age cultivates is dust. &lsquo;Grotesque&rsquo; is the key Gothic term: this is the underside of Tom and Daisy's lawns. T. S. Eliot's <em>{tr(`The Waste Land`)}</em> (1922) is a clear influence."
               />
               <QuoteCard
                 quote="The eyes of Doctor T. J. Eckleburg are blue and gigantic&mdash;their retinas are one yard high. They look out of no face, but, instead, from a pair of enormous yellow spectacles which pass over a non-existent nose."
@@ -673,10 +682,10 @@ export default function TheGreatGatsbyPage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Symbols and Motifs" icon="🪞">
+          <Section title={tr(`Symbols and Motifs`)} icon="🪞">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Green Light</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Green Light`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   At the end of Daisy&apos;s dock in East Egg, visible from Gatsby&apos;s lawn
                   across the bay. In Chapter 1 it is a private signal: Gatsby stretches his arms
@@ -689,7 +698,7 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Valley of Ashes</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Valley of Ashes`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The industrial dumping ground between West Egg and Manhattan. Modelled on the
                   Corona Ash Dumps in Queens, it is the literal substrate of the novel&apos;s
@@ -700,7 +709,9 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Eyes of Doctor T. J. Eckleburg</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`The Eyes of Doctor T. J. Eckleburg`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   A faded billboard advertising an oculist, looming over the Valley of Ashes. The
                   eyes &ldquo;dimmed a little by many paintless days under sun and rain, brood on
@@ -712,7 +723,7 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Colour Gold (and Yellow)</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Colour Gold (and Yellow)`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel&apos;s richest colour scheme. Daisy is the &ldquo;golden girl&rdquo;;
                   her name is a flower with a yellow centre. Gatsby&apos;s car is a &ldquo;rich
@@ -724,7 +735,7 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Gatsby&apos;s Parties</h4>
+                <h4 className="font-bold text-foreground">{tr(`Gatsby&apos;s Parties`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Saturday-night spectacles thrown by Gatsby in the hope that Daisy will one day
                   wander in. They are exhaustively catalogued in Chapter 3 &mdash; the orchestra,
@@ -737,7 +748,7 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">East Egg and West Egg</h4>
+                <h4 className="font-bold text-foreground">{tr(`East Egg and West Egg`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The two peninsulas of Long Island in which the novel takes place: East Egg holds
                   old, inherited wealth (Tom and Daisy); West Egg holds new, often suspect wealth
@@ -749,7 +760,7 @@ export default function TheGreatGatsbyPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Owl-Eyed Man</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Owl-Eyed Man`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   A minor but symbolically loaded figure. Drunk in Gatsby&apos;s library in Chapter
                   3, he marvels that the books are real (their pages uncut, never read) and mutters
@@ -914,7 +925,7 @@ export default function TheGreatGatsbyPage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   3. Discuss the significance of the Valley of Ashes and the eyes of Doctor T. J.
-                  Eckleburg in <em>The Great Gatsby</em>. (Edexcel-style; 35 marks)
+                  Eckleburg in <em>{tr(`The Great Gatsby`)}</em>. (Edexcel-style; 35 marks)
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -934,8 +945,9 @@ export default function TheGreatGatsbyPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Ashes grow like wheat into ridges and hills and grotesque
-                      gardens.&rdquo; Connection to T. S. Eliot&apos;s <em>The Waste Land</em>{' '}
-                      (1922). The Valley as the literal substrate of modern wealth.
+                      gardens.&rdquo; Connection to T. S. Eliot&apos;s{' '}
+                      <em>{tr(`The Waste Land`)}</em> (1922). The Valley as the literal substrate of
+                      modern wealth.
                     </p>
                   </div>
                   <div>
@@ -1035,8 +1047,8 @@ export default function TheGreatGatsbyPage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   5. How does Fitzgerald use the symbolic and the concrete in{' '}
-                  <em>The Great Gatsby</em>? You should refer to specific passages in your answer.
-                  (OCR-style close-reading question; 30 marks)
+                  <em>{tr(`The Great Gatsby`)}</em>? You should refer to specific passages in your
+                  answer. (OCR-style close-reading question; 30 marks)
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -1103,20 +1115,22 @@ export default function TheGreatGatsbyPage() {
 
       {/* Exam Tips */}
       <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
-        <h3 className="text-lg font-bold text-foreground">Exam Tips for The Great Gatsby</h3>
+        <h3 className="text-lg font-bold text-foreground">
+          {tr(`Exam Tips for The Great Gatsby`)}
+        </h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Read Nick sceptically.</strong> Always treat his judgements as filtered. The
-              phrase &ldquo;Fitzgerald presents Nick as&hellip;&rdquo; opens better answers than
-              &ldquo;Nick says&hellip;&rdquo;
+              <strong>{tr(`Read Nick sceptically.`)}</strong> Always treat his judgements as
+              filtered. The phrase &ldquo;Fitzgerald presents Nick as&hellip;&rdquo; opens better
+              answers than &ldquo;Nick says&hellip;&rdquo;
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Anchor every theme to a date.</strong> 1922 setting, 1925 publication,
+              <strong>{tr(`Anchor every theme to a date.`)}</strong> 1922 setting, 1925 publication,
               Prohibition begins 1920, the Wall Street Crash is in 1929 (after the novel ends but
               inside its logic).
             </span>
@@ -1124,31 +1138,32 @@ export default function TheGreatGatsbyPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use AO3 (context) precisely.</strong> Bootlegging, the Lost Generation,
-              Fitzgerald and Zelda&apos;s biographical parallel, T. S. Eliot&apos;s influence on the
-              Valley of Ashes.
+              <strong>{tr(`Use AO3 (context) precisely.`)}</strong> Bootlegging, the Lost
+              Generation, Fitzgerald and Zelda&apos;s biographical parallel, T. S. Eliot&apos;s
+              influence on the Valley of Ashes.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use AO5 (interpretation) as a discriminator.</strong> Reference at least one
-              named critical position (e.g. Marius Bewley on the &lsquo;incorruptible dream&rsquo;,
-              feminist readings of Daisy) and qualify it.
+              <strong>{tr(`Use AO5 (interpretation) as a discriminator.`)}</strong> Reference at
+              least one named critical position (e.g. Marius Bewley on the &lsquo;incorruptible
+              dream&rsquo;, feminist readings of Daisy) and qualify it.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Quote tightly.</strong> Short embedded quotations beat long blocks. &ldquo;Her
-              voice is full of money&rdquo; in three words gets you both AO1 and AO2.
+              <strong>{tr(`Quote tightly.`)}</strong> Short embedded quotations beat long blocks.
+              &ldquo;Her voice is full of money&rdquo; in three words gets you both AO1 and AO2.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use the right form word.</strong> Call <em>The Great Gatsby</em> a novel, not
-              a book. Refer to chapters, not sections.
+              <strong>{tr(`Use the right form word.`)}</strong> Call{' '}
+              <em>{tr(`The Great Gatsby`)}</em> a novel, not a book. Refer to chapters, not
+              sections.
             </span>
           </li>
         </ul>
@@ -1157,7 +1172,7 @@ export default function TheGreatGatsbyPage() {
       {/* Footer notice */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>The Great Gatsby</em> by F. Scott Fitzgerald was first published by Charles
+          <em>{tr(`The Great Gatsby`)}</em> by F. Scott Fitzgerald was first published by Charles
           Scribner&apos;s Sons in April 1925. The novel entered the public domain in the United
           States on 1 January 2021. All quotations on this page are reproduced from the published
           text of the novel.

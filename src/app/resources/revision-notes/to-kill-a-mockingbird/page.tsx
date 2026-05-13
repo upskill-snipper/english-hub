@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import { useState } from 'react'
 
@@ -82,6 +84,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function ToKillAMockingbirdPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -103,7 +112,7 @@ export default function ToKillAMockingbirdPage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           To Kill a Mockingbird &mdash; Complete Revision Guide
         </h1>
-        <p className="mt-1 text-lg text-muted-foreground">Harper Lee, 1960</p>
+        <p className="mt-1 text-lg text-muted-foreground">{tr(`Harper Lee, 1960`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           A complete IGCSE and GCSE study guide to Harper Lee&apos;s Pulitzer Prize-winning novel.
           Includes plot breakdown of Parts One and Two, in-depth character profiles, key themes with
@@ -114,7 +123,7 @@ export default function ToKillAMockingbirdPage() {
 
       {/* Quick nav */}
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
-        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-3">{tr(`Jump to section:`)}</p>
         <div className="flex flex-wrap gap-2">
           {[
             'Plot Summary',
@@ -139,7 +148,7 @@ export default function ToKillAMockingbirdPage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section title="Plot Summary" icon="📖" defaultOpen>
+          <Section title={tr(`Plot Summary`)} icon="📖" defaultOpen>
             <div className="space-y-5">
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
@@ -216,7 +225,7 @@ export default function ToKillAMockingbirdPage() {
 
         {/* ────────────────────────────────── CHARACTERS */}
         <div id="characters">
-          <Section title="Character Profiles" icon="👤">
+          <Section title={tr(`Character Profiles`)} icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Scout (Jean Louise) Finch"
@@ -272,18 +281,18 @@ export default function ToKillAMockingbirdPage() {
 
         {/* ────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section title="Key Themes" icon="💡">
+          <Section title={tr(`Key Themes`)} icon="💡">
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
-                title="Racial Injustice"
+                title={tr(`Racial Injustice`)}
                 description="The novel's most prominent theme. Lee depicts a justice system structurally rigged against Black defendants in the Jim Crow South. Tom Robinson's case is hopeless not because of evidence but because of his race: an all-white jury cannot acquit a Black man accused by a white woman, regardless of facts. Atticus tells Jem that 'in our courts, when it's a white man's word against a black man's, the white man always wins.' Tom's death — shot trying to escape — and the community's relative indifference reveal the lethal violence of legalised racism. Lee shows segregation operating at every level: the segregated courthouse balcony, the Black church, even Aunt Alexandra's missionary tea."
               />
               <ThemeCard
-                title="Childhood Innocence vs Adult Prejudice"
+                title={tr(`Childhood Innocence vs Adult Prejudice`)}
                 description="The novel is a Bildungsroman tracking Scout and Jem's loss of innocence. Children begin with absorbed prejudices (the Boo Radley myths) but possess fundamental moral clarity Maycomb's adults have abandoned. Dill weeps at Mr Gilmer's contempt for Tom because he has not yet learned to disregard it. Jem, after the verdict, asks 'How could they do it?' — a question adults have stopped asking. Scout's development is gentler: she retains compassion (recognising Mr Cunningham at the jail) while gradually understanding the codes of her world. Adult prejudice is presented as a learned corruption of natural empathy."
               />
               <ThemeCard
-                title="Moral Courage"
+                title={tr(`Moral Courage`)}
                 description="Lee redefines courage through Atticus and Mrs Dubose. Real courage, Atticus says, is 'when you know you're licked before you begin but you begin anyway and you see it through no matter what.' Mrs Dubose conquering morphine addiction before death exemplifies it; so does Atticus defending Tom in full knowledge he cannot win. The novel distinguishes physical bravery (the rabid dog) from moral courage (standing against community opinion). Scout learns that her father is 'the bravest man who ever lived' because he refuses to compromise integrity, even when his children are insulted in the street."
               />
               <ThemeCard
@@ -291,7 +300,7 @@ export default function ToKillAMockingbirdPage() {
                 description="The ethical core of the novel, articulated in Atticus's first lesson to Scout: 'You never really understand a person until you consider things from his point of view — until you climb into his skin and walk around in it.' Empathy is the corrective to prejudice. Scout learns to apply it to Walter Cunningham, to Mrs Dubose, to Mayella, and finally to Boo Radley, whose porch she literally stands on at the novel's climactic moment. Lee suggests empathy is not an emotion but a discipline — a chosen act of imagination."
               />
               <ThemeCard
-                title="Class Hierarchies in Maycomb"
+                title={tr(`Class Hierarchies in Maycomb`)}
                 description="Beyond race, Maycomb is rigidly stratified by class. Jem theorises: 'There's four kinds of folks in the world. There's the ordinary kind like us and the neighbours, there's the kind like the Cunninghams out in the woods, the kind like the Ewells down at the dump, and the Negroes.' The Cunninghams are poor but proud (Walter will not accept charity); the Ewells are 'trash' who exploit social codes for power; the Black community sits beneath all white classes regardless of dignity. Aunt Alexandra polices class boundaries (Walter cannot visit because he is 'trash'); Scout questions them. Lee uses class to show that the Southern hierarchy is not natural but artificially maintained through education, privilege, and exclusion."
               />
               <ThemeCard
@@ -304,7 +313,7 @@ export default function ToKillAMockingbirdPage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Historical and Social Context" icon="🏛️">
+          <Section title={tr(`Historical and Social Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">
@@ -320,7 +329,7 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Jim Crow Laws and Segregation</h4>
+                <h4 className="font-bold text-primary">{tr(`Jim Crow Laws and Segregation`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   From the 1870s until the Civil Rights Act of 1964, Southern states enforced
                   &ldquo;Jim Crow&rdquo; laws mandating racial segregation in schools, transport,
@@ -333,7 +342,7 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Scottsboro Boys Trial</h4>
+                <h4 className="font-bold text-primary">{tr(`The Scottsboro Boys Trial`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   In 1931, nine Black teenagers in Scottsboro, Alabama, were falsely accused of
                   raping two white women on a freight train. They were tried in a series of rushed
@@ -348,7 +357,9 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Civil Rights Era Publication (1960)</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Civil Rights Era Publication (1960)`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Although set in the 1930s, the novel was published in July 1960, at the height of
                   the Civil Rights Movement. Brown v. Board of Education had outlawed segregated
@@ -360,25 +371,26 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Harper Lee&apos;s Biography</h4>
+                <h4 className="font-bold text-primary">{tr(`Harper Lee&apos;s Biography`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Nelle Harper Lee (1926&ndash;2016) grew up in Monroeville, Alabama. Her father
                   A.C. Lee was a lawyer who once defended two Black men accused of murder; both were
                   convicted and hanged. Her childhood neighbour was the writer Truman Capote, the
                   model for Dill. Lee studied law but did not finish, moving to New York to write.{' '}
-                  <em>To Kill a Mockingbird</em>, her first published novel, drew heavily on her
-                  childhood. She published essentially nothing else during her lifetime;{' '}
-                  <em>Go Set a Watchman</em> (2015), an earlier draft, was published controversially
-                  in her old age. Lee was a famously private figure, and the autobiographical
-                  intimacy of the novel partly explains its emotional force.
+                  <em>{tr(`To Kill a Mockingbird`)}</em>, her first published novel, drew heavily on
+                  her childhood. She published essentially nothing else during her lifetime;{' '}
+                  <em>{tr(`Go Set a Watchman`)}</em> (2015), an earlier draft, was published
+                  controversially in her old age. Lee was a famously private figure, and the
+                  autobiographical intimacy of the novel partly explains its emotional force.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Bildungsroman Tradition</h4>
+                <h4 className="font-bold text-primary">{tr(`The Bildungsroman Tradition`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   A <em>Bildungsroman</em> (German: &ldquo;novel of formation&rdquo;) traces a young
                   protagonist&apos;s moral and psychological development. The genre originated with
-                  Goethe&apos;s <em>Wilhelm Meister</em> (1795&ndash;6) and includes Dickens&apos;s
+                  Goethe&apos;s <em>{tr(`Wilhelm Meister`)}</em> (1795&ndash;6) and includes
+                  Dickens&apos;s
                   <em> Great Expectations</em>, Bront&euml;&apos;s <em>Jane Eyre</em>, and
                   Salinger&apos;s
                   <em> The Catcher in the Rye</em>. Lee&apos;s novel adapts the form by using a
@@ -395,7 +407,7 @@ export default function ToKillAMockingbirdPage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
+          <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               15+ quotations organised by theme and character for exam revision. All directly from
               Harper Lee&apos;s text.
@@ -497,26 +509,26 @@ export default function ToKillAMockingbirdPage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Key Symbols and Motifs" icon="🕊️">
+          <Section title={tr(`Key Symbols and Motifs`)} icon="🕊️">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Mockingbird</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Mockingbird`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel&apos;s central symbol, given its name in the title. The mockingbird
                   represents innocence and harmlessness destroyed by cruelty. Miss Maudie defines
                   the mockingbird as a creature that &ldquo;don&apos;t do one thing but make music
                   for us to enjoy.&rdquo; In the novel, two characters embody this symbol:{' '}
-                  <strong>Tom Robinson</strong>, a kind man destroyed by a false accusation he could
-                  not have made true, and <strong>Boo Radley</strong>, a gentle recluse who is
-                  &ldquo;mocked&rdquo; by gossip and whom Scout recognises must not be exposed to
-                  public view (&ldquo;sort of like shootin&apos; a mockingbird&rdquo;). The symbol
-                  unites the two halves of the novel &mdash; the Boo plot of Part One and the Tom
-                  plot of Part Two &mdash; into a single moral statement: it is a sin to destroy the
-                  harmless.
+                  <strong>{tr(`Tom Robinson`)}</strong>, a kind man destroyed by a false accusation
+                  he could not have made true, and <strong>{tr(`Boo Radley`)}</strong>, a gentle
+                  recluse who is &ldquo;mocked&rdquo; by gossip and whom Scout recognises must not
+                  be exposed to public view (&ldquo;sort of like shootin&apos; a
+                  mockingbird&rdquo;). The symbol unites the two halves of the novel &mdash; the Boo
+                  plot of Part One and the Tom plot of Part Two &mdash; into a single moral
+                  statement: it is a sin to destroy the harmless.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Mad Dog (Tim Johnson)</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Mad Dog (Tim Johnson)`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   In Chapter 10, a rabid dog named Tim Johnson stumbles down the Maycomb street.
                   Heck Tate hands his rifle to Atticus, who shoots the dog cleanly with a single
@@ -529,7 +541,9 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Boo&apos;s Gifts in the Tree-Knothole</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`Boo&apos;s Gifts in the Tree-Knothole`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Throughout Part One, the children find small gifts in the knothole of an oak tree
                   on the Radley property: gum, pennies, soap figures of Scout and Jem, a watch, a
@@ -543,7 +557,7 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Atticus&apos;s Glasses</h4>
+                <h4 className="font-bold text-foreground">{tr(`Atticus&apos;s Glasses`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Atticus is repeatedly described as bookish and bespectacled; the children consider
                   him &ldquo;feeble&rdquo; because he wears glasses, does not hunt, and does not
@@ -556,7 +570,9 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Rabid Dog Scene as Allegory</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`The Rabid Dog Scene as Allegory`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Tim Johnson scene operates on multiple symbolic levels. The dog is sick
                   through no fault of its own &mdash; rabies infects the innocent. The community
@@ -569,7 +585,7 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Radley House</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Radley House`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The closed-up Radley house is itself a symbol: of secrets, of social ostracism, of
                   the Gothic interior of Maycomb&apos;s respectable surface. Its &ldquo;malevolent
@@ -581,7 +597,7 @@ export default function ToKillAMockingbirdPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Mayella&apos;s Geraniums</h4>
+                <h4 className="font-bold text-foreground">{tr(`Mayella&apos;s Geraniums`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Among the squalor of the Ewell yard &mdash; described as a dump &mdash; Mayella
                   tends red geraniums in chipped pots. The geraniums are a symbol of her stunted
@@ -598,7 +614,7 @@ export default function ToKillAMockingbirdPage() {
 
         {/* ────────────────────────────────── PRACTICE QUESTIONS */}
         <div id="practice-questions">
-          <Section title="Exam-Style Questions with Planning Notes" icon="✍️">
+          <Section title={tr(`Exam-Style Questions with Planning Notes`)} icon="✍️">
             <p className="text-sm text-muted-foreground mb-5">
               Five Edexcel IGCSE 4ET1-style questions and three GCSE-style questions, each with
               thesis suggestions and paragraph planning. Each plan includes a thesis, paragraph
@@ -614,7 +630,7 @@ export default function ToKillAMockingbirdPage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   1. Explore how Lee presents the theme of prejudice in{' '}
-                  <em>To Kill a Mockingbird</em>. (40 marks)
+                  <em>{tr(`To Kill a Mockingbird`)}</em>. (40 marks)
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -956,14 +972,16 @@ export default function ToKillAMockingbirdPage() {
               </div>
             </div>
 
-            <h3 className="text-base font-bold text-foreground mb-3">GCSE-Style Questions</h3>
+            <h3 className="text-base font-bold text-foreground mb-3">
+              {tr(`GCSE-Style Questions`)}
+            </h3>
 
             <div className="space-y-6">
               {/* GCSE 1 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  6. How does Lee present the theme of family in <em>To Kill a Mockingbird</em>?
-                  Refer to the whole text. (30 marks)
+                  6. How does Lee present the theme of family in{' '}
+                  <em>{tr(`To Kill a Mockingbird`)}</em>? Refer to the whole text. (30 marks)
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -1080,7 +1098,8 @@ export default function ToKillAMockingbirdPage() {
               {/* GCSE 3 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  8. How does Lee present women in <em>To Kill a Mockingbird</em>? (30 marks)
+                  8. How does Lee present women in <em>{tr(`To Kill a Mockingbird`)}</em>? (30
+                  marks)
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -1143,7 +1162,7 @@ export default function ToKillAMockingbirdPage() {
 
         {/* ────────────────────────────────── PRACTICE LIST */}
         <div id="practice-list">
-          <Section title="Further Practice Questions" icon="📝">
+          <Section title={tr(`Further Practice Questions`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4">
               Additional exam-style questions covering commonly tested areas. Consider how you would
               structure responses using PEEL paragraphs, embedded quotations, and contextual links.
@@ -1194,60 +1213,62 @@ export default function ToKillAMockingbirdPage() {
 
       {/* Exam Tips */}
       <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
-        <h3 className="text-lg font-bold text-foreground">Exam Tips for To Kill a Mockingbird</h3>
+        <h3 className="text-lg font-bold text-foreground">
+          {tr(`Exam Tips for To Kill a Mockingbird`)}
+        </h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Always link to context.</strong> Connect the trial to Jim Crow, the Scottsboro
-              Boys, and the Civil Rights Movement of the 1960s when Lee was writing.
+              <strong>{tr(`Always link to context.`)}</strong> Connect the trial to Jim Crow, the
+              Scottsboro Boys, and the Civil Rights Movement of the 1960s when Lee was writing.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use Lee&apos;s methods.</strong> Discuss the dual narrative voice (child Scout
-              / adult Jean Louise), symbolism (the mockingbird, the rabid dog), and structural
-              choices (Part One Boo plot / Part Two Tom plot).
+              <strong>{tr(`Use Lee&apos;s methods.`)}</strong> Discuss the dual narrative voice
+              (child Scout / adult Jean Louise), symbolism (the mockingbird, the rabid dog), and
+              structural choices (Part One Boo plot / Part Two Tom plot).
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Refer to authorial intention.</strong> &ldquo;Lee perhaps suggests...&rdquo;
-              or &ldquo;Lee uses Atticus to argue...&rdquo;
+              <strong>{tr(`Refer to authorial intention.`)}</strong> &ldquo;Lee perhaps
+              suggests...&rdquo; or &ldquo;Lee uses Atticus to argue...&rdquo;
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Connect themes.</strong> Every quote should link to at least two themes
-              &mdash; the trial connects to racial injustice, class, moral courage, and the loss of
-              innocence simultaneously.
+              <strong>{tr(`Connect themes.`)}</strong> Every quote should link to at least two
+              themes &mdash; the trial connects to racial injustice, class, moral courage, and the
+              loss of innocence simultaneously.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use precise terminology.</strong> &ldquo;Bildungsroman,&rdquo; &ldquo;dual
-              narrative voice,&rdquo; &ldquo;retrospective narration,&rdquo; &ldquo;Jim Crow,&rdquo;
-              &ldquo;allegory,&rdquo; &ldquo;motif.&rdquo;
+              <strong>{tr(`Use precise terminology.`)}</strong> &ldquo;Bildungsroman,&rdquo;
+              &ldquo;dual narrative voice,&rdquo; &ldquo;retrospective narration,&rdquo; &ldquo;Jim
+              Crow,&rdquo; &ldquo;allegory,&rdquo; &ldquo;motif.&rdquo;
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Address the whole novel.</strong> Don&apos;t focus only on the trial &mdash;
-              reference the Boo Radley plot, the rabid dog scene, Mrs Dubose, and the final chapter
-              to demonstrate full knowledge.
+              <strong>{tr(`Address the whole novel.`)}</strong> Don&apos;t focus only on the trial
+              &mdash; reference the Boo Radley plot, the rabid dog scene, Mrs Dubose, and the final
+              chapter to demonstrate full knowledge.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Quote precisely.</strong> Embed short, exact quotations into your sentences.
-              Always attribute (&ldquo;Atticus tells Scout...&rdquo;) and analyse (&ldquo;The phrase
-              suggests...&rdquo;).
+              <strong>{tr(`Quote precisely.`)}</strong> Embed short, exact quotations into your
+              sentences. Always attribute (&ldquo;Atticus tells Scout...&rdquo;) and analyse
+              (&ldquo;The phrase suggests...&rdquo;).
             </span>
           </li>
         </ul>
@@ -1256,9 +1277,9 @@ export default function ToKillAMockingbirdPage() {
       {/* Copyright notice */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>To Kill a Mockingbird</em> by Harper Lee was first published in 1960 and won the
-          Pulitzer Prize for Fiction in 1961. The novel remains <strong>under copyright</strong>;
-          all quotations on this page are reproduced for the purposes of educational study and
+          <em>{tr(`To Kill a Mockingbird`)}</em> by Harper Lee was first published in 1960 and won
+          the Pulitzer Prize for Fiction in 1961. The novel remains <strong>under copyright</strong>
+          ; all quotations on this page are reproduced for the purposes of educational study and
           critical analysis under fair dealing/fair use provisions for review and quotation.
         </p>
       </footer>

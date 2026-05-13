@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import { useState } from 'react'
 
@@ -82,6 +84,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function JuliusCaesarPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -106,7 +115,7 @@ export default function JuliusCaesarPage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Julius Caesar &mdash; Complete Revision Guide
         </h1>
-        <p className="mt-1 text-lg text-muted-foreground">William Shakespeare, c.1599</p>
+        <p className="mt-1 text-lg text-muted-foreground">{tr(`William Shakespeare, c.1599`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Everything you need for your GCSE and A-Level English Literature exam. Act-by-act plot,
           character profiles, themes with evidence, key quotations with analysis, Roman context,
@@ -116,7 +125,7 @@ export default function JuliusCaesarPage() {
 
       {/* Quick nav */}
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
-        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-3">{tr(`Jump to section:`)}</p>
         <div className="flex flex-wrap gap-2">
           {[
             'Plot Summary',
@@ -144,7 +153,7 @@ export default function JuliusCaesarPage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section title="Act-by-Act Summary" icon="📖" defaultOpen>
+          <Section title={tr(`Act-by-Act Summary`)} icon="📖" defaultOpen>
             <div className="space-y-4">
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
@@ -343,7 +352,7 @@ export default function JuliusCaesarPage() {
 
         {/* ────────────────────────────────── CHARACTERS */}
         <div id="characters">
-          <Section title="Character Profiles" icon="👤">
+          <Section title={tr(`Character Profiles`)} icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Julius Caesar"
@@ -391,30 +400,30 @@ export default function JuliusCaesarPage() {
 
         {/* ────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section title="Key Themes" icon="💡">
+          <Section title={tr(`Key Themes`)} icon="💡">
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
-                title="Honour vs Ambition"
+                title={tr(`Honour vs Ambition`)}
                 description="The central moral conflict of the play. Brutus values honour above all and is celebrated for it; Caesar is killed for ambition. Yet Shakespeare problematises both. Brutus's honour leads him to participate in regicide; Caesar's 'ambition' may be no more than legitimate political success. Antony's ironic refrain in his oration — 'Brutus is an honourable man' — uses the word 'honourable' so often that it becomes hollow, exposing how moral language can be weaponised. The play asks whether honour without political wisdom is itself a kind of vanity, and whether ambition, properly judged, is wickedness or merely human."
               />
               <ThemeCard
-                title="Fate vs Free Will"
+                title={tr(`Fate vs Free Will`)}
                 description="The play is saturated with omens, prophecies, and dreams — the Soothsayer, Calpurnia's dream, the bleeding statue, the storm, Caesar's ghost. Yet every prophecy is dismissed or ignored, and characters consistently believe they are choosing their own path. Cassius declares 'The fault, dear Brutus, is not in our stars, / But in ourselves, that we are underlings,' arguing for human agency — yet the play repeatedly shows that the warnings are always right. Shakespeare leaves the question unresolved: do men shape history, or does fate shape them? The very fact that Brutus 'meets' Caesar's ghost at Philippi suggests forces beyond individual will."
               />
               <ThemeCard
-                title="Public vs Private Self"
+                title={tr(`Public vs Private Self`)}
                 description="Every major character has a public mask and a private reality. Caesar projects strength but is physically infirm and superstitious. Brutus appears the picture of stoic calm yet wrestles with sleepless agony in his orchard. Cassius performs republican zeal but is partly motivated by personal envy. Antony pretends to befriend the conspirators while plotting their destruction. Even Portia, demanding Brutus reveal himself privately, splits between her stoic public face and her hidden 'voluntary wound.' Shakespeare explores how public roles distort or destroy authentic selves — particularly in a city where political persona is everything."
               />
               <ThemeCard
-                title="Rhetoric and Persuasion"
+                title={tr(`Rhetoric and Persuasion`)}
                 description="Julius Caesar is, above all, a play about words. The Republic is founded on debate, and the play stages successive scenes of persuasion: Cassius working on Brutus, Decius reinterpreting Calpurnia's dream, Brutus addressing the crowd, Antony's funeral oration, Cassius and Brutus quarrelling. The stark contrast between Brutus's rational, balanced prose ('Romans, countrymen, and lovers') and Antony's emotive, ironic verse ('Friends, Romans, countrymen, lend me your ears') is the play's rhetorical heart. Antony's victory shows how passion outperforms reason in mass politics — a deeply uncomfortable lesson about democracy."
               />
               <ThemeCard
-                title="Power and Tyranny"
+                title={tr(`Power and Tyranny`)}
                 description="The play stages a republic poised between democracy and dictatorship. Caesar's growing power threatens the Republic, but his removal does not restore liberty — it produces civil war and a new dictatorship under the Triumvirate. Shakespeare shows how the cycle of power perpetuates itself: Caesar's heirs become more absolute than Caesar. The killing intended to prevent tyranny accelerates it. This pessimistic political vision asks whether power can ever be checked by violence or whether assassination merely rotates the tyrants."
               />
               <ThemeCard
-                title="Friendship and Betrayal"
+                title={tr(`Friendship and Betrayal`)}
                 description="The play's most haunting line — 'Et tu, Brute?' — expresses the wound of betrayal by a trusted friend. Brutus is drawn into the conspiracy partly through Cassius's manipulation of his self-image as Caesar's friend who must rise above private affection for the public good. Antony's friendship for Caesar drives his vengeance, but he then forms and abandons political friendships pragmatically. The Brutus-Cassius reconciliation shows friendship's redemptive power even amid political failure. Shakespeare explores how political action corrodes private bonds, and how the loss of friendship can be more devastating than the loss of power."
               />
             </div>
@@ -423,7 +432,7 @@ export default function JuliusCaesarPage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
+          <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               15 verbatim quotations organised by speaker and theme. All quotations match the First
               Folio (1623) text.
@@ -510,7 +519,7 @@ export default function JuliusCaesarPage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Symbols and Motifs" icon="🩸">
+          <Section title={tr(`Symbols and Motifs`)} icon="🩸">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">The Storm</h4>
@@ -527,7 +536,7 @@ export default function JuliusCaesarPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Wolf and Animal Imagery</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Wolf and Animal Imagery`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Cassius uses the metaphor of Caesar as a wolf preying on Roman sheep. Animal
                   imagery pervades the play: lions, owls, hounds, serpents, kites. The Lupercalia
@@ -553,7 +562,7 @@ export default function JuliusCaesarPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Caesar&apos;s Mantle</h4>
+                <h4 className="font-bold text-foreground">{tr(`Caesar&apos;s Mantle`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The bloodied cloak Caesar wore at the assassination becomes Antony&apos;s most
                   powerful prop. He displays it to the crowd, pointing to specific tears made by
@@ -566,7 +575,7 @@ export default function JuliusCaesarPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Omens and Prophecies</h4>
+                <h4 className="font-bold text-foreground">{tr(`Omens and Prophecies`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play is dense with portents: the Soothsayer&apos;s warning, the lioness
                   whelping in the streets, graves yielding their dead, blood drizzling on the
@@ -598,7 +607,7 @@ export default function JuliusCaesarPage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Historical and Literary Context" icon="🏛️">
+          <Section title={tr(`Historical and Literary Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">44 BC: The End of the Roman Republic</h4>
@@ -619,19 +628,19 @@ export default function JuliusCaesarPage() {
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Shakespeare&apos;s primary source was Sir Thomas North&apos;s English translation
-                  of Plutarch&apos;s <em>Parallel Lives</em>, published in 1579 as{' '}
-                  <em>The Lives of the Noble Grecians and Romans</em>. North translated from Jacques
-                  Amyot&apos;s French version rather than directly from the Greek. Shakespeare drew
-                  especially on the lives of Caesar, Brutus, and Antony, often following
-                  North&apos;s phrasing closely. Some lines from the play are nearly verbatim from
-                  North. Plutarch&apos;s moralistic biographical method &mdash; comparing pairs of
-                  Greek and Roman figures to draw ethical lessons &mdash; shaped Shakespeare&apos;s
-                  tendency to weigh Caesar and Brutus as moral types rather than purely historical
-                  figures.
+                  of Plutarch&apos;s <em>{tr(`Parallel Lives`)}</em>, published in 1579 as{' '}
+                  <em>{tr(`The Lives of the Noble Grecians and Romans`)}</em>. North translated from
+                  Jacques Amyot&apos;s French version rather than directly from the Greek.
+                  Shakespeare drew especially on the lives of Caesar, Brutus, and Antony, often
+                  following North&apos;s phrasing closely. Some lines from the play are nearly
+                  verbatim from North. Plutarch&apos;s moralistic biographical method &mdash;
+                  comparing pairs of Greek and Roman figures to draw ethical lessons &mdash; shaped
+                  Shakespeare&apos;s tendency to weigh Caesar and Brutus as moral types rather than
+                  purely historical figures.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Elizabethan Succession Anxieties</h4>
+                <h4 className="font-bold text-primary">{tr(`Elizabethan Succession Anxieties`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   When Shakespeare wrote the play around 1599, Queen Elizabeth I was 66 years old,
                   childless, and refused to name a successor. England feared civil war on her death.
@@ -640,8 +649,8 @@ export default function JuliusCaesarPage() {
                   &mdash; were not antiquarian but urgent. Caesar&apos;s death produced civil war
                   and a new dictatorship; Elizabethan audiences would have found the warning highly
                   contemporary. The Earl of Essex&apos;s rebellion in 1601 (against Elizabeth) and
-                  the famous use of Shakespeare&apos;s <em>Richard II</em> by his supporters confirm
-                  how directly Elizabethan theatre engaged with succession politics.
+                  the famous use of Shakespeare&apos;s <em>{tr(`Richard II`)}</em> by his supporters
+                  confirm how directly Elizabethan theatre engaged with succession politics.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -674,7 +683,9 @@ export default function JuliusCaesarPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Stoicism and Classical Philosophy</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Stoicism and Classical Philosophy`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Brutus and Portia are explicitly Stoics. Stoicism taught that virtue is the only
                   good and that the wise man should remain calm in the face of fortune, illness, and
@@ -692,7 +703,7 @@ export default function JuliusCaesarPage() {
 
         {/* ────────────────────────────────── STRUCTURE */}
         <div id="structure">
-          <Section title="Dramatic Structure" icon="🔗">
+          <Section title={tr(`Dramatic Structure`)} icon="🔗">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">
@@ -710,7 +721,7 @@ export default function JuliusCaesarPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Prose vs Verse</h4>
+                <h4 className="font-bold text-foreground">{tr(`Prose vs Verse`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Shakespeare&apos;s use of verse and prose is meaningful throughout. Aristocrats
                   speak in blank verse; the plebeians and the Cobbler in prose. Crucially,
@@ -723,7 +734,7 @@ export default function JuliusCaesarPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Soliloquy and Public Speech</h4>
+                <h4 className="font-bold text-foreground">{tr(`Soliloquy and Public Speech`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play balances private soliloquy (Brutus in the orchard, Antony alone over the
                   body, Cassius&apos;s aside about Brutus&apos;s &ldquo;honourable metal&rdquo;)
@@ -735,7 +746,7 @@ export default function JuliusCaesarPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Crowd as Character</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Crowd as Character`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Roman plebeians are a collective character. They appear in Act 1, are central
                   to Act 3&apos;s funeral scene, and are responsible for the murder of Cinna the
@@ -747,7 +758,9 @@ export default function JuliusCaesarPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Doubling, Mirroring, and Foils</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`Doubling, Mirroring, and Foils`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play is built on paired characters: Brutus and Cassius (idealist vs
                   pragmatist), Brutus and Antony (rational vs emotive orators), Caesar and Brutus
@@ -761,7 +774,7 @@ export default function JuliusCaesarPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Ghostly Return</h4>
+                <h4 className="font-bold text-foreground">{tr(`Ghostly Return`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Caesar&apos;s ghost appears to Brutus at the end of Act 4, identifying itself as
                   &ldquo;thy evil spirit&rdquo; and promising to meet him at Philippi. Structurally,
@@ -779,7 +792,7 @@ export default function JuliusCaesarPage() {
 
         {/* ────────────────────────────────── ESSAY PLANNING */}
         <div id="essay-planning">
-          <Section title="Essay Planning for Common Questions" icon="✍️">
+          <Section title={tr(`Essay Planning for Common Questions`)} icon="✍️">
             <p className="text-sm text-muted-foreground mb-5">
               Model essay plans for the most frequently examined questions. Each plan includes a
               thesis, paragraph structure, and suggested quotations.
@@ -1401,7 +1414,7 @@ export default function JuliusCaesarPage() {
 
       {/* ────────────────────────────────── PRACTICE QUESTIONS */}
       <div id="practice-questions">
-        <Section title="Practice Questions" icon="📝">
+        <Section title={tr(`Practice Questions`)} icon="📝">
           <p className="text-sm text-muted-foreground mb-4">
             Exam-style questions covering the most commonly tested areas. Consider how you would
             structure a response using PEEL paragraphs, embedded quotations, and contextual links.
@@ -1471,54 +1484,54 @@ export default function JuliusCaesarPage() {
 
       {/* Exam Tips */}
       <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
-        <h3 className="text-lg font-bold text-foreground">Exam Tips for Julius Caesar</h3>
+        <h3 className="text-lg font-bold text-foreground">{tr(`Exam Tips for Julius Caesar`)}</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Always link to context.</strong> Connect the play to 44 BC Roman politics,
-              Plutarch via North (1579), Elizabethan succession anxieties, and the c.1599 opening of
-              the Globe.
+              <strong>{tr(`Always link to context.`)}</strong> Connect the play to 44 BC Roman
+              politics, Plutarch via North (1579), Elizabethan succession anxieties, and the c.1599
+              opening of the Globe.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use Shakespeare&apos;s methods.</strong> Discuss verse vs prose (Brutus&apos;s
-              prose vs Antony&apos;s verse oration), soliloquy, dramatic irony, omens, and
-              rhetorical devices (anaphora, irony, tricolon, antithesis).
+              <strong>{tr(`Use Shakespeare&apos;s methods.`)}</strong> Discuss verse vs prose
+              (Brutus&apos;s prose vs Antony&apos;s verse oration), soliloquy, dramatic irony,
+              omens, and rhetorical devices (anaphora, irony, tricolon, antithesis).
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Refer to the writer&apos;s intentions.</strong> &ldquo;Shakespeare perhaps
-              suggests...&rdquo; or &ldquo;Shakespeare uses Antony&apos;s rhetoric to
+              <strong>{tr(`Refer to the writer&apos;s intentions.`)}</strong> &ldquo;Shakespeare
+              perhaps suggests...&rdquo; or &ldquo;Shakespeare uses Antony&apos;s rhetoric to
               expose...&rdquo;
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Acknowledge ambiguity.</strong> The play deliberately refuses to side with
-              Caesar or the conspirators. Top-band answers engage with this ambiguity rather than
-              flatten it.
+              <strong>{tr(`Acknowledge ambiguity.`)}</strong> The play deliberately refuses to side
+              with Caesar or the conspirators. Top-band answers engage with this ambiguity rather
+              than flatten it.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use precise terminology.</strong> Refer to &ldquo;Roman tragedy,&rdquo;
-              &ldquo;blank verse,&rdquo; &ldquo;hamartia,&rdquo; &ldquo;anagnorisis,&rdquo;
-              &ldquo;dramatic irony,&rdquo; not vague description.
+              <strong>{tr(`Use precise terminology.`)}</strong> Refer to &ldquo;Roman
+              tragedy,&rdquo; &ldquo;blank verse,&rdquo; &ldquo;hamartia,&rdquo;
+              &ldquo;anagnorisis,&rdquo; &ldquo;dramatic irony,&rdquo; not vague description.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Address the whole play.</strong> Don&apos;t focus only on the assassination
-              scene &mdash; the second half (Acts 4 and 5) is essential for showing consequences and
-              Brutus&apos;s tragic arc.
+              <strong>{tr(`Address the whole play.`)}</strong> Don&apos;t focus only on the
+              assassination scene &mdash; the second half (Acts 4 and 5) is essential for showing
+              consequences and Brutus&apos;s tragic arc.
             </span>
           </li>
         </ul>
@@ -1527,8 +1540,8 @@ export default function JuliusCaesarPage() {
       {/* Public-domain notice */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>Julius Caesar</em> by William Shakespeare was first performed c.1599 and first printed
-          in the First Folio of 1623. Shakespeare died in 1616 and the text is in the{' '}
+          <em>{tr(`Julius Caesar`)}</em> by William Shakespeare was first performed c.1599 and first
+          printed in the First Folio of 1623. Shakespeare died in 1616 and the text is in the{' '}
           <strong>public domain</strong>. All quotations on this page are reproduced from the First
           Folio text.
         </p>

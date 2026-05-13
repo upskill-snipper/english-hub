@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import { t } from '@/lib/i18n/t'
+import { STRINGS as _EAL_STRINGS } from './content'
 
 // Static page — renders the same HTML on every request.
 // Served via Next.js default static caching.
@@ -70,6 +71,18 @@ const breadcrumbJsonLd = {
 }
 
 export default async function AIFeedbackHeadToHeadPage() {
+  // Resolve AR via server-side t() helper + content.ts fallback
+  const _hdrs = await (await import('next/headers')).headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
+  const _tr = (en: string): string => {
+    if (_lang !== 'ar') return en
+    for (const v of Object.values(_EAL_STRINGS) as Array<{ en: string; ar?: string }>)
+      if (v.en === en) return v.ar || en
+    return en
+  }
+  // Note: this server component reads from content.ts directly; the
+  // server-side t() helper resolves the locale from the request header.
+
   const nonce = (await headers()).get('x-nonce') ?? undefined
   // Chrome only: hero eyebrow, breadcrumb, hero CTAs, footer CTA section,
   // methodology heading. Essay body + AO mark-scheme analysis stay in
@@ -195,7 +208,9 @@ export default async function AIFeedbackHeadToHeadPage() {
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.15em] text-primary">
             Mark 1 · AQA GCSE English Literature (8702) · Paper 1 Section A
           </p>
-          <h2 className="text-2xl font-semibold text-foreground">Level 5 — Grade 7 · 25/34</h2>
+          <h2 className="text-2xl font-semibold text-foreground">
+            {_tr(`Level 5 — Grade 7 · 25/34`)}
+          </h2>
           <p className="mt-1 text-sm text-muted-foreground">
             AO weighting: AO1 (12) · AO2 (12) · AO3 (6) · AO4 (4)
           </p>
@@ -217,7 +232,9 @@ export default async function AIFeedbackHeadToHeadPage() {
                 ambition + manipulation = downfall — is clear from the outset.
               </p>
               <p className="mt-2">
-                <strong className="text-foreground">To push from Level 5 to Level 6</strong>
+                <strong className="text-foreground">
+                  {_tr(`To push from Level 5 to Level 6`)}
+                </strong>
                 (&ldquo;critical, exploratory, conceptualised response&rdquo;): your conclusion
                 restates the opening rather than complicating it. Strong Level 6 answers return to
                 the opening reading and <em>unsettle</em> it — for instance, ask whether Shakespeare
@@ -239,7 +256,7 @@ export default async function AIFeedbackHeadToHeadPage() {
                 contrast and you explain what it tells us about Macbeth&rsquo;s moral awareness.
               </p>
               <p className="mt-2">
-                <strong className="text-foreground">To reach Level 6:</strong> two fixes.
+                <strong className="text-foreground">{_tr(`To reach Level 6:`)}</strong> two fixes.
                 <em>First,</em> zoom into word-level analysis more often — &ldquo;durst&rdquo; is
                 doing more work than you acknowledge (archaic, challenging, provocative).
                 <em>Second,</em> address <em>form</em> (soliloquy vs dialogue) and{' '}
@@ -249,26 +266,33 @@ export default async function AIFeedbackHeadToHeadPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-foreground">AO3 — Context · 5/6</h3>
+              <h3 className="text-lg font-semibold text-foreground">
+                {_tr(`AO3 — Context · 5/6`)}
+              </h3>
               <p className="mt-2">
-                <em>Contextual factors</em> are integrated (&ldquo;classic tragic hero&rdquo;,
-                &ldquo;hubris&rdquo;) rather than bolted on, which is exactly what AQA rewards. You
-                could strengthen this by naming the Jacobean context once — James I&rsquo;s interest
-                in witchcraft (<em>Daemonologie</em>, 1597) and the Gunpowder Plot of 1605 — to
-                anchor why regicide was such a loaded act for Shakespeare&rsquo;s first audience.
+                <em>{_tr(`Contextual factors`)}</em> are integrated (&ldquo;classic tragic
+                hero&rdquo;, &ldquo;hubris&rdquo;) rather than bolted on, which is exactly what AQA
+                rewards. You could strengthen this by naming the Jacobean context once — James
+                I&rsquo;s interest in witchcraft (<em>Daemonologie</em>, 1597) and the Gunpowder
+                Plot of 1605 — to anchor why regicide was such a loaded act for Shakespeare&rsquo;s
+                first audience.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-foreground">AO4 — Accuracy · 1/4</h3>
+              <h3 className="text-lg font-semibold text-foreground">
+                {_tr(`AO4 — Accuracy · 1/4`)}
+              </h3>
               <p className="mt-2">
-                <em>Technical accuracy</em> is broadly secure but your vocabulary (&ldquo;big
-                role&rdquo;, &ldquo;classic tragic hero behaviour&rdquo;, &ldquo;really
+                <em>{_tr(`Technical accuracy`)}</em> is broadly secure but your vocabulary
+                (&ldquo;big role&rdquo;, &ldquo;classic tragic hero behaviour&rdquo;, &ldquo;really
                 begins&rdquo;) drops into informal register at points. For the full 4 marks, aim for
                 consistent academic register throughout.
               </p>
             </div>
             <div className="mt-5 rounded-md bg-background p-4 border border-border">
-              <p className="text-sm font-semibold text-foreground mb-2">Next moves for AQA:</p>
+              <p className="text-sm font-semibold text-foreground mb-2">
+                {_tr(`Next moves for AQA:`)}
+              </p>
               <ol className="list-decimal pl-5 text-sm space-y-1">
                 <li>
                   Rewrite one paragraph applying the <strong>language + form + structure</strong>{' '}
@@ -278,7 +302,7 @@ export default async function AIFeedbackHeadToHeadPage() {
                   Add <strong>one Jacobean context anchor</strong> (James I, regicide, divine
                   right).
                 </li>
-                <li>Upgrade three informal phrases to academic register.</li>
+                <li>{_tr(`Upgrade three informal phrases to academic register.`)}</li>
               </ol>
             </div>
           </div>
@@ -295,7 +319,7 @@ export default async function AIFeedbackHeadToHeadPage() {
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
             AO weighting on this question: AO1 (8) · AO2 (12) · AO4 (4) ·{' '}
-            <strong className="text-foreground">AO3 is NOT assessed</strong>
+            <strong className="text-foreground">{_tr(`AO3 is NOT assessed`)}</strong>
           </p>
 
           <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
@@ -312,7 +336,7 @@ export default async function AIFeedbackHeadToHeadPage() {
                 play&rsquo;s trajectory.
               </p>
               <p className="mt-2">
-                <strong className="text-foreground">To move into Level 5</strong>
+                <strong className="text-foreground">{_tr(`To move into Level 5`)}</strong>
                 (&ldquo;critical and evaluative&rdquo;): be <em>more selective</em>. Level 5 answers
                 on Edexcel don&rsquo;t cover every Act — they pick two or three moments and
                 interrogate them. Cut the conclusion&rsquo;s summary of the whole play and replace
@@ -334,9 +358,9 @@ export default async function AIFeedbackHeadToHeadPage() {
                 (they&rsquo;re used as narrative proof rather than analytical evidence).
               </p>
               <p className="mt-2">
-                <strong className="text-foreground">To push higher:</strong> rewrite so every quote
-                has at minimum one methods observation. Edexcel examiner reports consistently
-                highlight this as the Level 4 → Level 5 gap.
+                <strong className="text-foreground">{_tr(`To push higher:`)}</strong> rewrite so
+                every quote has at minimum one methods observation. Edexcel examiner reports
+                consistently highlight this as the Level 4 → Level 5 gap.
               </p>
             </div>
             <div>
@@ -344,23 +368,26 @@ export default async function AIFeedbackHeadToHeadPage() {
                 AO4 — SPaG &amp; vocabulary · 3/4
               </h3>
               <p className="mt-2">
-                <em>High degree of accuracy</em> in SPaG. Minor vocabulary slips (&ldquo;big
-                role&rdquo;, &ldquo;really begins&rdquo;) prevent the full 4.
+                <em>{_tr(`High degree of accuracy`)}</em> in SPaG. Minor vocabulary slips
+                (&ldquo;big role&rdquo;, &ldquo;really begins&rdquo;) prevent the full 4.
               </p>
             </div>
             <div className="mt-5 rounded-md bg-background p-4 border border-border">
-              <p className="text-sm font-semibold text-foreground mb-2">Next moves for Edexcel:</p>
+              <p className="text-sm font-semibold text-foreground mb-2">
+                {_tr(`Next moves for Edexcel:`)}
+              </p>
               <ol className="list-decimal pl-5 text-sm space-y-1">
                 <li>
-                  <strong>Do NOT add more context.</strong> AO3 isn&rsquo;t assessed on this
-                  question on Edexcel. The Jacobean detail suggested for AQA would waste time here.
+                  <strong>{_tr(`Do NOT add more context.`)}</strong> AO3 isn&rsquo;t assessed on
+                  this question on Edexcel. The Jacobean detail suggested for AQA would waste time
+                  here.
                 </li>
                 <li>
-                  <strong>Cut breadth, add depth.</strong> Edexcel rewards fewer quotes analysed
-                  deeper.
+                  <strong>{_tr(`Cut breadth, add depth.`)}</strong> Edexcel rewards fewer quotes
+                  analysed deeper.
                 </li>
                 <li>
-                  <strong>Methods analysis on every quote</strong> — the Level 4 → 5 move.
+                  <strong>{_tr(`Methods analysis on every quote`)}</strong> — the Level 4 → 5 move.
                 </li>
               </ol>
             </div>
@@ -373,7 +400,9 @@ export default async function AIFeedbackHeadToHeadPage() {
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.15em] text-primary">
             Mark 3 · OCR GCSE English Literature (J352) · Paper 1
           </p>
-          <h2 className="text-2xl font-semibold text-foreground">Level 5 — Grade 7 · 21/30</h2>
+          <h2 className="text-2xl font-semibold text-foreground">
+            {_tr(`Level 5 — Grade 7 · 21/30`)}
+          </h2>
           <p className="mt-1 text-sm text-muted-foreground">
             AO weighting: AO1 (10) · AO2 (10) · AO3 (5) · AO4 (5)
           </p>
@@ -407,8 +436,8 @@ export default async function AIFeedbackHeadToHeadPage() {
                 heard, making us complicit in the tragedy.&rdquo;
               </p>
               <p className="mt-2">
-                <strong className="text-foreground">To push higher:</strong> add a reader-effect
-                sentence after every language point.
+                <strong className="text-foreground">{_tr(`To push higher:`)}</strong> add a
+                reader-effect sentence after every language point.
               </p>
             </div>
             <div>
@@ -416,7 +445,7 @@ export default async function AIFeedbackHeadToHeadPage() {
                 AO3 — Contextual understanding · 4/5
               </h3>
               <p className="mt-2">
-                <em>Relevant contextual understanding</em> via your naming of tragic hero
+                <em>{_tr(`Relevant contextual understanding`)}</em> via your naming of tragic hero
                 conventions and hubris — OCR rewards literary-tradition context (Aristotelian
                 tragedy, morality plays) even more than historical context, so your instinct is
                 correct. To reach the full 5, name one specific convention —{' '}
@@ -433,17 +462,20 @@ export default async function AIFeedbackHeadToHeadPage() {
               </p>
             </div>
             <div className="mt-5 rounded-md bg-background p-4 border border-border">
-              <p className="text-sm font-semibold text-foreground mb-2">Next moves for OCR:</p>
+              <p className="text-sm font-semibold text-foreground mb-2">
+                {_tr(`Next moves for OCR:`)}
+              </p>
               <ol className="list-decimal pl-5 text-sm space-y-1">
                 <li>
-                  <strong>Add a reader-effect sentence</strong> after every language point.
+                  <strong>{_tr(`Add a reader-effect sentence`)}</strong> after every language point.
                 </li>
                 <li>
-                  <strong>Name one tragic-convention term</strong> (hamartia / peripeteia /
+                  <strong>{_tr(`Name one tragic-convention term`)}</strong> (hamartia / peripeteia /
                   anagnorisis).
                 </li>
                 <li>
-                  <strong>Re-cast the conclusion</strong> as an interpretive claim, not a summary.
+                  <strong>{_tr(`Re-cast the conclusion`)}</strong> as an interpretive claim, not a
+                  summary.
                 </li>
               </ol>
             </div>
@@ -465,40 +497,46 @@ export default async function AIFeedbackHeadToHeadPage() {
               <tr className="border-b border-border">
                 <th className="text-left py-3 pr-4 font-semibold text-foreground">Dimension</th>
                 <th className="text-left py-3 pr-4 font-semibold text-foreground">AQA 8702</th>
-                <th className="text-left py-3 pr-4 font-semibold text-foreground">Edexcel 1ET0</th>
+                <th className="text-left py-3 pr-4 font-semibold text-foreground">
+                  {_tr(`Edexcel 1ET0`)}
+                </th>
                 <th className="text-left py-3 font-semibold text-foreground">OCR J352</th>
               </tr>
             </thead>
             <tbody className="text-muted-foreground">
               <tr className="border-b border-border/50">
-                <td className="py-3 pr-4 font-medium text-foreground">Grade on this answer</td>
+                <td className="py-3 pr-4 font-medium text-foreground">
+                  {_tr(`Grade on this answer`)}
+                </td>
                 <td className="py-3 pr-4">7</td>
                 <td className="py-3 pr-4">6</td>
                 <td className="py-3">7</td>
               </tr>
               <tr className="border-b border-border/50">
-                <td className="py-3 pr-4 font-medium text-foreground">Context (AO3)</td>
+                <td className="py-3 pr-4 font-medium text-foreground">{_tr(`Context (AO3)`)}</td>
                 <td className="py-3 pr-4">6 marks · assessed</td>
-                <td className="py-3 pr-4 text-primary font-semibold">NOT assessed</td>
+                <td className="py-3 pr-4 text-primary font-semibold">{_tr(`NOT assessed`)}</td>
                 <td className="py-3">5 marks · literary-tradition bias</td>
               </tr>
               <tr className="border-b border-border/50">
-                <td className="py-3 pr-4 font-medium text-foreground">Top improvement</td>
-                <td className="py-3 pr-4">Add form + structure</td>
-                <td className="py-3 pr-4">Methods on every quote</td>
-                <td className="py-3">Reader-effect on every method</td>
+                <td className="py-3 pr-4 font-medium text-foreground">{_tr(`Top improvement`)}</td>
+                <td className="py-3 pr-4">{_tr(`Add form + structure`)}</td>
+                <td className="py-3 pr-4">{_tr(`Methods on every quote`)}</td>
+                <td className="py-3">{_tr(`Reader-effect on every method`)}</td>
               </tr>
               <tr className="border-b border-border/50">
-                <td className="py-3 pr-4 font-medium text-foreground">Mistake to avoid</td>
+                <td className="py-3 pr-4 font-medium text-foreground">{_tr(`Mistake to avoid`)}</td>
                 <td className="py-3 pr-4">—</td>
-                <td className="py-3 pr-4 text-amber-500 font-semibold">Don&rsquo;t add context</td>
-                <td className="py-3">Don&rsquo;t over-historicise</td>
+                <td className="py-3 pr-4 text-amber-500 font-semibold">
+                  {_tr(`Don&rsquo;t add context`)}
+                </td>
+                <td className="py-3">{_tr(`Don&rsquo;t over-historicise`)}</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div className="mt-8 rounded-lg border border-primary/40 bg-primary/5 p-6">
-          <p className="text-foreground font-medium mb-2">This is the wedge.</p>
+          <p className="text-foreground font-medium mb-2">{_tr(`This is the wedge.`)}</p>
           <p className="text-muted-foreground">
             A generic &ldquo;good essay&rdquo; rubric gives the student one piece of feedback that
             is 60% right for each board. The English Hub&rsquo;s board-specific AI marker gives

@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import { useState } from 'react'
 
@@ -82,6 +84,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function TwelfthNightPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -106,7 +115,9 @@ export default function TwelfthNightPage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Twelfth Night, or What You Will &mdash; Complete Revision Guide
         </h1>
-        <p className="mt-1 text-lg text-muted-foreground">William Shakespeare, c.1601&ndash;1602</p>
+        <p className="mt-1 text-lg text-muted-foreground">
+          {tr(`William Shakespeare, c.1601&ndash;1602`)}
+        </p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Everything you need for your A-Level and GCSE English Literature exam. Act-by-act plot,
           character profiles, themes with evidence, verbatim Folio quotations with analysis,
@@ -117,7 +128,7 @@ export default function TwelfthNightPage() {
 
       {/* Quick nav */}
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
-        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-3">{tr(`Jump to section:`)}</p>
         <div className="flex flex-wrap gap-2">
           {[
             'Plot Summary',
@@ -145,7 +156,7 @@ export default function TwelfthNightPage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section title="Act-by-Act Plot Summary" icon="📖" defaultOpen>
+          <Section title={tr(`Act-by-Act Plot Summary`)} icon="📖" defaultOpen>
             <div className="space-y-4">
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
@@ -387,7 +398,7 @@ export default function TwelfthNightPage() {
 
         {/* ────────────────────────────────── CHARACTERS */}
         <div id="characters">
-          <Section title="Character Profiles" icon="👤">
+          <Section title={tr(`Character Profiles`)} icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Viola / Cesario"
@@ -443,30 +454,30 @@ export default function TwelfthNightPage() {
 
         {/* ────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section title="Key Themes" icon="💡">
+          <Section title={tr(`Key Themes`)} icon="💡">
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
-                title="Disguise and Mistaken Identity"
+                title={tr(`Disguise and Mistaken Identity`)}
                 description="The structural engine of the play. Viola's male disguise generates the love triangle (Orsino loves Olivia, Olivia loves Cesario, Viola loves Orsino), and the twins' identical appearance allows Shakespeare to resolve it. Disguise creates both comedy (Sir Andrew's terror at the duel) and pain (Antonio's anguished sense of betrayal). Viola's own line — 'Disguise, I see thou art a wickedness' — registers Shakespeare's awareness that the trick has moral cost. The play ends with Viola still in male clothes; the disguise is never fully undone onstage."
               />
               <ThemeCard
-                title="Love and Madness"
+                title={tr(`Love and Madness`)}
                 description="Every form of love in the play looks like madness. Orsino's Petrarchan obsession, Olivia's instant infatuation with Cesario, Malvolio's delusion that Olivia loves him, Antonio's devotion to Sebastian — all are described as 'midsummer madness' or close to it. Shakespeare uses the word 'mad' obsessively in Acts 3 and 4. The play asks whether love is ever rational, and whether the difference between true love and self-deluding fantasy is one society can reliably make."
               />
               <ThemeCard
-                title="Gender and Performance"
+                title={tr(`Gender and Performance`)}
                 description="Viola plays Cesario, who is played in Shakespeare's company by a boy actor playing a girl playing a boy. The layered performance lets the play test what masculinity and femininity actually are: Cesario is too soft to fight, too direct to flirt, too honest to lie. Orsino's affection for Cesario, before he knows 'he' is a woman, blurs the boundaries. Twentieth- and twenty-first-century criticism (Stephen Greenblatt, Marjorie Garber) reads the play as a foundational text of the performance theory of gender."
               />
               <ThemeCard
-                title="Class and Festivity"
+                title={tr(`Class and Festivity`)}
                 description="The play takes its title from Twelfth Night — the festive end of Christmas, the last night of the Lord of Misrule, a time when ordinary social hierarchies were inverted. Sir Toby and Maria embody this misrule; Malvolio resists it. The Malvolio sub-plot is, in part, about a steward who tries to rise in rank by marrying his lady, and is punished for it. C. L. Barber's classic study Shakespeare's Festive Comedy reads the whole play as the dramatised release and reform of holiday energy."
               />
               <ThemeCard
-                title="Music and Melancholy"
+                title={tr(`Music and Melancholy`)}
                 description="Twelfth Night is the most musical of Shakespeare's comedies. It opens with music, and ends with Feste singing alone. Music is the food of love, the consolation for grief, the medium of memory. Yet most of Feste's songs are sad: 'Come away, come away, death' is a song of hopeless love; the final 'wind and the rain' song is openly melancholy. Music in the play promises festivity but delivers pensiveness — it is part of how Shakespeare keeps the comedy edged with sorrow."
               />
               <ThemeCard
-                title="Foolery and Wisdom"
+                title={tr(`Foolery and Wisdom`)}
                 description="The fool, Feste, is paradoxically the wisest character. Viola says of him, 'This fellow is wise enough to play the fool'. He is the only one who moves between the two great houses, who diagnoses Orsino's mind ('thy mind is a very opal'), and who closes the play. Through Feste, Shakespeare develops a Renaissance commonplace — that licensed folly speaks truths that ordinary speech cannot — into a structural principle. The fool's epilogue song reframes the whole comedy."
               />
             </div>
@@ -475,7 +486,7 @@ export default function TwelfthNightPage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
+          <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
               Verbatim Folio quotations (modernised spelling) for exam revision. Each is verifiable
               against the 1623 First Folio text of Twelfth Night, or What You Will.
@@ -577,7 +588,7 @@ export default function TwelfthNightPage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Symbols and Motifs" icon="🔍">
+          <Section title={tr(`Symbols and Motifs`)} icon="🔍">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">
@@ -595,7 +606,9 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Yellow Stockings and Cross-Garters</h4>
+                <h4 className="font-bold text-foreground">
+                  {tr(`Yellow Stockings and Cross-Garters`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The clothing Malvolio adopts after reading the forged letter. Yellow was
                   associated with jealousy and was a colour Olivia is said to detest; cross-garters
@@ -606,7 +619,7 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Forged Letter</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Forged Letter`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Maria&apos;s letter is the central prop of the sub-plot. It works through textual
                   interpretation: Malvolio &ldquo;reads&rdquo; M.O.A.I., decides it spells him, and
@@ -630,7 +643,7 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">The Dark Room</h4>
+                <h4 className="font-bold text-foreground">{tr(`The Dark Room`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The space where Malvolio is imprisoned in Act 4 as a &ldquo;madman.&rdquo;
                   Symbolically, the dark room reverses the play&apos;s festive light: instead of
@@ -660,10 +673,10 @@ export default function TwelfthNightPage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Historical and Literary Context" icon="🏛️">
+          <Section title={tr(`Historical and Literary Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Composition (c.1601&ndash;1602)</h4>
+                <h4 className="font-bold text-primary">{tr(`Composition (c.1601&ndash;1602)`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Twelfth Night was probably written in 1601&ndash;1602. The first recorded
                   performance is in the diary of John Manningham, a law student at the Middle
@@ -674,7 +687,7 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Twelfth Night Holiday</h4>
+                <h4 className="font-bold text-primary">{tr(`The Twelfth Night Holiday`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play&apos;s title refers to the festive end of the twelve days of Christmas
                   &mdash; the evening of 5 January, the eve of Epiphany. In the Elizabethan and
@@ -689,7 +702,7 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Illyria as Italianate Setting</h4>
+                <h4 className="font-bold text-primary">{tr(`Illyria as Italianate Setting`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Illyria was the ancient name for the eastern Adriatic coast (roughly modern
                   Croatia and Albania), but for Shakespeare and his audience it functioned mainly as
@@ -703,7 +716,9 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Boy Actors and the Cross-Dressing Stage</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Boy Actors and the Cross-Dressing Stage`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Women did not perform on the public stage in Shakespeare&apos;s England; female
                   roles were played by boys and young men. So when Viola disguises herself as
@@ -720,24 +735,26 @@ export default function TwelfthNightPage() {
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Twelfth Night sits at the end of Shakespeare&apos;s great romantic comedy phase,
-                  just before the &ldquo;problem plays&rdquo; (<em>Measure for Measure</em>,{' '}
-                  <em>All&apos;s Well That Ends Well</em>) and the great tragedies (<em>Hamlet</em>{' '}
-                  was probably written within a year either side of Twelfth Night). The play already
-                  shows the darkening edge of the later comedies: Malvolio&apos;s humiliation,
-                  Antonio&apos;s exclusion, and Feste&apos;s closing song push the comedy towards a
-                  tone the earlier romantic plays do not reach. Many critics describe Twelfth Night
-                  as the &ldquo;last&rdquo; or &ldquo;ripest&rdquo; festive comedy &mdash; the
-                  moment before Shakespeare&apos;s comic mood gives way.
+                  just before the &ldquo;problem plays&rdquo; (<em>{tr(`Measure for Measure`)}</em>,{' '}
+                  <em>{tr(`All&apos;s Well That Ends Well`)}</em>) and the great tragedies (
+                  <em>Hamlet</em> was probably written within a year either side of Twelfth Night).
+                  The play already shows the darkening edge of the later comedies: Malvolio&apos;s
+                  humiliation, Antonio&apos;s exclusion, and Feste&apos;s closing song push the
+                  comedy towards a tone the earlier romantic plays do not reach. Many critics
+                  describe Twelfth Night as the &ldquo;last&rdquo; or &ldquo;ripest&rdquo; festive
+                  comedy &mdash; the moment before Shakespeare&apos;s comic mood gives way.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Hamnet and Judith: the Twin Connection</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Hamnet and Judith: the Twin Connection`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Stephen Greenblatt&apos;s <em>Will in the World</em> (2004) influentially links
-                  Twelfth Night to the death of Shakespeare&apos;s only son Hamnet in 1596 &mdash;
-                  Hamnet was twin brother to Judith. Greenblatt argues that Viola&apos;s anguish at
-                  believing her twin Sebastian dead, and her line &ldquo;I am all the daughters of
-                  my father&apos;s house, / And all the brothers too,&rdquo; carries
+                  Stephen Greenblatt&apos;s <em>{tr(`Will in the World`)}</em> (2004) influentially
+                  links Twelfth Night to the death of Shakespeare&apos;s only son Hamnet in 1596
+                  &mdash; Hamnet was twin brother to Judith. Greenblatt argues that Viola&apos;s
+                  anguish at believing her twin Sebastian dead, and her line &ldquo;I am all the
+                  daughters of my father&apos;s house, / And all the brothers too,&rdquo; carries
                   Shakespeare&apos;s own bereavement. Sebastian&apos;s late survival becomes, on
                   this reading, a wishful resurrection of the lost twin. Greenblatt&apos;s reading
                   is speculative biography but has reshaped how A-Level and undergraduate criticism
@@ -745,12 +762,12 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Festive Comedy: C. L. Barber</h4>
+                <h4 className="font-bold text-primary">{tr(`Festive Comedy: C. L. Barber`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  C. L. Barber&apos;s <em>Shakespeare&apos;s Festive Comedy</em> (1959) defined the
-                  dominant twentieth-century reading of Twelfth Night. Barber argued that
-                  Shakespeare&apos;s comedies follow a pattern of &ldquo;saturnalian release and
-                  clarification&rdquo; &mdash; festive inversion temporarily releases social
+                  C. L. Barber&apos;s <em>{tr(`Shakespeare&apos;s Festive Comedy`)}</em> (1959)
+                  defined the dominant twentieth-century reading of Twelfth Night. Barber argued
+                  that Shakespeare&apos;s comedies follow a pattern of &ldquo;saturnalian release
+                  and clarification&rdquo; &mdash; festive inversion temporarily releases social
                   pressure, then releases its participants back into a reformed normal. Twelfth
                   Night fits the pattern, but it also strains it: Malvolio&apos;s refusal of
                   resolution, Feste&apos;s closing song, and Antonio&apos;s pain mark the limits of
@@ -759,7 +776,7 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Puritanism and the Stage</h4>
+                <h4 className="font-bold text-primary">{tr(`Puritanism and the Stage`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Maria calls Malvolio &ldquo;a kind of puritan,&rdquo; though she immediately
                   qualifies the label. Shakespeare wrote in a culture where puritan opposition to
@@ -778,10 +795,10 @@ export default function TwelfthNightPage() {
 
         {/* ────────────────────────────────── STRUCTURE */}
         <div id="structure">
-          <Section title="Structure and Dramatic Form" icon="🔗">
+          <Section title={tr(`Structure and Dramatic Form`)} icon="🔗">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Twin-Plot Symmetry</h4>
+                <h4 className="font-bold text-foreground">{tr(`Twin-Plot Symmetry`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The play runs two plots in parallel: the romance triangle of Orsino, Olivia, and
                   Viola/Sebastian; and the gulling of Malvolio in the Olivia household. Both turn on
@@ -792,7 +809,7 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Five-Act Comic Architecture</h4>
+                <h4 className="font-bold text-foreground">{tr(`Five-Act Comic Architecture`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Twelfth Night follows the standard Shakespearean comic shape: setup of confusion
                   (Acts 1&ndash;2), intensification (Act 3), crisis (Act 4), and resolution (Act 5).
@@ -803,7 +820,7 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Soliloquy and Interiority</h4>
+                <h4 className="font-bold text-foreground">{tr(`Soliloquy and Interiority`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Viola has the play&apos;s most intimate soliloquies (&ldquo;Disguise, I see thou
                   art a wickedness&rdquo;, the &ldquo;ring&rdquo; soliloquy of 2.2). These give her
@@ -814,7 +831,7 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Songs as Structural Pillars</h4>
+                <h4 className="font-bold text-foreground">{tr(`Songs as Structural Pillars`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Songs structure the play unusually heavily. Feste sings &ldquo;O mistress
                   mine&rdquo; in 2.3 (carpe diem, festive), &ldquo;Come away, come away,
@@ -825,7 +842,7 @@ export default function TwelfthNightPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Open-ended Closure</h4>
+                <h4 className="font-bold text-foreground">{tr(`Open-ended Closure`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Act 5 ending is conspicuously incomplete. Viola is still in male clothes; the
                   Sea-Captain is detained; Antonio is unmarried; Malvolio storms off vowing revenge;
@@ -841,7 +858,7 @@ export default function TwelfthNightPage() {
 
         {/* ────────────────────────────────── ESSAY PLANNING */}
         <div id="essay-planning">
-          <Section title="Essay Planning for Common Questions" icon="✍️">
+          <Section title={tr(`Essay Planning for Common Questions`)} icon="✍️">
             <p className="text-sm text-muted-foreground mb-5">
               Model essay plans for the most frequently examined questions. Each plan includes a
               thesis, paragraph structure, and suggested quotations.
@@ -1385,7 +1402,7 @@ export default function TwelfthNightPage() {
 
       {/* ────────────────────────────────── GRADE 9 POINTS */}
       <div id="grade-9">
-        <Section title="Grade 9 / A* Exemplar Points and Interpretations" icon="⭐">
+        <Section title={tr(`Grade 9 / A* Exemplar Points and Interpretations`)} icon="⭐">
           <p className="text-sm text-muted-foreground mb-4 italic">
             These higher-level interpretations demonstrate the sophisticated analysis needed for top
             grades. Each goes beyond surface reading to consider authorial intent, alternative
@@ -1510,7 +1527,7 @@ export default function TwelfthNightPage() {
 
       {/* ────────────────────────────────── PRACTICE QUESTIONS */}
       <div id="practice-questions">
-        <Section title="Practice Questions" icon="📝">
+        <Section title={tr(`Practice Questions`)} icon="📝">
           <p className="text-sm text-muted-foreground mb-4">
             Exam-style questions covering the most commonly tested areas. Consider how you would
             structure a response using PEEL paragraphs, embedded quotations, and contextual links.
@@ -1557,44 +1574,45 @@ export default function TwelfthNightPage() {
 
       {/* Exam Tips */}
       <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
-        <h3 className="text-lg font-bold text-foreground">Exam Tips for Twelfth Night</h3>
+        <h3 className="text-lg font-bold text-foreground">{tr(`Exam Tips for Twelfth Night`)}</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Always link to context.</strong> The Twelfth Night holiday, the boy-actor
-              convention, and Shakespeare&apos;s position at the end of his festive-comedy phase are
-              all examiner-friendly references.
+              <strong>{tr(`Always link to context.`)}</strong> The Twelfth Night holiday, the
+              boy-actor convention, and Shakespeare&apos;s position at the end of his festive-comedy
+              phase are all examiner-friendly references.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Quote precisely.</strong> Use the verbatim Folio quotations &mdash; &ldquo;If
-              music be the food of love, play on&rdquo;, &ldquo;Some are born great...&rdquo;,
-              &ldquo;I am all the daughters of my father&apos;s house...&rdquo; &mdash; rather than
-              paraphrasing.
+              <strong>{tr(`Quote precisely.`)}</strong> Use the verbatim Folio quotations &mdash;
+              &ldquo;If music be the food of love, play on&rdquo;, &ldquo;Some are born
+              great...&rdquo;, &ldquo;I am all the daughters of my father&apos;s house...&rdquo;
+              &mdash; rather than paraphrasing.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Read the sub-plot seriously.</strong> The Malvolio plot is half the play.
-              Treating it as comic relief loses marks; treat it as Shakespeare&apos;s test of the
-              festive ethic.
+              <strong>{tr(`Read the sub-plot seriously.`)}</strong> The Malvolio plot is half the
+              play. Treating it as comic relief loses marks; treat it as Shakespeare&apos;s test of
+              the festive ethic.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Cite criticism by name.</strong> Greenblatt on Hamnet, Barber on festive
-              comedy, Garber/Orgel on gender performance &mdash; named critics impress examiners.
+              <strong>{tr(`Cite criticism by name.`)}</strong> Greenblatt on Hamnet, Barber on
+              festive comedy, Garber/Orgel on gender performance &mdash; named critics impress
+              examiners.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use precise dramatic terminology.</strong> &ldquo;Soliloquy,&rdquo;
+              <strong>{tr(`Use precise dramatic terminology.`)}</strong> &ldquo;Soliloquy,&rdquo;
               &ldquo;subplot,&rdquo; &ldquo;recognition scene,&rdquo; &ldquo;saturnalian,&rdquo;
               &ldquo;metatheatrical&rdquo; &mdash; precise terms beat vague ones.
             </span>
@@ -1602,9 +1620,9 @@ export default function TwelfthNightPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Address the whole play.</strong> Don&apos;t focus only on the extract &mdash;
-              reference Feste&apos;s closing song and Malvolio&apos;s exit line to show whole-play
-              knowledge.
+              <strong>{tr(`Address the whole play.`)}</strong> Don&apos;t focus only on the extract
+              &mdash; reference Feste&apos;s closing song and Malvolio&apos;s exit line to show
+              whole-play knowledge.
             </span>
           </li>
         </ul>
@@ -1613,8 +1631,8 @@ export default function TwelfthNightPage() {
       {/* Public-domain notice */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>Twelfth Night, or What You Will</em> by William Shakespeare was first printed in the
-          1623 First Folio. Shakespeare died in 1616 and the text is in the{' '}
+          <em>{tr(`Twelfth Night, or What You Will`)}</em> by William Shakespeare was first printed
+          in the 1623 First Folio. Shakespeare died in 1616 and the text is in the{' '}
           <strong>public domain</strong>. All quotations on this page are reproduced (in modernised
           spelling) from the Folio text of the play.
         </p>

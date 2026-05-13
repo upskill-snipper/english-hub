@@ -1,4 +1,6 @@
-'use client'
+import { STRINGS } from './content'
+import { useLocale } from '@/lib/i18n/use-locale'
+;('use client')
 
 import { useState } from 'react'
 
@@ -82,6 +84,13 @@ function ThemeCard({ title, description }: { title: string; description: string 
 /* ─── Main Page ────────────────────────────────────────────── */
 
 export default function PigeonEnglishPage() {
+  const locale = useLocale()
+  const tr = (en: string): string => {
+    if (locale !== 'ar') return en
+    for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
+    return en
+  }
+
   return (
     <>
       {/* Hero */}
@@ -97,7 +106,7 @@ export default function PigeonEnglishPage() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Pigeon English &mdash; Complete Revision Guide
         </h1>
-        <p className="mt-1 text-lg text-muted-foreground">Stephen Kelman, 2011</p>
+        <p className="mt-1 text-lg text-muted-foreground">{tr(`Stephen Kelman, 2011`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Everything you need for your AQA GCSE English Literature exam on Stephen Kelman&apos;s
           Booker-shortlisted debut novel. Plot summary, character profiles, themes with evidence,
@@ -108,7 +117,7 @@ export default function PigeonEnglishPage() {
 
       {/* Quick nav */}
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
-        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-3">{tr(`Jump to section:`)}</p>
         <div className="flex flex-wrap gap-2">
           {[
             'Plot Summary',
@@ -136,7 +145,7 @@ export default function PigeonEnglishPage() {
       <div className="space-y-4">
         {/* ────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section title="Plot Summary" icon="📖" defaultOpen>
+          <Section title={tr(`Plot Summary`)} icon="📖" defaultOpen>
             <div className="space-y-4">
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
@@ -318,7 +327,7 @@ export default function PigeonEnglishPage() {
 
         {/* ────────────────────────────────── CHARACTERS */}
         <div id="characters">
-          <Section title="Character Profiles" icon="👤">
+          <Section title={tr(`Character Profiles`)} icon="👤">
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Harrison &lsquo;Harri&rsquo; Opoku"
@@ -366,18 +375,18 @@ export default function PigeonEnglishPage() {
 
         {/* ────────────────────────────────── THEMES */}
         <div id="themes">
-          <Section title="Key Themes" icon="💡">
+          <Section title={tr(`Key Themes`)} icon="💡">
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
-                title="Childhood vs Violence"
+                title={tr(`Childhood vs Violence`)}
                 description="The central tension of the novel. Harri narrates with a child's freshness — finding joy in a sweet, a race, a girl, a pigeon — while moving through a landscape of stabbings, gangs, and domestic abuse. Kelman writes the collision of these registers without sentimentality. Harri's very innocence is what makes the violence so unbearable, and what makes it possible: he cannot believe people will really hurt him for asking honest questions. The novel argues that childhood and street violence cannot coexist; one will eventually destroy the other, and it is almost always the child who loses."
               />
               <ThemeCard
-                title="Migration &amp; Belonging"
+                title={tr(`Migration &amp; Belonging`)}
                 description="Harri is in the middle of becoming English. He absorbs slang, copies fashion, befriends Dean and crushes on Poppy — but he also says 'Asweh' and 'Adjei', misses Ghana, and remains visibly different. The family is split across continents, with Papa and Agnes still in Accra. Auntie Sonia's burnt fingerprints dramatise the immigration system's cruelty. Kelman shows belonging as a long, difficult, often violent process — and asks what it means that English society's first major gift to Harri is murder."
               />
               <ThemeCard
-                title="Faith &amp; Hope"
+                title={tr(`Faith &amp; Hope`)}
                 description="Mamma's Christianity is sincere, daily, and load-bearing. Prayer structures the Opoku household in London. Harri tries to keep faith — speaking to God, hoping for miracles, believing the world is fair. The pigeon, with its aerial, almost angelic perspective, gives the novel a religious texture even where its world is faithless. Kelman is too honest to let faith save anyone, but he refuses to mock it; faith is presented as a real force of survival, even when it cannot prevent tragedy."
               />
               <ThemeCard
@@ -385,11 +394,11 @@ export default function PigeonEnglishPage() {
                 description="Family in the novel is plural and stretched: Mamma in London, Papa in Ghana, Lydia bossing and shielding, Auntie Sonia loving and battered, the absent baby Agnes. Kelman shows family as the strongest defence Harri has against the estate's violence — and shows how the demands of immigration tear at that defence. Mamma's working hours, Papa's absence, Sonia's exposure to Julius — each rip in the family fabric corresponds to a danger that creeps closer to Harri. The novel asks whether the immigrant family can ever be reassembled, and whether London allows time."
               />
               <ThemeCard
-                title="Friendship &amp; Group Dynamics"
+                title={tr(`Friendship &amp; Group Dynamics`)}
                 description="Friendship has two faces in the novel. With Dean, friendship is play, loyalty, shared imagination — the detective game, the running, the in-jokes. With the Dell Farm Crew, group dynamics turn predatory: belonging means initiation, hierarchy, violence, and silence. Kelman shows the same human need — to be part of something — producing wildly different outcomes depending on what is available. For boys without strong adult presence, the gang's offer of belonging is dangerously seductive."
               />
               <ThemeCard
-                title="Storytelling &amp; Voice"
+                title={tr(`Storytelling &amp; Voice`)}
                 description="Harri's voice is the novel's main achievement and its central theme. He mixes Pidgin English ('Asweh' — meaning 'I swear'), Ghanaian exclamations, BBC English from school, and London street slang into a single, shifting register. Through this voice, Kelman explores how language carries identity, how a child arrives at an idiom for a world that is too big and too violent for him. The pigeon's poetic interludes form a counter-voice — and when Harri's voice ends, the pigeon's is what is left. Storytelling, in the novel, is what makes a child a person; the loss of that voice at the end is the loss of Harri himself."
               />
             </div>
@@ -398,10 +407,10 @@ export default function PigeonEnglishPage() {
 
         {/* ────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
-          <Section title="Key Quotations with Analysis" icon="📝">
+          <Section title={tr(`Key Quotations with Analysis`)} icon="📝">
             <p className="text-sm text-muted-foreground mb-4 italic">
-              Verbatim quotations from <em>Pigeon English</em> (Stephen Kelman, Bloomsbury 2011),
-              grouped by theme and character. Items flagged <strong>[VERIFY]</strong> are
+              Verbatim quotations from <em>{tr(`Pigeon English`)}</em> (Stephen Kelman, Bloomsbury
+              2011), grouped by theme and character. Items flagged <strong>[VERIFY]</strong> are
               paraphrases or commonly-cited lines whose exact wording you should confirm against
               your edition before using in an exam.
             </p>
@@ -487,7 +496,7 @@ export default function PigeonEnglishPage() {
 
         {/* ────────────────────────────────── SYMBOLS */}
         <div id="symbols">
-          <Section title="Symbols and Motifs" icon="🪶">
+          <Section title={tr(`Symbols and Motifs`)} icon="🪶">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">1. The Pigeon</h4>
@@ -557,10 +566,10 @@ export default function PigeonEnglishPage() {
 
         {/* ────────────────────────────────── CONTEXT */}
         <div id="context">
-          <Section title="Historical and Social Context" icon="🏛️">
+          <Section title={tr(`Historical and Social Context`)} icon="🏛️">
             <div className="space-y-4">
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The Damilola Taylor Case (2000)</h4>
+                <h4 className="font-bold text-primary">{tr(`The Damilola Taylor Case (2000)`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Kelman has stated in interviews that the novel was inspired by the 2000 murder of
                   Damilola Taylor, a ten-year-old Nigerian boy who bled to death on a stairwell in
@@ -571,30 +580,33 @@ export default function PigeonEnglishPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Post-2000s UK Knife-Crime Anxiety</h4>
+                <h4 className="font-bold text-primary">
+                  {tr(`Post-2000s UK Knife-Crime Anxiety`)}
+                </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The 2000s and early 2010s saw sustained public anxiety about teenage knife crime
                   in British cities, especially London. Headlines, Government initiatives, and
                   coverage of &lsquo;road&rsquo; / &lsquo;gang&rsquo; cultures formed the backdrop
-                  against which <em>Pigeon English</em> was written. Kelman intervenes by insisting
-                  on the inner life of one specific child rather than letting the category
+                  against which <em>{tr(`Pigeon English`)}</em> was written. Kelman intervenes by
+                  insisting on the inner life of one specific child rather than letting the category
                   &lsquo;youth gang&rsquo; absorb him.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Booker Shortlist 2011</h4>
+                <h4 className="font-bold text-primary">{tr(`Booker Shortlist 2011`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  <em>Pigeon English</em> was shortlisted for the 2011 Man Booker Prize, the most
-                  prestigious literary award in the UK and Commonwealth. The shortlisting brought
-                  enormous attention to a debut novel and to its bold formal choices &mdash;
+                  <em>{tr(`Pigeon English`)}</em> was shortlisted for the 2011 Man Booker Prize, the
+                  most prestigious literary award in the UK and Commonwealth. The shortlisting
+                  brought enormous attention to a debut novel and to its bold formal choices &mdash;
                   particularly the child narrator&apos;s mixed Pidgin-English voice and the pigeon
                   interludes. The recognition placed Kelman in a tradition of literary fiction using
                   vernacular voice for serious moral purpose (compare Roddy Doyle&apos;s
-                  <em> Paddy Clarke Ha Ha Ha</em> or Mark Haddon&apos;s <em>Curious Incident</em>).
+                  <em> Paddy Clarke Ha Ha Ha</em> or Mark Haddon&apos;s{' '}
+                  <em>{tr(`Curious Incident`)}</em>).
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">Stephen Kelman: Background</h4>
+                <h4 className="font-bold text-primary">{tr(`Stephen Kelman: Background`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Stephen Kelman was born in Luton in 1976 and grew up on a council estate in
                   Bedfordshire. He worked in non-literary jobs before the novel&apos;s success.
@@ -618,7 +630,7 @@ export default function PigeonEnglishPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
-                <h4 className="font-bold text-primary">The London Council Estate</h4>
+                <h4 className="font-bold text-primary">{tr(`The London Council Estate`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   &lsquo;Dell Farm&rsquo; is invented but recognisable: a high-rise post-war council
                   estate of the type built in the 1960s and 70s. Kelman writes the estate as it is
@@ -633,10 +645,10 @@ export default function PigeonEnglishPage() {
 
         {/* ────────────────────────────────── STRUCTURE & VOICE */}
         <div id="structure-and-voice">
-          <Section title="Structure and Voice" icon="🔗">
+          <Section title={tr(`Structure and Voice`)} icon="🔗">
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">First-Person Child Narrator</h4>
+                <h4 className="font-bold text-foreground">{tr(`First-Person Child Narrator`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel is narrated almost entirely by Harri in the first person, present tense.
                   The choice has two consequences. First, the reader is locked into Harri&apos;s
@@ -671,7 +683,7 @@ export default function PigeonEnglishPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Circular Structure</h4>
+                <h4 className="font-bold text-foreground">{tr(`Circular Structure`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel opens with the murder of an unnamed boy and closes with the murder of
                   Harri. The structural circle is unmistakable: Harri begins as a witness outside
@@ -682,7 +694,7 @@ export default function PigeonEnglishPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Episodic Pacing</h4>
+                <h4 className="font-bold text-foreground">{tr(`Episodic Pacing`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel proceeds episodically: school days, detective adventures, family scenes,
                   gang encounters, pigeon interludes. This mosaic structure mimics how a child
@@ -691,7 +703,7 @@ export default function PigeonEnglishPage() {
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
-                <h4 className="font-bold text-foreground">Final Tonal Shift</h4>
+                <h4 className="font-bold text-foreground">{tr(`Final Tonal Shift`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   In the closing pages the narrative tilts decisively into the pigeon&apos;s poetic
                   register as Harri is killed. The voice that has carried the entire book &mdash;
@@ -707,10 +719,10 @@ export default function PigeonEnglishPage() {
 
         {/* ────────────────────────────────── ESSAY PLANNING */}
         <div id="essay-planning">
-          <Section title="Essay Planning for Common Questions" icon="✍️">
+          <Section title={tr(`Essay Planning for Common Questions`)} icon="✍️">
             <p className="text-sm text-muted-foreground mb-5">
-              AQA-style essay plans for the most likely questions on <em>Pigeon English</em>. Each
-              plan provides a thesis, paragraph structure, and suggested evidence (verify all
+              AQA-style essay plans for the most likely questions on <em>{tr(`Pigeon English`)}</em>
+              . Each plan provides a thesis, paragraph structure, and suggested evidence (verify all
               quotations against your edition before committing them to memory).
             </p>
 
@@ -719,7 +731,7 @@ export default function PigeonEnglishPage() {
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
                   1. How does Kelman present the relationship between childhood and violence in{' '}
-                  <em>Pigeon English</em>?
+                  <em>{tr(`Pigeon English`)}</em>?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -800,9 +812,9 @@ export default function PigeonEnglishPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Migration in <em>Pigeon English</em> is shown as a long, uneven, often violent
-                      process; the novel anatomises the costs of belonging in a city that does not
-                      yet welcome the family reuniting inside it.
+                      Migration in <em>{tr(`Pigeon English`)}</em> is shown as a long, uneven, often
+                      violent process; the novel anatomises the costs of belonging in a city that
+                      does not yet welcome the family reuniting inside it.
                     </p>
                   </div>
                   <div>
@@ -851,7 +863,7 @@ export default function PigeonEnglishPage() {
               {/* Essay 3 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  3. How does Kelman use the pigeon&apos;s voice in <em>Pigeon English</em>?
+                  3. How does Kelman use the pigeon&apos;s voice in <em>{tr(`Pigeon English`)}</em>?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -910,7 +922,7 @@ export default function PigeonEnglishPage() {
               {/* Essay 4 */}
               <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
                 <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">
-                  4. How does Kelman explore family in <em>Pigeon English</em>?
+                  4. How does Kelman explore family in <em>{tr(`Pigeon English`)}</em>?
                 </h4>
                 <div className="mt-3 space-y-3">
                   <div>
@@ -1027,7 +1039,7 @@ export default function PigeonEnglishPage() {
 
       {/* ────────────────────────────────── GRADE 9 POINTS */}
       <div id="grade-9-points">
-        <Section title="Grade 9 Exemplar Points and Interpretations" icon="⭐">
+        <Section title={tr(`Grade 9 Exemplar Points and Interpretations`)} icon="⭐">
           <p className="text-sm text-muted-foreground mb-4 italic">
             Higher-level interpretations that move beyond surface reading. Use these to demonstrate
             sophisticated engagement with Kelman&apos;s purpose, form, and ethical stakes.
@@ -1063,8 +1075,8 @@ export default function PigeonEnglishPage() {
                 3. The Novel&apos;s Refusal of Detective Catharsis
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                <em>Pigeon English</em> sets up the conventions of a child-detective story and
-                refuses every genre payoff. The killer is not caught. The investigator does not
+                <em>{tr(`Pigeon English`)}</em> sets up the conventions of a child-detective story
+                and refuses every genre payoff. The killer is not caught. The investigator does not
                 triumph. Instead, the investigator is killed. This generic subversion is itself the
                 novel&apos;s argument: case-closed comforts are a luxury this material cannot
                 afford. Kelman makes the reader feel the absence of catharsis as an ethical loss.
@@ -1137,11 +1149,11 @@ export default function PigeonEnglishPage() {
 
       {/* ────────────────────────────────── PRACTICE QUESTIONS */}
       <div id="practice-questions">
-        <Section title="Practice Questions" icon="📝">
+        <Section title={tr(`Practice Questions`)} icon="📝">
           <p className="text-sm text-muted-foreground mb-4">
-            AQA-style exam questions for <em>Pigeon English</em>. Plan your response using PEEL
-            paragraphs, embedded quotations, and contextual links to the Damilola Taylor case and
-            post-2000s knife-crime anxiety.
+            AQA-style exam questions for <em>{tr(`Pigeon English`)}</em>. Plan your response using
+            PEEL paragraphs, embedded quotations, and contextual links to the Damilola Taylor case
+            and post-2000s knife-crime anxiety.
           </p>
           <div className="space-y-3">
             {[
@@ -1179,28 +1191,28 @@ export default function PigeonEnglishPage() {
 
       {/* Exam Tips */}
       <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
-        <h3 className="text-lg font-bold text-foreground">Exam Tips for Pigeon English</h3>
+        <h3 className="text-lg font-bold text-foreground">{tr(`Exam Tips for Pigeon English`)}</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Always link to Damilola Taylor.</strong> Kelman has stated the 2000 Peckham
-              murder of Damilola Taylor inspired the novel. This is the single most examinable
-              contextual fact.
+              <strong>{tr(`Always link to Damilola Taylor.`)}</strong> Kelman has stated the 2000
+              Peckham murder of Damilola Taylor inspired the novel. This is the single most
+              examinable contextual fact.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use Kelman&apos;s methods.</strong> Discuss the hybrid voice (Pidgin English,
-              slang, first-person present tense), the pigeon&apos;s italicised interludes, the
-              circular structure, and the closing tonal shift.
+              <strong>{tr(`Use Kelman&apos;s methods.`)}</strong> Discuss the hybrid voice (Pidgin
+              English, slang, first-person present tense), the pigeon&apos;s italicised interludes,
+              the circular structure, and the closing tonal shift.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Refer to Kelman&apos;s intentions.</strong> &lsquo;Kelman perhaps
+              <strong>{tr(`Refer to Kelman&apos;s intentions.`)}</strong> &lsquo;Kelman perhaps
               suggests...&rsquo; or &lsquo;Kelman uses Harri&apos;s voice to...&rsquo; &mdash; treat
               the novel as a designed object.
             </span>
@@ -1208,25 +1220,25 @@ export default function PigeonEnglishPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Verify quotations.</strong> Always confirm wording against your edition before
-              committing quotes to memory. Where this revision page flags <strong>[VERIFY]</strong>,
-              treat the line as paraphrase until you have checked it.
+              <strong>{tr(`Verify quotations.`)}</strong> Always confirm wording against your
+              edition before committing quotes to memory. Where this revision page flags{' '}
+              <strong>[VERIFY]</strong>, treat the line as paraphrase until you have checked it.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Use precise terminology.</strong> &lsquo;Hybrid narrative voice&rsquo;,
-              &lsquo;Pidgin English&rsquo;, &lsquo;first-person present tense&rsquo;,
+              <strong>{tr(`Use precise terminology.`)}</strong> &lsquo;Hybrid narrative
+              voice&rsquo;, &lsquo;Pidgin English&rsquo;, &lsquo;first-person present tense&rsquo;,
               &lsquo;circular structure&rsquo;, &lsquo;dramatic irony&rsquo;.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>Address the whole novel.</strong> Reference the opening murder, the middle
-              section (gang pressure, family scenes, the pigeon), and the closing tonal shift.
-              Examiners reward candidates who show command of the entire arc.
+              <strong>{tr(`Address the whole novel.`)}</strong> Reference the opening murder, the
+              middle section (gang pressure, family scenes, the pigeon), and the closing tonal
+              shift. Examiners reward candidates who show command of the entire arc.
             </span>
           </li>
         </ul>
@@ -1235,10 +1247,10 @@ export default function PigeonEnglishPage() {
       {/* Footer */}
       <footer className="mt-8 text-xs text-muted-foreground">
         <p>
-          <em>Pigeon English</em> by Stephen Kelman was first published by Bloomsbury in 2011 and
-          shortlisted for the Man Booker Prize the same year. The novel is in copyright. Quotations
-          on this page are used for educational analysis under fair-dealing provisions for criticism
-          and review; items flagged
+          <em>{tr(`Pigeon English`)}</em> by Stephen Kelman was first published by Bloomsbury in
+          2011 and shortlisted for the Man Booker Prize the same year. The novel is in copyright.
+          Quotations on this page are used for educational analysis under fair-dealing provisions
+          for criticism and review; items flagged
           <strong> [VERIFY]</strong> should be confirmed against your edition before use in an exam.
         </p>
       </footer>
