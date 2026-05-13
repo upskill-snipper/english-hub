@@ -216,6 +216,24 @@ commit. All three commits TS clean. No regressions.
     lookup() fallback.
 - `50386d7f` — wire school-comp side dictionary into lookup, clean tmp
   staging, coverage doc updated.
+- `a41fe4b9` / `af68d1e8` / `8a7042e5` / `dce6c8c4` / `2d5ce253` /
+  `7652a95b` / `025377f7` — Waves I/J/K/L/M/N (post wave-K continuation):
+  total ~300 more files wired across admin/affiliate/A-Level/account,
+  analytics widgets, billing+brand, model-answers, games+revision,
+  press, anthology+marketing, toolkit+DownloadMenu, school subpages,
+  /help+/faqs+/cookie-policy/refund/terms full legal bodies in formal
+  MSA, reading-assessment+certificate+safeguarding, flashcards+games+
+  poetry+anthology top-levels, vocab+revision+study+dashboard,
+  onboarding+teacher-library+demo, settings, analysis chrome gap fix,
+  layout shells, /igcse+hubs, /learn course player, Trustpilot/SEO/UI,
+  error.tsx pages, analysis deep slugs, PoetryHubAQAClient, parent
+  WeeklyActivity, ALL 15 P&C + ALL 15 L&R + 6 Edexcel + 10 Eduqas +
+  6 OCR poems, IGCSE Edexcel poetry 10 pages, 5 set-text guides
+  (Macbeth + Inspector Calls + Christmas Carol + Jekyll & Hyde +
+  Romeo & Juliet) BILINGUAL, Khaleeji flashcard decks, OG image
+  metadata, dashboard internals, model essays index, qatar-igcse +
+  gcc-igcse + international-school SEO landings + creators page +
+  for-schools/contact full state, 10 home components (marketing).
 - `81557f37` — **WAVE K: 50 agents, all 4 honest gaps closed.**
   - **43/43 blog .ar.mdx siblings created** (~70,000 words of Khaleeji
     translation across every published blog post). Parent-facing posts
@@ -272,10 +290,42 @@ ai-language-directive.ts` helper. 4 LLM routes wrapped
   Trustpilot/Resend/Supabase/Cloudflare) all kept Latin per Gulf
   convention.
 
+## Local Ollama translation pipeline (Wave N)
+
+To bypass Anthropic API rate limits the user has hit during massive
+parallel agent waves, a local Python pipeline at
+`D:\AI-Agent-Server\agents\english-hub-co\scripts\` uses the user's
+Ollama stack on the workstation (16 GB VRAM, RTX 5080):
+
+- **`translate_set_text_guide.py`** — extracts JSX text nodes + visible
+  attribute strings from a page.tsx, calls Ollama (qwen2.5:14b primary
+  with llama3.1:8b fallback) with the same Khaleeji translation system
+  prompt used across the 6,219-entry dictionary, emits a sibling
+  `content.ts` with `{en, ar}` Bi entries.
+- **`clean_content_ts.py`** — post-processes generated content.ts to
+  drop entries with CJK/Hangul leak (model contamination — affects
+  ~5-10% of short strings). Bad entries fall back to EN via tr().
+- **`patch_set_text_with_content.py`** — patches page.tsx to consume
+  the content.ts: injects `'use client'`, the useLocale hook, a tr()
+  helper, then rewrites every literal JSX text + visible attribute
+  string where a matching Bi entry exists.
+- **`translate_all_set_texts.py`** — sequential runner across set-text
+  revision-notes guides.
+- **`translate_audit_top_n.py`** — long-running batch runner against
+  47 highest-priority audit targets (revision-notes, writing-skills,
+  English Language papers, grade-boundary pages, Macbeth read/act
+  flow, legal pages, demo school reports). Long-running — ~30-60
+  GPU hours total; left running unsupervised in the background.
+
+A new `src/lib/i18n/use-locale.ts` hook supports the pattern: reads
+the eh-lang cookie + listens for `eh-lang-change` custom events
+(same pattern as `useT`).
+
 ## Still pending (genuinely remaining work)
 
-After Wave K, the original "honest gaps" list is **closed**. What
-remains is shallower long-tail:
+After Wave N, the original "honest gaps" list is **closed** AND the
+local pipeline is running to clear the next layer of audit targets.
+What remains is the long tail:
 
 - **Remaining 9 P&C poems + L&R + Eduqas/Edexcel/OCR/Cambridge
   anthologies**: per-poem Ar fields not yet filled. Infrastructure
