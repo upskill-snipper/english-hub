@@ -132,4 +132,7 @@ export const SCREENSHOT_FIX_DICTIONARY: Dictionary = {
     ar: 'متوافق مع مواصفات A-Level مال AQA و Pearson Edexcel و OCR و WJEC Eduqas',
   },
   'alevel.hub.open_hub_prefix': { en: 'Open', ar: 'افتح' },
+
+  // ─── EAL nav (added in EAL launch wave) ──────────────────────────
+  'header.nav.eal': { en: 'EAL', ar: 'EAL' },
 }

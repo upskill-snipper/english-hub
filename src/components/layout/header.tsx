@@ -58,6 +58,7 @@ function getNavForBoardType(
   return [
     { href: '/board-select', labelKey: 'header.nav.students' },
     { href: '/ks3', labelKey: 'header.nav.ks3' },
+    { href: '/eal', labelKey: 'header.nav.eal' },
     { href: '/for-parents', labelKey: 'header.nav.parents' },
     { href: '/for-teachers', labelKey: 'header.nav.teachers' },
     { href: '/for-schools', labelKey: 'header.nav.schools' },
