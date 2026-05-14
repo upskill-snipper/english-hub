@@ -24,6 +24,24 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 
+import { STRINGS as _MC_STRINGS } from './content'
+import { useLocale as _useMcLocale } from '@/lib/i18n/use-locale'
+import { useEffect as _useMcEffect } from 'react'
+
+let _mcLocale: 'en' | 'ar' = 'en'
+function _tr(en: string): string {
+  if (_mcLocale !== 'ar') return en
+  for (const v of Object.values(_MC_STRINGS)) if (v.en === en) return v.ar || en
+  return en
+}
+function _useLocaleSync(): void {
+  const locale = _useMcLocale()
+  _mcLocale = locale
+  _useMcEffect(() => {
+    _mcLocale = locale
+  }, [locale])
+}
+
 // ─── Types ────────────────────────────────────────────────────────────────
 
 interface AccountInfo {
@@ -279,7 +297,7 @@ function WelcomeStrip({ account, referralUrl }: { account: AccountInfo; referral
         <div className="flex gap-2">
           <Button variant="outline" render={<Link href={referralUrl} target="_blank" />}>
             <ExternalLink className="h-4 w-4" />
-            <span className="hidden sm:inline">Preview your link</span>
+            <span className="hidden sm:inline">{_tr(`Preview your link`)}</span>
             <span className="sm:hidden">Preview</span>
           </Button>
           <Button onClick={handleCopyLink} aria-live="polite">
@@ -292,7 +310,7 @@ function WelcomeStrip({ account, referralUrl }: { account: AccountInfo; referral
             ) : (
               <>
                 <Copy className="h-4 w-4" />
-                <span className="hidden sm:inline">Copy your referral link</span>
+                <span className="hidden sm:inline">{_tr(`Copy your referral link`)}</span>
                 <span className="sm:hidden">Copy link</span>
               </>
             )}
@@ -420,7 +438,7 @@ function ActivityChart({ data }: { data: DayBucket[] }) {
       <CardContent className="p-6">
         <div className="mb-5 flex items-start justify-between gap-4">
           <div>
-            <h2 className="text-lg font-bold text-foreground">Activity — last 30 days</h2>
+            <h2 className="text-lg font-bold text-foreground">{_tr(`Activity — last 30 days`)}</h2>
             <p className="mt-1 text-sm text-muted-foreground">
               {metric === 'clicks'
                 ? `${totalClicks.toLocaleString('en-GB')} clicks`
@@ -545,7 +563,7 @@ function TierProgressCard({ progress }: { progress: TierProgress }) {
         ) : (
           <div className="mt-5 flex items-center gap-2 rounded-lg bg-yellow-500/10 px-3 py-2 text-sm text-yellow-900">
             <Trophy className="h-4 w-4" />
-            <span className="font-medium">Maxed out — you&apos;re a Gold partner</span>
+            <span className="font-medium">{_tr(`Maxed out — you&apos;re a Gold partner`)}</span>
           </div>
         )}
       </CardContent>
@@ -561,7 +579,7 @@ function SharePanel({ code, referralUrl }: { code: string; referralUrl: string }
       <CardContent className="p-5">
         <div className="flex items-center gap-2">
           <Zap className="h-4 w-4 text-primary" />
-          <h3 className="text-sm font-semibold text-foreground">Share your link</h3>
+          <h3 className="text-sm font-semibold text-foreground">{_tr(`Share your link`)}</h3>
         </div>
         <div className="mt-4 space-y-3">
           <CopyField label="Code" value={code} monospace />
@@ -664,7 +682,9 @@ function TrackingExplainer({ code }: { code: string }) {
         >
           <div className="flex items-center gap-2">
             <Info className="h-4 w-4 text-amber-600" />
-            <h3 className="text-sm font-semibold text-foreground">How does tracking work?</h3>
+            <h3 className="text-sm font-semibold text-foreground">
+              {_tr(`How does tracking work?`)}
+            </h3>
           </div>
           <ChevronDown
             className={cn(
@@ -680,10 +700,12 @@ function TrackingExplainer({ code }: { code: string }) {
             className="space-y-5 border-t border-amber-500/30 px-5 py-4 text-sm text-foreground"
           >
             <section>
-              <p className="font-semibold">Two ways your code earns commission:</p>
+              <p className="font-semibold">{_tr(`Two ways your code earns commission:`)}</p>
               <ol className="mt-2 list-decimal space-y-2 pl-5 text-muted-foreground">
                 <li>
-                  <span className="font-medium text-foreground">Someone clicks your link.</span>{' '}
+                  <span className="font-medium text-foreground">
+                    {_tr(`Someone clicks your link.`)}
+                  </span>{' '}
                   Your link{' '}
                   <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground">
                     {trackingUrl}
@@ -707,7 +729,7 @@ function TrackingExplainer({ code }: { code: string }) {
             </section>
 
             <section>
-              <p className="font-semibold">What earns commission</p>
+              <p className="font-semibold">{_tr(`What earns commission`)}</p>
               <ul className="mt-2 space-y-1 text-muted-foreground">
                 <li>
                   <span aria-hidden="true">✅</span> <span className="sr-only">Yes:</span>
@@ -733,7 +755,7 @@ function TrackingExplainer({ code }: { code: string }) {
             </section>
 
             <section>
-              <p className="font-semibold">When you get paid</p>
+              <p className="font-semibold">{_tr(`When you get paid`)}</p>
               <ul className="mt-2 space-y-1 text-muted-foreground">
                 <li>
                   <span className="font-medium text-foreground">Day 0:</span> Customer pays →
@@ -744,8 +766,8 @@ function TrackingExplainer({ code }: { code: string }) {
                   refund window → moves to &ldquo;Confirmed&rdquo;.
                 </li>
                 <li>
-                  <span className="font-medium text-foreground">Day 60+ next 1st:</span> Confirmed
-                  conversions are batched into a payout if the running total is ≥ £20.
+                  <span className="font-medium text-foreground">{_tr(`Day 60+ next 1st:`)}</span>{' '}
+                  Confirmed conversions are batched into a payout if the running total is ≥ £20.
                 </li>
                 <li>
                   <span className="font-medium text-foreground">Method:</span> BACS or PayPal
@@ -755,9 +777,11 @@ function TrackingExplainer({ code }: { code: string }) {
             </section>
 
             <section>
-              <p className="font-semibold">Things that void a commission</p>
+              <p className="font-semibold">{_tr(`Things that void a commission`)}</p>
               <ul className="mt-2 space-y-1 text-muted-foreground">
-                <li>Customer cancels within their 7-day free trial (no payment was taken).</li>
+                <li>
+                  {_tr(`Customer cancels within their 7-day free trial (no payment was taken).`)}
+                </li>
                 <li>
                   Customer requests a refund within 14 days (UK statutory window) → conversion
                   flipped to &ldquo;Refunded&rdquo;.
@@ -770,7 +794,7 @@ function TrackingExplainer({ code }: { code: string }) {
             </section>
 
             <section>
-              <p className="font-semibold">Full tracking transparency</p>
+              <p className="font-semibold">{_tr(`Full tracking transparency`)}</p>
               <p className="mt-2 text-muted-foreground">
                 Every conversion shows up on this dashboard within ~2 minutes of payment. If
                 you&apos;ve shared a link or code with someone who paid and you don&apos;t see it
@@ -794,7 +818,7 @@ function RecentConversions({ conversions }: { conversions: Conversion[] }) {
           <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-muted">
             <PoundSterling className="h-5 w-5 text-muted-foreground" />
           </div>
-          <h3 className="font-semibold text-foreground">No conversions yet</h3>
+          <h3 className="font-semibold text-foreground">{_tr(`No conversions yet`)}</h3>
           <p className="mt-1 text-sm text-muted-foreground">
             Share your link — every paid signup appears here within a few minutes.
           </p>
@@ -805,7 +829,7 @@ function RecentConversions({ conversions }: { conversions: Conversion[] }) {
   return (
     <Card className="border-border/40">
       <CardContent className="p-6">
-        <h2 className="mb-4 text-lg font-bold text-foreground">Recent conversions</h2>
+        <h2 className="mb-4 text-lg font-bold text-foreground">{_tr(`Recent conversions`)}</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -946,7 +970,7 @@ function LinksCard({ links, totalClicks }: { links: AffiliateLink[]; totalClicks
       <CardContent className="p-6">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <h2 className="text-lg font-bold text-foreground">Your tracked links</h2>
+            <h2 className="text-lg font-bold text-foreground">{_tr(`Your tracked links`)}</h2>
             <p className="mt-1 text-sm text-muted-foreground">
               {totalClicks.toLocaleString('en-GB')} clicks across {links.length || 'your default'}{' '}
               link{links.length === 1 ? '' : 's'}
@@ -1009,7 +1033,7 @@ function RecentClicks({ clicks }: { clicks: ClickEntry[] }) {
   return (
     <Card className="border-border/40">
       <CardContent className="p-6">
-        <h2 className="mb-4 text-lg font-bold text-foreground">Recent clicks</h2>
+        <h2 className="mb-4 text-lg font-bold text-foreground">{_tr(`Recent clicks`)}</h2>
         <ul className="space-y-2">
           {clicks.map((c) => (
             <li

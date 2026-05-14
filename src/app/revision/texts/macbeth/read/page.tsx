@@ -1,6 +1,8 @@
 'use client'
 
 import { InteractiveTextViewer, type TextData } from '@/components/study/InteractiveTextViewer'
+import { useLocale } from '@/lib/i18n/use-locale'
+import { translateMacbethData } from './translations'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 // ─── Full Macbeth text data ─────────────────────────────────────────────────
@@ -132,18 +134,18 @@ They smack of honour both. Go get him surgeons.</p>`,
         },
         {
           type: 'context',
-          text: 'When the hurly-burly\'s done',
+          text: "When the hurly-burly's done",
           note: 'The witches speak in trochaic tetrameter (stressed-unstressed rhythm), which contrasts with the iambic pentameter used by the court characters. This rhythmic difference marks them as supernatural beings outside the natural order. Shakespeare used this distinction to unsettle the audience.',
         },
         {
           type: 'character',
           text: 'There to meet with Macbeth',
-          note: 'The witches already know Macbeth by name before meeting him, implying they have been watching and waiting. This raises the key question of the play: do the witches cause Macbeth\'s downfall, or do they merely predict what he would have done anyway? The ambiguity is deliberate.',
+          note: "The witches already know Macbeth by name before meeting him, implying they have been watching and waiting. This raises the key question of the play: do the witches cause Macbeth's downfall, or do they merely predict what he would have done anyway? The ambiguity is deliberate.",
         },
         {
           type: 'quote',
           text: 'Fair is foul, and foul is fair',
-          note: 'KEY ESSAY QUOTE -- Use for: appearance vs reality, the supernatural, moral disorder. This chiasmus is the play\'s thematic thesis statement and can open or anchor almost any essay about Macbeth.',
+          note: "KEY ESSAY QUOTE -- Use for: appearance vs reality, the supernatural, moral disorder. This chiasmus is the play's thematic thesis statement and can open or anchor almost any essay about Macbeth.",
         },
         {
           type: 'language',
@@ -152,7 +154,7 @@ They smack of honour both. Go get him surgeons.</p>`,
         },
         {
           type: 'language',
-          text: 'unseamed him from the nave to th\' chops',
+          text: "unseamed him from the nave to th' chops",
           note: 'Visceral, violent imagery -- Macbeth literally split Macdonwald open from navel to jaw. The verb "unseamed" treats the body like fabric being torn apart. This establishes Macbeth\'s capacity for extreme violence, foreshadowing the murders to come.',
         },
         {
@@ -429,18 +431,18 @@ Without my stir.</p>`,
         },
         {
           type: 'character',
-          text: 'The instruments of darkness tell us truths, Win us with honest trifles, to betray \'s In deepest consequence',
-          note: 'Banquo acts as Macbeth\'s moral foil. He hears the same prophecy but responds with caution and moral clarity, recognising the witches\' strategy of using small truths to deliver larger deceptions. Macbeth ignores this wise warning.',
+          text: "The instruments of darkness tell us truths, Win us with honest trifles, to betray 's In deepest consequence",
+          note: "Banquo acts as Macbeth's moral foil. He hears the same prophecy but responds with caution and moral clarity, recognising the witches' strategy of using small truths to deliver larger deceptions. Macbeth ignores this wise warning.",
         },
         {
           type: 'quote',
-          text: 'The instruments of darkness tell us truths, Win us with honest trifles, to betray \'s In deepest consequence',
-          note: 'KEY ESSAY QUOTE -- Banquo\'s warning articulates how evil operates through deception. Use for: the supernatural, Banquo as foil, appearance vs reality, equivocation.',
+          text: "The instruments of darkness tell us truths, Win us with honest trifles, to betray 's In deepest consequence",
+          note: "KEY ESSAY QUOTE -- Banquo's warning articulates how evil operates through deception. Use for: the supernatural, Banquo as foil, appearance vs reality, equivocation.",
         },
         {
           type: 'theme',
           text: 'This supernatural soliciting Cannot be ill, cannot be good',
-          note: 'Theme: The Supernatural / Fate vs Free Will. Macbeth\'s soliloquy reveals his internal conflict. The prophecy has not commanded him to murder -- he draws that conclusion himself. This supports the reading that the witches exploit existing desires rather than creating new ones.',
+          note: "Theme: The Supernatural / Fate vs Free Will. Macbeth's soliloquy reveals his internal conflict. The prophecy has not commanded him to murder -- he draws that conclusion himself. This supports the reading that the witches exploit existing desires rather than creating new ones.",
         },
         {
           type: 'language',
@@ -455,13 +457,13 @@ Without my stir.</p>`,
         {
           type: 'context',
           text: 'Lesser than Macbeth, and greater',
-          note: 'The witches\' paradoxical prophecies about Banquo use equivocation -- deliberately ambiguous language. This had topical resonance after the Gunpowder Plot (1605), when the Jesuit Henry Garnet defended the doctrine of equivocation at his trial. Shakespeare\'s audience would have recognised this as devilish deception.',
+          note: "The witches' paradoxical prophecies about Banquo use equivocation -- deliberately ambiguous language. This had topical resonance after the Gunpowder Plot (1605), when the Jesuit Henry Garnet defended the doctrine of equivocation at his trial. Shakespeare's audience would have recognised this as devilish deception.",
         },
       ],
     },
     {
       id: 'act1-scene5',
-      title: 'Act 1, Scene 5 — Lady Macbeth\'s Letter',
+      title: "Act 1, Scene 5 — Lady Macbeth's Letter",
       content: `<p class="italic text-muted-foreground mb-4">Inverness. Macbeth's castle. Enter Lady Macbeth, reading a letter.</p>
 
 <p><strong>LADY MACBETH</strong>
@@ -579,7 +581,7 @@ Leave all the rest to me.</p>`,
       annotations: [
         {
           type: 'quote',
-          text: 'Yet do I fear thy nature; It is too full o\' th\' milk of human kindness',
+          text: "Yet do I fear thy nature; It is too full o' th' milk of human kindness",
           note: 'KEY ESSAY QUOTE -- Lady Macbeth\'s assessment reveals Macbeth still has a moral conscience she must overcome. The metaphor of "milk" associates kindness with femininity and nurturing. She sees his humanity as a weakness to be purged.',
         },
         {
@@ -594,18 +596,18 @@ Leave all the rest to me.</p>`,
         },
         {
           type: 'quote',
-          text: 'Look like th\' innocent flower, But be the serpent under \'t',
-          note: 'KEY ESSAY QUOTE -- Biblical allusion to the serpent in Eden. Lady Macbeth instructs Macbeth in the art of deception. Use for: appearance vs reality, Lady Macbeth\'s manipulation, the corruption of innocence.',
+          text: "Look like th' innocent flower, But be the serpent under 't",
+          note: "KEY ESSAY QUOTE -- Biblical allusion to the serpent in Eden. Lady Macbeth instructs Macbeth in the art of deception. Use for: appearance vs reality, Lady Macbeth's manipulation, the corruption of innocence.",
         },
         {
           type: 'character',
-          text: 'Come to my woman\'s breasts, And take my milk for gall',
+          text: "Come to my woman's breasts, And take my milk for gall",
           note: 'Lady Macbeth asks spirits to replace her breast milk (symbol of maternal nurturing) with "gall" (bitterness/poison). This is a deliberate rejection of motherhood and femininity. The imagery is shocking and transgressive, marking her as deeply unnatural in Jacobean terms.',
         },
         {
           type: 'context',
           text: 'Come, you spirits That tend on mortal thoughts',
-          note: 'Lady Macbeth\'s invocation of evil spirits would have been deeply disturbing to a Jacobean audience who believed in demonic possession. She is essentially inviting the devil in. This aligns her with the witches and the supernatural evil they represent. King James I would have seen this as evidence of witchcraft.',
+          note: "Lady Macbeth's invocation of evil spirits would have been deeply disturbing to a Jacobean audience who believed in demonic possession. She is essentially inviting the devil in. This aligns her with the witches and the supernatural evil they represent. King James I would have seen this as evidence of witchcraft.",
         },
         {
           type: 'language',
@@ -615,7 +617,7 @@ Leave all the rest to me.</p>`,
         {
           type: 'theme',
           text: 'Your face, my thane, is as a book where men May read strange matters',
-          note: 'Theme: Appearance vs Reality. Lady Macbeth recognises that Macbeth\'s face betrays his thoughts -- he cannot yet deceive. She must teach him to separate his appearance from his reality, a skill that will consume them both.',
+          note: "Theme: Appearance vs Reality. Lady Macbeth recognises that Macbeth's face betrays his thoughts -- he cannot yet deceive. She must teach him to separate his appearance from his reality, a skill that will consume them both.",
         },
       ],
     },
@@ -748,32 +750,32 @@ False face must hide what the false heart doth know.</p>`,
       annotations: [
         {
           type: 'language',
-          text: 'If it were done when \'tis done, then \'twere well It were done quickly',
+          text: "If it were done when 'tis done, then 'twere well It were done quickly",
           note: 'The tortured syntax mirrors Macbeth\'s tortured thinking. The repetition of "done" three times in the first line shows his mind circling around the act, trying to reduce murder to a simple task. The conditional "if" reveals he knows it will NOT be "done" -- consequences will follow.',
         },
         {
           type: 'quote',
-          text: 'I have no spur To prick the sides of my intent, but only Vaulting ambition, which o\'erleaps itself And falls on the other',
+          text: "I have no spur To prick the sides of my intent, but only Vaulting ambition, which o'erleaps itself And falls on the other",
           note: 'KEY ESSAY QUOTE -- Macbeth admits his ONLY motive is ambition. The horse-riding metaphor of "vaulting ambition" that "o\'erleaps itself" perfectly predicts his trajectory: he will overreach and fall. This is the tragic flaw identified by the hero himself.',
         },
         {
           type: 'theme',
-          text: 'Vaulting ambition, which o\'erleaps itself And falls on the other',
+          text: "Vaulting ambition, which o'erleaps itself And falls on the other",
           note: 'Theme: Ambition. Macbeth identifies ambition as a force that destroys itself through excess. The image of a rider vaulting too high and falling off the other side of the horse captures the entire arc of the play in a single metaphor.',
         },
         {
           type: 'character',
           text: 'When you durst do it, then you were a man; And to be more than what you were, you would Be so much more the man',
-          note: 'Lady Macbeth\'s most devastating manipulation: she redefines masculinity as the willingness to murder. She attacks Macbeth\'s identity, his sense of self as a man, knowing this is more powerful than any logical argument. She weaponises gender expectations.',
+          note: "Lady Macbeth's most devastating manipulation: she redefines masculinity as the willingness to murder. She attacks Macbeth's identity, his sense of self as a man, knowing this is more powerful than any logical argument. She weaponises gender expectations.",
         },
         {
           type: 'quote',
           text: 'I dare do all that may become a man. Who dares do more is none',
-          note: 'KEY ESSAY QUOTE -- Macbeth\'s response offers a more nuanced definition of manhood: true manliness has moral limits. To exceed those limits is to become less than human. Tragically, he will immediately abandon this principled position. Use for: gender/masculinity theme.',
+          note: "KEY ESSAY QUOTE -- Macbeth's response offers a more nuanced definition of manhood: true manliness has moral limits. To exceed those limits is to become less than human. Tragically, he will immediately abandon this principled position. Use for: gender/masculinity theme.",
         },
         {
           type: 'language',
-          text: 'I have given suck, and know How tender \'tis to love the babe that milks me. I would, while it was smiling in my face, Have plucked my nipple from his boneless gums And dashed the brains out',
+          text: "I have given suck, and know How tender 'tis to love the babe that milks me. I would, while it was smiling in my face, Have plucked my nipple from his boneless gums And dashed the brains out",
           note: 'The most shocking image in the play. Lady Macbeth uses the ultimate act of maternal destruction -- killing her own nursing baby -- as a measure of her commitment. The contrast between tenderness ("smiling in my face") and violence ("dashed the brains out") is deliberately horrifying. It proves she will stop at nothing.',
         },
         {
@@ -917,7 +919,7 @@ That summons thee to heaven or to hell.</p>`,
         {
           type: 'quote',
           text: 'Is this a dagger which I see before me, The handle toward my hand?',
-          note: 'KEY ESSAY QUOTE -- The most famous soliloquy opening in the play. The dagger hallucination dramatises Macbeth\'s psychological conflict. Is it supernatural temptation or a projection of his guilty mind? The fact the handle points towards him suggests temptation offering itself willingly.',
+          note: "KEY ESSAY QUOTE -- The most famous soliloquy opening in the play. The dagger hallucination dramatises Macbeth's psychological conflict. Is it supernatural temptation or a projection of his guilty mind? The fact the handle points towards him suggests temptation offering itself willingly.",
         },
         {
           type: 'language',
@@ -927,21 +929,21 @@ That summons thee to heaven or to hell.</p>`,
         {
           type: 'theme',
           text: 'Is this a dagger which I see before me',
-          note: 'Theme: The Supernatural. The dagger vision exists in the liminal space between reality and hallucination. It embodies the play\'s refusal to clearly separate natural from supernatural, real from imagined. This ambiguity makes the supernatural elements more unsettling.',
+          note: "Theme: The Supernatural. The dagger vision exists in the liminal space between reality and hallucination. It embodies the play's refusal to clearly separate natural from supernatural, real from imagined. This ambiguity makes the supernatural elements more unsettling.",
         },
         {
           type: 'character',
           text: 'So I lose none In seeking to augment it, but still keep My bosom franchised and allegiance clear',
-          note: 'Banquo\'s conditional response reveals his moral integrity: he will seek honour only if it does not compromise his conscience or loyalty. This directly contrasts with Macbeth, who is about to sacrifice both conscience and loyalty for the crown.',
+          note: "Banquo's conditional response reveals his moral integrity: he will seek honour only if it does not compromise his conscience or loyalty. This directly contrasts with Macbeth, who is about to sacrifice both conscience and loyalty for the crown.",
         },
         {
           type: 'language',
-          text: 'With Tarquin\'s ravishing strides, towards his design Moves like a ghost',
+          text: "With Tarquin's ravishing strides, towards his design Moves like a ghost",
           note: 'The classical allusion to Tarquin (the Roman king who committed a famous rape) associates Macbeth\'s crime with sexual violence and tyranny. "Moves like a ghost" foreshadows Macbeth\'s spiritual death -- he is already becoming a hollow figure.',
         },
         {
           type: 'context',
-          text: 'Witchcraft celebrates Pale Hecate\'s offerings',
+          text: "Witchcraft celebrates Pale Hecate's offerings",
           note: 'Hecate was the Greek goddess of witchcraft, crossroads, and the underworld. Macbeth imagines the entire supernatural world activated and celebrating as he moves towards murder. For Jacobean audiences, this would confirm that regicide aligns with demonic forces.',
         },
         {
@@ -1128,7 +1130,7 @@ Wake Duncan with thy knocking. I would thou couldst!</p>`,
       annotations: [
         {
           type: 'quote',
-          text: 'Will all great Neptune\'s ocean wash this blood Clean from my hand?',
+          text: "Will all great Neptune's ocean wash this blood Clean from my hand?",
           note: 'KEY ESSAY QUOTE -- The hyperbole of an entire ocean being insufficient to cleanse his hands conveys the permanence of guilt. This directly contrasts with Lady Macbeth\'s dismissive "A little water clears us of this deed" -- a confidence devastatingly reversed in her sleepwalking scene.',
         },
         {
@@ -1143,7 +1145,7 @@ Wake Duncan with thy knocking. I would thou couldst!</p>`,
         },
         {
           type: 'character',
-          text: 'Had he not resembled My father as he slept, I had done \'t',
+          text: "Had he not resembled My father as he slept, I had done 't",
           note: 'This crucial aside reveals Lady Macbeth\'s humanity beneath her iron resolve. Despite calling on spirits to "unsex" her, she cannot commit the murder herself because Duncan reminds her of her father. Her femininity and compassion have not been fully suppressed -- they will resurface devastatingly in Act 5.',
         },
         {
@@ -1158,13 +1160,13 @@ Wake Duncan with thy knocking. I would thou couldst!</p>`,
         },
         {
           type: 'context',
-          text: 'I\'ll gild the faces of the grooms withal, For it must seem their guilt',
+          text: "I'll gild the faces of the grooms withal, For it must seem their guilt",
           note: 'The pun on "gild" (to cover in gold) and "guilt" reveals Lady Macbeth\'s dark wit under pressure. She is practical and composed where Macbeth is paralysed. The framing of the grooms reflects the play\'s theme of appearance vs reality -- she manufactures false evidence.',
         },
         {
           type: 'theme',
-          text: 'Sleep that knits up the ravelled sleave of care, The death of each day\'s life, sore labour\'s bath',
-          note: 'Theme: Natural Order. Macbeth\'s beautiful description of sleep as healing and restorative emphasises what he has destroyed. Sleep represents the natural order -- by murdering the sleeping king, he has violated nature itself and condemned himself to perpetual wakefulness and guilt.',
+          text: "Sleep that knits up the ravelled sleave of care, The death of each day's life, sore labour's bath",
+          note: "Theme: Natural Order. Macbeth's beautiful description of sleep as healing and restorative emphasises what he has destroyed. Sleep represents the natural order -- by murdering the sleeping king, he has violated nature itself and condemned himself to perpetual wakefulness and guilt.",
         },
       ],
     },
@@ -1174,7 +1176,7 @@ Wake Duncan with thy knocking. I would thou couldst!</p>`,
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     {
       id: 'act3-scene4',
-      title: 'Act 3, Scene 4 — The Banquet / Banquo\'s Ghost',
+      title: "Act 3, Scene 4 — The Banquet / Banquo's Ghost",
       content: `<p class="italic text-muted-foreground mb-4">A hall in the palace. A banquet prepared. Enter Macbeth, Lady Macbeth, Ross, Lennox, Lords, and Attendants.</p>
 
 <p><strong>MACBETH</strong>
@@ -1413,7 +1415,7 @@ We are yet but young in deed.</p>`,
       annotations: [
         {
           type: 'quote',
-          text: 'I am in blood Stepped in so far that, should I wade no more, Returning were as tedious as go o\'er',
+          text: "I am in blood Stepped in so far that, should I wade no more, Returning were as tedious as go o'er",
           note: 'KEY ESSAY QUOTE -- Extended metaphor of guilt as a river of blood. The word "tedious" is chillingly understated -- returning to virtue has become merely inconvenient. Once a threshold of evil is crossed, the moral cost of repentance feels equal to continuing. This traps Macbeth in a cycle of violence.',
         },
         {
@@ -1438,8 +1440,8 @@ We are yet but young in deed.</p>`,
         },
         {
           type: 'context',
-          text: 'The Ghost of Banquo enters, and sits in Macbeth\'s place',
-          note: 'The ghost sitting in Macbeth\'s chair symbolically suggests that Banquo\'s line (leading to James I) is the rightful occupant of the throne. For Shakespeare\'s audience, this would have reinforced the Stuart claim to the crown. The ghost displaces the usurper.',
+          text: "The Ghost of Banquo enters, and sits in Macbeth's place",
+          note: "The ghost sitting in Macbeth's chair symbolically suggests that Banquo's line (leading to James I) is the rightful occupant of the throne. For Shakespeare's audience, this would have reinforced the Stuart claim to the crown. The ghost displaces the usurper.",
         },
         {
           type: 'language',
@@ -1749,7 +1751,7 @@ Come, bring me where they are.</p>`,
         {
           type: 'character',
           text: 'The very firstlings of my heart shall be The firstlings of my hand',
-          note: 'Macbeth resolves to act on impulse without reflection -- the opposite of his agonised deliberation before Duncan\'s murder. He has evolved from a man paralysed by conscience to one who murders spontaneously. The slaughter of Macduff\'s family follows immediately.',
+          note: "Macbeth resolves to act on impulse without reflection -- the opposite of his agonised deliberation before Duncan's murder. He has evolved from a man paralysed by conscience to one who murders spontaneously. The slaughter of Macduff's family follows immediately.",
         },
         {
           type: 'context',
@@ -1930,18 +1932,18 @@ Good night, good doctor.</p>`,
         },
         {
           type: 'language',
-          text: 'Here\'s the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand',
+          text: "Here's the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand",
           note: 'The sensory shift from sight (spot) to smell shows guilt becoming more pervasive and inescapable. This directly inverts Macbeth\'s "Neptune\'s ocean" image -- she has arrived at the same recognition of permanent guilt. "Little" is poignant: she is suddenly diminished, no longer the towering figure of Act 1.',
         },
         {
           type: 'theme',
           text: 'Out, damned spot!',
-          note: 'Theme: Guilt and Conscience. Lady Macbeth\'s sleepwalking proves that guilt cannot be suppressed indefinitely. Her unconscious mind forces her to relive the crimes she helped orchestrate. The blood she once dismissed as trivial has become a permanent psychological stain.',
+          note: "Theme: Guilt and Conscience. Lady Macbeth's sleepwalking proves that guilt cannot be suppressed indefinitely. Her unconscious mind forces her to relive the crimes she helped orchestrate. The blood she once dismissed as trivial has become a permanent psychological stain.",
         },
         {
           type: 'character',
           text: 'Yet who would have thought the old man to have had so much blood in him?',
-          note: 'Lady Macbeth\'s fragmented prose contrasts with her earlier commanding verse. The shift from verse to prose signals her mental disintegration. She relives multiple murders simultaneously -- Duncan, Lady Macduff, Banquo -- all merging into a single nightmare of guilt.',
+          note: "Lady Macbeth's fragmented prose contrasts with her earlier commanding verse. The shift from verse to prose signals her mental disintegration. She relives multiple murders simultaneously -- Duncan, Lady Macduff, Banquo -- all merging into a single nightmare of guilt.",
         },
         {
           type: 'context',
@@ -1950,7 +1952,7 @@ Good night, good doctor.</p>`,
         },
         {
           type: 'language',
-          text: 'What\'s done cannot be undone',
+          text: "What's done cannot be undone",
           note: 'This echoes and inverts Macbeth\'s "If it were done when \'tis done." Where Macbeth tried to imagine murder as finite and contained, Lady Macbeth now recognises its irreversibility. The simple, child-like diction ("done... undone") reflects her mental regression.',
         },
         {
@@ -2067,7 +2069,7 @@ At least we'll die with harness on our back.</p>`,
         },
         {
           type: 'language',
-          text: 'Life\'s but a walking shadow, a poor player That struts and frets his hour upon the stage And then is heard no more',
+          text: "Life's but a walking shadow, a poor player That struts and frets his hour upon the stage And then is heard no more",
           note: 'The theatrical metaphor is deeply self-aware -- Macbeth IS a character on a stage. "Walking shadow" suggests something without substance. "Struts and frets" reduces all human action to pointless performance. "His hour" emphasises life\'s brevity. The metaphor layers: life is a shadow of a bad actor in a meaningless play.',
         },
         {
@@ -2092,13 +2094,13 @@ At least we'll die with harness on our back.</p>`,
         },
         {
           type: 'theme',
-          text: 'To doubt th\' equivocation of the fiend That lies like truth',
+          text: "To doubt th' equivocation of the fiend That lies like truth",
           note: 'Theme: Appearance vs Reality. Macbeth finally recognises the witches\' strategy -- equivocation, the use of literally true statements to deceive. "Lies like truth" perfectly describes their prophecies. This moment of clarity comes too late to save him.',
         },
         {
           type: 'context',
           text: 'Out, out, brief candle!',
-          note: 'The candle metaphor connects to the play\'s sustained light/darkness imagery. Candles and torches have appeared throughout as fragile sources of light in an overwhelming darkness. Now Macbeth extinguishes even this hope, accepting total darkness. The exclamation mimics someone literally snuffing a candle.',
+          note: "The candle metaphor connects to the play's sustained light/darkness imagery. Candles and torches have appeared throughout as fragile sources of light in an overwhelming darkness. Now Macbeth extinguishes even this hope, accepting total darkness. The exclamation mimics someone literally snuffing a candle.",
         },
       ],
     },
@@ -2260,17 +2262,17 @@ Whom we invite to see us crowned at Scone.</p>
         {
           type: 'quote',
           text: 'Lay on, Macduff, And damned be him that first cries, "Hold, enough!"',
-          note: 'KEY ESSAY QUOTE -- Macbeth\'s final words restore a measure of the warrior\'s courage he displayed in Act 1. Despite knowing the prophecies guarantee his defeat, he chooses to fight rather than surrender. This defiant last stand gives him a shred of tragic dignity.',
+          note: "KEY ESSAY QUOTE -- Macbeth's final words restore a measure of the warrior's courage he displayed in Act 1. Despite knowing the prophecies guarantee his defeat, he chooses to fight rather than surrender. This defiant last stand gives him a shred of tragic dignity.",
         },
         {
           type: 'character',
-          text: 'Macduff was from his mother\'s womb Untimely ripped',
-          note: 'Macduff\'s caesarean birth fulfils the witches\' prophecy -- he was not "born" of woman in the conventional sense. His role as the agent of justice connects to the play\'s theme of rightful order: it takes someone outside the normal order of nature to defeat one who has violated it.',
+          text: "Macduff was from his mother's womb Untimely ripped",
+          note: "Macduff's caesarean birth fulfils the witches' prophecy -- he was not \"born\" of woman in the conventional sense. His role as the agent of justice connects to the play's theme of rightful order: it takes someone outside the normal order of nature to defeat one who has violated it.",
         },
         {
           type: 'theme',
           text: 'this dead butcher and his fiend-like queen',
-          note: 'Theme: Kingship and Power. Malcolm\'s reductive summary reduces Macbeth and Lady Macbeth to villain archetypes. But the audience has seen their full psychological complexity -- this gap between Malcolm\'s simple verdict and the play\'s rich characterisation is itself significant. History simplifies; drama humanises.',
+          note: "Theme: Kingship and Power. Malcolm's reductive summary reduces Macbeth and Lady Macbeth to villain archetypes. But the audience has seen their full psychological complexity -- this gap between Malcolm's simple verdict and the play's rich characterisation is itself significant. History simplifies; drama humanises.",
         },
         {
           type: 'context',
@@ -2301,7 +2303,7 @@ Whom we invite to see us crowned at Scone.</p>
     {
       name: 'Macbeth',
       description:
-        'The play\'s tragic hero. A brave Scottish general whose ambition, ignited by the witches\' prophecy and his wife\'s goading, leads him to murder King Duncan and seize the throne. He descends from honoured warrior to paranoid tyrant, ultimately destroyed by the very forces he sought to control. His soliloquies reveal a man acutely aware of his own moral corruption yet unable to stop himself.',
+        "The play's tragic hero. A brave Scottish general whose ambition, ignited by the witches' prophecy and his wife's goading, leads him to murder King Duncan and seize the throne. He descends from honoured warrior to paranoid tyrant, ultimately destroyed by the very forces he sought to control. His soliloquies reveal a man acutely aware of his own moral corruption yet unable to stop himself.",
       keyQuotes: [
         '"I have no spur to prick the sides of my intent, but only vaulting ambition, which o\'erleaps itself and falls on the other."',
         '"Is this a dagger which I see before me, the handle toward my hand?"',
@@ -2312,7 +2314,7 @@ Whom we invite to see us crowned at Scone.</p>
     {
       name: 'Lady Macbeth',
       description:
-        'Macbeth\'s wife and co-conspirator. She is the driving force behind Duncan\'s murder, manipulating her husband by questioning his manhood. She calls on dark spirits to "unsex" her and fill her with cruelty. However, her iron resolve crumbles as guilt takes hold, leading to sleepwalking, madness, and implied suicide. Her arc from fierce ambition to psychological destruction is one of Shakespeare\'s greatest character studies.',
+        "Macbeth's wife and co-conspirator. She is the driving force behind Duncan's murder, manipulating her husband by questioning his manhood. She calls on dark spirits to \"unsex\" her and fill her with cruelty. However, her iron resolve crumbles as guilt takes hold, leading to sleepwalking, madness, and implied suicide. Her arc from fierce ambition to psychological destruction is one of Shakespeare's greatest character studies.",
       keyQuotes: [
         '"Yet do I fear thy nature; it is too full o\' th\' milk of human kindness."',
         '"Unsex me here, and fill me from the crown to the toe top-full of direst cruelty."',
@@ -2324,7 +2326,7 @@ Whom we invite to see us crowned at Scone.</p>
     {
       name: 'Banquo',
       description:
-        'Macbeth\'s fellow general and moral foil. He hears the same prophecy but responds with caution rather than ambition. He warns that "the instruments of darkness tell us truths, to betray\'s in deepest consequence." After Duncan\'s murder, he suspects Macbeth but does not act. His murder by Macbeth\'s hired assassins and his ghost\'s appearance at the banquet serve as physical manifestations of Macbeth\'s guilt.',
+        "Macbeth's fellow general and moral foil. He hears the same prophecy but responds with caution rather than ambition. He warns that \"the instruments of darkness tell us truths, to betray's in deepest consequence.\" After Duncan's murder, he suspects Macbeth but does not act. His murder by Macbeth's hired assassins and his ghost's appearance at the banquet serve as physical manifestations of Macbeth's guilt.",
       keyQuotes: [
         '"The instruments of darkness tell us truths, win us with honest trifles, to betray\'s in deepest consequence."',
         '"Thou hast it now: King, Cawdor, Glamis, all, as the weird women promised, and I fear thou play\'dst most foully for\'t."',
@@ -2333,7 +2335,7 @@ Whom we invite to see us crowned at Scone.</p>
     {
       name: 'Macduff',
       description:
-        'The Thane of Fife and the play\'s agent of justice. He is the first to discover Duncan\'s body and refuses to attend Macbeth\'s coronation. After his family is slaughtered on Macbeth\'s orders, he joins Malcolm in England and leads the army that defeats Macbeth. His caesarean birth fulfils the witches\' prophecy, and his grief for his family offers an alternative model of masculinity.',
+        "The Thane of Fife and the play's agent of justice. He is the first to discover Duncan's body and refuses to attend Macbeth's coronation. After his family is slaughtered on Macbeth's orders, he joins Malcolm in England and leads the army that defeats Macbeth. His caesarean birth fulfils the witches' prophecy, and his grief for his family offers an alternative model of masculinity.",
       keyQuotes: [
         '"O horror, horror, horror! Tongue nor heart cannot conceive nor name thee!"',
         '"I shall do so; but I must also feel it as a man."',
@@ -2364,7 +2366,7 @@ Whom we invite to see us crowned at Scone.</p>
     {
       name: 'Malcolm',
       description:
-        'Duncan\'s eldest son and rightful heir to the Scottish throne. He initially flees after his father\'s murder but matures into a shrewd and cautious leader. He tests Macduff\'s loyalty by pretending to be riddled with vices, demonstrating political wisdom his father lacked. His restoration as king at the play\'s end represents the triumph of legitimate order over tyranny.',
+        "Duncan's eldest son and rightful heir to the Scottish throne. He initially flees after his father's murder but matures into a shrewd and cautious leader. He tests Macduff's loyalty by pretending to be riddled with vices, demonstrating political wisdom his father lacked. His restoration as king at the play's end represents the triumph of legitimate order over tyranny.",
       keyQuotes: [
         '"This dead butcher and his fiend-like queen."',
         '"What\'s more to do, which would be planted newly with the time."',
@@ -2373,7 +2375,7 @@ Whom we invite to see us crowned at Scone.</p>
     {
       name: 'Lady Macduff',
       description:
-        'Macduff\'s wife, who appears briefly before being murdered with her children on Macbeth\'s orders. Her scene with her son provides the play\'s most emotionally devastating moment and illustrates the innocent victims of Macbeth\'s tyranny. Her murder marks Macbeth\'s complete moral degeneration -- he has moved from killing a king to slaughtering women and children.',
+        "Macduff's wife, who appears briefly before being murdered with her children on Macbeth's orders. Her scene with her son provides the play's most emotionally devastating moment and illustrates the innocent victims of Macbeth's tyranny. Her murder marks Macbeth's complete moral degeneration -- he has moved from killing a king to slaughtering women and children.",
       keyQuotes: [
         '"Whither should I fly? I have done no harm."',
         '"He loves us not; he wants the natural touch."',
@@ -2386,10 +2388,10 @@ Whom we invite to see us crowned at Scone.</p>
     {
       name: 'Ambition',
       description:
-        'Ambition is the engine of the entire tragedy. Macbeth identifies it as his only motive: "vaulting ambition, which o\'erleaps itself and falls on the other." Shakespeare does not present ambition as inherently evil -- Macbeth\'s military ambition is praised. It is unchecked, morally unmoored ambition that proves destructive. Each murder becomes easier, suggesting ambition, once it overrides conscience, becomes self-perpetuating. Lady Macbeth\'s ambition is channelled through her husband, making her manipulation more calculated and psychologically costly.',
+        "Ambition is the engine of the entire tragedy. Macbeth identifies it as his only motive: \"vaulting ambition, which o'erleaps itself and falls on the other.\" Shakespeare does not present ambition as inherently evil -- Macbeth's military ambition is praised. It is unchecked, morally unmoored ambition that proves destructive. Each murder becomes easier, suggesting ambition, once it overrides conscience, becomes self-perpetuating. Lady Macbeth's ambition is channelled through her husband, making her manipulation more calculated and psychologically costly.",
       evidence: [
         '"I have no spur to prick the sides of my intent, but only vaulting ambition" -- Macbeth identifies ambition as his sole, insufficient motive',
-        '"Yet do I fear thy nature; it is too full o\' th\' milk of human kindness to catch the nearest way" -- Lady Macbeth sees Macbeth\'s conscience as an obstacle',
+        "\"Yet do I fear thy nature; it is too full o' th' milk of human kindness to catch the nearest way\" -- Lady Macbeth sees Macbeth's conscience as an obstacle",
         '"Stars, hide your fires; let not light see my black and deep desires" -- Macbeth\'s first conscious embrace of dark ambition',
         'Banquo hears the same prophecy but does not act, proving ambition requires a willing agent',
         '"Tomorrow, and tomorrow, and tomorrow" -- the nihilistic endpoint of ambition that has consumed all meaning',
@@ -2410,11 +2412,11 @@ Whom we invite to see us crowned at Scone.</p>
     {
       name: 'The Supernatural',
       description:
-        'The supernatural suffuses every level of the play. Shakespeare uses it to create atmosphere, drive the plot, and raise questions about fate and free will. The witches\' prophecies, the floating dagger, Banquo\'s ghost, and Lady Macbeth\'s invocation of spirits all blur the boundary between natural and supernatural. Crucially, Shakespeare refuses to resolve the ambiguity: do the witches cause events or merely predict them? This deliberate uncertainty is central to the play\'s power.',
+        "The supernatural suffuses every level of the play. Shakespeare uses it to create atmosphere, drive the plot, and raise questions about fate and free will. The witches' prophecies, the floating dagger, Banquo's ghost, and Lady Macbeth's invocation of spirits all blur the boundary between natural and supernatural. Crucially, Shakespeare refuses to resolve the ambiguity: do the witches cause events or merely predict them? This deliberate uncertainty is central to the play's power.",
       evidence: [
         '"Fair is foul, and foul is fair" -- the witches establish a world of moral inversion',
         '"Is this a dagger which I see before me?" -- hallucination or supernatural vision?',
-        'Banquo\'s ghost at the banquet -- real or psychological projection?',
+        "Banquo's ghost at the banquet -- real or psychological projection?",
         '"By the pricking of my thumbs, something wicked this way comes" -- the witches sense Macbeth\'s evil supernaturally',
         '"None of woman born shall harm Macbeth" -- equivocal prophecy that deceives through literal truth',
       ],
@@ -2428,7 +2430,7 @@ Whom we invite to see us crowned at Scone.</p>
         'Macbeth\'s Scotland is a land of "sighs and groans and shrieks" -- tyranny destroys the nation',
         '"Honour, love, obedience, troops of friends, I must not look to have" -- Macbeth acknowledges the emptiness of illegitimate power',
         'Malcolm tests Macduff by pretending to have vices, showing political wisdom Duncan lacked',
-        'Natural disturbances follow Duncan\'s murder -- the cosmos rebels against regicide',
+        "Natural disturbances follow Duncan's murder -- the cosmos rebels against regicide",
       ],
     },
     {
@@ -2438,8 +2440,8 @@ Whom we invite to see us crowned at Scone.</p>
       evidence: [
         '"Fair is foul, and foul is fair" -- the witches\' motto announces universal deception',
         '"Look like th\' innocent flower, but be the serpent under\'t" -- Lady Macbeth teaches deception',
-        '"There\'s no art to find the mind\'s construction in the face" -- Duncan\'s tragic inability to see through appearances',
-        'The witches\' prophecies are literally true but deliberately misleading (equivocation)',
+        "\"There's no art to find the mind's construction in the face\" -- Duncan's tragic inability to see through appearances",
+        "The witches' prophecies are literally true but deliberately misleading (equivocation)",
         '"False face must hide what the false heart doth know" -- Macbeth accepts total duplicity',
       ],
     },
@@ -2452,7 +2454,7 @@ Whom we invite to see us crowned at Scone.</p>
         '"When you durst do it, then you were a man" -- masculinity weaponised to drive murder',
         '"I dare do all that may become a man; who dares do more is none" -- Macbeth\'s nuanced but abandoned view',
         '"I must also feel it as a man" -- Macduff\'s alternative definition of true manhood',
-        'Lady Macbeth\'s mental collapse shows the cost of suppressing feminine compassion',
+        "Lady Macbeth's mental collapse shows the cost of suppressing feminine compassion",
       ],
     },
   ],
@@ -2482,18 +2484,24 @@ Shakespeare drew primarily from Raphael Holinshed's Chronicles of England, Scotl
 // ─── Page component ─────────────────────────────────────────────────────────
 
 export default function MacbethReadPage() {
+  // Apply Khaleeji Arabic to the user-facing metadata (section titles,
+  // character + theme names and descriptions, contextNotes). The play
+  // text inside each section's `content` field stays in English — it
+  // IS the Shakespeare source the student is reading.
+  const locale = useLocale()
+  const data = translateMacbethData(macbethData, locale)
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Macbeth", url: "https://theenglishhub.app/revision/texts/macbeth" },
-          { name: "Read Full Text", url: "https://theenglishhub.app/revision/texts/macbeth/read" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Macbeth', url: 'https://theenglishhub.app/revision/texts/macbeth' },
+          { name: 'Read Full Text', url: 'https://theenglishhub.app/revision/texts/macbeth/read' },
         ]}
       />
-      <InteractiveTextViewer data={macbethData} storageKey="macbeth" />
+      <InteractiveTextViewer data={data} storageKey="macbeth" />
     </div>
   )
 }

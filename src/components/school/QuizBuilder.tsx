@@ -69,6 +69,24 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
+import { STRINGS as _MC_STRINGS } from './content'
+import { useLocale as _useMcLocale } from '@/lib/i18n/use-locale'
+import { useEffect as _useMcEffect } from 'react'
+
+let _mcLocale: 'en' | 'ar' = 'en'
+function _tr(en: string): string {
+  if (_mcLocale !== 'ar') return en
+  for (const v of Object.values(_MC_STRINGS)) if (v.en === en) return v.ar || en
+  return en
+}
+function _useLocaleSync(): void {
+  const locale = _useMcLocale()
+  _mcLocale = locale
+  _useMcEffect(() => {
+    _mcLocale = locale
+  }, [locale])
+}
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 type QuestionType =
@@ -210,7 +228,13 @@ function createEmptyQuestion(type: QuestionType = 'multiple-choice'): Question {
     text: '',
     options: type === 'multiple-choice' ? ['', '', '', ''] : [],
     correctAnswer: type === 'true-false' ? 'true' : '',
-    matchPairs: type === 'match-pairs' ? [{ left: '', right: '' }, { left: '', right: '' }] : [],
+    matchPairs:
+      type === 'match-pairs'
+        ? [
+            { left: '', right: '' },
+            { left: '', right: '' },
+          ]
+        : [],
     explanation: '',
     difficulty: 'medium',
     skillTag: 'comprehension',
@@ -219,11 +243,23 @@ function createEmptyQuestion(type: QuestionType = 'multiple-choice'): Question {
 }
 
 const SAMPLE_VOCAB_WORDS = [
-  { term: 'Metaphor', definition: 'A figure of speech comparing two unlike things without using "like" or "as"' },
-  { term: 'Alliteration', definition: 'The repetition of initial consonant sounds in successive words' },
+  {
+    term: 'Metaphor',
+    definition: 'A figure of speech comparing two unlike things without using "like" or "as"',
+  },
+  {
+    term: 'Alliteration',
+    definition: 'The repetition of initial consonant sounds in successive words',
+  },
   { term: 'Protagonist', definition: 'The leading character in a story or drama' },
-  { term: 'Foreshadowing', definition: 'A literary device used to hint at events that will occur later in the story' },
-  { term: 'Irony', definition: 'The expression of meaning using language that normally signifies the opposite' },
+  {
+    term: 'Foreshadowing',
+    definition: 'A literary device used to hint at events that will occur later in the story',
+  },
+  {
+    term: 'Irony',
+    definition: 'The expression of meaning using language that normally signifies the opposite',
+  },
   { term: 'Hyperbole', definition: 'Exaggerated statements not meant to be taken literally' },
   { term: 'Onomatopoeia', definition: 'A word that imitates the natural sound of a thing' },
   { term: 'Simile', definition: 'A figure of speech comparing two things using "like" or "as"' },
@@ -237,18 +273,43 @@ const SAMPLE_VOCAB_WORDS = [
 const SAMPLE_QUOTES = [
   { quote: '"Is this a dagger which I see before me?"', author: 'William Shakespeare, Macbeth' },
   { quote: '"Fair is foul, and foul is fair."', author: 'William Shakespeare, Macbeth' },
-  { quote: '"Out, out, brief candle! Life\'s but a walking shadow."', author: 'William Shakespeare, Macbeth' },
-  { quote: '"What light through yonder window breaks?"', author: 'William Shakespeare, Romeo and Juliet' },
-  { quote: '"We are members of one body. We are responsible for each other."', author: 'J.B. Priestley, An Inspector Calls' },
+  {
+    quote: '"Out, out, brief candle! Life\'s but a walking shadow."',
+    author: 'William Shakespeare, Macbeth',
+  },
+  {
+    quote: '"What light through yonder window breaks?"',
+    author: 'William Shakespeare, Romeo and Juliet',
+  },
+  {
+    quote: '"We are members of one body. We are responsible for each other."',
+    author: 'J.B. Priestley, An Inspector Calls',
+  },
   { quote: '"Fire and blood and anguish."', author: 'J.B. Priestley, An Inspector Calls' },
-  { quote: '"Are there no prisons? Are there no workhouses?"', author: 'Charles Dickens, A Christmas Carol' },
+  {
+    quote: '"Are there no prisons? Are there no workhouses?"',
+    author: 'Charles Dickens, A Christmas Carol',
+  },
   { quote: '"I wear the chain I forged in life."', author: 'Charles Dickens, A Christmas Carol' },
   { quote: '"Man is not truly one, but truly two."', author: 'R.L. Stevenson, Jekyll and Hyde' },
-  { quote: '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."', author: 'Jane Austen, Pride and Prejudice' },
+  {
+    quote:
+      '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
+    author: 'Jane Austen, Pride and Prejudice',
+  },
   { quote: '"I am no bird; and no net ensnares me."', author: 'Charlotte Brontë, Jane Eyre' },
-  { quote: '"All animals are equal, but some animals are more equal than others."', author: 'George Orwell, Animal Farm' },
-  { quote: '"Look on my Works, ye Mighty, and despair!"', author: 'Percy Bysshe Shelley, Ozymandias' },
-  { quote: '"Bent double, like old beggars under sacks."', author: 'Wilfred Owen, Dulce et Decorum Est' },
+  {
+    quote: '"All animals are equal, but some animals are more equal than others."',
+    author: 'George Orwell, Animal Farm',
+  },
+  {
+    quote: '"Look on my Works, ye Mighty, and despair!"',
+    author: 'Percy Bysshe Shelley, Ozymandias',
+  },
+  {
+    quote: '"Bent double, like old beggars under sacks."',
+    author: 'Wilfred Owen, Dulce et Decorum Est',
+  },
 ]
 
 const QUICK_TEMPLATES: QuickTemplate[] = [
@@ -258,7 +319,12 @@ const QUICK_TEMPLATES: QuickTemplate[] = [
     description: 'A mix of 10 questions across different types and difficulties',
     icon: Zap,
     generate: () => {
-      const types: QuestionType[] = ['multiple-choice', 'short-answer', 'true-false', 'fill-in-blank']
+      const types: QuestionType[] = [
+        'multiple-choice',
+        'short-answer',
+        'true-false',
+        'fill-in-blank',
+      ]
       const questions: Question[] = []
       for (let i = 0; i < 10; i++) {
         const type = types[i % types.length]
@@ -361,7 +427,8 @@ const SAMPLE_COURSE_MODULES: CourseModule[] = [
           'To memorise quotes from the text',
         ],
         correctAnswer: 'To examine how an author uses literary techniques to convey meaning',
-        explanation: 'Literary analysis goes beyond summarising; it examines technique and meaning.',
+        explanation:
+          'Literary analysis goes beyond summarising; it examines technique and meaning.',
         difficulty: 'easy',
         skillTag: 'analysis',
       },
@@ -389,7 +456,8 @@ const SAMPLE_COURSE_MODULES: CourseModule[] = [
           'A line written in iambic pentameter',
         ],
         correctAnswer: 'A line that continues into the next without punctuation',
-        explanation: 'Enjambment occurs when a sentence or phrase runs over from one line to the next.',
+        explanation:
+          'Enjambment occurs when a sentence or phrase runs over from one line to the next.',
         difficulty: 'medium',
         skillTag: 'literary-devices',
       },
@@ -410,7 +478,8 @@ const SAMPLE_COURSE_MODULES: CourseModule[] = [
       {
         ...createEmptyQuestion('short-answer'),
         text: 'Briefly explain the concept of a "tragic flaw" (hamartia) with an example from Shakespeare.',
-        correctAnswer: 'A tragic flaw is a character defect that leads to the downfall of the hero, e.g. Hamlet\'s indecisiveness or Macbeth\'s ambition.',
+        correctAnswer:
+          "A tragic flaw is a character defect that leads to the downfall of the hero, e.g. Hamlet's indecisiveness or Macbeth's ambition.",
         explanation: 'Hamartia is a key concept in Aristotelian tragedy, adopted by Shakespeare.',
         difficulty: 'hard',
         skillTag: 'analysis',
@@ -420,7 +489,7 @@ const SAMPLE_COURSE_MODULES: CourseModule[] = [
         text: 'Match each Shakespeare play to its genre.',
         matchPairs: [
           { left: 'Hamlet', right: 'Tragedy' },
-          { left: 'A Midsummer Night\'s Dream', right: 'Comedy' },
+          { left: "A Midsummer Night's Dream", right: 'Comedy' },
           { left: 'The Tempest', right: 'Romance' },
           { left: 'Henry V', right: 'History' },
         ],
@@ -455,7 +524,7 @@ function QuestionTypeSelector({
               'inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs font-medium transition-all duration-200',
               value === type
                 ? 'border-primary bg-primary/10 text-primary'
-                : 'border-border bg-transparent text-muted-foreground hover:border-primary/40 hover:text-foreground'
+                : 'border-border bg-transparent text-muted-foreground hover:border-primary/40 hover:text-foreground',
             )}
           >
             <Icon className="size-3.5" />
@@ -550,7 +619,9 @@ function QuestionEditor({
               <CardTitle>
                 <span className="text-muted-foreground font-normal">Q{index + 1}.</span>{' '}
                 {question.text || (
-                  <span className="text-muted-foreground/60 italic">Untitled question</span>
+                  <span className="text-muted-foreground/60 italic">
+                    {_tr(`Untitled question`)}
+                  </span>
                 )}
               </CardTitle>
               <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
@@ -560,7 +631,7 @@ function QuestionEditor({
                 <span
                   className={cn(
                     'inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold',
-                    DIFFICULTY_COLORS[question.difficulty]
+                    DIFFICULTY_COLORS[question.difficulty],
                   )}
                 >
                   {question.difficulty}
@@ -609,7 +680,7 @@ function QuestionEditor({
       {isExpanded && (
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label>Question Type</Label>
+            <Label>{_tr(`Question Type`)}</Label>
             <QuestionTypeSelector value={question.type} onChange={handleTypeChange} />
           </div>
 
@@ -637,7 +708,7 @@ function QuestionEditor({
           {/* Multiple Choice Options */}
           {question.type === 'multiple-choice' && (
             <div className="space-y-2">
-              <Label>Answer Options</Label>
+              <Label>{_tr(`Answer Options`)}</Label>
               <div className="space-y-2">
                 {question.options.map((opt, i) => (
                   <div key={i} className="flex items-center gap-2">
@@ -648,7 +719,7 @@ function QuestionEditor({
                         'shrink-0 flex items-center justify-center size-6 rounded-full border-2 transition-all',
                         question.correctAnswer === opt && opt !== ''
                           ? 'border-primary bg-primary text-primary-foreground'
-                          : 'border-border text-transparent hover:border-primary/40'
+                          : 'border-border text-transparent hover:border-primary/40',
                       )}
                     >
                       <Check className="size-3" />
@@ -700,7 +771,7 @@ function QuestionEditor({
           {/* True/False */}
           {question.type === 'true-false' && (
             <div className="space-y-2">
-              <Label>Correct Answer</Label>
+              <Label>{_tr(`Correct Answer`)}</Label>
               <div className="flex gap-2">
                 {['true', 'false'].map((val) => (
                   <button
@@ -713,7 +784,7 @@ function QuestionEditor({
                         ? val === 'true'
                           ? 'border-emerald-500 bg-emerald-500/10 text-emerald-600'
                           : 'border-red-500 bg-red-500/10 text-red-600'
-                        : 'border-border text-muted-foreground hover:border-primary/40'
+                        : 'border-border text-muted-foreground hover:border-primary/40',
                     )}
                   >
                     {val === 'true' ? 'True' : 'False'}
@@ -727,7 +798,9 @@ function QuestionEditor({
           {(question.type === 'short-answer' || question.type === 'fill-in-blank') && (
             <div className="space-y-2">
               <Label htmlFor={`q-answer-${question.id}`}>
-                {question.type === 'fill-in-blank' ? 'Correct Answer (for the blank)' : 'Expected Answer'}
+                {question.type === 'fill-in-blank'
+                  ? 'Correct Answer (for the blank)'
+                  : 'Expected Answer'}
               </Label>
               <Textarea
                 id={`q-answer-${question.id}`}
@@ -745,7 +818,7 @@ function QuestionEditor({
           {/* Match Pairs */}
           {question.type === 'match-pairs' && (
             <div className="space-y-2">
-              <Label>Match Pairs</Label>
+              <Label>{_tr(`Match Pairs`)}</Label>
               <div className="space-y-2">
                 {question.matchPairs.map((pair, i) => (
                   <div key={i} className="flex items-center gap-2">
@@ -761,7 +834,7 @@ function QuestionEditor({
                     />
                     <span className="text-muted-foreground shrink-0">&harr;</span>
                     <Input
-                      placeholder="Right side"
+                      placeholder={_tr(`Right side`)}
                       value={pair.right}
                       onChange={(e) => {
                         const newPairs = [...question.matchPairs]
@@ -790,10 +863,7 @@ function QuestionEditor({
                   variant="outline"
                   size="xs"
                   onClick={() =>
-                    updateField('matchPairs', [
-                      ...question.matchPairs,
-                      { left: '', right: '' },
-                    ])
+                    updateField('matchPairs', [...question.matchPairs, { left: '', right: '' }])
                   }
                 >
                   <Plus className="size-3" />
@@ -810,7 +880,7 @@ function QuestionEditor({
             </Label>
             <Textarea
               id={`q-explanation-${question.id}`}
-              placeholder="Why this is the correct answer..."
+              placeholder={_tr(`Why this is the correct answer...`)}
               value={question.explanation}
               onChange={(e) => updateField('explanation', e.target.value)}
             />
@@ -829,7 +899,7 @@ function QuestionEditor({
                       'flex-1 rounded-lg border px-2 py-1.5 text-xs font-medium capitalize transition-all',
                       question.difficulty === d
                         ? cn('border-transparent', DIFFICULTY_COLORS[d])
-                        : 'border-border text-muted-foreground hover:border-primary/40'
+                        : 'border-border text-muted-foreground hover:border-primary/40',
                     )}
                   >
                     {d}
@@ -845,7 +915,7 @@ function QuestionEditor({
                 onValueChange={(val) => updateField('skillTag', val as SkillTag)}
               >
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select skill" />
+                  <SelectValue placeholder={_tr(`Select skill`)} />
                 </SelectTrigger>
                 <SelectContent>
                   {SKILL_TAGS.map((tag) => (
@@ -877,19 +947,13 @@ function QuestionEditor({
 
 // ─── Preview Component ──────────────────────────────────────────────────────
 
-function QuizPreview({
-  quiz,
-  onClose,
-}: {
-  quiz: Quiz
-  onClose: () => void
-}) {
+function QuizPreview({ quiz, onClose }: { quiz: Quiz; onClose: () => void }) {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const [showFeedback, setShowFeedback] = useState<Record<string, boolean>>({})
   const [submitted, setSubmitted] = useState(false)
   const [timeLeft, setTimeLeft] = useState<number | null>(
-    quiz.settings.timeLimit ? quiz.settings.timeLimit * 60 : null
+    quiz.settings.timeLimit ? quiz.settings.timeLimit * 60 : null,
   )
 
   const questions = useMemo(() => {
@@ -989,9 +1053,7 @@ function QuizPreview({
             <div
               className={cn(
                 'flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-mono font-medium',
-                timeLeft < 60
-                  ? 'bg-red-500/10 text-red-600'
-                  : 'bg-muted text-muted-foreground'
+                timeLeft < 60 ? 'bg-red-500/10 text-red-600' : 'bg-muted text-muted-foreground',
               )}
             >
               <Clock className="size-3.5" />
@@ -1010,7 +1072,7 @@ function QuizPreview({
           {submitted ? (
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Quiz Complete</CardTitle>
+                <CardTitle className="text-lg">{_tr(`Quiz Complete`)}</CardTitle>
                 <CardDescription>
                   You scored {earnedPoints} out of {totalPoints} points (
                   {Math.round((earnedPoints / totalPoints) * 100)}%)
@@ -1024,7 +1086,7 @@ function QuizPreview({
                       'h-full rounded-full transition-all',
                       (earnedPoints / totalPoints) * 100 >= quiz.settings.passingScore
                         ? 'bg-emerald-500'
-                        : 'bg-red-500'
+                        : 'bg-red-500',
                     )}
                     style={{ width: `${(earnedPoints / totalPoints) * 100}%` }}
                   />
@@ -1032,8 +1094,8 @@ function QuizPreview({
                 <p className="text-sm text-muted-foreground">
                   {(earnedPoints / totalPoints) * 100 >= quiz.settings.passingScore
                     ? 'Passed!'
-                    : 'Did not meet passing score.'}
-                  {' '}Passing score: {quiz.settings.passingScore}%
+                    : 'Did not meet passing score.'}{' '}
+                  Passing score: {quiz.settings.passingScore}%
                 </p>
 
                 <Separator />
@@ -1050,8 +1112,8 @@ function QuizPreview({
                           correct === true
                             ? 'border-emerald-500/30 bg-emerald-500/5'
                             : correct === false
-                            ? 'border-red-500/30 bg-red-500/5'
-                            : 'border-border'
+                              ? 'border-red-500/30 bg-red-500/5'
+                              : 'border-border',
                         )}
                       >
                         <div className="flex items-start gap-2">
@@ -1097,7 +1159,7 @@ function QuizPreview({
                   <span
                     className={cn(
                       'inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold',
-                      DIFFICULTY_COLORS[q.difficulty]
+                      DIFFICULTY_COLORS[q.difficulty],
                     )}
                   >
                     {q.difficulty}
@@ -1125,7 +1187,7 @@ function QuizPreview({
                                 ? 'border-emerald-500 bg-emerald-500/10'
                                 : 'border-red-500 bg-red-500/10'
                               : 'border-primary bg-primary/10'
-                            : 'border-border hover:border-primary/40'
+                            : 'border-border hover:border-primary/40',
                         )}
                       >
                         <span
@@ -1133,7 +1195,7 @@ function QuizPreview({
                             'flex size-6 shrink-0 items-center justify-center rounded-full border-2 text-xs font-semibold',
                             answers[q.id] === opt
                               ? 'border-primary bg-primary text-primary-foreground'
-                              : 'border-border'
+                              : 'border-border',
                           )}
                         >
                           {String.fromCharCode(65 + i)}
@@ -1160,7 +1222,7 @@ function QuizPreview({
                                 ? 'border-emerald-500 bg-emerald-500/10'
                                 : 'border-red-500 bg-red-500/10'
                               : 'border-primary bg-primary/10'
-                            : 'border-border hover:border-primary/40'
+                            : 'border-border hover:border-primary/40',
                         )}
                       >
                         {val === 'true' ? 'True' : 'False'}
@@ -1172,7 +1234,7 @@ function QuizPreview({
                 {/* Short Answer */}
                 {q.type === 'short-answer' && (
                   <Textarea
-                    placeholder="Type your answer..."
+                    placeholder={_tr(`Type your answer...`)}
                     value={answers[q.id] || ''}
                     onChange={(e) => handleAnswer(q.id, e.target.value)}
                   />
@@ -1181,7 +1243,7 @@ function QuizPreview({
                 {/* Fill in Blank */}
                 {q.type === 'fill-in-blank' && (
                   <Input
-                    placeholder="Fill in the blank..."
+                    placeholder={_tr(`Fill in the blank...`)}
                     value={answers[q.id] || ''}
                     onChange={(e) => handleAnswer(q.id, e.target.value)}
                   />
@@ -1235,9 +1297,7 @@ function QuizPreview({
                     <Button
                       size="sm"
                       onClick={() =>
-                        setCurrentQuestion((prev) =>
-                          Math.min(questions.length - 1, prev + 1)
-                        )
+                        setCurrentQuestion((prev) => Math.min(questions.length - 1, prev + 1))
                       }
                     >
                       Next
@@ -1261,8 +1321,8 @@ function QuizPreview({
                     idx === currentQuestion
                       ? 'bg-primary text-primary-foreground'
                       : answers[question.id]
-                      ? 'bg-primary/20 text-primary'
-                      : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                        ? 'bg-primary/20 text-primary'
+                        : 'bg-muted text-muted-foreground hover:bg-muted/80',
                   )}
                 >
                   {idx + 1}
@@ -1333,7 +1393,7 @@ function ResultsView({ quiz }: { quiz: Quiz }) {
         completedAt: new Date(Date.now() - 900000).toISOString(),
       },
     ],
-    []
+    [],
   )
 
   const displayResults = results?.results ?? sampleResults
@@ -1364,7 +1424,7 @@ function ResultsView({ quiz }: { quiz: Quiz }) {
         </Card>
         <Card size="sm">
           <CardContent className="pt-4">
-            <p className="text-xs text-muted-foreground">Average Score</p>
+            <p className="text-xs text-muted-foreground">{_tr(`Average Score`)}</p>
             <p className="text-2xl font-bold">{Math.round(avgScore)}%</p>
           </CardContent>
         </Card>
@@ -1385,7 +1445,7 @@ function ResultsView({ quiz }: { quiz: Quiz }) {
       {/* Individual Results */}
       <Card>
         <CardHeader>
-          <CardTitle>Student Results</CardTitle>
+          <CardTitle>{_tr(`Student Results`)}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
@@ -1394,10 +1454,7 @@ function ResultsView({ quiz }: { quiz: Quiz }) {
               .map((result, i) => {
                 const pct = Math.round((result.score / result.totalPoints) * 100)
                 return (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 rounded-lg border p-3"
-                  >
+                  <div key={i} className="flex items-center gap-3 rounded-lg border p-3">
                     <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-semibold">
                       {i + 1}
                     </div>
@@ -1410,8 +1467,8 @@ function ResultsView({ quiz }: { quiz: Quiz }) {
                             pct >= 80
                               ? 'bg-emerald-500'
                               : pct >= 60
-                              ? 'bg-amber-500'
-                              : 'bg-red-500'
+                                ? 'bg-amber-500'
+                                : 'bg-red-500',
                           )}
                           style={{ width: `${pct}%` }}
                         />
@@ -1493,7 +1550,7 @@ function PrintQuiz({ quiz }: { quiz: Quiz }) {
                 ? q.options
                     .map(
                       (opt, j) =>
-                        `<div class="option"><span class="option-circle"></span> ${String.fromCharCode(65 + j)}. ${opt}</div>`
+                        `<div class="option"><span class="option-circle"></span> ${String.fromCharCode(65 + j)}. ${opt}</div>`,
                     )
                     .join('')
                 : ''
@@ -1522,17 +1579,15 @@ function PrintQuiz({ quiz }: { quiz: Quiz }) {
                         (p, j) =>
                           `<tr><td>${j + 1}. ${p.left}</td><td>${String.fromCharCode(65 + j)}. ${
                             // Shuffle right side for print
-                            q.matchPairs[
-                              (j + 2) % q.matchPairs.length
-                            ].right
-                          }</td></tr>`
+                            q.matchPairs[(j + 2) % q.matchPairs.length].right
+                          }</td></tr>`,
                       )
                       .join('')}
                   </table>`
                 : ''
             }
           </div>
-        `
+        `,
           )
           .join('')}
 
@@ -1547,12 +1602,12 @@ function PrintQuiz({ quiz }: { quiz: Quiz }) {
                 q.type === 'multiple-choice'
                   ? `${String.fromCharCode(65 + q.options.indexOf(q.correctAnswer))}. ${q.correctAnswer}`
                   : q.type === 'match-pairs'
-                  ? q.matchPairs.map((p) => `${p.left} → ${p.right}`).join('; ')
-                  : q.correctAnswer
+                    ? q.matchPairs.map((p) => `${p.left} → ${p.right}`).join('; ')
+                    : q.correctAnswer
               }
               ${q.explanation ? `<br/><em style="color:#666;font-size:9pt;">${q.explanation}</em>` : ''}
             </div>
-          `
+          `,
             )
             .join('')}
         </div>
@@ -1574,11 +1629,7 @@ function PrintQuiz({ quiz }: { quiz: Quiz }) {
 
 // ─── Import Module Dialog ───────────────────────────────────────────────────
 
-function ImportModuleDialog({
-  onImport,
-}: {
-  onImport: (questions: Question[]) => void
-}) {
+function ImportModuleDialog({ onImport }: { onImport: (questions: Question[]) => void }) {
   const [open, setOpen] = useState(false)
   const [selectedModule, setSelectedModule] = useState<string>('')
   const [selectedQuestions, setSelectedQuestions] = useState<Set<string>>(new Set())
@@ -1608,15 +1659,17 @@ function ImportModuleDialog({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger render={
-        <Button variant="outline" size="sm">
-          <Upload className="size-4" />
-          Import from Module
-        </Button>
-      } />
+      <DialogTrigger
+        render={
+          <Button variant="outline" size="sm">
+            <Upload className="size-4" />
+            Import from Module
+          </Button>
+        }
+      />
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle>Import Questions from Course Module</DialogTitle>
+          <DialogTitle>{_tr(`Import Questions from Course Module`)}</DialogTitle>
           <DialogDescription>
             Select a module and choose which questions to import into your quiz.
           </DialogDescription>
@@ -1624,13 +1677,16 @@ function ImportModuleDialog({
 
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label>Select Module</Label>
-            <Select value={selectedModule} onValueChange={(val) => {
-              setSelectedModule(val)
-              setSelectedQuestions(new Set())
-            }}>
+            <Label>{_tr(`Select Module`)}</Label>
+            <Select
+              value={selectedModule}
+              onValueChange={(val) => {
+                setSelectedModule(val)
+                setSelectedQuestions(new Set())
+              }}
+            >
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Choose a module..." />
+                <SelectValue placeholder={_tr(`Choose a module...`)} />
               </SelectTrigger>
               <SelectContent>
                 {SAMPLE_COURSE_MODULES.map((mod) => (
@@ -1668,9 +1724,7 @@ function ImportModuleDialog({
                     key={q.id}
                     className={cn(
                       'flex cursor-pointer items-start gap-2 rounded-md p-2 transition-colors',
-                      selectedQuestions.has(q.id)
-                        ? 'bg-primary/5'
-                        : 'hover:bg-muted/50'
+                      selectedQuestions.has(q.id) ? 'bg-primary/5' : 'hover:bg-muted/50',
                     )}
                   >
                     <input
@@ -1688,7 +1742,7 @@ function ImportModuleDialog({
                         <span
                           className={cn(
                             'inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold',
-                            DIFFICULTY_COLORS[q.difficulty]
+                            DIFFICULTY_COLORS[q.difficulty],
                           )}
                         >
                           {q.difficulty}
@@ -1703,18 +1757,10 @@ function ImportModuleDialog({
         </div>
 
         <DialogFooter>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setOpen(false)}
-          >
+          <Button variant="outline" size="sm" onClick={() => setOpen(false)}>
             Cancel
           </Button>
-          <Button
-            size="sm"
-            disabled={selectedQuestions.size === 0}
-            onClick={handleImport}
-          >
+          <Button size="sm" disabled={selectedQuestions.size === 0} onClick={handleImport}>
             Import {selectedQuestions.size} Question{selectedQuestions.size !== 1 ? 's' : ''}
           </Button>
         </DialogFooter>
@@ -1902,7 +1948,7 @@ export function QuizBuilder() {
       {/* Page Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="font-heading text-2xl font-bold tracking-tight">Quiz Builder</h1>
+          <h1 className="font-heading text-2xl font-bold tracking-tight">{_tr(`Quiz Builder`)}</h1>
           <p className="text-sm text-muted-foreground">
             Create custom quizzes for your English classes
           </p>
@@ -1921,11 +1967,7 @@ export function QuizBuilder() {
             <Plus className="size-4" />
             New Quiz
           </Button>
-          <Button
-            size="sm"
-            onClick={saveQuiz}
-            disabled={saveStatus === 'saving'}
-          >
+          <Button size="sm" onClick={saveQuiz} disabled={saveStatus === 'saving'}>
             {saveStatus === 'saving' ? (
               <Loader2 className="size-4 animate-spin" />
             ) : saveStatus === 'saved' ? (
@@ -1942,7 +1984,7 @@ export function QuizBuilder() {
       <Dialog open={showLibrary} onOpenChange={setShowLibrary}>
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>
-            <DialogTitle>My Quiz Library</DialogTitle>
+            <DialogTitle>{_tr(`My Quiz Library`)}</DialogTitle>
             <DialogDescription>
               {savedQuizzes.length === 0
                 ? 'No saved quizzes yet. Create and save your first quiz!'
@@ -1951,10 +1993,7 @@ export function QuizBuilder() {
           </DialogHeader>
           <div className="max-h-80 space-y-2 overflow-y-auto">
             {savedQuizzes.map((sq) => (
-              <div
-                key={sq.id}
-                className="flex items-center justify-between rounded-lg border p-3"
-              >
+              <div key={sq.id} className="flex items-center justify-between rounded-lg border p-3">
                 <div className="min-w-0">
                   <p className="truncate text-sm font-medium">
                     {sq.settings.title || 'Untitled Quiz'}
@@ -2001,7 +2040,7 @@ export function QuizBuilder() {
                 <CardContent className="pt-3.5">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
                     <div className="flex-1 space-y-1.5">
-                      <Label htmlFor="quiz-title">Quiz Title</Label>
+                      <Label htmlFor="quiz-title">{_tr(`Quiz Title`)}</Label>
                       <Input
                         id="quiz-title"
                         placeholder="e.g. Romeo & Juliet Act 1 Quiz"
@@ -2039,7 +2078,7 @@ export function QuizBuilder() {
                     <div className="mb-4 flex size-12 items-center justify-center rounded-full bg-muted">
                       <BookOpen className="size-5 text-muted-foreground" />
                     </div>
-                    <p className="text-sm font-medium">No questions yet</p>
+                    <p className="text-sm font-medium">{_tr(`No questions yet`)}</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Add questions manually, import from a module, or use a template.
                     </p>
@@ -2098,7 +2137,7 @@ export function QuizBuilder() {
               {/* Quiz Stats */}
               <Card size="sm">
                 <CardHeader>
-                  <CardTitle>Quiz Summary</CardTitle>
+                  <CardTitle>{_tr(`Quiz Summary`)}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
@@ -2106,11 +2145,11 @@ export function QuizBuilder() {
                     <span className="font-medium">{quiz.questions.length}</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Total Points</span>
+                    <span className="text-muted-foreground">{_tr(`Total Points`)}</span>
                     <span className="font-medium">{totalPoints}</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Difficulty Mix</span>
+                    <span className="text-muted-foreground">{_tr(`Difficulty Mix`)}</span>
                     <div className="flex gap-1">
                       {(['easy', 'medium', 'hard'] as Difficulty[]).map((d) => {
                         const count = quiz.questions.filter((q) => q.difficulty === d).length
@@ -2120,7 +2159,7 @@ export function QuizBuilder() {
                             key={d}
                             className={cn(
                               'inline-flex items-center rounded-full px-1.5 py-0.5 text-[10px] font-semibold',
-                              DIFFICULTY_COLORS[d]
+                              DIFFICULTY_COLORS[d],
                             )}
                           >
                             {count}
@@ -2172,7 +2211,7 @@ export function QuizBuilder() {
                     <Label htmlFor="quiz-description">Description</Label>
                     <Textarea
                       id="quiz-description"
-                      placeholder="Optional quiz description..."
+                      placeholder={_tr(`Optional quiz description...`)}
                       value={quiz.settings.description}
                       onChange={(e) =>
                         setQuiz((prev) => ({
@@ -2242,12 +2281,14 @@ export function QuizBuilder() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <Label>Feedback Mode</Label>
+                    <Label>{_tr(`Feedback Mode`)}</Label>
                     <div className="flex gap-1.5">
-                      {([
-                        { value: 'after-each', label: 'After Each Q' },
-                        { value: 'at-end', label: 'At End' },
-                      ] as const).map(({ value, label }) => (
+                      {(
+                        [
+                          { value: 'after-each', label: 'After Each Q' },
+                          { value: 'at-end', label: 'At End' },
+                        ] as const
+                      ).map(({ value, label }) => (
                         <button
                           key={value}
                           type="button"
@@ -2261,7 +2302,7 @@ export function QuizBuilder() {
                             'flex-1 rounded-lg border px-2 py-1.5 text-xs font-medium transition-all',
                             quiz.settings.feedbackMode === value
                               ? 'border-primary bg-primary/10 text-primary'
-                              : 'border-border text-muted-foreground hover:border-primary/40'
+                              : 'border-border text-muted-foreground hover:border-primary/40',
                           )}
                         >
                           {label}
@@ -2271,7 +2312,7 @@ export function QuizBuilder() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <Label htmlFor="passing-score">Passing Score (%)</Label>
+                    <Label htmlFor="passing-score">{_tr(`Passing Score (%)`)}</Label>
                     <Input
                       id="passing-score"
                       type="number"
@@ -2364,7 +2405,7 @@ export function QuizBuilder() {
         <TabsContent value="templates">
           <div className="mt-6 space-y-6">
             <div>
-              <h2 className="text-lg font-semibold">Quick Quiz Templates</h2>
+              <h2 className="text-lg font-semibold">{_tr(`Quick Quiz Templates`)}</h2>
               <p className="text-sm text-muted-foreground">
                 Start with a pre-made template and customise it to your needs.
               </p>
@@ -2374,7 +2415,10 @@ export function QuizBuilder() {
               {QUICK_TEMPLATES.map((template) => {
                 const Icon = template.icon
                 return (
-                  <Card key={template.id} className="group hover:border-primary/30 transition-colors">
+                  <Card
+                    key={template.id}
+                    className="group hover:border-primary/30 transition-colors"
+                  >
                     <CardHeader>
                       <div className="flex items-center gap-3">
                         <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
@@ -2410,7 +2454,7 @@ export function QuizBuilder() {
             <Separator />
 
             <div>
-              <h2 className="text-lg font-semibold">Import from Course Modules</h2>
+              <h2 className="text-lg font-semibold">{_tr(`Import from Course Modules`)}</h2>
               <p className="text-sm text-muted-foreground">
                 Pull existing questions from your course modules into a new quiz.
               </p>
@@ -2422,7 +2466,8 @@ export function QuizBuilder() {
                   <CardHeader>
                     <CardTitle className="text-sm">{mod.name}</CardTitle>
                     <CardDescription>
-                      {mod.questions.length} question{mod.questions.length !== 1 ? 's' : ''} available
+                      {mod.questions.length} question{mod.questions.length !== 1 ? 's' : ''}{' '}
+                      available
                     </CardDescription>
                   </CardHeader>
                   <CardFooter>
@@ -2431,9 +2476,7 @@ export function QuizBuilder() {
                       variant="outline"
                       className="w-full"
                       onClick={() => {
-                        importQuestions(
-                          mod.questions.map((q) => ({ ...q, id: generateId() }))
-                        )
+                        importQuestions(mod.questions.map((q) => ({ ...q, id: generateId() })))
                         setActiveTab('build')
                       }}
                     >

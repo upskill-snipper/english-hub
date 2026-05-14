@@ -4,6 +4,24 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import { useT } from '@/lib/i18n/use-t'
 
+import { STRINGS as _MC_STRINGS } from './content'
+import { useLocale as _useMcLocale } from '@/lib/i18n/use-locale'
+import { useEffect as _useMcEffect } from 'react'
+
+let _mcLocale: 'en' | 'ar' = 'en'
+function _tr(en: string): string {
+  if (_mcLocale !== 'ar') return en
+  for (const v of Object.values(_MC_STRINGS)) if (v.en === en) return v.ar || en
+  return en
+}
+function _useLocaleSync(): void {
+  const locale = _useMcLocale()
+  _mcLocale = locale
+  _useMcEffect(() => {
+    _mcLocale = locale
+  }, [locale])
+}
+
 /* ─────────────────────────────────────────────────────────────
    Structured testimonial (item #04 — named attribution)
    ───────────────────────────────────────────────────────────── */
@@ -337,18 +355,20 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
           <div className={`subscene ${phaseIdx === 0 ? 'on' : ''}`}>
             <div className="panel-head">
               <span className="crumb">
-                Oakwood Academy &middot; <b>Year 11 English</b> &middot; 12-week trend
+                Oakwood Academy &middot; <b>{_tr(`Year 11 English`)}</b> &middot; 12-week trend
               </span>
-              <span className="s">Autumn &rarr; Spring &apos;26 &middot; live</span>
+              <span className="s">{_tr(`Autumn &rarr; Spring &apos;26 &middot; live`)}</span>
             </div>
             <div className="trend-wrap">
               <div className="linechart">
                 <div className="lc-head">
-                  <span className="t">Cohort average &middot; AO2 &middot; weekly active</span>
+                  <span className="t">
+                    {_tr(`Cohort average &middot; AO2 &middot; weekly active`)}
+                  </span>
                   <div className="chips">
                     <span className="avg">Grade avg</span>
-                    <span className="eng">Weekly active</span>
-                    <span className="tgt">At/above target</span>
+                    <span className="eng">{_tr(`Weekly active`)}</span>
+                    <span className="tgt">{_tr(`At/above target`)}</span>
                   </div>
                 </div>
                 <div className="lc-svg">
@@ -408,14 +428,14 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                   </div>
                 </div>
                 <div className="kpi-mini">
-                  <span className="l">Weekly active</span>
+                  <span className="l">{_tr(`Weekly active`)}</span>
                   <span className="v">
                     92<em>%</em>
                   </span>
                   <span className="d">&uarr; 18 pts vs term 1</span>
                 </div>
                 <div className="kpi-mini flag">
-                  <span className="l">AO2 gap &middot; still open</span>
+                  <span className="l">{_tr(`AO2 gap &middot; still open`)}</span>
                   <span className="v">11E &middot; 8G</span>
                   <span className="d">2 classes below target</span>
                 </div>
@@ -428,35 +448,37 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             <div className="panel">
               <div className="panel-head">
                 <span className="crumb">
-                  Oakwood Academy &middot; <b>Year 11 English</b>
+                  Oakwood Academy &middot; <b>{_tr(`Year 11 English`)}</b>
                 </span>
-                <span className="s">Spring &apos;26 &middot; 184 students &middot; 7 classes</span>
+                <span className="s">
+                  {_tr(`Spring &apos;26 &middot; 184 students &middot; 7 classes`)}
+                </span>
               </div>
               <div className="kpi-row">
                 <div className="kpi">
                   <span className="v">
                     +<em>1.4</em>
                   </span>
-                  <span className="l">Avg grade uplift</span>
+                  <span className="l">{_tr(`Avg grade uplift`)}</span>
                   <span className="delta">&uarr; 0.3 vs term 1</span>
                 </div>
                 <div className="kpi">
                   <span className="v">
                     92<em>%</em>
                   </span>
-                  <span className="l">Weekly active</span>
+                  <span className="l">{_tr(`Weekly active`)}</span>
                   <span className="delta">&uarr; 8%</span>
                 </div>
                 <div className="kpi">
                   <span className="v">
                     68<em>%</em>
                   </span>
-                  <span className="l">At/above target</span>
+                  <span className="l">{_tr(`At/above target`)}</span>
                   <span className="delta">&uarr; 12%</span>
                 </div>
                 <div className="kpi">
                   <span className="v">14</span>
-                  <span className="l">Flagged &middot; attention</span>
+                  <span className="l">{_tr(`Flagged &middot; attention`)}</span>
                   <span className="delta down">&darr; 5</span>
                 </div>
               </div>
@@ -509,7 +531,7 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
               </div>
               <div className="class-detail">
                 <div>
-                  <div className="cohort-label">AO breakdown &middot; 11E avg</div>
+                  <div className="cohort-label">{_tr(`AO breakdown &middot; 11E avg`)}</div>
                   <div className="ao-grid">
                     {[
                       { label: 'AO1', w: 62 },
@@ -535,7 +557,7 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                   </div>
                 </div>
                 <div>
-                  <div className="cohort-label">Students &middot; sorted by trend</div>
+                  <div className="cohort-label">{_tr(`Students &middot; sorted by trend`)}</div>
                   <div className="student-list">
                     {[
                       { name: 'Jamie P.', grade: 3, trend: '\u2193 1.2', cls: 'flag', dir: 'down' },
@@ -571,20 +593,20 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             <div className="panel" style={{ padding: 18 }}>
               <div className="panel-head">
                 <span className="crumb">
-                  11E &middot; <b>Evie Matthews</b> &middot; student #2418
+                  11E &middot; <b>{_tr(`Evie Matthews`)}</b> &middot; student #2418
                 </span>
-                <span className="s">Last active &middot; 2h ago</span>
+                <span className="s">{_tr(`Last active &middot; 2h ago`)}</span>
               </div>
               <div className="student-card">
                 <div className="avatar">EM</div>
                 <div>
-                  <div className="sc-name">Evie Matthews</div>
+                  <div className="sc-name">{_tr(`Evie Matthews`)}</div>
                   <div className="sc-meta">
                     Year 11 &middot; 11E &middot; AQA &middot; Joined Sep &apos;25
                   </div>
                   <div className="sc-grades">
                     <div className="gchip">
-                      <span className="l">Working at</span>
+                      <span className="l">{_tr(`Working at`)}</span>
                       <span className="v">5</span>
                     </div>
                     <div className="gchip">
@@ -605,26 +627,26 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                   <div className="sc-note">
                     <strong>Pattern:</strong> Strong in essay structure and close reading. Slipping
                     on language analysis under timed conditions &mdash; mocks 4 &amp; 5 both dropped
-                    8+ marks on AO2. Assigned: <em>Language Analysis Booster</em>, 3x flashcard
-                    decks, 1x model answer walkthrough.
+                    8+ marks on AO2. Assigned: <em>{_tr(`Language Analysis Booster`)}</em>, 3x
+                    flashcard decks, 1x model answer walkthrough.
                   </div>
                 </div>
               </div>
               <div className="kpi-row" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
                 <div className="kpi">
                   <span className="v">47</span>
-                  <span className="l">Lessons complete</span>
+                  <span className="l">{_tr(`Lessons complete`)}</span>
                   <span className="delta">&uarr; 12 this month</span>
                 </div>
                 <div className="kpi">
                   <span className="v">9</span>
-                  <span className="l">Essays marked</span>
-                  <span className="delta">Avg grade 6.8</span>
+                  <span className="l">{_tr(`Essays marked`)}</span>
+                  <span className="delta">{_tr(`Avg grade 6.8`)}</span>
                 </div>
                 <div className="kpi">
                   <span className="v">6</span>
                   <span className="l">Mocks sat</span>
-                  <span className="delta">Best: 72/80</span>
+                  <span className="delta">{_tr(`Best: 72/80`)}</span>
                 </div>
               </div>
             </div>
@@ -634,9 +656,9 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
           <div className={`subscene ${phaseIdx === 4 ? 'on' : ''}`}>
             <div className="panel-head">
               <span className="crumb">
-                Evie Matthews &middot; <b>Language Analysis Booster</b>
+                Evie Matthews &middot; <b>{_tr(`Language Analysis Booster`)}</b>
               </span>
-              <span className="s">Intervention &middot; week 4 of 4</span>
+              <span className="s">{_tr(`Intervention &middot; week 4 of 4`)}</span>
             </div>
             <div className="intervention">
               <div className="pipeline">
@@ -680,22 +702,24 @@ function SchoolsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                 ))}
               </div>
               <div className="impact">
-                <span className="impact-title">Before &middot; after &middot; evidence</span>
+                <span className="impact-title">
+                  {_tr(`Before &middot; after &middot; evidence`)}
+                </span>
                 <h4>4 weeks. Gap closed.</h4>
                 <div className="before-after">
                   <div className="col before">
-                    <span className="l">AO2 &middot; before</span>
+                    <span className="l">{_tr(`AO2 &middot; before`)}</span>
                     <span className="v">44</span>
                   </div>
                   <div className="arrow">&rarr;</div>
                   <div className="col after">
-                    <span className="l">AO2 &middot; after</span>
+                    <span className="l">{_tr(`AO2 &middot; after`)}</span>
                     <span className="v">60</span>
                   </div>
                 </div>
                 <ul className="impact-list">
                   <li>
-                    <b>Predicted grade:</b> 6 &rarr; 7.8 in 4 weeks
+                    <b>{_tr(`Predicted grade:`)}</b> 6 &rarr; 7.8 in 4 weeks
                   </li>
                   <li>
                     <b>14 students</b> on parallel pathways this term
@@ -807,7 +831,7 @@ function TeachersScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
 
           {/* AI marking panel */}
           <div className={`mark-panel ${active ? 'active' : ''}`} style={{ maxWidth: 480 }}>
-            <div className="mark-label">AI marking &middot; Student #2418</div>
+            <div className="mark-label">{_tr(`AI marking &middot; Student #2418`)}</div>
             The writer uses <span className="hl-good">pathetic fallacy effectively</span> to mirror
             Sheila&apos;s guilt, though{' '}
             <span className="hl-imp">the final paragraph lacks a clear thematic thread</span> back
@@ -911,13 +935,15 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
           {/* Phase 0 — Structured courses */}
           <div className={`subscene ${phaseIdx === 0 ? 'on' : ''}`}>
             <div className="feat-header">
-              <h3>Structured courses</h3>
+              <h3>{_tr(`Structured courses`)}</h3>
               <span className="chip">470+ lessons</span>
             </div>
             <div className="feat-body">
               <div className="card-white">
-                <span className="ch">AQA &middot; Language Paper 1 &middot; Week 3 of 8</span>
-                <h4>Analysing language in fiction extracts</h4>
+                <span className="ch">
+                  {_tr(`AQA &middot; Language Paper 1 &middot; Week 3 of 8`)}
+                </span>
+                <h4>{_tr(`Analysing language in fiction extracts`)}</h4>
                 <div className="course-progress">
                   <span>38%</span>
                   <div className="track">
@@ -966,7 +992,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
           {/* Phase 1 — Annotated texts */}
           <div className={`subscene ${phaseIdx === 1 ? 'on' : ''}`}>
             <div className="feat-header">
-              <h3>Annotated texts</h3>
+              <h3>{_tr(`Annotated texts`)}</h3>
               <span className="chip">30 poems &middot; 15 set texts</span>
             </div>
             <div className="feat-body" style={{ gridTemplateColumns: '1.1fr 0.9fr' }}>
@@ -978,7 +1004,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                   I met a <span className="hl-narrator">traveller</span> from an antique land,
                   <br />
                   Who said &mdash; &ldquo;
-                  <span className="hl-imagery">Two vast and trunkless legs of stone</span>
+                  <span className="hl-imagery">{_tr(`Two vast and trunkless legs of stone`)}</span>
                   <br />
                   Stand in the desert. . . . Near them, on the sand,
                   <br />
@@ -989,10 +1015,10 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                   Tell that its sculptor well those passions read
                 </div>
                 <div className="anno-tags">
-                  <span className="tag-narrator">Narrator frame</span>
-                  <span className="tag-imagery">Imagery of decay</span>
+                  <span className="tag-narrator">{_tr(`Narrator frame`)}</span>
+                  <span className="tag-imagery">{_tr(`Imagery of decay`)}</span>
                   <span className="tag-quote">Key quote</span>
-                  <span className="tag-theme">Theme &middot; power</span>
+                  <span className="tag-theme">{_tr(`Theme &middot; power`)}</span>
                 </div>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -1006,14 +1032,14 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                   </p>
                 </div>
                 <div className="card-white" style={{ padding: '14px 16px' }}>
-                  <span className="ch">Context card &middot; 1818</span>
+                  <span className="ch">{_tr(`Context card &middot; 1818`)}</span>
                   <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5 }}>
                     Published as Napoleon&apos;s legacy was collapsing. Shelley, a radical, read the
                     ruin of tyrants as inevitable.
                   </p>
                 </div>
                 <div className="card-white card-ochre" style={{ padding: '14px 16px' }}>
-                  <span className="ch">Grade 9 hinge</span>
+                  <span className="ch">{_tr(`Grade 9 hinge`)}</span>
                   <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5 }}>
                     <em>
                       &ldquo;Shelley&apos;s traveller is a mediating voice &mdash; we never meet
@@ -1028,8 +1054,8 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
           {/* Phase 2 — AI Essay Feedback */}
           <div className={`subscene ${phaseIdx === 2 ? 'on' : ''}`}>
             <div className="feat-header">
-              <h3>AI essay feedback</h3>
-              <span className="chip">Grade &middot; AO scores &middot; rewrites</span>
+              <h3>{_tr(`AI essay feedback`)}</h3>
+              <span className="chip">{_tr(`Grade &middot; AO scores &middot; rewrites`)}</span>
             </div>
             <div className="feat-body">
               <div className="ai-panel">
@@ -1058,15 +1084,16 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                   </div>
                   <ul className="feedback-list">
                     <li className="strength">
-                      <b>AO1 &middot; 82</b> &mdash; clear thesis, well-chosen quote embedded early.
+                      <b>{_tr(`AO1 &middot; 82`)}</b> &mdash; clear thesis, well-chosen quote
+                      embedded early.
                     </li>
                     <li className="strength">
-                      <b>AO3 &middot; 78</b> &mdash; links 1945 context to Priestley&apos;s
+                      <b>{_tr(`AO3 &middot; 78`)}</b> &mdash; links 1945 context to Priestley&apos;s
                       political purpose.
                     </li>
                     <li className="improve">
-                      <b>AO2 &middot; 58</b> &mdash; zoom into &ldquo;cheap labour&rdquo; at word
-                      level, not just idea level.
+                      <b>{_tr(`AO2 &middot; 58`)}</b> &mdash; zoom into &ldquo;cheap labour&rdquo;
+                      at word level, not just idea level.
                     </li>
                     <li className="improve">
                       <b>Structure</b> &mdash; the <em>but by the end</em> jump skips Act II. Add a
@@ -1076,7 +1103,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                 </div>
               </div>
               <div className="card-white card-teal">
-                <span className="ch">AI tutor &middot; next step</span>
+                <span className="ch">{_tr(`AI tutor &middot; next step`)}</span>
                 <h4>
                   &ldquo;You&apos;re a Grade 7 now. Here&apos;s what a Grade 9 would add.&rdquo;
                 </h4>
@@ -1086,8 +1113,8 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                   whole ideology.&rdquo;
                 </div>
                 <div className="tutor-footer">
-                  <span>Pathway: Language analysis booster &middot; 4 lessons</span>
-                  <span>Start &rarr;</span>
+                  <span>{_tr(`Pathway: Language analysis booster &middot; 4 lessons`)}</span>
+                  <span>{_tr(`Start &rarr;`)}</span>
                 </div>
               </div>
             </div>
@@ -1096,8 +1123,8 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
           {/* Phase 3 — Live Writing Coach */}
           <div className={`subscene ${phaseIdx === 3 ? 'on' : ''}`}>
             <div className="feat-header">
-              <h3>Live writing coach</h3>
-              <span className="chip">AO2 hints as you type</span>
+              <h3>{_tr(`Live writing coach`)}</h3>
+              <span className="chip">{_tr(`AO2 hints as you type`)}</span>
             </div>
             <div className="coach-grid">
               <div className="writer">
@@ -1113,11 +1140,11 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                     shown
                   </span>
                   <span className="type-seg"> as </span>
-                  <span className="weak" title="Vague adjective">
+                  <span className="weak" title={_tr(`Vague adjective`)}>
                     nice
                   </span>
                   <span className="type-seg"> and </span>
-                  <span className="weak" title="Prompt wording reused">
+                  <span className="weak" title={_tr(`Prompt wording reused`)}>
                     powerful
                   </span>
                   <span className="type-seg">
@@ -1128,25 +1155,27 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                     sets up a fragile innocence the Inspector systematically dismantles
                   </span>
                   <span className="type-seg">. Her repetition of &ldquo;</span>
-                  <span className="technique">Mother, I think it&apos;s a rotten shame</span>
+                  <span className="technique">
+                    {_tr(`Mother, I think it&apos;s a rotten shame`)}
+                  </span>
                   <span className="type-seg">&rdquo; marks the</span>
                   <span className="caret" />
                 </div>
                 <div className="writer-foot">
-                  <span>AO1 &middot; idea strong</span>
-                  <span className="hot">AO2 &middot; 3 weak verbs flagged</span>
-                  <span>AO3 &middot; not yet</span>
+                  <span>{_tr(`AO1 &middot; idea strong`)}</span>
+                  <span className="hot">{_tr(`AO2 &middot; 3 weak verbs flagged`)}</span>
+                  <span>{_tr(`AO3 &middot; not yet`)}</span>
                 </div>
               </div>
               <div className="tips">
                 <div className="tips-head">
-                  <span className="t">Coach &middot; suggestions</span>
+                  <span className="t">{_tr(`Coach &middot; suggestions`)}</span>
                   <span className="live">
                     <span className="d" /> Reading your draft
                   </span>
                 </div>
                 <div className="tip">
-                  <span className="lead">Word choice &middot; AO2</span>
+                  <span className="lead">{_tr(`Word choice &middot; AO2`)}</span>
                   &ldquo;<b>shown</b>&rdquo; is doing too little work. A verb like <b>positioned</b>
                   , <b>framed</b> or <b>constructed</b> foregrounds Priestley as a craftsman.
                   <div className="suggest">
@@ -1154,13 +1183,13 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                   </div>
                 </div>
                 <div className="tip">
-                  <span className="lead">Structure &middot; AO1</span>
+                  <span className="lead">{_tr(`Structure &middot; AO1`)}</span>
                   You&apos;ve picked a strong quote but{' '}
                   <b>haven&apos;t said why it matters politically</b>. Add one sentence linking
                   &ldquo;rotten shame&rdquo; to Priestley&apos;s 1945 audience.
                 </div>
                 <div className="tip">
-                  <span className="lead">Technique &middot; AO2</span>
+                  <span className="lead">{_tr(`Technique &middot; AO2`)}</span>
                   You&apos;ve named repetition. Name its <b>effect</b>: repetition here mimics
                   conviction &mdash; Sheila is finding her voice in real time.
                 </div>
@@ -1189,16 +1218,18 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
           {/* Phase 4 — Mock Exams */}
           <div className={`subscene ${phaseIdx === 4 ? 'on' : ''}`}>
             <div className="feat-header">
-              <h3>Timed mock papers</h3>
+              <h3>{_tr(`Timed mock papers`)}</h3>
               <span className="chip">130+ papers &middot; all boards</span>
             </div>
             <div className="mock-grid">
               <div className="mock-paper">
                 <div className="head">
-                  <span>AQA &middot; English Lit &middot; Paper 2</span>
+                  <span>{_tr(`AQA &middot; English Lit &middot; Paper 2`)}</span>
                   <span>45m &middot; Section A</span>
                 </div>
-                <h4>Power &amp; Conflict &mdash; &lsquo;Ozymandias&rsquo; &amp; one other</h4>
+                <h4>
+                  {_tr(`Power &amp; Conflict &mdash; &lsquo;Ozymandias&rsquo; &amp; one other`)}
+                </h4>
                 <div className="qlist">
                   <div className="q">
                     <span className="qn">Q1 &middot; 30 marks</span>
@@ -1216,7 +1247,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                 </div>
               </div>
               <div className="mock-panel">
-                <div className="mock-timer-label">Live timer &middot; exam conditions</div>
+                <div className="mock-timer-label">{_tr(`Live timer &middot; exam conditions`)}</div>
                 <div className="timer-ring">
                   <svg viewBox="0 0 140 140">
                     <circle className="t-bg" cx="70" cy="70" r="60" />
@@ -1227,7 +1258,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                       <div className="tt">
                         31<small>:24</small>
                       </div>
-                      <div className="tl">Of 45:00 remaining</div>
+                      <div className="tl">{_tr(`Of 45:00 remaining`)}</div>
                     </div>
                   </div>
                 </div>
@@ -1242,14 +1273,14 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                   </div>
                   <div className="ms">
                     <div className="v">2/2</div>
-                    <div className="l">Quotes cited</div>
+                    <div className="l">{_tr(`Quotes cited`)}</div>
                   </div>
                 </div>
                 <div className="mock-hint">
                   <span className="icon">i</span>
                   <div>
-                    <b>Pace alert:</b> you&apos;re on track for 450 words. Grade 9 answers average
-                    520+ &mdash; consider tightening intro and starting Q1b.
+                    <b>{_tr(`Pace alert:`)}</b> you&apos;re on track for 450 words. Grade 9 answers
+                    average 520+ &mdash; consider tightening intro and starting Q1b.
                   </div>
                 </div>
               </div>
@@ -1259,16 +1290,16 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
           {/* Phase 5 — Revise & Predict */}
           <div className={`subscene ${phaseIdx === 5 ? 'on' : ''}`}>
             <div className="feat-header">
-              <h3>Revise &amp; predict</h3>
+              <h3>{_tr(`Revise &amp; predict`)}</h3>
               <span className="chip">2,000 flashcards &middot; 7 games</span>
             </div>
             <div className="feat-body" style={{ gridTemplateColumns: '1fr 1fr' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                 <div className="card-white">
-                  <span className="ch">Flashcards &middot; smart review</span>
+                  <span className="ch">{_tr(`Flashcards &middot; smart review`)}</span>
                   <div className="flash-stack">
                     <div className="fc">
-                      <span className="tag">Literary device</span>
+                      <span className="tag">{_tr(`Literary device`)}</span>
                       <span className="term">Sibilance</span>
                       <span className="ex">
                         &ldquo;the silver sea&rdquo; &mdash; clustered &apos;s&apos; sounds for
@@ -1276,7 +1307,7 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                       </span>
                     </div>
                     <div className="fc">
-                      <span className="tag">Poetic form</span>
+                      <span className="tag">{_tr(`Poetic form`)}</span>
                       <span className="term">Volta</span>
                       <span className="ex">
                         A turn in thought &mdash; often between octet and sestet.
@@ -1284,20 +1315,20 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                     </div>
                     <div className="fc">
                       <span className="tag">Theme</span>
-                      <span className="term">Pathetic fallacy</span>
+                      <span className="term">{_tr(`Pathetic fallacy`)}</span>
                       <span className="ex">
                         Weather or nature mirroring a character&apos;s mood.
                       </span>
                     </div>
                   </div>
                   <div className="flash-footer">
-                    <span>Deck &middot; Literary terms &middot; 52</span>
+                    <span>{_tr(`Deck &middot; Literary terms &middot; 52`)}</span>
                     <span className="mastered">47 / 52 mastered</span>
                   </div>
                 </div>
                 <div className="card-white card-dark">
-                  <span className="ch">Grade-climber game &middot; live</span>
-                  <h4>You hit Grade 8 on the last round.</h4>
+                  <span className="ch">{_tr(`Grade-climber game &middot; live`)}</span>
+                  <h4>{_tr(`You hit Grade 8 on the last round.`)}</h4>
                   <div className="grade-rounds">
                     {[
                       { label: 'Round 1', grade: '6', active: false },
@@ -1317,15 +1348,15 @@ function StudentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number
                 </div>
               </div>
               <div className="card-white">
-                <span className="ch">Grade predictor &middot; Spring &apos;26</span>
-                <h4>Your predicted GCSE grade, updated live.</h4>
+                <span className="ch">{_tr(`Grade predictor &middot; Spring &apos;26`)}</span>
+                <h4>{_tr(`Your predicted GCSE grade, updated live.`)}</h4>
                 <div className="predictor-row">
                   <div className="predictor-ring">
                     <div className="ring-value">8</div>
                   </div>
                   <div className="predictor-info">
                     <div className="pred-line">
-                      <span>Working at</span>
+                      <span>{_tr(`Working at`)}</span>
                       <b>6</b>
                     </div>
                     <div className="pred-line">
@@ -1399,8 +1430,8 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
         <div className="scene-viz" style={{ flexDirection: 'column', gap: 20 }}>
           <div className="parent-dash">
             <div className="head">
-              <div className="h-title">Evie, Year 11</div>
-              <div className="h-sub">Week 12 &middot; Spring</div>
+              <div className="h-title">{_tr(`Evie, Year 11`)}</div>
+              <div className="h-sub">{_tr(`Week 12 &middot; Spring`)}</div>
             </div>
             <div className="ring-row">
               <div className="pring">
@@ -1409,8 +1440,12 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
                 </div>
               </div>
               <div className="ring-info">
-                <h4>Predicted grade</h4>
-                <p>Up from 6.2 four weeks ago. AO2 (language analysis) now her strongest area.</p>
+                <h4>{_tr(`Predicted grade`)}</h4>
+                <p>
+                  {_tr(
+                    `Up from 6.2 four weeks ago. AO2 (language analysis) now her strongest area.`,
+                  )}
+                </p>
               </div>
             </div>
             <div>
@@ -1428,12 +1463,13 @@ function ParentsScene({ active, phaseIdx }: { active: boolean; phaseIdx: number 
             </div>
             <div className={`focus ${active ? 'active' : ''}`}>
               <span className="dot" />
-              This week&apos;s focus: <strong>Unseen poetry &mdash; structural analysis</strong>
+              This week&apos;s focus:{' '}
+              <strong>{_tr(`Unseen poetry &mdash; structural analysis`)}</strong>
             </div>
           </div>
 
           <div className={`trend ${active ? 'active' : ''}`}>
-            <div className="trend-title">Mock score trend &middot; last 6 weeks</div>
+            <div className="trend-title">{_tr(`Mock score trend &middot; last 6 weeks`)}</div>
             <div className="trend-chart">
               {[30, 38, 48, 58, 72, 90].map((h, i) => (
                 <div
