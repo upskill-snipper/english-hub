@@ -772,7 +772,7 @@ export default function ViewFromTheBridgeRevisionPage() {
 
               <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="rounded bg-[#40197F] px-2 py-0.5 text-xs font-bold text-white">
+                  <span className="rounded bg-purple-800 px-2 py-0.5 text-xs font-bold text-white">
                     AQA
                   </span>
                   AQA GCSE English Literature &mdash; Paper 2, Section A
@@ -799,7 +799,7 @@ export default function ViewFromTheBridgeRevisionPage() {
 
               <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="rounded bg-[#00A651] px-2 py-0.5 text-xs font-bold text-white">
+                  <span className="rounded bg-emerald-600 px-2 py-0.5 text-xs font-bold text-white">
                     CAIE
                   </span>
                   Cambridge IGCSE Literature &mdash; Paper 1 (Drama)

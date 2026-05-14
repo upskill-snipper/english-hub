@@ -419,7 +419,7 @@ export default function StreetcarStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#7D3C98]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+              className="rounded-full border border-purple-600/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -449,7 +449,7 @@ export default function StreetcarStudyGuide() {
                   {s.keyQuotations.map((q, i) => (
                     <div
                       key={i}
-                      className="rounded-lg border-l-4 border-[#7D3C98] bg-primary/5 p-4"
+                      className="rounded-lg border-l-4 border-purple-600 bg-primary/5 p-4"
                     >
                       <blockquote className="text-sm font-medium italic text-foreground">
                         &ldquo;{q.quote}&rdquo;
@@ -579,7 +579,7 @@ export default function StreetcarStudyGuide() {
               <Card key={ao.code}>
                 <CardHeader>
                   <div className="flex items-center gap-2">
-                    <span className="inline-block rounded-full bg-[#4A235A] px-2.5 py-0.5 text-xs font-bold text-white">
+                    <span className="inline-block rounded-full bg-purple-900 px-2.5 py-0.5 text-xs font-bold text-white">
                       {ao.code}
                     </span>
                     <CardTitle>{ao.description}</CardTitle>
@@ -615,7 +615,7 @@ export default function StreetcarStudyGuide() {
             {examQuestions.passageBased.map((q, i) => (
               <Card key={i}>
                 <CardHeader>
-                  <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                  <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                     Passage-Based
                   </span>
                   <CardDescription className="mt-2 font-medium text-foreground">
@@ -643,7 +643,7 @@ export default function StreetcarStudyGuide() {
             {examQuestions.essay.map((q, i) => (
               <Card key={i}>
                 <CardHeader>
-                  <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                  <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                     Essay Question
                   </span>
                   <CardDescription className="mt-2 font-medium text-foreground">
@@ -666,7 +666,7 @@ export default function StreetcarStudyGuide() {
             ))}
 
             {/* ── Exam Technique ───────────────────────────────────── */}
-            <div className="rounded-lg border-2 border-[#7D3C98]/30 bg-primary/5 p-5">
+            <div className="rounded-lg border-2 border-purple-600/30 bg-primary/5 p-5">
               <h3 className="text-lg font-semibold text-foreground">
                 Cambridge Exam Technique: Key Tips
               </h3>
@@ -747,7 +747,7 @@ export default function StreetcarStudyGuide() {
           <div className="mt-6 space-y-4">
             <Card>
               <CardHeader>
-                <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                   Sample Question
                 </span>
                 <CardDescription className="mt-2 font-medium text-foreground">
@@ -756,7 +756,7 @@ export default function StreetcarStudyGuide() {
               </CardHeader>
             </Card>
 
-            <div className="rounded-lg border-2 border-[#7D3C98]/30 bg-primary/5 p-5">
+            <div className="rounded-lg border-2 border-purple-600/30 bg-primary/5 p-5">
               <h3 className="text-sm font-semibold text-foreground">
                 Model Paragraph (addressing all 4 skills)
               </h3>

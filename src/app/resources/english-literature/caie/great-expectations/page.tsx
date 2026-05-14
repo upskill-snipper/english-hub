@@ -238,7 +238,7 @@ export default function GreatExpectationsStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#7D3C98]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+              className="rounded-full border border-purple-600/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -274,7 +274,7 @@ export default function GreatExpectationsStudyGuide() {
                     {p.keyQuotations.map((q, i) => (
                       <div
                         key={i}
-                        className="rounded-lg border-l-4 border-[#7D3C98] bg-primary/5 p-4"
+                        className="rounded-lg border-l-4 border-purple-600 bg-primary/5 p-4"
                       >
                         <blockquote className="text-sm font-medium italic text-foreground">
                           &ldquo;{q.quote}&rdquo;
@@ -403,7 +403,7 @@ export default function GreatExpectationsStudyGuide() {
             {assessmentObjectives.map((ao) => (
               <Card key={ao.code}>
                 <CardHeader>
-                  <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-bold text-foreground">
+                  <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-bold text-foreground">
                     {ao.code}
                   </span>
                   <CardTitle className="mt-1">{ao.title}</CardTitle>
@@ -440,7 +440,7 @@ export default function GreatExpectationsStudyGuide() {
             {/* Passage-based approach */}
             <Card>
               <CardHeader>
-                <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                   (a) Passage-Based
                 </span>
                 <CardTitle className="mt-1">
@@ -484,7 +484,7 @@ export default function GreatExpectationsStudyGuide() {
             {/* Essay approach */}
             <Card>
               <CardHeader>
-                <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                   (b) Essay Question
                 </span>
                 <CardTitle className="mt-1">
@@ -526,7 +526,7 @@ export default function GreatExpectationsStudyGuide() {
             </Card>
 
             {/* Exam technique summary */}
-            <div className="rounded-lg border-2 border-[#7D3C98]/30 bg-primary/5 p-5">
+            <div className="rounded-lg border-2 border-purple-600/30 bg-primary/5 p-5">
               <h3 className="font-semibold text-foreground">
                 Cambridge IGCSE Exam Technique: Great Expectations
               </h3>
@@ -572,7 +572,7 @@ export default function GreatExpectationsStudyGuide() {
 
           <Card className="mt-6">
             <CardHeader>
-              <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+              <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
               <CardTitle className="mt-1">

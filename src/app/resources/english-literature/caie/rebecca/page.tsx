@@ -263,7 +263,7 @@ export default function RebeccaStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#7D3C98]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+              className="rounded-full border border-purple-600/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -342,7 +342,7 @@ export default function RebeccaStudyGuide() {
                     {ch.quotations.map((q, i) => (
                       <div
                         key={i}
-                        className="rounded-lg border-l-4 border-[#7D3C98] bg-primary/5 p-4"
+                        className="rounded-lg border-l-4 border-purple-600 bg-primary/5 p-4"
                       >
                         <blockquote className="text-sm font-medium italic text-foreground">
                           &ldquo;{q.quote}&rdquo;
@@ -407,7 +407,7 @@ export default function RebeccaStudyGuide() {
             {assessmentObjectives.map((ao) => (
               <Card key={ao.code}>
                 <CardHeader>
-                  <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-bold text-foreground">
+                  <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-bold text-foreground">
                     {ao.code}
                   </span>
                   <CardTitle className="mt-2">{ao.title}</CardTitle>
@@ -442,7 +442,7 @@ export default function RebeccaStudyGuide() {
             {/* Passage-based guidance */}
             <Card>
               <CardHeader>
-                <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                   Part (a) &mdash; Passage-Based
                 </span>
                 <CardTitle className="mt-2">
@@ -482,7 +482,7 @@ export default function RebeccaStudyGuide() {
             {/* Essay guidance */}
             <Card>
               <CardHeader>
-                <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                   Part (b) &mdash; Essay Question
                 </span>
                 <CardTitle className="mt-2">
@@ -522,7 +522,7 @@ export default function RebeccaStudyGuide() {
             </Card>
 
             {/* Exam technique box */}
-            <div className="rounded-lg border-2 border-[#7D3C98]/30 bg-primary/5 p-5">
+            <div className="rounded-lg border-2 border-purple-600/30 bg-primary/5 p-5">
               <h3 className="font-bold text-foreground">
                 Cambridge Paper 1 Exam Technique
               </h3>
@@ -578,7 +578,7 @@ export default function RebeccaStudyGuide() {
 
           <Card className="mt-6">
             <CardHeader>
-              <span className="inline-block w-fit rounded-full bg-[#4A235A]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+              <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
               <CardTitle className="mt-2">

@@ -235,7 +235,7 @@ export default function FireOnTheMountainStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#C0392B]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+              className="rounded-full border border-red-700/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -314,7 +314,7 @@ export default function FireOnTheMountainStudyGuide() {
                     {ch.quotes.map((q, i) => (
                       <div
                         key={i}
-                        className="rounded-lg border-l-4 border-[#C0392B] bg-primary/5 p-4"
+                        className="rounded-lg border-l-4 border-red-700 bg-primary/5 p-4"
                       >
                         <blockquote className="text-sm font-medium italic text-foreground">
                           &ldquo;{q.text}&rdquo;
@@ -538,7 +538,7 @@ export default function FireOnTheMountainStudyGuide() {
           <Card className="mt-6">
             <CardHeader>
               <CardTitle>
-                <span className="inline-block rounded-full bg-[#7B2D26]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                <span className="inline-block rounded-full bg-red-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                   Essay Question (b)
                 </span>
               </CardTitle>

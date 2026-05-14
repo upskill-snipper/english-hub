@@ -298,7 +298,7 @@ export default function ATasteOfHoneyStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#A0522D]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+              className="rounded-full border border-amber-800/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -400,7 +400,7 @@ export default function ATasteOfHoneyStudyGuide() {
             {keyQuotes.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border-l-4 border-[#A0522D] bg-card p-5 shadow-md"
+                className="rounded-lg border-l-4 border-amber-800 bg-card p-5 shadow-md"
               >
                 <blockquote className="text-base font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
@@ -883,7 +883,7 @@ export default function ATasteOfHoneyStudyGuide() {
             </Card>
 
             {/* ── Exam Technique ───────────────────────────────────── */}
-            <div className="rounded-lg border-2 border-[#A0522D]/30 bg-primary/5 p-5">
+            <div className="rounded-lg border-2 border-amber-800/30 bg-primary/5 p-5">
               <h3 className="text-lg font-semibold text-foreground">
                 Cambridge Exam Technique: Key Tips
               </h3>

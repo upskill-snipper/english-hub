@@ -264,7 +264,7 @@ export default function ThingsFallApartStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#A0522D]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+              className="rounded-full border border-amber-800/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -294,7 +294,7 @@ export default function ThingsFallApartStudyGuide() {
                     {part.keyQuotes.map((q, i) => (
                       <div
                         key={i}
-                        className="rounded-lg border-l-4 border-[#A0522D] bg-muted/30 p-4"
+                        className="rounded-lg border-l-4 border-amber-800 bg-muted/30 p-4"
                       >
                         <blockquote className="text-sm font-medium italic text-foreground">
                           &ldquo;{q.quote}&rdquo;
@@ -420,7 +420,7 @@ export default function ThingsFallApartStudyGuide() {
               <Card key={ao.code}>
                 <CardHeader>
                   <div className="flex items-center gap-2">
-                    <span className="inline-block rounded-full bg-[#5B2C0E] px-2.5 py-0.5 text-xs font-bold text-white">
+                    <span className="inline-block rounded-full bg-amber-900 px-2.5 py-0.5 text-xs font-bold text-white">
                       {ao.code}
                     </span>
                     <CardTitle className="text-base">
@@ -458,7 +458,7 @@ export default function ThingsFallApartStudyGuide() {
           <div className="mt-6 space-y-6">
             <Card>
               <CardHeader>
-                <span className="inline-block rounded-full bg-[#5B2C0E]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                <span className="inline-block rounded-full bg-amber-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                   (a) Passage-Based Question
                 </span>
               </CardHeader>
@@ -505,7 +505,7 @@ export default function ThingsFallApartStudyGuide() {
 
             <Card>
               <CardHeader>
-                <span className="inline-block rounded-full bg-[#5B2C0E]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                <span className="inline-block rounded-full bg-amber-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                   (b) Essay Question
                 </span>
               </CardHeader>
@@ -552,7 +552,7 @@ export default function ThingsFallApartStudyGuide() {
 
             <Card>
               <CardHeader>
-                <span className="inline-block rounded-full bg-[#5B2C0E]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                <span className="inline-block rounded-full bg-amber-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                   (b) Essay Question
                 </span>
               </CardHeader>
@@ -598,7 +598,7 @@ export default function ThingsFallApartStudyGuide() {
             </Card>
 
             {/* ── Exam Technique Tips ────────────────────────────── */}
-            <Card className="border-2 border-[#A0522D]/30 bg-primary/5">
+            <Card className="border-2 border-amber-800/30 bg-primary/5">
               <CardContent className="pt-5">
                 <h3 className="text-lg font-semibold text-foreground">
                   Cambridge Exam Technique: Key Tips

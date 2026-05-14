@@ -96,7 +96,7 @@ export default function RomeoAndJulietRevisionPage() {
           {['AQA', 'Edexcel', 'CAIE', 'OCR'].map((b) => (
             <span
               key={b}
-              className="rounded-full bg-[#EBF5FB] px-3 py-1 text-xs font-semibold text-primary"
+              className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"
             >
               {b}
             </span>
