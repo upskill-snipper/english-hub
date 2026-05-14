@@ -1,19 +1,18 @@
-'use client'
-
 import { STRINGS } from './content'
-import { useLocale } from '@/lib/i18n/use-locale'
 import { Metadata } from 'next'
 
+import { headers } from 'next/headers'
 export const metadata: Metadata = {
   title: 'Qatar Privacy Notice',
   description:
     "Privacy Notice for The English Hub users in Qatar, compliant with Qatar's Personal Data Privacy Protection Law.",
 }
 
-export default function QatarPrivacyNoticePage() {
-  const locale = useLocale()
+export default async function QatarPrivacyNoticePage() {
+  const _hdrs = await headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
   const tr = (en: string): string => {
-    if (locale !== 'ar') return en
+    if (_lang !== 'ar') return en
     for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
     return en
   }

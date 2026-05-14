@@ -1,19 +1,18 @@
-'use client'
-
 import { Metadata } from 'next'
 
 import { STRINGS } from './content'
-import { useLocale } from '@/lib/i18n/use-locale'
+import { headers } from 'next/headers'
 export const metadata: Metadata = {
   title: 'Safeguarding Policy',
   description:
     'Safeguarding Policy for The English Hub, outlining our commitment to protecting children and young people.',
 }
 
-export default function SafeguardingPolicyPage() {
-  const locale = useLocale()
+export default async function SafeguardingPolicyPage() {
+  const _hdrs = await headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
   const tr = (en: string): string => {
-    if (locale !== 'ar') return en
+    if (_lang !== 'ar') return en
     for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
     return en
   }

@@ -1,10 +1,8 @@
-'use client'
-
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { STRINGS } from './content'
-import { useLocale } from '@/lib/i18n/use-locale'
+import { headers } from 'next/headers'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
@@ -82,10 +80,11 @@ function TechniqueCard({
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function PersuasiveWritingPage() {
-  const locale = useLocale()
+export default async function PersuasiveWritingPage() {
+  const _hdrs = await headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
   const tr = (en: string): string => {
-    if (locale !== 'ar') return en
+    if (_lang !== 'ar') return en
     for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
     return en
   }

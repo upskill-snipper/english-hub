@@ -1,11 +1,9 @@
-'use client'
-
 import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import type { Metadata } from 'next'
 
 import { STRINGS } from './content'
-import { useLocale } from '@/lib/i18n/use-locale'
+import { headers } from 'next/headers'
 export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/aqa/grade-boundaries',
@@ -48,10 +46,11 @@ function Section({
   )
 }
 
-export default function GradeBoundariesPage() {
-  const locale = useLocale()
+export default async function GradeBoundariesPage() {
+  const _hdrs = await headers()
+  const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
   const tr = (en: string): string => {
-    if (locale !== 'ar') return en
+    if (_lang !== 'ar') return en
     for (const v of Object.values(STRINGS)) if (v.en === en) return v.ar || en
     return en
   }
