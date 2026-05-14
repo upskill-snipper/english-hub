@@ -7,82 +7,13 @@
 // Content-Security-Policy header so Next's own runtime + these JSON-LD tags
 // all carry the same value).
 //
-// User-visible strings (organisation description, offer names) route through
-// the i18n dictionary so Google's locale-aware rich-result rendering picks up
-// the Arabic copy when `x-lang === 'ar'`. The other exports (Course,
-// Breadcrumb, FAQ, Article, HowTo, LearningResource, Quiz) take their strings
-// as props from callers, so they remain sync and locale-agnostic at this
-// layer — callers translate before passing in.
-
-import { tMany } from '@/lib/i18n/t'
-
-export async function WebsiteJsonLd({ nonce }: { nonce?: string } = {}) {
-  const [siteDescription, studentMonthly, studentAnnual, teacherMonthly, teacherAnnual] =
-    await tMany([
-      'seo.site.description',
-      'seo.offer.student_monthly',
-      'seo.offer.student_annual',
-      'seo.offer.teacher_monthly',
-      'seo.offer.teacher_annual',
-    ])
-
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'EducationalOrganization',
-    name: 'The English Hub',
-    url: 'https://theenglishhub.app',
-    description: siteDescription,
-    areaServed: { '@type': 'Country', name: 'United Kingdom' },
-    audience: {
-      '@type': 'EducationalAudience',
-      educationalRole: 'student',
-      suggestedMinAge: 14,
-      suggestedMaxAge: 18,
-    },
-    offers: [
-      {
-        '@type': 'Offer',
-        name: studentMonthly,
-        price: '3.49',
-        priceCurrency: 'GBP',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2028-01-01',
-      },
-      {
-        '@type': 'Offer',
-        name: studentAnnual,
-        price: '29.99',
-        priceCurrency: 'GBP',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2028-01-01',
-      },
-      {
-        '@type': 'Offer',
-        name: teacherMonthly,
-        price: '7.99',
-        priceCurrency: 'GBP',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2028-01-01',
-      },
-      {
-        '@type': 'Offer',
-        name: teacherAnnual,
-        price: '67.99',
-        priceCurrency: 'GBP',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2028-01-01',
-      },
-    ],
-  }
-
-  return (
-    <script
-      type="application/ld+json"
-      nonce={nonce}
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
-}
+// This module is intentionally LOCALE-AGNOSTIC at the import level — it
+// does NOT pull in `@/lib/i18n/t`, which would drag `next/headers` into
+// every client component that imports any helper from here. The
+// organisation-level WebsiteJsonLd (which DOES need the i18n dictionary)
+// lives in `./website-json-ld.tsx` so client components can safely
+// import Breadcrumb / Course / FAQ / Article / HowTo / LearningResource /
+// Quiz helpers from here. Callers translate strings before passing them in.
 
 export function CourseJsonLd({
   name,
