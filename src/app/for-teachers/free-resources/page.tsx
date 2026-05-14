@@ -1,7 +1,7 @@
+'use client'
+
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
-;('use client')
-
 import { useState } from 'react'
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'

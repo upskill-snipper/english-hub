@@ -1,7 +1,7 @@
+'use client'
+
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
-;('use client')
-
 import { useState } from 'react'
 
 /* ─── Expandable Section Component ─────────────────────────── */

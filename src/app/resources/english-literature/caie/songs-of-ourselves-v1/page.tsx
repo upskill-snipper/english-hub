@@ -1,7 +1,7 @@
+'use client'
+
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
-;('use client')
-
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 

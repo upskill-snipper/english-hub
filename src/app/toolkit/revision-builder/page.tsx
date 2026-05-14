@@ -1,7 +1,7 @@
+'use client'
+
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
-;('use client')
-
 import { useState, useCallback } from 'react'
 import Link from 'next/link'
 import DOMPurify from 'dompurify'
