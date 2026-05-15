@@ -111,7 +111,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Writing may be disorganised or unclear.`,
     ar: `الكتابة قد تكون غير منظمة أو غير واضحة.`,
   },
-  s38: { en: `Grade E &rarr; Grade C`, ar: `من الفئة Е إلى الفئة С` },
+  s38: { en: `Grade E &rarr; Grade C`, ar: `` },
   s39: { en: `Grade C &rarr; Grade A`, ar: `من درجة ج إلى درجة أ` },
   s40: { en: `Analysis depth:`, ar: `عمق التحليل:` },
   s42: { en: `Form and structure:`, ar: `الشكل والبنية:` },

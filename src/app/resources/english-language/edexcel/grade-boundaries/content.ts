@@ -32,7 +32,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s9: {
     en: `Consistently engages with connotations, nuance, and the subtleties of language and structure.`,
-    ar: `يتعامل باستمرار مع الدلالات والتонية وтонيات اللغة والبنية.`,
+    ar: ``,
   },
   s11: {
     en: `Compelling, convincing writing that sustains the reader&rsquo;s interest throughout.`,
@@ -116,7 +116,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s33: {
     en: `Paragraphs are used effectively with some structural awareness and deliberate organisation.`,
-    ar: `используется بشكل فعال مع وعي هيكلية ومعاونة منظمة متعمدة.`,
+    ar: ``,
   },
   s34: {
     en: `Some variety in sentence structures, including compound and complex sentences.`,
@@ -124,7 +124,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s35: {
     en: `Generally accurate spelling and punctuation with some errors on more complex words.`,
-    ar: `SPELLING وتصحيح пунктуации بشكل عام صحيح مع بعض الأخطاء في الكلمات الأكثر تعقيداً.`,
+    ar: ``,
   },
   s36: { en: `Grade 4 &mdash; Standard pass`, ar: `الدرجة الرابعة &ndash; المعيار الموافقة عليه` },
   s37: {

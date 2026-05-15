@@ -48,7 +48,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Paragraph 2: Middle of the novella (Staves 2&ndash;3)`,
     ar: `وسط الرواية القصيرة (الأقسام 2 و 3)`,
   },
-  s25: { en: `Paragraph 3: Climax (Stave 4)`, ar: `пункт الحدوث (الفصل الرابع)` },
+  s25: { en: `Paragraph 3: Climax (Stave 4)`, ar: `` },
   s26: { en: `Paragraph 4: Resolution (Stave 5)`, ar: `الفصل الخامس (الحل)` },
   s27: { en: `OCR Exam Technique Tips`, ar: `نصائح تقنيات الامتحان للاختبارات من OCR` },
   s28: { en: `No extract:`, ar: `لا يوجد نص لترجمته` },

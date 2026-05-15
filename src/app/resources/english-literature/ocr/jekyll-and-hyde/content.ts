@@ -62,6 +62,6 @@ export const STRINGS: Record<string, Bi> = {
   s32: { en: `Time management:`, ar: `إدارة الوقت:` },
   s33: {
     en: `The Strange Case of Dr Jekyll and Mr Hyde`,
-    ar: `حالة الدكتور جايلك و Mister هайд الغريبة`,
+    ar: ``,
   },
 }

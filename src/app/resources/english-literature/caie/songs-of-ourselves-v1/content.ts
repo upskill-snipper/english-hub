@@ -15,7 +15,7 @@ export const STRINGS: Record<string, Bi> = {
   s1: { en: `Songs of Ourselves`, ar: `أغاني أنفسنا` },
   s2: { en: `The Thought-Fox`, ar: `الذئب-الفكر` },
   s3: { en: `Hawk Roosting`, ar: `هوك روستינג` },
-  s4: { en: `Verified Vol&nbsp;1 Part&nbsp;4 poems:`, ar: `متحققة قصائد جزء 1 часть 4:` },
+  s4: { en: `Verified Vol&nbsp;1 Part&nbsp;4 poems:`, ar: `` },
   s5: { en: `The City Planners`, ar: `المخططون للمدينة` },
   s6: { en: `Funeral Blues`, ar: `موسيقى العزاء` },
   s7: { en: `He Never Expected Much`, ar: `لم يتوقع الكثير قط` },

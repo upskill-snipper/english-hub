@@ -13,14 +13,14 @@ export type Bi = { en: string; ar: string }
 export const STRINGS: Record<string, Bi> = {
   s0: { en: `Key Quotes`, ar: `ال citas الرئيسية` },
   s1: { en: `On this page`, ar: `في هذه الصفحة` },
-  s2: { en: `Relationships Cluster`, ar: `кластير العلاقات` },
-  s3: { en: `Conflict Cluster`, ar: `кфليكت كلاستر` },
+  s2: { en: `Relationships Cluster`, ar: `` },
+  s3: { en: `Conflict Cluster`, ar: `` },
   s4: { en: `How the Poetry Anthology Works`, ar: `كيف يعمل ديوان الشعر` },
   s5: { en: `Conflict Cluster — Full Analysis`, ar: `تحليل مجموعة النزاعات` },
   s6: { en: `How to Write a Poetry Comparison`, ar: `كيفية كتابة مقارنة شعرية` },
   s7: { en: `Recommended Structure`, ar: `ال STRUCTURE الموصى بها` },
   s8: { en: `Comparative paragraphs (3-4)`, ar: `مقارنات (3-4)` },
-  s9: { en: `Analyse methods`, ar: `انализ الطرق` },
+  s9: { en: `Analyse methods`, ar: `` },
   s10: {
     en: `Include context where relevant`,
     ar: `أضف السياق حيث يكون ضروريًا وايد شلون تقدر تفهم better:

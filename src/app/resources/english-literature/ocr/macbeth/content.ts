@@ -17,7 +17,7 @@ export const STRINGS: Record<string, Bi> = {
   s3: { en: `Act 4: False Security`, ar: `الatto 4: أمان زائف` },
   s4: { en: `Act 5: Downfall`, ar: `الatto 5: الهزيمة` },
   s5: { en: `Key character arc`, ar: `arc شخصية رئيسية` },
-  s6: { en: `Lady Macbeth`, ar: `لедى مكبث` },
+  s6: { en: `Lady Macbeth`, ar: `` },
   s7: { en: `The Witches`, ar: `الساحرات` },
   s8: { en: `King James I`, ar: `جيمس الأول ملك إنجلترا` },
   s9: { en: `The Gunpowder Plot (1605)`, ar: `مخطط المتفجرات (1605)` },

@@ -93,7 +93,7 @@ export const STRINGS: Record<string, Bi> = {
   s39: { en: `Colon ( : )`, ar: `فاصلة ( : )` },
   s40: { en: `Dash ( &mdash; )`, ar: `دش ( &mdash; )` },
   s41: { en: `Ellipsis ( &hellip; )`, ar: `نقاط سبع ( &hellip; )` },
-  s43: { en: `Brackets / parentheses ( )`, ar: `скобки / القوسين ( )` },
+  s43: { en: `Brackets / parentheses ( )`, ar: `` },
   s44: {
     en: `Every sentence ends with a full stop, question mark, or exclamation mark`,
     ar: `كل جملة تنتهي بנקודה كاملة، علامة استفهام، أو علامة تعجب`,

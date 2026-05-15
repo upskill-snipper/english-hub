@@ -34,7 +34,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s5: {
     en: `Tybalt as honour personified. Mercutio&apos;s death. Romeo torn between love and revenge.`,
-    ar: `تيبالト كأنه الشرف شخصيًا. موتي ميركسيو. روميو مشتت بين الحب والثأر.`,
+    ar: ``,
   },
   s6: {
     en: `Juliet&apos;s oxymorons. Romeo&apos;s conflict between pacifism and revenge. The Friar&apos;s conflict between caution and action.`,
@@ -54,22 +54,20 @@ export const STRINGS: Record<string, Bi> = {
   s18: { en: `Character Profiles`, ar: `Profiles الشخصيات` },
   s19: { en: `Friar Lawrence`, ar: `أخ فرير لورنس` },
   s20: { en: `Lord Capulet`, ar: `لورد كايبulet` },
-  s21: { en: `The Prince (Escalus)`, ar: `ال принس (إسكاليوس)` },
+  s21: { en: `The Prince (Escalus)`, ar: `` },
   s22: { en: `Major Themes`, ar: `ال THEMES الرئيسيين` },
   s23: { en: `Fate and Destiny`, ar: `القدر والمصير` },
   s24: { en: `Conflict and Violence`, ar: `الصراع والعنف` },
   s25: { en: `Family and Duty`, ar: `الأسرة والواجب` },
   s26: { en: `Youth vs Age`, ar: `الشباب ضد الكهولة` },
   s27: { en: `Light and Dark`, ar: `الضوء والظلام` },
-  s28: { en: `Honour and Masculinity`, ar: `الчесть والرجولة` },
+  s28: { en: `Honour and Masculinity`, ar: `` },
   s29: { en: `Key Quotations`, ar: `الاقتباسات الرئيسية` },
   s30: { en: `The Prologue`, ar: `ال próلُوجو` },
   s31: { en: `Other Characters`, ar: `شخصيات أخرى` },
   s32: {
     en: `Historical and Social Context`,
-    ar: `السياق التاريخي和社会背景的阿拉伯文翻译应该是“السياق التاريخي والاجتماعي”，但由于要求中没有明确指示如何处理“Social Context”这一部分，且要求直接翻译而不添加额外内容，这里仅提供“Historical and Social Context”的翻译：
-
-السياق التاريخي`,
+    ar: ``,
   },
   s34: { en: `Italian Setting and Honour Culture`, ar: `ثقافة الشرف في setting إيطالي` },
   s35: { en: `The Sonnet Tradition`, ar: `العادة الشعرية القصيدة الرباعية` },
@@ -80,7 +78,7 @@ export const STRINGS: Record<string, Bi> = {
   s40: { en: `Light and Dark Imagery`, ar: `صور الضوء والظلام` },
   s41: {
     en: `Compressed Time Structure`,
-    ar: `โครงสร้างเวลาแบบย่อ壓縮時間結構.Structure التمثيل الزمني المضغوط`,
+    ar: ``,
   },
   s42: { en: `Soliloquy and Aside`, ar: `منولوج وجانبي` },
   s43: {

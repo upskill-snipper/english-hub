@@ -19,7 +19,7 @@ export const STRINGS: Record<string, Bi> = {
   s5: { en: `Sound (Auditory)`, ar: `الصوت (السمعي)` },
   s6: { en: `Volume, pitch, rhythm, silence`, ar: `الحجم، الصوت العالي، الإيقاع، الصمت` },
   s7: { en: `Touch (Tactile)`, ar: `اللمس (التكتيل)` },
-  s8: { en: `Texture, temperature, pressure, pain`, ar: `ال текстور، الحرارة، الضغط، الألم` },
+  s8: { en: `Texture, temperature, pressure, pain`, ar: `` },
   s9: { en: `Smell (Olfactory)`, ar: `الشم (الحاسة الشمية)` },
   s10: { en: `Pleasant, acrid, subtle, overwhelming`, ar: `مبهج، حاد، خفيف، ساحق` },
   s11: { en: `Taste (Gustatory)`, ar: `الطعم (الحسي التذوقي)` },
@@ -41,7 +41,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s21: {
     en: `Do not describe only what you see. Begin with sight, then add sound, then smell or touch. Each new sense deepens the reader&apos;s immersion.`,
-    ar: `لا تصف ما تراه فقط. ابدأ بال зр ، ثم أضف الصوت، ثم الشم أو اللمس. كل حاسة جديدة تعمق من غمر القارئ.`,
+    ar: ``,
   },
   s22: { en: `Use the Setting to Reflect Mood`, ar: `استخدم الإعداد لتعكس المزاج` },
   s25: {
@@ -100,7 +100,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `The most effective suspense often comes from juxtaposing an ordinary, safe moment with a single disturbing detail. The normality makes the threat feel more real.`,
     ar: `الرعب الأقوى غالباً ما يأتي من مزج لحظة عادية وأمنة مع تفصيل واحد مقلق. التطبيع يجعل الخطر يبدو أكثر واقعية.`,
   },
-  s53: { en: `The Rule of Three`, ar: `правило الثلاثة` },
+  s53: { en: `The Rule of Three`, ar: `` },
   s54: {
     en: `Build in three stages: first hint, second hint (stronger), then the reveal. The pattern creates expectation. &ldquo;A creak. A shadow. Then the door swung open.&rdquo;`,
     ar: `شوف شنو، إحنا بنبنه في ثلاث مراحل: إشارة أولى، ثم إشارة ثانية أقوى، وبعدين الافشال. هذا النمط بيخلق توقع. "ضوضاء خفيفة. ظل. ثم فتحت الباب.`,

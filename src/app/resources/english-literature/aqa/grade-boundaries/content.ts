@@ -16,7 +16,7 @@ export const STRINGS: Record<string, Bi> = {
   s2: { en: `Approx. mark (/160)`, ar: `تقريبي (/160)_mark_/160_]` },
   s4: {
     en: `Critical, exploratory, conceptualised response to texts.`,
-    ar: `ردّ كритيقي واستكشافي ومفهومي على النصوص.`,
+    ar: ``,
   },
   s5: {
     en: `Judicious use of precise references to support interpretation.`,

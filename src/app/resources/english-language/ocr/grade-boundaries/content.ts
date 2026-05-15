@@ -124,19 +124,7 @@ For a more natural flow:
   },
   s31: {
     en: `Paragraphs used effectively with some deliberate structural choices.`,
-    ar: `параграфات مستخدمة بشكل فعال مع بعض الاختيارات البنائية المقصودة. 
-
-(Note: The above response seems to be a mix of Arabic and non-Arabic text due to an error. Here is the corrected version in Khaleeji Arabic as requested.)
-
-ال парагرافات المستخدمة بشكل فعال مع بعض الاختيارات البنائية المقصودة.
-
-(_correction_)
-
-ال паragraphs المستخدمة بشكل فعال مع بعض الاختيارات البنائية المقصودة.
-
-_(final correction)_
-
- паragraphs المستعملة بشكل فعال مع بعض الاختيارات البنائية المقصودة.`,
+    ar: ``,
   },
   s32: {
     en: `Some variety in sentence structures and conscious use of sentence types.`,
@@ -153,7 +141,7 @@ Final Correct Version:
   },
   s33: {
     en: `Generally accurate spelling and punctuation with errors on more complex words.`,
-    ar: `SPELLING وتصحيح пунктуации دقيقين بشكل عام مع أخطاء في الكلمات أكثر تعقيداً.`,
+    ar: ``,
   },
   s34: { en: `Grade 4 &mdash; Standard pass`, ar: `الدرجة الرابعة &ndash; المعيار الأساسي للنجاح` },
   s35: {
@@ -224,7 +212,7 @@ Final Correct Version:
   s59: { en: `Reading widely:`, ar: `قراءة واسعة:` },
   s60: { en: `What it tests`, ar: `ماعنده شنو يختبر` },
   s61: { en: `Skill tested`, ar: `ال kỹول(pDXlicated text to fit instructions) مهارة مختبرة` },
-  s62: { en: `Section A: Reading`, ar: `раздел أ: القراءة` },
+  s62: { en: `Section A: Reading`, ar: `` },
   s63: {
     en: `Retrieve and interpret information from one text`,
     ar: `ا retrieve و interpret المعلومات من نص واحد`,
@@ -268,7 +256,7 @@ Final Correct Version:
   },
   s77: {
     en: `Analyse a 19th-century text: how language creates meaning`,
-    ar: `انализ نص من القرن التاسع عشر: كيف يخلق اللسان المعنى`,
+    ar: ``,
   },
   s78: {
     en: `Evaluate critically how a writer achieves impact on the reader`,

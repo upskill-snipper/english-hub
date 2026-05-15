@@ -23,7 +23,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s7: {
     en: `Consistently engages with connotations, nuance, and the subtleties of language.`,
-    ar: `يشغل نفسي بالدلالات والтон الشذى في اللغة.`,
+    ar: ``,
   },
   s8: {
     en: `Compelling, convincing writing that sustains the reader&rsquo;s interest throughout.`,
@@ -118,7 +118,7 @@ For strict translation without notes:
   s31: { en: `Some variety in sentence structures.`, ar: `قليل من التغير في بنية الجمل.` },
   s32: {
     en: `Generally accurate spelling and punctuation with some errors on more complex words.`,
-    ar: `SPELLING وتصحيح пунктуации بشكل عام دقيق مع بعض الأخطاء في الكلمات المعقدة.`,
+    ar: ``,
   },
   s33: { en: `Grade 4 &mdash; Standard pass`, ar: `الدرجة الرابعة &ndash; المعيار المعتمد للنجاح` },
   s34: {
@@ -180,7 +180,7 @@ For strict translation without notes:
   },
   s52: {
     en: `Simple sentence forms; frequent errors in spelling and punctuation.`,
-    ar: `أشكال جملة بسيطة؛ أخطاء متكررة في الكتابة والت пункتشن`,
+    ar: ``,
   },
   s53: { en: `Grade 4 &rarr; Grade 5`, ar: `الصف الرابع إلى الصف الخامس` },
   s54: { en: `Grade 5 &rarr; Grade 7`, ar: `الصف الخامس إلى الصف السابع` },

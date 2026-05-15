@@ -15,7 +15,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Paper overview`,
     ar: `محة عن الورقةexamcodesKS3AO1-AO6GCSEIGCSEالرجاء قراءة محة الورقة بدقة قبل الشروع في الإجابة. تأكد من فهمك للكود الخاص بالامتحان وأهداف التقييم (AO`,
   },
-  s1: { en: `Section A: Reading`, ar: `раздел أ: القراءة` },
+  s1: { en: `Section A: Reading`, ar: `` },
   s2: { en: `Section B: Writing`, ar: `SECTION B: الكتابة` },
   s3: { en: `Read both texts carefully`, ar: `اقرأ النصين بعناية شديدة` },
   s4: { en: `Question 1 (true/false)`, ar: `سؤال 1 (صح/خطأ)` },
@@ -24,7 +24,7 @@ export const STRINGS: Record<string, Bi> = {
   s7: { en: `Question 4 (comparison)`, ar: `السؤال الرابع (المقارنة)` },
   s8: { en: `Question 5 (writing)`, ar: `السؤال الخامس (كتابة)` },
   s9: { en: `What the question asks`, ar: `شنو بيسأل عنه السؤال` },
-  s10: { en: `How to answer`, ar: `كيف تجيبчрежден` },
+  s10: { en: `How to answer`, ar: `` },
   s11: {
     en: `Read the specified section of the text carefully before looking at the statements.`,
     ar: `اقرأ الجزء المحدد من النص بعناية قبل النظر فيstatements. 
@@ -67,7 +67,7 @@ declarations أن تكون صحيحة بشكل عام لكنها غير مدعم
   },
   s24: {
     en: `Simple, limited cross-reference of ideas. Simple references.`,
-    ar: `ссылات بسيطة ومعنوية محدودة. ссылات بسيطة.`,
+    ar: ``,
   },
   s25: { en: `How to structure your answer`, ar: `كيفية تنظيم إجابتك` },
   s26: { en: `Infer, do not just describe.`, ar: `استدل، لا تصف فقط.` },
@@ -107,7 +107,7 @@ declarations أن تكون صحيحة بشكل عام لكنها غير مدعم
   },
   s39: {
     en: `Look for rhetorical devices common in Victorian non-fiction: tricolon (lists of three), direct address, emotive language, religious references, appeals to morality.`,
-    ar: `دوري على الأدوات البلاغية الشائعة في الكتابات غير الخيالية في العصر الفيكتوري: التريلوجي (قوائم من ثلاثة)، обращение مباشر، لغة عاطفية، إشارات دينية، استئنافات أخلاقية.`,
+    ar: ``,
   },
   s42: { en: `Comparing writers (AO3)`, ar: `مقارنة الكتاب (AO3)` },
   s44: {
@@ -185,7 +185,7 @@ declarations أن تكون صحيحة بشكل عام لكنها غير مدعم
   s71: { en: `Formal register throughout`, ar: `الRegister formal خلال toàn bộtexto` },
   s72: {
     en: `State the purpose of your letter in the opening paragraph`,
-    ar: `اكتب هدف رسالتك فيagraphicparagraphف абвгд`,
+    ar: ``,
   },
   s73: {
     en: `Address the audience directly: &ldquo;Ladies and gentlemen,&rdquo; or &ldquo;Fellow students,&rdquo;`,
@@ -209,7 +209,7 @@ declarations أن تكون صحيحة بشكل عام لكنها غير مدعم
   },
   s79: {
     en: `Well-developed paragraphs with topic sentences`,
-    ar: `парагرافات مطورة مع جمل رئيسية`,
+    ar: ``,
   },
   s81: {
     en: `Conclusion that summarises and reinforces your main argument`,
@@ -225,7 +225,7 @@ declarations أن تكون صحيحة بشكل عام لكنها غير مدعم
   },
   s88: {
     en: `Note the form and adapt your tone, layout, and register accordingly.`,
-    ar: `لاحظ الشكل و adapte له نبرةك، تخطيطك، و регистر соответственно.`,
+    ar: ``,
   },
   s91: {
     en: `Example opening (article, Grade 8-9)`,
@@ -266,7 +266,7 @@ declarations أن تكون صحيحة بشكل عام لكنها غير مدعم
     en: `Persuasive, argumentative, or advisory (in a specified form)`,
     ar: `مقنع، جدلي، أو مشوراتي (في شكل محدد)`,
   },
-  s105: { en: `Not required`, ar: `لا требуется` },
+  s105: { en: `Not required`, ar: `` },
   s106: { en: `Required in Q2 and Q4`, ar: `مطلوب في الأسئلة 2 و4` },
   s107: { en: `Structure question`, ar: `سؤال عن الهيكلية` },
   s108: { en: `No separate structure question`, ar: `لا توجد سؤال منفصل عن الهيكل` },

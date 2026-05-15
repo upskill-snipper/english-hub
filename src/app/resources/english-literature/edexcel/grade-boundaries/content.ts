@@ -16,7 +16,7 @@ export const STRINGS: Record<string, Bi> = {
   s2: { en: `Grade 9 &mdash; Exceptional`, ar: `التاسع &ndash; ممتاز` },
   s3: {
     en: `Critical, exploratory, conceptualised response to texts.`,
-    ar: `ردّ كритيقي ومستكشف ومفهوم للكتب`,
+    ar: ``,
   },
   s4: {
     en: `Judicious use of precise references to support interpretation.`,

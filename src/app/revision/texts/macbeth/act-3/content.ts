@@ -20,23 +20,10 @@ export const STRINGS: Record<string, Bi> = {
     en: `Scene 1 — Macbeth Plans Banquo&apos;s Murder`,
     ar: `مشهد واحد — ماكبث يخطط لقتل بانكواو`,
   },
-  s3: { en: `Key Events &amp; Turning Points`, ar: `ключvents و النقاط الحاسمة` },
+  s3: { en: `Key Events &amp; Turning Points`, ar: `` },
   s4: {
     en: `Macbeth acts independently for the first time, ordering murder without Lady Macbeth&apos;s involvement.`,
-    ar: `ماكبث ي.act independantly للمرة الأولى، موجِّهًا أمر القتل بدون تدخُّل لедى ماكbeth. 
-
-(_correction needed due to instruction constraints:)
-
-ماكبث ي.act بشكل مستقل للمرة الأولى، موجهاً أمر القتل بدون تدخل ليدى ماكbeth.
-
-(Still refining for a better fit within the given guidelines, aiming for natural Khaleeji Arabic while maintaining accuracy.)
-
-_Updated and refined version considering instructions strictly:
-
-ماكبث ي.act بشكل مستقل للمرة الأولى، موجِّهًا أمر القتل بدون تدخُّل ليدى ماكbeth.
-
-Final corrected version:
-ماكبث ي.act بشكل مستقل للمرة الأولى، موحيًا بأمر القتل بدون تدخل من ليدى ماكbeth.`,
+    ar: ``,
   },
   s5: {
     en: `His motivation shifts from ambition to fear &mdash; he kills not to gain the throne but to keep it.`,
@@ -44,7 +31,7 @@ Final corrected version:
   },
   s6: {
     en: `He uses the same technique Lady Macbeth used on him: questioning the murderers&apos; manhood.`,
-    ar: `يستخدم نفس التقنية التي استخدمتها لедى ماكbeth معه: سؤال شجاعة القتلة.`,
+    ar: ``,
   },
   s7: {
     en: `Banquo&apos;s suspicion that Macbeth &ldquo;play&rsquo;dst most foully&rdquo; makes him a threat to the regime.`,
@@ -55,24 +42,24 @@ Final corrected version:
   s10: { en: `Structural Analysis`, ar: `تحليل البنية` },
   s11: { en: `Links to Themes`, ar: `روابط بالمواضيع` },
   s12: { en: `Kingship &amp; Power`, ar: `الملكية والسلطة` },
-  s14: { en: `The Supernatural`, ar: `ال сверх طبيعي` },
+  s14: { en: `The Supernatural`, ar: `` },
   s15: {
     en: `Scene 2 — &ldquo;Nought&rsquo;s Had, All&rsquo;s Spent&rdquo;`,
     ar: `الشِّهَادَةُ 2 — "نُوتٍ حَد، أَلٍّ سُپِنت`,
   },
   s16: {
     en: `Lady Macbeth&apos;s private admission of unhappiness shows the crown has brought no satisfaction.`,
-    ar: `اعتراف لедى مكbeth الخاص بعدم سعادتها يظهر أن التاج لم يجلب أي رضا.`,
+    ar: ``,
   },
   s17: {
     en: `Macbeth excludes Lady Macbeth from his plans &mdash; their partnership is fracturing.`,
-    ar: `مакbeth يCLUDE lADY macbeth في خPlANSها &mdash; شلون شراكتهم مو بسطة`,
+    ar: ``,
   },
   s18: {
     en: `The power dynamic shifts: Macbeth is now the active plotter, Lady Macbeth the passive observer.`,
     ar: `يتغير التوازن القوي: ماكbeth هو الآن المخطط النشط، بينما لداي ماكbeth هي المشاهدة السلبية.`,
   },
-  s19: { en: `Lady Macbeth`, ar: `لедى مكبث` },
+  s19: { en: `Lady Macbeth`, ar: `` },
   s20: { en: `Guilt &amp; Conscience`, ar: `الذنب والضمير` },
   s21: { en: `Scene 3 — Banquo&apos;s Murder`, ar: `مشهد 3 — مقتل بانكو` },
   s22: {
@@ -86,7 +73,7 @@ Final corrected version:
   s25: { en: `Scene 4 — The Banquet and Banquo&apos;s Ghost`, ar: `الحفلة وروح بنقو` },
   s26: {
     en: `Banquo&apos;s ghost appears &mdash; either supernatural visitation or Macbeth&apos;s guilt made visible.`,
-    ar: `روح غيبية بانكو &mdash; إما زيارة خوارق أو ذматه اللي مكbeth حاس بيها وصار ظاهرة للعيان.`,
+    ar: ``,
   },
   s27: {
     en: `Macbeth&apos;s public breakdown reveals his guilt to the Scottish lords, undermining his authority.`,
@@ -94,7 +81,7 @@ Final corrected version:
   },
   s28: {
     en: `Lady Macbeth&apos;s attempt to maintain appearances fails &mdash; she is losing control of her husband and the situation.`,
-    ar: `محاولة لедى مكbeth للحفاظ على المظهر الخارجي تفشل &mdash; هي تخسر السيطرة على زوجها والوضع.`,
+    ar: ``,
   },
   s29: {
     en: `Macbeth resolves to visit the witches again, seeking security through deeper engagement with the supernatural.`,
@@ -105,12 +92,12 @@ Final corrected version:
 التصحيح:
 ماكبث قرر زيارته للساحرات مرة أخرى، يبحث عن الأمان من خلال التعمق في العالم الغيبي.`,
   },
-  s31: { en: `Appearance vs Reality`, ar: `внешний вид مقابل الواقع` },
+  s31: { en: `Appearance vs Reality`, ar: `` },
   s32: { en: `Scene 5 — Hecate&apos;s Intervention`, ar: `مشهد 5 — تدخل هيكات` },
   s34: { en: `Practice Exam Questions — Act 3`, ar: `أسئلة الامتحان التدريبية — المشهد الثالث` },
   s35: {
     en: `How does Shakespeare present Macbeth as an increasingly isolated and paranoid ruler in Act 3? Refer closely to language, form, and structure in your answer.`,
-    ar: `كيف ي presente شكسبير ماكbeth كحاكم متزايد في الوحدة والشكوك في действие 3؟ ارجع بعناية إلى اللغة، الشكل، و الهيكل في إجابتك.`,
+    ar: ``,
   },
   s37: { en: `Act 4 — coming soon`, ar: `مشهد 4 — موعدووود قريباً` },
 }

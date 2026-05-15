@@ -35,7 +35,7 @@ export const STRINGS: Record<string, Bi> = {
   s22: { en: `Chapter 23.`, ar: `الفصل twenty-three.` },
   s23: { en: `Chapter 24.`, ar: `الفصل twenty-four.` },
   s24: { en: `Chapter 25.`, ar: `الفصل twenty-five.` },
-  s26: { en: `Para 1 (AO1/AO2).`, ar: `ال парагراف الأول (AO1/AO2)` },
+  s26: { en: `Para 1 (AO1/AO2).`, ar: `` },
   s27: {
     en: `Para 2 (AO2/AO3).`,
     ar: `ال пункт 2 (AO2/AO3). 
@@ -48,8 +48,8 @@ export const STRINGS: Record<string, Bi> = {
 
 *(Please note that due to instructions and context provided, this seems like an incomplete or incorrectly formatted input. The term "Para 3" is likely a reference to a specific paragraph in the text being translated from English to Khaleeji Arabic with certain assessment`,
   },
-  s29: { en: `Para 2 (AO2).`, ar: `пункт 2 ( AO2 )` },
-  s30: { en: `Para 3 (AO3).`, ar: `ال пункт 3 (AO3).` },
+  s29: { en: `Para 2 (AO2).`, ar: `` },
+  s30: { en: `Para 3 (AO3).`, ar: `` },
   s31: {
     en: `The structural irony of the closing chapter.`,
     ar: `الحاجة من(KP) للسخرية البنائية في الفصل الختامي(KP).`,
@@ -74,7 +74,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s37: {
     en: `The novel&rsquo;s internal critique of Igbo society.`,
-    ar: `نقد الرواية لمجتمع الإيغбо داخليًا.`,
+    ar: ``,
   },
   s38: {
     en: `The Earth (Ani) as the novel&rsquo;s ethical centre.`,
@@ -113,7 +113,7 @@ export const STRINGS: Record<string, Bi> = {
 Corrected version:
 لا تعمري الأمة الإيبوidealistically.`,
   },
-  s47: { en: `Use Achebe&rsquo;s essays for AO3.`, ar: `استخدم مقالات أخчиبي لـ AO3.` },
+  s47: { en: `Use Achebe&rsquo;s essays for AO3.`, ar: `` },
   s49: { en: `Copyright notice.`, ar: `الحقوق المحفوظة` },
   s51: { en: `Masculinity and the fear of weakness`, ar: `الرجولة والخوف من الضعف` },
   s52: { en: `Tradition and the question of change`, ar: `التقاليد والسؤال عن التغيير` },
@@ -129,7 +129,7 @@ Corrected version:
     en: `The man&rsquo;s personal hut within a compound. Each of Okonkwo&rsquo;s wives has her own hut in his compound, with the obi as the household&rsquo;s public-facing room.`,
     ar: `مزرعة الرجل داخل المجمع. كل واحدة من زوجات أوكونكو لها مسكنها الخاص في مجمعه، مع أن الُبي (obi) هو الغرفة التي تواجه الجمهور للم.household`,
   },
-  s61: { en: `Historical &amp; Literary Context`, ar: `السياق التاريخي والлитيراري` },
+  s61: { en: `Historical &amp; Literary Context`, ar: `` },
   s62: { en: `Structure &amp; Narrative Technique`, ar: `ال STRUCTURE وTECHNIQUE السردية` },
   s63: { en: `Essay Planning`, ar: `hoạchtlة المقال` },
   s64: { en: `Grade 9 / A* Points`, ar: `الدرجة التاسعة / النقاط A*` },

@@ -37,7 +37,7 @@ Note: The term "supernatural transformation" is kept in English as it's a specif
   s22: { en: `The All-Male World`, ar: `عالم الرجال فقط` },
   s23: {
     en: `Model essay plans for the most frequently examined questions. Each plan includes a thesis, paragraph structure, and suggested quotations.`,
-    ar: `خطة مقالة نموذجية للأسئلة الأكثر اختباراً. كل خطة تشمل فرضية، بنية абзацев, и предложенные цитаты.`,
+    ar: ``,
   },
   s24: {
     en: `How does Stevenson present the theme of duality?`,
@@ -48,7 +48,7 @@ Note: The term "supernatural transformation" is kept in English as it's a specif
   s25: { en: `Paragraph 1 &mdash; Jekyll&apos;s confession`, ar: `اعتراف جايلكز` },
   s26: { en: `Paragraph 2 &mdash; Hyde&apos;s physical appearance`, ar: `وصف مظهر هايد الفيزيائي` },
   s27: { en: `Paragraph 3 &mdash; The setting as duality`, ar: `الإعداد كدUALITY` },
-  s28: { en: `Paragraph 4 &mdash; Loss of control`, ar: `параграф 4 &mdash; خسارة السيطرة` },
+  s28: { en: `Paragraph 4 &mdash; Loss of control`, ar: `` },
   s30: {
     en: `Stevenson presents Hyde as frightening precisely because he cannot be categorised or understood &mdash; he exists outside the boundaries of rational Victorian society, embodying everything it represses.`,
     ar: `ستيفنسون ي presente هايد كشخص مرعب بالضبط لأنه لا يمكن تصنيفه أو فهمه — هو موجود خارج حدود المجتمع الفيكتوري العقلاني، مجسدًا كل ما يتم تكبيله وقمعه.`,
@@ -56,20 +56,20 @@ Note: The term "supernatural transformation" is kept in English as it's a specif
   s31: { en: `Paragraph 1 &mdash; Indescribable appearance`, ar: `وصف غير ممكن للاطلالة` },
   s32: {
     en: `Paragraph 2 &mdash; Animalistic and primitive`,
-    ar: `парагراف 2 &mdash; حيواني وبدائي`,
+    ar: ``,
   },
   s33: { en: `Paragraph 3 &mdash; Escalating violence`, ar: `عنف متزايد` },
   s34: {
     en: `Paragraph 4 &mdash; Hyde as internal, not external`,
-    ar: `هайд ك внутренний، وليس خارجي`,
+    ar: ``,
   },
   s35: {
     en: `How does Stevenson explore the theme of repression?`,
     ar: `كيف يستكشف ستيفنسون موضوع القمع؟`,
   },
   s37: { en: `Paragraph 1 &mdash; Jekyll&apos;s secret pleasures`, ar: `جاييلك سروراته السريّة` },
-  s38: { en: `Paragraph 2 &mdash; The caged devil`, ar: `الشيطان الم закوفى` },
-  s39: { en: `Paragraph 3 &mdash; Secrecy as social norm`, ar: `السرية ك нормة اجتماعية` },
+  s38: { en: `Paragraph 2 &mdash; The caged devil`, ar: `` },
+  s39: { en: `Paragraph 3 &mdash; Secrecy as social norm`, ar: `` },
   s40: {
     en: `Paragraph 4 &mdash; The inevitability of eruption`,
     ar: `الفورية اشتعال شنو حابين نقولها في هذه الفقرة`,
@@ -93,10 +93,10 @@ Note: The term "supernatural transformation" is kept in English as it's a specif
   s48: { en: `Paragraph 2 &mdash; Lanyon as orthodox science`, ar: `لانيون كعلم علمي تقليدي` },
   s50: {
     en: `Paragraph 4 &mdash; Darwin and degeneration`,
-    ar: `параграф 4 &mdash; داروين والتقهقر`,
+    ar: ``,
   },
   s51: { en: `Exam Tips for Jekyll and Hyde`, ar: `نصائح للامتحان حول جايلك وهيدز` },
-  s52: { en: `Always link to context.`, ar: `always ربط بال контекست الحين` },
+  s52: { en: `Always link to context.`, ar: `` },
   s53: { en: `Use Stevenson&apos;s methods.`, ar: `استخدم طرق ستيفنسون` },
   s54: { en: `Refer to the writer&apos;s intentions.`, ar: `انظر إلى نوايا الكاتب.` },
   s55: { en: `Link multiple themes.`, ar: `اربط موضوعات متعددة.` },
@@ -125,10 +125,10 @@ Note: The term "supernatural transformation" is kept in English as it's a specif
   s71: { en: `Good vs Evil`, ar: `الخير ضد الشر` },
   s72: {
     en: `Stevenson presents Victorian repression as the root cause of Jekyll`,
-    ar: `ستيفنسون يpresentالقمع الفيكتوري ك причинة جوهرية لجايكل`,
+    ar: ``,
   },
   s73: { en: `Key Quotations with Analysis`, ar: `م quotations الهامة مع التحليل` },
-  s74: { en: `Gothic Conventions in the Novella`, ar: `conventions القوطي في النوفيلла` },
+  s74: { en: `Gothic Conventions in the Novella`, ar: `` },
   s75: { en: `Historical and Social Context`, ar: `السياق التاريخي والاجتماعي` },
   s76: {
     en: `Narrative Structure`,

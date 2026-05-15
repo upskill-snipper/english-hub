@@ -16,7 +16,7 @@ export const STRINGS: Record<string, Bi> = {
   s2: { en: `Subheading (optional)`, ar: `عنوان فرعي (اختياري)` },
   s3: { en: `Byline (optional)`, ar: `(بال_optional_)` },
   s4: { en: `Engaging Opening`, ar: `افتتاحية جذابة` },
-  s5: { en: `Structured Body`, ar: `الجسم المstructured_body_مстроّف` },
+  s5: { en: `Structured Body`, ar: `` },
   s6: { en: `Strong Conclusion`, ar: `استنتاج قوي` },
   s7: {
     en: `Example Article Opening`,
@@ -29,11 +29,7 @@ export const STRINGS: Record<string, Bi> = {
   s12: { en: `Yours sincerely,`, ar: `بو طيبة خاطر،` },
   s13: {
     en: `Key rules:`,
-    ar: `ключrules:
-
-القواعد الرئيسية:
-
-1. استخدم لهجة خليجية موجهة للطلاب (استخدم علامات مثل شنو، شوف، شلون، أبغى، وايد، الحين، إحنا، روح، دوّر، سكّر`,
+    ar: ``,
   },
   s14: { en: `Informal Letter Format`, ar: `Shape الرسالة غير الرسمية` },
   s15: { en: `Dear [First name],`, ar: `عزيزي [اسم الأول]،` },
@@ -70,7 +66,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `مثال لبداية مقال: شلون بدء أطروحتي؟ أبغى أقول إن موضوعنا اليوم هو عن شخصية ماكبث في مسرحية ماكبث لووليم شكسبير. إحنا رح نشوف كيف ماكبث يتحول من قائد`,
   },
   s35: { en: `Universal Writing Tips`, ar: `نصائح كتابة عالمية` },
-  s37: { en: `Vocabulary (Technical accuracy)`, ar: `لغة (دقة تكنничية)` },
+  s37: { en: `Vocabulary (Technical accuracy)`, ar: `` },
   s38: { en: `Sentence Variety (Technical accuracy)`, ar: `تنوع الجمل (دقة تقنية)` },
   s39: { en: `Punctuation Variety (Technical accuracy)`, ar: `تنوع الترقيم (دقة تقنية)` },
   s40: {

@@ -25,8 +25,8 @@ export const STRINGS: Record<string, Bi> = {
   },
   s6: { en: `Letters (personal and formal)`, ar: `الرسائل (شخصية ورسمية)` },
   s7: { en: `Speeches and essays`, ar: `الخطب والرسائل الكتابية` },
-  s8: { en: `Reviews and blogs`, ar: `مراجعات ومقالات блабла` },
-  s9: { en: `Reportage and investigative journalism`, ar: `تقرير و журنالיזם استقصائي` },
+  s8: { en: `Reviews and blogs`, ar: `` },
+  s9: { en: `Reportage and investigative journalism`, ar: `` },
   s10: {
     en: `Literary non-fiction from the 19th, 20th, or 21st century`,
     ar: `النقد litterary من القرن التاسع عشر، العشرين، أو الحادي والعشرين`,
@@ -42,7 +42,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `عنوانك (يمين أعلى)، عنوانهم (يسار)，تاريخ`,
   },
   s19: { en: `Formal register throughout`, ar: `الRegister formal خلال toàn bộtextContent` },
-  s20: { en: `Clear paragraphs with logical progression`, ar: `парагرافات واضحة مع تقدم منطقي` },
+  s20: { en: `Clear paragraphs with logical progression`, ar: `` },
   s21: { en: `Engaging headline`, ar: `عنوان جذاب` },
   s22: { en: `Optional subheading or strapline`, ar: `عنوان اختياري أو شريط أسفلي` },
   s23: {
@@ -77,7 +77,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s34: { en: `Possible star rating or summary verdict`, ar: `تقييم محتمل أو حكم نهائي` },
   s35: { en: `Rhetorical question`, ar: `سؤال رhetorical` },
-  s36: { en: `Tricolon (rule of three)`, ar: `правило الثلاثة (تريколون)` },
+  s36: { en: `Tricolon (rule of three)`, ar: `` },
   s37: {
     en: `Three parallel words, phrases, or clauses`,
     ar: `ثلاث كلمات، جمل صغيرة، أو شرائح متوازية`,
@@ -102,7 +102,7 @@ export const STRINGS: Record<string, Bi> = {
   s48: { en: `Punctuate accurately`, ar: `دوروِر بدقة` },
   s49: {
     en: `Paragraph effectively`,
-    ar: `اكتب абвghijklmnopqrstuvwxyz اabcdefghijklmnopqrstuvwxyz hijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdeghijklmnopqrstuvwxyzabhiJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz`,
+    ar: ``,
   },
   s50: { en: `Suggested Time`, ar: `الوقت المقترح` },
   s51: { en: `Reading the texts and annotating`, ar: `اقرأ النصوص و.annotate عليها` },

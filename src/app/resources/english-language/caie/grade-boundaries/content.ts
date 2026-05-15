@@ -42,7 +42,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `ردود فعل قوية وواثقة مع تحليل جيد`,
   },
   s15: { en: `Good understanding with some strong analysis`, ar: `فهما جيد مع تحليل قوي` },
-  s16: { en: `Sound understanding of the basics`, ar: `فهماً جيداً ل основيات` },
+  s16: { en: `Sound understanding of the basics`, ar: `` },
   s18: {
     en: `Exceptional &mdash; the very highest level of achievement`,
     ar: `استثنائي &mdash; المستوى الأعلى من الإنجاز`,
@@ -90,7 +90,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s35: {
     en: `Sophisticated understanding of how writers use structure, tone, and register for effect.`,
-    ar: `فهم متطور لإستخدام الكتاب للبنية، النبرة، وال регистر لخلق تأثير.`,
+    ar: ``,
   },
   s36: { en: `Writing (Paper 4 / Paper 3):`, ar: `الكتابة (ورقة الامتحان 4 / ورقة الامتحان 3)` },
   s37: {
@@ -196,7 +196,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s70: {
     en: `Simple sentence forms; frequent errors in spelling and punctuation.`,
-    ar: `أشكال جملة بسيطة؛ أخطاء متكررة في الكتابة والت пункتشن`,
+    ar: ``,
   },
   s71: { en: `Grade G (1) &mdash; Elementary`, ar: `درجة ج (1) &mdash; أساسية` },
   s72: {

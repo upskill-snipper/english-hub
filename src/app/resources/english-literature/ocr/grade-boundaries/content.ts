@@ -15,7 +15,7 @@ export const STRINGS: Record<string, Bi> = {
   s1: { en: `Important note`, ar: `ملاحظة مهمة` },
   s3: {
     en: `Critical, exploratory, conceptualised response to texts with a sustained personal interpretation.`,
-    ar: `ردّ كритيقي واستكشافي ومفهومي على النصوص مع تفسير شخصي مستمر.`,
+    ar: ``,
   },
   s4: {
     en: `Judicious use of precise references to support a convincing argument.`,
@@ -53,7 +53,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s12: {
     en: `Detailed examination of the writer&rsquo;s methods with subject terminology used effectively.`,
-    ar: `تحليل مفصل لطرائق الكاتب مع استخدام المصطلح الخاص بال предмет بشكل فعال.`,
+    ar: ``,
   },
   s13: {
     en: `Clear understanding of the effects of the writer&rsquo;s choices on the reader.`,

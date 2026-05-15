@@ -29,7 +29,7 @@ export const STRINGS: Record<string, Bi> = {
   s12: { en: `Always use the author&rsquo;s name:`, ar: `استخدم دائمًا اسم الكاتب:` },
   s13: {
     en: `The 1930s setting and 1960 publication:`,
-    ar: `الإعداد في الثلاثينيات من القرن العشرين والنشر في عام ألف تسعمائة وستةдесят`,
+    ar: ``,
   },
   s14: { en: `Quote precisely:`, ar: `اقتبس بدقة:` },
   s15: { en: `Link everything to Lee&rsquo;s purpose:`, ar: `ربط كل شيء بأهداف لاي์` },

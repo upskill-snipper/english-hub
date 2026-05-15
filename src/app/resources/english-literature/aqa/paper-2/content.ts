@@ -12,7 +12,7 @@ export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
   s0: { en: `Paper Structure`, ar: `Structure الورقة taxpapers` },
-  s1: { en: `Section A: Modern Texts (34 marks)`, ar: `раздел أ: النصوص الحديثة (34 نقطة)` },
+  s1: { en: `Section A: Modern Texts (34 marks)`, ar: `` },
   s2: {
     en: `Answer on your studied modern prose or drama text`,
     ar: `أجيب عن النص الأدبي الحديث أو المسرحي الذي درسته`,
@@ -41,13 +41,13 @@ export const STRINGS: Record<string, Bi> = {
   },
   s10: {
     en: `Part 2: Compare with a second unseen poem (8 marks)`,
-    ar: `phần 2: сравنة مع قصيدة ثانية غير مروية (8 نقاط)`,
+    ar: ``,
   },
   s12: { en: `Section A: Modern Texts`, ar: `SECTION A: النصوص الحديثة` },
   s13: { en: `Key Comparison Pairs`, ar: `paris الحين مقارنات زوجيات` },
   s15: { en: `Read the poem three times.`, ar: `اقرأ الشعر ثلاث مرات.` },
   s16: { en: `Identify the subject and tone.`, ar: `اعرف الموضوع والطابع.` },
-  s17: { en: `Examine structure.`, ar: `اقرأ структура` },
+  s17: { en: `Examine structure.`, ar: `` },
   s18: { en: `Analyse language.`, ar: `تحليل اللغة` },
   s20: { en: `Write 4-5 paragraphs`, ar: `اكتب أربع إلى خمس فقرات.` },
   s21: {

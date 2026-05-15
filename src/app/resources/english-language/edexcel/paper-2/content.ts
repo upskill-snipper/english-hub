@@ -55,7 +55,7 @@ export const STRINGS: Record<string, Bi> = {
   s28: { en: `Support each point with evidence from`, ar: `أدعم كل نقطة bằng أدلة من` },
   s29: {
     en: `Analyse how each writer&rsquo;s methods differ (e.g., one uses emotive language while the other uses statistics)`,
-    ar: `انализ كيف تختلف طرائق كل كاتب (مثلًا، يستخدم أحدهم لغة عاطفية في حين يستخدم الآخر أرقامًا وحقائق)`,
+    ar: ``,
   },
   s31: { en: `Level 4 (7-8):`, ar: `مستوى 4 (7-8)` },
   s32: { en: `Level 5 (9-10):`, ar: `المستوى الخامس (9-10)` },
@@ -141,19 +141,11 @@ export const STRINGS: Record<string, Bi> = {
   },
   s63: {
     en: `Evaluate effectiveness. Address the statement. Balanced.`,
-    ar: `سلي شلون تقدر تقيم فعالية الشي. روح ل.Statement وت-addressها. كون отзывك متوازن. 
-
-(Note: There was an error in maintaining consistency with Khaleeji Arabic and incorporating instructional markers correctly. Here is a revised version that adheres strictly to the guidelines provided.)
-
-سلي شلون بتقدر تقيم فعالية الشي. روح لـ statement وت-addressها. كون отзывك متوازن. 
-
-(Revised for clarity and adherence:)
-
-سلي شلون بتقدر تقيم فعالية الشي. دوّر على statement وت-addressها. كون رأيك متوازٍ.`,
+    ar: ``,
   },
   s64: {
     en: `Compare throughout. Evidence from both texts. Context.`,
-    ar: `сравنة خلالًا. بيّن أدلة من كلا النصوص. أذكر السياق.`,
+    ar: ``,
   },
   s65: {
     en: `Content, organisation, and accuracy (AO5/AO6)`,

@@ -30,9 +30,9 @@ export const STRINGS: Record<string, Bi> = {
   s8: { en: `Character Development`, ar: `تطور الشخصية` },
   s9: { en: `Structural Analysis`, ar: `تحليل البنية` },
   s10: { en: `Links to Themes`, ar: `روابط بالمواضيع` },
-  s11: { en: `The Supernatural`, ar: `ال сверх طبيعي` },
+  s11: { en: `The Supernatural`, ar: `` },
   s12: { en: `Guilt &amp; Conscience`, ar: `الذنب والضمير` },
-  s13: { en: `Appearance vs Reality`, ar: `внешний вид مقابل الواقع` },
+  s13: { en: `Appearance vs Reality`, ar: `` },
   s15: {
     en: `The murder of Duncan occurs offstage &mdash; Shakespeare focuses on psychological aftermath rather than physical act.`,
     ar: `مقتل دانكان يحدث خارج المسرح &mdash; شكسبير يركز على عواقب الحادثة النفسية بدلاً من الفعل الجسدي.`,
@@ -43,7 +43,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s17: {
     en: `Lady Macbeth takes practical charge, returning the daggers and framing the grooms.`,
-    ar: `لедى مكبث تأخد المسؤولية العملية، وتعيدها الأدوات الحادة وتتهم الخدم.`,
+    ar: ``,
   },
   s18: {
     en: `The roles reverse: the husband who committed murder is paralysed; the wife who stayed behind takes control.`,
@@ -53,7 +53,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `The knocking at the gate marks the return of the external world, trapping the Macbeths in their crime.`,
     ar: `ال Klopping على الباب يدل على عودة العالم الخارجي، محاصرة المكbeths في جريمتهم.`,
   },
-  s20: { en: `Lady Macbeth`, ar: `لедى مكبث` },
+  s20: { en: `Lady Macbeth`, ar: `` },
   s22: { en: `Scene 3 — The Porter and the Discovery`, ar: `المنظر الثالث — البوّاب والكشف` },
   s24: {
     en: `Macduff discovers the murder &mdash; his horror is genuine and will fuel his later vengeance.`,
@@ -80,7 +80,7 @@ export const STRINGS: Record<string, Bi> = {
   s34: { en: `Practice Exam Questions — Act 2`, ar: `أسئلة الامتحان التدريبية — المشهد الثاني` },
   s35: {
     en: `How does Shakespeare use the imagery of blood in Act 2 to explore ideas about guilt? Refer closely to the language of the text in your answer.`,
-    ar: `كيف يستخدم شكسبير صورة الدم في действие الثاني لاستكشاف أفكار حول الضمير؟ ارجع إلى لغة النص بعناية في إجابتك.`,
+    ar: ``,
   },
   s36: {
     en: `Explore how the relationship between Macbeth and Lady Macbeth shifts in Act 2, Scene 2. How does Shakespeare use language and structure to present this change?`,

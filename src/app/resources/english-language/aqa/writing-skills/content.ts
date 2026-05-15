@@ -24,11 +24,7 @@ export const STRINGS: Record<string, Bi> = {
   s10: { en: `Time connective`, ar: `رابط زماني` },
   s11: {
     en: `PEEL paragraphs (for analytical writing)`,
-    ar: `шагات تحليل الكتابة (PEEL):  
-- نقطة: اذكر النقاط الرئيسية التي تريد مناقشتها.
-- دليل: قدم أدلة واضحة وملموسة لدعم نقطةك.
-- شرح: شرّح الدليل الذي قدّمته وكيف يرتبط مع النقطة الأساسية.
-- خاتمة: أختم فقرتك بتلخيص كيف تؤدي الأدلة إلى دعم النقاط التي ذكرتها.`,
+    ar: ``,
   },
   s12: { en: `Topic sentences`, ar: `عبارات موضوعية` },
   s13: { en: `Weak topic sentence:`, ar: `جملة موضوعية ضعيفة:` },
@@ -43,7 +39,7 @@ export const STRINGS: Record<string, Bi> = {
   s19: { en: `Cyclical / circular structure:`, ar: `โครงสร้าง دوري / دائري` },
   s20: { en: `Tier 1: Basic / everyday`, ar: `tier واحد: أساسي / يومي` },
   s21: { en: `Tier 2: Academic / cross-curricular`, ar: `tier two: الأكاديمي / عبر التخصصات` },
-  s22: { en: `Tier 3: Subject-specific / ambitious`, ar: `tier 3: مرتبط بال предмет - طموح` },
+  s22: { en: `Tier 3: Subject-specific / ambitious`, ar: `` },
   s23: { en: `Vocabulary upgrade examples`, ar: `أمثلة لتحسين القاموس` },
   s24: { en: `Instead of...`, ar: `بدلاً من...` },
   s25: {
@@ -80,9 +76,9 @@ export const STRINGS: Record<string, Bi> = {
   s45: { en: `Content and organisation`, ar: `المحتوى والتنظيم` },
   s46: { en: `Technical accuracy`, ar: `دقة فنية` },
   s47: { en: `Sentence structures`, ar: `structures الجملة` },
-  s48: { en: `Paragraph structures`, ar: `estructures لل парагرافات` },
+  s48: { en: `Paragraph structures`, ar: `` },
   s49: { en: `Vocabulary tiers`, ar: `مراحيل الكلمات` },
-  s50: { en: `Punctuation for effect`, ar: `تستخدم пунктуацию لتحقيق التأثير` },
+  s50: { en: `Punctuation for effect`, ar: `` },
   s51: { en: `Opening techniques`, ar: `TECHNIQUES للبدء` },
   s52: { en: `Ending techniques`, ar: `تقنيات النهاية` },
   s53: {

@@ -19,13 +19,13 @@ export const STRINGS: Record<string, Bi> = {
   s3: { en: `Key Events &amp; Turning Points`, ar: `أحداث رئيسية ونقاط تحول` },
   s5: {
     en: `Macbeth is named before he appears, immediately linking him to the witches&apos; world.`,
-    ar: `مакbeth يذكر قبل ظهوره مباشرة، مرتبطاً بعالم الساحرات.`,
+    ar: ``,
   },
   s7: { en: `Language Analysis`, ar: `تحليل اللغة` },
   s8: { en: `Structural Analysis`, ar: `تحليل البنية` },
   s9: { en: `Links to Themes`, ar: `روابط بالمواضيع` },
-  s10: { en: `The Supernatural`, ar: `ال сверх طبيعي` },
-  s11: { en: `Appearance vs Reality`, ar: `внешний вид مقابل الواقع` },
+  s10: { en: `The Supernatural`, ar: `` },
+  s11: { en: `Appearance vs Reality`, ar: `` },
   s12: { en: `Fate vs Free Will`, ar: `الم destino مقابل الإرادة الحرة` },
   s13: { en: `Scene 2 — The Battlefield Report`, ar: `-scene 2 — التقرير من ساحة المعركة-` },
   s14: {
@@ -47,7 +47,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `رد بنكو الحذر يوفّر تضادًا أخلاقيًّا مع رد فعل مكbeth المندفع.`,
   },
   s25: { en: `Scene 4 — Duncan Names His Heir`, ar: `مشهد 4 — دانكان يعين وارثه` },
-  s29: { en: `Scene 5 — Lady Macbeth&apos;s Ambition`, ar: `-scene 5 — طموح لедى مكbeth-` },
+  s29: { en: `Scene 5 — Lady Macbeth&apos;s Ambition`, ar: `` },
   s30: {
     en: `Lady Macbeth is introduced as a force of will who immediately grasps the opportunity and its obstacles.`,
     ar: `luder مكbeth م introducitu كقوة إرادة تفهم الفرصة وأ(obstacles) وايد سريعاً.`,
@@ -64,7 +64,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `She takes charge of the murder plot, instructing Macbeth to &ldquo;look like th&rsquo; innocent flower, / But be the serpent under&rsquo;t.&rdquo;`,
     ar: `تستحوذ على خطة القتل، وتوجه مكbeth لـ "يشبhim في صورة الزهرة البريئة، / لكن كن الحية تحته.`,
   },
-  s34: { en: `Lady Macbeth`, ar: `لедى مكبث` },
+  s34: { en: `Lady Macbeth`, ar: `` },
   s35: {
     en: `Scene 6 — Duncan Arrives at Inverness`,
     ar: `الشِّن ستمعة — دانكان ي arrivé في إنفيرنيس`,
@@ -75,7 +75,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s37: {
     en: `Lady Macbeth successfully performs the role of gracious host, demonstrating her skill at deception.`,
-    ar: `لедى مكبث تنفذ دور الضيفة اللطيفة بنجاح، وتظهر مهارتها في الخداع.`,
+    ar: ``,
   },
   s39: {
     en: `Scene 7 — &ldquo;If It Were Done&rdquo; &mdash; The Decision`,
@@ -83,7 +83,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s40: {
     en: `Macbeth decides against the murder &mdash; then is persuaded back by Lady Macbeth.`,
-    ar: `ماكبث يقرر عدم ارتكاب القتل &mdash; ثم يتم إقناعه بالعودة من قبل لедى ماكبث.`,
+    ar: ``,
   },
   s41: {
     en: `This is the turning point of Act 1: the decision to kill Duncan is made.`,

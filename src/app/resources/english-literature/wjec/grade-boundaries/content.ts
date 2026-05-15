@@ -15,7 +15,7 @@ export const STRINGS: Record<string, Bi> = {
   s1: { en: `Important note`, ar: `ملاحظة مهمة` },
   s3: {
     en: `Critical, exploratory, conceptualised response to texts.`,
-    ar: `ردّ كритيقي واستكشافي ومفهومي على النصوص.`,
+    ar: ``,
   },
   s4: {
     en: `Judicious use of precise references to support interpretation.`,

@@ -45,7 +45,7 @@ Since the input text seems incomplete, here’s a possible full sentence transla
   s8: { en: `Basic competence demonstrated`, ar: `المهارة الأساسية مDemonstrated` },
   s9: {
     en: `Not Classified`,
-    ar: `не требуется الترجمة لعدم وجود نص باللغة الإنجليزية للترجمة. هل يمكنك تقديم جملة أو نصًا ليتم ترجمته؟`,
+    ar: ``,
   },
   s10: { en: `Requirements not met`, ar: `متطلبات ما شافهاش` },
   s11: { en: `Strand 1 &mdash; Presenting`, ar: `السند الأول &mdash; العرض` },
@@ -78,9 +78,9 @@ Since the input text seems incomplete, here’s a possible full sentence transla
   },
   s29: {
     en: `One main point per card for easy navigation`,
-    ar: `نقطة رئيسية لكل Карточка للتنقل بسهولة`,
+    ar: ``,
   },
-  s30: { en: `Eye Contact`, ar: `контакт البصر` },
+  s30: { en: `Eye Contact`, ar: `` },
   s31: { en: `Volume and Clarity`, ar: `الحجم والوضوح` },
   s32: { en: `Tone and Expression`, ar: `تÓN والتعبير` },
   s33: { en: `Body Language`, ar: `لغة الجسد` },
@@ -92,7 +92,7 @@ Since the input text seems incomplete, here’s a possible full sentence transla
   s39: { en: `If you do not know the answer`, ar: `إذا كنت لا تعرف الجواب` },
   s40: { en: `Refer back to your presentation`, ar: `راجع عرضك` },
   s41: { en: `Engage with challenging questions`, ar: `DEAL WITH COMPLEX QUESTIONS` },
-  s43: { en: `Avoid (Non-Standard)`, ar: `تجنب (غير стандарتي)` },
+  s43: { en: `Avoid (Non-Standard)`, ar: `` },
   s44: { en: `Use Instead (Standard English)`, ar: `استخدم بدلاً من (ال.Standard English)` },
   s45: {
     en: `Use formal vocabulary: &ldquo;furthermore&rdquo; rather than &ldquo;also&rdquo;; &ldquo;however&rdquo; rather than &ldquo;but&rdquo;`,

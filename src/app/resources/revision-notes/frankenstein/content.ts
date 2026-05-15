@@ -135,7 +135,7 @@ Since the instruction is very brief and doesn't require a full translation but r
     ar: `hầu كل شخصية تعاني من العزلة. فيكتور يعزل نفسه أثناء عملية الخلق، قطعًا عن العائلة والمجتمع. الكائن يتم عزله بسبب مظهره —`,
   },
   s71: { en: `Ambition and Hubris`, ar: `طموح وتكبر` },
-  s72: { en: `Prejudice and Appearance`, ar: `التحيز وال внешний вид` },
+  s72: { en: `Prejudice and Appearance`, ar: `` },
   s73: { en: `Knowledge and Discovery`, ar: `المعرفة والكشف` },
   s74: {
     en: `Knowledge is presented as both liberating and dangerous. Victor`,

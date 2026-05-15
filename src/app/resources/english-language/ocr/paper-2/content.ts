@@ -47,7 +47,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s21: {
     en: `Analyse the language and/or structural choices in your evidence`,
-    ar: `انализي الاختيارات اللغوية والهيكلية في أدبياتك شلون حاطها`,
+    ar: ``,
   },
   s24: {
     en: `Write a descriptive piece based on an image or scenario`,
@@ -67,23 +67,11 @@ export const STRINGS: Record<string, Bi> = {
   s31: { en: `Use figurative language purposefully`, ar: `استخدم اللغة المجازية بهدف معين` },
   s32: {
     en: `Vary your sentence structures`,
-    ar: `вариّر بنوك الجُمل تاِ variir bunook aljumal taayr (correcting to fit Khaleeji style and meaning)
-
-للتعبير بشكل أكثر وضوحًا و соответствии باللهجة الخليجية: 
-استخدم بنوك الجمل بطريقة مختلفة. 
-
-بس للحفاظ على القصد الأصلي وبأسلوب خليجي:
-شوف، استخدم بنوك الجمل ب`,
+    ar: ``,
   },
   s33: {
     en: `Create a clear structure`,
-    ar: `ا_create تنструктура واضحة_ (use انشئ or بنى instead for imperative)
-
-انشئ تنструктура واضحة
-
-or 
-
-بنى تنструктура واضحة`,
+    ar: ``,
   },
   s34: { en: `Content and Organisation (24 marks)`, ar: `المحتوى والتنظيم (24 نقطة)` },
   s35: { en: `Communication is convincing and compelling`, ar: `الاتصال مقنع ومشوق` },
@@ -105,7 +93,7 @@ or
     en: `Wide range of sentence forms for effect`,
     ar: `مدى واسع من أشكال الجمل لخلق التأثير`,
   },
-  s42: { en: `Accurate and varied punctuation`, ar: `ت пунктуация دقيقة ومتنوعة` },
-  s44: { en: `Secure control of grammar`, ar: `ضبّط كонтrol الصرفي` },
+  s42: { en: `Accurate and varied punctuation`, ar: `` },
+  s44: { en: `Secure control of grammar`, ar: `` },
   s46: { en: `Continue studying`, ar: `استمر في الدراسة` },
 }

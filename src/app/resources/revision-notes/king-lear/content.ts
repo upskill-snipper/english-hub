@@ -17,7 +17,7 @@ export const STRINGS: Record<string, Bi> = {
   s4: { en: `The Trew Law of Free Monarchies`, ar: `قانون الحرية في الملكيات الحرة` },
   s5: { en: `Sources: Leir, Holinshed and Sidney`, ar: `Leir، Holinshed و Sidney` },
   s6: { en: `True Chronicle History of King Leir`, ar: `vero التاريخ الحقيقي لملك ليير` },
-  s7: { en: `The Storm as Cosmic Disorder`, ar: `العاصفة كهرطقة кوزميكية` },
+  s7: { en: `The Storm as Cosmic Disorder`, ar: `` },
   s8: { en: `The Great Chain of Being`, ar: `السلسلة العظيمة للوجود` },
   s9: { en: `Succession Anxiety after Elizabeth`, ar: `قلق الخلافة بعد إليزابيث` },
   s10: { en: `The Tempest`, ar: `العاصفة` },
@@ -54,7 +54,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `The play repeatedly asks whether the gods are just, and repeatedly refuses to answer. Gloucester famously cries &lsquo;As flies to wanton boys are we to th`,
     ar: `المسرحية تسأل مراراً إن كانت الآلهة عادلة، وترفض الإجابة مراراً. يصرخ غلوستر شهيرة: "كما نحن للصبيان المتهوّرين كالذباب`,
   },
-  s36: { en: `Historical and Literary Context`, ar: `السياق التاريخي والлитيري` },
+  s36: { en: `Historical and Literary Context`, ar: `` },
   s37: { en: `Key Quotations with Analysis`, ar: `عبارات رئيسية مع تحليل` },
   s38: { en: `Symbols and Motifs`, ar: `رموز وصور سردية` },
 }

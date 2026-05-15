@@ -110,7 +110,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s62: {
     en: `Consistent, clear communication. Increasingly sophisticated vocabulary and phrasing. Effective structural features. Writing is engaging with a range of connected ideas.`,
-    ar: `تواصل واضح وثابت. مفردات ومعادلات لингوية متقدمة بشكل متزايد. ميزات بنائية فعالة. الكتابة ممتعة مع مجموعة من الأفكار المتصلة.`,
+    ar: ``,
   },
   s63: {
     en: `Some successful communication. Vocabulary chosen for effect. Some structural features. Writing has some clear ideas.`,
@@ -118,7 +118,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s64: {
     en: `Simple, limited communication. Simple vocabulary. Limited structural features. One or two ideas.`,
-    ar: `تواصلية بسيطة ومحدودة. لексيку بسيطة. ميزات بنائية محدودة. فكرة أو فكرتين فقط.`,
+    ar: ``,
   },
   s65: {
     en: `Marking guide: Technical Accuracy (AO6, 16 marks)`,
@@ -162,10 +162,10 @@ export const STRINGS: Record<string, Bi> = {
   },
   s80: { en: `What markers want to see`, ar: `ما شنو المARKERS أبغى يشوفون الحين` },
   s81: { en: `Crafted language:`, ar: `لغة مصنوعة:` },
-  s82: { en: `Varied sentence structures:`, ar: `โครงสร้าง предложения متنوعة` },
+  s82: { en: `Varied sentence structures:`, ar: `` },
   s83: { en: `Conscious paragraphing:`, ar: `التقسيمscious إلى فقرات:` },
   s84: { en: `Ambitious vocabulary:`, ar: `لغة طموحة:` },
-  s85: { en: `Punctuation for effect:`, ar: `تستخدم пунктуацию لتحقيق التأثير` },
+  s85: { en: `Punctuation for effect:`, ar: `` },
   s86: { en: `Accurate spelling and grammar.`, ar: `SPELLING AND GRAMMAR ACCURATELY.` },
   s87: { en: `Example openings at different levels`, ar: `مثلاً بداية في مستويات مختلفة` },
   s88: { en: `Level 1-2 (Grade 3-4):`, ar: `المستوى الأول والثاني (الصف الثالث والرابع)` },

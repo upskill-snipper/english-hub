@@ -30,7 +30,7 @@ export const STRINGS: Record<string, Bi> = {
   s6: { en: `Courtship Conventions`, ar: `conventions الزواج` },
   s7: { en: `Conventions of Comedy`, ar: `conventions الكوميديا` },
   s8: { en: `Much Ado About Nothing`, ar: `مUCH ADo Abou NOTHING` },
-  s9: { en: `Honour Culture and the Masculine Code`, ar: `ثقافة الشرف وال код الذكرى` },
+  s9: { en: `Honour Culture and the Masculine Code`, ar: `` },
   s11: { en: `The Tempest`, ar: `العاصفة` },
   s13: { en: `Orlando Furioso`, ar: `أوراندو فوريوسيو` },
   s14: {
@@ -49,9 +49,7 @@ export const STRINGS: Record<string, Bi> = {
   s18: { en: `Paragraph 1: Hero as the patriarchal ideal`, ar: `الهيرو كالمثال الأبوي المثالي` },
   s19: {
     en: `Paragraph 2: The shaming scene &mdash; patriarchy&apos;s violence`,
-    ar: `مشهد العار &mdash; عنف الأبوسитетا(Initialized forcedly with an incorrect term to correct:)
-
-مشهد العار &mdash; عنف السلطة الذكورية`,
+    ar: ``,
   },
   s20: { en: `Paragraph 3: Beatrice as resistance`, ar: `برتيس كResistance` },
   s22: {
@@ -65,14 +63,14 @@ export const STRINGS: Record<string, Bi> = {
   s24: { en: `Paragraph 3: Self-deception`, ar: `الخداع الذاتي` },
   s25: {
     en: `Paragraph 4: &ldquo;Nothing&rdquo; / &ldquo;noting&rdquo; &mdash; the title&apos;s significance`,
-    ar: `عنوان &quot؛ничتинг&quot؛/&quot؛نوتينج&quot؛ &mdash; أهمية العنوان`,
+    ar: ``,
   },
-  s26: { en: `Paragraph 1: Female honour as male property`, ar: `чеونر المرأة كملكية للذكر` },
+  s26: { en: `Paragraph 1: Female honour as male property`, ar: `` },
   s27: {
     en: `Hero&apos;s honour (chastity) belongs to Leonato and then Claudio. When it is questioned, both men feel`,
-    ar: `чеون Чеون و الشرف لليوناتو ثم كلوديو. عندما يشكك فيه، يشعر كلا الرجلين بال`,
+    ar: ``,
   },
-  s28: { en: `Paragraph 2: Claudio&apos;s honour code`, ar: `код الشرف لدي كلاوديو` },
+  s28: { en: `Paragraph 2: Claudio&apos;s honour code`, ar: `` },
   s30: { en: `Paragraph 4: The restoration of honour`, ar: `إعادة الشرف` },
   s31: { en: `Scene-by-Scene Plot Summary`, ar: `ملخص القصة مشهراً مشهراً` },
   s32: { en: `Character Profiles`, ar: `Profiles للشخصيات` },

@@ -42,7 +42,7 @@ export const STRINGS: Record<string, Bi> = {
 
 تذكر دائماً تنظيم`,
   },
-  s13: { en: `Comparative paragraphs (3-4)`, ar: `парагرافات مقارنة (3-4)` },
+  s13: { en: `Comparative paragraphs (3-4)`, ar: `` },
   s14: {
     en: `Analyse methods (analysing language and structure)`,
     ar: `تحليل الطرق (تحليل اللغة والبنية)`,
@@ -53,7 +53,7 @@ export const STRINGS: Record<string, Bi> = {
   s19: { en: `Both poets present...`, ar: `يقدّم كلا الشاعرين...` },
   s20: {
     en: `Like &lsquo;[poem A]&rsquo;, &lsquo;[poem B]&rsquo; also...`,
-    ar: `مثل &[poem A],& [القصيدة ب]& также...`,
+    ar: ``,
   },
   s21: { en: `In the same way...`, ar: `على نفس الطريقة...` },
   s23: { en: `In contrast, [poet]...`, ar: `في المقابل، [الشاعر]...` },
@@ -68,8 +68,8 @@ export const STRINGS: Record<string, Bi> = {
   s30: { en: `Bayonet Charge`, ar: `بيونيت شارج` },
   s31: { en: `War Photographer`, ar: `WAR PHOTOGRAPHER` },
   s32: { en: `Storm on the Island`, ar: `عاصفة على الجزيرة` },
-  s34: { en: `Checking Out Me History`, ar: `проверка تاريخي` },
-  s35: { en: `When We Two Parted`, ar: `когда انفصنا نحناtwor` },
+  s34: { en: `Checking Out Me History`, ar: `` },
+  s35: { en: `When We Two Parted`, ar: `` },
   s36: { en: `Neutral Tones`, ar: `نبرات محايدة` },
   s37: { en: `Love&apos;s Philosophy`, ar: `فلسفة الحب` },
   s38: { en: `Porphyria&apos;s Lover`, ar: `عاشق پورفيريا` },

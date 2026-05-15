@@ -14,7 +14,7 @@ export const STRINGS: Record<string, Bi> = {
   s0: { en: `Page rebuilt April 2026`, ar: `صفحة مrebuilt في أبريل 2026` },
   s1: { en: `The Woman in Black`, ar: `المرأة في الظلام` },
   s3: { en: `Isolation and Setting`, ar: `العزلة والمكان` },
-  s4: { en: `Fear and the Supernatural`, ar: `الخوف وال сверх طبيعي` },
+  s4: { en: `Fear and the Supernatural`, ar: `` },
   s5: { en: `Grief and Revenge`, ar: `الحزن والثأر` },
   s6: { en: `Arthur&apos;s Transformation`, ar: `Transformation أرثر` },
   s7: { en: `The Gothic Tradition`, ar: `التراث góthic` },
@@ -28,7 +28,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s12: {
     en: `Structure Your Essay`,
-    ar: `انструкش you لتنظيم مقالتك: ابدأ بإنشاء مسودة تحتوي على المقدمة، الأقسام الرئيسية، والخاتمة. في المقدمة، حدد موضوعك واضحة وصريحة. في الأقسام الرئيسية، استخدم فقرات منفصلة لكل`,
+    ar: ``,
   },
   s13: { en: `Each paragraph:`, ar: `كل فقرة:` },
   s14: { en: `Key Techniques to Discuss`, ar: `التقنيات الرئيسية للنقاش عنها` },

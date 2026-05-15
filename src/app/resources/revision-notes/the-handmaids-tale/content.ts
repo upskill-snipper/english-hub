@@ -33,11 +33,7 @@ export const STRINGS: Record<string, Bi> = {
   s17: { en: `Quote precisely.`, ar: `اقتبس بدقة.` },
   s18: {
     en: `Always include the Historical Notes.`,
-    ar: `всегда أبغى أذكر الملاحظات التاريخية. لازم تدوّر على القسم اللي حاط فيه الملاحظات التاريخية وتوثقه.
-
-لكن باللي هو شكله أكتر ما يكون واضح:
-
-ابغى أذكر الملاحظات التاريخية.`,
+    ar: ``,
   },
   s19: { en: `Connect form and content.`, ar: `اشبك الشكل مع المحتوى.` },
   s20: { en: `Use comparative dystopias.`, ar: `استخدم دكتاتوريات مقارنة.` },
@@ -57,7 +53,7 @@ export const STRINGS: Record<string, Bi> = {
   s26: { en: `The Commander`, ar: `القائد` },
   s27: { en: `The household`, ar: `البيت` },
   s28: { en: `Key Themes`, ar: `ال chủة الرئيسية` },
-  s29: { en: `Theocracy and State Control`, ar: `ال теocracie والرقابة الحكومية` },
+  s29: { en: `Theocracy and State Control`, ar: `` },
   s31: {
     en: `The novel anatomises a society organised entirely around the control of women`,
     ar: `الرواية تدرس مجتمعاً منظماً تماماً حول السيطرة على النساء`,
@@ -66,7 +62,7 @@ export const STRINGS: Record<string, Bi> = {
   s33: { en: `Memory and Resistance`, ar: `الذاكرة والمقاومة` },
   s34: { en: `Memory is Offred`, ar: `عفريدة هي الذاكرة` },
   s37: { en: `Religion as Justification`, ar: `الدين كذريعة` },
-  s38: { en: `Historical and Literary Context`, ar: `السياق التاريخي والлитيراري` },
+  s38: { en: `Historical and Literary Context`, ar: `` },
   s39: { en: `Key Quotations with Analysis`, ar: `اقتباسات رئيسية مع تحليل` },
   s40: { en: `Symbols and Motifs`, ar: `رموز وعلامات` },
 }

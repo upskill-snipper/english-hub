@@ -22,7 +22,7 @@ export const STRINGS: Record<string, Bi> = {
   s5: { en: `Last Active`, ar: `الحين نشط في` },
   s6: {
     en: `Submissions and quizzes shown as counts`,
-    ar: `الم.SUBMISSIONS والاختبارات показанة بالاعدادات (الحالية: شنو العدد)`,
+    ar: ``,
   },
   s7: { en: `Class Summary`, ar: `ملخص الحصة` },
   s8: { en: `Year Group`, ar: `الصف الدراسي` },
@@ -31,7 +31,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `المعدل عند مستوى التقييم المطلوب للتقدير المتوسط للعمل(Initialized in MSA for legal terms)`,
   },
   s11: { en: `Avg Predicted Grade`, ar: `الدرجة المتوقعة المتوسطة` },
-  s12: { en: `Average Progress`, ar: `прогرس متوسطة` },
+  s12: { en: `Average Progress`, ar: `` },
   s13: { en: `RAG Summary`, ar: `ملخص بطريقة راجع وحلل واصدر (RAG)` },
   s14: { en: `Student Details`, ar: `تفاصيل الطالب` },
   s15: { en: `Students Requiring Intervention`, ar: `الطلبة اللي محتاجين تدخلات` },

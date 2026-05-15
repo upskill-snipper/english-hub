@@ -28,7 +28,7 @@ export const STRINGS: Record<string, Bi> = {
   s16: { en: `Exam Tips for The Great Gatsby`, ar: `نصائح للامتحان حول ذا غريت جاتسي` },
   s17: { en: `Read Nick sceptically.`, ar: `اقرأ كلام نيك بنظرة مشككة.` },
   s18: { en: `Anchor every theme to a date.`, ar: `anchoring كل موضوع في تاريخ محدد.` },
-  s19: { en: `Use AO3 (context) precisely.`, ar: `استخدم AO3 (ال контекست) بدقة.` },
+  s19: { en: `Use AO3 (context) precisely.`, ar: `` },
   s20: { en: `Use AO5 (interpretation) as a discriminator.`, ar: `استخدم AO5 (التفسير) كمميز` },
   s21: { en: `Quote tightly.`, ar: `اقتبس بإحكام.` },
   s22: { en: `Use the right form word.`, ar: `استخدم الشكل الصحيح لكلمة.` },

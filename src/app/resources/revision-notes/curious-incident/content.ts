@@ -36,7 +36,7 @@ Actually, that's not in Khaleeji Arabic and it seems there was a misunderstandin
   s16: { en: `Embed exact quotations.`, ar: `اقرء الآيات دقيقة بدون تغيير كلمة واحدة.` },
   s17: { en: `Use Haddon&apos;s methods.`, ar: `استخدم طرق هاددون.` },
   s18: { en: `Refer to the writer&apos;s intentions.`, ar: `اشفط نوايا الكاتب.` },
-  s19: { en: `Link the title to Sherlock Holmes.`, ar: `اربط العنوان بشيرлок هولمز.` },
+  s19: { en: `Link the title to Sherlock Holmes.`, ar: `` },
   s20: { en: `Use precise terminology.`, ar: `استخدم لغة دقيقة.` },
   s21: {
     en: `Address the whole novel.`,
@@ -63,7 +63,7 @@ Actually, that's not in Khaleeji Arabic and it seems there was a misunderstandin
     en: `The novel dramatises every kind of communication failure: Ed cannot tell Christopher the truth about Judy; Judy`,
     ar: `الرواية تتناول كل أنواع فشل التواصل: إد لا يستطيع أن يقول للChristopher الحقيقة عن جودي؛ جودي`,
   },
-  s36: { en: `Animals and Honesty`, ar: `животные والصدق` },
+  s36: { en: `Animals and Honesty`, ar: `` },
   s37: {
     en: `Christopher prefers animals to people because they`,
     ar: `كريستوفر يفضل الحيوانات على الناس لأنهم`,

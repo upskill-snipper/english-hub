@@ -17,7 +17,7 @@ export const STRINGS: Record<string, Bi> = {
   s4: { en: `Question 2`, ar: `السؤال الثاني` },
   s5: {
     en: `Summary &mdash; select and organise ideas from one or both passages`,
-    ar: `اختار و[arrange] الأفكار من одно или обоих разделов[arrange]`,
+    ar: ``,
   },
   s6: { en: `Question 3`, ar: `السؤال الثالث` },
   s7: {

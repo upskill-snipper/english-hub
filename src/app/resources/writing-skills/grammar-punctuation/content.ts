@@ -36,7 +36,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `في النهاية، بختام الأمر، لتلخيص، أولاً وأخيراً، أساساً`,
   },
   s7: { en: `Three ways to fix a comma splice:`, ar: `ثلاث طرق لتصحيح تقسيم الفاصلة:` },
-  s8: { en: `Use Active For`, ar: `استخدم الفاعل للстрофе` },
+  s8: { en: `Use Active For`, ar: `` },
   s9: { en: `Clear, direct persuasive writing`, ar: `كتابة دعائية واضحة و DIRECT` },
   s10: { en: `Assigning blame or responsibility`, ar: `تحديد المسؤولية أو توجيه اللوم` },
   s12: { en: `Making arguments feel confident`, ar: `إجعل حججك تشعر بالثقة` },
@@ -97,11 +97,11 @@ export const STRINGS: Record<string, Bi> = {
   },
   s45: {
     en: `Spelling generally accurate, including complex and irregular words`,
-    ar: `ال spelings مكتوبة بشكل عام دقيقة، شوالفords الغير منتظمة والمعقدةиндивид`,
+    ar: ``,
   },
   s46: {
     en: `Range of punctuation used with general accuracy`,
-    ar: `مدى استخدام пунктуация مع دقة عامة`,
+    ar: ``,
   },
   s47: { en: `Level 4 (13-16 marks) -- Compelling`, ar: `مستوى 4 (13-16 نقاط) -- مثير` },
   s49: {
@@ -146,7 +146,7 @@ export const STRINGS: Record<string, Bi> = {
   s82: { en: `Basic Rule`, ar: `قاعدة أساسية` },
   s83: { en: `Tricky Cases`, ar: `حالات معقدة` },
   s84: { en: `Apostrophes for Contraction`, ar: `Apostrophات للاختصار` },
-  s86: { en: `The Greengrocer`, ar: `الخضرة торговец` },
+  s86: { en: `The Greengrocer`, ar: `` },
   s87: { en: `Correctly Punctuated Example`, ar: `مثال صحيح الترقيم` },
   s88: { en: `What Markers Are Looking For`, ar: `ما هو اللي بيسألو عنه المصححون` },
   s89: { en: `How to Move from Level 3 to Level 4`, ar: `كيف تنتقل من مستوى 3 إلى مستوى 4` },

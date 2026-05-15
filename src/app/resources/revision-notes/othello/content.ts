@@ -14,12 +14,12 @@ export const STRINGS: Record<string, Bi> = {
   s1: { en: `Key Moments`, ar: `لحظات حاسمة` },
   s2: { en: `Venice and Cyprus`, ar: `فيينس وقبرص` },
   s3: { en: `Moors in Elizabethan England`, ar: `الموريون في إنجلترا الإليزابيثية` },
-  s4: { en: `Military Honour and Service`, ar: `чеونر و خدمة` },
+  s4: { en: `Military Honour and Service`, ar: `` },
   s5: {
     en: `Women&apos;s Roles in Elizabethan/Jacobean Society`,
     ar: `أدوار النساء في المجتمع الإليزابيثي/الجاكوبيني`,
   },
-  s6: { en: `Essay Structure: PEEL Paragraphs`, ar: `Структура مقالة: فقرات PEEL` },
+  s6: { en: `Essay Structure: PEEL Paragraphs`, ar: `` },
   s7: {
     en: `Make a clear argument that directly answers the question.`,
     ar: `اكتب جوابًا واضحًا يجيب عن السؤال مباشرة.`,

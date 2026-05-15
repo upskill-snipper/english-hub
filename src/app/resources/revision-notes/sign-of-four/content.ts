@@ -22,7 +22,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s7: {
     en: `Chapter 6: Sherlock Holmes Gives a Demonstration`,
-    ar: `الفصل السادس: شرлок هولمز يعطي مثالاً`,
+    ar: ``,
   },
   s8: { en: `Chapter 7: The Episode of the Barrel`, ar: `الفصل السابع: حادثة البرميل` },
   s9: {
@@ -47,7 +47,7 @@ However, considering the context and the instruction to lean towards a more coll
   },
   s17: {
     en: `Use of Informants: The Baker Street Irregulars`,
-    ar: `استخدام المخبرين: إخواني شارع بيكرastreet bakers street irregulars هو اسم مجموعة من المخبرين الذين يستخدمهمSherlock Holmes في расследованиях.`,
+    ar: ``,
   },
   s18: { en: `Holmes vs the Official Police`, ar: `هولمز ضد الشرطة الرسمية` },
   s19: { en: `Limitations of Holmes&apos;s Method`, ar: `حدود طريقة هولمز` },
@@ -94,7 +94,7 @@ For direct translation without context:
   },
   s34: {
     en: `Paragraph 1 &mdash; Complementary opposites`,
-    ar: `парагراف 1 &mdash; المتناقضات التكميلية`,
+    ar: ``,
   },
   s35: {
     en: `Paragraph 2 &mdash; Watson as narrator and mediator`,
@@ -119,12 +119,12 @@ For direct translation without context:
   s39: { en: `Paragraph 1 &mdash; The Agra treasure as symbol`, ar: `المال في أغرا كرمز` },
   s40: {
     en: `Paragraph 2 &mdash; Jonathan Small&apos;s backstory`,
-    ar: `قصة جوناثان سмолز السابقة`,
+    ar: ``,
   },
   s41: { en: `Paragraph 3 &mdash; The treatment of Tonga`, ar: `علاج تونغا` },
   s42: { en: `Paragraph 4 &mdash; Empire in England`, ar: `الإمبراطورية في إنجلترا` },
   s43: { en: `Exam Tips for The Sign of the Four`, ar: `نصائح للامتحانات ل(sign of the four)` },
-  s44: { en: `Always link to context.`, ar: `always ربط بال контекست الحين` },
+  s44: { en: `Always link to context.`, ar: `` },
   s45: { en: `Use Conan Doyle&apos;s methods.`, ar: `استخدم طرق كونان دويل` },
   s46: { en: `Refer to the writer&apos;s intentions.`, ar: `اشفط نيات الكاتب` },
   s47: { en: `Compare characters deliberately.`, ar: `.compare بين الشخصيات عمداً.` },

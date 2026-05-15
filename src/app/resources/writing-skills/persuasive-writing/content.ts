@@ -106,7 +106,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s45: {
     en: `Compare to similar products, films, books, or restaurants to give the reader a frame of reference.`,
-    ar: `сравنت بالمنتجات، الأفلام، الكتب، أو المطاعم اللي مثلها عشان تعطي القارئ فكرة عن الشي اللي حاولت توصفه`,
+    ar: ``,
   },
   s46: { en: `Article Template`, ar: `قالمة المقالة` },
   s47: { en: `By [Your Name]`, ar: `بواسطة [اسمك]` },
@@ -206,7 +206,7 @@ export const STRINGS: Record<string, Bi> = {
   s87: { en: `We are not asking for less work.`, ar: `إحنا ما نسألكم على شغل أقل.` },
   s89: {
     en: `Correct speech conventions: direct address, inclusive language, rhetorical devices`,
-    ar: `ال conventions الصحيحة للخطاب: обращение напрямую к слушателю، لغة تشمل الجميع، وتقنيات الخطابة الرhetoricalDevices`,
+    ar: ``,
   },
   s90: {
     en: `Clear structure: hook &rarr; evidence &rarr; shared experience &rarr; counter-argument &rarr; anecdote &rarr; call to action`,
@@ -226,7 +226,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s94: {
     en: `Anaphora and repetition create a speech-like rhythm that works when read aloud`,
-    ar: `تخلق الأناфорا والتكرار إيقاعًا حديثيًّا يعمل عندما يُقرأ بصوت عالٍ`,
+    ar: ``,
   },
   s95: {
     en: `Circular structure: &ldquo;I am tired&rdquo; opens and closes the speech, but the meaning deepens`,
@@ -235,8 +235,8 @@ export const STRINGS: Record<string, Bi> = {
   s97: { en: `AFOREST Techniques`, ar: `تقنيات أفورست` },
   s98: { en: `Counter-Argument Technique`, ar: `TECHNIQUE للرد على الحجة` },
   s99: { en: `Tone and Register`, ar: `توني و_registro_` },
-  s100: { en: `Structural Approaches`, ar: `подходات بنائية` },
-  s101: { en: `Format Conventions`, ar: `conventions التформات` },
+  s100: { en: `Structural Approaches`, ar: `` },
+  s101: { en: `Format Conventions`, ar: `` },
   s102: {
     en: `Format Templates &amp; Example Openings`,
     ar: `قالت المعلمة: «هلاً بيك! شلونك اليوم؟ أبغى أساعدك في أي شيء من دروس الإنجليزي؟»

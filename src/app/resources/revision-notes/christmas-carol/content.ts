@@ -16,7 +16,7 @@ export const STRINGS: Record<string, Bi> = {
   s3: { en: `Key Moments`, ar: `لحظات حاسمة` },
   s4: { en: `Ebenezer Scrooge`, ar: `إبنيزر سكرج` },
   s5: { en: `Transformation Arc`, ar: `arc تحوّل` },
-  s6: { en: `Allegorical Figure`, ar: `фигوري مجازي` },
+  s6: { en: `Allegorical Figure`, ar: `` },
   s7: { en: `The Ghost of Christmas Past`, ar: `روح شوف ذيروحة عيد الميلاد الماضي` },
   s8: { en: `Memory &amp; Truth`, ar: `الذاكرة و الحقائق` },
   s9: {
@@ -76,7 +76,7 @@ Wait, that's not Khaleeji Arabic for "Five-Stave Structure". Let me correct it:
     en: `Exclamatory and Imperative Tone`,
     ar: `טון إ.maxcdnي و توجيهي (استخدم للأوامر التربوية والتعليمية: اقرأ، حلِّل، اكتب، راجع). لهجة استفهامية ونادرة باستخدام علامات الشنو، شوف، شلون، أبغى، وايد، الحين، إحنا، روح، دوّر، سكّر، ببلاش، لحظ`,
   },
-  s46: { en: `The Supernatural as Moral Device`, ar: `ال сверх الطبيعي كDEVICE أخلاقي` },
+  s46: { en: `The Supernatural as Moral Device`, ar: `` },
   s47: { en: `Question 1`, ar: `السؤال الأول` },
   s48: { en: `Question 2`, ar: `سؤال 2` },
   s49: { en: `Question 3`, ar: `السؤال الثالث` },
@@ -85,7 +85,7 @@ Wait, that's not Khaleeji Arabic for "Five-Stave Structure". Let me correct it:
   s52: { en: `Character Profiles`, ar: `Profiles الشخصيات` },
   s53: { en: `Major Themes`, ar: `ال THEMES الرئيسيين` },
   s54: { en: `Key Quotations with Analysis`, ar: `اقتباسات رئيسية مع تحليل` },
-  s55: { en: `Victorian Context`, ar: `ال контекس فيكتوريانية` },
+  s55: { en: `Victorian Context`, ar: `` },
   s56: { en: `Essay Planning for Common Questions`, ar: `hoạchtlة المقال لأسئلة م-common` },
   s57: {
     en: `Grade 9 Exemplar Points and Interpretations`,

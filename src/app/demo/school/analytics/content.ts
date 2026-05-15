@@ -20,7 +20,7 @@ export const STRINGS: Record<string, Bi> = {
   s3: { en: `Assignments Submitted`, ar: `assignments التسليماتsubmitted مسلمة` },
   s4: { en: `Average Score`, ar: `النقاط المتوسطة` },
   s5: { en: `At-Risk Students`, ar: `الطلاب في خطر` },
-  s6: { en: `Avg Progress`, ar: `прогرس متوسط` },
+  s6: { en: `Avg Progress`, ar: `` },
   s7: { en: `Completion Rate`, ar: `معدل الإكمال` },
   s8: { en: `Student Progress`, ar: `تقدم الطالب` },
   s9: { en: `Grade Distribution (Latest Mock Exams)`, ar: `توزيع الدرجات (أخر امتحانات المOCK)` },

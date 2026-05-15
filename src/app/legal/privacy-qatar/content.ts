@@ -24,7 +24,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s6: {
     en: `Qatar ID number (where required for service delivery)`,
-    ar: `رقم الهوية القطرية (حيث требуется للDelivery للخدمات)`,
+    ar: ``,
   },
   s7: { en: `Educational and Professional Data`, ar: `بيانات تعليمية ومهنية` },
   s8: { en: `English language proficiency level`, ar: `مستوى الكفاءة في اللغة الإنجليزية` },
@@ -100,11 +100,11 @@ export const STRINGS: Record<string, Bi> = {
   },
   s44: {
     en: `No behavioural profiles of minors for commercial purposes`,
-    ar: `لا профایلｓ للقاصرين لأغراض تجارية`,
+    ar: ``,
   },
   s45: { en: `AI Feature`, ar: `ميزة الذكاء الاصطناعي` },
   s46: { en: `Adaptive Learning Engine`, ar: `ENGINE التعلم المتكيف` },
-  s47: { en: `Language Feedback Tools`, ar: `أدوات обратية للغة` },
+  s47: { en: `Language Feedback Tools`, ar: `` },
   s48: { en: `Speech Assessment`, ar: `تقييم الكلام` },
   s49: { en: `Progress Analytics`, ar: `تحليل التقدم` },
   s50: { en: `Chatbot Support`, ar: `دعم بوت الدردشة` },

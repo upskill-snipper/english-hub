@@ -34,7 +34,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `ألغي خلال 14 يوماً (لا يوجد دخول فوري)`,
   },
   s10: { en: `Full refund`, ar: `hoàn tiền đầy đủ` },
-  s11: { en: `Within 14 days of cancellation`, ar: `خلال четырнадecimal 14 يوم من إلغاء` },
+  s11: { en: `Within 14 days of cancellation`, ar: `` },
   s12: { en: `Refund minus pro-rata charge`, ar: `رد المبلغ بعد خصم نسبة القيمة المتناسبة` },
   s13: {
     en: `Cancel monthly subscription after 14 days`,
@@ -76,7 +76,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s34: {
     en: `On the day your paid period ends, premium content access will stop`,
-    ar: `عندما ينتهي период الدفع، سيتوقف حق الوصول إلى المحتوى المميز`,
+    ar: ``,
   },
   s35: { en: `Any free features remain available to you`, ar: `أي الميزات المجانية تظل متاحة لك` },
   s36: { en: `You can resubscribe at any time`, ar: `يمكنك الاشتراك مجددًا في أي وقت` },

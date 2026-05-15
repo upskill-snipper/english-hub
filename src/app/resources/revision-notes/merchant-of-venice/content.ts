@@ -16,15 +16,13 @@ export const STRINGS: Record<string, Bi> = {
   s3: { en: `Justice vs Mercy`, ar: `العدالة مقابل الرحمة` },
   s4: { en: `Prejudice and Anti-Semitism`, ar: `التعصب واليهودية المضادة` },
   s5: { en: `Love and Friendship`, ar: `الحب والصداقة` },
-  s6: { en: `Appearance vs Reality`, ar: `внешний вид مقابل الواقع` },
+  s6: { en: `Appearance vs Reality`, ar: `` },
   s8: { en: `Gender and Disguise`, ar: `جنس وتمويه` },
   s9: { en: `Bassanio and Others`, ar: `باسيو وآخرين` },
   s10: { en: `Elizabethan Attitudes to Jews`, ar: `اتجاهات العصر الإليزابيثي نحو اليهود` },
   s11: {
     en: `Usury and Moneylending`,
-    ar: `فوائد مرتفعة وقرض Tiền переведён с использованием неправильного языка (китайский). Я переведу текст на основе заданных правил для кхалиджского арабского:
-
- الربا والقروض`,
+    ar: ``,
   },
   s12: { en: `Venice as a Setting`, ar: `فيسيه كموقع تجريبي` },
   s13: { en: `Marriage and the Law`, ar: `الزواج والقانون` },
@@ -62,7 +60,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Peripeteia (reversal of fortune). Legal wordplay. Portia mirrors Shylock&apos;s own insistence on the letter of the law.`,
     ar: `التحول في الحظ (تبدل الحظوظ). لعب قانوني بالكلمات. بورشيا تعكس إصرار شايلوك على حرفية القانون.`,
   },
-  s28: { en: `Shylock&apos;s defeat`, ar: `поражение شايلوك` },
+  s28: { en: `Shylock&apos;s defeat`, ar: `` },
   s30: {
     en: `Ironic reversal: the law Shylock championed now destroys him. Pathos as he loses everything.`,
     ar: `عكس إرهيقي: القانون اللي شايلوك كان يدافع عنه دمره الآن. تعاطف لما يفقد كل شي.`,
@@ -77,7 +75,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `م Mercerية حادة. التحول القسري يسلب شايلوك هويته. سطره الأخيرة: "أنا لست بخير.`,
   },
   s34: { en: `Key Arguments About the Trial`, ar: `نقاط principal حول المحاكمة` },
-  s35: { en: `Portia is the hero`, ar: `بوريا هي героинь` },
+  s35: { en: `Portia is the hero`, ar: `` },
   s36: { en: `Portia is complicit in cruelty`, ar: `بوريا متواطئة في customs الحين Customs` },
   s37: { en: `Shylock is a villain`, ar: `شيلوك شرير` },
   s38: { en: `Shylock is a victim`, ar: `شيلوك ضحية` },
@@ -101,25 +99,25 @@ export const STRINGS: Record<string, Bi> = {
   s50: { en: `Paragraph 4 (Context/Writer&apos;s intent):`, ar: `فقرة 4 (السياق/نوايا الكاتب)` },
   s51: {
     en: `Paragraph 1:`,
-    ar: `параграф واحد ماكو ничего لترجمة. هل أنت متأكد إنك شافtest)test)test) الطلب صح؟ إذا كان كذا، حاول تدقيق الجمل اللي جيتك أو سوي لي قاعدة بيانات أكبرtestdata testData testData testData testData testData testData testData testData testData testData`,
+    ar: ``,
   },
   s52: {
     en: `Paragraph 2:`,
-    ar: `параграф 2 كان مجرد نص إنجليزي ولم يتم تقديم أي جمل أو فقرات محددة للترجمة. يرجى تقديم النص الإنجليزي المحدد الذي تريد ترجمته إلى اللهجة الخليجية العربية.`,
+    ar: ``,
   },
   s53: {
     en: `Paragraph 3:`,
-    ar: `параграф 3 غير متعلق بالمطلوب الترجمة من الإنجليزية إلى العربية. يرجى تقديم النص الإنجليزي الذي تريد ترجمته.`,
+    ar: ``,
   },
   s54: {
     en: `Paragraph 4:`,
-    ar: `параграф 4 كان فارغا في النص الأنجليزي، لذا لا يوجد نص لترجمته. الرجاء تقديم النص الذي يرغب في ترجمته.`,
+    ar: ``,
   },
   s55: { en: `Top Tips for Grade 7-9`, ar: `نصائح;top tips للحصول على الدرجات من 7 إلى 9` },
   s56: { en: `Use subject terminology precisely`, ar: `استخدم مصطلحات الموضوع بدقة` },
   s57: {
     en: `Metaphor, simile, rhetorical question, dramatic irony, soliloquy, aside, prose vs verse, peripeteia, pathos, motif, juxtaposition, parallel structure.`,
-    ar: `метaphore، simile، سؤال رhetorical، حِوار مُدَاراة دراميّة، soliloquy، aside، prosa ضد verse، peripeteia، pathos، motif، juxtaposition، بنية متوازية`,
+    ar: ``,
   },
   s58: { en: `Embed short quotations`, ar: `ادمج استشهادات قصيرة` },
   s59: {

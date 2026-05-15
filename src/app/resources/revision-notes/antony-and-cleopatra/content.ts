@@ -19,7 +19,7 @@ export const STRINGS: Record<string, Bi> = {
   s6: { en: `Composition Date: 1606&ndash;1607`, ar: `التاريخ: 1606&ndash;1607` },
   s7: { en: `The Roman Plays Sequence`, ar: `السلسلة الرومانية من المسرحيات` },
   s8: { en: `Antony and Cleopatra`, ar: `أنتونيو وقليوباترا` },
-  s9: { en: `Titus Andronicus`, ar: `Titus أندرونيкус` },
+  s9: { en: `Titus Andronicus`, ar: `` },
   s10: { en: `Julius Caesar`, ar: `يوليوس قيصر` },
   s11: { en: `James I and the Union of the Crowns`, ar: `جيمس الأول والاتحاد للكراسي` },
   s12: { en: `The Genre Question: Tragedy or History?`, ar: `السؤال حول الجنس: مأساة أم تاريخ؟` },
@@ -33,7 +33,7 @@ export const STRINGS: Record<string, Bi> = {
   s23: { en: `Quote verbatim from the Folio.`, ar: `اقتبس حرفيًا منfolio` },
   s24: { en: `Use Plutarch.`, ar: `استخدموا بلوتارخ.` },
   s25: { en: `Address the genre question.`, ar: `أجب على سؤال الجنس الأدبي.` },
-  s26: { en: `Connect Jacobean context.`, ar: `اتصل بال контекست الجاكوبية` },
+  s26: { en: `Connect Jacobean context.`, ar: `` },
   s27: { en: `Reference critical positions.`, ar: `أ refere أوضاع هامة` },
   s28: { en: `Trace verbal patterns.`, ar: `تتبع أنماط الكلام` },
   s29: { en: `Don&apos;t simplify the binary.`, ar: `لا تبسّط الثنائية.` },
@@ -44,12 +44,12 @@ export const STRINGS: Record<string, Bi> = {
   s31: { en: `Character Profiles`, ar: `Profiles الشخصيات` },
   s32: {
     en: `The Roman triumvir torn between Egypt and Rome, between Cleopatra and Caesar`,
-    ar: `ال триومفير الروماني الممزق بين مصر وروما، بين كلوباتра وقيصر`,
+    ar: ``,
   },
   s33: { en: `Queen of Egypt, the play`, ar: `مملكة مصر، المسرحية` },
   s35: {
     en: `The third triumvir, the weakest of the three. Lepidus tries to mediate between Antony and Caesar but lacks the political weight to do so. He is mocked for his drunkenness aboard Pompey`,
-    ar: `ال триومفير الثالث، وهو الأضعف من الثلاثة. لبيديوس يحاول أن يكون وسيطاً بين أنتوني وكايزر لكنه لا يملك القوة السياسية لذلك. يتم سخريته بسبب شربه الزائد على متن سفينة بومبيй`,
+    ar: ``,
   },
   s36: {
     en: `An Egyptian fortune-teller who appears twice. In Act 1 he reads the futures of Charmian and Iras with grim and erotic ambiguity. In Act 2 he warns Antony in Rome that Caesar`,
@@ -63,15 +63,15 @@ export const STRINGS: Record<string, Bi> = {
   s39: { en: `Love vs Duty`, ar: `الحب مقابل الواجب` },
   s40: {
     en: `Roman Stoicism vs Egyptian Sensuality`,
-    ar: `ال стоيكية الرومانية مقابل اللذة المصرية`,
+    ar: ``,
   },
   s41: { en: `Power and Empire`, ar: `القوة والامبراطورية` },
   s42: { en: `Theatricality and Performance`, ar: `التمثيلية والการแสดง` },
   s43: {
     en: `The play is suffused with self-conscious theatricality. Cleopatra dresses for her death as an actor dresses for a role; she fears that Roman boys will`,
-    ar: `المسرحية مملوءة بالدراميةsciousness وال театрالية. كليوباتра ترتدي لموتها كما يفعل الممثل لدور؛ هي تخاف أن الصبيان الرومانيين سي`,
+    ar: ``,
   },
-  s44: { en: `Honour and Reputation`, ar: `الчесть والسمعة` },
+  s44: { en: `Honour and Reputation`, ar: `` },
   s45: {
     en: `Honour drives most of the play`,
     ar: `الчесть هي ما ي_drive_most_of_the_play_في معظم مسرحية
@@ -94,6 +94,6 @@ For clarity and proper translation:`,
   s50: { en: `Antony complains that he is`, ar: `أنتوني يشكي أنه هو` },
   s51: { en: `Key Quotations with Analysis`, ar: `اقتباسات رئيسية مع تحليل` },
   s52: { en: `Symbols and Recurring Images`, ar: `رموز وصور متكررة` },
-  s53: { en: `Historical and Literary Context`, ar: `السياق التاريخي والлитيري` },
+  s53: { en: `Historical and Literary Context`, ar: `` },
   s54: { en: `Dramatic Structure`, ar: `الโครงสร้าง الدرامية` },
 }

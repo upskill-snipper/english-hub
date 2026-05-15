@@ -31,7 +31,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s7: {
     en: `Consistently engages with connotations, nuance, and the subtleties of language.`,
-    ar: `يشوف معنى الكلمات والтон الشعري ومعناها الدال عليه بشكل مستمر.`,
+    ar: ``,
   },
   s8: {
     en: `Compelling, convincing writing that sustains the reader&rsquo;s interest throughout.`,
@@ -48,11 +48,7 @@ export const STRINGS: Record<string, Bi> = {
   s12: { en: `Grades 7-8 &mdash; Strong`, ar: `الصفوف seventh إلى eighth &mdash; قوي` },
   s13: {
     en: `Detailed, well-developed analysis with clear explanations of effects.`,
-    ar: `تحليل مفصل ومتطور مع تفسيرات واضحة لتأثيرات эффекты。 
-
-(Note: The last part seems to have included a non-Khaleeji Arabic word due to the instruction format mix-up. Here is the corrected version without that element.)
-
-تحليل مفصل ومتطور مع تفسيرات واضحة لتأثيرات`,
+    ar: ``,
   },
   s14: {
     en: `Well-chosen quotations with thorough exploration of language and structure.`,

@@ -48,7 +48,7 @@ export const STRINGS: Record<string, Bi> = {
   s28: { en: `Migration &amp; Belonging`, ar: `الهجرة والانتماء` },
   s29: {
     en: `Harri is in the middle of becoming English. He absorbs slang, copies fashion, befriends Dean and crushes on Poppy — but he also says`,
-    ar: `هاري في وسط إنه يصير إنجليزي. هو يستوعب السلاش، يقلد الموضة، يصبح صديق دين ويشوف بوبпи لكنه أيضاً يقول`,
+    ar: ``,
   },
   s30: { en: `Faith &amp; Hope`, ar: `الإيمان والأمل` },
   s31: { en: `Friendship &amp; Group Dynamics`, ar: `صداقة وديناميكيات المجموعة` },

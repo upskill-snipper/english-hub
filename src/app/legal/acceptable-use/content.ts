@@ -48,10 +48,7 @@ export const STRINGS: Record<string, Bi> = {
   s16: { en: `Be written in English`, ar: `يجب أن يكتب بالإنجليزية` },
   s17: {
     en: `Be your own original work`,
-    ar: `كون عملك الخاص_original_workBackingField
-الرجاء إعادة صياغة الجملة وفقاً لل правильный تنسيق المطلوب:
-
-كن أعمالك الخاصة`,
+    ar: ``,
   },
   s18: {
     en: `Be relevant to English language or literature study`,

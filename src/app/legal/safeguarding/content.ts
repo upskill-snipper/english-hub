@@ -11,7 +11,7 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s0: { en: `Safeguarding Policy`, ar: `سياسة حماية безопасности` },
+  s0: { en: `Safeguarding Policy`, ar: `` },
   s1: { en: `The English Hub`, ar: `The English Hub` },
   s2: { en: `We are committed to:`, ar: `نحن ملتزمون ب__:` },
   s4: {
@@ -87,5 +87,5 @@ PLEASE NOTE: THIS IS AN ADAPTED VERSION AND MAY NEED REVIEW BY A LOCAL EXPERT FO
   s33: { en: `Support channel:`, ar: `قناة الدعم` },
   s34: { en: `NSPCC Whistleblowing Helpline:`, ar: `خط السجلات السرية لحماية الأطفال في	NSPCC:` },
   s35: { en: `Police (emergency):`, ar: `شرطة (حالة طوارئ):` },
-  s36: { en: `Police (non-emergency):`, ar: `شرطة (неergency)` },
+  s36: { en: `Police (non-emergency):`, ar: `` },
 }

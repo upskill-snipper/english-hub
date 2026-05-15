@@ -32,7 +32,7 @@ export const STRINGS: Record<string, Bi> = {
   s14: { en: `The history and impact of a cultural movement`, ar: `تاريخ وتأثير حركة ثقافية` },
   s15: { en: `How AI is changing education`, ar: `كيف تغيرت التعليم بسبب الذكاء الاصطناعي` },
   s17: { en: `Main points (3&ndash;4)`, ar: `نقاط رئيسية (3-4)` },
-  s18: { en: `Eye Contact`, ar: `контакт بالعينين` },
+  s18: { en: `Eye Contact`, ar: `` },
   s19: { en: `Volume and Projection`, ar: `حجم وتقديم` },
   s20: { en: `Tone and Expression`, ar: `تÓN و الاستثارة` },
   s21: { en: `Body Language`, ar: `لغة الجسد` },

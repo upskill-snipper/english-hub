@@ -81,11 +81,11 @@ Final Correct Translation:
   },
   s33: {
     en: `Clear, connected writing; sustained register; effective use of paragraphs and discourse markers.`,
-    ar: `كتابة واضحة ومترابطة؛ م регистر مستمر؛ استخدام فعال ل парагرافات والMarkers للغة التفاعلية`,
+    ar: ``,
   },
   s34: {
     en: `Increasingly varied vocabulary; secure sentence control; generally accurate spelling and punctuation.`,
-    ar: `لغة متنوعة أكثر وايد؛ سيطرة جيدة على الجمل؛ تهجئة و пунктуация عامة دقيقة.`,
+    ar: ``,
   },
   s35: {
     en: `Compelling, convincing writing; sophisticated structural choices; highly engaging; assured control of tone and style.`,

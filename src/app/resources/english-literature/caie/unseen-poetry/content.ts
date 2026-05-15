@@ -43,7 +43,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Write a sustained, analytical commentary. Quality over quantity.`,
     ar: `اكتب تعليقاً تحليلياً مستمراً. الكيفية أهم من الكمية.`,
   },
-  s9: { en: `Body paragraphs:`, ar: `جسмانيات:` },
+  s9: { en: `Body paragraphs:`, ar: `` },
   s10: {
     en: `Embed quotations:`,
     ar: `ضمن الاستشهادات direct quotations من النص الأدبي كما هي، دون تغيير.`,

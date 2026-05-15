@@ -16,7 +16,7 @@ export const STRINGS: Record<string, Bi> = {
   s3: { en: `Eddie Carbone`, ar: `Eddie Carbone` },
   s4: { en: `Other Characters`, ar: `شخصيات أخرى` },
   s5: { en: `Arthur Miller and McCarthyism`, ar: `ARTHUR MILLER و المكارثية` },
-  s6: { en: `Italian Immigration to America`, ar: `ال имigration الإيطالية إلى أمريكا` },
+  s6: { en: `Italian Immigration to America`, ar: `` },
   s7: {
     en: `Greek Tragedy and &ldquo;Tragedy and the Common Man&rdquo;`,
     ar: `tragédia اليونانية و "tragédia والرجل العادي`,
@@ -31,7 +31,7 @@ export const STRINGS: Record<string, Bi> = {
   s12: { en: `Context must be integrated:`, ar: `يجب دمج السياق:` },
   s13: { en: `The stage directions matter:`, ar: `الإرشادات المسرحية مهمة:` },
   s14: { en: `Explore ambiguity:`, ar: `استكشف الغموض:` },
-  s15: { en: `Closed book:`, ar: `كتاب م закlosed.bookː مغلق` },
+  s15: { en: `Closed book:`, ar: `` },
   s16: { en: `Open/Closed book:`, ar: `كتاب مفتوح/كتاب مغلق` },
   s17: { en: `Question 1`, ar: `السؤال الأول` },
   s18: { en: `Question 2`, ar: `سؤال 2` },

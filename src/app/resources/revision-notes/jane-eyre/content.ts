@@ -159,7 +159,7 @@ export const STRINGS: Record<string, Bi> = {
   s70: { en: `Independence and Self-Respect`, ar: `الاستقلال والكرامة` },
   s71: {
     en: `Social Class and Inequality`,
-    ar: `класс الاجتماعي والINEQUALITY (الطبقة الاجتماعيةและความไม่เท่าเทียมกันในสังคม)`,
+    ar: ``,
   },
   s72: {
     en: `Jane occupies an ambiguous class position throughout: a gentleman`,

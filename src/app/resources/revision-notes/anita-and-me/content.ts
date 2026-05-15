@@ -11,8 +11,8 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s2: { en: `Setting and Frame`, ar: `الإعداد والрамكة` },
-  s3: { en: `Anita and Me`, ar: `أنита وменي` },
+  s2: { en: `Setting and Frame`, ar: `` },
+  s3: { en: `Anita and Me`, ar: `` },
   s4: { en: `On Identity and Lying`, ar: `حول الهوية والكذب` },
   s5: { en: `On Tollington`, ar: `تونلينغتون` },
   s6: { en: `On Race and Belonging`, ar: `في العرق والانتماء` },
@@ -21,7 +21,7 @@ export const STRINGS: Record<string, Bi> = {
   s9: { en: `On Nanima and Punjabi Heritage`, ar: `عن نانيمة والتراث الپنجابي` },
   s11: { en: `On Dual Identity`, ar: `عن الهوية المزدوجة` },
   s12: { en: `On Tollington as Place`, ar: `تollington كمكان` },
-  s13: { en: `Meera Syal &mdash; Author Biography`, ar: `ميرا سياл &mdash; سيرة ذاتية للكاتبة` },
+  s13: { en: `Meera Syal &mdash; Author Biography`, ar: `` },
   s14: { en: `Goodness Gracious Me`, ar: `يا ربي ما هذا` },
   s15: { en: `Post-Powell Anti-Immigrant Politics`, ar: `politics المضادة للمهاجرين بعد باول` },
   s16: { en: `Punjabi Heritage and Partition`, ar: `heritage الپنجابي و تقسيم الحدث` },
@@ -35,7 +35,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s22: { en: `To Kill a Mockingbird`, ar: `To Kill a Mockingbird` },
   s23: { en: `The 1990s of Publication`, ar: `العقد التسعيني من النشر` },
-  s24: { en: `Exam Tips for Anita and Me`, ar: `نصائح للامتحانات لآنита وميني` },
+  s24: { en: `Exam Tips for Anita and Me`, ar: `` },
   s26: { en: `Refer to Syal&apos;s methods explicitly.`, ar: `أ REFER TO أسلوب سياｌ صراحة.` },
   s27: { en: `Anchor context in 1972.`, ar: `anchoring the context in 1972` },
   s28: {
@@ -44,7 +44,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s30: {
     en: `Address the whole novel.`,
-    ar: `ا.address الكниجة كلها.بلاش تنسى جزء من القصة.اقرأ واكتشف التفاصيل اللي ماكانت واضحة قبل كذا.`,
+    ar: ``,
   },
   s32: { en: `Nine years old at the novel`, ar: `تسعة سنوات في الرواية` },
   s33: {
@@ -59,14 +59,14 @@ export const STRINGS: Record<string, Bi> = {
     en: `Local teenage skinhead, briefly Anita`,
     ar: `Skinhead محلي في عمر المراهقة، كان اسمه آنيتا لفترة قصيرة`,
   },
-  s36: { en: `Another village girl, part of Anita`, ar: `فتاة قرية أخرى، جزء من أنита` },
+  s36: { en: `Another village girl, part of Anita`, ar: `` },
   s37: {
     en: `Identity and Belonging — British-Indian Dual Identity`,
     ar: `الهوية والانتماء — الهوية الثنائية البريطانية الهندية`,
   },
   s39: {
     en: `Race and Racism in 1970s Britain`,
-    ar: `عنصرية وрасизм فيBritain في السبعينيات من القرن العشرين`,
+    ar: ``,
   },
   s40: {
     en: `The novel is set in the immediate aftermath of Enoch Powell`,
@@ -81,7 +81,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `عائلة كومار، مع طاقمها الدوار من`,
   },
   s44: { en: `Friendship and Loss of Innocence`, ar: `صداقة وفقدان البراءة` },
-  s45: { en: `Anita is Meena`, ar: `أنита هي مينا` },
+  s45: { en: `Anita is Meena`, ar: `` },
   s46: { en: `Storytelling and Memory`, ar: `رواية القصص والذاكرة` },
   s48: { en: `Key Quotations`, ar: `اقتباسات رئيسية` },
   s49: {

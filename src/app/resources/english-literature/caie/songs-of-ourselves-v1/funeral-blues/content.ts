@@ -27,10 +27,10 @@ export const STRINGS: Record<string, Bi> = {
   s14: { en: `Source attribution`, ar: `الإسناد[source]` },
   s15: {
     en: `Cambridge IGCSE 0475 Songs of Ourselves Vol 1 Part 4`,
-    ar: `Cambridge IGCSE 0475 أغنيات أنفسنا الجزء الأول Часть 4`,
+    ar: ``,
   },
   s16: {
     en: `Study guide stub for`,
-    ar: `دليلstudyingstub для الدراسة.stubчрежден для изучения.CreatedBy The English Hub لـ The English HubCreated الحين لإبنك أو بنتك لمساعدتهم في استذكار موادهم الدراسية.AQASTUDYGUIDEEdexcelSTUDYGUIDEOCRSTUD`,
+    ar: ``,
   },
 }

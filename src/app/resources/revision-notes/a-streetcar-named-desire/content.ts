@@ -11,7 +11,7 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s0: { en: `Tennessee Williams, 1947`, ar: `تينيسي وильямز، 1947` },
+  s0: { en: `Tennessee Williams, 1947`, ar: `` },
   s3: { en: `The Glass Menagerie`, ar: `الزجاجية المنسية` },
   s4: { en: `Suddenly Last Summer`, ar: `فجأة في الصيف الماضي` },
   s5: { en: `Southern Gothic Tradition`, ar: `التقاليد الجنوبية القوطية` },
@@ -56,7 +56,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `The play exposes the asymmetric sexual codes of mid-century America. Blanche`,
     ar: `تعرض المسرحية قواعد الجنس غير المتكافئة في أمريكا وسط القرن العشرين. بلانش`,
   },
-  s33: { en: `Mental Illness and Trauma`, ar: `المرض النفسي وال травма` },
+  s33: { en: `Mental Illness and Trauma`, ar: `` },
   s34: {
     en: `Williams was haunted by his own sister Rose`,
     ar: `ويليامز كان مرعوب من أخته روز نفسها`,
@@ -64,5 +64,5 @@ export const STRINGS: Record<string, Bi> = {
   s35: { en: `Light, Bathing and Cleansing`, ar: `الضوء، الاستحمام والتنظيف` },
   s37: { en: `Historical and Biographical Context`, ar: `السياق التاريخي وال BIOGRAPHICAL` },
   s38: { en: `Key Quotations with Analysis`, ar: `اقتباسات رئيسية مع تحليل` },
-  s39: { en: `Key Symbols`, ar: `ключ رموز` },
+  s39: { en: `Key Symbols`, ar: `` },
 }

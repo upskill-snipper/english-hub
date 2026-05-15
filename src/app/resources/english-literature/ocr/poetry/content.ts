@@ -18,7 +18,7 @@ export const STRINGS: Record<string, Bi> = {
   s4: { en: `Questions to ask:`, ar: `أسئلة للسؤال عنها:` },
   s5: { en: `Key vocabulary for tone:`, ar: `لغة أساسية للטון:` },
   s6: { en: `Figurative language`, ar: `لغة مجازية` },
-  s7: { en: `Word choice (diction)`, ar: `اختيار الكلمات (الدикشنري)` },
+  s7: { en: `Word choice (diction)`, ar: `` },
   s8: {
     en: `Semantic fields`,
     ar: `حقldsldsldsldsldsldsldsldsldsldsldsldsldsldsldldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldsldslds`,
@@ -30,7 +30,7 @@ export const STRINGS: Record<string, Bi> = {
     ar: `โครงสร้าง القصيدة (Translation note: Stanza structure doesn't have a direct Khaleeji term, so I used "โครงสร้าง القصيدة" which is not accurate but closest in meaning. For a more precise translation, it would be better to keep it as "Stanza structure" in`,
   },
   s12: { en: `Rhyme scheme`, ar: `نمط الشعر الرتبي` },
-  s13: { en: `Metre and rhythm`, ar: `متر وритم` },
+  s13: { en: `Metre and rhythm`, ar: `` },
   s14: { en: `Opening and ending`, ar: `فتح وإغلاق` },
   s15: {
     en: `When was the poem written? What was happening historically?`,
@@ -81,6 +81,6 @@ export const STRINGS: Record<string, Bi> = {
   s42: { en: `Forgetting to analyse the printed poem`, ar: `نسيت تحلل الشعر المطبوع` },
   s43: { en: `Not knowing quotations from memory`, ar: `لا تعرف الاقتباسات من الذاكرة` },
   s44: { en: `Ignoring form and structure`, ar: `IGNORING form and structure` },
-  s45: { en: `Context as an afterthought`, ar: `ال контекست كThought بعد الحين` },
+  s45: { en: `Context as an afterthought`, ar: `` },
   s46: { en: `Superficial analysis`, ar: `تحليل سطحي` },
 }

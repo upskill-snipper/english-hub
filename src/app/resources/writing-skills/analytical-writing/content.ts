@@ -26,7 +26,7 @@ export const STRINGS: Record<string, Bi> = {
   },
   s7: { en: `Single Word / Short Phrase Embedding`, ar: `توصيف كلمة أو جملة قصيرة` },
   s8: { en: `Contextualised Introduction`, ar: `مقدمة موضعيه` },
-  s9: { en: `Golden rule`, ar: `ال правило الذهبي` },
+  s9: { en: `Golden rule`, ar: `` },
   s10: {
     en: `Source text:`,
     ar: `لم يتم تقديم نص إنجليزي لترجمته. هل يمكنك تقديم النص الإنجليزي الذي تريد ترجمته إلى العربية باللهجة الخليجية؟`,
@@ -76,7 +76,7 @@ export const STRINGS: Record<string, Bi> = {
   s34: { en: `The Integrated Comparison Method`, ar: `المنهاج المقارن الموحد` },
   s36: { en: `Analyse Text A with evidence`, ar: `حلل النص أ مع تقديم أدلة` },
   s37: { en: `Use a comparative connective to transition`, ar: `استخدم رابطاً مقارناً للانتقال` },
-  s38: { en: `Analyse Text B with evidence`, ar: `انализ نص ب مع أدلة` },
+  s38: { en: `Analyse Text B with evidence`, ar: `` },
   s39: { en: `Model Comparison Paragraph`, ar: `مقطع مقارنة النماذج` },
   s40: { en: `Clear, explained response`, ar: `CLEAR, EXPLAINED RESPONSE` },
   s41: { en: `What keeps this at Grade 5:`, ar: `شو اللي يحافظ على هذا في المستوى الخامس:` },
