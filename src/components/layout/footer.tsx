@@ -114,8 +114,10 @@ const FOOTER_SECTIONS: FooterSection[] = [
     links: [
       { href: '/about', labelKey: 'footer.link.about' },
       { href: '/about/verified-content', labelKey: 'footer.link.verified_content' },
+      { href: '/about/content-verification', labelKey: 'footer.link.content_verification' },
       { href: '/for-teachers', labelKey: 'header.nav.teachers' },
       { href: '/for-schools', labelKey: 'header.nav.schools' },
+      { href: '/for-schools/pilot', labelKey: 'footer.link.school_pilot_pack' },
       { href: '/for-parents', labelKey: 'header.nav.parents' },
       { href: '/contact', labelKey: 'footer.link.contact' },
       { href: '/press', labelKey: 'footer.link.press' },

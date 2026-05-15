@@ -44,6 +44,7 @@ import { POETRY_HUB_DICTIONARY } from './dictionary-poetry-hub'
 import { AUDIT_FIX_DICTIONARY } from './dictionary-audit-fix'
 import { SCREENSHOT_FIX_DICTIONARY } from './dictionary-screenshot-fixes'
 import { PLACEHOLDER_FIX_MAY15 } from './dictionary-placeholder-fix-may15'
+import { PRESS_AND_VERIFIED_FIX } from './dictionary-press-verified'
 
 export type Locale = 'en' | 'ar'
 
@@ -14694,6 +14695,10 @@ export function lookup(key: string, locale: Locale): string {
   // on collision — by convention toolkit keys live under the
   // tools.*, quiz_build.*, lesson_build.*, grade_predict.*, essay_check.*
   // namespaces so collisions shouldn't arise.
+  // PRESS_AND_VERIFIED_FIX must come BEFORE AUDIT_FIX_DICTIONARY — the
+  // audit-fix file has lazy auto-derived placeholders like "Eyebrow" /
+  // "Title" / "Bbc Strong" for press.* and about.verified.* keys, which
+  // we override with real human-written copy.
   const entry =
     DICTIONARY[key] ??
     TOOLKIT_DICTIONARY[key] ??
@@ -14702,6 +14707,7 @@ export function lookup(key: string, locale: Locale): string {
     DASH_INTERNAL_DICTIONARY[key] ??
     DEMO_PAGES_DICTIONARY[key] ??
     POETRY_HUB_DICTIONARY[key] ??
+    PRESS_AND_VERIFIED_FIX[key] ??
     AUDIT_FIX_DICTIONARY[key] ??
     SCREENSHOT_FIX_DICTIONARY[key] ??
     PLACEHOLDER_FIX_MAY15[key]
