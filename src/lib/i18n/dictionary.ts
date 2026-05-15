@@ -43,6 +43,7 @@ import { DEMO_PAGES_DICTIONARY } from './dictionary-demo-pages'
 import { POETRY_HUB_DICTIONARY } from './dictionary-poetry-hub'
 import { AUDIT_FIX_DICTIONARY } from './dictionary-audit-fix'
 import { SCREENSHOT_FIX_DICTIONARY } from './dictionary-screenshot-fixes'
+import { PLACEHOLDER_FIX_MAY15 } from './dictionary-placeholder-fix-may15'
 
 export type Locale = 'en' | 'ar'
 
@@ -14702,7 +14703,8 @@ export function lookup(key: string, locale: Locale): string {
     DEMO_PAGES_DICTIONARY[key] ??
     POETRY_HUB_DICTIONARY[key] ??
     AUDIT_FIX_DICTIONARY[key] ??
-    SCREENSHOT_FIX_DICTIONARY[key]
+    SCREENSHOT_FIX_DICTIONARY[key] ??
+    PLACEHOLDER_FIX_MAY15[key]
   if (!entry) return `[[${key}]]`
   if (locale === 'ar' && entry.ar) return entry.ar
   return entry.en
