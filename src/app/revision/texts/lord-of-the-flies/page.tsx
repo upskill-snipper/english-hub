@@ -9,6 +9,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Lord of the Flies revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Lord of the Flies GCSE revision — Golding',
+  },
   title: 'Lord of the Flies revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Lord of the Flies GCSE revision — Golding's novel by chapter with characters, themes, context, key quotes and essay plans. Aligned to AQA, OCR and Eduqas.",

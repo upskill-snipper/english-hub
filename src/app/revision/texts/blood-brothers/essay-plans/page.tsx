@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Blood Brothers — Essay Plans | The English Hub',
+    description:
+      'Five exam-ready essay plans for Blood Brothers by Willy Russell with thesis, paragraph outlines and key quotations.',
+  },
   title: 'Blood Brothers — Essay Plans | The English Hub',
   description:
     'Five exam-ready essay plans for Blood Brothers by Willy Russell with thesis, paragraph outlines and key quotations.',

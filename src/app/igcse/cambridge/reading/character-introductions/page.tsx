@@ -13,24 +13,22 @@ import {
   Type,
   FileText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title:
-    'Character Introductions — Reading Practice Framework — The English Hub',
+  openGraph: {
+    title: 'Character Introductions — Reading Practice Framework — The English Hub',
+    description:
+      'Cambridge IGCSE Paper 1 reading practice on character introductions. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+  },
+  title: 'Character Introductions — Reading Practice Framework — The English Hub',
   description:
     'Cambridge IGCSE Paper 1 reading practice on character introductions. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/reading/character-introductions',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/reading/character-introductions',
   },
 }
 
@@ -87,11 +85,7 @@ export default async function CharacterIntroductionsPage() {
   return (
     <div className="space-y-8 pb-16">
       <header className="space-y-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All reading frameworks
         </Button>
@@ -103,14 +97,11 @@ export default async function CharacterIntroductionsPage() {
           <Badge variant="secondary">Reading framework</Badge>
           <Badge variant="secondary">Paper 1</Badge>
         </div>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Character Introductions
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Character Introductions</h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
-          The first time a writer introduces a character is your richest
-          source of inference. Every detail — their hands, their silence,
-          their first word — is a deliberate choice. This framework trains
-          you to read those choices closely and explain their effect.
+          The first time a writer introduces a character is your richest source of inference. Every
+          detail — their hands, their silence, their first word — is a deliberate choice. This
+          framework trains you to read those choices closely and explain their effect.
         </p>
       </header>
 
@@ -127,10 +118,9 @@ export default async function CharacterIntroductionsPage() {
         </CardHeader>
         <CardContent>
           <p className="text-body-sm text-foreground">
-            Character introductions test inference: reading between the lines
-            to build an opinion of a person from small clues. They also train
-            you to comment on the writer’s craft — word choice, sentence
-            structure and perspective. These are the central skills Paper 1
+            Character introductions test inference: reading between the lines to build an opinion of
+            a person from small clues. They also train you to comment on the writer’s craft — word
+            choice, sentence structure and perspective. These are the central skills Paper 1
             rewards.
           </p>
         </CardContent>
@@ -139,13 +129,11 @@ export default async function CharacterIntroductionsPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Suggested practice texts
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Suggested practice texts</h2>
         </div>
         <p className="mb-4 text-body-sm text-muted-foreground">
-          Each of these novels opens with, or features early on, a memorable
-          character introduction. Read around 600 to 900 words.
+          Each of these novels opens with, or features early on, a memorable character introduction.
+          Read around 600 to 900 words.
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           {sources.map((s) => (
@@ -175,9 +163,7 @@ export default async function CharacterIntroductionsPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Comprehension questions
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Comprehension questions</h2>
         </div>
         <Card>
           <CardContent className="pt-6">
@@ -193,20 +179,17 @@ export default async function CharacterIntroductionsPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <MessageSquare className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Language analysis prompt
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Language analysis prompt</h2>
         </div>
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="pt-6">
             <p className="text-body-md italic text-foreground">
-              &ldquo;How does the writer use language to create a vivid first
-              impression of this character?&rdquo;
+              &ldquo;How does the writer use language to create a vivid first impression of this
+              character?&rdquo;
             </p>
             <p className="mt-4 text-body-sm text-muted-foreground">
-              Write roughly 150 words. Quote three short phrases covering
-              appearance, action and speech, and comment on the effect of
-              each.
+              Write roughly 150 words. Quote three short phrases covering appearance, action and
+              speech, and comment on the effect of each.
             </p>
           </CardContent>
         </Card>
@@ -215,9 +198,7 @@ export default async function CharacterIntroductionsPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Summary task template
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Summary task template</h2>
         </div>
         <Card>
           <CardContent className="pt-6 space-y-3 text-body-sm text-foreground">
@@ -227,20 +208,17 @@ export default async function CharacterIntroductionsPage() {
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                <strong>Sentence 1:</strong> The character’s name, age and
-                situation.
+                <strong>Sentence 1:</strong> The character’s name, age and situation.
               </li>
               <li>
-                <strong>Sentence 2:</strong> A key physical or behavioural
-                detail.
+                <strong>Sentence 2:</strong> A key physical or behavioural detail.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two personality traits you
-                can infer from the passage.
+                <strong>Sentences 3–4:</strong> Two personality traits you can infer from the
+                passage.
               </li>
               <li>
-                <strong>Sentence 5:</strong> Your overall impression of the
-                character.
+                <strong>Sentence 5:</strong> Your overall impression of the character.
               </li>
             </ul>
           </CardContent>
@@ -250,9 +228,7 @@ export default async function CharacterIntroductionsPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Type className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Vocabulary focus
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Vocabulary focus</h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
           Eight terms to use when writing about character introductions.
@@ -291,9 +267,7 @@ export default async function CharacterIntroductionsPage() {
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/cambridge/reading/descriptive-nature" />
-          }
+          render={<Link href="/igcse/cambridge/reading/descriptive-nature" />}
         >
           <ArrowLeft className="size-3.5" />
           Descriptive nature
@@ -301,9 +275,7 @@ export default async function CharacterIntroductionsPage() {
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/cambridge/reading/dialogue-analysis" />
-          }
+          render={<Link href="/igcse/cambridge/reading/dialogue-analysis" />}
         >
           Next: Dialogue analysis
           <ArrowRight className="size-3.5" />

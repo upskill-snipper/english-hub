@@ -10,6 +10,11 @@ import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'GCSE English Analysis Hub | The English Hub',
+    description:
+      'In-depth analysis, themed essays and quote-by-quote breakdowns for every GCSE English Literature set text and the Language paper.',
+  },
   title: 'GCSE English Analysis Hub | The English Hub',
   description:
     'In-depth analysis, themed essays and quote-by-quote breakdowns for every GCSE English Literature set text and the Language paper.',

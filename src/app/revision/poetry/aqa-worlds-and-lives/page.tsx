@@ -8,6 +8,11 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Worlds and Lives poetry — AQA GCSE revision — The English Hub',
+    description:
+      'AQA GCSE Worlds and Lives — the new 15-poem anthology cluster. Poem-by-poem breakdowns, themes, voices and comparison practice for Paper 2 Section B.',
+  },
   title: 'Worlds and Lives poetry — AQA GCSE revision — The English Hub',
   description:
     'AQA GCSE Worlds and Lives — the new 15-poem anthology cluster. Poem-by-poem breakdowns, themes, voices and comparison practice for Paper 2 Section B.',

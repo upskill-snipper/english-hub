@@ -13,24 +13,22 @@ import {
   Type,
   FileText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title:
-    'Classic Novel Openings — Reading Practice Framework — The English Hub',
+  openGraph: {
+    title: 'Classic Novel Openings — Reading Practice Framework — The English Hub',
+    description:
+      'Practise Cambridge IGCSE Paper 1 reading on classic novel openings. Structured comprehension, language analysis, summary and self-assessment using free public-domain texts from Project Gutenberg.',
+  },
+  title: 'Classic Novel Openings — Reading Practice Framework — The English Hub',
   description:
     'Practise Cambridge IGCSE Paper 1 reading on classic novel openings. Structured comprehension, language analysis, summary and self-assessment using free public-domain texts from Project Gutenberg.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/reading/classic-novel-openings',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/reading/classic-novel-openings',
   },
 }
 
@@ -88,11 +86,7 @@ export default async function ClassicNovelOpeningsPage() {
     <div className="space-y-8 pb-16">
       {/* Header */}
       <header className="space-y-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All reading frameworks
         </Button>
@@ -104,15 +98,12 @@ export default async function ClassicNovelOpeningsPage() {
           <Badge variant="secondary">Reading framework</Badge>
           <Badge variant="secondary">Paper 1</Badge>
         </div>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Classic Novel Openings
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Classic Novel Openings</h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
-          First pages do an enormous amount of work. They set the tone,
-          introduce the narrator, plant a question in the reader&rsquo;s mind
-          and quietly teach you how the rest of the book wants to be read.
-          This framework trains you to notice those moves and to write about
-          them in the tight, evidence-led way Cambridge rewards.
+          First pages do an enormous amount of work. They set the tone, introduce the narrator,
+          plant a question in the reader&rsquo;s mind and quietly teach you how the rest of the book
+          wants to be read. This framework trains you to notice those moves and to write about them
+          in the tight, evidence-led way Cambridge rewards.
         </p>
       </header>
 
@@ -130,11 +121,10 @@ export default async function ClassicNovelOpeningsPage() {
         </CardHeader>
         <CardContent>
           <p className="text-body-sm text-foreground">
-            Reading a novel opening tests your ability to infer character and
-            setting from small details, to identify tone and narrative voice,
-            to explain how a writer creates expectation, and to summarise a
-            whole scene in a few accurate sentences. These are the core
-            skills Paper 1 is looking for across questions 1, 2 and 3.
+            Reading a novel opening tests your ability to infer character and setting from small
+            details, to identify tone and narrative voice, to explain how a writer creates
+            expectation, and to summarise a whole scene in a few accurate sentences. These are the
+            core skills Paper 1 is looking for across questions 1, 2 and 3.
           </p>
         </CardContent>
       </Card>
@@ -143,14 +133,11 @@ export default async function ClassicNovelOpeningsPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Suggested practice texts
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Suggested practice texts</h2>
         </div>
         <p className="mb-4 text-body-sm text-muted-foreground">
-          Open any of the three links below on Project Gutenberg and read the
-          first chapter. Each is free, in the public domain, and loads
-          straight in your browser.
+          Open any of the three links below on Project Gutenberg and read the first chapter. Each is
+          free, in the public domain, and loads straight in your browser.
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           {sources.map((s) => (
@@ -181,13 +168,11 @@ export default async function ClassicNovelOpeningsPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Comprehension questions
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Comprehension questions</h2>
         </div>
         <p className="mb-4 text-body-sm text-muted-foreground">
-          Work through these six questions after reading your chosen passage.
-          Aim for a sentence or two per answer and always quote directly.
+          Work through these six questions after reading your chosen passage. Aim for a sentence or
+          two per answer and always quote directly.
         </p>
         <Card>
           <CardContent className="pt-6">
@@ -204,21 +189,18 @@ export default async function ClassicNovelOpeningsPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <MessageSquare className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Language analysis prompt
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Language analysis prompt</h2>
         </div>
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="pt-6">
             <p className="text-body-md italic text-foreground">
-              &ldquo;How does the writer use language to create a strong sense
-              of voice and world in the opening pages?&rdquo;
+              &ldquo;How does the writer use language to create a strong sense of voice and world in
+              the opening pages?&rdquo;
             </p>
             <p className="mt-4 text-body-sm text-muted-foreground">
-              Write a single paragraph of roughly 150 words. Quote two or
-              three specific phrases and comment on the effect of each one.
-              Aim to use at least one technical term (e.g. tone, register,
-              syntax) correctly.
+              Write a single paragraph of roughly 150 words. Quote two or three specific phrases and
+              comment on the effect of each one. Aim to use at least one technical term (e.g. tone,
+              register, syntax) correctly.
             </p>
           </CardContent>
         </Card>
@@ -228,33 +210,28 @@ export default async function ClassicNovelOpeningsPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Summary task template
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Summary task template</h2>
         </div>
         <Card>
           <CardContent className="pt-6 space-y-3 text-body-sm text-foreground">
             <p>
-              Write a summary of the opening in{' '}
-              <strong>no more than 120 words</strong>, using your own
-              language. Structure your summary like this:
+              Write a summary of the opening in <strong>no more than 120 words</strong>, using your
+              own language. Structure your summary like this:
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                <strong>Sentence 1:</strong> Who the main character is and
-                where we first meet them.
+                <strong>Sentence 1:</strong> Who the main character is and where we first meet them.
               </li>
               <li>
-                <strong>Sentence 2:</strong> The situation or conflict that
-                the opening establishes.
+                <strong>Sentence 2:</strong> The situation or conflict that the opening establishes.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two specific things we learn
-                about the character&rsquo;s world, mood or personality.
+                <strong>Sentences 3–4:</strong> Two specific things we learn about the
+                character&rsquo;s world, mood or personality.
               </li>
               <li>
-                <strong>Sentence 5:</strong> The question or expectation the
-                writer leaves the reader with.
+                <strong>Sentence 5:</strong> The question or expectation the writer leaves the
+                reader with.
               </li>
             </ul>
           </CardContent>
@@ -265,13 +242,10 @@ export default async function ClassicNovelOpeningsPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Type className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Vocabulary focus
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Vocabulary focus</h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
-          Eight terms you should be comfortable using when you write about
-          novel openings.
+          Eight terms you should be comfortable using when you write about novel openings.
         </p>
         <div className="flex flex-wrap gap-2">
           {vocabulary.map((v) => (
@@ -306,20 +280,14 @@ export default async function ClassicNovelOpeningsPage() {
 
       {/* Footer nav */}
       <div className="flex justify-between border-t border-border pt-6">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All frameworks
         </Button>
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/cambridge/reading/descriptive-nature" />
-          }
+          render={<Link href="/igcse/cambridge/reading/descriptive-nature" />}
         >
           Next: Descriptive nature
           <ArrowRight className="size-3.5" />

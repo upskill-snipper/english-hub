@@ -9,6 +9,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'A Streetcar Named Desire — Study Guide | The English Hub',
+    description:
+      'In-depth study guide for A Streetcar Named Desire by Tennessee Williams: plot, characters, themes, context and key quotations.',
+  },
   title: 'A Streetcar Named Desire — Study Guide | The English Hub',
   description:
     'In-depth study guide for A Streetcar Named Desire by Tennessee Williams: plot, characters, themes, context and key quotations.',

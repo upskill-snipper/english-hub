@@ -1,6 +1,7 @@
 import { permanentRedirect } from 'next/navigation'
 
 export const metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/legal/cancellation-form' },
   // Hide from search index — old SEO traffic is preserved via the 308.
   robots: { index: false, follow: false },
 }

@@ -7,24 +7,26 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Tension and Pacing — Cambridge IGCSE Narrative Writing',
+    description:
+      'Build tension and control pacing in a Cambridge IGCSE short story. Withhold information, use short sentences, interruptions, and credible cliffhangers.',
+  },
   title: 'Tension and Pacing — Cambridge IGCSE Narrative Writing',
   description:
     'Build tension and control pacing in a Cambridge IGCSE short story. Withhold information, use short sentences, interruptions, and credible cliffhangers.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/narrative/tension',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/narrative/tension',
   },
 }
 
 const techniques = [
   {
     name: '1. Withhold information',
-    summary:
-      'The reader knows something is wrong, but not exactly what. Reveal in layers.',
+    summary: 'The reader knows something is wrong, but not exactly what. Reveal in layers.',
     detail:
       'The narrator sees something. The reader does not. Or the narrator knows a secret and refuses to name it. Tension lives in the gap between what is known and what is said.',
-    example:
-      'I had been expecting the knock. I had just not been expecting it so early.',
+    example: 'I had been expecting the knock. I had just not been expecting it so early.',
   },
   {
     name: '2. Short sentences',
@@ -37,17 +39,14 @@ const techniques = [
   },
   {
     name: '3. Physical detail over emotion',
-    summary:
-      'Do not write “I was scared”. Write what fear does to your body.',
+    summary: 'Do not write “I was scared”. Write what fear does to your body.',
     detail:
       'Sweat, dry mouth, pounding ears, shaking hands, tunnel vision. These ground fear in a body the reader also has. Emotions named directly land flatter than emotions shown through the body.',
-    example:
-      'My mouth tasted of old coins. I counted the breaths I was pretending not to hold.',
+    example: 'My mouth tasted of old coins. I counted the breaths I was pretending not to hold.',
   },
   {
     name: '4. Interruptions',
-    summary:
-      'Something or someone cuts a scene off just before a resolution. The question hangs.',
+    summary: 'Something or someone cuts a scene off just before a resolution. The question hangs.',
     detail:
       'A door opens before the character can finish a sentence. A phone rings. A train arrives. An interruption forces the reader to sit with the unresolved question — that discomfort is tension.',
     example:
@@ -109,9 +108,9 @@ export default async function TensionPage() {
             Tension and pacing
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Tension is not horror. Tension is a question the reader cannot
-            stop thinking about, kept alive sentence by sentence. These five
-            techniques are the most reliable ways to build it.
+            Tension is not horror. Tension is a question the reader cannot stop thinking about, kept
+            alive sentence by sentence. These five techniques are the most reliable ways to build
+            it.
           </p>
         </div>
       </section>
@@ -122,9 +121,7 @@ export default async function TensionPage() {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <Zap className="size-5 text-primary" />
-                <CardTitle className="text-heading-sm font-heading">
-                  {t.name}
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">{t.name}</CardTitle>
               </div>
               <p className="pt-2 text-body-sm text-foreground">{t.summary}</p>
             </CardHeader>
@@ -150,45 +147,38 @@ export default async function TensionPage() {
         </CardHeader>
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
           <p>
-            A story at a single pace exhausts the reader. A story that speeds
-            and slows keeps them moving. As a rough rule:
+            A story at a single pace exhausts the reader. A story that speeds and slows keeps them
+            moving. As a rough rule:
           </p>
           <ul className="list-disc space-y-1 pl-5">
             <li>
-              <strong className="text-foreground">Slow</strong> for the
-              build-up, with longer sentences, sensory detail and careful
-              observation.
+              <strong className="text-foreground">Slow</strong> for the build-up, with longer
+              sentences, sensory detail and careful observation.
             </li>
             <li>
-              <strong className="text-foreground">Fast</strong> at the
-              turning point, with short sentences, strong verbs and little
-              adjective padding.
+              <strong className="text-foreground">Fast</strong> at the turning point, with short
+              sentences, strong verbs and little adjective padding.
             </li>
             <li>
-              <strong className="text-foreground">Slow again</strong> for the
-              consequence and closing image.
+              <strong className="text-foreground">Slow again</strong> for the consequence and
+              closing image.
             </li>
           </ul>
           <p>
-            A useful trick: count the words in your turning-point paragraph.
-            If it\u2019s longer than your opening paragraph, it\u2019s
-            probably too slow.
+            A useful trick: count the words in your turning-point paragraph. If it\u2019s longer
+            than your opening paragraph, it\u2019s probably too slow.
           </p>
         </CardContent>
       </Card>
 
       {/* Melodrama warning */}
       <section>
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Three tension mistakes
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">Three tension mistakes</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-3">
           {badTension.map((b) => (
             <Card key={b.name}>
               <CardHeader>
-                <CardTitle className="text-heading-sm font-heading">
-                  {b.name}
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">{b.name}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-body-sm text-muted-foreground">
                 <div className="rounded-lg border border-border/60 bg-destructive/5 p-3">

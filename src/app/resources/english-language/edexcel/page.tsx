@@ -6,6 +6,11 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Pearson Edexcel GCSE English Language resources — The English Hub',
+    description:
+      'Pearson Edexcel GCSE English Language Paper 1 and Paper 2 walkthroughs, mark schemes, writing skills, exam technique guides and grade boundaries.',
+  },
   title: 'Pearson Edexcel GCSE English Language resources — The English Hub',
   description:
     'Pearson Edexcel GCSE English Language Paper 1 and Paper 2 walkthroughs, mark schemes, writing skills, exam technique guides and grade boundaries.',

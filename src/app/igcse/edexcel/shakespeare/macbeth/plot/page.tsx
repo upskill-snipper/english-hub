@@ -6,6 +6,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Macbeth Plot Summary — Edexcel IGCSE Literature',
+    description:
+      'Scene-by-scene Macbeth plot summary for Edexcel IGCSE English Literature. Follow the whole play from the witches',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/plot',
   },

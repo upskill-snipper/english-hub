@@ -4,6 +4,11 @@ import { getBoardConfig } from '@/lib/board/board-config'
 import PapersDashboard from './papers-dashboard'
 
 export const metadata = {
+  openGraph: {
+    title: 'Your Papers | The English Hub',
+    description: 'Navigate all your exam papers, sections, and revision content in one place.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/dashboard/papers' },
   title: 'Your Papers | The English Hub',
   description: 'Navigate all your exam papers, sections, and revision content in one place.',
 }

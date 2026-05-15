@@ -13,24 +13,22 @@ import {
   Type,
   FileText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title:
-    'Descriptive Nature Passages — Reading Practice Framework — The English Hub',
+  openGraph: {
+    title: 'Descriptive Nature Passages — Reading Practice Framework — The English Hub',
+    description:
+      'Cambridge IGCSE Paper 1 reading practice on descriptive nature passages. Structured comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+  },
+  title: 'Descriptive Nature Passages — Reading Practice Framework — The English Hub',
   description:
     'Cambridge IGCSE Paper 1 reading practice on descriptive nature passages. Structured comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/reading/descriptive-nature',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/reading/descriptive-nature',
   },
 }
 
@@ -87,11 +85,7 @@ export default async function DescriptiveNaturePage() {
   return (
     <div className="space-y-8 pb-16">
       <header className="space-y-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All reading frameworks
         </Button>
@@ -107,10 +101,9 @@ export default async function DescriptiveNaturePage() {
           Descriptive Nature Passages
         </h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
-          Nature writing is a playground for sensory language. The writer has
-          to turn leaves, light, weather and silence into something you can
-          feel. This framework trains you to track imagery, comment on the
-          effect of verbs and colour, and see how landscape shapes mood.
+          Nature writing is a playground for sensory language. The writer has to turn leaves, light,
+          weather and silence into something you can feel. This framework trains you to track
+          imagery, comment on the effect of verbs and colour, and see how landscape shapes mood.
         </p>
       </header>
 
@@ -127,10 +120,9 @@ export default async function DescriptiveNaturePage() {
         </CardHeader>
         <CardContent>
           <p className="text-body-sm text-foreground">
-            Nature passages test your ability to read imagery closely, to
-            comment on the effect of verbs and adjectives, and to recognise
-            how a landscape mirrors or shapes feeling. These are core skills
-            for Paper 1 language analysis questions.
+            Nature passages test your ability to read imagery closely, to comment on the effect of
+            verbs and adjectives, and to recognise how a landscape mirrors or shapes feeling. These
+            are core skills for Paper 1 language analysis questions.
           </p>
         </CardContent>
       </Card>
@@ -138,14 +130,11 @@ export default async function DescriptiveNaturePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Suggested practice texts
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Suggested practice texts</h2>
         </div>
         <p className="mb-4 text-body-sm text-muted-foreground">
-          Any of these three novels contain rich descriptive nature passages.
-          Dip into a chapter where the setting dominates and read roughly 700
-          words.
+          Any of these three novels contain rich descriptive nature passages. Dip into a chapter
+          where the setting dominates and read roughly 700 words.
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           {sources.map((s) => (
@@ -175,9 +164,7 @@ export default async function DescriptiveNaturePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Comprehension questions
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Comprehension questions</h2>
         </div>
         <Card>
           <CardContent className="pt-6">
@@ -193,19 +180,17 @@ export default async function DescriptiveNaturePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <MessageSquare className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Language analysis prompt
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Language analysis prompt</h2>
         </div>
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="pt-6">
             <p className="text-body-md italic text-foreground">
-              &ldquo;How does the writer use language to create a vivid sense
-              of the natural world and its mood?&rdquo;
+              &ldquo;How does the writer use language to create a vivid sense of the natural world
+              and its mood?&rdquo;
             </p>
             <p className="mt-4 text-body-sm text-muted-foreground">
-              Write a paragraph of roughly 150 words. Quote three specific
-              phrases and comment on verbs, imagery and sound patterning.
+              Write a paragraph of roughly 150 words. Quote three specific phrases and comment on
+              verbs, imagery and sound patterning.
             </p>
           </CardContent>
         </Card>
@@ -214,32 +199,27 @@ export default async function DescriptiveNaturePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Summary task template
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Summary task template</h2>
         </div>
         <Card>
           <CardContent className="pt-6 space-y-3 text-body-sm text-foreground">
             <p>
-              Summarise the passage in <strong>no more than 120 words</strong>
-              . Use your own language throughout.
+              Summarise the passage in <strong>no more than 120 words</strong>. Use your own
+              language throughout.
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                <strong>Sentence 1:</strong> Where the scene takes place and
-                the time of day or season.
+                <strong>Sentence 1:</strong> Where the scene takes place and the time of day or
+                season.
               </li>
               <li>
-                <strong>Sentence 2:</strong> The dominant sense the writer
-                uses and one key image.
+                <strong>Sentence 2:</strong> The dominant sense the writer uses and one key image.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two details that define the
-                mood of the place.
+                <strong>Sentences 3–4:</strong> Two details that define the mood of the place.
               </li>
               <li>
-                <strong>Sentence 5:</strong> The overall feeling the scene
-                leaves the reader with.
+                <strong>Sentence 5:</strong> The overall feeling the scene leaves the reader with.
               </li>
             </ul>
           </CardContent>
@@ -249,9 +229,7 @@ export default async function DescriptiveNaturePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Type className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Vocabulary focus
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Vocabulary focus</h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
           Eight terms to use when writing about descriptive nature passages.
@@ -290,9 +268,7 @@ export default async function DescriptiveNaturePage() {
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/cambridge/reading/classic-novel-openings" />
-          }
+          render={<Link href="/igcse/cambridge/reading/classic-novel-openings" />}
         >
           <ArrowLeft className="size-3.5" />
           Classic novel openings
@@ -300,9 +276,7 @@ export default async function DescriptiveNaturePage() {
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/cambridge/reading/character-introductions" />
-          }
+          render={<Link href="/igcse/cambridge/reading/character-introductions" />}
         >
           Next: Character introductions
           <ArrowRight className="size-3.5" />

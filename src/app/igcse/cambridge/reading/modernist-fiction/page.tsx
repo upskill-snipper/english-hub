@@ -13,24 +13,22 @@ import {
   Type,
   FileText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title:
-    'Approaching Modernist Fiction — Reading Practice Framework — The English Hub',
+  openGraph: {
+    title: 'Approaching Modernist Fiction — Reading Practice Framework — The English Hub',
+    description:
+      'Cambridge IGCSE Paper 1 reading practice on modernist fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+  },
+  title: 'Approaching Modernist Fiction — Reading Practice Framework — The English Hub',
   description:
     'Cambridge IGCSE Paper 1 reading practice on modernist fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/reading/modernist-fiction',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/reading/modernist-fiction',
   },
 }
 
@@ -87,11 +85,7 @@ export default async function ModernistFictionPage() {
   return (
     <div className="space-y-8 pb-16">
       <header className="space-y-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All reading frameworks
         </Button>
@@ -107,10 +101,9 @@ export default async function ModernistFictionPage() {
           Approaching Modernist Fiction
         </h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
-          Modernist writers were more interested in how the mind moves than
-          in plot or explanation. Learning to read their fragmented,
-          impressionistic prose will sharpen your sense of voice and widen
-          your analytical vocabulary.
+          Modernist writers were more interested in how the mind moves than in plot or explanation.
+          Learning to read their fragmented, impressionistic prose will sharpen your sense of voice
+          and widen your analytical vocabulary.
         </p>
       </header>
 
@@ -127,10 +120,9 @@ export default async function ModernistFictionPage() {
         </CardHeader>
         <CardContent>
           <p className="text-body-sm text-foreground">
-            Modernist passages push you to read for interiority, to notice
-            gaps and ambiguity, and to comment on how form shapes meaning.
-            These are advanced skills that push a Paper 1 answer into the
-            top band.
+            Modernist passages push you to read for interiority, to notice gaps and ambiguity, and
+            to comment on how form shapes meaning. These are advanced skills that push a Paper 1
+            answer into the top band.
           </p>
         </CardContent>
       </Card>
@@ -138,13 +130,11 @@ export default async function ModernistFictionPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Suggested practice texts
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Suggested practice texts</h2>
         </div>
         <p className="mb-4 text-body-sm text-muted-foreground">
-          Three early modernist writers whose work sits in the public
-          domain. Short stories are ideal for this framework.
+          Three early modernist writers whose work sits in the public domain. Short stories are
+          ideal for this framework.
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           {sources.map((s) => (
@@ -174,9 +164,7 @@ export default async function ModernistFictionPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Comprehension questions
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Comprehension questions</h2>
         </div>
         <Card>
           <CardContent className="pt-6">
@@ -192,19 +180,17 @@ export default async function ModernistFictionPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <MessageSquare className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Language analysis prompt
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Language analysis prompt</h2>
         </div>
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="pt-6">
             <p className="text-body-md italic text-foreground">
-              &ldquo;How does the writer use language to capture the movement
-              of a character’s mind?&rdquo;
+              &ldquo;How does the writer use language to capture the movement of a character’s
+              mind?&rdquo;
             </p>
             <p className="mt-4 text-body-sm text-muted-foreground">
-              Write roughly 150 words. Quote three short fragments and
-              comment on syntax, pace and interiority.
+              Write roughly 150 words. Quote three short fragments and comment on syntax, pace and
+              interiority.
             </p>
           </CardContent>
         </Card>
@@ -213,33 +199,27 @@ export default async function ModernistFictionPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Summary task template
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Summary task template</h2>
         </div>
         <Card>
           <CardContent className="pt-6 space-y-3 text-body-sm text-foreground">
             <p>
               Summarise what you understand of the passage in{' '}
-              <strong>no more than 120 words</strong>. Ambiguity is allowed
-              — name it.
+              <strong>no more than 120 words</strong>. Ambiguity is allowed — name it.
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                <strong>Sentence 1:</strong> Whose consciousness we are
-                inside.
+                <strong>Sentence 1:</strong> Whose consciousness we are inside.
               </li>
               <li>
-                <strong>Sentence 2:</strong> Where and when the scene seems
-                to be set.
+                <strong>Sentence 2:</strong> Where and when the scene seems to be set.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two impressions or feelings
-                dominating the character.
+                <strong>Sentences 3–4:</strong> Two impressions or feelings dominating the
+                character.
               </li>
               <li>
-                <strong>Sentence 5:</strong> What the passage leaves
-                deliberately unclear.
+                <strong>Sentence 5:</strong> What the passage leaves deliberately unclear.
               </li>
             </ul>
           </CardContent>
@@ -249,9 +229,7 @@ export default async function ModernistFictionPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Type className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Vocabulary focus
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Vocabulary focus</h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
           Eight terms that unlock modernist prose.

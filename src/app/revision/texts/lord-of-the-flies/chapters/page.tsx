@@ -11,6 +11,11 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Lord of the Flies Chapter Summaries | The English Hub',
+    description:
+      'Detailed chapter-by-chapter analysis of Lord of the Flies by William Golding: key events, symbolism, character development and key quotations for every chapter.',
+  },
   title: 'Lord of the Flies Chapter Summaries | The English Hub',
   description:
     'Detailed chapter-by-chapter analysis of Lord of the Flies by William Golding: key events, symbolism, character development and key quotations for every chapter.',

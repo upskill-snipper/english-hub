@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'A View from the Bridge Characters — Edexcel IGCSE Literature',
+    description:
+      'Character analysis for A View from the Bridge: Eddie Carbone, Catherine, Beatrice, Marco, Rodolpho and Alfieri.',
+  },
   title: 'A View from the Bridge Characters — Edexcel IGCSE Literature',
   description:
     'Character analysis for A View from the Bridge: Eddie Carbone, Catherine, Beatrice, Marco, Rodolpho and Alfieri.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/characters',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/characters',
   },
 }
 
@@ -68,21 +72,25 @@ export default async function AViewCharactersPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Drama", url: "https://theenglishhub.app/igcse/edexcel/drama" },
-          { name: "A View from the Bridge", url: "https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge" },
-          { name: "Characters", url: "https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/characters" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Drama', url: 'https://theenglishhub.app/igcse/edexcel/drama' },
+          {
+            name: 'A View from the Bridge',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge',
+          },
+          {
+            name: 'Characters',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/characters',
+          },
         ]}
       />
       <div>
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/edexcel/drama/a-view-from-the-bridge" />
-          }
+          render={<Link href="/igcse/edexcel/drama/a-view-from-the-bridge" />}
         >
           <ArrowLeft className="size-3.5" />
           Back to A View from the Bridge
@@ -102,9 +110,8 @@ export default async function AViewCharactersPage() {
             A View from the Bridge: Characters
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical profiles of Eddie, Catherine, Beatrice, Marco,
-            Rodolpho and Alfieri &mdash; with one short, fair-dealing
-            quotation each.
+            Analytical profiles of Eddie, Catherine, Beatrice, Marco, Rodolpho and Alfieri &mdash;
+            with one short, fair-dealing quotation each.
           </p>
         </div>
       </section>
@@ -117,8 +124,7 @@ export default async function AViewCharactersPage() {
               Key quotations only &mdash; read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and
-              criticism.
+              Short extracts are included under fair dealing for study and criticism.
             </p>
           </div>
         </div>
@@ -127,19 +133,12 @@ export default async function AViewCharactersPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Users className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Character profiles
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Character profiles</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
           {characters.map((c) => (
-            <article
-              key={c.name}
-              className="rounded-xl border border-border/60 bg-card p-5"
-            >
-              <h3 className="text-heading-sm font-heading text-foreground">
-                {c.name}
-              </h3>
+            <article key={c.name} className="rounded-xl border border-border/60 bg-card p-5">
+              <h3 className="text-heading-sm font-heading text-foreground">{c.name}</h3>
               <p className="mt-0.5 text-body-xs font-medium uppercase tracking-wide text-primary">
                 {c.role}
               </p>
@@ -155,10 +154,9 @@ export default async function AViewCharactersPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        A View from the Bridge &copy; The Arthur Miller Estate. Short
-        quotations reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for the purpose of criticism
-        and review.
+        A View from the Bridge &copy; The Arthur Miller Estate. Short quotations reproduced under
+        the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of
+        criticism and review.
       </p>
     </div>
   )

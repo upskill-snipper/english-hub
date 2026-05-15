@@ -6,6 +6,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Macbeth Context — Edexcel IGCSE Literature',
+    description:
+      'Jacobean context for Macbeth: James I, the Gunpowder Plot, Daemonologie and witchcraft, the Divine Right of Kings and the Great Chain of Being. For Edexcel IGCSE Literature.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/context',
   },

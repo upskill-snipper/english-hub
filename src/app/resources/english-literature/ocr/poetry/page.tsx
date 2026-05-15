@@ -7,6 +7,11 @@ import { headers } from 'next/headers'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'OCR Poetry Anthology Analysis | The English Hub',
+    description:
+      'Detailed analysis of poems from the OCR GCSE English Literature poetry anthology. Themes, techniques, comparison strategies, and key quotations.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/poetry' },
   title: 'OCR Poetry Anthology Analysis | The English Hub',
   description:

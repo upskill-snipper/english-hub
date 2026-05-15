@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'An Inspector Calls Essay Plans — Edexcel IGCSE Literature',
+    description:
+      'Five ready-to-use essay plans for An Inspector Calls covering responsibility, Sheila\u2019s development, the Inspector\u2019s role, class and dramatic techniques.',
+  },
   title: 'An Inspector Calls Essay Plans — Edexcel IGCSE Literature',
   description:
     'Five ready-to-use essay plans for An Inspector Calls covering responsibility, Sheila\u2019s development, the Inspector\u2019s role, class and dramatic techniques.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls/essay-plans',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls/essay-plans',
   },
 }
 
@@ -56,8 +60,7 @@ const essays = [
     ],
   },
   {
-    question:
-      'How does Priestley present Sheila\u2019s development across the play?',
+    question: 'How does Priestley present Sheila\u2019s development across the play?',
     thesis:
       'Sheila\u2019s arc moves from pampered daughter to moral conscience, and Priestley uses her transformation to embody the play\u2019s argument that change is possible for those willing to accept it.',
     paragraphs: [
@@ -94,8 +97,7 @@ const essays = [
     ],
   },
   {
-    question:
-      'How does Priestley use the Inspector to challenge the Birlings and the audience?',
+    question: 'How does Priestley use the Inspector to challenge the Birlings and the audience?',
     thesis:
       'The Inspector functions simultaneously as detective, moral judge and quasi-supernatural figure, and Priestley uses his structural control of the play to force both the Birlings and the audience into confrontation with their values.',
     paragraphs: [
@@ -132,8 +134,7 @@ const essays = [
     ],
   },
   {
-    question:
-      'How does Priestley present ideas about class in An Inspector Calls?',
+    question: 'How does Priestley present ideas about class in An Inspector Calls?',
     thesis:
       'Priestley presents the Edwardian class system as a structure that protects the wealthy by making the working class invisible, and he uses the Inspector to force the Birlings to see what their privilege has concealed.',
     paragraphs: [
@@ -216,12 +217,18 @@ export default async function InspectorCallsEssayPlansPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Drama", url: "https://theenglishhub.app/igcse/edexcel/drama" },
-          { name: "An Inspector Calls", url: "https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls" },
-          { name: "Essay Plans", url: "https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls/essay-plans" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Drama', url: 'https://theenglishhub.app/igcse/edexcel/drama' },
+          {
+            name: 'An Inspector Calls',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls',
+          },
+          {
+            name: 'Essay Plans',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls/essay-plans',
+          },
         ]}
       />
       <div>
@@ -248,8 +255,8 @@ export default async function InspectorCallsEssayPlansPage() {
             An Inspector Calls: Essay Plans
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Five exam-ready essay plans with thesis statements, paragraph
-            points and supporting quotations for top-band responses.
+            Five exam-ready essay plans with thesis statements, paragraph points and supporting
+            quotations for top-band responses.
           </p>
         </div>
       </section>
@@ -262,9 +269,8 @@ export default async function InspectorCallsEssayPlansPage() {
               Key quotations only &mdash; read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and
-              criticism. These plans are starting frameworks &mdash; always
-              develop your own argument.
+              Short extracts are included under fair dealing for study and criticism. These plans
+              are starting frameworks &mdash; always develop your own argument.
             </p>
           </div>
         </div>
@@ -273,28 +279,16 @@ export default async function InspectorCallsEssayPlansPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Essay plans
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Essay plans</h2>
         </div>
         <div className="space-y-8">
           {essays.map((essay, i) => (
-            <article
-              key={i}
-              className="rounded-xl border border-border/60 bg-card p-6"
-            >
-              <h3 className="text-heading-md font-heading text-foreground">
-                {essay.question}
-              </h3>
-              <p className="mt-2 text-body-sm font-medium text-primary">
-                Thesis: {essay.thesis}
-              </p>
+            <article key={i} className="rounded-xl border border-border/60 bg-card p-6">
+              <h3 className="text-heading-md font-heading text-foreground">{essay.question}</h3>
+              <p className="mt-2 text-body-sm font-medium text-primary">Thesis: {essay.thesis}</p>
               <div className="mt-4 space-y-4">
                 {essay.paragraphs.map((p, j) => (
-                  <div
-                    key={j}
-                    className="rounded-lg border border-border/40 bg-muted/30 p-4"
-                  >
+                  <div key={j} className="rounded-lg border border-border/40 bg-muted/30 p-4">
                     <p className="text-body-sm font-semibold text-foreground">
                       {j + 1}. {p.point}
                     </p>
@@ -313,10 +307,9 @@ export default async function InspectorCallsEssayPlansPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        An Inspector Calls &copy; The Estate of J.B. Priestley. Short
-        quotations reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for the purpose of criticism
-        and review.
+        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under
+        the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of
+        criticism and review.
       </p>
     </div>
   )

@@ -8,6 +8,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Things Fall Apart revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Things Fall Apart IGCSE revision — Achebe',
+  },
   title: 'Things Fall Apart revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Things Fall Apart IGCSE revision — Achebe's postcolonial novel with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE 4ET1.",

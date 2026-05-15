@@ -7,6 +7,11 @@ import { headers } from 'next/headers'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'OCR Paper 1: Exploring Modern and Literary Heritage Texts | The English Hub',
+    description:
+      'Complete guide to OCR GCSE English Literature Paper 01. Modern prose/drama and 19th-century literary heritage text revision.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/paper-1' },
   title: 'OCR Paper 1: Exploring Modern and Literary Heritage Texts | The English Hub',
   description:

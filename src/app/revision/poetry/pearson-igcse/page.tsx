@@ -9,6 +9,11 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { SET_TEXTS } from '@/lib/board/set-texts'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Pearson IGCSE Poetry Anthology (4EA1) — Section B — The English Hub',
+    description:
+      'All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.',
+  },
   title: 'Pearson IGCSE Poetry Anthology (4EA1) — Section B — The English Hub',
   description:
     'All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.',

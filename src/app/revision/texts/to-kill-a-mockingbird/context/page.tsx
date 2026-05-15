@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'To Kill a Mockingbird — Historical Context | The English Hub',
+    description:
+      'Historical and social context for To Kill a Mockingbird by Harper Lee: 1930s Alabama, Jim Crow laws, the Great Depression, Harper Lee',
+  },
   title: 'To Kill a Mockingbird — Historical Context | The English Hub',
   description:
     "Historical and social context for To Kill a Mockingbird by Harper Lee: 1930s Alabama, Jim Crow laws, the Great Depression, Harper Lee's biography and the Scottsboro Boys.",

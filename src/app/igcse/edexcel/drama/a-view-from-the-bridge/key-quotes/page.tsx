@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'A View from the Bridge Key Quotes — Edexcel IGCSE Literature',
+    description:
+      'Fifteen key quotations from A View from the Bridge with speaker, context and analysis for Edexcel IGCSE Literature exam revision.',
+  },
   title: 'A View from the Bridge Key Quotes — Edexcel IGCSE Literature',
   description:
     'Fifteen key quotations from A View from the Bridge with speaker, context and analysis for Edexcel IGCSE Literature exam revision.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/key-quotes',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/key-quotes',
   },
 }
 
@@ -131,21 +135,25 @@ export default async function AViewKeyQuotesPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Drama", url: "https://theenglishhub.app/igcse/edexcel/drama" },
-          { name: "A View from the Bridge", url: "https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Drama', url: 'https://theenglishhub.app/igcse/edexcel/drama' },
+          {
+            name: 'A View from the Bridge',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/key-quotes',
+          },
         ]}
       />
       <div>
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/edexcel/drama/a-view-from-the-bridge" />
-          }
+          render={<Link href="/igcse/edexcel/drama/a-view-from-the-bridge" />}
         >
           <ArrowLeft className="size-3.5" />
           Back to A View from the Bridge
@@ -165,8 +173,8 @@ export default async function AViewKeyQuotesPage() {
             A View from the Bridge: Key Quotes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Fifteen essential quotations with speaker, context and analysis
-            &mdash; designed for exam revision and essay planning.
+            Fifteen essential quotations with speaker, context and analysis &mdash; designed for
+            exam revision and essay planning.
           </p>
         </div>
       </section>
@@ -175,14 +183,11 @@ export default async function AViewKeyQuotesPage() {
         <div className="flex gap-3">
           <Info className="mt-0.5 size-5 shrink-0 text-amber-600 dark:text-clay-600" />
           <div className="space-y-1">
-            <h2 className="text-body-sm font-semibold text-foreground">
-              Fair dealing notice
-            </h2>
+            <h2 className="text-body-sm font-semibold text-foreground">Fair dealing notice</h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              All quotations are short extracts (under 15 words) included
-              under the fair dealing provision of the Copyright, Designs and
-              Patents Act 1988 for the purpose of criticism, review and
-              study. This page is not a substitute for reading the full play.
+              All quotations are short extracts (under 15 words) included under the fair dealing
+              provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism,
+              review and study. This page is not a substitute for reading the full play.
             </p>
           </div>
         </div>
@@ -191,25 +196,16 @@ export default async function AViewKeyQuotesPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            15 key quotations
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">15 key quotations</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {quotes.map((q, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-border/60 bg-card p-5"
-            >
+            <div key={i} className="rounded-xl border border-border/60 bg-card p-5">
               <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                 {q.quote}
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">
-                &mdash; {q.speaker}
-              </p>
-              <p className="mt-1 text-body-xs text-muted-foreground">
-                {q.context}
-              </p>
+              <p className="mt-2 text-body-xs font-medium text-primary">&mdash; {q.speaker}</p>
+              <p className="mt-1 text-body-xs text-muted-foreground">{q.context}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}
               </p>
@@ -219,10 +215,9 @@ export default async function AViewKeyQuotesPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        A View from the Bridge &copy; The Arthur Miller Estate. Short
-        quotations reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for the purpose of criticism
-        and review.
+        A View from the Bridge &copy; The Arthur Miller Estate. Short quotations reproduced under
+        the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of
+        criticism and review.
       </p>
     </div>
   )

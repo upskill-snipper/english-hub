@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Vocabulary Upgrade — Cambridge IGCSE Composition',
+    description:
+      'Replace tired, overused words with precise alternatives for Cambridge IGCSE composition. Said, big, small, good, bad, walked, looked and more.',
+  },
   title: 'Vocabulary Upgrade — Cambridge IGCSE Composition',
   description:
     'Replace tired, overused words with precise alternatives for Cambridge IGCSE composition. Said, big, small, good, bad, walked, looked and more.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/vocabulary-upgrade',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/vocabulary-upgrade',
   },
 }
 
@@ -213,11 +217,7 @@ export default async function VocabularyUpgradePage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <Button
-        variant="ghost"
-        size="sm"
-        render={<Link href="/igcse/cambridge/composition" />}
-      >
+      <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/composition" />}>
         <ChevronLeft className="size-3.5" />
         Back to composition
       </Button>
@@ -236,25 +236,20 @@ export default async function VocabularyUpgradePage() {
             Vocabulary upgrade
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Precise vocabulary is one of the quickest ways to move up a band.
-            The goal is not longer words — it is more <em>exact</em> words.
-            Each upgrade below has a short definition so you pick the one
-            that fits your sentence, not just the biggest one.
+            Precise vocabulary is one of the quickest ways to move up a band. The goal is not longer
+            words — it is more <em>exact</em> words. Each upgrade below has a short definition so
+            you pick the one that fits your sentence, not just the biggest one.
           </p>
         </div>
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-6">
-        <h2 className="text-heading-md font-heading text-foreground">
-          The rule of precision
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">The rule of precision</h2>
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
-          A shorter, precise word beats a longer, vague one. <em>Trudged</em>{' '}
-          is better than <em>walked</em>. <em>Muttered</em> is better than{' '}
-          <em>vociferated</em> — not because it\u2019s longer or fancier, but
-          because it tells the reader exactly how the character spoke.
-          Precision is what examiners reward; thesaurus-mining is what they
-          flag.
+          A shorter, precise word beats a longer, vague one. <em>Trudged</em> is better than{' '}
+          <em>walked</em>. <em>Muttered</em> is better than <em>vociferated</em> — not because
+          it\u2019s longer or fancier, but because it tells the reader exactly how the character
+          spoke. Precision is what examiners reward; thesaurus-mining is what they flag.
         </p>
       </section>
 
@@ -262,9 +257,7 @@ export default async function VocabularyUpgradePage() {
         <section key={g.category}>
           <div className="mb-5 flex items-center gap-3">
             <Type className="size-5 text-primary" />
-            <h2 className="text-heading-lg font-heading text-foreground">
-              {g.category}
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">{g.category}</h2>
           </div>
           <div className="space-y-4">
             {g.words.map((w) => (
@@ -274,11 +267,7 @@ export default async function VocabularyUpgradePage() {
                     <span className="text-muted-foreground">instead of </span>
                     <span className="italic">{w.word}</span>
                   </CardTitle>
-                  {w.note && (
-                    <p className="pt-1 text-body-xs text-muted-foreground">
-                      {w.note}
-                    </p>
-                  )}
+                  {w.note && <p className="pt-1 text-body-xs text-muted-foreground">{w.note}</p>}
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-2 sm:grid-cols-2">
@@ -287,12 +276,8 @@ export default async function VocabularyUpgradePage() {
                         key={u.word}
                         className="rounded-lg border border-border/60 bg-muted/30 p-3"
                       >
-                        <p className="text-body-sm font-semibold text-foreground">
-                          {u.word}
-                        </p>
-                        <p className="text-body-xs text-muted-foreground">
-                          {u.means}
-                        </p>
+                        <p className="text-body-sm font-semibold text-foreground">{u.word}</p>
+                        <p className="text-body-xs text-muted-foreground">{u.means}</p>
                       </div>
                     ))}
                   </div>
@@ -308,11 +293,10 @@ export default async function VocabularyUpgradePage() {
           A warning about thesaurus writing
         </h2>
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
-          Swapping every word for a longer synonym is one of the clearest
-          markers of Band 3 writing. If a reader has to reach for a
-          dictionary twice in one paragraph, something has gone wrong. The
-          aim of this page is not to sound clever — it is to sound{' '}
-          <em>exact</em>. Replace only the words that are doing vague work.
+          Swapping every word for a longer synonym is one of the clearest markers of Band 3 writing.
+          If a reader has to reach for a dictionary twice in one paragraph, something has gone
+          wrong. The aim of this page is not to sound clever — it is to sound <em>exact</em>.
+          Replace only the words that are doing vague work.
         </p>
       </section>
     </div>

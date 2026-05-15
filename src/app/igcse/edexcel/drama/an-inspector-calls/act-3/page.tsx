@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'An Inspector Calls Act 3 Analysis — Edexcel IGCSE Literature',
+    description:
+      'Detailed Act 3 analysis of An Inspector Calls: Eric\u2019s confession, the Inspector\u2019s final speech, the family splits, and the phone-call twist.',
+  },
   title: 'An Inspector Calls Act 3 Analysis — Edexcel IGCSE Literature',
   description:
     'Detailed Act 3 analysis of An Inspector Calls: Eric\u2019s confession, the Inspector\u2019s final speech, the family splits, and the phone-call twist.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls/act-3',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls/act-3',
   },
 }
 
@@ -74,12 +78,18 @@ export default async function InspectorCallsAct3Page() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Drama", url: "https://theenglishhub.app/igcse/edexcel/drama" },
-          { name: "An Inspector Calls", url: "https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls" },
-          { name: "Act 3", url: "https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls/act-3" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Drama', url: 'https://theenglishhub.app/igcse/edexcel/drama' },
+          {
+            name: 'An Inspector Calls',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls',
+          },
+          {
+            name: 'Act 3',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/an-inspector-calls/act-3',
+          },
         ]}
       />
       <div>
@@ -106,9 +116,8 @@ export default async function InspectorCallsAct3Page() {
             An Inspector Calls: Act 3
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Detailed analysis of the final act &mdash; Eric's confession, the
-            Inspector's "fire and blood" speech, the generational split, and
-            the devastating phone-call twist.
+            Detailed analysis of the final act &mdash; Eric's confession, the Inspector's "fire and
+            blood" speech, the generational split, and the devastating phone-call twist.
           </p>
         </div>
       </section>
@@ -121,8 +130,7 @@ export default async function InspectorCallsAct3Page() {
               Key quotations only &mdash; read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and
-              criticism.
+              Short extracts are included under fair dealing for study and criticism.
             </p>
           </div>
         </div>
@@ -131,19 +139,12 @@ export default async function InspectorCallsAct3Page() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Scene-by-scene analysis
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Scene-by-scene analysis</h2>
         </div>
         <div className="space-y-5">
           {sections.map((s) => (
-            <article
-              key={s.title}
-              className="rounded-xl border border-border/60 bg-card p-6"
-            >
-              <h3 className="text-heading-md font-heading text-foreground">
-                {s.title}
-              </h3>
+            <article key={s.title} className="rounded-xl border border-border/60 bg-card p-6">
+              <h3 className="text-heading-md font-heading text-foreground">{s.title}</h3>
               <p className="mt-3 text-body-sm leading-relaxed text-muted-foreground">
                 {s.analysis}
               </p>
@@ -156,10 +157,9 @@ export default async function InspectorCallsAct3Page() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        An Inspector Calls &copy; The Estate of J.B. Priestley. Short
-        quotations reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for the purpose of criticism
-        and review.
+        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under
+        the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of
+        criticism and review.
       </p>
     </div>
   )

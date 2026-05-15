@@ -25,6 +25,11 @@ import { t } from '@/lib/i18n/t'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Edexcel IGCSE English Language A (4EA1) — The English Hub',
+    description:
+      'Complete revision hub for Pearson Edexcel IGCSE English Language A. Paper 1 non-fiction anthology, Paper 2 transactional writing, exam technique and study tools.',
+  },
   title: 'Edexcel IGCSE English Language A (4EA1) — The English Hub',
   description:
     'Complete revision hub for Pearson Edexcel IGCSE English Language A. Paper 1 non-fiction anthology, Paper 2 transactional writing, exam technique and study tools.',

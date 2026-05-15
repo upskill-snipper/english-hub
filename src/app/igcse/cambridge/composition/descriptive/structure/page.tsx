@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Descriptive Structure — Cambridge IGCSE Composition',
+    description:
+      'Structure a Cambridge IGCSE descriptive composition using the cinematic zoom technique: wide shot, mid shot, close-up and inner monologue.',
+  },
   title: 'Descriptive Structure — Cambridge IGCSE Composition',
   description:
     'Structure a Cambridge IGCSE descriptive composition using the cinematic zoom technique: wide shot, mid shot, close-up and inner monologue.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/descriptive/structure',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/descriptive/structure',
   },
 }
 
@@ -79,10 +83,9 @@ export default async function StructurePage() {
             Describing a scene
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            The cinematic zoom is the simplest reliable structure for a
-            descriptive composition. Start wide, move closer, hold on a single
-            detail, then pull back. It gives your piece shape without
-            requiring plot.
+            The cinematic zoom is the simplest reliable structure for a descriptive composition.
+            Start wide, move closer, hold on a single detail, then pull back. It gives your piece
+            shape without requiring plot.
           </p>
         </div>
       </section>
@@ -91,16 +94,13 @@ export default async function StructurePage() {
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-6">
         <div className="mb-3 flex items-center gap-3">
           <Camera className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            The four-shot structure
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">The four-shot structure</h2>
         </div>
         <p className="text-body-sm text-muted-foreground">
           Think of your description as a four-shot sequence in a film:{' '}
-          <strong className="text-foreground">wide → mid → close →
-          inner</strong>. Each stage has a different job, a different length
-          and a different level of detail. The reader should feel the camera
-          moving.
+          <strong className="text-foreground">wide → mid → close → inner</strong>. Each stage has a
+          different job, a different length and a different level of detail. The reader should feel
+          the camera moving.
         </p>
       </section>
 
@@ -114,9 +114,7 @@ export default async function StructurePage() {
                   <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-sm font-bold text-primary">
                     {i + 1}
                   </div>
-                  <CardTitle className="text-heading-sm font-heading">
-                    {z.stage}
-                  </CardTitle>
+                  <CardTitle className="text-heading-sm font-heading">{z.stage}</CardTitle>
                 </div>
                 <Badge variant="secondary">{z.length}</Badge>
               </div>
@@ -127,9 +125,7 @@ export default async function StructurePage() {
                 <p className="text-body-xs font-semibold uppercase tracking-wide text-primary">
                   Example
                 </p>
-                <p className="mt-2 italic text-foreground">
-                  &ldquo;{z.example}&rdquo;
-                </p>
+                <p className="mt-2 italic text-foreground">&ldquo;{z.example}&rdquo;</p>
               </div>
             </CardContent>
           </Card>
@@ -140,22 +136,17 @@ export default async function StructurePage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Layers className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Alternative structures
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Alternative structures</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <Card>
             <CardHeader>
-              <CardTitle className="text-heading-sm font-heading">
-                Time shift
-              </CardTitle>
+              <CardTitle className="text-heading-sm font-heading">Time shift</CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground space-y-2">
               <p>
-                Describe the same place at two different times — dawn and
-                dusk, summer and winter, before and after a storm. The
-                contrast does your structural work for you.
+                Describe the same place at two different times — dawn and dusk, summer and winter,
+                before and after a storm. The contrast does your structural work for you.
               </p>
               <p className="text-foreground">
                 <em>Best for:</em> beaches, streets, gardens, rooms.
@@ -164,15 +155,13 @@ export default async function StructurePage() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle className="text-heading-sm font-heading">
-                Walking tour
-              </CardTitle>
+              <CardTitle className="text-heading-sm font-heading">Walking tour</CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground space-y-2">
               <p>
-                Move the narrator physically through the scene — a door, a
-                hallway, a courtyard, a balcony. Each paragraph is a new
-                space. Keep the narrator silent; let the setting speak.
+                Move the narrator physically through the scene — a door, a hallway, a courtyard, a
+                balcony. Each paragraph is a new space. Keep the narrator silent; let the setting
+                speak.
               </p>
               <p className="text-foreground">
                 <em>Best for:</em> houses, castles, abandoned buildings.
@@ -181,15 +170,12 @@ export default async function StructurePage() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle className="text-heading-sm font-heading">
-                Weather frame
-              </CardTitle>
+              <CardTitle className="text-heading-sm font-heading">Weather frame</CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground space-y-2">
               <p>
-                The weather changes from paragraph one to paragraph four. A
-                sunny opening gives way to storm, or fog lifts to reveal the
-                view. Weather carries the mood shift.
+                The weather changes from paragraph one to paragraph four. A sunny opening gives way
+                to storm, or fog lifts to reveal the view. Weather carries the mood shift.
               </p>
               <p className="text-foreground">
                 <em>Best for:</em> landscapes, coasts, fields.
@@ -198,15 +184,13 @@ export default async function StructurePage() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle className="text-heading-sm font-heading">
-                Observer pair
-              </CardTitle>
+              <CardTitle className="text-heading-sm font-heading">Observer pair</CardTitle>
             </CardHeader>
             <CardContent className="text-body-sm text-muted-foreground space-y-2">
               <p>
-                Two characters observe the same scene. Describe only through
-                their reactions — one delighted, one bored; one remembering,
-                one forgetting. Character becomes description.
+                Two characters observe the same scene. Describe only through their reactions — one
+                delighted, one bored; one remembering, one forgetting. Character becomes
+                description.
               </p>
               <p className="text-foreground">
                 <em>Best for:</em> markets, festivals, family occasions.
@@ -218,33 +202,30 @@ export default async function StructurePage() {
 
       {/* Opening and closing rules */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Opening and closing rules
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Opening and closing rules</h2>
         <ul className="mt-4 space-y-3 text-body-sm text-muted-foreground">
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Do not open with the
-              weather</strong> unless the weather is your whole piece. Open
-              on a specific, unexpected detail.
+              <strong className="text-foreground">Do not open with the weather</strong> unless the
+              weather is your whole piece. Open on a specific, unexpected detail.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Do not open with &ldquo;It
-              was a...&rdquo;</strong> Examiners see thousands of these. Start
-              mid-image.
+              <strong className="text-foreground">
+                Do not open with &ldquo;It was a...&rdquo;
+              </strong>{' '}
+              Examiners see thousands of these. Start mid-image.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Echo the opening in the
-              final line.</strong> Not the same words — the same image,
-              changed. This single move reads as &ldquo;crafted shape&rdquo;
-              on any mark scheme.
+              <strong className="text-foreground">Echo the opening in the final line.</strong> Not
+              the same words — the same image, changed. This single move reads as &ldquo;crafted
+              shape&rdquo; on any mark scheme.
             </span>
           </li>
         </ul>

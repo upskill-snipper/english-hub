@@ -12,17 +12,17 @@ import {
   Feather,
   FileText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 2 Directed Writing & Composition | Cambridge IGCSE Language B | The English Hub',
+    description:
+      'Cambridge IGCSE Language B Paper 2 Directed Writing and Composition: full breakdown, timing, grade boundaries and exam technique.',
+  },
   title: 'Paper 2 Directed Writing & Composition | Cambridge IGCSE Language B | The English Hub',
   description:
     'Cambridge IGCSE Language B Paper 2 Directed Writing and Composition: full breakdown, timing, grade boundaries and exam technique.',
@@ -76,11 +76,7 @@ export default async function Paper2Page() {
   return (
     <div className="space-y-10 pb-16">
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/0990" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/0990" />}>
           <ArrowLeft className="size-3.5" />
           Back to IGCSE Language B hub
         </Button>
@@ -101,14 +97,12 @@ export default async function Paper2Page() {
             Paper 2: Directed Writing & Composition
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Two hours. Two pieces of writing — one directed response and one
-            extended composition. 80 marks, worth 50% of the IGCSE Language B
-            qualification.
+            Two hours. Two pieces of writing — one directed response and one extended composition.
+            80 marks, worth 50% of the IGCSE Language B qualification.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <Clock className="size-3.5" />
-              2 hours
+              <Clock className="size-3.5" />2 hours
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
               <PenTool className="size-3.5" />
@@ -126,9 +120,7 @@ export default async function Paper2Page() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <PenTool className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Paper structure
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Paper structure</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           {sections.map((s) => {
@@ -163,9 +155,7 @@ export default async function Paper2Page() {
                     </div>
                   </div>
                   <div>
-                    <p className="text-body-xs font-medium text-foreground">
-                      Typical forms
-                    </p>
+                    <p className="text-body-xs font-medium text-foreground">Typical forms</p>
                     <ul className="mt-1 flex flex-wrap gap-1.5">
                       {s.forms.map((f) => (
                         <li key={f}>
@@ -202,16 +192,9 @@ export default async function Paper2Page() {
               </thead>
               <tbody>
                 {boundaries.map((b) => (
-                  <tr
-                    key={b.grade}
-                    className="border-b border-border/40 last:border-0"
-                  >
-                    <td className="px-4 py-3 font-semibold text-foreground">
-                      {b.grade}
-                    </td>
-                    <td className="px-4 py-3 text-muted-foreground">
-                      {b.mark}
-                    </td>
+                  <tr key={b.grade} className="border-b border-border/40 last:border-0">
+                    <td className="px-4 py-3 font-semibold text-foreground">{b.grade}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{b.mark}</td>
                     <td className="px-4 py-3 text-muted-foreground">
                       {Math.round((b.mark / 80) * 100)}%
                     </td>
@@ -219,16 +202,16 @@ export default async function Paper2Page() {
                       {b.grade === 9
                         ? 'Above A*'
                         : b.grade === 8
-                        ? 'A*/A'
-                        : b.grade === 7
-                        ? 'A'
-                        : b.grade === 6
-                        ? 'B'
-                        : b.grade === 5
-                        ? 'B/C'
-                        : b.grade === 4
-                        ? 'C'
-                        : 'D'}
+                          ? 'A*/A'
+                          : b.grade === 7
+                            ? 'A'
+                            : b.grade === 6
+                              ? 'B'
+                              : b.grade === 5
+                                ? 'B/C'
+                                : b.grade === 4
+                                  ? 'C'
+                                  : 'D'}
                     </td>
                   </tr>
                 ))}
@@ -261,48 +244,43 @@ export default async function Paper2Page() {
 
       {/* What examiners reward */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          What examiners reward
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">What examiners reward</h2>
         <ul className="mt-4 space-y-3 text-body-sm text-muted-foreground">
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">A clear voice.</strong>{' '}
-              Match register to the form — a speech sounds different from a
-              journal entry. Don&apos;t write both in the same voice.
+              <strong className="text-foreground">A clear voice.</strong> Match register to the form
+              — a speech sounds different from a journal entry. Don&apos;t write both in the same
+              voice.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Varied sentence structure.</strong>{' '}
-              Mix short, punchy sentences with longer flowing ones for
-              deliberate effect.
+              <strong className="text-foreground">Varied sentence structure.</strong> Mix short,
+              punchy sentences with longer flowing ones for deliberate effect.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
               <strong className="text-foreground">Ambitious vocabulary used accurately.</strong>{' '}
-              Precise word choices beat obscure ones. If you&apos;re not sure
-              of a word, don&apos;t use it.
+              Precise word choices beat obscure ones. If you&apos;re not sure of a word, don&apos;t
+              use it.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Structural control.</strong>{' '}
-              Openings that hook, paragraphs that build, endings that land.
-              Use a plan — don&apos;t draft as you write.
+              <strong className="text-foreground">Structural control.</strong> Openings that hook,
+              paragraphs that build, endings that land. Use a plan — don&apos;t draft as you write.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Section A uses the text.</strong>{' '}
-              The 15 reading marks come from how well you develop ideas from
-              the stimulus. Don&apos;t ignore it.
+              <strong className="text-foreground">Section A uses the text.</strong> The 15 reading
+              marks come from how well you develop ideas from the stimulus. Don&apos;t ignore it.
             </span>
           </li>
         </ul>
@@ -310,14 +288,9 @@ export default async function Paper2Page() {
 
       {/* Next */}
       <section className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Next steps
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Next steps</h2>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Button
-            size="sm"
-            render={<Link href="/igcse/cambridge/0990/practice-paper-2" />}
-          >
+          <Button size="sm" render={<Link href="/igcse/cambridge/0990/practice-paper-2" />}>
             Practice Paper 2 with model answers
             <ArrowRight className="size-3.5" />
           </Button>

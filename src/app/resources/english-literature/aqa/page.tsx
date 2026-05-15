@@ -4,6 +4,11 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'AQA GCSE English Literature resources — The English Hub',
+    description:
+      'AQA GCSE English Literature set-text guides for Macbeth, Romeo and Juliet, Power and Conflict poetry, exam technique and Grade 9 essay plans.',
+  },
   title: 'AQA GCSE English Literature resources — The English Hub',
   description:
     'AQA GCSE English Literature set-text guides for Macbeth, Romeo and Juliet, Power and Conflict poetry, exam technique and Grade 9 essay plans.',

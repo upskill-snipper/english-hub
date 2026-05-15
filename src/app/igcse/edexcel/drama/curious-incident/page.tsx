@@ -9,6 +9,12 @@ import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'The Curious Incident of the Dog in the Night-Time — Edexcel IGCSE Literature Study Guide',
+    description:
+      'Simon Stephens\u2019s stage adaptation of Mark Haddon\u2019s novel for Edexcel IGCSE Literature: plot, characters, themes and key quotations.',
+  },
   title: 'The Curious Incident of the Dog in the Night-Time — Edexcel IGCSE Literature Study Guide',
   description:
     'Simon Stephens\u2019s stage adaptation of Mark Haddon\u2019s novel for Edexcel IGCSE Literature: plot, characters, themes and key quotations.',

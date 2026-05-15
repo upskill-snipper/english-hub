@@ -7,6 +7,11 @@ import { STRINGS as _EAL_STRINGS } from './content'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Edexcel Poetry Anthology — Relationships and Conflict Clusters',
+    description:
+      'Full analysis of all 30 poems in the Edexcel GCSE English Literature poetry anthology. Relationships and Conflict clusters with themes, language analysis, structure, and comparison ideas.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/poetry',
   },

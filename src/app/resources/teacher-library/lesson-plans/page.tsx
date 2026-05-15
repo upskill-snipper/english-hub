@@ -6,6 +6,11 @@ import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Lesson Plans — Teacher Library',
+    description:
+      '20 free, ready-to-teach GCSE English lesson plans with learning objectives, activities, differentiation, and plenaries.',
+  },
   title: 'Lesson Plans — Teacher Library',
   description:
     '20 free, ready-to-teach GCSE English lesson plans with learning objectives, activities, differentiation, and plenaries.',

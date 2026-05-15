@@ -154,7 +154,7 @@ export default async function RefundPolicyPage() {
           <h2 className="text-xl font-semibold text-foreground">{s1H2}</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             {s1P1Pre}
-            <Link href="https://theenglishhub.app" className="underline hover:text-foreground">
+            <Link href="/" className="underline hover:text-foreground">
               {s1P1Link}
             </Link>
             {s1P1Post}

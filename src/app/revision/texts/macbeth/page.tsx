@@ -70,6 +70,11 @@ const COMPARISON_CARDS: ComparisonCard[] = [
 ]
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Macbeth revision guide — themes, characters, key quotes — The English Hub',
+    description:
+      'Macbeth GCSE revision — act-by-act analysis, characters, themes, key quotes, context and essay plans. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.',
+  },
   title: 'Macbeth revision guide — themes, characters, key quotes — The English Hub',
   description:
     'Macbeth GCSE revision — act-by-act analysis, characters, themes, key quotes, context and essay plans. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.',

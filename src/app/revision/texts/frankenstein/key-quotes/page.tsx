@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Frankenstein Key Quotes by Theme | The English Hub',
+    description:
+      'Twenty-five key quotations from Frankenstein by Mary Shelley organised by theme with detailed analysis for GCSE revision.',
+  },
   title: 'Frankenstein Key Quotes by Theme | The English Hub',
   description:
     'Twenty-five key quotations from Frankenstein by Mary Shelley organised by theme with detailed analysis for GCSE revision.',

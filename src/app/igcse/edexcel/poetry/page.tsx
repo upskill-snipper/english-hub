@@ -16,6 +16,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import StudyTools from '@/components/study/StudyTools'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Edexcel IGCSE Literature Anthology Poetry — The English Hub',
+    description:
+      'Complete study guide for the prescribed poems in the Pearson Edexcel International GCSE Literature (4ET1) Anthology Poetry section. Line-by-line analysis, quotes, comparison guides and exam tips.',
+  },
   title: 'Edexcel IGCSE Literature Anthology Poetry — The English Hub',
   description:
     'Complete study guide for the prescribed poems in the Pearson Edexcel International GCSE Literature (4ET1) Anthology Poetry section. Line-by-line analysis, quotes, comparison guides and exam tips.',

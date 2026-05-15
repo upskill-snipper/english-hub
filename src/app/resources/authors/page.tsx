@@ -4,6 +4,11 @@ import Link from 'next/link'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Authors & Poets — Verified Bios for GCSE & IGCSE English',
+    description:
+      'Verified author and poet biographies for GCSE and IGCSE English Literature: dates, key works, exam-board notes, and the common factual errors students make.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/authors' },
   title: 'Authors & Poets — Verified Bios for GCSE & IGCSE English',
   description:

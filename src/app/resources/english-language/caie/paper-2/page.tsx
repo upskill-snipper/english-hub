@@ -7,6 +7,11 @@ import { headers } from 'next/headers'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 2: Directed Writing & Composition | Cambridge IGCSE English Language',
+    description:
+      'Complete guide to Cambridge IGCSE English Language directed writing and composition. Covers letters, reports, articles, speeches, journals, narrative and descriptive writing, with full band descriptors.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/paper-2' },
   title: 'Paper 2: Directed Writing & Composition | Cambridge IGCSE English Language',
   description:

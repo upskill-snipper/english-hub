@@ -13,24 +13,22 @@ import {
   Type,
   FileText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title:
-    'Narrative Voice — Reading Practice Framework — The English Hub',
+  openGraph: {
+    title: 'Narrative Voice — Reading Practice Framework — The English Hub',
+    description:
+      'Cambridge IGCSE Paper 1 reading practice on first-person vs third-person narration. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.',
+  },
+  title: 'Narrative Voice — Reading Practice Framework — The English Hub',
   description:
     'Cambridge IGCSE Paper 1 reading practice on first-person vs third-person narration. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/reading/narrative-voice',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/reading/narrative-voice',
   },
 }
 
@@ -87,11 +85,7 @@ export default async function NarrativeVoicePage() {
   return (
     <div className="space-y-8 pb-16">
       <header className="space-y-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All reading frameworks
         </Button>
@@ -103,14 +97,11 @@ export default async function NarrativeVoicePage() {
           <Badge variant="secondary">Reading framework</Badge>
           <Badge variant="secondary">Paper 1</Badge>
         </div>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Narrative Voice
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Narrative Voice</h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
-          The narrator is not neutral. They choose what to show you and what
-          to hide, what to praise and what to mock. Understanding point of
-          view transforms how you read a passage and how well you can
-          analyse it.
+          The narrator is not neutral. They choose what to show you and what to hide, what to praise
+          and what to mock. Understanding point of view transforms how you read a passage and how
+          well you can analyse it.
         </p>
       </header>
 
@@ -127,10 +118,9 @@ export default async function NarrativeVoicePage() {
         </CardHeader>
         <CardContent>
           <p className="text-body-sm text-foreground">
-            Narrative voice passages sharpen your vocabulary for perspective,
-            your eye for implicit judgement, and your ability to distinguish
-            what is seen from who is seeing. Paper 1 often asks candidates
-            to write about the effect of a narrator’s voice.
+            Narrative voice passages sharpen your vocabulary for perspective, your eye for implicit
+            judgement, and your ability to distinguish what is seen from who is seeing. Paper 1
+            often asks candidates to write about the effect of a narrator’s voice.
           </p>
         </CardContent>
       </Card>
@@ -138,14 +128,11 @@ export default async function NarrativeVoicePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Suggested practice texts
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Suggested practice texts</h2>
         </div>
         <p className="mb-4 text-body-sm text-muted-foreground">
-          These three novels each take a different approach to narrative
-          voice. Read a passage of around 700 words from whichever one
-          interests you.
+          These three novels each take a different approach to narrative voice. Read a passage of
+          around 700 words from whichever one interests you.
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           {sources.map((s) => (
@@ -175,9 +162,7 @@ export default async function NarrativeVoicePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Comprehension questions
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Comprehension questions</h2>
         </div>
         <Card>
           <CardContent className="pt-6">
@@ -193,19 +178,17 @@ export default async function NarrativeVoicePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <MessageSquare className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Language analysis prompt
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Language analysis prompt</h2>
         </div>
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="pt-6">
             <p className="text-body-md italic text-foreground">
-              &ldquo;How does the writer use language to shape the reader’s
-              trust in the narrator?&rdquo;
+              &ldquo;How does the writer use language to shape the reader’s trust in the
+              narrator?&rdquo;
             </p>
             <p className="mt-4 text-body-sm text-muted-foreground">
-              Write roughly 150 words. Quote three phrases and comment on
-              pronouns, judgements and any moment of doubt or confidence.
+              Write roughly 150 words. Quote three phrases and comment on pronouns, judgements and
+              any moment of doubt or confidence.
             </p>
           </CardContent>
         </Card>
@@ -214,31 +197,25 @@ export default async function NarrativeVoicePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Summary task template
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Summary task template</h2>
         </div>
         <Card>
           <CardContent className="pt-6 space-y-3 text-body-sm text-foreground">
             <p>
-              Summarise the narrative voice in{' '}
-              <strong>no more than 120 words</strong>.
+              Summarise the narrative voice in <strong>no more than 120 words</strong>.
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
                 <strong>Sentence 1:</strong> The type of narration used.
               </li>
               <li>
-                <strong>Sentence 2:</strong> How close the narrator feels to
-                the main character.
+                <strong>Sentence 2:</strong> How close the narrator feels to the main character.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two specific traits of the
-                narrator’s voice.
+                <strong>Sentences 3–4:</strong> Two specific traits of the narrator’s voice.
               </li>
               <li>
-                <strong>Sentence 5:</strong> The effect of the chosen
-                perspective on the reader.
+                <strong>Sentence 5:</strong> The effect of the chosen perspective on the reader.
               </li>
             </ul>
           </CardContent>
@@ -248,13 +225,10 @@ export default async function NarrativeVoicePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Type className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Vocabulary focus
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Vocabulary focus</h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
-          Eight terms you should be fluent in when writing about narrative
-          voice.
+          Eight terms you should be fluent in when writing about narrative voice.
         </p>
         <div className="flex flex-wrap gap-2">
           {vocabulary.map((v) => (
@@ -290,9 +264,7 @@ export default async function NarrativeVoicePage() {
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/cambridge/reading/setting-atmosphere" />
-          }
+          render={<Link href="/igcse/cambridge/reading/setting-atmosphere" />}
         >
           <ArrowLeft className="size-3.5" />
           Setting and atmosphere

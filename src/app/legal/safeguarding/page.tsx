@@ -3,6 +3,12 @@ import { Metadata } from 'next'
 import { STRINGS } from './content'
 import { headers } from 'next/headers'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Safeguarding Policy',
+    description:
+      'Safeguarding Policy for The English Hub, outlining our commitment to protecting children and young people.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/legal/safeguarding' },
   title: 'Safeguarding Policy',
   description:
     'Safeguarding Policy for The English Hub, outlining our commitment to protecting children and young people.',

@@ -9,6 +9,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Julius Caesar — Study Guide | The English Hub',
+    description:
+      'In-depth study guide for Julius Caesar by William Shakespeare: plot, characters, themes, context and key quotations.',
+  },
   title: 'Julius Caesar — Study Guide | The English Hub',
   description:
     'In-depth study guide for Julius Caesar by William Shakespeare: plot, characters, themes, context and key quotations.',
@@ -114,7 +119,8 @@ const data: TextGuideData = {
         'The play\u2019s most famous warning, compressed into a single metrical line. Caesar dismisses the speaker as "a dreamer," establishing the pattern of ignored omens.',
     },
     {
-      quote: '"The fault, dear Brutus, is not in our stars, / But in ourselves, that we are underlings."',
+      quote:
+        '"The fault, dear Brutus, is not in our stars, / But in ourselves, that we are underlings."',
       who: 'Cassius — Act 1, Scene 2',
       analysis:
         'Cassius\u2019s republican manifesto: men make their own political fate. The line cuts directly against the play\u2019s imagery of omens and stars.',
@@ -126,25 +132,29 @@ const data: TextGuideData = {
         'Part of the same speech, extending the argument that submission to Caesar is a choice, not a destiny. Cassius uses rhetoric to goad Brutus into action.',
     },
     {
-      quote: '"Let me have men about me that are fat, / Sleek-headed men and such as sleep a-nights. / Yond Cassius has a lean and hungry look; / He thinks too much: such men are dangerous."',
+      quote:
+        '"Let me have men about me that are fat, / Sleek-headed men and such as sleep a-nights. / Yond Cassius has a lean and hungry look; / He thinks too much: such men are dangerous."',
       who: 'Caesar — Act 1, Scene 2',
       analysis:
         'Caesar\u2019s private assessment of Cassius, combining shrewd political instinct with the self-confident claim that he fears no one.',
     },
     {
-      quote: '"It must be by his death: and for my part, / I know no personal cause to spurn at him, / But for the general."',
+      quote:
+        '"It must be by his death: and for my part, / I know no personal cause to spurn at him, / But for the general."',
       who: 'Brutus — Act 2, Scene 1',
       analysis:
         'Brutus\u2019s orchard soliloquy. He admits he has no personal grievance and constructs a hypothetical justification \u2014 Caesar must die not for what he is but for what he might become.',
     },
     {
-      quote: '"Cowards die many times before their deaths; / The valiant never taste of death but once."',
+      quote:
+        '"Cowards die many times before their deaths; / The valiant never taste of death but once."',
       who: 'Caesar — Act 2, Scene 2',
       analysis:
         'Caesar\u2019s response to Calpurnia\u2019s warnings. The line embodies his stoical public persona but is delivered just before he walks into the assassination.',
     },
     {
-      quote: '"When beggars die, there are no comets seen; / The heavens themselves blaze forth the death of princes."',
+      quote:
+        '"When beggars die, there are no comets seen; / The heavens themselves blaze forth the death of princes."',
       who: 'Calpurnia — Act 2, Scene 2',
       analysis:
         'Calpurnia reads the storm as a sign that Caesar is uniquely endangered. Her imagery links political rank to cosmic order, a hierarchy the play will shatter.',
@@ -168,7 +178,8 @@ const data: TextGuideData = {
         'The core of Brutus\u2019s funeral speech, delivered in balanced prose. It persuades the crowd \u2014 briefly \u2014 that personal affection has been sacrificed to public duty.',
     },
     {
-      quote: '"Friends, Romans, countrymen, lend me your ears; / I come to bury Caesar, not to praise him."',
+      quote:
+        '"Friends, Romans, countrymen, lend me your ears; / I come to bury Caesar, not to praise him."',
       who: 'Antony — Act 3, Scene 2',
       analysis:
         'The opening of the funeral oration. The tricolon address flatters the crowd into listening, and the apparent disclaimer sets up a speech that will do the opposite.',
@@ -192,13 +203,15 @@ const data: TextGuideData = {
         'A pause in the oration staged as grief. Antony accuses the crowd of losing reason while actively inciting them to do so, one of the play\u2019s sharpest rhetorical ironies.',
     },
     {
-      quote: '"There is a tide in the affairs of men, / Which, taken at the flood, leads on to fortune."',
+      quote:
+        '"There is a tide in the affairs of men, / Which, taken at the flood, leads on to fortune."',
       who: 'Brutus — Act 4, Scene 3',
       analysis:
         'Brutus insists on engaging at Philippi immediately. The metaphor is eloquent, but he is overruling Cassius\u2019s better military judgement, and the decision leads to defeat.',
     },
     {
-      quote: '"O Julius Caesar, thou art mighty yet! / Thy spirit walks abroad, and turns our swords / In our own proper entrails."',
+      quote:
+        '"O Julius Caesar, thou art mighty yet! / Thy spirit walks abroad, and turns our swords / In our own proper entrails."',
       who: 'Brutus — Act 5, Scene 3',
       analysis:
         'Over Cassius\u2019s body, Brutus acknowledges that Caesar\u2019s power has outlived his death. The image of swords turning inward captures the self-destruction of the conspiracy.',
@@ -210,7 +223,8 @@ const data: TextGuideData = {
         'Antony\u2019s tribute to the dead Brutus distinguishes him from the other conspirators, who acted from envy. The play ends with a grudging moral verdict on its tragic hero.',
     },
     {
-      quote: '"His life was gentle, and the elements / So mix\'d in him that Nature might stand up / And say to all the world, \'This was a man!\'"',
+      quote:
+        "\"His life was gentle, and the elements / So mix'd in him that Nature might stand up / And say to all the world, 'This was a man!'\"",
       who: 'Antony — Act 5, Scene 5',
       analysis:
         'The closing lines elevate Brutus to a model of balanced Stoic virtue. Shakespeare gives the last word on his protagonist to his political enemy, a final example of the play\u2019s layered sympathies.',
@@ -219,35 +233,386 @@ const data: TextGuideData = {
 }
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'jc-1', question: 'What warning does the Soothsayer give Caesar in Act 1?', type: 'multiple-choice', options: ['Trust no senator', 'Beware the ides of March', 'Fear the storm at night', 'Do not wear a crown'], correctIndex: 1, explanation: 'The Soothsayer warns Caesar to "beware the ides of March" (15 March). Caesar dismisses him as "a dreamer," setting up the play\'s pattern of ignored omens.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'jc-2', question: 'Who is the first conspirator to stab Caesar?', type: 'multiple-choice', options: ['Brutus', 'Cassius', 'Casca', 'Decius'], correctIndex: 2, explanation: 'Casca strikes the first blow with the line "Speak, hands, for me!" The other conspirators then follow, with Brutus\'s stab coming last and provoking Caesar\'s "Et tu, Brute?".', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'jc-3', question: 'Who says "Friends, Romans, countrymen, lend me your ears"?', type: 'multiple-choice', options: ['Brutus', 'Cassius', 'Caesar', 'Mark Antony'], correctIndex: 3, explanation: 'Mark Antony opens his funeral oration with this tricolon, flattering the crowd into listening. The speech goes on to turn them against the conspirators.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'jc-4', question: 'What does Caesar say as Brutus joins the attack?', type: 'multiple-choice', options: ['"Havoc!"', '"Et tu, Brute?"', '"The ides have come"', '"Traitor!"'], correctIndex: 1, explanation: '"Et tu, Brute? Then fall, Caesar." Shakespeare\'s wording, not a historical record. The betrayal by Brutus ends Caesar\'s will to resist.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'jc-5', question: 'What dream does Calpurnia have on the night before the ides of March?', type: 'multiple-choice', options: ['Caesar wearing a crown', 'Caesar\'s statue running with blood', 'A storm over Rome', 'Brutus weeping'], correctIndex: 1, explanation: 'In Act 2 Scene 2, Calpurnia dreams of Caesar\'s statue running with blood while Romans bathe their hands in it. She begs him to stay home, but Decius flatters him into going to the Capitol.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'jc-6', question: 'Who leads the conspiracy against Caesar?', type: 'multiple-choice', options: ['Mark Antony', 'Marcus Brutus', 'Octavius', 'Casca'], correctIndex: 1, explanation: 'Marcus Brutus leads the conspiracy, although Cassius is the chief instigator who recruits him. Brutus\'s name gives the plot moral authority, which is exactly why Cassius needs him.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'jc-7', question: 'What does Cassius mean by "The fault, dear Brutus, is not in our stars, / But in ourselves, that we are underlings"?', type: 'multiple-choice', options: ['Astrology is unreliable', 'Submission to Caesar is a choice, not a destiny \u2014 men make their own political fate', 'Brutus should study the stars more', 'The gods are punishing Rome'], correctIndex: 1, explanation: 'Cassius rejects fatalism and insists that political submission is a human choice. The line is a republican manifesto and directly goads Brutus into joining the conspiracy.', topic: 'Themes', difficulty: 'foundation' },
-  { id: 'jc-8', question: 'How does Portia die?', type: 'multiple-choice', options: ['Killed in battle', 'Swallows burning coals', 'Drinks poison', 'Stabbed by Antony\'s soldiers'], correctIndex: 1, explanation: 'Portia\'s suicide is reported in Act 4 Scene 3. She swallows hot coals while Brutus is away fighting the civil war, overcome by grief and the strain of his absence.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'jc-9', question: 'What rhetorical device does Antony rely on most heavily in the funeral speech?', type: 'multiple-choice', options: ['Alliteration', 'Ironic repetition of "Brutus is an honourable man"', 'Rhyming couplets', 'Latin quotations'], correctIndex: 1, explanation: 'Antony repeats "Brutus is an honourable man" until the repetition itself becomes accusation. The ironic refrain erodes the crowd\'s trust in the conspirators while appearing to praise them.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'jc-10', question: 'What is the significance of Cinna the poet\'s death in Act 3 Scene 3?', type: 'multiple-choice', options: ['He is a leader of the mob', 'The mob tears him apart because he shares a name with the conspirator Cinna, showing the irrational violence Antony has unleashed', 'He attacks Antony', 'He is a senator'], correctIndex: 1, explanation: 'The plebeians mistake Cinna the poet for Cinna the conspirator and kill him over a name. Shakespeare uses the scene to dramatise the mob violence Antony\'s oratory has unleashed.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'jc-11', question: 'What does Brutus\'s orchard soliloquy ("It must be by his death") reveal about his reasoning?', type: 'multiple-choice', options: ['He hates Caesar personally', 'He admits he has no personal grievance and justifies the killing based on what Caesar might become, not what he is', 'He wants to be king himself', 'He is following orders from the gods'], correctIndex: 1, explanation: 'Brutus openly admits he has no personal cause against Caesar and constructs a hypothetical justification. Shakespeare shows the moral fragility of the idealistic case for assassination.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'jc-12', question: 'How does Shakespeare use the contrast between Brutus\'s and Antony\'s funeral speeches?', type: 'multiple-choice', options: ['Both use identical rhetoric', 'Brutus speaks in calm prose about principle; Antony uses inflammatory verse, physical spectacle and the will to manipulate the crowd into a riot', 'Antony speaks first', 'They both fail to persuade anyone'], correctIndex: 1, explanation: 'Brutus uses rational prose and abstract appeals to honour; Antony uses emotive verse, shows Caesar\'s bloody cloak and reads the will, turning the same crowd against the conspirators within minutes.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'jc-13', question: 'Why does Cassius kill himself at Philippi?', type: 'multiple-choice', options: ['Brutus orders him to', 'He believes mistakenly that his friend Titinius has been captured, and orders his servant to kill him on the anniversary of his birth', 'He is stabbed by Antony', 'He drinks poison'], correctIndex: 1, explanation: 'Cassius misreads the battlefield, thinks Titinius has been taken by the enemy, and has his servant run him through. The tragedy is sharpened by the fact that Titinius was actually being welcomed by friends.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'jc-14', question: 'What does Antony mean by calling Brutus "the noblest Roman of them all"?', type: 'multiple-choice', options: ['That Brutus was the richest conspirator', 'That Brutus alone acted for the common good rather than from envy, unlike the other conspirators', 'That Brutus was a good soldier', 'That Brutus descended from the kings of Rome'], correctIndex: 1, explanation: 'Antony distinguishes Brutus from the other conspirators by motive: all the others "did that they did in envy of great Caesar," while Brutus acted on principle. The tribute is grudging but genuine.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'jc-15', question: 'How does the play present the question of whether Caesar was genuinely a tyrant?', type: 'multiple-choice', options: ['It clearly shows Caesar as a tyrant who had to be stopped', 'It refuses to resolve the question: Brutus admits in soliloquy he has no proof, and the conspirators\' own ambitions suggest the problem is power itself rather than Caesar specifically', 'It shows Caesar as entirely innocent', 'Caesar is never accused of tyranny'], correctIndex: 1, explanation: 'Shakespeare deliberately leaves this open. Brutus concedes he has "no personal cause" and kills Caesar for what he "may" become. The triumvirate that replaces him is coldly murderous, implying the problem is structural.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'jc-16', question: 'What does Caesar\'s ghost represent when it appears to Brutus?', type: 'multiple-choice', options: ['A hallucination caused by stress', 'The continuing power of Caesar\'s political spirit, which Brutus acknowledges with "thy spirit walks abroad, and turns our swords / In our own proper entrails"', 'A warning from the gods', 'Calpurnia\'s revenge'], correctIndex: 1, explanation: 'The ghost embodies the play\'s argument that Caesar\'s power has outlived his body. Brutus himself sees the civil war as Caesar\'s spirit turning the conspirators\' weapons against themselves.', topic: 'Themes', difficulty: 'grade-9' },
-  { id: 'jc-17', question: 'How does Shakespeare use omens to explore the tension between fate and free will?', type: 'multiple-choice', options: ['Omens always prove correct and characters who ignore them die', 'Characters interpret omens in radically different ways \u2014 Calpurnia reads them as warnings, Decius reinterprets them flatteringly, Cassius treats them as political tools \u2014 leaving the audience to weigh fate against choice', 'Only Caesar sees omens', 'The play has no omens'], correctIndex: 1, explanation: 'Shakespeare deliberately shows the same omens being read in opposite ways. Events feel fated in retrospect, but every disaster follows a specific human choice, keeping the fate/free-will question live.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'jc-18', question: 'Why was a Roman political tragedy particularly resonant for Elizabethan audiences in 1599?', type: 'multiple-choice', options: ['Roman history was fashionable', 'Elizabeth I was ageing with no clear heir and succession anxieties could not be discussed openly; a play about the assassination of a ruler allowed Shakespeare to stage live political questions with protective distance', 'It was cheaper to stage', 'Audiences preferred foreign settings'], correctIndex: 1, explanation: 'Writing in 1599 for an audience worried about succession and mob unrest (the Essex Rebellion followed in 1601), Shakespeare used Rome to explore tyranny, rhetoric and civil war at one remove from current English politics.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'jc-19', question: 'What is the effect of Antony showing the crowd Caesar\'s bloody cloak and wounds?', type: 'multiple-choice', options: ['It is purely decorative', 'It makes Caesar\'s body the argument, converting an abstract political act into visceral personal loss and completing the mob\'s turn against the conspirators', 'The crowd is unaffected', 'It is a religious ritual'], correctIndex: 1, explanation: 'Antony uses physical spectacle alongside verbal rhetoric: the cloak makes Caesar\'s murder immediate and personal, bypassing the crowd\'s reason. Shakespeare stages the moment rhetoric becomes riot.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'jc-20', question: 'What does Brutus\'s decision to spare Antony and let him speak at the funeral reveal about his character?', type: 'multiple-choice', options: ['He is a coward', 'His idealism and insistence on honourable conduct repeatedly outweigh political pragmatism, overruling Cassius\'s shrewder judgement and sealing the conspiracy\'s defeat', 'He secretly admires Antony', 'He plans to kill Antony later'], correctIndex: 1, explanation: 'Cassius wants Antony killed and then forbidden to speak; Brutus overrules him twice. This idealistic honour is the quality that makes Brutus "the noblest Roman" and the quality that destroys him.', topic: 'Characters', difficulty: 'higher' },
+  {
+    id: 'jc-1',
+    question: 'What warning does the Soothsayer give Caesar in Act 1?',
+    type: 'multiple-choice',
+    options: [
+      'Trust no senator',
+      'Beware the ides of March',
+      'Fear the storm at night',
+      'Do not wear a crown',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The Soothsayer warns Caesar to "beware the ides of March" (15 March). Caesar dismisses him as "a dreamer," setting up the play\'s pattern of ignored omens.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'jc-2',
+    question: 'Who is the first conspirator to stab Caesar?',
+    type: 'multiple-choice',
+    options: ['Brutus', 'Cassius', 'Casca', 'Decius'],
+    correctIndex: 2,
+    explanation:
+      'Casca strikes the first blow with the line "Speak, hands, for me!" The other conspirators then follow, with Brutus\'s stab coming last and provoking Caesar\'s "Et tu, Brute?".',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'jc-3',
+    question: 'Who says "Friends, Romans, countrymen, lend me your ears"?',
+    type: 'multiple-choice',
+    options: ['Brutus', 'Cassius', 'Caesar', 'Mark Antony'],
+    correctIndex: 3,
+    explanation:
+      'Mark Antony opens his funeral oration with this tricolon, flattering the crowd into listening. The speech goes on to turn them against the conspirators.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'jc-4',
+    question: 'What does Caesar say as Brutus joins the attack?',
+    type: 'multiple-choice',
+    options: ['"Havoc!"', '"Et tu, Brute?"', '"The ides have come"', '"Traitor!"'],
+    correctIndex: 1,
+    explanation:
+      '"Et tu, Brute? Then fall, Caesar." Shakespeare\'s wording, not a historical record. The betrayal by Brutus ends Caesar\'s will to resist.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'jc-5',
+    question: 'What dream does Calpurnia have on the night before the ides of March?',
+    type: 'multiple-choice',
+    options: [
+      'Caesar wearing a crown',
+      "Caesar's statue running with blood",
+      'A storm over Rome',
+      'Brutus weeping',
+    ],
+    correctIndex: 1,
+    explanation:
+      "In Act 2 Scene 2, Calpurnia dreams of Caesar's statue running with blood while Romans bathe their hands in it. She begs him to stay home, but Decius flatters him into going to the Capitol.",
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'jc-6',
+    question: 'Who leads the conspiracy against Caesar?',
+    type: 'multiple-choice',
+    options: ['Mark Antony', 'Marcus Brutus', 'Octavius', 'Casca'],
+    correctIndex: 1,
+    explanation:
+      "Marcus Brutus leads the conspiracy, although Cassius is the chief instigator who recruits him. Brutus's name gives the plot moral authority, which is exactly why Cassius needs him.",
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'jc-7',
+    question:
+      'What does Cassius mean by "The fault, dear Brutus, is not in our stars, / But in ourselves, that we are underlings"?',
+    type: 'multiple-choice',
+    options: [
+      'Astrology is unreliable',
+      'Submission to Caesar is a choice, not a destiny \u2014 men make their own political fate',
+      'Brutus should study the stars more',
+      'The gods are punishing Rome',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Cassius rejects fatalism and insists that political submission is a human choice. The line is a republican manifesto and directly goads Brutus into joining the conspiracy.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'jc-8',
+    question: 'How does Portia die?',
+    type: 'multiple-choice',
+    options: [
+      'Killed in battle',
+      'Swallows burning coals',
+      'Drinks poison',
+      "Stabbed by Antony's soldiers",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Portia's suicide is reported in Act 4 Scene 3. She swallows hot coals while Brutus is away fighting the civil war, overcome by grief and the strain of his absence.",
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'jc-9',
+    question: 'What rhetorical device does Antony rely on most heavily in the funeral speech?',
+    type: 'multiple-choice',
+    options: [
+      'Alliteration',
+      'Ironic repetition of "Brutus is an honourable man"',
+      'Rhyming couplets',
+      'Latin quotations',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Antony repeats "Brutus is an honourable man" until the repetition itself becomes accusation. The ironic refrain erodes the crowd\'s trust in the conspirators while appearing to praise them.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'jc-10',
+    question: "What is the significance of Cinna the poet's death in Act 3 Scene 3?",
+    type: 'multiple-choice',
+    options: [
+      'He is a leader of the mob',
+      'The mob tears him apart because he shares a name with the conspirator Cinna, showing the irrational violence Antony has unleashed',
+      'He attacks Antony',
+      'He is a senator',
+    ],
+    correctIndex: 1,
+    explanation:
+      "The plebeians mistake Cinna the poet for Cinna the conspirator and kill him over a name. Shakespeare uses the scene to dramatise the mob violence Antony's oratory has unleashed.",
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'jc-11',
+    question:
+      'What does Brutus\'s orchard soliloquy ("It must be by his death") reveal about his reasoning?',
+    type: 'multiple-choice',
+    options: [
+      'He hates Caesar personally',
+      'He admits he has no personal grievance and justifies the killing based on what Caesar might become, not what he is',
+      'He wants to be king himself',
+      'He is following orders from the gods',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Brutus openly admits he has no personal cause against Caesar and constructs a hypothetical justification. Shakespeare shows the moral fragility of the idealistic case for assassination.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'jc-12',
+    question:
+      "How does Shakespeare use the contrast between Brutus's and Antony's funeral speeches?",
+    type: 'multiple-choice',
+    options: [
+      'Both use identical rhetoric',
+      'Brutus speaks in calm prose about principle; Antony uses inflammatory verse, physical spectacle and the will to manipulate the crowd into a riot',
+      'Antony speaks first',
+      'They both fail to persuade anyone',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Brutus uses rational prose and abstract appeals to honour; Antony uses emotive verse, shows Caesar's bloody cloak and reads the will, turning the same crowd against the conspirators within minutes.",
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'jc-13',
+    question: 'Why does Cassius kill himself at Philippi?',
+    type: 'multiple-choice',
+    options: [
+      'Brutus orders him to',
+      'He believes mistakenly that his friend Titinius has been captured, and orders his servant to kill him on the anniversary of his birth',
+      'He is stabbed by Antony',
+      'He drinks poison',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Cassius misreads the battlefield, thinks Titinius has been taken by the enemy, and has his servant run him through. The tragedy is sharpened by the fact that Titinius was actually being welcomed by friends.',
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'jc-14',
+    question: 'What does Antony mean by calling Brutus "the noblest Roman of them all"?',
+    type: 'multiple-choice',
+    options: [
+      'That Brutus was the richest conspirator',
+      'That Brutus alone acted for the common good rather than from envy, unlike the other conspirators',
+      'That Brutus was a good soldier',
+      'That Brutus descended from the kings of Rome',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Antony distinguishes Brutus from the other conspirators by motive: all the others "did that they did in envy of great Caesar," while Brutus acted on principle. The tribute is grudging but genuine.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'jc-15',
+    question: 'How does the play present the question of whether Caesar was genuinely a tyrant?',
+    type: 'multiple-choice',
+    options: [
+      'It clearly shows Caesar as a tyrant who had to be stopped',
+      "It refuses to resolve the question: Brutus admits in soliloquy he has no proof, and the conspirators' own ambitions suggest the problem is power itself rather than Caesar specifically",
+      'It shows Caesar as entirely innocent',
+      'Caesar is never accused of tyranny',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Shakespeare deliberately leaves this open. Brutus concedes he has "no personal cause" and kills Caesar for what he "may" become. The triumvirate that replaces him is coldly murderous, implying the problem is structural.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'jc-16',
+    question: "What does Caesar's ghost represent when it appears to Brutus?",
+    type: 'multiple-choice',
+    options: [
+      'A hallucination caused by stress',
+      'The continuing power of Caesar\'s political spirit, which Brutus acknowledges with "thy spirit walks abroad, and turns our swords / In our own proper entrails"',
+      'A warning from the gods',
+      "Calpurnia's revenge",
+    ],
+    correctIndex: 1,
+    explanation:
+      "The ghost embodies the play's argument that Caesar's power has outlived his body. Brutus himself sees the civil war as Caesar's spirit turning the conspirators' weapons against themselves.",
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'jc-17',
+    question: 'How does Shakespeare use omens to explore the tension between fate and free will?',
+    type: 'multiple-choice',
+    options: [
+      'Omens always prove correct and characters who ignore them die',
+      'Characters interpret omens in radically different ways \u2014 Calpurnia reads them as warnings, Decius reinterprets them flatteringly, Cassius treats them as political tools \u2014 leaving the audience to weigh fate against choice',
+      'Only Caesar sees omens',
+      'The play has no omens',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Shakespeare deliberately shows the same omens being read in opposite ways. Events feel fated in retrospect, but every disaster follows a specific human choice, keeping the fate/free-will question live.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'jc-18',
+    question:
+      'Why was a Roman political tragedy particularly resonant for Elizabethan audiences in 1599?',
+    type: 'multiple-choice',
+    options: [
+      'Roman history was fashionable',
+      'Elizabeth I was ageing with no clear heir and succession anxieties could not be discussed openly; a play about the assassination of a ruler allowed Shakespeare to stage live political questions with protective distance',
+      'It was cheaper to stage',
+      'Audiences preferred foreign settings',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Writing in 1599 for an audience worried about succession and mob unrest (the Essex Rebellion followed in 1601), Shakespeare used Rome to explore tyranny, rhetoric and civil war at one remove from current English politics.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'jc-19',
+    question: "What is the effect of Antony showing the crowd Caesar's bloody cloak and wounds?",
+    type: 'multiple-choice',
+    options: [
+      'It is purely decorative',
+      "It makes Caesar's body the argument, converting an abstract political act into visceral personal loss and completing the mob's turn against the conspirators",
+      'The crowd is unaffected',
+      'It is a religious ritual',
+    ],
+    correctIndex: 1,
+    explanation:
+      "Antony uses physical spectacle alongside verbal rhetoric: the cloak makes Caesar's murder immediate and personal, bypassing the crowd's reason. Shakespeare stages the moment rhetoric becomes riot.",
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'jc-20',
+    question:
+      "What does Brutus's decision to spare Antony and let him speak at the funeral reveal about his character?",
+    type: 'multiple-choice',
+    options: [
+      'He is a coward',
+      "His idealism and insistence on honourable conduct repeatedly outweigh political pragmatism, overruling Cassius's shrewder judgement and sealing the conspiracy's defeat",
+      'He secretly admires Antony',
+      'He plans to kill Antony later',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Cassius wants Antony killed and then forbidden to speak; Brutus overrules him twice. This idealistic honour is the quality that makes Brutus "the noblest Roman" and the quality that destroys him.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Power and Ambition', summary: 'Shakespeare centres the play on an unresolved question: was Caesar genuinely a tyrant-in-waiting, or a powerful man undone by envy?', keyPoints: ['Brutus admits in soliloquy he has no personal cause \u2014 only fears what Caesar "may" become', 'Caesar refuses the crown three times at the Lupercal \u2014 modesty or calculation?', 'The triumvirate that replaces Caesar is coldly murderous, suggesting the problem is power itself', 'The cycle of violence continues after the assassination', 'Eliminating one ambitious man clears space for others'] },
-  { topic: 'Fate vs Free Will', summary: 'Omens saturate the play, but characters disagree sharply about what they mean and whether they can be overridden.', keyPoints: ['Soothsayer\'s warning, Calpurnia\'s dream, the storm, Caesar\'s ghost', 'Cassius: "Men at some time are masters of their fates"', 'Caesar oscillates between fatalism and bravado', 'Every disaster follows a specific human choice (Caesar ignoring Calpurnia, Brutus sparing Antony)', 'Shakespeare keeps the question genuinely open'] },
-  { topic: 'Rhetoric and Persuasion', summary: 'The play is obsessed with public speech and the volatility of audiences who can be swung in opposite directions within minutes.', keyPoints: ['Cassius persuades Brutus through private flattery and forged letters', 'Decius reinterprets Calpurnia\'s dream to flatter Caesar to the Capitol', 'Brutus speaks in calm prose; Antony in inflammatory verse', 'Antony uses repetition ("honourable man"), physical spectacle (the cloak), and the will', 'The paired funeral speeches are the most famous example of rhetoric as political weapon in English'] },
-  { topic: 'Honour', summary: 'Honour is both a sincere ethical compass and a hollow slogan, and Shakespeare makes the audience feel it operating as both at once.', keyPoints: ['Brutus kills Caesar because his conception of honour demands it', 'Antony weaponises "Brutus is an honourable man" until the repetition becomes accusation', 'Brutus refuses to break his word even when pragmatism would save him', 'Antony\'s final tribute: "This was the noblest Roman of them all"', 'Honour gives Brutus dignity and destroys him at the same time'] },
-  { topic: 'Public vs Private Duty', summary: 'Every major character is torn between private loyalty and public obligation, and the play stages the cost of choosing the public role.', keyPoints: ['Brutus loves Caesar but loves Rome more', 'Portia demands to be treated as a political partner, gashes her own thigh as proof', 'Calpurnia\'s private dream is dismissed in favour of public ceremony', 'Caesar insists the public man must override the private body', 'Brutus\'s Stoic denial of grief at Portia\'s death shows how far the role has consumed the man'] },
-  { topic: 'Republic vs Tyranny', summary: 'Behind every speech is an argument about what kind of state Rome should be \u2014 and Shakespeare leaves the debate genuinely open.', keyPoints: ['Cassius and Brutus invoke the expulsion of the Tarquins and Roman liberty', 'Antony and Octavius stand for concentrated executive power after chaos', 'The conspirators are flawed and self-deceiving', 'The triumvirate is coldly murderous, marking relatives for death', 'Neither side offers a clean answer \u2014 part of why the play remains politically resonant'] },
+  {
+    topic: 'Power and Ambition',
+    summary:
+      'Shakespeare centres the play on an unresolved question: was Caesar genuinely a tyrant-in-waiting, or a powerful man undone by envy?',
+    keyPoints: [
+      'Brutus admits in soliloquy he has no personal cause \u2014 only fears what Caesar "may" become',
+      'Caesar refuses the crown three times at the Lupercal \u2014 modesty or calculation?',
+      'The triumvirate that replaces Caesar is coldly murderous, suggesting the problem is power itself',
+      'The cycle of violence continues after the assassination',
+      'Eliminating one ambitious man clears space for others',
+    ],
+  },
+  {
+    topic: 'Fate vs Free Will',
+    summary:
+      'Omens saturate the play, but characters disagree sharply about what they mean and whether they can be overridden.',
+    keyPoints: [
+      "Soothsayer's warning, Calpurnia's dream, the storm, Caesar's ghost",
+      'Cassius: "Men at some time are masters of their fates"',
+      'Caesar oscillates between fatalism and bravado',
+      'Every disaster follows a specific human choice (Caesar ignoring Calpurnia, Brutus sparing Antony)',
+      'Shakespeare keeps the question genuinely open',
+    ],
+  },
+  {
+    topic: 'Rhetoric and Persuasion',
+    summary:
+      'The play is obsessed with public speech and the volatility of audiences who can be swung in opposite directions within minutes.',
+    keyPoints: [
+      'Cassius persuades Brutus through private flattery and forged letters',
+      "Decius reinterprets Calpurnia's dream to flatter Caesar to the Capitol",
+      'Brutus speaks in calm prose; Antony in inflammatory verse',
+      'Antony uses repetition ("honourable man"), physical spectacle (the cloak), and the will',
+      'The paired funeral speeches are the most famous example of rhetoric as political weapon in English',
+    ],
+  },
+  {
+    topic: 'Honour',
+    summary:
+      'Honour is both a sincere ethical compass and a hollow slogan, and Shakespeare makes the audience feel it operating as both at once.',
+    keyPoints: [
+      'Brutus kills Caesar because his conception of honour demands it',
+      'Antony weaponises "Brutus is an honourable man" until the repetition becomes accusation',
+      'Brutus refuses to break his word even when pragmatism would save him',
+      'Antony\'s final tribute: "This was the noblest Roman of them all"',
+      'Honour gives Brutus dignity and destroys him at the same time',
+    ],
+  },
+  {
+    topic: 'Public vs Private Duty',
+    summary:
+      'Every major character is torn between private loyalty and public obligation, and the play stages the cost of choosing the public role.',
+    keyPoints: [
+      'Brutus loves Caesar but loves Rome more',
+      'Portia demands to be treated as a political partner, gashes her own thigh as proof',
+      "Calpurnia's private dream is dismissed in favour of public ceremony",
+      'Caesar insists the public man must override the private body',
+      "Brutus's Stoic denial of grief at Portia's death shows how far the role has consumed the man",
+    ],
+  },
+  {
+    topic: 'Republic vs Tyranny',
+    summary:
+      'Behind every speech is an argument about what kind of state Rome should be \u2014 and Shakespeare leaves the debate genuinely open.',
+    keyPoints: [
+      'Cassius and Brutus invoke the expulsion of the Tarquins and Roman liberty',
+      'Antony and Octavius stand for concentrated executive power after chaos',
+      'The conspirators are flawed and self-deceiving',
+      'The triumvirate is coldly murderous, marking relatives for death',
+      'Neither side offers a clean answer \u2014 part of why the play remains politically resonant',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -273,10 +638,10 @@ export default async function JuliusCaesarPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Julius Caesar", url: "https://theenglishhub.app/revision/texts/julius-caesar" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Julius Caesar', url: 'https://theenglishhub.app/revision/texts/julius-caesar' },
         ]}
       />
       <TextStudyHub
@@ -285,15 +650,57 @@ export default async function JuliusCaesarPage() {
         examBoard="AQA"
         basePath="/revision/texts/julius-caesar"
         subPages={[
-          { id: 'read', href: '/revision/texts/julius-caesar/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
-          { id: 'acts', href: '/revision/texts/julius-caesar/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
-          { id: 'characters', href: '/revision/texts/julius-caesar/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/julius-caesar/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/julius-caesar/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'context', href: '/revision/texts/julius-caesar/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
-          { id: 'essays', href: '/revision/texts/julius-caesar/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'GCSE essay plans' },
+          {
+            id: 'read',
+            href: '/revision/texts/julius-caesar/read',
+            icon: 'read' as const,
+            title: 'Read Full Text',
+            description: 'With annotations',
+          },
+          {
+            id: 'acts',
+            href: '/revision/texts/julius-caesar/acts',
+            icon: 'acts' as const,
+            title: 'Act-by-Act Analysis',
+            description: 'Key moments & quotes',
+          },
+          {
+            id: 'characters',
+            href: '/revision/texts/julius-caesar/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/julius-caesar/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/julius-caesar/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'context',
+            href: '/revision/texts/julius-caesar/context',
+            icon: 'context' as const,
+            title: 'Context',
+            description: 'Historical context',
+          },
+          {
+            id: 'essays',
+            href: '/revision/texts/julius-caesar/essay-plans',
+            icon: 'essays' as const,
+            title: 'Essay Plans',
+            description: 'GCSE essay plans',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -305,7 +712,7 @@ export default async function JuliusCaesarPage() {
           'How does Shakespeare explore the tension between fate and free will in the play?',
           'How does Shakespeare present the conflict between public duty and private loyalty?',
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}
@@ -319,7 +726,9 @@ export default async function JuliusCaesarPage() {
       />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">Draft study guide</strong>
-        <span>AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.</span>
+        <span>
+          AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.
+        </span>
       </div>
       <TextGuide data={data} />
     </>

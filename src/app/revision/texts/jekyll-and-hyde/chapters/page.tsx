@@ -14,6 +14,11 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Jekyll and Hyde Chapter Analysis | The English Hub',
+    description:
+      'Detailed analysis of all 10 chapters of Strange Case of Dr Jekyll and Mr Hyde: summaries, key events, character development, language techniques with quotes, and structural significance.',
+  },
   title: 'Jekyll and Hyde Chapter Analysis | The English Hub',
   description:
     'Detailed analysis of all 10 chapters of Strange Case of Dr Jekyll and Mr Hyde: summaries, key events, character development, language techniques with quotes, and structural significance.',

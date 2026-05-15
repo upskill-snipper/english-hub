@@ -7,25 +7,27 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Dialogue — Cambridge IGCSE Narrative Writing',
+    description:
+      'Punctuation rules, subtext, the four jobs of dialogue and how to write believable speech for a Cambridge IGCSE short story.',
+  },
   title: 'Dialogue — Cambridge IGCSE Narrative Writing',
   description:
     'Punctuation rules, subtext, the four jobs of dialogue and how to write believable speech for a Cambridge IGCSE short story.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/narrative/dialogue',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/narrative/dialogue',
   },
 }
 
 const punctuationRules = [
   {
     rule: 'New speaker, new line.',
-    example:
-      '“I saw him,” she said.\n“Where?” Tom asked.',
+    example: '“I saw him,” she said.\n“Where?” Tom asked.',
   },
   {
     rule: 'Speech marks wrap the spoken words only, including the final punctuation.',
-    example:
-      '“I’m not going.”\n“You said you would.”',
+    example: '“I’m not going.”\n“You said you would.”',
   },
   {
     rule: 'Use a comma (not a full stop) before a speech tag.',
@@ -37,13 +39,11 @@ const punctuationRules = [
   },
   {
     rule: 'If dialogue is broken by a tag, the second part is a continuation of the sentence.',
-    example:
-      '“I went there once,” she said, “when I was a child.”',
+    example: '“I went there once,” she said, “when I was a child.”',
   },
   {
     rule: 'Use an action beat instead of a tag when you can. New line, but no “he said”.',
-    example:
-      '“I went there once.” She set her teacup down carefully. “When I was a child.”',
+    example: '“I went there once.” She set her teacup down carefully. “When I was a child.”',
   },
 ]
 
@@ -106,21 +106,17 @@ export default async function DialoguePage() {
             Writing dialogue
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Dialogue is the first thing examiners notice and the first thing
-            students get wrong. Master the punctuation first. Then master
-            what every line is doing on the page.
+            Dialogue is the first thing examiners notice and the first thing students get wrong.
+            Master the punctuation first. Then master what every line is doing on the page.
           </p>
         </div>
       </section>
 
       {/* Punctuation rules */}
       <section>
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Punctuation rules
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">Punctuation rules</h2>
         <p className="mt-2 text-body-sm text-muted-foreground">
-          Get these six rules right and you already look more controlled than
-          half the entry.
+          Get these six rules right and you already look more controlled than half the entry.
         </p>
         <div className="mt-5 space-y-3">
           {punctuationRules.map((r, i) => (
@@ -130,9 +126,7 @@ export default async function DialoguePage() {
                   {i + 1}
                 </div>
                 <div className="flex-1 space-y-2">
-                  <p className="text-body-sm font-semibold text-foreground">
-                    {r.rule}
-                  </p>
+                  <p className="text-body-sm font-semibold text-foreground">{r.rule}</p>
                   <pre className="whitespace-pre-wrap rounded-lg border border-border/60 bg-muted/40 p-3 font-sans text-body-xs italic text-foreground">
                     {r.example}
                   </pre>
@@ -152,16 +146,14 @@ export default async function DialoguePage() {
           </h2>
         </div>
         <p className="mb-5 max-w-3xl text-body-sm text-muted-foreground">
-          Every line of speech on the page should do at least one of these
-          four things. If a line does none of them, cut it.
+          Every line of speech on the page should do at least one of these four things. If a line
+          does none of them, cut it.
         </p>
         <div className="space-y-4">
           {fourJobs.map((j) => (
             <Card key={j.job}>
               <CardHeader>
-                <CardTitle className="text-heading-sm font-heading">
-                  {j.job}
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">{j.job}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-body-sm text-muted-foreground">
                 <p className="leading-relaxed">{j.description}</p>
@@ -184,28 +176,23 @@ export default async function DialoguePage() {
       {/* Tag advice */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-heading-sm font-heading">
-            Said is invisible
-          </CardTitle>
+          <CardTitle className="text-heading-sm font-heading">Said is invisible</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
           <p>
             Students often replace <em>said</em> with a thesaurus parade:{' '}
-            <em>exclaimed, uttered, ejaculated, interrogated</em>. Examiners
-            find this exhausting. <em>Said</em> is the correct word 90% of
-            the time. The reader\u2019s eye slides over it. Save stronger
-            verbs for moments when the tone needs to shift:{' '}
+            <em>exclaimed, uttered, ejaculated, interrogated</em>. Examiners find this exhausting.{' '}
+            <em>Said</em> is the correct word 90% of the time. The reader\u2019s eye slides over it.
+            Save stronger verbs for moments when the tone needs to shift:{' '}
             <em>whispered, snapped, muttered</em> — and even then, sparingly.
           </p>
           <p>
-            Better still, use an <strong className="text-foreground">action
-            beat</strong> instead of a tag. Let the character do something
-            small in the same paragraph as their line:
+            Better still, use an <strong className="text-foreground">action beat</strong> instead of
+            a tag. Let the character do something small in the same paragraph as their line:
           </p>
           <div className="rounded-lg border border-border/60 bg-primary/5 p-4">
             <p className="italic text-foreground">
-              “I don’t know.” He pressed his knuckles against the glass. “I
-              really don’t.”
+              “I don’t know.” He pressed his knuckles against the glass. “I really don’t.”
             </p>
           </div>
         </CardContent>
@@ -213,33 +200,30 @@ export default async function DialoguePage() {
 
       {/* Avoiding traps */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Traps to avoid
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Traps to avoid</h2>
         <ul className="mt-4 space-y-3 text-body-sm text-muted-foreground">
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Greetings.</strong>{' '}
-              &ldquo;Hello, how are you?&rdquo; &ldquo;I am fine, thank you,
-              and you?&rdquo; cuts valuable word count for no payoff. Start
-              two lines in.
+              <strong className="text-foreground">Greetings.</strong> &ldquo;Hello, how are
+              you?&rdquo; &ldquo;I am fine, thank you, and you?&rdquo; cuts valuable word count for
+              no payoff. Start two lines in.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Exposition
-              dumps.</strong> Don\u2019t let characters tell each other
-              things they both already know just so the reader learns them.
+              <strong className="text-foreground">Exposition dumps.</strong> Don\u2019t let
+              characters tell each other things they both already know just so the reader learns
+              them.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Name-checking.</strong>{' '}
-              People rarely use each other\u2019s names in conversation. If
-              your dialogue has three names in six lines, it sounds unnatural.
+              <strong className="text-foreground">Name-checking.</strong> People rarely use each
+              other\u2019s names in conversation. If your dialogue has three names in six lines, it
+              sounds unnatural.
             </span>
           </li>
         </ul>

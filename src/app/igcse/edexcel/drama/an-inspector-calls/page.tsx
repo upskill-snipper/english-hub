@@ -19,6 +19,11 @@ import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'An Inspector Calls — Edexcel IGCSE Literature Study Guide',
+    description:
+      'J. B. Priestley\u2019s An Inspector Calls for Edexcel IGCSE Literature: plot summary, characters, themes, post-war context and key quotations.',
+  },
   title: 'An Inspector Calls — Edexcel IGCSE Literature Study Guide',
   description:
     'J. B. Priestley\u2019s An Inspector Calls for Edexcel IGCSE Literature: plot summary, characters, themes, post-war context and key quotations.',

@@ -6,6 +6,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Romeo and Juliet Context — Edexcel IGCSE Literature',
+    description:
+      'Elizabethan context for Romeo and Juliet: patriarchal society, arranged marriages, honour culture, the Italian setting and Petrarchan love poetry. For Edexcel IGCSE Literature.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet/context',
   },

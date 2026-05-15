@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Things Fall Apart Themes — Edexcel IGCSE Literature',
+    description:
+      'Themes in Achebe\u2019s Things Fall Apart: colonialism, masculinity, tradition vs change, fate and chi, gender, language and narrative form.',
+  },
   title: 'Things Fall Apart Themes — Edexcel IGCSE Literature',
   description:
     'Themes in Achebe\u2019s Things Fall Apart: colonialism, masculinity, tradition vs change, fate and chi, gender, language and narrative form.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart/themes',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart/themes',
   },
 }
 
@@ -23,8 +27,7 @@ const themes = [
       'Achebe shows colonisation as a slow, multi-stage process rather than a single catastrophe. Missionaries arrive with songs, then build churches, then administer courts, then call soldiers. By the time Umuofia perceives the threat clearly, the clan has already "fallen apart" from within. The novel refuses two extremes: it neither romanticises pre-colonial Igbo society nor exonerates the colonisers.',
     moments:
       'Mr Brown\u2019s conversations with Akunna; the destruction of the church; the killing of the court messenger; the final paragraph.',
-    quote:
-      '”He has put a knife on the things that held us together…” — Obierika',
+    quote: '”He has put a knife on the things that held us together…” — Obierika',
   },
   {
     title: 'Masculinity and fear of weakness',
@@ -32,8 +35,7 @@ const themes = [
       'Okonkwo\u2019s masculinity is a reaction formation against his father Unoka. He equates strength with violence, feeling with effeminacy, and silence with control. Achebe presents this rigidity as personally destructive — it leads him to kill Ikemefuna, beat his wives, alienate Nwoye and ultimately hang himself. But it is also culturally legible: Umuofia rewards the same qualities it ends up punishing.',
     moments:
       'Okonkwo\u2019s wrestling match memories; the killing of Ikemefuna; the beating of Ojiugo during Peace Week; his reaction to Nwoye\u2019s conversion.',
-    quote:
-      '“His whole life was dominated by fear, the fear of failure and of weakness.”',
+    quote: '“His whole life was dominated by fear, the fear of failure and of weakness.”',
   },
   {
     title: 'Tradition versus change',
@@ -41,8 +43,7 @@ const themes = [
       'Achebe complicates any simple tradition-vs-modernity binary. Some Igbo customs — the killing of twins, the ostracism of osu (outcasts), the sacrifice of Ikemefuna — draw the sympathies of the young and the disaffected towards Christianity. Nwoye\u2019s conversion is presented partly as a search for moral relief, not merely cultural betrayal.',
     moments:
       'The killing of twins in the Evil Forest; Nwoye\u2019s conversion; the osu joining the church; Okonkwo\u2019s nostalgia on returning from exile.',
-    quote:
-      '”It was the poetry of the new religion, something felt in the marrow.”',
+    quote: '”It was the poetry of the new religion, something felt in the marrow.”',
   },
   {
     title: 'Fate, chi and personal agency',
@@ -58,8 +59,7 @@ const themes = [
       'Umuofia is patriarchal but not one-dimensional. Achebe includes Nneka ("Mother is Supreme"), the women\u2019s market, Chielo the priestess of Agbala, and Ekwefi\u2019s devotion to Ezinma — all of which complicate Okonkwo\u2019s dismissal of "feminine" qualities. His exile in his motherland Mbanta is literally a forced encounter with the feminine principle he has spent his life suppressing.',
     moments:
       'Chielo\u2019s night journey with Ezinma; Uchendu\u2019s "mother is supreme" speech; Ekwefi\u2019s grief; the women\u2019s egwugwu trial.',
-    quote:
-      '”When there is sorrow and bitterness he finds refuge in his motherland.” — Uchendu',
+    quote: '”When there is sorrow and bitterness he finds refuge in his motherland.” — Uchendu',
   },
   {
     title: 'Language, proverbs and narrative form',
@@ -67,8 +67,7 @@ const themes = [
       'Achebe writes in English but saturates the prose with Igbo proverbs, folktales and ritual speech patterns. The novel\u2019s form is part of its argument: an African voice using the coloniser\u2019s language to tell a story the coloniser could only footnote. The final paragraph, in the District Commissioner\u2019s bureaucratic register, makes the contrast unmistakable.',
     moments:
       'The proverb about palm-oil; the folktale of the tortoise; the final District Commissioner paragraph.',
-    quote:
-      '“Proverbs are the palm-oil with which words are eaten.”',
+    quote: '“Proverbs are the palm-oil with which words are eaten.”',
   },
 ]
 
@@ -79,12 +78,18 @@ export default async function ThingsFallApartThemesPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
-          { name: "Things Fall Apart", url: "https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart" },
-          { name: "Themes", url: "https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart/themes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+          {
+            name: 'Things Fall Apart',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart',
+          },
+          {
+            name: 'Themes',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/things-fall-apart/themes',
+          },
         ]}
       />
       <div>
@@ -111,8 +116,8 @@ export default async function ThingsFallApartThemesPage() {
             Things Fall Apart: Themes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical routes through Achebe’s novel — colonialism,
-            masculinity, tradition, chi, gender, language and form.
+            Analytical routes through Achebe’s novel — colonialism, masculinity, tradition, chi,
+            gender, language and form.
           </p>
         </div>
       </section>
@@ -125,8 +130,7 @@ export default async function ThingsFallApartThemesPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and
-              criticism.
+              Short extracts are included under fair dealing for study and criticism.
             </p>
           </div>
         </div>
@@ -134,21 +138,11 @@ export default async function ThingsFallApartThemesPage() {
 
       <section className="space-y-5">
         {themes.map((t) => (
-          <article
-            key={t.title}
-            className="rounded-xl border border-border/60 bg-card p-6"
-          >
-            <h2 className="text-heading-md font-heading text-foreground">
-              {t.title}
-            </h2>
-            <p className="mt-3 text-body-sm leading-relaxed text-muted-foreground">
-              {t.intro}
-            </p>
+          <article key={t.title} className="rounded-xl border border-border/60 bg-card p-6">
+            <h2 className="text-heading-md font-heading text-foreground">{t.title}</h2>
+            <p className="mt-3 text-body-sm leading-relaxed text-muted-foreground">{t.intro}</p>
             <p className="mt-3 text-body-xs text-muted-foreground">
-              <span className="font-semibold text-foreground">
-                Key moments:
-              </span>{' '}
-              {t.moments}
+              <span className="font-semibold text-foreground">Key moments:</span> {t.moments}
             </p>
             <blockquote className="mt-3 border-l-2 border-primary/40 pl-3 text-body-sm italic text-foreground">
               {t.quote}
@@ -158,7 +152,8 @@ export default async function ThingsFallApartThemesPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism
+        and review. Full text available from your school or local library.
       </p>
     </div>
   )

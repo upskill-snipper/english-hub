@@ -11,6 +11,11 @@ import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
+  openGraph: {
+    title: 'Macbeth Act 3 — Scene-by-Scene Analysis | The English Hub',
+    description: 'Detailed GCSE analysis of Macbeth Act 3: Banquo',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/act-3' },
   title: 'Macbeth Act 3 — Scene-by-Scene Analysis | The English Hub',
   description:
     "Detailed GCSE analysis of Macbeth Act 3: Banquo's murder, the banquet ghost, paranoia and tyranny, key quotes and language techniques.",

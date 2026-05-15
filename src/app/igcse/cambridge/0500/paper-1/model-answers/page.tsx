@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 1 Model Answers — IGCSE Language A 0500',
+    description:
+      'Five Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 1: retrieval (Q1), language analysis (Q2 at Grade C and A* compared), and summary (Q3). Each with examiner annotations.',
+  },
   title: 'Paper 1 Model Answers — IGCSE Language A 0500',
   description:
     'Five Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 1: retrieval (Q1), language analysis (Q2 at Grade C and A* compared), and summary (Q3). Each with examiner annotations.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/paper-1/model-answers',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/model-answers',
   },
 }
 
@@ -215,10 +219,9 @@ export default async function Paper1ModelAnswersPage() {
             Paper 1 model answers
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Five model answers across all three Paper 1 question types: retrieval
-            (Q1), language analysis (Q2 at Grade C and A* compared side by side),
-            and summary writing (Q3). Every answer includes examiner-style
-            annotations explaining exactly what earns marks.
+            Five model answers across all three Paper 1 question types: retrieval (Q1), language
+            analysis (Q2 at Grade C and A* compared side by side), and summary writing (Q3). Every
+            answer includes examiner-style annotations explaining exactly what earns marks.
           </p>
         </div>
       </section>
@@ -227,18 +230,15 @@ export default async function Paper1ModelAnswersPage() {
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Question 1 — Retrieval
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Question 1 — Retrieval</h2>
         </div>
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Question 1 tests your ability to locate and rephrase information from
-            the passage. You are given a specific focus (e.g. &quot;dangers&quot;
-            or &quot;benefits&quot;) and must list relevant points in your own
-            words. Short notes are acceptable. Aim for 12&ndash;15 points to be
-            safe &mdash; the mark scheme rewards breadth of reading.
+            Question 1 tests your ability to locate and rephrase information from the passage. You
+            are given a specific focus (e.g. &quot;dangers&quot; or &quot;benefits&quot;) and must
+            list relevant points in your own words. Short notes are acceptable. Aim for 12&ndash;15
+            points to be safe &mdash; the mark scheme rewards breadth of reading.
           </p>
         </div>
 
@@ -247,22 +247,16 @@ export default async function Paper1ModelAnswersPage() {
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <Award className="size-5 text-primary" />
-                <h3 className="text-heading-md font-heading text-foreground">
-                  {model.title}
-                </h3>
+                <h3 className="text-heading-md font-heading text-foreground">{model.title}</h3>
               </div>
-              <Badge className="bg-primary/10 text-primary border-primary/20">
-                {model.mark}
-              </Badge>
+              <Badge className="bg-primary/10 text-primary border-primary/20">{model.mark}</Badge>
             </div>
 
             <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
               <p className="text-body-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 Question
               </p>
-              <p className="mt-1 text-body-sm italic text-foreground">
-                {model.question}
-              </p>
+              <p className="mt-1 text-body-sm italic text-foreground">{model.question}</p>
             </div>
 
             {model.points.map((p, i) => (
@@ -273,16 +267,12 @@ export default async function Paper1ModelAnswersPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <p className="text-body-md leading-relaxed text-foreground">
-                    {p.answer}
-                  </p>
+                  <p className="text-body-md leading-relaxed text-foreground">{p.answer}</p>
                   <div className="rounded-lg border border-border/60 bg-primary/5 p-4">
                     <p className="text-body-xs font-semibold uppercase tracking-wide text-primary">
                       Examiner note
                     </p>
-                    <p className="mt-2 text-body-sm text-foreground">
-                      {p.note}
-                    </p>
+                    <p className="mt-2 text-body-sm text-foreground">{p.note}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -302,10 +292,9 @@ export default async function Paper1ModelAnswersPage() {
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Question 2 asks how the writer uses language to create meaning and
-            effect. Below is the same passage analysed at Grade C and then at
-            Grade A*, so you can see precisely what separates an average response
-            from a top-band one.
+            Question 2 asks how the writer uses language to create meaning and effect. Below is the
+            same passage analysed at Grade C and then at Grade A*, so you can see precisely what
+            separates an average response from a top-band one.
           </p>
         </div>
 
@@ -343,9 +332,7 @@ export default async function Paper1ModelAnswersPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-body-md leading-relaxed text-foreground">
-                  {p.text}
-                </p>
+                <p className="text-body-md leading-relaxed text-foreground">{p.text}</p>
                 <div className="rounded-lg border border-border/60 bg-muted/40 p-4">
                   <p className="text-body-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     Examiner note
@@ -366,9 +353,7 @@ export default async function Paper1ModelAnswersPage() {
                 {q2GradeA.grade} response
               </h3>
             </div>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              {q2GradeA.mark}
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">{q2GradeA.mark}</Badge>
           </div>
 
           {q2GradeA.paragraphs.map((p, i) => (
@@ -379,9 +364,7 @@ export default async function Paper1ModelAnswersPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-body-md leading-relaxed text-foreground">
-                  {p.text}
-                </p>
+                <p className="text-body-md leading-relaxed text-foreground">{p.text}</p>
                 <div className="rounded-lg border border-border/60 bg-primary/5 p-4">
                   <p className="text-body-xs font-semibold uppercase tracking-wide text-primary">
                     Examiner note
@@ -420,7 +403,10 @@ export default async function Paper1ModelAnswersPage() {
                 </p>
                 <ul className="space-y-1.5 text-body-sm text-foreground">
                   <li>Explore connotations and layers of meaning</li>
-                  <li>Use precise vocabulary: &quot;predatory&quot;, &quot;sentient&quot;, &quot;paradox&quot;</li>
+                  <li>
+                    Use precise vocabulary: &quot;predatory&quot;, &quot;sentient&quot;,
+                    &quot;paradox&quot;
+                  </li>
                   <li>Link words into patterns and semantic fields</li>
                   <li>Explain the reader&apos;s psychological response</li>
                   <li>Build an argument across the whole response</li>
@@ -435,40 +421,31 @@ export default async function Paper1ModelAnswersPage() {
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <Award className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Question 3 — Summary
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Question 3 — Summary</h2>
         </div>
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Question 3 asks you to summarise information from two passages into a
-            single continuous paragraph of about 250 words. You are marked on
-            content (how many relevant points you include) and language (how
-            effectively you use your own words). No quotation, no opinion, no
-            bullet points.
+            Question 3 asks you to summarise information from two passages into a single continuous
+            paragraph of about 250 words. You are marked on content (how many relevant points you
+            include) and language (how effectively you use your own words). No quotation, no
+            opinion, no bullet points.
           </p>
         </div>
 
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Award className="size-5 text-primary" />
-            <h3 className="text-heading-md font-heading text-foreground">
-              {q3Model.title}
-            </h3>
+            <h3 className="text-heading-md font-heading text-foreground">{q3Model.title}</h3>
           </div>
-          <Badge className="bg-primary/10 text-primary border-primary/20">
-            {q3Model.mark}
-          </Badge>
+          <Badge className="bg-primary/10 text-primary border-primary/20">{q3Model.mark}</Badge>
         </div>
 
         <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
           <p className="text-body-xs font-semibold uppercase tracking-wide text-muted-foreground">
             Question
           </p>
-          <p className="mt-1 text-body-sm italic text-foreground">
-            {q3Model.question}
-          </p>
+          <p className="mt-1 text-body-sm italic text-foreground">{q3Model.question}</p>
         </div>
 
         <Card>
@@ -485,10 +462,7 @@ export default async function Paper1ModelAnswersPage() {
         </Card>
 
         {q3Model.annotations.map((a) => (
-          <div
-            key={a.label}
-            className="rounded-lg border border-border/60 bg-primary/5 p-4"
-          >
+          <div key={a.label} className="rounded-lg border border-border/60 bg-primary/5 p-4">
             <p className="text-body-xs font-semibold uppercase tracking-wide text-primary">
               {a.label}
             </p>

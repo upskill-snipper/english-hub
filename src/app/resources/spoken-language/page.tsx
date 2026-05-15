@@ -6,6 +6,11 @@ import { headers } from 'next/headers'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Spoken Language Endorsement Guide | The English Hub',
+    description:
+      'Complete guide to the GCSE English Language Spoken Language endorsement. Presentation planning, delivery techniques, responding to questions, Standard English, assessment criteria, and 20+ topic ideas.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/spoken-language' },
   title: 'Spoken Language Endorsement Guide | The English Hub',
   description:

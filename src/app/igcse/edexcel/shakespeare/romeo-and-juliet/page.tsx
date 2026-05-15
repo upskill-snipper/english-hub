@@ -8,6 +8,11 @@ import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Romeo and Juliet — Edexcel IGCSE Literature Study Guide',
+    description:
+      'Romeo and Juliet study hub for Edexcel IGCSE English Literature: plot, characters, themes overview, and exam technique for the two-part Shakespeare question.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/romeo-and-juliet',
   },

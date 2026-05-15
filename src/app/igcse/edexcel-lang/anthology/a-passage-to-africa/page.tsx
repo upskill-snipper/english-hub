@@ -18,6 +18,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'A Passage to Africa — George Alagiah — IGCSE Language A Anthology — The English Hub',
+    description:
+      'Study guide for A Passage to Africa by George Alagiah. Thematic and structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
+  },
   title: 'A Passage to Africa — George Alagiah — IGCSE Language A Anthology — The English Hub',
   description:
     'Study guide for A Passage to Africa by George Alagiah. Thematic and structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',

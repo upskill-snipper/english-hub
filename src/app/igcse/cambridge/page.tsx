@@ -27,6 +27,11 @@ import BoardMismatchBanner from '@/components/board/BoardMismatchBanner'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Cambridge IGCSE English — The English Hub',
+    description:
+      'Cambridge IGCSE English hub. Covers Language A and Language B with full study guides, exam technique and assessment breakdowns.',
+  },
   title: 'Cambridge IGCSE English — The English Hub',
   description:
     'Cambridge IGCSE English hub. Covers Language A and Language B with full study guides, exam technique and assessment breakdowns.',

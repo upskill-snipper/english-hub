@@ -11,17 +11,17 @@ import {
   PenTool,
   ClipboardList,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'How to pass with Grade 5 | Cambridge IGCSE Language B | The English Hub',
+    description:
+      'Strong pass guide for Cambridge IGCSE Language B First Language English. Reach Grade 5 with clear understanding, accurate writing and dependable exam technique.',
+  },
   title: 'How to pass with Grade 5 | Cambridge IGCSE Language B | The English Hub',
   description:
     'Strong pass guide for Cambridge IGCSE Language B First Language English. Reach Grade 5 with clear understanding, accurate writing and dependable exam technique.',
@@ -91,11 +91,7 @@ export default async function Grade5GuidePage() {
   return (
     <div className="space-y-10 pb-16">
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/0990" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/0990" />}>
           <ArrowLeft className="size-3.5" />
           Back to IGCSE Language B hub
         </Button>
@@ -118,11 +114,9 @@ export default async function Grade5GuidePage() {
             How to pass with Grade 5
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Grade 5 is the strong pass — roughly the old B/C boundary.
-            It&apos;s what most sixth forms and IB schools ask for as a
-            minimum in English. You don&apos;t need perfect writing; you
-            need dependable comprehension and clear, controlled
-            communication.
+            Grade 5 is the strong pass — roughly the old B/C boundary. It&apos;s what most sixth
+            forms and IB schools ask for as a minimum in English. You don&apos;t need perfect
+            writing; you need dependable comprehension and clear, controlled communication.
           </p>
         </div>
       </section>
@@ -139,15 +133,11 @@ export default async function Grade5GuidePage() {
           {marksToGet.map((m) => (
             <Card key={m.paper}>
               <CardHeader className="pb-3">
-                <CardTitle className="text-heading-md font-heading">
-                  {m.paper}
-                </CardTitle>
+                <CardTitle className="text-heading-md font-heading">{m.paper}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-display-sm font-heading text-primary">
-                    {m.target}
-                  </span>
+                  <span className="text-display-sm font-heading text-primary">{m.target}</span>
                   <span className="text-body-sm text-muted-foreground">
                     / 80 marks ({m.percentage})
                   </span>
@@ -178,9 +168,7 @@ export default async function Grade5GuidePage() {
                   <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-primary/10">
                     <Icon className="size-5 text-primary" />
                   </div>
-                  <CardTitle className="text-body font-semibold">
-                    {f.title}
-                  </CardTitle>
+                  <CardTitle className="text-body font-semibold">{f.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -212,9 +200,8 @@ export default async function Grade5GuidePage() {
               1
             </span>
             <span>
-              <strong className="text-foreground">Use clear paragraphs.</strong>{' '}
-              One point per paragraph. Don&apos;t let your writing become
-              one giant block.
+              <strong className="text-foreground">Use clear paragraphs.</strong> One point per
+              paragraph. Don&apos;t let your writing become one giant block.
             </span>
           </li>
           <li className="flex gap-3">
@@ -222,9 +209,8 @@ export default async function Grade5GuidePage() {
               2
             </span>
             <span>
-              <strong className="text-foreground">Stick to one tense.</strong>{' '}
-              Drifting between past and present is the fastest way to lose
-              writing marks.
+              <strong className="text-foreground">Stick to one tense.</strong> Drifting between past
+              and present is the fastest way to lose writing marks.
             </span>
           </li>
           <li className="flex gap-3">
@@ -232,8 +218,8 @@ export default async function Grade5GuidePage() {
               3
             </span>
             <span>
-              <strong className="text-foreground">Quote short.</strong> Even
-              a single key word, used well, is enough at this level.
+              <strong className="text-foreground">Quote short.</strong> Even a single key word, used
+              well, is enough at this level.
             </span>
           </li>
           <li className="flex gap-3">
@@ -241,9 +227,8 @@ export default async function Grade5GuidePage() {
               4
             </span>
             <span>
-              <strong className="text-foreground">Answer the question.</strong>{' '}
-              If the question asks about feelings, write about feelings —
-              not the setting.
+              <strong className="text-foreground">Answer the question.</strong> If the question asks
+              about feelings, write about feelings — not the setting.
             </span>
           </li>
           <li className="flex gap-3">
@@ -251,9 +236,8 @@ export default async function Grade5GuidePage() {
               5
             </span>
             <span>
-              <strong className="text-foreground">Finish every question.</strong>{' '}
-              Unfinished answers score only what you wrote. Always write a
-              short conclusion.
+              <strong className="text-foreground">Finish every question.</strong> Unfinished answers
+              score only what you wrote. Always write a short conclusion.
             </span>
           </li>
         </ol>
@@ -261,18 +245,12 @@ export default async function Grade5GuidePage() {
 
       {/* Next */}
       <section className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Ready for more?
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Ready for more?</h2>
         <p className="mt-2 text-body-sm text-muted-foreground">
-          Build from Grade 5 to Grade 7 with a sharper focus on analysis and
-          style.
+          Build from Grade 5 to Grade 7 with a sharper focus on analysis and style.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Button
-            size="sm"
-            render={<Link href="/igcse/cambridge/0990/grade-7-guide" />}
-          >
+          <Button size="sm" render={<Link href="/igcse/cambridge/0990/grade-7-guide" />}>
             Push for Grade 7
             <ArrowRight className="size-3.5" />
           </Button>

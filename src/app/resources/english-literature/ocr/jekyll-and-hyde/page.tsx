@@ -7,6 +7,11 @@ import { headers } from 'next/headers'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Jekyll and Hyde Study Guide for OCR | The English Hub',
+    description:
+      'Comprehensive Jekyll and Hyde study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/ocr/jekyll-and-hyde',
   },

@@ -1,31 +1,22 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ChevronLeft,
-  Eye,
-  Search,
-  BookOpen,
-  Highlighter,
-  Lightbulb,
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { ChevronLeft, Eye, Search, BookOpen, Highlighter, Lightbulb } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Reading Techniques — IGCSE Language A Paper 1',
+    description:
+      'How to read IGCSE Language A Paper 1 passages efficiently. Skimming, scanning, close reading and annotating strategies for the reading exam. Aligns with Cambridge syllabus 0500.',
+  },
   title: 'Reading Techniques — IGCSE Language A Paper 1',
   description:
     'How to read IGCSE Language A Paper 1 passages efficiently. Skimming, scanning, close reading and annotating strategies for the reading exam. Aligns with Cambridge syllabus 0500.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/paper-1/reading-techniques',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/reading-techniques',
   },
 }
 
@@ -40,10 +31,9 @@ const techniques = [
       'Read the title and any headings first — they signal the main topic.',
       'Read the opening and closing sentences of each paragraph.',
       'Look for signal words: but, however, therefore, in contrast.',
-      'Note the writer\'s general attitude: positive, critical, neutral?',
+      "Note the writer's general attitude: positive, critical, neutral?",
     ],
-    pitfall:
-      'Do not try to understand every word. Skimming is for the big picture only.',
+    pitfall: 'Do not try to understand every word. Skimming is for the big picture only.',
   },
   {
     name: 'Scanning',
@@ -57,15 +47,14 @@ const techniques = [
       'Let unimportant words blur — your eye is only searching for the target.',
       'Stop, read the sentence carefully, then return to the question.',
     ],
-    pitfall:
-      'Do not read the whole passage word-by-word again. Scan, stop, verify, move on.',
+    pitfall: 'Do not read the whole passage word-by-word again. Scan, stop, verify, move on.',
   },
   {
     name: 'Close reading',
     icon: BookOpen,
     when: 'For language analysis (Q2) and inference',
     purpose:
-      'Read slowly and deliberately to understand the writer\'s intended effects and layered meanings.',
+      "Read slowly and deliberately to understand the writer's intended effects and layered meanings.",
     how: [
       'Read at quarter speed. Pause after each sentence.',
       'Ask why the writer chose this word rather than a synonym.',
@@ -87,8 +76,7 @@ const techniques = [
       'Margin notes: short labels like "fear", "contrast", "climax".',
       'Draw a vertical line next to a paragraph if it has a shift in tone.',
     ],
-    pitfall:
-      'Do not highlight everything. If half the passage is marked, nothing stands out.',
+    pitfall: 'Do not highlight everything. If half the passage is marked, nothing stands out.',
   },
 ]
 
@@ -115,13 +103,10 @@ export default async function ReadingTechniquesPage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Reading techniques
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Reading techniques</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          You have 2 hours and around 2,000 words of unseen text to read.
-          Use the right technique for the right job — never read every
-          passage at the same speed.
+          You have 2 hours and around 2,000 words of unseen text to read. Use the right technique
+          for the right job — never read every passage at the same speed.
         </p>
       </section>
 
@@ -137,22 +122,17 @@ export default async function ReadingTechniquesPage() {
                     <Icon className="size-5 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <CardTitle className="text-heading-md font-heading">
-                      {tech.name}
-                    </CardTitle>
+                    <CardTitle className="text-heading-md font-heading">{tech.name}</CardTitle>
                     <CardDescription>{tech.when}</CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  <span className="font-semibold text-foreground">Purpose:</span>{' '}
-                  {tech.purpose}
+                  <span className="font-semibold text-foreground">Purpose:</span> {tech.purpose}
                 </p>
                 <div>
-                  <p className="mb-2 text-body-sm font-semibold text-foreground">
-                    How to do it
-                  </p>
+                  <p className="mb-2 text-body-sm font-semibold text-foreground">How to do it</p>
                   <ul className="space-y-2 text-body-sm text-muted-foreground">
                     {tech.how.map((step) => (
                       <li key={step} className="flex items-start gap-2">
@@ -164,8 +144,7 @@ export default async function ReadingTechniquesPage() {
                 </div>
                 <div className="rounded-lg border border-border/60 bg-muted/30 p-3">
                   <p className="text-body-xs text-foreground">
-                    <span className="font-semibold">Common pitfall:</span>{' '}
-                    {tech.pitfall}
+                    <span className="font-semibold">Common pitfall:</span> {tech.pitfall}
                   </p>
                 </div>
               </CardContent>

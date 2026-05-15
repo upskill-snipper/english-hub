@@ -18,18 +18,17 @@ import {
   Layers,
   Award,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Cambridge IGCSE Composition — The English Hub',
+    description:
+      'Master Cambridge IGCSE Language Paper 2 Section B composition. Descriptive and narrative writing techniques, Grade 9 model answers, practice prompts and mark scheme breakdown.',
+  },
   title: 'Cambridge IGCSE Composition — The English Hub',
   description:
     'Master Cambridge IGCSE Language Paper 2 Section B composition. Descriptive and narrative writing techniques, Grade 9 model answers, practice prompts and mark scheme breakdown.',
@@ -168,18 +167,14 @@ export default async function CompositionHubPage() {
             Composition
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Cambridge IGCSE Language Paper 2
-            Section B asks you to write a descriptive or narrative composition
-            of <strong className="text-foreground">350–450 words</strong>. It
-            is worth <strong className="text-foreground">40 marks</strong> —
-            16 for content and structure, 24 for style and accuracy. This hub
-            breaks the task into techniques you can learn and rehearse.
+            Cambridge IGCSE Language Paper 2 Section B asks you to write a descriptive or narrative
+            composition of <strong className="text-foreground">350–450 words</strong>. It is worth{' '}
+            <strong className="text-foreground">40 marks</strong> — 16 for content and structure, 24
+            for style and accuracy. This hub breaks the task into techniques you can learn and
+            rehearse.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Button
-              size="lg"
-              render={<Link href="/igcse/cambridge/composition/descriptive" />}
-            >
+            <Button size="lg" render={<Link href="/igcse/cambridge/composition/descriptive" />}>
               <PenLine className="size-4" />
               Descriptive writing
               <ArrowRight className="size-4" />
@@ -200,17 +195,15 @@ export default async function CompositionHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <PenLine className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Descriptive writing
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Descriptive writing</h2>
           <Badge variant="secondary" className="ml-auto">
             5 guides
           </Badge>
         </div>
         <p className="mb-6 max-w-3xl text-body-sm text-muted-foreground">
-          Description is not about plot. It is about holding a single moment
-          still long enough for the reader to feel, smell and hear it.
-          Cambridge rewards specificity, control and sustained imagery.
+          Description is not about plot. It is about holding a single moment still long enough for
+          the reader to feel, smell and hear it. Cambridge rewards specificity, control and
+          sustained imagery.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -234,11 +227,7 @@ export default async function CompositionHubPage() {
                     {s.description}
                   </CardDescription>
                   <div className="mt-auto">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      render={<Link href={s.href} />}
-                    >
+                    <Button variant="ghost" size="sm" render={<Link href={s.href} />}>
                       Open guide
                       <ArrowRight className="size-3.5" />
                     </Button>
@@ -254,17 +243,15 @@ export default async function CompositionHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Narrative writing
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Narrative writing</h2>
           <Badge variant="secondary" className="ml-auto">
             6 guides
           </Badge>
         </div>
         <p className="mb-6 max-w-3xl text-body-sm text-muted-foreground">
-          A Cambridge short story is not a novel in miniature. It is a single
-          scene, a single turn, a single change. These guides show you how to
-          compress character, tension and structure into 450 words.
+          A Cambridge short story is not a novel in miniature. It is a single scene, a single turn,
+          a single change. These guides show you how to compress character, tension and structure
+          into 450 words.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -288,11 +275,7 @@ export default async function CompositionHubPage() {
                     {s.description}
                   </CardDescription>
                   <div className="mt-auto">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      render={<Link href={s.href} />}
-                    >
+                    <Button variant="ghost" size="sm" render={<Link href={s.href} />}>
                       Open guide
                       <ArrowRight className="size-3.5" />
                     </Button>
@@ -308,17 +291,14 @@ export default async function CompositionHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Feather className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Craft and assessment
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Craft and assessment</h2>
           <Badge variant="secondary" className="ml-auto">
             3 guides
           </Badge>
         </div>
         <p className="mb-6 max-w-3xl text-body-sm text-muted-foreground">
-          The 24-mark style and accuracy pillar rewards range and control.
-          These guides target the specific moves that push compositions from
-          the middle band into the top band.
+          The 24-mark style and accuracy pillar rewards range and control. These guides target the
+          specific moves that push compositions from the middle band into the top band.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -342,11 +322,7 @@ export default async function CompositionHubPage() {
                     {s.description}
                   </CardDescription>
                   <div className="mt-auto">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      render={<Link href={s.href} />}
-                    >
+                    <Button variant="ghost" size="sm" render={<Link href={s.href} />}>
                       Open guide
                       <ArrowRight className="size-3.5" />
                     </Button>

@@ -7,6 +7,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Curious Incident Themes — Edexcel IGCSE Literature',
+    description:
+      'Themes in The Curious Incident of the Dog in the Night-Time: neurodivergence, family, truth and lies, independence, order and theatrical form.',
+  },
   title: 'Curious Incident Themes — Edexcel IGCSE Literature',
   description:
     'Themes in The Curious Incident of the Dog in the Night-Time: neurodivergence, family, truth and lies, independence, order and theatrical form.',

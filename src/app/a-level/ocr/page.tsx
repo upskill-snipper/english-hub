@@ -3,6 +3,11 @@ import { ALevelBoardHub } from '@/app/a-level/_components/BoardHub'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'OCR A-Level English — The English Hub',
+    description:
+      'OCR A-Level English Literature (H472) and Language (H470) revision hub. Cross-board set text analysis, essay technique and language study while full OCR A-Level content is on our roadmap.',
+  },
   title: 'OCR A-Level English — The English Hub',
   description:
     'OCR A-Level English Literature (H472) and Language (H470) revision hub. Cross-board set text analysis, essay technique and language study while full OCR A-Level content is on our roadmap.',

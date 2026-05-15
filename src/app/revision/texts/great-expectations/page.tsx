@@ -9,6 +9,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Great Expectations revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Great Expectations GCSE revision — Dickens',
+  },
   title: 'Great Expectations revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Great Expectations GCSE revision — Dickens's bildungsroman by chapter with characters, themes, key quotes and essay plans. Aligned to the AQA spec.",

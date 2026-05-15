@@ -7,6 +7,10 @@ import { ArrowLeft, BookOpen, Construction } from 'lucide-react'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'He Never Expected Much — Thomas Hardy | Cambridge IGCSE 0475',
+    description: 'Study guide for ',
+  },
   title: 'He Never Expected Much — Thomas Hardy | Cambridge IGCSE 0475',
   description:
     "Study guide for 'He Never Expected Much' by Thomas Hardy (1928). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4.",

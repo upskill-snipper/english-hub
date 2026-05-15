@@ -1,30 +1,22 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ChevronLeft,
-  Target,
-  TrendingUp,
-  Star,
-  Info,
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { ChevronLeft, Target, TrendingUp, Star, Info } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Grade Boundaries — IGCSE Language A',
+    description:
+      'Historical grade boundaries for IGCSE Language A First Language English and how to hit an A* grade. Aligns with Cambridge syllabus 0500.',
+  },
   title: 'Grade Boundaries — IGCSE Language A',
   description:
     'Historical grade boundaries for IGCSE Language A First Language English and how to hit an A* grade. Aligns with Cambridge syllabus 0500.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/grade-boundaries',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/grade-boundaries',
   },
 }
 
@@ -58,7 +50,7 @@ const tips = [
   'Build a personal bank of sophisticated vocabulary and test yourself weekly.',
   'Read 15 minutes of non-fiction daily — broadsheet opinion pieces are perfect for Q2-style analysis.',
   'Get a second pair of eyes on your descriptive/narrative compositions — self-marking rarely catches style issues.',
-  'Memorise the examiner\'s assessment language so your writing sounds like it meets the criteria before the marker has to look.',
+  "Memorise the examiner's assessment language so your writing sounds like it meets the criteria before the marker has to look.",
 ]
 
 export default async function GradeBoundariesPage() {
@@ -84,13 +76,10 @@ export default async function GradeBoundariesPage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Grade boundaries
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Grade boundaries</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          IGCSE Language A is marked out of 160 (Paper 1 + Paper 2 each out of
-          80). Grade thresholds are set fresh each session, but the five-year
-          trend gives you a reliable target range.
+          IGCSE Language A is marked out of 160 (Paper 1 + Paper 2 each out of 80). Grade thresholds
+          are set fresh each session, but the five-year trend gives you a reliable target range.
         </p>
       </section>
 
@@ -103,11 +92,10 @@ export default async function GradeBoundariesPage() {
               Indicative boundaries only
             </h3>
             <p className="mt-1 text-body-sm text-muted-foreground">
-              The figures below are drawn from Cambridge&apos;s historic
-              published thresholds. Boundaries drift year to year and the
-              only authoritative source is the Cambridge grade threshold
-              tables published after each exam session. Use these as
-              training targets, not guarantees.
+              The figures below are drawn from Cambridge&apos;s historic published thresholds.
+              Boundaries drift year to year and the only authoritative source is the Cambridge grade
+              threshold tables published after each exam session. Use these as training targets, not
+              guarantees.
             </p>
           </div>
         </div>
@@ -127,9 +115,7 @@ export default async function GradeBoundariesPage() {
               <table className="w-full border-collapse text-body-sm">
                 <thead>
                   <tr className="border-b border-border/60 text-left">
-                    <th className="py-2 pr-4 font-semibold text-foreground">
-                      Series
-                    </th>
+                    <th className="py-2 pr-4 font-semibold text-foreground">Series</th>
                     <th className="py-2 pr-4 font-semibold text-foreground">A*</th>
                     <th className="py-2 pr-4 font-semibold text-foreground">A</th>
                     <th className="py-2 pr-4 font-semibold text-foreground">B</th>
@@ -142,13 +128,8 @@ export default async function GradeBoundariesPage() {
                 </thead>
                 <tbody className="text-muted-foreground">
                   {boundaries.map((row) => (
-                    <tr
-                      key={row.series}
-                      className="border-b border-border/40 last:border-0"
-                    >
-                      <td className="py-2 pr-4 font-medium text-foreground">
-                        {row.series}
-                      </td>
+                    <tr key={row.series} className="border-b border-border/40 last:border-0">
+                      <td className="py-2 pr-4 font-medium text-foreground">{row.series}</td>
                       <td className="py-2 pr-4">{row.aStar}</td>
                       <td className="py-2 pr-4">{row.a}</td>
                       <td className="py-2 pr-4">{row.b}</td>
@@ -165,8 +146,8 @@ export default async function GradeBoundariesPage() {
           </CardContent>
         </Card>
         <p className="mt-3 text-body-xs text-muted-foreground">
-          Rough rule of thumb: A* ≈ 76–80%, A ≈ 68–70%, C ≈ 49–51%. Treat
-          125/160 as your A* training target and you will have a buffer.
+          Rough rule of thumb: A* ≈ 76–80%, A ≈ 68–70%, C ≈ 49–51%. Treat 125/160 as your A*
+          training target and you will have a buffer.
         </p>
       </section>
 
@@ -182,15 +163,11 @@ export default async function GradeBoundariesPage() {
           {aStarProfile.map((p) => (
             <Card key={p.paper}>
               <CardHeader className="pb-2">
-                <CardTitle className="text-heading-sm font-heading">
-                  {p.paper}
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">{p.paper}</CardTitle>
                 <CardDescription>{p.target}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  {p.detail}
-                </p>
+                <p className="text-body-sm text-muted-foreground leading-relaxed">{p.detail}</p>
               </CardContent>
             </Card>
           ))}

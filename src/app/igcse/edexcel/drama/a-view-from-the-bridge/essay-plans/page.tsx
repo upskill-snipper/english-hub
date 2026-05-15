@@ -7,19 +7,22 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'A View from the Bridge Essay Plans — Edexcel IGCSE Literature',
+    description:
+      'Five ready-to-use essay plans for A View from the Bridge covering Eddie\u2019s downfall, masculinity, honour, Alfieri\u2019s role and dramatic techniques.',
+  },
   title: 'A View from the Bridge Essay Plans — Edexcel IGCSE Literature',
   description:
     'Five ready-to-use essay plans for A View from the Bridge covering Eddie\u2019s downfall, masculinity, honour, Alfieri\u2019s role and dramatic techniques.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/essay-plans',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/essay-plans',
   },
 }
 
 const essays = [
   {
-    question:
-      'How does Miller present Eddie Carbone as a tragic figure in A View from the Bridge?',
+    question: 'How does Miller present Eddie Carbone as a tragic figure in A View from the Bridge?',
     thesis:
       'Miller adapts the Greek tragic model \u2014 hamartia, peripeteia, anagnorisis \u2014 to a 1950s Brooklyn longshoreman, arguing that tragedy can belong to ordinary people.',
     paragraphs: [
@@ -56,8 +59,7 @@ const essays = [
     ],
   },
   {
-    question:
-      'How does Miller explore ideas about masculinity in A View from the Bridge?',
+    question: 'How does Miller explore ideas about masculinity in A View from the Bridge?',
     thesis:
       'Miller presents 1950s working-class masculinity as a rigid code that destroys those who police it most aggressively, while offering Rodolpho as an alternative model Eddie cannot accept.',
     paragraphs: [
@@ -170,8 +172,7 @@ const essays = [
     ],
   },
   {
-    question:
-      'How does Miller use dramatic techniques to build tension in A View from the Bridge?',
+    question: 'How does Miller use dramatic techniques to build tension in A View from the Bridge?',
     thesis:
       'Miller builds tension through stage directions, physical action, dramatic irony and the chorus structure, creating a play where the audience sees the catastrophe approaching while the characters cannot.',
     paragraphs: [
@@ -216,21 +217,25 @@ export default async function AViewEssayPlansPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Drama", url: "https://theenglishhub.app/igcse/edexcel/drama" },
-          { name: "A View from the Bridge", url: "https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge" },
-          { name: "Essay Plans", url: "https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/essay-plans" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Drama', url: 'https://theenglishhub.app/igcse/edexcel/drama' },
+          {
+            name: 'A View from the Bridge',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge',
+          },
+          {
+            name: 'Essay Plans',
+            url: 'https://theenglishhub.app/igcse/edexcel/drama/a-view-from-the-bridge/essay-plans',
+          },
         ]}
       />
       <div>
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/edexcel/drama/a-view-from-the-bridge" />
-          }
+          render={<Link href="/igcse/edexcel/drama/a-view-from-the-bridge" />}
         >
           <ArrowLeft className="size-3.5" />
           Back to A View from the Bridge
@@ -250,8 +255,8 @@ export default async function AViewEssayPlansPage() {
             A View from the Bridge: Essay Plans
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Five exam-ready essay plans with thesis statements, paragraph
-            points and supporting quotations for top-band responses.
+            Five exam-ready essay plans with thesis statements, paragraph points and supporting
+            quotations for top-band responses.
           </p>
         </div>
       </section>
@@ -264,9 +269,8 @@ export default async function AViewEssayPlansPage() {
               Key quotations only &mdash; read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and
-              criticism. These plans are starting frameworks &mdash; always
-              develop your own argument.
+              Short extracts are included under fair dealing for study and criticism. These plans
+              are starting frameworks &mdash; always develop your own argument.
             </p>
           </div>
         </div>
@@ -275,28 +279,16 @@ export default async function AViewEssayPlansPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Essay plans
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Essay plans</h2>
         </div>
         <div className="space-y-8">
           {essays.map((essay, i) => (
-            <article
-              key={i}
-              className="rounded-xl border border-border/60 bg-card p-6"
-            >
-              <h3 className="text-heading-md font-heading text-foreground">
-                {essay.question}
-              </h3>
-              <p className="mt-2 text-body-sm font-medium text-primary">
-                Thesis: {essay.thesis}
-              </p>
+            <article key={i} className="rounded-xl border border-border/60 bg-card p-6">
+              <h3 className="text-heading-md font-heading text-foreground">{essay.question}</h3>
+              <p className="mt-2 text-body-sm font-medium text-primary">Thesis: {essay.thesis}</p>
               <div className="mt-4 space-y-4">
                 {essay.paragraphs.map((p, j) => (
-                  <div
-                    key={j}
-                    className="rounded-lg border border-border/40 bg-muted/30 p-4"
-                  >
+                  <div key={j} className="rounded-lg border border-border/40 bg-muted/30 p-4">
                     <p className="text-body-sm font-semibold text-foreground">
                       {j + 1}. {p.point}
                     </p>
@@ -315,10 +307,9 @@ export default async function AViewEssayPlansPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        A View from the Bridge &copy; The Arthur Miller Estate. Short
-        quotations reproduced under the fair dealing provision of the
-        Copyright, Designs and Patents Act 1988 for the purpose of criticism
-        and review.
+        A View from the Bridge &copy; The Arthur Miller Estate. Short quotations reproduced under
+        the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of
+        criticism and review.
       </p>
     </div>
   )

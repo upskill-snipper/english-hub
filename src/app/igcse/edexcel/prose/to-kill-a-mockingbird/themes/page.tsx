@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'To Kill a Mockingbird Themes — Edexcel IGCSE Literature',
+    description:
+      'Themes in To Kill a Mockingbird: racism and justice, moral courage, childhood innocence, empathy, class, gender and the mockingbird motif.',
+  },
   title: 'To Kill a Mockingbird Themes — Edexcel IGCSE Literature',
   description:
     'Themes in To Kill a Mockingbird: racism and justice, moral courage, childhood innocence, empathy, class, gender and the mockingbird motif.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/themes',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/themes',
   },
 }
 
@@ -32,8 +36,7 @@ const themes = [
       'Courage in Mockingbird is redefined away from physical bravery. Atticus\u2019s definition — via Mrs Dubose\u2019s morphine withdrawal — is the book\u2019s working theory of ethical action: doing the right thing when you already know you will lose. This makes the trial itself an act of courage rather than a failed rescue mission.',
     textualMoments:
       'Mrs Dubose chapters (11); the mad-dog shot (10); Atticus\u2019s defence; Boo\u2019s intervention.',
-    quote:
-      '”Real courage is… when you\u2019re licked before you begin but you begin anyway.”',
+    quote: '”Real courage is… when you\u2019re licked before you begin but you begin anyway.”',
   },
   {
     title: 'Childhood innocence and its loss',
@@ -67,8 +70,7 @@ const themes = [
       'Jem\u2019s taxonomy of Maycomb — "our kind of folks don\u2019t like the Cunninghams, the Cunninghams don\u2019t like the Ewells, and the Ewells hate and despise the colored folks" — lays out the brittle class system that racial scapegoating holds together. Lee repeatedly shows how class anxiety feeds racial violence.',
     textualMoments:
       'Scout\u2019s lunch with Walter (ch. 3); Jem\u2019s taxonomy (ch. 23); Aunt Alexandra\u2019s Finch Family lectures.',
-    quote:
-      '“There\u2019s four kinds of folks in the world.”',
+    quote: '“There\u2019s four kinds of folks in the world.”',
   },
   {
     title: 'Gender and Southern womanhood',
@@ -76,8 +78,7 @@ const themes = [
       'Scout\u2019s refusal of dresses, overalls and Alexandra\u2019s "ladylike" curriculum positions gender as another system of control. Mayella\u2019s isolation exposes the darker side of the same pressure: white Southern femininity is both prized and weaponised. Miss Maudie offers an alternative model of adult womanhood — sharp, independent and unmarried.',
     textualMoments:
       'Scout\u2019s clashes with Alexandra; Mayella\u2019s testimony; the Missionary Society tea.',
-    quote:
-      '“I was not so sure, but Jem told me I was being a girl.”',
+    quote: '“I was not so sure, but Jem told me I was being a girl.”',
   },
 ]
 
@@ -88,21 +89,25 @@ export default async function TkamThemesPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
-          { name: "To Kill a Mockingbird", url: "https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird" },
-          { name: "Themes", url: "https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/themes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+          {
+            name: 'To Kill a Mockingbird',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird',
+          },
+          {
+            name: 'Themes',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/themes',
+          },
         ]}
       />
       <div>
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/edexcel/prose/to-kill-a-mockingbird" />
-          }
+          render={<Link href="/igcse/edexcel/prose/to-kill-a-mockingbird" />}
         >
           <ArrowLeft className="size-3.5" />
           Back to To Kill a Mockingbird
@@ -122,10 +127,9 @@ export default async function TkamThemesPage() {
             To Kill a Mockingbird: Themes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical routes through Lee’s novel — understanding the
-            text, analysing language and structure, and relating to context
-            — racism, courage, innocence, empathy, class, gender and the
-            mockingbird motif.
+            Analytical routes through Lee’s novel — understanding the text, analysing language and
+            structure, and relating to context — racism, courage, innocence, empathy, class, gender
+            and the mockingbird motif.
           </p>
         </div>
       </section>
@@ -138,8 +142,7 @@ export default async function TkamThemesPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and
-              criticism.
+              Short extracts are included under fair dealing for study and criticism.
             </p>
           </div>
         </div>
@@ -147,21 +150,11 @@ export default async function TkamThemesPage() {
 
       <section className="space-y-5">
         {themes.map((t) => (
-          <article
-            key={t.title}
-            className="rounded-xl border border-border/60 bg-card p-6"
-          >
-            <h2 className="text-heading-md font-heading text-foreground">
-              {t.title}
-            </h2>
-            <p className="mt-3 text-body-sm leading-relaxed text-muted-foreground">
-              {t.intro}
-            </p>
+          <article key={t.title} className="rounded-xl border border-border/60 bg-card p-6">
+            <h2 className="text-heading-md font-heading text-foreground">{t.title}</h2>
+            <p className="mt-3 text-body-sm leading-relaxed text-muted-foreground">{t.intro}</p>
             <p className="mt-3 text-body-xs text-muted-foreground">
-              <span className="font-semibold text-foreground">
-                Key moments:
-              </span>{' '}
-              {t.textualMoments}
+              <span className="font-semibold text-foreground">Key moments:</span> {t.textualMoments}
             </p>
             <blockquote className="mt-3 border-l-2 border-primary/40 pl-3 text-body-sm italic text-foreground">
               {t.quote}
@@ -171,7 +164,8 @@ export default async function TkamThemesPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism
+        and review. Full text available from your school or local library.
       </p>
     </div>
   )

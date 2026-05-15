@@ -13,24 +13,22 @@ import {
   Type,
   FileText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title:
-    'Setting and Atmosphere — Reading Practice Framework — The English Hub',
+  openGraph: {
+    title: 'Setting and Atmosphere — Reading Practice Framework — The English Hub',
+    description:
+      'Cambridge IGCSE Paper 1 reading practice on setting and atmosphere. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+  },
+  title: 'Setting and Atmosphere — Reading Practice Framework — The English Hub',
   description:
     'Cambridge IGCSE Paper 1 reading practice on setting and atmosphere. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/reading/setting-atmosphere',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/reading/setting-atmosphere',
   },
 }
 
@@ -87,11 +85,7 @@ export default async function SettingAtmospherePage() {
   return (
     <div className="space-y-8 pb-16">
       <header className="space-y-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All reading frameworks
         </Button>
@@ -103,14 +97,11 @@ export default async function SettingAtmospherePage() {
           <Badge variant="secondary">Reading framework</Badge>
           <Badge variant="secondary">Paper 1</Badge>
         </div>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Setting and Atmosphere
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Setting and Atmosphere</h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
-          Atmosphere is the feeling a place presses into the reader. Writers
-          build it from weather, light, sound, scale and pace. This
-          framework trains you to identify those building blocks and write
-          about their combined effect.
+          Atmosphere is the feeling a place presses into the reader. Writers build it from weather,
+          light, sound, scale and pace. This framework trains you to identify those building blocks
+          and write about their combined effect.
         </p>
       </header>
 
@@ -127,10 +118,9 @@ export default async function SettingAtmospherePage() {
         </CardHeader>
         <CardContent>
           <p className="text-body-sm text-foreground">
-            Setting passages test your reading of imagery, your sensitivity
-            to mood, and your ability to comment on how a scene is put
-            together. These are the exact moves Paper 1 rewards in language
-            analysis questions.
+            Setting passages test your reading of imagery, your sensitivity to mood, and your
+            ability to comment on how a scene is put together. These are the exact moves Paper 1
+            rewards in language analysis questions.
           </p>
         </CardContent>
       </Card>
@@ -138,13 +128,11 @@ export default async function SettingAtmospherePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Suggested practice texts
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Suggested practice texts</h2>
         </div>
         <p className="mb-4 text-body-sm text-muted-foreground">
-          Gothic and mystery novels are rich in atmosphere. Each of these
-          texts contains early chapters that lean heavily on setting.
+          Gothic and mystery novels are rich in atmosphere. Each of these texts contains early
+          chapters that lean heavily on setting.
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           {sources.map((s) => (
@@ -174,9 +162,7 @@ export default async function SettingAtmospherePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Comprehension questions
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Comprehension questions</h2>
         </div>
         <Card>
           <CardContent className="pt-6">
@@ -192,19 +178,17 @@ export default async function SettingAtmospherePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <MessageSquare className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Language analysis prompt
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Language analysis prompt</h2>
         </div>
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="pt-6">
             <p className="text-body-md italic text-foreground">
-              &ldquo;How does the writer use language to create a sense of
-              unease and atmosphere in this setting?&rdquo;
+              &ldquo;How does the writer use language to create a sense of unease and atmosphere in
+              this setting?&rdquo;
             </p>
             <p className="mt-4 text-body-sm text-muted-foreground">
-              Write a paragraph of roughly 150 words. Quote three specific
-              phrases and comment on imagery, sound and sentence length.
+              Write a paragraph of roughly 150 words. Quote three specific phrases and comment on
+              imagery, sound and sentence length.
             </p>
           </CardContent>
         </Card>
@@ -213,15 +197,12 @@ export default async function SettingAtmospherePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Summary task template
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Summary task template</h2>
         </div>
         <Card>
           <CardContent className="pt-6 space-y-3 text-body-sm text-foreground">
             <p>
-              Summarise the setting and its atmosphere in{' '}
-              <strong>no more than 120 words</strong>.
+              Summarise the setting and its atmosphere in <strong>no more than 120 words</strong>.
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
@@ -231,12 +212,10 @@ export default async function SettingAtmospherePage() {
                 <strong>Sentence 2:</strong> The dominant mood.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two concrete details that
-                create that mood.
+                <strong>Sentences 3–4:</strong> Two concrete details that create that mood.
               </li>
               <li>
-                <strong>Sentence 5:</strong> How the setting makes the
-                reader feel.
+                <strong>Sentence 5:</strong> How the setting makes the reader feel.
               </li>
             </ul>
           </CardContent>
@@ -246,9 +225,7 @@ export default async function SettingAtmospherePage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Type className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Vocabulary focus
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Vocabulary focus</h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
           Eight terms to use when writing about setting and atmosphere.
@@ -287,9 +264,7 @@ export default async function SettingAtmospherePage() {
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/cambridge/reading/dialogue-analysis" />
-          }
+          render={<Link href="/igcse/cambridge/reading/dialogue-analysis" />}
         >
           <ArrowLeft className="size-3.5" />
           Dialogue analysis

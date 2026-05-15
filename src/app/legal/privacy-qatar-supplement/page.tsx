@@ -19,6 +19,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Qatar Privacy Notice Supplement',
+    description:
+      'Honest, corrected data-flow description and PDPPL rights for residents of the State of Qatar. Supersedes the prior UK-IDTA description.',
+  },
   title: 'Qatar Privacy Notice Supplement',
   description:
     'Honest, corrected data-flow description and PDPPL rights for residents of the State of Qatar. Supersedes the prior UK-IDTA description.',

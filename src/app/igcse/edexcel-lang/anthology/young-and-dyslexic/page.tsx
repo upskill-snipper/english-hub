@@ -18,6 +18,10 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Young and Dyslexic? You',
+    description: 'Study guide for Young and Dyslexic? You',
+  },
   title:
     "Young and Dyslexic? You've Got It Going On — Benjamin Zephaniah — IGCSE Language A Anthology — The English Hub",
   description:

@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Grade 9 Narrative Model Answers — Cambridge IGCSE',
+    description:
+      'Three full Grade 9 Cambridge IGCSE narrative compositions with paragraph-by-paragraph examiner commentary on structure, character, dialogue and tension.',
+  },
   title: 'Grade 9 Narrative Model Answers — Cambridge IGCSE',
   description:
     'Three full Grade 9 Cambridge IGCSE narrative compositions with paragraph-by-paragraph examiner commentary on structure, character, dialogue and tension.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/narrative/model-answers',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/narrative/model-answers',
   },
 }
 
@@ -39,7 +43,7 @@ const models = [
       },
       {
         text: 'At the top of the stairs, she paused outside my mother\u2019s bedroom door. She did not knock this time. She put her palm against the wood, very gently, the way you might test a forehead for fever, and stood there for a long moment in the quiet of the landing. Then she turned around and came back down.',
-        note: 'The climax is not a scene of confrontation — it is a scene of restraint. The palm-on-the-door gesture is the show-don\'t-tell moment. The reader understands without being told.',
+        note: "The climax is not a scene of confrontation — it is a scene of restraint. The palm-on-the-door gesture is the show-don't-tell moment. The reader understands without being told.",
       },
       {
         text: 'At the front door she looked at me, and I have never seen anyone look so tired and so unsurprised at the same time. “Tell her I was here,” she said, “if you think she would want to know.” And then she was back out into the rain, her mustard cardigan already darker at the shoulders, three light taps and a fourth one echoing softly in my head for the rest of the night.',
@@ -60,7 +64,7 @@ const models = [
         note: 'Rising tension. Sound imagery (voice "designed to be ignored") and specific visual detail (black stones, old grease). Note the sentence variety — a four-word sentence next to a long one.',
       },
       {
-        text: 'I ran for the underpass. The tiled walls threw my footsteps back at me, louder each time, and I thought, stupidly, that he might be gone by the time I came up the other side — that the whole station might be gone, that I would come up into an empty sky with nothing left but the announcer\'s voice.',
+        text: "I ran for the underpass. The tiled walls threw my footsteps back at me, louder each time, and I thought, stupidly, that he might be gone by the time I came up the other side — that the whole station might be gone, that I would come up into an empty sky with nothing left but the announcer's voice.",
         note: 'Turning point candidate — physical movement, interior panic. The repeated structure "gone... gone... nothing left but" builds urgency without melodrama.',
       },
       {
@@ -68,7 +72,7 @@ const models = [
         note: 'Anti-climax — the emotional beat is silence and a newspaper. Restraint is the top-band move here. Many students would fill this moment with speech.',
       },
       {
-        text: '“You came.” He did not turn his head. “I wasn\'t sure you would.”\nI wanted to tell him I nearly didn\'t. I wanted to tell him that if the 7:42 had been a minute later, I would have stayed at the café for another coffee, and he would have gone without me saying anything, and I would have lived with that for the rest of my life.\nI said, instead, “Of course I came.”',
+        text: "“You came.” He did not turn his head. “I wasn't sure you would.”\nI wanted to tell him I nearly didn't. I wanted to tell him that if the 7:42 had been a minute later, I would have stayed at the café for another coffee, and he would have gone without me saying anything, and I would have lived with that for the rest of my life.\nI said, instead, “Of course I came.”",
         note: 'Dialogue showing subtext — the gap between what is said and what is thought is the whole point. "Of course I came" reads as kindness and lie at the same time.',
       },
       {
@@ -137,10 +141,9 @@ export default async function NarrativeModelAnswersPage() {
             Model narrative compositions
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Three full Grade 9 Cambridge IGCSE short stories with
-            paragraph-by-paragraph examiner annotations. Each one demonstrates
-            a different structural approach: slow reveal, in medias res, and
-            small-scale emotional turn.
+            Three full Grade 9 Cambridge IGCSE short stories with paragraph-by-paragraph examiner
+            annotations. Each one demonstrates a different structural approach: slow reveal, in
+            medias res, and small-scale emotional turn.
           </p>
         </div>
       </section>
@@ -150,13 +153,9 @@ export default async function NarrativeModelAnswersPage() {
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <Award className="size-5 text-primary" />
-              <h2 className="text-heading-lg font-heading text-foreground">
-                {m.title}
-              </h2>
+              <h2 className="text-heading-lg font-heading text-foreground">{m.title}</h2>
             </div>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              {m.mark}
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">{m.mark}</Badge>
           </div>
 
           {m.paragraphs.map((p, i) => (

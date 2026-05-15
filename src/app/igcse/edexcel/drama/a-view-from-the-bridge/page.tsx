@@ -9,6 +9,11 @@ import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'A View from the Bridge — Edexcel IGCSE Literature Study Guide',
+    description:
+      'Arthur Miller\u2019s A View from the Bridge for Edexcel IGCSE Literature: plot, characters, themes, Red Hook context and key quotations.',
+  },
   title: 'A View from the Bridge — Edexcel IGCSE Literature Study Guide',
   description:
     'Arthur Miller\u2019s A View from the Bridge for Edexcel IGCSE Literature: plot, characters, themes, Red Hook context and key quotations.',

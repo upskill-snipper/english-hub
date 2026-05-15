@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'To Kill a Mockingbird — Key Quotes | The English Hub',
+    description:
+      'Twenty-five essential quotations from To Kill a Mockingbird by Harper Lee with speaker, context and detailed analysis.',
+  },
   title: 'To Kill a Mockingbird — Key Quotes | The English Hub',
   description:
     'Twenty-five essential quotations from To Kill a Mockingbird by Harper Lee with speaker, context and detailed analysis.',

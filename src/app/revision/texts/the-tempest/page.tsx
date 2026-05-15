@@ -9,6 +9,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'The Tempest revision guide — themes, characters, key quotes — The English Hub',
+    description: 'The Tempest GCSE revision — Shakespeare',
+  },
   title: 'The Tempest revision guide — themes, characters, key quotes — The English Hub',
   description:
     "The Tempest GCSE revision — Shakespeare's late romance with plot, characters, themes, context and key quotes. Aligned to AQA and OCR English Literature.",

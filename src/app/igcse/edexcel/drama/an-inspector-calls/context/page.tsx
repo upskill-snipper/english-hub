@@ -7,6 +7,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'An Inspector Calls Context — Edexcel IGCSE Literature',
+    description:
+      'Context for An Inspector Calls: Edwardian 1912 vs 1945 Britain, J. B. Priestley\u2019s socialism, the welfare state, dramatic inheritance.',
+  },
   title: 'An Inspector Calls Context — Edexcel IGCSE Literature',
   description:
     'Context for An Inspector Calls: Edwardian 1912 vs 1945 Britain, J. B. Priestley\u2019s socialism, the welfare state, dramatic inheritance.',

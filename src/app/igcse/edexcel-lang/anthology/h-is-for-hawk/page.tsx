@@ -15,6 +15,10 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'H is for Hawk — Helen Macdonald — IGCSE Language A Anthology — The English Hub',
+    description: 'Study guide for ',
+  },
   title: 'H is for Hawk — Helen Macdonald — IGCSE Language A Anthology — The English Hub',
   description:
     'Study guide for "H is for Hawk" by Helen Macdonald. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',

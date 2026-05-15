@@ -7,6 +7,11 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'The Merchant of Venice — Study Guide | The English Hub',
+    description:
+      'In-depth study guide for The Merchant of Venice by William Shakespeare: plot, characters, themes, context and key quotations.',
+  },
   title: 'The Merchant of Venice — Study Guide | The English Hub',
   description:
     'In-depth study guide for The Merchant of Venice by William Shakespeare: plot, characters, themes, context and key quotations.',

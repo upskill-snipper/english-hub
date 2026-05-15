@@ -7,6 +7,10 @@ import { ArrowLeft, BookOpen, Construction, Scale } from 'lucide-react'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Wind — Ted Hughes | Cambridge IGCSE 0475',
+    description: 'Study guide for ',
+  },
   title: 'Wind — Ted Hughes | Cambridge IGCSE 0475',
   description:
     "Study guide for 'Wind' by Ted Hughes (1957). Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Hughes cluster.",

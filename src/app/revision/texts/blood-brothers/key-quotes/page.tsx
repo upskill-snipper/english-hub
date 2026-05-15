@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Blood Brothers — Key Quotes | The English Hub',
+    description:
+      'Twenty essential quotations from Blood Brothers by Willy Russell with speaker, context and detailed analysis.',
+  },
   title: 'Blood Brothers — Key Quotes | The English Hub',
   description:
     'Twenty essential quotations from Blood Brothers by Willy Russell with speaker, context and detailed analysis.',

@@ -9,24 +9,22 @@ import {
   ListChecks,
   Lightbulb,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Summary Writing — IGCSE Language A Paper 1 Q3',
+    description:
+      'How to write a top-mark summary for IGCSE Language A Paper 1 Question 3. Method, model paragraph and marking criteria explained. Aligns with Cambridge syllabus 0500.',
+  },
   title: 'Summary Writing — IGCSE Language A Paper 1 Q3',
   description:
     'How to write a top-mark summary for IGCSE Language A Paper 1 Question 3. Method, model paragraph and marking criteria explained. Aligns with Cambridge syllabus 0500.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/paper-1/summary-writing',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/summary-writing',
   },
 }
 
@@ -99,13 +97,11 @@ export default async function SummaryWritingPage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Summary writing (Q3)
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Summary writing (Q3)</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Question 3 is worth 25 marks — the biggest single mark chunk in
-          Paper 1. Fifteen marks are for reading (the points you find) and
-          ten are for writing (how concisely and clearly you express them).
+          Question 3 is worth 25 marks — the biggest single mark chunk in Paper 1. Fifteen marks are
+          for reading (the points you find) and ten are for writing (how concisely and clearly you
+          express them).
         </p>
       </section>
 
@@ -113,21 +109,17 @@ export default async function SummaryWritingPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            How the 25 marks split
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">How the 25 marks split</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
               Reading skills — 15 marks
             </Badge>
-            <h3 className="text-body-md font-semibold text-foreground">
-              Content points
-            </h3>
+            <h3 className="text-body-md font-semibold text-foreground">Content points</h3>
             <p className="mt-1 text-body-sm text-muted-foreground">
-              One mark per relevant idea identified from Texts A and C. Top
-              candidates identify around 15 distinct points.
+              One mark per relevant idea identified from Texts A and C. Top candidates identify
+              around 15 distinct points.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
@@ -138,8 +130,8 @@ export default async function SummaryWritingPage() {
               Style, structure, own words
             </h3>
             <p className="mt-1 text-body-sm text-muted-foreground">
-              Level 5 (9–10 marks): concise, fluent, cohesive, consistently in
-              your own words. No lifting.
+              Level 5 (9–10 marks): concise, fluent, cohesive, consistently in your own words. No
+              lifting.
             </p>
           </div>
         </div>
@@ -149,22 +141,16 @@ export default async function SummaryWritingPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Five-step method
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Five-step method</h2>
         </div>
         <div className="space-y-4">
           {method.map((m) => (
             <Card key={m.step}>
               <CardHeader className="pb-2">
-                <CardTitle className="text-heading-sm font-heading">
-                  {m.step}
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">{m.step}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  {m.detail}
-                </p>
+                <p className="text-body-sm text-muted-foreground leading-relaxed">{m.detail}</p>
               </CardContent>
             </Card>
           ))}
@@ -175,9 +161,7 @@ export default async function SummaryWritingPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <FileDigit className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Do and don&apos;t
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Do and don&apos;t</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           <Card>
@@ -198,9 +182,7 @@ export default async function SummaryWritingPage() {
           </Card>
           <Card>
             <CardHeader className="pb-3">
-              <CardTitle className="text-heading-sm font-heading">
-                Don&apos;t
-              </CardTitle>
+              <CardTitle className="text-heading-sm font-heading">Don&apos;t</CardTitle>
               <CardDescription>These habits cap you in Level 2–3.</CardDescription>
             </CardHeader>
             <CardContent>
@@ -226,23 +208,21 @@ export default async function SummaryWritingPage() {
           </h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
-          Imagine the question asks for the dangers faced by city cyclists.
-          Here is an opening that covers six points in about 70 words:
+          Imagine the question asks for the dangers faced by city cyclists. Here is an opening that
+          covers six points in about 70 words:
         </p>
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-foreground leading-relaxed">
-            City cyclists face busy roads where lorries and buses struggle to
-            see them, especially at junctions. Poorly maintained cycle lanes
-            leave riders vulnerable to potholes and sudden diversions. Motor
-            traffic produces pollution that harms riders&apos; lungs over time.
-            Drivers who are distracted or impatient increase the risk of
-            collisions, and inadequate lighting after dark makes cyclists harder
-            to spot.
+            City cyclists face busy roads where lorries and buses struggle to see them, especially
+            at junctions. Poorly maintained cycle lanes leave riders vulnerable to potholes and
+            sudden diversions. Motor traffic produces pollution that harms riders&apos; lungs over
+            time. Drivers who are distracted or impatient increase the risk of collisions, and
+            inadequate lighting after dark makes cyclists harder to spot.
           </p>
         </div>
         <p className="mt-3 text-body-xs text-muted-foreground">
-          Notice: no quotation, no opinion, every sentence a new point, and
-          the phrasing is the student&apos;s own.
+          Notice: no quotation, no opinion, every sentence a new point, and the phrasing is the
+          student&apos;s own.
         </p>
       </section>
     </div>

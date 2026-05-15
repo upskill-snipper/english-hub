@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Of Mice and Men Themes — Edexcel IGCSE Literature',
+    description:
+      'Themes in Steinbeck\u2019s Of Mice and Men: the American Dream, loneliness, friendship, discrimination, fate, power and nature.',
+  },
   title: 'Of Mice and Men Themes — Edexcel IGCSE Literature',
   description:
     'Themes in Steinbeck\u2019s Of Mice and Men: the American Dream, loneliness, friendship, discrimination, fate, power and nature.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/themes',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/themes',
   },
 }
 
@@ -23,8 +27,7 @@ const themes = [
       'The dream of owning "a little place" runs through the novella as ritual rather than plan. Steinbeck treats the American Dream as both a necessary fiction — without it, the ranch workers could not endure their conditions — and a cruelty, because the novella\u2019s form is tightly structured to make the dream unattainable. Candy\u2019s money, Crooks\u2019s momentary belief and Curley\u2019s wife\u2019s Hollywood ambition are all versions of the same disappointment.',
     moments:
       'George\u2019s retellings of the dream; Candy\u2019s offer to buy in; Crooks\u2019s hopeful interjection; Curley\u2019s wife\u2019s Salinas story.',
-    quote:
-      '”Every damn one of \u2019em\u2019s got a little piece of land in his head.” — Crooks',
+    quote: '”Every damn one of \u2019em\u2019s got a little piece of land in his head.” — Crooks',
   },
   {
     title: 'Loneliness',
@@ -32,8 +35,7 @@ const themes = [
       'Loneliness is the condition the ranch workers share but cannot name to each other. Steinbeck puts the diagnosis in the mouths of the characters who are most isolated by other factors: Crooks by race, Candy by age and disability, Curley\u2019s wife by gender. The novella\u2019s setting, Soledad ("solitude"), is itself a thematic pun.',
     moments:
       'Crooks\u2019s speech in his room; Curley\u2019s wife\u2019s monologue in the barn; George\u2019s confession to Slim.',
-    quote:
-      '“A guy needs somebody — to be near him.” — Crooks',
+    quote: '“A guy needs somebody — to be near him.” — Crooks',
   },
   {
     title: 'Friendship and companionship',
@@ -41,8 +43,7 @@ const themes = [
       'Against the grain of the itinerant ranch economy, George and Lennie travel together. Their companionship is protective, irritating, ritualised — and it is the novel\u2019s only functioning relationship. Slim\u2019s quiet approval of it functions as the moral authority\u2019s verdict: such friendships are rare and precious.',
     moments:
       'The opening by the pool; the recited dream; Slim\u2019s "you guys travel around together?"',
-    quote:
-      '“We got somebody to talk to that gives a damn about us.” — George',
+    quote: '“We got somebody to talk to that gives a damn about us.” — George',
   },
   {
     title: 'Discrimination and powerlessness',
@@ -68,8 +69,7 @@ const themes = [
       'Steinbeck examines how masculinity is constructed around physical strength (Lennie, Slim) and social power (Curley, the boss). Curley\u2019s violence is a compensation for stature; Lennie\u2019s strength becomes a liability; Slim\u2019s "majesty" comes from competence rather than domination. The novella is sceptical of every model it depicts.',
     moments:
       'Curley\u2019s attack on Lennie; Slim\u2019s quiet authority; Lennie\u2019s accidental killings.',
-    quote:
-      '“He\u2019s alla time picking scraps with big guys.” — Candy on Curley',
+    quote: '“He\u2019s alla time picking scraps with big guys.” — Candy on Curley',
   },
   {
     title: 'Nature and setting',
@@ -77,8 +77,7 @@ const themes = [
       'Steinbeck frames the novella with two scenes at the pool. Nature is peaceful, indifferent and, ultimately, the only place refuge is possible — though even that refuge is temporary. The contrast with the bunkhouse, the barn and the harness shed maps the novella\u2019s human environments onto an increasingly claustrophobic progression.',
     moments:
       'The opening pool description; Lennie\u2019s return at the end; the heron eating the water snake.',
-    quote:
-      '”A silent head and beak lanced down and plucked it out by the head.”',
+    quote: '”A silent head and beak lanced down and plucked it out by the head.”',
   },
 ]
 
@@ -89,12 +88,18 @@ export default async function OmamThemesPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
-          { name: "Of Mice and Men", url: "https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men" },
-          { name: "Themes", url: "https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/themes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+          {
+            name: 'Of Mice and Men',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men',
+          },
+          {
+            name: 'Themes',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/themes',
+          },
         ]}
       />
       <div>
@@ -121,9 +126,8 @@ export default async function OmamThemesPage() {
             Of Mice and Men: Themes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical routes through Steinbeck’s novella — the American
-            Dream, loneliness, friendship, discrimination, fate, power and
-            setting.
+            Analytical routes through Steinbeck’s novella — the American Dream, loneliness,
+            friendship, discrimination, fate, power and setting.
           </p>
         </div>
       </section>
@@ -136,8 +140,7 @@ export default async function OmamThemesPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and
-              criticism.
+              Short extracts are included under fair dealing for study and criticism.
             </p>
           </div>
         </div>
@@ -145,21 +148,11 @@ export default async function OmamThemesPage() {
 
       <section className="space-y-5">
         {themes.map((t) => (
-          <article
-            key={t.title}
-            className="rounded-xl border border-border/60 bg-card p-6"
-          >
-            <h2 className="text-heading-md font-heading text-foreground">
-              {t.title}
-            </h2>
-            <p className="mt-3 text-body-sm leading-relaxed text-muted-foreground">
-              {t.intro}
-            </p>
+          <article key={t.title} className="rounded-xl border border-border/60 bg-card p-6">
+            <h2 className="text-heading-md font-heading text-foreground">{t.title}</h2>
+            <p className="mt-3 text-body-sm leading-relaxed text-muted-foreground">{t.intro}</p>
             <p className="mt-3 text-body-xs text-muted-foreground">
-              <span className="font-semibold text-foreground">
-                Key moments:
-              </span>{' '}
-              {t.moments}
+              <span className="font-semibold text-foreground">Key moments:</span> {t.moments}
             </p>
             <blockquote className="mt-3 border-l-2 border-primary/40 pl-3 text-body-sm italic text-foreground">
               {t.quote}
@@ -169,7 +162,8 @@ export default async function OmamThemesPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism
+        and review. Full text available from your school or local library.
       </p>
     </div>
   )

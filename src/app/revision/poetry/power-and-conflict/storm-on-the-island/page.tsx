@@ -9,6 +9,14 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Storm on the Island – Seamus Heaney | Power & Conflict Poetry',
+    description:
+      'Interactive GCSE English study guide for Storm on the Island by Seamus Heaney. Annotations, key quotes, language analysis, context and comparisons.',
+  },
+  alternates: {
+    canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/storm-on-the-island',
+  },
   title: 'Storm on the Island – Seamus Heaney | Power & Conflict Poetry',
   description:
     'Interactive GCSE English study guide for Storm on the Island by Seamus Heaney. Annotations, key quotes, language analysis, context and comparisons.',

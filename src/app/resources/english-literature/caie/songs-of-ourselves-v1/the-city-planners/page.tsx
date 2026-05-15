@@ -7,6 +7,10 @@ import { ArrowLeft, BookOpen, Construction, Scale } from 'lucide-react'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'The City Planners — Margaret Atwood | Cambridge IGCSE 0475',
+    description: 'Study guide for ',
+  },
   title: 'The City Planners — Margaret Atwood | Cambridge IGCSE 0475',
   description:
     "Study guide for 'The City Planners' by Margaret Atwood. Themes, form and structure for Cambridge IGCSE Literature in English (0475), Songs of Ourselves Vol 1 Part 4.",

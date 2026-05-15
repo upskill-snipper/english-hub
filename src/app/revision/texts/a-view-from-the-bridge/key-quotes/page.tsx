@@ -11,6 +11,11 @@ import StudyTools from '@/components/study/StudyTools'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'A View from the Bridge — Key Quotes | The English Hub',
+    description:
+      'Twenty essential quotations from A View from the Bridge by Arthur Miller with speaker, context and detailed analysis.',
+  },
   title: 'A View from the Bridge — Key Quotes | The English Hub',
   description:
     'Twenty essential quotations from A View from the Bridge by Arthur Miller with speaker, context and detailed analysis.',

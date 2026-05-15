@@ -7,6 +7,11 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Edexcel Paper 2: 19th-Century Novel and Poetry since 1789',
+    description:
+      'Complete revision guide for Edexcel GCSE English Literature Paper 2 (1ET0/02). 19th-century novels, poetry anthology (Relationships and Conflict clusters), and unseen poetry.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/paper-2',
   },

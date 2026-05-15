@@ -9,6 +9,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'Much Ado About Nothing revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Much Ado About Nothing GCSE revision — Shakespeare',
+  },
   title: 'Much Ado About Nothing revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Much Ado About Nothing GCSE revision — Shakespeare's comedy with plot, characters, themes, context and key quotes. AQA, Edexcel, OCR, Eduqas, IGCSE.",

@@ -3,6 +3,11 @@ import { Metadata } from 'next'
 
 import { headers } from 'next/headers'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Qatar Privacy Notice',
+    description: 'Privacy Notice for The English Hub users in Qatar, compliant with Qatar',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/legal/privacy-qatar' },
   title: 'Qatar Privacy Notice',
   description:
     "Privacy Notice for The English Hub users in Qatar, compliant with Qatar's Personal Data Privacy Protection Law.",

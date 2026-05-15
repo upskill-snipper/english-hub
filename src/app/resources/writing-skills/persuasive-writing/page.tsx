@@ -6,6 +6,11 @@ import { headers } from 'next/headers'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Persuasive Writing Masterclass | The English Hub',
+    description:
+      'Complete guide to persuasive and argumentative writing for GCSE and IGCSE English. AFOREST techniques, counter-arguments, tone, register, format conventions for articles, speeches, letters, reports, and reviews. Full annotated model responses, structural approaches, and vocabulary for persuasion.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/writing-skills/persuasive-writing',
   },

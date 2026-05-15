@@ -15,6 +15,10 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Chinese Cinderella — Adeline Yen Mah — IGCSE Language A Anthology — The English Hub',
+    description: 'Study guide for ',
+  },
   title: 'Chinese Cinderella — Adeline Yen Mah — IGCSE Language A Anthology — The English Hub',
   description:
     'Study guide for "Chinese Cinderella" by Adeline Yen Mah. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',

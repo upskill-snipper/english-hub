@@ -4,6 +4,11 @@ import { Button } from '@/components/ui/button'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Macbeth: Ambition & the Supernatural — Lesson Plan',
+    description:
+      'Full 60-minute GCSE English Literature lesson plan exploring ambition in Macbeth. Includes objectives, starter, main task, plenary, and differentiation.',
+  },
   title: 'Macbeth: Ambition & the Supernatural — Lesson Plan',
   description:
     'Full 60-minute GCSE English Literature lesson plan exploring ambition in Macbeth. Includes objectives, starter, main task, plenary, and differentiation.',

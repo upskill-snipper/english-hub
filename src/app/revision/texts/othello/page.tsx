@@ -9,6 +9,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Othello — Study Guide | The English Hub',
+    description:
+      'In-depth study guide for Othello by William Shakespeare: plot, characters, themes, context and key quotations for A-Level English Literature.',
+  },
   title: 'Othello — Study Guide | The English Hub',
   description:
     'In-depth study guide for Othello by William Shakespeare: plot, characters, themes, context and key quotations for A-Level English Literature.',
@@ -120,7 +125,8 @@ const data: TextGuideData = {
         'Iago rouses Brabantio with animal, racist and sexual imagery, establishing the Venetian racial vocabulary that shadows Othello from the opening scene.',
     },
     {
-      quote: '"She loved me for the dangers I had passed, / And I loved her that she did pity them."',
+      quote:
+        '"She loved me for the dangers I had passed, / And I loved her that she did pity them."',
       who: 'Othello \u2014 Act 1, Scene 3',
       analysis:
         'Othello\u2019s account of his courtship to the Senate defines the marriage as one founded on narrative and sympathy \u2014 a bond that Iago will later reframe as seduction.',
@@ -138,7 +144,8 @@ const data: TextGuideData = {
         'Cassio\u2019s triple cry after his drunken disgrace dramatises the weight of honour culture on male identity and gives Iago the opening he needs to manipulate him.',
     },
     {
-      quote: '"O, beware, my lord, of jealousy; / It is the green-eyed monster which doth mock / The meat it feeds on."',
+      quote:
+        '"O, beware, my lord, of jealousy; / It is the green-eyed monster which doth mock / The meat it feeds on."',
       who: 'Iago \u2014 Act 3, Scene 3',
       analysis:
         'Iago names the emotion he is deliberately planting, the hypocrisy sharpened by the vivid metaphor of jealousy as a predator that mocks what it consumes.',
@@ -192,7 +199,8 @@ const data: TextGuideData = {
         'Emilia\u2019s refusal to be silenced by her husband makes her the play\u2019s truth-teller and breaks the network of female silence that Iago has exploited.',
     },
     {
-      quote: '"Demand me nothing: what you know, you know. / From this time forth I never will speak word."',
+      quote:
+        '"Demand me nothing: what you know, you know. / From this time forth I never will speak word."',
       who: 'Iago \u2014 Act 5, Scene 2',
       analysis:
         'Iago\u2019s final refusal to explain himself denies the audience closure and leaves his malignity permanently unresolved.',
@@ -219,34 +227,356 @@ const data: TextGuideData = {
 }
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'oth-1', question: 'Who is Othello\u2019s ensign and the antagonist of the play?', type: 'multiple-choice', options: ['Cassio', 'Iago', 'Roderigo', 'Brabantio'], correctIndex: 1, explanation: 'Iago is Othello\u2019s ensign. He is passed over for promotion in favour of Cassio and engineers the entire tragedy through manipulation rather than direct confrontation.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'oth-2', question: 'Where does the action of the play move to after Act 1?', type: 'multiple-choice', options: ['Rome', 'Cyprus', 'Sicily', 'Malta'], correctIndex: 1, explanation: 'After the Venetian senate scene, Othello is sent to Cyprus to defend the Venetian colony against a Turkish fleet. The storm destroys the fleet before he arrives, and the remainder of the play unfolds in the claustrophobic garrison.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'oth-3', question: 'What object becomes the \u201cocular proof\u201d of Desdemona\u2019s supposed infidelity?', type: 'multiple-choice', options: ['A letter', 'A ring', 'A handkerchief embroidered with strawberries', 'A locket'], correctIndex: 2, explanation: 'The handkerchief \u2014 Othello\u2019s first gift to Desdemona \u2014 is dropped, picked up by Emilia, passed to Iago, and planted in Cassio\u2019s lodgings. It becomes the material evidence that convinces Othello.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'oth-4', question: 'Who is promoted to lieutenant over Iago at the start of the play?', type: 'multiple-choice', options: ['Roderigo', 'Cassio', 'Montano', 'Lodovico'], correctIndex: 1, explanation: 'Cassio, a Florentine, is promoted to lieutenant. Iago resents this and cites it as one of his motives, though the play refuses to give his malice a single sufficient cause.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'oth-5', question: 'Who says \u201cI am not what I am\u201d?', type: 'multiple-choice', options: ['Othello', 'Iago', 'Cassio', 'Desdemona'], correctIndex: 1, explanation: 'Iago declares himself in the first scene as pure dissimulation, inverting the biblical \u201cI am that I am\u201d. The line frames the whole play as a tragedy of misread signs.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'oth-6', question: 'How does Desdemona die?', type: 'multiple-choice', options: ['She is poisoned', 'She is stabbed by Iago', 'Othello smothers her in their bed', 'She kills herself'], correctIndex: 2, explanation: 'Othello smothers Desdemona in the bed in Act 5 Scene 2. In her final moments she briefly revives and tries to protect him by saying she is guiltless but killed herself.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'oth-7', question: 'Who exposes Iago\u2019s plot at the end of the play?', type: 'multiple-choice', options: ['Cassio', 'Emilia', 'Roderigo', 'Lodovico'], correctIndex: 1, explanation: 'Emilia reveals that she gave the handkerchief to Iago. She defies his order to be silent \u2014 \u201cI will not charm my tongue\u201d \u2014 and he stabs her for it.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'oth-8', question: 'What does Iago famously call jealousy?', type: 'multiple-choice', options: ['The red-eyed demon', 'The green-eyed monster', 'The black serpent', 'The silent killer'], correctIndex: 1, explanation: 'Iago warns Othello: \u201cO, beware, my lord, of jealousy; / It is the green-eyed monster which doth mock / The meat it feeds on.\u201d The hypocrisy is that he is deliberately planting the emotion he claims to warn against.', topic: 'Themes', difficulty: 'foundation' },
-  { id: 'oth-9', question: 'What does Cassio lose that makes him say \u201cReputation, reputation, reputation\u201d?', type: 'multiple-choice', options: ['His sword', 'His lieutenancy after being manipulated into a drunken brawl', 'His inheritance', 'His horse'], correctIndex: 1, explanation: 'Iago gets Cassio drunk, provokes a brawl, and Othello strips him of his lieutenancy. Cassio\u2019s triple cry of \u201cReputation\u201d shows how completely a soldier\u2019s identity depends on public standing.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'oth-10', question: 'What does Othello\u2019s line \u201cHaply, for I am black\u201d reveal?', type: 'multiple-choice', options: ['Pride in his identity', 'That he has internalised Venetian racial prejudice and is vulnerable because of it', 'A rejection of Desdemona', 'A military boast'], correctIndex: 1, explanation: 'Othello\u2019s first explanation for why Desdemona might betray him is racial self-doubt. Shakespeare shows how the surrounding prejudice has been absorbed by the hero himself, making him susceptible to Iago\u2019s insinuations.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'oth-11', question: 'What is Coleridge\u2019s famous description of Iago\u2019s character?', type: 'multiple-choice', options: ['Noble villain', 'Motiveless malignity', 'Frustrated soldier', 'Tragic servant'], correctIndex: 1, explanation: 'Coleridge described Iago\u2019s malice as \u201cmotiveless malignity\u201d: he offers several possible reasons for his hatred \u2014 missed promotion, sexual suspicion, sheer resentment of virtue \u2014 but none of them fully accounts for his conduct.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'oth-12', question: 'How does Shakespeare use the word \u201chonest\u201d in the play?', type: 'multiple-choice', options: ['Only for Desdemona', 'As a recurring adjective for Iago, whose repeated application progressively empties the word of meaning', 'As Othello\u2019s self-description', 'It is never used'], correctIndex: 1, explanation: 'Characters repeatedly call Iago \u201chonest.\u201d The word\u2019s relentless attachment to the play\u2019s arch-liar hollows it out, and the audience experiences the gap between the label and the reality as a central source of dramatic irony.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'oth-13', question: 'Why is the handkerchief especially powerful as a symbol?', type: 'multiple-choice', options: ['It is a state document', 'It is Othello\u2019s first gift to Desdemona, carries family history, and is small enough to pass invisibly between characters', 'It was a gift from Iago', 'It has magical properties the audience sees'], correctIndex: 1, explanation: 'The handkerchief is personal, intimate and highly portable. Its small, transferable nature allows it to move between hands unobserved, turning a token of love into \u201cocular proof\u201d of betrayal.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'oth-14', question: 'How does Emilia\u2019s role change across the play?', type: 'multiple-choice', options: ['She remains peripheral throughout', 'She moves from compliant wife to moral truth-teller who dies exposing Iago', 'She is killed in Act 2', 'She becomes a villain'], correctIndex: 1, explanation: 'Emilia initially hands over the handkerchief to please Iago. Her Act 4 speech on husbands and wives and her Act 5 refusal to be silenced make her the play\u2019s moral truth-teller. Her defiance breaks the network of female silence Iago has exploited.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'oth-15', question: 'What is the source text that Shakespeare adapted for Othello?', type: 'multiple-choice', options: ['Plutarch\u2019s Lives', 'Cinthio\u2019s Hecatommithi (1565), the novella \u201cUn Capitano Moro\u201d', 'Holinshed\u2019s Chronicles', 'Ovid\u2019s Metamorphoses'], correctIndex: 1, explanation: 'Shakespeare\u2019s main source was Cinthio\u2019s Italian novella. In the original the Moor has no name, the ensign survives, and the murder is more prolonged. Shakespeare\u2019s major inventions include Othello\u2019s eloquence, the handkerchief, and Iago\u2019s final silence.', topic: 'Context', difficulty: 'higher' },
-  { id: 'oth-16', question: 'How does Othello\u2019s language change across the play?', type: 'multiple-choice', options: ['It becomes more measured and formal', 'It fractures from the expansive verse of Act 1 into disordered prose, exclamation and violent imagery', 'It does not change', 'He speaks less but in the same style'], correctIndex: 1, explanation: 'Othello\u2019s Act 1 speeches before the senate are expansive and self-assured. By Act 4 his language has broken into fragmented prose, repetition (\u201cHandkerchief! Confessions! Handkerchief!\u201d) and exclamation, dramatising his mental collapse.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'oth-17', question: 'What is the significance of Iago\u2019s final line, \u201cDemand me nothing\u201d?', type: 'multiple-choice', options: ['He is confessing everything', 'His refusal to explain denies the audience closure and leaves his malignity permanently unresolved', 'He is pleading for mercy', 'He is accusing Emilia'], correctIndex: 1, explanation: 'Iago\u2019s refusal to explain himself is structurally crucial. A tragic villain who announces his reasons allows moral closure; Iago withholds that, and the unresolved malignity has disturbed audiences for four centuries.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'oth-18', question: 'How does Shakespeare use the setting of Cyprus to intensify the tragedy?', type: 'multiple-choice', options: ['It offers safety away from Venice', 'It narrows the action to a confined military garrison where the characters cannot escape one another, heightening psychological pressure', 'It provides comic relief', 'It is irrelevant to the plot'], correctIndex: 1, explanation: 'The shift from cosmopolitan Venice to the isolated garrison on Cyprus concentrates the characters in a closed environment. Iago can orchestrate encounters, no one can simply leave, and the marriage is tested in a space cut off from Venetian legal and social checks.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'oth-19', question: 'How does Desdemona resist being read as a passive victim?', type: 'multiple-choice', options: ['She ignores everyone around her', 'She defies her father in open court, insists on sailing to Cyprus, argues her case with Othello and briefly revives to protect him at her death', 'She fights Othello physically', 'She flees to Venice'], correctIndex: 1, explanation: 'Shakespeare gives Desdemona multiple acts of agency: choosing Othello publicly, refusing to stay in Venice, advocating for Cassio, questioning her husband\u2019s accusations and, finally, the morally dazzling lie that attempts to shield Othello after he has killed her.', topic: 'Characters', difficulty: 'grade-9' },
-  { id: 'oth-20', question: 'How does the ending treat Othello\u2019s final speech?', type: 'multiple-choice', options: ['It presents it as simple heroic redemption', 'It presents it ambiguously: Othello reclaims dignity and narrative control, but also re-enacts a Venetian execution of a Turk on himself, splitting his identity', 'It dismisses it as empty rhetoric', 'It has no final speech'], correctIndex: 1, explanation: 'Othello\u2019s \u201cloved not wisely but too well\u201d speech is both an attempt at self-memorialisation and a disturbing gesture in which he casts himself as the \u201ccircumcised dog\u201d a Venetian once killed. Modern critics read the ending as showing a hero split by the very society that used him.', topic: 'Themes', difficulty: 'grade-9' },
+  {
+    id: 'oth-1',
+    question: 'Who is Othello\u2019s ensign and the antagonist of the play?',
+    type: 'multiple-choice',
+    options: ['Cassio', 'Iago', 'Roderigo', 'Brabantio'],
+    correctIndex: 1,
+    explanation:
+      'Iago is Othello\u2019s ensign. He is passed over for promotion in favour of Cassio and engineers the entire tragedy through manipulation rather than direct confrontation.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oth-2',
+    question: 'Where does the action of the play move to after Act 1?',
+    type: 'multiple-choice',
+    options: ['Rome', 'Cyprus', 'Sicily', 'Malta'],
+    correctIndex: 1,
+    explanation:
+      'After the Venetian senate scene, Othello is sent to Cyprus to defend the Venetian colony against a Turkish fleet. The storm destroys the fleet before he arrives, and the remainder of the play unfolds in the claustrophobic garrison.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oth-3',
+    question:
+      'What object becomes the \u201cocular proof\u201d of Desdemona\u2019s supposed infidelity?',
+    type: 'multiple-choice',
+    options: ['A letter', 'A ring', 'A handkerchief embroidered with strawberries', 'A locket'],
+    correctIndex: 2,
+    explanation:
+      'The handkerchief \u2014 Othello\u2019s first gift to Desdemona \u2014 is dropped, picked up by Emilia, passed to Iago, and planted in Cassio\u2019s lodgings. It becomes the material evidence that convinces Othello.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oth-4',
+    question: 'Who is promoted to lieutenant over Iago at the start of the play?',
+    type: 'multiple-choice',
+    options: ['Roderigo', 'Cassio', 'Montano', 'Lodovico'],
+    correctIndex: 1,
+    explanation:
+      'Cassio, a Florentine, is promoted to lieutenant. Iago resents this and cites it as one of his motives, though the play refuses to give his malice a single sufficient cause.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oth-5',
+    question: 'Who says \u201cI am not what I am\u201d?',
+    type: 'multiple-choice',
+    options: ['Othello', 'Iago', 'Cassio', 'Desdemona'],
+    correctIndex: 1,
+    explanation:
+      'Iago declares himself in the first scene as pure dissimulation, inverting the biblical \u201cI am that I am\u201d. The line frames the whole play as a tragedy of misread signs.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oth-6',
+    question: 'How does Desdemona die?',
+    type: 'multiple-choice',
+    options: [
+      'She is poisoned',
+      'She is stabbed by Iago',
+      'Othello smothers her in their bed',
+      'She kills herself',
+    ],
+    correctIndex: 2,
+    explanation:
+      'Othello smothers Desdemona in the bed in Act 5 Scene 2. In her final moments she briefly revives and tries to protect him by saying she is guiltless but killed herself.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oth-7',
+    question: 'Who exposes Iago\u2019s plot at the end of the play?',
+    type: 'multiple-choice',
+    options: ['Cassio', 'Emilia', 'Roderigo', 'Lodovico'],
+    correctIndex: 1,
+    explanation:
+      'Emilia reveals that she gave the handkerchief to Iago. She defies his order to be silent \u2014 \u201cI will not charm my tongue\u201d \u2014 and he stabs her for it.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oth-8',
+    question: 'What does Iago famously call jealousy?',
+    type: 'multiple-choice',
+    options: [
+      'The red-eyed demon',
+      'The green-eyed monster',
+      'The black serpent',
+      'The silent killer',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Iago warns Othello: \u201cO, beware, my lord, of jealousy; / It is the green-eyed monster which doth mock / The meat it feeds on.\u201d The hypocrisy is that he is deliberately planting the emotion he claims to warn against.',
+    topic: 'Themes',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'oth-9',
+    question:
+      'What does Cassio lose that makes him say \u201cReputation, reputation, reputation\u201d?',
+    type: 'multiple-choice',
+    options: [
+      'His sword',
+      'His lieutenancy after being manipulated into a drunken brawl',
+      'His inheritance',
+      'His horse',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Iago gets Cassio drunk, provokes a brawl, and Othello strips him of his lieutenancy. Cassio\u2019s triple cry of \u201cReputation\u201d shows how completely a soldier\u2019s identity depends on public standing.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oth-10',
+    question: 'What does Othello\u2019s line \u201cHaply, for I am black\u201d reveal?',
+    type: 'multiple-choice',
+    options: [
+      'Pride in his identity',
+      'That he has internalised Venetian racial prejudice and is vulnerable because of it',
+      'A rejection of Desdemona',
+      'A military boast',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Othello\u2019s first explanation for why Desdemona might betray him is racial self-doubt. Shakespeare shows how the surrounding prejudice has been absorbed by the hero himself, making him susceptible to Iago\u2019s insinuations.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oth-11',
+    question: 'What is Coleridge\u2019s famous description of Iago\u2019s character?',
+    type: 'multiple-choice',
+    options: ['Noble villain', 'Motiveless malignity', 'Frustrated soldier', 'Tragic servant'],
+    correctIndex: 1,
+    explanation:
+      'Coleridge described Iago\u2019s malice as \u201cmotiveless malignity\u201d: he offers several possible reasons for his hatred \u2014 missed promotion, sexual suspicion, sheer resentment of virtue \u2014 but none of them fully accounts for his conduct.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oth-12',
+    question: 'How does Shakespeare use the word \u201chonest\u201d in the play?',
+    type: 'multiple-choice',
+    options: [
+      'Only for Desdemona',
+      'As a recurring adjective for Iago, whose repeated application progressively empties the word of meaning',
+      'As Othello\u2019s self-description',
+      'It is never used',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Characters repeatedly call Iago \u201chonest.\u201d The word\u2019s relentless attachment to the play\u2019s arch-liar hollows it out, and the audience experiences the gap between the label and the reality as a central source of dramatic irony.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'oth-13',
+    question: 'Why is the handkerchief especially powerful as a symbol?',
+    type: 'multiple-choice',
+    options: [
+      'It is a state document',
+      'It is Othello\u2019s first gift to Desdemona, carries family history, and is small enough to pass invisibly between characters',
+      'It was a gift from Iago',
+      'It has magical properties the audience sees',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The handkerchief is personal, intimate and highly portable. Its small, transferable nature allows it to move between hands unobserved, turning a token of love into \u201cocular proof\u201d of betrayal.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'oth-14',
+    question: 'How does Emilia\u2019s role change across the play?',
+    type: 'multiple-choice',
+    options: [
+      'She remains peripheral throughout',
+      'She moves from compliant wife to moral truth-teller who dies exposing Iago',
+      'She is killed in Act 2',
+      'She becomes a villain',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Emilia initially hands over the handkerchief to please Iago. Her Act 4 speech on husbands and wives and her Act 5 refusal to be silenced make her the play\u2019s moral truth-teller. Her defiance breaks the network of female silence Iago has exploited.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oth-15',
+    question: 'What is the source text that Shakespeare adapted for Othello?',
+    type: 'multiple-choice',
+    options: [
+      'Plutarch\u2019s Lives',
+      'Cinthio\u2019s Hecatommithi (1565), the novella \u201cUn Capitano Moro\u201d',
+      'Holinshed\u2019s Chronicles',
+      'Ovid\u2019s Metamorphoses',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Shakespeare\u2019s main source was Cinthio\u2019s Italian novella. In the original the Moor has no name, the ensign survives, and the murder is more prolonged. Shakespeare\u2019s major inventions include Othello\u2019s eloquence, the handkerchief, and Iago\u2019s final silence.',
+    topic: 'Context',
+    difficulty: 'higher',
+  },
+  {
+    id: 'oth-16',
+    question: 'How does Othello\u2019s language change across the play?',
+    type: 'multiple-choice',
+    options: [
+      'It becomes more measured and formal',
+      'It fractures from the expansive verse of Act 1 into disordered prose, exclamation and violent imagery',
+      'It does not change',
+      'He speaks less but in the same style',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Othello\u2019s Act 1 speeches before the senate are expansive and self-assured. By Act 4 his language has broken into fragmented prose, repetition (\u201cHandkerchief! Confessions! Handkerchief!\u201d) and exclamation, dramatising his mental collapse.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'oth-17',
+    question: 'What is the significance of Iago\u2019s final line, \u201cDemand me nothing\u201d?',
+    type: 'multiple-choice',
+    options: [
+      'He is confessing everything',
+      'His refusal to explain denies the audience closure and leaves his malignity permanently unresolved',
+      'He is pleading for mercy',
+      'He is accusing Emilia',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Iago\u2019s refusal to explain himself is structurally crucial. A tragic villain who announces his reasons allows moral closure; Iago withholds that, and the unresolved malignity has disturbed audiences for four centuries.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'oth-18',
+    question: 'How does Shakespeare use the setting of Cyprus to intensify the tragedy?',
+    type: 'multiple-choice',
+    options: [
+      'It offers safety away from Venice',
+      'It narrows the action to a confined military garrison where the characters cannot escape one another, heightening psychological pressure',
+      'It provides comic relief',
+      'It is irrelevant to the plot',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The shift from cosmopolitan Venice to the isolated garrison on Cyprus concentrates the characters in a closed environment. Iago can orchestrate encounters, no one can simply leave, and the marriage is tested in a space cut off from Venetian legal and social checks.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'oth-19',
+    question: 'How does Desdemona resist being read as a passive victim?',
+    type: 'multiple-choice',
+    options: [
+      'She ignores everyone around her',
+      'She defies her father in open court, insists on sailing to Cyprus, argues her case with Othello and briefly revives to protect him at her death',
+      'She fights Othello physically',
+      'She flees to Venice',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Shakespeare gives Desdemona multiple acts of agency: choosing Othello publicly, refusing to stay in Venice, advocating for Cassio, questioning her husband\u2019s accusations and, finally, the morally dazzling lie that attempts to shield Othello after he has killed her.',
+    topic: 'Characters',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'oth-20',
+    question: 'How does the ending treat Othello\u2019s final speech?',
+    type: 'multiple-choice',
+    options: [
+      'It presents it as simple heroic redemption',
+      'It presents it ambiguously: Othello reclaims dignity and narrative control, but also re-enacts a Venetian execution of a Turk on himself, splitting his identity',
+      'It dismisses it as empty rhetoric',
+      'It has no final speech',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Othello\u2019s \u201cloved not wisely but too well\u201d speech is both an attempt at self-memorialisation and a disturbing gesture in which he casts himself as the \u201ccircumcised dog\u201d a Venetian once killed. Modern critics read the ending as showing a hero split by the very society that used him.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Jealousy', summary: 'Jealousy is the engine of the tragedy, planted by Iago and fed by Othello\u2019s insecurities rather than any real evidence.', keyPoints: ['Iago names it as the \u201cgreen-eyed monster\u201d while deliberately planting it', 'Othello is not innately jealous \u2014 his early response is resistance', 'Jealousy generates its own proof: the handkerchief becomes \u201cocular proof\u201d because Othello has already decided', 'Shakespeare distinguishes professional, sexual and racial jealousies', 'Jealousy is shown to destroy both its subject and its object'] },
-  { topic: 'Race and Otherness', summary: 'Othello\u2019s race is inseparable from the action: he is admired for his usefulness but never fully accepted, and he has internalised Venetian prejudice.', keyPoints: ['Opening scene uses racist animal imagery (\u201cold black ram\u201d, \u201cwhite ewe\u201d)', 'Shakespeare grants Othello the most eloquent language in the early acts', '\u201cHaply, for I am black\u201d reveals internalised racial self-doubt', 'The play asks whether the tragedy happens to Othello because he is an outsider', 'The final speech splits his identity into Venetian judge and foreign enemy'] },
-  { topic: 'Appearance vs Reality', summary: 'Every disaster arises from the gap between how things look and what they are; Iago is pure dissimulation.', keyPoints: ['\u201cI am not what I am\u201d defines Iago\u2019s nature', 'Desdemona\u2019s kindness to Cassio is reframed as flirtation', 'The handkerchief is accidentally dropped but read as proof', 'Laughter about Bianca is misheard as laughter about Desdemona', 'The word \u201chonest\u201d attached to Iago hollows itself out across the play'] },
-  { topic: 'Honour and Reputation', summary: 'Male honour and female reputation structure the world of the play; both are shown to be powerful and destructive.', keyPoints: ['Cassio\u2019s \u201cReputation, reputation, reputation\u201d captures male honour culture', 'Iago attacks reputations from the outside through rumour and arrangement', 'Female reputation is tied to sexual fidelity and is especially fragile', 'A handkerchief is enough to condemn Desdemona because reputation is that brittle', 'Emilia\u2019s defiance rejects the silence reputation culture demands of women'] },
-  { topic: 'Manipulation and Trust', summary: 'Iago\u2019s method is the careful placement of language and objects into minds already primed to receive them.', keyPoints: ['He rarely tells a direct lie \u2014 he pauses, questions, hesitates', 'Each destruction uses a trust relationship (ensign, friend, wife)', 'He tailors his manipulation to each target\u2019s specific vulnerability', '\u201cPut money in thy purse\u201d shows rhythm and repetition as manipulation tools', 'His refusal to explain at the end denies moral closure'] },
+  {
+    topic: 'Jealousy',
+    summary:
+      'Jealousy is the engine of the tragedy, planted by Iago and fed by Othello\u2019s insecurities rather than any real evidence.',
+    keyPoints: [
+      'Iago names it as the \u201cgreen-eyed monster\u201d while deliberately planting it',
+      'Othello is not innately jealous \u2014 his early response is resistance',
+      'Jealousy generates its own proof: the handkerchief becomes \u201cocular proof\u201d because Othello has already decided',
+      'Shakespeare distinguishes professional, sexual and racial jealousies',
+      'Jealousy is shown to destroy both its subject and its object',
+    ],
+  },
+  {
+    topic: 'Race and Otherness',
+    summary:
+      'Othello\u2019s race is inseparable from the action: he is admired for his usefulness but never fully accepted, and he has internalised Venetian prejudice.',
+    keyPoints: [
+      'Opening scene uses racist animal imagery (\u201cold black ram\u201d, \u201cwhite ewe\u201d)',
+      'Shakespeare grants Othello the most eloquent language in the early acts',
+      '\u201cHaply, for I am black\u201d reveals internalised racial self-doubt',
+      'The play asks whether the tragedy happens to Othello because he is an outsider',
+      'The final speech splits his identity into Venetian judge and foreign enemy',
+    ],
+  },
+  {
+    topic: 'Appearance vs Reality',
+    summary:
+      'Every disaster arises from the gap between how things look and what they are; Iago is pure dissimulation.',
+    keyPoints: [
+      '\u201cI am not what I am\u201d defines Iago\u2019s nature',
+      'Desdemona\u2019s kindness to Cassio is reframed as flirtation',
+      'The handkerchief is accidentally dropped but read as proof',
+      'Laughter about Bianca is misheard as laughter about Desdemona',
+      'The word \u201chonest\u201d attached to Iago hollows itself out across the play',
+    ],
+  },
+  {
+    topic: 'Honour and Reputation',
+    summary:
+      'Male honour and female reputation structure the world of the play; both are shown to be powerful and destructive.',
+    keyPoints: [
+      'Cassio\u2019s \u201cReputation, reputation, reputation\u201d captures male honour culture',
+      'Iago attacks reputations from the outside through rumour and arrangement',
+      'Female reputation is tied to sexual fidelity and is especially fragile',
+      'A handkerchief is enough to condemn Desdemona because reputation is that brittle',
+      'Emilia\u2019s defiance rejects the silence reputation culture demands of women',
+    ],
+  },
+  {
+    topic: 'Manipulation and Trust',
+    summary:
+      'Iago\u2019s method is the careful placement of language and objects into minds already primed to receive them.',
+    keyPoints: [
+      'He rarely tells a direct lie \u2014 he pauses, questions, hesitates',
+      'Each destruction uses a trust relationship (ensign, friend, wife)',
+      'He tailors his manipulation to each target\u2019s specific vulnerability',
+      '\u201cPut money in thy purse\u201d shows rhythm and repetition as manipulation tools',
+      'His refusal to explain at the end denies moral closure',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -272,15 +602,17 @@ export default async function OthelloPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Othello", url: "https://theenglishhub.app/revision/texts/othello" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Othello', url: 'https://theenglishhub.app/revision/texts/othello' },
         ]}
       />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">Draft study guide</strong>
-        <span>AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.</span>
+        <span>
+          AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.
+        </span>
       </div>
       <TextStudyHub
         textName="Othello"
@@ -288,15 +620,57 @@ export default async function OthelloPage() {
         examBoard="Eduqas"
         basePath="/revision/texts/othello"
         subPages={[
-          { id: 'read', href: '/revision/texts/othello/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
-          { id: 'acts', href: '/revision/texts/othello/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
-          { id: 'characters', href: '/revision/texts/othello/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/othello/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/othello/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'context', href: '/revision/texts/othello/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
-          { id: 'essays', href: '/revision/texts/othello/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'A-Level essay plans' },
+          {
+            id: 'read',
+            href: '/revision/texts/othello/read',
+            icon: 'read' as const,
+            title: 'Read Full Text',
+            description: 'With annotations',
+          },
+          {
+            id: 'acts',
+            href: '/revision/texts/othello/acts',
+            icon: 'acts' as const,
+            title: 'Act-by-Act Analysis',
+            description: 'Key moments & quotes',
+          },
+          {
+            id: 'characters',
+            href: '/revision/texts/othello/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/othello/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/othello/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'context',
+            href: '/revision/texts/othello/context',
+            icon: 'context' as const,
+            title: 'Context',
+            description: 'Historical context',
+          },
+          {
+            id: 'essays',
+            href: '/revision/texts/othello/essay-plans',
+            icon: 'essays' as const,
+            title: 'Essay Plans',
+            description: 'A-Level essay plans',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -308,7 +682,7 @@ export default async function OthelloPage() {
           'How does Shakespeare use the handkerchief as a dramatic device in Othello?',
           'Examine the role of Emilia in Othello, with particular focus on Acts 4 and 5.',
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}

@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Blood Brothers — Act-by-Act Analysis | The English Hub',
+    description:
+      'Detailed act-by-act analysis of Blood Brothers by Willy Russell with key quotes and examiner-focused commentary.',
+  },
   title: 'Blood Brothers — Act-by-Act Analysis | The English Hub',
   description:
     'Detailed act-by-act analysis of Blood Brothers by Willy Russell with key quotes and examiner-focused commentary.',

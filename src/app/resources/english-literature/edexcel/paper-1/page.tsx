@@ -7,6 +7,11 @@ import { STRINGS as _EAL_STRINGS } from './content'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Edexcel Paper 1: Shakespeare and Post-1914 Literature',
+    description:
+      'Complete revision guide for Edexcel GCSE English Literature Paper 1 (1ET0/01). Shakespeare plays and Post-1914 texts including An Inspector Calls, Lord of the Flies, and Animal Farm.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/paper-1',
   },

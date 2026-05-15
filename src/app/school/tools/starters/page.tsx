@@ -2,6 +2,12 @@ import type { Metadata } from 'next'
 import { StarterGenerator } from '@/components/school/StarterGenerator'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Starter Activity Generator | School Tools | The English Hub',
+    description:
+      'Generate bellwork and starter activities for English lessons. Includes quotes, vocabulary challenges, inference puzzles, grammar fixes, creative prompts, and exam question unpicks.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/school/tools/starters' },
   title: 'Starter Activity Generator | School Tools | The English Hub',
   description:
     'Generate bellwork and starter activities for English lessons. Includes quotes, vocabulary challenges, inference puzzles, grammar fixes, creative prompts, and exam question unpicks.',

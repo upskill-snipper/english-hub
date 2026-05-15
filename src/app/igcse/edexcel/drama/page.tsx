@@ -8,6 +8,12 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'IGCSE Edexcel drama — An Inspector Calls, View from the Bridge, Curious Incident — The English Hub',
+    description:
+      'Pearson Edexcel IGCSE Literature 4ET1 modern drama. Three plays: An Inspector Calls, A View from the Bridge, The Curious Incident. Full study guides.',
+  },
   title:
     'IGCSE Edexcel drama — An Inspector Calls, View from the Bridge, Curious Incident — The English Hub',
   description:

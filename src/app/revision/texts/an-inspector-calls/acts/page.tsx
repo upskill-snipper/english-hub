@@ -29,6 +29,11 @@ async function readServerLocale(): Promise<'en' | 'ar'> {
   }
 }
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'An Inspector Calls Acts Analysis | The English Hub',
+    description:
+      'Detailed analysis of all three acts of An Inspector Calls by J.B. Priestley: key quotes, language techniques, dramatic devices and structural analysis.',
+  },
   title: 'An Inspector Calls Acts Analysis | The English Hub',
   description:
     'Detailed analysis of all three acts of An Inspector Calls by J.B. Priestley: key quotes, language techniques, dramatic devices and structural analysis.',

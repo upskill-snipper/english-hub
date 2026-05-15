@@ -16,20 +16,18 @@ import {
   Compass,
   ExternalLink,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title:
-    'Cambridge IGCSE Reading Practice Frameworks (IGCSE Language) — The English Hub',
+  openGraph: {
+    title: 'Cambridge IGCSE Reading Practice Frameworks (IGCSE Language) — The English Hub',
+    description:
+      'Ten reading practice frameworks for Cambridge IGCSE First Language English Paper 1. Each guide teaches you how to approach a type of passage and links to free public-domain texts on Project Gutenberg.',
+  },
+  title: 'Cambridge IGCSE Reading Practice Frameworks (IGCSE Language) — The English Hub',
   description:
     'Ten reading practice frameworks for Cambridge IGCSE First Language English Paper 1. Each guide teaches you how to approach a type of passage and links to free public-domain texts on Project Gutenberg.',
   alternates: {
@@ -144,21 +142,17 @@ export default async function ReadingHubPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Ten structured guides that teach you{' '}
-            <strong className="text-foreground">how to approach</strong>{' '}
-            different kinds of reading passages for Cambridge IGCSE{' '}
-            <strong className="text-foreground">IGCSE Language</strong>. Each framework
-            gives you a set of comprehension questions, a language analysis
-            prompt, a summary task and a self-assessment checklist. Every
-            practice text links out to{' '}
-            <strong className="text-foreground">Project Gutenberg</strong>, so
-            you can read the passage for free, legally, in full.
+            <strong className="text-foreground">how to approach</strong> different kinds of reading
+            passages for Cambridge IGCSE <strong className="text-foreground">IGCSE Language</strong>
+            . Each framework gives you a set of comprehension questions, a language analysis prompt,
+            a summary task and a self-assessment checklist. Every practice text links out to{' '}
+            <strong className="text-foreground">Project Gutenberg</strong>, so you can read the
+            passage for free, legally, in full.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Button
               size="lg"
-              render={
-                <Link href="/igcse/cambridge/reading/classic-novel-openings" />
-              }
+              render={<Link href="/igcse/cambridge/reading/classic-novel-openings" />}
             >
               <Feather className="size-4" />
               Start with novel openings
@@ -167,7 +161,9 @@ export default async function ReadingHubPage() {
             <Button
               size="lg"
               variant="outline"
-              render={<a href="https://www.gutenberg.org/" target="_blank" rel="noopener noreferrer" />}
+              render={
+                <a href="https://www.gutenberg.org/" target="_blank" rel="noopener noreferrer" />
+              }
             >
               <ExternalLink className="size-4" />
               About Project Gutenberg
@@ -180,17 +176,15 @@ export default async function ReadingHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Ten practice frameworks
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Ten practice frameworks</h2>
           <Badge variant="secondary" className="ml-auto">
             10 guides
           </Badge>
         </div>
         <p className="mb-6 max-w-3xl text-body-sm text-muted-foreground">
-          Pick any framework below. Each one names three suggested texts on
-          Project Gutenberg, then walks you through the same structured set of
-          questions so you can practise on whichever passage you choose.
+          Pick any framework below. Each one names three suggested texts on Project Gutenberg, then
+          walks you through the same structured set of questions so you can practise on whichever
+          passage you choose.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -213,16 +207,12 @@ export default async function ReadingHubPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-1 flex-col gap-4">
-                  <p className="text-body-sm leading-relaxed text-muted-foreground">
-                    {f.blurb}
-                  </p>
+                  <p className="text-body-sm leading-relaxed text-muted-foreground">{f.blurb}</p>
                   <div className="mt-auto">
                     <Button
                       variant="ghost"
                       size="sm"
-                      render={
-                        <Link href={`/igcse/cambridge/reading/${f.slug}`} />
-                      }
+                      render={<Link href={`/igcse/cambridge/reading/${f.slug}`} />}
                     >
                       Open framework
                       <ArrowRight className="size-3.5" />
@@ -244,32 +234,27 @@ export default async function ReadingHubPage() {
           </h2>
         </div>
         <ol className="list-decimal space-y-3 pl-5 text-body-sm text-foreground">
+          <li>Pick a framework that matches the type of passage you want to practise.</li>
           <li>
-            Pick a framework that matches the type of passage you want to
-            practise.
+            Follow one of the three Project Gutenberg links and read a chunk of roughly 600 to 900
+            words — about the length of a real Paper 1 extract.
           </li>
           <li>
-            Follow one of the three Project Gutenberg links and read a chunk of
-            roughly 600 to 900 words — about the length of a real Paper 1
-            extract.
+            Work through the six comprehension questions without looking back at the passage more
+            than you have to.
           </li>
           <li>
-            Work through the six comprehension questions without looking back
-            at the passage more than you have to.
+            Answer the language analysis prompt in a short paragraph, quoting two or three phrases.
           </li>
           <li>
-            Answer the language analysis prompt in a short paragraph, quoting
-            two or three phrases.
-          </li>
-          <li>
-            Write a summary using the template, then check yourself against the
-            self-assessment list.
+            Write a summary using the template, then check yourself against the self-assessment
+            list.
           </li>
         </ol>
         <p className="mt-4 rounded-lg bg-muted p-4 text-body-sm text-muted-foreground">
-          Every text listed on these pages is in the public domain in the
-          United States and hosted by Project Gutenberg. Copyright status may
-          vary in your country — always check before redistributing.
+          Every text listed on these pages is in the public domain in the United States and hosted
+          by Project Gutenberg. Copyright status may vary in your country — always check before
+          redistributing.
         </p>
       </section>
     </div>

@@ -11,6 +11,11 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Checking Out Me History — AQA Power and Conflict | The English Hub',
+    description:
+      'Analysis of Checking Out Me History for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.',
+  },
   title: 'Checking Out Me History — AQA Power and Conflict | The English Hub',
   description:
     'Analysis of Checking Out Me History for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.',

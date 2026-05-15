@@ -7,6 +7,11 @@ import { tMany } from '@/lib/i18n/t'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Exam Technique',
+    description:
+      'Master the exam techniques that turn knowledge into top grades. Time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique' },
   title: 'Exam Technique',
   description:

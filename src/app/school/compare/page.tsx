@@ -8,6 +8,12 @@ import { t } from '@/lib/i18n/t'
 // admin-only page (robots: noindex anyway). User-facing chrome below is wired
 // through useT/t for the Khaleeji-AR toggle.
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Compare Classes | The English Hub',
+    description:
+      'Compare 2-4 classes side by side. Analyse average scores, completion rates, engagement, skill breakdowns, grade distributions, and trends.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/school/compare' },
   title: 'Compare Classes | The English Hub',
   description:
     'Compare 2-4 classes side by side. Analyse average scores, completion rates, engagement, skill breakdowns, grade distributions, and trends.',

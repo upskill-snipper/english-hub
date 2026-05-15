@@ -13,6 +13,11 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Jekyll and Hyde Essay Plans — GCSE | The English Hub',
+    description:
+      'Five GCSE essay plans for Strange Case of Dr Jekyll and Mr Hyde: duality, Hyde as frightening, setting and atmosphere, the Jekyll-Hyde relationship, and secrecy.',
+  },
   title: 'Jekyll and Hyde Essay Plans — GCSE | The English Hub',
   description:
     'Five GCSE essay plans for Strange Case of Dr Jekyll and Mr Hyde: duality, Hyde as frightening, setting and atmosphere, the Jekyll-Hyde relationship, and secrecy.',

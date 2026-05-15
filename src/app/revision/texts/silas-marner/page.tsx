@@ -9,6 +9,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Silas Marner — Study Guide | The English Hub',
+    description:
+      'In-depth study guide for Silas Marner by George Eliot: plot, characters, themes, context and key quotations.',
+  },
   title: 'Silas Marner — Study Guide | The English Hub',
   description:
     'In-depth study guide for Silas Marner by George Eliot: plot, characters, themes, context and key quotations.',

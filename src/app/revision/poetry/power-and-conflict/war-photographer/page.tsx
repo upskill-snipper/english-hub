@@ -11,6 +11,14 @@ import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ── Metadata ──────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'War Photographer -- Carol Ann Duffy | The English Hub',
+    description:
+      'Interactive GCSE study guide for War Photographer by Carol Ann Duffy. Annotations, key quotes, language analysis, form & structure, and comparison poems.',
+  },
+  alternates: {
+    canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/war-photographer',
+  },
   title: 'War Photographer -- Carol Ann Duffy | The English Hub',
   description:
     'Interactive GCSE study guide for War Photographer by Carol Ann Duffy. Annotations, key quotes, language analysis, form & structure, and comparison poems.',

@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'To Kill a Mockingbird Essay Plans — Edexcel IGCSE Literature',
+    description:
+      'Five IGCSE essay plans for To Kill a Mockingbird with PEEL paragraphs: racism and justice, moral courage, Scout\u2019s growth, the mockingbird symbol and Atticus as a moral figure.',
+  },
   title: 'To Kill a Mockingbird Essay Plans — Edexcel IGCSE Literature',
   description:
     'Five IGCSE essay plans for To Kill a Mockingbird with PEEL paragraphs: racism and justice, moral courage, Scout\u2019s growth, the mockingbird symbol and Atticus as a moral figure.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/essay-plans',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/essay-plans',
   },
 }
 
@@ -23,21 +27,28 @@ const essayPlans = [
       'Define racism as both personal prejudice and systemic legal failure. Thesis: Lee uses Tom Robinson\u2019s trial, the lynch mob, and the missionary tea to expose racism as a structural feature of Maycomb, not just individual cruelty.',
     paragraphs: [
       {
-        point: 'The trial reveals how the legal system performs fairness while delivering a pre-written verdict.',
-        evidence: '"When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins."',
-        explanation: 'Atticus names the structural inequality plainly, without rhetorical flourish, which makes the diagnosis feel clinical and irrefutable.',
+        point:
+          'The trial reveals how the legal system performs fairness while delivering a pre-written verdict.',
+        evidence:
+          '"When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins."',
+        explanation:
+          'Atticus names the structural inequality plainly, without rhetorical flourish, which makes the diagnosis feel clinical and irrefutable.',
         link: 'This connects to the 1930s Jim Crow context, where Edexcel expects students to relate the text to its historical moment.',
       },
       {
-        point: 'The lynch mob scene shows how racism operates through collective action, erasing individual conscience.',
+        point:
+          'The lynch mob scene shows how racism operates through collective action, erasing individual conscience.',
         evidence: '"A mob\u2019s always made up of people."',
-        explanation: 'Atticus rehumanises the mob after Scout\u2019s intervention. The paradox \u2014 people who are decent individually become violent collectively \u2014 is Lee\u2019s sharpest insight into how racism functions.',
+        explanation:
+          'Atticus rehumanises the mob after Scout\u2019s intervention. The paradox \u2014 people who are decent individually become violent collectively \u2014 is Lee\u2019s sharpest insight into how racism functions.',
         link: 'Link to the Scottsboro Boys context and the history of extrajudicial violence against Black men in the American South.',
       },
       {
-        point: 'The missionary tea exposes the "polite" racism of Maycomb\u2019s respectable white women.',
+        point:
+          'The missionary tea exposes the "polite" racism of Maycomb\u2019s respectable white women.',
         evidence: '"The handful of people who say a fair trial is not marked White Only."',
-        explanation: 'Miss Maudie\u2019s remark connects the courtroom to broader segregation. The ladies\u2019 concern for African tribes while ignoring local injustice creates dramatic irony.',
+        explanation:
+          'Miss Maudie\u2019s remark connects the courtroom to broader segregation. The ladies\u2019 concern for African tribes while ignoring local injustice creates dramatic irony.',
         link: 'Lee\u2019s critique extends beyond overt violence to show how everyday social rituals sustain racism.',
       },
     ],
@@ -51,20 +62,26 @@ const essayPlans = [
     paragraphs: [
       {
         point: 'Atticus redefines courage through Mrs Dubose\u2019s morphine fight.',
-        evidence: '"Real courage is when you\u2019re licked before you begin but you begin anyway."',
-        explanation: 'By attaching the novel\u2019s key definition to an unlikely figure \u2014 a dying, racist old woman \u2014 Lee separates moral courage from moral perfection. Courage is the act, not the person.',
+        evidence:
+          '"Real courage is when you\u2019re licked before you begin but you begin anyway."',
+        explanation:
+          'By attaching the novel\u2019s key definition to an unlikely figure \u2014 a dying, racist old woman \u2014 Lee separates moral courage from moral perfection. Courage is the act, not the person.',
         link: 'This definition retroactively frames Atticus\u2019s defence of Tom as courageous precisely because he expects to lose.',
       },
       {
-        point: 'Atticus\u2019s defence of Tom is presented as a moral obligation, not a heroic choice.',
+        point:
+          'Atticus\u2019s defence of Tom is presented as a moral obligation, not a heroic choice.',
         evidence: '"Simply because we were licked a hundred years before we started."',
-        explanation: 'The phrase "a hundred years" places the trial in a longer history of racial injustice. Atticus does not expect victory; his courage lies in acting on principle regardless.',
+        explanation:
+          'The phrase "a hundred years" places the trial in a longer history of racial injustice. Atticus does not expect victory; his courage lies in acting on principle regardless.',
         link: 'Connect to AO4 context: the Civil Rights Movement had not yet achieved legislative change when Lee wrote the novel.',
       },
       {
-        point: 'Scout\u2019s intervention at the jail demonstrates that innocence can be a form of moral courage.',
+        point:
+          'Scout\u2019s intervention at the jail demonstrates that innocence can be a form of moral courage.',
         evidence: '"Hey, Mr Cunningham. I go to school with your boy."',
-        explanation: 'Scout does not intend to be brave \u2014 she uses social convention instinctively. Lee suggests that empathy, even naive empathy, can disrupt collective violence.',
+        explanation:
+          'Scout does not intend to be brave \u2014 she uses social convention instinctively. Lee suggests that empathy, even naive empathy, can disrupt collective violence.',
         link: 'This links back to Atticus\u2019s empathy lesson in Chapter 3 and shows Scout beginning to apply it.',
       },
     ],
@@ -77,21 +94,27 @@ const essayPlans = [
       'Frame Scout\u2019s bildungsroman arc. Thesis: Scout moves from a literal, combative child to someone capable of genuine empathy, completing the moral education Atticus began in Chapter 3 when she stands on the Radley porch in Chapter 31.',
     paragraphs: [
       {
-        point: 'In the early chapters Scout responds to conflict with her fists, reflecting a child\u2019s literal sense of justice.',
+        point:
+          'In the early chapters Scout responds to conflict with her fists, reflecting a child\u2019s literal sense of justice.',
         evidence: '"He ain\u2019t company, Cal, he\u2019s just a Cunningham."',
-        explanation: 'Scout\u2019s class prejudice mirrors Maycomb\u2019s wider social hierarchy. Her blunt language shows she has absorbed assumptions she does not yet understand.',
+        explanation:
+          'Scout\u2019s class prejudice mirrors Maycomb\u2019s wider social hierarchy. Her blunt language shows she has absorbed assumptions she does not yet understand.',
         link: 'This establishes the starting point of her moral arc, which Atticus begins to reshape with his empathy lesson.',
       },
       {
         point: 'The trial forces Scout to witness injustice she cannot yet fully process.',
-        evidence: '"It\u2019s not right, Atticus." (Jem\u2019s line, echoing Scout\u2019s confusion)',
-        explanation: 'While Jem articulates his disillusionment, Scout absorbs the trial more quietly. Her naivety actually protects her: she does not yet grasp the sexual dimensions of the case.',
+        evidence:
+          '"It\u2019s not right, Atticus." (Jem\u2019s line, echoing Scout\u2019s confusion)',
+        explanation:
+          'While Jem articulates his disillusionment, Scout absorbs the trial more quietly. Her naivety actually protects her: she does not yet grasp the sexual dimensions of the case.',
         link: 'Lee\u2019s dual narration \u2014 child perspective, adult retrospection \u2014 allows the reader to see what Scout cannot.',
       },
       {
-        point: 'On the Radley porch Scout completes Atticus\u2019s empathy lesson by seeing Maycomb from Boo\u2019s perspective.',
+        point:
+          'On the Radley porch Scout completes Atticus\u2019s empathy lesson by seeing Maycomb from Boo\u2019s perspective.',
         evidence: '"Atticus, he was real nice. Most people are, Scout, when you finally see them."',
-        explanation: 'The word "see" carries both literal and moral weight. Scout has moved from Gothic fantasy (Boo as phantom) to genuine human recognition.',
+        explanation:
+          'The word "see" carries both literal and moral weight. Scout has moved from Gothic fantasy (Boo as phantom) to genuine human recognition.',
         link: 'The ending mirrors and answers Chapter 3: Scout can now "climb into another person\u2019s skin and walk around in it".',
       },
     ],
@@ -104,21 +127,27 @@ const essayPlans = [
       'Introduce the mockingbird as a symbol of innocent vulnerability. Thesis: Lee attaches the symbol first to the idea of harmlessness, then to Tom Robinson and Boo Radley, using it to argue that destroying innocence is the novel\u2019s defining sin.',
     paragraphs: [
       {
-        point: 'Miss Maudie establishes the mockingbird as a symbol of harmless creatures that give only beauty.',
+        point:
+          'Miss Maudie establishes the mockingbird as a symbol of harmless creatures that give only beauty.',
         evidence: '"Mockingbirds don\u2019t do one thing but make music for us to enjoy."',
-        explanation: 'The definition is deliberately simple \u2014 pitched at a child\u2019s understanding \u2014 so that when it is later applied to human beings, the moral is already felt.',
+        explanation:
+          'The definition is deliberately simple \u2014 pitched at a child\u2019s understanding \u2014 so that when it is later applied to human beings, the moral is already felt.',
         link: 'Link to the title: "to kill" a mockingbird is presented as the ultimate transgression against innocence.',
       },
       {
-        point: 'Tom Robinson is the novel\u2019s primary mockingbird: innocent, helpful, destroyed by racism.',
+        point:
+          'Tom Robinson is the novel\u2019s primary mockingbird: innocent, helpful, destroyed by racism.',
         evidence: '"He likened Tom\u2019s death to the senseless slaughter of songbirds."',
-        explanation: 'Mr Underwood\u2019s editorial makes the symbolism explicit. "Senseless" implies that Tom\u2019s death serves no purpose \u2014 the system kills him not out of necessity but out of reflex.',
+        explanation:
+          'Mr Underwood\u2019s editorial makes the symbolism explicit. "Senseless" implies that Tom\u2019s death serves no purpose \u2014 the system kills him not out of necessity but out of reflex.',
         link: 'Connect to context: Lee wrote against the backdrop of ongoing racial violence in the American South.',
       },
       {
-        point: 'Boo Radley is the second mockingbird, and Scout\u2019s recognition of this completes the motif.',
+        point:
+          'Boo Radley is the second mockingbird, and Scout\u2019s recognition of this completes the motif.',
         evidence: '"It\u2019d be sort of like shootin\u2019 a mockingbird, wouldn\u2019t it?"',
-        explanation: 'Scout applies the symbol independently, showing she has internalised the lesson. Protecting Boo from publicity becomes an act of moral principle, not just pragmatism.',
+        explanation:
+          'Scout applies the symbol independently, showing she has internalised the lesson. Protecting Boo from publicity becomes an act of moral principle, not just pragmatism.',
         link: 'Sheriff Tate\u2019s decision parallels Atticus\u2019s moral framework: protecting the vulnerable overrides strict legality.',
       },
     ],
@@ -132,20 +161,26 @@ const essayPlans = [
     paragraphs: [
       {
         point: 'Atticus\u2019s language models respect, reason and equality in every interaction.',
-        evidence: '"The one thing that doesn\u2019t abide by majority rule is a person\u2019s conscience."',
-        explanation: 'Atticus locates moral authority in individual conscience rather than democratic or social consensus. His register is always measured, treating children and adults with the same seriousness.',
+        evidence:
+          '"The one thing that doesn\u2019t abide by majority rule is a person\u2019s conscience."',
+        explanation:
+          'Atticus locates moral authority in individual conscience rather than democratic or social consensus. His register is always measured, treating children and adults with the same seriousness.',
         link: 'This connects to AO2: Lee uses Atticus\u2019s language choices to characterise him as rational and principled.',
       },
       {
-        point: 'Atticus practises what he preaches: his actions in the trial match his private morality.',
+        point:
+          'Atticus practises what he preaches: his actions in the trial match his private morality.',
         evidence: '"You\u2019ll see white men cheat black men every day of your life."',
-        explanation: 'Atticus does not romanticise the situation. He acknowledges systemic injustice bluntly while still choosing to fight it, which prevents the novel from turning him into a naive optimist.',
+        explanation:
+          'Atticus does not romanticise the situation. He acknowledges systemic injustice bluntly while still choosing to fight it, which prevents the novel from turning him into a naive optimist.',
         link: 'Critics have debated whether Atticus is too perfect; this line complicates that reading by showing his awareness of failure.',
       },
       {
-        point: 'Lee filters Atticus through Scout\u2019s dual perspective, allowing both admiration and irony.',
+        point:
+          'Lee filters Atticus through Scout\u2019s dual perspective, allowing both admiration and irony.',
         evidence: '"I know now what he was trying to do, but Atticus was only a man."',
-        explanation: 'The adult narrator gently undermines the child\u2019s hero-worship. Lee\u2019s technique prevents Atticus from becoming a flat symbol: he is presented as morally serious but humanly limited.',
+        explanation:
+          'The adult narrator gently undermines the child\u2019s hero-worship. Lee\u2019s technique prevents Atticus from becoming a flat symbol: he is presented as morally serious but humanly limited.',
         link: 'Link to structure: the dual narration is essential to how the reader receives Atticus \u2014 through the filter of a child who is growing up.',
       },
     ],
@@ -161,21 +196,25 @@ export default async function TkamEssayPlansPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
-          { name: "To Kill a Mockingbird", url: "https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird" },
-          { name: "Essay Plans", url: "https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/essay-plans" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+          {
+            name: 'To Kill a Mockingbird',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird',
+          },
+          {
+            name: 'Essay Plans',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/essay-plans',
+          },
         ]}
       />
       <div>
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/edexcel/prose/to-kill-a-mockingbird" />
-          }
+          render={<Link href="/igcse/edexcel/prose/to-kill-a-mockingbird" />}
         >
           <ArrowLeft className="size-3.5" />
           Back to To Kill a Mockingbird
@@ -195,9 +234,8 @@ export default async function TkamEssayPlansPage() {
             To Kill a Mockingbird: Essay Plans
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Five common IGCSE essay questions with full PEEL paragraph
-            plans. Each plan includes an introduction, three developed
-            paragraphs (Point, Evidence, Explanation, Link) and a
+            Five common IGCSE essay questions with full PEEL paragraph plans. Each plan includes an
+            introduction, three developed paragraphs (Point, Evidence, Explanation, Link) and a
             conclusion.
           </p>
         </div>
@@ -211,9 +249,8 @@ export default async function TkamEssayPlansPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing (CDPA 1988) for
-              study and criticism. These plans are revision aids, not model
-              answers.
+              Short extracts are included under fair dealing (CDPA 1988) for study and criticism.
+              These plans are revision aids, not model answers.
             </p>
           </div>
         </div>
@@ -221,18 +258,13 @@ export default async function TkamEssayPlansPage() {
 
       <section className="space-y-8">
         {essayPlans.map((plan, idx) => (
-          <article
-            key={idx}
-            className="rounded-xl border border-border/60 bg-card overflow-hidden"
-          >
+          <article key={idx} className="rounded-xl border border-border/60 bg-card overflow-hidden">
             <div className="border-b border-border/60 bg-muted/30 p-5">
               <div className="flex items-start gap-3">
                 <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-body-sm font-semibold text-primary">
                   {idx + 1}
                 </span>
-                <h2 className="text-heading-md font-heading text-foreground">
-                  {plan.title}
-                </h2>
+                <h2 className="text-heading-md font-heading text-foreground">{plan.title}</h2>
               </div>
             </div>
 
@@ -259,24 +291,18 @@ export default async function TkamEssayPlansPage() {
                   </h4>
                   <div className="grid gap-2">
                     <p className="text-body-sm text-muted-foreground">
-                      <span className="font-semibold text-foreground">
-                        Point:{' '}
-                      </span>
+                      <span className="font-semibold text-foreground">Point: </span>
                       {para.point}
                     </p>
                     <blockquote className="border-l-2 border-primary/40 pl-3 text-body-sm italic text-foreground">
                       {para.evidence}
                     </blockquote>
                     <p className="text-body-sm text-muted-foreground">
-                      <span className="font-semibold text-foreground">
-                        Explanation:{' '}
-                      </span>
+                      <span className="font-semibold text-foreground">Explanation: </span>
                       {para.explanation}
                     </p>
                     <p className="text-body-sm text-muted-foreground">
-                      <span className="font-semibold text-foreground">
-                        Link:{' '}
-                      </span>
+                      <span className="font-semibold text-foreground">Link: </span>
                       {para.link}
                     </p>
                   </div>
@@ -299,9 +325,8 @@ export default async function TkamEssayPlansPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the
-        CDPA 1988 for criticism and review. Full text available from your
-        school or local library.
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism
+        and review. Full text available from your school or local library.
       </p>
     </div>
   )

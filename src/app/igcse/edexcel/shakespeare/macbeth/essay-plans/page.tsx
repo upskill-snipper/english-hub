@@ -6,6 +6,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Macbeth Essay Plans — Edexcel IGCSE Literature',
+    description:
+      'Five model essay plans for Macbeth with paragraph-by-paragraph structure, key quotations and context for Edexcel IGCSE English Literature.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/essay-plans',
   },

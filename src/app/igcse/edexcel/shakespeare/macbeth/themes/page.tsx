@@ -6,6 +6,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Macbeth Themes — Edexcel IGCSE Literature',
+    description:
+      'The seven major themes of Macbeth for Edexcel IGCSE Literature: ambition, guilt, the supernatural, kingship, appearance vs reality, gender, and fate vs free will.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/themes',
   },

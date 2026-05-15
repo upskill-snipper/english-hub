@@ -4,6 +4,12 @@ import Link from 'next/link'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Rights & Permissions — The English Hub',
+    description:
+      'Directory of publishers, literary agents, and rights-holders we contact for permissions and source attribution. Quotations on the platform are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation).',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/legal/rights' },
   title: 'Rights & Permissions — The English Hub',
   description:
     'Directory of publishers, literary agents, and rights-holders we contact for permissions and source attribution. Quotations on the platform are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation).',

@@ -9,6 +9,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Romeo and Juliet revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Romeo and Juliet GCSE revision — Shakespeare',
+  },
   title: 'Romeo and Juliet revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Romeo and Juliet GCSE revision — Shakespeare's tragedy with acts, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR and Eduqas.",

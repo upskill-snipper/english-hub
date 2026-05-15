@@ -7,6 +7,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 /* ─── Metadata ────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'A Christmas Carol Model Essays — Grade 5, 7 & 9 | The English Hub',
+    description: 'Three fully-annotated model essays answering ',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/marking/sample/christmas-carol' },
   title: 'A Christmas Carol Model Essays — Grade 5, 7 & 9 | The English Hub',
   description:
     "Three fully-annotated model essays answering 'How does Dickens present Scrooge's transformation?' at Grade 5, 7 and 9, with AO breakdowns, paragraph annotations and marker commentary. AQA mark scheme.",

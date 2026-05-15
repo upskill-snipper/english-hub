@@ -4,6 +4,11 @@ import { Button } from '@/components/ui/button'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Ozymandias vs My Last Duchess — Comparison Lesson Plan',
+    description:
+      'Full 60-minute comparison lesson for the Power & Conflict anthology. Compare Ozymandias and My Last Duchess as presentations of power.',
+  },
   title: 'Ozymandias vs My Last Duchess — Comparison Lesson Plan',
   description:
     'Full 60-minute comparison lesson for the Power & Conflict anthology. Compare Ozymandias and My Last Duchess as presentations of power.',

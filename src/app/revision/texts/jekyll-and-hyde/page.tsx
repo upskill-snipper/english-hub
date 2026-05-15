@@ -9,6 +9,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Jekyll and Hyde revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Jekyll and Hyde GCSE revision — Stevenson',
+  },
   title: 'Jekyll and Hyde revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Jekyll and Hyde GCSE revision — Stevenson's Gothic novella with chapter analysis, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR.",

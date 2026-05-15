@@ -7,6 +7,10 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import StudyTools from '@/components/study/StudyTools'
 import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Pigeon English revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Pigeon English GCSE revision — Stephen Kelman',
+  },
   title: 'Pigeon English revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Pigeon English GCSE revision — Stephen Kelman's 2011 novel with plot, characters, themes, context and key quotes. Aligned to the AQA GCSE Literature spec.",

@@ -18,6 +18,11 @@ import { t } from '@/lib/i18n/t'
 import CourseCatalogueClient from './catalogue-client'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Courses — The English Hub',
+    description:
+      'Browse structured KS3, GCSE and IGCSE English courses with video lessons, quizzes and exam-style tasks across all major UK exam boards.',
+  },
   title: 'Courses — The English Hub',
   description:
     'Browse structured KS3, GCSE and IGCSE English courses with video lessons, quizzes and exam-style tasks across all major UK exam boards.',

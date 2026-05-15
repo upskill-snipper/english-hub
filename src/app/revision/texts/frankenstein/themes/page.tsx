@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Frankenstein Themes — Deep Study | The English Hub',
+    description:
+      'In-depth GCSE theme analysis for Frankenstein by Mary Shelley: Creation & Responsibility, Nature vs Nurture, Isolation, Knowledge, Ambition, and Monstrosity.',
+  },
   title: 'Frankenstein Themes — Deep Study | The English Hub',
   description:
     'In-depth GCSE theme analysis for Frankenstein by Mary Shelley: Creation & Responsibility, Nature vs Nurture, Isolation, Knowledge, Ambition, and Monstrosity.',

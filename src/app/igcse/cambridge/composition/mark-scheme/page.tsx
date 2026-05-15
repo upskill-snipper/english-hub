@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Composition Mark Scheme — Cambridge IGCSE Language',
+    description:
+      'Cambridge IGCSE Language Paper 2 composition mark scheme explained. Content and structure (16), style and accuracy (24), with band descriptors.',
+  },
   title: 'Composition Mark Scheme — Cambridge IGCSE Language',
   description:
     'Cambridge IGCSE Language Paper 2 composition mark scheme explained. Content and structure (16), style and accuracy (24), with band descriptors.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/mark-scheme',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/mark-scheme',
   },
 }
 
@@ -152,11 +156,7 @@ export default async function MarkSchemePage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <Button
-        variant="ghost"
-        size="sm"
-        render={<Link href="/igcse/cambridge/composition" />}
-      >
+      <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/composition" />}>
         <ChevronLeft className="size-3.5" />
         Back to composition
       </Button>
@@ -176,13 +176,10 @@ export default async function MarkSchemePage() {
             Composition mark scheme
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Cambridge IGCSE Language Paper 2 Section B is marked out of
-            40, in two parts:{' '}
-            <strong className="text-foreground">16 for content and
-            structure</strong> and{' '}
-            <strong className="text-foreground">24 for style and
-            accuracy</strong>. Understanding the split is the fastest way to
-            stop losing marks on the wrong things.
+            Cambridge IGCSE Language Paper 2 Section B is marked out of 40, in two parts:{' '}
+            <strong className="text-foreground">16 for content and structure</strong> and{' '}
+            <strong className="text-foreground">24 for style and accuracy</strong>. Understanding
+            the split is the fastest way to stop losing marks on the wrong things.
           </p>
         </div>
       </section>
@@ -204,9 +201,9 @@ export default async function MarkSchemePage() {
             </CardHeader>
             <CardContent className="space-y-2 text-body-sm text-muted-foreground">
               <p>
-                <strong className="text-foreground">16 marks.</strong> Is your
-                composition well-shaped? Does it develop an idea? Does it
-                engage the reader from opening to closing?
+                <strong className="text-foreground">16 marks.</strong> Is your composition
+                well-shaped? Does it develop an idea? Does it engage the reader from opening to
+                closing?
               </p>
               <p>Key questions examiners ask:</p>
               <ul className="list-disc space-y-1 pl-5">
@@ -222,9 +219,7 @@ export default async function MarkSchemePage() {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <GraduationCap className="size-5 text-primary" />
-                <CardTitle className="text-heading-sm font-heading">
-                  Style and accuracy
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">Style and accuracy</CardTitle>
               </div>
               <p className="pt-1 text-body-xs uppercase tracking-wide text-muted-foreground">
                 60% of the composition mark
@@ -232,9 +227,9 @@ export default async function MarkSchemePage() {
             </CardHeader>
             <CardContent className="space-y-2 text-body-sm text-muted-foreground">
               <p>
-                <strong className="text-foreground">24 marks.</strong> This is
-                the bigger pillar. It rewards vocabulary range, sentence
-                variety, technical accuracy, and a confident register.
+                <strong className="text-foreground">24 marks.</strong> This is the bigger pillar. It
+                rewards vocabulary range, sentence variety, technical accuracy, and a confident
+                register.
               </p>
               <p>Key questions examiners ask:</p>
               <ul className="list-disc space-y-1 pl-5">
@@ -262,9 +257,7 @@ export default async function MarkSchemePage() {
                     <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 font-bold text-primary">
                       {b.band}
                     </div>
-                    <CardTitle className="text-heading-sm font-heading">
-                      {b.label}
-                    </CardTitle>
+                    <CardTitle className="text-heading-sm font-heading">{b.label}</CardTitle>
                   </div>
                   <Badge variant="secondary">{b.marks} marks</Badge>
                 </div>
@@ -298,9 +291,7 @@ export default async function MarkSchemePage() {
                     <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 font-bold text-primary">
                       {b.band}
                     </div>
-                    <CardTitle className="text-heading-sm font-heading">
-                      {b.label}
-                    </CardTitle>
+                    <CardTitle className="text-heading-sm font-heading">{b.label}</CardTitle>
                   </div>
                   <Badge variant="secondary">{b.marks} marks</Badge>
                 </div>
@@ -322,18 +313,15 @@ export default async function MarkSchemePage() {
 
       {/* How to push up a band */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          How to push up a band
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">How to push up a band</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <p className="text-body-sm font-semibold text-foreground">
               From Band 4 to Band 5 (content)
             </p>
             <p className="mt-1 text-body-xs text-muted-foreground">
-              Make the opening and closing echo. Cut any paragraph that does
-              not move the shape forward. Add one unexpected detail per
-              paragraph.
+              Make the opening and closing echo. Cut any paragraph that does not move the shape
+              forward. Add one unexpected detail per paragraph.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
@@ -341,9 +329,8 @@ export default async function MarkSchemePage() {
               From Band 4 to Band 5 (style)
             </p>
             <p className="mt-1 text-body-xs text-muted-foreground">
-              Replace five vague words with precise ones. Break one long
-              sentence into two or three. Add one short sentence per
-              paragraph.
+              Replace five vague words with precise ones. Break one long sentence into two or three.
+              Add one short sentence per paragraph.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
@@ -351,8 +338,8 @@ export default async function MarkSchemePage() {
               From Band 5 to Band 6 (content)
             </p>
             <p className="mt-1 text-body-xs text-muted-foreground">
-              Build and sustain an extended metaphor across the whole piece.
-              Invert the opening image in the closing line.
+              Build and sustain an extended metaphor across the whole piece. Invert the opening
+              image in the closing line.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
@@ -360,8 +347,8 @@ export default async function MarkSchemePage() {
               From Band 5 to Band 6 (style)
             </p>
             <p className="mt-1 text-body-xs text-muted-foreground">
-              Use one rhetorical device per piece — tricolon, anaphora or
-              asyndeton — and hold register steady from first line to last.
+              Use one rhetorical device per piece — tricolon, anaphora or asyndeton — and hold
+              register steady from first line to last.
             </p>
           </div>
         </div>
@@ -369,10 +356,9 @@ export default async function MarkSchemePage() {
 
       <section className="rounded-2xl border border-border/60 bg-muted/30 p-6 text-body-xs text-muted-foreground">
         <p>
-          Band descriptors are paraphrased for clarity and are not the
-          official Cambridge mark scheme wording. Always refer to the
-          current Cambridge IGCSE Language specification and published mark
-          schemes for authoritative criteria.
+          Band descriptors are paraphrased for clarity and are not the official Cambridge mark
+          scheme wording. Always refer to the current Cambridge IGCSE Language specification and
+          published mark schemes for authoritative criteria.
         </p>
       </section>
     </div>

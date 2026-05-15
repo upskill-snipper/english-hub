@@ -4,6 +4,12 @@ import Link from 'next/link'
 import { t as _trServer } from '@/lib/i18n/t'
 import { STRINGS as _EAL_STRINGS } from './content'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Acceptable Use Policy',
+    description:
+      'Acceptable Use Policy for The English Hub, explaining what you can and cannot do on the platform.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/legal/acceptable-use' },
   title: 'Acceptable Use Policy',
   description:
     'Acceptable Use Policy for The English Hub, explaining what you can and cannot do on the platform.',
@@ -278,7 +284,7 @@ export default async function AcceptableUsePolicyPage() {
           </p>
           <p>
             Website:{' '}
-            <a href="https://www.theenglishhub.app" target="_blank" rel="noopener noreferrer">
+            <a href="/" target="_blank" rel="noopener noreferrer">
               theenglishhub.app
             </a>
           </p>

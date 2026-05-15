@@ -9,31 +9,29 @@ import {
   CheckCircle2,
   XCircle,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Language Analysis — IGCSE Language A Paper 1 Q2',
+    description:
+      'How to analyse language for IGCSE Language A Paper 1 Question 2. Method, analytical vocabulary, model sentences and common mistakes. Aligns with Cambridge syllabus 0500.',
+  },
   title: 'Language Analysis — IGCSE Language A Paper 1 Q2',
   description:
     'How to analyse language for IGCSE Language A Paper 1 Question 2. Method, analytical vocabulary, model sentences and common mistakes. Aligns with Cambridge syllabus 0500.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/paper-1/language-analysis',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/language-analysis',
   },
 }
 
 const framework = [
   {
     step: 'Point',
-    detail: 'State which aspect of the writer\'s language you are examining.',
+    detail: "State which aspect of the writer's language you are examining.",
     example: 'The writer uses violent, combative verbs to describe the storm.',
   },
   {
@@ -43,22 +41,20 @@ const framework = [
   },
   {
     step: 'Explanation (literal)',
-    detail:
-      'Explain the basic meaning of the word or phrase in this context.',
+    detail: 'Explain the basic meaning of the word or phrase in this context.',
     example:
       '"Lashed" suggests being struck repeatedly with a whip — an aggressive physical attack.',
   },
   {
     step: 'Analysis (connotations)',
-    detail:
-      'Explore the wider associations and layers of meaning carried by the word.',
+    detail: 'Explore the wider associations and layers of meaning carried by the word.',
     example:
       'The word carries connotations of punishment and cruelty, as though the sea deliberately means to harm the ship.',
   },
   {
     step: 'Effect on the reader',
     detail:
-      'State what feeling, image or idea the word creates for the reader and how it links to the writer\'s purpose.',
+      "State what feeling, image or idea the word creates for the reader and how it links to the writer's purpose.",
     example:
       'Together these verbs create a sense of helplessness, positioning the crew as victims of a hostile, almost sentient storm.',
   },
@@ -136,13 +132,11 @@ export default async function LanguageAnalysisPage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Language analysis (Q2)
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Language analysis (Q2)</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Question 2 asks how the writer uses language to convey meaning and
-          create effect. Fifteen marks. Around 25 minutes. Choose eight
-          powerful words or phrases and analyse them in layered detail.
+          Question 2 asks how the writer uses language to convey meaning and create effect. Fifteen
+          marks. Around 25 minutes. Choose eight powerful words or phrases and analyse them in
+          layered detail.
         </p>
       </section>
 
@@ -150,9 +144,7 @@ export default async function LanguageAnalysisPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            What the examiners want
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">What the examiners want</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
@@ -160,8 +152,8 @@ export default async function LanguageAnalysisPage() {
               Level 5 (13–15)
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Judicious and wide-ranging choices; precise explanation of
-              connotations and effects across the whole response.
+              Judicious and wide-ranging choices; precise explanation of connotations and effects
+              across the whole response.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
@@ -169,8 +161,8 @@ export default async function LanguageAnalysisPage() {
               Level 2 (4–6)
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Limited range of choices; mostly paraphrase of meaning with
-              little or no explanation of effect.
+              Limited range of choices; mostly paraphrase of meaning with little or no explanation
+              of effect.
             </p>
           </div>
         </div>
@@ -192,19 +184,13 @@ export default async function LanguageAnalysisPage() {
                   <span className="flex size-7 items-center justify-center rounded-full bg-primary/10 text-body-xs font-semibold text-primary">
                     {i + 1}
                   </span>
-                  <CardTitle className="text-heading-sm font-heading">
-                    {f.step}
-                  </CardTitle>
+                  <CardTitle className="text-heading-sm font-heading">{f.step}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-2">
-                <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  {f.detail}
-                </p>
+                <p className="text-body-sm text-muted-foreground leading-relaxed">{f.detail}</p>
                 <div className="rounded-lg border border-border/60 bg-muted/30 p-3">
-                  <p className="text-body-xs text-foreground italic">
-                    {f.example}
-                  </p>
+                  <p className="text-body-xs text-foreground italic">{f.example}</p>
                 </div>
               </CardContent>
             </Card>
@@ -224,9 +210,7 @@ export default async function LanguageAnalysisPage() {
           {usefulVocab.map((v) => (
             <Card key={v.category}>
               <CardHeader className="pb-2">
-                <CardTitle className="text-body-md font-heading">
-                  {v.category}
-                </CardTitle>
+                <CardTitle className="text-body-md font-heading">{v.category}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-1 text-body-sm text-muted-foreground">
@@ -247,28 +231,22 @@ export default async function LanguageAnalysisPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Sparkles className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Worked paragraph
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Worked paragraph</h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
-          Writer describes a cityscape at dusk: &quot;Skyscrapers loomed like
-          sleeping giants, their mirrored faces bleeding orange fire.&quot;
+          Writer describes a cityscape at dusk: &quot;Skyscrapers loomed like sleeping giants, their
+          mirrored faces bleeding orange fire.&quot;
         </p>
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-foreground leading-relaxed">
-            The writer personifies the skyscrapers as &quot;sleeping
-            giants&quot;, a simile that invests the buildings with both
-            threat and fragility — giants are dangerous, but their
-            stillness makes the city feel uncertain and expectant. The
-            verb &quot;loomed&quot; adds to this unease, suggesting the
-            buildings tower over the viewer menacingly. The metaphor of
-            their windows &quot;bleeding orange fire&quot; evokes
-            violence and destruction, transforming the mundane reflection
-            of sunset into something almost apocalyptic. Together these
-            choices create a cityscape that feels simultaneously majestic
-            and hostile, making the reader sense that the city itself is
-            alive and watching.
+            The writer personifies the skyscrapers as &quot;sleeping giants&quot;, a simile that
+            invests the buildings with both threat and fragility — giants are dangerous, but their
+            stillness makes the city feel uncertain and expectant. The verb &quot;loomed&quot; adds
+            to this unease, suggesting the buildings tower over the viewer menacingly. The metaphor
+            of their windows &quot;bleeding orange fire&quot; evokes violence and destruction,
+            transforming the mundane reflection of sunset into something almost apocalyptic.
+            Together these choices create a cityscape that feels simultaneously majestic and
+            hostile, making the reader sense that the city itself is alive and watching.
           </p>
         </div>
       </section>
@@ -277,9 +255,7 @@ export default async function LanguageAnalysisPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <XCircle className="size-5 text-muted-foreground" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Common mistakes
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Common mistakes</h2>
         </div>
         <Card>
           <CardContent className="pt-6">

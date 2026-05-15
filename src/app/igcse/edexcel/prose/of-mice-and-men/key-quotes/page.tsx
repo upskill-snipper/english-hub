@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Of Mice and Men Key Quotes — Edexcel IGCSE Literature',
+    description:
+      '20 key quotations from Of Mice and Men organised by theme for Edexcel IGCSE Literature revision: the American Dream, loneliness, friendship, discrimination and fate.',
+  },
   title: 'Of Mice and Men Key Quotes — Edexcel IGCSE Literature',
   description:
     '20 key quotations from Of Mice and Men organised by theme for Edexcel IGCSE Literature revision: the American Dream, loneliness, friendship, discrimination and fate.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/key-quotes',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/key-quotes',
   },
 }
 
@@ -28,7 +32,8 @@ const themeGroups = [
       {
         text: 'Le\u2019s get that place now.',
         speaker: 'Candy',
-        analysis: 'The Dream becomes financially real \u2014 and, in Steinbeck\u2019s logic, begins to die.',
+        analysis:
+          'The Dream becomes financially real \u2014 and, in Steinbeck\u2019s logic, begins to die.',
       },
       {
         text: 'Every damn one of \u2019em\u2019s got a little piece of land in his head.',
@@ -48,7 +53,8 @@ const themeGroups = [
       {
         text: 'Guys like us, that work on ranches, are the loneliest guys in the world.',
         speaker: 'George',
-        analysis: 'The novella\u2019s opening refrain names loneliness as the ranch workers\u2019 defining condition.',
+        analysis:
+          'The novella\u2019s opening refrain names loneliness as the ranch workers\u2019 defining condition.',
       },
       {
         text: 'A guy needs somebody \u2014 to be near him.',
@@ -63,7 +69,8 @@ const themeGroups = [
       {
         text: 'Now what the hell ya suppose is eatin\u2019 them two guys?',
         speaker: 'Carlson (final line)',
-        analysis: 'Carlson\u2019s incomprehension seals the novella\u2019s verdict: the world cannot recognise grief.',
+        analysis:
+          'Carlson\u2019s incomprehension seals the novella\u2019s verdict: the world cannot recognise grief.',
       },
     ],
   },
@@ -73,7 +80,8 @@ const themeGroups = [
       {
         text: 'I got you to look after me, and you got me to look after you.',
         speaker: 'Lennie',
-        analysis: 'Parallel structure creates the illusion of reciprocity in a one-sided relationship.',
+        analysis:
+          'Parallel structure creates the illusion of reciprocity in a one-sided relationship.',
       },
       {
         text: 'We got a future. We got somebody to talk to that gives a damn about us.',
@@ -108,12 +116,14 @@ const themeGroups = [
       {
         text: 'I ought to of shot that dog myself, George.',
         speaker: 'Candy',
-        analysis: 'Foreshadows George\u2019s decision; losing agency over death is presented as a failure.',
+        analysis:
+          'Foreshadows George\u2019s decision; losing agency over death is presented as a failure.',
       },
       {
         text: 'Lennie covered his face with huge paws and bleated with terror.',
         speaker: 'Narrator',
-        analysis: 'Animal imagery dehumanises Lennie while sustaining sympathy for his vulnerability.',
+        analysis:
+          'Animal imagery dehumanises Lennie while sustaining sympathy for his vulnerability.',
       },
     ],
   },
@@ -138,7 +148,8 @@ const themeGroups = [
       {
         text: 'I know now. I know now.',
         speaker: 'George',
-        analysis: 'George\u2019s flat repetition signals the death of hope and the dream simultaneously.',
+        analysis:
+          'George\u2019s flat repetition signals the death of hope and the dream simultaneously.',
       },
     ],
   },
@@ -151,21 +162,25 @@ export default async function OmamKeyQuotesPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
-          { name: "Of Mice and Men", url: "https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+          {
+            name: 'Of Mice and Men',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/key-quotes',
+          },
         ]}
       />
       <div>
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/edexcel/prose/of-mice-and-men" />
-          }
+          render={<Link href="/igcse/edexcel/prose/of-mice-and-men" />}
         >
           <ArrowLeft className="size-3.5" />
           Back to Of Mice and Men
@@ -185,9 +200,8 @@ export default async function OmamKeyQuotesPage() {
             Of Mice and Men: Key Quotes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            20 essential quotations organised by theme. Each quote is 15
-            words or fewer, with speaker attribution and brief analysis for
-            exam revision.
+            20 essential quotations organised by theme. Each quote is 15 words or fewer, with
+            speaker attribution and brief analysis for exam revision.
           </p>
         </div>
       </section>
@@ -200,9 +214,8 @@ export default async function OmamKeyQuotesPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing (CDPA 1988) for
-              study and criticism. Read the full novella alongside these
-              notes.
+              Short extracts are included under fair dealing (CDPA 1988) for study and criticism.
+              Read the full novella alongside these notes.
             </p>
           </div>
         </div>
@@ -212,22 +225,15 @@ export default async function OmamKeyQuotesPage() {
         <section key={group.theme}>
           <div className="mb-5 flex items-center gap-3">
             <Quote className="size-5 text-primary" />
-            <h2 className="text-heading-lg font-heading text-foreground">
-              {group.theme}
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">{group.theme}</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {group.quotes.map((q, i) => (
-              <div
-                key={i}
-                className="rounded-xl border border-border/60 bg-card p-5"
-              >
+              <div key={i} className="rounded-xl border border-border/60 bg-card p-5">
                 <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                   &ldquo;{q.text}&rdquo;
                 </blockquote>
-                <p className="mt-2 text-body-xs font-medium text-primary">
-                  — {q.speaker}
-                </p>
+                <p className="mt-2 text-body-xs font-medium text-primary">— {q.speaker}</p>
                 <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                   {q.analysis}
                 </p>
@@ -238,9 +244,8 @@ export default async function OmamKeyQuotesPage() {
       ))}
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the
-        CDPA 1988 for criticism and review. Full text available from your
-        school or local library.
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism
+        and review. Full text available from your school or local library.
       </p>
     </div>
   )

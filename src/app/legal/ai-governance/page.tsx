@@ -20,6 +20,12 @@ import type { Metadata } from 'next'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'AI Governance & Ethics',
+    description:
+      'How The English Hub maps to Qatar’s PDPPL, Cybercrime Law, NCSA AI Guidelines, MCIT Ethical AI Principles, and adjacent frameworks. Includes an honest gap list and remediation roadmap.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/legal/ai-governance' },
   title: 'AI Governance & Ethics',
   description:
     'How The English Hub maps to Qatar’s PDPPL, Cybercrime Law, NCSA AI Guidelines, MCIT Ethical AI Principles, and adjacent frameworks. Includes an honest gap list and remediation roadmap.',

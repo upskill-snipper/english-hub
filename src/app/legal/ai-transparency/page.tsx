@@ -2,6 +2,12 @@ import { Metadata } from 'next'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'AI Transparency',
+    description:
+      'How our AI works at The English Hub — what it does, its limitations, and your rights.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/legal/ai-transparency' },
   title: 'AI Transparency',
   description:
     'How our AI works at The English Hub — what it does, its limitations, and your rights.',

@@ -7,6 +7,11 @@ import { STRINGS as _EAL_STRINGS } from './content'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 1: Reading | Cambridge IGCSE English Language',
+    description:
+      'Complete guide to Cambridge IGCSE English Language Paper 1 (Reading). Covers comprehension question types, summary writing, note-making, and passage analysis with marker tips.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/paper-1' },
   title: 'Paper 1: Reading | Cambridge IGCSE English Language',
   description:

@@ -21,12 +21,16 @@ import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'An Inspector Calls Essay Plans | The English Hub',
+    description:
+      'Five GCSE essay plans for An Inspector Calls by J.B. Priestley with thesis statements, paragraph structures and key quotes for exam preparation.',
+  },
   title: 'An Inspector Calls Essay Plans | The English Hub',
   description:
     'Five GCSE essay plans for An Inspector Calls by J.B. Priestley with thesis statements, paragraph structures and key quotes for exam preparation.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/revision/texts/an-inspector-calls/essay-plans',
+    canonical: 'https://theenglishhub.app/revision/texts/an-inspector-calls/essay-plans',
   },
 }
 
@@ -95,8 +99,7 @@ const essayPlans: EssayPlan[] = [
   },
   {
     id: 2,
-    question:
-      'How does Priestley use the character of Sheila to convey his message?',
+    question: 'How does Priestley use the character of Sheila to convey his message?',
     thesis:
       'Priestley uses Sheila\u2019s transformation from sheltered socialite to moral conscience to demonstrate that the younger generation can reject their parents\u2019 values and build a more just society.',
     paragraphs: [
@@ -138,8 +141,7 @@ const essayPlans: EssayPlan[] = [
   },
   {
     id: 3,
-    question:
-      'How does Priestley present ideas about class in An Inspector Calls?',
+    question: 'How does Priestley present ideas about class in An Inspector Calls?',
     thesis:
       'Priestley exposes the Edwardian class system as a structure of exploitation and moral evasion, showing how wealth insulates the Birlings from accountability while crushing those without power.',
     paragraphs: [
@@ -181,8 +183,7 @@ const essayPlans: EssayPlan[] = [
   },
   {
     id: 4,
-    question:
-      'How does Priestley use Inspector Goole to convey his ideas?',
+    question: 'How does Priestley use Inspector Goole to convey his ideas?',
     thesis:
       'Priestley creates the Inspector as a morally authoritative figure who operates outside normal social hierarchies, using him as a dramatic device to interrogate capitalist values and deliver the play\u2019s socialist argument.',
     paragraphs: [
@@ -224,8 +225,7 @@ const essayPlans: EssayPlan[] = [
   },
   {
     id: 5,
-    question:
-      'How does Priestley explore the conflict between generations in An Inspector Calls?',
+    question: 'How does Priestley explore the conflict between generations in An Inspector Calls?',
     thesis:
       'Priestley uses the generational divide between the older and younger Birlings to dramatise his argument that social progress depends on the willingness of the young to reject their parents\u2019 values.',
     paragraphs: [
@@ -282,11 +282,17 @@ export default async function EssayPlansPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "An Inspector Calls", url: "https://theenglishhub.app/revision/texts/an-inspector-calls" },
-          { name: "Essay Plans", url: "https://theenglishhub.app/revision/texts/an-inspector-calls/essay-plans" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'An Inspector Calls',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls',
+          },
+          {
+            name: 'Essay Plans',
+            url: 'https://theenglishhub.app/revision/texts/an-inspector-calls/essay-plans',
+          },
         ]}
       />
       {/* Hero */}
@@ -318,13 +324,10 @@ export default async function EssayPlansPage() {
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             An Inspector Calls &mdash; Essay Plans
           </h1>
-          <p className="mt-2 text-body-lg text-muted-foreground">
-            by J.B. Priestley &mdash; 1945
-          </p>
+          <p className="mt-2 text-body-lg text-muted-foreground">by J.B. Priestley &mdash; 1945</p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Five structured GCSE essay plans with thesis statements, paragraph
-            plans, key quotes and analytical points. Use these as a framework
-            for timed practice.
+            Five structured GCSE essay plans with thesis statements, paragraph plans, key quotes and
+            analytical points. Use these as a framework for timed practice.
           </p>
         </div>
       </section>
@@ -336,11 +339,10 @@ export default async function EssayPlansPage() {
           <div className="text-body-sm text-muted-foreground">
             <p className="mb-1 font-semibold text-foreground">Exam tip</p>
             <p>
-              These plans follow a four-paragraph structure (plus introduction
-              and conclusion) suitable for a 45-minute GCSE literature response.
-              Each paragraph uses a <strong>Point &rarr; Quote &rarr;
-              Analysis &rarr; Link</strong> structure. Adapt the plans to match
-              the specific wording of your exam question.
+              These plans follow a four-paragraph structure (plus introduction and conclusion)
+              suitable for a 45-minute GCSE literature response. Each paragraph uses a{' '}
+              <strong>Point &rarr; Quote &rarr; Analysis &rarr; Link</strong> structure. Adapt the
+              plans to match the specific wording of your exam question.
             </p>
           </div>
         </CardContent>
@@ -357,9 +359,7 @@ export default async function EssayPlansPage() {
               <p className="text-caption uppercase tracking-wide text-muted-foreground">
                 Essay {plan.id}
               </p>
-              <h2 className="text-heading-md font-heading text-foreground">
-                {plan.question}
-              </h2>
+              <h2 className="text-heading-md font-heading text-foreground">{plan.question}</h2>
             </div>
           </div>
 
@@ -381,32 +381,24 @@ export default async function EssayPlansPage() {
                   <CardDescription className="text-caption font-semibold uppercase tracking-wide">
                     Paragraph {i + 1}
                   </CardDescription>
-                  <CardTitle className="text-heading-md font-heading">
-                    {para.point}
-                  </CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{para.point}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex items-start gap-2">
                     <Quote className="mt-0.5 size-4 shrink-0 text-clay-600" />
-                    <p className="text-body-sm font-medium italic text-foreground">
-                      {para.quote}
-                    </p>
+                    <p className="text-body-sm font-medium italic text-foreground">{para.quote}</p>
                   </div>
                   <div>
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                       Analysis
                     </p>
-                    <p className="text-body-sm text-muted-foreground">
-                      {para.analysis}
-                    </p>
+                    <p className="text-body-sm text-muted-foreground">{para.analysis}</p>
                   </div>
                   <div>
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                       Link
                     </p>
-                    <p className="text-body-sm text-muted-foreground">
-                      {para.link}
-                    </p>
+                    <p className="text-body-sm text-muted-foreground">{para.link}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -419,16 +411,12 @@ export default async function EssayPlansPage() {
               <p className="mb-1 text-caption font-semibold uppercase tracking-wide text-muted-foreground">
                 Conclusion
               </p>
-              <p className="text-body-sm text-muted-foreground">
-                {plan.conclusion}
-              </p>
+              <p className="text-body-sm text-muted-foreground">{plan.conclusion}</p>
             </CardContent>
           </Card>
 
           {/* Divider between plans */}
-          {plan.id < essayPlans.length && (
-            <div className="border-t border-border/40 pt-4" />
-          )}
+          {plan.id < essayPlans.length && <div className="border-t border-border/40 pt-4" />}
         </section>
       ))}
 
@@ -437,9 +425,7 @@ export default async function EssayPlansPage() {
         <Card className="bg-primary/5">
           <CardContent className="flex flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div>
-              <h3 className="text-heading-md font-heading text-foreground">
-                Continue studying
-              </h3>
+              <h3 className="text-heading-md font-heading text-foreground">Continue studying</h3>
               <p className="mt-1 text-body-sm text-muted-foreground">
                 Deepen your knowledge with act analysis and key quotes.
               </p>
@@ -466,11 +452,10 @@ export default async function EssayPlansPage() {
 
       {/* Fair-dealing notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations (&le;15 words each) reproduced under the fair dealing
-        provision of the Copyright, Designs and Patents Act 1988 for the purpose
-        of criticism, review and educational study.{' '}
-        <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
-        available from your school or local library.
+        Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
+        Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and educational
+        study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text available from
+        your school or local library.
       </p>
     </div>
   )

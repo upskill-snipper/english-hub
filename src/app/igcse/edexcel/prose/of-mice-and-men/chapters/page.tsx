@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Of Mice and Men Chapter Analysis — Edexcel IGCSE Literature',
+    description:
+      'Chapter-by-chapter analysis of Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
+  },
   title: 'Of Mice and Men Chapter Analysis — Edexcel IGCSE Literature',
   description:
     'Chapter-by-chapter analysis of Steinbeck\u2019s Of Mice and Men for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/chapters',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/chapters',
   },
 }
 
@@ -31,9 +35,18 @@ const chapters = [
     characterDevelopment:
       'George is established as protector, cynic and storyteller. Lennie\u2019s cognitive disability and love of soft things are introduced alongside his enormous physical strength. Their mutual dependence is ritualised through the dream speech.',
     quotes: [
-      { text: 'Guys like us, that work on ranches, are the loneliest guys in the world.', technique: 'Superlative and refrain establish the novel\u2019s central theme of loneliness' },
-      { text: 'I got you to look after me, and you got me to look after you.', technique: 'Parallel structure creates a ritual of reciprocal care' },
-      { text: 'Lennie dabbled his big paw in the water.', technique: 'Animal imagery ("paw") dehumanises Lennie while keeping him sympathetic' },
+      {
+        text: 'Guys like us, that work on ranches, are the loneliest guys in the world.',
+        technique: 'Superlative and refrain establish the novel\u2019s central theme of loneliness',
+      },
+      {
+        text: 'I got you to look after me, and you got me to look after you.',
+        technique: 'Parallel structure creates a ritual of reciprocal care',
+      },
+      {
+        text: 'Lennie dabbled his big paw in the water.',
+        technique: 'Animal imagery ("paw") dehumanises Lennie while keeping him sympathetic',
+      },
     ],
   },
   {
@@ -50,9 +63,18 @@ const chapters = [
     characterDevelopment:
       'Curley is established as a physical and social threat. Curley\u2019s wife is introduced through her body and the men\u2019s gaze, unnamed throughout. Slim is marked as a figure of quiet authority.',
     quotes: [
-      { text: 'He\u2019s alla time picking scraps with big guys.', technique: 'Candy\u2019s exposition establishes Curley\u2019s compensatory aggression' },
-      { text: 'She had full, rouged lips and wide-spaced eyes, heavily made up.', technique: 'Visual description filters her through the male gaze, denying interiority' },
-      { text: 'There was a gravity in his manner and a quiet so profound that all talk stopped.', technique: 'Slim\u2019s introduction uses gravitas language to mark him as moral authority' },
+      {
+        text: 'He\u2019s alla time picking scraps with big guys.',
+        technique: 'Candy\u2019s exposition establishes Curley\u2019s compensatory aggression',
+      },
+      {
+        text: 'She had full, rouged lips and wide-spaced eyes, heavily made up.',
+        technique: 'Visual description filters her through the male gaze, denying interiority',
+      },
+      {
+        text: 'There was a gravity in his manner and a quiet so profound that all talk stopped.',
+        technique: 'Slim\u2019s introduction uses gravitas language to mark him as moral authority',
+      },
     ],
   },
   {
@@ -69,9 +91,19 @@ const chapters = [
     characterDevelopment:
       'Candy\u2019s dog scene foreshadows Lennie\u2019s death — "I ought to of shot that dog myself" is the novel\u2019s structural key. The dream becomes financially real for one chapter only. Lennie\u2019s uncontrollable strength is dramatised through the Curley fight.',
     quotes: [
-      { text: 'I ought to of shot that dog myself, George.', technique: 'Foreshadowing: Candy\u2019s regret directly prepares George\u2019s final act' },
-      { text: 'Le\u2019s get that place now.', technique: 'Candy\u2019s urgency marks the dream\u2019s peak — and the start of its collapse' },
-      { text: 'Lennie covered his face with huge paws and bleated with terror.', technique: 'Animal imagery ("paws", "bleated") sustains sympathy while showing danger' },
+      {
+        text: 'I ought to of shot that dog myself, George.',
+        technique: 'Foreshadowing: Candy\u2019s regret directly prepares George\u2019s final act',
+      },
+      {
+        text: 'Le\u2019s get that place now.',
+        technique:
+          'Candy\u2019s urgency marks the dream\u2019s peak — and the start of its collapse',
+      },
+      {
+        text: 'Lennie covered his face with huge paws and bleated with terror.',
+        technique: 'Animal imagery ("paws", "bleated") sustains sympathy while showing danger',
+      },
     ],
   },
   {
@@ -88,9 +120,18 @@ const chapters = [
     characterDevelopment:
       'Crooks is the novella\u2019s most isolated figure: segregated by race, excluded from community. His momentary belief and its immediate destruction is the novel\u2019s most painful narrative beat. Curley\u2019s wife is revealed as both lonely and capable of racial cruelty.',
     quotes: [
-      { text: 'A guy needs somebody — to be near him. A guy goes nuts if he ain\u2019t got nobody.', technique: 'Crooks diagnoses loneliness as pathology, not sentiment' },
-      { text: 'You got no rights comin\u2019 in a colored man\u2019s room.', technique: 'Crooks asserts boundaries that segregation itself imposed on him' },
-      { text: 'I could get you strung up on a tree so easy it ain\u2019t even funny.', technique: 'Curley\u2019s wife weaponises racial violence to reclaim power' },
+      {
+        text: 'A guy needs somebody — to be near him. A guy goes nuts if he ain\u2019t got nobody.',
+        technique: 'Crooks diagnoses loneliness as pathology, not sentiment',
+      },
+      {
+        text: 'You got no rights comin\u2019 in a colored man\u2019s room.',
+        technique: 'Crooks asserts boundaries that segregation itself imposed on him',
+      },
+      {
+        text: 'I could get you strung up on a tree so easy it ain\u2019t even funny.',
+        technique: 'Curley\u2019s wife weaponises racial violence to reclaim power',
+      },
     ],
   },
   {
@@ -107,9 +148,19 @@ const chapters = [
     characterDevelopment:
       'Curley\u2019s wife is finally humanised through her monologue and her appearance in death ("very pretty and simple, and her face was sweet and young"). Lennie\u2019s inability to modulate strength reaches its fatal conclusion. The dream dies the moment Candy sees the body.',
     quotes: [
-      { text: 'I coulda made somethin\u2019 of myself. Maybe I will yet.', technique: 'Her Hollywood dream is a gendered variant of the same American Dream' },
-      { text: 'She was very pretty and simple, and her face was sweet and young.', technique: 'Death restores the humanity the narrative withheld in life' },
-      { text: 'I know now. I know now.', technique: 'George\u2019s repeated phrase signals the end of hope in flat, devastated register' },
+      {
+        text: 'I coulda made somethin\u2019 of myself. Maybe I will yet.',
+        technique: 'Her Hollywood dream is a gendered variant of the same American Dream',
+      },
+      {
+        text: 'She was very pretty and simple, and her face was sweet and young.',
+        technique: 'Death restores the humanity the narrative withheld in life',
+      },
+      {
+        text: 'I know now. I know now.',
+        technique:
+          'George\u2019s repeated phrase signals the end of hope in flat, devastated register',
+      },
     ],
   },
   {
@@ -126,9 +177,18 @@ const chapters = [
     characterDevelopment:
       'George\u2019s mercy killing echoes Carlson\u2019s shooting of Candy\u2019s dog but is qualitatively different: it is an act of love performed in agony. Slim\u2019s quiet understanding validates George\u2019s choice. Carlson\u2019s incomprehension seals the novella\u2019s bleak verdict on a world that cannot recognise friendship.',
     quotes: [
-      { text: 'Tell me — like you done before. Tell how it\u2019s gonna be.', technique: 'The dream is requested as a bedtime story; repetition intensifies the tragedy' },
-      { text: 'I ain\u2019t mad. I never been mad, an\u2019 I ain\u2019t now.', technique: 'George\u2019s last words to Lennie are gentle, conversational, devastating' },
-      { text: 'Now what the hell ya suppose is eatin\u2019 them two guys?', technique: 'Final line: Carlson\u2019s incomprehension condemns the world of the novella' },
+      {
+        text: 'Tell me — like you done before. Tell how it\u2019s gonna be.',
+        technique: 'The dream is requested as a bedtime story; repetition intensifies the tragedy',
+      },
+      {
+        text: 'I ain\u2019t mad. I never been mad, an\u2019 I ain\u2019t now.',
+        technique: 'George\u2019s last words to Lennie are gentle, conversational, devastating',
+      },
+      {
+        text: 'Now what the hell ya suppose is eatin\u2019 them two guys?',
+        technique: 'Final line: Carlson\u2019s incomprehension condemns the world of the novella',
+      },
     ],
   },
 ]
@@ -140,21 +200,25 @@ export default async function OmamChaptersPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
-          { name: "Of Mice and Men", url: "https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men" },
-          { name: "Chapter-by-Chapter Analysis", url: "https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/chapters" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+          {
+            name: 'Of Mice and Men',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men',
+          },
+          {
+            name: 'Chapter-by-Chapter Analysis',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/of-mice-and-men/chapters',
+          },
         ]}
       />
       <div>
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/edexcel/prose/of-mice-and-men" />
-          }
+          render={<Link href="/igcse/edexcel/prose/of-mice-and-men" />}
         >
           <ArrowLeft className="size-3.5" />
           Back to Of Mice and Men
@@ -174,9 +238,8 @@ export default async function OmamChaptersPage() {
             Of Mice and Men: Chapters
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            All six chapters (sections) analysed with summaries, key events,
-            character development and three key quotations with language
-            technique notes for each.
+            All six chapters (sections) analysed with summaries, key events, character development
+            and three key quotations with language technique notes for each.
           </p>
         </div>
       </section>
@@ -189,9 +252,8 @@ export default async function OmamChaptersPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing (CDPA 1988) for
-              study and criticism. Read the full novella alongside these
-              notes.
+              Short extracts are included under fair dealing (CDPA 1988) for study and criticism.
+              Read the full novella alongside these notes.
             </p>
           </div>
         </div>
@@ -206,10 +268,7 @@ export default async function OmamChaptersPage() {
         </div>
         <div className="space-y-6">
           {chapters.map((ch) => (
-            <article
-              key={ch.number}
-              className="rounded-xl border border-border/60 bg-card p-6"
-            >
+            <article key={ch.number} className="rounded-xl border border-border/60 bg-card p-6">
               <div className="flex items-start gap-3 mb-4">
                 <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-body-sm font-semibold text-primary">
                   {ch.number}
@@ -221,9 +280,7 @@ export default async function OmamChaptersPage() {
                 </div>
               </div>
 
-              <p className="text-body-sm leading-relaxed text-muted-foreground">
-                {ch.summary}
-              </p>
+              <p className="text-body-sm leading-relaxed text-muted-foreground">{ch.summary}</p>
 
               <div className="mt-4">
                 <h4 className="text-body-xs font-semibold uppercase tracking-wide text-foreground">
@@ -276,9 +333,8 @@ export default async function OmamChaptersPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the
-        CDPA 1988 for criticism and review. Full text available from your
-        school or local library.
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism
+        and review. Full text available from your school or local library.
       </p>
     </div>
   )

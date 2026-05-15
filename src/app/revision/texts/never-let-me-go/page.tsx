@@ -7,6 +7,10 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import StudyTools from '@/components/study/StudyTools'
 import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Never Let Me Go revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Never Let Me Go GCSE revision — Kazuo Ishiguro',
+  },
   title: 'Never Let Me Go revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Never Let Me Go GCSE revision — Kazuo Ishiguro's 2005 dystopian novel with plot, characters, themes, context and key quotes. Aligned to the AQA GCSE spec.",

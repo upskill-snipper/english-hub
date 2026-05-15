@@ -9,6 +9,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Jane Eyre revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Jane Eyre GCSE revision — Charlotte Brontë',
+  },
   title: 'Jane Eyre revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Jane Eyre GCSE revision — Charlotte Brontë's Gothic bildungsroman by chapter with key quotes. Aligned to AQA, OCR and Edexcel International A Level.",

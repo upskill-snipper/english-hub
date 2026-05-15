@@ -9,6 +9,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Blood Brothers revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Blood Brothers GCSE revision — Willy Russell',
+  },
   title: 'Blood Brothers revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Blood Brothers GCSE revision — Willy Russell's musical play act-by-act with characters, themes, key quotes and essay plans. Aligned to Edexcel and Eduqas.",

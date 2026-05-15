@@ -7,6 +7,11 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 1: Poetry & Prose - Cambridge IGCSE English Literature',
+    description:
+      'Study guide for Cambridge IGCSE English Literature Paper 1. Songs of Ourselves poetry anthology, set prose texts, and exam technique for passage-based and essay questions.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/paper-1' },
   title: 'Paper 1: Poetry & Prose - Cambridge IGCSE English Literature',
   description:

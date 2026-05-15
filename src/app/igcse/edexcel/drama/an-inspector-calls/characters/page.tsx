@@ -7,6 +7,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'An Inspector Calls Characters — Edexcel IGCSE Literature',
+    description:
+      'Character analysis for An Inspector Calls: Arthur and Sybil Birling, Sheila, Eric, Gerald Croft, Eva Smith/Daisy Renton and Inspector Goole.',
+  },
   title: 'An Inspector Calls Characters — Edexcel IGCSE Literature',
   description:
     'Character analysis for An Inspector Calls: Arthur and Sybil Birling, Sheila, Eric, Gerald Croft, Eva Smith/Daisy Renton and Inspector Goole.',

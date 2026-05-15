@@ -16,6 +16,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'Beyond the Sky and the Earth — Jamie Zeppa — IGCSE Language A Anthology — The English Hub',
+    description: 'Study guide for ',
+  },
   title:
     'Beyond the Sky and the Earth — Jamie Zeppa — IGCSE Language A Anthology — The English Hub',
   description:

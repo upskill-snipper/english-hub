@@ -12,6 +12,11 @@ import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/compon
 /* ── SEO ─────────────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Bayonet Charge — AQA Power and Conflict | The English Hub',
+    description:
+      'Analysis of Bayonet Charge for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.',
+  },
   title: 'Bayonet Charge — AQA Power and Conflict | The English Hub',
   description:
     'Analysis of Bayonet Charge for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.',

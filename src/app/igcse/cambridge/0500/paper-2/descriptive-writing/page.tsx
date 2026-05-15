@@ -1,31 +1,22 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ChevronLeft,
-  Feather,
-  Eye,
-  Sparkles,
-  Target,
-  Lightbulb,
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { ChevronLeft, Feather, Eye, Sparkles, Target, Lightbulb } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Descriptive Writing — IGCSE Language A Paper 2 Section B',
+    description:
+      'How to write a top-mark descriptive composition for IGCSE Language A Paper 2. Sensory detail, setting, atmosphere, structure and worked opening. Aligns with Cambridge syllabus 0500.',
+  },
   title: 'Descriptive Writing — IGCSE Language A Paper 2 Section B',
   description:
     'How to write a top-mark descriptive composition for IGCSE Language A Paper 2. Sensory detail, setting, atmosphere, structure and worked opening. Aligns with Cambridge syllabus 0500.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/paper-2/descriptive-writing',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2/descriptive-writing',
   },
 }
 
@@ -53,17 +44,14 @@ const senses = [
   },
   {
     sense: 'Touch',
-    advice:
-      'Temperature, texture, air pressure. Let the reader feel the scene on their skin.',
+    advice: 'Temperature, texture, air pressure. Let the reader feel the scene on their skin.',
     example:
       'The bannister was warm where the morning sun had found it, worn smooth by a hundred reluctant descents.',
   },
   {
     sense: 'Taste',
-    advice:
-      'Use sparingly — even air has a taste. Try it only when it fits the scene.',
-    example:
-      'The cold air had a metallic taste, like biting on a coin.',
+    advice: 'Use sparingly — even air has a taste. Try it only when it fits the scene.',
+    example: 'The cold air had a metallic taste, like biting on a coin.',
   },
 ]
 
@@ -126,13 +114,11 @@ export default async function DescriptiveWritingPage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Descriptive writing
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Descriptive writing</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Descriptive writing is not about lots of adjectives — it is about
-          selecting the right details and layering them so the reader can
-          step into the scene. Worth 40 marks in Section B.
+          Descriptive writing is not about lots of adjectives — it is about selecting the right
+          details and layering them so the reader can step into the scene. Worth 40 marks in Section
+          B.
         </p>
       </section>
 
@@ -140,9 +126,7 @@ export default async function DescriptiveWritingPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            How the 40 marks split
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">How the 40 marks split</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
@@ -150,8 +134,8 @@ export default async function DescriptiveWritingPage() {
               Content & structure — 16
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Originality of content, progression of ideas, sense of
-              atmosphere and shape of the composition as a whole.
+              Originality of content, progression of ideas, sense of atmosphere and shape of the
+              composition as a whole.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
@@ -159,8 +143,8 @@ export default async function DescriptiveWritingPage() {
               Style & accuracy — 24
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Range of vocabulary, precision of word choice, varied sentence
-              structure, grammar, spelling and punctuation.
+              Range of vocabulary, precision of word choice, varied sentence structure, grammar,
+              spelling and punctuation.
             </p>
           </div>
         </div>
@@ -170,26 +154,18 @@ export default async function DescriptiveWritingPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Eye className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Using sensory detail
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Using sensory detail</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {senses.map((s) => (
             <Card key={s.sense}>
               <CardHeader className="pb-2">
-                <CardTitle className="text-body-md font-heading">
-                  {s.sense}
-                </CardTitle>
+                <CardTitle className="text-body-md font-heading">{s.sense}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <p className="text-body-sm text-muted-foreground">
-                  {s.advice}
-                </p>
+                <p className="text-body-sm text-muted-foreground">{s.advice}</p>
                 <div className="rounded-lg border border-border/60 bg-muted/30 p-3">
-                  <p className="text-body-xs italic text-foreground">
-                    {s.example}
-                  </p>
+                  <p className="text-body-xs italic text-foreground">{s.example}</p>
                 </div>
               </CardContent>
             </Card>
@@ -201,9 +177,7 @@ export default async function DescriptiveWritingPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Sparkles className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Five-stage structure
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Five-stage structure</h2>
         </div>
         <div className="space-y-3">
           {structure.map((st, i) => (
@@ -213,12 +187,8 @@ export default async function DescriptiveWritingPage() {
                   {i + 1}
                 </span>
                 <div>
-                  <h3 className="text-body-md font-semibold text-foreground">
-                    {st.stage}
-                  </h3>
-                  <p className="text-body-sm text-muted-foreground">
-                    {st.detail}
-                  </p>
+                  <h3 className="text-body-md font-semibold text-foreground">{st.stage}</h3>
+                  <p className="text-body-sm text-muted-foreground">{st.detail}</p>
                 </div>
               </CardContent>
             </Card>
@@ -236,22 +206,19 @@ export default async function DescriptiveWritingPage() {
         </div>
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-foreground leading-relaxed">
-            By mid-morning the square has already forgotten the cool of
-            dawn. Heat rises from the cobbles in visible ripples, distorting
-            the line of awnings and the colours underneath them: bruised
-            purples of aubergines, the soft yellow of split melons, crates
-            of limes so bright they look wet. A woman in a grey headscarf
-            arranges figs in perfect ranks, her fingers darkened by the
-            fruit&apos;s sticky skin. Somewhere behind her, a radio mutters
-            a football commentary nobody is listening to. Children weave
-            between shoppers at knee-height, their laughter sharp against
-            the steady hum of bargaining, and the air carries a heavy,
-            complicated sweetness of cumin, warm bread and petrol fumes.
+            By mid-morning the square has already forgotten the cool of dawn. Heat rises from the
+            cobbles in visible ripples, distorting the line of awnings and the colours underneath
+            them: bruised purples of aubergines, the soft yellow of split melons, crates of limes so
+            bright they look wet. A woman in a grey headscarf arranges figs in perfect ranks, her
+            fingers darkened by the fruit&apos;s sticky skin. Somewhere behind her, a radio mutters
+            a football commentary nobody is listening to. Children weave between shoppers at
+            knee-height, their laughter sharp against the steady hum of bargaining, and the air
+            carries a heavy, complicated sweetness of cumin, warm bread and petrol fumes.
           </p>
         </div>
         <p className="mt-3 text-body-xs text-muted-foreground">
-          Notice: wide opening, then zoom to the woman, then shift to
-          sound, then another sense. Five lines, five moves.
+          Notice: wide opening, then zoom to the woman, then shift to sound, then another sense.
+          Five lines, five moves.
         </p>
       </section>
 
@@ -259,9 +226,7 @@ export default async function DescriptiveWritingPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Lightbulb className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Common mistakes
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Common mistakes</h2>
         </div>
         <Card>
           <CardContent className="pt-6">

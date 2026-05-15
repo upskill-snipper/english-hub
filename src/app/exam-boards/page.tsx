@@ -8,6 +8,11 @@ import { tMany, t } from '@/lib/i18n/t'
 /* ───────────────────── Metadata ───────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'GCSE and IGCSE English exam boards covered — The English Hub',
+    description:
+      'Six exam boards covered: AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE, Pearson Edexcel IGCSE. Pick yours and revise the way examiners actually mark.',
+  },
   title: 'GCSE and IGCSE English exam boards covered — The English Hub',
   description:
     'Six exam boards covered: AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE, Pearson Edexcel IGCSE. Pick yours and revise the way examiners actually mark.',

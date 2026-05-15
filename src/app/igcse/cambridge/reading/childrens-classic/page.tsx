@@ -13,24 +13,21 @@ import {
   Type,
   FileText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title:
-    "Children's Classics — Reading Practice Framework — The English Hub",
+  openGraph: {
+    title: 'Children',
+    description: 'Cambridge IGCSE Paper 1 reading practice using children',
+  },
+  title: "Children's Classics — Reading Practice Framework — The English Hub",
   description:
     "Cambridge IGCSE Paper 1 reading practice using children's classics. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.",
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/reading/childrens-classic',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/reading/childrens-classic',
   },
 }
 
@@ -87,11 +84,7 @@ export default async function ChildrensClassicPage() {
   return (
     <div className="space-y-8 pb-16">
       <header className="space-y-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All reading frameworks
         </Button>
@@ -103,14 +96,11 @@ export default async function ChildrensClassicPage() {
           <Badge variant="secondary">Reading framework</Badge>
           <Badge variant="secondary">Paper 1</Badge>
         </div>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Children&rsquo;s Classics
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Children&rsquo;s Classics</h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
-          Children&rsquo;s classics look easy. That is the whole skill. They
-          use plain words with great precision, move quickly without feeling
-          rushed, and carry serious themes beneath their light voice. They
-          are ideal practice for training economy and clarity.
+          Children&rsquo;s classics look easy. That is the whole skill. They use plain words with
+          great precision, move quickly without feeling rushed, and carry serious themes beneath
+          their light voice. They are ideal practice for training economy and clarity.
         </p>
       </header>
 
@@ -127,10 +117,9 @@ export default async function ChildrensClassicPage() {
         </CardHeader>
         <CardContent>
           <p className="text-body-sm text-foreground">
-            These passages sharpen your ability to comment on tone, pace and
-            voice, and to notice how simple diction can do sophisticated
-            work. Paper 1 rewards clear, precise observation — exactly what
-            children&rsquo;s classics train.
+            These passages sharpen your ability to comment on tone, pace and voice, and to notice
+            how simple diction can do sophisticated work. Paper 1 rewards clear, precise observation
+            — exactly what children&rsquo;s classics train.
           </p>
         </CardContent>
       </Card>
@@ -138,13 +127,10 @@ export default async function ChildrensClassicPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Suggested practice texts
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Suggested practice texts</h2>
         </div>
         <p className="mb-4 text-body-sm text-muted-foreground">
-          Three classic children&rsquo;s books whose opening chapters are
-          perfect for practice.
+          Three classic children&rsquo;s books whose opening chapters are perfect for practice.
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           {sources.map((s) => (
@@ -174,9 +160,7 @@ export default async function ChildrensClassicPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Comprehension questions
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Comprehension questions</h2>
         </div>
         <Card>
           <CardContent className="pt-6">
@@ -192,19 +176,17 @@ export default async function ChildrensClassicPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <MessageSquare className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Language analysis prompt
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Language analysis prompt</h2>
         </div>
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="pt-6">
             <p className="text-body-md italic text-foreground">
-              &ldquo;How does the writer use language to create a clear, warm
-              and engaging voice?&rdquo;
+              &ldquo;How does the writer use language to create a clear, warm and engaging
+              voice?&rdquo;
             </p>
             <p className="mt-4 text-body-sm text-muted-foreground">
-              Write a paragraph of roughly 150 words. Quote three phrases and
-              comment on verb choice, simple imagery and pace.
+              Write a paragraph of roughly 150 words. Quote three phrases and comment on verb
+              choice, simple imagery and pace.
             </p>
           </CardContent>
         </Card>
@@ -213,31 +195,26 @@ export default async function ChildrensClassicPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Summary task template
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Summary task template</h2>
         </div>
         <Card>
           <CardContent className="pt-6 space-y-3 text-body-sm text-foreground">
             <p>
-              Summarise the passage in <strong>no more than 120 words</strong>
-              .
+              Summarise the passage in <strong>no more than 120 words</strong>.
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                <strong>Sentence 1:</strong> Who the main character is and
-                where we meet them.
+                <strong>Sentence 1:</strong> Who the main character is and where we meet them.
               </li>
               <li>
                 <strong>Sentence 2:</strong> The tone of the opening.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two events or observations
-                from the passage.
+                <strong>Sentences 3–4:</strong> Two events or observations from the passage.
               </li>
               <li>
-                <strong>Sentence 5:</strong> The idea or feeling the writer
-                is quietly working towards.
+                <strong>Sentence 5:</strong> The idea or feeling the writer is quietly working
+                towards.
               </li>
             </ul>
           </CardContent>
@@ -247,9 +224,7 @@ export default async function ChildrensClassicPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Type className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Vocabulary focus
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Vocabulary focus</h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
           Eight terms to use when writing about children&rsquo;s classics.

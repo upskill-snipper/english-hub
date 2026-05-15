@@ -11,24 +11,22 @@ import {
   ListChecks,
   ChevronLeft,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Descriptive Writing — Cambridge IGCSE Composition',
+    description:
+      'Cambridge IGCSE descriptive writing techniques. Sensory language, extended metaphors, cinematic zoom structure, Grade 9 model answers and 30 practice prompts.',
+  },
   title: 'Descriptive Writing — Cambridge IGCSE Composition',
   description:
     'Cambridge IGCSE descriptive writing techniques. Sensory language, extended metaphors, cinematic zoom structure, Grade 9 model answers and 30 practice prompts.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/descriptive',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/descriptive',
   },
 }
 
@@ -80,11 +78,7 @@ export default async function DescriptivePage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <Button
-        variant="ghost"
-        size="sm"
-        render={<Link href="/igcse/cambridge/composition" />}
-      >
+      <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/composition" />}>
         <ChevronLeft className="size-3.5" />
         Back to composition
       </Button>
@@ -103,11 +97,10 @@ export default async function DescriptivePage() {
             Descriptive writing
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            A descriptive composition should make the examiner see a place or
-            moment in sharp, unfamiliar detail. Plot is not required. What is
-            required is <strong className="text-foreground">precision,
-            variety and sustained control</strong> — the three words Cambridge
-            examiner reports return to every year.
+            A descriptive composition should make the examiner see a place or moment in sharp,
+            unfamiliar detail. Plot is not required. What is required is{' '}
+            <strong className="text-foreground">precision, variety and sustained control</strong> —
+            the three words Cambridge examiner reports return to every year.
           </p>
         </div>
       </section>
@@ -146,11 +139,7 @@ export default async function DescriptivePage() {
                     {s.description}
                   </CardDescription>
                   <div className="mt-auto">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      render={<Link href={s.href} />}
-                    >
+                    <Button variant="ghost" size="sm" render={<Link href={s.href} />}>
                       Open guide
                       <ArrowRight className="size-3.5" />
                     </Button>
@@ -163,41 +152,35 @@ export default async function DescriptivePage() {
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          What examiners reward
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">What examiners reward</h2>
         <ul className="mt-4 space-y-3 text-body-sm text-muted-foreground">
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Specific, unusual
-              detail</strong> in place of generic adjectives. &ldquo;A woman in
-              a mustard cardigan&rdquo; earns where &ldquo;an old lady&rdquo;
-              does not.
+              <strong className="text-foreground">Specific, unusual detail</strong> in place of
+              generic adjectives. &ldquo;A woman in a mustard cardigan&rdquo; earns where &ldquo;an
+              old lady&rdquo; does not.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Sustained imagery</strong> —
-              a metaphor that returns, evolves or inverts rather than appearing
-              once and vanishing.
+              <strong className="text-foreground">Sustained imagery</strong> — a metaphor that
+              returns, evolves or inverts rather than appearing once and vanishing.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Controlled shape</strong> —
-              an opening that is not the same as the end. Movement through
-              space, time or perspective.
+              <strong className="text-foreground">Controlled shape</strong> — an opening that is not
+              the same as the end. Movement through space, time or perspective.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Range of sentence
-              structures</strong>, including deliberate short sentences for
-              emphasis.
+              <strong className="text-foreground">Range of sentence structures</strong>, including
+              deliberate short sentences for emphasis.
             </span>
           </li>
         </ul>

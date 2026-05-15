@@ -4,6 +4,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 2: Modern Texts and Poetry - AQA English Literature',
+    description:
+      'AQA GCSE English Literature Paper 2 revision. Modern texts (An Inspector Calls, Lord of the Flies, Animal Farm), Power and Conflict poetry anthology, and unseen poetry technique.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/paper-2' },
   title: 'Paper 2: Modern Texts and Poetry - AQA English Literature',
   description:

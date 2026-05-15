@@ -11,13 +11,7 @@ import {
   Quote,
   Feather,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
@@ -25,12 +19,16 @@ import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'To Kill a Mockingbird — Edexcel IGCSE Literature Study Guide',
+    description:
+      'Study guide for Harper Lee\u2019s To Kill a Mockingbird: plot summary, characters, themes, 1930s Alabama context and key quotations for Edexcel IGCSE Literature.',
+  },
   title: 'To Kill a Mockingbird — Edexcel IGCSE Literature Study Guide',
   description:
     'Study guide for Harper Lee\u2019s To Kill a Mockingbird: plot summary, characters, themes, 1930s Alabama context and key quotations for Edexcel IGCSE Literature.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird',
   },
 }
 
@@ -79,29 +77,27 @@ const subPages = [
   {
     href: '/igcse/edexcel/prose/to-kill-a-mockingbird/characters',
     title: 'Characters',
-    description:
-      'Scout, Atticus, Jem, Tom Robinson, Boo Radley, Calpurnia, the Ewells and more.',
+    description: 'Scout, Atticus, Jem, Tom Robinson, Boo Radley, Calpurnia, the Ewells and more.',
     icon: Users,
   },
   {
     href: '/igcse/edexcel/prose/to-kill-a-mockingbird/themes',
     title: 'Themes',
-    description:
-      'Racism, justice, moral courage, innocence, empathy and the mockingbird motif.',
+    description: 'Racism, justice, moral courage, innocence, empathy and the mockingbird motif.',
     icon: Sparkles,
   },
   {
     href: '/igcse/edexcel/prose/to-kill-a-mockingbird/context',
     title: 'Context',
-    description:
-      '1930s Alabama, the Scottsboro Boys, Jim Crow laws and the Civil Rights Movement.',
+    description: '1930s Alabama, the Scottsboro Boys, Jim Crow laws and the Civil Rights Movement.',
     icon: Globe,
   },
 ]
 
 const keyQuotations = [
   {
-    quote: 'You never really understand a person until you consider things from his point of view\u2026',
+    quote:
+      'You never really understand a person until you consider things from his point of view\u2026',
     speaker: 'Atticus Finch',
     analysis:
       'Atticus introduces the novel\u2019s ethic of empathy early, framing moral understanding as an imaginative act. The metaphor recurs at the close when Scout stands on the Radley porch.',
@@ -149,13 +145,15 @@ const keyQuotations = [
       'Elaborates the title symbol in plain moral terms a child can grasp — a technique Lee uses throughout.',
   },
   {
-    quote: 'Presented themselves… in the cynical confidence that their testimony would not be doubted.',
+    quote:
+      'Presented themselves… in the cynical confidence that their testimony would not be doubted.',
     speaker: 'Atticus (trial speech)',
     analysis:
       'Exposes how the Ewells weaponise whiteness; the word "cynical" marks the deliberate nature of the racism.',
   },
   {
-    quote: 'When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
+    quote:
+      'When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
     speaker: 'Atticus Finch',
     analysis:
       'A plain statement of the structural racism the trial will dramatise. Useful for relating to context and understanding the text.',
@@ -179,7 +177,8 @@ const keyQuotations = [
       'A bleak acknowledgement that unsettles the reassuring tone of much of the novel — useful against romanticised readings of Atticus.',
   },
   {
-    quote: 'Don\u2019t matter who they are, anybody sets foot in this house\u2019s yo\u2019 comp\u2019ny.',
+    quote:
+      'Don\u2019t matter who they are, anybody sets foot in this house\u2019s yo\u2019 comp\u2019ny.',
     speaker: 'Calpurnia',
     analysis:
       'Calpurnia rebukes Scout for mocking Walter Cunningham at lunch — class sits alongside race as a target of Lee\u2019s critique.',
@@ -203,20 +202,19 @@ export default async function TkamHubPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
-          { name: "To Kill a Mockingbird", url: "https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+          {
+            name: 'To Kill a Mockingbird',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird',
+          },
         ]}
       />
       {/* Breadcrumb */}
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/edexcel/prose" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/edexcel/prose" />}>
           <ArrowLeft className="size-3.5" />
           Back to Edexcel prose
         </Button>
@@ -236,13 +234,11 @@ export default async function TkamHubPage() {
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             To Kill a Mockingbird
           </h1>
-          <p className="mt-1 text-body-sm text-muted-foreground">
-            Harper Lee · 1960
-          </p>
+          <p className="mt-1 text-body-sm text-muted-foreground">Harper Lee · 1960</p>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            A Pulitzer-winning bildungsroman set in Depression-era Alabama, in
-            which Scout Finch grows up during her father’s defence of Tom
-            Robinson, a Black man falsely accused of assaulting a white woman.
+            A Pulitzer-winning bildungsroman set in Depression-era Alabama, in which Scout Finch
+            grows up during her father’s defence of Tom Robinson, a Black man falsely accused of
+            assaulting a white woman.
           </p>
         </div>
       </section>
@@ -258,9 +254,8 @@ export default async function TkamHubPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              To Kill a Mockingbird is in copyright. This guide includes short
-              extracts for fair-dealing study and analysis only. Read the complete
-              novel alongside these notes.
+              To Kill a Mockingbird is in copyright. This guide includes short extracts for
+              fair-dealing study and analysis only. Read the complete novel alongside these notes.
             </p>
           </div>
         </div>
@@ -270,22 +265,16 @@ export default async function TkamHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Plot overview
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Plot overview</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {plotBeats.map((beat) => (
             <Card key={beat.part}>
               <CardHeader className="pb-2">
-                <CardTitle className="text-heading-sm font-heading">
-                  {beat.part}
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">{beat.part}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm leading-relaxed text-muted-foreground">
-                  {beat.summary}
-                </p>
+                <p className="text-body-sm leading-relaxed text-muted-foreground">{beat.summary}</p>
               </CardContent>
             </Card>
           ))}
@@ -296,19 +285,12 @@ export default async function TkamHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Sparkles className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Core themes
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Core themes</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {themes.map((theme) => (
-            <div
-              key={theme.title}
-              className="rounded-xl border border-border/60 bg-card p-5"
-            >
-              <h3 className="text-body-md font-semibold text-foreground">
-                {theme.title}
-              </h3>
+            <div key={theme.title} className="rounded-xl border border-border/60 bg-card p-5">
+              <h3 className="text-body-md font-semibold text-foreground">{theme.title}</h3>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {theme.blurb}
               </p>
@@ -321,9 +303,7 @@ export default async function TkamHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Feather className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Deep dives
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Deep dives</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {subPages.map((p) => {
@@ -340,9 +320,7 @@ export default async function TkamHubPage() {
                   <CardTitle className="text-heading-md font-heading leading-tight">
                     {p.title}
                   </CardTitle>
-                  <CardDescription className="text-body-sm">
-                    {p.description}
-                  </CardDescription>
+                  <CardDescription className="text-body-sm">{p.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="mt-auto">
                   <Button
@@ -365,22 +343,15 @@ export default async function TkamHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Key quotations
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Key quotations</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {keyQuotations.map((q, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-border/60 bg-card p-5"
-            >
+            <div key={i} className="rounded-xl border border-border/60 bg-card p-5">
               <blockquote className="border-l-2 border-primary/40 pl-3 text-body-md italic text-foreground">
                 “{q.quote}”
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">
-                — {q.speaker}
-              </p>
+              <p className="mt-2 text-body-xs font-medium text-primary">— {q.speaker}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}
               </p>
@@ -390,7 +361,8 @@ export default async function TkamHubPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism
+        and review. Full text available from your school or local library.
       </p>
     </div>
   )

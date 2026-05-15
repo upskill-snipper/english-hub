@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Grade 9 Descriptive Model Answers — Cambridge IGCSE',
+    description:
+      'Three full Grade 9 Cambridge IGCSE descriptive compositions with paragraph-by-paragraph examiner commentary on vocabulary, imagery and structure.',
+  },
   title: 'Grade 9 Descriptive Model Answers — Cambridge IGCSE',
   description:
     'Three full Grade 9 Cambridge IGCSE descriptive compositions with paragraph-by-paragraph examiner commentary on vocabulary, imagery and structure.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/descriptive/model-answers',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/descriptive/model-answers',
   },
 }
 
@@ -113,9 +117,8 @@ export default async function DescriptiveModelAnswersPage() {
             Model descriptive compositions
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Three full Grade 9 descriptive compositions at Cambridge IGCSE
-            length. Each paragraph is followed by an examiner-style annotation
-            showing exactly what is being rewarded and why.
+            Three full Grade 9 descriptive compositions at Cambridge IGCSE length. Each paragraph is
+            followed by an examiner-style annotation showing exactly what is being rewarded and why.
           </p>
         </div>
       </section>
@@ -125,13 +128,9 @@ export default async function DescriptiveModelAnswersPage() {
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <Award className="size-5 text-primary" />
-              <h2 className="text-heading-lg font-heading text-foreground">
-                {m.title}
-              </h2>
+              <h2 className="text-heading-lg font-heading text-foreground">{m.title}</h2>
             </div>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              {m.mark}
-            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">{m.mark}</Badge>
           </div>
 
           {m.paragraphs.map((p, i) => (
@@ -142,9 +141,7 @@ export default async function DescriptiveModelAnswersPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-body-md leading-relaxed text-foreground">
-                  {p.text}
-                </p>
+                <p className="text-body-md leading-relaxed text-foreground">{p.text}</p>
                 <div className="rounded-lg border border-border/60 bg-primary/5 p-4">
                   <p className="text-body-xs font-semibold uppercase tracking-wide text-primary">
                     Examiner note

@@ -16,6 +16,11 @@ import StudyTools from '@/components/study/StudyTools'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Macbeth — Edexcel IGCSE Literature Study Guide',
+    description:
+      'Full Macbeth study guide for Edexcel IGCSE English Literature. Plot, characters, themes, quotes, Jacobean context and exam technique for the two-part Shakespeare question.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth',
   },

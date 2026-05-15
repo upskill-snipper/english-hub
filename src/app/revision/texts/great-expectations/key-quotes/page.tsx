@@ -9,12 +9,16 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Great Expectations Key Quotes | The English Hub',
+    description:
+      '25 essential quotations from Great Expectations by Charles Dickens with speaker, context and detailed analysis for AQA GCSE English Literature.',
+  },
   title: 'Great Expectations Key Quotes | The English Hub',
   description:
     '25 essential quotations from Great Expectations by Charles Dickens with speaker, context and detailed analysis for AQA GCSE English Literature.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/revision/texts/great-expectations/key-quotes',
+    canonical: 'https://theenglishhub.app/revision/texts/great-expectations/key-quotes',
   },
 }
 
@@ -64,8 +68,7 @@ const KEY_QUOTES: KeyQuote[] = [
       'Pip begins to see himself through Estella\'s eyes. The words "coarse," "common" and "vulgar" are not his own vocabulary — they are imported from the upper-class gaze. Dickens shows the exact moment class shame takes root: Pip\'s hands and boots have not changed, but his perception of them has. Self-hatred is externally imposed.',
   },
   {
-    quote:
-      '"It is a most miserable thing to feel ashamed of home."',
+    quote: '"It is a most miserable thing to feel ashamed of home."',
     speaker: 'Pip (narrator)',
     chapter: 'Chapter 14',
     themes: ['Social Class', 'Loyalty', 'Identity'],
@@ -73,8 +76,7 @@ const KEY_QUOTES: KeyQuote[] = [
       'The adult narrator passes moral judgment on his younger self with devastating simplicity. No imagery, no elaboration — just a plain, honest verdict. "Miserable" carries both its modern meaning (unhappy) and its older sense (morally wretched). This is one of the novel\'s most important sentences: Dickens arguing, through Pip\'s hindsight, that class ambition poisons the capacity for love.',
   },
   {
-    quote:
-      '"I want to be a gentleman."',
+    quote: '"I want to be a gentleman."',
     speaker: 'Pip',
     chapter: 'Chapter 17',
     themes: ['Ambition', 'Social Class'],
@@ -82,8 +84,7 @@ const KEY_QUOTES: KeyQuote[] = [
       'Pip\'s bare statement of ambition sounds simple but contains a devastating irony. His idea of a "gentleman" is entirely superficial — manners, money, social acceptance. Dickens will spend the rest of the novel dismantling this definition and replacing it with a moral one. The desire itself is not wrong, but Pip is pursuing the wrong kind of gentility.',
   },
   {
-    quote:
-      '"Do you want to be a gentleman, to spite her or to gain her over?"',
+    quote: '"Do you want to be a gentleman, to spite her or to gain her over?"',
     speaker: 'Biddy',
     chapter: 'Chapter 17',
     themes: ['Ambition', 'Love', 'Identity'],
@@ -109,8 +110,7 @@ const KEY_QUOTES: KeyQuote[] = [
       'Pip wishes for a different upbringing — effectively wishing to be a different person. The conditional "should have been" reveals how deeply he has internalised the belief that identity is determined by class. Rather than changing himself, he wishes his guardian had been changed for him. Dickens shows class ideology distorting not just perception but imagination.',
   },
   {
-    quote:
-      '"Break their hearts, my pride and hope, break their hearts and have no mercy!"',
+    quote: '"Break their hearts, my pride and hope, break their hearts and have no mercy!"',
     speaker: 'Miss Havisham',
     chapter: 'Chapter 12',
     themes: ['Love', 'Identity'],
@@ -119,7 +119,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     quote:
-      '"Pip, dear old chap, life is made of ever so many partings welded together, as I may say, and one man\'s a blacksmith, and one\'s a whitesmith, and one\'s a goldsmith, and one\'s a coppersmith. Diwisions among such must come, and must be met as they come."',
+      "\"Pip, dear old chap, life is made of ever so many partings welded together, as I may say, and one man's a blacksmith, and one's a whitesmith, and one's a goldsmith, and one's a coppersmith. Diwisions among such must come, and must be met as they come.\"",
     speaker: 'Joe',
     chapter: 'Chapter 27',
     themes: ['Social Class', 'Loyalty', 'Identity'],
@@ -127,17 +127,15 @@ const KEY_QUOTES: KeyQuote[] = [
       'Joe uses the language of his trade to express a truth about social division. The metalwork metaphor ("partings welded together") turns a painful social reality into something crafted and purposeful. The list of smiths — blacksmith, whitesmith, goldsmith, coppersmith — acknowledges that different people work at different levels without assigning moral value to any. Joe accepts class division without bitterness, demonstrating the grace that Pip lacks.',
   },
   {
-    quote:
-      '"Ever the best of friends, ain\'t us, Pip?"',
+    quote: '"Ever the best of friends, ain\'t us, Pip?"',
     speaker: 'Joe',
     chapter: 'Multiple chapters',
     themes: ['Loyalty', 'Love'],
     analysis:
-      'Joe\'s repeated question is both a statement of loyalty and a plea. The non-standard grammar ("ain\'t us") marks his class, but the sentiment — consistent, undemanding, forgiving — represents the novel\'s highest moral ideal. Every time Joe says this, the gap between his unconditional love and Pip\'s conditional loyalty widens, making the reader feel Pip\'s ingratitude more acutely.',
+      "Joe's repeated question is both a statement of loyalty and a plea. The non-standard grammar (\"ain't us\") marks his class, but the sentiment — consistent, undemanding, forgiving — represents the novel's highest moral ideal. Every time Joe says this, the gap between his unconditional love and Pip's conditional loyalty widens, making the reader feel Pip's ingratitude more acutely.",
   },
   {
-    quote:
-      '"You must know that I have no heart — if that has anything to do with my memory."',
+    quote: '"You must know that I have no heart — if that has anything to do with my memory."',
     speaker: 'Estella',
     chapter: 'Chapter 29',
     themes: ['Love', 'Identity'],
@@ -154,8 +152,7 @@ const KEY_QUOTES: KeyQuote[] = [
       'The anaphoric repetition of "against" makes Pip\'s love an act of wilful self-destruction. Each "against" names something healthy that his love opposes: reason, peace, hope, happiness. Dickens presents romantic obsession not as noble but as a form of self-harm. The listing structure creates a sense of accumulation — Pip is drowning in his own passion, and he knows it.',
   },
   {
-    quote:
-      '"Yes, Pip, dear boy, I\'ve made a gentleman on you! It\'s me wot has done it!"',
+    quote: '"Yes, Pip, dear boy, I\'ve made a gentleman on you! It\'s me wot has done it!"',
     speaker: 'Magwitch',
     chapter: 'Chapter 39',
     themes: ['Social Class', 'Identity', 'Ambition'],
@@ -164,7 +161,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     quote:
-      '"I\'ve come to the old country fur to see my gentleman spend his money like a gentleman. That\'ll be my pleasure. My pleasure \'ull be fur to see him do it."',
+      "\"I've come to the old country fur to see my gentleman spend his money like a gentleman. That'll be my pleasure. My pleasure 'ull be fur to see him do it.\"",
     speaker: 'Magwitch',
     chapter: 'Chapter 39',
     themes: ['Social Class', 'Loyalty'],
@@ -181,13 +178,12 @@ const KEY_QUOTES: KeyQuote[] = [
       'Magwitch mimics the legalistic language of the courts that condemned him, quoting the system back at itself with devastating irony. The suggestion that he "insisted on being born" treats his very existence as a crime. Dickens exposes the Victorian assumption that poverty is a moral failing rather than a social condition. The elaborate phrasing contrasts with Magwitch\'s usual rough speech.',
   },
   {
-    quote:
-      '"Take nothing on its looks; take everything on evidence. There\'s no better rule."',
+    quote: '"Take nothing on its looks; take everything on evidence. There\'s no better rule."',
     speaker: 'Jaggers',
     chapter: 'Chapter 40',
     themes: ['Crime and Justice', 'Identity'],
     analysis:
-      'Jaggers\'s philosophy sounds rational and fair, but Dickens shows that the legal system it operates within does the opposite — it takes everything on looks. Compeyson gets a lighter sentence because he looks like a gentleman. Jaggers knows this, which is why his cynicism is so complete. His handwashing is the physical expression of this knowledge: he cannot make the system clean.',
+      "Jaggers's philosophy sounds rational and fair, but Dickens shows that the legal system it operates within does the opposite — it takes everything on looks. Compeyson gets a lighter sentence because he looks like a gentleman. Jaggers knows this, which is why his cynicism is so complete. His handwashing is the physical expression of this knowledge: he cannot make the system clean.",
   },
   {
     quote:
@@ -196,16 +192,15 @@ const KEY_QUOTES: KeyQuote[] = [
     chapter: 'Chapter 25',
     themes: ['Identity'],
     analysis:
-      'Wemmick\'s rigid separation of his public and private selves is played for comedy but contains a serious critique. Victorian capitalism demanded that workers suppress their humanity at work. Wemmick\'s castle — complete with drawbridge and cannon — is his resistance: a private space where he can be fully human. Dickens suggests that modern life forces people to become machines during working hours.',
+      "Wemmick's rigid separation of his public and private selves is played for comedy but contains a serious critique. Victorian capitalism demanded that workers suppress their humanity at work. Wemmick's castle — complete with drawbridge and cannon — is his resistance: a private space where he can be fully human. Dickens suggests that modern life forces people to become machines during working hours.",
   },
   {
-    quote:
-      '"What have I done! What have I done!"',
+    quote: '"What have I done! What have I done!"',
     speaker: 'Miss Havisham',
     chapter: 'Chapter 49',
     themes: ['Love', 'Identity'],
     analysis:
-      'Miss Havisham\'s moment of agonised self-recognition. The repetition conveys not just horror but the shattering of her entire self-image: she has always seen herself as the victim, never as the perpetrator. Her realisation that she has destroyed Estella\'s capacity for love parallels Pip\'s discovery that his expectations are built on illusion. Both must face the consequences of their self-deception.',
+      "Miss Havisham's moment of agonised self-recognition. The repetition conveys not just horror but the shattering of her entire self-image: she has always seen herself as the victim, never as the perpetrator. Her realisation that she has destroyed Estella's capacity for love parallels Pip's discovery that his expectations are built on illusion. Both must face the consequences of their self-deception.",
   },
   {
     quote:
@@ -226,8 +221,7 @@ const KEY_QUOTES: KeyQuote[] = [
       'The novel\'s final sentence is deliberately ambiguous. "No shadow of another parting" could mean they will never part, or it could mean Pip cannot yet see the parting ahead. The mist motif connects back to Chapter 19 — the same image of revelation, but now evening rather than morning. The "ruined place" is both Satis House and the ruins of their former selves. Dickens leaves the reader to decide.',
   },
   {
-    quote:
-      '"Which I meantersay, Pip, as I would in preference have carried you there."',
+    quote: '"Which I meantersay, Pip, as I would in preference have carried you there."',
     speaker: 'Joe',
     chapter: 'Chapter 57',
     themes: ['Loyalty', 'Love'],
@@ -235,8 +229,7 @@ const KEY_QUOTES: KeyQuote[] = [
       'Joe\'s quiet declaration of love after nursing Pip through his fever. The non-standard "meantersay" is pure Joe — humble, inarticulate, and devastatingly sincere. He would have physically carried Pip, like a parent carrying a child. Dickens distils Joe\'s entire character into one sentence: steadfast, protective, asking nothing in return.',
   },
   {
-    quote:
-      '"I am not angry, but I am hurt."',
+    quote: '"I am not angry, but I am hurt."',
     speaker: 'Biddy',
     chapter: 'Chapter 19',
     themes: ['Loyalty', 'Love'],
@@ -245,7 +238,7 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     quote:
-      '"If I ain\'t a gentleman, nor yet ain\'t got no learning, I\'ll make a better gentleman nor ever I was!"',
+      "\"If I ain't a gentleman, nor yet ain't got no learning, I'll make a better gentleman nor ever I was!\"",
     speaker: 'Magwitch',
     chapter: 'Chapter 39',
     themes: ['Social Class', 'Ambition', 'Loyalty'],
@@ -294,9 +287,8 @@ export default async function GreatExpectationsKeyQuotesPage() {
             Great Expectations — Charles Dickens
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            25 essential quotations with speaker, chapter, linked themes and
-            detailed analysis. All quotations are from the public-domain text of
-            Great Expectations (1861).
+            25 essential quotations with speaker, chapter, linked themes and detailed analysis. All
+            quotations are from the public-domain text of Great Expectations (1861).
           </p>
         </div>
       </section>
@@ -311,16 +303,12 @@ export default async function GreatExpectationsKeyQuotesPage() {
                   {i + 1}
                 </div>
                 <div className="space-y-3 min-w-0">
-                  <p className="text-body-md font-medium italic text-foreground">
-                    {q.quote}
-                  </p>
+                  <p className="text-body-md font-medium italic text-foreground">{q.quote}</p>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
                     <p className="text-caption font-medium uppercase tracking-wide text-primary">
                       {q.speaker}
                     </p>
-                    <p className="text-caption text-muted-foreground">
-                      {q.chapter}
-                    </p>
+                    <p className="text-caption text-muted-foreground">{q.chapter}</p>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {q.themes.map((theme) => (
@@ -337,9 +325,7 @@ export default async function GreatExpectationsKeyQuotesPage() {
                       <Quote className="size-3 text-violet-400" />
                       Analysis
                     </p>
-                    <p className="text-body-sm text-muted-foreground">
-                      {q.analysis}
-                    </p>
+                    <p className="text-body-sm text-muted-foreground">{q.analysis}</p>
                   </div>
                 </div>
               </div>
@@ -350,9 +336,8 @@ export default async function GreatExpectationsKeyQuotesPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Great Expectations by Charles Dickens (1861) is in the public domain.
-        Quotations are reproduced freely as the text is no longer subject to
-        copyright.
+        Great Expectations by Charles Dickens (1861) is in the public domain. Quotations are
+        reproduced freely as the text is no longer subject to copyright.
       </p>
     </div>
   )

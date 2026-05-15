@@ -11,6 +11,11 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Lord of the Flies Themes & Symbolism | The English Hub',
+    description:
+      'In-depth analysis of themes and symbols in Lord of the Flies by William Golding: civilisation vs savagery, power, innocence, fear, the conch, fire, beast and pig',
+  },
   title: 'Lord of the Flies Themes & Symbolism | The English Hub',
   description:
     "In-depth analysis of themes and symbols in Lord of the Flies by William Golding: civilisation vs savagery, power, innocence, fear, the conch, fire, beast and pig's head.",

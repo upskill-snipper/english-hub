@@ -11,17 +11,17 @@ import {
   PenTool,
   Target,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'How to get a Grade 9 | Cambridge IGCSE Language B | The English Hub',
+    description:
+      'Grade 9 guide for Cambridge IGCSE Language B First Language English. Writing techniques, analytical depth and structural sophistication needed to reach the top grade.',
+  },
   title: 'How to get a Grade 9 | Cambridge IGCSE Language B | The English Hub',
   description:
     'Grade 9 guide for Cambridge IGCSE Language B First Language English. Writing techniques, analytical depth and structural sophistication needed to reach the top grade.',
@@ -86,11 +86,7 @@ export default async function Grade9GuidePage() {
   return (
     <div className="space-y-10 pb-16">
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/0990" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/0990" />}>
           <ArrowLeft className="size-3.5" />
           Back to IGCSE Language B hub
         </Button>
@@ -113,10 +109,9 @@ export default async function Grade9GuidePage() {
             How to hit Grade 9
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Grade 9 is more selective than A*. It&apos;s awarded to roughly
-            the top 4% of entries. This guide breaks down exactly what
-            sophistication looks like across reading and writing — and the
-            small habits that take a strong 8 to a clean 9.
+            Grade 9 is more selective than A*. It&apos;s awarded to roughly the top 4% of entries.
+            This guide breaks down exactly what sophistication looks like across reading and writing
+            — and the small habits that take a strong 8 to a clean 9.
           </p>
         </div>
       </section>
@@ -138,9 +133,7 @@ export default async function Grade9GuidePage() {
                   <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-primary/10">
                     <Icon className="size-5 text-primary" />
                   </div>
-                  <CardTitle className="text-body font-semibold">
-                    {p.title}
-                  </CardTitle>
+                  <CardTitle className="text-body font-semibold">{p.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-body-sm text-muted-foreground">
@@ -176,20 +169,12 @@ export default async function Grade9GuidePage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="rounded-lg border border-border/60 bg-muted/30 p-3">
-                  <p className="text-body-xs font-medium text-muted-foreground">
-                    Grade 6 attempt
-                  </p>
-                  <p className="mt-1 text-body-sm italic text-muted-foreground">
-                    {u.before}
-                  </p>
+                  <p className="text-body-xs font-medium text-muted-foreground">Grade 6 attempt</p>
+                  <p className="mt-1 text-body-sm italic text-muted-foreground">{u.before}</p>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary/5 p-3">
-                  <p className="text-body-xs font-medium text-primary">
-                    Grade 9 attempt
-                  </p>
-                  <p className="mt-1 text-body-sm italic text-foreground">
-                    {u.after}
-                  </p>
+                  <p className="text-body-xs font-medium text-primary">Grade 9 attempt</p>
+                  <p className="mt-1 text-body-sm italic text-foreground">{u.after}</p>
                 </div>
               </CardContent>
             </Card>
@@ -208,9 +193,9 @@ export default async function Grade9GuidePage() {
               1
             </span>
             <span>
-              <strong className="text-foreground">Read widely.</strong>{' '}
-              Non-fiction articles, travel writing and long-form journalism
-              build the vocabulary and register range examiners reward.
+              <strong className="text-foreground">Read widely.</strong> Non-fiction articles, travel
+              writing and long-form journalism build the vocabulary and register range examiners
+              reward.
             </span>
           </li>
           <li className="flex gap-3">
@@ -218,9 +203,8 @@ export default async function Grade9GuidePage() {
               2
             </span>
             <span>
-              <strong className="text-foreground">Time every practice answer.</strong>{' '}
-              Examiners don&apos;t reward planning that doesn&apos;t fit in
-              the time allowed.
+              <strong className="text-foreground">Time every practice answer.</strong> Examiners
+              don&apos;t reward planning that doesn&apos;t fit in the time allowed.
             </span>
           </li>
           <li className="flex gap-3">
@@ -228,10 +212,9 @@ export default async function Grade9GuidePage() {
               3
             </span>
             <span>
-              <strong className="text-foreground">Annotate mark schemes.</strong>{' '}
-              Notice the difference between Level 5 and Level 6 descriptors —
-              usually it&apos;s about precision of effect, not quantity of
-              points.
+              <strong className="text-foreground">Annotate mark schemes.</strong> Notice the
+              difference between Level 5 and Level 6 descriptors — usually it&apos;s about precision
+              of effect, not quantity of points.
             </span>
           </li>
           <li className="flex gap-3">
@@ -239,9 +222,9 @@ export default async function Grade9GuidePage() {
               4
             </span>
             <span>
-              <strong className="text-foreground">Keep a vocabulary bank.</strong>{' '}
-              Collect precise adjectives, verbs and transition phrases and
-              use them consistently in practice writing.
+              <strong className="text-foreground">Keep a vocabulary bank.</strong> Collect precise
+              adjectives, verbs and transition phrases and use them consistently in practice
+              writing.
             </span>
           </li>
           <li className="flex gap-3">
@@ -249,9 +232,8 @@ export default async function Grade9GuidePage() {
               5
             </span>
             <span>
-              <strong className="text-foreground">Proofread mercilessly.</strong>{' '}
-              The gap between 8 and 9 is often just careless spelling and
-              punctuation errors.
+              <strong className="text-foreground">Proofread mercilessly.</strong> The gap between 8
+              and 9 is often just careless spelling and punctuation errors.
             </span>
           </li>
         </ol>
@@ -259,14 +241,9 @@ export default async function Grade9GuidePage() {
 
       {/* Next */}
       <section className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Put it into practice
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Put it into practice</h2>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Button
-            size="sm"
-            render={<Link href="/igcse/cambridge/0990/practice-paper-1" />}
-          >
+          <Button size="sm" render={<Link href="/igcse/cambridge/0990/practice-paper-1" />}>
             Practice Paper 1
             <ArrowRight className="size-3.5" />
           </Button>

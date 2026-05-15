@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'To Kill a Mockingbird Characters — Edexcel IGCSE Literature',
+    description:
+      'Character analysis for To Kill a Mockingbird: Scout, Atticus, Jem, Tom Robinson, Boo Radley, Calpurnia, Bob and Mayella Ewell, Aunt Alexandra.',
+  },
   title: 'To Kill a Mockingbird Characters — Edexcel IGCSE Literature',
   description:
     'Character analysis for To Kill a Mockingbird: Scout, Atticus, Jem, Tom Robinson, Boo Radley, Calpurnia, Bob and Mayella Ewell, Aunt Alexandra.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/characters',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/characters',
   },
 }
 
@@ -22,8 +26,7 @@ const characters = [
     role: 'Narrator and protagonist',
     analysis:
       'Six to nine years old across the novel, Scout is a tomboyish, fiercely literate narrator whose first-person voice sits at a productive distance from her child-self. Lee uses a dual perspective: the child\u2019s bewildered observation and the adult\u2019s retrospective judgement. Scout\u2019s moral arc moves from literal, tit-for-tat thinking towards Atticus\u2019s ethic of empathy.',
-    quote:
-      '”Until I feared I would lose it, I never loved to read.”',
+    quote: '”Until I feared I would lose it, I never loved to read.”',
   },
   {
     name: 'Atticus Finch',
@@ -38,24 +41,21 @@ const characters = [
     role: 'Scout\u2019s older brother',
     analysis:
       'Four years older than Scout, Jem undergoes the novel\u2019s most visible loss of innocence. His fascination with Boo Radley, his growing admiration of Atticus and his shattered faith in Maycomb after Tom\u2019s conviction trace a more bruised coming-of-age than Scout\u2019s. His broken arm, mentioned on page one, becomes the novel\u2019s framing wound.',
-    quote:
-      '”I always thought Maycomb folks were the best folks in the world…”',
+    quote: '”I always thought Maycomb folks were the best folks in the world…”',
   },
   {
     name: 'Tom Robinson',
     role: 'The accused',
     analysis:
       'A hard-working, physically disabled Black labourer, Tom is falsely accused of raping Mayella Ewell after he responds to her loneliness with kindness. His disabled left arm makes the alleged assault physically impossible, yet the jury still convicts. His death, shot "seventeen times" while trying to escape prison, exposes the hollowness of Atticus\u2019s faith in appeal.',
-    quote:
-      '”I felt right sorry for her.”',
+    quote: '”I felt right sorry for her.”',
   },
   {
     name: 'Arthur "Boo" Radley',
     role: 'Reclusive neighbour',
     analysis:
       'The novel\u2019s second "mockingbird". Boo is first a Gothic childhood legend — a figure of rumour and dares — before emerging as the silent protector who stitches Jem\u2019s trousers, leaves gifts in the oak, and finally kills Bob Ewell to save the children. His one spoken line in the novel ("Will you take me home?") is devastating in its quietness.',
-    quote:
-      '“Atticus, he was real nice… Most people are, Scout, when you finally see them.”',
+    quote: '“Atticus, he was real nice… Most people are, Scout, when you finally see them.”',
   },
   {
     name: 'Calpurnia',
@@ -70,40 +70,35 @@ const characters = [
     role: 'Antagonist',
     analysis:
       'The unemployed, alcoholic patriarch of the Ewell family, Bob represents the "poor white" demographic whose only social currency is whiteness. Lee uses him to separate racism from ignorance (Atticus distinguishes the Ewells from the Cunninghams) and to show how racial hierarchy props up otherwise failing masculinities.',
-    quote:
-      'Bob Ewell attacks the children on Halloween; Boo Radley intervenes.',
+    quote: 'Bob Ewell attacks the children on Halloween; Boo Radley intervenes.',
   },
   {
     name: 'Mayella Ewell',
     role: 'Complicated victim-accuser',
     analysis:
       'Nineteen, isolated, and abused by her father, Mayella is both victim and perpetrator — a figure through whom Lee examines how gender and class intersect with race. Her seven red geraniums, tended "as carefully as Miss Maudie Atkinson", register a yearning for beauty the novel treats with uncomfortable sympathy before her false testimony condemns Tom.',
-    quote:
-      'Atticus: “Who beat you up? Tom Robinson or your father?”',
+    quote: 'Atticus: “Who beat you up? Tom Robinson or your father?”',
   },
   {
     name: 'Aunt Alexandra',
     role: 'Atticus\u2019s sister',
     analysis:
       'Alexandra arrives during Part Two to drill Scout in "ladylike" behaviour and enforce a hereditary sense of Finch family pride. She represents the Southern aristocratic code Atticus has partly rejected; her tea-party grace under pressure after Tom\u2019s death reveals a harder decency than Scout expects.',
-    quote:
-      '“Jean Louise, stop scratching your head.”',
+    quote: '“Jean Louise, stop scratching your head.”',
   },
   {
     name: 'Dill (Charles Baker Harris)',
     role: 'Summer friend',
     analysis:
       'Based on Lee\u2019s real childhood friend Truman Capote, Dill brings imagination and melodrama to the Boo Radley games and weeps openly in the courtroom. His tears function as the novel\u2019s emotional interpreter for readers who might otherwise read the trial as procedural.',
-    quote:
-      '”It was just him I couldn\u2019t stand… that old Mr Gilmer doin\u2019 him thataway…”',
+    quote: '”It was just him I couldn\u2019t stand… that old Mr Gilmer doin\u2019 him thataway…”',
   },
   {
     name: 'Miss Maudie Atkinson',
     role: 'Neighbour and Atticus\u2019s ally',
     analysis:
       'A progressive Baptist widow, Miss Maudie articulates the mockingbird symbol, defends Atticus\u2019s character to the children, and after her house burns down greets the loss with humour. She is the adult female voice the novel most trusts.',
-    quote:
-      '“Mockingbirds don\u2019t do one thing but make music for us to enjoy.”',
+    quote: '“Mockingbirds don\u2019t do one thing but make music for us to enjoy.”',
   },
 ]
 
@@ -114,21 +109,25 @@ export default async function TkamCharactersPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
-          { name: "To Kill a Mockingbird", url: "https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird" },
-          { name: "Characters", url: "https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/characters" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+          {
+            name: 'To Kill a Mockingbird',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird',
+          },
+          {
+            name: 'Characters',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/characters',
+          },
         ]}
       />
       <div>
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/edexcel/prose/to-kill-a-mockingbird" />
-          }
+          render={<Link href="/igcse/edexcel/prose/to-kill-a-mockingbird" />}
         >
           <ArrowLeft className="size-3.5" />
           Back to To Kill a Mockingbird
@@ -148,8 +147,8 @@ export default async function TkamCharactersPage() {
             To Kill a Mockingbird: Characters
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical profiles of the Finches, Ewells, Robinson, Radley and
-            the wider Maycomb cast — with one short, fair-dealing quotation each.
+            Analytical profiles of the Finches, Ewells, Robinson, Radley and the wider Maycomb cast
+            — with one short, fair-dealing quotation each.
           </p>
         </div>
       </section>
@@ -162,8 +161,8 @@ export default async function TkamCharactersPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing for study and
-              criticism. Read the complete novel for the full characterisation.
+              Short extracts are included under fair dealing for study and criticism. Read the
+              complete novel for the full characterisation.
             </p>
           </div>
         </div>
@@ -172,19 +171,12 @@ export default async function TkamCharactersPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Users className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Character profiles
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Character profiles</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
           {characters.map((c) => (
-            <article
-              key={c.name}
-              className="rounded-xl border border-border/60 bg-card p-5"
-            >
-              <h3 className="text-heading-sm font-heading text-foreground">
-                {c.name}
-              </h3>
+            <article key={c.name} className="rounded-xl border border-border/60 bg-card p-5">
+              <h3 className="text-heading-sm font-heading text-foreground">{c.name}</h3>
               <p className="mt-0.5 text-body-xs font-medium uppercase tracking-wide text-primary">
                 {c.role}
               </p>
@@ -200,7 +192,8 @@ export default async function TkamCharactersPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism
+        and review. Full text available from your school or local library.
       </p>
     </div>
   )

@@ -7,7 +7,7 @@
 // one-glance summary of the product for that persona — the page body below
 // provides the deeper copy, pricing, and CTAs.
 //
-// Uses a plain <img> tag (not next/image) so the same component handles
+// Uses a plain <img alt=""> tag (not next/image) so the same component handles
 // SVG placeholders (committed) and the raster JPGs the founder will drop in
 // later without needing to tweak `dangerouslyAllowSVG` in next.config.js.
 // The images are already sized for final display (~1536 × 1024) so Next's

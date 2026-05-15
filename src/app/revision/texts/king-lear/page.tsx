@@ -9,6 +9,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'King Lear — Study Guide | The English Hub',
+    description:
+      'In-depth study guide for King Lear by William Shakespeare: plot, characters, themes, context and key quotations.',
+  },
   title: 'King Lear — Study Guide | The English Hub',
   description:
     'In-depth study guide for King Lear by William Shakespeare: plot, characters, themes, context and key quotations.',
@@ -185,7 +190,8 @@ const data: TextGuideData = {
         'Lear\u2019s reconciliation with Cordelia strips away royal grandeur to a simple, devastating admission. The line\u2019s plainness contrasts with the rhetorical extravagance of the opening scene and marks his transformation.',
     },
     {
-      quote: '"The weight of this sad time we must obey; / Speak what we feel, not what we ought to say."',
+      quote:
+        '"The weight of this sad time we must obey; / Speak what we feel, not what we ought to say."',
       who: 'Edgar (Folio) / Albany (Quarto) \u2014 Act 5, Scene 3',
       analysis:
         'The closing couplet of the play, attributed differently in the two texts, demands a new, painful honesty in the ruined kingdom. It signals a moral code earned only through catastrophe.',
@@ -236,34 +242,389 @@ const data: TextGuideData = {
 }
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
-  { id: 'kl-1', question: 'How does Lear decide to divide his kingdom in the opening scene?', type: 'multiple-choice', options: ['By drawing lots', 'By staging a love test between his three daughters', 'By consulting his nobles', 'By leaving it to his eldest son'], correctIndex: 1, explanation: 'Lear proposes to give the largest share to whichever daughter professes to love him most. The love test exposes his need for public flattery and triggers the catastrophe.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'kl-2', question: 'What is Cordelia\u2019s answer when asked how much she loves her father?', type: 'multiple-choice', options: ['"All the world"', '"Nothing, my lord"', '"More than life itself"', '"As a daughter should"'], correctIndex: 1, explanation: 'Cordelia refuses to match her sisters\u2019 extravagant flattery and answers simply "Nothing, my lord", prompting Lear\u2019s famous retort "Nothing will come of nothing".', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'kl-3', question: 'Who is Edmund\u2019s father, and what is Edmund\u2019s legal status?', type: 'multiple-choice', options: ['Gloucester; illegitimate son', 'Kent; legitimate son', 'Cornwall; adopted son', 'Albany; stepson'], correctIndex: 0, explanation: 'Edmund is the illegitimate son of the Earl of Gloucester. His exclusion from inheritance under primogeniture fuels the revolt set out in his "Thou, Nature, art my goddess" soliloquy.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'kl-4', question: 'What disguise does Edgar adopt when forced to flee?', type: 'multiple-choice', options: ['A French soldier', 'A wandering friar', '"Poor Tom", a mad beggar', 'A court musician'], correctIndex: 2, explanation: 'Edgar adopts the persona of Poor Tom, a naked, seemingly mad beggar, which allows him to survive, accompany Lear on the heath and later guide his blinded father.', topic: 'Characters', difficulty: 'foundation' },
-  { id: 'kl-5', question: 'Who physically blinds Gloucester on stage?', type: 'multiple-choice', options: ['Edmund', 'Goneril', 'Cornwall', 'Regan'], correctIndex: 2, explanation: 'Cornwall tears out Gloucester\u2019s eyes in Act 3 Scene 7 with "Out, vile jelly!". Regan urges him on and a servant fatally wounds Cornwall during the scene.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'kl-6', question: 'Which of these lines is spoken during the storm on the heath?', type: 'multiple-choice', options: ['"Pray you, undo this button"', '"Blow, winds, and crack your cheeks!"', '"Never, never, never, never, never"', '"The weight of this sad time we must obey"'], correctIndex: 1, explanation: '"Blow, winds, and crack your cheeks!" is Lear\u2019s rage at the storm in Act 3 Scene 2, personifying the weather as a participant in his suffering.', topic: 'Writer\'s Methods', difficulty: 'foundation' },
-  { id: 'kl-7', question: 'How does Cordelia die?', type: 'multiple-choice', options: ['In battle against her sisters', 'Hanged on Edmund\u2019s orders', 'Poisoned by Goneril', 'By her own hand at the tomb'], correctIndex: 1, explanation: 'Edmund secretly orders the execution of Lear and Cordelia after the British victory. Cordelia is hanged off stage; Edmund\u2019s late repentance arrives too late to save her.', topic: 'Plot', difficulty: 'foundation' },
-  { id: 'kl-8', question: 'What happens to Goneril and Regan in Act 5?', type: 'multiple-choice', options: ['They both survive and divide the kingdom', 'Goneril poisons Regan, then kills herself', 'They are executed by Albany', 'They flee to France with Edmund'], correctIndex: 1, explanation: 'Jealous rivalry over Edmund destroys the sisters\u2019 alliance. Goneril poisons Regan and, when her own treachery is exposed, kills herself.', topic: 'Plot', difficulty: 'higher' },
-  { id: 'kl-9', question: 'What does Gloucester mean by "As flies to wanton boys are we to th\u2019 gods"?', type: 'multiple-choice', options: ['The gods protect the innocent', 'The gods are indifferent workers of justice', 'The gods kill human beings casually and for entertainment', 'The gods are invented by humans'], correctIndex: 2, explanation: 'Gloucester articulates the play\u2019s bleakest cosmology: a cruel and arbitrary divinity that treats human suffering as sport. The domestic image makes the injustice unbearably familiar.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'kl-10', question: 'What is the significance of Lear\u2019s line "Is man no more than this?"', type: 'multiple-choice', options: ['He is admiring Poor Tom\u2019s clothes', 'He is asking whether humanity stripped of status and shelter is anything at all', 'He is rejecting human company', 'He is complaining about the cold'], correctIndex: 1, explanation: 'Confronted with Poor Tom\u2019s nakedness, Lear confronts "unaccommodated man" \u2014 humanity stripped of the borrowed trappings of rank and wealth. The question is the intellectual climax of his heath madness.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'kl-11', question: 'Why does the Fool disappear from the play after Act 3?', type: 'multiple-choice', options: ['He is killed off stage', 'The text leaves it unexplained; some critics link his disappearance to Cordelia\u2019s return', 'He is banished by Goneril', 'He reveals himself to be Edgar'], correctIndex: 1, explanation: 'Shakespeare never explicitly accounts for the Fool\u2019s exit. His last line is "And I\u2019ll go to bed at noon." Critics have long noted that Cordelia and the Fool may have been doubled on the Jacobean stage, which would reinforce their linked roles as truth-tellers.', topic: 'Characters', difficulty: 'higher' },
-  { id: 'kl-12', question: 'How does Shakespeare use the motif of blindness in the play?', type: 'multiple-choice', options: ['Only as a literal plot event involving Gloucester', 'As a sustained metaphor linking physical sight and moral understanding', 'As a comic device', 'To distinguish royals from commoners'], correctIndex: 1, explanation: 'Lear is metaphorically blind to Cordelia\u2019s love and Gloucester to Edmund\u2019s lies. Only when Gloucester is literally blinded does he perceive the truth; Lear\u2019s mental darkness similarly brings intellectual light. Sight and insight are relentlessly linked.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'kl-13', question: 'What does Edmund mean in his "Thou, Nature, art my goddess" soliloquy?', type: 'multiple-choice', options: ['He worships a pagan deity', 'He rejects the social, legal and religious codes that exclude him as illegitimate, in favour of a self-serving "nature"', 'He is swearing a formal oath of loyalty', 'He is mourning his mother'], correctIndex: 1, explanation: 'Edmund rejects primogeniture and the providential order and declares allegiance to a competitive nature that honours no hierarchy. The speech crystallises his ideological challenge to the world of the play.', topic: 'Themes', difficulty: 'higher' },
-  { id: 'kl-14', question: 'How does Shakespeare use the parallel Gloucester subplot?', type: 'multiple-choice', options: ['It provides comic relief from the main plot', 'It is unrelated to the main plot', 'It universalises the main plot\u2019s concerns by doubling the story of a father deceived about which child loves him', 'It replaces the main plot in Act 4'], correctIndex: 2, explanation: 'Gloucester\u2019s deception by Edmund mirrors Lear\u2019s deception by Goneril and Regan, and Gloucester\u2019s physical blinding parallels Lear\u2019s mental disintegration. The doubling raises the play\u2019s questions from a single family tragedy to a universal diagnosis.', topic: 'Writer\'s Methods', difficulty: 'higher' },
-  { id: 'kl-15', question: 'What is the dramatic significance of Lear\u2019s final "Never, never, never, never, never"?', type: 'multiple-choice', options: ['Five monosyllables in iambic pentameter render grief as rhythmic absolute, refusing any redemptive closure', 'It is a prayer for Cordelia\u2019s soul', 'It is a curse on his enemies', 'It predicts the return of Kent'], correctIndex: 0, explanation: 'The five identical stressed words form a perfect line of iambic pentameter. Their metrical blankness and semantic finality stand against any consoling reading of the ending and leave the audience with the full weight of loss.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'kl-16', question: 'How does the play\u2019s pre-Christian setting affect its treatment of justice and the gods?', type: 'multiple-choice', options: ['It has no effect', 'It allows Shakespeare to stage questions about divine justice without tying the play to Christian doctrine, permitting bleak answers that a Christian setting would complicate', 'It means the play has no religious dimension', 'It means the gods always save the innocent'], correctIndex: 1, explanation: 'The pagan setting permits oaths by Apollo, Jupiter and Hecate and lets Shakespeare explore whether the universe is benign, indifferent or cruel. Gloucester\u2019s "wanton boys" speech articulates a cosmology that a fully Christian setting could not have sustained.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'kl-17', question: 'How does Shakespeare use the motif of "nothing" throughout the play?', type: 'multiple-choice', options: ['It is only used once, in the opening scene', 'It recurs from Cordelia\u2019s "Nothing, my lord" through Lear\u2019s madness to the final losses, creating a verbal structure of negation and dispossession', 'It refers only to material property', 'It is a comic refrain'], correctIndex: 1, explanation: 'Cordelia\u2019s "Nothing" triggers the plot; Lear\u2019s "Nothing will come of nothing" becomes prophetic as he loses everything. The word returns in the storm scenes and haunts the final act, structuring the play around negation.', topic: 'Writer\'s Methods', difficulty: 'grade-9' },
-  { id: 'kl-18', question: 'What is the significance of the textual difference between the 1608 Quarto and the 1623 Folio?', type: 'multiple-choice', options: ['The texts are identical', 'The two texts differ materially, including in the attribution of the final couplet (Albany in Quarto, Edgar in Folio), and many editors now treat them as separate versions of the play', 'The Quarto is a forgery', 'The Folio omits the storm scenes'], correctIndex: 1, explanation: 'The 1608 Quarto and 1623 Folio differ in scene structure, attribution and wording. The final couplet is given to Albany in the Quarto and Edgar in the Folio. Modern scholarship (notably Taylor and Warren) treats them as two authorised versions rather than corrupt witnesses of a single lost text.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'kl-19', question: 'How might a Jacobean audience have read Lear\u2019s division of the kingdom in the light of James I\u2019s reign?', type: 'multiple-choice', options: ['As unrelated to contemporary politics', 'As echoing acute anxieties about succession and James\u2019s contested attempt to unite England and Scotland into a single kingdom of Great Britain', 'As propaganda in favour of division', 'As purely historical'], correctIndex: 1, explanation: 'Writing in 1605\u201306, Shakespeare was working at a moment of intense debate over James\u2019s proposed union of England and Scotland. A play whose disaster begins with a king dividing Britain into three would have carried obvious and loaded contemporary force.', topic: 'Context', difficulty: 'grade-9' },
-  { id: 'kl-20', question: 'How does the reconciliation scene between Lear and Cordelia function within the play\u2019s bleak design?', type: 'multiple-choice', options: ['It provides the resolution of the tragedy', 'It offers a brief, painfully earned tenderness that makes Cordelia\u2019s subsequent hanging more devastating rather than less', 'It undoes the earlier cruelty', 'It is cut from most editions'], correctIndex: 1, explanation: 'Act 4 Scene 7 \u2014 "Pray you now, forget and forgive: I am old and foolish" \u2014 reconciles father and daughter in the gentlest language of the play. Shakespeare then destroys this hard-won love by hanging Cordelia, refusing the audience redemptive closure and intensifying rather than relieving the tragedy.', topic: 'Themes', difficulty: 'grade-9' },
+  {
+    id: 'kl-1',
+    question: 'How does Lear decide to divide his kingdom in the opening scene?',
+    type: 'multiple-choice',
+    options: [
+      'By drawing lots',
+      'By staging a love test between his three daughters',
+      'By consulting his nobles',
+      'By leaving it to his eldest son',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Lear proposes to give the largest share to whichever daughter professes to love him most. The love test exposes his need for public flattery and triggers the catastrophe.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kl-2',
+    question: 'What is Cordelia\u2019s answer when asked how much she loves her father?',
+    type: 'multiple-choice',
+    options: [
+      '"All the world"',
+      '"Nothing, my lord"',
+      '"More than life itself"',
+      '"As a daughter should"',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Cordelia refuses to match her sisters\u2019 extravagant flattery and answers simply "Nothing, my lord", prompting Lear\u2019s famous retort "Nothing will come of nothing".',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kl-3',
+    question: 'Who is Edmund\u2019s father, and what is Edmund\u2019s legal status?',
+    type: 'multiple-choice',
+    options: [
+      'Gloucester; illegitimate son',
+      'Kent; legitimate son',
+      'Cornwall; adopted son',
+      'Albany; stepson',
+    ],
+    correctIndex: 0,
+    explanation:
+      'Edmund is the illegitimate son of the Earl of Gloucester. His exclusion from inheritance under primogeniture fuels the revolt set out in his "Thou, Nature, art my goddess" soliloquy.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kl-4',
+    question: 'What disguise does Edgar adopt when forced to flee?',
+    type: 'multiple-choice',
+    options: [
+      'A French soldier',
+      'A wandering friar',
+      '"Poor Tom", a mad beggar',
+      'A court musician',
+    ],
+    correctIndex: 2,
+    explanation:
+      'Edgar adopts the persona of Poor Tom, a naked, seemingly mad beggar, which allows him to survive, accompany Lear on the heath and later guide his blinded father.',
+    topic: 'Characters',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kl-5',
+    question: 'Who physically blinds Gloucester on stage?',
+    type: 'multiple-choice',
+    options: ['Edmund', 'Goneril', 'Cornwall', 'Regan'],
+    correctIndex: 2,
+    explanation:
+      'Cornwall tears out Gloucester\u2019s eyes in Act 3 Scene 7 with "Out, vile jelly!". Regan urges him on and a servant fatally wounds Cornwall during the scene.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kl-6',
+    question: 'Which of these lines is spoken during the storm on the heath?',
+    type: 'multiple-choice',
+    options: [
+      '"Pray you, undo this button"',
+      '"Blow, winds, and crack your cheeks!"',
+      '"Never, never, never, never, never"',
+      '"The weight of this sad time we must obey"',
+    ],
+    correctIndex: 1,
+    explanation:
+      '"Blow, winds, and crack your cheeks!" is Lear\u2019s rage at the storm in Act 3 Scene 2, personifying the weather as a participant in his suffering.',
+    topic: "Writer's Methods",
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kl-7',
+    question: 'How does Cordelia die?',
+    type: 'multiple-choice',
+    options: [
+      'In battle against her sisters',
+      'Hanged on Edmund\u2019s orders',
+      'Poisoned by Goneril',
+      'By her own hand at the tomb',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Edmund secretly orders the execution of Lear and Cordelia after the British victory. Cordelia is hanged off stage; Edmund\u2019s late repentance arrives too late to save her.',
+    topic: 'Plot',
+    difficulty: 'foundation',
+  },
+  {
+    id: 'kl-8',
+    question: 'What happens to Goneril and Regan in Act 5?',
+    type: 'multiple-choice',
+    options: [
+      'They both survive and divide the kingdom',
+      'Goneril poisons Regan, then kills herself',
+      'They are executed by Albany',
+      'They flee to France with Edmund',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Jealous rivalry over Edmund destroys the sisters\u2019 alliance. Goneril poisons Regan and, when her own treachery is exposed, kills herself.',
+    topic: 'Plot',
+    difficulty: 'higher',
+  },
+  {
+    id: 'kl-9',
+    question: 'What does Gloucester mean by "As flies to wanton boys are we to th\u2019 gods"?',
+    type: 'multiple-choice',
+    options: [
+      'The gods protect the innocent',
+      'The gods are indifferent workers of justice',
+      'The gods kill human beings casually and for entertainment',
+      'The gods are invented by humans',
+    ],
+    correctIndex: 2,
+    explanation:
+      'Gloucester articulates the play\u2019s bleakest cosmology: a cruel and arbitrary divinity that treats human suffering as sport. The domestic image makes the injustice unbearably familiar.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'kl-10',
+    question: 'What is the significance of Lear\u2019s line "Is man no more than this?"',
+    type: 'multiple-choice',
+    options: [
+      'He is admiring Poor Tom\u2019s clothes',
+      'He is asking whether humanity stripped of status and shelter is anything at all',
+      'He is rejecting human company',
+      'He is complaining about the cold',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Confronted with Poor Tom\u2019s nakedness, Lear confronts "unaccommodated man" \u2014 humanity stripped of the borrowed trappings of rank and wealth. The question is the intellectual climax of his heath madness.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'kl-11',
+    question: 'Why does the Fool disappear from the play after Act 3?',
+    type: 'multiple-choice',
+    options: [
+      'He is killed off stage',
+      'The text leaves it unexplained; some critics link his disappearance to Cordelia\u2019s return',
+      'He is banished by Goneril',
+      'He reveals himself to be Edgar',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Shakespeare never explicitly accounts for the Fool\u2019s exit. His last line is "And I\u2019ll go to bed at noon." Critics have long noted that Cordelia and the Fool may have been doubled on the Jacobean stage, which would reinforce their linked roles as truth-tellers.',
+    topic: 'Characters',
+    difficulty: 'higher',
+  },
+  {
+    id: 'kl-12',
+    question: 'How does Shakespeare use the motif of blindness in the play?',
+    type: 'multiple-choice',
+    options: [
+      'Only as a literal plot event involving Gloucester',
+      'As a sustained metaphor linking physical sight and moral understanding',
+      'As a comic device',
+      'To distinguish royals from commoners',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Lear is metaphorically blind to Cordelia\u2019s love and Gloucester to Edmund\u2019s lies. Only when Gloucester is literally blinded does he perceive the truth; Lear\u2019s mental darkness similarly brings intellectual light. Sight and insight are relentlessly linked.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'kl-13',
+    question: 'What does Edmund mean in his "Thou, Nature, art my goddess" soliloquy?',
+    type: 'multiple-choice',
+    options: [
+      'He worships a pagan deity',
+      'He rejects the social, legal and religious codes that exclude him as illegitimate, in favour of a self-serving "nature"',
+      'He is swearing a formal oath of loyalty',
+      'He is mourning his mother',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Edmund rejects primogeniture and the providential order and declares allegiance to a competitive nature that honours no hierarchy. The speech crystallises his ideological challenge to the world of the play.',
+    topic: 'Themes',
+    difficulty: 'higher',
+  },
+  {
+    id: 'kl-14',
+    question: 'How does Shakespeare use the parallel Gloucester subplot?',
+    type: 'multiple-choice',
+    options: [
+      'It provides comic relief from the main plot',
+      'It is unrelated to the main plot',
+      'It universalises the main plot\u2019s concerns by doubling the story of a father deceived about which child loves him',
+      'It replaces the main plot in Act 4',
+    ],
+    correctIndex: 2,
+    explanation:
+      'Gloucester\u2019s deception by Edmund mirrors Lear\u2019s deception by Goneril and Regan, and Gloucester\u2019s physical blinding parallels Lear\u2019s mental disintegration. The doubling raises the play\u2019s questions from a single family tragedy to a universal diagnosis.',
+    topic: "Writer's Methods",
+    difficulty: 'higher',
+  },
+  {
+    id: 'kl-15',
+    question:
+      'What is the dramatic significance of Lear\u2019s final "Never, never, never, never, never"?',
+    type: 'multiple-choice',
+    options: [
+      'Five monosyllables in iambic pentameter render grief as rhythmic absolute, refusing any redemptive closure',
+      'It is a prayer for Cordelia\u2019s soul',
+      'It is a curse on his enemies',
+      'It predicts the return of Kent',
+    ],
+    correctIndex: 0,
+    explanation:
+      'The five identical stressed words form a perfect line of iambic pentameter. Their metrical blankness and semantic finality stand against any consoling reading of the ending and leave the audience with the full weight of loss.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'kl-16',
+    question:
+      'How does the play\u2019s pre-Christian setting affect its treatment of justice and the gods?',
+    type: 'multiple-choice',
+    options: [
+      'It has no effect',
+      'It allows Shakespeare to stage questions about divine justice without tying the play to Christian doctrine, permitting bleak answers that a Christian setting would complicate',
+      'It means the play has no religious dimension',
+      'It means the gods always save the innocent',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The pagan setting permits oaths by Apollo, Jupiter and Hecate and lets Shakespeare explore whether the universe is benign, indifferent or cruel. Gloucester\u2019s "wanton boys" speech articulates a cosmology that a fully Christian setting could not have sustained.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'kl-17',
+    question: 'How does Shakespeare use the motif of "nothing" throughout the play?',
+    type: 'multiple-choice',
+    options: [
+      'It is only used once, in the opening scene',
+      'It recurs from Cordelia\u2019s "Nothing, my lord" through Lear\u2019s madness to the final losses, creating a verbal structure of negation and dispossession',
+      'It refers only to material property',
+      'It is a comic refrain',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Cordelia\u2019s "Nothing" triggers the plot; Lear\u2019s "Nothing will come of nothing" becomes prophetic as he loses everything. The word returns in the storm scenes and haunts the final act, structuring the play around negation.',
+    topic: "Writer's Methods",
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'kl-18',
+    question:
+      'What is the significance of the textual difference between the 1608 Quarto and the 1623 Folio?',
+    type: 'multiple-choice',
+    options: [
+      'The texts are identical',
+      'The two texts differ materially, including in the attribution of the final couplet (Albany in Quarto, Edgar in Folio), and many editors now treat them as separate versions of the play',
+      'The Quarto is a forgery',
+      'The Folio omits the storm scenes',
+    ],
+    correctIndex: 1,
+    explanation:
+      'The 1608 Quarto and 1623 Folio differ in scene structure, attribution and wording. The final couplet is given to Albany in the Quarto and Edgar in the Folio. Modern scholarship (notably Taylor and Warren) treats them as two authorised versions rather than corrupt witnesses of a single lost text.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'kl-19',
+    question:
+      'How might a Jacobean audience have read Lear\u2019s division of the kingdom in the light of James I\u2019s reign?',
+    type: 'multiple-choice',
+    options: [
+      'As unrelated to contemporary politics',
+      'As echoing acute anxieties about succession and James\u2019s contested attempt to unite England and Scotland into a single kingdom of Great Britain',
+      'As propaganda in favour of division',
+      'As purely historical',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Writing in 1605\u201306, Shakespeare was working at a moment of intense debate over James\u2019s proposed union of England and Scotland. A play whose disaster begins with a king dividing Britain into three would have carried obvious and loaded contemporary force.',
+    topic: 'Context',
+    difficulty: 'grade-9',
+  },
+  {
+    id: 'kl-20',
+    question:
+      'How does the reconciliation scene between Lear and Cordelia function within the play\u2019s bleak design?',
+    type: 'multiple-choice',
+    options: [
+      'It provides the resolution of the tragedy',
+      'It offers a brief, painfully earned tenderness that makes Cordelia\u2019s subsequent hanging more devastating rather than less',
+      'It undoes the earlier cruelty',
+      'It is cut from most editions',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Act 4 Scene 7 \u2014 "Pray you now, forget and forgive: I am old and foolish" \u2014 reconciles father and daughter in the gentlest language of the play. Shakespeare then destroys this hard-won love by hanging Cordelia, refusing the audience redemptive closure and intensifying rather than relieving the tragedy.',
+    topic: 'Themes',
+    difficulty: 'grade-9',
+  },
 ]
 
 const REVISION_TOPICS = [
-  { topic: 'Power and Authority', summary: 'Lear\u2019s abdication collapses the hierarchies on which Jacobean society depended, leaving a power vacuum filled by whoever is most ruthless.', keyPoints: ['The opening love test shows authority confused with flattery', 'Lear cannot reclaim power once the gesture of division has been made', 'Goneril and Regan strip him of retinue, then dignity', 'Edmund exploits the vacuum by rejecting legitimacy itself', 'The play interrogates whether authority rests on divine right, force or reciprocal duty'] },
-  { topic: 'Family and Ingratitude', summary: 'Both main plot and Gloucester subplot turn on a parent deceived about which child truly loves him, exposing the limits of articulating love in words.', keyPoints: ['Cordelia\u2019s "Nothing, my lord" rejects performative love', 'Lear\u2019s "serpent\u2019s tooth" speech voices patriarchal fear of filial ingratitude', 'Edmund\u2019s revolt recasts ingratitude as political claim against primogeniture', 'Gloucester\u2019s misjudgement of Edgar doubles Lear\u2019s of Cordelia', 'Shakespeare refuses simple moralism: the "ungrateful" child is often the loving one'] },
-  { topic: 'Madness and Wisdom', summary: 'Lear\u2019s disintegration on the heath becomes the vehicle for his most radical insights into justice, poverty and human nature.', keyPoints: ['The Fool speaks wisdom in riddles before Lear\u2019s breakdown', 'Poor Tom\u2019s feigned madness provides the occasion for Lear\u2019s philosophical leap', '"Unaccommodated man" strips humanity to the bare, forked animal', 'Shakespeare unsettles the opposition between institutional reason and disordered speech', 'Wisdom is shown to arrive too late to save anyone'] },
-  { topic: 'Blindness and Sight', summary: 'The play relentlessly links physical sight to moral understanding, and both Lear\u2019s mental darkness and Gloucester\u2019s literal blinding produce insight only through suffering.', keyPoints: ['Lear is blind to Cordelia\u2019s love in the opening scene', 'Gloucester is deceived by Edmund through forged letters', 'The onstage blinding scene ("Out, vile jelly!") literalises the metaphor', 'Edgar guides his blinded father in a painfully earned moral education', 'Insight in the play is always purchased at a ruinous price'] },
-  { topic: 'Nature and Order', summary: 'The word "nature" is contested throughout, with Lear, Edmund and the storm offering radically different visions of cosmic and social order.', keyPoints: ['For Lear, nature means patriarchal and cosmic hierarchy', 'For Edmund, nature is self-interested competition disregarding legitimacy', 'The storm symbolises the rupture of natural order produced by the opening scene', 'Gloucester\u2019s "wanton boys" speech articulates the bleakest view of the gods', 'The pre-Christian setting lets Shakespeare pose these questions without Christian resolution'] },
+  {
+    topic: 'Power and Authority',
+    summary:
+      'Lear\u2019s abdication collapses the hierarchies on which Jacobean society depended, leaving a power vacuum filled by whoever is most ruthless.',
+    keyPoints: [
+      'The opening love test shows authority confused with flattery',
+      'Lear cannot reclaim power once the gesture of division has been made',
+      'Goneril and Regan strip him of retinue, then dignity',
+      'Edmund exploits the vacuum by rejecting legitimacy itself',
+      'The play interrogates whether authority rests on divine right, force or reciprocal duty',
+    ],
+  },
+  {
+    topic: 'Family and Ingratitude',
+    summary:
+      'Both main plot and Gloucester subplot turn on a parent deceived about which child truly loves him, exposing the limits of articulating love in words.',
+    keyPoints: [
+      'Cordelia\u2019s "Nothing, my lord" rejects performative love',
+      'Lear\u2019s "serpent\u2019s tooth" speech voices patriarchal fear of filial ingratitude',
+      'Edmund\u2019s revolt recasts ingratitude as political claim against primogeniture',
+      'Gloucester\u2019s misjudgement of Edgar doubles Lear\u2019s of Cordelia',
+      'Shakespeare refuses simple moralism: the "ungrateful" child is often the loving one',
+    ],
+  },
+  {
+    topic: 'Madness and Wisdom',
+    summary:
+      'Lear\u2019s disintegration on the heath becomes the vehicle for his most radical insights into justice, poverty and human nature.',
+    keyPoints: [
+      'The Fool speaks wisdom in riddles before Lear\u2019s breakdown',
+      'Poor Tom\u2019s feigned madness provides the occasion for Lear\u2019s philosophical leap',
+      '"Unaccommodated man" strips humanity to the bare, forked animal',
+      'Shakespeare unsettles the opposition between institutional reason and disordered speech',
+      'Wisdom is shown to arrive too late to save anyone',
+    ],
+  },
+  {
+    topic: 'Blindness and Sight',
+    summary:
+      'The play relentlessly links physical sight to moral understanding, and both Lear\u2019s mental darkness and Gloucester\u2019s literal blinding produce insight only through suffering.',
+    keyPoints: [
+      'Lear is blind to Cordelia\u2019s love in the opening scene',
+      'Gloucester is deceived by Edmund through forged letters',
+      'The onstage blinding scene ("Out, vile jelly!") literalises the metaphor',
+      'Edgar guides his blinded father in a painfully earned moral education',
+      'Insight in the play is always purchased at a ruinous price',
+    ],
+  },
+  {
+    topic: 'Nature and Order',
+    summary:
+      'The word "nature" is contested throughout, with Lear, Edmund and the storm offering radically different visions of cosmic and social order.',
+    keyPoints: [
+      'For Lear, nature means patriarchal and cosmic hierarchy',
+      'For Edmund, nature is self-interested competition disregarding legitimacy',
+      'The storm symbolises the rupture of natural order produced by the opening scene',
+      'Gloucester\u2019s "wanton boys" speech articulates the bleakest view of the gods',
+      'The pre-Christian setting lets Shakespeare pose these questions without Christian resolution',
+    ],
+  },
 ]
 
 const ESSAY_PROMPTS = [
@@ -289,10 +650,10 @@ export default async function KingLearPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "King Lear", url: "https://theenglishhub.app/revision/texts/king-lear" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'King Lear', url: 'https://theenglishhub.app/revision/texts/king-lear' },
         ]}
       />
       <TextStudyHub
@@ -301,15 +662,57 @@ export default async function KingLearPage() {
         examBoard="Edexcel"
         basePath="/revision/texts/king-lear"
         subPages={[
-          { id: 'read', href: '/revision/texts/king-lear/read', icon: 'read' as const, title: 'Read Full Text', description: 'With annotations' },
-          { id: 'acts', href: '/revision/texts/king-lear/acts', icon: 'acts' as const, title: 'Act-by-Act Analysis', description: 'Key moments & quotes' },
-          { id: 'characters', href: '/revision/texts/king-lear/characters', icon: 'characters' as const, title: 'Characters', description: 'Full character guide' },
-          { id: 'themes', href: '/revision/texts/king-lear/themes', icon: 'themes' as const, title: 'Themes', description: 'Theme analysis' },
-          { id: 'quotes', href: '/revision/texts/king-lear/key-quotes', icon: 'quotes' as const, title: 'Key Quotes', description: 'Quotes with analysis' },
-          { id: 'context', href: '/revision/texts/king-lear/context', icon: 'context' as const, title: 'Context', description: 'Historical context' },
-          { id: 'essays', href: '/revision/texts/king-lear/essay-plans', icon: 'essays' as const, title: 'Essay Plans', description: 'A-Level essay plans' },
+          {
+            id: 'read',
+            href: '/revision/texts/king-lear/read',
+            icon: 'read' as const,
+            title: 'Read Full Text',
+            description: 'With annotations',
+          },
+          {
+            id: 'acts',
+            href: '/revision/texts/king-lear/acts',
+            icon: 'acts' as const,
+            title: 'Act-by-Act Analysis',
+            description: 'Key moments & quotes',
+          },
+          {
+            id: 'characters',
+            href: '/revision/texts/king-lear/characters',
+            icon: 'characters' as const,
+            title: 'Characters',
+            description: 'Full character guide',
+          },
+          {
+            id: 'themes',
+            href: '/revision/texts/king-lear/themes',
+            icon: 'themes' as const,
+            title: 'Themes',
+            description: 'Theme analysis',
+          },
+          {
+            id: 'quotes',
+            href: '/revision/texts/king-lear/key-quotes',
+            icon: 'quotes' as const,
+            title: 'Key Quotes',
+            description: 'Quotes with analysis',
+          },
+          {
+            id: 'context',
+            href: '/revision/texts/king-lear/context',
+            icon: 'context' as const,
+            title: 'Context',
+            description: 'Historical context',
+          },
+          {
+            id: 'essays',
+            href: '/revision/texts/king-lear/essay-plans',
+            icon: 'essays' as const,
+            title: 'Essay Plans',
+            description: 'A-Level essay plans',
+          },
         ]}
-        quizQuotes={data.quotations.slice(0, 10).map(q => ({
+        quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
           character: q.who.split('\u2014')[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
@@ -321,7 +724,7 @@ export default async function KingLearPage() {
           'Discuss the presentation of madness as a source of insight in King Lear.',
           'How far does the ending of King Lear offer any form of redemption or consolation?',
         ]}
-        flashcards={data.quotations.slice(0, 8).map(q => ({
+        flashcards={data.quotations.slice(0, 8).map((q) => ({
           front: q.quote,
           back: q.analysis,
         }))}
@@ -335,7 +738,9 @@ export default async function KingLearPage() {
       />
       <div className="mb-6 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-amber-100">
         <strong className="block text-foreground">Draft study guide</strong>
-        <span>AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.</span>
+        <span>
+          AI-assisted draft under expert review. Cross-check with your teacher&rsquo;s notes.
+        </span>
       </div>
       <TextGuide data={data} />
     </>

@@ -7,6 +7,11 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Poetry Analysis - Cambridge IGCSE English Literature',
+    description:
+      'In-depth analysis of Songs of Ourselves poems for Cambridge IGCSE English Literature. 10+ poems with full analysis, comparison techniques, and marking guidance.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/poetry' },
   title: 'Poetry Analysis - Cambridge IGCSE English Literature',
   description:

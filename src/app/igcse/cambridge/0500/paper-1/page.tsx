@@ -11,18 +11,17 @@ import {
   Lightbulb,
   Pencil,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 1 Reading — IGCSE Language A',
+    description:
+      'Everything you need for IGCSE Language A Paper 1 Reading. Question breakdown, reading techniques, language analysis, summary writing and practice passages. Aligns with Cambridge syllabus 0500.',
+  },
   title: 'Paper 1 Reading — IGCSE Language A',
   description:
     'Everything you need for IGCSE Language A Paper 1 Reading. Question breakdown, reading techniques, language analysis, summary writing and practice passages. Aligns with Cambridge syllabus 0500.',
@@ -127,15 +126,13 @@ export default async function Paper1HubPage() {
             Paper 1: Reading
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Three texts. Four questions. Eighty marks. Paper 1 tests your
-            ability to read closely, infer, analyse language and summarise
-            effectively under timed pressure.
+            Three texts. Four questions. Eighty marks. Paper 1 tests your ability to read closely,
+            infer, analyse language and summarise effectively under timed pressure.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3 text-body-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <Clock className="size-3.5" />
-              2 hours
+              <Clock className="size-3.5" />2 hours
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
               <Target className="size-3.5" />
@@ -179,8 +176,7 @@ export default async function Paper1HubPage() {
                 </p>
                 <div className="rounded-lg border border-border/60 bg-muted/30 p-3">
                   <p className="text-body-xs text-foreground">
-                    <span className="font-semibold">Examiner tip:</span>{' '}
-                    {q.tip}
+                    <span className="font-semibold">Examiner tip:</span> {q.tip}
                   </p>
                 </div>
               </CardContent>
@@ -193,9 +189,7 @@ export default async function Paper1HubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Study resources
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Study resources</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {subpages.map((page) => {
@@ -210,12 +204,8 @@ export default async function Paper1HubPage() {
                   <Icon className="size-5 text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-body-md font-semibold text-foreground">
-                    {page.title}
-                  </h3>
-                  <p className="text-body-xs text-muted-foreground">
-                    {page.description}
-                  </p>
+                  <h3 className="text-body-md font-semibold text-foreground">{page.title}</h3>
+                  <p className="text-body-xs text-muted-foreground">{page.description}</p>
                 </div>
                 <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
               </Link>
@@ -228,39 +218,29 @@ export default async function Paper1HubPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Clock className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Suggested timing plan
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Suggested timing plan</h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">
-              10 min — read
-            </p>
+            <p className="text-body-xs font-semibold text-primary">10 min — read</p>
             <p className="mt-1 text-body-sm text-foreground">
               Read all three passages once, lightly annotate.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">
-              45 min — Q1
-            </p>
+            <p className="text-body-xs font-semibold text-primary">45 min — Q1</p>
             <p className="mt-1 text-body-sm text-foreground">
               Short answers (10 min) + directed response (35 min).
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">
-              25 min — Q2
-            </p>
+            <p className="text-body-xs font-semibold text-primary">25 min — Q2</p>
             <p className="mt-1 text-body-sm text-foreground">
               Language analysis. Eight well-chosen words or phrases.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">
-              40 min — Q3
-            </p>
+            <p className="text-body-xs font-semibold text-primary">40 min — Q3</p>
             <p className="mt-1 text-body-sm text-foreground">
               Summary. Point-spot, plan, write, check.
             </p>

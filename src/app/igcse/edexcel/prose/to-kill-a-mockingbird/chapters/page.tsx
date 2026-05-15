@@ -7,12 +7,16 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'To Kill a Mockingbird Chapter Analysis — Edexcel IGCSE Literature',
+    description:
+      'Chapter-by-chapter analysis of To Kill a Mockingbird for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
+  },
   title: 'To Kill a Mockingbird Chapter Analysis — Edexcel IGCSE Literature',
   description:
     'Chapter-by-chapter analysis of To Kill a Mockingbird for Edexcel IGCSE Literature: summaries, key events, character development, key quotes and language techniques.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/chapters',
+    canonical: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/chapters',
   },
 }
 
@@ -31,9 +35,18 @@ const chapters = [
     characterDevelopment:
       'Scout is established as literate, observant and tomboyish. Jem is brave but cautious. Dill sparks the children\u2019s imaginative life.',
     quotes: [
-      { text: 'Maycomb was a tired old town.', technique: 'Personification establishes the sleepy, stagnant setting' },
-      { text: 'Inside the house lived a malevolent phantom.', technique: 'Gothic diction creates childhood fear and mystery' },
-      { text: 'Jem ran back, his face white.', technique: 'Physical detail conveys fear without internal narration' },
+      {
+        text: 'Maycomb was a tired old town.',
+        technique: 'Personification establishes the sleepy, stagnant setting',
+      },
+      {
+        text: 'Inside the house lived a malevolent phantom.',
+        technique: 'Gothic diction creates childhood fear and mystery',
+      },
+      {
+        text: 'Jem ran back, his face white.',
+        technique: 'Physical detail conveys fear without internal narration',
+      },
     ],
   },
   {
@@ -50,9 +63,18 @@ const chapters = [
     characterDevelopment:
       'Scout\u2019s intelligence and independence conflict with institutional authority. Walter Cunningham introduces class as a theme.',
     quotes: [
-      { text: 'Until I feared I would lose it, I never loved to read.', technique: 'Paradox highlights how restriction creates appreciation' },
-      { text: 'The Cunninghams never took anything they can\u2019t pay back.', technique: 'Simple declarative sentence establishes honour code' },
-      { text: 'Miss Caroline began the day by reading us a story.', technique: 'Ironic understatement before the conflict erupts' },
+      {
+        text: 'Until I feared I would lose it, I never loved to read.',
+        technique: 'Paradox highlights how restriction creates appreciation',
+      },
+      {
+        text: 'The Cunninghams never took anything they can\u2019t pay back.',
+        technique: 'Simple declarative sentence establishes honour code',
+      },
+      {
+        text: 'Miss Caroline began the day by reading us a story.',
+        technique: 'Ironic understatement before the conflict erupts',
+      },
     ],
   },
   {
@@ -69,9 +91,18 @@ const chapters = [
     characterDevelopment:
       'Atticus\u2019s moral authority is established. Calpurnia emerges as a disciplinarian with her own authority in the house.',
     quotes: [
-      { text: 'You never really understand a person until you consider things from his point of view.', technique: 'The novel\u2019s central moral instruction, expressed in plain register' },
-      { text: 'Don\u2019t matter who they are, anybody sets foot in this house\u2019s yo\u2019 comp\u2019ny.', technique: 'Dialect voice gives Calpurnia independent moral weight' },
-      { text: 'He ain\u2019t company, Cal, he\u2019s just a Cunningham.', technique: 'Scout\u2019s class prejudice exposed through naive narration' },
+      {
+        text: 'You never really understand a person until you consider things from his point of view.',
+        technique: 'The novel\u2019s central moral instruction, expressed in plain register',
+      },
+      {
+        text: 'Don\u2019t matter who they are, anybody sets foot in this house\u2019s yo\u2019 comp\u2019ny.',
+        technique: 'Dialect voice gives Calpurnia independent moral weight',
+      },
+      {
+        text: 'He ain\u2019t company, Cal, he\u2019s just a Cunningham.',
+        technique: 'Scout\u2019s class prejudice exposed through naive narration',
+      },
     ],
   },
   {
@@ -88,9 +119,18 @@ const chapters = [
     characterDevelopment:
       'Boo begins to emerge as a silent, benevolent figure rather than a Gothic monster. Scout\u2019s curiosity deepens.',
     quotes: [
-      { text: 'Two Indian-head pennies, one dated nineteen-six.', technique: 'Concrete detail makes the gifts personal and deliberate' },
-      { text: 'Someone inside the house was laughing.', technique: 'Short sentence disrupts the Gothic atmosphere' },
-      { text: 'Jem stayed moody and silent for a week.', technique: 'Understated narration signals Jem\u2019s growing maturity' },
+      {
+        text: 'Two Indian-head pennies, one dated nineteen-six.',
+        technique: 'Concrete detail makes the gifts personal and deliberate',
+      },
+      {
+        text: 'Someone inside the house was laughing.',
+        technique: 'Short sentence disrupts the Gothic atmosphere',
+      },
+      {
+        text: 'Jem stayed moody and silent for a week.',
+        technique: 'Understated narration signals Jem\u2019s growing maturity',
+      },
     ],
   },
   {
@@ -107,9 +147,18 @@ const chapters = [
     characterDevelopment:
       'Miss Maudie becomes a trusted adult voice. Atticus models respect for privacy and human dignity.',
     quotes: [
-      { text: 'Mockingbirds don\u2019t do one thing but make music for us to enjoy.', technique: 'Symbolic definition foreshadows the novel\u2019s central motif' },
-      { text: 'You stop that, that\u2019s enough.', technique: 'Atticus\u2019s rare stern tone signals moral boundary' },
-      { text: 'Miss Maudie\u2019s face implied she had reasons of her own.', technique: 'Indirect narration withholds information effectively' },
+      {
+        text: 'Mockingbirds don\u2019t do one thing but make music for us to enjoy.',
+        technique: 'Symbolic definition foreshadows the novel\u2019s central motif',
+      },
+      {
+        text: 'You stop that, that\u2019s enough.',
+        technique: 'Atticus\u2019s rare stern tone signals moral boundary',
+      },
+      {
+        text: 'Miss Maudie\u2019s face implied she had reasons of her own.',
+        technique: 'Indirect narration withholds information effectively',
+      },
     ],
   },
   {
@@ -126,9 +175,18 @@ const chapters = [
     characterDevelopment:
       'Jem begins to understand Boo as a real person. The mended trousers represent Boo\u2019s care and gentle nature.',
     quotes: [
-      { text: 'Shadow of a man with a hat on.', technique: 'Fragmentary image heightens suspense and Gothic tone' },
-      { text: 'They\u2019d been sewed up. Not like a lady sewed \u2019em.', technique: 'Detail of clumsy stitching humanises Boo' },
-      { text: 'Jem stayed moody and silent for a week.', technique: 'Repetition marks another step in Jem\u2019s moral growth' },
+      {
+        text: 'Shadow of a man with a hat on.',
+        technique: 'Fragmentary image heightens suspense and Gothic tone',
+      },
+      {
+        text: 'They\u2019d been sewed up. Not like a lady sewed \u2019em.',
+        technique: 'Detail of clumsy stitching humanises Boo',
+      },
+      {
+        text: 'Jem stayed moody and silent for a week.',
+        technique: 'Repetition marks another step in Jem\u2019s moral growth',
+      },
     ],
   },
   {
@@ -145,9 +203,18 @@ const chapters = [
     characterDevelopment:
       'Jem now recognises Boo\u2019s kindness and Nathan\u2019s cruelty. His tears mark a significant emotional threshold.',
     quotes: [
-      { text: 'They were almost perfect miniatures of two children.', technique: 'The carvings show Boo\u2019s close observation and affection' },
-      { text: 'Tree\u2019s dying. You plug \u2019em with cement.', technique: 'Nathan\u2019s lie cuts off Boo\u2019s only communication channel' },
-      { text: 'He stood there until nightfall, and I waited for him.', technique: 'Scout\u2019s quiet empathy for Jem foreshadows the novel\u2019s close' },
+      {
+        text: 'They were almost perfect miniatures of two children.',
+        technique: 'The carvings show Boo\u2019s close observation and affection',
+      },
+      {
+        text: 'Tree\u2019s dying. You plug \u2019em with cement.',
+        technique: 'Nathan\u2019s lie cuts off Boo\u2019s only communication channel',
+      },
+      {
+        text: 'He stood there until nightfall, and I waited for him.',
+        technique: 'Scout\u2019s quiet empathy for Jem foreshadows the novel\u2019s close',
+      },
     ],
   },
   {
@@ -164,9 +231,18 @@ const chapters = [
     characterDevelopment:
       'Boo\u2019s silent protection of Scout is confirmed. Miss Maudie\u2019s cheerful resilience after losing her home offers a model of grace.',
     quotes: [
-      { text: 'Boo Radley. You were so busy looking at the fire you didn\u2019t know it.', technique: 'Atticus\u2019s matter-of-fact revelation contrasts with the Gothic tension' },
-      { text: 'Always wanted a smaller house, Jem Finch.', technique: 'Miss Maudie\u2019s humour after disaster models resilience' },
-      { text: 'The snowman looked remarkably like Mr Avery.', technique: 'Comic interlude balances the chapter\u2019s tension' },
+      {
+        text: 'Boo Radley. You were so busy looking at the fire you didn\u2019t know it.',
+        technique: 'Atticus\u2019s matter-of-fact revelation contrasts with the Gothic tension',
+      },
+      {
+        text: 'Always wanted a smaller house, Jem Finch.',
+        technique: 'Miss Maudie\u2019s humour after disaster models resilience',
+      },
+      {
+        text: 'The snowman looked remarkably like Mr Avery.',
+        technique: 'Comic interlude balances the chapter\u2019s tension',
+      },
     ],
   },
   {
@@ -183,9 +259,18 @@ const chapters = [
     characterDevelopment:
       'Scout\u2019s instinct is to fight; Atticus tries to redirect her towards self-control. The hostility of white Maycomb intensifies.',
     quotes: [
-      { text: 'Simply because we were licked a hundred years before we started.', technique: 'Atticus redefines courage as principled action despite certain failure' },
-      { text: 'I wanted you to see what real courage is.', technique: 'Direct address to the children embeds the moral lesson' },
-      { text: 'This time we aren\u2019t fighting the Yankees, we\u2019re fighting our friends.', technique: 'Civil War allusion frames the trial as internal conflict' },
+      {
+        text: 'Simply because we were licked a hundred years before we started.',
+        technique: 'Atticus redefines courage as principled action despite certain failure',
+      },
+      {
+        text: 'I wanted you to see what real courage is.',
+        technique: 'Direct address to the children embeds the moral lesson',
+      },
+      {
+        text: 'This time we aren\u2019t fighting the Yankees, we\u2019re fighting our friends.',
+        technique: 'Civil War allusion frames the trial as internal conflict',
+      },
     ],
   },
   {
@@ -202,9 +287,18 @@ const chapters = [
     characterDevelopment:
       'Atticus is revealed as physically capable but choosing restraint. The mad dog prefigures the "madness" of racism Atticus must face.',
     quotes: [
-      { text: 'It\u2019s a sin to kill a mockingbird.', technique: 'The title symbol is introduced through direct dialogue' },
-      { text: 'I saw his gun halfway to his shoulder.', technique: 'Slow-motion narration builds tension in a single action' },
-      { text: 'People in their right minds never take pride in their talents.', technique: 'Miss Maudie connects humility to moral superiority' },
+      {
+        text: 'It\u2019s a sin to kill a mockingbird.',
+        technique: 'The title symbol is introduced through direct dialogue',
+      },
+      {
+        text: 'I saw his gun halfway to his shoulder.',
+        technique: 'Slow-motion narration builds tension in a single action',
+      },
+      {
+        text: 'People in their right minds never take pride in their talents.',
+        technique: 'Miss Maudie connects humility to moral superiority',
+      },
     ],
   },
   {
@@ -221,9 +315,18 @@ const chapters = [
     characterDevelopment:
       'Jem learns Atticus\u2019s definition of courage in practice. This chapter closes Part One by redefining bravery before the trial.',
     quotes: [
-      { text: 'Real courage is when you\u2019re licked before you begin but you begin anyway.', technique: 'Atticus\u2019s definition of courage frames the entire novel\u2019s moral arc' },
-      { text: 'She was the bravest person I ever knew.', technique: 'Superlative praise for an unlikely candidate challenges assumptions' },
-      { text: 'A camellia. Jem\u2019s eyes nearly popped out of his head.', technique: 'Symbolic gift represents forgiveness and endurance' },
+      {
+        text: 'Real courage is when you\u2019re licked before you begin but you begin anyway.',
+        technique: 'Atticus\u2019s definition of courage frames the entire novel\u2019s moral arc',
+      },
+      {
+        text: 'She was the bravest person I ever knew.',
+        technique: 'Superlative praise for an unlikely candidate challenges assumptions',
+      },
+      {
+        text: 'A camellia. Jem\u2019s eyes nearly popped out of his head.',
+        technique: 'Symbolic gift represents forgiveness and endurance',
+      },
     ],
   },
   {
@@ -240,9 +343,18 @@ const chapters = [
     characterDevelopment:
       'Calpurnia is revealed as bilingual in dialect, navigating two worlds. Scout begins to see Maycomb\u2019s racial divide from the other side.',
     quotes: [
-      { text: 'Cal talked in a coloured way when she was with coloured people.', technique: 'Code-switching illustrates the double consciousness of Black life' },
-      { text: 'You ain\u2019t got no business bringin\u2019 white chillun here.', technique: 'Lula\u2019s protest reveals tension within the Black community' },
-      { text: 'It\u2019s the same God, ain\u2019t it?', technique: 'Scout\u2019s naive question exposes the absurdity of segregation' },
+      {
+        text: 'Cal talked in a coloured way when she was with coloured people.',
+        technique: 'Code-switching illustrates the double consciousness of Black life',
+      },
+      {
+        text: 'You ain\u2019t got no business bringin\u2019 white chillun here.',
+        technique: 'Lula\u2019s protest reveals tension within the Black community',
+      },
+      {
+        text: 'It\u2019s the same God, ain\u2019t it?',
+        technique: 'Scout\u2019s naive question exposes the absurdity of segregation',
+      },
     ],
   },
   {
@@ -259,9 +371,18 @@ const chapters = [
     characterDevelopment:
       'Alexandra represents the Southern social code Atticus has partly rejected. Scout resists the gendered expectations imposed on her.',
     quotes: [
-      { text: 'Aunt Alexandra was one of the last of her kind.', technique: 'Retrospective narration signals a dying social order' },
-      { text: 'She asked me to tell you that you must try to behave like the little lady you are.', technique: 'Atticus\u2019s discomfort shows his disagreement with Alexandra' },
-      { text: 'I know now what he was trying to do, but Atticus was only a man.', technique: 'Scout\u2019s adult narrator voice reflects with gentle irony' },
+      {
+        text: 'Aunt Alexandra was one of the last of her kind.',
+        technique: 'Retrospective narration signals a dying social order',
+      },
+      {
+        text: 'She asked me to tell you that you must try to behave like the little lady you are.',
+        technique: 'Atticus\u2019s discomfort shows his disagreement with Alexandra',
+      },
+      {
+        text: 'I know now what he was trying to do, but Atticus was only a man.',
+        technique: 'Scout\u2019s adult narrator voice reflects with gentle irony',
+      },
     ],
   },
   {
@@ -278,9 +399,18 @@ const chapters = [
     characterDevelopment:
       'Dill\u2019s vulnerability deepens. Alexandra\u2019s conflict with Atticus over Calpurnia reveals the household\u2019s class and race tensions.',
     quotes: [
-      { text: 'The thing is, what I\u2019m tryin\u2019 to say is \u2014 they do get on a lot better without me.', technique: 'Dill\u2019s broken syntax conveys genuine emotional pain' },
-      { text: 'Why do you reckon Boo Radley\u2019s never run off?', technique: 'Dill\u2019s question links his situation to Boo\u2019s isolation' },
-      { text: 'Jem broke the remaining code of our childhood.', technique: 'Narrative commentary marks a key loss-of-innocence moment' },
+      {
+        text: 'The thing is, what I\u2019m tryin\u2019 to say is \u2014 they do get on a lot better without me.',
+        technique: 'Dill\u2019s broken syntax conveys genuine emotional pain',
+      },
+      {
+        text: 'Why do you reckon Boo Radley\u2019s never run off?',
+        technique: 'Dill\u2019s question links his situation to Boo\u2019s isolation',
+      },
+      {
+        text: 'Jem broke the remaining code of our childhood.',
+        technique: 'Narrative commentary marks a key loss-of-innocence moment',
+      },
     ],
   },
   {
@@ -297,9 +427,18 @@ const chapters = [
     characterDevelopment:
       'Scout\u2019s innocence becomes a moral weapon. Mr Cunningham\u2019s shame shows that individual conscience can override mob mentality.',
     quotes: [
-      { text: 'Hey, Mr Cunningham. I go to school with your boy.', technique: 'Childish register disrupts the adult violence of the mob' },
-      { text: 'A mob\u2019s always made up of people.', technique: 'Atticus humanises the mob, refusing demonisation' },
-      { text: 'It took an eight-year-old child to bring \u2019em to their senses.', technique: 'Mr Underwood\u2019s commentary highlights innocence as moral force' },
+      {
+        text: 'Hey, Mr Cunningham. I go to school with your boy.',
+        technique: 'Childish register disrupts the adult violence of the mob',
+      },
+      {
+        text: 'A mob\u2019s always made up of people.',
+        technique: 'Atticus humanises the mob, refusing demonisation',
+      },
+      {
+        text: 'It took an eight-year-old child to bring \u2019em to their senses.',
+        technique: 'Mr Underwood\u2019s commentary highlights innocence as moral force',
+      },
     ],
   },
   {
@@ -316,9 +455,18 @@ const chapters = [
     characterDevelopment:
       'The children\u2019s placement in the Black balcony symbolises their moral alignment. The town\u2019s appetite for spectacle is exposed.',
     quotes: [
-      { text: 'A Roman carnival.', technique: 'Metaphor reveals the town\u2019s treatment of justice as entertainment' },
-      { text: 'Reverend Sykes made room for us.', technique: 'Simple action conveys cross-racial solidarity' },
-      { text: 'There was no room at the public hitching rail.', technique: 'Physical detail signals the trial\u2019s scale' },
+      {
+        text: 'A Roman carnival.',
+        technique: 'Metaphor reveals the town\u2019s treatment of justice as entertainment',
+      },
+      {
+        text: 'Reverend Sykes made room for us.',
+        technique: 'Simple action conveys cross-racial solidarity',
+      },
+      {
+        text: 'There was no room at the public hitching rail.',
+        technique: 'Physical detail signals the trial\u2019s scale',
+      },
     ],
   },
   {
@@ -335,9 +483,18 @@ const chapters = [
     characterDevelopment:
       'Atticus\u2019s methodical approach contrasts with Ewell\u2019s arrogance. The courtroom exposes Bob\u2019s contempt for the legal process.',
     quotes: [
-      { text: 'Are you ambidextrous, Mr Ewell?', technique: 'Atticus uses formal register to unsettle and expose' },
-      { text: 'I seen that black nigger yonder ruttin\u2019 on my Mayella!', technique: 'Ewell\u2019s dehumanising language reveals his racism\u2019s sexual anxiety' },
-      { text: 'The witness realised his mistake.', technique: 'Narrator\u2019s understatement increases dramatic irony' },
+      {
+        text: 'Are you ambidextrous, Mr Ewell?',
+        technique: 'Atticus uses formal register to unsettle and expose',
+      },
+      {
+        text: 'I seen that black nigger yonder ruttin\u2019 on my Mayella!',
+        technique: 'Ewell\u2019s dehumanising language reveals his racism\u2019s sexual anxiety',
+      },
+      {
+        text: 'The witness realised his mistake.',
+        technique: 'Narrator\u2019s understatement increases dramatic irony',
+      },
     ],
   },
   {
@@ -354,9 +511,18 @@ const chapters = [
     characterDevelopment:
       'Mayella is revealed as both victim and perpetrator. Her loneliness and abuse by Bob Ewell complicate simple judgements.',
     quotes: [
-      { text: 'She was as sad as what Jem called a mixed child.', technique: 'Simile links racial and class marginalisation' },
-      { text: 'Long\u2019s he keeps on callin\u2019 me ma\u2019am an\u2019 sayin\u2019 Miss Mayella.', technique: 'Mayella reads Atticus\u2019s politeness as mockery, revealing class tension' },
-      { text: 'I got somethin\u2019 to say an\u2019 then I ain\u2019t gonna say no more.', technique: 'Defiant register hides vulnerability and desperation' },
+      {
+        text: 'She was as sad as what Jem called a mixed child.',
+        technique: 'Simile links racial and class marginalisation',
+      },
+      {
+        text: 'Long\u2019s he keeps on callin\u2019 me ma\u2019am an\u2019 sayin\u2019 Miss Mayella.',
+        technique: 'Mayella reads Atticus\u2019s politeness as mockery, revealing class tension',
+      },
+      {
+        text: 'I got somethin\u2019 to say an\u2019 then I ain\u2019t gonna say no more.',
+        technique: 'Defiant register hides vulnerability and desperation',
+      },
     ],
   },
   {
@@ -373,9 +539,18 @@ const chapters = [
     characterDevelopment:
       'Tom\u2019s sympathy for Mayella exposes the racial power structure: a Black man pitying a white woman is unacceptable in Maycomb.',
     quotes: [
-      { text: 'I felt right sorry for her.', technique: 'A Black man pitying a white woman inverts the racial hierarchy' },
-      { text: 'It was just him I couldn\u2019t stand.', technique: 'Dill\u2019s emotional reaction voices the reader\u2019s moral outrage' },
-      { text: 'Tom Robinson was a dead man the minute Mayella Ewell opened her mouth.', technique: 'Narrator\u2019s retrospective voice confirms the pre-written verdict' },
+      {
+        text: 'I felt right sorry for her.',
+        technique: 'A Black man pitying a white woman inverts the racial hierarchy',
+      },
+      {
+        text: 'It was just him I couldn\u2019t stand.',
+        technique: 'Dill\u2019s emotional reaction voices the reader\u2019s moral outrage',
+      },
+      {
+        text: 'Tom Robinson was a dead man the minute Mayella Ewell opened her mouth.',
+        technique: 'Narrator\u2019s retrospective voice confirms the pre-written verdict',
+      },
     ],
   },
   {
@@ -392,9 +567,18 @@ const chapters = [
     characterDevelopment:
       'Dolphus Raymond reveals how Maycomb forces performative identities. Atticus\u2019s speech is the novel\u2019s rhetorical climax.',
     quotes: [
-      { text: 'The evil assumption that all Negroes lie, all Negroes are immoral.', technique: 'Atticus names systemic racism directly in legal register' },
-      { text: 'In the name of God, do your duty.', technique: 'Religious imperative appeals above the social order' },
-      { text: 'Cry about the hell white people give coloured folks.', technique: 'Dolphus Raymond reframes racial injustice as grief' },
+      {
+        text: 'The evil assumption that all Negroes lie, all Negroes are immoral.',
+        technique: 'Atticus names systemic racism directly in legal register',
+      },
+      {
+        text: 'In the name of God, do your duty.',
+        technique: 'Religious imperative appeals above the social order',
+      },
+      {
+        text: 'Cry about the hell white people give coloured folks.',
+        technique: 'Dolphus Raymond reframes racial injustice as grief',
+      },
     ],
   },
   {
@@ -411,9 +595,18 @@ const chapters = [
     characterDevelopment:
       'Jem\u2019s innocence shatters. The standing ovation shows the Black community\u2019s recognition of Atticus\u2019s moral stand despite the unjust result.',
     quotes: [
-      { text: 'Miss Jean Louise, stand up. Your father\u2019s passin\u2019.', technique: 'Reverend Sykes\u2019s instruction conveys communal respect in formal register' },
-      { text: 'It\u2019s not right, Atticus.', technique: 'Jem\u2019s simple protest marks his loss of innocence' },
-      { text: 'They\u2019ve done it before and they\u2019ll do it again.', technique: 'Atticus acknowledges the cyclical nature of racial injustice' },
+      {
+        text: 'Miss Jean Louise, stand up. Your father\u2019s passin\u2019.',
+        technique: 'Reverend Sykes\u2019s instruction conveys communal respect in formal register',
+      },
+      {
+        text: 'It\u2019s not right, Atticus.',
+        technique: 'Jem\u2019s simple protest marks his loss of innocence',
+      },
+      {
+        text: 'They\u2019ve done it before and they\u2019ll do it again.',
+        technique: 'Atticus acknowledges the cyclical nature of racial injustice',
+      },
     ],
   },
   {
@@ -430,9 +623,18 @@ const chapters = [
     characterDevelopment:
       'Miss Maudie offers cautious hope. Bob Ewell\u2019s threat foreshadows the climax. Jem\u2019s disillusionment deepens.',
     quotes: [
-      { text: 'It\u2019s like bein\u2019 a caterpillar in a cocoon.', technique: 'Jem\u2019s metaphor expresses his painful transformation' },
-      { text: 'We\u2019re making a step \u2014 it\u2019s just a baby step, but it\u2019s a step.', technique: 'Miss Maudie\u2019s incremental optimism tempers despair' },
-      { text: 'Too proud to fight, you nigger-lovin\u2019 bastard?', technique: 'Ewell\u2019s language connects racism to violent masculinity' },
+      {
+        text: 'It\u2019s like bein\u2019 a caterpillar in a cocoon.',
+        technique: 'Jem\u2019s metaphor expresses his painful transformation',
+      },
+      {
+        text: 'We\u2019re making a step \u2014 it\u2019s just a baby step, but it\u2019s a step.',
+        technique: 'Miss Maudie\u2019s incremental optimism tempers despair',
+      },
+      {
+        text: 'Too proud to fight, you nigger-lovin\u2019 bastard?',
+        technique: 'Ewell\u2019s language connects racism to violent masculinity',
+      },
     ],
   },
   {
@@ -449,9 +651,18 @@ const chapters = [
     characterDevelopment:
       'Jem attempts to systematise injustice; Scout\u2019s simpler view is morally cleaner. Atticus bridges the two.',
     quotes: [
-      { text: 'When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.', technique: 'Plain statement of structural racism with no rhetorical flourish' },
-      { text: 'There\u2019s four kinds of folks in the world.', technique: 'Jem\u2019s class taxonomy reveals emerging social awareness' },
-      { text: 'Naw, Jem, I think there\u2019s just one kind of folks. Folks.', technique: 'Scout\u2019s reductive simplicity carries the novel\u2019s moral ideal' },
+      {
+        text: 'When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
+        technique: 'Plain statement of structural racism with no rhetorical flourish',
+      },
+      {
+        text: 'There\u2019s four kinds of folks in the world.',
+        technique: 'Jem\u2019s class taxonomy reveals emerging social awareness',
+      },
+      {
+        text: 'Naw, Jem, I think there\u2019s just one kind of folks. Folks.',
+        technique: 'Scout\u2019s reductive simplicity carries the novel\u2019s moral ideal',
+      },
     ],
   },
   {
@@ -468,9 +679,18 @@ const chapters = [
     characterDevelopment:
       'Lee uses dramatic irony to expose polite racism. Alexandra shows unexpected grace under pressure. Tom\u2019s death seals the novel\u2019s tragedy.',
     quotes: [
-      { text: 'They shot him seventeen times.', technique: 'Blunt factual statement conveys the horror of disproportionate force' },
-      { text: 'The handful of people who say a fair trial is not marked "White Only".', technique: 'Miss Maudie links courtroom justice to segregation signage' },
-      { text: 'If I was a lady, I\u2019d be one like her.', technique: 'Scout\u2019s rare praise of Alexandra revises her earlier judgement' },
+      {
+        text: 'They shot him seventeen times.',
+        technique: 'Blunt factual statement conveys the horror of disproportionate force',
+      },
+      {
+        text: 'The handful of people who say a fair trial is not marked "White Only".',
+        technique: 'Miss Maudie links courtroom justice to segregation signage',
+      },
+      {
+        text: 'If I was a lady, I\u2019d be one like her.',
+        technique: 'Scout\u2019s rare praise of Alexandra revises her earlier judgement',
+      },
     ],
   },
   {
@@ -487,9 +707,18 @@ const chapters = [
     characterDevelopment:
       'Jem\u2019s political awareness matures. Mr Underwood, previously a background figure, emerges as a moral voice.',
     quotes: [
-      { text: 'He likened Tom\u2019s death to the senseless slaughter of songbirds.', technique: 'The editorial explicitly connects Tom to the mockingbird symbol' },
-      { text: 'Tom was a dead man the minute Mayella opened her mouth.', technique: 'Retrospective narration reveals predetermined injustice' },
-      { text: 'Maycomb was interested for two days.', technique: 'Understated sentence condemns the town\u2019s indifference' },
+      {
+        text: 'He likened Tom\u2019s death to the senseless slaughter of songbirds.',
+        technique: 'The editorial explicitly connects Tom to the mockingbird symbol',
+      },
+      {
+        text: 'Tom was a dead man the minute Mayella opened her mouth.',
+        technique: 'Retrospective narration reveals predetermined injustice',
+      },
+      {
+        text: 'Maycomb was interested for two days.',
+        technique: 'Understated sentence condemns the town\u2019s indifference',
+      },
     ],
   },
   {
@@ -506,9 +735,18 @@ const chapters = [
     characterDevelopment:
       'Scout begins to recognise adult hypocrisy. Jem\u2019s refusal to discuss the trial signals deep emotional scarring.',
     quotes: [
-      { text: 'How can you hate Hitler so bad an\u2019 then turn around and be ugly about folks right at home?', technique: 'Scout\u2019s question exposes the moral inconsistency of selective empathy' },
-      { text: 'Over here we don\u2019t believe in persecuting anybody.', technique: 'Dramatic irony: the reader recognises the lie the speaker cannot' },
-      { text: 'Jem got furious. He said he didn\u2019t want to ever hear about that courthouse again.', technique: 'Emotional shutdown signals trauma in Jem\u2019s coming-of-age' },
+      {
+        text: 'How can you hate Hitler so bad an\u2019 then turn around and be ugly about folks right at home?',
+        technique: 'Scout\u2019s question exposes the moral inconsistency of selective empathy',
+      },
+      {
+        text: 'Over here we don\u2019t believe in persecuting anybody.',
+        technique: 'Dramatic irony: the reader recognises the lie the speaker cannot',
+      },
+      {
+        text: 'Jem got furious. He said he didn\u2019t want to ever hear about that courthouse again.',
+        technique: 'Emotional shutdown signals trauma in Jem\u2019s coming-of-age',
+      },
     ],
   },
   {
@@ -525,9 +763,18 @@ const chapters = [
     characterDevelopment:
       'Bob Ewell\u2019s escalating behaviour creates suspense. The community\u2019s failure to take him seriously proves fatal.',
     quotes: [
-      { text: 'Bob Ewell had a way of making his threats seem like casual conversation.', technique: 'Narrator\u2019s observation heightens the menace through understatement' },
-      { text: 'Too old for trick-or-treating, too young for anything else.', technique: 'Scout\u2019s in-between status mirrors her moral position throughout' },
-      { text: 'Ruth Jones, the welfare lady, said Mr Ewell openly accused Atticus of getting his job.', technique: 'Indirect reporting builds a pattern of Ewell\u2019s vindictiveness' },
+      {
+        text: 'Bob Ewell had a way of making his threats seem like casual conversation.',
+        technique: 'Narrator\u2019s observation heightens the menace through understatement',
+      },
+      {
+        text: 'Too old for trick-or-treating, too young for anything else.',
+        technique: 'Scout\u2019s in-between status mirrors her moral position throughout',
+      },
+      {
+        text: 'Ruth Jones, the welfare lady, said Mr Ewell openly accused Atticus of getting his job.',
+        technique: 'Indirect reporting builds a pattern of Ewell\u2019s vindictiveness',
+      },
     ],
   },
   {
@@ -544,9 +791,18 @@ const chapters = [
     characterDevelopment:
       'The Gothic and legal plots converge. Boo\u2019s emergence completes the novel\u2019s central moral arc: the "phantom" becomes the protector.',
     quotes: [
-      { text: 'Somebody was staggerin\u2019 around and pantin\u2019 and \u2014 coughing fit to die.', technique: 'Scout\u2019s fragmented sensory narration conveys the confusion of the attack' },
-      { text: 'The man was walking with the staccato steps of someone carrying a load too heavy.', technique: 'Precise physical detail before the reveal of Boo\u2019s identity' },
-      { text: 'Hey, Boo.', technique: 'Two-word greeting collapses the entire Gothic subplot into quiet recognition' },
+      {
+        text: 'Somebody was staggerin\u2019 around and pantin\u2019 and \u2014 coughing fit to die.',
+        technique: 'Scout\u2019s fragmented sensory narration conveys the confusion of the attack',
+      },
+      {
+        text: 'The man was walking with the staccato steps of someone carrying a load too heavy.',
+        technique: 'Precise physical detail before the reveal of Boo\u2019s identity',
+      },
+      {
+        text: 'Hey, Boo.',
+        technique: 'Two-word greeting collapses the entire Gothic subplot into quiet recognition',
+      },
     ],
   },
   {
@@ -563,9 +819,18 @@ const chapters = [
     characterDevelopment:
       'Scout\u2019s composure in retelling the attack shows how far she has matured. Her gentle recognition of Boo is the novel\u2019s emotional climax.',
     quotes: [
-      { text: 'His face was as white as his hands.', technique: 'Boo\u2019s pallor from years indoors is described without judgement' },
-      { text: 'When I pointed to him his palms slipped slightly.', technique: 'Subtle physical detail conveys Boo\u2019s nervousness' },
-      { text: 'Why there he is, Mr Tate, he can tell you his name.', technique: 'Scout normalises Boo\u2019s presence, refusing to treat him as spectacle' },
+      {
+        text: 'His face was as white as his hands.',
+        technique: 'Boo\u2019s pallor from years indoors is described without judgement',
+      },
+      {
+        text: 'When I pointed to him his palms slipped slightly.',
+        technique: 'Subtle physical detail conveys Boo\u2019s nervousness',
+      },
+      {
+        text: 'Why there he is, Mr Tate, he can tell you his name.',
+        technique: 'Scout normalises Boo\u2019s presence, refusing to treat him as spectacle',
+      },
     ],
   },
   {
@@ -582,9 +847,18 @@ const chapters = [
     characterDevelopment:
       'Tate\u2019s decision applies Atticus\u2019s own moral logic back to him. Scout\u2019s understanding of the mockingbird principle is now complete.',
     quotes: [
-      { text: 'Let the dead bury the dead this time, Mr Finch.', technique: 'Biblical allusion elevates Tate\u2019s pragmatic decision' },
-      { text: 'It\u2019d be sort of like shootin\u2019 a mockingbird, wouldn\u2019t it?', technique: 'Scout applies the symbol she learned in chapter 10' },
-      { text: 'Atticus looked like he needed cheering up.', technique: 'Role reversal: Scout now comforts the adult moral centre' },
+      {
+        text: 'Let the dead bury the dead this time, Mr Finch.',
+        technique: 'Biblical allusion elevates Tate\u2019s pragmatic decision',
+      },
+      {
+        text: 'It\u2019d be sort of like shootin\u2019 a mockingbird, wouldn\u2019t it?',
+        technique: 'Scout applies the symbol she learned in chapter 10',
+      },
+      {
+        text: 'Atticus looked like he needed cheering up.',
+        technique: 'Role reversal: Scout now comforts the adult moral centre',
+      },
     ],
   },
   {
@@ -601,9 +875,19 @@ const chapters = [
     characterDevelopment:
       'Scout completes the moral education Atticus began in chapter 3: she finally "climbs into another person\u2019s skin". The novel\u2019s two plots (Boo and the trial) converge.',
     quotes: [
-      { text: 'Atticus, he was real nice. Most people are, Scout, when you finally see them.', technique: 'The novel\u2019s closing exchange echoes the empathy lesson in its simplest form' },
-      { text: 'I had never seen our neighbourhood from this angle.', technique: 'Physical perspective shift embodies the novel\u2019s moral argument' },
-      { text: 'He gently released my hand, opened the door, went inside, and shut the door behind him.', technique: 'Simple sequential verbs close the Boo narrative with quiet finality' },
+      {
+        text: 'Atticus, he was real nice. Most people are, Scout, when you finally see them.',
+        technique:
+          'The novel\u2019s closing exchange echoes the empathy lesson in its simplest form',
+      },
+      {
+        text: 'I had never seen our neighbourhood from this angle.',
+        technique: 'Physical perspective shift embodies the novel\u2019s moral argument',
+      },
+      {
+        text: 'He gently released my hand, opened the door, went inside, and shut the door behind him.',
+        technique: 'Simple sequential verbs close the Boo narrative with quiet finality',
+      },
     ],
   },
 ]
@@ -615,21 +899,25 @@ export default async function TkamChaptersPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "IGCSE", url: "https://theenglishhub.app/igcse" },
-          { name: "Edexcel IGCSE Literature", url: "https://theenglishhub.app/igcse/edexcel" },
-          { name: "Prose", url: "https://theenglishhub.app/igcse/edexcel/prose" },
-          { name: "To Kill a Mockingbird", url: "https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird" },
-          { name: "Chapter-by-Chapter Analysis", url: "https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/chapters" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'IGCSE', url: 'https://theenglishhub.app/igcse' },
+          { name: 'Edexcel IGCSE Literature', url: 'https://theenglishhub.app/igcse/edexcel' },
+          { name: 'Prose', url: 'https://theenglishhub.app/igcse/edexcel/prose' },
+          {
+            name: 'To Kill a Mockingbird',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird',
+          },
+          {
+            name: 'Chapter-by-Chapter Analysis',
+            url: 'https://theenglishhub.app/igcse/edexcel/prose/to-kill-a-mockingbird/chapters',
+          },
         ]}
       />
       <div>
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/edexcel/prose/to-kill-a-mockingbird" />
-          }
+          render={<Link href="/igcse/edexcel/prose/to-kill-a-mockingbird" />}
         >
           <ArrowLeft className="size-3.5" />
           Back to To Kill a Mockingbird
@@ -649,10 +937,9 @@ export default async function TkamChaptersPage() {
             To Kill a Mockingbird: Chapters
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Chapter-by-chapter analysis covering Part One (Chapters 1–11)
-            and Part Two (Chapters 12–31). Each chapter includes a summary,
-            key events, character development and three key quotations with
-            language analysis.
+            Chapter-by-chapter analysis covering Part One (Chapters 1–11) and Part Two (Chapters
+            12–31). Each chapter includes a summary, key events, character development and three key
+            quotations with language analysis.
           </p>
         </div>
       </section>
@@ -665,9 +952,8 @@ export default async function TkamChaptersPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair dealing (CDPA 1988) for
-              study and criticism. Read the complete novel alongside these
-              notes.
+              Short extracts are included under fair dealing (CDPA 1988) for study and criticism.
+              Read the complete novel alongside these notes.
             </p>
           </div>
         </div>
@@ -677,18 +963,13 @@ export default async function TkamChaptersPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Part One — Chapters 1–11
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Part One — Chapters 1–11</h2>
         </div>
         <div className="space-y-6">
           {chapters
             .filter((c) => c.part === 1)
             .map((ch) => (
-              <article
-                key={ch.number}
-                className="rounded-xl border border-border/60 bg-card p-6"
-              >
+              <article key={ch.number} className="rounded-xl border border-border/60 bg-card p-6">
                 <div className="flex items-start gap-3 mb-4">
                   <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-body-sm font-semibold text-primary">
                     {ch.number}
@@ -700,9 +981,7 @@ export default async function TkamChaptersPage() {
                   </div>
                 </div>
 
-                <p className="text-body-sm leading-relaxed text-muted-foreground">
-                  {ch.summary}
-                </p>
+                <p className="text-body-sm leading-relaxed text-muted-foreground">{ch.summary}</p>
 
                 <div className="mt-4">
                   <h4 className="text-body-xs font-semibold uppercase tracking-wide text-foreground">
@@ -766,10 +1045,7 @@ export default async function TkamChaptersPage() {
           {chapters
             .filter((c) => c.part === 2)
             .map((ch) => (
-              <article
-                key={ch.number}
-                className="rounded-xl border border-border/60 bg-card p-6"
-              >
+              <article key={ch.number} className="rounded-xl border border-border/60 bg-card p-6">
                 <div className="flex items-start gap-3 mb-4">
                   <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-body-sm font-semibold text-primary">
                     {ch.number}
@@ -781,9 +1057,7 @@ export default async function TkamChaptersPage() {
                   </div>
                 </div>
 
-                <p className="text-body-sm leading-relaxed text-muted-foreground">
-                  {ch.summary}
-                </p>
+                <p className="text-body-sm leading-relaxed text-muted-foreground">{ch.summary}</p>
 
                 <div className="mt-4">
                   <h4 className="text-body-xs font-semibold uppercase tracking-wide text-foreground">
@@ -836,9 +1110,8 @@ export default async function TkamChaptersPage() {
       </section>
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the
-        CDPA 1988 for criticism and review. Full text available from your
-        school or local library.
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism
+        and review. Full text available from your school or local library.
       </p>
     </div>
   )

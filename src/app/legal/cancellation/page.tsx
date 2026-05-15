@@ -3,6 +3,12 @@ import { Metadata } from 'next'
 
 import { headers } from 'next/headers'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Cancellation Policy',
+    description:
+      'Cancellation Policy for The English Hub, explaining your right to cancel and how refunds work.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/legal/cancellation' },
   title: 'Cancellation Policy',
   description:
     'Cancellation Policy for The English Hub, explaining your right to cancel and how refunds work.',

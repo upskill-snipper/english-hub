@@ -7,6 +7,11 @@ import { STRINGS as _EAL_STRINGS } from './content'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'OCR Paper 2: Exploring Poetry and Shakespeare | The English Hub',
+    description:
+      'Complete guide to OCR GCSE English Literature Paper 2. Shakespeare play, poetry anthology comparison, and unseen poetry revision.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/paper-2' },
   title: 'OCR Paper 2: Exploring Poetry and Shakespeare | The English Hub',
   description:

@@ -19,6 +19,12 @@ import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
+  openGraph: {
+    title: 'Macbeth Act 1 — Scene-by-Scene Analysis | The English Hub',
+    description:
+      'Detailed GCSE analysis of Macbeth Act 1: scene-by-scene summary, key quotes, language techniques, character development and structural analysis.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/act-1' },
   title: 'Macbeth Act 1 — Scene-by-Scene Analysis | The English Hub',
   description:
     'Detailed GCSE analysis of Macbeth Act 1: scene-by-scene summary, key quotes, language techniques, character development and structural analysis.',

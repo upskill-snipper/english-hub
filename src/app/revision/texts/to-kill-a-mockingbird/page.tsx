@@ -9,6 +9,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'To Kill a Mockingbird revision guide — themes, characters, key quotes — The English Hub',
+    description: 'To Kill a Mockingbird IGCSE revision — Harper Lee',
+  },
   title: 'To Kill a Mockingbird revision guide — themes, characters, key quotes — The English Hub',
   description:
     "To Kill a Mockingbird IGCSE revision — Harper Lee's novel with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE 4ET1 spec.",

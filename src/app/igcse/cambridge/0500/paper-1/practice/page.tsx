@@ -1,29 +1,22 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ChevronLeft,
-  Pencil,
-  BookOpen,
-  CheckCircle2,
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { ChevronLeft, Pencil, BookOpen, CheckCircle2 } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 1 Practice Passages — IGCSE Language A',
+    description:
+      'Three IGCSE Language A Paper 1 practice passages using public domain literary extracts from Dickens, Austen and Hardy. Full questions and model answers. Aligns with Cambridge syllabus 0500.',
+  },
   title: 'Paper 1 Practice Passages — IGCSE Language A',
   description:
     'Three IGCSE Language A Paper 1 practice passages using public domain literary extracts from Dickens, Austen and Hardy. Full questions and model answers. Aligns with Cambridge syllabus 0500.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/paper-1/practice',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/practice',
   },
 }
 
@@ -117,14 +110,11 @@ export default async function PracticePage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Paper 1 practice passages
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Paper 1 practice passages</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Three practice sets drawn from public-domain literary openings.
-          Each set gives you a passage, short comprehension questions, an
-          own-words question and an extended language analysis task with a
-          model outline.
+          Three practice sets drawn from public-domain literary openings. Each set gives you a
+          passage, short comprehension questions, an own-words question and an extended language
+          analysis task with a model outline.
         </p>
       </section>
 
@@ -147,7 +137,10 @@ export default async function PracticePage() {
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
-            <span>Once finished, compare your answers to the model responses and highlight what you missed.</span>
+            <span>
+              Once finished, compare your answers to the model responses and highlight what you
+              missed.
+            </span>
           </li>
         </ul>
       </section>
@@ -173,29 +166,20 @@ export default async function PracticePage() {
               <div>
                 <div className="mb-2 flex items-center gap-2">
                   <BookOpen className="size-4 text-primary" />
-                  <h3 className="text-body-md font-semibold text-foreground">
-                    Passage
-                  </h3>
+                  <h3 className="text-body-md font-semibold text-foreground">Passage</h3>
                 </div>
                 <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
                   <p className="whitespace-pre-line text-body-sm text-foreground leading-relaxed">
                     {set.passage}
                   </p>
-                  <p className="mt-3 text-body-xs text-muted-foreground italic">
-                    {set.sourceNote}
-                  </p>
+                  <p className="mt-3 text-body-xs text-muted-foreground italic">{set.sourceNote}</p>
                 </div>
               </div>
 
               <div className="space-y-4">
                 {set.questions.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="rounded-xl border border-border/60 bg-card p-4"
-                  >
-                    <p className="text-body-sm font-semibold text-foreground">
-                      {item.q}
-                    </p>
+                  <div key={idx} className="rounded-xl border border-border/60 bg-card p-4">
+                    <p className="text-body-sm font-semibold text-foreground">{item.q}</p>
                     <details className="mt-2">
                       <summary className="cursor-pointer text-body-xs text-primary hover:underline">
                         Show model answer

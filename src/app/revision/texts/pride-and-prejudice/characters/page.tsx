@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Pride and Prejudice — Character Analysis | The English Hub',
+    description:
+      'In-depth character analysis for Pride and Prejudice by Jane Austen: Elizabeth Bennet, Darcy, Jane, Bingley, Wickham, Mr & Mrs Bennet, Lydia and Lady Catherine.',
+  },
   title: 'Pride and Prejudice — Character Analysis | The English Hub',
   description:
     'In-depth character analysis for Pride and Prejudice by Jane Austen: Elizabeth Bennet, Darcy, Jane, Bingley, Wickham, Mr & Mrs Bennet, Lydia and Lady Catherine.',

@@ -8,6 +8,11 @@ import { headers } from 'next/headers'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'OCR GCSE English Language writing skills — The English Hub',
+    description:
+      'Writing skills for OCR GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-language/ocr/writing-skills',
   },

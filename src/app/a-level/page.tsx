@@ -9,6 +9,11 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'A-Level English — The English Hub',
+    description:
+      'UK A-Level English Literature and Language hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas. Cross-board revision tools while full A-Level content is on our roadmap.',
+  },
   title: 'A-Level English — The English Hub',
   description:
     'UK A-Level English Literature and Language hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas. Cross-board revision tools while full A-Level content is on our roadmap.',

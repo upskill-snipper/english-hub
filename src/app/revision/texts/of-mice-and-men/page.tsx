@@ -9,6 +9,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Of Mice and Men revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Of Mice and Men IGCSE revision — Steinbeck',
+  },
   title: 'Of Mice and Men revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Of Mice and Men IGCSE revision — Steinbeck's novella with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",

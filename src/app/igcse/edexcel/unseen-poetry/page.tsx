@@ -4,6 +4,12 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 import UnseenPoetryClient from './client'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'IGCSE Edexcel unseen poetry — approach, language, structure, comparison — The English Hub',
+    description:
+      'How to read an unseen poem for the Pearson Edexcel IGCSE 4ET1 Paper 1 Section A. Approach, language analysis, structure and form, comparison practice.',
+  },
   title:
     'IGCSE Edexcel unseen poetry — approach, language, structure, comparison — The English Hub',
   description:

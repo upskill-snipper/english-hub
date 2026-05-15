@@ -4,6 +4,11 @@ import { KS3, STRAND_LABEL } from '@/lib/ks3/curriculum'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'End of KS3 expectations',
+    description:
+      'British National Curriculum end-of-KS3 standard — what students working at the expected level can do at the end of Year 9.',
+  },
   title: 'End of KS3 expectations',
   description:
     'British National Curriculum end-of-KS3 standard — what students working at the expected level can do at the end of Year 9.',

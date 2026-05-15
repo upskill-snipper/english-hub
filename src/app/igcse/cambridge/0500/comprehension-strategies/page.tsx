@@ -17,12 +17,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Comprehension Strategies — IGCSE Language A Paper 1',
+    description:
+      'Detailed guide to answering every Paper 1 question type for Cambridge IGCSE 0500. Step-by-step methods, common mistakes, and examiner tips for Q1, Q2, and Q3.',
+  },
   title: 'Comprehension Strategies — IGCSE Language A Paper 1',
   description:
     'Detailed guide to answering every Paper 1 question type for Cambridge IGCSE 0500. Step-by-step methods, common mistakes, and examiner tips for Q1, Q2, and Q3.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/comprehension-strategies',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/comprehension-strategies',
   },
 }
 
@@ -108,7 +112,7 @@ const q2 = {
     {
       step: 'For each word, write a PEEL paragraph',
       detail:
-        'Point (what is the writer doing?), Evidence (the quotation), Explanation (literal meaning in context), Link to effect (connotations, reader response, writer\'s purpose).',
+        "Point (what is the writer doing?), Evidence (the quotation), Explanation (literal meaning in context), Link to effect (connotations, reader response, writer's purpose).",
     },
     {
       step: 'Explore connotations, not just definitions',
@@ -138,7 +142,7 @@ const q2 = {
     'The mark scheme uses the word "judicious" -- this means your choices should be well-chosen, not random. Pick the most powerful words, not the first ones you see.',
     'Top-band responses explore layers of meaning: literal, connotative, and the effect on the reader. Three layers per word is the ideal.',
     'You do not need to identify the technique by name to score full marks. Explaining the effect is more important than labelling it.',
-    'If you can link your analysis to the writer\'s overall purpose (e.g. to create sympathy, build tension, persuade), do so.',
+    "If you can link your analysis to the writer's overall purpose (e.g. to create sympathy, build tension, persuade), do so.",
   ],
 }
 
@@ -216,7 +220,7 @@ const readingStrategies = [
   {
     title: 'First read: get the big picture',
     detail:
-      'Read the entire passage once without writing anything. Understand the topic, the tone, and the writer\'s overall attitude. This takes 3-4 minutes and saves time later.',
+      "Read the entire passage once without writing anything. Understand the topic, the tone, and the writer's overall attitude. This takes 3-4 minutes and saves time later.",
   },
   {
     title: 'Second read: answer the question',
@@ -231,7 +235,7 @@ const readingStrategies = [
   {
     title: 'Read the final paragraph carefully',
     detail:
-      'Students often rush the ending. Final paragraphs frequently contain the writer\'s most important point or a summary statement.',
+      "Students often rush the ending. Final paragraphs frequently contain the writer's most important point or a summary statement.",
   },
   {
     title: 'Do not assume you understand on first glance',
@@ -245,11 +249,27 @@ const readingStrategies = [
    ──────────────────────────────────────────────────────────────────────────── */
 
 const timePlan = [
-  { phase: 'Reading time (given)', minutes: '15 min', detail: 'Read both passages. Annotate lightly. Do NOT start writing.' },
-  { phase: 'Question 1', minutes: '25 min', detail: 'Read, underline, rephrase. Aim for 15 points.' },
-  { phase: 'Question 2', minutes: '25 min', detail: 'Select 6-8 words. Write PEEL paragraphs for each.' },
+  {
+    phase: 'Reading time (given)',
+    minutes: '15 min',
+    detail: 'Read both passages. Annotate lightly. Do NOT start writing.',
+  },
+  {
+    phase: 'Question 1',
+    minutes: '25 min',
+    detail: 'Read, underline, rephrase. Aim for 15 points.',
+  },
+  {
+    phase: 'Question 2',
+    minutes: '25 min',
+    detail: 'Select 6-8 words. Write PEEL paragraphs for each.',
+  },
   { phase: 'Question 3', minutes: '25 min', detail: 'Scan, group, write 250-word paragraph.' },
-  { phase: 'Review', minutes: '5 min', detail: 'Check spelling, missing points, word count on Q3.' },
+  {
+    phase: 'Review',
+    minutes: '5 min',
+    detail: 'Check spelling, missing points, word count on Q3.',
+  },
 ]
 
 export default async function ComprehensionStrategiesPage() {
@@ -284,10 +304,9 @@ export default async function ComprehensionStrategiesPage() {
             Comprehension strategies
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            A detailed guide to answering every Paper 1 question type. Step-by-step
-            methods for retrieval (Q1), language analysis (Q2), and summary (Q3),
-            with common mistakes to avoid and examiner tips drawn from published
-            mark schemes and examiner reports.
+            A detailed guide to answering every Paper 1 question type. Step-by-step methods for
+            retrieval (Q1), language analysis (Q2), and summary (Q3), with common mistakes to avoid
+            and examiner tips drawn from published mark schemes and examiner reports.
           </p>
         </div>
       </section>
@@ -333,8 +352,8 @@ export default async function ComprehensionStrategiesPage() {
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Before you answer any question, you need to read effectively.
-            These five strategies apply to every Paper 1 sitting.
+            Before you answer any question, you need to read effectively. These five strategies
+            apply to every Paper 1 sitting.
           </p>
         </div>
 
@@ -346,15 +365,11 @@ export default async function ComprehensionStrategiesPage() {
                   <span className="flex size-7 items-center justify-center rounded-full bg-primary/10 text-body-xs font-semibold text-primary">
                     {i + 1}
                   </span>
-                  <CardTitle className="text-heading-sm font-heading">
-                    {s.title}
-                  </CardTitle>
+                  <CardTitle className="text-heading-sm font-heading">{s.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-body-sm text-muted-foreground leading-relaxed">
-                  {s.detail}
-                </p>
+                <p className="text-body-sm text-muted-foreground leading-relaxed">{s.detail}</p>
               </CardContent>
             </Card>
           ))}
@@ -362,16 +377,17 @@ export default async function ComprehensionStrategiesPage() {
       </section>
 
       {/* ── Time Management ───────────────────────────────────────────── */}
-      <section id="time-management" className="scroll-mt-8 rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
+      <section
+        id="time-management"
+        className="scroll-mt-8 rounded-2xl border border-border/60 bg-card p-6 sm:p-8"
+      >
         <div className="mb-4 flex items-center gap-3">
           <Clock className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Recommended time plan
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Recommended time plan</h2>
         </div>
         <p className="mb-5 text-body-sm text-muted-foreground">
-          Paper 1 is 2 hours (including 15 minutes reading time). Here is how to
-          divide it so you never run out of time.
+          Paper 1 is 2 hours (including 15 minutes reading time). Here is how to divide it so you
+          never run out of time.
         </p>
         <div className="space-y-2">
           {timePlan.map((t) => (
@@ -383,12 +399,8 @@ export default async function ComprehensionStrategiesPage() {
                 {t.minutes}
               </Badge>
               <div>
-                <p className="text-body-md font-semibold text-foreground">
-                  {t.phase}
-                </p>
-                <p className="text-body-sm text-muted-foreground">
-                  {t.detail}
-                </p>
+                <p className="text-body-md font-semibold text-foreground">{t.phase}</p>
+                <p className="text-body-sm text-muted-foreground">{t.detail}</p>
               </div>
             </div>
           ))}
@@ -408,31 +420,23 @@ export default async function ComprehensionStrategiesPage() {
               <Target className="size-5 text-primary" />
             </div>
             <div>
-              <h2 className="text-heading-lg font-heading text-foreground">
-                {q.title}
-              </h2>
+              <h2 className="text-heading-lg font-heading text-foreground">{q.title}</h2>
               <div className="mt-1 flex gap-2">
-                <Badge className="bg-primary/10 text-primary border-primary/20">
-                  {q.marks}
-                </Badge>
+                <Badge className="bg-primary/10 text-primary border-primary/20">{q.marks}</Badge>
                 <Badge variant="secondary">{q.time}</Badge>
               </div>
             </div>
           </div>
 
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
-            <p className="text-body-sm text-muted-foreground leading-relaxed">
-              {q.overview}
-            </p>
+            <p className="text-body-sm text-muted-foreground leading-relaxed">{q.overview}</p>
           </div>
 
           {/* Step-by-step method */}
           <div>
             <div className="mb-3 flex items-center gap-2">
               <Lightbulb className="size-4 text-primary" />
-              <h3 className="text-heading-sm font-heading text-foreground">
-                Step-by-step method
-              </h3>
+              <h3 className="text-heading-sm font-heading text-foreground">Step-by-step method</h3>
             </div>
             <div className="space-y-3">
               {q.steps.map((s, i) => (
@@ -442,15 +446,11 @@ export default async function ComprehensionStrategiesPage() {
                       <span className="flex size-7 items-center justify-center rounded-full bg-primary/10 text-body-xs font-semibold text-primary">
                         {i + 1}
                       </span>
-                      <CardTitle className="text-body-md font-heading">
-                        {s.step}
-                      </CardTitle>
+                      <CardTitle className="text-body-md font-heading">{s.step}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-body-sm text-muted-foreground leading-relaxed">
-                      {s.detail}
-                    </p>
+                    <p className="text-body-sm text-muted-foreground leading-relaxed">{s.detail}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -461,9 +461,7 @@ export default async function ComprehensionStrategiesPage() {
           <div>
             <div className="mb-3 flex items-center gap-2">
               <XCircle className="size-4 text-muted-foreground" />
-              <h3 className="text-heading-sm font-heading text-foreground">
-                Common mistakes
-              </h3>
+              <h3 className="text-heading-sm font-heading text-foreground">Common mistakes</h3>
             </div>
             <Card>
               <CardContent className="pt-6">
@@ -483,9 +481,7 @@ export default async function ComprehensionStrategiesPage() {
           <div>
             <div className="mb-3 flex items-center gap-2">
               <AlertTriangle className="size-4 text-primary" />
-              <h3 className="text-heading-sm font-heading text-foreground">
-                Examiner tips
-              </h3>
+              <h3 className="text-heading-sm font-heading text-foreground">Examiner tips</h3>
             </div>
             <Card>
               <CardContent className="pt-6">

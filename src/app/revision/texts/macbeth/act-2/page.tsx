@@ -11,6 +11,12 @@ import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
+  openGraph: {
+    title: 'Macbeth Act 2 — Scene-by-Scene Analysis | The English Hub',
+    description:
+      'Detailed GCSE analysis of Macbeth Act 2: the murder of Duncan, guilt and its aftermath, key quotes and language techniques.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/act-2' },
   title: 'Macbeth Act 2 — Scene-by-Scene Analysis | The English Hub',
   description:
     'Detailed GCSE analysis of Macbeth Act 2: the murder of Duncan, guilt and its aftermath, key quotes and language techniques.',

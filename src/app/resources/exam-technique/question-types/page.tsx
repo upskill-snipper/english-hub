@@ -7,6 +7,10 @@ import { tMany } from '@/lib/i18n/t'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'How to Approach Different Question Types',
+    description: 'Learn how to approach every question type in GCSE and IGCSE English exams. ',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/question-types' },
   title: 'How to Approach Different Question Types',
   description:

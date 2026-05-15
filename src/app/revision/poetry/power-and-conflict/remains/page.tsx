@@ -8,6 +8,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
+  openGraph: {
+    title: 'Remains -- Simon Armitage -- The English Hub',
+    description: 'Interactive study of ',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/remains' },
   title: 'Remains -- Simon Armitage -- The English Hub',
   description:
     'Interactive study of "Remains" by Simon Armitage. Annotations, key quotes, language analysis, form & structure, and comparison poems for GCSE English Literature.',

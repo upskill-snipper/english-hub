@@ -7,6 +7,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'A View from the Bridge Themes — Edexcel IGCSE Literature',
+    description:
+      'Themes in A View from the Bridge: honour and reputation, masculinity and sexuality, law versus justice, family, immigration and tragic form.',
+  },
   title: 'A View from the Bridge Themes — Edexcel IGCSE Literature',
   description:
     'Themes in A View from the Bridge: honour and reputation, masculinity and sexuality, law versus justice, family, immigration and tragic form.',

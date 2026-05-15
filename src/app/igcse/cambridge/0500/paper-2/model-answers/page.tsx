@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 2 Model Answers — IGCSE Language A 0500',
+    description:
+      'Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 2: directed writing (letter, article, speech) and composition (descriptive and narrative). With examiner annotations.',
+  },
   title: 'Paper 2 Model Answers — IGCSE Language A 0500',
   description:
     'Grade A*/9 model answers for Cambridge IGCSE 0500 Paper 2: directed writing (letter, article, speech) and composition (descriptive and narrative). With examiner annotations.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/paper-2/model-answers',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2/model-answers',
   },
 }
 
@@ -34,7 +38,7 @@ const directedModels = [
         note: 'Correct formal letter conventions: salutation, clear purpose stated immediately, concession to the opposing view ("I understand the council faces..."). The tone is measured and respectful -- not aggressive. This is the register examiners reward.',
       },
       {
-        text: 'As the passage makes clear, libraries are not simply repositories of books -- they are essential community spaces. For many elderly residents in this area, the library is the only place they visit regularly outside their own homes. Removing it would deepen the isolation that already affects a significant proportion of our ageing population. Furthermore, the library\'s free internet access is relied upon by families who cannot afford home broadband, and by job seekers who depend on it to search and apply for employment.',
+        text: "As the passage makes clear, libraries are not simply repositories of books -- they are essential community spaces. For many elderly residents in this area, the library is the only place they visit regularly outside their own homes. Removing it would deepen the isolation that already affects a significant proportion of our ageing population. Furthermore, the library's free internet access is relied upon by families who cannot afford home broadband, and by job seekers who depend on it to search and apply for employment.",
         note: 'Two passage ideas (community space, internet access) are adapted to the local context -- the student does not simply repeat the passage but applies it. This is the key to top-band directed writing: use the source material as a springboard, not a script.',
       },
       {
@@ -86,8 +90,8 @@ const directedModels = [
         note: 'Speech conventions: greeting, direct address, personal anecdote, humour. The confession creates an immediate connection with the audience (teenagers who also do not read). The examiner rewards this as "strong awareness of audience and purpose."',
       },
       {
-        text: 'And then, in the middle of a particularly boring half-term, I picked up a book my mother had left on the kitchen table. I cannot even remember the title. But I remember the feeling -- the strange, almost physical sensation of being somewhere else entirely, of hearing a voice that was not my own but somehow understood exactly what I was thinking. That is what reading does. It does not just give you information. It gives you someone else\'s mind to live in for a while.',
-        note: 'The student transitions from anecdote to the passage\'s central argument (reading as empathy) but phrases it in their own voice. "Someone else\'s mind to live in" is more powerful than any passage quotation because it is clearly the student\'s own thought. This is the highest level of directed writing.',
+        text: "And then, in the middle of a particularly boring half-term, I picked up a book my mother had left on the kitchen table. I cannot even remember the title. But I remember the feeling -- the strange, almost physical sensation of being somewhere else entirely, of hearing a voice that was not my own but somehow understood exactly what I was thinking. That is what reading does. It does not just give you information. It gives you someone else's mind to live in for a while.",
+        note: "The student transitions from anecdote to the passage's central argument (reading as empathy) but phrases it in their own voice. \"Someone else's mind to live in\" is more powerful than any passage quotation because it is clearly the student's own thought. This is the highest level of directed writing.",
       },
       {
         text: 'The passage we read this morning tells us that reading improves vocabulary, develops concentration, and reduces stress. All true. But I think those are the boring reasons, and if I stand up here and list health benefits at you, I will lose you in about fifteen seconds. So let me give you the real reason: reading is the only legal way to be someone else. It is the only way to know what it feels like to be a soldier in 1917, or a girl growing up in Lagos, or an astronaut watching the Earth shrink behind you. No film does this. No game does this. Only a book puts you so far inside another person that you forget, for a moment, that you are you.',
@@ -111,7 +115,7 @@ const descriptiveModel = {
   mark: '40/40',
   paragraphs: [
     {
-      text: 'The station existed in the hour before it was needed. The departures board was a grid of amber letters that no one was reading, and the coffee kiosk was still shuttered, its corrugated door holding the ghost of yesterday\'s espresso in a faint, bitter sweetness that hung in the cold air like a promise.',
+      text: "The station existed in the hour before it was needed. The departures board was a grid of amber letters that no one was reading, and the coffee kiosk was still shuttered, its corrugated door holding the ghost of yesterday's espresso in a faint, bitter sweetness that hung in the cold air like a promise.",
       note: 'Opening establishes time and atmosphere without stating "it was dawn." Personification of the station ("existed in the hour before it was needed") gives it character. Smell introduced early -- "ghost of yesterday\'s espresso" is unexpected and precise. The simile "like a promise" carries emotional weight without being sentimental.',
     },
     {
@@ -191,10 +195,9 @@ export default async function Paper2ModelAnswersPage() {
             Paper 2 model answers
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Five model compositions for Paper 2: three directed writing
-            responses (letter, article, speech) and two Section B compositions
-            (descriptive and narrative). Every paragraph includes examiner
-            annotations explaining what earns top marks.
+            Five model compositions for Paper 2: three directed writing responses (letter, article,
+            speech) and two Section B compositions (descriptive and narrative). Every paragraph
+            includes examiner annotations explaining what earns top marks.
           </p>
         </div>
       </section>
@@ -210,11 +213,10 @@ export default async function Paper2ModelAnswersPage() {
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Directed writing asks you to respond to a reading passage in a
-            specific form (letter, article, speech, report). You are marked on
-            how well you use ideas from the passage, how effectively you write in
-            the required form, and the quality of your language. The best answers
-            adapt and extend the source material rather than simply copying it.
+            Directed writing asks you to respond to a reading passage in a specific form (letter,
+            article, speech, report). You are marked on how well you use ideas from the passage, how
+            effectively you write in the required form, and the quality of your language. The best
+            answers adapt and extend the source material rather than simply copying it.
           </p>
         </div>
 
@@ -223,15 +225,11 @@ export default async function Paper2ModelAnswersPage() {
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <Award className="size-5 text-primary" />
-                <h3 className="text-heading-md font-heading text-foreground">
-                  {model.title}
-                </h3>
+                <h3 className="text-heading-md font-heading text-foreground">{model.title}</h3>
               </div>
               <div className="flex items-center gap-2">
                 <Badge variant="secondary">{model.form}</Badge>
-                <Badge className="bg-primary/10 text-primary border-primary/20">
-                  {model.mark}
-                </Badge>
+                <Badge className="bg-primary/10 text-primary border-primary/20">{model.mark}</Badge>
               </div>
             </div>
 
@@ -239,16 +237,18 @@ export default async function Paper2ModelAnswersPage() {
               <p className="text-body-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 Task
               </p>
-              <p className="mt-1 text-body-sm italic text-foreground">
-                {model.scenario}
-              </p>
+              <p className="mt-1 text-body-sm italic text-foreground">{model.scenario}</p>
             </div>
 
             {model.paragraphs.map((p, i) => (
               <Card key={i}>
                 <CardHeader className="pb-3">
                   <CardTitle className="text-body-xs uppercase tracking-wide text-muted-foreground">
-                    {i === 0 ? 'Opening' : i === model.paragraphs.length - 1 ? 'Closing' : `Paragraph ${i + 1}`}
+                    {i === 0
+                      ? 'Opening'
+                      : i === model.paragraphs.length - 1
+                        ? 'Closing'
+                        : `Paragraph ${i + 1}`}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -259,9 +259,7 @@ export default async function Paper2ModelAnswersPage() {
                     <p className="text-body-xs font-semibold uppercase tracking-wide text-primary">
                       Examiner note
                     </p>
-                    <p className="mt-2 text-body-sm text-foreground">
-                      {p.note}
-                    </p>
+                    <p className="mt-2 text-body-sm text-foreground">{p.note}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -281,11 +279,10 @@ export default async function Paper2ModelAnswersPage() {
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Section B offers a choice between descriptive and narrative writing.
-            Descriptive compositions are marked on the quality of your imagery,
-            vocabulary, sentence variety, and structural control. The best
-            descriptive writing creates atmosphere through precise, original
-            sensory detail -- not through plot.
+            Section B offers a choice between descriptive and narrative writing. Descriptive
+            compositions are marked on the quality of your imagery, vocabulary, sentence variety,
+            and structural control. The best descriptive writing creates atmosphere through precise,
+            original sensory detail -- not through plot.
           </p>
         </div>
 
@@ -334,20 +331,17 @@ export default async function Paper2ModelAnswersPage() {
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Narrative compositions are marked on plot structure, characterisation,
-            dialogue, tension, and language quality. The best narratives are
-            small in scale (one scene, one turning point) with precise physical
-            detail and restrained emotion. Avoid car chases, dream endings, and
-            plots that try to cover years in 500 words.
+            Narrative compositions are marked on plot structure, characterisation, dialogue,
+            tension, and language quality. The best narratives are small in scale (one scene, one
+            turning point) with precise physical detail and restrained emotion. Avoid car chases,
+            dream endings, and plots that try to cover years in 500 words.
           </p>
         </div>
 
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Award className="size-5 text-primary" />
-            <h3 className="text-heading-md font-heading text-foreground">
-              {narrativeModel.title}
-            </h3>
+            <h3 className="text-heading-md font-heading text-foreground">{narrativeModel.title}</h3>
           </div>
           <Badge className="bg-primary/10 text-primary border-primary/20">
             {narrativeModel.mark}

@@ -7,6 +7,11 @@ import { tMany } from '@/lib/i18n/t'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Time Management in English Exams',
+    description:
+      'Paper-by-paper timing breakdowns for GCSE and IGCSE English exams. Learn how to divide time per question, plan your time allocation, and what to do if you run out of time.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/time-management' },
   title: 'Time Management in English Exams',
   description:

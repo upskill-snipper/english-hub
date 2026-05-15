@@ -12,18 +12,17 @@ import {
   Info,
   BookOpen,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Edexcel IGCSE Literature Past Papers — The English Hub',
+    description:
+      'How to find, download and practise with Pearson Edexcel IGCSE English Literature past papers. Study tips, timing advice and mark scheme strategy.',
+  },
   title: 'Edexcel IGCSE Literature Past Papers — The English Hub',
   description:
     'How to find, download and practise with Pearson Edexcel IGCSE English Literature past papers. Study tips, timing advice and mark scheme strategy.',
@@ -129,10 +128,9 @@ export default async function EdexcelPastPapersPage() {
             IGCSE Literature Past Papers
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Past papers are the single most effective revision resource for
-            IGCSE English Literature. This page shows you where to find
-            official Edexcel materials and how to practise with them like a
-            top-band candidate.
+            Past papers are the single most effective revision resource for IGCSE English
+            Literature. This page shows you where to find official Edexcel materials and how to
+            practise with them like a top-band candidate.
           </p>
         </div>
       </section>
@@ -141,10 +139,9 @@ export default async function EdexcelPastPapersPage() {
       <section className="flex items-start gap-3 rounded-xl border border-blue-500/20 bg-blue-500/5 p-4">
         <Info className="mt-0.5 size-4 shrink-0 text-blue-400" />
         <p className="text-body-sm text-muted-foreground">
-          We do not host Edexcel past papers on The English Hub. Pearson
-          publishes all question papers, mark schemes and examiner reports for
-          free on their official site — always use those to guarantee the
-          latest, unedited versions.
+          We do not host Edexcel past papers on The English Hub. Pearson publishes all question
+          papers, mark schemes and examiner reports for free on their official site — always use
+          those to guarantee the latest, unedited versions.
         </p>
       </section>
 
@@ -180,13 +177,7 @@ export default async function EdexcelPastPapersPage() {
                     variant="outline"
                     size="sm"
                     className="w-full"
-                    render={
-                      <a
-                        href={source.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      />
-                    }
+                    render={<a href={source.href} target="_blank" rel="noopener noreferrer" />}
                   >
                     Visit Pearson
                     <ArrowUpRight className="size-3.5" />
@@ -216,9 +207,7 @@ export default async function EdexcelPastPapersPage() {
                   <div className="mb-2 flex size-10 items-center justify-center rounded-xl bg-primary/10">
                     <Icon className="size-5 text-primary" />
                   </div>
-                  <CardTitle className="text-body-lg font-heading">
-                    {tip.title}
-                  </CardTitle>
+                  <CardTitle className="text-body-lg font-heading">{tip.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -242,9 +231,8 @@ export default async function EdexcelPastPapersPage() {
               1
             </span>
             <span>
-              <strong className="text-foreground">0–5 min:</strong> Read the
-              question carefully. Annotate key command words and the focus of
-              the task.
+              <strong className="text-foreground">0–5 min:</strong> Read the question carefully.
+              Annotate key command words and the focus of the task.
             </span>
           </li>
           <li className="flex items-start gap-3">
@@ -252,9 +240,8 @@ export default async function EdexcelPastPapersPage() {
               2
             </span>
             <span>
-              <strong className="text-foreground">5–10 min:</strong> Brainstorm
-              a thesis and four or five analytical paragraphs. Jot down
-              quotations and contextual points you plan to use.
+              <strong className="text-foreground">5–10 min:</strong> Brainstorm a thesis and four or
+              five analytical paragraphs. Jot down quotations and contextual points you plan to use.
             </span>
           </li>
           <li className="flex items-start gap-3">
@@ -262,9 +249,8 @@ export default async function EdexcelPastPapersPage() {
               3
             </span>
             <span>
-              <strong className="text-foreground">10–55 min:</strong> Write the
-              response in full exam conditions. Phone on airplane mode, no
-              notes, no text.
+              <strong className="text-foreground">10–55 min:</strong> Write the response in full
+              exam conditions. Phone on airplane mode, no notes, no text.
             </span>
           </li>
           <li className="flex items-start gap-3">
@@ -272,9 +258,9 @@ export default async function EdexcelPastPapersPage() {
               4
             </span>
             <span>
-              <strong className="text-foreground">55–75 min:</strong> Mark
-              against the published mark scheme and examiner report. Tag every
-              paragraph for understanding, language analysis, context, and comparison.
+              <strong className="text-foreground">55–75 min:</strong> Mark against the published
+              mark scheme and examiner report. Tag every paragraph for understanding, language
+              analysis, context, and comparison.
             </span>
           </li>
           <li className="flex items-start gap-3">
@@ -282,9 +268,8 @@ export default async function EdexcelPastPapersPage() {
               5
             </span>
             <span>
-              <strong className="text-foreground">75–90 min:</strong> Write a
-              short improvement note listing the two changes that would have
-              moved the response up a band.
+              <strong className="text-foreground">75–90 min:</strong> Write a short improvement note
+              listing the two changes that would have moved the response up a band.
             </span>
           </li>
         </ol>

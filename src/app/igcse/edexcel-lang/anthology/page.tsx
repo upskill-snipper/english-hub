@@ -24,6 +24,11 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology — The English Hub',
+    description:
+      'Pearson Edexcel IGCSE Language A 4EA1 — the 10 prescribed non-fiction texts in the anthology. Full study guides and exam practice for Paper 1 Section A.',
+  },
   title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology — The English Hub',
   description:
     'Pearson Edexcel IGCSE Language A 4EA1 — the 10 prescribed non-fiction texts in the anthology. Full study guides and exam practice for Paper 1 Section A.',

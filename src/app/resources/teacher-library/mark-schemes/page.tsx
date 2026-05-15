@@ -5,6 +5,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Mark Schemes — Teacher Library',
+    description:
+      'Mark scheme reference cards for AQA, Edexcel, OCR, and Eduqas GCSE English. Quick-reference grade descriptors and AOs.',
+  },
   title: 'Mark Schemes — Teacher Library',
   description:
     'Mark scheme reference cards for AQA, Edexcel, OCR, and Eduqas GCSE English. Quick-reference grade descriptors and AOs.',

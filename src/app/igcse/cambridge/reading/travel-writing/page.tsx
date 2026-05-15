@@ -13,24 +13,22 @@ import {
   Type,
   FileText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title:
-    'Travel Writing — Reading Practice Framework — The English Hub',
+  openGraph: {
+    title: 'Travel Writing — Reading Practice Framework — The English Hub',
+    description:
+      'Cambridge IGCSE Paper 1 reading practice on travel writing. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+  },
+  title: 'Travel Writing — Reading Practice Framework — The English Hub',
   description:
     'Cambridge IGCSE Paper 1 reading practice on travel writing. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/reading/travel-writing',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/reading/travel-writing',
   },
 }
 
@@ -87,11 +85,7 @@ export default async function TravelWritingPage() {
   return (
     <div className="space-y-8 pb-16">
       <header className="space-y-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All reading frameworks
         </Button>
@@ -103,14 +97,11 @@ export default async function TravelWritingPage() {
           <Badge variant="secondary">Reading framework</Badge>
           <Badge variant="secondary">Paper 1</Badge>
         </div>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Travel Writing
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Travel Writing</h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
-          Travel writing is where reportage meets memoir. The writer is
-          describing a real place, but their voice, biases and surprise are
-          all part of the story. This framework trains you to read both
-          landscape and writer at the same time.
+          Travel writing is where reportage meets memoir. The writer is describing a real place, but
+          their voice, biases and surprise are all part of the story. This framework trains you to
+          read both landscape and writer at the same time.
         </p>
       </header>
 
@@ -127,10 +118,9 @@ export default async function TravelWritingPage() {
         </CardHeader>
         <CardContent>
           <p className="text-body-sm text-foreground">
-            Travel passages test your ability to read non-fiction voice, to
-            track observation and attitude, and to comment on how a writer
-            presents an unfamiliar place to a home audience. Non-fiction is
-            a regular feature of Paper 1.
+            Travel passages test your ability to read non-fiction voice, to track observation and
+            attitude, and to comment on how a writer presents an unfamiliar place to a home
+            audience. Non-fiction is a regular feature of Paper 1.
           </p>
         </CardContent>
       </Card>
@@ -138,13 +128,11 @@ export default async function TravelWritingPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Suggested practice texts
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Suggested practice texts</h2>
         </div>
         <p className="mb-4 text-body-sm text-muted-foreground">
-          Three classic travel writers whose books are in the public domain.
-          Pick a chapter that describes arrival in a new place.
+          Three classic travel writers whose books are in the public domain. Pick a chapter that
+          describes arrival in a new place.
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           {sources.map((s) => (
@@ -174,9 +162,7 @@ export default async function TravelWritingPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Comprehension questions
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Comprehension questions</h2>
         </div>
         <Card>
           <CardContent className="pt-6">
@@ -192,19 +178,17 @@ export default async function TravelWritingPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <MessageSquare className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Language analysis prompt
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Language analysis prompt</h2>
         </div>
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="pt-6">
             <p className="text-body-md italic text-foreground">
-              &ldquo;How does the writer use language to present this place
-              and their own reaction to it?&rdquo;
+              &ldquo;How does the writer use language to present this place and their own reaction
+              to it?&rdquo;
             </p>
             <p className="mt-4 text-body-sm text-muted-foreground">
-              Write a paragraph of roughly 150 words. Quote three specific
-              phrases covering place, people and the writer&rsquo;s voice.
+              Write a paragraph of roughly 150 words. Quote three specific phrases covering place,
+              people and the writer&rsquo;s voice.
             </p>
           </CardContent>
         </Card>
@@ -213,15 +197,12 @@ export default async function TravelWritingPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Summary task template
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Summary task template</h2>
         </div>
         <Card>
           <CardContent className="pt-6 space-y-3 text-body-sm text-foreground">
             <p>
-              Summarise the passage in <strong>no more than 120 words</strong>
-              .
+              Summarise the passage in <strong>no more than 120 words</strong>.
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
@@ -231,12 +212,10 @@ export default async function TravelWritingPage() {
                 <strong>Sentence 2:</strong> Their first impression.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> Two specific observations of
-                place or people.
+                <strong>Sentences 3–4:</strong> Two specific observations of place or people.
               </li>
               <li>
-                <strong>Sentence 5:</strong> The writer&rsquo;s overall
-                attitude by the end.
+                <strong>Sentence 5:</strong> The writer&rsquo;s overall attitude by the end.
               </li>
             </ul>
           </CardContent>
@@ -246,9 +225,7 @@ export default async function TravelWritingPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Type className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Vocabulary focus
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Vocabulary focus</h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
           Eight terms to use when writing about travel writing.
@@ -292,11 +269,7 @@ export default async function TravelWritingPage() {
           <ArrowLeft className="size-3.5" />
           Children&rsquo;s classics
         </Button>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           All frameworks
           <ArrowRight className="size-3.5" />
         </Button>

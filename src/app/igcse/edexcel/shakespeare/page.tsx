@@ -7,6 +7,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'IGCSE Edexcel Shakespeare — Macbeth, Romeo and Juliet, Much Ado — The English Hub',
+    description:
+      'Pearson Edexcel IGCSE Literature 4ET1 Shakespeare section. Three plays: Macbeth, Romeo and Juliet, Much Ado About Nothing. Themes, characters, essay plans.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare',
   },

@@ -9,6 +9,14 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
+  openGraph: {
+    title: 'The Émigrée -- Carol Rumens -- The English Hub',
+    description:
+      'Interactive study guide for The Émigrée by Carol Rumens. GCSE Power and Conflict poetry analysis with annotations, key quotes, language devices, and comparisons.',
+  },
+  alternates: {
+    canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/the-emigree',
+  },
   title: 'The Émigrée -- Carol Rumens -- The English Hub',
   description:
     'Interactive study guide for The Émigrée by Carol Rumens. GCSE Power and Conflict poetry analysis with annotations, key quotes, language devices, and comparisons.',

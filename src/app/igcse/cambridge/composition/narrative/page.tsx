@@ -12,24 +12,22 @@ import {
   ListChecks,
   ChevronLeft,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Narrative Writing — Cambridge IGCSE Composition',
+    description:
+      'Cambridge IGCSE narrative writing techniques. Story structure, character, dialogue, tension and pacing, Grade 9 model stories and 30 practice prompts.',
+  },
   title: 'Narrative Writing — Cambridge IGCSE Composition',
   description:
     'Cambridge IGCSE narrative writing techniques. Story structure, character, dialogue, tension and pacing, Grade 9 model stories and 30 practice prompts.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/narrative',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/narrative',
   },
 }
 
@@ -89,11 +87,7 @@ export default async function NarrativeHubPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <Button
-        variant="ghost"
-        size="sm"
-        render={<Link href="/igcse/cambridge/composition" />}
-      >
+      <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/composition" />}>
         <ChevronLeft className="size-3.5" />
         Back to composition
       </Button>
@@ -113,9 +107,9 @@ export default async function NarrativeHubPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Cambridge asks for a short story of{' '}
-            <strong className="text-foreground">350–450 words</strong>. That
-            is a single scene, a single change, a single turn. The best
-            stories cut the fat and let one small moment do all the work.
+            <strong className="text-foreground">350–450 words</strong>. That is a single scene, a
+            single change, a single turn. The best stories cut the fat and let one small moment do
+            all the work.
           </p>
         </div>
       </section>
@@ -123,9 +117,7 @@ export default async function NarrativeHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Six narrative techniques
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Six narrative techniques</h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -154,11 +146,7 @@ export default async function NarrativeHubPage() {
                     {s.description}
                   </CardDescription>
                   <div className="mt-auto">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      render={<Link href={s.href} />}
-                    >
+                    <Button variant="ghost" size="sm" render={<Link href={s.href} />}>
                       Open guide
                       <ArrowRight className="size-3.5" />
                     </Button>
@@ -175,13 +163,11 @@ export default async function NarrativeHubPage() {
           The golden rule: one change
         </h2>
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
-          At 450 words, you cannot tell a life story. You can, however, tell
-          a story about a single moment where something changes: a decision,
-          a realisation, a loss, a meeting. The examiner report uses the
-          phrase <em>&ldquo;shapely and purposeful&rdquo;</em> — shapely means
-          it has a beginning, middle and end; purposeful means the reader
-          leaves knowing what has changed. Everything in the story should
-          serve that one change.
+          At 450 words, you cannot tell a life story. You can, however, tell a story about a single
+          moment where something changes: a decision, a realisation, a loss, a meeting. The examiner
+          report uses the phrase <em>&ldquo;shapely and purposeful&rdquo;</em> — shapely means it
+          has a beginning, middle and end; purposeful means the reader leaves knowing what has
+          changed. Everything in the story should serve that one change.
         </p>
       </section>
     </div>

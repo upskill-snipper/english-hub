@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Frankenstein Key Chapters Analysed | The English Hub',
+    description:
+      'In-depth GCSE analysis of key chapters in Frankenstein by Mary Shelley: Letters, Chapters 1-5 (creation), Chapter 10 (creature speaks), Chapters 16-17 (the bargain), and Chapters 20-24 (pursuit and destruction).',
+  },
   title: 'Frankenstein Key Chapters Analysed | The English Hub',
   description:
     'In-depth GCSE analysis of key chapters in Frankenstein by Mary Shelley: Letters, Chapters 1-5 (creation), Chapter 10 (creature speaks), Chapters 16-17 (the bargain), and Chapters 20-24 (pursuit and destruction).',

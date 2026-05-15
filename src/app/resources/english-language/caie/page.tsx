@@ -6,6 +6,11 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Cambridge IGCSE English Language A and B resources — The English Hub',
+    description:
+      'Cambridge IGCSE English Language resources. Reading and composition skills, model answers, mark schemes and exam technique for 0500 and 0990.',
+  },
   title: 'Cambridge IGCSE English Language A and B resources — The English Hub',
   description:
     'Cambridge IGCSE English Language resources. Reading and composition skills, model answers, mark schemes and exam technique for 0500 and 0990.',

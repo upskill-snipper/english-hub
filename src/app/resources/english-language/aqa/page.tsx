@@ -4,6 +4,11 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'AQA GCSE English Language resources — The English Hub',
+    description:
+      'AQA GCSE English Language Paper 1 and Paper 2 resources. Reading techniques, writing skills, exam technique, mark schemes and grade boundaries.',
+  },
   title: 'AQA GCSE English Language resources — The English Hub',
   description:
     'AQA GCSE English Language Paper 1 and Paper 2 resources. Reading techniques, writing skills, exam technique, mark schemes and grade boundaries.',

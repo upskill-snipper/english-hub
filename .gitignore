@@ -25,6 +25,8 @@ docs/Biz Files/
 
 # Backup and temp files
 *.bak
+*.bak-seo-autofix
+*.bak-seo-fix
 POETRY_ANTHOLOGY_SUMMARY.txt
 
 # Generated Word documents

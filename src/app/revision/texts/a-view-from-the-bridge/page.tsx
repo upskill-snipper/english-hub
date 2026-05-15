@@ -8,6 +8,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'A View from the Bridge revision guide — themes, characters, key quotes — The English Hub',
+    description: 'A View from the Bridge IGCSE revision — Miller',
+  },
   title: 'A View from the Bridge revision guide — themes, characters, key quotes — The English Hub',
   description:
     "A View from the Bridge IGCSE revision — Miller's tragedy with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",

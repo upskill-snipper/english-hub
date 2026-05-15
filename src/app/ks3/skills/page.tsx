@@ -5,6 +5,11 @@ import type { Strand, YearNumber } from '@/lib/ks3/curriculum'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'KS3 skill codes',
+    description:
+      'Every KS3 English skill code (Y7→Y8→Y9 progression) across Reading, Writing, Language Control, and Speaking & Listening.',
+  },
   title: 'KS3 skill codes',
   description:
     'Every KS3 English skill code (Y7→Y8→Y9 progression) across Reading, Writing, Language Control, and Speaking & Listening.',

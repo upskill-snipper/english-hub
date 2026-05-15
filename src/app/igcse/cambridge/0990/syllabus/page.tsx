@@ -10,17 +10,17 @@ import {
   Sparkles,
   ListChecks,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'IGCSE Language B course overview | Cambridge IGCSE | The English Hub',
+    description:
+      'Full overview of the Cambridge IGCSE Language B First Language English course — what is tested across reading and writing, and the skills each paper assesses.',
+  },
   title: 'IGCSE Language B course overview | Cambridge IGCSE | The English Hub',
   description:
     'Full overview of the Cambridge IGCSE Language B First Language English course — what is tested across reading and writing, and the skills each paper assesses.',
@@ -74,8 +74,7 @@ const skills = [
   {
     area: 'Writing',
     title: 'Control accuracy',
-    description:
-      'Use accurate spelling, punctuation and grammar to write clearly and effectively.',
+    description: 'Use accurate spelling, punctuation and grammar to write clearly and effectively.',
   },
   {
     area: 'Writing',
@@ -116,11 +115,7 @@ export default async function Cambridge0990SyllabusPage() {
   return (
     <div className="space-y-10 pb-16">
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/0990" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/0990" />}>
           <ArrowLeft className="size-3.5" />
           Back to IGCSE Language B hub
         </Button>
@@ -140,9 +135,8 @@ export default async function Cambridge0990SyllabusPage() {
             Course overview
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Everything assessed in Cambridge IGCSE Language B First Language
-            English: the key skills, the two papers and what each one is
-            actually testing.
+            Everything assessed in Cambridge IGCSE Language B First Language English: the key
+            skills, the two papers and what each one is actually testing.
           </p>
         </div>
       </section>
@@ -163,41 +157,23 @@ export default async function Cambridge0990SyllabusPage() {
 
       {/* Overview */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Overview at a glance
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Overview at a glance</h2>
         <div className="mt-5 grid gap-4 sm:grid-cols-4">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-medium text-muted-foreground">
-              Total time
-            </p>
-            <p className="mt-1 text-heading-sm font-heading text-foreground">
-              4 hours
-            </p>
+            <p className="text-body-xs font-medium text-muted-foreground">Total time</p>
+            <p className="mt-1 text-heading-sm font-heading text-foreground">4 hours</p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-medium text-muted-foreground">
-              Total marks
-            </p>
-            <p className="mt-1 text-heading-sm font-heading text-foreground">
-              160
-            </p>
+            <p className="text-body-xs font-medium text-muted-foreground">Total marks</p>
+            <p className="mt-1 text-heading-sm font-heading text-foreground">160</p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-medium text-muted-foreground">
-              Papers
-            </p>
-            <p className="mt-1 text-heading-sm font-heading text-foreground">
-              2
-            </p>
+            <p className="text-body-xs font-medium text-muted-foreground">Papers</p>
+            <p className="mt-1 text-heading-sm font-heading text-foreground">2</p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-medium text-muted-foreground">
-              Grade scale
-            </p>
-            <p className="mt-1 text-heading-sm font-heading text-foreground">
-              9–1
-            </p>
+            <p className="text-body-xs font-medium text-muted-foreground">Grade scale</p>
+            <p className="mt-1 text-heading-sm font-heading text-foreground">9–1</p>
           </div>
         </div>
       </section>
@@ -206,9 +182,7 @@ export default async function Cambridge0990SyllabusPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            The two papers
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">The two papers</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           {paperSummary.map((p) => {
@@ -229,9 +203,7 @@ export default async function Cambridge0990SyllabusPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <p className="text-body-sm text-muted-foreground leading-relaxed">
-                    {p.content}
-                  </p>
+                  <p className="text-body-sm text-muted-foreground leading-relaxed">{p.content}</p>
                   <dl className="grid gap-2 text-body-xs text-muted-foreground sm:grid-cols-2">
                     <div className="rounded-md border border-border/60 bg-muted/30 p-2">
                       <dt className="font-medium text-foreground">Duration</dt>
@@ -257,28 +229,20 @@ export default async function Cambridge0990SyllabusPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Tested skills in detail
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Tested skills in detail</h2>
         </div>
         <p className="mb-5 max-w-3xl text-body-sm text-muted-foreground">
-          Every question on every paper is marked against one of these nine
-          skills. Knowing which skill a question targets tells you what the
-          examiner is actually looking for.
+          Every question on every paper is marked against one of these nine skills. Knowing which
+          skill a question targets tells you what the examiner is actually looking for.
         </p>
         <div className="grid gap-4 md:grid-cols-2">
           {skills.map((skill) => (
-            <div
-              key={skill.title}
-              className="rounded-2xl border border-border/60 bg-card p-5"
-            >
+            <div key={skill.title} className="rounded-2xl border border-border/60 bg-card p-5">
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-9 items-center justify-center rounded-lg bg-primary/10 px-2.5 text-body-sm font-semibold text-primary">
                   {skill.area}
                 </span>
-                <h3 className="text-body font-semibold text-foreground">
-                  {skill.title}
-                </h3>
+                <h3 className="text-body font-semibold text-foreground">{skill.title}</h3>
               </div>
               <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
                 {skill.description}
@@ -290,9 +254,7 @@ export default async function Cambridge0990SyllabusPage() {
 
       {/* Skills tested */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Reading skills tested
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Reading skills tested</h2>
         <ul className="mt-4 grid gap-2 text-body-sm text-muted-foreground sm:grid-cols-2">
           <li>• Identifying explicit and implicit meaning in non-fiction</li>
           <li>• Inferring attitude, tone and viewpoint</li>
@@ -301,9 +263,7 @@ export default async function Cambridge0990SyllabusPage() {
           <li>• Selecting relevant material under pressure</li>
           <li>• Summarising key ideas in your own words</li>
         </ul>
-        <h2 className="mt-8 text-heading-md font-heading text-foreground">
-          Writing skills tested
-        </h2>
+        <h2 className="mt-8 text-heading-md font-heading text-foreground">Writing skills tested</h2>
         <ul className="mt-4 grid gap-2 text-body-sm text-muted-foreground sm:grid-cols-2">
           <li>• Directed writing in response to a stimulus text</li>
           <li>• Matching register and form to audience and purpose</li>
@@ -316,9 +276,7 @@ export default async function Cambridge0990SyllabusPage() {
 
       {/* Next */}
       <section className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Next steps
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Next steps</h2>
         <div className="mt-4 flex flex-wrap gap-2">
           <Button size="sm" render={<Link href="/igcse/cambridge/0990/paper-1" />}>
             Paper 1 Reading

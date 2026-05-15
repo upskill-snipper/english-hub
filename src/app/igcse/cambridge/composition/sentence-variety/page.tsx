@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Sentence Variety — Cambridge IGCSE Composition',
+    description:
+      'Simple, compound, complex and compound-complex sentences for Cambridge IGCSE composition, plus rhetorical techniques: tricolon, anaphora, inversion.',
+  },
   title: 'Sentence Variety — Cambridge IGCSE Composition',
   description:
     'Simple, compound, complex and compound-complex sentences for Cambridge IGCSE composition, plus rhetorical techniques: tricolon, anaphora, inversion.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/sentence-variety',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/sentence-variety',
   },
 }
 
@@ -28,8 +32,7 @@ const sentences = [
     name: 'Compound',
     definition:
       'Two independent clauses joined by a coordinating conjunction (FANBOYS: for, and, nor, but, or, yet, so) or a semicolon.',
-    example:
-      'The door slammed, and the dog started barking in the kitchen.',
+    example: 'The door slammed, and the dog started barking in the kitchen.',
     use: 'Balanced ideas, pairs, calm description.',
   },
   {
@@ -53,8 +56,7 @@ const sentences = [
 const rhetorical = [
   {
     name: 'Tricolon (rule of three)',
-    definition:
-      'Three parallel phrases or clauses in a row. Creates rhythm and completeness.',
+    definition: 'Three parallel phrases or clauses in a row. Creates rhythm and completeness.',
     example: 'I came. I saw. I left the key on the table.',
     note: 'Break the pattern on the third item to surprise the reader.',
   },
@@ -70,16 +72,14 @@ const rhetorical = [
     name: 'Asyndeton',
     definition:
       'A list without conjunctions — commas only, no &ldquo;and&rdquo; before the final item. Speeds the sentence up.',
-    example:
-      'The room smelled of rain, old dust, peppermints, fear.',
+    example: 'The room smelled of rain, old dust, peppermints, fear.',
     note: 'Opposite of the rule of three — this lands like a blow.',
   },
   {
     name: 'Polysyndeton',
     definition:
       'The opposite of asyndeton: putting &ldquo;and&rdquo; between every item in a list. Slows the sentence down and feels deliberate.',
-    example:
-      'She walked and she thought and she counted and she kept on walking.',
+    example: 'She walked and she thought and she counted and she kept on walking.',
     note: 'Builds rhythm; useful for descriptive and reflective passages.',
   },
   {
@@ -110,11 +110,7 @@ export default async function SentenceVarietyPage() {
 
   return (
     <div className="space-y-10 pb-16">
-      <Button
-        variant="ghost"
-        size="sm"
-        render={<Link href="/igcse/cambridge/composition" />}
-      >
+      <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/composition" />}>
         <ChevronLeft className="size-3.5" />
         Back to composition
       </Button>
@@ -133,11 +129,10 @@ export default async function SentenceVarietyPage() {
             Sentence variety
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Cambridge\u2019s top bands reward &ldquo;a range of sentence
-            structures used for effect&rdquo;. The word that matters is{' '}
-            <em>effect</em> — you are not showing off that you know how to
-            build a complex sentence; you are using different structures to
-            do different jobs.
+            Cambridge\u2019s top bands reward &ldquo;a range of sentence structures used for
+            effect&rdquo;. The word that matters is <em>effect</em> — you are not showing off that
+            you know how to build a complex sentence; you are using different structures to do
+            different jobs.
           </p>
         </div>
       </section>
@@ -154,9 +149,7 @@ export default async function SentenceVarietyPage() {
           {sentences.map((s) => (
             <Card key={s.name}>
               <CardHeader>
-                <CardTitle className="text-heading-sm font-heading">
-                  {s.name}
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">{s.name}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-body-sm text-muted-foreground">
                 <p className="leading-relaxed">{s.definition}</p>
@@ -178,20 +171,16 @@ export default async function SentenceVarietyPage() {
 
       {/* Rhetorical */}
       <section>
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Rhetorical techniques
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">Rhetorical techniques</h2>
         <p className="mt-2 max-w-3xl text-body-sm text-muted-foreground">
-          Use sparingly. One per paragraph at most, and only where it
-          serves the meaning. Rhetorical devices lose their power in clumps.
+          Use sparingly. One per paragraph at most, and only where it serves the meaning. Rhetorical
+          devices lose their power in clumps.
         </p>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           {rhetorical.map((r) => (
             <Card key={r.name}>
               <CardHeader>
-                <CardTitle className="text-heading-sm font-heading">
-                  {r.name}
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">{r.name}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-body-sm text-muted-foreground">
                 <p className="leading-relaxed">{r.definition}</p>
@@ -210,22 +199,18 @@ export default async function SentenceVarietyPage() {
 
       {/* Rhythm advice */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Read it aloud
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Read it aloud</h2>
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
-          The single best sentence-variety test is to read your work aloud.
-          Where you take the same breath twice in a row, you have the same
-          sentence length twice in a row. Where you have to stop for air,
-          you probably have a runaway compound-complex sentence that needs
-          breaking. Rhythm is felt, not calculated.
+          The single best sentence-variety test is to read your work aloud. Where you take the same
+          breath twice in a row, you have the same sentence length twice in a row. Where you have to
+          stop for air, you probably have a runaway compound-complex sentence that needs breaking.
+          Rhythm is felt, not calculated.
         </p>
         <div className="mt-4 rounded-lg border border-border/60 bg-muted/40 p-4 text-body-sm">
           <p className="font-semibold text-foreground">Useful target</p>
           <p className="mt-1 text-muted-foreground">
-            In any paragraph, at least three different sentence lengths. No
-            two sentences of the same structure in a row. One deliberately
-            short sentence per paragraph for rhythm.
+            In any paragraph, at least three different sentence lengths. No two sentences of the
+            same structure in a row. One deliberately short sentence per paragraph for rhythm.
           </p>
         </div>
       </section>

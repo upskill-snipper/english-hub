@@ -9,6 +9,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Animal Farm revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Animal Farm GCSE revision — Orwell',
+  },
   title: 'Animal Farm revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Animal Farm GCSE revision — Orwell's allegorical novella by chapter with characters, themes, context, key quotes and essay plans. AQA, Edexcel and OCR.",

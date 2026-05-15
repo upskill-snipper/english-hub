@@ -2,6 +2,12 @@ import type { Metadata } from 'next'
 import { QuizBuilder } from '@/components/school/QuizBuilder'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Quiz Builder | The English Hub',
+    description:
+      'Create custom quizzes for your English classes with multiple question types, templates, and sharing options.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/school/tools/quiz-builder' },
   title: 'Quiz Builder | The English Hub',
   description:
     'Create custom quizzes for your English classes with multiple question types, templates, and sharing options.',

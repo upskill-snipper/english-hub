@@ -7,6 +7,11 @@ import { headers } from 'next/headers'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Edexcel Paper 2: Non-Fiction & Writing for Real Purposes',
+    description:
+      'Complete revision guide for Edexcel English Language Paper 2 (1EN0/02). Two linked non-fiction texts, writing for real purposes, marking guides, key skills, and example responses.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel/paper-2' },
   title: 'Edexcel Paper 2: Non-Fiction & Writing for Real Purposes',
   description:

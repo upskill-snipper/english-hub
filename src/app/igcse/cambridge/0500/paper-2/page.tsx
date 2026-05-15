@@ -10,18 +10,17 @@ import {
   Feather,
   ScrollText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 2 Directed Writing & Composition — IGCSE Language A',
+    description:
+      'IGCSE Language A Paper 2 overview. Section A directed writing, Section B descriptive or narrative composition. Marks, timings and technique. Aligns with Cambridge syllabus 0500.',
+  },
   title: 'Paper 2 Directed Writing & Composition — IGCSE Language A',
   description:
     'IGCSE Language A Paper 2 overview. Section A directed writing, Section B descriptive or narrative composition. Marks, timings and technique. Aligns with Cambridge syllabus 0500.',
@@ -92,15 +91,14 @@ export default async function Paper2HubPage() {
             Paper 2: Directed Writing and Composition
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Two tasks, two hours, eighty marks. Section A tests your ability
-            to shape writing for a real-world purpose. Section B is your
-            chance to write a composition that engages and surprises.
+            Two tasks, two hours, eighty marks. Section A tests your ability to shape writing for a
+            real-world purpose. Section B is your chance to write a composition that engages and
+            surprises.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3 text-body-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <Clock className="size-3.5" />
-              2 hours
+              <Clock className="size-3.5" />2 hours
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
               <Target className="size-3.5" />
@@ -132,9 +130,7 @@ export default async function Paper2HubPage() {
                     <Icon className="size-5 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <CardTitle className="text-heading-md font-heading">
-                      {s.title}
-                    </CardTitle>
+                    <CardTitle className="text-heading-md font-heading">{s.title}</CardTitle>
                     <CardDescription>{s.split}</CardDescription>
                   </div>
                   <Badge className="bg-primary/10 text-primary border-primary/20">
@@ -146,11 +142,7 @@ export default async function Paper2HubPage() {
                 <p className="text-body-sm text-muted-foreground leading-relaxed">
                   {s.description}
                 </p>
-                <Button
-                  variant="default"
-                  size="sm"
-                  render={<Link href={s.href} />}
-                >
+                <Button variant="default" size="sm" render={<Link href={s.href} />}>
                   Directed writing guide
                   <ArrowRight className="size-3.5" />
                 </Button>
@@ -169,9 +161,8 @@ export default async function Paper2HubPage() {
           </h2>
         </div>
         <p className="mb-5 text-body-sm text-muted-foreground">
-          You pick ONE of four titles — two descriptive, two narrative.
-          350–450 words. Marked on content and structure (16) plus style and
-          accuracy (24).
+          You pick ONE of four titles — two descriptive, two narrative. 350–450 words. Marked on
+          content and structure (16) plus style and accuracy (24).
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           {compositionOptions.map((opt) => {
@@ -190,9 +181,7 @@ export default async function Paper2HubPage() {
                       {opt.marks} marks
                     </Badge>
                   </div>
-                  <CardTitle className="text-heading-md font-heading">
-                    {opt.title}
-                  </CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{opt.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-1 flex-col gap-4">
                   <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -220,39 +209,29 @@ export default async function Paper2HubPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Clock className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Suggested timing plan
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Suggested timing plan</h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">
-              5 min — read
-            </p>
+            <p className="text-body-xs font-semibold text-primary">5 min — read</p>
             <p className="mt-1 text-body-sm text-foreground">
               Read the Section A stimulus text and Section B titles.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">
-              50 min — Section A
-            </p>
+            <p className="text-body-xs font-semibold text-primary">50 min — Section A</p>
             <p className="mt-1 text-body-sm text-foreground">
               Plan (5), draft (40), proofread (5). Stay within 350 words.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">
-              55 min — Section B
-            </p>
+            <p className="text-body-xs font-semibold text-primary">55 min — Section B</p>
             <p className="mt-1 text-body-sm text-foreground">
               Plan (8), draft (40), proofread (7). Stay within 450 words.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">
-              10 min — check
-            </p>
+            <p className="text-body-xs font-semibold text-primary">10 min — check</p>
             <p className="mt-1 text-body-sm text-foreground">
               Final pass for spelling, punctuation, tense consistency.
             </p>

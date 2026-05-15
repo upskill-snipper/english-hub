@@ -17,6 +17,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'Explorers or Boys Messing About? — Steven Morris — IGCSE Language A Anthology — The English Hub',
+    description: 'Study guide for ',
+  },
   title:
     'Explorers or Boys Messing About? — Steven Morris — IGCSE Language A Anthology — The English Hub',
   description:

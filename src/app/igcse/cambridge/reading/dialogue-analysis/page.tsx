@@ -13,24 +13,22 @@ import {
   Type,
   FileText,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
-  title:
-    'Dialogue Analysis — Reading Practice Framework — The English Hub',
+  openGraph: {
+    title: 'Dialogue Analysis — Reading Practice Framework — The English Hub',
+    description:
+      'Cambridge IGCSE Paper 1 reading practice for analysing dialogue in fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
+  },
+  title: 'Dialogue Analysis — Reading Practice Framework — The English Hub',
   description:
     'Cambridge IGCSE Paper 1 reading practice for analysing dialogue in fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/reading/dialogue-analysis',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/reading/dialogue-analysis',
   },
 }
 
@@ -87,11 +85,7 @@ export default async function DialogueAnalysisPage() {
   return (
     <div className="space-y-8 pb-16">
       <header className="space-y-4">
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/reading" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/reading" />}>
           <ArrowLeft className="size-3.5" />
           All reading frameworks
         </Button>
@@ -103,14 +97,11 @@ export default async function DialogueAnalysisPage() {
           <Badge variant="secondary">Reading framework</Badge>
           <Badge variant="secondary">Paper 1</Badge>
         </div>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Dialogue Analysis
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Dialogue Analysis</h1>
         <p className="max-w-3xl text-body-lg text-muted-foreground">
-          Dialogue is where fiction does its most compressed work. A good
-          exchange reveals character, relationship, conflict and change in a
-          handful of lines. This framework trains you to read beneath the
-          surface of what people say.
+          Dialogue is where fiction does its most compressed work. A good exchange reveals
+          character, relationship, conflict and change in a handful of lines. This framework trains
+          you to read beneath the surface of what people say.
         </p>
       </header>
 
@@ -127,10 +118,9 @@ export default async function DialogueAnalysisPage() {
         </CardHeader>
         <CardContent>
           <p className="text-body-sm text-foreground">
-            Dialogue passages test your ability to infer relationships and
-            power, to spot subtext, and to comment on the effect of speech
-            tags, interruptions and pauses. All of these are rewarded on
-            Paper 1.
+            Dialogue passages test your ability to infer relationships and power, to spot subtext,
+            and to comment on the effect of speech tags, interruptions and pauses. All of these are
+            rewarded on Paper 1.
           </p>
         </CardContent>
       </Card>
@@ -138,14 +128,11 @@ export default async function DialogueAnalysisPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Suggested practice texts
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Suggested practice texts</h2>
         </div>
         <p className="mb-4 text-body-sm text-muted-foreground">
-          These three texts all feature dialogue-rich scenes. Look for an
-          exchange between two or three characters of around 600 to 900
-          words.
+          These three texts all feature dialogue-rich scenes. Look for an exchange between two or
+          three characters of around 600 to 900 words.
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           {sources.map((s) => (
@@ -175,9 +162,7 @@ export default async function DialogueAnalysisPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Comprehension questions
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Comprehension questions</h2>
         </div>
         <Card>
           <CardContent className="pt-6">
@@ -193,20 +178,17 @@ export default async function DialogueAnalysisPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <MessageSquare className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Language analysis prompt
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Language analysis prompt</h2>
         </div>
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="pt-6">
             <p className="text-body-md italic text-foreground">
-              &ldquo;How does the writer use language to create tension and
-              reveal character through this dialogue?&rdquo;
+              &ldquo;How does the writer use language to create tension and reveal character through
+              this dialogue?&rdquo;
             </p>
             <p className="mt-4 text-body-sm text-muted-foreground">
-              Write roughly 150 words. Quote three short phrases, each from a
-              different character if possible, and comment on tone, subtext
-              and speech tags.
+              Write roughly 150 words. Quote three short phrases, each from a different character if
+              possible, and comment on tone, subtext and speech tags.
             </p>
           </CardContent>
         </Card>
@@ -215,9 +197,7 @@ export default async function DialogueAnalysisPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <FileText className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Summary task template
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Summary task template</h2>
         </div>
         <Card>
           <CardContent className="pt-6 space-y-3 text-body-sm text-foreground">
@@ -226,20 +206,17 @@ export default async function DialogueAnalysisPage() {
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                <strong>Sentence 1:</strong> Who is speaking and where they
-                are.
+                <strong>Sentence 1:</strong> Who is speaking and where they are.
               </li>
               <li>
-                <strong>Sentence 2:</strong> The topic on the surface of the
-                conversation.
+                <strong>Sentence 2:</strong> The topic on the surface of the conversation.
               </li>
               <li>
-                <strong>Sentences 3–4:</strong> What the dialogue really
-                reveals about the relationship.
+                <strong>Sentences 3–4:</strong> What the dialogue really reveals about the
+                relationship.
               </li>
               <li>
-                <strong>Sentence 5:</strong> What has changed by the end of
-                the exchange.
+                <strong>Sentence 5:</strong> What has changed by the end of the exchange.
               </li>
             </ul>
           </CardContent>
@@ -249,9 +226,7 @@ export default async function DialogueAnalysisPage() {
       <section>
         <div className="mb-4 flex items-center gap-3">
           <Type className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Vocabulary focus
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Vocabulary focus</h2>
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
           Eight terms to use when analysing dialogue.
@@ -290,9 +265,7 @@ export default async function DialogueAnalysisPage() {
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/cambridge/reading/character-introductions" />
-          }
+          render={<Link href="/igcse/cambridge/reading/character-introductions" />}
         >
           <ArrowLeft className="size-3.5" />
           Character introductions
@@ -300,9 +273,7 @@ export default async function DialogueAnalysisPage() {
         <Button
           variant="ghost"
           size="sm"
-          render={
-            <Link href="/igcse/cambridge/reading/setting-atmosphere" />
-          }
+          render={<Link href="/igcse/cambridge/reading/setting-atmosphere" />}
         >
           Next: Setting and atmosphere
           <ArrowRight className="size-3.5" />

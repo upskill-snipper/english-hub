@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Blood Brothers — Themes | The English Hub',
+    description:
+      'Detailed theme analysis for Blood Brothers by Willy Russell: Class, Nature vs Nurture, Superstition, Friendship, Violence and Fate.',
+  },
   title: 'Blood Brothers — Themes | The English Hub',
   description:
     'Detailed theme analysis for Blood Brothers by Willy Russell: Class, Nature vs Nurture, Superstition, Friendship, Violence and Fate.',

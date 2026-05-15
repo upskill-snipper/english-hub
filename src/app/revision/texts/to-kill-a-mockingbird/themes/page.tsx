@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'To Kill a Mockingbird — Themes | The English Hub',
+    description:
+      'Detailed theme analysis for To Kill a Mockingbird by Harper Lee: Racial Injustice, Moral Education, Loss of Innocence, Courage, Class and Empathy.',
+  },
   title: 'To Kill a Mockingbird — Themes | The English Hub',
   description:
     'Detailed theme analysis for To Kill a Mockingbird by Harper Lee: Racial Injustice, Moral Education, Loss of Innocence, Courage, Class and Empathy.',

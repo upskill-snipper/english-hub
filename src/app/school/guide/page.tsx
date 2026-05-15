@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import Link from "next/link"
+import { useState } from 'react'
+import Link from 'next/link'
 import {
   School,
   Users,
@@ -26,12 +26,12 @@ import {
   RefreshCw,
   Layers,
   Info,
-} from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
+} from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 
 // -- Types ---------------------------------------------------------------------
 
@@ -51,11 +51,11 @@ interface AccordionSection {
 // -- Data ----------------------------------------------------------------------
 
 const QUICK_STEPS: QuickStep[] = [
-  { id: 1, label: "Create school account" },
-  { id: 2, label: "Import teachers" },
-  { id: 3, label: "Import students" },
-  { id: 4, label: "Create classes and assign students" },
-  { id: 5, label: "Share login details with staff and students" },
+  { id: 1, label: 'Create school account' },
+  { id: 2, label: 'Import teachers' },
+  { id: 3, label: 'Import students' },
+  { id: 4, label: 'Create classes and assign students' },
+  { id: 5, label: 'Share login details with staff and students' },
 ]
 
 // -- Sub-components ------------------------------------------------------------
@@ -74,10 +74,10 @@ function StepRow({
       type="button"
       onClick={onToggle}
       className={cn(
-        "flex w-full items-center gap-3 rounded-lg border px-4 py-3 text-left transition-colors",
+        'flex w-full items-center gap-3 rounded-lg border px-4 py-3 text-left transition-colors',
         checked
-          ? "border-primary/30 bg-primary/5 text-muted-foreground line-through"
-          : "border-border bg-card hover:border-primary/40 hover:bg-primary/5",
+          ? 'border-primary/30 bg-primary/5 text-muted-foreground line-through'
+          : 'border-border bg-card hover:border-primary/40 hover:bg-primary/5',
       )}
     >
       {checked ? (
@@ -124,9 +124,7 @@ function AccordionItem({ section }: { section: AccordionSection }) {
       </button>
 
       {open && (
-        <div className="border-t border-border bg-background px-5 py-5">
-          {section.content}
-        </div>
+        <div className="border-t border-border bg-background px-5 py-5">{section.content}</div>
       )}
     </div>
   )
@@ -135,19 +133,24 @@ function AccordionItem({ section }: { section: AccordionSection }) {
 // -- Permission matrix ---------------------------------------------------------
 
 const PERMISSION_ROWS = [
-  { action: "View all student data",  admin: "Yes",            teacher: "Own classes only", student: "Own data only" },
-  { action: "Manage users",           admin: "Yes",            teacher: "No",               student: "No" },
-  { action: "Create classes",         admin: "Yes",            teacher: "No",               student: "No" },
-  { action: "View analytics",         admin: "All",            teacher: "Own classes",      student: "Own progress" },
-  { action: "Access resources",       admin: "Yes",            teacher: "Yes",              student: "Yes" },
-  { action: "Mark essays",            admin: "No",             teacher: "Yes",              student: "No" },
-  { action: "Submit work",            admin: "No",             teacher: "No",               student: "Yes" },
+  {
+    action: 'View all student data',
+    admin: 'Yes',
+    teacher: 'Own classes only',
+    student: 'Own data only',
+  },
+  { action: 'Manage users', admin: 'Yes', teacher: 'No', student: 'No' },
+  { action: 'Create classes', admin: 'Yes', teacher: 'No', student: 'No' },
+  { action: 'View analytics', admin: 'All', teacher: 'Own classes', student: 'Own progress' },
+  { action: 'Access resources', admin: 'Yes', teacher: 'Yes', student: 'Yes' },
+  { action: 'Mark essays', admin: 'No', teacher: 'Yes', student: 'No' },
+  { action: 'Submit work', admin: 'No', teacher: 'No', student: 'Yes' },
 ]
 
 function cellClass(value: string) {
-  if (value === "Yes" || value === "All") return "text-emerald-400 font-semibold"
-  if (value === "No") return "text-muted-foreground"
-  return "text-clay-600 font-medium"
+  if (value === 'Yes' || value === 'All') return 'text-emerald-400 font-semibold'
+  if (value === 'No') return 'text-muted-foreground'
+  return 'text-clay-600 font-medium'
 }
 
 function PermissionMatrix() {
@@ -166,12 +169,21 @@ function PermissionMatrix() {
           {PERMISSION_ROWS.map((row, i) => (
             <tr
               key={row.action}
-              className={cn("border-b border-border last:border-0", i % 2 === 0 ? "bg-card" : "bg-muted/20")}
+              className={cn(
+                'border-b border-border last:border-0',
+                i % 2 === 0 ? 'bg-card' : 'bg-muted/20',
+              )}
             >
               <td className="px-4 py-3 text-sm">{row.action}</td>
-              <td className={cn("px-4 py-3 text-center text-sm", cellClass(row.admin))}>{row.admin}</td>
-              <td className={cn("px-4 py-3 text-center text-sm", cellClass(row.teacher))}>{row.teacher}</td>
-              <td className={cn("px-4 py-3 text-center text-sm", cellClass(row.student))}>{row.student}</td>
+              <td className={cn('px-4 py-3 text-center text-sm', cellClass(row.admin))}>
+                {row.admin}
+              </td>
+              <td className={cn('px-4 py-3 text-center text-sm', cellClass(row.teacher))}>
+                {row.teacher}
+              </td>
+              <td className={cn('px-4 py-3 text-center text-sm', cellClass(row.student))}>
+                {row.student}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -231,7 +243,7 @@ function RoleCard({
   description: string
 }) {
   return (
-    <div className={cn("rounded-lg border p-4 space-y-1.5", color)}>
+    <div className={cn('rounded-lg border p-4 space-y-1.5', color)}>
       <div className="flex items-center gap-2">
         {icon}
         <span className="font-semibold text-sm">{role}</span>
@@ -257,11 +269,7 @@ function FaqItem({ question, answer }: { question: string; answer: React.ReactNo
           <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
         )}
       </button>
-      {open && (
-        <div className="pb-4 text-sm text-muted-foreground leading-relaxed">
-          {answer}
-        </div>
-      )}
+      {open && <div className="pb-4 text-sm text-muted-foreground leading-relaxed">{answer}</div>}
     </div>
   )
 }
@@ -272,7 +280,8 @@ function RolesContent() {
   return (
     <div className="space-y-4">
       <p className="text-sm text-muted-foreground">
-        English Hub has three user roles. Each role has a specific set of permissions designed to keep your school secure and organised.
+        English Hub has three user roles. Each role has a specific set of permissions designed to
+        keep your school secure and organised.
       </p>
       <div className="grid gap-3 sm:grid-cols-3">
         <RoleCard
@@ -311,7 +320,7 @@ function ImportTeachersContent() {
       <StepList
         items={[
           <span key="1">
-            Download the teacher import template:{" "}
+            Download the teacher import template:{' '}
             <Link
               href="/api/school/export/template?type=teacher"
               className="font-medium text-primary underline-offset-4 hover:underline"
@@ -320,26 +329,35 @@ function ImportTeachersContent() {
             </Link>
           </span>,
           <span key="2">
-            Fill in the required columns: <code className="rounded bg-muted px-1.5 py-0.5 text-xs">first_name</code>,{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">last_name</code>,{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">email</code>,{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">job_title</code>. One teacher per row.
+            Fill in the required columns:{' '}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">first_name</code>,{' '}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">last_name</code>,{' '}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">email</code>,{' '}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">job_title</code>. One teacher
+            per row.
           </span>,
           <span key="3">
-            Go to{" "}
-            <Link href="/school/import" className="font-medium text-primary underline-offset-4 hover:underline">
+            Go to{' '}
+            <Link
+              href="/school/import"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
               School &rsaquo; Import
-            </Link>{" "}
-            and select the <strong className="text-foreground">Teachers</strong> tab, then upload your file.
+            </Link>{' '}
+            and select the <strong className="text-foreground">Teachers</strong> tab, then upload
+            your file.
           </span>,
-          "Each teacher receives an automated email with their login details.",
+          'Each teacher receives an automated email with their login details.',
           <span key="5">
-            Alternatively, after the import finishes you can <strong className="text-foreground">download the credentials spreadsheet</strong> and distribute login details yourself.
+            Alternatively, after the import finishes you can{' '}
+            <strong className="text-foreground">download the credentials spreadsheet</strong> and
+            distribute login details yourself.
           </span>,
         ]}
       />
       <InfoBox>
-        Teachers are created with a temporary password. They will be prompted to set a new password on their first login.
+        Teachers are created with a temporary password. They will be prompted to set a new password
+        on their first login.
       </InfoBox>
     </div>
   )
@@ -354,32 +372,43 @@ function ImportStudentsContent() {
       <StepList
         items={[
           <span key="1">
-            Download the student import template from the{" "}
-            <Link href="/school/import" className="font-medium text-primary underline-offset-4 hover:underline">
+            Download the student import template from the{' '}
+            <Link
+              href="/school/import"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
               Import page
-            </Link>.
+            </Link>
+            .
           </span>,
           <span key="2">
-            Fill in the required columns:{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">first_name</code>,{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">last_name</code>,{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">email</code>,{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">year_group</code>. The column{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">class_name</code> is optional and will auto-assign students to an existing class.
+            Fill in the required columns:{' '}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">first_name</code>,{' '}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">last_name</code>,{' '}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">email</code>,{' '}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">year_group</code>. The column{' '}
+            <code className="rounded bg-muted px-1.5 py-0.5 text-xs">class_name</code> is optional
+            and will auto-assign students to an existing class.
           </span>,
           <span key="3">
-            Go to{" "}
-            <Link href="/school/import" className="font-medium text-primary underline-offset-4 hover:underline">
+            Go to{' '}
+            <Link
+              href="/school/import"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
               School &rsaquo; Import
-            </Link>{" "}
-            and select the <strong className="text-foreground">Students</strong> tab, then upload your file.
+            </Link>{' '}
+            and select the <strong className="text-foreground">Students</strong> tab, then upload
+            your file.
           </span>,
-          "Students can log in immediately after the import completes.",
-          "Download the credentials spreadsheet after import to distribute login details to students.",
+          'Students can log in immediately after the import completes.',
+          'Download the credentials spreadsheet after import to distribute login details to students.',
         ]}
       />
       <InfoBox>
-        If you include a <code className="rounded bg-muted/80 px-1 text-xs">class_name</code> that does not yet exist, the import will still succeed and you can assign students to classes afterwards.
+        If you include a <code className="rounded bg-muted/80 px-1 text-xs">class_name</code> that
+        does not yet exist, the import will still succeed and you can assign students to classes
+        afterwards.
       </InfoBox>
     </div>
   )
@@ -389,24 +418,29 @@ function CreatingClassesContent() {
   return (
     <div className="space-y-4">
       <p className="text-sm text-muted-foreground">
-        Classes connect teachers to students and are the primary unit of organisation in English Hub.
+        Classes connect teachers to students and are the primary unit of organisation in English
+        Hub.
       </p>
       <BulletList
         items={[
           <span key="1">
-            Navigate to{" "}
-            <Link href="/school/classes" className="font-medium text-primary underline-offset-4 hover:underline">
+            Navigate to{' '}
+            <Link
+              href="/school/classes"
+              className="font-medium text-primary underline-offset-4 hover:underline"
+            >
               School &rsaquo; Classes
-            </Link>{" "}
+            </Link>{' '}
             and click <strong className="text-foreground">Create class</strong>.
           </span>,
-          "Set a class name, year group, exam board, and assign a lead teacher.",
-          "Add students to the class manually, or they will be auto-assigned if you used the class_name column during import.",
+          'Set a class name, year group, exam board, and assign a lead teacher.',
+          'Add students to the class manually, or they will be auto-assigned if you used the class_name column during import.',
           "Students in a class automatically appear on the assigned teacher's dashboard.",
         ]}
       />
       <InfoBox>
-        Only School Admins can create and delete classes. Teachers can view their classes but cannot create new ones.
+        Only School Admins can create and delete classes. Teachers can view their classes but cannot
+        create new ones.
       </InfoBox>
     </div>
   )
@@ -416,7 +450,8 @@ function DistributingLoginsContent() {
   return (
     <div className="space-y-4">
       <p className="text-sm text-muted-foreground">
-        After a successful import you can download a ready-made spreadsheet to hand out to students and teachers.
+        After a successful import you can download a ready-made spreadsheet to hand out to students
+        and teachers.
       </p>
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="rounded-lg border border-border bg-card p-4 space-y-1.5">
@@ -425,10 +460,18 @@ function DistributingLoginsContent() {
             What the file contains
           </div>
           <ul className="space-y-1 text-xs text-muted-foreground">
-            <li className="flex items-center gap-1.5"><ArrowRight className="h-3 w-3 text-primary" /> Full name</li>
-            <li className="flex items-center gap-1.5"><ArrowRight className="h-3 w-3 text-primary" /> Email address</li>
-            <li className="flex items-center gap-1.5"><ArrowRight className="h-3 w-3 text-primary" /> Temporary password</li>
-            <li className="flex items-center gap-1.5"><ArrowRight className="h-3 w-3 text-primary" /> Direct login URL</li>
+            <li className="flex items-center gap-1.5">
+              <ArrowRight className="h-3 w-3 text-primary" /> Full name
+            </li>
+            <li className="flex items-center gap-1.5">
+              <ArrowRight className="h-3 w-3 text-primary" /> Email address
+            </li>
+            <li className="flex items-center gap-1.5">
+              <ArrowRight className="h-3 w-3 text-primary" /> Temporary password
+            </li>
+            <li className="flex items-center gap-1.5">
+              <ArrowRight className="h-3 w-3 text-primary" /> Direct login URL
+            </li>
           </ul>
         </div>
         <div className="rounded-lg border border-border bg-card p-4 space-y-1.5">
@@ -437,19 +480,28 @@ function DistributingLoginsContent() {
             Security reminders
           </div>
           <ul className="space-y-1 text-xs text-muted-foreground">
-            <li className="flex items-center gap-1.5"><ArrowRight className="h-3 w-3 text-primary" /> Keep the spreadsheet secure</li>
-            <li className="flex items-center gap-1.5"><ArrowRight className="h-3 w-3 text-primary" /> All passwords are temporary</li>
-            <li className="flex items-center gap-1.5"><ArrowRight className="h-3 w-3 text-primary" /> Users must change password on first login</li>
-            <li className="flex items-center gap-1.5"><ArrowRight className="h-3 w-3 text-primary" /> Delete the file once distributed</li>
+            <li className="flex items-center gap-1.5">
+              <ArrowRight className="h-3 w-3 text-primary" /> Keep the spreadsheet secure
+            </li>
+            <li className="flex items-center gap-1.5">
+              <ArrowRight className="h-3 w-3 text-primary" /> All passwords are temporary
+            </li>
+            <li className="flex items-center gap-1.5">
+              <ArrowRight className="h-3 w-3 text-primary" /> Users must change password on first
+              login
+            </li>
+            <li className="flex items-center gap-1.5">
+              <ArrowRight className="h-3 w-3 text-primary" /> Delete the file once distributed
+            </li>
           </ul>
         </div>
       </div>
       <div className="rounded-lg border border-border bg-muted/20 px-4 py-3 flex items-center gap-3 text-sm">
         <KeyRound className="h-4 w-4 shrink-0 text-primary" />
         <span>
-          Login URL for all users:{" "}
+          Login URL for all users:{' '}
           <a
-            href="https://theenglishhub.app/auth/login"
+            href="/auth/login"
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono text-primary underline-offset-4 hover:underline"
@@ -464,11 +516,31 @@ function DistributingLoginsContent() {
 
 function OngoingManagementContent() {
   const tasks = [
-    { icon: <UserPlus className="h-4 w-4 text-primary" />, label: "Add individual user", path: "Users > Add User" },
-    { icon: <Users className="h-4 w-4 text-primary" />, label: "Remove a user", path: "Users > find user > Remove" },
-    { icon: <RefreshCw className="h-4 w-4 text-primary" />, label: "Reset a password", path: "Users > find user > Reset Password" },
-    { icon: <BarChart3 className="h-4 w-4 text-primary" />, label: "View school analytics", path: "Analytics section" },
-    { icon: <Download className="h-4 w-4 text-primary" />, label: "Generate a report", path: "Analytics > Export Report" },
+    {
+      icon: <UserPlus className="h-4 w-4 text-primary" />,
+      label: 'Add individual user',
+      path: 'Users > Add User',
+    },
+    {
+      icon: <Users className="h-4 w-4 text-primary" />,
+      label: 'Remove a user',
+      path: 'Users > find user > Remove',
+    },
+    {
+      icon: <RefreshCw className="h-4 w-4 text-primary" />,
+      label: 'Reset a password',
+      path: 'Users > find user > Reset Password',
+    },
+    {
+      icon: <BarChart3 className="h-4 w-4 text-primary" />,
+      label: 'View school analytics',
+      path: 'Analytics section',
+    },
+    {
+      icon: <Download className="h-4 w-4 text-primary" />,
+      label: 'Generate a report',
+      path: 'Analytics > Export Report',
+    },
   ]
   return (
     <div className="space-y-3">
@@ -483,7 +555,9 @@ function OngoingManagementContent() {
             </span>
             <div className="flex flex-1 items-center justify-between gap-2 flex-wrap">
               <span className="text-sm font-medium">{t.label}</span>
-              <span className="text-xs text-muted-foreground font-mono bg-muted rounded px-2 py-0.5">{t.path}</span>
+              <span className="text-xs text-muted-foreground font-mono bg-muted rounded px-2 py-0.5">
+                {t.path}
+              </span>
             </div>
           </div>
         ))}
@@ -495,36 +569,44 @@ function OngoingManagementContent() {
 function FaqContent() {
   const faqs = [
     {
-      question: "What if a student forgets their password?",
+      question: 'What if a student forgets their password?',
       answer: (
         <span>
-          Go to <strong>Users</strong>, find the student, and click <strong>Reset Password</strong>. They will receive an email with a new temporary password, or you can copy the reset link and send it yourself.
+          Go to <strong>Users</strong>, find the student, and click <strong>Reset Password</strong>.
+          They will receive an email with a new temporary password, or you can copy the reset link
+          and send it yourself.
         </span>
       ),
     },
     {
-      question: "Can teachers be promoted to admin?",
+      question: 'Can teachers be promoted to admin?',
       answer:
-        "Yes. Go to Users, find the teacher, open their profile, and change their role to School Admin. They will immediately gain full admin permissions.",
+        'Yes. Go to Users, find the teacher, open their profile, and change their role to School Admin. They will immediately gain full admin permissions.',
     },
     {
-      question: "What happens when FOUNDER access expires?",
+      question: 'What happens when FOUNDER access expires?',
       answer:
-        "Your school will move to the standard subscription plan. You will be notified in advance. All your data, classes, and users are preserved. You can renew or upgrade from the Billing section in Settings.",
+        'Your school will move to the standard subscription plan. You will be notified in advance. All your data, classes, and users are preserved. You can renew or upgrade from the Billing section in Settings.',
     },
     {
-      question: "Can we have multiple admins?",
+      question: 'Can we have multiple admins?',
       answer:
-        "Yes. There is no limit on the number of School Admins. It is good practice to have at least two so no single person is a single point of failure.",
+        'Yes. There is no limit on the number of School Admins. It is good practice to have at least two so no single person is a single point of failure.',
     },
     {
-      question: "How do we renew or pay?",
+      question: 'How do we renew or pay?',
       answer: (
         <span>
-          Go to <strong>School &rsaquo; Settings &rsaquo; Billing</strong>. From there you can view your current plan, update payment details, and download invoices. For enterprise pricing or purchase orders, contact us at{" "}
-          <a href="mailto:info@Upskillenergy.com" className="text-primary underline-offset-4 hover:underline">
+          Go to <strong>School &rsaquo; Settings &rsaquo; Billing</strong>. From there you can view
+          your current plan, update payment details, and download invoices. For enterprise pricing
+          or purchase orders, contact us at{' '}
+          <a
+            href="mailto:info@Upskillenergy.com"
+            className="text-primary underline-offset-4 hover:underline"
+          >
             info@Upskillenergy.com
-          </a>.
+          </a>
+          .
         </span>
       ),
     },
@@ -544,46 +626,46 @@ function FaqContent() {
 function buildSections(): AccordionSection[] {
   return [
     {
-      id: "roles",
+      id: 'roles',
       icon: <Shield className="h-4 w-4" />,
-      title: "Understanding User Roles & Permissions",
-      badge: "Start here",
+      title: 'Understanding User Roles & Permissions',
+      badge: 'Start here',
       content: <RolesContent />,
     },
     {
-      id: "import-teachers",
+      id: 'import-teachers',
       icon: <UserCheck className="h-4 w-4" />,
-      title: "Importing Teachers",
+      title: 'Importing Teachers',
       content: <ImportTeachersContent />,
     },
     {
-      id: "import-students",
+      id: 'import-students',
       icon: <GraduationCap className="h-4 w-4" />,
-      title: "Importing Students",
+      title: 'Importing Students',
       content: <ImportStudentsContent />,
     },
     {
-      id: "classes",
+      id: 'classes',
       icon: <Layers className="h-4 w-4" />,
-      title: "Creating Classes",
+      title: 'Creating Classes',
       content: <CreatingClassesContent />,
     },
     {
-      id: "logins",
+      id: 'logins',
       icon: <KeyRound className="h-4 w-4" />,
-      title: "Distributing Login Details",
+      title: 'Distributing Login Details',
       content: <DistributingLoginsContent />,
     },
     {
-      id: "management",
+      id: 'management',
       icon: <BarChart3 className="h-4 w-4" />,
-      title: "Ongoing Management",
+      title: 'Ongoing Management',
       content: <OngoingManagementContent />,
     },
     {
-      id: "faq",
+      id: 'faq',
       icon: <HelpCircle className="h-4 w-4" />,
-      title: "Frequently Asked Questions",
+      title: 'Frequently Asked Questions',
       content: <FaqContent />,
     },
   ]
@@ -611,7 +693,6 @@ export default function SchoolSetupGuidePage() {
 
   return (
     <div className="space-y-8 pb-16">
-
       {/* -- Header -------------------------------------------------------- */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex items-start gap-3">
@@ -631,8 +712,8 @@ export default function SchoolSetupGuidePage() {
             Download as PDF
           </Button>
           <Button size="sm" className="gap-1.5" render={<a href="mailto:info@Upskillenergy.com" />}>
-              <Mail className="h-4 w-4" />
-              Contact Support
+            <Mail className="h-4 w-4" />
+            Contact Support
           </Button>
         </div>
       </div>
@@ -650,7 +731,7 @@ export default function SchoolSetupGuidePage() {
               </CardDescription>
             </div>
             <Badge
-              variant={completedCount === QUICK_STEPS.length ? "default" : "secondary"}
+              variant={completedCount === QUICK_STEPS.length ? 'default' : 'secondary'}
               className="text-xs"
             >
               {completedCount} / {QUICK_STEPS.length} complete
@@ -714,14 +795,17 @@ export default function SchoolSetupGuidePage() {
               <Download className="h-4 w-4" />
               Download PDF guide
             </Button>
-            <Button size="sm" className="gap-1.5" render={<a href="mailto:info@Upskillenergy.com" />}>
-                <Mail className="h-4 w-4" />
-                info@Upskillenergy.com
+            <Button
+              size="sm"
+              className="gap-1.5"
+              render={<a href="mailto:info@Upskillenergy.com" />}
+            >
+              <Mail className="h-4 w-4" />
+              info@Upskillenergy.com
             </Button>
           </div>
         </CardContent>
       </Card>
-
     </div>
   )
 }

@@ -1,31 +1,22 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ChevronLeft,
-  ScrollText,
-  Users,
-  MessageCircle,
-  Target,
-  Lightbulb,
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { ChevronLeft, ScrollText, Users, MessageCircle, Target, Lightbulb } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Narrative Writing — IGCSE Language A Paper 2 Section B',
+    description:
+      'How to write a top-mark narrative composition for IGCSE Language A Paper 2. Story structure, character, dialogue and worked example. Aligns with Cambridge syllabus 0500.',
+  },
   title: 'Narrative Writing — IGCSE Language A Paper 2 Section B',
   description:
     'How to write a top-mark narrative composition for IGCSE Language A Paper 2. Story structure, character, dialogue and worked example. Aligns with Cambridge syllabus 0500.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/paper-2/narrative-writing',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2/narrative-writing',
   },
 }
 
@@ -44,14 +35,12 @@ const structure = [
   },
   {
     stage: 'Rising action (about 30%)',
-    detail:
-      'Complications stack up. The character commits further and options narrow.',
+    detail: 'Complications stack up. The character commits further and options narrow.',
     tip: 'One or two complications is enough — do not crowd the word count with plot.',
   },
   {
     stage: 'Climax (about 15%)',
-    detail:
-      'The moment of highest tension. The character makes a decision or realisation.',
+    detail: 'The moment of highest tension. The character makes a decision or realisation.',
     tip: 'Slow time down here. Describe breathing, heartbeat, small movements.',
   },
   {
@@ -100,14 +89,11 @@ export default async function NarrativeWritingPage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Narrative writing
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Narrative writing</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          A narrative composition is a short story — not a summary of a
-          life. In 450 words you need one clear event, one developed
-          character and one controlled shift in mood. Restraint is worth
-          more than spectacle.
+          A narrative composition is a short story — not a summary of a life. In 450 words you need
+          one clear event, one developed character and one controlled shift in mood. Restraint is
+          worth more than spectacle.
         </p>
       </section>
 
@@ -115,9 +101,7 @@ export default async function NarrativeWritingPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            How the 40 marks split
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">How the 40 marks split</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
@@ -125,8 +109,7 @@ export default async function NarrativeWritingPage() {
               Content & structure — 16
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Originality, pacing, character development, sense of
-              direction, satisfying shape.
+              Originality, pacing, character development, sense of direction, satisfying shape.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
@@ -134,8 +117,8 @@ export default async function NarrativeWritingPage() {
               Style & accuracy — 24
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Precise vocabulary, varied sentence structure, tense
-              consistency, dialogue punctuation, spelling, grammar.
+              Precise vocabulary, varied sentence structure, tense consistency, dialogue
+              punctuation, spelling, grammar.
             </p>
           </div>
         </div>
@@ -157,15 +140,11 @@ export default async function NarrativeWritingPage() {
                   <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-body-sm font-semibold text-primary">
                     {i + 1}
                   </span>
-                  <CardTitle className="text-body-md font-heading">
-                    {st.stage}
-                  </CardTitle>
+                  <CardTitle className="text-body-md font-heading">{st.stage}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-2">
-                <p className="text-body-sm text-muted-foreground">
-                  {st.detail}
-                </p>
+                <p className="text-body-sm text-muted-foreground">{st.detail}</p>
                 <div className="rounded-lg border border-border/60 bg-muted/30 p-3">
                   <p className="text-body-xs text-foreground">
                     <span className="font-semibold">Tip: </span>
@@ -204,14 +183,14 @@ export default async function NarrativeWritingPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <MessageCircle className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Writing dialogue cleanly
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Writing dialogue cleanly</h2>
         </div>
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-body-md font-heading">Rules</CardTitle>
-            <CardDescription>Dialogue is where candidates most often lose accuracy marks.</CardDescription>
+            <CardDescription>
+              Dialogue is where candidates most often lose accuracy marks.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 text-body-sm text-muted-foreground">
@@ -250,9 +229,8 @@ Of course.`}
           </p>
         </div>
         <p className="mt-3 text-body-xs text-muted-foreground">
-          Notice: opens mid-action, one distinguishing habit (waiting),
-          small specific detail (mattress, rain), dialogue doing double
-          duty (revealing past and present).
+          Notice: opens mid-action, one distinguishing habit (waiting), small specific detail
+          (mattress, rain), dialogue doing double duty (revealing past and present).
         </p>
       </section>
     </div>

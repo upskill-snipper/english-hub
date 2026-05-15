@@ -13,18 +13,17 @@ import {
   History,
   Info,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Edexcel IGCSE Literature Syllabus — The English Hub',
+    description:
+      'Complete breakdown of the Pearson Edexcel IGCSE English Literature syllabus: what the examiners are looking for, mark allocations, time limits and paper structure.',
+  },
   title: 'Edexcel IGCSE Literature Syllabus — The English Hub',
   description:
     'Complete breakdown of the Pearson Edexcel IGCSE English Literature syllabus: what the examiners are looking for, mark allocations, time limits and paper structure.',
@@ -156,9 +155,9 @@ export default async function EdexcelSyllabusPage() {
             IGCSE Literature Syllabus
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Everything you need to know about the Pearson Edexcel IGCSE
-            English Literature specification — assessment objectives, mark
-            allocations, timings and the full structure of each paper.
+            Everything you need to know about the Pearson Edexcel IGCSE English Literature
+            specification — assessment objectives, mark allocations, timings and the full structure
+            of each paper.
           </p>
         </div>
       </section>
@@ -167,9 +166,7 @@ export default async function EdexcelSyllabusPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Scale className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Assessment at a glance
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Assessment at a glance</h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-3">
@@ -179,9 +176,7 @@ export default async function EdexcelSyllabusPage() {
                 <FileText className="size-5 text-primary" />
               </div>
               <div>
-                <p className="text-heading-md font-heading text-foreground">
-                  100 marks
-                </p>
+                <p className="text-heading-md font-heading text-foreground">100 marks</p>
                 <p className="text-body-xs text-muted-foreground">
                   Total across Paper 1 (60) and Paper 2 (40)
                 </p>
@@ -195,9 +190,7 @@ export default async function EdexcelSyllabusPage() {
                 <Clock className="size-5 text-primary" />
               </div>
               <div>
-                <p className="text-heading-md font-heading text-foreground">
-                  3h 30m
-                </p>
+                <p className="text-heading-md font-heading text-foreground">3h 30m</p>
                 <p className="text-body-xs text-muted-foreground">
                   2h for Paper 1 and 1h 30m for Paper 2
                 </p>
@@ -211,9 +204,7 @@ export default async function EdexcelSyllabusPage() {
                 <BookOpen className="size-5 text-primary" />
               </div>
               <div>
-                <p className="text-heading-md font-heading text-foreground">
-                  Closed book
-                </p>
+                <p className="text-heading-md font-heading text-foreground">Closed book</p>
                 <p className="text-body-xs text-muted-foreground">
                   No texts permitted in either exam
                 </p>
@@ -246,9 +237,7 @@ export default async function EdexcelSyllabusPage() {
                       {ao.code}
                     </Badge>
                   </div>
-                  <CardTitle className="text-body-lg font-heading">
-                    {ao.title}
-                  </CardTitle>
+                  <CardTitle className="text-body-lg font-heading">{ao.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -281,8 +270,8 @@ export default async function EdexcelSyllabusPage() {
               </Badge>
             </div>
             <CardDescription className="mt-2">
-              Three compulsory sections covering unseen poetry, anthology
-              comparison and a studied modern prose text.
+              Three compulsory sections covering unseen poetry, anthology comparison and a studied
+              modern prose text.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -300,9 +289,7 @@ export default async function EdexcelSyllabusPage() {
                 <tbody className="divide-y divide-border/60">
                   {paper1Questions.map((q) => (
                     <tr key={q.section} className="text-muted-foreground">
-                      <td className="px-4 py-3 font-medium text-foreground">
-                        {q.section}
-                      </td>
+                      <td className="px-4 py-3 font-medium text-foreground">{q.section}</td>
                       <td className="px-4 py-3">{q.task}</td>
                       <td className="px-4 py-3">{q.marks}</td>
                       <td className="px-4 py-3">{q.aos.join(', ')}</td>
@@ -336,8 +323,8 @@ export default async function EdexcelSyllabusPage() {
               </Badge>
             </div>
             <CardDescription className="mt-2">
-              Two compulsory sections: one extract-based modern drama question
-              and one Shakespeare essay.
+              Two compulsory sections: one extract-based modern drama question and one Shakespeare
+              essay.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -355,9 +342,7 @@ export default async function EdexcelSyllabusPage() {
                 <tbody className="divide-y divide-border/60">
                   {paper2Questions.map((q) => (
                     <tr key={q.section} className="text-muted-foreground">
-                      <td className="px-4 py-3 font-medium text-foreground">
-                        {q.section}
-                      </td>
+                      <td className="px-4 py-3 font-medium text-foreground">{q.section}</td>
                       <td className="px-4 py-3">{q.task}</td>
                       <td className="px-4 py-3">{q.marks}</td>
                       <td className="px-4 py-3">{q.aos.join(', ')}</td>
@@ -380,38 +365,33 @@ export default async function EdexcelSyllabusPage() {
           <li className="flex items-start gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Reading & Responding</strong>{' '}
-              and{' '}
-              <strong className="text-foreground">Language & Structure</strong>{' '}
-              are tested in every section. These are the backbone of every
-              answer you write — show you understand the text and can explain
-              how the writer creates effects.
+              <strong className="text-foreground">Reading & Responding</strong> and{' '}
+              <strong className="text-foreground">Language & Structure</strong> are tested in every
+              section. These are the backbone of every answer you write — show you understand the
+              text and can explain how the writer creates effects.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Context</strong> only comes up
-              in the modern prose and Shakespeare essays. Weave in social,
-              historical, or literary background naturally rather than adding
-              it as a separate paragraph.
+              <strong className="text-foreground">Context</strong> only comes up in the modern prose
+              and Shakespeare essays. Weave in social, historical, or literary background naturally
+              rather than adding it as a separate paragraph.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Comparison</strong> is tested
-              only in Paper 1 Section B, the anthology poetry question. Make
-              sure you discuss both poems throughout your answer rather than
-              writing about one and then the other.
+              <strong className="text-foreground">Comparison</strong> is tested only in Paper 1
+              Section B, the anthology poetry question. Make sure you discuss both poems throughout
+              your answer rather than writing about one and then the other.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              Always check the mark scheme for the specific question you are
-              answering — some tasks lean more on your personal response while
-              others focus on close language analysis.
+              Always check the mark scheme for the specific question you are answering — some tasks
+              lean more on your personal response while others focus on close language analysis.
             </span>
           </li>
         </ul>

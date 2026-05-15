@@ -10,6 +10,11 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'The Great Gatsby — Study Guide | The English Hub',
+    description:
+      'In-depth study guide for The Great Gatsby by F. Scott Fitzgerald: plot, characters, themes, context and key quotations.',
+  },
   title: 'The Great Gatsby — Study Guide | The English Hub',
   description:
     'In-depth study guide for The Great Gatsby by F. Scott Fitzgerald: plot, characters, themes, context and key quotations.',

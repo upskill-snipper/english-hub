@@ -9,6 +9,10 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Pride and Prejudice revision guide — themes, characters, key quotes — The English Hub',
+    description: 'Pride and Prejudice GCSE revision — Austen',
+  },
   title: 'Pride and Prejudice revision guide — themes, characters, key quotes — The English Hub',
   description:
     "Pride and Prejudice GCSE revision — Austen's novel of manners by chapter with character analysis. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.",

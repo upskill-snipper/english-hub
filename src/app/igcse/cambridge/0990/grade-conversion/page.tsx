@@ -1,17 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Sparkles,
-  Target,
-  Info,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, Sparkles, Target, Info } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: '9-1 vs A*-G grade conversion | Cambridge IGCSE Language B | The English Hub',
+    description:
+      'Full conversion table between Cambridge IGCSE Language B 9-1 grades and Language A A*-G grades. Understand how your numerical grade compares to the letter scale.',
+  },
   title: '9-1 vs A*-G grade conversion | Cambridge IGCSE Language B | The English Hub',
   description:
     'Full conversion table between Cambridge IGCSE Language B 9-1 grades and Language A A*-G grades. Understand how your numerical grade compares to the letter scale.',
@@ -92,11 +91,7 @@ export default async function GradeConversionPage() {
   return (
     <div className="space-y-10 pb-16">
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/0990" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/0990" />}>
           <ArrowLeft className="size-3.5" />
           Back to IGCSE Language B hub
         </Button>
@@ -116,10 +111,9 @@ export default async function GradeConversionPage() {
             9-1 vs A*-G: full grade conversion
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Cambridge IGCSE Language B reports results on the 9-1 numerical scale,
-            while Language A uses A*-G. The two syllabuses share a mark scheme — so
-            you can map every letter to a number. Use this table to translate
-            between the two.
+            Cambridge IGCSE Language B reports results on the 9-1 numerical scale, while Language A
+            uses A*-G. The two syllabuses share a mark scheme — so you can map every letter to a
+            number. Use this table to translate between the two.
           </p>
         </div>
       </section>
@@ -128,9 +122,7 @@ export default async function GradeConversionPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Full conversion table
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Full conversion table</h2>
         </div>
         <div className="overflow-hidden rounded-2xl border border-border/60 bg-card">
           <div className="overflow-x-auto">
@@ -144,10 +136,7 @@ export default async function GradeConversionPage() {
               </thead>
               <tbody>
                 {rows.map((r) => (
-                  <tr
-                    key={r.num}
-                    className="border-b border-border/40 last:border-0"
-                  >
+                  <tr key={r.num} className="border-b border-border/40 last:border-0">
                     <td className="px-4 py-4">
                       <span
                         className={`inline-flex size-9 items-center justify-center rounded-lg border text-body-sm font-semibold ${r.tone}`}
@@ -155,12 +144,8 @@ export default async function GradeConversionPage() {
                         {r.num}
                       </span>
                     </td>
-                    <td className="px-4 py-4 font-medium text-foreground">
-                      {r.letter}
-                    </td>
-                    <td className="px-4 py-4 text-muted-foreground">
-                      {r.description}
-                    </td>
+                    <td className="px-4 py-4 font-medium text-foreground">{r.letter}</td>
+                    <td className="px-4 py-4 text-muted-foreground">{r.description}</td>
                   </tr>
                 ))}
               </tbody>
@@ -178,11 +163,10 @@ export default async function GradeConversionPage() {
               Why Grade 9 is harder than A*
             </h2>
             <p className="mt-2 text-body-sm text-muted-foreground leading-relaxed">
-              The reformed 9-1 scale was designed to stretch the top end.
-              Under A*-G, an A* was awarded to roughly 8% of entries
-              nationally. Grade 9 is set higher — typically around the top 4%.
-              In practice, an A* student under 0500 is more likely to get an
-              8, with 9 reserved for genuinely outstanding work.
+              The reformed 9-1 scale was designed to stretch the top end. Under A*-G, an A* was
+              awarded to roughly 8% of entries nationally. Grade 9 is set higher — typically around
+              the top 4%. In practice, an A* student under 0500 is more likely to get an 8, with 9
+              reserved for genuinely outstanding work.
             </p>
           </div>
         </div>
@@ -190,17 +174,15 @@ export default async function GradeConversionPage() {
 
       {/* Passing notes */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Which grade do you need?
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Which grade do you need?</h2>
         <dl className="mt-4 space-y-4 text-body-sm">
           <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
             <dt className="w-full shrink-0 font-semibold text-foreground sm:w-48">
               Sixth form / A-level entry
             </dt>
             <dd className="text-muted-foreground">
-              Most UK sixth forms require Grade 5 or 6 in English as a
-              minimum; competitive schools expect 7+.
+              Most UK sixth forms require Grade 5 or 6 in English as a minimum; competitive schools
+              expect 7+.
             </dd>
           </div>
           <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
@@ -208,17 +190,13 @@ export default async function GradeConversionPage() {
               IB Diploma entry
             </dt>
             <dd className="text-muted-foreground">
-              IB schools typically ask for a 5 or above, aligning with
-              Language A Studies.
+              IB schools typically ask for a 5 or above, aligning with Language A Studies.
             </dd>
           </div>
           <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
-            <dt className="w-full shrink-0 font-semibold text-foreground sm:w-48">
-              Standard pass
-            </dt>
+            <dt className="w-full shrink-0 font-semibold text-foreground sm:w-48">Standard pass</dt>
             <dd className="text-muted-foreground">
-              Grade 4 is officially the standard pass. Grade 5 is often
-              called a strong pass.
+              Grade 4 is officially the standard pass. Grade 5 is often called a strong pass.
             </dd>
           </div>
           <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
@@ -226,8 +204,8 @@ export default async function GradeConversionPage() {
               Top universities
             </dt>
             <dd className="text-muted-foreground">
-              Competitive courses often expect 7 or higher in English at
-              IGCSE, alongside strong A-level or IB results.
+              Competitive courses often expect 7 or higher in English at IGCSE, alongside strong
+              A-level or IB results.
             </dd>
           </div>
         </dl>

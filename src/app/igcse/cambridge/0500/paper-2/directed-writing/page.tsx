@@ -1,32 +1,22 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import {
-  ChevronLeft,
-  FileEdit,
-  Mail,
-  Mic,
-  Newspaper,
-  ClipboardList,
-  Target,
-} from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { ChevronLeft, FileEdit, Mail, Mic, Newspaper, ClipboardList, Target } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Directed Writing — IGCSE Language A Paper 2 Section A',
+    description:
+      'How to tackle IGCSE Language A Paper 2 Section A directed writing. Letters, speeches, articles, reports — style, structure and tone. Aligns with Cambridge syllabus 0500.',
+  },
   title: 'Directed Writing — IGCSE Language A Paper 2 Section A',
   description:
     'How to tackle IGCSE Language A Paper 2 Section A directed writing. Letters, speeches, articles, reports — style, structure and tone. Aligns with Cambridge syllabus 0500.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/0500/paper-2/directed-writing',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-2/directed-writing',
   },
 }
 
@@ -34,8 +24,7 @@ const forms = [
   {
     form: 'Letter',
     icon: Mail,
-    audience:
-      'A single known reader — often a head teacher, editor, authority figure, or friend.',
+    audience: 'A single known reader — often a head teacher, editor, authority figure, or friend.',
     openingClose:
       'Formal: "Dear Sir/Madam" + "Yours faithfully". Semi-formal: "Dear Mr Alvarez" + "Yours sincerely". Informal: "Dear Maria" + "Best wishes".',
     register:
@@ -83,10 +72,8 @@ const forms = [
     icon: ClipboardList,
     audience:
       'An official reader — a principal, a committee, a local council. They want facts, not rhetoric.',
-    openingClose:
-      'State the topic and purpose in sentence one. End with clear recommendations.',
-    register:
-      'Formal, neutral, third-person. Avoid humour and exclamation marks.',
+    openingClose: 'State the topic and purpose in sentence one. End with clear recommendations.',
+    register: 'Formal, neutral, third-person. Avoid humour and exclamation marks.',
     features: [
       'Subheadings are sometimes allowed (check the prompt)',
       'Evidence-led statements',
@@ -129,14 +116,11 @@ export default async function DirectedWritingPage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Directed writing
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Directed writing</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Section A is worth 40 marks. Fifteen for how well you read the
-          stimulus, twenty-five for how well you adapt tone and style to
-          the required form. Getting the form wrong costs you half your
-          writing marks, so the first thing to get right is the shape.
+          Section A is worth 40 marks. Fifteen for how well you read the stimulus, twenty-five for
+          how well you adapt tone and style to the required form. Getting the form wrong costs you
+          half your writing marks, so the first thing to get right is the shape.
         </p>
       </section>
 
@@ -144,9 +128,7 @@ export default async function DirectedWritingPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            How the 40 marks split
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">How the 40 marks split</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
@@ -154,8 +136,8 @@ export default async function DirectedWritingPage() {
               Reading — 15 marks
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Select and develop relevant ideas from the stimulus text.
-              Show that you understand implicit as well as explicit meanings.
+              Select and develop relevant ideas from the stimulus text. Show that you understand
+              implicit as well as explicit meanings.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
@@ -163,9 +145,8 @@ export default async function DirectedWritingPage() {
               Writing — 25 marks
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Content and structure, style and accuracy. Register, form,
-              tone, organisation, vocabulary, grammar, spelling and
-              punctuation all count.
+              Content and structure, style and accuracy. Register, form, tone, organisation,
+              vocabulary, grammar, spelling and punctuation all count.
             </p>
           </div>
         </div>
@@ -175,9 +156,7 @@ export default async function DirectedWritingPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <FileEdit className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            The four main forms
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">The four main forms</h2>
         </div>
         <div className="space-y-6">
           {forms.map((f) => {
@@ -190,9 +169,7 @@ export default async function DirectedWritingPage() {
                       <Icon className="size-5 text-primary" />
                     </div>
                     <div>
-                      <CardTitle className="text-heading-md font-heading">
-                        {f.form}
-                      </CardTitle>
+                      <CardTitle className="text-heading-md font-heading">{f.form}</CardTitle>
                       <CardDescription>{f.audience}</CardDescription>
                     </div>
                   </div>
@@ -202,22 +179,14 @@ export default async function DirectedWritingPage() {
                     <p className="text-body-sm font-semibold text-foreground">
                       Opening and closing
                     </p>
-                    <p className="text-body-sm text-muted-foreground">
-                      {f.openingClose}
-                    </p>
+                    <p className="text-body-sm text-muted-foreground">{f.openingClose}</p>
                   </div>
                   <div>
-                    <p className="text-body-sm font-semibold text-foreground">
-                      Register
-                    </p>
-                    <p className="text-body-sm text-muted-foreground">
-                      {f.register}
-                    </p>
+                    <p className="text-body-sm font-semibold text-foreground">Register</p>
+                    <p className="text-body-sm text-muted-foreground">{f.register}</p>
                   </div>
                   <div>
-                    <p className="text-body-sm font-semibold text-foreground">
-                      Key features
-                    </p>
+                    <p className="text-body-sm font-semibold text-foreground">Key features</p>
                     <ul className="mt-1 space-y-1 text-body-sm text-muted-foreground">
                       {f.features.map((ft) => (
                         <li key={ft} className="flex items-start gap-2">

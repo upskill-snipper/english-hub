@@ -4,6 +4,11 @@ import Link from 'next/link'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Power Theme Across Texts | GCSE English Literature',
+    description:
+      'Explore the theme of power across GCSE set texts: Macbeth, An Inspector Calls, Animal Farm, Ozymandias, and My Last Duchess. Key quotes, analysis, and comparison essay planning.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/themes/power' },
   title: 'Power Theme Across Texts | GCSE English Literature',
   description:

@@ -8,6 +8,12 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'IGCSE Edexcel prose — Of Mice and Men, To Kill a Mockingbird, Things Fall Apart — The English Hub',
+    description:
+      'Pearson Edexcel IGCSE Literature 4ET1 modern prose. Three texts: Of Mice and Men, To Kill a Mockingbird, Things Fall Apart. Full study guides.',
+  },
   title:
     'IGCSE Edexcel prose — Of Mice and Men, To Kill a Mockingbird, Things Fall Apart — The English Hub',
   description:

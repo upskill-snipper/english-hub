@@ -4,6 +4,11 @@ import { Button } from '@/components/ui/button'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'An Inspector Calls: Social Responsibility — Lesson Plan',
+    description:
+      'Full 60-minute lesson plan on responsibility in An Inspector Calls Act 1. Objectives, activities, differentiation, homework.',
+  },
   title: 'An Inspector Calls: Social Responsibility — Lesson Plan',
   description:
     'Full 60-minute lesson plan on responsibility in An Inspector Calls Act 1. Objectives, activities, differentiation, homework.',

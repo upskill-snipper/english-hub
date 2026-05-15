@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Sensory Language — Cambridge IGCSE Descriptive Writing',
+    description:
+      'Cambridge IGCSE descriptive writing: how to use all five senses — sight, sound, smell, touch, taste — to build immersive description.',
+  },
   title: 'Sensory Language — Cambridge IGCSE Descriptive Writing',
   description:
     'Cambridge IGCSE descriptive writing: how to use all five senses — sight, sound, smell, touch, taste — to build immersive description.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/descriptive/sensory-language',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/descriptive/sensory-language',
   },
 }
 
@@ -97,10 +101,9 @@ export default async function SensoryLanguagePage() {
             Sensory language
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            The single most reliable way to push a descriptive composition out
-            of the middle band is to use more than one sense per paragraph.
-            Most students describe what they see. Top-band writers describe
-            what they hear, smell, feel and taste too.
+            The single most reliable way to push a descriptive composition out of the middle band is
+            to use more than one sense per paragraph. Most students describe what they see. Top-band
+            writers describe what they hear, smell, feel and taste too.
           </p>
         </div>
       </section>
@@ -110,17 +113,14 @@ export default async function SensoryLanguagePage() {
           The rule of two senses per paragraph
         </h2>
         <p className="mt-3 text-body-sm text-muted-foreground">
-          Read any paragraph you have written. If only the sense of{' '}
-          <em>sight</em> appears, add one more — ideally one of the less-used
-          three (smell, touch, taste). You do not need every sense in every
-          paragraph; you need at least two.
+          Read any paragraph you have written. If only the sense of <em>sight</em> appears, add one
+          more — ideally one of the less-used three (smell, touch, taste). You do not need every
+          sense in every paragraph; you need at least two.
         </p>
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-heading-lg font-heading text-foreground">
-          The five senses in action
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">The five senses in action</h2>
         {senses.map((s) => {
           const Icon = s.icon
           return (
@@ -130,9 +130,7 @@ export default async function SensoryLanguagePage() {
                   <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
                     <Icon className="size-5 text-primary" />
                   </div>
-                  <CardTitle className="text-heading-sm font-heading">
-                    {s.name}
-                  </CardTitle>
+                  <CardTitle className="text-heading-sm font-heading">{s.name}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -144,17 +142,13 @@ export default async function SensoryLanguagePage() {
                     <p className="text-body-xs font-semibold uppercase tracking-wide text-destructive">
                       Weak
                     </p>
-                    <p className="mt-2 text-body-sm italic text-foreground">
-                      “{s.weak}”
-                    </p>
+                    <p className="mt-2 text-body-sm italic text-foreground">“{s.weak}”</p>
                   </div>
                   <div className="rounded-lg border border-border/60 bg-primary/5 p-4">
                     <p className="text-body-xs font-semibold uppercase tracking-wide text-primary">
                       Strong
                     </p>
-                    <p className="mt-2 text-body-sm italic text-foreground">
-                      “{s.strong}”
-                    </p>
+                    <p className="mt-2 text-body-sm italic text-foreground">“{s.strong}”</p>
                   </div>
                 </div>
                 <div className="rounded-lg border border-border/60 bg-muted/40 p-4">
@@ -170,32 +164,27 @@ export default async function SensoryLanguagePage() {
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Synesthesia: mixing senses
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Synesthesia: mixing senses</h2>
         <p className="mt-3 text-body-sm text-muted-foreground leading-relaxed">
           Once you are comfortable using all five senses, try{' '}
-          <strong className="text-foreground">synesthesia</strong> — describing
-          one sense in the vocabulary of another. A <em>sharp</em> light, a{' '}
-          <em>loud</em> colour, a <em>metallic</em> silence. Used sparingly,
-          synesthesia is a clear marker of sophisticated descriptive writing.
+          <strong className="text-foreground">synesthesia</strong> — describing one sense in the
+          vocabulary of another. A <em>sharp</em> light, a <em>loud</em> colour, a <em>metallic</em>{' '}
+          silence. Used sparingly, synesthesia is a clear marker of sophisticated descriptive
+          writing.
         </p>
         <div className="mt-4 rounded-lg border border-border/60 bg-primary/5 p-4">
           <p className="text-body-sm italic text-foreground">
-            “The bell rang out a bruise-purple sound across the empty yard, low
-            enough to taste.”
+            “The bell rang out a bruise-purple sound across the empty yard, low enough to taste.”
           </p>
         </div>
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Quick exercise
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Quick exercise</h2>
         <p className="mt-3 text-body-sm text-muted-foreground">
-          Write three sentences describing the inside of a bakery at 6 a.m.
-          Use a different sense in each sentence, and do not use the word{' '}
-          <em>smell</em>. Aim for specific nouns, not adjectives.
+          Write three sentences describing the inside of a bakery at 6 a.m. Use a different sense in
+          each sentence, and do not use the word <em>smell</em>. Aim for specific nouns, not
+          adjectives.
         </p>
       </section>
     </div>

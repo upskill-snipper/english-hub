@@ -6,6 +6,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Macbeth Characters — Edexcel IGCSE Literature',
+    description:
+      'Character analysis for Macbeth, Lady Macbeth, Banquo, Duncan, Macduff and the Witches for Edexcel IGCSE English Literature.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare/macbeth/characters',
   },

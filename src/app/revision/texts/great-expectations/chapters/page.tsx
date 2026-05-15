@@ -9,12 +9,16 @@ import { Button } from '@/components/ui/button'
 import { getServerBoard } from '@/lib/board/get-server-board'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Great Expectations Key Chapters | The English Hub',
+    description:
+      'Detailed analysis of key chapters in Great Expectations by Charles Dickens: the graveyard, Satis House, London, the revelation and the ending.',
+  },
   title: 'Great Expectations Key Chapters | The English Hub',
   description:
     'Detailed analysis of key chapters in Great Expectations by Charles Dickens: the graveyard, Satis House, London, the revelation and the ending.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/revision/texts/great-expectations/chapters',
+    canonical: 'https://theenglishhub.app/revision/texts/great-expectations/chapters',
   },
 }
 
@@ -37,21 +41,21 @@ const CHAPTERS: ChapterAnalysis[] = [
     title: 'The Graveyard and the Convict',
     setting: 'The churchyard on the marshes, Kent',
     summary:
-      'The novel opens with the orphan Pip visiting his parents\' grave in a bleak churchyard on the Kent marshes. He is seized by an escaped convict, Abel Magwitch, who terrifies the child into bringing him food and a file to remove his leg iron. Pip steals from his sister\'s pantry and returns at dawn to help the desperate man. The convict is recaptured but protects Pip by claiming he stole the food himself.',
+      "The novel opens with the orphan Pip visiting his parents' grave in a bleak churchyard on the Kent marshes. He is seized by an escaped convict, Abel Magwitch, who terrifies the child into bringing him food and a file to remove his leg iron. Pip steals from his sister's pantry and returns at dawn to help the desperate man. The convict is recaptured but protects Pip by claiming he stole the food himself.",
     significance: [
-      'Establishes Pip\'s isolation, vulnerability and essential goodness — he feels guilt and pity even while terrified.',
+      "Establishes Pip's isolation, vulnerability and essential goodness — he feels guilt and pity even while terrified.",
       'Introduces the theme of crime and justice: the convict is a victim of a brutal penal system, not simply a villain.',
-      'Creates the central ironic connection that drives the entire plot — Pip\'s unknown benefactor is the man he helped as a child.',
-      'The marshes are both literal and symbolic: a liminal, unstable landscape that mirrors Pip\'s uncertain identity.',
+      "Creates the central ironic connection that drives the entire plot — Pip's unknown benefactor is the man he helped as a child.",
+      "The marshes are both literal and symbolic: a liminal, unstable landscape that mirrors Pip's uncertain identity.",
       'Dickens establishes the first-person retrospective voice, allowing the adult Pip to reflect on his childhood self with irony and compassion.',
     ],
     keyQuote: {
       text: '"Hold your noise!" cried a terrible voice, as a man started up from among the graves at the side of the church porch. "Keep still, you little devil, or I\'ll cut your throat!"',
       analysis:
-        'The explosive opening immediately establishes danger and power imbalance. The convict emerges "from among the graves," associating him with death and the underworld. Yet Dickens gradually reveals the convict\'s own desperation, complicating the reader\'s initial fear with sympathy. The violence of the language contrasts sharply with Pip\'s smallness and innocence.',
+        "The explosive opening immediately establishes danger and power imbalance. The convict emerges \"from among the graves,\" associating him with death and the underworld. Yet Dickens gradually reveals the convict's own desperation, complicating the reader's initial fear with sympathy. The violence of the language contrasts sharply with Pip's smallness and innocence.",
     },
     writersMethods: [
-      'Pathetic fallacy — the raw, bleak marshland reflects Pip\'s emotional exposure and foreshadows the harshness of his life.',
+      "Pathetic fallacy — the raw, bleak marshland reflects Pip's emotional exposure and foreshadows the harshness of his life.",
       'First-person retrospective narration creates dramatic irony as the adult Pip can see what the child could not.',
       'Gothic elements — the graveyard, the gibbet, the mist — establish an atmosphere of threat and moral uncertainty.',
     ],
@@ -64,7 +68,7 @@ const CHAPTERS: ChapterAnalysis[] = [
       'Pip is sent by his Uncle Pumblechook to "play" at the house of the wealthy, reclusive Miss Havisham. He finds a woman dressed in a faded bridal gown, surrounded by the rotting remains of her wedding feast, all clocks stopped at twenty minutes to nine — the moment she was jilted. She introduces Pip to Estella, a beautiful girl his own age, and watches as Estella humiliates him for his coarse hands and thick boots. Pip is devastated and, for the first time, becomes deeply ashamed of his background and his home.',
     significance: [
       'The visit to Satis House is the catalyst for Pip\'s dissatisfaction with his life — it plants the seeds of his "great expectations."',
-      'Miss Havisham\'s frozen world embodies the destructive power of living in the past and using others as instruments of revenge.',
+      "Miss Havisham's frozen world embodies the destructive power of living in the past and using others as instruments of revenge.",
       'Estella is deliberately raised as a weapon: "Break their hearts," Miss Havisham instructs her, making her both victim and perpetrator.',
       'Pip\'s shame about being "common" introduces the central theme of social class and its power to distort self-worth.',
       'The house itself is a symbol: "Satis" means "enough" in Latin, but nothing in the house is sufficient — it is a monument to emotional starvation.',
@@ -76,19 +80,19 @@ const CHAPTERS: ChapterAnalysis[] = [
     },
     writersMethods: [
       'Symbolism — the stopped clocks, decaying cake and faded dress represent time frozen by trauma and the impossibility of escaping the past.',
-      'Contrast between the dark, airless interior of Satis House and the open marshes of Pip\'s home highlights two different kinds of imprisonment.',
+      "Contrast between the dark, airless interior of Satis House and the open marshes of Pip's home highlights two different kinds of imprisonment.",
       'Miss Havisham is presented through Gothic conventions — the ghostly bride, the ruined mansion — to suggest emotional death in life.',
     ],
   },
   {
     chapter: 'Chapters 17-19',
     title: 'The Great Expectations',
-    setting: 'The forge at Joe\'s house; Mr Jaggers\' visit',
+    setting: "The forge at Joe's house; Mr Jaggers' visit",
     summary:
       'The lawyer Jaggers arrives at the forge to announce that Pip has "great expectations" — an unknown benefactor has arranged for him to be brought up as a gentleman in London. Pip immediately assumes Miss Havisham is his patron and that he is destined to marry Estella. He prepares to leave for London, growing increasingly snobbish and condescending toward Joe and Biddy. On his last evening, he walks alone on the marshes and weeps, sensing that he is leaving behind something precious, but his ambition overwhelms his conscience.',
     significance: [
       'The announcement is the novel\'s structural turning point, dividing Pip\'s life into "before" and "after."',
-      'Pip\'s assumption that Miss Havisham is his benefactor reveals his capacity for self-deception — he believes what flatters him.',
+      "Pip's assumption that Miss Havisham is his benefactor reveals his capacity for self-deception — he believes what flatters him.",
       'His growing rudeness to Joe and Biddy exposes how quickly wealth and social aspiration corrupt genuine human bonds.',
       'Dickens uses the marshes walk to show that Pip instinctively knows he is making a moral error, but cannot resist the pull of class ambition.',
       'The phrase "great expectations" is deeply ironic — Pip expects greatness, but his expectations lead him away from the true goodness he already possesses.',
@@ -100,32 +104,32 @@ const CHAPTERS: ChapterAnalysis[] = [
     },
     writersMethods: [
       'Dramatic irony — the reader senses Pip is wrong about Miss Havisham, but Dickens withholds the truth for maximum impact later.',
-      'The motif of the marshes returns as a moral touchstone: the landscape represents Pip\'s authentic self.',
-      'Pip\'s tears function as a physical revolt against his conscious decision — Dickens shows the body knowing what the mind denies.',
+      "The motif of the marshes returns as a moral touchstone: the landscape represents Pip's authentic self.",
+      "Pip's tears function as a physical revolt against his conscious decision — Dickens shows the body knowing what the mind denies.",
     ],
   },
   {
     chapter: 'Chapters 39-40',
     title: 'The Revelation',
-    setting: 'Pip\'s chambers in the Temple, London, during a storm',
+    setting: "Pip's chambers in the Temple, London, during a storm",
     summary:
-      'On a stormy night, a rough, weather-beaten stranger arrives at Pip\'s London lodgings. Pip gradually recognises the man as Magwitch, the convict from the marshes. Magwitch reveals that he — not Miss Havisham — is Pip\'s benefactor. He made his fortune as a sheep farmer in New South Wales and has devoted his entire life to making Pip a gentleman, driven by gratitude for the child who helped him decades earlier. Pip is revolted: his gentlemanly existence has been funded by a transported criminal. Everything he believed about his destiny — his connection to Miss Havisham, his right to Estella — collapses.',
+      "On a stormy night, a rough, weather-beaten stranger arrives at Pip's London lodgings. Pip gradually recognises the man as Magwitch, the convict from the marshes. Magwitch reveals that he — not Miss Havisham — is Pip's benefactor. He made his fortune as a sheep farmer in New South Wales and has devoted his entire life to making Pip a gentleman, driven by gratitude for the child who helped him decades earlier. Pip is revolted: his gentlemanly existence has been funded by a transported criminal. Everything he believed about his destiny — his connection to Miss Havisham, his right to Estella — collapses.",
     significance: [
-      'The revelation is the novel\'s climactic turning point and forces Pip to confront everything he has valued.',
-      'Pip\'s revulsion at Magwitch exposes his snobbery: he is disgusted not by a crime but by the man\'s low social status.',
+      "The revelation is the novel's climactic turning point and forces Pip to confront everything he has valued.",
+      "Pip's revulsion at Magwitch exposes his snobbery: he is disgusted not by a crime but by the man's low social status.",
       'Dickens demolishes the idea that gentility is inherent — Pip\'s "gentleman" status was created by a convict\'s money, proving class is a construction.',
       'Magwitch\'s devotion reveals that true loyalty and generosity exist in the "lowest" levels of society, not in Satis House.',
-      'The storm mirrors the upheaval in Pip\'s understanding of himself and anticipates the moral storm he must now navigate.',
+      "The storm mirrors the upheaval in Pip's understanding of himself and anticipates the moral storm he must now navigate.",
     ],
     keyQuote: {
-      text: '"Yes, Pip, dear boy, I\'ve made a gentleman on you! It\'s me wot has done it! I swore that time, sure as ever I earned a guinea, that guinea should go to you... \'If I ain\'t a gentleman, nor yet ain\'t got no learning, I\'ll make a better gentleman nor ever I was!\'"',
+      text: "\"Yes, Pip, dear boy, I've made a gentleman on you! It's me wot has done it! I swore that time, sure as ever I earned a guinea, that guinea should go to you... 'If I ain't a gentleman, nor yet ain't got no learning, I'll make a better gentleman nor ever I was!'\"",
       analysis:
         'Magwitch\'s dialect ("wot," "nor") and his grammar mark him as uneducated and lower-class, yet his speech overflows with devotion and generosity. The irony is devastating: the man who cannot speak like a gentleman has spent his life creating one. Dickens forces the reader to see that moral worth and social status are entirely separate things. Magwitch\'s pride in Pip is simultaneously touching and troubling — he has treated Pip as a project, a living proof of his own worth.',
     },
     writersMethods: [
-      'Pathetic fallacy — the violent storm mirrors Pip\'s psychological turmoil and the destruction of his illusions.',
+      "Pathetic fallacy — the violent storm mirrors Pip's psychological turmoil and the destruction of his illusions.",
       'Dramatic irony resolved: the reader now understands the full significance of the opening chapters.',
-      'Dickens uses Magwitch\'s non-standard English to expose the reader\'s own class prejudice — we are forced to confront whether we share Pip\'s revulsion.',
+      "Dickens uses Magwitch's non-standard English to expose the reader's own class prejudice — we are forced to confront whether we share Pip's revulsion.",
     ],
   },
   {
@@ -136,8 +140,8 @@ const CHAPTERS: ChapterAnalysis[] = [
       'Years later, Pip returns to the site where Satis House once stood. The mansion has been demolished and the land cleared. In the evening mist, he meets Estella, who has been deeply changed by her unhappy marriage to Drummle and his subsequent death. She tells Pip that "suffering has been stronger than all other teaching." They walk together out of the ruined garden, and Pip sees "no shadow of another parting from her." Dickens wrote two endings: the original, in which Pip and Estella part for good, and the revised version (published) in which their reunion is implied but left ambiguous.',
     significance: [
       'The demolished Satis House symbolises the destruction of false values — the rotten edifice of class pretension has been cleared away.',
-      'Estella\'s transformation through suffering mirrors Pip\'s own moral education: both have learned through loss.',
-      'The ambiguity of the ending reflects Dickens\'s uncertainty about whether his characters deserve happiness or have learned enough.',
+      "Estella's transformation through suffering mirrors Pip's own moral education: both have learned through loss.",
+      "The ambiguity of the ending reflects Dickens's uncertainty about whether his characters deserve happiness or have learned enough.",
       'The mist returns from the opening chapter, creating a structural circle: Pip ends where he began, on uncertain ground, but with greater self-knowledge.',
       'Dickens resists a simple happy ending — even the revised version is suffused with sadness, loss and the passage of time.',
     ],
@@ -194,9 +198,9 @@ export default async function GreatExpectationsChaptersPage() {
             Great Expectations — Charles Dickens
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-            Five pivotal moments in the novel analysed in depth: the graveyard
-            encounter, Satis House, the announcement of expectations, the
-            revelation of the true benefactor, and the ambiguous ending.
+            Five pivotal moments in the novel analysed in depth: the graveyard encounter, Satis
+            House, the announcement of expectations, the revelation of the true benefactor, and the
+            ambiguous ending.
           </p>
         </div>
       </section>
@@ -219,19 +223,13 @@ export default async function GreatExpectationsChaptersPage() {
             <CardContent className="space-y-6 p-6 sm:p-8">
               {/* Summary */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">
-                  What happens
-                </h3>
-                <p className="text-body-sm text-muted-foreground">
-                  {ch.summary}
-                </p>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">What happens</h3>
+                <p className="text-body-sm text-muted-foreground">{ch.summary}</p>
               </div>
 
               {/* Significance */}
               <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">
-                  Why it matters
-                </h3>
+                <h3 className="mb-2 text-sm font-semibold text-foreground">Why it matters</h3>
                 <ul className="space-y-2 text-body-sm text-muted-foreground">
                   {ch.significance.map((s, i) => (
                     <li key={i} className="flex gap-2">
@@ -247,9 +245,7 @@ export default async function GreatExpectationsChaptersPage() {
                 <p className="mb-2 text-body-md font-medium italic text-foreground">
                   {ch.keyQuote.text}
                 </p>
-                <p className="text-body-sm text-muted-foreground">
-                  {ch.keyQuote.analysis}
-                </p>
+                <p className="text-body-sm text-muted-foreground">{ch.keyQuote.analysis}</p>
               </div>
 
               {/* Writer's Methods */}
@@ -273,9 +269,8 @@ export default async function GreatExpectationsChaptersPage() {
 
       {/* Public domain notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Great Expectations by Charles Dickens (1861) is in the public domain.
-        Quotations are reproduced freely as the text is no longer subject to
-        copyright.
+        Great Expectations by Charles Dickens (1861) is in the public domain. Quotations are
+        reproduced freely as the text is no longer subject to copyright.
       </p>
     </div>
   )

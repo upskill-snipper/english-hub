@@ -1,13 +1,7 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  Quote,
-  Sparkles,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, Quote, Sparkles } from 'lucide-react'
 
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -16,12 +10,16 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Of Mice and Men — Key Quotes | The English Hub',
+    description:
+      'Twenty-five essential quotations from Of Mice and Men by John Steinbeck with speaker, context and detailed analysis.',
+  },
   title: 'Of Mice and Men — Key Quotes | The English Hub',
   description:
     'Twenty-five essential quotations from Of Mice and Men by John Steinbeck with speaker, context and detailed analysis.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/revision/texts/of-mice-and-men/key-quotes',
+    canonical: 'https://theenglishhub.app/revision/texts/of-mice-and-men/key-quotes',
   },
 }
 
@@ -52,7 +50,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Lennie',
     context: 'Chapter 1 — dream recitation',
     analysis:
-      'Lennie articulates the friendship\'s emotional core with a simplicity George cannot match. Steinbeck gives the deepest insight to the character the world underestimates, challenging the reader\'s assumptions about intelligence and feeling.',
+      "Lennie articulates the friendship's emotional core with a simplicity George cannot match. Steinbeck gives the deepest insight to the character the world underestimates, challenging the reader's assumptions about intelligence and feeling.",
     themes: ['Friendship', 'The American Dream'],
   },
   {
@@ -76,7 +74,7 @@ const KEY_QUOTES: KeyQuote[] = [
   {
     id: 5,
     text: '"I get lonely. You can talk to people, but I can\'t talk to nobody."',
-    speaker: 'Curley\'s Wife',
+    speaker: "Curley's Wife",
     context: 'Chapter 5 — to Lennie in the barn',
     analysis:
       'Humanises her moments before her death. Steinbeck forces a reappraisal: she is not the temptress the ranch men see but a young woman as isolated as they are, with even fewer escape routes.',
@@ -88,7 +86,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Candy',
     context: 'Chapter 3 — after the dog is killed',
     analysis:
-      'The novella\'s most important piece of foreshadowing. Candy\'s regret about delegating a mercy killing teaches George the lesson he will act on in the final chapter. Steinbeck links the two deaths structurally.',
+      "The novella's most important piece of foreshadowing. Candy's regret about delegating a mercy killing teaches George the lesson he will act on in the final chapter. Steinbeck links the two deaths structurally.",
     themes: ['Friendship', 'Nature and animals'],
   },
   {
@@ -97,7 +95,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Lennie',
     context: 'Recurring — Chapters 1, 3, 6',
     analysis:
-      'The dream\'s refrain. Each repetition carries more weight: hope in Chapter 1, conviction in Chapter 3, heartbreak in Chapter 6. Steinbeck uses repetition to measure the distance between innocence and tragedy.',
+      "The dream's refrain. Each repetition carries more weight: hope in Chapter 1, conviction in Chapter 3, heartbreak in Chapter 6. Steinbeck uses repetition to measure the distance between innocence and tragedy.",
     themes: ['The American Dream', 'Friendship'],
   },
   {
@@ -106,12 +104,12 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Slim',
     context: 'Chapter 6 — final lines',
     analysis:
-      'The ranch\'s moral authority validates the killing. Steinbeck uses Slim\'s compassion to prevent the ending from collapsing into simple horror, offering the reader a moral position from which to process the tragedy.',
+      "The ranch's moral authority validates the killing. Steinbeck uses Slim's compassion to prevent the ending from collapsing into simple horror, offering the reader a moral position from which to process the tragedy.",
     themes: ['Friendship', 'Power'],
   },
   {
     id: 9,
-    text: '"S\'pose you didn\'t have nobody... A guy goes nuts if he ain\'t got nobody."',
+    text: "\"S'pose you didn't have nobody... A guy goes nuts if he ain't got nobody.\"",
     speaker: 'Crooks',
     context: 'Chapter 4 — reflecting on isolation',
     analysis:
@@ -139,10 +137,10 @@ const KEY_QUOTES: KeyQuote[] = [
   {
     id: 12,
     text: '"Coulda been in the movies, an\' had nice clothes."',
-    speaker: 'Curley\'s Wife',
+    speaker: "Curley's Wife",
     context: 'Chapter 5 — to Lennie',
     analysis:
-      'Her Hollywood dream parallels the men\'s land dream. Steinbeck shows the Depression crushed women\'s aspirations as brutally as men\'s, but with even fewer alternatives.',
+      "Her Hollywood dream parallels the men's land dream. Steinbeck shows the Depression crushed women's aspirations as brutally as men's, but with even fewer alternatives.",
     themes: ['The American Dream', 'Prejudice'],
   },
   {
@@ -151,13 +149,13 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Candy',
     context: 'Chapter 3 — offering savings',
     analysis:
-      'The moment hope becomes tangible. Steinbeck lets the reader believe alongside the characters, making the dream\'s destruction more painful because it briefly seemed possible.',
+      "The moment hope becomes tangible. Steinbeck lets the reader believe alongside the characters, making the dream's destruction more painful because it briefly seemed possible.",
     themes: ['The American Dream', 'Friendship'],
   },
   {
     id: 14,
     text: '"I could get you strung up on a tree so easy."',
-    speaker: 'Curley\'s Wife to Crooks',
+    speaker: "Curley's Wife to Crooks",
     context: 'Chapter 4',
     analysis:
       'The powerless woman weaponises racial violence against the only person below her in the hierarchy. Steinbeck exposes how oppression is reproduced within oppressed groups.',
@@ -169,16 +167,16 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Narrator',
     context: 'Chapter 1 and Chapter 6',
     analysis:
-      'The repeated image creates circularity. Nature continues indifferently while human tragedy unfolds. Steinbeck frames Lennie\'s death within a cycle that neither mourns nor judges.',
+      "The repeated image creates circularity. Nature continues indifferently while human tragedy unfolds. Steinbeck frames Lennie's death within a cycle that neither mourns nor judges.",
     themes: ['Nature and animals'],
   },
   {
     id: 16,
-    text: '"He ain\'t no good to himself. Why\'n\'t you shoot him?"',
-    speaker: 'Carlson on Candy\'s dog',
+    text: "\"He ain't no good to himself. Why'n't you shoot him?\"",
+    speaker: "Carlson on Candy's dog",
     context: 'Chapter 3',
     analysis:
-      'Carlson\'s pragmatic cruelty toward the dog establishes the ranch\'s moral code: uselessness equals disposability. Steinbeck draws a direct line to the treatment of Lennie, Candy and Crooks.',
+      "Carlson's pragmatic cruelty toward the dog establishes the ranch's moral code: uselessness equals disposability. Steinbeck draws a direct line to the treatment of Lennie, Candy and Crooks.",
     themes: ['Nature and animals', 'Power'],
   },
   {
@@ -194,7 +192,7 @@ const KEY_QUOTES: KeyQuote[] = [
     id: 18,
     text: '"I think I knowed from the very first. I think I knowed we\'d never do her."',
     speaker: 'George',
-    context: 'Chapter 5 — after Curley\'s wife\'s death',
+    context: "Chapter 5 — after Curley's wife's death",
     analysis:
       'George admits the dream was always fantasy. Steinbeck collapses hope and self-awareness in a single line, revealing that George carried the dream for Lennie, not for himself.',
     themes: ['The American Dream', 'Friendship'],
@@ -202,8 +200,8 @@ const KEY_QUOTES: KeyQuote[] = [
   {
     id: 19,
     text: '"They left all the weak ones here."',
-    speaker: 'Curley\'s Wife',
-    context: 'Chapter 4 — in Crooks\'s room',
+    speaker: "Curley's Wife",
+    context: "Chapter 4 — in Crooks's room",
     analysis:
       'She identifies the marginalised group assembled in the harness room but fails to recognise herself as part of it. Steinbeck shows how internalised prejudice blinds people to their own oppression.',
     themes: ['Power', 'Prejudice'],
@@ -237,11 +235,11 @@ const KEY_QUOTES: KeyQuote[] = [
   },
   {
     id: 23,
-    text: '"I don\'t know why I can\'t keep it. It ain\'t nobody\'s mouse."',
+    text: "\"I don't know why I can't keep it. It ain't nobody's mouse.\"",
     speaker: 'Lennie',
     context: 'Chapter 1',
     analysis:
-      'Lennie\'s love of soft things is established with the first dead mouse. Steinbeck begins the foreshadowing chain — mice, puppy, woman — that makes the ending feel structurally inevitable.',
+      "Lennie's love of soft things is established with the first dead mouse. Steinbeck begins the foreshadowing chain — mice, puppy, woman — that makes the ending feel structurally inevitable.",
     themes: ['Nature and animals'],
   },
   {
@@ -250,7 +248,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'George',
     context: 'Chapter 6 — final scene',
     analysis:
-      'George\'s last tender words before pulling the trigger. Steinbeck fuses love and violence in a single sentence, making the mercy killing an act of unbearable intimacy.',
+      "George's last tender words before pulling the trigger. Steinbeck fuses love and violence in a single sentence, making the mercy killing an act of unbearable intimacy.",
     themes: ['Friendship'],
   },
   {
@@ -259,7 +257,7 @@ const KEY_QUOTES: KeyQuote[] = [
     speaker: 'Carlson',
     context: 'Chapter 6 — closing line',
     analysis:
-      'The novella\'s final line exposes Carlson\'s emotional illiteracy. Steinbeck ends with incomprehension to show that most people cannot even see the friendship they have just witnessed destroyed.',
+      "The novella's final line exposes Carlson's emotional illiteracy. Steinbeck ends with incomprehension to show that most people cannot even see the friendship they have just witnessed destroyed.",
     themes: ['Loneliness', 'Friendship'],
   },
 ]
@@ -277,11 +275,17 @@ export default async function OfMiceAndMenKeyQuotesPage() {
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Of Mice and Men", url: "https://theenglishhub.app/revision/texts/of-mice-and-men" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/of-mice-and-men/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Of Mice and Men',
+            url: 'https://theenglishhub.app/revision/texts/of-mice-and-men',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/revision/texts/of-mice-and-men/key-quotes',
+          },
         ]}
       />
       {/* Hero */}
@@ -327,18 +331,14 @@ export default async function OfMiceAndMenKeyQuotesPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Quote className="size-5 text-violet-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            25 Key Quotes
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">25 Key Quotes</h2>
         </div>
         <div className="grid gap-4">
           {KEY_QUOTES.map((q) => (
             <Card key={q.id}>
               <CardContent className="space-y-3 p-5">
                 <div className="flex items-start justify-between gap-4">
-                  <p className="text-body-md font-medium italic text-foreground">
-                    {q.text}
-                  </p>
+                  <p className="text-body-md font-medium italic text-foreground">{q.text}</p>
                   <span className="shrink-0 flex size-7 items-center justify-center rounded-full bg-muted text-xs font-semibold text-muted-foreground">
                     {q.id}
                   </span>
@@ -393,9 +393,9 @@ export default async function OfMiceAndMenKeyQuotesPage() {
 
       {/* Copyright notice */}
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-        Short quotations reproduced under the fair dealing provision of the Copyright,
-        Designs and Patents Act 1988 for criticism and review. Full text available from
-        your school or local library.
+        Short quotations reproduced under the fair dealing provision of the Copyright, Designs and
+        Patents Act 1988 for criticism and review. Full text available from your school or local
+        library.
       </p>
     </div>
   )

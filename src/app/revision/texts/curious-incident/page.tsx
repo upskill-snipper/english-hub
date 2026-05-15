@@ -7,6 +7,10 @@ import { TextGuide, type TextGuideData } from '../_components/text-guide'
 import StudyTools from '@/components/study/StudyTools'
 import { LearningResourceJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'The Curious Incident revision guide — themes, characters, key quotes — The English Hub',
+    description: 'The Curious Incident IGCSE revision — Mark Haddon',
+  },
   title: 'The Curious Incident revision guide — themes, characters, key quotes — The English Hub',
   description:
     "The Curious Incident IGCSE revision — Mark Haddon's 2003 novel with plot, characters, themes, context and key quotes. Pearson Edexcel IGCSE 4ET1-aligned.",

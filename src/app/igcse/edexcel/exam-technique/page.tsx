@@ -12,18 +12,17 @@ import {
   AlertTriangle,
   CheckCircle2,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Edexcel IGCSE Literature Exam Technique — The English Hub',
+    description:
+      'Paper 1 and Paper 2 exam technique for Pearson Edexcel IGCSE English Literature. Comparison, extract-based and essay-style question strategies.',
+  },
   title: 'Edexcel IGCSE Literature Exam Technique — The English Hub',
   description:
     'Paper 1 and Paper 2 exam technique for Pearson Edexcel IGCSE English Literature. Comparison, extract-based and essay-style question strategies.',
@@ -176,10 +175,9 @@ export default async function EdexcelExamTechniquePage() {
             IGCSE Literature Exam Technique
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Specific strategies for the three question types that show up in
-            Edexcel IGCSE English Literature — comparison, extract-based
-            and essay-style questions. Each approach is mapped to what
-            examiners are actually rewarding.
+            Specific strategies for the three question types that show up in Edexcel IGCSE English
+            Literature — comparison, extract-based and essay-style questions. Each approach is
+            mapped to what examiners are actually rewarding.
           </p>
         </div>
       </section>
@@ -208,18 +206,13 @@ export default async function EdexcelExamTechniquePage() {
                     </div>
                     <div className="flex flex-wrap justify-end gap-1">
                       {q.ao.map((ao) => (
-                        <Badge
-                          key={ao}
-                          className="bg-primary/10 text-primary border-primary/20"
-                        >
+                        <Badge key={ao} className="bg-primary/10 text-primary border-primary/20">
                           {ao}
                         </Badge>
                       ))}
                     </div>
                   </div>
-                  <CardTitle className="text-heading-md font-heading">
-                    {q.title}
-                  </CardTitle>
+                  <CardTitle className="text-heading-md font-heading">{q.title}</CardTitle>
                   <CardDescription>{q.subtitle}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-1 flex-col gap-4">
@@ -245,21 +238,15 @@ export default async function EdexcelExamTechniquePage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <AlertTriangle className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Common pitfalls to avoid
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Common pitfalls to avoid</h2>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {pitfalls.map((p) => (
             <Card key={p.title}>
               <CardContent className="flex flex-col gap-2 p-5">
-                <h3 className="text-body-sm font-semibold text-foreground">
-                  {p.title}
-                </h3>
-                <p className="text-body-xs text-muted-foreground leading-relaxed">
-                  {p.detail}
-                </p>
+                <h3 className="text-body-sm font-semibold text-foreground">{p.title}</h3>
+                <p className="text-body-xs text-muted-foreground leading-relaxed">{p.detail}</p>
               </CardContent>
             </Card>
           ))}
@@ -270,21 +257,15 @@ export default async function EdexcelExamTechniquePage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Compass className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Pre-hand-in checklist
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Pre-hand-in checklist</h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-4">
-          Run through this checklist in the last two minutes of every exam
-          answer. If anything is missing, prioritise adding it before polishing
-          anything else.
+          Run through this checklist in the last two minutes of every exam answer. If anything is
+          missing, prioritise adding it before polishing anything else.
         </p>
         <ul className="grid gap-2 sm:grid-cols-2">
           {checklist.map((item) => (
-            <li
-              key={item}
-              className="flex items-start gap-2 text-body-sm text-muted-foreground"
-            >
+            <li key={item} className="flex items-start gap-2 text-body-sm text-muted-foreground">
               <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
               <span>{item}</span>
             </li>

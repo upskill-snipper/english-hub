@@ -7,6 +7,11 @@ import { STRINGS as _EAL_STRINGS } from './content'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Romeo and Juliet Study Guide for OCR | The English Hub',
+    description:
+      'Comprehensive Romeo and Juliet study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/ocr/romeo-and-juliet',
   },

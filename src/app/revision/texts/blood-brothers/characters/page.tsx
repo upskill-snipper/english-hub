@@ -10,6 +10,11 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Blood Brothers — Character Analysis | The English Hub',
+    description:
+      'In-depth character analysis for Blood Brothers by Willy Russell: Mickey, Eddie, Mrs Johnstone, Mrs Lyons, Linda, Narrator and Sammy.',
+  },
   title: 'Blood Brothers — Character Analysis | The English Hub',
   description:
     'In-depth character analysis for Blood Brothers by Willy Russell: Mickey, Eddie, Mrs Johnstone, Mrs Lyons, Linda, Narrator and Sammy.',

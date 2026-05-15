@@ -9,6 +9,12 @@ import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineS
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata = {
+  openGraph: {
+    title: 'Tissue -- Imtiaz Dharker -- The English Hub',
+    description:
+      'Interactive study guide for Tissue by Imtiaz Dharker. GCSE Power and Conflict poetry analysis with annotations, key quotes, language devices, and comparisons.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/tissue' },
   title: 'Tissue -- Imtiaz Dharker -- The English Hub',
   description:
     'Interactive study guide for Tissue by Imtiaz Dharker. GCSE Power and Conflict poetry analysis with annotations, key quotes, language devices, and comparisons.',

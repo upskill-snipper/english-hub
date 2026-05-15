@@ -7,6 +7,11 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Extended Metaphors — Cambridge IGCSE Descriptive Writing',
+    description:
+      'How to build, sustain and evolve an extended metaphor for Cambridge IGCSE descriptive composition, with worked examples and controlling-image patterns.',
+  },
   title: 'Extended Metaphors — Cambridge IGCSE Descriptive Writing',
   description:
     'How to build, sustain and evolve an extended metaphor for Cambridge IGCSE descriptive composition, with worked examples and controlling-image patterns.',
@@ -75,10 +80,9 @@ export default async function ExtendedMetaphorsPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             One-off metaphors decorate a description. An{' '}
-            <strong className="text-foreground">extended metaphor</strong>{' '}
-            holds the whole piece together. Cambridge examiners describe
-            top-band work as &ldquo;sustained&rdquo; and &ldquo;controlled&rdquo;
-            — sustained is what a good extended metaphor provides.
+            <strong className="text-foreground">extended metaphor</strong> holds the whole piece
+            together. Cambridge examiners describe top-band work as &ldquo;sustained&rdquo; and
+            &ldquo;controlled&rdquo; — sustained is what a good extended metaphor provides.
           </p>
         </div>
       </section>
@@ -92,17 +96,15 @@ export default async function ExtendedMetaphorsPage() {
         </CardHeader>
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
           <p>
-            Before you write, answer this question: <em>If the scene I am
-            describing were something else, what would it be?</em>
+            Before you write, answer this question:{' '}
+            <em>If the scene I am describing were something else, what would it be?</em>
           </p>
           <p>
             Good controlling images share three properties. They are{' '}
-            <strong className="text-foreground">concrete</strong> (you can
-            picture them), <strong className="text-foreground">dynamic</strong>{' '}
-            (they can change or move), and{' '}
-            <strong className="text-foreground">emotionally flexible</strong>{' '}
-            (they can feel hopeful or sinister depending on how you steer
-            them).
+            <strong className="text-foreground">concrete</strong> (you can picture them),{' '}
+            <strong className="text-foreground">dynamic</strong> (they can change or move), and{' '}
+            <strong className="text-foreground">emotionally flexible</strong> (they can feel hopeful
+            or sinister depending on how you steer them).
           </p>
           <ul className="list-disc space-y-1 pl-5">
             <li>A city as a living animal</li>
@@ -123,14 +125,13 @@ export default async function ExtendedMetaphorsPage() {
         </CardHeader>
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
           <p>
-            A weak extended metaphor keeps saying the same thing. A strong
-            extended metaphor evolves. If the city is an animal, it first{' '}
-            <em>wakes</em>, then <em>breathes</em>, then <em>feeds</em>, then{' '}
-            <em>dreams</em>. The image is the same. The verb is different.
+            A weak extended metaphor keeps saying the same thing. A strong extended metaphor
+            evolves. If the city is an animal, it first <em>wakes</em>, then <em>breathes</em>, then{' '}
+            <em>feeds</em>, then <em>dreams</em>. The image is the same. The verb is different.
           </p>
           <p>
-            A useful test: can a reader identify your controlling image by
-            paragraph 2 without the word itself being repeated?
+            A useful test: can a reader identify your controlling image by paragraph 2 without the
+            word itself being repeated?
           </p>
         </CardContent>
       </Card>
@@ -144,11 +145,12 @@ export default async function ExtendedMetaphorsPage() {
         </CardHeader>
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
           <p>
-            The single move that separates Band 4 from Band 5 in examiner
-            reports is <strong className="text-foreground">returning to the
-            opening image and changing it</strong>. If the city began as an
-            animal waking, let it end as an animal falling back to sleep. The
-            scene has moved, but the image remembers where it started.
+            The single move that separates Band 4 from Band 5 in examiner reports is{' '}
+            <strong className="text-foreground">
+              returning to the opening image and changing it
+            </strong>
+            . If the city began as an animal waking, let it end as an animal falling back to sleep.
+            The scene has moved, but the image remembers where it started.
           </p>
         </CardContent>
       </Card>
@@ -157,9 +159,7 @@ export default async function ExtendedMetaphorsPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Palette className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Three worked examples
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Three worked examples</h2>
         </div>
         <div className="grid gap-4 lg:grid-cols-3">
           {controllingImages.map((c) => (
@@ -191,33 +191,29 @@ export default async function ExtendedMetaphorsPage() {
 
       {/* Warnings */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Common traps
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Common traps</h2>
         <ul className="mt-4 space-y-3 text-body-sm text-muted-foreground">
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Mixed metaphors.</strong>{' '}
-              Don&rsquo;t let the city be an animal in paragraph one and then
-              an engine in paragraph two. Pick one and commit.
+              <strong className="text-foreground">Mixed metaphors.</strong> Don&rsquo;t let the city
+              be an animal in paragraph one and then an engine in paragraph two. Pick one and
+              commit.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Over-explaining.</strong>{' '}
-              You do not need to write &ldquo;it was like an animal&rdquo;
-              every time. Trust the reader — use verbs and nouns that belong
-              to the image.
+              <strong className="text-foreground">Over-explaining.</strong> You do not need to write
+              &ldquo;it was like an animal&rdquo; every time. Trust the reader — use verbs and nouns
+              that belong to the image.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Clichés.</strong> The heart
-              as a prison, tears as rivers, life as a journey. Any image your
-              classmates will also use is worth replacing.
+              <strong className="text-foreground">Clichés.</strong> The heart as a prison, tears as
+              rivers, life as a journey. Any image your classmates will also use is worth replacing.
             </span>
           </li>
         </ul>

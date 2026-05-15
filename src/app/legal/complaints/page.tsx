@@ -3,6 +3,12 @@ import { Metadata } from 'next'
 import { t as _trServer } from '@/lib/i18n/t'
 import { STRINGS as _EAL_STRINGS } from './content'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Complaints Procedure',
+    description:
+      'Complaints Procedure for The English Hub, explaining how to raise concerns and what to expect.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/legal/complaints' },
   title: 'Complaints Procedure',
   description:
     'Complaints Procedure for The English Hub, explaining how to raise concerns and what to expect.',

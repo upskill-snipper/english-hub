@@ -7,6 +7,11 @@ import { tMany } from '@/lib/i18n/t'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Essay Structure Templates',
+    description:
+      'Proven essay structure templates for GCSE and IGCSE English exams. Introduction techniques, PEEL paragraphs, conclusion strategies, topic sentences, and paragraph count guidance for different mark allocations.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/essay-structure' },
   title: 'Essay Structure Templates',
   description:

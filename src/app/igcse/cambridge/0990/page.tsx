@@ -25,6 +25,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'IGCSE Language B — The English Hub',
+    description:
+      'IGCSE Language B hub. Same content as Language A with 9-1 numerical grading. Reading Paper, Writing Paper, grade-by-grade guides and practice papers. Aligns with Cambridge syllabus 0990.',
+  },
   title: 'IGCSE Language B — The English Hub',
   description:
     'IGCSE Language B hub. Same content as Language A with 9-1 numerical grading. Reading Paper, Writing Paper, grade-by-grade guides and practice papers. Aligns with Cambridge syllabus 0990.',

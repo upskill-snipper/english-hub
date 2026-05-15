@@ -10,17 +10,17 @@ import {
   CheckCircle2,
   Timer,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Paper 1 Reading | Cambridge IGCSE Language B | The English Hub',
+    description:
+      'Cambridge IGCSE Language B Paper 1 Reading: full overview, question structure, timing strategy and 9-1 grade boundaries.',
+  },
   title: 'Paper 1 Reading | Cambridge IGCSE Language B | The English Hub',
   description:
     'Cambridge IGCSE Language B Paper 1 Reading: full overview, question structure, timing strategy and 9-1 grade boundaries.',
@@ -82,11 +82,7 @@ export default async function Paper1Page() {
   return (
     <div className="space-y-10 pb-16">
       <div>
-        <Button
-          variant="ghost"
-          size="sm"
-          render={<Link href="/igcse/cambridge/0990" />}
-        >
+        <Button variant="ghost" size="sm" render={<Link href="/igcse/cambridge/0990" />}>
           <ArrowLeft className="size-3.5" />
           Back to IGCSE Language B hub
         </Button>
@@ -107,13 +103,12 @@ export default async function Paper1Page() {
             Paper 1: Reading
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Two hours. Two unseen non-fiction texts. Three compulsory
-            questions worth 80 marks — 50% of the IGCSE Language B qualification.
+            Two hours. Two unseen non-fiction texts. Three compulsory questions worth 80 marks — 50%
+            of the IGCSE Language B qualification.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
-              <Clock className="size-3.5" />
-              2 hours
+              <Clock className="size-3.5" />2 hours
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
               <BookOpen className="size-3.5" />
@@ -131,25 +126,19 @@ export default async function Paper1Page() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Paper structure
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Paper structure</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           {questions.map((q) => (
             <Card key={q.q}>
               <CardHeader className="pb-2">
                 <div className="flex items-start justify-between gap-3">
-                  <CardTitle className="text-body font-semibold">
-                    {q.q}
-                  </CardTitle>
+                  <CardTitle className="text-body font-semibold">{q.q}</CardTitle>
                   <Badge variant="secondary">{q.marks}</Badge>
                 </div>
               </CardHeader>
               <CardContent className="space-y-2">
-                <p className="text-body-xs font-medium text-primary">
-                  {q.focus}
-                </p>
+                <p className="text-body-xs font-medium text-primary">{q.focus}</p>
                 <p className="text-body-sm text-muted-foreground leading-relaxed">
                   {q.description}
                 </p>
@@ -180,16 +169,9 @@ export default async function Paper1Page() {
               </thead>
               <tbody>
                 {boundaries.map((b) => (
-                  <tr
-                    key={b.grade}
-                    className="border-b border-border/40 last:border-0"
-                  >
-                    <td className="px-4 py-3 font-semibold text-foreground">
-                      {b.grade}
-                    </td>
-                    <td className="px-4 py-3 text-muted-foreground">
-                      {b.mark}
-                    </td>
+                  <tr key={b.grade} className="border-b border-border/40 last:border-0">
+                    <td className="px-4 py-3 font-semibold text-foreground">{b.grade}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{b.mark}</td>
                     <td className="px-4 py-3 text-muted-foreground">
                       {Math.round((b.mark / 80) * 100)}%
                     </td>
@@ -197,16 +179,16 @@ export default async function Paper1Page() {
                       {b.grade === 9
                         ? 'Above A*'
                         : b.grade === 8
-                        ? 'A*/A'
-                        : b.grade === 7
-                        ? 'A'
-                        : b.grade === 6
-                        ? 'B'
-                        : b.grade === 5
-                        ? 'B/C'
-                        : b.grade === 4
-                        ? 'C'
-                        : 'D'}
+                          ? 'A*/A'
+                          : b.grade === 7
+                            ? 'A'
+                            : b.grade === 6
+                              ? 'B'
+                              : b.grade === 5
+                                ? 'B/C'
+                                : b.grade === 4
+                                  ? 'C'
+                                  : 'D'}
                     </td>
                   </tr>
                 ))}
@@ -215,9 +197,8 @@ export default async function Paper1Page() {
           </div>
         </div>
         <p className="mt-3 text-body-xs text-muted-foreground">
-          Boundaries are approximate and vary between sessions. Always check
-          the actual boundaries for your exam session on the Cambridge
-          website.
+          Boundaries are approximate and vary between sessions. Always check the actual boundaries
+          for your exam session on the Cambridge website.
         </p>
       </section>
 
@@ -244,40 +225,34 @@ export default async function Paper1Page() {
 
       {/* What examiners reward */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          What examiners reward
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">What examiners reward</h2>
         <ul className="mt-4 space-y-3 text-body-sm text-muted-foreground">
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Precise, short quotations</strong>
-              {' '}— one or two words often beats a whole sentence. Embed them
-              in your analysis, don&apos;t dump them.
+              <strong className="text-foreground">Precise, short quotations</strong> — one or two
+              words often beats a whole sentence. Embed them in your analysis, don&apos;t dump them.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Comment on effect</strong>{' '}
-              — say what the language <em>does</em> to the reader, not just
-              what technique is used.
+              <strong className="text-foreground">Comment on effect</strong> — say what the language{' '}
+              <em>does</em> to the reader, not just what technique is used.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Own words in the summary</strong>{' '}
-              — paraphrase rather than copy whole phrases from the original
-              texts.
+              <strong className="text-foreground">Own words in the summary</strong> — paraphrase
+              rather than copy whole phrases from the original texts.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Cover the full range</strong>{' '}
-              — the extended analysis should explore language <em>and</em>{' '}
-              structure, not just word choices.
+              <strong className="text-foreground">Cover the full range</strong> — the extended
+              analysis should explore language <em>and</em> structure, not just word choices.
             </span>
           </li>
         </ul>
@@ -285,14 +260,9 @@ export default async function Paper1Page() {
 
       {/* Next */}
       <section className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          Drill down further
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">Drill down further</h2>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Button
-            size="sm"
-            render={<Link href="/igcse/cambridge/0990/paper-1/question-types" />}
-          >
+          <Button size="sm" render={<Link href="/igcse/cambridge/0990/paper-1/question-types" />}>
             Question types breakdown
             <ArrowRight className="size-3.5" />
           </Button>

@@ -16,6 +16,12 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'Between a Rock and a Hard Place — Aron Ralston — IGCSE Language A Anthology — The English Hub',
+    description:
+      'Study guide for the anthology extract from Between a Rock and a Hard Place by Aron Ralston (filmed as 127 Hours). Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
+  },
   title:
     'Between a Rock and a Hard Place — Aron Ralston — IGCSE Language A Anthology — The English Hub',
   description:

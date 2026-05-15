@@ -5,6 +5,11 @@ import type { Strand, RubricLevel } from '@/lib/ks3/curriculum'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'KS3 marking rubrics',
+    description:
+      'Marking rubrics for KS3 English — three years × four strands × four levels (Below target / Working towards / Expected / Greater depth).',
+  },
   title: 'KS3 marking rubrics',
   description:
     'Marking rubrics for KS3 English — three years × four strands × four levels (Below target / Working towards / Expected / Greater depth).',

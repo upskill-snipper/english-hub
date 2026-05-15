@@ -7,6 +7,11 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'An Inspector Calls Themes — Edexcel IGCSE Literature',
+    description:
+      'Themes in An Inspector Calls: social responsibility, class, gender, age versus youth, morality, power and dramatic form.',
+  },
   title: 'An Inspector Calls Themes — Edexcel IGCSE Literature',
   description:
     'Themes in An Inspector Calls: social responsibility, class, gender, age versus youth, morality, power and dramatic form.',

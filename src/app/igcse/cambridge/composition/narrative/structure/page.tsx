@@ -7,12 +7,16 @@ import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Narrative Structure — Cambridge IGCSE Composition',
+    description:
+      'Structure a Cambridge IGCSE narrative composition using the five-part arc, Freytag’s triangle, in medias res openings and cliff-turn endings.',
+  },
   title: 'Narrative Structure — Cambridge IGCSE Composition',
   description:
     'Structure a Cambridge IGCSE narrative composition using the five-part arc, Freytag’s triangle, in medias res openings and cliff-turn endings.',
   alternates: {
-    canonical:
-      'https://theenglishhub.app/igcse/cambridge/composition/narrative/structure',
+    canonical: 'https://theenglishhub.app/igcse/cambridge/composition/narrative/structure',
   },
 }
 
@@ -22,8 +26,7 @@ const fivePart = [
     length: '~50 words',
     description:
       'One vivid detail that plants the reader inside the scene. Not backstory, not explanation — a sensory anchor. Often a physical object or a character action mid-flow.',
-    example:
-      'The envelope had been sitting on the kitchen counter for three days.',
+    example: 'The envelope had been sitting on the kitchen counter for three days.',
   },
   {
     name: '2. Rising tension',
@@ -38,8 +41,7 @@ const fivePart = [
     length: '~100 words',
     description:
       'Something tips. A decision is made, a door opens, an interruption arrives. This is the hinge — everything before points towards it, everything after flows from it.',
-    example:
-      'The phone rings. Her brother’s voice: “You got it too, didn’t you?”',
+    example: 'The phone rings. Her brother’s voice: “You got it too, didn’t you?”',
   },
   {
     name: '4. Consequence',
@@ -64,15 +66,13 @@ const openings = [
     name: 'In medias res',
     description:
       'Begin in the middle of the action — mid-sentence, mid-gesture, mid-argument. The reader is dropped in and has to catch up. Best for stories about sudden events.',
-    example:
-      'By the time I reached the river, the dog was already in the water.',
+    example: 'By the time I reached the river, the dog was already in the water.',
   },
   {
     name: 'Dialogue first',
     description:
       'Open on a single line of speech with no attribution. Creates instant voice and instant questions. Risky if overused, powerful if committed to.',
-    example:
-      '“Don’t look yet,” she whispered. “Wait until they’re both looking the other way.”',
+    example: '“Don’t look yet,” she whispered. “Wait until they’re both looking the other way.”',
   },
   {
     name: 'Image first',
@@ -85,8 +85,7 @@ const openings = [
     name: 'Question first',
     description:
       'Open on the narrator asking themselves a question — often about a decision they’ve just made. Gives immediate interiority.',
-    example:
-      'What had I been thinking, telling him I’d meet him here?',
+    example: 'What had I been thinking, telling him I’d meet him here?',
   },
 ]
 
@@ -118,9 +117,9 @@ export default async function NarrativeStructurePage() {
             Story structure
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            A 450-word short story has no time for a full novel arc. Use a
-            compressed five-part structure, drop in using{' '}
-            <em>in medias res</em>, and make every paragraph earn its place.
+            A 450-word short story has no time for a full novel arc. Use a compressed five-part
+            structure, drop in using <em>in medias res</em>, and make every paragraph earn its
+            place.
           </p>
         </div>
       </section>
@@ -133,13 +132,11 @@ export default async function NarrativeStructurePage() {
         </CardHeader>
         <CardContent className="space-y-3 text-body-sm text-muted-foreground">
           <p>
-            Gustav Freytag’s triangle was designed for five-act plays but it
-            adapts perfectly to short stories if you compress it. Exposition
-            becomes <em>one line of setting</em>. Rising action becomes{' '}
-            <em>one obstacle</em>. Climax is <em>one moment</em>. Falling
-            action is <em>one consequence</em>. Resolution is{' '}
-            <em>one quiet closing image</em>. Five beats, each tiny, each
-            essential.
+            Gustav Freytag’s triangle was designed for five-act plays but it adapts perfectly to
+            short stories if you compress it. Exposition becomes <em>one line of setting</em>.
+            Rising action becomes <em>one obstacle</em>. Climax is <em>one moment</em>. Falling
+            action is <em>one consequence</em>. Resolution is <em>one quiet closing image</em>. Five
+            beats, each tiny, each essential.
           </p>
         </CardContent>
       </Card>
@@ -160,9 +157,7 @@ export default async function NarrativeStructurePage() {
                     <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-sm font-bold text-primary">
                       {i + 1}
                     </div>
-                    <CardTitle className="text-heading-sm font-heading">
-                      {p.name}
-                    </CardTitle>
+                    <CardTitle className="text-heading-sm font-heading">{p.name}</CardTitle>
                   </div>
                   <Badge variant="secondary">{p.length}</Badge>
                 </div>
@@ -179,16 +174,12 @@ export default async function NarrativeStructurePage() {
       </section>
 
       <section>
-        <h2 className="text-heading-lg font-heading text-foreground">
-          Four opening techniques
-        </h2>
+        <h2 className="text-heading-lg font-heading text-foreground">Four opening techniques</h2>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           {openings.map((o) => (
             <Card key={o.name}>
               <CardHeader>
-                <CardTitle className="text-heading-sm font-heading">
-                  {o.name}
-                </CardTitle>
+                <CardTitle className="text-heading-sm font-heading">{o.name}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-body-sm text-muted-foreground">
                 <p className="leading-relaxed">{o.description}</p>
@@ -202,40 +193,35 @@ export default async function NarrativeStructurePage() {
       </section>
 
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground">
-          How to end
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground">How to end</h2>
         <ul className="mt-4 space-y-3 text-body-sm text-muted-foreground">
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Echo the opening
-              image.</strong> Not the same sentence. The same object or
-              place, now different.
+              <strong className="text-foreground">Echo the opening image.</strong> Not the same
+              sentence. The same object or place, now different.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">End on an action, not
-              a reflection.</strong> Let the reader feel the meaning instead
-              of being told it.
+              <strong className="text-foreground">End on an action, not a reflection.</strong> Let
+              the reader feel the meaning instead of being told it.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Avoid “and then I woke
-              up”.</strong> Examiners have read ten thousand of them. Same
-              for “it was all a dream” and “then the teacher walked in”.
+              <strong className="text-foreground">Avoid “and then I woke up”.</strong> Examiners
+              have read ten thousand of them. Same for “it was all a dream” and “then the teacher
+              walked in”.
             </span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
             <span>
-              <strong className="text-foreground">Cut the last
-              sentence.</strong> Write your ending, then delete the final
-              sentence. Nine times out of ten, the story is stronger without
+              <strong className="text-foreground">Cut the last sentence.</strong> Write your ending,
+              then delete the final sentence. Nine times out of ten, the story is stronger without
               it.
             </span>
           </li>

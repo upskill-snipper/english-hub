@@ -8,6 +8,11 @@ import { STRINGS as _EAL_STRINGS } from './content'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'AQA Poetry Anthology — Power and Conflict & Love and Relationships',
+    description:
+      'Full analysis of all 30 poems in the AQA GCSE English Literature poetry anthology. Power and Conflict & Love and Relationships clusters with themes, language analysis, structure, and comparison ideas.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/poetry' },
   title: 'AQA Poetry Anthology — Power and Conflict & Love and Relationships',
   description:

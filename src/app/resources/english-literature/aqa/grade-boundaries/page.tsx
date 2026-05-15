@@ -5,6 +5,11 @@ import type { Metadata } from 'next'
 import { STRINGS } from './content'
 import { headers } from 'next/headers'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'AQA GCSE English Literature (8702) Grade Boundaries',
+    description:
+      'Approximate grade boundaries for AQA GCSE English Literature (8702), what each grade looks like, and how to push your marks higher.',
+  },
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/aqa/grade-boundaries',
   },

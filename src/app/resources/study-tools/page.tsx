@@ -5,6 +5,11 @@ import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Study Tools - GCSE English Revision',
+    description:
+      'Interactive study tools for GCSE and IGCSE English revision. Revision planner, quote flashcards, quote tester, and progress checklists to help you prepare for your exams.',
+  },
   alternates: { canonical: 'https://theenglishhub.app/resources/study-tools' },
   title: 'Study Tools - GCSE English Revision',
   description:

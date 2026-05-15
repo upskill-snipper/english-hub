@@ -18,6 +18,10 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 import { getLocale, t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'The Explorer',
+    description: 'Study guide for The Explorer',
+  },
   title: "The Explorer's Daughter — Kari Herbert — IGCSE Language A Anthology — The English Hub",
   description:
     "Study guide for The Explorer's Daughter by Kari Herbert. Structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.",

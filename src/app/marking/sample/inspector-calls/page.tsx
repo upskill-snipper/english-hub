@@ -11,6 +11,12 @@ import { AnnotatedEssay, type Annotation } from '@/components/marking/AnnotatedE
 /* ─── Metadata ─────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'An Inspector Calls — Model Essay Bank',
+    description:
+      'Five fully-annotated model essays for An Inspector Calls at Grades 5, 7 and 9, with AO breakdowns and marker commentary.',
+  },
+  alternates: { canonical: 'https://theenglishhub.app/marking/sample/inspector-calls' },
   title: 'An Inspector Calls — Model Essay Bank',
   description:
     'Five fully-annotated model essays for An Inspector Calls at Grades 5, 7 and 9, with AO breakdowns and marker commentary.',

@@ -10,18 +10,17 @@ import {
   ArrowRight,
   Info,
 } from 'lucide-react'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'IGCSE Language A Course Overview — The English Hub',
+    description:
+      'Course overview for Cambridge IGCSE Language A (First Language English). Reading skills, writing skills and paper-by-paper content.',
+  },
   title: 'IGCSE Language A Course Overview — The English Hub',
   description:
     'Course overview for Cambridge IGCSE Language A (First Language English). Reading skills, writing skills and paper-by-paper content.',
@@ -36,7 +35,7 @@ const readingSkills = [
   'Select and synthesise evidence from different texts',
   'Explain and comment on how writers use language and structure to achieve effects',
   'Analyse and evaluate how writers present ideas, events and characters',
-  'Compare writers\' ideas and perspectives across texts',
+  "Compare writers' ideas and perspectives across texts",
   'Demonstrate understanding of words in context',
 ]
 
@@ -138,13 +137,10 @@ export default async function SyllabusPage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">
-          Course overview
-        </h1>
+        <h1 className="text-display-sm font-heading text-foreground">Course overview</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          A topic-by-topic guide to what Cambridge expects you to know, read
-          and be able to write for the IGCSE Language A (First Language English)
-          qualification.
+          A topic-by-topic guide to what Cambridge expects you to know, read and be able to write
+          for the IGCSE Language A (First Language English) qualification.
         </p>
       </section>
 
@@ -152,18 +148,14 @@ export default async function SyllabusPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">
-            Aims of the course
-          </h2>
+          <h2 className="text-heading-md font-heading text-foreground">Aims of the course</h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          IGCSE Language A is designed to enable learners to develop the ability
-          to communicate clearly, accurately and effectively in both speech and
-          writing; learn how to use a wide range of vocabulary, correct
-          grammar, spelling and punctuation; develop a personal style and
-          awareness of the audience being addressed; and develop powers of
-          reading comprehension through close reading of a wide range of
-          texts.
+          IGCSE Language A is designed to enable learners to develop the ability to communicate
+          clearly, accurately and effectively in both speech and writing; learn how to use a wide
+          range of vocabulary, correct grammar, spelling and punctuation; develop a personal style
+          and awareness of the audience being addressed; and develop powers of reading comprehension
+          through close reading of a wide range of texts.
         </p>
       </section>
 
@@ -171,9 +163,7 @@ export default async function SyllabusPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Reading skills
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Reading skills</h2>
         </div>
         <Card>
           <CardHeader className="pb-3">
@@ -199,9 +189,7 @@ export default async function SyllabusPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <PenTool className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Writing skills
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Writing skills</h2>
         </div>
         <Card>
           <CardHeader className="pb-3">
@@ -227,9 +215,7 @@ export default async function SyllabusPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <ListChecks className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            Paper-by-paper content
-          </h2>
+          <h2 className="text-heading-lg font-heading text-foreground">Paper-by-paper content</h2>
         </div>
         <div className="space-y-6">
           {paperContent.map((paper) => (
@@ -257,9 +243,7 @@ export default async function SyllabusPage() {
                       className="rounded-xl border border-border/60 bg-muted/30 p-4"
                     >
                       <div className="mb-1 flex items-center justify-between gap-3">
-                        <h3 className="text-body-md font-semibold text-foreground">
-                          {item.q}
-                        </h3>
+                        <h3 className="text-body-md font-semibold text-foreground">{item.q}</h3>
                         <Badge variant="secondary">{item.marks} marks</Badge>
                       </div>
                       <p className="text-body-sm text-muted-foreground leading-relaxed">

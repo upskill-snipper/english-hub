@@ -7,6 +7,11 @@ import { ArrowLeft, BookOpen, Construction } from 'lucide-react'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
+  openGraph: {
+    title:
+      'On Finding a Small Fly Crushed in a Book — Charles Tennyson Turner | Cambridge IGCSE 0475',
+    description: 'Study guide for ',
+  },
   title:
     'On Finding a Small Fly Crushed in a Book — Charles Tennyson Turner | Cambridge IGCSE 0475',
   description:

@@ -6,6 +6,11 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'OCR GCSE English Literature resources — The English Hub',
+    description:
+      'OCR J352 GCSE English Literature set-text guides, Towards a World Unknown anthology, exam technique and Grade 9 essay plans for Paper 1 and 2.',
+  },
   title: 'OCR GCSE English Literature resources — The English Hub',
   description:
     'OCR J352 GCSE English Literature set-text guides, Towards a World Unknown anthology, exam technique and Grade 9 essay plans for Paper 1 and 2.',

@@ -11,6 +11,11 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Lord of the Flies Character Analysis | The English Hub',
+    description:
+      'In-depth character analysis for Lord of the Flies by William Golding: Ralph, Jack, Piggy, Simon, Roger, Sam and Eric -- allegorical roles, development and key quotations.',
+  },
   title: 'Lord of the Flies Character Analysis | The English Hub',
   description:
     'In-depth character analysis for Lord of the Flies by William Golding: Ralph, Jack, Piggy, Simon, Roger, Sam and Eric -- allegorical roles, development and key quotations.',

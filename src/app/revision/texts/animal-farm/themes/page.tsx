@@ -20,6 +20,11 @@ import { Button } from '@/components/ui/button'
 
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 export const metadata: Metadata = {
+  openGraph: {
+    title: 'Animal Farm Themes — In-Depth Analysis | The English Hub',
+    description:
+      'Explore the key themes in Animal Farm: power and corruption, class, language and propaganda, revolution, education and loyalty. GCSE revision with quotes and exam guidance.',
+  },
   title: 'Animal Farm Themes — In-Depth Analysis | The English Hub',
   description:
     'Explore the key themes in Animal Farm: power and corruption, class, language and propaganda, revolution, education and loyalty. GCSE revision with quotes and exam guidance.',
