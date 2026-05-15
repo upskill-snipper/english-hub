@@ -391,7 +391,15 @@ export default function CourseCatalogueClient({
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
-            <h1 className="text-foreground">{t('course.catalogue_title')}</h1>
+            {/* Visible page hero. The semantic <h1> for this page lives
+                in src/app/courses/page.tsx as an sr-only SEO skeleton
+                rendered server-side for first-byte crawlability.
+                Demoting this to <h2> in 2026-05-15 to clear the
+                multi-H1 finding from the SEO audit. Visual classes
+                already keep it hero-sized. */}
+            <h2 className="text-foreground text-display-sm font-heading sm:text-display">
+              {t('course.catalogue_title')}
+            </h2>
             <LearningTip categories={['course', 'study']} side="right" size="md" />
           </div>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">

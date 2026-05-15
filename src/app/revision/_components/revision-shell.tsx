@@ -361,9 +361,18 @@ function SidebarNav({
   // Board-aware grade labels so IAL + A-Level render "A*/A/B" not "Grade 7/8/9"
   // and Cambridge 0500 falls back to its A*-G letters. 9-1 boards keep
   // "Grade N" as before.
-  const labelLeft = gradeDisplayLabel(String(gradeLeft) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9', board)
-  const labelMid = gradeDisplayLabel(String(gradeMid) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9', board)
-  const labelRight = gradeDisplayLabel(String(gradeRight) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9', board)
+  const labelLeft = gradeDisplayLabel(
+    String(gradeLeft) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
+    board,
+  )
+  const labelMid = gradeDisplayLabel(
+    String(gradeMid) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
+    board,
+  )
+  const labelRight = gradeDisplayLabel(
+    String(gradeRight) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
+    board,
+  )
 
   return (
     <nav className="flex flex-col gap-1">
@@ -558,14 +567,22 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
                 </div>
               </SheetContent>
             </Sheet>
-            <h1 className="text-heading-md font-heading text-foreground">
+            {/* Persistent sidebar branding. Visually a heading, but
+                semantically NOT the page's primary heading — every
+                /revision/*, /igcse/*, /a-level/* page wraps in this
+                shell AND renders its own page-specific <h1>. Keeping
+                this as <h1> produced multi-H1 on 800+ routes and was
+                flagged by the SEO audit on 2026-05-15. Demoted to
+                <h2> so each page has exactly one <h1> for crawlers
+                and screen readers. */}
+            <h2 className="text-heading-md font-heading text-foreground">
               Your Hub
               {boardName && (
                 <Badge variant="secondary" className="ml-2 text-[0.65rem] uppercase tracking-wider">
                   {boardName}
                 </Badge>
               )}
-            </h1>
+            </h2>
           </div>
 
           {/* Mobile scroll-chip rail — horizontal nav that supplements the */}
