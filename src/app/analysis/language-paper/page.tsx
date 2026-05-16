@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'AQA English Language Paper 1 & Paper 2 Technique Guides | The English Hub',
+  title: 'AQA English Language Paper 1 & Paper 2 Technique Guides',
   description:
     'Question-by-question AQA English Language Paper 1 and Paper 2 technique guides for GCSE. Grade 9 model answers, marking guides explained, timing and marker tips. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/language-paper' },

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description:
       'IGCSE Language B hub. Same content as Language A with 9-1 numerical grading. Reading Paper, Writing Paper, grade-by-grade guides and practice papers. Aligns with Cambridge syllabus 0990.',
   },
-  title: 'IGCSE Language B — The English Hub',
+  title: 'IGCSE Language B',
   description:
     'IGCSE Language B hub. Same content as Language A with 9-1 numerical grading. Reading Paper, Writing Paper, grade-by-grade guides and practice papers. Aligns with Cambridge syllabus 0990.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990' },

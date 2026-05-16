@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
   if (!post) {
     return {
-      title: 'Article not found — The English Hub',
+      title: 'Article not found',
       description: 'The article you are looking for could not be found.',
       robots: { index: false, follow: false },
     }

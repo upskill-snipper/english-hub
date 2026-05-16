@@ -119,6 +119,6 @@ export async function generateMetadata({
 }) {
   const { slug, cefr } = await params
   return {
-    title: `EAL ${slug} — ${cefr.toUpperCase()} — The English Hub`,
+    title: `EAL ${slug} — ${cefr.toUpperCase()}`,
   }
 }

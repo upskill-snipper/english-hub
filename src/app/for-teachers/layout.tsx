@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
-  title: 'English teacher tools and AI marking — The English Hub',
+  title: 'English teacher tools and AI marking',
   description:
     'AI lesson plans, AI essay marking, classroom analytics and a growing library of resources — built around your exam board specification.',
   alternates: { canonical: 'https://theenglishhub.app/for-teachers' },

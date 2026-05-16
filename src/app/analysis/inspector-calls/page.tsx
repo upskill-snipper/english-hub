@@ -14,7 +14,7 @@ import {
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'An Inspector Calls Analysis | The English Hub',
+  title: 'An Inspector Calls Analysis',
   description:
     'In-depth An Inspector Calls analysis for GCSE English Literature. Quote breakdowns, character studies, themes, and Priestley context written by markers.',
   alternates: {

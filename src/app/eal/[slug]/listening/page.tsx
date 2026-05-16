@@ -54,6 +54,6 @@ export default async function EALListeningPage({ params }: { params: Promise<{ s
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   return {
-    title: `EAL ${slug} — Listening — The English Hub`,
+    title: `EAL ${slug} — Listening`,
   }
 }

@@ -6,7 +6,7 @@ import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'Macbeth Analysis: Quotes, Themes & Characters | The English Hub',
+  title: 'Macbeth Analysis: Quotes, Themes & Characters',
   description:
     'In-depth Macbeth analysis for GCSE. Explore 15 famous quotes line-by-line, key themes like ambition and guilt, and character studies of Macbeth, Lady Macbeth and Banquo. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/macbeth' },

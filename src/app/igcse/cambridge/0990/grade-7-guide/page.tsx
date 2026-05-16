@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       'Grade 7 guide for Cambridge IGCSE Language B First Language English. Clear checklists for reading analysis, writing control and exam technique to reach the old A grade.',
   },
-  title: 'How to get a Grade 7 | Cambridge IGCSE Language B | The English Hub',
+  title: 'How to get a Grade 7 | Cambridge IGCSE Language B',
   description:
     'Grade 7 guide for Cambridge IGCSE Language B First Language English. Clear checklists for reading analysis, writing control and exam technique to reach the old A grade.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/grade-7-guide' },

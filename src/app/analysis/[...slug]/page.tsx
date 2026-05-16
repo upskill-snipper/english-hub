@@ -23,7 +23,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const entry = ANALYSIS_PAGE_MAP.get(key)
 
   if (!entry) {
-    return { title: 'Page Not Found | The English Hub' }
+    return { title: 'Page Not Found' }
   }
 
   const canonical = `https://theenglishhub.app/analysis/${key}`

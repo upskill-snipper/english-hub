@@ -12,7 +12,7 @@ const OG_IMAGE =
   '/api/og?title=IGCSE+English+revision+for+the+GCC&subtitle=Pearson+Edexcel+and+Cambridge+covered&level=igcse'
 
 export const metadata: Metadata = {
-  title: 'IGCSE English revision for the GCC — The English Hub',
+  title: 'IGCSE English revision for the GCC',
   description:
     'IGCSE English Language and Literature revision for students across the GCC: UAE, Qatar, Saudi Arabia, Kuwait, Bahrain, Oman. Pearson Edexcel and Cambridge specs covered.',
   alternates: { canonical: PAGE_URL },

@@ -29,7 +29,7 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'GCSE and IGCSE English help for parents — The English Hub',
+  title: 'GCSE and IGCSE English help for parents',
   description:
     'How to help your child with GCSE or IGCSE English revision — from picking the right exam board to AI essay feedback they can trust.',
   alternates: { canonical: 'https://theenglishhub.app/for-parents' },

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       'Course overview for Cambridge IGCSE Language A (First Language English). Reading skills, writing skills and paper-by-paper content.',
   },
-  title: 'IGCSE Language A Course Overview — The English Hub',
+  title: 'IGCSE Language A Course Overview',
   description:
     'Course overview for Cambridge IGCSE Language A (First Language English). Reading skills, writing skills and paper-by-paper content.',
   alternates: {

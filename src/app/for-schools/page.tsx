@@ -62,7 +62,7 @@ import {
 /* ─────────────── Page Metadata (TICKET-5 + TICKET-7) ─────────────── */
 
 export const metadata = {
-  title: 'Whole-department English platform for UK schools — The English Hub',
+  title: 'Whole-department English platform for UK schools',
   description:
     'AI lesson planning, AI essay marking, department analytics, and resources mapped to your exam board. Founding Schools programme open now.',
   alternates: { canonical: 'https://theenglishhub.app/for-schools' },

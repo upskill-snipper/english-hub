@@ -54,6 +54,6 @@ export default async function EALSpeakingPage({ params }: { params: Promise<{ sl
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   return {
-    title: `EAL ${slug} — Speaking — The English Hub`,
+    title: `EAL ${slug} — Speaking`,
   }
 }

@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'GCSE English Revision & Grade Guides | The English Hub',
+  title: 'GCSE English Revision & Grade Guides',
   description:
     'Complete GCSE English revision hub: grade 9 guides, timetables, grade boundaries, exam-day tips and parent help. 25 guides written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/revision' },

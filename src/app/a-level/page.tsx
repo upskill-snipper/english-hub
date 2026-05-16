@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'UK A-Level English Literature and Language hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas. Cross-board revision tools while full A-Level content is on our roadmap.',
   },
-  title: 'A-Level English — The English Hub',
+  title: 'A-Level English',
   description:
     'UK A-Level English Literature and Language hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas. Cross-board revision tools while full A-Level content is on our roadmap.',
   alternates: { canonical: 'https://theenglishhub.app/a-level' },

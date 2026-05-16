@@ -13,7 +13,7 @@ const OG_IMAGE =
   '/api/og?title=Free+GCSE+%26+IGCSE+English+resources&subtitle=Quote+banks,+essay+plans,+character+maps'
 
 export const metadata: Metadata = {
-  title: 'Free GCSE & IGCSE English resources — The English Hub',
+  title: 'Free GCSE & IGCSE English resources',
   description:
     'Free quote banks, essay plan workbooks, character maps, and revision packs for GCSE and IGCSE English. Coming soon — get notified.',
   alternates: { canonical: PAGE_URL },

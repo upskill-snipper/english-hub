@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       'Six exam boards covered: AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE, Pearson Edexcel IGCSE. Pick yours and revise the way examiners actually mark.',
   },
-  title: 'GCSE and IGCSE English exam boards covered — The English Hub',
+  title: 'GCSE and IGCSE English exam boards covered',
   description:
     'Six exam boards covered: AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE, Pearson Edexcel IGCSE. Pick yours and revise the way examiners actually mark.',
   alternates: { canonical: 'https://theenglishhub.app/exam-boards' },

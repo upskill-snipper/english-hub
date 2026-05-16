@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       'Strong pass guide for Cambridge IGCSE Language B First Language English. Reach Grade 5 with clear understanding, accurate writing and dependable exam technique.',
   },
-  title: 'How to pass with Grade 5 | Cambridge IGCSE Language B | The English Hub',
+  title: 'How to pass with Grade 5 | Cambridge IGCSE Language B',
   description:
     'Strong pass guide for Cambridge IGCSE Language B First Language English. Reach Grade 5 with clear understanding, accurate writing and dependable exam technique.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/grade-5-guide' },

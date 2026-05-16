@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description:
       'WJEC Eduqas A-Level English Literature and Language revision hub. Cross-board set text analysis, essay technique and language study while full Eduqas A-Level content is on our roadmap.',
   },
-  title: 'WJEC Eduqas A-Level English — The English Hub',
+  title: 'WJEC Eduqas A-Level English',
   description:
     'WJEC Eduqas A-Level English Literature and Language revision hub. Cross-board set text analysis, essay technique and language study while full Eduqas A-Level content is on our roadmap.',
   alternates: { canonical: 'https://theenglishhub.app/a-level/eduqas' },

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       'IGCSE Language A hub. Reading Paper, Writing Paper, assessment structure, grade boundaries and exam technique. Aligns with Cambridge syllabus 0500.',
   },
-  title: 'IGCSE Language A — The English Hub',
+  title: 'IGCSE Language A',
   description:
     'IGCSE Language A hub. Reading Paper, Writing Paper, assessment structure, grade boundaries and exam technique. Aligns with Cambridge syllabus 0500.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0500' },

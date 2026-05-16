@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
-  title: 'Revision games — The English Hub',
+  title: 'Revision games',
   description:
     'Quick recall games for GCSE & IGCSE English: quote drills, technique spotting, character matching.',
   alternates: { canonical: 'https://theenglishhub.app/games' },

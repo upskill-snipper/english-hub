@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       'Grade 9 guide for Cambridge IGCSE Language B First Language English. Writing techniques, analytical depth and structural sophistication needed to reach the top grade.',
   },
-  title: 'How to get a Grade 9 | Cambridge IGCSE Language B | The English Hub',
+  title: 'How to get a Grade 9 | Cambridge IGCSE Language B',
   description:
     'Grade 9 guide for Cambridge IGCSE Language B First Language English. Writing techniques, analytical depth and structural sophistication needed to reach the top grade.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/grade-9-guide' },

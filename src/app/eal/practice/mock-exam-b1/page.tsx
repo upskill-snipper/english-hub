@@ -100,5 +100,5 @@ export default async function EALMockExamB1() {
 
 export const metadata = {
   alternates: { canonical: 'https://theenglishhub.app/eal/practice/mock-exam-b1' },
-  title: `EAL Mock Exam — B1 — The English Hub`,
+  title: `EAL Mock Exam — B1`,
 }

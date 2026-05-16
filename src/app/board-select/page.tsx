@@ -4,7 +4,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'Choose your exam board — The English Hub',
+  title: 'Choose your exam board',
   description:
     'Pick the level your school sits — GCSE or IGCSE — then the board so we can show you the right texts, poems, and past paper walkthroughs for your course.',
   alternates: { canonical: 'https://theenglishhub.app/board-select' },

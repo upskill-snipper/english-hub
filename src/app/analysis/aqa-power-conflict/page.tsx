@@ -6,7 +6,7 @@ import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'AQA Power and Conflict Poetry Analysis: Comparisons, Themes & Quotes | The English Hub',
+  title: 'AQA Power and Conflict Poetry Analysis: Comparisons, Themes & Quotes',
   description:
     'Complete AQA Power and Conflict poetry analysis hub. 25 Grade 9 pages covering comparisons, themes, key quotes and exam technique. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/aqa-power-conflict' },

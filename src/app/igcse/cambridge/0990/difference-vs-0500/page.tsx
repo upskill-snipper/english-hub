@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       'Cambridge IGCSE Language A and Language B First Language English are the same syllabus with different grade scales. Full comparison of content, papers, objectives and grading.',
   },
-  title: 'Language A vs Language B — What is the difference? | Cambridge IGCSE | The English Hub',
+  title: 'Language A vs Language B — What is the difference? | Cambridge IGCSE',
   description:
     'Cambridge IGCSE Language A and Language B First Language English are the same syllabus with different grade scales. Full comparison of content, papers, objectives and grading.',
   alternates: {

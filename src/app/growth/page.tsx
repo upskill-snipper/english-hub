@@ -9,7 +9,7 @@ export const metadata: Metadata = {
       'Live public metrics for The English Hub: monthly active users, paying students, and total essays marked. Published as a trust artefact for investors, partners, and school buyers.',
   },
   alternates: { canonical: 'https://theenglishhub.app/growth' },
-  title: 'Our traction — in the open | The English Hub',
+  title: 'Our traction — in the open',
   description:
     'Live public metrics for The English Hub: monthly active users, paying students, and total essays marked. Published as a trust artefact for investors, partners, and school buyers.',
 }

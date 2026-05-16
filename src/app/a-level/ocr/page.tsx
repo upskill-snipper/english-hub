@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description:
       'OCR A-Level English Literature (H472) and Language (H470) revision hub. Cross-board set text analysis, essay technique and language study while full OCR A-Level content is on our roadmap.',
   },
-  title: 'OCR A-Level English — The English Hub',
+  title: 'OCR A-Level English',
   description:
     'OCR A-Level English Literature (H472) and Language (H470) revision hub. Cross-board set text analysis, essay technique and language study while full OCR A-Level content is on our roadmap.',
   alternates: { canonical: 'https://theenglishhub.app/a-level/ocr' },

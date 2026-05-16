@@ -6,7 +6,7 @@ import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
-  title: 'AQA Love and Relationships Analysis: Comparisons, Themes & Quotes | The English Hub',
+  title: 'AQA Love and Relationships Analysis: Comparisons, Themes & Quotes',
   description:
     'In-depth AQA Love and Relationships poetry analysis for GCSE. Compare poems side-by-side, explore every theme and master the unseen comparison question. Written by GCSE markers.',
   alternates: { canonical: 'https://theenglishhub.app/analysis/aqa-love-relationships' },

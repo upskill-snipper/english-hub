@@ -9,7 +9,7 @@ export const metadata = {
     description: 'Navigate all your exam papers, sections, and revision content in one place.',
   },
   alternates: { canonical: 'https://theenglishhub.app/dashboard/papers' },
-  title: 'Your Papers | The English Hub',
+  title: 'Your Papers',
   description: 'Navigate all your exam papers, sections, and revision content in one place.',
 }
 

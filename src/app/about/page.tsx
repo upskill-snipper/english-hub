@@ -7,7 +7,7 @@ import { tMany } from '@/lib/i18n/t'
 // and the founder's name is not surfaced. The page is purely
 // informational about the product itself.
 export const metadata: Metadata = {
-  title: 'About — The English Hub',
+  title: 'About',
   description:
     'How The English Hub works, who built it, and why it focuses on GCSE & IGCSE English revision.',
   alternates: { canonical: 'https://theenglishhub.app/about' },

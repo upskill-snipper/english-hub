@@ -23,7 +23,7 @@ import { COMPANY } from '@/config/company'
 const LAST_REVIEWED = '2026-05-15'
 
 export const metadata: Metadata = {
-  title: 'Content Verification Methodology | The English Hub',
+  title: 'Content Verification Methodology',
   description:
     'How The English Hub checks content accuracy, manages AI-assisted feedback, reviews quotations and maintains trusted English learning resources.',
   alternates: { canonical: `${COMPANY.websiteUrl}/about/content-verification` },

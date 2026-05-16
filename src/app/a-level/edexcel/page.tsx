@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description:
       'Pearson Edexcel A-Level English Literature (9ET0) and Language (9EN0) revision hub. Cross-board set text analysis, essay technique and language study while full Edexcel A-Level content is on our roadmap.',
   },
-  title: 'Pearson Edexcel A-Level English — The English Hub',
+  title: 'Pearson Edexcel A-Level English',
   description:
     'Pearson Edexcel A-Level English Literature (9ET0) and Language (9EN0) revision hub. Cross-board set text analysis, essay technique and language study while full Edexcel A-Level content is on our roadmap.',
   alternates: { canonical: 'https://theenglishhub.app/a-level/edexcel' },

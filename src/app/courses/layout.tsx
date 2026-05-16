@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Courses — The English Hub',
+  title: 'Courses',
   description:
     'Browse structured KS3, GCSE and IGCSE English courses with video lessons, quizzes and exam-style tasks across all major UK exam boards.',
   // NOTE: No canonical at layout level — it would be inherited by every

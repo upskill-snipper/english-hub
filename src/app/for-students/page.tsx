@@ -17,7 +17,7 @@ import {
 import { t, tMany } from '@/lib/i18n/t'
 
 export const metadata = {
-  title: 'GCSE and IGCSE English revision for students — The English Hub',
+  title: 'GCSE and IGCSE English revision for students',
   description:
     'Personalised English revision built around your exam board. AI-marked essays, anthology guides, mock papers and grade tracking. Free to start.',
   alternates: { canonical: 'https://theenglishhub.app/for-students' },

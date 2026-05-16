@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       'Full conversion table between Cambridge IGCSE Language B 9-1 grades and Language A A*-G grades. Understand how your numerical grade compares to the letter scale.',
   },
-  title: '9-1 vs A*-G grade conversion | Cambridge IGCSE Language B | The English Hub',
+  title: '9-1 vs A*-G grade conversion | Cambridge IGCSE Language B',
   description:
     'Full conversion table between Cambridge IGCSE Language B 9-1 grades and Language A A*-G grades. Understand how your numerical grade compares to the letter scale.',
   alternates: {
