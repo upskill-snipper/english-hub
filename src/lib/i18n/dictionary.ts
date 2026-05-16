@@ -45,6 +45,7 @@ import { AUDIT_FIX_DICTIONARY } from './dictionary-audit-fix'
 import { SCREENSHOT_FIX_DICTIONARY } from './dictionary-screenshot-fixes'
 import { PLACEHOLDER_FIX_MAY15 } from './dictionary-placeholder-fix-may15'
 import { PLACEHOLDER_FIX_MAY16 } from './dictionary-placeholder-fix-may16'
+import { REPORT_FIX_MAY16B } from './dictionary-report-fix-may16b'
 import { PRESS_AND_VERIFIED_FIX } from './dictionary-press-verified'
 
 export type Locale = 'en' | 'ar'
@@ -14696,10 +14697,16 @@ export function lookup(key: string, locale: Locale): string {
   // on collision — by convention toolkit keys live under the
   // tools.*, quiz_build.*, lesson_build.*, grade_predict.*, essay_check.*
   // namespaces so collisions shouldn't arise.
-  // PRESS_AND_VERIFIED_FIX must come BEFORE AUDIT_FIX_DICTIONARY — the
-  // audit-fix file has lazy auto-derived placeholders like "Eyebrow" /
-  // "Title" / "Bbc Strong" for press.* and about.verified.* keys, which
-  // we override with real human-written copy.
+  // CRITICAL ORDERING (fixed 2026-05-16): ALL hand-written override
+  // dictionaries MUST resolve BEFORE the auto-generated
+  // AUDIT_FIX_DICTIONARY. That file holds ~1,554 lazy placeholder values
+  // (Title-cased path segments like "Heading", "Name", "Desc", "Lead").
+  // Previously PLACEHOLDER_FIX_MAY15 and SCREENSHOT_FIX_DICTIONARY were
+  // listed AFTER AUDIT_FIX_DICTIONARY, so their real copy for ~80
+  // affiliate keys + 94 screenshot keys was permanently SHADOWED by
+  // junk — that is why /affiliate and /affiliates rendered placeholder
+  // text. Override precedence among the curated files is kept stable;
+  // only their position relative to AUDIT_FIX changed.
   const entry =
     DICTIONARY[key] ??
     TOOLKIT_DICTIONARY[key] ??
@@ -14710,9 +14717,10 @@ export function lookup(key: string, locale: Locale): string {
     POETRY_HUB_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
-    AUDIT_FIX_DICTIONARY[key] ??
+    PLACEHOLDER_FIX_MAY15[key] ??
     SCREENSHOT_FIX_DICTIONARY[key] ??
-    PLACEHOLDER_FIX_MAY15[key]
+    REPORT_FIX_MAY16B[key] ??
+    AUDIT_FIX_DICTIONARY[key]
   if (!entry) return `[[${key}]]`
   if (locale === 'ar' && entry.ar) return entry.ar
   return entry.en
