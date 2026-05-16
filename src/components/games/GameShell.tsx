@@ -279,13 +279,31 @@ export default function GameShell({
   useEffect(() => {
     if (gameState === 'finished' && !hasFinishedRef.current) {
       hasFinishedRef.current = true
-      saveGameScore(gameId, score, maxScore)
+      // Persist score AND time-on-task so the learning-profile engine can
+      // weight effort and detect rushing vs. careful play.
+      saveGameScore(gameId, score, maxScore, elapsed)
       setHighScore(getHighScore(gameId))
+      // Best-effort server sync for signed-in students (guests 401 — we
+      // swallow it; the localStorage profile still works for everyone).
+      try {
+        fetch('/api/progress/games', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            slug: gameId,
+            score: Math.max(0, Math.round(score)),
+            timeSeconds: Math.min(3600, Math.max(0, Math.round(elapsed))),
+          }),
+          keepalive: true,
+        }).catch(() => {})
+      } catch {
+        // ignore — never block the results screen on a network error
+      }
     }
     if (gameState !== 'finished') {
       hasFinishedRef.current = false
     }
-  }, [gameState, gameId, score, maxScore])
+  }, [gameState, gameId, score, maxScore, elapsed])
 
   const handleStart = useCallback(() => {
     setTimeLeft(timeLimitSeconds ?? 0)

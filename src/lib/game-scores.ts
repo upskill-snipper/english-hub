@@ -15,6 +15,13 @@ export interface GameAttempt {
   percentage: number
   grade: GCSEGrade
   timestamp: number // epoch ms
+  /**
+   * Time the learner actively spent on this attempt, in seconds.
+   * Optional for backward compatibility with attempts saved before
+   * duration capture was added. Used by the learning-profile engine to
+   * weight effort and detect rushing vs. careful play.
+   */
+  durationSeconds?: number
 }
 
 interface StoredGameData {
@@ -72,7 +79,8 @@ export function scoreToGrade(score: number, maxScore: number): GCSEGrade {
 export function saveGameScore(
   gameId: string,
   score: number,
-  maxScore: number
+  maxScore: number,
+  durationSeconds?: number,
 ): GameAttempt {
   const percentage = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0
   const grade = percentageToGCSEGrade(percentage)
@@ -82,15 +90,15 @@ export function saveGameScore(
     percentage,
     grade,
     timestamp: Date.now(),
+    ...(typeof durationSeconds === 'number' && durationSeconds >= 0
+      ? { durationSeconds: Math.round(durationSeconds) }
+      : {}),
   }
 
   const data = readGameData(gameId)
 
   // Update high score based on percentage (handles different maxScores)
-  const currentHighPct =
-    data.highScoreMax > 0
-      ? (data.highScore / data.highScoreMax) * 100
-      : 0
+  const currentHighPct = data.highScoreMax > 0 ? (data.highScore / data.highScoreMax) * 100 : 0
   if (percentage >= currentHighPct) {
     data.highScore = score
     data.highScoreMax = maxScore
@@ -111,14 +119,12 @@ export function saveGameScore(
  * Returns { score, maxScore, percentage, grade } or null if never played.
  */
 export function getHighScore(
-  gameId: string
+  gameId: string,
 ): { score: number; maxScore: number; percentage: number; grade: GCSEGrade } | null {
   const data = readGameData(gameId)
   if (data.attempts.length === 0) return null
   const percentage =
-    data.highScoreMax > 0
-      ? Math.round((data.highScore / data.highScoreMax) * 100)
-      : 0
+    data.highScoreMax > 0 ? Math.round((data.highScore / data.highScoreMax) * 100) : 0
   return {
     score: data.highScore,
     maxScore: data.highScoreMax,
@@ -163,4 +169,33 @@ export function getLastPlayed(gameId: string): number | null {
   const data = readGameData(gameId)
   if (data.attempts.length === 0) return null
   return data.attempts[data.attempts.length - 1].timestamp
+}
+
+/**
+ * Every game id the learner has ever played (has stored data for).
+ * Reads the localStorage key namespace directly so the learning-profile
+ * engine can aggregate across all games without a registry.
+ */
+export function listPlayedGameIds(): string[] {
+  if (typeof window === 'undefined') return []
+  const ids: string[] = []
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i)
+      if (key && key.startsWith(STORAGE_PREFIX)) {
+        ids.push(key.slice(STORAGE_PREFIX.length))
+      }
+    }
+  } catch {
+    // Access denied / disabled — return whatever we have.
+  }
+  return ids
+}
+
+/**
+ * All stored attempts for a game, oldest → newest (full history, not
+ * the capped-to-10 view that {@link getGameHistory} returns).
+ */
+export function getAllAttempts(gameId: string): GameAttempt[] {
+  return readGameData(gameId).attempts.slice()
 }

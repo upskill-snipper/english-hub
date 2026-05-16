@@ -31,6 +31,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { QuizJsonLd } from '@/components/seo/json-ld'
+import LearningProfileView from '@/components/learning/LearningProfileView'
 import { cn } from '@/lib/utils'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
@@ -2375,6 +2376,23 @@ export default function GamesPage() {
       {!activeGame && (
         <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-0">
           <WeeklyLeaderboard />
+        </section>
+      )}
+
+      {/* Learning profile — time + accuracy → strengths, weaknesses,
+          and what to focus on next */}
+      {!activeGame && (
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-0">
+          <div className="mb-5 flex items-center justify-between">
+            <h2 className="text-lg font-bold text-foreground">Your learning profile</h2>
+            <Link
+              href="/dashboard/learning"
+              className="text-sm font-medium text-primary hover:underline"
+            >
+              View full profile →
+            </Link>
+          </div>
+          <LearningProfileView variant="compact" />
         </section>
       )}
 
