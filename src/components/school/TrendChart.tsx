@@ -1,7 +1,23 @@
 'use client'
 
-import { useMemo, useState, useCallback, useRef } from 'react'
+import { useMemo } from 'react'
+import {
+  ResponsiveContainer,
+  ComposedChart,
+  Area,
+  Line,
+  BarChart as RechartsBar,
+  Bar as RechartsBarItem,
+  Cell as RechartsCell,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ReferenceLine,
+} from 'recharts'
 import { cn } from '@/lib/utils'
+import { GlassTooltip, ChartFrame } from '@/components/dataviz'
+import { GRID, AXIS, GRAD } from '@/components/dataviz'
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
 
@@ -70,30 +86,23 @@ const DEFAULT_DATE_RANGES: { key: DateRange; label: string }[] = [
   { key: 'year', label: 'This Year' },
 ]
 
-/* ── Smooth path helper (Catmull-Rom → cubic bezier) ──────────────────────── */
+/* ── Annotation marker colour ─────────────────────────────────────────────── */
 
-function smoothPath(pts: { x: number; y: number }[]): string {
-  if (pts.length < 2) return ''
-  if (pts.length === 2) return `M ${pts[0].x} ${pts[0].y} L ${pts[1].x} ${pts[1].y}`
-
-  let d = `M ${pts[0].x} ${pts[0].y}`
-  for (let i = 0; i < pts.length - 1; i++) {
-    const p0 = pts[Math.max(i - 1, 0)]
-    const p1 = pts[i]
-    const p2 = pts[i + 1]
-    const p3 = pts[Math.min(i + 2, pts.length - 1)]
-
-    const cp1x = p1.x + (p2.x - p0.x) / 6
-    const cp1y = p1.y + (p2.y - p0.y) / 6
-    const cp2x = p2.x - (p3.x - p1.x) / 6
-    const cp2y = p2.y - (p3.y - p1.y) / 6
-
-    d += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`
+function annotationColor(type?: string): string {
+  switch (type) {
+    case 'exam':
+      return 'hsl(var(--chart-5))'
+    case 'module':
+      return 'hsl(var(--chart-4))'
+    default:
+      return 'hsl(var(--chart-3))'
   }
-  return d
 }
 
 /* ── Line/Area Chart ───────────────────────────────────────────────────────── */
+// Re-skinned onto the premium "cinematic glass" Recharts layer. The public
+// API (props, types, exports, defaults) is byte-identical to the previous
+// hand-rolled SVG implementation — only the internals changed.
 
 export function TrendChart({
   data,
@@ -117,18 +126,11 @@ export function TrendChart({
   secondaryLabel,
   printFriendly = false,
 }: TrendChartProps) {
-  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null)
-  const [hoveredSeries, setHoveredSeries] = useState<string | null>(null)
-  const svgRef = useRef<SVGSVGElement>(null)
+  /* ── Determine data length ─────────────────────────────────────────────── */
 
-  const padding = { top: 24, right: 24, bottom: 36, left: 44 }
-  const width = 700
+  const dataLength = series ? Math.max(...series.map((s) => s.data.length), 0) : (data?.length ?? 0)
 
-  /* ── Determine data length and compute max ─────────────────────────────── */
-
-  const dataLength = series
-    ? Math.max(...series.map((s) => s.data.length), 0)
-    : data?.length ?? 0
+  /* ── Y-axis max ────────────────────────────────────────────────────────── */
 
   const maxValue = useMemo(() => {
     if (maxValueProp) return maxValueProp
@@ -147,158 +149,48 @@ export function TrendChart({
     return max * 1.1
   }, [data, series, maxValueProp, targetValue])
 
-  const chartWidth = width - padding.left - padding.right
-  const chartHeight = height - padding.top - padding.bottom
+  /* ── X-axis labels ─────────────────────────────────────────────────────── */
 
-  /* ── Build coordinate arrays ───────────────────────────────────────────── */
-
-  const xScale = useCallback(
-    (i: number) => padding.left + (i / Math.max(dataLength - 1, 1)) * chartWidth,
-    [dataLength, chartWidth, padding.left],
-  )
-
-  const yScale = useCallback(
-    (v: number) => padding.top + chartHeight - (v / maxValue) * chartHeight,
-    [chartHeight, maxValue, padding.top],
-  )
-
-  /* Series mode points */
-  const seriesPoints = useMemo(() => {
-    if (!series) return []
-    return series.map((s) => ({
-      ...s,
-      points: s.data.map((v, i) => ({ x: xScale(i), y: yScale(v), value: v })),
-    }))
-  }, [series, xScale, yScale])
-
-  /* Legacy single/dual data mode */
-  const legacyPoints = useMemo(() => {
-    if (!data) return []
-    return data.map((d, i) => ({
-      x: xScale(i),
-      y: yScale(d.value),
-      secondaryY: d.secondaryValue !== undefined ? yScale(d.secondaryValue) : undefined,
-      label: d.label,
-      value: d.value,
-      secondaryValue: d.secondaryValue,
-    }))
-  }, [data, xScale, yScale])
-
-  /* Legacy paths */
-  const linePath = useMemo(() => {
-    if (legacyPoints.length < 2) return ''
-    return smoothPath(legacyPoints.map((p) => ({ x: p.x, y: p.y })))
-  }, [legacyPoints])
-
-  const secondaryLinePath = useMemo(() => {
-    if (legacyPoints.length < 2) return ''
-    const hasSecondary = legacyPoints.some((p) => p.secondaryY !== undefined)
-    if (!hasSecondary) return ''
-    return smoothPath(
-      legacyPoints.map((p) => ({ x: p.x, y: p.secondaryY ?? p.y })),
-    )
-  }, [legacyPoints])
-
-  const areaPath = useMemo(() => {
-    if (legacyPoints.length < 2 || !showArea) return ''
-    const bottomY = padding.top + chartHeight
-    return `${linePath} L ${legacyPoints[legacyPoints.length - 1].x} ${bottomY} L ${legacyPoints[0].x} ${bottomY} Z`
-  }, [linePath, legacyPoints, showArea, chartHeight, padding.top])
-
-  /* Y-axis ticks */
-  const yTicks = useMemo(() => {
-    const count = 5
-    return Array.from({ length: count + 1 }, (_, i) => {
-      const value = Math.round((maxValue / count) * i)
-      const y = yScale(value)
-      return { value, y }
-    })
-  }, [maxValue, yScale])
-
-  /* X-axis labels */
   const effectiveLabels = useMemo(() => {
     if (xLabels) return xLabels
     if (data) return data.map((d) => d.label)
     return []
   }, [xLabels, data])
 
-  /* ── Mouse handling ────────────────────────────────────────────────────── */
+  /* ── Recharts row data ─────────────────────────────────────────────────── */
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<SVGSVGElement>) => {
-      if (dataLength === 0) return
-      const svg = e.currentTarget
-      const rect = svg.getBoundingClientRect()
-      const mouseX = ((e.clientX - rect.left) / rect.width) * width
-      let closest = 0
-      let closestDist = Infinity
-      for (let i = 0; i < dataLength; i++) {
-        const dist = Math.abs(xScale(i) - mouseX)
-        if (dist < closestDist) {
-          closestDist = dist
-          closest = i
+  const chartData = useMemo(() => {
+    if (series) {
+      return Array.from({ length: dataLength }, (_, i) => {
+        const row: Record<string, unknown> = {
+          _i: i,
+          _label: effectiveLabels[i] ?? `Point ${i + 1}`,
         }
-      }
-      setHoveredIdx(closest)
-    },
-    [dataLength, width, xScale],
-  )
+        for (const s of series) row[s.key] = s.data[i]
+        return row
+      })
+    }
+    return (data ?? []).map((d, i) => ({
+      _i: i,
+      _label: d.label,
+      __primary: d.value,
+      __secondary: d.secondaryValue,
+    }))
+  }, [series, data, dataLength, effectiveLabels])
 
-  /* Target line Y */
-  const targetY = targetValue !== undefined ? yScale(targetValue) : null
+  const hasSecondary = !series && (data?.some((d) => d.secondaryValue !== undefined) ?? false)
 
   /* ── Empty state ───────────────────────────────────────────────────────── */
 
   if (dataLength === 0) {
     return (
       <div
-        className={cn(
-          'flex items-center justify-center text-sm text-muted-foreground',
-          className,
-        )}
+        className={cn('flex items-center justify-center text-sm text-muted-foreground', className)}
         style={{ height }}
       >
         No trend data available yet.
       </div>
     )
-  }
-
-  /* ── Build tooltip content ─────────────────────────────────────────────── */
-
-  const tooltipContent = hoveredIdx !== null ? (() => {
-    const items: { label: string; value: number; color: string }[] = []
-    if (series) {
-      for (const sp of seriesPoints) {
-        if (sp.points[hoveredIdx]) {
-          items.push({ label: sp.label, value: sp.points[hoveredIdx].value, color: sp.color })
-        }
-      }
-    } else if (legacyPoints[hoveredIdx]) {
-      const lp = legacyPoints[hoveredIdx]
-      items.push({ label: label ?? 'Value', value: lp.value, color })
-      if (lp.secondaryValue !== undefined) {
-        items.push({ label: secondaryLabel ?? 'Secondary', value: lp.secondaryValue, color: secondaryColor })
-      }
-    }
-    return items
-  })() : []
-
-  /* ── Tooltip positioning ───────────────────────────────────────────────── */
-
-  const tooltipX = hoveredIdx !== null ? xScale(hoveredIdx) : 0
-  const tooltipWidth = 140
-  const tooltipHeight = 16 + tooltipContent.length * 18 + 8
-  const tooltipXAdj = Math.min(Math.max(tooltipX - tooltipWidth / 2, 2), width - tooltipWidth - 2)
-  const tooltipYAdj = 2
-
-  /* ── Annotation marker color ───────────────────────────────────────────── */
-
-  function annotationColor(type?: string) {
-    switch (type) {
-      case 'exam': return 'hsl(var(--chart-5))'
-      case 'module': return 'hsl(var(--chart-4))'
-      default: return 'hsl(var(--chart-3))'
-    }
   }
 
   /* ── Render ─────────────────────────────────────────────────────────────── */
@@ -310,29 +202,14 @@ export function TrendChart({
         {/* Legend */}
         <div className="flex flex-wrap items-center gap-3 text-xs">
           {series ? (
-            seriesPoints.map((sp) => (
-              <button
-                key={sp.key}
-                type="button"
-                className={cn(
-                  'flex items-center gap-1.5 rounded-md px-2 py-1 transition-colors',
-                  hoveredSeries === sp.key
-                    ? 'bg-accent'
-                    : 'hover:bg-accent/50',
-                  printFriendly && 'pointer-events-none',
-                )}
-                onMouseEnter={() => setHoveredSeries(sp.key)}
-                onMouseLeave={() => setHoveredSeries(null)}
-              >
+            series.map((s) => (
+              <div key={s.key} className="flex items-center gap-1.5">
                 <span
                   className="inline-block h-2 w-4 rounded-sm"
-                  style={{
-                    backgroundColor: sp.color,
-                    opacity: hoveredSeries && hoveredSeries !== sp.key ? 0.3 : 1,
-                  }}
+                  style={{ backgroundColor: s.color }}
                 />
-                <span className="text-muted-foreground">{sp.label}</span>
-              </button>
+                <span className="text-muted-foreground">{s.label}</span>
+              </div>
             ))
           ) : (
             <>
@@ -344,7 +221,10 @@ export function TrendChart({
               )}
               {secondaryLabel && (
                 <div className="flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: secondaryColor }} />
+                  <span
+                    className="h-2 w-2 rounded-full"
+                    style={{ backgroundColor: secondaryColor }}
+                  />
                   <span className="text-muted-foreground">{secondaryLabel}</span>
                 </div>
               )}
@@ -380,275 +260,122 @@ export function TrendChart({
         )}
       </div>
 
-      {/* SVG Chart */}
-      <svg
-        ref={svgRef}
-        viewBox={`0 0 ${width} ${height}`}
-        className="w-full"
-        preserveAspectRatio="xMidYMid meet"
-        onMouseMove={printFriendly ? undefined : handleMouseMove}
-        onMouseLeave={printFriendly ? undefined : () => setHoveredIdx(null)}
-        role="img"
-        aria-label="Trend chart"
-      >
-        {/* Grid lines */}
-        {yTicks.map((tick) => (
-          <g key={tick.value}>
-            <line
-              x1={padding.left}
-              x2={width - padding.right}
-              y1={tick.y}
-              y2={tick.y}
-              stroke="currentColor"
-              className="text-border"
-              strokeDasharray="4 4"
-              strokeWidth="0.5"
-            />
-            <text
-              x={padding.left - 8}
-              y={tick.y + 4}
-              textAnchor="end"
-              className="fill-muted-foreground"
-              fontSize="10"
-            >
-              {tick.value}
-            </text>
-          </g>
-        ))}
+      {/* Recharts cinematic-glass chart */}
+      <ChartFrame height={height}>
+        <ComposedChart data={chartData} margin={{ top: 16, right: 24, bottom: 8, left: -12 }}>
+          <defs>
+            <linearGradient id={GRAD.area} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor={color} stopOpacity={0.4} />
+              <stop offset="100%" stopColor={color} stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid {...GRID} />
+          <XAxis
+            dataKey="_label"
+            {...AXIS}
+            hide={!showLabels}
+            interval="preserveStartEnd"
+            minTickGap={24}
+          />
+          <YAxis domain={[0, maxValue]} {...AXIS} width={44} />
+          <Tooltip
+            content={<GlassTooltip />}
+            cursor={{ stroke: 'hsl(var(--border))', strokeDasharray: '3 3' }}
+          />
 
-        {/* Target line */}
-        {targetY !== null && (
-          <g>
-            <line
-              x1={padding.left}
-              x2={width - padding.right}
-              y1={targetY}
-              y2={targetY}
+          {/* Target line */}
+          {targetValue !== undefined && (
+            <ReferenceLine
+              y={targetValue}
               stroke="hsl(var(--chart-3))"
-              strokeWidth="1.5"
+              strokeWidth={1.5}
               strokeDasharray="8 4"
-              opacity={0.7}
+              strokeOpacity={0.7}
+              label={{
+                value: targetLabel,
+                position: 'right',
+                fontSize: 9,
+                fill: 'hsl(var(--chart-3))',
+                fontWeight: 600,
+              }}
             />
-            <text
-              x={width - padding.right + 4}
-              y={targetY + 4}
-              fontSize="9"
-              fill="hsl(var(--chart-3))"
-              fontWeight="600"
-            >
-              {targetLabel}
-            </text>
-          </g>
-        )}
+          )}
 
-        {/* ── Series mode ─────────────────────────────────────────────────── */}
-        {series ? (
-          <>
-            {seriesPoints.map((sp) => {
-              const path = smoothPath(sp.points)
-              const opacity = hoveredSeries && hoveredSeries !== sp.key ? 0.2 : 1
-              return (
-                <g key={sp.key} style={{ opacity, transition: 'opacity 200ms' }}>
-                  {/* Area fill for first series */}
-                  {showArea && sp.key === seriesPoints[0]?.key && sp.points.length >= 2 && (
-                    <path
-                      d={`${path} L ${sp.points[sp.points.length - 1].x} ${padding.top + chartHeight} L ${sp.points[0].x} ${padding.top + chartHeight} Z`}
-                      fill={sp.color}
-                      fillOpacity="0.06"
-                    />
-                  )}
-                  <path
-                    d={path}
-                    fill="none"
-                    stroke={sp.color}
-                    strokeWidth={sp.strokeWidth ?? 2.5}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeDasharray={sp.dashArray}
-                  />
-                  {showDots &&
-                    sp.points.map((p, i) => (
-                      <circle
-                        key={i}
-                        cx={p.x}
-                        cy={p.y}
-                        r={hoveredIdx === i ? 5 : 3}
-                        fill={sp.color}
-                        stroke="var(--background)"
-                        strokeWidth="2"
-                        className="transition-all duration-150"
-                      />
-                    ))}
-                </g>
-              )
-            })}
-          </>
-        ) : (
-          /* ── Legacy single/dual mode ────────────────────────────────────── */
-          <>
-            {showArea && areaPath && (
-              <path d={areaPath} fill={color} fillOpacity="0.08" />
-            )}
-            {linePath && (
-              <path
-                d={linePath}
-                fill="none"
-                stroke={color}
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            )}
-            {secondaryLinePath && (
-              <path
-                d={secondaryLinePath}
-                fill="none"
-                stroke={secondaryColor}
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeDasharray="6 3"
-              />
-            )}
-            {showDots &&
-              legacyPoints.map((p, i) => (
-                <g key={i}>
-                  <circle
-                    cx={p.x}
-                    cy={p.y}
-                    r={hoveredIdx === i ? 6 : 4}
-                    fill={color}
-                    stroke="var(--background)"
-                    strokeWidth="2"
-                    className="transition-all duration-150"
-                  />
-                  {p.secondaryY !== undefined && (
-                    <circle
-                      cx={p.x}
-                      cy={p.secondaryY}
-                      r={hoveredIdx === i ? 5 : 3}
-                      fill={secondaryColor}
-                      stroke="var(--background)"
-                      strokeWidth="2"
-                      className="transition-all duration-150"
-                    />
-                  )}
-                </g>
-              ))}
-          </>
-        )}
-
-        {/* ── Annotation markers ──────────────────────────────────────────── */}
-        {annotations?.map((ann, i) => {
-          const ax = xScale(ann.index)
-          const markerColor = annotationColor(ann.type)
-          return (
-            <g key={`ann-${i}`}>
-              <line
-                x1={ax}
-                x2={ax}
-                y1={padding.top}
-                y2={padding.top + chartHeight}
-                stroke={markerColor}
-                strokeWidth="1"
-                strokeDasharray="3 3"
-                opacity={0.5}
-              />
-              {/* Diamond marker */}
-              <polygon
-                points={`${ax},${padding.top - 2} ${ax + 6},${padding.top + 6} ${ax},${padding.top + 14} ${ax - 6},${padding.top + 6}`}
-                fill={markerColor}
-                opacity={0.85}
-              />
-              <text
-                x={ax}
-                y={padding.top - 6}
-                textAnchor="middle"
-                fontSize="8"
-                fill={markerColor}
-                fontWeight="600"
-              >
-                {ann.label}
-              </text>
-            </g>
-          )
-        })}
-
-        {/* ── Hover crosshair + tooltip ───────────────────────────────────── */}
-        {!printFriendly && hoveredIdx !== null && (
-          <g>
-            <line
-              x1={xScale(hoveredIdx)}
-              x2={xScale(hoveredIdx)}
-              y1={padding.top}
-              y2={padding.top + chartHeight}
-              stroke="currentColor"
-              className="text-muted-foreground"
-              strokeWidth="0.5"
+          {/* Annotation markers */}
+          {annotations?.map((ann, i) => (
+            <ReferenceLine
+              key={`ann-${i}`}
+              x={chartData[ann.index]?._label as string | undefined}
+              stroke={annotationColor(ann.type)}
+              strokeWidth={1}
               strokeDasharray="3 3"
+              strokeOpacity={0.5}
+              label={{
+                value: ann.label,
+                position: 'insideTop',
+                fontSize: 8,
+                fill: annotationColor(ann.type),
+                fontWeight: 600,
+              }}
             />
-            {/* Tooltip box */}
-            <rect
-              x={tooltipXAdj}
-              y={tooltipYAdj}
-              width={tooltipWidth}
-              height={tooltipHeight}
-              rx="6"
-              fill="var(--foreground)"
-              opacity="0.92"
-            />
-            {/* Tooltip label */}
-            <text
-              x={tooltipXAdj + 10}
-              y={tooltipYAdj + 14}
-              fill="var(--background)"
-              fontSize="10"
-              fontWeight="600"
-            >
-              {effectiveLabels[hoveredIdx] ?? `Point ${hoveredIdx + 1}`}
-            </text>
-            {/* Tooltip values */}
-            {tooltipContent.map((item, ti) => (
-              <g key={ti}>
-                <circle
-                  cx={tooltipXAdj + 14}
-                  cy={tooltipYAdj + 28 + ti * 18}
-                  r="3"
-                  fill={item.color}
-                />
-                <text
-                  x={tooltipXAdj + 22}
-                  y={tooltipYAdj + 32 + ti * 18}
-                  fill="var(--background)"
-                  fontSize="10"
-                >
-                  {item.label}: {Math.round(item.value * 10) / 10}
-                </text>
-              </g>
-            ))}
-          </g>
-        )}
+          ))}
 
-        {/* X-axis labels */}
-        {showLabels &&
-          effectiveLabels.map((lbl, i) => {
-            // Skip some labels if too many
-            const skip = effectiveLabels.length > 12 ? Math.ceil(effectiveLabels.length / 10) : 1
-            if (i % skip !== 0 && i !== effectiveLabels.length - 1) return null
-            return (
-              <text
-                key={i}
-                x={xScale(i)}
-                y={height - 6}
-                textAnchor="middle"
-                className="fill-muted-foreground"
-                fontSize="9"
-              >
-                {lbl}
-              </text>
-            )
-          })}
-      </svg>
+          {/* ── Series mode ─────────────────────────────────────────────── */}
+          {series ? (
+            series.map((s, si) => (
+              <Area
+                key={s.key}
+                type="monotone"
+                dataKey={s.key}
+                name={s.label}
+                stroke={s.color}
+                strokeWidth={s.strokeWidth ?? 2.5}
+                strokeDasharray={s.dashArray}
+                fill={si === 0 && showArea ? `url(#${GRAD.area})` : 'transparent'}
+                fillOpacity={si === 0 && showArea ? 1 : 0}
+                isAnimationActive={!printFriendly}
+                animationDuration={900}
+                dot={showDots ? { r: 3, fill: s.color, strokeWidth: 0 } : false}
+                activeDot={showDots ? { r: 5 } : false}
+                connectNulls
+              />
+            ))
+          ) : (
+            /* ── Legacy single/dual mode ──────────────────────────────────── */
+            <>
+              <Area
+                type="monotone"
+                dataKey="__primary"
+                name={label ?? 'Value'}
+                stroke={color}
+                strokeWidth={2.5}
+                fill={showArea ? `url(#${GRAD.area})` : 'transparent'}
+                fillOpacity={showArea ? 1 : 0}
+                isAnimationActive={!printFriendly}
+                animationDuration={900}
+                dot={showDots ? { r: 4, fill: color, strokeWidth: 0 } : false}
+                activeDot={showDots ? { r: 6 } : false}
+                connectNulls
+              />
+              {hasSecondary && (
+                <Line
+                  type="monotone"
+                  dataKey="__secondary"
+                  name={secondaryLabel ?? 'Secondary'}
+                  stroke={secondaryColor}
+                  strokeWidth={2}
+                  strokeDasharray="6 3"
+                  isAnimationActive={!printFriendly}
+                  animationDuration={900}
+                  dot={showDots ? { r: 3, fill: secondaryColor, strokeWidth: 0 } : false}
+                  activeDot={showDots ? { r: 5 } : false}
+                  connectNulls
+                />
+              )}
+            </>
+          )}
+        </ComposedChart>
+      </ChartFrame>
     </div>
   )
 }
@@ -696,13 +423,19 @@ export function BarChart({
     return Math.max(...data.map((d) => d.value), 1) * 1.15
   }, [data, maxValueProp])
 
+  const rows = useMemo(
+    () =>
+      data.map((d) => ({
+        ...d,
+        __fill: d.color ?? getThresholdColor(d.value, thresholds, defaultColor),
+      })),
+    [data, thresholds, defaultColor],
+  )
+
   if (data.length === 0) {
     return (
       <div
-        className={cn(
-          'flex items-center justify-center text-sm text-muted-foreground',
-          className,
-        )}
+        className={cn('flex items-center justify-center text-sm text-muted-foreground', className)}
         style={{ height }}
       >
         No data available.
@@ -711,34 +444,34 @@ export function BarChart({
   }
 
   return (
-    <div
-      className={cn('flex items-end gap-1 sm:gap-2', className)}
-      style={{ height }}
-    >
-      {data.map((d, i) => {
-        const barColor =
-          d.color ?? getThresholdColor(d.value, thresholds, defaultColor)
-        return (
-          <div
-            key={i}
-            className="group relative flex flex-1 flex-col items-center"
+    <div className={cn('w-full', className)} style={{ height }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <RechartsBar
+          data={rows}
+          margin={{ top: 20, right: 8, bottom: 4, left: -16 }}
+          barCategoryGap="16%"
+        >
+          <CartesianGrid {...GRID} />
+          <XAxis
+            dataKey="label"
+            {...AXIS}
+            interval={0}
+            tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }}
+          />
+          <YAxis domain={[0, maxValue]} {...AXIS} width={40} />
+          <Tooltip content={<GlassTooltip />} cursor={{ fill: 'hsl(var(--muted)/0.4)' }} />
+          <RechartsBarItem
+            dataKey="value"
+            radius={[6, 6, 0, 0]}
+            isAnimationActive
+            animationDuration={700}
           >
-            <div className="pointer-events-none absolute -top-7 z-10 hidden rounded bg-foreground px-2 py-0.5 text-xs font-medium text-background whitespace-nowrap group-hover:block">
-              {d.value}
-            </div>
-            <div
-              className="w-full max-w-[40px] rounded-t transition-all duration-300"
-              style={{
-                height: `${Math.max((d.value / maxValue) * 100, 2)}%`,
-                backgroundColor: barColor,
-              }}
-            />
-            <span className="mt-1 text-[10px] text-muted-foreground leading-tight text-center hidden sm:block">
-              {d.label}
-            </span>
-          </div>
-        )
-      })}
+            {rows.map((r, i) => (
+              <RechartsCell key={i} fill={r.__fill} />
+            ))}
+          </RechartsBarItem>
+        </RechartsBar>
+      </ResponsiveContainer>
     </div>
   )
 }

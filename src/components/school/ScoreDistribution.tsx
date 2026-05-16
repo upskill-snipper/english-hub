@@ -1,7 +1,20 @@
 'use client'
 
-import { useMemo, useState, memo } from 'react'
+import { useMemo, memo } from 'react'
+import {
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ReferenceLine,
+  LabelList,
+} from 'recharts'
 import { cn } from '@/lib/utils'
+import { ChartFrame } from '@/components/dataviz'
+import { GRID, AXIS } from '@/components/dataviz'
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
 
@@ -36,14 +49,43 @@ function gradeColor(grade: number): string {
   return '#ef4444' // red
 }
 
-function gradeColorClass(grade: number): string {
-  if (grade >= 7) return 'text-green-500'
-  if (grade >= 5) return 'text-yellow-500'
-  if (grade >= 4) return 'text-amber-500'
-  return 'text-red-500'
+/* ── Tooltip ───────────────────────────────────────────────────────────────── */
+
+interface DistRow {
+  grade: number
+  count: number
+  targetCount: number
+  nationalCount: number | null
+  nationalPct: number | null
+  pctOfTotal: number
+}
+
+function DistTooltip({ active, payload }: { active?: boolean; payload?: { payload?: DistRow }[] }) {
+  if (!active || !payload || payload.length === 0) return null
+  const row = payload[0]?.payload
+  if (!row) return null
+  return (
+    <div className="rounded-xl border border-border/60 bg-card/90 px-3 py-2 shadow-xl backdrop-blur-xl">
+      <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+        Grade {row.grade}
+      </p>
+      <p className="text-xs text-foreground">
+        {row.count} students ({row.pctOfTotal}%)
+        {row.targetCount ? ` / Target: ${row.targetCount}` : ''}
+      </p>
+      {row.nationalCount != null && (
+        <p className="text-xs text-muted-foreground">
+          National: {row.nationalCount} ({row.nationalPct}%)
+        </p>
+      )}
+    </div>
+  )
 }
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
+// Re-skinned onto the premium "cinematic glass" Recharts bar chart. The
+// public API (props, types, exports, defaults) is byte-identical to the
+// previous hand-rolled SVG implementation — only the internals changed.
 
 export const ScoreDistribution = memo(function ScoreDistribution({
   grades,
@@ -54,13 +96,11 @@ export const ScoreDistribution = memo(function ScoreDistribution({
   className,
   printFriendly = false,
 }: ScoreDistributionProps) {
-  const [hoveredGrade, setHoveredGrade] = useState<number | null>(null)
-
-  /* Fill in all 9 grades */
+  /* Fill in all 9 grades (9 → 1, top-down) */
   const allGrades = useMemo(() => {
     const map = new Map(grades.map((g) => [g.grade, g]))
     return Array.from({ length: 9 }, (_, i) => {
-      const grade = 9 - i // 9 down to 1
+      const grade = 9 - i
       const existing = map.get(grade)
       return {
         grade,
@@ -71,17 +111,11 @@ export const ScoreDistribution = memo(function ScoreDistribution({
   }, [grades])
 
   const totalStudents = totalStudentsProp ?? allGrades.reduce((s, g) => s + g.count, 0)
+
   const maxCount = useMemo(
     () => Math.max(...allGrades.map((g) => Math.max(g.count, g.targetCount ?? 0)), 1),
     [allGrades],
   )
-
-  const padding = { top: 24, right: 60, bottom: 32, left: 40 }
-  const svgWidth = 560
-  const chartWidth = svgWidth - padding.left - padding.right
-  const chartHeight = height - padding.top - padding.bottom
-  const barHeight = Math.min(Math.floor(chartHeight / 9) - 4, 28)
-  const barGap = (chartHeight - barHeight * 9) / 8
 
   /* National average counts */
   const nationalCounts = useMemo(() => {
@@ -93,13 +127,25 @@ export const ScoreDistribution = memo(function ScoreDistribution({
     return result
   }, [nationalAverage, totalStudents])
 
+  const hasTarget = allGrades.some((g) => (g.targetCount ?? 0) > 0)
+
+  const chartData: DistRow[] = useMemo(
+    () =>
+      allGrades.map((g) => ({
+        grade: g.grade,
+        count: g.count,
+        targetCount: g.targetCount ?? 0,
+        nationalCount: nationalCounts ? (nationalCounts[g.grade] ?? 0) : null,
+        nationalPct: nationalAverage ? (nationalAverage[g.grade] ?? 0) : null,
+        pctOfTotal: totalStudents > 0 ? Math.round((g.count / totalStudents) * 100) : 0,
+      })),
+    [allGrades, nationalCounts, nationalAverage, totalStudents],
+  )
+
   if (totalStudents === 0) {
     return (
       <div
-        className={cn(
-          'flex items-center justify-center text-sm text-muted-foreground',
-          className,
-        )}
+        className={cn('flex items-center justify-center text-sm text-muted-foreground', className)}
         style={{ height }}
       >
         No grade distribution data available.
@@ -109,9 +155,7 @@ export const ScoreDistribution = memo(function ScoreDistribution({
 
   return (
     <div className={cn('print:break-inside-avoid', className)}>
-      {title && (
-        <h3 className="mb-2 text-sm font-semibold text-foreground">{title}</h3>
-      )}
+      {title && <h3 className="mb-2 text-sm font-semibold text-foreground">{title}</h3>}
 
       {/* Legend */}
       <div className="mb-2 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
@@ -119,7 +163,7 @@ export const ScoreDistribution = memo(function ScoreDistribution({
           <span className="inline-block h-3 w-5 rounded-sm bg-current opacity-60" />
           <span>Current</span>
         </div>
-        {allGrades.some((g) => (g.targetCount ?? 0) > 0) && (
+        {hasTarget && (
           <div className="flex items-center gap-1.5">
             <span className="inline-block h-3 w-5 rounded-sm border-2 border-dashed border-foreground/30" />
             <span>Target</span>
@@ -133,179 +177,76 @@ export const ScoreDistribution = memo(function ScoreDistribution({
         )}
       </div>
 
-      <svg
-        viewBox={`0 0 ${svgWidth} ${height}`}
-        className="w-full"
-        preserveAspectRatio="xMidYMid meet"
-        role="img"
-        aria-label="Score distribution chart"
-      >
-        {allGrades.map((g, i) => {
-          const y = padding.top + i * (barHeight + barGap)
-          const barW = (g.count / maxCount) * chartWidth
-          const targetW = ((g.targetCount ?? 0) / maxCount) * chartWidth
-          const nationalW = nationalCounts
-            ? ((nationalCounts[g.grade] ?? 0) / maxCount) * chartWidth
-            : 0
-          const gap = g.targetCount !== undefined ? g.targetCount - g.count : 0
-          const isHovered = hoveredGrade === g.grade
+      <ChartFrame height={height}>
+        <BarChart
+          layout="vertical"
+          data={chartData}
+          margin={{ top: 8, right: 56, bottom: 8, left: 8 }}
+          barCategoryGap="22%"
+        >
+          <CartesianGrid {...GRID} horizontal={false} vertical />
+          <XAxis type="number" domain={[0, maxCount]} {...AXIS} />
+          <YAxis
+            type="category"
+            dataKey="grade"
+            {...AXIS}
+            width={28}
+            tick={{ fontSize: 13, fontWeight: 700, fill: 'hsl(var(--foreground))' }}
+            interval={0}
+          />
+          <Tooltip content={<DistTooltip />} cursor={{ fill: 'hsl(var(--muted)/0.4)' }} />
 
-          return (
-            <g
-              key={g.grade}
-              onMouseEnter={printFriendly ? undefined : () => setHoveredGrade(g.grade)}
-              onMouseLeave={printFriendly ? undefined : () => setHoveredGrade(null)}
-              className="cursor-default"
-            >
-              {/* Row background on hover */}
-              {isHovered && (
-                <rect
-                  x={0}
-                  y={y - 2}
-                  width={svgWidth}
-                  height={barHeight + 4}
-                  rx="4"
-                  fill="currentColor"
-                  className="text-muted-foreground"
-                  opacity="0.04"
-                />
-              )}
+          {/* Target outline (behind) */}
+          {hasTarget && (
+            <Bar
+              dataKey="targetCount"
+              fill="none"
+              stroke="hsl(var(--foreground)/0.2)"
+              strokeWidth={1.5}
+              strokeDasharray="4 3"
+              radius={[0, 4, 4, 0]}
+              isAnimationActive={false}
+              barSize={18}
+            />
+          )}
 
-              {/* Grade label */}
-              <text
-                x={padding.left - 10}
-                y={y + barHeight / 2 + 4}
-                textAnchor="end"
-                fontSize="13"
-                fontWeight="700"
-                className={cn('tabular-nums', gradeColorClass(g.grade))}
-                fill="currentColor"
-              >
-                {g.grade}
-              </text>
+          {/* Current bars */}
+          <Bar
+            dataKey="count"
+            radius={[0, 4, 4, 0]}
+            isAnimationActive={!printFriendly}
+            animationDuration={700}
+            barSize={20}
+          >
+            {chartData.map((d) => (
+              <Cell key={d.grade} fill={gradeColor(d.grade)} fillOpacity={0.75} />
+            ))}
+            <LabelList
+              dataKey="count"
+              position="right"
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                fill: 'hsl(var(--foreground))',
+              }}
+            />
+          </Bar>
 
-              {/* Target bar (behind) */}
-              {targetW > 0 && (
-                <rect
-                  x={padding.left}
-                  y={y}
-                  width={Math.max(targetW, 2)}
-                  height={barHeight}
-                  rx="4"
-                  fill="none"
-                  stroke="currentColor"
-                  className="text-foreground/20"
-                  strokeWidth="1.5"
-                  strokeDasharray="4 3"
-                />
-              )}
-
-              {/* Current bar */}
-              <rect
-                x={padding.left}
-                y={y}
-                width={Math.max(barW, 2)}
-                height={barHeight}
-                rx="4"
-                fill={gradeColor(g.grade)}
-                opacity={isHovered ? 0.9 : 0.7}
-                className="transition-opacity duration-150"
-              />
-
-              {/* National average marker */}
-              {nationalW > 0 && (
-                <line
-                  x1={padding.left + nationalW}
-                  x2={padding.left + nationalW}
-                  y1={y - 2}
-                  y2={y + barHeight + 2}
+          {/* National average markers */}
+          {nationalCounts &&
+            chartData.map((d) =>
+              (d.nationalCount ?? 0) > 0 ? (
+                <ReferenceLine
+                  key={`nat-${d.grade}`}
+                  x={d.nationalCount ?? 0}
                   stroke="#60a5fa"
-                  strokeWidth="2"
-                  strokeLinecap="round"
+                  strokeWidth={2}
+                  ifOverflow="extendDomain"
                 />
-              )}
-
-              {/* Count label */}
-              <text
-                x={padding.left + Math.max(barW, 2) + 8}
-                y={y + barHeight / 2 + 4}
-                fontSize="11"
-                fontWeight="600"
-                className="fill-foreground tabular-nums"
-              >
-                {g.count}
-              </text>
-
-              {/* Gap indicator */}
-              {gap !== 0 && isHovered && (
-                <text
-                  x={padding.left + Math.max(barW, targetW, 2) + 30}
-                  y={y + barHeight / 2 + 4}
-                  fontSize="10"
-                  fontWeight="600"
-                  fill={gap > 0 ? '#ef4444' : '#22c55e'}
-                >
-                  {gap > 0 ? `${gap} below target` : `${Math.abs(gap)} above target`}
-                </text>
-              )}
-
-              {/* Hover tooltip */}
-              {isHovered && !printFriendly && (
-                <g>
-                  <rect
-                    x={svgWidth - padding.right - 120}
-                    y={Math.max(y - 30, 2)}
-                    width={120}
-                    height={nationalCounts ? 52 : 38}
-                    rx="6"
-                    fill="var(--foreground)"
-                    opacity="0.92"
-                  />
-                  <text
-                    x={svgWidth - padding.right - 110}
-                    y={Math.max(y - 30, 2) + 14}
-                    fontSize="10"
-                    fill="var(--background)"
-                    fontWeight="600"
-                  >
-                    Grade {g.grade}
-                  </text>
-                  <text
-                    x={svgWidth - padding.right - 110}
-                    y={Math.max(y - 30, 2) + 28}
-                    fontSize="9"
-                    fill="var(--background)"
-                  >
-                    {g.count} students ({totalStudents > 0 ? Math.round((g.count / totalStudents) * 100) : 0}%)
-                    {g.targetCount ? ` / Target: ${g.targetCount}` : ''}
-                  </text>
-                  {nationalCounts && (
-                    <text
-                      x={svgWidth - padding.right - 110}
-                      y={Math.max(y - 30, 2) + 42}
-                      fontSize="9"
-                      fill="var(--background)"
-                    >
-                      National: {nationalCounts[g.grade] ?? 0} ({nationalAverage?.[g.grade] ?? 0}%)
-                    </text>
-                  )}
-                </g>
-              )}
-            </g>
-          )
-        })}
-
-        {/* X-axis baseline */}
-        <line
-          x1={padding.left}
-          x2={padding.left}
-          y1={padding.top - 4}
-          y2={padding.top + chartHeight + 4}
-          stroke="currentColor"
-          className="text-border"
-          strokeWidth="1"
-        />
-      </svg>
+              ) : null,
+            )}
+        </BarChart>
+      </ChartFrame>
 
       {/* Summary stats */}
       <div className="mt-2 grid grid-cols-3 gap-3 text-center text-xs">

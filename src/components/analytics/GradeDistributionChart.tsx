@@ -6,24 +6,25 @@
  *   /dashboard/analytics, /dashboard/parent, /dashboard/parent/progress,
  *   /dashboard/progress, /dashboard/teacher analytics, etc.
  *
- * Design goals (vs. the previous tiny-bar version):
- *  1. Stacked-bar at the top — students can see proportions in 0.5 s.
- *  2. Per-grade vertical bars with count AND percentage on each bar.
- *  3. Three summary cards below, each with %, count, and a sparkline-style
- *     mini-bar so empty bands still feel real.
- *  4. Hover tooltips on every bar.
- *  5. Empty-state when total = 0.
- *  6. Matches the project's teal/blue/red band semantics:
+ * The per-grade bar chart now renders through the premium "cinematic
+ * glass" Recharts layer (ChartFrame + BarChart + GlassTooltip) instead
+ * of hand-rolled CSS bars, so it animates and matches every other
+ * school/teacher surface. The stacked overview, three summary cards,
+ * legend and empty-state keep their on-theme band semantics:
  *     - teal-700  → Grade 7-9 (top performers)
  *     - blue-500  → Grade 4-6 (standard pass)
  *     - red-500   → Grade 1-3 (below pass)
+ *
+ * Public API is unchanged (same props, defaults, exports).
  */
 
 'use client'
 
 import { useMemo } from 'react'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell, LabelList } from 'recharts'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
+import { ChartFrame, GlassTooltip, GRID, AXIS } from '@/components/dataviz'
 
 export type GradeCounts = Record<number, number> | Record<string, number>
 
@@ -72,6 +73,13 @@ const BAND_DOT_BG: Record<'top' | 'pass' | 'below', string> = {
   below: 'bg-red-500',
 }
 
+/** Solid colours for the Recharts <Cell> fills (mirror the band CSS). */
+const BAND_FILL: Record<'top' | 'pass' | 'below', string> = {
+  top: 'hsl(173 80% 26%)', // teal-700
+  pass: 'hsl(217 91% 60%)', // blue-500
+  below: 'hsl(0 84% 60%)', // red-500
+}
+
 const BAND_CARD: Record<
   'top' | 'pass' | 'below',
   { ring: string; bg: string; text: string; subtext: string; labelKey: string }
@@ -117,7 +125,7 @@ export function GradeDistributionChart({
   const t = useT()
   const resolvedTitle =
     title === null ? null : (title ?? t('analytics.grade.working_at_distribution'))
-  const { data, total, max, bands } = useMemo(() => {
+  const { data, total, bands } = useMemo(() => {
     const arr = [9, 8, 7, 6, 5, 4, 3, 2, 1].map((g) => {
       // Accept both numeric and string keys; treat undefined as 0.
       const raw =
@@ -139,6 +147,21 @@ export function GradeDistributionChart({
   }, [counts])
 
   const pctOf = (n: number) => (total > 0 ? Math.round((n / total) * 100) : 0)
+
+  // Recharts wants ascending categories left→right (G1 … G9); the band
+  // semantics + counts are unchanged, only render order is reversed for
+  // the chart so "top of pass" reads on the right like before.
+  const chartData = useMemo(
+    () =>
+      [...data].reverse().map((d) => ({
+        grade: `G${d.grade}`,
+        count: d.count,
+        band: d.band,
+        pct: pctOf(d.count),
+      })),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [data, total],
+  )
 
   // Empty state
   if (total === 0) {
@@ -229,55 +252,47 @@ export function GradeDistributionChart({
         </div>
       )}
 
-      {/* ── Per-grade vertical bars ─────────────────────────────────────── */}
+      {/* ── Per-grade vertical bars (premium Recharts layer) ────────────── */}
       {showBars && (
         <div className="rounded-lg border border-border/60 bg-card/40 p-4">
-          <div
-            className="flex items-end gap-1.5 sm:gap-2"
-            style={{ height: barHeight }}
-            role="img"
-            aria-label={t('analytics.grade.bar_chart_aria')}
-          >
-            {data.map(({ grade, count, band }) => {
-              const heightPct = max > 0 ? Math.max((count / max) * 100, count > 0 ? 6 : 0) : 0
-              const pct = pctOf(count)
-              return (
-                <div
-                  key={grade}
-                  className="group flex flex-1 flex-col items-center gap-1.5"
-                  title={`${t('analytics.grade.label')} ${grade}: ${count} ${t('analytics.unit.students')} (${pct}%)`}
+          <div role="img" aria-label={t('analytics.grade.bar_chart_aria')}>
+            <ChartFrame height={barHeight}>
+              <BarChart
+                data={chartData}
+                margin={{ top: 24, right: 8, bottom: 4, left: -16 }}
+                barCategoryGap="18%"
+              >
+                <CartesianGrid {...GRID} />
+                <XAxis
+                  dataKey="grade"
+                  {...AXIS}
+                  tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }}
+                />
+                <YAxis {...AXIS} width={40} allowDecimals={false} />
+                <Tooltip content={<GlassTooltip />} cursor={{ fill: 'hsl(var(--muted)/0.4)' }} />
+                <Bar
+                  dataKey="count"
+                  name={t('analytics.unit.students')}
+                  radius={[6, 6, 0, 0]}
+                  isAnimationActive
+                  animationDuration={900}
                 >
-                  {/* Count + % stacked above bar */}
-                  <div className="flex flex-col items-center leading-tight">
-                    <span className="text-sm font-bold text-foreground tabular-nums sm:text-base">
-                      {count}
-                    </span>
-                    <span className="text-[10px] text-muted-foreground tabular-nums">{pct}%</span>
-                  </div>
-                  {/* Bar */}
-                  <div className="flex w-full flex-1 items-end justify-center">
-                    <div
-                      className={cn(
-                        'w-full max-w-[44px] rounded-t-md transition-all duration-200 group-hover:opacity-90',
-                        BAND_BAR_BG[band],
-                      )}
-                      style={{
-                        height: `${heightPct}%`,
-                        minHeight: count > 0 ? 4 : 0,
-                      }}
-                    />
-                  </div>
-                  {/* Grade label */}
-                  <span className="text-[11px] font-semibold text-muted-foreground sm:text-xs">
-                    G{grade}
-                  </span>
-                </div>
-              )
-            })}
+                  {chartData.map((d, i) => (
+                    <Cell key={i} fill={BAND_FILL[d.band]} />
+                  ))}
+                  <LabelList
+                    dataKey="count"
+                    position="top"
+                    className="fill-foreground"
+                    style={{ fontSize: 12, fontWeight: 700 }}
+                  />
+                </Bar>
+              </BarChart>
+            </ChartFrame>
           </div>
           <div className="mt-2 flex items-center justify-between text-[10px] text-muted-foreground/80">
-            <span>{t('analytics.grade.top_of_pass')}</span>
             <span>{t('analytics.grade.bottom')}</span>
+            <span>{t('analytics.grade.top_of_pass')}</span>
           </div>
         </div>
       )}

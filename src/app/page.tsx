@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
 import { GeoFaq, GCSE_BOARD_FAQS } from '@/components/seo/GeoFaq'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -31,6 +32,16 @@ export const metadata: Metadata = {
 // pages and are surfaced inside Your Hub (/revision) instead.
 //
 export default async function Home() {
+  // Resolve i18n strings up-front so JSX stays clean (mirrors the
+  // server-page pattern used in src/app/revision/page.tsx).
+  const copy = {
+    gcseKicker: await t('homepage.gcse.kicker'),
+    gcseHeading: await t('homepage.gcse.heading'),
+    gcseSubheading: await t('homepage.gcse.subheading'),
+    igcseHeading: await t('homepage.igcse.heading'),
+    igcseSubheading: await t('homepage.igcse.subheading'),
+    faqHeading: await t('homepage.faq.heading'),
+  }
   return (
     <main className="min-h-screen bg-background">
       {/* Funnel: home_viewed (consent-gated in src/lib/posthog.ts) */}
@@ -43,16 +54,16 @@ export default async function Home() {
            exam boards; EAL is the dedicated Arabic-speaker English track
            that runs ALONGSIDE every board. They aren't exam boards, so
            a separate visually distinct section keeps the funnel clean. */}
-      <FeatureRail />
+      {await FeatureRail()}
 
       {/* 2. GCSE board picker — opens the page; clear level split. */}
       <BoardPickerSection
         level="gcse"
         boards={GCSE_BOARDS}
         sectionId="gcse-boards"
-        kicker="Pick your exam board to start"
-        heading="GCSE and IGCSE English revision, AI marked against the AO mark scheme."
-        subheading="Year 10–11, ages 14–16. Tap your board and you’ll land on the exact specification you sit."
+        kicker={copy.gcseKicker}
+        heading={copy.gcseHeading}
+        subheading={copy.gcseSubheading}
         showHelpLink={false}
         headingLevel="h1"
         showDivider
@@ -63,13 +74,13 @@ export default async function Home() {
         level="igcse"
         boards={IGCSE_BOARDS}
         sectionId="igcse-boards"
-        heading="IGCSE boards (international)"
-        subheading="International routes for the same age group. Pick the spec your school enters."
+        heading={copy.igcseHeading}
+        subheading={copy.igcseSubheading}
         showHelpLink
         showDivider
       />
       <div className="mx-auto w-full max-w-5xl px-4 pb-16 sm:px-6">
-        <GeoFaq faqs={GCSE_BOARD_FAQS} heading="GCSE & IGCSE English: common questions" />
+        <GeoFaq faqs={GCSE_BOARD_FAQS} heading={copy.faqHeading} />
       </div>
     </main>
   )
@@ -82,24 +93,37 @@ export default async function Home() {
 // landing page loads the KS3-gated hub. EAL is its own route — no board
 // cookie change, because EAL is a learning track that runs alongside
 // any board choice.
-function FeatureRail() {
+async function FeatureRail() {
+  const c = {
+    kicker: await t('homepage.rail.kicker'),
+    heading: await t('homepage.rail.heading'),
+    intro: await t('homepage.rail.intro'),
+    ks3Badge: await t('homepage.rail.ks3.badge'),
+    ks3Title: await t('homepage.rail.ks3.title'),
+    ks3Subtitle: await t('homepage.rail.ks3.subtitle'),
+    ks3Body: await t('homepage.rail.ks3.body'),
+    ks3Cta: await t('homepage.rail.ks3.cta'),
+    ealBadge: await t('homepage.rail.eal.badge'),
+    ealTitle: await t('homepage.rail.eal.title'),
+    ealSubtitle: await t('homepage.rail.eal.subtitle'),
+    ealBody: await t('homepage.rail.eal.body'),
+    ealCta: await t('homepage.rail.eal.cta'),
+  }
   return (
     <section aria-labelledby="feature-rail-heading" className="bg-background pb-10 sm:pb-14">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
         <div className="text-center mb-8 sm:mb-10">
           <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-violet-600 dark:text-violet-300">
-            Two tracks alongside the exam boards
+            {c.kicker}
           </p>
           <h2
             id="feature-rail-heading"
             className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight"
           >
-            Build foundations early, or learn English alongside Arabic.
+            {c.heading}
           </h2>
           <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground leading-relaxed">
-            KS3 covers Years 7–9, the curriculum before GCSE. EAL is the bilingual track for
-            Arabic-speaking students preparing for UK exams. Both run independently of (and
-            alongside) any GCSE / IGCSE board you pick below.
+            {c.intro}
           </p>
         </div>
 
@@ -112,7 +136,7 @@ function FeatureRail() {
               aria-hidden="true"
               className="absolute right-4 top-4 inline-flex items-center rounded-full border border-violet-500/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-violet-600 dark:text-violet-300"
             >
-              Foundation
+              {c.ks3Badge}
             </span>
             <div className="flex items-center gap-4 pr-20">
               <span
@@ -123,20 +147,16 @@ function FeatureRail() {
               </span>
               <div>
                 <h3 className="font-heading text-xl sm:text-2xl font-semibold text-foreground leading-tight">
-                  KS3 English — Years 7–9
+                  {c.ks3Title}
                 </h3>
                 <p className="text-xs uppercase tracking-wider text-violet-600/80 dark:text-violet-300/80 mt-1">
-                  Ages 11–14 · The curriculum before GCSE
+                  {c.ks3Subtitle}
                 </p>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Reading comprehension, creative writing, grammar foundations, and the year-by-year
-              curriculum that primes students for GCSE English. Full Year 7, Year 8 and Year 9
-              schemes of work with weekly lessons, set texts, and assessments.
-            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{c.ks3Body}</p>
             <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-violet-600 dark:text-violet-300 group-hover:text-violet-700 dark:group-hover:text-violet-200 transition-colors">
-              Open KS3 hub <span aria-hidden="true">&rarr;</span>
+              {c.ks3Cta} <span aria-hidden="true">&rarr;</span>
             </span>
           </Link>
 
@@ -148,7 +168,7 @@ function FeatureRail() {
               aria-hidden="true"
               className="absolute right-4 top-4 inline-flex items-center rounded-full border border-teal-500/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-teal-600 dark:text-teal-300"
             >
-              Bilingual
+              {c.ealBadge}
             </span>
             <div className="flex items-center gap-4 pr-20">
               <span
@@ -159,20 +179,16 @@ function FeatureRail() {
               </span>
               <div>
                 <h3 className="font-heading text-xl sm:text-2xl font-semibold text-foreground leading-tight">
-                  English for Arabic Speakers
+                  {c.ealTitle}
                 </h3>
                 <p className="text-xs uppercase tracking-wider text-teal-600/80 dark:text-teal-300/80 mt-1">
-                  للناطقين بالعربية · Khaleeji explanations
+                  {c.ealSubtitle}
                 </p>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Focused lessons on the points Arabic L1 students most often stumble on: sentence
-              structure (SVO vs VSO), articles, tenses, prepositions, common transfer errors. Every
-              topic has examples, error remediation, and Khaleeji-Arabic explanations.
-            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{c.ealBody}</p>
             <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-teal-600 dark:text-teal-300 group-hover:text-teal-700 dark:group-hover:text-teal-200 transition-colors">
-              Open EAL section <span aria-hidden="true">&rarr;</span>
+              {c.ealCta} <span aria-hidden="true">&rarr;</span>
             </span>
           </Link>
         </div>
@@ -189,7 +205,8 @@ type Board = {
   name: string
   initials: string
   href: string
-  blurb: string
+  // i18n key (homepage.board.*.blurb) resolved server-side via t().
+  blurbKey: string
   level: BoardLevel
   // Tailwind classes for the initials disc.
   discClass: string
@@ -206,7 +223,7 @@ const GCSE_BOARDS: Board[] = [
     name: 'AQA',
     initials: 'AQA',
     href: '/revision?setBoard=aqa',
-    blurb: 'Power & Conflict, Love & Relationships, Worlds & Lives.',
+    blurbKey: 'homepage.board.aqa.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
   },
@@ -214,7 +231,7 @@ const GCSE_BOARDS: Board[] = [
     name: 'Pearson Edexcel GCSE',
     initials: 'EDX',
     href: '/revision?setBoard=edexcel',
-    blurb: 'Time & Place, Conflict, Relationships anthology.',
+    blurbKey: 'homepage.board.edexcel.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
   },
@@ -222,7 +239,7 @@ const GCSE_BOARDS: Board[] = [
     name: 'OCR',
     initials: 'OCR',
     href: '/revision?setBoard=ocr',
-    blurb: 'Love, Conflict, Power & Natural World, Youth & Age.',
+    blurbKey: 'homepage.board.ocr.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
   },
@@ -230,7 +247,7 @@ const GCSE_BOARDS: Board[] = [
     name: 'WJEC Eduqas',
     initials: 'WJEC',
     href: '/revision?setBoard=eduqas',
-    blurb: 'Eduqas anthology with annotated walkthroughs.',
+    blurbKey: 'homepage.board.eduqas.blurb',
     level: 'gcse',
     discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
   },
@@ -246,7 +263,7 @@ const IGCSE_BOARDS: Board[] = [
     name: 'Cambridge IGCSE (CIE 0500 / 0990)',
     initials: 'CIE',
     href: '/revision?setBoard=cambridge-0500',
-    blurb: '0500 and 0990 — Reading, Composition, model answers.',
+    blurbKey: 'homepage.board.cambridge.blurb',
     level: 'igcse',
     discClass: 'bg-orange-500/15 text-orange-700 dark:text-orange-300 ring-orange-500/30',
   },
@@ -254,7 +271,7 @@ const IGCSE_BOARDS: Board[] = [
     name: 'Pearson Edexcel IGCSE Literature (4ET1)',
     initials: 'iEDX-Lit',
     href: '/revision?setBoard=edexcel-igcse',
-    blurb: 'Drama, Prose, Shakespeare, Unseen Poetry.',
+    blurbKey: 'homepage.board.edexcel_igcse_lit.blurb',
     level: 'igcse',
     discClass: 'bg-orange-500/15 text-orange-700 dark:text-orange-300 ring-orange-500/30',
   },
@@ -262,7 +279,7 @@ const IGCSE_BOARDS: Board[] = [
     name: 'Pearson Edexcel IGCSE Language A (4EA1)',
     initials: 'iEDX-Lang',
     href: '/revision?setBoard=edexcel-igcse-lang',
-    blurb: 'Anthology, non-fiction, transactional writing.',
+    blurbKey: 'homepage.board.edexcel_igcse_lang.blurb',
     level: 'igcse',
     discClass: 'bg-orange-500/15 text-orange-700 dark:text-orange-300 ring-orange-500/30',
   },
@@ -280,7 +297,7 @@ type BoardPickerSectionProps = {
   headingLevel?: 'h1' | 'h2'
 }
 
-function BoardPickerSection({
+async function BoardPickerSection({
   level,
   boards,
   sectionId,
@@ -295,6 +312,14 @@ function BoardPickerSection({
   const isGcse = level === 'gcse'
   const isKs3 = level === 'ks3'
   const HeadingTag = headingLevel
+  // Resolve i18n strings up-front so JSX stays clean. Board blurbs are
+  // keyed per board (homepage.board.*.blurb); shared labels (CTA, help
+  // line) resolve once for the whole section.
+  const blurbs = await Promise.all(boards.map((b) => t(b.blurbKey)))
+  const ctaKs3 = await t('homepage.board.cta.ks3')
+  const ctaBoard = await t('homepage.board.cta.board')
+  const helpText = await t('homepage.board.help.text')
+  const helpLink = await t('homepage.board.help.link')
   // Per-level palette. KS3 picks violet to keep visual separation from
   // GCSE (emerald) and IGCSE (clay → orange). Each accent uses the
   // light/dark dual shade so the tint is legible on the cream :root
@@ -333,7 +358,7 @@ function BoardPickerSection({
         </div>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {boards.map((b) => (
+          {boards.map((b, i) => (
             <li key={b.name}>
               <Link
                 href={b.href}
@@ -368,7 +393,7 @@ function BoardPickerSection({
                     {b.name}
                   </h3>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{b.blurb}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{blurbs[i]}</p>
                 <span
                   className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
                     b.level === 'gcse'
@@ -378,8 +403,7 @@ function BoardPickerSection({
                         : 'text-orange-700 dark:text-orange-300 group-hover:text-orange-800 dark:group-hover:text-orange-200'
                   }`}
                 >
-                  {b.level === 'ks3' ? 'Open KS3' : 'Open board'}{' '}
-                  <span aria-hidden="true">&rarr;</span>
+                  {b.level === 'ks3' ? ctaKs3 : ctaBoard} <span aria-hidden="true">&rarr;</span>
                 </span>
               </Link>
             </li>
@@ -388,9 +412,9 @@ function BoardPickerSection({
 
         {showHelpLink ? (
           <p className="mt-8 text-center text-xs text-muted-foreground">
-            Not sure which spec your school sits?{' '}
+            {helpText}{' '}
             <Link href="/board-select" className={`underline underline-offset-4 ${helpLinkClass}`}>
-              Choose by level instead.
+              {helpLink}
             </Link>
           </p>
         ) : null}

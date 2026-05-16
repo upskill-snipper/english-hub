@@ -1,10 +1,11 @@
 'use client'
 
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { useMemo } from 'react'
 import { retentionBucket, type CohortTable } from '@/lib/analytics/cohorts'
 import { formatGBP } from '@/lib/analytics/nrr'
 import { useT } from '@/lib/i18n/use-t'
 import { cn } from '@/lib/utils'
+import { Heatmap } from '@/components/dataviz'
 
 interface CohortHeatmapProps {
   table: CohortTable
@@ -15,78 +16,39 @@ interface CohortHeatmapProps {
 export function CohortHeatmap({ table, maxMonthsShown = 12, className }: CohortHeatmapProps) {
   const t = useT()
   const maxAge = Math.min(table.maxAge, maxMonthsShown)
-  const ageColumns = Array.from({ length: maxAge + 1 }, (_, i) => i)
+
+  // Map the cohort table onto the premium "cinematic glass" Heatmap
+  // primitive. Row labels keep the initial-MRR context that the old
+  // bespoke <table> showed in its own column; columns are month offsets.
+  const rows = useMemo(
+    () => table.rows.map((r) => `${r.label}  ·  ${formatGBP(r.initialMRR, true)}`),
+    [table.rows],
+  )
+  const cols = useMemo(() => Array.from({ length: maxAge + 1 }, (_, i) => `M${i}`), [maxAge])
+
+  // retained[] is a % of initial MRR; it routinely exceeds 100 (expansion).
+  // The Heatmap primitive expects a 0–100 intensity, so clamp purely for
+  // colour intensity while the precise value + bucket label live in the
+  // hover label (no data is lost).
+  const getValue = (ri: number, ci: number): number => {
+    const v = table.rows[ri]?.retained[ci]
+    if (v === undefined) return 0
+    return Math.max(0, Math.min(100, v))
+  }
+
+  const getLabel = (ri: number, ci: number): string => {
+    const row = table.rows[ri]
+    const v = row?.retained[ci]
+    if (row === undefined || v === undefined) {
+      return t('analytics.cohort.no_data_yet')
+    }
+    const bucket = retentionBucket(v)
+    return `${row.label} · ${t('analytics.cohort.month')} ${ci} — ${v.toFixed(1)}% ${t('analytics.cohort.of_initial_mrr_retained')} (${bucket.label})`
+  }
 
   return (
-    <div className={cn('w-full overflow-x-auto', className)}>
-      <table className="w-full min-w-[720px] border-separate border-spacing-1 text-xs">
-        <thead>
-          <tr>
-            <th className="sticky left-0 z-10 bg-card px-3 py-2 text-left font-medium text-muted-foreground">
-              {t('analytics.cohort.col.cohort')}
-            </th>
-            <th className="px-2 py-2 text-right font-medium text-muted-foreground">
-              {t('analytics.cohort.col.initial_mrr')}
-            </th>
-            {ageColumns.map((m) => (
-              <th key={m} className="px-2 py-2 text-center font-medium text-muted-foreground">
-                M{m}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {table.rows.map((row) => (
-            <tr key={row.cohortMonth}>
-              <td className="sticky left-0 z-10 whitespace-nowrap bg-card px-3 py-1.5 font-medium text-foreground">
-                {row.label}
-              </td>
-              <td className="px-2 py-1.5 text-right tabular-nums text-muted-foreground">
-                {formatGBP(row.initialMRR, true)}
-              </td>
-              {ageColumns.map((m) => {
-                const value = row.retained[m]
-                if (value === undefined) {
-                  return (
-                    <td
-                      key={m}
-                      className="h-8 w-14 rounded-md border border-dashed border-border/40 bg-muted/10"
-                      aria-label={t('analytics.cohort.no_data_yet')}
-                    />
-                  )
-                }
-                const bucket = retentionBucket(value)
-                return (
-                  <td key={m} className="p-0">
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <div
-                          className={cn(
-                            'flex h-8 w-14 items-center justify-center rounded-md text-[11px] font-semibold tabular-nums transition-transform hover:scale-105',
-                            bucket.bg,
-                            bucket.text,
-                          )}
-                        >
-                          {Math.round(value)}
-                        </div>
-                      </TooltipTrigger>
-                      <TooltipContent side="top">
-                        <p className="font-medium">
-                          {row.label} &middot; {t('analytics.cohort.month')} {m}
-                        </p>
-                        <p className="text-muted-foreground">
-                          {value.toFixed(1)}% {t('analytics.cohort.of_initial_mrr_retained')}
-                        </p>
-                        <p className="text-muted-foreground">{bucket.label}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </td>
-                )
-              })}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className={cn('w-full', className)}>
+      <Heatmap rows={rows} cols={cols} getValue={getValue} getLabel={getLabel} />
 
       {/* Legend */}
       <div className="mt-4 flex flex-wrap items-center gap-3 text-[11px] text-muted-foreground">

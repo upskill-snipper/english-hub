@@ -1,7 +1,7 @@
 'use client'
 
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
+import { GlassPanel, PanelEyebrow, AnimatedNumber } from '@/components/dataviz'
 import { formatPct } from '@/lib/analytics/nrr'
 import { useT } from '@/lib/i18n/use-t'
 import { cn } from '@/lib/utils'
@@ -35,21 +35,14 @@ export function NRRHeadline({
   const trendBg = isPositive ? 'bg-emerald-500/10' : isNegative ? 'bg-red-500/10' : 'bg-muted'
 
   return (
-    <Card className={cn('relative overflow-hidden', className)}>
-      {/* Subtle gradient accent */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent"
-      />
-      <CardContent className="relative flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between">
+    <GlassPanel accent="sage" className={cn('p-8', className)}>
+      <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         {/* Headline figure */}
         <div className="flex flex-col gap-2">
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            {t('analytics.nrr.headline_title')}
-          </p>
+          <PanelEyebrow>{t('analytics.nrr.headline_title')}</PanelEyebrow>
           <div className="flex items-end gap-4">
             <span className="text-6xl font-bold tracking-tight tabular-nums text-foreground md:text-7xl">
-              {formatPct(headlineNRR)}
+              <AnimatedNumber value={headlineNRR} decimals={1} suffix="%" />
             </span>
             <span
               className={cn(
@@ -83,8 +76,8 @@ export function NRRHeadline({
           />
           <SecondaryMetric label={t('analytics.nrr.investor_target')} value="≥ 110%" muted />
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </GlassPanel>
   )
 }
 

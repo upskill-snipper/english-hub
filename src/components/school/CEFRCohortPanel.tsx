@@ -7,22 +7,23 @@
 //   1. Not migrated yet (summary.available === false) → a calm info card
 //      explaining it activates automatically once the DB migration lands.
 //   2. Available but learnersAssessed === 0 → "no placements yet" note.
-//   3. Data → stat tiles + band distribution + per-skill averages
+//   3. Data → KPI tiles + band distribution + per-skill averages
 //      (weakest first) + an optional monthly trend.
 //
 // English-only by design: the rest of the school dashboard
 // (StatCard, GradeDistributionChart, the analytics page) is EN.
-// Visual language matches the school analytics page (Card / muted bars).
+// Visual language matches the school analytics page — the cinematic
+// "glass + Recharts" dataviz layer (GlassPanel / RankBars / TrendArea).
 // ──────────────────────────────────────────────────────────────────────────────
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { GraduationCap, Layers, Info, TrendingUp } from 'lucide-react'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { CEFR_BAND_DESCRIPTION } from '@/lib/eal/cefr-aggregate'
 import { CEFR_PRODUCT_BANDS, type CEFRBand } from '@/lib/eal/cefr'
 import { EAL_CATEGORY_LABEL } from '@/lib/eal/types'
 import type { EALCategory } from '@/lib/eal/types'
+import { GlassPanel, PanelEyebrow, KpiTile, RankBars, TrendArea } from '@/components/dataviz'
 
 // ── Types (mirror CEFRCohortSummary from the shared aggregate lib) ────────────
 
@@ -50,21 +51,6 @@ interface CEFRCohortSummary {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-/** Tailwind bar colour per product band — low→high reads cool→warm-positive. */
-const BAND_BAR: Record<CEFRBand, string> = {
-  A2: 'bg-red-500',
-  B1: 'bg-orange-500',
-  B2: 'bg-blue-500',
-  C1: 'bg-green-500',
-}
-
-function skillBarColor(pct: number): string {
-  if (pct >= 70) return 'bg-green-500'
-  if (pct >= 50) return 'bg-amber-500'
-  if (pct >= 35) return 'bg-orange-500'
-  return 'bg-red-500'
-}
-
 /** Format a YYYY-MM month key as e.g. "May 2026". */
 function formatMonth(month: string): string {
   const [y, m] = month.split('-').map(Number)
@@ -73,31 +59,31 @@ function formatMonth(month: string): string {
   return d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })
 }
 
-// ── Sub-components ───────────────────────────────────────────────────────────
+// ── Panel shell ──────────────────────────────────────────────────────────────
 
-function StatTile({
-  icon: Icon,
-  label,
-  value,
-  iconClass,
-}: {
-  icon: React.ElementType
-  label: string
-  value: string | number
-  iconClass?: string
-}) {
+/** Cinematic header used by every state so the panel reads consistently. */
+function PanelShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-start gap-4 rounded-lg border border-border/40 bg-muted/20 px-4 py-3.5">
-      <div
-        className={`flex h-10 w-10 items-center justify-center rounded-lg shrink-0 ${iconClass ?? 'bg-primary/10 text-primary'}`}
-      >
-        <Icon className="h-5 w-5" />
+    <GlassPanel accent="primary" as="section" aria-labelledby="cefr-cohort-heading">
+      <div className="flex items-start gap-3 border-b border-border/50 p-5">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-foreground/[0.06]">
+          <GraduationCap className="h-4 w-4 text-primary" aria-hidden="true" />
+        </span>
+        <div className="min-w-0">
+          <PanelEyebrow>CEFR Placement</PanelEyebrow>
+          <h2
+            id="cefr-cohort-heading"
+            className="font-heading text-lg font-bold tracking-tight text-foreground"
+          >
+            CEFR Placement Overview
+          </h2>
+          <p className="mt-0.5 text-sm text-muted-foreground">
+            Cohort-level English proficiency from the CEFR placement test (A2–C1).
+          </p>
+        </div>
       </div>
-      <div className="min-w-0">
-        <p className="text-xs text-muted-foreground font-medium">{label}</p>
-        <p className="text-3xl font-bold tracking-tight leading-none mt-1 tabular-nums">{value}</p>
-      </div>
-    </div>
+      <div className="p-5">{children}</div>
+    </GlassPanel>
   )
 }
 
@@ -132,218 +118,159 @@ export function CEFRCohortPanel() {
     }
   }, [])
 
-  const cardHeader = (
-    <CardHeader>
-      <CardTitle className="flex items-center gap-2">
-        <GraduationCap className="h-4 w-4 text-primary" />
-        CEFR Placement Overview
-      </CardTitle>
-      <CardDescription>
-        Cohort-level English proficiency from the CEFR placement test (A2–C1).
-      </CardDescription>
-    </CardHeader>
-  )
+  // Band distribution as RankBars rows (% of cohort drives RAG colour).
+  const bandRows = useMemo(() => {
+    if (!summary) return []
+    return CEFR_PRODUCT_BANDS.map((band) => {
+      const count = summary.bandDistribution[band] ?? 0
+      const pctOfCohort =
+        summary.learnersAssessed > 0 ? Math.round((count / summary.learnersAssessed) * 100) : 0
+      return {
+        band: `${band} · ${CEFR_BAND_DESCRIPTION[band]}`,
+        pctOfCohort,
+        learners: count,
+      }
+    })
+  }, [summary])
+
+  // Per-skill averages — already weakest-first; recharts renders the array
+  // top-to-bottom so the order is preserved visually.
+  const skillRows = useMemo(() => {
+    if (!summary) return []
+    return summary.skillAverages.map((s) => ({
+      skill: EAL_CATEGORY_LABEL[s.skill]?.en ?? s.skill,
+      averagePct: s.averagePct,
+      sampleSize: s.sampleSize,
+    }))
+  }, [summary])
+
+  // Monthly trend — band rank is 0..3; chart over that domain.
+  const trendRows = useMemo(() => {
+    if (!summary) return []
+    return summary.trend.map((p) => ({
+      month: formatMonth(p.month),
+      averageBandRank: p.averageBandRank,
+      placements: p.placements,
+    }))
+  }, [summary])
 
   // ── Loading ────────────────────────────────────────────────────────────────
   if (loading) {
     return (
-      <Card>
-        {cardHeader}
-        <CardContent className="space-y-4">
+      <PanelShell>
+        <div className="space-y-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <Skeleton className="h-20 w-full rounded-lg" />
-            <Skeleton className="h-20 w-full rounded-lg" />
+            <Skeleton className="h-24 w-full rounded-2xl" />
+            <Skeleton className="h-24 w-full rounded-2xl" />
           </div>
-          <Skeleton className="h-32 w-full rounded-lg" />
-        </CardContent>
-      </Card>
+          <Skeleton className="h-40 w-full rounded-2xl" />
+        </div>
+      </PanelShell>
     )
   }
 
   // ── Error ──────────────────────────────────────────────────────────────────
   if (error || !summary) {
     return (
-      <Card>
-        {cardHeader}
-        <CardContent>
-          <p className="text-sm text-muted-foreground py-4 text-center">
-            {error ?? 'Could not load CEFR placement analytics.'}
-          </p>
-        </CardContent>
-      </Card>
+      <PanelShell>
+        <p className="py-4 text-center text-sm text-muted-foreground">
+          {error ?? 'Could not load CEFR placement analytics.'}
+        </p>
+      </PanelShell>
     )
   }
 
   // ── Not migrated yet ───────────────────────────────────────────────────────
   if (summary.available === false) {
     return (
-      <Card>
-        {cardHeader}
-        <CardContent>
-          <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-muted/30 p-4">
-            <Info className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              CEFR placement analytics will activate automatically once the database migration is
-              applied — no further action needed here.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+      <PanelShell>
+        <div className="flex items-start gap-3 rounded-xl border border-border/60 bg-foreground/[0.03] p-4">
+          <Info className="mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            CEFR placement analytics will activate automatically once the database migration is
+            applied — no further action needed here.
+          </p>
+        </div>
+      </PanelShell>
     )
   }
 
   // ── Available but no placements yet ────────────────────────────────────────
   if (summary.learnersAssessed === 0) {
     return (
-      <Card>
-        {cardHeader}
-        <CardContent>
-          <p className="text-sm text-muted-foreground py-4 text-center">
-            No students have completed the CEFR placement test yet.
-          </p>
-        </CardContent>
-      </Card>
+      <PanelShell>
+        <p className="py-4 text-center text-sm text-muted-foreground">
+          No students have completed the CEFR placement test yet.
+        </p>
+      </PanelShell>
     )
   }
 
   // ── Data ───────────────────────────────────────────────────────────────────
-  const maxBandCount = Math.max(
-    ...CEFR_PRODUCT_BANDS.map((b) => summary.bandDistribution[b] ?? 0),
-    1,
-  )
-  const maxTrendVolume = Math.max(...summary.trend.map((p) => p.placements), 1)
-
   return (
-    <Card>
-      {cardHeader}
-      <CardContent className="space-y-8">
-        {/* ── Stat tiles ──────────────────────────────────────────────────── */}
+    <PanelShell>
+      <div className="space-y-8">
+        {/* ── KPI tiles ───────────────────────────────────────────────────── */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <StatTile
-            icon={GraduationCap}
+          <KpiTile
             label="Learners assessed"
-            value={summary.learnersAssessed.toLocaleString()}
-            iconClass="bg-purple-500/10 text-purple-400"
+            value={summary.learnersAssessed}
+            icon={GraduationCap}
+            accent="teal"
           />
-          <StatTile
-            icon={Layers}
+          <KpiTile
             label="Total placements taken"
-            value={summary.totalPlacements.toLocaleString()}
-            iconClass="bg-blue-500/10 text-blue-400"
+            value={summary.totalPlacements}
+            icon={Layers}
+            accent="sage"
           />
         </div>
 
         {/* ── Band distribution ───────────────────────────────────────────── */}
         <div>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Band distribution (latest placement)
-          </p>
-          <div className="space-y-3">
-            {CEFR_PRODUCT_BANDS.map((band) => {
-              const count = summary.bandDistribution[band] ?? 0
-              const pctOfMax = Math.round((count / maxBandCount) * 100)
-              const pctOfCohort =
-                summary.learnersAssessed > 0
-                  ? Math.round((count / summary.learnersAssessed) * 100)
-                  : 0
-              return (
-                <div key={band} className="space-y-1">
-                  <div className="flex items-center justify-between gap-2 text-xs">
-                    <span className="font-medium">
-                      <span className="tabular-nums">{band}</span>{' '}
-                      <span className="text-muted-foreground">{CEFR_BAND_DESCRIPTION[band]}</span>
-                    </span>
-                    <span className="tabular-nums shrink-0 font-medium">
-                      {count} {count === 1 ? 'learner' : 'learners'} · {pctOfCohort}%
-                    </span>
-                  </div>
-                  <div className="h-2 rounded-full bg-muted overflow-hidden">
-                    <div
-                      className={`h-full rounded-full transition-all duration-500 ${BAND_BAR[band]}`}
-                      style={{ width: `${pctOfMax}%` }}
-                    />
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+          <PanelEyebrow className="mb-3">Band distribution (latest placement)</PanelEyebrow>
+          <RankBars
+            data={bandRows}
+            labelKey="band"
+            valueKey="pctOfCohort"
+            height={Math.max(160, bandRows.length * 40)}
+            suffix="%"
+          />
         </div>
 
         {/* ── Per-skill averages (weakest first) ──────────────────────────── */}
-        {summary.skillAverages.length > 0 && (
+        {skillRows.length > 0 && (
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Average skill scores · weakest first
-            </p>
-            <div className="space-y-3">
-              {summary.skillAverages.map((s) => (
-                <div key={s.skill} className="space-y-1">
-                  <div className="flex items-center justify-between gap-2 text-xs">
-                    <span className="font-medium">
-                      {EAL_CATEGORY_LABEL[s.skill]?.en ?? s.skill}
-                    </span>
-                    <span className="tabular-nums shrink-0 font-medium">
-                      {s.averagePct}%{' '}
-                      <span className="text-muted-foreground">
-                        ({s.sampleSize} {s.sampleSize === 1 ? 'learner' : 'learners'})
-                      </span>
-                    </span>
-                  </div>
-                  <div className="h-2 rounded-full bg-muted overflow-hidden">
-                    <div
-                      className={`h-full rounded-full transition-all duration-500 ${skillBarColor(s.averagePct)}`}
-                      style={{ width: `${Math.max(s.averagePct, 2)}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+            <PanelEyebrow className="mb-3">Average skill scores · weakest first</PanelEyebrow>
+            <RankBars
+              data={skillRows}
+              labelKey="skill"
+              valueKey="averagePct"
+              height={Math.max(160, skillRows.length * 40)}
+              suffix="%"
+            />
           </div>
         )}
 
         {/* ── Monthly trend (mean band rank A2=0 … C1=3) ───────────────────── */}
-        {summary.trend.length > 0 && (
+        {trendRows.length > 0 && (
           <div>
-            <p className="mb-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <PanelEyebrow className="mb-3 flex items-center gap-1.5">
               <TrendingUp className="h-3.5 w-3.5" />
               Monthly trend · mean band rank (A2&nbsp;=&nbsp;0 … C1&nbsp;=&nbsp;3)
-            </p>
-            <div className="space-y-2.5">
-              {summary.trend.map((p) => {
-                // averageBandRank is 0..3; map to 0..100% of the band ladder.
-                const rankPct = Math.round((p.averageBandRank / 3) * 100)
-                const volumePct = Math.round((p.placements / maxTrendVolume) * 100)
-                return (
-                  <div key={p.month} className="space-y-1">
-                    <div className="flex items-center justify-between gap-2 text-xs">
-                      <span className="text-muted-foreground">{formatMonth(p.month)}</span>
-                      <span className="tabular-nums shrink-0 font-medium">
-                        {p.averageBandRank.toFixed(2)}{' '}
-                        <span className="text-muted-foreground">
-                          · {p.placements} {p.placements === 1 ? 'placement' : 'placements'}
-                        </span>
-                      </span>
-                    </div>
-                    <div
-                      className="h-1.5 rounded-full bg-muted overflow-hidden"
-                      title={`${p.placements} placements this month`}
-                    >
-                      <div
-                        className="h-full rounded-full bg-purple-500 transition-all duration-500"
-                        style={{
-                          width: `${Math.max(rankPct, 2)}%`,
-                          opacity: 0.4 + (volumePct / 100) * 0.6,
-                        }}
-                      />
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
+            </PanelEyebrow>
+            <TrendArea
+              data={trendRows}
+              xKey="month"
+              yKey="averageBandRank"
+              domain={[0, 3]}
+              suffix=""
+              height={220}
+            />
           </div>
         )}
-      </CardContent>
-    </Card>
+      </div>
+    </PanelShell>
   )
 }
 

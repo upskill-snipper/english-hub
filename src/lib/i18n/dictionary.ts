@@ -47,6 +47,7 @@ import { PLACEHOLDER_FIX_MAY15 } from './dictionary-placeholder-fix-may15'
 import { PLACEHOLDER_FIX_MAY16 } from './dictionary-placeholder-fix-may16'
 import { REPORT_FIX_MAY16B } from './dictionary-report-fix-may16b'
 import { PRESS_AND_VERIFIED_FIX } from './dictionary-press-verified'
+import { HOMEPAGE_DICTIONARY } from './dictionary-homepage'
 
 export type Locale = 'en' | 'ar'
 
@@ -14715,6 +14716,7 @@ export function lookup(key: string, locale: Locale): string {
     DASH_INTERNAL_DICTIONARY[key] ??
     DEMO_PAGES_DICTIONARY[key] ??
     POETRY_HUB_DICTIONARY[key] ??
+    HOMEPAGE_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??

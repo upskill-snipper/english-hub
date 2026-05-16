@@ -1,7 +1,16 @@
 'use client'
 
-import { useMemo, useState, memo, useCallback } from 'react'
+import { useMemo, memo } from 'react'
+import {
+  RadarChart as RechartsRadar,
+  Radar,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  Tooltip,
+} from 'recharts'
 import { cn } from '@/lib/utils'
+import { ChartFrame, GlassTooltip } from '@/components/dataviz'
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
 
@@ -52,22 +61,10 @@ const DEFAULT_SKILLS = [
   'Vocabulary',
 ]
 
-/* ── Geometry helpers ──────────────────────────────────────────────────────── */
-
-function polarToCart(
-  cx: number,
-  cy: number,
-  radius: number,
-  angleDeg: number,
-): { x: number; y: number } {
-  const angleRad = ((angleDeg - 90) * Math.PI) / 180
-  return {
-    x: cx + radius * Math.cos(angleRad),
-    y: cy + radius * Math.sin(angleRad),
-  }
-}
-
 /* ── Component ─────────────────────────────────────────────────────────────── */
+// Re-skinned onto the premium "cinematic glass" Recharts radar. The public
+// API (props, types, exports, defaults) is byte-identical to the previous
+// hand-rolled SVG implementation — only the internals changed.
 
 export const RadarChart = memo(function RadarChart({
   skills = DEFAULT_SKILLS,
@@ -82,65 +79,23 @@ export const RadarChart = memo(function RadarChart({
   viewMode,
   onViewModeChange,
 }: RadarChartProps) {
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
-  const [hoveredDataset, setHoveredDataset] = useState<string | null>(null)
-
-  const cx = size / 2
-  const cy = size / 2
-  const radius = size / 2 - 50 // leave room for labels
-  const angleStep = 360 / skills.length
-
-  /* ── Grid rings (concentric polygons) ───────────────────────────────────── */
-  const gridRings = useMemo(() => {
-    return Array.from({ length: rings }, (_, ri) => {
-      const r = ((ri + 1) / rings) * radius
-      const points = skills.map((_, si) => {
-        const p = polarToCart(cx, cy, r, si * angleStep)
-        return `${p.x},${p.y}`
-      })
-      return { r, points: points.join(' '), value: Math.round(((ri + 1) / rings) * maxValue) }
-    })
-  }, [rings, radius, skills, cx, cy, angleStep, maxValue])
-
-  /* ── Axis lines ──────────────────────────────────────────────────────────── */
-  const axes = useMemo(() => {
-    return skills.map((skill, i) => {
-      const end = polarToCart(cx, cy, radius, i * angleStep)
-      const labelPos = polarToCart(cx, cy, radius + 22, i * angleStep)
-      return { skill, end, labelPos, angle: i * angleStep }
-    })
-  }, [skills, cx, cy, radius, angleStep])
-
-  /* ── Dataset polygons ────────────────────────────────────────────────────── */
-  const dataPolygons = useMemo(() => {
-    return datasets.map((ds) => {
-      const points = skills.map((skill, i) => {
-        const value = ds.values[skill] ?? 0
-        const r = (Math.min(value, maxValue) / maxValue) * radius
-        return polarToCart(cx, cy, r, i * angleStep)
-      })
-      const path = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ') + ' Z'
-      return { ...ds, points, path }
-    })
-  }, [datasets, skills, cx, cy, radius, angleStep, maxValue])
-
-  /* ── Skill dots for hovered skill ────────────────────────────────────────── */
-  const hoveredSkillIdx = hoveredSkill ? skills.indexOf(hoveredSkill) : -1
-
-  const handleAxisEnter = useCallback(
-    (skill: string) => {
-      if (interactive && !printFriendly) setHoveredSkill(skill)
-    },
-    [interactive, printFriendly],
+  /* One row per skill axis; one numeric key per dataset. */
+  const chartData = useMemo(
+    () =>
+      skills.map((skill) => {
+        const row: Record<string, unknown> = { skill }
+        datasets.forEach((ds, di) => {
+          row[`ds${di}`] = Math.min(ds.values[skill] ?? 0, maxValue)
+        })
+        return row
+      }),
+    [skills, datasets, maxValue],
   )
 
   if (datasets.length === 0) {
     return (
       <div
-        className={cn(
-          'flex items-center justify-center text-sm text-muted-foreground',
-          className,
-        )}
+        className={cn('flex items-center justify-center text-sm text-muted-foreground', className)}
         style={{ height: size }}
       >
         No radar data available.
@@ -179,199 +134,51 @@ export const RadarChart = memo(function RadarChart({
       {/* Legend */}
       <div className="mb-2 flex flex-wrap items-center gap-3 text-xs">
         {datasets.map((ds) => (
-          <button
-            key={ds.label}
-            type="button"
-            className={cn(
-              'flex items-center gap-1.5 rounded-md px-2 py-1 transition-colors',
-              hoveredDataset === ds.label ? 'bg-accent' : 'hover:bg-accent/50',
-              printFriendly && 'pointer-events-none',
-            )}
-            onMouseEnter={() => !printFriendly && setHoveredDataset(ds.label)}
-            onMouseLeave={() => setHoveredDataset(null)}
-          >
+          <div key={ds.label} className="flex items-center gap-1.5">
             <span
               className="inline-block h-2 w-4 rounded-sm"
-              style={{
-                backgroundColor: ds.color,
-                opacity: hoveredDataset && hoveredDataset !== ds.label ? 0.3 : 1,
-              }}
+              style={{ backgroundColor: ds.color }}
             />
             <span className="text-muted-foreground">{ds.label}</span>
-          </button>
+          </div>
         ))}
       </div>
 
-      {/* SVG Radar */}
-      <svg
-        viewBox={`0 0 ${size} ${size}`}
-        className="mx-auto w-full"
-        style={{ maxWidth: size }}
-        preserveAspectRatio="xMidYMid meet"
-        role="img"
-        aria-label="Radar chart"
-        onMouseLeave={() => {
-          setHoveredSkill(null)
-          setHoveredDataset(null)
-        }}
-      >
-        {/* Grid rings */}
-        {gridRings.map((ring, ri) => (
-          <g key={ri}>
-            <polygon
-              points={ring.points}
-              fill="none"
-              stroke="currentColor"
-              className="text-border"
-              strokeWidth={ri === gridRings.length - 1 ? '1' : '0.5'}
-              strokeDasharray={ri === gridRings.length - 1 ? undefined : '3 3'}
+      {/* Recharts cinematic-glass radar */}
+      <div className="mx-auto w-full" style={{ maxWidth: size }}>
+        <ChartFrame height={size}>
+          <RechartsRadar data={chartData} outerRadius="70%">
+            <PolarGrid stroke="hsl(var(--border))" gridType="polygon" radialLines />
+            <PolarAngleAxis
+              dataKey="skill"
+              tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }}
             />
-            {/* Ring value label */}
-            <text
-              x={cx + 4}
-              y={cy - ring.r + 12}
-              fontSize="8"
-              className="fill-muted-foreground/50"
-            >
-              {ring.value}
-            </text>
-          </g>
-        ))}
-
-        {/* Axis lines + labels */}
-        {axes.map((axis) => (
-          <g
-            key={axis.skill}
-            onMouseEnter={() => handleAxisEnter(axis.skill)}
-            className="cursor-default"
-          >
-            <line
-              x1={cx}
-              y1={cy}
-              x2={axis.end.x}
-              y2={axis.end.y}
-              stroke="currentColor"
-              className="text-border"
-              strokeWidth="0.5"
+            <PolarRadiusAxis
+              domain={[0, maxValue]}
+              tickCount={rings + 1}
+              tick={{ fontSize: 8, fill: 'hsl(var(--muted-foreground))' }}
+              axisLine={false}
+              stroke="hsl(var(--border))"
             />
-            {/* Invisible wider hit area */}
-            <line
-              x1={cx}
-              y1={cy}
-              x2={axis.end.x}
-              y2={axis.end.y}
-              stroke="transparent"
-              strokeWidth="20"
-            />
-            <text
-              x={axis.labelPos.x}
-              y={axis.labelPos.y}
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fontSize="10"
-              fontWeight={hoveredSkill === axis.skill ? '700' : '500'}
-              className={cn(
-                'transition-all duration-150',
-                hoveredSkill === axis.skill ? 'fill-foreground' : 'fill-muted-foreground',
-              )}
-            >
-              {axis.skill}
-            </text>
-          </g>
-        ))}
-
-        {/* Data polygons */}
-        {dataPolygons.map((dp) => {
-          const dimmed = hoveredDataset && hoveredDataset !== dp.label
-          return (
-            <g
-              key={dp.label}
-              style={{
-                opacity: dimmed ? 0.15 : 1,
-                transition: 'opacity 200ms',
-              }}
-            >
-              <path
-                d={dp.path}
-                fill={dp.color}
-                fillOpacity={dp.fillOpacity ?? 0.15}
-                stroke={dp.color}
-                strokeWidth="2"
-                strokeLinejoin="round"
-                strokeDasharray={dp.dashArray}
+            {datasets.map((ds, di) => (
+              <Radar
+                key={ds.label}
+                name={ds.label}
+                dataKey={`ds${di}`}
+                stroke={ds.color}
+                strokeWidth={2}
+                strokeDasharray={ds.dashArray}
+                fill={ds.color}
+                fillOpacity={ds.fillOpacity ?? 0.15}
+                isAnimationActive={!printFriendly}
+                animationDuration={900}
+                dot={{ r: 3, fill: ds.color, strokeWidth: 0 }}
               />
-              {/* Dots at each vertex */}
-              {dp.points.map((p, i) => (
-                <circle
-                  key={i}
-                  cx={p.x}
-                  cy={p.y}
-                  r={hoveredSkillIdx === i ? 5 : 3}
-                  fill={dp.color}
-                  stroke="var(--background)"
-                  strokeWidth="2"
-                  className="transition-all duration-150"
-                />
-              ))}
-            </g>
-          )
-        })}
-
-        {/* Hovered skill tooltip */}
-        {hoveredSkill && hoveredSkillIdx >= 0 && !printFriendly && (
-          <g>
-            {(() => {
-              const tipX = axes[hoveredSkillIdx].labelPos.x
-              const tipY = axes[hoveredSkillIdx].labelPos.y + 14
-              const tipWidth = 130
-              const tipHeight = 14 + datasets.length * 16 + 6
-              // Clamp position
-              const adjX = Math.min(Math.max(tipX - tipWidth / 2, 2), size - tipWidth - 2)
-              const adjY = Math.min(tipY, size - tipHeight - 2)
-              return (
-                <>
-                  <rect
-                    x={adjX}
-                    y={adjY}
-                    width={tipWidth}
-                    height={tipHeight}
-                    rx="6"
-                    fill="var(--foreground)"
-                    opacity="0.92"
-                  />
-                  <text
-                    x={adjX + 8}
-                    y={adjY + 12}
-                    fontSize="10"
-                    fill="var(--background)"
-                    fontWeight="700"
-                  >
-                    {hoveredSkill}
-                  </text>
-                  {datasets.map((ds, di) => (
-                    <g key={ds.label}>
-                      <circle
-                        cx={adjX + 12}
-                        cy={adjY + 24 + di * 16}
-                        r="3"
-                        fill={ds.color}
-                      />
-                      <text
-                        x={adjX + 20}
-                        y={adjY + 28 + di * 16}
-                        fontSize="9"
-                        fill="var(--background)"
-                      >
-                        {ds.label}: {Math.round(ds.values[hoveredSkill] ?? 0)}%
-                      </text>
-                    </g>
-                  ))}
-                </>
-              )
-            })()}
-          </g>
-        )}
-      </svg>
+            ))}
+            {interactive && !printFriendly && <Tooltip content={<GlassTooltip suffix="%" />} />}
+          </RechartsRadar>
+        </ChartFrame>
+      </div>
 
       {/* Skill scores table (print-friendly and accessible) */}
       <div className="mt-3 overflow-x-auto">
@@ -385,7 +192,10 @@ export const RadarChart = memo(function RadarChart({
                   className="px-2 py-1.5 text-center font-medium text-muted-foreground"
                 >
                   <span className="flex items-center justify-center gap-1">
-                    <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: ds.color }} />
+                    <span
+                      className="inline-block h-2 w-2 rounded-full"
+                      style={{ backgroundColor: ds.color }}
+                    />
                     {ds.label}
                   </span>
                 </th>
@@ -400,15 +210,7 @@ export const RadarChart = memo(function RadarChart({
               const values = datasets.map((ds) => ds.values[skill] ?? 0)
               const diff = datasets.length >= 2 ? Math.round(values[0] - values[1]) : null
               return (
-                <tr
-                  key={skill}
-                  className={cn(
-                    'border-b last:border-b-0 transition-colors',
-                    hoveredSkill === skill && 'bg-muted/30',
-                  )}
-                  onMouseEnter={() => !printFriendly && setHoveredSkill(skill)}
-                  onMouseLeave={() => setHoveredSkill(null)}
-                >
+                <tr key={skill} className="border-b last:border-b-0 transition-colors">
                   <td className="px-2 py-1.5 font-medium text-foreground">{skill}</td>
                   {values.map((v, vi) => (
                     <td key={vi} className="px-2 py-1.5 text-center tabular-nums">
@@ -433,7 +235,11 @@ export const RadarChart = memo(function RadarChart({
                       <span
                         className={cn(
                           'font-semibold',
-                          diff > 0 ? 'text-green-400' : diff < 0 ? 'text-red-400' : 'text-muted-foreground',
+                          diff > 0
+                            ? 'text-green-400'
+                            : diff < 0
+                              ? 'text-red-400'
+                              : 'text-muted-foreground',
                         )}
                       >
                         {diff > 0 ? '+' : ''}
