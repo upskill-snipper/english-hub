@@ -57,7 +57,7 @@ const GCSE_BOARD_DEFS: BoardDef[] = [
     href: '/revision?setBoard=aqa',
     blurbKey: 'exam_boards.aqa.blurb',
     level: 'gcse',
-    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+    discClass: 'bg-emerald-500/15 text-emerald-700 ring-emerald-500/30 dark:text-emerald-300',
   },
   {
     id: 'edexcel',
@@ -66,7 +66,7 @@ const GCSE_BOARD_DEFS: BoardDef[] = [
     href: '/revision?setBoard=edexcel',
     blurbKey: 'exam_boards.edexcel.blurb',
     level: 'gcse',
-    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+    discClass: 'bg-emerald-500/15 text-emerald-700 ring-emerald-500/30 dark:text-emerald-300',
   },
   {
     id: 'ocr',
@@ -75,7 +75,7 @@ const GCSE_BOARD_DEFS: BoardDef[] = [
     href: '/revision?setBoard=ocr',
     blurbKey: 'exam_boards.ocr.blurb',
     level: 'gcse',
-    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+    discClass: 'bg-emerald-500/15 text-emerald-700 ring-emerald-500/30 dark:text-emerald-300',
   },
   {
     id: 'eduqas',
@@ -84,7 +84,7 @@ const GCSE_BOARD_DEFS: BoardDef[] = [
     href: '/revision?setBoard=eduqas',
     blurbKey: 'exam_boards.eduqas.blurb',
     level: 'gcse',
-    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+    discClass: 'bg-emerald-500/15 text-emerald-700 ring-emerald-500/30 dark:text-emerald-300',
   },
 ]
 
@@ -96,7 +96,7 @@ const IGCSE_BOARD_DEFS: BoardDef[] = [
     href: '/revision?setBoard=cambridge-0500',
     blurbKey: 'exam_boards.cambridge.blurb',
     level: 'igcse',
-    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+    discClass: 'bg-clay-500/15 text-clay-700 ring-clay-500/30 dark:text-clay-300',
   },
   {
     id: 'edexcel-igcse',
@@ -105,7 +105,7 @@ const IGCSE_BOARD_DEFS: BoardDef[] = [
     href: '/revision?setBoard=edexcel-igcse',
     blurbKey: 'exam_boards.edexcel_igcse.blurb',
     level: 'igcse',
-    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+    discClass: 'bg-clay-500/15 text-clay-700 ring-clay-500/30 dark:text-clay-300',
   },
   {
     id: 'edexcel-igcse-lang',
@@ -114,7 +114,7 @@ const IGCSE_BOARD_DEFS: BoardDef[] = [
     href: '/revision?setBoard=edexcel-igcse-lang',
     blurbKey: 'exam_boards.edexcel_igcse_lang.blurb',
     level: 'igcse',
-    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+    discClass: 'bg-clay-500/15 text-clay-700 ring-clay-500/30 dark:text-clay-300',
   },
 ]
 
@@ -213,7 +213,7 @@ export default async function ExamBoardsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-ink-950">
+    <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
@@ -228,28 +228,28 @@ export default async function ExamBoardsPage() {
       />
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
-      <section aria-labelledby="exam-boards-heading" className="bg-ink-950 pb-10 sm:pb-14">
+      <section aria-labelledby="exam-boards-heading" className="bg-background pb-10 sm:pb-14">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
-          <nav className="mb-6 text-xs text-cream-200/55" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-cream-50 underline-offset-4 hover:underline">
+          <nav className="mb-6 text-xs text-muted-foreground" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-foreground underline-offset-4 hover:underline">
               {tCrumbHome}
             </Link>
             <span className="mx-2" aria-hidden="true">
               /
             </span>
-            <span className="text-cream-100/85">{tCrumbSelf}</span>
+            <span className="text-foreground/85">{tCrumbSelf}</span>
           </nav>
           <div className="text-center mb-2">
-            <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-300">
+            <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-600 dark:text-emerald-300">
               {tEyebrow}
             </p>
             <h1
               id="exam-boards-heading"
-              className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
+              className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground leading-tight"
             >
               {tH1}
             </h1>
-            <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
+            <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground leading-relaxed">
               {tLead}
             </p>
           </div>
@@ -282,22 +282,22 @@ export default async function ExamBoardsPage() {
       />
 
       {/* ── Helper copy ─────────────────────────────────────────────── */}
-      <section aria-labelledby="why-boards-differ-heading" className="border-t border-cream-200/10">
+      <section aria-labelledby="why-boards-differ-heading" className="border-t border-border/60">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 sm:py-16">
           <h2
             id="why-boards-differ-heading"
-            className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50 leading-tight"
+            className="font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground leading-tight"
           >
             {tWhyH2}
           </h2>
-          <div className="mt-5 space-y-4 text-sm sm:text-base text-cream-100/80 leading-relaxed">
+          <div className="mt-5 space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
             <p>{tWhyP1}</p>
             <p>{tWhyP2}</p>
             <p>
               {tWhyP3Pre}{' '}
               <Link
                 href="/board-select"
-                className="underline underline-offset-4 hover:text-clay-300"
+                className="underline underline-offset-4 hover:text-clay-600 dark:hover:text-clay-300"
               >
                 {tWhyP3Link}
               </Link>{' '}
@@ -340,19 +340,19 @@ function BoardSection({
   return (
     <section
       aria-labelledby={headingId}
-      className={`bg-ink-950 pb-14 sm:pb-20${
-        showDivider ? ' border-t border-cream-200/10 pt-12 sm:pt-16' : ''
+      className={`bg-background pb-14 sm:pb-20${
+        showDivider ? ' border-t border-border/60 pt-12 sm:pt-16' : ''
       }`}
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-12">
           <h2
             id={headingId}
-            className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-cream-50 leading-tight"
+            className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight"
           >
             {heading}
           </h2>
-          <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
+          <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground leading-relaxed">
             {subheading}
           </p>
         </div>
@@ -368,10 +368,10 @@ function BoardSection({
                 <Link
                   href={b.href}
                   aria-label={ariaLabel}
-                  className={`group relative flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-5 sm:p-6 transition-all hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 ${
+                  className={`group relative flex h-full flex-col gap-4 rounded-2xl border border-border/60 bg-card p-5 sm:p-6 transition-all hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                     b.level === 'gcse'
-                      ? 'hover:border-emerald-400/40 focus-visible:ring-emerald-400'
-                      : 'hover:border-clay-300/40 focus-visible:ring-clay-300'
+                      ? 'hover:border-emerald-500/40 focus-visible:ring-emerald-500'
+                      : 'hover:border-clay-500/40 focus-visible:ring-clay-500'
                   }`}
                 >
                   <LevelChip level={b.level} className="absolute right-4 top-4" />
@@ -382,16 +382,16 @@ function BoardSection({
                     >
                       {b.initials}
                     </span>
-                    <h3 className="font-serif text-lg sm:text-xl font-semibold text-cream-50 leading-tight">
+                    <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground leading-tight">
                       {b.name}
                     </h3>
                   </div>
-                  <p className="text-sm text-cream-100/70 leading-relaxed">{b.blurb}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{b.blurb}</p>
                   <span
                     className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
                       b.level === 'gcse'
-                        ? 'text-emerald-300 group-hover:text-emerald-200'
-                        : 'text-clay-300 group-hover:text-clay-200'
+                        ? 'text-emerald-700 group-hover:text-emerald-600 dark:text-emerald-300 dark:group-hover:text-emerald-200'
+                        : 'text-clay-700 group-hover:text-clay-600 dark:text-clay-300 dark:group-hover:text-clay-200'
                     }`}
                   >
                     {openBoardLabel} <span aria-hidden="true">&rarr;</span>

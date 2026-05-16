@@ -156,7 +156,7 @@ export default async function FreeResourcesPage() {
   }))
 
   return (
-    <main className="min-h-screen bg-ink-950">
+    <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
@@ -166,28 +166,28 @@ export default async function FreeResourcesPage() {
       />
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
-      <section aria-labelledby="free-resources-heading" className="bg-ink-950 pb-10 sm:pb-14">
+      <section aria-labelledby="free-resources-heading" className="bg-background pb-10 sm:pb-14">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
-          <nav className="mb-6 text-xs text-cream-200/55" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-cream-50 underline-offset-4 hover:underline">
+          <nav className="mb-6 text-xs text-muted-foreground" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-foreground underline-offset-4 hover:underline">
               {tCrumbHome}
             </Link>
             <span className="mx-2" aria-hidden="true">
               /
             </span>
-            <span className="text-cream-100/85">{tCrumbSelf}</span>
+            <span className="text-foreground/85">{tCrumbSelf}</span>
           </nav>
           <div className="text-center mb-2">
-            <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-300">
+            <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-600 dark:text-emerald-300">
               {tEyebrow}
             </p>
             <h1
               id="free-resources-heading"
-              className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
+              className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground leading-tight"
             >
               {tH1}
             </h1>
-            <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
+            <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground leading-relaxed">
               {tLead}
             </p>
           </div>
@@ -197,7 +197,7 @@ export default async function FreeResourcesPage() {
       {/* ── Resource grid ───────────────────────────────────────────── */}
       <section
         aria-labelledby="resource-grid-heading"
-        className="bg-ink-950 pb-14 sm:pb-20 border-t border-cream-200/10 pt-12 sm:pt-16"
+        className="bg-background pb-14 sm:pb-20 border-t border-border/60 pt-12 sm:pt-16"
       >
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
           <h2 id="resource-grid-heading" className="sr-only">
@@ -207,33 +207,35 @@ export default async function FreeResourcesPage() {
             {RESOURCES.map((r) => (
               <li
                 key={r.id}
-                className={`group relative flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-5 sm:p-6 transition-colors ${
-                  r.level === 'gcse' ? 'hover:border-emerald-400/30' : 'hover:border-clay-300/30'
+                className={`group relative flex h-full flex-col gap-4 rounded-2xl border border-border/60 bg-card p-5 sm:p-6 transition-colors ${
+                  r.level === 'gcse' ? 'hover:border-emerald-500/40' : 'hover:border-clay-500/40'
                 }`}
               >
                 <LevelChip level={r.level} className="absolute right-4 top-4" />
 
                 <div className="pr-16">
-                  <h3 className="font-serif text-lg sm:text-xl font-semibold text-cream-50 leading-tight">
+                  <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground leading-tight">
                     {r.title}
                   </h3>
-                  <p className="mt-2 font-mono text-[11px] tracking-[0.12em] uppercase text-cream-200/55">
+                  <p className="mt-2 font-mono text-[11px] tracking-[0.12em] uppercase text-muted-foreground">
                     {r.boardScope}
                   </p>
                 </div>
 
                 <span
-                  className="inline-flex w-fit items-center rounded-full border border-clay-300/30 bg-clay-300/[0.08] px-2.5 py-1 font-mono text-[0.6875rem] uppercase tracking-[0.14em] leading-none text-clay-200"
+                  className="inline-flex w-fit items-center rounded-full border border-clay-500/30 bg-clay-500/[0.12] px-2.5 py-1 font-mono text-[0.6875rem] uppercase tracking-[0.14em] leading-none text-clay-700 dark:text-clay-200"
                   aria-label={tComingSoon}
                 >
                   {tComingSoon}
                 </span>
 
-                <p className="text-sm text-cream-100/70 leading-relaxed">{r.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{r.description}</p>
 
                 <span
                   className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium ${
-                    r.level === 'gcse' ? 'text-emerald-300' : 'text-clay-300'
+                    r.level === 'gcse'
+                      ? 'text-emerald-700 dark:text-emerald-300'
+                      : 'text-clay-700 dark:text-clay-300'
                   }`}
                   aria-hidden="true"
                 >
@@ -246,23 +248,20 @@ export default async function FreeResourcesPage() {
       </section>
 
       {/* ── Email capture ───────────────────────────────────────────── */}
-      <section
-        aria-labelledby="notify-heading"
-        className="border-t border-cream-200/10 bg-cream-50/[0.02]"
-      >
+      <section aria-labelledby="notify-heading" className="border-t border-border/60 bg-card">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 py-12 sm:py-16">
           <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-300">
+              <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-600 dark:text-emerald-300">
                 {tLaunchEyebrow}
               </p>
               <h2
                 id="notify-heading"
-                className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50 leading-tight"
+                className="font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground leading-tight"
               >
                 {tNotifyH2}
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-cream-100/75 leading-relaxed">
+              <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
                 {tNotifyLead}
               </p>
             </div>

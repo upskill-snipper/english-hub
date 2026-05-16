@@ -84,19 +84,19 @@ export default async function Home() {
 // any board choice.
 function FeatureRail() {
   return (
-    <section aria-labelledby="feature-rail-heading" className="bg-ink-950 pb-10 sm:pb-14">
+    <section aria-labelledby="feature-rail-heading" className="bg-background pb-10 sm:pb-14">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
         <div className="text-center mb-8 sm:mb-10">
-          <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-violet-300">
+          <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-violet-600 dark:text-violet-300">
             Two tracks alongside the exam boards
           </p>
           <h2
             id="feature-rail-heading"
-            className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-cream-50 leading-tight"
+            className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight"
           >
             Build foundations early, or learn English alongside Arabic.
           </h2>
-          <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
+          <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground leading-relaxed">
             KS3 covers Years 7–9, the curriculum before GCSE. EAL is the bilingual track for
             Arabic-speaking students preparing for UK exams. Both run independently of (and
             alongside) any GCSE / IGCSE board you pick below.
@@ -106,72 +106,72 @@ function FeatureRail() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           <Link
             href="/revision?setBoard=ks3"
-            className="group relative flex flex-col gap-4 rounded-2xl border border-violet-400/30 bg-violet-500/[0.06] p-6 sm:p-7 transition-all hover:border-violet-400/60 hover:bg-violet-500/[0.10] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+            className="group relative flex flex-col gap-4 rounded-2xl border border-violet-500/30 bg-violet-500/[0.06] p-6 sm:p-7 transition-all hover:border-violet-500/60 hover:bg-violet-500/[0.10] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <span
               aria-hidden="true"
-              className="absolute right-4 top-4 inline-flex items-center rounded-full border border-violet-300/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-violet-300"
+              className="absolute right-4 top-4 inline-flex items-center rounded-full border border-violet-500/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-violet-600 dark:text-violet-300"
             >
               Foundation
             </span>
             <div className="flex items-center gap-4 pr-20">
               <span
                 aria-hidden="true"
-                className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 bg-violet-400/15 text-violet-300 ring-violet-400/30 font-mono text-sm font-bold tracking-wide"
+                className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 bg-violet-500/15 text-violet-600 dark:text-violet-300 ring-violet-500/30 font-mono text-sm font-bold tracking-wide"
               >
                 KS3
               </span>
               <div>
-                <h3 className="font-serif text-xl sm:text-2xl font-semibold text-cream-50 leading-tight">
+                <h3 className="font-heading text-xl sm:text-2xl font-semibold text-foreground leading-tight">
                   KS3 English — Years 7–9
                 </h3>
-                <p className="text-xs uppercase tracking-wider text-violet-300/80 mt-1">
+                <p className="text-xs uppercase tracking-wider text-violet-600/80 dark:text-violet-300/80 mt-1">
                   Ages 11–14 · The curriculum before GCSE
                 </p>
               </div>
             </div>
-            <p className="text-sm text-cream-100/75 leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Reading comprehension, creative writing, grammar foundations, and the year-by-year
               curriculum that primes students for GCSE English. Full Year 7, Year 8 and Year 9
               schemes of work with weekly lessons, set texts, and assessments.
             </p>
-            <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-violet-300 group-hover:text-violet-200 transition-colors">
+            <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-violet-600 dark:text-violet-300 group-hover:text-violet-700 dark:group-hover:text-violet-200 transition-colors">
               Open KS3 hub <span aria-hidden="true">&rarr;</span>
             </span>
           </Link>
 
           <Link
             href="/eal"
-            className="group relative flex flex-col gap-4 rounded-2xl border border-teal-400/30 bg-teal-500/[0.06] p-6 sm:p-7 transition-all hover:border-teal-400/60 hover:bg-teal-500/[0.10] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+            className="group relative flex flex-col gap-4 rounded-2xl border border-teal-500/30 bg-teal-500/[0.06] p-6 sm:p-7 transition-all hover:border-teal-500/60 hover:bg-teal-500/[0.10] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <span
               aria-hidden="true"
-              className="absolute right-4 top-4 inline-flex items-center rounded-full border border-teal-300/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-teal-300"
+              className="absolute right-4 top-4 inline-flex items-center rounded-full border border-teal-500/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase text-teal-600 dark:text-teal-300"
             >
               Bilingual
             </span>
             <div className="flex items-center gap-4 pr-20">
               <span
                 aria-hidden="true"
-                className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 bg-teal-400/15 text-teal-300 ring-teal-400/30 font-mono text-sm font-bold tracking-wide"
+                className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full ring-1 bg-teal-500/15 text-teal-600 dark:text-teal-300 ring-teal-500/30 font-mono text-sm font-bold tracking-wide"
               >
                 EAL
               </span>
               <div>
-                <h3 className="font-serif text-xl sm:text-2xl font-semibold text-cream-50 leading-tight">
+                <h3 className="font-heading text-xl sm:text-2xl font-semibold text-foreground leading-tight">
                   English for Arabic Speakers
                 </h3>
-                <p className="text-xs uppercase tracking-wider text-teal-300/80 mt-1">
+                <p className="text-xs uppercase tracking-wider text-teal-600/80 dark:text-teal-300/80 mt-1">
                   للناطقين بالعربية · Khaleeji explanations
                 </p>
               </div>
             </div>
-            <p className="text-sm text-cream-100/75 leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Focused lessons on the points Arabic L1 students most often stumble on: sentence
               structure (SVO vs VSO), articles, tenses, prepositions, common transfer errors. Every
               topic has examples, error remediation, and Khaleeji-Arabic explanations.
             </p>
-            <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-teal-300 group-hover:text-teal-200 transition-colors">
+            <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-teal-600 dark:text-teal-300 group-hover:text-teal-700 dark:group-hover:text-teal-200 transition-colors">
               Open EAL section <span aria-hidden="true">&rarr;</span>
             </span>
           </Link>
@@ -206,25 +206,25 @@ const GCSE_BOARDS: Board[] = [
     name: 'AQA',
     initials: 'AQA',
     href: '/revision?setBoard=aqa',
-    blurb: 'Power &amp; Conflict, Love &amp; Relationships, Worlds &amp; Lives.',
+    blurb: 'Power & Conflict, Love & Relationships, Worlds & Lives.',
     level: 'gcse',
-    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+    discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
   },
   {
     name: 'Pearson Edexcel GCSE',
     initials: 'EDX',
     href: '/revision?setBoard=edexcel',
-    blurb: 'Time &amp; Place, Conflict, Relationships anthology.',
+    blurb: 'Time & Place, Conflict, Relationships anthology.',
     level: 'gcse',
-    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+    discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
   },
   {
     name: 'OCR',
     initials: 'OCR',
     href: '/revision?setBoard=ocr',
-    blurb: 'Love, Conflict, Power &amp; Natural World, Youth &amp; Age.',
+    blurb: 'Love, Conflict, Power & Natural World, Youth & Age.',
     level: 'gcse',
-    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+    discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
   },
   {
     name: 'WJEC Eduqas',
@@ -232,7 +232,7 @@ const GCSE_BOARDS: Board[] = [
     href: '/revision?setBoard=eduqas',
     blurb: 'Eduqas anthology with annotated walkthroughs.',
     level: 'gcse',
-    discClass: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
+    discClass: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
   },
 ]
 
@@ -246,9 +246,9 @@ const IGCSE_BOARDS: Board[] = [
     name: 'Cambridge IGCSE (CIE 0500 / 0990)',
     initials: 'CIE',
     href: '/revision?setBoard=cambridge-0500',
-    blurb: '0500 and 0990 &mdash; Reading, Composition, model answers.',
+    blurb: '0500 and 0990 — Reading, Composition, model answers.',
     level: 'igcse',
-    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+    discClass: 'bg-orange-500/15 text-orange-700 dark:text-orange-300 ring-orange-500/30',
   },
   {
     name: 'Pearson Edexcel IGCSE Literature (4ET1)',
@@ -256,7 +256,7 @@ const IGCSE_BOARDS: Board[] = [
     href: '/revision?setBoard=edexcel-igcse',
     blurb: 'Drama, Prose, Shakespeare, Unseen Poetry.',
     level: 'igcse',
-    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+    discClass: 'bg-orange-500/15 text-orange-700 dark:text-orange-300 ring-orange-500/30',
   },
   {
     name: 'Pearson Edexcel IGCSE Language A (4EA1)',
@@ -264,7 +264,7 @@ const IGCSE_BOARDS: Board[] = [
     href: '/revision?setBoard=edexcel-igcse-lang',
     blurb: 'Anthology, non-fiction, transactional writing.',
     level: 'igcse',
-    discClass: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
+    discClass: 'bg-orange-500/15 text-orange-700 dark:text-orange-300 ring-orange-500/30',
   },
 ]
 
@@ -296,15 +296,23 @@ function BoardPickerSection({
   const isKs3 = level === 'ks3'
   const HeadingTag = headingLevel
   // Per-level palette. KS3 picks violet to keep visual separation from
-  // GCSE (emerald) and IGCSE (clay). The kicker line uses the same tint
+  // GCSE (emerald) and IGCSE (clay → orange). Each accent uses the
+  // light/dark dual shade so the tint is legible on the cream :root
+  // theme AND the ink .dark theme. The kicker line uses the same tint
   // so all three sections feel like siblings.
-  const kickerClass = isGcse ? 'text-emerald-300' : isKs3 ? 'text-violet-300' : 'text-clay-300'
-  const helpLinkClass = isKs3 ? 'hover:text-violet-300' : 'hover:text-clay-300'
+  const kickerClass = isGcse
+    ? 'text-emerald-600 dark:text-emerald-300'
+    : isKs3
+      ? 'text-violet-600 dark:text-violet-300'
+      : 'text-orange-700 dark:text-orange-300'
+  const helpLinkClass = isKs3
+    ? 'hover:text-violet-600 dark:hover:text-violet-300'
+    : 'hover:text-orange-700 dark:hover:text-orange-300'
 
   return (
     <section
       aria-labelledby={headingId}
-      className={`bg-ink-950 pb-14 sm:pb-20${showDivider ? ' border-t border-cream-200/10' : ''}`}
+      className={`bg-background pb-14 sm:pb-20${showDivider ? ' border-t border-border/60' : ''}`}
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 pt-12 sm:pt-16">
         <div className="text-center mb-10 sm:mb-12">
@@ -315,11 +323,11 @@ function BoardPickerSection({
           ) : null}
           <HeadingTag
             id={headingId}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
+            className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground leading-tight"
           >
             {heading}
           </HeadingTag>
-          <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-cream-100/75 leading-relaxed">
+          <p className="mt-4 max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground leading-relaxed">
             {subheading}
           </p>
         </div>
@@ -329,22 +337,22 @@ function BoardPickerSection({
             <li key={b.name}>
               <Link
                 href={b.href}
-                className={`group relative flex h-full flex-col gap-4 rounded-2xl border border-cream-200/10 bg-cream-50/[0.02] p-5 sm:p-6 transition-all hover:bg-cream-50/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 ${
+                className={`group relative flex h-full flex-col gap-4 rounded-2xl border border-border/60 bg-card p-5 sm:p-6 transition-all hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                   b.level === 'gcse'
-                    ? 'hover:border-emerald-400/40 focus-visible:ring-emerald-400'
+                    ? 'hover:border-emerald-500/40 focus-visible:ring-emerald-500'
                     : b.level === 'ks3'
-                      ? 'hover:border-violet-400/40 focus-visible:ring-violet-400'
-                      : 'hover:border-clay-300/40 focus-visible:ring-clay-300'
+                      ? 'hover:border-violet-500/40 focus-visible:ring-violet-500'
+                      : 'hover:border-orange-500/40 focus-visible:ring-orange-500'
                 }`}
               >
                 <span
                   aria-hidden="true"
                   className={`absolute right-4 top-4 inline-flex items-center rounded-full border px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] uppercase ${
                     b.level === 'gcse'
-                      ? 'border-emerald-300/40 text-emerald-300'
+                      ? 'border-emerald-500/40 text-emerald-600 dark:text-emerald-300'
                       : b.level === 'ks3'
-                        ? 'border-violet-300/40 text-violet-300'
-                        : 'border-clay-300/40 text-clay-300'
+                        ? 'border-violet-500/40 text-violet-600 dark:text-violet-300'
+                        : 'border-orange-500/40 text-orange-700 dark:text-orange-300'
                   }`}
                 >
                   {b.level === 'gcse' ? 'GCSE' : b.level === 'ks3' ? 'KS3' : 'IGCSE'}
@@ -356,21 +364,18 @@ function BoardPickerSection({
                   >
                     {b.initials}
                   </span>
-                  <h3 className="font-serif text-lg sm:text-xl font-semibold text-cream-50 leading-tight">
+                  <h3 className="font-heading text-lg sm:text-xl font-semibold text-foreground leading-tight">
                     {b.name}
                   </h3>
                 </div>
-                <p
-                  className="text-sm text-cream-100/70 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: b.blurb }}
-                />
+                <p className="text-sm text-muted-foreground leading-relaxed">{b.blurb}</p>
                 <span
                   className={`mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
                     b.level === 'gcse'
-                      ? 'text-emerald-300 group-hover:text-emerald-200'
+                      ? 'text-emerald-600 dark:text-emerald-300 group-hover:text-emerald-700 dark:group-hover:text-emerald-200'
                       : b.level === 'ks3'
-                        ? 'text-violet-300 group-hover:text-violet-200'
-                        : 'text-clay-300 group-hover:text-clay-200'
+                        ? 'text-violet-600 dark:text-violet-300 group-hover:text-violet-700 dark:group-hover:text-violet-200'
+                        : 'text-orange-700 dark:text-orange-300 group-hover:text-orange-800 dark:group-hover:text-orange-200'
                   }`}
                 >
                   {b.level === 'ks3' ? 'Open KS3' : 'Open board'}{' '}
@@ -382,7 +387,7 @@ function BoardPickerSection({
         </ul>
 
         {showHelpLink ? (
-          <p className="mt-8 text-center text-xs text-cream-200/55">
+          <p className="mt-8 text-center text-xs text-muted-foreground">
             Not sure which spec your school sits?{' '}
             <Link href="/board-select" className={`underline underline-offset-4 ${helpLinkClass}`}>
               Choose by level instead.

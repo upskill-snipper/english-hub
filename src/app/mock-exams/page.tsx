@@ -82,54 +82,54 @@ interface QuestionSummary {
 // ─── Board Config ────────────────────────────────────────────────────────────
 
 const DEFAULT_BOARD_CONFIG = {
-  color: 'text-ink-500',
+  color: 'text-muted-foreground',
   bg: 'bg-muted/50',
   gradient: 'from-muted/40 to-muted/10',
   border: 'border-border',
-  badge: 'bg-muted/50 text-ink-600 border-border',
-  accent: 'text-ink-500',
+  badge: 'bg-muted/50 text-muted-foreground border-border',
+  accent: 'text-muted-foreground',
 }
 
 const BOARD_CONFIG: Record<string, typeof DEFAULT_BOARD_CONFIG> = {
   AQA: {
-    color: 'text-blue-700',
-    bg: 'bg-blue-50',
-    gradient: 'from-blue-50 to-blue-50/30',
-    border: 'border-blue-200',
-    badge: 'bg-blue-50 text-blue-700 border-blue-200',
-    accent: 'text-blue-700',
+    color: 'text-blue-700 dark:text-blue-300',
+    bg: 'bg-blue-500/10',
+    gradient: 'from-blue-500/10 to-blue-500/[0.03]',
+    border: 'border-blue-500/30',
+    badge: 'bg-blue-500/10 text-blue-700 border-blue-500/30 dark:text-blue-300',
+    accent: 'text-blue-700 dark:text-blue-300',
   },
   Edexcel: {
-    color: 'text-purple-700',
-    bg: 'bg-purple-50',
-    gradient: 'from-purple-50 to-purple-50/30',
-    border: 'border-purple-200',
-    badge: 'bg-purple-50 text-purple-700 border-purple-200',
-    accent: 'text-purple-700',
+    color: 'text-purple-700 dark:text-purple-300',
+    bg: 'bg-purple-500/10',
+    gradient: 'from-purple-500/10 to-purple-500/[0.03]',
+    border: 'border-purple-500/30',
+    badge: 'bg-purple-500/10 text-purple-700 border-purple-500/30 dark:text-purple-300',
+    accent: 'text-purple-700 dark:text-purple-300',
   },
   OCR: {
-    color: 'text-orange-700',
-    bg: 'bg-orange-50',
-    gradient: 'from-orange-50 to-orange-50/30',
-    border: 'border-orange-200',
-    badge: 'bg-orange-50 text-orange-700 border-orange-200',
-    accent: 'text-orange-700',
+    color: 'text-orange-700 dark:text-orange-300',
+    bg: 'bg-orange-500/10',
+    gradient: 'from-orange-500/10 to-orange-500/[0.03]',
+    border: 'border-orange-500/30',
+    badge: 'bg-orange-500/10 text-orange-700 border-orange-500/30 dark:text-orange-300',
+    accent: 'text-orange-700 dark:text-orange-300',
   },
   WJEC: {
-    color: 'text-red-700',
-    bg: 'bg-red-50',
-    gradient: 'from-red-50 to-red-50/30',
-    border: 'border-red-200',
-    badge: 'bg-red-50 text-red-700 border-red-200',
-    accent: 'text-red-700',
+    color: 'text-red-700 dark:text-red-300',
+    bg: 'bg-red-500/10',
+    gradient: 'from-red-500/10 to-red-500/[0.03]',
+    border: 'border-red-500/30',
+    badge: 'bg-red-500/10 text-red-700 border-red-500/30 dark:text-red-300',
+    accent: 'text-red-700 dark:text-red-300',
   },
   CAIE: {
-    color: 'text-teal-800',
-    bg: 'bg-teal-50',
-    gradient: 'from-teal-50 to-teal-50/30',
-    border: 'border-teal-200',
-    badge: 'bg-teal-50 text-teal-800 border-teal-200',
-    accent: 'text-teal-800',
+    color: 'text-teal-700 dark:text-teal-300',
+    bg: 'bg-teal-500/10',
+    gradient: 'from-teal-500/10 to-teal-500/[0.03]',
+    border: 'border-teal-500/30',
+    badge: 'bg-teal-500/10 text-teal-700 border-teal-500/30 dark:text-teal-300',
+    accent: 'text-teal-700 dark:text-teal-300',
   },
 }
 
@@ -464,26 +464,26 @@ const EXAM_CARDS: ExamCardData[] = [
 function getDifficultyBadge(difficulty: string) {
   switch (difficulty) {
     case 'Foundation':
-      return 'bg-green-50 text-green-700 border-green-200'
+      return 'bg-green-500/10 text-green-700 border-green-500/30 dark:text-green-300'
     case 'Intermediate':
-      return 'bg-amber-50 text-amber-700 border-amber-200'
+      return 'bg-amber-500/10 text-amber-700 border-amber-500/30 dark:text-amber-300'
     case 'Higher':
-      return 'bg-red-50 text-red-700 border-red-200'
+      return 'bg-red-500/10 text-red-700 border-red-500/30 dark:text-red-300'
     default:
-      return 'bg-muted text-ink-600 border-border'
+      return 'bg-muted text-muted-foreground border-border'
   }
 }
 
 function getGradeColor(grade: number) {
-  if (grade >= 7) return 'text-teal-800'
-  if (grade >= 5) return 'text-amber-700'
-  return 'text-red-600'
+  if (grade >= 7) return 'text-teal-700 dark:text-teal-300'
+  if (grade >= 5) return 'text-amber-700 dark:text-amber-300'
+  return 'text-red-700 dark:text-red-300'
 }
 
 function getGradeBg(grade: number) {
-  if (grade >= 7) return 'bg-teal-50 border-teal-200'
-  if (grade >= 5) return 'bg-amber-50 border-amber-200'
-  return 'bg-red-50 border-red-200'
+  if (grade >= 7) return 'bg-teal-500/10 border-teal-500/30'
+  if (grade >= 5) return 'bg-amber-500/10 border-amber-500/30'
+  return 'bg-red-500/10 border-red-500/30'
 }
 
 // ─── Grade Boundaries Component ──────────────────────────────────────────────
@@ -503,9 +503,9 @@ function GradeBoundariesTable({
           className={cn(
             'rounded-lg p-2 text-center border',
             grade >= 7
-              ? 'bg-teal-50 border-teal-200'
+              ? 'bg-teal-500/10 border-teal-500/30'
               : grade >= 5
-                ? 'bg-amber-50 border-amber-200'
+                ? 'bg-amber-500/10 border-amber-500/30'
                 : 'bg-muted border-border',
           )}
         >
@@ -588,7 +588,7 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
           'h-1.5',
           isLanguage
             ? 'bg-gradient-to-r from-blue-500 to-cyan-500'
-            : 'bg-gradient-to-r from-teal-800 to-clay-500',
+            : 'bg-gradient-to-r from-teal-600 to-clay-500',
         )}
       />
 
@@ -605,8 +605,8 @@ function ExamPaperCard({ exam }: { exam: ExamCardData }) {
                 className={cn(
                   'text-xs',
                   isLanguage
-                    ? 'border-cyan-600/30 text-cyan-700'
-                    : 'border-pink-600/30 text-pink-700',
+                    ? 'border-cyan-500/30 text-cyan-700 dark:text-cyan-300'
+                    : 'border-pink-500/30 text-pink-700 dark:text-pink-300',
                 )}
               >
                 {isLanguage ? t('mock.language') : t('mock.literature')}
@@ -1018,15 +1018,52 @@ export default function MockExamsPage() {
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-3 sm:grid-cols-9 gap-2">
               {[
-                { grade: 9, label: 'A**', colour: 'bg-teal-50 border-teal-200 text-teal-800' },
-                { grade: 8, label: 'A*', colour: 'bg-teal-50 border-teal-200 text-teal-800' },
-                { grade: 7, label: 'A', colour: 'bg-teal-50 border-teal-200 text-teal-800' },
-                { grade: 6, label: 'B+', colour: 'bg-cyan-50 border-cyan-200 text-cyan-700' },
-                { grade: 5, label: 'B/C', colour: 'bg-amber-50 border-amber-200 text-amber-700' },
-                { grade: 4, label: 'C', colour: 'bg-amber-50 border-amber-200 text-amber-700' },
-                { grade: 3, label: 'D', colour: 'bg-orange-50 border-orange-200 text-orange-700' },
-                { grade: 2, label: 'E/F', colour: 'bg-red-50 border-red-200 text-red-700' },
-                { grade: 1, label: 'G', colour: 'bg-red-50 border-red-200 text-red-700' },
+                {
+                  grade: 9,
+                  label: 'A**',
+                  colour: 'bg-teal-500/10 border-teal-500/30 text-teal-700 dark:text-teal-300',
+                },
+                {
+                  grade: 8,
+                  label: 'A*',
+                  colour: 'bg-teal-500/10 border-teal-500/30 text-teal-700 dark:text-teal-300',
+                },
+                {
+                  grade: 7,
+                  label: 'A',
+                  colour: 'bg-teal-500/10 border-teal-500/30 text-teal-700 dark:text-teal-300',
+                },
+                {
+                  grade: 6,
+                  label: 'B+',
+                  colour: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-700 dark:text-cyan-300',
+                },
+                {
+                  grade: 5,
+                  label: 'B/C',
+                  colour: 'bg-amber-500/10 border-amber-500/30 text-amber-700 dark:text-amber-300',
+                },
+                {
+                  grade: 4,
+                  label: 'C',
+                  colour: 'bg-amber-500/10 border-amber-500/30 text-amber-700 dark:text-amber-300',
+                },
+                {
+                  grade: 3,
+                  label: 'D',
+                  colour:
+                    'bg-orange-500/10 border-orange-500/30 text-orange-700 dark:text-orange-300',
+                },
+                {
+                  grade: 2,
+                  label: 'E/F',
+                  colour: 'bg-red-500/10 border-red-500/30 text-red-700 dark:text-red-300',
+                },
+                {
+                  grade: 1,
+                  label: 'G',
+                  colour: 'bg-red-500/10 border-red-500/30 text-red-700 dark:text-red-300',
+                },
               ].map(({ grade, label, colour }) => (
                 <div key={grade} className={cn('rounded-xl border p-3 text-center', colour)}>
                   <div className="text-2xl font-bold">{grade}</div>
@@ -1036,10 +1073,12 @@ export default function MockExamsPage() {
             </div>
             <div className="flex justify-between mt-3 text-xs text-muted-foreground px-2">
               <span className="flex items-center gap-1">
-                <CheckCircle2 className="h-3 w-3 text-amber-600" /> {t('mock.standard_pass')}
+                <CheckCircle2 className="h-3 w-3 text-amber-600 dark:text-amber-300" />{' '}
+                {t('mock.standard_pass')}
               </span>
               <span className="flex items-center gap-1">
-                <CheckCircle2 className="h-3 w-3 text-teal-800" /> {t('mock.strong_pass')}
+                <CheckCircle2 className="h-3 w-3 text-teal-700 dark:text-teal-300" />{' '}
+                {t('mock.strong_pass')}
               </span>
             </div>
           </div>

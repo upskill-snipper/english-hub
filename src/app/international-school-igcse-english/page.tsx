@@ -291,7 +291,7 @@ export default async function InternationalSchoolIgcsePage() {
   ]
 
   return (
-    <main className="min-h-screen bg-ink-950">
+    <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
@@ -302,41 +302,41 @@ export default async function InternationalSchoolIgcsePage() {
       <FAQPageJsonLd nonce={nonce} faqs={FAQS} />
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
-      <section aria-labelledby="hero-heading" className="bg-ink-950 pb-10 sm:pb-14">
+      <section aria-labelledby="hero-heading" className="bg-background pb-10 sm:pb-14">
         <div className="mx-auto max-w-[1100px] px-4 sm:px-6 pt-12 sm:pt-16">
-          <nav className="mb-6 text-xs text-cream-200/55" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-cream-50 underline-offset-4 hover:underline">
+          <nav className="mb-6 text-xs text-muted-foreground" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-foreground underline-offset-4 hover:underline">
               {bcHome}
             </Link>
             <span className="mx-2" aria-hidden="true">
               /
             </span>
-            <span className="text-cream-100/85">{bcCurrent}</span>
+            <span className="text-foreground/85">{bcCurrent}</span>
           </nav>
 
-          <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-300">
+          <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-600 dark:text-emerald-300">
             {eyebrowHero}
           </p>
           <h1
             id="hero-heading"
-            className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
+            className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground leading-tight"
           >
             {h1}
           </h1>
-          <p className="mt-5 max-w-2xl text-base sm:text-lg text-cream-100/80 leading-relaxed">
+          <p className="mt-5 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
             {intro}
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               href="/for-schools"
-              className="inline-flex items-center gap-2 rounded-2xl bg-clay-300 px-5 py-3 text-sm font-medium text-ink-950 transition-colors hover:bg-clay-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-clay-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {ctaLicence} <span aria-hidden="true">&rarr;</span>
             </Link>
             <Link
               href="/for-teachers"
-              className="inline-flex items-center gap-2 rounded-2xl border border-cream-200/30 bg-cream-50/[0.04] px-5 py-3 text-sm font-medium text-cream-50 transition-colors hover:bg-cream-50/[0.08] focus:outline-none focus-visible:ring-2 focus-visible:ring-cream-200 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+              className="inline-flex items-center gap-2 rounded-2xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {ctaTeachers}
             </Link>
@@ -384,21 +384,21 @@ export default async function InternationalSchoolIgcsePage() {
             <Link
               key={spec.code}
               href={spec.href}
-              className="group block rounded-2xl border border-cream-200/12 bg-cream-50/[0.03] p-5 transition-colors hover:border-clay-300/40 hover:bg-clay-300/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-clay-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+              className="group block rounded-2xl border border-border/60 bg-card p-5 transition-colors hover:border-clay-500/40 hover:bg-clay-500/[0.06] focus:outline-none focus-visible:ring-2 focus-visible:ring-clay-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <div className="flex items-baseline justify-between gap-3">
-                <span className="font-mono text-xs tracking-[0.14em] uppercase text-clay-300">
+                <span className="font-mono text-xs tracking-[0.14em] uppercase text-clay-700 dark:text-clay-300">
                   {spec.board}
                 </span>
-                <span className="font-mono text-xs text-cream-200/60">{spec.code}</span>
+                <span className="font-mono text-xs text-muted-foreground">{spec.code}</span>
               </div>
-              <h3 className="mt-2 font-serif text-lg font-semibold text-cream-50 leading-snug">
+              <h3 className="mt-2 font-heading text-lg font-semibold text-foreground leading-snug">
                 {specNames[spec.nameKey]}
               </h3>
-              <p className="mt-2 text-sm text-cream-100/75 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 {specNames[spec.blurbKey]}
               </p>
-              <p className="mt-3 text-xs font-medium text-clay-300 group-hover:text-clay-200">
+              <p className="mt-3 text-xs font-medium text-clay-700 group-hover:text-clay-600 dark:text-clay-300 dark:group-hover:text-clay-200">
                 {specsOpenHub}
               </p>
             </Link>
@@ -447,17 +447,14 @@ export default async function InternationalSchoolIgcsePage() {
 
         <ol className="mt-8 grid gap-4 sm:grid-cols-3">
           {steps.map((step) => (
-            <li
-              key={step.n}
-              className="rounded-2xl border border-cream-200/12 bg-cream-50/[0.03] p-5"
-            >
-              <span className="font-mono text-xs tracking-[0.14em] text-emerald-300">
+            <li key={step.n} className="rounded-2xl border border-border/60 bg-card p-5">
+              <span className="font-mono text-xs tracking-[0.14em] text-emerald-700 dark:text-emerald-300">
                 {startStepLabel} {step.n}
               </span>
-              <h3 className="mt-2 font-serif text-lg font-semibold text-cream-50 leading-snug">
+              <h3 className="mt-2 font-heading text-lg font-semibold text-foreground leading-snug">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm text-cream-100/75 leading-relaxed">{step.body}</p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.body}</p>
             </li>
           ))}
         </ol>
@@ -465,13 +462,13 @@ export default async function InternationalSchoolIgcsePage() {
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/for-schools"
-            className="inline-flex items-center gap-2 rounded-2xl bg-clay-300 px-5 py-3 text-sm font-medium text-ink-950 transition-colors hover:bg-clay-200"
+            className="inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             {startCta1} <span aria-hidden="true">&rarr;</span>
           </Link>
           <Link
             href="/for-teachers"
-            className="inline-flex items-center gap-2 rounded-2xl border border-cream-200/30 bg-cream-50/[0.04] px-5 py-3 text-sm font-medium text-cream-50 transition-colors hover:bg-cream-50/[0.08]"
+            className="inline-flex items-center gap-2 rounded-2xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
           >
             {startCta2}
           </Link>
@@ -506,14 +503,11 @@ export default async function InternationalSchoolIgcsePage() {
 
         <dl className="mt-8 space-y-6">
           {FAQS.map((faq) => (
-            <div
-              key={faq.question}
-              className="rounded-2xl border border-cream-200/12 bg-cream-50/[0.03] p-5"
-            >
-              <dt className="font-serif text-lg font-semibold text-cream-50 leading-snug">
+            <div key={faq.question} className="rounded-2xl border border-border/60 bg-card p-5">
+              <dt className="font-heading text-lg font-semibold text-foreground leading-snug">
                 {faq.question}
               </dt>
-              <dd className="mt-2 text-sm text-cream-100/80 leading-relaxed">{faq.answer}</dd>
+              <dd className="mt-2 text-sm text-muted-foreground leading-relaxed">{faq.answer}</dd>
             </div>
           ))}
         </dl>
@@ -566,8 +560,8 @@ function Section({
   return (
     <section
       aria-labelledby={`${id}-heading`}
-      className={`bg-ink-950 ${
-        divider ? 'border-t border-cream-200/10 pt-12 sm:pt-16' : 'pt-4 sm:pt-6'
+      className={`bg-background ${
+        divider ? 'border-t border-border/60 pt-12 sm:pt-16' : 'pt-4 sm:pt-6'
       } pb-12 sm:pb-16`}
     >
       <div className="mx-auto max-w-[1100px] px-4 sm:px-6">{children}</div>
@@ -579,7 +573,7 @@ function SectionHeading({ id, children }: { id: string; children: React.ReactNod
   return (
     <h2
       id={id}
-      className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-cream-50 leading-tight"
+      className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight"
     >
       {children}
     </h2>
@@ -587,7 +581,10 @@ function SectionHeading({ id, children }: { id: string; children: React.ReactNod
 }
 
 function Eyebrow({ children, tone }: { children: React.ReactNode; tone: 'emerald' | 'clay' }) {
-  const colour = tone === 'emerald' ? 'text-emerald-300' : 'text-clay-300'
+  const colour =
+    tone === 'emerald'
+      ? 'text-emerald-700 dark:text-emerald-300'
+      : 'text-clay-700 dark:text-clay-300'
   return (
     <p className={`font-mono text-[11px] tracking-[0.14em] uppercase mb-3 ${colour}`}>{children}</p>
   )
@@ -595,7 +592,7 @@ function Eyebrow({ children, tone }: { children: React.ReactNode; tone: 'emerald
 
 function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 space-y-4 text-sm sm:text-base text-cream-100/80 leading-relaxed [&_strong]:text-cream-50 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-clay-300">
+    <div className="mt-4 space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed [&_strong]:text-foreground [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-clay-600 dark:[&_a:hover]:text-clay-300">
       {children}
     </div>
   )

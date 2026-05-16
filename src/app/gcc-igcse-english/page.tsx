@@ -173,7 +173,7 @@ export default async function GccIgcseEnglishPage() {
     return parts.map((p, i) => {
       const m = p.match(/^\*\*(.+)\*\*$/)
       return m ? (
-        <strong key={i} className="text-cream-50">
+        <strong key={i} className="text-foreground">
           {m[1]}
         </strong>
       ) : (
@@ -191,7 +191,7 @@ export default async function GccIgcseEnglishPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-ink-950">
+    <main className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         nonce={nonce}
         items={[
@@ -202,47 +202,47 @@ export default async function GccIgcseEnglishPage() {
       <FAQPageJsonLd nonce={nonce} faqs={FAQS} />
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
-      <section aria-labelledby="page-heading" className="bg-ink-950 pb-10 sm:pb-14">
+      <section aria-labelledby="page-heading" className="bg-background pb-10 sm:pb-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 pt-12 sm:pt-16">
-          <nav className="mb-6 text-xs text-cream-200/55" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-cream-50 underline-offset-4 hover:underline">
+          <nav className="mb-6 text-xs text-muted-foreground" aria-label="Breadcrumb">
+            <Link href="/" className="hover:text-foreground underline-offset-4 hover:underline">
               {bcHome}
             </Link>
             <span className="mx-2" aria-hidden="true">
               /
             </span>
-            <span className="text-cream-100/85">{bcCurrent}</span>
+            <span className="text-foreground/85">{bcCurrent}</span>
           </nav>
 
-          <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-300">
+          <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-600 dark:text-emerald-300">
             {eyebrow}
           </p>
           <h1
             id="page-heading"
-            className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-cream-50 leading-tight"
+            className="font-heading text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground leading-tight"
           >
             {h1}
           </h1>
-          <p className="mt-4 max-w-2xl text-sm sm:text-base text-cream-100/80 leading-relaxed">
+          <p className="mt-4 max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
             {intro}
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
             <Link
               href="/board-select"
-              className="inline-flex items-center rounded-lg border border-emerald-400/40 bg-emerald-400/[0.08] px-4 py-2 text-sm font-medium text-emerald-200 transition-colors hover:bg-emerald-400/[0.12]"
+              className="inline-flex items-center rounded-lg border border-emerald-500/40 bg-emerald-500/[0.12] px-4 py-2 text-sm font-medium text-emerald-700 transition-colors hover:bg-emerald-500/[0.18] dark:text-emerald-200"
             >
               {ctaBoardSelect}
             </Link>
             <Link
               href="/igcse/edexcel"
-              className="inline-flex items-center rounded-lg border border-cream-200/20 bg-cream-50/[0.04] px-4 py-2 text-sm font-medium text-cream-100 transition-colors hover:border-cream-200/35 hover:bg-cream-50/[0.06]"
+              className="inline-flex items-center rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-muted-foreground/40 hover:bg-muted"
             >
               {ctaEdexcelHub}
             </Link>
             <Link
               href="/igcse/cambridge/0500"
-              className="inline-flex items-center rounded-lg border border-cream-200/20 bg-cream-50/[0.04] px-4 py-2 text-sm font-medium text-cream-100 transition-colors hover:border-cream-200/35 hover:bg-cream-50/[0.06]"
+              className="inline-flex items-center rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-muted-foreground/40 hover:bg-muted"
             >
               {ctaCambridgeHub}
             </Link>
@@ -251,13 +251,13 @@ export default async function GccIgcseEnglishPage() {
       </section>
 
       {/* ── Body ────────────────────────────────────────────────────── */}
-      <article className="bg-ink-950 border-t border-cream-200/10">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 sm:py-16 space-y-12 text-cream-100/85 text-sm sm:text-base leading-relaxed">
+      <article className="bg-background border-t border-border/60">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 sm:py-16 space-y-12 text-muted-foreground text-sm sm:text-base leading-relaxed">
           {/* British curriculum schools in the GCC */}
           <section aria-labelledby="curriculum-heading" className="space-y-4">
             <h2
               id="curriculum-heading"
-              className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50"
+              className="font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground"
             >
               {curriculumH2}
             </h2>
@@ -269,20 +269,22 @@ export default async function GccIgcseEnglishPage() {
           <section aria-labelledby="specs-heading" className="space-y-4">
             <h2
               id="specs-heading"
-              className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50"
+              className="font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground"
             >
               {specsH2}
             </h2>
             <p>{specsIntro}</p>
 
             <div className="space-y-4">
-              <div className="rounded-xl border border-cream-200/10 bg-cream-50/[0.02] p-5">
-                <h3 className="font-serif text-lg font-semibold text-cream-50">{spec4et1Title}</h3>
+              <div className="rounded-xl border border-border/60 bg-card p-5">
+                <h3 className="font-heading text-lg font-semibold text-foreground">
+                  {spec4et1Title}
+                </h3>
                 <p className="mt-2">
                   {spec4et1Body}{' '}
                   <Link
                     href="/igcse/edexcel"
-                    className="text-emerald-300 underline-offset-4 hover:underline"
+                    className="text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
                   >
                     {spec4et1Link}
                   </Link>
@@ -290,13 +292,15 @@ export default async function GccIgcseEnglishPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-cream-200/10 bg-cream-50/[0.02] p-5">
-                <h3 className="font-serif text-lg font-semibold text-cream-50">{spec4ea1Title}</h3>
+              <div className="rounded-xl border border-border/60 bg-card p-5">
+                <h3 className="font-heading text-lg font-semibold text-foreground">
+                  {spec4ea1Title}
+                </h3>
                 <p className="mt-2">
                   {spec4ea1Body}{' '}
                   <Link
                     href="/igcse/edexcel-lang"
-                    className="text-emerald-300 underline-offset-4 hover:underline"
+                    className="text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
                   >
                     {spec4ea1Link}
                   </Link>
@@ -304,13 +308,15 @@ export default async function GccIgcseEnglishPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-cream-200/10 bg-cream-50/[0.02] p-5">
-                <h3 className="font-serif text-lg font-semibold text-cream-50">{spec0500Title}</h3>
+              <div className="rounded-xl border border-border/60 bg-card p-5">
+                <h3 className="font-heading text-lg font-semibold text-foreground">
+                  {spec0500Title}
+                </h3>
                 <p className="mt-2">
                   {spec0500Body}{' '}
                   <Link
                     href="/igcse/cambridge/0500"
-                    className="text-emerald-300 underline-offset-4 hover:underline"
+                    className="text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
                   >
                     {spec0500Link}
                   </Link>
@@ -318,13 +324,15 @@ export default async function GccIgcseEnglishPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-cream-200/10 bg-cream-50/[0.02] p-5">
-                <h3 className="font-serif text-lg font-semibold text-cream-50">{spec0990Title}</h3>
+              <div className="rounded-xl border border-border/60 bg-card p-5">
+                <h3 className="font-heading text-lg font-semibold text-foreground">
+                  {spec0990Title}
+                </h3>
                 <p className="mt-2">
                   {spec0990Body}{' '}
                   <Link
                     href="/igcse/cambridge/0990"
-                    className="text-emerald-300 underline-offset-4 hover:underline"
+                    className="text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
                   >
                     {spec0990Link}
                   </Link>
@@ -338,12 +346,12 @@ export default async function GccIgcseEnglishPage() {
           <section aria-labelledby="how-helps-heading" className="space-y-4">
             <h2
               id="how-helps-heading"
-              className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50"
+              className="font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground"
             >
               {helpH2}
             </h2>
             <p>{helpIntro}</p>
-            <ul className="list-disc space-y-2 pl-5 text-cream-100/85">
+            <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
               <li>{renderBold(helpLi1)}</li>
               <li>{renderBold(helpLi2)}</li>
               <li>{renderBold(helpLi3)}</li>
@@ -353,28 +361,28 @@ export default async function GccIgcseEnglishPage() {
               {helpJumpIn}{' '}
               <Link
                 href="/igcse/edexcel"
-                className="text-emerald-300 underline-offset-4 hover:underline"
+                className="text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
               >
                 Edexcel 4ET1
               </Link>
               ,{' '}
               <Link
                 href="/igcse/edexcel-lang"
-                className="text-emerald-300 underline-offset-4 hover:underline"
+                className="text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
               >
                 Edexcel 4EA1
               </Link>
               ,{' '}
               <Link
                 href="/igcse/cambridge/0500"
-                className="text-emerald-300 underline-offset-4 hover:underline"
+                className="text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
               >
                 Cambridge 0500
               </Link>
               , {/* or */}
               <Link
                 href="/igcse/cambridge/0990"
-                className="text-emerald-300 underline-offset-4 hover:underline"
+                className="text-emerald-700 underline-offset-4 hover:underline dark:text-emerald-300"
               >
                 Cambridge 0990
               </Link>
@@ -386,14 +394,14 @@ export default async function GccIgcseEnglishPage() {
           <section aria-labelledby="timezone-heading" className="space-y-4">
             <h2
               id="timezone-heading"
-              className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50"
+              className="font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground"
             >
               {tzH2}
             </h2>
             <p>{tzBody1}</p>
             <p>{tzBody2}</p>
-            <div className="rounded-xl border border-cream-200/10 bg-cream-50/[0.02] p-5">
-              <h3 className="font-serif text-lg font-semibold text-cream-50">{tzTipTitle}</h3>
+            <div className="rounded-xl border border-border/60 bg-card p-5">
+              <h3 className="font-heading text-lg font-semibold text-foreground">{tzTipTitle}</h3>
               <p className="mt-2">{tzTipBody}</p>
             </div>
           </section>
@@ -402,14 +410,14 @@ export default async function GccIgcseEnglishPage() {
           <section aria-labelledby="week-heading" className="space-y-4">
             <h2
               id="week-heading"
-              className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50"
+              className="font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground"
             >
               {weekH2}
             </h2>
             <p>{weekBody1}</p>
             <p>{weekBody2}</p>
-            <div className="rounded-xl border border-cream-200/10 bg-cream-50/[0.02] p-5">
-              <h3 className="font-serif text-lg font-semibold text-cream-50">{weekTipTitle}</h3>
+            <div className="rounded-xl border border-border/60 bg-card p-5">
+              <h3 className="font-heading text-lg font-semibold text-foreground">{weekTipTitle}</h3>
               <p className="mt-2">{weekTipBody}</p>
             </div>
           </section>
@@ -418,25 +426,25 @@ export default async function GccIgcseEnglishPage() {
           <section aria-labelledby="faq-heading" className="space-y-4">
             <h2
               id="faq-heading"
-              className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50"
+              className="font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground"
             >
               {faqH2}
             </h2>
-            <div className="divide-y divide-cream-200/10 rounded-xl border border-cream-200/10 bg-cream-50/[0.02]">
+            <div className="divide-y divide-border/60 rounded-xl border border-border/60 bg-card">
               {FAQS.map((faq) => (
                 <details key={faq.question} className="group p-5">
-                  <summary className="cursor-pointer list-none font-serif text-base font-semibold text-cream-50 marker:hidden">
+                  <summary className="cursor-pointer list-none font-heading text-base font-semibold text-foreground marker:hidden">
                     <span className="flex items-start justify-between gap-4">
                       <span>{faq.question}</span>
                       <span
                         aria-hidden="true"
-                        className="mt-1 shrink-0 text-cream-200/60 transition-transform group-open:rotate-45"
+                        className="mt-1 shrink-0 text-muted-foreground transition-transform group-open:rotate-45"
                       >
                         +
                       </span>
                     </span>
                   </summary>
-                  <p className="mt-3 text-cream-100/80 leading-relaxed">{faq.answer}</p>
+                  <p className="mt-3 text-muted-foreground leading-relaxed">{faq.answer}</p>
                 </details>
               ))}
             </div>
@@ -446,7 +454,7 @@ export default async function GccIgcseEnglishPage() {
           <section aria-labelledby="cta-heading" className="space-y-4">
             <h2
               id="cta-heading"
-              className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50"
+              className="font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground"
             >
               {ctaH2}
             </h2>
@@ -454,7 +462,7 @@ export default async function GccIgcseEnglishPage() {
             <div>
               <Link
                 href="/board-select"
-                className="inline-flex items-center rounded-lg border border-emerald-400/40 bg-emerald-400/[0.08] px-5 py-2.5 text-sm font-medium text-emerald-200 transition-colors hover:bg-emerald-400/[0.12]"
+                className="inline-flex items-center rounded-lg border border-emerald-500/40 bg-emerald-500/[0.12] px-5 py-2.5 text-sm font-medium text-emerald-700 transition-colors hover:bg-emerald-500/[0.18] dark:text-emerald-200"
               >
                 {ctaButton}
               </Link>
@@ -464,23 +472,20 @@ export default async function GccIgcseEnglishPage() {
       </article>
 
       {/* ── Email capture ───────────────────────────────────────────── */}
-      <section
-        aria-labelledby="launch-list-heading"
-        className="border-t border-cream-200/10 bg-cream-50/[0.02]"
-      >
+      <section aria-labelledby="launch-list-heading" className="border-t border-border/60 bg-card">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 sm:py-16">
           <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-xl">
-              <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-300">
+              <p className="font-mono text-[11px] tracking-[0.14em] uppercase mb-3 text-emerald-600 dark:text-emerald-300">
                 {launchEyebrow}
               </p>
               <h2
                 id="launch-list-heading"
-                className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-cream-50 leading-tight"
+                className="font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground leading-tight"
               >
                 {launchH2}
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-cream-100/75 leading-relaxed">
+              <p className="mt-3 text-sm sm:text-base text-muted-foreground leading-relaxed">
                 {launchBody}
               </p>
             </div>
