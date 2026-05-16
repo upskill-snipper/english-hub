@@ -68,6 +68,26 @@ export default async function KS3LandingPage() {
       <h1>{tr[1]}</h1>
       <p className="lead">{tr[2]}</p>
 
+      <div className="not-prose my-6">
+        <Link
+          href="/ks3/ilowersecondary"
+          className="group block rounded-2xl border border-primary/30 bg-primary/[0.04] p-5 transition-colors hover:border-primary/50 hover:bg-primary/[0.07]"
+        >
+          <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary">
+            Exam preparation
+          </p>
+          <h3 className="mt-1 text-lg font-semibold tracking-tight text-foreground">
+            iLowerSecondary English exam hub →
+          </h3>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Sitting the Pearson Edexcel International Award in Lower Secondary English (LEH11)? The
+            complete student hub: the specification and mark scheme, skill masterclasses for every
+            reading and writing objective, question-type guides, six full original practice papers,
+            a quiz, grammar lab and study plan.
+          </p>
+        </Link>
+      </div>
+
       <h2>{tr[3]}</h2>
       <p>{tr[4]}</p>
       <ul>
