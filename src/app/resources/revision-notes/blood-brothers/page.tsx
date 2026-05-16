@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
 import { AITextArea } from '@/components/AITextArea'
 
@@ -875,12 +876,12 @@ export default function BloodBrothersStudyGuide() {
 
       {/* Back link */}
       <div className="pt-4 text-sm">
-        <a
+        <Link
           href="/resources/revision-notes"
           className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
         >
           &larr; Back to Revision Notes
-        </a>
+        </Link>
       </div>
 
       {/* Copyright notice */}
