@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       '25 essential quotations from Great Expectations by Charles Dickens with speaker, context and detailed analysis for AQA GCSE English Literature.',
   },
-  title: 'Great Expectations Key Quotes | The English Hub',
+  title: 'Great Expectations Key Quotes',
   description:
     '25 essential quotations from Great Expectations by Charles Dickens with speaker, context and detailed analysis for AQA GCSE English Literature.',
   alternates: {

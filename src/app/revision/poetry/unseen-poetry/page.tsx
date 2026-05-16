@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description:
       'How to read and analyse an unseen poem in your GCSE English Literature exam. Approach, language, structure, comparison framework, practice prompts.',
   },
-  title: 'Unseen poetry — GCSE English Literature revision — The English Hub',
+  title: 'Unseen poetry — GCSE English Literature revision',
   description:
     'How to read and analyse an unseen poem in your GCSE English Literature exam. Approach, language, structure, comparison framework, practice prompts.',
   alternates: {

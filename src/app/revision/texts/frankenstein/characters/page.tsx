@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'In-depth GCSE character analysis for Frankenstein by Mary Shelley: Victor Frankenstein, The Creature, Robert Walton, Elizabeth Lavenza, Henry Clerval, Justine Moritz, and the De Lacey family.',
   },
-  title: 'Frankenstein Characters — Deep Study | The English Hub',
+  title: 'Frankenstein Characters — Deep Study',
   description:
     'In-depth GCSE character analysis for Frankenstein by Mary Shelley: Victor Frankenstein, The Creature, Robert Walton, Elizabeth Lavenza, Henry Clerval, Justine Moritz, and the De Lacey family.',
   alternates: {

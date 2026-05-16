@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       'Detailed theme analysis for A View from the Bridge by Arthur Miller: Justice vs Law, Masculinity, Immigration, Betrayal, Love and The American Dream.',
   },
-  title: 'A View from the Bridge — Themes | The English Hub',
+  title: 'A View from the Bridge — Themes',
   description:
     'Detailed theme analysis for A View from the Bridge by Arthur Miller: Justice vs Law, Masculinity, Immigration, Betrayal, Love and The American Dream.',
   alternates: {

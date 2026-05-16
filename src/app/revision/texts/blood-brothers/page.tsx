@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Blood Brothers revision guide — themes, characters, key quotes — The English Hub',
     description: 'Blood Brothers GCSE revision — Willy Russell',
   },
-  title: 'Blood Brothers revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Blood Brothers revision guide — themes, characters, key quotes',
   description:
     "Blood Brothers GCSE revision — Willy Russell's musical play act-by-act with characters, themes, key quotes and essay plans. Aligned to Edexcel and Eduqas.",
   alternates: {

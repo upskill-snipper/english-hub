@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Five model GCSE essay plans for Frankenstein by Mary Shelley covering creation, monstrosity, isolation, ambition, and the Creature as a sympathetic figure.',
   },
-  title: 'Frankenstein Essay Plans — GCSE Revision | The English Hub',
+  title: 'Frankenstein Essay Plans — GCSE Revision',
   description:
     'Five model GCSE essay plans for Frankenstein by Mary Shelley covering creation, monstrosity, isolation, ambition, and the Creature as a sympathetic figure.',
   alternates: {

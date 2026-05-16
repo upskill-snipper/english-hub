@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Detailed act-by-act analysis of Blood Brothers by Willy Russell with key quotes and examiner-focused commentary.',
   },
-  title: 'Blood Brothers — Act-by-Act Analysis | The English Hub',
+  title: 'Blood Brothers — Act-by-Act Analysis',
   description:
     'Detailed act-by-act analysis of Blood Brothers by Willy Russell with key quotes and examiner-focused commentary.',
   alternates: {

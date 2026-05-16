@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.',
   },
-  title: 'Pearson IGCSE Poetry Anthology (4EA1) — Section B — The English Hub',
+  title: 'Pearson IGCSE Poetry Anthology (4EA1) — Section B',
   description:
     'All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.',
   alternates: {

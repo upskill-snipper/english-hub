@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Frankenstein revision guide — themes, characters, key quotes — The English Hub',
     description: 'Frankenstein GCSE revision — Shelley',
   },
-  title: 'Frankenstein revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Frankenstein revision guide — themes, characters, key quotes',
   description:
     "Frankenstein GCSE revision — Shelley's Gothic novel by chapter with characters, themes, key quotes and essay plans. Aligned to AQA, Edexcel, OCR.",
   alternates: {

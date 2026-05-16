@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description:
       'Detailed analysis of all three acts of An Inspector Calls by J.B. Priestley: key quotes, language techniques, dramatic devices and structural analysis.',
   },
-  title: 'An Inspector Calls Acts Analysis | The English Hub',
+  title: 'An Inspector Calls Acts Analysis',
   description:
     'Detailed analysis of all three acts of An Inspector Calls by J.B. Priestley: key quotes, language techniques, dramatic devices and structural analysis.',
   alternates: {

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       'Analysis of Checking Out Me History for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.',
   },
-  title: 'Checking Out Me History — AQA Power and Conflict | The English Hub',
+  title: 'Checking Out Me History — AQA Power and Conflict',
   description:
     'Analysis of Checking Out Me History for AQA GCSE English Literature Power and Conflict cluster: themes, language, structure, and comparisons.',
   alternates: {

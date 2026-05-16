@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Anita and Me revision guide — themes, characters, key quotes — The English Hub',
     description: 'Anita and Me GCSE revision — Meera Syal',
   },
-  title: 'Anita and Me revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Anita and Me revision guide — themes, characters, key quotes',
   description:
     "Anita and Me GCSE revision — Meera Syal's 1996 bildungsroman with plot, characters, themes, context and key quotes. AQA, Edexcel, OCR and Eduqas-aligned.",
   alternates: {

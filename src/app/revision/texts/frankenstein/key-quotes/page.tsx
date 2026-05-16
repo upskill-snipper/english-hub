@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Twenty-five key quotations from Frankenstein by Mary Shelley organised by theme with detailed analysis for GCSE revision.',
   },
-  title: 'Frankenstein Key Quotes by Theme | The English Hub',
+  title: 'Frankenstein Key Quotes by Theme',
   description:
     'Twenty-five key quotations from Frankenstein by Mary Shelley organised by theme with detailed analysis for GCSE revision.',
   alternates: {

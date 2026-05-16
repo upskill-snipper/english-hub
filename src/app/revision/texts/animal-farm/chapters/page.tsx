@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description:
       'Chapter-by-chapter analysis of Animal Farm by George Orwell. Key events, character development, allegory, and short quotations for GCSE revision.',
   },
-  title: 'Animal Farm Chapter Analysis — All 10 Chapters | The English Hub',
+  title: 'Animal Farm Chapter Analysis — All 10 Chapters',
   description:
     'Chapter-by-chapter analysis of Animal Farm by George Orwell. Key events, character development, allegory, and short quotations for GCSE revision.',
   alternates: {

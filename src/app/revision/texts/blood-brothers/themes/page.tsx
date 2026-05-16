@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Detailed theme analysis for Blood Brothers by Willy Russell: Class, Nature vs Nurture, Superstition, Friendship, Violence and Fate.',
   },
-  title: 'Blood Brothers — Themes | The English Hub',
+  title: 'Blood Brothers — Themes',
   description:
     'Detailed theme analysis for Blood Brothers by Willy Russell: Class, Nature vs Nurture, Superstition, Friendship, Violence and Fate.',
   alternates: {

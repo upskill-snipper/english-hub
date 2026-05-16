@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'In-depth character analysis for Blood Brothers by Willy Russell: Mickey, Eddie, Mrs Johnstone, Mrs Lyons, Linda, Narrator and Sammy.',
   },
-  title: 'Blood Brothers — Character Analysis | The English Hub',
+  title: 'Blood Brothers — Character Analysis',
   description:
     'In-depth character analysis for Blood Brothers by Willy Russell: Mickey, Eddie, Mrs Johnstone, Mrs Lyons, Linda, Narrator and Sammy.',
   alternates: {

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'Detailed analysis of key chapters in Great Expectations by Charles Dickens: the graveyard, Satis House, London, the revelation and the ending.',
   },
-  title: 'Great Expectations Key Chapters | The English Hub',
+  title: 'Great Expectations Key Chapters',
   description:
     'Detailed analysis of key chapters in Great Expectations by Charles Dickens: the graveyard, Satis House, London, the revelation and the ending.',
   alternates: {

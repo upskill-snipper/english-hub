@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for A Streetcar Named Desire by Tennessee Williams: plot, characters, themes, context and key quotations.',
   },
-  title: 'A Streetcar Named Desire — Study Guide | The English Hub',
+  title: 'A Streetcar Named Desire — Study Guide',
   description:
     'In-depth study guide for A Streetcar Named Desire by Tennessee Williams: plot, characters, themes, context and key quotations.',
   alternates: {

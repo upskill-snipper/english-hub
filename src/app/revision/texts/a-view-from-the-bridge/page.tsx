@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       'A View from the Bridge revision guide — themes, characters, key quotes — The English Hub',
     description: 'A View from the Bridge IGCSE revision — Miller',
   },
-  title: 'A View from the Bridge revision guide — themes, characters, key quotes — The English Hub',
+  title: 'A View from the Bridge revision guide — themes, characters, key quotes',
   description:
     "A View from the Bridge IGCSE revision — Miller's tragedy with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",
   alternates: {

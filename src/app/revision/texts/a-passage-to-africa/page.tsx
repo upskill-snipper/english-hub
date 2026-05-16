@@ -7,7 +7,7 @@ import { StubStudyGuide } from '../_components/stub-study-guide'
 const SLUG = 'a-passage-to-africa'
 
 export const metadata: Metadata = {
-  title: 'A Passage to Africa — George Alagiah | The English Hub',
+  title: 'A Passage to Africa — George Alagiah',
   description:
     'Study guide stub for A Passage to Africa by George Alagiah (1955–2023). Pearson Edexcel International GCSE English Language A (4EA1) Section A non-fiction anthology. Rights now held by the Alagiah estate via Pearson Education.',
   alternates: {

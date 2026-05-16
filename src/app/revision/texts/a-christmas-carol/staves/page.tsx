@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'In-depth analysis of every stave in A Christmas Carol by Charles Dickens: plot, language, key quotations and exam-ready commentary.',
   },
-  title: 'A Christmas Carol — All Five Staves Analysed | The English Hub',
+  title: 'A Christmas Carol — All Five Staves Analysed',
   description:
     'In-depth analysis of every stave in A Christmas Carol by Charles Dickens: plot, language, key quotations and exam-ready commentary.',
   alternates: {

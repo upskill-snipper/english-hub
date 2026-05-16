@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'The Curious Incident revision guide — themes, characters, key quotes — The English Hub',
     description: 'The Curious Incident IGCSE revision — Mark Haddon',
   },
-  title: 'The Curious Incident revision guide — themes, characters, key quotes — The English Hub',
+  title: 'The Curious Incident revision guide — themes, characters, key quotes',
   description:
     "The Curious Incident IGCSE revision — Mark Haddon's 2003 novel with plot, characters, themes, context and key quotes. Pearson Edexcel IGCSE 4ET1-aligned.",
   alternates: {

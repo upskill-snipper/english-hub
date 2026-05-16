@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Twenty essential quotations from Blood Brothers by Willy Russell with speaker, context and detailed analysis.',
   },
-  title: 'Blood Brothers — Key Quotes | The English Hub',
+  title: 'Blood Brothers — Key Quotes',
   description:
     'Twenty essential quotations from Blood Brothers by Willy Russell with speaker, context and detailed analysis.',
   alternates: {

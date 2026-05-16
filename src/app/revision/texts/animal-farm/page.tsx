@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Animal Farm revision guide — themes, characters, key quotes — The English Hub',
     description: 'Animal Farm GCSE revision — Orwell',
   },
-  title: 'Animal Farm revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Animal Farm revision guide — themes, characters, key quotes',
   description:
     "Animal Farm GCSE revision — Orwell's allegorical novella by chapter with characters, themes, context, key quotes and essay plans. AQA, Edexcel and OCR.",
   alternates: {

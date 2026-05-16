@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/war-photographer',
   },
-  title: 'War Photographer -- Carol Ann Duffy | The English Hub',
+  title: 'War Photographer -- Carol Ann Duffy',
   description:
     'Interactive GCSE study guide for War Photographer by Carol Ann Duffy. Annotations, key quotes, language analysis, form & structure, and comparison poems.',
 }

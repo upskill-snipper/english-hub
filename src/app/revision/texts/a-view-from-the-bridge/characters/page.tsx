@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       'In-depth character analysis for A View from the Bridge by Arthur Miller: Eddie Carbone, Beatrice, Catherine, Marco, Rodolpho and Alfieri.',
   },
-  title: 'A View from the Bridge — Character Analysis | The English Hub',
+  title: 'A View from the Bridge — Character Analysis',
   description:
     'In-depth character analysis for A View from the Bridge by Arthur Miller: Eddie Carbone, Beatrice, Catherine, Marco, Rodolpho and Alfieri.',
   alternates: {

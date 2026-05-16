@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Great Expectations revision guide — themes, characters, key quotes — The English Hub',
     description: 'Great Expectations GCSE revision — Dickens',
   },
-  title: 'Great Expectations revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Great Expectations revision guide — themes, characters, key quotes',
   description:
     "Great Expectations GCSE revision — Dickens's bildungsroman by chapter with characters, themes, key quotes and essay plans. Aligned to the AQA spec.",
   alternates: {

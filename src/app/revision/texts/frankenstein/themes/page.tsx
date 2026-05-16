@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'In-depth GCSE theme analysis for Frankenstein by Mary Shelley: Creation & Responsibility, Nature vs Nurture, Isolation, Knowledge, Ambition, and Monstrosity.',
   },
-  title: 'Frankenstein Themes — Deep Study | The English Hub',
+  title: 'Frankenstein Themes — Deep Study',
   description:
     'In-depth GCSE theme analysis for Frankenstein by Mary Shelley: Creation & Responsibility, Nature vs Nurture, Isolation, Knowledge, Ambition, and Monstrosity.',
   alternates: {

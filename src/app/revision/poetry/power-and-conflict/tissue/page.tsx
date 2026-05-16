@@ -15,7 +15,7 @@ export const metadata = {
       'Interactive study guide for Tissue by Imtiaz Dharker. GCSE Power and Conflict poetry analysis with annotations, key quotes, language devices, and comparisons.',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/tissue' },
-  title: 'Tissue -- Imtiaz Dharker -- The English Hub',
+  title: 'Tissue -- Imtiaz Dharker',
   description:
     'Interactive study guide for Tissue by Imtiaz Dharker. GCSE Power and Conflict poetry analysis with annotations, key quotes, language devices, and comparisons.',
 }

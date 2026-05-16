@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       'Twenty essential quotations from A View from the Bridge by Arthur Miller with speaker, context and detailed analysis.',
   },
-  title: 'A View from the Bridge — Key Quotes | The English Hub',
+  title: 'A View from the Bridge — Key Quotes',
   description:
     'Twenty essential quotations from A View from the Bridge by Arthur Miller with speaker, context and detailed analysis.',
   alternates: {

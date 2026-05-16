@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description:
       'Explore the key themes in Animal Farm: power and corruption, class, language and propaganda, revolution, education and loyalty. GCSE revision with quotes and exam guidance.',
   },
-  title: 'Animal Farm Themes — In-Depth Analysis | The English Hub',
+  title: 'Animal Farm Themes — In-Depth Analysis',
   description:
     'Explore the key themes in Animal Farm: power and corruption, class, language and propaganda, revolution, education and loyalty. GCSE revision with quotes and exam guidance.',
   alternates: {

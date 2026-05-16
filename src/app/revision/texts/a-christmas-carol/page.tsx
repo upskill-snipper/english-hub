@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'A Christmas Carol revision guide — themes, characters, key quotes — The English Hub',
     description: 'A Christmas Carol GCSE revision — Dickens',
   },
-  title: 'A Christmas Carol revision guide — themes, characters, key quotes — The English Hub',
+  title: 'A Christmas Carol revision guide — themes, characters, key quotes',
   description:
     "A Christmas Carol GCSE revision — Dickens's novella by stave with characters, themes, context, key quotes and essays. Aligned to AQA, Edexcel and Eduqas.",
   alternates: {

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'An Inspector Calls revision guide — themes, characters, key quotes — The English Hub',
     description: 'An Inspector Calls GCSE revision — Priestley',
   },
-  title: 'An Inspector Calls revision guide — themes, characters, key quotes — The English Hub',
+  title: 'An Inspector Calls revision guide — themes, characters, key quotes',
   description:
     "An Inspector Calls GCSE revision — Priestley's play act-by-act with characters, themes, context, key quotes and essays. AQA, Edexcel, OCR, Eduqas.",
   alternates: {

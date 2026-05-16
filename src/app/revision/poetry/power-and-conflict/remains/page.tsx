@@ -13,7 +13,7 @@ export const metadata = {
     description: 'Interactive study of ',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/remains' },
-  title: 'Remains -- Simon Armitage -- The English Hub',
+  title: 'Remains -- Simon Armitage',
   description:
     'Interactive study of "Remains" by Simon Armitage. Annotations, key quotes, language analysis, form & structure, and comparison poems for GCSE English Literature.',
 }

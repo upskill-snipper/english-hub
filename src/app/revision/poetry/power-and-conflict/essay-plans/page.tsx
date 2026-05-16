@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/revision/poetry/power-and-conflict/essay-plans',
   },
-  title: 'Essay Plans – Power & Conflict Poetry | The English Hub',
+  title: 'Essay Plans – Power & Conflict Poetry',
   description:
     'Ten ready-made essay plans for AQA Power & Conflict poetry comparison questions. Grade 5 and Grade 9 approaches with full PEEL paragraphs.',
 }

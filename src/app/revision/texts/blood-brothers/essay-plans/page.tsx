@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Five exam-ready essay plans for Blood Brothers by Willy Russell with thesis, paragraph outlines and key quotations.',
   },
-  title: 'Blood Brothers — Essay Plans | The English Hub',
+  title: 'Blood Brothers — Essay Plans',
   description:
     'Five exam-ready essay plans for Blood Brothers by Willy Russell with thesis, paragraph outlines and key quotations.',
   alternates: {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'In-depth GCSE analysis of key chapters in Frankenstein by Mary Shelley: Letters, Chapters 1-5 (creation), Chapter 10 (creature speaks), Chapters 16-17 (the bargain), and Chapters 20-24 (pursuit and destruction).',
   },
-  title: 'Frankenstein Key Chapters Analysed | The English Hub',
+  title: 'Frankenstein Key Chapters Analysed',
   description:
     'In-depth GCSE analysis of key chapters in Frankenstein by Mary Shelley: Letters, Chapters 1-5 (creation), Chapter 10 (creature speaks), Chapters 16-17 (the bargain), and Chapters 20-24 (pursuit and destruction).',
   alternates: {
