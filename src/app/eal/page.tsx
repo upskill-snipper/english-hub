@@ -66,6 +66,23 @@ export default function EALLandingPage() {
           : 'Focused lessons on the points Arabic L1 students most often stumble on when studying English for UK exams: word order, tenses, articles, prepositions, common errors. Every lesson is bilingual.'}
       </p>
 
+      <Link
+        href="/games"
+        className="not-prose my-6 block rounded-xl border border-primary/30 bg-primary/[0.04] p-5 transition-colors hover:border-primary/50 hover:bg-primary/[0.07]"
+      >
+        <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-primary">
+          {locale === 'ar' ? 'تعلّم باللعب' : 'Learn through play'}
+        </p>
+        <h2 className="mt-1 text-lg font-bold tracking-tight text-foreground">
+          {locale === 'ar' ? 'العاب الإنجليزية للمبتدئين ←' : 'English games for beginners →'}
+        </h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          {locale === 'ar'
+            ? 'أكثر من ١٥ لعبة سهلة وممتعة: مطابقة الصور بالكلمات، أدوات التعريف، الأزمنة، حروف الجر، الأرقام والوقت، والمزيد — مع تصحيح فوري ونقاط.'
+            : '18+ friendly games: picture–word match, articles, the verb “to be”, tenses, prepositions, numbers & time, phrasal verbs and more — with instant feedback and scores.'}
+        </p>
+      </Link>
+
       {CATEGORY_ORDER.map((cat) => {
         const topics = groups[cat]
         if (topics.length === 0) return null

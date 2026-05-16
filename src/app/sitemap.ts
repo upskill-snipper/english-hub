@@ -1487,5 +1487,54 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: p === '/ks3' || p === '/ks3/ilowersecondary' ? 0.8 : 0.6,
   }))
 
-  return [...staticRoutes, ...courseRoutes, ...blogPostRoutes, ...ks3Routes]
+  // Standalone games — GCSE/IGCSE plus the EAL & KS3 literacy games.
+  const gameSlugs: string[] = [
+    'theme-matcher',
+    'speed-analysis',
+    'vocabulary-builder',
+    'spelling-bee',
+    'comprehension-challenge',
+    'grade-climber',
+    'quote-detective',
+    // EAL & new-to-English
+    'picture-word-match',
+    'everyday-vocab-flashcards',
+    'article-a-an-the',
+    'plural-builder',
+    'to-be-conjugation',
+    'numbers-and-time',
+    'days-months-seasons',
+    'classroom-objects',
+    'greetings-dialogue',
+    'capital-letter-quest',
+    'tricky-word-spelling',
+    'tense-timeline',
+    'prepositions-of-place',
+    'phrasal-verbs-match',
+    'question-formation',
+    'common-error-fixer',
+    'comparatives-superlatives',
+    'collocations-challenge',
+    // KS3 literacy
+    'word-class-sorter',
+    'punctuation-repair',
+    'apostrophe-ace',
+    'homophone-hero',
+    'sentence-builder',
+    'prefix-suffix-lab',
+    'synonym-shuffle',
+    'spelling-patterns',
+    'reading-detective',
+    'figurative-language-finder',
+    'dictionary-skills',
+    'paragraph-jumble',
+  ]
+  const gameRoutes: MetadataRoute.Sitemap = gameSlugs.map((s) => ({
+    url: `${base}/games/${s}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }))
+
+  return [...staticRoutes, ...courseRoutes, ...blogPostRoutes, ...ks3Routes, ...gameRoutes]
 }

@@ -1048,6 +1048,307 @@ const GAMES: GameDef[] = [
 ]
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// EAL & KS3 GAMES — level-appropriate games for learners new to English
+// and for Key Stage 3 literacy. Each is a standalone route.
+// ═══════════════════════════════════════════════════════════════════════════════
+
+const mkGame = (
+  id: string,
+  title: string,
+  description: string,
+  icon: React.ReactNode,
+  difficulty: 'Easy' | 'Medium' | 'Hard',
+  color: string,
+  gradient: string,
+): GameDef => ({
+  id,
+  title,
+  description,
+  icon,
+  difficulty,
+  locked: false,
+  color,
+  gradient,
+  href: `/games/${id}`,
+})
+
+const EAL_GAMES: GameDef[] = [
+  mkGame(
+    'picture-word-match',
+    'Picture Word Match',
+    'Match the picture to the right English word. Everyday vocabulary for beginners.',
+    <Layers className="size-6" />,
+    'Easy',
+    'text-emerald-400',
+    'from-emerald-500/20 to-emerald-500/5',
+  ),
+  mkGame(
+    'everyday-vocab-flashcards',
+    'Everyday Vocabulary',
+    'Flip-card recall of the most useful everyday words, with spaced repetition.',
+    <Brain className="size-6" />,
+    'Easy',
+    'text-cyan-400',
+    'from-cyan-500/20 to-cyan-500/5',
+  ),
+  mkGame(
+    'article-a-an-the',
+    'A, An, The or Nothing?',
+    'Choose the right article. The trickiest little words in English.',
+    <PenTool className="size-6" />,
+    'Easy',
+    'text-violet-400',
+    'from-violet-500/20 to-violet-500/5',
+  ),
+  mkGame(
+    'plural-builder',
+    'Plural Builder',
+    'Make the plural — regular, irregular and the odd ones out.',
+    <Shuffle className="size-6" />,
+    'Easy',
+    'text-teal-400',
+    'from-teal-500/20 to-teal-500/5',
+  ),
+  mkGame(
+    'to-be-conjugation',
+    'The Verb To Be',
+    'am / is / are / was / were — fill the gap correctly.',
+    <Zap className="size-6" />,
+    'Easy',
+    'text-amber-400',
+    'from-amber-500/20 to-amber-500/5',
+  ),
+  mkGame(
+    'numbers-and-time',
+    'Numbers & Time',
+    'Read numbers, dates and the clock in English.',
+    <Timer className="size-6" />,
+    'Easy',
+    'text-sky-400',
+    'from-sky-500/20 to-sky-500/5',
+  ),
+  mkGame(
+    'days-months-seasons',
+    'Days, Months & Seasons',
+    'Order them, spell them, match them to seasons.',
+    <Star className="size-6" />,
+    'Easy',
+    'text-pink-400',
+    'from-pink-500/20 to-pink-500/5',
+  ),
+  mkGame(
+    'classroom-objects',
+    'In the Classroom',
+    'Name classroom objects and say where things are.',
+    <BookOpen className="size-6" />,
+    'Easy',
+    'text-emerald-400',
+    'from-emerald-500/20 to-emerald-500/5',
+  ),
+  mkGame(
+    'greetings-dialogue',
+    'What Do You Say?',
+    'Pick the right reply in everyday conversations.',
+    <Sparkles className="size-6" />,
+    'Easy',
+    'text-violet-400',
+    'from-violet-500/20 to-violet-500/5',
+  ),
+  mkGame(
+    'capital-letter-quest',
+    'Capital Letter Quest',
+    'Where do capital letters go? Names, places, days and more.',
+    <PenTool className="size-6" />,
+    'Easy',
+    'text-clay-600',
+    'from-orange-500/20 to-orange-500/5',
+  ),
+  mkGame(
+    'tricky-word-spelling',
+    'Tricky Word Sprint',
+    'Beat the clock spelling the everyday words people get wrong.',
+    <Volume2 className="size-6" />,
+    'Easy',
+    'text-rose-400',
+    'from-rose-500/20 to-rose-500/5',
+  ),
+  mkGame(
+    'tense-timeline',
+    'Tense Timeline',
+    'Spot the verb tense — past, present, future and perfect.',
+    <Timer className="size-6" />,
+    'Medium',
+    'text-sky-400',
+    'from-sky-500/20 to-sky-500/5',
+  ),
+  mkGame(
+    'prepositions-of-place',
+    'Where Is It?',
+    'in / on / under / behind / between — prepositions of place.',
+    <Target className="size-6" />,
+    'Medium',
+    'text-teal-400',
+    'from-teal-500/20 to-teal-500/5',
+  ),
+  mkGame(
+    'phrasal-verbs-match',
+    'Phrasal Verb Match',
+    'Match common phrasal verbs to their meaning.',
+    <Layers className="size-6" />,
+    'Medium',
+    'text-violet-400',
+    'from-violet-500/20 to-violet-500/5',
+  ),
+  mkGame(
+    'question-formation',
+    'Build the Question',
+    'Put the words in the right order to make a question.',
+    <Shuffle className="size-6" />,
+    'Medium',
+    'text-amber-400',
+    'from-amber-500/20 to-amber-500/5',
+  ),
+  mkGame(
+    'common-error-fixer',
+    'Fix the Common Mistake',
+    'Spot and correct the mistakes English learners make most.',
+    <PenTool className="size-6" />,
+    'Medium',
+    'text-cyan-400',
+    'from-cyan-500/20 to-cyan-500/5',
+  ),
+  mkGame(
+    'comparatives-superlatives',
+    'Bigger, Biggest!',
+    'big → bigger → biggest. Form comparatives and superlatives.',
+    <Zap className="size-6" />,
+    'Easy',
+    'text-emerald-400',
+    'from-emerald-500/20 to-emerald-500/5',
+  ),
+  mkGame(
+    'collocations-challenge',
+    'Make / Do / Have / Take',
+    'Pick the verb that goes with the noun — natural English.',
+    <Brain className="size-6" />,
+    'Medium',
+    'text-pink-400',
+    'from-pink-500/20 to-pink-500/5',
+  ),
+]
+
+const KS3_GAMES: GameDef[] = [
+  mkGame(
+    'word-class-sorter',
+    'Word Class Sorter',
+    'Noun, verb, adjective, adverb? Context decides.',
+    <Layers className="size-6" />,
+    'Medium',
+    'text-violet-400',
+    'from-violet-500/20 to-violet-500/5',
+  ),
+  mkGame(
+    'punctuation-repair',
+    'Punctuation Repair',
+    'Fix the capital letters, full stops and commas.',
+    <PenTool className="size-6" />,
+    'Medium',
+    'text-clay-600',
+    'from-orange-500/20 to-orange-500/5',
+  ),
+  mkGame(
+    'apostrophe-ace',
+    'Apostrophe Ace',
+    'Possession, omission, and the plural trap.',
+    <Sparkles className="size-6" />,
+    'Medium',
+    'text-amber-400',
+    'from-amber-500/20 to-amber-500/5',
+  ),
+  mkGame(
+    'homophone-hero',
+    'Homophone Hero',
+    "their / there / they're — pick the right one.",
+    <Brain className="size-6" />,
+    'Medium',
+    'text-cyan-400',
+    'from-cyan-500/20 to-cyan-500/5',
+  ),
+  mkGame(
+    'sentence-builder',
+    'Sentence Builder',
+    'Build simple, compound and complex sentences from tiles.',
+    <Shuffle className="size-6" />,
+    'Medium',
+    'text-teal-400',
+    'from-teal-500/20 to-teal-500/5',
+  ),
+  mkGame(
+    'prefix-suffix-lab',
+    'Prefix & Suffix Lab',
+    'Build words with prefixes and suffixes.',
+    <Zap className="size-6" />,
+    'Medium',
+    'text-emerald-400',
+    'from-emerald-500/20 to-emerald-500/5',
+  ),
+  mkGame(
+    'synonym-shuffle',
+    'Synonym Shuffle',
+    'Upgrade tired words to precise, ambitious vocabulary.',
+    <Star className="size-6" />,
+    'Medium',
+    'text-pink-400',
+    'from-pink-500/20 to-pink-500/5',
+  ),
+  mkGame(
+    'spelling-patterns',
+    'Spelling Patterns',
+    'Learn the rules: i-before-e, doubling, -tion and more.',
+    <Volume2 className="size-6" />,
+    'Medium',
+    'text-rose-400',
+    'from-rose-500/20 to-rose-500/5',
+  ),
+  mkGame(
+    'reading-detective',
+    'Reading Detective',
+    'Read a short passage, then retrieve and infer.',
+    <BookOpen className="size-6" />,
+    'Medium',
+    'text-sky-400',
+    'from-sky-500/20 to-sky-500/5',
+  ),
+  mkGame(
+    'figurative-language-finder',
+    'Figurative Language Finder',
+    'Simile, metaphor, personification — name the device.',
+    <Target className="size-6" />,
+    'Medium',
+    'text-violet-400',
+    'from-violet-500/20 to-violet-500/5',
+  ),
+  mkGame(
+    'dictionary-skills',
+    'Dictionary Skills',
+    'Alphabetical order, guide words and definitions.',
+    <BookOpen className="size-6" />,
+    'Easy',
+    'text-emerald-400',
+    'from-emerald-500/20 to-emerald-500/5',
+  ),
+  mkGame(
+    'paragraph-jumble',
+    'Paragraph Jumble',
+    'Reorder sentences into a coherent paragraph.',
+    <Shuffle className="size-6" />,
+    'Medium',
+    'text-amber-400',
+    'from-amber-500/20 to-amber-500/5',
+  ),
+]
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // WORD SCRAMBLE GAME
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -2108,6 +2409,36 @@ export default function GamesPage() {
             ))}
           </div>
         </div>
+
+        {!activeGame && (
+          <>
+            <div className="mt-14 border-t border-border/40 pt-10">
+              <h2 className="text-lg font-bold text-foreground">New to English &amp; EAL games</h2>
+              <p className="mt-1 mb-5 text-sm text-muted-foreground">
+                Friendly, level-appropriate games for learners building English from the ground up —
+                vocabulary, grammar and everyday language.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {EAL_GAMES.map((game) => (
+                  <GameCard key={game.id} game={game} isActive={false} onPlay={() => {}} />
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-14 border-t border-border/40 pt-10">
+              <h2 className="text-lg font-bold text-foreground">KS3 literacy games</h2>
+              <p className="mt-1 mb-5 text-sm text-muted-foreground">
+                Build the core Key Stage 3 skills — word classes, punctuation, spelling, vocabulary,
+                sentences and reading.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {KS3_GAMES.map((game) => (
+                  <GameCard key={game.id} game={game} isActive={false} onPlay={() => {}} />
+                ))}
+              </div>
+            </div>
+          </>
+        )}
       </section>
     </div>
   )
