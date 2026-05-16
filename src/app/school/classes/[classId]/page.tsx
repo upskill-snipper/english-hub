@@ -16,17 +16,28 @@ import {
   Search,
   Loader2,
   X,
+  GraduationCap,
+  Activity,
+  ChevronRight,
 } from 'lucide-react'
 import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import {
+  GlassPanel,
+  PanelEyebrow,
+  KpiTile,
+  AnimatedNumber,
+  RankBars,
+  RadialScore,
+  pct,
+} from '@/components/dataviz'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -283,9 +294,12 @@ function AddStudentsModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="w-full max-w-lg rounded-xl border border-border bg-card shadow-2xl flex flex-col max-h-[80vh]">
+      <GlassPanel
+        accent="primary"
+        className="w-full max-w-lg flex flex-col max-h-[80vh] shadow-2xl"
+      >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-border px-5 py-4">
+        <div className="flex items-center justify-between border-b border-border/60 px-5 py-4">
           <h2 className="text-base font-semibold text-foreground">
             {t('school.classes.detail.add_modal.title')}
           </h2>
@@ -295,7 +309,7 @@ function AddStudentsModal({
         </div>
 
         {/* Search */}
-        <div className="px-5 py-3 border-b border-border">
+        <div className="px-5 py-3 border-b border-border/60">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -357,7 +371,7 @@ function AddStudentsModal({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between border-t border-border px-5 py-3">
+        <div className="flex items-center justify-between border-t border-border/60 px-5 py-3">
           <span className="text-xs text-muted-foreground">
             {selected.size > 0
               ? `${selected.size} ${t('school.classes.detail.add_modal.footer_selected')}`
@@ -373,7 +387,7 @@ function AddStudentsModal({
             </Button>
           </div>
         </div>
-      </div>
+      </GlassPanel>
     </div>
   )
 }
@@ -422,92 +436,95 @@ function AnalyticsTab({ students, t }: AnalyticsTabProps) {
   })
   const maxCount = Math.max(...weekCounts, 1)
 
+  // Distribution of students across attainment bands. Band labels are
+  // GCSE grade strings from @/lib/grades (NOT i18n keys) — the same raw
+  // grade labels the rest of this page renders (e.g. "Grade 7").
+  const bands = [
+    { repPct: 90, test: (v: number) => v >= 80 },
+    { repPct: 65, test: (v: number) => v >= 60 && v < 80 },
+    { repPct: 45, test: (v: number) => v >= 40 && v < 60 },
+    { repPct: 20, test: (v: number) => v < 40 },
+  ]
+  const totalScored = scored.length || 1
+  const bandData = bands.map((b) => {
+    const count = scored.filter((s) => b.test(s.avg_quiz_score ?? 0)).length
+    return {
+      band: percentageToGCSEGradeLabel(b.repPct),
+      value: Math.round((count / totalScored) * 100),
+      count,
+    }
+  })
+
   return (
     <div className="space-y-6">
-      {/* Top stats row */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {/* Class average */}
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-              {t('school.classes.detail.analytics.avg_score_title')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p
-              className={cn(
-                'text-5xl font-bold tabular-nums',
-                avgScore === null ? 'text-muted-foreground' : scoreColor(avgScore),
-              )}
-            >
-              {avgScore !== null ? percentageToGCSEGradeLabel(avgScore) : '--'}
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {scored.length}{' '}
+      {/* Class average + distribution */}
+      <div className="grid gap-6 lg:grid-cols-3">
+        <GlassPanel accent="teal" className="p-6 lg:col-span-1" aria-labelledby="cls-avg-h">
+          <PanelEyebrow>{t('school.classes.detail.analytics.avg_score_title')}</PanelEyebrow>
+          <h3 id="cls-avg-h" className="sr-only">
+            {t('school.classes.detail.analytics.avg_score_title')}
+          </h3>
+          <div className="mt-4 flex flex-col items-center">
+            {avgScore !== null ? (
+              <RadialScore
+                value={avgScore}
+                label={t('school.classes.detail.analytics.avg_score_title')}
+              />
+            ) : (
+              <p className="py-12 text-4xl font-bold text-muted-foreground">--</p>
+            )}
+            <p className="mt-3 text-center text-sm text-muted-foreground">
+              {avgScore !== null && (
+                <span className={cn('font-semibold', scoreColor(avgScore))}>
+                  {percentageToGCSEGradeLabel(avgScore)}
+                </span>
+              )}{' '}
+              · {scored.length}{' '}
               {scored.length === 1
                 ? t('school.classes.detail.analytics.avg_score_sub_one')
                 : t('school.classes.detail.analytics.avg_score_sub_many')}
             </p>
-          </CardContent>
-        </Card>
+          </div>
+        </GlassPanel>
 
-        {/* Completion rate */}
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-              {t('school.classes.detail.analytics.completion_title')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className={cn('text-5xl font-bold tabular-nums', scoreColor(completionRate))}>
-              {completionRate}%
+        <GlassPanel accent="primary" className="p-6 lg:col-span-2" aria-labelledby="cls-dist-h">
+          <PanelEyebrow>{t('school.classes.detail.analytics.avg_score_sub_many')}</PanelEyebrow>
+          <h3 id="cls-dist-h" className="mt-1 text-heading-sm font-heading text-foreground">
+            {t('school.classes.detail.analytics.avg_score_sub_many')}
+          </h3>
+          {scored.length === 0 ? (
+            <p className="py-12 text-center text-sm text-muted-foreground">
+              {t('school.classes.detail.analytics.no_quiz_data')}
             </p>
-            <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted">
-              <div
-                className={cn(
-                  'h-full rounded-full transition-all duration-700',
-                  progressBarColor(completionRate),
-                )}
-                style={{ width: `${completionRate}%` }}
-              />
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Students at risk */}
-        <Card className={atRisk.length > 0 ? 'border-red-500/20' : ''}>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wide flex items-center gap-1.5">
-              <AlertTriangle className="h-3.5 w-3.5 text-red-400" />
-              {t('school.classes.detail.analytics.at_risk_title')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p
-              className={cn(
-                'text-5xl font-bold tabular-nums',
-                atRisk.length > 0 ? 'text-red-400' : 'text-green-400',
-              )}
-            >
-              {atRisk.length}
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {t('school.classes.detail.analytics.at_risk_sub')}
-            </p>
-          </CardContent>
-        </Card>
+          ) : (
+            <>
+              <div className="mt-4">
+                <RankBars data={bandData} labelKey="band" valueKey="value" height={220} />
+              </div>
+              {/* Accessible text equivalent of the distribution chart */}
+              <ul className="sr-only">
+                {bandData.map((b) => (
+                  <li key={b.band}>
+                    {b.band}: {b.count} ({pct(b.value)})
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </GlassPanel>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Top performers */}
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-sm font-semibold">
-              <TrendingUp className="h-4 w-4 text-green-400" />
-              {t('school.classes.detail.analytics.top_performers')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+        <GlassPanel accent="sage" className="p-6" aria-labelledby="cls-top-h">
+          <div className="flex items-center gap-2">
+            <TrendingUp className="h-4 w-4 text-green-400" aria-hidden />
+            <PanelEyebrow>{t('school.classes.detail.analytics.top_performers')}</PanelEyebrow>
+          </div>
+          <h3 id="cls-top-h" className="sr-only">
+            {t('school.classes.detail.analytics.top_performers')}
+          </h3>
+          <div className="mt-4">
             {topPerformers.length === 0 ? (
               <p className="text-sm text-muted-foreground">
                 {t('school.classes.detail.analytics.no_quiz_data')}
@@ -531,9 +548,12 @@ function AnalyticsTab({ students, t }: AnalyticsTabProps) {
                       {i + 1}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-medium text-foreground">
+                      <Link
+                        href={`/school/students/${s.student_id}`}
+                        className="truncate block text-sm font-medium text-foreground hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded"
+                      >
                         {s.full_name ?? s.email}
-                      </p>
+                      </Link>
                     </div>
                     <span
                       className={cn(
@@ -547,101 +567,103 @@ function AnalyticsTab({ students, t }: AnalyticsTabProps) {
                 ))}
               </ol>
             )}
-          </CardContent>
-        </Card>
+          </div>
+        </GlassPanel>
 
         {/* Activity chart */}
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-sm font-semibold">
-              <BarChart3 className="h-4 w-4 text-primary" />
-              {t('school.classes.detail.analytics.weekly_activity')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex h-32 items-end gap-3">
-              {weekLabels.map((label, i) => (
-                <div key={label} className="flex flex-1 flex-col items-center gap-1">
-                  <span className="text-xs font-medium text-foreground tabular-nums">
-                    {weekCounts[i]}
-                  </span>
-                  <div
-                    className="w-full rounded-t bg-primary/70 transition-all duration-500"
-                    style={{
-                      height: `${Math.max(4, Math.round((weekCounts[i] / maxCount) * 96))}px`,
-                    }}
-                  />
-                  <span className="text-[10px] text-muted-foreground text-center">{label}</span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-2 text-xs text-muted-foreground">
-              {t('school.classes.detail.analytics.weekly_activity_sub')}
-            </p>
-          </CardContent>
-        </Card>
+        <GlassPanel accent="ochre" className="p-6" aria-labelledby="cls-act-h">
+          <div className="flex items-center gap-2">
+            <BarChart3 className="h-4 w-4 text-primary" aria-hidden />
+            <PanelEyebrow>{t('school.classes.detail.analytics.weekly_activity')}</PanelEyebrow>
+          </div>
+          <h3 id="cls-act-h" className="sr-only">
+            {t('school.classes.detail.analytics.weekly_activity')}
+          </h3>
+          <div className="mt-4 flex h-32 items-end gap-3">
+            {weekLabels.map((label, i) => (
+              <div key={label} className="flex flex-1 flex-col items-center gap-1">
+                <span className="text-xs font-medium text-foreground tabular-nums">
+                  {weekCounts[i]}
+                </span>
+                <div
+                  className="w-full rounded-t bg-primary/70 transition-all duration-500"
+                  style={{
+                    height: `${Math.max(4, Math.round((weekCounts[i] / maxCount) * 96))}px`,
+                  }}
+                />
+                <span className="text-[10px] text-muted-foreground text-center">{label}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-2 text-xs text-muted-foreground">
+            {t('school.classes.detail.analytics.weekly_activity_sub')}
+          </p>
+        </GlassPanel>
       </div>
 
       {/* At-risk students detail */}
       {atRisk.length > 0 && (
-        <Card className="border-red-500/20">
-          <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-sm font-semibold text-red-400">
-              <AlertTriangle className="h-4 w-4" />
+        <GlassPanel accent="clay" className="p-6" aria-labelledby="cls-risk-h">
+          <div className="flex items-center gap-2 text-red-400">
+            <AlertTriangle className="h-4 w-4" aria-hidden />
+            <PanelEyebrow className="text-red-400">
               {t('school.classes.detail.analytics.attention')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="divide-y divide-border">
-              {atRisk.map((s) => {
-                const noActivity =
-                  !s.last_activity ||
-                  Date.now() - new Date(s.last_activity).getTime() > 7 * 86400000
-                const lowScore = s.avg_quiz_score !== null && s.avg_quiz_score < 40
-                return (
-                  <div key={s.student_id} className="flex items-center gap-3 py-2.5">
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-medium text-foreground">
-                        {s.full_name ?? s.email}
-                      </p>
-                      <div className="flex gap-2 mt-0.5">
-                        {lowScore && (
-                          <span className="text-xs text-red-400">
-                            {percentageToGCSEGradeLabel(s.avg_quiz_score ?? 0)}
-                          </span>
-                        )}
-                        {noActivity && (
-                          <span className="text-xs text-clay-600">
-                            {t('school.classes.detail.analytics.last_active_prefix')}{' '}
-                            {formatLastActive(s.last_activity, t)}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex gap-1.5 shrink-0">
+            </PanelEyebrow>
+          </div>
+          <h3 id="cls-risk-h" className="sr-only">
+            {t('school.classes.detail.analytics.attention')}
+          </h3>
+          <div className="mt-4 divide-y divide-border/60">
+            {atRisk.map((s) => {
+              const noActivity =
+                !s.last_activity || Date.now() - new Date(s.last_activity).getTime() > 7 * 86400000
+              const lowScore = s.avg_quiz_score !== null && s.avg_quiz_score < 40
+              return (
+                <div key={s.student_id} className="flex items-center gap-3 py-2.5">
+                  <div className="min-w-0 flex-1">
+                    <Link
+                      href={`/school/students/${s.student_id}`}
+                      className="truncate block text-sm font-medium text-foreground hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded"
+                    >
+                      {s.full_name ?? s.email}
+                    </Link>
+                    <div className="flex gap-2 mt-0.5">
                       {lowScore && (
-                        <Badge
-                          variant="outline"
-                          className="border-red-500/30 text-red-400 text-[10px]"
-                        >
-                          {t('school.classes.detail.analytics.badge.low_score')}
-                        </Badge>
+                        <span className="text-xs text-red-400">
+                          {percentageToGCSEGradeLabel(s.avg_quiz_score ?? 0)}
+                        </span>
                       )}
                       {noActivity && (
-                        <Badge
-                          variant="outline"
-                          className="border-amber-500/30 text-clay-600 text-[10px]"
-                        >
-                          {t('school.classes.detail.analytics.badge.inactive')}
-                        </Badge>
+                        <span className="text-xs text-clay-600">
+                          {t('school.classes.detail.analytics.last_active_prefix')}{' '}
+                          {formatLastActive(s.last_activity, t)}
+                        </span>
                       )}
                     </div>
                   </div>
-                )
-              })}
-            </div>
-          </CardContent>
-        </Card>
+                  <div className="flex gap-1.5 shrink-0">
+                    {lowScore && (
+                      <Badge
+                        variant="outline"
+                        className="border-red-500/30 text-red-400 text-[10px]"
+                      >
+                        {t('school.classes.detail.analytics.badge.low_score')}
+                      </Badge>
+                    )}
+                    {noActivity && (
+                      <Badge
+                        variant="outline"
+                        className="border-amber-500/30 text-clay-600 text-[10px]"
+                      >
+                        {t('school.classes.detail.analytics.badge.inactive')}
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </GlassPanel>
       )}
     </div>
   )
@@ -760,19 +782,15 @@ export default function ClassDetailPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-background">
-        <div className="px-4 py-6 sm:px-6 lg:px-8 space-y-6">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-6">
           <div className="h-6 w-24 rounded-md bg-muted animate-pulse" />
-          <div className="h-10 w-64 rounded-md bg-muted animate-pulse" />
-          <div className="flex gap-2">
-            <div className="h-6 w-20 rounded-full bg-muted animate-pulse" />
-            <div className="h-6 w-16 rounded-full bg-muted animate-pulse" />
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-24 rounded-xl bg-muted animate-pulse" />
+          <div className="h-40 rounded-2xl bg-muted animate-pulse" />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="h-32 rounded-2xl bg-muted animate-pulse" />
             ))}
           </div>
-          <div className="h-64 rounded-xl bg-muted animate-pulse" />
+          <div className="h-64 rounded-2xl bg-muted animate-pulse" />
         </div>
       </div>
     )
@@ -781,9 +799,27 @@ export default function ClassDetailPage() {
   const cls = classInfo ?? MOCK_CLASS
   const displayStudents = students.length > 0 ? students : MOCK_STUDENTS
 
+  // ── Derived class KPIs (only render deltas/sparks the data supports) ────────
+
+  const scoredAll = displayStudents.filter((s) => s.avg_quiz_score !== null)
+  const avgAttainment =
+    scoredAll.length > 0
+      ? Math.round(
+          scoredAll.reduce((sum, s) => sum + (s.avg_quiz_score ?? 0), 0) / scoredAll.length,
+        )
+      : 0
+  const avgCompletion =
+    displayStudents.length > 0
+      ? Math.round(
+          displayStudents.reduce((sum, s) => sum + s.completion_rate, 0) / displayStudents.length,
+        )
+      : 0
+  const atRiskCount = displayStudents.filter(isAtRisk).length
+  const modulesTotal = displayStudents.reduce((sum, s) => sum + s.modules_completed, 0)
+
   return (
     <div className="min-h-screen bg-background">
-      <div className="px-4 py-6 sm:px-6 lg:px-8 space-y-6">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
         {/* Back button */}
         <Link href="/school/classes">
           <Button
@@ -796,54 +832,109 @@ export default function ClassDetailPage() {
           </Button>
         </Link>
 
-        {/* Header */}
-        <div className="space-y-3">
-          <div className="flex flex-wrap items-start gap-3">
-            <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              {cls.name}
-            </h1>
-            <div className="flex flex-wrap items-center gap-2 mt-1">
-              {cls.year_group && (
-                <Badge variant="secondary" className="text-xs">
-                  {cls.year_group}
-                </Badge>
+        {/* ── Cinematic class header ── */}
+        <GlassPanel accent="primary" className="p-6 sm:p-8" aria-labelledby="class-hero-heading">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-teal-500/5 blur-3xl"
+          />
+          <div className="relative">
+            <PanelEyebrow>{t('school.classes.detail.tab.students')}</PanelEyebrow>
+            <div className="mt-2 flex flex-wrap items-start gap-3">
+              <h1
+                id="class-hero-heading"
+                className="text-display-sm font-heading text-foreground sm:text-display"
+              >
+                {cls.name}
+              </h1>
+              <div className="flex flex-wrap items-center gap-2 mt-2">
+                {cls.year_group && (
+                  <Badge variant="secondary" className="text-xs">
+                    {cls.year_group}
+                  </Badge>
+                )}
+                {cls.exam_board && (
+                  <Badge
+                    variant="outline"
+                    className={cn('text-xs uppercase', boardBadgeClass(cls.exam_board))}
+                  >
+                    {cls.exam_board}
+                  </Badge>
+                )}
+              </div>
+            </div>
+
+            {/* Meta row */}
+            <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+              {cls.teacher_name && (
+                <span className="flex items-center gap-1.5">
+                  <BookOpen className="h-4 w-4 shrink-0" aria-hidden />
+                  {cls.teacher_name}
+                </span>
               )}
-              {cls.exam_board && (
-                <Badge
-                  variant="outline"
-                  className={cn('text-xs uppercase', boardBadgeClass(cls.exam_board))}
-                >
-                  {cls.exam_board}
-                </Badge>
+              <span className="flex items-center gap-1.5">
+                <Users className="h-4 w-4 shrink-0" aria-hidden />
+                <span className="font-medium text-foreground">{cls.student_count}</span>
+                &nbsp;{t('school.classes.detail.students_suffix')}
+              </span>
+              {avgAttainment > 0 && (
+                <span className="flex items-center gap-1.5">
+                  <GraduationCap className="h-4 w-4 shrink-0" aria-hidden />
+                  <span className="font-medium text-foreground">
+                    {percentageToGCSEGradeLabel(avgAttainment)}
+                  </span>
+                  &nbsp;{t('school.classes.detail.analytics.avg_score_title')}
+                </span>
               )}
             </div>
           </div>
+        </GlassPanel>
 
-          {/* Meta row */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            {cls.teacher_name && (
-              <span className="flex items-center gap-1.5">
-                <BookOpen className="h-4 w-4 shrink-0" />
-                {cls.teacher_name}
-              </span>
-            )}
-            <span className="flex items-center gap-1.5">
-              <Users className="h-4 w-4 shrink-0" />
-              <span className="font-medium text-foreground">{cls.student_count}</span>
-              &nbsp;{t('school.classes.detail.students_suffix')}
-            </span>
+        {/* ── Class KPI row ── */}
+        <section aria-labelledby="class-kpi-heading">
+          <h2 id="class-kpi-heading" className="sr-only">
+            {t('school.classes.detail.tab.analytics')}
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <KpiTile
+              label={t('school.classes.detail.analytics.avg_score_title')}
+              value={avgAttainment}
+              suffix="%"
+              icon={GraduationCap}
+              accent="teal"
+            />
+            <KpiTile
+              label={t('school.classes.detail.analytics.completion_title')}
+              value={avgCompletion}
+              suffix="%"
+              icon={Activity}
+              accent="sage"
+            />
+            <KpiTile
+              label={t('school.classes.detail.analytics.at_risk_title')}
+              value={atRiskCount}
+              icon={AlertTriangle}
+              accent="clay"
+            />
+            <KpiTile
+              label={t('school.classes.detail.col.done')}
+              value={modulesTotal}
+              icon={BookOpen}
+              accent="ochre"
+            />
           </div>
-        </div>
+        </section>
 
         {/* Assign Work section */}
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-sm font-semibold">
-              <BookOpen className="h-4 w-4 text-primary" />
-              {t('school.classes.detail.assign_work')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-wrap gap-3">
+        <GlassPanel accent="sage" className="p-6" aria-labelledby="assign-work-heading">
+          <div className="flex items-center gap-2">
+            <BookOpen className="h-4 w-4 text-primary" aria-hidden />
+            <PanelEyebrow>{t('school.classes.detail.assign_work')}</PanelEyebrow>
+          </div>
+          <h2 id="assign-work-heading" className="sr-only">
+            {t('school.classes.detail.assign_work')}
+          </h2>
+          <div className="mt-4 flex flex-wrap gap-3">
             <Button
               variant="outline"
               size="sm"
@@ -858,8 +949,8 @@ export default function ClassDetailPage() {
             >
               {t('school.classes.detail.create_assignment')}
             </Button>
-          </CardContent>
-        </Card>
+          </div>
+        </GlassPanel>
 
         {/* Tabs */}
         <Tabs defaultValue="students">
@@ -875,7 +966,7 @@ export default function ClassDetailPage() {
           </TabsList>
 
           {/* ── Students Tab ── */}
-          <TabsContent value="students" className="mt-4 space-y-4">
+          <TabsContent value="students" className="mt-6 space-y-4">
             {/* Toolbar */}
             <div className="flex flex-wrap items-center gap-3">
               <div className="relative flex-1 min-w-48">
@@ -907,34 +998,37 @@ export default function ClassDetailPage() {
               </Button>
             </div>
 
-            {/* Table wrapper */}
-            <Card>
+            {/* Roster — glass table; every row drills to the student */}
+            <GlassPanel accent="primary" glow={false} className="p-0">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
+                  <caption className="sr-only">
+                    {t('school.classes.detail.tab.students')} — {cls.name}
+                  </caption>
                   <thead>
-                    <tr className="border-b border-border">
-                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                    <tr className="border-b border-border/60">
+                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {t('school.classes.detail.col.name')}
                       </th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {t('school.classes.detail.col.email')}
                       </th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {t('school.classes.detail.col.year')}
                       </th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {t('school.classes.detail.col.last_active')}
                       </th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide min-w-36">
+                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground min-w-36">
                         {t('school.classes.detail.col.progress')}
                       </th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                      <th className="px-4 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                         {t('school.classes.detail.col.done')}
                       </th>
                       <th className="px-4 py-3" />
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-border">
+                  <tbody className="divide-y divide-border/60">
                     {filteredStudents.length === 0 && (
                       <tr>
                         <td
@@ -948,14 +1042,27 @@ export default function ClassDetailPage() {
                       </tr>
                     )}
                     {filteredStudents.map((s) => (
-                      <tr key={s.student_id} className="group hover:bg-muted/30 transition-colors">
+                      <tr
+                        key={s.student_id}
+                        className="group transition-colors hover:bg-foreground/[0.04]"
+                      >
                         <td className="px-4 py-3 font-medium text-foreground whitespace-nowrap">
-                          <span className="flex items-center gap-1.5">
+                          <Link
+                            href={`/school/students/${s.student_id}`}
+                            className="flex items-center gap-1.5 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded"
+                          >
                             {s.full_name ?? t('school.classes.detail.unknown')}
                             {isAtRisk(s) && (
-                              <AlertTriangle className="h-3.5 w-3.5 text-red-400 shrink-0" />
+                              <AlertTriangle
+                                className="h-3.5 w-3.5 text-red-400 shrink-0"
+                                aria-hidden
+                              />
                             )}
-                          </span>
+                            <ChevronRight
+                              className="h-3.5 w-3.5 shrink-0 text-muted-foreground opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0"
+                              aria-hidden
+                            />
+                          </Link>
                         </td>
                         <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">
                           {s.email}
@@ -1022,11 +1129,11 @@ export default function ClassDetailPage() {
                   </tbody>
                 </table>
               </div>
-            </Card>
+            </GlassPanel>
           </TabsContent>
 
           {/* ── Analytics Tab ── */}
-          <TabsContent value="analytics" className="mt-4">
+          <TabsContent value="analytics" className="mt-6">
             <AnalyticsTab students={displayStudents} t={t} />
           </TabsContent>
         </Tabs>

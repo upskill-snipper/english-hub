@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import {
   BarChart3,
   TrendingUp,
@@ -19,12 +20,20 @@ import {
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth-store'
 import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useT } from '@/lib/i18n/use-t'
 import { CEFRCohortPanel } from '@/components/school/CEFRCohortPanel'
+import {
+  GlassPanel,
+  PanelEyebrow,
+  KpiTile,
+  RankBars,
+  ragColor,
+  pct,
+  compact,
+} from '@/components/dataviz'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -226,39 +235,42 @@ const MOCK_DATA: AnalyticsData = {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-function progressColor(pct: number): string {
-  if (pct >= 70) return 'bg-green-500'
-  if (pct >= 50) return 'bg-amber-500'
-  if (pct >= 35) return 'bg-orange-500'
-  return 'bg-red-500'
-}
-
-function completionColor(pct: number): string {
-  if (pct >= 80) return 'bg-green-500'
-  if (pct >= 60) return 'bg-amber-500'
-  return 'bg-red-500'
-}
-
 function scoreColor(score: number): string {
   if (score >= 75) return 'text-green-400'
   if (score >= 60) return 'text-clay-600'
   return 'text-red-400'
 }
 
+/** Glass meter — themed replacement for the old inline progress bar. */
+function GlassMeter({ value }: { value: number }) {
+  const clamped = Math.min(Math.max(value, 0), 100)
+  return (
+    <div className="flex items-center gap-2">
+      <div className="h-2 flex-1 overflow-hidden rounded-full bg-foreground/[0.08]">
+        <div
+          className="h-full rounded-full transition-all duration-700"
+          style={{ width: `${clamped}%`, background: ragColor(clamped) }}
+        />
+      </div>
+      <span className="w-9 text-right text-xs tabular-nums text-muted-foreground">
+        {Math.round(value)}%
+      </span>
+    </div>
+  )
+}
+
 // ── Skeleton Components ──────────────────────────────────────────────────────
 
-function StatCardSkeleton() {
+function KpiSkeleton() {
   return (
-    <Card>
-      <CardContent className="p-5 flex items-start gap-4">
-        <Skeleton className="h-10 w-10 rounded-lg shrink-0" />
-        <div className="flex-1 space-y-2">
-          <Skeleton className="h-3 w-28" />
-          <Skeleton className="h-8 w-16" />
-          <Skeleton className="h-3 w-20" />
-        </div>
-      </CardContent>
-    </Card>
+    <GlassPanel className="p-5">
+      <div className="flex items-start justify-between gap-3">
+        <Skeleton className="h-3 w-24" />
+        <Skeleton className="h-8 w-8 rounded-lg" />
+      </div>
+      <Skeleton className="mt-3 h-9 w-20" />
+      <Skeleton className="mt-3 h-9 w-full" />
+    </GlassPanel>
   )
 }
 
@@ -274,47 +286,34 @@ function TableSkeleton({ rows = 5 }: { rows?: number }) {
 
 // ── Sub-components ───────────────────────────────────────────────────────────
 
-function StatCard({
+/** Panel header with cinematic eyebrow + heading + optional icon. */
+function PanelHeader({
+  eyebrow,
+  title,
+  subtitle,
   icon: Icon,
-  label,
-  value,
-  sub,
   iconClass,
+  id,
 }: {
+  eyebrow: string
+  title: string
+  subtitle?: string
   icon: React.ElementType
-  label: string
-  value: string | number
-  sub?: string
   iconClass?: string
+  id?: string
 }) {
   return (
-    <Card>
-      <CardContent className="p-5 flex items-start gap-4">
-        <div
-          className={`flex h-10 w-10 items-center justify-center rounded-lg shrink-0 ${iconClass ?? 'bg-primary/10'}`}
-        >
-          <Icon className="h-5 w-5" />
-        </div>
-        <div className="min-w-0">
-          <p className="text-xs text-muted-foreground font-medium">{label}</p>
-          <p className="text-3xl font-bold tracking-tight leading-none mt-1">{value}</p>
-          {sub && <p className="text-xs text-muted-foreground mt-1">{sub}</p>}
-        </div>
-      </CardContent>
-    </Card>
-  )
-}
-
-function InlineProgressBar({ pct, colorClass }: { pct: number; colorClass: string }) {
-  return (
-    <div className="flex items-center gap-2">
-      <div className="flex-1 h-2 rounded-full bg-muted overflow-hidden">
-        <div
-          className={`h-full rounded-full transition-all duration-500 ${colorClass}`}
-          style={{ width: `${Math.min(pct, 100)}%` }}
-        />
+    <div className="flex items-start gap-3 border-b border-border/50 p-5">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-foreground/[0.06]">
+        <Icon className={`h-4 w-4 ${iconClass ?? 'text-primary'}`} aria-hidden="true" />
+      </span>
+      <div className="min-w-0">
+        <PanelEyebrow>{eyebrow}</PanelEyebrow>
+        <h2 id={id} className="font-heading text-lg font-bold tracking-tight text-foreground">
+          {title}
+        </h2>
+        {subtitle && <p className="mt-0.5 text-sm text-muted-foreground">{subtitle}</p>}
       </div>
-      <span className="text-xs tabular-nums w-8 text-right">{pct}%</span>
     </div>
   )
 }
@@ -340,6 +339,7 @@ function useDateRangeLabels(): Record<DateRange, string> {
 
 export default function SchoolAnalyticsPage() {
   const t = useT()
+  const router = useRouter()
   const dateRangeLabels = useDateRangeLabels()
   const profile = useAuthStore((s) => s.profile)
   const [dateRange, setDateRange] = useState<DateRange>('week')
@@ -393,200 +393,256 @@ export default function SchoolAnalyticsPage() {
     window.open(`mailto:${teacherEmail}?subject=${subject}&body=${body}`)
   }
 
+  // Derived series for RankBars + KPI sparks. Only real data is used — the
+  // spark for "avg working grade" is the per-year-group progression series
+  // (a genuine derived array), not fabricated trend data.
+  const rankBarData = useMemo(
+    () =>
+      (data?.yearGroups ?? []).map((y) => ({
+        year: y.year.replace('Year ', 'Y'),
+        avgProgress: y.avgProgress,
+      })),
+    [data],
+  )
+  const gradeSpark = useMemo(
+    () => (data?.yearGroups ?? []).map((y) => ({ v: y.avgProgress })),
+    [data],
+  )
+  const assignmentsSpark = useMemo(
+    () => (data?.yearGroups ?? []).map((y) => ({ v: y.assignmentsCompleted })),
+    [data],
+  )
+
   return (
     <div className="text-foreground">
       <div className="space-y-8">
-        {/* ── Header ─────────────────────────────────────────────────────── */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
-              <BarChart3 className="h-5 w-5 text-primary" />
+        {/* ── Cinematic Header ───────────────────────────────────────────── */}
+        <GlassPanel accent="primary" className="p-6 sm:p-8">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15">
+                <BarChart3 className="h-6 w-6 text-primary" aria-hidden="true" />
+              </div>
+              <div>
+                <PanelEyebrow>{t('school.analytics.title')}</PanelEyebrow>
+                <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                  {t('school.analytics.title')}
+                </h1>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {t('school.analytics.subtitle')}
+                </p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight">{t('school.analytics.title')}</h1>
-              <p className="text-sm text-muted-foreground">{t('school.analytics.subtitle')}</p>
-            </div>
-          </div>
 
-          <div className="flex items-center gap-3">
-            {/* Internal metrics link (NRR for investors) */}
-            <Button
-              render={<Link href="/school/analytics/nrr" />}
-              variant="outline"
-              size="sm"
-              className="gap-1.5"
-            >
-              <LineChart className="h-4 w-4 text-emerald-400" />
-              {t('school.analytics.revenue_nrr')}
-            </Button>
+            <div className="flex flex-wrap items-center gap-3">
+              {/* Internal metrics link (NRR for investors) */}
+              <Button
+                render={<Link href="/school/analytics/nrr" />}
+                variant="outline"
+                size="sm"
+                className="gap-1.5"
+              >
+                <LineChart className="h-4 w-4 text-emerald-400" />
+                {t('school.analytics.revenue_nrr')}
+              </Button>
 
-            {/* Date range selector */}
-            <div className="flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-muted-foreground shrink-0" />
-              <div className="flex rounded-lg border border-border bg-muted/40 p-0.5 gap-0.5">
-                {(Object.keys(DATE_RANGE_LABELS) as DateRange[]).map((range) => (
-                  <button
-                    key={range}
-                    onClick={() => setDateRange(range)}
-                    className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-200 ${
-                      dateRange === range
-                        ? 'bg-background text-foreground shadow-sm'
-                        : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    {dateRangeLabels[range]}
-                  </button>
-                ))}
+              {/* Date range selector */}
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+                <div className="flex gap-0.5 rounded-lg border border-border/60 bg-background/40 p-0.5 backdrop-blur-xl">
+                  {(Object.keys(DATE_RANGE_LABELS) as DateRange[]).map((range) => (
+                    <button
+                      key={range}
+                      onClick={() => setDateRange(range)}
+                      className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-200 ${
+                        dateRange === range
+                          ? 'bg-foreground/[0.08] text-foreground shadow-sm'
+                          : 'text-muted-foreground hover:text-foreground'
+                      }`}
+                    >
+                      {dateRangeLabels[range]}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </GlassPanel>
 
-        {/* ── Top Stats Row ───────────────────────────────────────────────── */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {loading ? (
-            <>
-              <StatCardSkeleton />
-              <StatCardSkeleton />
-              <StatCardSkeleton />
-              <StatCardSkeleton />
-            </>
-          ) : data ? (
-            <>
-              <StatCard
-                icon={Users}
-                label={t('school.analytics.stat.active_students')}
-                value={data.topStats.activeStudents.toLocaleString()}
-                sub={t('school.analytics.stat.active_students_sub')}
-                iconClass="bg-blue-500/10 text-blue-400"
-              />
-              <StatCard
-                icon={CheckCircle}
-                label={t('school.analytics.stat.assignments_submitted')}
-                value={data.topStats.assignmentsSubmitted.toLocaleString()}
-                sub={`${t('school.analytics.stat.during_prefix')} ${dateRangeLabels[dateRange].toLowerCase()}`}
-                iconClass="bg-green-500/10 text-green-400"
-              />
-              <StatCard
-                icon={TrendingUp}
-                label={t('school.analytics.stat.avg_working_grade')}
-                value={`${t('school.analytics.grade_prefix')} ${percentageToGCSEGrade(data.topStats.averageScore)}`}
-                sub={`${t('school.analytics.based_on_prefix')} ${data.topStats.averageScore}${t('school.analytics.avg_score_suffix')}`}
-                iconClass="bg-purple-500/10 text-purple-400"
-              />
-              <StatCard
-                icon={AlertTriangle}
-                label={t('school.analytics.stat.at_risk_students')}
-                value={data.topStats.atRiskCount}
-                sub={t('school.analytics.stat.at_risk_sub')}
-                iconClass="bg-red-500/10 text-red-400"
-              />
-            </>
-          ) : null}
-        </div>
+        {/* ── Top KPI Row ─────────────────────────────────────────────────── */}
+        <section aria-labelledby="kpi-heading">
+          <h2 id="kpi-heading" className="sr-only">
+            {t('school.analytics.title')}
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {loading ? (
+              <>
+                <KpiSkeleton />
+                <KpiSkeleton />
+                <KpiSkeleton />
+                <KpiSkeleton />
+              </>
+            ) : data ? (
+              <>
+                <KpiTile
+                  label={t('school.analytics.stat.active_students')}
+                  value={data.topStats.activeStudents}
+                  icon={Users}
+                  accent="teal"
+                />
+                <KpiTile
+                  label={t('school.analytics.stat.assignments_submitted')}
+                  value={data.topStats.assignmentsSubmitted}
+                  icon={CheckCircle}
+                  accent="sage"
+                  spark={assignmentsSpark.length > 1 ? assignmentsSpark : undefined}
+                />
+                <KpiTile
+                  label={`${t('school.analytics.stat.avg_working_grade')} · ${t('school.analytics.grade_prefix')} ${percentageToGCSEGrade(data.topStats.averageScore)}`}
+                  value={data.topStats.averageScore}
+                  suffix="%"
+                  icon={TrendingUp}
+                  accent="clay"
+                  spark={gradeSpark.length > 1 ? gradeSpark : undefined}
+                />
+                <KpiTile
+                  label={t('school.analytics.stat.at_risk_students')}
+                  value={data.topStats.atRiskCount}
+                  icon={AlertTriangle}
+                  accent="ochre"
+                />
+              </>
+            ) : null}
+          </div>
+        </section>
 
         {/* ── Year Group Performance ──────────────────────────────────────── */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <BarChart3 className="h-4 w-4 text-primary" />
-              {t('school.analytics.year_group.title')}
-            </CardTitle>
-            <CardDescription>{t('school.analytics.year_group.subtitle')}</CardDescription>
-          </CardHeader>
-          <CardContent>
+        <GlassPanel accent="primary" as="section" aria-labelledby="year-group-heading">
+          <PanelHeader
+            id="year-group-heading"
+            eyebrow={t('school.analytics.title')}
+            title={t('school.analytics.year_group.title')}
+            subtitle={t('school.analytics.year_group.subtitle')}
+            icon={BarChart3}
+          />
+          <div className="space-y-6 p-5">
             {loading ? (
               <TableSkeleton rows={7} />
             ) : data ? (
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-border/60">
-                      <th className="pb-3 text-left font-medium text-muted-foreground">
-                        {t('school.analytics.col.year_group')}
-                      </th>
-                      <th className="pb-3 text-right font-medium text-muted-foreground">
-                        {t('school.analytics.col.students')}
-                      </th>
-                      <th className="pb-3 text-center font-medium text-muted-foreground">
-                        {t('school.analytics.col.avg_working_at')}
-                      </th>
-                      <th className="pb-3 pl-6 text-left font-medium text-muted-foreground min-w-[180px]">
-                        {t('school.analytics.col.avg_progress')}
-                      </th>
-                      <th className="pb-3 text-right font-medium text-muted-foreground">
-                        {t('school.analytics.col.assignments')}
-                      </th>
-                      <th className="pb-3 text-right font-medium text-muted-foreground">
-                        {t('school.analytics.col.at_risk')}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border/40">
-                    {data.yearGroups.map((row) => (
-                      <tr
-                        key={row.year}
-                        className="group hover:bg-muted/30 transition-colors cursor-pointer"
-                        onClick={() =>
-                          (window.location.href = `/school/classes?year=${encodeURIComponent(row.year)}`)
-                        }
-                      >
-                        <td className="py-3 font-medium">
-                          <span className="flex items-center gap-1.5 group-hover:text-primary transition-colors">
-                            {row.year}
-                            <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                          </span>
-                        </td>
-                        <td className="py-3 text-right tabular-nums text-muted-foreground">
-                          {row.students}
-                        </td>
-                        <td
-                          className={`py-3 text-center font-bold ${gcseGradeColor(percentageToGCSEGrade(row.avgProgress))}`}
-                        >
-                          Grade {percentageToGCSEGrade(row.avgProgress)}
-                        </td>
-                        <td className="py-3 pl-6">
-                          <InlineProgressBar
-                            pct={row.avgProgress}
-                            colorClass={progressColor(row.avgProgress)}
-                          />
-                        </td>
-                        <td className="py-3 text-right tabular-nums text-muted-foreground">
-                          {row.assignmentsCompleted.toLocaleString()}
-                        </td>
-                        <td className="py-3 text-right">
-                          {row.atRiskCount > 0 ? (
-                            <Badge variant="destructive">{row.atRiskCount}</Badge>
-                          ) : (
-                            <Badge variant="secondary">0</Badge>
-                          )}
-                        </td>
+              <>
+                {/* RAG-coloured rank bars (visual) */}
+                <RankBars
+                  data={rankBarData}
+                  labelKey="year"
+                  valueKey="avgProgress"
+                  height={Math.max(180, rankBarData.length * 36)}
+                  suffix="%"
+                />
+
+                {/* Accessible per-year detail — keyboard-activatable rows */}
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <caption className="sr-only">
+                      {t('school.analytics.year_group.subtitle')}
+                    </caption>
+                    <thead>
+                      <tr className="border-b border-border/50">
+                        <th className="pb-3 text-left font-medium text-muted-foreground">
+                          {t('school.analytics.col.year_group')}
+                        </th>
+                        <th className="pb-3 text-right font-medium text-muted-foreground">
+                          {t('school.analytics.col.students')}
+                        </th>
+                        <th className="pb-3 text-center font-medium text-muted-foreground">
+                          {t('school.analytics.col.avg_working_at')}
+                        </th>
+                        <th className="min-w-[180px] pb-3 pl-6 text-left font-medium text-muted-foreground">
+                          {t('school.analytics.col.avg_progress')}
+                        </th>
+                        <th className="pb-3 text-right font-medium text-muted-foreground">
+                          {t('school.analytics.col.assignments')}
+                        </th>
+                        <th className="pb-3 text-right font-medium text-muted-foreground">
+                          {t('school.analytics.col.at_risk')}
+                        </th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                    </thead>
+                    <tbody className="divide-y divide-border/40">
+                      {data.yearGroups.map((row) => {
+                        const href = `/school/classes?year=${encodeURIComponent(row.year)}`
+                        const go = () => router.push(href)
+                        return (
+                          <tr
+                            key={row.year}
+                            className="group cursor-pointer transition-colors hover:bg-foreground/[0.03] focus-within:bg-foreground/[0.04]"
+                            onClick={go}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault()
+                                go()
+                              }
+                            }}
+                            tabIndex={0}
+                            role="link"
+                            aria-label={`${row.year} — ${t('school.analytics.col.avg_progress')} ${pct(row.avgProgress)}`}
+                          >
+                            <td className="py-3 font-medium">
+                              <span className="flex items-center gap-1.5 transition-colors group-hover:text-primary">
+                                {row.year}
+                                <ChevronRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
+                              </span>
+                            </td>
+                            <td className="py-3 text-right tabular-nums text-muted-foreground">
+                              {row.students}
+                            </td>
+                            <td
+                              className={`py-3 text-center font-bold ${gcseGradeColor(percentageToGCSEGrade(row.avgProgress))}`}
+                            >
+                              {t('school.analytics.grade_prefix')}{' '}
+                              {percentageToGCSEGrade(row.avgProgress)}
+                            </td>
+                            <td className="py-3 pl-6">
+                              <GlassMeter value={row.avgProgress} />
+                            </td>
+                            <td className="py-3 text-right tabular-nums text-muted-foreground">
+                              {row.assignmentsCompleted.toLocaleString()}
+                            </td>
+                            <td className="py-3 text-right">
+                              {row.atRiskCount > 0 ? (
+                                <Badge variant="destructive">{row.atRiskCount}</Badge>
+                              ) : (
+                                <Badge variant="secondary">0</Badge>
+                              )}
+                            </td>
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </>
             ) : null}
-          </CardContent>
-        </Card>
+          </div>
+        </GlassPanel>
 
         {/* ── At-Risk Students ────────────────────────────────────────────── */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <AlertTriangle className="h-4 w-4 text-red-400" />
-              {t('school.analytics.at_risk.title')}
-            </CardTitle>
-            <CardDescription>{t('school.analytics.at_risk.subtitle')}</CardDescription>
-          </CardHeader>
-          <CardContent>
+        <GlassPanel accent="ochre" as="section" aria-labelledby="at-risk-heading">
+          <PanelHeader
+            id="at-risk-heading"
+            eyebrow={t('school.analytics.title')}
+            title={t('school.analytics.at_risk.title')}
+            subtitle={t('school.analytics.at_risk.subtitle')}
+            icon={AlertTriangle}
+            iconClass="text-red-400"
+          />
+          <div className="p-5">
             {loading ? (
               <TableSkeleton rows={6} />
             ) : data && data.atRiskStudents.length > 0 ? (
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border/60">
+                    <tr className="border-b border-border/50">
                       <th className="pb-3 text-left font-medium text-muted-foreground">
                         {t('school.analytics.col.name')}
                       </th>
@@ -606,23 +662,23 @@ export default function SchoolAnalyticsPage() {
                   </thead>
                   <tbody className="divide-y divide-border/40">
                     {data.atRiskStudents.map((student) => (
-                      <tr key={student.id} className="hover:bg-muted/30 transition-colors">
+                      <tr key={student.id} className="transition-colors hover:bg-foreground/[0.03]">
                         <td className="py-3 font-medium">
                           <Link
                             href={`/school/students/${student.id}`}
-                            className="hover:text-primary hover:underline transition-colors"
+                            className="transition-colors hover:text-primary hover:underline"
                           >
                             {student.name}
                           </Link>
                         </td>
                         <td className="py-3 text-muted-foreground">{student.year}</td>
-                        <td className="py-3 text-muted-foreground flex items-center gap-1.5">
-                          <Clock className="h-3 w-3 shrink-0" />
+                        <td className="flex items-center gap-1.5 py-3 text-muted-foreground">
+                          <Clock className="h-3 w-3 shrink-0" aria-hidden="true" />
                           {student.lastActive}
                         </td>
                         <td className="py-3">
                           <span className="inline-flex items-center gap-1.5 rounded-md bg-red-500/10 px-2 py-0.5 text-xs font-medium text-red-400">
-                            <AlertTriangle className="h-3 w-3 shrink-0" />
+                            <AlertTriangle className="h-3 w-3 shrink-0" aria-hidden="true" />
                             {student.issue}
                           </span>
                         </td>
@@ -630,7 +686,7 @@ export default function SchoolAnalyticsPage() {
                           <Button
                             size="sm"
                             variant="outline"
-                            className="gap-1.5 text-xs h-7"
+                            className="h-7 gap-1.5 text-xs"
                             onClick={() => handleEmailTeacher(student.teacherEmail, student.name)}
                           >
                             <Mail className="h-3 w-3" />
@@ -643,49 +699,50 @@ export default function SchoolAnalyticsPage() {
                 </table>
               </div>
             ) : (
-              <p className="text-sm text-muted-foreground py-4 text-center">
+              <p className="py-4 text-center text-sm text-muted-foreground">
                 {t('school.analytics.at_risk.none')}
               </p>
             )}
-          </CardContent>
-        </Card>
+          </div>
+        </GlassPanel>
 
         {/* ── Two-column row: Top Classes + Resource Usage ─────────────────── */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Top Performing Classes */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-green-400" />
-                {t('school.analytics.top_classes.title')}
-              </CardTitle>
-              <CardDescription>{t('school.analytics.top_classes.subtitle')}</CardDescription>
-            </CardHeader>
-            <CardContent>
+          <GlassPanel accent="sage" as="section" aria-labelledby="top-classes-heading">
+            <PanelHeader
+              id="top-classes-heading"
+              eyebrow={t('school.analytics.title')}
+              title={t('school.analytics.top_classes.title')}
+              subtitle={t('school.analytics.top_classes.subtitle')}
+              icon={TrendingUp}
+              iconClass="text-green-400"
+            />
+            <div className="p-5">
               {loading ? (
                 <TableSkeleton rows={5} />
               ) : data ? (
-                <div className="space-y-3">
+                <ol className="space-y-3">
                   {data.topClasses.map((cls) => (
-                    <div
+                    <li
                       key={cls.rank}
-                      className="flex items-center gap-3 rounded-lg border border-border/40 bg-muted/20 px-4 py-3 hover:bg-muted/40 transition-colors"
+                      className="flex items-center gap-3 rounded-xl border border-border/40 bg-foreground/[0.02] px-4 py-3 transition-colors hover:bg-foreground/[0.05]"
                     >
                       <span
-                        className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold shrink-0 ${
+                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
                           cls.rank === 1
                             ? 'bg-yellow-500/20 text-clay-600'
                             : cls.rank === 2
                               ? 'bg-slate-400/20 text-slate-300'
                               : cls.rank === 3
                                 ? 'bg-orange-700/20 text-orange-500'
-                                : 'bg-muted text-muted-foreground'
+                                : 'bg-foreground/[0.06] text-muted-foreground'
                         }`}
                       >
                         {cls.rank}
                       </span>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-medium truncate">{cls.className}</p>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate font-medium">{cls.className}</p>
                         <p className="text-xs text-muted-foreground">
                           {cls.teacher} &bull; {cls.studentCount}{' '}
                           {t('school.analytics.students_suffix')}
@@ -696,114 +753,120 @@ export default function SchoolAnalyticsPage() {
                       >
                         {cls.avgScore}%
                       </span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ol>
               ) : null}
-            </CardContent>
-          </Card>
+            </div>
+          </GlassPanel>
 
           {/* Resource Usage */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <BookOpen className="h-4 w-4 text-blue-400" />
-                {t('school.analytics.resource_usage.title')}
-              </CardTitle>
-              <CardDescription>{t('school.analytics.resource_usage.subtitle')}</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
+          <GlassPanel accent="teal" as="section" aria-labelledby="resource-usage-heading">
+            <PanelHeader
+              id="resource-usage-heading"
+              eyebrow={t('school.analytics.title')}
+              title={t('school.analytics.resource_usage.title')}
+              subtitle={t('school.analytics.resource_usage.subtitle')}
+              icon={BookOpen}
+              iconClass="text-blue-400"
+            />
+            <div className="space-y-6 p-5">
               {loading ? (
                 <TableSkeleton rows={10} />
               ) : data ? (
                 <>
                   <div>
-                    <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    <PanelEyebrow className="mb-3">
                       {t('school.analytics.top_lessons')}
-                    </p>
-                    <div className="space-y-2.5">
+                    </PanelEyebrow>
+                    <ul className="space-y-2.5">
                       {data.topLessons.map((item, i) => {
                         const maxCount = data.topLessons[0]?.count ?? 1
-                        const pct = Math.round((item.count / maxCount) * 100)
+                        const width = Math.round((item.count / maxCount) * 100)
                         return (
-                          <div key={i} className="space-y-1">
+                          <li key={i} className="space-y-1">
                             <div className="flex items-center justify-between gap-2 text-xs">
                               <span className="truncate text-muted-foreground">{item.title}</span>
-                              <span className="tabular-nums shrink-0 font-medium">
-                                {item.count.toLocaleString()}
+                              <span className="shrink-0 font-medium tabular-nums">
+                                {compact(item.count)}
                               </span>
                             </div>
-                            <div className="h-1.5 rounded-full bg-muted overflow-hidden">
+                            <div className="h-1.5 overflow-hidden rounded-full bg-foreground/[0.08]">
                               <div
-                                className="h-full rounded-full bg-blue-500 transition-all duration-500"
-                                style={{ width: `${pct}%` }}
+                                className="h-full rounded-full transition-all duration-700"
+                                style={{
+                                  width: `${width}%`,
+                                  background: 'hsl(var(--chart-1))',
+                                }}
                               />
                             </div>
-                          </div>
+                          </li>
                         )
                       })}
-                    </div>
+                    </ul>
                   </div>
                   <div>
-                    <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      {t('school.analytics.top_mocks')}
-                    </p>
-                    <div className="space-y-2.5">
+                    <PanelEyebrow className="mb-3">{t('school.analytics.top_mocks')}</PanelEyebrow>
+                    <ul className="space-y-2.5">
                       {data.topMocks.map((item, i) => {
                         const maxCount = data.topMocks[0]?.count ?? 1
-                        const pct = Math.round((item.count / maxCount) * 100)
+                        const width = Math.round((item.count / maxCount) * 100)
                         return (
-                          <div key={i} className="space-y-1">
+                          <li key={i} className="space-y-1">
                             <div className="flex items-center justify-between gap-2 text-xs">
                               <span className="truncate text-muted-foreground">{item.title}</span>
-                              <span className="tabular-nums shrink-0 font-medium">
-                                {item.count.toLocaleString()}
+                              <span className="shrink-0 font-medium tabular-nums">
+                                {compact(item.count)}
                               </span>
                             </div>
-                            <div className="h-1.5 rounded-full bg-muted overflow-hidden">
+                            <div className="h-1.5 overflow-hidden rounded-full bg-foreground/[0.08]">
                               <div
-                                className="h-full rounded-full bg-purple-500 transition-all duration-500"
-                                style={{ width: `${pct}%` }}
+                                className="h-full rounded-full transition-all duration-700"
+                                style={{
+                                  width: `${width}%`,
+                                  background: 'hsl(var(--chart-3))',
+                                }}
                               />
                             </div>
-                          </div>
+                          </li>
                         )
                       })}
-                    </div>
+                    </ul>
                   </div>
                 </>
               ) : null}
-            </CardContent>
-          </Card>
+            </div>
+          </GlassPanel>
         </div>
 
         {/* ── CEFR Placement Overview ─────────────────────────────────────── */}
         <CEFRCohortPanel />
 
         {/* ── Assignment Overview ─────────────────────────────────────────── */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <FileText className="h-4 w-4 text-clay-600" />
-              {t('school.analytics.assignment_overview.title')}
-            </CardTitle>
-            <CardDescription>{t('school.analytics.assignment_overview.subtitle')}</CardDescription>
-          </CardHeader>
-          <CardContent>
+        <GlassPanel accent="clay" as="section" aria-labelledby="assignment-overview-heading">
+          <PanelHeader
+            id="assignment-overview-heading"
+            eyebrow={t('school.analytics.title')}
+            title={t('school.analytics.assignment_overview.title')}
+            subtitle={t('school.analytics.assignment_overview.subtitle')}
+            icon={FileText}
+            iconClass="text-clay-600"
+          />
+          <div className="p-5">
             {loading ? (
               <TableSkeleton rows={6} />
             ) : data ? (
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border/60">
+                    <tr className="border-b border-border/50">
                       <th className="pb-3 text-left font-medium text-muted-foreground">
                         {t('school.analytics.col.class')}
                       </th>
                       <th className="pb-3 text-left font-medium text-muted-foreground">
                         {t('school.analytics.col.teacher')}
                       </th>
-                      <th className="pb-3 pl-6 text-left font-medium text-muted-foreground min-w-[200px]">
+                      <th className="min-w-[200px] pb-3 pl-6 text-left font-medium text-muted-foreground">
                         {t('school.analytics.col.completion_rate')}
                       </th>
                       <th className="pb-3 text-right font-medium text-muted-foreground">
@@ -813,14 +876,11 @@ export default function SchoolAnalyticsPage() {
                   </thead>
                   <tbody className="divide-y divide-border/40">
                     {data.classAssignments.map((cls, i) => (
-                      <tr key={i} className="hover:bg-muted/30 transition-colors">
+                      <tr key={i} className="transition-colors hover:bg-foreground/[0.03]">
                         <td className="py-3 font-medium">{cls.className}</td>
                         <td className="py-3 text-muted-foreground">{cls.teacher}</td>
                         <td className="py-3 pl-6">
-                          <InlineProgressBar
-                            pct={cls.completionRate}
-                            colorClass={completionColor(cls.completionRate)}
-                          />
+                          <GlassMeter value={cls.completionRate} />
                         </td>
                         <td className="py-3 text-right">
                           {cls.overdueCount > 0 ? (
@@ -837,8 +897,8 @@ export default function SchoolAnalyticsPage() {
                 </table>
               </div>
             ) : null}
-          </CardContent>
-        </Card>
+          </div>
+        </GlassPanel>
 
         {/* ── Export Buttons ──────────────────────────────────────────────── */}
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">

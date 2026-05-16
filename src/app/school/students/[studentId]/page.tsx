@@ -32,22 +32,27 @@ import {
   ChevronUp,
   AlertTriangle,
   GraduationCap,
+  Activity,
+  Dumbbell,
 } from 'lucide-react'
 import { useT } from '@/lib/i18n/use-t'
 import { Skeleton } from '@/components/ui/skeleton'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import {
-  percentageToGCSEGrade,
-  percentageToGCSEGradeLabel,
-  gcseGradeColor,
-  formatPercentageWithGrade,
-  predictedGradeColor,
-  getGradeRecommendation,
-  isGCSEYearGroup,
-} from '@/lib/grades'
+  GlassPanel,
+  PanelEyebrow,
+  KpiTile,
+  AnimatedNumber,
+  TrendArea,
+  RadialScore,
+  RankBars,
+  SkillRadar,
+  SERIES,
+  pct,
+} from '@/components/dataviz'
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -287,220 +292,11 @@ function recommendationBorder(type: Recommendation['type']) {
   }
 }
 
-// ─── Exam Readiness Gauge (inline SVG) ───────────────────────────────────────
-
-function ExamReadinessGaugeInline({ score }: { score: number }) {
-  const size = 140
-  const strokeWidth = 10
-  const radius = (size - strokeWidth) / 2
-  const circumference = 2 * Math.PI * radius
-  const offset = circumference - (score / 100) * circumference
-  const color = score >= 70 ? '#22c55e' : score >= 50 ? '#f59e0b' : '#ef4444'
-
-  return (
-    <div className="flex flex-col items-center">
-      <div className="relative" style={{ width: size, height: size }}>
-        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90">
-          <circle
-            cx={size / 2}
-            cy={size / 2}
-            r={radius}
-            fill="none"
-            className="stroke-muted"
-            strokeWidth={strokeWidth}
-          />
-          <circle
-            cx={size / 2}
-            cy={size / 2}
-            r={radius}
-            fill="none"
-            stroke={color}
-            strokeWidth={strokeWidth}
-            strokeDasharray={circumference}
-            strokeDashoffset={offset}
-            strokeLinecap="round"
-            className="transition-all duration-700 ease-out"
-          />
-        </svg>
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className={`text-lg font-bold ${gcseGradeColor(percentageToGCSEGrade(score))}`}>
-            Grade {percentageToGCSEGrade(score)}
-          </span>
-          <span className="text-[10px] text-muted-foreground">{score}%</span>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// ─── Line Chart (SVG) ────────────────────────────────────────────────────────
-
-function LineChart({
-  data,
-  height = 200,
-  valueKey = 'score',
-  labelKey = 'label',
-  color = 'hsl(var(--chart-4))',
-  maxValue,
-}: {
-  data: { [key: string]: unknown }[]
-  height?: number
-  valueKey?: string
-  labelKey?: string
-  color?: string
-  maxValue?: number
-}) {
-  if (data.length === 0) return null
-
-  const width = 600
-  const padding = { top: 20, right: 20, bottom: 30, left: 40 }
-  const chartWidth = width - padding.left - padding.right
-  const chartHeight = height - padding.top - padding.bottom
-
-  const values = data.map((d) => Number(d[valueKey]) || 0)
-  const max = maxValue ?? Math.max(...values, 1)
-  const min = 0
-
-  const points = values.map((v, i) => ({
-    x: padding.left + (i / Math.max(data.length - 1, 1)) * chartWidth,
-    y: padding.top + chartHeight - ((v - min) / (max - min || 1)) * chartHeight,
-  }))
-
-  const pathD = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ')
-  const areaD = `${pathD} L ${points[points.length - 1].x} ${padding.top + chartHeight} L ${points[0].x} ${padding.top + chartHeight} Z`
-
-  const yTicks = [0, 25, 50, 75, 100].filter((t) => t <= max)
-
-  return (
-    <svg viewBox={`0 0 ${width} ${height}`} className="w-full" preserveAspectRatio="xMidYMid meet">
-      {/* Grid lines */}
-      {yTicks.map((tick) => {
-        const y = padding.top + chartHeight - (tick / max) * chartHeight
-        return (
-          <g key={tick}>
-            <line
-              x1={padding.left}
-              y1={y}
-              x2={width - padding.right}
-              y2={y}
-              className="stroke-border"
-              strokeWidth={0.5}
-              strokeDasharray="4 4"
-            />
-            <text
-              x={padding.left - 8}
-              y={y + 4}
-              textAnchor="end"
-              className="fill-muted-foreground"
-              fontSize={10}
-            >
-              {tick}%
-            </text>
-          </g>
-        )
-      })}
-
-      {/* Area fill */}
-      <path d={areaD} fill={color} opacity={0.1} />
-
-      {/* Line */}
-      <path
-        d={pathD}
-        fill="none"
-        stroke={color}
-        strokeWidth={2.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-
-      {/* Data points */}
-      {points.map((p, i) => (
-        <g key={i}>
-          <circle cx={p.x} cy={p.y} r={4} fill={color} className="transition-all duration-200" />
-          <circle
-            cx={p.x}
-            cy={p.y}
-            r={6}
-            fill={color}
-            opacity={0}
-            className="hover:opacity-20 transition-opacity"
-          />
-          {/* Value label on hover area */}
-          <text
-            x={p.x}
-            y={p.y - 10}
-            textAnchor="middle"
-            className="fill-foreground"
-            fontSize={10}
-            fontWeight={600}
-          >
-            {values[i]}%
-          </text>
-        </g>
-      ))}
-
-      {/* X-axis labels */}
-      {data.map((d, i) => (
-        <text
-          key={i}
-          x={padding.left + (i / Math.max(data.length - 1, 1)) * chartWidth}
-          y={height - 5}
-          textAnchor="middle"
-          className="fill-muted-foreground"
-          fontSize={9}
-        >
-          {String(d[labelKey] ?? '')}
-        </text>
-      ))}
-    </svg>
-  )
-}
-
-// ─── Revision Hours Bar Chart (SVG) ──────────────────────────────────────────
-
-function RevisionBarChart({ data }: { data: RevisionWeek[] }) {
-  if (data.length === 0) return null
-
-  const maxHours = Math.max(...data.map((d) => d.hours), 1)
-  const barHeight = 180
-
-  return (
-    <div className="flex h-52 items-end gap-2">
-      <div className="flex h-full flex-col justify-between text-xs text-muted-foreground pr-2 shrink-0">
-        <span>{maxHours}h</span>
-        <span>{Math.round(maxHours * 0.75)}h</span>
-        <span>{Math.round(maxHours * 0.5)}h</span>
-        <span>{Math.round(maxHours * 0.25)}h</span>
-        <span>0h</span>
-      </div>
-      <div className="flex flex-1 items-end gap-2 sm:gap-3">
-        {data.map((week, i) => {
-          const heightPct = (week.hours / maxHours) * 100
-          return (
-            <div key={i} className="group relative flex flex-1 flex-col items-center">
-              <div className="pointer-events-none absolute -top-8 z-10 hidden rounded bg-background border border-border px-2 py-1 text-xs font-medium whitespace-nowrap group-hover:block">
-                {week.hours}h
-              </div>
-              <div
-                className="w-full max-w-[48px] rounded-t bg-indigo-500 transition-all duration-300 hover:bg-indigo-400"
-                style={{ height: `${Math.max(heightPct, 2)}%` }}
-              />
-              <span className="mt-1.5 text-[10px] text-muted-foreground leading-tight text-center">
-                {week.week}
-              </span>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
 // ─── Skeleton Components ─────────────────────────────────────────────────────
 
 function HeaderSkeleton() {
   return (
-    <div className="rounded-xl border border-border bg-card p-6 animate-pulse">
+    <div className="rounded-2xl border border-border/60 bg-card/60 p-6 animate-pulse backdrop-blur-xl">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-3">
           <Skeleton className="h-8 w-48" />
@@ -511,7 +307,7 @@ function HeaderSkeleton() {
           <Skeleton className="h-4 w-32" />
         </div>
         <div className="flex flex-col items-center gap-2">
-          <Skeleton className="h-16 w-16 rounded-full" />
+          <Skeleton className="h-32 w-32 rounded-full" />
           <Skeleton className="h-4 w-24" />
         </div>
       </div>
@@ -521,7 +317,7 @@ function HeaderSkeleton() {
 
 function OverviewCardSkeleton() {
   return (
-    <div className="rounded-xl border border-border bg-card p-5 animate-pulse">
+    <div className="rounded-2xl border border-border/60 bg-card/60 p-5 animate-pulse backdrop-blur-xl">
       <Skeleton className="h-4 w-24 mb-3" />
       <Skeleton className="h-8 w-16 mb-1" />
       <Skeleton className="h-3 w-20" />
@@ -531,7 +327,7 @@ function OverviewCardSkeleton() {
 
 function TableSkeleton() {
   return (
-    <div className="rounded-xl border border-border bg-card p-6 animate-pulse">
+    <div className="rounded-2xl border border-border/60 bg-card/60 p-6 animate-pulse backdrop-blur-xl">
       <Skeleton className="h-6 w-40 mb-4" />
       <div className="space-y-3">
         {Array.from({ length: 6 }).map((_, i) => (
@@ -545,7 +341,7 @@ function TableSkeleton() {
 function SidebarSkeleton() {
   return (
     <div className="space-y-6">
-      <div className="rounded-xl border border-border bg-card p-6 animate-pulse">
+      <div className="rounded-2xl border border-border/60 bg-card/60 p-6 animate-pulse backdrop-blur-xl">
         <Skeleton className="h-5 w-28 mb-4" />
         <div className="space-y-2">
           <Skeleton className="h-10 w-full" />
@@ -553,7 +349,7 @@ function SidebarSkeleton() {
           <Skeleton className="h-10 w-full" />
         </div>
       </div>
-      <div className="rounded-xl border border-border bg-card p-6 animate-pulse">
+      <div className="rounded-2xl border border-border/60 bg-card/60 p-6 animate-pulse backdrop-blur-xl">
         <Skeleton className="h-5 w-28 mb-4" />
         <div className="space-y-2">
           <Skeleton className="h-10 w-full" />
@@ -561,7 +357,7 @@ function SidebarSkeleton() {
           <Skeleton className="h-10 w-full" />
         </div>
       </div>
-      <div className="rounded-xl border border-border bg-card p-6 animate-pulse">
+      <div className="rounded-2xl border border-border/60 bg-card/60 p-6 animate-pulse backdrop-blur-xl">
         <Skeleton className="h-5 w-24 mb-4" />
         <div className="space-y-3">
           {Array.from({ length: 4 }).map((_, i) => (
@@ -710,7 +506,7 @@ export default function StudentDrilldownPage() {
     return Math.round((student.modulesCompleted / student.totalModules) * 100)
   }, [student])
 
-  // ── Quiz history for line chart ─────────────────────────────────────────
+  // ── Quiz history for trend area ─────────────────────────────────────────
 
   const quizChartData = useMemo(() => {
     if (!student?.quizHistory) return []
@@ -718,6 +514,29 @@ export default function StudentDrilldownPage() {
       label: formatDate(q.date).replace(/\s\d{4}$/, ''),
       score: Math.round((q.score / q.maxScore) * 100),
     }))
+  }, [student])
+
+  // ── Skill profile for radar (strengths + weaknesses) ────────────────────
+
+  const skillRadarData = useMemo(() => {
+    if (!student) return []
+    return [...student.strengths, ...student.weaknesses]
+      .slice(0, 8)
+      .map((s) => ({ area: s.area, score: s.score }))
+  }, [student])
+
+  // ── Weekly scores as a trend series ─────────────────────────────────────
+
+  const weeklyChartData = useMemo(() => {
+    const weeklyScores = trends?.weeklyScores ?? []
+    return weeklyScores.map((w) => ({ week: w.week, score: w.score }))
+  }, [trends])
+
+  // ── Revision hours bars ─────────────────────────────────────────────────
+
+  const revisionChartData = useMemo(() => {
+    if (!student?.revisionHours) return []
+    return student.revisionHours.map((r) => ({ week: r.week, hours: r.hours }))
   }, [student])
 
   // ── Action handlers ─────────────────────────────────────────────────────
@@ -795,6 +614,7 @@ export default function StudentDrilldownPage() {
   }
 
   const weeklyScores = trends?.weeklyScores ?? []
+  const examReadinessGrade = percentageToGCSEGrade(student.examReadiness)
 
   // ── Section header helper ───────────────────────────────────────────────
 
@@ -814,15 +634,15 @@ export default function StudentDrilldownPage() {
         onClick={() => toggleSection(sectionKey)}
         className="w-full flex items-center justify-between mb-4"
       >
-        <h2 className="flex items-center gap-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+        <span className="flex items-center gap-2">
           {icon}
-          {title}
+          <PanelEyebrow>{title}</PanelEyebrow>
           {count !== undefined && (
             <span className="ml-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
               {count}
             </span>
           )}
-        </h2>
+        </span>
         {expandedSections[sectionKey] ? (
           <ChevronUp className="h-4 w-4 text-muted-foreground" />
         ) : (
@@ -867,12 +687,15 @@ export default function StudentDrilldownPage() {
           </div>
         </div>
 
-        {/* ── Student Header ─────────────────────────────────────────────── */}
-        <div className="rounded-xl border border-border bg-card p-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        {/* ── Cinematic Student Header ───────────────────────────────────── */}
+        <GlassPanel accent="primary" className="p-6 sm:p-8 print:border print:bg-white">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             {/* Left: Name, badges, trajectory, last active */}
             <div className="space-y-3">
-              <h1 className="text-2xl font-bold sm:text-3xl">{student.name}</h1>
+              <PanelEyebrow>Student Profile</PanelEyebrow>
+              <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+                {student.name}
+              </h1>
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="secondary" className="bg-primary/10 text-primary border-0">
                   {student.yearGroup}
@@ -925,17 +748,30 @@ export default function StudentDrilldownPage() {
               </p>
             </div>
 
-            {/* Right: Grade Prediction Card */}
-            <div className="flex flex-col items-center gap-3 sm:min-w-[160px]">
+            {/* Right: Exam readiness gauge + predicted-grade hero */}
+            <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+              {/* Exam readiness radial */}
+              <div className="flex flex-col items-center gap-2">
+                <RadialScore value={student.examReadiness} size={150} />
+                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  Exam Readiness
+                </span>
+                <span className={`text-xs font-semibold ${gcseGradeColor(examReadinessGrade)}`}>
+                  Grade {examReadinessGrade} &middot; {pct(student.examReadiness)}
+                </span>
+              </div>
+
+              {/* Predicted grade hero */}
               <div
-                className={`flex flex-col items-center gap-1 rounded-xl border-2 p-4 ${gradeBgClass(student.predictedGrade)}`}
+                className={`flex flex-col items-center gap-1 rounded-2xl border-2 p-5 ${gradeBgClass(student.predictedGrade)}`}
               >
-                <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                   Predicted Grade
                 </span>
-                <span className={`text-4xl font-bold ${gradeColorClass(student.predictedGrade)}`}>
-                  {student.predictedGrade}
-                </span>
+                <AnimatedNumber
+                  value={student.predictedGrade}
+                  className={`font-heading text-5xl font-bold tracking-tight ${gradeColorClass(student.predictedGrade)}`}
+                />
                 <div className="flex items-center gap-1 mt-1">
                   {student.trajectory.trend === 'improving' ? (
                     <TrendingUp className="h-3.5 w-3.5 text-green-400" />
@@ -963,86 +799,53 @@ export default function StudentDrilldownPage() {
               </div>
             </div>
           </div>
-        </div>
+        </GlassPanel>
 
-        {/* ── Overview Cards Row ──────────────────────────────────────────── */}
+        {/* ── Overview KPI Tiles ──────────────────────────────────────────── */}
         <div className="mt-6 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-          <div className="rounded-xl border border-border bg-card p-5">
-            <div className="flex items-center gap-2 text-muted-foreground mb-2">
-              <BookOpen className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Modules</span>
-            </div>
-            <p className="text-2xl font-bold tabular-nums">
-              {student.modulesCompleted}
-              <span className="text-base font-normal text-muted-foreground">
-                /{student.totalModules}
-              </span>
-            </p>
-            <p className="text-xs text-muted-foreground mt-1">Completed</p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-card p-5">
-            <div className="flex items-center gap-2 text-muted-foreground mb-2">
-              <BarChart3 className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Working At Grade</span>
-            </div>
-            <p
-              className={`text-2xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(student.averageQuizScore))}`}
-            >
-              Grade {percentageToGCSEGrade(student.averageQuizScore)}
-            </p>
-            <p className="text-xs text-muted-foreground mt-1">
-              Based on quiz average ({student.averageQuizScore}%)
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-card p-5">
-            <div className="flex items-center gap-2 text-muted-foreground mb-2">
-              <Clock className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Study Time</span>
-            </div>
-            <p className="text-2xl font-bold tabular-nums">
-              {formatStudyTime(student.totalStudyTimeMinutes)}
-            </p>
-            <p className="text-xs text-muted-foreground mt-1">Total</p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-card p-5">
-            <div className="flex items-center gap-2 text-muted-foreground mb-2">
-              <Target className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Practice</span>
-            </div>
-            <p className="text-2xl font-bold tabular-nums">{student.practiceSessions}</p>
-            <p className="text-xs text-muted-foreground mt-1">Sessions</p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-card p-5">
-            <div className="flex items-center gap-2 text-muted-foreground mb-2">
-              <Award className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Certificates</span>
-            </div>
-            <p className="text-2xl font-bold tabular-nums">{student.certificatesEarned}</p>
-            <p className="text-xs text-muted-foreground mt-1">Earned</p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-card p-5">
-            <div className="flex items-center gap-2 text-muted-foreground mb-2">
-              <Flame className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Streak</span>
-            </div>
-            <p className="text-2xl font-bold tabular-nums text-clay-600">{student.currentStreak}</p>
-            <p className="text-xs text-muted-foreground mt-1">Days</p>
-          </div>
+          <KpiTile
+            label="Modules"
+            value={student.modulesCompleted}
+            suffix={`/${student.totalModules}`}
+            icon={BookOpen}
+            accent="primary"
+          />
+          <KpiTile
+            label="Working Grade"
+            value={percentageToGCSEGrade(student.averageQuizScore)}
+            prefix="G"
+            icon={BarChart3}
+            accent="teal"
+          />
+          <KpiTile
+            label="Study Time"
+            value={Math.round(student.totalStudyTimeMinutes / 60)}
+            suffix="h"
+            icon={Clock}
+            accent="sage"
+          />
+          <KpiTile label="Practice" value={student.practiceSessions} icon={Target} accent="ochre" />
+          <KpiTile
+            label="Certificates"
+            value={student.certificatesEarned}
+            icon={Award}
+            accent="clay"
+          />
+          <KpiTile
+            label="Streak"
+            value={student.currentStreak}
+            suffix="d"
+            icon={Flame}
+            accent="ochre"
+          />
         </div>
 
-        {/* ── Module Completion Progress Bar ───────────────────────────────── */}
-        <div className="mt-6 rounded-xl border border-border bg-card p-6">
+        {/* ── Module Completion ────────────────────────────────────────────── */}
+        <GlassPanel accent="primary" className="mt-6 p-6">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-              Module Completion
-            </h2>
+            <PanelEyebrow>Module Completion</PanelEyebrow>
             <span className="text-sm font-semibold tabular-nums">
-              {completionPct}%{' '}
+              <AnimatedNumber value={completionPct} suffix="%" />{' '}
               <span className="text-muted-foreground font-normal">
                 ({student.modulesCompleted}/{student.totalModules})
               </span>
@@ -1069,62 +872,60 @@ export default function StudentDrilldownPage() {
               {student.modules.filter((m) => m.status === 'not_started').length} Not Started
             </span>
           </div>
-        </div>
+        </GlassPanel>
 
-        {/* ── Exam Readiness + Grade Prediction Row ────────────────────────── */}
+        {/* ── Exam Readiness + Skill Profile Radar ─────────────────────────── */}
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-xl border border-border bg-card p-6">
-            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground text-center">
-              Exam Readiness
-            </h2>
-            <ExamReadinessGaugeInline score={student.examReadiness} />
-          </div>
-
-          {/* Strengths & Weaknesses Summary */}
-          <div className="rounded-xl border border-border bg-card p-6">
-            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground text-center">
-              Skill Profile
-            </h2>
-            <div className="space-y-2">
-              {[...student.strengths, ...student.weaknesses]
-                .sort((a, b) => b.score - a.score)
-                .slice(0, 6)
-                .map((item, i) => {
-                  const isStrength = student.strengths.some((s) => s.area === item.area)
-                  return (
-                    <div key={i} className="flex items-center gap-3">
-                      <span className="w-28 truncate text-xs font-medium text-foreground">
-                        {item.area}
-                      </span>
-                      <div className="flex-1 h-2 overflow-hidden rounded-full bg-muted">
-                        <div
-                          className={`h-full rounded-full transition-all duration-500 ${
-                            isStrength ? 'bg-green-500' : 'bg-red-500'
-                          }`}
-                          style={{ width: `${item.score}%` }}
-                        />
-                      </div>
-                      <span
-                        className={`text-xs font-semibold tabular-nums w-14 text-right ${gcseGradeColor(percentageToGCSEGrade(item.score))}`}
-                      >
-                        G{percentageToGCSEGrade(item.score)}
-                      </span>
-                    </div>
-                  )
-                })}
+          <GlassPanel accent="teal" className="p-6">
+            <div className="mb-4 flex items-center gap-2">
+              <Target className="h-4 w-4 text-teal-400" />
+              <PanelEyebrow>Exam Readiness</PanelEyebrow>
             </div>
-          </div>
+            <div className="flex flex-col items-center gap-3">
+              <RadialScore value={student.examReadiness} label="ready" size={180} />
+              <span className={`text-sm font-semibold ${gcseGradeColor(examReadinessGrade)}`}>
+                Grade {examReadinessGrade} &middot; {pct(student.examReadiness)}
+              </span>
+            </div>
+          </GlassPanel>
+
+          {/* Skill Profile Radar */}
+          <GlassPanel accent="sage" className="p-6">
+            <div className="mb-4 flex items-center gap-2">
+              <Activity className="h-4 w-4 text-sage-400" />
+              <PanelEyebrow>Skill Profile</PanelEyebrow>
+            </div>
+            {skillRadarData.length >= 3 ? (
+              <SkillRadar
+                data={skillRadarData}
+                angleKey="area"
+                valueKey="score"
+                height={260}
+                color={SERIES[1]}
+              />
+            ) : (
+              <div className="flex h-[260px] items-center justify-center text-sm text-muted-foreground">
+                Not enough skill data to plot a radar yet.
+              </div>
+            )}
+            {/* Accessible text equivalent */}
+            <ul className="sr-only">
+              {skillRadarData.map((s) => (
+                <li key={s.area}>
+                  {s.area}: {s.score}% (Grade {percentageToGCSEGrade(s.score)})
+                </li>
+              ))}
+            </ul>
+          </GlassPanel>
         </div>
 
         {/* ── Two-Column Layout: Modules + Strengths/Weaknesses ────────────── */}
         <div className="mt-6 grid gap-6 lg:grid-cols-3">
           {/* Left Column: Module Progress Table */}
-          <div className="lg:col-span-2 rounded-xl border border-border bg-card p-6">
+          <GlassPanel accent="primary" className="lg:col-span-2 p-6">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-                Module Progress
-              </h2>
-              <div className="flex items-center gap-1 rounded-lg bg-background p-0.5">
+              <PanelEyebrow>Module Progress</PanelEyebrow>
+              <div className="flex items-center gap-1 rounded-lg bg-background/60 p-0.5">
                 <button
                   onClick={() => setSortBy('status')}
                   className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${
@@ -1209,12 +1010,12 @@ export default function StudentDrilldownPage() {
                 </div>
               )}
             </div>
-          </div>
+          </GlassPanel>
 
           {/* Right Column: Strengths, Weaknesses */}
           <div className="space-y-6">
             {/* Strengths Panel */}
-            <div className="rounded-xl border border-green-500/20 bg-green-500/5 p-5">
+            <GlassPanel accent="sage" glow={false} className="border-green-500/20 p-5">
               <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-green-400">
                 <Award className="h-4 w-4" />
                 Strengths
@@ -1239,10 +1040,10 @@ export default function StudentDrilldownPage() {
               ) : (
                 <p className="text-xs text-muted-foreground">Not enough data yet.</p>
               )}
-            </div>
+            </GlassPanel>
 
             {/* Weaknesses Panel */}
-            <div className="rounded-xl border border-red-500/20 bg-red-500/5 p-5">
+            <GlassPanel accent="clay" glow={false} className="border-red-500/20 p-5">
               <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold text-red-400">
                 <XCircle className="h-4 w-4" />
                 Weaknesses
@@ -1267,13 +1068,13 @@ export default function StudentDrilldownPage() {
               ) : (
                 <p className="text-xs text-muted-foreground">Not enough data yet.</p>
               )}
-            </div>
+            </GlassPanel>
 
             {/* Performance Summary */}
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
-                Performance Summary
-              </h3>
+            <GlassPanel accent="primary" className="p-5">
+              <div className="mb-4">
+                <PanelEyebrow>Performance Summary</PanelEyebrow>
+              </div>
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Overall Score</span>
@@ -1302,12 +1103,12 @@ export default function StudentDrilldownPage() {
                   />
                 </div>
               </div>
-            </div>
+            </GlassPanel>
           </div>
         </div>
 
-        {/* ── Quiz & Assessment Score History (Line Chart) ─────────────────── */}
-        <div className="mt-6 rounded-xl border border-border bg-card p-6">
+        {/* ── Quiz & Assessment Score History (Trend Area) ─────────────────── */}
+        <GlassPanel accent="primary" className="mt-6 p-6">
           <SectionHeader
             sectionKey="quizHistory"
             icon={<BarChart3 className="h-4 w-4 text-indigo-400" />}
@@ -1318,14 +1119,36 @@ export default function StudentDrilldownPage() {
           {expandedSections.quizHistory && (
             <>
               {quizChartData.length > 0 ? (
-                <LineChart
-                  data={quizChartData}
-                  height={220}
-                  valueKey="score"
-                  labelKey="label"
-                  color="hsl(var(--chart-4))"
-                  maxValue={100}
-                />
+                <>
+                  <div className="print:hidden">
+                    <TrendArea
+                      data={quizChartData}
+                      xKey="label"
+                      yKey="score"
+                      height={240}
+                      color={SERIES[3]}
+                      suffix="%"
+                      domain={[0, 100]}
+                    />
+                  </div>
+                  {/* Accessible / print table equivalent */}
+                  <table className="mt-2 hidden w-full text-sm print:table">
+                    <thead>
+                      <tr className="border-b border-border text-left text-xs uppercase text-muted-foreground">
+                        <th className="pb-2 pr-4">Attempt</th>
+                        <th className="pb-2">Score</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                      {quizChartData.map((q, i) => (
+                        <tr key={i}>
+                          <td className="py-1.5 pr-4">{q.label}</td>
+                          <td className="py-1.5 tabular-nums">{q.score}%</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </>
               ) : (
                 <div className="flex h-48 items-center justify-center text-muted-foreground text-sm">
                   No quiz attempts recorded yet.
@@ -1333,59 +1156,59 @@ export default function StudentDrilldownPage() {
               )}
             </>
           )}
-        </div>
+        </GlassPanel>
 
-        {/* ── Weekly Score Trend Chart ──────────────────────────────────────── */}
-        <div className="mt-6 rounded-xl border border-border bg-card p-6">
-          <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
-            Weekly Quiz Scores — Last 8 Weeks
-          </h2>
+        {/* ── Weekly Score Trend ────────────────────────────────────────────── */}
+        <GlassPanel accent="teal" className="mt-6 p-6">
+          <div className="mb-4 flex items-center gap-2">
+            <TrendingUp className="h-4 w-4 text-teal-400" />
+            <PanelEyebrow>Weekly Quiz Scores — Last 8 Weeks</PanelEyebrow>
+          </div>
 
-          {weeklyScores.length > 0 ? (
-            <div className="flex h-56 items-end gap-2">
-              <div className="flex h-full flex-col justify-between text-xs text-muted-foreground pr-2 shrink-0">
-                <span>100%</span>
-                <span>75%</span>
-                <span>50%</span>
-                <span>25%</span>
-                <span>0%</span>
+          {weeklyChartData.length > 0 ? (
+            <>
+              <div className="print:hidden">
+                <TrendArea
+                  data={weeklyChartData}
+                  xKey="week"
+                  yKey="score"
+                  height={240}
+                  color={SERIES[0]}
+                  suffix="%"
+                  domain={[0, 100]}
+                />
               </div>
-
-              <div className="flex flex-1 items-end gap-2 sm:gap-3">
-                {weeklyScores.map((week, i) => {
-                  const barColor =
-                    week.trend === 'up'
-                      ? 'bg-green-500'
-                      : week.trend === 'down'
-                        ? 'bg-red-500'
-                        : 'bg-border'
-
-                  return (
-                    <div key={i} className="group relative flex flex-1 flex-col items-center">
-                      <div className="pointer-events-none absolute -top-8 z-10 hidden rounded bg-background border border-border px-2 py-1 text-xs font-medium whitespace-nowrap group-hover:block">
-                        {percentageToGCSEGradeLabel(week.score)} ({week.score}%)
-                      </div>
-                      <div
-                        className={`w-full max-w-[48px] rounded-t transition-all duration-300 ${barColor}`}
-                        style={{ height: `${Math.max(week.score, 2)}%` }}
-                      />
-                      <span className="mt-1.5 text-[10px] text-muted-foreground leading-tight text-center">
-                        {week.week}
-                      </span>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
+              {/* Accessible / print table equivalent */}
+              <table className="mt-2 hidden w-full text-sm print:table">
+                <thead>
+                  <tr className="border-b border-border text-left text-xs uppercase text-muted-foreground">
+                    <th className="pb-2 pr-4">Week</th>
+                    <th className="pb-2 pr-4">Score</th>
+                    <th className="pb-2">Trend</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {weeklyScores.map((w, i) => (
+                    <tr key={i}>
+                      <td className="py-1.5 pr-4">{w.week}</td>
+                      <td className="py-1.5 pr-4 tabular-nums">
+                        {percentageToGCSEGradeLabel(w.score)} ({w.score}%)
+                      </td>
+                      <td className="py-1.5 capitalize">{w.trend}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </>
           ) : (
             <div className="flex h-48 items-center justify-center text-muted-foreground text-sm">
               No weekly score data available yet.
             </div>
           )}
-        </div>
+        </GlassPanel>
 
         {/* ── Mock Exam Results Table ──────────────────────────────────────── */}
-        <div className="mt-6 rounded-xl border border-border bg-card p-6">
+        <GlassPanel accent="ochre" className="mt-6 p-6">
           <SectionHeader
             sectionKey="mockExams"
             icon={<GraduationCap className="h-4 w-4 text-purple-400" />}
@@ -1409,7 +1232,7 @@ export default function StudentDrilldownPage() {
                     </thead>
                     <tbody className="divide-y divide-border">
                       {student.mockExamResults.map((exam) => {
-                        const pct = Math.round((exam.score / exam.maxScore) * 100)
+                        const examPct = Math.round((exam.score / exam.maxScore) * 100)
                         return (
                           <tr key={exam.id}>
                             <td className="py-3 pr-4 font-medium text-foreground">
@@ -1422,12 +1245,12 @@ export default function StudentDrilldownPage() {
                               <div className="flex items-center gap-2">
                                 <div className="h-2 w-16 overflow-hidden rounded-full bg-muted">
                                   <div
-                                    className={`h-full rounded-full ${scoreBarColor(pct)}`}
-                                    style={{ width: `${pct}%` }}
+                                    className={`h-full rounded-full ${scoreBarColor(examPct)}`}
+                                    style={{ width: `${examPct}%` }}
                                   />
                                 </div>
                                 <span
-                                  className={`text-xs font-semibold tabular-nums ${scoreTextColor(pct)}`}
+                                  className={`text-xs font-semibold tabular-nums ${scoreTextColor(examPct)}`}
                                 >
                                   {exam.score}/{exam.maxScore}
                                 </span>
@@ -1475,10 +1298,10 @@ export default function StudentDrilldownPage() {
               )}
             </>
           )}
-        </div>
+        </GlassPanel>
 
         {/* ── Essay Feedback History ───────────────────────────────────────── */}
-        <div className="mt-6 rounded-xl border border-border bg-card p-6">
+        <GlassPanel accent="clay" className="mt-6 p-6">
           <SectionHeader
             sectionKey="essays"
             icon={<PenLine className="h-4 w-4 text-cyan-400" />}
@@ -1493,7 +1316,7 @@ export default function StudentDrilldownPage() {
                   {student.essaySubmissions.map((essay) => (
                     <div
                       key={essay.id}
-                      className="rounded-lg border border-border bg-background p-4 hover:border-border/80 transition-colors"
+                      className="rounded-lg border border-border bg-background/60 p-4 hover:border-border/80 transition-colors"
                     >
                       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                         <div className="min-w-0">
@@ -1547,20 +1370,47 @@ export default function StudentDrilldownPage() {
               )}
             </>
           )}
-        </div>
+        </GlassPanel>
 
-        {/* ── Revision Time Chart ──────────────────────────────────────────── */}
-        <div className="mt-6 rounded-xl border border-border bg-card p-6">
+        {/* ── Revision Time ────────────────────────────────────────────────── */}
+        <GlassPanel accent="sage" className="mt-6 p-6">
           <SectionHeader
             sectionKey="revisionTime"
-            icon={<Clock className="h-4 w-4 text-indigo-400" />}
+            icon={<Dumbbell className="h-4 w-4 text-indigo-400" />}
             title="Revision Time - Last 8 Weeks"
           />
 
           {expandedSections.revisionTime && (
             <>
-              {student.revisionHours && student.revisionHours.length > 0 ? (
-                <RevisionBarChart data={student.revisionHours} />
+              {revisionChartData.length > 0 ? (
+                <>
+                  <div className="print:hidden">
+                    <RankBars
+                      data={revisionChartData}
+                      labelKey="week"
+                      valueKey="hours"
+                      height={Math.max(220, revisionChartData.length * 36)}
+                      suffix="h"
+                    />
+                  </div>
+                  {/* Accessible / print table equivalent */}
+                  <table className="mt-2 hidden w-full text-sm print:table">
+                    <thead>
+                      <tr className="border-b border-border text-left text-xs uppercase text-muted-foreground">
+                        <th className="pb-2 pr-4">Week</th>
+                        <th className="pb-2">Hours</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                      {revisionChartData.map((r, i) => (
+                        <tr key={i}>
+                          <td className="py-1.5 pr-4">{r.week}</td>
+                          <td className="py-1.5 tabular-nums">{r.hours}h</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </>
               ) : (
                 <div className="flex h-48 items-center justify-center text-muted-foreground text-sm">
                   No revision time data available yet.
@@ -1568,10 +1418,10 @@ export default function StudentDrilldownPage() {
               )}
             </>
           )}
-        </div>
+        </GlassPanel>
 
         {/* ── Personalized Recommendations ────────────────────────────────── */}
-        <div className="mt-6 rounded-xl border border-border bg-card p-6">
+        <GlassPanel accent="primary" className="mt-6 p-6">
           <SectionHeader
             sectionKey="recommendations"
             icon={<Zap className="h-4 w-4 text-primary" />}
@@ -1586,7 +1436,7 @@ export default function StudentDrilldownPage() {
                   {student.recommendations.map((rec) => (
                     <div
                       key={rec.id}
-                      className={`rounded-xl border bg-background p-4 transition-colors ${recommendationBorder(rec.type)}`}
+                      className={`rounded-xl border bg-background/60 p-4 transition-colors ${recommendationBorder(rec.type)}`}
                     >
                       <div className="mb-2 flex items-start gap-3">
                         <div className="shrink-0 mt-0.5">{recommendationIcon(rec.type)}</div>
@@ -1618,10 +1468,10 @@ export default function StudentDrilldownPage() {
               )}
             </>
           )}
-        </div>
+        </GlassPanel>
 
         {/* ── Teacher Notes ────────────────────────────────────────────────── */}
-        <div className="mt-6 rounded-xl border border-border bg-card p-6 print:hidden">
+        <GlassPanel accent="clay" className="mt-6 p-6 print:hidden">
           <SectionHeader
             sectionKey="notes"
             icon={<FileText className="h-4 w-4 text-clay-600" />}
@@ -1664,7 +1514,7 @@ export default function StudentDrilldownPage() {
                   {notes.map((note) => (
                     <div
                       key={note.id}
-                      className="rounded-lg border border-border bg-background p-4"
+                      className="rounded-lg border border-border bg-background/60 p-4"
                     >
                       {editingNoteId === note.id ? (
                         <div className="space-y-2">
@@ -1737,10 +1587,10 @@ export default function StudentDrilldownPage() {
               )}
             </div>
           )}
-        </div>
+        </GlassPanel>
 
         {/* ── Recent Activity Feed ────────────────────────────────────────── */}
-        <div className="mt-6 rounded-xl border border-border bg-card p-6">
+        <GlassPanel accent="primary" className="mt-6 p-6">
           <SectionHeader
             sectionKey="activity"
             icon={<Clock className="h-4 w-4 text-muted-foreground" />}
@@ -1778,7 +1628,7 @@ export default function StudentDrilldownPage() {
               )}
             </>
           )}
-        </div>
+        </GlassPanel>
       </div>
     </div>
   )
