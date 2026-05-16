@@ -8,7 +8,7 @@ export const metadata: Metadata = {
       'Create custom quizzes for your English classes with multiple question types, templates, and sharing options.',
   },
   alternates: { canonical: 'https://theenglishhub.app/school/tools/quiz-builder' },
-  title: 'Quiz Builder | The English Hub',
+  title: 'Quiz Builder',
   description:
     'Create custom quizzes for your English classes with multiple question types, templates, and sharing options.',
   robots: { index: false, follow: false },

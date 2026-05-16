@@ -95,7 +95,7 @@ const DASHBOARD_SECTION_DEFS: ToolkitSectionDef[] = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Revision toolkit — The English Hub',
+  title: 'Revision toolkit',
   description:
     'Free tools for GCSE & IGCSE English: quote builders, essay frames, mark-scheme checklists.',
   alternates: { canonical: 'https://theenglishhub.app/toolkit' },

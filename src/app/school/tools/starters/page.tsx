@@ -8,7 +8,7 @@ export const metadata: Metadata = {
       'Generate bellwork and starter activities for English lessons. Includes quotes, vocabulary challenges, inference puzzles, grammar fixes, creative prompts, and exam question unpicks.',
   },
   alternates: { canonical: 'https://theenglishhub.app/school/tools/starters' },
-  title: 'Starter Activity Generator | School Tools | The English Hub',
+  title: 'Starter Activity Generator | School Tools',
   description:
     'Generate bellwork and starter activities for English lessons. Includes quotes, vocabulary challenges, inference puzzles, grammar fixes, creative prompts, and exam question unpicks.',
   robots: { index: false, follow: false },

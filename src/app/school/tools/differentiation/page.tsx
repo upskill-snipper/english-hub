@@ -8,7 +8,7 @@ export const metadata: Metadata = {
       'Build differentiated resources at Foundation, Core, and Extension levels. Auto-generate scaffolded tasks for essay writing, extract analysis, creative writing, and comparison.',
   },
   alternates: { canonical: 'https://theenglishhub.app/school/tools/differentiation' },
-  title: 'Differentiation Toolkit | The English Hub',
+  title: 'Differentiation Toolkit',
   description:
     'Build differentiated resources at Foundation, Core, and Extension levels. Auto-generate scaffolded tasks for essay writing, extract analysis, creative writing, and comparison.',
   robots: { index: false, follow: false },

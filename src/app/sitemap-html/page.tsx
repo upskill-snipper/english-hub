@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       'Every page on The English Hub, organised by section. Use this to find anything: revision hubs, set texts, exam boards, resources.',
   },
-  title: 'Sitemap — The English Hub',
+  title: 'Sitemap',
   description:
     'Every page on The English Hub, organised by section. Use this to find anything: revision hubs, set texts, exam boards, resources.',
   alternates: { canonical: 'https://theenglishhub.app/sitemap-html' },

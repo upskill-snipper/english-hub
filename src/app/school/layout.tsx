@@ -5,7 +5,7 @@ import { getSchoolAccess } from '@/lib/school-access'
 import { SchoolSidebarNav } from '@/components/school/SchoolSidebarNav'
 
 export const metadata: Metadata = {
-  title: 'School Admin | The English Hub',
+  title: 'School Admin',
   description: 'Manage your school account, users, classes, and analytics.',
   robots: { index: false, follow: false },
 }
