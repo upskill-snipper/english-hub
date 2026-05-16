@@ -176,9 +176,13 @@ export function Header() {
 
         {/* Desktop auth / CTA */}
         <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
-          {/* Theme toggle — always visible (any auth state) so dark/light
-              is reachable everywhere on desktop. */}
+          {/* Theme + language toggles — always visible for ANY auth state
+              so dark/light AND English/Arabic are reachable everywhere on
+              desktop. The language toggle was previously rendered only in
+              the signed-out branch, leaving logged-in desktop users with
+              no way to switch to / stay in Arabic ("losing Arabic"). */}
           <ThemeToggle className="border-white/15 bg-white/5 text-[#B5B8B3]" />
+          <LanguageToggle className="border-white/15 bg-white/5 text-[#B5B8B3]" />
           {isLoading ? (
             <Skeleton className="h-8 w-20 rounded-full bg-white/10" />
           ) : user ? (
@@ -270,7 +274,6 @@ export function Header() {
               >
                 {t('header.cta.start_free')} &rarr;
               </Link>
-              <LanguageToggle className="ml-1 border-white/15 bg-white/5 text-[#B5B8B3]" />
             </>
           )}
         </div>
