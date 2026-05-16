@@ -49,6 +49,12 @@ import { REPORT_FIX_MAY16B } from './dictionary-report-fix-may16b'
 import { PRESS_AND_VERIFIED_FIX } from './dictionary-press-verified'
 import { HOMEPAGE_DICTIONARY } from './dictionary-homepage'
 import { AFF_PUBLIC_DICTIONARY } from './dictionary-affiliates'
+import { TRUST_DICTIONARY } from './dictionary-trust'
+import { PUBLIC_A_DICTIONARY } from './dictionary-public-a'
+import { CONVERT_DICTIONARY } from './dictionary-convert'
+import { RESOURCES_A_DICTIONARY } from './dictionary-resources-a'
+import { RESOURCES_B_DICTIONARY } from './dictionary-resources-b'
+import { MISC_T1_DICTIONARY } from './dictionary-misc-t1'
 
 export type Locale = 'en' | 'ar'
 
@@ -14723,6 +14729,18 @@ export function lookup(key: string, locale: Locale): string {
     // so its genuine Khaleeji Arabic wins over the English-mirror
     // REPORT_FIX_MAY16B / PLACEHOLDER_FIX_* and the junk AUDIT_FIX values.
     AFF_PUBLIC_DICTIONARY[key] ??
+    // Bucket-A curated Khaleeji — Tier-1 public surfaces (press, about,
+    // accessibility, footer, exam-boards, free-resources, sitemap,
+    // redeem, join-school, brand, billing, resources, a-level,
+    // affiliate portal). Same curated-override tier — BEFORE every
+    // placeholder/audit supplement so genuine Arabic wins over the
+    // EN-mirror / junk-Ollama values these keys had.
+    TRUST_DICTIONARY[key] ??
+    PUBLIC_A_DICTIONARY[key] ??
+    CONVERT_DICTIONARY[key] ??
+    RESOURCES_A_DICTIONARY[key] ??
+    RESOURCES_B_DICTIONARY[key] ??
+    MISC_T1_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??
