@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-language/ocr/writing-skills',
   },
-  title: 'OCR GCSE English Language writing skills — The English Hub',
+  title: 'OCR GCSE English Language writing skills',
   description:
     'Writing skills for OCR GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
 }

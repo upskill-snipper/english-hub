@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       'Detailed analysis of poems from the OCR GCSE English Literature poetry anthology. Themes, techniques, comparison strategies, and key quotations.',
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/poetry' },
-  title: 'OCR Poetry Anthology Analysis | The English Hub',
+  title: 'OCR Poetry Anthology Analysis',
   description:
     'Detailed analysis of poems from the OCR GCSE English Literature poetry anthology. Themes, techniques, comparison strategies, and key quotations.',
 }

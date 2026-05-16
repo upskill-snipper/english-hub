@@ -25,7 +25,7 @@ import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 export const metadata: Metadata = {
-  title: '30 Mistakes That Cost Marks — Common Errors | The English Hub',
+  title: '30 Mistakes That Cost Marks — Common Errors',
   description:
     'Verified against board specifications and primary sources. The 30 most common factual, quotation, and anthology errors students make in GCSE and IGCSE English Literature — and what to write instead.',
   alternates: { canonical: 'https://theenglishhub.app/revision/common-errors' },

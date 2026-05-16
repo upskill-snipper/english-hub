@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     ? `${text.title} — Revision notes (in production)`
     : 'Revision notes — in production'
   return {
-    title: `${title} | The English Hub`,
+    title: `${title}`,
     description: text
       ? `Concise revision notes for ${text.title} are being written. In the meantime explore our study guide, key quotes, and AI marking.`
       : 'Concise revision notes are being written. Explore our study guides, key quotes, and AI marking while we finish them.',

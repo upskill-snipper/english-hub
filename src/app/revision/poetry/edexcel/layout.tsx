@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { CourseJsonLd, BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
-  title: 'Edexcel GCSE poetry anthology — Time and Place + Conflict — The English Hub',
+  title: 'Edexcel GCSE poetry anthology — Time and Place + Conflict',
   description:
     'Pearson Edexcel GCSE 1ET0 poetry anthology. Both clusters covered: Time and Place, Conflict. Themes, language, and comparison practice for Paper 2.',
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/edexcel' },

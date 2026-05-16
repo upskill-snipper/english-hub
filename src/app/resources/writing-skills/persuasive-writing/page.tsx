@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/resources/writing-skills/persuasive-writing',
   },
-  title: 'Persuasive Writing Masterclass | The English Hub',
+  title: 'Persuasive Writing Masterclass',
   description:
     'Complete guide to persuasive and argumentative writing for GCSE and IGCSE English. AFOREST techniques, counter-arguments, tone, register, format conventions for articles, speeches, letters, reports, and reviews. Full annotated model responses, structural approaches, and vocabulary for persuasion.',
 }

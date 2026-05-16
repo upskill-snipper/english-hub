@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description:
       'Grade 1 English GCSE / IGCSE target guide. What a Grade 1 answer looks like and the first steps to move toward Grade 2.',
   },
-  title: 'Grade 1 Guide — The English Hub',
+  title: 'Grade 1 Guide',
   description:
     'Grade 1 English GCSE / IGCSE target guide. What a Grade 1 answer looks like and the first steps to move toward Grade 2.',
   alternates: { canonical: 'https://theenglishhub.app/revision/grade-targets/grade-1' },

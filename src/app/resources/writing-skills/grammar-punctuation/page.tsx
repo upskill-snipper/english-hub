@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/resources/writing-skills/grammar-punctuation',
   },
-  title: 'Grammar & Punctuation Guide | The English Hub',
+  title: 'Grammar & Punctuation Guide',
   description:
     'Comprehensive GCSE grammar and punctuation guide. Sentence types, punctuation for effect, paragraph techniques, SPaG errors, active and passive voice, tense consistency, apostrophes, direct speech rules, commonly misspelled words, and technical accuracy marking guide guidance.',
 }

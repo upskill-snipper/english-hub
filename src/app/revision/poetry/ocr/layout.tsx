@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'OCR GCSE Towards a World Unknown poetry anthology — The English Hub',
+  title: 'OCR GCSE Towards a World Unknown poetry anthology',
   description:
     'OCR GCSE J352 Towards a World Unknown — four clusters of 15 poems. Themes, language and comparison practice across Love, Conflict, Power and Youth.',
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/ocr' },

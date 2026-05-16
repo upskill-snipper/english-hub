@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       'Master every type of writing for your English exams. Comprehensive, board-agnostic guides covering creative writing, persuasive writing, analytical writing, and grammar & punctuation.',
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/writing-skills' },
-  title: 'Writing Skills Masterclass | The English Hub',
+  title: 'Writing Skills Masterclass',
   description:
     'Master every type of writing for your English exams. Comprehensive, board-agnostic guides covering creative writing, persuasive writing, analytical writing, and grammar & punctuation.',
 }

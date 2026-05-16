@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       'Everything you need to achieve a Grade 5 in GCSE English. What examiners expect, skills checklists, common weaknesses, example responses, and specific tips for moving from a 4 to a 5.',
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/grade-targets/grade-5' },
-  title: 'Getting a Grade 5 | Grade Targets | The English Hub',
+  title: 'Getting a Grade 5 | Grade Targets',
   description:
     'Everything you need to achieve a Grade 5 in GCSE English. What examiners expect, skills checklists, common weaknesses, example responses, and specific tips for moving from a 4 to a 5.',
 }

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       'What makes a Grade 9 exceptional in GCSE English. Perceptive and critical analysis, originality, sophistication, example Grade 9 responses, and expert tips for achieving the highest grade.',
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/grade-targets/grade-9' },
-  title: 'Getting a Grade 9 | Grade Targets | The English Hub',
+  title: 'Getting a Grade 9 | Grade Targets',
   description:
     'What makes a Grade 9 exceptional in GCSE English. Perceptive and critical analysis, originality, sophistication, example Grade 9 responses, and expert tips for achieving the highest grade.',
 }

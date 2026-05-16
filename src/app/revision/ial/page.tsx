@@ -27,7 +27,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 
 export const metadata: Metadata = {
-  title: 'IAL English — Your Hub | The English Hub',
+  title: 'IAL English — Your Hub',
   description:
     'Pearson Edexcel International A-Level (IAL) English Literature & Language revision hub. Unit-by-unit breakdown, mock exam packs, AI self-learning, set-text guides and exam technique for IAL success.',
   alternates: { canonical: 'https://theenglishhub.app/revision/ial' },
@@ -140,10 +140,10 @@ const AOS: AO[] = [
   },
   {
     code: 'AO2',
-    name: 'Analyse writer\'s methods',
+    name: "Analyse writer's methods",
     weight: '~25%',
     summary:
-      'Close reading of language, form and structure with an argument about effect. Grade 9 / A* AO2 work names the method AND the effect on the reader AND the writer\'s intention.',
+      "Close reading of language, form and structure with an argument about effect. Grade 9 / A* AO2 work names the method AND the effect on the reader AND the writer's intention.",
   },
   {
     code: 'AO3',
@@ -164,7 +164,7 @@ const AOS: AO[] = [
     name: 'Evaluate alternative interpretations (A2 only)',
     weight: '~15% A2 papers',
     summary:
-      'Name critics or critical positions, then defend your own reading against them. Feminist, Marxist, New Historicist, psychoanalytic frames all count — as long as they\'re used accurately.',
+      "Name critics or critical positions, then defend your own reading against them. Feminist, Marxist, New Historicist, psychoanalytic frames all count — as long as they're used accurately.",
   },
 ]
 
@@ -228,8 +228,7 @@ const MOCK_EXAMS: MockExamEntry[] = [
   {
     unit: 'WET04',
     title: 'Unit 4 Shakespeare + pre-1900 drama mock',
-    description:
-      'Full 2h 15m paper. Shakespeare essay with AO5 critic, plus pre-1900 drama essay.',
+    description: 'Full 2h 15m paper. Shakespeare essay with AO5 critic, plus pre-1900 drama essay.',
     href: '/mock-exams?board=ial-edexcel&paper=WET04-full',
     duration: '2h 15m',
     difficulty: 'Mock',
@@ -286,7 +285,7 @@ const AI_SURFACES: AISurface[] = [
 const PITFALLS = [
   {
     title: 'Treating IAL like UK A-Level',
-    body: 'IAL is MODULAR — four exams spread across AS + A2 — whereas UK A-Level since 2015 is linear. Your revision should target each unit at its own exam window; don\'t try to revise everything at once.',
+    body: "IAL is MODULAR — four exams spread across AS + A2 — whereas UK A-Level since 2015 is linear. Your revision should target each unit at its own exam window; don't try to revise everything at once.",
   },
   {
     title: 'Under-using AO5 at A2',
@@ -347,9 +346,9 @@ export default async function IalHubPage() {
             Your IAL Hub
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Unit-by-unit guidance, mock exam packs, AI-marked essays, and set-text study for
-            Pearson Edexcel International A-Level English Literature (YLE0) and Language. Every
-            section below is built around the IAL specification — not borrowed from UK A-Level.
+            Unit-by-unit guidance, mock exam packs, AI-marked essays, and set-text study for Pearson
+            Edexcel International A-Level English Literature (YLE0) and Language. Every section
+            below is built around the IAL specification — not borrowed from UK A-Level.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -375,8 +374,8 @@ export default async function IalHubPage() {
           <div>
             <h2 className="text-heading-lg font-heading text-foreground">Unit structure</h2>
             <p className="text-sm text-muted-foreground">
-              Four modular exams — two at AS, two at A2. Each carries its own weighting and
-              demands a different revision approach.
+              Four modular exams — two at AS, two at A2. Each carries its own weighting and demands
+              a different revision approach.
             </p>
           </div>
         </div>
@@ -441,10 +440,7 @@ export default async function IalHubPage() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {AOS.map((ao) => (
-            <div
-              key={ao.code}
-              className="rounded-xl border border-border/40 bg-background/50 p-5"
-            >
+            <div key={ao.code} className="rounded-xl border border-border/40 bg-background/50 p-5">
               <div className="mb-2 flex items-center justify-between">
                 <span className="font-mono text-sm font-semibold text-primary">{ao.code}</span>
                 <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
@@ -511,12 +507,10 @@ export default async function IalHubPage() {
             <Brain className="size-4.5 text-cyan-400" />
           </div>
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">
-              AI self-learning
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">AI self-learning</h2>
             <p className="text-sm text-muted-foreground">
-              Tools that read your data, flag your weak AOs, and push you toward your target
-              grade with IAL-specific framing.
+              Tools that read your data, flag your weak AOs, and push you toward your target grade
+              with IAL-specific framing.
             </p>
           </div>
         </div>
@@ -565,8 +559,8 @@ export default async function IalHubPage() {
           <div>
             <h2 className="text-heading-lg font-heading text-foreground">IAL set texts</h2>
             <p className="text-sm text-muted-foreground">
-              Core texts across Units 1-4. Full study guides with plot, characters, themes,
-              context, and 15+ verified quotations each.
+              Core texts across Units 1-4. Full study guides with plot, characters, themes, context,
+              and 15+ verified quotations each.
             </p>
           </div>
         </div>
@@ -574,10 +568,13 @@ export default async function IalHubPage() {
         {ialTexts.length === 0 ? (
           <p className="rounded-xl border border-border/40 bg-background/50 p-5 text-sm text-muted-foreground">
             Set-text tagging for IAL is being finalised in `src/lib/board/set-texts.ts`. Use the
-            cross-board <Link href="/revision/texts" className="text-primary underline">Set Texts
-            library</Link> in the meantime — all major IAL texts (Hamlet, King Lear, Othello,
-            Gatsby, Handmaid&rsquo;s Tale, Streetcar, Waste Land, Pride and Prejudice, Jane Eyre)
-            are authored.
+            cross-board{' '}
+            <Link href="/revision/texts" className="text-primary underline">
+              Set Texts library
+            </Link>{' '}
+            in the meantime — all major IAL texts (Hamlet, King Lear, Othello, Gatsby,
+            Handmaid&rsquo;s Tale, Streetcar, Waste Land, Pride and Prejudice, Jane Eyre) are
+            authored.
           </p>
         ) : (
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -610,9 +607,7 @@ export default async function IalHubPage() {
             <Target className="size-4.5 text-rose-400" />
           </div>
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">
-              Common IAL pitfalls
-            </h2>
+            <h2 className="text-heading-lg font-heading text-foreground">Common IAL pitfalls</h2>
             <p className="text-sm text-muted-foreground">
               The five mistakes that most often cost IAL candidates a grade. Check yourself against
               these before every mock.
@@ -688,10 +683,10 @@ export default async function IalHubPage() {
 
       {/* ── Footnote ─────────────────────────────────────────────── */}
       <p className="text-center text-[11px] text-muted-foreground/60">
-        Aligned with the Pearson Edexcel International A-Level English Literature (YLE0) and
-        English Language (WEN0) specifications. Always cross-check with the current live
-        specification before exam entry. <TrendingUp className="inline size-3" /> New content and
-        mock packs are added regularly.
+        Aligned with the Pearson Edexcel International A-Level English Literature (YLE0) and English
+        Language (WEN0) specifications. Always cross-check with the current live specification
+        before exam entry. <TrendingUp className="inline size-3" /> New content and mock packs are
+        added regularly.
       </p>
     </div>
   )

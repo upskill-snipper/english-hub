@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
   if (!printable) {
     return {
-      title: 'Printable not found — The English Hub',
+      title: 'Printable not found',
       description:
         'The printable you are looking for is not available. Browse our full library of free GCSE and IGCSE English printables.',
       robots: { index: false, follow: false },

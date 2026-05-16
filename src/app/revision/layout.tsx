@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { RevisionShell } from './_components/revision-shell'
 
 export const metadata: Metadata = {
-  title: 'Your Hub -- The English Hub',
+  title: 'Your Hub',
   description:
     'Your unified home for English revision, study tools, progress tracking, and exam technique -- personalised to your exam board for KS3, GCSE, IGCSE and IAL success.',
   // NOTE: canonical is intentionally NOT set here. A layout-level canonical

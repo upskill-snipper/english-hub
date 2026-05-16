@@ -42,7 +42,7 @@ export const metadata = {
       'See your own quiz performance, weakest topics, and a suggested next-step study plan based on real answers.',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/analytics' },
-  title: 'Your Analytics -- The English Hub',
+  title: 'Your Analytics',
   description:
     'See your own quiz performance, weakest topics, and a suggested next-step study plan based on real answers.',
 }

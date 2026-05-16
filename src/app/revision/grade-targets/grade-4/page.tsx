@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description:
       'Grade 4 English GCSE / IGCSE target guide. The standard-pass benchmark and how to push toward Grade 5.',
   },
-  title: 'Grade 4 Guide — The English Hub',
+  title: 'Grade 4 Guide',
   description:
     'Grade 4 English GCSE / IGCSE target guide. The standard-pass benchmark and how to push toward Grade 5.',
   alternates: { canonical: 'https://theenglishhub.app/revision/grade-targets/grade-4' },

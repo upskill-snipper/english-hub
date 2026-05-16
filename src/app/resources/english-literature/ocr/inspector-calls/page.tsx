@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-literature/ocr/inspector-calls',
   },
-  title: 'An Inspector Calls Study Guide for OCR | The English Hub',
+  title: 'An Inspector Calls Study Guide for OCR',
   description:
     'Comprehensive An Inspector Calls study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
 }

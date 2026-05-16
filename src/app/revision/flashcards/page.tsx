@@ -6,7 +6,7 @@ export const metadata = {
     description:
       'Master GCSE English with smart review flashcards. Quotes, techniques, vocabulary and exam skills with progress tracking and GCSE grade equivalents.',
   },
-  title: 'Flashcards - Revision - The English Hub',
+  title: 'Flashcards - Revision',
   description:
     'Master GCSE English with smart review flashcards. Quotes, techniques, vocabulary and exam skills with progress tracking and GCSE grade equivalents.',
   alternates: { canonical: 'https://theenglishhub.app/revision/flashcards' },

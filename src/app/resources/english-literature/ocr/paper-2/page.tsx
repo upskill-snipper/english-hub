@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       'Complete guide to OCR GCSE English Literature Paper 2. Shakespeare play, poetry anthology comparison, and unseen poetry revision.',
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/paper-2' },
-  title: 'OCR Paper 2: Exploring Poetry and Shakespeare | The English Hub',
+  title: 'OCR Paper 2: Exploring Poetry and Shakespeare',
   description:
     'Complete guide to OCR GCSE English Literature Paper 2. Shakespeare play, poetry anthology comparison, and unseen poetry revision.',
 }

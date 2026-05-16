@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       'WJEC Eduqas GCSE English Language resources covering Paper 1 and Paper 2 walkthroughs, writing skills, exam technique guides and grade boundaries.',
   },
-  title: 'WJEC GCSE English Language resources — The English Hub',
+  title: 'WJEC GCSE English Language resources',
   description:
     'WJEC Eduqas GCSE English Language resources covering Paper 1 and Paper 2 walkthroughs, writing skills, exam technique guides and grade boundaries.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/wjec' },

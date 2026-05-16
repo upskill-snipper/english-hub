@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       'Cambridge IGCSE English Literature 0475 set-text guides, Songs of Ourselves anthology, unseen poetry and exam technique walkthroughs for Paper 1 and 2.',
   },
-  title: 'Cambridge IGCSE English Literature resources — The English Hub',
+  title: 'Cambridge IGCSE English Literature resources',
   description:
     'Cambridge IGCSE English Literature 0475 set-text guides, Songs of Ourselves anthology, unseen poetry and exam technique walkthroughs for Paper 1 and 2.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie' },

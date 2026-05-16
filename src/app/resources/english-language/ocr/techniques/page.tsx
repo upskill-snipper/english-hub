@@ -5,7 +5,7 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'OCR GCSE English Language techniques — The English Hub',
+  title: 'OCR GCSE English Language techniques',
   description:
     'Language and structural techniques for OCR GCSE English: identification, analysis, and how to write about them.',
   alternates: {

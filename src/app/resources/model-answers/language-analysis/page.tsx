@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/resources/model-answers/language-analysis',
   },
-  title: 'Model Language Analysis Answers | The English Hub',
+  title: 'Model Language Analysis Answers',
   description:
     'Grade 3, 5, 7, and 9 model language analysis responses with examiner commentary, technique annotations, and side-by-side comparisons showing what makes the difference between grades.',
 }

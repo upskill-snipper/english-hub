@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/resources/writing-skills/analytical-writing',
   },
-  title: 'Analytical Writing Masterclass | The English Hub',
+  title: 'Analytical Writing Masterclass',
   description:
     'Complete guide to analytical writing for GCSE and IGCSE English. PEEL paragraphs, embedding quotations, language and structural analysis, evaluative vocabulary, linking to context, model literature and language essays with annotations, comparing texts, and grade-level response comparisons.',
 }

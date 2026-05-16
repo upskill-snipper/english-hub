@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/resources/model-answers/persuasive-writing',
   },
-  title: 'Model Persuasive & Transactional Writing | The English Hub',
+  title: 'Model Persuasive & Transactional Writing',
   description:
     'Grade 3, 5, 7, and 9 model articles, speeches, and letters for GCSE English Language with annotations highlighting rhetorical devices, structural choices, and persuasive techniques at every level.',
 }

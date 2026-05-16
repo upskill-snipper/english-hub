@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       'AQA GCSE Worlds and Lives — the new 15-poem anthology cluster. Poem-by-poem breakdowns, themes, voices and comparison practice for Paper 2 Section B.',
   },
-  title: 'Worlds and Lives poetry — AQA GCSE revision — The English Hub',
+  title: 'Worlds and Lives poetry — AQA GCSE revision',
   description:
     'AQA GCSE Worlds and Lives — the new 15-poem anthology cluster. Poem-by-poem breakdowns, themes, voices and comparison practice for Paper 2 Section B.',
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/aqa-worlds-and-lives' },

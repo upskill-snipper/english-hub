@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       'Browse expert model answers for GCSE and IGCSE English Language and Literature. Grade 3, 5, 7, and 9 examples with examiner commentary, technique annotations, and grade-boundary breakdowns.',
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/model-answers' },
-  title: 'Model Answers | The English Hub',
+  title: 'Model Answers',
   description:
     'Browse expert model answers for GCSE and IGCSE English Language and Literature. Grade 3, 5, 7, and 9 examples with examiner commentary, technique annotations, and grade-boundary breakdowns.',
 }

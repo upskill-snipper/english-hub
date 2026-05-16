@@ -5,7 +5,7 @@ import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 
 export const metadata: Metadata = {
-  title: 'English Literature Revision — GCSE & IGCSE | The English Hub',
+  title: 'English Literature Revision — GCSE & IGCSE',
   description:
     'Complete GCSE and IGCSE English Literature revision hub. Study guides for Shakespeare, prose, drama, and poetry. Character analysis, themes, quotations, essay techniques, and exam preparation for all boards.',
   alternates: {

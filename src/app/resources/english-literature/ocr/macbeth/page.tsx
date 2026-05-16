@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       'Comprehensive Macbeth study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
   },
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/macbeth' },
-  title: 'Macbeth Study Guide for OCR | The English Hub',
+  title: 'Macbeth Study Guide for OCR',
   description:
     'Comprehensive Macbeth study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.',
 }

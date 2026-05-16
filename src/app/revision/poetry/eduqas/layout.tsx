@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Eduqas GCSE poetry anthology — 12-poem 2025 cluster — The English Hub',
+  title: 'Eduqas GCSE poetry anthology — 12-poem 2025 cluster',
   description:
     'WJEC Eduqas 2025 GCSE poetry anthology — all 12 prescribed poems analysed. Themes, voice, comparison pairs and exam-aligned Grade 9 essay plans.',
   alternates: { canonical: 'https://theenglishhub.app/revision/poetry/eduqas' },

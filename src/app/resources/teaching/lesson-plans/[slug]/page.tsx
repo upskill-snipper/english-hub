@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!plan) {
     return {
-      title: 'Lesson plan not found — The English Hub',
+      title: 'Lesson plan not found',
       robots: { index: false, follow: false },
     }
   }

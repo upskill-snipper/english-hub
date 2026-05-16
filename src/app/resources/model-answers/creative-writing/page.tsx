@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/resources/model-answers/creative-writing',
   },
-  title: 'Model Creative Writing Answers | The English Hub',
+  title: 'Model Creative Writing Answers',
   description:
     'Grade 3, 5, 7, and 9 model creative writing responses for GCSE English. Descriptive and narrative writing with examiner commentary and technique annotations at every grade level.',
 }

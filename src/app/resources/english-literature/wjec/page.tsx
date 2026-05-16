@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       'WJEC Eduqas GCSE English Literature set-text guides, Eduqas anthology poetry, unseen poetry and exam technique aligned to the 2025 specification.',
   },
-  title: 'WJEC GCSE English Literature resources — The English Hub',
+  title: 'WJEC GCSE English Literature resources',
   description:
     'WJEC Eduqas GCSE English Literature set-text guides, Eduqas anthology poetry, unseen poetry and exam technique aligned to the 2025 specification.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/wjec' },
