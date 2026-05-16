@@ -23,6 +23,7 @@ import { PostHogProvider } from '@/components/PostHogProvider'
 import { TrustpilotInviteScript } from '@/components/trustpilot/TrustpilotInviteScript'
 import { Suspense } from 'react'
 import { BoardGate } from '@/components/board/BoardGate'
+import { ThemeProvider } from '@/components/theme/theme-provider'
 import { t } from '@/lib/i18n/t'
 import './globals.css'
 
@@ -120,7 +121,11 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#FBF7F0',
+  // Dual — the browser chrome tracks the active theme.
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FBF7F0' },
+    { media: '(prefers-color-scheme: dark)', color: '#0F1411' },
+  ],
   width: 'device-width',
   initialScale: 1,
 }
@@ -146,6 +151,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       lang={htmlLang}
       dir={dir}
       data-lang={lang}
+      suppressHydrationWarning
       className={`${monaSans.variable} ${newsreader.variable} ${geist.variable} ${jetBrainsMono.variable} ${notoNaskhArabic.variable} ${plexSansArabic.variable}`}
     >
       <head>
@@ -181,18 +187,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           {skipToContent}
         </a>
-        <SupabaseProvider>
-          <TooltipProvider>
-            <PostHogProvider>
-              <RootLayoutShell>
-                <BoardGate>{children}</BoardGate>
-              </RootLayoutShell>
-            </PostHogProvider>
-            <Toaster richColors position="bottom-right" />
-            <CookieConsent />
-            <UtmCapture />
-          </TooltipProvider>
-        </SupabaseProvider>
+        <ThemeProvider>
+          <SupabaseProvider>
+            <TooltipProvider>
+              <PostHogProvider>
+                <RootLayoutShell>
+                  <BoardGate>{children}</BoardGate>
+                </RootLayoutShell>
+              </PostHogProvider>
+              <Toaster richColors position="bottom-right" />
+              <CookieConsent />
+              <UtmCapture />
+            </TooltipProvider>
+          </SupabaseProvider>
+        </ThemeProvider>
         {/* Vercel Analytics + Speed Insights + Rewardful — all gated behind
             cookie consent so no non-essential trackers fire pre-consent. */}
         <ConsentGatedAnalytics />

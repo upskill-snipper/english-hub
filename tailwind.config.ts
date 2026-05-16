@@ -3,6 +3,14 @@ import tailwindAnimate from 'tailwindcss-animate'
 import tailwindTypography from '@tailwindcss/typography'
 
 const config: Config = {
+  // Class-driven dark mode. The theme is CSS-variable based (globals.css
+  // :root / .dark blocks); next-themes toggles the `.dark` class on
+  // <html>. 'class' makes BOTH the CSS-var tokens AND any `dark:`
+  // utility variants respond to that same class, so the user toggle is
+  // consistent everywhere (the Tailwind default 'media' would have left
+  // `dark:` variants reacting only to OS preference — desynced from the
+  // token block and the toggle).
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',

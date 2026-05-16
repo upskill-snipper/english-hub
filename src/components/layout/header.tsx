@@ -33,6 +33,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { getBoardType } from '@/lib/board/board-filter'
 import type { ExamBoard } from '@/lib/board/board-store'
 import { LanguageToggle } from '@/components/layout/language-toggle'
+import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { useT } from '@/lib/i18n/use-t'
 
 type NavLink = {
@@ -175,6 +176,9 @@ export function Header() {
 
         {/* Desktop auth / CTA */}
         <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
+          {/* Theme toggle — always visible (any auth state) so dark/light
+              is reachable everywhere on desktop. */}
+          <ThemeToggle className="border-white/15 bg-white/5 text-[#B5B8B3]" />
           {isLoading ? (
             <Skeleton className="h-8 w-20 rounded-full bg-white/10" />
           ) : user ? (
@@ -479,7 +483,8 @@ export function Header() {
                   to switch between EN and AR once they were on a small
                   screen. Render it last and centered for both EN + AR. */}
               <Separator className="my-3 bg-white/10" />
-              <div className="flex justify-center pb-1">
+              <div className="flex flex-wrap justify-center gap-2 pb-1">
+                <ThemeToggle className="border-white/15 bg-white/5 text-[#B5B8B3]" />
                 <LanguageToggle className="border-white/15 bg-white/5 text-[#B5B8B3]" />
               </div>
             </nav>
