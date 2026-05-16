@@ -20,6 +20,7 @@
  */
 
 import type { LocalizedString, Locale } from '../ks3/types'
+import type { CEFRBand } from './cefr'
 
 export type { LocalizedString, Locale }
 export { loc } from '../ks3/types'
@@ -119,6 +120,11 @@ export type EALTopic = {
   /** URL slug, also the i18n key suffix (e.g. 'present-perfect'). */
   id: string
   category: EALCategory
+  /**
+   * CEFR band this topic is pitched at (A2..C1). Drives the placement
+   * test's "study next" routing and the /eal/<id>/level/<band> pages.
+   */
+  cefr: CEFRBand
   /** Title shown on the landing card + heading. */
   title: LocalizedString
   /** One-sentence hook for the landing card. */

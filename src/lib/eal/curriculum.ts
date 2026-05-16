@@ -12,7 +12,9 @@
  * waves.
  */
 
-import type { EALCurriculum } from './types'
+import type { EALCurriculum, EALCategory } from './types'
+import type { CEFRBand } from './cefr'
+import { cefrRank } from './cefr'
 
 export const EAL: EALCurriculum = {
   topics: [
@@ -20,6 +22,7 @@ export const EAL: EALCurriculum = {
     {
       id: 'articles',
       category: 'grammar',
+      cefr: 'A2',
       title: { en: 'Articles: a, an, the', ar: 'أدوات التعريف والتنكير: a / an / the' },
       description: {
         en: 'When to use a/an, when to use the, and when to use nothing. This is the single biggest grammar gap for Arabic speakers — Arabic has no indefinite article and uses ال differently from English the.',
@@ -192,6 +195,7 @@ export const EAL: EALCurriculum = {
     {
       id: 'word-order',
       category: 'sentence',
+      cefr: 'A2',
       title: {
         en: 'Word Order: Subject + Verb + Object',
         ar: 'ترتيب الكلمات: الفاعل + الفعل + المفعول',
@@ -347,6 +351,7 @@ export const EAL: EALCurriculum = {
     {
       id: 'present-perfect',
       category: 'grammar',
+      cefr: 'B1',
       title: {
         en: 'Present Perfect: have/has + past participle',
         ar: 'المضارع التام: have/has + التصريف الثالث',
@@ -502,6 +507,7 @@ export const EAL: EALCurriculum = {
     {
       id: 'past-tenses',
       category: 'grammar',
+      cefr: 'B1',
       title: {
         en: 'Past Tenses: simple, continuous, perfect',
         ar: 'أزمنة الماضي: البسيط والمستمر والتام',
@@ -637,6 +643,7 @@ export const EAL: EALCurriculum = {
     {
       id: 'subject-verb-agreement',
       category: 'grammar',
+      cefr: 'A2',
       title: { en: 'Subject–Verb Agreement', ar: 'مطابقة الفاعل للفعل' },
       description: {
         en: 'The verb must match the subject in number. Singular subject → singular verb. Plural subject → plural verb. Arabic verbs change in more complex ways (dual, plural, gender) — English only really cares about third person singular -s.',
@@ -730,6 +737,7 @@ export const EAL: EALCurriculum = {
     {
       id: 'plurals-uncountable',
       category: 'grammar',
+      cefr: 'A2',
       title: { en: 'Plurals and Uncountable Nouns', ar: 'الجمع والأسماء غير المعدودة' },
       description: {
         en: 'Most English nouns add -s for plural. But some words are uncountable (information, advice, furniture) and never take -s. Some words look plural but mean one thing (news, mathematics). And irregular plurals (children, mice, feet) are common in essays.',
@@ -829,6 +837,7 @@ export const EAL: EALCurriculum = {
     {
       id: 'prepositions',
       category: 'grammar',
+      cefr: 'B1',
       title: { en: 'Prepositions: in, on, at', ar: 'حروف الجر: in, on, at' },
       description: {
         en: 'English prepositions rarely match Arabic prepositions one-to-one. The "in/on/at" trio for time and place is the most common gap. Learn the rules + memorise the exceptions — there is no shortcut.',
@@ -914,6 +923,7 @@ export const EAL: EALCurriculum = {
     {
       id: 'phrasal-verbs',
       category: 'vocabulary',
+      cefr: 'B2',
       title: {
         en: 'Phrasal Verbs: get up, look after, give in',
         ar: 'الأفعال المركّبة: get up, look after, give in',
@@ -1000,6 +1010,7 @@ export const EAL: EALCurriculum = {
     {
       id: 'capitals-punctuation',
       category: 'sentence',
+      cefr: 'A2',
       title: { en: 'Capitals and Punctuation', ar: 'الحروف الكبيرة وعلامات الترقيم' },
       description: {
         en: 'Arabic has no capital letters and uses punctuation differently. English examiners deduct marks for missed capitals and run-on sentences. This is mechanical SPaG (spelling, punctuation, grammar) — easy points if you train it.',
@@ -1099,6 +1110,7 @@ export const EAL: EALCurriculum = {
     {
       id: 'common-arabic-errors',
       category: 'common_errors',
+      cefr: 'B1',
       title: {
         en: 'Common Arabic-Speaker Transfer Errors',
         ar: 'أخطاء النقل الشائعة لمتحدّث العربي',
@@ -1202,4 +1214,30 @@ export const EAL: EALCurriculum = {
 
 export function findEALTopic(slug: string) {
   return EAL.topics.find((t) => t.id === slug)
+}
+
+/** All topics pitched at a given CEFR band. */
+export function topicsByCEFR(band: CEFRBand) {
+  return EAL.topics.filter((t) => t.cefr === band)
+}
+
+/**
+ * Recommend topic ids for a skill at (or just below) a target band.
+ * Used by the diagnostic to route a learner to their weakest strands:
+ * prefer same-band topics in that skill; fall back to any topic in the
+ * skill at/below the band; finally to any same-band topic.
+ */
+export function recommendTopics(skill: EALCategory, band: CEFRBand): string[] {
+  const rank = cefrRank(band)
+  const inSkill = EAL.topics.filter((t) => t.category === skill)
+  const sameBand = inSkill.filter((t) => t.cefr === band)
+  const atOrBelow = inSkill.filter((t) => cefrRank(t.cefr) <= rank)
+  const pick = (sameBand.length ? sameBand : atOrBelow.length ? atOrBelow : inSkill)
+    .slice(0, 2)
+    .map((t) => t.id)
+  if (pick.length > 0) return pick
+  // Skill not represented in the curriculum yet — fall back to band peers.
+  return topicsByCEFR(band)
+    .slice(0, 2)
+    .map((t) => t.id)
 }

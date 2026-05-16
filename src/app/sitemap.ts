@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { allCourses } from '@/data/courses'
 import { getBlogSlugs } from '@/lib/blog/posts'
+import { EAL } from '@/lib/eal/curriculum'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://theenglishhub.app'
@@ -1536,5 +1537,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }))
 
-  return [...staticRoutes, ...courseRoutes, ...blogPostRoutes, ...ks3Routes, ...gameRoutes]
+  // ============================================================
+  // EAL — English for Arabic speakers (CEFR A2–C1)
+  // Landing + placement test + 10 topics × 4 banded views +
+  // 4 banded practice sets.
+  // ============================================================
+  const ealCefrSlugs = ['a2', 'b1', 'b2', 'c1'] as const
+  const ealRoutes: MetadataRoute.Sitemap = [
+    { url: `${base}/eal`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    {
+      url: `${base}/eal/diagnostic`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    ...ealCefrSlugs.map((l) => ({
+      url: `${base}/eal/practice/mock-exam-${l}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+    ...EAL.topics.flatMap((topic) => [
+      {
+        url: `${base}/eal/${topic.id}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      },
+      ...ealCefrSlugs.map((l) => ({
+        url: `${base}/eal/${topic.id}/level/${l}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.5,
+      })),
+    ]),
+  ]
+
+  return [
+    ...staticRoutes,
+    ...courseRoutes,
+    ...blogPostRoutes,
+    ...ks3Routes,
+    ...gameRoutes,
+    ...ealRoutes,
+  ]
 }
