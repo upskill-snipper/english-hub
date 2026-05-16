@@ -24,6 +24,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useT } from '@/lib/i18n/use-t'
+import { CEFRCohortPanel } from '@/components/school/CEFRCohortPanel'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -775,6 +776,9 @@ export default function SchoolAnalyticsPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* ── CEFR Placement Overview ─────────────────────────────────────── */}
+        <CEFRCohortPanel />
 
         {/* ── Assignment Overview ─────────────────────────────────────────── */}
         <Card>

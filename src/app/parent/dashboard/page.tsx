@@ -9,6 +9,7 @@ import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { useT } from '@/lib/i18n/use-t'
 import { ChildProgressCard } from '@/components/parent/ChildProgressCard'
+import { CEFRProgressCard } from '@/components/parent/CEFRProgressCard'
 import {
   WeeklyActivityChart,
   type WeeklyActivityPoint,
@@ -252,6 +253,9 @@ export default function ParentDashboardPage() {
         modulesCompleted={(state?.poemCount ?? 0) + (state?.quizCount ?? 0)}
         recentScoreAverage={state?.averageQuizScore ?? null}
       />
+
+      {/* English level (CEFR placement) */}
+      <CEFRProgressCard />
 
       {/* This week snapshot */}
       <div>
