@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     description:
       'Macbeth GCSE revision — act-by-act analysis, characters, themes, key quotes, context and essay plans. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.',
   },
-  title: 'Macbeth revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Macbeth revision guide — themes, characters, key quotes',
   description:
     'Macbeth GCSE revision — act-by-act analysis, characters, themes, key quotes, context and essay plans. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.',
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth' },

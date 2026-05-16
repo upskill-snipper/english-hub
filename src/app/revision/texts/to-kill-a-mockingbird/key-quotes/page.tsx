@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Twenty-five essential quotations from To Kill a Mockingbird by Harper Lee with speaker, context and detailed analysis.',
   },
-  title: 'To Kill a Mockingbird — Key Quotes | The English Hub',
+  title: 'To Kill a Mockingbird — Key Quotes',
   description:
     'Twenty-five essential quotations from To Kill a Mockingbird by Harper Lee with speaker, context and detailed analysis.',
   alternates: {

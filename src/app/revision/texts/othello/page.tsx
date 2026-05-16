@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for Othello by William Shakespeare: plot, characters, themes, context and key quotations for A-Level English Literature.',
   },
-  title: 'Othello — Study Guide | The English Hub',
+  title: 'Othello — Study Guide',
   description:
     'In-depth study guide for Othello by William Shakespeare: plot, characters, themes, context and key quotations for A-Level English Literature.',
   alternates: {

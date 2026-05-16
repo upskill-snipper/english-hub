@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       'Much Ado About Nothing revision guide — themes, characters, key quotes — The English Hub',
     description: 'Much Ado About Nothing GCSE revision — Shakespeare',
   },
-  title: 'Much Ado About Nothing revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Much Ado About Nothing revision guide — themes, characters, key quotes',
   description:
     "Much Ado About Nothing GCSE revision — Shakespeare's comedy with plot, characters, themes, context and key quotes. AQA, Edexcel, OCR, Eduqas, IGCSE.",
   alternates: {

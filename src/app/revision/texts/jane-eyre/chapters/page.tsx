@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       'In-depth analysis of the most important chapters in Jane Eyre by Charlotte Bronte for AQA and OCR GCSE English Literature.',
   },
-  title: 'Jane Eyre Key Chapters Analysed | The English Hub',
+  title: 'Jane Eyre Key Chapters Analysed',
   description:
     'In-depth analysis of the most important chapters in Jane Eyre by Charlotte Bronte for AQA and OCR GCSE English Literature.',
   alternates: {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Volume-by-volume and chapter-by-chapter analysis of Pride and Prejudice by Jane Austen with key quotations and exam-ready commentary.',
   },
-  title: 'Pride and Prejudice — Key Chapters Analysed | The English Hub',
+  title: 'Pride and Prejudice — Key Chapters Analysed',
   description:
     'Volume-by-volume and chapter-by-chapter analysis of Pride and Prejudice by Jane Austen with key quotations and exam-ready commentary.',
   alternates: {

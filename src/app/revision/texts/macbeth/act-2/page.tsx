@@ -17,7 +17,7 @@ export const metadata = {
       'Detailed GCSE analysis of Macbeth Act 2: the murder of Duncan, guilt and its aftermath, key quotes and language techniques.',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/act-2' },
-  title: 'Macbeth Act 2 — Scene-by-Scene Analysis | The English Hub',
+  title: 'Macbeth Act 2 — Scene-by-Scene Analysis',
   description:
     'Detailed GCSE analysis of Macbeth Act 2: the murder of Duncan, guilt and its aftermath, key quotes and language techniques.',
 }

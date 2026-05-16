@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       '25 key quotations from Jane Eyre by Charlotte Bronte with detailed analysis for AQA and OCR GCSE English Literature.',
   },
-  title: 'Jane Eyre Key Quotes -- 25 Essential Quotations | The English Hub',
+  title: 'Jane Eyre Key Quotes -- 25 Essential Quotations',
   description:
     '25 key quotations from Jane Eyre by Charlotte Bronte with detailed analysis for AQA and OCR GCSE English Literature.',
   alternates: {

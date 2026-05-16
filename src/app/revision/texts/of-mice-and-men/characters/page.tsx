@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "In-depth character analysis for Of Mice and Men by John Steinbeck: George, Lennie, Curley, Curley\\'s Wife, Crooks, Candy, Slim and The Boss.",
   },
-  title: 'Of Mice and Men — Character Analysis | The English Hub',
+  title: 'Of Mice and Men — Character Analysis',
   description:
     "In-depth character analysis for Of Mice and Men by John Steinbeck: George, Lennie, Curley, Curley's Wife, Crooks, Candy, Slim and The Boss.",
   alternates: {

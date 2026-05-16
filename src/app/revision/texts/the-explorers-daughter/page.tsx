@@ -7,7 +7,7 @@ import { StubStudyGuide } from '../_components/stub-study-guide'
 const SLUG = 'the-explorers-daughter'
 
 export const metadata: Metadata = {
-  title: "The Explorer's Daughter — Kari Herbert | The English Hub",
+  title: "The Explorer's Daughter — Kari Herbert",
   description:
     "Study guide stub for The Explorer's Daughter by Kari Herbert. Pearson Edexcel International GCSE English Language A (4EA1) Section A non-fiction anthology.",
   alternates: {

@@ -15,7 +15,7 @@ export const metadata = {
       'Scene-by-scene breakdown of all five acts of Macbeth with full Shakespeare quotations and language technique analysis for GCSE revision.',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/acts' },
-  title: 'Macbeth — Act-by-Act Study Guide | The English Hub',
+  title: 'Macbeth — Act-by-Act Study Guide',
   description:
     'Scene-by-scene breakdown of all five acts of Macbeth with full Shakespeare quotations and language technique analysis for GCSE revision.',
 }

@@ -7,7 +7,7 @@ import { StubStudyGuide } from '../_components/stub-study-guide'
 const SLUG = 'h-is-for-hawk'
 
 export const metadata: Metadata = {
-  title: 'H is for Hawk — Helen Macdonald | The English Hub',
+  title: 'H is for Hawk — Helen Macdonald',
   description:
     'Study guide stub for H is for Hawk by Helen Macdonald. Pearson Edexcel International GCSE English Language A (4EA1) Section A non-fiction anthology.',
   alternates: {

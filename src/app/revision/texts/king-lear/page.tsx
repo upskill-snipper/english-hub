@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for King Lear by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'King Lear — Study Guide | The English Hub',
+  title: 'King Lear — Study Guide',
   description:
     'In-depth study guide for King Lear by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {

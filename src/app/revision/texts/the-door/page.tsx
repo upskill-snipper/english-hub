@@ -7,7 +7,7 @@ import { StubStudyGuide } from '../_components/stub-study-guide'
 const SLUG = 'the-door'
 
 export const metadata: Metadata = {
-  title: 'The Door — E.M. Forster | The English Hub',
+  title: 'The Door — E.M. Forster',
   description:
     'Study guide stub for The Door by E.M. Forster. Pearson Edexcel International GCSE English Language A (4EA1) Section C prose anthology.',
   alternates: {

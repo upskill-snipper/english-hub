@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for The Sign of the Four by Arthur Conan Doyle: plot, characters, themes, context and key quotations.',
   },
-  title: 'The Sign of the Four — Study Guide | The English Hub',
+  title: 'The Sign of the Four — Study Guide',
   description:
     'In-depth study guide for The Sign of the Four by Arthur Conan Doyle: plot, characters, themes, context and key quotations.',
   alternates: {

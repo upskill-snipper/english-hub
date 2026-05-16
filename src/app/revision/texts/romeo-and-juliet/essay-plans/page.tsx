@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Five GCSE-ready essay plans for Romeo and Juliet by William Shakespeare, with thesis statements, paragraph plans, key quotations and examiner tips.',
   },
-  title: 'Romeo and Juliet — GCSE Essay Plans | The English Hub',
+  title: 'Romeo and Juliet — GCSE Essay Plans',
   description:
     'Five GCSE-ready essay plans for Romeo and Juliet by William Shakespeare, with thesis statements, paragraph plans, key quotations and examiner tips.',
   alternates: {

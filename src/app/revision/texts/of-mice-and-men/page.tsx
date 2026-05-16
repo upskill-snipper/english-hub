@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Of Mice and Men revision guide — themes, characters, key quotes — The English Hub',
     description: 'Of Mice and Men IGCSE revision — Steinbeck',
   },
-  title: 'Of Mice and Men revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Of Mice and Men revision guide — themes, characters, key quotes',
   description:
     "Of Mice and Men IGCSE revision — Steinbeck's novella with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE Literature 4ET1.",
   alternates: {

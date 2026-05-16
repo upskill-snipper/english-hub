@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Twenty-five essential quotations from Of Mice and Men by John Steinbeck with speaker, context and detailed analysis.',
   },
-  title: 'Of Mice and Men — Key Quotes | The English Hub',
+  title: 'Of Mice and Men — Key Quotes',
   description:
     'Twenty-five essential quotations from Of Mice and Men by John Steinbeck with speaker, context and detailed analysis.',
   alternates: {

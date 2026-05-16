@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for The Great Gatsby by F. Scott Fitzgerald: plot, characters, themes, context and key quotations.',
   },
-  title: 'The Great Gatsby — Study Guide | The English Hub',
+  title: 'The Great Gatsby — Study Guide',
   description:
     'In-depth study guide for The Great Gatsby by F. Scott Fitzgerald: plot, characters, themes, context and key quotations.',
   alternates: {

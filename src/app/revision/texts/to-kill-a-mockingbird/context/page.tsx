@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Historical and social context for To Kill a Mockingbird by Harper Lee: 1930s Alabama, Jim Crow laws, the Great Depression, Harper Lee',
   },
-  title: 'To Kill a Mockingbird — Historical Context | The English Hub',
+  title: 'To Kill a Mockingbird — Historical Context',
   description:
     "Historical and social context for To Kill a Mockingbird by Harper Lee: 1930s Alabama, Jim Crow laws, the Great Depression, Harper Lee's biography and the Scottsboro Boys.",
   alternates: {

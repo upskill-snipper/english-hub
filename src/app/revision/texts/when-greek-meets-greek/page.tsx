@@ -7,7 +7,7 @@ import { StubStudyGuide } from '../_components/stub-study-guide'
 const SLUG = 'when-greek-meets-greek'
 
 export const metadata: Metadata = {
-  title: 'When Greek Meets Greek — Sam Selvon | The English Hub',
+  title: 'When Greek Meets Greek — Sam Selvon',
   description:
     'Study guide stub for When Greek Meets Greek by Sam Selvon. Pearson Edexcel International GCSE English Language A (4EA1) Section C prose anthology.',
   alternates: {

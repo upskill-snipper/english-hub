@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for Hamlet by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'Hamlet — Study Guide | The English Hub',
+  title: 'Hamlet — Study Guide',
   description:
     'In-depth study guide for Hamlet by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {

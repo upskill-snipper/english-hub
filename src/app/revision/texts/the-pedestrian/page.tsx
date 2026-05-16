@@ -7,7 +7,7 @@ import { StubStudyGuide } from '../_components/stub-study-guide'
 const SLUG = 'the-pedestrian'
 
 export const metadata: Metadata = {
-  title: 'The Pedestrian — Ray Bradbury | The English Hub',
+  title: 'The Pedestrian — Ray Bradbury',
   description:
     'Study guide stub for The Pedestrian by Ray Bradbury. Pearson Edexcel International GCSE English Language A (4EA1) Section C prose anthology.',
   alternates: {

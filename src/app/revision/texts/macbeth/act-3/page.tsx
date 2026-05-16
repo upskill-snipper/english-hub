@@ -16,7 +16,7 @@ export const metadata = {
     description: 'Detailed GCSE analysis of Macbeth Act 3: Banquo',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/act-3' },
-  title: 'Macbeth Act 3 — Scene-by-Scene Analysis | The English Hub',
+  title: 'Macbeth Act 3 — Scene-by-Scene Analysis',
   description:
     "Detailed GCSE analysis of Macbeth Act 3: Banquo's murder, the banquet ghost, paranoia and tyranny, key quotes and language techniques.",
 }

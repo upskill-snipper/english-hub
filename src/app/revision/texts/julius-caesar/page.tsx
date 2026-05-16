@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for Julius Caesar by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'Julius Caesar — Study Guide | The English Hub',
+  title: 'Julius Caesar — Study Guide',
   description:
     'In-depth study guide for Julius Caesar by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {

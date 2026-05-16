@@ -7,7 +7,7 @@ import { StubStudyGuide } from '../_components/stub-study-guide'
 const SLUG = 'the-story-of-an-hour'
 
 export const metadata: Metadata = {
-  title: 'The Story of an Hour — Kate Chopin | The English Hub',
+  title: 'The Story of an Hour — Kate Chopin',
   description:
     'Study guide stub for The Story of an Hour by Kate Chopin. Pearson Edexcel International GCSE English Language A (4EA1) Section C prose anthology.',
   alternates: {

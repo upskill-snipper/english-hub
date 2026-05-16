@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for Twelfth Night by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'Twelfth Night — Study Guide | The English Hub',
+  title: 'Twelfth Night — Study Guide',
   description:
     'In-depth study guide for Twelfth Night by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {

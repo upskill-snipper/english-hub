@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Pride and Prejudice revision guide — themes, characters, key quotes — The English Hub',
     description: 'Pride and Prejudice GCSE revision — Austen',
   },
-  title: 'Pride and Prejudice revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Pride and Prejudice revision guide — themes, characters, key quotes',
   description:
     "Pride and Prejudice GCSE revision — Austen's novel of manners by chapter with character analysis. Aligned to AQA, Edexcel, OCR and Eduqas mark schemes.",
   alternates: {

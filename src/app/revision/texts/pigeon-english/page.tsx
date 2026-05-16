@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Pigeon English revision guide — themes, characters, key quotes — The English Hub',
     description: 'Pigeon English GCSE revision — Stephen Kelman',
   },
-  title: 'Pigeon English revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Pigeon English revision guide — themes, characters, key quotes',
   description:
     "Pigeon English GCSE revision — Stephen Kelman's 2011 novel with plot, characters, themes, context and key quotes. Aligned to the AQA GCSE Literature spec.",
   alternates: {

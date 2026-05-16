@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for Henry V by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'Henry V — Study Guide | The English Hub',
+  title: 'Henry V — Study Guide',
   description:
     'In-depth study guide for Henry V by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {

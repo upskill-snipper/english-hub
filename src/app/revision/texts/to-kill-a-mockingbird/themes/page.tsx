@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       'Detailed theme analysis for To Kill a Mockingbird by Harper Lee: Racial Injustice, Moral Education, Loss of Innocence, Courage, Class and Empathy.',
   },
-  title: 'To Kill a Mockingbird — Themes | The English Hub',
+  title: 'To Kill a Mockingbird — Themes',
   description:
     'Detailed theme analysis for To Kill a Mockingbird by Harper Lee: Racial Injustice, Moral Education, Loss of Innocence, Courage, Class and Empathy.',
   alternates: {

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for Silas Marner by George Eliot: plot, characters, themes, context and key quotations.',
   },
-  title: 'Silas Marner — Study Guide | The English Hub',
+  title: 'Silas Marner — Study Guide',
   description:
     'In-depth study guide for Silas Marner by George Eliot: plot, characters, themes, context and key quotations.',
   alternates: {

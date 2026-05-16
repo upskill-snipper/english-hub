@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Jane Eyre revision guide — themes, characters, key quotes — The English Hub',
     description: 'Jane Eyre GCSE revision — Charlotte Brontë',
   },
-  title: 'Jane Eyre revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Jane Eyre revision guide — themes, characters, key quotes',
   description:
     "Jane Eyre GCSE revision — Charlotte Brontë's Gothic bildungsroman by chapter with key quotes. Aligned to AQA, OCR and Edexcel International A Level.",
   alternates: {

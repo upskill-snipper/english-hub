@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       'In-depth study guide for The Merchant of Venice by William Shakespeare: plot, characters, themes, context and key quotations.',
   },
-  title: 'The Merchant of Venice — Study Guide | The English Hub',
+  title: 'The Merchant of Venice — Study Guide',
   description:
     'In-depth study guide for The Merchant of Venice by William Shakespeare: plot, characters, themes, context and key quotations.',
   alternates: {

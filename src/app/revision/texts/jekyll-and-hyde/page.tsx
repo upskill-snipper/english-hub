@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Jekyll and Hyde revision guide — themes, characters, key quotes — The English Hub',
     description: 'Jekyll and Hyde GCSE revision — Stevenson',
   },
-  title: 'Jekyll and Hyde revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Jekyll and Hyde revision guide — themes, characters, key quotes',
   description:
     "Jekyll and Hyde GCSE revision — Stevenson's Gothic novella with chapter analysis, characters, themes, context and key quotes. Aligned to AQA, Edexcel, OCR.",
   alternates: {

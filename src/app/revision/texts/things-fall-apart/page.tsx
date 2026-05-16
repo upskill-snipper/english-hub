@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Things Fall Apart revision guide — themes, characters, key quotes — The English Hub',
     description: 'Things Fall Apart IGCSE revision — Achebe',
   },
-  title: 'Things Fall Apart revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Things Fall Apart revision guide — themes, characters, key quotes',
   description:
     "Things Fall Apart IGCSE revision — Achebe's postcolonial novel with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE 4ET1.",
   alternates: {

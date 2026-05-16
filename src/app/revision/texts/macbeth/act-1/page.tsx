@@ -25,7 +25,7 @@ export const metadata = {
       'Detailed GCSE analysis of Macbeth Act 1: scene-by-scene summary, key quotes, language techniques, character development and structural analysis.',
   },
   alternates: { canonical: 'https://theenglishhub.app/revision/texts/macbeth/act-1' },
-  title: 'Macbeth Act 1 — Scene-by-Scene Analysis | The English Hub',
+  title: 'Macbeth Act 1 — Scene-by-Scene Analysis',
   description:
     'Detailed GCSE analysis of Macbeth Act 1: scene-by-scene summary, key quotes, language techniques, character development and structural analysis.',
 }

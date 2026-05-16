@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       'To Kill a Mockingbird revision guide — themes, characters, key quotes — The English Hub',
     description: 'To Kill a Mockingbird IGCSE revision — Harper Lee',
   },
-  title: 'To Kill a Mockingbird revision guide — themes, characters, key quotes — The English Hub',
+  title: 'To Kill a Mockingbird revision guide — themes, characters, key quotes',
   description:
     "To Kill a Mockingbird IGCSE revision — Harper Lee's novel with characters, themes, context and key quotes. Aligned to Pearson Edexcel IGCSE 4ET1 spec.",
   alternates: {

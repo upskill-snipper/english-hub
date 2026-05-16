@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Never Let Me Go revision guide — themes, characters, key quotes — The English Hub',
     description: 'Never Let Me Go GCSE revision — Kazuo Ishiguro',
   },
-  title: 'Never Let Me Go revision guide — themes, characters, key quotes — The English Hub',
+  title: 'Never Let Me Go revision guide — themes, characters, key quotes',
   description:
     "Never Let Me Go GCSE revision — Kazuo Ishiguro's 2005 dystopian novel with plot, characters, themes, context and key quotes. Aligned to the AQA GCSE spec.",
   alternates: {

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       'In-depth character analysis for Lord of the Flies by William Golding: Ralph, Jack, Piggy, Simon, Roger, Sam and Eric -- allegorical roles, development and key quotations.',
   },
-  title: 'Lord of the Flies Character Analysis | The English Hub',
+  title: 'Lord of the Flies Character Analysis',
   description:
     'In-depth character analysis for Lord of the Flies by William Golding: Ralph, Jack, Piggy, Simon, Roger, Sam and Eric -- allegorical roles, development and key quotations.',
   alternates: {
