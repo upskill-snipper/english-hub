@@ -47,14 +47,11 @@ function getNavForBoardType(
 ): NavLink[] {
   if (type) {
     void board
-    // Even with a board chosen, KS3 + EAL stay in the nav. KS3 is a
-    // prerequisite tier (Years 7–9 before exam years) and EAL is a
-    // bilingual track that runs alongside any board — students who
-    // already picked a GCSE / IGCSE board still need to reach them.
+    // KS3 and EAL are full hubs in their own right, reached from the
+    // homepage and in-context links — they are deliberately NOT
+    // top-level nav headings.
     return [
       { href: '/revision', labelKey: 'header.nav.your_hub' },
-      { href: '/ks3', labelKey: 'header.nav.ks3' },
-      { href: '/eal', labelKey: 'header.nav.eal' },
       { href: '/for-teachers', labelKey: 'header.nav.teachers' },
       { href: '/for-schools', labelKey: 'header.nav.schools' },
       { href: '/pricing', labelKey: 'header.nav.pricing' },
@@ -63,8 +60,6 @@ function getNavForBoardType(
 
   return [
     { href: '/board-select', labelKey: 'header.nav.students' },
-    { href: '/ks3', labelKey: 'header.nav.ks3' },
-    { href: '/eal', labelKey: 'header.nav.eal' },
     { href: '/for-parents', labelKey: 'header.nav.parents' },
     { href: '/for-teachers', labelKey: 'header.nav.teachers' },
     { href: '/for-schools', labelKey: 'header.nav.schools' },

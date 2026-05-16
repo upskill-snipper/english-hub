@@ -1,193 +1,311 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import {
+  Sparkles,
+  ArrowRight,
+  GraduationCap,
+  BookOpen,
+  CalendarDays,
+  ClipboardCheck,
+  Compass,
+  Flag,
+  PenTool,
+  Award,
+} from 'lucide-react'
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import { KS3 } from '@/lib/ks3/curriculum'
+import { QUALIFICATION } from '@/lib/ilowersecondary/spec'
 import { t } from '@/lib/i18n/t'
 
-export default async function KS3LandingPage() {
+// The KS3 `title` template + description used to live on the (now
+// client) layout. A Client Component can't export `metadata`, so the
+// index — a Server Component — owns it. KS3 sub-pages keep their own
+// per-page `title` and inherit the site-wide `'%s — The English Hub'`
+// template from the root layout.
+export const metadata: Metadata = {
+  title: {
+    default: 'KS3 English — Years 7, 8 & 9',
+    template: '%s · KS3 English · The English Hub',
+  },
+  description:
+    'The full KS3 English curriculum (Years 7–9) — yearly expectations, termly plans, weekly lesson frameworks, marking rubrics, skill progression, and end-of-KS3 standards.',
+  alternates: { canonical: 'https://theenglishhub.app/ks3' },
+}
+
+// ─── Section data ──────────────────────────────────────────────────────────
+//
+// Each year card links to `/ks3/year-N` (the `[year]` dynamic segment
+// validates `year-7|8|9`). Skills / Rubrics / End of KS3 / iLowerSecondary
+// are the real, existing routes under src/app/ks3/**.
+
+interface KS3Section {
+  title: string
+  caption: string
+  desc: string
+  href: string
+  icon: typeof BookOpen
+  colour: string
+  bgColour: string
+}
+
+export default async function KS3HubPage() {
   const tr = await Promise.all([
     t('ks3.landing.eyebrow'), // 0
     t('ks3.landing.title'), // 1
     t('ks3.landing.lead'), // 2
-    t('ks3.landing.arc_heading'), // 3
-    t('ks3.landing.reading_progression_intro'), // 4
-    t('ks3.landing.year_7_arc'), // 5
-    t('ks3.landing.year_8_arc'), // 6
-    t('ks3.landing.year_9_arc'), // 7
-    t('ks3.landing.writing_progression'), // 8
-    t('ks3.landing.three_years_heading'), // 9
-    t('ks3.landing.view_year'), // 10  (label, e.g. "View Year")
-    t('ks3.landing.weekly_framework_heading'), // 11
-    t('ks3.landing.weekly_framework_intro'), // 12
-    t('ks3.landing.lesson1_label'), // 13
-    t('ks3.landing.lesson1_desc'), // 14
-    t('ks3.landing.lesson2_label'), // 15
-    t('ks3.landing.lesson2_desc'), // 16
-    t('ks3.landing.lesson3_label'), // 17
-    t('ks3.landing.lesson3_desc'), // 18
-    t('ks3.landing.lesson4_label'), // 19
-    t('ks3.landing.lesson4_desc'), // 20
-    t('ks3.landing.lesson5_label'), // 21
-    t('ks3.landing.lesson5_desc'), // 22
-    t('ks3.landing.non_negotiables_heading'), // 23
-    t('ks3.landing.non_negotiables_intro'), // 24
-    t('ks3.landing.non_negotiables_1'), // 25
-    t('ks3.landing.non_negotiables_2'), // 26
-    t('ks3.landing.non_negotiables_3'), // 27
-    t('ks3.landing.non_negotiables_4'), // 28
-    t('ks3.landing.non_negotiables_5'), // 29
-    t('ks3.landing.non_negotiables_6'), // 30
-    t('ks3.landing.how_to_use_heading'), // 31
-    t('ks3.landing.how_to_use_yearly'), // 32
-    t('ks3.landing.how_to_use_termly'), // 33
-    t('ks3.landing.how_to_use_weekly'), // 34
-    t('ks3.landing.how_to_use_rubrics'), // 35
-    t('ks3.landing.how_to_use_skills'), // 36
-    t('ks3.landing.how_to_use_end_of_ks3'), // 37
-    t('ks3.landing.bilingual_heading'), // 38
-    t('ks3.landing.bilingual_body'), // 39
-    t('ks3.landing.hooked_heading'), // 40
-    t('ks3.landing.hooked_ai_marking'), // 41
-    t('ks3.landing.hooked_reading'), // 42
-    t('ks3.landing.hooked_vocab'), // 43
-    t('ks3.landing.hooked_mocks'), // 44
-    t('ks3.year_7_name'), // 45
-    t('ks3.year_8_name'), // 46
-    t('ks3.year_9_name'), // 47
-    t('ks3.year_7'), // 48
-    t('ks3.year_8'), // 49
-    t('ks3.year_9'), // 50
+    t('ks3.landing.three_years_heading'), // 3
+    t('ks3.landing.view_year'), // 4
+    t('ks3.year_7'), // 5
+    t('ks3.year_8'), // 6
+    t('ks3.year_9'), // 7
+    t('ks3.year_7_name'), // 8
+    t('ks3.year_8_name'), // 9
+    t('ks3.year_9_name'), // 10
+    t('ks3.marking_rubrics'), // 11
+    t('ks3.skill_codes'), // 12
+    t('ks3.end_of_ks3'), // 13
+    t('ks3.year_overview'), // 14
   ])
 
-  const yearNameTr: Record<number, string> = { 7: tr[45], 8: tr[46], 9: tr[47] }
-  const yearLabelTr: Record<number, string> = { 7: tr[48], 8: tr[49], 9: tr[50] }
+  const yearNameTr: Record<number, string> = { 7: tr[8], 8: tr[9], 9: tr[10] }
+  const yearLabelTr: Record<number, string> = { 7: tr[5], 8: tr[6], 9: tr[7] }
+
+  // Stat boxes use REAL curriculum data so the numbers stay accurate
+  // and self-maintaining (no fabricated counts).
+  const yearCount = KS3.years.length
+  const termCount = KS3.years.reduce((n, y) => n + y.terms.length, 0)
+  const skillCount = KS3.skillCodes.length
+  const rubricCount = KS3.years.reduce((n, y) => n + (y.rubric?.length ?? 0), 0)
+
+  // Year cards — Foundations / Development / Mastery.
+  const yearSections: KS3Section[] = KS3.years.map((y) => ({
+    title: yearNameTr[y.number] ?? y.name.en.replace(`Year ${y.number} — `, ''),
+    caption: `${yearLabelTr[y.number]} · ${y.terms.length} terms`,
+    desc: y.overview.en,
+    href: `/ks3/year-${y.number}`,
+    icon: BookOpen,
+    colour: y.number === 7 ? 'text-blue-400' : y.number === 8 ? 'text-violet-400' : 'text-rose-400',
+    bgColour:
+      y.number === 7 ? 'bg-blue-500/10' : y.number === 8 ? 'bg-violet-500/10' : 'bg-rose-500/10',
+  }))
+
+  // Reference + standards cards — the other real /ks3 destinations.
+  const referenceSections: KS3Section[] = [
+    {
+      title: tr[12], // Skill codes
+      caption: `${skillCount} codes · Y7–Y9`,
+      desc: 'The KS3 skill progression mapped code-by-code across Reading, Writing, Language and Speaking & Listening — each code shows what it becomes the following year.',
+      href: '/ks3/skills',
+      icon: Compass,
+      colour: 'text-cyan-400',
+      bgColour: 'bg-cyan-500/10',
+    },
+    {
+      title: tr[11], // Marking rubrics
+      caption: `${rubricCount} rubric rows`,
+      desc: 'Year-by-year marking rubrics with level descriptors, so every independent outcome is assessed against a consistent, transparent standard.',
+      href: '/ks3/rubrics',
+      icon: ClipboardCheck,
+      colour: 'text-emerald-400',
+      bgColour: 'bg-emerald-500/10',
+    },
+    {
+      title: tr[13], // End of KS3 standard
+      caption: 'British National Curriculum',
+      desc: 'The end-of-KS3 expected standard across reading, writing, grammar, speaking and literary knowledge — the bar students clear before GCSE.',
+      href: '/ks3/end-of-ks3',
+      icon: Flag,
+      colour: 'text-amber-400',
+      bgColour: 'bg-amber-500/10',
+    },
+  ]
 
   return (
-    <>
-      <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
-        {tr[0]}
-      </p>
-      <h1>{tr[1]}</h1>
-      <p className="lead">{tr[2]}</p>
+    <div className="space-y-10 pb-16">
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <section
+        aria-labelledby="ks3-hero-heading"
+        className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl"
+        />
 
-      <div className="not-prose my-6">
-        <Link
-          href="/ks3/ilowersecondary"
-          className="group block rounded-2xl border border-primary/30 bg-primary/[0.04] p-5 transition-colors hover:border-primary/50 hover:bg-primary/[0.07]"
-        >
-          <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary">
-            Exam preparation
-          </p>
-          <h3 className="mt-1 text-lg font-semibold tracking-tight text-foreground">
-            iLowerSecondary English exam hub →
-          </h3>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Sitting the Pearson Edexcel International Award in Lower Secondary English (LEH11)? The
-            complete student hub: the specification and mark scheme, skill masterclasses for every
-            reading and writing objective, question-type guides, six full original practice papers,
-            a quiz, grammar lab and study plan.
-          </p>
-        </Link>
-      </div>
-
-      <h2>{tr[3]}</h2>
-      <p>{tr[4]}</p>
-      <ul>
-        <li>
-          <strong>{yearLabelTr[7]}</strong> — {tr[5]}
-        </li>
-        <li>
-          <strong>{yearLabelTr[8]}</strong> — {tr[6]}
-        </li>
-        <li>
-          <strong>{yearLabelTr[9]}</strong> — {tr[7]}
-        </li>
-      </ul>
-      <p>{tr[8]}</p>
-
-      <h2>{tr[9]}</h2>
-      <div className="not-prose grid gap-4 sm:grid-cols-3 my-6">
-        {KS3.years.map((y) => (
-          <Link
-            key={y.number}
-            href={`/ks3/year-${y.number}`}
-            className="group rounded-2xl border border-border/60 bg-card p-5 transition-colors hover:border-primary/40 hover:bg-primary/[0.03]"
+        <div className="relative">
+          <Badge variant="secondary" className="mb-4">
+            <Sparkles className="mr-1 size-3" aria-hidden="true" />
+            {tr[0]}
+          </Badge>
+          <h1
+            id="ks3-hero-heading"
+            className="text-display-sm font-heading text-foreground sm:text-display"
           >
-            <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground">
-              {yearLabelTr[y.number]}
-            </p>
-            <h3 className="mt-1 text-lg font-semibold tracking-tight text-foreground">
-              {yearNameTr[y.number] ?? y.name.en.replace(`Year ${y.number} — `, '')}
-            </h3>
-            <p className="mt-3 text-sm text-muted-foreground line-clamp-3">{y.overview.en}</p>
-            <p className="mt-4 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-              {tr[10]} {y.number} →
-            </p>
-          </Link>
-        ))}
-      </div>
+            {tr[1]}
+          </h1>
+          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{tr[2]}</p>
 
-      <h2>{tr[11]}</h2>
-      <p>{tr[12]}</p>
-      <ol>
-        <li>
-          <strong>{tr[13]}</strong> {tr[14]}
-        </li>
-        <li>
-          <strong>{tr[15]}</strong> {tr[16]}
-        </li>
-        <li>
-          <strong>{tr[17]}</strong> {tr[18]}
-        </li>
-        <li>
-          <strong>{tr[19]}</strong> {tr[20]}
-        </li>
-        <li>
-          <strong>{tr[21]}</strong> {tr[22]}
-        </li>
-      </ol>
+          {/* Quick stats — real curriculum counts */}
+          <div className="mt-6 flex flex-wrap gap-4 sm:gap-6">
+            {[
+              { label: 'Year groups', value: String(yearCount), icon: GraduationCap },
+              { label: 'Terms mapped', value: String(termCount), icon: CalendarDays },
+              { label: 'Skill codes', value: String(skillCount), icon: Compass },
+              { label: 'Rubric rows', value: String(rubricCount), icon: ClipboardCheck },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="flex items-center gap-2 rounded-lg border border-border/40 bg-background/50 px-3 py-2"
+              >
+                <stat.icon className="size-4 text-primary" aria-hidden="true" />
+                <span className="text-sm font-semibold text-foreground">{stat.value}</span>
+                <span className="text-sm text-muted-foreground">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <h2>{tr[23]}</h2>
-      <p>{tr[24]}</p>
-      <ul>
-        <li>{tr[25]}</li>
-        <li>{tr[26]}</li>
-        <li>{tr[27]}</li>
-        <li>{tr[28]}</li>
-        <li>{tr[29]}</li>
-        <li>{tr[30]}</li>
-      </ul>
+      {/* ── iLowerSecondary exam-hub CTA ─────────────────────────────── */}
+      <section className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/[0.08] via-card to-violet-500/[0.05] p-6 sm:p-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-start gap-4">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15">
+              <Award className="size-6 text-primary" aria-hidden="true" />
+            </div>
+            <div>
+              <Badge variant="secondary" className="mb-2">
+                <Sparkles className="mr-1 size-3" aria-hidden="true" />
+                Exam preparation
+              </Badge>
+              <h2 className="text-heading-md font-heading text-foreground">
+                {QUALIFICATION.title} ({QUALIFICATION.subjectCode})
+              </h2>
+              <p className="mt-1 max-w-xl text-body-sm text-muted-foreground">
+                The complete student hub for the {QUALIFICATION.paperCode} paper: the specification
+                and mark scheme, skill masterclasses for every reading and writing objective,
+                question-type guides, six full original practice papers, a quiz, grammar lab and
+                study plan.
+              </p>
+            </div>
+          </div>
+          <Button variant="default" size="lg" render={<Link href="/ks3/ilowersecondary" />}>
+            Open the exam hub
+            <ArrowRight className="size-4" />
+          </Button>
+        </div>
+      </section>
 
-      <h2>{tr[31]}</h2>
-      <ul>
-        <li>
-          {tr[32]} <Link href="/ks3/year-7">/ks3/year-7</Link>
-        </li>
-        <li>
-          {tr[33]} <Link href="/ks3/year-7/term-1">/ks3/year-7/term-1</Link>
-        </li>
-        <li>
-          {tr[34]} <Link href="/ks3/year-7/term-1/week-2">/ks3/year-7/term-1/week-2</Link>
-        </li>
-        <li>
-          {tr[35]} <Link href="/ks3/rubrics">/ks3/rubrics</Link>
-        </li>
-        <li>
-          {tr[36]} <Link href="/ks3/skills">/ks3/skills</Link>
-        </li>
-        <li>
-          {tr[37]} <Link href="/ks3/end-of-ks3">/ks3/end-of-ks3</Link>
-        </li>
-      </ul>
+      {/* ── The three years ──────────────────────────────────────────── */}
+      <section aria-labelledby="ks3-years-heading">
+        <div className="mb-5 flex items-center gap-3">
+          <GraduationCap className="size-5 text-primary" aria-hidden="true" />
+          <h2 id="ks3-years-heading" className="text-heading-lg font-heading text-foreground">
+            {tr[3]}
+          </h2>
+        </div>
 
-      <h2>{tr[38]}</h2>
-      <p>{tr[39]}</p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {yearSections.map((section, idx) => {
+            const yearNumber = KS3.years[idx].number
+            return (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
+              >
+                <div className="mb-3 flex items-center gap-3">
+                  <div
+                    className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
+                  >
+                    <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
+                      {section.title}
+                    </h3>
+                    <span className="text-caption text-muted-foreground">{section.caption}</span>
+                  </div>
+                </div>
 
-      <h2>{tr[40]}</h2>
-      <ul>
-        <li>{tr[41]}</li>
-        <li>{tr[42]}</li>
-        <li>{tr[43]}</li>
-        <li>{tr[44]}</li>
-      </ul>
-    </>
+                <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed line-clamp-4">
+                  {section.desc}
+                </p>
+
+                <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                  {tr[4]} {yearNumber}
+                  <ArrowRight className="size-3.5" aria-hidden="true" />
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* ── Reference & standards ────────────────────────────────────── */}
+      <section aria-labelledby="ks3-reference-heading">
+        <div className="mb-5 flex items-center gap-3">
+          <Compass className="size-5 text-primary" aria-hidden="true" />
+          <h2 id="ks3-reference-heading" className="text-heading-lg font-heading text-foreground">
+            Reference &amp; standards
+          </h2>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {referenceSections.map((section) => (
+            <Link
+              key={section.href}
+              href={section.href}
+              className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
+            >
+              <div className="mb-3 flex items-center gap-3">
+                <div
+                  className={`flex size-10 items-center justify-center rounded-xl ${section.bgColour}`}
+                >
+                  <section.icon className={`size-5 ${section.colour}`} aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
+                    {section.title}
+                  </h3>
+                  <span className="text-caption text-muted-foreground">{section.caption}</span>
+                </div>
+              </div>
+
+              <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
+                {section.desc}
+              </p>
+
+              <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                Explore
+                <ArrowRight className="size-3.5" aria-hidden="true" />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Start CTA ────────────────────────────────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">
+        <PenTool className="mx-auto mb-3 size-8 text-primary" aria-hidden="true" />
+        <h2 className="text-heading-lg font-heading text-foreground">
+          Start at the beginning: {yearLabelTr[7]}
+        </h2>
+        <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
+          Foundations builds the core reading and writing reflexes the rest of KS3 depends on. Open
+          Year 7 to see the termly plans and weekly lesson frameworks.
+        </p>
+        <Button variant="default" size="lg" className="mt-5" render={<Link href="/ks3/year-7" />}>
+          {tr[4]} 7 — {tr[14]}
+          <ArrowRight className="size-4" />
+        </Button>
+      </section>
+    </div>
   )
 }
