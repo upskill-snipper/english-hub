@@ -1,0 +1,211 @@
+# The English Hub
+
+> The English Hub is an independent GCSE, IGCSE, KS3 and EAL English learning platform for students, teachers and schools. It provides exam-board-aligned revision (AQA, Pearson Edexcel, OCR, WJEC Eduqas, Cambridge IGCSE), AI-assisted essay feedback, exam-style practice, mock exams, teacher tools and school-level analytics. The platform is exam-board aligned, not exam-board endorsed. Content accuracy is governed by a published content-verification methodology with human review of high-stakes material.
+
+Last generated: 2026-05-16. Canonical host: https://theenglishhub.app
+
+This file follows the llms.txt convention so AI answer engines can cite accurate, exam-board-specific English education content. The English Hub is independent and exam-board aligned, not endorsed.
+
+## Key pages
+
+- [Homepage — platform overview for students, teachers and schools.](https://theenglishhub.app)
+
+## GCSE board hubs
+
+- [Exam Boards](https://theenglishhub.app/exam-boards)
+
+## IGCSE board hubs
+
+- [Igcse](https://theenglishhub.app/igcse)
+- [Igcse › Cambridge](https://theenglishhub.app/igcse/cambridge)
+- [Igcse › Cambridge › 0500](https://theenglishhub.app/igcse/cambridge/0500)
+- [Igcse › Cambridge › 0500 › Comprehension Strategies](https://theenglishhub.app/igcse/cambridge/0500/comprehension-strategies)
+- [Igcse › Cambridge › 0500 › Grade Boundaries](https://theenglishhub.app/igcse/cambridge/0500/grade-boundaries)
+- [Igcse › Cambridge › 0500 › Paper 1](https://theenglishhub.app/igcse/cambridge/0500/paper-1)
+- [Igcse › Cambridge › 0500 › Paper 1 › Language Analysis](https://theenglishhub.app/igcse/cambridge/0500/paper-1/language-analysis)
+- [Igcse › Cambridge › 0500 › Paper 1 › Model Answers](https://theenglishhub.app/igcse/cambridge/0500/paper-1/model-answers)
+- [Igcse › Cambridge › 0500 › Paper 1 › Practice](https://theenglishhub.app/igcse/cambridge/0500/paper-1/practice)
+- [Igcse › Cambridge › 0500 › Paper 1 › Reading Techniques](https://theenglishhub.app/igcse/cambridge/0500/paper-1/reading-techniques)
+- [Igcse › Cambridge › 0500 › Paper 1 › Summary Writing](https://theenglishhub.app/igcse/cambridge/0500/paper-1/summary-writing)
+- [Igcse › Cambridge › 0500 › Paper 2](https://theenglishhub.app/igcse/cambridge/0500/paper-2)
+- [Igcse › Cambridge › 0500 › Paper 2 › Descriptive Writing](https://theenglishhub.app/igcse/cambridge/0500/paper-2/descriptive-writing)
+- [Igcse › Cambridge › 0500 › Paper 2 › Directed Writing](https://theenglishhub.app/igcse/cambridge/0500/paper-2/directed-writing)
+- [Igcse › Cambridge › 0500 › Paper 2 › Model Answers](https://theenglishhub.app/igcse/cambridge/0500/paper-2/model-answers)
+- [Igcse › Cambridge › 0500 › Paper 2 › Narrative Writing](https://theenglishhub.app/igcse/cambridge/0500/paper-2/narrative-writing)
+- [Igcse › Cambridge › 0500 › Syllabus](https://theenglishhub.app/igcse/cambridge/0500/syllabus)
+- [Igcse › Cambridge › 0500 › Vocabulary](https://theenglishhub.app/igcse/cambridge/0500/vocabulary)
+- [Igcse › Cambridge › 0990](https://theenglishhub.app/igcse/cambridge/0990)
+- [Igcse › Cambridge › 0990 › Difference Vs 0500](https://theenglishhub.app/igcse/cambridge/0990/difference-vs-0500)
+- [Igcse › Cambridge › 0990 › Grade 5 Guide](https://theenglishhub.app/igcse/cambridge/0990/grade-5-guide)
+- [Igcse › Cambridge › 0990 › Grade 7 Guide](https://theenglishhub.app/igcse/cambridge/0990/grade-7-guide)
+- [Igcse › Cambridge › 0990 › Grade 9 Guide](https://theenglishhub.app/igcse/cambridge/0990/grade-9-guide)
+- [Igcse › Cambridge › 0990 › Grade Conversion](https://theenglishhub.app/igcse/cambridge/0990/grade-conversion)
+- [Igcse › Cambridge › 0990 › Paper 1](https://theenglishhub.app/igcse/cambridge/0990/paper-1)
+- …and 131 more under this section (see /llms-full.txt)
+
+## Set texts & poetry
+
+- [Resources › English Literature › Aqa › Poetry](https://theenglishhub.app/resources/english-literature/aqa/poetry)
+- [Resources › English Literature › Caie › Poetry](https://theenglishhub.app/resources/english-literature/caie/poetry)
+- [Resources › English Literature › Edexcel › Poetry](https://theenglishhub.app/resources/english-literature/edexcel/poetry)
+- [Resources › English Literature › Ocr › Poetry](https://theenglishhub.app/resources/english-literature/ocr/poetry)
+- [Resources › Poetry](https://theenglishhub.app/resources/poetry)
+- [Resources › Poetry › Edexcel Anthology](https://theenglishhub.app/resources/poetry/edexcel-anthology)
+- [Resources › Poetry › Love And Relationships](https://theenglishhub.app/resources/poetry/love-and-relationships)
+- [Resources › Poetry › Power And Conflict](https://theenglishhub.app/resources/poetry/power-and-conflict)
+- [Resources › Poetry › Techniques](https://theenglishhub.app/resources/poetry/techniques)
+- [Resources › Poetry › Unseen Poetry](https://theenglishhub.app/resources/poetry/unseen-poetry)
+- [Revision › Poetry](https://theenglishhub.app/revision/poetry)
+- [Revision › Poetry › Aqa Worlds And Lives](https://theenglishhub.app/revision/poetry/aqa-worlds-and-lives)
+- [Revision › Poetry › Edexcel](https://theenglishhub.app/revision/poetry/edexcel)
+- [Revision › Poetry › Edexcel › Conflict](https://theenglishhub.app/revision/poetry/edexcel/conflict)
+- [Revision › Poetry › Edexcel › Conflict › A Poison Tree](https://theenglishhub.app/revision/poetry/edexcel/conflict/a-poison-tree)
+- [Revision › Poetry › Edexcel › Conflict › The Destruction Of Sennacherib](https://theenglishhub.app/revision/poetry/edexcel/conflict/the-destruction-of-sennacherib)
+- [Revision › Poetry › Edexcel › Essay Plans](https://theenglishhub.app/revision/poetry/edexcel/essay-plans)
+- [Revision › Poetry › Edexcel › Time And Place](https://theenglishhub.app/revision/poetry/edexcel/time-and-place)
+- [Revision › Poetry › Edexcel › Time And Place › Composed Upon Westminster Bridge](https://theenglishhub.app/revision/poetry/edexcel/time-and-place/composed-upon-westminster-bridge)
+- [Revision › Poetry › Edexcel › Time And Place › I Started Early Took My Dog](https://theenglishhub.app/revision/poetry/edexcel/time-and-place/i-started-early-took-my-dog)
+- [Revision › Poetry › Edexcel › Time And Place › London](https://theenglishhub.app/revision/poetry/edexcel/time-and-place/london)
+- [Revision › Poetry › Edexcel › Time And Place › To Autumn](https://theenglishhub.app/revision/poetry/edexcel/time-and-place/to-autumn)
+- [Revision › Poetry › Eduqas](https://theenglishhub.app/revision/poetry/eduqas)
+- [Revision › Poetry › Eduqas › A Wife In London](https://theenglishhub.app/revision/poetry/eduqas/a-wife-in-london)
+- [Revision › Poetry › Eduqas › Dulce Et Decorum Est](https://theenglishhub.app/revision/poetry/eduqas/dulce-et-decorum-est)
+- …and 162 more under this section (see /llms-full.txt)
+
+## Revision & exam technique
+
+- [Revision](https://theenglishhub.app/revision)
+- [Revision › Common Errors](https://theenglishhub.app/revision/common-errors)
+- [Revision › Exam Technique](https://theenglishhub.app/revision/exam-technique)
+- [Revision › Flashcards](https://theenglishhub.app/revision/flashcards)
+- [Revision › Grade Targets](https://theenglishhub.app/revision/grade-targets)
+- [Revision › Language](https://theenglishhub.app/revision/language)
+- [Revision › Quiz](https://theenglishhub.app/revision/quiz)
+
+## Practice & mock exams
+
+- [Mock Exams](https://theenglishhub.app/mock-exams)
+- [Practice](https://theenglishhub.app/practice)
+
+## Resources & study tools
+
+- [Resources](https://theenglishhub.app/resources)
+- [Resources › Context](https://theenglishhub.app/resources/context)
+- [Resources › Context › Elizabethan Jacobean](https://theenglishhub.app/resources/context/elizabethan-jacobean)
+- [Resources › Context › Romantic](https://theenglishhub.app/resources/context/romantic)
+- [Resources › Context › Twentieth Century](https://theenglishhub.app/resources/context/twentieth-century)
+- [Resources › Context › Victorian](https://theenglishhub.app/resources/context/victorian)
+- [Resources › English Language](https://theenglishhub.app/resources/english-language)
+- [Resources › English Language › Aqa](https://theenglishhub.app/resources/english-language/aqa)
+- [Resources › English Language › Aqa › Grade Boundaries](https://theenglishhub.app/resources/english-language/aqa/grade-boundaries)
+- [Resources › English Language › Aqa › Paper 1](https://theenglishhub.app/resources/english-language/aqa/paper-1)
+- [Resources › English Language › Aqa › Paper 2](https://theenglishhub.app/resources/english-language/aqa/paper-2)
+- [Resources › English Language › Aqa › Techniques](https://theenglishhub.app/resources/english-language/aqa/techniques)
+- [Resources › English Language › Aqa › Writing Skills](https://theenglishhub.app/resources/english-language/aqa/writing-skills)
+- [Resources › English Language › Caie](https://theenglishhub.app/resources/english-language/caie)
+- [Resources › English Language › Caie › Grade Boundaries](https://theenglishhub.app/resources/english-language/caie/grade-boundaries)
+- [Resources › English Language › Caie › Paper 1](https://theenglishhub.app/resources/english-language/caie/paper-1)
+- [Resources › English Language › Caie › Paper 2](https://theenglishhub.app/resources/english-language/caie/paper-2)
+- [Resources › English Language › Caie › Techniques](https://theenglishhub.app/resources/english-language/caie/techniques)
+- [Resources › English Language › Caie › Writing Skills](https://theenglishhub.app/resources/english-language/caie/writing-skills)
+- [Resources › English Language › Edexcel](https://theenglishhub.app/resources/english-language/edexcel)
+- [Resources › English Language › Edexcel › Grade Boundaries](https://theenglishhub.app/resources/english-language/edexcel/grade-boundaries)
+- [Resources › English Language › Edexcel › Paper 1](https://theenglishhub.app/resources/english-language/edexcel/paper-1)
+- [Resources › English Language › Edexcel › Paper 2](https://theenglishhub.app/resources/english-language/edexcel/paper-2)
+- [Resources › English Language › Edexcel › Techniques](https://theenglishhub.app/resources/english-language/edexcel/techniques)
+- [Resources › English Language › Edexcel › Writing Skills](https://theenglishhub.app/resources/english-language/edexcel/writing-skills)
+- …and 139 more under this section (see /llms-full.txt)
+
+## For teachers
+
+- [For Teachers](https://theenglishhub.app/for-teachers)
+- [For Teachers › Free Resources](https://theenglishhub.app/for-teachers/free-resources)
+
+## For schools
+
+- [For Schools](https://theenglishhub.app/for-schools)
+- [For Schools › Contact](https://theenglishhub.app/for-schools/contact)
+
+## For parents
+
+- [For Parents](https://theenglishhub.app/for-parents)
+
+## Pricing
+
+- [Pricing](https://theenglishhub.app/pricing)
+
+## Blog & guides
+
+- [Blog](https://theenglishhub.app/blog)
+- [Blog › 30 Minute Essay Plan Gcse English Literature](https://theenglishhub.app/blog/30-minute-essay-plan-gcse-english-literature)
+- [Blog › 30 Minute Essay Plan Gcse English Literature.Ar](https://theenglishhub.app/blog/30-minute-essay-plan-gcse-english-literature.ar)
+- [Blog › An Inspector Calls Gcse Aqa](https://theenglishhub.app/blog/an-inspector-calls-gcse-aqa)
+- [Blog › An Inspector Calls Gcse Aqa Analysis](https://theenglishhub.app/blog/an-inspector-calls-gcse-aqa-analysis)
+- [Blog › An Inspector Calls Gcse Aqa Analysis.Ar](https://theenglishhub.app/blog/an-inspector-calls-gcse-aqa-analysis.ar)
+- [Blog › An Inspector Calls Gcse Aqa.Ar](https://theenglishhub.app/blog/an-inspector-calls-gcse-aqa.ar)
+- [Blog › Ao2 In 5 Minutes](https://theenglishhub.app/blog/ao2-in-5-minutes)
+- [Blog › Ao2 In 5 Minutes.Ar](https://theenglishhub.app/blog/ao2-in-5-minutes.ar)
+- [Blog › Ao5 Gcse English Literature](https://theenglishhub.app/blog/ao5-gcse-english-literature)
+- [Blog › Ao5 Gcse English Literature.Ar](https://theenglishhub.app/blog/ao5-gcse-english-literature.ar)
+- [Blog › Aqa Gcse English Language Paper 1](https://theenglishhub.app/blog/aqa-gcse-english-language-paper-1)
+- [Blog › Aqa Gcse English Language Paper 1.Ar](https://theenglishhub.app/blog/aqa-gcse-english-language-paper-1.ar)
+- [Blog › Aqa Gcse English Literature Revision Guide](https://theenglishhub.app/blog/aqa-gcse-english-literature-revision-guide)
+- [Blog › Aqa Gcse English Literature Revision Guide.Ar](https://theenglishhub.app/blog/aqa-gcse-english-literature-revision-guide.ar)
+- [Blog › Aqa Power And Conflict Poems Ranked By Difficulty](https://theenglishhub.app/blog/aqa-power-and-conflict-poems-ranked-by-difficulty)
+- [Blog › Aqa Power And Conflict Poems Ranked By Difficulty.Ar](https://theenglishhub.app/blog/aqa-power-and-conflict-poems-ranked-by-difficulty.ar)
+- [Blog › Cambridge Igcse 0500 Vs 0990 Difference](https://theenglishhub.app/blog/cambridge-igcse-0500-vs-0990-difference)
+- [Blog › Cambridge Igcse 0500 Vs 0990 Difference.Ar](https://theenglishhub.app/blog/cambridge-igcse-0500-vs-0990-difference.ar)
+- [Blog › Comparative Essay Gcse English Ao5](https://theenglishhub.app/blog/comparative-essay-gcse-english-ao5)
+- [Blog › Comparative Essay Gcse English Ao5.Ar](https://theenglishhub.app/blog/comparative-essay-gcse-english-ao5.ar)
+- [Blog › Fastest Way To Remember Power And Conflict Poems](https://theenglishhub.app/blog/fastest-way-to-remember-power-and-conflict-poems)
+- [Blog › Fastest Way To Remember Power And Conflict Poems.Ar](https://theenglishhub.app/blog/fastest-way-to-remember-power-and-conflict-poems.ar)
+- [Blog › Gcse English Language Paper 1 Transactional Writing](https://theenglishhub.app/blog/gcse-english-language-paper-1-transactional-writing)
+- [Blog › Gcse English Language Paper 1 Transactional Writing.Ar](https://theenglishhub.app/blog/gcse-english-language-paper-1-transactional-writing.ar)
+- …and 62 more under this section (see /llms-full.txt)
+
+## Company, trust & legal
+
+- [About](https://theenglishhub.app/about)
+- [Accessibility](https://theenglishhub.app/accessibility)
+- [Contact](https://theenglishhub.app/contact)
+- [Cookie Policy](https://theenglishhub.app/cookie-policy)
+- [Legal › Acceptable Use](https://theenglishhub.app/legal/acceptable-use)
+- [Legal › Ai Transparency](https://theenglishhub.app/legal/ai-transparency)
+- [Legal › Cancellation](https://theenglishhub.app/legal/cancellation)
+- [Legal › Complaints](https://theenglishhub.app/legal/complaints)
+- [Legal › Disclaimer](https://theenglishhub.app/legal/disclaimer)
+- [Legal › Privacy Qatar](https://theenglishhub.app/legal/privacy-qatar)
+- [Legal › Rights](https://theenglishhub.app/legal/rights)
+- [Legal › Safeguarding](https://theenglishhub.app/legal/safeguarding)
+- [Privacy Policy](https://theenglishhub.app/privacy-policy)
+- [Refund Policy](https://theenglishhub.app/refund-policy)
+- [Terms](https://theenglishhub.app/terms)
+
+## Other public pages
+
+- [Affiliates](https://theenglishhub.app/affiliates)
+- [Analysis › Aqa Love Relationships](https://theenglishhub.app/analysis/aqa-love-relationships)
+- [Analysis › Aqa Power Conflict](https://theenglishhub.app/analysis/aqa-power-conflict)
+- [Analysis › Christmas Carol](https://theenglishhub.app/analysis/christmas-carol)
+- [Analysis › Inspector Calls](https://theenglishhub.app/analysis/inspector-calls)
+- [Analysis › Jekyll Hyde](https://theenglishhub.app/analysis/jekyll-hyde)
+- [Analysis › Language Paper](https://theenglishhub.app/analysis/language-paper)
+- [Analysis › Macbeth](https://theenglishhub.app/analysis/macbeth)
+- [Analysis › Revision](https://theenglishhub.app/analysis/revision)
+- [Assessment › Reading](https://theenglishhub.app/assessment/reading)
+- [Board Select](https://theenglishhub.app/board-select)
+- [Courses](https://theenglishhub.app/courses)
+- [Courses › Aqa Lit Christmas Carol](https://theenglishhub.app/courses/aqa-lit-christmas-carol)
+- [Courses › Aqa Lit Inspector Calls](https://theenglishhub.app/courses/aqa-lit-inspector-calls)
+- [Courses › Aqa Lit Jekyll Hyde](https://theenglishhub.app/courses/aqa-lit-jekyll-hyde)
+- [Courses › Aqa Lit Love Relationships](https://theenglishhub.app/courses/aqa-lit-love-relationships)
+- [Courses › Aqa Lit Power Conflict](https://theenglishhub.app/courses/aqa-lit-power-conflict)
+- [Courses › Aqa Lit Romeo Juliet](https://theenglishhub.app/courses/aqa-lit-romeo-juliet)
+- [Courses › Caie Lit Drama](https://theenglishhub.app/courses/caie-lit-drama)
+- [Courses › Caie Lit Poetry](https://theenglishhub.app/courses/caie-lit-poetry)
+- [Courses › Caie Lit Prose](https://theenglishhub.app/courses/caie-lit-prose)
+- [Courses › Edexcel Igcse Lang A](https://theenglishhub.app/courses/edexcel-igcse-lang-a)
+- [Courses › Edexcel Igcse Lang B](https://theenglishhub.app/courses/edexcel-igcse-lang-b)
+- [Courses › Edexcel Lang Paper1](https://theenglishhub.app/courses/edexcel-lang-paper1)
+- [Courses › Edexcel Lang Paper2](https://theenglishhub.app/courses/edexcel-lang-paper2)
+- …and 95 more under this section (see /llms-full.txt)

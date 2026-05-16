@@ -44,6 +44,7 @@ import { POETRY_HUB_DICTIONARY } from './dictionary-poetry-hub'
 import { AUDIT_FIX_DICTIONARY } from './dictionary-audit-fix'
 import { SCREENSHOT_FIX_DICTIONARY } from './dictionary-screenshot-fixes'
 import { PLACEHOLDER_FIX_MAY15 } from './dictionary-placeholder-fix-may15'
+import { PLACEHOLDER_FIX_MAY16 } from './dictionary-placeholder-fix-may16'
 import { PRESS_AND_VERIFIED_FIX } from './dictionary-press-verified'
 
 export type Locale = 'en' | 'ar'
@@ -14708,6 +14709,7 @@ export function lookup(key: string, locale: Locale): string {
     DEMO_PAGES_DICTIONARY[key] ??
     POETRY_HUB_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
+    PLACEHOLDER_FIX_MAY16[key] ??
     AUDIT_FIX_DICTIONARY[key] ??
     SCREENSHOT_FIX_DICTIONARY[key] ??
     PLACEHOLDER_FIX_MAY15[key]

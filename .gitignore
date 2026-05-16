@@ -27,6 +27,7 @@ docs/Biz Files/
 *.bak
 *.bak-seo-autofix
 *.bak-seo-fix
+*.bak-seo-titlededup
 POETRY_ANTHOLOGY_SUMMARY.txt
 
 # Generated Word documents
