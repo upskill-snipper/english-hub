@@ -25,6 +25,8 @@ import {
 } from '@/lib/eal/cefr'
 import { getDiagnosticQuestions } from '@/lib/eal/diagnostic-bank'
 import { findEALTopic, recommendTopics } from '@/lib/eal/curriculum'
+import { createClient } from '@/lib/supabase/client'
+import { saveCEFRDiagnostic } from '@/lib/progress/sync'
 
 const SKILL_LABEL: Record<string, { en: string; ar: string }> = {
   grammar: { en: 'Grammar', ar: 'القواعد' },
@@ -72,18 +74,25 @@ export default function EALDiagnosticPage() {
 
   function finish(finalAnswers: CEFRAnswer[]) {
     const res = calculateCEFRLevel(finalAnswers, bank, recommendTopics)
+    const takenAt = new Date().toISOString()
     setResult(res)
     setPhase('result')
     try {
-      sessionStorage.setItem(
-        'eal-cefr-result',
-        JSON.stringify({ ...res, takenAt: new Date().toISOString() }),
-      )
+      sessionStorage.setItem('eal-cefr-result', JSON.stringify({ ...res, takenAt }))
     } catch {
       /* sessionStorage unavailable — non-fatal */
     }
-    // Phase-3 seam: when progress_cefr lands, persist `res` for the
-    // signed-in learner here (saveProgress 'cefr_diagnostic').
+    // Phase-3: durably persist for signed-in learners (append-only
+    // progress_cefr, mirroring reading-assessment). Best-effort and
+    // non-blocking — anonymous users and any failure fall back silently
+    // to the sessionStorage write above; the result UI never waits on it.
+    void (async () => {
+      try {
+        await saveCEFRDiagnostic(createClient(), res, takenAt)
+      } catch {
+        /* signed out or network/RLS error — non-fatal */
+      }
+    })()
   }
 
   function restart() {

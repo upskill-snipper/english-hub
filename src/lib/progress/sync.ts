@@ -1,4 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
+import type { CEFRDiagnosticResult } from '@/lib/eal/cefr'
 
 // ─── Types ─────────────────────────────────────────────────────────────
 
@@ -10,6 +11,7 @@ export type ProgressType =
   | 'reading_assessment'
   | 'essay_marked'
   | 'flashcard_session'
+  | 'cefr_diagnostic'
 
 export interface ProgressEntry {
   slug?: string
@@ -67,7 +69,7 @@ function collectLocalStorageProgress(): Omit<StudentProgressRow, 'user_id'>[] {
   // ── Studied poems ────────────────────────────────────────────────────
   const poems = safeJsonParse<Record<string, unknown>[]>(
     localStorage.getItem(LS_KEYS.studiedPoems),
-    []
+    [],
   )
   for (const poem of poems) {
     const slug = (poem.slug ?? poem.id ?? poem.title ?? '') as string
@@ -88,12 +90,12 @@ function collectLocalStorageProgress(): Omit<StudentProgressRow, 'user_id'>[] {
   // ── Game scores ──────────────────────────────────────────────────────
   const games = safeJsonParse<Record<string, unknown>[]>(
     localStorage.getItem(LS_KEYS.gameScores),
-    []
+    [],
   )
   for (const game of games) {
     rows.push({
       progress_type: 'game_played',
-      slug: (game.game ?? game.slug ?? game.id ?? '') as string || null,
+      slug: ((game.game ?? game.slug ?? game.id ?? '') as string) || null,
       score: typeof game.score === 'number' ? game.score : null,
       max_score: typeof game.maxScore === 'number' ? game.maxScore : null,
       grade: (game.grade as string) ?? null,
@@ -107,14 +109,19 @@ function collectLocalStorageProgress(): Omit<StudentProgressRow, 'user_id'>[] {
   // ── Quiz history ─────────────────────────────────────────────────────
   const quizzes = safeJsonParse<Record<string, unknown>[]>(
     localStorage.getItem(LS_KEYS.quizHistory),
-    []
+    [],
   )
   for (const quiz of quizzes) {
     rows.push({
       progress_type: 'quiz_completed',
-      slug: (quiz.slug ?? quiz.quizId ?? quiz.id ?? '') as string || null,
+      slug: ((quiz.slug ?? quiz.quizId ?? quiz.id ?? '') as string) || null,
       score: typeof quiz.score === 'number' ? quiz.score : null,
-      max_score: typeof quiz.total === 'number' ? quiz.total : (typeof quiz.maxScore === 'number' ? quiz.maxScore : null),
+      max_score:
+        typeof quiz.total === 'number'
+          ? quiz.total
+          : typeof quiz.maxScore === 'number'
+            ? quiz.maxScore
+            : null,
       grade: (quiz.grade as string) ?? null,
       duration_seconds: typeof quiz.duration === 'number' ? quiz.duration : null,
       metadata: quiz,
@@ -126,7 +133,7 @@ function collectLocalStorageProgress(): Omit<StudentProgressRow, 'user_id'>[] {
   // ── Revision / flashcard progress ────────────────────────────────────
   const revision = safeJsonParse<Record<string, unknown>>(
     localStorage.getItem(LS_KEYS.revisionProgress),
-    {}
+    {},
   )
   // revision-progress is often keyed by poem slug → { level, lastReviewed, ... }
   for (const [slug, value] of Object.entries(revision)) {
@@ -158,7 +165,9 @@ export async function syncProgressToSupabase(supabase: SupabaseClient): Promise<
   synced: number
   errors: string[]
 }> {
-  const { data: { user } } = await supabase.auth.getUser()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
   if (!user) return { synced: 0, errors: ['Not authenticated'] }
 
   const localRows = collectLocalStorageProgress()
@@ -180,17 +189,20 @@ export async function syncProgressToSupabase(supabase: SupabaseClient): Promise<
       .from('student_progress')
       .select('progress_type, slug, created_at')
       .eq('user_id', user.id)
-      .in('progress_type', batch.map((r) => r.progress_type))
+      .in(
+        'progress_type',
+        batch.map((r) => r.progress_type),
+      )
 
     const existingKeys = new Set(
       (existing ?? []).map(
         (e: { progress_type: string; slug: string | null; created_at: string }) =>
-          `${e.progress_type}|${e.slug ?? ''}|${e.created_at}`
-      )
+          `${e.progress_type}|${e.slug ?? ''}|${e.created_at}`,
+      ),
     )
 
     const newRows = batch.filter(
-      (r) => !existingKeys.has(`${r.progress_type}|${r.slug ?? ''}|${r.created_at}`)
+      (r) => !existingKeys.has(`${r.progress_type}|${r.slug ?? ''}|${r.created_at}`),
     )
 
     if (newRows.length === 0) continue
@@ -213,7 +225,9 @@ export async function loadProgressFromSupabase(supabase: SupabaseClient): Promis
   data: StudentProgressRow[]
   error: string | null
 }> {
-  const { data: { user } } = await supabase.auth.getUser()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
   if (!user) return { data: [], error: 'Not authenticated' }
 
   const { data, error } = await supabase
@@ -232,9 +246,11 @@ export async function loadProgressFromSupabase(supabase: SupabaseClient): Promis
 export async function saveProgress(
   supabase: SupabaseClient,
   type: ProgressType,
-  data: ProgressEntry
+  data: ProgressEntry,
 ): Promise<{ success: boolean; error: string | null }> {
-  const { data: { user } } = await supabase.auth.getUser()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
   if (!user) return { success: false, error: 'Not authenticated' }
 
   const now = new Date().toISOString()
@@ -250,6 +266,47 @@ export async function saveProgress(
     metadata: data.metadata ?? {},
     created_at: data.created_at ?? now,
     updated_at: now,
+  })
+
+  if (error) return { success: false, error: error.message }
+  return { success: true, error: null }
+}
+
+/**
+ * Persist a single CEFR placement-test result.
+ *
+ * CEFR diagnostics mirror reading-assessment: a dedicated, append-only
+ * table (`progress_cefr`, see migration 20260516_progress_cefr.sql)
+ * rather than the generic `student_progress` store, because the trend
+ * across repeated placements is the analytical value and each attempt
+ * must be its own immutable row. We therefore INSERT (never upsert), the
+ * same way `progress_reading_age` rows are written.
+ *
+ * `user_id` is stamped from the authenticated session (clients cannot
+ * forge it; RLS would reject a mismatched id anyway). The full result
+ * shape is preserved in `skills` JSONB for dashboards/recommendations.
+ * Returns a non-throwing `{ success, error }` so callers can treat
+ * persistence as best-effort (the diagnostic page keeps its
+ * sessionStorage write regardless).
+ */
+export async function saveCEFRDiagnostic(
+  supabase: SupabaseClient,
+  result: CEFRDiagnosticResult,
+  takenAt?: string,
+): Promise<{ success: boolean; error: string | null }> {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+  if (!user) return { success: false, error: 'Not authenticated' }
+
+  const { error } = await supabase.from('progress_cefr').insert({
+    user_id: user.id,
+    cefr_level: result.level,
+    band: result.band,
+    composite_pct: result.compositePercentage,
+    confidence: result.confidence,
+    skills: result.skills,
+    taken_at: takenAt ?? new Date().toISOString(),
   })
 
   if (error) return { success: false, error: error.message }
