@@ -171,7 +171,7 @@ const sections: ContextSection[] = [
 
 export default function ContextPage() {
   return (
-    <div className="space-y-10 bg-cream-50 pb-16">
+    <div className="space-y-10 bg-background pb-16">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -216,10 +216,10 @@ export default function ContextPage() {
             </Badge>
           </div>
 
-          <h1 className="font-serif text-display-sm text-foreground sm:text-display">
+          <h1 className="font-heading text-display-sm text-foreground sm:text-display">
             Historical and Social Context
           </h1>
-          <p className="mt-2 text-body-lg italic text-clay-600">
+          <p className="mt-2 text-body-lg italic text-clay-600 dark:text-clay-300">
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
@@ -234,7 +234,7 @@ export default function ContextPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 font-serif text-heading-md text-foreground">Jump to a Section</h2>
+            <h2 className="mb-4 font-heading text-heading-md text-foreground">Jump to a Section</h2>
             <div className="grid gap-2 sm:grid-cols-2">
               {sections.map((s) => {
                 const Icon = s.icon
@@ -272,13 +272,13 @@ export default function ContextPage() {
               <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-clay-400/10">
                 <Icon className={`size-5 ${section.iconColour}`} />
               </div>
-              <h2 className="font-serif text-heading-lg text-foreground">{section.title}</h2>
+              <h2 className="font-heading text-heading-lg text-foreground">{section.title}</h2>
             </div>
 
             {/* Content paragraphs */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-serif text-heading-md">
+                <CardTitle className="flex items-center gap-2 font-heading text-heading-md">
                   <BookOpen className="size-4 text-clay-500" />
                   Overview
                 </CardTitle>
@@ -293,7 +293,7 @@ export default function ContextPage() {
             {/* Key facts */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-serif text-heading-md">
+                <CardTitle className="flex items-center gap-2 font-heading text-heading-md">
                   <Lightbulb className="size-4 text-amber-400" />
                   Key Facts
                 </CardTitle>
@@ -302,7 +302,7 @@ export default function ContextPage() {
                 <ul className="space-y-2 text-body-sm text-muted-foreground">
                   {section.keyFacts.map((f, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-clay-500/60" />
+                      <span className="mt-1.5 block size-1.5 shrink-0 rounded-full bg-clay-500/70 dark:bg-clay-400/70" />
                       {f}
                     </li>
                   ))}
@@ -334,7 +334,7 @@ export default function ContextPage() {
           <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-clay-400/10">
             <Lightbulb className="size-5 text-amber-400" />
           </div>
-          <h2 className="font-serif text-heading-lg text-foreground">
+          <h2 className="font-heading text-heading-lg text-foreground">
             How to Use Context in Your Exam
           </h2>
         </div>

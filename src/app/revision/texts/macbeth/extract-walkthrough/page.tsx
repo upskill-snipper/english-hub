@@ -130,7 +130,7 @@ const SEGMENTS: Segment[] = [
 
 export default function MacbethExtractWalkthroughPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -223,7 +223,7 @@ export default function MacbethExtractWalkthroughPage() {
           </CardHeader>
           <CardContent>
             <div className="rounded-lg border border-border/60 bg-muted/20 p-5 sm:p-6">
-              <ol className="space-y-1 font-serif text-base leading-loose sm:text-lg">
+              <ol className="space-y-1 font-heading text-base leading-loose sm:text-lg">
                 {EXTRACT_LINES.map((line) => (
                   <li key={line.n} className="flex gap-4 sm:gap-6">
                     <span className="w-6 shrink-0 select-none text-right text-xs text-muted-foreground/60 tabular-nums">
@@ -262,7 +262,7 @@ export default function MacbethExtractWalkthroughPage() {
               <CardContent className="space-y-5">
                 {/* Re-quoted lines */}
                 <div className="rounded-lg border border-border/60 bg-muted/20 p-4">
-                  <ol className="space-y-1 font-serif text-base leading-loose">
+                  <ol className="space-y-1 font-heading text-base leading-loose">
                     {segLines.map((line) => (
                       <li key={line.n} className="flex gap-4">
                         <span className="w-6 shrink-0 select-none text-right text-xs text-muted-foreground/60 tabular-nums">

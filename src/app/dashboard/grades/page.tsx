@@ -95,9 +95,16 @@ function scoreToGrade(score: number, board?: string): number {
 }
 
 function gradeColor(grade: number): string {
-  if (grade >= 7) return '#22c55e' // green
-  if (grade >= 5) return '#f59e0b' // amber
-  return '#ef4444' // red
+  if (grade >= 7) return 'hsl(var(--chart-1))' // primary teal
+  if (grade >= 5) return 'hsl(var(--chart-3))' // ochre/amber
+  return 'hsl(var(--destructive))' // red
+}
+
+/** Dual-theme text colour class for a GCSE grade band. */
+function gradeTextClass(grade: number): string {
+  if (grade >= 7) return 'text-green-600 dark:text-green-400'
+  if (grade >= 5) return 'text-amber-600 dark:text-amber-400'
+  return 'text-red-600 dark:text-red-400'
 }
 
 function gradeLabel(grade: number, t: (key: string) => string): string {
@@ -460,7 +467,7 @@ export default function GradeDashboardPage() {
 
   // ── Full Dashboard ───────────────────────────────────────────────────────
 
-  const conicGradient = `conic-gradient(${gradeColor(predictedGrade)} ${averageScore * 3.6}deg, rgba(255,255,255,0.08) 0deg)`
+  const conicGradient = `conic-gradient(${gradeColor(predictedGrade)} ${averageScore * 3.6}deg, hsl(var(--border)) 0deg)`
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -517,12 +524,12 @@ export default function GradeDashboardPage() {
             <div className="text-center space-y-2">
               <p className="text-2xl font-bold">
                 {t('dashboard.grades.predicted')}:{' '}
-                <span style={{ color: gradeColor(predictedGrade) }}>{predictedGrade}</span>
+                <span className={gradeTextClass(predictedGrade)}>{predictedGrade}</span>
                 <span className="ml-2 text-sm font-medium text-muted-foreground">
                   ({gradeLabel(predictedGrade, t)})
                 </span>
               </p>
-              <p className="text-lg font-semibold text-cyan-500">
+              <p className="text-lg font-semibold text-cyan-600 dark:text-cyan-400">
                 {t('dashboard.grades.target')}: {targetGrade}
               </p>
               <p className="text-sm text-primary">
@@ -596,7 +603,7 @@ export default function GradeDashboardPage() {
                 {/* Strengths */}
                 <div>
                   <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold">
-                    <Award className="h-4 w-4 text-green-400" />
+                    <Award className="h-4 w-4 text-green-600 dark:text-green-400" />
                     {t('dashboard.grades.sw.top_strengths')}
                   </h3>
                   {strengths.length === 0 ? (
@@ -611,7 +618,7 @@ export default function GradeDashboardPage() {
                           className="flex items-center justify-between rounded-lg bg-green-500/10 border border-green-500/20 px-3 py-2"
                         >
                           <span className="text-sm font-medium truncate mr-2">{s.courseName}</span>
-                          <span className="shrink-0 rounded-md bg-green-500/20 px-2 py-0.5 text-xs font-semibold text-green-400">
+                          <span className="shrink-0 rounded-md bg-green-500/20 px-2 py-0.5 text-xs font-semibold text-green-700 dark:text-green-400">
                             {scoreLabel(s.average)} ({s.average}%)
                           </span>
                         </div>
@@ -623,7 +630,7 @@ export default function GradeDashboardPage() {
                 {/* Weaknesses */}
                 <div>
                   <h3 className="mb-3 flex items-center gap-2 text-sm font-semibold">
-                    <Target className="h-4 w-4 text-clay-600" />
+                    <Target className="h-4 w-4 text-clay-600 dark:text-clay-300" />
                     {t('dashboard.grades.sw.improvement')}
                   </h3>
                   {weaknesses.length === 0 ? (
@@ -638,7 +645,7 @@ export default function GradeDashboardPage() {
                           className="flex items-center justify-between rounded-lg bg-amber-500/10 border border-amber-500/20 px-3 py-2"
                         >
                           <span className="text-sm font-medium truncate mr-2">{w.courseName}</span>
-                          <span className="shrink-0 rounded-md bg-amber-500/20 px-2 py-0.5 text-xs font-semibold text-clay-600">
+                          <span className="shrink-0 rounded-md bg-amber-500/20 px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">
                             {scoreLabel(w.average)} ({w.average}%)
                           </span>
                         </div>
@@ -672,9 +679,9 @@ export default function GradeDashboardPage() {
                   }`}
                 >
                   {trajectory.trend === 'improving' ? (
-                    <ArrowUp className="h-8 w-8 text-green-400" />
+                    <ArrowUp className="h-8 w-8 text-green-600 dark:text-green-400" />
                   ) : trajectory.trend === 'declining' ? (
-                    <ArrowDown className="h-8 w-8 text-red-400" />
+                    <ArrowDown className="h-8 w-8 text-red-600 dark:text-red-400" />
                   ) : (
                     <Minus className="h-8 w-8 text-muted-foreground" />
                   )}
@@ -736,17 +743,17 @@ export default function GradeDashboardPage() {
             )}
 
             {averageScore < 50 && (
-              <p className="mt-4 rounded-lg bg-amber-500/10 border border-amber-500/20 px-4 py-3 text-sm text-amber-700">
+              <p className="mt-4 rounded-lg bg-amber-500/10 border border-amber-500/20 px-4 py-3 text-sm text-amber-700 dark:text-amber-300">
                 {t('dashboard.grades.tip.below50')}
               </p>
             )}
             {averageScore >= 50 && averageScore < 70 && (
-              <p className="mt-4 rounded-lg bg-blue-500/10 border border-blue-500/20 px-4 py-3 text-sm text-blue-300">
+              <p className="mt-4 rounded-lg bg-blue-500/10 border border-blue-500/20 px-4 py-3 text-sm text-blue-700 dark:text-blue-300">
                 {t('dashboard.grades.tip.mid')}
               </p>
             )}
             {averageScore >= 70 && (
-              <p className="mt-4 rounded-lg bg-green-500/10 border border-green-500/20 px-4 py-3 text-sm text-green-300">
+              <p className="mt-4 rounded-lg bg-green-500/10 border border-green-500/20 px-4 py-3 text-sm text-green-700 dark:text-green-300">
                 {t('dashboard.grades.tip.high')}
               </p>
             )}

@@ -408,7 +408,7 @@ const CHARACTERS: CharacterStudy[] = [
 
 export default function MacbethCharactersPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -510,7 +510,7 @@ export default function MacbethCharactersPage() {
 
               {/* Exam tip */}
               <div className="rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
-                <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-600 dark:text-clay-600">
+                <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-700 dark:text-amber-300">
                   <Lightbulb className="size-4" /> Exam Tip
                 </h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">{c.examTip}</p>

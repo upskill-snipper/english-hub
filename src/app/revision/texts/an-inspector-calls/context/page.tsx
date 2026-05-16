@@ -244,7 +244,7 @@ const TIMELINE: TimelineEvent[] = [
 
 export default function ContextPage() {
   return (
-    <div className="min-h-screen bg-cream-50 font-serif">
+    <div className="min-h-screen bg-background font-heading">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -265,31 +265,31 @@ export default function ContextPage() {
         <StudyTools textName="An Inspector Calls" textType="play" />
 
         {/* Hero */}
-        <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-clay-200/[0.06] p-6 sm:p-8 lg:p-10">
+        <section className="mt-8 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-clay-500/[0.06] p-6 sm:p-8 lg:p-10">
           <Link
             href="/revision/texts/an-inspector-calls"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
+            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700 dark:text-teal-300 dark:hover:text-teal-200"
           >
             <ArrowLeft className="size-3.5" />
             Back to An Inspector Calls
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-clay-300/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
+            <span className="inline-flex items-center gap-1 rounded-full bg-clay-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-700 dark:text-clay-300">
               <Calendar className="size-3" />
               Historical Context
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-teal-400/20 px-3 py-1 text-xs text-teal-600">
+            <span className="inline-flex items-center gap-1 rounded-full border border-teal-500/20 px-3 py-1 text-xs text-teal-600 dark:text-teal-300">
               <Sparkles className="size-3" />
               AO3 — Context
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             An Inspector Calls &mdash; Context
           </h1>
-          <p className="mt-2 text-lg text-ink-500">by J.B. Priestley &mdash; 1945</p>
-          <p className="mt-4 max-w-2xl text-ink-500">
+          <p className="mt-2 text-lg text-muted-foreground">by J.B. Priestley &mdash; 1945</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">
             Historical and social context for GCSE literature. Covers the 1912 setting, 1945 writing
             date, Priestley&rsquo;s socialism, the welfare state, the class system, women&rsquo;s
             rights, and the Labour landslide.
@@ -297,11 +297,11 @@ export default function ContextPage() {
         </section>
 
         {/* Exam tip banner */}
-        <section className="mt-8 rounded-xl border border-clay-300/20 bg-clay-200/10 p-5">
+        <section className="mt-8 rounded-xl border border-clay-500/20 bg-clay-500/10 p-5">
           <div className="flex items-start gap-3">
-            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-500" />
-            <div className="text-sm text-ink-600">
-              <p className="mb-1 font-bold text-ink-800">AO3 — What examiners want</p>
+            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600 dark:text-clay-300" />
+            <div className="text-sm text-muted-foreground">
+              <p className="mb-1 font-bold text-foreground">AO3 — What examiners want</p>
               <p>
                 AO3 rewards you for showing how <strong>context shapes meaning</strong>. Do not
                 simply list historical facts — explain how the 1912 setting and 1945 writing date
@@ -316,19 +316,21 @@ export default function ContextPage() {
         {/* Timeline */}
         <section className="mt-10">
           <div className="flex items-center gap-2 mb-4">
-            <Clock className="size-5 text-teal-600" />
-            <h2 className="font-serif text-2xl font-bold text-ink-900">Key Timeline</h2>
+            <Clock className="size-5 text-teal-600 dark:text-teal-300" />
+            <h2 className="font-heading text-2xl font-bold text-foreground">Key Timeline</h2>
           </div>
-          <div className="relative ml-4 border-l-2 border-teal-400/20 pl-6 space-y-4">
+          <div className="relative ml-4 border-l-2 border-teal-500/20 pl-6 space-y-4">
             {TIMELINE.map((item, i) => (
               <div key={i} className="relative">
-                <div className="absolute -left-[31px] top-1 size-3 rounded-full border-2 border-teal-400 bg-cream-50" />
-                <div className="rounded-lg border border-ink-100/80 bg-cream-100/50 p-3">
+                <div className="absolute -left-[31px] top-1 size-3 rounded-full border-2 border-teal-500 bg-card" />
+                <div className="rounded-lg border border-border/60 bg-muted p-3">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-sm font-bold text-teal-700">{item.year}</span>
-                    <span className="text-sm font-medium text-ink-700">{item.event}</span>
+                    <span className="text-sm font-bold text-teal-700 dark:text-teal-300">
+                      {item.year}
+                    </span>
+                    <span className="text-sm font-medium text-foreground">{item.event}</span>
                   </div>
-                  <p className="mt-1 text-xs text-ink-500">{item.relevance}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{item.relevance}</p>
                 </div>
               </div>
             ))}
@@ -339,117 +341,125 @@ export default function ContextPage() {
         {CONTEXT_SECTIONS.map((section, idx) => (
           <section key={section.title} className="mt-12">
             <div className="flex items-start gap-3 mb-2">
-              <div className="flex size-10 items-center justify-center rounded-xl bg-clay-300/10">
-                <BookOpen className="size-5 text-clay-600" />
+              <div className="flex size-10 items-center justify-center rounded-xl bg-clay-500/10">
+                <BookOpen className="size-5 text-clay-600 dark:text-clay-300" />
               </div>
-              <h2 className="font-serif text-2xl font-bold text-ink-900">{section.title}</h2>
+              <h2 className="font-heading text-2xl font-bold text-foreground">{section.title}</h2>
             </div>
 
             {/* Body paragraphs */}
-            <div className="mt-4 rounded-xl border border-teal-400/15 bg-cream-100/60 p-5 space-y-3">
+            <div className="mt-4 rounded-xl border border-border/60 bg-muted p-5 space-y-3">
               {section.body.map((para, pi) => (
-                <p key={pi} className="text-sm leading-relaxed text-ink-600">
+                <p key={pi} className="text-sm leading-relaxed text-muted-foreground">
                   {para}
                 </p>
               ))}
             </div>
 
             {/* Key point */}
-            <div className="mt-4 rounded-xl border border-teal-400/20 bg-teal-500/5 p-4">
-              <p className="text-xs font-bold uppercase tracking-wider text-teal-700 mb-1">
+            <div className="mt-4 rounded-xl border border-teal-500/20 bg-teal-500/5 p-4">
+              <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300 mb-1">
                 Key Point
               </p>
-              <p className="text-sm leading-relaxed text-ink-700 font-medium">{section.keyPoint}</p>
+              <p className="text-sm leading-relaxed text-foreground font-medium">
+                {section.keyPoint}
+              </p>
             </div>
 
             {/* Exam link */}
-            <div className="mt-3 rounded-xl border border-clay-300/20 bg-clay-200/8 p-4">
+            <div className="mt-3 rounded-xl border border-clay-500/20 bg-clay-500/10 p-4">
               <div className="flex items-start gap-2">
-                <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-500" />
+                <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-600 dark:text-clay-300" />
                 <div>
-                  <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
+                  <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600 dark:text-clay-300">
                     Using This in Your Essay
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">{section.examLink}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {section.examLink}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Divider */}
-            {idx < CONTEXT_SECTIONS.length - 1 && <div className="mt-10 border-t border-ink-100" />}
+            {idx < CONTEXT_SECTIONS.length - 1 && (
+              <div className="mt-10 border-t border-border/60" />
+            )}
           </section>
         ))}
 
         {/* Quick reference table */}
         <section className="mt-12">
-          <h2 className="font-serif text-2xl font-bold text-ink-900 mb-4">
+          <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
             Quick Reference: 1912 vs 1945
           </h2>
-          <div className="overflow-x-auto rounded-xl border border-teal-400/20">
+          <div className="overflow-x-auto rounded-xl border border-border/60">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-teal-500/8">
-                  <th className="px-4 py-3 text-left font-bold text-teal-700 uppercase tracking-wider text-xs">
+                <tr className="bg-teal-500/[0.08]">
+                  <th className="px-4 py-3 text-left font-bold text-teal-700 dark:text-teal-300 uppercase tracking-wider text-xs">
                     Topic
                   </th>
-                  <th className="px-4 py-3 text-left font-bold text-teal-700 uppercase tracking-wider text-xs">
+                  <th className="px-4 py-3 text-left font-bold text-teal-700 dark:text-teal-300 uppercase tracking-wider text-xs">
                     1912 (Setting)
                   </th>
-                  <th className="px-4 py-3 text-left font-bold text-clay-600 uppercase tracking-wider text-xs">
+                  <th className="px-4 py-3 text-left font-bold text-clay-600 dark:text-clay-300 uppercase tracking-wider text-xs">
                     1945 (Writing)
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-ink-100/60">
-                <tr className="bg-cream-50">
-                  <td className="px-4 py-3 font-medium text-ink-700">Voting rights</td>
-                  <td className="px-4 py-3 text-ink-600">
+              <tbody className="divide-y divide-border/60">
+                <tr className="bg-card">
+                  <td className="px-4 py-3 font-medium text-foreground">Voting rights</td>
+                  <td className="px-4 py-3 text-muted-foreground">
                     No women could vote; limited male suffrage
                   </td>
-                  <td className="px-4 py-3 text-ink-600">Universal adult suffrage since 1928</td>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    Universal adult suffrage since 1928
+                  </td>
                 </tr>
-                <tr className="bg-cream-100/40">
-                  <td className="px-4 py-3 font-medium text-ink-700">Welfare</td>
-                  <td className="px-4 py-3 text-ink-600">
+                <tr className="bg-muted/40">
+                  <td className="px-4 py-3 font-medium text-foreground">Welfare</td>
+                  <td className="px-4 py-3 text-muted-foreground">
                     No welfare state; charity-based poor relief
                   </td>
-                  <td className="px-4 py-3 text-ink-600">
+                  <td className="px-4 py-3 text-muted-foreground">
                     NHS, national insurance, council housing being built
                   </td>
                 </tr>
-                <tr className="bg-cream-50">
-                  <td className="px-4 py-3 font-medium text-ink-700">Class system</td>
-                  <td className="px-4 py-3 text-ink-600">
+                <tr className="bg-card">
+                  <td className="px-4 py-3 font-medium text-foreground">Class system</td>
+                  <td className="px-4 py-3 text-muted-foreground">
                     Rigid hierarchy; workers had minimal rights
                   </td>
-                  <td className="px-4 py-3 text-ink-600">
+                  <td className="px-4 py-3 text-muted-foreground">
                     Labour government; class barriers being challenged
                   </td>
                 </tr>
-                <tr className="bg-cream-100/40">
-                  <td className="px-4 py-3 font-medium text-ink-700">Economy</td>
-                  <td className="px-4 py-3 text-ink-600">
+                <tr className="bg-muted/40">
+                  <td className="px-4 py-3 font-medium text-foreground">Economy</td>
+                  <td className="px-4 py-3 text-muted-foreground">
                     Laissez-faire capitalism; no minimum wage
                   </td>
-                  <td className="px-4 py-3 text-ink-600">
+                  <td className="px-4 py-3 text-muted-foreground">
                     Nationalised industries; regulated economy
                   </td>
                 </tr>
-                <tr className="bg-cream-50">
-                  <td className="px-4 py-3 font-medium text-ink-700">Women</td>
-                  <td className="px-4 py-3 text-ink-600">
+                <tr className="bg-card">
+                  <td className="px-4 py-3 font-medium text-foreground">Women</td>
+                  <td className="px-4 py-3 text-muted-foreground">
                     Suffragettes campaigning; limited employment
                   </td>
-                  <td className="px-4 py-3 text-ink-600">
+                  <td className="px-4 py-3 text-muted-foreground">
                     Women had proved capability in wartime roles
                   </td>
                 </tr>
-                <tr className="bg-cream-100/40">
-                  <td className="px-4 py-3 font-medium text-ink-700">Birling\u2019s world</td>
-                  <td className="px-4 py-3 text-ink-600">
+                <tr className="bg-muted/40">
+                  <td className="px-4 py-3 font-medium text-foreground">Birling\u2019s world</td>
+                  <td className="px-4 py-3 text-muted-foreground">
                     Confident, stable, and about to be destroyed
                   </td>
-                  <td className="px-4 py-3 text-ink-600">
+                  <td className="px-4 py-3 text-muted-foreground">
                     Already destroyed; audience sees the ruins
                   </td>
                 </tr>
@@ -459,9 +469,9 @@ export default function ContextPage() {
         </section>
 
         {/* Navigation */}
-        <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
-          <p className="mt-1 text-sm text-ink-500">
+        <section className="mt-14 rounded-xl border border-teal-500/20 bg-teal-500/5 p-6">
+          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <p className="mt-1 text-sm text-muted-foreground">
             Explore characters, themes, and key quotes for An Inspector Calls.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -473,13 +483,13 @@ export default function ContextPage() {
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/themes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Themes
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/key-quotes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Key Quotes
             </Link>
@@ -487,7 +497,7 @@ export default function ContextPage() {
         </section>
 
         {/* Fair-dealing notice */}
-        <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
+        <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
           Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
           Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
           educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text

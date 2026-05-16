@@ -112,7 +112,7 @@ const FRAGMENTS: Fragment[] = [
 
 export default function ExtractWalkthroughPage() {
   return (
-    <div className="min-h-screen bg-cream-50 font-serif">
+    <div className="min-h-screen bg-background font-heading">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -131,33 +131,33 @@ export default function ExtractWalkthroughPage() {
 
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Hero */}
-        <section className="rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-teal-300/[0.06] p-6 sm:p-8 lg:p-10">
+        <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.06] p-6 sm:p-8 lg:p-10">
           <Link
             href="/revision/texts/an-inspector-calls"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
+            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700 dark:text-teal-300 dark:hover:text-teal-200"
           >
             <ArrowLeft className="size-3.5" />
             Back to An Inspector Calls
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
+            <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
               <BookOpen className="size-3" />
               Extract walkthrough
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-clay-300/30 px-3 py-1 text-xs text-clay-600">
+            <span className="inline-flex items-center gap-1 rounded-full border border-clay-500/30 px-3 py-1 text-xs text-clay-700 dark:text-clay-300">
               <Sparkles className="size-3" />
               AQA / Edexcel / OCR / Eduqas
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             The Inspector&rsquo;s Final Speech &mdash; A Close Reading
           </h1>
-          <p className="mt-2 text-lg text-ink-500">
+          <p className="mt-2 text-lg text-muted-foreground">
             An Inspector Calls, Act 3 &mdash; J.B. Priestley
           </p>
-          <p className="mt-4 max-w-2xl text-ink-500">
+          <p className="mt-4 max-w-2xl text-muted-foreground">
             A fragment-by-fragment walkthrough of the play&rsquo;s didactic climax. We work through
             the speech in short, fair-dealing extracts &mdash; each followed by{' '}
             <strong>notice</strong>, <strong>say</strong>, and <strong>zoom-out</strong> cards that
@@ -166,11 +166,11 @@ export default function ExtractWalkthroughPage() {
         </section>
 
         {/* How to use */}
-        <section className="mt-8 rounded-xl border border-clay-300/20 bg-clay-200/10 p-5">
+        <section className="mt-8 rounded-xl border border-clay-500/20 bg-clay-500/10 p-5">
           <div className="flex items-start gap-3">
-            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-500" />
-            <div className="text-sm text-ink-600">
-              <p className="mb-1 font-bold text-ink-800">How to read this page</p>
+            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600 dark:text-clay-300" />
+            <div className="text-sm text-muted-foreground">
+              <p className="mb-1 font-bold text-foreground">How to read this page</p>
               <p>
                 Don&rsquo;t skim. For each fragment, read the quotation aloud, then work through{' '}
                 <strong>Notice</strong> (what the words do mechanically), <strong>Say</strong> (your
@@ -185,72 +185,71 @@ export default function ExtractWalkthroughPage() {
         {/* Fragments */}
         <div className="mt-10 space-y-8">
           {FRAGMENTS.map((f) => (
-            <article
-              key={f.id}
-              className="rounded-2xl border border-teal-400/15 bg-cream-100/50 p-5 sm:p-6"
-            >
+            <article key={f.id} className="rounded-2xl border border-border/60 bg-muted p-5 sm:p-6">
               {/* Bridge */}
-              <p className="text-xs font-bold uppercase tracking-wider text-ink-400">
+              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                 Fragment {f.id} of {FRAGMENTS.length}
               </p>
-              <p className="mt-1 text-sm italic leading-relaxed text-ink-500">{f.bridge}</p>
+              <p className="mt-1 text-sm italic leading-relaxed text-muted-foreground">
+                {f.bridge}
+              </p>
 
               {/* Quotation */}
-              <blockquote className="mt-4 border-l-4 border-teal-500/40 bg-cream-50/80 p-4">
-                <p className="text-lg font-medium italic text-ink-800">{f.quote}</p>
-                <p className="mt-1 text-xs text-ink-300">
+              <blockquote className="mt-4 border-l-4 border-teal-500/40 bg-card p-4">
+                <p className="text-lg font-medium italic text-foreground">{f.quote}</p>
+                <p className="mt-1 text-xs text-muted-foreground">
                   Inspector Goole, Act 3 &mdash; {f.wordCount} words (fair dealing)
                 </p>
               </blockquote>
 
               {/* Notice card */}
-              <div className="mt-4 rounded-xl border border-teal-400/15 bg-teal-500/[0.04] p-4">
+              <div className="mt-4 rounded-xl border border-teal-500/15 bg-teal-500/[0.04] p-4">
                 <div className="flex items-center gap-2">
-                  <Eye className="size-4 text-teal-600" />
-                  <p className="text-xs font-bold uppercase tracking-wider text-teal-700">
+                  <Eye className="size-4 text-teal-600 dark:text-teal-300" />
+                  <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300">
                     Notice &mdash; what the words do
                   </p>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-ink-700">{f.notice}</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground">{f.notice}</p>
               </div>
 
               {/* Say card */}
-              <div className="mt-3 rounded-xl border border-clay-300/20 bg-clay-200/[0.08] p-4">
+              <div className="mt-3 rounded-xl border border-clay-500/20 bg-clay-500/[0.08] p-4">
                 <div className="flex items-center gap-2">
-                  <MessageSquare className="size-4 text-clay-500" />
-                  <p className="text-xs font-bold uppercase tracking-wider text-clay-600">
+                  <MessageSquare className="size-4 text-clay-600 dark:text-clay-300" />
+                  <p className="text-xs font-bold uppercase tracking-wider text-clay-600 dark:text-clay-300">
                     Say &mdash; your AO2 argument
                   </p>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-ink-700">{f.say}</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground">{f.say}</p>
               </div>
 
               {/* Zoom-out card */}
-              <div className="mt-3 rounded-xl border border-ink-200/30 bg-cream-50 p-4">
+              <div className="mt-3 rounded-xl border border-border/60 bg-card p-4">
                 <div className="flex items-center gap-2">
-                  <Telescope className="size-4 text-ink-500" />
-                  <p className="text-xs font-bold uppercase tracking-wider text-ink-500">
+                  <Telescope className="size-4 text-muted-foreground" />
+                  <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                     Zoom out &mdash; AO3 context
                   </p>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-ink-700">{f.zoomOut}</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground">{f.zoomOut}</p>
               </div>
             </article>
           ))}
         </div>
 
         {/* Model paragraph */}
-        <section className="mt-12 rounded-2xl border border-teal-400/30 bg-gradient-to-br from-teal-500/[0.06] to-cream-50 p-6 sm:p-8">
+        <section className="mt-12 rounded-2xl border border-teal-500/30 bg-gradient-to-br from-teal-500/[0.06] to-card p-6 sm:p-8">
           <div className="mb-3 flex items-center gap-2">
-            <Sparkles className="size-4 text-teal-600" />
-            <p className="text-xs font-bold uppercase tracking-wider text-teal-700">
+            <Sparkles className="size-4 text-teal-600 dark:text-teal-300" />
+            <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300">
               Model paragraph &mdash; ~250 words
             </p>
           </div>
-          <h2 className="font-serif text-2xl font-bold tracking-tight text-ink-900">
+          <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground">
             The final speech as Priestley&rsquo;s didactic climax
           </h2>
-          <div className="mt-4 space-y-3 text-sm leading-relaxed text-ink-700 sm:text-base">
+          <div className="mt-4 space-y-3 text-sm leading-relaxed text-foreground sm:text-base">
             <p>
               The Inspector&rsquo;s final speech is the structural and ideological climax of the
               play because it transposes Priestley&rsquo;s socialist argument into a prophetic
@@ -277,9 +276,9 @@ export default function ExtractWalkthroughPage() {
         </section>
 
         {/* Continue studying */}
-        <section className="mt-12 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
-          <p className="mt-1 text-sm text-ink-500">
+        <section className="mt-12 rounded-xl border border-teal-500/20 bg-teal-500/5 p-6">
+          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <p className="mt-1 text-sm text-muted-foreground">
             Take this close-reading method into the rest of An Inspector Calls.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -291,19 +290,19 @@ export default function ExtractWalkthroughPage() {
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/themes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Themes
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/characters"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Characters
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/essay-plans"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Essay plans
             </Link>
@@ -311,8 +310,8 @@ export default function ExtractWalkthroughPage() {
         </section>
 
         {/* Fair-dealing footer */}
-        <footer className="mt-12 rounded-xl border border-ink-100 bg-cream-100/40 p-5 text-xs leading-relaxed text-ink-500">
-          <p className="mb-2 font-bold uppercase tracking-wider text-ink-600">
+        <footer className="mt-12 rounded-xl border border-border/60 bg-muted p-5 text-xs leading-relaxed text-muted-foreground">
+          <p className="mb-2 font-bold uppercase tracking-wider text-foreground">
             Fair dealing &amp; copyright
           </p>
           <p>

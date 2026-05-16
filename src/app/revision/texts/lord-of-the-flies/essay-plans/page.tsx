@@ -246,7 +246,7 @@ const ESSAY_PLANS: EssayPlan[] = [
 
 export default function LOTFEssayPlansPage() {
   return (
-    <div className="min-h-screen bg-cream-50 font-serif">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -267,31 +267,31 @@ export default function LOTFEssayPlansPage() {
         <StudyTools textName="Lord of the Flies" textType="novel" />
 
         {/* Hero */}
-        <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-clay-200/[0.06] p-6 sm:p-8 lg:p-10">
+        <section className="mt-8 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
           <Link
             href="/revision/texts/lord-of-the-flies"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
+            className="mb-4 inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80"
           >
             <ArrowLeft className="size-3.5" />
             Back to Lord of the Flies
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-clay-300/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
+            <span className="inline-flex items-center gap-1 rounded-full bg-clay-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-700 dark:text-clay-300">
               <FileText className="size-3" />
               Essay Plans
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-teal-400/20 px-3 py-1 text-xs text-teal-600">
+            <span className="inline-flex items-center gap-1 rounded-full border border-border/60 px-3 py-1 text-xs text-primary">
               <Sparkles className="size-3" />
               AO1 / AO2 / AO3
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Lord of the Flies &mdash; Essay Plans
           </h1>
-          <p className="mt-2 text-lg text-ink-500">by William Golding &mdash; 1954</p>
-          <p className="mt-4 max-w-2xl text-ink-500">
+          <p className="mt-2 text-lg text-muted-foreground">by William Golding &mdash; 1954</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">
             Six structured essay plans covering the most common GCSE exam questions on Lord of the
             Flies. Each plan includes a thesis statement, paragraph-level guidance with evidence and
             analysis, a conclusion and an exam tip.
@@ -299,11 +299,11 @@ export default function LOTFEssayPlansPage() {
         </section>
 
         {/* Exam tip banner */}
-        <section className="mt-8 rounded-xl border border-clay-300/20 bg-clay-200/10 p-5">
+        <section className="mt-8 rounded-xl border border-clay-500/20 bg-clay-500/10 p-5">
           <div className="flex items-start gap-3">
-            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-500" />
-            <div className="text-sm text-ink-600">
-              <p className="mb-1 font-bold text-ink-800">How to use these essay plans</p>
+            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-700 dark:text-clay-300" />
+            <div className="text-sm text-muted-foreground">
+              <p className="mb-1 font-bold text-foreground">How to use these essay plans</p>
               <p>
                 Each plan provides a structure you can adapt to your own argument. Do not memorise
                 them word-for-word &mdash; examiners reward original thinking. Use the thesis
@@ -319,114 +319,115 @@ export default function LOTFEssayPlansPage() {
           <section key={plan.number} className="mt-12">
             {/* Essay header */}
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex size-10 items-center justify-center rounded-xl bg-clay-300/10">
-                <FileText className="size-5 text-clay-600" />
+              <div className="flex size-10 items-center justify-center rounded-xl bg-clay-500/10">
+                <FileText className="size-5 text-clay-700 dark:text-clay-300" />
               </div>
-              <h2 className="font-serif text-2xl font-bold text-ink-900">Essay {plan.number}</h2>
+              <h2 className="font-heading text-2xl font-bold text-foreground">
+                Essay {plan.number}
+              </h2>
             </div>
 
             {/* Question */}
-            <div className="rounded-xl border border-teal-400/15 bg-cream-100/60 p-5 mb-4">
-              <p className="text-xs font-bold uppercase tracking-wider text-teal-700 mb-2">
+            <div className="rounded-xl border border-border/60 bg-card p-5 mb-4">
+              <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">
                 Question
               </p>
-              <p className="font-serif text-lg font-semibold text-ink-900 italic">
+              <p className="font-heading text-lg font-semibold text-foreground italic">
                 {plan.question}
               </p>
             </div>
 
             {/* Thesis */}
-            <div className="rounded-xl border border-teal-400/20 bg-teal-500/5 p-4 mb-4">
-              <p className="text-xs font-bold uppercase tracking-wider text-teal-700 mb-1">
+            <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 mb-4">
+              <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">
                 Thesis Statement
               </p>
-              <p className="text-sm leading-relaxed text-ink-700 font-medium">
+              <p className="text-sm leading-relaxed text-foreground font-medium">
                 {plan.thesisStatement}
               </p>
             </div>
 
             {/* Introduction */}
-            <div className="rounded-xl border border-ink-100/80 bg-cream-100/50 p-4 mb-4">
-              <p className="text-xs font-bold uppercase tracking-wider text-ink-500 mb-1">
+            <div className="rounded-xl border border-border/60 bg-card p-4 mb-4">
+              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">
                 Introduction
               </p>
-              <p className="text-sm leading-relaxed text-ink-600">{plan.introduction}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{plan.introduction}</p>
             </div>
 
             {/* Body paragraphs */}
             {plan.paragraphs.map((para, i) => (
-              <div
-                key={i}
-                className="rounded-xl border border-teal-400/15 bg-cream-100/60 p-5 mb-4"
-              >
-                <p className="text-xs font-bold uppercase tracking-wider text-teal-700 mb-2">
+              <div key={i} className="rounded-xl border border-border/60 bg-card p-5 mb-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">
                   Paragraph {i + 1} &mdash; {para.point}
                 </p>
 
-                <div className="mb-3 rounded-lg border border-clay-300/20 bg-clay-200/8 p-3">
-                  <p className="text-xs font-bold uppercase tracking-wider text-clay-600 mb-1">
+                <div className="mb-3 rounded-lg border border-clay-500/20 bg-clay-500/[0.08] p-3">
+                  <p className="text-xs font-bold uppercase tracking-wider text-clay-700 dark:text-clay-300 mb-1">
                     Evidence
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-700 italic">{para.evidence}</p>
+                  <p className="text-sm leading-relaxed text-foreground italic">{para.evidence}</p>
                 </div>
 
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-ink-500 mb-1">
+                  <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">
                     Analysis
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">{para.analysis}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{para.analysis}</p>
                 </div>
               </div>
             ))}
 
             {/* Conclusion */}
-            <div className="rounded-xl border border-ink-100/80 bg-cream-100/50 p-4 mb-4">
-              <p className="text-xs font-bold uppercase tracking-wider text-ink-500 mb-1">
+            <div className="rounded-xl border border-border/60 bg-card p-4 mb-4">
+              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">
                 Conclusion
               </p>
-              <p className="text-sm leading-relaxed text-ink-600">{plan.conclusion}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{plan.conclusion}</p>
             </div>
 
             {/* Exam tip */}
-            <div className="rounded-xl border border-clay-300/20 bg-clay-200/10 p-4">
+            <div className="rounded-xl border border-clay-500/20 bg-clay-500/10 p-4">
               <div className="flex items-start gap-2">
-                <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-500" />
+                <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-700 dark:text-clay-300" />
                 <div>
-                  <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
+                  <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-700 dark:text-clay-300">
                     Exam Tip
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">{plan.examTip}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{plan.examTip}</p>
                 </div>
               </div>
             </div>
 
             {/* Divider */}
-            {plan.number < ESSAY_PLANS.length && <div className="mt-10 border-t border-ink-100" />}
+            {plan.number < ESSAY_PLANS.length && (
+              <div className="mt-10 border-t border-border/60" />
+            )}
           </section>
         ))}
 
         {/* Navigation */}
-        <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
-          <p className="mt-1 text-sm text-ink-500">
+        <section className="mt-14 rounded-xl border border-border/60 bg-primary/5 p-6">
+          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <p className="mt-1 text-sm text-muted-foreground">
             Explore characters, themes, context and key quotes for Lord of the Flies.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href="/revision/texts/lord-of-the-flies/characters"
-              className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
+              className="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
               Characters
             </Link>
             <Link
               href="/revision/texts/lord-of-the-flies/themes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
               Themes
             </Link>
             <Link
               href="/revision/texts/lord-of-the-flies/key-quotes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
               Key Quotes
             </Link>
@@ -434,7 +435,7 @@ export default function LOTFEssayPlansPage() {
         </section>
 
         {/* Fair-dealing notice */}
-        <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
+        <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
           Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
           Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
           educational study. <em>Lord of the Flies</em> by William Golding is published by Faber and

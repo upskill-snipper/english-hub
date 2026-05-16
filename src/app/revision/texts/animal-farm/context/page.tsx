@@ -196,7 +196,7 @@ const TIMELINE: TimelineEvent[] = [
 
 export default function AnimalFarmContextPage() {
   return (
-    <div className="min-h-screen bg-cream-50 font-serif">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -211,31 +211,31 @@ export default function AnimalFarmContextPage() {
         <StudyTools textName="Animal Farm" textType="novella" />
 
         {/* Hero */}
-        <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-clay-200/[0.06] p-6 sm:p-8 lg:p-10">
+        <section className="mt-8 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
           <Link
             href="/revision/texts/animal-farm"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
+            className="mb-4 inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80"
           >
             <ArrowLeft className="size-3.5" />
             Back to Animal Farm
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-clay-300/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
+            <span className="inline-flex items-center gap-1 rounded-full bg-clay-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-700 dark:text-clay-300">
               <Calendar className="size-3" />
               Historical Context
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-teal-400/20 px-3 py-1 text-xs text-teal-600">
+            <span className="inline-flex items-center gap-1 rounded-full border border-border/60 px-3 py-1 text-xs text-primary">
               <Sparkles className="size-3" />
               AO3 &mdash; Context
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Animal Farm &mdash; Context
           </h1>
-          <p className="mt-2 text-lg text-ink-500">by George Orwell &mdash; 1945</p>
-          <p className="mt-4 max-w-2xl text-ink-500">
+          <p className="mt-2 text-lg text-muted-foreground">by George Orwell &mdash; 1945</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">
             Historical and social context for GCSE literature. Covers the Russian Revolution, Stalin
             vs Trotsky, Orwell&rsquo;s democratic socialism, the Spanish Civil War, allegory and
             satire, publication difficulties and Cold War relevance.
@@ -243,11 +243,11 @@ export default function AnimalFarmContextPage() {
         </section>
 
         {/* Exam tip banner */}
-        <section className="mt-8 rounded-xl border border-clay-300/20 bg-clay-200/10 p-5">
+        <section className="mt-8 rounded-xl border border-clay-500/20 bg-clay-500/10 p-5">
           <div className="flex items-start gap-3">
-            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-500" />
-            <div className="text-sm text-ink-600">
-              <p className="mb-1 font-bold text-ink-800">AO3 &mdash; What examiners want</p>
+            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-700 dark:text-clay-300" />
+            <div className="text-sm text-muted-foreground">
+              <p className="mb-1 font-bold text-foreground">AO3 &mdash; What examiners want</p>
               <p>
                 AO3 rewards you for showing how <strong>context shapes meaning</strong>. Do not
                 simply list facts about the Russian Revolution &mdash; explain how the allegorical
@@ -262,19 +262,19 @@ export default function AnimalFarmContextPage() {
         {/* Timeline */}
         <section className="mt-10">
           <div className="flex items-center gap-2 mb-4">
-            <Clock className="size-5 text-teal-600" />
-            <h2 className="font-serif text-2xl font-bold text-ink-900">Key Timeline</h2>
+            <Clock className="size-5 text-primary" />
+            <h2 className="font-heading text-2xl font-bold text-foreground">Key Timeline</h2>
           </div>
-          <div className="relative ml-4 border-l-2 border-teal-400/20 pl-6 space-y-4">
+          <div className="relative ml-4 border-l-2 border-border/60 pl-6 space-y-4">
             {TIMELINE.map((item, i) => (
               <div key={i} className="relative">
-                <div className="absolute -left-[31px] top-1 size-3 rounded-full border-2 border-teal-400 bg-cream-50" />
-                <div className="rounded-lg border border-ink-100/80 bg-cream-100/50 p-3">
+                <div className="absolute -left-[31px] top-1 size-3 rounded-full border-2 border-primary bg-background" />
+                <div className="rounded-lg border border-border/60 bg-card p-3">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-sm font-bold text-teal-700">{item.year}</span>
-                    <span className="text-sm font-medium text-ink-700">{item.event}</span>
+                    <span className="text-sm font-bold text-primary">{item.year}</span>
+                    <span className="text-sm font-medium text-foreground">{item.event}</span>
                   </div>
-                  <p className="mt-1 text-xs text-ink-500">{item.relevance}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{item.relevance}</p>
                 </div>
               </div>
             ))}
@@ -285,104 +285,112 @@ export default function AnimalFarmContextPage() {
         {CONTEXT_SECTIONS.map((section, idx) => (
           <section key={section.title} className="mt-12">
             <div className="flex items-start gap-3 mb-2">
-              <div className="flex size-10 items-center justify-center rounded-xl bg-clay-300/10">
-                <BookOpen className="size-5 text-clay-600" />
+              <div className="flex size-10 items-center justify-center rounded-xl bg-clay-500/10">
+                <BookOpen className="size-5 text-clay-700 dark:text-clay-300" />
               </div>
-              <h2 className="font-serif text-2xl font-bold text-ink-900">{section.title}</h2>
+              <h2 className="font-heading text-2xl font-bold text-foreground">{section.title}</h2>
             </div>
 
             {/* Body paragraphs */}
-            <div className="mt-4 rounded-xl border border-teal-400/15 bg-cream-100/60 p-5 space-y-3">
+            <div className="mt-4 rounded-xl border border-border/60 bg-card p-5 space-y-3">
               {section.body.map((para, pi) => (
-                <p key={pi} className="text-sm leading-relaxed text-ink-600">
+                <p key={pi} className="text-sm leading-relaxed text-muted-foreground">
                   {para}
                 </p>
               ))}
             </div>
 
             {/* Key point */}
-            <div className="mt-4 rounded-xl border border-teal-400/20 bg-teal-500/5 p-4">
-              <p className="text-xs font-bold uppercase tracking-wider text-teal-700 mb-1">
+            <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 p-4">
+              <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">
                 Key Point
               </p>
-              <p className="text-sm leading-relaxed text-ink-700 font-medium">{section.keyPoint}</p>
+              <p className="text-sm leading-relaxed text-foreground font-medium">
+                {section.keyPoint}
+              </p>
             </div>
 
             {/* Exam link */}
-            <div className="mt-3 rounded-xl border border-clay-300/20 bg-clay-200/8 p-4">
+            <div className="mt-3 rounded-xl border border-clay-500/20 bg-clay-500/[0.08] p-4">
               <div className="flex items-start gap-2">
-                <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-500" />
+                <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-700 dark:text-clay-300" />
                 <div>
-                  <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
+                  <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-700 dark:text-clay-300">
                     Using This in Your Essay
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">{section.examLink}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {section.examLink}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Divider */}
-            {idx < CONTEXT_SECTIONS.length - 1 && <div className="mt-10 border-t border-ink-100" />}
+            {idx < CONTEXT_SECTIONS.length - 1 && (
+              <div className="mt-10 border-t border-border/60" />
+            )}
           </section>
         ))}
 
         {/* Allegory quick-reference */}
         <section className="mt-12">
-          <h2 className="font-serif text-2xl font-bold text-ink-900 mb-4">
+          <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
             Quick Reference: Allegorical Parallels
           </h2>
-          <div className="overflow-x-auto rounded-xl border border-teal-400/20">
+          <div className="overflow-x-auto rounded-xl border border-border/60">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-teal-500/8">
-                  <th className="px-4 py-3 text-left font-bold text-teal-700 uppercase tracking-wider text-xs">
+                <tr className="bg-primary/[0.08]">
+                  <th className="px-4 py-3 text-left font-bold text-primary uppercase tracking-wider text-xs">
                     Character / Event
                   </th>
-                  <th className="px-4 py-3 text-left font-bold text-clay-600 uppercase tracking-wider text-xs">
+                  <th className="px-4 py-3 text-left font-bold text-clay-700 dark:text-clay-300 uppercase tracking-wider text-xs">
                     Historical Parallel
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-ink-100/60">
-                <tr className="bg-cream-50">
-                  <td className="px-4 py-3 font-medium text-ink-700">Old Major</td>
-                  <td className="px-4 py-3 text-ink-600">Karl Marx / Vladimir Lenin</td>
+              <tbody className="divide-y divide-border/60">
+                <tr className="bg-card">
+                  <td className="px-4 py-3 font-medium text-foreground">Old Major</td>
+                  <td className="px-4 py-3 text-muted-foreground">Karl Marx / Vladimir Lenin</td>
                 </tr>
-                <tr className="bg-cream-100/40">
-                  <td className="px-4 py-3 font-medium text-ink-700">Napoleon</td>
-                  <td className="px-4 py-3 text-ink-600">Joseph Stalin</td>
+                <tr className="bg-muted/40">
+                  <td className="px-4 py-3 font-medium text-foreground">Napoleon</td>
+                  <td className="px-4 py-3 text-muted-foreground">Joseph Stalin</td>
                 </tr>
-                <tr className="bg-cream-50">
-                  <td className="px-4 py-3 font-medium text-ink-700">Snowball</td>
-                  <td className="px-4 py-3 text-ink-600">Leon Trotsky</td>
+                <tr className="bg-card">
+                  <td className="px-4 py-3 font-medium text-foreground">Snowball</td>
+                  <td className="px-4 py-3 text-muted-foreground">Leon Trotsky</td>
                 </tr>
-                <tr className="bg-cream-100/40">
-                  <td className="px-4 py-3 font-medium text-ink-700">Squealer</td>
-                  <td className="px-4 py-3 text-ink-600">Pravda / state propaganda</td>
+                <tr className="bg-muted/40">
+                  <td className="px-4 py-3 font-medium text-foreground">Squealer</td>
+                  <td className="px-4 py-3 text-muted-foreground">Pravda / state propaganda</td>
                 </tr>
-                <tr className="bg-cream-50">
-                  <td className="px-4 py-3 font-medium text-ink-700">Boxer</td>
-                  <td className="px-4 py-3 text-ink-600">The loyal proletariat (working class)</td>
+                <tr className="bg-card">
+                  <td className="px-4 py-3 font-medium text-foreground">Boxer</td>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    The loyal proletariat (working class)
+                  </td>
                 </tr>
-                <tr className="bg-cream-100/40">
-                  <td className="px-4 py-3 font-medium text-ink-700">The Dogs</td>
-                  <td className="px-4 py-3 text-ink-600">NKVD / secret police</td>
+                <tr className="bg-muted/40">
+                  <td className="px-4 py-3 font-medium text-foreground">The Dogs</td>
+                  <td className="px-4 py-3 text-muted-foreground">NKVD / secret police</td>
                 </tr>
-                <tr className="bg-cream-50">
-                  <td className="px-4 py-3 font-medium text-ink-700">Mr Jones</td>
-                  <td className="px-4 py-3 text-ink-600">Tsar Nicholas II</td>
+                <tr className="bg-card">
+                  <td className="px-4 py-3 font-medium text-foreground">Mr Jones</td>
+                  <td className="px-4 py-3 text-muted-foreground">Tsar Nicholas II</td>
                 </tr>
-                <tr className="bg-cream-100/40">
-                  <td className="px-4 py-3 font-medium text-ink-700">Mr Frederick</td>
-                  <td className="px-4 py-3 text-ink-600">Adolf Hitler / Nazi Germany</td>
+                <tr className="bg-muted/40">
+                  <td className="px-4 py-3 font-medium text-foreground">Mr Frederick</td>
+                  <td className="px-4 py-3 text-muted-foreground">Adolf Hitler / Nazi Germany</td>
                 </tr>
-                <tr className="bg-cream-50">
-                  <td className="px-4 py-3 font-medium text-ink-700">Mr Pilkington</td>
-                  <td className="px-4 py-3 text-ink-600">Britain / the Western Allies</td>
+                <tr className="bg-card">
+                  <td className="px-4 py-3 font-medium text-foreground">Mr Pilkington</td>
+                  <td className="px-4 py-3 text-muted-foreground">Britain / the Western Allies</td>
                 </tr>
-                <tr className="bg-cream-100/40">
-                  <td className="px-4 py-3 font-medium text-ink-700">The Windmill</td>
-                  <td className="px-4 py-3 text-ink-600">
+                <tr className="bg-muted/40">
+                  <td className="px-4 py-3 font-medium text-foreground">The Windmill</td>
+                  <td className="px-4 py-3 text-muted-foreground">
                     Soviet industrialisation / Five-Year Plans
                   </td>
                 </tr>
@@ -392,27 +400,27 @@ export default function AnimalFarmContextPage() {
         </section>
 
         {/* Navigation */}
-        <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
-          <p className="mt-1 text-sm text-ink-500">
+        <section className="mt-14 rounded-xl border border-border/60 bg-primary/5 p-6">
+          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <p className="mt-1 text-sm text-muted-foreground">
             Explore characters, themes, key quotes and essay plans for Animal Farm.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href="/revision/texts/animal-farm/characters"
-              className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
+              className="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
               Characters
             </Link>
             <Link
               href="/revision/texts/animal-farm/themes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
               Themes
             </Link>
             <Link
               href="/revision/texts/animal-farm/key-quotes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
               Key Quotes
             </Link>
@@ -420,7 +428,7 @@ export default function AnimalFarmContextPage() {
         </section>
 
         {/* Rights / fair-dealing notice */}
-        <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
+        <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
           <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in
           2021, the Orwell estate (AM Heath) actively manages educational use. Quotations on this
           page are short fair-dealing extracts; longer engagement should use a school-licensed

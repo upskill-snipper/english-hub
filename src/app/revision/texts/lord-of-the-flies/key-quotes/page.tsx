@@ -243,7 +243,7 @@ const QUOTES: QuoteEntry[] = [
 
 export default function LOTFKeyQuotesPage() {
   return (
-    <div className="min-h-screen bg-cream-50 font-serif">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -264,42 +264,42 @@ export default function LOTFKeyQuotesPage() {
         <StudyTools textName="Lord of the Flies" textType="novel" />
 
         {/* Hero */}
-        <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-clay-200/[0.06] p-6 sm:p-8 lg:p-10">
+        <section className="mt-8 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 lg:p-10">
           <Link
             href="/revision/texts/lord-of-the-flies"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
+            className="mb-4 inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80"
           >
             <ArrowLeft className="size-3.5" />
             Back to Lord of the Flies
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-clay-300/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-600">
+            <span className="inline-flex items-center gap-1 rounded-full bg-clay-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-clay-700 dark:text-clay-300">
               <Quote className="size-3" />
               Key Quotes
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-teal-400/20 px-3 py-1 text-xs text-teal-600">
+            <span className="inline-flex items-center gap-1 rounded-full border border-border/60 px-3 py-1 text-xs text-primary">
               <Sparkles className="size-3" />
               AO1 / AO2
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Lord of the Flies &mdash; Key Quotes
           </h1>
-          <p className="mt-2 text-lg text-ink-500">by William Golding &mdash; 1954</p>
-          <p className="mt-4 max-w-2xl text-ink-500">
+          <p className="mt-2 text-lg text-muted-foreground">by William Golding &mdash; 1954</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">
             Twenty essential quotations with speaker, chapter reference, detailed analysis and
             thematic links for GCSE English Literature.
           </p>
         </section>
 
         {/* Exam tip banner */}
-        <section className="mt-8 rounded-xl border border-clay-300/20 bg-clay-200/10 p-5">
+        <section className="mt-8 rounded-xl border border-clay-500/20 bg-clay-500/10 p-5">
           <div className="flex items-start gap-3">
-            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-500" />
-            <div className="text-sm text-ink-600">
-              <p className="mb-1 font-bold text-ink-800">How to use these quotes</p>
+            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-700 dark:text-clay-300" />
+            <div className="text-sm text-muted-foreground">
+              <p className="mb-1 font-bold text-foreground">How to use these quotes</p>
               <p>
                 Aim for 10&ndash;12 quotes you can analyse confidently. Choose quotes that cover
                 multiple themes so each one earns maximum marks. For each quote, practise
@@ -313,34 +313,34 @@ export default function LOTFKeyQuotesPage() {
         {/* Quote cards */}
         <section className="mt-10 space-y-6">
           {QUOTES.map((q) => (
-            <div key={q.id} className="rounded-xl border border-teal-400/15 bg-cream-100/60 p-5">
+            <div key={q.id} className="rounded-xl border border-border/60 bg-card p-5">
               {/* Quote text */}
               <div className="flex items-start gap-3 mb-3">
-                <Quote className="mt-1 size-5 shrink-0 text-clay-400" />
-                <p className="font-serif text-lg font-semibold leading-snug text-ink-900">
+                <Quote className="mt-1 size-5 shrink-0 text-clay-700 dark:text-clay-300" />
+                <p className="font-heading text-lg font-semibold leading-snug text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </p>
               </div>
 
               {/* Speaker & chapter */}
-              <div className="mb-3 flex flex-wrap items-center gap-2 text-xs text-ink-500">
-                <span className="rounded-full bg-teal-500/10 px-2.5 py-0.5 font-medium text-teal-700">
+              <div className="mb-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                <span className="rounded-full bg-primary/10 px-2.5 py-0.5 font-medium text-primary">
                   {q.speaker}
                 </span>
-                <span className="rounded-full border border-ink-100 px-2.5 py-0.5">
+                <span className="rounded-full border border-border/60 px-2.5 py-0.5">
                   {q.chapter}
                 </span>
               </div>
 
               {/* Context */}
-              <p className="mb-3 text-sm italic text-ink-500">{q.context}</p>
+              <p className="mb-3 text-sm italic text-muted-foreground">{q.context}</p>
 
               {/* Analysis */}
-              <div className="mb-3 rounded-lg border border-teal-400/10 bg-teal-500/5 p-3">
-                <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-700">
+              <div className="mb-3 rounded-lg border border-primary/20 bg-primary/5 p-3">
+                <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">
                   Analysis
                 </p>
-                <p className="text-sm leading-relaxed text-ink-600">{q.analysis}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
               </div>
 
               {/* Themes */}
@@ -348,7 +348,7 @@ export default function LOTFKeyQuotesPage() {
                 {q.themes.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full border border-clay-300/30 bg-clay-200/10 px-2.5 py-0.5 text-xs font-medium text-clay-600"
+                    className="rounded-full border border-clay-500/30 bg-clay-500/10 px-2.5 py-0.5 text-xs font-medium text-clay-700 dark:text-clay-300"
                   >
                     {t}
                   </span>
@@ -359,27 +359,27 @@ export default function LOTFKeyQuotesPage() {
         </section>
 
         {/* Navigation */}
-        <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
-          <p className="mt-1 text-sm text-ink-500">
+        <section className="mt-14 rounded-xl border border-border/60 bg-primary/5 p-6">
+          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <p className="mt-1 text-sm text-muted-foreground">
             Explore characters, themes, context and essay plans for Lord of the Flies.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
               href="/revision/texts/lord-of-the-flies/characters"
-              className="inline-flex items-center rounded-lg bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
+              className="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
               Characters
             </Link>
             <Link
               href="/revision/texts/lord-of-the-flies/themes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
               Themes
             </Link>
             <Link
               href="/revision/texts/lord-of-the-flies/context"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-border/60 bg-card px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
             >
               Context
             </Link>
@@ -387,7 +387,7 @@ export default function LOTFKeyQuotesPage() {
         </section>
 
         {/* Fair-dealing notice */}
-        <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
+        <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
           Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
           Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
           educational study. <em>Lord of the Flies</em> by William Golding is published by Faber and

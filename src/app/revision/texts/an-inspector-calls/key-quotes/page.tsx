@@ -483,7 +483,7 @@ export default function KeyQuotesPage() {
   })
 
   return (
-    <div className="min-h-screen bg-cream-50 font-serif">
+    <div className="min-h-screen bg-background font-heading">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -504,42 +504,42 @@ export default function KeyQuotesPage() {
         <StudyTools textName="An Inspector Calls" textType="play" />
 
         {/* Hero */}
-        <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-teal-300/[0.06] p-6 sm:p-8 lg:p-10">
+        <section className="mt-8 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.06] p-6 sm:p-8 lg:p-10">
           <Link
             href="/revision/texts/an-inspector-calls"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
+            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700 dark:text-teal-300 dark:hover:text-teal-200"
           >
             <ArrowLeft className="size-3.5" />
             Back to An Inspector Calls
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
+            <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
               <Quote className="size-3" />
               Key Quotes Bank
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-clay-300/30 px-3 py-1 text-xs text-clay-600">
+            <span className="inline-flex items-center gap-1 rounded-full border border-clay-500/30 px-3 py-1 text-xs text-clay-700 dark:text-clay-300">
               <Sparkles className="size-3" />
               AQA / Edexcel / OCR / Eduqas
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             An Inspector Calls &mdash; Key Quotes
           </h1>
-          <p className="mt-2 text-lg text-ink-500">by J.B. Priestley &mdash; 1945</p>
-          <p className="mt-4 max-w-2xl text-ink-500">
+          <p className="mt-2 text-lg text-muted-foreground">by J.B. Priestley &mdash; 1945</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">
             30 essential quotations with full AO2 language analysis, AO3 context links, and exam
             technique tips. Filter by act or theme to find the quotes you need.
           </p>
         </section>
 
         {/* Exam tip banner */}
-        <section className="mt-8 rounded-xl border border-clay-300/20 bg-clay-200/10 p-5">
+        <section className="mt-8 rounded-xl border border-clay-500/20 bg-clay-500/10 p-5">
           <div className="flex items-start gap-3">
-            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-500" />
-            <div className="text-sm text-ink-600">
-              <p className="mb-1 font-bold text-ink-800">Exam technique</p>
+            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600 dark:text-clay-300" />
+            <div className="text-sm text-muted-foreground">
+              <p className="mb-1 font-bold text-foreground">Exam technique</p>
               <p>
                 You do not need to memorise every quote. Choose{' '}
                 <strong>3&ndash;4 versatile quotes per character</strong> that you can use across
@@ -553,8 +553,8 @@ export default function KeyQuotesPage() {
         {/* Filters */}
         <section className="mt-8">
           <div className="flex items-center gap-2 mb-3">
-            <Filter className="size-4 text-teal-600" />
-            <h2 className="text-sm font-bold uppercase tracking-wider text-ink-500">
+            <Filter className="size-4 text-teal-600 dark:text-teal-300" />
+            <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
               Filter Quotes
             </h2>
           </div>
@@ -567,7 +567,7 @@ export default function KeyQuotesPage() {
               className={`rounded-lg px-3 py-1.5 text-xs font-medium transition ${
                 !filterAct && !filterTheme
                   ? 'bg-teal-600 text-white'
-                  : 'bg-cream-100 text-ink-500 hover:bg-cream-200'
+                  : 'bg-muted text-muted-foreground hover:bg-secondary'
               }`}
             >
               All ({QUOTES.length})
@@ -582,7 +582,7 @@ export default function KeyQuotesPage() {
                 className={`rounded-lg px-3 py-1.5 text-xs font-medium transition ${
                   filterAct === act
                     ? 'bg-teal-600 text-white'
-                    : 'bg-cream-100 text-ink-500 hover:bg-cream-200'
+                    : 'bg-muted text-muted-foreground hover:bg-secondary'
                 }`}
               >
                 {act} ({QUOTES.filter((q) => q.act === act).length})
@@ -599,8 +599,8 @@ export default function KeyQuotesPage() {
                 }}
                 className={`rounded-lg px-3 py-1.5 text-xs font-medium transition ${
                   filterTheme === theme
-                    ? 'bg-clay-500 text-white'
-                    : 'bg-cream-100 text-ink-500 hover:bg-cream-200'
+                    ? 'bg-clay-600 text-white'
+                    : 'bg-muted text-muted-foreground hover:bg-secondary'
                 }`}
               >
                 {theme}
@@ -612,42 +612,43 @@ export default function KeyQuotesPage() {
         {/* Quotes */}
         <div className="mt-8 space-y-4">
           {filtered.map((q) => (
-            <section
-              key={q.id}
-              className="rounded-xl border border-teal-400/15 bg-cream-100/50 p-5"
-            >
+            <section key={q.id} className="rounded-xl border border-border/60 bg-muted p-5">
               {/* Quote */}
-              <p className="text-lg font-medium italic text-ink-800">{q.quote}</p>
+              <p className="text-lg font-medium italic text-foreground">{q.quote}</p>
               <div className="mt-2 flex flex-wrap items-center gap-2">
-                <span className="text-xs font-semibold uppercase tracking-wider text-teal-700">
+                <span className="text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
                   {q.speaker}
                 </span>
-                <span className="text-xs text-ink-300">&bull;</span>
-                <span className="text-xs font-semibold uppercase tracking-wider text-clay-500">
+                <span className="text-xs text-muted-foreground">&bull;</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-clay-600 dark:text-clay-300">
                   {q.act}
                 </span>
               </div>
 
               {/* Context */}
               <div className="mt-3">
-                <p className="text-xs font-bold uppercase tracking-wider text-ink-400">Context</p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-600">{q.context}</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                  Context
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{q.context}</p>
               </div>
 
               {/* AO2 */}
               <div className="mt-3">
-                <p className="text-xs font-bold uppercase tracking-wider text-teal-600">
+                <p className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-300">
                   AO2 &mdash; Language Analysis
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-600">{q.ao2Analysis}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {q.ao2Analysis}
+                </p>
               </div>
 
               {/* AO3 */}
               <div className="mt-3">
-                <p className="text-xs font-bold uppercase tracking-wider text-clay-500">
+                <p className="text-xs font-bold uppercase tracking-wider text-clay-600 dark:text-clay-300">
                   AO3 &mdash; Context Link
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-600">{q.ao3Context}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{q.ao3Context}</p>
               </div>
 
               {/* Themes */}
@@ -655,7 +656,7 @@ export default function KeyQuotesPage() {
                 {q.themes.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full bg-teal-500/8 px-2.5 py-0.5 text-xs font-medium text-teal-700"
+                    className="rounded-full bg-teal-500/[0.08] px-2.5 py-0.5 text-xs font-medium text-teal-700 dark:text-teal-300"
                   >
                     {t}
                   </span>
@@ -663,11 +664,11 @@ export default function KeyQuotesPage() {
               </div>
 
               {/* Exam tip */}
-              <div className="mt-3 rounded-lg bg-clay-200/10 p-3">
+              <div className="mt-3 rounded-lg bg-clay-500/10 p-3">
                 <div className="flex items-start gap-2">
-                  <Lightbulb className="mt-0.5 size-3.5 shrink-0 text-clay-500" />
-                  <p className="text-xs leading-relaxed text-ink-500">
-                    <span className="font-bold text-clay-600">Exam tip: </span>
+                  <Lightbulb className="mt-0.5 size-3.5 shrink-0 text-clay-600 dark:text-clay-300" />
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    <span className="font-bold text-clay-600 dark:text-clay-300">Exam tip: </span>
                     {q.examTip}
                   </p>
                 </div>
@@ -677,17 +678,17 @@ export default function KeyQuotesPage() {
         </div>
 
         {filtered.length === 0 && (
-          <div className="mt-8 rounded-xl border border-ink-100 bg-cream-100/60 p-8 text-center">
-            <p className="text-sm text-ink-400">
+          <div className="mt-8 rounded-xl border border-border/60 bg-muted p-8 text-center">
+            <p className="text-sm text-muted-foreground">
               No quotes match your current filters. Try a different combination.
             </p>
           </div>
         )}
 
         {/* Navigation */}
-        <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
-          <p className="mt-1 text-sm text-ink-500">
+        <section className="mt-14 rounded-xl border border-teal-500/20 bg-teal-500/5 p-6">
+          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <p className="mt-1 text-sm text-muted-foreground">
             Explore characters, themes, and context for An Inspector Calls.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -699,13 +700,13 @@ export default function KeyQuotesPage() {
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/themes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Themes
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/context"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Context
             </Link>
@@ -713,7 +714,7 @@ export default function KeyQuotesPage() {
         </section>
 
         {/* Fair-dealing notice */}
-        <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
+        <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
           Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
           Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
           educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text

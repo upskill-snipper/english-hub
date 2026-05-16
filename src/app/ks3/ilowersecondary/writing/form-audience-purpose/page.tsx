@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
@@ -204,52 +204,52 @@ export default function FormAudiencePurposePage() {
       />
 
       <article className="mx-auto max-w-3xl px-4 py-12">
-        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-ink-950/60">
+        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <li>
-              <Link href="/" className="hover:text-emerald-700">
+              <Link href="/" className="hover:text-primary">
                 Home
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3" className="hover:text-emerald-700">
+              <Link href="/ks3" className="hover:text-primary">
                 KS3
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary" className="hover:text-primary">
                 iLowerSecondary English
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary/writing" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary/writing" className="hover:text-primary">
                 Writing skills
               </Link>
             </li>
             <li aria-hidden>/</li>
-            <li className="font-medium text-ink-950/80" aria-current="page">
+            <li className="font-medium text-muted-foreground" aria-current="page">
               Form, audience &amp; purpose
             </li>
           </ol>
         </nav>
 
         <header className="mb-10">
-          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
             Writing skill {SKILL.code} · {WAO1.code} masterclass
           </p>
-          <h1 className="mb-4 font-serif text-4xl font-semibold leading-tight text-ink-950">
+          <h1 className="mb-4 font-heading text-4xl font-semibold leading-tight text-foreground">
             Form, audience &amp; purpose
           </h1>
-          <p className="text-lg leading-relaxed text-ink-950/85">
+          <p className="text-lg leading-relaxed text-muted-foreground">
             The first thing a strong response does is decode the task. Before you write a single
             sentence, you must know exactly what <strong>form</strong> you are writing in,{' '}
             <strong>who</strong> you are writing for, and <strong>why</strong> you are writing.
             Skill {SKILL.code}, &ldquo;{SKILL.title}&rdquo;, is about exactly this:
           </p>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-base leading-relaxed text-ink-950/85">
+          <ul className="mt-4 list-disc space-y-2 pl-6 text-base leading-relaxed text-muted-foreground">
             {SKILL.bullets.map((b) => (
               <li key={b}>{b}</li>
             ))}
@@ -258,18 +258,18 @@ export default function FormAudiencePurposePage() {
 
         <section
           aria-labelledby="the-task"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="the-task" className="mb-3 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="the-task" className="mb-3 font-heading text-2xl font-semibold text-foreground">
             What the extended task asks of you
           </h2>
-          <p className="mb-4 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-base leading-relaxed text-muted-foreground">
             {SECTION_B.name} carries {SECTION_B.marks} marks. {SECTION_B.description} It is assessed
             against {SECTION_B.assessmentObjectives.join(' and ')}. The objective at the centre of
             this page, <strong>{WAO1.code}</strong>, asks you to{' '}
             <em>{WAO1.descriptor.toLowerCase()}</em>
           </p>
-          <p className="text-base leading-relaxed text-ink-950/85">
+          <p className="text-base leading-relaxed text-muted-foreground">
             Because the task is <strong>related to the theme in Section A</strong>, your reading
             during the first part of the paper feeds your writing: the topic is handed to you, so
             your marks come from <em>how</em> you write, not from inventing a subject. Spend a short
@@ -278,10 +278,10 @@ export default function FormAudiencePurposePage() {
         </section>
 
         <section aria-labelledby="decode" className="mb-12">
-          <h2 id="decode" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="decode" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Decoding the task in three questions
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             Every Section B task hides three instructions inside the wording. Underline the words
             that answer each question before you plan.
           </p>
@@ -300,19 +300,19 @@ export default function FormAudiencePurposePage() {
                 a: 'Why are you writing? To argue, persuade, inform, describe, explain, entertain or express an opinion? The purpose controls tone and signposting.',
               },
             ].map((c) => (
-              <div key={c.q} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                <h3 className="mb-2 font-mono text-sm font-semibold text-emerald-700">{c.q}</h3>
-                <p className="text-sm leading-relaxed text-ink-950/80">{c.a}</p>
+              <div key={c.q} className="rounded-lg bg-card p-5 border border-border/60">
+                <h3 className="mb-2 font-mono text-sm font-semibold text-primary">{c.q}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{c.a}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section aria-labelledby="forms" className="mb-12">
-          <h2 id="forms" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="forms" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Forms and their conventions
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             These are the forms you may be asked to write in. Each one carries its own conventions;
             matching them is how the form is &ldquo;established and maintained&rdquo; in the mark
             grid below.
@@ -321,12 +321,12 @@ export default function FormAudiencePurposePage() {
             {WRITING_FORMS.map((form) => {
               const f = FORM_CONVENTIONS[form]
               return (
-                <div key={form} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                  <h3 className="mb-1 font-serif text-lg font-semibold capitalize text-ink-950">
+                <div key={form} className="rounded-lg bg-card p-5 border border-border/60">
+                  <h3 className="mb-1 font-heading text-lg font-semibold capitalize text-foreground">
                     {form}
                   </h3>
-                  <p className="mb-3 text-sm italic text-ink-950/70">{f.summary}</p>
-                  <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-ink-950/85">
+                  <p className="mb-3 text-sm italic text-muted-foreground">{f.summary}</p>
+                  <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
                     {f.conventions.map((c) => (
                       <li key={c}>{c}</li>
                     ))}
@@ -338,17 +338,17 @@ export default function FormAudiencePurposePage() {
         </section>
 
         <section aria-labelledby="purposes" className="mb-12">
-          <h2 id="purposes" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="purposes" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Purposes: tone and signposting language
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             The purpose decides the tone you adopt and the phrases that signal your intention to the
             reader. Borrow these signposts and adapt them to the theme you are given.
           </p>
-          <div className="overflow-x-auto rounded-lg ring-1 ring-ink-950/10">
+          <div className="overflow-x-auto rounded-lg border border-border/60">
             <table className="w-full border-collapse text-left text-sm">
               <thead>
-                <tr className="bg-cream-100 text-ink-950">
+                <tr className="bg-muted text-foreground">
                   <th className="p-3 font-semibold">Purpose</th>
                   <th className="p-3 font-semibold">Tone to aim for</th>
                   <th className="p-3 font-semibold">Signposting language</th>
@@ -358,12 +358,12 @@ export default function FormAudiencePurposePage() {
                 {WRITING_PURPOSES.map((purpose, i) => {
                   const g = PURPOSE_GUIDANCE[purpose]
                   return (
-                    <tr key={purpose} className={i % 2 === 0 ? 'bg-cream-50' : 'bg-cream-100/50'}>
-                      <td className="p-3 align-top font-semibold capitalize text-ink-950">
+                    <tr key={purpose} className={i % 2 === 0 ? 'bg-card' : 'bg-muted/50'}>
+                      <td className="p-3 align-top font-semibold capitalize text-foreground">
                         {purpose}
                       </td>
-                      <td className="p-3 align-top text-ink-950/85">{g.tone}</td>
-                      <td className="p-3 align-top text-ink-950/85">
+                      <td className="p-3 align-top text-muted-foreground">{g.tone}</td>
+                      <td className="p-3 align-top text-muted-foreground">
                         <ul className="space-y-1">
                           {g.signposts.map((s) => (
                             <li key={s} className="italic">
@@ -381,30 +381,32 @@ export default function FormAudiencePurposePage() {
         </section>
 
         <section aria-labelledby="audiences" className="mb-12">
-          <h2 id="audiences" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="audiences" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Audiences and register choices
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             The audiences you may be asked to write for are:{' '}
             <span className="italic">{WRITING_AUDIENCES}</span> Your <strong>register</strong> — how
             formal your language is — must shift to suit them.
           </p>
           <div className="space-y-4">
             {AUDIENCE_REGISTERS.map((a) => (
-              <div key={a.audience} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                <h3 className="mb-1 font-serif text-lg font-semibold text-ink-950">{a.audience}</h3>
-                <p className="mb-2 text-sm text-ink-950/70">e.g. {a.examples}</p>
-                <p className="text-sm leading-relaxed text-ink-950/85">{a.register}</p>
+              <div key={a.audience} className="rounded-lg bg-card p-5 border border-border/60">
+                <h3 className="mb-1 font-heading text-lg font-semibold text-foreground">
+                  {a.audience}
+                </h3>
+                <p className="mb-2 text-sm text-muted-foreground">e.g. {a.examples}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{a.register}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section aria-labelledby="grid" className="mb-12">
-          <h2 id="grid" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="grid" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             How form and audience control are rewarded ({WAO1.code})
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             This is the levelled grid your writing is judged against for {WAO1.code} (form,
             communication and purpose). Notice how each level rewards <em>tighter</em> control of
             audience and form — the journey from S1 to S4 is a journey from &ldquo;some
@@ -413,14 +415,12 @@ export default function FormAudiencePurposePage() {
           </p>
           <div className="space-y-4">
             {WAO1_GRID.map((row) => (
-              <div key={row.level} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
+              <div key={row.level} className="rounded-lg bg-card p-5 border border-border/60">
                 <div className="mb-2 flex items-baseline gap-3">
-                  <span className="font-mono text-sm font-semibold text-emerald-700">
-                    {row.level}
-                  </span>
-                  <span className="text-sm text-ink-950/70">{row.marks} marks</span>
+                  <span className="font-mono text-sm font-semibold text-primary">{row.level}</span>
+                  <span className="text-sm text-muted-foreground">{row.marks} marks</span>
                 </div>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-ink-950/85">
+                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
                   {row.descriptors.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -432,30 +432,35 @@ export default function FormAudiencePurposePage() {
 
         <section
           aria-labelledby="worked-example"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="worked-example" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="worked-example"
+            className="mb-2 font-heading text-2xl font-semibold text-foreground"
+          >
             Worked example
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">
+          <p className="mb-6 text-sm text-muted-foreground">
             An original walkthrough. Imagine Section A explored texts about{' '}
             <strong>protecting local green spaces</strong>. Here is an invented Section B task in
             that theme, decoded and answered.
           </p>
 
-          <div className="mb-6 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-4">
-            <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <div className="mb-6 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+            <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Sample task (invented)
             </p>
-            <p className="text-base italic leading-relaxed text-ink-950">
+            <p className="text-base italic leading-relaxed text-foreground">
               &ldquo;Your town council has proposed building on the meadow next to your school.
               Write a letter to the council persuading them to keep the meadow as a public green
               space.&rdquo;
             </p>
           </div>
 
-          <h3 className="mb-2 font-serif text-lg font-semibold text-ink-950">Step 1 — Decode it</h3>
-          <ul className="mb-6 list-disc space-y-1 pl-6 text-sm leading-relaxed text-ink-950/85">
+          <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
+            Step 1 — Decode it
+          </h3>
+          <ul className="mb-6 list-disc space-y-1 pl-6 text-sm leading-relaxed text-muted-foreground">
             <li>
               <strong>Form:</strong> a letter — so it needs a formal greeting, clear paragraphs and
               a sign-off.
@@ -470,10 +475,10 @@ export default function FormAudiencePurposePage() {
             </li>
           </ul>
 
-          <h3 className="mb-2 font-serif text-lg font-semibold text-ink-950">
+          <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
             Step 2 — A brief plan
           </h3>
-          <ol className="mb-6 list-decimal space-y-1 pl-6 text-sm leading-relaxed text-ink-950/85">
+          <ol className="mb-6 list-decimal space-y-1 pl-6 text-sm leading-relaxed text-muted-foreground">
             <li>Greeting + state the reason for writing.</li>
             <li>The meadow&rsquo;s value to students and families.</li>
             <li>Counter the council&rsquo;s likely argument (need for housing).</li>
@@ -481,12 +486,14 @@ export default function FormAudiencePurposePage() {
             <li>Courteous, purposeful sign-off.</li>
           </ol>
 
-          <h3 className="mb-2 font-serif text-lg font-semibold text-ink-950">
+          <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
             Step 3 — An opening that nails form, audience and purpose
           </h3>
-          <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-            <p className="mb-3 text-sm font-medium text-ink-950/70">Dear Members of the Council,</p>
-            <p className="text-base leading-relaxed text-ink-950">
+          <div className="rounded-lg bg-card p-5 border border-border/60">
+            <p className="mb-3 text-sm font-medium text-muted-foreground">
+              Dear Members of the Council,
+            </p>
+            <p className="text-base leading-relaxed text-foreground">
               I am writing as a student at Hillside School to urge you to reconsider the proposal to
               build on Marsh Meadow. Imagine the hundreds of pupils who cross that meadow every
               morning, the families who picnic there at weekends, and the swifts that return to it
@@ -498,11 +505,11 @@ export default function FormAudiencePurposePage() {
             </p>
           </div>
 
-          <div className="mt-5 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-4">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Why this earns marks — annotated
             </p>
-            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink-950/85">
+            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
               <li>
                 <strong>Form:</strong> &ldquo;Dear Members of the Council&rdquo; and the stated
                 reason for writing establish the letter form immediately.
@@ -526,10 +533,10 @@ export default function FormAudiencePurposePage() {
         </section>
 
         <section aria-labelledby="checklist" className="mb-12">
-          <h2 id="checklist" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="checklist" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Before you write — a 30-second checklist
           </h2>
-          <ul className="list-disc space-y-2 pl-6 text-base leading-relaxed text-ink-950/85">
+          <ul className="list-disc space-y-2 pl-6 text-base leading-relaxed text-muted-foreground">
             <li>
               I have underlined the words that name the <strong>form</strong>, the{' '}
               <strong>audience</strong> and the <strong>purpose</strong>.
@@ -546,7 +553,7 @@ export default function FormAudiencePurposePage() {
           </ul>
         </section>
 
-        <footer className="mt-16 border-t border-ink-950/10 pt-6 text-xs leading-relaxed text-ink-950/55">
+        <footer className="mt-16 border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           <p>{SPEC_ATTRIBUTION}</p>
           <p className="mt-3">
             This masterclass is provided for educational guidance (criticism and instruction). The

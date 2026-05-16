@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { QUESTION_TYPES, ASSESSMENT_OBJECTIVES, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
@@ -308,46 +308,46 @@ export default function SynonymVocabularyPage() {
       />
 
       <main className="mx-auto max-w-3xl px-4 py-12">
-        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-ink-950/60">
+        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <li>
-              <Link href="/" className="hover:text-emerald-700">
+              <Link href="/" className="hover:text-primary">
                 Home
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3" className="hover:text-emerald-700">
+              <Link href="/ks3" className="hover:text-primary">
                 KS3
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary" className="hover:text-primary">
                 iLowerSecondary English
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary/question-types" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary/question-types" className="hover:text-primary">
                 Question types
               </Link>
             </li>
             <li aria-hidden>/</li>
-            <li className="font-medium text-ink-950/80" aria-current="page">
+            <li className="font-medium text-muted-foreground" aria-current="page">
               Synonyms &amp; vocabulary
             </li>
           </ol>
         </nav>
 
         <header className="mb-10">
-          <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
             Question-type masterclass
           </p>
-          <h1 className="mb-4 font-serif text-4xl font-semibold text-ink-950">
+          <h1 className="mb-4 font-heading text-4xl font-semibold text-foreground">
             Synonyms &amp; vocabulary-in-context
           </h1>
-          <p className="text-lg leading-relaxed text-ink-950/85">
+          <p className="text-lg leading-relaxed text-muted-foreground">
             These short, closed questions ask you to show that you understand a single word the way
             the writer used it. You might be told to <em>circle the synonym</em>, to{' '}
             <em>underline the word closest in meaning</em>, or to choose, in a multiple-choice box,
@@ -360,36 +360,39 @@ export default function SynonymVocabularyPage() {
         {/* What the exam is testing */}
         <section
           aria-labelledby="what-it-tests"
-          className="mb-10 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-10 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="what-it-tests" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="what-it-tests"
+            className="mb-4 font-heading text-2xl font-semibold text-foreground"
+          >
             What these questions are testing
           </h2>
-          <div className="space-y-4 text-base leading-relaxed text-ink-950/85">
+          <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
             <p>
               Both the &ldquo;{SYNONYM_SELECT.name}&rdquo; task and the &ldquo;
               {MULTIPLE_CHOICE.name}&rdquo; task draw on the same reading skill:{' '}
-              <span className="font-medium text-ink-950">{RAO4.code}</span> &mdash;{' '}
+              <span className="font-medium text-foreground">{RAO4.code}</span> &mdash;{' '}
               {RAO4.descriptor.toLowerCase()} In plain terms, the examiner wants proof that you can
               work out a word&rsquo;s meaning from the words around it.
             </p>
             <dl className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-md bg-cream-50 p-4 ring-1 ring-ink-950/10">
-                <dt className="mb-1 font-semibold text-ink-950">{SYNONYM_SELECT.name}</dt>
-                <dd className="text-sm text-ink-950/80">
+              <div className="rounded-md bg-card p-4 border border-border/60">
+                <dt className="mb-1 font-semibold text-foreground">{SYNONYM_SELECT.name}</dt>
+                <dd className="text-sm text-muted-foreground">
                   {SYNONYM_SELECT.format} {SYNONYM_SELECT.howToAnswer}
                 </dd>
               </div>
-              <div className="rounded-md bg-cream-50 p-4 ring-1 ring-ink-950/10">
-                <dt className="mb-1 font-semibold text-ink-950">{MULTIPLE_CHOICE.name}</dt>
-                <dd className="text-sm text-ink-950/80">
+              <div className="rounded-md bg-card p-4 border border-border/60">
+                <dt className="mb-1 font-semibold text-foreground">{MULTIPLE_CHOICE.name}</dt>
+                <dd className="text-sm text-muted-foreground">
                   {MULTIPLE_CHOICE.format} {MULTIPLE_CHOICE.howToAnswer}
                 </dd>
               </div>
             </dl>
             <p>
               Notice the rule both share:{' '}
-              <span className="font-semibold text-ink-950">
+              <span className="font-semibold text-foreground">
                 there is exactly one correct answer
               </span>
               . If you mark two, you cannot score the mark, even if one of them is right.
@@ -400,23 +403,23 @@ export default function SynonymVocabularyPage() {
         {/* Strategy box */}
         <section
           aria-labelledby="strategy"
-          className="mb-10 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-6 ring-1 ring-ink-950/10 sm:p-8"
+          className="mb-10 rounded-lg border-l-4 border-primary/40 bg-card p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="strategy" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="strategy" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             Strategy box: five steps to the mark
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">
+          <p className="mb-6 text-sm text-muted-foreground">
             Use the same routine every time. It is fast once it becomes a habit.
           </p>
           <ol className="space-y-4">
             {STRATEGY.map((s, i) => (
               <li key={s.step} className="flex gap-4">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-400/20 font-mono text-sm font-semibold text-emerald-700">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/15 font-mono text-sm font-semibold text-primary">
                   {i + 1}
                 </span>
                 <div>
-                  <p className="font-semibold text-ink-950">{s.step}</p>
-                  <p className="text-sm leading-relaxed text-ink-950/80">{s.detail}</p>
+                  <p className="font-semibold text-foreground">{s.step}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{s.detail}</p>
                 </div>
               </li>
             ))}
@@ -427,11 +430,11 @@ export default function SynonymVocabularyPage() {
         <section aria-labelledby="context-connotation" className="mb-10 px-1">
           <h2
             id="context-connotation"
-            className="mb-4 font-serif text-2xl font-semibold text-ink-950"
+            className="mb-4 font-heading text-2xl font-semibold text-foreground"
           >
             Read in context, not in isolation
           </h2>
-          <div className="space-y-4 text-base leading-relaxed text-ink-950/85">
+          <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
             <p>
               Many English words carry more than one meaning. Take the word <em>sharp</em>. In
               &ldquo;a sharp knife&rdquo; it means having a fine cutting edge; in &ldquo;a sharp
@@ -441,8 +444,8 @@ export default function SynonymVocabularyPage() {
               replacement from the sentence first, then match it to an option.
             </p>
             <p>
-              <span className="font-semibold text-ink-950">Connotation</span> is the feeling a word
-              carries on top of its plain meaning. <em>Thrifty</em>, <em>careful</em> and{' '}
+              <span className="font-semibold text-foreground">Connotation</span> is the feeling a
+              word carries on top of its plain meaning. <em>Thrifty</em>, <em>careful</em> and{' '}
               <em>stingy</em> all describe someone who does not spend much, but <em>thrifty</em>{' '}
               sounds approving, <em>careful</em> sounds neutral and <em>stingy</em> sounds critical.
               Distractor options are often built from this gap: they share the dictionary meaning
@@ -455,34 +458,34 @@ export default function SynonymVocabularyPage() {
         {/* Tricky distractor worked examples */}
         <section
           aria-labelledby="tricky"
-          className="mb-10 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-10 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="tricky" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="tricky" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             Five tricky-distractor worked examples
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">
+          <p className="mb-6 text-sm text-muted-foreground">
             Each example shows the trap a quick reader falls into and how context defeats it.
           </p>
           <ol className="space-y-6">
             {TRICKY.map((t, i) => (
-              <li key={t.target} className="border-l-4 border-emerald-400 pl-4">
-                <p className="mb-2 font-mono text-xs font-semibold text-emerald-700">
+              <li key={t.target} className="border-l-4 border-primary/40 pl-4">
+                <p className="mb-2 font-mono text-xs font-semibold text-primary">
                   Example {i + 1} &middot; target word:{' '}
                   <span className="lowercase">{t.target}</span>
                 </p>
-                <p className="mb-2 font-serif text-lg italic leading-snug text-ink-950">
+                <p className="mb-2 font-heading text-lg italic leading-snug text-foreground">
                   &ldquo;{t.sentence}&rdquo;
                 </p>
-                <p className="mb-1 text-sm leading-relaxed text-ink-950/85">
-                  <span className="font-semibold text-ink-950">The trap: </span>
+                <p className="mb-1 text-sm leading-relaxed text-muted-foreground">
+                  <span className="font-semibold text-foreground">The trap: </span>
                   {t.trap}
                 </p>
-                <p className="mb-1 text-sm leading-relaxed text-ink-950/85">
-                  <span className="font-semibold text-ink-950">Best answer: </span>
-                  <span className="font-semibold text-emerald-700">{t.answer}</span>
+                <p className="mb-1 text-sm leading-relaxed text-muted-foreground">
+                  <span className="font-semibold text-foreground">Best answer: </span>
+                  <span className="font-semibold text-primary">{t.answer}</span>
                 </p>
-                <p className="text-sm leading-relaxed text-ink-950/85">
-                  <span className="font-semibold text-ink-950">Why: </span>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  <span className="font-semibold text-foreground">Why: </span>
                   {t.why}
                 </p>
               </li>
@@ -492,10 +495,10 @@ export default function SynonymVocabularyPage() {
 
         {/* Practice bank */}
         <section aria-labelledby="practice" className="mb-10 px-1">
-          <h2 id="practice" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="practice" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             Practice bank &mdash; {TOTAL_ITEMS} original items
           </h2>
-          <p className="mb-8 text-sm text-ink-950/75">
+          <p className="mb-8 text-sm text-muted-foreground">
             Cover the answers. For each sentence, pick the option closest in meaning to the bold
             target word as it is used here. Then check the answer and the one-line reason. Items are
             graded from easy to hard.
@@ -503,20 +506,22 @@ export default function SynonymVocabularyPage() {
 
           {SECTIONS.map((sec) => (
             <div key={sec.title} className="mb-10">
-              <h3 className="mb-1 font-serif text-xl font-semibold text-ink-950">{sec.title}</h3>
-              <p className="mb-5 text-sm italic text-ink-950/70">{sec.band}</p>
+              <h3 className="mb-1 font-heading text-xl font-semibold text-foreground">
+                {sec.title}
+              </h3>
+              <p className="mb-5 text-sm italic text-muted-foreground">{sec.band}</p>
               <ol className="space-y-6">
                 {sec.items.map((item, idx) => (
                   <li
                     key={item.target + idx}
-                    className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10"
+                    className="rounded-lg bg-card p-5 border border-border/60"
                   >
-                    <p className="mb-3 text-base leading-relaxed text-ink-950">
+                    <p className="mb-3 text-base leading-relaxed text-foreground">
                       {item.sentence.split(new RegExp(`(${item.target})`)).map((part, p) =>
                         part === item.target ? (
                           <strong
                             key={p}
-                            className="font-semibold text-ink-950 underline decoration-emerald-400 decoration-2 underline-offset-2"
+                            className="font-semibold text-foreground underline decoration-primary/60 decoration-2 underline-offset-2"
                           >
                             {part}
                           </strong>
@@ -529,9 +534,9 @@ export default function SynonymVocabularyPage() {
                       {item.options.map((opt, oi) => (
                         <li
                           key={opt}
-                          className="rounded-md bg-cream-100 px-3 py-2 text-sm text-ink-950/85 ring-1 ring-ink-950/5"
+                          className="rounded-md bg-muted px-3 py-2 text-sm text-muted-foreground border border-border/60"
                         >
-                          <span className="font-mono text-xs font-semibold text-emerald-700">
+                          <span className="font-mono text-xs font-semibold text-primary">
                             {String.fromCharCode(65 + oi)}
                           </span>{' '}
                           {opt}
@@ -539,11 +544,11 @@ export default function SynonymVocabularyPage() {
                       ))}
                     </ul>
                     <details className="text-sm">
-                      <summary className="cursor-pointer font-semibold text-emerald-700">
+                      <summary className="cursor-pointer font-semibold text-primary">
                         Answer &amp; reason
                       </summary>
-                      <p className="mt-2 leading-relaxed text-ink-950/85">
-                        <span className="font-semibold text-ink-950">{item.answer}</span> &mdash;{' '}
+                      <p className="mt-2 leading-relaxed text-muted-foreground">
+                        <span className="font-semibold text-foreground">{item.answer}</span> &mdash;{' '}
                         {item.rationale}
                       </p>
                     </details>
@@ -557,12 +562,12 @@ export default function SynonymVocabularyPage() {
         {/* Quick recap */}
         <section
           aria-labelledby="recap"
-          className="mb-12 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-6 ring-1 ring-ink-950/10 sm:p-8"
+          className="mb-12 rounded-lg border-l-4 border-primary/40 bg-card p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="recap" className="mb-3 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="recap" className="mb-3 font-heading text-2xl font-semibold text-foreground">
             Remember
           </h2>
-          <ul className="space-y-2 text-base leading-relaxed text-ink-950/85">
+          <ul className="space-y-2 text-base leading-relaxed text-muted-foreground">
             <li>Read the sentence; never judge the word alone.</li>
             <li>Predict your own replacement before reading the options.</li>
             <li>Substitute each option back into the sentence.</li>
@@ -571,7 +576,7 @@ export default function SynonymVocabularyPage() {
           </ul>
         </section>
 
-        <footer className="border-t border-ink-950/10 pt-6 text-xs leading-relaxed text-ink-950/55">
+        <footer className="border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           {SPEC_ATTRIBUTION}
         </footer>
       </main>

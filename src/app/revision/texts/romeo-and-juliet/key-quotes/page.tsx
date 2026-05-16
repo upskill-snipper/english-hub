@@ -39,28 +39,32 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'Romeo\'s stacked oxymorons reveal his love for Rosaline as a performance. The paradoxes cancel out, suggesting this "love" is empty and artificial. Shakespeare uses it as a foil for Romeo\'s later authentic passion for Juliet.',
       },
       {
-        quote: 'If I profane with my unworthiest hand / This holy shrine, the gentle sin is this: / My lips, two blushing pilgrims, ready stand / To smooth that rough touch with a tender kiss.',
+        quote:
+          'If I profane with my unworthiest hand / This holy shrine, the gentle sin is this: / My lips, two blushing pilgrims, ready stand / To smooth that rough touch with a tender kiss.',
         speaker: 'Romeo',
         act: 'Act 1, Scene 5',
         analysis:
-          'The shared sonnet elevates first meeting to sacred ritual. The pilgrim-and-saint conceit presents love as devotion and Juliet as divine. Both lovers participate equally, completing each other\'s lines -- Shakespeare shows mutual love in form as well as content.',
+          "The shared sonnet elevates first meeting to sacred ritual. The pilgrim-and-saint conceit presents love as devotion and Juliet as divine. Both lovers participate equally, completing each other's lines -- Shakespeare shows mutual love in form as well as content.",
       },
       {
-        quote: 'My bounty is as boundless as the sea, / My love as deep; the more I give to thee, / The more I have, for both are infinite.',
+        quote:
+          'My bounty is as boundless as the sea, / My love as deep; the more I give to thee, / The more I have, for both are infinite.',
         speaker: 'Juliet',
         act: 'Act 2, Scene 2',
         analysis:
           'Juliet redefines love as abundance. The sea metaphor suggests love beyond human control. "The more I give... the more I have" inverts economic logic: love grows through generosity, not acquisition.',
       },
       {
-        quote: 'Give me my Romeo; and when I shall die, / Take him and cut him out in little stars, / And he will make the face of heaven so fine / That all the world will be in love with night.',
+        quote:
+          'Give me my Romeo; and when I shall die, / Take him and cut him out in little stars, / And he will make the face of heaven so fine / That all the world will be in love with night.',
         speaker: 'Juliet',
         act: 'Act 3, Scene 2',
         analysis:
           'Juliet\'s epithalamium transforms Romeo into a cosmic image. "My Romeo" claims ownership against patriarchal convention. "Die" carries an Elizabethan double meaning (sexual climax), linking love, sex and death. The stars image foreshadows Romeo\'s association with fate and astrology.',
       },
       {
-        quote: 'These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume.',
+        quote:
+          'These violent delights have violent ends / And in their triumph die, like fire and powder, / Which as they kiss consume.',
         speaker: 'Friar Lawrence',
         act: 'Act 2, Scene 6',
         analysis:
@@ -73,35 +77,38 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     colour: 'bg-red-400',
     quotes: [
       {
-        quote: 'What, drawn and talk of peace? I hate the word, / As I hate hell, all Montagues, and thee.',
+        quote:
+          'What, drawn and talk of peace? I hate the word, / As I hate hell, all Montagues, and thee.',
         speaker: 'Tybalt',
         act: 'Act 1, Scene 1',
         analysis:
-          'Tybalt\'s opening line defines the feud as an active choice, not a passive inheritance. The triple escalation (hell, Montagues, Benvolio) intensifies hatred with each item. Even the concept of peace is repulsive to him.',
+          "Tybalt's opening line defines the feud as an active choice, not a passive inheritance. The triple escalation (hell, Montagues, Benvolio) intensifies hatred with each item. Even the concept of peace is repulsive to him.",
       },
       {
-        quote: 'A plague o\' both your houses! They have made worms\' meat of me.',
+        quote: "A plague o' both your houses! They have made worms' meat of me.",
         speaker: 'Mercutio',
         act: 'Act 3, Scene 1',
         analysis:
           'Mercutio\'s dying curse blames both families equally. "Worms\' meat" is brutally physical, reducing a vibrant life to decomposing flesh. The curse resonates as both prophecy and moral verdict through the rest of the play.',
       },
       {
-        quote: 'O, I am fortune\'s fool!',
+        quote: "O, I am fortune's fool!",
         speaker: 'Romeo',
         act: 'Act 3, Scene 1',
         analysis:
-          'After killing Tybalt, Romeo sees himself as fate\'s victim. But Shakespeare invites the audience to question whether the culture of masculine honour, not fortune, made violence his reflex response.',
+          "After killing Tybalt, Romeo sees himself as fate's victim. But Shakespeare invites the audience to question whether the culture of masculine honour, not fortune, made violence his reflex response.",
       },
       {
-        quote: 'Romeo, the love I bear thee can afford / No better term than this: thou art a villain.',
+        quote:
+          'Romeo, the love I bear thee can afford / No better term than this: thou art a villain.',
         speaker: 'Tybalt',
         act: 'Act 3, Scene 1',
         analysis:
           'Tybalt\'s formal challenge is devastating because Romeo now secretly loves him as family. "Villain" demands a response according to the honour code. Shakespeare shows how rigid social conventions make peace impossible even when individuals desire it.',
       },
       {
-        quote: 'If ever you disturb our streets again, / Your lives shall pay the forfeit of the peace.',
+        quote:
+          'If ever you disturb our streets again, / Your lives shall pay the forfeit of the peace.',
         speaker: 'Prince',
         act: 'Act 1, Scene 1',
         analysis:
@@ -114,14 +121,15 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     colour: 'bg-indigo-400',
     quotes: [
       {
-        quote: 'A pair of star-cross\'d lovers take their life.',
+        quote: "A pair of star-cross'd lovers take their life.",
         speaker: 'Chorus',
         act: 'Prologue',
         analysis:
           'The Prologue spoils the ending before the play begins. "Star-cross\'d" means opposed by the stars (fate). "Take their life" carries a double meaning: they live their lives and end them. Shakespeare shifts interest from outcome to causation.',
       },
       {
-        quote: 'I fear, too early; for my mind misgives / Some consequence yet hanging in the stars.',
+        quote:
+          'I fear, too early; for my mind misgives / Some consequence yet hanging in the stars.',
         speaker: 'Romeo',
         act: 'Act 1, Scene 4',
         analysis:
@@ -132,17 +140,18 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         speaker: 'Romeo',
         act: 'Act 5, Scene 1',
         analysis:
-          'Romeo\'s defiance of fate is his most tragic moment. By trying to master his destiny through suicide, he ironically fulfils it. The brevity conveys explosive emotion. Free will and fate collapse into the same act.',
+          "Romeo's defiance of fate is his most tragic moment. By trying to master his destiny through suicide, he ironically fulfils it. The brevity conveys explosive emotion. Free will and fate collapse into the same act.",
       },
       {
-        quote: 'O, I am fortune\'s fool!',
+        quote: "O, I am fortune's fool!",
         speaker: 'Romeo',
         act: 'Act 3, Scene 1',
         analysis:
           'Romeo casts himself as fate\'s plaything after killing Tybalt. "Fortune\'s fool" alliterates for emphasis. The line can be read as genuine victimhood or self-excusing evasion -- Shakespeare leaves the ambiguity open.',
       },
       {
-        quote: 'My only love sprung from my only hate! / Too early seen unknown, and known too late!',
+        quote:
+          'My only love sprung from my only hate! / Too early seen unknown, and known too late!',
         speaker: 'Juliet',
         act: 'Act 1, Scene 5',
         analysis:
@@ -155,7 +164,8 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     colour: 'bg-amber-400',
     quotes: [
       {
-        quote: 'What\'s in a name? That which we call a rose / By any other word would smell as sweet.',
+        quote:
+          "What's in a name? That which we call a rose / By any other word would smell as sweet.",
         speaker: 'Juliet',
         act: 'Act 2, Scene 2',
         analysis:
@@ -169,14 +179,16 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'Capulet\'s violent language reduces Juliet to disposable property. "Baggage" and "wretch" dehumanise her. The scene exposes how patriarchal authority operates through emotional and verbal violence before physical force.',
       },
       {
-        quote: 'My will to her consent is but a part; / An she agree, within her scope of choice / Lies my consent.',
+        quote:
+          'My will to her consent is but a part; / An she agree, within her scope of choice / Lies my consent.',
         speaker: 'Lord Capulet',
         act: 'Act 1, Scene 2',
         analysis:
           'Capulet appears progressive, claiming Juliet should consent. But "scope of choice" sets boundaries he defines. The contrast with his later tyranny reveals how patriarchal benevolence is conditional on obedience.',
       },
       {
-        quote: 'Talk not to me, for I\'ll not speak a word. / Do as thou wilt, for I have done with thee.',
+        quote:
+          "Talk not to me, for I'll not speak a word. / Do as thou wilt, for I have done with thee.",
         speaker: 'Lady Capulet',
         act: 'Act 3, Scene 5',
         analysis:
@@ -189,14 +201,16 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     colour: 'bg-sky-400',
     quotes: [
       {
-        quote: 'But soft, what light through yonder window breaks? / It is the east, and Juliet is the sun.',
+        quote:
+          'But soft, what light through yonder window breaks? / It is the east, and Juliet is the sun.',
         speaker: 'Romeo',
         act: 'Act 2, Scene 2',
         analysis:
-          'Romeo transforms Juliet into a cosmic force. The sun dispels darkness and brings life but also blinds. The metaphor elevates Juliet above the ordinary world while foreshadowing love\'s destructive intensity.',
+          "Romeo transforms Juliet into a cosmic force. The sun dispels darkness and brings life but also blinds. The metaphor elevates Juliet above the ordinary world while foreshadowing love's destructive intensity.",
       },
       {
-        quote: 'O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / Like a rich jewel in an Ethiop\'s ear.',
+        quote:
+          "O, she doth teach the torches to burn bright! / It seems she hangs upon the cheek of night / Like a rich jewel in an Ethiop's ear.",
         speaker: 'Romeo',
         act: 'Act 1, Scene 5',
         analysis:
@@ -210,7 +224,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'As dawn forces Romeo to leave, Juliet recognises daylight as the enemy. The chiastic structure mirrors the inverse relationship between physical light and emotional darkness. The entire light-dark motif crystallises in one line.',
       },
       {
-        quote: 'Come, gentle night; come, loving, black-brow\'d night, / Give me my Romeo.',
+        quote: "Come, gentle night; come, loving, black-brow'd night, / Give me my Romeo.",
         speaker: 'Juliet',
         act: 'Act 3, Scene 2',
         analysis:
@@ -223,7 +237,8 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
     colour: 'bg-purple-400',
     quotes: [
       {
-        quote: 'Here\'s to my love! O true apothecary, / Thy drugs are quick. Thus with a kiss I die.',
+        quote:
+          "Here's to my love! O true apothecary, / Thy drugs are quick. Thus with a kiss I die.",
         speaker: 'Romeo',
         act: 'Act 5, Scene 3',
         analysis:
@@ -237,7 +252,8 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
           'Juliet\'s final words are brief and decisive. "Happy dagger" personifies the weapon as willing. The sexual innuendo of "sheath" links death to consummation. Her suicide is an act of agency in a life controlled by others.',
       },
       {
-        quote: 'Death, that hath suck\'d the honey of thy breath, / Hath had no power yet upon thy beauty.',
+        quote:
+          "Death, that hath suck'd the honey of thy breath, / Hath had no power yet upon thy beauty.",
         speaker: 'Romeo',
         act: 'Act 5, Scene 3',
         analysis:
@@ -248,7 +264,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         speaker: 'Lord Capulet',
         act: 'Act 4, Scene 5',
         analysis:
-          'Capulet personifies Death as family, replacing the future he planned for Juliet. The repetition hammers home consequences. By trying to control Juliet\'s marriage, he has given her to the one bridegroom he cannot defeat.',
+          "Capulet personifies Death as family, replacing the future he planned for Juliet. The repetition hammers home consequences. By trying to control Juliet's marriage, he has given her to the one bridegroom he cannot defeat.",
       },
       {
         quote: 'For never was a story of more woe / Than this of Juliet and her Romeo.',
@@ -262,7 +278,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
         speaker: 'Prince',
         act: 'Act 5, Scene 3',
         analysis:
-          'Three words that refuse a comfortable ending. No one is innocent; no one escapes consequences. Shakespeare distributes guilt across the entire community and prevents the audience from finding consolation in the patriarchs\' reconciliation.',
+          "Three words that refuse a comfortable ending. No one is innocent; no one escapes consequences. Shakespeare distributes guilt across the entire community and prevents the audience from finding consolation in the patriarchs' reconciliation.",
       },
     ],
   },
@@ -272,14 +288,20 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
 
 export default function RomeoAndJulietKeyQuotesPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Romeo and Juliet", url: "https://theenglishhub.app/revision/texts/romeo-and-juliet" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/romeo-and-juliet/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          {
+            name: 'Romeo and Juliet',
+            url: 'https://theenglishhub.app/revision/texts/romeo-and-juliet',
+          },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/revision/texts/romeo-and-juliet/key-quotes',
+          },
         ]}
       />
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
@@ -317,8 +339,8 @@ export default function RomeoAndJulietKeyQuotesPage() {
               Romeo and Juliet by William Shakespeare
             </p>
             <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
-              Every quotation you need for the exam, organised by theme with detailed
-              analysis. All from the public-domain text.
+              Every quotation you need for the exam, organised by theme with detailed analysis. All
+              from the public-domain text.
             </p>
           </div>
         </section>
@@ -347,15 +369,10 @@ export default function RomeoAndJulietKeyQuotesPage() {
         {/* Quotes by theme */}
         <div className="mt-10 space-y-10">
           {QUOTES_BY_THEME.map((section) => (
-            <section
-              key={section.theme}
-              id={section.theme.toLowerCase().replace(/\s+/g, '-')}
-            >
+            <section key={section.theme} id={section.theme.toLowerCase().replace(/\s+/g, '-')}>
               <div className="mb-5 flex items-center gap-3">
                 <span className={`block size-3 rounded-full ${section.colour}`} />
-                <h2 className="text-heading-lg font-heading text-foreground">
-                  {section.theme}
-                </h2>
+                <h2 className="text-heading-lg font-heading text-foreground">{section.theme}</h2>
                 <Badge variant="outline" className="text-muted-foreground">
                   {section.quotes.length} quotes
                 </Badge>
@@ -386,8 +403,8 @@ export default function RomeoAndJulietKeyQuotesPage() {
 
         {/* Footer */}
         <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
-          <em>Romeo and Juliet</em> (c. 1594-96) by William Shakespeare is in the
-          public domain. All quotations are reproduced freely.
+          <em>Romeo and Juliet</em> (c. 1594-96) by William Shakespeare is in the public domain. All
+          quotations are reproduced freely.
         </p>
       </div>
     </div>

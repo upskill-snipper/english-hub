@@ -37,7 +37,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         speaker: 'The Witches',
         actScene: 'Act 1, Scene 1',
         analysis:
-          'The play\'s opening paradox establishes moral inversion as the governing principle. The chiasmus (reversed grammatical structure) mirrors the topsy-turvy world the witches inhabit and foreshadows the deception and equivocation that drives the entire plot.',
+          "The play's opening paradox establishes moral inversion as the governing principle. The chiasmus (reversed grammatical structure) mirrors the topsy-turvy world the witches inhabit and foreshadows the deception and equivocation that drives the entire plot.",
         themes: ['Appearance vs Reality', 'Supernatural & Fate'],
       },
       {
@@ -45,15 +45,16 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         speaker: 'Macbeth',
         actScene: 'Act 1, Scene 3',
         analysis:
-          'Macbeth\'s first words in the play unconsciously echo the witches\' chant. Before he even meets them, his language is aligned with theirs, suggesting a pre-existing connection to darkness and moral ambiguity.',
+          "Macbeth's first words in the play unconsciously echo the witches' chant. Before he even meets them, his language is aligned with theirs, suggesting a pre-existing connection to darkness and moral ambiguity.",
         themes: ['Supernatural & Fate', 'Appearance vs Reality'],
       },
       {
-        quote: 'The instruments of darkness tell us truths, / Win us with honest trifles, to betray\'s / In deepest consequence.',
+        quote:
+          "The instruments of darkness tell us truths, / Win us with honest trifles, to betray's / In deepest consequence.",
         speaker: 'Banquo',
         actScene: 'Act 1, Scene 3',
         analysis:
-          'Banquo recognises the witches\' strategy: small verifiable truths build trust before the truly destructive prophecy. This demonstrates Banquo\'s moral clarity and serves as a warning Macbeth tragically ignores.',
+          "Banquo recognises the witches' strategy: small verifiable truths build trust before the truly destructive prophecy. This demonstrates Banquo's moral clarity and serves as a warning Macbeth tragically ignores.",
         themes: ['Supernatural & Fate', 'Appearance vs Reality', 'Loyalty & Betrayal'],
       },
       {
@@ -65,15 +66,15 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Ambition', 'Appearance vs Reality'],
       },
       {
-        quote: 'There\'s no art / To find the mind\'s construction in the face.',
+        quote: "There's no art / To find the mind's construction in the face.",
         speaker: 'King Duncan',
         actScene: 'Act 1, Scene 4',
         analysis:
-          'Duncan observes that appearances deceive at the exact moment he places trust in Macbeth. The dramatic irony is devastating: he has learned nothing from the previous Cawdor\'s betrayal.',
+          "Duncan observes that appearances deceive at the exact moment he places trust in Macbeth. The dramatic irony is devastating: he has learned nothing from the previous Cawdor's betrayal.",
         themes: ['Appearance vs Reality', 'Loyalty & Betrayal', 'Kingship & Tyranny'],
       },
       {
-        quote: 'Yet do I fear thy nature; / It is too full o\' th\' milk of human kindness.',
+        quote: "Yet do I fear thy nature; / It is too full o' th' milk of human kindness.",
         speaker: 'Lady Macbeth',
         actScene: 'Act 1, Scene 5',
         analysis:
@@ -81,7 +82,8 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Masculinity & Power', 'Ambition'],
       },
       {
-        quote: 'Unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty.',
+        quote:
+          'Unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty.',
         speaker: 'Lady Macbeth',
         actScene: 'Act 1, Scene 5',
         analysis:
@@ -89,15 +91,16 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Masculinity & Power', 'Supernatural & Fate', 'Nature & the Unnatural'],
       },
       {
-        quote: 'Look like th\' innocent flower, / But be the serpent under\'t.',
+        quote: "Look like th' innocent flower, / But be the serpent under't.",
         speaker: 'Lady Macbeth',
         actScene: 'Act 1, Scene 5',
         analysis:
-          'The biblical serpent allusion casts the Macbeths as agents of the devil. This compact instruction encapsulates the entire play\'s central theme of deception beneath a composed surface.',
+          "The biblical serpent allusion casts the Macbeths as agents of the devil. This compact instruction encapsulates the entire play's central theme of deception beneath a composed surface.",
         themes: ['Appearance vs Reality', 'Loyalty & Betrayal'],
       },
       {
-        quote: 'I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o\'erleaps itself / And falls on the other.',
+        quote:
+          "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on the other.",
         speaker: 'Macbeth',
         actScene: 'Act 1, Scene 7',
         analysis:
@@ -105,11 +108,12 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Ambition'],
       },
       {
-        quote: 'When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man.',
+        quote:
+          'When you durst do it, then you were a man; / And to be more than what you were, you would / Be so much more the man.',
         speaker: 'Lady Macbeth',
         actScene: 'Act 1, Scene 7',
         analysis:
-          'Lady Macbeth redefines masculinity as willingness to commit violence, shaming Macbeth into murder. This weaponisation of gender expectations is central to the play\'s exploration of toxic masculinity.',
+          "Lady Macbeth redefines masculinity as willingness to commit violence, shaming Macbeth into murder. This weaponisation of gender expectations is central to the play's exploration of toxic masculinity.",
         themes: ['Masculinity & Power', 'Ambition'],
       },
       {
@@ -140,11 +144,11 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         speaker: 'Macbeth',
         actScene: 'Act 2, Scene 1',
         analysis:
-          'The hallucinated dagger dramatises Macbeth\'s psychological conflict. Its handle points toward him, suggesting temptation offering itself willingly. The ambiguity -- supernatural omen or guilty projection? -- mirrors the play\'s central uncertainty.',
+          "The hallucinated dagger dramatises Macbeth's psychological conflict. Its handle points toward him, suggesting temptation offering itself willingly. The ambiguity -- supernatural omen or guilty projection? -- mirrors the play's central uncertainty.",
         themes: ['Supernatural & Fate', 'Guilt & Conscience'],
       },
       {
-        quote: 'Will all great Neptune\'s ocean wash this blood / Clean from my hand?',
+        quote: "Will all great Neptune's ocean wash this blood / Clean from my hand?",
         speaker: 'Macbeth',
         actScene: 'Act 2, Scene 2',
         analysis:
@@ -156,11 +160,12 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         speaker: 'Lady Macbeth',
         actScene: 'Act 2, Scene 2',
         analysis:
-          'Her casual dismissal of guilt will be reversed in the sleepwalking scene. The contrast between this confidence and her later despair is one of the play\'s most powerful dramatic ironies.',
+          "Her casual dismissal of guilt will be reversed in the sleepwalking scene. The contrast between this confidence and her later despair is one of the play's most powerful dramatic ironies.",
         themes: ['Guilt & Conscience', 'Appearance vs Reality'],
       },
       {
-        quote: 'Macbeth does murder sleep -- the innocent sleep, / Sleep that knits up the ravell\'d sleave of care.',
+        quote:
+          "Macbeth does murder sleep -- the innocent sleep, / Sleep that knits up the ravell'd sleave of care.",
         speaker: 'Macbeth',
         actScene: 'Act 2, Scene 2',
         analysis:
@@ -172,7 +177,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         speaker: 'Macbeth',
         actScene: 'Act 2, Scene 3',
         analysis:
-          'Macbeth performs grief but speaks literal truth: his life after Duncan\'s murder is indeed cursed. The dramatic irony transforms a public performance into an unconscious confession.',
+          "Macbeth performs grief but speaks literal truth: his life after Duncan's murder is indeed cursed. The dramatic irony transforms a public performance into an unconscious confession.",
         themes: ['Appearance vs Reality', 'Guilt & Conscience'],
       },
     ],
@@ -183,7 +188,8 @@ const QUOTES_BY_ACT: ActQuotes[] = [
     colour: 'bg-amber-400',
     quotes: [
       {
-        quote: 'Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play\'dst most foully for\'t.',
+        quote:
+          "Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for't.",
         speaker: 'Banquo',
         actScene: 'Act 3, Scene 1',
         analysis:
@@ -191,7 +197,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Loyalty & Betrayal', 'Appearance vs Reality'],
       },
       {
-        quote: 'Nought\'s had, all\'s spent, / Where our desire is got without content.',
+        quote: "Nought's had, all's spent, / Where our desire is got without content.",
         speaker: 'Lady Macbeth',
         actScene: 'Act 3, Scene 2',
         analysis:
@@ -207,7 +213,8 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Guilt & Conscience', 'Violence & Blood'],
       },
       {
-        quote: 'I am in blood / Stepp\'d in so far that, should I wade no more, / Returning were as tedious as go o\'er.',
+        quote:
+          "I am in blood / Stepp'd in so far that, should I wade no more, / Returning were as tedious as go o'er.",
         speaker: 'Macbeth',
         actScene: 'Act 3, Scene 4',
         analysis:
@@ -250,7 +257,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         speaker: 'Malcolm',
         actScene: 'Act 4, Scene 3',
         analysis:
-          'Malcolm provides a checklist of royal virtues against which Macbeth\'s rule fails on every count. This speech defines Shakespeare\'s ideal of legitimate, virtuous monarchy.',
+          "Malcolm provides a checklist of royal virtues against which Macbeth's rule fails on every count. This speech defines Shakespeare's ideal of legitimate, virtuous monarchy.",
         themes: ['Kingship & Tyranny'],
       },
       {
@@ -258,7 +265,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         speaker: 'Macduff',
         actScene: 'Act 4, Scene 3',
         analysis:
-          'Macduff insists that genuine masculinity includes emotional depth and grief. This directly challenges Lady Macbeth\'s reductive definition and provides the play\'s most positive model of manhood.',
+          "Macduff insists that genuine masculinity includes emotional depth and grief. This directly challenges Lady Macbeth's reductive definition and provides the play's most positive model of manhood.",
         themes: ['Masculinity & Power'],
       },
       {
@@ -285,7 +292,8 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Guilt & Conscience', 'Violence & Blood'],
       },
       {
-        quote: 'Here\'s the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand.',
+        quote:
+          "Here's the smell of the blood still. All the perfumes of Arabia will not sweeten this little hand.",
         speaker: 'Lady Macbeth',
         actScene: 'Act 5, Scene 1',
         analysis:
@@ -293,7 +301,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Guilt & Conscience', 'Violence & Blood', 'Masculinity & Power'],
       },
       {
-        quote: 'What, will these hands ne\'er be clean?',
+        quote: "What, will these hands ne'er be clean?",
         speaker: 'Lady Macbeth',
         actScene: 'Act 5, Scene 1',
         analysis:
@@ -301,7 +309,8 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Guilt & Conscience', 'Violence & Blood'],
       },
       {
-        quote: 'Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day / To the last syllable of recorded time.',
+        quote:
+          'Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day / To the last syllable of recorded time.',
         speaker: 'Macbeth',
         actScene: 'Act 5, Scene 5',
         analysis:
@@ -309,7 +318,8 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Ambition', 'Guilt & Conscience'],
       },
       {
-        quote: 'Life\'s but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more.',
+        quote:
+          "Life's but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more.",
         speaker: 'Macbeth',
         actScene: 'Act 5, Scene 5',
         analysis:
@@ -325,7 +335,7 @@ const QUOTES_BY_ACT: ActQuotes[] = [
         themes: ['Ambition'],
       },
       {
-        quote: 'Macduff was from his mother\'s womb / Untimely ripp\'d.',
+        quote: "Macduff was from his mother's womb / Untimely ripp'd.",
         speaker: 'Macduff',
         actScene: 'Act 5, Scene 8',
         analysis:
@@ -340,14 +350,17 @@ const QUOTES_BY_ACT: ActQuotes[] = [
 
 export default function MacbethKeyQuotesPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://theenglishhub.app" },
-          { name: "Revision", url: "https://theenglishhub.app/revision" },
-          { name: "Set Texts", url: "https://theenglishhub.app/revision/texts" },
-          { name: "Macbeth", url: "https://theenglishhub.app/revision/texts/macbeth" },
-          { name: "Key Quotations", url: "https://theenglishhub.app/revision/texts/macbeth/key-quotes" },
+          { name: 'Home', url: 'https://theenglishhub.app' },
+          { name: 'Revision', url: 'https://theenglishhub.app/revision' },
+          { name: 'Set Texts', url: 'https://theenglishhub.app/revision/texts' },
+          { name: 'Macbeth', url: 'https://theenglishhub.app/revision/texts/macbeth' },
+          {
+            name: 'Key Quotations',
+            url: 'https://theenglishhub.app/revision/texts/macbeth/key-quotes',
+          },
         ]}
       />
       <div className="mx-auto max-w-4xl space-y-10 px-4 py-8 sm:px-6 lg:px-8">
@@ -357,28 +370,42 @@ export default function MacbethKeyQuotesPage() {
         <section className="relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-amber-500/[0.04] p-6 sm:p-8 lg:p-10">
           <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-amber-500/5 blur-3xl" />
           <div className="relative">
-            <Button variant="ghost" size="sm" className="mb-4 -ml-2 text-muted-foreground" render={<Link href="/revision/texts/macbeth" />}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="mb-4 -ml-2 text-muted-foreground"
+              render={<Link href="/revision/texts/macbeth" />}
+            >
               <ArrowLeft className="size-3.5" />
               Back to Macbeth overview
             </Button>
             <div className="mb-4 flex flex-wrap items-center gap-2">
-              <Badge variant="secondary"><Quote className="mr-1 size-3 text-clay-600" />Key Quotes Bank</Badge>
+              <Badge variant="secondary">
+                <Quote className="mr-1 size-3 text-clay-700 dark:text-clay-300" />
+                Key Quotes Bank
+              </Badge>
               <Badge variant="outline">30 quotes</Badge>
             </div>
-            <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">Macbeth — Key Quotes</h1>
+            <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+              Macbeth — Key Quotes
+            </h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Thirty essential Macbeth quotations organised by act with detailed language analysis, speaker context, and thematic links for GCSE and IGCSE English Literature.
+              Thirty essential Macbeth quotations organised by act with detailed language analysis,
+              speaker context, and thematic links for GCSE and IGCSE English Literature.
             </p>
           </div>
         </section>
 
         {/* Exam tip */}
         <div className="rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
-          <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-600 dark:text-clay-600">
+          <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-700 dark:text-amber-300">
             <Lightbulb className="size-4" /> How to Use These Quotes
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            You do not need to memorise every quote -- aim for 10-15 that you can analyse in depth. Choose quotes that work for multiple themes and characters so each one earns maximum marks. For each quote, practise identifying the technique, explaining its effect, and linking it to context.
+            You do not need to memorise every quote -- aim for 10-15 that you can analyse in depth.
+            Choose quotes that work for multiple themes and characters so each one earns maximum
+            marks. For each quote, practise identifying the technique, explaining its effect, and
+            linking it to context.
           </p>
         </div>
 
@@ -405,7 +432,9 @@ export default function MacbethKeyQuotesPage() {
                   </p>
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {q.themes.map((t) => (
-                      <Badge key={t} variant="outline" className="text-xs">{t}</Badge>
+                      <Badge key={t} variant="outline" className="text-xs">
+                        {t}
+                      </Badge>
                     ))}
                   </div>
                 </div>

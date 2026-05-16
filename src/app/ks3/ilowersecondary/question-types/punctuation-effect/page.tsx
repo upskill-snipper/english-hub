@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { QUESTION_TYPES, ASSESSMENT_OBJECTIVES, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
@@ -208,37 +208,37 @@ export default function PunctuationEffectPage() {
 
       <article className="mx-auto my-12 max-w-3xl px-4">
         <header className="mb-10">
-          <nav aria-label="Breadcrumb" className="mb-4 text-xs text-ink-950/60">
+          <nav aria-label="Breadcrumb" className="mb-4 text-xs text-muted-foreground">
             <ol className="flex flex-wrap items-center gap-1.5">
               <li>
-                <Link href="/ks3" className="hover:text-emerald-700">
+                <Link href="/ks3" className="hover:text-primary">
                   KS3
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/ks3/ilowersecondary" className="hover:text-emerald-700">
+                <Link href="/ks3/ilowersecondary" className="hover:text-primary">
                   iLowerSecondary English
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/ks3/ilowersecondary/question-types" className="hover:text-emerald-700">
+                <Link href="/ks3/ilowersecondary/question-types" className="hover:text-primary">
                   Question types
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="font-semibold text-ink-950/80">Punctuation effect</li>
+              <li className="font-semibold text-muted-foreground">Punctuation effect</li>
             </ol>
           </nav>
 
-          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
             Question masterclass
           </p>
-          <h1 className="mb-4 font-serif text-3xl font-semibold text-ink-950 sm:text-4xl">
+          <h1 className="mb-4 font-heading text-3xl font-semibold text-foreground sm:text-4xl">
             {PUNCTUATION_TYPE.name}
           </h1>
-          <p className="text-base leading-relaxed text-ink-950/85">
+          <p className="text-base leading-relaxed text-muted-foreground">
             This is a short open-response reading question worth {PUNCTUATION_TYPE.typicalMarks}{' '}
             marks. It assesses {RAO3.code}: {RAO3.descriptor.toLowerCase()} The examiner is not
             asking you to spot the mark &mdash; you can already see it &mdash; but to explain what
@@ -248,37 +248,40 @@ export default function PunctuationEffectPage() {
 
         <section
           aria-labelledby="how-marks-work"
-          className="mb-10 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-10 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="how-marks-work" className="mb-3 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="how-marks-work"
+            className="mb-3 font-heading text-2xl font-semibold text-foreground"
+          >
             How the two marks are awarded
           </h2>
-          <p className="mb-4 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             The mark scheme splits the {PUNCTUATION_TYPE.typicalMarks} marks cleanly.{' '}
             {PUNCTUATION_TYPE.howToAnswer}
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-md bg-cream-50 p-4 ring-1 ring-ink-950/10">
-              <p className="mb-1 font-mono text-xs font-semibold text-emerald-700">
+            <div className="rounded-md bg-card p-4 border border-border/60">
+              <p className="mb-1 font-mono text-xs font-semibold text-primary">
                 Mark 1 &mdash; name the effect
               </p>
-              <p className="text-sm leading-relaxed text-ink-950/80">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 State what kind of effect the punctuation mark has, using clear terminology &mdash;
                 for example, that an exclamation mark adds emphasis, or that a dash creates a
                 dramatic pause.
               </p>
             </div>
-            <div className="rounded-md bg-cream-50 p-4 ring-1 ring-ink-950/10">
-              <p className="mb-1 font-mono text-xs font-semibold text-emerald-700">
+            <div className="rounded-md bg-card p-4 border border-border/60">
+              <p className="mb-1 font-mono text-xs font-semibold text-primary">
                 Mark 2 &mdash; explain it from the text
               </p>
-              <p className="text-sm leading-relaxed text-ink-950/80">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 Link that effect to the actual content of the extract. Refer to what is being
                 described and explain why the mark suits that moment for the reader.
               </p>
             </div>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-ink-950/75">
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             A common reason for losing a mark is naming the effect but never connecting it to the
             text, or describing the content without ever naming what the punctuation actually does.
             You need both halves.
@@ -288,35 +291,34 @@ export default function PunctuationEffectPage() {
         <section aria-labelledby="effects-reference" className="mb-12">
           <h2
             id="effects-reference"
-            className="mb-2 font-serif text-2xl font-semibold text-ink-950"
+            className="mb-2 font-heading text-2xl font-semibold text-foreground"
           >
             Effects reference
           </h2>
-          <p className="mb-6 text-sm leading-relaxed text-ink-950/75">
+          <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
             Use this as a memory aid for Mark 1. Every example sentence below is original. Learn the
             effect words first, then practise writing the explanation in your own words.
           </p>
           <div className="space-y-4">
             {EFFECTS_REFERENCE.map((entry) => (
-              <div key={entry.mark} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
+              <div key={entry.mark} className="rounded-lg bg-card p-5 border border-border/60">
                 <div className="mb-2 flex items-baseline gap-3">
-                  <span
-                    aria-hidden="true"
-                    className="font-mono text-xl font-semibold text-emerald-700"
-                  >
+                  <span aria-hidden="true" className="font-mono text-xl font-semibold text-primary">
                     {entry.glyph}
                   </span>
-                  <h3 className="font-serif text-lg font-semibold text-ink-950">{entry.mark}</h3>
+                  <h3 className="font-heading text-lg font-semibold text-foreground">
+                    {entry.mark}
+                  </h3>
                 </div>
-                <p className="mb-2 text-sm text-ink-950/80">
-                  <span className="font-semibold text-ink-950">Common effects: </span>
+                <p className="mb-2 text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">Common effects: </span>
                   {entry.effects.join('; ')}.
                 </p>
-                <p className="mb-2 font-serif text-base italic leading-snug text-ink-950">
+                <p className="mb-2 font-heading text-base italic leading-snug text-foreground">
                   &ldquo;{entry.example}&rdquo;
                 </p>
-                <p className="text-sm leading-relaxed text-ink-950/85">
-                  <span className="font-semibold text-ink-950">Effect: </span>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  <span className="font-semibold text-foreground">Effect: </span>
                   {entry.effectNote}
                 </p>
               </div>
@@ -325,27 +327,28 @@ export default function PunctuationEffectPage() {
         </section>
 
         <section aria-labelledby="worked-examples" className="mb-12">
-          <h2 id="worked-examples" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="worked-examples"
+            className="mb-2 font-heading text-2xl font-semibold text-foreground"
+          >
             Worked extracts and {PUNCTUATION_TYPE.typicalMarks}-mark model answers
           </h2>
-          <p className="mb-6 text-sm leading-relaxed text-ink-950/75">
+          <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
             Each extract below is an original short passage. Read the extract, attempt the question
             yourself, then check your response against the model answer, which is split into the two
             separate marks.
           </p>
           <ol className="space-y-6">
             {WORKED_EXAMPLES.map((ex, i) => (
-              <li key={ex.id} className="rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5">
-                <p className="mb-3 font-mono text-xs font-semibold text-emerald-700">
-                  Extract {i + 1}
-                </p>
-                <p className="mb-4 border-l-4 border-emerald-400 pl-4 font-serif text-base italic leading-relaxed text-ink-950">
+              <li key={ex.id} className="rounded-lg bg-muted p-6 border border-border/60">
+                <p className="mb-3 font-mono text-xs font-semibold text-primary">Extract {i + 1}</p>
+                <p className="mb-4 border-l-4 border-primary/40 pl-4 font-heading text-base italic leading-relaxed text-foreground">
                   {ex.extract}
                 </p>
-                <p className="mb-4 text-sm font-semibold text-ink-950">{ex.question}</p>
-                <div className="space-y-3 rounded-md bg-cream-50 p-4 ring-1 ring-ink-950/10">
-                  <p className="text-sm leading-relaxed text-ink-950/85">{ex.mark1}</p>
-                  <p className="text-sm leading-relaxed text-ink-950/85">{ex.mark2}</p>
+                <p className="mb-4 text-sm font-semibold text-foreground">{ex.question}</p>
+                <div className="space-y-3 rounded-md bg-card p-4 border border-border/60">
+                  <p className="text-sm leading-relaxed text-muted-foreground">{ex.mark1}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{ex.mark2}</p>
                 </div>
               </li>
             ))}
@@ -354,51 +357,51 @@ export default function PunctuationEffectPage() {
 
         <section
           aria-labelledby="tick-table"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="tick-table" className="mb-3 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="tick-table" className="mb-3 font-heading text-2xl font-semibold text-foreground">
             Related question: {TICK_TABLE_TYPE.name}
           </h2>
-          <p className="mb-4 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             The same punctuation knowledge is tested in a closed {TICK_TABLE_TYPE.typicalMarks}-mark
             question that also assesses {RAO3.code}. {TICK_TABLE_TYPE.format}{' '}
             {TICK_TABLE_TYPE.howToAnswer}
           </p>
-          <div className="overflow-x-auto rounded-md ring-1 ring-ink-950/10">
+          <div className="overflow-x-auto rounded-md border border-border/60">
             <table className="w-full border-collapse text-sm">
               <caption className="sr-only">
                 Worked example of a feature-tick table comparing two original texts
               </caption>
               <thead>
-                <tr className="bg-cream-50 text-left">
-                  <th scope="col" className="p-3 font-semibold text-ink-950">
+                <tr className="bg-card text-left">
+                  <th scope="col" className="p-3 font-semibold text-foreground">
                     Feature
                   </th>
-                  <th scope="col" className="p-3 font-semibold text-ink-950">
+                  <th scope="col" className="p-3 font-semibold text-foreground">
                     Text 1
                   </th>
-                  <th scope="col" className="p-3 font-semibold text-ink-950">
+                  <th scope="col" className="p-3 font-semibold text-foreground">
                     Text 2
                   </th>
-                  <th scope="col" className="p-3 font-semibold text-ink-950">
+                  <th scope="col" className="p-3 font-semibold text-foreground">
                     Both texts
                   </th>
                 </tr>
               </thead>
-              <tbody className="text-ink-950/85">
-                <tr className="border-t border-ink-950/10">
+              <tbody className="text-muted-foreground">
+                <tr className="border-t border-border/60">
                   <td className="p-3">Uses a rhetorical question to address the reader</td>
                   <td className="p-3">&#10003;</td>
                   <td className="p-3"></td>
                   <td className="p-3"></td>
                 </tr>
-                <tr className="border-t border-ink-950/10">
+                <tr className="border-t border-border/60">
                   <td className="p-3">Uses an apostrophe to show possession</td>
                   <td className="p-3"></td>
                   <td className="p-3"></td>
                   <td className="p-3">&#10003;</td>
                 </tr>
-                <tr className="border-t border-ink-950/10">
+                <tr className="border-t border-border/60">
                   <td className="p-3">Uses a dash to add extra information</td>
                   <td className="p-3"></td>
                   <td className="p-3">&#10003;</td>
@@ -407,7 +410,7 @@ export default function PunctuationEffectPage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-ink-950/75">
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Work one row at a time and check both texts before you tick. &ldquo;Both texts&rdquo;
             only counts if the feature genuinely appears in each. Because partial credit is usually
             available, never leave a row blank &mdash; an informed choice can still earn a mark.
@@ -415,33 +418,33 @@ export default function PunctuationEffectPage() {
         </section>
 
         <section aria-labelledby="exam-tips" className="mb-12">
-          <h2 id="exam-tips" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="exam-tips" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Quick checklist before you move on
           </h2>
-          <ul className="space-y-3 text-sm leading-relaxed text-ink-950/85">
+          <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
             <li className="flex gap-3">
-              <span aria-hidden="true" className="text-emerald-700">
+              <span aria-hidden="true" className="text-primary">
                 &#10003;
               </span>
               Have I named the effect with clear terminology (emphasis, pause, suspense, possession
               and so on)?
             </li>
             <li className="flex gap-3">
-              <span aria-hidden="true" className="text-emerald-700">
+              <span aria-hidden="true" className="text-primary">
                 &#10003;
               </span>
               Have I tied that effect to what the extract is actually describing, not just to the
               mark in general?
             </li>
             <li className="flex gap-3">
-              <span aria-hidden="true" className="text-emerald-700">
+              <span aria-hidden="true" className="text-primary">
                 &#10003;
               </span>
               Have I mentioned the reader &mdash; what the punctuation makes them feel, expect or
               do?
             </li>
             <li className="flex gap-3">
-              <span aria-hidden="true" className="text-emerald-700">
+              <span aria-hidden="true" className="text-primary">
                 &#10003;
               </span>
               Is my answer concise? This is a short-response question; two clear sentences are
@@ -450,7 +453,7 @@ export default function PunctuationEffectPage() {
           </ul>
         </section>
 
-        <footer className="mt-12 border-t border-ink-950/10 pt-6 text-xs leading-relaxed text-ink-950/55">
+        <footer className="mt-12 border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           <p>{SPEC_ATTRIBUTION}</p>
           <p className="mt-3">
             This page is provided for educational instruction and criticism under fair dealing. All

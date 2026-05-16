@@ -457,7 +457,7 @@ const THEMES: ThemeStudy[] = [
 
 export default function ThemesPage() {
   return (
-    <div className="min-h-screen bg-cream-50 font-serif">
+    <div className="min-h-screen bg-background font-heading">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -478,42 +478,42 @@ export default function ThemesPage() {
         <StudyTools textName="An Inspector Calls" textType="play" />
 
         {/* Hero */}
-        <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-teal-300/[0.06] p-6 sm:p-8 lg:p-10">
+        <section className="mt-8 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.06] p-6 sm:p-8 lg:p-10">
           <Link
             href="/revision/texts/an-inspector-calls"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
+            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700 dark:text-teal-300 dark:hover:text-teal-200"
           >
             <ArrowLeft className="size-3.5" />
             Back to An Inspector Calls
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
+            <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
               <BookOpen className="size-3" />
               Theme Analysis
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-clay-300/30 px-3 py-1 text-xs text-clay-600">
+            <span className="inline-flex items-center gap-1 rounded-full border border-clay-500/30 px-3 py-1 text-xs text-clay-700 dark:text-clay-300">
               <Sparkles className="size-3" />
               AQA / Edexcel / OCR / Eduqas
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             An Inspector Calls &mdash; Themes
           </h1>
-          <p className="mt-2 text-lg text-ink-500">by J.B. Priestley &mdash; 1945</p>
-          <p className="mt-4 max-w-2xl text-ink-500">
+          <p className="mt-2 text-lg text-muted-foreground">by J.B. Priestley &mdash; 1945</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">
             Seven major themes analysed in depth with key quotes, act-by-act evidence, AO3 context
             links, and essay planning tips for GCSE literature.
           </p>
         </section>
 
         {/* Exam tip banner */}
-        <section className="mt-8 rounded-xl border border-clay-300/20 bg-clay-200/10 p-5">
+        <section className="mt-8 rounded-xl border border-clay-500/20 bg-clay-500/10 p-5">
           <div className="flex items-start gap-3">
-            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-500" />
-            <div className="text-sm text-ink-600">
-              <p className="mb-1 font-bold text-ink-800">Exam technique</p>
+            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600 dark:text-clay-300" />
+            <div className="text-sm text-muted-foreground">
+              <p className="mb-1 font-bold text-foreground">Exam technique</p>
               <p>
                 Theme questions require you to track how an idea develops across the{' '}
                 <strong>whole play</strong> (AO1), analyse Priestley&rsquo;s use of{' '}
@@ -530,36 +530,36 @@ export default function ThemesPage() {
           <section key={theme.title} className="mt-12">
             {/* Theme heading */}
             <div className="flex items-start gap-3 mb-2">
-              <div className="flex size-10 items-center justify-center rounded-xl bg-teal-400/8">
-                <BookOpen className="size-5 text-teal-700" />
+              <div className="flex size-10 items-center justify-center rounded-xl bg-teal-500/10">
+                <BookOpen className="size-5 text-teal-700 dark:text-teal-300" />
               </div>
-              <h2 className="font-serif text-2xl font-bold text-ink-900">{theme.title}</h2>
+              <h2 className="font-heading text-2xl font-bold text-foreground">{theme.title}</h2>
             </div>
-            <p className="ml-13 text-sm italic text-ink-500">{theme.overview}</p>
+            <p className="ml-13 text-sm italic text-muted-foreground">{theme.overview}</p>
 
             {/* Detailed analysis */}
-            <div className="mt-4 rounded-xl border border-teal-400/20 bg-cream-100/60 p-5">
-              <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-ink-400">
+            <div className="mt-4 rounded-xl border border-border/60 bg-muted p-5">
+              <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                 Detailed Analysis
               </h3>
-              <p className="text-sm leading-relaxed text-ink-600">{theme.detailed}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{theme.detailed}</p>
             </div>
 
             {/* Key quotes */}
             <div className="mt-6">
               <div className="mb-3 flex items-center gap-2">
-                <Quote className="size-4 text-teal-700" />
-                <h3 className="font-serif text-lg font-bold text-ink-800">Key Quotes</h3>
+                <Quote className="size-4 text-teal-700 dark:text-teal-300" />
+                <h3 className="font-heading text-lg font-bold text-foreground">Key Quotes</h3>
               </div>
               <div className="space-y-3">
                 {theme.keyQuotes.map((q, qi) => (
-                  <div key={qi} className="rounded-xl border border-teal-400/20 bg-teal-500/5 p-4">
-                    <p className="text-base font-medium italic text-ink-800">{q.quote}</p>
-                    <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
+                  <div key={qi} className="rounded-xl border border-teal-500/20 bg-teal-500/5 p-4">
+                    <p className="text-base font-medium italic text-foreground">{q.quote}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
                       {q.speaker} &mdash; {q.act}
                     </p>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-600">
-                      <span className="font-semibold text-ink-700">AO2: </span>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      <span className="font-semibold text-foreground">AO2: </span>
                       {q.analysis}
                     </p>
                   </div>
@@ -569,51 +569,51 @@ export default function ThemesPage() {
 
             {/* Evidence by act */}
             <div className="mt-5">
-              <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-ink-400">
+              <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                 Evidence by Act
               </h3>
               <div className="grid gap-3 sm:grid-cols-3">
                 {theme.evidenceByAct.map((ev, ei) => (
-                  <div key={ei} className="rounded-xl border border-ink-100 bg-cream-50 p-4">
-                    <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-600">
+                  <div key={ei} className="rounded-xl border border-border/60 bg-card p-4">
+                    <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-300">
                       {ev.act}
                     </p>
-                    <p className="text-sm leading-relaxed text-ink-600">{ev.evidence}</p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{ev.evidence}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Context link */}
-            <div className="mt-4 rounded-xl border border-clay-300/20 bg-clay-200/8 p-4">
-              <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
+            <div className="mt-4 rounded-xl border border-clay-500/20 bg-clay-500/10 p-4">
+              <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600 dark:text-clay-300">
                 AO3 Context Link
               </p>
-              <p className="text-sm leading-relaxed text-ink-600">{theme.contextLink}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{theme.contextLink}</p>
             </div>
 
             {/* Essay tip */}
-            <div className="mt-4 rounded-xl border border-teal-400/15 bg-teal-500/5 p-4">
+            <div className="mt-4 rounded-xl border border-teal-500/15 bg-teal-500/5 p-4">
               <div className="flex items-start gap-2">
-                <Lightbulb className="mt-0.5 size-4 shrink-0 text-teal-600" />
+                <Lightbulb className="mt-0.5 size-4 shrink-0 text-teal-600 dark:text-teal-300" />
                 <div>
-                  <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-700">
+                  <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300">
                     Essay Planning Tip
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-600">{theme.essayTip}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{theme.essayTip}</p>
                 </div>
               </div>
             </div>
 
             {/* Divider */}
-            {idx < THEMES.length - 1 && <div className="mt-10 border-t border-ink-100" />}
+            {idx < THEMES.length - 1 && <div className="mt-10 border-t border-border/60" />}
           </section>
         ))}
 
         {/* Navigation */}
-        <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
-          <p className="mt-1 text-sm text-ink-500">
+        <section className="mt-14 rounded-xl border border-teal-500/20 bg-teal-500/5 p-6">
+          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <p className="mt-1 text-sm text-muted-foreground">
             Explore characters, key quotes, and context for An Inspector Calls.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -625,13 +625,13 @@ export default function ThemesPage() {
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/key-quotes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Key Quotes
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/context"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Context
             </Link>
@@ -639,7 +639,7 @@ export default function ThemesPage() {
         </section>
 
         {/* Fair-dealing notice */}
-        <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
+        <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
           Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
           Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
           educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text

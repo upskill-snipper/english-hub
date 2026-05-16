@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
@@ -183,46 +183,46 @@ export default function SectionBTaskPage() {
       />
 
       <main className="mx-auto max-w-3xl px-4 py-12">
-        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-ink-950/60">
+        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1">
             <li>
-              <Link href="/" className="hover:text-emerald-700">
+              <Link href="/" className="hover:text-primary">
                 Home
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/ks3" className="hover:text-emerald-700">
+              <Link href="/ks3" className="hover:text-primary">
                 KS3
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/ks3/ilowersecondary" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary" className="hover:text-primary">
                 iLowerSecondary English
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/ks3/ilowersecondary/writing" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary/writing" className="hover:text-primary">
                 Writing skills
               </Link>
             </li>
             <li aria-hidden="true">/</li>
-            <li aria-current="page" className="font-medium text-ink-950/80">
+            <li aria-current="page" className="font-medium text-muted-foreground">
               The Section B task
             </li>
           </ol>
         </nav>
 
         <header className="mb-12">
-          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
             iLowerSecondary English &middot; Writing skills
           </p>
-          <h1 className="mb-4 font-serif text-4xl font-semibold text-ink-950">
+          <h1 className="mb-4 font-heading text-4xl font-semibold text-foreground">
             The Section B writing task
           </h1>
-          <p className="text-lg leading-relaxed text-ink-950/85">
+          <p className="text-lg leading-relaxed text-muted-foreground">
             {SECTION_B.name} is worth {SECTION_B.marks} marks and is a single piece of extended
             writing. {SECTION_B.description} You are advised to spend about{' '}
             {SECTION_B.recommendedLabel} on it. The task is marked against two assessment
@@ -232,47 +232,50 @@ export default function SectionBTaskPage() {
 
         <section
           aria-labelledby="how-it-is-marked"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="how-it-is-marked" className="mb-3 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="how-it-is-marked"
+            className="mb-3 font-heading text-2xl font-semibold text-foreground"
+          >
             How the task is marked
           </h2>
-          <p className="mb-4 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-base leading-relaxed text-muted-foreground">
             One response, two grids. The examiner places your writing in a band on each grid
             independently and adds the two marks together.
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-              <h3 className="mb-1 font-serif text-lg font-semibold text-ink-950">
+            <div className="rounded-lg bg-card p-5 border border-border/60">
+              <h3 className="mb-1 font-heading text-lg font-semibold text-foreground">
                 WAO1 &mdash; form, audience &amp; organisation
               </h3>
-              <p className="text-sm leading-relaxed text-ink-950/80">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 Worth up to {WAO1_GRID[WAO1_GRID.length - 1].marks.split('–')[1]} marks. Rewards
                 communicating appropriately for form, audience and purpose, and sequencing and
                 structuring your writing coherently.
               </p>
             </div>
-            <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-              <h3 className="mb-1 font-serif text-lg font-semibold text-ink-950">
+            <div className="rounded-lg bg-card p-5 border border-border/60">
+              <h3 className="mb-1 font-heading text-lg font-semibold text-foreground">
                 WAO2 &mdash; grammar, punctuation &amp; spelling
               </h3>
-              <p className="text-sm leading-relaxed text-ink-950/80">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 Worth up to {WAO2_GRID[WAO2_GRID.length - 1].marks.split('–')[1]} marks. Rewards
                 accurate grammar, well-demarcated and varied sentences, and confident punctuation
                 and spelling.
               </p>
             </div>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-ink-950/75">
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Examiner advice in the official structure: {WRITING_TASK.howToAnswer}
           </p>
         </section>
 
         <section aria-labelledby="the-method" className="mb-12">
-          <h2 id="the-method" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="the-method" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             The method: decode &rarr; plan &rarr; draft &rarr; proofread
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">
+          <p className="mb-6 text-sm text-muted-foreground">
             With only {SECTION_B.recommendedLabel}, a quick, disciplined routine protects the easy
             marks.
           </p>
@@ -280,121 +283,126 @@ export default function SectionBTaskPage() {
             {METHOD_STEPS.map((step) => (
               <li
                 key={step.n}
-                className="flex gap-4 rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10"
+                className="flex gap-4 rounded-lg bg-card p-5 border border-border/60"
               >
-                <span className="font-mono text-2xl font-semibold text-emerald-700">{step.n}</span>
+                <span className="font-mono text-2xl font-semibold text-primary">{step.n}</span>
                 <div>
-                  <h3 className="mb-1 font-serif text-lg font-semibold text-ink-950">
+                  <h3 className="mb-1 font-heading text-lg font-semibold text-foreground">
                     {step.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-ink-950/85">{step.body}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{step.body}</p>
                 </div>
               </li>
             ))}
           </ol>
-          <div className="mt-6 rounded-lg bg-cream-100 p-5 text-sm leading-relaxed text-ink-950/80 ring-1 ring-ink-950/5">
+          <div className="mt-6 rounded-lg bg-muted p-5 text-sm leading-relaxed text-muted-foreground border border-border/60">
             <p className="mb-2">
-              <span className="font-semibold text-ink-950">
+              <span className="font-semibold text-foreground">
                 Forms you may be asked to write in:{' '}
               </span>
               {WRITING_FORMS.join(', ')}.
             </p>
             <p>
-              <span className="font-semibold text-ink-950">Purposes you may be set: </span>
+              <span className="font-semibold text-foreground">Purposes you may be set: </span>
               {WRITING_PURPOSES.join(', ')}.
             </p>
           </div>
         </section>
 
         <section aria-labelledby="worked-example" className="mb-12">
-          <h2 id="worked-example" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="worked-example"
+            className="mb-2 font-heading text-2xl font-semibold text-foreground"
+          >
             One worked example, end to end
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">
+          <p className="mb-6 text-sm text-muted-foreground">
             Everything below is an original task and model answer written by The English Hub for
             teaching purposes. It is not taken from any past paper.
           </p>
 
-          <div className="mb-8 rounded-lg border-l-4 border-emerald-400 bg-cream-100 p-6">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <div className="mb-8 rounded-lg border-l-4 border-primary/40 bg-muted p-6">
+            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Section B-style task (invented example)
             </p>
-            <p className="text-base leading-relaxed text-ink-950">
+            <p className="text-base leading-relaxed text-foreground">
               The texts in Section A were all about travel and discovery. Write a{' '}
               <strong>letter to a friend</strong> describing <strong>a memorable journey</strong>{' '}
               you have made. In your letter you should recount what happened and describe how the
               journey made you feel.
             </p>
-            <p className="mt-3 text-sm text-ink-950/70">
+            <p className="mt-3 text-sm text-muted-foreground">
               Form: letter &middot; Audience: a friend of your own age &middot; Purpose: recount and
               describe.
             </p>
           </div>
 
-          <h3 className="mb-3 font-serif text-xl font-semibold text-ink-950">The 3-minute plan</h3>
+          <h3 className="mb-3 font-heading text-xl font-semibold text-foreground">
+            The 3-minute plan
+          </h3>
           <ul className="mb-8 space-y-2">
             {MODEL_PLAN.map((row) => (
               <li
                 key={row.label}
-                className="rounded-lg bg-cream-50 p-4 text-sm leading-relaxed text-ink-950/85 ring-1 ring-ink-950/10"
+                className="rounded-lg bg-card p-4 text-sm leading-relaxed text-muted-foreground border border-border/60"
               >
-                <span className="font-semibold text-ink-950">{row.label}: </span>
+                <span className="font-semibold text-foreground">{row.label}: </span>
                 {row.note}
               </li>
             ))}
           </ul>
 
-          <h3 className="mb-3 font-serif text-xl font-semibold text-ink-950">
+          <h3 className="mb-3 font-heading text-xl font-semibold text-foreground">
             The model response (S4 standard, ~300 words)
           </h3>
-          <div className="mb-8 space-y-4 rounded-lg bg-cream-50 p-6 ring-1 ring-ink-950/10">
+          <div className="mb-8 space-y-4 rounded-lg bg-card p-6 border border-border/60">
             {MODEL_PARAGRAPHS.map((p, i) => (
               <p
                 key={i}
-                className="whitespace-pre-line font-serif text-base leading-relaxed text-ink-950"
+                className="whitespace-pre-line font-heading text-base leading-relaxed text-foreground"
               >
                 {p.text}
               </p>
             ))}
           </div>
 
-          <h3 className="mb-3 font-serif text-xl font-semibold text-ink-950">
+          <h3 className="mb-3 font-heading text-xl font-semibold text-foreground">
             Examiner-style annotation
           </h3>
-          <p className="mb-4 text-sm text-ink-950/75">
+          <p className="mb-4 text-sm text-muted-foreground">
             Each strength below is tagged to the grid it earns credit on.
           </p>
           <ul className="space-y-4">
             {ANNOTATIONS.map((a) => (
-              <li key={a.feature} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
+              <li key={a.feature} className="rounded-lg bg-card p-5 border border-border/60">
                 <div className="mb-2 flex items-baseline gap-3">
-                  <span className="font-mono text-xs font-semibold text-emerald-700">{a.grid}</span>
-                  <span className="font-serif text-base font-semibold text-ink-950">
+                  <span className="font-mono text-xs font-semibold text-primary">{a.grid}</span>
+                  <span className="font-heading text-base font-semibold text-foreground">
                     {a.feature}
                   </span>
                 </div>
-                <p className="text-sm leading-relaxed text-ink-950/85">{a.detail}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{a.detail}</p>
               </li>
             ))}
           </ul>
 
-          <div className="mt-8 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5">
-            <h3 className="mb-3 font-serif text-lg font-semibold text-ink-950">
+          <div className="mt-8 rounded-lg bg-muted p-6 border border-border/60">
+            <h3 className="mb-3 font-heading text-lg font-semibold text-foreground">
               Why this would sit at the top band
             </h3>
-            <p className="mb-3 text-sm leading-relaxed text-ink-950/85">
-              <span className="font-semibold text-ink-950">
+            <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
+              <span className="font-semibold text-foreground">
                 WAO1 ({S4_WAO1.level}, {S4_WAO1.marks}):{' '}
               </span>
               {S4_WAO1.descriptors.join(' ')}
             </p>
-            <p className="text-sm leading-relaxed text-ink-950/85">
-              <span className="font-semibold text-ink-950">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              <span className="font-semibold text-foreground">
                 WAO2 ({S4_WAO2.level}, {S4_WAO2.marks}):{' '}
               </span>
               {S4_WAO2.descriptors.join(' ')}
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-ink-950/75">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               The letter sustains its form and a precisely judged audience, controls its paragraphs
               completely, and uses imagery, sentence variety and sophisticated punctuation to
               support its purpose, so it sits at the top of both grids.
@@ -403,10 +411,10 @@ export default function SectionBTaskPage() {
         </section>
 
         <section aria-labelledby="lose-marks" className="mb-12">
-          <h2 id="lose-marks" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="lose-marks" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             10 ways to lose easy marks
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">
+          <p className="mb-6 text-sm text-muted-foreground">
             None of these is about clever ideas &mdash; they are all avoidable with a plan and a
             proofread.
           </p>
@@ -414,16 +422,16 @@ export default function SectionBTaskPage() {
             {LOSE_EASY_MARKS.map((item, i) => (
               <li
                 key={i}
-                className="flex gap-3 rounded-lg bg-cream-50 p-4 text-sm leading-relaxed text-ink-950/85 ring-1 ring-ink-950/10"
+                className="flex gap-3 rounded-lg bg-card p-4 text-sm leading-relaxed text-muted-foreground border border-border/60"
               >
-                <span className="font-mono text-sm font-semibold text-emerald-700">{i + 1}</span>
+                <span className="font-mono text-sm font-semibold text-primary">{i + 1}</span>
                 <span>{item}</span>
               </li>
             ))}
           </ol>
         </section>
 
-        <footer className="mt-16 border-t border-ink-950/10 pt-6 text-xs leading-relaxed text-ink-950/55">
+        <footer className="mt-16 border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           {SPEC_ATTRIBUTION}
         </footer>
       </main>

@@ -265,7 +265,7 @@ const themeGroups = [
 
 export default function KeyQuotesPage() {
   return (
-    <div className="space-y-10 bg-cream-50 pb-16">
+    <div className="space-y-10 bg-background pb-16">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -310,10 +310,10 @@ export default function KeyQuotesPage() {
             </Badge>
           </div>
 
-          <h1 className="font-serif text-display-sm text-foreground sm:text-display">
+          <h1 className="font-heading text-display-sm text-foreground sm:text-display">
             Key Quotes Bank
           </h1>
-          <p className="mt-2 text-body-lg italic text-clay-600">
+          <p className="mt-2 text-body-lg italic text-clay-600 dark:text-clay-300">
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
@@ -327,7 +327,7 @@ export default function KeyQuotesPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 font-serif text-heading-md text-foreground">Jump to a Theme</h2>
+            <h2 className="mb-4 font-heading text-heading-md text-foreground">Jump to a Theme</h2>
             <div className="flex flex-wrap gap-2">
               {themeGroups
                 .filter((t) => quotes.some((q) => q.themes[0] === t))
@@ -363,7 +363,7 @@ export default function KeyQuotesPage() {
               <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-clay-400/10 text-lg font-bold text-clay-600">
                 {themeQuotes.length}
               </div>
-              <h2 className="font-serif text-heading-lg text-foreground">{theme}</h2>
+              <h2 className="font-heading text-heading-lg text-foreground">{theme}</h2>
             </div>
 
             <div className="grid gap-4">
@@ -371,11 +371,11 @@ export default function KeyQuotesPage() {
                 <Card key={q.id}>
                   <CardContent className="space-y-4 p-5 sm:p-6">
                     {/* Quote */}
-                    <div className="rounded-lg border-l-4 border-l-clay-500 bg-cream-100 p-4">
-                      <p className="font-serif text-body-md font-medium italic text-foreground">
+                    <div className="rounded-lg border-l-4 border-l-clay-500 bg-muted p-4 dark:border-l-clay-400">
+                      <p className="font-heading text-body-md font-medium italic text-foreground">
                         {q.quote}
                       </p>
-                      <p className="mt-2 text-xs font-mono text-clay-600">
+                      <p className="mt-2 text-xs font-mono text-clay-600 dark:text-clay-300">
                         {q.speaker} -- {q.part}
                       </p>
                     </div>

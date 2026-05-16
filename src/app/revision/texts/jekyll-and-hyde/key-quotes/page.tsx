@@ -258,7 +258,7 @@ const QUOTES_BY_THEME: ThemeQuotes[] = [
 
 export default function JekyllAndHydeKeyQuotesPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },

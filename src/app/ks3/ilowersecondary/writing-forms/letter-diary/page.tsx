@@ -249,46 +249,46 @@ export default function LetterDiaryPage() {
       />
 
       <article className="mx-auto max-w-3xl px-4 py-12">
-        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-ink-950/60">
+        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <li>
-              <Link href="/" className="hover:text-emerald-700">
+              <Link href="/" className="hover:text-primary">
                 Home
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3" className="hover:text-emerald-700">
+              <Link href="/ks3" className="hover:text-primary">
                 KS3
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary" className="hover:text-primary">
                 iLowerSecondary English
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary/writing-forms" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary/writing-forms" className="hover:text-primary">
                 Writing forms
               </Link>
             </li>
             <li aria-hidden>/</li>
-            <li className="font-medium text-ink-950/80" aria-current="page">
+            <li className="font-medium text-foreground" aria-current="page">
               Letter &amp; diary
             </li>
           </ol>
         </nav>
 
         <header className="mb-10">
-          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
             Writing-form guide · {WAO1.code}
           </p>
-          <h1 className="mb-4 font-serif text-4xl font-semibold leading-tight text-ink-950">
+          <h1 className="mb-4 font-heading text-4xl font-semibold leading-tight text-foreground">
             Letter &amp; diary
           </h1>
-          <p className="text-lg leading-relaxed text-ink-950/85">
+          <p className="text-lg leading-relaxed text-muted-foreground">
             The <strong>letter</strong> and the <strong>diary</strong> are two of the{' '}
             {WRITING_FORMS.length} forms you may be set in {SECTION_B.name}. They look simple, but
             their marks live in the details: a letter that pairs its greeting and sign-off correctly
@@ -300,16 +300,16 @@ export default function LetterDiaryPage() {
 
         <section
           aria-labelledby="the-task"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="the-task" className="mb-3 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="the-task" className="mb-3 font-heading text-2xl font-semibold text-foreground">
             Where these forms sit
           </h2>
-          <p className="mb-4 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-base leading-relaxed text-muted-foreground">
             {SECTION_B.name} carries {SECTION_B.marks} marks. {SECTION_B.description} It is assessed
             against {SECTION_B.assessmentObjectives.join(' and ')}.
           </p>
-          <p className="text-base leading-relaxed text-ink-950/85">
+          <p className="text-base leading-relaxed text-muted-foreground">
             The objective that rewards getting the form right is <strong>{WAO1.code}</strong>, which
             asks you to <em>{WAO1.descriptor.toLowerCase()}</em> Choosing the right conventions for
             a letter or a diary is precisely how you show the examiner the form is
@@ -321,46 +321,48 @@ export default function LetterDiaryPage() {
           <section key={p.form} aria-labelledby={`form-${p.form}`} className="mb-12">
             <h2
               id={`form-${p.form}`}
-              className="mb-2 font-serif text-2xl font-semibold capitalize text-ink-950"
+              className="mb-2 font-heading text-2xl font-semibold capitalize text-foreground"
             >
               The {p.form} form
             </h2>
-            <p className="mb-6 text-base italic leading-relaxed text-ink-950/75">{p.summary}</p>
+            <p className="mb-6 text-base italic leading-relaxed text-muted-foreground">
+              {p.summary}
+            </p>
 
-            <h3 className="mb-3 font-serif text-lg font-semibold text-ink-950">
+            <h3 className="mb-3 font-heading text-lg font-semibold text-foreground">
               Layout &amp; structure conventions
             </h3>
             <div className="mb-6 space-y-3">
               {p.structure.map((s) => (
-                <div key={s.label} className="rounded-lg bg-cream-50 p-4 ring-1 ring-ink-950/10">
-                  <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+                <div key={s.label} className="rounded-lg bg-card p-4 border border-border/60">
+                  <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                     {s.label}
                   </p>
-                  <p className="text-sm leading-relaxed text-ink-950/85">{s.detail}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{s.detail}</p>
                 </div>
               ))}
             </div>
 
             <div className="grid gap-4 sm:grid-cols-3">
-              <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                <h3 className="mb-2 font-mono text-sm font-semibold text-emerald-700">Register</h3>
-                <p className="text-sm leading-relaxed text-ink-950/80">{p.register}</p>
+              <div className="rounded-lg bg-card p-5 border border-border/60">
+                <h3 className="mb-2 font-mono text-sm font-semibold text-primary">Register</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{p.register}</p>
               </div>
-              <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                <h3 className="mb-2 font-mono text-sm font-semibold text-emerald-700">
+              <div className="rounded-lg bg-card p-5 border border-border/60">
+                <h3 className="mb-2 font-mono text-sm font-semibold text-primary">
                   Typical purposes
                 </h3>
-                <ul className="list-disc space-y-1 pl-4 text-sm capitalize leading-relaxed text-ink-950/80">
+                <ul className="list-disc space-y-1 pl-4 text-sm capitalize leading-relaxed text-muted-foreground">
                   {p.purposes.map((purpose) => (
                     <li key={purpose}>{purpose}</li>
                   ))}
                 </ul>
               </div>
-              <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                <h3 className="mb-2 font-mono text-sm font-semibold text-emerald-700">
+              <div className="rounded-lg bg-card p-5 border border-border/60">
+                <h3 className="mb-2 font-mono text-sm font-semibold text-primary">
                   Common audiences
                 </h3>
-                <ul className="list-disc space-y-1 pl-4 text-sm leading-relaxed text-ink-950/80">
+                <ul className="list-disc space-y-1 pl-4 text-sm leading-relaxed text-muted-foreground">
                   {p.audiences.map((a) => (
                     <li key={a}>{a}</li>
                   ))}
@@ -371,10 +373,10 @@ export default function LetterDiaryPage() {
         ))}
 
         <section aria-labelledby="grid" className="mb-12">
-          <h2 id="grid" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="grid" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             What examiners reward ({WAO1.code})
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             This is the levelled grid your letter or diary is judged against for {WAO1.code} (form,
             communication and purpose). The journey from S1 to S4 is a journey from form
             &ldquo;sometimes maintained&rdquo; to form &ldquo;adapted and controlled for
@@ -382,14 +384,12 @@ export default function LetterDiaryPage() {
           </p>
           <div className="space-y-4">
             {WAO1_GRID.map((row) => (
-              <div key={row.level} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
+              <div key={row.level} className="rounded-lg bg-card p-5 border border-border/60">
                 <div className="mb-2 flex items-baseline gap-3">
-                  <span className="font-mono text-sm font-semibold text-emerald-700">
-                    {row.level}
-                  </span>
-                  <span className="text-sm text-ink-950/70">{row.marks} marks</span>
+                  <span className="font-mono text-sm font-semibold text-primary">{row.level}</span>
+                  <span className="text-sm text-muted-foreground">{row.marks} marks</span>
                 </div>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-ink-950/85">
+                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
                   {row.descriptors.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -401,33 +401,38 @@ export default function LetterDiaryPage() {
 
         <section
           aria-labelledby="model-letter"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="model-letter" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="model-letter"
+            className="mb-2 font-heading text-2xl font-semibold text-foreground"
+          >
             Model — a formal letter
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">{LETTER_MODEL.scenario}</p>
+          <p className="mb-6 text-sm text-muted-foreground">{LETTER_MODEL.scenario}</p>
 
-          <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-            <p className="mb-3 text-sm font-medium text-ink-950/70">{LETTER_MODEL.greeting}</p>
+          <div className="rounded-lg bg-card p-5 border border-border/60">
+            <p className="mb-3 text-sm font-medium text-muted-foreground">
+              {LETTER_MODEL.greeting}
+            </p>
             {LETTER_MODEL.body.map((para, i) => (
-              <p key={i} className="mb-3 text-base leading-relaxed text-ink-950">
+              <p key={i} className="mb-3 text-base leading-relaxed text-foreground">
                 {para}
               </p>
             ))}
-            <p className="mt-4 text-sm font-medium text-ink-950/70">{LETTER_MODEL.signoff}</p>
-            <p className="text-sm font-medium text-ink-950/70">{LETTER_MODEL.name}</p>
+            <p className="mt-4 text-sm font-medium text-muted-foreground">{LETTER_MODEL.signoff}</p>
+            <p className="text-sm font-medium text-muted-foreground">{LETTER_MODEL.name}</p>
           </div>
 
-          <div className="mt-5 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-4">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Why this earns marks — examiner annotations
             </p>
-            <ul className="space-y-3 text-sm leading-relaxed text-ink-950/85">
+            <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
               {LETTER_MODEL.annotations.map((a) => (
                 <li key={a.band}>
                   <span>{a.point}</span>
-                  <span className="mt-1 block font-mono text-xs text-emerald-700">{a.band}</span>
+                  <span className="mt-1 block font-mono text-xs text-primary">{a.band}</span>
                 </li>
               ))}
             </ul>
@@ -436,31 +441,31 @@ export default function LetterDiaryPage() {
 
         <section
           aria-labelledby="model-diary"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="model-diary" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="model-diary" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             Model — a diary entry
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">{DIARY_MODEL.scenario}</p>
+          <p className="mb-6 text-sm text-muted-foreground">{DIARY_MODEL.scenario}</p>
 
-          <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-            <p className="mb-3 text-sm font-medium text-ink-950/70">{DIARY_MODEL.dateLine}</p>
+          <div className="rounded-lg bg-card p-5 border border-border/60">
+            <p className="mb-3 text-sm font-medium text-muted-foreground">{DIARY_MODEL.dateLine}</p>
             {DIARY_MODEL.body.map((para, i) => (
-              <p key={i} className="mb-3 text-base leading-relaxed text-ink-950">
+              <p key={i} className="mb-3 text-base leading-relaxed text-foreground">
                 {para}
               </p>
             ))}
           </div>
 
-          <div className="mt-5 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-4">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Why this earns marks — examiner annotations
             </p>
-            <ul className="space-y-3 text-sm leading-relaxed text-ink-950/85">
+            <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
               {DIARY_MODEL.annotations.map((a) => (
                 <li key={a.band}>
                   <span>{a.point}</span>
-                  <span className="mt-1 block font-mono text-xs text-emerald-700">{a.band}</span>
+                  <span className="mt-1 block font-mono text-xs text-primary">{a.band}</span>
                 </li>
               ))}
             </ul>
@@ -468,14 +473,14 @@ export default function LetterDiaryPage() {
         </section>
 
         <section aria-labelledby="checklist" className="mb-12">
-          <h2 id="checklist" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="checklist" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Form-conventions checklist
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             Run through this before you hand the paper in. Each line maps to a {WAO1.code}{' '}
             descriptor about form being established, maintained and controlled.
           </p>
-          <ul className="list-disc space-y-2 pl-6 text-base leading-relaxed text-ink-950/85">
+          <ul className="list-disc space-y-2 pl-6 text-base leading-relaxed text-muted-foreground">
             {CHECKLIST.map((c) => (
               <li key={c}>{c}</li>
             ))}
@@ -483,29 +488,26 @@ export default function LetterDiaryPage() {
         </section>
 
         <section aria-labelledby="practice" className="mb-12">
-          <h2 id="practice" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="practice" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Practice prompts
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             Two original prompts — one for each form. Plan briefly, then write to time, applying the
             conventions and checklist above.
           </p>
           <div className="space-y-4">
             {PRACTICE_PROMPTS.map((p) => (
-              <div
-                key={p.form}
-                className="rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-5"
-              >
-                <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+              <div key={p.form} className="rounded-lg border-l-4 border-primary/40 bg-card p-5">
+                <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                   {p.form}
                 </p>
-                <p className="text-base leading-relaxed text-ink-950/90">{p.prompt}</p>
+                <p className="text-base leading-relaxed text-muted-foreground">{p.prompt}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <footer className="mt-16 border-t border-ink-950/10 pt-6 text-xs leading-relaxed text-ink-950/55">
+        <footer className="mt-16 border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           <p>{SPEC_ATTRIBUTION}</p>
           <p className="mt-3">
             This writing-form guide is provided for educational guidance (criticism and

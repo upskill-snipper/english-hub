@@ -432,7 +432,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                 className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <span className="inline-block rounded-full bg-[#2C3E50] px-2.5 py-0.5 text-xs font-bold text-white">
+                  <span className="inline-block rounded-full bg-primary px-2.5 py-0.5 text-xs font-bold text-primary-foreground">
                     {ch.chapters}
                   </span>
                   <h3 className="font-semibold text-foreground">{ch.title}</h3>
@@ -625,7 +625,7 @@ export default function ToKillAMockingbirdStudyGuide() {
             {assessmentObjectives.map((ao) => (
               <div key={ao.code} className="rounded-lg border border-border bg-card p-5 shadow-md">
                 <div className="flex items-center gap-2">
-                  <span className="inline-block rounded-full bg-[#2C3E50] px-2.5 py-0.5 text-xs font-bold text-white">
+                  <span className="inline-block rounded-full bg-primary px-2.5 py-0.5 text-xs font-bold text-primary-foreground">
                     {ao.code}
                   </span>
                   <h3 className="font-semibold text-foreground">{ao.description}</h3>
@@ -651,7 +651,7 @@ export default function ToKillAMockingbirdStudyGuide() {
 
           <div className="mt-6 space-y-6">
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <span className="inline-block rounded-full bg-[#2C3E50]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+              <span className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Passage-Based (a)
               </span>
               <p className="mt-3 text-sm font-medium text-foreground">
@@ -720,7 +720,7 @@ export default function ToKillAMockingbirdStudyGuide() {
             </div>
 
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <span className="inline-block rounded-full bg-[#2C3E50]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+              <span className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay (b)
               </span>
               <p className="mt-3 text-sm font-medium text-foreground">
@@ -755,7 +755,7 @@ export default function ToKillAMockingbirdStudyGuide() {
             </div>
 
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <span className="inline-block rounded-full bg-[#2C3E50]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+              <span className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay (b)
               </span>
               <p className="mt-3 text-sm font-medium text-foreground">
@@ -795,7 +795,7 @@ export default function ToKillAMockingbirdStudyGuide() {
             </div>
 
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <span className="inline-block rounded-full bg-[#2C3E50]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+              <span className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Passage-Based (a)
               </span>
               <p className="mt-3 text-sm font-medium text-foreground">

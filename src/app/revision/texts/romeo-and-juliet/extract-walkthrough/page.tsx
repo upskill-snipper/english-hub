@@ -100,7 +100,7 @@ const MODEL_PARAGRAPH = `The Prologue\'s most striking effect comes from the col
 
 export default function RomeoAndJulietExtractWalkthroughPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -135,7 +135,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
 
             <div className="mb-4 flex flex-wrap items-center gap-2">
               <Badge variant="secondary">
-                <ScrollText className="mr-1 size-3 text-clay-600" />
+                <ScrollText className="mr-1 size-3 text-clay-600 dark:text-clay-300" />
                 Extract Walkthrough
               </Badge>
               <Badge variant="outline">Public Domain</Badge>
@@ -158,7 +158,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Quote className="size-5 text-clay-600" />
+                <Quote className="size-5 text-clay-600 dark:text-clay-300" />
                 The full extract
               </CardTitle>
             </CardHeader>
@@ -166,7 +166,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
               <p className="mb-3 text-sm text-muted-foreground">
                 Chorus, Prologue (public domain). Act 1, opening of the play.
               </p>
-              <blockquote className="rounded-lg border-l-4 border-amber-400/60 bg-amber-50/50 p-5 font-serif text-base leading-relaxed text-foreground sm:text-lg">
+              <blockquote className="rounded-lg border-l-4 border-amber-500/40 bg-amber-500/10 p-5 font-heading text-base leading-relaxed text-foreground sm:text-lg">
                 Two households, both alike in dignity,
                 <br />
                 In fair Verona, where we lay our scene,
@@ -202,18 +202,18 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
         {/* Line-by-line */}
         <section className="mt-10">
           <h2 className="mb-4 flex items-center gap-2 text-2xl font-bold tracking-tight">
-            <BookOpen className="size-5 text-clay-600" />
+            <BookOpen className="size-5 text-clay-600 dark:text-clay-300" />
             Line-by-line analysis
           </h2>
           <div className="space-y-4">
             {PROLOGUE_LINES.map((line) => (
               <Card key={line.number} className="overflow-hidden">
-                <CardHeader className="bg-amber-50/40 pb-3">
+                <CardHeader className="bg-amber-500/10 pb-3">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-sm font-semibold text-amber-700">
+                    <span className="font-mono text-sm font-semibold text-amber-700 dark:text-amber-300">
                       L{line.number}
                     </span>
-                    <CardTitle className="font-serif text-base font-medium italic leading-snug sm:text-lg">
+                    <CardTitle className="font-heading text-base font-medium italic leading-snug sm:text-lg">
                       {line.line}
                     </CardTitle>
                   </div>
@@ -250,10 +250,10 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
 
         {/* Model paragraph */}
         <section className="mt-12">
-          <Card className="border-violet-200/60 bg-gradient-to-br from-violet-50/60 to-card">
+          <Card className="border-violet-500/20 bg-gradient-to-br from-violet-500/[0.06] to-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl">
-                <ScrollText className="size-5 text-violet-700" />
+                <ScrollText className="size-5 text-violet-700 dark:text-violet-300" />
                 Model 250-word paragraph
               </CardTitle>
               <p className="mt-1 text-sm text-muted-foreground">
@@ -262,7 +262,7 @@ export default function RomeoAndJulietExtractWalkthroughPage() {
               </p>
             </CardHeader>
             <CardContent>
-              <p className="font-serif text-base leading-relaxed text-foreground sm:text-[1.05rem]">
+              <p className="font-heading text-base leading-relaxed text-foreground sm:text-[1.05rem]">
                 {MODEL_PARAGRAPH}
               </p>
               <p className="mt-3 text-xs uppercase tracking-wide text-muted-foreground">

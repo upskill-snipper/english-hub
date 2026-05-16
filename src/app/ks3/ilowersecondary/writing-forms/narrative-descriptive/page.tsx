@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
@@ -119,46 +119,46 @@ export default function NarrativeDescriptivePage() {
       />
 
       <article className="mx-auto max-w-3xl px-4 py-12">
-        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-ink-950/60">
+        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <li>
-              <Link href="/" className="hover:text-emerald-700">
+              <Link href="/" className="hover:text-primary">
                 Home
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3" className="hover:text-emerald-700">
+              <Link href="/ks3" className="hover:text-primary">
                 KS3
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary" className="hover:text-primary">
                 iLowerSecondary English
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary/writing-forms" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary/writing-forms" className="hover:text-primary">
                 Writing forms
               </Link>
             </li>
             <li aria-hidden>/</li>
-            <li className="font-medium text-ink-950/80" aria-current="page">
+            <li className="font-medium text-muted-foreground" aria-current="page">
               Narrative &amp; descriptive
             </li>
           </ol>
         </nav>
 
         <header className="mb-10">
-          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
             Section B writing-forms guide
           </p>
-          <h1 className="mb-4 font-serif text-4xl font-semibold leading-tight text-ink-950">
+          <h1 className="mb-4 font-heading text-4xl font-semibold leading-tight text-foreground">
             Narrative &amp; descriptive writing
           </h1>
-          <p className="text-lg leading-relaxed text-ink-950/85">
+          <p className="text-lg leading-relaxed text-muted-foreground">
             Two of the most rewarding Section B forms are the{' '}
             <strong className="capitalize">{NARRATIVE_FORM}</strong> (telling a story, usually to{' '}
             <em>{ENTERTAIN}</em>) and the <strong className="capitalize">{DESCRIPTIVE_FORM}</strong>{' '}
@@ -170,18 +170,20 @@ export default function NarrativeDescriptivePage() {
         </header>
 
         <section aria-labelledby="narrative" className="mb-12">
-          <h2 id="narrative" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="narrative" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Narrative: the craft
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             A story is a shape, not a string of events. These six controls turn a sequence of
             things-that-happened into a piece a reader feels.
           </p>
           <div className="space-y-4">
             {NARRATIVE_CRAFT.map((c) => (
-              <div key={c.title} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                <h3 className="mb-1 font-serif text-lg font-semibold text-ink-950">{c.title}</h3>
-                <p className="text-sm leading-relaxed text-ink-950/85">{c.body}</p>
+              <div key={c.title} className="rounded-lg bg-card p-5 border border-border/60">
+                <h3 className="mb-1 font-heading text-lg font-semibold text-foreground">
+                  {c.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{c.body}</p>
               </div>
             ))}
           </div>
@@ -189,17 +191,17 @@ export default function NarrativeDescriptivePage() {
 
         <section
           aria-labelledby="dialogue"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="dialogue" className="mb-3 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="dialogue" className="mb-3 font-heading text-2xl font-semibold text-foreground">
             Dialogue punctuation — get this exactly right
           </h2>
-          <p className="mb-4 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-base leading-relaxed text-muted-foreground">
             Accurate speech punctuation is one of the clearest signals of written control. The grid
             rewards correct demarcation; mishandled speech marks are a common reason strong stories
             slip a band.
           </p>
-          <ul className="list-disc space-y-2 pl-6 text-sm leading-relaxed text-ink-950/85">
+          <ul className="list-disc space-y-2 pl-6 text-sm leading-relaxed text-muted-foreground">
             {DIALOGUE_RULES.map((r) => (
               <li key={r}>{r}</li>
             ))}
@@ -208,16 +210,16 @@ export default function NarrativeDescriptivePage() {
 
         <section
           aria-labelledby="openings"
-          className="mb-12 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-6 sm:p-8"
+          className="mb-12 rounded-lg border-l-4 border-primary/40 bg-card p-6 sm:p-8"
         >
-          <h2 id="openings" className="mb-3 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="openings" className="mb-3 font-heading text-2xl font-semibold text-foreground">
             Powerful opening techniques
           </h2>
-          <p className="mb-4 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             The first two sentences decide whether the reader leans in. Choose one technique
             deliberately — never warm up with the weather or waking up.
           </p>
-          <ul className="list-disc space-y-2 pl-6 text-sm leading-relaxed text-ink-950/85">
+          <ul className="list-disc space-y-2 pl-6 text-sm leading-relaxed text-muted-foreground">
             <li>
               <strong>In medias res:</strong> open mid-action, then explain later. &ldquo;The rope
               slipped a second time, and this time my brother did not catch it.&rdquo;
@@ -244,41 +246,44 @@ export default function NarrativeDescriptivePage() {
 
         <section
           aria-labelledby="narrative-model"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="narrative-model" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="narrative-model"
+            className="mb-2 font-heading text-2xl font-semibold text-foreground"
+          >
             Original model — narrative
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">
+          <p className="mb-6 text-sm text-muted-foreground">
             An invented scene of roughly 230 words. Read it once for effect, then read the
             annotation that maps it to the mark grids.
           </p>
 
-          <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-            <p className="mb-3 text-base leading-relaxed text-ink-950">
+          <div className="rounded-lg bg-card p-5 border border-border/60">
+            <p className="mb-3 text-base leading-relaxed text-foreground">
               The tide had already taken the lower steps by the time Nadia reached the jetty. She
               had told herself she would not come back here. She had come anyway.
             </p>
-            <p className="mb-3 text-base leading-relaxed text-ink-950">
+            <p className="mb-3 text-base leading-relaxed text-foreground">
               Her grandfather&rsquo;s boat knocked against the post, patient and loyal, as if it had
               been waiting all year. Paint flaked from its name. She crouched, pressed two fingers
               to the cold wood, and listened to the harbour breathe.
             </p>
-            <p className="mb-3 text-base leading-relaxed text-ink-950">
+            <p className="mb-3 text-base leading-relaxed text-foreground">
               &ldquo;You came,&rdquo; said a voice behind her.
             </p>
-            <p className="mb-3 text-base leading-relaxed text-ink-950">
+            <p className="mb-3 text-base leading-relaxed text-foreground">
               She did not turn. &ldquo;You knew I would,&rdquo; she answered.
             </p>
-            <p className="mb-3 text-base leading-relaxed text-ink-950">
+            <p className="mb-3 text-base leading-relaxed text-foreground">
               Her brother sat down beside her, leaving the careful gap they had left between each
               other since the funeral. For a while neither of them spoke. A gull tested the silence
               and gave up. The water climbed another step.
             </p>
-            <p className="mb-3 text-base leading-relaxed text-ink-950">
+            <p className="mb-3 text-base leading-relaxed text-foreground">
               &ldquo;He would have hated us arguing over a boat,&rdquo; she said at last.
             </p>
-            <p className="text-base leading-relaxed text-ink-950">
+            <p className="text-base leading-relaxed text-foreground">
               Her brother laughed, a small, surprised sound, and the gap between them closed by an
               inch. He untied the rope and held it out to her. She took it. Above the harbour the
               sky was letting go of the last of its light, and for the first time in a year the
@@ -286,11 +291,11 @@ export default function NarrativeDescriptivePage() {
             </p>
           </div>
 
-          <div className="mt-5 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-4">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Why this earns marks — mapped to {WAO1_GRID[3].level}/{WAO2_GRID[3].level} qualities
             </p>
-            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink-950/85">
+            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
               <li>
                 <strong>Form &amp; structure (WAO1):</strong> a clear arc — a return, a
                 confrontation withheld, a reconciliation — with a close that answers the opening
@@ -322,18 +327,20 @@ export default function NarrativeDescriptivePage() {
         </section>
 
         <section aria-labelledby="descriptive" className="mb-12">
-          <h2 id="descriptive" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="descriptive" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Descriptive: the craft
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             Description with no plot still needs design. These six controls give a picture depth,
             atmosphere and a sense of movement.
           </p>
           <div className="space-y-4">
             {DESCRIPTIVE_CRAFT.map((c) => (
-              <div key={c.title} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                <h3 className="mb-1 font-serif text-lg font-semibold text-ink-950">{c.title}</h3>
-                <p className="text-sm leading-relaxed text-ink-950/85">{c.body}</p>
+              <div key={c.title} className="rounded-lg bg-card p-5 border border-border/60">
+                <h3 className="mb-1 font-heading text-lg font-semibold text-foreground">
+                  {c.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{c.body}</p>
               </div>
             ))}
           </div>
@@ -341,33 +348,36 @@ export default function NarrativeDescriptivePage() {
 
         <section
           aria-labelledby="describe-warning"
-          className="mb-12 rounded-lg border-l-4 border-rose-400 bg-rose-50 p-6 sm:p-8"
+          className="mb-12 rounded-lg border-l-4 border-red-500/40 bg-red-500/10 p-6 sm:p-8"
         >
-          <h2 id="describe-warning" className="mb-3 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="describe-warning"
+            className="mb-3 font-heading text-2xl font-semibold text-foreground"
+          >
             Warning: describe, don&rsquo;t list
           </h2>
-          <p className="mb-4 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             The single most common way a description stalls is listing — naming many things quickly
             instead of inhabiting a few. Compare:
           </p>
-          <div className="mb-3 rounded-lg bg-cream-50 p-4 ring-1 ring-ink-950/10">
-            <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-rose-700">
+          <div className="mb-3 rounded-lg bg-card p-4 border border-border/60">
+            <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-red-700 dark:text-red-300">
               Listing (weak)
             </p>
-            <p className="text-sm italic leading-relaxed text-ink-950/80">
+            <p className="text-sm italic leading-relaxed text-muted-foreground">
               The market had fruit, fish, bread, flowers, people, noise and colour everywhere.
             </p>
           </div>
-          <div className="mb-4 rounded-lg bg-cream-50 p-4 ring-1 ring-ink-950/10">
-            <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <div className="mb-4 rounded-lg bg-card p-4 border border-border/60">
+            <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Describing (strong)
             </p>
-            <p className="text-sm italic leading-relaxed text-ink-950/80">
+            <p className="text-sm italic leading-relaxed text-muted-foreground">
               One stall held a pyramid of blood-dark cherries, and a fly worked its slow circuit
               above them while the seller dozed in the heat.
             </p>
           </div>
-          <p className="text-sm leading-relaxed text-ink-950/85">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             The fix: choose <em>fewer</em> things and go <em>closer</em>. One cherry stall, fully
             seen, beats a whole market named in a breath.
           </p>
@@ -375,51 +385,51 @@ export default function NarrativeDescriptivePage() {
 
         <section
           aria-labelledby="descriptive-model"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
           <h2
             id="descriptive-model"
-            className="mb-2 font-serif text-2xl font-semibold text-ink-950"
+            className="mb-2 font-heading text-2xl font-semibold text-foreground"
           >
             Original model — descriptive
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">
+          <p className="mb-6 text-sm text-muted-foreground">
             An invented scene of roughly 235 words: a railway station at first light, with no story
             — only movement through the space.
           </p>
 
-          <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-            <p className="mb-3 text-base leading-relaxed text-ink-950">
+          <div className="rounded-lg bg-card p-5 border border-border/60">
+            <p className="mb-3 text-base leading-relaxed text-foreground">
               Before the trains, the station belongs to the cold. It pools along the empty platform
               like water that has nowhere to drain, settling under the iron benches and the unlit
               signs.
             </p>
-            <p className="mb-3 text-base leading-relaxed text-ink-950">
+            <p className="mb-3 text-base leading-relaxed text-foreground">
               High above, the great glass roof is still the colour of old pewter. Light arrives
               without sound. It slides down the long ribs of the roof, finds the rails, and lays a
               thin silver line all the way to the dark mouth of the tunnel.
             </p>
-            <p className="mb-3 text-base leading-relaxed text-ink-950">
+            <p className="mb-3 text-base leading-relaxed text-foreground">
               Closer now, a single pigeon walks the platform edge with the importance of someone who
               owns it. Its head jerks; its feet make the smallest dry sound against the stone. Near
               the shuttered kiosk, yesterday&rsquo;s newspaper lifts one corner, considers flight,
               and lies back down.
             </p>
-            <p className="mb-3 text-base leading-relaxed text-ink-950">
+            <p className="mb-3 text-base leading-relaxed text-foreground">
               Then the air changes. Far down the line a rail begins to hum, a low note felt through
               the soles before it is heard. The pigeon freezes. The silver line trembles.
             </p>
-            <p className="text-base leading-relaxed text-ink-950">
+            <p className="text-base leading-relaxed text-foreground">
               And the station, which had belonged so completely to the cold and the quiet, draws one
               long breath and prepares, once more, to belong to everyone.
             </p>
           </div>
 
-          <div className="mt-5 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-4">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <div className="mt-5 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Why this earns marks — mapped to {WAO1_GRID[3].level}/{WAO2_GRID[3].level} qualities
             </p>
-            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink-950/85">
+            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
               <li>
                 <strong>Structural movement (WAO1):</strong> the description travels — wide on the
                 cold platform, up to the roof, down the rails, in to one pigeon, then out as the
@@ -452,28 +462,26 @@ export default function NarrativeDescriptivePage() {
         </section>
 
         <section aria-labelledby="grids" className="mb-12">
-          <h2 id="grids" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="grids" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             The grids your writing is judged against
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             Section B is marked on two objectives. The annotations above point back to these
             levelled descriptors. Notice how each level rewards <em>tighter</em> control — the
             journey to the top band is a journey from &ldquo;some&rdquo; to &ldquo;assured&rdquo;.
           </p>
 
-          <h3 className="mb-3 font-serif text-lg font-semibold text-ink-950">
+          <h3 className="mb-3 font-heading text-lg font-semibold text-foreground">
             WAO1 — form, communication and purpose
           </h3>
           <div className="mb-8 space-y-4">
             {WAO1_GRID.map((row) => (
-              <div key={row.level} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
+              <div key={row.level} className="rounded-lg bg-card p-5 border border-border/60">
                 <div className="mb-2 flex items-baseline gap-3">
-                  <span className="font-mono text-sm font-semibold text-emerald-700">
-                    {row.level}
-                  </span>
-                  <span className="text-sm text-ink-950/70">{row.marks} marks</span>
+                  <span className="font-mono text-sm font-semibold text-primary">{row.level}</span>
+                  <span className="text-sm text-muted-foreground">{row.marks} marks</span>
                 </div>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-ink-950/85">
+                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
                   {row.descriptors.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -482,19 +490,17 @@ export default function NarrativeDescriptivePage() {
             ))}
           </div>
 
-          <h3 className="mb-3 font-serif text-lg font-semibold text-ink-950">
+          <h3 className="mb-3 font-heading text-lg font-semibold text-foreground">
             WAO2 — grammar, punctuation and spelling
           </h3>
           <div className="space-y-4">
             {WAO2_GRID.map((row) => (
-              <div key={row.level} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
+              <div key={row.level} className="rounded-lg bg-card p-5 border border-border/60">
                 <div className="mb-2 flex items-baseline gap-3">
-                  <span className="font-mono text-sm font-semibold text-emerald-700">
-                    {row.level}
-                  </span>
-                  <span className="text-sm text-ink-950/70">{row.marks} marks</span>
+                  <span className="font-mono text-sm font-semibold text-primary">{row.level}</span>
+                  <span className="text-sm text-muted-foreground">{row.marks} marks</span>
                 </div>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-ink-950/85">
+                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
                   {row.descriptors.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -505,28 +511,28 @@ export default function NarrativeDescriptivePage() {
         </section>
 
         <section aria-labelledby="practice" className="mb-12">
-          <h2 id="practice" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="practice" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Practice prompts
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             Two original prompts. Plan briefly, then write for about the recommended Section B
             window. Apply the techniques above and self-check against both grids.
           </p>
           <div className="space-y-4">
-            <div className="rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-5">
-              <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+            <div className="rounded-lg border-l-4 border-primary/40 bg-card p-5">
+              <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                 Prompt 1 — narrative
               </p>
-              <p className="text-base italic leading-relaxed text-ink-950">
+              <p className="text-base italic leading-relaxed text-foreground">
                 &ldquo;Write a story that begins the moment a long-kept secret is about to be spoken
                 aloud. End it before the secret is fully told.&rdquo;
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-5">
-              <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+            <div className="rounded-lg border-l-4 border-primary/40 bg-card p-5">
+              <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                 Prompt 2 — descriptive
               </p>
-              <p className="text-base italic leading-relaxed text-ink-950">
+              <p className="text-base italic leading-relaxed text-foreground">
                 &ldquo;Describe an empty place in the few minutes before it fills with people. Move
                 the reader through the space; do not tell a story.&rdquo;
               </p>
@@ -534,7 +540,7 @@ export default function NarrativeDescriptivePage() {
           </div>
         </section>
 
-        <footer className="mt-16 border-t border-ink-950/10 pt-6 text-xs leading-relaxed text-ink-950/55">
+        <footer className="mt-16 border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           <p>{SPEC_ATTRIBUTION}</p>
           <p className="mt-3">
             This writing-forms guide is provided for educational guidance (criticism and

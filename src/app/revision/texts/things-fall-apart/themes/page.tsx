@@ -441,7 +441,7 @@ const themes: ThemeData[] = [
 
 export default function ThemesPage() {
   return (
-    <div className="space-y-10 bg-cream-50 pb-16">
+    <div className="space-y-10 bg-background pb-16">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -486,10 +486,10 @@ export default function ThemesPage() {
             </Badge>
           </div>
 
-          <h1 className="font-serif text-display-sm text-foreground sm:text-display">
+          <h1 className="font-heading text-display-sm text-foreground sm:text-display">
             Theme Analysis
           </h1>
-          <p className="mt-2 text-body-lg italic text-clay-600">
+          <p className="mt-2 text-body-lg italic text-clay-600 dark:text-clay-300">
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
@@ -503,7 +503,7 @@ export default function ThemesPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 font-serif text-heading-md text-foreground">Jump to a Theme</h2>
+            <h2 className="mb-4 font-heading text-heading-md text-foreground">Jump to a Theme</h2>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {themes.map((th) => {
                 const Icon = th.icon
@@ -542,15 +542,17 @@ export default function ThemesPage() {
                 <Icon className={`size-5 ${theme.iconColour}`} />
               </div>
               <div>
-                <h2 className="font-serif text-heading-lg text-foreground">{theme.title}</h2>
-                <p className="text-body-sm italic text-clay-600">{theme.definition}</p>
+                <h2 className="font-heading text-heading-lg text-foreground">{theme.title}</h2>
+                <p className="text-body-sm italic text-clay-600 dark:text-clay-300">
+                  {theme.definition}
+                </p>
               </div>
             </div>
 
             {/* Overview */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-serif text-heading-md">
+                <CardTitle className="flex items-center gap-2 font-heading text-heading-md">
                   <BookOpen className="size-4 text-clay-500" />
                   Overview
                 </CardTitle>
@@ -563,7 +565,7 @@ export default function ThemesPage() {
             {/* Evidence from each part */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-serif text-heading-md">
+                <CardTitle className="flex items-center gap-2 font-heading text-heading-md">
                   <Flame className="size-4 text-ochre-500" />
                   Evidence Across the Novel
                 </CardTitle>
@@ -582,13 +584,16 @@ export default function ThemesPage() {
             <div>
               <div className="mb-4 flex items-center gap-2">
                 <Quote className="size-4 text-clay-500" />
-                <h3 className="font-serif text-heading-md text-foreground">Key Quotations</h3>
+                <h3 className="font-heading text-heading-md text-foreground">Key Quotations</h3>
               </div>
               <div className="grid gap-3">
                 {theme.keyQuotes.map((q, i) => (
-                  <div key={i} className="rounded-lg border-l-4 border-l-clay-500 bg-cream-100 p-4">
-                    <p className="font-serif font-medium italic text-foreground">{q.text}</p>
-                    <p className="mt-1 text-xs font-mono text-clay-600">
+                  <div
+                    key={i}
+                    className="rounded-lg border-l-4 border-l-clay-500 bg-muted p-4 dark:border-l-clay-400"
+                  >
+                    <p className="font-heading font-medium italic text-foreground">{q.text}</p>
+                    <p className="mt-1 text-xs font-mono text-clay-600 dark:text-clay-300">
                       {q.speaker} -- {q.part}
                     </p>
                   </div>
@@ -599,7 +604,7 @@ export default function ThemesPage() {
             {/* Context links */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 font-serif text-heading-md">
+                <CardTitle className="flex items-center gap-2 font-heading text-heading-md">
                   <BookOpen className="size-4 text-teal-500" />
                   Links to Context
                 </CardTitle>

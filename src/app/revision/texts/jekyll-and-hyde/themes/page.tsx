@@ -226,7 +226,7 @@ const THEMES: ThemeStudy[] = [
 
 export default function JekyllAndHydeThemesPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },

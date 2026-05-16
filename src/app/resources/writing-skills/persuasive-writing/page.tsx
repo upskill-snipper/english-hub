@@ -29,7 +29,7 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
       </span>
       <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
         {note}
-        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[primary]" />
+        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-primary" />
       </span>
     </span>
   )
@@ -1508,30 +1508,51 @@ export default async function PersuasiveWritingPage() {
                       'revolutionise',
                     ],
                   },
-                ].map((group) => (
-                  <div
-                    key={group.category}
-                    className="rounded-xl border border-border bg-card p-5 shadow-md"
-                  >
-                    <p className="font-bold text-sm mb-3" style={{ color: group.colour }}>
-                      {group.category}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {group.words.map((word, i) => (
-                        <span
-                          key={i}
-                          className="rounded-full px-3 py-1 text-xs font-medium text-muted-foreground border"
-                          style={{
-                            borderColor: `${group.colour}40`,
-                            backgroundColor: `${group.colour}08`,
-                          }}
-                        >
-                          {word}
-                        </span>
-                      ))}
+                ].map((group) => {
+                  // Map the semantic token name to dual-theme utility classes so
+                  // the vocabulary cards render correctly in light AND dark.
+                  const tokenClasses: Record<string, { text: string; chip: string }> = {
+                    accent: {
+                      text: 'text-accent',
+                      chip: 'border-accent/40 bg-accent/[0.08]',
+                    },
+                    primary: {
+                      text: 'text-primary',
+                      chip: 'border-primary/40 bg-primary/[0.08]',
+                    },
+                    destructive: {
+                      text: 'text-destructive',
+                      chip: 'border-destructive/40 bg-destructive/[0.08]',
+                    },
+                    success: {
+                      text: 'text-success',
+                      chip: 'border-success/40 bg-success/[0.08]',
+                    },
+                    secondary: {
+                      text: 'text-secondary-foreground',
+                      chip: 'border-border bg-secondary/[0.4]',
+                    },
+                  }
+                  const tc = tokenClasses[group.colour] ?? tokenClasses.primary
+                  return (
+                    <div
+                      key={group.category}
+                      className="rounded-xl border border-border bg-card p-5 shadow-md"
+                    >
+                      <p className={`font-bold text-sm mb-3 ${tc.text}`}>{group.category}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {group.words.map((word, i) => (
+                          <span
+                            key={i}
+                            className={`rounded-full px-3 py-1 text-xs font-medium text-muted-foreground border ${tc.chip}`}
+                          >
+                            {word}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
 
               <div className="mt-8">

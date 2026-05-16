@@ -409,7 +409,7 @@ const characters: CharacterData[] = [
 
 export default function CharactersPage() {
   return (
-    <div className="space-y-10 bg-cream-50 pb-16">
+    <div className="space-y-10 bg-background pb-16">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -454,10 +454,10 @@ export default function CharactersPage() {
             </Badge>
           </div>
 
-          <h1 className="font-serif text-display-sm text-foreground sm:text-display">
+          <h1 className="font-heading text-display-sm text-foreground sm:text-display">
             Character Analysis
           </h1>
-          <p className="mt-2 text-body-lg italic text-clay-600">
+          <p className="mt-2 text-body-lg italic text-clay-600 dark:text-clay-300">
             Things Fall Apart by Chinua Achebe
           </p>
           <p className="mt-4 max-w-2xl text-body-md text-muted-foreground">
@@ -472,7 +472,9 @@ export default function CharactersPage() {
       <section>
         <Card>
           <CardContent className="p-4 sm:p-6">
-            <h2 className="mb-4 font-serif text-heading-md text-foreground">Jump to a Character</h2>
+            <h2 className="mb-4 font-heading text-heading-md text-foreground">
+              Jump to a Character
+            </h2>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {characters.map((ch) => (
                 <a
@@ -507,13 +509,15 @@ export default function CharactersPage() {
         >
           <div className="mb-5 flex items-center gap-3">
             <Users className="size-5 text-clay-500" />
-            <h2 className="font-serif text-heading-lg text-foreground">{ch.name}</h2>
+            <h2 className="font-heading text-heading-lg text-foreground">{ch.name}</h2>
           </div>
 
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle className="font-serif text-heading-md">{ch.name}</CardTitle>
-              <CardDescription className="italic text-clay-600">{ch.role}</CardDescription>
+              <CardTitle className="font-heading text-heading-md">{ch.name}</CardTitle>
+              <CardDescription className="italic text-clay-600 dark:text-clay-300">
+                {ch.role}
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5 text-body-sm text-muted-foreground">
               {/* Description */}
@@ -544,10 +548,12 @@ export default function CharactersPage() {
                   {ch.keyQuotes.map((q, i) => (
                     <div
                       key={i}
-                      className="rounded-lg border-l-4 border-l-clay-500 bg-cream-100 p-4"
+                      className="rounded-lg border-l-4 border-l-clay-500 bg-muted p-4 dark:border-l-clay-400"
                     >
-                      <p className="font-serif font-medium italic text-foreground">{q.text}</p>
-                      <p className="mt-1 text-xs font-mono text-clay-600">{q.chapter}</p>
+                      <p className="font-heading font-medium italic text-foreground">{q.text}</p>
+                      <p className="mt-1 text-xs font-mono text-clay-600 dark:text-clay-300">
+                        {q.chapter}
+                      </p>
                       <p className="mt-2 text-body-sm text-muted-foreground">{q.analysis}</p>
                     </div>
                   ))}

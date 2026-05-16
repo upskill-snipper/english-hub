@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 import {
@@ -151,46 +151,46 @@ export default function ReportsTextTypePage() {
       />
 
       <main className="mx-auto my-12 max-w-3xl px-4">
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-ink-950/70">
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1">
             <li>
-              <Link href="/" className="hover:text-emerald-700">
+              <Link href="/" className="hover:text-primary">
                 Home
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/ks3" className="hover:text-emerald-700">
+              <Link href="/ks3" className="hover:text-primary">
                 KS3
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/ks3/ilowersecondary" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary" className="hover:text-primary">
                 iLowerSecondary English
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/ks3/ilowersecondary/text-types" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary/text-types" className="hover:text-primary">
                 Text types
               </Link>
             </li>
             <li aria-hidden="true">/</li>
-            <li aria-current="page" className="font-medium text-ink-950">
+            <li aria-current="page" className="font-medium text-foreground">
               Reports
             </li>
           </ol>
         </nav>
 
         <header className="mb-10">
-          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
             Text types &middot; Non-fiction
           </p>
-          <h1 className="mb-4 font-serif text-4xl font-semibold text-ink-950">
+          <h1 className="mb-4 font-heading text-4xl font-semibold text-foreground">
             Report texts: reading and writing
           </h1>
-          <p className="text-base leading-relaxed text-ink-950/85">
+          <p className="text-base leading-relaxed text-muted-foreground">
             The report is one of the non-fiction text types you study for the Pearson Edexcel
             iLowerSecondary English achievement test. This guide shows you how to recognise a report
             when you read one, how to comment on its structure and impersonal language in Section A,
@@ -202,53 +202,55 @@ export default function ReportsTextTypePage() {
 
         <section
           aria-labelledby="conventions"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="conventions" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="conventions" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Conventions of a report
           </h2>
-          <p className="mb-4 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             A report sets out factual information about a subject in an organised, objective way.
             Its purpose is usually to <em>{NON_FICTION_PURPOSES[3]}</em> &mdash; to give the reader
             accurate knowledge rather than to entertain or persuade. Look for these features:
           </p>
-          <ul className="space-y-3 text-sm leading-relaxed text-ink-950/85">
-            <li className="border-l-4 border-emerald-400 pl-4">
-              <span className="font-semibold text-ink-950">Objective, impersonal tone.</span> The
+          <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+            <li className="border-l-4 border-primary/40 pl-4">
+              <span className="font-semibold text-foreground">Objective, impersonal tone.</span> The
               writer stays out of the text. There is little or no opinion, and emotive or persuasive
               language is avoided.
             </li>
-            <li className="border-l-4 border-emerald-400 pl-4">
-              <span className="font-semibold text-ink-950">Third person.</span> The subject is
+            <li className="border-l-4 border-primary/40 pl-4">
+              <span className="font-semibold text-foreground">Third person.</span> The subject is
               described using &ldquo;it&rdquo;, &ldquo;they&rdquo; or noun phrases, not
               &ldquo;I&rdquo; or &ldquo;you&rdquo;. The passive voice is common (&ldquo;a survey was
               carried out&rdquo;).
             </li>
-            <li className="border-l-4 border-emerald-400 pl-4">
-              <span className="font-semibold text-ink-950">Present tense for general truths.</span>{' '}
+            <li className="border-l-4 border-primary/40 pl-4">
+              <span className="font-semibold text-foreground">
+                Present tense for general truths.
+              </span>{' '}
               A report describes how things generally are (&ldquo;water boils at 100&deg;C&rdquo;),
               not a single past event.
             </li>
-            <li className="border-l-4 border-emerald-400 pl-4">
-              <span className="font-semibold text-ink-950">Headings and sub-headings.</span>{' '}
+            <li className="border-l-4 border-primary/40 pl-4">
+              <span className="font-semibold text-foreground">Headings and sub-headings.</span>{' '}
               Information is broken into labelled sections so a reader can find what they need.
             </li>
-            <li className="border-l-4 border-emerald-400 pl-4">
-              <span className="font-semibold text-ink-950">
+            <li className="border-l-4 border-primary/40 pl-4">
+              <span className="font-semibold text-foreground">
                 Classification and factual organisation.
               </span>{' '}
               Content is grouped by topic (habitat, diet, findings) rather than ordered by time.
             </li>
-            <li className="border-l-4 border-emerald-400 pl-4">
-              <span className="font-semibold text-ink-950">Formal vocabulary.</span> Precise, often
-              technical words are chosen for clarity, not for effect.
+            <li className="border-l-4 border-primary/40 pl-4">
+              <span className="font-semibold text-foreground">Formal vocabulary.</span> Precise,
+              often technical words are chosen for clarity, not for effect.
             </li>
-            <li className="border-l-4 border-emerald-400 pl-4">
-              <span className="font-semibold text-ink-950">Evidence and figures.</span> Claims are
-              supported with data, examples or measurements.
+            <li className="border-l-4 border-primary/40 pl-4">
+              <span className="font-semibold text-foreground">Evidence and figures.</span> Claims
+              are supported with data, examples or measurements.
             </li>
-            <li className="border-l-4 border-emerald-400 pl-4">
-              <span className="font-semibold text-ink-950">Conclusion or recommendations.</span>{' '}
+            <li className="border-l-4 border-primary/40 pl-4">
+              <span className="font-semibold text-foreground">Conclusion or recommendations.</span>{' '}
               Many reports end by drawing a measured conclusion from the evidence, sometimes
               recommending action.
             </li>
@@ -256,10 +258,10 @@ export default function ReportsTextTypePage() {
         </section>
 
         <section aria-labelledby="distinguish" className="mb-12">
-          <h2 id="distinguish" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="distinguish" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Telling a report apart from a recount and an article
           </h2>
-          <p className="mb-4 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             In the reading section you may need to identify a text type and justify your choice. A
             report sits alongside the other non-fiction types you study, including the{' '}
             <em>{NON_FICTION_TEXT_TYPES[6]}</em> and <em>{NON_FICTION_TEXT_TYPES[4]}</em>. These
@@ -268,55 +270,55 @@ export default function ReportsTextTypePage() {
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-cream-100 text-left text-ink-950">
-                  <th className="border border-ink-950/10 p-3 font-semibold">Feature</th>
-                  <th className="border border-ink-950/10 p-3 font-semibold">Report</th>
-                  <th className="border border-ink-950/10 p-3 font-semibold">Recount</th>
-                  <th className="border border-ink-950/10 p-3 font-semibold">Article</th>
+                <tr className="bg-muted text-left text-foreground">
+                  <th className="border border-border/60 p-3 font-semibold">Feature</th>
+                  <th className="border border-border/60 p-3 font-semibold">Report</th>
+                  <th className="border border-border/60 p-3 font-semibold">Recount</th>
+                  <th className="border border-border/60 p-3 font-semibold">Article</th>
                 </tr>
               </thead>
-              <tbody className="text-ink-950/85">
+              <tbody className="text-muted-foreground">
                 <tr>
-                  <td className="border border-ink-950/10 p-3 font-medium">Main purpose</td>
-                  <td className="border border-ink-950/10 p-3">Inform objectively</td>
-                  <td className="border border-ink-950/10 p-3">Retell what happened</td>
-                  <td className="border border-ink-950/10 p-3">
+                  <td className="border border-border/60 p-3 font-medium">Main purpose</td>
+                  <td className="border border-border/60 p-3">Inform objectively</td>
+                  <td className="border border-border/60 p-3">Retell what happened</td>
+                  <td className="border border-border/60 p-3">
                     Inform and interest, often with a viewpoint
                   </td>
                 </tr>
-                <tr className="bg-cream-50">
-                  <td className="border border-ink-950/10 p-3 font-medium">Tense</td>
-                  <td className="border border-ink-950/10 p-3">Present (general truths)</td>
-                  <td className="border border-ink-950/10 p-3">Past (a finished event)</td>
-                  <td className="border border-ink-950/10 p-3">Mixed, depending on the story</td>
+                <tr className="bg-card">
+                  <td className="border border-border/60 p-3 font-medium">Tense</td>
+                  <td className="border border-border/60 p-3">Present (general truths)</td>
+                  <td className="border border-border/60 p-3">Past (a finished event)</td>
+                  <td className="border border-border/60 p-3">Mixed, depending on the story</td>
                 </tr>
                 <tr>
-                  <td className="border border-ink-950/10 p-3 font-medium">Voice</td>
-                  <td className="border border-ink-950/10 p-3">Impersonal third person</td>
-                  <td className="border border-ink-950/10 p-3">
+                  <td className="border border-border/60 p-3 font-medium">Voice</td>
+                  <td className="border border-border/60 p-3">Impersonal third person</td>
+                  <td className="border border-border/60 p-3">
                     Often first person (&ldquo;I&rdquo;, &ldquo;we&rdquo;)
                   </td>
-                  <td className="border border-ink-950/10 p-3">
+                  <td className="border border-border/60 p-3">
                     Can be personal; uses the writer&rsquo;s voice
                   </td>
                 </tr>
-                <tr className="bg-cream-50">
-                  <td className="border border-ink-950/10 p-3 font-medium">Organisation</td>
-                  <td className="border border-ink-950/10 p-3">
+                <tr className="bg-card">
+                  <td className="border border-border/60 p-3 font-medium">Organisation</td>
+                  <td className="border border-border/60 p-3">
                     Classified by topic, with sub-headings
                   </td>
-                  <td className="border border-ink-950/10 p-3">Chronological (time order)</td>
-                  <td className="border border-ink-950/10 p-3">
+                  <td className="border border-border/60 p-3">Chronological (time order)</td>
+                  <td className="border border-border/60 p-3">
                     Headline, hook, then developed points
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-ink-950/10 p-3 font-medium">Language</td>
-                  <td className="border border-ink-950/10 p-3">Formal, neutral, evidence-based</td>
-                  <td className="border border-ink-950/10 p-3">
+                  <td className="border border-border/60 p-3 font-medium">Language</td>
+                  <td className="border border-border/60 p-3">Formal, neutral, evidence-based</td>
+                  <td className="border border-border/60 p-3">
                     Descriptive, often personal feelings
                   </td>
-                  <td className="border border-ink-950/10 p-3">May be emotive or persuasive</td>
+                  <td className="border border-border/60 p-3">May be emotive or persuasive</td>
                 </tr>
               </tbody>
             </table>
@@ -325,15 +327,15 @@ export default function ReportsTextTypePage() {
 
         <section
           aria-labelledby="extract-1"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="extract-1" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="extract-1" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             Annotated extract 1: an information report
           </h2>
-          <p className="mb-4 text-sm text-ink-950/75">
+          <p className="mb-4 text-sm text-muted-foreground">
             An original example. The place and animal below are invented for teaching.
           </p>
-          <div className="mb-6 space-y-2 rounded bg-cream-50 p-5 font-serif text-ink-950 ring-1 ring-ink-950/10">
+          <div className="mb-6 space-y-2 rounded bg-card p-5 font-heading text-foreground border border-border/60">
             {INFORMATION_REPORT.lines.map((line, i) => (
               <p
                 key={i}
@@ -341,7 +343,7 @@ export default function ReportsTextTypePage() {
                   i === 0
                     ? 'text-lg font-semibold'
                     : i === 1 || i === 3
-                      ? 'font-semibold text-emerald-800'
+                      ? 'font-semibold text-primary'
                       : 'leading-relaxed'
                 }
               >
@@ -351,9 +353,9 @@ export default function ReportsTextTypePage() {
           </div>
           <ol className="space-y-4">
             {INFORMATION_REPORT.annotations.map((a) => (
-              <li key={a.feature} className="border-l-4 border-emerald-400 pl-4">
-                <p className="text-sm font-semibold text-ink-950">{a.feature}</p>
-                <p className="text-sm leading-relaxed text-ink-950/85">{a.note}</p>
+              <li key={a.feature} className="border-l-4 border-primary/40 pl-4">
+                <p className="text-sm font-semibold text-foreground">{a.feature}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{a.note}</p>
               </li>
             ))}
           </ol>
@@ -361,16 +363,16 @@ export default function ReportsTextTypePage() {
 
         <section
           aria-labelledby="extract-2"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="extract-2" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="extract-2" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             Annotated extract 2: a findings report
           </h2>
-          <p className="mb-4 text-sm text-ink-950/75">
+          <p className="mb-4 text-sm text-muted-foreground">
             An original example. The school and every figure below are invented for teaching and are
             not real research.
           </p>
-          <div className="mb-6 space-y-2 rounded bg-cream-50 p-5 font-serif text-ink-950 ring-1 ring-ink-950/10">
+          <div className="mb-6 space-y-2 rounded bg-card p-5 font-heading text-foreground border border-border/60">
             {FINDINGS_REPORT.lines.map((line, i) => (
               <p
                 key={i}
@@ -378,7 +380,7 @@ export default function ReportsTextTypePage() {
                   i === 0
                     ? 'text-lg font-semibold'
                     : i === 1 || i === 3 || i === 5
-                      ? 'font-semibold text-emerald-800'
+                      ? 'font-semibold text-primary'
                       : 'leading-relaxed'
                 }
               >
@@ -388,19 +390,19 @@ export default function ReportsTextTypePage() {
           </div>
           <ol className="space-y-4">
             {FINDINGS_REPORT.annotations.map((a) => (
-              <li key={a.feature} className="border-l-4 border-emerald-400 pl-4">
-                <p className="text-sm font-semibold text-ink-950">{a.feature}</p>
-                <p className="text-sm leading-relaxed text-ink-950/85">{a.note}</p>
+              <li key={a.feature} className="border-l-4 border-primary/40 pl-4">
+                <p className="text-sm font-semibold text-foreground">{a.feature}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{a.note}</p>
               </li>
             ))}
           </ol>
         </section>
 
         <section aria-labelledby="reading" className="mb-12">
-          <h2 id="reading" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="reading" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Reading a report in Section A
           </h2>
-          <p className="mb-4 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             When a report appears as an unseen text, questions often test how you analyse its{' '}
             <strong>structure and organisation</strong> and the writer&rsquo;s{' '}
             <strong>impersonal language at word and sentence level</strong>. Use these prompts,
@@ -409,9 +411,11 @@ export default function ReportsTextTypePage() {
           </p>
           <div className="space-y-5">
             {Object.entries(NON_FICTION_PROMPTS).map(([heading, prompts]) => (
-              <div key={heading} className="rounded-lg bg-cream-100 p-5 ring-1 ring-ink-950/5">
-                <h3 className="mb-2 font-serif text-lg font-semibold text-ink-950">{heading}</h3>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-ink-950/85">
+              <div key={heading} className="rounded-lg bg-muted p-5 border border-border/60">
+                <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
+                  {heading}
+                </h3>
+                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
                   {prompts.map((p) => (
                     <li key={p}>{p}</li>
                   ))}
@@ -419,7 +423,7 @@ export default function ReportsTextTypePage() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-ink-950/85">
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             For a structure question, name the organisational choice (e.g. sub-headings,
             classification by topic, an introduction followed by findings then a conclusion) and
             explain its effect on the reader. For a language question, point to a specific
@@ -430,24 +434,24 @@ export default function ReportsTextTypePage() {
         </section>
 
         <section aria-labelledby="practice" className="mb-12">
-          <h2 id="practice" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="practice" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Practice questions with model answers
           </h2>
-          <p className="mb-6 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
             These questions refer to the two annotated extracts above. Try each one before you read
             the model answer.
           </p>
           <ol className="space-y-6">
             {PRACTICE.map((item, i) => (
-              <li key={i} className="rounded-lg bg-cream-100 p-5 ring-1 ring-ink-950/5">
+              <li key={i} className="rounded-lg bg-muted p-5 border border-border/60">
                 <div className="mb-2 flex items-baseline gap-3">
-                  <span className="font-mono text-xs font-semibold text-emerald-700">
+                  <span className="font-mono text-xs font-semibold text-primary">
                     Q{i + 1} &middot; {item.ao}
                   </span>
                 </div>
-                <p className="mb-3 text-sm font-medium text-ink-950">{item.q}</p>
-                <p className="text-sm leading-relaxed text-ink-950/85">
-                  <span className="font-semibold text-ink-950">Model answer: </span>
+                <p className="mb-3 text-sm font-medium text-foreground">{item.q}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  <span className="font-semibold text-foreground">Model answer: </span>
                   {item.model}
                 </p>
               </li>
@@ -457,48 +461,51 @@ export default function ReportsTextTypePage() {
 
         <section
           aria-labelledby="writing-task"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="writing-task" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="writing-task"
+            className="mb-4 font-heading text-2xl font-semibold text-foreground"
+          >
             Writing a report for Section B
           </h2>
-          <p className="mb-4 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             If the writing task asks for a report, plan a clear set of sections before you start.
             Open with a short introduction stating the subject, group your information under
             sub-headings, support points with examples or figures, keep the tone impersonal
             throughout, and finish with a conclusion or recommendation drawn from what you have
             said.
           </p>
-          <div className="mb-6 rounded bg-cream-50 p-5 ring-1 ring-ink-950/10">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <div className="mb-6 rounded bg-card p-5 border border-border/60">
+            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Original task
             </p>
-            <p className="text-sm leading-relaxed text-ink-950">
+            <p className="text-sm leading-relaxed text-foreground">
               Your school is opening a new student garden. Write a report for the head teacher about
               how the garden could be used. Set out your ideas clearly under sub-headings and end
               with a recommendation.
             </p>
           </div>
-          <div className="rounded bg-cream-50 p-5 ring-1 ring-ink-950/10">
-            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <div className="rounded bg-card p-5 border border-border/60">
+            <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
               Model opening (original)
             </p>
-            <div className="space-y-2 font-serif text-sm leading-relaxed text-ink-950">
+            <div className="space-y-2 font-heading text-sm leading-relaxed text-foreground">
               <p className="font-semibold">Report on the Use of the New Student Garden</p>
-              <p className="font-semibold text-emerald-800">Introduction</p>
+              <p className="font-semibold text-primary">Introduction</p>
               <p>
                 This report sets out how the new student garden could be used across the school
                 year. The information is presented under three sub-headings: lessons, well-being and
                 growing food. A recommendation is given at the end.
               </p>
-              <p className="font-semibold text-emerald-800">Lessons</p>
+              <p className="font-semibold text-primary">Lessons</p>
               <p>
                 The garden can support several subjects. Science classes can study plant growth on
                 site, and geography lessons can use it to examine soil and weather.
               </p>
             </div>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-ink-950/85">
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Notice how the opening establishes the form at once: a title, an introduction that
             previews the structure, the impersonal third person (&ldquo;This report sets
             out&rdquo;), the present tense, and sub-headings that classify the content. Carry these
@@ -507,7 +514,7 @@ export default function ReportsTextTypePage() {
           </p>
         </section>
 
-        <footer className="mt-16 border-t border-ink-950/10 pt-6 text-xs leading-relaxed text-ink-950/60">
+        <footer className="mt-16 border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           <p className="mb-2">
             This page is study guidance for the Pearson Edexcel International Award in Lower
             Secondary English (LEH11). It is used for the purpose of criticism, review and

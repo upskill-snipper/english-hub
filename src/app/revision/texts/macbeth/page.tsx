@@ -818,11 +818,11 @@ export default async function MacbethPage() {
       <section aria-labelledby="macbeth-introduction" className="mx-auto my-12 max-w-3xl px-4">
         <h2
           id="macbeth-introduction"
-          className="mb-4 font-serif text-3xl font-semibold text-ink-950"
+          className="mb-4 font-heading text-3xl font-semibold text-foreground"
         >
           Macbeth at a glance
         </h2>
-        <div className="space-y-4 text-base leading-relaxed text-ink-950/85">
+        <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
           <p>
             Macbeth is Shakespeare&rsquo;s shortest tragedy and one of the most frequently examined
             texts at GCSE in England and Wales. Written around 1606, the play follows a Scottish
@@ -870,30 +870,32 @@ export default async function MacbethPage() {
 
       <section
         aria-labelledby="macbeth-top-quotes"
-        className="mx-auto my-8 max-w-3xl rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+        className="mx-auto my-8 max-w-3xl rounded-lg bg-card p-6 ring-1 ring-border/60 sm:p-8"
       >
-        <h2 id="macbeth-top-quotes" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+        <h2
+          id="macbeth-top-quotes"
+          className="mb-2 font-heading text-2xl font-semibold text-foreground"
+        >
           Top 5 quotes you must know for AO2
         </h2>
-        <p className="mb-6 text-sm text-ink-950/75">
+        <p className="mb-6 text-sm text-muted-foreground">
           Five exam-essential quotations with focused AO2 readings. Memorise the wording exactly
           &mdash; precise quotation is the foundation of Grade 7+ analysis.
         </p>
         <ol className="space-y-6">
           {TOP_FIVE_QUOTES.map((q, i) => (
-            <li key={q.character} className="border-l-4 border-emerald-400 pl-4">
+            <li key={q.character} className="border-l-4 border-primary/50 pl-4">
               <div className="mb-2 flex items-baseline gap-3">
-                <span
-                  aria-hidden="true"
-                  className="font-mono text-xs font-semibold text-emerald-700"
-                >
+                <span aria-hidden="true" className="font-mono text-xs font-semibold text-primary">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <p className="font-serif text-lg italic leading-snug text-ink-950">{q.quote}</p>
+                <p className="font-heading text-lg italic leading-snug text-foreground">
+                  {q.quote}
+                </p>
               </div>
-              <p className="mb-2 text-sm font-medium text-ink-950/80">{q.character}</p>
-              <p className="text-sm leading-relaxed text-ink-950/85">
-                <span className="font-semibold text-ink-950">AO2 reading: </span>
+              <p className="mb-2 text-sm font-medium text-foreground/80">{q.character}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                <span className="font-semibold text-foreground">AO2 reading: </span>
                 {q.ao2}
               </p>
             </li>
@@ -906,11 +908,11 @@ export default async function MacbethPage() {
       <section aria-labelledby="macbeth-compare-with" className="mx-auto my-12 max-w-3xl px-4">
         <h2
           id="macbeth-compare-with"
-          className="mb-2 font-serif text-2xl font-semibold text-ink-950"
+          className="mb-2 font-heading text-2xl font-semibold text-foreground"
         >
           Compare with
         </h2>
-        <p className="mb-6 text-sm text-ink-950/75">
+        <p className="mb-6 text-sm text-muted-foreground">
           Comparative thinking is rewarded by examiners across boards. Cross-reference Macbeth with
           these set texts to strengthen your thematic essays.
         </p>
@@ -919,15 +921,15 @@ export default async function MacbethPage() {
             <Link
               key={card.href}
               href={card.href}
-              className="group block rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10 transition hover:ring-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+              className="group block rounded-lg bg-card p-5 ring-1 ring-border/60 transition hover:ring-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <h3 className="mb-2 font-serif text-lg font-semibold text-ink-950 group-hover:text-emerald-700">
+              <h3 className="mb-2 font-heading text-lg font-semibold text-foreground group-hover:text-primary">
                 {card.title}
               </h3>
-              <p className="text-sm leading-relaxed text-ink-950/80">{card.reason}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{card.reason}</p>
               <span
                 aria-hidden="true"
-                className="mt-3 inline-block text-xs font-semibold text-emerald-700"
+                className="mt-3 inline-block text-xs font-semibold text-primary"
               >
                 Open guide &rarr;
               </span>

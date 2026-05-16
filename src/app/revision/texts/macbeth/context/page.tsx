@@ -217,7 +217,7 @@ const CONTEXT_TOPICS: ContextTopic[] = [
 
 export default function MacbethContextPage() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -263,7 +263,7 @@ export default function MacbethContextPage() {
 
         {/* Exam tip */}
         <div className="rounded-lg border border-amber-500/20 bg-amber-500/[0.04] p-4">
-          <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-600 dark:text-clay-600">
+          <h4 className="mb-1 flex items-center gap-1.5 font-semibold text-amber-700 dark:text-amber-300">
             <Lightbulb className="size-4" /> Using Context in Your Essays
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
@@ -378,7 +378,7 @@ export default function MacbethContextPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Lightbulb className="size-5 text-clay-600" />
+              <Lightbulb className="size-5 text-clay-700 dark:text-clay-300" />
               Common Context Mistakes to Avoid
             </CardTitle>
           </CardHeader>

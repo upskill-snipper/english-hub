@@ -42,10 +42,10 @@ const LEVEL_LABELS: Record<Level, string> = {
 }
 
 const LEVEL_STYLES: Record<Level, string> = {
-  gcse: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/30',
-  igcse: 'bg-clay-300/15 text-clay-300 ring-clay-300/30',
-  ks3: 'bg-blue-400/15 text-blue-300 ring-blue-400/30',
-  'a-level': 'bg-violet-400/15 text-violet-300 ring-violet-400/30',
+  gcse: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 ring-emerald-500/30',
+  igcse: 'bg-clay-500/15 text-clay-700 dark:text-clay-300 ring-clay-500/30',
+  ks3: 'bg-blue-500/15 text-blue-600 dark:text-blue-300 ring-blue-500/30',
+  'a-level': 'bg-violet-500/15 text-violet-600 dark:text-violet-300 ring-violet-500/30',
 }
 
 export default function LevelChip({ level, className, children }: LevelChipProps) {

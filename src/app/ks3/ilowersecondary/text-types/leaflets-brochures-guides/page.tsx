@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
@@ -191,46 +191,46 @@ export default function LeafletsBrochuresGuidesPage() {
       />
 
       <main className="mx-auto max-w-3xl px-4 py-12">
-        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-ink-950/60">
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1">
             <li>
-              <Link href="/" className="hover:text-emerald-700">
+              <Link href="/" className="hover:text-primary">
                 Home
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3" className="hover:text-emerald-700">
+              <Link href="/ks3" className="hover:text-primary">
                 KS3
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary" className="hover:text-primary">
                 iLowerSecondary English
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary/text-types" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary/text-types" className="hover:text-primary">
                 Text types
               </Link>
             </li>
             <li aria-hidden>/</li>
-            <li className="font-medium text-ink-950/80" aria-current="page">
+            <li className="font-medium text-muted-foreground" aria-current="page">
               Leaflets, brochures &amp; guides
             </li>
           </ol>
         </nav>
 
         <header className="mb-10">
-          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
             iLowerSecondary English (LEH11) &middot; Text types
           </p>
-          <h1 className="mb-4 font-serif text-4xl font-semibold text-ink-950">
+          <h1 className="mb-4 font-heading text-4xl font-semibold text-foreground">
             Leaflets, brochures &amp; guides
           </h1>
-          <p className="text-base leading-relaxed text-ink-950/85">
+          <p className="text-base leading-relaxed text-muted-foreground">
             Leaflets, brochures and guides are one of the non-fiction text types you may meet in
             Section A reading, and the kind of text you may be asked to write in Section B. Their
             job is to inform a reader and, very often, to persuade them to do something &mdash;
@@ -241,12 +241,15 @@ export default function LeafletsBrochuresGuidesPage() {
 
         <section
           aria-labelledby="where-it-fits"
-          className="mb-10 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-10 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="where-it-fits" className="mb-3 font-serif text-2xl font-semibold text-ink-950">
+          <h2
+            id="where-it-fits"
+            className="mb-3 font-heading text-2xl font-semibold text-foreground"
+          >
             Where this fits in the qualification
           </h2>
-          <p className="mb-3 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
             &ldquo;Leaflets, brochures, guides&rdquo; is one of the listed non-fiction text types
             for the reading paper, sitting alongside the others below:
           </p>
@@ -256,15 +259,15 @@ export default function LeafletsBrochuresGuidesPage() {
                 key={t}
                 className={
                   t === 'leaflets, brochures, guides'
-                    ? 'rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-800 ring-1 ring-emerald-300'
-                    : 'rounded-full bg-cream-50 px-3 py-1 text-xs text-ink-950/70 ring-1 ring-ink-950/10'
+                    ? 'rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-primary/30'
+                    : 'rounded-full bg-card px-3 py-1 text-xs text-muted-foreground border border-border/60'
                 }
               >
                 {t}
               </li>
             ))}
           </ul>
-          <p className="text-sm leading-relaxed text-ink-950/85">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             These texts typically combine two non-fiction purposes &mdash; most often{' '}
             <strong>inform</strong> and <strong>persuade</strong> &mdash; chosen from the full list:{' '}
             {NON_FICTION_PURPOSES.join(', ')}.
@@ -272,17 +275,17 @@ export default function LeafletsBrochuresGuidesPage() {
         </section>
 
         <section aria-labelledby="conventions" className="mb-12">
-          <h2 id="conventions" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="conventions" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Conventions and their effect
           </h2>
-          <p className="mb-6 text-sm leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
             Every feature in a leaflet is a deliberate choice. In a reading answer, always link the
             feature to its <em>effect on the reader</em> and to the writer&rsquo;s purpose &mdash;
             that is what the structure and organisation marks reward.
           </p>
-          <div className="overflow-hidden rounded-lg ring-1 ring-ink-950/10">
+          <div className="overflow-hidden rounded-lg border border-border/60">
             <table className="w-full border-collapse text-left text-sm">
-              <thead className="bg-cream-100 text-ink-950">
+              <thead className="bg-muted text-foreground">
                 <tr>
                   <th className="p-3 font-semibold">Feature</th>
                   <th className="p-3 font-semibold">What it is</th>
@@ -291,13 +294,10 @@ export default function LeafletsBrochuresGuidesPage() {
               </thead>
               <tbody>
                 {CONVENTIONS.map((c) => (
-                  <tr
-                    key={c.feature}
-                    className="border-t border-ink-950/10 align-top odd:bg-cream-50"
-                  >
-                    <td className="p-3 font-medium text-ink-950">{c.feature}</td>
-                    <td className="p-3 text-ink-950/80">{c.what}</td>
-                    <td className="p-3 text-ink-950/80">{c.effect}</td>
+                  <tr key={c.feature} className="border-t border-border/60 align-top odd:bg-card">
+                    <td className="p-3 font-medium text-foreground">{c.feature}</td>
+                    <td className="p-3 text-muted-foreground">{c.what}</td>
+                    <td className="p-3 text-muted-foreground">{c.effect}</td>
                   </tr>
                 ))}
               </tbody>
@@ -306,10 +306,10 @@ export default function LeafletsBrochuresGuidesPage() {
         </section>
 
         <section aria-labelledby="reading" className="mb-12">
-          <h2 id="reading" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="reading" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Analysing structure and language when reading
           </h2>
-          <div className="space-y-4 text-sm leading-relaxed text-ink-950/85">
+          <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
             <p>
               When you read a leaflet in Section A, work through it in three passes. First, look at{' '}
               <strong>organisation</strong>: how is the text divided, what does the heading promise,
@@ -323,11 +323,11 @@ export default function LeafletsBrochuresGuidesPage() {
               The Teacher&rsquo;s Guide guided-reading prompts for non-fiction are a useful
               checklist for exactly this kind of text:
             </p>
-            <div className="rounded-lg bg-cream-100 p-5 ring-1 ring-ink-950/5">
+            <div className="rounded-lg bg-muted p-5 border border-border/60">
               {Object.entries(GUIDED_READING_PROMPTS.nonFiction).map(([heading, prompts]) => (
                 <div key={heading} className="mb-4 last:mb-0">
-                  <h3 className="mb-2 font-semibold text-ink-950">{heading}</h3>
-                  <ul className="list-disc space-y-1 pl-5 text-ink-950/80">
+                  <h3 className="mb-2 font-semibold text-foreground">{heading}</h3>
+                  <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
                     {prompts.map((p) => (
                       <li key={p}>{p}</li>
                     ))}
@@ -339,28 +339,30 @@ export default function LeafletsBrochuresGuidesPage() {
         </section>
 
         <section aria-labelledby="examples" className="mb-12">
-          <h2 id="examples" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="examples" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             Two short annotated examples
           </h2>
-          <p className="mb-6 text-sm text-ink-950/70">
+          <p className="mb-6 text-sm text-muted-foreground">
             Both texts below are original and were written for this guide. The organisations and
             places are invented. Each block is annotated to show the convention at work.
           </p>
           <div className="space-y-8">
             {EXAMPLES.map((ex) => (
-              <article key={ex.id} className="rounded-lg bg-cream-50 p-6 ring-1 ring-ink-950/10">
-                <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+              <article key={ex.id} className="rounded-lg bg-card p-6 border border-border/60">
+                <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                   {ex.kind}
                 </p>
-                <h3 className="mb-4 font-serif text-xl font-semibold text-ink-950">{ex.title}</h3>
+                <h3 className="mb-4 font-heading text-xl font-semibold text-foreground">
+                  {ex.title}
+                </h3>
                 <ol className="space-y-4">
                   {ex.blocks.map((b, i) => (
-                    <li key={i} className="border-l-4 border-emerald-400 pl-4">
-                      <p className="mb-1 font-serif text-base leading-relaxed text-ink-950">
+                    <li key={i} className="border-l-4 border-primary/40 pl-4">
+                      <p className="mb-1 font-heading text-base leading-relaxed text-foreground">
                         {b.text}
                       </p>
-                      <p className="text-xs leading-relaxed text-ink-950/70">
-                        <span className="font-semibold text-emerald-700">Feature: </span>
+                      <p className="text-xs leading-relaxed text-muted-foreground">
+                        <span className="font-semibold text-primary">Feature: </span>
                         {b.note}
                       </p>
                     </li>
@@ -372,21 +374,21 @@ export default function LeafletsBrochuresGuidesPage() {
         </section>
 
         <section aria-labelledby="practice" className="mb-12">
-          <h2 id="practice" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="practice" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Practice questions with model answers
           </h2>
-          <p className="mb-6 text-sm text-ink-950/70">
+          <p className="mb-6 text-sm text-muted-foreground">
             Try each question first, then check the model answer. The marks in brackets show how the
             answer is built up.
           </p>
           <ol className="space-y-6">
             {PRACTICE.map((p, i) => (
-              <li key={i} className="rounded-lg bg-cream-100 p-5 ring-1 ring-ink-950/5">
-                <p className="mb-3 font-semibold text-ink-950">
+              <li key={i} className="rounded-lg bg-muted p-5 border border-border/60">
+                <p className="mb-3 font-semibold text-foreground">
                   Q{i + 1}. {p.q}
                 </p>
-                <details className="text-sm leading-relaxed text-ink-950/85">
-                  <summary className="cursor-pointer font-semibold text-emerald-700">
+                <details className="text-sm leading-relaxed text-muted-foreground">
+                  <summary className="cursor-pointer font-semibold text-primary">
                     Show model answer
                   </summary>
                   <p className="mt-2">{p.a}</p>
@@ -397,10 +399,10 @@ export default function LeafletsBrochuresGuidesPage() {
         </section>
 
         <section aria-labelledby="writing" className="mb-12">
-          <h2 id="writing" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="writing" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Writing a leaflet for Section B
           </h2>
-          <div className="space-y-4 text-sm leading-relaxed text-ink-950/85">
+          <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
             <p>
               In Section B you may be asked to write a leaflet linked to the reading theme. Plan
               briefly first: decide your purpose (usually to inform and persuade), your audience,
@@ -408,17 +410,17 @@ export default function LeafletsBrochuresGuidesPage() {
               list, direct address, imperative verbs and a call to action with contact details. Keep
               paragraphs short and varied, and proofread for accurate punctuation and spelling.
             </p>
-            <div className="rounded-lg bg-emerald-50 p-5 ring-1 ring-emerald-300">
-              <p className="mb-2 font-semibold text-emerald-800">Writing task</p>
-              <p className="text-ink-950/85">
+            <div className="rounded-lg bg-primary/10 p-5 border border-primary/30">
+              <p className="mb-2 font-semibold text-primary">Writing task</p>
+              <p className="text-muted-foreground">
                 A new wildlife centre, Saltmere Marsh, is opening near your town. Write the text of
                 a leaflet that persuades families to visit during the spring holidays. You should
                 use the conventions of a leaflet and write to inform and persuade.
               </p>
             </div>
-            <div className="rounded-lg bg-cream-100 p-5 ring-1 ring-ink-950/5">
-              <p className="mb-2 font-semibold text-ink-950">Model opening</p>
-              <p className="italic text-ink-950/85">
+            <div className="rounded-lg bg-muted p-5 border border-border/60">
+              <p className="mb-2 font-semibold text-foreground">Model opening</p>
+              <p className="italic text-muted-foreground">
                 &ldquo;Discover Saltmere Marsh &mdash; Spring at the Water&rsquo;s Edge
                 <br />
                 <br />
@@ -443,7 +445,7 @@ export default function LeafletsBrochuresGuidesPage() {
           </div>
         </section>
 
-        <footer className="mt-12 border-t border-ink-950/10 pt-6 text-xs leading-relaxed text-ink-950/55">
+        <footer className="mt-12 border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           <p>{SPEC_ATTRIBUTION}</p>
           <p className="mt-2">
             Copyrighted material is used only to the limited extent necessary for criticism, review

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import {
@@ -251,46 +251,46 @@ export default function RecountNewsletterBiographyPage() {
       />
 
       <article className="mx-auto max-w-3xl px-4 py-12">
-        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-ink-950/60">
+        <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <li>
-              <Link href="/" className="hover:text-emerald-700">
+              <Link href="/" className="hover:text-primary">
                 Home
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3" className="hover:text-emerald-700">
+              <Link href="/ks3" className="hover:text-primary">
                 KS3
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary" className="hover:text-primary">
                 iLowerSecondary English
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/ks3/ilowersecondary/writing-forms" className="hover:text-emerald-700">
+              <Link href="/ks3/ilowersecondary/writing-forms" className="hover:text-primary">
                 Writing forms
               </Link>
             </li>
             <li aria-hidden>/</li>
-            <li className="font-medium text-ink-950/80" aria-current="page">
+            <li className="font-medium text-muted-foreground" aria-current="page">
               Recount, newsletter &amp; biography
             </li>
           </ol>
         </nav>
 
         <header className="mb-10">
-          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+          <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
             Section B writing forms · WAO1 guide
           </p>
-          <h1 className="mb-4 font-serif text-4xl font-semibold leading-tight text-ink-950">
+          <h1 className="mb-4 font-heading text-4xl font-semibold leading-tight text-foreground">
             Recount, newsletter &amp; biography
           </h1>
-          <p className="text-lg leading-relaxed text-ink-950/85">
+          <p className="text-lg leading-relaxed text-muted-foreground">
             Three forms you may meet in the Section B writing task share a problem: each retells
             real events, so it is tempting to write the same flat account whichever form you are
             given. The marks come from handling each one&rsquo;s <strong>conventions</strong>,{' '}
@@ -304,10 +304,10 @@ export default function RecountNewsletterBiographyPage() {
         </header>
 
         <section aria-labelledby="forms" className="mb-12">
-          <h2 id="forms" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="forms" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             The three forms, side by side
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             For each form, match the structure and register below; that is how the form is
             &ldquo;established and maintained&rdquo; in the WAO1 grid further down. Their dominant
             purpose is to <strong>{INFORM}</strong> — a recount or biography may also{' '}
@@ -315,35 +315,37 @@ export default function RecountNewsletterBiographyPage() {
           </p>
           <div className="space-y-5">
             {FORM_GUIDES.map((g) => (
-              <div key={g.key} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                <h3 className="mb-1 font-serif text-lg font-semibold text-ink-950">{g.label}</h3>
-                <p className="mb-3 text-sm italic text-ink-950/70">{g.summary}</p>
-                <p className="mb-1 text-sm font-semibold text-ink-950">
+              <div key={g.key} className="rounded-lg bg-card p-5 border border-border/60">
+                <h3 className="mb-1 font-heading text-lg font-semibold text-foreground">
+                  {g.label}
+                </h3>
+                <p className="mb-3 text-sm italic text-muted-foreground">{g.summary}</p>
+                <p className="mb-1 text-sm font-semibold text-foreground">
                   Structure &amp; layout conventions
                 </p>
-                <ul className="mb-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-ink-950/85">
+                <ul className="mb-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
                   {g.structure.map((s) => (
                     <li key={s}>{s}</li>
                   ))}
                 </ul>
-                <p className="mb-1 text-sm font-semibold text-ink-950">Register</p>
-                <p className="mb-3 text-sm leading-relaxed text-ink-950/85">{g.register}</p>
-                <p className="mb-1 text-sm font-semibold text-ink-950">Purpose</p>
-                <p className="mb-3 text-sm leading-relaxed text-ink-950/85">
+                <p className="mb-1 text-sm font-semibold text-foreground">Register</p>
+                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">{g.register}</p>
+                <p className="mb-1 text-sm font-semibold text-foreground">Purpose</p>
+                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
                   Primarily to <strong>{g.purposes}</strong>.
                 </p>
-                <p className="mb-1 text-sm font-semibold text-ink-950">Typical audience</p>
-                <p className="text-sm leading-relaxed text-ink-950/85">{g.audiences}</p>
+                <p className="mb-1 text-sm font-semibold text-foreground">Typical audience</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{g.audiences}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section aria-labelledby="grid" className="mb-12">
-          <h2 id="grid" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="grid" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             What the examiner rewards (WAO1)
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             All three forms are judged for form, communication and purpose against this levelled
             grid. Read the bands as a journey: from &ldquo;some awareness&rdquo; of audience and a
             form that is &ldquo;sometimes maintained&rdquo;, up to a &ldquo;sophisticated&rdquo;
@@ -352,14 +354,12 @@ export default function RecountNewsletterBiographyPage() {
           </p>
           <div className="space-y-4">
             {WAO1_GRID.map((row) => (
-              <div key={row.level} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
+              <div key={row.level} className="rounded-lg bg-card p-5 border border-border/60">
                 <div className="mb-2 flex items-baseline gap-3">
-                  <span className="font-mono text-sm font-semibold text-emerald-700">
-                    {row.level}
-                  </span>
-                  <span className="text-sm text-ink-950/70">{row.marks} marks</span>
+                  <span className="font-mono text-sm font-semibold text-primary">{row.level}</span>
+                  <span className="text-sm text-muted-foreground">{row.marks} marks</span>
                 </div>
-                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-ink-950/85">
+                <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
                   {row.descriptors.map((d) => (
                     <li key={d}>{d}</li>
                   ))}
@@ -371,12 +371,12 @@ export default function RecountNewsletterBiographyPage() {
 
         <section
           aria-labelledby="models"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="models" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="models" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             Three original annotated models
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">
+          <p className="mb-6 text-sm text-muted-foreground">
             Every task, person and event below is invented. Each model is short (around
             150&ndash;200 words) so you can see the whole shape of the form, then read why it earns
             marks against the WAO1 bands.
@@ -384,31 +384,31 @@ export default function RecountNewsletterBiographyPage() {
           <div className="space-y-8">
             {MODELS.map((m) => (
               <div key={m.heading}>
-                <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+                <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                   {m.formLabel}
                 </p>
-                <div className="mb-4 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-4">
-                  <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+                <div className="mb-4 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+                  <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                     {m.taskLabel}
                   </p>
-                  <p className="text-sm italic leading-relaxed text-ink-950">
+                  <p className="text-sm italic leading-relaxed text-foreground">
                     &ldquo;{m.task}&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                  <p className="mb-3 font-serif text-base font-semibold text-ink-950">
+                <div className="rounded-lg bg-card p-5 border border-border/60">
+                  <p className="mb-3 font-heading text-base font-semibold text-foreground">
                     {m.heading}
                   </p>
-                  <p className="text-base leading-relaxed text-ink-950">{m.body}</p>
+                  <p className="text-base leading-relaxed text-foreground">{m.body}</p>
                 </div>
-                <div className="mt-4 rounded-lg border-l-4 border-emerald-400 bg-cream-50 p-4">
-                  <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+                <div className="mt-4 rounded-lg border-l-4 border-primary/40 bg-card p-4">
+                  <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                     Why this earns marks — annotated to WAO1 bands
                   </p>
-                  <ul className="space-y-2 text-sm leading-relaxed text-ink-950/85">
+                  <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
                     {m.annotations.map((a) => (
                       <li key={a.point}>
-                        <span className="font-mono text-xs font-semibold text-emerald-700">
+                        <span className="font-mono text-xs font-semibold text-primary">
                           {a.band}:
                         </span>{' '}
                         {a.point}
@@ -423,19 +423,19 @@ export default function RecountNewsletterBiographyPage() {
 
         <section
           aria-labelledby="which-form"
-          className="mb-12 rounded-lg bg-cream-100 p-6 ring-1 ring-ink-950/5 sm:p-8"
+          className="mb-12 rounded-lg bg-muted p-6 border border-border/60 sm:p-8"
         >
-          <h2 id="which-form" className="mb-2 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="which-form" className="mb-2 font-heading text-2xl font-semibold text-foreground">
             Which form when? — a decision box
           </h2>
-          <p className="mb-6 text-sm text-ink-950/75">
+          <p className="mb-6 text-sm text-muted-foreground">
             The task wording names the form. If it is unclear, match the cue to the form before you
             plan a single line.
           </p>
-          <div className="overflow-x-auto rounded-lg ring-1 ring-ink-950/10">
+          <div className="overflow-x-auto rounded-lg border border-border/60">
             <table className="w-full border-collapse text-left text-sm">
               <thead>
-                <tr className="bg-cream-100 text-ink-950">
+                <tr className="bg-muted text-foreground">
                   <th className="p-3 font-semibold">If the task&hellip;</th>
                   <th className="p-3 font-semibold">Write a&hellip;</th>
                   <th className="p-3 font-semibold">Because</th>
@@ -443,10 +443,10 @@ export default function RecountNewsletterBiographyPage() {
               </thead>
               <tbody>
                 {DECISION_ROWS.map((r, i) => (
-                  <tr key={r.form} className={i % 2 === 0 ? 'bg-cream-50' : 'bg-cream-100/50'}>
-                    <td className="p-3 align-top text-ink-950/85">{r.cue}</td>
-                    <td className="p-3 align-top font-semibold text-ink-950">{r.form}</td>
-                    <td className="p-3 align-top text-ink-950/85">{r.why}</td>
+                  <tr key={r.form} className={i % 2 === 0 ? 'bg-card' : 'bg-muted/50'}>
+                    <td className="p-3 align-top text-muted-foreground">{r.cue}</td>
+                    <td className="p-3 align-top font-semibold text-foreground">{r.form}</td>
+                    <td className="p-3 align-top text-muted-foreground">{r.why}</td>
                   </tr>
                 ))}
               </tbody>
@@ -455,26 +455,26 @@ export default function RecountNewsletterBiographyPage() {
         </section>
 
         <section aria-labelledby="practice" className="mb-12">
-          <h2 id="practice" className="mb-4 font-serif text-2xl font-semibold text-ink-950">
+          <h2 id="practice" className="mb-4 font-heading text-2xl font-semibold text-foreground">
             Practice prompts
           </h2>
-          <p className="mb-6 text-base leading-relaxed text-ink-950/85">
+          <p className="mb-6 text-base leading-relaxed text-muted-foreground">
             Three original prompts, one per form. Plan briefly, write to time, then check your draft
             against the structure conventions and the WAO1 grid above.
           </p>
           <ol className="space-y-4">
             {PRACTICE_PROMPTS.map((p) => (
-              <li key={p.form} className="rounded-lg bg-cream-50 p-5 ring-1 ring-ink-950/10">
-                <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-700">
+              <li key={p.form} className="rounded-lg bg-card p-5 border border-border/60">
+                <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-primary">
                   {p.form}
                 </p>
-                <p className="text-base leading-relaxed text-ink-950/85">{p.prompt}</p>
+                <p className="text-base leading-relaxed text-muted-foreground">{p.prompt}</p>
               </li>
             ))}
           </ol>
         </section>
 
-        <footer className="mt-16 border-t border-ink-950/10 pt-6 text-xs leading-relaxed text-ink-950/55">
+        <footer className="mt-16 border-t border-border/60 pt-6 text-xs leading-relaxed text-muted-foreground">
           <p>{SPEC_ATTRIBUTION}</p>
           <p className="mt-3">
             This guide is provided for educational guidance (criticism and instruction). The sample

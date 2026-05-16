@@ -361,7 +361,7 @@ const CHARACTERS: CharacterStudy[] = [
 
 export default function CharactersPage() {
   return (
-    <div className="min-h-screen bg-cream-50 font-serif">
+    <div className="min-h-screen bg-background font-heading">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://theenglishhub.app' },
@@ -382,31 +382,31 @@ export default function CharactersPage() {
         <StudyTools textName="An Inspector Calls" textType="play" />
 
         {/* Hero */}
-        <section className="mt-8 rounded-2xl border border-teal-400/20 bg-gradient-to-br from-cream-100 via-cream-50 to-teal-300/[0.06] p-6 sm:p-8 lg:p-10">
+        <section className="mt-8 rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.06] p-6 sm:p-8 lg:p-10">
           <Link
             href="/revision/texts/an-inspector-calls"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700"
+            className="mb-4 inline-flex items-center gap-1 text-sm text-teal-600 hover:text-teal-700 dark:text-teal-300 dark:hover:text-teal-200"
           >
             <ArrowLeft className="size-3.5" />
             Back to An Inspector Calls
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
+            <span className="inline-flex items-center gap-1 rounded-full bg-teal-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
               <Users className="size-3" />
               Character Guide
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-clay-300/30 px-3 py-1 text-xs text-clay-600">
+            <span className="inline-flex items-center gap-1 rounded-full border border-clay-500/30 px-3 py-1 text-xs text-clay-700 dark:text-clay-300">
               <Sparkles className="size-3" />
               AQA / Edexcel / OCR / Eduqas
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             An Inspector Calls &mdash; Characters
           </h1>
-          <p className="mt-2 text-lg text-ink-500">by J.B. Priestley &mdash; 1945</p>
-          <p className="mt-4 max-w-2xl text-ink-500">
+          <p className="mt-2 text-lg text-muted-foreground">by J.B. Priestley &mdash; 1945</p>
+          <p className="mt-4 max-w-2xl text-muted-foreground">
             Complete character analysis for all seven key characters. Each section includes a
             detailed overview, character arc, key quotes with AO2 analysis, theme links, and exam
             technique advice.
@@ -414,11 +414,11 @@ export default function CharactersPage() {
         </section>
 
         {/* Exam tip banner */}
-        <section className="mt-8 rounded-xl border border-clay-300/20 bg-clay-200/10 p-5">
+        <section className="mt-8 rounded-xl border border-clay-500/20 bg-clay-500/10 p-5">
           <div className="flex items-start gap-3">
-            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-500" />
-            <div className="text-sm text-ink-600">
-              <p className="mb-1 font-bold text-ink-800">Exam technique</p>
+            <Lightbulb className="mt-0.5 size-5 shrink-0 text-clay-600 dark:text-clay-300" />
+            <div className="text-sm text-muted-foreground">
+              <p className="mb-1 font-bold text-foreground">Exam technique</p>
               <p>
                 In GCSE literature, character questions always require you to discuss
                 Priestley&rsquo;s <strong>intentions</strong> (AO1/AO3) and analyse{' '}
@@ -431,10 +431,13 @@ export default function CharactersPage() {
 
         {/* Characters */}
         {CHARACTERS.map((char, idx) => {
-          const accentBg = char.colour === 'teal' ? 'bg-teal-400/8' : 'bg-clay-300/10'
-          const accentText = char.colour === 'teal' ? 'text-teal-700' : 'text-clay-600'
-          const accentBorder = char.colour === 'teal' ? 'border-teal-400/20' : 'border-clay-300/20'
-          const quoteBg = char.colour === 'teal' ? 'bg-teal-500/5' : 'bg-clay-200/10'
+          const accentBg = char.colour === 'teal' ? 'bg-teal-500/10' : 'bg-clay-500/10'
+          const accentText =
+            char.colour === 'teal'
+              ? 'text-teal-700 dark:text-teal-300'
+              : 'text-clay-600 dark:text-clay-300'
+          const accentBorder = char.colour === 'teal' ? 'border-teal-500/20' : 'border-clay-500/20'
+          const quoteBg = char.colour === 'teal' ? 'bg-teal-500/5' : 'bg-clay-500/10'
 
           return (
             <section key={char.name} className="mt-12">
@@ -444,44 +447,44 @@ export default function CharactersPage() {
                   <Users className={`size-5 ${accentText}`} />
                 </div>
                 <div>
-                  <h2 className="font-serif text-2xl font-bold text-ink-900">{char.name}</h2>
-                  <p className="text-sm italic text-ink-400">{char.role}</p>
+                  <h2 className="font-heading text-2xl font-bold text-foreground">{char.name}</h2>
+                  <p className="text-sm italic text-muted-foreground">{char.role}</p>
                 </div>
               </div>
 
               {/* Overview */}
-              <div className={`mt-4 rounded-xl border ${accentBorder} bg-cream-100/60 p-5`}>
-                <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-ink-400">
+              <div className={`mt-4 rounded-xl border ${accentBorder} bg-muted p-5`}>
+                <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Overview
                 </h3>
-                <p className="text-sm leading-relaxed text-ink-600">{char.overview}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{char.overview}</p>
               </div>
 
               {/* Character arc */}
-              <div className="mt-4 rounded-xl border border-ink-100 bg-cream-50 p-5">
-                <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-ink-400">
+              <div className="mt-4 rounded-xl border border-border/60 bg-card p-5">
+                <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Character Arc
                 </h3>
-                <p className="text-sm leading-relaxed text-ink-600">{char.arc}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{char.arc}</p>
               </div>
 
               {/* Key quotes */}
               <div className="mt-6">
                 <div className="mb-3 flex items-center gap-2">
                   <Quote className={`size-4 ${accentText}`} />
-                  <h3 className="font-serif text-lg font-bold text-ink-800">Key Quotes</h3>
+                  <h3 className="font-heading text-lg font-bold text-foreground">Key Quotes</h3>
                 </div>
                 <div className="space-y-3">
                   {char.keyQuotes.map((q, qi) => (
                     <div key={qi} className={`rounded-xl border ${accentBorder} ${quoteBg} p-4`}>
-                      <p className="text-base font-medium italic text-ink-800">{q.quote}</p>
+                      <p className="text-base font-medium italic text-foreground">{q.quote}</p>
                       <p
                         className={`mt-1 text-xs font-semibold uppercase tracking-wider ${accentText}`}
                       >
                         {q.act}
                       </p>
-                      <p className="mt-2 text-sm leading-relaxed text-ink-600">
-                        <span className="font-semibold text-ink-700">AO2: </span>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        <span className="font-semibold text-foreground">AO2: </span>
                         {q.analysis}
                       </p>
                     </div>
@@ -490,13 +493,13 @@ export default function CharactersPage() {
               </div>
 
               {/* Theme links */}
-              <div className="mt-5 rounded-xl border border-ink-100 bg-cream-100/40 p-4">
-                <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-ink-400">
+              <div className="mt-5 rounded-xl border border-border/60 bg-muted p-4">
+                <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   Theme Links
                 </h3>
                 <ul className="space-y-1">
                   {char.themeLinks.map((link, li) => (
-                    <li key={li} className="flex items-start gap-2 text-sm text-ink-600">
+                    <li key={li} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <span
                         className={`mt-1.5 size-1.5 shrink-0 rounded-full ${char.colour === 'teal' ? 'bg-teal-500' : 'bg-clay-500'}`}
                       />
@@ -507,28 +510,28 @@ export default function CharactersPage() {
               </div>
 
               {/* Exam tip */}
-              <div className="mt-4 rounded-xl border border-clay-300/20 bg-clay-200/8 p-4">
+              <div className="mt-4 rounded-xl border border-clay-500/20 bg-clay-500/10 p-4">
                 <div className="flex items-start gap-2">
-                  <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-500" />
+                  <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-600 dark:text-clay-300" />
                   <div>
-                    <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600">
+                    <p className="mb-1 text-xs font-bold uppercase tracking-wider text-clay-600 dark:text-clay-300">
                       Exam Tip
                     </p>
-                    <p className="text-sm leading-relaxed text-ink-600">{char.examTip}</p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{char.examTip}</p>
                   </div>
                 </div>
               </div>
 
               {/* Divider */}
-              {idx < CHARACTERS.length - 1 && <div className="mt-10 border-t border-ink-100" />}
+              {idx < CHARACTERS.length - 1 && <div className="mt-10 border-t border-border/60" />}
             </section>
           )
         })}
 
         {/* Navigation */}
-        <section className="mt-14 rounded-xl border border-teal-400/20 bg-teal-500/5 p-6">
-          <h3 className="font-serif text-xl font-bold text-ink-900">Continue studying</h3>
-          <p className="mt-1 text-sm text-ink-500">
+        <section className="mt-14 rounded-xl border border-teal-500/20 bg-teal-500/5 p-6">
+          <h3 className="font-heading text-xl font-bold text-foreground">Continue studying</h3>
+          <p className="mt-1 text-sm text-muted-foreground">
             Explore themes, key quotes, and context for An Inspector Calls.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -540,13 +543,13 @@ export default function CharactersPage() {
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/key-quotes"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Key Quotes
             </Link>
             <Link
               href="/revision/texts/an-inspector-calls/context"
-              className="inline-flex items-center rounded-lg border border-teal-400/30 bg-cream-50 px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5"
+              className="inline-flex items-center rounded-lg border border-teal-500/30 bg-card px-4 py-2 text-sm font-medium text-teal-700 hover:bg-teal-500/5 dark:text-teal-300"
             >
               Context
             </Link>
@@ -554,7 +557,7 @@ export default function CharactersPage() {
         </section>
 
         {/* Fair-dealing notice */}
-        <p className="mt-10 border-t border-ink-100 pt-4 text-xs text-ink-400">
+        <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">
           Short quotations (&le;15 words each) reproduced under the fair dealing provision of the
           Copyright, Designs and Patents Act 1988 for the purpose of criticism, review and
           educational study. <em>An Inspector Calls</em> &copy; J.B. Priestley Estate. Full text
