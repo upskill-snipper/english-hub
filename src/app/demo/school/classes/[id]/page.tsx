@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useState, useMemo } from "react"
-import { useParams } from "next/navigation"
-import Link from "next/link"
+import { useState, useMemo } from 'react'
+import { useParams } from 'next/navigation'
+import Link from 'next/link'
 import {
   ArrowLeft,
   Users,
@@ -14,64 +14,73 @@ import {
   TrendingUp,
   AlertTriangle,
   BarChart3,
-} from "lucide-react"
-import { toast } from "sonner"
-import { DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data"
-import type { DemoStudent } from "@/data/demo-data"
-import { percentageToGCSEGrade } from "@/lib/grades"
+} from 'lucide-react'
+import { toast } from 'sonner'
+import { DEMO_CLASSES, DEMO_STUDENTS } from '@/data/demo-data'
+import type { DemoStudent } from '@/data/demo-data'
+import { percentageToGCSEGrade } from '@/lib/grades'
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function boardBadgeClass(board: string): string {
   switch (board) {
-    case "AQA":
-      return "bg-clay-500/10 text-clay-600 border-clay-500/20"
-    case "Edexcel":
-      return "bg-teal-800/10 text-teal-700 border-teal-800/20"
-    case "OCR":
-      return "bg-teal-800/10 text-teal-700 border-teal-800/20"
-    case "WJEC":
-      return "bg-red-500/10 text-red-400 border-red-500/20"
-    case "CAIE IGCSE":
-      return "bg-amber-500/10 text-clay-600 border-amber-500/20"
-    case "KS3":
-      return "bg-teal-800/10 text-teal-700 border-teal-800/20"
+    case 'AQA':
+      return 'bg-accent/10 text-accent border-accent/20'
+    case 'Edexcel':
+      return 'bg-primary/10 text-primary border-primary/20'
+    case 'OCR':
+      return 'bg-primary/10 text-primary border-primary/20'
+    case 'WJEC':
+      return 'bg-red-500/10 text-red-700 border-red-500/20 dark:text-red-300'
+    case 'CAIE IGCSE':
+      return 'bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-amber-300'
+    case 'KS3':
+      return 'bg-primary/10 text-primary border-primary/20'
     default:
-      return "bg-ink-200/10 text-ink-600 border-neutral-500/20"
+      return 'bg-muted text-muted-foreground border-border/60'
   }
 }
 
 function progressBarColor(pct: number): string {
-  if (pct >= 70) return "bg-teal-700"
-  if (pct >= 40) return "bg-amber-500"
-  return "bg-red-500"
+  if (pct >= 70) return 'bg-teal-700'
+  if (pct >= 40) return 'bg-amber-500'
+  return 'bg-red-500'
 }
 
-function statusBadgeStyle(status: DemoStudent["status"]): { label: string; className: string } {
+function statusBadgeStyle(status: DemoStudent['status']): { label: string; className: string } {
   switch (status) {
-    case "excelling":
-      return { label: "Excelling", className: "bg-green-500/10 text-green-400 border-green-500/20" }
-    case "on-track":
-      return { label: "On Track", className: "bg-teal-800/10 text-teal-700 border-teal-800/20" }
-    case "needs-support":
-      return { label: "Needs Support", className: "bg-amber-500/10 text-clay-600 border-amber-500/20" }
-    case "at-risk":
-      return { label: "At Risk", className: "bg-red-500/10 text-red-400 border-red-500/20" }
+    case 'excelling':
+      return {
+        label: 'Excelling',
+        className: 'bg-emerald-500/10 text-emerald-700 border-emerald-500/20 dark:text-emerald-300',
+      }
+    case 'on-track':
+      return { label: 'On Track', className: 'bg-primary/10 text-primary border-primary/20' }
+    case 'needs-support':
+      return {
+        label: 'Needs Support',
+        className: 'bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-amber-300',
+      }
+    case 'at-risk':
+      return {
+        label: 'At Risk',
+        className: 'bg-red-500/10 text-red-700 border-red-500/20 dark:text-red-300',
+      }
     default:
-      return { label: status, className: "bg-ink-200/10 text-ink-600 border-neutral-500/20" }
+      return { label: status, className: 'bg-muted text-muted-foreground border-border/60' }
   }
 }
 
 // ── Weekly activity data (static demo) ───────────────────────────────────────
 
 const WEEKLY_ACTIVITY = [
-  { day: "Mon", value: 82 },
-  { day: "Tue", value: 65 },
-  { day: "Wed", value: 91 },
-  { day: "Thu", value: 74 },
-  { day: "Fri", value: 58 },
-  { day: "Sat", value: 30 },
-  { day: "Sun", value: 22 },
+  { day: 'Mon', value: 82 },
+  { day: 'Tue', value: 65 },
+  { day: 'Wed', value: 91 },
+  { day: 'Thu', value: 74 },
+  { day: 'Fri', value: 58 },
+  { day: 'Sat', value: 30 },
+  { day: 'Sun', value: 22 },
 ]
 
 // ── Component ────────────────────────────────────────────────────────────────
@@ -79,14 +88,11 @@ const WEEKLY_ACTIVITY = [
 export default function DemoClassDetailPage() {
   const params = useParams()
   const classId = params.id as string
-  const [activeTab, setActiveTab] = useState<"students" | "analytics">("students")
-  const [search, setSearch] = useState("")
+  const [activeTab, setActiveTab] = useState<'students' | 'analytics'>('students')
+  const [search, setSearch] = useState('')
 
   const cls = DEMO_CLASSES.find((c) => c.id === classId)
-  const students = useMemo(
-    () => DEMO_STUDENTS.filter((s) => s.classId === classId),
-    [classId]
-  )
+  const students = useMemo(() => DEMO_STUDENTS.filter((s) => s.classId === classId), [classId])
 
   const filteredStudents = useMemo(() => {
     if (!search.trim()) return students
@@ -97,32 +103,27 @@ export default function DemoClassDetailPage() {
   // Analytics computations
   const avgScore = useMemo(() => {
     if (students.length === 0) return cls?.avgScore ?? 0
-    return Math.round(
-      students.reduce((sum, s) => sum + s.averageScore, 0) / students.length
-    )
+    return Math.round(students.reduce((sum, s) => sum + s.averageScore, 0) / students.length)
   }, [students, cls])
 
   const completionRate = cls?.completionRate ?? 0
 
   const atRiskCount = useMemo(
-    () => students.filter((s) => s.status === "at-risk" || s.status === "needs-support").length,
-    [students]
+    () => students.filter((s) => s.status === 'at-risk' || s.status === 'needs-support').length,
+    [students],
   )
 
   const topPerformers = useMemo(
-    () =>
-      [...students]
-        .sort((a, b) => b.averageScore - a.averageScore)
-        .slice(0, 5),
-    [students]
+    () => [...students].sort((a, b) => b.averageScore - a.averageScore).slice(0, 5),
+    [students],
   )
 
   const scoreDistribution = useMemo(() => {
     const buckets = [
-      { label: "Grade 1-3", count: 0, color: "bg-red-500" },
-      { label: "Grade 4-5", count: 0, color: "bg-amber-500" },
-      { label: "Grade 6-7", count: 0, color: "bg-blue-500" },
-      { label: "Grade 8-9", count: 0, color: "bg-green-500" },
+      { label: 'Grade 1-3', count: 0, color: 'bg-red-500' },
+      { label: 'Grade 4-5', count: 0, color: 'bg-amber-500' },
+      { label: 'Grade 6-7', count: 0, color: 'bg-blue-500' },
+      { label: 'Grade 8-9', count: 0, color: 'bg-green-500' },
     ]
     students.forEach((s) => {
       if (s.averageScore < 40) buckets[0].count++
@@ -197,22 +198,22 @@ export default function DemoClassDetailPage() {
       {/* Tabs */}
       <div className="flex gap-1 rounded-lg bg-muted p-1 mb-6">
         <button
-          onClick={() => setActiveTab("students")}
+          onClick={() => setActiveTab('students')}
           className={`flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors ${
-            activeTab === "students"
-              ? "bg-card text-foreground shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
+            activeTab === 'students'
+              ? 'bg-card text-foreground shadow-sm'
+              : 'text-muted-foreground hover:text-foreground'
           }`}
         >
           <Users className="inline h-4 w-4 mr-1.5 -mt-0.5" />
           Students
         </button>
         <button
-          onClick={() => setActiveTab("analytics")}
+          onClick={() => setActiveTab('analytics')}
           className={`flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors ${
-            activeTab === "analytics"
-              ? "bg-card text-foreground shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
+            activeTab === 'analytics'
+              ? 'bg-card text-foreground shadow-sm'
+              : 'text-muted-foreground hover:text-foreground'
           }`}
         >
           <BarChart3 className="inline h-4 w-4 mr-1.5 -mt-0.5" />
@@ -221,7 +222,7 @@ export default function DemoClassDetailPage() {
       </div>
 
       {/* ── Students Tab ───────────────────────────────────────────────────── */}
-      {activeTab === "students" && (
+      {activeTab === 'students' && (
         <div>
           {/* Search + Add */}
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4">
@@ -236,7 +237,7 @@ export default function DemoClassDetailPage() {
               />
               {search && (
                 <button
-                  onClick={() => setSearch("")}
+                  onClick={() => setSearch('')}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                 >
                   <X className="h-4 w-4" />
@@ -245,8 +246,8 @@ export default function DemoClassDetailPage() {
             </div>
             <button
               onClick={() =>
-                toast.info("Available with full account", {
-                  description: "Register your school to add students to classes.",
+                toast.info('Available with full account', {
+                  description: 'Register your school to add students to classes.',
                 })
               }
               className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors self-start"
@@ -262,8 +263,8 @@ export default function DemoClassDetailPage() {
               <Users className="h-8 w-8 text-muted-foreground/40 mb-2" />
               <p className="text-sm text-muted-foreground">
                 {search
-                  ? "No students match your search."
-                  : "No students with detailed records in this class yet."}
+                  ? 'No students match your search.'
+                  : 'No students with detailed records in this class yet.'}
               </p>
             </div>
           ) : (
@@ -272,11 +273,21 @@ export default function DemoClassDetailPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border bg-muted/50">
-                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">Name</th>
-                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">Progress</th>
-                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">Score</th>
-                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">Status</th>
-                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">Last Active</th>
+                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                        Name
+                      </th>
+                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                        Progress
+                      </th>
+                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                        Score
+                      </th>
+                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                        Status
+                      </th>
+                      <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                        Last Active
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -308,7 +319,12 @@ export default function DemoClassDetailPage() {
                               </span>
                             </div>
                           </td>
-                          <td className="px-4 py-3 tabular-nums">{student.averageScore}% <span className="text-muted-foreground text-xs">(G{percentageToGCSEGrade(student.averageScore)})</span></td>
+                          <td className="px-4 py-3 tabular-nums">
+                            {student.averageScore}%{' '}
+                            <span className="text-muted-foreground text-xs">
+                              (G{percentageToGCSEGrade(student.averageScore)})
+                            </span>
+                          </td>
                           <td className="px-4 py-3">
                             <span
                               className={`inline-flex items-center rounded-md border px-2 py-0.5 text-[11px] font-medium ${badge.className}`}
@@ -316,9 +332,7 @@ export default function DemoClassDetailPage() {
                               {badge.label}
                             </span>
                           </td>
-                          <td className="px-4 py-3 text-muted-foreground">
-                            {student.lastActive}
-                          </td>
+                          <td className="px-4 py-3 text-muted-foreground">{student.lastActive}</td>
                         </tr>
                       )
                     })}
@@ -331,7 +345,7 @@ export default function DemoClassDetailPage() {
       )}
 
       {/* ── Analytics Tab ──────────────────────────────────────────────────── */}
-      {activeTab === "analytics" && (
+      {activeTab === 'analytics' && (
         <div className="space-y-6">
           {/* Top stat cards */}
           <div className="grid gap-4 sm:grid-cols-3">
@@ -340,7 +354,12 @@ export default function DemoClassDetailPage() {
               <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
                 Class Average Score
               </p>
-              <p className="text-3xl font-bold tabular-nums">{avgScore}% <span className="text-lg font-normal text-muted-foreground">(Grade {percentageToGCSEGrade(avgScore)})</span></p>
+              <p className="text-3xl font-bold tabular-nums">
+                {avgScore}%{' '}
+                <span className="text-lg font-normal text-muted-foreground">
+                  (Grade {percentageToGCSEGrade(avgScore)})
+                </span>
+              </p>
               <p className="text-xs text-muted-foreground mt-1">
                 Across {students.length > 0 ? students.length : cls.studentCount} students
               </p>
@@ -375,7 +394,7 @@ export default function DemoClassDetailPage() {
               <p className="text-xs text-muted-foreground mt-1">
                 {students.length > 0
                   ? `${Math.round((atRiskCount / students.length) * 100)}% of class`
-                  : "Based on demo data"}
+                  : 'Based on demo data'}
               </p>
             </div>
           </div>
@@ -385,11 +404,13 @@ export default function DemoClassDetailPage() {
             {/* Top 5 performers */}
             <div className="rounded-xl border border-border bg-card p-5">
               <div className="flex items-center gap-2 mb-4">
-                <TrendingUp className="h-4 w-4 text-green-400" />
+                <TrendingUp className="h-4 w-4 text-emerald-700 dark:text-emerald-300" />
                 <h3 className="text-sm font-semibold">Top 5 Performers</h3>
               </div>
               {topPerformers.length === 0 ? (
-                <p className="text-sm text-muted-foreground">No detailed student records for this class.</p>
+                <p className="text-sm text-muted-foreground">
+                  No detailed student records for this class.
+                </p>
               ) : (
                 <div className="space-y-3">
                   {topPerformers.map((student, i) => (
@@ -400,8 +421,11 @@ export default function DemoClassDetailPage() {
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium truncate">{student.name}</p>
                       </div>
-                      <span className="text-sm font-semibold tabular-nums text-green-400">
-                        {student.averageScore}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(student.averageScore)})</span>
+                      <span className="text-sm font-semibold tabular-nums text-emerald-700 dark:text-emerald-300">
+                        {student.averageScore}%{' '}
+                        <span className="text-xs font-normal text-muted-foreground">
+                          (G{percentageToGCSEGrade(student.averageScore)})
+                        </span>
                       </span>
                     </div>
                   ))}
@@ -417,7 +441,9 @@ export default function DemoClassDetailPage() {
                   const heightPct = Math.max((d.value / 100) * 100, 4)
                   return (
                     <div key={d.day} className="flex-1 flex flex-col items-center gap-1">
-                      <span className="text-[10px] tabular-nums text-muted-foreground">{d.value}</span>
+                      <span className="text-[10px] tabular-nums text-muted-foreground">
+                        {d.value}
+                      </span>
                       <div
                         className="w-full rounded-t bg-primary/70 transition-all"
                         style={{ height: `${heightPct}%` }}
@@ -436,16 +462,20 @@ export default function DemoClassDetailPage() {
             <div className="space-y-3">
               {scoreDistribution.map((bucket) => (
                 <div key={bucket.label} className="flex items-center gap-3">
-                  <span className="w-16 text-xs text-muted-foreground shrink-0">{bucket.label}</span>
+                  <span className="w-16 text-xs text-muted-foreground shrink-0">
+                    {bucket.label}
+                  </span>
                   <div className="flex-1 h-5 rounded bg-muted overflow-hidden">
                     <div
                       className={`h-full rounded ${bucket.color} transition-all`}
                       style={{
-                        width: maxDistCount > 0 ? `${(bucket.count / maxDistCount) * 100}%` : "0%",
+                        width: maxDistCount > 0 ? `${(bucket.count / maxDistCount) * 100}%` : '0%',
                       }}
                     />
                   </div>
-                  <span className="w-8 text-right text-xs font-medium tabular-nums">{bucket.count}</span>
+                  <span className="w-8 text-right text-xs font-medium tabular-nums">
+                    {bucket.count}
+                  </span>
                 </div>
               ))}
             </div>

@@ -55,7 +55,7 @@ const COURSES = [
 ]
 
 function progressBarColor(pct: number) {
-  if (pct === 100) return 'bg-teal-700'
+  if (pct === 100) return 'bg-primary'
   if (pct >= 60) return 'bg-blue-500'
   if (pct >= 40) return 'bg-amber-500'
   return 'bg-red-500'
@@ -64,12 +64,12 @@ function progressBarColor(pct: number) {
 export default function StudentCoursesPage() {
   const t = useT()
   return (
-    <div className="min-h-screen bg-cream-50 text-ink-900">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Back link */}
         <Link
           href="/demo/student"
-          className="inline-flex items-center gap-1.5 text-sm text-ink-500 hover:text-ink-600 transition-colors mb-6"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           {t('demo_student.courses.back_dashboard')}
@@ -77,10 +77,10 @@ export default function StudentCoursesPage() {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-light tracking-tight text-ink-900">
+          <h1 className="text-3xl font-light tracking-tight text-foreground">
             {t('demo_student.courses.title')}
           </h1>
-          <p className="text-ink-500 text-sm mt-1">
+          <p className="text-muted-foreground text-sm mt-1">
             {STUDENT.name} -- {STUDENT.year}
           </p>
         </div>
@@ -91,27 +91,29 @@ export default function StudentCoursesPage() {
             <Link
               key={course.id}
               href={`/demo/student/courses/${course.id}`}
-              className="group rounded-xl border border-ink-200 bg-white p-5 transition-all hover:border-ink-200 hover:bg-white"
+              className="group rounded-xl border border-border/60 bg-card p-5 transition-all hover:border-border hover:bg-secondary"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <BookOpen className="h-4 w-4 text-ink-500 flex-shrink-0 mt-0.5" />
-                  <h3 className="text-base font-medium text-ink-900 leading-tight">
+                  <BookOpen className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                  <h3 className="text-base font-medium text-foreground leading-tight">
                     {course.title}
                   </h3>
                 </div>
               </div>
 
-              <p className="text-xs text-ink-500 mb-4 leading-relaxed">{course.description}</p>
+              <p className="text-xs text-muted-foreground mb-4 leading-relaxed">
+                {course.description}
+              </p>
 
-              <div className="flex items-center justify-between text-xs text-ink-500 mb-2">
+              <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
                 <span>
                   {course.modules} {t('demo_student.courses.modules_suffix')}
                 </span>
-                <span className="text-ink-600">{course.progress}%</span>
+                <span className="text-foreground">{course.progress}%</span>
               </div>
 
-              <div className="h-1.5 rounded-full bg-cream-100 mb-4">
+              <div className="h-1.5 rounded-full bg-muted mb-4">
                 <div
                   className={`h-1.5 rounded-full ${progressBarColor(course.progress)} transition-all`}
                   style={{ width: `${course.progress}%` }}
@@ -120,14 +122,14 @@ export default function StudentCoursesPage() {
 
               <div className="flex items-center justify-between">
                 {course.progress === 100 ? (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-teal-800/10 border border-teal-800/20 px-2.5 py-1 text-[11px] font-medium text-teal-700">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 border border-primary/20 px-2.5 py-1 text-[11px] font-medium text-primary">
                     <CheckCircle2 className="h-3 w-3" />
                     {t('demo_student.courses.completed_badge')}
                   </span>
                 ) : (
                   <span />
                 )}
-                <span className="inline-flex items-center gap-1 text-sm text-ink-500 group-hover:text-teal-700 transition-colors">
+                <span className="inline-flex items-center gap-1 text-sm text-muted-foreground group-hover:text-primary transition-colors">
                   {course.progress === 100
                     ? t('demo_student.courses.review_btn')
                     : t('demo_student.courses.continue_btn')}

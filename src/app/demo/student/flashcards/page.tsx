@@ -406,57 +406,57 @@ export default function StudentFlashcardsDemoPage() {
     const percentage = Math.round((known / total) * 100)
 
     return (
-      <div className="min-h-screen bg-cream-50 text-ink-900">
+      <div className="min-h-screen bg-background text-foreground">
         <div className="max-w-2xl mx-auto px-6 py-8">
           <DemoBanner message={t('demo_student.flashcards.banner')} />
 
           <div className="mt-12 text-center">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-500/15 mx-auto mb-6">
-              <Trophy className="h-8 w-8 text-clay-600" />
+              <Trophy className="h-8 w-8 text-amber-700 dark:text-amber-300" />
             </div>
 
-            <h2 className="text-2xl font-light text-ink-900 mb-2">
+            <h2 className="text-2xl font-light text-foreground mb-2">
               {t('demo_student.flashcards.end.session_complete')}
             </h2>
-            <p className="text-ink-500 text-sm mb-8">{topic.label}</p>
+            <p className="text-muted-foreground text-sm mb-8">{topic.label}</p>
 
             {/* Score */}
-            <div className="rounded-xl border border-ink-200 bg-white p-8 mb-6">
-              <p className="text-5xl font-light text-clay-600 mb-2">
+            <div className="rounded-xl border border-border/60 bg-card p-8 mb-6">
+              <p className="text-5xl font-light text-amber-700 dark:text-amber-300 mb-2">
                 {known}/{total}
               </p>
-              <p className="text-ink-500 text-sm">
+              <p className="text-muted-foreground text-sm">
                 {t('demo_student.flashcards.end.you_knew_pre')} {known}{' '}
                 {t('demo_student.flashcards.end.out_of')} {total}{' '}
                 {t('demo_student.flashcards.end.cards_suffix')} ({percentage}%)
               </p>
 
               {/* Progress bar */}
-              <div className="mt-6 h-2 rounded-full bg-cream-100 overflow-hidden">
+              <div className="mt-6 h-2 rounded-full bg-muted overflow-hidden">
                 <div
                   className="h-full rounded-full bg-gradient-to-r from-green-500 to-green-400 transition-all"
                   style={{ width: `${percentage}%` }}
                 />
               </div>
 
-              <div className="flex items-center justify-center gap-6 mt-4 text-xs text-ink-500">
+              <div className="flex items-center justify-center gap-6 mt-4 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-green-400" />
+                  <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400" />
                   {known} {t('demo_student.flashcards.end.known_label')}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <XCircle className="h-3.5 w-3.5 text-red-400" />
+                  <XCircle className="h-3.5 w-3.5 text-red-600 dark:text-red-400" />
                   {total - known} {t('demo_student.flashcards.end.to_review_label')}
                 </span>
               </div>
             </div>
 
             {known < total ? (
-              <p className="text-sm text-ink-500 mb-6">
+              <p className="text-sm text-muted-foreground mb-6">
                 {t('demo_student.flashcards.end.keep_practicing')}
               </p>
             ) : (
-              <p className="text-sm text-green-400/70 mb-6">
+              <p className="text-sm text-green-700/80 dark:text-green-300/80 mb-6">
                 {t('demo_student.flashcards.end.perfect')}
               </p>
             )}
@@ -465,14 +465,14 @@ export default function StudentFlashcardsDemoPage() {
             <div className="flex items-center justify-center gap-3 mb-8">
               <button
                 onClick={handleRestart}
-                className="flex items-center gap-2 rounded-lg border border-ink-200 bg-cream-100 px-5 py-2.5 text-sm text-ink-600 hover:bg-cream-100 hover:text-ink-900 transition-all"
+                className="flex items-center gap-2 rounded-lg border border-border/60 bg-muted px-5 py-2.5 text-sm text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
               >
                 <RotateCcw className="h-3.5 w-3.5" />
                 {t('demo_student.flashcards.end.try_again')}
               </button>
               <button
                 onClick={() => handleSelectTopic(selectedTopic)}
-                className="flex items-center gap-2 rounded-lg border border-ink-200 bg-cream-100 px-5 py-2.5 text-sm text-ink-600 hover:bg-cream-100 hover:text-ink-900 transition-all"
+                className="flex items-center gap-2 rounded-lg border border-border/60 bg-muted px-5 py-2.5 text-sm text-muted-foreground hover:bg-muted/80 hover:text-foreground transition-all"
               >
                 <Shuffle className="h-3.5 w-3.5" />
                 {t('demo_student.flashcards.end.shuffle_retry')}
@@ -481,7 +481,7 @@ export default function StudentFlashcardsDemoPage() {
 
             {/* CTA */}
             <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-6">
-              <p className="text-sm text-clay-600/80 mb-3">
+              <p className="text-sm text-amber-700/80 dark:text-amber-300/80 mb-3">
                 {t('demo_student.flashcards.cta.body')}
               </p>
               <Link
@@ -501,14 +501,14 @@ export default function StudentFlashcardsDemoPage() {
   // ── Main flashcard view ───────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-cream-50 text-ink-900">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-3xl mx-auto px-6 py-8">
         <DemoBanner message="Flashcard demo -- progress is not saved." />
 
         {/* Header */}
         <div className="mt-6 mb-8">
-          <h1 className="text-3xl font-light tracking-tight text-ink-900">Flashcard Practice</h1>
-          <p className="text-ink-500 text-sm mt-1">
+          <h1 className="text-3xl font-light tracking-tight text-foreground">Flashcard Practice</h1>
+          <p className="text-muted-foreground text-sm mt-1">
             Click a card to reveal the definition, then mark what you know
           </p>
         </div>
@@ -521,11 +521,11 @@ export default function StudentFlashcardsDemoPage() {
               onClick={() => handleSelectTopic(t.id)}
               className={`flex items-center gap-2 rounded-lg border px-4 py-2 text-sm transition-all ${
                 selectedTopic === t.id
-                  ? 'border-amber-500/30 bg-amber-500/10 text-clay-600'
-                  : 'border-ink-200 bg-white text-ink-500 hover:border-ink-200 hover:text-ink-600'
+                  ? 'border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300'
+                  : 'border-border/60 bg-card text-muted-foreground hover:border-border hover:text-foreground'
               }`}
             >
-              <span className="flex h-5 w-5 items-center justify-center rounded text-[10px] font-bold bg-cream-100">
+              <span className="flex h-5 w-5 items-center justify-center rounded text-[10px] font-bold bg-muted">
                 {t.icon}
               </span>
               {t.label}
@@ -535,23 +535,23 @@ export default function StudentFlashcardsDemoPage() {
 
         {/* Progress */}
         <div className="flex items-center justify-between mb-4">
-          <span className="text-sm text-ink-500">
+          <span className="text-sm text-muted-foreground">
             Card {currentIndex + 1} of {cards.length}
           </span>
-          <div className="flex items-center gap-4 text-xs text-ink-500">
+          <div className="flex items-center gap-4 text-xs text-muted-foreground">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-3.5 w-3.5 text-green-400" />
+              <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400" />
               {knownCount}
             </span>
             <span className="flex items-center gap-1.5">
-              <XCircle className="h-3.5 w-3.5 text-red-400" />
+              <XCircle className="h-3.5 w-3.5 text-red-600 dark:text-red-400" />
               {dontKnowCount}
             </span>
           </div>
         </div>
 
         {/* Progress bar */}
-        <div className="h-1 rounded-full bg-cream-100 mb-6 overflow-hidden">
+        <div className="h-1 rounded-full bg-muted mb-6 overflow-hidden">
           <div
             className="h-full rounded-full bg-amber-500/40 transition-all duration-300"
             style={{ width: `${((currentIndex + 1) / cards.length) * 100}%` }}
@@ -572,24 +572,28 @@ export default function StudentFlashcardsDemoPage() {
             className={`rounded-2xl border p-8 min-h-[240px] flex flex-col items-center justify-center text-center transition-all duration-300 ${
               flipped
                 ? 'border-amber-500/20 bg-amber-500/[0.03]'
-                : 'border-ink-200 bg-white hover:border-ink-200'
+                : 'border-border/60 bg-card hover:border-border'
             }`}
           >
             {!flipped ? (
               <>
-                <span className="text-[10px] uppercase tracking-widest text-ink-500 mb-4">
+                <span className="text-[10px] uppercase tracking-widest text-muted-foreground mb-4">
                   Term
                 </span>
-                <h2 className="text-2xl font-light text-ink-900 mb-4">{card.term}</h2>
-                <span className="text-xs text-ink-500">Click to reveal definition</span>
+                <h2 className="text-2xl font-light text-foreground mb-4">{card.term}</h2>
+                <span className="text-xs text-muted-foreground">Click to reveal definition</span>
               </>
             ) : (
               <>
-                <span className="text-[10px] uppercase tracking-widest text-clay-600/40 mb-4">
+                <span className="text-[10px] uppercase tracking-widest text-amber-700/50 dark:text-amber-300/50 mb-4">
                   Definition
                 </span>
-                <p className="text-base text-ink-600 leading-relaxed max-w-lg">{card.definition}</p>
-                <span className="text-[10px] text-clay-600/30 mt-4">{card.term}</span>
+                <p className="text-base text-foreground leading-relaxed max-w-lg">
+                  {card.definition}
+                </p>
+                <span className="text-[10px] text-amber-700/40 dark:text-amber-300/40 mt-4">
+                  {card.term}
+                </span>
               </>
             )}
           </div>
@@ -602,20 +606,20 @@ export default function StudentFlashcardsDemoPage() {
             <button
               onClick={handlePrevious}
               disabled={currentIndex === 0}
-              className="flex h-10 w-10 items-center justify-center rounded-lg border border-ink-200 bg-white text-ink-500 hover:bg-cream-100 hover:text-ink-600 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/60 bg-card text-muted-foreground hover:bg-muted hover:text-foreground transition-all disabled:opacity-30 disabled:cursor-not-allowed"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
             <button
               onClick={handleNext}
               disabled={currentIndex === cards.length - 1}
-              className="flex h-10 w-10 items-center justify-center rounded-lg border border-ink-200 bg-white text-ink-500 hover:bg-cream-100 hover:text-ink-600 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-border/60 bg-card text-muted-foreground hover:bg-muted hover:text-foreground transition-all disabled:opacity-30 disabled:cursor-not-allowed"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
             <button
               onClick={handleShuffle}
-              className="flex h-10 items-center gap-2 rounded-lg border border-ink-200 bg-white px-3 text-ink-500 hover:bg-cream-100 hover:text-ink-600 transition-all text-xs"
+              className="flex h-10 items-center gap-2 rounded-lg border border-border/60 bg-card px-3 text-muted-foreground hover:bg-muted hover:text-foreground transition-all text-xs"
             >
               <Shuffle className="h-3.5 w-3.5" />
               Shuffle
@@ -626,14 +630,14 @@ export default function StudentFlashcardsDemoPage() {
           <div className="flex items-center gap-2">
             <button
               onClick={handleMarkDontKnow}
-              className="flex items-center gap-2 rounded-lg border border-red-500/20 bg-red-500/5 px-4 py-2.5 text-sm text-red-400 hover:bg-red-500/10 transition-all"
+              className="flex items-center gap-2 rounded-lg border border-red-500/30 bg-red-500/5 px-4 py-2.5 text-sm text-red-700 dark:text-red-300 hover:bg-red-500/10 transition-all"
             >
               <XCircle className="h-4 w-4" />
               Don't Know
             </button>
             <button
               onClick={handleMarkKnow}
-              className="flex items-center gap-2 rounded-lg border border-green-500/20 bg-green-500/5 px-4 py-2.5 text-sm text-green-400 hover:bg-green-500/10 transition-all"
+              className="flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-4 py-2.5 text-sm text-green-700 dark:text-green-300 hover:bg-green-500/10 transition-all"
             >
               <CheckCircle2 className="h-4 w-4" />
               Know
@@ -643,7 +647,7 @@ export default function StudentFlashcardsDemoPage() {
 
         {/* CTA */}
         <div className="mt-12 rounded-xl border border-amber-500/20 bg-amber-500/5 p-6 text-center">
-          <p className="text-sm text-clay-600/80 mb-3">
+          <p className="text-sm text-amber-700/80 dark:text-amber-300/80 mb-3">
             Access 2,000+ flashcards across all topics and exam boards.
           </p>
           <Link

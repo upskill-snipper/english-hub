@@ -35,140 +35,161 @@ export default function EditorialDashboard() {
   ]
 
   return (
-    <div className="min-h-screen bg-cream-100 text-ink-900 selection:bg-amber-500/20">
+    <div className="min-h-screen bg-background text-foreground selection:bg-accent/20">
       {/* Top bar — barely there */}
       <nav className="max-w-4xl mx-auto px-6 pt-10 pb-6 flex items-center justify-between">
-        <span className="text-xs uppercase tracking-[0.3em] text-ink-500">English Hub</span>
-        <span className="text-xs uppercase tracking-[0.3em] text-ink-500">GCSE English</span>
+        <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          English Hub
+        </span>
+        <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          GCSE English
+        </span>
       </nav>
 
       <main className="max-w-4xl mx-auto px-6">
         {/* Hero greeting — extreme typography */}
         <section className="pt-12 pb-20">
-          <h1 className="font-serif italic text-[6rem] leading-[0.95] tracking-tight text-ink-900">
+          <h1 className="font-heading italic text-[6rem] leading-[0.95] tracking-tight text-foreground">
             {greeting},
             <br />
             Alex
           </h1>
-          <p className="mt-8 text-lg font-light text-ink-600 max-w-md leading-relaxed">
-            Saturday, 21 March 2026. Your exams are in <span className="text-ink-900">67 days</span>
-            . Here is where you stand.
+          <p className="mt-8 text-lg font-light text-muted-foreground max-w-md leading-relaxed">
+            Saturday, 21 March 2026. Your exams are in{' '}
+            <span className="text-foreground">67 days</span>. Here is where you stand.
           </p>
         </section>
 
         {/* Divider */}
-        <div className="border-t border-ink-200" />
+        <div className="border-t border-border" />
 
         {/* Stats — magazine infographic style */}
         <section className="py-16">
           <div className="grid grid-cols-2 gap-0">
             {/* Left stat */}
             <div>
-              <p className="text-[7rem] font-extralight leading-none tabular-nums text-ink-900">
+              <p className="text-[7rem] font-extralight leading-none tabular-nums text-foreground">
                 78
               </p>
-              <p className="mt-4 text-xs uppercase tracking-[0.3em] text-ink-500">
+              <p className="mt-4 text-xs uppercase tracking-[0.3em] text-muted-foreground">
                 Lessons completed
               </p>
             </div>
 
             {/* Right stat */}
-            <div className="border-l border-ink-200 pl-12">
-              <p className="text-[7rem] font-extralight leading-none tabular-nums text-ink-900">
+            <div className="border-l border-border pl-12">
+              <p className="text-[7rem] font-extralight leading-none tabular-nums text-foreground">
                 12
               </p>
-              <p className="mt-4 text-xs uppercase tracking-[0.3em] text-ink-500">Day streak</p>
+              <p className="mt-4 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Day streak
+              </p>
             </div>
           </div>
 
           {/* Secondary stats row */}
-          <div className="grid grid-cols-4 gap-8 mt-16 pt-8 border-t border-ink-200">
+          <div className="grid grid-cols-4 gap-8 mt-16 pt-8 border-t border-border">
             <div>
               <p className="text-4xl font-extralight tabular-nums">94</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">Vocab terms</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Vocab terms
+              </p>
             </div>
             <div>
               <p className="text-4xl font-extralight tabular-nums">
-                6<span className="text-ink-500">/8</span>
+                6<span className="text-muted-foreground">/8</span>
               </p>
-              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">Texts studied</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Texts studied
+              </p>
             </div>
             <div>
               <p className="text-4xl font-extralight tabular-nums">23</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">Essays written</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Essays written
+              </p>
             </div>
             <div>
               <p className="text-4xl font-extralight tabular-nums">
-                B<span className="text-ink-500">+</span>
+                B<span className="text-muted-foreground">+</span>
               </p>
-              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ink-500">Avg. grade</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                Avg. grade
+              </p>
             </div>
           </div>
         </section>
 
         {/* Divider */}
-        <div className="border-t border-ink-200" />
+        <div className="border-t border-border" />
 
         {/* Pull quote — motivational */}
         <section className="py-16">
-          <blockquote className="border-l-2 border-ink-200 pl-8 max-w-2xl">
-            <p className="font-serif italic text-3xl leading-snug text-ink-600">
+          <blockquote className="border-l-2 border-border pl-8 max-w-2xl">
+            <p className="font-heading italic text-3xl leading-snug text-muted-foreground">
               The difference between the almost right word and the right word is the difference
-              between the lightning bug and the <span className="text-[#f59e0b]">lightning</span>.
+              between the lightning bug and the{' '}
+              <span className="text-amber-600 dark:text-amber-400">lightning</span>.
             </p>
-            <footer className="mt-6 text-xs uppercase tracking-[0.3em] text-ink-500">
+            <footer className="mt-6 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               Mark Twain
             </footer>
           </blockquote>
         </section>
 
         {/* Divider */}
-        <div className="border-t border-ink-200" />
+        <div className="border-t border-border" />
 
         {/* Currently studying */}
         <section className="py-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-ink-500 mb-12">
+          <h2 className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-12">
             Currently studying
           </h2>
 
           <div className="space-y-10">
             {currentStudy.map((item, i) => (
               <div key={i} className="group">
-                <p className="text-xs uppercase tracking-[0.3em] text-ink-500 mb-2">{item.label}</p>
-                <p className="font-serif italic text-4xl text-ink-900 leading-tight">
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-2">
+                  {item.label}
+                </p>
+                <p className="font-heading italic text-4xl text-foreground leading-tight">
                   {item.title}
                 </p>
-                <p className="mt-2 text-base font-light text-ink-600">{item.detail}</p>
+                <p className="mt-2 text-base font-light text-muted-foreground">{item.detail}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Divider */}
-        <div className="border-t border-ink-200" />
+        <div className="border-t border-border" />
 
         {/* Recent activity — newspaper column */}
         <section className="py-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-ink-500 mb-12">Recent activity</h2>
+          <h2 className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-12">
+            Recent activity
+          </h2>
 
           <div className="space-y-6">
             {recentActivity.map((item, i) => (
               <div key={i} className="flex items-baseline gap-6">
-                <span className="text-xs uppercase tracking-[0.2em] text-ink-500 w-24 shrink-0 text-right tabular-nums">
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground w-24 shrink-0 text-right tabular-nums">
                   {item.time}
                 </span>
-                <span className="text-base font-light text-ink-600 leading-snug">{item.text}</span>
+                <span className="text-base font-light text-muted-foreground leading-snug">
+                  {item.text}
+                </span>
               </div>
             ))}
           </div>
         </section>
 
         {/* Divider */}
-        <div className="border-t border-ink-200" />
+        <div className="border-t border-border" />
 
         {/* Atmospheric / barely visible section */}
         <section className="py-16">
-          <p className="text-ink-600 text-sm font-light leading-relaxed max-w-lg">
+          <p className="text-muted-foreground text-sm font-light leading-relaxed max-w-lg">
             You have been studying for 47 days continuously. In that time you have written over
             18,000 words across essays, annotations, and practice papers. The quiet accumulation of
             effort is its own reward.
@@ -176,20 +197,20 @@ export default function EditorialDashboard() {
         </section>
 
         {/* Divider */}
-        <div className="border-t border-ink-200" />
+        <div className="border-t border-border" />
 
         {/* Weekly focus */}
         <section className="py-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-ink-500 mb-12">
+          <h2 className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-12">
             This week&apos;s focus
           </h2>
 
           <div className="grid grid-cols-7 gap-2">
             {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day, i) => (
               <div key={i} className="text-center">
-                <p className="text-xs text-ink-500 mb-3">{day}</p>
-                <div className={`h-1 rounded-full ${i < 6 ? 'bg-ink-200' : 'bg-cream-100'}`} />
-                <p className="mt-3 text-xs tabular-nums text-ink-500">
+                <p className="text-xs text-muted-foreground mb-3">{day}</p>
+                <div className={`h-1 rounded-full ${i < 6 ? 'bg-primary/40' : 'bg-muted'}`} />
+                <p className="mt-3 text-xs tabular-nums text-muted-foreground">
                   {i < 6 ? `${[45, 30, 60, 25, 50, 40][i]}m` : '\u2014'}
                 </p>
               </div>
@@ -198,19 +219,21 @@ export default function EditorialDashboard() {
 
           <div className="mt-8 flex items-baseline gap-3">
             <p className="text-5xl font-extralight tabular-nums">4.2</p>
-            <p className="text-xs uppercase tracking-[0.3em] text-ink-500">Hours this week</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+              Hours this week
+            </p>
           </div>
         </section>
 
         {/* Divider */}
-        <div className="border-t border-ink-200" />
+        <div className="border-t border-border" />
 
         {/* Footer — minimal */}
         <footer className="py-16 pb-24 flex items-center justify-between">
-          <span className="text-xs uppercase tracking-[0.3em] text-ink-500">
+          <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
             English Hub &middot; Editorial
           </span>
-          <span className="text-xs text-ink-600">Vol. I, No. 47</span>
+          <span className="text-xs text-muted-foreground">Vol. I, No. 47</span>
         </footer>
       </main>
     </div>

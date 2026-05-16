@@ -3,19 +3,37 @@
 import React from 'react'
 
 const courses = [
-  { name: 'GCSE English Language', papers: 'Paper 1 & 2', progress: 72, lessons: 24, completed: 17 },
+  {
+    name: 'GCSE English Language',
+    papers: 'Paper 1 & 2',
+    progress: 72,
+    lessons: 24,
+    completed: 17,
+  },
   { name: 'IGCSE Literature', papers: 'Poetry & Prose', progress: 45, lessons: 18, completed: 8 },
-  { name: 'Creative Writing', papers: 'Descriptive & Narrative', progress: 88, lessons: 12, completed: 11 },
-  { name: 'Shakespeare Studies', papers: 'Macbeth & Romeo', progress: 31, lessons: 16, completed: 5 },
+  {
+    name: 'Creative Writing',
+    papers: 'Descriptive & Narrative',
+    progress: 88,
+    lessons: 12,
+    completed: 11,
+  },
+  {
+    name: 'Shakespeare Studies',
+    papers: 'Macbeth & Romeo',
+    progress: 31,
+    lessons: 16,
+    completed: 5,
+  },
 ]
 
 const activity = [
-  { text: 'Completed Paper 1 Q5 practice essay', time: '2 hours ago', color: 'bg-teal-500' },
-  { text: 'Reviewed feedback on Macbeth analysis', time: '5 hours ago', color: 'bg-pink-300' },
-  { text: 'Achieved 8/8 on inference questions', time: 'Yesterday', color: 'bg-teal-500' },
-  { text: 'Started Poetry Anthology module', time: 'Yesterday', color: 'bg-sky-300' },
-  { text: 'Watched Language Paper 2 walkthrough', time: '2 days ago', color: 'bg-amber-300' },
-  { text: 'Submitted narrative writing draft', time: '3 days ago', color: 'bg-teal-400' },
+  { text: 'Completed Paper 1 Q5 practice essay', time: '2 hours ago', color: 'bg-primary' },
+  { text: 'Reviewed feedback on Macbeth analysis', time: '5 hours ago', color: 'bg-accent' },
+  { text: 'Achieved 8/8 on inference questions', time: 'Yesterday', color: 'bg-primary' },
+  { text: 'Started Poetry Anthology module', time: 'Yesterday', color: 'bg-chart-4' },
+  { text: 'Watched Language Paper 2 walkthrough', time: '2 days ago', color: 'bg-chart-3' },
+  { text: 'Submitted narrative writing draft', time: '3 days ago', color: 'bg-primary/70' },
 ]
 
 const deadlines = [
@@ -34,18 +52,18 @@ const stats = [
 
 export default function SoftAuroraPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden" style={{ backgroundColor: '#FAFAF8' }}>
+    <div className="relative min-h-screen overflow-hidden bg-background">
       {/* Aurora gradient blobs */}
       <div
-        className="pointer-events-none absolute -left-32 top-16 h-[500px] w-[500px] rounded-full bg-gradient-to-r from-clay-200/30 to-pink-200/20 blur-3xl"
+        className="pointer-events-none absolute -left-32 top-16 h-[500px] w-[500px] rounded-full bg-gradient-to-r from-primary/20 to-accent/10 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute right-0 top-[400px] h-[600px] w-[600px] rounded-full bg-gradient-to-r from-sky-200/30 to-emerald-200/20 blur-3xl"
+        className="pointer-events-none absolute right-0 top-[400px] h-[600px] w-[600px] rounded-full bg-gradient-to-r from-chart-4/20 to-primary/10 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute bottom-0 left-1/3 h-[400px] w-[500px] rounded-full bg-gradient-to-r from-amber-100/20 to-violet-200/15 blur-3xl"
+        className="pointer-events-none absolute bottom-0 left-1/3 h-[400px] w-[500px] rounded-full bg-gradient-to-r from-chart-3/15 to-chart-1/10 blur-3xl"
         aria-hidden="true"
       />
 
@@ -54,18 +72,16 @@ export default function SoftAuroraPage() {
         {/* Header */}
         <div className="mb-10 flex items-end justify-between">
           <div>
-            <p className="mb-1 text-sm font-medium tracking-wide text-ink-600">
+            <p className="mb-1 text-sm font-medium tracking-wide text-muted-foreground">
               ENGLISH HUB
             </p>
-            <h1 className="text-4xl font-light text-ink-900">
-              Good morning, Olivia
-            </h1>
-            <p className="mt-2 text-ink-500">
+            <h1 className="text-4xl font-light text-foreground">Good morning, Olivia</h1>
+            <p className="mt-2 text-muted-foreground">
               You&apos;re making great progress this week. Keep it up.
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-50 text-sm font-medium text-clay-600">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-medium text-primary">
               OW
             </div>
           </div>
@@ -74,16 +90,14 @@ export default function SoftAuroraPage() {
         {/* Stats Row */}
         <div className="mb-8 grid grid-cols-4 gap-5">
           {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl bg-white p-8"
-              style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
-            >
-              <p className="text-5xl font-light text-ink-900">
+            <div key={stat.label} className="rounded-2xl bg-card p-8 shadow-soft">
+              <p className="text-5xl font-light text-foreground">
                 {stat.value}
-                <span className="ml-1 text-lg font-normal text-ink-600">{stat.suffix}</span>
+                <span className="ml-1 text-lg font-normal text-muted-foreground">
+                  {stat.suffix}
+                </span>
               </p>
-              <p className="mt-2 text-sm text-ink-500">{stat.label}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -93,26 +107,23 @@ export default function SoftAuroraPage() {
           {/* Left Column */}
           <div className="flex flex-col gap-6">
             {/* Courses */}
-            <div
-              className="rounded-2xl bg-white p-8"
-              style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
-            >
-              <h2 className="mb-6 text-lg font-medium text-ink-900">Your Courses</h2>
+            <div className="rounded-2xl bg-card p-8 shadow-soft">
+              <h2 className="mb-6 text-lg font-medium text-foreground">Your Courses</h2>
               <div className="flex flex-col gap-5">
                 {courses.map((course) => (
                   <div key={course.name}>
                     <div className="mb-1 flex items-center justify-between">
                       <div>
-                        <p className="text-sm font-medium text-ink-900">{course.name}</p>
-                        <p className="text-xs text-ink-600">{course.papers}</p>
+                        <p className="text-sm font-medium text-foreground">{course.name}</p>
+                        <p className="text-xs text-muted-foreground">{course.papers}</p>
                       </div>
-                      <p className="text-xs text-ink-600">
+                      <p className="text-xs text-muted-foreground">
                         {course.completed}/{course.lessons} lessons
                       </p>
                     </div>
-                    <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-cream-100">
+                    <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-muted">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-clay-400 to-clay-400"
+                        className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
                         style={{ width: `${course.progress}%` }}
                       />
                     </div>
@@ -122,27 +133,38 @@ export default function SoftAuroraPage() {
             </div>
 
             {/* Weekly Focus — frosted glass */}
-            <div
-              className="rounded-2xl bg-white/60 p-8 backdrop-blur-xl"
-              style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
-            >
-              <h2 className="mb-4 text-lg font-medium text-ink-900">Weekly Focus</h2>
-              <p className="mb-5 text-sm text-ink-500">
+            <div className="rounded-2xl bg-card/60 p-8 backdrop-blur-xl shadow-soft">
+              <h2 className="mb-4 text-lg font-medium text-foreground">Weekly Focus</h2>
+              <p className="mb-5 text-sm text-muted-foreground">
                 This week&apos;s recommended focus based on your performance.
               </p>
               <div className="flex flex-col gap-4">
                 {[
-                  { area: 'Language Analysis', tip: 'Practice identifying writer\'s methods in Paper 1 Q2', priority: 'High' },
-                  { area: 'Essay Structure', tip: 'Work on paragraph cohesion for 20+ mark responses', priority: 'Medium' },
-                  { area: 'Quotation Embedding', tip: 'Integrate shorter quotes more naturally into analysis', priority: 'Medium' },
+                  {
+                    area: 'Language Analysis',
+                    tip: "Practice identifying writer's methods in Paper 1 Q2",
+                    priority: 'High',
+                  },
+                  {
+                    area: 'Essay Structure',
+                    tip: 'Work on paragraph cohesion for 20+ mark responses',
+                    priority: 'Medium',
+                  },
+                  {
+                    area: 'Quotation Embedding',
+                    tip: 'Integrate shorter quotes more naturally into analysis',
+                    priority: 'Medium',
+                  },
                 ].map((focus) => (
                   <div key={focus.area} className="flex items-start gap-3">
-                    <div className={`mt-1 h-2 w-2 flex-shrink-0 rounded-full ${
-                      focus.priority === 'High' ? 'bg-teal-700' : 'bg-teal-400'
-                    }`} />
+                    <div
+                      className={`mt-1 h-2 w-2 flex-shrink-0 rounded-full ${
+                        focus.priority === 'High' ? 'bg-primary' : 'bg-primary/50'
+                      }`}
+                    />
                     <div>
-                      <p className="text-sm font-medium text-ink-900">{focus.area}</p>
-                      <p className="text-xs text-ink-600">{focus.tip}</p>
+                      <p className="text-sm font-medium text-foreground">{focus.area}</p>
+                      <p className="text-xs text-muted-foreground">{focus.tip}</p>
                     </div>
                   </div>
                 ))}
@@ -153,23 +175,20 @@ export default function SoftAuroraPage() {
           {/* Right Column */}
           <div className="flex flex-col gap-6">
             {/* Activity Timeline */}
-            <div
-              className="rounded-2xl bg-white p-8"
-              style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
-            >
-              <h2 className="mb-6 text-lg font-medium text-ink-900">Recent Activity</h2>
+            <div className="rounded-2xl bg-card p-8 shadow-soft">
+              <h2 className="mb-6 text-lg font-medium text-foreground">Recent Activity</h2>
               <div className="flex flex-col gap-4">
                 {activity.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="flex flex-col items-center">
-                      <div className={`mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full ${item.color}`} />
-                      {i < activity.length - 1 && (
-                        <div className="mt-1 h-8 w-px bg-cream-100" />
-                      )}
+                      <div
+                        className={`mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full ${item.color}`}
+                      />
+                      {i < activity.length - 1 && <div className="mt-1 h-8 w-px bg-border" />}
                     </div>
                     <div className="pb-1">
-                      <p className="text-sm text-ink-600">{item.text}</p>
-                      <p className="text-xs text-ink-600">{item.time}</p>
+                      <p className="text-sm text-foreground">{item.text}</p>
+                      <p className="text-xs text-muted-foreground">{item.time}</p>
                     </div>
                   </div>
                 ))}
@@ -177,26 +196,27 @@ export default function SoftAuroraPage() {
             </div>
 
             {/* Upcoming Deadlines */}
-            <div
-              className="rounded-2xl bg-white p-8"
-              style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
-            >
-              <h2 className="mb-6 text-lg font-medium text-ink-900">Upcoming Deadlines</h2>
+            <div className="rounded-2xl bg-card p-8 shadow-soft">
+              <h2 className="mb-6 text-lg font-medium text-foreground">Upcoming Deadlines</h2>
               <div className="flex flex-col gap-4">
                 {deadlines.map((deadline) => (
                   <div
                     key={deadline.title}
-                    className="flex items-center justify-between rounded-xl bg-cream-50/80 px-5 py-4"
+                    className="flex items-center justify-between rounded-xl bg-muted/80 px-5 py-4"
                   >
                     <div>
-                      <p className="text-sm font-medium text-ink-900">{deadline.title}</p>
-                      <p className="text-xs text-ink-600">{deadline.subject}</p>
+                      <p className="text-sm font-medium text-foreground">{deadline.title}</p>
+                      <p className="text-xs text-muted-foreground">{deadline.subject}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-medium text-ink-600">{deadline.date}</p>
-                      <p className={`text-xs ${
-                        deadline.daysLeft <= 5 ? 'font-medium text-teal-700' : 'text-ink-600'
-                      }`}>
+                      <p className="text-sm font-medium text-muted-foreground">{deadline.date}</p>
+                      <p
+                        className={`text-xs ${
+                          deadline.daysLeft <= 5
+                            ? 'font-medium text-primary'
+                            : 'text-muted-foreground'
+                        }`}
+                      >
                         {deadline.daysLeft} days left
                       </p>
                     </div>
@@ -206,21 +226,13 @@ export default function SoftAuroraPage() {
             </div>
 
             {/* Quick Actions */}
-            <div
-              className="rounded-2xl bg-white p-8"
-              style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
-            >
-              <h2 className="mb-4 text-lg font-medium text-ink-900">Quick Actions</h2>
+            <div className="rounded-2xl bg-card p-8 shadow-soft">
+              <h2 className="mb-4 text-lg font-medium text-foreground">Quick Actions</h2>
               <div className="grid grid-cols-2 gap-3">
-                {[
-                  'Practice Essay',
-                  'Book Tutor',
-                  'Past Papers',
-                  'Revision Notes',
-                ].map((action) => (
+                {['Practice Essay', 'Book Tutor', 'Past Papers', 'Revision Notes'].map((action) => (
                   <button
                     key={action}
-                    className="rounded-xl bg-cream-50 px-4 py-3 text-sm font-medium text-ink-500 transition-colors hover:bg-teal-50 hover:text-clay-600"
+                    className="rounded-xl bg-muted px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
                   >
                     {action}
                   </button>
@@ -232,9 +244,7 @@ export default function SoftAuroraPage() {
 
         {/* Footer */}
         <div className="mt-10 text-center">
-          <p className="text-xs text-ink-600">
-            Soft Aurora — Design 3 Concept
-          </p>
+          <p className="text-xs text-muted-foreground">Soft Aurora — Design 3 Concept</p>
         </div>
       </div>
     </div>

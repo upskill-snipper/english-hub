@@ -136,9 +136,9 @@ function yearGroupNum(yg: string): number {
 }
 
 const ragColors = {
-  red: 'bg-red-500/20 text-red-400 border-red-500/30',
-  amber: 'bg-amber-500/20 text-clay-600 border-amber-500/30',
-  green: 'bg-teal-800/10 text-teal-700 border-teal-800/30',
+  red: 'bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30',
+  amber: 'bg-amber-500/20 text-amber-700 dark:text-amber-300 border-amber-500/30',
+  green: 'bg-primary/10 text-primary border-primary/30',
 }
 
 // Teacher ranking data
@@ -220,14 +220,14 @@ const printStyles = `
   [class*="border-border"] {
     border-color: #ccc !important;
   }
-  .bg-teal-700, .bg-amber-500, .bg-red-500,
-  .bg-blue-500, .bg-teal-700 {
+  .bg-primary, .bg-amber-500, .bg-red-500,
+  .bg-blue-500 {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
   [class*="bg-red-500/20"],
   [class*="bg-amber-500/20"],
-  [class*="bg-teal-800/10"] {
+  [class*="bg-primary/10"] {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -381,31 +381,31 @@ export default function ReportsPage() {
                   label: 'Total Students',
                   value: totalStudents.toString(),
                   icon: <Users className="h-5 w-5" />,
-                  color: 'text-teal-700',
+                  color: 'text-primary',
                 },
                 {
                   label: 'Active Rate',
                   value: `${activeRate}%`,
                   icon: <TrendingUp className="h-5 w-5" />,
-                  color: 'text-teal-700',
+                  color: 'text-primary',
                 },
                 {
                   label: 'Avg Score',
                   value: `${avgScore}% (G${percentageToGCSEGrade(avgScore)})`,
                   icon: <Target className="h-5 w-5" />,
-                  color: 'text-clay-600',
+                  color: 'text-amber-700 dark:text-amber-300',
                 },
                 {
                   label: 'Completion Rate',
                   value: `${completionRate}%`,
                   icon: <CheckCircle2 className="h-5 w-5" />,
-                  color: 'text-teal-700',
+                  color: 'text-primary',
                 },
                 {
                   label: 'At-Risk Students',
                   value: atRiskCount.toString(),
                   icon: <AlertTriangle className="h-5 w-5" />,
-                  color: 'text-red-400',
+                  color: 'text-red-700 dark:text-red-300',
                 },
               ].map((metric) => (
                 <Card key={metric.label} className="bg-card border-border print-avoid-break">
@@ -463,7 +463,7 @@ export default function ReportsPage() {
                             </td>
                             <td className="py-3">
                               <span
-                                className={`inline-flex items-center gap-1 text-xs font-medium ${positive ? 'text-teal-700' : 'text-red-400'}`}
+                                className={`inline-flex items-center gap-1 text-xs font-medium ${positive ? 'text-primary' : 'text-red-700 dark:text-red-300'}`}
                               >
                                 {diff > 0 ? (
                                   <ArrowUpRight className="h-3 w-3" />
@@ -527,14 +527,14 @@ export default function ReportsPage() {
                             <td className="py-3 pr-4">
                               <div className="w-full bg-muted rounded-full h-2.5">
                                 <div
-                                  className={`h-2.5 rounded-full transition-all ${yg.avgProgress >= 75 ? 'bg-teal-700' : yg.avgProgress >= 60 ? 'bg-amber-500' : 'bg-red-500'}`}
+                                  className={`h-2.5 rounded-full transition-all ${yg.avgProgress >= 75 ? 'bg-primary' : yg.avgProgress >= 60 ? 'bg-amber-500' : 'bg-red-500'}`}
                                   style={{ width: `${yg.avgProgress}%` }}
                                 />
                               </div>
                             </td>
                             <td className="py-3">
                               <span
-                                className={`inline-flex items-center gap-1 text-xs font-medium ${diff > 0 ? 'text-teal-700' : diff < 0 ? 'text-red-400' : 'text-muted-foreground'}`}
+                                className={`inline-flex items-center gap-1 text-xs font-medium ${diff > 0 ? 'text-primary' : diff < 0 ? 'text-red-700 dark:text-red-300' : 'text-muted-foreground'}`}
                               >
                                 {diff > 0 ? (
                                   <ArrowUpRight className="h-3 w-3" />
@@ -651,7 +651,7 @@ export default function ReportsPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="bg-card border-border print-avoid-break">
                 <CardHeader>
-                  <CardTitle className="text-teal-700 flex items-center gap-2">
+                  <CardTitle className="text-primary flex items-center gap-2">
                     <TrendingUp className="h-4 w-4" />
                     Department Strengths
                   </CardTitle>
@@ -660,7 +660,7 @@ export default function ReportsPage() {
                   <ul className="space-y-3">
                     {strengths.map((s, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
-                        <CheckCircle2 className="h-4 w-4 text-teal-700 mt-0.5 shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                         {s}
                       </li>
                     ))}
@@ -669,7 +669,7 @@ export default function ReportsPage() {
               </Card>
               <Card className="bg-card border-border print-avoid-break">
                 <CardHeader>
-                  <CardTitle className="text-clay-600 flex items-center gap-2">
+                  <CardTitle className="text-amber-700 dark:text-amber-300 flex items-center gap-2">
                     <TrendingDown className="h-4 w-4" />
                     Areas for Improvement
                   </CardTitle>
@@ -699,7 +699,7 @@ export default function ReportsPage() {
                 <ol className="space-y-4">
                   {recommendations.map((r, i) => (
                     <li key={i} className="flex gap-4 text-sm text-foreground/80">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-700/20 text-teal-700 text-xs font-bold">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary text-xs font-bold">
                         {i + 1}
                       </span>
                       {r}
@@ -713,7 +713,7 @@ export default function ReportsPage() {
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
                 <CardTitle className="text-foreground flex items-center gap-2">
-                  <FileText className="h-5 w-5 text-teal-700" />
+                  <FileText className="h-5 w-5 text-primary" />
                   Generate Reports
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -731,7 +731,7 @@ export default function ReportsPage() {
                     </p>
                     <Button
                       size="sm"
-                      className="w-full bg-teal-800 hover:bg-teal-800 text-foreground gap-1.5"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground gap-1.5"
                       onClick={() => window.print()}
                     >
                       <Printer className="h-3.5 w-3.5" />
@@ -804,7 +804,7 @@ export default function ReportsPage() {
                   </p>
                   <Button
                     size="sm"
-                    className="bg-teal-800 hover:bg-teal-800 text-foreground gap-1.5"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground gap-1.5"
                     onClick={() =>
                       toast.info(
                         'Register your school to batch-download all reports as a ZIP file.',
@@ -822,7 +822,7 @@ export default function ReportsPage() {
             <Card className="bg-card border-border print-avoid-break" data-print-hide>
               <CardHeader>
                 <CardTitle className="text-foreground flex items-center gap-2">
-                  <CalendarDays className="h-5 w-5 text-teal-700" />
+                  <CalendarDays className="h-5 w-5 text-primary" />
                   Schedule Reports
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -838,7 +838,7 @@ export default function ReportsPage() {
                       description: 'Auto-sent to Head of Department every Monday at 8:00 AM',
                       recipient: 'HoD',
                       frequency: 'Weekly',
-                      icon: <Clock className="h-4 w-4 text-teal-700" />,
+                      icon: <Clock className="h-4 w-4 text-primary" />,
                       defaultOn: true,
                     },
                     {
@@ -846,7 +846,7 @@ export default function ReportsPage() {
                       description: 'Auto-sent to Senior Leadership Team on the 1st of each month',
                       recipient: 'SLT',
                       frequency: 'Monthly',
-                      icon: <BarChart3 className="h-4 w-4 text-teal-700" />,
+                      icon: <BarChart3 className="h-4 w-4 text-primary" />,
                       defaultOn: true,
                     },
                     {
@@ -855,7 +855,9 @@ export default function ReportsPage() {
                         "Generated automatically before Parents' Evening -- includes all student reports",
                       recipient: 'Parents',
                       frequency: 'Termly',
-                      icon: <GraduationCap className="h-4 w-4 text-clay-600" />,
+                      icon: (
+                        <GraduationCap className="h-4 w-4 text-amber-700 dark:text-amber-300" />
+                      ),
                       defaultOn: false,
                     },
                   ].map((schedule) => (
@@ -919,7 +921,7 @@ export default function ReportsPage() {
                 <div className="mt-6 pt-4 border-t border-border/50">
                   <div className="flex items-center justify-between bg-gradient-to-r from-violet-600/10 via-blue-600/10 to-cyan-600/10 rounded-lg p-4 border border-border">
                     <div className="flex items-start gap-3">
-                      <Archive className="h-5 w-5 text-teal-700 mt-0.5" />
+                      <Archive className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <h4 className="text-sm font-semibold text-foreground">
                           Download All Student Reports
@@ -935,7 +937,7 @@ export default function ReportsPage() {
                     </div>
                     <Button
                       size="sm"
-                      className="bg-teal-800 hover:bg-teal-800 text-foreground gap-1.5"
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground gap-1.5"
                       onClick={() => {
                         toast.info('Download All Student Reports', {
                           description: `In production, this would generate ${DEMO_STUDENTS.length} individual student PDFs and bundle them into a single ZIP file for download. Register your school to enable this feature.`,
@@ -968,7 +970,7 @@ export default function ReportsPage() {
               <select
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(Number(e.target.value))}
-                className="bg-card border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-white/30"
+                className="bg-card border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-ring"
               >
                 {DEMO_YEAR_GROUPS.map((yg: any) => (
                   <option key={yg.year} value={yg.year}>
@@ -1094,7 +1096,7 @@ export default function ReportsPage() {
                         gradeNum >= 9
                           ? 'bg-yellow-400'
                           : gradeNum >= 7
-                            ? 'bg-teal-700'
+                            ? 'bg-primary'
                             : gradeNum >= 5
                               ? 'bg-amber-500'
                               : 'bg-red-500'
@@ -1128,7 +1130,7 @@ export default function ReportsPage() {
             {/* At-risk students list */}
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
-                <CardTitle className="text-red-400 flex items-center gap-2">
+                <CardTitle className="text-red-700 dark:text-red-300 flex items-center gap-2">
                   <AlertTriangle className="h-4 w-4" />
                   {tr(`At-Risk Students`)}
                 </CardTitle>
@@ -1165,7 +1167,7 @@ export default function ReportsPage() {
                               <td className="py-3 pr-4 font-medium text-foreground">{s.name}</td>
                               <td className="py-3 pr-4 text-foreground/80">{s.className}</td>
                               <td className="py-3 pr-4">
-                                <Badge className="bg-red-500/20 text-red-400 border-red-500/30">
+                                <Badge className="bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30">
                                   {s.overallProgress}%
                                 </Badge>
                               </td>
@@ -1185,7 +1187,7 @@ export default function ReportsPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="bg-card border-border print-avoid-break">
                 <CardHeader>
-                  <CardTitle className="text-teal-700 flex items-center gap-2">
+                  <CardTitle className="text-primary flex items-center gap-2">
                     <Star className="h-4 w-4" />
                     {tr(`Top Performers`)}
                   </CardTitle>
@@ -1201,7 +1203,7 @@ export default function ReportsPage() {
                             <span className="text-foreground font-medium">{s.name}</span>
                             <span className="text-muted-foreground/70 ml-2">{s.className}</span>
                           </div>
-                          <Badge className="bg-teal-800/10 text-teal-700 border-teal-800/30">
+                          <Badge className="bg-primary/10 text-primary border-primary/30">
                             {s.overallProgress}%
                           </Badge>
                         </li>
@@ -1216,7 +1218,7 @@ export default function ReportsPage() {
               </Card>
               <Card className="bg-card border-border print-avoid-break">
                 <CardHeader>
-                  <CardTitle className="text-red-400 flex items-center gap-2">
+                  <CardTitle className="text-red-700 dark:text-red-300 flex items-center gap-2">
                     <AlertTriangle className="h-4 w-4" />
                     {tr(`Needs Attention`)}
                   </CardTitle>
@@ -1267,7 +1269,7 @@ export default function ReportsPage() {
                       ]
                   ).map((w, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
-                      <CircleDot className="h-4 w-4 text-red-400 mt-0.5 shrink-0" />
+                      <CircleDot className="h-4 w-4 text-red-700 dark:text-red-300 mt-0.5 shrink-0" />
                       {w}
                     </li>
                   ))}
@@ -1289,7 +1291,7 @@ export default function ReportsPage() {
                       ]
                   ).map((v, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
-                      <Target className="h-4 w-4 text-teal-700 mt-0.5 shrink-0" />
+                      <Target className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                       {v}
                     </li>
                   ))}
@@ -1314,7 +1316,7 @@ export default function ReportsPage() {
               <select
                 value={selectedClassId}
                 onChange={(e) => setSelectedClassId(e.target.value)}
-                className="bg-card border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-white/30"
+                className="bg-card border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-ring"
               >
                 {DEMO_CLASSES.map((cls) => (
                   <option key={cls.id} value={cls.id}>
@@ -1346,7 +1348,7 @@ export default function ReportsPage() {
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
                     <p
-                      className={`text-2xl font-bold ${classAvg >= schoolAvg ? 'text-teal-700' : 'text-red-400'}`}
+                      className={`text-2xl font-bold ${classAvg >= schoolAvg ? 'text-primary' : 'text-red-700 dark:text-red-300'}`}
                     >
                       {classAvg >= schoolAvg ? '+' : ''}
                       {classAvg - schoolAvg}%
@@ -1437,13 +1439,13 @@ export default function ReportsPage() {
                               >
                                 {s.predictedGrade}
                               </td>
-                              <td className="py-3 pr-4 text-center font-bold text-teal-700">
+                              <td className="py-3 pr-4 text-center font-bold text-primary">
                                 {s.targetGrade}
                               </td>
                               <td className="py-3 pr-4 text-muted-foreground">{s.lastActive}</td>
                               <td className="py-3 pr-4">
                                 {s.atRisk ? (
-                                  <Badge className="bg-red-500/20 text-red-400 border-red-500/30">
+                                  <Badge className="bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30">
                                     Yes
                                   </Badge>
                                 ) : (
@@ -1485,7 +1487,7 @@ export default function ReportsPage() {
                     </div>
                     <div className="w-full bg-muted rounded-full h-4">
                       <div
-                        className={`h-4 rounded-full transition-all ${classAvg >= 75 ? 'bg-teal-700' : classAvg >= 60 ? 'bg-amber-500' : 'bg-red-500'}`}
+                        className={`h-4 rounded-full transition-all ${classAvg >= 75 ? 'bg-primary' : classAvg >= 60 ? 'bg-amber-500' : 'bg-red-500'}`}
                         style={{ width: `${classAvg}%` }}
                       />
                     </div>
@@ -1497,7 +1499,7 @@ export default function ReportsPage() {
                     </div>
                     <div className="w-full bg-muted rounded-full h-4">
                       <div
-                        className="h-4 rounded-full bg-teal-700 transition-all"
+                        className="h-4 rounded-full bg-primary transition-all"
                         style={{ width: `${schoolAvg}%` }}
                       />
                     </div>
@@ -1532,7 +1534,7 @@ export default function ReportsPage() {
               <select
                 value={selectedStudentId}
                 onChange={(e) => setSelectedStudentId(e.target.value)}
-                className="bg-card border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-white/30"
+                className="bg-card border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-ring"
               >
                 {DEMO_STUDENTS.map((s) => (
                   <option key={s.id} value={s.id}>
@@ -1577,7 +1579,7 @@ export default function ReportsPage() {
                     </div>
                     <div className="text-center">
                       <p className="text-xs text-muted-foreground">Target</p>
-                      <p className="text-3xl font-bold text-teal-700 mt-1">
+                      <p className="text-3xl font-bold text-primary mt-1">
                         {selectedStudent.targetGrade}
                       </p>
                     </div>
@@ -1594,7 +1596,7 @@ export default function ReportsPage() {
                   <div className="flex items-center gap-4">
                     <div className="w-full bg-muted rounded-full h-4">
                       <div
-                        className={`h-4 rounded-full transition-all ${selectedStudent.overallProgress >= 70 ? 'bg-teal-700' : selectedStudent.overallProgress >= 50 ? 'bg-amber-500' : 'bg-red-500'}`}
+                        className={`h-4 rounded-full transition-all ${selectedStudent.overallProgress >= 70 ? 'bg-primary' : selectedStudent.overallProgress >= 50 ? 'bg-amber-500' : 'bg-red-500'}`}
                         style={{ width: `${selectedStudent.overallProgress}%` }}
                       />
                     </div>
@@ -1605,7 +1607,7 @@ export default function ReportsPage() {
                   <p className="text-xs text-muted-foreground/70 mt-2">
                     Last active: {selectedStudent.lastActive}
                     {selectedStudent.atRisk && (
-                      <span className="text-red-400 ml-3">
+                      <span className="text-red-700 dark:text-red-300 ml-3">
                         -- At Risk: {selectedStudent.riskReason}
                       </span>
                     )}
@@ -1635,7 +1637,7 @@ export default function ReportsPage() {
                       <p className="text-xs text-muted-foreground/70">{tr(`Predicted Grade`)}</p>
                     </div>
                     <div className="bg-muted/50 rounded-lg p-4 text-center">
-                      <p className="text-2xl font-bold text-teal-700">
+                      <p className="text-2xl font-bold text-primary">
                         Grade {selectedStudent.targetGrade}
                       </p>
                       <p className="text-xs text-muted-foreground/70">{tr(`Target Grade`)}</p>
@@ -1669,7 +1671,7 @@ export default function ReportsPage() {
                           </span>
                           <div className="flex-1 bg-muted rounded-full h-2.5">
                             <div
-                              className={`h-2.5 rounded-full ${rag === 'green' ? 'bg-teal-700' : rag === 'amber' ? 'bg-amber-500' : 'bg-red-500'}`}
+                              className={`h-2.5 rounded-full ${rag === 'green' ? 'bg-primary' : rag === 'amber' ? 'bg-amber-500' : 'bg-red-500'}`}
                               style={{ width: `${mod.score}%` }}
                             />
                           </div>
@@ -1677,7 +1679,7 @@ export default function ReportsPage() {
                             G{percentageToGCSEGrade(mod.score)}
                           </span>
                           <Badge
-                            className={`w-24 justify-center ${mod.status === 'completed' ? 'bg-teal-800/10 text-teal-700' : mod.status === 'in-progress' ? 'bg-amber-500/20 text-clay-600' : 'bg-ink-200/20 text-muted-foreground'}`}
+                            className={`w-24 justify-center ${mod.status === 'completed' ? 'bg-primary/10 text-primary' : mod.status === 'in-progress' ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300' : 'bg-muted text-muted-foreground'}`}
                           >
                             {mod.status === 'completed'
                               ? 'Completed'
@@ -1694,7 +1696,7 @@ export default function ReportsPage() {
                 {/* Strengths and Weaknesses */}
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="text-sm font-semibold text-teal-700 uppercase tracking-wider mb-3">
+                    <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
                       Strengths
                     </h3>
                     <ul className="space-y-2 text-sm text-foreground/80">
@@ -1704,7 +1706,7 @@ export default function ReportsPage() {
                             key={typeof s === 'string' ? s : s.name}
                             className="flex items-center gap-2"
                           >
-                            <CheckCircle2 className="h-3.5 w-3.5 text-teal-700 shrink-0" />
+                            <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0" />
                             {typeof s === 'string'
                               ? s
                               : `${s.name} (G${percentageToGCSEGrade(s.score)})`}
@@ -1719,7 +1721,7 @@ export default function ReportsPage() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-red-400 uppercase tracking-wider mb-3">
+                    <h3 className="text-sm font-semibold text-red-700 dark:text-red-300 uppercase tracking-wider mb-3">
                       {tr(`Areas for Development`)}
                     </h3>
                     <ul className="space-y-2 text-sm text-foreground/80">
@@ -1729,7 +1731,7 @@ export default function ReportsPage() {
                             key={typeof w === 'string' ? w : w.name}
                             className="flex items-center gap-2"
                           >
-                            <AlertTriangle className="h-3.5 w-3.5 text-red-400 shrink-0" />
+                            <AlertTriangle className="h-3.5 w-3.5 text-red-700 dark:text-red-300 shrink-0" />
                             {typeof w === 'string'
                               ? w
                               : `${w.name} (G${percentageToGCSEGrade(w.score)})`}
@@ -1754,7 +1756,7 @@ export default function ReportsPage() {
                     <ul className="space-y-2">
                       {selectedStudent.recommendations.map((r, i) => (
                         <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
-                          <Target className="h-4 w-4 text-teal-700 mt-0.5 shrink-0" />
+                          <Target className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                           {r}
                         </li>
                       ))}
@@ -1782,8 +1784,8 @@ export default function ReportsPage() {
                 </div>
 
                 {/* Parent note */}
-                <div className="bg-teal-800/10 border border-teal-800/20 rounded-lg p-4">
-                  <p className="text-sm text-teal-700">
+                <div className="bg-primary/10 border border-primary/20 rounded-lg p-4">
+                  <p className="text-sm text-primary">
                     <strong>{tr(`For parents/carers:`)}</strong> This report shows your child&apos;s
                     progress across all English modules. The predicted grade is based on current
                     performance and may change as the year progresses. Please contact the school
@@ -1818,7 +1820,7 @@ export default function ReportsPage() {
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
                 <CardTitle className="text-foreground flex items-center gap-2">
-                  <Award className="h-5 w-5 text-clay-600" />
+                  <Award className="h-5 w-5 text-amber-700 dark:text-amber-300" />
                   {tr(`Teacher Ranking by Student Outcomes`)}
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -1848,7 +1850,7 @@ export default function ReportsPage() {
                         >
                           <td className="py-3 pr-4">
                             <span
-                              className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${i === 0 ? 'bg-amber-500/20 text-clay-600' : i === 1 ? 'bg-neutral-400/20 text-foreground/80' : i === 2 ? 'bg-orange-500/20 text-clay-600' : 'bg-muted/50 text-muted-foreground/70'}`}
+                              className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${i === 0 ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300' : i === 1 ? 'bg-neutral-400/20 text-foreground/80' : i === 2 ? 'bg-orange-500/20 text-amber-700 dark:text-amber-300' : 'bg-muted/50 text-muted-foreground/70'}`}
                             >
                               {i + 1}
                             </span>
@@ -1861,7 +1863,7 @@ export default function ReportsPage() {
                           <td className="py-3 pr-4 text-foreground/80">{t.totalStudents}</td>
                           <td className="py-3 pr-4">
                             <span
-                              className={`font-semibold ${t.avgProgress >= 75 ? 'text-teal-700' : t.avgProgress >= 60 ? 'text-clay-600' : 'text-red-400'}`}
+                              className={`font-semibold ${t.avgProgress >= 75 ? 'text-primary' : t.avgProgress >= 60 ? 'text-amber-700 dark:text-amber-300' : 'text-red-700 dark:text-red-300'}`}
                             >
                               {t.avgProgress}%{' '}
                               <span className="text-xs font-normal text-muted-foreground">
@@ -1884,7 +1886,7 @@ export default function ReportsPage() {
               <select
                 value={selectedTeacherId}
                 onChange={(e) => setSelectedTeacherId(e.target.value)}
-                className="bg-card border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-white/30"
+                className="bg-card border border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-ring"
               >
                 {DEMO_TEACHERS.map((t) => (
                   <option key={t.id} value={t.id}>
@@ -1995,7 +1997,7 @@ export default function ReportsPage() {
                             <td className="py-3 pr-4">
                               <div className="w-full bg-muted rounded-full h-2">
                                 <div
-                                  className={`h-2 rounded-full ${cls.avgProgress >= 70 ? 'bg-teal-700' : cls.avgProgress >= 55 ? 'bg-amber-500' : 'bg-red-500'}`}
+                                  className={`h-2 rounded-full ${cls.avgProgress >= 70 ? 'bg-primary' : cls.avgProgress >= 55 ? 'bg-amber-500' : 'bg-red-500'}`}
                                   style={{ width: `${cls.avgProgress}%` }}
                                 />
                               </div>
@@ -2005,7 +2007,7 @@ export default function ReportsPage() {
                             </td>
                             <td className="py-3">
                               <span
-                                className={`inline-flex items-center gap-1 text-xs font-medium ${diff > 0 ? 'text-teal-700' : diff < 0 ? 'text-red-400' : 'text-muted-foreground'}`}
+                                className={`inline-flex items-center gap-1 text-xs font-medium ${diff > 0 ? 'text-primary' : diff < 0 ? 'text-red-700 dark:text-red-300' : 'text-muted-foreground'}`}
                               >
                                 {diff > 0 ? (
                                   <ArrowUpRight className="h-3 w-3" />
@@ -2061,7 +2063,7 @@ export default function ReportsPage() {
                           >
                             <div className="flex items-center gap-3">
                               <div
-                                className={`w-2.5 h-2.5 rounded-full ${rag === 'green' ? 'bg-teal-700' : rag === 'amber' ? 'bg-amber-500' : 'bg-red-500'}`}
+                                className={`w-2.5 h-2.5 rounded-full ${rag === 'green' ? 'bg-primary' : rag === 'amber' ? 'bg-amber-500' : 'bg-red-500'}`}
                               />
                               <div>
                                 <p className="text-sm font-medium text-foreground">{s.name}</p>
@@ -2082,11 +2084,11 @@ export default function ReportsPage() {
                                 {s.predictedGrade}
                               </span>
                               <span className="text-xs text-muted-foreground">Tgt</span>
-                              <span className="text-sm font-bold text-teal-700">
+                              <span className="text-sm font-bold text-primary">
                                 {s.targetGrade}
                               </span>
                               {s.atRisk && (
-                                <Badge className="bg-red-500/20 text-red-400 border-red-500/30 text-xs">
+                                <Badge className="bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30 text-xs">
                                   At Risk
                                 </Badge>
                               )}
@@ -2160,7 +2162,7 @@ export default function ReportsPage() {
                             </div>
                             <div className="w-full bg-muted rounded-full h-3">
                               <div
-                                className={`h-3 rounded-full transition-all ${teacherAvg >= 75 ? 'bg-teal-700' : teacherAvg >= 60 ? 'bg-amber-500' : 'bg-red-500'}`}
+                                className={`h-3 rounded-full transition-all ${teacherAvg >= 75 ? 'bg-primary' : teacherAvg >= 60 ? 'bg-amber-500' : 'bg-red-500'}`}
                                 style={{ width: `${teacherAvg}%` }}
                               />
                             </div>
@@ -2174,7 +2176,7 @@ export default function ReportsPage() {
                             </div>
                             <div className="w-full bg-muted rounded-full h-3">
                               <div
-                                className="h-3 rounded-full bg-teal-700/70 transition-all"
+                                className="h-3 rounded-full bg-primary/70 transition-all"
                                 style={{ width: `${deptAvg}%` }}
                               />
                             </div>
@@ -2195,7 +2197,7 @@ export default function ReportsPage() {
                             </div>
                             <div className="w-full bg-muted rounded-full h-3">
                               <div
-                                className="h-3 rounded-full bg-teal-700 transition-all"
+                                className="h-3 rounded-full bg-primary transition-all"
                                 style={{ width: `${teacherCompletion}%` }}
                               />
                             </div>
@@ -2211,7 +2213,7 @@ export default function ReportsPage() {
                             </div>
                             <div className="w-full bg-muted rounded-full h-3">
                               <div
-                                className="h-3 rounded-full bg-teal-800/50 transition-all"
+                                className="h-3 rounded-full bg-primary/50 transition-all"
                                 style={{ width: `${deptCompletion}%` }}
                               />
                             </div>
@@ -2228,7 +2230,7 @@ export default function ReportsPage() {
             <Card className="bg-card border-border print-avoid-break">
               <CardHeader>
                 <CardTitle className="text-foreground flex items-center gap-2">
-                  <BookOpen className="h-5 w-5 text-teal-700" />
+                  <BookOpen className="h-5 w-5 text-primary" />
                   {tr(`Professional Development Recommendations`)}
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -2245,7 +2247,7 @@ export default function ReportsPage() {
                     ]
                   ).map((note: any, i: number) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-foreground/80">
-                      <Target className="h-4 w-4 text-teal-700 mt-0.5 shrink-0" />
+                      <Target className="h-4 w-4 text-primary mt-0.5 shrink-0" />
                       {note}
                     </li>
                   ))}

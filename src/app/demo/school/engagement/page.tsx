@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import Link from "next/link"
+import { useState } from 'react'
+import Link from 'next/link'
 import {
   Users,
   Activity,
@@ -16,12 +16,12 @@ import {
   ClipboardList,
   FolderOpen,
   BarChart3,
-} from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { toast } from "sonner"
-import { DEMO_STUDENTS, DEMO_CLASSES } from "@/data/demo-data"
+} from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { toast } from 'sonner'
+import { DEMO_STUDENTS, DEMO_CLASSES } from '@/data/demo-data'
 
 // -- Seeded random helper -------------------------------------------------------
 
@@ -62,94 +62,143 @@ function generateHeatmapData(): number[][] {
 }
 
 const HEATMAP_DATA = generateHeatmapData()
-const DAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+const DAY_LABELS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
 function heatmapColor(value: number): string {
-  if (value >= 80) return "bg-teal-600"
-  if (value >= 60) return "bg-teal-700"
-  if (value >= 40) return "bg-teal-800/80"
-  if (value >= 20) return "bg-teal-800/60"
-  if (value >= 10) return "bg-teal-900/40"
-  return "bg-cream-100/60"
+  if (value >= 80) return 'bg-primary'
+  if (value >= 60) return 'bg-primary/80'
+  if (value >= 40) return 'bg-primary/60'
+  if (value >= 20) return 'bg-primary/40'
+  if (value >= 10) return 'bg-primary/20'
+  return 'bg-muted'
 }
 
 // -- Year group engagement data -------------------------------------------------
 
 const YEAR_GROUP_ENGAGEMENT = [
-  { year: "Year 7", students: 64, activePct: 91, avgSessions: 4.2, avgDuration: "18 min", trend: "up" as const },
-  { year: "Year 8", students: 58, activePct: 87, avgSessions: 3.8, avgDuration: "21 min", trend: "up" as const },
-  { year: "Year 9", students: 62, activePct: 82, avgSessions: 3.5, avgDuration: "22 min", trend: "down" as const },
-  { year: "Year 10", students: 54, activePct: 88, avgSessions: 4.5, avgDuration: "26 min", trend: "up" as const },
-  { year: "Year 11", students: 52, activePct: 93, avgSessions: 5.1, avgDuration: "28 min", trend: "up" as const },
-  { year: "Year 12", students: 30, activePct: 79, avgSessions: 3.2, avgDuration: "24 min", trend: "down" as const },
-  { year: "Year 13", students: 22, activePct: 85, avgSessions: 4.8, avgDuration: "31 min", trend: "up" as const },
+  {
+    year: 'Year 7',
+    students: 64,
+    activePct: 91,
+    avgSessions: 4.2,
+    avgDuration: '18 min',
+    trend: 'up' as const,
+  },
+  {
+    year: 'Year 8',
+    students: 58,
+    activePct: 87,
+    avgSessions: 3.8,
+    avgDuration: '21 min',
+    trend: 'up' as const,
+  },
+  {
+    year: 'Year 9',
+    students: 62,
+    activePct: 82,
+    avgSessions: 3.5,
+    avgDuration: '22 min',
+    trend: 'down' as const,
+  },
+  {
+    year: 'Year 10',
+    students: 54,
+    activePct: 88,
+    avgSessions: 4.5,
+    avgDuration: '26 min',
+    trend: 'up' as const,
+  },
+  {
+    year: 'Year 11',
+    students: 52,
+    activePct: 93,
+    avgSessions: 5.1,
+    avgDuration: '28 min',
+    trend: 'up' as const,
+  },
+  {
+    year: 'Year 12',
+    students: 30,
+    activePct: 79,
+    avgSessions: 3.2,
+    avgDuration: '24 min',
+    trend: 'down' as const,
+  },
+  {
+    year: 'Year 13',
+    students: 22,
+    activePct: 85,
+    avgSessions: 4.8,
+    avgDuration: '31 min',
+    trend: 'up' as const,
+  },
 ]
 
 // -- Most active students -------------------------------------------------------
 
 const MOST_ACTIVE_STUDENTS = [
-  { id: "s1", name: "Amelia Richardson", streak: 42, sessions: 12 },
-  { id: "s2", name: "Oliver Chen", streak: 38, sessions: 11 },
-  { id: "s3", name: "Sophie Williams", streak: 35, sessions: 10 },
-  { id: "s4", name: "James Okonkwo", streak: 31, sessions: 9 },
-  { id: "s5", name: "Chloe Patel", streak: 28, sessions: 9 },
-  { id: "s6", name: "Ethan Murray", streak: 26, sessions: 8 },
-  { id: "s7", name: "Isabella Novak", streak: 24, sessions: 8 },
-  { id: "s8", name: "Noah Begum", streak: 22, sessions: 7 },
-  { id: "s9", name: "Mia Thompson", streak: 20, sessions: 7 },
-  { id: "s10", name: "Liam Carter", streak: 18, sessions: 7 },
+  { id: 's1', name: 'Amelia Richardson', streak: 42, sessions: 12 },
+  { id: 's2', name: 'Oliver Chen', streak: 38, sessions: 11 },
+  { id: 's3', name: 'Sophie Williams', streak: 35, sessions: 10 },
+  { id: 's4', name: 'James Okonkwo', streak: 31, sessions: 9 },
+  { id: 's5', name: 'Chloe Patel', streak: 28, sessions: 9 },
+  { id: 's6', name: 'Ethan Murray', streak: 26, sessions: 8 },
+  { id: 's7', name: 'Isabella Novak', streak: 24, sessions: 8 },
+  { id: 's8', name: 'Noah Begum', streak: 22, sessions: 7 },
+  { id: 's9', name: 'Mia Thompson', streak: 20, sessions: 7 },
+  { id: 's10', name: 'Liam Carter', streak: 18, sessions: 7 },
 ]
 
 // -- Inactive students (7+ days) ------------------------------------------------
 
 const INACTIVE_STUDENTS = [
-  { id: "si1", name: "Tyler Robinson", lastActive: "2026-03-22", daysInactive: 13 },
-  { id: "si2", name: "Grace Hutchinson", lastActive: "2026-03-24", daysInactive: 11 },
-  { id: "si3", name: "Kyle Bennett", lastActive: "2026-03-25", daysInactive: 10 },
-  { id: "si4", name: "Priya Sharma", lastActive: "2026-03-26", daysInactive: 9 },
-  { id: "si5", name: "Brandon O'Neill", lastActive: "2026-03-27", daysInactive: 8 },
-  { id: "si6", name: "Fatima Al-Rashid", lastActive: "2026-03-28", daysInactive: 7 },
-  { id: "si7", name: "Callum Frost", lastActive: "2026-03-28", daysInactive: 7 },
+  { id: 'si1', name: 'Tyler Robinson', lastActive: '2026-03-22', daysInactive: 13 },
+  { id: 'si2', name: 'Grace Hutchinson', lastActive: '2026-03-24', daysInactive: 11 },
+  { id: 'si3', name: 'Kyle Bennett', lastActive: '2026-03-25', daysInactive: 10 },
+  { id: 'si4', name: 'Priya Sharma', lastActive: '2026-03-26', daysInactive: 9 },
+  { id: 'si5', name: "Brandon O'Neill", lastActive: '2026-03-27', daysInactive: 8 },
+  { id: 'si6', name: 'Fatima Al-Rashid', lastActive: '2026-03-28', daysInactive: 7 },
+  { id: 'si7', name: 'Callum Frost', lastActive: '2026-03-28', daysInactive: 7 },
 ]
 
 // -- Content engagement data ----------------------------------------------------
 
 const POPULAR_COURSES = [
-  { name: "Macbeth - Full GCSE Course", views: 1284, trend: "+12%" },
-  { name: "AQA Language Paper 1", views: 1102, trend: "+8%" },
-  { name: "An Inspector Calls", views: 987, trend: "+15%" },
-  { name: "Poetry: Power & Conflict", views: 876, trend: "+5%" },
-  { name: "A Christmas Carol", views: 812, trend: "+3%" },
+  { name: 'Macbeth - Full GCSE Course', views: 1284, trend: '+12%' },
+  { name: 'AQA Language Paper 1', views: 1102, trend: '+8%' },
+  { name: 'An Inspector Calls', views: 987, trend: '+15%' },
+  { name: 'Poetry: Power & Conflict', views: 876, trend: '+5%' },
+  { name: 'A Christmas Carol', views: 812, trend: '+3%' },
 ]
 
 const POPULAR_QUIZZES = [
-  { name: "Macbeth Key Quotes Quiz", attempts: 342, avgScore: 74 },
-  { name: "Language Devices Identifier", attempts: 298, avgScore: 68 },
-  { name: "Inspector Calls Context Quiz", attempts: 276, avgScore: 71 },
-  { name: "Poetry Terminology Match", attempts: 254, avgScore: 66 },
-  { name: "Grammar & Punctuation Test", attempts: 231, avgScore: 72 },
+  { name: 'Macbeth Key Quotes Quiz', attempts: 342, avgScore: 74 },
+  { name: 'Language Devices Identifier', attempts: 298, avgScore: 68 },
+  { name: 'Inspector Calls Context Quiz', attempts: 276, avgScore: 71 },
+  { name: 'Poetry Terminology Match', attempts: 254, avgScore: 66 },
+  { name: 'Grammar & Punctuation Test', attempts: 231, avgScore: 72 },
 ]
 
 const POPULAR_RESOURCES = [
-  { name: "GCSE English Revision Guide (PDF)", downloads: 198 },
-  { name: "Quote Bank: Shakespeare Texts", downloads: 176 },
-  { name: "Essay Structure Template", downloads: 164 },
-  { name: "Language Paper 1 Model Answers", downloads: 152 },
-  { name: "Poetry Comparison Framework", downloads: 141 },
+  { name: 'GCSE English Revision Guide (PDF)', downloads: 198 },
+  { name: 'Quote Bank: Shakespeare Texts', downloads: 176 },
+  { name: 'Essay Structure Template', downloads: 164 },
+  { name: 'Language Paper 1 Model Answers', downloads: 152 },
+  { name: 'Poetry Comparison Framework', downloads: 141 },
 ]
 
 // -- Time-of-day analysis -------------------------------------------------------
 
 const TIME_OF_DAY = [
-  { label: "6-8am", value: 12, period: "Early Morning" },
-  { label: "8-10am", value: 78, period: "Morning" },
-  { label: "10-12pm", value: 45, period: "Late Morning" },
-  { label: "12-2pm", value: 38, period: "Lunch" },
-  { label: "2-4pm", value: 28, period: "Early Afternoon" },
-  { label: "4-6pm", value: 42, period: "After School" },
-  { label: "6-8pm", value: 72, period: "Evening" },
-  { label: "8-10pm", value: 65, period: "Late Evening" },
-  { label: "10-12am", value: 18, period: "Night" },
+  { label: '6-8am', value: 12, period: 'Early Morning' },
+  { label: '8-10am', value: 78, period: 'Morning' },
+  { label: '10-12pm', value: 45, period: 'Late Morning' },
+  { label: '12-2pm', value: 38, period: 'Lunch' },
+  { label: '2-4pm', value: 28, period: 'Early Afternoon' },
+  { label: '4-6pm', value: 42, period: 'After School' },
+  { label: '6-8pm', value: 72, period: 'Evening' },
+  { label: '8-10pm', value: 65, period: 'Late Evening' },
+  { label: '10-12am', value: 18, period: 'Night' },
 ]
 
 const maxTimeValue = Math.max(...TIME_OF_DAY.map((t) => t.value))
@@ -164,23 +213,23 @@ export default function EngagementPage() {
   function handleSendReminder(studentId: string, studentName: string) {
     setRemindersSent((prev) => new Set(prev).add(studentId))
     toast.success(`Reminder sent to ${studentName}`, {
-      description: "They will receive an email encouraging them to log in.",
+      description: 'They will receive an email encouraging them to log in.',
     })
   }
 
   return (
-    <div className="min-h-screen bg-cream-50 text-ink-900">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Demo banner */}
       <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2.5 text-center">
-        <p className="text-sm text-amber-700/90">
+        <p className="text-sm text-amber-700 dark:text-amber-300">
           <Info className="inline-block w-4 h-4 mr-1.5 -mt-0.5" />
-          This is a demo dashboard with sample data.{" "}
+          This is a demo dashboard with sample data.{' '}
           <Link
             href="/for-schools/register"
-            className="underline underline-offset-2 hover:text-amber-100 font-medium"
+            className="underline underline-offset-2 hover:text-amber-600 dark:hover:text-amber-200 font-medium"
           >
             Register your school
-          </Link>{" "}
+          </Link>{' '}
           to see your real engagement analytics.
         </p>
       </div>
@@ -189,111 +238,111 @@ export default function EngagementPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight flex items-center gap-3">
-            <Activity className="w-8 h-8 text-teal-700" />
+            <Activity className="w-8 h-8 text-primary" />
             Student Engagement
           </h1>
-          <p className="text-ink-600 mt-1">
+          <p className="text-muted-foreground mt-1">
             Track student activity, login patterns, and content usage across your school.
           </p>
         </div>
 
         {/* ── Engagement stats cards ─────────────────────────────── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <Card className="bg-cream-100/50 border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-ink-600">Daily Active Users</p>
+                  <p className="text-sm text-muted-foreground">Daily Active Users</p>
                   <p className="text-2xl font-bold mt-1">
-                    287<span className="text-base font-normal text-ink-500">/342</span>
+                    287<span className="text-base font-normal text-muted-foreground">/342</span>
                   </p>
                 </div>
-                <div className="w-12 h-12 rounded-lg bg-teal-800/10 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-teal-700" />
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-primary" />
                 </div>
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-ink-500">84% active</span>
-                  <span className="text-teal-700">+3% vs last week</span>
+                  <span className="text-muted-foreground">84% active</span>
+                  <span className="text-primary">+3% vs last week</span>
                 </div>
-                <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-teal-700 rounded-full" style={{ width: "84%" }} />
+                <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                  <div className="h-full bg-primary rounded-full" style={{ width: '84%' }} />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-cream-100/50 border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-ink-600">Weekly Login Rate</p>
+                  <p className="text-sm text-muted-foreground">Weekly Login Rate</p>
                   <p className="text-2xl font-bold mt-1">
-                    305<span className="text-base font-normal text-ink-500">/342</span>
+                    305<span className="text-base font-normal text-muted-foreground">/342</span>
                   </p>
                 </div>
-                <div className="w-12 h-12 rounded-lg bg-teal-800/10 flex items-center justify-center">
-                  <TrendingUp className="w-6 h-6 text-teal-700" />
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-primary" />
                 </div>
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-ink-500">89% logged in</span>
-                  <span className="text-teal-700">+1% vs last week</span>
+                  <span className="text-muted-foreground">89% logged in</span>
+                  <span className="text-primary">+1% vs last week</span>
                 </div>
-                <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-blue-500 rounded-full" style={{ width: "89%" }} />
+                <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                  <div className="h-full bg-blue-500 rounded-full" style={{ width: '89%' }} />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-cream-100/50 border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-ink-600">Average Session</p>
+                  <p className="text-sm text-muted-foreground">Average Session</p>
                   <p className="text-2xl font-bold mt-1">
-                    23<span className="text-base font-normal text-ink-500"> min</span>
+                    23<span className="text-base font-normal text-muted-foreground"> min</span>
                   </p>
                 </div>
-                <div className="w-12 h-12 rounded-lg bg-clay-500/10 flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-clay-600" />
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-accent" />
                 </div>
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-ink-500">Target: 20 min</span>
-                  <span className="text-clay-600">+2 min vs last week</span>
+                  <span className="text-muted-foreground">Target: 20 min</span>
+                  <span className="text-accent">+2 min vs last week</span>
                 </div>
-                <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-clay-500 rounded-full" style={{ width: "100%" }} />
+                <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                  <div className="h-full bg-accent rounded-full" style={{ width: '100%' }} />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-cream-100/50 border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-ink-600">Content Accessed Today</p>
+                  <p className="text-sm text-muted-foreground">Content Accessed Today</p>
                   <p className="text-2xl font-bold mt-1">
-                    456<span className="text-base font-normal text-ink-500"> pages</span>
+                    456<span className="text-base font-normal text-muted-foreground"> pages</span>
                   </p>
                 </div>
                 <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                  <FileText className="w-6 h-6 text-clay-600" />
+                  <FileText className="w-6 h-6 text-amber-700 dark:text-amber-300" />
                 </div>
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-ink-500">Avg: 380/day</span>
-                  <span className="text-clay-600">+20% vs average</span>
+                  <span className="text-muted-foreground">Avg: 380/day</span>
+                  <span className="text-amber-700 dark:text-amber-300">+20% vs average</span>
                 </div>
-                <div className="w-full h-2 bg-cream-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-amber-500 rounded-full" style={{ width: "100%" }} />
+                <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                  <div className="h-full bg-amber-500 rounded-full" style={{ width: '100%' }} />
                 </div>
               </div>
             </CardContent>
@@ -301,13 +350,13 @@ export default function EngagementPage() {
         </div>
 
         {/* ── Engagement Heatmap ─────────────────────────────────── */}
-        <Card className="bg-cream-100/50 border-ink-200 mb-8">
+        <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <BarChart3 className="w-5 h-5 text-teal-700" />
+              <BarChart3 className="w-5 h-5 text-primary" />
               Engagement Heatmap
             </CardTitle>
-            <CardDescription className="text-ink-600">
+            <CardDescription className="text-muted-foreground">
               Activity levels across 7 days and 24 hours. Darker green = higher activity.
             </CardDescription>
           </CardHeader>
@@ -316,10 +365,13 @@ export default function EngagementPage() {
               {/* Hour labels */}
               <div className="flex items-center mb-1">
                 <div className="w-10 shrink-0" />
-                <div className="grid grid-cols-24 gap-[2px] flex-1 min-w-[600px]" style={{ gridTemplateColumns: "repeat(24, minmax(0, 1fr))" }}>
+                <div
+                  className="grid grid-cols-24 gap-[2px] flex-1 min-w-[600px]"
+                  style={{ gridTemplateColumns: 'repeat(24, minmax(0, 1fr))' }}
+                >
                   {Array.from({ length: 24 }, (_, i) => (
-                    <div key={i} className="text-[10px] text-ink-500 text-center">
-                      {i % 3 === 0 ? `${i.toString().padStart(2, "0")}` : ""}
+                    <div key={i} className="text-[10px] text-muted-foreground text-center">
+                      {i % 3 === 0 ? `${i.toString().padStart(2, '0')}` : ''}
                     </div>
                   ))}
                 </div>
@@ -327,15 +379,18 @@ export default function EngagementPage() {
               {/* Heatmap grid */}
               {HEATMAP_DATA.map((row, dayIdx) => (
                 <div key={dayIdx} className="flex items-center mb-[2px]">
-                  <div className="w-10 shrink-0 text-xs text-ink-600 font-medium">
+                  <div className="w-10 shrink-0 text-xs text-muted-foreground font-medium">
                     {DAY_LABELS[dayIdx]}
                   </div>
-                  <div className="grid gap-[2px] flex-1 min-w-[600px]" style={{ gridTemplateColumns: "repeat(24, minmax(0, 1fr))" }}>
+                  <div
+                    className="grid gap-[2px] flex-1 min-w-[600px]"
+                    style={{ gridTemplateColumns: 'repeat(24, minmax(0, 1fr))' }}
+                  >
                     {row.map((val, hourIdx) => (
                       <div
                         key={hourIdx}
                         className={`h-6 rounded-sm ${heatmapColor(val)} transition-colors`}
-                        title={`${DAY_LABELS[dayIdx]} ${hourIdx.toString().padStart(2, "0")}:00 - ${val}% activity`}
+                        title={`${DAY_LABELS[dayIdx]} ${hourIdx.toString().padStart(2, '0')}:00 - ${val}% activity`}
                       />
                     ))}
                   </div>
@@ -343,21 +398,21 @@ export default function EngagementPage() {
               ))}
               {/* Legend */}
               <div className="flex items-center gap-2 mt-3 justify-end">
-                <span className="text-xs text-ink-500">Less</span>
-                <div className="w-4 h-4 rounded-sm bg-cream-100/60" />
-                <div className="w-4 h-4 rounded-sm bg-teal-900/40" />
-                <div className="w-4 h-4 rounded-sm bg-teal-800/60" />
-                <div className="w-4 h-4 rounded-sm bg-teal-800/80" />
-                <div className="w-4 h-4 rounded-sm bg-teal-700" />
-                <div className="w-4 h-4 rounded-sm bg-teal-600" />
-                <span className="text-xs text-ink-500">More</span>
+                <span className="text-xs text-muted-foreground">Less</span>
+                <div className="w-4 h-4 rounded-sm bg-muted" />
+                <div className="w-4 h-4 rounded-sm bg-primary/20" />
+                <div className="w-4 h-4 rounded-sm bg-primary/40" />
+                <div className="w-4 h-4 rounded-sm bg-primary/60" />
+                <div className="w-4 h-4 rounded-sm bg-primary/80" />
+                <div className="w-4 h-4 rounded-sm bg-primary" />
+                <span className="text-xs text-muted-foreground">More</span>
               </div>
             </div>
           </CardContent>
         </Card>
 
         {/* ── Year Group Engagement table ────────────────────────── */}
-        <Card className="bg-cream-100/50 border-ink-200 mb-8">
+        <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-lg">Year Group Engagement</CardTitle>
           </CardHeader>
@@ -365,30 +420,52 @@ export default function EngagementPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-ink-200">
-                    <th className="text-left py-3 px-3 text-ink-600 font-medium">Year</th>
-                    <th className="text-right py-3 px-3 text-ink-600 font-medium">Students</th>
-                    <th className="text-right py-3 px-3 text-ink-600 font-medium">Active %</th>
-                    <th className="text-right py-3 px-3 text-ink-600 font-medium">Avg Sessions/Week</th>
-                    <th className="text-right py-3 px-3 text-ink-600 font-medium">Avg Duration</th>
-                    <th className="text-center py-3 px-3 text-ink-600 font-medium">Trend</th>
+                  <tr className="border-b border-border/60">
+                    <th className="text-left py-3 px-3 text-muted-foreground font-medium">Year</th>
+                    <th className="text-right py-3 px-3 text-muted-foreground font-medium">
+                      Students
+                    </th>
+                    <th className="text-right py-3 px-3 text-muted-foreground font-medium">
+                      Active %
+                    </th>
+                    <th className="text-right py-3 px-3 text-muted-foreground font-medium">
+                      Avg Sessions/Week
+                    </th>
+                    <th className="text-right py-3 px-3 text-muted-foreground font-medium">
+                      Avg Duration
+                    </th>
+                    <th className="text-center py-3 px-3 text-muted-foreground font-medium">
+                      Trend
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {YEAR_GROUP_ENGAGEMENT.map((yg) => (
-                    <tr key={yg.year} className="border-b border-ink-200/50 hover:bg-white">
+                    <tr key={yg.year} className="border-b border-border/40 hover:bg-muted/50">
                       <td className="py-3 px-3 font-medium">{yg.year}</td>
-                      <td className="py-3 px-3 text-right text-ink-600">{yg.students}</td>
+                      <td className="py-3 px-3 text-right text-muted-foreground">{yg.students}</td>
                       <td className="py-3 px-3 text-right">
-                        <span className={yg.activePct >= 85 ? "text-teal-700" : yg.activePct >= 75 ? "text-clay-600" : "text-red-400"}>
+                        <span
+                          className={
+                            yg.activePct >= 85
+                              ? 'text-primary'
+                              : yg.activePct >= 75
+                                ? 'text-amber-700 dark:text-amber-300'
+                                : 'text-red-700 dark:text-red-300'
+                          }
+                        >
                           {yg.activePct}%
                         </span>
                       </td>
-                      <td className="py-3 px-3 text-right text-ink-600">{yg.avgSessions}</td>
-                      <td className="py-3 px-3 text-right text-ink-600">{yg.avgDuration}</td>
+                      <td className="py-3 px-3 text-right text-muted-foreground">
+                        {yg.avgSessions}
+                      </td>
+                      <td className="py-3 px-3 text-right text-muted-foreground">
+                        {yg.avgDuration}
+                      </td>
                       <td className="py-3 px-3 text-center">
-                        {yg.trend === "up" ? (
-                          <TrendingUp className="w-4 h-4 text-teal-700 inline-block" />
+                        {yg.trend === 'up' ? (
+                          <TrendingUp className="w-4 h-4 text-primary inline-block" />
                         ) : (
                           <TrendingDown className="w-4 h-4 text-red-400 inline-block" />
                         )}
@@ -403,13 +480,13 @@ export default function EngagementPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* ── Most Active Students (top 10) ──────────────────── */}
-          <Card className="bg-cream-100/50 border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Flame className="w-5 h-5 text-clay-600" />
+                <Flame className="w-5 h-5 text-amber-700 dark:text-amber-300" />
                 Most Active Students
               </CardTitle>
-              <CardDescription className="text-ink-600">
+              <CardDescription className="text-muted-foreground">
                 Top 10 students by activity this week
               </CardDescription>
             </CardHeader>
@@ -419,25 +496,33 @@ export default function EngagementPage() {
                   <Link
                     key={student.id}
                     href={`/demo/school/students/${student.id}`}
-                    className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-cream-100 transition-colors group"
+                    className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted transition-colors group"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="w-6 text-center text-sm font-bold text-ink-500">
+                      <span className="w-6 text-center text-sm font-bold text-muted-foreground">
                         {idx + 1}
                       </span>
-                      <div className="w-8 h-8 rounded-full bg-teal-800/10 flex items-center justify-center text-xs font-bold text-teal-700">
-                        {student.name.split(" ").map((n) => n[0]).join("")}
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">
+                        {student.name
+                          .split(' ')
+                          .map((n) => n[0])
+                          .join('')}
                       </div>
-                      <span className="text-sm font-medium group-hover:text-teal-700 transition-colors">
+                      <span className="text-sm font-medium group-hover:text-primary transition-colors">
                         {student.name}
                       </span>
                     </div>
                     <div className="flex items-center gap-4">
-                      <Badge variant="outline" className="border-orange-500/30 text-clay-600 text-xs">
+                      <Badge
+                        variant="outline"
+                        className="border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs"
+                      >
                         <Flame className="w-3 h-3 mr-1" />
                         {student.streak}d streak
                       </Badge>
-                      <span className="text-xs text-ink-600">{student.sessions} sessions</span>
+                      <span className="text-xs text-muted-foreground">
+                        {student.sessions} sessions
+                      </span>
                     </div>
                   </Link>
                 ))}
@@ -446,13 +531,13 @@ export default function EngagementPage() {
           </Card>
 
           {/* ── Inactive Students (7+ days) ────────────────────── */}
-          <Card className="bg-cream-100/50 border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Bell className="w-5 h-5 text-red-400" />
+                <Bell className="w-5 h-5 text-red-700 dark:text-red-300" />
                 Inactive Students
               </CardTitle>
-              <CardDescription className="text-ink-600">
+              <CardDescription className="text-muted-foreground">
                 Students who have not logged in for 7+ days
               </CardDescription>
             </CardHeader>
@@ -464,28 +549,34 @@ export default function EngagementPage() {
                     className="flex items-center justify-between py-2.5 px-3 rounded-lg bg-red-500/5 border border-red-500/10"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center text-xs font-bold text-red-400">
-                        {student.name.split(" ").map((n) => n[0]).join("")}
+                      <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center text-xs font-bold text-red-700 dark:text-red-300">
+                        {student.name
+                          .split(' ')
+                          .map((n) => n[0])
+                          .join('')}
                       </div>
                       <div>
                         <p className="text-sm font-medium">{student.name}</p>
-                        <p className="text-xs text-ink-500">
+                        <p className="text-xs text-muted-foreground">
                           Last active: {student.lastActive}
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Badge variant="outline" className="border-red-500/30 text-red-400 text-xs">
+                      <Badge
+                        variant="outline"
+                        className="border-red-500/30 text-red-700 dark:text-red-300 text-xs"
+                      >
                         {student.daysInactive}d inactive
                       </Badge>
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-ink-200 hover:bg-cream-100 text-xs h-7"
+                        className="border-border text-foreground hover:bg-accent hover:text-accent-foreground text-xs h-7"
                         disabled={remindersSent.has(student.id)}
                         onClick={() => handleSendReminder(student.id, student.name)}
                       >
-                        {remindersSent.has(student.id) ? "Sent" : "Send Reminder"}
+                        {remindersSent.has(student.id) ? 'Sent' : 'Send Reminder'}
                       </Button>
                     </div>
                   </div>
@@ -498,10 +589,10 @@ export default function EngagementPage() {
         {/* ── Content Engagement ─────────────────────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
           {/* Popular Courses */}
-          <Card className="bg-cream-100/50 border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardHeader>
               <CardTitle className="text-base flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-teal-700" />
+                <BookOpen className="w-4 h-4 text-primary" />
                 Most Popular Courses
               </CardTitle>
             </CardHeader>
@@ -510,12 +601,12 @@ export default function EngagementPage() {
                 {POPULAR_COURSES.map((course, idx) => (
                   <div key={idx} className="flex items-center justify-between">
                     <div className="flex items-center gap-2 min-w-0">
-                      <span className="text-xs font-bold text-ink-500 w-4">{idx + 1}</span>
+                      <span className="text-xs font-bold text-muted-foreground w-4">{idx + 1}</span>
                       <span className="text-sm truncate">{course.name}</span>
                     </div>
                     <div className="flex items-center gap-2 shrink-0 ml-2">
-                      <span className="text-xs text-ink-600">{course.views} views</span>
-                      <span className="text-xs text-teal-700">{course.trend}</span>
+                      <span className="text-xs text-muted-foreground">{course.views} views</span>
+                      <span className="text-xs text-primary">{course.trend}</span>
                     </div>
                   </div>
                 ))}
@@ -524,10 +615,10 @@ export default function EngagementPage() {
           </Card>
 
           {/* Most Attempted Quizzes */}
-          <Card className="bg-cream-100/50 border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardHeader>
               <CardTitle className="text-base flex items-center gap-2">
-                <ClipboardList className="w-4 h-4 text-clay-600" />
+                <ClipboardList className="w-4 h-4 text-amber-700 dark:text-amber-300" />
                 Most Attempted Quizzes
               </CardTitle>
             </CardHeader>
@@ -536,12 +627,16 @@ export default function EngagementPage() {
                 {POPULAR_QUIZZES.map((quiz, idx) => (
                   <div key={idx} className="flex items-center justify-between">
                     <div className="flex items-center gap-2 min-w-0">
-                      <span className="text-xs font-bold text-ink-500 w-4">{idx + 1}</span>
+                      <span className="text-xs font-bold text-muted-foreground w-4">{idx + 1}</span>
                       <span className="text-sm truncate">{quiz.name}</span>
                     </div>
                     <div className="flex items-center gap-3 shrink-0 ml-2">
-                      <span className="text-xs text-ink-600">{quiz.attempts} attempts</span>
-                      <span className="text-xs text-clay-600">{quiz.avgScore}% avg</span>
+                      <span className="text-xs text-muted-foreground">
+                        {quiz.attempts} attempts
+                      </span>
+                      <span className="text-xs text-amber-700 dark:text-amber-300">
+                        {quiz.avgScore}% avg
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -550,10 +645,10 @@ export default function EngagementPage() {
           </Card>
 
           {/* Most Viewed Resources */}
-          <Card className="bg-cream-100/50 border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardHeader>
               <CardTitle className="text-base flex items-center gap-2">
-                <FolderOpen className="w-4 h-4 text-teal-700" />
+                <FolderOpen className="w-4 h-4 text-primary" />
                 Most Viewed Resources
               </CardTitle>
             </CardHeader>
@@ -562,10 +657,12 @@ export default function EngagementPage() {
                 {POPULAR_RESOURCES.map((resource, idx) => (
                   <div key={idx} className="flex items-center justify-between">
                     <div className="flex items-center gap-2 min-w-0">
-                      <span className="text-xs font-bold text-ink-500 w-4">{idx + 1}</span>
+                      <span className="text-xs font-bold text-muted-foreground w-4">{idx + 1}</span>
                       <span className="text-sm truncate">{resource.name}</span>
                     </div>
-                    <span className="text-xs text-ink-600 shrink-0 ml-2">{resource.downloads} downloads</span>
+                    <span className="text-xs text-muted-foreground shrink-0 ml-2">
+                      {resource.downloads} downloads
+                    </span>
                   </div>
                 ))}
               </div>
@@ -574,13 +671,13 @@ export default function EngagementPage() {
         </div>
 
         {/* ── Time-of-Day Analysis ───────────────────────────────── */}
-        <Card className="bg-cream-100/50 border-ink-200">
+        <Card className="bg-card border-border/60">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Clock className="w-5 h-5 text-teal-700" />
+              <Clock className="w-5 h-5 text-primary" />
               Time-of-Day Activity
             </CardTitle>
-            <CardDescription className="text-ink-600">
+            <CardDescription className="text-muted-foreground">
               When students are most active throughout the day
             </CardDescription>
           </CardHeader>
@@ -590,43 +687,34 @@ export default function EngagementPage() {
                 const heightPct = Math.max(4, (slot.value / maxTimeValue) * 100)
                 const isPeak = slot.value >= 65
                 return (
-                  <div
-                    key={slot.label}
-                    className="flex-1 flex flex-col items-center gap-1"
-                  >
-                    <span className="text-xs font-bold text-ink-600">
-                      {slot.value}%
-                    </span>
+                  <div key={slot.label} className="flex-1 flex flex-col items-center gap-1">
+                    <span className="text-xs font-bold text-muted-foreground">{slot.value}%</span>
                     <div
                       className={`w-full rounded-t-md transition-all ${
-                        isPeak
-                          ? "bg-teal-700"
-                          : slot.value >= 40
-                            ? "bg-teal-800/60"
-                            : "bg-ink-200/40"
+                        isPeak ? 'bg-primary' : slot.value >= 40 ? 'bg-primary/60' : 'bg-muted'
                       }`}
                       style={{ height: `${heightPct}%` }}
                       title={`${slot.period}: ${slot.value}% of peak activity`}
                     />
-                    <span className="text-[10px] text-ink-500 text-center leading-tight">
+                    <span className="text-[10px] text-muted-foreground text-center leading-tight">
                       {slot.label}
                     </span>
                   </div>
                 )
               })}
             </div>
-            <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-ink-200">
+            <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-border/60">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm bg-teal-700" />
-                <span className="text-xs text-ink-600">Peak hours</span>
+                <div className="w-3 h-3 rounded-sm bg-primary" />
+                <span className="text-xs text-muted-foreground">Peak hours</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm bg-teal-800/60" />
-                <span className="text-xs text-ink-600">Moderate</span>
+                <div className="w-3 h-3 rounded-sm bg-primary/60" />
+                <span className="text-xs text-muted-foreground">Moderate</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-sm bg-ink-200/40" />
-                <span className="text-xs text-ink-600">Low</span>
+                <div className="w-3 h-3 rounded-sm bg-muted" />
+                <span className="text-xs text-muted-foreground">Low</span>
               </div>
             </div>
           </CardContent>

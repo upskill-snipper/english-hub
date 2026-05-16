@@ -54,8 +54,8 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
     <div className="flex h-full flex-col">
       <div className="px-5 pt-5 pb-3">
         <div className="flex items-center justify-center gap-2 rounded-lg bg-amber-500/15 border border-amber-500/25 px-3 py-2">
-          <Sparkles className="h-3.5 w-3.5 text-clay-600" />
-          <span className="text-xs font-bold uppercase tracking-wider text-clay-600">
+          <Sparkles className="h-3.5 w-3.5 text-amber-700 dark:text-amber-300" />
+          <span className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">
             {t('demo_school.chrome.demo_mode')}
           </span>
         </div>
@@ -128,7 +128,7 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
     <ToastProvider>
       <Link
         href="/contact"
-        className="fixed top-20 right-4 z-40 rounded-full bg-emerald-600 text-white px-4 py-2 shadow-lg hover:bg-emerald-700 text-sm"
+        className="fixed top-20 right-4 z-40 rounded-full bg-primary text-primary-foreground px-4 py-2 shadow-lg hover:bg-primary/90 text-sm"
       >
         {t('demo_school.chrome.contact_about_demo')}
       </Link>
@@ -161,7 +161,7 @@ export default function DemoSchoolLayoutClient({ children }: { children: React.R
         {mobileOpen && (
           <>
             <div
-              className="fixed inset-0 z-40 bg-ink-900/30 lg:hidden"
+              className="fixed inset-0 z-40 bg-foreground/30 lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
             <aside className="fixed inset-y-0 left-0 z-50 w-60 bg-card shadow-xl lg:hidden">

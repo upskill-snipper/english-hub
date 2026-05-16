@@ -13,19 +13,19 @@ import { useT } from '@/lib/i18n/use-t'
 function boardBadgeClass(board: string): string {
   switch (board) {
     case 'AQA':
-      return 'bg-clay-500/10 text-clay-600 border-clay-500/20'
+      return 'bg-accent/10 text-accent border-accent/20'
     case 'Edexcel':
-      return 'bg-teal-800/10 text-teal-700 border-teal-800/20'
+      return 'bg-primary/10 text-primary border-primary/20'
     case 'OCR':
-      return 'bg-teal-800/10 text-teal-700 border-teal-800/20'
+      return 'bg-primary/10 text-primary border-primary/20'
     case 'WJEC':
-      return 'bg-red-500/10 text-red-400 border-red-500/20'
+      return 'bg-red-500/10 text-red-700 border-red-500/20 dark:text-red-300'
     case 'CAIE IGCSE':
-      return 'bg-amber-500/10 text-clay-600 border-amber-500/20'
+      return 'bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-amber-300'
     case 'KS3':
-      return 'bg-teal-800/10 text-teal-700 border-teal-800/20'
+      return 'bg-primary/10 text-primary border-primary/20'
     default:
-      return 'bg-ink-200/10 text-ink-600 border-neutral-500/20'
+      return 'bg-muted text-muted-foreground border-border/60'
   }
 }
 

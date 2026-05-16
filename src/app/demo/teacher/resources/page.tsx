@@ -425,15 +425,15 @@ function getTypeIcon(type: ResourceType) {
 function getTypeBadgeClasses(type: ResourceType) {
   switch (type) {
     case 'Lesson Plan':
-      return 'bg-blue-500/15 text-teal-700 border-teal-800/20'
+      return 'bg-blue-500/15 text-primary border-primary/20'
     case 'Worksheet':
-      return 'bg-clay-500/10 text-clay-600 border-clay-500/20'
+      return 'bg-clay-500/10 text-clay-600 dark:text-clay-400 border-clay-500/20'
     case 'Teaching Guide':
-      return 'bg-amber-500/15 text-clay-600 border-amber-500/20'
+      return 'bg-amber-500/15 text-clay-600 dark:text-clay-400 border-amber-500/20'
     case 'Presentation':
-      return 'bg-teal-800/10 text-teal-700 border-teal-800/20'
+      return 'bg-primary/10 text-primary border-primary/20'
     case 'Mock Paper':
-      return 'bg-red-500/15 text-red-400 border-red-500/20'
+      return 'bg-red-500/15 text-red-600 dark:text-red-400 border-red-500/20'
   }
 }
 
@@ -489,18 +489,18 @@ export default function TeacherResourcesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-cream-50 text-ink-900">
+    <div className="min-h-screen bg-background text-foreground">
       <DemoBanner message="You are viewing a demo of the teacher resources library." />
 
       {/* Toast */}
       {toast && (
         <div className="fixed top-6 right-6 z-50 animate-in slide-in-from-top-2 fade-in duration-300">
-          <div className="flex items-center gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm px-5 py-3 text-sm text-amber-700 shadow-lg shadow-amber-500/5">
-            <Lock className="h-4 w-4 text-clay-600 shrink-0" />
+          <div className="flex items-center gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm px-5 py-3 text-sm text-amber-700 dark:text-amber-300 shadow-lg shadow-amber-500/5">
+            <Lock className="h-4 w-4 text-clay-600 dark:text-clay-400 shrink-0" />
             <span>{toast}</span>
             <Link
               href="/for-teachers"
-              className="ml-2 font-semibold text-clay-600 hover:text-amber-700 underline underline-offset-2"
+              className="ml-2 font-semibold text-clay-600 dark:text-clay-400 hover:text-amber-700 dark:text-amber-300 underline underline-offset-2"
             >
               Subscribe
             </Link>
@@ -511,14 +511,14 @@ export default function TeacherResourcesPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
         {/* Header */}
         <div className="mb-10">
-          <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-ink-500 mb-3">
+          <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
             <BookOpen className="h-3.5 w-3.5" />
             Teacher Resources
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">
             Teaching Resources Library
           </h1>
-          <p className="text-ink-600 text-lg max-w-2xl">
+          <p className="text-muted-foreground text-lg max-w-2xl">
             Lesson plans, worksheets, teaching guides, presentations, and mock papers -- all aligned
             to UK exam boards and ready to use.
           </p>
@@ -527,7 +527,7 @@ export default function TeacherResourcesPage() {
         {/* Filter Bar */}
         <div className="mb-8 space-y-4">
           <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2 text-sm text-ink-600">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Filter className="h-4 w-4" />
               Filters:
             </div>
@@ -536,10 +536,10 @@ export default function TeacherResourcesPage() {
             <select
               value={yearGroup}
               onChange={(e) => setYearGroup(e.target.value)}
-              className="rounded-lg border border-ink-200 bg-cream-100 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-teal-800/30"
+              className="rounded-lg border border-border/60 bg-muted px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
             >
               {YEAR_GROUPS.map((yg) => (
-                <option key={yg} value={yg} className="bg-cream-100">
+                <option key={yg} value={yg} className="bg-muted">
                   {yg === 'All' ? 'All Year Groups' : yg}
                 </option>
               ))}
@@ -549,10 +549,10 @@ export default function TeacherResourcesPage() {
             <select
               value={examBoard}
               onChange={(e) => setExamBoard(e.target.value)}
-              className="rounded-lg border border-ink-200 bg-cream-100 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-teal-800/30"
+              className="rounded-lg border border-border/60 bg-muted px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
             >
               {EXAM_BOARDS.map((eb) => (
-                <option key={eb} value={eb} className="bg-cream-100">
+                <option key={eb} value={eb} className="bg-muted">
                   {eb === 'All' ? 'All Exam Boards' : eb}
                 </option>
               ))}
@@ -562,10 +562,10 @@ export default function TeacherResourcesPage() {
             <select
               value={resourceType}
               onChange={(e) => setResourceType(e.target.value as 'All' | ResourceType)}
-              className="rounded-lg border border-ink-200 bg-cream-100 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-teal-800/30"
+              className="rounded-lg border border-border/60 bg-muted px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
             >
               {RESOURCE_TYPES.map((rt) => (
-                <option key={rt} value={rt} className="bg-cream-100">
+                <option key={rt} value={rt} className="bg-muted">
                   {rt === 'All' ? 'All Resource Types' : `${rt}s`}
                 </option>
               ))}
@@ -573,18 +573,18 @@ export default function TeacherResourcesPage() {
 
             {/* Search */}
             <div className="relative flex-1 min-w-[200px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-500" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="text"
                 placeholder="Search resources..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-cream-100 border-ink-200 text-white placeholder:text-ink-500 focus-visible:ring-blue-500/50"
+                className="pl-10 bg-muted border-border/60 text-foreground placeholder:text-muted-foreground focus-visible:ring-blue-500/50"
               />
             </div>
           </div>
 
-          <p className="text-sm text-ink-500">
+          <p className="text-sm text-muted-foreground">
             Showing {filtered.length} of {RESOURCES.length} resources
           </p>
         </div>
@@ -597,10 +597,10 @@ export default function TeacherResourcesPage() {
             return (
               <Card
                 key={resource.id}
-                className={`relative flex flex-col bg-white border transition-all duration-300 hover:bg-cream-100 ${
+                className={`relative flex flex-col bg-card border transition-all duration-300 hover:bg-muted ${
                   resource.isFree
-                    ? 'border-teal-800/40 shadow-lg shadow-teal-800/5'
-                    : 'border-ink-200'
+                    ? 'border-primary/40 shadow-lg shadow-teal-800/5'
+                    : 'border-border/60'
                 }`}
               >
                 <div className="p-5 flex-1 flex flex-col">
@@ -615,30 +615,36 @@ export default function TeacherResourcesPage() {
                     </Badge>
 
                     {resource.isFree && (
-                      <Badge className="bg-teal-800/10 text-teal-700 border border-teal-800/30 gap-1">
-                        <Star className="h-3 w-3 fill-emerald-400" />
+                      <Badge className="bg-primary/10 text-primary border border-primary/30 gap-1">
+                        <Star className="h-3 w-3 fill-emerald-500" />
                         FREE
                       </Badge>
                     )}
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-sm font-semibold text-ink-900 leading-snug mb-3 line-clamp-2">
+                  <h3 className="text-sm font-semibold text-foreground leading-snug mb-3 line-clamp-2">
                     {resource.title}
                   </h3>
 
                   {/* Badges row */}
                   <div className="flex flex-wrap items-center gap-2 mb-4">
-                    <Badge variant="outline" className="text-[11px] border-ink-200 text-ink-600">
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] border-border/60 text-muted-foreground"
+                    >
                       {resource.yearGroup}
                     </Badge>
-                    <Badge variant="outline" className="text-[11px] border-ink-200 text-ink-600">
+                    <Badge
+                      variant="outline"
+                      className="text-[11px] border-border/60 text-muted-foreground"
+                    >
                       {resource.examBoard}
                     </Badge>
                     {resource.duration && (
                       <Badge
                         variant="outline"
-                        className="text-[11px] border-ink-200 text-ink-600 gap-1"
+                        className="text-[11px] border-border/60 text-muted-foreground gap-1"
                       >
                         <Clock className="h-3 w-3" />
                         {resource.duration}
@@ -648,25 +654,27 @@ export default function TeacherResourcesPage() {
 
                   {/* Preview panel (toggled) */}
                   {isPreviewOpen && (
-                    <div className="mb-4 rounded-lg border border-ink-200 bg-white p-4 text-xs space-y-3 animate-in slide-in-from-top-1 fade-in duration-200">
+                    <div className="mb-4 rounded-lg border border-border/60 bg-card p-4 text-xs space-y-3 animate-in slide-in-from-top-1 fade-in duration-200">
                       <div>
-                        <p className="text-ink-500 uppercase tracking-wider text-[10px] mb-1.5 font-semibold">
+                        <p className="text-muted-foreground uppercase tracking-wider text-[10px] mb-1.5 font-semibold">
                           Objectives
                         </p>
-                        <ul className="space-y-1 text-ink-600">
+                        <ul className="space-y-1 text-muted-foreground">
                           {resource.objectives.map((obj, i) => (
                             <li key={i} className="flex gap-2">
-                              <span className="text-teal-700 shrink-0 mt-0.5">-</span>
+                              <span className="text-primary shrink-0 mt-0.5">-</span>
                               <span>{obj}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
                       <div>
-                        <p className="text-ink-500 uppercase tracking-wider text-[10px] mb-1.5 font-semibold">
+                        <p className="text-muted-foreground uppercase tracking-wider text-[10px] mb-1.5 font-semibold">
                           First Activity
                         </p>
-                        <p className="text-ink-600 leading-relaxed">{resource.firstActivity}</p>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {resource.firstActivity}
+                        </p>
                       </div>
                     </div>
                   )}
@@ -675,11 +683,11 @@ export default function TeacherResourcesPage() {
                   <div className="flex-1" />
 
                   {/* Action buttons */}
-                  <div className="flex items-center gap-2 pt-2 border-t border-ink-200">
+                  <div className="flex items-center gap-2 pt-2 border-t border-border/60">
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="flex-1 text-xs text-ink-600 hover:text-ink-900 hover:bg-cream-100 gap-1.5"
+                      className="flex-1 text-xs text-muted-foreground hover:text-foreground hover:bg-muted gap-1.5"
                       onClick={() => setPreviewOpen(isPreviewOpen ? null : resource.id)}
                     >
                       {isPreviewOpen ? (
@@ -699,7 +707,7 @@ export default function TeacherResourcesPage() {
                       <DownloadMenu
                         size="sm"
                         label="Download"
-                        className="flex-1 text-xs bg-teal-800 hover:bg-teal-700 text-white"
+                        className="flex-1 text-xs bg-primary hover:bg-primary/90 text-primary-foreground"
                         options={[
                           {
                             label: 'Download PDF',
@@ -721,7 +729,7 @@ export default function TeacherResourcesPage() {
                     ) : (
                       <Button
                         size="sm"
-                        className="flex-1 text-xs gap-1.5 bg-cream-100 hover:bg-cream-100 text-ink-600"
+                        className="flex-1 text-xs gap-1.5 bg-muted hover:bg-muted text-muted-foreground"
                         onClick={() => handleDownload(resource, 'pdf')}
                       >
                         <Lock className="h-3.5 w-3.5" />
@@ -738,21 +746,23 @@ export default function TeacherResourcesPage() {
         {/* No results */}
         {filtered.length === 0 && (
           <div className="text-center py-20">
-            <Search className="h-10 w-10 text-ink-500 mx-auto mb-4" />
-            <p className="text-ink-600 text-lg mb-2">No resources match your filters</p>
-            <p className="text-ink-500 text-sm">Try broadening your search or clearing filters.</p>
+            <Search className="h-10 w-10 text-muted-foreground mx-auto mb-4" />
+            <p className="text-muted-foreground text-lg mb-2">No resources match your filters</p>
+            <p className="text-muted-foreground text-sm">
+              Try broadening your search or clearing filters.
+            </p>
           </div>
         )}
 
         {/* Bottom CTA */}
-        <div className="relative rounded-2xl border border-ink-200 bg-gradient-to-br from-teal-800/[0.07] via-purple-500/[0.05] to-teal-600/[0.07] p-10 text-center">
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-teal-800/10 to-clay-400/10 opacity-50 blur-xl -z-10" />
+        <div className="relative rounded-2xl border border-border/60 bg-gradient-to-br from-primary/[0.07] via-purple-500/[0.05] to-primary/[0.07] p-10 text-center">
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/10 to-clay-400/10 opacity-50 blur-xl -z-10" />
 
-          <Sparkles className="h-8 w-8 text-teal-700 mx-auto mb-4" />
+          <Sparkles className="h-8 w-8 text-primary mx-auto mb-4" />
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
             See all 300+ resources
           </h2>
-          <p className="text-ink-600 max-w-lg mx-auto mb-6">
+          <p className="text-muted-foreground max-w-lg mx-auto mb-6">
             Unlock the complete library of lesson plans, worksheets, teaching guides, presentations,
             and mock papers. New resources added weekly.
           </p>
@@ -760,7 +770,7 @@ export default function TeacherResourcesPage() {
             <Button
               render={<Link href="/for-teachers" />}
               size="lg"
-              className="bg-teal-800 hover:bg-teal-700 text-white font-semibold px-8"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8"
             >
               Subscribe -- First Month Free
             </Button>
@@ -768,7 +778,7 @@ export default function TeacherResourcesPage() {
               render={<Link href="/for-teachers/free-resources" />}
               variant="outline"
               size="lg"
-              className="border-ink-200 text-ink-600 hover:bg-cream-100 hover:text-white"
+              className="border-border/60 text-muted-foreground hover:bg-muted hover:text-foreground"
             >
               Try the Free Lesson First
             </Button>

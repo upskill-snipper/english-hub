@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
   LayoutDashboard,
   Users,
@@ -18,34 +18,30 @@ import {
   Menu,
   X,
   UserCircle,
-} from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import DemoBanner from "@/components/demo/DemoBanner"
+} from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import DemoBanner from '@/components/demo/DemoBanner'
 
 const NAV_ITEMS = [
-  { label: "My Dashboard", href: "/demo/teacher", icon: LayoutDashboard },
-  { label: "My Classes", href: "/demo/teacher/classes", icon: Users },
-  { label: "My Students", href: "/demo/teacher/students", icon: GraduationCap },
-  { label: "Lesson Builder", href: "/demo/teacher/lessons", icon: Hammer },
-  { label: "AI Essay Marking", href: "/demo/teacher/essays", icon: PenTool },
-  { label: "Homework", href: "/demo/teacher/homework", icon: ClipboardList },
-  { label: "Quizzes", href: "/demo/teacher/quizzes", icon: HelpCircle },
-  { label: "Resources", href: "/demo/teacher/resources", icon: BookOpen },
-  { label: "Progress", href: "/demo/teacher/progress", icon: BarChart3 },
+  { label: 'My Dashboard', href: '/demo/teacher', icon: LayoutDashboard },
+  { label: 'My Classes', href: '/demo/teacher/classes', icon: Users },
+  { label: 'My Students', href: '/demo/teacher/students', icon: GraduationCap },
+  { label: 'Lesson Builder', href: '/demo/teacher/lessons', icon: Hammer },
+  { label: 'AI Essay Marking', href: '/demo/teacher/essays', icon: PenTool },
+  { label: 'Homework', href: '/demo/teacher/homework', icon: ClipboardList },
+  { label: 'Quizzes', href: '/demo/teacher/quizzes', icon: HelpCircle },
+  { label: 'Resources', href: '/demo/teacher/resources', icon: BookOpen },
+  { label: 'Progress', href: '/demo/teacher/progress', icon: BarChart3 },
 ]
 
-export default function TeacherDemoLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function TeacherDemoLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
 
   function isActive(href: string) {
-    if (href === "/demo/teacher") return pathname === "/demo/teacher"
+    if (href === '/demo/teacher') return pathname === '/demo/teacher'
     return pathname.startsWith(href)
   }
 
@@ -53,9 +49,9 @@ export default function TeacherDemoLayout({
     <div className="flex h-full flex-col">
       {/* Demo mode badge */}
       <div className="px-5 pt-5 pb-3">
-        <div className="flex items-center justify-center gap-2 rounded-lg bg-teal-800/10 border border-teal-800/25 px-3 py-2">
-          <Sparkles className="h-3.5 w-3.5 text-teal-700" />
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-700">
+        <div className="flex items-center justify-center gap-2 rounded-lg bg-primary/10 border border-primary/25 px-3 py-2">
+          <Sparkles className="h-3.5 w-3.5 text-primary" />
+          <span className="text-xs font-bold uppercase tracking-wider text-primary">
             Teacher Demo
           </span>
         </div>
@@ -64,15 +60,16 @@ export default function TeacherDemoLayout({
       {/* Teacher header */}
       <div className="border-b border-border px-5 pb-5">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-800/10">
-            <UserCircle className="h-5 w-5 text-teal-700" />
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+            <UserCircle className="h-5 w-5 text-primary" />
           </div>
           <div className="min-w-0">
             <div className="flex items-center gap-2">
-              <p className="truncate text-sm font-bold text-foreground">
-                Mrs Mitchell
-              </p>
-              <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider">
+              <p className="truncate text-sm font-bold text-foreground">Mrs Mitchell</p>
+              <Badge
+                variant="secondary"
+                className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider"
+              >
                 Demo
               </Badge>
             </div>
@@ -98,10 +95,10 @@ export default function TeacherDemoLayout({
               href={item.href}
               onClick={() => setMobileOpen(false)}
               className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                 active
-                  ? "bg-teal-800/10 text-teal-700"
-                  : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                  ? 'bg-primary/10 text-primary'
+                  : 'text-muted-foreground hover:bg-accent hover:text-foreground',
               )}
             >
               <Icon className="h-4 w-4 shrink-0" />
@@ -113,9 +110,12 @@ export default function TeacherDemoLayout({
 
       {/* Bottom actions */}
       <div className="border-t border-border px-3 py-4 space-y-3">
-        <Button render={<Link href="/auth/teacher-register" />} className="w-full font-semibold bg-gradient-to-r from-teal-800 to-teal-600 text-white hover:opacity-90">
-            <Sparkles className="h-4 w-4 mr-1.5" />
-            Start Free Trial
+        <Button
+          render={<Link href="/auth/teacher-register" />}
+          className="w-full font-semibold bg-gradient-to-r from-teal-800 to-teal-600 text-primary-foreground hover:opacity-90"
+        >
+          <Sparkles className="h-4 w-4 mr-1.5" />
+          Start Free Trial
         </Button>
         <Link
           href="/demo"
@@ -132,9 +132,7 @@ export default function TeacherDemoLayout({
     <div className="flex min-h-screen bg-background">
       {/* Desktop sidebar */}
       <aside className="hidden w-60 shrink-0 border-r border-border bg-card lg:block">
-        <div className="sticky top-0 h-screen overflow-y-auto">
-          {sidebarContent}
-        </div>
+        <div className="sticky top-0 h-screen overflow-y-auto">{sidebarContent}</div>
       </aside>
 
       {/* Mobile header */}
@@ -145,16 +143,15 @@ export default function TeacherDemoLayout({
           onClick={() => setMobileOpen(!mobileOpen)}
           className="mr-3"
         >
-          {mobileOpen ? (
-            <X className="h-5 w-5" />
-          ) : (
-            <Menu className="h-5 w-5" />
-          )}
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
         <div className="flex items-center gap-2">
-          <UserCircle className="h-5 w-5 text-teal-700" />
+          <UserCircle className="h-5 w-5 text-primary" />
           <span className="text-sm font-bold">Mrs Mitchell</span>
-          <Badge variant="secondary" className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider">
+          <Badge
+            variant="secondary"
+            className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider"
+          >
             Teacher Demo
           </Badge>
         </div>
@@ -164,7 +161,7 @@ export default function TeacherDemoLayout({
       {mobileOpen && (
         <>
           <div
-            className="fixed inset-0 z-40 bg-ink-900/30 lg:hidden"
+            className="fixed inset-0 z-40 bg-foreground/30 lg:hidden"
             onClick={() => setMobileOpen(false)}
           />
           <aside className="fixed inset-y-0 left-0 z-50 w-60 bg-card shadow-xl lg:hidden">
@@ -176,9 +173,7 @@ export default function TeacherDemoLayout({
       {/* Main content */}
       <main className="flex-1 pt-14 lg:pt-0">
         <DemoBanner />
-        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
-          {children}
-        </div>
+        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">{children}</div>
       </main>
     </div>
   )

@@ -174,10 +174,10 @@ Dickens uses Scrooge's transformation to argue that anyone can change and that t
 
 function Toast({ message, onClose }: { message: string; onClose: () => void }) {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-lg bg-teal-800/10 border border-teal-800/30 px-4 py-3 text-sm text-teal-700 shadow-xl animate-in slide-in-from-bottom-4">
-      <CheckCircle2 className="h-4 w-4 text-teal-700 shrink-0" />
+    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-lg bg-primary/10 border border-primary/30 px-4 py-3 text-sm text-primary shadow-xl animate-in slide-in-from-bottom-4">
+      <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
       <span>{message}</span>
-      <button onClick={onClose} className="ml-2 text-teal-700/60 hover:text-teal-700">
+      <button onClick={onClose} className="ml-2 text-primary/60 hover:text-primary">
         <X className="h-3.5 w-3.5" />
       </button>
     </div>
@@ -211,7 +211,7 @@ export default function EssayMarkingDemoPage() {
   }
 
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-background">
       <DemoBanner message="This is an interactive demo of AI essay marking. No real data is saved." />
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 lg:py-12">
@@ -219,28 +219,28 @@ export default function EssayMarkingDemoPage() {
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-clay-500/20 to-clay-400/20 border border-clay-500/20">
-              <Sparkles className="h-5 w-5 text-clay-600" />
+              <Sparkles className="h-5 w-5 text-clay-600 dark:text-clay-400" />
             </div>
-            <h1 className="text-2xl font-bold text-ink-900">AI Essay Marking</h1>
+            <h1 className="text-2xl font-bold text-foreground">AI Essay Marking</h1>
           </div>
-          <p className="text-ink-500 text-sm mt-1">
+          <p className="text-muted-foreground text-sm mt-1">
             AI-powered essay analysis with AO scoring, detailed feedback, and improvement
             suggestions.
           </p>
         </div>
 
         {/* Essay display */}
-        <div className="rounded-xl border border-ink-200 bg-white p-5 mb-6">
+        <div className="rounded-xl border border-border/60 bg-card p-5 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-sm font-semibold text-ink-900">{essay.title}</h2>
-              <p className="text-xs text-ink-500 mt-0.5">{essay.student}</p>
+              <h2 className="text-sm font-semibold text-foreground">{essay.title}</h2>
+              <p className="text-xs text-muted-foreground mt-0.5">{essay.student}</p>
             </div>
-            <span className="px-2.5 py-1 rounded-full text-xs bg-cream-100 text-ink-500 border border-ink-200">
+            <span className="px-2.5 py-1 rounded-full text-xs bg-muted text-muted-foreground border border-border/60">
               Sample {essayIndex + 1} of {SAMPLE_ESSAYS.length}
             </span>
           </div>
-          <div className="rounded-lg bg-white border border-ink-200 p-5 text-sm text-ink-600 leading-relaxed whitespace-pre-line max-h-[350px] overflow-y-auto">
+          <div className="rounded-lg bg-card border border-border/60 p-5 text-sm text-muted-foreground leading-relaxed whitespace-pre-line max-h-[350px] overflow-y-auto">
             {essay.text}
           </div>
         </div>
@@ -250,7 +250,7 @@ export default function EssayMarkingDemoPage() {
           <button
             onClick={handleAnalyse}
             disabled={loading}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-clay-500 to-clay-400 text-sm font-semibold text-white hover:opacity-90 transition-opacity disabled:opacity-60"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-clay-500 to-clay-400 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-60"
           >
             {loading ? (
               <>
@@ -266,7 +266,7 @@ export default function EssayMarkingDemoPage() {
           </button>
           <button
             onClick={handleTryAnother}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cream-100 border border-ink-200 text-sm text-ink-600 hover:text-ink-900 hover:bg-cream-100 transition-colors"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-muted border border-border/60 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
           >
             <RefreshCw className="h-4 w-4" />
             Try Another Essay
@@ -276,11 +276,13 @@ export default function EssayMarkingDemoPage() {
         {/* Loading state */}
         {loading && (
           <div className="rounded-xl border border-clay-500/20 bg-clay-500/5 p-8 text-center">
-            <Loader2 className="h-8 w-8 animate-spin text-clay-600 mx-auto mb-3" />
-            <p className="text-sm text-clay-600">
+            <Loader2 className="h-8 w-8 animate-spin text-clay-600 dark:text-clay-400 mx-auto mb-3" />
+            <p className="text-sm text-clay-600 dark:text-clay-400">
               Analysing essay against GCSE assessment objectives...
             </p>
-            <p className="text-xs text-ink-500 mt-1">Evaluating AO1, AO2, AO3, and AO4 criteria</p>
+            <p className="text-xs text-muted-foreground mt-1">
+              Evaluating AO1, AO2, AO3, and AO4 criteria
+            </p>
           </div>
         )}
 
@@ -292,20 +294,22 @@ export default function EssayMarkingDemoPage() {
               {/* Predicted grade */}
               <div className="md:col-span-2 rounded-xl border border-clay-500/20 bg-clay-500/5 p-5 flex items-center gap-4">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-clay-500/30 to-clay-400/30 border border-clay-500/30">
-                  <span className="text-3xl font-bold text-clay-600">{essay.grade}</span>
+                  <span className="text-3xl font-bold text-clay-600 dark:text-clay-400">
+                    {essay.grade}
+                  </span>
                 </div>
                 <div>
-                  <p className="text-xs text-ink-500">Predicted Grade</p>
-                  <p className="text-lg font-bold text-ink-900">Grade {essay.grade}</p>
-                  <p className="text-xs text-ink-500">
+                  <p className="text-xs text-muted-foreground">Predicted Grade</p>
+                  <p className="text-lg font-bold text-foreground">Grade {essay.grade}</p>
+                  <p className="text-xs text-muted-foreground">
                     {essay.total}/{essay.totalMax} ({essay.percentage}%)
                   </p>
                 </div>
               </div>
 
               {/* AO scores */}
-              <div className="md:col-span-4 rounded-xl border border-ink-200 bg-white p-5">
-                <h3 className="text-xs font-medium text-ink-500 mb-3 uppercase tracking-wider">
+              <div className="md:col-span-4 rounded-xl border border-border/60 bg-card p-5">
+                <h3 className="text-xs font-medium text-muted-foreground mb-3 uppercase tracking-wider">
                   Assessment Objectives
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -344,12 +348,12 @@ export default function EssayMarkingDemoPage() {
                           </defs>
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-xs font-bold text-ink-900">
+                          <span className="text-xs font-bold text-foreground">
                             {ao.score}/{ao.max}
                           </span>
                         </div>
                       </div>
-                      <p className="text-xs text-ink-500">{ao.label}</p>
+                      <p className="text-xs text-muted-foreground">{ao.label}</p>
                     </div>
                   ))}
                 </div>
@@ -357,11 +361,11 @@ export default function EssayMarkingDemoPage() {
             </div>
 
             {/* Detailed feedback */}
-            <div className="rounded-xl border border-ink-200 bg-white p-5">
-              <h3 className="text-sm font-semibold text-ink-900 mb-3">Detailed Feedback</h3>
+            <div className="rounded-xl border border-border/60 bg-card p-5">
+              <h3 className="text-sm font-semibold text-foreground mb-3">Detailed Feedback</h3>
               <div className="space-y-3">
                 {essay.feedback.map((para, i) => (
-                  <p key={i} className="text-sm text-ink-600 leading-relaxed">
+                  <p key={i} className="text-sm text-muted-foreground leading-relaxed">
                     {para}
                   </p>
                 ))}
@@ -371,15 +375,15 @@ export default function EssayMarkingDemoPage() {
             {/* Strengths & Improvements */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Strengths */}
-              <div className="rounded-xl border border-teal-800/20 bg-teal-800/5 p-5">
+              <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
                 <div className="flex items-center gap-2 mb-3">
-                  <TrendingUp className="h-4 w-4 text-teal-700" />
-                  <h3 className="text-sm font-semibold text-teal-700">Strengths</h3>
+                  <TrendingUp className="h-4 w-4 text-primary" />
+                  <h3 className="text-sm font-semibold text-primary">Strengths</h3>
                 </div>
                 <ul className="space-y-2">
                   {essay.strengths.map((s, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-ink-600">
-                      <CheckCircle2 className="h-4 w-4 text-teal-700/60 mt-0.5 shrink-0" />
+                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="h-4 w-4 text-primary/60 mt-0.5 shrink-0" />
                       <span>{s}</span>
                     </li>
                   ))}
@@ -389,13 +393,15 @@ export default function EssayMarkingDemoPage() {
               {/* Areas for improvement */}
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-5">
                 <div className="flex items-center gap-2 mb-3">
-                  <TrendingDown className="h-4 w-4 text-clay-600" />
-                  <h3 className="text-sm font-semibold text-amber-700">Areas for Improvement</h3>
+                  <TrendingDown className="h-4 w-4 text-clay-600 dark:text-clay-400" />
+                  <h3 className="text-sm font-semibold text-amber-700 dark:text-amber-300">
+                    Areas for Improvement
+                  </h3>
                 </div>
                 <ul className="space-y-2">
                   {essay.improvements.map((s, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-ink-600">
-                      <AlertTriangle className="h-4 w-4 text-clay-600/60 mt-0.5 shrink-0" />
+                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <AlertTriangle className="h-4 w-4 text-clay-600/60 dark:text-clay-400/60 mt-0.5 shrink-0" />
                       <span>{s}</span>
                     </li>
                   ))}
@@ -404,17 +410,17 @@ export default function EssayMarkingDemoPage() {
             </div>
 
             {/* CTA */}
-            <div className="rounded-xl border border-ink-200 bg-gradient-to-r from-clay-500/10 via-pink-500/10 to-clay-400/10 p-6 text-center">
-              <Sparkles className="h-6 w-6 text-clay-600 mx-auto mb-2" />
-              <h3 className="text-lg font-semibold text-ink-900 mb-1">
+            <div className="rounded-xl border border-border/60 bg-gradient-to-r from-clay-500/10 via-pink-500/10 to-clay-400/10 p-6 text-center">
+              <Sparkles className="h-6 w-6 text-clay-600 dark:text-clay-400 mx-auto mb-2" />
+              <h3 className="text-lg font-semibold text-foreground mb-1">
                 Use AI marking with your students
               </h3>
-              <p className="text-sm text-ink-500 mb-4">
+              <p className="text-sm text-muted-foreground mb-4">
                 Save hours of marking time with instant, detailed feedback on every essay.
               </p>
               <Link
                 href="/auth/teacher-register"
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-clay-500 to-clay-400 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-clay-500 to-clay-400 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
               >
                 Start free trial
               </Link>

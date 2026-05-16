@@ -416,7 +416,7 @@ const WEEKLY_ACTIVITY: Record<string, WeekData[]> = {
 
 function ragDot(status: 'green' | 'amber' | 'red') {
   const colors = {
-    green: 'bg-teal-700',
+    green: 'bg-primary',
     amber: 'bg-amber-500',
     red: 'bg-red-500',
   }
@@ -425,9 +425,9 @@ function ragDot(status: 'green' | 'amber' | 'red') {
 
 function ragBadge(status: 'green' | 'amber' | 'red') {
   const styles = {
-    green: 'bg-teal-800/10 text-teal-700 border-teal-800/20',
-    amber: 'bg-amber-500/15 text-clay-600 border-amber-500/20',
-    red: 'bg-red-500/15 text-red-400 border-red-500/20',
+    green: 'bg-primary/10 text-primary border-primary/20',
+    amber: 'bg-amber-500/15 text-clay-600 dark:text-clay-400 border-amber-500/20',
+    red: 'bg-red-500/15 text-red-600 dark:text-red-400 border-red-500/20',
   }
   const labels = { green: 'On Track', amber: 'Needs Support', red: 'At Risk' }
   return (
@@ -440,21 +440,22 @@ function ragBadge(status: 'green' | 'amber' | 'red') {
 }
 
 function trendIcon(trend: 'up' | 'stable' | 'down') {
-  if (trend === 'up') return <TrendingUp className="h-3.5 w-3.5 text-teal-700" />
-  if (trend === 'down') return <TrendingUp className="h-3.5 w-3.5 text-red-400 rotate-180" />
-  return <span className="text-ink-500 text-xs">--</span>
+  if (trend === 'up') return <TrendingUp className="h-3.5 w-3.5 text-primary" />
+  if (trend === 'down')
+    return <TrendingUp className="h-3.5 w-3.5 text-red-600 dark:text-red-400 rotate-180" />
+  return <span className="text-muted-foreground text-xs">--</span>
 }
 
 function progressColor(pct: number): string {
-  if (pct >= 75) return 'bg-teal-700'
+  if (pct >= 75) return 'bg-primary'
   if (pct >= 60) return 'bg-amber-500'
   return 'bg-red-500'
 }
 
 function progressTextColor(pct: number): string {
-  if (pct >= 75) return 'text-teal-700'
-  if (pct >= 60) return 'text-clay-600'
-  return 'text-red-400'
+  if (pct >= 75) return 'text-primary'
+  if (pct >= 60) return 'text-clay-600 dark:text-clay-400'
+  return 'text-red-600 dark:text-red-400'
 }
 
 // ── Main Page ────────────────────────────────────────────────────────────────
@@ -506,8 +507,8 @@ export default function TeacherProgressPage() {
     { label: '0-39', min: 0, max: 39, color: 'bg-red-500' },
     { label: '40-59', min: 40, max: 59, color: 'bg-orange-400' },
     { label: '60-74', min: 60, max: 74, color: 'bg-amber-400' },
-    { label: '75-89', min: 75, max: 89, color: 'bg-teal-600' },
-    { label: '90-100', min: 90, max: 100, color: 'bg-teal-700' },
+    { label: '75-89', min: 75, max: 89, color: 'bg-primary' },
+    { label: '90-100', min: 90, max: 100, color: 'bg-primary' },
   ]
   const distribution = scoreBuckets.map((b) => ({
     ...b,
@@ -516,14 +517,14 @@ export default function TeacherProgressPage() {
   const maxBucket = Math.max(...distribution.map((d) => d.count), 1)
 
   return (
-    <div className="min-h-screen bg-cream-50 text-ink-900">
+    <div className="min-h-screen bg-background text-foreground">
       <DemoBanner message="You are viewing an interactive demo with sample data. No real student data is used." />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12">
         {/* Back link */}
         <Link
           href="/demo/teacher"
-          className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-ink-500 hover:text-ink-600 transition-colors mb-6"
+          className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:text-muted-foreground transition-colors mb-6"
         >
           <span className="text-base leading-none">&larr;</span> Teacher Dashboard
         </Link>
@@ -532,15 +533,15 @@ export default function TeacherProgressPage() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight flex items-center gap-3">
-              <BarChart3 className="h-7 w-7 text-teal-700" />
+              <BarChart3 className="h-7 w-7 text-primary" />
               My Students' Progress
             </h1>
-            <p className="text-ink-600 mt-1">
+            <p className="text-muted-foreground mt-1">
               {tr(`Track performance and identify students needing support`)}
             </p>
           </div>
           <Button
-            className="bg-teal-800 hover:bg-teal-700 text-white gap-2"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
             onClick={() => setShowReport(true)}
           >
             <Printer className="h-4 w-4" />
@@ -552,20 +553,20 @@ export default function TeacherProgressPage() {
         <div className="relative mb-8">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center justify-between w-full sm:w-80 px-4 py-3 rounded-lg bg-white border border-ink-200 hover:border-ink-200 transition-colors"
+            className="flex items-center justify-between w-full sm:w-80 px-4 py-3 rounded-lg bg-card border border-border/60 hover:border-border/60 transition-colors"
           >
             <div className="text-left">
-              <div className="text-sm font-medium text-ink-900">{selectedClass.name}</div>
-              <div className="text-xs text-ink-500">
+              <div className="text-sm font-medium text-foreground">{selectedClass.name}</div>
+              <div className="text-xs text-muted-foreground">
                 Year {selectedClass.yearGroup} -- {selectedClass.examBoard}
               </div>
             </div>
             <ChevronDown
-              className={`h-4 w-4 text-ink-600 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
+              className={`h-4 w-4 text-muted-foreground transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
             />
           </button>
           {dropdownOpen && (
-            <div className="absolute z-20 mt-1 w-full sm:w-80 rounded-lg bg-cream-100 border border-ink-200 shadow-xl">
+            <div className="absolute z-20 mt-1 w-full sm:w-80 rounded-lg bg-muted border border-border/60 shadow-xl">
               {TEACHER_CLASSES.map((cls) => (
                 <button
                   key={cls.id}
@@ -574,12 +575,12 @@ export default function TeacherProgressPage() {
                     setDropdownOpen(false)
                     setShowReport(false)
                   }}
-                  className={`w-full text-left px-4 py-3 hover:bg-cream-100 transition-colors first:rounded-t-lg last:rounded-b-lg ${
-                    cls.id === selectedClassId ? 'bg-teal-800/10 border-l-2 border-l-teal-700' : ''
+                  className={`w-full text-left px-4 py-3 hover:bg-muted transition-colors first:rounded-t-lg last:rounded-b-lg ${
+                    cls.id === selectedClassId ? 'bg-primary/10 border-l-2 border-l-teal-700' : ''
                   }`}
                 >
-                  <div className="text-sm font-medium text-ink-900">{cls.name}</div>
-                  <div className="text-xs text-ink-500">
+                  <div className="text-sm font-medium text-foreground">{cls.name}</div>
+                  <div className="text-xs text-muted-foreground">
                     Year {cls.yearGroup} -- {cls.examBoard} --{' '}
                     {CLASS_STUDENTS.filter((s) => s.classId === cls.id).length} students
                   </div>
@@ -591,17 +592,17 @@ export default function TeacherProgressPage() {
 
         {/* ── Class Overview Cards ─────────────────────────────────── */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
-          <Card className="bg-white border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardContent className="pt-4 pb-3">
-              <div className="text-xs text-ink-500 mb-1">{tr(`Avg Working At`)}</div>
+              <div className="text-xs text-muted-foreground mb-1">{tr(`Avg Working At`)}</div>
               <div className={`text-2xl font-bold ${gcseGradeColor(Math.round(avgWorkingAt))}`}>
                 Grade {avgWorkingAt}
               </div>
             </CardContent>
           </Card>
-          <Card className="bg-white border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardContent className="pt-4 pb-3">
-              <div className="text-xs text-ink-500 mb-1">{tr(`Avg Predicted`)}</div>
+              <div className="text-xs text-muted-foreground mb-1">{tr(`Avg Predicted`)}</div>
               <div
                 className={`text-2xl font-bold ${predictedGradeColor(Math.round(avgPredicted), Math.round(avgWorkingAt))}`}
               >
@@ -609,37 +610,37 @@ export default function TeacherProgressPage() {
               </div>
             </CardContent>
           </Card>
-          <Card className="bg-white border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardContent className="pt-4 pb-3">
-              <div className="text-xs text-ink-500 mb-1">Completion</div>
+              <div className="text-xs text-muted-foreground mb-1">Completion</div>
               <div className={`text-2xl font-bold ${progressTextColor(avgProgress)}`}>
                 {avgProgress}%
               </div>
             </CardContent>
           </Card>
-          <Card className="bg-white border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardContent className="pt-4 pb-3">
-              <div className="text-xs text-ink-500 mb-1">Students</div>
-              <div className="text-2xl font-bold text-ink-900">{classStudents.length}</div>
+              <div className="text-xs text-muted-foreground mb-1">Students</div>
+              <div className="text-2xl font-bold text-foreground">{classStudents.length}</div>
             </CardContent>
           </Card>
-          <Card className="bg-white border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardContent className="pt-4 pb-3">
-              <div className="text-xs text-ink-500 mb-1">At Risk</div>
-              <div className="text-2xl font-bold text-red-400">{redCount}</div>
+              <div className="text-xs text-muted-foreground mb-1">At Risk</div>
+              <div className="text-2xl font-bold text-red-600 dark:text-red-400">{redCount}</div>
             </CardContent>
           </Card>
         </div>
 
         {/* ── Student RAG Table ─────────────────────────────────────── */}
-        <Card className="bg-white border-ink-200 mb-6">
+        <Card className="bg-card border-border/60 mb-6">
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
-              <Users className="h-4 w-4 text-teal-700" />
+            <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+              <Users className="h-4 w-4 text-primary" />
               Student Progress -- {selectedClass.name}
               <div className="ml-auto flex items-center gap-3 text-xs">
                 <span className="flex items-center gap-1">
-                  <div className="h-2 w-2 rounded-full bg-teal-700" /> {greenCount}
+                  <div className="h-2 w-2 rounded-full bg-primary" /> {greenCount}
                 </span>
                 <span className="flex items-center gap-1">
                   <div className="h-2 w-2 rounded-full bg-amber-500" /> {amberCount}
@@ -654,7 +655,7 @@ export default function TeacherProgressPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-ink-200 text-ink-500 text-xs uppercase tracking-wider">
+                  <tr className="border-b border-border/60 text-muted-foreground text-xs uppercase tracking-wider">
                     <th className="text-left py-2 pr-2">Status</th>
                     <th className="text-left py-2 pr-2">Student</th>
                     <th className="text-center py-2 pr-2">{tr(`Working At`)}</th>
@@ -672,12 +673,14 @@ export default function TeacherProgressPage() {
                   {classStudents.map((student) => (
                     <tr
                       key={student.id}
-                      className="border-b border-ink-200/50 hover:bg-cream-100/30 transition-colors"
+                      className="border-b border-border/40 hover:bg-muted/30 transition-colors"
                     >
                       <td className="py-2.5 pr-2">{ragDot(student.status)}</td>
                       <td className="py-2.5 pr-2">
-                        <div className="font-medium text-ink-900">{student.name}</div>
-                        <div className="text-xs text-ink-500">{ragBadge(student.status)}</div>
+                        <div className="font-medium text-foreground">{student.name}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {ragBadge(student.status)}
+                        </div>
                       </td>
                       <td
                         className={`py-2.5 pr-2 text-center font-bold text-lg ${gcseGradeColor(student.workingAtGrade)}`}
@@ -690,43 +693,43 @@ export default function TeacherProgressPage() {
                         <span className="flex items-center justify-center gap-1">
                           {student.predictedGrade}
                           {student.predictedGrade > student.workingAtGrade && (
-                            <TrendingUp className="h-3 w-3 text-teal-700" />
+                            <TrendingUp className="h-3 w-3 text-primary" />
                           )}
                           {student.predictedGrade < student.workingAtGrade && (
-                            <TrendingUp className="h-3 w-3 text-red-400 rotate-180" />
+                            <TrendingUp className="h-3 w-3 text-red-600 dark:text-red-400 rotate-180" />
                           )}
                         </span>
                       </td>
-                      <td className="py-2.5 pr-2 text-center font-semibold text-teal-700">
+                      <td className="py-2.5 pr-2 text-center font-semibold text-primary">
                         {student.targetGrade}
                       </td>
-                      <td className="py-2.5 pr-2 text-center text-xs text-ink-600">
+                      <td className="py-2.5 pr-2 text-center text-xs text-muted-foreground">
                         {student.readingAge ? formatReadingAge(student.readingAge) : '--'}
                       </td>
                       <td className="py-2.5 pr-2 text-right">
                         <div className="flex items-center justify-end gap-2">
-                          <div className="w-16 h-1.5 rounded-full bg-cream-100 overflow-hidden">
+                          <div className="w-16 h-1.5 rounded-full bg-muted overflow-hidden">
                             <div
                               className={`h-full rounded-full ${progressColor(student.progress)}`}
                               style={{ width: `${student.progress}%` }}
                             />
                           </div>
-                          <span className="text-xs font-mono text-ink-600 w-8 text-right">
+                          <span className="text-xs font-mono text-muted-foreground w-8 text-right">
                             {student.progress}%
                           </span>
                         </div>
                       </td>
                       <td className="py-2.5 pr-2 text-center">{trendIcon(student.trend)}</td>
-                      <td className="py-2.5 pr-2 text-right text-xs text-ink-600">
+                      <td className="py-2.5 pr-2 text-right text-xs text-muted-foreground">
                         {student.assignmentsCompleted}/{student.assignmentsTotal}
                       </td>
-                      <td className="py-2.5 pr-2 text-right text-xs text-ink-500">
+                      <td className="py-2.5 pr-2 text-right text-xs text-muted-foreground">
                         {student.lastActive}
                       </td>
                       <td className="py-2.5 text-right">
                         <Link
                           href={`/demo/teacher/students/${student.id}`}
-                          className="text-teal-700 hover:text-teal-700 transition-colors"
+                          className="text-primary hover:text-primary transition-colors"
                         >
                           <ChevronRight className="h-4 w-4" />
                         </Link>
@@ -742,10 +745,10 @@ export default function TeacherProgressPage() {
         {/* ── Score Distribution + Students Needing Attention ────────── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {/* Score Distribution */}
-          <Card className="bg-white border-ink-200">
+          <Card className="bg-card border-border/60">
             <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
-                <Target className="h-4 w-4 text-clay-600" />
+              <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                <Target className="h-4 w-4 text-clay-600 dark:text-clay-400" />
                 Score Distribution
               </CardTitle>
             </CardHeader>
@@ -753,14 +756,16 @@ export default function TeacherProgressPage() {
               <div className="space-y-2">
                 {distribution.map((bucket) => (
                   <div key={bucket.label} className="flex items-center gap-2">
-                    <span className="w-14 text-xs text-ink-600 font-mono">{bucket.label}</span>
-                    <div className="flex-1 h-5 rounded bg-cream-100 overflow-hidden relative">
+                    <span className="w-14 text-xs text-muted-foreground font-mono">
+                      {bucket.label}
+                    </span>
+                    <div className="flex-1 h-5 rounded bg-muted overflow-hidden relative">
                       <div
                         className={`h-full rounded ${bucket.color} transition-all`}
                         style={{ width: `${(bucket.count / maxBucket) * 100}%` }}
                       />
                     </div>
-                    <span className="w-6 text-right text-xs font-mono text-ink-600">
+                    <span className="w-6 text-right text-xs font-mono text-muted-foreground">
                       {bucket.count}
                     </span>
                   </div>
@@ -770,17 +775,17 @@ export default function TeacherProgressPage() {
           </Card>
 
           {/* Students Needing Attention */}
-          <Card className="bg-white border-ink-200 border-l-4 border-l-red-500/50">
+          <Card className="bg-card border-border/60 border-l-4 border-l-red-500/50">
             <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-red-400 flex items-center gap-2">
+              <CardTitle className="text-sm font-medium text-red-600 dark:text-red-400 flex items-center gap-2">
                 <AlertTriangle className="h-4 w-4" />
                 Students Needing Attention
               </CardTitle>
             </CardHeader>
             <CardContent>
               {needsAttention.length === 0 ? (
-                <div className="text-sm text-ink-500 py-4 text-center">
-                  <CheckCircle2 className="h-8 w-8 text-teal-800/50 mx-auto mb-2" />
+                <div className="text-sm text-muted-foreground py-4 text-center">
+                  <CheckCircle2 className="h-8 w-8 text-primary/50 mx-auto mb-2" />
                   All students are progressing well
                 </div>
               ) : (
@@ -789,21 +794,21 @@ export default function TeacherProgressPage() {
                     <Link
                       key={student.id}
                       href={`/demo/teacher/students/${student.id}`}
-                      className="flex items-center justify-between p-2 rounded-lg hover:bg-cream-100/50 transition-colors group"
+                      className="flex items-center justify-between p-2 rounded-lg hover:bg-muted/50 transition-colors group"
                     >
                       <div className="flex items-center gap-2">
                         {ragDot(student.status)}
                         <div>
-                          <div className="text-sm font-medium text-ink-900 group-hover:text-teal-700 transition-colors">
+                          <div className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
                             {student.name}
                           </div>
-                          <div className="text-xs text-ink-500">
+                          <div className="text-xs text-muted-foreground">
                             {percentageToGCSEGradeLabel(student.score)} -- Last active:{' '}
                             {student.lastActive}
                           </div>
                         </div>
                       </div>
-                      <ChevronRight className="h-4 w-4 text-ink-500 group-hover:text-teal-700 transition-colors" />
+                      <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                     </Link>
                   ))}
                 </div>
@@ -813,10 +818,10 @@ export default function TeacherProgressPage() {
         </div>
 
         {/* ── Week-by-Week Activity Chart ──────────────────────────── */}
-        <Card className="bg-white border-ink-200 mb-6">
+        <Card className="bg-card border-border/60 mb-6">
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-ink-600 flex items-center gap-2">
-              <Activity className="h-4 w-4 text-teal-700" />
+            <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+              <Activity className="h-4 w-4 text-primary" />
               Week-by-Week Activity
             </CardTitle>
           </CardHeader>
@@ -824,7 +829,7 @@ export default function TeacherProgressPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-ink-200 text-ink-500 text-xs uppercase tracking-wider">
+                  <tr className="border-b border-border/60 text-muted-foreground text-xs uppercase tracking-wider">
                     <th className="text-left py-2 pr-4">Week</th>
                     <th className="text-left py-2 pr-4">Logins</th>
                     <th className="text-right py-2 pr-4">Submissions</th>
@@ -833,31 +838,35 @@ export default function TeacherProgressPage() {
                 </thead>
                 <tbody>
                   {weeklyData.map((week) => (
-                    <tr key={week.week} className="border-b border-ink-200/50">
-                      <td className="py-2 pr-4 text-ink-600 font-medium">{week.week}</td>
+                    <tr key={week.week} className="border-b border-border/40">
+                      <td className="py-2 pr-4 text-muted-foreground font-medium">{week.week}</td>
                       <td className="py-2 pr-4">
                         <div className="flex items-center gap-2">
-                          <div className="w-24 h-3 rounded bg-cream-100 overflow-hidden">
+                          <div className="w-24 h-3 rounded bg-muted overflow-hidden">
                             <div
-                              className="h-full rounded bg-teal-700"
+                              className="h-full rounded bg-primary"
                               style={{ width: `${(week.logins / maxWeeklyLogins) * 100}%` }}
                             />
                           </div>
-                          <span className="text-xs font-mono text-ink-600">{week.logins}</span>
+                          <span className="text-xs font-mono text-muted-foreground">
+                            {week.logins}
+                          </span>
                         </div>
                       </td>
-                      <td className="py-2 pr-4 text-right text-ink-600 font-mono">
+                      <td className="py-2 pr-4 text-right text-muted-foreground font-mono">
                         {week.submissions}
                       </td>
-                      <td className="py-2 text-right text-ink-600 font-mono">{week.quizzes}</td>
+                      <td className="py-2 text-right text-muted-foreground font-mono">
+                        {week.quizzes}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div className="flex items-center gap-4 mt-3 text-[10px] text-ink-500">
+            <div className="flex items-center gap-4 mt-3 text-[10px] text-muted-foreground">
               <span className="flex items-center gap-1">
-                <div className="h-2 w-4 rounded bg-teal-700" /> Logins
+                <div className="h-2 w-4 rounded bg-primary" /> Logins
               </span>
               <span>{tr(`Submissions and quizzes shown as counts`)}</span>
             </div>
@@ -866,19 +875,19 @@ export default function TeacherProgressPage() {
 
         {/* ── Printable Report Modal ───────────────────────────────── */}
         {showReport && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink-900/50 p-4">
-            <div className="bg-white text-black rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-4">
+            <div className="bg-card text-black rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               {/* Report header */}
               <div className="flex items-center justify-between p-6 border-b">
                 <div>
                   <h2 className="text-xl font-bold">Class Report: {selectedClass.name}</h2>
-                  <p className="text-sm text-ink-500">
+                  <p className="text-sm text-muted-foreground">
                     Mrs Mitchell -- Generated {new Date().toLocaleDateString('en-GB')}
                   </p>
                 </div>
                 <button
                   onClick={() => setShowReport(false)}
-                  className="p-2 rounded-md hover:bg-cream-100"
+                  className="p-2 rounded-md hover:bg-muted"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -892,43 +901,47 @@ export default function TeacherProgressPage() {
                   <table className="w-full text-left border-collapse">
                     <tbody>
                       <tr className="border-b">
-                        <td className="py-1 text-ink-500">Class</td>
+                        <td className="py-1 text-muted-foreground">Class</td>
                         <td className="py-1 font-medium text-right">{selectedClass.name}</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-ink-500">{tr(`Year Group`)}</td>
+                        <td className="py-1 text-muted-foreground">{tr(`Year Group`)}</td>
                         <td className="py-1 font-medium text-right">
                           Year {selectedClass.yearGroup}
                         </td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-ink-500">{tr(`Exam Board`)}</td>
+                        <td className="py-1 text-muted-foreground">{tr(`Exam Board`)}</td>
                         <td className="py-1 font-medium text-right">{selectedClass.examBoard}</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-ink-500">Students</td>
+                        <td className="py-1 text-muted-foreground">Students</td>
                         <td className="py-1 font-medium text-right">{classStudents.length}</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-ink-500">{tr(`Avg Working At Grade`)}</td>
+                        <td className="py-1 text-muted-foreground">{tr(`Avg Working At Grade`)}</td>
                         <td className="py-1 font-medium text-right">Grade {avgWorkingAt}</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-ink-500">{tr(`Avg Predicted Grade`)}</td>
+                        <td className="py-1 text-muted-foreground">{tr(`Avg Predicted Grade`)}</td>
                         <td className="py-1 font-medium text-right">Grade {avgPredicted}</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-ink-500">{tr(`Average Progress`)}</td>
+                        <td className="py-1 text-muted-foreground">{tr(`Average Progress`)}</td>
                         <td className="py-1 font-medium text-right">{avgProgress}%</td>
                       </tr>
                       <tr>
-                        <td className="py-1 text-ink-500">{tr(`RAG Summary`)}</td>
+                        <td className="py-1 text-muted-foreground">{tr(`RAG Summary`)}</td>
                         <td className="py-1 font-medium text-right">
-                          <span className="text-green-700">{greenCount} On Track</span>
+                          <span className="text-green-700 dark:text-green-300">
+                            {greenCount} On Track
+                          </span>
                           {' / '}
-                          <span className="text-amber-600">{amberCount} Support</span>
+                          <span className="text-amber-700 dark:text-amber-300">
+                            {amberCount} Support
+                          </span>
                           {' / '}
-                          <span className="text-red-600">{redCount} At Risk</span>
+                          <span className="text-red-600 dark:text-red-400">{redCount} At Risk</span>
                         </td>
                       </tr>
                     </tbody>
@@ -940,7 +953,7 @@ export default function TeacherProgressPage() {
                   <h3 className="font-semibold text-lg mb-2">{tr(`Student Details`)}</h3>
                   <table className="w-full text-left border-collapse text-xs">
                     <thead>
-                      <tr className="border-b text-ink-500">
+                      <tr className="border-b text-muted-foreground">
                         <th className="py-1 font-medium">Student</th>
                         <th className="py-1 font-medium text-center">Status</th>
                         <th className="py-1 font-medium text-center">{tr(`Working At`)}</th>
@@ -957,10 +970,10 @@ export default function TeacherProgressPage() {
                             <span
                               className={
                                 s.status === 'green'
-                                  ? 'text-green-700'
+                                  ? 'text-green-700 dark:text-green-300'
                                   : s.status === 'amber'
-                                    ? 'text-amber-600'
-                                    : 'text-red-600'
+                                    ? 'text-amber-700 dark:text-amber-300'
+                                    : 'text-red-600 dark:text-red-400'
                               }
                             >
                               {s.status === 'green'
@@ -988,7 +1001,7 @@ export default function TeacherProgressPage() {
                     <h3 className="font-semibold text-lg mb-2">
                       {tr(`Students Requiring Intervention`)}
                     </h3>
-                    <ul className="list-disc list-inside space-y-1 text-ink-600">
+                    <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                       {needsAttention.map((s) => (
                         <li key={s.id}>
                           <span className="font-medium">{s.name}</span> --{' '}
@@ -1001,7 +1014,7 @@ export default function TeacherProgressPage() {
                 )}
 
                 {/* Footer */}
-                <div className="text-center text-xs text-ink-600 pt-4 border-t">
+                <div className="text-center text-xs text-muted-foreground pt-4 border-t">
                   This is a demo report. Register your school for real progress tracking.
                 </div>
               </div>
@@ -1013,7 +1026,7 @@ export default function TeacherProgressPage() {
                 </Button>
                 <Button
                   onClick={() => window.print()}
-                  className="bg-teal-800 text-white hover:bg-teal-700 gap-2"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2"
                 >
                   <Printer className="h-4 w-4" />
                   Print Report

@@ -2210,19 +2210,21 @@ export default function LessonBuilderDemo() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-cream-50 text-ink-900">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Toast */}
       {toast && (
-        <div className="fixed top-6 right-6 z-50 bg-teal-800 text-white px-5 py-3 rounded-xl shadow-lg text-sm font-medium animate-fade-in">
+        <div className="fixed top-6 right-6 z-50 bg-primary text-primary-foreground px-5 py-3 rounded-xl shadow-lg text-sm font-medium animate-fade-in">
           {toast}
         </div>
       )}
 
       <div className="mx-auto max-w-4xl px-6 py-12">
         {/* Header */}
-        <p className="text-[10px] uppercase tracking-[0.3em] text-ink-500 mb-4">The English Hub</p>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">
+          The English Hub
+        </p>
         <h1 className="text-4xl sm:text-5xl font-light tracking-tight mb-3">Lesson Builder Demo</h1>
-        <p className="text-ink-600 text-lg mb-8 max-w-2xl">
+        <p className="text-muted-foreground text-lg mb-8 max-w-2xl">
           See exactly how the AI lesson builder works. Choose your text, year group, and focus --
           then generate a complete, differentiated lesson plan in seconds.
         </p>
@@ -2230,10 +2232,12 @@ export default function LessonBuilderDemo() {
         {/* Demo Banner */}
         <div className="mb-10 rounded-xl border border-clay-500/20 bg-clay-500/5 px-5 py-4">
           <div className="flex items-start gap-3">
-            <span className="mt-0.5 text-clay-500 text-lg font-serif italic">*</span>
+            <span className="mt-0.5 text-clay-600 dark:text-clay-400 text-lg font-heading italic">
+              *
+            </span>
             <div>
-              <p className="text-clay-700 font-medium text-sm">Demo Mode</p>
-              <p className="text-ink-600 text-sm mt-1">
+              <p className="text-clay-600 dark:text-clay-400 font-medium text-sm">Demo Mode</p>
+              <p className="text-muted-foreground text-sm mt-1">
                 This is a preview of the lesson builder. Generated plans use pre-built templates to
                 demonstrate the format and quality. With a full account, every lesson is uniquely
                 generated to your exact specification.
@@ -2244,8 +2248,8 @@ export default function LessonBuilderDemo() {
 
         {/* Form */}
         {!generatedPlan && !isGenerating && (
-          <div className="rounded-2xl border border-ink-200 bg-white p-6 sm:p-8 mb-10">
-            <h2 className="text-xl font-medium text-ink-900 mb-6">Configure Your Lesson</h2>
+          <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 mb-10">
+            <h2 className="text-xl font-medium text-foreground mb-6">Configure Your Lesson</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormSelect
                 label="Text / Topic"
@@ -2295,7 +2299,7 @@ export default function LessonBuilderDemo() {
             </div>
             <button
               onClick={handleGenerate}
-              className="mt-8 w-full rounded-xl bg-teal-800 hover:bg-teal-700 text-white font-medium py-3.5 px-6 transition-colors text-sm"
+              className="mt-8 w-full rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3.5 px-6 transition-colors text-sm"
             >
               Generate Lesson Plan
             </button>
@@ -2304,22 +2308,22 @@ export default function LessonBuilderDemo() {
 
         {/* Loading Animation */}
         {isGenerating && (
-          <div className="rounded-2xl border border-ink-200 bg-white p-6 sm:p-8 mb-10">
+          <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 mb-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="flex gap-1">
-                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
-                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse [animation-delay:150ms]" />
-                <span className="w-2 h-2 rounded-full bg-teal-600 animate-pulse [animation-delay:300ms]" />
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse [animation-delay:150ms]" />
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse [animation-delay:300ms]" />
               </div>
-              <span className="text-sm text-teal-700 font-medium">Generating lesson plan...</span>
+              <span className="text-sm text-primary font-medium">Generating lesson plan...</span>
             </div>
             <div className="space-y-2 font-mono text-xs">
               {TYPING_LINES.slice(0, typingIndex).map((line, i) => (
-                <div key={i} className="text-ink-600 animate-fade-in">
-                  <span className="text-teal-700/60 mr-2">&gt;</span>
+                <div key={i} className="text-muted-foreground animate-fade-in">
+                  <span className="text-primary/60 mr-2">&gt;</span>
                   {line}
                   {i === typingIndex - 1 && (
-                    <span className="inline-block w-1.5 h-3.5 bg-teal-600 ml-1 animate-pulse" />
+                    <span className="inline-block w-1.5 h-3.5 bg-primary ml-1 animate-pulse" />
                   )}
                 </div>
               ))}
@@ -2330,27 +2334,27 @@ export default function LessonBuilderDemo() {
         {/* Generated Lesson Plan */}
         {generatedPlan && (
           <>
-            <div className="rounded-2xl border border-ink-200 bg-white overflow-hidden mb-6">
+            <div className="rounded-2xl border border-border/60 bg-card overflow-hidden mb-6">
               {/* Plan Header */}
-              <div className="border-b border-ink-200 bg-teal-800/5 px-6 sm:px-8 py-6">
+              <div className="border-b border-border/60 bg-primary/5 px-6 sm:px-8 py-6">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="inline-block w-2 h-2 rounded-full bg-teal-600" />
-                  <span className="text-xs uppercase tracking-wider text-teal-700 font-medium">
+                  <span className="inline-block w-2 h-2 rounded-full bg-primary" />
+                  <span className="text-xs uppercase tracking-wider text-primary font-medium">
                     Generated Lesson Plan
                   </span>
                 </div>
-                <h2 className="text-2xl font-medium text-ink-900 mb-2">{generatedPlan.title}</h2>
-                <div className="flex flex-wrap gap-3 text-xs text-ink-600">
-                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">
+                <h2 className="text-2xl font-medium text-foreground mb-2">{generatedPlan.title}</h2>
+                <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
+                  <span className="px-2.5 py-1 rounded-md bg-muted border border-border/60">
                     {generatedPlan.text}
                   </span>
-                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">
+                  <span className="px-2.5 py-1 rounded-md bg-muted border border-border/60">
                     {generatedPlan.board}
                   </span>
-                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">
+                  <span className="px-2.5 py-1 rounded-md bg-muted border border-border/60">
                     {generatedPlan.yearGroup}
                   </span>
-                  <span className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200">
+                  <span className="px-2.5 py-1 rounded-md bg-muted border border-border/60">
                     {generatedPlan.duration}
                   </span>
                 </div>
@@ -2358,7 +2362,7 @@ export default function LessonBuilderDemo() {
 
               <div className="px-6 sm:px-8 py-6 space-y-8">
                 <Section title="Learning Objectives">
-                  <ol className="list-decimal list-inside space-y-1.5 text-sm text-ink-600">
+                  <ol className="list-decimal list-inside space-y-1.5 text-sm text-muted-foreground">
                     {generatedPlan.objectives.map((o, i) => (
                       <li key={i}>{o}</li>
                     ))}
@@ -2366,10 +2370,10 @@ export default function LessonBuilderDemo() {
                 </Section>
 
                 <Section title="Success Criteria">
-                  <ul className="space-y-1.5 text-sm text-ink-600">
+                  <ul className="space-y-1.5 text-sm text-muted-foreground">
                     {generatedPlan.successCriteria.map((s, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-teal-700 mt-0.5 shrink-0">--</span>
+                        <span className="text-primary mt-0.5 shrink-0">--</span>
                         {s}
                       </li>
                     ))}
@@ -2381,7 +2385,7 @@ export default function LessonBuilderDemo() {
                     {generatedPlan.keywords.map((k) => (
                       <span
                         key={k}
-                        className="px-2.5 py-1 rounded-md bg-cream-100 border border-ink-200 text-xs text-ink-600"
+                        className="px-2.5 py-1 rounded-md bg-muted border border-border/60 text-xs text-muted-foreground"
                       >
                         {k}
                       </span>
@@ -2410,30 +2414,32 @@ export default function LessonBuilderDemo() {
 
                 {generatedPlan.homework && (
                   <Section title="Homework">
-                    <p className="text-sm text-ink-600 leading-relaxed">{generatedPlan.homework}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {generatedPlan.homework}
+                    </p>
                   </Section>
                 )}
 
                 <Section title="Worksheet Questions">
                   <div className="space-y-5">
                     {generatedPlan.worksheetQuestions.map((q, i) => (
-                      <div key={i} className="rounded-lg border border-ink-200 bg-white p-4">
+                      <div key={i} className="rounded-lg border border-border/60 bg-card p-4">
                         <div className="flex items-start justify-between gap-3 mb-2">
-                          <p className="text-sm text-ink-900 font-medium">
+                          <p className="text-sm text-foreground font-medium">
                             {i + 1}. {q.question}
                           </p>
                           {q.marks && (
-                            <span className="shrink-0 text-xs text-ink-500 bg-cream-100 px-2 py-0.5 rounded">
+                            <span className="shrink-0 text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded">
                               {q.marks} marks
                             </span>
                           )}
                         </div>
                         {q.modelAnswer && (
                           <details className="mt-2">
-                            <summary className="text-xs text-teal-700/70 cursor-pointer hover:text-teal-700 transition-colors">
+                            <summary className="text-xs text-primary/70 cursor-pointer hover:text-primary transition-colors">
                               Show model answer
                             </summary>
-                            <p className="mt-2 text-xs text-ink-600 leading-relaxed pl-4 border-l border-teal-800/20">
+                            <p className="mt-2 text-xs text-muted-foreground leading-relaxed pl-4 border-l border-primary/20">
                               {q.modelAnswer}
                             </p>
                           </details>
@@ -2444,10 +2450,12 @@ export default function LessonBuilderDemo() {
                 </Section>
 
                 <Section title="Teacher Notes">
-                  <ul className="space-y-2 text-sm text-ink-600">
+                  <ul className="space-y-2 text-sm text-muted-foreground">
                     {generatedPlan.teacherNotes.map((n, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-clay-500 mt-0.5 shrink-0 font-serif italic">*</span>
+                        <span className="text-clay-600 dark:text-clay-400 mt-0.5 shrink-0 font-heading italic">
+                          *
+                        </span>
                         {n}
                       </li>
                     ))}
@@ -2462,7 +2470,7 @@ export default function LessonBuilderDemo() {
             <ErrorBoundary
               label="Download buttons unavailable"
               fallback={
-                <div className="mb-10 rounded-xl border border-red-500/20 bg-red-500/5 px-5 py-4 text-sm text-red-700">
+                <div className="mb-10 rounded-xl border border-red-500/20 bg-red-500/5 px-5 py-4 text-sm text-red-700 dark:text-red-300">
                   Download buttons couldn't load. Please refresh the page or use Copy to Clipboard
                   above.
                 </div>
@@ -2489,7 +2497,7 @@ export default function LessonBuilderDemo() {
                 <DownloadMenu
                   label="Worksheet"
                   variant="outline"
-                  className="text-xs border-ink-200 text-ink-600 hover:bg-cream-100 hover:text-white"
+                  className="text-xs border-border/60 text-muted-foreground hover:bg-muted hover:text-foreground"
                   options={[
                     { label: 'Download PDF', format: 'pdf', onClick: handleDownloadWorksheet },
                     {
@@ -2512,15 +2520,15 @@ export default function LessonBuilderDemo() {
             </ErrorBoundary>
 
             {/* CTA */}
-            <div className="rounded-2xl border border-teal-800/20 bg-teal-800/5 p-6 sm:p-8 text-center mb-10">
-              <p className="text-lg text-ink-900 font-medium mb-2">
+            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8 text-center mb-10">
+              <p className="text-lg text-foreground font-medium mb-2">
                 This is one of 300+ ready-made lessons.
               </p>
-              <p className="text-ink-600 text-sm mb-5">
+              <p className="text-muted-foreground text-sm mb-5">
                 Start a 7-day free trial to access them all -- fully editable, printable, and
                 aligned to your exam board. Card required, cancel before day 7.
               </p>
-              <button className="rounded-xl bg-teal-800 hover:bg-teal-700 text-white font-medium py-3 px-8 transition-colors text-sm">
+              <button className="rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-8 transition-colors text-sm">
                 Start 7-day trial
               </button>
             </div>
@@ -2556,14 +2564,16 @@ function FormSelect({
 }) {
   return (
     <div>
-      <label className="block text-xs uppercase tracking-wider text-ink-600 mb-2">{label}</label>
+      <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-2">
+        {label}
+      </label>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-lg border border-ink-200 bg-cream-100 px-4 py-3 text-ink-900 text-sm focus:outline-none focus:border-teal-800/50 transition-colors appearance-none cursor-pointer"
+        className="w-full rounded-lg border border-border/60 bg-muted px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary/50 transition-colors appearance-none cursor-pointer"
       >
         {options.map((o) => (
-          <option key={o} value={o} className="bg-cream-100 text-ink-900">
+          <option key={o} value={o} className="bg-muted text-foreground">
             {o}
           </option>
         ))}
@@ -2575,7 +2585,9 @@ function FormSelect({
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="text-xs uppercase tracking-wider text-ink-500 mb-3 font-medium">{title}</h3>
+      <h3 className="text-xs uppercase tracking-wider text-muted-foreground mb-3 font-medium">
+        {title}
+      </h3>
       {children}
     </div>
   )
@@ -2591,9 +2603,13 @@ function ActivityBlock({
   color: 'amber' | 'emerald' | 'violet'
 }) {
   const styles = {
-    amber: { border: 'border-clay-500/20', bg: 'bg-clay-500/5', text: 'text-clay-600' },
-    emerald: { border: 'border-teal-800/20', bg: 'bg-teal-800/5', text: 'text-teal-700' },
-    violet: { border: 'border-teal-800/20', bg: 'bg-teal-800/5', text: 'text-teal-700' },
+    amber: {
+      border: 'border-clay-500/20',
+      bg: 'bg-clay-500/5',
+      text: 'text-clay-600 dark:text-clay-400',
+    },
+    emerald: { border: 'border-primary/20', bg: 'bg-primary/5', text: 'text-primary' },
+    violet: { border: 'border-primary/20', bg: 'bg-primary/5', text: 'text-primary' },
   }[color]
 
   return (
@@ -2602,13 +2618,13 @@ function ActivityBlock({
         <span className={`text-xs uppercase tracking-wider ${styles.text} font-medium`}>
           {label}
         </span>
-        <span className="text-xs text-ink-500">{activity.duration}</span>
+        <span className="text-xs text-muted-foreground">{activity.duration}</span>
       </div>
-      <h4 className="text-sm font-medium text-ink-900 mb-2">{activity.title}</h4>
-      <p className="text-sm text-ink-600 leading-relaxed mb-3">{activity.instructions}</p>
+      <h4 className="text-sm font-medium text-foreground mb-2">{activity.title}</h4>
+      <p className="text-sm text-muted-foreground leading-relaxed mb-3">{activity.instructions}</p>
       {activity.differentiation && (
         <div className="space-y-2 mt-4">
-          <p className="text-xs uppercase tracking-wider text-ink-500 font-medium">
+          <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium">
             Differentiation
           </p>
           <DiffTier tier="Support" text={activity.differentiation.support} />
@@ -2618,14 +2634,14 @@ function ActivityBlock({
       )}
       {activity.resources && activity.resources.length > 0 && (
         <div className="mt-4">
-          <p className="text-xs uppercase tracking-wider text-ink-500 font-medium mb-1.5">
+          <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1.5">
             Resources
           </p>
           <div className="flex flex-wrap gap-1.5">
             {activity.resources.map((r) => (
               <span
                 key={r}
-                className="px-2 py-0.5 rounded text-xs text-ink-600 bg-cream-100 border border-ink-200"
+                className="px-2 py-0.5 rounded text-xs text-muted-foreground bg-muted border border-border/60"
               >
                 {r}
               </span>
@@ -2639,11 +2655,15 @@ function ActivityBlock({
 
 function DiffTier({ tier, text }: { tier: string; text: string }) {
   const color =
-    tier === 'Support' ? 'text-teal-700' : tier === 'Core' ? 'text-ink-600' : 'text-clay-600'
+    tier === 'Support'
+      ? 'text-primary'
+      : tier === 'Core'
+        ? 'text-muted-foreground'
+        : 'text-clay-600 dark:text-clay-400'
   return (
     <div className="flex items-start gap-2 text-xs">
       <span className={`shrink-0 font-medium ${color} w-14`}>{tier}</span>
-      <span className="text-ink-600">{text}</span>
+      <span className="text-muted-foreground">{text}</span>
     </div>
   )
 }
@@ -2652,7 +2672,7 @@ function ActionButton({ onClick, label }: { onClick: () => void; label: string }
   return (
     <button
       onClick={onClick}
-      className="rounded-lg border border-ink-200 bg-white hover:bg-cream-100 text-ink-600 hover:text-ink-900 text-xs font-medium py-2.5 px-3 transition-colors"
+      className="rounded-lg border border-border/60 bg-card hover:bg-muted text-muted-foreground hover:text-foreground text-xs font-medium py-2.5 px-3 transition-colors"
     >
       {label}
     </button>

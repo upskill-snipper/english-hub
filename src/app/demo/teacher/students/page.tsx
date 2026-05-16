@@ -41,13 +41,13 @@ function StatusBadge({ atRisk }: { atRisk: boolean }) {
   const t = useT()
   if (atRisk) {
     return (
-      <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide bg-red-500/15 text-red-400 border border-red-500/20">
+      <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide bg-red-500/15 text-red-600 dark:text-red-400 border border-red-500/20">
         {t('demo_teacher.students.status.at_risk')}
       </span>
     )
   }
   return (
-    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide bg-teal-800/10 text-teal-700 border border-teal-800/20">
+    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide bg-primary/10 text-primary border border-primary/20">
       {t('demo_teacher.students.status.on_track')}
     </span>
   )
@@ -73,14 +73,14 @@ export default function TeacherStudentsPage() {
   const atRiskCount = filtered.filter((s) => s.atRisk).length
 
   return (
-    <div className="min-h-screen bg-cream-50 text-ink-900">
+    <div className="min-h-screen bg-background text-foreground">
       <DemoBanner message={t('demo_teacher.students.banner')} />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12">
         {/* Back link */}
         <Link
           href="/demo/teacher"
-          className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-ink-500 hover:text-ink-600 transition-colors mb-6"
+          className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:text-muted-foreground transition-colors mb-6"
         >
           <span className="text-base leading-none">&larr;</span>{' '}
           {t('demo_teacher.students.back_dashboard')}
@@ -88,18 +88,20 @@ export default function TeacherStudentsPage() {
 
         {/* Header */}
         <div className="mb-8">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-ink-500 mb-2">Mrs Mitchell</p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">
+            Mrs Mitchell
+          </p>
           <div className="flex items-baseline gap-3">
-            <h1 className="text-3xl sm:text-4xl font-light tracking-tight text-ink-900">
+            <h1 className="text-3xl sm:text-4xl font-light tracking-tight text-foreground">
               {t('demo_teacher.students.title')}
             </h1>
-            <span className="text-lg text-ink-500 tabular-nums">{filtered.length}</span>
+            <span className="text-lg text-muted-foreground tabular-nums">{filtered.length}</span>
           </div>
-          <p className="text-ink-500 text-sm mt-1 max-w-lg">
+          <p className="text-muted-foreground text-sm mt-1 max-w-lg">
             {t('demo_teacher.students.subtitle')}
           </p>
           {atRiskCount > 0 && (
-            <p className="text-red-400/80 text-sm mt-2">
+            <p className="text-red-600/80 dark:text-red-400/80 text-sm mt-2">
               {atRiskCount}{' '}
               {atRiskCount > 1
                 ? t('demo_teacher.students.at_risk_flagged_plural')
@@ -114,8 +116,8 @@ export default function TeacherStudentsPage() {
             onClick={() => setClassFilter('all')}
             className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors border ${
               classFilter === 'all'
-                ? 'bg-teal-800/10 text-teal-700 border-teal-800/30'
-                : 'bg-white text-ink-600 border-ink-200 hover:bg-cream-100 hover:text-white'
+                ? 'bg-primary/10 text-primary border-primary/30'
+                : 'bg-card text-muted-foreground border-border/60 hover:bg-muted hover:text-foreground'
             }`}
           >
             {t('demo_teacher.students.filter.all_classes')} ({MITCHELL_STUDENTS.length})
@@ -128,8 +130,8 @@ export default function TeacherStudentsPage() {
                 onClick={() => setClassFilter(cls.id)}
                 className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors border ${
                   classFilter === cls.id
-                    ? 'bg-teal-800/10 text-teal-700 border-teal-800/30'
-                    : 'bg-white text-ink-600 border-ink-200 hover:bg-cream-100 hover:text-white'
+                    ? 'bg-primary/10 text-primary border-primary/30'
+                    : 'bg-card text-muted-foreground border-border/60 hover:bg-muted hover:text-foreground'
                 }`}
               >
                 {cls.name} ({count})
@@ -155,7 +157,7 @@ export default function TeacherStudentsPage() {
                   }, 2500)
                 }
               }}
-              className="rounded-lg px-4 py-2 text-xs font-medium bg-teal-600/10 text-teal-700 border border-teal-800/20 hover:bg-teal-600/20 transition-colors"
+              className="rounded-lg px-4 py-2 text-xs font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
             >
               {t('demo_teacher.students.report_btn_prefix')} {cls.name}
             </button>
@@ -180,16 +182,16 @@ export default function TeacherStudentsPage() {
 
             return (
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                <div className="rounded-xl border border-ink-200 bg-white p-4">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">
+                <div className="rounded-xl border border-border/60 bg-card p-4">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
                     {t('demo_teacher.students.grade.avg_working')}
                   </p>
                   <p className={`text-2xl font-light tabular-nums ${gcseGradeColor(avgWorking)}`}>
                     {t('demo_teacher.students.grade_word')} {avgWorking}
                   </p>
                 </div>
-                <div className="rounded-xl border border-ink-200 bg-white p-4">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">
+                <div className="rounded-xl border border-border/60 bg-card p-4">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
                     {t('demo_teacher.students.grade.avg_predicted')}
                   </p>
                   <p
@@ -198,15 +200,15 @@ export default function TeacherStudentsPage() {
                     {t('demo_teacher.students.grade_word')} {avgPredicted}
                   </p>
                 </div>
-                <div className="rounded-xl border border-ink-200 bg-white p-4">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-2">
+                <div className="rounded-xl border border-border/60 bg-card p-4">
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
                     {t('demo_teacher.students.grade.distribution')}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {gradeDist.map((g) => (
                       <span
                         key={g.grade}
-                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium border ${gcseGradeColor(g.grade)} border-ink-200 bg-white`}
+                        className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium border ${gcseGradeColor(g.grade)} border-border/60 bg-card`}
                       >
                         G{g.grade}: {g.count}
                       </span>
@@ -218,9 +220,9 @@ export default function TeacherStudentsPage() {
           })()}
 
         {/* Student Table */}
-        <div className="rounded-xl border border-ink-200 bg-white overflow-hidden">
+        <div className="rounded-xl border border-border/60 bg-card overflow-hidden">
           {/* Table header */}
-          <div className="hidden sm:grid grid-cols-[1fr_110px_80px_80px_80px_90px_100px] gap-4 px-5 py-3 border-b border-ink-200 text-[10px] uppercase tracking-[0.2em] text-ink-500">
+          <div className="hidden sm:grid grid-cols-[1fr_110px_80px_80px_80px_90px_100px] gap-4 px-5 py-3 border-b border-border/60 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             <span>{t('demo_teacher.students.col.name')}</span>
             <span>{t('demo_teacher.students.col.class')}</span>
             <span className="text-center">{t('demo_teacher.students.col.working_at')}</span>
@@ -235,7 +237,7 @@ export default function TeacherStudentsPage() {
             <Link
               key={student.id}
               href={`/demo/teacher/students/${student.id}`}
-              className={`group grid grid-cols-1 sm:grid-cols-[1fr_110px_80px_80px_80px_90px_100px] gap-1 sm:gap-4 px-5 py-4 border-b border-white/[0.03] hover:bg-white transition-colors cursor-pointer ${
+              className={`group grid grid-cols-1 sm:grid-cols-[1fr_110px_80px_80px_80px_90px_100px] gap-1 sm:gap-4 px-5 py-4 border-b border-white/[0.03] hover:bg-card transition-colors cursor-pointer ${
                 student.atRisk ? 'bg-red-500/[0.03]' : ''
               }`}
             >
@@ -244,8 +246,8 @@ export default function TeacherStudentsPage() {
                 <div
                   className={`h-8 w-8 shrink-0 rounded-full flex items-center justify-center text-[11px] font-medium ${
                     student.atRisk
-                      ? 'bg-red-500/15 text-red-400'
-                      : 'bg-gradient-to-br from-white/10 to-white/5 text-ink-600'
+                      ? 'bg-red-500/15 text-red-600 dark:text-red-400'
+                      : 'bg-gradient-to-br from-white/10 to-white/5 text-muted-foreground'
                   }`}
                 >
                   {student.name
@@ -255,10 +257,10 @@ export default function TeacherStudentsPage() {
                     .slice(0, 2)}
                 </div>
                 <div>
-                  <p className="text-sm text-ink-900 group-hover:text-ink-900 transition-colors">
+                  <p className="text-sm text-foreground group-hover:text-foreground transition-colors">
                     {student.name}
                   </p>
-                  <p className="text-[11px] text-ink-500 sm:hidden">
+                  <p className="text-[11px] text-muted-foreground sm:hidden">
                     {student.className} &middot; {t('demo_teacher.students.row.year_prefix')}{' '}
                     {student.yearGroup}
                   </p>
@@ -267,7 +269,7 @@ export default function TeacherStudentsPage() {
 
               {/* Class */}
               <div className="hidden sm:flex items-center">
-                <p className="text-sm text-ink-600">{student.className}</p>
+                <p className="text-sm text-muted-foreground">{student.className}</p>
               </div>
 
               {/* Working At Grade */}
@@ -290,7 +292,7 @@ export default function TeacherStudentsPage() {
 
               {/* Target Grade */}
               <div className="hidden sm:flex items-center justify-center">
-                <span className="text-sm tabular-nums font-medium text-teal-700">
+                <span className="text-sm tabular-nums font-medium text-primary">
                   {student.targetGrade}
                 </span>
               </div>
@@ -305,8 +307,8 @@ export default function TeacherStudentsPage() {
                 <span
                   className={`text-sm tabular-nums ${
                     student.lastActive.includes('week') || student.lastActive.includes('days')
-                      ? 'text-red-400/70'
-                      : 'text-ink-500'
+                      ? 'text-red-600/70 dark:text-red-400/70'
+                      : 'text-muted-foreground'
                   }`}
                 >
                   {student.lastActive}
@@ -317,7 +319,7 @@ export default function TeacherStudentsPage() {
         </div>
 
         {/* Footer */}
-        <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-ink-500">
+        <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
           {t('demo_teacher.students.footer.demo_data')} &middot; {filtered.length}{' '}
           {t('demo_teacher.students.footer.students_suffix')} &middot; {MITCHELL_CLASSES.length}{' '}
           {t('demo_teacher.students.footer.classes_suffix')}
@@ -327,7 +329,7 @@ export default function TeacherStudentsPage() {
       {/* Toast */}
       <div
         id="demo-toast"
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-cream-100 backdrop-blur-md border border-ink-200 text-ink-900 text-sm px-5 py-3 rounded-xl opacity-0 translate-y-2 transition-all duration-300 pointer-events-none z-50"
+        className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-muted backdrop-blur-md border border-border/60 text-foreground text-sm px-5 py-3 rounded-xl opacity-0 translate-y-2 transition-all duration-300 pointer-events-none z-50"
       />
     </div>
   )

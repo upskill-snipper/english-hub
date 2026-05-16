@@ -54,47 +54,49 @@ export default function TeachersListPage() {
   const totalClasses = DEMO_CLASSES.length
 
   return (
-    <div className="min-h-screen bg-cream-50 text-ink-900">
+    <div className="min-h-screen bg-background text-foreground">
       <DemoBanner message={t('demo_school.teachers.banner')} />
 
       <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Header */}
         <div className="mb-8">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-ink-500 mb-2">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">
             Riverside Academy
           </p>
-          <h1 className="text-3xl sm:text-4xl font-light tracking-tight text-ink-900 mb-2">
+          <h1 className="text-3xl sm:text-4xl font-light tracking-tight text-foreground mb-2">
             {t('demo_school.teachers.title')}
           </h1>
-          <p className="text-ink-500 text-sm max-w-lg">{t('demo_school.teachers.subtitle')}</p>
+          <p className="text-muted-foreground text-sm max-w-lg">
+            {t('demo_school.teachers.subtitle')}
+          </p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-          <div className="rounded-xl border border-ink-200 bg-white p-5">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">
+          <div className="rounded-xl border border-border bg-card p-5">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
               {t('demo_school.teachers.stat.total')}
             </p>
-            <p className="text-3xl font-light text-ink-900 tabular-nums">{totalTeachers}</p>
+            <p className="text-3xl font-light text-foreground tabular-nums">{totalTeachers}</p>
           </div>
-          <div className="rounded-xl border border-ink-200 bg-white p-5">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">
+          <div className="rounded-xl border border-border bg-card p-5">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
               {t('demo_school.teachers.stat.active')}
             </p>
-            <p className="text-3xl font-light text-teal-700 tabular-nums">{activeThisWeek}</p>
+            <p className="text-3xl font-light text-primary tabular-nums">{activeThisWeek}</p>
           </div>
-          <div className="rounded-xl border border-ink-200 bg-white p-5">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">
+          <div className="rounded-xl border border-border bg-card p-5">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
               {t('demo_school.teachers.stat.covered')}
             </p>
-            <p className="text-3xl font-light text-teal-700 tabular-nums">{totalClasses}</p>
+            <p className="text-3xl font-light text-primary tabular-nums">{totalClasses}</p>
           </div>
         </div>
 
         {/* Teacher Table */}
-        <div className="rounded-xl border border-ink-200 bg-white overflow-hidden">
+        <div className="rounded-xl border border-border bg-card overflow-hidden">
           {/* Table header */}
-          <div className="hidden sm:grid grid-cols-[1fr_1fr_100px_100px_120px] gap-4 px-5 py-3 border-b border-ink-200 text-[10px] uppercase tracking-[0.2em] text-ink-500">
+          <div className="hidden sm:grid grid-cols-[1fr_1fr_100px_100px_120px] gap-4 px-5 py-3 border-b border-border text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
             <span>{t('demo_school.teachers.col.name')}</span>
             <span>{t('demo_school.teachers.col.email')}</span>
             <span>{t('demo_school.teachers.col.role')}</span>
@@ -114,11 +116,11 @@ export default function TeachersListPage() {
               <Link
                 key={teacher.id}
                 href={`/demo/school/teachers/${teacher.id}`}
-                className="group grid grid-cols-1 sm:grid-cols-[1fr_1fr_100px_100px_120px] gap-1 sm:gap-4 px-5 py-4 border-b border-white/[0.03] hover:bg-white transition-colors cursor-pointer"
+                className="group grid grid-cols-1 sm:grid-cols-[1fr_1fr_100px_100px_120px] gap-1 sm:gap-4 px-5 py-4 border-b border-border/60 hover:bg-muted transition-colors cursor-pointer"
               >
                 {/* Name */}
                 <div className="flex items-center gap-3">
-                  <div className="h-8 w-8 shrink-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center text-[11px] font-medium text-ink-600">
+                  <div className="h-8 w-8 shrink-0 rounded-full bg-muted flex items-center justify-center text-[11px] font-medium text-muted-foreground">
                     {teacher.name
                       .split(' ')
                       .map((n) => n[0])
@@ -126,16 +128,16 @@ export default function TeachersListPage() {
                       .slice(0, 2)}
                   </div>
                   <div>
-                    <p className="text-sm text-ink-900 group-hover:text-ink-900 transition-colors">
+                    <p className="text-sm text-foreground group-hover:text-foreground transition-colors">
                       {teacher.name}
                     </p>
-                    <p className="text-[11px] text-ink-500 sm:hidden">{teacher.email}</p>
+                    <p className="text-[11px] text-muted-foreground sm:hidden">{teacher.email}</p>
                   </div>
                 </div>
 
                 {/* Email */}
                 <div className="hidden sm:flex items-center">
-                  <p className="text-sm text-ink-500 truncate">{teacher.email}</p>
+                  <p className="text-sm text-muted-foreground truncate">{teacher.email}</p>
                 </div>
 
                 {/* Role badge */}
@@ -143,8 +145,8 @@ export default function TeachersListPage() {
                   <span
                     className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide ${
                       role === 'HOD'
-                        ? 'bg-amber-500/15 text-clay-600 border border-amber-500/20'
-                        : 'bg-cream-100 text-ink-600 border border-ink-200'
+                        ? 'bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/30'
+                        : 'bg-muted text-muted-foreground border border-border'
                     }`}
                   >
                     {role === 'HOD'
@@ -155,8 +157,8 @@ export default function TeachersListPage() {
 
                 {/* Classes count */}
                 <div className="flex items-center sm:justify-center">
-                  <span className="text-sm text-ink-600 tabular-nums sm:text-center">
-                    <span className="sm:hidden text-ink-500 text-[11px] mr-1">
+                  <span className="text-sm text-muted-foreground tabular-nums sm:text-center">
+                    <span className="sm:hidden text-muted-foreground text-[11px] mr-1">
                       {t('demo_school.teachers.row.classes_mobile')}
                     </span>
                     {classes.length}
@@ -167,10 +169,10 @@ export default function TeachersListPage() {
                 <div className="flex items-center sm:justify-end">
                   <span
                     className={`text-sm tabular-nums ${
-                      isInactive ? 'text-red-400/70' : 'text-ink-500'
+                      isInactive ? 'text-red-700 dark:text-red-300' : 'text-muted-foreground'
                     }`}
                   >
-                    <span className="sm:hidden text-ink-500 text-[11px] mr-1">
+                    <span className="sm:hidden text-muted-foreground text-[11px] mr-1">
                       {t('demo_school.teachers.row.active_mobile')}
                     </span>
                     {lastActive}
@@ -182,7 +184,7 @@ export default function TeachersListPage() {
         </div>
 
         {/* Footer */}
-        <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-ink-500">
+        <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
           {t('demo_school.teachers.footer.demo_data')} &middot; {totalTeachers}{' '}
           {t('demo_school.teachers.footer.teachers_suffix')} &middot; {totalClasses}{' '}
           {t('demo_school.teachers.footer.classes_suffix')}

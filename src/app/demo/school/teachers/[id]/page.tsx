@@ -1,18 +1,18 @@
-"use client"
+'use client'
 
-import { useParams } from "next/navigation"
-import Link from "next/link"
-import { DEMO_TEACHERS, DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data"
-import DemoBanner from "@/components/demo/DemoBanner"
-import { percentageToGCSEGrade } from "@/lib/grades"
+import { useParams } from 'next/navigation'
+import Link from 'next/link'
+import { DEMO_TEACHERS, DEMO_CLASSES, DEMO_STUDENTS } from '@/data/demo-data'
+import DemoBanner from '@/components/demo/DemoBanner'
+import { percentageToGCSEGrade } from '@/lib/grades'
 
-const ROLE_MAP: Record<string, "HOD" | "Teacher"> = {
-  "t-001": "HOD",
-  "t-003": "HOD",
+const ROLE_MAP: Record<string, 'HOD' | 'Teacher'> = {
+  't-001': 'HOD',
+  't-003': 'HOD',
 }
 
-function getRole(id: string): "HOD" | "Teacher" {
-  return ROLE_MAP[id] || "Teacher"
+function getRole(id: string): 'HOD' | 'Teacher' {
+  return ROLE_MAP[id] || 'Teacher'
 }
 
 function getTeacherClasses(teacherId: string) {
@@ -24,15 +24,15 @@ function getClassStudents(classId: string) {
 }
 
 function getProgressColor(value: number): string {
-  if (value >= 80) return "text-teal-700"
-  if (value >= 60) return "text-clay-600"
-  return "text-red-400"
+  if (value >= 80) return 'text-primary'
+  if (value >= 60) return 'text-amber-700 dark:text-amber-300'
+  return 'text-red-700 dark:text-red-300'
 }
 
 function getProgressBarColor(value: number): string {
-  if (value >= 80) return "bg-teal-700"
-  if (value >= 60) return "bg-amber-500"
-  return "bg-red-500"
+  if (value >= 80) return 'bg-primary'
+  if (value >= 60) return 'bg-amber-500'
+  return 'bg-red-500'
 }
 
 export default function TeacherDetailPage() {
@@ -42,15 +42,15 @@ export default function TeacherDetailPage() {
   const teacher = DEMO_TEACHERS.find((t) => t.id === teacherId)
   if (!teacher) {
     return (
-      <div className="min-h-screen bg-cream-50 text-ink-900 flex items-center justify-center">
+      <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-light text-ink-900 mb-2">Teacher not found</h1>
-          <p className="text-ink-500 text-sm mb-6">
+          <h1 className="text-2xl font-light text-foreground mb-2">Teacher not found</h1>
+          <p className="text-muted-foreground text-sm mb-6">
             No teacher exists with ID &quot;{teacherId}&quot;.
           </p>
           <Link
             href="/demo/school/teachers"
-            className="text-sm text-teal-700 hover:text-teal-700 transition-colors"
+            className="text-sm text-primary hover:text-primary/80 transition-colors"
           >
             &larr; Back to teachers
           </Link>
@@ -79,121 +79,121 @@ export default function TeacherDetailPage() {
   const atRiskCount = allStudents.filter((s) => s.atRisk).length
 
   // Find a Y10 class for the personalised report
-  const reportClass = classes.find((c) => String(c.yearGroup) === "Year 10" || (c as any).yearGroup === 10) || classes[0]
+  const reportClass =
+    classes.find((c) => String(c.yearGroup) === 'Year 10' || (c as any).yearGroup === 10) ||
+    classes[0]
   const reportClassStudents = reportClass ? getClassStudents(reportClass.id) : []
   const reportClassAvg =
     reportClassStudents.length > 0
       ? Math.round(
           reportClassStudents.reduce((sum, s) => sum + s.overallProgress, 0) /
-            reportClassStudents.length
+            reportClassStudents.length,
         )
       : 0
   const reportAtRisk = reportClassStudents.filter((s) => s.atRisk).length
 
   // Compare with other classes in the same year group
   const sameYearClasses = reportClass
-    ? DEMO_CLASSES.filter(
-        (c) => c.yearGroup === reportClass.yearGroup && c.id !== reportClass.id
-      )
+    ? DEMO_CLASSES.filter((c) => c.yearGroup === reportClass.yearGroup && c.id !== reportClass.id)
     : []
   const sameYearAvg =
     sameYearClasses.length > 0
       ? Math.round(
-          sameYearClasses.reduce((sum, c) => sum + c.avgProgress, 0) / sameYearClasses.length
+          sameYearClasses.reduce((sum, c) => sum + c.avgProgress, 0) / sameYearClasses.length,
         )
       : 0
 
   return (
-    <div className="min-h-screen bg-cream-50 text-ink-900">
+    <div className="min-h-screen bg-background text-foreground">
       <DemoBanner message="You are viewing an interactive demo with sample data. No real teacher data is used." />
 
       <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Back link */}
         <Link
           href="/demo/school/teachers"
-          className="inline-flex items-center gap-1 text-sm text-ink-500 hover:text-ink-600 transition-colors mb-6"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-muted-foreground transition-colors mb-6"
         >
           &larr; All teachers
         </Link>
 
         {/* Teacher profile header */}
         <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-8">
-          <div className="h-14 w-14 shrink-0 rounded-full bg-gradient-to-br from-teal-800/10 to-teal-600/20 border border-ink-200 flex items-center justify-center text-lg font-light text-ink-600">
+          <div className="h-14 w-14 shrink-0 rounded-full bg-gradient-to-br from-primary/10 to-primary/20 border border-border flex items-center justify-center text-lg font-light text-muted-foreground">
             {teacher.name
-              .split(" ")
+              .split(' ')
               .map((n) => n[0])
-              .join("")
+              .join('')
               .slice(0, 2)}
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-3 mb-1">
-              <h1 className="text-2xl sm:text-3xl font-light tracking-tight text-ink-900">
+              <h1 className="text-2xl sm:text-3xl font-light tracking-tight text-foreground">
                 {teacher.name}
               </h1>
               <span
                 className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-medium tracking-wide ${
-                  role === "HOD"
-                    ? "bg-amber-500/15 text-clay-600 border border-amber-500/20"
-                    : "bg-cream-100 text-ink-600 border border-ink-200"
+                  role === 'HOD'
+                    ? 'bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/20'
+                    : 'bg-muted text-muted-foreground border border-border'
                 }`}
               >
                 {role}
               </span>
             </div>
-            <p className="text-sm text-ink-500 mb-1">{teacher.email}</p>
-            <p className="text-sm text-ink-500">
-              {teacher.department} &middot; {classes.length} class{classes.length !== 1 ? "es" : ""}
+            <p className="text-sm text-muted-foreground mb-1">{teacher.email}</p>
+            <p className="text-sm text-muted-foreground">
+              {teacher.department} &middot; {classes.length} class{classes.length !== 1 ? 'es' : ''}
             </p>
           </div>
         </div>
 
         {/* Performance summary */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-          <div className="rounded-xl border border-ink-200 bg-white p-5">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">
+          <div className="rounded-xl border border-border bg-card p-5">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
               Avg Student Score
             </p>
             <p className={`text-3xl font-light tabular-nums ${getProgressColor(avgStudentScore)}`}>
               {avgStudentScore}%
-              <span className="text-lg text-ink-500 ml-1">(Grade {percentageToGCSEGrade(avgStudentScore)})</span>
+              <span className="text-lg text-muted-foreground ml-1">
+                (Grade {percentageToGCSEGrade(avgStudentScore)})
+              </span>
             </p>
-            <p className="text-[11px] text-ink-500 mt-1">
-              Across {allStudents.length} tracked student{allStudents.length !== 1 ? "s" : ""}
+            <p className="text-[11px] text-muted-foreground mt-1">
+              Across {allStudents.length} tracked student{allStudents.length !== 1 ? 's' : ''}
             </p>
           </div>
-          <div className="rounded-xl border border-ink-200 bg-white p-5">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">
+          <div className="rounded-xl border border-border bg-card p-5">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
               Assignment Completion
             </p>
             <p className={`text-3xl font-light tabular-nums ${getProgressColor(completionRate)}`}>
               {completionRate}%
             </p>
-            <p className="text-[11px] text-ink-500 mt-1">
+            <p className="text-[11px] text-muted-foreground mt-1">
               {totalAssignmentsCompleted}/{totalAssignmentsSet} completed
             </p>
           </div>
-          <div className="rounded-xl border border-ink-200 bg-white p-5">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-1">
+          <div className="rounded-xl border border-border bg-card p-5">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
               At-Risk Students
             </p>
             <p
               className={`text-3xl font-light tabular-nums ${
-                atRiskCount > 0 ? "text-red-400" : "text-teal-700"
+                atRiskCount > 0 ? 'text-red-700 dark:text-red-300' : 'text-primary'
               }`}
             >
               {atRiskCount}
             </p>
-            <p className="text-[11px] text-ink-500 mt-1">
-              {atRiskCount > 0 ? "Requires attention" : "No concerns"}
+            <p className="text-[11px] text-muted-foreground mt-1">
+              {atRiskCount > 0 ? 'Requires attention' : 'No concerns'}
             </p>
           </div>
         </div>
 
         {/* Classes grid */}
         <div className="mb-10">
-          <h2 className="text-lg font-light text-ink-900 mb-4">
-            Classes ({classes.length})
-          </h2>
+          <h2 className="text-lg font-light text-foreground mb-4">Classes ({classes.length})</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {classes.map((cls) => {
               const students = getClassStudents(cls.id)
@@ -203,18 +203,18 @@ export default function TeacherDetailPage() {
                 <Link
                   key={cls.id}
                   href={`/demo/school/classes/${cls.id}`}
-                  className="group rounded-xl border border-ink-200 bg-white p-5 hover:bg-white hover:border-ink-200 transition-all"
+                  className="group rounded-xl border border-border bg-card p-5 hover:bg-muted hover:border-border transition-all"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <p className="text-sm font-medium text-ink-900 group-hover:text-ink-900 transition-colors">
+                      <p className="text-sm font-medium text-foreground group-hover:text-foreground transition-colors">
                         {cls.name}
                       </p>
-                      <p className="text-[11px] text-ink-500">
+                      <p className="text-[11px] text-muted-foreground">
                         Year {cls.yearGroup} &middot; {cls.studentCount} students
                       </p>
                     </div>
-                    <span className="text-ink-500 group-hover:text-ink-600 transition-colors text-lg">
+                    <span className="text-muted-foreground group-hover:text-muted-foreground transition-colors text-lg">
                       &rarr;
                     </span>
                   </div>
@@ -222,12 +222,12 @@ export default function TeacherDetailPage() {
                   {/* Progress bar */}
                   <div className="mb-2">
                     <div className="flex items-center justify-between text-[11px] mb-1">
-                      <span className="text-ink-500">Avg progress</span>
+                      <span className="text-muted-foreground">Avg progress</span>
                       <span className={`tabular-nums ${getProgressColor(cls.avgProgress)}`}>
                         {cls.avgProgress}%
                       </span>
                     </div>
-                    <div className="h-1.5 rounded-full bg-cream-100 overflow-hidden">
+                    <div className="h-1.5 rounded-full bg-muted overflow-hidden">
                       <div
                         className={`h-full rounded-full transition-all ${getProgressBarColor(cls.avgProgress)}`}
                         style={{ width: `${cls.avgProgress}%` }}
@@ -236,13 +236,11 @@ export default function TeacherDetailPage() {
                   </div>
 
                   <div className="flex items-center justify-between text-[11px]">
-                    <span className="text-ink-500">
+                    <span className="text-muted-foreground">
                       {cls.assignmentsCompleted}/{cls.assignmentsSet} assignments
                     </span>
                     {classAtRisk > 0 && (
-                      <span className="text-red-400/80">
-                        {classAtRisk} at risk
-                      </span>
+                      <span className="text-red-700 dark:text-red-300">{classAtRisk} at risk</span>
                     )}
                   </div>
                 </Link>
@@ -253,9 +251,7 @@ export default function TeacherDetailPage() {
 
         {/* Student list per class */}
         <div className="mb-10">
-          <h2 className="text-lg font-light text-ink-900 mb-4">
-            Students by Class
-          </h2>
+          <h2 className="text-lg font-light text-foreground mb-4">Students by Class</h2>
           <div className="space-y-6">
             {classes.map((cls) => {
               const students = getClassStudents(cls.id)
@@ -264,18 +260,18 @@ export default function TeacherDetailPage() {
               return (
                 <div
                   key={cls.id}
-                  className="rounded-xl border border-ink-200 bg-white overflow-hidden"
+                  className="rounded-xl border border-border bg-card overflow-hidden"
                 >
-                  <div className="px-5 py-3 border-b border-ink-200 flex items-center justify-between">
+                  <div className="px-5 py-3 border-b border-border flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-ink-900">{cls.name}</p>
-                      <p className="text-[11px] text-ink-500">
-                        {students.length} student{students.length !== 1 ? "s" : ""} tracked
+                      <p className="text-sm font-medium text-foreground">{cls.name}</p>
+                      <p className="text-[11px] text-muted-foreground">
+                        {students.length} student{students.length !== 1 ? 's' : ''} tracked
                       </p>
                     </div>
                     <Link
                       href={`/demo/school/classes/${cls.id}`}
-                      className="text-[11px] text-teal-700/70 hover:text-teal-700 transition-colors"
+                      className="text-[11px] text-primary/70 hover:text-primary transition-colors"
                     >
                       View class &rarr;
                     </Link>
@@ -285,19 +281,19 @@ export default function TeacherDetailPage() {
                     <Link
                       key={student.id}
                       href={`/demo/school/students/${student.id}`}
-                      className="group flex items-center justify-between gap-4 px-5 py-3 border-b border-white/[0.03] last:border-0 hover:bg-white transition-colors"
+                      className="group flex items-center justify-between gap-4 px-5 py-3 border-b border-border/60 last:border-0 hover:bg-muted transition-colors"
                     >
                       <div className="flex items-center gap-3 min-w-0">
                         <div
                           className={`h-2 w-2 shrink-0 rounded-full ${
-                            student.atRisk ? "bg-red-400" : "bg-teal-600/60"
+                            student.atRisk ? 'bg-red-500' : 'bg-primary/60'
                           }`}
                         />
                         <div className="min-w-0">
-                          <p className="text-sm text-ink-900 group-hover:text-ink-900 transition-colors truncate">
+                          <p className="text-sm text-foreground group-hover:text-foreground transition-colors truncate">
                             {student.name}
                           </p>
-                          <p className="text-[11px] text-ink-500">
+                          <p className="text-[11px] text-muted-foreground">
                             Year {student.yearGroup} &middot; {student.lastActive}
                           </p>
                         </div>
@@ -308,11 +304,13 @@ export default function TeacherDetailPage() {
                             className={`text-sm tabular-nums ${getProgressColor(student.overallProgress)}`}
                           >
                             {student.overallProgress}%
-                            <span className="text-ink-500 ml-1 text-xs">(G{percentageToGCSEGrade(student.overallProgress)})</span>
+                            <span className="text-muted-foreground ml-1 text-xs">
+                              (G{percentageToGCSEGrade(student.overallProgress)})
+                            </span>
                           </p>
                         </div>
                         {student.atRisk && (
-                          <span className="inline-flex items-center rounded-full px-2 py-0.5 text-[9px] font-medium bg-red-500/15 text-red-400 border border-red-500/20 uppercase tracking-wider">
+                          <span className="inline-flex items-center rounded-full px-2 py-0.5 text-[9px] font-medium bg-red-500/15 text-red-700 dark:text-red-300 border border-red-500/20 uppercase tracking-wider">
                             At risk
                           </span>
                         )}
@@ -325,12 +323,12 @@ export default function TeacherDetailPage() {
 
             {/* Empty state for classes with no tracked students */}
             {classes.filter((c) => getClassStudents(c.id).length === 0).length > 0 && (
-              <div className="rounded-xl border border-ink-200 bg-white p-5">
-                <p className="text-sm text-ink-500">
+              <div className="rounded-xl border border-border bg-card p-5">
+                <p className="text-sm text-muted-foreground">
                   {classes.filter((c) => getClassStudents(c.id).length === 0).length} class
                   {classes.filter((c) => getClassStudents(c.id).length === 0).length !== 1
-                    ? "es have"
-                    : " has"}{" "}
+                    ? 'es have'
+                    : ' has'}{' '}
                   no individually tracked students in the demo dataset.
                 </p>
               </div>
@@ -340,12 +338,12 @@ export default function TeacherDetailPage() {
 
         {/* Personalised class report */}
         {reportClass && (
-          <div className="rounded-xl border border-ink-200 bg-white overflow-hidden mb-10">
-            <div className="px-5 py-4 border-b border-ink-200 bg-gradient-to-r from-teal-600/5 to-transparent">
-              <h2 className="text-base font-medium text-ink-900">
+          <div className="rounded-xl border border-border bg-card overflow-hidden mb-10">
+            <div className="px-5 py-4 border-b border-border bg-gradient-to-r from-primary/5 to-transparent">
+              <h2 className="text-base font-medium text-foreground">
                 {reportClass.name} &mdash; {teacher.name}&apos;s Report
               </h2>
-              <p className="text-[11px] text-ink-500 mt-0.5">
+              <p className="text-[11px] text-muted-foreground mt-0.5">
                 Personalised class performance summary
               </p>
             </div>
@@ -353,35 +351,42 @@ export default function TeacherDetailPage() {
             <div className="p-5 space-y-6">
               {/* Class performance summary */}
               <div>
-                <h3 className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-3">
+                <h3 className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">
                   Performance Summary
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   <div>
-                    <p className="text-[11px] text-ink-500 mb-0.5">Class Average</p>
-                    <p className={`text-xl font-light tabular-nums ${getProgressColor(reportClassAvg)}`}>
-                      {reportClassAvg}% <span className="text-sm text-ink-500">(G{percentageToGCSEGrade(reportClassAvg)})</span>
+                    <p className="text-[11px] text-muted-foreground mb-0.5">Class Average</p>
+                    <p
+                      className={`text-xl font-light tabular-nums ${getProgressColor(reportClassAvg)}`}
+                    >
+                      {reportClassAvg}%{' '}
+                      <span className="text-sm text-muted-foreground">
+                        (G{percentageToGCSEGrade(reportClassAvg)})
+                      </span>
                     </p>
                   </div>
                   <div>
-                    <p className="text-[11px] text-ink-500 mb-0.5">Students</p>
-                    <p className="text-xl font-light text-ink-600 tabular-nums">
-                      {reportClassStudents.length > 0 ? reportClassStudents.length : reportClass.studentCount}
+                    <p className="text-[11px] text-muted-foreground mb-0.5">Students</p>
+                    <p className="text-xl font-light text-muted-foreground tabular-nums">
+                      {reportClassStudents.length > 0
+                        ? reportClassStudents.length
+                        : reportClass.studentCount}
                     </p>
                   </div>
                   <div>
-                    <p className="text-[11px] text-ink-500 mb-0.5">At-Risk</p>
+                    <p className="text-[11px] text-muted-foreground mb-0.5">At-Risk</p>
                     <p
                       className={`text-xl font-light tabular-nums ${
-                        reportAtRisk > 0 ? "text-red-400" : "text-teal-700"
+                        reportAtRisk > 0 ? 'text-red-700 dark:text-red-300' : 'text-primary'
                       }`}
                     >
                       {reportAtRisk}
                     </p>
                   </div>
                   <div>
-                    <p className="text-[11px] text-ink-500 mb-0.5">Completion</p>
-                    <p className="text-xl font-light text-ink-600 tabular-nums">
+                    <p className="text-[11px] text-muted-foreground mb-0.5">Completion</p>
+                    <p className="text-xl font-light text-muted-foreground tabular-nums">
                       {reportClass.assignmentsCompleted}/{reportClass.assignmentsSet}
                     </p>
                   </div>
@@ -390,29 +395,31 @@ export default function TeacherDetailPage() {
 
               {/* Trends */}
               <div>
-                <h3 className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-3">
+                <h3 className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">
                   Trends
                 </h3>
                 <div className="space-y-2">
                   <div className="flex items-start gap-2">
-                    <span className="text-teal-700 mt-0.5 shrink-0">&uarr;</span>
-                    <p className="text-sm text-ink-600">
-                      Class average has improved by 4% over the last half-term, driven by
-                      stronger performance on language analysis tasks.
+                    <span className="text-primary mt-0.5 shrink-0">&uarr;</span>
+                    <p className="text-sm text-muted-foreground">
+                      Class average has improved by 4% over the last half-term, driven by stronger
+                      performance on language analysis tasks.
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-clay-600 mt-0.5 shrink-0">&rarr;</span>
-                    <p className="text-sm text-ink-600">
-                      Assignment completion is steady but below the year group target of 85%.
-                      Three students have outstanding submissions.
+                    <span className="text-amber-700 dark:text-amber-300 mt-0.5 shrink-0">
+                      &rarr;
+                    </span>
+                    <p className="text-sm text-muted-foreground">
+                      Assignment completion is steady but below the year group target of 85%. Three
+                      students have outstanding submissions.
                     </p>
                   </div>
                   {reportAtRisk > 0 && (
                     <div className="flex items-start gap-2">
-                      <span className="text-red-400 mt-0.5 shrink-0">&darr;</span>
-                      <p className="text-sm text-ink-600">
-                        {reportAtRisk} student{reportAtRisk !== 1 ? "s" : ""} flagged as at-risk.
+                      <span className="text-red-700 dark:text-red-300 mt-0.5 shrink-0">&darr;</span>
+                      <p className="text-sm text-muted-foreground">
+                        {reportAtRisk} student{reportAtRisk !== 1 ? 's' : ''} flagged as at-risk.
                         Engagement has declined over the past 2 weeks &mdash; consider individual
                         check-ins or differentiated tasks.
                       </p>
@@ -423,22 +430,22 @@ export default function TeacherDetailPage() {
 
               {/* Recommendations */}
               <div>
-                <h3 className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-3">
+                <h3 className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">
                   Recommendations
                 </h3>
                 <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-ink-600">
-                    <span className="text-teal-700 mt-0.5 shrink-0">1.</span>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="text-primary mt-0.5 shrink-0">1.</span>
                     Schedule catch-up sessions with at-risk students before the next assessment
                     window. Focus on foundational skills they are missing.
                   </li>
-                  <li className="flex items-start gap-2 text-sm text-ink-600">
-                    <span className="text-teal-700 mt-0.5 shrink-0">2.</span>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="text-primary mt-0.5 shrink-0">2.</span>
                     Set shorter, more frequent assignments to improve completion rate. Consider
                     scaffolded tasks for lower-attaining pupils.
                   </li>
-                  <li className="flex items-start gap-2 text-sm text-ink-600">
-                    <span className="text-teal-700 mt-0.5 shrink-0">3.</span>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="text-primary mt-0.5 shrink-0">3.</span>
                     Share high-performing student responses as model answers to raise expectations
                     across the group.
                   </li>
@@ -448,18 +455,20 @@ export default function TeacherDetailPage() {
               {/* Year group comparison */}
               {sameYearClasses.length > 0 && (
                 <div>
-                  <h3 className="text-[10px] uppercase tracking-[0.2em] text-ink-500 mb-3">
+                  <h3 className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">
                     Comparison with Other Year {reportClass.yearGroup} Classes
                   </h3>
-                  <div className="rounded-lg border border-ink-200 bg-white/[0.015] overflow-hidden">
+                  <div className="rounded-lg border border-border bg-muted/40 overflow-hidden">
                     {/* This class */}
-                    <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.03]">
+                    <div className="flex items-center justify-between px-4 py-3 border-b border-border/60">
                       <div className="flex items-center gap-2">
                         <div className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
-                        <p className="text-sm text-ink-900">{reportClass.name}</p>
-                        <span className="text-[10px] text-ink-500">(this class)</span>
+                        <p className="text-sm text-foreground">{reportClass.name}</p>
+                        <span className="text-[10px] text-muted-foreground">(this class)</span>
                       </div>
-                      <p className={`text-sm tabular-nums ${getProgressColor(reportClass.avgProgress)}`}>
+                      <p
+                        className={`text-sm tabular-nums ${getProgressColor(reportClass.avgProgress)}`}
+                      >
                         {reportClass.avgProgress}%
                       </p>
                     </div>
@@ -468,12 +477,12 @@ export default function TeacherDetailPage() {
                     {sameYearClasses.map((c) => (
                       <div
                         key={c.id}
-                        className="flex items-center justify-between px-4 py-3 border-b border-white/[0.03] last:border-0"
+                        className="flex items-center justify-between px-4 py-3 border-b border-border/60 last:border-0"
                       >
                         <div className="flex items-center gap-2">
-                          <div className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                          <p className="text-sm text-ink-600">{c.name}</p>
-                          <span className="text-[11px] text-ink-500">{c.teacher}</span>
+                          <div className="h-2.5 w-2.5 rounded-full bg-muted-foreground/40" />
+                          <p className="text-sm text-muted-foreground">{c.name}</p>
+                          <span className="text-[11px] text-muted-foreground">{c.teacher}</span>
                         </div>
                         <p className={`text-sm tabular-nums ${getProgressColor(c.avgProgress)}`}>
                           {c.avgProgress}%
@@ -482,23 +491,25 @@ export default function TeacherDetailPage() {
                     ))}
 
                     {/* Year group average */}
-                    <div className="flex items-center justify-between px-4 py-3 bg-white border-t border-ink-200">
-                      <p className="text-[11px] text-ink-500 uppercase tracking-wider">
+                    <div className="flex items-center justify-between px-4 py-3 bg-card border-t border-border">
+                      <p className="text-[11px] text-muted-foreground uppercase tracking-wider">
                         Year {reportClass.yearGroup} Average (excl. this class)
                       </p>
-                      <p className={`text-sm font-medium tabular-nums ${getProgressColor(sameYearAvg)}`}>
+                      <p
+                        className={`text-sm font-medium tabular-nums ${getProgressColor(sameYearAvg)}`}
+                      >
                         {sameYearAvg}%
                       </p>
                     </div>
                   </div>
 
                   {reportClass.avgProgress >= sameYearAvg ? (
-                    <p className="text-[11px] text-teal-700/70 mt-2">
+                    <p className="text-[11px] text-primary/70 mt-2">
                       This class is performing {reportClass.avgProgress - sameYearAvg}% above the
                       Year {reportClass.yearGroup} average.
                     </p>
                   ) : (
-                    <p className="text-[11px] text-clay-600/70 mt-2">
+                    <p className="text-[11px] text-amber-700 dark:text-amber-300 mt-2">
                       This class is performing {sameYearAvg - reportClass.avgProgress}% below the
                       Year {reportClass.yearGroup} average. Targeted interventions recommended.
                     </p>
@@ -510,9 +521,9 @@ export default function TeacherDetailPage() {
         )}
 
         {/* Footer */}
-        <p className="text-center text-[10px] uppercase tracking-[0.3em] text-ink-500">
+        <p className="text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
           Demo data &middot; {teacher.name} &middot; {classes.length} class
-          {classes.length !== 1 ? "es" : ""}
+          {classes.length !== 1 ? 'es' : ''}
         </p>
       </div>
     </div>

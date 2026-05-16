@@ -939,14 +939,14 @@ function getGenericCourse(id: string): CourseData {
 function ProgressBar({ value, className }: { value: number; className?: string }) {
   const color =
     value === 100
-      ? 'bg-teal-700'
+      ? 'bg-primary'
       : value >= 60
         ? 'bg-blue-500'
         : value >= 40
           ? 'bg-amber-500'
           : 'bg-red-500'
   return (
-    <div className={`h-1.5 rounded-full bg-cream-100 ${className || ''}`}>
+    <div className={`h-1.5 rounded-full bg-muted ${className || ''}`}>
       <div
         className={`h-1.5 rounded-full ${color} transition-all`}
         style={{ width: `${value}%` }}
@@ -979,45 +979,50 @@ function QuizView({
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-medium text-ink-900 flex items-center gap-2">
-          <FileQuestion className="h-5 w-5 text-teal-700" />
+        <h3 className="text-lg font-medium text-foreground flex items-center gap-2">
+          <FileQuestion className="h-5 w-5 text-primary" />
           Module Quiz
         </h3>
-        <button onClick={onClose} className="text-ink-500 hover:text-ink-600 transition-colors">
+        <button
+          onClick={onClose}
+          className="text-muted-foreground hover:text-foreground transition-colors"
+        >
           <X className="h-5 w-5" />
         </button>
       </div>
 
       {quiz.map((q, qi) => (
-        <div key={qi} className="rounded-lg border border-ink-200 bg-white p-4">
-          <p className="text-sm font-medium text-ink-900 mb-3">
+        <div key={qi} className="rounded-lg border border-border/60 bg-card p-4">
+          <p className="text-sm font-medium text-foreground mb-3">
             {qi + 1}. {q.question}
           </p>
           <div className="space-y-2">
             {q.options.map((opt, oi) => {
-              let optStyle = 'border-ink-200 bg-white hover:border-ink-200 hover:bg-white'
+              let optStyle = 'border-border/60 bg-card hover:border-border hover:bg-secondary'
               if (answers[qi] === oi && !submitted) {
-                optStyle = 'border-blue-500/30 bg-teal-800/10'
+                optStyle = 'border-primary/30 bg-primary/10'
               }
               if (submitted) {
                 if (oi === q.answer) {
-                  optStyle = 'border-teal-800/30 bg-teal-800/10'
+                  optStyle = 'border-primary/30 bg-primary/10'
                 } else if (answers[qi] === oi && oi !== q.answer) {
                   optStyle = 'border-red-500/30 bg-red-500/10'
                 } else {
-                  optStyle = 'border-ink-200 bg-white opacity-50'
+                  optStyle = 'border-border/60 bg-card opacity-50'
                 }
               }
               return (
                 <button
                   key={oi}
                   onClick={() => select(qi, oi)}
-                  className={`w-full text-left rounded-lg border px-4 py-2.5 text-sm text-ink-600 transition-all ${optStyle}`}
+                  className={`w-full text-left rounded-lg border px-4 py-2.5 text-sm text-foreground transition-all ${optStyle}`}
                 >
-                  <span className="text-ink-500 mr-2">{String.fromCharCode(65 + oi)}.</span>
+                  <span className="text-muted-foreground mr-2">
+                    {String.fromCharCode(65 + oi)}.
+                  </span>
                   {opt}
                   {submitted && oi === q.answer && (
-                    <CheckCircle2 className="inline h-4 w-4 text-teal-700 ml-2" />
+                    <CheckCircle2 className="inline h-4 w-4 text-primary ml-2" />
                   )}
                 </button>
               )
@@ -1030,16 +1035,16 @@ function QuizView({
         <button
           onClick={() => setSubmitted(true)}
           disabled={answers.some((a) => a === null)}
-          className="w-full rounded-lg bg-teal-800 hover:bg-teal-700 disabled:bg-cream-100 disabled:text-ink-500 px-4 py-3 text-sm font-medium text-white transition-colors"
+          className="w-full rounded-lg bg-primary hover:bg-primary/90 disabled:bg-muted disabled:text-muted-foreground px-4 py-3 text-sm font-medium text-primary-foreground transition-colors"
         >
           {answers.some((a) => a === null) ? 'Answer all questions to submit' : 'Submit Answers'}
         </button>
       ) : (
-        <div className="rounded-lg border border-ink-200 bg-white p-4 text-center">
-          <p className="text-2xl font-light text-ink-900 mb-1">
+        <div className="rounded-lg border border-border/60 bg-card p-4 text-center">
+          <p className="text-2xl font-light text-foreground mb-1">
             {score}/{quiz.length}
           </p>
-          <p className="text-sm text-ink-500">
+          <p className="text-sm text-muted-foreground">
             {score === quiz.length
               ? 'Perfect score! Well done.'
               : score >= 3
@@ -1048,7 +1053,7 @@ function QuizView({
           </p>
           <button
             onClick={onClose}
-            className="mt-4 text-sm text-teal-700 hover:text-blue-300 transition-colors"
+            className="mt-4 text-sm text-primary hover:text-primary/80 transition-colors"
           >
             Back to module
           </button>
@@ -1088,11 +1093,11 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
     })()
 
     return (
-      <div className="min-h-screen bg-cream-50 text-ink-900">
+      <div className="min-h-screen bg-background text-foreground">
         <div className="max-w-4xl mx-auto px-6 py-8">
           {/* Demo banner */}
-          <div className="mb-6 rounded-lg border border-teal-800/20 bg-teal-800/5 px-4 py-3">
-            <p className="text-sm text-teal-700">
+          <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 px-4 py-3">
+            <p className="text-sm text-primary">
               <span className="font-semibold">Student Demo</span> -- Exploring a course as a student
             </p>
           </div>
@@ -1100,7 +1105,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
           {/* Back */}
           <Link
             href="/demo/student/courses"
-            className="inline-flex items-center gap-1.5 text-sm text-ink-500 hover:text-ink-600 transition-colors mb-6"
+            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Back to Courses
@@ -1108,39 +1113,41 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
 
           {/* Course header */}
           <div className="mb-8">
-            <h1 className="text-2xl font-light tracking-tight text-ink-900 mb-2">{course.title}</h1>
-            <p className="text-sm text-ink-500 mb-4">{course.description}</p>
-            <div className="flex items-center gap-3 text-xs text-ink-500 mb-2">
+            <h1 className="text-2xl font-light tracking-tight text-foreground mb-2">
+              {course.title}
+            </h1>
+            <p className="text-sm text-muted-foreground mb-4">{course.description}</p>
+            <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
               <span>{course.modules.length} modules</span>
               <span>--</span>
               <span>{completedCount} completed</span>
               <span>--</span>
-              <span className="text-ink-600">{pct}%</span>
+              <span className="text-foreground">{pct}%</span>
             </div>
             <ProgressBar value={pct} />
           </div>
 
           {/* Course stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-            <div className="rounded-xl border border-ink-200 bg-white p-4 text-center">
-              <Trophy className="h-5 w-5 text-clay-600 mx-auto mb-2" />
-              <p className="text-lg font-semibold text-ink-900">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
+              <Trophy className="h-5 w-5 text-clay-600 dark:text-clay-300 mx-auto mb-2" />
+              <p className="text-lg font-semibold text-foreground">
                 {completedCount}/{course.modules.length}
               </p>
-              <p className="text-[11px] text-ink-500">Lessons Done</p>
+              <p className="text-[11px] text-muted-foreground">Lessons Done</p>
             </div>
-            <div className="rounded-xl border border-ink-200 bg-white p-4 text-center">
-              <Star className="h-5 w-5 text-teal-700 mx-auto mb-2" />
-              <p className="text-lg font-semibold text-ink-900">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
+              <Star className="h-5 w-5 text-primary mx-auto mb-2" />
+              <p className="text-lg font-semibold text-foreground">
                 {avgQuizScore !== null ? `${avgQuizScore}%` : '--'}
               </p>
-              <p className="text-[11px] text-ink-500">Avg Quiz Score</p>
+              <p className="text-[11px] text-muted-foreground">Avg Quiz Score</p>
             </div>
-            <div className="rounded-xl border border-ink-200 bg-white p-4 text-center">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
               <CheckCircle2
-                className={`h-5 w-5 mx-auto mb-2 ${course.modules.filter((m) => m.quizScore !== null && m.quizScore !== undefined && m.quizScore === m.quizMaxScore).length > 0 ? 'text-teal-700' : 'text-ink-500'}`}
+                className={`h-5 w-5 mx-auto mb-2 ${course.modules.filter((m) => m.quizScore !== null && m.quizScore !== undefined && m.quizScore === m.quizMaxScore).length > 0 ? 'text-primary' : 'text-muted-foreground'}`}
               />
-              <p className="text-lg font-semibold text-ink-900">
+              <p className="text-lg font-semibold text-foreground">
                 {
                   course.modules.filter(
                     (m) =>
@@ -1150,14 +1157,14 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                   ).length
                 }
               </p>
-              <p className="text-[11px] text-ink-500">Perfect Scores</p>
+              <p className="text-[11px] text-muted-foreground">Perfect Scores</p>
             </div>
-            <div className="rounded-xl border border-ink-200 bg-white p-4 text-center">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
               <AlertTriangle
-                className={`h-5 w-5 mx-auto mb-2 ${revisionCount > 0 ? 'text-red-400' : 'text-ink-500'}`}
+                className={`h-5 w-5 mx-auto mb-2 ${revisionCount > 0 ? 'text-red-600 dark:text-red-400' : 'text-muted-foreground'}`}
               />
-              <p className="text-lg font-semibold text-ink-900">{revisionCount}</p>
-              <p className="text-[11px] text-ink-500">Need Revision</p>
+              <p className="text-lg font-semibold text-foreground">{revisionCount}</p>
+              <p className="text-[11px] text-muted-foreground">Need Revision</p>
             </div>
           </div>
 
@@ -1165,12 +1172,12 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
           {revisionCount > 0 && (
             <div className="mb-6 rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
               <div className="flex items-start gap-3">
-                <AlertTriangle className="h-5 w-5 text-clay-600 mt-0.5 flex-shrink-0" />
+                <AlertTriangle className="h-5 w-5 text-amber-700 dark:text-amber-300 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-clay-600 mb-1">
+                  <p className="text-sm font-medium text-amber-700 dark:text-amber-300 mb-1">
                     {revisionCount} {revisionCount === 1 ? 'lesson needs' : 'lessons need'} revision
                   </p>
-                  <p className="text-xs text-ink-500">
+                  <p className="text-xs text-muted-foreground">
                     You scored below 60% on{' '}
                     {revisionCount === 1 ? "this lesson's quiz" : 'these lesson quizzes'}. Revisit
                     the content and retake the quiz to strengthen your understanding.
@@ -1195,60 +1202,62 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                     setActiveModuleIdx(idx)
                     setShowQuiz(false)
                   }}
-                  className={`w-full group flex items-center gap-3 rounded-lg border px-4 py-3.5 text-left transition-all hover:bg-white ${
+                  className={`w-full group flex items-center gap-3 rounded-lg border px-4 py-3.5 text-left transition-all hover:bg-secondary ${
                     mod.revisionNeeded
                       ? 'border-red-500/15 bg-red-500/[0.03] hover:border-red-500/25'
-                      : 'border-ink-200 bg-white hover:border-ink-200'
+                      : 'border-border/60 bg-card hover:border-border'
                   }`}
                 >
                   {mod.completed ? (
                     mod.revisionNeeded ? (
-                      <AlertTriangle className="h-5 w-5 text-red-400 flex-shrink-0" />
+                      <AlertTriangle className="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0" />
                     ) : (
-                      <CheckCircle2 className="h-5 w-5 text-teal-700 flex-shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
                     )
                   ) : (
-                    <Circle className="h-5 w-5 text-ink-500/40 flex-shrink-0" />
+                    <Circle className="h-5 w-5 text-muted-foreground/40 flex-shrink-0" />
                   )}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <p className="text-sm text-ink-900 truncate">{mod.title}</p>
+                      <p className="text-sm text-foreground truncate">{mod.title}</p>
                       {mod.revisionNeeded && (
-                        <span className="inline-flex items-center rounded-full bg-red-500/20 border border-red-500/30 px-1.5 py-0.5 text-[9px] font-medium text-red-400 flex-shrink-0">
+                        <span className="inline-flex items-center rounded-full bg-red-500/20 border border-red-500/30 px-1.5 py-0.5 text-[9px] font-medium text-red-700 dark:text-red-300 flex-shrink-0">
                           Revision Needed
                         </span>
                       )}
                     </div>
                     <div className="flex items-center gap-2 mt-0.5">
-                      <p className="text-[11px] text-ink-500">
+                      <p className="text-[11px] text-muted-foreground">
                         Module {idx + 1} of {course.modules.length}
                       </p>
                       {quizPct !== null && (
                         <>
-                          <span className="text-[11px] text-ink-500/30">|</span>
+                          <span className="text-[11px] text-muted-foreground/30">|</span>
                           <span
                             className={`text-[11px] font-medium ${
                               quizPct >= 80
-                                ? 'text-teal-700'
+                                ? 'text-primary'
                                 : quizPct >= 60
-                                  ? 'text-clay-600'
-                                  : 'text-red-400'
+                                  ? 'text-amber-700 dark:text-amber-300'
+                                  : 'text-red-700 dark:text-red-300'
                             }`}
                           >
                             Quiz: {mod.quizScore}/{mod.quizMaxScore} ({quizPct}%)
                           </span>
-                          {quizPct === 100 && <Star className="h-3 w-3 text-clay-600" />}
+                          {quizPct === 100 && (
+                            <Star className="h-3 w-3 text-clay-600 dark:text-clay-300" />
+                          )}
                         </>
                       )}
                       {mod.completed && quizPct === null && (
                         <>
-                          <span className="text-[11px] text-ink-500/30">|</span>
-                          <span className="text-[11px] text-ink-500">Quiz not taken</span>
+                          <span className="text-[11px] text-muted-foreground/30">|</span>
+                          <span className="text-[11px] text-muted-foreground">Quiz not taken</span>
                         </>
                       )}
                     </div>
                   </div>
-                  <ChevronRight className="h-4 w-4 text-ink-500/40 group-hover:text-ink-500 transition-colors flex-shrink-0" />
+                  <ChevronRight className="h-4 w-4 text-muted-foreground/40 group-hover:text-muted-foreground transition-colors flex-shrink-0" />
                 </button>
               )
             })}
@@ -1265,11 +1274,11 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
       : null
 
   return (
-    <div className="min-h-screen bg-cream-50 text-ink-900">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-3xl mx-auto px-6 py-8">
         {/* Demo banner */}
-        <div className="mb-6 rounded-lg border border-teal-800/20 bg-teal-800/5 px-4 py-3">
-          <p className="text-sm text-teal-700">
+        <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 px-4 py-3">
+          <p className="text-sm text-primary">
             <span className="font-semibold">Student Demo</span> -- Viewing lesson content
           </p>
         </div>
@@ -1280,7 +1289,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
             setActiveModuleIdx(null)
             setShowQuiz(false)
           }}
-          className="inline-flex items-center gap-1.5 text-sm text-ink-500 hover:text-ink-600 transition-colors mb-6"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           Back to module list
@@ -1288,17 +1297,19 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
 
         {/* Module header */}
         <div className="mb-6">
-          <p className="text-xs text-ink-500 mb-1">
+          <p className="text-xs text-muted-foreground mb-1">
             Module {activeModuleIdx! + 1} of {course.modules.length}
           </p>
-          <h2 className="text-xl font-light tracking-tight text-ink-900">{activeModule.title}</h2>
+          <h2 className="text-xl font-light tracking-tight text-foreground">
+            {activeModule.title}
+          </h2>
 
           {/* Previous quiz score display */}
           {quizPct !== null && (
             <div
               className={`mt-3 inline-flex items-center gap-2 rounded-lg border px-3 py-2 ${
                 quizPct >= 80
-                  ? 'border-teal-800/20 bg-teal-800/5'
+                  ? 'border-primary/20 bg-primary/5'
                   : quizPct >= 60
                     ? 'border-amber-500/20 bg-amber-500/5'
                     : 'border-red-500/20 bg-red-500/5'
@@ -1306,18 +1317,28 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
             >
               <Trophy
                 className={`h-4 w-4 ${
-                  quizPct >= 80 ? 'text-teal-700' : quizPct >= 60 ? 'text-clay-600' : 'text-red-400'
+                  quizPct >= 80
+                    ? 'text-primary'
+                    : quizPct >= 60
+                      ? 'text-amber-700 dark:text-amber-300'
+                      : 'text-red-700 dark:text-red-300'
                 }`}
               />
               <span
                 className={`text-sm font-medium ${
-                  quizPct >= 80 ? 'text-teal-700' : quizPct >= 60 ? 'text-clay-600' : 'text-red-400'
+                  quizPct >= 80
+                    ? 'text-primary'
+                    : quizPct >= 60
+                      ? 'text-amber-700 dark:text-amber-300'
+                      : 'text-red-700 dark:text-red-300'
                 }`}
               >
                 Previous score: {activeModule.quizScore}/{activeModule.quizMaxScore} ({quizPct}%)
               </span>
               {quizPct < 60 && (
-                <span className="text-[10px] text-red-400/70 ml-1">-- Retake recommended</span>
+                <span className="text-[10px] text-red-700/70 dark:text-red-300/70 ml-1">
+                  -- Retake recommended
+                </span>
               )}
             </div>
           )}
@@ -1326,10 +1347,14 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
           {activeModule.revisionNeeded && activeModule.revisionTip && (
             <div className="mt-3 rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
               <div className="flex items-start gap-2">
-                <Lightbulb className="h-4 w-4 text-clay-600 mt-0.5 flex-shrink-0" />
+                <Lightbulb className="h-4 w-4 text-amber-700 dark:text-amber-300 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-xs font-medium text-clay-600 mb-1">Revision Suggestion</p>
-                  <p className="text-xs text-ink-500 leading-relaxed">{activeModule.revisionTip}</p>
+                  <p className="text-xs font-medium text-amber-700 dark:text-amber-300 mb-1">
+                    Revision Suggestion
+                  </p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {activeModule.revisionTip}
+                  </p>
                 </div>
               </div>
             </div>
@@ -1341,8 +1366,8 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
         ) : (
           <>
             {/* Lesson content */}
-            <div className="rounded-xl border border-ink-200 bg-white p-6 mb-6">
-              <div className="flex items-center gap-2 text-xs text-teal-700/70 mb-4">
+            <div className="rounded-xl border border-border/60 bg-card p-6 mb-6">
+              <div className="flex items-center gap-2 text-xs text-primary/70 mb-4">
                 <BookOpen className="h-4 w-4" />
                 Lesson Content
               </div>
@@ -1350,7 +1375,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                 {activeModule.lessonContent.split('\n\n').map((paragraph, i) => (
                   <p
                     key={i}
-                    className="text-sm text-ink-600 leading-relaxed mb-3 whitespace-pre-line"
+                    className="text-sm text-muted-foreground leading-relaxed mb-3 whitespace-pre-line"
                   >
                     {paragraph}
                   </p>
@@ -1362,10 +1387,10 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => setShowQuiz(true)}
-                className={`flex-1 flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium text-white transition-colors ${
+                className={`flex-1 flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
                   activeModule.revisionNeeded
-                    ? 'bg-amber-600 hover:bg-amber-500'
-                    : 'bg-teal-800 hover:bg-teal-700'
+                    ? 'bg-amber-600 hover:bg-amber-500 text-white'
+                    : 'bg-primary hover:bg-primary/90 text-primary-foreground'
                 }`}
               >
                 <FileQuestion className="h-4 w-4" />
@@ -1383,7 +1408,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                     setShowQuiz(false)
                     window.scrollTo(0, 0)
                   }}
-                  className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-ink-200 hover:border-ink-200 hover:bg-white px-4 py-3 text-sm font-medium text-ink-600 transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-border/60 hover:border-border hover:bg-secondary px-4 py-3 text-sm font-medium text-foreground transition-colors"
                 >
                   Next Module
                   <ArrowRight className="h-4 w-4" />
@@ -1397,7 +1422,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                     setShowQuiz(false)
                     window.scrollTo(0, 0)
                   }}
-                  className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-ink-200 hover:border-ink-200 hover:bg-white px-4 py-3 text-sm font-medium text-ink-600 transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-border/60 hover:border-border hover:bg-secondary px-4 py-3 text-sm font-medium text-foreground transition-colors"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Previous Module
