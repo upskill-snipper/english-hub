@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { GeoFaq, REVISION_FAQS } from '@/components/seo/GeoFaq'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export type ALevelBoardHubProps = {
@@ -145,6 +146,9 @@ export function ALevelBoardHub({ boardName, examCode, hubSlug, summary }: ALevel
           })}
         </div>
       </section>
+
+      {/* ── GEO FAQ (visible question headings + FAQPage JSON-LD) ──── */}
+      <GeoFaq faqs={REVISION_FAQS} heading={`${boardName} A-Level English: common questions`} />
 
       {/* ── Footer ──────────────────────────────────────────────────── */}
       <footer className="pt-4 text-center text-body-xs text-muted-foreground">

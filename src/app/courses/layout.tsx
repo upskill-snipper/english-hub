@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Courses',
@@ -22,5 +23,15 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <CourseJsonLd
+        name="GCSE & IGCSE English Courses"
+        description="Structured KS3, GCSE and IGCSE English courses with video lessons, quizzes and exam-style tasks across AQA, Edexcel, OCR, WJEC Eduqas and Cambridge IGCSE."
+        educationalLevel="GCSE"
+        url="https://theenglishhub.app/courses"
+      />
+      {children}
+    </>
+  )
 }

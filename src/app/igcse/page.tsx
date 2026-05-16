@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
+import { GeoFaq, IGCSE_FAQS } from '@/components/seo/GeoFaq'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getIgcseHubUrl } from '@/app/igcse/_lib/guard'
 import { ArrowRight, BookOpen, Sparkles, Feather, Globe, GraduationCap } from 'lucide-react'
@@ -201,6 +202,9 @@ export default async function IgcseHubPage() {
           })}
         </div>
       </section>
+
+      {/* ── GEO FAQ (visible question headings + FAQPage JSON-LD) ──── */}
+      <GeoFaq faqs={IGCSE_FAQS} heading="IGCSE English: common questions" />
 
       {/* ── Footnote ───────────────────────────────────────────────── */}
       <p className="text-center text-body-xs text-muted-foreground/60">{tFootnote}</p>

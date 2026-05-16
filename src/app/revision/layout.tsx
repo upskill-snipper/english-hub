@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { RevisionShell } from './_components/revision-shell'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Your Hub',
@@ -19,5 +20,19 @@ export const metadata: Metadata = {
 }
 
 export default function RevisionLayout({ children }: { children: React.ReactNode }) {
-  return <RevisionShell>{children}</RevisionShell>
+  return (
+    <>
+      {/* educationalLevel intentionally omitted — this tree spans KS3,
+          GCSE, IGCSE and IAL, so a single level value would be wrong. */}
+      <LearningResourceJsonLd
+        name="English Revision Hub"
+        description="Unified English revision: study tools, progress tracking, set-text analysis and exam technique personalised to your exam board across KS3, GCSE, IGCSE and IAL."
+        learningResourceType="Revision hub"
+        url="https://theenglishhub.app/revision"
+        about="English revision"
+        audienceRole="student"
+      />
+      <RevisionShell>{children}</RevisionShell>
+    </>
+  )
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { RevisionShell } from '@/app/revision/_components/revision-shell'
+import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'A-Level English',
@@ -16,5 +17,18 @@ export const metadata: Metadata = {
 // Unify the A-Level route tree with the /revision layout — same sidebar
 // + header chrome ("Your Hub" nav) regardless of the entry URL.
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <RevisionShell>{children}</RevisionShell>
+  return (
+    <>
+      <LearningResourceJsonLd
+        name="A-Level English Revision"
+        description="UK A-Level English Literature and Language revision: board-specific hubs for AQA, Pearson Edexcel, OCR and WJEC Eduqas, plus cross-board essay technique and set-text analysis."
+        educationalLevel="A-Level"
+        learningResourceType="Revision hub"
+        url="https://theenglishhub.app/a-level"
+        about="A-Level English"
+        audienceRole="student"
+      />
+      <RevisionShell>{children}</RevisionShell>
+    </>
+  )
 }

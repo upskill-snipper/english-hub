@@ -9,6 +9,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { isGcseBoard, isIgcseBoard } from '@/lib/board/board-filter'
 import { useT } from '@/lib/i18n/use-t'
+import { ReviewedByline } from '@/components/seo/ReviewedByline'
 import type { ExamBoard } from '@/lib/board/board-store'
 
 type FooterLink = {
@@ -297,6 +298,14 @@ export function Footer() {
               ))}
             </div>
           ))}
+        </div>
+
+        {/* Site-wide editorial attribution + freshness (single render
+            point — see ReviewedByline JSDoc). Dark-footer colour
+            override since the component defaults to text-muted-foreground
+            which is tuned for light surfaces. */}
+        <div className="border-t py-5" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+          <ReviewedByline className="text-[11px] text-[#B5B8B3]/70" />
         </div>
 
         {/* Bottom bar */}

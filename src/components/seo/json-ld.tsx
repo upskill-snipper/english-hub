@@ -457,3 +457,38 @@ export function QuizJsonLd({
     />
   )
 }
+
+/**
+ * Site-wide attribution node. Emitted once (root layout <head>) so
+ * every page exposes JSON-LD author + reviewedBy + dateModified for AI
+ * answer engines (GEO). Organisation-only — the site bans fabricated
+ * named people, so author/reviewedBy are the Organization and a
+ * role-based reviewer label, never a Person with an invented name.
+ */
+export function ReviewedBylineJsonLd({
+  dateModified,
+  reviewerName = 'The English Hub subject specialists',
+  nonce,
+}: {
+  /** ISO 8601 date, e.g. "2026-05-01". */
+  dateModified: string
+  reviewerName?: string
+  nonce?: string
+}) {
+  const org = { '@type': 'Organization', name: SITE_NAME, url: SITE_URL }
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    publisher: org,
+    author: org,
+    reviewedBy: { '@type': 'Organization', name: reviewerName, url: SITE_URL },
+    dateModified,
+  }
+  return (
+    <script
+      type="application/ld+json"
+      nonce={nonce}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}

@@ -13,6 +13,8 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/sonner'
 import { RootLayoutShell } from '@/components/layout/root-layout-shell'
 import { WebsiteJsonLd } from '@/components/seo/website-json-ld'
+import { ReviewedBylineJsonLd } from '@/components/seo/json-ld'
+import { SITE_LAST_REVIEWED } from '@/components/seo/ReviewedByline'
 import { CookieConsent } from '@/components/cookie-consent'
 import { UtmCapture } from '@/components/utm-capture'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
@@ -128,7 +130,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // Two valid values: 'en' (default) and 'ar' (Arabic, RTL).
   // Bilingual mode was removed in May 2026; the middleware coerces
   // legacy `eh-lang=bi` cookies to 'en' before this code runs.
-  const lang = (await headers()).get('x-lang') ?? 'en'
+  const reqHeaders = await headers()
+  const lang = reqHeaders.get('x-lang') ?? 'en'
+  const cspNonce = reqHeaders.get('x-nonce') ?? undefined
   const dir = lang === 'ar' ? 'rtl' : 'ltr'
   // `lang` attribute uses the BCP-47 tag the SR / browser actually cares
   // about. We don't have an explicit Gulf locale tag, so 'ar' (modern
@@ -162,6 +166,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <meta name="msvalidate.01" content={process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION} />
         ) : null}
         <WebsiteJsonLd />
+        <ReviewedBylineJsonLd
+          dateModified={SITE_LAST_REVIEWED.toISOString().slice(0, 10)}
+          nonce={cspNonce}
+        />
         {/* Rewardful is loaded by <ConsentGatedAnalytics /> below after
             the visitor accepts analytics/marketing cookies. Loading it
             unconditionally here would breach PECR reg. 6. */}

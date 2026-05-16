@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { GeoFaq, REVISION_FAQS } from '@/components/seo/GeoFaq'
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/revision' },
@@ -828,6 +829,11 @@ export default async function RevisionHubPage() {
           {i18n.motivationCta}
           <ArrowRight className="size-4" />
         </Button>
+      </section>
+
+      {/* ── GEO FAQ (visible question headings + FAQPage JSON-LD) ──── */}
+      <section className="mx-auto w-full max-w-5xl px-4 pb-12 sm:px-6">
+        <GeoFaq faqs={REVISION_FAQS} heading="English revision: common questions" />
       </section>
     </div>
   )
