@@ -52,17 +52,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      {
-        // Canonical-host enforcement (2026-05-16). www → apex as a
-        // PERMANENT (308) redirect. Previously www→apex was only a
-        // 307 from the edge/domain layer; a permanent in-repo rule
-        // consolidates link equity and gives search engines an
-        // unambiguous canonical host.
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.theenglishhub.app' }],
-        destination: 'https://theenglishhub.app/:path*',
-        permanent: true,
-      },
+      // Canonical www→apex host redirect lives in src/middleware.ts
+      // (a next.config `has:host` rule did not fire because the edge
+      // serves the www alias before the route layer — see middleware).
       {
         source: '/privacy-policy',
         destination: '/legal/privacy',

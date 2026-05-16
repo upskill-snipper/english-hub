@@ -411,9 +411,12 @@ export const REPORT_FIX_MAY16B: Dictionary = {
   // ─── /affiliates metadata (affiliates.*) ─────────────────────────
   'affiliates.breadcrumb.home': { en: 'Home', ar: 'Home' },
   'affiliates.breadcrumb.self': { en: 'Affiliates', ar: 'Affiliates' },
+  // NOTE: this value is fed through the root metadata title.template
+  // ('%s — The English Hub'), so it must NOT contain the brand itself
+  // or it double-brands. (Caught by site_health_monitor 2026-05-16.)
   'affiliates.public.meta.title': {
-    en: 'Affiliate Programme | Earn Recurring Commission with The English Hub',
-    ar: 'Affiliate Programme | Earn Recurring Commission with The English Hub',
+    en: 'Affiliate Programme — Earn Recurring Commission for Partners',
+    ar: 'Affiliate Programme — Earn Recurring Commission for Partners',
   },
   'affiliates.public.meta.description': {
     en: 'Join The English Hub partner programme and earn recurring commission on every annual subscription you refer. Independent, exam-board aligned GCSE, IGCSE, KS3 and EAL English learning. 90-day tracking, monthly payouts, no minimum traffic.',

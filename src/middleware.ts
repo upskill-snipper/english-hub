@@ -333,6 +333,24 @@ const RETIRED_PAGE_REDIRECTS: Record<string, string> = {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+
+  // ── Canonical-host enforcement (2026-05-16) ───────────────────────
+  // www → apex as a PERMANENT (308) redirect. A next.config.js
+  // `has:host` rule proved unreliable here (the edge serves the www
+  // alias before the Next route layer evaluates it), so the redirect
+  // is enforced in middleware where the real Host header is available.
+  // This runs FIRST so every other concern (board cookie, auth, CSP)
+  // only ever operates on the canonical host. Caught + verified by
+  // site_health_monitor.
+  const host = request.headers.get('host') ?? ''
+  if (host === 'www.theenglishhub.app') {
+    const target = new URL(request.url)
+    target.host = 'theenglishhub.app'
+    target.protocol = 'https:'
+    target.port = ''
+    return NextResponse.redirect(target, 308)
+  }
+
   // Web Crypto `randomUUID()` + `btoa` — edge-runtime safe, avoids the
   // node:crypto / Buffer imports which the edge runtime flags.
   const nonce = btoa(globalThis.crypto.randomUUID())
