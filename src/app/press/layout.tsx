@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Press & media | The English Hub',
+  title: 'Press & media',
   description:
     'Press kit, company facts, and press contact for The English Hub — a UK-built GCSE and IGCSE English platform with AI feedback trained on real examiners\u2019 mark schemes.',
   alternates: { canonical: 'https://theenglishhub.app/press' },

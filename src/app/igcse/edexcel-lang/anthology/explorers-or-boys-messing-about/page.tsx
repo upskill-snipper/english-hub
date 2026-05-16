@@ -22,8 +22,7 @@ export const metadata: Metadata = {
       'Explorers or Boys Messing About? — Steven Morris — IGCSE Language A Anthology — The English Hub',
     description: 'Study guide for ',
   },
-  title:
-    'Explorers or Boys Messing About? — Steven Morris — IGCSE Language A Anthology — The English Hub',
+  title: 'Explorers or Boys Messing About? — Steven Morris — IGCSE Language A Anthology',
   description:
     'Study guide for "Explorers or boys messing about?" by Steven Morris (Guardian, 2003 — adapted in the Edexcel IGCSE Anthology). Language analysis, structural analysis, themes and exam practice for Paper 1 Section A.',
   alternates: {

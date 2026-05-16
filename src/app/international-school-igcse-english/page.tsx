@@ -12,7 +12,7 @@ const OG_IMAGE =
   '/api/og?title=IGCSE+English+for+international+schools&subtitle=Pearson+Edexcel+and+Cambridge+covered&level=igcse'
 
 export const metadata: Metadata = {
-  title: 'IGCSE English for international schools — The English Hub',
+  title: 'IGCSE English for international schools',
   description:
     'IGCSE English Literature and Language revision for British international schools worldwide. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 covered.',
   alternates: { canonical: PAGE_URL },

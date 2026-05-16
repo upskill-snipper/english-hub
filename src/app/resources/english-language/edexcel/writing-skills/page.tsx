@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/resources/english-language/edexcel/writing-skills',
   },
-  title: 'Pearson Edexcel GCSE English Language writing skills — The English Hub',
+  title: 'Pearson Edexcel GCSE English Language writing skills',
   description:
     'Writing skills for Pearson Edexcel GCSE English Language: structure, vocabulary, sentence variety, and creative/transactional writing models.',
 }

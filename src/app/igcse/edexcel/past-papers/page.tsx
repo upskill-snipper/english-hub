@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description:
       'How to find, download and practise with Pearson Edexcel IGCSE English Literature past papers. Study tips, timing advice and mark scheme strategy.',
   },
-  title: 'Edexcel IGCSE Literature Past Papers — The English Hub',
+  title: 'Edexcel IGCSE Literature Past Papers',
   description:
     'How to find, download and practise with Pearson Edexcel IGCSE English Literature past papers. Study tips, timing advice and mark scheme strategy.',
   alternates: {

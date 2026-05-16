@@ -5,7 +5,7 @@ import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'Pearson Edexcel GCSE English Language techniques — The English Hub',
+  title: 'Pearson Edexcel GCSE English Language techniques',
   description:
     'Language and structural techniques for Pearson Edexcel GCSE English: identification, analysis, and how to write about them.',
   alternates: {

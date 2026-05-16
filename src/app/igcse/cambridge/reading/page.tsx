@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description:
       'Ten reading practice frameworks for Cambridge IGCSE First Language English Paper 1. Each guide teaches you how to approach a type of passage and links to free public-domain texts on Project Gutenberg.',
   },
-  title: 'Cambridge IGCSE Reading Practice Frameworks (IGCSE Language) — The English Hub',
+  title: 'Cambridge IGCSE Reading Practice Frameworks (IGCSE Language)',
   description:
     'Ten reading practice frameworks for Cambridge IGCSE First Language English Paper 1. Each guide teaches you how to approach a type of passage and links to free public-domain texts on Project Gutenberg.',
   alternates: {

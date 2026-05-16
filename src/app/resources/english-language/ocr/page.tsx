@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       'OCR GCSE English Language resources. Paper 1 and Paper 2 breakdowns, spoken language assessment, writing skills, mark schemes and grade boundaries.',
   },
-  title: 'OCR GCSE English Language resources — The English Hub',
+  title: 'OCR GCSE English Language resources',
   description:
     'OCR GCSE English Language resources. Paper 1 and Paper 2 breakdowns, spoken language assessment, writing skills, mark schemes and grade boundaries.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/ocr' },

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { BreadcrumbJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
-  title: 'AQA GCSE English Language techniques — The English Hub',
+  title: 'AQA GCSE English Language techniques',
   description:
     'Language and structural techniques for AQA GCSE English: identification, analysis, and how to write about them.',
   alternates: {

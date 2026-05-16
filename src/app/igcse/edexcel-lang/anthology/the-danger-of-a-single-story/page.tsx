@@ -23,8 +23,7 @@ export const metadata: Metadata = {
     description:
       'Full study guide for The Danger of a Single Story by Chimamanda Ngozi Adichie. Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   },
-  title:
-    'The Danger of a Single Story — Chimamanda Ngozi Adichie — IGCSE Language A Anthology — The English Hub',
+  title: 'The Danger of a Single Story — Chimamanda Ngozi Adichie — IGCSE Language A Anthology',
   description:
     'Full study guide for The Danger of a Single Story by Chimamanda Ngozi Adichie. Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   alternates: {

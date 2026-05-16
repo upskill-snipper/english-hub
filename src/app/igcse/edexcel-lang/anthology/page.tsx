@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       'Pearson Edexcel IGCSE Language A 4EA1 — the 10 prescribed non-fiction texts in the anthology. Full study guides and exam practice for Paper 1 Section A.',
   },
-  title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology — The English Hub',
+  title: 'Edexcel IGCSE Language A 4EA1 non-fiction anthology',
   description:
     'Pearson Edexcel IGCSE Language A 4EA1 — the 10 prescribed non-fiction texts in the anthology. Full study guides and exam practice for Paper 1 Section A.',
   alternates: {

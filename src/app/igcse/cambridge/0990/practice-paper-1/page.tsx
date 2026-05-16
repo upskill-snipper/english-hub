@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       'Full Cambridge IGCSE Language B Paper 1 Reading practice paper using public domain extracts from Charlotte Brontë and H.G. Wells. Questions, timing and mark breakdown.',
   },
-  title: 'Practice Paper 1 (Reading) | Cambridge IGCSE Language B | The English Hub',
+  title: 'Practice Paper 1 (Reading) | Cambridge IGCSE Language B',
   description:
     'Full Cambridge IGCSE Language B Paper 1 Reading practice paper using public domain extracts from Charlotte Brontë and H.G. Wells. Questions, timing and mark breakdown.',
   alternates: {

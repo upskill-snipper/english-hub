@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       'Cambridge IGCSE Paper 1 reading practice on descriptive nature passages. Structured comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Descriptive Nature Passages — Reading Practice Framework — The English Hub',
+  title: 'Descriptive Nature Passages — Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on descriptive nature passages. Structured comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {

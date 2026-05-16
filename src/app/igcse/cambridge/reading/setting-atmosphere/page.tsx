@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       'Cambridge IGCSE Paper 1 reading practice on setting and atmosphere. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Setting and Atmosphere — Reading Practice Framework — The English Hub',
+  title: 'Setting and Atmosphere — Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on setting and atmosphere. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {

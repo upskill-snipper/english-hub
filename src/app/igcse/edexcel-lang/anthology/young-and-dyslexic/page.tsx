@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: 'Study guide for Young and Dyslexic? You',
   },
   title:
-    "Young and Dyslexic? You've Got It Going On — Benjamin Zephaniah — IGCSE Language A Anthology — The English Hub",
+    "Young and Dyslexic? You've Got It Going On — Benjamin Zephaniah — IGCSE Language A Anthology",
   description:
     "Study guide for Young and Dyslexic? You've Got It Going On by Benjamin Zephaniah (1958–2023). Themes, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.",
   alternates: {

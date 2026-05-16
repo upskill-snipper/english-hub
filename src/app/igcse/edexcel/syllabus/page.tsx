@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       'Complete breakdown of the Pearson Edexcel IGCSE English Literature syllabus: what the examiners are looking for, mark allocations, time limits and paper structure.',
   },
-  title: 'Edexcel IGCSE Literature Syllabus — The English Hub',
+  title: 'Edexcel IGCSE Literature Syllabus',
   description:
     'Complete breakdown of the Pearson Edexcel IGCSE English Literature syllabus: what the examiners are looking for, mark allocations, time limits and paper structure.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/syllabus' },

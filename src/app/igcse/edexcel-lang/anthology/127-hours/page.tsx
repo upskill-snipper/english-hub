@@ -22,8 +22,7 @@ export const metadata: Metadata = {
     description:
       'Study guide for the anthology extract from Between a Rock and a Hard Place by Aron Ralston (filmed as 127 Hours). Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   },
-  title:
-    'Between a Rock and a Hard Place — Aron Ralston — IGCSE Language A Anthology — The English Hub',
+  title: 'Between a Rock and a Hard Place — Aron Ralston — IGCSE Language A Anthology',
   description:
     'Study guide for the anthology extract from Between a Rock and a Hard Place by Aron Ralston (filmed as 127 Hours). Language analysis, structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel-lang/anthology/127-hours' },

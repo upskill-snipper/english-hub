@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       'Full Cambridge IGCSE Language B Paper 2 Directed Writing and Composition practice paper with stimulus text, task options and model answers.',
   },
-  title: 'Practice Paper 2 (Writing) | Cambridge IGCSE Language B | The English Hub',
+  title: 'Practice Paper 2 (Writing) | Cambridge IGCSE Language B',
   description:
     'Full Cambridge IGCSE Language B Paper 2 Directed Writing and Composition practice paper with stimulus text, task options and model answers.',
   alternates: {

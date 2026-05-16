@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
-  title: 'Mock exams — The English Hub',
+  title: 'Mock exams',
   description:
     'Practice papers for GCSE & IGCSE English Language and Literature, with mark-scheme breakdowns.',
   alternates: { canonical: 'https://theenglishhub.app/mock-exams' },

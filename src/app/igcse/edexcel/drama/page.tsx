@@ -14,8 +14,7 @@ export const metadata: Metadata = {
     description:
       'Pearson Edexcel IGCSE Literature 4ET1 modern drama. Three plays: An Inspector Calls, A View from the Bridge, The Curious Incident. Full study guides.',
   },
-  title:
-    'IGCSE Edexcel drama — An Inspector Calls, View from the Bridge, Curious Incident — The English Hub',
+  title: 'IGCSE Edexcel drama — An Inspector Calls, View from the Bridge, Curious Incident',
   description:
     'Pearson Edexcel IGCSE Literature 4ET1 modern drama. Three plays: An Inspector Calls, A View from the Bridge, The Curious Incident. Full study guides.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel/drama' },

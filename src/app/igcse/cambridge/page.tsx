@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description:
       'Cambridge IGCSE English hub. Covers Language A and Language B with full study guides, exam technique and assessment breakdowns.',
   },
-  title: 'Cambridge IGCSE English — The English Hub',
+  title: 'Cambridge IGCSE English',
   description:
     'Cambridge IGCSE English hub. Covers Language A and Language B with full study guides, exam technique and assessment breakdowns.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge' },

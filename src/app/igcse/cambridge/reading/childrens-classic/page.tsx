@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Children',
     description: 'Cambridge IGCSE Paper 1 reading practice using children',
   },
-  title: "Children's Classics — Reading Practice Framework — The English Hub",
+  title: "Children's Classics — Reading Practice Framework",
   description:
     "Cambridge IGCSE Paper 1 reading practice using children's classics. Comprehension, language analysis, summary and self-assessment with free Project Gutenberg texts.",
   alternates: {

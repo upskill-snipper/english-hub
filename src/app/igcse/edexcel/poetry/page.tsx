@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       'Complete study guide for the prescribed poems in the Pearson Edexcel International GCSE Literature (4ET1) Anthology Poetry section. Line-by-line analysis, quotes, comparison guides and exam tips.',
   },
-  title: 'Edexcel IGCSE Literature Anthology Poetry — The English Hub',
+  title: 'Edexcel IGCSE Literature Anthology Poetry',
   description:
     'Complete study guide for the prescribed poems in the Pearson Edexcel International GCSE Literature (4ET1) Anthology Poetry section. Line-by-line analysis, quotes, comparison guides and exam tips.',
   alternates: {

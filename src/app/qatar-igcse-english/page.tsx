@@ -13,7 +13,7 @@ const OG_IMAGE =
   '/api/og?title=IGCSE+English+revision+for+Qatar&subtitle=Pearson+Edexcel+and+Cambridge+covered&level=igcse'
 
 export const metadata: Metadata = {
-  title: 'IGCSE English revision for Qatar — The English Hub',
+  title: 'IGCSE English revision for Qatar',
   description:
     'IGCSE English Language and Literature revision for students at international schools in Qatar. Pearson Edexcel 4ET1, 4EA1 and Cambridge 0500, 0990 specs covered.',
   alternates: { canonical: PAGE_URL },

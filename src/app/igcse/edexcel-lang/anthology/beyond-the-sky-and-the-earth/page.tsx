@@ -21,8 +21,7 @@ export const metadata: Metadata = {
       'Beyond the Sky and the Earth — Jamie Zeppa — IGCSE Language A Anthology — The English Hub',
     description: 'Study guide for ',
   },
-  title:
-    'Beyond the Sky and the Earth — Jamie Zeppa — IGCSE Language A Anthology — The English Hub',
+  title: 'Beyond the Sky and the Earth — Jamie Zeppa — IGCSE Language A Anthology',
   description:
     'Study guide for "Beyond the Sky and the Earth: A Journey into Bhutan" by Jamie Zeppa. Language analysis, structural analysis, themes and exam practice for Edexcel IGCSE English Language A Paper 1 Section A.',
   alternates: {

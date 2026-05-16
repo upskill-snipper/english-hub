@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       'Full overview of the Cambridge IGCSE Language B First Language English course — what is tested across reading and writing, and the skills each paper assesses.',
   },
-  title: 'IGCSE Language B course overview | Cambridge IGCSE | The English Hub',
+  title: 'IGCSE Language B course overview | Cambridge IGCSE',
   description:
     'Full overview of the Cambridge IGCSE Language B First Language English course — what is tested across reading and writing, and the skills each paper assesses.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/syllabus' },

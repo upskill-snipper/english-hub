@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       'Cambridge IGCSE Paper 1 reading practice on character introductions. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Character Introductions — Reading Practice Framework — The English Hub',
+  title: 'Character Introductions — Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on character introductions. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {

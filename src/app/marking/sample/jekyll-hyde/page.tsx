@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Three fully-annotated model essays answering ',
   },
   alternates: { canonical: 'https://theenglishhub.app/marking/sample/jekyll-hyde' },
-  title: 'Jekyll & Hyde Model Essays — Grade 5, 7 & 9 | The English Hub',
+  title: 'Jekyll & Hyde Model Essays — Grade 5, 7 & 9',
   description:
     "Three fully-annotated model essays answering 'How does Stevenson present the theme of duality?' at Grade 5, 7 and 9, with AO breakdowns, paragraph annotations and marker commentary. AQA mark scheme.",
   keywords: [

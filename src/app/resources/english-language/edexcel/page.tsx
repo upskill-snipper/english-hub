@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       'Pearson Edexcel GCSE English Language Paper 1 and Paper 2 walkthroughs, mark schemes, writing skills, exam technique guides and grade boundaries.',
   },
-  title: 'Pearson Edexcel GCSE English Language resources — The English Hub',
+  title: 'Pearson Edexcel GCSE English Language resources',
   description:
     'Pearson Edexcel GCSE English Language Paper 1 and Paper 2 walkthroughs, mark schemes, writing skills, exam technique guides and grade boundaries.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel' },

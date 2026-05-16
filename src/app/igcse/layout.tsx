@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { RevisionShell } from '@/app/revision/_components/revision-shell'
 
 export const metadata: Metadata = {
-  title: 'IGCSE English — The English Hub',
+  title: 'IGCSE English',
   description:
     'IGCSE English Literature and Language revision resources. Study guides, exam technique and past-paper practice for top grades.',
   alternates: { canonical: 'https://theenglishhub.app/igcse' },

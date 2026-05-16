@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
 
 export const metadata: Metadata = {
-  title: 'Model Macbeth Essays: Grade 5, 7 & 9 with Marker Annotations | The English Hub',
+  title: 'Model Macbeth Essays: Grade 5, 7 & 9 with Marker Annotations',
   description:
     'Five fully-annotated model Macbeth essays at Grade 5, 7, and 9 covering Lady Macbeth and guilt. Paragraph-by-paragraph marker commentary with AO breakdowns and grade justifications.',
   alternates: {

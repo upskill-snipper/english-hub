@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description:
       'Complete revision hub for Pearson Edexcel IGCSE English Literature. Paper 1 and Paper 2 breakdowns, set text guides, anthology poetry and exam technique.',
   },
-  title: 'Edexcel IGCSE Literature — The English Hub',
+  title: 'Edexcel IGCSE Literature',
   description:
     'Complete revision hub for Pearson Edexcel IGCSE English Literature. Paper 1 and Paper 2 breakdowns, set text guides, anthology poetry and exam technique.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/edexcel' },

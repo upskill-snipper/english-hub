@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       'Cambridge IGCSE Paper 1 reading practice for analysing dialogue in fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Dialogue Analysis — Reading Practice Framework — The English Hub',
+  title: 'Dialogue Analysis — Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice for analysing dialogue in fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {

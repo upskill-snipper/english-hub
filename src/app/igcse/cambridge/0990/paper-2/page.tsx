@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description:
       'Cambridge IGCSE Language B Paper 2 Directed Writing and Composition: full breakdown, timing, grade boundaries and exam technique.',
   },
-  title: 'Paper 2 Directed Writing & Composition | Cambridge IGCSE Language B | The English Hub',
+  title: 'Paper 2 Directed Writing & Composition | Cambridge IGCSE Language B',
   description:
     'Cambridge IGCSE Language B Paper 2 Directed Writing and Composition: full breakdown, timing, grade boundaries and exam technique.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/paper-2' },

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       'Full breakdown of the three question types on Cambridge IGCSE Language B Paper 1 Reading: comprehension, language analysis and summary. Worked technique for each.',
   },
-  title: 'Paper 1 Question Types | Cambridge IGCSE Language B | The English Hub',
+  title: 'Paper 1 Question Types | Cambridge IGCSE Language B',
   description:
     'Full breakdown of the three question types on Cambridge IGCSE Language B Paper 1 Reading: comprehension, language analysis and summary. Worked technique for each.',
   alternates: {

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       'Cambridge IGCSE Paper 1 reading practice on Victorian fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   },
-  title: 'Approaching Victorian Fiction — Reading Practice Framework — The English Hub',
+  title: 'Approaching Victorian Fiction — Reading Practice Framework',
   description:
     'Cambridge IGCSE Paper 1 reading practice on Victorian fiction. Comprehension, language analysis, summary and self-assessment using free Project Gutenberg texts.',
   alternates: {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/edexcel/shakespeare',
   },
-  title: 'IGCSE Edexcel Shakespeare — Macbeth, Romeo and Juliet, Much Ado — The English Hub',
+  title: 'IGCSE Edexcel Shakespeare — Macbeth, Romeo and Juliet, Much Ado',
   description:
     'Pearson Edexcel IGCSE Literature 4ET1 Shakespeare section. Three plays: Macbeth, Romeo and Juliet, Much Ado About Nothing. Themes, characters, essay plans.',
 }

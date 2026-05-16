@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description:
       'AQA GCSE English Language Paper 1 and Paper 2 resources. Reading techniques, writing skills, exam technique, mark schemes and grade boundaries.',
   },
-  title: 'AQA GCSE English Language resources — The English Hub',
+  title: 'AQA GCSE English Language resources',
   description:
     'AQA GCSE English Language Paper 1 and Paper 2 resources. Reading techniques, writing skills, exam technique, mark schemes and grade boundaries.',
   alternates: { canonical: 'https://theenglishhub.app/resources/english-language/aqa' },

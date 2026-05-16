@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description:
       'Study guide for A Passage to Africa by George Alagiah. Thematic and structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   },
-  title: 'A Passage to Africa — George Alagiah — IGCSE Language A Anthology — The English Hub',
+  title: 'A Passage to Africa — George Alagiah — IGCSE Language A Anthology',
   description:
     'Study guide for A Passage to Africa by George Alagiah. Thematic and structural analysis, key vocabulary and exam practice for Edexcel IGCSE English Language A.',
   alternates: {

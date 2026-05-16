@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       'Cambridge IGCSE Language B Paper 1 Reading: full overview, question structure, timing strategy and 9-1 grade boundaries.',
   },
-  title: 'Paper 1 Reading | Cambridge IGCSE Language B | The English Hub',
+  title: 'Paper 1 Reading | Cambridge IGCSE Language B',
   description:
     'Cambridge IGCSE Language B Paper 1 Reading: full overview, question structure, timing strategy and 9-1 grade boundaries.',
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/paper-1' },
