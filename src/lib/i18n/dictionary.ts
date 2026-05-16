@@ -48,6 +48,7 @@ import { PLACEHOLDER_FIX_MAY16 } from './dictionary-placeholder-fix-may16'
 import { REPORT_FIX_MAY16B } from './dictionary-report-fix-may16b'
 import { PRESS_AND_VERIFIED_FIX } from './dictionary-press-verified'
 import { HOMEPAGE_DICTIONARY } from './dictionary-homepage'
+import { AFF_PUBLIC_DICTIONARY } from './dictionary-affiliates'
 
 export type Locale = 'en' | 'ar'
 
@@ -14717,6 +14718,11 @@ export function lookup(key: string, locale: Locale): string {
     DEMO_PAGES_DICTIONARY[key] ??
     POETRY_HUB_DICTIONARY[key] ??
     HOMEPAGE_DICTIONARY[key] ??
+    // Curated bilingual /affiliates copy. Same tier as HOMEPAGE_DICTIONARY
+    // (curated overrides), placed BEFORE every placeholder/audit supplement
+    // so its genuine Khaleeji Arabic wins over the English-mirror
+    // REPORT_FIX_MAY16B / PLACEHOLDER_FIX_* and the junk AUDIT_FIX values.
+    AFF_PUBLIC_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??
