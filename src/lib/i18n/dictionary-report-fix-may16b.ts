@@ -19,7 +19,7 @@
  * mirrors EN as a graceful fallback until the next translation sweep.
  *
  * Accessibility copy is deliberately HONEST: it states a TARGET of
- * WCAG 2.1 AA and genuine known gaps — it does not claim full or
+ * WCAG 2.2 AA and genuine known gaps — it does not claim full or
  * externally-audited conformance.
  */
 
@@ -44,8 +44,8 @@ export const REPORT_FIX_MAY16B: Dictionary = {
   },
   'accessibility.what.contrast.name': { en: 'Colour contrast', ar: 'Colour contrast' },
   'accessibility.what.contrast.desc': {
-    en: 'Text and interface colours are chosen to target the WCAG 2.1 AA contrast ratios in both light and dark themes.',
-    ar: 'Text and interface colours are chosen to target the WCAG 2.1 AA contrast ratios in both light and dark themes.',
+    en: 'Text and interface colours are chosen to target the WCAG 2.2 AA contrast ratios in both light and dark themes.',
+    ar: 'Text and interface colours are chosen to target the WCAG 2.2 AA contrast ratios in both light and dark themes.',
   },
   'accessibility.what.responsive.name': { en: 'Responsive layout', ar: 'Responsive layout' },
   'accessibility.what.responsive.desc': {
@@ -111,8 +111,8 @@ export const REPORT_FIX_MAY16B: Dictionary = {
   },
   'accessibility.assessment.self.name': { en: 'Self-evaluation', ar: 'Self-evaluation' },
   'accessibility.assessment.self.desc': {
-    en: 'We carry out internal reviews using automated checks, manual keyboard testing and screen-reader spot-checks against WCAG 2.1 AA.',
-    ar: 'We carry out internal reviews using automated checks, manual keyboard testing and screen-reader spot-checks against WCAG 2.1 AA.',
+    en: 'We carry out internal reviews using automated checks, manual keyboard testing and screen-reader spot-checks against WCAG 2.2 AA.',
+    ar: 'We carry out internal reviews using automated checks, manual keyboard testing and screen-reader spot-checks against WCAG 2.2 AA.',
   },
   'accessibility.assessment.feedback.name': { en: 'User feedback', ar: 'User feedback' },
   'accessibility.assessment.feedback.desc': {

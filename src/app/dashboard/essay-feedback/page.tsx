@@ -21,6 +21,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { markSchemes, getPapersForBoard, getQuestionTypes } from '@/data/mark-schemes'
 import { getQuestionsForType } from '@/data/exam-questions'
 import { cn } from '@/lib/utils'
+import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -139,7 +140,7 @@ export default function EssayFeedbackPage() {
 
   const availableQuestionTypes = useMemo(() => {
     if (!board || !paper) return []
-    return getQuestionTypes(board, paper).filter(qt => !SHORT_ANSWER_TYPES.includes(qt))
+    return getQuestionTypes(board, paper).filter((qt) => !SHORT_ANSWER_TYPES.includes(qt))
   }, [board, paper])
 
   const availableQuestions = useMemo(() => {
@@ -174,7 +175,7 @@ export default function EssayFeedbackPage() {
   // Handle question selection from dropdown
   function handleQuestionSelect(questionId: string | null) {
     setSelectedQuestionId(questionId)
-    const question = availableQuestions.find(q => q.id === questionId)
+    const question = availableQuestions.find((q) => q.id === questionId)
     if (question && !question.id.endsWith('-custom')) {
       setQuestionText(question.text)
     } else {
@@ -263,10 +264,14 @@ export default function EssayFeedbackPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8">
-
         {/* Header */}
         <div className="mb-6 animate-fade-in">
-          <Button variant="ghost" size="sm" className="mb-3 gap-1.5" render={<Link href="/dashboard" />}>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="mb-3 gap-1.5"
+            render={<Link href="/dashboard" />}
+          >
             <ArrowLeft className="h-3.5 w-3.5" />
             Dashboard
           </Button>
@@ -280,7 +285,8 @@ export default function EssayFeedbackPage() {
                 AI Essay Feedback
               </h1>
               <p className="mt-0.5 text-sm text-muted-foreground">
-                Get GCSE marker-level feedback on your writing, aligned to your exam board&apos;s marking guide.
+                Get GCSE marker-level feedback on your writing, aligned to your exam board&apos;s
+                marking guide.
               </p>
             </div>
           </div>
@@ -305,7 +311,6 @@ export default function EssayFeedbackPage() {
           />
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in">
-
             {/* Selectors row */}
             <div className="grid gap-4 sm:grid-cols-3">
               {/* Board */}
@@ -328,7 +333,12 @@ export default function EssayFeedbackPage() {
               {/* Paper */}
               <div className="space-y-2">
                 <Label htmlFor="paper">Paper</Label>
-                <Select key={board} value={paper} onValueChange={handlePaperChange} disabled={!board}>
+                <Select
+                  key={board}
+                  value={paper}
+                  onValueChange={handlePaperChange}
+                  disabled={!board}
+                >
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder={board ? 'Select paper' : 'Select board first'} />
                   </SelectTrigger>
@@ -345,7 +355,16 @@ export default function EssayFeedbackPage() {
               {/* Question type */}
               <div className="space-y-2">
                 <Label htmlFor="questionType">Question Type</Label>
-                <Select key={`${board}-${paper}`} value={questionType} onValueChange={(v) => { setQuestionType(v); setSelectedQuestionId(null); setQuestionText('') }} disabled={!paper}>
+                <Select
+                  key={`${board}-${paper}`}
+                  value={questionType}
+                  onValueChange={(v) => {
+                    setQuestionType(v)
+                    setSelectedQuestionId(null)
+                    setQuestionText('')
+                  }}
+                  disabled={!paper}
+                >
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder={paper ? 'Select type' : 'Select paper first'} />
                   </SelectTrigger>
@@ -363,9 +382,16 @@ export default function EssayFeedbackPage() {
             {/* Question selection */}
             <div className="space-y-2">
               <Label htmlFor="questionSelect">Question</Label>
-              <Select key={`${board}-${paper}-${questionType}`} value={selectedQuestionId} onValueChange={handleQuestionSelect} disabled={!questionType}>
+              <Select
+                key={`${board}-${paper}-${questionType}`}
+                value={selectedQuestionId}
+                onValueChange={handleQuestionSelect}
+                disabled={!questionType}
+              >
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder={questionType ? 'Select a question' : 'Select question type first'} />
+                  <SelectValue
+                    placeholder={questionType ? 'Select a question' : 'Select question type first'}
+                  />
                 </SelectTrigger>
                 <SelectContent>
                   {availableQuestions.map((q) => (
@@ -384,7 +410,8 @@ export default function EssayFeedbackPage() {
                 />
               )}
               <p className="text-xs text-muted-foreground">
-                Choose a question from your exam board, or select &quot;I&apos;ll type my own question&quot; to enter a custom one.
+                Choose a question from your exam board, or select &quot;I&apos;ll type my own
+                question&quot; to enter a custom one.
               </p>
             </div>
 
@@ -395,7 +422,7 @@ export default function EssayFeedbackPage() {
                 <span
                   className={cn(
                     'text-xs tabular-nums',
-                    wordCount < 100 ? 'text-destructive' : 'text-muted-foreground'
+                    wordCount < 100 ? 'text-destructive' : 'text-muted-foreground',
                   )}
                 >
                   {wordCount} word{wordCount !== 1 ? 's' : ''}
@@ -428,7 +455,14 @@ export default function EssayFeedbackPage() {
               <Button
                 type="submit"
                 size="lg"
-                disabled={submitting || !board || !paper || !questionType || !questionText.trim() || wordCount < 100}
+                disabled={
+                  submitting ||
+                  !board ||
+                  !paper ||
+                  !questionType ||
+                  !questionText.trim() ||
+                  wordCount < 100
+                }
               >
                 {submitting ? (
                   <>
@@ -469,12 +503,16 @@ function FeedbackResults({
 
   return (
     <div className="space-y-6 animate-fade-in">
+      {/* Consistent AI-generated disclosure (policy-matched). */}
+      <AiGeneratedNotice variant="panel" />
 
       {/* Disclaimer Banner */}
       <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-amber-700">
         <p className="font-medium">Important Disclaimer</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          This is an AI-generated estimate based on the marking guide criteria. It is not an official grade and should be used alongside your teacher&apos;s guidance. Actual exam grades may differ.
+          This is an AI-generated estimate based on the marking guide criteria. It is not an
+          official grade and should be used alongside your teacher&apos;s guidance. Actual exam
+          grades may differ.
         </p>
       </div>
 
@@ -486,7 +524,7 @@ function FeedbackResults({
               className={cn(
                 'flex h-16 w-16 items-center justify-center rounded-2xl ring-4',
                 gradeStyle.bg,
-                gradeStyle.ring
+                gradeStyle.ring,
               )}
             >
               <Award className={cn('h-8 w-8', gradeStyle.text)} />
@@ -503,9 +541,7 @@ function FeedbackResults({
                   {questionType}
                 </Badge>
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {feedback.gradeJustification}
-              </p>
+              <p className="mt-1 text-sm text-muted-foreground">{feedback.gradeJustification}</p>
             </div>
           </div>
         </CardContent>
@@ -534,7 +570,10 @@ function FeedbackResults({
                   </div>
                   <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
                     <div
-                      className={cn('h-full rounded-full transition-all duration-500', getScoreBarColor(ao.score, ao.maxScore))}
+                      className={cn(
+                        'h-full rounded-full transition-all duration-500',
+                        getScoreBarColor(ao.score, ao.maxScore),
+                      )}
                       style={{ width: `${Math.min(pct, 100)}%` }}
                     />
                   </div>
@@ -606,13 +645,13 @@ function FeedbackResults({
         </CardHeader>
         <CardContent>
           <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground">
-            {feedback.annotatedFeedback.split('\n').map((paragraph, i) => (
+            {feedback.annotatedFeedback.split('\n').map((paragraph, i) =>
               paragraph.trim() ? (
                 <p key={i} className="mb-3 text-sm leading-relaxed">
                   {paragraph}
                 </p>
-              ) : null
-            ))}
+              ) : null,
+            )}
           </div>
         </CardContent>
       </Card>

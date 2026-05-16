@@ -5146,8 +5146,8 @@ export const DICTIONARY: Dictionary = {
     ar: 'VPAT — نموذج إمكانية الوصول الطوعي للمنتج (PDF)',
   },
   'about.compliance.access_statement': {
-    en: 'Accessibility Statement (WCAG 2.1 AA target)',
-    ar: 'بيان إمكانية الوصول (هدف WCAG 2.1 AA)',
+    en: 'Accessibility Statement (WCAG 2.2 AA target)',
+    ar: 'بيان إمكانية الوصول (هدف WCAG 2.2 AA)',
   },
   'about.compliance.cyber': {
     en: 'Cyber Essentials certificate (filing Q3 2026)',
@@ -5222,7 +5222,7 @@ export const DICTIONARY: Dictionary = {
     en: 'The English Hub (theenglishhub.app) is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply the relevant accessibility standards. Our target conformance level is',
     ar: 'The English Hub (theenglishhub.app) ملتزم بضمان إمكانية الوصول الرقمي لذوي الإعاقة. إحنا نحسّن تجربة المستخدم للجميع بشكل مستمر ونطبّق معايير إمكانية الوصول المعنيّة. مستوى التطابق المستهدف عندنا هو',
   },
-  'accessibility.commitment.target_level': { en: 'WCAG 2.1 Level AA', ar: 'WCAG 2.1 المستوى AA' },
+  'accessibility.commitment.target_level': { en: 'WCAG 2.2 Level AA', ar: 'WCAG 2.2 المستوى AA' },
   'accessibility.commitment.body2': {
     en: 'We believe that every learner, regardless of ability, should be able to access high-quality English language learning resources. This commitment extends across all areas of our platform, from course content and practice exercises to exam preparation tools and AI essay feedback.',
     ar: 'إحنا نؤمن إن كل متعلِّم، مهما كانت قدراته، لازم يقدر يوصل لموارد تعليم English بجودة عالية. هذا الالتزام يشمل كل أجزاء منصّتنا، من محتوى الكورسات وتمارين التدريب إلى أدوات تحضير الامتحان وملاحظات المقالات بالذكاء الاصطناعي.',

@@ -18,6 +18,7 @@ import {
 import { useBoard } from '@/hooks/useBoard'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { Badge } from '@/components/ui/badge'
+import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { Button } from '@/components/ui/button'
 import {
   LS_KEYS,
@@ -354,6 +355,10 @@ export default function RevisionBuilderPage() {
                 Generated for Grade {targetGrade} -- {topic}
               </span>
             </div>
+
+            {/* Consistent AI-generated disclosure when the output was
+                AI-generated (policy-matched, links to /legal/ai-governance). */}
+            {aiGenerated && <AiGeneratedNotice variant="panel" className="print:hidden" />}
 
             {/* Actions */}
             <div className="flex flex-wrap gap-3 print:hidden">

@@ -353,8 +353,8 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   'legal_long.ai_gov.s5.li6_strong': { en: 'Transparency. ', ar: 'الشفافية. ' },
   'legal_long.ai_gov.s5.li6_text': {
-    en: 'We do not consistently label AI-generated content in-product. Gap — see Remediation 6.',
-    ar: 'لا نضع علامات على المحتوى المُولَّد بالذكاء الاصطناعي داخل المنتج بصورة مُتّسقة. ثغرة — يُراجَع الإجراء التصحيحي 6.',
+    en: 'AI essay-feedback panels, marking results, AI-generated revision material and AI-authored blog posts now carry a consistent visible "Made with AI — review before relying on it" label that links to this page. Remaining gap: a small number of statically pre-authored AI-assisted study pages may not yet display the label, and a pre-publication content classifier is still in progress (see Remediation 3).',
+    ar: 'تحمل الآن لوحات تقييم المقالات بالذكاء الاصطناعي ونتائج التصحيح والمواد المراجعة المُولَّدة والمقالات المُؤلَّفة بالذكاء الاصطناعي علامة ظاهرة ومتّسقة بنصّ "صُنع بمساعدة الذكاء الاصطناعي — يُرجى المراجعة قبل الاعتماد عليه" مرتبطة بهذه الصفحة. ثغرة متبقّية: قد لا تعرض بعض صفحات الدراسة المُعدّة مسبقاً العلامة بعد، ولا يزال مُصنِّف المحتوى قبل النشر قيد التنفيذ (يُراجَع الإجراء التصحيحي 3).',
   },
   'legal_long.ai_gov.s5.rem6_strong': { en: 'Remediation (6): ', ar: 'الإجراء التصحيحي (6): ' },
   'legal_long.ai_gov.s5.rem6_text': {

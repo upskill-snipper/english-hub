@@ -1,0 +1,11 @@
+# The English Hub — security contact & vulnerability disclosure (RFC 9116)
+# Operated by Upskill Energy Limited (Companies House 16511479).
+
+Contact: mailto:legal@theenglishhub.app
+Expires: 2027-05-16T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://theenglishhub.app/.well-known/security.txt
+Policy: https://theenglishhub.app/security
+# We operate a coordinated vulnerability disclosure process. Good-faith
+# security research conducted within the published policy will not be
+# pursued legally. We aim to acknowledge reports within one working day.

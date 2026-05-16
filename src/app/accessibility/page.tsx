@@ -4,12 +4,12 @@ import { tMany } from '@/lib/i18n/t'
 export const metadata: Metadata = {
   title: 'Accessibility Statement',
   description:
-    'Our commitment to making The English Hub accessible to all learners. WCAG 2.1 AA compliance, assistive technology support, and inclusive design.',
+    'Our commitment to making The English Hub accessible to all learners: a WCAG 2.2 AA target, assistive-technology support, honest known limitations, and inclusive design.',
   alternates: { canonical: 'https://theenglishhub.app/accessibility' },
   openGraph: {
     title: 'Accessibility Statement — The English Hub',
     description:
-      'Our commitment to making The English Hub accessible to all learners. WCAG 2.1 AA compliance, assistive technology support, and inclusive design.',
+      'Our commitment to making The English Hub accessible to all learners: a WCAG 2.2 AA target, assistive-technology support, honest known limitations, and inclusive design.',
   },
 }
 

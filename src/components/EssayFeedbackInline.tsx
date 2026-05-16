@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
+import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -411,6 +412,10 @@ function InlineFeedbackResults({
 
   return (
     <div className="space-y-4 animate-fade-in">
+      {/* Consistent AI-generated disclosure (policy-matched, links to
+          /legal/ai-governance). Canonical AI-feedback panel — covers
+          every route that renders EssayFeedbackInline. */}
+      <AiGeneratedNotice variant="panel" />
       {/* Disclaimer */}
       <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-amber-700">
         <p className="font-medium text-sm">{t('marking.ai_generated_estimate')}</p>
