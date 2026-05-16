@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { GeoFaq, REVISION_FAQS } from '@/components/seo/GeoFaq'
 
 export const metadata: Metadata = {
   title: 'Practice Questions',
@@ -13,5 +14,12 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      {children}
+      <div className="mx-auto w-full max-w-5xl px-4 pb-16 sm:px-6">
+        <GeoFaq faqs={REVISION_FAQS} heading="Practice & revision: common questions" />
+      </div>
+    </>
+  )
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { GeoFaq, RESOURCES_FAQS } from '@/components/seo/GeoFaq'
 
 // Created 2026-05-16 for GEO: /resources had NO layout and ~181 leaf
 // pages emitted zero structured data — the single biggest schema gap.
@@ -22,6 +23,15 @@ export default function ResourcesLayout({ children }: { children: React.ReactNod
         audienceRole="student"
       />
       {children}
+      {/* Tree-wide GEO FAQ: adds FAQPage JSON-LD + question-shaped
+          headings + citable exam codes to every /resources/* leaf
+          (181 pages) from one file. None of these pages emit their own
+          FAQPage, so there is no duplicate-structured-data conflict.
+          Cluster-specific FAQ sets via mid-level layouts are a planned
+          refinement to avoid an identical block across the tree. */}
+      <div className="mx-auto w-full max-w-5xl px-4 pb-16 sm:px-6">
+        <GeoFaq faqs={RESOURCES_FAQS} heading="English resources: common questions" />
+      </div>
     </>
   )
 }
