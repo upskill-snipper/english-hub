@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Sparkles, GraduationCap } from 'lucide-react'
-import { GeoFaq, REVISION_FAQS } from '@/components/seo/GeoFaq'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -152,8 +151,8 @@ export default async function ALevelHubPage() {
         </div>
       </section>
 
-      {/* ── GEO FAQ (visible question headings + FAQPage JSON-LD) ──── */}
-      <GeoFaq faqs={REVISION_FAQS} heading="A-Level English: common questions" />
+      {/* GeoFaq now lives in a-level/layout.tsx so it covers this hub
+          AND every /a-level/* board sub-page from one source. */}
 
       {/* ── Footnote ───────────────────────────────────────────────── */}
       <p className="text-center text-body-xs text-muted-foreground/60">{tFootnote}</p>

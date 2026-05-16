@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { RevisionShell } from '@/app/revision/_components/revision-shell'
 import { LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { GeoFaq, IGCSE_FAQS } from '@/components/seo/GeoFaq'
 
 export const metadata: Metadata = {
   title: 'IGCSE English',
@@ -29,7 +30,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         about="IGCSE English"
         audienceRole="student"
       />
-      <RevisionShell>{children}</RevisionShell>
+      <RevisionShell>
+        {children}
+        <div className="mx-auto w-full max-w-5xl px-4 pb-12 sm:px-6">
+          <GeoFaq faqs={IGCSE_FAQS} heading="IGCSE English: common questions" />
+        </div>
+      </RevisionShell>
     </>
   )
 }

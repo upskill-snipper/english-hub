@@ -88,6 +88,21 @@ export const GCSE_BOARD_FAQS: GeoFaqItem[] = [
     answer:
       'Move from feature-spotting to analysing why the writer’s choices matter, sustain a single clear argument, embed shorter quotations, and add a conceptual or contextual overview. Targeted feedback on real essays accelerates this faster than re-reading notes.',
   },
+  {
+    question: 'What are the AO1, AO2 and AO3 assessment objectives in GCSE English Literature?',
+    answer:
+      'AO1 is your informed personal response with embedded textual references. AO2 is analysis of the writer’s methods — language, form and structure — and their effects. AO3 is the relationship between the text and the contexts in which it was written and received. Weightings differ by board, so check your specification, but AO1 and AO2 carry the most marks on most papers.',
+  },
+  {
+    question: 'Is The English Hub endorsed by AQA, Edexcel or OCR?',
+    answer:
+      'No. The English Hub is an independent platform. Resources are aligned to public specifications and assessment objectives, but it is not endorsed, approved or affiliated with any exam board. Always confirm final requirements with your teacher and the board’s official specification.',
+  },
+  {
+    question: 'How do I analyse an unseen poem in the exam?',
+    answer:
+      'Read it twice, then identify the subject, the speaker’s attitude and how it shifts. Work outward from form and structure (stanzas, line length, rhyme, volta) to language and imagery, always linking method to effect and to the poem’s overall meaning. Plan a clear argument before writing rather than annotating endlessly.',
+  },
 ]
 
 export const IGCSE_FAQS: GeoFaqItem[] = [
@@ -117,6 +132,26 @@ export const IGCSE_FAQS: GeoFaqItem[] = [
     answer:
       'Components cover the Pearson Poetry Anthology plus prose and drama set texts (commonly including Of Mice and Men, To Kill a Mockingbird, Things Fall Apart and a Shakespeare play). Your centre chooses the exact texts, so confirm yours with your teacher before revising.',
   },
+  {
+    question: 'What is the Cambridge IGCSE 0500 directed writing question?',
+    answer:
+      'In Paper 1 (Reading) and Paper 2 (Directed Writing and Composition) you respond to one or two texts in a specified form — a letter, speech, report or article — for a stated audience and purpose. Marks are split between reading (understanding and using the texts) and writing (style, structure and accuracy), so address both deliberately.',
+  },
+  {
+    question: 'How is IGCSE English graded — A*–G or 9–1?',
+    answer:
+      'It depends on the syllabus your centre enters. Cambridge 0500 and Edexcel 4EA1/4ET1 are typically graded A*–G, while Cambridge 0990/0992 use the 9–1 scale. The teaching content and skills are equivalent across the paired syllabuses — check which code your school uses for grade boundaries.',
+  },
+  {
+    question: 'Does The English Hub mark IGCSE essays to the specification?',
+    answer:
+      'Yes. Essay feedback is mapped to the relevant IGCSE assessment objectives and band descriptors for your syllabus, with targeted improvement steps. It is AI-assisted revision guidance, not an official Cambridge or Pearson result, and a human-review option is available.',
+  },
+  {
+    question: 'How do I revise IGCSE English when there are no past papers for my route?',
+    answer:
+      'Use the published specimen and assessment materials from the board, practise the exact question types under timed conditions, and self-assess against the mark scheme. Skill drills — directed writing structures, summary technique and analytical paragraphs — transfer across papers even when past-paper supply is limited.',
+  },
 ]
 
 export const REVISION_FAQS: GeoFaqItem[] = [
@@ -145,6 +180,21 @@ export const REVISION_FAQS: GeoFaqItem[] = [
     answer:
       'Yes — the toolkit builds board-specific revision and study plans, and analytics highlight weaker areas so you can focus your time where it raises your grade most.',
   },
+  {
+    question: 'How far in advance should I start GCSE English revision?',
+    answer:
+      'Begin light, regular review around six months out — quotation banks and technique recall benefit most from spacing. Step up timed essay practice in the final two to three months. Cramming works poorly for English because the marks come from practised analytical skill, not memorised facts.',
+  },
+  {
+    question: 'What is the difference between AO1, AO2 and AO3 in practice?',
+    answer:
+      'AO1 is answering the question with a clear argument and embedded evidence. AO2 is analysing how the writer’s methods create meaning and effect. AO3 is linking ideas to context only where it deepens interpretation. A strong paragraph usually weaves AO1 and AO2 together, with AO3 added where it earns marks.',
+  },
+  {
+    question: 'How do I revise quotations without rote learning?',
+    answer:
+      'Group short quotations by theme and character, test yourself with active recall rather than re-reading, and practise applying each quotation to different exam questions. Flexible quotations that serve multiple themes are worth far more than long passages memorised verbatim.',
+  },
 ]
 
 export const RESOURCES_FAQS: GeoFaqItem[] = [
@@ -172,5 +222,20 @@ export const RESOURCES_FAQS: GeoFaqItem[] = [
     question: 'Does The English Hub check its content for accuracy?',
     answer:
       'Yes. Content follows a published verification methodology — quotations are checked against reliable sources, high-stakes material is human-reviewed, and reader-reported errors are corrected. The platform is independent and exam-board aligned, not endorsed.',
+  },
+  {
+    question: 'Which English resources help most for AQA Paper 1 and Paper 2?',
+    answer:
+      'For AQA English Language Paper 1, focus on the language-analysis and structure technique guides plus narrative/descriptive model answers. For Paper 2, use the comparison and persuasive-writing walkthroughs. Map each resource to the specific question it serves rather than reading broadly.',
+  },
+  {
+    question: 'Are there free model answers for GCSE English Literature?',
+    answer:
+      'Yes — the model-answers section includes grade-7-to-9 exemplar essays with marker commentary explaining the band judgement. Read them for structure and how analysis is built, not to memorise, then apply the same moves to your own practice essays.',
+  },
+  {
+    question: 'How do I use the vocabulary and technique resources effectively?',
+    answer:
+      'Learn techniques in pairs of name plus effect, not definitions alone, and immediately apply each to a short passage. For vocabulary, prioritise precise analytical verbs and conceptual nouns you can deploy in essays rather than long word lists.',
   },
 ]

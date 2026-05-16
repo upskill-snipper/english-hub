@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { TrackEvent } from '@/components/analytics/TrackEvent'
+import { GeoFaq, GCSE_BOARD_FAQS } from '@/components/seo/GeoFaq'
 
 export const metadata: Metadata = {
   openGraph: {
@@ -67,6 +68,9 @@ export default async function Home() {
         showHelpLink
         showDivider
       />
+      <div className="mx-auto w-full max-w-5xl px-4 pb-16 sm:px-6">
+        <GeoFaq faqs={GCSE_BOARD_FAQS} heading="GCSE & IGCSE English: common questions" />
+      </div>
     </main>
   )
 }

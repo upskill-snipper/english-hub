@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { RevisionShell } from './_components/revision-shell'
 import { LearningResourceJsonLd } from '@/components/seo/json-ld'
+import { GeoFaq, REVISION_FAQS } from '@/components/seo/GeoFaq'
 
 export const metadata: Metadata = {
   title: 'Your Hub',
@@ -32,7 +33,12 @@ export default function RevisionLayout({ children }: { children: React.ReactNode
         about="English revision"
         audienceRole="student"
       />
-      <RevisionShell>{children}</RevisionShell>
+      <RevisionShell>
+        {children}
+        <div className="mx-auto w-full max-w-5xl px-4 pb-12 sm:px-6">
+          <GeoFaq faqs={REVISION_FAQS} heading="English revision: common questions" />
+        </div>
+      </RevisionShell>
     </>
   )
 }

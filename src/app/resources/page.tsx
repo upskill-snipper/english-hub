@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { GeoFaq, RESOURCES_FAQS } from '@/components/seo/GeoFaq'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { tMany } from '@/lib/i18n/t'
@@ -300,11 +299,8 @@ export default async function ResourcesPage() {
           </div>
         </div>
       </section>
-
-      {/* ── GEO FAQ (visible question headings + FAQPage JSON-LD) ──── */}
-      <section className="mx-auto w-full max-w-5xl px-4 pb-16 sm:px-6">
-        <GeoFaq faqs={RESOURCES_FAQS} heading="English resources: common questions" />
-      </section>
+      {/* GeoFaq now lives in resources/layout.tsx so it covers this hub
+          AND all ~181 leaf pages without a duplicate FAQPage here. */}
     </main>
   )
 }
