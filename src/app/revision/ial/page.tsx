@@ -25,6 +25,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'IAL English — Your Hub',
@@ -310,6 +311,38 @@ const PITFALLS = [
 export default async function IalHubPage() {
   const ialTexts = getSetTextsForBoard('ial-edexcel')
 
+  const backToHub = await t('revision.ial.back_to_hub')
+  const heroBadge = await t('revision.ial.hero_badge')
+  const heroTitle = await t('revision.ial.hero_title')
+  const heroBody = await t('revision.ial.hero_body')
+  const ctaUnits = await t('revision.ial.cta_units')
+  const ctaMocks = await t('revision.ial.cta_mocks')
+  const ctaAi = await t('revision.ial.cta_ai')
+  const unitsHeading = await t('revision.ial.units_heading')
+  const unitsSubheading = await t('revision.ial.units_subheading')
+  const mocksHeading = await t('revision.ial.mocks_heading')
+  const mocksSubheading = await t('revision.ial.mocks_subheading')
+  const aiHeading = await t('revision.ial.ai_heading')
+  const aiSubheading = await t('revision.ial.ai_subheading')
+  const pitfallsHeading = await t('revision.ial.pitfalls_heading')
+  const pitfallsSubheading = await t('revision.ial.pitfalls_subheading')
+  const setTextsHeading = await t('revision.ial.set_texts_heading')
+  const setTextsSubheading = await t('revision.ial.set_texts_subheading')
+  const openTool = await t('revision.ial.open_tool')
+  const startMock = await t('revision.ial.start_mock')
+  const aoHeading = await t('revision.ial.ao_heading')
+  const aoSubheading = await t('revision.ial.ao_subheading')
+  const keepGoingHeading = await t('revision.ial.keep_going_heading')
+  const linkAnalyticsTitle = await t('revision.ial.link.analytics.title')
+  const linkAnalyticsBody = await t('revision.ial.link.analytics.body')
+  const linkStudyPlanTitle = await t('revision.ial.link.study_plan.title')
+  const linkStudyPlanBody = await t('revision.ial.link.study_plan.body')
+  const linkFlashcardsTitle = await t('revision.ial.link.flashcards.title')
+  const linkFlashcardsBody = await t('revision.ial.link.flashcards.body')
+  const linkExamTechniqueTitle = await t('revision.ial.link.exam_technique.title')
+  const linkExamTechniqueBody = await t('revision.ial.link.exam_technique.body')
+  const footnote = await t('revision.ial.footnote')
+
   return (
     <div className="space-y-10 pb-16">
       <BreadcrumbJsonLd
@@ -329,7 +362,7 @@ export default async function IalHubPage() {
           render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Your Hub
+          {backToHub}
         </Button>
       </div>
 
@@ -340,26 +373,22 @@ export default async function IalHubPage() {
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
             <Sparkles className="mr-1 size-3" aria-hidden="true" />
-            Pearson Edexcel International A-Level
+            {heroBadge}
           </Badge>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Your IAL Hub
+            {heroTitle}
           </h1>
-          <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Unit-by-unit guidance, mock exam packs, AI-marked essays, and set-text study for Pearson
-            Edexcel International A-Level English Literature (YLE0) and Language. Every section
-            below is built around the IAL specification — not borrowed from UK A-Level.
-          </p>
+          <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">{heroBody}</p>
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Button variant="default" size="sm" render={<Link href="#units" />}>
-              Jump to units <ArrowRight className="size-3.5" />
+              {ctaUnits} <ArrowRight className="size-3.5" />
             </Button>
             <Button variant="outline" size="sm" render={<Link href="#mocks" />}>
-              Mock exam pack <Timer className="size-3.5" />
+              {ctaMocks} <Timer className="size-3.5" />
             </Button>
             <Button variant="outline" size="sm" render={<Link href="#ai" />}>
-              AI self-learning <Brain className="size-3.5" />
+              {ctaAi} <Brain className="size-3.5" />
             </Button>
           </div>
         </div>
@@ -372,11 +401,8 @@ export default async function IalHubPage() {
             <GraduationCap className="size-4.5 text-primary" />
           </div>
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">Unit structure</h2>
-            <p className="text-sm text-muted-foreground">
-              Four modular exams — two at AS, two at A2. Each carries its own weighting and demands
-              a different revision approach.
-            </p>
+            <h2 className="text-heading-lg font-heading text-foreground">{unitsHeading}</h2>
+            <p className="text-sm text-muted-foreground">{unitsSubheading}</p>
           </div>
         </div>
 
@@ -428,13 +454,8 @@ export default async function IalHubPage() {
             <Target className="size-4.5 text-violet-400" />
           </div>
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">
-              Assessment Objectives (AOs)
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              Every IAL essay is marked against these five AOs. Your writing needs to serve all of
-              them — missing one is the difference between an A and an A*.
-            </p>
+            <h2 className="text-heading-lg font-heading text-foreground">{aoHeading}</h2>
+            <p className="text-sm text-muted-foreground">{aoSubheading}</p>
           </div>
         </div>
 
@@ -461,11 +482,8 @@ export default async function IalHubPage() {
             <ClipboardList className="size-4.5 text-emerald-400" />
           </div>
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">Mock exam pack</h2>
-            <p className="text-sm text-muted-foreground">
-              Unit-scoped drills and full-timed mocks. Auto-scored against IAL band descriptors,
-              with AI feedback on each AO.
-            </p>
+            <h2 className="text-heading-lg font-heading text-foreground">{mocksHeading}</h2>
+            <p className="text-sm text-muted-foreground">{mocksSubheading}</p>
           </div>
         </div>
 
@@ -493,7 +511,7 @@ export default async function IalHubPage() {
                 {mock.description}
               </p>
               <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                Start <ArrowRight className="size-3" />
+                {startMock} <ArrowRight className="size-3" />
               </span>
             </Link>
           ))}
@@ -507,11 +525,8 @@ export default async function IalHubPage() {
             <Brain className="size-4.5 text-cyan-400" />
           </div>
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">AI self-learning</h2>
-            <p className="text-sm text-muted-foreground">
-              Tools that read your data, flag your weak AOs, and push you toward your target grade
-              with IAL-specific framing.
-            </p>
+            <h2 className="text-heading-lg font-heading text-foreground">{aiHeading}</h2>
+            <p className="text-sm text-muted-foreground">{aiSubheading}</p>
           </div>
         </div>
 
@@ -542,7 +557,7 @@ export default async function IalHubPage() {
                   className="mt-3 h-auto p-0 text-xs font-semibold text-primary"
                   render={<Link href={surface.href} />}
                 >
-                  Open tool <ArrowRight className="size-3" />
+                  {openTool} <ArrowRight className="size-3" />
                 </Button>
               </CardContent>
             </Card>
@@ -557,11 +572,8 @@ export default async function IalHubPage() {
             <BookText className="size-4.5 text-blue-400" />
           </div>
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">IAL set texts</h2>
-            <p className="text-sm text-muted-foreground">
-              Core texts across Units 1-4. Full study guides with plot, characters, themes, context,
-              and 15+ verified quotations each.
-            </p>
+            <h2 className="text-heading-lg font-heading text-foreground">{setTextsHeading}</h2>
+            <p className="text-sm text-muted-foreground">{setTextsSubheading}</p>
           </div>
         </div>
 
@@ -607,11 +619,8 @@ export default async function IalHubPage() {
             <Target className="size-4.5 text-rose-400" />
           </div>
           <div>
-            <h2 className="text-heading-lg font-heading text-foreground">Common IAL pitfalls</h2>
-            <p className="text-sm text-muted-foreground">
-              The five mistakes that most often cost IAL candidates a grade. Check yourself against
-              these before every mock.
-            </p>
+            <h2 className="text-heading-lg font-heading text-foreground">{pitfallsHeading}</h2>
+            <p className="text-sm text-muted-foreground">{pitfallsSubheading}</p>
           </div>
         </div>
         <div className="space-y-3">
@@ -628,7 +637,7 @@ export default async function IalHubPage() {
 
       {/* ── Quick links rail ────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8">
-        <h2 className="text-heading-md font-heading text-foreground mb-4">Keep going</h2>
+        <h2 className="text-heading-md font-heading text-foreground mb-4">{keepGoingHeading}</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <Link
             href="/revision/analytics"
@@ -637,9 +646,9 @@ export default async function IalHubPage() {
             <LineChart className="size-4 text-primary" />
             <div>
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Your Analytics
+                {linkAnalyticsTitle}
               </p>
-              <p className="text-xs text-muted-foreground">Progress + weak AOs</p>
+              <p className="text-xs text-muted-foreground">{linkAnalyticsBody}</p>
             </div>
           </Link>
           <Link
@@ -649,9 +658,9 @@ export default async function IalHubPage() {
             <CalendarDays className="size-4 text-primary" />
             <div>
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Study Plan
+                {linkStudyPlanTitle}
               </p>
-              <p className="text-xs text-muted-foreground">Week-by-week diagnostic</p>
+              <p className="text-xs text-muted-foreground">{linkStudyPlanBody}</p>
             </div>
           </Link>
           <Link
@@ -661,9 +670,9 @@ export default async function IalHubPage() {
             <Layers className="size-4 text-primary" />
             <div>
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Flashcards
+                {linkFlashcardsTitle}
               </p>
-              <p className="text-xs text-muted-foreground">Quote + terminology drill</p>
+              <p className="text-xs text-muted-foreground">{linkFlashcardsBody}</p>
             </div>
           </Link>
           <Link
@@ -673,9 +682,9 @@ export default async function IalHubPage() {
             <PenTool className="size-4 text-primary" />
             <div>
               <p className="text-sm font-semibold text-foreground group-hover:text-primary">
-                Exam Technique
+                {linkExamTechniqueTitle}
               </p>
-              <p className="text-xs text-muted-foreground">Essay structures + timing</p>
+              <p className="text-xs text-muted-foreground">{linkExamTechniqueBody}</p>
             </div>
           </Link>
         </div>
@@ -683,10 +692,7 @@ export default async function IalHubPage() {
 
       {/* ── Footnote ─────────────────────────────────────────────── */}
       <p className="text-center text-[11px] text-muted-foreground/60">
-        Aligned with the Pearson Edexcel International A-Level English Literature (YLE0) and English
-        Language (WEN0) specifications. Always cross-check with the current live specification
-        before exam entry. <TrendingUp className="inline size-3" /> New content and mock packs are
-        added regularly.
+        {footnote} <TrendingUp className="inline size-3" />
       </p>
     </div>
   )

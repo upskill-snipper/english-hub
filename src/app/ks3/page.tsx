@@ -67,6 +67,19 @@ export default async function KS3HubPage() {
     t('ks3.skill_codes'), // 12
     t('ks3.end_of_ks3'), // 13
     t('ks3.year_overview'), // 14
+    t('ks3.hub.stat.year_groups'), // 15
+    t('ks3.hub.stat.terms_mapped'), // 16
+    t('ks3.hub.stat.skill_codes'), // 17
+    t('ks3.hub.stat.rubric_rows'), // 18
+    t('ks3.hub.ils.eyebrow'), // 19
+    t('ks3.hub.ils.cta'), // 20
+    t('ks3.hub.reference.heading'), // 21
+    t('ks3.hub.reference.explore'), // 22
+    t('ks3.hub.reference.skills.desc'), // 23
+    t('ks3.hub.reference.rubrics.desc'), // 24
+    t('ks3.hub.reference.endks3.desc'), // 25
+    t('ks3.hub.start.body'), // 26
+    t('ks3.hub.start.heading_prefix'), // 27
   ])
 
   const yearNameTr: Record<number, string> = { 7: tr[8], 8: tr[9], 9: tr[10] }
@@ -96,7 +109,7 @@ export default async function KS3HubPage() {
     {
       title: tr[12], // Skill codes
       caption: `${skillCount} codes · Y7–Y9`,
-      desc: 'The KS3 skill progression mapped code-by-code across Reading, Writing, Language and Speaking & Listening — each code shows what it becomes the following year.',
+      desc: tr[23],
       href: '/ks3/skills',
       icon: Compass,
       colour: 'text-cyan-400',
@@ -105,7 +118,7 @@ export default async function KS3HubPage() {
     {
       title: tr[11], // Marking rubrics
       caption: `${rubricCount} rubric rows`,
-      desc: 'Year-by-year marking rubrics with level descriptors, so every independent outcome is assessed against a consistent, transparent standard.',
+      desc: tr[24],
       href: '/ks3/rubrics',
       icon: ClipboardCheck,
       colour: 'text-emerald-400',
@@ -114,7 +127,7 @@ export default async function KS3HubPage() {
     {
       title: tr[13], // End of KS3 standard
       caption: 'British National Curriculum',
-      desc: 'The end-of-KS3 expected standard across reading, writing, grammar, speaking and literary knowledge — the bar students clear before GCSE.',
+      desc: tr[25],
       href: '/ks3/end-of-ks3',
       icon: Flag,
       colour: 'text-amber-400',
@@ -154,10 +167,10 @@ export default async function KS3HubPage() {
           {/* Quick stats — real curriculum counts */}
           <div className="mt-6 flex flex-wrap gap-4 sm:gap-6">
             {[
-              { label: 'Year groups', value: String(yearCount), icon: GraduationCap },
-              { label: 'Terms mapped', value: String(termCount), icon: CalendarDays },
-              { label: 'Skill codes', value: String(skillCount), icon: Compass },
-              { label: 'Rubric rows', value: String(rubricCount), icon: ClipboardCheck },
+              { label: tr[15], value: String(yearCount), icon: GraduationCap },
+              { label: tr[16], value: String(termCount), icon: CalendarDays },
+              { label: tr[17], value: String(skillCount), icon: Compass },
+              { label: tr[18], value: String(rubricCount), icon: ClipboardCheck },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -182,7 +195,7 @@ export default async function KS3HubPage() {
             <div>
               <Badge variant="secondary" className="mb-2">
                 <Sparkles className="mr-1 size-3" aria-hidden="true" />
-                Exam preparation
+                {tr[19]}
               </Badge>
               <h2 className="text-heading-md font-heading text-foreground">
                 {QUALIFICATION.title} ({QUALIFICATION.subjectCode})
@@ -196,7 +209,7 @@ export default async function KS3HubPage() {
             </div>
           </div>
           <Button variant="default" size="lg" render={<Link href="/ks3/ilowersecondary" />}>
-            Open the exam hub
+            {tr[20]}
             <ArrowRight className="size-4" />
           </Button>
         </div>
@@ -253,7 +266,7 @@ export default async function KS3HubPage() {
         <div className="mb-5 flex items-center gap-3">
           <Compass className="size-5 text-primary" aria-hidden="true" />
           <h2 id="ks3-reference-heading" className="text-heading-lg font-heading text-foreground">
-            Reference &amp; standards
+            {tr[21]}
           </h2>
         </div>
 
@@ -283,7 +296,7 @@ export default async function KS3HubPage() {
               </p>
 
               <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                Explore
+                {tr[22]}
                 <ArrowRight className="size-3.5" aria-hidden="true" />
               </div>
             </Link>
@@ -295,12 +308,9 @@ export default async function KS3HubPage() {
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">
         <PenTool className="mx-auto mb-3 size-8 text-primary" aria-hidden="true" />
         <h2 className="text-heading-lg font-heading text-foreground">
-          Start at the beginning: {yearLabelTr[7]}
+          {tr[27]} {yearLabelTr[7]}
         </h2>
-        <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Foundations builds the core reading and writing reflexes the rest of KS3 depends on. Open
-          Year 7 to see the termly plans and weekly lesson frameworks.
-        </p>
+        <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">{tr[26]}</p>
         <Button variant="default" size="lg" className="mt-5" render={<Link href="/ks3/year-7" />}>
           {tr[4]} 7 — {tr[14]}
           <ArrowRight className="size-4" />

@@ -17,80 +17,79 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ── Sub-page links ──────────────────────────────────────────────── */
 
 interface GuideLink {
-  title: string
-  description: string
+  titleKey: string
+  descKey: string
   href: string
   icon: typeof PenLine
   colour: string
   bgColour: string
-  tag?: string
+  tagKey?: string
 }
 
-function getGuides(boardShortName: string): GuideLink[] {
-  return [
-    {
-      title: 'Essay Structure',
-      description: `PEEL paragraphs, thesis statements, introductions, conclusions and model answers aligned to what each ${boardShortName} grade looks like.`,
-      href: '/revision/exam-technique/essay-structure',
-      icon: PenLine,
-      colour: 'text-blue-400',
-      bgColour: 'bg-blue-500/10',
-      tag: 'Essential',
-    },
-    {
-      title: 'Time Management',
-      description: `Minute-by-minute plans for every ${boardShortName} paper, marks-to-time conversion and rapid planning techniques.`,
-      href: '/revision/exam-technique/time-management',
-      icon: Clock,
-      colour: 'text-clay-600',
-      bgColour: 'bg-amber-500/10',
-    },
-    {
-      title: 'Question Types',
-      description: `Every ${boardShortName} question type decoded — how to approach extract, comparison, creative and evaluation questions.`,
-      href: '/revision/exam-technique/question-types',
-      icon: HelpCircle,
-      colour: 'text-violet-400',
-      bgColour: 'bg-violet-500/10',
-    },
-  ]
-}
+const GUIDES: GuideLink[] = [
+  {
+    titleKey: 'revision.exam_technique.guide.essay_structure.title',
+    descKey: 'revision.exam_technique.guide.essay_structure.desc',
+    href: '/revision/exam-technique/essay-structure',
+    icon: PenLine,
+    colour: 'text-blue-400',
+    bgColour: 'bg-blue-500/10',
+    tagKey: 'revision.exam_technique.guide.essay_structure.tag',
+  },
+  {
+    titleKey: 'revision.exam_technique.guide.time_management.title',
+    descKey: 'revision.exam_technique.guide.time_management.desc',
+    href: '/revision/exam-technique/time-management',
+    icon: Clock,
+    colour: 'text-clay-600',
+    bgColour: 'bg-amber-500/10',
+  },
+  {
+    titleKey: 'revision.exam_technique.guide.question_types.title',
+    descKey: 'revision.exam_technique.guide.question_types.desc',
+    href: '/revision/exam-technique/question-types',
+    icon: HelpCircle,
+    colour: 'text-violet-400',
+    bgColour: 'bg-violet-500/10',
+  },
+]
 
 /* ── Quick tips data ─────────────────────────────────────────────── */
 
 const QUICK_TIPS = [
   {
-    title: 'Read the question twice',
-    body: 'Underline key command words and circle the focus of the question before you start writing. Most marks are lost through misreading, not poor knowledge.',
+    titleKey: 'revision.exam_technique.tip.read_question.title',
+    bodyKey: 'revision.exam_technique.tip.read_question.body',
     icon: BookOpen,
   },
   {
-    title: 'Plan for 5 minutes',
-    body: 'A rough plan prevents waffle and keeps your argument focused. Jot down 3 points, the quotes you will use, and your thesis before writing.',
+    titleKey: 'revision.exam_technique.tip.plan.title',
+    bodyKey: 'revision.exam_technique.tip.plan.body',
     icon: Lightbulb,
   },
   {
-    title: 'Embed your quotes',
-    body: 'Never drop a quote into a sentence on its own. Weave it into your analysis: "Shelley uses the adjective \'vast\' to convey..." is far stronger than a standalone quote.',
+    titleKey: 'revision.exam_technique.tip.embed_quotes.title',
+    bodyKey: 'revision.exam_technique.tip.embed_quotes.body',
     icon: PenLine,
   },
   {
-    title: 'Link to the big ideas',
-    body: 'Markers reward responses that connect to context, authorial intent, and wider themes. Always ask yourself: why did the writer make this choice?',
+    titleKey: 'revision.exam_technique.tip.link_ideas.title',
+    bodyKey: 'revision.exam_technique.tip.link_ideas.body',
     icon: Star,
   },
   {
-    title: 'Watch the clock',
-    body: 'If you cannot finish a paragraph, write your key point in a single sentence and move on. A complete paper with short answers beats an incomplete paper with perfect ones.',
+    titleKey: 'revision.exam_technique.tip.watch_clock.title',
+    bodyKey: 'revision.exam_technique.tip.watch_clock.body',
     icon: Clock,
   },
   {
-    title: 'Use subject terminology',
-    body: 'Words like "metaphor", "sibilance", "iambic pentameter", and "semantic field" show the marker you understand craft. Use them precisely, not just to drop them in.',
+    titleKey: 'revision.exam_technique.tip.terminology.title',
+    bodyKey: 'revision.exam_technique.tip.terminology.body',
     icon: Target,
   },
 ]
@@ -104,11 +103,16 @@ export default function ExamTechniqueHubView({
   boardName: string
   shortName: string
 }) {
-  const guides = getGuides(shortName)
+  const t = useT()
 
   return (
     <div className="space-y-10 pb-16">
-      <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Exam Technique' }]} />
+      <Breadcrumb
+        items={[
+          { label: t('poetry.breadcrumb_revision'), href: '/revision' },
+          { label: t('revision.exam_technique.breadcrumb_label') },
+        ]}
+      />
       {/* ── Header ──────────────────────────────────────────────── */}
       <div>
         <Button
@@ -118,7 +122,7 @@ export default function ExamTechniqueHubView({
           render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" />
-          Back to Revision Hub
+          {t('revision.exam_technique.back_to_hub')}
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
@@ -126,10 +130,10 @@ export default function ExamTechniqueHubView({
           </div>
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">
-              {shortName} Exam Technique
+              {t('revision.exam_technique.page_title').replace('{board}', shortName)}
             </h1>
             <p className="text-body-sm text-muted-foreground">
-              Essay structure, timing and marking guide mastery for {boardName}
+              {t('revision.exam_technique.page_subtitle').replace('{board}', boardName)}
             </p>
           </div>
         </div>
@@ -140,16 +144,13 @@ export default function ExamTechniqueHubView({
         <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-emerald-500/5 blur-3xl" />
         <Badge variant="secondary" className="mb-3">
           <Sparkles className="mr-1 size-3" />
-          Why This Matters
+          {t('revision.exam_technique.why_matters_badge')}
         </Badge>
         <h2 className="text-heading-md font-heading text-foreground mb-2">
-          Technique can be the difference between Grade 5 and Grade 9
+          {t('revision.exam_technique.why_matters_heading')}
         </h2>
         <p className="text-body-sm text-muted-foreground max-w-2xl leading-relaxed">
-          You can know every quote and every context point, but without strong exam technique your
-          knowledge stays in your head instead of on the page. These guides are tailored
-          specifically to the {shortName} specification — paper structures, question types and what
-          each grade looks like — so every tip maps to the marks you can actually earn.
+          {t('revision.exam_technique.why_matters_body').replace('{board}', shortName)}
         </p>
       </section>
 
@@ -158,47 +159,52 @@ export default function ExamTechniqueHubView({
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            {shortName} Technique Guides
+            {t('revision.exam_technique.guides_heading').replace('{board}', shortName)}
           </h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {guides.map((guide) => (
-            <Link
-              key={guide.href}
-              href={guide.href}
-              className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
-            >
-              {guide.tag && (
-                <Badge
-                  variant="default"
-                  className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
-                >
-                  {guide.tag}
-                </Badge>
-              )}
+          {GUIDES.map((guide) => {
+            const title = t(guide.titleKey)
+            const description = t(guide.descKey).replace('{board}', shortName)
+            const tag = guide.tagKey ? t(guide.tagKey) : undefined
+            return (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="group relative flex flex-col rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
+              >
+                {tag && (
+                  <Badge
+                    variant="default"
+                    className="absolute right-4 top-4 text-[0.65rem] uppercase tracking-wider"
+                  >
+                    {tag}
+                  </Badge>
+                )}
 
-              <div className="mb-3 flex items-center gap-3">
-                <div
-                  className={`flex size-10 items-center justify-center rounded-xl ${guide.bgColour}`}
-                >
-                  <guide.icon className={`size-5 ${guide.colour}`} />
+                <div className="mb-3 flex items-center gap-3">
+                  <div
+                    className={`flex size-10 items-center justify-center rounded-xl ${guide.bgColour}`}
+                  >
+                    <guide.icon className={`size-5 ${guide.colour}`} />
+                  </div>
+                  <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
+                    {title}
+                  </h3>
                 </div>
-                <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
-                  {guide.title}
-                </h3>
-              </div>
 
-              <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
-                {guide.description}
-              </p>
+                <p className="flex-1 text-body-sm text-muted-foreground leading-relaxed">
+                  {description}
+                </p>
 
-              <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                Read guide
-                <ArrowRight className="size-3.5" />
-              </div>
-            </Link>
-          ))}
+                <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                  {t('revision.exam_technique.read_guide')}
+                  <ArrowRight className="size-3.5" />
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </section>
 
@@ -206,17 +212,19 @@ export default function ExamTechniqueHubView({
       <section>
         <div className="mb-5 flex items-center gap-3">
           <Lightbulb className="size-5 text-clay-600" />
-          <h2 className="text-heading-lg font-heading text-foreground">Quick Tips</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {t('revision.exam_technique.quick_tips_heading')}
+          </h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {QUICK_TIPS.map((tip) => (
-            <div key={tip.title} className="rounded-2xl border border-border/60 bg-card p-5">
+            <div key={tip.titleKey} className="rounded-2xl border border-border/60 bg-card p-5">
               <div className="mb-2 flex items-center gap-2">
                 <tip.icon className="size-4 text-emerald-400" />
-                <h3 className="text-sm font-semibold text-foreground">{tip.title}</h3>
+                <h3 className="text-sm font-semibold text-foreground">{t(tip.titleKey)}</h3>
               </div>
-              <p className="text-body-sm text-muted-foreground leading-relaxed">{tip.body}</p>
+              <p className="text-body-sm text-muted-foreground leading-relaxed">{t(tip.bodyKey)}</p>
             </div>
           ))}
         </div>
@@ -227,57 +235,48 @@ export default function ExamTechniqueHubView({
         <div className="mb-4 flex items-center gap-3">
           <CheckCircle2 className="size-5 text-emerald-400" />
           <h2 className="text-heading-md font-heading text-foreground">
-            Know What Your {shortName} Markers Look For
+            {t('revision.exam_technique.markers_heading').replace('{board}', shortName)}
           </h2>
         </div>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-2xl">
-          Every mark in GCSE English is tied to what markers look for. AOs differ between Literature
-          and Language papers — Literature uses AO1-AO4, while Language uses AO1-AO4 (reading) and
-          AO5-AO6 (writing). Note that AO4 means different things in each.
+          {t('revision.exam_technique.markers_body')}
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
             {
               ao: 'AO1',
-              label: 'Response & quotation',
-              detail:
-                'Lit & Lang: read, understand, and respond using textual references (including quotations) to support your interpretation.',
+              labelKey: 'revision.exam_technique.ao.response_quotation.label',
+              detailKey: 'revision.exam_technique.ao.response_quotation.detail',
             },
             {
               ao: 'AO2',
-              label: 'Language & structure',
-              detail:
-                'Lit & Lang: analyse how writers use language, form, and structure to create meanings and effects. Use relevant subject terminology.',
+              labelKey: 'revision.exam_technique.ao.language_structure.label',
+              detailKey: 'revision.exam_technique.ao.language_structure.detail',
             },
             {
               ao: 'AO3',
-              label: 'Context (Lit) / Synthesis (Lang)',
-              detail:
-                "Lit: show understanding of texts and the contexts they were written in. Lang: compare writers' ideas and perspectives across two or more texts.",
+              labelKey: 'revision.exam_technique.ao.context_synthesis.label',
+              detailKey: 'revision.exam_technique.ao.context_synthesis.detail',
             },
             {
               ao: 'AO4 (Lit)',
-              label: 'Technical accuracy',
-              detail:
-                'Literature only: use a range of vocabulary and sentence structures for clarity, purpose and effect with accurate spelling and punctuation. Worth ~5% of Lit marks and assessed on specific essays only (e.g. AQA Shakespeare + modern text).',
+              labelKey: 'revision.exam_technique.ao.ao4_lit.label',
+              detailKey: 'revision.exam_technique.ao.ao4_lit.detail',
             },
             {
               ao: 'AO4 (Lang)',
-              label: 'Evaluation',
-              detail:
-                'Language reading only: evaluate texts critically, supporting this with appropriate textual references.',
+              labelKey: 'revision.exam_technique.ao.ao4_lang.label',
+              detailKey: 'revision.exam_technique.ao.ao4_lang.detail',
             },
             {
               ao: 'AO5',
-              label: 'Writing: content & organisation',
-              detail:
-                'Language writing only: communicate clearly, effectively, and imaginatively, selecting and adapting tone, style, and register. Usually 24 of the 40 writing marks.',
+              labelKey: 'revision.exam_technique.ao.ao5.label',
+              detailKey: 'revision.exam_technique.ao.ao5.detail',
             },
             {
               ao: 'AO6',
-              label: 'Writing: technical accuracy',
-              detail:
-                'Language writing only: use a range of vocabulary and sentence structures for clarity, purpose, and effect with accurate spelling and punctuation. Usually 16 of the 40 writing marks.',
+              labelKey: 'revision.exam_technique.ao.ao6.label',
+              detailKey: 'revision.exam_technique.ao.ao6.detail',
             },
           ].map((item) => (
             <div
@@ -288,9 +287,9 @@ export default function ExamTechniqueHubView({
                 {item.ao}
               </Badge>
               <div>
-                <p className="text-sm font-semibold text-foreground">{item.label}</p>
+                <p className="text-sm font-semibold text-foreground">{t(item.labelKey)}</p>
                 <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">
-                  {item.detail}
+                  {t(item.detailKey)}
                 </p>
               </div>
             </div>
@@ -302,11 +301,10 @@ export default function ExamTechniqueHubView({
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-emerald-500/[0.06] via-card to-primary/[0.04] p-6 sm:p-8 text-center">
         <Target className="mx-auto mb-3 size-8 text-emerald-400" />
         <h2 className="text-heading-lg font-heading text-foreground">
-          Start with {shortName} essay structure
+          {t('revision.exam_technique.cta_heading').replace('{board}', shortName)}
         </h2>
         <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-          Learning how to structure a paragraph properly is the single fastest way to improve your
-          grade. Start with PEEL and work through our {shortName}-specific model answers.
+          {t('revision.exam_technique.cta_body').replace('{board}', shortName)}
         </p>
         <Button
           variant="default"
@@ -314,7 +312,7 @@ export default function ExamTechniqueHubView({
           className="mt-5"
           render={<Link href="/revision/exam-technique/essay-structure" />}
         >
-          Essay Structure Guide
+          {t('revision.exam_technique.cta_button')}
           <ArrowRight className="size-4" />
         </Button>
       </section>

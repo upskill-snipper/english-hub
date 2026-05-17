@@ -1,15 +1,18 @@
 import type { Metadata } from 'next'
+import { t } from '@/lib/i18n/t'
 
-export const metadata: Metadata = {
-  title: 'Teaching Resources',
-  description:
-    'Free teaching resources for English teachers. Lesson plans, assessment materials, printable worksheets, and curriculum-aligned content for KS3 to IGCSE.',
-  alternates: { canonical: 'https://theenglishhub.app/resources/teaching' },
-  openGraph: {
-    title: 'Teaching Resources — The English Hub',
-    description:
-      'Free teaching resources for English teachers. Lesson plans, assessment materials, printable worksheets, and curriculum-aligned content for KS3 to IGCSE.',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const [title, description, ogTitle] = await Promise.all([
+    t('resources.teaching.meta.title'),
+    t('resources.teaching.meta.desc'),
+    t('resources.teaching.meta.og_title'),
+  ])
+  return {
+    title,
+    description,
+    alternates: { canonical: 'https://theenglishhub.app/resources/teaching' },
+    openGraph: { title: ogTitle, description },
+  }
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

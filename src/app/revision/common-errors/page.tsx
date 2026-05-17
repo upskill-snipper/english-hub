@@ -23,6 +23,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: '30 Mistakes That Cost Marks — Common Errors',
@@ -410,10 +411,49 @@ const TOTAL_ERRORS = ERROR_GROUPS.reduce((sum, g) => sum + g.errors.length, 0)
 
 /* ── Page ──────────────────────────────────────────────────────────── */
 
-export default function CommonErrorsPage() {
+export default async function CommonErrorsPage() {
+  const breadcrumbRevision = await t('poetry.breadcrumb_revision')
+  const breadcrumbLabel = await t('revision.common_errors.breadcrumb_label')
+  const heroBadge = await t('revision.common_errors.hero_badge')
+  const heroTitle = await t('revision.common_errors.hero_title')
+  const heroBody = await t('revision.common_errors.hero_body')
+  const ctaWorst = await t('revision.common_errors.cta_worst')
+  const ctaEssayMistakes = await t('revision.common_errors.cta_essay_mistakes')
+  const badgePrimarySources = await t('revision.common_errors.badge_primary_sources')
+  const badgeBoardSpecs = await t('revision.common_errors.badge_board_specs')
+  const badgeExamples = await t('revision.common_errors.badge_examples')
+  const badgeUpdated = await t('revision.common_errors.badge_updated')
+  const whyDifferentHeading = await t('revision.common_errors.why_different_heading')
+  const whyDifferentBody1 = await t('revision.common_errors.why_different_body1')
+  const whyDifferentBody2 = await t('revision.common_errors.why_different_body2')
+  const seeEssayMistakes = await t('revision.common_errors.see_essay_mistakes')
+  const categoriesHeading = await t('revision.common_errors.categories_heading')
+  const itemCountOne = await t('revision.common_errors.item_count_one')
+  const itemCountMany = await t('revision.common_errors.item_count_many')
+  const commonErrorLabel = await t('revision.common_errors.common_error_label')
+  const correctAnswerLabel = await t('revision.common_errors.correct_answer_label')
+  const whyLabel = await t('revision.common_errors.why_label')
+  const verificationBadge = await t('revision.common_errors.verification_badge')
+  const verificationHeading = await t('revision.common_errors.verification_heading')
+  const verificationBody = await t('revision.common_errors.verification_body')
+  const tellUs = await t('revision.common_errors.tell_us')
+  const keepGoingHeading = await t('revision.common_errors.keep_going_heading')
+  const crosslinkEssayTitle = await t('revision.common_errors.crosslink.essay_mistakes.title')
+  const crosslinkEssayBody = await t('revision.common_errors.crosslink.essay_mistakes.body')
+  const crosslinkEssayCta = await t('revision.common_errors.crosslink.essay_mistakes.cta')
+  const crosslinkPoetryTitle = await t('revision.common_errors.crosslink.poetry.title')
+  const crosslinkPoetryBody = await t('revision.common_errors.crosslink.poetry.body')
+  const crosslinkPoetryCta = await t('revision.common_errors.crosslink.poetry.cta')
+  const crosslinkFlashcardsTitle = await t('revision.common_errors.crosslink.flashcards.title')
+  const crosslinkFlashcardsBody = await t('revision.common_errors.crosslink.flashcards.body')
+  const crosslinkFlashcardsCta = await t('revision.common_errors.crosslink.flashcards.cta')
+  const backToHub = await t('revision.common_errors.back_to_hub')
+
   return (
     <div className="space-y-10 pb-16">
-      <Breadcrumb items={[{ label: 'Revision', href: '/revision' }, { label: 'Common Errors' }]} />
+      <Breadcrumb
+        items={[{ label: breadcrumbRevision, href: '/revision' }, { label: breadcrumbLabel }]}
+      />
 
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section
@@ -432,23 +472,19 @@ export default function CommonErrorsPage() {
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
             <ShieldAlert className="mr-1 size-3" aria-hidden="true" />
-            Verified library
+            {heroBadge}
           </Badge>
           <h1
             id="errors-hero-heading"
             className="text-display-sm font-heading text-foreground sm:text-display"
           >
-            {TOTAL_ERRORS} Mistakes That Cost Marks
+            {heroTitle.replace('{count}', String(TOTAL_ERRORS))}
           </h1>
-          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Verified against board specifications and primary sources. These are the misquotations,
-            wrong contexts, and version mix-ups examiners see most often in GCSE and IGCSE English
-            Literature.
-          </p>
+          <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">{heroBody}</p>
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Button variant="default" size="lg" render={<Link href="#misquoted-lines" />}>
-              Start with the worst offenders
+              {ctaWorst}
               <ArrowRight className="size-4" />
             </Button>
             <Button
@@ -456,28 +492,26 @@ export default function CommonErrorsPage() {
               size="lg"
               render={<Link href="/revision/exam-technique/common-mistakes" />}
             >
-              Essay-writing mistakes (different page)
+              {ctaEssayMistakes}
             </Button>
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <div className="flex items-center gap-2 rounded-lg border border-border/40 bg-background/50 px-3 py-2">
               <CheckCircle2 className="size-4 text-emerald-400" aria-hidden="true" />
-              <span className="text-sm text-muted-foreground">
-                Verified against primary sources
-              </span>
+              <span className="text-sm text-muted-foreground">{badgePrimarySources}</span>
             </div>
             <div className="flex items-center gap-2 rounded-lg border border-border/40 bg-background/50 px-3 py-2">
               <BookOpen className="size-4 text-primary" aria-hidden="true" />
-              <span className="text-sm text-muted-foreground">Cross-checked with board specs</span>
+              <span className="text-sm text-muted-foreground">{badgeBoardSpecs}</span>
             </div>
             <div className="flex items-center gap-2 rounded-lg border border-border/40 bg-background/50 px-3 py-2">
               <Quote className="size-4 text-rose-400" aria-hidden="true" />
-              <span className="text-sm text-muted-foreground">Wrong vs right examples</span>
+              <span className="text-sm text-muted-foreground">{badgeExamples}</span>
             </div>
             <div className="flex items-center gap-2 rounded-lg border border-border/40 bg-background/50 px-3 py-2">
               <Sparkles className="size-4 text-violet-400" aria-hidden="true" />
-              <span className="text-sm text-muted-foreground">Updated for current anthologies</span>
+              <span className="text-sm text-muted-foreground">{badgeUpdated}</span>
             </div>
           </div>
         </div>
@@ -490,24 +524,17 @@ export default function CommonErrorsPage() {
             <AlertTriangle className="size-6 text-amber-400" aria-hidden="true" />
           </div>
           <div>
-            <h2 className="text-heading-md font-heading text-foreground">
-              Why these errors are different
-            </h2>
+            <h2 className="text-heading-md font-heading text-foreground">{whyDifferentHeading}</h2>
             <p className="mt-2 max-w-3xl text-body-sm text-muted-foreground leading-relaxed">
-              Most &ldquo;common mistakes&rdquo; lists are about essay-writing technique (retelling,
-              no quotation, no terminology). This list is different. Every entry below is a factual
-              error &mdash; a misquotation, a wrong setting, a wrong date, an anthology version
-              mix-up &mdash; that examiners can verify against the text in front of them. Get one of
-              these wrong and the marker can&apos;t give you the AO2 or AO3 mark, no matter how
-              strong the rest of the analysis is.
+              {whyDifferentBody1}
             </p>
             <p className="mt-3 max-w-3xl text-body-sm text-muted-foreground leading-relaxed">
-              Want the technique-and-craft mistakes (retelling, no terminology, vague effects)?{' '}
+              {whyDifferentBody2}{' '}
               <Link
                 href="/revision/exam-technique/common-mistakes"
                 className="font-medium text-primary underline-offset-2 hover:underline"
               >
-                See the 20 essay-writing mistakes guide
+                {seeEssayMistakes}
               </Link>
               .
             </p>
@@ -520,12 +547,16 @@ export default function CommonErrorsPage() {
         <div className="mb-4 flex items-center gap-3">
           <ListTree className="size-5 text-primary" aria-hidden="true" />
           <h2 id="categories-heading" className="text-heading-md font-heading text-foreground">
-            Jump to a category
+            {categoriesHeading}
           </h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {ERROR_GROUPS.map((group) => {
             const Icon = group.icon
+            const countStr =
+              group.errors.length === 1
+                ? itemCountOne.replace('{count}', String(group.errors.length))
+                : itemCountMany.replace('{count}', String(group.errors.length))
             return (
               <Link
                 key={group.id}
@@ -541,9 +572,7 @@ export default function CommonErrorsPage() {
                   <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                     {group.title}
                   </p>
-                  <p className="text-xs text-muted-foreground">
-                    {group.errors.length} {group.errors.length === 1 ? 'item' : 'items'}
-                  </p>
+                  <p className="text-xs text-muted-foreground">{countStr}</p>
                 </div>
               </Link>
             )
@@ -609,7 +638,7 @@ export default function CommonErrorsPage() {
                       <div className="flex items-center gap-2">
                         <XCircle className="size-4 text-rose-400" aria-hidden="true" />
                         <p className="text-xs font-semibold uppercase tracking-wider text-rose-400">
-                          Common error
+                          {commonErrorLabel}
                         </p>
                       </div>
                       <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -621,7 +650,7 @@ export default function CommonErrorsPage() {
                       <div className="flex items-center gap-2">
                         <CheckCircle2 className="size-4 text-emerald-400" aria-hidden="true" />
                         <p className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
-                          Correct answer
+                          {correctAnswerLabel}
                         </p>
                       </div>
                       <p className="text-body-sm text-muted-foreground leading-relaxed">
@@ -634,7 +663,7 @@ export default function CommonErrorsPage() {
                     <div className="mb-2 flex items-center gap-2">
                       <BookOpen className="size-4 text-primary" aria-hidden="true" />
                       <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-                        Why it matters / source
+                        {whyLabel}
                       </p>
                     </div>
                     <p className="text-body-sm text-muted-foreground leading-relaxed">{err.why}</p>
@@ -656,22 +685,19 @@ export default function CommonErrorsPage() {
             <div>
               <Badge variant="secondary" className="mb-2">
                 <Sparkles className="mr-1 size-3" aria-hidden="true" />
-                Verification standard
+                {verificationBadge}
               </Badge>
               <h2 className="text-heading-md font-heading text-foreground">
-                Every flag is verified against a primary source
+                {verificationHeading}
               </h2>
               <p className="mt-2 max-w-2xl text-body-sm text-muted-foreground">
-                Where a board specifies a particular edition or version, we cite that edition. Where
-                a writer&apos;s biography is in dispute, we use the writer&apos;s own statements.
-                Spot something we got wrong?{' '}
+                {verificationBody}{' '}
                 <Link
                   href="/help/report"
                   className="font-medium text-primary underline-offset-2 hover:underline"
                 >
-                  Tell us
-                </Link>{' '}
-                and we&apos;ll fix it.
+                  {tellUs}
+                </Link>
               </p>
             </div>
           </div>
@@ -683,7 +709,7 @@ export default function CommonErrorsPage() {
         <div className="mb-4 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" aria-hidden="true" />
           <h2 id="related-heading" className="text-heading-md font-heading text-foreground">
-            Keep going
+            {keepGoingHeading}
           </h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
@@ -695,14 +721,11 @@ export default function CommonErrorsPage() {
               <PenLine className="size-5 text-violet-400" aria-hidden="true" />
             </div>
             <h3 className="text-heading-sm font-heading text-foreground group-hover:text-primary transition-colors">
-              20 essay-writing mistakes
+              {crosslinkEssayTitle}
             </h3>
-            <p className="mt-1 flex-1 text-body-sm text-muted-foreground">
-              Different list — the technique mistakes that cap your grade (retelling,
-              feature-spotting, no terminology, etc.).
-            </p>
+            <p className="mt-1 flex-1 text-body-sm text-muted-foreground">{crosslinkEssayBody}</p>
             <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
-              Open guide
+              {crosslinkEssayCta}
               <ArrowRight className="size-3" aria-hidden="true" />
             </span>
           </Link>
@@ -714,14 +737,11 @@ export default function CommonErrorsPage() {
               <Quote className="size-5 text-rose-400" aria-hidden="true" />
             </div>
             <h3 className="text-heading-sm font-heading text-foreground group-hover:text-primary transition-colors">
-              Poetry hub
+              {crosslinkPoetryTitle}
             </h3>
-            <p className="mt-1 flex-1 text-body-sm text-muted-foreground">
-              Verified analysis of every anthology poem — including the misquoted lines and version
-              flags listed above.
-            </p>
+            <p className="mt-1 flex-1 text-body-sm text-muted-foreground">{crosslinkPoetryBody}</p>
             <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
-              Open hub
+              {crosslinkPoetryCta}
               <ArrowRight className="size-3" aria-hidden="true" />
             </span>
           </Link>
@@ -733,14 +753,13 @@ export default function CommonErrorsPage() {
               <CheckCircle2 className="size-5 text-emerald-400" aria-hidden="true" />
             </div>
             <h3 className="text-heading-sm font-heading text-foreground group-hover:text-primary transition-colors">
-              Flashcards
+              {crosslinkFlashcardsTitle}
             </h3>
             <p className="mt-1 flex-1 text-body-sm text-muted-foreground">
-              Drill the exact wording of key quotations until they stick — with spaced-repetition
-              review.
+              {crosslinkFlashcardsBody}
             </p>
             <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
-              Start a session
+              {crosslinkFlashcardsCta}
               <ArrowRight className="size-3" aria-hidden="true" />
             </span>
           </Link>
@@ -756,7 +775,7 @@ export default function CommonErrorsPage() {
           render={<Link href="/revision" />}
         >
           <ArrowLeft className="size-3.5" aria-hidden="true" />
-          Back to your hub
+          {backToHub}
         </Button>
       </div>
     </div>

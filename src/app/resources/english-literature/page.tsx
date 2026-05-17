@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ExamBoardDisclaimer } from '@/components/ExamBoardDisclaimer'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
+import { tMany } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'English Literature Revision — GCSE & IGCSE',
@@ -21,10 +22,10 @@ export const metadata: Metadata = {
 /* ─── Data ───────────────────────────────────────────────────── */
 
 const HERO_STATS = [
-  { label: 'Set Texts Covered', value: '30+' },
-  { label: 'Key Quotations', value: '500+' },
-  { label: 'Revision Notes', value: '200+' },
-  { label: 'Practice Questions', value: '500+' },
+  { labelKey: 'resources.eng_lit.stat.texts', value: '30+' },
+  { labelKey: 'resources.eng_lit.stat.quotes', value: '500+' },
+  { labelKey: 'resources.eng_lit.stat.notes', value: '200+' },
+  { labelKey: 'resources.eng_lit.stat.questions', value: '500+' },
 ]
 
 const CORE_SKILLS = [
@@ -341,37 +342,89 @@ export default async function EnglishLiteraturePage() {
     ? EXAM_INFO_LINKS.filter((l) => l.boards.includes(board))
     : EXAM_INFO_LINKS
 
+  const [
+    eyebrow,
+    h1,
+    forBoard,
+    subtitle,
+    statTexts,
+    statQuotes,
+    statNotes,
+    statQuestions,
+    whatH2,
+    whatBody,
+    guidesH2,
+    guidesSub,
+    viewGuide,
+    poetryH2,
+    poetrySub,
+    essayH2,
+    essaySub,
+    exampleH2,
+    exampleSub,
+    exampleQLabel,
+    exampleEffLabel,
+    aiH2,
+    aiSub,
+    aiCta,
+    moreH2,
+    moreSub,
+  ] = await tMany([
+    'resources.eng_lit.hub.eyebrow',
+    'resources.eng_lit.hub.h1',
+    'resources.eng_lit.hub.for_board',
+    'resources.eng_lit.hub.subtitle',
+    'resources.eng_lit.stat.texts',
+    'resources.eng_lit.stat.quotes',
+    'resources.eng_lit.stat.notes',
+    'resources.eng_lit.stat.questions',
+    'resources.eng_lit.what.h2',
+    'resources.eng_lit.what.body',
+    'resources.eng_lit.guides.h2',
+    'resources.eng_lit.guides.sub',
+    'resources.eng_lit.guides.view',
+    'resources.eng_lit.poetry.h2',
+    'resources.eng_lit.poetry.sub',
+    'resources.eng_lit.essay.h2',
+    'resources.eng_lit.essay.sub',
+    'resources.eng_lit.example.h2',
+    'resources.eng_lit.example.sub',
+    'resources.eng_lit.example.question_label',
+    'resources.eng_lit.example.effective_label',
+    'resources.eng_lit.ai.h2',
+    'resources.eng_lit.ai.sub',
+    'resources.eng_lit.ai.cta',
+    'resources.eng_lit.more.h2',
+    'resources.eng_lit.more.sub',
+  ])
+
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="relative mx-auto max-w-5xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            GCSE &amp; IGCSE Revision
-          </p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">{eyebrow}</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-            English Literature
+            {h1}
           </h1>
           {boardConfig && (
             <div className="mt-4 flex justify-center">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                For {boardConfig.shortName}
+                {forBoard} {boardConfig.shortName}
               </span>
             </div>
           )}
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            In-depth study guides for Shakespeare, prose, drama, and poetry. Character analysis,
-            theme breakdowns, key quotations, essay techniques, and exam preparation — everything
-            you need in one place.
+            {subtitle}
           </p>
 
           {/* Hero stat cards */}
           <div className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
-            {HERO_STATS.map((stat) => (
-              <div key={stat.label} className="rounded-xl border bg-card px-4 py-4">
+            {HERO_STATS.map((stat, i) => (
+              <div key={stat.labelKey} className="rounded-xl border bg-card px-4 py-4">
                 <p className="text-2xl font-extrabold sm:text-3xl">{stat.value}</p>
                 <p className="mt-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                  {stat.label}
+                  {[statTexts, statQuotes, statNotes, statQuestions][i]}
                 </p>
               </div>
             ))}
@@ -382,17 +435,8 @@ export default async function EnglishLiteraturePage() {
       {/* ── What English Literature covers ───────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-foreground">
-            What does GCSE English Literature involve?
-          </h2>
-          <p className="mt-3 leading-relaxed text-muted-foreground">
-            GCSE English Literature requires you to read, analyse, and respond to a range of
-            literary texts from different periods and genres. You will develop skills in close
-            reading, critical analysis, comparison, and essay writing — demonstrating how writers
-            create meaning through language, form, and structure. These skills are universal across
-            all exam boards; while the specific texts and paper structures vary, the core analytical
-            approach remains the same.
-          </p>
+          <h2 className="text-xl font-bold text-foreground">{whatH2}</h2>
+          <p className="mt-3 leading-relaxed text-muted-foreground">{whatBody}</p>
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
             {CORE_SKILLS.map((skill) => (
               <li key={skill} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -407,11 +451,8 @@ export default async function EnglishLiteraturePage() {
       {/* ── Set Text Study Guides ────────────────────────────── */}
       {textGuides.length > 0 && (
         <section className="mx-auto max-w-5xl px-4 pb-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground">Set text study guides</h2>
-          <p className="mt-2 text-muted-foreground">
-            Detailed revision guides covering plot, characters, themes, key quotations, context, and
-            essay planning. Each guide works for any exam board studying that text.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{guidesH2}</h2>
+          <p className="mt-2 text-muted-foreground">{guidesSub}</p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {textGuides.map((guide) => (
@@ -443,7 +484,7 @@ export default async function EnglishLiteraturePage() {
                     ))}
                   </div>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:underline">
-                    View study guide <ArrowRight />
+                    {viewGuide} <ArrowRight />
                   </span>
                 </div>
               </Link>
@@ -456,11 +497,8 @@ export default async function EnglishLiteraturePage() {
       {poetrySections.length > 0 && (
         <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">
-            <h2 className="text-2xl font-bold text-foreground">Poetry anthology guides</h2>
-            <p className="mt-2 text-muted-foreground">
-              Poem-by-poem analysis with stanza breakdowns, technique identification, thematic
-              links, and comparison pairs.
-            </p>
+            <h2 className="text-2xl font-bold text-foreground">{poetryH2}</h2>
+            <p className="mt-2 text-muted-foreground">{poetrySub}</p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {poetrySections.map((section) => (
@@ -487,13 +525,8 @@ export default async function EnglishLiteraturePage() {
 
       {/* ── Essay Writing Tips ───────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">
-          How to write a top-mark literature essay
-        </h2>
-        <p className="mt-2 text-muted-foreground">
-          These techniques apply across all exam boards and question types. Master them and you will
-          consistently reach the higher mark bands.
-        </p>
+        <h2 className="text-2xl font-bold text-foreground">{essayH2}</h2>
+        <p className="mt-2 text-muted-foreground">{essaySub}</p>
 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {ESSAY_TIPS.map((tip, i) => (
@@ -513,21 +546,18 @@ export default async function EnglishLiteraturePage() {
       {/* ── Example Paragraph ───────────────────────────────── */}
       <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-foreground">Example analytical paragraph</h2>
-          <p className="mt-2 text-muted-foreground">
-            See how all six essay tips come together in a single paragraph that would score in the
-            top mark band.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{exampleH2}</h2>
+          <p className="mt-2 text-muted-foreground">{exampleSub}</p>
 
           <div className="mt-6 rounded-xl border border-primary/20 bg-card p-6 sm:p-8">
             <p className="text-sm font-semibold text-primary">
-              Question: {EXAMPLE_PARAGRAPH.question}
+              {exampleQLabel} {EXAMPLE_PARAGRAPH.question}
             </p>
             <blockquote className="mt-4 border-l-4 border-primary/30 pl-4 text-sm leading-relaxed text-muted-foreground italic">
               {EXAMPLE_PARAGRAPH.paragraph}
             </blockquote>
             <div className="mt-4 rounded-lg bg-primary/5 p-4">
-              <p className="text-xs font-semibold text-foreground">What makes this effective:</p>
+              <p className="text-xs font-semibold text-foreground">{exampleEffLabel}</p>
               <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckIcon /> Opens with a clear thesis answering the question
@@ -563,18 +593,14 @@ export default async function EnglishLiteraturePage() {
               <SparklesIcon />
             </div>
             <div className="flex-1">
-              <h2 className="text-xl font-bold sm:text-2xl">Get AI-powered essay feedback</h2>
-              <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                Paste your literature essay and receive instant, detailed feedback on your argument,
-                use of evidence, analysis of language, and exam technique. Our AI marker is
-                calibrated to GCSE marking guides.
-              </p>
+              <h2 className="text-xl font-bold sm:text-2xl">{aiH2}</h2>
+              <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">{aiSub}</p>
             </div>
             <Link
               href="/contact"
               className="shrink-0 rounded-lg bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow transition hover:bg-primary/90"
             >
-              Try it free
+              {aiCta}
             </Link>
           </div>
         </div>
@@ -583,10 +609,8 @@ export default async function EnglishLiteraturePage() {
       {/* ── Revision Resources Grid ─────────────────────────── */}
       <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">More revision resources</h2>
-          <p className="mt-2 text-muted-foreground">
-            Strengthen specific skills that markers reward most highly.
-          </p>
+          <h2 className="text-2xl font-bold text-foreground">{moreH2}</h2>
+          <p className="mt-2 text-muted-foreground">{moreSub}</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {REVISION_RESOURCES.map((resource) => (

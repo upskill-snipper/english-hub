@@ -7,6 +7,7 @@ import {
   NARRATIVE_PERSPECTIVES,
   SPEC_ATTRIBUTION,
 } from '@/lib/ilowersecondary/spec'
+import { t } from '@/lib/i18n/t'
 
 const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/fiction'
 
@@ -19,35 +20,64 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
 }
 
-const PAGES: { href: string; title: string; blurb: string }[] = [
-  {
-    href: '/ks3/ilowersecondary/fiction/reading-fiction',
-    title: 'Reading fiction',
-    blurb:
-      'The guided-reading method: characters, plot/structure, style — with a full worked extract.',
-  },
-  {
-    href: '/ks3/ilowersecondary/fiction/genres',
-    title: 'Fiction genres',
-    blurb: `Conventions of ${FICTION_GENRES.join(', ')} — with original genre extracts.`,
-  },
-  {
-    href: '/ks3/ilowersecondary/fiction/narrative-perspective',
-    title: 'Narrative perspective',
-    blurb: `${NARRATIVE_PERSPECTIVES.join(', ')} — and the effect each has on the reader.`,
-  },
-]
-
 export default async function FictionIndex() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
-  const breadcrumb = [
-    { name: 'Home', url: 'https://theenglishhub.app' },
-    { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
+
+  const [
+    trHome,
+    trKS3,
+    trILS,
+    trFic,
+    trH1,
+    trLead,
+    trPracticeText,
+    trReadingTitle,
+    trReadingBlurb,
+    trGenresTitle,
+    trGenresBlurbPre,
+    trGenresBlurbPost,
+    trPerspTitle,
+    trPerspBlurbPost,
+  ] = await Promise.all([
+    t('ks3.ils.shared.home'),
+    t('ks3.ils.breadcrumb.ks3'),
+    t('ks3.ils.breadcrumb.ils'),
+    t('ks3.ils.breadcrumb.fiction'),
+    t('ks3.ils.fic.h1'),
+    t('ks3.ils.fic.lead'),
+    t('ks3.ils.fic.practice_link_text'),
+    t('ks3.ils.fic.reading.title'),
+    t('ks3.ils.fic.reading.blurb'),
+    t('ks3.ils.fic.genres.title'),
+    t('ks3.ils.fic.genres.blurb_pre'),
+    t('ks3.ils.fic.genres.blurb_post'),
+    t('ks3.ils.fic.perspective.title'),
+    t('ks3.ils.fic.perspective.blurb_post'),
+  ])
+
+  const pages: { href: string; title: string; blurb: string }[] = [
     {
-      name: 'iLowerSecondary English',
-      url: 'https://theenglishhub.app/ks3/ilowersecondary',
+      href: '/ks3/ilowersecondary/fiction/reading-fiction',
+      title: trReadingTitle,
+      blurb: trReadingBlurb,
     },
-    { name: 'Fiction', url: PAGE_URL },
+    {
+      href: '/ks3/ilowersecondary/fiction/genres',
+      title: trGenresTitle,
+      blurb: `${trGenresBlurbPre} ${FICTION_GENRES.join(', ')} ${trGenresBlurbPost}`.trim(),
+    },
+    {
+      href: '/ks3/ilowersecondary/fiction/narrative-perspective',
+      title: trPerspTitle,
+      blurb: `${NARRATIVE_PERSPECTIVES.join(', ')} ${trPerspBlurbPost}`.trim(),
+    },
+  ]
+
+  const breadcrumb = [
+    { name: trHome, url: 'https://theenglishhub.app' },
+    { name: trKS3, url: 'https://theenglishhub.app/ks3' },
+    { name: trILS, url: 'https://theenglishhub.app/ks3/ilowersecondary' },
+    { name: trFic, url: PAGE_URL },
   ]
 
   return (
@@ -55,29 +85,25 @@ export default async function FictionIndex() {
       <BreadcrumbJsonLd items={breadcrumb} nonce={nonce} />
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
-          Home
+          {trHome}
         </Link>
         <span> · </span>
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {trKS3}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-          iLowerSecondary English
+          {trILS}
         </Link>
         <span> · </span>
-        <span>Fiction</span>
+        <span>{trFic}</span>
       </p>
 
-      <h1>Fiction (Section A)</h1>
-      <p className="lead">
-        One of the three Section A texts is always fiction. These guides teach you how to read it
-        analytically — by genre, by narrative perspective, and through a complete guided-reading
-        method.
-      </p>
+      <h1>{trH1}</h1>
+      <p className="lead">{trLead}</p>
 
       <div className="not-prose my-6 grid gap-4 sm:grid-cols-3">
-        {PAGES.map((p) => (
+        {pages.map((p) => (
           <Link
             key={p.href}
             href={p.href}
@@ -91,7 +117,7 @@ export default async function FictionIndex() {
 
       <p>
         Then apply it under timed conditions in a{' '}
-        <Link href="/ks3/ilowersecondary/practice">practice paper</Link>.
+        <Link href="/ks3/ilowersecondary/practice">{trPracticeText}</Link>.
       </p>
 
       <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">

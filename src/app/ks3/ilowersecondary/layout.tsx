@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { QUALIFICATION } from '@/lib/ilowersecondary/spec'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: {
@@ -22,35 +23,37 @@ export const metadata: Metadata = {
  * then render {children}.
  */
 
-const SUBNAV: { href: string; label: string }[] = [
-  { href: '/ks3/ilowersecondary', label: 'Overview' },
-  { href: '/ks3/ilowersecondary/specification', label: 'Specification' },
-  { href: '/ks3/ilowersecondary/exam-format', label: 'Exam format' },
-  { href: '/ks3/ilowersecondary/mark-scheme', label: 'Mark scheme' },
-  { href: '/ks3/ilowersecondary/grade-targets', label: 'Grade targets S1–S4' },
-  { href: '/ks3/ilowersecondary/reading-skills', label: 'Reading skills' },
-  { href: '/ks3/ilowersecondary/writing-skills', label: 'Writing skills' },
-  { href: '/ks3/ilowersecondary/question-types', label: 'Question types' },
-  { href: '/ks3/ilowersecondary/text-types', label: 'Text types' },
-  { href: '/ks3/ilowersecondary/fiction', label: 'Fiction' },
-  { href: '/ks3/ilowersecondary/practice', label: 'Practice papers' },
-  { href: '/ks3/ilowersecondary/quiz', label: 'Quiz' },
-  { href: '/ks3/ilowersecondary/grammar-lab', label: 'Grammar lab' },
-  { href: '/ks3/ilowersecondary/vocabulary', label: 'Vocabulary' },
-]
+export default async function ILowerSecondaryLayout({ children }: { children: React.ReactNode }) {
+  const subnav: { href: string; label: string }[] = [
+    { href: '/ks3/ilowersecondary', label: await t('ks3.ils.nav.overview') },
+    { href: '/ks3/ilowersecondary/specification', label: await t('ks3.ils.nav.specification') },
+    { href: '/ks3/ilowersecondary/exam-format', label: await t('ks3.ils.nav.exam_format') },
+    { href: '/ks3/ilowersecondary/mark-scheme', label: await t('ks3.ils.nav.mark_scheme') },
+    { href: '/ks3/ilowersecondary/grade-targets', label: await t('ks3.ils.nav.grade_targets') },
+    { href: '/ks3/ilowersecondary/reading-skills', label: await t('ks3.ils.nav.reading_skills') },
+    { href: '/ks3/ilowersecondary/writing-skills', label: await t('ks3.ils.nav.writing_skills') },
+    { href: '/ks3/ilowersecondary/question-types', label: await t('ks3.ils.nav.question_types') },
+    { href: '/ks3/ilowersecondary/text-types', label: await t('ks3.ils.nav.text_types') },
+    { href: '/ks3/ilowersecondary/fiction', label: await t('ks3.ils.nav.fiction') },
+    { href: '/ks3/ilowersecondary/practice', label: await t('ks3.ils.nav.practice') },
+    { href: '/ks3/ilowersecondary/quiz', label: await t('ks3.ils.nav.quiz') },
+    { href: '/ks3/ilowersecondary/grammar-lab', label: await t('ks3.ils.nav.grammar_lab') },
+    { href: '/ks3/ilowersecondary/vocabulary', label: await t('ks3.ils.nav.vocabulary') },
+  ]
+  const navHeader = await t('ks3.ils.nav.header')
+  const navAria = await t('ks3.ils.nav.aria')
 
-export default function ILowerSecondaryLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <nav
-        aria-label="iLowerSecondary English sections"
+        aria-label={navAria}
         className="not-prose mb-8 rounded-xl border border-border/60 bg-card p-4"
       >
         <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-          iLowerSecondary English
+          {navHeader}
         </p>
         <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-          {SUBNAV.map((item) => (
+          {subnav.map((item) => (
             <li key={item.href}>
               <Link href={item.href} className="text-muted-foreground hover:text-foreground">
                 {item.label}

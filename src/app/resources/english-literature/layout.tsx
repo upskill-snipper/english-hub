@@ -1,15 +1,18 @@
 import type { Metadata } from 'next'
+import { t } from '@/lib/i18n/t'
 
-export const metadata: Metadata = {
-  title: 'English Literature Revision — GCSE & IGCSE',
-  description:
-    'Complete GCSE and IGCSE English Literature revision. Study guides for Shakespeare, prose, drama, and poetry with character analysis, themes, quotations, and essay techniques.',
-  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature' },
-  openGraph: {
-    title: 'English Literature Revision — The English Hub',
-    description:
-      'Complete GCSE and IGCSE English Literature revision. Study guides, essay techniques, and exam preparation.',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const [title, description, ogTitle] = await Promise.all([
+    t('resources.eng_lit.meta.title'),
+    t('resources.eng_lit.meta.desc'),
+    t('resources.eng_lit.meta.og_title'),
+  ])
+  return {
+    title,
+    description,
+    alternates: { canonical: 'https://theenglishhub.app/resources/english-literature' },
+    openGraph: { title: ogTitle, description },
+  }
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

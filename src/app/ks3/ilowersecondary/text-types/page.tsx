@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { headers } from 'next/headers'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { NON_FICTION_TEXT_TYPES, SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
+import { t } from '@/lib/i18n/t'
 
 const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/text-types'
 
@@ -16,59 +17,109 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
 }
 
-const PAGES: { href: string; title: string; blurb: string }[] = [
-  {
-    href: '/ks3/ilowersecondary/text-types/autobiography-biography',
-    title: 'Autobiography & biography',
-    blurb: 'First-person life writing and accounts of others.',
-  },
-  {
-    href: '/ks3/ilowersecondary/text-types/blogs-journals',
-    title: 'Blogs & journals',
-    blurb: 'Personal voice, informal register, dated entries.',
-  },
-  {
-    href: '/ks3/ilowersecondary/text-types/leaflets-brochures-guides',
-    title: 'Leaflets, brochures & guides',
-    blurb: 'Headings, direct address, layout features and effect.',
-  },
-  {
-    href: '/ks3/ilowersecondary/text-types/articles',
-    title: 'Newspaper & magazine articles',
-    blurb: 'Headline, standfirst, report vs opinion structure.',
-  },
-  {
-    href: '/ks3/ilowersecondary/text-types/instructions',
-    title: 'Instructions',
-    blurb: 'Imperative verbs and sequencing — a common RAO4 focus.',
-  },
-  {
-    href: '/ks3/ilowersecondary/text-types/recount',
-    title: 'Recount',
-    blurb: 'Chronological, past tense — a text type and a writing form.',
-  },
-  {
-    href: '/ks3/ilowersecondary/text-types/reports',
-    title: 'Reports',
-    blurb: 'Objective, impersonal, classified information.',
-  },
-  {
-    href: '/ks3/ilowersecondary/text-types/purposes',
-    title: 'The five purposes',
-    blurb: 'Argue, describe, explain, inform, persuade — how to spot each.',
-  },
-]
-
 export default async function TextTypesIndex() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
-  const breadcrumb = [
-    { name: 'Home', url: 'https://theenglishhub.app' },
-    { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
+
+  const [
+    trHome,
+    trKS3,
+    trILS,
+    trTT,
+    trH1,
+    trLeadPre,
+    trLeadPost,
+    trFictionLinkText,
+    trAutoBioTitle,
+    trAutoBioBlurb,
+    trBlogsTitle,
+    trBlogsBlurb,
+    trLeafletsTitle,
+    trLeafletsBlurb,
+    trArticlesTitle,
+    trArticlesBlurb,
+    trInstrTitle,
+    trInstrBlurb,
+    trRecountTitle,
+    trRecountBlurb,
+    trReportsTitle,
+    trReportsBlurb,
+    trPurposesTitle,
+    trPurposesBlurb,
+  ] = await Promise.all([
+    t('ks3.ils.shared.home'),
+    t('ks3.ils.breadcrumb.ks3'),
+    t('ks3.ils.breadcrumb.ils'),
+    t('ks3.ils.breadcrumb.text_types'),
+    t('ks3.ils.tt.h1'),
+    t('ks3.ils.tt.lead_pre'),
+    t('ks3.ils.tt.lead_post'),
+    t('ks3.ils.tt.fiction_link_text'),
+    t('ks3.ils.tt.auto_bio.title'),
+    t('ks3.ils.tt.auto_bio.blurb'),
+    t('ks3.ils.tt.blogs.title'),
+    t('ks3.ils.tt.blogs.blurb'),
+    t('ks3.ils.tt.leaflets.title'),
+    t('ks3.ils.tt.leaflets.blurb'),
+    t('ks3.ils.tt.articles.title'),
+    t('ks3.ils.tt.articles.blurb'),
+    t('ks3.ils.tt.instructions.title'),
+    t('ks3.ils.tt.instructions.blurb'),
+    t('ks3.ils.tt.recount.title'),
+    t('ks3.ils.tt.recount.blurb'),
+    t('ks3.ils.tt.reports.title'),
+    t('ks3.ils.tt.reports.blurb'),
+    t('ks3.ils.tt.purposes.title'),
+    t('ks3.ils.tt.purposes.blurb'),
+  ])
+
+  const pages: { href: string; title: string; blurb: string }[] = [
     {
-      name: 'iLowerSecondary English',
-      url: 'https://theenglishhub.app/ks3/ilowersecondary',
+      href: '/ks3/ilowersecondary/text-types/autobiography-biography',
+      title: trAutoBioTitle,
+      blurb: trAutoBioBlurb,
     },
-    { name: 'Text types', url: PAGE_URL },
+    {
+      href: '/ks3/ilowersecondary/text-types/blogs-journals',
+      title: trBlogsTitle,
+      blurb: trBlogsBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/text-types/leaflets-brochures-guides',
+      title: trLeafletsTitle,
+      blurb: trLeafletsBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/text-types/articles',
+      title: trArticlesTitle,
+      blurb: trArticlesBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/text-types/instructions',
+      title: trInstrTitle,
+      blurb: trInstrBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/text-types/recount',
+      title: trRecountTitle,
+      blurb: trRecountBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/text-types/reports',
+      title: trReportsTitle,
+      blurb: trReportsBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/text-types/purposes',
+      title: trPurposesTitle,
+      blurb: trPurposesBlurb,
+    },
+  ]
+
+  const breadcrumb = [
+    { name: trHome, url: 'https://theenglishhub.app' },
+    { name: trKS3, url: 'https://theenglishhub.app/ks3' },
+    { name: trILS, url: 'https://theenglishhub.app/ks3/ilowersecondary' },
+    { name: trTT, url: PAGE_URL },
   ]
 
   return (
@@ -76,29 +127,27 @@ export default async function TextTypesIndex() {
       <BreadcrumbJsonLd items={breadcrumb} nonce={nonce} />
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
-          Home
+          {trHome}
         </Link>
         <span> · </span>
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {trKS3}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-          iLowerSecondary English
+          {trILS}
         </Link>
         <span> · </span>
-        <span>Text types</span>
+        <span>{trTT}</span>
       </p>
 
-      <h1>Non-fiction text types</h1>
+      <h1>{trH1}</h1>
       <p className="lead">
-        Section A always includes two non-fiction texts. The specification expects experience of{' '}
-        {NON_FICTION_TEXT_TYPES.length} text types written for five purposes. Each guide shows how
-        to read it analytically and how to write it for Section B.
+        {trLeadPre} {NON_FICTION_TEXT_TYPES.length} {trLeadPost}
       </p>
 
       <div className="not-prose my-6 grid gap-4 sm:grid-cols-2">
-        {PAGES.map((p) => (
+        {pages.map((p) => (
           <Link
             key={p.href}
             href={p.href}
@@ -112,7 +161,7 @@ export default async function TextTypesIndex() {
 
       <p>
         The third Section A text is always fiction — see the{' '}
-        <Link href="/ks3/ilowersecondary/fiction">fiction guides</Link>.
+        <Link href="/ks3/ilowersecondary/fiction">{trFictionLinkText}</Link>.
       </p>
 
       <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">

@@ -64,6 +64,9 @@ import { AFF_COMP_DICTIONARY } from './dictionary-aff-comp'
 import { TEACHER_DICTIONARY } from './dictionary-teacher'
 import { AMG_DICTIONARY } from './dictionary-amg'
 import { SCHOOL_3_DICTIONARY } from './dictionary-school-3'
+import { B1_KS3_DICTIONARY } from './dictionary-b1-ks3'
+import { B1_REVISION_DICTIONARY } from './dictionary-b1-revision'
+import { B1_RESOURCES_DICTIONARY } from './dictionary-b1-resources'
 
 export type Locale = 'en' | 'ar'
 
@@ -14765,6 +14768,13 @@ export function lookup(key: string, locale: Locale): string {
     AFF_COMP_DICTIONARY[key] ??
     TEACHER_DICTIONARY[key] ??
     AMG_DICTIONARY[key] ??
+    // Bucket B Phase B1 — instrumented shell + hub/index pages for the
+    // /ks3, /revision and /resources content families (curated EN +
+    // Khaleeji AR). Precedes all placeholder/audit supplements so the
+    // genuine Arabic wins over any junk/placeholder entry.
+    B1_KS3_DICTIONARY[key] ??
+    B1_REVISION_DICTIONARY[key] ??
+    B1_RESOURCES_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??

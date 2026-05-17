@@ -1,15 +1,18 @@
 import type { Metadata } from 'next'
+import { t } from '@/lib/i18n/t'
 
-export const metadata: Metadata = {
-  title: 'English Language Resources',
-  description:
-    'GCSE and IGCSE English Language revision resources for AQA, Edexcel, OCR, WJEC and CAIE. Paper guides, techniques, writing skills, and grade boundaries.',
-  alternates: { canonical: 'https://theenglishhub.app/resources/english-language' },
-  openGraph: {
-    title: 'English Language Resources — The English Hub',
-    description:
-      'GCSE and IGCSE English Language revision resources for AQA, Edexcel, OCR, WJEC and CAIE. Paper guides, techniques, writing skills, and grade boundaries.',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const [title, description, ogTitle] = await Promise.all([
+    t('resources.eng_lang.meta.title'),
+    t('resources.eng_lang.meta.desc'),
+    t('resources.eng_lang.meta.og_title'),
+  ])
+  return {
+    title,
+    description,
+    alternates: { canonical: 'https://theenglishhub.app/resources/english-language' },
+    openGraph: { title: ogTitle, description },
+  }
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

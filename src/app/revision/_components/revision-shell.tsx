@@ -41,11 +41,13 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
 import { isIgcseBoard, isGcseBoard } from '@/lib/board/board-filter'
 import { gradeDisplayLabel } from '@/lib/board/grade-boundaries'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Nav items ──────────────────────────────────────────────────────────────
 
 interface NavItem {
-  label: string
+  /** i18n key for the nav label. Resolved at render time via useT(). */
+  labelKey: string
   href: string
   icon: typeof BookOpen
   colour: string
@@ -58,27 +60,57 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'Your Hub', href: '/revision', icon: Home, colour: 'text-primary' },
   {
-    label: 'Your Analytics',
+    labelKey: 'revision.shell.nav.your_hub',
+    href: '/revision',
+    icon: Home,
+    colour: 'text-primary',
+  },
+  {
+    labelKey: 'revision.shell.nav.analytics',
     href: '/revision/analytics',
     icon: BarChart3,
     colour: 'text-primary',
   },
-  { label: 'My Papers', href: '/dashboard/papers', icon: Files, colour: 'text-primary' },
-  { label: 'Study Tools', href: '/revision#toolkit', icon: Wrench, colour: 'text-primary' },
-  { label: 'Study Plan', href: '/revision/study-plan', icon: CalendarDays, colour: 'text-primary' },
   {
-    label: 'Reading Assessment',
+    labelKey: 'revision.shell.nav.my_papers',
+    href: '/dashboard/papers',
+    icon: Files,
+    colour: 'text-primary',
+  },
+  {
+    labelKey: 'revision.shell.nav.study_tools',
+    href: '/revision#toolkit',
+    icon: Wrench,
+    colour: 'text-primary',
+  },
+  {
+    labelKey: 'revision.shell.nav.study_plan',
+    href: '/revision/study-plan',
+    icon: CalendarDays,
+    colour: 'text-primary',
+  },
+  {
+    labelKey: 'revision.shell.nav.reading_assessment',
     href: '/assessment/reading',
     icon: ClipboardList,
     colour: 'text-blue-400',
   },
-  { label: 'Mock Exams', href: '/mock-exams', icon: Timer, colour: 'text-emerald-400' },
-  { label: 'Practice', href: '/practice', icon: Dumbbell, colour: 'text-violet-400' },
-  { label: 'Games', href: '/games', icon: Gamepad2, colour: 'text-clay-600' },
   {
-    label: 'Poetry',
+    labelKey: 'revision.shell.nav.mock_exams',
+    href: '/mock-exams',
+    icon: Timer,
+    colour: 'text-emerald-400',
+  },
+  {
+    labelKey: 'revision.shell.nav.practice',
+    href: '/practice',
+    icon: Dumbbell,
+    colour: 'text-violet-400',
+  },
+  { labelKey: 'revision.shell.nav.games', href: '/games', icon: Gamepad2, colour: 'text-clay-600' },
+  {
+    labelKey: 'revision.shell.nav.poetry',
     href: '/revision/poetry',
     icon: FileText,
     colour: 'text-rose-400',
@@ -86,89 +118,99 @@ const NAV_ITEMS: NavItem[] = [
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
-    label: 'Set Texts',
+    labelKey: 'revision.shell.nav.set_texts',
     href: '/revision/texts',
     icon: BookText,
     colour: 'text-blue-400',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
-    label: 'Language Skills',
+    labelKey: 'revision.shell.nav.language_skills',
     href: '/revision/language',
     icon: PenTool,
     colour: 'text-violet-400',
   },
-  { label: 'Flashcards', href: '/revision/flashcards', icon: Layers, colour: 'text-clay-600' },
   {
-    label: 'Exam Technique',
+    labelKey: 'revision.shell.nav.flashcards',
+    href: '/revision/flashcards',
+    icon: Layers,
+    colour: 'text-clay-600',
+  },
+  {
+    labelKey: 'revision.shell.nav.exam_technique',
     href: '/revision/exam-technique',
     icon: Target,
     colour: 'text-emerald-400',
   },
   {
-    label: 'Grade Targets',
+    labelKey: 'revision.shell.nav.grade_targets',
     href: '/revision/grade-targets',
     icon: TrendingUp,
     colour: 'text-cyan-400',
   },
-  { label: 'Quick Quizzes', href: '/revision/quiz', icon: Zap, colour: 'text-clay-600' },
+  {
+    labelKey: 'revision.shell.nav.quick_quizzes',
+    href: '/revision/quiz',
+    icon: Zap,
+    colour: 'text-clay-600',
+  },
   // Curated content libraries — surface the resources hub and its
   // most-loved sections so students never have to dig through nav
   // dropdowns to find revision notes, model answers, vocabulary
   // banks, writing-skills guides or the comparison-essay walkthrough.
   {
-    label: 'Resources Hub',
+    labelKey: 'revision.shell.nav.resources_hub',
     href: '/resources',
     icon: Library,
     colour: 'text-amber-400',
   },
   {
-    label: 'Revision Notes',
+    labelKey: 'revision.shell.nav.revision_notes',
     href: '/resources/revision-notes',
     icon: StickyNote,
     colour: 'text-blue-400',
   },
   {
-    label: 'Model Answers',
+    labelKey: 'revision.shell.nav.model_answers',
     href: '/resources/model-answers',
     icon: CheckSquare,
     colour: 'text-emerald-400',
   },
   {
-    label: 'Comparison Essays',
+    labelKey: 'revision.shell.nav.comparison_essays',
     href: '/revision/poetry/love-and-relationships/comparison-guide',
     icon: GitCompare,
     colour: 'text-violet-400',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
-    label: 'Vocabulary',
+    labelKey: 'revision.shell.nav.vocabulary',
     href: '/resources/vocabulary',
     icon: Quote,
     colour: 'text-rose-400',
   },
   {
-    label: 'Writing Skills',
+    labelKey: 'revision.shell.nav.writing_skills',
     href: '/resources/writing-skills',
     icon: Edit3,
     colour: 'text-cyan-400',
   },
   {
-    label: 'Toolkit',
+    labelKey: 'revision.shell.nav.toolkit',
     href: '/toolkit',
     icon: Wrench,
     colour: 'text-primary',
   },
   // Board-specific deep-link entries
   {
-    label: 'IAL Specification Guide',
+    labelKey: 'revision.shell.nav.ial_guide',
     href: '/revision/ial',
     icon: GraduationCap,
     colour: 'text-primary',
     boards: ['ial-edexcel'],
   },
   {
-    label: 'Edexcel IGCSE Hub',
+    labelKey: 'revision.shell.nav.edexcel_igcse_hub',
     href: '/igcse/edexcel',
     icon: GraduationCap,
     colour: 'text-cyan-400',
@@ -176,7 +218,7 @@ const NAV_ITEMS: NavItem[] = [
     igcseOnly: true,
   },
   {
-    label: 'Cambridge Hub',
+    labelKey: 'revision.shell.nav.cambridge_hub',
     href: '/igcse/cambridge/0500',
     icon: GraduationCap,
     colour: 'text-cyan-400',
@@ -184,7 +226,7 @@ const NAV_ITEMS: NavItem[] = [
     igcseOnly: true,
   },
   {
-    label: 'Cambridge (9-1) Hub',
+    labelKey: 'revision.shell.nav.cambridge_91_hub',
     href: '/igcse/cambridge/0990',
     icon: GraduationCap,
     colour: 'text-cyan-400',
@@ -350,6 +392,7 @@ function SidebarNav({
   const pathname = usePathname()
   const { progress, target, hasData } = useRevisionProgress(navItems)
   const { board } = useBoard()
+  const t = useT()
 
   // Target + two grades below — e.g. target=7 → show 5, 6, 7 with fill
   // reflecting how far through the 5→7 journey the student has travelled.
@@ -379,7 +422,9 @@ function SidebarNav({
       {/* Board badge */}
       {boardName && (
         <div className="mb-3 flex items-center justify-between rounded-xl border border-primary/20 bg-primary/[0.05] px-3 py-2">
-          <span className="text-caption font-medium text-muted-foreground">Exam board</span>
+          <span className="text-caption font-medium text-muted-foreground">
+            {t('revision.shell.exam_board_label')}
+          </span>
           <Badge variant="secondary" className="text-[0.65rem] uppercase tracking-wider">
             {boardName}
           </Badge>
@@ -394,7 +439,9 @@ function SidebarNav({
           proxy (sections visited / total visible sections).  */}
       <div className="mb-4 rounded-xl border border-border/40 bg-background/50 p-3">
         <div className="mb-2 flex items-center justify-between">
-          <span className="text-caption font-medium text-muted-foreground">Target grade</span>
+          <span className="text-caption font-medium text-muted-foreground">
+            {t('revision.shell.target_grade_label')}
+          </span>
           <span className="text-caption font-semibold text-primary">{labelRight}</span>
         </div>
         <Progress value={progress}>
@@ -409,7 +456,7 @@ function SidebarNav({
         </div>
         {!hasData && (
           <p className="mt-2 text-[10px] text-muted-foreground/70 italic">
-            Sit quizzes and submit essays to see your real-data progress.
+            {t('revision.shell.progress_hint')}
           </p>
         )}
       </div>
@@ -433,7 +480,7 @@ function SidebarNav({
             )}
           >
             <item.icon className={cn('size-4 shrink-0', isActive ? 'text-primary' : item.colour)} />
-            <span className="flex-1">{item.label}</span>
+            <span className="flex-1">{t(item.labelKey)}</span>
             {isActive && <ChevronRight className="size-3.5 text-primary" />}
           </Link>
         )
@@ -451,11 +498,12 @@ function SidebarNav({
 // "Your Analytics" entry one-tap discoverability on phones.
 function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
   const pathname = usePathname()
+  const t = useT()
   return (
     <div
       className="-mx-4 mb-4 overflow-x-auto px-4 pb-1 lg:hidden"
       role="navigation"
-      aria-label="Revision sections"
+      aria-label={t('revision.shell.nav_aria')}
     >
       <div className="flex min-w-max gap-2">
         {navItems.map((item) => {
@@ -474,7 +522,7 @@ function MobileScrollRail({ navItems }: { navItems: NavItem[] }) {
               <item.icon
                 className={cn('size-3.5 shrink-0', isActive ? 'text-primary' : item.colour)}
               />
-              {item.label}
+              {t(item.labelKey)}
             </Link>
           )
         })}
@@ -503,6 +551,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
   const { board, isHydrated } = useBoard()
   const config = getBoardConfig(board)
   const boardName = config?.shortName ?? null
+  const t = useT()
 
   // NB — the previous implementation redirected non-GCSE students AWAY from
   // this shell (KS3 → /courses, IGCSE → board hub, null render for A-Level/
@@ -522,7 +571,9 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
           <div className="sticky top-24">
             <div className="mb-4 flex items-center gap-2">
               <GraduationCap className="size-5 text-primary" />
-              <span className="text-heading-md font-heading text-foreground">Your Hub</span>
+              <span className="text-heading-md font-heading text-foreground">
+                {t('revision.shell.hub_title')}
+              </span>
             </div>
             <SidebarNav navItems={navItems} boardName={boardName} />
           </div>
@@ -537,7 +588,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
                 render={
                   <Button variant="outline" size="icon">
                     <Menu className="size-4" />
-                    <span className="sr-only">Open revision menu</span>
+                    <span className="sr-only">{t('revision.shell.open_menu_sr')}</span>
                   </Button>
                 }
               />
@@ -546,7 +597,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
                   <SheetTitle>
                     <span className="flex items-center gap-2">
                       <GraduationCap className="size-4 text-primary" />
-                      Your Hub
+                      {t('revision.shell.hub_title')}
                       {boardName && (
                         <Badge
                           variant="secondary"
@@ -576,7 +627,7 @@ export function RevisionShell({ children }: { children: React.ReactNode }) {
                 <h2> so each page has exactly one <h1> for crawlers
                 and screen readers. */}
             <h2 className="text-heading-md font-heading text-foreground">
-              Your Hub
+              {t('revision.shell.hub_title')}
               {boardName && (
                 <Badge variant="secondary" className="ml-2 text-[0.65rem] uppercase tracking-wider">
                   {boardName}

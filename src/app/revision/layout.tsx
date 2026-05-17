@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { RevisionShell } from './_components/revision-shell'
 import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { GeoFaq, REVISION_FAQS } from '@/components/seo/GeoFaq'
+import { t } from '@/lib/i18n/t'
 
 export const metadata: Metadata = {
   title: 'Your Hub',
@@ -20,7 +21,8 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RevisionLayout({ children }: { children: React.ReactNode }) {
+export default async function RevisionLayout({ children }: { children: React.ReactNode }) {
+  const geoFaqHeading = await t('revision.layout.geo_faq_heading')
   return (
     <>
       {/* educationalLevel intentionally omitted — this tree spans KS3,
@@ -36,7 +38,7 @@ export default function RevisionLayout({ children }: { children: React.ReactNode
       <RevisionShell>
         {children}
         <div className="mx-auto w-full max-w-5xl px-4 pb-12 sm:px-6">
-          <GeoFaq faqs={REVISION_FAQS} heading="English revision: common questions" />
+          <GeoFaq faqs={REVISION_FAQS} heading={geoFaqHeading} />
         </div>
       </RevisionShell>
     </>

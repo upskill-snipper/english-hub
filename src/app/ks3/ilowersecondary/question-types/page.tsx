@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { headers } from 'next/headers'
 import { BreadcrumbJsonLd } from '@/components/seo/json-ld'
 import { SPEC_ATTRIBUTION } from '@/lib/ilowersecondary/spec'
+import { t } from '@/lib/i18n/t'
 
 const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary/question-types'
 
@@ -16,49 +17,91 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
 }
 
-const PAGES: { href: string; title: string; blurb: string }[] = [
-  {
-    href: '/ks3/ilowersecondary/question-types/synonym-vocabulary',
-    title: 'Synonyms & vocabulary',
-    blurb: 'Circle/underline the synonym; vocabulary-in-context MCQs.',
-  },
-  {
-    href: '/ks3/ilowersecondary/question-types/short-answer',
-    title: 'Short answers',
-    blurb: '1–2 mark “Why…?” / “How does…?” retrieval and inference.',
-  },
-  {
-    href: '/ks3/ilowersecondary/question-types/punctuation-effect',
-    title: 'Punctuation effect',
-    blurb: 'Name the effect of a mark, then explain it from the text.',
-  },
-  {
-    href: '/ks3/ilowersecondary/question-types/meaning-impact',
-    title: 'Meaning & impact',
-    blurb: '“What did the writer mean…?” and 4-mark “how does…” items.',
-  },
-  {
-    href: '/ks3/ilowersecondary/question-types/feature-tables',
-    title: 'Tables & closed questions',
-    blurb: 'Tick-which-text tables, MCQs, underline, which-text-appealing.',
-  },
-  {
-    href: '/ks3/ilowersecondary/question-types/extended-comparison',
-    title: 'Extended comparison',
-    blurb: 'The 6-mark levelled comparison (RAO2 + RAO4 + RAO5).',
-  },
-]
-
 export default async function QuestionTypesIndex() {
   const nonce = (await headers()).get('x-nonce') ?? undefined
-  const breadcrumb = [
-    { name: 'Home', url: 'https://theenglishhub.app' },
-    { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
+
+  const [
+    trHome,
+    trKS3,
+    trILS,
+    trQT,
+    trH1,
+    trLead,
+    trPracticeText,
+    trModelText,
+    trSynTitle,
+    trSynBlurb,
+    trShortTitle,
+    trShortBlurb,
+    trPunctTitle,
+    trPunctBlurb,
+    trMITitle,
+    trMIBlurb,
+    trTablesTitle,
+    trTablesBlurb,
+    trExtTitle,
+    trExtBlurb,
+  ] = await Promise.all([
+    t('ks3.ils.shared.home'),
+    t('ks3.ils.breadcrumb.ks3'),
+    t('ks3.ils.breadcrumb.ils'),
+    t('ks3.ils.breadcrumb.question_types'),
+    t('ks3.ils.qt.h1'),
+    t('ks3.ils.qt.lead'),
+    t('ks3.ils.qt.practice_link_text'),
+    t('ks3.ils.qt.model_link_text'),
+    t('ks3.ils.qt.synonyms.title'),
+    t('ks3.ils.qt.synonyms.blurb'),
+    t('ks3.ils.qt.short_answer.title'),
+    t('ks3.ils.qt.short_answer.blurb'),
+    t('ks3.ils.qt.punctuation.title'),
+    t('ks3.ils.qt.punctuation.blurb'),
+    t('ks3.ils.qt.meaning_impact.title'),
+    t('ks3.ils.qt.meaning_impact.blurb'),
+    t('ks3.ils.qt.tables.title'),
+    t('ks3.ils.qt.tables.blurb'),
+    t('ks3.ils.qt.extended.title'),
+    t('ks3.ils.qt.extended.blurb'),
+  ])
+
+  const pages: { href: string; title: string; blurb: string }[] = [
     {
-      name: 'iLowerSecondary English',
-      url: 'https://theenglishhub.app/ks3/ilowersecondary',
+      href: '/ks3/ilowersecondary/question-types/synonym-vocabulary',
+      title: trSynTitle,
+      blurb: trSynBlurb,
     },
-    { name: 'Question types', url: PAGE_URL },
+    {
+      href: '/ks3/ilowersecondary/question-types/short-answer',
+      title: trShortTitle,
+      blurb: trShortBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/question-types/punctuation-effect',
+      title: trPunctTitle,
+      blurb: trPunctBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/question-types/meaning-impact',
+      title: trMITitle,
+      blurb: trMIBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/question-types/feature-tables',
+      title: trTablesTitle,
+      blurb: trTablesBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/question-types/extended-comparison',
+      title: trExtTitle,
+      blurb: trExtBlurb,
+    },
+  ]
+
+  const breadcrumb = [
+    { name: trHome, url: 'https://theenglishhub.app' },
+    { name: trKS3, url: 'https://theenglishhub.app/ks3' },
+    { name: trILS, url: 'https://theenglishhub.app/ks3/ilowersecondary' },
+    { name: trQT, url: PAGE_URL },
   ]
 
   return (
@@ -66,28 +109,25 @@ export default async function QuestionTypesIndex() {
       <BreadcrumbJsonLd items={breadcrumb} nonce={nonce} />
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
-          Home
+          {trHome}
         </Link>
         <span> · </span>
         <Link href="/ks3" className="hover:text-foreground">
-          KS3
+          {trKS3}
         </Link>
         <span> · </span>
         <Link href="/ks3/ilowersecondary" className="hover:text-foreground">
-          iLowerSecondary English
+          {trILS}
         </Link>
         <span> · </span>
-        <span>Question types</span>
+        <span>{trQT}</span>
       </p>
 
-      <h1>Question types</h1>
-      <p className="lead">
-        Every question style that appears in the Section A reading paper has its own masterclass —
-        how it is worded, exactly how the marks are awarded, and original worked examples.
-      </p>
+      <h1>{trH1}</h1>
+      <p className="lead">{trLead}</p>
 
       <div className="not-prose my-6 grid gap-4 sm:grid-cols-2">
-        {PAGES.map((p) => (
+        {pages.map((p) => (
           <Link
             key={p.href}
             href={p.href}
@@ -100,9 +140,9 @@ export default async function QuestionTypesIndex() {
       </div>
 
       <p>
-        See them combined in a full <Link href="/ks3/ilowersecondary/practice">practice paper</Link>{' '}
-        and compare to top-band <Link href="/ks3/ilowersecondary/model-answers">model answers</Link>
-        .
+        See them combined in a full{' '}
+        <Link href="/ks3/ilowersecondary/practice">{trPracticeText}</Link> and compare to top-band{' '}
+        <Link href="/ks3/ilowersecondary/model-answers">{trModelText}</Link>.
       </p>
 
       <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">

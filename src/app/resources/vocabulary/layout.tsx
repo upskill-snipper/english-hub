@@ -1,15 +1,18 @@
 import type { Metadata } from 'next'
+import { t } from '@/lib/i18n/t'
 
-export const metadata: Metadata = {
-  title: 'Vocabulary Builder',
-  description:
-    'Build your English vocabulary for GCSE exams. Academic, analytical, and descriptive word banks with definitions, examples, and practice exercises.',
-  alternates: { canonical: 'https://theenglishhub.app/resources/vocabulary' },
-  openGraph: {
-    title: 'Vocabulary Builder — The English Hub',
-    description:
-      'Build your English vocabulary for GCSE exams. Academic, analytical, and descriptive word banks with definitions, examples, and practice exercises.',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const [title, description, ogTitle] = await Promise.all([
+    t('resources.vocab.meta.title'),
+    t('resources.vocab.meta.desc'),
+    t('resources.vocab.meta.og_title'),
+  ])
+  return {
+    title,
+    description,
+    alternates: { canonical: 'https://theenglishhub.app/resources/vocabulary' },
+    openGraph: { title: ogTitle, description },
+  }
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

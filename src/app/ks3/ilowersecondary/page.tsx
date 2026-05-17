@@ -8,6 +8,7 @@ import {
   SPEC_ATTRIBUTION,
   type AOKey,
 } from '@/lib/ilowersecondary/spec'
+import { t } from '@/lib/i18n/t'
 
 const PAGE_URL = 'https://theenglishhub.app/ks3/ilowersecondary'
 
@@ -21,106 +22,157 @@ export const metadata: Metadata = {
 
 const AO_ORDER: AOKey[] = ['RAO1', 'RAO2', 'RAO3', 'RAO4', 'RAO5', 'WAO1', 'WAO2']
 
-const START_HERE: { href: string; title: string; blurb: string }[] = [
-  {
-    href: '/ks3/ilowersecondary/specification',
-    title: 'Specification',
-    blurb: 'The full content breakdown — what is assessed and why.',
-  },
-  {
-    href: '/ks3/ilowersecondary/exam-format',
-    title: 'Exam format',
-    blurb: 'Section A reading, Section B writing, timings and the source booklet.',
-  },
-  {
-    href: '/ks3/ilowersecondary/mark-scheme',
-    title: 'Mark scheme',
-    blurb: 'How examiners award marks, including the levelled writing grids.',
-  },
-  {
-    href: '/ks3/ilowersecondary/grade-targets',
-    title: 'Grade targets S1–S4',
-    blurb: 'What each grade looks like and how to move up a level.',
-  },
-  {
-    href: '/ks3/ilowersecondary/reading-skills',
-    title: 'Reading skills',
-    blurb: 'Retrieval, inference, structure, language and comparison.',
-  },
-  {
-    href: '/ks3/ilowersecondary/writing-skills',
-    title: 'Writing skills',
-    blurb: 'Form, audience and purpose, structure, grammar and accuracy.',
-  },
-  {
-    href: '/ks3/ilowersecondary/question-types',
-    title: 'Question types',
-    blurb: 'Every question style with how-to-answer guidance.',
-  },
-  {
-    href: '/ks3/ilowersecondary/text-types',
-    title: 'Text types',
-    blurb: 'The non-fiction and fiction texts you may meet.',
-  },
-  {
-    href: '/ks3/ilowersecondary/fiction',
-    title: 'Fiction',
-    blurb: 'Working with the unseen fiction text and its genres.',
-  },
-  {
-    href: '/ks3/ilowersecondary/practice',
-    title: 'Practice papers',
-    blurb: 'Original, exam-style papers written by The English Hub.',
-  },
-  {
-    href: '/ks3/ilowersecondary/quiz',
-    title: 'Quiz',
-    blurb: 'Quick-fire questions to test your understanding.',
-  },
-  {
-    href: '/ks3/ilowersecondary/grammar-lab',
-    title: 'Grammar lab',
-    blurb: 'Sentences, punctuation and grammatical terminology drills.',
-  },
-  {
-    href: '/ks3/ilowersecondary/vocabulary',
-    title: 'Vocabulary',
-    blurb: 'Build precise, ambitious word choices for top marks.',
-  },
-]
+export default async function ILowerSecondaryOverviewPage() {
+  const [
+    trHome,
+    trKS3,
+    trILS,
+    trWhoHeading,
+    trWhoBody,
+    trProgressionHeading,
+    trGlanceHeading,
+    trGlanceAssessment,
+    trGlanceDuration,
+    trGlanceDurationDetail,
+    trGlanceTotalMarks,
+    trGlanceSections,
+    trGlanceGrading,
+    trGlanceAvailability,
+    trAOHeading,
+    trAOIntro,
+    trStartHereHeading,
+    // start-here card titles
+    trSpecTitle,
+    trSpecBlurb,
+    trExamFmtTitle,
+    trExamFmtBlurb,
+    trMarkSchTitle,
+    trMarkSchBlurb,
+    trGradeTargTitle,
+    trGradeTargBlurb,
+    trReadSkillTitle,
+    trReadSkillBlurb,
+    trWriteSkillTitle,
+    trWriteSkillBlurb,
+    trQTTitle,
+    trQTBlurb,
+    trTTTitle,
+    trTTBlurb,
+    trFicTitle,
+    trFicBlurb,
+    trPracTitle,
+    trPracBlurb,
+    trQuizTitle,
+    trQuizBlurb,
+    trGramLabTitle,
+    trGramLabBlurb,
+    trVocabTitle,
+    trVocabBlurb,
+  ] = await Promise.all([
+    t('ks3.ils.breadcrumb.home'),
+    t('ks3.ils.breadcrumb.ks3'),
+    t('ks3.ils.breadcrumb.ils'),
+    t('ks3.ils.overview.who_heading'),
+    t('ks3.ils.overview.who_body'),
+    t('ks3.ils.overview.progression_heading'),
+    t('ks3.ils.overview.glance_heading'),
+    t('ks3.ils.overview.glance_assessment'),
+    t('ks3.ils.overview.glance_duration'),
+    t('ks3.ils.overview.glance_duration_detail'),
+    t('ks3.ils.overview.glance_total_marks'),
+    t('ks3.ils.overview.glance_sections'),
+    t('ks3.ils.overview.glance_grading'),
+    t('ks3.ils.overview.glance_availability'),
+    t('ks3.ils.overview.ao_heading'),
+    t('ks3.ils.overview.ao_intro'),
+    t('ks3.ils.overview.start_here_heading'),
+    t('ks3.ils.start.specification.title'),
+    t('ks3.ils.start.specification.blurb'),
+    t('ks3.ils.start.exam_format.title'),
+    t('ks3.ils.start.exam_format.blurb'),
+    t('ks3.ils.start.mark_scheme.title'),
+    t('ks3.ils.start.mark_scheme.blurb'),
+    t('ks3.ils.start.grade_targets.title'),
+    t('ks3.ils.start.grade_targets.blurb'),
+    t('ks3.ils.start.reading_skills.title'),
+    t('ks3.ils.start.reading_skills.blurb'),
+    t('ks3.ils.start.writing_skills.title'),
+    t('ks3.ils.start.writing_skills.blurb'),
+    t('ks3.ils.start.question_types.title'),
+    t('ks3.ils.start.question_types.blurb'),
+    t('ks3.ils.start.text_types.title'),
+    t('ks3.ils.start.text_types.blurb'),
+    t('ks3.ils.start.fiction.title'),
+    t('ks3.ils.start.fiction.blurb'),
+    t('ks3.ils.start.practice.title'),
+    t('ks3.ils.start.practice.blurb'),
+    t('ks3.ils.start.quiz.title'),
+    t('ks3.ils.start.quiz.blurb'),
+    t('ks3.ils.start.grammar_lab.title'),
+    t('ks3.ils.start.grammar_lab.blurb'),
+    t('ks3.ils.start.vocabulary.title'),
+    t('ks3.ils.start.vocabulary.blurb'),
+  ])
 
-export default function ILowerSecondaryOverviewPage() {
   const glanceCards: { label: string; value: string; detail: string }[] = [
     {
-      label: 'Assessment',
+      label: trGlanceAssessment,
       value: QUALIFICATION.paperCode,
       detail: QUALIFICATION.assessment,
     },
     {
-      label: 'Duration',
+      label: trGlanceDuration,
       value: QUALIFICATION.durationLabel,
-      detail: 'One sitting, no breaks. Dictionaries are not allowed.',
+      detail: trGlanceDurationDetail,
     },
     {
-      label: 'Total marks',
+      label: trGlanceTotalMarks,
       value: String(QUALIFICATION.totalMarks),
       detail: `${SECTIONS.A.name} (${SECTIONS.A.marks}) + ${SECTIONS.B.name} (${SECTIONS.B.marks}).`,
     },
     {
-      label: 'Sections',
+      label: trGlanceSections,
       value: '2',
       detail: `${SECTIONS.A.name} (suggested ${SECTIONS.A.recommendedLabel}); ${SECTIONS.B.name} (suggested ${SECTIONS.B.recommendedLabel}).`,
     },
     {
-      label: 'Grading',
+      label: trGlanceGrading,
       value: QUALIFICATION.grades.join(' – '),
       detail: QUALIFICATION.gradeNote,
     },
     {
-      label: 'Availability',
+      label: trGlanceAvailability,
       value: QUALIFICATION.availability.join(' & '),
       detail: `Specification: ${QUALIFICATION.specIssue}. First assessment ${QUALIFICATION.firstAssessment}.`,
     },
+  ]
+
+  const startHereItems: { href: string; title: string; blurb: string }[] = [
+    { href: '/ks3/ilowersecondary/specification', title: trSpecTitle, blurb: trSpecBlurb },
+    { href: '/ks3/ilowersecondary/exam-format', title: trExamFmtTitle, blurb: trExamFmtBlurb },
+    { href: '/ks3/ilowersecondary/mark-scheme', title: trMarkSchTitle, blurb: trMarkSchBlurb },
+    {
+      href: '/ks3/ilowersecondary/grade-targets',
+      title: trGradeTargTitle,
+      blurb: trGradeTargBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/reading-skills',
+      title: trReadSkillTitle,
+      blurb: trReadSkillBlurb,
+    },
+    {
+      href: '/ks3/ilowersecondary/writing-skills',
+      title: trWriteSkillTitle,
+      blurb: trWriteSkillBlurb,
+    },
+    { href: '/ks3/ilowersecondary/question-types', title: trQTTitle, blurb: trQTBlurb },
+    { href: '/ks3/ilowersecondary/text-types', title: trTTTitle, blurb: trTTBlurb },
+    { href: '/ks3/ilowersecondary/fiction', title: trFicTitle, blurb: trFicBlurb },
+    { href: '/ks3/ilowersecondary/practice', title: trPracTitle, blurb: trPracBlurb },
+    { href: '/ks3/ilowersecondary/quiz', title: trQuizTitle, blurb: trQuizBlurb },
+    { href: '/ks3/ilowersecondary/grammar-lab', title: trGramLabTitle, blurb: trGramLabBlurb },
+    { href: '/ks3/ilowersecondary/vocabulary', title: trVocabTitle, blurb: trVocabBlurb },
   ]
 
   return (
@@ -133,18 +185,18 @@ export default function ILowerSecondaryOverviewPage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: 'https://theenglishhub.app' },
-          { name: 'KS3', url: 'https://theenglishhub.app/ks3' },
-          { name: 'iLowerSecondary English', url: PAGE_URL },
+          { name: trHome, url: 'https://theenglishhub.app' },
+          { name: trKS3, url: 'https://theenglishhub.app/ks3' },
+          { name: trILS, url: PAGE_URL },
         ]}
       />
 
       <p className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground">
         <Link href="/ks3" className="hover:text-foreground">
-          Key Stage 3
+          {trKS3}
         </Link>
         <span> · </span>
-        <span>iLowerSecondary English</span>
+        <span>{trILS}</span>
       </p>
 
       <h1>{QUALIFICATION.title}</h1>
@@ -154,11 +206,10 @@ export default function ILowerSecondaryOverviewPage() {
         it is marked, and start revising the reading and writing skills it tests.
       </p>
 
-      <h2>Who it is for</h2>
+      <h2>{trWhoHeading}</h2>
       <p>
-        This qualification is sat by Year 9 students following the Pearson Edexcel iLowerSecondary
-        English Curriculum. {QUALIFICATION.priorLearning} {QUALIFICATION.contentSource} Strong
-        performance progresses naturally to:
+        {trWhoBody} {QUALIFICATION.priorLearning} {QUALIFICATION.contentSource}{' '}
+        {trProgressionHeading}
       </p>
       <ul>
         {QUALIFICATION.progression.map((p) => (
@@ -166,7 +217,7 @@ export default function ILowerSecondaryOverviewPage() {
         ))}
       </ul>
 
-      <h2>Exam at a glance</h2>
+      <h2>{trGlanceHeading}</h2>
       <div className="not-prose my-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {glanceCards.map((card) => (
           <div key={card.label} className="rounded-xl border border-border/60 bg-card p-4">
@@ -179,11 +230,8 @@ export default function ILowerSecondaryOverviewPage() {
         ))}
       </div>
 
-      <h2>The seven assessment objectives</h2>
-      <p>
-        Every question targets one of these objectives. The percentages are the weighting each
-        carries across the qualification.
-      </p>
+      <h2>{trAOHeading}</h2>
+      <p>{trAOIntro}</p>
       <div className="not-prose my-6 space-y-3">
         {AO_ORDER.map((key) => {
           const ao = ASSESSMENT_OBJECTIVES[key]
@@ -201,9 +249,9 @@ export default function ILowerSecondaryOverviewPage() {
         })}
       </div>
 
-      <h2>Start here</h2>
+      <h2>{trStartHereHeading}</h2>
       <div className="not-prose my-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {START_HERE.map((item) => (
+        {startHereItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
