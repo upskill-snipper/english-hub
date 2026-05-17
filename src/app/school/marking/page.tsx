@@ -381,7 +381,7 @@ export default function SchoolMarkingPage() {
       })
       if (!res.ok) {
         const body = (await res.json().catch(() => ({}))) as { error?: string }
-        throw new Error(body.error ?? 'Failed to submit decision')
+        throw new Error(body.error ?? t('school_marking_review.submit_failed'))
       }
       const updated = (await res.json()) as { submission: MarkingSubmission }
       setSubmissions((prev) =>
@@ -393,7 +393,7 @@ export default function SchoolMarkingPage() {
         setActiveId(null)
       }
     } catch (err) {
-      setReviewError(err instanceof Error ? err.message : 'Could not submit decision')
+      setReviewError(err instanceof Error ? err.message : t('school_marking_review.submit_error'))
     } finally {
       setReviewBusy(null)
     }
@@ -698,11 +698,11 @@ export default function SchoolMarkingPage() {
                 <section>
                   <div className="mb-2 flex items-center justify-between">
                     <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                      {t('marking.teacherDecision') || 'Teacher decision'}
+                      {t('school_marking_review.section_title')}
                     </h3>
                     {active.latest_moderation && (
                       <span className="text-[11px] text-muted-foreground">
-                        {t('marking.lastAction') || 'Last action'}:{' '}
+                        {t('school_marking_review.last_action')}:{' '}
                         {active.latest_moderation.decision} ·{' '}
                         {formatDate(active.latest_moderation.created_at)}
                       </span>
@@ -712,11 +712,13 @@ export default function SchoolMarkingPage() {
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
                       <div className="space-y-1.5">
                         <Label htmlFor="review-grade">
-                          {t('marking.finalGrade') || 'Final grade'}
+                          {t('school_marking_review.final_grade_label')}
                         </Label>
                         <Select value={reviewGrade} onValueChange={setReviewGrade}>
                           <SelectTrigger id="review-grade" className="w-32">
-                            <SelectValue placeholder="Grade" />
+                            <SelectValue
+                              placeholder={t('school_marking_review.grade_placeholder')}
+                            />
                           </SelectTrigger>
                           <SelectContent>
                             {GRADE_OPTIONS.map((g) => (
@@ -734,20 +736,20 @@ export default function SchoolMarkingPage() {
                           onCheckedChange={(v: boolean) => setReviewTraining(v)}
                         />
                         <Label htmlFor="review-training" className="cursor-pointer text-sm">
-                          {t('marking.suitableForTraining') || 'Suitable for training'}
+                          {t('school_marking_review.training_toggle_label')}
                         </Label>
                       </div>
                     </div>
 
                     <div className="space-y-1.5">
                       <Label htmlFor="review-feedback">
-                        {t('marking.feedbackToStudent') || 'Feedback to student'}
+                        {t('school_marking_review.feedback_label')}
                       </Label>
                       <Textarea
                         id="review-feedback"
                         value={reviewFeedback}
                         onChange={(e) => setReviewFeedback(e.target.value)}
-                        placeholder="Final feedback the student will see…"
+                        placeholder={t('school_marking_review.feedback_placeholder')}
                         rows={5}
                       />
                     </div>
@@ -755,25 +757,25 @@ export default function SchoolMarkingPage() {
                     <div className="grid gap-3 sm:grid-cols-2">
                       <div className="space-y-1.5">
                         <Label htmlFor="review-reason">
-                          {t('marking.adjustmentReason') || 'Adjustment reason'}
+                          {t('school_marking_review.adjustment_reason_label')}
                         </Label>
                         <Textarea
                           id="review-reason"
                           value={reviewReason}
                           onChange={(e) => setReviewReason(e.target.value)}
-                          placeholder="Why the AI mark was changed (internal)…"
+                          placeholder={t('school_marking_review.adjustment_reason_placeholder')}
                           rows={2}
                         />
                       </div>
                       <div className="space-y-1.5">
                         <Label htmlFor="review-notes">
-                          {t('marking.moderationNotes') || 'Moderation notes'}
+                          {t('school_marking_review.moderation_notes_label')}
                         </Label>
                         <Textarea
                           id="review-notes"
                           value={reviewNotes}
                           onChange={(e) => setReviewNotes(e.target.value)}
-                          placeholder="Internal moderation notes (not shown to student)…"
+                          placeholder={t('school_marking_review.moderation_notes_placeholder')}
                           rows={2}
                         />
                       </div>
@@ -787,13 +789,20 @@ export default function SchoolMarkingPage() {
                         className="flex-1 bg-green-600 text-white hover:bg-green-700"
                         onClick={() => handleReview('approve')}
                         disabled={reviewBusy !== null}
+                        aria-label={
+                          reviewBusy === 'approve'
+                            ? t('school_marking_review.approving')
+                            : t('school_marking_review.approve')
+                        }
                       >
                         {reviewBusy === 'approve' ? (
                           <Loader2 className="h-4 w-4 animate-spin" />
                         ) : (
                           <CheckCircle2 className="h-4 w-4" />
                         )}
-                        {t('marking.approve') || 'Approve'}
+                        {reviewBusy === 'approve'
+                          ? t('school_marking_review.approving')
+                          : t('school_marking_review.approve')}
                       </Button>
                       <Button
                         type="button"
@@ -801,13 +810,20 @@ export default function SchoolMarkingPage() {
                         className="flex-1 border-amber-500/40 text-amber-600 hover:bg-amber-500/10 dark:text-amber-400"
                         onClick={() => handleReview('send_back')}
                         disabled={reviewBusy !== null}
+                        aria-label={
+                          reviewBusy === 'send_back'
+                            ? t('school_marking_review.sending_back')
+                            : t('school_marking_review.send_back')
+                        }
                       >
                         {reviewBusy === 'send_back' ? (
                           <Loader2 className="h-4 w-4 animate-spin" />
                         ) : (
                           <Undo2 className="h-4 w-4" />
                         )}
-                        {t('marking.sendBack') || 'Send back to student'}
+                        {reviewBusy === 'send_back'
+                          ? t('school_marking_review.sending_back')
+                          : t('school_marking_review.send_back')}
                       </Button>
                       <Button
                         type="button"
@@ -815,18 +831,24 @@ export default function SchoolMarkingPage() {
                         className="flex-1 border-destructive/40 text-destructive hover:bg-destructive/10"
                         onClick={() => handleReview('reject')}
                         disabled={reviewBusy !== null}
+                        aria-label={
+                          reviewBusy === 'reject'
+                            ? t('school_marking_review.rejecting')
+                            : t('school_marking_review.reject')
+                        }
                       >
                         {reviewBusy === 'reject' ? (
                           <Loader2 className="h-4 w-4 animate-spin" />
                         ) : (
                           <XCircle className="h-4 w-4" />
                         )}
-                        {t('marking.reject') || 'Reject'}
+                        {reviewBusy === 'reject'
+                          ? t('school_marking_review.rejecting')
+                          : t('school_marking_review.reject')}
                       </Button>
                     </div>
                     <p className="text-[11px] text-muted-foreground">
-                      {t('marking.draftHint') ||
-                        'The AI mark is a draft. Approving records the final teacher mark and locks the submission.'}
+                      {t('school_marking_review.draft_hint')}
                     </p>
                   </div>
                 </section>

@@ -963,4 +963,63 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<string, { en: string; ar: str
   'school.b15.import_results.import_type_students': { en: 'Students', ar: 'طلاب' },
   'school.b15.import_results.import_type_teachers': { en: 'Teachers', ar: 'معلمون' },
   'school.b15.import_results.import_type_mixed': { en: 'Students & Teachers', ar: 'طلاب ومعلمون' },
+
+  // ─── /school/marking — WS-2 teacher decision / moderation block ───────────
+  // Curated EN + Khaleeji (Gulf) AR. Teacher-facing operational register.
+  // Exam tokens (AO, GCSE, "U") stay in Latin.
+  'school_marking_review.section_title': { en: 'Teacher decision', ar: 'قرار المعلّم' },
+  'school_marking_review.last_action': { en: 'Last action', ar: 'آخر إجراء' },
+  'school_marking_review.final_grade_label': { en: 'Final grade', ar: 'الدرجة النهائية' },
+  'school_marking_review.grade_placeholder': { en: 'Grade', ar: 'الدرجة' },
+  'school_marking_review.training_toggle_label': {
+    en: 'Suitable for training',
+    ar: 'مناسبة للتدريب',
+  },
+  'school_marking_review.feedback_label': { en: 'Feedback to student', ar: 'ملاحظات للطالب' },
+  'school_marking_review.feedback_placeholder': {
+    en: 'Final feedback the student will see…',
+    ar: 'الملاحظات النهائية اللي بيشوفها الطالب…',
+  },
+  'school_marking_review.adjustment_reason_label': {
+    en: 'Adjustment reason',
+    ar: 'سبب التعديل',
+  },
+  'school_marking_review.adjustment_reason_placeholder': {
+    en: 'Why the AI mark was changed (internal)…',
+    ar: 'ليش تغيّرت درجة الذكاء الاصطناعي (داخلي)…',
+  },
+  'school_marking_review.moderation_notes_label': {
+    en: 'Moderation notes',
+    ar: 'ملاحظات المراجعة',
+  },
+  'school_marking_review.moderation_notes_placeholder': {
+    en: 'Internal moderation notes (not shown to student)…',
+    ar: 'ملاحظات مراجعة داخلية (ما تظهر للطالب)…',
+  },
+  'school_marking_review.approve': { en: 'Approve', ar: 'اعتمد' },
+  'school_marking_review.send_back': {
+    en: 'Send back to student',
+    ar: 'رجّعها للطالب',
+  },
+  'school_marking_review.reject': { en: 'Reject', ar: 'ارفض' },
+  'school_marking_review.approving': { en: 'Approving…', ar: 'يعتمد…' },
+  'school_marking_review.sending_back': { en: 'Sending back…', ar: 'يرجّعها…' },
+  'school_marking_review.rejecting': { en: 'Rejecting…', ar: 'يرفض…' },
+  'school_marking_review.draft_hint': {
+    en: 'The AI mark is a draft. Approving records the final teacher mark and locks the submission.',
+    ar: 'درجة الذكاء الاصطناعي مسودّة. الاعتماد يسجّل درجة المعلّم النهائية ويقفل التسليم.',
+  },
+  'school_marking_review.submit_failed': {
+    en: 'Failed to submit decision',
+    ar: 'ما قدرنا نرسل القرار',
+  },
+  'school_marking_review.submit_error': {
+    en: 'Could not submit decision',
+    ar: 'تعذّر إرسال القرار',
+  },
+  'school_marking_review.saved': { en: 'Decision saved', ar: 'تم حفظ القرار' },
+  'school_marking_review.save_failed': {
+    en: 'Could not save decision',
+    ar: 'تعذّر حفظ القرار',
+  },
 }

@@ -19,7 +19,123 @@
 -- policy + scoped SELECT policies mirroring marking_submissions. All writes
 -- flow through service-role-backed, role-guarded API routes. training_data
 -- is service-role-ONLY (never client-readable) and stores no PII.
+--
+-- NOTE: this migration is SELF-BOOTSTRAPPING. The `marking_submissions`
+-- base table (originally `20260512_marking_submissions.sql`) is not
+-- guaranteed to have been applied on every environment (migrations run
+-- out-of-band). Section 0 creates it (in its final, extended form, with
+-- FK-guarded refs + base RLS) IF it is absent, so this file applies
+-- cleanly whether or not the prerequisite ran, and stays idempotent.
 -- ──────────────────────────────────────────────────────────────────────────
+
+-- ===========================================================================
+-- 0. Bootstrap public.marking_submissions if the prerequisite never ran
+-- ===========================================================================
+-- Created here in its FINAL shape: school_id NULLABLE (B2C self-study has no
+-- school), status CHECK = the full Smart-IP lifecycle set. The Section 2
+-- ALTERs below are then idempotent no-ops on a freshly-created table and
+-- still apply the deltas on a DB where the original migration DID run.
+
+CREATE TABLE IF NOT EXISTS public.marking_submissions (
+  id                  UUID            PRIMARY KEY DEFAULT gen_random_uuid(),
+  school_id           UUID,
+  student_id          UUID            NOT NULL,
+  class_id            UUID,
+  exam_board          TEXT            NOT NULL,
+  essay_title         TEXT,
+  essay_text          TEXT            NOT NULL,
+  ai_grade            TEXT,
+  ai_confidence       DOUBLE PRECISION CHECK (ai_confidence IS NULL OR (ai_confidence >= 0 AND ai_confidence <= 1)),
+  ai_feedback         TEXT,
+  ai_band_marks       JSONB           NOT NULL DEFAULT '[]'::jsonb,
+  status              TEXT            NOT NULL DEFAULT 'pending',
+  submitted_at        TIMESTAMPTZ     NOT NULL DEFAULT NOW(),
+  teacher_grade       TEXT,
+  teacher_comment     TEXT,
+  teacher_reviewed_by UUID,
+  teacher_reviewed_at TIMESTAMPTZ
+);
+
+-- FK-guarded refs — added only if the target table exists and the FK is
+-- not already present (matches this repo's order-robust migration style).
+DO $$ BEGIN
+  IF to_regclass('public.schools') IS NOT NULL THEN
+    ALTER TABLE public.marking_submissions
+      ADD CONSTRAINT marking_submissions_school_id_fkey
+      FOREIGN KEY (school_id) REFERENCES public.schools(id) ON DELETE CASCADE;
+  END IF;
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+DO $$ BEGIN
+  ALTER TABLE public.marking_submissions
+    ADD CONSTRAINT marking_submissions_student_id_fkey
+    FOREIGN KEY (student_id) REFERENCES auth.users(id) ON DELETE CASCADE;
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+DO $$ BEGIN
+  IF to_regclass('public.classes') IS NOT NULL THEN
+    ALTER TABLE public.marking_submissions
+      ADD CONSTRAINT marking_submissions_class_id_fkey
+      FOREIGN KEY (class_id) REFERENCES public.classes(id) ON DELETE SET NULL;
+  END IF;
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+DO $$ BEGIN
+  IF to_regclass('public.school_members') IS NOT NULL THEN
+    ALTER TABLE public.marking_submissions
+      ADD CONSTRAINT marking_submissions_teacher_reviewed_by_fkey
+      FOREIGN KEY (teacher_reviewed_by) REFERENCES public.school_members(id) ON DELETE SET NULL;
+  END IF;
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+CREATE INDEX IF NOT EXISTS idx_marking_submissions_school_submitted
+  ON public.marking_submissions(school_id, submitted_at DESC);
+CREATE INDEX IF NOT EXISTS idx_marking_submissions_student
+  ON public.marking_submissions(student_id);
+CREATE INDEX IF NOT EXISTS idx_marking_submissions_class
+  ON public.marking_submissions(class_id);
+
+ALTER TABLE public.marking_submissions ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "marking_submissions_service_role_all"      ON public.marking_submissions;
+DROP POLICY IF EXISTS "marking_submissions_school_admins_select"  ON public.marking_submissions;
+DROP POLICY IF EXISTS "marking_submissions_teachers_select"       ON public.marking_submissions;
+DROP POLICY IF EXISTS "marking_submissions_students_select"       ON public.marking_submissions;
+
+CREATE POLICY "marking_submissions_service_role_all"
+  ON public.marking_submissions FOR ALL TO service_role
+  USING (true) WITH CHECK (true);
+
+DO $$ BEGIN
+  IF to_regclass('public.school_members') IS NOT NULL THEN
+    EXECUTE $p$
+      CREATE POLICY "marking_submissions_school_admins_select"
+        ON public.marking_submissions FOR SELECT TO authenticated
+        USING (EXISTS (
+          SELECT 1 FROM public.school_members sm
+          WHERE sm.school_id = marking_submissions.school_id
+            AND sm.user_id = auth.uid()
+            AND sm.invite_status = 'accepted'
+            AND sm.role IN ('admin','head_of_department')))
+    $p$;
+    EXECUTE $p$
+      CREATE POLICY "marking_submissions_teachers_select"
+        ON public.marking_submissions FOR SELECT TO authenticated
+        USING (EXISTS (
+          SELECT 1 FROM public.school_members sm
+          JOIN public.classes c ON c.school_id = sm.school_id AND c.teacher_id = sm.id
+          JOIN public.class_students cs ON cs.class_id = c.id
+            AND cs.student_id = marking_submissions.student_id AND cs.is_active = TRUE
+          WHERE sm.user_id = auth.uid() AND sm.role = 'teacher'
+            AND sm.invite_status = 'accepted' AND sm.school_id = marking_submissions.school_id
+            AND (marking_submissions.class_id IS NULL OR c.id = marking_submissions.class_id)))
+    $p$;
+  END IF;
+END $$;
+
+CREATE POLICY "marking_submissions_students_select"
+  ON public.marking_submissions FOR SELECT TO authenticated
+  USING (auth.uid() = student_id);
 
 -- ===========================================================================
 -- 1. model_versions / prompt_versions / rubric_versions  (config lookups)
