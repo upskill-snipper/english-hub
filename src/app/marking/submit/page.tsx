@@ -7,6 +7,7 @@ import { isAiOptedOut } from '@/lib/ai-preferences'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { MARK_SCHEMES, type MarkScheme } from '@/lib/marking/mark-schemes'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Board catalogue ──────────────────────────────────────── */
 
@@ -153,6 +154,7 @@ function friendlyError(status: number, body: string): string {
 /* ─── Page ─────────────────────────────────────────────────── */
 
 export default function SubmitEssayPage() {
+  const tx = useT()
   const router = useRouter()
   const [aiOptedOut, setAiOptedOutState] = useState(false)
 
@@ -317,35 +319,35 @@ export default function SubmitEssayPage() {
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/marking" className="hover:text-primary">
-              Marking
+              {tx('marking.nav.marking')}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="font-medium text-foreground">New submission</li>
+          <li className="font-medium text-foreground">{tx('marking.submit.breadcrumb_new')}</li>
         </ol>
       </nav>
 
       <h1 className="font-heading text-3xl font-extrabold tracking-tight text-foreground">
-        Submit an essay for marking
+        {tx('marking.submit.title')}
       </h1>
       <p className="mt-1 text-sm text-muted-foreground">
-        Paste your essay below. We&apos;ll return a predicted grade, AO breakdown and marker-style
-        feedback.{' '}
+        {tx('marking.submit.subtitle')}{' '}
         <Link
           href="/marking/ai-explainer"
           className="text-primary underline-offset-2 hover:underline"
         >
-          How does AI marking work?
+          {tx('marking.submit.how_ai_works')}
         </Link>
       </p>
 
       {/* AI opt-out notice (Children's Code — GAP-12B) */}
       {aiOptedOut && (
         <div className="mt-8 rounded-lg border border-border bg-muted/50 px-6 py-8 text-center">
-          <h2 className="text-lg font-semibold text-foreground">AI marking is turned off</h2>
+          <h2 className="text-lg font-semibold text-foreground">
+            {tx('marking.submit.ai_off_heading')}
+          </h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-            A parent or guardian has turned off AI features for this account. You can still use all
-            other parts of The English Hub.
+            {tx('marking.submit.ai_off_body')}
           </p>
           <p className="mt-4 text-sm text-muted-foreground">
             To turn AI marking back on, visit{' '}
@@ -353,14 +355,14 @@ export default function SubmitEssayPage() {
               href="/parent/settings"
               className="text-primary underline-offset-2 hover:underline"
             >
-              Parent Settings
+              {tx('marking.submit.ai_off_parent_link')}
             </Link>{' '}
             or read{' '}
             <Link
               href="/marking/ai-explainer"
               className="text-primary underline-offset-2 hover:underline"
             >
-              how AI marking works
+              {tx('marking.submit.ai_off_explainer_link')}
             </Link>
             .
           </p>
@@ -370,10 +372,8 @@ export default function SubmitEssayPage() {
       {!aiOptedOut && (
         <Card className="mt-8">
           <CardHeader>
-            <CardTitle>Essay details</CardTitle>
-            <CardDescription>
-              Pick your exam board, paper and question so we can apply the right marking guide.
-            </CardDescription>
+            <CardTitle>{tx('marking.submit.card_title')}</CardTitle>
+            <CardDescription>{tx('marking.submit.card_desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -381,7 +381,7 @@ export default function SubmitEssayPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-1.5">
                   <label htmlFor="board" className="text-sm font-medium text-foreground">
-                    Exam board
+                    {tx('marking.submit.label_board')}
                   </label>
                   <select
                     id="board"
@@ -395,7 +395,7 @@ export default function SubmitEssayPage() {
                     className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
                   >
                     <option value="" disabled>
-                      Select board
+                      {tx('marking.submit.select_board')}
                     </option>
                     {boardOptions.map((b) => (
                       <option
@@ -403,11 +403,13 @@ export default function SubmitEssayPage() {
                         value={b.value}
                         disabled={!b.available}
                         title={
-                          b.available ? undefined : 'Coming soon — mark scheme not yet available'
+                          b.available
+                            ? undefined
+                            : `${tx('marking.submit.coming_soon')} — mark scheme not yet available`
                         }
                         className={b.available ? undefined : 'text-muted-foreground'}
                       >
-                        {b.available ? b.label : `${b.label} — Coming soon`}
+                        {b.available ? b.label : `${b.label} — ${tx('marking.submit.coming_soon')}`}
                       </option>
                     ))}
                   </select>
@@ -421,7 +423,7 @@ export default function SubmitEssayPage() {
 
                 <div className="space-y-1.5">
                   <label htmlFor="paper" className="text-sm font-medium text-foreground">
-                    Paper
+                    {tx('marking.submit.label_paper')}
                   </label>
                   <select
                     id="paper"
@@ -435,7 +437,9 @@ export default function SubmitEssayPage() {
                     className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 disabled:opacity-50"
                   >
                     <option value="" disabled>
-                      {selectedBoard?.available ? 'Select paper' : 'Choose a board first'}
+                      {selectedBoard?.available
+                        ? tx('marking.submit.select_paper')
+                        : tx('marking.submit.choose_board_first')}
                     </option>
                     {paperOptions.map((p) => (
                       <option key={p.value} value={p.value}>
@@ -449,7 +453,7 @@ export default function SubmitEssayPage() {
               {/* ── Question ───────────────────────────────── */}
               <div className="space-y-1.5">
                 <label htmlFor="question" className="text-sm font-medium text-foreground">
-                  Question
+                  {tx('marking.submit.label_question')}
                 </label>
                 <select
                   id="question"
@@ -460,7 +464,9 @@ export default function SubmitEssayPage() {
                   className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 disabled:opacity-50"
                 >
                   <option value="" disabled>
-                    {selectedPaper ? 'Select question' : 'Choose a paper first'}
+                    {selectedPaper
+                      ? tx('marking.submit.select_question')
+                      : tx('marking.submit.choose_paper_first')}
                   </option>
                   {questionOptions.map((q) => (
                     <option key={q.value} value={q.value}>
@@ -473,15 +479,17 @@ export default function SubmitEssayPage() {
               {/* ── Title ──────────────────────────────────── */}
               <div className="space-y-1.5">
                 <label htmlFor="title" className="text-sm font-medium text-foreground">
-                  Title{' '}
-                  <span className="text-xs font-normal text-muted-foreground">(optional)</span>
+                  {tx('marking.submit.label_title')}{' '}
+                  <span className="text-xs font-normal text-muted-foreground">
+                    {tx('marking.submit.label_title_optional')}
+                  </span>
                 </label>
                 <input
                   id="title"
                   type="text"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  placeholder="e.g. Macbeth — ambition essay, draft 2"
+                  placeholder={tx('marking.submit.title_placeholder')}
                   className="h-10 w-full rounded-lg border border-border bg-input px-3 text-sm text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
                 />
               </div>
@@ -489,25 +497,26 @@ export default function SubmitEssayPage() {
               {/* ── Essay body ─────────────────────────────── */}
               <div className="space-y-1.5">
                 <label htmlFor="essay" className="text-sm font-medium text-foreground">
-                  Your essay
+                  {tx('marking.submit.label_essay')}
                 </label>
                 <textarea
                   id="essay"
                   value={essay}
                   onChange={(e) => setEssay(e.target.value)}
-                  placeholder="Paste or type your full essay here..."
+                  placeholder={tx('marking.submit.essay_placeholder')}
                   required
                   rows={14}
                   className="w-full resize-y rounded-lg border border-border bg-input px-3 py-2.5 text-sm leading-relaxed text-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
                 />
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <span>
-                    {wordCount} {wordCount === 1 ? 'word' : 'words'}
+                    {wordCount}{' '}
+                    {wordCount === 1 ? tx('marking.submit.word') : tx('marking.submit.words')}
                     {wordCount > 0 && wordCount < 50 && (
-                      <span className="ml-1 text-destructive">(minimum 50 words)</span>
+                      <span className="ml-1 text-destructive">{tx('marking.submit.min_50')}</span>
                     )}
                   </span>
-                  <span>No upper limit</span>
+                  <span>{tx('marking.submit.no_upper_limit')}</span>
                 </div>
               </div>
 
@@ -524,22 +533,22 @@ export default function SubmitEssayPage() {
               {/* ── Submit ─────────────────────────────────── */}
               <div className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:justify-end">
                 <Button variant="outline" type="button" render={<Link href="/marking" />}>
-                  Cancel
+                  {tx('marking.submit.btn_cancel')}
                 </Button>
                 <Button type="submit" size="lg" disabled={!canSubmit || isSubmitting}>
                   {isSubmitting ? (
                     <span className="flex items-center gap-2">
                       <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                      Marking your essay…
+                      {tx('marking.submit.btn_marking')}
                     </span>
                   ) : (
-                    'Submit for marking'
+                    tx('marking.submit.btn_submit')
                   )}
                 </Button>
               </div>
               {isSubmitting && (
                 <p className="text-center text-xs text-muted-foreground">
-                  AI marking usually takes 5–15 seconds. Please don&apos;t close this page.
+                  {tx('marking.submit.wait_note')}
                 </p>
               )}
             </form>

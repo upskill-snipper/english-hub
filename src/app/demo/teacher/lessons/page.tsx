@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 import { generateLessonPlan, generateWorksheet } from '@/lib/generate-teaching-pdf'
 import type {
   LessonPlanData,
@@ -1967,6 +1968,7 @@ const TYPING_LINES = [
 // ─── Component ───────────────────────────────────────────────────────────────
 
 export default function LessonBuilderDemo() {
+  const t = useT()
   const [text, setText] = useState<string>(TEXTS[0])
   const [yearGroup, setYearGroup] = useState<string>(YEAR_GROUPS[3])
   const [board, setBoard] = useState<string>(EXAM_BOARDS[0])
@@ -2221,12 +2223,13 @@ export default function LessonBuilderDemo() {
       <div className="mx-auto max-w-4xl px-6 py-12">
         {/* Header */}
         <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">
-          The English Hub
+          {t('demo.b15.lessons.eyebrow')}
         </p>
-        <h1 className="text-4xl sm:text-5xl font-light tracking-tight mb-3">Lesson Builder Demo</h1>
+        <h1 className="text-4xl sm:text-5xl font-light tracking-tight mb-3">
+          {t('demo.b15.lessons.title')}
+        </h1>
         <p className="text-muted-foreground text-lg mb-8 max-w-2xl">
-          See exactly how the AI lesson builder works. Choose your text, year group, and focus --
-          then generate a complete, differentiated lesson plan in seconds.
+          {t('demo.b15.lessons.subtitle')}
         </p>
 
         {/* Demo Banner */}
@@ -2236,11 +2239,11 @@ export default function LessonBuilderDemo() {
               *
             </span>
             <div>
-              <p className="text-clay-600 dark:text-clay-400 font-medium text-sm">Demo Mode</p>
+              <p className="text-clay-600 dark:text-clay-400 font-medium text-sm">
+                {t('demo.b15.lessons.demo_mode')}
+              </p>
               <p className="text-muted-foreground text-sm mt-1">
-                This is a preview of the lesson builder. Generated plans use pre-built templates to
-                demonstrate the format and quality. With a full account, every lesson is uniquely
-                generated to your exact specification.
+                {t('demo.b15.lessons.demo_note')}
               </p>
             </div>
           </div>
@@ -2249,10 +2252,12 @@ export default function LessonBuilderDemo() {
         {/* Form */}
         {!generatedPlan && !isGenerating && (
           <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8 mb-10">
-            <h2 className="text-xl font-medium text-foreground mb-6">Configure Your Lesson</h2>
+            <h2 className="text-xl font-medium text-foreground mb-6">
+              {t('demo.b15.lessons.configure_heading')}
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormSelect
-                label="Text / Topic"
+                label={t('demo.b15.lessons.label_text')}
                 value={text}
                 onChange={(v) => {
                   setText(v)
@@ -2261,26 +2266,26 @@ export default function LessonBuilderDemo() {
                 options={[...TEXTS]}
               />
               <FormSelect
-                label="Exam Board"
+                label={t('demo.b15.lessons.label_board')}
                 value={board}
                 onChange={setBoard}
                 options={[...EXAM_BOARDS]}
               />
               <FormSelect
-                label="Year Group"
+                label={t('demo.b15.lessons.label_year')}
                 value={yearGroup}
                 onChange={setYearGroup}
                 options={[...YEAR_GROUPS]}
               />
               <FormSelect
-                label="Duration"
+                label={t('demo.b15.lessons.label_duration')}
                 value={duration}
                 onChange={setDuration}
                 options={[...DURATIONS]}
               />
               <div className="sm:col-span-2">
                 <FormSelect
-                  label="Lesson Focus"
+                  label={t('demo.b15.lessons.label_focus')}
                   value={focus}
                   onChange={setFocus}
                   options={[...FOCUSES]}
@@ -2289,7 +2294,7 @@ export default function LessonBuilderDemo() {
               {availableSections.length > 0 && (
                 <div className="sm:col-span-2">
                   <FormSelect
-                    label="Specific Section / Character / Theme (optional)"
+                    label={t('demo.b15.lessons.label_section')}
                     value={specificSection}
                     onChange={setSpecificSection}
                     options={["Any / Teacher's choice", ...availableSections]}
@@ -2301,7 +2306,7 @@ export default function LessonBuilderDemo() {
               onClick={handleGenerate}
               className="mt-8 w-full rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3.5 px-6 transition-colors text-sm"
             >
-              Generate Lesson Plan
+              {t('demo.b15.lessons.generate_btn')}
             </button>
           </div>
         )}
@@ -2315,7 +2320,9 @@ export default function LessonBuilderDemo() {
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse [animation-delay:150ms]" />
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse [animation-delay:300ms]" />
               </div>
-              <span className="text-sm text-primary font-medium">Generating lesson plan...</span>
+              <span className="text-sm text-primary font-medium">
+                {t('demo.b15.lessons.generating_label')}
+              </span>
             </div>
             <div className="space-y-2 font-mono text-xs">
               {TYPING_LINES.slice(0, typingIndex).map((line, i) => (
@@ -2340,7 +2347,7 @@ export default function LessonBuilderDemo() {
                 <div className="flex items-center gap-2 mb-2">
                   <span className="inline-block w-2 h-2 rounded-full bg-primary" />
                   <span className="text-xs uppercase tracking-wider text-primary font-medium">
-                    Generated Lesson Plan
+                    {t('demo.b15.lessons.generated_label')}
                   </span>
                 </div>
                 <h2 className="text-2xl font-medium text-foreground mb-2">{generatedPlan.title}</h2>
@@ -2361,7 +2368,7 @@ export default function LessonBuilderDemo() {
               </div>
 
               <div className="px-6 sm:px-8 py-6 space-y-8">
-                <Section title="Learning Objectives">
+                <Section title={t('demo.b15.lessons.objectives')}>
                   <ol className="list-decimal list-inside space-y-1.5 text-sm text-muted-foreground">
                     {generatedPlan.objectives.map((o, i) => (
                       <li key={i}>{o}</li>
@@ -2369,7 +2376,7 @@ export default function LessonBuilderDemo() {
                   </ol>
                 </Section>
 
-                <Section title="Success Criteria">
+                <Section title={t('demo.b15.lessons.success_criteria')}>
                   <ul className="space-y-1.5 text-sm text-muted-foreground">
                     {generatedPlan.successCriteria.map((s, i) => (
                       <li key={i} className="flex items-start gap-2">
@@ -2380,7 +2387,7 @@ export default function LessonBuilderDemo() {
                   </ul>
                 </Section>
 
-                <Section title="Keywords">
+                <Section title={t('demo.b15.lessons.keywords')}>
                   <div className="flex flex-wrap gap-2">
                     {generatedPlan.keywords.map((k) => (
                       <span
@@ -2394,33 +2401,33 @@ export default function LessonBuilderDemo() {
                 </Section>
 
                 <ActivityBlock
-                  label="Starter Activity"
+                  label={t('demo.b15.lessons.starter')}
                   activity={generatedPlan.starterActivity}
                   color="amber"
                 />
                 {generatedPlan.mainActivities.map((act, i) => (
                   <ActivityBlock
                     key={i}
-                    label={`Main Activity ${i + 1}`}
+                    label={`${t('demo.b15.lessons.main')} ${i + 1}`}
                     activity={act}
                     color="emerald"
                   />
                 ))}
                 <ActivityBlock
-                  label="Plenary"
+                  label={t('demo.b15.lessons.plenary')}
                   activity={generatedPlan.plenaryActivity}
                   color="violet"
                 />
 
                 {generatedPlan.homework && (
-                  <Section title="Homework">
+                  <Section title={t('demo.b15.lessons.homework')}>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {generatedPlan.homework}
                     </p>
                   </Section>
                 )}
 
-                <Section title="Worksheet Questions">
+                <Section title={t('demo.b15.lessons.worksheet')}>
                   <div className="space-y-5">
                     {generatedPlan.worksheetQuestions.map((q, i) => (
                       <div key={i} className="rounded-lg border border-border/60 bg-card p-4">
@@ -2430,14 +2437,14 @@ export default function LessonBuilderDemo() {
                           </p>
                           {q.marks && (
                             <span className="shrink-0 text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded">
-                              {q.marks} marks
+                              {q.marks} {t('demo.b15.lessons.marks_suffix')}
                             </span>
                           )}
                         </div>
                         {q.modelAnswer && (
                           <details className="mt-2">
                             <summary className="text-xs text-primary/70 cursor-pointer hover:text-primary transition-colors">
-                              Show model answer
+                              {t('demo.b15.lessons.show_model_answer')}
                             </summary>
                             <p className="mt-2 text-xs text-muted-foreground leading-relaxed pl-4 border-l border-primary/20">
                               {q.modelAnswer}
@@ -2449,7 +2456,7 @@ export default function LessonBuilderDemo() {
                   </div>
                 </Section>
 
-                <Section title="Teacher Notes">
+                <Section title={t('demo.b15.lessons.teacher_notes')}>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     {generatedPlan.teacherNotes.map((n, i) => (
                       <li key={i} className="flex items-start gap-2">
@@ -2478,30 +2485,38 @@ export default function LessonBuilderDemo() {
             >
               <div className="flex flex-wrap gap-3 mb-10">
                 <DownloadMenu
-                  label="Lesson Plan"
+                  label={t('demo.b15.lessons.dl_lesson_plan')}
                   className="text-xs"
                   options={[
-                    { label: 'Download PDF', format: 'pdf', onClick: handleDownloadPDF },
                     {
-                      label: 'Download Word (.docx)',
+                      label: t('demo.b15.lessons.download_pdf'),
+                      format: 'pdf',
+                      onClick: handleDownloadPDF,
+                    },
+                    {
+                      label: t('demo.b15.lessons.download_word'),
                       format: 'word',
                       onClick: handleDownloadWordLesson,
                     },
                     {
-                      label: 'Download PowerPoint (.pptx)',
+                      label: t('demo.b15.lessons.download_pptx'),
                       format: 'pptx',
                       onClick: handleDownloadPptx,
                     },
                   ]}
                 />
                 <DownloadMenu
-                  label="Worksheet"
+                  label={t('demo.b15.lessons.dl_worksheet')}
                   variant="outline"
                   className="text-xs border-border/60 text-muted-foreground hover:bg-muted hover:text-foreground"
                   options={[
-                    { label: 'Download PDF', format: 'pdf', onClick: handleDownloadWorksheet },
                     {
-                      label: 'Download Word (.docx)',
+                      label: t('demo.b15.lessons.download_pdf'),
+                      format: 'pdf',
+                      onClick: handleDownloadWorksheet,
+                    },
+                    {
+                      label: t('demo.b15.lessons.download_word'),
                       format: 'word',
                       onClick: handleDownloadWordWorksheet,
                     },
@@ -2509,12 +2524,15 @@ export default function LessonBuilderDemo() {
                 />
                 <ActionButton
                   onClick={handleCopy}
-                  label={copied ? 'Copied!' : 'Copy to Clipboard'}
+                  label={copied ? t('demo.b15.lessons.copied_btn') : t('demo.b15.lessons.copy_btn')}
                 />
-                <ActionButton onClick={handleReset} label="Generate Another" />
+                <ActionButton
+                  onClick={handleReset}
+                  label={t('demo.b15.lessons.generate_another')}
+                />
                 <ActionButton
                   onClick={() => showToast('Available with full account')}
-                  label="Edit Lesson"
+                  label={t('demo.b15.lessons.edit_btn')}
                 />
               </div>
             </ErrorBoundary>
@@ -2522,14 +2540,11 @@ export default function LessonBuilderDemo() {
             {/* CTA */}
             <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8 text-center mb-10">
               <p className="text-lg text-foreground font-medium mb-2">
-                This is one of 300+ ready-made lessons.
+                {t('demo.b15.lessons.cta_title')}
               </p>
-              <p className="text-muted-foreground text-sm mb-5">
-                Start a 7-day free trial to access them all -- fully editable, printable, and
-                aligned to your exam board. Card required, cancel before day 7.
-              </p>
+              <p className="text-muted-foreground text-sm mb-5">{t('demo.b15.lessons.cta_body')}</p>
               <button className="rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 px-8 transition-colors text-sm">
-                Start 7-day trial
+                {t('demo.b15.lessons.cta_btn')}
               </button>
             </div>
           </>
@@ -2602,6 +2617,7 @@ function ActivityBlock({
   activity: LessonActivity
   color: 'amber' | 'emerald' | 'violet'
 }) {
+  const t = useT()
   const styles = {
     amber: {
       border: 'border-clay-500/20',
@@ -2625,7 +2641,7 @@ function ActivityBlock({
       {activity.differentiation && (
         <div className="space-y-2 mt-4">
           <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium">
-            Differentiation
+            {t('demo.b15.lessons.differentiation')}
           </p>
           <DiffTier tier="Support" text={activity.differentiation.support} />
           <DiffTier tier="Core" text={activity.differentiation.core} />
@@ -2635,7 +2651,7 @@ function ActivityBlock({
       {activity.resources && activity.resources.length > 0 && (
         <div className="mt-4">
           <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-1.5">
-            Resources
+            {t('demo.b15.lessons.resources')}
           </p>
           <div className="flex flex-wrap gap-1.5">
             {activity.resources.map((r) => (

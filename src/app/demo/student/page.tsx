@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
 import {
   BookOpen,
@@ -201,6 +202,7 @@ const FLASHCARDS = [
 // ---------------------------------------------------------------------------
 
 function FlashcardWidget() {
+  const t = useT()
   const [index, setIndex] = useState(0)
   const [flipped, setFlipped] = useState(false)
 
@@ -231,7 +233,9 @@ function FlashcardWidget() {
             className="absolute inset-0 rounded-xl border border-border/60 bg-gradient-to-br from-violet-500/10 to-clay-400/10 flex flex-col items-center justify-center p-6"
             style={{ backfaceVisibility: 'hidden' }}
           >
-            <p className="text-xs text-muted-foreground mb-3">Tap to reveal</p>
+            <p className="text-xs text-muted-foreground mb-3">
+              {t('demo.b15.student.tap_to_reveal')}
+            </p>
             <p className="text-lg font-medium text-foreground text-center">{card.front}</p>
             <p className="text-xs text-muted-foreground mt-4">
               {index + 1} / {FLASHCARDS.length}
@@ -241,7 +245,7 @@ function FlashcardWidget() {
             className="absolute inset-0 rounded-xl border border-primary/20 bg-gradient-to-br from-violet-500/15 to-clay-400/15 flex flex-col items-center justify-center p-6"
             style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
           >
-            <p className="text-xs text-primary/70 mb-3">Definition</p>
+            <p className="text-xs text-primary/70 mb-3">{t('demo.b15.student.definition')}</p>
             <p className="text-sm text-foreground text-center leading-relaxed">{card.back}</p>
           </div>
         </div>
@@ -252,7 +256,7 @@ function FlashcardWidget() {
           className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border/60 bg-muted text-sm text-muted-foreground hover:text-foreground hover:border-border transition-colors"
         >
           <RotateCcw className="h-4 w-4" />
-          Next Card
+          {t('demo.b15.student.next_card')}
         </button>
       </div>
     </div>
@@ -264,6 +268,7 @@ function FlashcardWidget() {
 // ---------------------------------------------------------------------------
 
 export default function StudentDemoPage() {
+  const t = useT()
   const [flashcardsOpen, setFlashcardsOpen] = useState(false)
 
   return (
@@ -272,7 +277,8 @@ export default function StudentDemoPage() {
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 px-4 py-3">
           <p className="text-sm text-primary">
-            <span className="font-semibold">Student Demo</span> -- See what students experience
+            <span className="font-semibold">{t('demo.b15.student.banner')}</span> --{' '}
+            {t('demo.b15.student.banner_sub')}
           </p>
         </div>
 
@@ -283,7 +289,7 @@ export default function StudentDemoPage() {
               {/* Left: Welcome text */}
               <div className="flex-1 text-center lg:text-left">
                 <h1 className="text-3xl md:text-4xl font-light tracking-tight text-foreground mb-2">
-                  Welcome back, {STUDENT.name}
+                  {t('demo.b15.student.welcome')} {STUDENT.name}
                 </h1>
                 <p className="text-muted-foreground text-sm mb-5">
                   {STUDENT.yearGroup} &middot; {STUDENT.school}
@@ -294,7 +300,7 @@ export default function StudentDemoPage() {
                   <div className="flex items-center gap-2 rounded-lg border border-primary/20 bg-blue-500/5 px-3 py-2">
                     <Star className="h-4 w-4 text-primary" />
                     <span className="text-sm text-muted-foreground">
-                      Working At:{' '}
+                      {t('demo.b15.student.working_at')}{' '}
                       <span
                         className={`font-semibold ${gcseGradeColor(percentageToGCSEGrade(STUDENT.averageScore))}`}
                       >
@@ -306,7 +312,7 @@ export default function StudentDemoPage() {
                   <div className="flex items-center gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2">
                     <Award className="h-4 w-4 text-amber-700 dark:text-amber-300" />
                     <span className="text-sm text-muted-foreground">
-                      Predicted:{' '}
+                      {t('demo.b15.student.predicted')}{' '}
                       <span className="font-semibold text-amber-700 dark:text-amber-300">
                         Grade {STUDENT.predictedGrade}
                       </span>
@@ -316,7 +322,7 @@ export default function StudentDemoPage() {
                   <div className="flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2">
                     <Target className="h-4 w-4 text-primary" />
                     <span className="text-sm text-muted-foreground">
-                      Target:{' '}
+                      {t('demo.b15.student.target')}{' '}
                       <span className="font-semibold text-primary">
                         Grade {STUDENT.targetGrade}
                       </span>
@@ -326,7 +332,7 @@ export default function StudentDemoPage() {
                   <div className="flex items-center gap-2 rounded-lg border border-orange-500/20 bg-gradient-to-r from-orange-500/10 to-red-500/10 px-3 py-2">
                     <Flame className="h-4 w-4 text-orange-700 dark:text-orange-300" />
                     <span className="text-sm font-semibold text-orange-700 dark:text-orange-300">
-                      {STUDENT.streak} day streak
+                      {STUDENT.streak} {t('demo.b15.student.day_streak')}
                     </span>
                   </div>
                 </div>
@@ -336,7 +342,7 @@ export default function StudentDemoPage() {
               <div className="flex flex-shrink-0 flex-col items-center gap-2">
                 <RadialScore value={STUDENT.overallProgress} size={200} />
                 <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                  overall progress
+                  {t('demo.b15.student.overall_progress')}
                 </span>
               </div>
             </div>
@@ -348,7 +354,7 @@ export default function StudentDemoPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Average Grade */}
             <KpiTile
-              label="Average Grade"
+              label={t('demo.b15.student.avg_grade')}
               value={percentageToGCSEGrade(STUDENT.averageScore)}
               prefix="Grade "
               icon={TrendingUp}
@@ -357,7 +363,7 @@ export default function StudentDemoPage() {
 
             {/* Assignments Done */}
             <KpiTile
-              label="Completed"
+              label={t('demo.b15.student.completed')}
               value={STUDENT.assignmentsDone}
               suffix={`/${STUDENT.totalAssignments}`}
               icon={CheckCircle}
@@ -366,9 +372,9 @@ export default function StudentDemoPage() {
 
             {/* Study Streak */}
             <KpiTile
-              label="Streak"
+              label={t('demo.b15.student.streak')}
               value={STUDENT.streak}
-              suffix=" days"
+              suffix={` ${t('demo.b15.student.days_suffix')}`}
               icon={Flame}
               accent="ochre"
             />
@@ -376,7 +382,7 @@ export default function StudentDemoPage() {
             {/* Next Goal */}
             <GlassPanel accent="clay" className="p-5">
               <div className="flex items-start justify-between gap-3">
-                <PanelEyebrow>Next Goal</PanelEyebrow>
+                <PanelEyebrow>{t('demo.b15.student.next_goal')}</PanelEyebrow>
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground/[0.06]">
                   <Star className="h-4 w-4 text-muted-foreground" aria-hidden />
                 </span>
@@ -385,16 +391,17 @@ export default function StudentDemoPage() {
                 Grade {STUDENT.targetGrade}
               </p>
               <p className="text-[11px] text-muted-foreground mt-1">
-                {Number(STUDENT.targetGrade) - Number(STUDENT.predictedGrade)} grade
-                {Number(STUDENT.targetGrade) - Number(STUDENT.predictedGrade) !== 1 ? 's' : ''} to
-                go
+                {Number(STUDENT.targetGrade) - Number(STUDENT.predictedGrade)}{' '}
+                {Number(STUDENT.targetGrade) - Number(STUDENT.predictedGrade) !== 1
+                  ? t('demo.b15.student.grades_to_go_plural')
+                  : t('demo.b15.student.grades_to_go')}
               </p>
               <div className="mt-2">
                 <Link
                   href="/demo/student/progress"
                   className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors"
                 >
-                  View progress
+                  {t('demo.b15.student.view_progress')}
                   <ArrowRight className="h-3 w-3" />
                 </Link>
               </div>
@@ -409,7 +416,7 @@ export default function StudentDemoPage() {
             <GlassPanel accent="sage" className="p-6">
               <h2 className="text-lg font-medium text-foreground mb-4 flex items-center gap-2">
                 <ThumbsUp className="h-5 w-5 text-primary" />
-                Your Strengths
+                {t('demo.b15.student.your_strengths')}
               </h2>
               <div className="flex flex-wrap gap-2 mb-4">
                 {STRENGTHS.map((s) => (
@@ -443,7 +450,7 @@ export default function StudentDemoPage() {
             <GlassPanel accent="ochre" className="p-6">
               <h2 className="text-lg font-medium text-foreground mb-4 flex items-center gap-2">
                 <Target className="h-5 w-5 text-amber-700 dark:text-amber-300" />
-                Areas to Improve
+                {t('demo.b15.student.areas_improve')}
               </h2>
               <div className="flex flex-wrap gap-2 mb-4">
                 {AREAS_TO_IMPROVE.map((a) => (
@@ -487,7 +494,7 @@ export default function StudentDemoPage() {
         <section className="mb-10">
           <h2 className="text-lg font-medium text-foreground mb-4 flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-primary" />
-            Next Grade Recommendations
+            {t('demo.b15.student.next_grade_recs')}
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Grade Progress Card */}
@@ -517,7 +524,7 @@ export default function StudentDemoPage() {
               render={<Link href="/demo/student/progress" />}
               className="text-primary border-primary/20 hover:bg-primary/10"
             >
-              View Full Recommendations
+              {t('demo.b15.student.view_full_recs')}
               <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
             </Button>
           </div>
@@ -538,12 +545,14 @@ export default function StudentDemoPage() {
         {/* ── MY COURSES (2-col compact grid) ──────────────────────────── */}
         <section id="courses" className="mb-10">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-medium text-foreground">My Courses</h2>
+            <h2 className="text-lg font-medium text-foreground">
+              {t('demo.b15.student.my_courses')}
+            </h2>
             <Link
               href="/demo/student/courses"
               className="text-xs text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
             >
-              View all <ArrowRight className="h-3 w-3" />
+              {t('demo.b15.student.view_all')} <ArrowRight className="h-3 w-3" />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -565,7 +574,10 @@ export default function StudentDemoPage() {
                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   <Play className="h-3 w-3 text-muted-foreground/50" />
                   <span className="truncate">
-                    <span className="text-muted-foreground">Next:</span> {course.nextLesson}
+                    <span className="text-muted-foreground">
+                      {t('demo.b15.student.next_label')}
+                    </span>{' '}
+                    {course.nextLesson}
                   </span>
                 </div>
               </Link>
@@ -577,7 +589,7 @@ export default function StudentDemoPage() {
         <section className="mb-10">
           <h2 className="text-lg font-medium text-foreground mb-4 flex items-center gap-2">
             <Zap className="h-5 w-5 text-primary" />
-            Recommended Next
+            {t('demo.b15.student.recommended_next')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {RECOMMENDED_NEXT.map((r) => {
@@ -606,7 +618,9 @@ export default function StudentDemoPage() {
                         r.priority === 'high' ? 'text-primary' : 'text-muted-foreground'
                       }`}
                     >
-                      {r.priority === 'high' ? 'Priority' : 'Up Next'}
+                      {r.priority === 'high'
+                        ? t('demo.b15.student.priority')
+                        : t('demo.b15.student.up_next')}
                     </span>
                   </div>
                   <h3 className="text-sm font-medium text-foreground mb-1">{r.title}</h3>
@@ -623,7 +637,7 @@ export default function StudentDemoPage() {
                     render={<Link href={`/demo/student/courses/${r.courseId}`} />}
                   >
                     <Play className="h-3.5 w-3.5 mr-1.5" />
-                    Start
+                    {t('demo.b15.student.start')}
                   </Button>
                 </div>
               )
@@ -643,11 +657,10 @@ export default function StudentDemoPage() {
               </div>
               <div className="flex-1">
                 <h3 className="text-base font-semibold text-foreground mb-1">
-                  Reading Comprehension Assessment
+                  {t('demo.b15.student.reading_assessment')}
                 </h3>
                 <p className="text-xs text-muted-foreground">
-                  Discover your reading age, decoding skills, and fluency level with our
-                  standardised assessment tool. Takes approximately 20-30 minutes.
+                  {t('demo.b15.student.reading_assessment_sub')}
                 </p>
               </div>
               <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-1 shrink-0 hidden sm:block" />
@@ -657,23 +670,25 @@ export default function StudentDemoPage() {
 
         {/* ── RECENT RESULTS (clean table with color-coded scores) ──────── */}
         <section className="mb-10">
-          <h2 className="text-lg font-medium text-foreground mb-4">Recent Results</h2>
+          <h2 className="text-lg font-medium text-foreground mb-4">
+            {t('demo.b15.student.recent_results')}
+          </h2>
           <div className="rounded-xl border border-border/60 bg-card overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60">
                     <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground">
-                      Assessment
+                      {t('demo.b15.student.col_assessment')}
                     </th>
                     <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground">
-                      Type
+                      {t('demo.b15.student.col_type')}
                     </th>
                     <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground">
-                      Score
+                      {t('demo.b15.student.col_score')}
                     </th>
                     <th className="text-left px-5 py-3 text-xs font-medium text-muted-foreground">
-                      Date
+                      {t('demo.b15.student.col_date')}
                     </th>
                   </tr>
                 </thead>
@@ -729,7 +744,9 @@ export default function StudentDemoPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
           {/* Upcoming Assignments */}
           <section>
-            <h2 className="text-lg font-medium text-foreground mb-4">Upcoming Assignments</h2>
+            <h2 className="text-lg font-medium text-foreground mb-4">
+              {t('demo.b15.student.upcoming_assignments')}
+            </h2>
             <div className="space-y-3">
               {ASSIGNMENTS.map((a) => (
                 <div
@@ -775,14 +792,16 @@ export default function StudentDemoPage() {
               <ChevronDown
                 className={`h-4 w-4 text-muted-foreground transition-transform ${flashcardsOpen ? 'rotate-0' : '-rotate-90'}`}
               />
-              Flashcard Practice
+              {t('demo.b15.student.flashcard_practice')}
               <span className="text-xs text-muted-foreground font-normal ml-1">
-                ({FLASHCARDS.length} cards)
+                ({FLASHCARDS.length} {t('demo.b15.student.cards_suffix')})
               </span>
             </button>
             {flashcardsOpen ? (
               <div className="rounded-xl border border-border/60 bg-card p-6">
-                <p className="text-xs text-muted-foreground mb-4">Literary Terms</p>
+                <p className="text-xs text-muted-foreground mb-4">
+                  {t('demo.b15.student.literary_terms')}
+                </p>
                 <FlashcardWidget />
               </div>
             ) : (
@@ -790,7 +809,9 @@ export default function StudentDemoPage() {
                 onClick={() => setFlashcardsOpen(true)}
                 className="rounded-xl border border-dashed border-border/60 bg-card p-6 flex items-center justify-center cursor-pointer hover:border-border transition-colors"
               >
-                <p className="text-sm text-muted-foreground">Click to expand flashcard practice</p>
+                <p className="text-sm text-muted-foreground">
+                  {t('demo.b15.student.click_expand')}
+                </p>
               </div>
             )}
           </section>
@@ -799,17 +820,18 @@ export default function StudentDemoPage() {
         {/* ── CTA ────────────────────────────────────────────────────────── */}
         <section className="mb-10">
           <div className="rounded-2xl border border-primary/20 bg-gradient-to-r from-violet-500/10 via-pink-500/10 to-clay-500/10 p-8 text-center">
-            <h2 className="text-xl font-medium text-foreground mb-2">Get full access</h2>
+            <h2 className="text-xl font-medium text-foreground mb-2">
+              {t('demo.b15.student.get_full_access')}
+            </h2>
             <p className="text-sm text-muted-foreground mb-6 max-w-md mx-auto">
-              Unlock all courses, unlimited flashcards, mock exams with instant feedback, and
-              personalised study plans.
+              {t('demo.b15.student.full_access_sub')}
             </p>
             <Button
               render={<Link href="/auth/register" />}
               className="bg-gradient-to-r from-violet-500 to-clay-400 text-primary-foreground border-0 hover:opacity-90"
             >
               <Sparkles className="h-4 w-4 mr-2" />
-              Start Free Trial
+              {t('demo.b15.student.start_free_trial')}
             </Button>
           </div>
         </section>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 import {
   ClipboardList,
   CheckCircle2,
@@ -182,6 +183,7 @@ function ProgressBar({
 // ---------------------------------------------------------------------------
 
 export default function HomeworkDemoPage() {
+  const tx = useT()
   const [activeTab, setActiveTab] = useState<Tab>('set')
   const [toast, setToast] = useState<string | null>(null)
   const [createdAssignment, setCreatedAssignment] = useState(false)
@@ -200,19 +202,19 @@ export default function HomeworkDemoPage() {
   }
 
   function handleSetHomework() {
-    showToast('Assignment set (demo mode)')
+    showToast(tx('demo.b15.teacher_hw.toast_set'))
     setCreatedAssignment(true)
   }
 
   const tabs: { key: Tab; label: string }[] = [
-    { key: 'set', label: 'Set Homework' },
-    { key: 'track', label: 'Track Progress' },
-    { key: 'mark', label: 'Mark Work' },
+    { key: 'set', label: tx('demo.b15.teacher_hw.tab_set') },
+    { key: 'track', label: tx('demo.b15.teacher_hw.tab_track') },
+    { key: 'mark', label: tx('demo.b15.teacher_hw.tab_mark') },
   ]
 
   return (
     <div className="min-h-screen bg-background">
-      <DemoBanner message="This is an interactive demo of homework management. No real data is saved." />
+      <DemoBanner message={tx('demo.b15.teacher_hw.demo_banner')} />
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 lg:py-12">
         {/* Header */}
@@ -222,19 +224,19 @@ export default function HomeworkDemoPage() {
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-primary/20 border border-primary/20">
                 <ClipboardList className="h-5 w-5 text-primary" />
               </div>
-              <h1 className="text-2xl font-bold text-foreground">Homework Dashboard</h1>
+              <h1 className="text-2xl font-bold text-foreground">
+                {tx('demo.b15.teacher_hw.title')}
+              </h1>
             </div>
             <Link
               href="/demo/teacher/homework/generate"
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-primary to-primary text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
             >
               <Wand2 className="h-4 w-4" />
-              Auto-Generate Homework
+              {tx('demo.b15.teacher_hw.autogen_btn')}
             </Link>
           </div>
-          <p className="text-muted-foreground text-sm mt-1">
-            Set, track, and mark homework assignments for your classes.
-          </p>
+          <p className="text-muted-foreground text-sm mt-1">{tx('demo.b15.teacher_hw.subtitle')}</p>
         </div>
 
         {/* Tabs */}
@@ -274,11 +276,10 @@ export default function HomeworkDemoPage() {
                   </div>
                   <div>
                     <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
-                      Auto-Generate Homework with AI
+                      {tx('demo.b15.teacher_hw.ai_card_title')}
                     </h3>
                     <p className="text-sm text-muted-foreground mt-0.5">
-                      Select a topic, type, and grade level -- get a complete homework assignment
-                      with mark scheme, success criteria, and extension tasks in seconds.
+                      {tx('demo.b15.teacher_hw.ai_card_body')}
                     </p>
                   </div>
                 </div>
@@ -287,19 +288,23 @@ export default function HomeworkDemoPage() {
             </Link>
 
             <div className="rounded-xl border border-border/60 bg-card p-6">
-              <h2 className="text-lg font-semibold text-foreground mb-6">Create New Assignment</h2>
+              <h2 className="text-lg font-semibold text-foreground mb-6">
+                {tx('demo.b15.teacher_hw.create_heading')}
+              </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Class select */}
                 <div className="space-y-2">
-                  <label className="text-sm text-muted-foreground">Class</label>
+                  <label className="text-sm text-muted-foreground">
+                    {tx('demo.b15.teacher_hw.field_class')}
+                  </label>
                   <select
                     value={formClass}
                     onChange={(e) => setFormClass(e.target.value)}
                     className="w-full rounded-lg bg-card border border-border/60 px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary/40"
                   >
                     <option value="" className="bg-muted">
-                      Select class...
+                      {tx('demo.b15.teacher_hw.field_class_ph')}
                     </option>
                     {CLASSES.map((c) => (
                       <option key={c} value={c} className="bg-muted">
@@ -311,14 +316,16 @@ export default function HomeworkDemoPage() {
 
                 {/* Type select */}
                 <div className="space-y-2">
-                  <label className="text-sm text-muted-foreground">Assignment Type</label>
+                  <label className="text-sm text-muted-foreground">
+                    {tx('demo.b15.teacher_hw.field_type')}
+                  </label>
                   <select
                     value={formType}
                     onChange={(e) => setFormType(e.target.value)}
                     className="w-full rounded-lg bg-card border border-border/60 px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary/40"
                   >
                     <option value="" className="bg-muted">
-                      Select type...
+                      {tx('demo.b15.teacher_hw.field_type_ph')}
                     </option>
                     {TYPES.map((t) => (
                       <option key={t} value={t} className="bg-muted">
@@ -330,19 +337,23 @@ export default function HomeworkDemoPage() {
 
                 {/* Title */}
                 <div className="space-y-2 md:col-span-2">
-                  <label className="text-sm text-muted-foreground">Assignment Title</label>
+                  <label className="text-sm text-muted-foreground">
+                    {tx('demo.b15.teacher_hw.field_title')}
+                  </label>
                   <input
                     type="text"
                     value={formTitle}
                     onChange={(e) => setFormTitle(e.target.value)}
-                    placeholder="e.g. Macbeth Act 1 Analysis Essay"
+                    placeholder={tx('demo.b15.teacher_hw.field_title_ph')}
                     className="w-full rounded-lg bg-card border border-border/60 px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/40"
                   />
                 </div>
 
                 {/* Due date */}
                 <div className="space-y-2">
-                  <label className="text-sm text-muted-foreground">Due Date</label>
+                  <label className="text-sm text-muted-foreground">
+                    {tx('demo.b15.teacher_hw.field_due')}
+                  </label>
                   <input
                     type="date"
                     value={formDue}
@@ -353,12 +364,14 @@ export default function HomeworkDemoPage() {
 
                 {/* Instructions */}
                 <div className="space-y-2 md:col-span-2">
-                  <label className="text-sm text-muted-foreground">Instructions</label>
+                  <label className="text-sm text-muted-foreground">
+                    {tx('demo.b15.teacher_hw.field_instructions')}
+                  </label>
                   <textarea
                     value={formInstructions}
                     onChange={(e) => setFormInstructions(e.target.value)}
                     rows={4}
-                    placeholder="Write detailed instructions for your students..."
+                    placeholder={tx('demo.b15.teacher_hw.field_instructions_ph')}
                     className="w-full rounded-lg bg-card border border-border/60 px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/40 resize-none"
                   />
                 </div>
@@ -368,7 +381,7 @@ export default function HomeworkDemoPage() {
                 onClick={handleSetHomework}
                 className="mt-6 px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary to-primary text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
               >
-                Set Homework
+                {tx('demo.b15.teacher_hw.set_btn')}
               </button>
             </div>
 
@@ -377,25 +390,35 @@ export default function HomeworkDemoPage() {
               <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
                 <div className="flex items-center gap-2 mb-3">
                   <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <h3 className="text-sm font-semibold text-primary">Assignment Created</h3>
+                  <h3 className="text-sm font-semibold text-primary">
+                    {tx('demo.b15.teacher_hw.created_heading')}
+                  </h3>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div>
-                    <p className="text-muted-foreground text-xs mb-1">Class</p>
+                    <p className="text-muted-foreground text-xs mb-1">
+                      {tx('demo.b15.teacher_hw.created_class')}
+                    </p>
                     <p className="text-foreground">
                       {formClass || 'Year 10A - English Literature'}
                     </p>
                   </div>
                   <div>
-                    <p className="text-muted-foreground text-xs mb-1">Title</p>
+                    <p className="text-muted-foreground text-xs mb-1">
+                      {tx('demo.b15.teacher_hw.field_title')}
+                    </p>
                     <p className="text-foreground">{formTitle || 'Macbeth Act 1 Analysis Essay'}</p>
                   </div>
                   <div>
-                    <p className="text-muted-foreground text-xs mb-1">Type</p>
+                    <p className="text-muted-foreground text-xs mb-1">
+                      {tx('demo.b15.teacher_hw.field_type')}
+                    </p>
                     <p className="text-foreground">{formType || 'Essay'}</p>
                   </div>
                   <div>
-                    <p className="text-muted-foreground text-xs mb-1">Due</p>
+                    <p className="text-muted-foreground text-xs mb-1">
+                      {tx('demo.b15.teacher_hw.field_due')}
+                    </p>
                     <p className="text-foreground">{formDue || '2026-04-14'}</p>
                   </div>
                 </div>
@@ -440,7 +463,7 @@ export default function HomeworkDemoPage() {
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to assignments
+              {tx('demo.b15.teacher_hw.back_to_assignments')}
             </button>
 
             <div className="rounded-xl border border-border/60 bg-card p-5">
@@ -457,7 +480,9 @@ export default function HomeworkDemoPage() {
 
             <div className="rounded-xl border border-border/60 bg-card overflow-hidden">
               <div className="px-5 py-3 border-b border-border/60">
-                <h4 className="text-sm font-medium text-muted-foreground">Student Submissions</h4>
+                <h4 className="text-sm font-medium text-muted-foreground">
+                  {tx('demo.b15.teacher_hw.student_submissions')}
+                </h4>
               </div>
               <div className="divide-y divide-border/60">
                 {MOCK_STUDENTS.map((s) => (
@@ -476,18 +501,18 @@ export default function HomeworkDemoPage() {
                         <>
                           <span className="text-xs text-muted-foreground">{s.submittedAt}</span>
                           <span className="px-2 py-0.5 rounded-full text-xs bg-primary/10 text-primary border border-primary/20">
-                            Submitted
+                            {tx('demo.b15.teacher_hw.status_submitted')}
                           </span>
                         </>
                       )}
                       {s.status === 'overdue' && (
                         <span className="px-2 py-0.5 rounded-full text-xs bg-amber-500/15 text-clay-600 dark:text-clay-400 border border-amber-500/20">
-                          Overdue
+                          {tx('demo.b15.teacher_hw.status_overdue')}
                         </span>
                       )}
                       {s.status === 'not started' && (
                         <span className="px-2 py-0.5 rounded-full text-xs bg-muted text-muted-foreground border border-border/60">
-                          Not Started
+                          {tx('demo.b15.teacher_hw.status_not_started')}
                         </span>
                       )}
                     </div>
@@ -528,7 +553,7 @@ export default function HomeworkDemoPage() {
                 <div className="flex items-center gap-2 mb-4">
                   <Sparkles className="h-4 w-4 text-clay-600 dark:text-clay-400" />
                   <h3 className="text-sm font-semibold text-clay-600 dark:text-clay-400">
-                    AI Feedback
+                    {tx('demo.b15.teacher_hw.ai_feedback')}
                   </h3>
                 </div>
 
@@ -538,7 +563,9 @@ export default function HomeworkDemoPage() {
                     <span className="text-lg font-bold text-primary">6</span>
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">Predicted Grade</p>
+                    <p className="text-xs text-muted-foreground">
+                      {tx('demo.b15.teacher_hw.predicted_grade')}
+                    </p>
                     <p className="text-sm font-semibold text-foreground">Grade 6</p>
                   </div>
                 </div>
@@ -567,7 +594,9 @@ export default function HomeworkDemoPage() {
                     </div>
                   ))}
                   <div className="pt-2 border-t border-border/60 flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Overall</span>
+                    <span className="text-muted-foreground">
+                      {tx('demo.b15.teacher_hw.overall')}
+                    </span>
                     <span className="text-foreground font-semibold">44/70 (63%)</span>
                   </div>
                 </div>
@@ -590,11 +619,15 @@ export default function HomeworkDemoPage() {
 
               {/* Teacher review */}
               <div className="rounded-xl border border-border/60 bg-card p-5">
-                <h3 className="text-sm font-semibold text-foreground mb-4">Teacher Review</h3>
+                <h3 className="text-sm font-semibold text-foreground mb-4">
+                  {tx('demo.b15.teacher_hw.teacher_review')}
+                </h3>
 
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <label className="text-xs text-muted-foreground">Adjusted Grade</label>
+                    <label className="text-xs text-muted-foreground">
+                      {tx('demo.b15.teacher_hw.adjusted_grade')}
+                    </label>
                     <select className="w-full rounded-lg bg-card border border-border/60 px-3 py-2 text-sm text-foreground focus:outline-none focus:border-primary/40">
                       <option value="6" className="bg-muted">
                         Grade 6 (agree with AI)
@@ -612,19 +645,21 @@ export default function HomeworkDemoPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs text-muted-foreground">Additional Comments</label>
+                    <label className="text-xs text-muted-foreground">
+                      {tx('demo.b15.teacher_hw.additional_comments')}
+                    </label>
                     <textarea
                       rows={3}
-                      placeholder="Add your own feedback for the student..."
+                      placeholder={tx('demo.b15.teacher_hw.comments_ph')}
                       className="w-full rounded-lg bg-card border border-border/60 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/40 resize-none"
                     />
                   </div>
 
                   <button
-                    onClick={() => showToast('Feedback returned to student (demo mode)')}
+                    onClick={() => showToast(tx('demo.b15.teacher_hw.toast_returned'))}
                     className="w-full px-4 py-2.5 rounded-lg bg-gradient-to-r from-primary to-primary text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
                   >
-                    Return to Student
+                    {tx('demo.b15.teacher_hw.return_btn')}
                   </button>
                 </div>
               </div>

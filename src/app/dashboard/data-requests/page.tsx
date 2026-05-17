@@ -1,109 +1,111 @@
-"use client";
+'use client'
 
-import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
+import { useState, useEffect, useCallback } from 'react'
+import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ─────────────────────────────────────────────────────────────
 
 interface DSARRequest {
-  id: string;
-  type: "ACCESS" | "PORTABILITY" | "ERASURE" | "RECTIFICATION";
-  status: "PENDING" | "PROCESSING" | "COMPLETED" | "REFUSED";
-  requestedAt: string;
-  completedAt: string | null;
-  deadline: string;
-  daysRemaining: number | null;
+  id: string
+  type: 'ACCESS' | 'PORTABILITY' | 'ERASURE' | 'RECTIFICATION'
+  status: 'PENDING' | 'PROCESSING' | 'COMPLETED' | 'REFUSED'
+  requestedAt: string
+  completedAt: string | null
+  deadline: string
+  daysRemaining: number | null
 }
 
 interface CreateResult {
-  referenceNumber: string;
-  deadlineFormatted: string;
-  type: string;
+  referenceNumber: string
+  deadlineFormatted: string
+  type: string
 }
 
 // ─── Constants ─────────────────────────────────────────────────────────
 
 const TYPE_LABELS: Record<string, string> = {
-  ACCESS: "Access Request",
-  PORTABILITY: "Data Download",
-  ERASURE: "Erasure Request",
-  RECTIFICATION: "Rectification Request",
-};
+  ACCESS: 'Access Request',
+  PORTABILITY: 'Data Download',
+  ERASURE: 'Erasure Request',
+  RECTIFICATION: 'Rectification Request',
+}
 
 const STATUS_STYLES: Record<string, string> = {
-  PENDING: "bg-yellow-500/15 text-yellow-700",
-  PROCESSING: "bg-primary/15 text-primary",
-  COMPLETED: "bg-success-100 text-success-700",
-  REFUSED: "bg-warn-100 text-warn-700",
-};
+  PENDING: 'bg-yellow-500/15 text-yellow-700',
+  PROCESSING: 'bg-primary/15 text-primary',
+  COMPLETED: 'bg-success-100 text-success-700',
+  REFUSED: 'bg-warn-100 text-warn-700',
+}
 
 // ─── Component ─────────────────────────────────────────────────────────
 
 export default function DataRequestsPage() {
-  const [requests, setRequests] = useState<DSARRequest[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [submitting, setSubmitting] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<CreateResult | null>(null);
-  const [showEraseConfirm, setShowEraseConfirm] = useState(false);
-  const [eraseConfirmText, setEraseConfirmText] = useState("");
+  const t = useT()
+  const [requests, setRequests] = useState<DSARRequest[]>([])
+  const [loading, setLoading] = useState(true)
+  const [submitting, setSubmitting] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null)
+  const [result, setResult] = useState<CreateResult | null>(null)
+  const [showEraseConfirm, setShowEraseConfirm] = useState(false)
+  const [eraseConfirmText, setEraseConfirmText] = useState('')
 
   const fetchRequests = useCallback(async () => {
     try {
-      const res = await fetch("/api/dsar");
+      const res = await fetch('/api/dsar')
       if (res.ok) {
-        const data = await res.json();
-        setRequests(data.requests ?? []);
+        const data = await res.json()
+        setRequests(data.requests ?? [])
       }
     } catch {
       // Silently fail on load
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
-    fetchRequests();
-  }, [fetchRequests]);
+    fetchRequests()
+  }, [fetchRequests])
 
-  async function createRequest(type: "ACCESS" | "PORTABILITY" | "ERASURE") {
-    setError(null);
-    setSubmitting(type);
+  async function createRequest(type: 'ACCESS' | 'PORTABILITY' | 'ERASURE') {
+    setError(null)
+    setSubmitting(type)
 
     try {
-      const res = await fetch("/api/dsar", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/dsar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ type }),
-      });
+      })
 
       if (!res.ok) {
-        const body = await res.json().catch(() => null);
-        throw new Error(body?.error ?? "Something went wrong. Please try again.");
+        const body = await res.json().catch(() => null)
+        throw new Error(body?.error ?? 'Something went wrong. Please try again.')
       }
 
-      const data = await res.json();
+      const data = await res.json()
       setResult({
         referenceNumber: data.referenceNumber,
         deadlineFormatted: data.deadlineFormatted,
         type: data.type,
-      });
+      })
 
       // Refresh the list
-      fetchRequests();
+      fetchRequests()
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setError(err instanceof Error ? err.message : 'Something went wrong.')
     } finally {
-      setSubmitting(null);
-      setShowEraseConfirm(false);
-      setEraseConfirmText("");
+      setSubmitting(null)
+      setShowEraseConfirm(false)
+      setEraseConfirmText('')
     }
   }
 
   function handleDownloadData() {
     // Trigger a file download via the export endpoint
-    window.location.href = "/api/dsar/export?format=json";
-    createRequest("PORTABILITY");
+    window.location.href = '/api/dsar/export?format=json'
+    createRequest('PORTABILITY')
   }
 
   // ────── Success confirmation ──────
@@ -126,14 +128,12 @@ export default function DataRequestsPage() {
           </div>
 
           <h1 className="text-2xl font-semibold text-primary">
-            Request Submitted
+            {t('dashboard.data_requests.success_title')}
           </h1>
-          <p className="mt-2 text-muted-foreground">
-            Your {TYPE_LABELS[result.type]?.toLowerCase() ?? "data request"} has been received.
-          </p>
+          <p className="mt-2 text-muted-foreground">{t('dashboard.data_requests.success_desc')}</p>
 
           <div className="mt-6 rounded-lg bg-muted p-4 text-sm">
-            <p className="text-muted-foreground">Your reference number</p>
+            <p className="text-muted-foreground">{t('dashboard.data_requests.reference_label')}</p>
             <p className="mt-1 text-lg font-mono font-semibold text-primary">
               {result.referenceNumber}
             </p>
@@ -144,24 +144,21 @@ export default function DataRequestsPage() {
               <strong>Estimated completion:</strong> {result.deadlineFormatted}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
-              Under UK GDPR, we must respond within one calendar month of your request.
+              {t('dashboard.data_requests.gdpr_note')}
             </p>
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button
-              onClick={() => setResult(null)}
-              className="btn-primary text-sm"
-            >
-              Back to Data Requests
+            <button onClick={() => setResult(null)} className="btn-primary text-sm">
+              {t('dashboard.data_requests.back_btn')}
             </button>
             <Link href="/dashboard" className="btn-outline text-sm">
-              Dashboard
+              {t('dashboard.data_requests.dashboard_btn')}
             </Link>
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   // ────── Main page ──────
@@ -172,38 +169,34 @@ export default function DataRequestsPage() {
           href="/dashboard"
           className="text-sm text-muted-foreground hover:text-primary transition-colors"
         >
-          &larr; Back to Dashboard
+          &larr; {t('dashboard.data_requests.back_dashboard')}
         </Link>
       </div>
 
-      <h1 className="text-2xl font-semibold text-primary">
-        Your Data Rights
-      </h1>
-      <p className="mt-2 text-sm text-muted-foreground">
-        Under UK GDPR, you have rights over your personal data. Use the options
-        below to exercise these rights. All requests are processed within one
-        calendar month.
-      </p>
+      <h1 className="text-2xl font-semibold text-primary">{t('dashboard.data_requests.title')}</h1>
+      <p className="mt-2 text-sm text-muted-foreground">{t('dashboard.data_requests.subtitle')}</p>
 
       {/* Rights notice */}
       <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4 text-sm text-foreground">
-        <p className="font-medium text-primary">Your data protection rights</p>
+        <p className="font-medium text-primary">
+          {t('dashboard.data_requests.rights_notice_title')}
+        </p>
         <ul className="mt-2 space-y-1 text-muted-foreground">
           <li>
-            <strong>Article 15</strong> &mdash; Right of Access: request a copy
-            of all personal data we hold about you.
+            <strong>Article 15</strong> &mdash; Right of Access: request a copy of all personal data
+            we hold about you.
           </li>
           <li>
-            <strong>Article 16</strong> &mdash; Right to Rectification: correct
-            any inaccurate personal data.
+            <strong>Article 16</strong> &mdash; Right to Rectification: correct any inaccurate
+            personal data.
           </li>
           <li>
-            <strong>Article 17</strong> &mdash; Right to Erasure: request deletion
-            of your personal data.
+            <strong>Article 17</strong> &mdash; Right to Erasure: request deletion of your personal
+            data.
           </li>
           <li>
-            <strong>Article 20</strong> &mdash; Right to Data Portability: receive
-            your data in a machine-readable format.
+            <strong>Article 20</strong> &mdash; Right to Data Portability: receive your data in a
+            machine-readable format.
           </li>
         </ul>
       </div>
@@ -214,25 +207,43 @@ export default function DataRequestsPage() {
         <div className="card">
           <div className="flex items-start gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="font-medium text-foreground">Request My Data</h3>
+              <h3 className="font-medium text-foreground">
+                {t('dashboard.data_requests.access_title')}
+              </h3>
               <p className="mt-1 text-xs text-muted-foreground">
-                Article 15 &mdash; Get a full copy of all personal data we hold
-                about you.
+                {t('dashboard.data_requests.access_desc')}
               </p>
             </div>
           </div>
           <button
-            onClick={() => createRequest("ACCESS")}
+            onClick={() => createRequest('ACCESS')}
             disabled={submitting !== null}
             className="btn-primary mt-4 w-full text-sm"
           >
-            {submitting === "ACCESS" ? "Submitting..." : "Request My Data"}
+            {submitting === 'ACCESS'
+              ? t('dashboard.data_requests.submitting')
+              : t('dashboard.data_requests.access_btn')}
           </button>
         </div>
 
@@ -240,15 +251,27 @@ export default function DataRequestsPage() {
         <div className="card">
           <div className="flex items-start gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-success-100 text-success-600">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="font-medium text-foreground">Download My Data</h3>
+              <h3 className="font-medium text-foreground">
+                {t('dashboard.data_requests.portability_title')}
+              </h3>
               <p className="mt-1 text-xs text-muted-foreground">
-                Article 20 &mdash; Download your data in a machine-readable
-                format (JSON).
+                {t('dashboard.data_requests.portability_desc')}
               </p>
             </div>
           </div>
@@ -257,7 +280,9 @@ export default function DataRequestsPage() {
             disabled={submitting !== null}
             className="btn-accent mt-4 w-full text-sm"
           >
-            {submitting === "PORTABILITY" ? "Preparing..." : "Download My Data"}
+            {submitting === 'PORTABILITY'
+              ? t('dashboard.data_requests.preparing')
+              : t('dashboard.data_requests.portability_btn')}
           </button>
         </div>
 
@@ -265,23 +290,32 @@ export default function DataRequestsPage() {
         <div className="card">
           <div className="flex items-start gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="font-medium text-foreground">Correct My Data</h3>
+              <h3 className="font-medium text-foreground">
+                {t('dashboard.data_requests.rectification_title')}
+              </h3>
               <p className="mt-1 text-xs text-muted-foreground">
-                Article 16 &mdash; Update or correct any inaccurate personal
-                information.
+                {t('dashboard.data_requests.rectification_desc')}
               </p>
             </div>
           </div>
-          <Link
-            href="/dashboard/privacy"
-            className="btn-outline mt-4 w-full text-sm"
-          >
-            Edit My Profile
+          <Link href="/dashboard/privacy" className="btn-outline mt-4 w-full text-sm">
+            {t('dashboard.data_requests.rectification_btn')}
           </Link>
         </div>
 
@@ -289,15 +323,27 @@ export default function DataRequestsPage() {
         <div className="card border-warn-200">
           <div className="flex items-start gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-warn-100 text-warn-600">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="font-medium text-foreground">Delete My Data</h3>
+              <h3 className="font-medium text-foreground">
+                {t('dashboard.data_requests.erasure_title')}
+              </h3>
               <p className="mt-1 text-xs text-muted-foreground">
-                Article 17 &mdash; Request erasure of your personal data. This
-                action cannot be undone.
+                {t('dashboard.data_requests.erasure_desc')}
               </p>
             </div>
           </div>
@@ -307,19 +353,15 @@ export default function DataRequestsPage() {
               disabled={submitting !== null}
               className="mt-4 w-full inline-flex items-center justify-center rounded-lg border-2 border-warn bg-card px-5 py-2.5 text-sm font-medium text-warn hover:bg-warn hover:text-white transition-colors disabled:opacity-50"
             >
-              Delete My Data
+              {t('dashboard.data_requests.erasure_btn')}
             </button>
           ) : (
             <div className="mt-4 space-y-3">
               <div className="rounded-lg border border-warn-200 bg-warn-50 p-3 text-sm text-foreground">
-                <p className="font-medium">Are you sure?</p>
-                <p className="mt-1 text-xs">
-                  This will anonymise your account and remove your essays,
-                  feedback, and personal data. Your subscription will be
-                  cancelled. This cannot be undone.
-                </p>
+                <p className="font-medium">{t('dashboard.data_requests.erase_confirm_heading')}</p>
+                <p className="mt-1 text-xs">{t('dashboard.data_requests.erase_confirm_body')}</p>
                 <p className="mt-2 text-xs">
-                  Type <strong>DELETE</strong> to confirm:
+                  {t('dashboard.data_requests.erase_confirm_instruction')}
                 </p>
               </div>
               <input
@@ -333,19 +375,21 @@ export default function DataRequestsPage() {
               <div className="flex gap-2">
                 <button
                   onClick={() => {
-                    setShowEraseConfirm(false);
-                    setEraseConfirmText("");
+                    setShowEraseConfirm(false)
+                    setEraseConfirmText('')
                   }}
                   className="btn-outline flex-1 text-sm"
                 >
-                  Cancel
+                  {t('dashboard.data_requests.cancel_btn')}
                 </button>
                 <button
-                  onClick={() => createRequest("ERASURE")}
-                  disabled={eraseConfirmText !== "DELETE" || submitting !== null}
+                  onClick={() => createRequest('ERASURE')}
+                  disabled={eraseConfirmText !== 'DELETE' || submitting !== null}
                   className="flex-1 inline-flex items-center justify-center rounded-lg bg-warn px-5 py-2.5 text-sm font-medium text-white hover:bg-warn-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {submitting === "ERASURE" ? "Submitting..." : "Confirm Deletion"}
+                  {submitting === 'ERASURE'
+                    ? t('dashboard.data_requests.submitting')
+                    : t('dashboard.data_requests.erase_confirm_btn')}
                 </button>
               </div>
             </div>
@@ -365,18 +409,20 @@ export default function DataRequestsPage() {
 
       {/* Request history */}
       <div className="mt-12">
-        <h2 className="text-lg font-semibold text-primary">Request History</h2>
+        <h2 className="text-lg font-semibold text-primary">
+          {t('dashboard.data_requests.history_title')}
+        </h2>
         <p className="mt-1 text-sm text-muted-foreground">
-          Track the status of your data requests below.
+          {t('dashboard.data_requests.history_subtitle')}
         </p>
 
         {loading ? (
           <div className="mt-4 text-center text-sm text-muted-foreground">
-            Loading your requests...
+            {t('dashboard.data_requests.history_loading')}
           </div>
         ) : requests.length === 0 ? (
           <div className="mt-4 card text-center text-sm text-muted-foreground">
-            You have not made any data requests yet.
+            {t('dashboard.data_requests.history_empty')}
           </div>
         ) : (
           <div className="mt-4 space-y-3">
@@ -389,25 +435,26 @@ export default function DataRequestsPage() {
                         {TYPE_LABELS[req.type] ?? req.type}
                       </span>
                       <span
-                        className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS_STYLES[req.status] ?? "bg-muted text-foreground"}`}
+                        className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS_STYLES[req.status] ?? 'bg-muted text-foreground'}`}
                       >
                         {req.status}
                       </span>
                     </div>
                     <p className="mt-1 text-xs text-muted-foreground">
-                      Submitted{" "}
-                      {new Date(req.requestedAt).toLocaleDateString("en-GB", {
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric",
+                      Submitted{' '}
+                      {new Date(req.requestedAt).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric',
                       })}
                       {req.completedAt && (
                         <>
-                          {" "}&middot; Completed{" "}
-                          {new Date(req.completedAt).toLocaleDateString("en-GB", {
-                            day: "numeric",
-                            month: "long",
-                            year: "numeric",
+                          {' '}
+                          &middot; Completed{' '}
+                          {new Date(req.completedAt).toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric',
                           })}
                         </>
                       )}
@@ -418,23 +465,23 @@ export default function DataRequestsPage() {
                       <p
                         className={`text-sm font-medium ${
                           req.daysRemaining <= 5
-                            ? "text-warn"
+                            ? 'text-warn'
                             : req.daysRemaining <= 14
-                              ? "text-yellow-600"
-                              : "text-muted-foreground"
+                              ? 'text-yellow-600'
+                              : 'text-muted-foreground'
                         }`}
                       >
                         {req.daysRemaining > 0
-                          ? `${req.daysRemaining} day${req.daysRemaining !== 1 ? "s" : ""} remaining`
-                          : "Overdue"}
+                          ? `${req.daysRemaining} day${req.daysRemaining !== 1 ? 's' : ''} remaining`
+                          : 'Overdue'}
                       </p>
                     )}
                     <p className="text-xs text-muted-foreground">
-                      Deadline:{" "}
-                      {new Date(req.deadline).toLocaleDateString("en-GB", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
+                      Deadline:{' '}
+                      {new Date(req.deadline).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
                       })}
                     </p>
                   </div>
@@ -447,16 +494,18 @@ export default function DataRequestsPage() {
 
       {/* Processing time info */}
       <div className="mt-8 rounded-lg border border-border bg-muted p-4 text-sm text-muted-foreground">
-        <p className="font-medium text-foreground">Processing times</p>
+        <p className="font-medium text-foreground">
+          {t('dashboard.data_requests.processing_title')}
+        </p>
         <p className="mt-1">
-          Under UK GDPR, we are required to respond to your request within{" "}
-          <strong>one calendar month</strong>. In exceptional cases (complex or
-          numerous requests), this may be extended by a further two months, but we
-          will inform you within the first month if this is necessary.
+          Under UK GDPR, we are required to respond to your request within{' '}
+          <strong>one calendar month</strong>. In exceptional cases (complex or numerous requests),
+          this may be extended by a further two months, but we will inform you within the first
+          month if this is necessary.
         </p>
         <p className="mt-2">
-          If you are not satisfied with our response, you have the right to lodge
-          a complaint with the{" "}
+          If you are not satisfied with our response, you have the right to lodge a complaint with
+          the{' '}
           <a
             href="https://ico.org.uk/make-a-complaint/"
             target="_blank"
@@ -469,5 +518,5 @@ export default function DataRequestsPage() {
         </p>
       </div>
     </div>
-  );
+  )
 }

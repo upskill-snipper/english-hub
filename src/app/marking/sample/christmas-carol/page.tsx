@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ────────────────────────────────────────────── */
 
@@ -339,7 +340,51 @@ const GRADE_COLOUR: Record<number, string> = {
 
 /* ─── Page ────────────────────────────────────────────────── */
 
-export default function ChristmasCarolEssayBankPage() {
+export default async function ChristmasCarolEssayBankPage() {
+  const [
+    navMarking,
+    navSample,
+    navBreadcrumb,
+    pageTitle,
+    subtitle,
+    jumpNavLabel,
+    markerCommentary,
+    aoBreakdown,
+    gradeJustificationLabel,
+    whatWouldImprove,
+    annotationStrength,
+    annotationImprove,
+    annotationTechnique,
+    btnBack,
+    btnMark,
+    gradeLabel,
+    wordsSuffix,
+  ] = await tMany([
+    'marking.nav.marking',
+    'marking.nav.sample_essays',
+    'marking.sample.christmas_carol.breadcrumb',
+    'marking.sample.christmas_carol.title',
+    'marking.sample.christmas_carol.subtitle',
+    'marking.sample.christmas_carol.jump_nav_label',
+    'marking.sample.christmas_carol.marker_commentary',
+    'marking.sample.christmas_carol.ao_breakdown',
+    'marking.sample.christmas_carol.grade_justification',
+    'marking.sample.christmas_carol.what_would_improve',
+    'marking.sample.christmas_carol.annotation_strength',
+    'marking.sample.christmas_carol.annotation_improve',
+    'marking.sample.christmas_carol.annotation_technique',
+    'marking.sample.christmas_carol.btn_back',
+    'marking.sample.christmas_carol.btn_mark',
+    'marking.sample.christmas_carol.grade_label',
+    'marking.sample.christmas_carol.words_suffix',
+  ])
+
+  const ANNOTATION_LABELS_I18N: Record<Annotation['kind'], string> = {
+    strength: annotationStrength,
+    improve: annotationImprove,
+    technique: annotationTechnique,
+  }
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
       {/* ── Breadcrumb ──────────────────────────────────── */}
@@ -347,30 +392,26 @@ export default function ChristmasCarolEssayBankPage() {
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/marking" className="hover:text-primary">
-              Marking
+              {navMarking}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li>
             <Link href="/marking/sample" className="hover:text-primary">
-              Sample essays
+              {navSample}
             </Link>
           </li>
           <li aria-hidden>/</li>
-          <li className="font-medium text-foreground">A Christmas Carol</li>
+          <li className="font-medium text-foreground">{navBreadcrumb}</li>
         </ol>
       </nav>
 
       {/* ── Header ──────────────────────────────────────── */}
       <header className="mb-8">
         <h1 className="font-heading text-3xl font-extrabold tracking-tight text-foreground">
-          A Christmas Carol — Model Essay Bank
+          {pageTitle}
         </h1>
-        <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-          Three original model essays answering &ldquo;How does Dickens present Scrooge&rsquo;s
-          transformation?&rdquo; at Grade 5, 7 and 9. Each essay includes paragraph annotations, AO
-          breakdown, grade justification, and targeted improvements.
-        </p>
+        <p className="mt-2 max-w-3xl text-sm text-muted-foreground">{subtitle}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {SUPPORTED_BOARDS.map((b) => (
             <Badge key={b} variant="outline">
@@ -381,7 +422,7 @@ export default function ChristmasCarolEssayBankPage() {
       </header>
 
       {/* ── Jump links ──────────────────────────────────── */}
-      <nav aria-label="Jump to grade" className="mb-10 flex flex-wrap gap-2">
+      <nav aria-label={jumpNavLabel} className="mb-10 flex flex-wrap gap-2">
         {ESSAYS.map((e) => (
           <a
             key={e.grade}
@@ -389,7 +430,9 @@ export default function ChristmasCarolEssayBankPage() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/30 px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
           >
             <span className="font-heading text-base font-extrabold">{e.grade}</span>
-            <span>Grade {e.grade}</span>
+            <span>
+              {gradeLabel} {e.grade}
+            </span>
           </a>
         ))}
       </nav>
@@ -408,7 +451,7 @@ export default function ChristmasCarolEssayBankPage() {
               <div>
                 <h2 className="font-heading text-2xl font-bold text-foreground">{essay.title}</h2>
                 <p className="text-sm text-muted-foreground">
-                  {essay.wordCount} words &middot; {essay.boards.join(', ')}
+                  {essay.wordCount} {wordsSuffix} &middot; {essay.boards.join(', ')}
                 </p>
               </div>
             </div>
@@ -425,7 +468,7 @@ export default function ChristmasCarolEssayBankPage() {
             {/* Marker commentary */}
             <Card className="mb-6">
               <CardHeader>
-                <CardTitle className="text-base">Marker commentary</CardTitle>
+                <CardTitle className="text-base">{markerCommentary}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-foreground">{essay.commentary}</p>
@@ -435,7 +478,7 @@ export default function ChristmasCarolEssayBankPage() {
             {/* AO breakdown */}
             <Card className="mb-6">
               <CardHeader>
-                <CardTitle className="text-base">AO Breakdown</CardTitle>
+                <CardTitle className="text-base">{aoBreakdown}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -484,7 +527,7 @@ export default function ChristmasCarolEssayBankPage() {
                         className={`rounded-md border-l-4 p-3 ${ANNOTATION_COLOURS[ann.kind]}`}
                       >
                         <p className="mb-1 text-xs font-bold uppercase tracking-wider">
-                          {ANNOTATION_LABELS[ann.kind]}
+                          {ANNOTATION_LABELS_I18N[ann.kind]}
                         </p>
                         <p className="mb-1 text-sm italic text-muted-foreground">
                           &ldquo;{ann.quote}&rdquo;
@@ -500,7 +543,7 @@ export default function ChristmasCarolEssayBankPage() {
             {/* Grade justification */}
             <Card className="mb-6 border-primary/30 bg-primary/5">
               <CardHeader>
-                <CardTitle className="text-base">Grade justification</CardTitle>
+                <CardTitle className="text-base">{gradeJustificationLabel}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-foreground">
@@ -512,7 +555,7 @@ export default function ChristmasCarolEssayBankPage() {
             {/* What would improve this */}
             <Card className="mb-6">
               <CardHeader>
-                <CardTitle className="text-base">What would improve this essay?</CardTitle>
+                <CardTitle className="text-base">{whatWouldImprove}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="list-inside list-disc space-y-2 text-sm text-foreground">
@@ -531,9 +574,9 @@ export default function ChristmasCarolEssayBankPage() {
       {/* ── Footer CTA ──────────────────────────────────── */}
       <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:justify-between">
         <Button variant="outline" render={<Link href="/marking/sample" />}>
-          Back to sample essays
+          {btnBack}
         </Button>
-        <Button render={<Link href="/marking/submit" />}>Mark your own essay</Button>
+        <Button render={<Link href="/marking/submit" />}>{btnMark}</Button>
       </div>
     </div>
   )

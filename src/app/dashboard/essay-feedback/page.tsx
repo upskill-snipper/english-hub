@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useT } from '@/lib/i18n/use-t'
 import {
   ArrowLeft,
   Send,
@@ -97,6 +98,7 @@ function getScoreBarColor(score: number, max: number) {
 // ── Main page ────────────────────────────────────────────────────────────────
 
 export default function EssayFeedbackPage() {
+  const t = useT()
   const { user, isLoading } = useAuthStore()
   const router = useRouter()
   const { board: globalBoard } = useBoard()
@@ -273,7 +275,7 @@ export default function EssayFeedbackPage() {
             render={<Link href="/dashboard" />}
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Dashboard
+            {t('dashboard.essay_feedback.back')}
           </Button>
 
           <div className="flex items-center gap-3">
@@ -282,18 +284,21 @@ export default function EssayFeedbackPage() {
             </div>
             <div>
               <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                AI Essay Feedback
+                {t('dashboard.essay_feedback.title')}
               </h1>
               <p className="mt-0.5 text-sm text-muted-foreground">
-                Get GCSE marker-level feedback on your writing, aligned to your exam board&apos;s
-                marking guide.
+                {t('dashboard.essay_feedback.subtitle')}
               </p>
             </div>
           </div>
 
           {remaining !== null && (
             <p className="mt-2 text-xs text-muted-foreground">
-              {remaining} review{remaining !== 1 ? 's' : ''} remaining today
+              {remaining}{' '}
+              {remaining !== 1
+                ? t('dashboard.essay_feedback.remaining_plural')
+                : t('dashboard.essay_feedback.remaining')}{' '}
+              {t('dashboard.essay_feedback.remaining_today')}
             </p>
           )}
         </div>
@@ -315,10 +320,10 @@ export default function EssayFeedbackPage() {
             <div className="grid gap-4 sm:grid-cols-3">
               {/* Board */}
               <div className="space-y-2">
-                <Label htmlFor="board">Exam Board</Label>
+                <Label htmlFor="board">{t('dashboard.essay_feedback.label_board')}</Label>
                 <Select value={board} onValueChange={handleBoardChange}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select board" />
+                    <SelectValue placeholder={t('dashboard.essay_feedback.placeholder_board')} />
                   </SelectTrigger>
                   <SelectContent>
                     {markSchemes.map((b) => (
@@ -332,7 +337,7 @@ export default function EssayFeedbackPage() {
 
               {/* Paper */}
               <div className="space-y-2">
-                <Label htmlFor="paper">Paper</Label>
+                <Label htmlFor="paper">{t('dashboard.essay_feedback.label_paper')}</Label>
                 <Select
                   key={board}
                   value={paper}
@@ -340,7 +345,13 @@ export default function EssayFeedbackPage() {
                   disabled={!board}
                 >
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder={board ? 'Select paper' : 'Select board first'} />
+                    <SelectValue
+                      placeholder={
+                        board
+                          ? t('dashboard.essay_feedback.placeholder_paper')
+                          : t('dashboard.essay_feedback.placeholder_paper_first')
+                      }
+                    />
                   </SelectTrigger>
                   <SelectContent>
                     {availablePapers.map((p) => (
@@ -354,7 +365,9 @@ export default function EssayFeedbackPage() {
 
               {/* Question type */}
               <div className="space-y-2">
-                <Label htmlFor="questionType">Question Type</Label>
+                <Label htmlFor="questionType">
+                  {t('dashboard.essay_feedback.label_question_type')}
+                </Label>
                 <Select
                   key={`${board}-${paper}`}
                   value={questionType}
@@ -366,7 +379,13 @@ export default function EssayFeedbackPage() {
                   disabled={!paper}
                 >
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder={paper ? 'Select type' : 'Select paper first'} />
+                    <SelectValue
+                      placeholder={
+                        paper
+                          ? t('dashboard.essay_feedback.placeholder_question_type')
+                          : t('dashboard.essay_feedback.placeholder_question_type_first')
+                      }
+                    />
                   </SelectTrigger>
                   <SelectContent>
                     {availableQuestionTypes.map((qt) => (
@@ -381,7 +400,7 @@ export default function EssayFeedbackPage() {
 
             {/* Question selection */}
             <div className="space-y-2">
-              <Label htmlFor="questionSelect">Question</Label>
+              <Label htmlFor="questionSelect">{t('dashboard.essay_feedback.label_question')}</Label>
               <Select
                 key={`${board}-${paper}-${questionType}`}
                 value={selectedQuestionId}
@@ -390,7 +409,11 @@ export default function EssayFeedbackPage() {
               >
                 <SelectTrigger className="w-full">
                   <SelectValue
-                    placeholder={questionType ? 'Select a question' : 'Select question type first'}
+                    placeholder={
+                      questionType
+                        ? t('dashboard.essay_feedback.placeholder_question')
+                        : t('dashboard.essay_feedback.placeholder_question_first')
+                    }
                   />
                 </SelectTrigger>
                 <SelectContent>
@@ -404,34 +427,36 @@ export default function EssayFeedbackPage() {
               {selectedQuestionId?.endsWith('-custom') && (
                 <Input
                   id="questionText"
-                  placeholder="Type or paste the question you are answering..."
+                  placeholder={t('dashboard.essay_feedback.placeholder_question_custom')}
                   value={questionText}
                   onChange={(e) => setQuestionText(e.target.value)}
                 />
               )}
               <p className="text-xs text-muted-foreground">
-                Choose a question from your exam board, or select &quot;I&apos;ll type my own
-                question&quot; to enter a custom one.
+                {t('dashboard.essay_feedback.question_hint')}
               </p>
             </div>
 
             {/* Essay textarea */}
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <Label htmlFor="essay">Your Essay</Label>
+                <Label htmlFor="essay">{t('dashboard.essay_feedback.label_essay')}</Label>
                 <span
                   className={cn(
                     'text-xs tabular-nums',
                     wordCount < 100 ? 'text-destructive' : 'text-muted-foreground',
                   )}
                 >
-                  {wordCount} word{wordCount !== 1 ? 's' : ''}
-                  {wordCount < 100 && ' (min 100)'}
+                  {wordCount}{' '}
+                  {wordCount !== 1
+                    ? t('dashboard.essay_feedback.words')
+                    : t('dashboard.essay_feedback.word')}
+                  {wordCount < 100 && ` ${t('dashboard.essay_feedback.word_min')}`}
                 </span>
               </div>
               <Textarea
                 id="essay"
-                placeholder="Paste or type your essay here..."
+                placeholder={t('dashboard.essay_feedback.placeholder_essay')}
                 value={essay}
                 onChange={(e) => setEssay(e.target.value)}
                 rows={16}
@@ -450,7 +475,7 @@ export default function EssayFeedbackPage() {
             {/* Submit */}
             <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-xs text-muted-foreground">
-                Feedback is AI-generated and should be used as a guide, not a definitive grade.
+                {t('dashboard.essay_feedback.disclaimer_ai')}
               </p>
               <Button
                 type="submit"
@@ -467,12 +492,12 @@ export default function EssayFeedbackPage() {
                 {submitting ? (
                   <>
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Analysing...
+                    {t('dashboard.essay_feedback.btn_analysing')}
                   </>
                 ) : (
                   <>
                     <Send className="h-4 w-4" />
-                    Get Feedback
+                    {t('dashboard.essay_feedback.btn_get_feedback')}
                   </>
                 )}
               </Button>
@@ -499,6 +524,7 @@ function FeedbackResults({
   questionType: string
   onTryAgain: () => void
 }) {
+  const t = useT()
   const gradeStyle = getGradeBandStyle(feedback.gradeBand)
 
   return (
@@ -508,11 +534,9 @@ function FeedbackResults({
 
       {/* Disclaimer Banner */}
       <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-amber-700">
-        <p className="font-medium">Important Disclaimer</p>
+        <p className="font-medium">{t('dashboard.essay_feedback.result_disclaimer_title')}</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          This is an AI-generated estimate based on the marking guide criteria. It is not an
-          official grade and should be used alongside your teacher&apos;s guidance. Actual exam
-          grades may differ.
+          {t('dashboard.essay_feedback.result_disclaimer_body')}
         </p>
       </div>
 
@@ -552,9 +576,9 @@ function FeedbackResults({
         <CardHeader>
           <div className="flex items-center gap-2">
             <BarChart3 className="h-4 w-4 text-primary" />
-            <CardTitle>Marking Guide Breakdown</CardTitle>
+            <CardTitle>{t('dashboard.essay_feedback.marking_breakdown_title')}</CardTitle>
           </div>
-          <CardDescription>How your essay scored against each Assessment Objective</CardDescription>
+          <CardDescription>{t('dashboard.essay_feedback.marking_breakdown_desc')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -592,9 +616,9 @@ function FeedbackResults({
           <CardHeader>
             <div className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-green-400" />
-              <CardTitle>Strengths</CardTitle>
+              <CardTitle>{t('dashboard.essay_feedback.strengths_title')}</CardTitle>
             </div>
-            <CardDescription>What you did well</CardDescription>
+            <CardDescription>{t('dashboard.essay_feedback.strengths_desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="space-y-3">
@@ -615,9 +639,9 @@ function FeedbackResults({
           <CardHeader>
             <div className="flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-blue-400" />
-              <CardTitle>Areas for Improvement</CardTitle>
+              <CardTitle>{t('dashboard.essay_feedback.improvements_title')}</CardTitle>
             </div>
-            <CardDescription>How to push your grade higher</CardDescription>
+            <CardDescription>{t('dashboard.essay_feedback.improvements_desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="space-y-3">
@@ -639,9 +663,9 @@ function FeedbackResults({
         <CardHeader>
           <div className="flex items-center gap-2">
             <MessageSquareText className="h-4 w-4 text-primary" />
-            <CardTitle>Detailed Feedback</CardTitle>
+            <CardTitle>{t('dashboard.essay_feedback.detailed_feedback_title')}</CardTitle>
           </div>
-          <CardDescription>Paragraph-by-paragraph marker commentary</CardDescription>
+          <CardDescription>{t('dashboard.essay_feedback.detailed_feedback_desc')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground">
@@ -659,11 +683,11 @@ function FeedbackResults({
       {/* Actions */}
       <div className="flex items-center justify-between">
         <p className="text-xs text-muted-foreground">
-          AI-generated feedback is approximate and should not replace teacher assessment.
+          {t('dashboard.essay_feedback.ai_approximate')}
         </p>
         <Button size="lg" onClick={onTryAgain}>
           <RefreshCw className="h-4 w-4" />
-          Try Again
+          {t('dashboard.essay_feedback.btn_try_again')}
         </Button>
       </div>
     </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
 import {
   Sparkles,
@@ -190,6 +191,7 @@ function Toast({ message, onClose }: { message: string; onClose: () => void }) {
 // ---------------------------------------------------------------------------
 
 export default function EssayMarkingDemoPage() {
+  const t = useT()
   const [essayIndex, setEssayIndex] = useState(0)
   const [analysed, setAnalysed] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -222,12 +224,9 @@ export default function EssayMarkingDemoPage() {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-clay-500/20 to-clay-400/20 border border-clay-500/20">
               <Sparkles className="h-5 w-5 text-clay-600 dark:text-clay-400" />
             </div>
-            <h1 className="text-2xl font-bold text-foreground">AI Essay Marking</h1>
+            <h1 className="text-2xl font-bold text-foreground">{t('demo.b15.essays.title')}</h1>
           </div>
-          <p className="text-muted-foreground text-sm mt-1">
-            AI-powered essay analysis with AO scoring, detailed feedback, and improvement
-            suggestions.
-          </p>
+          <p className="text-muted-foreground text-sm mt-1">{t('demo.b15.essays.subtitle')}</p>
         </div>
 
         {/* Essay display */}
@@ -238,7 +237,8 @@ export default function EssayMarkingDemoPage() {
               <p className="text-xs text-muted-foreground mt-0.5">{essay.student}</p>
             </div>
             <span className="px-2.5 py-1 rounded-full text-xs bg-muted text-muted-foreground border border-border/60">
-              Sample {essayIndex + 1} of {SAMPLE_ESSAYS.length}
+              {t('demo.b15.essays.sample_pre')} {essayIndex + 1} {t('demo.b15.essays.sample_of')}{' '}
+              {SAMPLE_ESSAYS.length}
             </span>
           </div>
           <div className="rounded-lg bg-card border border-border/60 p-5 text-sm text-muted-foreground leading-relaxed whitespace-pre-line max-h-[350px] overflow-y-auto">
@@ -256,12 +256,12 @@ export default function EssayMarkingDemoPage() {
             {loading ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                Analysing...
+                {t('demo.b15.essays.analysing_btn')}
               </>
             ) : (
               <>
                 <Sparkles className="h-4 w-4" />
-                Analyse Essay
+                {t('demo.b15.essays.analyse_btn')}
               </>
             )}
           </button>
@@ -270,7 +270,7 @@ export default function EssayMarkingDemoPage() {
             className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-muted border border-border/60 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
           >
             <RefreshCw className="h-4 w-4" />
-            Try Another Essay
+            {t('demo.b15.essays.try_another')}
           </button>
         </div>
 
@@ -279,11 +279,9 @@ export default function EssayMarkingDemoPage() {
           <div className="rounded-xl border border-clay-500/20 bg-clay-500/5 p-8 text-center">
             <Loader2 className="h-8 w-8 animate-spin text-clay-600 dark:text-clay-400 mx-auto mb-3" />
             <p className="text-sm text-clay-600 dark:text-clay-400">
-              Analysing essay against GCSE assessment objectives...
+              {t('demo.b15.essays.loading_main')}
             </p>
-            <p className="text-xs text-muted-foreground mt-1">
-              Evaluating AO1, AO2, AO3, and AO4 criteria
-            </p>
+            <p className="text-xs text-muted-foreground mt-1">{t('demo.b15.essays.loading_sub')}</p>
           </div>
         )}
 
@@ -301,7 +299,9 @@ export default function EssayMarkingDemoPage() {
                   />
                 </div>
                 <div>
-                  <p className="text-xs text-muted-foreground">Predicted Grade</p>
+                  <p className="text-xs text-muted-foreground">
+                    {t('demo.b15.essays.predicted_grade')}
+                  </p>
                   <p className="text-lg font-bold text-foreground">Grade {essay.grade}</p>
                   <p className="text-xs text-muted-foreground">
                     {essay.total}/{essay.totalMax} ({essay.percentage}%)
@@ -312,7 +312,7 @@ export default function EssayMarkingDemoPage() {
               {/* AO scores */}
               <div className="md:col-span-4 rounded-xl border border-border/60 bg-card p-5">
                 <h3 className="text-xs font-medium text-muted-foreground mb-3 uppercase tracking-wider">
-                  Assessment Objectives
+                  {t('demo.b15.essays.assessment_objectives')}
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {[
@@ -335,7 +335,9 @@ export default function EssayMarkingDemoPage() {
 
             {/* Detailed feedback */}
             <div className="rounded-xl border border-border/60 bg-card p-5">
-              <h3 className="text-sm font-semibold text-foreground mb-3">Detailed Feedback</h3>
+              <h3 className="text-sm font-semibold text-foreground mb-3">
+                {t('demo.b15.essays.detailed_feedback')}
+              </h3>
               <div className="space-y-3">
                 {essay.feedback.map((para, i) => (
                   <p key={i} className="text-sm text-muted-foreground leading-relaxed">
@@ -351,7 +353,9 @@ export default function EssayMarkingDemoPage() {
               <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
                 <div className="flex items-center gap-2 mb-3">
                   <TrendingUp className="h-4 w-4 text-primary" />
-                  <h3 className="text-sm font-semibold text-primary">Strengths</h3>
+                  <h3 className="text-sm font-semibold text-primary">
+                    {t('demo.b15.essays.strengths')}
+                  </h3>
                 </div>
                 <ul className="space-y-2">
                   {essay.strengths.map((s, i) => (
@@ -368,7 +372,7 @@ export default function EssayMarkingDemoPage() {
                 <div className="flex items-center gap-2 mb-3">
                   <TrendingDown className="h-4 w-4 text-clay-600 dark:text-clay-400" />
                   <h3 className="text-sm font-semibold text-amber-700 dark:text-amber-300">
-                    Areas for Improvement
+                    {t('demo.b15.essays.improvements')}
                   </h3>
                 </div>
                 <ul className="space-y-2">
@@ -386,16 +390,14 @@ export default function EssayMarkingDemoPage() {
             <div className="rounded-xl border border-border/60 bg-gradient-to-r from-clay-500/10 via-pink-500/10 to-clay-400/10 p-6 text-center">
               <Sparkles className="h-6 w-6 text-clay-600 dark:text-clay-400 mx-auto mb-2" />
               <h3 className="text-lg font-semibold text-foreground mb-1">
-                Use AI marking with your students
+                {t('demo.b15.essays.cta_title')}
               </h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Save hours of marking time with instant, detailed feedback on every essay.
-              </p>
+              <p className="text-sm text-muted-foreground mb-4">{t('demo.b15.essays.cta_body')}</p>
               <Link
                 href="/auth/teacher-register"
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-clay-500 to-clay-400 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
               >
-                Start free trial
+                {t('demo.b15.essays.cta_btn')}
               </Link>
             </div>
           </div>

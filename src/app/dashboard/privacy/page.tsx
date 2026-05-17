@@ -1,36 +1,37 @@
-"use client";
+'use client'
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Types ──────────────────────────────────────────────
 
-type Tab = "settings" | "data" | "download" | "delete" | "rights";
+type Tab = 'settings' | 'data' | 'download' | 'delete' | 'rights'
 
 interface PrivacySettings {
-  analyticsEnabled: boolean;
-  marketingEnabled: boolean;
-  aiTrainingOptIn: boolean;
-  schoolSharingEnabled: boolean;
-  researchDataEnabled: boolean;
-  profileVisibility: "PRIVATE" | "SCHOOL_ONLY" | "PUBLIC";
+  analyticsEnabled: boolean
+  marketingEnabled: boolean
+  aiTrainingOptIn: boolean
+  schoolSharingEnabled: boolean
+  researchDataEnabled: boolean
+  profileVisibility: 'PRIVATE' | 'SCHOOL_ONLY' | 'PUBLIC'
 }
 
 interface DataSummary {
-  email: string;
-  firstName: string;
-  lastName: string;
-  school: string | null;
-  essayCount: number;
-  feedbackCount: number;
-  daysActive: number;
-  createdAt: string;
+  email: string
+  firstName: string
+  lastName: string
+  school: string | null
+  essayCount: number
+  feedbackCount: number
+  daysActive: number
+  createdAt: string
 }
 
 interface EssayItem {
-  id: string;
-  title: string;
-  subject: string;
-  createdAt: string;
+  id: string
+  title: string
+  subject: string
+  createdAt: string
 }
 
 const DEFAULT_SETTINGS: PrivacySettings = {
@@ -39,73 +40,74 @@ const DEFAULT_SETTINGS: PrivacySettings = {
   aiTrainingOptIn: false,
   schoolSharingEnabled: false,
   researchDataEnabled: false,
-  profileVisibility: "PRIVATE",
-};
+  profileVisibility: 'PRIVATE',
+}
 
-const TABS: { id: Tab; label: string; icon: string }[] = [
-  { id: "settings", label: "Privacy Settings", icon: "\u{1F6E1}\uFE0F" },
-  { id: "data", label: "Your Data", icon: "\u{1F4CA}" },
-  { id: "download", label: "Download", icon: "\u{1F4E5}" },
-  { id: "delete", label: "Delete", icon: "\u{1F5D1}\uFE0F" },
-  { id: "rights", label: "Your Rights", icon: "\u2696\uFE0F" },
-];
+const TABS: { id: Tab; labelKey: string; icon: string }[] = [
+  { id: 'settings', labelKey: 'dashboard.privacy.tab_settings', icon: '\u{1F6E1}\uFE0F' },
+  { id: 'data', labelKey: 'dashboard.privacy.tab_data', icon: '\u{1F4CA}' },
+  { id: 'download', labelKey: 'dashboard.privacy.tab_download', icon: '\u{1F4E5}' },
+  { id: 'delete', labelKey: 'dashboard.privacy.tab_delete', icon: '\u{1F5D1}\uFE0F' },
+  { id: 'rights', labelKey: 'dashboard.privacy.tab_rights', icon: '\u2696\uFE0F' },
+]
 
 // ── Main Page Component ────────────────────────────────
 
 export default function PrivacyDashboard() {
-  const [activeTab, setActiveTab] = useState<Tab>("settings");
-  const [settings, setSettings] = useState<PrivacySettings>(DEFAULT_SETTINGS);
-  const [dataSummary, setDataSummary] = useState<DataSummary | null>(null);
-  const [essays, setEssays] = useState<EssayItem[]>([]);
-  const [saving, setSaving] = useState(false);
-  const [toast, setToast] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
+  const tx = useT()
+  const [activeTab, setActiveTab] = useState<Tab>('settings')
+  const [settings, setSettings] = useState<PrivacySettings>(DEFAULT_SETTINGS)
+  const [dataSummary, setDataSummary] = useState<DataSummary | null>(null)
+  const [essays, setEssays] = useState<EssayItem[]>([])
+  const [saving, setSaving] = useState(false)
+  const [toast, setToast] = useState<string | null>(null)
+  const [loading, setLoading] = useState(true)
 
   // Fetch settings on mount
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch("/api/privacy/settings");
+        const res = await fetch('/api/privacy/settings')
         if (res.ok) {
-          const data = await res.json();
-          setSettings(data.settings);
-          setDataSummary(data.summary);
-          setEssays(data.essays ?? []);
+          const data = await res.json()
+          setSettings(data.settings)
+          setDataSummary(data.summary)
+          setEssays(data.essays ?? [])
         }
       } catch {
         // fail silently - defaults are safe
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
     }
-    load();
-  }, []);
+    load()
+  }, [])
 
   // Toast auto-dismiss
   useEffect(() => {
     if (toast) {
-      const t = setTimeout(() => setToast(null), 3000);
-      return () => clearTimeout(t);
+      const t = setTimeout(() => setToast(null), 3000)
+      return () => clearTimeout(t)
     }
-  }, [toast]);
+  }, [toast])
 
   async function saveSettings() {
-    setSaving(true);
+    setSaving(true)
     try {
-      const res = await fetch("/api/privacy/settings", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/privacy/settings', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(settings),
-      });
+      })
       if (res.ok) {
-        setToast("Settings saved successfully!");
+        setToast('Settings saved successfully!')
       } else {
-        setToast("Something went wrong. Please try again.");
+        setToast('Something went wrong. Please try again.')
       }
     } catch {
-      setToast("Network error. Please check your connection.");
+      setToast('Network error. Please check your connection.')
     } finally {
-      setSaving(false);
+      setSaving(false)
     }
   }
 
@@ -114,10 +116,10 @@ export default function PrivacyDashboard() {
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
           <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-          <p className="mt-3 text-sm text-muted-foreground">Loading your privacy settings...</p>
+          <p className="mt-3 text-sm text-muted-foreground">{tx('dashboard.privacy.loading')}</p>
         </div>
       </div>
-    );
+    )
   }
 
   return (
@@ -133,16 +135,17 @@ export default function PrivacyDashboard() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
-            {"\u{1F512}"} Privacy &amp; Data
+            {'\u{1F512}'} {tx('dashboard.privacy.title')}
           </h1>
-          <p className="mt-2 text-muted-foreground">
-            You&apos;re in control. Manage how your data is used, download it, or delete it anytime.
-          </p>
+          <p className="mt-2 text-muted-foreground">{tx('dashboard.privacy.subtitle')}</p>
         </div>
 
         {/* Tabs */}
         <div className="mb-6 overflow-x-auto">
-          <nav className="flex gap-1 rounded-xl bg-card p-1.5 shadow-sm border border-border" role="tablist">
+          <nav
+            className="flex gap-1 rounded-xl bg-card p-1.5 shadow-sm border border-border"
+            role="tablist"
+          >
             {TABS.map((tab) => (
               <button
                 key={tab.id}
@@ -151,12 +154,12 @@ export default function PrivacyDashboard() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                   activeTab === tab.id
-                    ? "bg-primary text-white shadow-sm"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    ? 'bg-primary text-white shadow-sm'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                 }`}
               >
                 <span className="text-base">{tab.icon}</span>
-                <span className="hidden sm:inline">{tab.label}</span>
+                <span className="hidden sm:inline">{tx(tab.labelKey)}</span>
               </button>
             ))}
           </nav>
@@ -164,7 +167,7 @@ export default function PrivacyDashboard() {
 
         {/* Tab Content */}
         <div className="card">
-          {activeTab === "settings" && (
+          {activeTab === 'settings' && (
             <SettingsTab
               settings={settings}
               onChange={setSettings}
@@ -172,20 +175,20 @@ export default function PrivacyDashboard() {
               saving={saving}
             />
           )}
-          {activeTab === "data" && <DataTab summary={dataSummary} />}
-          {activeTab === "download" && <DownloadTab onToast={setToast} />}
-          {activeTab === "delete" && (
+          {activeTab === 'data' && <DataTab summary={dataSummary} />}
+          {activeTab === 'download' && <DownloadTab onToast={setToast} />}
+          {activeTab === 'delete' && (
             <DeleteTab
               essays={essays}
               onEssayDeleted={(id) => setEssays((prev) => prev.filter((e) => e.id !== id))}
               onToast={setToast}
             />
           )}
-          {activeTab === "rights" && <RightsTab />}
+          {activeTab === 'rights' && <RightsTab />}
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // ── Settings Tab ───────────────────────────────────────
@@ -196,59 +199,60 @@ function SettingsTab({
   onSave,
   saving,
 }: {
-  settings: PrivacySettings;
-  onChange: (s: PrivacySettings) => void;
-  onSave: () => void;
-  saving: boolean;
+  settings: PrivacySettings
+  onChange: (s: PrivacySettings) => void
+  onSave: () => void
+  saving: boolean
 }) {
-  function toggle(key: keyof Omit<PrivacySettings, "profileVisibility">) {
-    onChange({ ...settings, [key]: !settings[key] });
+  const tx = useT()
+  function toggle(key: keyof Omit<PrivacySettings, 'profileVisibility'>) {
+    onChange({ ...settings, [key]: !settings[key] })
   }
 
   const toggles: {
-    key: keyof Omit<PrivacySettings, "profileVisibility">;
-    label: string;
-    description: string;
-    icon: string;
+    key: keyof Omit<PrivacySettings, 'profileVisibility'>
+    labelKey: string
+    descKey: string
+    icon: string
   }[] = [
     {
-      key: "analyticsEnabled",
-      label: "Usage Analytics",
-      description: "Help us improve by sharing anonymous usage data (e.g. which features you use most)",
-      icon: "\u{1F4C8}",
+      key: 'analyticsEnabled',
+      labelKey: 'dashboard.privacy.toggle_analytics_label',
+      descKey: 'dashboard.privacy.toggle_analytics_desc',
+      icon: '\u{1F4C8}',
     },
     {
-      key: "marketingEnabled",
-      label: "Marketing Emails",
-      description: "Receive tips, new feature announcements, and study reminders by email",
-      icon: "\u{1F4E7}",
+      key: 'marketingEnabled',
+      labelKey: 'dashboard.privacy.toggle_marketing_label',
+      descKey: 'dashboard.privacy.toggle_marketing_desc',
+      icon: '\u{1F4E7}',
     },
     {
-      key: "aiTrainingOptIn",
-      label: "AI Improvement",
-      description: "Allow your essays to help train our AI to give better feedback (fully anonymised)",
-      icon: "\u{1F916}",
+      key: 'aiTrainingOptIn',
+      labelKey: 'dashboard.privacy.toggle_ai_label',
+      descKey: 'dashboard.privacy.toggle_ai_desc',
+      icon: '\u{1F916}',
     },
     {
-      key: "schoolSharingEnabled",
-      label: "Share with School",
-      description: "Let your school see your progress and scores (if your school uses The English Hub)",
-      icon: "\u{1F3EB}",
+      key: 'schoolSharingEnabled',
+      labelKey: 'dashboard.privacy.toggle_school_label',
+      descKey: 'dashboard.privacy.toggle_school_desc',
+      icon: '\u{1F3EB}',
     },
     {
-      key: "researchDataEnabled",
-      label: "Research Data",
-      description: "Contribute anonymised data to educational research studies",
-      icon: "\u{1F52C}",
+      key: 'researchDataEnabled',
+      labelKey: 'dashboard.privacy.toggle_research_label',
+      descKey: 'dashboard.privacy.toggle_research_desc',
+      icon: '\u{1F52C}',
     },
-  ];
+  ]
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-foreground mb-1">Privacy Settings</h2>
-      <p className="text-sm text-muted-foreground mb-6">
-        Everything is <strong>off by default</strong> to keep your data private. Turn things on only if you want to.
-      </p>
+      <h2 className="text-lg font-semibold text-foreground mb-1">
+        {tx('dashboard.privacy.settings_title')}
+      </h2>
+      <p className="text-sm text-muted-foreground mb-6">{tx('dashboard.privacy.settings_desc')}</p>
 
       <div className="space-y-4">
         {toggles.map((item) => (
@@ -258,8 +262,8 @@ function SettingsTab({
           >
             <span className="text-2xl mt-0.5">{item.icon}</span>
             <div className="flex-1 min-w-0">
-              <span className="block text-sm font-medium text-foreground">{item.label}</span>
-              <span className="block text-xs text-muted-foreground mt-0.5">{item.description}</span>
+              <span className="block text-sm font-medium text-foreground">{tx(item.labelKey)}</span>
+              <span className="block text-xs text-muted-foreground mt-0.5">{tx(item.descKey)}</span>
             </div>
             <button
               type="button"
@@ -267,12 +271,12 @@ function SettingsTab({
               aria-checked={settings[item.key]}
               onClick={() => toggle(item.key)}
               className={`relative mt-0.5 inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-                settings[item.key] ? "bg-success" : "bg-muted-foreground/30"
+                settings[item.key] ? 'bg-success' : 'bg-muted-foreground/30'
               }`}
             >
               <span
                 className={`inline-block h-4 w-4 rounded-full bg-card shadow-sm transition-transform ${
-                  settings[item.key] ? "translate-x-6" : "translate-x-1"
+                  settings[item.key] ? 'translate-x-6' : 'translate-x-1'
                 }`}
               />
             </button>
@@ -283,18 +287,24 @@ function SettingsTab({
       {/* Profile Visibility */}
       <div className="mt-6 rounded-xl border border-border p-4">
         <div className="flex items-start gap-4">
-          <span className="text-2xl mt-0.5">{"\u{1F464}"}</span>
+          <span className="text-2xl mt-0.5">{'\u{1F464}'}</span>
           <div className="flex-1">
-            <span className="block text-sm font-medium text-foreground">Profile Visibility</span>
+            <span className="block text-sm font-medium text-foreground">
+              {tx('dashboard.privacy.profile_visibility_label')}
+            </span>
             <span className="block text-xs text-muted-foreground mt-0.5">
-              Control who can see your profile information
+              {tx('dashboard.privacy.profile_visibility_desc')}
             </span>
             <div className="mt-3 flex flex-wrap gap-2">
               {(
                 [
-                  { value: "PRIVATE", label: "\u{1F512} Private", desc: "Only you" },
-                  { value: "SCHOOL_ONLY", label: "\u{1F3EB} School Only", desc: "You + your school" },
-                  { value: "PUBLIC", label: "\u{1F30D} Public", desc: "Anyone" },
+                  { value: 'PRIVATE', label: '\u{1F512} Private', desc: 'Only you' },
+                  {
+                    value: 'SCHOOL_ONLY',
+                    label: '\u{1F3EB} School Only',
+                    desc: 'You + your school',
+                  },
+                  { value: 'PUBLIC', label: '\u{1F30D} Public', desc: 'Anyone' },
                 ] as const
               ).map((opt) => (
                 <button
@@ -303,12 +313,14 @@ function SettingsTab({
                   onClick={() => onChange({ ...settings, profileVisibility: opt.value })}
                   className={`rounded-lg border-2 px-3 py-2 text-xs font-medium transition-colors ${
                     settings.profileVisibility === opt.value
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-border text-muted-foreground hover:border-border"
+                      ? 'border-primary bg-primary/10 text-primary'
+                      : 'border-border text-muted-foreground hover:border-border'
                   }`}
                 >
                   {opt.label}
-                  <span className="block text-[10px] font-normal text-muted-foreground mt-0.5">{opt.desc}</span>
+                  <span className="block text-[10px] font-normal text-muted-foreground mt-0.5">
+                    {opt.desc}
+                  </span>
                 </button>
               ))}
             </div>
@@ -318,62 +330,61 @@ function SettingsTab({
 
       {/* Save */}
       <div className="mt-6 flex justify-end">
-        <button
-          onClick={onSave}
-          disabled={saving}
-          className="btn-primary"
-        >
-          {saving ? "Saving..." : "Save Changes"}
+        <button onClick={onSave} disabled={saving} className="btn-primary">
+          {saving ? tx('dashboard.privacy.saving') : tx('dashboard.privacy.save_changes')}
         </button>
       </div>
     </div>
-  );
+  )
 }
 
 // ── Data Tab ───────────────────────────────────────────
 
 function DataTab({ summary }: { summary: DataSummary | null }) {
+  const tx = useT()
   if (!summary) {
-    return <p className="text-sm text-muted-foreground">Unable to load your data summary.</p>;
+    return (
+      <p className="text-sm text-muted-foreground">{tx('dashboard.privacy.data_load_error')}</p>
+    )
   }
 
   const cards = [
     {
-      icon: "\u{1F464}",
-      label: "Account Info",
+      icon: '\u{1F464}',
+      label: 'Account Info',
       value: `${summary.firstName} ${summary.lastName}`,
       sub: summary.email,
-      color: "bg-primary/10 text-primary",
+      color: 'bg-primary/10 text-primary',
     },
     {
-      icon: "\u{1F4DD}",
-      label: "Essays Submitted",
+      icon: '\u{1F4DD}',
+      label: 'Essays Submitted',
       value: String(summary.essayCount),
-      sub: "total essays",
-      color: "bg-primary/10 text-accent",
+      sub: 'total essays',
+      color: 'bg-primary/10 text-accent',
     },
     {
-      icon: "\u{1F4AC}",
-      label: "Feedback Received",
+      icon: '\u{1F4AC}',
+      label: 'Feedback Received',
       value: String(summary.feedbackCount),
-      sub: "AI feedback reports",
-      color: "bg-success-50 text-success",
+      sub: 'AI feedback reports',
+      color: 'bg-success-50 text-success',
     },
     {
-      icon: "\u{1F4C5}",
-      label: "Days Active",
+      icon: '\u{1F4C5}',
+      label: 'Days Active',
       value: String(summary.daysActive),
-      sub: `since ${new Date(summary.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}`,
-      color: "bg-warn-50 text-warn",
+      sub: `since ${new Date(summary.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`,
+      color: 'bg-warn-50 text-warn',
     },
-  ];
+  ]
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-foreground mb-1">Your Data at a Glance</h2>
-      <p className="text-sm text-muted-foreground mb-6">
-        Here&apos;s a summary of what we hold about you. No surprises.
-      </p>
+      <h2 className="text-lg font-semibold text-foreground mb-1">
+        {tx('dashboard.privacy.data_title')}
+      </h2>
+      <p className="text-sm text-muted-foreground mb-6">{tx('dashboard.privacy.data_subtitle')}</p>
 
       <div className="grid gap-4 sm:grid-cols-2">
         {cards.map((card) => (
@@ -381,10 +392,14 @@ function DataTab({ summary }: { summary: DataSummary | null }) {
             key={card.label}
             className="rounded-xl border border-border p-5 hover:shadow-md transition-shadow"
           >
-            <div className={`inline-flex items-center justify-center h-10 w-10 rounded-lg ${card.color} text-xl mb-3`}>
+            <div
+              className={`inline-flex items-center justify-center h-10 w-10 rounded-lg ${card.color} text-xl mb-3`}
+            >
               {card.icon}
             </div>
-            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{card.label}</p>
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+              {card.label}
+            </p>
             <p className="text-xl font-bold text-foreground mt-1">{card.value}</p>
             <p className="text-xs text-muted-foreground mt-0.5">{card.sub}</p>
           </div>
@@ -393,7 +408,7 @@ function DataTab({ summary }: { summary: DataSummary | null }) {
 
       {summary.school && (
         <div className="mt-4 rounded-xl border border-border p-4 flex items-center gap-3">
-          <span className="text-xl">{"\u{1F3EB}"}</span>
+          <span className="text-xl">{'\u{1F3EB}'}</span>
           <div>
             <p className="text-xs font-medium text-muted-foreground">School</p>
             <p className="text-sm font-semibold text-foreground">{summary.school}</p>
@@ -401,55 +416,60 @@ function DataTab({ summary }: { summary: DataSummary | null }) {
         </div>
       )}
     </div>
-  );
+  )
 }
 
 // ── Download Tab ───────────────────────────────────────
 
 function DownloadTab({ onToast }: { onToast: (msg: string) => void }) {
-  const [format, setFormat] = useState<"JSON" | "PDF">("JSON");
-  const [requesting, setRequesting] = useState(false);
-  const [requested, setRequested] = useState(false);
+  const tx = useT()
+  const [format, setFormat] = useState<'JSON' | 'PDF'>('JSON')
+  const [requesting, setRequesting] = useState(false)
+  const [requested, setRequested] = useState(false)
 
   async function requestExport() {
-    setRequesting(true);
+    setRequesting(true)
     try {
-      const res = await fetch("/api/privacy/export", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/privacy/export', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ format }),
-      });
+      })
       if (res.ok) {
-        setRequested(true);
-        onToast("Export requested! Check your email within 48 hours.");
+        setRequested(true)
+        onToast('Export requested! Check your email within 48 hours.')
       } else {
-        onToast("Failed to request export. Please try again.");
+        onToast('Failed to request export. Please try again.')
       }
     } catch {
-      onToast("Network error. Please check your connection.");
+      onToast('Network error. Please check your connection.')
     } finally {
-      setRequesting(false);
+      setRequesting(false)
     }
   }
 
   const includedItems = [
-    { icon: "\u{1F464}", text: "Your account details (name, email, school)" },
-    { icon: "\u{1F4DD}", text: "All your essays and their content" },
-    { icon: "\u{1F4AC}", text: "All AI feedback you've received" },
-    { icon: "\u2699\uFE0F", text: "Your privacy settings and consent history" },
-    { icon: "\u{1F4C5}", text: "Activity log and timestamps" },
-  ];
+    { icon: '\u{1F464}', text: 'Your account details (name, email, school)' },
+    { icon: '\u{1F4DD}', text: 'All your essays and their content' },
+    { icon: '\u{1F4AC}', text: "All AI feedback you've received" },
+    { icon: '\u2699\uFE0F', text: 'Your privacy settings and consent history' },
+    { icon: '\u{1F4C5}', text: 'Activity log and timestamps' },
+  ]
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-foreground mb-1">Download Your Data</h2>
+      <h2 className="text-lg font-semibold text-foreground mb-1">
+        {tx('dashboard.privacy.download_title')}
+      </h2>
       <p className="text-sm text-muted-foreground mb-6">
-        You have the right to take your data with you. Request a copy and we&apos;ll email it to you.
+        {tx('dashboard.privacy.download_subtitle')}
       </p>
 
       {/* What's included */}
       <div className="rounded-xl border border-border p-5 mb-6">
-        <h3 className="text-sm font-semibold text-foreground mb-3">What&apos;s included in your export</h3>
+        <h3 className="text-sm font-semibold text-foreground mb-3">
+          {tx('dashboard.privacy.download_included_heading')}
+        </h3>
         <ul className="space-y-2">
           {includedItems.map((item) => (
             <li key={item.text} className="flex items-center gap-2.5 text-sm text-muted-foreground">
@@ -462,22 +482,24 @@ function DownloadTab({ onToast }: { onToast: (msg: string) => void }) {
 
       {/* Format picker */}
       <div className="mb-6">
-        <label className="block text-sm font-medium text-foreground mb-2">Choose format</label>
+        <label className="block text-sm font-medium text-foreground mb-2">
+          {tx('dashboard.privacy.download_format_label')}
+        </label>
         <div className="flex gap-3">
-          {(["JSON", "PDF"] as const).map((f) => (
+          {(['JSON', 'PDF'] as const).map((f) => (
             <button
               key={f}
               type="button"
               onClick={() => setFormat(f)}
               className={`rounded-lg border-2 px-5 py-3 text-sm font-medium transition-colors ${
                 format === f
-                  ? "border-primary bg-primary/10 text-primary"
-                  : "border-border text-muted-foreground hover:border-border"
+                  ? 'border-primary bg-primary/10 text-primary'
+                  : 'border-border text-muted-foreground hover:border-border'
               }`}
             >
-              {f === "JSON" ? "\u{1F4C4}" : "\u{1F4D1}"} {f}
+              {f === 'JSON' ? '\u{1F4C4}' : '\u{1F4D1}'} {f}
               <span className="block text-[10px] font-normal text-muted-foreground mt-0.5">
-                {f === "JSON" ? "Machine-readable" : "Human-readable"}
+                {f === 'JSON' ? 'Machine-readable' : 'Human-readable'}
               </span>
             </button>
           ))}
@@ -486,29 +508,27 @@ function DownloadTab({ onToast }: { onToast: (msg: string) => void }) {
 
       {/* Delivery info */}
       <div className="rounded-xl bg-primary/10 border border-primary/20 p-4 mb-6 flex items-start gap-3">
-        <span className="text-xl mt-0.5">{"\u23F0"}</span>
+        <span className="text-xl mt-0.5">{'\u23F0'}</span>
         <div>
-          <p className="text-sm font-medium text-primary">Estimated delivery: within 48 hours</p>
+          <p className="text-sm font-medium text-primary">
+            {tx('dashboard.privacy.download_delivery')}
+          </p>
           <p className="text-xs text-primary mt-0.5">
-            We&apos;ll email a secure download link to your registered email address.
+            {tx('dashboard.privacy.download_delivery_desc')}
           </p>
         </div>
       </div>
 
       {/* Request button */}
-      <button
-        onClick={requestExport}
-        disabled={requesting || requested}
-        className="btn-primary"
-      >
+      <button onClick={requestExport} disabled={requesting || requested} className="btn-primary">
         {requested
-          ? "\u2705 Export Requested"
+          ? tx('dashboard.privacy.download_requested')
           : requesting
-          ? "Requesting..."
-          : `Request ${format} Export`}
+            ? tx('dashboard.privacy.download_requesting')
+            : `${tx('dashboard.privacy.download_request_btn')} ${format}`}
       </button>
     </div>
-  );
+  )
 }
 
 // ── Delete Tab ─────────────────────────────────────────
@@ -518,70 +538,77 @@ function DeleteTab({
   onEssayDeleted,
   onToast,
 }: {
-  essays: EssayItem[];
-  onEssayDeleted: (id: string) => void;
-  onToast: (msg: string) => void;
+  essays: EssayItem[]
+  onEssayDeleted: (id: string) => void
+  onToast: (msg: string) => void
 }) {
-  const [confirmation, setConfirmation] = useState("");
-  const [deleting, setDeleting] = useState(false);
-  const [deletingEssay, setDeletingEssay] = useState<string | null>(null);
+  const tx = useT()
+  const [confirmation, setConfirmation] = useState('')
+  const [deleting, setDeleting] = useState(false)
+  const [deletingEssay, setDeletingEssay] = useState<string | null>(null)
 
   async function deleteEssay(id: string) {
-    setDeletingEssay(id);
+    setDeletingEssay(id)
     try {
-      const res = await fetch("/api/privacy/delete-essay", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/privacy/delete-essay', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ essayId: id }),
-      });
+      })
       if (res.ok) {
-        onEssayDeleted(id);
-        onToast("Essay deleted successfully.");
+        onEssayDeleted(id)
+        onToast('Essay deleted successfully.')
       } else {
-        onToast("Failed to delete essay. Please try again.");
+        onToast('Failed to delete essay. Please try again.')
       }
     } catch {
-      onToast("Network error. Please check your connection.");
+      onToast('Network error. Please check your connection.')
     } finally {
-      setDeletingEssay(null);
+      setDeletingEssay(null)
     }
   }
 
   async function deleteAccount() {
-    if (confirmation !== "DELETE MY ACCOUNT") return;
-    setDeleting(true);
+    if (confirmation !== 'DELETE MY ACCOUNT') return
+    setDeleting(true)
     try {
-      const res = await fetch("/api/privacy/delete-account", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/privacy/delete-account', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ confirmation }),
-      });
+      })
       if (res.ok) {
-        onToast("Account deletion requested. You have 30 days to change your mind.");
+        onToast('Account deletion requested. You have 30 days to change your mind.')
       } else {
-        const data = await res.json().catch(() => ({}));
-        onToast(data.error ?? "Failed to request deletion. Please try again.");
+        const data = await res.json().catch(() => ({}))
+        onToast(data.error ?? 'Failed to request deletion. Please try again.')
       }
     } catch {
-      onToast("Network error. Please check your connection.");
+      onToast('Network error. Please check your connection.')
     } finally {
-      setDeleting(false);
+      setDeleting(false)
     }
   }
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-foreground mb-1">Delete Your Data</h2>
+      <h2 className="text-lg font-semibold text-foreground mb-1">
+        {tx('dashboard.privacy.delete_title')}
+      </h2>
       <p className="text-sm text-muted-foreground mb-6">
-        You can delete individual essays or your entire account. Take your time - there&apos;s no pressure.
+        {tx('dashboard.privacy.delete_subtitle')}
       </p>
 
       {/* Delete individual essays */}
       <div className="mb-8">
-        <h3 className="text-sm font-semibold text-foreground mb-3">{"\u{1F4DD}"} Delete Individual Essays</h3>
+        <h3 className="text-sm font-semibold text-foreground mb-3">
+          {'\u{1F4DD}'} Delete Individual Essays
+        </h3>
         {essays.length === 0 ? (
           <div className="rounded-xl border border-dashed border-border p-6 text-center">
-            <p className="text-sm text-muted-foreground">No essays to show.</p>
+            <p className="text-sm text-muted-foreground">
+              {tx('dashboard.privacy.delete_no_essays')}
+            </p>
           </div>
         ) : (
           <div className="space-y-2 max-h-64 overflow-y-auto">
@@ -593,11 +620,11 @@ function DeleteTab({
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium text-foreground truncate">{essay.title}</p>
                   <p className="text-xs text-muted-foreground">
-                    {essay.subject} &middot;{" "}
-                    {new Date(essay.createdAt).toLocaleDateString("en-GB", {
-                      day: "numeric",
-                      month: "short",
-                      year: "numeric",
+                    {essay.subject} &middot;{' '}
+                    {new Date(essay.createdAt).toLocaleDateString('en-GB', {
+                      day: 'numeric',
+                      month: 'short',
+                      year: 'numeric',
                     })}
                   </p>
                 </div>
@@ -606,7 +633,9 @@ function DeleteTab({
                   disabled={deletingEssay === essay.id}
                   className="ml-3 shrink-0 rounded-lg border border-warn-200 bg-warn-50 px-3 py-1.5 text-xs font-medium text-warn hover:bg-warn-100 transition-colors disabled:opacity-50"
                 >
-                  {deletingEssay === essay.id ? "Deleting..." : "\u{1F5D1}\uFE0F Delete"}
+                  {deletingEssay === essay.id
+                    ? tx('dashboard.privacy.deleting')
+                    : tx('dashboard.privacy.delete_essay_btn')}
                 </button>
               </div>
             ))}
@@ -617,20 +646,21 @@ function DeleteTab({
       {/* Delete account */}
       <div className="rounded-xl border-2 border-warn-200 bg-warn-50/50 p-5">
         <h3 className="text-sm font-semibold text-warn-700 mb-2">
-          {"\u26A0\uFE0F"} Delete Your Account
+          {'\u26A0\uFE0F'} Delete Your Account
         </h3>
         <p className="text-sm text-muted-foreground mb-3">
-          This will schedule your account for deletion. You&apos;ll have a <strong>30-day grace period</strong> to
-          change your mind. After that, all your data will be permanently erased.
+          {tx('dashboard.privacy.delete_account_warning')}
         </p>
 
         <div className="rounded-lg bg-card border border-warn-200 p-4 mb-4">
-          <p className="text-xs font-medium text-foreground mb-1">What happens when you delete your account:</p>
+          <p className="text-xs font-medium text-foreground mb-1">
+            What happens when you delete your account:
+          </p>
           <ul className="text-xs text-muted-foreground space-y-1">
-            <li>{"\u2022"} Your account is deactivated immediately</li>
-            <li>{"\u2022"} You have 30 days to log back in and cancel the deletion</li>
-            <li>{"\u2022"} After 30 days, all data is permanently and irreversibly deleted</li>
-            <li>{"\u2022"} Any active subscription will be cancelled</li>
+            <li>{'\u2022'} Your account is deactivated immediately</li>
+            <li>{'\u2022'} You have 30 days to log back in and cancel the deletion</li>
+            <li>{'\u2022'} After 30 days, all data is permanently and irreversibly deleted</li>
+            <li>{'\u2022'} Any active subscription will be cancelled</li>
           </ul>
         </div>
 
@@ -646,70 +676,75 @@ function DeleteTab({
         />
         <button
           onClick={deleteAccount}
-          disabled={confirmation !== "DELETE MY ACCOUNT" || deleting}
+          disabled={confirmation !== 'DELETE MY ACCOUNT' || deleting}
           className="inline-flex items-center justify-center rounded-lg bg-warn px-5 py-2.5 text-sm font-medium text-white hover:bg-warn-600 focus-visible:ring-2 focus-visible:ring-warn focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
         >
-          {deleting ? "Processing..." : "\u{1F5D1}\uFE0F Delete My Account"}
+          {deleting
+            ? tx('dashboard.privacy.delete_processing')
+            : tx('dashboard.privacy.delete_account_btn')}
         </button>
       </div>
     </div>
-  );
+  )
 }
 
 // ── Rights Tab ─────────────────────────────────────────
 
 function RightsTab() {
+  const tx = useT()
   const rights = [
     {
-      icon: "\u{1F441}\uFE0F",
-      title: "Right of Access",
-      description: "You can ask to see all the data we hold about you at any time.",
-      action: "View your data",
-      tab: "data" as Tab,
+      icon: '\u{1F441}\uFE0F',
+      title: 'Right of Access',
+      description: 'You can ask to see all the data we hold about you at any time.',
+      action: 'View your data',
+      tab: 'data' as Tab,
     },
     {
-      icon: "\u270F\uFE0F",
-      title: "Right to Rectification",
-      description: "If any of your personal data is wrong, you can ask us to fix it.",
-      action: "Contact us to correct",
-      href: "mailto:info@Upskillenergy.com?subject=Data%20Rectification%20Request",
+      icon: '\u270F\uFE0F',
+      title: 'Right to Rectification',
+      description: 'If any of your personal data is wrong, you can ask us to fix it.',
+      action: 'Contact us to correct',
+      href: 'mailto:info@Upskillenergy.com?subject=Data%20Rectification%20Request',
     },
     {
-      icon: "\u{1F5D1}\uFE0F",
-      title: "Right to Erasure",
-      description: "You can ask us to delete your data. We call this the \"right to be forgotten\".",
-      action: "Delete your data",
-      tab: "delete" as Tab,
+      icon: '\u{1F5D1}\uFE0F',
+      title: 'Right to Erasure',
+      description: 'You can ask us to delete your data. We call this the "right to be forgotten".',
+      action: 'Delete your data',
+      tab: 'delete' as Tab,
     },
     {
-      icon: "\u{1F4E6}",
-      title: "Right to Portability",
-      description: "You can download a copy of your data in a standard format to take elsewhere.",
-      action: "Download your data",
-      tab: "download" as Tab,
+      icon: '\u{1F4E6}',
+      title: 'Right to Portability',
+      description: 'You can download a copy of your data in a standard format to take elsewhere.',
+      action: 'Download your data',
+      tab: 'download' as Tab,
     },
     {
-      icon: "\u270B",
-      title: "Right to Restrict Processing",
-      description: "You can ask us to stop using your data in certain ways while we resolve a concern.",
-      action: "Contact us to restrict",
-      href: "mailto:info@Upskillenergy.com?subject=Data%20Restriction%20Request",
+      icon: '\u270B',
+      title: 'Right to Restrict Processing',
+      description:
+        'You can ask us to stop using your data in certain ways while we resolve a concern.',
+      action: 'Contact us to restrict',
+      href: 'mailto:info@Upskillenergy.com?subject=Data%20Restriction%20Request',
     },
     {
-      icon: "\u{1F6D1}",
-      title: "Right to Object",
-      description: "You can object to us using your data for things like marketing or research.",
-      action: "Manage settings",
-      tab: "settings" as Tab,
+      icon: '\u{1F6D1}',
+      title: 'Right to Object',
+      description: 'You can object to us using your data for things like marketing or research.',
+      action: 'Manage settings',
+      tab: 'settings' as Tab,
     },
-  ];
+  ]
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-foreground mb-1">Your Data Rights</h2>
+      <h2 className="text-lg font-semibold text-foreground mb-1">
+        {tx('dashboard.privacy.rights_title')}
+      </h2>
       <p className="text-sm text-muted-foreground mb-6">
-        Under UK GDPR and the ICO Children&apos;s Code, you have powerful rights over your data. Here&apos;s what they mean
-        in plain English.
+        {tx('dashboard.privacy.rights_subtitle')}
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -721,16 +756,16 @@ function RightsTab() {
             <div className="text-2xl mb-2">{right.icon}</div>
             <h3 className="text-sm font-semibold text-foreground">{right.title}</h3>
             <p className="text-xs text-muted-foreground mt-1 mb-3">{right.description}</p>
-            {"href" in right && right.href ? (
+            {'href' in right && right.href ? (
               <a
                 href={right.href}
                 className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-primary transition-colors"
               >
-                {right.action} {"\u2192"}
+                {right.action} {'\u2192'}
               </a>
             ) : (
               <span className="inline-flex items-center gap-1 text-xs font-medium text-primary">
-                {right.action} {"\u2192"}
+                {right.action} {'\u2192'}
               </span>
             )}
           </div>
@@ -739,13 +774,14 @@ function RightsTab() {
 
       <div className="mt-6 rounded-xl bg-primary/10 border border-primary/20 p-4">
         <p className="text-sm text-primary">
-          <strong>Need help?</strong> If you want to exercise any of these rights or have questions, email us at{" "}
+          <strong>Need help?</strong> If you want to exercise any of these rights or have questions,
+          email us at{' '}
           <a href="mailto:info@Upskillenergy.com" className="underline font-medium">
             info@Upskillenergy.com
-          </a>{" "}
+          </a>{' '}
           and we&apos;ll respond within 30 days (usually much sooner).
         </p>
       </div>
     </div>
-  );
+  )
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 
 const mockData = {
   user: { name: 'Amira', xp: 4820, level: 12, streak: 17 },
@@ -53,6 +54,7 @@ const mockData = {
 }
 
 export default function DopamineDashboard() {
+  const t = useT()
   const [hoveredCourse, setHoveredCourse] = useState<number | null>(null)
   const maxWeeklyXp = Math.max(...mockData.weeklyXp)
   const totalWeeklyXp = mockData.weeklyXp.reduce((a, b) => a + b, 0)
@@ -66,16 +68,24 @@ export default function DopamineDashboard() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <p className="text-accent text-sm font-medium tracking-wide uppercase">English Hub</p>
-            <h1 className="text-2xl font-bold mt-1">Hey, {mockData.user.name}! 👋</h1>
+            <p className="text-accent text-sm font-medium tracking-wide uppercase">
+              {t('demo.b15.design5.eyebrow')}
+            </p>
+            <h1 className="text-2xl font-bold mt-1">
+              {t('demo.b15.design5.greeting')} {mockData.user.name}! 👋
+            </h1>
           </div>
           <div className="flex items-center gap-3">
             <div className="bg-card backdrop-blur rounded-full px-4 py-2 flex items-center gap-2 text-sm font-semibold border border-border">
               <span className="text-accent">💪</span>
-              <span>{mockData.user.xp.toLocaleString()} XP</span>
+              <span>
+                {mockData.user.xp.toLocaleString()} {t('demo.b15.design5.xp_label')}
+              </span>
             </div>
             <div className="bg-card backdrop-blur rounded-full px-4 py-2 flex items-center gap-2 text-sm font-semibold border border-border">
-              <span>Lv. {mockData.user.level}</span>
+              <span>
+                {t('demo.b15.design5.level_prefix')} {mockData.user.level}
+              </span>
             </div>
           </div>
         </div>
@@ -129,7 +139,7 @@ export default function DopamineDashboard() {
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-4xl">⚔️</span>
                 <span className="text-xs font-bold uppercase tracking-widest text-white/80">
-                  Daily Challenge
+                  {t('demo.b15.design5.daily_challenge')}
                 </span>
               </div>
               <h3 className="text-2xl font-extrabold mb-2">{mockData.dailyChallenge.title}</h3>
@@ -153,8 +163,10 @@ export default function DopamineDashboard() {
           {/* Weekly XP Chart */}
           <div className="bg-card backdrop-blur border border-border rounded-[20px] p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-bold text-lg">This Week</h3>
-              <span className="text-sm text-accent font-semibold">{totalWeeklyXp} XP</span>
+              <h3 className="font-bold text-lg">{t('demo.b15.design5.weekly_xp')}</h3>
+              <span className="text-sm text-accent font-semibold">
+                {totalWeeklyXp} {t('demo.b15.design5.xp_label')}
+              </span>
             </div>
             <div className="flex items-end gap-2 h-32">
               {mockData.weeklyXp.map((xp, i) => (
@@ -184,7 +196,7 @@ export default function DopamineDashboard() {
         {/* Courses */}
         <div className="mb-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-bold">Your Courses 📚</h3>
+            <h3 className="text-xl font-bold">{t('demo.b15.design5.my_courses')} 📚</h3>
             <button className="text-sm text-accent hover:text-foreground transition-colors font-medium">
               View All →
             </button>
@@ -222,7 +234,7 @@ export default function DopamineDashboard() {
         <div className="grid grid-cols-2 gap-4 mb-8">
           {/* Achievements */}
           <div className="bg-card backdrop-blur border border-border rounded-[20px] p-6">
-            <h3 className="font-bold text-lg mb-4">Achievements 🏆</h3>
+            <h3 className="font-bold text-lg mb-4">{t('demo.b15.design5.achievements')} 🏆</h3>
             <div className="flex flex-wrap gap-3">
               {mockData.achievements.map((badge, i) => (
                 <div key={i} className="group relative flex flex-col items-center">
@@ -240,7 +252,7 @@ export default function DopamineDashboard() {
 
           {/* Recent Activity */}
           <div className="bg-card backdrop-blur border border-border rounded-[20px] p-6">
-            <h3 className="font-bold text-lg mb-4">Recent Activity ⚡</h3>
+            <h3 className="font-bold text-lg mb-4">{t('demo.b15.design5.recent_activity')} ⚡</h3>
             <div className="space-y-3">
               {mockData.recentActivity.map((item, i) => (
                 <div

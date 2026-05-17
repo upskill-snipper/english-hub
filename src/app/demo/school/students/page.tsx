@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
 import {
   Users,
@@ -362,6 +363,7 @@ const YEAR_OPTIONS = [7, 8, 9, 10, 11, 12, 13]
 const STATUS_OPTIONS: StudentStatus[] = ['On Track', 'Needs Support', 'At Risk', 'Excelling']
 
 export default function StudentsPage() {
+  const t = useT()
   useScrollRestore()
   const [search, setSearch] = useState('')
   const [yearFilter, setYearFilter] = useState<number | 'all'>('all')
@@ -460,9 +462,11 @@ export default function StudentsPage() {
     <div className="space-y-6">
       {/* Page header */}
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">Students</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-foreground">
+          {t('demo.b15.school_students.title')}
+        </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Manage and monitor all students across your school.
+          {t('demo.b15.school_students.subtitle')}
         </p>
       </div>
 
@@ -475,7 +479,7 @@ export default function StudentsPage() {
             </div>
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                Total Students
+                {t('demo.b15.school_students.stat_total')}
               </p>
               <p className="text-2xl font-bold text-foreground">{stats.total}</p>
             </div>
@@ -489,7 +493,7 @@ export default function StudentsPage() {
             </div>
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                Active This Week
+                {t('demo.b15.school_students.stat_active')}
               </p>
               <p className="text-2xl font-bold text-foreground">{stats.activeThisWeek}</p>
             </div>
@@ -503,7 +507,7 @@ export default function StudentsPage() {
             </div>
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                Needs Support
+                {t('demo.b15.school_students.stat_needs_support')}
               </p>
               <p className="text-2xl font-bold text-foreground">{stats.needsSupport}</p>
             </div>
@@ -517,7 +521,7 @@ export default function StudentsPage() {
             </div>
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                At Risk
+                {t('demo.b15.school_students.stat_at_risk')}
               </p>
               <p className="text-2xl font-bold text-foreground">{stats.atRisk}</p>
             </div>
@@ -533,7 +537,7 @@ export default function StudentsPage() {
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
-                placeholder="Search by name or email..."
+                placeholder={t('demo.b15.school_students.search_ph')}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="pl-9"
@@ -550,10 +554,10 @@ export default function StudentsPage() {
                 }
                 className="h-10 rounded-lg border border-input bg-transparent px-3 text-sm text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/25"
               >
-                <option value="all">All Years</option>
+                <option value="all">{t('demo.b15.school_students.all_years')}</option>
                 {YEAR_OPTIONS.map((y) => (
                   <option key={y} value={y}>
-                    Year {y}
+                    {t('demo.b15.school_students.year_prefix')} {y}
                   </option>
                 ))}
               </select>
@@ -565,7 +569,7 @@ export default function StudentsPage() {
               onChange={(e) => setStatusFilter(e.target.value as StudentStatus | 'all')}
               className="h-10 rounded-lg border border-input bg-transparent px-3 text-sm text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/25"
             >
-              <option value="all">All Statuses</option>
+              <option value="all">{t('demo.b15.school_students.all_statuses')}</option>
               {STATUS_OPTIONS.map((s) => (
                 <option key={s} value={s}>
                   {s}
@@ -579,7 +583,7 @@ export default function StudentsPage() {
               onChange={(e) => setClassFilter(e.target.value)}
               className="h-10 rounded-lg border border-input bg-transparent px-3 text-sm text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/25"
             >
-              <option value="all">All Classes</option>
+              <option value="all">{t('demo.b15.school_students.all_classes')}</option>
               {classNames.map((c) => (
                 <option key={c} value={c}>
                   {c}
@@ -594,32 +598,35 @@ export default function StudentsPage() {
       {selectedIds.size > 0 && (
         <div className="flex items-center gap-3 rounded-xl border border-primary/30 bg-primary/5 px-4 py-3">
           <span className="text-sm font-medium text-foreground">
-            {selectedIds.size} student{selectedIds.size !== 1 ? 's' : ''} selected
+            {selectedIds.size}{' '}
+            {selectedIds.size !== 1
+              ? t('demo.b15.school_students.selected_plural')
+              : t('demo.b15.school_students.selected_singular')}
           </span>
           <div className="flex-1" />
           <Button
             variant="outline"
             size="sm"
-            onClick={() => showToast('Available with full account')}
+            onClick={() => showToast(t('demo.b15.school_students.toast_unavailable'))}
           >
-            Send Message
+            {t('demo.b15.school_students.bulk_message')}
           </Button>
           <Button
             variant="outline"
             size="sm"
-            onClick={() => showToast('Available with full account')}
+            onClick={() => showToast(t('demo.b15.school_students.toast_unavailable'))}
           >
-            Export
+            {t('demo.b15.school_students.bulk_export')}
           </Button>
           <Button
             variant="outline"
             size="sm"
-            onClick={() => showToast('Available with full account')}
+            onClick={() => showToast(t('demo.b15.school_students.toast_unavailable'))}
           >
-            Assign Class
+            {t('demo.b15.school_students.bulk_assign')}
           </Button>
           <Button variant="ghost" size="sm" onClick={() => setSelectedIds(new Set())}>
-            Clear
+            {t('demo.b15.school_students.bulk_clear')}
           </Button>
         </div>
       )}
@@ -630,7 +637,7 @@ export default function StudentsPage() {
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-2">
               <GraduationCap className="h-5 w-5 text-muted-foreground" />
-              Student List
+              {t('demo.b15.school_students.student_list')}
               <Badge variant="secondary" className="ml-2 text-xs">
                 {filtered.length}
               </Badge>
@@ -650,32 +657,38 @@ export default function StudentsPage() {
                       className="h-4 w-4 rounded border-input accent-primary"
                     />
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground">Name</th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden md:table-cell">
-                    Email
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                    {t('demo.b15.school_students.col_name')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground">Year</th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden lg:table-cell">
-                    Class
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden md:table-cell">
+                    {t('demo.b15.school_students.col_email')}
                   </th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground">
-                    Progress
-                  </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden sm:table-cell">
-                    Working At
-                  </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden md:table-cell">
-                    Predicted
+                    {t('demo.b15.school_students.col_year')}
                   </th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden lg:table-cell">
-                    Target
+                    {t('demo.b15.school_students.col_class')}
+                  </th>
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                    {t('demo.b15.school_students.col_progress')}
+                  </th>
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden sm:table-cell">
+                    {t('demo.b15.school_students.col_working_at')}
+                  </th>
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden md:table-cell">
+                    {t('demo.b15.school_students.col_predicted')}
+                  </th>
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden lg:table-cell">
+                    {t('demo.b15.school_students.col_target')}
                   </th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden xl:table-cell">
-                    Reading Age
+                    {t('demo.b15.school_students.col_reading_age')}
                   </th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground">Status</th>
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground">
+                    {t('demo.b15.school_students.col_status')}
+                  </th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden xl:table-cell">
-                    Last Active
+                    {t('demo.b15.school_students.col_last_active')}
                   </th>
                 </tr>
               </thead>
@@ -770,7 +783,13 @@ export default function StudentsPage() {
                         <span
                           className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold whitespace-nowrap ${STATUS_COLORS[student.status]}`}
                         >
-                          {student.status}
+                          {student.status === 'Excelling'
+                            ? t('demo.b15.school_students.status_excelling')
+                            : student.status === 'On Track'
+                              ? t('demo.b15.school_students.status_on_track')
+                              : student.status === 'Needs Support'
+                                ? t('demo.b15.school_students.status_needs_support')
+                                : t('demo.b15.school_students.status_at_risk')}
                         </span>
                       </td>
                       <td className="px-4 py-3 text-muted-foreground hidden xl:table-cell whitespace-nowrap">
@@ -782,7 +801,7 @@ export default function StudentsPage() {
                 {paginated.length === 0 && (
                   <tr>
                     <td colSpan={12} className="px-4 py-12 text-center text-muted-foreground">
-                      No students match your filters.
+                      {t('demo.b15.school_students.no_match')}
                     </td>
                   </tr>
                 )}
@@ -796,9 +815,11 @@ export default function StudentsPage() {
       {totalPages > 1 && (
         <div className="flex items-center justify-between">
           <p className="text-sm text-muted-foreground">
-            Showing {(currentPage - 1) * ITEMS_PER_PAGE + 1}
+            {t('demo.b15.school_students.showing')} {(currentPage - 1) * ITEMS_PER_PAGE + 1}
             {' - '}
-            {Math.min(currentPage * ITEMS_PER_PAGE, filtered.length)} of {filtered.length} students
+            {Math.min(currentPage * ITEMS_PER_PAGE, filtered.length)}{' '}
+            {t('demo.b15.school_students.of')} {filtered.length}{' '}
+            {t('demo.b15.school_students.students_suffix')}
           </p>
           <div className="flex items-center gap-1">
             <Button

@@ -1,6 +1,7 @@
-'use client'
+﻿'use client'
 
 import { useState, use } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -963,6 +964,7 @@ function QuizView({
   quiz: { question: string; options: string[]; answer: number }[]
   onClose: () => void
 }) {
+  const t = useT()
   const [answers, setAnswers] = useState<(number | null)[]>(Array(quiz.length).fill(null))
   const [submitted, setSubmitted] = useState(false)
 
@@ -982,7 +984,7 @@ function QuizView({
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-medium text-foreground flex items-center gap-2">
           <FileQuestion className="h-5 w-5 text-primary" />
-          Module Quiz
+          {t('demo.b15.student_course.module_quiz')}
         </h3>
         <button
           onClick={onClose}
@@ -1038,7 +1040,9 @@ function QuizView({
           disabled={answers.some((a) => a === null)}
           className="w-full rounded-lg bg-primary hover:bg-primary/90 disabled:bg-muted disabled:text-muted-foreground px-4 py-3 text-sm font-medium text-primary-foreground transition-colors"
         >
-          {answers.some((a) => a === null) ? 'Answer all questions to submit' : 'Submit Answers'}
+          {answers.some((a) => a === null)
+            ? t('demo.b15.student_course.answer_all')
+            : t('demo.b15.student_course.submit_answers')}
         </button>
       ) : (
         <div className="rounded-lg border border-border/60 bg-card p-4 text-center">
@@ -1047,16 +1051,16 @@ function QuizView({
           </p>
           <p className="text-sm text-muted-foreground">
             {score === quiz.length
-              ? 'Perfect score! Well done.'
+              ? t('demo.b15.student_course.perfect')
               : score >= 3
-                ? 'Good effort! Review any you missed.'
-                : 'Keep practising -- you will get there.'}
+                ? t('demo.b15.student_course.good')
+                : t('demo.b15.student_course.keep_practising')}
           </p>
           <button
             onClick={onClose}
             className="mt-4 text-sm text-primary hover:text-primary/80 transition-colors"
           >
-            Back to module
+            {t('demo.b15.student_course.back_module')}
           </button>
         </div>
       )}
@@ -1069,6 +1073,7 @@ function QuizView({
 // ---------------------------------------------------------------------------
 
 export default function CourseDetailPage(props: { params: Promise<{ id: string }> }) {
+  const t = useT()
   const params = use(props.params)
   const { id } = require('react').use(params)
   const course = COURSES[id] || getGenericCourse(id)
@@ -1099,7 +1104,8 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
           {/* Demo banner */}
           <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 px-4 py-3">
             <p className="text-sm text-primary">
-              <span className="font-semibold">Student Demo</span> -- Exploring a course as a student
+              <span className="font-semibold">{t('demo.b15.student_course.demo_label')}</span> --{' '}
+              {t('demo.b15.student_course.demo_explore')}
             </p>
           </div>
 
@@ -1109,7 +1115,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to Courses
+            {t('demo.b15.student_course.back')}
           </Link>
 
           {/* Course header */}
@@ -1119,9 +1125,13 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
             </h1>
             <p className="text-sm text-muted-foreground mb-4">{course.description}</p>
             <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
-              <span>{course.modules.length} modules</span>
+              <span>
+                {course.modules.length} {t('demo.b15.student_course.modules_count')}
+              </span>
               <span>--</span>
-              <span>{completedCount} completed</span>
+              <span>
+                {completedCount} {t('demo.b15.student_course.completed')}
+              </span>
               <span>--</span>
               <span className="text-foreground">{pct}%</span>
             </div>
@@ -1131,7 +1141,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
           {/* Course stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
             <KpiTile
-              label="Lessons Done"
+              label={t('demo.b15.student_course.lessons_done')}
               value={completedCount}
               suffix={`/${course.modules.length}`}
               icon={Trophy}
@@ -1139,7 +1149,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
             />
             <GlassPanel accent="primary" className="p-5">
               <div className="flex items-start justify-between gap-3">
-                <PanelEyebrow>Avg Quiz Score</PanelEyebrow>
+                <PanelEyebrow>{t('demo.b15.student_course.avg_quiz')}</PanelEyebrow>
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground/[0.06]">
                   <Star className="h-4 w-4 text-muted-foreground" aria-hidden />
                 </span>
@@ -1149,7 +1159,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
               </p>
             </GlassPanel>
             <KpiTile
-              label="Perfect Scores"
+              label={t('demo.b15.student_course.perfect_scores')}
               value={
                 course.modules.filter(
                   (m) =>
@@ -1162,7 +1172,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
               accent="sage"
             />
             <KpiTile
-              label="Need Revision"
+              label={t('demo.b15.student_course.need_revision')}
               value={revisionCount}
               icon={AlertTriangle}
               accent="ochre"
@@ -1176,12 +1186,15 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                 <AlertTriangle className="h-5 w-5 text-amber-700 dark:text-amber-300 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm font-medium text-amber-700 dark:text-amber-300 mb-1">
-                    {revisionCount} {revisionCount === 1 ? 'lesson needs' : 'lessons need'} revision
+                    {revisionCount}{' '}
+                    {revisionCount === 1
+                      ? t('demo.b15.student_course.revision_banner_singular')
+                      : t('demo.b15.student_course.revision_banner_plural')}
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    You scored below 60% on{' '}
-                    {revisionCount === 1 ? "this lesson's quiz" : 'these lesson quizzes'}. Revisit
-                    the content and retake the quiz to strengthen your understanding.
+                    {revisionCount === 1
+                      ? t('demo.b15.student_course.revision_desc')
+                      : t('demo.b15.student_course.revision_desc_plural')}
                   </p>
                 </div>
               </div>
@@ -1223,13 +1236,14 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                       <p className="text-sm text-foreground truncate">{mod.title}</p>
                       {mod.revisionNeeded && (
                         <span className="inline-flex items-center rounded-full bg-red-500/20 border border-red-500/30 px-1.5 py-0.5 text-[9px] font-medium text-red-700 dark:text-red-300 flex-shrink-0">
-                          Revision Needed
+                          {t('demo.b15.student_course.revision_needed_badge')}
                         </span>
                       )}
                     </div>
                     <div className="flex items-center gap-2 mt-0.5">
                       <p className="text-[11px] text-muted-foreground">
-                        Module {idx + 1} of {course.modules.length}
+                        {t('demo.b15.student_course.module_of')} {idx + 1}{' '}
+                        {t('demo.b15.student_course.of')} {course.modules.length}
                       </p>
                       {quizPct !== null && (
                         <>
@@ -1243,7 +1257,8 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                                   : 'text-red-700 dark:text-red-300'
                             }`}
                           >
-                            Quiz: {mod.quizScore}/{mod.quizMaxScore} ({quizPct}%)
+                            {t('demo.b15.student_course.quiz_label')} {mod.quizScore}/
+                            {mod.quizMaxScore} ({quizPct}%)
                           </span>
                           {quizPct === 100 && (
                             <Star className="h-3 w-3 text-clay-600 dark:text-clay-300" />
@@ -1253,7 +1268,9 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                       {mod.completed && quizPct === null && (
                         <>
                           <span className="text-[11px] text-muted-foreground/30">|</span>
-                          <span className="text-[11px] text-muted-foreground">Quiz not taken</span>
+                          <span className="text-[11px] text-muted-foreground">
+                            {t('demo.b15.student_course.quiz_not_taken')}
+                          </span>
                         </>
                       )}
                     </div>
@@ -1280,7 +1297,8 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 px-4 py-3">
           <p className="text-sm text-primary">
-            <span className="font-semibold">Student Demo</span> -- Viewing lesson content
+            <span className="font-semibold">{t('demo.b15.student_course.demo_label')}</span> --{' '}
+            {t('demo.b15.student_course.demo_lesson')}
           </p>
         </div>
 
@@ -1293,13 +1311,14 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
           className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
-          Back to module list
+          {t('demo.b15.student_course.back_module_list')}
         </button>
 
         {/* Module header */}
         <div className="mb-6">
           <p className="text-xs text-muted-foreground mb-1">
-            Module {activeModuleIdx! + 1} of {course.modules.length}
+            {t('demo.b15.student_course.module_of')} {activeModuleIdx! + 1}{' '}
+            {t('demo.b15.student_course.of')} {course.modules.length}
           </p>
           <h2 className="text-xl font-light tracking-tight text-foreground">
             {activeModule.title}
@@ -1334,11 +1353,12 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                       : 'text-red-700 dark:text-red-300'
                 }`}
               >
-                Previous score: {activeModule.quizScore}/{activeModule.quizMaxScore} ({quizPct}%)
+                {t('demo.b15.student_course.prev_score')} {activeModule.quizScore}/
+                {activeModule.quizMaxScore} ({quizPct}%)
               </span>
               {quizPct < 60 && (
                 <span className="text-[10px] text-red-700/70 dark:text-red-300/70 ml-1">
-                  -- Retake recommended
+                  -- {t('demo.b15.student_course.retake_recommended')}
                 </span>
               )}
             </div>
@@ -1351,7 +1371,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                 <Lightbulb className="h-4 w-4 text-amber-700 dark:text-amber-300 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs font-medium text-amber-700 dark:text-amber-300 mb-1">
-                    Revision Suggestion
+                    {t('demo.b15.student_course.revision_suggestion')}
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {activeModule.revisionTip}
@@ -1370,7 +1390,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
             <div className="rounded-xl border border-border/60 bg-card p-6 mb-6">
               <div className="flex items-center gap-2 text-xs text-primary/70 mb-4">
                 <BookOpen className="h-4 w-4" />
-                Lesson Content
+                {t('demo.b15.student_course.lesson_content')}
               </div>
               <div className="prose dark:prose-invert prose-sm max-w-none">
                 {activeModule.lessonContent.split('\n\n').map((paragraph, i) => (
@@ -1396,10 +1416,10 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
               >
                 <FileQuestion className="h-4 w-4" />
                 {activeModule.revisionNeeded
-                  ? 'Retake Quiz'
+                  ? t('demo.b15.student_course.retake_quiz')
                   : quizPct !== null
-                    ? 'Retake Quiz'
-                    : 'Take Quiz'}
+                    ? t('demo.b15.student_course.retake_quiz')
+                    : t('demo.b15.student_course.take_quiz')}
               </button>
 
               {activeModuleIdx! < course.modules.length - 1 && (
@@ -1411,7 +1431,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                   }}
                   className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-border/60 hover:border-border hover:bg-secondary px-4 py-3 text-sm font-medium text-foreground transition-colors"
                 >
-                  Next Module
+                  {t('demo.b15.student_course.next_module')}
                   <ArrowRight className="h-4 w-4" />
                 </button>
               )}
@@ -1426,7 +1446,7 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
                   className="flex-1 flex items-center justify-center gap-2 rounded-lg border border-border/60 hover:border-border hover:bg-secondary px-4 py-3 text-sm font-medium text-foreground transition-colors"
                 >
                   <ArrowLeft className="h-4 w-4" />
-                  Previous Module
+                  {t('demo.b15.student_course.prev_module')}
                 </button>
               )}
             </div>

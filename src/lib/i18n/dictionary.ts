@@ -67,6 +67,9 @@ import { SCHOOL_3_DICTIONARY } from './dictionary-school-3'
 import { B1_KS3_DICTIONARY } from './dictionary-b1-ks3'
 import { B1_REVISION_DICTIONARY } from './dictionary-b1-revision'
 import { B1_RESOURCES_DICTIONARY } from './dictionary-b1-resources'
+import { B15_MARKING_SCHOOL_DICTIONARY } from './dictionary-b15-marking-school'
+import { B15_DASHBOARD_DICTIONARY } from './dictionary-b15-dashboard'
+import { B15_DEMO_DICTIONARY } from './dictionary-b15-demo'
 
 export type Locale = 'en' | 'ar'
 
@@ -14775,6 +14778,13 @@ export function lookup(key: string, locale: Locale): string {
     B1_KS3_DICTIONARY[key] ??
     B1_REVISION_DICTIONARY[key] ??
     B1_RESOURCES_DICTIONARY[key] ??
+    // Bucket B Phase B1.5 — curated EN + Khaleeji AR for app-surface
+    // product-UI pages: /marking + /school, /dashboard + /toolkit, and
+    // /demo. Curated tier: precedes all placeholder/audit supplements so
+    // genuine Arabic wins over any junk entry.
+    B15_MARKING_SCHOOL_DICTIONARY[key] ??
+    B15_DASHBOARD_DICTIONARY[key] ??
+    B15_DEMO_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??

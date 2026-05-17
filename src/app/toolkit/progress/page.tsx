@@ -3,6 +3,7 @@
 import { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
 import DOMPurify from 'dompurify'
+import { useT } from '@/lib/i18n/use-t'
 import {
   ArrowLeft,
   BarChart3,
@@ -122,6 +123,7 @@ function ProgressBar({
 }
 
 export default function ProgressPage() {
+  const tx = useT()
   const { board } = useBoard()
   const boardConfig = getBoardConfig(board)
   const [mounted, setMounted] = useState(false)
@@ -286,7 +288,7 @@ export default function ProgressPage() {
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to Toolkit
+            {tx('toolkit.progress.back')}
           </Link>
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10">
@@ -295,7 +297,7 @@ export default function ProgressPage() {
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="font-serif text-2xl sm:text-3xl font-medium tracking-tight">
-                  My Progress
+                  {tx('toolkit.progress.title')}
                 </h1>
                 {boardConfig && (
                   <Badge variant="outline" className="font-mono text-xs">
@@ -303,9 +305,7 @@ export default function ProgressPage() {
                   </Badge>
                 )}
               </div>
-              <p className="text-sm text-muted-foreground">
-                Track your learning journey and see where to focus next
-              </p>
+              <p className="text-sm text-muted-foreground">{tx('toolkit.progress.subtitle')}</p>
             </div>
           </div>
         </div>
@@ -314,39 +314,41 @@ export default function ProgressPage() {
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 space-y-8">
         {/* ── Overall Stats ──────────────────────────────────────── */}
         <section>
-          <h2 className="font-serif text-xl font-medium mb-4">Overall Stats</h2>
+          <h2 className="font-serif text-xl font-medium mb-4">
+            {tx('toolkit.progress.overall_stats')}
+          </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             <StatCard
               icon={BookOpen}
-              label="Poems Studied"
+              label={tx('toolkit.progress.label_poems')}
               value={studiedPoems.length}
               colour="text-blue-500"
               bgColour="bg-blue-500/10"
             />
             <StatCard
               icon={Trophy}
-              label="Quizzes Taken"
+              label={tx('toolkit.progress.label_quizzes')}
               value={quizHistory.length}
               colour="text-violet-500"
               bgColour="bg-violet-500/10"
             />
             <StatCard
               icon={Gamepad2}
-              label="Games Played"
+              label={tx('toolkit.progress.label_games')}
               value={gameScores.length}
               colour="text-emerald-500"
               bgColour="bg-emerald-500/10"
             />
             <StatCard
               icon={FileEdit}
-              label="Essays Marked"
+              label={tx('toolkit.progress.label_essays')}
               value={markingHistory.length}
               colour="text-amber-500"
               bgColour="bg-amber-500/10"
             />
             <StatCard
               icon={Flame}
-              label="Day Streak"
+              label={tx('toolkit.progress.label_streak')}
               value={streak}
               colour="text-orange-500"
               bgColour="bg-orange-500/10"
@@ -356,11 +358,13 @@ export default function ProgressPage() {
 
         {/* ── Grade Predictor ────────────────────────────────────── */}
         <section id="grade-predictor">
-          <h2 className="font-serif text-xl font-medium mb-4">Grade Predictor</h2>
+          <h2 className="font-serif text-xl font-medium mb-4">
+            {tx('toolkit.progress.grade_predictor')}
+          </h2>
           {allScores.length > 0 ? (
             <div className={`rounded-xl border p-8 text-center ${gradeBgColour(predictedGrade)}`}>
               <p className="font-mono text-sm text-muted-foreground uppercase tracking-wide mb-2">
-                Predicted GCSE Grade
+                {tx('toolkit.progress.predicted_gcse')}
               </p>
               <p
                 className={`font-serif text-6xl sm:text-7xl font-medium mb-2 ${gradeColour(predictedGrade)}`}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
 import {
   Users,
@@ -349,6 +350,7 @@ const OVERLOAD_THRESHOLD = AVG_STUDENTS_PER_TEACHER + 5
 // ── Page ───────────────────────────────────────────────────────────────────
 
 export default function DepartmentPage() {
+  const tx = useT()
   const [sortKey, setSortKey] = useState<SortKey>('avgScore')
   const [sortAsc, setSortAsc] = useState(false)
 
@@ -411,7 +413,7 @@ export default function DepartmentPage() {
             className="gap-2 border-border text-foreground hover:bg-accent hover:text-accent-foreground"
           >
             <Download className="h-4 w-4" />
-            Download Department Report
+            {tx('demo.b15.dept.download_btn')}
           </Button>
         </div>
 
@@ -422,7 +424,7 @@ export default function DepartmentPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Total English Teachers
+                    {tx('demo.b15.dept.kpi_total_teachers')}
                   </p>
                   <p className="mt-1 text-3xl font-bold">{DEPT_TEACHERS.length}</p>
                 </div>
@@ -438,7 +440,7 @@ export default function DepartmentPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Average Student Score
+                    {tx('demo.b15.dept.kpi_avg_score')}
                   </p>
                   <p className="mt-1 text-3xl font-bold">
                     {DEPT_AVG}%{' '}
@@ -459,7 +461,7 @@ export default function DepartmentPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Department Target
+                    {tx('demo.b15.dept.kpi_target')}
                   </p>
                   <p className="mt-1 text-3xl font-bold">{DEPT_TARGET}%</p>
                 </div>
@@ -475,7 +477,7 @@ export default function DepartmentPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Gap to Target
+                    {tx('demo.b15.dept.kpi_gap')}
                   </p>
                   <p className="mt-1 text-3xl font-bold text-amber-700 dark:text-amber-300">
                     {gap}%
@@ -494,7 +496,7 @@ export default function DepartmentPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
               <Users className="h-5 w-5 text-primary" />
-              Teacher Comparison
+              {tx('demo.b15.dept.teacher_comparison')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -504,12 +506,12 @@ export default function DepartmentPage() {
                   <tr className="border-b border-border/60 text-left text-xs uppercase tracking-wider text-muted-foreground">
                     {(
                       [
-                        ['name', 'Teacher'],
-                        ['classes', 'Classes'],
-                        ['students', 'Students'],
-                        ['avgScore', 'Avg Score'],
-                        ['completionRate', 'Completion'],
-                        ['atRisk', 'At-Risk'],
+                        ['name', tx('demo.b15.dept.col_teacher')],
+                        ['classes', tx('demo.b15.dept.col_classes')],
+                        ['students', tx('demo.b15.dept.col_students')],
+                        ['avgScore', tx('demo.b15.dept.col_avg_score')],
+                        ['completionRate', tx('demo.b15.dept.col_completion')],
+                        ['atRisk', tx('demo.b15.dept.col_at_risk')],
                       ] as [SortKey, string][]
                     ).map(([key, label]) => (
                       <th
@@ -587,7 +589,7 @@ export default function DepartmentPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
               <BookOpen className="h-5 w-5 text-primary" />
-              Class Performance Ranking
+              {tx('demo.b15.dept.class_ranking')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -634,7 +636,7 @@ export default function DepartmentPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
               <TrendingUp className="h-5 w-5 text-primary" />
-              Year Group Trends
+              {tx('demo.b15.dept.year_trends')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -673,7 +675,7 @@ export default function DepartmentPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
               <GraduationCap className="h-5 w-5 text-amber-700 dark:text-amber-300" />
-              Workload Distribution
+              {tx('demo.b15.dept.workload')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -741,7 +743,7 @@ export default function DepartmentPage() {
                               variant="outline"
                               className="shrink-0 border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300 text-xs"
                             >
-                              High Load
+                              {tx('demo.b15.dept.high_load')}
                             </Badge>
                           )}
                         </li>
@@ -759,7 +761,7 @@ export default function DepartmentPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
               <Lightbulb className="h-5 w-5 text-amber-700 dark:text-amber-300" />
-              CPD Recommendations
+              {tx('demo.b15.dept.cpd')}
             </CardTitle>
           </CardHeader>
           <CardContent>

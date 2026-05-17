@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 import {
   BarChart3,
   TrendingUp,
@@ -116,6 +117,7 @@ const recommendations = [
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function BenchmarksPage() {
+  const tx = useT()
   const [downloading, setDownloading] = useState(false)
 
   function handleDownload() {
@@ -160,11 +162,9 @@ export default function BenchmarksPage() {
         <div>
           <h1 className="text-3xl font-bold text-foreground flex items-center gap-3">
             <BarChart3 className="h-8 w-8 text-primary" />
-            Performance Benchmarks
+            {tx('demo.b15.bench.title')}
           </h1>
-          <p className="text-muted-foreground mt-1">
-            How Riverside Academy compares to national and platform averages
-          </p>
+          <p className="text-muted-foreground mt-1">{tx('demo.b15.bench.subtitle')}</p>
         </div>
         <Button
           onClick={handleDownload}
@@ -172,7 +172,7 @@ export default function BenchmarksPage() {
           className="bg-primary hover:bg-primary/90 text-primary-foreground"
         >
           <Download className="h-4 w-4 mr-2" />
-          {downloading ? 'Downloading...' : 'Download Benchmark Report'}
+          {downloading ? tx('demo.b15.bench.downloading') : tx('demo.b15.bench.download_btn')}
         </Button>
       </div>
 
@@ -220,9 +220,9 @@ export default function BenchmarksPage() {
       {/* ── Year Group Benchmarks table ─────────────────────────────────────── */}
       <Card className="bg-card border-border">
         <CardHeader>
-          <CardTitle className="text-foreground">Year Group Benchmarks</CardTitle>
+          <CardTitle className="text-foreground">{tx('demo.b15.bench.year_group_title')}</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Performance by year group compared to national averages
+            {tx('demo.b15.bench.year_group_desc')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -230,11 +230,21 @@ export default function BenchmarksPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border text-muted-foreground">
-                  <th className="text-left py-3 px-4 font-medium">Year Group</th>
-                  <th className="text-right py-3 px-4 font-medium">School Avg</th>
-                  <th className="text-right py-3 px-4 font-medium">National Avg</th>
-                  <th className="text-right py-3 px-4 font-medium">Difference</th>
-                  <th className="text-right py-3 px-4 font-medium">Percentile</th>
+                  <th className="text-left py-3 px-4 font-medium">
+                    {tx('demo.b15.bench.col_year')}
+                  </th>
+                  <th className="text-right py-3 px-4 font-medium">
+                    {tx('demo.b15.bench.col_school_avg')}
+                  </th>
+                  <th className="text-right py-3 px-4 font-medium">
+                    {tx('demo.b15.bench.col_national_avg')}
+                  </th>
+                  <th className="text-right py-3 px-4 font-medium">
+                    {tx('demo.b15.bench.col_diff')}
+                  </th>
+                  <th className="text-right py-3 px-4 font-medium">
+                    {tx('demo.b15.bench.col_percentile')}
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -287,10 +297,10 @@ export default function BenchmarksPage() {
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" />
-            Subject Area Comparison
+            {tx('demo.b15.bench.subject_title')}
           </CardTitle>
           <CardDescription className="text-muted-foreground">
-            School performance vs platform-wide averages by subject
+            {tx('demo.b15.bench.subject_desc')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -341,10 +351,10 @@ export default function BenchmarksPage() {
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-green-700 dark:text-green-300" />
-            Trend Over Time
+            {tx('demo.b15.bench.trend_title')}
           </CardTitle>
           <CardDescription className="text-muted-foreground">
-            Four-term comparison showing improvement trajectory
+            {tx('demo.b15.bench.trend_desc')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -394,10 +404,10 @@ export default function BenchmarksPage() {
         <CardHeader>
           <CardTitle className="text-foreground flex items-center gap-2">
             <Lightbulb className="h-5 w-5 text-amber-700 dark:text-amber-300" />
-            Recommendations
+            {tx('demo.b15.bench.recs_title')}
           </CardTitle>
           <CardDescription className="text-muted-foreground">
-            Actionable insights based on benchmark analysis
+            {tx('demo.b15.bench.recs_desc')}
           </CardDescription>
         </CardHeader>
         <CardContent>

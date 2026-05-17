@@ -8,6 +8,7 @@ import { GradePredictionCard } from '@/components/marking/GradePredictionCard'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { AOBreakdown, type AOScore } from '@/components/marking/AOBreakdown'
 import { AnnotatedEssay, type Annotation } from '@/components/marking/AnnotatedEssay'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Types ────────────────────────────────────────────────── */
 
@@ -108,6 +109,7 @@ function findParagraphForQuote(paragraphs: string[], quote: string): number {
 /* ─── Page ─────────────────────────────────────────────────── */
 
 export default function ResultsPage({ params }: { params: Promise<{ id: string }> }) {
+  const tx = useT()
   const { id } = use(params)
   const [result, setResult] = useState<StoredResult | null>(null)
   const [loaded, setLoaded] = useState(false)
@@ -134,7 +136,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
   if (!loaded || !result) {
     return (
       <div className="mx-auto max-w-4xl px-4 py-16 text-center text-sm text-muted-foreground">
-        Loading results…
+        {tx('marking.results.loading')}
       </div>
     )
   }
@@ -180,11 +182,11 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/marking" className="hover:text-primary">
-              Marking
+              {tx('marking.nav.marking')}
             </Link>
           </li>
           <li aria-hidden>/</li>
-          <li className="font-medium text-foreground">Results</li>
+          <li className="font-medium text-foreground">{tx('marking.results.breadcrumb')}</li>
         </ol>
       </nav>
 
@@ -215,8 +217,8 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
       <div className="mt-6 grid gap-6 md:grid-cols-3">
         <Card>
           <CardHeader>
-            <CardTitle>Strengths</CardTitle>
-            <CardDescription>What you did well</CardDescription>
+            <CardTitle>{tx('marking.results.card_strengths')}</CardTitle>
+            <CardDescription>{tx('marking.results.card_strengths_desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 text-sm text-foreground">
@@ -235,8 +237,8 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
 
         <Card>
           <CardHeader>
-            <CardTitle>Areas to improve</CardTitle>
-            <CardDescription>Focus for your next draft</CardDescription>
+            <CardTitle>{tx('marking.results.card_improve')}</CardTitle>
+            <CardDescription>{tx('marking.results.card_improve_desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 text-sm text-foreground">
@@ -255,8 +257,10 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
 
         <Card className="border-primary/30 bg-primary/5">
           <CardHeader>
-            <CardTitle>To reach grade {Math.min(9, result.grade + 1)}</CardTitle>
-            <CardDescription>Next-grade targets</CardDescription>
+            <CardTitle>
+              {tx('marking.results.card_next_grade_prefix')} {Math.min(9, result.grade + 1)}
+            </CardTitle>
+            <CardDescription>{tx('marking.results.card_next_grade_desc')}</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 text-sm text-foreground">
@@ -278,7 +282,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
       {result.summary && (
         <Card className="mt-6">
           <CardHeader>
-            <CardTitle>Marker summary</CardTitle>
+            <CardTitle>{tx('marking.results.card_summary')}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-sm leading-relaxed text-foreground">{result.summary}</p>
@@ -294,9 +298,11 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
       {/* ── Footer actions ────────────────────────────────── */}
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-between">
         <Button variant="outline" render={<Link href="/marking/history" />}>
-          Back to history
+          {tx('marking.results.btn_back')}
         </Button>
-        <Button render={<Link href="/marking/submit" />}>Mark another essay</Button>
+        <Button render={<Link href="/marking/submit" />}>
+          {tx('marking.results.btn_another')}
+        </Button>
       </div>
     </div>
   )

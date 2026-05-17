@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ────────────────────────────────────────────── */
 
@@ -343,7 +344,51 @@ const GRADE_COLOUR: Record<number, string> = {
 
 /* ─── Page ────────────────────────────────────────────────── */
 
-export default function JekyllHydeEssayBankPage() {
+export default async function JekyllHydeEssayBankPage() {
+  const [
+    navMarking,
+    navSample,
+    navBreadcrumb,
+    pageTitle,
+    subtitle,
+    jumpNavLabel,
+    markerCommentary,
+    aoBreakdown,
+    gradeJustificationLabel,
+    whatWouldImprove,
+    annotationStrength,
+    annotationImprove,
+    annotationTechnique,
+    btnBack,
+    btnMark,
+    gradeLabel,
+    wordsSuffix,
+  ] = await tMany([
+    'marking.nav.marking',
+    'marking.nav.sample_essays',
+    'marking.sample.jekyll_hyde.breadcrumb',
+    'marking.sample.jekyll_hyde.title',
+    'marking.sample.jekyll_hyde.subtitle',
+    'marking.sample.jekyll_hyde.jump_nav_label',
+    'marking.sample.jekyll_hyde.marker_commentary',
+    'marking.sample.jekyll_hyde.ao_breakdown',
+    'marking.sample.jekyll_hyde.grade_justification',
+    'marking.sample.jekyll_hyde.what_would_improve',
+    'marking.sample.jekyll_hyde.annotation_strength',
+    'marking.sample.jekyll_hyde.annotation_improve',
+    'marking.sample.jekyll_hyde.annotation_technique',
+    'marking.sample.jekyll_hyde.btn_back',
+    'marking.sample.jekyll_hyde.btn_mark',
+    'marking.sample.jekyll_hyde.grade_label',
+    'marking.sample.jekyll_hyde.words_suffix',
+  ])
+
+  const ANNOTATION_LABELS_I18N: Record<Annotation['kind'], string> = {
+    strength: annotationStrength,
+    improve: annotationImprove,
+    technique: annotationTechnique,
+  }
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
       {/* ── Breadcrumb ──────────────────────────────────── */}
@@ -351,30 +396,26 @@ export default function JekyllHydeEssayBankPage() {
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/marking" className="hover:text-primary">
-              Marking
+              {navMarking}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li>
             <Link href="/marking/sample" className="hover:text-primary">
-              Sample essays
+              {navSample}
             </Link>
           </li>
           <li aria-hidden>/</li>
-          <li className="font-medium text-foreground">Jekyll &amp; Hyde</li>
+          <li className="font-medium text-foreground">{navBreadcrumb}</li>
         </ol>
       </nav>
 
       {/* ── Header ──────────────────────────────────────── */}
       <header className="mb-8">
         <h1 className="font-heading text-3xl font-extrabold tracking-tight text-foreground">
-          Jekyll &amp; Hyde — Model Essay Bank
+          {pageTitle}
         </h1>
-        <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-          Three original model essays answering &ldquo;How does Stevenson present the theme of
-          duality?&rdquo; at Grade 5, 7 and 9. Each essay includes paragraph annotations, AO
-          breakdown, grade justification, and targeted improvements.
-        </p>
+        <p className="mt-2 max-w-3xl text-sm text-muted-foreground">{subtitle}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {SUPPORTED_BOARDS.map((b) => (
             <Badge key={b} variant="outline">
@@ -385,7 +426,7 @@ export default function JekyllHydeEssayBankPage() {
       </header>
 
       {/* ── Jump links ──────────────────────────────────── */}
-      <nav aria-label="Jump to grade" className="mb-10 flex flex-wrap gap-2">
+      <nav aria-label={jumpNavLabel} className="mb-10 flex flex-wrap gap-2">
         {ESSAYS.map((e) => (
           <a
             key={e.grade}
@@ -393,7 +434,9 @@ export default function JekyllHydeEssayBankPage() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/30 px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
           >
             <span className="font-heading text-base font-extrabold">{e.grade}</span>
-            <span>Grade {e.grade}</span>
+            <span>
+              {gradeLabel} {e.grade}
+            </span>
           </a>
         ))}
       </nav>
@@ -412,7 +455,7 @@ export default function JekyllHydeEssayBankPage() {
               <div>
                 <h2 className="font-heading text-2xl font-bold text-foreground">{essay.title}</h2>
                 <p className="text-sm text-muted-foreground">
-                  {essay.wordCount} words &middot; {essay.boards.join(', ')}
+                  {essay.wordCount} {wordsSuffix} &middot; {essay.boards.join(', ')}
                 </p>
               </div>
             </div>
@@ -429,7 +472,7 @@ export default function JekyllHydeEssayBankPage() {
             {/* Marker commentary */}
             <Card className="mb-6">
               <CardHeader>
-                <CardTitle className="text-base">Marker commentary</CardTitle>
+                <CardTitle className="text-base">{markerCommentary}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-foreground">{essay.commentary}</p>
@@ -439,7 +482,7 @@ export default function JekyllHydeEssayBankPage() {
             {/* AO breakdown */}
             <Card className="mb-6">
               <CardHeader>
-                <CardTitle className="text-base">AO Breakdown</CardTitle>
+                <CardTitle className="text-base">{aoBreakdown}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -488,7 +531,7 @@ export default function JekyllHydeEssayBankPage() {
                         className={`rounded-md border-l-4 p-3 ${ANNOTATION_COLOURS[ann.kind]}`}
                       >
                         <p className="mb-1 text-xs font-bold uppercase tracking-wider">
-                          {ANNOTATION_LABELS[ann.kind]}
+                          {ANNOTATION_LABELS_I18N[ann.kind]}
                         </p>
                         <p className="mb-1 text-sm italic text-muted-foreground">
                           &ldquo;{ann.quote}&rdquo;
@@ -504,7 +547,7 @@ export default function JekyllHydeEssayBankPage() {
             {/* Grade justification */}
             <Card className="mb-6 border-primary/30 bg-primary/5">
               <CardHeader>
-                <CardTitle className="text-base">Grade justification</CardTitle>
+                <CardTitle className="text-base">{gradeJustificationLabel}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-foreground">
@@ -516,7 +559,7 @@ export default function JekyllHydeEssayBankPage() {
             {/* What would improve this */}
             <Card className="mb-6">
               <CardHeader>
-                <CardTitle className="text-base">What would improve this essay?</CardTitle>
+                <CardTitle className="text-base">{whatWouldImprove}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="list-inside list-disc space-y-2 text-sm text-foreground">
@@ -535,9 +578,9 @@ export default function JekyllHydeEssayBankPage() {
       {/* ── Footer CTA ──────────────────────────────────── */}
       <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:justify-between">
         <Button variant="outline" render={<Link href="/marking/sample" />}>
-          Back to sample essays
+          {btnBack}
         </Button>
-        <Button render={<Link href="/marking/submit" />}>Mark your own essay</Button>
+        <Button render={<Link href="/marking/submit" />}>{btnMark}</Button>
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 import { useParams } from 'next/navigation'
+import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
 import { DEMO_TEACHERS, DEMO_CLASSES, DEMO_STUDENTS } from '@/data/demo-data'
 import DemoBanner from '@/components/demo/DemoBanner'
@@ -37,6 +38,7 @@ function getProgressBarColor(value: number): string {
 
 export default function TeacherDetailPage() {
   const params = useParams()
+  const tx = useT()
   const teacherId = params.id as string
 
   const teacher = DEMO_TEACHERS.find((t) => t.id === teacherId)
@@ -44,15 +46,17 @@ export default function TeacherDetailPage() {
     return (
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-light text-foreground mb-2">Teacher not found</h1>
+          <h1 className="text-2xl font-light text-foreground mb-2">
+            {tx('demo.b15.school_teachers.not_found')}
+          </h1>
           <p className="text-muted-foreground text-sm mb-6">
-            No teacher exists with ID &quot;{teacherId}&quot;.
+            {tx('demo.b15.school_teachers.no_id')} &quot;{teacherId}&quot;.
           </p>
           <Link
             href="/demo/school/teachers"
             className="text-sm text-primary hover:text-primary/80 transition-colors"
           >
-            &larr; Back to teachers
+            &larr; {tx('demo.b15.school_teachers.back')}
           </Link>
         </div>
       </div>
@@ -105,7 +109,7 @@ export default function TeacherDetailPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <DemoBanner message="You are viewing an interactive demo with sample data. No real teacher data is used." />
+      <DemoBanner message={tx('demo.b15.school_teachers.demo_banner')} />
 
       <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Back link */}
@@ -113,7 +117,7 @@ export default function TeacherDetailPage() {
           href="/demo/school/teachers"
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-muted-foreground transition-colors mb-6"
         >
-          &larr; All teachers
+          &larr; {tx('demo.b15.school_teachers.all_teachers')}
         </Link>
 
         {/* Teacher profile header */}
@@ -142,7 +146,10 @@ export default function TeacherDetailPage() {
             </div>
             <p className="text-sm text-muted-foreground mb-1">{teacher.email}</p>
             <p className="text-sm text-muted-foreground">
-              {teacher.department} &middot; {classes.length} class{classes.length !== 1 ? 'es' : ''}
+              {teacher.department} &middot; {classes.length}{' '}
+              {classes.length !== 1
+                ? tx('demo.b15.school_teachers.classes_count_pl')
+                : tx('demo.b15.school_teachers.classes_count')}
             </p>
           </div>
         </div>
@@ -151,7 +158,7 @@ export default function TeacherDetailPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           <div className="rounded-xl border border-border bg-card p-5">
             <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-              Avg Student Score
+              {tx('demo.b15.school_teachers.kpi_avg_score')}
             </p>
             <p className={`text-3xl font-light tabular-nums ${getProgressColor(avgStudentScore)}`}>
               {avgStudentScore}%
@@ -160,23 +167,27 @@ export default function TeacherDetailPage() {
               </span>
             </p>
             <p className="text-[11px] text-muted-foreground mt-1">
-              Across {allStudents.length} tracked student{allStudents.length !== 1 ? 's' : ''}
+              {tx('demo.b15.school_teachers.tracked')} {allStudents.length}{' '}
+              {allStudents.length !== 1
+                ? tx('demo.b15.school_teachers.tracked_students')
+                : tx('demo.b15.school_teachers.tracked_student')}
             </p>
           </div>
           <div className="rounded-xl border border-border bg-card p-5">
             <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-              Assignment Completion
+              {tx('demo.b15.school_teachers.kpi_completion')}
             </p>
             <p className={`text-3xl font-light tabular-nums ${getProgressColor(completionRate)}`}>
               {completionRate}%
             </p>
             <p className="text-[11px] text-muted-foreground mt-1">
-              {totalAssignmentsCompleted}/{totalAssignmentsSet} completed
+              {totalAssignmentsCompleted}/{totalAssignmentsSet}{' '}
+              {tx('demo.b15.school_teachers.completed')}
             </p>
           </div>
           <div className="rounded-xl border border-border bg-card p-5">
             <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-              At-Risk Students
+              {tx('demo.b15.school_teachers.kpi_at_risk')}
             </p>
             <p
               className={`text-3xl font-light tabular-nums ${
@@ -186,14 +197,18 @@ export default function TeacherDetailPage() {
               {atRiskCount}
             </p>
             <p className="text-[11px] text-muted-foreground mt-1">
-              {atRiskCount > 0 ? 'Requires attention' : 'No concerns'}
+              {atRiskCount > 0
+                ? tx('demo.b15.school_teachers.requires_attention')
+                : tx('demo.b15.school_teachers.no_concerns')}
             </p>
           </div>
         </div>
 
         {/* Classes grid */}
         <div className="mb-10">
-          <h2 className="text-lg font-light text-foreground mb-4">Classes ({classes.length})</h2>
+          <h2 className="text-lg font-light text-foreground mb-4">
+            {tx('demo.b15.school_teachers.classes_heading')} ({classes.length})
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {classes.map((cls) => {
               const students = getClassStudents(cls.id)
@@ -222,7 +237,9 @@ export default function TeacherDetailPage() {
                   {/* Progress bar */}
                   <div className="mb-2">
                     <div className="flex items-center justify-between text-[11px] mb-1">
-                      <span className="text-muted-foreground">Avg progress</span>
+                      <span className="text-muted-foreground">
+                        {tx('demo.b15.school_teachers.avg_progress')}
+                      </span>
                       <span className={`tabular-nums ${getProgressColor(cls.avgProgress)}`}>
                         {cls.avgProgress}%
                       </span>
@@ -237,10 +254,13 @@ export default function TeacherDetailPage() {
 
                   <div className="flex items-center justify-between text-[11px]">
                     <span className="text-muted-foreground">
-                      {cls.assignmentsCompleted}/{cls.assignmentsSet} assignments
+                      {cls.assignmentsCompleted}/{cls.assignmentsSet}{' '}
+                      {tx('demo.b15.school_teachers.assignments')}
                     </span>
                     {classAtRisk > 0 && (
-                      <span className="text-red-700 dark:text-red-300">{classAtRisk} at risk</span>
+                      <span className="text-red-700 dark:text-red-300">
+                        {classAtRisk} {tx('demo.b15.school_teachers.at_risk')}
+                      </span>
                     )}
                   </div>
                 </Link>
@@ -251,7 +271,9 @@ export default function TeacherDetailPage() {
 
         {/* Student list per class */}
         <div className="mb-10">
-          <h2 className="text-lg font-light text-foreground mb-4">Students by Class</h2>
+          <h2 className="text-lg font-light text-foreground mb-4">
+            {tx('demo.b15.school_teachers.students_by_class')}
+          </h2>
           <div className="space-y-6">
             {classes.map((cls) => {
               const students = getClassStudents(cls.id)
@@ -266,14 +288,18 @@ export default function TeacherDetailPage() {
                     <div>
                       <p className="text-sm font-medium text-foreground">{cls.name}</p>
                       <p className="text-[11px] text-muted-foreground">
-                        {students.length} student{students.length !== 1 ? 's' : ''} tracked
+                        {students.length}{' '}
+                        {students.length !== 1
+                          ? tx('demo.b15.school_teachers.tracked_students')
+                          : tx('demo.b15.school_teachers.tracked_student')}{' '}
+                        {tx('demo.b15.school_teachers.tracked_suffix')}
                       </p>
                     </div>
                     <Link
                       href={`/demo/school/classes/${cls.id}`}
                       className="text-[11px] text-primary/70 hover:text-primary transition-colors"
                     >
-                      View class &rarr;
+                      {tx('demo.b15.school_teachers.view_class')} &rarr;
                     </Link>
                   </div>
 
@@ -311,7 +337,7 @@ export default function TeacherDetailPage() {
                         </div>
                         {student.atRisk && (
                           <span className="inline-flex items-center rounded-full px-2 py-0.5 text-[9px] font-medium bg-red-500/15 text-red-700 dark:text-red-300 border border-red-500/20 uppercase tracking-wider">
-                            At risk
+                            {tx('demo.b15.school_teachers.at_risk')}
                           </span>
                         )}
                       </div>
@@ -325,11 +351,15 @@ export default function TeacherDetailPage() {
             {classes.filter((c) => getClassStudents(c.id).length === 0).length > 0 && (
               <div className="rounded-xl border border-border bg-card p-5">
                 <p className="text-sm text-muted-foreground">
-                  {classes.filter((c) => getClassStudents(c.id).length === 0).length} class
+                  {classes.filter((c) => getClassStudents(c.id).length === 0).length}{' '}
+                  {tx('demo.b15.school_teachers.no_tracked_prefix')}
                   {classes.filter((c) => getClassStudents(c.id).length === 0).length !== 1
-                    ? 'es have'
-                    : ' has'}{' '}
-                  no individually tracked students in the demo dataset.
+                    ? 'es'
+                    : ''}{' '}
+                  {classes.filter((c) => getClassStudents(c.id).length === 0).length !== 1
+                    ? tx('demo.b15.school_teachers.no_tracked_have')
+                    : tx('demo.b15.school_teachers.no_tracked_has')}{' '}
+                  {tx('demo.b15.school_teachers.no_tracked')}
                 </p>
               </div>
             )}
@@ -344,7 +374,7 @@ export default function TeacherDetailPage() {
                 {reportClass.name} &mdash; {teacher.name}&apos;s Report
               </h2>
               <p className="text-[11px] text-muted-foreground mt-0.5">
-                Personalised class performance summary
+                {tx('demo.b15.school_teachers.report_subtitle')}
               </p>
             </div>
 
@@ -352,11 +382,13 @@ export default function TeacherDetailPage() {
               {/* Class performance summary */}
               <div>
                 <h3 className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                  Performance Summary
+                  {tx('demo.b15.school_teachers.perf_summary')}
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   <div>
-                    <p className="text-[11px] text-muted-foreground mb-0.5">Class Average</p>
+                    <p className="text-[11px] text-muted-foreground mb-0.5">
+                      {tx('demo.b15.school_teachers.class_avg')}
+                    </p>
                     <p
                       className={`text-xl font-light tabular-nums ${getProgressColor(reportClassAvg)}`}
                     >
@@ -367,7 +399,9 @@ export default function TeacherDetailPage() {
                     </p>
                   </div>
                   <div>
-                    <p className="text-[11px] text-muted-foreground mb-0.5">Students</p>
+                    <p className="text-[11px] text-muted-foreground mb-0.5">
+                      {tx('demo.b15.school_teachers.students')}
+                    </p>
                     <p className="text-xl font-light text-muted-foreground tabular-nums">
                       {reportClassStudents.length > 0
                         ? reportClassStudents.length
@@ -375,7 +409,9 @@ export default function TeacherDetailPage() {
                     </p>
                   </div>
                   <div>
-                    <p className="text-[11px] text-muted-foreground mb-0.5">At-Risk</p>
+                    <p className="text-[11px] text-muted-foreground mb-0.5">
+                      {tx('demo.b15.school_teachers.kpi_at_risk')}
+                    </p>
                     <p
                       className={`text-xl font-light tabular-nums ${
                         reportAtRisk > 0 ? 'text-red-700 dark:text-red-300' : 'text-primary'
@@ -385,7 +421,9 @@ export default function TeacherDetailPage() {
                     </p>
                   </div>
                   <div>
-                    <p className="text-[11px] text-muted-foreground mb-0.5">Completion</p>
+                    <p className="text-[11px] text-muted-foreground mb-0.5">
+                      {tx('demo.b15.school_teachers.completion')}
+                    </p>
                     <p className="text-xl font-light text-muted-foreground tabular-nums">
                       {reportClass.assignmentsCompleted}/{reportClass.assignmentsSet}
                     </p>
@@ -396,14 +434,13 @@ export default function TeacherDetailPage() {
               {/* Trends */}
               <div>
                 <h3 className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                  Trends
+                  {tx('demo.b15.school_teachers.trends')}
                 </h3>
                 <div className="space-y-2">
                   <div className="flex items-start gap-2">
                     <span className="text-primary mt-0.5 shrink-0">&uarr;</span>
                     <p className="text-sm text-muted-foreground">
-                      Class average has improved by 4% over the last half-term, driven by stronger
-                      performance on language analysis tasks.
+                      {tx('demo.b15.school_teachers.trend1')}
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
@@ -411,17 +448,17 @@ export default function TeacherDetailPage() {
                       &rarr;
                     </span>
                     <p className="text-sm text-muted-foreground">
-                      Assignment completion is steady but below the year group target of 85%. Three
-                      students have outstanding submissions.
+                      {tx('demo.b15.school_teachers.trend2')}
                     </p>
                   </div>
                   {reportAtRisk > 0 && (
                     <div className="flex items-start gap-2">
                       <span className="text-red-700 dark:text-red-300 mt-0.5 shrink-0">&darr;</span>
                       <p className="text-sm text-muted-foreground">
-                        {reportAtRisk} student{reportAtRisk !== 1 ? 's' : ''} flagged as at-risk.
-                        Engagement has declined over the past 2 weeks &mdash; consider individual
-                        check-ins or differentiated tasks.
+                        {reportAtRisk}{' '}
+                        {reportAtRisk !== 1
+                          ? tx('demo.b15.school_teachers.trend3_pre_pl')
+                          : tx('demo.b15.school_teachers.trend3_pre')}
                       </p>
                     </div>
                   )}
@@ -431,23 +468,20 @@ export default function TeacherDetailPage() {
               {/* Recommendations */}
               <div>
                 <h3 className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                  Recommendations
+                  {tx('demo.b15.school_teachers.recommendations')}
                 </h3>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="text-primary mt-0.5 shrink-0">1.</span>
-                    Schedule catch-up sessions with at-risk students before the next assessment
-                    window. Focus on foundational skills they are missing.
+                    {tx('demo.b15.school_teachers.rec1')}
                   </li>
                   <li className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="text-primary mt-0.5 shrink-0">2.</span>
-                    Set shorter, more frequent assignments to improve completion rate. Consider
-                    scaffolded tasks for lower-attaining pupils.
+                    {tx('demo.b15.school_teachers.rec2')}
                   </li>
                   <li className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="text-primary mt-0.5 shrink-0">3.</span>
-                    Share high-performing student responses as model answers to raise expectations
-                    across the group.
+                    {tx('demo.b15.school_teachers.rec3')}
                   </li>
                 </ul>
               </div>
@@ -456,7 +490,8 @@ export default function TeacherDetailPage() {
               {sameYearClasses.length > 0 && (
                 <div>
                   <h3 className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                    Comparison with Other Year {reportClass.yearGroup} Classes
+                    {tx('demo.b15.school_teachers.comparison_heading')} {reportClass.yearGroup}{' '}
+                    {tx('demo.b15.school_teachers.classes_label')}
                   </h3>
                   <div className="rounded-lg border border-border bg-muted/40 overflow-hidden">
                     {/* This class */}
@@ -464,7 +499,9 @@ export default function TeacherDetailPage() {
                       <div className="flex items-center gap-2">
                         <div className="h-2.5 w-2.5 rounded-full bg-cyan-400" />
                         <p className="text-sm text-foreground">{reportClass.name}</p>
-                        <span className="text-[10px] text-muted-foreground">(this class)</span>
+                        <span className="text-[10px] text-muted-foreground">
+                          {tx('demo.b15.school_teachers.this_class')}
+                        </span>
                       </div>
                       <p
                         className={`text-sm tabular-nums ${getProgressColor(reportClass.avgProgress)}`}
@@ -493,7 +530,7 @@ export default function TeacherDetailPage() {
                     {/* Year group average */}
                     <div className="flex items-center justify-between px-4 py-3 bg-card border-t border-border">
                       <p className="text-[11px] text-muted-foreground uppercase tracking-wider">
-                        Year {reportClass.yearGroup} Average (excl. this class)
+                        Year {reportClass.yearGroup} {tx('demo.b15.school_teachers.year_avg')}
                       </p>
                       <p
                         className={`text-sm font-medium tabular-nums ${getProgressColor(sameYearAvg)}`}
@@ -505,13 +542,18 @@ export default function TeacherDetailPage() {
 
                   {reportClass.avgProgress >= sameYearAvg ? (
                     <p className="text-[11px] text-primary/70 mt-2">
-                      This class is performing {reportClass.avgProgress - sameYearAvg}% above the
-                      Year {reportClass.yearGroup} average.
+                      {tx('demo.b15.school_teachers.performing')}{' '}
+                      {reportClass.avgProgress - sameYearAvg}%{' '}
+                      {tx('demo.b15.school_teachers.above_avg')} Year {reportClass.yearGroup}{' '}
+                      {tx('demo.b15.school_teachers.year_avg_label')}
                     </p>
                   ) : (
                     <p className="text-[11px] text-amber-700 dark:text-amber-300 mt-2">
-                      This class is performing {sameYearAvg - reportClass.avgProgress}% below the
-                      Year {reportClass.yearGroup} average. Targeted interventions recommended.
+                      {tx('demo.b15.school_teachers.performing')}{' '}
+                      {sameYearAvg - reportClass.avgProgress}%{' '}
+                      {tx('demo.b15.school_teachers.below_avg')} Year {reportClass.yearGroup}{' '}
+                      {tx('demo.b15.school_teachers.year_avg_label')}{' '}
+                      {tx('demo.b15.school_teachers.interventions_rec')}
                     </p>
                   )}
                 </div>
@@ -522,8 +564,11 @@ export default function TeacherDetailPage() {
 
         {/* Footer */}
         <p className="text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-          Demo data &middot; {teacher.name} &middot; {classes.length} class
-          {classes.length !== 1 ? 'es' : ''}
+          {tx('demo.b15.school_teachers.footer_label')} &middot; {teacher.name} &middot;{' '}
+          {classes.length}{' '}
+          {classes.length !== 1
+            ? tx('demo.b15.school_teachers.footer_classes')
+            : tx('demo.b15.school_teachers.footer_class')}
         </p>
       </div>
     </div>

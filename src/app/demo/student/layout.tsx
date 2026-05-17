@@ -2,17 +2,19 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useT } from '@/lib/i18n/use-t'
 import { LayoutDashboard, BookOpen, Target, BarChart3, Sparkles } from 'lucide-react'
 
-const navItems = [
-  { href: '/demo/student', label: 'My Dashboard', icon: LayoutDashboard },
-  { href: '/demo/student/courses', label: 'My Courses', icon: BookOpen },
-  { href: '/demo/student/flashcards', label: 'Flashcards', icon: Target },
-  { href: '/demo/student/practice', label: 'Practice', icon: Sparkles },
-  { href: '/demo/student/progress', label: 'Progress', icon: BarChart3 },
+const NAV_ITEMS_DEF = [
+  { href: '/demo/student', key: 'demo.b15.student_layout.nav_dashboard', icon: LayoutDashboard },
+  { href: '/demo/student/courses', key: 'demo.b15.student_layout.nav_courses', icon: BookOpen },
+  { href: '/demo/student/flashcards', key: 'demo.b15.student_layout.nav_flashcards', icon: Target },
+  { href: '/demo/student/practice', key: 'demo.b15.student_layout.nav_practice', icon: Sparkles },
+  { href: '/demo/student/progress', key: 'demo.b15.student_layout.nav_progress', icon: BarChart3 },
 ]
 
 export default function StudentDemoLayout({ children }: { children: React.ReactNode }) {
+  const t = useT()
   const pathname = usePathname()
 
   return (
@@ -25,21 +27,25 @@ export default function StudentDemoLayout({ children }: { children: React.ReactN
             <span className="text-[10px] font-bold text-primary-foreground">EH</span>
           </div>
           <div>
-            <p className="text-sm font-medium text-foreground">The English Hub</p>
-            <p className="text-[10px] text-muted-foreground">Student Portal</p>
+            <p className="text-sm font-medium text-foreground">
+              {t('demo.b15.student_layout.app_name')}
+            </p>
+            <p className="text-[10px] text-muted-foreground">
+              {t('demo.b15.student_layout.portal')}
+            </p>
           </div>
         </div>
 
         {/* Nav */}
         <nav className="flex-1 px-3 py-4 space-y-1">
-          {navItems.map((item) => {
+          {NAV_ITEMS_DEF.map((item) => {
             const isActive =
               item.href === '/demo/student'
                 ? pathname === '/demo/student'
                 : pathname.startsWith(item.href)
             return (
               <Link
-                key={item.label}
+                key={item.href}
                 href={item.href}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
                   isActive
@@ -48,7 +54,7 @@ export default function StudentDemoLayout({ children }: { children: React.ReactN
                 }`}
               >
                 <item.icon className="h-4 w-4" />
-                {item.label}
+                {t(item.key)}
               </Link>
             )
           })}
@@ -61,7 +67,7 @@ export default function StudentDemoLayout({ children }: { children: React.ReactN
             className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg bg-gradient-to-r from-violet-500 to-clay-400 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
           >
             <Sparkles className="h-4 w-4" />
-            Start Free Trial
+            {t('demo.b15.student_layout.start_trial')}
           </Link>
         </div>
       </aside>
@@ -72,13 +78,15 @@ export default function StudentDemoLayout({ children }: { children: React.ReactN
           <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-clay-400 flex items-center justify-center">
             <span className="text-[9px] font-bold text-primary-foreground">EH</span>
           </div>
-          <span className="text-sm text-foreground">Student Demo</span>
+          <span className="text-sm text-foreground">
+            {t('demo.b15.student_layout.student_demo')}
+          </span>
         </div>
         <Link
           href="/auth/register"
           className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-violet-500 to-clay-400 text-xs font-medium text-primary-foreground"
         >
-          Start Free Trial
+          {t('demo.b15.student_layout.start_trial')}
         </Link>
       </div>
 

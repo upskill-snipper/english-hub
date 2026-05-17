@@ -1,6 +1,7 @@
-'use client'
+﻿'use client'
 
 import { useParams } from 'next/navigation'
+import { useT } from '@/lib/i18n/use-t'
 import { useState } from 'react'
 import Link from 'next/link'
 import {
@@ -82,6 +83,7 @@ function showToast(msg: string) {
 }
 
 export default function TeacherStudentProfilePage() {
+  const t = useT()
   const params = useParams()
   const studentId = params.id as string
   const [comment, setComment] = useState('')
@@ -93,13 +95,17 @@ export default function TeacherStudentProfilePage() {
     return (
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-light text-foreground mb-2">Student Not Found</h1>
-          <p className="text-muted-foreground text-sm mb-6">This student is not in your classes.</p>
+          <h1 className="text-2xl font-light text-foreground mb-2">
+            {t('demo.b15.teacher_student.not_found_title')}
+          </h1>
+          <p className="text-muted-foreground text-sm mb-6">
+            {t('demo.b15.teacher_student.not_found_desc')}
+          </p>
           <Link
             href="/demo/teacher/classes"
             className="text-primary hover:text-primary text-sm transition-colors"
           >
-            &larr; Back to My Classes
+            &larr; {t('demo.b15.teacher_student.back')}
           </Link>
         </div>
       </div>
@@ -139,7 +145,8 @@ export default function TeacherStudentProfilePage() {
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
           <p className="text-sm text-clay-600 dark:text-clay-400">
-            <span className="font-semibold">Teacher Demo</span> -- Viewing sample student profile
+            <span className="font-semibold">{t('demo.b15.teacher_student.demo_label')}</span> --{' '}
+            {t('demo.b15.teacher_student.demo_desc')}
           </p>
         </div>
 
@@ -157,7 +164,7 @@ export default function TeacherStudentProfilePage() {
                 href={`/demo/teacher/students/${prevStudent.id}`}
                 className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:text-muted-foreground transition-colors"
               >
-                <ChevronLeft className="h-3.5 w-3.5" /> Previous
+                <ChevronLeft className="h-3.5 w-3.5" /> {t('demo.b15.teacher_student.prev')}
               </Link>
             )}
             {nextStudent && (
@@ -165,7 +172,7 @@ export default function TeacherStudentProfilePage() {
                 href={`/demo/teacher/students/${nextStudent.id}`}
                 className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:text-muted-foreground transition-colors"
               >
-                Next <ChevronRight className="h-3.5 w-3.5" />
+                {t('demo.b15.teacher_student.next')} <ChevronRight className="h-3.5 w-3.5" />
               </Link>
             )}
           </div>
@@ -206,14 +213,16 @@ export default function TeacherStudentProfilePage() {
           <Card className="bg-card border-border/60">
             <CardContent className="p-5">
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                Working At Grade
+                {t('demo.b15.teacher_student.working_at')}
               </p>
               <AnimatedNumber
                 value={student.workingAtGrade}
                 prefix="Grade "
                 className={`block text-3xl font-light tabular-nums ${gcseGradeColor(student.workingAtGrade)}`}
               />
-              <p className="text-[11px] text-muted-foreground mt-1">Based on last 5 assessments</p>
+              <p className="text-[11px] text-muted-foreground mt-1">
+                {t('demo.b15.teacher_student.based_on')}
+              </p>
             </CardContent>
           </Card>
           <Card
@@ -221,7 +230,7 @@ export default function TeacherStudentProfilePage() {
           >
             <CardContent className="p-5">
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                Predicted Grade
+                {t('demo.b15.teacher_student.predicted')}
               </p>
               <AnimatedNumber
                 value={student.predictedGrade}
@@ -230,17 +239,17 @@ export default function TeacherStudentProfilePage() {
               />
               <p className="text-[11px] text-muted-foreground mt-1">
                 {student.predictedGrade > student.workingAtGrade
-                  ? 'Improving trajectory'
+                  ? t('demo.b15.teacher_student.improving')
                   : student.predictedGrade === student.workingAtGrade
-                    ? 'Stable trajectory'
-                    : 'Declining trajectory'}
+                    ? t('demo.b15.teacher_student.stable')
+                    : t('demo.b15.teacher_student.declining')}
               </p>
             </CardContent>
           </Card>
           <Card className="bg-card border-primary/20">
             <CardContent className="p-5">
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                Target Grade
+                {t('demo.b15.teacher_student.target')}
               </p>
               <AnimatedNumber
                 value={student.targetGrade}
@@ -249,8 +258,8 @@ export default function TeacherStudentProfilePage() {
               />
               <p className="text-[11px] text-muted-foreground mt-1">
                 {student.targetGrade - student.workingAtGrade > 0
-                  ? `${student.targetGrade - student.workingAtGrade} grade${student.targetGrade - student.workingAtGrade > 1 ? 's' : ''} to target`
-                  : 'At target'}
+                  ? `${student.targetGrade - student.workingAtGrade} ${student.targetGrade - student.workingAtGrade > 1 ? t('demo.b15.teacher_student.grades_to_target_pl') : t('demo.b15.teacher_student.grades_to_target')}`
+                  : t('demo.b15.teacher_student.at_target')}
               </p>
             </CardContent>
           </Card>
@@ -261,7 +270,7 @@ export default function TeacherStudentProfilePage() {
           <Card className="bg-card border-border/60">
             <CardContent className="p-5">
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                Progress
+                {t('demo.b15.teacher_student.kpi_progress')}
               </p>
               <AnimatedNumber
                 value={student.overallProgress}
@@ -273,7 +282,9 @@ export default function TeacherStudentProfilePage() {
           <Card className="bg-card border-border/60">
             <CardContent className="p-5">
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                {isGCSEYearGroup(student.yearGroup) ? 'Average Grade' : 'Avg Score'}
+                {isGCSEYearGroup(student.yearGroup)
+                  ? t('demo.b15.teacher_student.average_grade')
+                  : t('demo.b15.teacher_student.col_avg_score')}
               </p>
               <p
                 className={`text-3xl font-light tabular-nums ${isGCSEYearGroup(student.yearGroup) ? gcseGradeColor(percentageToGCSEGrade(student.averageScore)) : scoreColor(student.averageScore)}`}
@@ -285,7 +296,7 @@ export default function TeacherStudentProfilePage() {
           <Card className="bg-card border-border/60">
             <CardContent className="p-5">
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                Assignments
+                {t('demo.b15.teacher_student.kpi_assignments')}
               </p>
               <p className="text-3xl font-light text-primary tabular-nums">
                 {student.assignmentsCompleted}/{student.assignmentsTotal}
@@ -295,7 +306,7 @@ export default function TeacherStudentProfilePage() {
           <Card className="bg-card border-border/60">
             <CardContent className="p-5">
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                Modules Done
+                {t('demo.b15.teacher_student.kpi_modules')}
               </p>
               <p className="text-3xl font-light text-primary tabular-nums">
                 {student.modulesCompleted}/{student.modules.length}
@@ -309,7 +320,7 @@ export default function TeacherStudentProfilePage() {
           <CardHeader>
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
               <Lightbulb className="h-4 w-4 text-clay-600 dark:text-clay-400" />
-              How to Reach the Next Grade
+              {t('demo.b15.teacher_student.next_grade')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -341,7 +352,7 @@ export default function TeacherStudentProfilePage() {
             onClick={() => showToast('Available with full account')}
           >
             <Target className="h-3.5 w-3.5 mr-1.5" />
-            Set Target Grade
+            {t('demo.b15.teacher_student.set_target')}
           </Button>
           <Button
             variant="outline"
@@ -350,7 +361,7 @@ export default function TeacherStudentProfilePage() {
             onClick={() => showToast('Available with full account')}
           >
             <Flag className="h-3.5 w-3.5 mr-1.5" />
-            Flag for Intervention
+            {t('demo.b15.teacher_student.flag')}
           </Button>
           <Button
             variant="outline"
@@ -359,7 +370,7 @@ export default function TeacherStudentProfilePage() {
             onClick={() => showToast('Available with full account')}
           >
             <Send className="h-3.5 w-3.5 mr-1.5" />
-            Send Progress Report
+            {t('demo.b15.teacher_student.send_report')}
           </Button>
         </div>
 
@@ -368,7 +379,7 @@ export default function TeacherStudentProfilePage() {
           <CardHeader>
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
               <BarChart3 className="h-4 w-4 text-primary" />
-              Score Trend
+              {t('demo.b15.teacher_student.score_trend')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -395,12 +406,12 @@ export default function TeacherStudentProfilePage() {
           </CardContent>
         </Card>
 
-        {/* ── Grade Recommendations (Teacher View) ──────────────────── */}
+        {/* â”€â”€ Grade Recommendations (Teacher View) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
               <Lightbulb className="h-4 w-4 text-primary" />
-              Next Grade Recommendations
+              {t('demo.b15.teacher_student.next_grade_recs')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -435,7 +446,7 @@ export default function TeacherStudentProfilePage() {
           </CardContent>
         </Card>
 
-        {/* ── Reading Profile ────────────────────────────────────────── */}
+        {/* â”€â”€ Reading Profile â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <div className="mb-8">
           <ReadingProfileCard
             readingAge={student.readingAge}
@@ -446,12 +457,12 @@ export default function TeacherStudentProfilePage() {
           />
         </div>
 
-        {/* ── Topic Mastery Map ──────────────────────────────────────── */}
+        {/* â”€â”€ Topic Mastery Map â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
               <Target className="h-4 w-4 text-primary" />
-              Topic Mastery Map
+              {t('demo.b15.teacher_student.topic_mastery')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -663,10 +674,10 @@ export default function TeacherStudentProfilePage() {
                       }`}
                     >
                       {skill.status === 'mastered'
-                        ? 'Mastered'
+                        ? t('demo.b15.teacher_student.mastered')
                         : skill.status === 'developing'
-                          ? 'Developing'
-                          : 'Needs Work'}
+                          ? t('demo.b15.teacher_student.developing')
+                          : t('demo.b15.teacher_student.needs_work')}
                     </span>
                   </div>
                 ))
@@ -675,12 +686,12 @@ export default function TeacherStudentProfilePage() {
           </CardContent>
         </Card>
 
-        {/* ── Learning Journey ─────────────────────────────────────────── */}
+        {/* â”€â”€ Learning Journey â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-primary" />
-              Learning Journey
+              {t('demo.b15.teacher_student.learning_journey')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -798,11 +809,11 @@ export default function TeacherStudentProfilePage() {
           </CardContent>
         </Card>
 
-        {/* ── What They've Grasped ─────────────────────────────────────── */}
+        {/* â”€â”€ What They've Grasped â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-primary flex items-center gap-2">
-              <Award className="h-4 w-4" /> What They&apos;ve Grasped
+              <Award className="h-4 w-4" /> {t('demo.b15.teacher_student.grasped')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -838,19 +849,21 @@ export default function TeacherStudentProfilePage() {
                     </div>
                     {relatedEssay && (
                       <p className="text-[11px] text-muted-foreground">
-                        Evidence: {percentageToGCSEGradeLabel(relatedEssay.score)} on &quot;
+                        {t('demo.b15.teacher_student.evidence')}{' '}
+                        {percentageToGCSEGradeLabel(relatedEssay.score)} on &quot;
                         {relatedEssay.title}&quot;
                       </p>
                     )}
                     {!relatedEssay && relatedQuiz && (
                       <p className="text-[11px] text-muted-foreground">
-                        Evidence: Scored {relatedQuiz.score}/{relatedQuiz.maxScore} on &quot;
+                        {t('demo.b15.teacher_student.evidence')} Scored {relatedQuiz.score}/
+                        {relatedQuiz.maxScore} on &quot;
                         {relatedQuiz.quiz}&quot;
                       </p>
                     )}
                     {!relatedEssay && !relatedQuiz && (
                       <p className="text-[11px] text-muted-foreground">
-                        Consistently demonstrated across multiple assessments
+                        {t('demo.b15.teacher_student.consistent')}
                       </p>
                     )}
                   </div>
@@ -860,11 +873,11 @@ export default function TeacherStudentProfilePage() {
           </CardContent>
         </Card>
 
-        {/* ── Where They're Struggling ─────────────────────────────────── */}
+        {/* â”€â”€ Where They're Struggling â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-red-600 dark:text-red-400 flex items-center gap-2">
-              <XCircle className="h-4 w-4" /> Where They&apos;re Struggling
+              <XCircle className="h-4 w-4" /> {t('demo.b15.teacher_student.struggling')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -926,12 +939,12 @@ export default function TeacherStudentProfilePage() {
           </CardContent>
         </Card>
 
-        {/* ── Suggested Next Steps ─────────────────────────────────────── */}
+        {/* â”€â”€ Suggested Next Steps â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
               <Lightbulb className="h-4 w-4 text-clay-600 dark:text-clay-400" />
-              Suggested Next Steps
+              {t('demo.b15.teacher_student.next_steps')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -1017,7 +1030,7 @@ export default function TeacherStudentProfilePage() {
           <Card className="bg-card border-border/60">
             <CardHeader>
               <CardTitle className="text-sm font-medium text-primary flex items-center gap-2">
-                <CheckCircle className="h-4 w-4" /> Strengths
+                <CheckCircle className="h-4 w-4" /> {t('demo.b15.teacher_student.strengths')}
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-0">
@@ -1035,7 +1048,7 @@ export default function TeacherStudentProfilePage() {
           <Card className="bg-card border-border/60">
             <CardHeader>
               <CardTitle className="text-sm font-medium text-red-600 dark:text-red-400 flex items-center gap-2">
-                <AlertTriangle className="h-4 w-4" /> Weaknesses
+                <AlertTriangle className="h-4 w-4" /> {t('demo.b15.teacher_student.weaknesses')}
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-0">
@@ -1056,7 +1069,7 @@ export default function TeacherStudentProfilePage() {
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-foreground">
-              Compare with Class Average ({student.className})
+              {t('demo.b15.teacher_student.compare_class')} ({student.className})
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -1064,7 +1077,7 @@ export default function TeacherStudentProfilePage() {
               {/* Progress comparison */}
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
-                  Progress
+                  {t('demo.b15.teacher_student.col_progress')}
                 </p>
                 <div className="space-y-2">
                   <div>
@@ -1083,7 +1096,9 @@ export default function TeacherStudentProfilePage() {
                   </div>
                   <div>
                     <div className="flex items-center justify-between text-xs mb-1">
-                      <span className="text-muted-foreground">Class Avg</span>
+                      <span className="text-muted-foreground">
+                        {t('demo.b15.teacher_student.class_avg')}
+                      </span>
                       <span className="text-muted-foreground tabular-nums">
                         {classAvgProgress}%
                       </span>
@@ -1100,15 +1115,15 @@ export default function TeacherStudentProfilePage() {
                   className={`text-xs mt-2 ${student.overallProgress >= classAvgProgress ? 'text-primary' : 'text-red-600 dark:text-red-400'}`}
                 >
                   {student.overallProgress >= classAvgProgress
-                    ? `+${student.overallProgress - classAvgProgress}% above average`
-                    : `${classAvgProgress - student.overallProgress}% below average`}
+                    ? `+${student.overallProgress - classAvgProgress}% ${t('demo.b15.teacher_student.above_avg')}`
+                    : `${classAvgProgress - student.overallProgress}% ${t('demo.b15.teacher_student.below_avg')}`}
                 </p>
               </div>
 
               {/* Score comparison */}
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
-                  Avg Score
+                  {t('demo.b15.teacher_student.col_avg_score')}
                 </p>
                 <div className="space-y-2">
                   <div>
@@ -1127,7 +1142,9 @@ export default function TeacherStudentProfilePage() {
                   </div>
                   <div>
                     <div className="flex items-center justify-between text-xs mb-1">
-                      <span className="text-muted-foreground">Class Avg</span>
+                      <span className="text-muted-foreground">
+                        {t('demo.b15.teacher_student.class_avg')}
+                      </span>
                       <span className="text-muted-foreground tabular-nums">{classAvgScore}%</span>
                     </div>
                     <div className="h-2 rounded-full bg-muted overflow-hidden">
@@ -1142,21 +1159,23 @@ export default function TeacherStudentProfilePage() {
                   className={`text-xs mt-2 ${student.averageScore >= classAvgScore ? 'text-primary' : 'text-red-600 dark:text-red-400'}`}
                 >
                   {student.averageScore >= classAvgScore
-                    ? `+${student.averageScore - classAvgScore}% above average`
-                    : `${classAvgScore - student.averageScore}% below average`}
+                    ? `+${student.averageScore - classAvgScore}% ${t('demo.b15.teacher_student.above_avg')}`
+                    : `${classAvgScore - student.averageScore}% ${t('demo.b15.teacher_student.below_avg')}`}
                 </p>
               </div>
 
               {/* Assignments comparison */}
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
-                  Assignments Done
+                  {t('demo.b15.teacher_student.col_assignments')}
                 </p>
                 <div className="flex items-baseline gap-2 mt-1">
                   <span className="text-2xl font-light text-primary tabular-nums">
                     {student.assignmentsCompleted}
                   </span>
-                  <span className="text-muted-foreground text-sm">vs class avg</span>
+                  <span className="text-muted-foreground text-sm">
+                    {t('demo.b15.teacher_student.vs_class')}
+                  </span>
                   <span className="text-2xl font-light text-muted-foreground tabular-nums">
                     {classAvgAssignments}
                   </span>
@@ -1165,8 +1184,8 @@ export default function TeacherStudentProfilePage() {
                   className={`text-xs mt-2 ${student.assignmentsCompleted >= classAvgAssignments ? 'text-primary' : 'text-red-600 dark:text-red-400'}`}
                 >
                   {student.assignmentsCompleted >= classAvgAssignments
-                    ? `${student.assignmentsCompleted - classAvgAssignments} ahead`
-                    : `${classAvgAssignments - student.assignmentsCompleted} behind`}
+                    ? `${student.assignmentsCompleted - classAvgAssignments} ${t('demo.b15.teacher_student.ahead')}`
+                    : `${classAvgAssignments - student.assignmentsCompleted} ${t('demo.b15.teacher_student.behind')}`}
                 </p>
               </div>
             </div>
@@ -1177,14 +1196,15 @@ export default function TeacherStudentProfilePage() {
         <Card className="bg-card border-border/60 overflow-hidden mb-8">
           <CardHeader className="border-b border-border/60">
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
-              <BookOpen className="h-4 w-4 text-primary" /> Module Progress
+              <BookOpen className="h-4 w-4 text-primary" />{' '}
+              {t('demo.b15.teacher_student.module_progress')}
             </CardTitle>
           </CardHeader>
           <div className="hidden sm:grid grid-cols-[1fr_160px_80px_80px] gap-4 px-5 py-2 border-b border-border/60 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            <span>Module</span>
-            <span>Progress</span>
-            <span className="text-right">Score</span>
-            <span className="text-right">Status</span>
+            <span>{t('demo.b15.teacher_student.col_module')}</span>
+            <span>{t('demo.b15.teacher_student.col_progress')}</span>
+            <span className="text-right">{t('demo.b15.teacher_student.col_score')}</span>
+            <span className="text-right">{t('demo.b15.teacher_student.col_status')}</span>
           </div>
           {student.modules.map((mod: any, i: number) => (
             <div
@@ -1230,14 +1250,15 @@ export default function TeacherStudentProfilePage() {
         <Card className="bg-card border-border/60 overflow-hidden mb-8">
           <CardHeader className="border-b border-border/60">
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
-              <ClipboardList className="h-4 w-4 text-primary" /> Mock Exam Results
+              <ClipboardList className="h-4 w-4 text-primary" />{' '}
+              {t('demo.b15.teacher_student.mock_exams')}
             </CardTitle>
           </CardHeader>
           <div className="hidden sm:grid grid-cols-[1fr_100px_80px_60px] gap-4 px-5 py-2 border-b border-border/60 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            <span>Exam</span>
-            <span>Date</span>
-            <span className="text-center">Score</span>
-            <span className="text-center">Grade</span>
+            <span>{t('demo.b15.teacher_student.col_exam')}</span>
+            <span>{t('demo.b15.teacher_student.col_date')}</span>
+            <span className="text-center">{t('demo.b15.teacher_student.col_score')}</span>
+            <span className="text-center">{t('demo.b15.teacher_student.col_grade')}</span>
           </div>
           {student.mockExams.map((exam: any, i: number) => (
             <div
@@ -1260,7 +1281,7 @@ export default function TeacherStudentProfilePage() {
         <Card className="bg-card border-border/60 overflow-hidden mb-8">
           <CardHeader className="border-b border-border/60">
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
-              <FileText className="h-4 w-4 text-primary" /> Essay Submissions
+              <FileText className="h-4 w-4 text-primary" /> {t('demo.b15.teacher_student.essays')}
             </CardTitle>
           </CardHeader>
           {student.essays.map((essay: any, i: number) => (
@@ -1292,12 +1313,14 @@ export default function TeacherStudentProfilePage() {
         {/* Quiz Attempts */}
         <Card className="bg-card border-border/60 overflow-hidden mb-8">
           <CardHeader className="border-b border-border/60">
-            <CardTitle className="text-sm font-medium text-foreground">Quiz Attempts</CardTitle>
+            <CardTitle className="text-sm font-medium text-foreground">
+              {t('demo.b15.teacher_student.quiz_attempts')}
+            </CardTitle>
           </CardHeader>
           <div className="hidden sm:grid grid-cols-[1fr_100px_100px] gap-4 px-5 py-2 border-b border-border/60 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            <span>Quiz</span>
-            <span>Date</span>
-            <span className="text-right">Score</span>
+            <span>{t('demo.b15.teacher_student.col_quiz')}</span>
+            <span>{t('demo.b15.teacher_student.col_date')}</span>
+            <span className="text-right">{t('demo.b15.teacher_student.col_score')}</span>
           </div>
           {student.quizAttempts.map((quiz: any, i: number) => {
             const pct = Math.round((quiz.score / quiz.maxScore) * 100)
@@ -1320,7 +1343,8 @@ export default function TeacherStudentProfilePage() {
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
-              <Clock className="h-4 w-4 text-muted-foreground" /> Activity Timeline
+              <Clock className="h-4 w-4 text-muted-foreground" />{' '}
+              {t('demo.b15.teacher_student.activity_timeline')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -1368,7 +1392,8 @@ export default function TeacherStudentProfilePage() {
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
-              <Target className="h-4 w-4 text-primary" /> Recommendations
+              <Target className="h-4 w-4 text-primary" />{' '}
+              {t('demo.b15.teacher_student.recommendations')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -1389,14 +1414,15 @@ export default function TeacherStudentProfilePage() {
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
-              <MessageSquare className="h-4 w-4 text-muted-foreground" /> Write Comment
+              <MessageSquare className="h-4 w-4 text-muted-foreground" />{' '}
+              {t('demo.b15.teacher_student.write_comment')}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <textarea
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              placeholder="Add a note or comment about this student..."
+              placeholder={t('demo.b15.teacher_student.comment_ph')}
               className="w-full h-24 bg-card border border-border/60 rounded-lg px-4 py-3 text-sm text-foreground placeholder-neutral-600 resize-none focus:outline-none focus:border-border/60 transition-colors"
             />
             <div className="flex justify-end mt-3">
@@ -1409,7 +1435,7 @@ export default function TeacherStudentProfilePage() {
                   setComment('')
                 }}
               >
-                Save Comment
+                {t('demo.b15.teacher_student.save_comment')}
               </Button>
             </div>
           </CardContent>

@@ -1,45 +1,41 @@
-"use client";
+'use client'
 
-import { useEffect, useState, useCallback } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "@/components/ui/card";
-import { ToastProvider, useToast } from "@/components/ui/Toast";
+import { useEffect, useState, useCallback } from 'react'
+import { Button } from '@/components/ui/button'
+import { useT } from '@/lib/i18n/use-t'
+import { Input } from '@/components/ui/input'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { ToastProvider, useToast } from '@/components/ui/Toast'
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
 interface LinkedParent {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  linkedAt: string;
+  id: string
+  firstName: string
+  lastName: string
+  email: string
+  linkedAt: string
 }
 
 interface LinkedStudent {
-  id: string;
-  firstName: string;
-  lastName: string;
-  school: string | null;
-  linkedAt: string;
-  hasActiveSubscription: boolean;
+  id: string
+  firstName: string
+  lastName: string
+  school: string | null
+  linkedAt: string
+  hasActiveSubscription: boolean
 }
 
 interface ActiveInvite {
-  code: string;
-  inviteUrl: string;
-  expiresAt: string;
-  createdAt: string;
+  code: string
+  inviteUrl: string
+  expiresAt: string
+  createdAt: string
 }
 
 interface UserInfo {
-  role: "STUDENT" | "PARENT" | "TEACHER" | "ADMIN" | "REVIEWER";
+  role: 'STUDENT' | 'PARENT' | 'TEACHER' | 'ADMIN' | 'REVIEWER'
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -47,50 +43,51 @@ interface UserInfo {
 // ═══════════════════════════════════════════════════════════════════════
 
 function StudentView() {
-  const { toast } = useToast();
-  const [activeInvite, setActiveInvite] = useState<ActiveInvite | null>(null);
-  const [linkedParents, setLinkedParents] = useState<LinkedParent[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [generating, setGenerating] = useState(false);
-  const [unlinking, setUnlinking] = useState<string | null>(null);
-  const [copied, setCopied] = useState(false);
+  const t = useT()
+  const { toast } = useToast()
+  const [activeInvite, setActiveInvite] = useState<ActiveInvite | null>(null)
+  const [linkedParents, setLinkedParents] = useState<LinkedParent[]>([])
+  const [loading, setLoading] = useState(true)
+  const [generating, setGenerating] = useState(false)
+  const [unlinking, setUnlinking] = useState<string | null>(null)
+  const [copied, setCopied] = useState(false)
 
   const fetchData = useCallback(async () => {
     try {
       const [inviteRes, linkRes] = await Promise.all([
-        fetch("/api/parent/invite"),
-        fetch("/api/parent/link"),
-      ]);
+        fetch('/api/parent/invite'),
+        fetch('/api/parent/link'),
+      ])
 
       if (inviteRes.ok) {
-        const inviteData = await inviteRes.json();
-        setActiveInvite(inviteData.invite);
+        const inviteData = await inviteRes.json()
+        setActiveInvite(inviteData.invite)
       }
 
       if (linkRes.ok) {
-        const linkData = await linkRes.json();
-        setLinkedParents(linkData.parents || []);
+        const linkData = await linkRes.json()
+        setLinkedParents(linkData.parents || [])
       }
     } catch {
-      toast("error", "Failed to load parent linking data.");
+      toast('error', 'Failed to load parent linking data.')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  }, [toast]);
+  }, [toast])
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    fetchData()
+  }, [fetchData])
 
   async function handleGenerateInvite() {
-    setGenerating(true);
+    setGenerating(true)
     try {
-      const res = await fetch("/api/parent/invite", { method: "POST" });
-      const data = await res.json();
+      const res = await fetch('/api/parent/invite', { method: 'POST' })
+      const data = await res.json()
 
       if (!res.ok) {
-        toast("error", data.error || "Failed to generate invite.");
-        return;
+        toast('error', data.error || 'Failed to generate invite.')
+        return
       }
 
       setActiveInvite({
@@ -98,60 +95,60 @@ function StudentView() {
         inviteUrl: data.inviteUrl,
         expiresAt: data.expiresAt,
         createdAt: new Date().toISOString(),
-      });
-      toast("success", "Invite code generated! Share it with your parent.");
+      })
+      toast('success', 'Invite code generated! Share it with your parent.')
     } catch {
-      toast("error", "Something went wrong. Please try again.");
+      toast('error', 'Something went wrong. Please try again.')
     } finally {
-      setGenerating(false);
+      setGenerating(false)
     }
   }
 
   async function handleCopyLink() {
-    if (!activeInvite) return;
+    if (!activeInvite) return
     try {
-      await navigator.clipboard.writeText(activeInvite.inviteUrl);
-      setCopied(true);
-      toast("success", "Invite link copied to clipboard.");
-      setTimeout(() => setCopied(false), 3000);
+      await navigator.clipboard.writeText(activeInvite.inviteUrl)
+      setCopied(true)
+      toast('success', 'Invite link copied to clipboard.')
+      setTimeout(() => setCopied(false), 3000)
     } catch {
-      toast("error", "Failed to copy. Please copy the link manually.");
+      toast('error', 'Failed to copy. Please copy the link manually.')
     }
   }
 
   async function handleCopyCode() {
-    if (!activeInvite) return;
+    if (!activeInvite) return
     try {
-      await navigator.clipboard.writeText(activeInvite.code);
-      setCopied(true);
-      toast("success", "Invite code copied to clipboard.");
-      setTimeout(() => setCopied(false), 3000);
+      await navigator.clipboard.writeText(activeInvite.code)
+      setCopied(true)
+      toast('success', 'Invite code copied to clipboard.')
+      setTimeout(() => setCopied(false), 3000)
     } catch {
-      toast("error", "Failed to copy. Please copy the code manually.");
+      toast('error', 'Failed to copy. Please copy the code manually.')
     }
   }
 
   async function handleUnlinkParent(parentId: string) {
-    setUnlinking(parentId);
+    setUnlinking(parentId)
     try {
-      const res = await fetch("/api/parent/link", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ studentId: "self" }),
-      });
-      const data = await res.json();
+      const res = await fetch('/api/parent/link', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ studentId: 'self' }),
+      })
+      const data = await res.json()
 
       if (!res.ok) {
-        toast("error", data.error || "Failed to remove parent link.");
-        return;
+        toast('error', data.error || 'Failed to remove parent link.')
+        return
       }
 
-      setLinkedParents((prev) => prev.filter((p) => p.id !== parentId));
-      toast("success", "Parent link removed.");
+      setLinkedParents((prev) => prev.filter((p) => p.id !== parentId))
+      toast('success', 'Parent link removed.')
     } catch {
-      toast("error", "Something went wrong. Please try again.");
+      toast('error', 'Something went wrong. Please try again.')
     } finally {
-      setUnlinking(null);
+      setUnlinking(null)
     }
   }
 
@@ -162,7 +159,7 @@ function StudentView() {
         <div className="h-32 w-full rounded bg-muted" />
         <div className="h-32 w-full rounded bg-muted" />
       </div>
-    );
+    )
   }
 
   return (
@@ -170,19 +167,18 @@ function StudentView() {
       {/* Invite a Parent section */}
       <Card>
         <CardHeader>
-          <CardTitle>Invite a Parent</CardTitle>
+          <CardTitle>{t('dashboard.parent_link.student_invite_title')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <p className="text-sm text-muted-foreground">
-              Generate an invite link and share it with your parent or guardian.
-              They will be able to view your progress reports and scores for free.
+              {t('dashboard.parent_link.student_invite_desc')}
             </p>
 
             <Alert>
               <AlertDescription>
-                Your parent will <strong>not</strong> be able to read your essays.
-                They can only see scores, progress, and weekly summaries.
+                Your parent will <strong>not</strong> be able to read your essays. They can only see
+                scores, progress, and weekly summaries.
               </AlertDescription>
             </Alert>
 
@@ -190,7 +186,7 @@ function StudentView() {
               <div className="space-y-4">
                 <div className="rounded-lg border-2 border-dashed border-primary/20 bg-primary/10 p-4">
                   <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    Your invite code
+                    {t('dashboard.parent_link.your_invite_code')}
                   </p>
                   <div className="mt-1 flex items-center gap-3">
                     <p className="text-2xl font-bold tracking-widest text-primary">
@@ -201,24 +197,26 @@ function StudentView() {
                       onClick={handleCopyCode}
                       className="rounded-md bg-card px-2.5 py-1.5 text-xs font-medium text-foreground shadow-sm ring-1 ring-border hover:bg-muted transition-colors"
                     >
-                      {copied ? "Copied" : "Copy code"}
+                      {copied
+                        ? t('dashboard.parent_link.copied')
+                        : t('dashboard.parent_link.copy_code')}
                     </button>
                   </div>
                   <p className="mt-2 text-xs text-muted-foreground">
-                    Expires:{" "}
-                    {new Date(activeInvite.expiresAt).toLocaleDateString("en-GB", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                      hour: "2-digit",
-                      minute: "2-digit",
+                    Expires:{' '}
+                    {new Date(activeInvite.expiresAt).toLocaleDateString('en-GB', {
+                      day: 'numeric',
+                      month: 'long',
+                      year: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit',
                     })}
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-3">
                   <Button variant="secondary" size="sm" onClick={handleCopyLink}>
-                    Copy invite link
+                    {t('dashboard.parent_link.copy_invite_link')}
                   </Button>
                   <Button
                     variant="outline"
@@ -226,17 +224,21 @@ function StudentView() {
                     onClick={handleGenerateInvite}
                     disabled={generating}
                   >
-                    {generating ? "Generating..." : "Generate new code"}
+                    {generating
+                      ? t('dashboard.parent_link.generating')
+                      : t('dashboard.parent_link.generate_new_code')}
                   </Button>
                 </div>
 
                 <p className="text-xs text-muted-foreground">
-                  Generating a new code will invalidate the current one.
+                  {t('dashboard.parent_link.generate_warning')}
                 </p>
               </div>
             ) : (
               <Button onClick={handleGenerateInvite} disabled={generating}>
-                {generating ? "Generating..." : "Generate invite link"}
+                {generating
+                  ? t('dashboard.parent_link.generating')
+                  : t('dashboard.parent_link.generate_invite_btn')}
               </Button>
             )}
           </div>
@@ -246,14 +248,11 @@ function StudentView() {
       {/* Linked Parents section */}
       <Card>
         <CardHeader>
-          <CardTitle>Linked Parents</CardTitle>
+          <CardTitle>{t('dashboard.parent_link.linked_parents_title')}</CardTitle>
         </CardHeader>
         <CardContent>
           {linkedParents.length === 0 ? (
-            <p className="text-sm text-muted-foreground">
-              No parent is currently linked to your account. Generate an invite
-              above to get started.
-            </p>
+            <p className="text-sm text-muted-foreground">{t('dashboard.parent_link.no_parents')}</p>
           ) : (
             <div className="space-y-3">
               {linkedParents.map((parent) => (
@@ -267,11 +266,11 @@ function StudentView() {
                     </p>
                     <p className="text-xs text-muted-foreground">{parent.email}</p>
                     <p className="text-xs text-muted-foreground">
-                      Linked{" "}
-                      {new Date(parent.linkedAt).toLocaleDateString("en-GB", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
+                      Linked{' '}
+                      {new Date(parent.linkedAt).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
                       })}
                     </p>
                   </div>
@@ -281,7 +280,9 @@ function StudentView() {
                     onClick={() => handleUnlinkParent(parent.id)}
                     disabled={unlinking === parent.id}
                   >
-                    {unlinking === parent.id ? "Removing..." : "Remove"}
+                    {unlinking === parent.id
+                      ? t('dashboard.parent_link.removing')
+                      : t('dashboard.parent_link.remove_btn')}
                   </Button>
                 </div>
               ))}
@@ -290,7 +291,7 @@ function StudentView() {
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -298,91 +299,89 @@ function StudentView() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function ParentView() {
-  const { toast } = useToast();
-  const [inviteCode, setInviteCode] = useState("");
-  const [linkedStudents, setLinkedStudents] = useState<LinkedStudent[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [linking, setLinking] = useState(false);
-  const [unlinking, setUnlinking] = useState<string | null>(null);
-  const [error, setError] = useState("");
+  const t = useT()
+  const { toast } = useToast()
+  const [inviteCode, setInviteCode] = useState('')
+  const [linkedStudents, setLinkedStudents] = useState<LinkedStudent[]>([])
+  const [loading, setLoading] = useState(true)
+  const [linking, setLinking] = useState(false)
+  const [unlinking, setUnlinking] = useState<string | null>(null)
+  const [error, setError] = useState('')
 
   const fetchData = useCallback(async () => {
     try {
-      const res = await fetch("/api/parent/link");
+      const res = await fetch('/api/parent/link')
       if (res.ok) {
-        const data = await res.json();
-        setLinkedStudents(data.students || []);
+        const data = await res.json()
+        setLinkedStudents(data.students || [])
       }
     } catch {
-      toast("error", "Failed to load linked students.");
+      toast('error', 'Failed to load linked students.')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  }, [toast]);
+  }, [toast])
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    fetchData()
+  }, [fetchData])
 
   async function handleLinkStudent(e: React.FormEvent) {
-    e.preventDefault();
-    setError("");
+    e.preventDefault()
+    setError('')
 
     if (!inviteCode.trim()) {
-      setError("Please enter an invite code.");
-      return;
+      setError('Please enter an invite code.')
+      return
     }
 
-    setLinking(true);
+    setLinking(true)
     try {
-      const res = await fetch("/api/parent/link", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/parent/link', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ inviteCode: inviteCode.trim().toUpperCase() }),
-      });
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error || "Failed to link to student.");
-        return;
+        setError(data.error || 'Failed to link to student.')
+        return
       }
 
-      toast(
-        "success",
-        `Successfully linked to ${data.student.firstName}'s account!`
-      );
-      setInviteCode("");
-      fetchData(); // Refresh the list
+      toast('success', `Successfully linked to ${data.student.firstName}'s account!`)
+      setInviteCode('')
+      fetchData() // Refresh the list
     } catch {
-      setError("Something went wrong. Please try again.");
+      setError('Something went wrong. Please try again.')
     } finally {
-      setLinking(false);
+      setLinking(false)
     }
   }
 
   async function handleUnlinkStudent(studentId: string) {
-    setUnlinking(studentId);
+    setUnlinking(studentId)
     try {
-      const res = await fetch("/api/parent/link", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/parent/link', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ studentId }),
-      });
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (!res.ok) {
-        toast("error", data.error || "Failed to remove link.");
-        return;
+        toast('error', data.error || 'Failed to remove link.')
+        return
       }
 
-      setLinkedStudents((prev) => prev.filter((s) => s.id !== studentId));
-      toast("success", "Student link removed.");
+      setLinkedStudents((prev) => prev.filter((s) => s.id !== studentId))
+      toast('success', 'Student link removed.')
     } catch {
-      toast("error", "Something went wrong. Please try again.");
+      toast('error', 'Something went wrong. Please try again.')
     } finally {
-      setUnlinking(null);
+      setUnlinking(null)
     }
   }
 
@@ -393,7 +392,7 @@ function ParentView() {
         <div className="h-32 w-full rounded bg-muted" />
         <div className="h-32 w-full rounded bg-muted" />
       </div>
-    );
+    )
   }
 
   return (
@@ -401,13 +400,12 @@ function ParentView() {
       {/* Link to Student section */}
       <Card>
         <CardHeader>
-          <CardTitle>Link to Student</CardTitle>
+          <CardTitle>{t('dashboard.parent_link.parent_link_title')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <p className="text-sm text-muted-foreground">
-              Enter the invite code your child shared with you to link your
-              accounts. This gives you free access to their progress reports.
+              {t('dashboard.parent_link.parent_link_desc')}
             </p>
 
             <form onSubmit={handleLinkStudent} className="space-y-4">
@@ -416,32 +414,29 @@ function ParentView() {
                   htmlFor="invite-code"
                   className="block text-sm font-medium text-foreground mb-1"
                 >
-                  Invite code
+                  {t('dashboard.parent_link.invite_code_label')}
                 </label>
                 <Input
                   id="invite-code"
                   placeholder="e.g. ABCD1234"
                   value={inviteCode}
                   onChange={(e) => {
-                    setInviteCode(e.target.value.toUpperCase());
-                    setError("");
+                    setInviteCode(e.target.value.toUpperCase())
+                    setError('')
                   }}
                   maxLength={20}
                   className="font-mono tracking-widest text-lg"
                   aria-invalid={!!error}
                 />
-                {error && (
-                  <p className="mt-1 text-sm text-destructive">{error}</p>
-                )}
+                {error && <p className="mt-1 text-sm text-destructive">{error}</p>}
               </div>
               <Button type="submit" disabled={linking || !inviteCode.trim()}>
-                {linking ? "Linking..." : "Link to student"}
+                {linking ? t('dashboard.parent_link.linking') : t('dashboard.parent_link.link_btn')}
               </Button>
             </form>
 
             <p className="text-xs text-muted-foreground">
-              Don&apos;t have a code? Ask your child to generate one from their account
-              settings.
+              {t('dashboard.parent_link.no_code_hint')}
             </p>
           </div>
         </CardContent>
@@ -450,13 +445,12 @@ function ParentView() {
       {/* Linked Students section */}
       <Card>
         <CardHeader>
-          <CardTitle>Linked Students</CardTitle>
+          <CardTitle>{t('dashboard.parent_link.linked_students_title')}</CardTitle>
         </CardHeader>
         <CardContent>
           {linkedStudents.length === 0 ? (
             <p className="text-sm text-muted-foreground">
-              You are not linked to any students yet. Use an invite code above to
-              get started.
+              {t('dashboard.parent_link.no_students')}
             </p>
           ) : (
             <div className="space-y-3">
@@ -484,11 +478,11 @@ function ParentView() {
                       <p className="text-xs text-muted-foreground">{student.school}</p>
                     )}
                     <p className="text-xs text-muted-foreground">
-                      Linked{" "}
-                      {new Date(student.linkedAt).toLocaleDateString("en-GB", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
+                      Linked{' '}
+                      {new Date(student.linkedAt).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
                       })}
                     </p>
                   </div>
@@ -498,7 +492,9 @@ function ParentView() {
                     onClick={() => handleUnlinkStudent(student.id)}
                     disabled={unlinking === student.id}
                   >
-                    {unlinking === student.id ? "Removing..." : "Remove"}
+                    {unlinking === student.id
+                      ? t('dashboard.parent_link.removing')
+                      : t('dashboard.parent_link.remove_btn')}
                   </Button>
                 </div>
               ))}
@@ -507,7 +503,7 @@ function ParentView() {
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -521,7 +517,7 @@ function UnsupportedRoleView() {
         Parent linking is only available for student and parent accounts.
       </AlertDescription>
     </Alert>
-  );
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -529,25 +525,26 @@ function UnsupportedRoleView() {
 // ═══════════════════════════════════════════════════════════════════════
 
 function ParentLinkContent() {
-  const { toast } = useToast();
-  const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
-  const [loading, setLoading] = useState(true);
+  const t = useT()
+  const { toast } = useToast()
+  const [userInfo, setUserInfo] = useState<UserInfo | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function fetchUser() {
       try {
-        const res = await fetch("/api/user/profile");
-        if (!res.ok) throw new Error("Failed to load profile");
-        const data = await res.json();
-        setUserInfo({ role: data.role || "STUDENT" });
+        const res = await fetch('/api/user/profile')
+        if (!res.ok) throw new Error('Failed to load profile')
+        const data = await res.json()
+        setUserInfo({ role: data.role || 'STUDENT' })
       } catch {
-        toast("error", "Failed to load your profile. Please refresh the page.");
+        toast('error', 'Failed to load your profile. Please refresh the page.')
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
     }
-    fetchUser();
-  }, [toast]);
+    fetchUser()
+  }, [toast])
 
   if (loading) {
     return (
@@ -558,46 +555,41 @@ function ParentLinkContent() {
           <div className="mt-6 h-40 w-full rounded bg-muted" />
         </div>
       </div>
-    );
+    )
   }
 
-  const isStudent = userInfo?.role === "STUDENT";
-  const isParent = userInfo?.role === "PARENT";
+  const isStudent = userInfo?.role === 'STUDENT'
+  const isParent = userInfo?.role === 'PARENT'
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-6">
         <nav className="text-sm text-muted-foreground mb-2" aria-label="Breadcrumb">
-          <a
-            href="/dashboard/settings"
-            className="hover:text-primary transition-colors"
-          >
-            Settings
+          <a href="/dashboard/settings" className="hover:text-primary transition-colors">
+            {t('dashboard.parent_link.breadcrumb_settings')}
           </a>
           <span className="mx-2">/</span>
-          <span className="text-foreground">Parent Linking</span>
+          <span className="text-foreground">{t('dashboard.parent_link.breadcrumb_current')}</span>
         </nav>
         <h1 className="text-2xl font-bold text-primary sm:text-3xl">
-          {isStudent ? "Invite a Parent" : isParent ? "Link to Student" : "Parent Linking"}
+          {isStudent
+            ? t('dashboard.parent_link.student_invite_title')
+            : isParent
+              ? t('dashboard.parent_link.parent_link_title')
+              : t('dashboard.parent_link.breadcrumb_current')}
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
           {isStudent
-            ? "Connect your parent or guardian so they can track your progress."
+            ? t('dashboard.parent_link.student_page_subtitle')
             : isParent
-              ? "Link to your child's account to monitor their study progress."
-              : "Manage parent-student connections."}
+              ? t('dashboard.parent_link.parent_page_subtitle')
+              : t('dashboard.parent_link.default_subtitle')}
         </p>
       </div>
 
-      {isStudent ? (
-        <StudentView />
-      ) : isParent ? (
-        <ParentView />
-      ) : (
-        <UnsupportedRoleView />
-      )}
+      {isStudent ? <StudentView /> : isParent ? <ParentView /> : <UnsupportedRoleView />}
     </div>
-  );
+  )
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -609,5 +601,5 @@ export default function ParentLinkPage() {
     <ToastProvider>
       <ParentLinkContent />
     </ToastProvider>
-  );
+  )
 }

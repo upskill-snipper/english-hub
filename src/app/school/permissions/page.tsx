@@ -1,13 +1,7 @@
-import {
-  Shield,
-  BookOpen,
-  Users,
-  CheckCircle,
-  XCircle,
-  ChevronRight,
-} from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Shield, BookOpen, Users, CheckCircle, XCircle, ChevronRight } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { tMany } from '@/lib/i18n/t'
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -21,19 +15,19 @@ interface PermissionRow {
 // ── Data ─────────────────────────────────────────────────────────────────────
 
 const permissionMatrix: PermissionRow[] = [
-  { feature: "View all students",        admin: true,  teacher: false, student: false },
-  { feature: "Manage users",             admin: true,  teacher: false, student: false },
-  { feature: "Create classes",           admin: true,  teacher: false, student: false },
-  { feature: "View own class students",  admin: true,  teacher: true,  student: false },
-  { feature: "Submit work",              admin: false, teacher: false, student: true  },
-  { feature: "Mark work",                admin: true,  teacher: true,  student: false },
-  { feature: "View school analytics",    admin: true,  teacher: false, student: false },
-  { feature: "View class analytics",     admin: true,  teacher: true,  student: false },
-  { feature: "View own analytics",       admin: true,  teacher: true,  student: true  },
-  { feature: "Access all resources",     admin: true,  teacher: true,  student: false },
-  { feature: "Access lesson plans",      admin: true,  teacher: true,  student: false },
-  { feature: "Manage billing",           admin: true,  teacher: false, student: false },
-  { feature: "Export data",              admin: true,  teacher: false, student: false },
+  { feature: 'View all students', admin: true, teacher: false, student: false },
+  { feature: 'Manage users', admin: true, teacher: false, student: false },
+  { feature: 'Create classes', admin: true, teacher: false, student: false },
+  { feature: 'View own class students', admin: true, teacher: true, student: false },
+  { feature: 'Submit work', admin: false, teacher: false, student: true },
+  { feature: 'Mark work', admin: true, teacher: true, student: false },
+  { feature: 'View school analytics', admin: true, teacher: false, student: false },
+  { feature: 'View class analytics', admin: true, teacher: true, student: false },
+  { feature: 'View own analytics', admin: true, teacher: true, student: true },
+  { feature: 'Access all resources', admin: true, teacher: true, student: false },
+  { feature: 'Access lesson plans', admin: true, teacher: true, student: false },
+  { feature: 'Manage billing', admin: true, teacher: false, student: false },
+  { feature: 'Export data', admin: true, teacher: false, student: false },
 ]
 
 // ── Sub-components ────────────────────────────────────────────────────────────
@@ -46,11 +40,7 @@ function PermCheck({ allowed }: { allowed: boolean }) {
 }
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="mb-6 text-xl font-semibold tracking-tight text-white">
-      {children}
-    </h2>
-  )
+  return <h2 className="mb-6 text-xl font-semibold tracking-tight text-white">{children}</h2>
 }
 
 function CanDo({ items }: { items: string[] }) {
@@ -87,9 +77,7 @@ function StepPath({ steps }: { steps: string[] }) {
           <span className="rounded bg-zinc-700 px-2 py-0.5 text-sm font-medium text-zinc-200">
             {step}
           </span>
-          {i < steps.length - 1 && (
-            <ChevronRight className="h-3 w-3 text-zinc-500" />
-          )}
+          {i < steps.length - 1 && <ChevronRight className="h-3 w-3 text-zinc-500" />}
         </span>
       ))}
     </div>
@@ -98,61 +86,131 @@ function StepPath({ steps }: { steps: string[] }) {
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
-export default function PermissionsPage() {
+export default async function PermissionsPage() {
+  const [
+    pageTitle,
+    subtitle,
+    sectionRoles,
+    sectionMatrix,
+    sectionChanging,
+    sectionSecurity,
+    whoIs,
+    whatCan,
+    colFeature,
+    colAdmin,
+    colTeacher,
+    colStudent,
+    roleAdmin,
+    roleAdminWho,
+    badgeFullAccess,
+    roleTeacher,
+    roleTeacherWho,
+    badgeClassAccess,
+    roleStudent,
+    roleStudentWho,
+    badgePersonal,
+    promoteTitle,
+    promoteNote,
+    promoteInstant,
+    demoteTitle,
+    demoteNote,
+    demoteWarning,
+    classAccessTitle,
+    classAccessDesc,
+    secDataIsolation,
+    secDataIsolationDesc,
+    secTeacherScope,
+    secTeacherScopeDesc,
+    secAudit,
+    secAuditDesc,
+    secGdpr,
+    secGdprDesc,
+  ] = await tMany([
+    'school.b15.permissions.title',
+    'school.b15.permissions.subtitle',
+    'school.b15.permissions.section_roles',
+    'school.b15.permissions.section_matrix',
+    'school.b15.permissions.section_changing',
+    'school.b15.permissions.section_security',
+    'school.b15.permissions.who_is',
+    'school.b15.permissions.what_can',
+    'school.b15.permissions.col_feature',
+    'school.b15.permissions.col_admin',
+    'school.b15.permissions.col_teacher',
+    'school.b15.permissions.col_student',
+    'school.b15.permissions.role_admin',
+    'school.b15.permissions.role_admin_who',
+    'school.b15.permissions.badge_full_access',
+    'school.b15.permissions.role_teacher',
+    'school.b15.permissions.role_teacher_who',
+    'school.b15.permissions.badge_class_access',
+    'school.b15.permissions.role_student',
+    'school.b15.permissions.role_student_who',
+    'school.b15.permissions.badge_personal',
+    'school.b15.permissions.promote_title',
+    'school.b15.permissions.promote_note',
+    'school.b15.permissions.promote_instant',
+    'school.b15.permissions.demote_title',
+    'school.b15.permissions.demote_note',
+    'school.b15.permissions.demote_warning',
+    'school.b15.permissions.class_access_title',
+    'school.b15.permissions.class_access_desc',
+    'school.b15.permissions.sec_data_isolation',
+    'school.b15.permissions.sec_data_isolation_desc',
+    'school.b15.permissions.sec_teacher_scope',
+    'school.b15.permissions.sec_teacher_scope_desc',
+    'school.b15.permissions.sec_audit',
+    'school.b15.permissions.sec_audit_desc',
+    'school.b15.permissions.sec_gdpr',
+    'school.b15.permissions.sec_gdpr_desc',
+  ])
+
   return (
     <div className="min-h-screen bg-zinc-950 px-4 py-10 sm:px-6 lg:px-8">
       <div className="space-y-12">
-
         {/* ── Header ── */}
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-white">
-            Permissions &amp; Access Levels
-          </h1>
-          <p className="mt-2 text-zinc-400">
-            Understanding who can do what in your school&apos;s English Hub
-          </p>
+          <h1 className="text-3xl font-bold tracking-tight text-white">{pageTitle}</h1>
+          <p className="mt-2 text-zinc-400">{subtitle}</p>
         </div>
 
         {/* ── Role Cards ── */}
         <section>
-          <SectionHeading>Roles at a Glance</SectionHeading>
+          <SectionHeading>{sectionRoles}</SectionHeading>
           <div className="grid gap-6 md:grid-cols-3">
-
             {/* School Admin */}
             <Card className="border border-rose-800/50 bg-zinc-900">
               <CardHeader className="pb-3">
                 <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-rose-950">
                   <Shield className="h-6 w-6 text-rose-400" />
                 </div>
-                <CardTitle className="text-white">School Admin</CardTitle>
+                <CardTitle className="text-white">{roleAdmin}</CardTitle>
                 <Badge className="mt-1 w-fit bg-rose-900/60 text-rose-300 hover:bg-rose-900/60">
-                  Full Access
+                  {badgeFullAccess}
                 </Badge>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">
-                    Who is this?
+                    {whoIs}
                   </p>
-                  <p className="text-sm text-zinc-400">
-                    School IT admin, Head of English, Principal / Vice-Principal
-                  </p>
+                  <p className="text-sm text-zinc-400">{roleAdminWho}</p>
                 </div>
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">
-                    What they can do
+                    {whatCan}
                   </p>
                   <CanDo
                     items={[
-                      "Manage all users (add, remove, reset passwords)",
-                      "View all analytics across all year groups",
-                      "Create and manage all classes",
-                      "Upload students / teachers via Excel",
-                      "Download login credentials",
-                      "Manage school settings and subscription",
-                      "Grant / revoke admin access to other teachers",
-                      "Export full school data",
-                      "Delete school account",
+                      'Manage all users (add, remove, reset passwords)',
+                      'View all analytics across all year groups',
+                      'Create and manage all classes',
+                      'Upload students / teachers via Excel',
+                      'Download login credentials',
+                      'Manage school settings and subscription',
+                      'Grant / revoke admin access to other teachers',
+                      'Export full school data',
+                      'Delete school account',
                     ]}
                   />
                 </div>
@@ -165,41 +223,39 @@ export default function PermissionsPage() {
                 <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-blue-950">
                   <BookOpen className="h-6 w-6 text-blue-400" />
                 </div>
-                <CardTitle className="text-white">Teacher</CardTitle>
+                <CardTitle className="text-white">{roleTeacher}</CardTitle>
                 <Badge className="mt-1 w-fit bg-blue-900/60 text-blue-300 hover:bg-blue-900/60">
-                  Class Access
+                  {badgeClassAccess}
                 </Badge>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">
-                    Who is this?
+                    {whoIs}
                   </p>
-                  <p className="text-sm text-zinc-400">
-                    Subject teachers, supply teachers, teaching assistants
-                  </p>
+                  <p className="text-sm text-zinc-400">{roleTeacherWho}</p>
                 </div>
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">
-                    What they can do
+                    {whatCan}
                   </p>
                   <CanDo
                     items={[
-                      "View and manage their own assigned classes",
-                      "See student progress for their students only",
-                      "Mark and give feedback on student essays",
-                      "Set homework for their classes",
-                      "Access all 300+ lesson plans and resources",
-                      "View assignment completion for their classes",
-                      "Generate class progress reports",
+                      'View and manage their own assigned classes',
+                      'See student progress for their students only',
+                      'Mark and give feedback on student essays',
+                      'Set homework for their classes',
+                      'Access all 300+ lesson plans and resources',
+                      'View assignment completion for their classes',
+                      'Generate class progress reports',
                     ]}
                   />
                   <CannotDo
                     items={[
                       "See other teachers' students",
-                      "Manage other users",
-                      "Access billing or school settings",
-                      "Create classes (admin must do this)",
+                      'Manage other users',
+                      'Access billing or school settings',
+                      'Create classes (admin must do this)',
                     ]}
                   />
                 </div>
@@ -212,52 +268,49 @@ export default function PermissionsPage() {
                 <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-950">
                   <Users className="h-6 w-6 text-emerald-400" />
                 </div>
-                <CardTitle className="text-white">Student</CardTitle>
+                <CardTitle className="text-white">{roleStudent}</CardTitle>
                 <Badge className="mt-1 w-fit bg-emerald-900/60 text-emerald-300 hover:bg-emerald-900/60">
-                  Personal Access
+                  {badgePersonal}
                 </Badge>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">
-                    Who is this?
+                    {whoIs}
                   </p>
-                  <p className="text-sm text-zinc-400">
-                    All enrolled students
-                  </p>
+                  <p className="text-sm text-zinc-400">{roleStudentWho}</p>
                 </div>
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">
-                    What they can do
+                    {whatCan}
                   </p>
                   <CanDo
                     items={[
-                      "Access all courses for their year group and exam board",
-                      "Submit essays and homework",
-                      "View their own progress and scores",
-                      "Receive AI feedback on their work",
-                      "Take mock exams",
-                      "Access flashcards and study tools",
-                      "Download revision resources",
+                      'Access all courses for their year group and exam board',
+                      'Submit essays and homework',
+                      'View their own progress and scores',
+                      'Receive AI feedback on their work',
+                      'Take mock exams',
+                      'Access flashcards and study tools',
+                      'Download revision resources',
                     ]}
                   />
                   <CannotDo
                     items={[
                       "See other students' work or progress",
-                      "Access teacher resources or lesson plans",
-                      "Change school settings",
+                      'Access teacher resources or lesson plans',
+                      'Change school settings',
                     ]}
                   />
                 </div>
               </CardContent>
             </Card>
-
           </div>
         </section>
 
         {/* ── Permission Matrix ── */}
         <section>
-          <SectionHeading>Permission Matrix</SectionHeading>
+          <SectionHeading>{sectionMatrix}</SectionHeading>
           <Card className="border border-zinc-800 bg-zinc-900">
             <CardContent className="p-0">
               <div className="overflow-x-auto">
@@ -265,24 +318,24 @@ export default function PermissionsPage() {
                   <thead>
                     <tr className="border-b border-zinc-800">
                       <th className="py-3 pl-6 pr-4 text-left font-semibold text-zinc-300">
-                        Feature
+                        {colFeature}
                       </th>
                       <th className="w-28 py-3 text-center font-semibold text-rose-400">
                         <div className="flex items-center justify-center gap-1.5">
                           <Shield className="h-4 w-4" />
-                          Admin
+                          {colAdmin}
                         </div>
                       </th>
                       <th className="w-28 py-3 text-center font-semibold text-blue-400">
                         <div className="flex items-center justify-center gap-1.5">
                           <BookOpen className="h-4 w-4" />
-                          Teacher
+                          {colTeacher}
                         </div>
                       </th>
                       <th className="w-28 py-3 pr-4 text-center font-semibold text-emerald-400">
                         <div className="flex items-center justify-center gap-1.5">
                           <Users className="h-4 w-4" />
-                          Student
+                          {colStudent}
                         </div>
                       </th>
                     </tr>
@@ -293,13 +346,11 @@ export default function PermissionsPage() {
                         key={row.feature}
                         className={
                           i % 2 === 0
-                            ? "border-b border-zinc-800/60 bg-zinc-900"
-                            : "border-b border-zinc-800/60 bg-zinc-800/30"
+                            ? 'border-b border-zinc-800/60 bg-zinc-900'
+                            : 'border-b border-zinc-800/60 bg-zinc-800/30'
                         }
                       >
-                        <td className="py-3 pl-6 pr-4 text-zinc-300">
-                          {row.feature}
-                        </td>
+                        <td className="py-3 pl-6 pr-4 text-zinc-300">{row.feature}</td>
                         <td className="py-3 text-center">
                           <PermCheck allowed={row.admin} />
                         </td>
@@ -320,75 +371,54 @@ export default function PermissionsPage() {
 
         {/* ── Changing Roles ── */}
         <section>
-          <SectionHeading>Changing Roles</SectionHeading>
+          <SectionHeading>{sectionChanging}</SectionHeading>
           <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-3">
-
             <Card className="border border-zinc-800 bg-zinc-900">
               <CardHeader className="pb-2">
-                <CardTitle className="text-base text-white">
-                  Promote a Teacher to Admin
-                </CardTitle>
+                <CardTitle className="text-base text-white">{promoteTitle}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-zinc-400">
-                  Navigate through the following steps in the school portal:
-                </p>
-                <StepPath steps={["Users", "Select teacher", "Edit", "Role: Admin", "Save"]} />
-                <p className="text-xs text-zinc-500">
-                  The teacher will gain full admin access immediately upon saving.
-                </p>
+                <p className="text-sm text-zinc-400">{promoteNote}</p>
+                <StepPath steps={['Users', 'Select teacher', 'Edit', 'Role: Admin', 'Save']} />
+                <p className="text-xs text-zinc-500">{promoteInstant}</p>
               </CardContent>
             </Card>
 
             <Card className="border border-zinc-800 bg-zinc-900">
               <CardHeader className="pb-2">
-                <CardTitle className="text-base text-white">
-                  Demote an Admin to Teacher
-                </CardTitle>
+                <CardTitle className="text-base text-white">{demoteTitle}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-zinc-400">
-                  Navigate through the following steps in the school portal:
-                </p>
-                <StepPath steps={["Users", "Select admin", "Edit", "Role: Teacher", "Save"]} />
-                <p className="text-xs text-amber-500/80">
-                  Note: you cannot demote your own account. Another admin must do this.
-                </p>
+                <p className="text-sm text-zinc-400">{demoteNote}</p>
+                <StepPath steps={['Users', 'Select admin', 'Edit', 'Role: Teacher', 'Save']} />
+                <p className="text-xs text-amber-500/80">{demoteWarning}</p>
               </CardContent>
             </Card>
 
             <Card className="border border-zinc-800 bg-zinc-900">
               <CardHeader className="pb-2">
-                <CardTitle className="text-base text-white">
-                  Class Access for Teachers
-                </CardTitle>
+                <CardTitle className="text-base text-white">{classAccessTitle}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-zinc-400">
-                  Teachers automatically receive access to the classes they are assigned to. They cannot see students or data from other teachers&apos; classes.
-                </p>
-                <StepPath steps={["Classes", "Select class", "Assign Teacher"]} />
+                <p className="text-sm text-zinc-400">{classAccessDesc}</p>
+                <StepPath steps={['Classes', 'Select class', 'Assign Teacher']} />
               </CardContent>
             </Card>
-
           </div>
         </section>
 
         {/* ── Security Notes ── */}
         <section>
-          <SectionHeading>Security &amp; Data Notes</SectionHeading>
+          <SectionHeading>{sectionSecurity}</SectionHeading>
           <Card className="border border-zinc-800 bg-zinc-900">
             <CardContent className="divide-y divide-zinc-800 p-0">
-
               <div className="flex items-start gap-4 px-6 py-4">
                 <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-950">
                   <Shield className="h-4 w-4 text-emerald-400" />
                 </div>
                 <div>
-                  <p className="font-medium text-white">Student data isolation</p>
-                  <p className="mt-0.5 text-sm text-zinc-400">
-                    Students can only view their own work, scores, and progress. No student can see another student&apos;s data at any point.
-                  </p>
+                  <p className="font-medium text-white">{secDataIsolation}</p>
+                  <p className="mt-0.5 text-sm text-zinc-400">{secDataIsolationDesc}</p>
                 </div>
               </div>
 
@@ -397,10 +427,8 @@ export default function PermissionsPage() {
                   <BookOpen className="h-4 w-4 text-blue-400" />
                 </div>
                 <div>
-                  <p className="font-medium text-white">Teacher visibility scope</p>
-                  <p className="mt-0.5 text-sm text-zinc-400">
-                    Teachers only have access to the students in their assigned classes. They cannot view progress data, essays, or submissions belonging to students in other teachers&apos; classes.
-                  </p>
+                  <p className="font-medium text-white">{secTeacherScope}</p>
+                  <p className="mt-0.5 text-sm text-zinc-400">{secTeacherScopeDesc}</p>
                 </div>
               </div>
 
@@ -409,10 +437,8 @@ export default function PermissionsPage() {
                   <CheckCircle className="h-4 w-4 text-zinc-400" />
                 </div>
                 <div>
-                  <p className="font-medium text-white">Audit logging</p>
-                  <p className="mt-0.5 text-sm text-zinc-400">
-                    All administrative actions are recorded in an audit log — including user management, role changes, data exports, and login events. Logs are available to school admins on request.
-                  </p>
+                  <p className="font-medium text-white">{secAudit}</p>
+                  <p className="mt-0.5 text-sm text-zinc-400">{secAuditDesc}</p>
                 </div>
               </div>
 
@@ -421,17 +447,13 @@ export default function PermissionsPage() {
                   <Users className="h-4 w-4 text-zinc-400" />
                 </div>
                 <div>
-                  <p className="font-medium text-white">GDPR alignment</p>
-                  <p className="mt-0.5 text-sm text-zinc-400">
-                    Data access is strictly aligned with your school&apos;s data processing agreement. English Hub acts as a data processor on behalf of your school. Role-based access controls ensure staff only see data they are authorised to process under your school&apos;s data protection policies.
-                  </p>
+                  <p className="font-medium text-white">{secGdpr}</p>
+                  <p className="mt-0.5 text-sm text-zinc-400">{secGdprDesc}</p>
                 </div>
               </div>
-
             </CardContent>
           </Card>
         </section>
-
       </div>
     </div>
   )

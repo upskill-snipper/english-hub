@@ -29,6 +29,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
+import { useT } from '@/lib/i18n/use-t'
 
 // ---------------------------------------------------------------------------
 // Tool definitions
@@ -41,57 +42,6 @@ interface ToolDef {
   icon: React.ElementType
 }
 
-const tools: ToolDef[] = [
-  {
-    name: 'Seating Plan Generator',
-    description: 'Automatically create optimised seating arrangements for any classroom layout.',
-    href: '/school/tools/seating',
-    icon: Grid3x3,
-  },
-  {
-    name: 'Group Generator',
-    description: 'Build balanced student groups based on ability, behaviour, or random selection.',
-    href: '/school/tools/groups',
-    icon: Users,
-  },
-  {
-    name: 'Quiz Builder',
-    description: 'Design interactive quizzes with multiple question types and instant marking.',
-    href: '/school/tools/quiz-builder',
-    icon: PenTool,
-  },
-  {
-    name: 'Starter Activity Generator',
-    description: 'Generate engaging lesson starters tailored to your topic and year group.',
-    href: '/school/tools/starters',
-    icon: Sparkles,
-  },
-  {
-    name: 'Mark Scheme Reference',
-    description: 'Browse and search official mark schemes for quick assessment guidance.',
-    href: '/school/tools/mark-schemes',
-    icon: BookMarked,
-  },
-  {
-    name: 'Differentiation Builder',
-    description: 'Create scaffolded resources with support, core, and extension tasks.',
-    href: '/school/tools/differentiation',
-    icon: SplitSquareVertical,
-  },
-  {
-    name: 'Worksheet Generator',
-    description: 'Produce print-ready worksheets aligned to your scheme of work.',
-    href: '/school/worksheets',
-    icon: FileText,
-  },
-  {
-    name: 'Timer & Countdown',
-    description: 'A projector-friendly countdown timer with presets and alarm.',
-    href: null,
-    icon: Timer,
-  },
-]
-
 // ---------------------------------------------------------------------------
 // Preset durations (minutes)
 // ---------------------------------------------------------------------------
@@ -103,6 +53,7 @@ const PRESETS = [1, 2, 3, 5, 10, 15, 20] as const
 // ---------------------------------------------------------------------------
 
 function QuickTimer({ fullscreen = false }: { fullscreen?: boolean }) {
+  const tx = useT()
   const [totalSeconds, setTotalSeconds] = useState(300) // default 5 min
   const [remaining, setRemaining] = useState(300)
   const [running, setRunning] = useState(false)
@@ -181,7 +132,12 @@ function QuickTimer({ fullscreen = false }: { fullscreen?: boolean }) {
   const isFinished = remaining === 0
 
   return (
-    <div className={cn('flex flex-col items-center gap-6', fullscreen && 'justify-center min-h-[60vh]')}>
+    <div
+      className={cn(
+        'flex flex-col items-center gap-6',
+        fullscreen && 'justify-center min-h-[60vh]',
+      )}
+    >
       {/* Preset buttons */}
       <div className="flex flex-wrap justify-center gap-2">
         {PRESETS.map((m) => (
@@ -192,7 +148,7 @@ function QuickTimer({ fullscreen = false }: { fullscreen?: boolean }) {
             onClick={() => selectPreset(m)}
             disabled={running}
           >
-            {m} min
+            {m} {tx('school.b15.tools.min_suffix')}
           </Button>
         ))}
       </div>
@@ -206,14 +162,13 @@ function QuickTimer({ fullscreen = false }: { fullscreen?: boolean }) {
             : running
               ? 'border-primary text-primary'
               : 'border-muted-foreground/30 text-foreground',
-          fullscreen ? 'w-72 h-72 text-7xl font-mono font-bold' : 'w-48 h-48 text-5xl font-mono font-bold',
+          fullscreen
+            ? 'w-72 h-72 text-7xl font-mono font-bold'
+            : 'w-48 h-48 text-5xl font-mono font-bold',
         )}
       >
         {/* SVG progress ring */}
-        <svg
-          className="absolute inset-0 -rotate-90"
-          viewBox="0 0 100 100"
-        >
+        <svg className="absolute inset-0 -rotate-90" viewBox="0 0 100 100">
           <circle
             cx="50"
             cy="50"
@@ -235,11 +190,11 @@ function QuickTimer({ fullscreen = false }: { fullscreen?: boolean }) {
       <div className="flex items-center gap-3">
         <Button onClick={toggleRunning} size="lg" disabled={remaining === 0 && !running}>
           {running ? <Pause className="mr-2 h-4 w-4" /> : <Play className="mr-2 h-4 w-4" />}
-          {running ? 'Pause' : 'Start'}
+          {running ? tx('school.b15.tools.btn_pause') : tx('school.b15.tools.btn_start')}
         </Button>
         <Button onClick={reset} variant="outline" size="lg">
           <RotateCcw className="mr-2 h-4 w-4" />
-          Reset
+          {tx('school.b15.tools.btn_reset')}
         </Button>
         <Button
           onClick={() => setSoundEnabled((s) => !s)}
@@ -259,19 +214,20 @@ function QuickTimer({ fullscreen = false }: { fullscreen?: boolean }) {
 // ---------------------------------------------------------------------------
 
 function FullscreenTimerDialog() {
+  const tx = useT()
   return (
     <Dialog>
       <DialogTrigger
         render={
           <Button variant="outline" size="sm">
             <Maximize className="mr-2 h-4 w-4" />
-            Full Screen
+            {tx('school.b15.tools.btn_full_screen')}
           </Button>
         }
       />
       <DialogContent className="sm:max-w-3xl w-full h-[90vh] flex flex-col">
         <DialogHeader>
-          <DialogTitle>Countdown Timer</DialogTitle>
+          <DialogTitle>{tx('school.b15.tools.dialog_title')}</DialogTitle>
         </DialogHeader>
         <div className="flex-1 flex items-center justify-center">
           <QuickTimer fullscreen />
@@ -286,14 +242,65 @@ function FullscreenTimerDialog() {
 // ---------------------------------------------------------------------------
 
 export default function ToolsPage() {
+  const tx = useT()
+
+  const tools: ToolDef[] = [
+    {
+      name: tx('school.b15.tools.tool_seating_name'),
+      description: tx('school.b15.tools.tool_seating_desc'),
+      href: '/school/tools/seating',
+      icon: Grid3x3,
+    },
+    {
+      name: tx('school.b15.tools.tool_groups_name'),
+      description: tx('school.b15.tools.tool_groups_desc'),
+      href: '/school/tools/groups',
+      icon: Users,
+    },
+    {
+      name: tx('school.b15.tools.tool_quiz_name'),
+      description: tx('school.b15.tools.tool_quiz_desc'),
+      href: '/school/tools/quiz-builder',
+      icon: PenTool,
+    },
+    {
+      name: tx('school.b15.tools.tool_starters_name'),
+      description: tx('school.b15.tools.tool_starters_desc'),
+      href: '/school/tools/starters',
+      icon: Sparkles,
+    },
+    {
+      name: tx('school.b15.tools.tool_mark_scheme_name'),
+      description: tx('school.b15.tools.tool_mark_scheme_desc'),
+      href: '/school/tools/mark-schemes',
+      icon: BookMarked,
+    },
+    {
+      name: tx('school.b15.tools.tool_diff_name'),
+      description: tx('school.b15.tools.tool_diff_desc'),
+      href: '/school/tools/differentiation',
+      icon: SplitSquareVertical,
+    },
+    {
+      name: tx('school.b15.tools.tool_worksheet_name'),
+      description: tx('school.b15.tools.tool_worksheet_desc'),
+      href: '/school/worksheets',
+      icon: FileText,
+    },
+    {
+      name: tx('school.b15.tools.tool_timer_name'),
+      description: tx('school.b15.tools.tool_timer_desc'),
+      href: null,
+      icon: Timer,
+    },
+  ]
+
   return (
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Teacher Tools</h1>
-        <p className="text-muted-foreground mt-1">
-          Everything you need to plan, teach, and assess
-        </p>
+        <h1 className="text-3xl font-bold tracking-tight">{tx('school.b15.tools.title')}</h1>
+        <p className="text-muted-foreground mt-1">{tx('school.b15.tools.subtitle')}</p>
       </div>
 
       {/* Tool Cards Grid */}
@@ -317,7 +324,7 @@ export default function ToolsPage() {
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0 text-center text-sm text-muted-foreground">
-                  <p className="mb-2 italic">Use the Quick Timer below</p>
+                  <p className="mb-2 italic">{tx('school.b15.tools.timer_inline')}</p>
                 </CardContent>
               </Card>
             )
@@ -338,8 +345,12 @@ export default function ToolsPage() {
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <Button variant="ghost" size="sm" className="gap-1 px-0 text-primary group-hover:underline">
-                    Open
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="gap-1 px-0 text-primary group-hover:underline"
+                  >
+                    {tx('school.b15.tools.open')}
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                   </Button>
                 </CardContent>
@@ -358,8 +369,8 @@ export default function ToolsPage() {
                 <Timer className="h-5 w-5" />
               </div>
               <div>
-                <CardTitle>Quick Timer</CardTitle>
-                <CardDescription>Projector-friendly countdown with alarm</CardDescription>
+                <CardTitle>{tx('school.b15.tools.quick_timer_title')}</CardTitle>
+                <CardDescription>{tx('school.b15.tools.quick_timer_desc')}</CardDescription>
               </div>
             </div>
             <FullscreenTimerDialog />

@@ -32,6 +32,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { useT } from '@/lib/i18n/use-t'
 
 // -- Types ---------------------------------------------------------------------
 
@@ -47,16 +48,6 @@ interface AccordionSection {
   badge?: string
   content: React.ReactNode
 }
-
-// -- Data ----------------------------------------------------------------------
-
-const QUICK_STEPS: QuickStep[] = [
-  { id: 1, label: 'Create school account' },
-  { id: 2, label: 'Import teachers' },
-  { id: 3, label: 'Import students' },
-  { id: 4, label: 'Create classes and assign students' },
-  { id: 5, label: 'Share login details with staff and students' },
-]
 
 // -- Sub-components ------------------------------------------------------------
 
@@ -623,49 +614,60 @@ function FaqContent() {
 
 // -- Accordion sections config -------------------------------------------------
 
-function buildSections(): AccordionSection[] {
+interface BuildSectionsTitles {
+  roles: string
+  badgeStartHere: string
+  importTeachers: string
+  importStudents: string
+  classes: string
+  logins: string
+  management: string
+  faq: string
+}
+
+function buildSections(titles: BuildSectionsTitles): AccordionSection[] {
   return [
     {
       id: 'roles',
       icon: <Shield className="h-4 w-4" />,
-      title: 'Understanding User Roles & Permissions',
-      badge: 'Start here',
+      title: titles.roles,
+      badge: titles.badgeStartHere,
       content: <RolesContent />,
     },
     {
       id: 'import-teachers',
       icon: <UserCheck className="h-4 w-4" />,
-      title: 'Importing Teachers',
+      title: titles.importTeachers,
       content: <ImportTeachersContent />,
     },
     {
       id: 'import-students',
       icon: <GraduationCap className="h-4 w-4" />,
-      title: 'Importing Students',
+      title: titles.importStudents,
       content: <ImportStudentsContent />,
     },
     {
       id: 'classes',
       icon: <Layers className="h-4 w-4" />,
-      title: 'Creating Classes',
+      title: titles.classes,
       content: <CreatingClassesContent />,
     },
     {
       id: 'logins',
       icon: <KeyRound className="h-4 w-4" />,
-      title: 'Distributing Login Details',
+      title: titles.logins,
       content: <DistributingLoginsContent />,
     },
     {
       id: 'management',
       icon: <BarChart3 className="h-4 w-4" />,
-      title: 'Ongoing Management',
+      title: titles.management,
       content: <OngoingManagementContent />,
     },
     {
       id: 'faq',
       icon: <HelpCircle className="h-4 w-4" />,
-      title: 'Frequently Asked Questions',
+      title: titles.faq,
       content: <FaqContent />,
     },
   ]
@@ -674,7 +676,16 @@ function buildSections(): AccordionSection[] {
 // -- Page ----------------------------------------------------------------------
 
 export default function SchoolSetupGuidePage() {
+  const tx = useT()
   const [checked, setChecked] = useState<Set<number>>(new Set())
+
+  const QUICK_STEPS: QuickStep[] = [
+    { id: 1, label: tx('school.b15.guide.step1') },
+    { id: 2, label: tx('school.b15.guide.step2') },
+    { id: 3, label: tx('school.b15.guide.step3') },
+    { id: 4, label: tx('school.b15.guide.step4') },
+    { id: 5, label: tx('school.b15.guide.step5') },
+  ]
 
   function toggleStep(id: number) {
     setChecked((prev) => {
@@ -688,7 +699,16 @@ export default function SchoolSetupGuidePage() {
     })
   }
 
-  const sections = buildSections()
+  const sections = buildSections({
+    roles: tx('school.b15.guide.section_roles'),
+    badgeStartHere: tx('school.b15.guide.badge_start_here'),
+    importTeachers: tx('school.b15.guide.section_import_teachers'),
+    importStudents: tx('school.b15.guide.section_import_students'),
+    classes: tx('school.b15.guide.section_classes'),
+    logins: tx('school.b15.guide.section_logins'),
+    management: tx('school.b15.guide.section_management'),
+    faq: tx('school.b15.guide.section_faq'),
+  })
   const completedCount = checked.size
 
   return (
@@ -700,20 +720,20 @@ export default function SchoolSetupGuidePage() {
             <BookOpen className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">School Setup Guide</h1>
+            <h1 className="text-2xl font-bold tracking-tight">{tx('school.b15.guide.title')}</h1>
             <p className="text-sm text-muted-foreground mt-0.5">
-              Everything you need to get your school up and running in under 30 minutes
+              {tx('school.b15.guide.subtitle')}
             </p>
           </div>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <Button variant="outline" size="sm" className="gap-1.5" disabled>
             <Download className="h-4 w-4" />
-            Download as PDF
+            {tx('school.b15.guide.btn_pdf')}
           </Button>
           <Button size="sm" className="gap-1.5" render={<a href="mailto:info@Upskillenergy.com" />}>
             <Mail className="h-4 w-4" />
-            Contact Support
+            {tx('school.b15.guide.btn_support')}
           </Button>
         </div>
       </div>
@@ -725,16 +745,16 @@ export default function SchoolSetupGuidePage() {
         <CardHeader className="pb-3">
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <div>
-              <CardTitle className="text-base">Quick Start Checklist</CardTitle>
+              <CardTitle className="text-base">{tx('school.b15.guide.checklist_title')}</CardTitle>
               <CardDescription className="text-sm mt-0.5">
-                Tick off each step as you complete it
+                {tx('school.b15.guide.checklist_desc')}
               </CardDescription>
             </div>
             <Badge
               variant={completedCount === QUICK_STEPS.length ? 'default' : 'secondary'}
               className="text-xs"
             >
-              {completedCount} / {QUICK_STEPS.length} complete
+              {completedCount} / {QUICK_STEPS.length} {tx('school.b15.guide.complete_suffix')}
             </Badge>
           </div>
 
@@ -760,7 +780,7 @@ export default function SchoolSetupGuidePage() {
           {completedCount === QUICK_STEPS.length && (
             <div className="mt-2 flex items-center gap-2 rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-400">
               <CheckCircle2 className="h-4 w-4 shrink-0" />
-              <span className="font-medium">All done! Your school is ready to go.</span>
+              <span className="font-medium">{tx('school.b15.guide.all_done')}</span>
             </div>
           )}
         </CardContent>
@@ -768,7 +788,7 @@ export default function SchoolSetupGuidePage() {
 
       {/* -- Detailed sections ---------------------------------------------- */}
       <div>
-        <h2 className="text-lg font-semibold mb-4">Detailed Setup Guide</h2>
+        <h2 className="text-lg font-semibold mb-4">{tx('school.b15.guide.detailed_title')}</h2>
         <div className="space-y-2.5">
           {sections.map((section) => (
             <AccordionItem key={section.id} section={section} />
@@ -784,16 +804,16 @@ export default function SchoolSetupGuidePage() {
               <Mail className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <p className="text-sm font-semibold">Need help getting set up?</p>
+              <p className="text-sm font-semibold">{tx('school.b15.guide.footer_help')}</p>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Our school support team typically responds within one working day.
+                {tx('school.b15.guide.footer_response')}
               </p>
             </div>
           </div>
           <div className="flex items-center gap-2 shrink-0 flex-wrap">
             <Button variant="outline" size="sm" disabled className="gap-1.5">
               <Download className="h-4 w-4" />
-              Download PDF guide
+              {tx('school.b15.guide.btn_pdf_guide')}
             </Button>
             <Button
               size="sm"

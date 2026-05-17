@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
 import GradeProgressCard from '@/components/GradeProgressCard'
 import GradeRecommendations from '@/components/GradeRecommendations'
@@ -330,15 +331,16 @@ const statCards: {
 ]
 
 export default function StudentProgressPage() {
+  const t = useT()
   const avgScore = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Demo Banner */}
       <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-2 text-center text-sm font-medium text-white">
-        <span className="mr-2">Student Demo</span>
+        <span className="mr-2">{t('demo.b15.student_prog.banner')}</span>
         <span className="text-white/80">
-          Viewing as: {STUDENT.name} ({STUDENT.yearGroup})
+          {t('demo.b15.student_prog.viewing_as')} {STUDENT.name} ({STUDENT.yearGroup})
         </span>
       </div>
 
@@ -349,13 +351,15 @@ export default function StudentProgressPage() {
           className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
-          Back to dashboard
+          {t('demo.b15.student_prog.back')}
         </Link>
 
         {/* Header */}
         <div className="mb-8 flex items-start justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">My Progress</h1>
+            <h1 className="text-3xl font-bold tracking-tight">
+              {t('demo.b15.student_prog.title')}
+            </h1>
             <p className="mt-1 text-muted-foreground">
               {STUDENT.name} -- {STUDENT.yearGroup}
             </p>
@@ -373,7 +377,7 @@ export default function StudentProgressPage() {
                 <div className="flex flex-col items-center">
                   <RadialScore value={OVERALL_PERCENT} size={250} />
                   <span className="mt-1 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                    Overall Progress
+                    {t('demo.b15.student_prog.overall_progress')}
                   </span>
                 </div>
                 {/* Streak badge overlay */}
@@ -392,7 +396,7 @@ export default function StudentProgressPage() {
                     className={`rounded-xl bg-primary/10 border border-primary/20 px-4 py-3 text-center`}
                   >
                     <p className="text-[10px] uppercase tracking-wider text-primary/60 mb-0.5">
-                      Working At
+                      {t('demo.b15.student_prog.working_at')}
                     </p>
                     <p
                       className={`text-3xl font-bold ${gcseGradeColor(percentageToGCSEGrade(STUDENT.averageScore))}`}
@@ -403,7 +407,7 @@ export default function StudentProgressPage() {
                   <ArrowUpRight className="h-5 w-5 text-muted-foreground" />
                   <div className="rounded-xl bg-amber-500/10 border border-amber-500/20 px-4 py-3 text-center">
                     <p className="text-[10px] uppercase tracking-wider text-amber-700/70 dark:text-amber-300/70 mb-0.5">
-                      Predicted
+                      {t('demo.b15.student_prog.predicted')}
                     </p>
                     <p className="text-3xl font-bold text-amber-700 dark:text-amber-300">
                       Grade {STUDENT.predictedGrade}
@@ -412,7 +416,7 @@ export default function StudentProgressPage() {
                   <ArrowUpRight className="h-5 w-5 text-muted-foreground" />
                   <div className="rounded-xl bg-primary/10 border border-primary/20 px-4 py-3 text-center">
                     <p className="text-[10px] uppercase tracking-wider text-primary/60 mb-0.5">
-                      Target
+                      {t('demo.b15.student_prog.target')}
                     </p>
                     <p className="text-3xl font-bold text-primary">Grade {STUDENT.targetGrade}</p>
                   </div>
@@ -435,7 +439,7 @@ export default function StudentProgressPage() {
         {/* SECTION 2: Key Stats Grid (2x3)                                  */}
         {/* ================================================================ */}
         <section className="mb-8">
-          <h2 className="mb-4 text-lg font-semibold">Key Stats</h2>
+          <h2 className="mb-4 text-lg font-semibold">{t('demo.b15.student_prog.key_stats')}</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {statCards.map((s) => (
               <GlassPanel key={s.label} accent={s.accent} className="p-4">
@@ -521,9 +525,11 @@ export default function StudentProgressPage() {
                 <Target className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold">Next Grade Recommendations</h2>
+                <h2 className="text-lg font-semibold">
+                  {t('demo.b15.student_prog.next_grade_recs')}
+                </h2>
                 <p className="text-xs text-muted-foreground">
-                  Personalised advice to reach Grade {STUDENT.targetGrade}
+                  {t('demo.b15.student_prog.personalised_advice')} Grade {STUDENT.targetGrade}
                 </p>
               </div>
             </div>
@@ -569,7 +575,9 @@ export default function StudentProgressPage() {
         {/* SECTION 4: Module Mastery Grid                                    */}
         {/* ================================================================ */}
         <section className="mb-8">
-          <h2 className="mb-4 text-lg font-semibold">Module Mastery</h2>
+          <h2 className="mb-4 text-lg font-semibold">
+            {t('demo.b15.student_prog.module_mastery')}
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {modules.map((mod) => (
               <GlassPanel key={mod.name} accent={moduleAccent(mod.color)} className="p-5">
@@ -620,7 +628,9 @@ export default function StudentProgressPage() {
         {/* SECTION 5: Achievement Badges (horizontal scroll)                */}
         {/* ================================================================ */}
         <section className="mb-8">
-          <h2 className="mb-4 text-lg font-semibold">Achievement Badges</h2>
+          <h2 className="mb-4 text-lg font-semibold">
+            {t('demo.b15.student_prog.achievement_badges')}
+          </h2>
           <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x">
             {badges.map((b) => {
               const Icon = b.icon
@@ -657,7 +667,7 @@ export default function StudentProgressPage() {
                   )}
                   {b.earned && (
                     <span className="text-[10px] text-clay-600 dark:text-clay-300 font-medium">
-                      Earned
+                      {t('demo.b15.student_prog.earned')}
                     </span>
                   )}
                 </div>
@@ -670,7 +680,7 @@ export default function StudentProgressPage() {
         {/* SECTION 6: Mock Exam Results (side-by-side)                      */}
         {/* ================================================================ */}
         <section className="mb-8">
-          <h2 className="mb-4 text-lg font-semibold">Mock Exam Results</h2>
+          <h2 className="mb-4 text-lg font-semibold">{t('demo.b15.student_prog.mock_results')}</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {mockResults.map((m) => {
               const trendColor =
@@ -726,7 +736,9 @@ export default function StudentProgressPage() {
         {/* Essay Results                                                     */}
         {/* ================================================================ */}
         <section className="mb-8">
-          <h2 className="mb-4 text-lg font-semibold">Essay Submissions</h2>
+          <h2 className="mb-4 text-lg font-semibold">
+            {t('demo.b15.student_prog.essay_submissions')}
+          </h2>
           <div className="rounded-2xl border border-border/60 bg-card divide-y divide-border/60">
             {essayResults.map((e, i) => {
               const gradeNum = parseInt(e.grade)
@@ -761,7 +773,9 @@ export default function StudentProgressPage() {
         {/* Recent Activity                                                   */}
         {/* ================================================================ */}
         <section className="mb-8">
-          <h2 className="mb-4 text-lg font-semibold">Recent Activity</h2>
+          <h2 className="mb-4 text-lg font-semibold">
+            {t('demo.b15.student_prog.recent_activity')}
+          </h2>
           <div className="rounded-2xl border border-border/60 bg-card divide-y divide-border/60">
             {recentActivity.map((a, i) => {
               const Icon = a.icon
@@ -788,23 +802,25 @@ export default function StudentProgressPage() {
         {/* ================================================================ */}
         <div className="rounded-2xl border border-clay-500/30 bg-gradient-to-r from-clay-500/10 via-indigo-500/10 to-clay-400/10 p-8 text-center">
           <Trophy className="mx-auto h-10 w-10 text-clay-600 dark:text-clay-300 mb-3" />
-          <p className="text-xl font-semibold mb-1">Keep it up, {STUDENT.name.split(' ')[0]}!</p>
+          <p className="text-xl font-semibold mb-1">
+            {t('demo.b15.student_prog.cta_heading')} {STUDENT.name.split(' ')[0]}!
+          </p>
           <p className="text-sm text-muted-foreground mb-5">
-            You are {100 - OVERALL_PERCENT}% away from completing all your modules. Keep the streak
-            going!
+            {t('demo.b15.student_prog.cta_body_pre')} {100 - OVERALL_PERCENT}%{' '}
+            {t('demo.b15.student_prog.cta_body_post')}
           </p>
           <Link
             href="/demo/student"
             className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-3 text-sm font-medium text-white hover:from-clay-500 hover:to-indigo-500 transition-all shadow-lg shadow-clay-500/20"
           >
-            Continue Learning
+            {t('demo.b15.student_prog.continue_btn')}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
 
         {/* Footer */}
         <p className="mt-8 text-center text-xs text-muted-foreground">
-          Demo data only. Not a real student account.
+          {t('demo.b15.student_prog.footer')}
         </p>
       </div>
     </div>

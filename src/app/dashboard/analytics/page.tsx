@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 import {
   ArrowLeft,
   ArrowRight,
@@ -136,6 +137,7 @@ function RecIcon({ type }: { type: 'weak_area' | 'next_module' | 'revision' }) {
 // ── Main Component ───────────────────────────────────────────────────────────
 
 export default function AnalyticsPage() {
+  const t = useT()
   const { user, profile, isLoading } = useAuthStore()
   const analytics = useAnalytics()
 
@@ -179,27 +181,29 @@ export default function AnalyticsPage() {
     <TooltipProvider>
       <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-
           {/* ── Header ──────────────────────────────────────────────── */}
           <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between animate-fade-in">
             <div className="flex items-center gap-3">
               <Button variant="ghost" size="sm" render={<Link href="/dashboard" />}>
                 <ArrowLeft className="h-4 w-4" />
-                Dashboard
+                {t('dashboard.analytics.back')}
               </Button>
               <Separator orientation="vertical" className="h-6" />
               <div>
                 <h1 className="text-2xl font-bold tracking-tight text-foreground">
-                  Progress Analytics
+                  {t('dashboard.analytics.title')}
                 </h1>
-                <p className="text-sm text-muted-foreground">
-                  Track your learning journey and exam preparation
-                </p>
+                <p className="text-sm text-muted-foreground">{t('dashboard.analytics.subtitle')}</p>
               </div>
             </div>
-            <Button variant="outline" size="sm" className="self-start sm:self-auto" render={<Link href="/dashboard/analytics/class" />}>
+            <Button
+              variant="outline"
+              size="sm"
+              className="self-start sm:self-auto"
+              render={<Link href="/dashboard/analytics/class" />}
+            >
               <Users className="h-4 w-4" />
-              Class View
+              {t('dashboard.analytics.class_view')}
             </Button>
           </div>
 
@@ -233,20 +237,21 @@ export default function AnalyticsPage() {
                           </div>
                           <div className="min-w-0">
                             <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                              Study Time
+                              {t('dashboard.analytics.stat_study_time')}
                             </p>
                             <p className="text-xl font-bold tabular-nums text-foreground">
                               {formatStudyTime(weekStudyTimeSeconds)}
                             </p>
                             <p className="text-[11px] text-muted-foreground">
-                              this week ({formatStudyTime(totalStudyTimeSeconds)} total)
+                              {t('dashboard.analytics.stat_study_this_week')} (
+                              {formatStudyTime(totalStudyTimeSeconds)} total)
                             </p>
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   </TooltipTrigger>
-                  <TooltipContent>Total time spent studying across modules, practice and assessments</TooltipContent>
+                  <TooltipContent>{t('dashboard.analytics.tooltip_study_time')}</TooltipContent>
                 </Tooltip>
 
                 {/* Modules Completed */}
@@ -260,7 +265,7 @@ export default function AnalyticsPage() {
                           </div>
                           <div className="min-w-0">
                             <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                              Modules
+                              {t('dashboard.analytics.stat_modules')}
                             </p>
                             <p className="text-xl font-bold tabular-nums text-foreground">
                               {modulesCompleted}
@@ -268,13 +273,15 @@ export default function AnalyticsPage() {
                                 /{totalModules}
                               </span>
                             </p>
-                            <p className="text-[11px] text-muted-foreground">completed</p>
+                            <p className="text-[11px] text-muted-foreground">
+                              {t('dashboard.analytics.stat_completed')}
+                            </p>
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   </TooltipTrigger>
-                  <TooltipContent>Modules completed out of total enrolled</TooltipContent>
+                  <TooltipContent>{t('dashboard.analytics.tooltip_modules')}</TooltipContent>
                 </Tooltip>
 
                 {/* Average Score */}
@@ -288,18 +295,22 @@ export default function AnalyticsPage() {
                           </div>
                           <div className="min-w-0">
                             <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                              Working At Grade
+                              {t('dashboard.analytics.stat_working_at_grade')}
                             </p>
-                            <p className={`text-xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(averagePracticeScore))}`}>
+                            <p
+                              className={`text-xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(averagePracticeScore))}`}
+                            >
                               Grade {percentageToGCSEGrade(averagePracticeScore)}
                             </p>
-                            <p className="text-[11px] text-muted-foreground">based on avg score ({averagePracticeScore}%)</p>
+                            <p className="text-[11px] text-muted-foreground">
+                              {t('dashboard.analytics.stat_avg_score')} ({averagePracticeScore}%)
+                            </p>
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   </TooltipTrigger>
-                  <TooltipContent>Average score from quizzes, assessments, and practice ratings</TooltipContent>
+                  <TooltipContent>{t('dashboard.analytics.tooltip_avg_score')}</TooltipContent>
                 </Tooltip>
 
                 {/* Streak */}
@@ -313,20 +324,23 @@ export default function AnalyticsPage() {
                           </div>
                           <div className="min-w-0">
                             <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                              Streak
+                              {t('dashboard.analytics.stat_streak')}
                             </p>
                             <p className="text-xl font-bold tabular-nums text-foreground">
                               {currentStreak}
                             </p>
                             <p className="text-[11px] text-muted-foreground">
-                              {currentStreak === 1 ? 'day' : 'days'} in a row
+                              {currentStreak === 1
+                                ? t('dashboard.analytics.stat_streak_day')
+                                : t('dashboard.analytics.stat_streak_days')}{' '}
+                              {t('dashboard.analytics.stat_streak_in_a_row')}
                             </p>
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   </TooltipTrigger>
-                  <TooltipContent>Consecutive days with at least one study activity</TooltipContent>
+                  <TooltipContent>{t('dashboard.analytics.tooltip_streak')}</TooltipContent>
                 </Tooltip>
 
                 {/* Exam Readiness */}
@@ -340,20 +354,20 @@ export default function AnalyticsPage() {
                           </div>
                           <div className="min-w-0">
                             <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                              Exam Ready
+                              {t('dashboard.analytics.stat_exam_ready')}
                             </p>
                             <p className="text-xl font-bold tabular-nums text-foreground">
                               {examReadiness}%
                             </p>
-                            <p className="text-[11px] text-muted-foreground">readiness score</p>
+                            <p className="text-[11px] text-muted-foreground">
+                              {t('dashboard.analytics.stat_readiness_score')}
+                            </p>
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   </TooltipTrigger>
-                  <TooltipContent>
-                    Calculated from course completion (40%), practice scores (30%), and skill coverage (30%)
-                  </TooltipContent>
+                  <TooltipContent>{t('dashboard.analytics.tooltip_exam_ready')}</TooltipContent>
                 </Tooltip>
               </>
             )}
@@ -366,11 +380,11 @@ export default function AnalyticsPage() {
             {/* Course Progress */}
             <Card className="lg:col-span-2">
               <CardHeader>
-                <CardTitle>Course Progress</CardTitle>
+                <CardTitle>{t('dashboard.analytics.course_progress_title')}</CardTitle>
                 <CardDescription>
                   {courseProgress.length > 0
-                    ? `${courseProgress.length} enrolled course${courseProgress.length === 1 ? '' : 's'}`
-                    : 'Enrol in courses to track progress'}
+                    ? `${courseProgress.length} ${courseProgress.length === 1 ? t('dashboard.analytics.enrolled_courses') : t('dashboard.analytics.enrolled_courses_plural')}`
+                    : t('dashboard.analytics.no_courses')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -387,14 +401,15 @@ export default function AnalyticsPage() {
                 ) : courseProgress.length === 0 ? (
                   <div className="py-8 text-center text-muted-foreground">
                     <BookOpen className="mx-auto mb-2 h-8 w-8 opacity-50" />
-                    <p className="text-sm">No enrolled courses yet.</p>
+                    <p className="text-sm">{t('dashboard.analytics.no_courses_empty')}</p>
                     <Button
                       variant="link"
                       size="sm"
                       className="mt-2"
                       render={<Link href="/courses" />}
                     >
-                      Browse Courses <ArrowRight className="h-3.5 w-3.5" />
+                      {t('dashboard.analytics.browse_courses')}{' '}
+                      <ArrowRight className="h-3.5 w-3.5" />
                     </Button>
                   </div>
                 ) : (
@@ -420,7 +435,8 @@ export default function AnalyticsPage() {
                           />
                           {cp.lastActivity && (
                             <p className="mt-0.5 text-[11px] text-muted-foreground">
-                              Last activity: {formatRelativeDate(cp.lastActivity)}
+                              {t('dashboard.analytics.last_activity')}{' '}
+                              {formatRelativeDate(cp.lastActivity)}
                             </p>
                           )}
                         </div>
@@ -434,8 +450,8 @@ export default function AnalyticsPage() {
             {/* Exam Readiness Gauge */}
             <Card>
               <CardHeader>
-                <CardTitle>Exam Readiness</CardTitle>
-                <CardDescription>Overall preparation level</CardDescription>
+                <CardTitle>{t('dashboard.analytics.exam_readiness_title')}</CardTitle>
+                <CardDescription>{t('dashboard.analytics.exam_readiness_desc')}</CardDescription>
               </CardHeader>
               <CardContent>
                 {loading ? (
@@ -447,10 +463,10 @@ export default function AnalyticsPage() {
                   <div className="flex flex-col items-center py-2">
                     <ExamReadinessGauge percentage={examReadiness} />
                     <p className="mt-4 text-center text-xs text-muted-foreground leading-relaxed">
-                      Based on course completion, practice scores, and skill coverage.
+                      {t('dashboard.analytics.exam_readiness_note')}
                       {examReadiness < 50 && (
                         <span className="mt-1 block">
-                          Keep studying and practising to improve your readiness score.
+                          {t('dashboard.analytics.exam_readiness_low')}
                         </span>
                       )}
                     </p>
@@ -465,8 +481,8 @@ export default function AnalyticsPage() {
             {/* Performance by Skill Area */}
             <Card>
               <CardHeader>
-                <CardTitle>Performance by Skill Area</CardTitle>
-                <CardDescription>Based on practice questions and assessments</CardDescription>
+                <CardTitle>{t('dashboard.analytics.skills_title')}</CardTitle>
+                <CardDescription>{t('dashboard.analytics.skills_desc')}</CardDescription>
               </CardHeader>
               <CardContent>
                 {loading ? (
@@ -488,8 +504,8 @@ export default function AnalyticsPage() {
             {/* Weekly Activity Chart */}
             <Card>
               <CardHeader>
-                <CardTitle>Weekly Activity</CardTitle>
-                <CardDescription>Study time and questions answered (last 7 days)</CardDescription>
+                <CardTitle>{t('dashboard.analytics.weekly_activity_title')}</CardTitle>
+                <CardDescription>{t('dashboard.analytics.weekly_activity_desc')}</CardDescription>
               </CardHeader>
               <CardContent>
                 {loading ? (
@@ -518,9 +534,9 @@ export default function AnalyticsPage() {
               <CardHeader>
                 <CardTitle>
                   <Lightbulb className="mr-1.5 inline-block h-4 w-4 text-clay-600" />
-                  Recommendations
+                  {t('dashboard.analytics.recommendations_title')}
                 </CardTitle>
-                <CardDescription>Areas to focus on for improvement</CardDescription>
+                <CardDescription>{t('dashboard.analytics.recommendations_desc')}</CardDescription>
               </CardHeader>
               <CardContent>
                 {loading ? (
@@ -538,9 +554,7 @@ export default function AnalyticsPage() {
                 ) : recommendations.length === 0 ? (
                   <div className="py-8 text-center text-muted-foreground">
                     <Lightbulb className="mx-auto mb-2 h-8 w-8 opacity-50" />
-                    <p className="text-sm">
-                      Complete more activities to receive personalised recommendations.
-                    </p>
+                    <p className="text-sm">{t('dashboard.analytics.recommendations_empty')}</p>
                   </div>
                 ) : (
                   <ScrollArea className="max-h-[320px]">
@@ -552,9 +566,7 @@ export default function AnalyticsPage() {
                               <RecIcon type={rec.type} />
                             </div>
                             <div className="min-w-0 flex-1">
-                              <p className="text-sm font-medium text-foreground">
-                                {rec.title}
-                              </p>
+                              <p className="text-sm font-medium text-foreground">{rec.title}</p>
                               <p className="text-xs text-muted-foreground">{rec.description}</p>
                               {rec.href && (
                                 <Button
@@ -563,7 +575,8 @@ export default function AnalyticsPage() {
                                   className="mt-0.5 h-auto p-0"
                                   render={<Link href={rec.href} />}
                                 >
-                                  Go <ArrowRight className="h-3 w-3" />
+                                  {t('dashboard.analytics.rec_go')}{' '}
+                                  <ArrowRight className="h-3 w-3" />
                                 </Button>
                               )}
                             </div>
@@ -582,9 +595,9 @@ export default function AnalyticsPage() {
               <CardHeader>
                 <CardTitle>
                   <Activity className="mr-1.5 inline-block h-4 w-4 text-blue-400" />
-                  Recent Activity
+                  {t('dashboard.analytics.recent_activity_title')}
                 </CardTitle>
-                <CardDescription>Your latest learning activities</CardDescription>
+                <CardDescription>{t('dashboard.analytics.recent_activity_desc')}</CardDescription>
               </CardHeader>
               <CardContent>
                 {loading ? (
@@ -602,9 +615,7 @@ export default function AnalyticsPage() {
                 ) : recentActivity.length === 0 ? (
                   <div className="py-8 text-center text-muted-foreground">
                     <Clock className="mx-auto mb-2 h-8 w-8 opacity-50" />
-                    <p className="text-sm">
-                      No activity yet. Start a course or try a practice question.
-                    </p>
+                    <p className="text-sm">{t('dashboard.analytics.recent_activity_empty')}</p>
                   </div>
                 ) : (
                   <ScrollArea className="max-h-[320px]">
@@ -639,7 +650,6 @@ export default function AnalyticsPage() {
               </CardContent>
             </Card>
           </div>
-
         </div>
       </div>
     </TooltipProvider>

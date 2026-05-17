@@ -1,9 +1,14 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, formatPercentageWithGrade } from "@/lib/grades";
-import { LearningTip } from "@/components/ui/learning-tip";
+import { useState } from 'react'
+import Link from 'next/link'
+import {
+  percentageToGCSEGrade,
+  percentageToGCSEGradeLabel,
+  formatPercentageWithGrade,
+} from '@/lib/grades'
+import { LearningTip } from '@/components/ui/learning-tip'
+import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
    Uses mock data until these API routes are implemented:
@@ -12,76 +17,117 @@ import { LearningTip } from "@/components/ui/learning-tip";
    ───────────────────────────────────────────────────────────────────── */
 
 interface ProgressEntry {
-  date: string;
-  score: number;
-  essayTitle: string;
-  subject: string;
+  date: string
+  score: number
+  essayTitle: string
+  subject: string
 }
 
 interface StudentProgress {
-  id: string;
-  name: string;
-  school: string;
-  yearGroup: number;
-  examBoard: string;
-  projectedGrade: string;
-  targetGrade: string;
-  averageScore: number;
-  totalEssays: number;
-  weeklyActivity: number[];
-  recentWork: ProgressEntry[];
-  strengths: string[];
-  areasToImprove: string[];
+  id: string
+  name: string
+  school: string
+  yearGroup: number
+  examBoard: string
+  projectedGrade: string
+  targetGrade: string
+  averageScore: number
+  totalEssays: number
+  weeklyActivity: number[]
+  recentWork: ProgressEntry[]
+  strengths: string[]
+  areasToImprove: string[]
 }
 
 const MOCK_STUDENTS: StudentProgress[] = [
   {
-    id: "s1",
-    name: "Alex Johnson",
-    school: "Westfield Academy",
+    id: 's1',
+    name: 'Alex Johnson',
+    school: 'Westfield Academy',
     yearGroup: 11,
-    examBoard: "AQA",
-    projectedGrade: "6",
-    targetGrade: "7",
+    examBoard: 'AQA',
+    projectedGrade: '6',
+    targetGrade: '7',
     averageScore: 74,
     totalEssays: 23,
     weeklyActivity: [3, 2, 4, 1, 3, 2, 5],
     recentWork: [
-      { date: "2026-03-23", score: 78, essayTitle: "Macbeth: Ambition as a destructive force", subject: "English Literature" },
-      { date: "2026-03-21", score: 72, essayTitle: "Persuasive letter: School uniform policy", subject: "English Language" },
-      { date: "2026-03-19", score: 81, essayTitle: "An Inspector Calls: Generational conflict", subject: "English Literature" },
-      { date: "2026-03-17", score: 69, essayTitle: "Creative writing: A moment of realisation", subject: "English Language" },
-      { date: "2026-03-15", score: 75, essayTitle: "Power and Conflict: Ozymandias analysis", subject: "English Literature" },
+      {
+        date: '2026-03-23',
+        score: 78,
+        essayTitle: 'Macbeth: Ambition as a destructive force',
+        subject: 'English Literature',
+      },
+      {
+        date: '2026-03-21',
+        score: 72,
+        essayTitle: 'Persuasive letter: School uniform policy',
+        subject: 'English Language',
+      },
+      {
+        date: '2026-03-19',
+        score: 81,
+        essayTitle: 'An Inspector Calls: Generational conflict',
+        subject: 'English Literature',
+      },
+      {
+        date: '2026-03-17',
+        score: 69,
+        essayTitle: 'Creative writing: A moment of realisation',
+        subject: 'English Language',
+      },
+      {
+        date: '2026-03-15',
+        score: 75,
+        essayTitle: 'Power and Conflict: Ozymandias analysis',
+        subject: 'English Literature',
+      },
     ],
-    strengths: ["Quotation selection", "Contextual understanding", "Essay structure"],
-    areasToImprove: ["Analytical vocabulary", "Language feature identification", "Time management"],
+    strengths: ['Quotation selection', 'Contextual understanding', 'Essay structure'],
+    areasToImprove: ['Analytical vocabulary', 'Language feature identification', 'Time management'],
   },
   {
-    id: "s2",
-    name: "Emma Johnson",
-    school: "Westfield Academy",
+    id: 's2',
+    name: 'Emma Johnson',
+    school: 'Westfield Academy',
     yearGroup: 10,
-    examBoard: "AQA",
-    projectedGrade: "5",
-    targetGrade: "6",
+    examBoard: 'AQA',
+    projectedGrade: '5',
+    targetGrade: '6',
     averageScore: 68,
     totalEssays: 15,
     weeklyActivity: [2, 1, 2, 0, 1, 2, 3],
     recentWork: [
-      { date: "2026-03-22", score: 70, essayTitle: "Romeo and Juliet: The role of fate", subject: "English Literature" },
-      { date: "2026-03-20", score: 65, essayTitle: "Descriptive writing: A busy market", subject: "English Language" },
-      { date: "2026-03-18", score: 72, essayTitle: "A Christmas Carol: Scrooge's transformation", subject: "English Literature" },
+      {
+        date: '2026-03-22',
+        score: 70,
+        essayTitle: 'Romeo and Juliet: The role of fate',
+        subject: 'English Literature',
+      },
+      {
+        date: '2026-03-20',
+        score: 65,
+        essayTitle: 'Descriptive writing: A busy market',
+        subject: 'English Language',
+      },
+      {
+        date: '2026-03-18',
+        score: 72,
+        essayTitle: "A Christmas Carol: Scrooge's transformation",
+        subject: 'English Literature',
+      },
     ],
-    strengths: ["Creative writing ideas", "Character analysis", "Engagement with texts"],
-    areasToImprove: ["Spelling and grammar", "Paragraph structure", "Using evidence effectively"],
+    strengths: ['Creative writing ideas', 'Character analysis', 'Engagement with texts'],
+    areasToImprove: ['Spelling and grammar', 'Paragraph structure', 'Using evidence effectively'],
   },
-];
+]
 
-const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
 export default function ProgressPage() {
-  const [selectedStudent, setSelectedStudent] = useState(MOCK_STUDENTS[0].id);
-  const student = MOCK_STUDENTS.find((s) => s.id === selectedStudent)!;
+  const t = useT()
+  const [selectedStudent, setSelectedStudent] = useState(MOCK_STUDENTS[0].id)
+  const student = MOCK_STUDENTS.find((s) => s.id === selectedStudent)!
 
   return (
     <div className="min-h-screen bg-muted">
@@ -92,17 +138,15 @@ export default function ProgressPage() {
             href="/dashboard/parent"
             className="text-sm text-primary hover:underline mb-2 inline-block"
           >
-            ← Back to Dashboard
+            ← {t('dashboard.parent_progress.back')}
           </Link>
           <div className="flex items-center gap-2">
             <h1 className="text-3xl font-bold text-foreground">
-              Student Progress
+              {t('dashboard.parent_progress.title')}
             </h1>
             <LearningTip categories={['progress', 'grade']} side="right" size="md" />
           </div>
-          <p className="text-muted-foreground mt-1">
-            Track your child&apos;s learning journey and achievements
-          </p>
+          <p className="text-muted-foreground mt-1">{t('dashboard.parent_progress.subtitle')}</p>
         </div>
 
         {/* Student Selector */}
@@ -113,8 +157,8 @@ export default function ProgressPage() {
               onClick={() => setSelectedStudent(s.id)}
               className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
                 selectedStudent === s.id
-                  ? "bg-primary text-white shadow-md"
-                  : "bg-card text-muted-foreground border border-border hover:border-primary/40"
+                  ? 'bg-primary text-white shadow-md'
+                  : 'bg-card text-muted-foreground border border-border hover:border-primary/40'
               }`}
             >
               {s.name}
@@ -129,42 +173,48 @@ export default function ProgressPage() {
               Grade {percentageToGCSEGrade(student.averageScore)}
             </p>
             <LearningTip categories={['progress']} side="bottom">
-              <p className="text-sm text-muted-foreground mt-1">Working At Grade</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                {t('dashboard.parent_progress.working_at_grade')}
+              </p>
             </LearningTip>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p
               className={`text-3xl font-bold ${
                 parseInt(student.projectedGrade) >= parseInt(student.targetGrade)
-                  ? "text-green-600"
+                  ? 'text-green-600'
                   : parseInt(student.projectedGrade) < percentageToGCSEGrade(student.averageScore)
-                  ? "text-red-600"
-                  : "text-amber-600"
+                    ? 'text-red-600'
+                    : 'text-amber-600'
               }`}
             >
               Grade {student.projectedGrade}
             </p>
             <LearningTip categories={['grade']} side="bottom">
-              <p className="text-sm text-muted-foreground mt-1">Predicted Grade</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                {t('dashboard.parent_progress.predicted_grade')}
+              </p>
             </LearningTip>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
-            <p className="text-3xl font-bold text-cyan-600">
-              Grade {student.targetGrade}
+            <p className="text-3xl font-bold text-cyan-600">Grade {student.targetGrade}</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              {t('dashboard.parent_progress.target_grade')}
             </p>
-            <p className="text-sm text-muted-foreground mt-1">Target Grade</p>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
-            <p className="text-3xl font-bold text-primary">
-              {student.totalEssays}
+            <p className="text-3xl font-bold text-primary">{student.totalEssays}</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              {t('dashboard.parent_progress.essays_written')}
             </p>
-            <p className="text-sm text-muted-foreground mt-1">Essays Written</p>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-3xl font-bold text-green-600">
               {student.weeklyActivity.reduce((a, b) => a + b, 0)}
             </p>
-            <p className="text-sm text-muted-foreground mt-1">Activities This Week</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              {t('dashboard.parent_progress.activities_week')}
+            </p>
           </div>
         </div>
 
@@ -174,7 +224,7 @@ export default function ProgressPage() {
             {/* Weekly Activity */}
             <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-foreground mb-4">
-                Weekly Activity
+                {t('dashboard.parent_progress.weekly_activity')}
               </h2>
               <div className="flex items-end justify-between gap-2 h-32">
                 {student.weeklyActivity.map((count, i) => (
@@ -188,9 +238,7 @@ export default function ProgressPage() {
                         style={{ height: `${Math.max(count * 20, 4)}px` }}
                       />
                     </div>
-                    <span className="text-xs text-muted-foreground mt-2">
-                      {DAYS[i]}
-                    </span>
+                    <span className="text-xs text-muted-foreground mt-2">{DAYS[i]}</span>
                   </div>
                 ))}
               </div>
@@ -199,7 +247,7 @@ export default function ProgressPage() {
             {/* Recent Work */}
             <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-foreground mb-4">
-                Recent Work
+                {t('dashboard.parent_progress.recent_work')}
               </h2>
               <div className="space-y-3">
                 {student.recentWork.map((entry, i) => (
@@ -212,20 +260,20 @@ export default function ProgressPage() {
                         {entry.essayTitle}
                       </p>
                       <p className="text-xs text-muted-foreground mt-0.5">
-                        {entry.subject} ·{" "}
-                        {new Date(entry.date).toLocaleDateString("en-GB", {
-                          day: "numeric",
-                          month: "short",
+                        {entry.subject} ·{' '}
+                        {new Date(entry.date).toLocaleDateString('en-GB', {
+                          day: 'numeric',
+                          month: 'short',
                         })}
                       </p>
                     </div>
                     <span
                       className={`text-lg font-bold ml-4 ${
                         entry.score >= 75
-                          ? "text-green-600"
+                          ? 'text-green-600'
                           : entry.score >= 60
-                          ? "text-amber-600"
-                          : "text-red-600"
+                            ? 'text-amber-600'
+                            : 'text-red-600'
                       }`}
                     >
                       {percentageToGCSEGradeLabel(entry.score)}
@@ -241,26 +289,24 @@ export default function ProgressPage() {
             {/* Student Info */}
             <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-foreground mb-3">
-                Student Info
+                {t('dashboard.parent_progress.student_info')}
               </h2>
               <dl className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <dt className="text-muted-foreground">School</dt>
-                  <dd className="text-foreground font-medium">
-                    {student.school}
-                  </dd>
+                  <dt className="text-muted-foreground">{t('dashboard.parent_progress.school')}</dt>
+                  <dd className="text-foreground font-medium">{student.school}</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-muted-foreground">Year Group</dt>
-                  <dd className="text-foreground font-medium">
-                    Year {student.yearGroup}
-                  </dd>
+                  <dt className="text-muted-foreground">
+                    {t('dashboard.parent_progress.year_group')}
+                  </dt>
+                  <dd className="text-foreground font-medium">Year {student.yearGroup}</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-muted-foreground">Exam Board</dt>
-                  <dd className="text-foreground font-medium">
-                    {student.examBoard}
-                  </dd>
+                  <dt className="text-muted-foreground">
+                    {t('dashboard.parent_progress.exam_board')}
+                  </dt>
+                  <dd className="text-foreground font-medium">{student.examBoard}</dd>
                 </div>
               </dl>
             </div>
@@ -268,7 +314,7 @@ export default function ProgressPage() {
             {/* Strengths */}
             <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-green-700 dark:text-green-300 mb-3">
-                Strengths
+                {t('dashboard.parent_progress.strengths')}
               </h2>
               <ul className="space-y-2">
                 {student.strengths.map((s, i) => (
@@ -284,7 +330,7 @@ export default function ProgressPage() {
             <div className="bg-card rounded-xl border border-border p-6">
               <div className="flex items-center gap-1.5 mb-3">
                 <h2 className="text-lg font-semibold text-amber-700">
-                  Areas to Improve
+                  {t('dashboard.parent_progress.areas_to_improve')}
                 </h2>
                 <LearningTip categories={['study', 'exam']} side="left" />
               </div>
@@ -301,20 +347,20 @@ export default function ProgressPage() {
             {/* Actions */}
             <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-foreground mb-3">
-                Actions
+                {t('dashboard.parent_progress.actions')}
               </h2>
               <div className="space-y-2">
                 <Link
                   href="/dashboard/settings"
                   className="block w-full text-center px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium hover:bg-primary/20 transition-colors"
                 >
-                  Manage Weekly Reports
+                  {t('dashboard.parent_progress.manage_reports')}
                 </Link>
                 <Link
                   href="/help/contact"
                   className="block w-full text-center px-4 py-2 bg-muted text-muted-foreground rounded-lg text-sm font-medium hover:bg-muted transition-colors"
                 >
-                  Contact Teacher
+                  {t('dashboard.parent_progress.contact_teacher')}
                 </Link>
               </div>
             </div>
@@ -322,5 +368,5 @@ export default function ProgressPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }

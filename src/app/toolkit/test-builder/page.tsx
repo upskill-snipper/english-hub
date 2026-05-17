@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 import {
   ArrowLeft,
   PenTool,
@@ -42,6 +43,7 @@ import {
 type Step = 'configure' | 'loading' | 'test' | 'results'
 
 export default function TestBuilderPage() {
+  const tx = useT()
   const { board } = useBoard()
   const texts = getSetTextsForBoard(board)
 
@@ -55,7 +57,9 @@ export default function TestBuilderPage() {
   const [answers, setAnswers] = useState<Record<string, string | number>>({})
   const [currentQ, setCurrentQ] = useState(0)
   const [error, setError] = useState('')
-  const [score, setScore] = useState<{ correct: number; total: number; percentage: number } | null>(null)
+  const [score, setScore] = useState<{ correct: number; total: number; percentage: number } | null>(
+    null,
+  )
 
   // Generate test
   const generateTest = useCallback(async () => {
@@ -174,7 +178,7 @@ export default function TestBuilderPage() {
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to Toolkit
+            {tx('toolkit.test_builder.back')}
           </Link>
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10">
@@ -182,11 +186,9 @@ export default function TestBuilderPage() {
             </div>
             <div>
               <h1 className="font-serif text-2xl sm:text-3xl font-medium tracking-tight">
-                AI Test Builder
+                {tx('toolkit.test_builder.title')}
               </h1>
-              <p className="text-sm text-muted-foreground">
-                Generate custom tests and score them with GCSE grade equivalents
-              </p>
+              <p className="text-sm text-muted-foreground">{tx('toolkit.test_builder.subtitle')}</p>
             </div>
           </div>
         </div>
@@ -205,26 +207,34 @@ export default function TestBuilderPage() {
             {/* Topic selection */}
             <div>
               <label className="block text-sm font-medium text-muted-foreground mb-2">
-                Topic / Text
+                {tx('toolkit.test_builder.label_topic')}
               </label>
               <select
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
                 className="input-field"
               >
-                <option value="">Select a topic...</option>
-                <optgroup label="Set Texts">
+                <option value="">{tx('toolkit.test_builder.option_select_topic')}</option>
+                <optgroup label={tx('toolkit.test_builder.group_set_texts')}>
                   {texts.map((t) => (
                     <option key={t.slug} value={t.title}>
                       {t.title} -- {t.author}
                     </option>
                   ))}
                 </optgroup>
-                <optgroup label="General Topics">
-                  <option value="Language Analysis">Language Analysis</option>
-                  <option value="Creative Writing">Creative Writing</option>
-                  <option value="Literary Techniques">Literary Techniques</option>
-                  <option value="Exam Technique">Exam Technique</option>
+                <optgroup label={tx('toolkit.test_builder.group_general')}>
+                  <option value="Language Analysis">
+                    {tx('toolkit.test_builder.topic_language_analysis')}
+                  </option>
+                  <option value="Creative Writing">
+                    {tx('toolkit.test_builder.topic_creative_writing')}
+                  </option>
+                  <option value="Literary Techniques">
+                    {tx('toolkit.test_builder.topic_literary_techniques')}
+                  </option>
+                  <option value="Exam Technique">
+                    {tx('toolkit.test_builder.topic_exam_technique')}
+                  </option>
                 </optgroup>
               </select>
             </div>
@@ -232,7 +242,7 @@ export default function TestBuilderPage() {
             {/* Question count */}
             <div>
               <label className="block text-sm font-medium text-muted-foreground mb-2">
-                Number of Questions
+                {tx('toolkit.test_builder.label_question_count')}
               </label>
               <div className="flex gap-3">
                 {[10, 20, 30].map((n) => (
@@ -241,20 +251,16 @@ export default function TestBuilderPage() {
                     onClick={() => setQuestionCount(n)}
                     className={`chip ${questionCount === n ? 'chip-active' : 'chip-inactive'}`}
                   >
-                    {n} questions
+                    {n} {tx('toolkit.test_builder.questions_suffix')}
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Generate */}
-            <Button
-              onClick={generateTest}
-              className="w-full sm:w-auto"
-              size="lg"
-            >
+            <Button onClick={generateTest} className="w-full sm:w-auto" size="lg">
               <Sparkles className="h-4 w-4 mr-2" />
-              Generate Test
+              {tx('toolkit.test_builder.btn_generate')}
             </Button>
           </div>
         )}
@@ -263,7 +269,7 @@ export default function TestBuilderPage() {
         {step === 'loading' && (
           <div className="flex flex-col items-center justify-center py-20 gap-4">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
-            <p className="text-muted-foreground">Generating your custom test...</p>
+            <p className="text-muted-foreground">{tx('toolkit.test_builder.loading')}</p>
           </div>
         )}
 
@@ -289,7 +295,9 @@ export default function TestBuilderPage() {
             <div className="rounded-xl border border-border bg-card p-6 sm:p-8 shadow-soft">
               <div className="flex items-center gap-2 mb-4">
                 <Badge variant="outline" className="font-mono text-xs">
-                  {currentQuestion.type === 'multiple-choice' ? 'MCQ' : 'Short Answer'}
+                  {currentQuestion.type === 'multiple-choice'
+                    ? tx('toolkit.test_builder.label_mcq')
+                    : tx('toolkit.test_builder.label_short_answer')}
                 </Badge>
                 <Badge variant="outline" className="font-mono text-xs">
                   {currentQuestion.topic}
@@ -322,10 +330,8 @@ export default function TestBuilderPage() {
               ) : (
                 <textarea
                   value={(answers[currentQuestion.id] as string) || ''}
-                  onChange={(e) =>
-                    setAnswers({ ...answers, [currentQuestion.id]: e.target.value })
-                  }
-                  placeholder="Type your answer here..."
+                  onChange={(e) => setAnswers({ ...answers, [currentQuestion.id]: e.target.value })}
+                  placeholder={tx('toolkit.test_builder.placeholder_short_answer')}
                   className="input-field min-h-[120px] resize-y"
                   rows={4}
                 />
@@ -339,17 +345,15 @@ export default function TestBuilderPage() {
                 onClick={() => setCurrentQ(Math.max(0, currentQ - 1))}
                 disabled={currentQ === 0}
               >
-                Previous
+                {tx('toolkit.test_builder.btn_previous')}
               </Button>
               <div className="flex gap-3">
                 {currentQ < test.questions.length - 1 ? (
                   <Button onClick={() => setCurrentQ(currentQ + 1)}>
-                    Next
+                    {tx('toolkit.test_builder.btn_next')}
                   </Button>
                 ) : (
-                  <Button onClick={submitTest}>
-                    Submit Test
-                  </Button>
+                  <Button onClick={submitTest}>{tx('toolkit.test_builder.btn_submit')}</Button>
                 )}
               </div>
             </div>
@@ -367,7 +371,7 @@ export default function TestBuilderPage() {
                         ? 'bg-primary/40'
                         : 'bg-border'
                   }`}
-                  aria-label={`Go to question ${i + 1}`}
+                  aria-label={`${tx('toolkit.test_builder.go_to_question')} ${i + 1}`}
                 />
               ))}
             </div>
@@ -378,11 +382,15 @@ export default function TestBuilderPage() {
         {step === 'results' && test && score && (
           <div className="space-y-8 print:space-y-4">
             {/* Score card */}
-            <div className={`rounded-xl border p-8 text-center ${gradeBgColour(percentageToGCSEGrade(score.percentage))}`}>
+            <div
+              className={`rounded-xl border p-8 text-center ${gradeBgColour(percentageToGCSEGrade(score.percentage))}`}
+            >
               <p className="font-mono text-sm text-muted-foreground uppercase tracking-wide mb-2">
-                Your Result
+                {tx('toolkit.test_builder.your_result')}
               </p>
-              <p className={`font-serif text-5xl sm:text-6xl font-medium mb-2 ${gradeColour(percentageToGCSEGrade(score.percentage))}`}>
+              <p
+                className={`font-serif text-5xl sm:text-6xl font-medium mb-2 ${gradeColour(percentageToGCSEGrade(score.percentage))}`}
+              >
                 {percentageToGCSEGradeLabel(score.percentage)}
               </p>
               <p className="text-lg text-muted-foreground">
@@ -394,21 +402,23 @@ export default function TestBuilderPage() {
             <div className="flex flex-wrap gap-3 justify-center print:hidden">
               <Button variant="outline" onClick={downloadPDF}>
                 <Download className="h-4 w-4 mr-2" />
-                Download as PDF
+                {tx('toolkit.test_builder.btn_download_pdf')}
               </Button>
               <Button variant="outline" onClick={saveToMaterials}>
                 <Save className="h-4 w-4 mr-2" />
-                Save to My Materials
+                {tx('toolkit.test_builder.btn_save_materials')}
               </Button>
               <Button onClick={resetTest}>
                 <RotateCcw className="h-4 w-4 mr-2" />
-                New Test
+                {tx('toolkit.test_builder.btn_new_test')}
               </Button>
             </div>
 
             {/* Review answers */}
             <div className="space-y-4">
-              <h3 className="font-serif text-xl font-medium">Review Answers</h3>
+              <h3 className="font-serif text-xl font-medium">
+                {tx('toolkit.test_builder.review_answers')}
+              </h3>
               {test.questions.map((q, i) => {
                 const userAnswer = answers[q.id]
                 const isCorrect =
@@ -442,20 +452,21 @@ export default function TestBuilderPage() {
                         </p>
                         {q.type === 'multiple-choice' && q.options && (
                           <p className="text-sm text-muted-foreground mb-1">
-                            Your answer:{' '}
+                            {tx('toolkit.test_builder.your_answer')}{' '}
                             <span className={isCorrect ? 'text-emerald-600' : 'text-red-600'}>
-                              {typeof userAnswer === 'number' ? q.options[userAnswer] : 'Not answered'}
+                              {typeof userAnswer === 'number'
+                                ? q.options[userAnswer]
+                                : tx('toolkit.test_builder.not_answered')}
                             </span>
                           </p>
                         )}
                         {!isCorrect && q.type === 'multiple-choice' && q.options && (
                           <p className="text-sm text-emerald-600">
-                            Correct answer: {q.options[q.correctAnswer as number]}
+                            {tx('toolkit.test_builder.correct_answer')}{' '}
+                            {q.options[q.correctAnswer as number]}
                           </p>
                         )}
-                        <p className="text-sm text-muted-foreground mt-2 italic">
-                          {q.explanation}
-                        </p>
+                        <p className="text-sm text-muted-foreground mt-2 italic">{q.explanation}</p>
                       </div>
                     </div>
                   </div>

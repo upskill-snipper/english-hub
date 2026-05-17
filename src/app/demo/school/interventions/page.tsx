@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 import {
   AlertTriangle,
   Users,
@@ -298,12 +299,13 @@ function riskBadge(level: RiskLevel) {
 // -- Page Component ----------------------------------------------------------
 
 export default function InterventionsPage() {
+  const t = useT()
   const [planningStudent, setPlanningStudent] = useState<string | null>(null)
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* ── 1. Demo Banner ─────────────────────────────────────────────────── */}
-      <DemoBanner message="You are viewing an interactive demo with sample intervention data." />
+      <DemoBanner message={t('demo.b15.interventions.demo_banner')} />
 
       <div className="px-4 py-8 sm:px-6 lg:px-8">
         {/* ── 2. Header ──────────────────────────────────────────────────── */}
@@ -313,12 +315,10 @@ export default function InterventionsPage() {
               <AlertTriangle className="h-5 w-5 text-red-700 dark:text-red-300" />
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-foreground">
-              Intervention Planning
+              {t('demo.b15.interventions.title')}
             </h1>
           </div>
-          <p className="text-muted-foreground mt-1">
-            Identify at-risk students, assign interventions, and track progress towards recovery.
-          </p>
+          <p className="text-muted-foreground mt-1">{t('demo.b15.interventions.subtitle')}</p>
         </div>
 
         {/* ── 3. Stats ───────────────────────────────────────────────────── */}
@@ -330,7 +330,9 @@ export default function InterventionsPage() {
                   <Flag className="h-5 w-5 text-red-700 dark:text-red-300" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Students Flagged</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('demo.b15.interventions.flagged')}
+                  </p>
                   <p className="text-2xl font-bold text-foreground">23</p>
                 </div>
               </div>
@@ -344,7 +346,9 @@ export default function InterventionsPage() {
                   <UserCheck className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Receiving Intervention</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('demo.b15.interventions.receiving')}
+                  </p>
                   <p className="text-2xl font-bold text-foreground">8</p>
                 </div>
               </div>
@@ -358,7 +362,9 @@ export default function InterventionsPage() {
                   <AlertTriangle className="h-5 w-5 text-amber-700 dark:text-amber-300" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">New Flags</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('demo.b15.interventions.new_flags')}
+                  </p>
                   <p className="text-2xl font-bold text-foreground">15</p>
                 </div>
               </div>
@@ -371,10 +377,10 @@ export default function InterventionsPage() {
           <CardHeader>
             <CardTitle className="text-foreground flex items-center gap-2">
               <Users className="h-5 w-5 text-red-400" />
-              At-Risk Students
+              {t('demo.b15.interventions.at_risk_title')}
             </CardTitle>
             <CardDescription className="text-muted-foreground">
-              Students flagged by the system based on engagement, scores, and assignment completion.
+              {t('demo.b15.interventions.at_risk_desc')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -382,15 +388,27 @@ export default function InterventionsPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60 text-left">
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">Name</th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">Year Group</th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">Risk Level</th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">Issue</th>
                     <th className="pb-3 pr-4 font-medium text-muted-foreground">
-                      Current Intervention
+                      {t('demo.b15.interventions.col_name')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">Assigned To</th>
-                    <th className="pb-3 font-medium text-muted-foreground">Action</th>
+                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_year')}
+                    </th>
+                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_risk')}
+                    </th>
+                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_issue')}
+                    </th>
+                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_current')}
+                    </th>
+                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_assigned')}
+                    </th>
+                    <th className="pb-3 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_action')}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -433,7 +451,7 @@ export default function InterventionsPage() {
                           }}
                         >
                           <ClipboardList className="h-3.5 w-3.5 mr-1.5" />
-                          Plan Intervention
+                          {t('demo.b15.interventions.plan_btn')}
                         </Button>
                       </td>
                     </tr>
@@ -448,7 +466,7 @@ export default function InterventionsPage() {
         <div className="mb-8">
           <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" />
-            Intervention Types
+            {t('demo.b15.interventions.types_heading')}
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {interventionTypes.map((type) => (
@@ -481,10 +499,10 @@ export default function InterventionsPage() {
           <CardHeader>
             <CardTitle className="text-foreground flex items-center gap-2">
               <ClipboardList className="h-5 w-5 text-primary" />
-              Active Interventions
+              {t('demo.b15.interventions.active_title')}
             </CardTitle>
             <CardDescription className="text-muted-foreground">
-              Ongoing interventions with scheduled review dates and progress tracking.
+              {t('demo.b15.interventions.active_desc')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -492,14 +510,24 @@ export default function InterventionsPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60 text-left">
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">Student</th>
                     <th className="pb-3 pr-4 font-medium text-muted-foreground">
-                      Intervention Type
+                      {t('demo.b15.interventions.col_student')}
                     </th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">Start Date</th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">Review Date</th>
-                    <th className="pb-3 pr-4 font-medium text-muted-foreground">Progress Notes</th>
-                    <th className="pb-3 font-medium text-muted-foreground">Action</th>
+                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_int_type')}
+                    </th>
+                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_start')}
+                    </th>
+                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_review')}
+                    </th>
+                    <th className="pb-3 pr-4 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_notes')}
+                    </th>
+                    <th className="pb-3 font-medium text-muted-foreground">
+                      {t('demo.b15.interventions.col_action')}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -543,7 +571,7 @@ export default function InterventionsPage() {
                           }}
                         >
                           <MessageSquare className="h-3.5 w-3.5 mr-1.5" />
-                          Update
+                          {t('demo.b15.interventions.update_btn')}
                         </Button>
                       </td>
                     </tr>
@@ -559,10 +587,10 @@ export default function InterventionsPage() {
           <CardHeader>
             <CardTitle className="text-foreground flex items-center gap-2">
               <Star className="h-5 w-5 text-amber-700 dark:text-amber-300" />
-              Success Stories
+              {t('demo.b15.interventions.success_title')}
             </CardTitle>
             <CardDescription className="text-muted-foreground">
-              3 students moved from At-Risk to On-Track this month
+              {t('demo.b15.interventions.success_desc')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -581,7 +609,7 @@ export default function InterventionsPage() {
                   <div className="grid grid-cols-2 gap-3 mb-3">
                     <div className="rounded-md bg-red-500/10 border border-red-500/20 p-2 text-center">
                       <p className="text-[10px] uppercase tracking-wider text-red-700 dark:text-red-300 mb-1">
-                        Before
+                        {t('demo.b15.interventions.before')}
                       </p>
                       <p className="text-lg font-bold text-red-700 dark:text-red-300">
                         {story.previousScore}%
@@ -592,7 +620,7 @@ export default function InterventionsPage() {
                     </div>
                     <div className="rounded-md bg-primary/10 border border-primary/20 p-2 text-center">
                       <p className="text-[10px] uppercase tracking-wider text-primary mb-1">
-                        After
+                        {t('demo.b15.interventions.after')}
                       </p>
                       <p className="text-lg font-bold text-primary">{story.currentScore}%</p>
                       <Badge className="mt-1 bg-primary/10 text-primary border-primary/30 text-[10px]">
@@ -633,7 +661,7 @@ export default function InterventionsPage() {
             }}
           >
             <Download className="h-4 w-4 mr-2" />
-            Export Intervention Report
+            {t('demo.b15.interventions.export_btn')}
           </Button>
         </div>
       </div>

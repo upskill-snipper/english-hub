@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { tMany } from '@/lib/i18n/t'
 
+// metadata left in English (static export — low-risk conversion deferred)
 export const metadata: Metadata = {
   openGraph: {
     title: 'How AI Marking Works',
@@ -13,7 +15,37 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/marking/ai-explainer' },
 }
 
-export default function AiExplainerPage() {
+export default async function AiExplainerPage() {
+  const [
+    navMarking,
+    navBreadcrumb,
+    title,
+    subtitle,
+    h2What,
+    h2Which,
+    h2Data,
+    h2Official,
+    h2Human,
+    h2Optout,
+    h2Rights,
+    h2Questions,
+    optoutBoxHeading,
+  ] = await tMany([
+    'marking.nav.marking',
+    'marking.ai_explainer.breadcrumb',
+    'marking.ai_explainer.title',
+    'marking.ai_explainer.subtitle',
+    'marking.ai_explainer.h2_what',
+    'marking.ai_explainer.h2_which',
+    'marking.ai_explainer.h2_data',
+    'marking.ai_explainer.h2_official',
+    'marking.ai_explainer.h2_human',
+    'marking.ai_explainer.h2_optout',
+    'marking.ai_explainer.h2_rights',
+    'marking.ai_explainer.h2_questions',
+    'marking.ai_explainer.optout_box_heading',
+  ])
+
   return (
     <main className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       {/* Breadcrumb */}
@@ -21,28 +53,21 @@ export default function AiExplainerPage() {
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/marking" className="hover:text-primary">
-              Marking
+              {navMarking}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="font-medium text-foreground">How AI Marking Works</li>
+          <li className="font-medium text-foreground">{navBreadcrumb}</li>
         </ol>
       </nav>
 
-      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        How AI Marking Works
-      </h1>
-      <p className="mt-2 text-sm text-muted-foreground">
-        Written in plain language so students, parents and teachers can understand exactly what
-        happens when you submit an essay.
-      </p>
+      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h1>
+      <p className="mt-2 text-sm text-muted-foreground">{subtitle}</p>
 
       <div className="mt-8 space-y-8">
         {/* 1 — What is AI marking? */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            1. What is AI marking?
-          </h2>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2What}</h2>
           <p className="text-muted-foreground leading-relaxed">
             When you submit an essay on The English Hub, we use a computer program called an{' '}
             <strong className="text-foreground">AI model</strong> to read your work, compare it
@@ -55,9 +80,7 @@ export default function AiExplainerPage() {
 
         {/* 2 — Which AI do we use? */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            2. Which AI do we use?
-          </h2>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Which}</h2>
           <p className="text-muted-foreground leading-relaxed">
             We use a model called <strong className="text-foreground">Claude</strong>, made by a
             company called{' '}
@@ -76,9 +99,7 @@ export default function AiExplainerPage() {
 
         {/* 3 — What data is sent? */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            3. What information is sent to the AI?
-          </h2>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Data}</h2>
           <p className="text-muted-foreground leading-relaxed">
             When you click &ldquo;Submit for marking&rdquo;, we send{' '}
             <strong className="text-foreground">only the text of your essay</strong> and the
@@ -99,9 +120,7 @@ export default function AiExplainerPage() {
 
         {/* 4 — Is the grade official? */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            4. Is the grade official?
-          </h2>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Official}</h2>
           <p className="text-muted-foreground leading-relaxed">
             <strong className="text-foreground">No.</strong> The grade you receive is a{' '}
             <em>predicted</em> grade based on how the AI interprets the marking guide. It is meant
@@ -112,9 +131,7 @@ export default function AiExplainerPage() {
 
         {/* 5 — Can a human review my work? */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            5. Can a human review my work instead?
-          </h2>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Human}</h2>
           <p className="text-muted-foreground leading-relaxed">
             Yes. If you, your parent or guardian, or your teacher would like a human to review your
             essay instead of (or as well as) the AI, you can contact us at{' '}
@@ -127,16 +144,14 @@ export default function AiExplainerPage() {
 
         {/* 6 — How do I opt out? */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            6. How do I turn off AI marking?
-          </h2>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Optout}</h2>
           <p className="text-muted-foreground leading-relaxed">
             You (or your parent/guardian) can turn off AI features at any time. When AI features are
             turned off, you will still be able to use every other part of The English Hub &mdash;
             only the AI essay marking and AI-powered recommendations will be disabled.
           </p>
           <div className="mt-4 rounded-lg border border-border bg-muted/50 p-5">
-            <p className="text-sm font-medium text-foreground mb-2">To turn off AI features:</p>
+            <p className="text-sm font-medium text-foreground mb-2">{optoutBoxHeading}</p>
             <ol className="list-decimal pl-6 text-muted-foreground leading-relaxed space-y-1 text-sm">
               <li>
                 Go to{' '}
@@ -168,7 +183,7 @@ export default function AiExplainerPage() {
 
         {/* 7 — Your rights */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">7. Your rights</h2>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Rights}</h2>
           <p className="text-muted-foreground leading-relaxed">
             Under UK data protection law (the UK GDPR and the Children&apos;s Code), you have the
             right to:
@@ -190,7 +205,7 @@ export default function AiExplainerPage() {
 
         {/* 8 — Questions */}
         <section>
-          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">8. Questions?</h2>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Questions}</h2>
           <p className="text-muted-foreground leading-relaxed">
             If you have any questions about how AI is used on The English Hub, please contact us:
           </p>

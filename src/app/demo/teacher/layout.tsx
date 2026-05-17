@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useT } from '@/lib/i18n/use-t'
 import {
   LayoutDashboard,
   Users,
@@ -24,19 +25,28 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import DemoBanner from '@/components/demo/DemoBanner'
 
-const NAV_ITEMS = [
-  { label: 'My Dashboard', href: '/demo/teacher', icon: LayoutDashboard },
-  { label: 'My Classes', href: '/demo/teacher/classes', icon: Users },
-  { label: 'My Students', href: '/demo/teacher/students', icon: GraduationCap },
-  { label: 'Lesson Builder', href: '/demo/teacher/lessons', icon: Hammer },
-  { label: 'AI Essay Marking', href: '/demo/teacher/essays', icon: PenTool },
-  { label: 'Homework', href: '/demo/teacher/homework', icon: ClipboardList },
-  { label: 'Quizzes', href: '/demo/teacher/quizzes', icon: HelpCircle },
-  { label: 'Resources', href: '/demo/teacher/resources', icon: BookOpen },
-  { label: 'Progress', href: '/demo/teacher/progress', icon: BarChart3 },
+const NAV_ITEMS_DEF = [
+  { key: 'demo.b15.teacher_layout.nav_dashboard', href: '/demo/teacher', icon: LayoutDashboard },
+  { key: 'demo.b15.teacher_layout.nav_classes', href: '/demo/teacher/classes', icon: Users },
+  {
+    key: 'demo.b15.teacher_layout.nav_students',
+    href: '/demo/teacher/students',
+    icon: GraduationCap,
+  },
+  { key: 'demo.b15.teacher_layout.nav_lessons', href: '/demo/teacher/lessons', icon: Hammer },
+  { key: 'demo.b15.teacher_layout.nav_essays', href: '/demo/teacher/essays', icon: PenTool },
+  {
+    key: 'demo.b15.teacher_layout.nav_homework',
+    href: '/demo/teacher/homework',
+    icon: ClipboardList,
+  },
+  { key: 'demo.b15.teacher_layout.nav_quizzes', href: '/demo/teacher/quizzes', icon: HelpCircle },
+  { key: 'demo.b15.teacher_layout.nav_resources', href: '/demo/teacher/resources', icon: BookOpen },
+  { key: 'demo.b15.teacher_layout.nav_progress', href: '/demo/teacher/progress', icon: BarChart3 },
 ]
 
 export default function TeacherDemoLayout({ children }: { children: React.ReactNode }) {
+  const t = useT()
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -52,7 +62,7 @@ export default function TeacherDemoLayout({ children }: { children: React.ReactN
         <div className="flex items-center justify-center gap-2 rounded-lg bg-primary/10 border border-primary/25 px-3 py-2">
           <Sparkles className="h-3.5 w-3.5 text-primary" />
           <span className="text-xs font-bold uppercase tracking-wider text-primary">
-            Teacher Demo
+            {t('demo.b15.teacher_layout.demo_badge')}
           </span>
         </div>
       </div>
@@ -73,12 +83,14 @@ export default function TeacherDemoLayout({ children }: { children: React.ReactN
                 Demo
               </Badge>
             </div>
-            <p className="text-xs text-muted-foreground">Head of English</p>
+            <p className="text-xs text-muted-foreground">{t('demo.b15.teacher_layout.role')}</p>
             <div className="flex items-center gap-1.5 mt-1">
               <Badge className="text-[10px] px-1.5 py-0 h-4 bg-primary/10 text-primary border-primary/20">
                 AQA
               </Badge>
-              <span className="text-[10px] text-muted-foreground">Exam Board</span>
+              <span className="text-[10px] text-muted-foreground">
+                {t('demo.b15.teacher_layout.exam_board')}
+              </span>
             </div>
           </div>
         </div>
@@ -86,7 +98,7 @@ export default function TeacherDemoLayout({ children }: { children: React.ReactN
 
       {/* Navigation */}
       <nav className="flex-1 space-y-1 px-3 py-4">
-        {NAV_ITEMS.map((item) => {
+        {NAV_ITEMS_DEF.map((item) => {
           const Icon = item.icon
           const active = isActive(item.href)
           return (
@@ -102,7 +114,7 @@ export default function TeacherDemoLayout({ children }: { children: React.ReactN
               )}
             >
               <Icon className="h-4 w-4 shrink-0" />
-              {item.label}
+              {t(item.key)}
             </Link>
           )
         })}
@@ -115,14 +127,14 @@ export default function TeacherDemoLayout({ children }: { children: React.ReactN
           className="w-full font-semibold bg-gradient-to-r from-teal-800 to-teal-600 text-primary-foreground hover:opacity-90"
         >
           <Sparkles className="h-4 w-4 mr-1.5" />
-          Start Free Trial
+          {t('demo.b15.teacher_layout.start_trial')}
         </Button>
         <Link
           href="/demo"
           className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Demos
+          {t('demo.b15.teacher_layout.back_demos')}
         </Link>
       </div>
     </div>
@@ -152,7 +164,7 @@ export default function TeacherDemoLayout({ children }: { children: React.ReactN
             variant="secondary"
             className="text-[10px] px-1.5 py-0 h-4 uppercase tracking-wider"
           >
-            Teacher Demo
+            {t('demo.b15.teacher_layout.badge')}
           </Badge>
         </div>
       </div>

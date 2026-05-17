@@ -1,61 +1,61 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react'
+import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
-type CancelStep = 1 | 2 | 3 | 4;
+type CancelStep = 1 | 2 | 3 | 4
 
 const FEEDBACK_REASONS = [
-  "Too expensive",
-  "Not using it enough",
-  "Found an alternative",
-  "Missing features I need",
-  "Finished my exams",
-  "Technical issues",
-  "Other",
-] as const;
+  'Too expensive',
+  'Not using it enough',
+  'Found an alternative',
+  'Missing features I need',
+  'Finished my exams',
+  'Technical issues',
+  'Other',
+] as const
 
 // ─── Cancellation Flow (4 steps, no dark patterns) ──────────────────────
 
 export default function CancelSubscriptionPage() {
-  const [step, setStep] = useState<CancelStep>(1);
-  const [selectedReason, setSelectedReason] = useState<string>("");
-  const [feedbackText, setFeedbackText] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [accessEndDate, setAccessEndDate] = useState<string | null>(null);
+  const t = useT()
+  const [step, setStep] = useState<CancelStep>(1)
+  const [selectedReason, setSelectedReason] = useState<string>('')
+  const [feedbackText, setFeedbackText] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [accessEndDate, setAccessEndDate] = useState<string | null>(null)
 
   async function handleConfirmCancel() {
-    setIsSubmitting(true);
-    setError(null);
+    setIsSubmitting(true)
+    setError(null)
 
     try {
-      const response = await fetch("/api/stripe/cancel", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/stripe/cancel', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           reason: selectedReason || undefined,
           feedback: feedbackText || undefined,
           cancelImmediately: false,
         }),
-      });
+      })
 
-      const data = await response.json();
+      const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to cancel subscription");
+        throw new Error(data.error || 'Failed to cancel subscription')
       }
 
-      setAccessEndDate(data.accessEndsAt);
-      setStep(4);
+      setAccessEndDate(data.accessEndsAt)
+      setStep(4)
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : "An unexpected error occurred"
-      );
+      setError(err instanceof Error ? err.message : 'An unexpected error occurred')
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
   }
 
@@ -69,9 +69,7 @@ export default function CancelSubscriptionPage() {
               <div key={s} className="flex items-center">
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                    s <= step
-                      ? "bg-primary text-white"
-                      : "bg-muted text-muted-foreground"
+                    s <= step ? 'bg-primary text-white' : 'bg-muted text-muted-foreground'
                   }`}
                 >
                   {s < step ? (
@@ -94,9 +92,7 @@ export default function CancelSubscriptionPage() {
                 </div>
                 {s < 4 && (
                   <div
-                    className={`w-16 sm:w-24 h-0.5 mx-1 ${
-                      s < step ? "bg-primary" : "bg-muted"
-                    }`}
+                    className={`w-16 sm:w-24 h-0.5 mx-1 ${s < step ? 'bg-primary' : 'bg-muted'}`}
                   />
                 )}
               </div>
@@ -108,19 +104,17 @@ export default function CancelSubscriptionPage() {
         {step === 1 && (
           <div className="bg-card rounded-2xl shadow-sm border border-border p-8">
             <h1 className="text-2xl font-bold text-foreground mb-2">
-              Cancel Your Subscription
+              {t('dashboard.cancel.step1_title')}
             </h1>
-            <p className="text-muted-foreground mb-8">
-              Here is what will change if you cancel:
-            </p>
+            <p className="text-muted-foreground mb-8">{t('dashboard.cancel.step1_desc')}</p>
 
             <div className="space-y-4 mb-8">
               {[
-                "AI-powered essay feedback on unlimited submissions",
-                "Detailed grammar, structure, and vocabulary analysis",
-                "Progress tracking and revision insights",
-                "Human review request access",
-                "Exam preparation resources and tools",
+                'AI-powered essay feedback on unlimited submissions',
+                'Detailed grammar, structure, and vocabulary analysis',
+                'Progress tracking and revision insights',
+                'Human review request access',
+                'Exam preparation resources and tools',
               ].map((feature, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <svg
@@ -130,11 +124,7 @@ export default function CancelSubscriptionPage() {
                     strokeWidth={2}
                     stroke="currentColor"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                   <span className="text-foreground">{feature}</span>
                 </div>
@@ -142,9 +132,8 @@ export default function CancelSubscriptionPage() {
             </div>
 
             <p className="text-sm text-muted-foreground mb-8">
-              Your access will continue until the end of your current billing
-              period. Your essays and data will be retained in accordance with
-              our data retention policy.
+              Your access will continue until the end of your current billing period. Your essays
+              and data will be retained in accordance with our data retention policy.
             </p>
 
             {/* Equal-weight buttons */}
@@ -153,13 +142,13 @@ export default function CancelSubscriptionPage() {
                 href="/dashboard/subscription"
                 className="flex-1 py-3 px-4 text-center rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
-                Keep Subscription
+                {t('dashboard.cancel.keep_btn')}
               </Link>
               <button
                 onClick={() => setStep(2)}
                 className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
-                Continue Cancellation
+                {t('dashboard.cancel.continue_btn')}
               </button>
             </div>
           </div>
@@ -169,18 +158,13 @@ export default function CancelSubscriptionPage() {
         {step === 2 && (
           <div className="bg-card rounded-2xl shadow-sm border border-border p-8">
             <h1 className="text-2xl font-bold text-foreground mb-2">
-              Quick Feedback (Optional)
+              {t('dashboard.cancel.step2_title')}
             </h1>
-            <p className="text-muted-foreground mb-6">
-              This step is entirely optional. Your feedback helps us improve.
-            </p>
+            <p className="text-muted-foreground mb-6">{t('dashboard.cancel.step2_desc')}</p>
 
             <div className="space-y-3 mb-6">
               {FEEDBACK_REASONS.map((reason) => (
-                <label
-                  key={reason}
-                  className="flex items-center gap-3 cursor-pointer"
-                >
+                <label key={reason} className="flex items-center gap-3 cursor-pointer">
                   <input
                     type="radio"
                     name="reason"
@@ -195,11 +179,8 @@ export default function CancelSubscriptionPage() {
             </div>
 
             <div className="mb-8">
-              <label
-                htmlFor="feedback"
-                className="block text-sm font-medium text-foreground mb-2"
-              >
-                Anything else you&apos;d like to share? (Optional)
+              <label htmlFor="feedback" className="block text-sm font-medium text-foreground mb-2">
+                {t('dashboard.cancel.feedback_label')}
               </label>
               <textarea
                 id="feedback"
@@ -217,19 +198,19 @@ export default function CancelSubscriptionPage() {
                 onClick={() => setStep(1)}
                 className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
-                Back
+                {t('dashboard.cancel.back_btn')}
               </button>
               <button
                 onClick={() => setStep(3)}
                 className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
-                Skip & Continue
+                {t('dashboard.cancel.skip_btn')}
               </button>
               <button
                 onClick={() => setStep(3)}
                 className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
-                Submit & Continue
+                {t('dashboard.cancel.submit_btn')}
               </button>
             </div>
           </div>
@@ -239,11 +220,9 @@ export default function CancelSubscriptionPage() {
         {step === 3 && (
           <div className="bg-card rounded-2xl shadow-sm border border-border p-8">
             <h1 className="text-2xl font-bold text-foreground mb-2">
-              Confirm Cancellation
+              {t('dashboard.cancel.step3_title')}
             </h1>
-            <p className="text-muted-foreground mb-6">
-              Please review the details below before confirming.
-            </p>
+            <p className="text-muted-foreground mb-6">{t('dashboard.cancel.step3_desc')}</p>
 
             <div className="bg-muted rounded-xl p-6 mb-6 space-y-3">
               <div className="flex justify-between">
@@ -254,9 +233,7 @@ export default function CancelSubscriptionPage() {
               </div>
               <div className="flex justify-between">
                 <span className="text-sm text-muted-foreground">Future charges</span>
-                <span className="text-sm text-foreground font-medium">
-                  No further charges
-                </span>
+                <span className="text-sm text-foreground font-medium">No further charges</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-sm text-muted-foreground">Your data</span>
@@ -268,16 +245,12 @@ export default function CancelSubscriptionPage() {
 
             <div className="bg-blue-950/20 border border-blue-900/40 rounded-xl p-4 mb-8">
               <p className="text-sm text-blue-300">
-                <strong>Cooling-off information:</strong> If you subscribed
-                within the last 14 days and did not waive your cooling-off
-                rights, you may be entitled to a full refund under consumer
-                protection regulations. Contact us at{" "}
-                <a
-                  href="mailto:info@Upskillenergy.com"
-                  className="underline"
-                >
+                <strong>Cooling-off information:</strong> If you subscribed within the last 14 days
+                and did not waive your cooling-off rights, you may be entitled to a full refund
+                under consumer protection regulations. Contact us at{' '}
+                <a href="mailto:info@Upskillenergy.com" className="underline">
                   info@Upskillenergy.com
-                </a>{" "}
+                </a>{' '}
                 for refund requests.
               </p>
             </div>
@@ -300,7 +273,9 @@ export default function CancelSubscriptionPage() {
                 disabled={isSubmitting}
                 className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Cancelling..." : "Confirm Cancellation"}
+                {isSubmitting
+                  ? t('dashboard.cancel.cancelling')
+                  : t('dashboard.cancel.confirm_btn')}
               </button>
             </div>
           </div>
@@ -317,39 +292,31 @@ export default function CancelSubscriptionPage() {
                 strokeWidth={2}
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.5 12.75l6 6 9-13.5"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
               </svg>
             </div>
 
             <h1 className="text-2xl font-bold text-foreground mb-2">
-              Subscription Cancelled
+              {t('dashboard.cancel.step4_title')}
             </h1>
-            <p className="text-muted-foreground mb-6">
-              Your subscription has been cancelled successfully.
-            </p>
+            <p className="text-muted-foreground mb-6">{t('dashboard.cancel.step4_desc')}</p>
 
             <div className="bg-muted rounded-xl p-6 mb-8 text-left space-y-3">
               <div className="flex justify-between">
                 <span className="text-sm text-muted-foreground">Access until</span>
                 <span className="text-sm text-foreground font-medium">
                   {accessEndDate
-                    ? new Date(accessEndDate).toLocaleDateString("en-GB", {
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric",
+                    ? new Date(accessEndDate).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric',
                       })
-                    : "End of current billing period"}
+                    : 'End of current billing period'}
                 </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-sm text-muted-foreground">Your essays</span>
-                <span className="text-sm text-foreground font-medium">
-                  Saved and accessible
-                </span>
+                <span className="text-sm text-foreground font-medium">Saved and accessible</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-sm text-muted-foreground">Your data</span>
@@ -360,12 +327,8 @@ export default function CancelSubscriptionPage() {
             </div>
 
             <p className="text-sm text-muted-foreground mb-8">
-              You can request a copy or deletion of your data at any time from
-              your{" "}
-              <Link
-                href="/dashboard/settings"
-                className="text-foreground underline"
-              >
+              You can request a copy or deletion of your data at any time from your{' '}
+              <Link href="/dashboard/settings" className="text-foreground underline">
                 account settings
               </Link>
               .
@@ -376,18 +339,18 @@ export default function CancelSubscriptionPage() {
                 href="/dashboard"
                 className="py-3 px-6 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
-                Return to Dashboard
+                {t('dashboard.cancel.return_btn')}
               </Link>
               <Link
                 href="/account/billing"
                 className="py-3 px-6 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
-                Resubscribe
+                {t('dashboard.cancel.resubscribe_btn')}
               </Link>
             </div>
           </div>
         )}
       </div>
     </div>
-  );
+  )
 }

@@ -2,6 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 import {
   ArrowLeft,
   Users,
@@ -76,6 +77,7 @@ function progressBarColor(pct: number) {
 }
 
 export default function TeacherClassDetailPage() {
+  const t = useT()
   const params = useParams()
   const classId = params.id as string
   const cls = TEACHER_DEMO_CLASSES.find((c: any) => c.id === classId)
@@ -84,12 +86,14 @@ export default function TeacherClassDetailPage() {
     return (
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-light text-foreground mb-2">Class Not Found</h1>
+          <h1 className="text-2xl font-light text-foreground mb-2">
+            {t('demo.b15.teacher_cls.not_found')}
+          </h1>
           <p className="text-muted-foreground text-sm mb-6">
-            This class does not exist or is not assigned to you.
+            {t('demo.b15.teacher_cls.not_found_desc')}
           </p>
           <Link href="/demo/teacher/classes" className="text-primary hover:underline text-sm">
-            Back to My Classes
+            {t('demo.b15.teacher_cls.back')}
           </Link>
         </div>
       </div>
@@ -177,8 +181,8 @@ export default function TeacherClassDetailPage() {
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-3">
           <p className="text-sm text-clay-600 dark:text-clay-400">
-            <span className="font-semibold">Teacher Demo</span> -- Viewing sample data for{' '}
-            {cls.name}
+            <span className="font-semibold">{t('demo.b15.teacher_cls.demo_label')}</span> —{' '}
+            {t('demo.b15.teacher_cls.demo_viewing')} {cls.name}
           </p>
         </div>
 
@@ -188,7 +192,7 @@ export default function TeacherClassDetailPage() {
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-muted-foreground transition-colors mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to My Classes
+          {t('demo.b15.teacher_cls.back')}
         </Link>
 
         {/* Header */}
@@ -203,7 +207,7 @@ export default function TeacherClassDetailPage() {
             </Badge>
             <span className="flex items-center gap-1">
               <Users className="h-3.5 w-3.5" />
-              {cls.studentCount} students
+              {cls.studentCount} {t('demo.b15.teacher_cls.students_label')}
             </span>
           </div>
         </div>
@@ -213,7 +217,7 @@ export default function TeacherClassDetailPage() {
           <Card className="bg-card border-border/60">
             <CardContent className="p-4">
               <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">
-                Avg Score
+                {t('demo.b15.teacher_cls.avg_score')}
               </p>
               <AnimatedNumber
                 value={avgScore}
@@ -225,7 +229,7 @@ export default function TeacherClassDetailPage() {
           <Card className="bg-card border-border/60">
             <CardContent className="p-4">
               <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">
-                Completion Rate
+                {t('demo.b15.teacher_cls.completion_rate')}
               </p>
               <AnimatedNumber
                 value={avgCompletion}
@@ -237,7 +241,7 @@ export default function TeacherClassDetailPage() {
           <Card className="bg-card border-border/60">
             <CardContent className="p-4">
               <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">
-                At-Risk
+                {t('demo.b15.teacher_cls.at_risk')}
               </p>
               <AnimatedNumber
                 value={atRiskCount}
@@ -248,7 +252,7 @@ export default function TeacherClassDetailPage() {
           <Card className="bg-card border-border/60">
             <CardContent className="p-4">
               <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">
-                On Track
+                {t('demo.b15.teacher_cls.on_track')}
               </p>
               <AnimatedNumber
                 value={onTrackCount}
@@ -261,27 +265,39 @@ export default function TeacherClassDetailPage() {
         {/* RAG Distribution */}
         <Card className="bg-card border-border/60 mb-8">
           <CardContent className="p-5">
-            <p className="text-sm font-medium text-muted-foreground mb-3">Student Distribution</p>
+            <p className="text-sm font-medium text-muted-foreground mb-3">
+              {t('demo.b15.teacher_cls.student_dist')}
+            </p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                <span className="text-sm text-muted-foreground">On Track: {onTrackCount}</span>
+                <span className="text-sm text-muted-foreground">
+                  {t('demo.b15.teacher_cls.on_track')}: {onTrackCount}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-                <span className="text-sm text-muted-foreground">Monitor: {monitorCount}</span>
+                <span className="text-sm text-muted-foreground">
+                  {t('demo.b15.teacher_cls.monitor')}: {monitorCount}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                <span className="text-sm text-muted-foreground">At Risk: {atRiskCount}</span>
+                <span className="text-sm text-muted-foreground">
+                  {t('demo.b15.teacher_cls.at_risk')}: {atRiskCount}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <TrendingUp className="h-3.5 w-3.5 text-green-600 dark:text-green-400" />
-                <span className="text-sm text-muted-foreground">Improving: {improvingCount}</span>
+                <span className="text-sm text-muted-foreground">
+                  {t('demo.b15.teacher_cls.improving')}: {improvingCount}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <TrendingDown className="h-3.5 w-3.5 text-red-600 dark:text-red-400" />
-                <span className="text-sm text-muted-foreground">Declining: {decliningCount}</span>
+                <span className="text-sm text-muted-foreground">
+                  {t('demo.b15.teacher_cls.declining')}: {decliningCount}
+                </span>
               </div>
             </div>
           </CardContent>
@@ -289,29 +305,31 @@ export default function TeacherClassDetailPage() {
 
         {/* Student Table */}
         <section className="mb-10">
-          <h2 className="text-lg font-medium text-foreground mb-4">All Students</h2>
+          <h2 className="text-lg font-medium text-foreground mb-4">
+            {t('demo.b15.teacher_cls.all_students')}
+          </h2>
           <Card className="bg-card border-border/60 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60">
                     <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
-                      Student
+                      {t('demo.b15.teacher_cls.col_student')}
                     </th>
                     <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
-                      Score
+                      {t('demo.b15.teacher_cls.col_score')}
                     </th>
                     <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground hidden md:table-cell">
-                      RAG
+                      {t('demo.b15.teacher_cls.col_rag')}
                     </th>
                     <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground hidden md:table-cell">
-                      Trend
+                      {t('demo.b15.teacher_cls.col_trend')}
                     </th>
                     <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground hidden lg:table-cell">
-                      Last Active
+                      {t('demo.b15.teacher_cls.col_last_active')}
                     </th>
                     <th className="text-right px-4 py-3 text-xs font-medium text-muted-foreground">
-                      Profile
+                      {t('demo.b15.teacher_cls.col_profile')}
                     </th>
                   </tr>
                 </thead>
@@ -370,7 +388,7 @@ export default function TeacherClassDetailPage() {
         <section className="mb-10">
           <h2 className="text-lg font-medium text-foreground mb-4 flex items-center gap-2">
             <FileText className="h-5 w-5 text-primary" />
-            Recent Assessment Results
+            {t('demo.b15.teacher_cls.recent_assessments')}
           </h2>
           <Card className="bg-card border-border/60 overflow-hidden">
             <div className="overflow-x-auto">
@@ -378,19 +396,19 @@ export default function TeacherClassDetailPage() {
                 <thead>
                   <tr className="border-b border-border/60">
                     <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
-                      Student
+                      {t('demo.b15.teacher_cls.col_student')}
                     </th>
                     <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
-                      Assessment
+                      {t('demo.b15.teacher_cls.col_assessment')}
                     </th>
                     <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
-                      Type
+                      {t('demo.b15.teacher_cls.col_type')}
                     </th>
                     <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground">
-                      Score
+                      {t('demo.b15.teacher_cls.col_score')}
                     </th>
                     <th className="text-left px-4 py-3 text-xs font-medium text-muted-foreground hidden md:table-cell">
-                      Date
+                      {t('demo.b15.teacher_cls.col_date')}
                     </th>
                   </tr>
                 </thead>
@@ -449,13 +467,13 @@ export default function TeacherClassDetailPage() {
         <section className="mb-10">
           <h2 className="text-lg font-medium text-foreground mb-4 flex items-center gap-2">
             <BarChart3 className="h-5 w-5 text-primary" />
-            Class Strengths &amp; Weaknesses
+            {t('demo.b15.teacher_cls.strengths_weaknesses')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card className="bg-card border-border/60">
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium text-primary flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4" /> Class Strengths
+                  <CheckCircle className="h-4 w-4" /> {t('demo.b15.teacher_cls.class_strengths')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -485,7 +503,9 @@ export default function TeacherClassDetailPage() {
                     </ul>
                   </>
                 ) : (
-                  <p className="text-sm text-muted-foreground">Not enough data yet.</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('demo.b15.teacher_cls.no_data')}
+                  </p>
                 )}
               </CardContent>
             </Card>
@@ -493,7 +513,7 @@ export default function TeacherClassDetailPage() {
             <Card className="bg-card border-border/60">
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium text-red-600 dark:text-red-400 flex items-center gap-2">
-                  <XCircle className="h-4 w-4" /> Class Weaknesses
+                  <XCircle className="h-4 w-4" /> {t('demo.b15.teacher_cls.class_weaknesses')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -523,7 +543,9 @@ export default function TeacherClassDetailPage() {
                     </ul>
                   </>
                 ) : (
-                  <p className="text-sm text-muted-foreground">Not enough data yet.</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('demo.b15.teacher_cls.no_data')}
+                  </p>
                 )}
               </CardContent>
             </Card>
@@ -534,7 +556,7 @@ export default function TeacherClassDetailPage() {
         <section className="mb-10">
           <h2 className="text-lg font-medium text-foreground mb-4 flex items-center gap-2">
             <Lightbulb className="h-5 w-5 text-clay-600 dark:text-clay-400" />
-            Suggested Lesson Focus
+            {t('demo.b15.teacher_cls.suggested_focus')}
           </h2>
           <Card className="bg-card border-border/60">
             <CardContent className="p-6">
@@ -610,7 +632,7 @@ export default function TeacherClassDetailPage() {
                       <p className="text-xs text-muted-foreground mb-2">{suggestion}</p>
                       <div className="flex items-center gap-2">
                         <span className="text-[10px] uppercase tracking-wider text-clay-600/60 dark:text-clay-400/60">
-                          Suggested Activity:
+                          {t('demo.b15.teacher_cls.suggested_activity')}
                         </span>
                         <span className="text-xs text-muted-foreground">{activity}</span>
                       </div>
@@ -626,7 +648,7 @@ export default function TeacherClassDetailPage() {
         <section className="mb-10">
           <h2 className="text-lg font-medium text-foreground mb-4 flex items-center gap-2">
             <BarChart3 className="h-5 w-5 text-primary" />
-            Personalised Class Report
+            {t('demo.b15.teacher_cls.personalised_report')}
           </h2>
           <Card className="bg-card border-border/60">
             <CardContent className="p-6 space-y-4">
@@ -634,37 +656,43 @@ export default function TeacherClassDetailPage() {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600 dark:text-green-400" />
-                    <span className="text-sm text-muted-foreground">Strengths</span>
+                    <span className="text-sm text-muted-foreground">
+                      {t('demo.b15.teacher_cls.report_strengths')}
+                    </span>
                   </div>
                   <ul className="text-xs text-muted-foreground space-y-1 pl-6">
-                    <li>Strong engagement from top performers</li>
-                    <li>Good completion rate on reading tasks</li>
-                    <li>Consistent improvement in essay scores</li>
+                    <li>{t('demo.b15.teacher_cls.strength_1')}</li>
+                    <li>{t('demo.b15.teacher_cls.strength_2')}</li>
+                    <li>{t('demo.b15.teacher_cls.strength_3')}</li>
                   </ul>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <AlertTriangle className="h-4 w-4 text-clay-600 dark:text-clay-400" />
-                    <span className="text-sm text-muted-foreground">Areas for Focus</span>
+                    <span className="text-sm text-muted-foreground">
+                      {t('demo.b15.teacher_cls.report_focus')}
+                    </span>
                   </div>
                   <ul className="text-xs text-muted-foreground space-y-1 pl-6">
                     <li>
                       {decliningCount} student{decliningCount !== 1 ? 's' : ''} showing declining
                       engagement
                     </li>
-                    <li>Paper 2 scores below class average</li>
-                    <li>Homework submission rate needs attention</li>
+                    <li>{t('demo.b15.teacher_cls.focus_1')}</li>
+                    <li>{t('demo.b15.teacher_cls.focus_2')}</li>
                   </ul>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <Target className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">Recommendations</span>
+                    <span className="text-sm text-muted-foreground">
+                      {t('demo.b15.teacher_cls.report_recommendations')}
+                    </span>
                   </div>
                   <ul className="text-xs text-muted-foreground space-y-1 pl-6">
-                    <li>Intervention meeting for at-risk students</li>
-                    <li>Additional Paper 2 practice resources</li>
-                    <li>Peer mentoring for mid-range students</li>
+                    <li>{t('demo.b15.teacher_cls.rec_1')}</li>
+                    <li>{t('demo.b15.teacher_cls.rec_2')}</li>
+                    <li>{t('demo.b15.teacher_cls.rec_3')}</li>
                   </ul>
                 </div>
               </div>

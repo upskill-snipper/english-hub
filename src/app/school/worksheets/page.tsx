@@ -34,6 +34,7 @@ import {
   type WorksheetType,
   type DifficultyLevel,
 } from '@/lib/worksheet-generator'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Icon map ─────────────────────────────────────────────────────────────────
 
@@ -48,27 +49,29 @@ const TYPE_ICONS: Record<WorksheetType, React.ElementType> = {
   'theme-explorer': Lightbulb,
 }
 
-const DIFFICULTY_OPTIONS: { value: DifficultyLevel; label: string; description: string }[] = [
-  {
-    value: 'foundation',
-    label: 'Foundation',
-    description: 'Scaffolded with sentence starters and guided prompts',
-  },
-  {
-    value: 'core',
-    label: 'Core',
-    description: 'Standard difficulty with clear structure',
-  },
-  {
-    value: 'extension',
-    label: 'Extension',
-    description: 'Challenging with open-ended, evaluative tasks',
-  },
-]
-
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function WorksheetBrowserPage() {
+  const tx = useT()
+
+  const DIFFICULTY_OPTIONS: { value: DifficultyLevel; label: string; description: string }[] = [
+    {
+      value: 'foundation',
+      label: tx('school.b15.worksheets.difficulty_foundation_label'),
+      description: tx('school.b15.worksheets.difficulty_foundation_desc'),
+    },
+    {
+      value: 'core',
+      label: tx('school.b15.worksheets.difficulty_core_label'),
+      description: tx('school.b15.worksheets.difficulty_core_desc'),
+    },
+    {
+      value: 'extension',
+      label: tx('school.b15.worksheets.difficulty_extension_label'),
+      description: tx('school.b15.worksheets.difficulty_extension_desc'),
+    },
+  ]
+
   // ── State ────────────────────────────────────────────────────────────────
   const [worksheetType, setWorksheetType] = useState<WorksheetType>('quote-analysis')
   const [difficulty, setDifficulty] = useState<DifficultyLevel>('core')
@@ -112,11 +115,8 @@ export default function WorksheetBrowserPage() {
     <div className="space-y-8">
       {/* Page header */}
       <div>
-        <h1 className="text-2xl font-bold text-foreground">Worksheet Generator</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Create professional, print-ready worksheets for your English classes.
-          Choose a type, configure options, and preview before printing.
-        </p>
+        <h1 className="text-2xl font-bold text-foreground">{tx('school.b15.worksheets.title')}</h1>
+        <p className="mt-1 text-sm text-muted-foreground">{tx('school.b15.worksheets.subtitle')}</p>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[400px_1fr]">
@@ -125,7 +125,7 @@ export default function WorksheetBrowserPage() {
           {/* Worksheet type selector */}
           <div className="rounded-xl border border-border bg-card p-5 space-y-4">
             <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-              Worksheet Type
+              {tx('school.b15.worksheets.section_type')}
             </h2>
             <div className="grid grid-cols-2 gap-2">
               {(Object.keys(WORKSHEET_TYPE_META) as WorksheetType[]).map((type) => {
@@ -171,19 +171,19 @@ export default function WorksheetBrowserPage() {
           {/* Content options */}
           <div className="rounded-xl border border-border bg-card p-5 space-y-4">
             <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-              Content
+              {tx('school.b15.worksheets.section_content')}
             </h2>
 
             <div className="space-y-3">
               {/* Text / source */}
               <div className="space-y-1.5">
-                <Label htmlFor="ws-text">Text / Source</Label>
+                <Label htmlFor="ws-text">{tx('school.b15.worksheets.label_text')}</Label>
                 <Select value={text} onValueChange={(v) => v !== null && setText(v)}>
                   <SelectTrigger id="ws-text" className="w-full">
                     <SelectValue placeholder="Select a text..." />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">-- None --</SelectItem>
+                    <SelectItem value="">{tx('school.b15.worksheets.select_none')}</SelectItem>
                     {SAMPLE_TEXTS.map((t) => (
                       <SelectItem key={t} value={t}>
                         {t}
@@ -195,13 +195,13 @@ export default function WorksheetBrowserPage() {
 
               {/* Topic / theme */}
               <div className="space-y-1.5">
-                <Label htmlFor="ws-topic">Topic / Theme / Character</Label>
+                <Label htmlFor="ws-topic">{tx('school.b15.worksheets.label_topic')}</Label>
                 <Select value={topic} onValueChange={(v) => v !== null && setTopic(v)}>
                   <SelectTrigger id="ws-topic" className="w-full">
                     <SelectValue placeholder="Select a topic..." />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">-- None --</SelectItem>
+                    <SelectItem value="">{tx('school.b15.worksheets.select_none')}</SelectItem>
                     {SAMPLE_TOPICS.map((t) => (
                       <SelectItem key={t} value={t}>
                         {t}
@@ -213,7 +213,9 @@ export default function WorksheetBrowserPage() {
 
               {/* Difficulty */}
               <div className="space-y-1.5">
-                <Label htmlFor="ws-difficulty">Difficulty Level</Label>
+                <Label htmlFor="ws-difficulty">
+                  {tx('school.b15.worksheets.label_difficulty_level')}
+                </Label>
                 <div className="grid grid-cols-3 gap-2">
                   {DIFFICULTY_OPTIONS.map((opt) => (
                     <button
@@ -246,11 +248,11 @@ export default function WorksheetBrowserPage() {
           {/* Header details */}
           <div className="rounded-xl border border-border bg-card p-5 space-y-4">
             <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-              Header Details
+              {tx('school.b15.worksheets.section_header_details')}
             </h2>
             <div className="space-y-3">
               <div className="space-y-1.5">
-                <Label htmlFor="ws-school">School Name</Label>
+                <Label htmlFor="ws-school">{tx('school.b15.worksheets.label_school')}</Label>
                 <Input
                   id="ws-school"
                   value={schoolName}
@@ -260,7 +262,7 @@ export default function WorksheetBrowserPage() {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1.5">
-                  <Label htmlFor="ws-class">Class</Label>
+                  <Label htmlFor="ws-class">{tx('school.b15.worksheets.label_class')}</Label>
                   <Input
                     id="ws-class"
                     value={className}
@@ -269,7 +271,7 @@ export default function WorksheetBrowserPage() {
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <Label htmlFor="ws-date">Date</Label>
+                  <Label htmlFor="ws-date">{tx('school.b15.worksheets.label_date')}</Label>
                   <Input
                     id="ws-date"
                     value={customDate}
@@ -283,13 +285,11 @@ export default function WorksheetBrowserPage() {
 
           {/* Actions */}
           <div className="flex flex-col gap-3">
-            <Button
-              size="lg"
-              className="w-full gap-2"
-              onClick={handleGenerate}
-            >
+            <Button size="lg" className="w-full gap-2" onClick={handleGenerate}>
               <Sparkles className="h-4 w-4" />
-              {showPreview ? 'Refresh Preview' : 'Generate Worksheet'}
+              {showPreview
+                ? tx('school.b15.worksheets.btn_refresh')
+                : tx('school.b15.worksheets.btn_generate')}
             </Button>
 
             {showPreview && (
@@ -299,20 +299,14 @@ export default function WorksheetBrowserPage() {
                   className="flex-1 gap-2"
                   onClick={() => setShowAnswers(!showAnswers)}
                 >
-                  {showAnswers ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
-                    <Eye className="h-4 w-4" />
-                  )}
-                  {showAnswers ? 'Hide Answers' : 'Show Answers'}
+                  {showAnswers ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                  {showAnswers
+                    ? tx('school.b15.worksheets.hide_answers')
+                    : tx('school.b15.worksheets.show_answers')}
                 </Button>
-                <Button
-                  variant="outline"
-                  className="flex-1 gap-2"
-                  onClick={handlePrint}
-                >
+                <Button variant="outline" className="flex-1 gap-2" onClick={handlePrint}>
                   <Printer className="h-4 w-4" />
-                  Print
+                  {tx('school.b15.worksheets.btn_print')}
                 </Button>
               </div>
             )}
@@ -323,12 +317,15 @@ export default function WorksheetBrowserPage() {
         <div className="min-w-0">
           {showPreview ? (
             <div className="rounded-xl border border-border bg-card shadow-sm">
-              <div className="border-b border-border px-4 py-3 no-print flex items-center justify-between" data-print-hide>
+              <div
+                className="border-b border-border px-4 py-3 no-print flex items-center justify-between"
+                data-print-hide
+              >
                 <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  Preview
+                  {tx('school.b15.worksheets.preview_label')}
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  A4 layout &middot; optimised for printing
+                  {tx('school.b15.worksheets.preview_layout')}
                 </p>
               </div>
               <div className="p-6 overflow-auto max-h-[80vh]">
@@ -349,12 +346,10 @@ export default function WorksheetBrowserPage() {
             <div className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-border bg-muted/20 py-20 px-8 text-center">
               <FileText className="h-12 w-12 text-muted-foreground/70 mb-4" />
               <h3 className="text-lg font-semibold text-foreground mb-2">
-                No worksheet generated yet
+                {tx('school.b15.worksheets.no_worksheet_title')}
               </h3>
               <p className="text-sm text-muted-foreground max-w-sm">
-                Choose a worksheet type, select your text and topic, set the
-                difficulty level, then click &ldquo;Generate Worksheet&rdquo; to
-                see a preview.
+                {tx('school.b15.worksheets.no_worksheet_desc')}
               </p>
             </div>
           )}

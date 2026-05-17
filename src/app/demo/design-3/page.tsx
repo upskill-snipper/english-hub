@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useT } from '@/lib/i18n/use-t'
 
 const courses = [
   {
@@ -51,6 +52,7 @@ const stats = [
 ]
 
 export default function SoftAuroraPage() {
+  const t = useT()
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
       {/* Aurora gradient blobs */}
@@ -73,12 +75,12 @@ export default function SoftAuroraPage() {
         <div className="mb-10 flex items-end justify-between">
           <div>
             <p className="mb-1 text-sm font-medium tracking-wide text-muted-foreground">
-              ENGLISH HUB
+              {t('demo.b15.design3.eyebrow')}
             </p>
-            <h1 className="text-4xl font-light text-foreground">Good morning, Olivia</h1>
-            <p className="mt-2 text-muted-foreground">
-              You&apos;re making great progress this week. Keep it up.
-            </p>
+            <h1 className="text-4xl font-light text-foreground">
+              {t('demo.b15.design3.greeting')} Olivia
+            </h1>
+            <p className="mt-2 text-muted-foreground">{t('demo.b15.design3.progress_sub')}</p>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-medium text-primary">
@@ -108,7 +110,9 @@ export default function SoftAuroraPage() {
           <div className="flex flex-col gap-6">
             {/* Courses */}
             <div className="rounded-2xl bg-card p-8 shadow-soft">
-              <h2 className="mb-6 text-lg font-medium text-foreground">Your Courses</h2>
+              <h2 className="mb-6 text-lg font-medium text-foreground">
+                {t('demo.b15.design3.my_courses')}
+              </h2>
               <div className="flex flex-col gap-5">
                 {courses.map((course) => (
                   <div key={course.name}>
@@ -118,7 +122,7 @@ export default function SoftAuroraPage() {
                         <p className="text-xs text-muted-foreground">{course.papers}</p>
                       </div>
                       <p className="text-xs text-muted-foreground">
-                        {course.completed}/{course.lessons} lessons
+                        {course.completed}/{course.lessons} {t('demo.b15.design3.lessons_done')}
                       </p>
                     </div>
                     <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-muted">
@@ -176,7 +180,9 @@ export default function SoftAuroraPage() {
           <div className="flex flex-col gap-6">
             {/* Activity Timeline */}
             <div className="rounded-2xl bg-card p-8 shadow-soft">
-              <h2 className="mb-6 text-lg font-medium text-foreground">Recent Activity</h2>
+              <h2 className="mb-6 text-lg font-medium text-foreground">
+                {t('demo.b15.design3.recent_activity')}
+              </h2>
               <div className="flex flex-col gap-4">
                 {activity.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -197,7 +203,9 @@ export default function SoftAuroraPage() {
 
             {/* Upcoming Deadlines */}
             <div className="rounded-2xl bg-card p-8 shadow-soft">
-              <h2 className="mb-6 text-lg font-medium text-foreground">Upcoming Deadlines</h2>
+              <h2 className="mb-6 text-lg font-medium text-foreground">
+                {t('demo.b15.design3.upcoming_deadlines')}
+              </h2>
               <div className="flex flex-col gap-4">
                 {deadlines.map((deadline) => (
                   <div
@@ -217,7 +225,7 @@ export default function SoftAuroraPage() {
                             : 'text-muted-foreground'
                         }`}
                       >
-                        {deadline.daysLeft} days left
+                        {deadline.daysLeft} {t('demo.b15.design3.days_left')}
                       </p>
                     </div>
                   </div>

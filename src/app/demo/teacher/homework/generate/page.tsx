@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
 import { generateHomeworkPdf, generateHomeworkMarkSchemePdf } from '@/lib/generate-teaching-pdf'
 import type { HomeworkData } from '@/lib/generate-teaching-pdf'
@@ -583,6 +584,7 @@ const TYPING_LINES = [
 // ─── Component ───────────────────────────────────────────────────────────────
 
 export default function HomeworkGeneratorDemo() {
+  const t = useT()
   const [topic, setTopic] = useState<string>(TOPICS[0])
   const [homeworkType, setHomeworkType] = useState<string>(HOMEWORK_TYPES[0])
   const [yearGroup, setYearGroup] = useState<string>(YEAR_GROUPS[3])
@@ -697,16 +699,17 @@ export default function HomeworkGeneratorDemo() {
             href="/demo/teacher/homework"
             className="text-sm text-muted-foreground hover:text-muted-foreground transition-colors"
           >
-            &larr; Back to Homework Dashboard
+            &larr; {t('demo.b15.hw_gen.back_btn')}
           </Link>
         </div>
         <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">
           The English Hub
         </p>
-        <h1 className="text-4xl sm:text-5xl font-light tracking-tight mb-3">Homework Generator</h1>
+        <h1 className="text-4xl sm:text-5xl font-light tracking-tight mb-3">
+          {t('demo.b15.hw_gen.title')}
+        </h1>
         <p className="text-muted-foreground text-lg mb-8 max-w-2xl">
-          Generate complete, differentiated homework assignments in seconds. Select your topic,
-          homework type, year group, and target grade -- then preview, download, or assign directly.
+          {t('demo.b15.hw_gen.subtitle')}
         </p>
 
         {/* Demo Banner */}
@@ -730,25 +733,25 @@ export default function HomeworkGeneratorDemo() {
             <h2 className="text-xl font-medium text-foreground mb-6">Configure Your Homework</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormSelect
-                label="Topic / Text"
+                label={t('demo.b15.hw_gen.label_topic')}
                 value={topic}
                 onChange={setTopic}
                 options={[...TOPICS]}
               />
               <FormSelect
-                label="Homework Type"
+                label={t('demo.b15.hw_gen.label_type')}
                 value={homeworkType}
                 onChange={setHomeworkType}
                 options={[...HOMEWORK_TYPES]}
               />
               <FormSelect
-                label="Year Group"
+                label={t('demo.b15.hw_gen.label_year')}
                 value={yearGroup}
                 onChange={setYearGroup}
                 options={[...YEAR_GROUPS]}
               />
               <FormSelect
-                label="Target Grade Range"
+                label={t('demo.b15.hw_gen.label_grade')}
                 value={targetGrade}
                 onChange={setTargetGrade}
                 options={[...TARGET_GRADES]}
@@ -758,7 +761,7 @@ export default function HomeworkGeneratorDemo() {
               onClick={handleGenerate}
               className="mt-8 w-full rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3.5 px-6 transition-colors text-sm"
             >
-              Generate Homework
+              {t('demo.b15.hw_gen.generate_btn')}
             </button>
           </div>
         )}
@@ -773,7 +776,7 @@ export default function HomeworkGeneratorDemo() {
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse [animation-delay:300ms]" />
               </div>
               <span className="text-sm text-primary font-medium">
-                Generating homework assignment...
+                {t('demo.b15.hw_gen.generating_btn')}
               </span>
             </div>
             <div className="space-y-2 font-mono text-xs">
@@ -835,7 +838,7 @@ export default function HomeworkGeneratorDemo() {
                 {/* Success Criteria */}
                 <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
                   <h3 className="text-xs uppercase tracking-wider text-primary font-medium mb-3">
-                    Success Criteria
+                    {t('demo.b15.hw_gen.success_criteria')}
                   </h3>
                   <ul className="space-y-1.5 text-sm text-muted-foreground">
                     {generatedHomework.successCriteria.map((s, i) => (
@@ -878,7 +881,7 @@ export default function HomeworkGeneratorDemo() {
                 {/* Extension Tasks */}
                 <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
                   <h3 className="text-xs uppercase tracking-wider text-primary font-medium mb-3">
-                    Extension Tasks (Higher Ability)
+                    {t('demo.b15.hw_gen.extension')}
                   </h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     {generatedHomework.extensionTasks.map((t, i) => (
@@ -908,9 +911,15 @@ export default function HomeworkGeneratorDemo() {
 
             {/* ─── Action Buttons ──────────────────────────────────────── */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-6">
-              <ActionButton onClick={handleDownloadPDF} label="Download PDF" />
-              <ActionButton onClick={handleDownloadMarkScheme} label="Mark Scheme (PDF)" />
-              <ActionButton onClick={handleDownloadWord} label="Download Word" />
+              <ActionButton onClick={handleDownloadPDF} label={t('demo.b15.hw_gen.download_pdf')} />
+              <ActionButton
+                onClick={handleDownloadMarkScheme}
+                label={t('demo.b15.hw_gen.mark_scheme')}
+              />
+              <ActionButton
+                onClick={handleDownloadWord}
+                label={t('demo.b15.hw_gen.download_word')}
+              />
               <ActionButton onClick={handleCopy} label={copied ? 'Copied!' : 'Copy to Clipboard'} />
               <ActionButton onClick={handleReset} label="Generate Another" />
               <ActionButton onClick={handleAssign} label="Assign to Class" />

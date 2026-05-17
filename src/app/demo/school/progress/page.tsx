@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 import {
   BarChart3,
   Users,
@@ -375,6 +376,7 @@ const totalAtRisk = YEAR_GROUPS.reduce((s, y) => s + y.atRisk, 0)
 // ── Main Page ────────────────────────────────────────────────────────────────
 
 export default function SchoolProgressPage() {
+  const t = useT()
   const [activeYear, setActiveYear] = useState<string>('Y10')
   const [showReport, setShowReport] = useState(false)
 
@@ -382,7 +384,7 @@ export default function SchoolProgressPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <DemoBanner message="You are viewing an interactive demo with sample data. No real student data is used." />
+      <DemoBanner message={t('demo.b15.school_progress.demo_banner')} />
 
       <div className="px-4 sm:px-6 py-8 sm:py-12">
         {/* Back link */}
@@ -390,7 +392,8 @@ export default function SchoolProgressPage() {
           href="/demo/school"
           className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors mb-6"
         >
-          <span className="text-base leading-none">&larr;</span> School Dashboard
+          <span className="text-base leading-none">&larr;</span>{' '}
+          {t('demo.b15.school_progress.back')}
         </Link>
 
         {/* Header */}
@@ -398,23 +401,21 @@ export default function SchoolProgressPage() {
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight flex items-center gap-3">
               <BarChart3 className="h-7 w-7 text-primary" />
-              Progress Tracking
+              {t('demo.b15.school_progress.title')}
             </h1>
-            <p className="text-muted-foreground mt-1">
-              Whole-school progress overview and year group analysis
-            </p>
+            <p className="text-muted-foreground mt-1">{t('demo.b15.school_progress.subtitle')}</p>
           </div>
           <Button
             variant="outline"
             className="border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground gap-2"
             onClick={() =>
-              toast('Available with full account', {
-                description: 'Register your school to download reports.',
+              toast(t('demo.b15.school_progress.toast_available'), {
+                description: t('demo.b15.school_progress.toast_register'),
               })
             }
           >
             <Download className="h-4 w-4" />
-            Download Year Group Report
+            {t('demo.b15.school_progress.download_btn')}
           </Button>
         </div>
 
@@ -425,7 +426,7 @@ export default function SchoolProgressPage() {
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
                 <TrendingUp className="h-4 w-4 text-primary" />
-                Overall School Progress
+                {t('demo.b15.school_progress.card_overall')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -436,10 +437,13 @@ export default function SchoolProgressPage() {
                     className={`text-3xl font-bold ${gcseGradeColor(percentageToGCSEGrade(avgSchoolProgress))}`}
                   >
                     Grade {percentageToGCSEGrade(avgSchoolProgress)}{' '}
-                    <span className="text-lg font-normal text-muted-foreground">avg</span>
+                    <span className="text-lg font-normal text-muted-foreground">
+                      {t('demo.b15.school_progress.avg_label')}
+                    </span>
                   </div>
                   <p className="text-xs text-muted-foreground mt-2">
-                    {totalStudents} students across {YEAR_GROUPS.length} year groups
+                    {totalStudents} {t('demo.b15.school_progress.students_label')} across{' '}
+                    {YEAR_GROUPS.length} {t('demo.b15.school_progress.year_groups_suffix')}
                   </p>
                 </div>
               </div>
@@ -451,7 +455,7 @@ export default function SchoolProgressPage() {
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
                 <GraduationCap className="h-4 w-4 text-primary" />
-                Year Group Breakdown
+                {t('demo.b15.school_progress.card_year_breakdown')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -480,7 +484,7 @@ export default function SchoolProgressPage() {
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
                 <Target className="h-4 w-4 text-amber-700 dark:text-amber-300" />
-                Predicted Grades Distribution
+                {t('demo.b15.school_progress.card_predicted')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -537,7 +541,7 @@ export default function SchoolProgressPage() {
           <CardHeader className="pb-3">
             <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
               <Users className="h-4 w-4 text-primary" />
-              Student Distribution (All Year Groups)
+              {t('demo.b15.school_progress.dist_all_year')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -545,7 +549,9 @@ export default function SchoolProgressPage() {
               <div className="text-center p-4 rounded-lg bg-primary/10 border border-primary/20">
                 <CheckCircle2 className="h-5 w-5 text-primary mx-auto mb-1" />
                 <div className="text-2xl font-bold text-primary">{totalOnTrack}</div>
-                <div className="text-xs text-muted-foreground mt-1">On Track</div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  {t('demo.b15.school_progress.on_track')}
+                </div>
                 <div className="text-xs text-muted-foreground">
                   {Math.round((totalOnTrack / totalStudents) * 100)}%
                 </div>
@@ -555,7 +561,9 @@ export default function SchoolProgressPage() {
                 <div className="text-2xl font-bold text-amber-700 dark:text-amber-300">
                   {totalAboveTarget}
                 </div>
-                <div className="text-xs text-muted-foreground mt-1">Above Target</div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  {t('demo.b15.school_progress.above_target')}
+                </div>
                 <div className="text-xs text-muted-foreground">
                   {Math.round((totalAboveTarget / totalStudents) * 100)}%
                 </div>
@@ -565,7 +573,9 @@ export default function SchoolProgressPage() {
                 <div className="text-2xl font-bold text-amber-700 dark:text-amber-300">
                   {totalBelowTarget}
                 </div>
-                <div className="text-xs text-muted-foreground mt-1">Below Target</div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  {t('demo.b15.school_progress.below_target')}
+                </div>
                 <div className="text-xs text-muted-foreground">
                   {Math.round((totalBelowTarget / totalStudents) * 100)}%
                 </div>
@@ -575,7 +585,9 @@ export default function SchoolProgressPage() {
                 <div className="text-2xl font-bold text-red-700 dark:text-red-300">
                   {totalAtRisk}
                 </div>
-                <div className="text-xs text-muted-foreground mt-1">At Risk</div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  {t('demo.b15.school_progress.at_risk')}
+                </div>
                 <div className="text-xs text-muted-foreground">
                   {Math.round((totalAtRisk / totalStudents) * 100)}%
                 </div>
@@ -622,7 +634,9 @@ export default function SchoolProgressPage() {
                 <div className={`text-lg font-bold ${gcseGradeColor(activeYearData.avgWorkingAt)}`}>
                   G{activeYearData.avgWorkingAt}
                 </div>
-                <div className="text-[10px] text-muted-foreground uppercase">Working At</div>
+                <div className="text-[10px] text-muted-foreground uppercase">
+                  {t('demo.b15.school_progress.working_at')}
+                </div>
               </div>
               <div className="text-center">
                 <div
@@ -630,11 +644,15 @@ export default function SchoolProgressPage() {
                 >
                   G{activeYearData.avgPredicted}
                 </div>
-                <div className="text-[10px] text-muted-foreground uppercase">Predicted</div>
+                <div className="text-[10px] text-muted-foreground uppercase">
+                  {t('demo.b15.school_progress.predicted')}
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-lg font-bold text-primary">G{activeYearData.avgTarget}</div>
-                <div className="text-[10px] text-muted-foreground uppercase">Target</div>
+                <div className="text-[10px] text-muted-foreground uppercase">
+                  {t('demo.b15.school_progress.target')}
+                </div>
               </div>
             </div>
           </div>
@@ -644,7 +662,7 @@ export default function SchoolProgressPage() {
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
                 <BarChart3 className="h-4 w-4 text-primary" />
-                Class Comparison
+                {t('demo.b15.school_progress.class_comparison')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -667,13 +685,13 @@ export default function SchoolProgressPage() {
                     </div>
                     <div className="flex shrink-0 items-center gap-3">
                       <span className="text-muted-foreground">
-                        Avg:{' '}
+                        {t('demo.b15.school_progress.avg_prefix')}{' '}
                         <span className={progressTextColor(cls.avgScore)}>
                           {cls.avgScore}% (G{percentageToGCSEGrade(cls.avgScore)})
                         </span>
                       </span>
                       <span className="text-muted-foreground">
-                        Completion:{' '}
+                        {t('demo.b15.school_progress.completion_prefix')}{' '}
                         <span className={progressTextColor(cls.completionRate)}>
                           {cls.completionRate}%
                         </span>
@@ -683,7 +701,7 @@ export default function SchoolProgressPage() {
                 ))}
               </div>
               <p className="text-[10px] text-muted-foreground mt-3">
-                Best performing class highlighted in violet
+                {t('demo.b15.school_progress.highlighted_note')}
               </p>
             </CardContent>
           </Card>
@@ -695,7 +713,7 @@ export default function SchoolProgressPage() {
               <CardHeader className="pb-3">
                 <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
                   <PieChart className="h-4 w-4 text-primary" />
-                  Student Distribution
+                  {t('demo.b15.school_progress.student_dist')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -709,34 +727,42 @@ export default function SchoolProgressPage() {
                       size={128}
                     />
                     <p className="mt-1 text-[10px] text-muted-foreground">
-                      {activeYearData.totalStudents} students
+                      {activeYearData.totalStudents} {t('demo.b15.school_progress.students_label')}
                     </p>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-teal-700" />
-                      <span className="text-muted-foreground">On Track</span>
+                      <span className="text-muted-foreground">
+                        {t('demo.b15.school_progress.on_track')}
+                      </span>
                       <span className="text-primary font-mono ml-auto">
                         {activeYearData.onTrack}
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-yellow-400" />
-                      <span className="text-muted-foreground">Above Target</span>
+                      <span className="text-muted-foreground">
+                        {t('demo.b15.school_progress.above_target')}
+                      </span>
                       <span className="text-amber-700 dark:text-amber-300 font-mono ml-auto">
                         {activeYearData.aboveTarget}
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-amber-500" />
-                      <span className="text-muted-foreground">Below Target</span>
+                      <span className="text-muted-foreground">
+                        {t('demo.b15.school_progress.below_target')}
+                      </span>
                       <span className="text-amber-700 dark:text-amber-300 font-mono ml-auto">
                         {activeYearData.belowTarget}
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="h-3 w-3 rounded-full bg-red-500" />
-                      <span className="text-muted-foreground">At Risk</span>
+                      <span className="text-muted-foreground">
+                        {t('demo.b15.school_progress.at_risk')}
+                      </span>
                       <span className="text-red-700 dark:text-red-300 font-mono ml-auto">
                         {activeYearData.atRisk}
                       </span>
@@ -808,7 +834,7 @@ export default function SchoolProgressPage() {
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
                 <BookOpen className="h-4 w-4 text-primary" />
-                Module Completion Rates
+                {t('demo.b15.school_progress.module_completion')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -840,7 +866,7 @@ export default function SchoolProgressPage() {
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-red-700 dark:text-red-300 flex items-center gap-2">
                 <ShieldAlert className="h-4 w-4" />
-                Intervention Recommendations -- {activeYearData.label}
+                {t('demo.b15.school_progress.intervention_recs')} — {activeYearData.label}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -862,19 +888,19 @@ export default function SchoolProgressPage() {
               onClick={() => setShowReport(true)}
             >
               <Printer className="h-4 w-4" />
-              Generate Progress Report
+              {t('demo.b15.school_progress.generate_btn')}
             </Button>
             <Button
               variant="outline"
               className="border-border text-muted-foreground hover:bg-accent hover:text-accent-foreground gap-2"
               onClick={() =>
-                toast('Available with full account', {
-                  description: 'Register your school to download year group reports.',
+                toast(t('demo.b15.school_progress.toast_available'), {
+                  description: t('demo.b15.school_progress.toast_year_register'),
                 })
               }
             >
               <Download className="h-4 w-4" />
-              Download Year Group Report
+              {t('demo.b15.school_progress.download_btn')}
             </Button>
           </div>
         </div>
@@ -886,9 +912,12 @@ export default function SchoolProgressPage() {
               {/* Report header */}
               <div className="flex items-center justify-between p-6 border-b">
                 <div>
-                  <h2 className="text-xl font-bold">Progress Report: {activeYearData.label}</h2>
+                  <h2 className="text-xl font-bold">
+                    {t('demo.b15.school_progress.report_title_pre')} {activeYearData.label}
+                  </h2>
                   <p className="text-sm text-muted-foreground">
-                    Westfield Academy -- Generated {new Date().toLocaleDateString('en-GB')}
+                    Westfield Academy — {t('demo.b15.school_progress.report_generated')}{' '}
+                    {new Date().toLocaleDateString('en-GB')}
                   </p>
                 </div>
                 <button
@@ -903,27 +932,37 @@ export default function SchoolProgressPage() {
               <div className="p-6 space-y-6 text-sm">
                 {/* Summary */}
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Summary</h3>
+                  <h3 className="font-semibold text-lg mb-2">
+                    {t('demo.b15.school_progress.report_summary')}
+                  </h3>
                   <table className="w-full text-left border-collapse">
                     <tbody>
                       <tr className="border-b">
-                        <td className="py-1 text-muted-foreground">Total Students</td>
+                        <td className="py-1 text-muted-foreground">
+                          {t('demo.b15.school_progress.report_total_students')}
+                        </td>
                         <td className="py-1 font-medium text-right">
                           {activeYearData.totalStudents}
                         </td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-muted-foreground">Average Progress</td>
+                        <td className="py-1 text-muted-foreground">
+                          {t('demo.b15.school_progress.report_avg_progress')}
+                        </td>
                         <td className="py-1 font-medium text-right">
                           {activeYearData.avgProgress}%
                         </td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-muted-foreground">Average Score</td>
+                        <td className="py-1 text-muted-foreground">
+                          {t('demo.b15.school_progress.report_avg_score')}
+                        </td>
                         <td className="py-1 font-medium text-right">{activeYearData.avgScore}%</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-muted-foreground">On Track</td>
+                        <td className="py-1 text-muted-foreground">
+                          {t('demo.b15.school_progress.on_track')}
+                        </td>
                         <td className="py-1 font-medium text-right text-emerald-700 dark:text-emerald-300">
                           {activeYearData.onTrack} (
                           {Math.round(
@@ -933,7 +972,9 @@ export default function SchoolProgressPage() {
                         </td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-muted-foreground">Above Target</td>
+                        <td className="py-1 text-muted-foreground">
+                          {t('demo.b15.school_progress.above_target')}
+                        </td>
                         <td className="py-1 font-medium text-right text-amber-700 dark:text-amber-300">
                           {activeYearData.aboveTarget} (
                           {Math.round(
@@ -943,7 +984,9 @@ export default function SchoolProgressPage() {
                         </td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-muted-foreground">Below Target</td>
+                        <td className="py-1 text-muted-foreground">
+                          {t('demo.b15.school_progress.below_target')}
+                        </td>
                         <td className="py-1 font-medium text-right text-amber-700 dark:text-amber-300">
                           {activeYearData.belowTarget} (
                           {Math.round(
@@ -953,7 +996,9 @@ export default function SchoolProgressPage() {
                         </td>
                       </tr>
                       <tr>
-                        <td className="py-1 text-muted-foreground">At Risk</td>
+                        <td className="py-1 text-muted-foreground">
+                          {t('demo.b15.school_progress.at_risk')}
+                        </td>
                         <td className="py-1 font-medium text-right text-red-700 dark:text-red-300">
                           {activeYearData.atRisk} (
                           {Math.round((activeYearData.atRisk / activeYearData.totalStudents) * 100)}
@@ -966,14 +1011,24 @@ export default function SchoolProgressPage() {
 
                 {/* Class Performance */}
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Class Performance</h3>
+                  <h3 className="font-semibold text-lg mb-2">
+                    {t('demo.b15.school_progress.report_class_perf')}
+                  </h3>
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr className="border-b text-muted-foreground">
-                        <th className="py-1 font-medium">Class</th>
-                        <th className="py-1 font-medium">Teacher</th>
-                        <th className="py-1 font-medium text-right">Avg Score</th>
-                        <th className="py-1 font-medium text-right">Completion</th>
+                        <th className="py-1 font-medium">
+                          {t('demo.b15.school_progress.report_col_class')}
+                        </th>
+                        <th className="py-1 font-medium">
+                          {t('demo.b15.school_progress.report_col_teacher')}
+                        </th>
+                        <th className="py-1 font-medium text-right">
+                          {t('demo.b15.school_progress.report_col_avg_score')}
+                        </th>
+                        <th className="py-1 font-medium text-right">
+                          {t('demo.b15.school_progress.report_col_completion')}
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -991,7 +1046,9 @@ export default function SchoolProgressPage() {
 
                 {/* Predicted Grades */}
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Predicted Grade Distribution</h3>
+                  <h3 className="font-semibold text-lg mb-2">
+                    {t('demo.b15.school_progress.report_predicted_dist')}
+                  </h3>
                   <div className="flex gap-2">
                     {activeYearData.predictedGrades.map((g) => (
                       <div key={g.grade} className="flex-1 text-center p-2 rounded bg-muted">
@@ -1004,7 +1061,9 @@ export default function SchoolProgressPage() {
 
                 {/* Interventions */}
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">Recommended Interventions</h3>
+                  <h3 className="font-semibold text-lg mb-2">
+                    {t('demo.b15.school_progress.report_interventions')}
+                  </h3>
                   <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                     {activeYearData.interventions.map((int, i) => (
                       <li key={i}>{int}</li>
@@ -1014,21 +1073,21 @@ export default function SchoolProgressPage() {
 
                 {/* Footer */}
                 <div className="text-center text-xs text-muted-foreground pt-4 border-t">
-                  This is a demo report. Register your school for real progress tracking.
+                  {t('demo.b15.school_progress.report_footer')}
                 </div>
               </div>
 
               {/* Print button */}
               <div className="p-4 border-t flex justify-end gap-2">
                 <Button variant="outline" onClick={() => setShowReport(false)}>
-                  Close
+                  {t('demo.b15.school_progress.close')}
                 </Button>
                 <Button
                   onClick={() => window.print()}
                   className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2"
                 >
                   <Printer className="h-4 w-4" />
-                  Print Report
+                  {t('demo.b15.school_progress.print')}
                 </Button>
               </div>
             </div>

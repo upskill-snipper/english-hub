@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useT } from '@/lib/i18n/use-t'
 import {
   Users,
   Activity,
@@ -196,14 +197,15 @@ const TIME_OF_DAY = [
 // -- Page component -------------------------------------------------------------
 
 export default function EngagementPage() {
+  const t = useT()
   const [remindersSent, setRemindersSent] = useState<Set<string>>(new Set())
 
   const totalStudents = DEMO_STUDENTS.length > 0 ? DEMO_STUDENTS.length : 342
 
   function handleSendReminder(studentId: string, studentName: string) {
     setRemindersSent((prev) => new Set(prev).add(studentId))
-    toast.success(`Reminder sent to ${studentName}`, {
-      description: 'They will receive an email encouraging them to log in.',
+    toast.success(`${t('demo.b15.engagement.toast_reminder_pre')} ${studentName}`, {
+      description: t('demo.b15.engagement.toast_reminder_desc'),
     })
   }
 
@@ -213,14 +215,14 @@ export default function EngagementPage() {
       <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2.5 text-center">
         <p className="text-sm text-amber-700 dark:text-amber-300">
           <Info className="inline-block w-4 h-4 mr-1.5 -mt-0.5" />
-          This is a demo dashboard with sample data.{' '}
+          {t('demo.b15.engagement.banner')}{' '}
           <Link
             href="/for-schools/register"
             className="underline underline-offset-2 hover:text-amber-600 dark:hover:text-amber-200 font-medium"
           >
-            Register your school
+            {t('demo.b15.engagement.register_link')}
           </Link>{' '}
-          to see your real engagement analytics.
+          {t('demo.b15.engagement.register_sub')}
         </p>
       </div>
 
@@ -229,11 +231,9 @@ export default function EngagementPage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight flex items-center gap-3">
             <Activity className="w-8 h-8 text-primary" />
-            Student Engagement
+            {t('demo.b15.engagement.title')}
           </h1>
-          <p className="text-muted-foreground mt-1">
-            Track student activity, login patterns, and content usage across your school.
-          </p>
+          <p className="text-muted-foreground mt-1">{t('demo.b15.engagement.subtitle')}</p>
         </div>
 
         {/* ── Engagement stats cards ─────────────────────────────── */}
@@ -242,7 +242,7 @@ export default function EngagementPage() {
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Daily Active Users</p>
+                  <p className="text-sm text-muted-foreground">{t('demo.b15.engagement.dau')}</p>
                   <p className="text-2xl font-bold mt-1">
                     287<span className="text-base font-normal text-muted-foreground">/342</span>
                   </p>
@@ -253,8 +253,8 @@ export default function EngagementPage() {
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-muted-foreground">84% active</span>
-                  <span className="text-primary">+3% vs last week</span>
+                  <span className="text-muted-foreground">{t('demo.b15.engagement.dau_pct')}</span>
+                  <span className="text-primary">{t('demo.b15.engagement.dau_vs')}</span>
                 </div>
                 <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
                   <div className="h-full bg-primary rounded-full" style={{ width: '84%' }} />
@@ -267,7 +267,9 @@ export default function EngagementPage() {
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Weekly Login Rate</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('demo.b15.engagement.weekly_login')}
+                  </p>
                   <p className="text-2xl font-bold mt-1">
                     305<span className="text-base font-normal text-muted-foreground">/342</span>
                   </p>
@@ -278,8 +280,10 @@ export default function EngagementPage() {
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-muted-foreground">89% logged in</span>
-                  <span className="text-primary">+1% vs last week</span>
+                  <span className="text-muted-foreground">
+                    {t('demo.b15.engagement.weekly_pct')}
+                  </span>
+                  <span className="text-primary">{t('demo.b15.engagement.weekly_vs')}</span>
                 </div>
                 <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
                   <div className="h-full bg-blue-500 rounded-full" style={{ width: '89%' }} />
@@ -292,9 +296,15 @@ export default function EngagementPage() {
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Average Session</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('demo.b15.engagement.avg_session')}
+                  </p>
                   <p className="text-2xl font-bold mt-1">
-                    23<span className="text-base font-normal text-muted-foreground"> min</span>
+                    23
+                    <span className="text-base font-normal text-muted-foreground">
+                      {' '}
+                      {t('demo.b15.engagement.avg_session_min')}
+                    </span>
                   </p>
                 </div>
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -303,8 +313,10 @@ export default function EngagementPage() {
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-muted-foreground">Target: 20 min</span>
-                  <span className="text-accent">+2 min vs last week</span>
+                  <span className="text-muted-foreground">
+                    {t('demo.b15.engagement.avg_target')}
+                  </span>
+                  <span className="text-accent">{t('demo.b15.engagement.avg_vs')}</span>
                 </div>
                 <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
                   <div className="h-full bg-accent rounded-full" style={{ width: '100%' }} />
@@ -317,9 +329,15 @@ export default function EngagementPage() {
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Content Accessed Today</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('demo.b15.engagement.content_today')}
+                  </p>
                   <p className="text-2xl font-bold mt-1">
-                    456<span className="text-base font-normal text-muted-foreground"> pages</span>
+                    456
+                    <span className="text-base font-normal text-muted-foreground">
+                      {' '}
+                      {t('demo.b15.engagement.pages_suffix')}
+                    </span>
                   </p>
                 </div>
                 <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center">
@@ -328,8 +346,10 @@ export default function EngagementPage() {
               </div>
               <div className="mt-3">
                 <div className="flex items-center justify-between text-xs mb-1">
-                  <span className="text-muted-foreground">Avg: 380/day</span>
-                  <span className="text-amber-700 dark:text-amber-300">+20% vs average</span>
+                  <span className="text-muted-foreground">{t('demo.b15.engagement.avg_day')}</span>
+                  <span className="text-amber-700 dark:text-amber-300">
+                    {t('demo.b15.engagement.content_vs')}
+                  </span>
                 </div>
                 <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
                   <div className="h-full bg-amber-500 rounded-full" style={{ width: '100%' }} />
@@ -344,10 +364,10 @@ export default function EngagementPage() {
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <BarChart3 className="w-5 h-5 text-primary" />
-              Engagement Heatmap
+              {t('demo.b15.engagement.heatmap_title')}
             </CardTitle>
             <CardDescription className="text-muted-foreground">
-              Activity levels across 7 days and 24 hours. Darker green = higher activity.
+              {t('demo.b15.engagement.heatmap_desc')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -361,14 +381,18 @@ export default function EngagementPage() {
             />
             {/* Legend */}
             <div className="flex items-center gap-2 mt-3 justify-end">
-              <span className="text-xs text-muted-foreground">Less</span>
+              <span className="text-xs text-muted-foreground">
+                {t('demo.b15.engagement.legend_less')}
+              </span>
               <div className="w-4 h-4 rounded-sm bg-muted" />
               <div className="w-4 h-4 rounded-sm bg-primary/20" />
               <div className="w-4 h-4 rounded-sm bg-primary/40" />
               <div className="w-4 h-4 rounded-sm bg-primary/60" />
               <div className="w-4 h-4 rounded-sm bg-primary/80" />
               <div className="w-4 h-4 rounded-sm bg-primary" />
-              <span className="text-xs text-muted-foreground">More</span>
+              <span className="text-xs text-muted-foreground">
+                {t('demo.b15.engagement.legend_more')}
+              </span>
             </div>
           </CardContent>
         </Card>
@@ -376,28 +400,30 @@ export default function EngagementPage() {
         {/* ── Year Group Engagement table ────────────────────────── */}
         <Card className="bg-card border-border/60 mb-8">
           <CardHeader>
-            <CardTitle className="text-lg">Year Group Engagement</CardTitle>
+            <CardTitle className="text-lg">{t('demo.b15.engagement.year_group_title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border/60">
-                    <th className="text-left py-3 px-3 text-muted-foreground font-medium">Year</th>
-                    <th className="text-right py-3 px-3 text-muted-foreground font-medium">
-                      Students
+                    <th className="text-left py-3 px-3 text-muted-foreground font-medium">
+                      {t('demo.b15.engagement.col_year')}
                     </th>
                     <th className="text-right py-3 px-3 text-muted-foreground font-medium">
-                      Active %
+                      {t('demo.b15.engagement.col_students')}
                     </th>
                     <th className="text-right py-3 px-3 text-muted-foreground font-medium">
-                      Avg Sessions/Week
+                      {t('demo.b15.engagement.col_active_pct')}
                     </th>
                     <th className="text-right py-3 px-3 text-muted-foreground font-medium">
-                      Avg Duration
+                      {t('demo.b15.engagement.col_avg_sessions')}
+                    </th>
+                    <th className="text-right py-3 px-3 text-muted-foreground font-medium">
+                      {t('demo.b15.engagement.col_avg_duration')}
                     </th>
                     <th className="text-center py-3 px-3 text-muted-foreground font-medium">
-                      Trend
+                      {t('demo.b15.engagement.col_trend')}
                     </th>
                   </tr>
                 </thead>
@@ -446,10 +472,10 @@ export default function EngagementPage() {
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Flame className="w-5 h-5 text-amber-700 dark:text-amber-300" />
-                Most Active Students
+                {t('demo.b15.engagement.most_active_title')}
               </CardTitle>
               <CardDescription className="text-muted-foreground">
-                Top 10 students by activity this week
+                {t('demo.b15.engagement.most_active_desc')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -480,10 +506,11 @@ export default function EngagementPage() {
                         className="border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs"
                       >
                         <Flame className="w-3 h-3 mr-1" />
-                        {student.streak}d streak
+                        {student.streak}
+                        {t('demo.b15.engagement.streak_suffix')}
                       </Badge>
                       <span className="text-xs text-muted-foreground">
-                        {student.sessions} sessions
+                        {student.sessions} {t('demo.b15.engagement.sessions_suffix')}
                       </span>
                     </div>
                   </Link>
@@ -497,10 +524,10 @@ export default function EngagementPage() {
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Bell className="w-5 h-5 text-red-700 dark:text-red-300" />
-                Inactive Students
+                {t('demo.b15.engagement.inactive_title')}
               </CardTitle>
               <CardDescription className="text-muted-foreground">
-                Students who have not logged in for 7+ days
+                {t('demo.b15.engagement.inactive_desc')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -520,7 +547,7 @@ export default function EngagementPage() {
                       <div>
                         <p className="text-sm font-medium">{student.name}</p>
                         <p className="text-xs text-muted-foreground">
-                          Last active: {student.lastActive}
+                          {t('demo.b15.engagement.last_active')} {student.lastActive}
                         </p>
                       </div>
                     </div>
@@ -529,7 +556,8 @@ export default function EngagementPage() {
                         variant="outline"
                         className="border-red-500/30 text-red-700 dark:text-red-300 text-xs"
                       >
-                        {student.daysInactive}d inactive
+                        {student.daysInactive}
+                        {t('demo.b15.engagement.days_inactive_suffix')}
                       </Badge>
                       <Button
                         size="sm"
@@ -538,7 +566,9 @@ export default function EngagementPage() {
                         disabled={remindersSent.has(student.id)}
                         onClick={() => handleSendReminder(student.id, student.name)}
                       >
-                        {remindersSent.has(student.id) ? 'Sent' : 'Send Reminder'}
+                        {remindersSent.has(student.id)
+                          ? t('demo.b15.engagement.sent')
+                          : t('demo.b15.engagement.send_reminder')}
                       </Button>
                     </div>
                   </div>
@@ -555,7 +585,7 @@ export default function EngagementPage() {
             <CardHeader>
               <CardTitle className="text-base flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-primary" />
-                Most Popular Courses
+                {t('demo.b15.engagement.popular_courses')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -567,7 +597,9 @@ export default function EngagementPage() {
                       <span className="text-sm truncate">{course.name}</span>
                     </div>
                     <div className="flex items-center gap-2 shrink-0 ml-2">
-                      <span className="text-xs text-muted-foreground">{course.views} views</span>
+                      <span className="text-xs text-muted-foreground">
+                        {course.views} {t('demo.b15.engagement.views_suffix')}
+                      </span>
                       <span className="text-xs text-primary">{course.trend}</span>
                     </div>
                   </div>
@@ -581,7 +613,7 @@ export default function EngagementPage() {
             <CardHeader>
               <CardTitle className="text-base flex items-center gap-2">
                 <ClipboardList className="w-4 h-4 text-amber-700 dark:text-amber-300" />
-                Most Attempted Quizzes
+                {t('demo.b15.engagement.popular_quizzes')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -594,10 +626,11 @@ export default function EngagementPage() {
                     </div>
                     <div className="flex items-center gap-3 shrink-0 ml-2">
                       <span className="text-xs text-muted-foreground">
-                        {quiz.attempts} attempts
+                        {quiz.attempts} {t('demo.b15.engagement.attempts_suffix')}
                       </span>
                       <span className="text-xs text-amber-700 dark:text-amber-300">
-                        {quiz.avgScore}% avg
+                        {quiz.avgScore}
+                        {t('demo.b15.engagement.avg_score_suffix')}
                       </span>
                     </div>
                   </div>
@@ -611,7 +644,7 @@ export default function EngagementPage() {
             <CardHeader>
               <CardTitle className="text-base flex items-center gap-2">
                 <FolderOpen className="w-4 h-4 text-primary" />
-                Most Viewed Resources
+                {t('demo.b15.engagement.popular_resources')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -623,7 +656,7 @@ export default function EngagementPage() {
                       <span className="text-sm truncate">{resource.name}</span>
                     </div>
                     <span className="text-xs text-muted-foreground shrink-0 ml-2">
-                      {resource.downloads} downloads
+                      {resource.downloads} {t('demo.b15.engagement.downloads_suffix')}
                     </span>
                   </div>
                 ))}
@@ -637,10 +670,10 @@ export default function EngagementPage() {
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <Clock className="w-5 h-5 text-primary" />
-              Time-of-Day Activity
+              {t('demo.b15.engagement.time_of_day')}
             </CardTitle>
             <CardDescription className="text-muted-foreground">
-              When students are most active throughout the day
+              {t('demo.b15.engagement.time_of_day_desc')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -654,15 +687,21 @@ export default function EngagementPage() {
             <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-border/60">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-sm bg-primary" />
-                <span className="text-xs text-muted-foreground">Peak hours</span>
+                <span className="text-xs text-muted-foreground">
+                  {t('demo.b15.engagement.peak_hours')}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-sm bg-primary/60" />
-                <span className="text-xs text-muted-foreground">Moderate</span>
+                <span className="text-xs text-muted-foreground">
+                  {t('demo.b15.engagement.moderate')}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-sm bg-muted" />
-                <span className="text-xs text-muted-foreground">Low</span>
+                <span className="text-xs text-muted-foreground">
+                  {t('demo.b15.engagement.low')}
+                </span>
               </div>
             </div>
           </CardContent>

@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback } from 'react'
 import {
   Key,
   Copy,
@@ -17,19 +17,20 @@ import {
   ExternalLink,
   ShieldOff,
   Shield,
-} from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { useT } from '@/lib/i18n/use-t'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 interface JoinCode {
   id: string
   code: string
-  type: "student" | "teacher"
+  type: 'student' | 'teacher'
   max_uses: number
   uses: number
   expires_at: string | null
@@ -50,36 +51,55 @@ interface SchoolClass {
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function generateCode(): string {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
-  return Array.from(crypto.getRandomValues(new Uint8Array(6)), (b) => chars[b % chars.length]).join("")
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+  return Array.from(crypto.getRandomValues(new Uint8Array(6)), (b) => chars[b % chars.length]).join(
+    '',
+  )
 }
 
 function formatExpiry(expiresAt: string | null): string {
-  if (!expiresAt) return "Never"
+  if (!expiresAt) return 'Never'
   const d = new Date(expiresAt)
-  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 }
 
-function getStatusBadge(code: JoinCode) {
+function getStatusBadge(code: JoinCode, tx: (key: string) => string) {
   if (!code.is_active) {
-    return <Badge variant="secondary" className="bg-zinc-700 text-zinc-300">Disabled</Badge>
+    return (
+      <Badge variant="secondary" className="bg-zinc-700 text-zinc-300">
+        {tx('school.b15.join_codes.status_disabled')}
+      </Badge>
+    )
   }
   if (code.is_expired) {
-    return <Badge variant="secondary" className="bg-amber-900/40 text-clay-600">Expired</Badge>
+    return (
+      <Badge variant="secondary" className="bg-amber-900/40 text-clay-600">
+        {tx('school.b15.join_codes.status_expired')}
+      </Badge>
+    )
   }
   if (code.max_uses > 0 && code.uses >= code.max_uses) {
-    return <Badge variant="secondary" className="bg-zinc-700 text-zinc-300">Full</Badge>
+    return (
+      <Badge variant="secondary" className="bg-zinc-700 text-zinc-300">
+        {tx('school.b15.join_codes.status_full')}
+      </Badge>
+    )
   }
-  return <Badge variant="secondary" className="bg-emerald-900/40 text-emerald-400">Active</Badge>
+  return (
+    <Badge variant="secondary" className="bg-emerald-900/40 text-emerald-400">
+      {tx('school.b15.join_codes.status_active')}
+    </Badge>
+  )
 }
 
 // ── Join URL ──────────────────────────────────────────────────────────────────
 
-const JOIN_BASE_URL = "https://theenglishhub.app/school/join"
+const JOIN_BASE_URL = 'https://theenglishhub.app/school/join'
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function JoinCodesPage() {
+  const tx = useT()
   const [codes, setCodes] = useState<JoinCode[]>([])
   const [classes, setClasses] = useState<SchoolClass[]>([])
   const [loading, setLoading] = useState(true)
@@ -87,10 +107,10 @@ export default function JoinCodesPage() {
   const [copiedCode, setCopiedCode] = useState<string | null>(null)
 
   // Create form state
-  const [formType, setFormType] = useState<"student" | "teacher">("student")
-  const [formMaxUses, setFormMaxUses] = useState("200")
-  const [formExpires, setFormExpires] = useState("")
-  const [formClassId, setFormClassId] = useState("")
+  const [formType, setFormType] = useState<'student' | 'teacher'>('student')
+  const [formMaxUses, setFormMaxUses] = useState('200')
+  const [formExpires, setFormExpires] = useState('')
+  const [formClassId, setFormClassId] = useState('')
   const [formCode, setFormCode] = useState(generateCode())
   const [creating, setCreating] = useState(false)
   const [createError, setCreateError] = useState<string | null>(null)
@@ -104,15 +124,15 @@ export default function JoinCodesPage() {
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch("/api/school/join-codes")
+      const res = await fetch('/api/school/join-codes')
       const data = await res.json()
       if (!res.ok) {
-        setError(data.error ?? "Failed to load join codes.")
+        setError(data.error ?? 'Failed to load join codes.')
         return
       }
       setCodes(data.join_codes ?? [])
     } catch {
-      setError("Network error. Please try again.")
+      setError('Network error. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -122,7 +142,7 @@ export default function JoinCodesPage() {
 
   const fetchClasses = useCallback(async () => {
     try {
-      const res = await fetch("/api/school/classes")
+      const res = await fetch('/api/school/classes')
       const data = await res.json()
       if (res.ok) {
         setClasses(data.classes ?? [])
@@ -146,11 +166,11 @@ export default function JoinCodesPage() {
       setTimeout(() => setCopiedCode(null), 2000)
     } catch {
       // Fallback for older browsers
-      const el = document.createElement("textarea")
+      const el = document.createElement('textarea')
       el.value = text
       document.body.appendChild(el)
       el.select()
-      document.execCommand("copy")
+      document.execCommand('copy')
       document.body.removeChild(el)
       setCopiedCode(key)
       setTimeout(() => setCopiedCode(null), 2000)
@@ -165,20 +185,20 @@ export default function JoinCodesPage() {
 
     const maxUses = parseInt(formMaxUses, 10)
     if (isNaN(maxUses) || maxUses < 0 || maxUses > 10000) {
-      setCreateError("Max uses must be a number between 0 and 10000.")
+      setCreateError('Max uses must be a number between 0 and 10000.')
       return
     }
 
     if (!formCode.trim()) {
-      setCreateError("Code cannot be empty.")
+      setCreateError('Code cannot be empty.')
       return
     }
 
     setCreating(true)
     try {
-      const res = await fetch("/api/school/join-codes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/school/join-codes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           type: formType,
           code: formCode.trim().toUpperCase(),
@@ -189,18 +209,18 @@ export default function JoinCodesPage() {
       })
       const data = await res.json()
       if (!res.ok) {
-        setCreateError(data.error ?? "Failed to create join code.")
+        setCreateError(data.error ?? 'Failed to create join code.')
         return
       }
       // Reset form (generate new code)
       setFormCode(generateCode())
-      setFormMaxUses("200")
-      setFormExpires("")
-      setFormClassId("")
-      setFormType("student")
+      setFormMaxUses('200')
+      setFormExpires('')
+      setFormClassId('')
+      setFormType('student')
       await fetchCodes()
     } catch {
-      setCreateError("Network error. Please try again.")
+      setCreateError('Network error. Please try again.')
     } finally {
       setCreating(false)
     }
@@ -212,8 +232,8 @@ export default function JoinCodesPage() {
     setActionLoading(code.code)
     try {
       const res = await fetch(`/api/school/join-codes/${encodeURIComponent(code.code)}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ is_active: !code.is_active }),
       })
       if (res.ok) {
@@ -233,7 +253,7 @@ export default function JoinCodesPage() {
     setActionLoading(code.code)
     try {
       const res = await fetch(`/api/school/join-codes/${encodeURIComponent(code.code)}`, {
-        method: "DELETE",
+        method: 'DELETE',
       })
       if (res.ok || res.status === 204) {
         await fetchCodes()
@@ -255,11 +275,8 @@ export default function JoinCodesPage() {
     <div className="space-y-8 p-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-white">Join Codes</h1>
-        <p className="mt-1 text-sm text-zinc-400">
-          Share these codes with students or teachers so they can join your school. They go to{" "}
-          <span className="font-medium text-zinc-300">theenglishhub.app/school/join</span> and enter the code.
-        </p>
+        <h1 className="text-2xl font-bold text-white">{tx('school.b15.join_codes.title')}</h1>
+        <p className="mt-1 text-sm text-zinc-400">{tx('school.b15.join_codes.subtitle')}</p>
       </div>
 
       {/* Primary code spotlight */}
@@ -268,7 +285,7 @@ export default function JoinCodesPage() {
           <CardHeader className="pb-3">
             <CardTitle className="text-sm font-medium text-zinc-400 flex items-center gap-2">
               <Key className="h-4 w-4" />
-              Current School Join Code
+              {tx('school.b15.join_codes.spotlight_label')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -302,7 +319,12 @@ export default function JoinCodesPage() {
                   variant="ghost"
                   size="sm"
                   className="ml-auto shrink-0 text-zinc-400 hover:text-white px-1"
-                  onClick={() => copyToClipboard(`${JOIN_BASE_URL}?code=${primaryCode.code}`, `url-${primaryCode.code}`)}
+                  onClick={() =>
+                    copyToClipboard(
+                      `${JOIN_BASE_URL}?code=${primaryCode.code}`,
+                      `url-${primaryCode.code}`,
+                    )
+                  }
                 >
                   {copiedCode === `url-${primaryCode.code}` ? (
                     <CheckCircle className="h-4 w-4 text-emerald-400" />
@@ -322,7 +344,7 @@ export default function JoinCodesPage() {
 
               {/* Type badge */}
               <div className="flex items-center gap-2">
-                {primaryCode.type === "student" ? (
+                {primaryCode.type === 'student' ? (
                   <GraduationCap className="h-4 w-4 text-zinc-400" />
                 ) : (
                   <Users className="h-4 w-4 text-zinc-400" />
@@ -341,11 +363,10 @@ export default function JoinCodesPage() {
             <QrCode className="h-8 w-8 text-zinc-500" />
           </div>
           <div>
-            <p className="text-sm font-medium text-zinc-300">QR Code Generation Coming Soon</p>
-            <p className="mt-1 text-sm text-zinc-500">
-              Soon you will be able to generate a QR code for each join code. Students and teachers can scan it
-              with their phone camera to be taken straight to the join page — no typing required.
+            <p className="text-sm font-medium text-zinc-300">
+              {tx('school.b15.join_codes.qr_title')}
             </p>
+            <p className="mt-1 text-sm text-zinc-500">{tx('school.b15.join_codes.qr_desc')}</p>
           </div>
         </CardContent>
       </Card>
@@ -354,7 +375,9 @@ export default function JoinCodesPage() {
         {/* Active codes table — takes up 3/5 on large screens */}
         <div className="lg:col-span-3 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-base font-semibold text-white">Active Join Codes</h2>
+            <h2 className="text-base font-semibold text-white">
+              {tx('school.b15.join_codes.active_title')}
+            </h2>
             <Button
               variant="ghost"
               size="sm"
@@ -362,7 +385,7 @@ export default function JoinCodesPage() {
               disabled={loading}
               className="text-zinc-400 hover:text-white"
             >
-              <RefreshCw className={`h-4 w-4 ${loading ? "animate-spin" : ""}`} />
+              <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
             </Button>
           </div>
 
@@ -383,7 +406,7 @@ export default function JoinCodesPage() {
             <Card className="border-zinc-700 bg-zinc-900">
               <CardContent className="py-12 text-center">
                 <Key className="h-10 w-10 mx-auto mb-3 text-zinc-600" />
-                <p className="text-sm text-zinc-400">No join codes yet. Create one to get started.</p>
+                <p className="text-sm text-zinc-400">{tx('school.b15.join_codes.no_codes')}</p>
               </CardContent>
             </Card>
           ) : (
@@ -392,23 +415,34 @@ export default function JoinCodesPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-zinc-800 text-xs text-zinc-500">
-                      <th className="px-4 py-3 text-left font-medium">Code</th>
-                      <th className="px-4 py-3 text-left font-medium">Type</th>
-                      <th className="px-4 py-3 text-left font-medium">Uses</th>
-                      <th className="px-4 py-3 text-left font-medium">Expires</th>
-                      <th className="px-4 py-3 text-left font-medium">Class</th>
-                      <th className="px-4 py-3 text-left font-medium">Status</th>
-                      <th className="px-4 py-3 text-right font-medium">Actions</th>
+                      <th className="px-4 py-3 text-left font-medium">
+                        {tx('school.b15.join_codes.col_code')}
+                      </th>
+                      <th className="px-4 py-3 text-left font-medium">
+                        {tx('school.b15.join_codes.col_type')}
+                      </th>
+                      <th className="px-4 py-3 text-left font-medium">
+                        {tx('school.b15.join_codes.col_uses')}
+                      </th>
+                      <th className="px-4 py-3 text-left font-medium">
+                        {tx('school.b15.join_codes.col_expires')}
+                      </th>
+                      <th className="px-4 py-3 text-left font-medium">
+                        {tx('school.b15.join_codes.col_class')}
+                      </th>
+                      <th className="px-4 py-3 text-left font-medium">
+                        {tx('school.b15.join_codes.col_status')}
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium">
+                        {tx('school.b15.join_codes.col_actions')}
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-zinc-800">
                     {codes.map((code) => {
                       const isLoading = actionLoading === code.code
                       return (
-                        <tr
-                          key={code.id}
-                          className="group transition-colors hover:bg-zinc-800/50"
-                        >
+                        <tr key={code.id} className="group transition-colors hover:bg-zinc-800/50">
                           {/* Code */}
                           <td className="px-4 py-3">
                             <div className="flex items-center gap-2">
@@ -418,7 +452,7 @@ export default function JoinCodesPage() {
                               <button
                                 onClick={() => copyToClipboard(code.code, `row-${code.code}`)}
                                 className="opacity-0 group-hover:opacity-100 transition-opacity text-zinc-400 hover:text-white"
-                                title="Copy code"
+                                title={tx('school.b15.join_codes.title_copy')}
                               >
                                 {copiedCode === `row-${code.code}` ? (
                                   <CheckCircle className="h-3.5 w-3.5 text-emerald-400" />
@@ -432,7 +466,7 @@ export default function JoinCodesPage() {
                           {/* Type */}
                           <td className="px-4 py-3">
                             <div className="flex items-center gap-1.5 text-zinc-400">
-                              {code.type === "student" ? (
+                              {code.type === 'student' ? (
                                 <GraduationCap className="h-3.5 w-3.5" />
                               ) : (
                                 <Users className="h-3.5 w-3.5" />
@@ -470,9 +504,7 @@ export default function JoinCodesPage() {
                           </td>
 
                           {/* Status */}
-                          <td className="px-4 py-3">
-                            {getStatusBadge(code)}
-                          </td>
+                          <td className="px-4 py-3">{getStatusBadge(code, tx)}</td>
 
                           {/* Actions */}
                           <td className="px-4 py-3">
@@ -480,7 +512,7 @@ export default function JoinCodesPage() {
                               {/* Copy */}
                               <button
                                 onClick={() => copyToClipboard(code.code, `action-${code.code}`)}
-                                title="Copy code"
+                                title={tx('school.b15.join_codes.title_copy')}
                                 className="rounded p-1.5 text-zinc-400 hover:bg-zinc-700 hover:text-white transition-colors"
                               >
                                 {copiedCode === `action-${code.code}` ? (
@@ -494,7 +526,11 @@ export default function JoinCodesPage() {
                               <button
                                 onClick={() => handleToggleActive(code)}
                                 disabled={isLoading}
-                                title={code.is_active ? "Disable code" : "Enable code"}
+                                title={
+                                  code.is_active
+                                    ? tx('school.b15.join_codes.title_disable')
+                                    : tx('school.b15.join_codes.title_enable')
+                                }
                                 className="rounded p-1.5 text-zinc-400 hover:bg-zinc-700 hover:text-white transition-colors disabled:opacity-40"
                               >
                                 {isLoading ? (
@@ -510,7 +546,7 @@ export default function JoinCodesPage() {
                               <button
                                 onClick={() => handleDelete(code)}
                                 disabled={isLoading}
-                                title="Delete code"
+                                title={tx('school.b15.join_codes.title_delete')}
                                 className="rounded p-1.5 text-zinc-400 hover:bg-red-900/40 hover:text-red-400 transition-colors disabled:opacity-40"
                               >
                                 <Trash2 className="h-4 w-4" />
@@ -533,38 +569,40 @@ export default function JoinCodesPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-base text-white">
                 <Plus className="h-4 w-4" />
-                Create New Join Code
+                {tx('school.b15.join_codes.create_title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleCreate} className="space-y-5">
                 {/* Code type */}
                 <div className="space-y-2">
-                  <Label className="text-zinc-300">Code Type</Label>
+                  <Label className="text-zinc-300">
+                    {tx('school.b15.join_codes.label_code_type')}
+                  </Label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       type="button"
-                      onClick={() => setFormType("student")}
+                      onClick={() => setFormType('student')}
                       className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors ${
-                        formType === "student"
-                          ? "border-indigo-500 bg-indigo-500/10 text-indigo-300"
-                          : "border-zinc-700 bg-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-zinc-300"
+                        formType === 'student'
+                          ? 'border-indigo-500 bg-indigo-500/10 text-indigo-300'
+                          : 'border-zinc-700 bg-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-zinc-300'
                       }`}
                     >
                       <GraduationCap className="h-4 w-4" />
-                      Student
+                      {tx('school.b15.join_codes.type_student')}
                     </button>
                     <button
                       type="button"
-                      onClick={() => setFormType("teacher")}
+                      onClick={() => setFormType('teacher')}
                       className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2.5 text-sm font-medium transition-colors ${
-                        formType === "teacher"
-                          ? "border-indigo-500 bg-indigo-500/10 text-indigo-300"
-                          : "border-zinc-700 bg-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-zinc-300"
+                        formType === 'teacher'
+                          ? 'border-indigo-500 bg-indigo-500/10 text-indigo-300'
+                          : 'border-zinc-700 bg-zinc-800 text-zinc-400 hover:border-zinc-600 hover:text-zinc-300'
                       }`}
                     >
                       <Users className="h-4 w-4" />
-                      Teacher
+                      {tx('school.b15.join_codes.type_teacher')}
                     </button>
                   </div>
                 </div>
@@ -572,13 +610,15 @@ export default function JoinCodesPage() {
                 {/* Code value */}
                 <div className="space-y-2">
                   <Label htmlFor="form-code" className="text-zinc-300">
-                    Code
+                    {tx('school.b15.join_codes.label_code')}
                   </Label>
                   <div className="flex gap-2">
                     <Input
                       id="form-code"
                       value={formCode}
-                      onChange={(e) => setFormCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ""))}
+                      onChange={(e) =>
+                        setFormCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))
+                      }
                       placeholder="E.g. ABC123"
                       maxLength={12}
                       className="font-mono tracking-widest bg-zinc-800 border-zinc-700 text-white uppercase placeholder:text-zinc-600"
@@ -594,15 +634,13 @@ export default function JoinCodesPage() {
                       <RefreshCw className="h-4 w-4" />
                     </Button>
                   </div>
-                  <p className="text-xs text-zinc-500">
-                    Auto-generated 6-character code. You can customise it (3-12 uppercase alphanumeric).
-                  </p>
+                  <p className="text-xs text-zinc-500">{tx('school.b15.join_codes.code_hint')}</p>
                 </div>
 
                 {/* Max uses */}
                 <div className="space-y-2">
                   <Label htmlFor="form-max-uses" className="text-zinc-300">
-                    Max Uses
+                    {tx('school.b15.join_codes.label_max_uses')}
                   </Label>
                   <Input
                     id="form-max-uses"
@@ -613,13 +651,15 @@ export default function JoinCodesPage() {
                     onChange={(e) => setFormMaxUses(e.target.value)}
                     className="bg-zinc-800 border-zinc-700 text-white"
                   />
-                  <p className="text-xs text-zinc-500">Set to 0 for unlimited uses.</p>
+                  <p className="text-xs text-zinc-500">
+                    {tx('school.b15.join_codes.max_uses_hint')}
+                  </p>
                 </div>
 
                 {/* Expires */}
                 <div className="space-y-2">
                   <Label htmlFor="form-expires" className="text-zinc-300">
-                    Expires
+                    {tx('school.b15.join_codes.label_expires')}
                     <span className="ml-1 text-zinc-500 font-normal">(optional)</span>
                   </Label>
                   <Input
@@ -630,13 +670,15 @@ export default function JoinCodesPage() {
                     onChange={(e) => setFormExpires(e.target.value)}
                     className="bg-zinc-800 border-zinc-700 text-white [color-scheme:dark]"
                   />
-                  <p className="text-xs text-zinc-500">Leave blank for no expiry.</p>
+                  <p className="text-xs text-zinc-500">
+                    {tx('school.b15.join_codes.expires_hint')}
+                  </p>
                 </div>
 
                 {/* Link to class */}
                 <div className="space-y-2">
                   <Label htmlFor="form-class" className="text-zinc-300">
-                    Link to Class
+                    {tx('school.b15.join_codes.label_class')}
                     <span className="ml-1 text-zinc-500 font-normal">(optional)</span>
                   </Label>
                   <select
@@ -645,16 +687,14 @@ export default function JoinCodesPage() {
                     onChange={(e) => setFormClassId(e.target.value)}
                     className="w-full rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   >
-                    <option value="">No class link</option>
+                    <option value="">{tx('school.b15.join_codes.no_class')}</option>
                     {classes.map((cls) => (
                       <option key={cls.id} value={cls.id}>
                         {cls.name}
                       </option>
                     ))}
                   </select>
-                  <p className="text-xs text-zinc-500">
-                    If set, students who use this code will automatically be added to the selected class.
-                  </p>
+                  <p className="text-xs text-zinc-500">{tx('school.b15.join_codes.class_hint')}</p>
                 </div>
 
                 {createError && (
@@ -672,12 +712,12 @@ export default function JoinCodesPage() {
                   {creating ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Generating...
+                      {tx('school.b15.join_codes.btn_generating')}
                     </>
                   ) : (
                     <>
                       <Key className="mr-2 h-4 w-4" />
-                      Generate Code
+                      {tx('school.b15.join_codes.btn_generate')}
                     </>
                   )}
                 </Button>

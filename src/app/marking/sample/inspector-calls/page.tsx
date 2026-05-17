@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { GradePredictionCard } from '@/components/marking/GradePredictionCard'
 import { AOBreakdown } from '@/components/marking/AOBreakdown'
 import { AnnotatedEssay, type Annotation } from '@/components/marking/AnnotatedEssay'
+import { tMany } from '@/lib/i18n/t'
 
 /* ─── Metadata ─────────────────────────────────────────────── */
 
@@ -389,6 +390,34 @@ export default async function InspectorCallsSamplePage() {
      to AQA students to avoid misleading mark allocations. */
   await requireBoard(['aqa'], '/marking/sample')
 
+  const [
+    navMarking,
+    navSample,
+    navBreadcrumb,
+    pageTitle,
+    subtitle,
+    examQuestion,
+    markerCommentary,
+    gradeJustification,
+    gradePrefix,
+    fairDealingStrong,
+    btnBack,
+    btnMark,
+  ] = await tMany([
+    'marking.nav.marking',
+    'marking.nav.sample_essays',
+    'marking.sample.inspector_calls.breadcrumb',
+    'marking.sample.inspector_calls.title',
+    'marking.sample.inspector_calls.subtitle',
+    'marking.sample.inspector_calls.exam_question',
+    'marking.sample.inspector_calls.marker_commentary',
+    'marking.sample.inspector_calls.grade_justification',
+    'marking.sample.inspector_calls.grade_prefix',
+    'marking.sample.inspector_calls.fair_dealing_strong',
+    'marking.sample.inspector_calls.btn_back',
+    'marking.sample.inspector_calls.btn_mark',
+  ])
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
       {/* ── Breadcrumb ──────────────────────────────────── */}
@@ -396,29 +425,25 @@ export default async function InspectorCallsSamplePage() {
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/marking" className="hover:text-primary">
-              Marking
+              {navMarking}
             </Link>
           </li>
           <li aria-hidden>/</li>
           <li>
             <Link href="/marking/sample" className="hover:text-primary">
-              Sample essays
+              {navSample}
             </Link>
           </li>
           <li aria-hidden>/</li>
-          <li className="font-medium text-foreground">An Inspector Calls</li>
+          <li className="font-medium text-foreground">{navBreadcrumb}</li>
         </ol>
       </nav>
 
       <header className="mb-10">
         <h1 className="font-heading text-3xl font-extrabold tracking-tight text-foreground">
-          An Inspector Calls — Model Essay Bank
+          {pageTitle}
         </h1>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Five fully-annotated model responses across two popular exam questions at Grades 5, 7 and
-          9. Each essay includes paragraph-level annotations, AO breakdowns and marker commentary
-          explaining why it achieves its grade.
-        </p>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">{subtitle}</p>
       </header>
 
       {/* ── Essays ──────────────────────────────────────── */}
@@ -430,7 +455,7 @@ export default async function InspectorCallsSamplePage() {
               <span
                 className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-bold ${gradeColour(essay.grade)}`}
               >
-                Grade {essay.grade}
+                {gradePrefix} {essay.grade}
               </span>
               <h2
                 id={`heading-${essay.id}`}
@@ -443,7 +468,7 @@ export default async function InspectorCallsSamplePage() {
             {/* Question */}
             <Card className="mb-4 border-muted">
               <CardHeader className="pb-2">
-                <CardDescription>Exam question</CardDescription>
+                <CardDescription>{examQuestion}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm font-medium italic text-foreground">{essay.question}</p>
@@ -457,7 +482,7 @@ export default async function InspectorCallsSamplePage() {
                   <Badge>{essay.board}</Badge>
                   <CardDescription>{essay.paper}</CardDescription>
                 </div>
-                <CardTitle className="mt-2 text-base">Marker commentary</CardTitle>
+                <CardTitle className="mt-2 text-base">{markerCommentary}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-foreground">{essay.commentary}</p>
@@ -467,7 +492,7 @@ export default async function InspectorCallsSamplePage() {
             {/* Grade justification */}
             <Card className="mb-6 border-muted bg-muted/30">
               <CardHeader className="pb-2">
-                <CardTitle className="text-base">Grade justification</CardTitle>
+                <CardTitle className="text-base">{gradeJustification}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm leading-relaxed text-muted-foreground">
@@ -498,7 +523,7 @@ export default async function InspectorCallsSamplePage() {
       {/* ── Fair-dealing footer ─────────────────────────── */}
       <footer className="mt-16 rounded-lg border border-border bg-muted/20 px-5 py-4">
         <p className="text-xs leading-relaxed text-muted-foreground">
-          <strong>Fair dealing notice.</strong> Short quotations from <em>An Inspector Calls</em> by
+          <strong>{fairDealingStrong}</strong> Short quotations from <em>An Inspector Calls</em> by
           J. B. Priestley are reproduced under the fair dealing provisions of the Copyright, Designs
           and Patents Act 1988 (UK), section 30, for the purpose of criticism, review and
           educational use. All quotations are kept to the minimum necessary for analytical
@@ -511,9 +536,9 @@ export default async function InspectorCallsSamplePage() {
       {/* ── Footer CTA ─────────────────────────────────── */}
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-between">
         <Button variant="outline" render={<Link href="/marking/sample" />}>
-          Back to sample essays
+          {btnBack}
         </Button>
-        <Button render={<Link href="/marking/submit" />}>Mark your own essay</Button>
+        <Button render={<Link href="/marking/submit" />}>{btnMark}</Button>
       </div>
     </div>
   )
