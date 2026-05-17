@@ -72,6 +72,7 @@ import { B15_DASHBOARD_DICTIONARY } from './dictionary-b15-dashboard'
 import { B15_DEMO_DICTIONARY } from './dictionary-b15-demo'
 import { AI_ACT_DICTIONARY } from './dictionary-ai-act'
 import { ADMIN_AI_MARKING_DICTIONARY } from './dictionary-admin-ai-marking'
+import { MARKER_DRIVE_DICTIONARY } from './dictionary-marker-drive'
 
 export type Locale = 'en' | 'ar'
 
@@ -14796,6 +14797,9 @@ export function lookup(key: string, locale: Locale): string {
     // Platform-admin AI-marking surfaces (versioning / eval / model perf).
     // Curated tier: precedes all placeholder/audit supplements.
     ADMIN_AI_MARKING_DICTIONARY[key] ??
+    // Paid-marker-drive surfaces (/admin/marker-drive, /marker,
+    // /admin/marker-pay, /admin/marker-qa). Curated tier.
+    MARKER_DRIVE_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??
