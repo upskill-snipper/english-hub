@@ -711,27 +711,178 @@ model BulkUploadJob {
 //     be expressed in Prisma here.
 model MarkingSubmission {
   id                  String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  schoolId            String    @map("school_id") @db.Uuid
+  schoolId            String?   @map("school_id") @db.Uuid
   studentId           String    @map("student_id") @db.Uuid
   classId             String?   @map("class_id") @db.Uuid
+  source              String    @default("b2b_class")
   examBoard           String    @map("exam_board")
+  qualification       String?
+  paper               String?
+  questionText        String?   @map("question_text") @db.Text
+  questionType        String?   @map("question_type")
+  studiedText         String?   @map("studied_text") @db.Text
+  targetGrade         String?   @map("target_grade")
+  markSchemeId        String?   @map("mark_scheme_id")
+  rubricRef           String?   @map("rubric_ref")
   essayTitle          String?   @map("essay_title")
   essayText           String    @map("essay_text") @db.Text
   aiGrade             String?   @map("ai_grade")
   aiConfidence        Float?    @map("ai_confidence")
   aiFeedback          String?   @map("ai_feedback") @db.Text
   aiBandMarks         Json      @default("[]") @map("ai_band_marks")
+  aiResult            Json?     @map("ai_result")
+  aiScore             Int?      @map("ai_score")
+  aiMaxMarks          Int?      @map("ai_max_marks")
+  aiGradeBand         String?   @map("ai_grade_band")
+  aiAoBreakdown       Json?     @map("ai_ao_breakdown")
+  aiUncertaintyFlags  Json?     @map("ai_uncertainty_flags")
+  modelVersionId      String?   @map("model_version_id") @db.Uuid
+  promptVersionId     String?   @map("prompt_version_id") @db.Uuid
+  rubricVersionId     String?   @map("rubric_version_id") @db.Uuid
   status              String    @default("pending")
   submittedAt         DateTime  @default(now()) @map("submitted_at") @db.Timestamptz(6)
   teacherGrade        String?   @map("teacher_grade")
   teacherComment      String?   @map("teacher_comment") @db.Text
   teacherReviewedById String?   @map("teacher_reviewed_by") @db.Uuid
   teacherReviewedAt   DateTime? @map("teacher_reviewed_at") @db.Timestamptz(6)
+  finalTeacherMark    String?   @map("final_teacher_mark")
+  finalTeacherFeedback String?  @map("final_teacher_feedback") @db.Text
+  teacherAdjustmentReason String? @map("teacher_adjustment_reason") @db.Text
+  approvedBy          String?   @map("approved_by") @db.Uuid
+  approvedAt          DateTime? @map("approved_at") @db.Timestamptz(6)
+  trainingEligible    Boolean?  @map("training_eligible")
+  moderationNotes     String?   @map("moderation_notes") @db.Text
 
-  student User? @relation("MarkingSubmissionStudent", fields: [studentId], references: [supabaseUserId], onDelete: NoAction, onUpdate: NoAction)
+  student      User?              @relation("MarkingSubmissionStudent", fields: [studentId], references: [supabaseUserId], onDelete: NoAction, onUpdate: NoAction)
+  modelVersion ModelVersion?      @relation(fields: [modelVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  promptVersion PromptVersion?    @relation(fields: [promptVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  rubricVersion RubricVersion?    @relation(fields: [rubricVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  moderations  TeacherModeration[]
+  trainingData TrainingData[]
 
   @@index([schoolId, submittedAt(sort: Desc)])
   @@index([studentId])
   @@index([classId])
+  @@index([status])
+  @@index([source])
   @@map("marking_submissions")
+}
+
+// ─── Smart IP — versioning + moderation + training corpus ─────────────────
+// Mirrors supabase/migrations/20260518_smart_ip_marking.sql. FKs to
+// Supabase-only tables (auth.users, school_members) are plain Uuid columns
+// (cannot be expressed as Prisma relations — same convention as above).
+
+model ModelVersion {
+  id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  provider     String
+  modelName    String   @map("model_name")
+  modelVersion String   @map("model_version")
+  temperature  Float?
+  settings     Json     @default("{}")
+  isActive     Boolean  @default(true) @map("is_active")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  submissions MarkingSubmission[]
+
+  @@unique([provider, modelName, modelVersion])
+  @@map("model_versions")
+}
+
+model RubricVersion {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  markSchemeId  String   @map("mark_scheme_id")
+  schemeVersion String   @default("v1.0") @map("scheme_version")
+  contentHash   String   @map("content_hash")
+  examBoard     String?  @map("exam_board")
+  qualification String?
+  sourceUrl     String?  @map("source_url")
+  isActive      Boolean  @default(true) @map("is_active")
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  promptVersions PromptVersion[]
+  submissions    MarkingSubmission[]
+
+  @@unique([markSchemeId, contentHash])
+  @@map("rubric_versions")
+}
+
+model PromptVersion {
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  promptKey       String   @map("prompt_key")
+  subject         String?
+  examBoard       String?  @map("exam_board")
+  questionType    String?  @map("question_type")
+  promptText      String   @map("prompt_text") @db.Text
+  contentHash     String   @unique @map("content_hash")
+  rubricVersionId String?  @map("rubric_version_id") @db.Uuid
+  active          Boolean  @default(true)
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  rubricVersion RubricVersion?      @relation(fields: [rubricVersionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+  submissions   MarkingSubmission[]
+
+  @@index([promptKey, active])
+  @@map("prompt_versions")
+}
+
+model TeacherModeration {
+  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  submissionId      String   @map("submission_id") @db.Uuid
+  reviewerUserId    String?  @map("reviewer_user_id") @db.Uuid
+  reviewerMemberId  String?  @map("reviewer_member_id") @db.Uuid
+  decision          String
+  aiGrade           String?  @map("ai_grade")
+  teacherGrade      String?  @map("teacher_grade")
+  aiScore           Int?     @map("ai_score")
+  teacherScore      Int?     @map("teacher_score")
+  aoCorrections     Json?    @map("ao_corrections")
+  feedbackBefore    String?  @map("feedback_before") @db.Text
+  feedbackAfter     String?  @map("feedback_after") @db.Text
+  adjustmentReason  String?  @map("adjustment_reason") @db.Text
+  moderationNotes   String?  @map("moderation_notes") @db.Text
+  trainingEligible  Boolean? @map("training_eligible")
+  createdAt         DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  submission MarkingSubmission @relation(fields: [submissionId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([submissionId, createdAt(sort: Desc)])
+  @@index([reviewerUserId])
+  @@map("teacher_moderations")
+}
+
+model TrainingData {
+  id                      String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  anonSubmissionId        String    @unique @map("anon_submission_id")
+  sourceSubmissionId      String?   @map("source_submission_id") @db.Uuid
+  examBoard               String?   @map("exam_board")
+  qualification           String?
+  paper                   String?
+  question                String?   @db.Text
+  questionType            String?   @map("question_type")
+  rubricVersion           String?   @map("rubric_version")
+  studentAnswer           String    @map("student_answer") @db.Text
+  aiPredictedMark         Int?      @map("ai_predicted_mark")
+  teacherFinalMark        Int?      @map("teacher_final_mark")
+  markDelta               Int?      @map("mark_delta")
+  aiFeedback              String?   @map("ai_feedback") @db.Text
+  teacherFinalFeedback    String?   @map("teacher_final_feedback") @db.Text
+  teacherCorrectionReason String?   @map("teacher_correction_reason") @db.Text
+  gradeBand               String?   @map("grade_band")
+  aoScores                Json?     @map("ao_scores")
+  confidenceScore         Float?    @map("confidence_score")
+  approvedAt              DateTime? @map("approved_at") @db.Timestamptz(6)
+  modelVersion            String?   @map("model_version")
+  promptVersion           String?   @map("prompt_version")
+  anonSchoolId            String?   @map("anon_school_id")
+  anonClassId             String?   @map("anon_class_id")
+  source                  String?
+  createdAt               DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  sourceSubmission MarkingSubmission? @relation(fields: [sourceSubmissionId], references: [id], onDelete: SetNull, onUpdate: NoAction)
+
+  @@index([examBoard, questionType])
+  @@index([createdAt(sort: Desc)])
+  @@map("training_data")
 }
