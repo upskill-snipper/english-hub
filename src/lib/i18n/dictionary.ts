@@ -55,6 +55,10 @@ import { CONVERT_DICTIONARY } from './dictionary-convert'
 import { RESOURCES_A_DICTIONARY } from './dictionary-resources-a'
 import { RESOURCES_B_DICTIONARY } from './dictionary-resources-b'
 import { MISC_T1_DICTIONARY } from './dictionary-misc-t1'
+import { SCHOOL_1_DICTIONARY } from './dictionary-school-1'
+import { SCHOOL_2_DICTIONARY } from './dictionary-school-2'
+import { PARENT_1_DICTIONARY } from './dictionary-parent-1'
+import { PARENT_2_DICTIONARY } from './dictionary-parent-2'
 
 export type Locale = 'en' | 'ar'
 
@@ -14741,6 +14745,13 @@ export function lookup(key: string, locale: Locale): string {
     RESOURCES_A_DICTIONARY[key] ??
     RESOURCES_B_DICTIONARY[key] ??
     MISC_T1_DICTIONARY[key] ??
+    // Bucket-A Tier-2a curated Khaleeji — authed school + parent
+    // dashboards. PARENT_1 before PARENT_2 so the one shared key
+    // (parent.linked_child) resolves deterministically to PARENT_1.
+    SCHOOL_1_DICTIONARY[key] ??
+    SCHOOL_2_DICTIONARY[key] ??
+    PARENT_1_DICTIONARY[key] ??
+    PARENT_2_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??
