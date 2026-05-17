@@ -1,0 +1,26 @@
+// EU AI Act Art.15 — Marking Accuracy gold-standard dataset (EXAMPLE / SYNTHETIC)
+// ───────────────────────────────────────────────────────────────────────────────
+// Format: JSON Lines. One JSON object per line. Lines that are blank or start
+// with `//` are ignored by the loader (this header block included).
+//
+// SCHEMA (see evals/types.ts → GoldStandardCase):
+//   id              string  unique, stable case id
+//   board           string  exam board ("AQA" | "Edexcel" | "OCR" | "Cambridge" | ...)
+//   paper           string  paper label, e.g. "Paper 1"
+//   question        string  question label/id within the paper
+//   markSchemeId    string  id from src/lib/marking/mark-schemes (MARK_SCHEMES)
+//   studentAnswer   string  SYNTHETIC placeholder — NEVER real student work
+//   examinerMarks   [{id,marks,maxMarks}]  per-AO human-examiner marks (gold input)
+//   examinerGrade   string  human-examiner / awarding-body grade (gold label)
+//   questionMaxMarks number? optional denominator override
+//   notes           string? optional provenance/notes
+//
+// DATA SAFETY: every `studentAnswer` below is an obvious synthetic placeholder.
+// Do NOT add real candidate work to this file (GDPR / child-data; see README).
+// The marks below are constructed so the deterministic predictor agrees with
+// `examinerGrade`; replace with real examiner-verified cases over time.
+{"id":"aqa-lit-p1-synthetic-01","board":"AQA","paper":"Paper 1","question":"Q1","markSchemeId":"aqa-lit-paper1","studentAnswer":"[SYNTHETIC PLACEHOLDER] Macbeth essay — convincing, critical response with judicious quotations and sustained argument about ambition.","examinerMarks":[{"id":"AO1","marks":11,"maxMarks":12},{"id":"AO4","marks":6,"maxMarks":8}],"examinerGrade":"9","questionMaxMarks":20,"notes":"Synthetic top-band exemplar; 17/20 = 85% → Grade 9 under AQA proxy table."}
+{"id":"aqa-lang-p1-synthetic-02","board":"AQA","paper":"Paper 1","question":"Q3","markSchemeId":"aqa-lang-paper1","studentAnswer":"[SYNTHETIC PLACEHOLDER] Language analysis — clear, relevant analysis of structural choices with some embedded references.","examinerMarks":[{"id":"AO1","marks":13,"maxMarks":20},{"id":"AO2","marks":13,"maxMarks":20}],"examinerGrade":"7","questionMaxMarks":40,"notes":"Synthetic mid-high exemplar; 26/40 = 65% → Grade 7."}
+{"id":"edexcel-lit-p1-synthetic-03","board":"Edexcel","paper":"Paper 1","question":"Section A","markSchemeId":"edexcel-lit-paper1","studentAnswer":"[SYNTHETIC PLACEHOLDER] Shakespeare extract response — explained, structured response with effective references.","examinerMarks":[{"id":"AO1","marks":12,"maxMarks":16},{"id":"AO2","marks":12,"maxMarks":16}],"examinerGrade":"6","questionMaxMarks":40,"notes":"Synthetic; non-AQA board → boundarySource must be 'aqa-5yr-average-proxy'. 24/40 = 60% → Grade 6 (proxy)."}
+{"id":"ocr-lang-c01-synthetic-04","board":"OCR","paper":"Component 01","question":"Q5","markSchemeId":"ocr-lang-component01","studentAnswer":"[SYNTHETIC PLACEHOLDER] Non-fiction comparison — supported response, some relevant comments, limited development.","examinerMarks":[{"id":"AO2","marks":5,"maxMarks":12},{"id":"AO3","marks":5,"maxMarks":10}],"examinerGrade":"4","questionMaxMarks":22,"notes":"Synthetic; non-AQA proxy. 10/22 = 45.5% → Grade 4."}
+{"id":"cambridge-0500-p1-synthetic-05","board":"Cambridge","paper":"Paper 1","question":"R1","markSchemeId":"cambridge-0500-paper1","studentAnswer":"[SYNTHETIC PLACEHOLDER] Directed writing — relevant content, generally clear, some development of ideas.","examinerMarks":[{"id":"R1","marks":8,"maxMarks":15}],"examinerGrade":"5","questionMaxMarks":15,"notes":"Synthetic IGCSE; non-AQA proxy (IGCSE scale not directly comparable). 8/15 = 53.3% → Grade 5 (proxy)."}

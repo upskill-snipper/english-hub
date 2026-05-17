@@ -17,7 +17,8 @@ import {
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { hasActiveSubscription } from '@/lib/course-access'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
-import { withArabicDirective } from '@/lib/i18n/ai-language-directive'
+import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
+import { logAiDecision } from '@/lib/ai-audit-log'
 
 export const maxDuration = 60
 
@@ -208,6 +209,22 @@ export async function POST(request: NextRequest) {
     const safeEssay = body.essay.slice(0, 30_000)
     const userMessage = `QUESTION: ${safeQuestion}\n\nSTUDENT'S ESSAY:\n${safeEssay}`
 
+    // EU AI Act Art. 12/19: bracket the model call for the audit record.
+    // Best-effort; never affects the response path.
+    const aiRequestStartedAt = new Date()
+    const auditBase = {
+      feature: 'essay-feedback' as const,
+      userId: user.id,
+      locale: resolveLocaleFromRequest(request),
+      inputText: body.essay,
+      promptSchemeId: `${body.board}/${body.paper}/${body.questionType}`,
+      consentSnapshot: {
+        aiOptOut: false,
+        aiProcessingConsentOk: true,
+      },
+      ipAddress: request.headers.get('x-forwarded-for'),
+    }
+
     let message
     try {
       message = await anthropic.messages.create(
@@ -221,6 +238,15 @@ export async function POST(request: NextRequest) {
       )
     } catch (aiError: unknown) {
       const err = aiError as { status?: number; message?: string; error?: { type?: string } }
+
+      void logAiDecision({
+        ...auditBase,
+        requestStartedAt: aiRequestStartedAt,
+        responseFinishedAt: new Date(),
+        success: false,
+        errorClass: err.error?.type ?? (err.status ? `http_${err.status}` : 'anthropic_error'),
+        errorMessage: typeof err.message === 'string' ? err.message.slice(0, 300) : null,
+      })
 
       // Anthropic API timeout
       if (
@@ -246,6 +272,7 @@ export async function POST(request: NextRequest) {
         'The AI feedback service is currently unavailable. Please try again later.',
       )
     }
+    const aiResponseFinishedAt = new Date()
 
     // 8. Parse Claude's response
     const responseText = message.content
@@ -267,11 +294,35 @@ export async function POST(request: NextRequest) {
 
       // Check if Claude flagged the submission as invalid
       if (parsed.error === 'INVALID_SUBMISSION') {
+        void logAiDecision({
+          ...auditBase,
+          requestStartedAt: aiRequestStartedAt,
+          responseFinishedAt: aiResponseFinishedAt,
+          tokenUsage: {
+            inputTokens: message.usage?.input_tokens,
+            outputTokens: message.usage?.output_tokens,
+          },
+          success: false,
+          outputSummary: { rejected: 'INVALID_SUBMISSION' },
+          errorClass: 'INVALID_SUBMISSION',
+        })
         return badRequestResponse(
           'Your submission does not appear to be an essay. Please paste your own written work for feedback.',
         )
       }
       if (parsed.error === 'OFF_TOPIC') {
+        void logAiDecision({
+          ...auditBase,
+          requestStartedAt: aiRequestStartedAt,
+          responseFinishedAt: aiResponseFinishedAt,
+          tokenUsage: {
+            inputTokens: message.usage?.input_tokens,
+            outputTokens: message.usage?.output_tokens,
+          },
+          success: false,
+          outputSummary: { rejected: 'OFF_TOPIC' },
+          errorClass: 'OFF_TOPIC',
+        })
         return badRequestResponse(
           'This tool only provides feedback on GCSE English essays. Please submit English Language or Literature work.',
         )
@@ -298,6 +349,18 @@ export async function POST(request: NextRequest) {
 
       feedback = parsed
     } catch (parseError) {
+      void logAiDecision({
+        ...auditBase,
+        requestStartedAt: aiRequestStartedAt,
+        responseFinishedAt: aiResponseFinishedAt,
+        tokenUsage: {
+          inputTokens: message.usage?.input_tokens,
+          outputTokens: message.usage?.output_tokens,
+        },
+        success: false,
+        errorClass: parseError instanceof Error ? parseError.name : 'ParseError',
+        errorMessage: 'Model response was not valid JSON',
+      })
       console.error('Failed to parse Claude response:', parseError, responseText.slice(0, 500))
       return serverErrorResponse('Failed to process feedback. Please try again.')
     }
@@ -312,6 +375,30 @@ export async function POST(request: NextRequest) {
             : imp.suggestion,
       }))
     }
+
+    // EU AI Act Art. 12/19 — record the successful AI feedback decision.
+    void logAiDecision({
+      ...auditBase,
+      requestStartedAt: aiRequestStartedAt,
+      responseFinishedAt: aiResponseFinishedAt,
+      tokenUsage: {
+        inputTokens: message.usage?.input_tokens,
+        outputTokens: message.usage?.output_tokens,
+      },
+      success: true,
+      outputSummary: {
+        gradeBand: feedback.gradeBand,
+        aoScores: Array.isArray(feedback.aoScores)
+          ? feedback.aoScores.map((ao) => ({
+              id: ao.id,
+              score: ao.score,
+              maxScore: ao.maxScore,
+            }))
+          : null,
+        strengthsCount: Array.isArray(feedback.strengths) ? feedback.strengths.length : 0,
+        improvementsCount: Array.isArray(feedback.improvements) ? feedback.improvements.length : 0,
+      },
+    })
 
     // 10. Return structured feedback
     return NextResponse.json({

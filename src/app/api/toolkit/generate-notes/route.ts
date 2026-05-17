@@ -3,6 +3,9 @@ import { rateLimit } from '@/lib/rate-limit'
 import { SET_TEXTS } from '@/lib/board/set-texts'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { hasActiveSubscription } from '@/lib/course-access'
+import { logAiDecision } from '@/lib/ai-audit-log'
+import { checkMinorAIConsent } from '@/lib/consent-check'
+import { isAiOptedOutServer } from '@/lib/ai-preferences'
 
 export const maxDuration = 60
 
@@ -153,7 +156,31 @@ export async function POST(request: NextRequest) {
   if (!isPremium) {
     return NextResponse.json(
       {
-        error: 'AI revision notes are a Premium feature. Please upgrade your subscription to continue.',
+        error:
+          'AI revision notes are a Premium feature. Please upgrade your subscription to continue.',
+      },
+      { status: 403 },
+    )
+  }
+
+  // ── 2b. Parental consent + AI opt-out ───────────────────────────────────
+  // EU AI Act Art 14 / UK Children's Code: a minor without verified
+  // parental AI-processing consent, or any user (or their guardian) who
+  // has opted out of AI, must NOT reach the model. The other 5 AI routes
+  // already gate this; generate-notes previously did not.
+  const consentCheck = await checkMinorAIConsent(user.id)
+  if (!consentCheck.allowed) {
+    return NextResponse.json(
+      { error: consentCheck.reason ?? 'Consent is required to use this feature.' },
+      { status: 403 },
+    )
+  }
+  const aiOptedOut = await isAiOptedOutServer(user.id)
+  if (aiOptedOut) {
+    return NextResponse.json(
+      {
+        error:
+          'AI features are currently disabled for your account. To re-enable AI revision notes, visit your privacy settings or ask a parent/guardian to update your preferences.',
       },
       { status: 403 },
     )
@@ -226,6 +253,24 @@ Create detailed revision notes in Markdown format covering:
 
 Be specific, include example quotations, and give practical exam advice.`
 
+        // EU AI Act Art. 12/19: this route generates a learner-facing
+        // revision-notes "decision" (with a deterministic template fallback).
+        // Capture the decision context; emit a best-effort audit record from
+        // each terminal branch. The prompt is built from the topic, so we
+        // hash the topic+board as the learner input surface.
+        const aiRequestStartedAt = new Date()
+        const auditBase = {
+          feature: 'toolkit/generate-notes' as const,
+          userId: user.id,
+          inputText: `${topic}\n${board || 'aqa'}\n${(weakAreas || []).join(',')}`,
+          promptSchemeId: `${board || 'aqa'}:${grade}`,
+          consentSnapshot: {
+            aiOptOut: false,
+            aiProcessingConsentOk: true,
+          },
+          ipAddress: request.headers.get('x-forwarded-for'),
+        }
+
         // P1 (Cycle 2 perf audit): cap Anthropic round-trip at 45s and
         // cancel it if the client disconnects, so a hanging upstream
         // doesn't pin a Vercel lambda for its full 60s maxDuration.
@@ -263,15 +308,63 @@ Be specific, include example quotations, and give practical exam advice.`
           // If the model flagged the request as off-topic/unsafe, fall back to
           // the deterministic template rather than echoing garbage back to a minor.
           if (!rawText || rawText === 'OFF_TOPIC' || rawText.startsWith('OFF_TOPIC')) {
+            void logAiDecision({
+              ...auditBase,
+              requestStartedAt: aiRequestStartedAt,
+              responseFinishedAt: new Date(),
+              tokenUsage: {
+                inputTokens: data.usage?.input_tokens,
+                outputTokens: data.usage?.output_tokens,
+              },
+              success: false,
+              outputSummary: { rejected: 'OFF_TOPIC', fellBackToTemplate: true },
+              errorClass: 'OFF_TOPIC',
+            })
             notes = generateTemplateNotes(topic, board || 'aqa', grade, weakAreas || [])
           } else {
+            void logAiDecision({
+              ...auditBase,
+              requestStartedAt: aiRequestStartedAt,
+              responseFinishedAt: new Date(),
+              tokenUsage: {
+                inputTokens: data.usage?.input_tokens,
+                outputTokens: data.usage?.output_tokens,
+              },
+              success: true,
+              outputSummary: {
+                aiGenerated: true,
+                notesLength: rawText.length,
+              },
+            })
             notes = rawText
           }
         } else {
+          void logAiDecision({
+            ...auditBase,
+            requestStartedAt: aiRequestStartedAt,
+            responseFinishedAt: new Date(),
+            success: false,
+            outputSummary: { fellBackToTemplate: true },
+            errorClass: `http_${response.status}`,
+          })
           // Fallback to template
           notes = generateTemplateNotes(topic, board || 'aqa', grade, weakAreas || [])
         }
       } catch {
+        void logAiDecision({
+          feature: 'toolkit/generate-notes',
+          userId: user.id,
+          inputText: `${topic}\n${board || 'aqa'}\n${(weakAreas || []).join(',')}`,
+          promptSchemeId: `${board || 'aqa'}:${grade}`,
+          consentSnapshot: { aiOptOut: false, aiProcessingConsentOk: true },
+          ipAddress: request.headers.get('x-forwarded-for'),
+          requestStartedAt: new Date(),
+          responseFinishedAt: new Date(),
+          success: false,
+          outputSummary: { fellBackToTemplate: true },
+          errorClass: 'NotesGenerationError',
+          errorMessage: 'Anthropic fetch threw; deterministic template used',
+        })
         notes = generateTemplateNotes(topic, board || 'aqa', grade, weakAreas || [])
       }
     } else {

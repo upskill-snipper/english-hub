@@ -32,7 +32,8 @@ import { getMarkScheme } from '@/lib/marking/mark-schemes'
 import { buildMarkingPrompt } from '@/lib/marking/prompt-builder'
 import { generateFeedback } from '@/lib/marking/feedback-generator'
 import { fireStudentFirstMark } from '@/lib/trustpilot/trigger-invite'
-import { withArabicDirective } from '@/lib/i18n/ai-language-directive'
+import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
+import { logAiDecision } from '@/lib/ai-audit-log'
 
 export const maxDuration = 60
 
@@ -147,6 +148,24 @@ export async function POST(request: NextRequest) {
 
     // 11. Call Claude
     const anthropic = new Anthropic({ apiKey })
+    // EU AI Act Art. 12/19: bracket the model call so the audit record can
+    // capture request/response timestamps + latency. Best-effort; never
+    // affects the response path.
+    const aiRequestStartedAt = new Date()
+    const auditBase = {
+      feature: 'mark' as const,
+      userId: user.id,
+      locale: resolveLocaleFromRequest(request),
+      inputText: body.essay,
+      markSchemeId: body.markSchemeId,
+      questionId: body.questionId,
+      promptSchemeId: body.markSchemeId,
+      consentSnapshot: {
+        aiOptOut: false,
+        aiProcessingConsentOk: true,
+      },
+      ipAddress: request.headers.get('x-forwarded-for'),
+    }
     let message
     try {
       message = await anthropic.messages.create(
@@ -164,6 +183,14 @@ export async function POST(request: NextRequest) {
         message?: string
         error?: { type?: string }
       }
+      void logAiDecision({
+        ...auditBase,
+        requestStartedAt: aiRequestStartedAt,
+        responseFinishedAt: new Date(),
+        success: false,
+        errorClass: err.error?.type ?? (err.status ? `http_${err.status}` : 'anthropic_error'),
+        errorMessage: typeof err.message === 'string' ? err.message.slice(0, 300) : null,
+      })
       if (
         err.message?.includes('timeout') ||
         err.message?.includes('ETIMEDOUT') ||
@@ -183,6 +210,7 @@ export async function POST(request: NextRequest) {
         'The AI marking service is currently unavailable. Please try again later.',
       )
     }
+    const aiResponseFinishedAt = new Date()
 
     // 12. Extract text
     const responseText = message.content
@@ -198,6 +226,19 @@ export async function POST(request: NextRequest) {
     })
 
     if (!feedback.ok) {
+      void logAiDecision({
+        ...auditBase,
+        requestStartedAt: aiRequestStartedAt,
+        responseFinishedAt: aiResponseFinishedAt,
+        tokenUsage: {
+          inputTokens: message.usage?.input_tokens,
+          outputTokens: message.usage?.output_tokens,
+        },
+        success: false,
+        outputSummary: { rejected: feedback.error.type },
+        errorClass: feedback.error.type,
+        errorMessage: 'reason' in feedback.error ? String(feedback.error.reason) : null,
+      })
       if (feedback.error.type === 'INVALID_SUBMISSION') {
         return badRequestResponse(
           'Your submission does not appear to be an essay. Please paste your own written work for marking.',
@@ -215,6 +256,29 @@ export async function POST(request: NextRequest) {
       )
       return serverErrorResponse('Failed to process the AI response. Please try again.')
     }
+
+    // EU AI Act Art. 12/19 — record the successful AI marking decision.
+    void logAiDecision({
+      ...auditBase,
+      requestStartedAt: aiRequestStartedAt,
+      responseFinishedAt: aiResponseFinishedAt,
+      tokenUsage: {
+        inputTokens: message.usage?.input_tokens,
+        outputTokens: message.usage?.output_tokens,
+      },
+      success: true,
+      outputSummary: {
+        predictedGrade: feedback.result.predictedGrade,
+        gradeBand: feedback.result.gradeBand,
+        totalMarks: feedback.result.totalMarks,
+        maxMarks: feedback.result.maxMarks,
+        aoScores: feedback.result.aoScores.map((ao) => ({
+          id: ao.id,
+          marks: ao.marks,
+          maxMarks: ao.maxMarks,
+        })),
+      },
+    })
 
     // Trustpilot review solicitation — fire-and-forget on first successful
     // mark. Dedup in the trigger orchestrator ensures only the first invocation

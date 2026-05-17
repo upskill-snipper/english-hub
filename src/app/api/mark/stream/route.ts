@@ -30,7 +30,8 @@ import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import { getMarkScheme } from '@/lib/marking/mark-schemes'
 import { buildMarkingPrompt } from '@/lib/marking/prompt-builder'
 import { generateFeedback } from '@/lib/marking/feedback-generator'
-import { withArabicDirective } from '@/lib/i18n/ai-language-directive'
+import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
+import { logAiDecision } from '@/lib/ai-audit-log'
 
 export const maxDuration = 60
 export const runtime = 'nodejs'
@@ -137,6 +138,25 @@ export async function POST(request: NextRequest) {
   const anthropic = new Anthropic({ apiKey })
   const encoder = new TextEncoder()
 
+  // EU AI Act Art. 12/19: capture the decision context once, then emit an
+  // audit record from each terminal branch of the stream (done / rejected /
+  // error). Best-effort — never blocks or breaks the SSE response.
+  const auditBase = {
+    feature: 'mark/stream' as const,
+    userId: user.id,
+    locale: resolveLocaleFromRequest(request),
+    inputText: body.essay,
+    markSchemeId: body.markSchemeId,
+    questionId: body.questionId,
+    promptSchemeId: body.markSchemeId,
+    consentSnapshot: {
+      aiOptOut: false,
+      aiProcessingConsentOk: true,
+    },
+    ipAddress: request.headers.get('x-forwarded-for'),
+  }
+  const aiRequestStartedAt = new Date()
+
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
       const send = (payload: Record<string, unknown>) => {
@@ -168,6 +188,15 @@ export async function POST(request: NextRequest) {
         })
 
         if (!feedback.ok) {
+          void logAiDecision({
+            ...auditBase,
+            requestStartedAt: aiRequestStartedAt,
+            responseFinishedAt: new Date(),
+            success: false,
+            outputSummary: { rejected: feedback.error.type },
+            errorClass: feedback.error.type,
+            errorMessage: 'reason' in feedback.error ? String(feedback.error.reason) : null,
+          })
           if (feedback.error.type === 'INVALID_SUBMISSION') {
             send({
               type: 'error',
@@ -191,6 +220,24 @@ export async function POST(request: NextRequest) {
           return
         }
 
+        void logAiDecision({
+          ...auditBase,
+          requestStartedAt: aiRequestStartedAt,
+          responseFinishedAt: new Date(),
+          success: true,
+          outputSummary: {
+            predictedGrade: feedback.result.predictedGrade,
+            gradeBand: feedback.result.gradeBand,
+            totalMarks: feedback.result.totalMarks,
+            maxMarks: feedback.result.maxMarks,
+            aoScores: feedback.result.aoScores.map((ao) => ({
+              id: ao.id,
+              marks: ao.marks,
+              maxMarks: ao.maxMarks,
+            })),
+          },
+        })
+
         send({
           type: 'done',
           result: feedback.result,
@@ -198,6 +245,15 @@ export async function POST(request: NextRequest) {
         })
         controller.close()
       } catch (err: unknown) {
+        void logAiDecision({
+          ...auditBase,
+          requestStartedAt: aiRequestStartedAt,
+          responseFinishedAt: new Date(),
+          success: false,
+          errorClass: err instanceof Error ? err.name : 'StreamError',
+          errorMessage:
+            err instanceof Error ? err.message.slice(0, 300) : String(err).slice(0, 300),
+        })
         console.error('[api/mark/stream] streaming error', err)
         send({
           type: 'error',

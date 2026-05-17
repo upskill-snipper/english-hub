@@ -21,7 +21,9 @@ import {
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { hasActiveSubscription } from '@/lib/course-access'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
-import { withArabicDirective } from '@/lib/i18n/ai-language-directive'
+import { contentSafetyCheck } from '@/lib/content-safety'
+import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
+import { logAiDecision } from '@/lib/ai-audit-log'
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
@@ -99,9 +101,31 @@ async function generateAIFeedback(
 // Logs filtering activity for compliance review.
 
 async function logToAuditTrail(entry: AuditLogEntry): Promise<void> {
-  // TODO(Phase-7): Persist audit log entries to Supabase audit_logs table (see commented example below)
-  // Production implementation example:
-  // await db.auditLog.create({ data: entry });
+  // EU AI Act Art. 12/19 — delegate to the shared, best-effort AI decision
+  // logger (persists to the existing `AuditLog` model). This records the
+  // content-filter outcome for this feedback decision. `logAiDecision` never
+  // throws into the request path, so this stays safe to await here.
+  await logAiDecision({
+    feature: 'essay/feedback',
+    userId: entry.userId,
+    locale: null,
+    // No raw essay in scope here (only filter metadata); nothing to hash.
+    inputText: null,
+    promptSchemeId: entry.examBoard,
+    requestStartedAt: new Date(entry.timestamp),
+    responseFinishedAt: new Date(entry.timestamp),
+    success: !entry.escalationRequired,
+    outputSummary: {
+      examBoard: entry.examBoard,
+      topic: entry.topic,
+      userCountry: entry.userCountry,
+      filtered: entry.filtered,
+      escalationRequired: entry.escalationRequired,
+      modifiedCategories: entry.modifiedCategories,
+      warningCount: entry.warningCount,
+    },
+    errorClass: entry.escalationRequired ? 'CONTENT_ESCALATION' : null,
+  })
 }
 
 // ─── Request Validation ─────────────────────────────────────────────────
@@ -233,12 +257,43 @@ export async function POST(request: NextRequest) {
     const { essayText, examBoard, topic, userCountry } = validation.data
     const userId = user.id
 
+    // 3c. Safeguarding / misuse pre-screen — parity with /api/mark. Routes
+    // a minor's self-harm disclosure to the static helpline message and
+    // blocks prompt-injection / essay-generation misuse before the model.
+    const safetyError = contentSafetyCheck({ essay: essayText, questionText: topic ?? '' })
+    if (safetyError) return badRequestResponse(safetyError)
+
+    // EU AI Act Art. 12/19: bracket the model call so the audit record can
+    // capture latency + a hash of the (minor's) essay. Best-effort.
+    const aiRequestStartedAt = new Date()
+    const aiAuditBase = {
+      feature: 'essay/feedback' as const,
+      userId,
+      locale: resolveLocaleFromRequest(request),
+      inputText: essayText,
+      promptSchemeId: examBoard,
+      consentSnapshot: {
+        aiOptOut: false,
+        aiProcessingConsentOk: true,
+      },
+      ipAddress: request.headers.get('x-forwarded-for'),
+    }
+
     // 4. Generate AI feedback
     let rawFeedback: string
     try {
       rawFeedback = await generateAIFeedback(essayText, examBoard, topic, request)
     } catch (aiError: unknown) {
       const err = aiError as { message?: string; status?: number; error?: { type?: string } }
+
+      void logAiDecision({
+        ...aiAuditBase,
+        requestStartedAt: aiRequestStartedAt,
+        responseFinishedAt: new Date(),
+        success: false,
+        errorClass: err.error?.type ?? (err.status ? `http_${err.status}` : 'anthropic_error'),
+        errorMessage: typeof err.message === 'string' ? err.message.slice(0, 300) : null,
+      })
 
       // Timeout from AI provider
       if (
@@ -260,6 +315,7 @@ export async function POST(request: NextRequest) {
         'AI feedback service is currently unavailable. Please try again later.',
       )
     }
+    const aiResponseFinishedAt = new Date()
 
     // 5. Run through content filter
     const filterResult = filterAIResponse(rawFeedback, userCountry, topic)
@@ -269,6 +325,22 @@ export async function POST(request: NextRequest) {
     const humanReviewUrl = filterResult.escalationRequired
       ? `/api/review/request?topic=${encodeURIComponent(topic)}&board=${examBoard}`
       : null
+
+    // EU AI Act Art. 12/19 — record the AI feedback decision itself
+    // (model, latency, essay hash, filter outcome).
+    void logAiDecision({
+      ...aiAuditBase,
+      requestStartedAt: aiRequestStartedAt,
+      responseFinishedAt: aiResponseFinishedAt,
+      success: true,
+      outputSummary: {
+        feedbackLength: filterResult.filteredText.length,
+        filtered: filterResult.flagged,
+        escalationRequired: filterResult.escalationRequired,
+        modifiedCategories: filterResult.modifiedCategories,
+        warningCount: filterResult.warnings.length,
+      },
+    })
 
     // Log to audit trail
     await logToAuditTrail({

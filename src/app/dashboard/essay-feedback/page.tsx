@@ -23,6 +23,7 @@ import { markSchemes, getPapersForBoard, getQuestionTypes } from '@/data/mark-sc
 import { getQuestionsForType } from '@/data/exam-questions'
 import { cn } from '@/lib/utils'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
+import { RequestHumanReviewButton } from '@/components/ai/RequestHumanReviewButton'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -679,6 +680,12 @@ function FeedbackResults({
           </div>
         </CardContent>
       </Card>
+
+      {/* Human oversight (EU AI Act Art 14) — request a person to
+          review this AI-generated, predicted (not official) feedback. */}
+      <div className="border-t pt-6">
+        <RequestHumanReviewButton context="essay-feedback" />
+      </div>
 
       {/* Actions */}
       <div className="flex items-center justify-between">

@@ -70,6 +70,7 @@ import { B1_RESOURCES_DICTIONARY } from './dictionary-b1-resources'
 import { B15_MARKING_SCHOOL_DICTIONARY } from './dictionary-b15-marking-school'
 import { B15_DASHBOARD_DICTIONARY } from './dictionary-b15-dashboard'
 import { B15_DEMO_DICTIONARY } from './dictionary-b15-demo'
+import { AI_ACT_DICTIONARY } from './dictionary-ai-act'
 
 export type Locale = 'en' | 'ar'
 
@@ -3484,7 +3485,11 @@ export const DICTIONARY: Dictionary = {
   'marking.confidence_high': { en: 'High', ar: 'عالية' },
   'marking.confidence_moderate': { en: 'Moderate', ar: 'متوسطة' },
   'marking.confidence_developing': { en: 'Developing', ar: 'تتطور' },
-  'marking.confidence_label': { en: 'confidence', ar: 'ثقة' },
+  // Renders as "{High|Moderate|Developing} score (NN%)". This value is
+  // totalMarks/maxMarks — a score percentage, NOT model confidence.
+  // Mislabelling it "confidence" overstated AI certainty (EU AI Act
+  // Art 13 transparency / over-reliance on minors). See evals/ + doc 06.
+  'marking.confidence_label': { en: 'score', ar: 'الدرجة' },
   'marking.improvement_trend': { en: 'Improvement Trend', ar: 'تطور أدائك' },
   'marking.trend_empty_state': {
     en: 'Submit a few essays to start seeing your trend.',
@@ -14785,6 +14790,8 @@ export function lookup(key: string, locale: Locale): string {
     B15_MARKING_SCHOOL_DICTIONARY[key] ??
     B15_DASHBOARD_DICTIONARY[key] ??
     B15_DEMO_DICTIONARY[key] ??
+    // EU AI Act user-facing copy (Art 13/14/50) — curated tier.
+    AI_ACT_DICTIONARY[key] ??
     PRESS_AND_VERIFIED_FIX[key] ??
     PLACEHOLDER_FIX_MAY16[key] ??
     PLACEHOLDER_FIX_MAY15[key] ??

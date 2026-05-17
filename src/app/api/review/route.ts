@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { essayId, reason, detail, selfAssessment } = body
+    const { essayId, reason, detail, selfAssessment, context } = body
 
     // ── Validation ──────────────────────────────────────────────────────
     if (!essayId || typeof essayId !== 'string') {
@@ -107,7 +107,13 @@ export async function POST(request: NextRequest) {
       essay_id: essayId,
       // TODO(Phase-7): Query essay title from a Supabase essay table by
       // essayId. The in-memory predecessor used the same placeholder.
-      essay_title: `Essay ${essayId}`,
+      // Findability: when the caller (e.g. RequestHumanReviewButton)
+      // passes an AI-output context, surface it so reviewers can triage
+      // the queue even though B2C marking has no server-side essay row.
+      essay_title:
+        typeof context === 'string' && context.length > 0
+          ? `AI ${context} review — ${essayId}`
+          : `Essay ${essayId}`,
       reason,
       detail: detail.trim(),
       self_assessment:

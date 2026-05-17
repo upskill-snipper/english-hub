@@ -30,6 +30,7 @@ import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-lan
 import { findEALTopic } from '@/lib/eal/curriculum'
 import { CEFR_PRODUCT_BANDS, type CEFRBand } from '@/lib/eal/cefr'
 import { buildCEFRAssessPrompt, parseCEFRAssessment } from '@/lib/eal/assess'
+import { logAiDecision } from '@/lib/ai-audit-log'
 
 export const maxDuration = 60
 
@@ -134,6 +135,20 @@ export async function POST(request: NextRequest) {
 
     // 10. Call Claude
     const anthropic = new Anthropic({ apiKey })
+    // EU AI Act Art. 12/19: bracket the model call for the audit record.
+    const aiRequestStartedAt = new Date()
+    const auditBase = {
+      feature: 'cefr-assess' as const,
+      userId: user.id,
+      locale,
+      inputText: body.text,
+      promptSchemeId: prompt.cacheKey,
+      consentSnapshot: {
+        aiOptOut: false,
+        aiProcessingConsentOk: true,
+      },
+      ipAddress: request.headers.get('x-forwarded-for'),
+    }
     let message
     try {
       message = await anthropic.messages.create(
@@ -151,6 +166,14 @@ export async function POST(request: NextRequest) {
         message?: string
         error?: { type?: string }
       }
+      void logAiDecision({
+        ...auditBase,
+        requestStartedAt: aiRequestStartedAt,
+        responseFinishedAt: new Date(),
+        success: false,
+        errorClass: err.error?.type ?? (err.status ? `http_${err.status}` : 'anthropic_error'),
+        errorMessage: typeof err.message === 'string' ? err.message.slice(0, 300) : null,
+      })
       if (
         err.message?.includes('timeout') ||
         err.message?.includes('ETIMEDOUT') ||
@@ -170,6 +193,7 @@ export async function POST(request: NextRequest) {
         'The AI assessment service is currently unavailable. Please try again later.',
       )
     }
+    const aiResponseFinishedAt = new Date()
 
     // 11. Extract text
     const responseText = message.content
@@ -180,6 +204,19 @@ export async function POST(request: NextRequest) {
     // 12. Parse + validate into the strict result contract
     const outcome = parseCEFRAssessment(responseText)
     if (!outcome.ok) {
+      void logAiDecision({
+        ...auditBase,
+        requestStartedAt: aiRequestStartedAt,
+        responseFinishedAt: aiResponseFinishedAt,
+        tokenUsage: {
+          inputTokens: message.usage?.input_tokens,
+          outputTokens: message.usage?.output_tokens,
+        },
+        success: false,
+        outputSummary: { rejected: outcome.error },
+        errorClass: outcome.error,
+        errorMessage: outcome.reason ?? null,
+      })
       if (outcome.error === 'INVALID_SUBMISSION') {
         return badRequestResponse(
           'Your submission does not look like a genuine attempt at this task. Please write your own response for assessment.',
@@ -197,6 +234,25 @@ export async function POST(request: NextRequest) {
       )
       return serverErrorResponse('Failed to process the AI response. Please try again.')
     }
+
+    // EU AI Act Art. 12/19 — record the successful CEFR assessment decision.
+    void logAiDecision({
+      ...auditBase,
+      requestStartedAt: aiRequestStartedAt,
+      responseFinishedAt: aiResponseFinishedAt,
+      tokenUsage: {
+        inputTokens: message.usage?.input_tokens,
+        outputTokens: message.usage?.output_tokens,
+      },
+      success: true,
+      outputSummary: {
+        band: outcome.result.band,
+        perCriterion: outcome.result.perCriterion.map((c) => ({
+          name: c.name?.en ?? null,
+          band: c.band,
+        })),
+      },
+    })
 
     return NextResponse.json({
       result: outcome.result,

@@ -5,9 +5,10 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { GradePredictionCard } from '@/components/marking/GradePredictionCard'
-import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
+import { AiMarkingNotice } from '@/components/ai/AiMarkingNotice'
 import { AOBreakdown, type AOScore } from '@/components/marking/AOBreakdown'
 import { AnnotatedEssay, type Annotation } from '@/components/marking/AnnotatedEssay'
+import { RequestHumanReviewButton } from '@/components/ai/RequestHumanReviewButton'
 import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Types ────────────────────────────────────────────────── */
@@ -200,8 +201,9 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
         </p>
       </header>
 
-      {/* Consistent AI-generated disclosure (policy-matched). */}
-      <AiGeneratedNotice variant="panel" className="mb-6" />
+      {/* Accurate AI-result disclosure (EU AI Act Art 13/50) — this is a
+          predicted, AI-generated, non-human-reviewed grade. */}
+      <AiMarkingNotice className="mb-6" />
 
       {/* ── Grade + AO side-by-side ───────────────────────── */}
       <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
@@ -293,6 +295,11 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
       {/* ── Annotated essay ───────────────────────────────── */}
       <div className="mt-6">
         <AnnotatedEssay paragraphs={paragraphs} annotations={annotations} />
+      </div>
+
+      {/* ── Human oversight (EU AI Act Art 14) ────────────── */}
+      <div className="mt-8 border-t pt-6">
+        <RequestHumanReviewButton submissionRef={result.id} context="marking" />
       </div>
 
       {/* ── Footer actions ────────────────────────────────── */}
