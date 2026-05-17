@@ -27,6 +27,7 @@ import {
   type DemoClass,
   type DemoStudent,
 } from '@/data/demo-data'
+import { AnimatedNumber, RankBars } from '@/components/dataviz'
 
 function ragDot(status: 'green' | 'amber' | 'red') {
   const colors = {
@@ -214,7 +215,11 @@ export default function TeacherClassDetailPage() {
               <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">
                 Avg Score
               </p>
-              <p className={`text-2xl font-light ${scoreColor(avgScore)}`}>{avgScore}%</p>
+              <AnimatedNumber
+                value={avgScore}
+                suffix="%"
+                className={`block text-2xl font-light ${scoreColor(avgScore)}`}
+              />
             </CardContent>
           </Card>
           <Card className="bg-card border-border/60">
@@ -222,7 +227,11 @@ export default function TeacherClassDetailPage() {
               <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">
                 Completion Rate
               </p>
-              <p className="text-2xl font-light text-foreground">{avgCompletion}%</p>
+              <AnimatedNumber
+                value={avgCompletion}
+                suffix="%"
+                className="block text-2xl font-light text-foreground"
+              />
             </CardContent>
           </Card>
           <Card className="bg-card border-border/60">
@@ -230,11 +239,10 @@ export default function TeacherClassDetailPage() {
               <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">
                 At-Risk
               </p>
-              <p
-                className={`text-2xl font-light ${atRiskCount > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}
-              >
-                {atRiskCount}
-              </p>
+              <AnimatedNumber
+                value={atRiskCount}
+                className={`block text-2xl font-light ${atRiskCount > 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}
+              />
             </CardContent>
           </Card>
           <Card className="bg-card border-border/60">
@@ -242,9 +250,10 @@ export default function TeacherClassDetailPage() {
               <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-1">
                 On Track
               </p>
-              <p className="text-2xl font-light text-green-600 dark:text-green-400">
-                {onTrackCount}
-              </p>
+              <AnimatedNumber
+                value={onTrackCount}
+                className="block text-2xl font-light text-green-600 dark:text-green-400"
+              />
             </CardContent>
           </Card>
         </div>
@@ -450,24 +459,34 @@ export default function TeacherClassDetailPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
-                  {topStrengths.map(([name, count], i) => (
-                    <div key={i} className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">{name}</span>
-                      <div className="flex items-center gap-2">
-                        <div className="w-20 h-1.5 rounded-full bg-muted overflow-hidden">
-                          <div
-                            className="h-full rounded-full bg-green-500"
-                            style={{ width: `${(count / fullClassStudents.length) * 100}%` }}
-                          />
-                        </div>
-                        <span className="text-[11px] text-muted-foreground w-16 text-right">
-                          {count}/{fullClassStudents.length} students
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                {topStrengths.length > 0 ? (
+                  <>
+                    <RankBars
+                      data={topStrengths.map(([name, count]) => ({
+                        name,
+                        pct: Math.round((count / Math.max(1, fullClassStudents.length)) * 100),
+                      }))}
+                      labelKey="name"
+                      valueKey="pct"
+                      height={Math.max(180, topStrengths.length * 40)}
+                    />
+                    <ul className="mt-3 space-y-1">
+                      {topStrengths.map(([name, count], i) => (
+                        <li
+                          key={i}
+                          className="flex items-center justify-between text-[11px] text-muted-foreground"
+                        >
+                          <span>{name}</span>
+                          <span>
+                            {count}/{fullClassStudents.length} students
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <p className="text-sm text-muted-foreground">Not enough data yet.</p>
+                )}
               </CardContent>
             </Card>
 
@@ -478,24 +497,34 @@ export default function TeacherClassDetailPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
-                  {topWeaknesses.map(([name, count], i) => (
-                    <div key={i} className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">{name}</span>
-                      <div className="flex items-center gap-2">
-                        <div className="w-20 h-1.5 rounded-full bg-muted overflow-hidden">
-                          <div
-                            className="h-full rounded-full bg-red-500"
-                            style={{ width: `${(count / fullClassStudents.length) * 100}%` }}
-                          />
-                        </div>
-                        <span className="text-[11px] text-muted-foreground w-16 text-right">
-                          {count}/{fullClassStudents.length} students
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                {topWeaknesses.length > 0 ? (
+                  <>
+                    <RankBars
+                      data={topWeaknesses.map(([name, count]) => ({
+                        name,
+                        pct: Math.round((count / Math.max(1, fullClassStudents.length)) * 100),
+                      }))}
+                      labelKey="name"
+                      valueKey="pct"
+                      height={Math.max(180, topWeaknesses.length * 40)}
+                    />
+                    <ul className="mt-3 space-y-1">
+                      {topWeaknesses.map(([name, count], i) => (
+                        <li
+                          key={i}
+                          className="flex items-center justify-between text-[11px] text-muted-foreground"
+                        >
+                          <span>{name}</span>
+                          <span>
+                            {count}/{fullClassStudents.length} students
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <p className="text-sm text-muted-foreground">Not enough data yet.</p>
+                )}
               </CardContent>
             </Card>
           </div>

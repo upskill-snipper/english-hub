@@ -27,6 +27,26 @@ import { toast } from 'sonner'
 import { DEMO_STUDENTS, DEMO_CLASSES } from '@/data/demo-data'
 import DemoBanner from '@/components/demo/DemoBanner'
 import { percentageToGCSEGrade, gcseGradeColor, predictedGradeColor } from '@/lib/grades'
+import { RankBars, RadialScore, ChartFrame, GlassTooltip, GRID, AXIS } from '@/components/dataviz'
+import {
+  BarChart as RBarChart,
+  Bar as RBar,
+  XAxis as RXAxis,
+  YAxis as RYAxis,
+  CartesianGrid as RCartesianGrid,
+  Tooltip as RTooltip,
+  Cell as RCell,
+} from 'recharts'
+
+// Solid hsl fills mirroring the grade-band Tailwind classes used in the
+// predicted-grade distributions (kept on-theme, semantics unchanged).
+const GRADE_BAND_FILL: Record<string, string> = {
+  'bg-teal-700': 'hsl(173 80% 26%)',
+  'bg-teal-600': 'hsl(175 70% 34%)',
+  'bg-amber-400': 'hsl(43 96% 56%)',
+  'bg-amber-500': 'hsl(38 92% 50%)',
+  'bg-red-500': 'hsl(0 84% 60%)',
+}
 
 // ── Year group data ──────────────────────────────────────────────────────────
 
@@ -360,8 +380,6 @@ export default function SchoolProgressPage() {
 
   const activeYearData = YEAR_GROUPS.find((y) => y.year === activeYear)!
 
-  const maxClassScore = Math.max(...activeYearData.classes.map((c) => c.avgScore))
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <DemoBanner message="You are viewing an interactive demo with sample data. No real student data is used." />
@@ -411,21 +429,20 @@ export default function SchoolProgressPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div
-                className={`text-3xl font-bold ${gcseGradeColor(percentageToGCSEGrade(avgSchoolProgress))}`}
-              >
-                Grade {percentageToGCSEGrade(avgSchoolProgress)}{' '}
-                <span className="text-lg font-normal text-muted-foreground">avg</span>
+              <div className="flex items-center gap-4">
+                <RadialScore value={avgSchoolProgress} label="avg" size={96} />
+                <div>
+                  <div
+                    className={`text-3xl font-bold ${gcseGradeColor(percentageToGCSEGrade(avgSchoolProgress))}`}
+                  >
+                    Grade {percentageToGCSEGrade(avgSchoolProgress)}{' '}
+                    <span className="text-lg font-normal text-muted-foreground">avg</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    {totalStudents} students across {YEAR_GROUPS.length} year groups
+                  </p>
+                </div>
               </div>
-              <div className="mt-2 h-2 w-full rounded-full bg-muted overflow-hidden">
-                <div
-                  className={`h-full rounded-full ${progressColor(avgSchoolProgress)} transition-all`}
-                  style={{ width: `${avgSchoolProgress}%` }}
-                />
-              </div>
-              <p className="text-xs text-muted-foreground mt-2">
-                {totalStudents} students across {YEAR_GROUPS.length} year groups
-              </p>
             </CardContent>
           </Card>
 
@@ -438,19 +455,18 @@ export default function SchoolProgressPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-1.5">
+              <RankBars
+                data={YEAR_GROUPS.map((yg) => ({ year: yg.year, avgProgress: yg.avgProgress }))}
+                labelKey="year"
+                valueKey="avgProgress"
+                height={Math.max(180, YEAR_GROUPS.length * 26)}
+                suffix="%"
+              />
+              <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 sm:grid-cols-3">
                 {YEAR_GROUPS.map((yg) => (
-                  <div key={yg.year} className="flex items-center gap-2 text-xs">
-                    <span className="w-8 text-muted-foreground font-mono">{yg.year}</span>
-                    <div className="flex-1 h-1.5 rounded-full bg-muted overflow-hidden">
-                      <div
-                        className={`h-full rounded-full ${progressColor(yg.avgProgress)}`}
-                        style={{ width: `${(yg.avgWorkingAt / 9) * 100}%` }}
-                      />
-                    </div>
-                    <span
-                      className={`w-20 text-right font-mono ${gcseGradeColor(yg.avgWorkingAt)}`}
-                    >
+                  <div key={yg.year} className="flex items-center justify-between gap-2 text-xs">
+                    <span className="text-muted-foreground font-mono">{yg.year}</span>
+                    <span className={`text-right font-mono ${gcseGradeColor(yg.avgWorkingAt)}`}>
                       Grade {yg.avgWorkingAt}
                     </span>
                   </div>
@@ -468,23 +484,50 @@ export default function SchoolProgressPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-1.5">
-                {[
+              {(() => {
+                const dist = [
                   { grade: '8-9', pct: 15, color: 'bg-teal-700' },
                   { grade: '7', pct: 30, color: 'bg-teal-600' },
                   { grade: '6', pct: 35, color: 'bg-amber-400' },
                   { grade: '5', pct: 15, color: 'bg-amber-500' },
                   { grade: '1-4', pct: 5, color: 'bg-red-500' },
-                ].map((g) => (
-                  <div key={g.grade} className="flex items-center gap-2 text-xs">
-                    <span className="w-10 text-muted-foreground font-medium">{g.grade}</span>
-                    <div className="flex-1 h-3 rounded bg-muted overflow-hidden">
-                      <div className={`h-full rounded ${g.color}`} style={{ width: `${g.pct}%` }} />
-                    </div>
-                    <span className="w-8 text-right text-muted-foreground font-mono">{g.pct}%</span>
-                  </div>
-                ))}
-              </div>
+                ]
+                return (
+                  <ChartFrame height={Math.max(160, dist.length * 30)}>
+                    <RBarChart
+                      data={dist}
+                      layout="vertical"
+                      margin={{ top: 4, right: 24, bottom: 4, left: 8 }}
+                      barCategoryGap={8}
+                    >
+                      <RCartesianGrid {...GRID} horizontal={false} vertical />
+                      <RXAxis type="number" domain={[0, 100]} {...AXIS} unit="%" />
+                      <RYAxis
+                        type="category"
+                        dataKey="grade"
+                        {...AXIS}
+                        width={44}
+                        tick={{ fontSize: 11, fill: 'hsl(var(--foreground))' }}
+                      />
+                      <RTooltip
+                        content={<GlassTooltip suffix="%" />}
+                        cursor={{ fill: 'hsl(var(--muted)/0.4)' }}
+                      />
+                      <RBar
+                        dataKey="pct"
+                        name="Students"
+                        radius={[0, 6, 6, 0]}
+                        isAnimationActive
+                        animationDuration={900}
+                      >
+                        {dist.map((g) => (
+                          <RCell key={g.grade} fill={GRADE_BAND_FILL[g.color]} />
+                        ))}
+                      </RBar>
+                    </RBarChart>
+                  </ChartFrame>
+                )
+              })()}
             </CardContent>
           </Card>
         </div>
@@ -605,39 +648,36 @@ export default function SchoolProgressPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
+              <RankBars
+                data={activeYearData.classes.map((cls) => ({
+                  name: cls.name,
+                  avgScore: cls.avgScore,
+                }))}
+                labelKey="name"
+                valueKey="avgScore"
+                height={Math.max(180, activeYearData.classes.length * 44)}
+                suffix="%"
+              />
+              <div className="mt-4 space-y-1.5">
                 {activeYearData.classes.map((cls) => (
-                  <div key={cls.name}>
-                    <div className="flex items-center justify-between mb-1">
-                      <div>
-                        <span className="text-sm font-medium text-foreground">{cls.name}</span>
-                        <span className="text-xs text-muted-foreground ml-2">({cls.teacher})</span>
-                      </div>
-                      <div className="flex items-center gap-3 text-xs">
-                        <span className="text-muted-foreground">
-                          Avg:{' '}
-                          <span className={progressTextColor(cls.avgScore)}>
-                            {cls.avgScore}% (G{percentageToGCSEGrade(cls.avgScore)})
-                          </span>
-                        </span>
-                        <span className="text-muted-foreground">
-                          Completion:{' '}
-                          <span className={progressTextColor(cls.completionRate)}>
-                            {cls.completionRate}%
-                          </span>
-                        </span>
-                      </div>
+                  <div key={cls.name} className="flex items-center justify-between gap-3 text-xs">
+                    <div className="min-w-0 truncate">
+                      <span className="text-sm font-medium text-foreground">{cls.name}</span>
+                      <span className="text-xs text-muted-foreground ml-2">({cls.teacher})</span>
                     </div>
-                    <div className="flex gap-1">
-                      <div className="flex-1 h-6 rounded bg-muted overflow-hidden relative">
-                        <div
-                          className={`h-full rounded ${cls.avgScore === maxClassScore ? 'bg-teal-700' : progressColor(cls.avgScore)} transition-all`}
-                          style={{ width: `${cls.avgScore}%` }}
-                        />
-                        <span className="absolute inset-0 flex items-center justify-center text-[10px] font-mono text-foreground">
-                          {cls.avgScore}%
+                    <div className="flex shrink-0 items-center gap-3">
+                      <span className="text-muted-foreground">
+                        Avg:{' '}
+                        <span className={progressTextColor(cls.avgScore)}>
+                          {cls.avgScore}% (G{percentageToGCSEGrade(cls.avgScore)})
                         </span>
-                      </div>
+                      </span>
+                      <span className="text-muted-foreground">
+                        Completion:{' '}
+                        <span className={progressTextColor(cls.completionRate)}>
+                          {cls.completionRate}%
+                        </span>
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -659,80 +699,18 @@ export default function SchoolProgressPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                {/* CSS donut chart */}
                 <div className="flex items-center gap-6">
-                  <div className="relative w-32 h-32 flex-shrink-0">
-                    <svg viewBox="0 0 36 36" className="w-32 h-32 -rotate-90">
-                      {(() => {
-                        const onTrackPct =
-                          (activeYearData.onTrack / activeYearData.totalStudents) * 100
-                        const abovePct =
-                          (activeYearData.aboveTarget / activeYearData.totalStudents) * 100
-                        const belowPct =
-                          (activeYearData.belowTarget / activeYearData.totalStudents) * 100
-                        const atRiskPct =
-                          (activeYearData.atRisk / activeYearData.totalStudents) * 100
-                        const gap = 0.8
-                        return (
-                          <>
-                            <circle
-                              cx="18"
-                              cy="18"
-                              r="15.915"
-                              fill="none"
-                              strokeWidth="3.5"
-                              className="stroke-muted"
-                            />
-                            <circle
-                              cx="18"
-                              cy="18"
-                              r="15.915"
-                              fill="none"
-                              stroke="#10b981"
-                              strokeWidth="3.5"
-                              strokeDasharray={`${onTrackPct - gap} ${100 - onTrackPct + gap}`}
-                              strokeDashoffset="0"
-                            />
-                            <circle
-                              cx="18"
-                              cy="18"
-                              r="15.915"
-                              fill="none"
-                              stroke="#3b82f6"
-                              strokeWidth="3.5"
-                              strokeDasharray={`${abovePct - gap} ${100 - abovePct + gap}`}
-                              strokeDashoffset={`${-onTrackPct}`}
-                            />
-                            <circle
-                              cx="18"
-                              cy="18"
-                              r="15.915"
-                              fill="none"
-                              stroke="#f59e0b"
-                              strokeWidth="3.5"
-                              strokeDasharray={`${belowPct - gap} ${100 - belowPct + gap}`}
-                              strokeDashoffset={`${-(onTrackPct + abovePct)}`}
-                            />
-                            <circle
-                              cx="18"
-                              cy="18"
-                              r="15.915"
-                              fill="none"
-                              stroke="#ef4444"
-                              strokeWidth="3.5"
-                              strokeDasharray={`${atRiskPct - gap} ${100 - atRiskPct + gap}`}
-                              strokeDashoffset={`${-(onTrackPct + abovePct + belowPct)}`}
-                            />
-                          </>
-                        )
-                      })()}
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-lg font-bold text-foreground">
-                        {activeYearData.totalStudents}
-                      </span>
-                      <span className="text-[10px] text-muted-foreground">students</span>
-                    </div>
+                  <div className="flex flex-shrink-0 flex-col items-center">
+                    <RadialScore
+                      value={Math.round(
+                        (activeYearData.onTrack / activeYearData.totalStudents) * 100,
+                      )}
+                      label="on track"
+                      size={128}
+                    />
+                    <p className="mt-1 text-[10px] text-muted-foreground">
+                      {activeYearData.totalStudents} students
+                    </p>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
@@ -777,23 +755,46 @@ export default function SchoolProgressPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
+                <ChartFrame height={Math.max(180, activeYearData.predictedGrades.length * 34)}>
+                  <RBarChart
+                    data={activeYearData.predictedGrades}
+                    layout="vertical"
+                    margin={{ top: 4, right: 24, bottom: 4, left: 8 }}
+                    barCategoryGap={8}
+                  >
+                    <RCartesianGrid {...GRID} horizontal={false} vertical />
+                    <RXAxis type="number" domain={[0, 100]} {...AXIS} unit="%" />
+                    <RYAxis
+                      type="category"
+                      dataKey="grade"
+                      {...AXIS}
+                      width={48}
+                      tick={{ fontSize: 12, fill: 'hsl(var(--foreground))' }}
+                    />
+                    <RTooltip
+                      content={<GlassTooltip suffix="%" />}
+                      cursor={{ fill: 'hsl(var(--muted)/0.4)' }}
+                    />
+                    <RBar
+                      dataKey="pct"
+                      name="Predicted"
+                      radius={[0, 6, 6, 0]}
+                      isAnimationActive
+                      animationDuration={900}
+                    >
+                      {activeYearData.predictedGrades.map((g) => (
+                        <RCell key={g.grade} fill={GRADE_BAND_FILL[g.color]} />
+                      ))}
+                    </RBar>
+                  </RBarChart>
+                </ChartFrame>
+                <div className="mt-3 space-y-1.5">
                   {activeYearData.predictedGrades.map((g) => (
-                    <div key={g.grade} className="flex items-center gap-3">
-                      <span className="w-12 text-base font-semibold text-muted-foreground">
-                        {g.grade}
-                      </span>
-                      <div className="flex-1 h-10 rounded-lg bg-muted overflow-hidden relative">
-                        <div
-                          className={`h-full rounded-lg ${g.color} transition-all`}
-                          style={{ width: `${g.pct * 2.5}%` }}
-                        />
-                        <span className="absolute inset-0 flex items-center justify-center text-sm font-bold text-foreground drop-shadow-sm">
-                          {g.pct}%
-                        </span>
-                      </div>
-                      <span className="w-14 text-right text-base font-mono font-semibold text-muted-foreground">
-                        ~{Math.round((activeYearData.totalStudents * g.pct) / 100)}
+                    <div key={g.grade} className="flex items-center justify-between gap-3 text-sm">
+                      <span className="font-semibold text-muted-foreground">{g.grade}</span>
+                      <span className="font-mono text-muted-foreground">
+                        {g.pct}% &middot; ~
+                        {Math.round((activeYearData.totalStudents * g.pct) / 100)} students
                       </span>
                     </div>
                   ))}
@@ -811,26 +812,23 @@ export default function SchoolProgressPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <RankBars
+                data={activeYearData.modules.map((mod) => ({
+                  name: mod.name,
+                  completionRate: mod.completionRate,
+                }))}
+                labelKey="name"
+                valueKey="completionRate"
+                height={Math.max(180, activeYearData.modules.length * 34)}
+                suffix="%"
+              />
+              <div className="mt-3 grid grid-cols-1 gap-x-4 gap-y-1.5 sm:grid-cols-2 lg:grid-cols-3">
                 {activeYearData.modules.map((mod) => (
-                  <div
-                    key={mod.name}
-                    className="p-3 rounded-lg bg-muted/50 border border-border/40"
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-foreground truncate">{mod.name}</span>
-                      <span
-                        className={`text-sm font-mono ${progressTextColor(mod.completionRate)}`}
-                      >
-                        {mod.completionRate}%
-                      </span>
-                    </div>
-                    <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
-                      <div
-                        className={`h-full rounded-full ${progressColor(mod.completionRate)} transition-all`}
-                        style={{ width: `${mod.completionRate}%` }}
-                      />
-                    </div>
+                  <div key={mod.name} className="flex items-center justify-between gap-2 text-sm">
+                    <span className="truncate text-foreground">{mod.name}</span>
+                    <span className={`shrink-0 font-mono ${progressTextColor(mod.completionRate)}`}>
+                      {mod.completionRate}%
+                    </span>
                   </div>
                 ))}
               </div>

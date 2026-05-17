@@ -28,6 +28,7 @@ import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } fro
 import GradeProgressCard from '@/components/GradeProgressCard'
 import GradeRecommendations from '@/components/GradeRecommendations'
 import ReadingProfileCard from '@/components/ReadingProfileCard'
+import { GlassPanel, PanelEyebrow, KpiTile, RadialScore, RankBars } from '@/components/dataviz'
 
 // ---------------------------------------------------------------------------
 // Demo data -- Aisha Rahman's student perspective
@@ -196,109 +197,6 @@ const FLASHCARDS = [
 ]
 
 // ---------------------------------------------------------------------------
-// Progress Ring Component (large, with gradient stroke)
-// ---------------------------------------------------------------------------
-
-function ProgressRing({
-  value,
-  size = 200,
-  stroke = 12,
-}: {
-  value: number
-  size?: number
-  stroke?: number
-}) {
-  const radius = (size - stroke) / 2
-  const circumference = 2 * Math.PI * radius
-  const offset = circumference - (value / 100) * circumference
-
-  const gradientId = `progress-gradient-${size}`
-
-  return (
-    <div className="relative" style={{ width: size, height: size }}>
-      <svg width={size} height={size} className="-rotate-90">
-        <defs>
-          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#a78bfa" />
-            <stop offset="50%" stopColor="#818cf8" />
-            <stop offset="100%" stopColor="#34d399" />
-          </linearGradient>
-        </defs>
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          stroke="hsl(var(--border))"
-          strokeWidth={stroke}
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          stroke={`url(#${gradientId})`}
-          strokeWidth={stroke}
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          style={{ transition: 'stroke-dashoffset 0.8s ease-out' }}
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-4xl font-bold text-foreground tabular-nums">{value}%</span>
-        <span className="text-xs text-muted-foreground mt-0.5">overall progress</span>
-      </div>
-    </div>
-  )
-}
-
-// ---------------------------------------------------------------------------
-// Mini Progress Ring (for course cards)
-// ---------------------------------------------------------------------------
-
-function MiniRing({
-  value,
-  size = 44,
-  stroke = 3,
-  color,
-}: {
-  value: number
-  size?: number
-  stroke?: number
-  color: string
-}) {
-  const radius = (size - stroke) / 2
-  const circumference = 2 * Math.PI * radius
-  const offset = circumference - (value / 100) * circumference
-
-  return (
-    <svg width={size} height={size} className="-rotate-90">
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        fill="none"
-        stroke="hsl(var(--border))"
-        strokeWidth={stroke}
-      />
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        fill="none"
-        className={color}
-        strokeWidth={stroke}
-        strokeLinecap="round"
-        strokeDasharray={circumference}
-        strokeDashoffset={offset}
-        style={{ transition: 'stroke-dashoffset 0.6s ease-out' }}
-      />
-    </svg>
-  )
-}
-
-// ---------------------------------------------------------------------------
 // Flashcard Widget
 // ---------------------------------------------------------------------------
 
@@ -368,8 +266,6 @@ function FlashcardWidget() {
 export default function StudentDemoPage() {
   const [flashcardsOpen, setFlashcardsOpen] = useState(false)
 
-  const assignmentPct = Math.round((STUDENT.assignmentsDone / STUDENT.totalAssignments) * 100)
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="max-w-6xl mx-auto px-6 py-8">
@@ -382,7 +278,7 @@ export default function StudentDemoPage() {
 
         {/* ── HERO SECTION ─────────────────────────────────────────────── */}
         <section className="mb-10">
-          <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-violet-500/[0.06] via-transparent to-primary/[0.04] p-8">
+          <GlassPanel accent="primary" className="p-8">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               {/* Left: Welcome text */}
               <div className="flex-1 text-center lg:text-left">
@@ -437,78 +333,57 @@ export default function StudentDemoPage() {
               </div>
 
               {/* Right: Progress ring */}
-              <div className="flex-shrink-0">
-                <ProgressRing value={STUDENT.overallProgress} size={200} stroke={12} />
+              <div className="flex flex-shrink-0 flex-col items-center gap-2">
+                <RadialScore value={STUDENT.overallProgress} size={200} />
+                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  overall progress
+                </span>
               </div>
             </div>
-          </div>
+          </GlassPanel>
         </section>
 
         {/* ── QUICK STATS ROW ──────────────────────────────────────────── */}
         <section className="mb-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Average Grade */}
-            <div className="rounded-xl border border-border/60 bg-gradient-to-br from-primary/[0.08] to-primary/[0.02] p-5">
-              <div className="flex items-center justify-between mb-3">
-                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  Average Grade
-                </p>
-                <span className="flex items-center gap-1 text-xs text-primary">
-                  <TrendingUp className="h-3 w-3" />
-                  improving
-                </span>
-              </div>
-              <p
-                className={`text-3xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(STUDENT.averageScore))}`}
-              >
-                Grade {percentageToGCSEGrade(STUDENT.averageScore)}
-              </p>
-              <p className="text-[11px] text-muted-foreground mt-1">across all assessments</p>
-            </div>
+            <KpiTile
+              label="Average Grade"
+              value={percentageToGCSEGrade(STUDENT.averageScore)}
+              prefix="Grade "
+              icon={TrendingUp}
+              accent="primary"
+            />
 
             {/* Assignments Done */}
-            <div className="rounded-xl border border-border/60 bg-gradient-to-br from-primary/[0.08] to-primary/[0.02] p-5">
-              <div className="flex items-center justify-between mb-3">
-                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  Completed
-                </p>
-                <CheckCircle className="h-4 w-4 text-primary/50" />
-              </div>
-              <p className="text-3xl font-bold text-foreground tabular-nums">
-                {STUDENT.assignmentsDone}
-                <span className="text-lg text-muted-foreground">/{STUDENT.totalAssignments}</span>
-              </p>
-              <div className="mt-2 h-1.5 rounded-full bg-muted">
-                <div
-                  className="h-1.5 rounded-full bg-gradient-to-r from-teal-800 to-emerald-400 transition-all"
-                  style={{ width: `${assignmentPct}%` }}
-                />
-              </div>
-            </div>
+            <KpiTile
+              label="Completed"
+              value={STUDENT.assignmentsDone}
+              suffix={`/${STUDENT.totalAssignments}`}
+              icon={CheckCircle}
+              accent="teal"
+            />
 
             {/* Study Streak */}
-            <div className="rounded-xl border border-border/60 bg-gradient-to-br from-orange-500/[0.08] to-red-500/[0.04] p-5">
-              <div className="flex items-center justify-between mb-3">
-                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  Streak
-                </p>
-                <Flame className="h-4 w-4 text-orange-600/50 dark:text-orange-400/50" />
-              </div>
-              <p className="text-3xl font-bold text-foreground tabular-nums">
-                {STUDENT.streak} <span className="text-lg text-muted-foreground">days</span>
-              </p>
-              <p className="text-[11px] text-muted-foreground mt-1">keep it going!</p>
-            </div>
+            <KpiTile
+              label="Streak"
+              value={STUDENT.streak}
+              suffix=" days"
+              icon={Flame}
+              accent="ochre"
+            />
 
             {/* Next Goal */}
-            <div className="rounded-xl border border-border/60 bg-gradient-to-br from-violet-500/[0.08] to-clay-400/[0.04] p-5">
-              <div className="flex items-center justify-between mb-3">
-                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  Next Goal
-                </p>
-                <Star className="h-4 w-4 text-primary/50" />
+            <GlassPanel accent="clay" className="p-5">
+              <div className="flex items-start justify-between gap-3">
+                <PanelEyebrow>Next Goal</PanelEyebrow>
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground/[0.06]">
+                  <Star className="h-4 w-4 text-muted-foreground" aria-hidden />
+                </span>
               </div>
-              <p className="text-lg font-bold text-foreground">Grade {STUDENT.targetGrade}</p>
+              <p className="mt-2 font-heading text-4xl font-bold tracking-tight text-foreground">
+                Grade {STUDENT.targetGrade}
+              </p>
               <p className="text-[11px] text-muted-foreground mt-1">
                 {Number(STUDENT.targetGrade) - Number(STUDENT.predictedGrade)} grade
                 {Number(STUDENT.targetGrade) - Number(STUDENT.predictedGrade) !== 1 ? 's' : ''} to
@@ -523,7 +398,7 @@ export default function StudentDemoPage() {
                   <ArrowRight className="h-3 w-3" />
                 </Link>
               </div>
-            </div>
+            </GlassPanel>
           </div>
         </section>
 
@@ -531,7 +406,7 @@ export default function StudentDemoPage() {
         <section className="mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Strengths */}
-            <div className="rounded-2xl border border-primary/10 bg-gradient-to-b from-primary/[0.06] to-transparent p-6">
+            <GlassPanel accent="sage" className="p-6">
               <h2 className="text-lg font-medium text-foreground mb-4 flex items-center gap-2">
                 <ThumbsUp className="h-5 w-5 text-primary" />
                 Your Strengths
@@ -548,29 +423,24 @@ export default function StudentDemoPage() {
                   </span>
                 ))}
               </div>
-              <div className="space-y-2">
+              <RankBars
+                data={STRENGTHS.map((s) => ({ topic: s.topic, score: s.score }))}
+                labelKey="topic"
+                valueKey="score"
+                height={Math.max(180, STRENGTHS.length * 40)}
+                suffix="%"
+              />
+              <ul className="sr-only">
                 {STRENGTHS.map((s) => (
-                  <div
-                    key={s.topic}
-                    className="flex items-center gap-3 text-xs text-muted-foreground"
-                  >
-                    <span className="font-medium text-foreground w-36 shrink-0">{s.topic}</span>
-                    <div className="flex-1 h-1 rounded-full bg-muted">
-                      <div
-                        className="h-1 rounded-full bg-primary/60"
-                        style={{ width: `${s.score}%` }}
-                      />
-                    </div>
-                    <span className="tabular-nums text-primary/70 w-12 text-right">
-                      G{percentageToGCSEGrade(s.score)}
-                    </span>
-                  </div>
+                  <li key={s.topic}>
+                    {s.topic}: {s.score}% (Grade {percentageToGCSEGrade(s.score)}) — {s.detail}
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </GlassPanel>
 
             {/* Areas to Improve */}
-            <div className="rounded-2xl border border-amber-500/10 bg-gradient-to-b from-amber-500/[0.06] to-transparent p-6">
+            <GlassPanel accent="ochre" className="p-6">
               <h2 className="text-lg font-medium text-foreground mb-4 flex items-center gap-2">
                 <Target className="h-5 w-5 text-amber-700 dark:text-amber-300" />
                 Areas to Improve
@@ -593,17 +463,11 @@ export default function StudentDemoPage() {
               </div>
               <div className="space-y-3">
                 {AREAS_TO_IMPROVE.map((a) => (
-                  <div key={a.topic} className="rounded-lg border border-border/60 bg-card p-3">
-                    <div className="flex items-center gap-3 mb-1.5">
+                  <div key={a.topic} className="rounded-lg border border-border/60 bg-card/60 p-3">
+                    <div className="flex items-center justify-between gap-3 mb-1.5">
                       <span className="font-medium text-sm text-foreground">{a.topic}</span>
-                      <div className="flex-1 h-1 rounded-full bg-muted">
-                        <div
-                          className={`h-1 rounded-full ${a.score < 50 ? 'bg-red-500/60' : 'bg-amber-500/60'}`}
-                          style={{ width: `${a.score}%` }}
-                        />
-                      </div>
                       <span
-                        className={`tabular-nums text-xs w-12 text-right ${a.score < 50 ? 'text-red-700/80 dark:text-red-300/80' : 'text-amber-700/80 dark:text-amber-300/80'}`}
+                        className={`tabular-nums text-xs shrink-0 ${a.score < 50 ? 'text-red-700/80 dark:text-red-300/80' : 'text-amber-700/80 dark:text-amber-300/80'}`}
                       >
                         G{percentageToGCSEGrade(a.score)}
                       </span>
@@ -615,7 +479,7 @@ export default function StudentDemoPage() {
                   </div>
                 ))}
               </div>
-            </div>
+            </GlassPanel>
           </div>
         </section>
 
@@ -695,21 +559,7 @@ export default function StudentDemoPage() {
                     <span className="text-[10px] text-muted-foreground">{course.board}</span>
                   </div>
                   <div className="relative flex-shrink-0 ml-3">
-                    <MiniRing
-                      value={course.progress}
-                      size={44}
-                      stroke={3}
-                      color={
-                        course.progress >= 70
-                          ? 'stroke-emerald-400'
-                          : course.progress >= 50
-                            ? 'stroke-amber-400'
-                            : 'stroke-red-400'
-                      }
-                    />
-                    <span className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold text-foreground tabular-nums">
-                      {course.progress}%
-                    </span>
+                    <RadialScore value={course.progress} size={56} />
                   </div>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-muted-foreground">

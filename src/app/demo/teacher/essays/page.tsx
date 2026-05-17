@@ -15,6 +15,7 @@ import {
   X,
 } from 'lucide-react'
 import DemoBanner from '@/components/demo/DemoBanner'
+import { AnimatedNumber, RadialScore } from '@/components/dataviz'
 
 // ---------------------------------------------------------------------------
 // Sample essays
@@ -294,9 +295,10 @@ export default function EssayMarkingDemoPage() {
               {/* Predicted grade */}
               <div className="md:col-span-2 rounded-xl border border-clay-500/20 bg-clay-500/5 p-5 flex items-center gap-4">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-clay-500/30 to-clay-400/30 border border-clay-500/30">
-                  <span className="text-3xl font-bold text-clay-600 dark:text-clay-400">
-                    {essay.grade}
-                  </span>
+                  <AnimatedNumber
+                    value={Number(essay.grade)}
+                    className="text-3xl font-bold text-clay-600 dark:text-clay-400"
+                  />
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Predicted Grade</p>
@@ -319,40 +321,11 @@ export default function EssayMarkingDemoPage() {
                     { label: 'AO3 Context', score: essay.ao3, max: essay.ao3Max },
                     { label: 'AO4 SPaG', score: essay.ao4, max: essay.ao4Max },
                   ].map((ao) => (
-                    <div key={ao.label} className="text-center">
-                      <div className="relative mx-auto mb-2 h-14 w-14">
-                        <svg className="h-14 w-14 -rotate-90" viewBox="0 0 56 56">
-                          <circle
-                            cx="28"
-                            cy="28"
-                            r="24"
-                            fill="none"
-                            stroke="rgba(255,255,255,0.06)"
-                            strokeWidth="4"
-                          />
-                          <circle
-                            cx="28"
-                            cy="28"
-                            r="24"
-                            fill="none"
-                            stroke="url(#grad)"
-                            strokeWidth="4"
-                            strokeLinecap="round"
-                            strokeDasharray={`${(ao.score / ao.max) * 150.8} 150.8`}
-                          />
-                          <defs>
-                            <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-                              <stop offset="0%" stopColor="#a855f7" />
-                              <stop offset="100%" stopColor="#ec4899" />
-                            </linearGradient>
-                          </defs>
-                        </svg>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-xs font-bold text-foreground">
-                            {ao.score}/{ao.max}
-                          </span>
-                        </div>
-                      </div>
+                    <div key={ao.label} className="flex flex-col items-center text-center">
+                      <RadialScore value={Math.round((ao.score / ao.max) * 100)} size={64} />
+                      <p className="mt-1 text-xs font-semibold text-foreground tabular-nums">
+                        {ao.score}/{ao.max}
+                      </p>
                       <p className="text-xs text-muted-foreground">{ao.label}</p>
                     </div>
                   ))}

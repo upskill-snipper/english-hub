@@ -41,6 +41,34 @@ import {
   predictedGradeColor,
   formatReadingAge,
 } from '@/lib/grades'
+import {
+  RadialScore,
+  RankBars,
+  Sparkline,
+  SERIES,
+  ChartFrame,
+  GlassTooltip,
+  GRID,
+  AXIS,
+} from '@/components/dataviz'
+import {
+  BarChart as RBarChart,
+  Bar as RBar,
+  XAxis as RXAxis,
+  YAxis as RYAxis,
+  CartesianGrid as RCartesianGrid,
+  Tooltip as RTooltip,
+  Cell as RCell,
+} from 'recharts'
+
+// Solid hsl fills mirroring the grade-bucket Tailwind classes (on-theme,
+// band semantics unchanged) for the Recharts grade-distribution bars.
+const GRADE_BUCKET_FILL: Record<string, string> = {
+  'bg-yellow-400': 'hsl(43 96% 56%)',
+  'bg-teal-700': 'hsl(173 80% 26%)',
+  'bg-amber-500': 'hsl(38 92% 50%)',
+  'bg-red-500': 'hsl(0 84% 60%)',
+}
 
 import { STRINGS as _MC_STRINGS } from './content'
 import { useLocale as _useMcLocale } from '@/lib/i18n/use-locale'
@@ -105,63 +133,6 @@ function ragBadge(pct: number) {
       </Badge>
     )
   return <Badge className="bg-red-500/15 text-red-400 border-red-500/20">At Risk</Badge>
-}
-
-// ── Ring chart (SVG donut) ─────────────────────────────────
-function RingChart({
-  value,
-  size = 80,
-  strokeWidth = 8,
-  color = 'text-primary',
-  bgColor = 'text-foreground/10',
-  label,
-}: {
-  value: number
-  size?: number
-  strokeWidth?: number
-  color?: string
-  bgColor?: string
-  label?: string
-}) {
-  const radius = (size - strokeWidth) / 2
-  const circumference = 2 * Math.PI * radius
-  const offset = circumference - (Math.min(value, 100) / 100) * circumference
-  return (
-    <div
-      className="relative inline-flex items-center justify-center"
-      style={{ width: size, height: size }}
-    >
-      <svg width={size} height={size} className="-rotate-90">
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={strokeWidth}
-          className={bgColor}
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={strokeWidth}
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          strokeLinecap="round"
-          className={color}
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-base font-bold text-foreground">{Math.round(value)}%</span>
-        {label && (
-          <span className="text-[9px] text-muted-foreground/70 leading-tight">{label}</span>
-        )}
-      </div>
-    </div>
-  )
 }
 
 // ── Trend indicator ────────────────────────────────────────
@@ -299,7 +270,6 @@ export default function AnalyticsPage() {
       else gradeBuckets['2-3']++
     })
   })
-  const maxGrade = Math.max(...Object.values(gradeBuckets), 1)
 
   // Assessment trend data
   const months = ['Jan', 'Feb', 'Mar']
@@ -468,10 +438,10 @@ export default function AnalyticsPage() {
                         <TrendBadge value={vary(12, dateRange)} />
                       </div>
                     </div>
-                    <RingChart
+                    <RadialScore
                       value={(vary(305, dateRange) / vary(342, dateRange)) * 100}
-                      color="text-primary"
                       label="active"
+                      size={80}
                     />
                   </div>
                 </CardContent>
@@ -515,11 +485,7 @@ export default function AnalyticsPage() {
                         <TrendBadge value={vary(3, dateRange)} />
                       </div>
                     </div>
-                    <RingChart
-                      value={vary(68, dateRange)}
-                      color="text-amber-700 dark:text-amber-300"
-                      label="avg"
-                    />
+                    <RadialScore value={vary(68, dateRange)} label="avg" size={80} />
                   </div>
                 </CardContent>
               </Card>
@@ -706,24 +672,21 @@ export default function AnalyticsPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
+                  <RankBars
+                    data={topWeaknesses.map(([name, count]) => ({
+                      name,
+                      intensity: Math.round((count / maxWeaknessCount) * 100),
+                    }))}
+                    labelKey="name"
+                    valueKey="intensity"
+                    height={Math.max(160, topWeaknesses.length * 30)}
+                    suffix="%"
+                  />
+                  <div className="mt-4 space-y-1.5">
                     {topWeaknesses.map(([name, count], i) => (
-                      <div key={i}>
-                        <div className="flex items-center justify-between mb-1.5">
-                          <span className="text-sm text-foreground/80">{name}</span>
-                          <span className="text-xs text-muted-foreground/70">{count} students</span>
-                        </div>
-                        <HBar
-                          value={count}
-                          max={maxWeaknessCount}
-                          color={
-                            count / maxWeaknessCount > 0.7
-                              ? 'bg-red-500'
-                              : count / maxWeaknessCount > 0.4
-                                ? 'bg-amber-500'
-                                : 'bg-teal-700'
-                          }
-                        />
+                      <div key={i} className="flex items-center justify-between gap-2 text-sm">
+                        <span className="text-foreground/80">{name}</span>
+                        <span className="text-xs text-muted-foreground/70">{count} students</span>
                       </div>
                     ))}
                   </div>
@@ -778,12 +741,7 @@ export default function AnalyticsPage() {
                             {yg.studentCount} students &middot; {yg.classCount} classes
                           </p>
                         </div>
-                        <RingChart
-                          value={progress}
-                          size={64}
-                          strokeWidth={6}
-                          color={progressTextColor(progress).replace('text-', 'text-')}
-                        />
+                        <RadialScore value={progress} size={64} />
                       </div>
 
                       {/* Comparison bars */}
@@ -1152,28 +1110,22 @@ export default function AnalyticsPage() {
                           <p className={`text-2xl font-bold ${c.text}`}>{latest}%</p>
                           <TrendBadge value={change} />
                         </div>
-                        <RingChart value={latest} size={64} strokeWidth={6} color={c.ring} />
+                        <RadialScore value={latest} size={64} />
                       </div>
-                      <div className="flex items-end gap-3 h-16">
+                      <Sparkline
+                        data={cat.avgs.map((v) => ({ v }))}
+                        yKey="v"
+                        color={SERIES[ci % 5]}
+                        height={56}
+                      />
+                      <div className="mt-1 flex items-center justify-between">
                         {cat.avgs.map((val, mi) => (
-                          <div key={mi} className="flex-1 flex flex-col items-center gap-1">
-                            <span className="text-[10px] text-muted-foreground">{val}%</span>
-                            <div
-                              className="w-full bg-muted/50 rounded-t-sm overflow-hidden"
-                              style={{ height: '40px' }}
-                            >
-                              <div
-                                className={`w-full ${c.bar}/70 rounded-t-sm`}
-                                style={{
-                                  height: `${(val / 100) * 100}%`,
-                                  marginTop: `${100 - (val / 100) * 100}%`,
-                                }}
-                              />
-                            </div>
-                            <span className="text-[10px] text-muted-foreground/70">
-                              {months[mi]}
-                            </span>
-                          </div>
+                          <span
+                            key={mi}
+                            className="flex-1 text-center text-[10px] text-muted-foreground/70"
+                          >
+                            {months[mi]} {val}%
+                          </span>
                         ))}
                       </div>
                     </CardContent>
@@ -1190,35 +1142,75 @@ export default function AnalyticsPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  {(() => {
-                    const colors = ['bg-yellow-400', 'bg-teal-700', 'bg-amber-500', 'bg-red-500']
-                    const textColors = [
-                      'text-amber-700 dark:text-amber-300',
-                      'text-primary',
-                      'text-amber-700 dark:text-amber-300',
-                      'text-red-700 dark:text-red-300',
-                    ]
-                    const bgColors = [
-                      'bg-yellow-400/10',
-                      'bg-primary/10',
-                      'bg-amber-500/10',
-                      'bg-red-500/10',
-                    ]
-                    return Object.entries(gradeBuckets).map(([label, count], i) => (
-                      <div
-                        key={label}
-                        className={`text-center p-4 rounded-xl ${bgColors[i]} border border-border/50`}
-                      >
-                        <p className={`text-3xl font-bold ${textColors[i]}`}>{count}</p>
-                        <p className="text-xs text-muted-foreground mt-1">Grade {label}</p>
-                        <div className="mt-3">
-                          <HBar value={count} max={maxGrade} color={colors[i]} />
-                        </div>
+                {(() => {
+                  const colors = ['bg-yellow-400', 'bg-teal-700', 'bg-amber-500', 'bg-red-500']
+                  const textColors = [
+                    'text-amber-700 dark:text-amber-300',
+                    'text-primary',
+                    'text-amber-700 dark:text-amber-300',
+                    'text-red-700 dark:text-red-300',
+                  ]
+                  const bgColors = [
+                    'bg-yellow-400/10',
+                    'bg-primary/10',
+                    'bg-amber-500/10',
+                    'bg-red-500/10',
+                  ]
+                  const entries = Object.entries(gradeBuckets)
+                  const chartData = entries.map(([label, count], i) => ({
+                    label: `Grade ${label}`,
+                    count,
+                    fill: GRADE_BUCKET_FILL[colors[i]],
+                  }))
+                  return (
+                    <>
+                      <ChartFrame height={Math.max(180, chartData.length * 40)}>
+                        <RBarChart
+                          data={chartData}
+                          layout="vertical"
+                          margin={{ top: 4, right: 24, bottom: 4, left: 8 }}
+                          barCategoryGap={10}
+                        >
+                          <RCartesianGrid {...GRID} horizontal={false} vertical />
+                          <RXAxis type="number" {...AXIS} allowDecimals={false} />
+                          <RYAxis
+                            type="category"
+                            dataKey="label"
+                            {...AXIS}
+                            width={72}
+                            tick={{ fontSize: 11, fill: 'hsl(var(--foreground))' }}
+                          />
+                          <RTooltip
+                            content={<GlassTooltip />}
+                            cursor={{ fill: 'hsl(var(--muted)/0.4)' }}
+                          />
+                          <RBar
+                            dataKey="count"
+                            name="Students"
+                            radius={[0, 6, 6, 0]}
+                            isAnimationActive
+                            animationDuration={900}
+                          >
+                            {chartData.map((d, i) => (
+                              <RCell key={i} fill={d.fill} />
+                            ))}
+                          </RBar>
+                        </RBarChart>
+                      </ChartFrame>
+                      <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        {entries.map(([label, count], i) => (
+                          <div
+                            key={label}
+                            className={`text-center p-4 rounded-xl ${bgColors[i]} border border-border/50`}
+                          >
+                            <p className={`text-3xl font-bold ${textColors[i]}`}>{count}</p>
+                            <p className="text-xs text-muted-foreground mt-1">Grade {label}</p>
+                          </div>
+                        ))}
                       </div>
-                    ))
-                  })()}
-                </div>
+                    </>
+                  )
+                })()}
               </CardContent>
             </Card>
 
@@ -1232,20 +1224,28 @@ export default function AnalyticsPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3">
+                  <RankBars
+                    data={TOP_LESSONS.map((lesson) => ({
+                      title: lesson.title,
+                      pct: Math.round(
+                        (vary(lesson.count, dateRange) / vary(maxLessonCount, dateRange)) * 100,
+                      ),
+                    }))}
+                    labelKey="title"
+                    valueKey="pct"
+                    height={Math.max(160, TOP_LESSONS.length * 32)}
+                    suffix="%"
+                  />
+                  <div className="mt-4 space-y-1.5">
                     {TOP_LESSONS.map((lesson) => (
-                      <div key={lesson.title}>
-                        <div className="flex items-center justify-between mb-1">
-                          <p className="text-sm text-foreground/80 truncate pr-4">{lesson.title}</p>
-                          <span className="text-xs text-muted-foreground/70 shrink-0">
-                            {vary(lesson.count, dateRange)} views
-                          </span>
-                        </div>
-                        <HBar
-                          value={vary(lesson.count, dateRange)}
-                          max={vary(maxLessonCount, dateRange)}
-                          color="bg-blue-500"
-                        />
+                      <div
+                        key={lesson.title}
+                        className="flex items-center justify-between gap-2 text-sm"
+                      >
+                        <p className="text-foreground/80 truncate pr-4">{lesson.title}</p>
+                        <span className="text-xs text-muted-foreground/70 shrink-0">
+                          {vary(lesson.count, dateRange)} views
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -1260,20 +1260,28 @@ export default function AnalyticsPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3">
+                  <RankBars
+                    data={TOP_MOCK_EXAMS.map((exam) => ({
+                      title: exam.title,
+                      pct: Math.round(
+                        (vary(exam.count, dateRange) / vary(maxMockCount, dateRange)) * 100,
+                      ),
+                    }))}
+                    labelKey="title"
+                    valueKey="pct"
+                    height={Math.max(160, TOP_MOCK_EXAMS.length * 32)}
+                    suffix="%"
+                  />
+                  <div className="mt-4 space-y-1.5">
                     {TOP_MOCK_EXAMS.map((exam) => (
-                      <div key={exam.title}>
-                        <div className="flex items-center justify-between mb-1">
-                          <p className="text-sm text-foreground/80 truncate pr-4">{exam.title}</p>
-                          <span className="text-xs text-muted-foreground/70 shrink-0">
-                            {vary(exam.count, dateRange)} taken
-                          </span>
-                        </div>
-                        <HBar
-                          value={vary(exam.count, dateRange)}
-                          max={vary(maxMockCount, dateRange)}
-                          color="bg-accent"
-                        />
+                      <div
+                        key={exam.title}
+                        className="flex items-center justify-between gap-2 text-sm"
+                      >
+                        <p className="text-foreground/80 truncate pr-4">{exam.title}</p>
+                        <span className="text-xs text-muted-foreground/70 shrink-0">
+                          {vary(exam.count, dateRange)} taken
+                        </span>
                       </div>
                     ))}
                   </div>

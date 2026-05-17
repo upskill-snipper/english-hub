@@ -26,63 +26,7 @@ import { Button } from '@/components/ui/button'
 import { DEMO_SCHOOL, DEMO_STUDENTS, DEMO_CLASSES, DEMO_YEAR_GROUPS } from '@/data/demo-data'
 import { GradeDistributionChart } from '@/components/analytics/GradeDistributionChart'
 import { gcseGradeColor, gcseGradeBg } from '@/lib/grades'
-
-// ── Helpers ─────────────────────────────────────────────────────────────────
-
-function ringColor(pct: number): string {
-  if (pct >= 75) return 'stroke-teal-700'
-  if (pct >= 50) return 'stroke-amber-500'
-  return 'stroke-red-500'
-}
-
-function ringTrack(): string {
-  return 'stroke-muted/40'
-}
-
-function ProgressRing({
-  value,
-  size = 56,
-  strokeWidth = 5,
-  children,
-}: {
-  value: number
-  size?: number
-  strokeWidth?: number
-  children?: React.ReactNode
-}) {
-  const radius = (size - strokeWidth) / 2
-  const circumference = 2 * Math.PI * radius
-  const offset = circumference - (value / 100) * circumference
-
-  return (
-    <div className="relative" style={{ width: size, height: size }}>
-      <svg width={size} height={size} className="-rotate-90" viewBox={`0 0 ${size} ${size}`}>
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          className={ringTrack()}
-          strokeWidth={strokeWidth}
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          className={ringColor(value)}
-          strokeWidth={strokeWidth}
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          strokeLinecap="round"
-        />
-      </svg>
-      {children && (
-        <div className="absolute inset-0 flex items-center justify-center">{children}</div>
-      )}
-    </div>
-  )
-}
+import { RadialScore, RankBars } from '@/components/dataviz'
 
 // ── Computed student-level data ─────────────────────────────────────────────
 
@@ -460,12 +404,7 @@ export default function DemoSchoolDashboardPage() {
               </CardHeader>
               <CardContent>
                 <div className="flex items-center gap-6">
-                  <ProgressRing value={metrics.onTrackPct} size={96} strokeWidth={8}>
-                    <div className="text-center">
-                      <p className="text-xl font-bold text-foreground">{metrics.onTrackPct}%</p>
-                      <p className="text-[10px] text-muted-foreground">on track</p>
-                    </div>
-                  </ProgressRing>
+                  <RadialScore value={metrics.onTrackPct} label="on track" size={96} />
                   <div className="space-y-3 text-sm">
                     <div>
                       <p className="text-xs text-muted-foreground">
@@ -655,35 +594,43 @@ export default function DemoSchoolDashboardPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
-                {(() => {
-                  const weaknessCounts: Record<string, number> = {}
-                  filteredStudents.forEach((s) => {
-                    s.weaknesses.forEach((w) => {
-                      const name = typeof w === 'string' ? w : w.name
-                      weaknessCounts[name] = (weaknessCounts[name] || 0) + 1
-                    })
+              {(() => {
+                const weaknessCounts: Record<string, number> = {}
+                filteredStudents.forEach((s) => {
+                  s.weaknesses.forEach((w) => {
+                    const name = typeof w === 'string' ? w : w.name
+                    weaknessCounts[name] = (weaknessCounts[name] || 0) + 1
                   })
-                  const sorted = Object.entries(weaknessCounts)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 5)
-                  const max = sorted[0]?.[1] || 1
-                  return sorted.map(([name, count], i) => (
-                    <div key={i}>
-                      <div className="mb-1 flex items-center justify-between">
-                        <span className="text-xs font-medium text-foreground">{name}</span>
-                        <span className="text-[10px] text-muted-foreground">{count} students</span>
-                      </div>
-                      <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
-                        <div
-                          className="h-full rounded-full bg-amber-500 transition-all"
-                          style={{ width: `${(count / max) * 100}%` }}
-                        />
-                      </div>
+                })
+                const sorted = Object.entries(weaknessCounts)
+                  .sort((a, b) => b[1] - a[1])
+                  .slice(0, 5)
+                const max = sorted[0]?.[1] || 1
+                return (
+                  <>
+                    <RankBars
+                      data={sorted.map(([name, count]) => ({
+                        name,
+                        intensity: Math.round((count / max) * 100),
+                      }))}
+                      labelKey="name"
+                      valueKey="intensity"
+                      height={Math.max(140, sorted.length * 30)}
+                      suffix="%"
+                    />
+                    <div className="mt-3 space-y-1.5">
+                      {sorted.map(([name, count], i) => (
+                        <div key={i} className="flex items-center justify-between gap-2 text-xs">
+                          <span className="font-medium text-foreground">{name}</span>
+                          <span className="text-[10px] text-muted-foreground">
+                            {count} students
+                          </span>
+                        </div>
+                      ))}
                     </div>
-                  ))
-                })()}
-              </div>
+                  </>
+                )
+              })()}
             </CardContent>
           </Card>
         </div>

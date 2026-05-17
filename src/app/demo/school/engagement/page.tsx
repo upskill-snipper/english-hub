@@ -22,6 +22,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { toast } from 'sonner'
 import { DEMO_STUDENTS, DEMO_CLASSES } from '@/data/demo-data'
+import { Heatmap, RankBars } from '@/components/dataviz'
 
 // -- Seeded random helper -------------------------------------------------------
 
@@ -63,15 +64,6 @@ function generateHeatmapData(): number[][] {
 
 const HEATMAP_DATA = generateHeatmapData()
 const DAY_LABELS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-
-function heatmapColor(value: number): string {
-  if (value >= 80) return 'bg-primary'
-  if (value >= 60) return 'bg-primary/80'
-  if (value >= 40) return 'bg-primary/60'
-  if (value >= 20) return 'bg-primary/40'
-  if (value >= 10) return 'bg-primary/20'
-  return 'bg-muted'
-}
 
 // -- Year group engagement data -------------------------------------------------
 
@@ -200,8 +192,6 @@ const TIME_OF_DAY = [
   { label: '8-10pm', value: 65, period: 'Late Evening' },
   { label: '10-12am', value: 18, period: 'Night' },
 ]
-
-const maxTimeValue = Math.max(...TIME_OF_DAY.map((t) => t.value))
 
 // -- Page component -------------------------------------------------------------
 
@@ -361,52 +351,24 @@ export default function EngagementPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="overflow-x-auto">
-              {/* Hour labels */}
-              <div className="flex items-center mb-1">
-                <div className="w-10 shrink-0" />
-                <div
-                  className="grid grid-cols-24 gap-[2px] flex-1 min-w-[600px]"
-                  style={{ gridTemplateColumns: 'repeat(24, minmax(0, 1fr))' }}
-                >
-                  {Array.from({ length: 24 }, (_, i) => (
-                    <div key={i} className="text-[10px] text-muted-foreground text-center">
-                      {i % 3 === 0 ? `${i.toString().padStart(2, '0')}` : ''}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* Heatmap grid */}
-              {HEATMAP_DATA.map((row, dayIdx) => (
-                <div key={dayIdx} className="flex items-center mb-[2px]">
-                  <div className="w-10 shrink-0 text-xs text-muted-foreground font-medium">
-                    {DAY_LABELS[dayIdx]}
-                  </div>
-                  <div
-                    className="grid gap-[2px] flex-1 min-w-[600px]"
-                    style={{ gridTemplateColumns: 'repeat(24, minmax(0, 1fr))' }}
-                  >
-                    {row.map((val, hourIdx) => (
-                      <div
-                        key={hourIdx}
-                        className={`h-6 rounded-sm ${heatmapColor(val)} transition-colors`}
-                        title={`${DAY_LABELS[dayIdx]} ${hourIdx.toString().padStart(2, '0')}:00 - ${val}% activity`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))}
-              {/* Legend */}
-              <div className="flex items-center gap-2 mt-3 justify-end">
-                <span className="text-xs text-muted-foreground">Less</span>
-                <div className="w-4 h-4 rounded-sm bg-muted" />
-                <div className="w-4 h-4 rounded-sm bg-primary/20" />
-                <div className="w-4 h-4 rounded-sm bg-primary/40" />
-                <div className="w-4 h-4 rounded-sm bg-primary/60" />
-                <div className="w-4 h-4 rounded-sm bg-primary/80" />
-                <div className="w-4 h-4 rounded-sm bg-primary" />
-                <span className="text-xs text-muted-foreground">More</span>
-              </div>
+            <Heatmap
+              rows={DAY_LABELS}
+              cols={Array.from({ length: 24 }, (_, i) => i.toString().padStart(2, '0'))}
+              getValue={(r, c) => HEATMAP_DATA[r][c]}
+              getLabel={(r, c) =>
+                `${DAY_LABELS[r]} ${c.toString().padStart(2, '0')}:00 - ${HEATMAP_DATA[r][c]}% activity`
+              }
+            />
+            {/* Legend */}
+            <div className="flex items-center gap-2 mt-3 justify-end">
+              <span className="text-xs text-muted-foreground">Less</span>
+              <div className="w-4 h-4 rounded-sm bg-muted" />
+              <div className="w-4 h-4 rounded-sm bg-primary/20" />
+              <div className="w-4 h-4 rounded-sm bg-primary/40" />
+              <div className="w-4 h-4 rounded-sm bg-primary/60" />
+              <div className="w-4 h-4 rounded-sm bg-primary/80" />
+              <div className="w-4 h-4 rounded-sm bg-primary" />
+              <span className="text-xs text-muted-foreground">More</span>
             </div>
           </CardContent>
         </Card>
@@ -682,27 +644,13 @@ export default function EngagementPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="flex items-end gap-2 h-48">
-              {TIME_OF_DAY.map((slot) => {
-                const heightPct = Math.max(4, (slot.value / maxTimeValue) * 100)
-                const isPeak = slot.value >= 65
-                return (
-                  <div key={slot.label} className="flex-1 flex flex-col items-center gap-1">
-                    <span className="text-xs font-bold text-muted-foreground">{slot.value}%</span>
-                    <div
-                      className={`w-full rounded-t-md transition-all ${
-                        isPeak ? 'bg-primary' : slot.value >= 40 ? 'bg-primary/60' : 'bg-muted'
-                      }`}
-                      style={{ height: `${heightPct}%` }}
-                      title={`${slot.period}: ${slot.value}% of peak activity`}
-                    />
-                    <span className="text-[10px] text-muted-foreground text-center leading-tight">
-                      {slot.label}
-                    </span>
-                  </div>
-                )
-              })}
-            </div>
+            <RankBars
+              data={TIME_OF_DAY.map((slot) => ({ label: slot.label, value: slot.value }))}
+              labelKey="label"
+              valueKey="value"
+              height={Math.max(220, TIME_OF_DAY.length * 30)}
+              suffix="%"
+            />
             <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-border/60">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-sm bg-primary" />

@@ -18,6 +18,7 @@ import {
   Star,
   Clock,
 } from 'lucide-react'
+import { GlassPanel, PanelEyebrow, KpiTile } from '@/components/dataviz'
 
 // ---------------------------------------------------------------------------
 // Data
@@ -1129,43 +1130,43 @@ export default function CourseDetailPage(props: { params: Promise<{ id: string }
 
           {/* Course stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-            <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
-              <Trophy className="h-5 w-5 text-clay-600 dark:text-clay-300 mx-auto mb-2" />
-              <p className="text-lg font-semibold text-foreground">
-                {completedCount}/{course.modules.length}
-              </p>
-              <p className="text-[11px] text-muted-foreground">Lessons Done</p>
-            </div>
-            <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
-              <Star className="h-5 w-5 text-primary mx-auto mb-2" />
-              <p className="text-lg font-semibold text-foreground">
+            <KpiTile
+              label="Lessons Done"
+              value={completedCount}
+              suffix={`/${course.modules.length}`}
+              icon={Trophy}
+              accent="clay"
+            />
+            <GlassPanel accent="primary" className="p-5">
+              <div className="flex items-start justify-between gap-3">
+                <PanelEyebrow>Avg Quiz Score</PanelEyebrow>
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground/[0.06]">
+                  <Star className="h-4 w-4 text-muted-foreground" aria-hidden />
+                </span>
+              </div>
+              <p className="mt-2 font-heading text-4xl font-bold tracking-tight text-foreground">
                 {avgQuizScore !== null ? `${avgQuizScore}%` : '--'}
               </p>
-              <p className="text-[11px] text-muted-foreground">Avg Quiz Score</p>
-            </div>
-            <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
-              <CheckCircle2
-                className={`h-5 w-5 mx-auto mb-2 ${course.modules.filter((m) => m.quizScore !== null && m.quizScore !== undefined && m.quizScore === m.quizMaxScore).length > 0 ? 'text-primary' : 'text-muted-foreground'}`}
-              />
-              <p className="text-lg font-semibold text-foreground">
-                {
-                  course.modules.filter(
-                    (m) =>
-                      m.quizScore !== null &&
-                      m.quizScore !== undefined &&
-                      m.quizScore === m.quizMaxScore,
-                  ).length
-                }
-              </p>
-              <p className="text-[11px] text-muted-foreground">Perfect Scores</p>
-            </div>
-            <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
-              <AlertTriangle
-                className={`h-5 w-5 mx-auto mb-2 ${revisionCount > 0 ? 'text-red-600 dark:text-red-400' : 'text-muted-foreground'}`}
-              />
-              <p className="text-lg font-semibold text-foreground">{revisionCount}</p>
-              <p className="text-[11px] text-muted-foreground">Need Revision</p>
-            </div>
+            </GlassPanel>
+            <KpiTile
+              label="Perfect Scores"
+              value={
+                course.modules.filter(
+                  (m) =>
+                    m.quizScore !== null &&
+                    m.quizScore !== undefined &&
+                    m.quizScore === m.quizMaxScore,
+                ).length
+              }
+              icon={CheckCircle2}
+              accent="sage"
+            />
+            <KpiTile
+              label="Need Revision"
+              value={revisionCount}
+              icon={AlertTriangle}
+              accent="ochre"
+            />
           </div>
 
           {/* Revision needed banner */}

@@ -11,6 +11,7 @@ import {
   predictedGradeColor,
   formatReadingAge,
 } from '@/lib/grades'
+import { RankBars, pct } from '@/components/dataviz'
 
 function scoreToGrade(score: number): string {
   return String(percentageToGCSEGrade(score))
@@ -472,8 +473,8 @@ export default function ClassReportPage() {
             <h2 className="text-lg font-semibold text-foreground print:text-black mb-4">
               Distribution Analysis
             </h2>
-            <div className="space-y-3">
-              {[
+            {(() => {
+              const distBands = [
                 {
                   label: 'Excelling',
                   count: ragCounts.excelling,
@@ -502,25 +503,54 @@ export default function ClassReportPage() {
                   color: 'bg-red-500 print:bg-red-600',
                   textColor: 'text-red-700 dark:text-red-300 print:text-red-700',
                 },
-              ].map((band) => (
-                <div key={band.label} className="flex items-center gap-3">
-                  <span className={`text-sm w-28 shrink-0 font-medium ${band.textColor}`}>
-                    {band.label}
-                  </span>
-                  <div className="flex-1 bg-muted print:bg-neutral-200 rounded-full h-5 overflow-hidden">
-                    <div
-                      className={`${band.color} h-full rounded-full flex items-center justify-end pr-2 text-white text-[10px] font-medium min-w-[32px]`}
-                      style={{ width: `${Math.max(band.pct, 5)}%` }}
-                    >
-                      {band.count}
-                    </div>
+              ]
+              return (
+                <>
+                  {/* Screen: cinematic Recharts ranked bars */}
+                  <div className="print:hidden">
+                    <RankBars
+                      data={distBands.map((b) => ({
+                        band: b.label,
+                        value: b.pct,
+                        count: b.count,
+                      }))}
+                      labelKey="band"
+                      valueKey="value"
+                      height={200}
+                    />
                   </div>
-                  <span className="text-sm text-muted-foreground print:text-neutral-500 w-10 text-right">
-                    {band.pct}%
-                  </span>
-                </div>
-              ))}
-            </div>
+                  {/* Accessible text equivalent (counts per band) */}
+                  <ul className="sr-only">
+                    {distBands.map((b) => (
+                      <li key={b.label}>
+                        {b.label}: {b.count} ({pct(b.pct)})
+                      </li>
+                    ))}
+                  </ul>
+                  {/* Print: original bars (kept for an unchanged PDF) */}
+                  <div className="hidden print:block space-y-3">
+                    {distBands.map((band) => (
+                      <div key={band.label} className="flex items-center gap-3">
+                        <span className={`text-sm w-28 shrink-0 font-medium ${band.textColor}`}>
+                          {band.label}
+                        </span>
+                        <div className="flex-1 bg-muted print:bg-neutral-200 rounded-full h-5 overflow-hidden">
+                          <div
+                            className={`${band.color} h-full rounded-full flex items-center justify-end pr-2 text-white text-[10px] font-medium min-w-[32px]`}
+                            style={{ width: `${Math.max(band.pct, 5)}%` }}
+                          >
+                            {band.count}
+                          </div>
+                        </div>
+                        <span className="text-sm text-muted-foreground print:text-neutral-500 w-10 text-right">
+                          {band.pct}%
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )
+            })()}
             <p className="mt-4 text-sm text-muted-foreground print:text-black leading-relaxed">
               {ragCounts.excelling + ragCounts.onTrack > ragCounts.needsSupport + ragCounts.atRisk
                 ? `The majority of the class (${excellingPct + onTrackPct}%) is performing at or above expected levels. `
@@ -631,7 +661,30 @@ export default function ClassReportPage() {
             <h2 className="text-lg font-semibold text-foreground print:text-black mb-4">
               Module Performance
             </h2>
-            <div className="space-y-3">
+            {/* Screen: cinematic Recharts ranked bars (RAG by score) */}
+            <div className="print:hidden">
+              <RankBars
+                data={modulePerformance.map((mod) => ({
+                  module: mod.name,
+                  value: mod.avgScore,
+                  students: mod.studentCount,
+                }))}
+                labelKey="module"
+                valueKey="value"
+                height={Math.max(200, modulePerformance.length * 36)}
+              />
+            </div>
+            {/* Accessible text equivalent */}
+            <ul className="sr-only">
+              {modulePerformance.map((mod) => (
+                <li key={mod.name}>
+                  {mod.name}: {mod.avgScore}% ({mod.studentCount} student
+                  {mod.studentCount !== 1 ? 's' : ''})
+                </li>
+              ))}
+            </ul>
+            {/* Print: original bars (kept for an unchanged PDF) */}
+            <div className="hidden print:block space-y-3">
               {modulePerformance.map((mod) => (
                 <div key={mod.name} className="flex items-center gap-4">
                   <span className="text-sm text-muted-foreground print:text-black w-44 shrink-0 font-medium">

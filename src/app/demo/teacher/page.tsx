@@ -31,6 +31,13 @@ import {
   type DemoClass,
 } from '@/data/demo-data'
 import { useT } from '@/lib/i18n/use-t'
+import {
+  GlassPanel,
+  PanelEyebrow,
+  AnimatedNumber,
+  RadialScore,
+  RankBars,
+} from '@/components/dataviz'
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -53,47 +60,6 @@ function ragBarSegments(cls: DemoClass) {
   const amber = students.filter((s) => s.status === 'needs-support').length
   const red = students.filter((s) => s.status === 'at-risk').length
   return { green: (green / total) * 100, amber: (amber / total) * 100, red: (red / total) * 100 }
-}
-
-function ProgressRing({
-  pct,
-  size = 56,
-  stroke = 4,
-  color = 'text-primary',
-}: {
-  pct: number
-  size?: number
-  stroke?: number
-  color?: string
-}) {
-  const radius = (size - stroke) / 2
-  const circumference = 2 * Math.PI * radius
-  const offset = circumference - (pct / 100) * circumference
-  return (
-    <svg width={size} height={size} className="transform -rotate-90">
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={stroke}
-        className="text-muted-foreground/20"
-      />
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={stroke}
-        strokeDasharray={circumference}
-        strokeDashoffset={offset}
-        strokeLinecap="round"
-        className={color}
-      />
-    </svg>
-  )
 }
 
 function InitialsAvatar({ name, color = 'bg-muted' }: { name: string; color?: string }) {
@@ -189,43 +155,43 @@ export default function TeacherDemoDashboard() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Classes Taught */}
-            <div className="rounded-xl border border-primary/15 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-5">
+            <GlassPanel accent="primary" className="p-5">
               <div className="flex items-center gap-2 mb-3">
                 <GraduationCap className="h-4 w-4 text-primary/70" />
-                <span className="text-xs text-primary/70 font-medium uppercase tracking-wider">
-                  {t('teacher_page.demo.stat.classes')}
-                </span>
+                <PanelEyebrow>{t('teacher_page.demo.stat.classes')}</PanelEyebrow>
               </div>
-              <p className="text-3xl font-bold text-foreground">{TEACHER_DEMO_CLASSES.length}</p>
+              <AnimatedNumber
+                value={TEACHER_DEMO_CLASSES.length}
+                className="font-heading text-3xl font-bold text-foreground"
+              />
               <p className="text-xs text-muted-foreground mt-1">
                 {t('teacher_page.demo.stat.classes_sub')}
               </p>
-            </div>
+            </GlassPanel>
 
             {/* Total Students */}
-            <div className="rounded-xl border border-blue-500/10 bg-gradient-to-br from-primary/10 via-blue-500/5 to-transparent p-5">
+            <GlassPanel accent="primary" className="p-5">
               <div className="flex items-center gap-2 mb-3">
                 <Users className="h-4 w-4 text-primary/70" />
-                <span className="text-xs text-primary/70 font-medium uppercase tracking-wider">
-                  {t('teacher_page.demo.stat.students')}
-                </span>
+                <PanelEyebrow>{t('teacher_page.demo.stat.students')}</PanelEyebrow>
               </div>
-              <p className="text-3xl font-bold text-foreground">{totalStudents}</p>
+              <AnimatedNumber
+                value={totalStudents}
+                className="font-heading text-3xl font-bold text-foreground"
+              />
               <p className="text-xs text-muted-foreground mt-1">
                 {atRiskStudents.length} {t('teacher_page.demo.stat.students_sub')}
               </p>
-            </div>
+            </GlassPanel>
 
             {/* Average Class Score */}
-            <div className="rounded-xl border border-clay-500/15 bg-gradient-to-br from-clay-500/10 via-clay-500/5 to-transparent p-5">
+            <GlassPanel accent="clay" className="p-5">
               <div className="flex items-center gap-2 mb-3">
                 <Target className="h-4 w-4 text-clay-600/70 dark:text-clay-400/70" />
-                <span className="text-xs text-clay-600/70 dark:text-clay-400/70 font-medium uppercase tracking-wider">
-                  {t('teacher_page.demo.stat.avg_score')}
-                </span>
+                <PanelEyebrow>{t('teacher_page.demo.stat.avg_score')}</PanelEyebrow>
               </div>
-              <p className="text-3xl font-bold text-foreground">
-                {avgClassScore}%{' '}
+              <p className="font-heading text-3xl font-bold text-foreground">
+                <AnimatedNumber value={avgClassScore} suffix="%" />{' '}
                 <span className="text-lg text-muted-foreground">
                   ({t('teacher_page.demo.stat.grade_prefix')} {percentageToGCSEGrade(avgClassScore)}
                   )
@@ -235,21 +201,22 @@ export default function TeacherDemoDashboard() {
                 <TrendingUp className="h-3 w-3 text-green-600 dark:text-green-400" />{' '}
                 {t('teacher_page.demo.stat.term_change')}
               </p>
-            </div>
+            </GlassPanel>
 
             {/* Assignments Due */}
-            <div className="rounded-xl border border-amber-500/10 bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent p-5">
+            <GlassPanel accent="ochre" className="p-5">
               <div className="flex items-center gap-2 mb-3">
                 <ClipboardCheck className="h-4 w-4 text-clay-600/70 dark:text-clay-400/70" />
-                <span className="text-xs text-clay-600/70 dark:text-clay-400/70 font-medium uppercase tracking-wider">
-                  {t('teacher_page.demo.stat.due_soon')}
-                </span>
+                <PanelEyebrow>{t('teacher_page.demo.stat.due_soon')}</PanelEyebrow>
               </div>
-              <p className="text-3xl font-bold text-foreground">{assignmentsDueThisWeek.length}</p>
+              <AnimatedNumber
+                value={assignmentsDueThisWeek.length}
+                className="font-heading text-3xl font-bold text-foreground"
+              />
               <p className="text-xs text-muted-foreground mt-1">
                 {pendingMarking.length} {t('teacher_page.demo.stat.awaiting_marking')}
               </p>
-            </div>
+            </GlassPanel>
           </div>
         </section>
 
@@ -321,12 +288,7 @@ export default function TeacherDemoDashboard() {
                       </div>
                     </div>
                     {/* Progress ring for completion */}
-                    <div className="relative">
-                      <ProgressRing pct={cls.completionRate} size={48} stroke={3.5} />
-                      <span className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold text-muted-foreground">
-                        {cls.completionRate}%
-                      </span>
-                    </div>
+                    <RadialScore value={cls.completionRate} size={56} />
                   </div>
 
                   {/* Average score as large number */}
@@ -530,42 +492,46 @@ export default function TeacherDemoDashboard() {
             <BarChart3 className="h-5 w-5 text-primary" />
             {t('teacher_page.demo.class_performance')}
           </h2>
-          <div className="rounded-xl border border-border/60 bg-card p-5 space-y-4">
-            {TEACHER_DEMO_CLASSES.map((cls: DemoClass) => {
-              const atRiskCount = DEMO_STUDENTS.filter(
-                (s) => s.className === cls.name && s.atRisk,
-              ).length
-              return (
-                <div key={cls.id} className="flex items-center gap-4">
-                  <Link
-                    href={`/demo/teacher/classes/${cls.id}`}
-                    className="w-44 shrink-0 text-sm text-muted-foreground hover:text-primary transition-colors truncate"
-                  >
-                    {cls.name}
-                  </Link>
-                  <div className="flex-1 flex items-center gap-3">
-                    <div className="flex-1 h-6 rounded bg-muted overflow-hidden relative">
-                      <div
-                        className={`h-full rounded transition-all ${scoreBg(cls.avgScore)}`}
-                        style={{ width: `${cls.avgScore}%` }}
-                      />
-                      <span className="absolute inset-0 flex items-center justify-center text-[10px] font-medium text-muted-foreground">
-                        {cls.avgScore}%
-                      </span>
-                    </div>
-                    <span className="w-20 text-right text-xs text-muted-foreground">
+          <GlassPanel accent="primary" className="p-5">
+            <RankBars
+              data={TEACHER_DEMO_CLASSES.map((cls: DemoClass) => ({
+                name: cls.name,
+                avgScore: cls.avgScore,
+              }))}
+              labelKey="name"
+              valueKey="avgScore"
+              height={Math.max(220, TEACHER_DEMO_CLASSES.length * 44)}
+            />
+            {/* Accessible / detail list equivalent */}
+            <ul className="mt-4 space-y-2">
+              {TEACHER_DEMO_CLASSES.map((cls: DemoClass) => {
+                const atRiskCount = DEMO_STUDENTS.filter(
+                  (s) => s.className === cls.name && s.atRisk,
+                ).length
+                return (
+                  <li key={cls.id} className="flex items-center gap-4 text-sm">
+                    <Link
+                      href={`/demo/teacher/classes/${cls.id}`}
+                      className="w-44 shrink-0 text-muted-foreground hover:text-primary transition-colors truncate"
+                    >
+                      {cls.name}
+                    </Link>
+                    <span className="text-xs text-muted-foreground tabular-nums">
+                      {cls.avgScore}%
+                    </span>
+                    <span className="text-xs text-muted-foreground">
                       {cls.studentCount} {t('teacher_page.demo.students_label')}
                     </span>
-                  </div>
-                  {atRiskCount > 0 && (
-                    <span className="text-xs text-red-600 dark:text-red-400 flex items-center gap-1 shrink-0">
-                      <AlertTriangle className="h-3 w-3" /> {atRiskCount}
-                    </span>
-                  )}
-                </div>
-              )
-            })}
-          </div>
+                    {atRiskCount > 0 && (
+                      <span className="text-xs text-red-600 dark:text-red-400 flex items-center gap-1 shrink-0">
+                        <AlertTriangle className="h-3 w-3" /> {atRiskCount}
+                      </span>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
+          </GlassPanel>
         </section>
 
         {/* ── Quick Actions ───────────────────────────────────────────── */}

@@ -52,6 +52,7 @@ import {
   predictedGradeColor,
   formatReadingAge,
 } from '@/lib/grades'
+import { TrendArea, RankBars, SERIES, pct } from '@/components/dataviz'
 
 // ── Derived data ──────────────────────────────────────────────────────────────
 
@@ -627,7 +628,20 @@ export default function ReportsPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex items-end gap-3 h-48">
+                {/* Screen: cinematic Recharts trend */}
+                <div className="print:hidden">
+                  <TrendArea
+                    data={weeklyActivity}
+                    xKey="week"
+                    yKey="value"
+                    height={192}
+                    color={SERIES[1]}
+                    suffix="%"
+                    domain={[0, 100]}
+                  />
+                </div>
+                {/* Print: original bar columns (kept for an unchanged PDF) */}
+                <div className="hidden print:flex items-end gap-3 h-48">
                   {weeklyActivity.map((w) => (
                     <div key={w.week} className="flex-1 flex flex-col items-center gap-2">
                       <span className="text-xs text-muted-foreground font-medium">{w.value}%</span>
@@ -1087,38 +1101,67 @@ export default function ReportsPage() {
               </CardHeader>
               <CardContent>
                 {gradeDistribution.length > 0 ? (
-                  <div className="flex items-end gap-4 h-40">
-                    {gradeDistribution.map(([grade, count]) => {
-                      const maxCount = Math.max(...gradeDistribution.map(([, v]) => v))
-                      const heightPct = maxCount > 0 ? (count / maxCount) * 100 : 0
-                      const gradeNum = parseInt(grade, 10)
-                      const barColor =
-                        gradeNum >= 9
-                          ? 'bg-yellow-400'
-                          : gradeNum >= 7
-                            ? 'bg-primary'
-                            : gradeNum >= 5
-                              ? 'bg-amber-500'
-                              : 'bg-red-500'
-                      return (
-                        <div key={grade} className="flex-1 flex flex-col items-center gap-2">
-                          <span className="text-xs text-muted-foreground font-medium">{count}</span>
-                          <div
-                            className="w-full bg-muted/50 rounded-t-md relative"
-                            style={{ height: '100px' }}
-                          >
+                  <>
+                    {/* Screen: cinematic Recharts ranked bars (% of cohort) */}
+                    <div className="print:hidden">
+                      <RankBars
+                        data={gradeDistribution.map(([grade, count]) => ({
+                          band: `Grade ${grade}`,
+                          value:
+                            yearStudents.length > 0
+                              ? Math.round((count / yearStudents.length) * 100)
+                              : 0,
+                          count,
+                        }))}
+                        labelKey="band"
+                        valueKey="value"
+                        height={Math.max(180, gradeDistribution.length * 36)}
+                      />
+                    </div>
+                    {/* Accessible text equivalent (student counts per grade) */}
+                    <ul className="sr-only">
+                      {gradeDistribution.map(([grade, count]) => (
+                        <li key={grade}>
+                          Grade {grade}: {count} student{count !== 1 ? 's' : ''}
+                        </li>
+                      ))}
+                    </ul>
+                    {/* Print: original bar columns (kept for an unchanged PDF) */}
+                    <div className="hidden print:flex items-end gap-4 h-40">
+                      {gradeDistribution.map(([grade, count]) => {
+                        const maxCount = Math.max(...gradeDistribution.map(([, v]) => v))
+                        const heightPct = maxCount > 0 ? (count / maxCount) * 100 : 0
+                        const gradeNum = parseInt(grade, 10)
+                        const barColor =
+                          gradeNum >= 9
+                            ? 'bg-yellow-400'
+                            : gradeNum >= 7
+                              ? 'bg-primary'
+                              : gradeNum >= 5
+                                ? 'bg-amber-500'
+                                : 'bg-red-500'
+                        return (
+                          <div key={grade} className="flex-1 flex flex-col items-center gap-2">
+                            <span className="text-xs text-muted-foreground font-medium">
+                              {count}
+                            </span>
                             <div
-                              className={`absolute bottom-0 left-0 right-0 ${barColor} rounded-t-md transition-all`}
-                              style={{ height: `${heightPct}%` }}
-                            />
+                              className="w-full bg-muted/50 rounded-t-md relative"
+                              style={{ height: '100px' }}
+                            >
+                              <div
+                                className={`absolute bottom-0 left-0 right-0 ${barColor} rounded-t-md transition-all`}
+                                style={{ height: `${heightPct}%` }}
+                              />
+                            </div>
+                            <span className="text-sm text-foreground font-semibold">
+                              Grade {grade}
+                            </span>
                           </div>
-                          <span className="text-sm text-foreground font-semibold">
-                            Grade {grade}
-                          </span>
-                        </div>
-                      )
-                    })}
-                  </div>
+                        )
+                      })}
+                    </div>
+                  </>
                 ) : (
                   <p className="text-muted-foreground/70 text-sm py-4">
                     {tr(`No individual student data available for this year group in the demo.`)}

@@ -19,6 +19,7 @@ import { toast } from 'sonner'
 import { DEMO_CLASSES, DEMO_STUDENTS } from '@/data/demo-data'
 import type { DemoStudent } from '@/data/demo-data'
 import { percentageToGCSEGrade } from '@/lib/grades'
+import { GlassPanel, PanelEyebrow, TrendArea, RankBars, SERIES, pct } from '@/components/dataviz'
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -134,7 +135,18 @@ export default function DemoClassDetailPage() {
     return buckets
   }, [students])
 
-  const maxDistCount = Math.max(...scoreDistribution.map((b) => b.count), 1)
+  // Distribution as % of class for the RankBars chart (mirrors the live
+  // school class page). Counts are kept for the accessible list below.
+  const distScored = students.length || 1
+  const distBandData = useMemo(
+    () =>
+      scoreDistribution.map((b) => ({
+        band: b.label,
+        value: Math.round((b.count / distScored) * 100),
+        count: b.count,
+      })),
+    [scoreDistribution, distScored],
+  )
 
   if (!cls) {
     return (
@@ -350,7 +362,7 @@ export default function DemoClassDetailPage() {
           {/* Top stat cards */}
           <div className="grid gap-4 sm:grid-cols-3">
             {/* Avg score */}
-            <div className="rounded-xl border border-border bg-card p-5">
+            <GlassPanel accent="teal" className="p-5">
               <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
                 Class Average Score
               </p>
@@ -363,10 +375,10 @@ export default function DemoClassDetailPage() {
               <p className="text-xs text-muted-foreground mt-1">
                 Across {students.length > 0 ? students.length : cls.studentCount} students
               </p>
-            </div>
+            </GlassPanel>
 
             {/* Completion rate */}
-            <div className="rounded-xl border border-border bg-card p-5">
+            <GlassPanel accent="sage" className="p-5">
               <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
                 Assignment Completion
               </p>
@@ -380,10 +392,10 @@ export default function DemoClassDetailPage() {
               <p className="text-xs text-muted-foreground mt-1">
                 {cls.assignmentsCompleted} of {cls.assignmentsSet} assignments
               </p>
-            </div>
+            </GlassPanel>
 
             {/* At-risk */}
-            <div className="rounded-xl border border-border bg-card p-5">
+            <GlassPanel accent="clay" className="p-5">
               <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
                 At-Risk Students
               </p>
@@ -396,16 +408,16 @@ export default function DemoClassDetailPage() {
                   ? `${Math.round((atRiskCount / students.length) * 100)}% of class`
                   : 'Based on demo data'}
               </p>
-            </div>
+            </GlassPanel>
           </div>
 
           {/* Top performers + Weekly activity */}
           <div className="grid gap-4 lg:grid-cols-2">
             {/* Top 5 performers */}
-            <div className="rounded-xl border border-border bg-card p-5">
+            <GlassPanel accent="sage" className="p-5">
               <div className="flex items-center gap-2 mb-4">
                 <TrendingUp className="h-4 w-4 text-emerald-700 dark:text-emerald-300" />
-                <h3 className="text-sm font-semibold">Top 5 Performers</h3>
+                <PanelEyebrow>Top 5 Performers</PanelEyebrow>
               </div>
               {topPerformers.length === 0 ? (
                 <p className="text-sm text-muted-foreground">
@@ -431,55 +443,47 @@ export default function DemoClassDetailPage() {
                   ))}
                 </div>
               )}
-            </div>
+            </GlassPanel>
 
             {/* Weekly activity chart */}
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h3 className="text-sm font-semibold mb-4">Weekly Activity (logins)</h3>
-              <div className="flex items-end gap-2 h-32">
-                {WEEKLY_ACTIVITY.map((d) => {
-                  const heightPct = Math.max((d.value / 100) * 100, 4)
-                  return (
-                    <div key={d.day} className="flex-1 flex flex-col items-center gap-1">
-                      <span className="text-[10px] tabular-nums text-muted-foreground">
-                        {d.value}
-                      </span>
-                      <div
-                        className="w-full rounded-t bg-primary/70 transition-all"
-                        style={{ height: `${heightPct}%` }}
-                      />
-                      <span className="text-[10px] text-muted-foreground">{d.day}</span>
-                    </div>
-                  )
-                })}
+            <GlassPanel accent="primary" className="p-5">
+              <PanelEyebrow>Weekly Activity (logins)</PanelEyebrow>
+              <div className="mt-4">
+                <TrendArea
+                  data={WEEKLY_ACTIVITY}
+                  xKey="day"
+                  yKey="value"
+                  height={160}
+                  color={SERIES[0]}
+                  suffix=""
+                  domain={[0, 100]}
+                />
               </div>
-            </div>
+              <ul className="sr-only">
+                {WEEKLY_ACTIVITY.map((d) => (
+                  <li key={d.day}>
+                    {d.day}: {d.value}
+                  </li>
+                ))}
+              </ul>
+            </GlassPanel>
           </div>
 
           {/* Score distribution */}
-          <div className="rounded-xl border border-border bg-card p-5">
-            <h3 className="text-sm font-semibold mb-4">Score Distribution</h3>
-            <div className="space-y-3">
-              {scoreDistribution.map((bucket) => (
-                <div key={bucket.label} className="flex items-center gap-3">
-                  <span className="w-16 text-xs text-muted-foreground shrink-0">
-                    {bucket.label}
-                  </span>
-                  <div className="flex-1 h-5 rounded bg-muted overflow-hidden">
-                    <div
-                      className={`h-full rounded ${bucket.color} transition-all`}
-                      style={{
-                        width: maxDistCount > 0 ? `${(bucket.count / maxDistCount) * 100}%` : '0%',
-                      }}
-                    />
-                  </div>
-                  <span className="w-8 text-right text-xs font-medium tabular-nums">
-                    {bucket.count}
-                  </span>
-                </div>
-              ))}
+          <GlassPanel accent="ochre" className="p-5">
+            <PanelEyebrow>Score Distribution</PanelEyebrow>
+            <div className="mt-4">
+              <RankBars data={distBandData} labelKey="band" valueKey="value" height={220} />
             </div>
-          </div>
+            {/* Accessible text equivalent (counts per band) */}
+            <ul className="sr-only">
+              {distBandData.map((b) => (
+                <li key={b.band}>
+                  {b.band}: {b.count} ({pct(b.value)})
+                </li>
+              ))}
+            </ul>
+          </GlassPanel>
         </div>
       )}
     </div>

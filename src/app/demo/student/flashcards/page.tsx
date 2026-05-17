@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import DemoBanner from '@/components/demo/DemoBanner'
 import { useT } from '@/lib/i18n/use-t'
+import { GlassPanel, RadialScore } from '@/components/dataviz'
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
@@ -421,22 +422,17 @@ export default function StudentFlashcardsDemoPage() {
             <p className="text-muted-foreground text-sm mb-8">{topic.label}</p>
 
             {/* Score */}
-            <div className="rounded-xl border border-border/60 bg-card p-8 mb-6">
-              <p className="text-5xl font-light text-amber-700 dark:text-amber-300 mb-2">
-                {known}/{total}
-              </p>
-              <p className="text-muted-foreground text-sm">
-                {t('demo_student.flashcards.end.you_knew_pre')} {known}{' '}
-                {t('demo_student.flashcards.end.out_of')} {total}{' '}
-                {t('demo_student.flashcards.end.cards_suffix')} ({percentage}%)
-              </p>
-
-              {/* Progress bar */}
-              <div className="mt-6 h-2 rounded-full bg-muted overflow-hidden">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-green-500 to-green-400 transition-all"
-                  style={{ width: `${percentage}%` }}
-                />
+            <GlassPanel accent="ochre" className="p-8 mb-6">
+              <div className="flex flex-col items-center gap-3">
+                <RadialScore value={percentage} size={160} />
+                <p className="text-5xl font-light text-amber-700 dark:text-amber-300">
+                  {known}/{total}
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  {t('demo_student.flashcards.end.you_knew_pre')} {known}{' '}
+                  {t('demo_student.flashcards.end.out_of')} {total}{' '}
+                  {t('demo_student.flashcards.end.cards_suffix')} ({percentage}%)
+                </p>
               </div>
 
               <div className="flex items-center justify-center gap-6 mt-4 text-xs text-muted-foreground">
@@ -449,7 +445,7 @@ export default function StudentFlashcardsDemoPage() {
                   {total - known} {t('demo_student.flashcards.end.to_review_label')}
                 </span>
               </div>
-            </div>
+            </GlassPanel>
 
             {known < total ? (
               <p className="text-sm text-muted-foreground mb-6">

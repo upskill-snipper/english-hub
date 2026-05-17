@@ -6,6 +6,14 @@ import GradeProgressCard from '@/components/GradeProgressCard'
 import GradeRecommendations from '@/components/GradeRecommendations'
 import ReadingProfileCard from '@/components/ReadingProfileCard'
 import {
+  GlassPanel,
+  PanelEyebrow,
+  RadialScore,
+  TrendArea,
+  RankBars,
+  SERIES,
+} from '@/components/dataviz'
+import {
   ArrowLeft,
   CheckCircle2,
   Lock,
@@ -230,18 +238,13 @@ const scoreMonths = [
   'Apr',
 ]
 
-function moduleCardGradient(color: 'amber' | 'green' | 'complete' | 'red') {
-  if (color === 'green') return 'from-green-500/20 to-green-600/5 border-green-500/20'
-  if (color === 'amber') return 'from-amber-500/20 to-amber-600/5 border-amber-500/20'
-  if (color === 'red') return 'from-red-500/20 to-red-600/5 border-red-500/20'
-  return 'from-primary/20 to-emerald-600/5 border-primary/20'
-}
-
-function moduleRingColor(color: 'amber' | 'green' | 'complete' | 'red') {
-  if (color === 'green') return '#22c55e'
-  if (color === 'amber') return '#f59e0b'
-  if (color === 'red') return '#ef4444'
-  return '#34d399'
+function moduleAccent(
+  color: 'amber' | 'green' | 'complete' | 'red',
+): 'primary' | 'teal' | 'sage' | 'clay' | 'ochre' {
+  if (color === 'green') return 'sage'
+  if (color === 'amber') return 'ochre'
+  if (color === 'red') return 'clay'
+  return 'primary'
 }
 
 function moduleBarColor(color: 'amber' | 'green' | 'complete' | 'red') {
@@ -267,22 +270,6 @@ function moduleLabel(color: 'amber' | 'green' | 'complete' | 'red') {
   return 'Almost Done!'
 }
 
-function masteryBarColor(status: 'mastered' | 'good' | 'developing' | 'weak') {
-  if (status === 'mastered') return 'bg-primary'
-  if (status === 'good') return 'bg-green-500'
-  if (status === 'developing') return 'bg-amber-500'
-  return 'bg-red-500'
-}
-
-function masteryBadge(status: 'mastered' | 'good' | 'developing' | 'weak') {
-  if (status === 'mastered') return 'bg-primary/10 text-primary border-primary/30'
-  if (status === 'good')
-    return 'bg-green-500/20 text-green-700 dark:text-green-300 border-green-500/30'
-  if (status === 'developing')
-    return 'bg-amber-500/20 text-amber-700 dark:text-amber-300 border-amber-500/30'
-  return 'bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30'
-}
-
 function masteryLabel(status: 'mastered' | 'good' | 'developing' | 'weak') {
   if (status === 'mastered') return 'Mastered'
   if (status === 'good') return 'Good'
@@ -290,90 +277,59 @@ function masteryLabel(status: 'mastered' | 'good' | 'developing' | 'weak') {
   return 'Needs Work'
 }
 
-/* Small SVG ring helper for module cards */
-function MiniRing({
-  percent,
-  color,
-  size = 56,
-}: {
-  percent: number
-  color: string
-  size?: number
-}) {
-  const r = (size - 8) / 2
-  const circumference = 2 * Math.PI * r
-  return (
-    <svg className={`-rotate-90`} width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={r}
-        fill="none"
-        stroke="hsl(var(--border))"
-        strokeWidth="5"
-      />
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={r}
-        fill="none"
-        stroke={color}
-        strokeWidth="5"
-        strokeLinecap="round"
-        strokeDasharray={`${circumference * (percent / 100)} ${circumference * (1 - percent / 100)}`}
-      />
-    </svg>
-  )
-}
-
-// Stat card gradient configs
-const statCards = [
+// Stat card configs
+const statCards: {
+  label: string
+  value: string
+  trend: string
+  trendUp: boolean
+  accent: 'primary' | 'teal' | 'sage' | 'clay' | 'ochre'
+}[] = [
   {
     label: 'Average Grade',
     value: `Grade ${percentageToGCSEGrade(STUDENT.averageScore)}`,
     trend: 'improving',
     trendUp: true,
-    gradient: 'from-purple-500/15 to-purple-500/5 border-purple-500/20',
+    accent: 'primary',
   },
   {
     label: 'Study Hours',
     value: `${STUDENT.totalStudyHours}h`,
     trend: '+6h',
     trendUp: true,
-    gradient: 'from-blue-500/15 to-blue-500/5 border-blue-500/20',
+    accent: 'teal',
   },
   {
     label: 'Quizzes Done',
     value: `${STUDENT.totalQuizzes}`,
     trend: '+3',
     trendUp: true,
-    gradient: 'from-cyan-500/15 to-cyan-500/5 border-cyan-500/20',
+    accent: 'sage',
   },
   {
     label: 'Essays Written',
     value: `${STUDENT.totalEssays}`,
     trend: '+2',
     trendUp: true,
-    gradient: 'from-pink-500/15 to-pink-500/5 border-pink-500/20',
+    accent: 'clay',
   },
   {
     label: 'Mock Exams',
     value: `${STUDENT.totalMocks}`,
     trend: 'new',
     trendUp: true,
-    gradient: 'from-amber-500/15 to-amber-500/5 border-amber-500/20',
+    accent: 'ochre',
   },
   {
     label: 'Longest Streak',
     value: `${STUDENT.longestStreak}d`,
     trend: '',
     trendUp: true,
-    gradient: 'from-orange-500/15 to-orange-500/5 border-orange-500/20',
+    accent: 'ochre',
   },
 ]
 
 export default function StudentProgressPage() {
-  const maxScore = Math.max(...scores)
   const avgScore = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
 
   return (
@@ -410,50 +366,18 @@ export default function StudentProgressPage() {
         {/* SECTION 1: Large Progress Hero                                   */}
         {/* ================================================================ */}
         <section className="mb-8">
-          <div className="relative rounded-2xl border border-border/60 bg-gradient-to-br from-purple-500/10 via-card to-indigo-500/[0.06] p-8 overflow-hidden">
-            {/* Decorative blobs */}
-            <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-clay-500/10 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-indigo-600/10 blur-3xl" />
-
+          <GlassPanel accent="primary" className="p-8">
             <div className="relative flex flex-col items-center gap-6 md:flex-row md:justify-center md:gap-16">
               {/* Progress Ring */}
-              <div className="relative">
-                <div className="relative h-[250px] w-[250px]">
-                  <svg className="h-[250px] w-[250px] -rotate-90" viewBox="0 0 250 250">
-                    <circle
-                      cx="125"
-                      cy="125"
-                      r="105"
-                      fill="none"
-                      stroke="hsl(var(--border))"
-                      strokeWidth="16"
-                    />
-                    <circle
-                      cx="125"
-                      cy="125"
-                      r="105"
-                      fill="none"
-                      stroke="url(#heroGrad)"
-                      strokeWidth="16"
-                      strokeLinecap="round"
-                      strokeDasharray={`${2 * Math.PI * 105 * (OVERALL_PERCENT / 100)} ${2 * Math.PI * 105 * (1 - OVERALL_PERCENT / 100)}`}
-                      className="transition-all duration-700"
-                    />
-                    <defs>
-                      <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stopColor="#a855f7" />
-                        <stop offset="50%" stopColor="#6366f1" />
-                        <stop offset="100%" stopColor="#818cf8" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-5xl font-bold tracking-tight">{OVERALL_PERCENT}%</span>
-                    <span className="text-sm text-muted-foreground mt-1">Overall Progress</span>
-                  </div>
+              <div className="relative pb-6">
+                <div className="flex flex-col items-center">
+                  <RadialScore value={OVERALL_PERCENT} size={250} />
+                  <span className="mt-1 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                    Overall Progress
+                  </span>
                 </div>
                 {/* Streak badge overlay */}
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm px-3 py-1.5 shadow-lg shadow-amber-500/5">
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm px-3 py-1.5 shadow-lg shadow-amber-500/5">
                   <Flame className="h-4 w-4 text-amber-700 dark:text-amber-300" />
                   <span className="text-sm font-semibold text-amber-700 dark:text-amber-300">
                     {STUDENT.streak} day streak
@@ -504,7 +428,7 @@ export default function StudentProgressPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </GlassPanel>
         </section>
 
         {/* ================================================================ */}
@@ -514,15 +438,12 @@ export default function StudentProgressPage() {
           <h2 className="mb-4 text-lg font-semibold">Key Stats</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {statCards.map((s) => (
-              <div
-                key={s.label}
-                className={`rounded-xl border bg-gradient-to-br p-4 transition-transform hover:scale-[1.02] ${s.gradient}`}
-              >
-                <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-2">
-                  {s.label}
-                </p>
-                <div className="flex items-end justify-between">
-                  <p className="text-3xl font-bold">{s.value}</p>
+              <GlassPanel key={s.label} accent={s.accent} className="p-4">
+                <PanelEyebrow>{s.label}</PanelEyebrow>
+                <div className="mt-2 flex items-end justify-between">
+                  <p className="font-heading text-3xl font-bold tracking-tight text-foreground">
+                    {s.value}
+                  </p>
                   {s.trend && (
                     <span className="flex items-center gap-0.5 text-xs font-medium text-primary mb-1">
                       {s.trendUp && <ArrowUpRight className="h-3 w-3" />}
@@ -530,7 +451,7 @@ export default function StudentProgressPage() {
                     </span>
                   )}
                 </div>
-              </div>
+              </GlassPanel>
             ))}
           </div>
         </section>
@@ -539,14 +460,14 @@ export default function StudentProgressPage() {
         {/* SECTION 3: Score Trend Bar Chart                                  */}
         {/* ================================================================ */}
         <section className="mb-8">
-          <div className="rounded-2xl border border-border/60 bg-card p-6">
+          <GlassPanel accent="clay" className="p-6">
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-clay-500/10">
                   <BarChart3 className="h-5 w-5 text-clay-600 dark:text-clay-300" />
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold">Score Trend</h2>
+                  <PanelEyebrow>Score Trend</PanelEyebrow>
                   <p className="text-xs text-muted-foreground">Last 12 assessments</p>
                 </div>
               </div>
@@ -556,50 +477,38 @@ export default function StudentProgressPage() {
               </span>
             </div>
 
-            <div className="relative">
-              {/* Average line */}
-              <div
-                className="absolute left-0 right-0 border-t border-dashed border-border z-10"
-                style={{ bottom: `${(avgScore / maxScore) * 100}%` }}
-              >
-                <span className="absolute -top-3 -left-0.5 text-[9px] text-muted-foreground bg-background/80 px-1 rounded">
-                  avg {avgScore}%
-                </span>
-              </div>
+            <TrendArea
+              data={scores.map((s, i) => ({ month: scoreMonths[i], score: s }))}
+              xKey="month"
+              yKey="score"
+              height={240}
+              color={SERIES[3]}
+              suffix="%"
+              domain={[0, 100]}
+            />
 
-              <div className="flex items-end gap-2 h-40">
-                {scores.map((s, i) => {
-                  const isRecent = i >= scores.length - 3
-                  return (
-                    <div key={i} className="group flex flex-1 flex-col items-center gap-1 relative">
-                      {/* Hover tooltip */}
-                      <div className="absolute -top-7 opacity-0 group-hover:opacity-100 transition-opacity bg-muted backdrop-blur-sm rounded px-2 py-0.5 text-[10px] font-medium z-20 whitespace-nowrap">
-                        {s}%
-                      </div>
-                      <div
-                        className={`w-full rounded-t-lg transition-all duration-200 group-hover:brightness-125 cursor-default ${
-                          isRecent
-                            ? 'bg-gradient-to-t from-emerald-600 to-emerald-400'
-                            : 'bg-gradient-to-t from-purple-700/80 to-indigo-500/80'
-                        }`}
-                        style={{ height: `${(s / maxScore) * 100}%` }}
-                      />
-                      <span className="text-[9px] text-muted-foreground">{scoreMonths[i]}</span>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
+            <p className="mt-3 text-center text-[10px] text-muted-foreground">
+              Average across the last 12 assessments: avg {avgScore}%
+            </p>
 
-            <div className="mt-3 flex items-center gap-4 justify-center text-[10px] text-muted-foreground">
-              <span className="flex items-center gap-1">
-                <span className="inline-block h-2 w-2 rounded-sm bg-indigo-500" /> Older
-              </span>
-              <span className="flex items-center gap-1">
-                <span className="inline-block h-2 w-2 rounded-sm bg-primary" /> Recent
-              </span>
-            </div>
-          </div>
+            {/* Accessible equivalent */}
+            <table className="sr-only">
+              <thead>
+                <tr>
+                  <th>Assessment</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                {scores.map((s, i) => (
+                  <tr key={i}>
+                    <td>{scoreMonths[i]}</td>
+                    <td>{s}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </GlassPanel>
         </section>
 
         {/* ================================================================ */}
@@ -663,17 +572,11 @@ export default function StudentProgressPage() {
           <h2 className="mb-4 text-lg font-semibold">Module Mastery</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {modules.map((mod) => (
-              <div
-                key={mod.name}
-                className={`rounded-2xl border bg-gradient-to-br p-5 transition-all hover:shadow-lg hover:shadow-black/20 ${moduleCardGradient(mod.color)}`}
-              >
+              <GlassPanel key={mod.name} accent={moduleAccent(mod.color)} className="p-5">
                 {/* Module header with mini ring */}
                 <div className="flex items-start gap-4 mb-4">
                   <div className="relative shrink-0">
-                    <MiniRing percent={mod.percent} color={moduleRingColor(mod.color)} />
-                    <span className="absolute inset-0 flex items-center justify-center text-xs font-bold">
-                      {mod.percent}%
-                    </span>
+                    <RadialScore value={mod.percent} size={64} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-foreground leading-tight">{mod.name}</h3>
@@ -694,27 +597,21 @@ export default function StudentProgressPage() {
                 </div>
 
                 {/* Topic breakdown */}
-                <div className="space-y-2">
+                <RankBars
+                  data={mod.topics.map((t) => ({ name: t.name, mastery: t.mastery }))}
+                  labelKey="name"
+                  valueKey="mastery"
+                  height={Math.max(160, mod.topics.length * 34)}
+                  suffix="%"
+                />
+                <ul className="sr-only">
                   {mod.topics.map((t) => (
-                    <div key={t.name} className="rounded-lg bg-muted px-3 py-2">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-xs text-foreground truncate mr-2">{t.name}</span>
-                        <span
-                          className={`inline-flex items-center rounded-full border px-1.5 py-0.5 text-[10px] font-medium shrink-0 ${masteryBadge(t.status)}`}
-                        >
-                          {t.mastery}% -- {masteryLabel(t.status)}
-                        </span>
-                      </div>
-                      <div className="h-1.5 rounded-full bg-background">
-                        <div
-                          className={`h-1.5 rounded-full transition-all duration-500 ${masteryBarColor(t.status)}`}
-                          style={{ width: `${t.mastery}%` }}
-                        />
-                      </div>
-                    </div>
+                    <li key={t.name}>
+                      {t.name}: {t.mastery}% -- {masteryLabel(t.status)}
+                    </li>
                   ))}
-                </div>
-              </div>
+                </ul>
+              </GlassPanel>
             ))}
           </div>
         </section>

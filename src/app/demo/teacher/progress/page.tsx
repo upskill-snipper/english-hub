@@ -30,6 +30,7 @@ import {
 } from '@/lib/grades'
 import GradeProgressCard from '@/components/GradeProgressCard'
 import DemoBanner from '@/components/demo/DemoBanner'
+import { AnimatedNumber } from '@/components/dataviz'
 
 import { STRINGS } from './content'
 import { useLocale } from '@/lib/i18n/use-locale'
@@ -595,39 +596,51 @@ export default function TeacherProgressPage() {
           <Card className="bg-card border-border/60">
             <CardContent className="pt-4 pb-3">
               <div className="text-xs text-muted-foreground mb-1">{tr(`Avg Working At`)}</div>
-              <div className={`text-2xl font-bold ${gcseGradeColor(Math.round(avgWorkingAt))}`}>
-                Grade {avgWorkingAt}
-              </div>
+              <AnimatedNumber
+                value={avgWorkingAt}
+                decimals={1}
+                prefix="Grade "
+                className={`block text-2xl font-bold ${gcseGradeColor(Math.round(avgWorkingAt))}`}
+              />
             </CardContent>
           </Card>
           <Card className="bg-card border-border/60">
             <CardContent className="pt-4 pb-3">
               <div className="text-xs text-muted-foreground mb-1">{tr(`Avg Predicted`)}</div>
-              <div
-                className={`text-2xl font-bold ${predictedGradeColor(Math.round(avgPredicted), Math.round(avgWorkingAt))}`}
-              >
-                Grade {avgPredicted}
-              </div>
+              <AnimatedNumber
+                value={avgPredicted}
+                decimals={1}
+                prefix="Grade "
+                className={`block text-2xl font-bold ${predictedGradeColor(Math.round(avgPredicted), Math.round(avgWorkingAt))}`}
+              />
             </CardContent>
           </Card>
           <Card className="bg-card border-border/60">
             <CardContent className="pt-4 pb-3">
               <div className="text-xs text-muted-foreground mb-1">Completion</div>
-              <div className={`text-2xl font-bold ${progressTextColor(avgProgress)}`}>
-                {avgProgress}%
-              </div>
+              <AnimatedNumber
+                value={avgProgress}
+                suffix="%"
+                className={`block text-2xl font-bold ${progressTextColor(avgProgress)}`}
+              />
             </CardContent>
           </Card>
           <Card className="bg-card border-border/60">
             <CardContent className="pt-4 pb-3">
               <div className="text-xs text-muted-foreground mb-1">Students</div>
-              <div className="text-2xl font-bold text-foreground">{classStudents.length}</div>
+              <AnimatedNumber
+                value={classStudents.length}
+                className="block text-2xl font-bold text-foreground"
+              />
             </CardContent>
           </Card>
           <Card className="bg-card border-border/60">
             <CardContent className="pt-4 pb-3">
               <div className="text-xs text-muted-foreground mb-1">At Risk</div>
-              <div className="text-2xl font-bold text-red-600 dark:text-red-400">{redCount}</div>
+              <AnimatedNumber
+                value={redCount}
+                className="block text-2xl font-bold text-red-600 dark:text-red-400"
+              />
             </CardContent>
           </Card>
         </div>

@@ -44,6 +44,7 @@ import {
 import GradeProgressCard from '@/components/GradeProgressCard'
 import GradeRecommendations from '@/components/GradeRecommendations'
 import ReadingProfileCard from '@/components/ReadingProfileCard'
+import { AnimatedNumber, TrendArea, SERIES } from '@/components/dataviz'
 
 function scoreColor(score: number) {
   if (score >= 70) return 'text-green-600 dark:text-green-400'
@@ -131,7 +132,6 @@ export default function TeacherStudentProfilePage() {
 
   const prevStudent = studentIdx > 0 ? DEMO_STUDENTS[studentIdx - 1] : null
   const nextStudent = studentIdx < DEMO_STUDENTS.length - 1 ? DEMO_STUDENTS[studentIdx + 1] : null
-  const maxTrend = Math.max(...student.recentScores, 1)
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -208,11 +208,11 @@ export default function TeacherStudentProfilePage() {
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
                 Working At Grade
               </p>
-              <p
-                className={`text-3xl font-light tabular-nums ${gcseGradeColor(student.workingAtGrade)}`}
-              >
-                Grade {student.workingAtGrade}
-              </p>
+              <AnimatedNumber
+                value={student.workingAtGrade}
+                prefix="Grade "
+                className={`block text-3xl font-light tabular-nums ${gcseGradeColor(student.workingAtGrade)}`}
+              />
               <p className="text-[11px] text-muted-foreground mt-1">Based on last 5 assessments</p>
             </CardContent>
           </Card>
@@ -223,11 +223,11 @@ export default function TeacherStudentProfilePage() {
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
                 Predicted Grade
               </p>
-              <p
-                className={`text-3xl font-light tabular-nums ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}
-              >
-                Grade {student.predictedGrade}
-              </p>
+              <AnimatedNumber
+                value={student.predictedGrade}
+                prefix="Grade "
+                className={`block text-3xl font-light tabular-nums ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}
+              />
               <p className="text-[11px] text-muted-foreground mt-1">
                 {student.predictedGrade > student.workingAtGrade
                   ? 'Improving trajectory'
@@ -242,9 +242,11 @@ export default function TeacherStudentProfilePage() {
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
                 Target Grade
               </p>
-              <p className="text-3xl font-light text-primary tabular-nums">
-                Grade {student.targetGrade}
-              </p>
+              <AnimatedNumber
+                value={student.targetGrade}
+                prefix="Grade "
+                className="block text-3xl font-light text-primary tabular-nums"
+              />
               <p className="text-[11px] text-muted-foreground mt-1">
                 {student.targetGrade - student.workingAtGrade > 0
                   ? `${student.targetGrade - student.workingAtGrade} grade${student.targetGrade - student.workingAtGrade > 1 ? 's' : ''} to target`
@@ -261,11 +263,11 @@ export default function TeacherStudentProfilePage() {
               <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">
                 Progress
               </p>
-              <p
-                className={`text-3xl font-light tabular-nums ${scoreColor(student.overallProgress)}`}
-              >
-                {student.overallProgress}%
-              </p>
+              <AnimatedNumber
+                value={student.overallProgress}
+                suffix="%"
+                className={`block text-3xl font-light tabular-nums ${scoreColor(student.overallProgress)}`}
+              />
             </CardContent>
           </Card>
           <Card className="bg-card border-border/60">
@@ -370,20 +372,26 @@ export default function TeacherStudentProfilePage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-end gap-2 h-32">
+            <TrendArea
+              data={student.recentScores.map((val, i) => ({
+                label: `W${i + 1}`,
+                score: val,
+              }))}
+              xKey="label"
+              yKey="score"
+              height={160}
+              color={SERIES[0]}
+              suffix="%"
+              domain={[0, 100]}
+            />
+            {/* Accessible text equivalent */}
+            <ul className="sr-only">
               {student.recentScores.map((val, i) => (
-                <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  <span className="text-[10px] text-muted-foreground tabular-nums">{val}</span>
-                  <div
-                    className={`w-full rounded-sm transition-all ${
-                      val >= 70 ? 'bg-primary/60' : val >= 50 ? 'bg-amber-500/60' : 'bg-red-500/60'
-                    }`}
-                    style={{ height: `${(val / maxTrend) * 100}%` }}
-                  />
-                  <span className="text-[9px] text-muted-foreground">W{i + 1}</span>
-                </div>
+                <li key={i}>
+                  Week {i + 1}: {val}%
+                </li>
               ))}
-            </div>
+            </ul>
           </CardContent>
         </Card>
 

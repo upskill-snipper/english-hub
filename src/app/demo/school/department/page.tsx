@@ -32,6 +32,16 @@ import {
 import DemoBanner from '@/components/demo/DemoBanner'
 import { openPrintableDocument } from '@/lib/generate-download'
 import { percentageToGCSEGrade } from '@/lib/grades'
+import { RankBars, ChartFrame, GlassTooltip, RAG, GRID, AXIS } from '@/components/dataviz'
+import {
+  BarChart as RBarChart,
+  Bar as RBar,
+  XAxis as RXAxis,
+  YAxis as RYAxis,
+  CartesianGrid as RCartesianGrid,
+  Tooltip as RTooltip,
+  Cell as RCell,
+} from 'recharts'
 
 // ── Constants ──────────────────────────────────────────────────────────────
 
@@ -628,16 +638,23 @@ export default function DepartmentPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
+            <RankBars
+              data={YEAR_TRENDS.map((yt) => ({ year: yt.year, current: yt.current }))}
+              labelKey="year"
+              valueKey="current"
+              height={Math.max(200, YEAR_TRENDS.length * 34)}
+              suffix="%"
+            />
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
               {YEAR_TRENDS.map((yt) => (
                 <div
                   key={yt.year}
-                  className="rounded-lg border border-border/60 bg-muted/50 p-4 text-center"
+                  className="rounded-lg border border-border/60 bg-muted/50 p-3 text-center"
                 >
                   <p className="text-sm font-semibold text-muted-foreground">{yt.year}</p>
-                  <p className="mt-2 text-2xl font-bold">{yt.current}%</p>
+                  <p className="mt-1 text-xl font-bold">{yt.current}%</p>
                   <div
-                    className={`mt-2 flex items-center justify-center gap-1 text-sm font-medium ${trendColor(yt.change)}`}
+                    className={`mt-1 flex items-center justify-center gap-1 text-xs font-medium ${trendColor(yt.change)}`}
                   >
                     {trendIcon(yt.change)}
                     <span>
@@ -664,42 +681,76 @@ export default function DepartmentPage() {
               Average: {AVG_STUDENTS_PER_TEACHER} students per teacher. Flagged if above{' '}
               {OVERLOAD_THRESHOLD}.
             </p>
-            <div className="space-y-3">
-              {[...DEPT_TEACHERS]
-                .sort((a, b) => b.students - a.students)
-                .map((t) => {
-                  const overloaded = t.students > OVERLOAD_THRESHOLD
-                  const maxStudents = Math.max(...DEPT_TEACHERS.map((x) => x.students))
-                  const pct = Math.round((t.students / maxStudents) * 100)
-                  return (
-                    <div key={t.id} className="flex items-center gap-3">
-                      <span className="w-32 shrink-0 truncate text-sm font-medium">{t.name}</span>
-                      <div className="flex-1">
-                        <div className="h-5 w-full rounded-full bg-muted">
-                          <div
-                            className={`flex h-5 items-center justify-end rounded-full px-2 text-xs font-semibold ${
-                              overloaded
-                                ? 'bg-amber-500/80 text-amber-950'
-                                : 'bg-primary/70 text-primary-foreground'
-                            }`}
-                            style={{ width: `${pct}%` }}
-                          >
-                            {t.students} students / {t.classes} classes
-                          </div>
-                        </div>
-                      </div>
-                      {overloaded && (
-                        <Badge
-                          variant="outline"
-                          className="shrink-0 border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300 text-xs"
+            {(() => {
+              const sorted = [...DEPT_TEACHERS].sort((a, b) => b.students - a.students)
+              const maxStudents = Math.max(...DEPT_TEACHERS.map((x) => x.students))
+              return (
+                <>
+                  <ChartFrame height={Math.max(220, sorted.length * 28)}>
+                    <RBarChart
+                      data={sorted}
+                      layout="vertical"
+                      margin={{ top: 4, right: 16, bottom: 4, left: 8 }}
+                      barCategoryGap={6}
+                    >
+                      <RCartesianGrid {...GRID} horizontal={false} vertical />
+                      <RXAxis type="number" domain={[0, maxStudents]} {...AXIS} />
+                      <RYAxis
+                        type="category"
+                        dataKey="name"
+                        {...AXIS}
+                        width={120}
+                        tick={{ fontSize: 11, fill: 'hsl(var(--foreground))' }}
+                      />
+                      <RTooltip
+                        content={<GlassTooltip />}
+                        cursor={{ fill: 'hsl(var(--muted)/0.4)' }}
+                      />
+                      <RBar
+                        dataKey="students"
+                        name="Students"
+                        radius={[0, 6, 6, 0]}
+                        isAnimationActive
+                        animationDuration={900}
+                      >
+                        {sorted.map((t) => (
+                          <RCell
+                            key={t.id}
+                            fill={t.students > OVERLOAD_THRESHOLD ? RAG.mid : 'hsl(var(--primary))'}
+                          />
+                        ))}
+                      </RBar>
+                    </RBarChart>
+                  </ChartFrame>
+                  <ul className="mt-4 space-y-2">
+                    {sorted.map((t) => {
+                      const overloaded = t.students > OVERLOAD_THRESHOLD
+                      return (
+                        <li
+                          key={t.id}
+                          className="flex items-center gap-3 text-sm text-muted-foreground"
                         >
-                          High Load
-                        </Badge>
-                      )}
-                    </div>
-                  )
-                })}
-            </div>
+                          <span className="w-32 shrink-0 truncate font-medium text-foreground">
+                            {t.name}
+                          </span>
+                          <span className="flex-1">
+                            {t.students} students / {t.classes} classes
+                          </span>
+                          {overloaded && (
+                            <Badge
+                              variant="outline"
+                              className="shrink-0 border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300 text-xs"
+                            >
+                              High Load
+                            </Badge>
+                          )}
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </>
+              )
+            })()}
           </CardContent>
         </Card>
 

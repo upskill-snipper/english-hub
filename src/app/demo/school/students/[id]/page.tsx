@@ -34,6 +34,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { TrendArea, SERIES } from '@/components/dataviz'
 import {
   percentageToGCSEGrade,
   percentageToGCSEGradeLabel,
@@ -559,13 +560,6 @@ function gradeColor(grade: string): string {
   return 'bg-red-500/15 text-red-700 dark:text-red-300 border-red-500/30'
 }
 
-function scoreBarColor(score: number): string {
-  if (score >= 80) return 'bg-primary'
-  if (score >= 65) return 'bg-blue-500'
-  if (score >= 50) return 'bg-amber-500'
-  return 'bg-red-500'
-}
-
 function scoreTrend(scores: number[]): 'up' | 'down' | 'stable' {
   if (scores.length < 2) return 'stable'
   const first = scores.slice(0, Math.floor(scores.length / 2))
@@ -949,27 +943,26 @@ export default function SchoolStudentDetailPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-end gap-3 h-48">
+            <TrendArea
+              data={student.recentScores.map((score, i) => ({
+                label: `#${i + 1}`,
+                score,
+              }))}
+              xKey="label"
+              yKey="score"
+              height={192}
+              color={SERIES[0]}
+              suffix="%"
+              domain={[0, 100]}
+            />
+            {/* Accessible text equivalent */}
+            <ul className="sr-only">
               {student.recentScores.map((score, i) => (
-                <div key={i} className="flex-1 flex flex-col items-center gap-2">
-                  <span className="text-xs font-medium text-muted-foreground">
-                    G{percentageToGCSEGrade(score)}
-                  </span>
-                  <div
-                    className="w-full relative rounded-t-md overflow-hidden"
-                    style={{ height: `${(score / 100) * 140}px` }}
-                  >
-                    <div
-                      className={`absolute inset-0 ${scoreBarColor(score)} opacity-80 rounded-t-md`}
-                    />
-                    <div
-                      className={`absolute inset-0 ${scoreBarColor(score)} opacity-20 blur-sm`}
-                    />
-                  </div>
-                  <span className="text-[10px] text-muted-foreground">#{i + 1}</span>
-                </div>
+                <li key={i}>
+                  Assessment #{i + 1}: {score}% (Grade {percentageToGCSEGrade(score)})
+                </li>
               ))}
-            </div>
+            </ul>
             <div className="mt-4 flex items-center gap-6 text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded bg-primary inline-block" /> 80%+

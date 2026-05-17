@@ -13,6 +13,7 @@ import {
 import GradeProgressCard from '@/components/GradeProgressCard'
 import { toast } from 'sonner'
 import { DEMO_STUDENTS } from '@/data/demo-data'
+import { TrendArea, SERIES } from '@/components/dataviz'
 
 function scoreToGrade(score: number): string {
   return String(percentageToGCSEGrade(score))
@@ -553,30 +554,56 @@ export default function StudentReportPage() {
             {scoreTrend.description}
           </p>
           {student.recentScores.length > 0 && (
-            <div className="mt-4 flex items-end gap-2 h-24">
-              {student.recentScores.map((score, i) => (
-                <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  <span className="text-[10px] text-muted-foreground print:text-neutral-500 font-medium">
-                    G{percentageToGCSEGrade(score)}
-                  </span>
-                  <div
-                    className="w-full bg-muted print:bg-neutral-200 rounded-t relative"
-                    style={{ height: '70px' }}
-                  >
+            <>
+              {/* Screen: cinematic Recharts trend */}
+              <div className="mt-4 print:hidden">
+                <TrendArea
+                  data={student.recentScores.map((score, i) => ({
+                    label: `#${i + 1}`,
+                    score,
+                  }))}
+                  xKey="label"
+                  yKey="score"
+                  height={140}
+                  color={SERIES[0]}
+                  suffix="%"
+                  domain={[0, 100]}
+                />
+              </div>
+              {/* Accessible text equivalent */}
+              <ul className="sr-only">
+                {student.recentScores.map((score, i) => (
+                  <li key={i}>
+                    Assessment #{i + 1}: {score}% (Grade {percentageToGCSEGrade(score)})
+                  </li>
+                ))}
+              </ul>
+              {/* Print: original bar columns (kept for an unchanged PDF) */}
+              <div className="mt-4 hidden print:flex items-end gap-2 h-24">
+                {student.recentScores.map((score, i) => (
+                  <div key={i} className="flex-1 flex flex-col items-center gap-1">
+                    <span className="text-[10px] text-muted-foreground print:text-neutral-500 font-medium">
+                      G{percentageToGCSEGrade(score)}
+                    </span>
                     <div
-                      className={`absolute bottom-0 left-0 right-0 rounded-t transition-all ${
-                        score >= 70
-                          ? 'bg-primary print:bg-teal-800'
-                          : score >= 50
-                            ? 'bg-amber-500 print:bg-amber-600'
-                            : 'bg-red-500 print:bg-red-600'
-                      }`}
-                      style={{ height: `${(score / 100) * 70}px` }}
-                    />
+                      className="w-full bg-muted print:bg-neutral-200 rounded-t relative"
+                      style={{ height: '70px' }}
+                    >
+                      <div
+                        className={`absolute bottom-0 left-0 right-0 rounded-t transition-all ${
+                          score >= 70
+                            ? 'bg-primary print:bg-teal-800'
+                            : score >= 50
+                              ? 'bg-amber-500 print:bg-amber-600'
+                              : 'bg-red-500 print:bg-red-600'
+                        }`}
+                        style={{ height: `${(score / 100) * 70}px` }}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </>
           )}
         </div>
 

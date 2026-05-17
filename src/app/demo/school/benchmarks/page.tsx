@@ -20,6 +20,18 @@ import { Button } from '@/components/ui/button'
 import DemoBanner from '@/components/demo/DemoBanner'
 import { openPrintableDocument } from '@/lib/generate-download'
 import { percentageToGCSEGrade } from '@/lib/grades'
+import { ChartFrame, GlassTooltip, SERIES, GRID, AXIS } from '@/components/dataviz'
+import {
+  BarChart as RBarChart,
+  Bar as RBar,
+  LineChart as RLineChart,
+  Line as RLine,
+  XAxis as RXAxis,
+  YAxis as RYAxis,
+  CartesianGrid as RCartesianGrid,
+  Tooltip as RTooltip,
+  Legend as RLegend,
+} from 'recharts'
 
 // ── Mock benchmark data ──────────────────────────────────────────────────────
 
@@ -138,8 +150,6 @@ export default function BenchmarksPage() {
     setDownloading(false)
     toast.success('Benchmark report opened for download')
   }
-
-  const maxTermSchool = Math.max(...termTrend.map((t) => t.school))
 
   return (
     <div className="space-y-8">
@@ -284,45 +294,45 @@ export default function BenchmarksPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-6">
-            {subjectComparison.map((subject) => {
-              const diff = subject.school - subject.platform
-              return (
-                <div key={subject.subject} className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-foreground font-medium">{subject.subject}</span>
-                    <div className="flex items-center gap-4">
-                      <span className="text-muted-foreground">Platform: {subject.platform}%</span>
-                      <span className="text-foreground font-medium">School: {subject.school}%</span>
-                      <span className="text-green-700 dark:text-green-300 text-xs font-medium">
-                        +{diff}%
-                      </span>
-                    </div>
-                  </div>
-                  <div className="relative h-3 bg-muted rounded-full overflow-hidden">
-                    <div
-                      className="absolute inset-y-0 left-0 bg-muted-foreground/30 rounded-full"
-                      style={{ width: `${subject.platform}%` }}
-                    />
-                    <div
-                      className="absolute inset-y-0 left-0 bg-blue-500 rounded-full"
-                      style={{ width: `${subject.school}%`, opacity: 0.8 }}
-                    />
-                  </div>
-                  <div className="flex items-center gap-4 text-xs text-foreground">
-                    <span className="flex items-center gap-1">
-                      <span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />
-                      School
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <span className="w-2 h-2 rounded-full bg-muted-foreground/30 inline-block" />
-                      Platform
-                    </span>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+          <ChartFrame height={Math.max(220, subjectComparison.length * 56)}>
+            <RBarChart
+              data={subjectComparison}
+              layout="vertical"
+              margin={{ top: 4, right: 16, bottom: 4, left: 8 }}
+              barCategoryGap={14}
+            >
+              <RCartesianGrid {...GRID} horizontal={false} vertical />
+              <RXAxis type="number" domain={[0, 100]} {...AXIS} />
+              <RYAxis
+                type="category"
+                dataKey="subject"
+                {...AXIS}
+                width={150}
+                tick={{ fontSize: 11, fill: 'hsl(var(--foreground))' }}
+              />
+              <RTooltip
+                content={<GlassTooltip suffix="%" />}
+                cursor={{ fill: 'hsl(var(--muted)/0.4)' }}
+              />
+              <RLegend wrapperStyle={{ fontSize: 12 }} />
+              <RBar
+                dataKey="school"
+                name="School"
+                fill={SERIES[0]}
+                radius={[0, 6, 6, 0]}
+                isAnimationActive
+                animationDuration={900}
+              />
+              <RBar
+                dataKey="platform"
+                name="Platform"
+                fill={SERIES[2]}
+                radius={[0, 6, 6, 0]}
+                isAnimationActive
+                animationDuration={900}
+              />
+            </RBarChart>
+          </ChartFrame>
         </CardContent>
       </Card>
 
@@ -338,50 +348,43 @@ export default function BenchmarksPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-4">
-            {termTrend.map((term) => (
-              <div key={term.term} className="space-y-2">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground font-medium w-36">{term.term}</span>
-                  <div className="flex items-center gap-4">
-                    <span className="text-muted-foreground text-xs">
-                      National: {term.national}%
-                    </span>
-                    <span className="text-foreground font-medium text-xs">
-                      School: {term.school}%
-                    </span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-1 relative h-8 bg-muted rounded overflow-hidden">
-                    <div
-                      className="absolute inset-y-0 left-0 bg-muted-foreground/30 rounded"
-                      style={{ width: `${(term.national / maxTermSchool) * 100}%` }}
-                    />
-                    <div
-                      className="absolute inset-y-0 left-0 bg-blue-500/80 rounded flex items-center justify-end pr-2"
-                      style={{ width: `${(term.school / maxTermSchool) * 100}%` }}
-                    >
-                      <span className="text-xs text-white font-medium">{term.school}%</span>
-                    </div>
-                  </div>
-                  <span className="text-green-700 dark:text-green-300 text-sm font-medium w-12 text-right">
-                    +{term.school - term.national}%
-                  </span>
-                </div>
-              </div>
-            ))}
-            <div className="flex items-center gap-4 text-xs text-foreground mt-2 pt-2 border-t border-border">
-              <span className="flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-blue-500 inline-block" />
-                School Average
-              </span>
-              <span className="flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-muted-foreground/30 inline-block" />
-                National Average
-              </span>
-              <span className="ml-auto text-foreground">+7% improvement over 4 terms</span>
-            </div>
+          <ChartFrame height={260}>
+            <RLineChart data={termTrend} margin={{ top: 8, right: 12, bottom: 0, left: -16 }}>
+              <RCartesianGrid {...GRID} />
+              <RXAxis dataKey="term" {...AXIS} />
+              <RYAxis domain={[0, 100]} {...AXIS} width={40} />
+              <RTooltip
+                content={<GlassTooltip suffix="%" />}
+                cursor={{ stroke: 'hsl(var(--border))' }}
+              />
+              <RLegend wrapperStyle={{ fontSize: 12 }} />
+              <RLine
+                type="monotone"
+                dataKey="school"
+                name="School Average"
+                stroke={SERIES[0]}
+                strokeWidth={2.5}
+                dot={{ r: 3, strokeWidth: 0 }}
+                activeDot={{ r: 5 }}
+                isAnimationActive
+                animationDuration={900}
+              />
+              <RLine
+                type="monotone"
+                dataKey="national"
+                name="National Average"
+                stroke={SERIES[3]}
+                strokeWidth={2.5}
+                strokeDasharray="4 4"
+                dot={{ r: 3, strokeWidth: 0 }}
+                activeDot={{ r: 5 }}
+                isAnimationActive
+                animationDuration={900}
+              />
+            </RLineChart>
+          </ChartFrame>
+          <div className="flex items-center gap-4 text-xs text-foreground mt-2 pt-2 border-t border-border">
+            <span className="ml-auto text-foreground">+7% improvement over 4 terms</span>
           </div>
         </CardContent>
       </Card>
