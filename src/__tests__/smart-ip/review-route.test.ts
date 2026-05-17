@@ -153,6 +153,15 @@ vi.mock('@/lib/site-admin', () => ({
 vi.mock('@/lib/school-auth', () => ({
   verifySchoolMember: async () => null,
 }))
+// These cases exercise the TEACHER/ADMIN decision contract — the caller is
+// not a paid marker, so getCurrentMarker() resolves to null (the real
+// behaviour for an admin/teacher), keeping handledByMarker=false and the
+// original path under test byte-for-byte. The marker branch is covered
+// separately by the marker-console workstream's own tests.
+vi.mock('@/lib/marker-auth', () => ({
+  getCurrentMarker: async () => null,
+  requireMarker: async () => ({ ok: false as const, response: undefined }),
+}))
 
 function makeReq(body: unknown, json = true): NextRequest {
   const headers: Record<string, string> = {}

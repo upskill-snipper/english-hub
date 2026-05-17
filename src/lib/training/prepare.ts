@@ -8,11 +8,18 @@
 //   1. The submission exists.
 //   2. status === 'approved' AND training_eligible === true   (teacher sign-off
 //      is mandatory before any row can ever enter the corpus).
-//   3. The student has the right privacy posture:
+//   3. SOURCE-AWARE consent. The consent gate applies ONLY to real-pupil
+//      sources (a living, identifiable data subject):
 //        • source 'b2c_self'  → PrivacySettings.aiTrainingOptIn      === true
 //        • source 'b2b_class' → PrivacySettings.schoolSharingEnabled === true
 //      AND `checkMinorAIConsent(studentUserId)` allowed (AI_PROCESSING consent
 //      + parental consent for minors).
+//      For source 'commissioned' / 'specimen' there is NO pupil data subject
+//      (commissioned answers are paid-marker / author work; specimen is exam-
+//      board material). The student-resolution + privacy-flag + minor checks
+//      are SKIPPED entirely; the record is still anonymised (incidental PII
+//      stripped by the existing anonymiser), inserted, status-advanced to
+//      'training_ready', and audit-logged. Pupil-source behaviour is unchanged.
 //
 // Idempotent: keyed on `anon_submission_id = hashAuditInput(submissionId)`. If a
 // training_data row already exists for this submission it is treated as success
@@ -178,73 +185,87 @@ export async function prepareTrainingRecord(submissionId: string): Promise<Prepa
     return { ok: false, reason: 'Submission has no student answer to train on.' }
   }
 
-  const studentSupabaseId = sub.student_id
-  if (!studentSupabaseId) {
-    await writeAudit(id, 'rejected', { reason: 'no_student' })
-    return { ok: false, reason: 'Submission has no associated student.' }
-  }
+  // Source discriminator. Unknown / null is treated conservatively as the
+  // strictest pupil source ('b2b_class') so an unrecognised value can never
+  // silently bypass the consent gate.
+  const source = sub.source ?? 'b2b_class'
 
-  // ── 3. Consent gate ───────────────────────────────────────────────────────
-  // marking_submissions.student_id is the Supabase auth user id; the Prisma
-  // User row links via `supabaseUserId` (see schema.prisma MarkingSubmission
-  // relation). Resolve the Prisma user to read PrivacySettings + run the
-  // minor/AI consent check (which keys off the Prisma User id).
-  const { prisma } = await import('@/lib/prisma')
+  // Real-pupil sources have a living, identifiable data subject and MUST pass
+  // the consent gate. 'commissioned' (paid-marker / author work) and
+  // 'specimen' (exam-board material) have NO pupil data subject — the consent,
+  // student-resolution and minor checks are skipped for them (the record is
+  // still anonymised + inserted + audited below).
+  const PUPIL_SOURCES = ['b2c_self', 'b2b_class'] as const
+  const isPupilSource = (PUPIL_SOURCES as readonly string[]).includes(source)
 
-  const studentUser = await prisma.user.findUnique({
-    where: { supabaseUserId: studentSupabaseId },
-    select: {
-      id: true,
-      accountStatus: true,
-      privacySettings: {
-        select: {
-          aiTrainingOptIn: true,
-          schoolSharingEnabled: true,
+  // ── 3. Consent gate (PUPIL SOURCES ONLY) ──────────────────────────────────
+  if (isPupilSource) {
+    const studentSupabaseId = sub.student_id
+    if (!studentSupabaseId) {
+      await writeAudit(id, 'rejected', { reason: 'no_student', source })
+      return { ok: false, reason: 'Submission has no associated student.' }
+    }
+
+    // marking_submissions.student_id is the Supabase auth user id; the Prisma
+    // User row links via `supabaseUserId` (see schema.prisma MarkingSubmission
+    // relation). Resolve the Prisma user to read PrivacySettings + run the
+    // minor/AI consent check (which keys off the Prisma User id).
+    const { prisma } = await import('@/lib/prisma')
+
+    const studentUser = await prisma.user.findUnique({
+      where: { supabaseUserId: studentSupabaseId },
+      select: {
+        id: true,
+        accountStatus: true,
+        privacySettings: {
+          select: {
+            aiTrainingOptIn: true,
+            schoolSharingEnabled: true,
+          },
         },
       },
-    },
-  })
+    })
 
-  if (!studentUser) {
-    await writeAudit(id, 'rejected', { reason: 'student_user_not_found' })
-    return {
-      ok: false,
-      reason: 'Could not resolve the student account for consent verification.',
-    }
-  }
-  if (studentUser.accountStatus !== 'ACTIVE') {
-    await writeAudit(id, 'rejected', { reason: 'student_inactive' })
-    return { ok: false, reason: 'Student account is not active; cannot use for training.' }
-  }
-
-  const source = sub.source ?? 'b2b_class'
-  const privacy = studentUser.privacySettings
-
-  if (source === 'b2c_self') {
-    if (privacy?.aiTrainingOptIn !== true) {
-      await writeAudit(id, 'rejected', { reason: 'no_ai_training_opt_in', source })
+    if (!studentUser) {
+      await writeAudit(id, 'rejected', { reason: 'student_user_not_found', source })
       return {
         ok: false,
-        reason: 'Student has not opted in to AI training (aiTrainingOptIn).',
+        reason: 'Could not resolve the student account for consent verification.',
       }
     }
-  } else {
-    // b2b_class (and any unknown source defaults here — conservative).
-    if (privacy?.schoolSharingEnabled !== true) {
-      await writeAudit(id, 'rejected', { reason: 'no_school_sharing', source })
+    if (studentUser.accountStatus !== 'ACTIVE') {
+      await writeAudit(id, 'rejected', { reason: 'student_inactive', source })
+      return { ok: false, reason: 'Student account is not active; cannot use for training.' }
+    }
+
+    const privacy = studentUser.privacySettings
+
+    if (source === 'b2c_self') {
+      if (privacy?.aiTrainingOptIn !== true) {
+        await writeAudit(id, 'rejected', { reason: 'no_ai_training_opt_in', source })
+        return {
+          ok: false,
+          reason: 'Student has not opted in to AI training (aiTrainingOptIn).',
+        }
+      }
+    } else {
+      // b2b_class (the only other pupil source).
+      if (privacy?.schoolSharingEnabled !== true) {
+        await writeAudit(id, 'rejected', { reason: 'no_school_sharing', source })
+        return {
+          ok: false,
+          reason: 'School data sharing is not enabled for this student (schoolSharingEnabled).',
+        }
+      }
+    }
+
+    const minorConsent = await checkMinorAIConsent(studentUser.id)
+    if (!minorConsent.allowed) {
+      await writeAudit(id, 'rejected', { reason: 'minor_ai_consent_failed', source })
       return {
         ok: false,
-        reason: 'School data sharing is not enabled for this student (schoolSharingEnabled).',
+        reason: minorConsent.reason ?? 'AI processing / parental consent not satisfied.',
       }
-    }
-  }
-
-  const minorConsent = await checkMinorAIConsent(studentUser.id)
-  if (!minorConsent.allowed) {
-    await writeAudit(id, 'rejected', { reason: 'minor_ai_consent_failed', source })
-    return {
-      ok: false,
-      reason: minorConsent.reason ?? 'AI processing / parental consent not satisfied.',
     }
   }
 
@@ -399,6 +420,7 @@ export async function prepareTrainingRecord(submissionId: string): Promise<Prepa
   await writeAudit(id, 'prepared', {
     trainingId,
     source,
+    consentExempt: !isPupilSource,
     markDelta: row.mark_delta,
     statusAdvanced: !statusErr,
   })

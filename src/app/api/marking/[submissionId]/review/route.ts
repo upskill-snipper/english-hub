@@ -31,6 +31,10 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { verifySchoolMember } from '@/lib/school-auth'
 import { isSiteAdmin } from '@/lib/site-admin'
+// ADDITIVE (paid-marker console): lets the row's assigned ACTIVE marker
+// review commissioned/specimen/platform rows. Does not affect the existing
+// teacher/school/site-admin paths — see the marker branch in step 5.
+import { getCurrentMarker } from '@/lib/marker-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import {
   badRequestResponse,
@@ -218,6 +222,10 @@ interface SubmissionRow {
   ai_grade: string | null
   ai_score: number | null
   ai_feedback: string | null
+  // ADDITIVE (paid-marker console): the marker this row is assigned to, if
+  // any. Used only by the new marker authz branch in step 5; the existing
+  // teacher/school/site-admin paths never read it.
+  assigned_marker_id: string | null
 }
 
 // Full hydrated SELECT shared by the success response (mirrors the GET /
@@ -304,7 +312,8 @@ export async function handleReview(
     const { data: submissionRaw, error: subErr } = await admin
       .from('marking_submissions')
       .select(
-        'id, student_id, school_id, class_id, source, status, ai_grade, ai_score, ai_feedback',
+        'id, student_id, school_id, class_id, source, status, ai_grade, ai_score, ai_feedback,' +
+          ' assigned_marker_id',
       )
       .eq('id', subId)
       .single()
@@ -316,6 +325,40 @@ export async function handleReview(
 
     // 5. Authorise.
     //
+    // 5a. ADDITIVE — paid-marker branch (does NOT alter the existing
+    //     teacher/school/site-admin authorisation below).
+    //
+    //     The corpus drive ingests commissioned / specimen / platform rows
+    //     (school_id NULL, source != 'b2c_self'). When the caller resolves to
+    //     an ACTIVE marker AND this row's assigned_marker_id is exactly that
+    //     marker, the marker is authorised to review it and we SKIP the
+    //     B2C/B2B blocks entirely. A marker can ONLY ever act on rows
+    //     assigned to them: if they resolve to a marker but the row is a
+    //     marker-drive row not assigned to them, deny (never fall through to
+    //     the school/site-admin paths for someone else's marker work).
+    //
+    //     For any caller who is NOT an active marker, OR any non-marker-drive
+    //     row, `handledByMarker` stays false and control falls through to the
+    //     ORIGINAL, byte-identical authorisation logic — existing teacher /
+    //     school-admin / site-admin behaviour is completely unchanged.
+    const MARKER_DRIVE_SOURCES = new Set(['commissioned', 'specimen', 'platform'])
+    let handledByMarker = false
+
+    {
+      const marker = await getCurrentMarker(supabase)
+      if (marker) {
+        const isMarkerDriveRow = MARKER_DRIVE_SOURCES.has(submission.source ?? '')
+        if (isMarkerDriveRow) {
+          if (submission.assigned_marker_id !== marker.id) {
+            return forbiddenResponse('This script is not assigned to you.')
+          }
+          handledByMarker = true
+        }
+        // Marker resolved but row is NOT a marker-drive row → fall through to
+        // the unchanged paths below (they may also be a teacher/site admin).
+      }
+    }
+
     //    B2C self-study (source = 'b2c_self' OR no school): platform admin only.
     //    B2B class submission: same-school admin/HoD, or teacher of a class
     //    containing the student (identical two-step lookup to /override).
@@ -323,72 +366,76 @@ export async function handleReview(
 
     let reviewerMemberId: string | null = null
 
-    if (isB2C) {
-      if (!isSiteAdmin(user.email)) {
-        return forbiddenResponse('Only a platform administrator can review self-study submissions.')
-      }
-      // No school member for B2C; reviewer_member_id stays null.
-    } else {
-      const member = await verifySchoolMember(user.id, ['admin', 'head_of_department', 'teacher'])
-      if (!member) {
-        return forbiddenResponse('Only school staff can review marking.')
-      }
-
-      const memberSchoolId = (member as { school_id: string }).school_id
-      const memberRole = (member as { role: string }).role
-      const memberId = (member as { id: string }).id
-
-      // Site admins get a synthetic member ('__site_admin__'); they bypass the
-      // same-school check (they can review any school's submission).
-      const isSyntheticSiteAdmin = memberSchoolId === '__site_admin__'
-
-      if (
-        !isSyntheticSiteAdmin &&
-        submission.school_id &&
-        submission.school_id !== memberSchoolId
-      ) {
-        return forbiddenResponse('Submission belongs to another school.')
-      }
-
-      if (!isSyntheticSiteAdmin && memberRole === 'teacher') {
-        // Find classes owned by this teacher.
-        const { data: teacherClasses, error: classesErr } = await admin
-          .from('classes')
-          .select('id')
-          .eq('school_id', memberSchoolId)
-          .eq('teacher_id', memberId)
-
-        if (classesErr) {
-          console.error('[marking/review] classes lookup failed', classesErr)
-          return serverErrorResponse('Failed to verify teacher access.')
+    if (!handledByMarker) {
+      if (isB2C) {
+        if (!isSiteAdmin(user.email)) {
+          return forbiddenResponse(
+            'Only a platform administrator can review self-study submissions.',
+          )
+        }
+        // No school member for B2C; reviewer_member_id stays null.
+      } else {
+        const member = await verifySchoolMember(user.id, ['admin', 'head_of_department', 'teacher'])
+        if (!member) {
+          return forbiddenResponse('Only school staff can review marking.')
         }
 
-        const classIds = (teacherClasses ?? []).map((c: { id: string }) => c.id)
-        if (classIds.length === 0) {
-          return forbiddenResponse('You do not teach any classes containing this student.')
+        const memberSchoolId = (member as { school_id: string }).school_id
+        const memberRole = (member as { role: string }).role
+        const memberId = (member as { id: string }).id
+
+        // Site admins get a synthetic member ('__site_admin__'); they bypass the
+        // same-school check (they can review any school's submission).
+        const isSyntheticSiteAdmin = memberSchoolId === '__site_admin__'
+
+        if (
+          !isSyntheticSiteAdmin &&
+          submission.school_id &&
+          submission.school_id !== memberSchoolId
+        ) {
+          return forbiddenResponse('Submission belongs to another school.')
         }
 
-        const { count, error: linkErr } = await admin
-          .from('class_students')
-          .select('student_id', { count: 'exact', head: true })
-          .eq('student_id', submission.student_id)
-          .eq('is_active', true)
-          .in('class_id', classIds)
+        if (!isSyntheticSiteAdmin && memberRole === 'teacher') {
+          // Find classes owned by this teacher.
+          const { data: teacherClasses, error: classesErr } = await admin
+            .from('classes')
+            .select('id')
+            .eq('school_id', memberSchoolId)
+            .eq('teacher_id', memberId)
 
-        if (linkErr) {
-          console.error('[marking/review] class_students lookup failed', linkErr)
-          return serverErrorResponse('Failed to verify teacher access.')
+          if (classesErr) {
+            console.error('[marking/review] classes lookup failed', classesErr)
+            return serverErrorResponse('Failed to verify teacher access.')
+          }
+
+          const classIds = (teacherClasses ?? []).map((c: { id: string }) => c.id)
+          if (classIds.length === 0) {
+            return forbiddenResponse('You do not teach any classes containing this student.')
+          }
+
+          const { count, error: linkErr } = await admin
+            .from('class_students')
+            .select('student_id', { count: 'exact', head: true })
+            .eq('student_id', submission.student_id)
+            .eq('is_active', true)
+            .in('class_id', classIds)
+
+          if (linkErr) {
+            console.error('[marking/review] class_students lookup failed', linkErr)
+            return serverErrorResponse('Failed to verify teacher access.')
+          }
+          if (!count || count === 0) {
+            return forbiddenResponse('You do not teach any classes containing this student.')
+          }
         }
-        if (!count || count === 0) {
-          return forbiddenResponse('You do not teach any classes containing this student.')
-        }
+        // Admins / heads of department implicitly authorised once the
+        // same-school check above passes.
+
+        // Only persist a real UUID member id to the UUID FK columns.
+        reviewerMemberId = isUuid(memberId) ? memberId : null
       }
-      // Admins / heads of department implicitly authorised once the
-      // same-school check above passes.
-
-      // Only persist a real UUID member id to the UUID FK columns.
-      reviewerMemberId = isUuid(memberId) ? memberId : null
-    }
+    } // end if (!handledByMarker) — ADDITIVE wrapper for the marker branch
 
     // 6. Persist — sequential best-effort "transaction".
     //
@@ -442,6 +489,16 @@ export async function handleReview(
     if (decision === 'approve') {
       update.approved_by = user.id
       update.approved_at = nowIso
+    }
+    // ADDITIVE (paid-marker console): a marker approval makes the row
+    // corpus-eligible so the training pipeline can pick it up — guaranteed
+    // server-side regardless of the request body. `handledByMarker` is only
+    // ever true on the marker branch, so teacher / school-admin / site-admin
+    // approvals are completely unaffected (their training_eligible stays
+    // exactly the body-supplied value as before). Source-aware CONSENT is
+    // handled by a separate workstream and is intentionally NOT done here.
+    if (handledByMarker && decision === 'approve') {
+      update.training_eligible = true
     }
 
     const { data: updatedRaw, error: updateErr } = await admin
